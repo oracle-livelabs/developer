@@ -1,0 +1,29 @@
+{
+  "workshoptitle": "My ToDo List App with Python, Flask, SQLAlchemy and ADB",
+  "help": "livelabs-help-db_us@oracle.com",
+    "tutorials": [
+      {
+        "title": "Introduction",
+        "description": "Introduction",
+        "filename": "../../intro/intro.md"
+      },
+      {
+        "title": "Getting Started",
+        "description": "Prerequisites",
+        "filename": "https://objectstorage.us-phoenix-1.oraclecloud.com/p/SJgQwcGUvQ4LqtQ9xGsxRcgoSN19Wip9vSdk-D_lBzi7bhDP6eG1zMBl0I21Qvaz/n/c4u02/b/common/o/labs/cloud-login/pre-register-free-tier-account.md"
+      },
+      {
+        "title": "Lab 1: Setup Dev Environment",
+        "filename": "../../setup-dev-environment/setup-dev-environment.md"
+      },
+      {
+        "title": "Lab 2: Backend (Python/Flask)",
+        "filename": "../../backend/backend.md"
+      },
+      {
+        "title": "Need Help?",
+        "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+        "filename":"https://objectstorage.us-phoenix-1.oraclecloud.com/p/SJgQwcGUvQ4LqtQ9xGsxRcgoSN19Wip9vSdk-D_lBzi7bhDP6eG1zMBl0I21Qvaz/n/c4u02/b/common/o/labs/need-help/need-help-freetier.md"
+      }
+   ]
+}
