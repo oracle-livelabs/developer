@@ -57,7 +57,7 @@ Let's now stage the application, so other users can test its behavior.
 
     The staged application opens in a new browser tab. The tables are populated with the data from Development. Also, an **Install HR Application** ![Install HR Application icon](./images/install-app-icon.png) icon that lets you install the app as a PWA shows up on the address bar—we'll test this functionality in a later step.
 
-    ![](./images/open_shared_application_result.png "This image shows the staged version of the HR web app open in a browser tab. The Install HR Application icon is highlighted.")
+    ![](./images/open-shared-application-result.png "This image shows the staged version of the HR web app open in a browser tab. The Install HR Application icon is highlighted.")
 
 4.  Make a note of the application's URL to share with your team.
 
@@ -69,7 +69,7 @@ To add more records to your data in the staging database, let's import data for 
 
 1.  Click [this link](https://objectstorage.us-ashburn-1.oraclecloud.com/p/LNAcA6wNFvhkvHGPcWIbKlyGkicSOVCIgWLIu6t7W2BQfwq2NSLCsXpTL9wVzjuP/n/c4u04/b/livelabsfiles/o/developer-library/HR_Application_Stage.zip ) and save the `HR_Application_Stage.zip` file. The ZIP file contains CSV files of the Department and Employee business objects of the HR Application schema with a few more records.
 
-2.  In the Navigator, click the **Business Objects** ![Business Objects icon](./images/vbcssp_bo_icon.png) tab, then click **Menu** ![Menu icon](./images/vbcssp_menu2_icon.png) and select **Data Manager**.
+2.  In the Navigator, click the **Business Objects** ![Business Objects icon](./images/bo-icon.png) tab, then click **Menu** ![Menu icon](./images/vbcssp_menu2_icon.png) and select **Data Manager**.
 
     ![](./images/vbcssp_imp_s3.png "This image shows the Data Manager option selected from the Menu in the Business Objects pane.")
 
