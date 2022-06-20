@@ -1,4 +1,4 @@
-# Set Up a Fleet
+# Set up a Fleet
 
 ## Introduction
 
@@ -17,7 +17,6 @@ In this lab, you will:
 
 * You have signed up for an account with Oracle Cloud Infrastructure and have received your sign-in credentials.
 * You are using an Oracle Linux image on your host machine or compute instance for this workshop.
-* Access to the cloud environment and resources configured in Lab 2
 
 ## Task 1: Set Up Java Management Service Fleet
 
@@ -25,7 +24,7 @@ In this lab, you will:
 
   ![image of console navigation to java management service](/../images/console-navigation-jms.png)
 
-2. Select the compartment created for JMS resources in Lab 1 and **Create Fleet**.
+2. Select the compartment created for JMS resources in Lab 1 (Compartment name should be **Fleet_Compartment**) and **Create Fleet**.
 
   ![image of create fleet](/../images/create-fleet-create-new.png)
 
@@ -57,9 +56,11 @@ In this lab, you will:
 
   ![image of page to download management agent software](/../images/download-management-agent-software-new.png)
 
-  Click **Done** once the download is complete. The downloaded file will be used in the next lab for installing the management agent and the management agent software will also be downloaded in the next lab.
+  Click **Done** once the download is complete. The downloaded file will be used in [Lab 5: Install Management Agent on non-OCI Hosts - Linux](?lab=set-up-of-management-agent-linux) to install the Management Agent.
 
-## Want to Learn More?
+You may now **proceed to the next lab**.
+
+## Learn More
 
 * Refer to the [Fleet Management](https://docs.oracle.com/en-us/iaas/jms/doc/fleet-management.html) section of the JMS documentation for more details.
 
@@ -67,7 +68,9 @@ In this lab, you will:
 
 * If the problem still persists or if the problem you are facing is not listed, please refer to the [Getting Help and Contacting Support](https://docs.oracle.com/en-us/iaas/Content/GSG/Tasks/contactingsupport.htm) section or you may open a a support service request using the **Help** menu in the OCI console.
 
+
+
 ## Acknowledgements
 
 * **Author** - Esther Neoh, Java Management Service
-* **Last Updated By** - Xin Yi Tay, February 2022
+* **Last Updated By** - Xin Yi Tay, April 2022
