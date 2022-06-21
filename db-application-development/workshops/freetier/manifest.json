@@ -1,0 +1,44 @@
+{
+    "workshoptitle": "Start Polyglot Development with Autonomous Database", 
+    "help": "livelabs-help-db_us@oracle.com",
+    "tutorials": [
+        {
+            "title": "Introduction",
+            "description": "The Introduction is always first. The title and contents menu title match for the Introduction.",
+            "filename": "../../introduction/introduction.md"
+        },
+        {
+            "title": "Get Started",
+            "description": "This is the prerequisites for customers using Free Trial and Paid tenancies, and Always Free accounts (if applicable). The title of the lab and the Contents Menu title (the title above) match for Prerequisite lab. This lab is always first.",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login.md"
+        },
+        {
+            "title": "Lab 1: Provision an Oracle Autonomous Database ",
+            "description": "Provision an Oracle Autonomous Database",
+            "type": "freetier",
+            "filename": "../../adb-with-wallet/adb-with-wallet.md"
+        }, 
+        {
+            "title": "Lab 2: Develop Python Applications",
+            "filename": "../../pythondb-development-oracledb/pythondb-development-oracledb.md" 
+        }, 
+        {
+            "title": "Lab 3: Develop Node.js Applications",
+            "filename": "../../nodedb-development/nodedb-development.md"
+        }, 
+        {
+            "title": "Lab 4: Develop Java Applications",
+            "filename": "../../javadb-development/javadb-development.md"
+        }, 
+        {
+            "title": "Lab 5: Develop .NET Applications",
+            "filename": "../../dotnet-development/dotnet-development.md"
+        } 
+        ,
+        {
+            "title": "Need Help?",
+            "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/need-help/need-help-freetier.md"
+        }
+    ]
+}
