@@ -17,13 +17,13 @@ Watch the video below for a quick walk through of the lab.
 ### Prerequisites
 
 This lab assumes you have completed the following labs:
-* Lab 1: [Login to Oracle Cloud](https://objectstorage.us-phoenix-1.oraclecloud.com/p/SJgQwcGUvQ4LqtQ9xGsxRcgoSN19Wip9vSdk-D_lBzi7bhDP6eG1zMBl0I21Qvaz/n/c4u02/b/common/o/labs/cloud-login/pre-register-free-tier-account.md)
+* Lab 1: [Login to Oracle Cloud](https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md)
 * Lab 2: [Provision an Autonomous Database](https://raw.githubusercontent.com/oracle/learning-library/master/data-management-library/autonomous-database/shared/adb-provision/adb-provision.md)
-* Lab 3: [Connect to your Autonomous Database using Database Actions/SQL Developer Web](https://objectstorage.us-phoenix-1.oraclecloud.com/p/SJgQwcGUvQ4LqtQ9xGsxRcgoSN19Wip9vSdk-D_lBzi7bhDP6eG1zMBl0I21Qvaz/n/c4u02/b/common/o/labs/sqldevweb-login/sqldevweb-login.md)
+* Lab 3: [Connect to your Autonomous Database using Database Actions/SQL Developer Web](https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/sqldevweb-login/sqldevweb-login.md)
 
 ## Task 1: Create a Table in the Autonomous Database
 
-1. Start by signing in as the **admin** using [Database Actions](https://objectstorage.us-phoenix-1.oraclecloud.com/p/SJgQwcGUvQ4LqtQ9xGsxRcgoSN19Wip9vSdk-D_lBzi7bhDP6eG1zMBl0I21Qvaz/n/c4u02/b/common/o/labs/sqldevweb-login/sqldevweb-login.md) if not already there. Once logged in, click the **SQL tile**.
+1. Start by signing in as the **admin** using [Database Actions](https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/sqldevweb-login/sqldevweb-login.md) if not already there. Once logged in, click the **SQL tile**.
 
     ![Database Actions Home Page, Click SQL tile](./images/sdw-15.png)
 
@@ -59,7 +59,11 @@ This lab assumes you have completed the following labs:
 
     ![Data Column Layout from uploaded file](./images/sdw-21.png)
 
-    **Click Next** on the bottom right of the modal when done looking at this step.
+    Set all the columns to be of VARCHAR2 with the length of 4000. This will provide a flawless data loading experience.
+    
+    ![Set Columns to VARCHAR2 4000](./images/sdw-21a.png)
+
+    When table and columns look like the below image, **Click Next** on the bottom right of the modal.
 
     ![Check out data then Click Next Button](./images/sdw-22.png)
 
@@ -154,5 +158,5 @@ You may now [proceed to the next lab](#next).
 ## Acknowledgements
 
 - **Author** - Jeff Smith, Distinguished Product Manager and Brian Spendolini, Trainee Product Manager
-- **Last Updated By/Date** - Brian Spendolini, September 2021
-- **Workshop Expiry Date** - May 2022
+- **Last Updated By/Date** - Brian Spendolini, April 2022
+- **Workshop Expiry Date** - June 2022
