@@ -1,0 +1,249 @@
+# Provision an Oracle Autonomous Database  
+
+## Introduction
+
+Oracle Autonomous Database is the world’s first autonomous data management in the cloud to deliver automated patching, upgrades, and tuning—including performing all routine database maintenance tasks while the system is running - without human intervention. This new autonomous database cloud is self-managing, self-securing, and self-repairing, which helps to eliminate manual database management and human errors.
+
+The Oracle Autonomous Database is fully elastic: You simply specify the number of OCPUs and the storage capacity in TBs for the database. At any time, you may scale up or down the OCPUs or the storage capacity.
+
+Autonomous Database supports four main types of workload:
+
+* Transaction processing and mixed workloads
+* Analytics and data warehousing
+* Transactions and analytics on JSON data
+* Oracle APEX Application Development
+
+This lab walks you through the steps to get started using the Oracle Autonomous Database on Oracle Cloud. you will provision a new Autonomous Data Warehouse instance.  
+  
+Estimated Time: 20 minutes
+
+### Objectives
+
+In this lab, you will:
+
+-   Learn how to provision a new Autonomous Database
+
+### Prerequisites
+
+- This lab requires completing the **Get Started** section in the Contents menu on the left navigation.
+- Login to the Oracle cloud and have access to create an Autonomous Database.
+
+## Task 1: Choose Autonomous Database from the services menu
+
+1. Log in to the Oracle Cloud.
+2. Once you log in, the cloud services dashboard shows all the services available to you. Click the **navigation menu** in the upper left to show top level navigation choices. 
+
+3. This lab shows provisioning of an Autonomous Data Warehouse database, click on **Oracle Database**, then select **Autonomous Data Warehouse**.
+
+    ![Click Autonomous Data Warehouse.](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/database-adw.png " ")
+
+4. Make sure your Workload Type is __Data Warehouse__ or __All__ to see your Autonomous Data Warehouse instances. Use the __List Scope__ drop-down menu to select a compartment. <if type="livelabs">Enter the first part of your user name, for example `LL185` in the Search Compartments field to quickly locate your compartment.
+
+    ![Check the workload type on the left.](images/search-adw.png "Check the workload type on the left. ")
+    </if>
+    <if type="freetier">
+    ![Check the workload type on the left.](images/task1-4.png " Check the workload type on the left.")
+
+    > **Note:** Avoid the use of the `ManagedCompartmentforPaaS` compartment, as this is an Oracle default used for Oracle Platform Services.
+   </if>
+
+5. This console shows that no databases yet exist. If there were a long list of databases, you could filter the list by the **State** of the databases (Available, Stopped, Terminated). You can also sort by __Workload Type__. In this example, __Data Warehouse__ is the workload type.
+
+    ![Autonomous Databases console.](./images/task1-5.png "Autonomous Databases console. ")
+
+<if type="freetier">
+1. You can see your current default **region** in the top, right hand corner of the page. 
+    ![Select region on the far upper-right corner of the page.](./images/task1-6.png " ")
+</if>
+
+## Task 2: Create the Oracle Autonomous Database instance
+
+1. Click **Create Autonomous Database** to start the instance creation process.
+
+    ![Click Create Autonomous Database.](./images/task2-1.png "Click Create Autonomous Database. ")
+
+2.  This brings up the __Create Autonomous Database__ screen where you will specify the configuration of the instance. 
+  
+3. Specify basic information for the autonomous database:
+
+    - __Compartment__ - Leave the default compartment.
+    - __Display Name__ - Enter a memorable name for the database for display purposes. For example, use __DEMO\_ADW__.
+    - __Database Name__ - Use letters and numbers only, starting with a letter. Maximum length is 14 characters. (Underscores not initially supported.)
+    - __Workload Type__ - For this lab, choose __Data Warehouse__ as the workload type. 
+    - __Deployment Type__ - For this lab, choose __Shared Infrastructure__ as the deployment type.
+    
+    <if type="freetier">
+    ![Create ADW screen](./images/create-adw-screen1.png "Create ADW screen ")
+    </if> 
+  
+4. Configure the database:
+
+    - __Always Free__ - For this lab, we recommend you leave Always Free **unchecked**. Please Note: If you select Always Free then Always Free Autonomous databases can utilize up to 1 core. The CPU core count cannot be adjusted. Always Free Autonomous databases can utilize up to 0.02 TB (20 GB) of storage. The storage size cannot be adjusted.  
+    - __Choose database version__ - Select a database version **19c** from the available versions.
+    - __OCPU count__ - Number of CPUs for your service. For this lab, specify __1 CPU__.  
+    - __Storage (TB)__ - Select your storage capacity in terabytes. For this lab, specify __1 TB__ of storage.  
+    - __Auto Scaling__ - Auto Scaling - For this lab, keep auto-scaling **unchecked**. If autoscaling is enabled, the system will automatically use up to three times more CPU and IO resources to meet workload demand. learn more about [auto scaling](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/autonomous-auto-scale.html)
+  
+    ![Choose a workload type.](./images/create-adw-screen2.png " ")
+  
+    Create administrator credentials:
+
+    - __Password and Confirm Password__ - Specify the password for ADMIN user of the service instance. The password must meet the following requirements:
+    - The password must be between 12 and 30 characters long and must include at least one uppercase letter, one lowercase letter, and one numeric character.
+    - Autonomous Database requires strong passwords, the password you specify must meet the [default password complexity rules](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcu/#ADBCU-GUID-0E019845-31AE-44D7-B55C-9BCBA7E1377F). 
+  
+5. Choose network access:
+    - For this lab, accept the default, **Secure access from everywhere**. 
+    
+     ![Choose a deployment type.](./images/create-adw-screen3.png " ")
+ 
+<if type="freetier">
+1. Choose a license type. For this lab, choose __License Included__. The two license types are:
+</if>
+
+    - __Bring Your Own License (BYOL)__ - Select this type when your organization has existing database licenses. [learn more](https://www.oracle.com/cloud/pricing/)
+    - __License Included__ - Select this type when you want to subscribe to new database software licenses and the database cloud service.
+    - __Oracle Database Edition__ - Select __Oracle Database Enterprise Edition__, this option is available only if you had selected __Bring Your Own License (BYOL)__
+  
+1. For this lab, do not provide a contact email address. The **Contact Email** field allows you to list contacts to receive operational notices and announcements as well as unplanned maintenance notifications.
+
+    ![Do not provide a contact email address.](images/contact-email-field.png)
+ 
+    Click on __Create Autonomous Database__. button
+
+    ![Click Create ADW Button.](images/create-adw-button.png)
+ 
+2.   Your instance will begin provisioning. In a few minutes, the state will turn from Provisioning to Available. At this point, your Autonomous Data Warehouse database is ready to use! Have a look at your instance's details here including its name, database version, OCPU count, and storage size.
+
+    ![Database instance homepage.](./images/instance-live.png "Database instance homepage ")
+
+## Task 3: Create tables and a database user  
+ 
+1. Let us create a new database user and a couple of tables using the sample SH schema. SH schema is pre-installed with default Autonomous Database Instance creation.  
+  
+    ![database actions](images/autonomous-database-actions.png =50%x*  "database actions")
+
+    Click the **Database Actions** button.
+
+    ![database actions](images/db-actions.png =50%x*  "database actions")
+
+    Select the SQL tab to open the SQL worksheet.
+
+    ![sql worksheet](images/sql-worksheet.png =50%x*  "sql worksheet")
+
+2. Create an Autonomous Database user <db\_user\> and grant required privileges to create tables. Substitute <db\_user\> and <password\> with the username and password of your choice.
+
+    ```
+    <copy>    
+    define USERNAME = <db_user>;   
+    create user &USERNAME identified by "<password>";
+    alter user &USERNAME
+        default tablespace users
+        temporary tablespace temp
+        quota unlimited on users; 
+    grant create session,
+        create view,
+        create sequence,
+        create procedure,
+        create table,
+        create trigger,
+        create type,
+        create materialized view
+        to &USERNAME; 
+    create table &USERNAME.sales360 as (select * from sh.sales);
+    create table &USERNAME.customers360 as (select * from sh.customers); 
+    </copy>
+    ```
+
+    ![sql worksheet](images/app-user.png =50%x*  "sql worksheet")
+    
+## Task 4: Download the wallet for this database
+ 
+1. Click on the **DB Connection** button and download the Autonomous Database wallet.
+
+    ![Database Connection](images/database-connection.png =50%x* "Database Connection")
+
+    ![Download wallet](images/download-wallet.png =50%x*  "Download wallet") 
+
+    Choose a new wallet password. 
+
+    ![Wallet password](images/wallet-password.png =50%x*  "Wallet password") 
+
+    Click on the **Download** button and extract the wallet zip file to the folder of your choice. We will be using this folder in future labs of this workshop.
+
+## Task 5: One-way TLS connection to Oracle Autonomous Database for wallet-less connections  
+ 
+> **Note:**  This Task is optional and is required if you plan to use a wallet-less connection with Autonomous Database using Python. Otherwise, you can still connect to Autonomous Database using the wallet downloaded  in the previous Task.
+    
+1. One-way TLS connection to Oracle Autonomous Database 
+
+    Complete the following steps in an Oracle Cloud console in the Autonomous Database Information section of the ADB instance details:
+
+    Click the **Edit** link next to **Access Control List** to update the Access Control List (ACL).  
+    ![Edit access type](images/access-type.png =75%x*  "Autonomous-database") 
+
+    The **Edit Access Control List** dialog box is displayed. select the type of address list entries and the corresponding values. You can include the required IP addresses, hostnames, or Virtual Cloud Networks (VCNs). The ACL limits access to only the IP addresses or VCNs that have been defined and blocks all other incoming traffic.  
+
+    ![access control list](images/acl.png =75%x*  "access control list")   
+
+    You should be able to establish a connection with the database by just clicking on **Add My IP Address** button. If you have issues establishing a connection, please follow the instructions below to get the IP address. 
+
+      > **Windows:** 
+      To get your public IP address:  
+      1. Open the command prompt and run *ipconfig /all*. 
+      2. Search for 'IPv4 address:' under 'Wifi' or 'EthernetX' section based on your current network adapter to get the IP address. 
+   
+      > **macOS:** 
+      To get your public IP address:  
+      1. From the Apple menu, select System Preferences. In *System Preferences*, select *Network* from the View menu.
+      2. In the Network window, select a network port (e.g., AirPort, Ethernet, Wi-Fi). The IP address will be visible under "Status:" section if it is connected.
+
+      > **Linux/UNIX:** 
+      To get your public IP address: 
+      1. Run *ifconfig*.
+      2. This command displays a list of all the network interfaces available on the machine. Look for the appropriate network interface (e.g., ens3 in Oracle Linux), and you will see an "inet" section under this containing your IP address.
+
+    In the **Autonomous Database Information** tab and click the **Edit** link next to **Mutual TLS (mTLS) Authentication**. The Edit Mutual TLS Authentication dialog is displayed.   
+
+    In the **Edit Mutual TLS Authentication** dialog box, **un-check** the **Require mutual TLS (mTLS) authentication** checkbox  and click **Save Changes**. 
+
+    ![access type](images/tls-authentication.png =75%x*  "access type") 
+
+    In the **Autonomous Database Information** page and click **DB Connection** on the top of the page. A **Database Connection** dialog box is displayed. 
+    In the **Database Connection** dialog box, select **TLS** under **TLS Authentication** drop-down list. 
+
+    ![connection string](images/tls-conn-string.png =75%x*  "connection string") 
+
+    the connection string would look as below
+
+    ```
+    <copy>
+        (description= (retry_count=20)(retry_delay=3)(address=(protocol=tcps)(port=1521)
+        (host=adb.<region_identifier>.oraclecloud.com))
+        (connect_data=(service_name=<service_prefix>.adb.oraclecloud.com))
+        (security=(ssl_server_dn_match=yes)
+        (ssl_server_cert_dn="CN=<cn name>, OU=Oracle BMCS US, O=Oracle Corporation, L=Redwood City, ST=California, C=US")))
+    </copy>
+    ```  
+ 
+    Copy the appropriate Connection String of the database instance used by your application in a text file. We will need this later. The  <region\_identifier\> and <service\_prefix\> will change depending on your ADB environment and the cloud region that you have selected.
+
+    > **Note:** Please ensure that you should select **TLS** in the **TLS Authentication** dropdown while copying the connection string.  
+     
+    
+You may now **proceed to the next lab**.
+
+## Learn more
+
+* [FAQs For Autonomous Database](https://www.oracle.com/database/technologies/datawarehouse-bigdata/adb-faqs.html)
+* [What Is an Autonomous Database?](https://www.oracle.com/autonomous-database/what-is-autonomous-database/)
+* Go to [the documentation](https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-cloud/user/autonomous-workflow.html#GUID-5780368D-6D40-475C-8DEB-DBA14BA675C3) on the typical workflow for using Autonomous Data Warehouse.
+* [About Connecting to an Autonomous Database Instance](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/connect-introduction.html)
+* [Update Network Options to Allow TLS or Require Only Mutual TLS (mTLS) Authentication on Autonomous Database](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/support-tls-mtls-authentication.html#GUID-3F3F1FA4-DD7D-4211-A1D3-A74ED35C0AF5)
+
+
+## Acknowledgements
+
+- **Author** - Madhusudhan Rao, Oracle Autonomous Database Product Management  
+- **Contributors** - Kevin Lazarz, Senior Principal Product Manager and Christopher Jones, Senior Principal Product Manager
+- **Last Updated By/Date** - Madhusudhan Rao, June 2022
