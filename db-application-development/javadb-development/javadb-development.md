@@ -1,4 +1,4 @@
-# Developing Java Applications for Oracle Autonomous Database
+# Develop Java Applications for Oracle Autonomous Database
 
 ## Introduction
 
@@ -78,7 +78,7 @@ Download [JDK8](https://www.oracle.com/java/technologies/javase/javase-jdk8-down
 
 ## Task 4: Extract the downloaded wallet
 
-Please note since we had created ADB instance by the name DEMOADW, our wallet zip file name will be Wallet_DEMOADW
+Please note since we had created Autonomous Database instance by the name DEMOADW, our wallet zip file name will be Wallet_DEMOADW
  
 ```
 <copy>
@@ -86,12 +86,12 @@ unzip Wallet_DEMOADW.zip -d $HOME/< path to wallet folder>
 </copy>
 ```
 
-## Task 5: Java Application using wallet
+## Task 5: Java Application development with wallet
 
 1. In the vi editor or Visual studio code write sales360.java replace hostname ,service name, database username and password as per your installation and configuration
 2. Write the Java code
    
-      Database URL **DB_URL** will be a string consisting of ADB instance name and path the the extracted ADB wallet folder
+      Database URL **DB_URL** will be a string consisting of Autonomous Database instance name and path the the extracted Autonomous Database wallet folder
 
       ```
       <copy>

@@ -4,7 +4,7 @@
 
 Oracle Autonomous Database is the world’s first autonomous data management in the cloud to deliver automated patching, upgrades, and tuning—including performing all routine database maintenance tasks while the system is running - without human intervention. This new autonomous database cloud is self-managing, self-securing, and self-repairing, which helps to eliminate manual database management and human errors.
 
-The Oracle Autonomous Database is fully elastic: You simply specify the number of OCPUs and the storage capacity in TB's for the database. At any time, you may scale up or down the OCPUs or the storage capacity.
+The Oracle Autonomous Database is fully elastic: You simply specify the number of OCPUs and the storage capacity in TBs for the database. At any time, you may scale up or down the OCPUs or the storage capacity.
 
 Autonomous Database supports four main types of workload:
 
@@ -13,9 +13,9 @@ Autonomous Database supports four main types of workload:
 * Transactions and analytics on JSON data
 * Oracle APEX Application Development
 
-This lab walks you through the steps to get started using the Oracle Autonomous Database (Autonomous Data Warehouse [ADW]) on Oracle Cloud. In this lab, you will provision a new ADW instance. While this lab uses ADW, the steps are the same for creating an ATP database.
+This lab walks you through the steps to get started using the Oracle Autonomous Database on Oracle Cloud. you will provision a new Autonomous Data Warehouse instance.  
   
-Estimated Time: 10 minutes
+Estimated Time: 20 minutes
 
 ### Objectives
 
@@ -28,7 +28,7 @@ In this lab, you will:
 - This lab requires completing the **Get Started** section in the Contents menu on the left navigation.
 - Login to the Oracle cloud and have access to create an Autonomous Database.
 
-## Task 1: Choose ADW from the services menu
+## Task 1: Choose Autonomous Database from the services menu
 
 1. Log in to the Oracle Cloud.
 2. Once you log in, the cloud services dashboard shows all the services available to you. Click the **navigation menu** in the upper left to show top level navigation choices. 

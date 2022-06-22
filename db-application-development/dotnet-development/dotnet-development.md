@@ -2,7 +2,7 @@
 
 ## Introduction
  
-This lab shows you how to connect .NET Core applications to Oracle Autonomous Database (ADB) using Oracle Data Provider for .NET (ODP.NET) Core, Visual Studio Code, and the Oracle Developer Tools for VS Code extension.  
+This lab shows you how to connect .NET Core applications to Oracle Autonomous Database with Oracle Data Provider for .NET (ODP.NET) Core, Visual Studio Code, and the Oracle Developer Tools for VS Code extension.  
 
 Estimated Time: 20 minutes
  
@@ -10,8 +10,8 @@ Estimated Time: 20 minutes
  
 In this lab, you will: 
 
-* Developing .NET Applications for Oracle Autonomous Database with ODP.NET code
-* Developing .NET Applications for Oracle Autonomous Database using Oracle Developer Tools For VS Code
+* Develop .NET Applications for Oracle Autonomous Database with ODP.NET code
+* Develop .NET Applications for Oracle Autonomous Database with Oracle Developer Tools For VS Code
 
 ### Prerequisites 
 This lab assumes you have:
@@ -43,11 +43,11 @@ This lab assumes you have:
 
       When the installation is complete, restart Visual Studio Code.
 
-## Task 2: Developing .NET Applications for Oracle Autonomous Database with ODP.NET code
+## Task 2: Develop .NET Applications for Oracle Autonomous Database with ODP.NET code
 
 Follow the below instructions to run the sample code in VS Code.
 
-1. In the VS Code Terminal window, change to a directory to place your project files, such as using the "cd <directory\_location\>" command. where <directory\_location\> is the directory where the source code and dependency files will be created
+1. In the VS Code Terminal window, change to a directory to place your project files, such as "cd <directory\_location\>" command. where <directory\_location\> is the directory where the source code and dependency files will be created
 2. Run **dotnet new console** from the command line to create a new project. 
 
       ```
@@ -58,7 +58,7 @@ Follow the below instructions to run the sample code in VS Code.
 
       ![c hash extension](images/dotnet-new-console.png "c hash extension") 
 
-      You can see **Program.cs** along with other files created in the working directory.
+      You can see **Program.cs** along with other files created in the source directory.
 
       ![c hash extension](images/dotnet-obj.png "managed access core")
 
@@ -113,8 +113,8 @@ Follow the below instructions to run the sample code in VS Code.
       ``` 
 
       - Substitute <db\_user\> <password\> and <service\_name\> depending upon the configurations in Lab 1  
-      - OracleConfiguration.TnsAdmin (i.e. directory ADB credentials were unzipped to)
-      - OracleConfiguration.WalletLocation (i.e. directory ADB credentials were unzipped to) 
+      - OracleConfiguration.TnsAdmin (i.e. directory Autonomous Database credentials were unzipped to)
+      - OracleConfiguration.WalletLocation (i.e. directory Autonomous Database credentials were unzipped to) 
    
 4. Run  **dotnet add package Oracle.ManagedDataAccess.Core**  from the command line to add ODP.NET Core to the project.
       ![managed access core](images/managed-access-core.png "c hash extension") 
@@ -132,9 +132,9 @@ Follow the below instructions to run the sample code in VS Code.
 6. The entire project folder should now look as below  
       ![customer-list](images/proj-folder.png "customer-list") 
 
-## Task 3: Developing .NET Applications for Oracle Autonomous Database using Oracle Developer Tools For VS Code
+## Task 3: Develop .NET Applications for Oracle Autonomous Database with Oracle Developer Tools For VS Code
 
-This Lab shows you how to connect .NET applications to Oracle Autonomous Database (ADB) using Oracle Data Provider for .NET Core via the command line, with Visual Studio Code, and with Visual Studio. Also learn how to connect .NET Framework apps to ADB using Visual Studio and Oracle Data Provider for .NET. Visit Developing .NET Applications for Oracle Database (On-Premises) for a tutorial using an on-premises database.
+This Lab shows you how to connect .NET applications to Oracle Autonomous Database using Oracle Data Provider for .NET Core via the command line, with Visual Studio Code, and with Visual Studio. Also learn how to connect .NET Framework apps to Autonomous Database with Visual Studio and Oracle Data Provider for .NET
   
 1. Connect to Oracle Autonomous Database, Click on the Database icon in the Activity Bar on the left side of Visual Studio Code to open Oracle Database Explorer.
 
@@ -147,7 +147,7 @@ This Lab shows you how to connect .NET applications to Oracle Autonomous Databas
         - **Use Wallet File**: Check this box
         - Wallet File Location: Set to the same path you used in the TNS Admin Location field above
         - Role: **Default**
-        - User name: Enter ADMIN which is the user created by default during the creation of Autonomous Database. (If you created another ADB user, you can use that user instead.)
+        - User name: Enter ADMIN which is the user created by default during the creation of Autonomous Database. (If you created another Autonomous Database user, you can use that user instead.)
         - Password: Enter user's password. If ADMIN user is used, enter the password that was provided during the Create Autonomous Database step while provisioning Autonomous Database.
         - Save password: Check this box if desired.
 
@@ -165,7 +165,7 @@ This Lab shows you how to connect .NET applications to Oracle Autonomous Databas
 
       ![new-sql](images/exec-sql.png "new-sql")
 
-4. View result of SQL query and expand Tables under ADB connection to view the list of tables.
+4. View result of SQL query and expand Tables under Autonomous Database connection to view the list of tables.
 
       ![view-result](images/view-result.png "view-result")
 

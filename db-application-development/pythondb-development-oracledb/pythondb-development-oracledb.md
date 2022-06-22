@@ -1,4 +1,4 @@
-# Developing Python Applications for Oracle Autonomous Database
+# Develop Python Applications for Oracle Autonomous Database
 
 ## Introduction
 
@@ -26,8 +26,8 @@ Estimated Time: 20 minutes
 
 In this lab, you will:
 
-* Write Python code to access Oracle Database using python-oracledb with ADB wallet
-* Run the Python code without an ADB wallet (wallet-less) using a One-way **TLS** connection string copied from Lab 1
+* Write Python code to access Oracle Database using python-oracledb with Autonomous Database wallet
+* Run the Python code without an Autonomous Database wallet (wallet-less) using a One-way **TLS** connection string copied from Lab 1
   
 ### Prerequisites
 
@@ -81,7 +81,7 @@ Use Python 3.6 to 3.10. Install [Python3](https://yum.oracle.com/oracle-linux-py
 
       Please follow the complete installation instructions from [Installing python-oracledb](https://python-oracledb.readthedocs.io/en/latest/user_guide/installation.html).
    
-## Task 3: Python Application using wallet
+## Task 3: Develop Python Application with wallet
 
 1. For python-oracledb in Thin mode, only two files from the wallet zip file are required
 
@@ -147,7 +147,7 @@ Use Python 3.6 to 3.10. Install [Python3](https://yum.oracle.com/oracle-linux-py
 
       You will be able to view Sales Data from sales360 table.
    
-## Task 4: Python Application using One way TLS wallet-less connection 
+## Task 4: Python Application Development with One way TLS wallet-less connection 
  
 1. To make a wallet-less connection with Autonomous Database, task 5 (One-way TLS connection to Oracle Autonomous Database for wallet-less connections) in Lab 1 has to be completed.
 

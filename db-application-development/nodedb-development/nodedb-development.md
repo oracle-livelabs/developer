@@ -55,11 +55,11 @@ sudo yum install oracle-instantclient-basic
 
 For other Linux flavors, install the Instant Client ZIP files and follow the instructions from the download page: [Instant Client for Linux x86-64 (64-bit)](https://www.oracle.com/database/technologies/instant-client/linux-x86-64-downloads.html). If you use ZIP files, make sure to run ldconfig or set LD_LIBRARY_PATH as shown in the instructions.
    
-## Task 2: Move and extract ADB wallet under network/admin folder of Instant Client
+## Task 2: Move and extract Autonomous Database wallet under network/admin folder of Instant Client
  
 ### macOS
    
-Move the ADB wallet zip file that you had downloaded in Lab 1 under /instantclient\_19\_8/network/admin directory
+Move the Autonomous Database wallet zip file that you had downloaded in Lab 1 under /instantclient\_19\_8/network/admin directory
 
 ```
 <copy>
@@ -83,7 +83,7 @@ extract the wallet zip file under **/network/admin** folder of **Instant Client*
 
 ### Windows OS
  
-Move the ADB wallet zip file that we had downloaded in Lab 1 into network/admin directory of Instant Client
+Move the Autonomous Database wallet zip file that we had downloaded in Lab 1 into network/admin directory of Instant Client
  
 Make a network\admin sub-directory in your Instant Client directory, for example C:\oracle\instantclient\_19\_8\network\admin.
 
