@@ -4,7 +4,7 @@
  
 This lab shows you how to connect .NET Core applications to Oracle Autonomous Database with Oracle Data Provider for .NET (ODP.NET) Core, Visual Studio Code, and the Oracle Developer Tools for VS Code extension.  
 
-Estimated Time: 20 minutes
+Estimated Time: 30 minutes
  
 ### Objectives
  
