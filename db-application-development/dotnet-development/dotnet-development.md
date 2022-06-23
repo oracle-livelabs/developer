@@ -10,8 +10,8 @@ Estimated Time: 20 minutes
  
 In this lab, you will: 
 
-* Develop .NET Applications for Oracle Autonomous Database with ODP.NET code
-* Develop .NET Applications for Oracle Autonomous Database with Oracle Developer Tools For VS Code
+* Develop .NET Applications for Oracle Autonomous Database with ODP.NET Core and Visual Studio Code
+* Using Oracle Developer Tools For VS Code
 
 ### Prerequisites 
 This lab assumes you have:
@@ -25,11 +25,15 @@ This lab assumes you have:
 
 ## Task 2: Install the required Visual Studio Code extensions
 
-1. Click on the Extensions icon in the Activity Bar on the side of VS Code or use the View: Show Extensions command (Ctrl+Shift+X).
-2. Type Oracle in the extension search bar.  
-3. Locate **Oracle Developer Tools** for VS Code and click Install.
+1. Click on the Extensions icon in the Activity Bar on the side of VS Code or use the View: **Show Extensions** command (Ctrl+Shift+X).
+2. Type **Oracle** in the extension search bar.  
+3. Locate **Oracle Developer Tools** for VS Code and and click it to open the extension's page.
 
       ![dev-tools](images/dev-tools.png =50%x* "dev-tools") 
+
+4. Click the Install button to install the extension. During the installation you may be prompted to install a specific version of .NET Core Runtime depending on what is already installed on your machine.  
+
+      Close Visual Studio Code and reopen it.
   
 4. Install the [VS Code C# extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode.csharp).
 
@@ -43,11 +47,11 @@ This lab assumes you have:
 
       When the installation is complete, restart Visual Studio Code.
 
-## Task 2: Develop .NET Applications for Oracle Autonomous Database with ODP.NET code
+## Task 2: Develop .NET Applications for Oracle Autonomous Database with ODP.NET Core and Visual Studio Code
 
 Follow the below instructions to run the sample code in VS Code.
 
-1. In the VS Code Terminal window, change to a directory to place your project files, such as "cd <directory\_location\>" command. where <directory\_location\> is the directory where the source code and dependency files will be created
+1. From the Visual Studio Code menu choose **View->Terminal** to open the Terminal window. At the command prompt in the terminal, create a new directory for your application and change into that directory.  
 2. Run **dotnet new console** from the command line to create a new project. 
 
       ```
@@ -56,7 +60,9 @@ Follow the below instructions to run the sample code in VS Code.
       </copy>
       ```   
 
-      ![c hash extension](images/dotnet-new-console.png "c hash extension") 
+      From the Visual Studio Code menu choose **File->Open Folder** and select the directory you created above.
+
+      ![dotnet new console](images/dotnet-new-console.png "dotnet new console") 
 
       You can see **Program.cs** along with other files created in the source directory.
 
@@ -117,7 +123,7 @@ Follow the below instructions to run the sample code in VS Code.
       - OracleConfiguration.WalletLocation (i.e. directory Autonomous Database credentials were unzipped to) 
    
 4. Run  **dotnet add package Oracle.ManagedDataAccess.Core**  from the command line to add ODP.NET Core to the project.
-      ![managed access core](images/managed-access-core.png "c hash extension") 
+      ![managed access core](images/managed-access-core.png "managed access core") 
 
 5. Execute the app by running **dotnet run** from the command line. You should see the customers sample data
 
@@ -132,51 +138,54 @@ Follow the below instructions to run the sample code in VS Code.
 6. The entire project folder should now look as below  
       ![customer-list](images/proj-folder.png "customer-list") 
 
-## Task 3: Develop .NET Applications for Oracle Autonomous Database with Oracle Developer Tools For VS Code
+## Task 3: Using Oracle Developer Tools for VS Code to explore database schema and run SQL scripts  
 
-This Lab shows you how to connect .NET applications to Oracle Autonomous Database using Oracle Data Provider for .NET Core via the command line, with Visual Studio Code, and with Visual Studio. Also learn how to connect .NET Framework apps to Autonomous Database with Visual Studio and Oracle Data Provider for .NET
-  
-1. Connect to Oracle Autonomous Database, Click on the Database icon in the Activity Bar on the left side of Visual Studio Code to open Oracle Database Explorer.
+This Lab task shows how to use Oracle Developer Tools for VS Code, Connect to Autonomous Database Instance, and Run SQL Queries.
+   
+1. Click on the **Database** icon in the Activity Bar on the left side of Visual Studio Code to open Oracle Database Explorer. Click the **plus sign** (+) to open the connection dialog
 
-      ![oracle-connection](images/oracle-connection.png "oracle-connection")
+      ![vscode-extension](images/vscode-db-extension.png "vscode-extension") 
 
-      * Click the plus sign (+) to open the connection dialog, Fill in the connection dialog
-        - Connection Type: **TNS Alias**   
-        - TNS Admin Location: Enter the path to the **wallet location** where you unzipped the credentials files.
-        - TNS Alias: Enter the net service name such as DBName_high. DBName is **Database Name** entered during the Create Autonomous Database step while - provisioning Autonomous Database.
-        - **Use Wallet File**: Check this box
-        - Wallet File Location: Set to the same path you used in the TNS Admin Location field above
-        - Role: **Default**
-        - User name: Enter ADMIN which is the user created by default during the creation of Autonomous Database. (If you created another Autonomous Database user, you can use that user instead.)
-        - Password: Enter user's password. If ADMIN user is used, enter the password that was provided during the Create Autonomous Database step while provisioning Autonomous Database.
-        - Save password: Check this box if desired.
+2. Fill in the connection dialog details
 
-2. View Oracle Database Explorer and Open a new SQL File. Click on the database icon in the Activity Bar on the left side of Visual Studio Code if Oracle Database Explorer is not open
+      ![oracle-connection](images/conn-dialog.png "oracle-connection")
+ 
+     - Connection Type: **TNS Alias**   
+     - **TNS Admin Location**: Enter the path to the **wallet location** where you unzipped the credentials files.
+     - **TNS Alias**: Enter the net service name such as DBName_high. DBName is **Database Name** entered during the Create Autonomous Database step while - provisioning Autonomous Database.
+     - **Use Wallet File**: Check this box
+     - Wallet File Location: Set to the same path you used in the TNS Admin Location field above
+     - **Role**: Default
+     - **User name**: Enter ADMIN which is the user created by default during the creation of Autonomous Database. (If you created another Autonomous Database user, you can use that user instead.)
+     - **Password**: Enter user's password. If ADMIN user is used, enter the password that was provided during the Create Autonomous Database step while provisioning Autonomous Database.
+     - **Save password**: Check this box if desired.
+
+3. Right click on the connection node and from the menu choose **Open New SQL File**
 
       ![new-sql](images/new-sql.png "new-sql")
 
-3. Execute a SQL Statement
+4. Copy and paste the following SQL statement into the SQL file. **Execute a SQL** Statement
 
       ```
       <copy>
-      select * from sales360 where rownum < 10  
+      select CUST_FIRST_NAME, CUST_LAST_NAME, CUST_CITY, CUST_CREDIT_LIMIT 
+      from customers360 order by CUST_ID fetch first 20 rows only  
       </copy>
       ``` 
 
-      ![new-sql](images/exec-sql.png "new-sql")
+      ![new-sql](images/query.png "new-sql")
 
-4. View result of SQL query and expand Tables under Autonomous Database connection to view the list of tables.
+5. View result of SQL query and expand Tables under Autonomous Database connection to view the list of tables.
 
-      ![view-result](images/view-result.png "view-result")
-
-      ![view-result](images/table-view.png "view-result")
+      ![view-result](images/result.png "view-result")
+ 
 
 ## Learn More
-
-* [Developing .NET Core Applications for Oracle Autonomous Database](https://www.oracle.com/database/technologies/appdev/dotnet/adbdotnetcore.html)   
+ 
 * [Oracle Data Provider for .NET](https://www.oracle.com/database/technologies/appdev/dotnet/odp.html)  
 * [.NET Core with Visual Studio](https://www.oracle.com/database/technologies/appdev/dotnet/adbdotnetquickstarts.html#third-option-tab)
 * [Code Examples: dotnet-db-samples](https://github.com/oracle/dotnet-db-samples/tree/master/samples/autonomous-db)
+* [Developing .NET Applications for Oracle Autonomous Database](https://www.oracle.com/database/technologies/appdev/dotnet/adbdotnetquickstarts.html#second-option-tab)
  
 ## Acknowledgements
 
