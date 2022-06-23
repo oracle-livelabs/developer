@@ -49,7 +49,7 @@ This lab assumes you have:
 
 ## Task 2: Develop .NET Applications for Oracle Autonomous Database with ODP.NET Core and Visual Studio Code
 
-Follow the below instructions to run the sample code in VS Code.
+In this task we will be using Autonomous Database wallet to establish connection. Follow the below instructions to run the sample code in VS Code.
 
 1. From the Visual Studio Code menu choose **View->Terminal** to open the Terminal window. At the command prompt in the terminal, create a new directory for your application and change into that directory.  
 2. Run **dotnet new console** from the command line to create a new project. 
@@ -123,6 +123,13 @@ Follow the below instructions to run the sample code in VS Code.
       - OracleConfiguration.WalletLocation (i.e. directory Autonomous Database credentials were unzipped to) 
    
 4. Run  **dotnet add package Oracle.ManagedDataAccess.Core**  from the command line to add ODP.NET Core to the project.
+      
+      ```
+      <copy>
+      dotnet add package Oracle.ManagedDataAccess.Core
+      </copy>
+      ``` 
+
       ![managed access core](images/managed-access-core.png "managed access core") 
 
 5. Execute the app by running **dotnet run** from the command line. You should see the customers sample data
@@ -133,12 +140,109 @@ Follow the below instructions to run the sample code in VS Code.
       </copy>
       ``` 
 
+      The output will be same as Task 2 but with only difference being this time we are establishing wallet-less connection.
+ 
+## Task 3: Develop .NET Applications for Oracle Autonomous Database with ODP.NET Core and Visual Studio Code (Wallet-less Connection)
+
+In this task, we will establish a wallet-less connection with Autonomous Database. Please follow the below instructions to run the sample code in VS Code.
+
+1. From the Visual Studio Code menu choose **View->Terminal** to open the Terminal window. At the command prompt in the terminal, create a new directory for your application and change into that directory.  
+2. Run **dotnet new console** from the command line to create a new project. 
+
+      ```
+      <copy>
+            dotnet new console
+      </copy>
+      ```   
+
+      From the Visual Studio Code menu choose **File->Open Folder** and select the directory you created above.
+
+      ![dotnet new console](images/dotnet-new-console.png "dotnet new console") 
+
+      You can see **Program.cs** along with other files created in the source directory.
+
+      ![c hash extension](images/dotnet-obj.png "managed access core")
+
+3. Access the Autonomous Database Information page, click on **DB Connection**, under Connection String, select **TLS** Option, and copy the connection string into a text file, which we will be using in this Task.   
+
+   ![tls](images/tls.png "tls")
+
+4. Open the **Program.cs** and copy the sample code contents below and save the file.
+   
+      ```
+      <copy>
+      using System;
+      using Oracle.ManagedDataAccess.Client;
+
+      namespace ODP.NET_Core_Autonomous
+      {
+      class Program
+      {
+            static void Main(string[] args)
+            {  
+                  string conString = "User Id=<db_user>;Password=<password>;" +
+      
+                  "Data Source =(description= (retry_count=20)(retry_delay=3)(address=(protocol=tcps)(port=1521)(host=adb.<region_id>.oraclecloud.com))(connect_data=(service_name=<servicename_prefix>_<instance_name>_high.adb.oraclecloud.com))(security=(ssl_server_dn_match=yes)(ssl_server_cert_dn=\"CN=adwc.<region_id>.oraclecloud.com, OU=Oracle BMCS US, O=Oracle Corporation,L=Redwood City, ST=California, C=US\")));";
+
+                  using (OracleConnection con = new OracleConnection(conString))
+                  {
+                  using (OracleCommand cmd = con.CreateCommand())
+                  {
+                        try
+                        { 
+
+                              con.Open();
+
+                              Console.WriteLine("Successfully connected to Oracle Autonomous Database");  
+
+                              cmd.CommandText = "select CUST_FIRST_NAME, CUST_LAST_NAME, CUST_CITY, CUST_CREDIT_LIMIT " +
+                              "from customers360 order by CUST_ID fetch first 20 rows only"; 
+
+                              OracleDataReader reader = cmd.ExecuteReader();
+                              while (reader.Read())
+                              Console.WriteLine(reader.GetString(0) + " " + reader.GetString(1) + " in " + 
+                                    reader.GetString(2) + " has " + reader.GetInt16(3) + " in credit." );
+                        }
+                        catch (Exception ex)
+                        {
+                              Console.WriteLine(ex.Message);
+                        }
+
+                        Console.ReadLine();
+                  }
+                  }
+            }
+      }
+      }   
+      </copy>
+      ``` 
+
+      - Substitute <db\_user\>, <password\>, <servicename\_prefix\>, <instance\_name\> and <region\_id\> depending upon the string that we copied to the text file   
+   
+5. Run  **dotnet add package Oracle.ManagedDataAccess.Core**  from the command line to add ODP.NET Core to the project.
+      
+      ```
+      <copy>
+      dotnet add package Oracle.ManagedDataAccess.Core
+      </copy>
+      ``` 
+
+      ![managed access core](images/managed-access-core.png "managed access core") 
+
+6. Execute the app by running **dotnet run** from the command line. You should see the customers sample data
+
+      ```
+      <copy>
+      dotnet run        
+      </copy>
+      ``` 
+
       ![customer-list](images/customer-list.png "customer-list") 
 
-6. The entire project folder should now look as below  
+7. The entire project folder should now look as below  
       ![customer-list](images/proj-folder.png "customer-list") 
 
-## Task 3: Using Oracle Developer Tools for VS Code to explore database schema and run SQL scripts  
+## Task 4: Using Oracle Developer Tools for VS Code to explore database schema and run SQL scripts  
 
 This Lab task shows how to use Oracle Developer Tools for VS Code, Connect to Autonomous Database Instance, and Run SQL Queries.
    
