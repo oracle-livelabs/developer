@@ -146,6 +146,8 @@ In this task we will be using Autonomous Database wallet to establish connection
 
 In this task, we will establish a wallet-less connection with Autonomous Database. Please follow the below instructions to run the sample code in VS Code.
 
+  > **Note:** It is essential to have completed Lab 1 Task 5 **One-way TLS connection to Oracle Autonomous Database** for wallet-less connections to run the example below in this task. 
+
 1. From the Visual Studio Code menu choose **View->Terminal** to open the Terminal window. At the command prompt in the terminal, create a new directory for your application and change into that directory.  
 2. Run **dotnet new console** from the command line to create a new project. 
 
@@ -289,6 +291,7 @@ This Lab task shows how to use Oracle Developer Tools for VS Code, Connect to Au
 * [Oracle Data Provider for .NET](https://www.oracle.com/database/technologies/appdev/dotnet/odp.html)  
 * [.NET Core with Visual Studio](https://www.oracle.com/database/technologies/appdev/dotnet/adbdotnetquickstarts.html#third-option-tab)
 * [Code Examples: dotnet-db-samples](https://github.com/oracle/dotnet-db-samples/tree/master/samples/autonomous-db)
+* [Code Example: no-wallet/autonomous-odp-core.cs](https://github.com/oracle/dotnet-db-samples/blob/master/samples/autonomous-db/odp-core/console-app/no-wallet/autonomous-odp-core.cs)
 * [Developing .NET Applications for Oracle Autonomous Database](https://www.oracle.com/database/technologies/appdev/dotnet/adbdotnetquickstarts.html#second-option-tab)
  
 ## Acknowledgements
