@@ -272,4 +272,4 @@ For generic installation steps, see [Node.js Downloads](https://nodejs.org/en/do
 
 * **Author** - Madhusudhan Rao, Principal Product Manager, Database 
 * **Contributors** - Kevin Lazarz, Senior Principal Product Manager, Database and Christopher Jones, Senior Principal Product Manager
-* **Last Updated By/Date** -  Madhusudhan Rao, Jun 24th 2022
+* **Last Updated By/Date** -  Madhusudhan Rao, 24th June 2022

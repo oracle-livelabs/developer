@@ -6,13 +6,13 @@ Polyglot programming is a computer program or script written in multiple program
 
 Enterprise applications are often developed by various development teams using different technologies. Some might be legacy apps as well. So it is essential to understand how various technologies and polyglot programming can be used to access the same underlying database. We are taking examples of different programming languages like Python, Java, .NET and Node.js to connect with an Autonomous database and run SQL queries. 
 
-In a real-life example, a front-end customer-facing web application is most likely written in Node.js or Python or PHP scripts, reading data from a database. At the same time, a Java-based backend application might be doing real-time data management. or backend teams might use Apex based Web or Mobile Applications to interact with the same database. Many Apps might be using PL/SQL cron jobs to sync data between different applications. Data Scientists might use Machine Learning Notebooks to run many complex ML algorithms or use python-based clients to interact with data.
+In a real-life example, a front-end customer-facing web application is most likely written in Node.js or Python or PHP scripts, reading data from a database. At the same time, a Java-based backend application might be doing real-time data management. or backend teams might use Apex-based Web or Mobile Applications to interact with the same database. Many Apps might be using PL/SQL cron jobs to sync data between different applications. Data Scientists might use Machine Learning Notebooks to run many complex ML algorithms or use python-based clients to interact with data.
  
 One could extend the Architecture to use microservices to connect and communicate between different systems using Oracle container for Kubernetes or OKE cluster.
 
-This workshop will demonstrate how to use Python, Node.js, Java and .NET to connect to the same Oracle Autonomous Database using the same wallet and run SQL queries. 
+This workshop will demonstrate running SQL queries from Python, Node.js, Java, and .NET to connect with an Oracle Autonomous Database using a wallet or through a wallet-less connection. 
 
-![Polyglot Architecture](images/polyglot-architecture.png =75%x* )
+![Polyglot Architecture](images/polyglot-architecture-v2.png)
 
 Estimated Time:  1 hour 30 mins
   

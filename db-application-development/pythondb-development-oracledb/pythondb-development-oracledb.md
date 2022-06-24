@@ -200,4 +200,4 @@ Use Python 3.6 to 3.10. Install [Python 3](https://yum.oracle.com/oracle-linux-p
 
 * **Author** - Madhusudhan Rao, Principal Product Manager, Database 
 * **Contributors** - Kevin Lazarz, Senior Principal Product Manager and Christopher Jones, Senior Principal Product Manager
-* **Last Updated By/Date** -  Madhusudhan Rao, June 2022
+* **Last Updated By/Date** -  Madhusudhan Rao, 24th June 2022

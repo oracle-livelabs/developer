@@ -225,4 +225,4 @@ unzip Wallet_DEMOADW.zip -d $HOME/< path to wallet folder>
 
 * **Author** - Madhusudhan Rao, Principal Product Manager, Database 
 * **Contributors** - Kevin Lazarz, Senior Principal Product Manager and Kuassi MENSAH, Director of Product Management 
-* **Last Updated By/Date** -  Madhusudhan Rao, May 2022
+* **Last Updated By/Date** -  Madhusudhan Rao, 24th June 2022
