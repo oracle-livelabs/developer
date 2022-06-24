@@ -249,7 +249,7 @@ For generic installation steps, see [Node.js Downloads](https://nodejs.org/en/do
 
       In **oracledb.getConnection()** Substitute <db\_user\>, <password\> and <DBName\_high\> depending upon the configuration in Lab 1
 
-      Run customers360.js 
+ 2. Run customers360.js 
 
       ```
       <copy>
@@ -257,7 +257,7 @@ For generic installation steps, see [Node.js Downloads](https://nodejs.org/en/do
       </copy>
       ```   
 
-      View the customer data from customers360 table
+3.  View the customer data from customers360 table
       
       This completes the lab. At this point, you know how to create a Node.js application that connects to Oracle Autonomous Database. You may now **proceed to the next lab**.
 
