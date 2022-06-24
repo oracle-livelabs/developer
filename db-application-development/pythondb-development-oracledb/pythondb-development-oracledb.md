@@ -41,11 +41,11 @@ This lab assumes:
 
 To use python-oracledb you need Python 3.6, 3.7, 3.8, 3.9 or 3.10 depending on the operating system  
 
-### Mac OS
+### macOS
 
 Use Python 3.7 to 3.10. Install [Python 3](https://www.python.org/downloads/macos/).   
 
-### Windows 
+### Microsoft Windows 
 
 Use Python 3.7 to 3.10. Install [Python 3](https://www.python.org/downloads/windows/).  
 
