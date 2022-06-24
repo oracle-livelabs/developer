@@ -16,6 +16,7 @@ Watch the video below for a quick walk through of the lab.
 
 - Publish REST API using Custom SQL
 - Publish REST API using stored PL/SQL procedure
+- Explore the OpenAPI View created by ORDS
 
 
 ### Prerequisites
@@ -23,9 +24,9 @@ Watch the video below for a quick walk through of the lab.
 - The following lab requires an <a href="https://www.oracle.com/cloud/free/" target="\_blank">Oracle Cloud account</a>. You may use your own cloud account, a cloud account that you obtained through a trial, or a training account whose details were given to you by an Oracle instructor.
 
 This lab assumes you have completed the following labs:
-* Lab 1: [Login to Oracle Cloud](https://objectstorage.us-phoenix-1.oraclecloud.com/p/SJgQwcGUvQ4LqtQ9xGsxRcgoSN19Wip9vSdk-D_lBzi7bhDP6eG1zMBl0I21Qvaz/n/c4u02/b/common/o/labs/cloud-login/pre-register-free-tier-account.md)
+* Lab 1: [Login to Oracle Cloud](https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md)
 * Lab 2: [Provision an Autonomous Database](https://raw.githubusercontent.com/oracle/learning-library/master/data-management-library/autonomous-database/shared/adb-provision/adb-provision.md)
-* Lab 3: [Connect to your Autonomous Database using Database Actions/SQL Developer Web](https://objectstorage.us-phoenix-1.oraclecloud.com/p/SJgQwcGUvQ4LqtQ9xGsxRcgoSN19Wip9vSdk-D_lBzi7bhDP6eG1zMBl0I21Qvaz/n/c4u02/b/common/o/labs/sqldevweb-login/sqldevweb-login.md)
+* Lab 3: [Connect to your Autonomous Database using Database Actions/SQL Developer Web](https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/sqldevweb-login/sqldevweb-login.md)
 * Lab 4: [Create and auto-REST enable a table](../create-table/create-table.md)
 * Lab 5: [Loading Data and Creating Business Objects](../load-data-and-biz-objs/load-data-and-biz-objs.md)
 
@@ -64,6 +65,10 @@ This lab assumes you have completed the following labs:
     ````
 
     ![Create Modules slider](./images/rest-6.png)
+
+    Also select **Not Protected** with the **Protected By Privilege** select list.
+
+    ![Protected By Privilege** select list](./images/rest-6a.png)
 
 7. When the **Create Module** slider looks like the below image (**NOTE: your URL hostname will be different than the below image**), left click the **Create** button.
 
@@ -276,6 +281,29 @@ This lab assumes you have completed the following labs:
 
     You can test other values by changing the id variable. Valid combinations are the first character is a lowercase **a** through **f** and the second character can be *1* though **9**. Valid examples are a1, e9, d3, b6, etc.
 
+## Task 3: Explore the OpenAPI View created by ORDS
+
+1. Start by going back to the module's main page. This can be done by clicking the module's name in the breadcrumbs in the upper left of the page.
+
+    ![breadcrumbs in the upper left of the page](./images/rest-47.png)
+
+2. Click the the pop out icon ![pop out icon](./images/pop-menu.png) in the Module region and select **OpenAPI View**.
+
+    ![the pop out icon and select OpenAPI View](./images/rest-48.png)
+
+3. The OpenAPI View page displays your REST services as a Swagger UI implementation.
+
+    ![OpenAPI View](./images/rest-49.png)
+
+    You can explore the APIs you created and try them out right there in the page 
+    
+    ![OpenAPI explore](./images/rest-50.png)
+
+    as well as export this page as an OpenAPI doc for use in other tools and services using the pop out icon ![pop out icon](./images/pop-menu.png) and selecting **Export Module** then **OpenAPI**.
+
+    ![OpenAPI doc export](./images/rest-51.png)
+
+
 ## Conclusion
 
 In this lab, you published a REST API using Custom SQL and accepting an input as well as published a REST API using a stored PL/SQL procedure.
@@ -286,6 +314,6 @@ You may now [proceed to the next lab](#next).
 ## Acknowledgements
 
 - **Author** - Jeff Smith, Distinguished Product Manager and Brian Spendolini, Trainee Product Manager
-- **Last Updated By/Date** - Brian Spendolini, September 2021
-- **Workshop Expiry Date** - April 2022
+- **Last Updated By/Date** - Brian Spendolini, April 2022
+- **Workshop Expiry Date** - June 2022
 
