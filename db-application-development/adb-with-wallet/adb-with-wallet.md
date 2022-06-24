@@ -42,25 +42,25 @@ In this lab, you will:
     ![Check the workload type on the left.](images/search-adw.png "Check the workload type on the left. ")
     </if>
     <if type="freetier">
-    ![Check the workload type on the left.](images/task1-4.png " Check the workload type on the left.")
+    ![Check the workload type on the left.](images/compartment-name.png " Check the workload type on the left.")
 
     > **Note:** Avoid the use of the `ManagedCompartmentforPaaS` compartment, as this is an Oracle default used for Oracle Platform Services.
    </if>
 
 5. This console shows that no databases yet exist. If there were a long list of databases, you could filter the list by the **State** of the databases (Available, Stopped, Terminated). You can also sort by __Workload Type__. In this example, __Data Warehouse__ is the workload type.
 
-    ![Autonomous Databases console.](./images/task1-5.png "Autonomous Databases console. ")
+    ![Autonomous Databases console.](./images/no-adb-instances.png "Autonomous Databases console. ")
 
 <if type="freetier">
 1. You can see your current default **region** in the top, right hand corner of the page. 
-    ![Select region on the far upper-right corner of the page.](./images/task1-6.png " ")
+    ![Select region on the far upper-right corner of the page.](./images/region-select.png " ")
 </if>
 
 ## Task 2: Create the Oracle Autonomous Database instance
 
 1. Click **Create Autonomous Database** to start the instance creation process.
 
-    ![Click Create Autonomous Database.](./images/task2-1.png "Click Create Autonomous Database. ")
+    ![Click Create Autonomous Database.](./images/create-autonomous-database.png "Click Create Autonomous Database. ")
 
 2.  This brings up the __Create Autonomous Database__ screen where you will specify the configuration of the instance. 
   
@@ -156,15 +156,17 @@ In this lab, you will:
     </copy>
     ```
 
-    Substitute <db\_user\> and <password\> with the username and password of your choice. 
+    Substitute <db\_user\> and <password\> with the username and password of your choice. Press the green button to run the script.
 
     ![sql worksheet](images/app-user.png =50%x*  "sql worksheet")
-    
+ 
 ## Task 4: Download the wallet for this database
  
-1. Click on the **DB Connection** button and download the Autonomous Database wallet.
+1. Click on the **DB Connection** button. This will open up Database Connection dialog box.
 
     ![Database Connection](images/database-connection.png =50%x* "Database Connection")
+
+    **Download** the Autonomous Database wallet.
 
     ![Download wallet](images/download-wallet.png =50%x*  "Download wallet") 
 
@@ -172,11 +174,13 @@ In this lab, you will:
 
     ![Wallet password](images/wallet-password.png =50%x*  "Wallet password") 
 
-    Click on the **Download** button and extract the wallet zip file to the folder of your choice. We will be using this folder in future labs of this workshop.
+    Click on the **Download** button.
+
+    Extract the wallet zip file to the folder of your choice. We will be using this **wallet folder** in future labs of this workshop.
 
 ## Task 5: One-way TLS connection to Oracle Autonomous Database for wallet-less connections  
  
-> **Note:**  This Task is optional and is required if you plan to use a wallet-less connection with Autonomous Database using Python. Otherwise, you can still connect to Autonomous Database using the wallet downloaded  in the previous Task.
+> **Note:**  This Task is required if you plan to use a wallet-less connection with Autonomous Database using Python or . NET. Otherwise, you can still connect to Autonomous Database using the wallet downloaded in the previous Task.
     
 1. One-way TLS connection to Oracle Autonomous Database 
 
@@ -217,7 +221,7 @@ In this lab, you will:
 
     ![connection string](images/tls-conn-string.png =75%x*  "connection string") 
 
-    the connection string would look as below
+    The connection string will look like this.
 
     ```
     <copy>
@@ -229,9 +233,9 @@ In this lab, you will:
     </copy>
     ```  
  
-    Copy the appropriate Connection String of the database instance used by your application in a text file. We will need this later. The  <region\_identifier\> and <service\_prefix\> will change depending on your ADB environment and the cloud region that you have selected.
+    Copy the appropriate Connection String of the database instance in a text file which can be used by your applications. The  <region\_identifier\> and <service\_prefix\> will change depending on your ADB environment and the cloud region that you have selected.
 
-    > **Note:** Please ensure that you should select **TLS** in the **TLS Authentication** dropdown while copying the connection string.  
+    > **Note:** Please select **TLS** in the **TLS Authentication** dropdown while copying the connection string.  
      
     
 You may now **proceed to the next lab**.
@@ -243,10 +247,10 @@ You may now **proceed to the next lab**.
 * Go to [the documentation](https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-cloud/user/autonomous-workflow.html#GUID-5780368D-6D40-475C-8DEB-DBA14BA675C3) on the typical workflow for using Autonomous Data Warehouse.
 * [About Connecting to an Autonomous Database Instance](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/connect-introduction.html)
 * [Update Network Options to Allow TLS or Require Only Mutual TLS (mTLS) Authentication on Autonomous Database](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/support-tls-mtls-authentication.html#GUID-3F3F1FA4-DD7D-4211-A1D3-A74ED35C0AF5)
-
+* [Securely Connecting to Autonomous DB Without a Wallet (Using TLS)](https://blogs.oracle.com/developers/post/securely-connecting-to-autonomous-db-without-a-wallet-using-tls)
 
 ## Acknowledgements
 
-- **Author** - Madhusudhan Rao, Oracle Autonomous Database Product Management  
+- **Author** - Madhusudhan Rao, Principal Product Manager, Database 
 - **Contributors** - Kevin Lazarz, Senior Principal Product Manager and Christopher Jones, Senior Principal Product Manager
 - **Last Updated By/Date** - Madhusudhan Rao, June 2022
