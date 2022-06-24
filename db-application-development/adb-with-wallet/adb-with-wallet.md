@@ -25,7 +25,7 @@ In this lab, you will:
 
 ### Prerequisites
 
-- This lab requires completing the **Get Started** section in the Contents menu on the left navigation.
+- This lab requires completing the **Get Started** section in the contents menu on the left navigation.
 - Login to the Oracle cloud and have access to create an Autonomous Database.
 
 ## Task 1: Choose Autonomous Database from the services menu
@@ -68,7 +68,7 @@ In this lab, you will:
 
     - __Compartment__ - Leave the default compartment.
     - __Display Name__ - Enter a memorable name for the database for display purposes. For example, use __DEMO\_ADW__.
-    - __Database Name__ - Use letters and numbers only, starting with a letter. Maximum length is 14 characters. (Underscores not initially supported.)
+    - __Database Name__ - Use letters and numbers only, starting with a letter. Maximum length is 30 characters.  
     - __Workload Type__ - For this lab, choose __Data Warehouse__ as the workload type. 
     - __Deployment Type__ - For this lab, choose __Shared Infrastructure__ as the deployment type.
     
@@ -78,18 +78,19 @@ In this lab, you will:
   
 4. Configure the database:
 
-    - __Always Free__ - For this lab, we recommend you leave Always Free **unchecked**. Please Note: If you select Always Free then Always Free Autonomous databases can utilize up to 1 core. The CPU core count cannot be adjusted. Always Free Autonomous databases can utilize up to 0.02 TB (20 GB) of storage. The storage size cannot be adjusted.  
+    - __Always Free__ - For this lab, we will leave Always Free **unchecked**. 
     - __Choose database version__ - Select a database version **19c** from the available versions.
     - __OCPU count__ - Number of CPUs for your service. For this lab, specify __1 CPU__.  
     - __Storage (TB)__ - Select your storage capacity in terabytes. For this lab, specify __1 TB__ of storage.  
     - __Auto Scaling__ - Auto Scaling - For this lab, keep auto-scaling **unchecked**. If autoscaling is enabled, the system will automatically use up to three times more CPU and IO resources to meet workload demand. learn more about [auto scaling](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/autonomous-auto-scale.html)
-  
+    
+    > **Note:** This Lab can also run on Always free configuration, If you select Always Free then Always Free Autonomous databases can utilize up to 1 core. The CPU core count cannot be adjusted and can utilize up to 0.02 TB (20 GB) of storage. The storage size cannot be adjusted. 
+    
     ![Choose a workload type.](./images/create-adw-screen2.png " ")
   
     Create administrator credentials:
 
-    - __Password and Confirm Password__ - Specify the password for ADMIN user of the service instance. The password must meet the following requirements:
-    - The password must be between 12 and 30 characters long and must include at least one uppercase letter, one lowercase letter, and one numeric character.
+    - __Password and Confirm Password__ - Specify the password for **ADMIN** user of the service instance.  
     - Autonomous Database requires strong passwords, the password you specify must meet the [default password complexity rules](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcu/#ADBCU-GUID-0E019845-31AE-44D7-B55C-9BCBA7E1377F). 
   
 5. Choose network access:
@@ -103,9 +104,9 @@ In this lab, you will:
 
     - __Bring Your Own License (BYOL)__ - Select this type when your organization has existing database licenses. [learn more](https://www.oracle.com/cloud/pricing/)
     - __License Included__ - Select this type when you want to subscribe to new database software licenses and the database cloud service.
-    - __Oracle Database Edition__ - Select __Oracle Database Enterprise Edition__, this option is available only if you had selected __Bring Your Own License (BYOL)__
+    - __Oracle Database Edition__ - Select __Oracle Database Enterprise Edition__, this option is available only if you have selected __Bring Your Own License (BYOL)__
   
-1. For this lab, do not provide a contact email address. The **Contact Email** field allows you to list contacts to receive operational notices and announcements as well as unplanned maintenance notifications.
+1. The **Contact Email** field allows you to list contacts to receive operational notices and announcements as well as unplanned maintenance notifications. This is optional. 
 
     ![Do not provide a contact email address.](images/contact-email-field.png)
  
@@ -117,21 +118,21 @@ In this lab, you will:
 
     ![Database instance homepage.](./images/instance-live.png "Database instance homepage ")
 
-## Task 3: Create tables and a database user  
+## Task 3: Create a database user and tables 
  
 1. Let us create a new database user and a couple of tables using the sample SH schema. SH schema is pre-installed with default Autonomous Database Instance creation.  
+
+    Click the **Database Actions** button.
   
     ![database actions](images/autonomous-database-actions.png =50%x*  "database actions")
 
-    Click the **Database Actions** button.
+    Select the **SQL** tab to open the **SQL worksheet**.
 
     ![database actions](images/db-actions.png =50%x*  "database actions")
-
-    Select the SQL tab to open the SQL worksheet.
-
+ 
     ![sql worksheet](images/sql-worksheet.png =50%x*  "sql worksheet")
 
-2. Create an Autonomous Database user <db\_user\> and grant required privileges to create tables. Substitute <db\_user\> and <password\> with the username and password of your choice.
+2. Create an Autonomous Database user <db\_user\> and grant required privileges to create tables. Copy-paste the code below into the SQL worksheet. 
 
     ```
     <copy>    
@@ -154,6 +155,8 @@ In this lab, you will:
     create table &USERNAME.customers360 as (select * from sh.customers); 
     </copy>
     ```
+
+    Substitute <db\_user\> and <password\> with the username and password of your choice. 
 
     ![sql worksheet](images/app-user.png =50%x*  "sql worksheet")
     
