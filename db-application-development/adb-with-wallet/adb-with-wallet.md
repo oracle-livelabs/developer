@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Oracle Autonomous Database is the world’s first autonomous data management in the cloud to deliver automated patching, upgrades, and tuning—including performing all routine database maintenance tasks while the system is running - without human intervention. This new autonomous database cloud is self-managing, self-securing, and self-repairing, which helps to eliminate manual database management and human errors.
+Oracle Autonomous Database is the world’s first autonomous data management in the cloud to deliver automated patching, upgrades, and tuning—including performing all routine database maintenance tasks while the system is running - without human intervention. This new Autonomous Database cloud is self-managing, self-securing, and self-repairing, which helps to eliminate manual database management and human errors.
 
 The Oracle Autonomous Database is fully elastic: You simply specify the number of OCPUs and the storage capacity in TBs for the database. At any time, you may scale up or down the OCPUs or the storage capacity.
 
@@ -13,7 +13,7 @@ Autonomous Database supports four main types of workload:
 * Transactions and analytics on JSON data
 * Oracle APEX Application Development
 
-This lab walks you through the steps to get started using the Oracle Autonomous Database on Oracle Cloud. you will provision a new Autonomous Data Warehouse instance.  
+This lab walks you through the steps to get started using the Oracle Autonomous Database on Oracle Cloud. You will provision a new Autonomous Data Warehouse instance.  
   
 Estimated Time: 20 minutes
 
@@ -26,14 +26,14 @@ In this lab, you will:
 ### Prerequisites
 
 - This lab requires completing the **Get Started** section in the contents menu on the left navigation.
-- Login to the Oracle cloud and have access to create an Autonomous Database.
+- Log in to the Oracle cloud and have access to create an Autonomous Database.
 
 ## Task 1: Choose Autonomous Database from the services menu
 
 1. Log in to the Oracle Cloud.
-2. Once you log in, the cloud services dashboard shows all the services available to you. Click the **navigation menu** in the upper left to show top level navigation choices. 
+2. Once you log in, the cloud services dashboard shows all the services available to you. Click the **navigation menu** in the upper left to show top-level navigation choices. 
 
-3. This lab shows provisioning of an Autonomous Data Warehouse database, click on **Oracle Database**, then select **Autonomous Data Warehouse**.
+3. This lab shows the provisioning of an Autonomous Data Warehouse database. Click on **Oracle Database**, then select **Autonomous Data Warehouse**.
 
     ![Click Autonomous Data Warehouse.](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/database-adw.png " ")
 
@@ -62,13 +62,13 @@ In this lab, you will:
 
     ![Click Create Autonomous Database.](./images/create-autonomous-database.png "Click Create Autonomous Database. ")
 
-2.  This brings up the __Create Autonomous Database__ screen where you will specify the configuration of the instance. 
+2.  This brings up the __Create Autonomous Database__ screen, where you will specify the instance's configuration. 
   
-3. Specify basic information for the autonomous database:
+3. Specify basic information for the Autonomous Database:
 
     - __Compartment__ - Leave the default compartment.
     - __Display Name__ - Enter a memorable name for the database for display purposes. For example, use __DEMO\_ADW__.
-    - __Database Name__ - Use letters and numbers only, starting with a letter. Maximum length is 30 characters.  
+    - __Database Name__ - Use letters and numbers only, starting with a letter. The maximum length is 30 characters.  
     - __Workload Type__ - For this lab, choose __Data Warehouse__ as the workload type. 
     - __Deployment Type__ - For this lab, choose __Shared Infrastructure__ as the deployment type.
     
@@ -84,14 +84,14 @@ In this lab, you will:
     - __Storage (TB)__ - Select your storage capacity in terabytes. For this lab, specify __1 TB__ of storage.  
     - __Auto Scaling__ - Auto Scaling - For this lab, keep auto-scaling **unchecked**. If autoscaling is enabled, the system will automatically use up to three times more CPU and IO resources to meet workload demand. learn more about [auto scaling](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/autonomous-auto-scale.html)
     
-    > **Note:** This Lab can also run on Always free configuration, If you select Always Free then Always Free Autonomous databases can utilize up to 1 core. The CPU core count cannot be adjusted and can utilize up to 0.02 TB (20 GB) of storage. The storage size cannot be adjusted. 
+    > **Note:** This Lab can also run on an **Always Free** configuration. If you select Always Free, the Autonomous Database can utilize up to 1 core and 20 GB of storage. The CPU core count and storage cannot be adjusted. 
     
     ![Choose a workload type.](./images/create-adw-screen2.png " ")
   
     Create administrator credentials:
 
-    - __Password and Confirm Password__ - Specify the password for **ADMIN** user of the service instance.  
-    - Autonomous Database requires strong passwords, the password you specify must meet the [default password complexity rules](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcu/#ADBCU-GUID-0E019845-31AE-44D7-B55C-9BCBA7E1377F). 
+    - __Password and Confirm Password__ - Specify the password for the **ADMIN** user of the service instance.  
+    - Autonomous Database requires strong passwords. The password you specify must meet the [default password complexity rules](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcu/#ADBCU-GUID-0E019845-31AE-44D7-B55C-9BCBA7E1377F). 
   
 5. Choose network access:
     - For this lab, accept the default, **Secure access from everywhere**. 
@@ -104,7 +104,7 @@ In this lab, you will:
 
     - __Bring Your Own License (BYOL)__ - Select this type when your organization has existing database licenses. [learn more](https://www.oracle.com/cloud/pricing/)
     - __License Included__ - Select this type when you want to subscribe to new database software licenses and the database cloud service.
-    - __Oracle Database Edition__ - Select __Oracle Database Enterprise Edition__, this option is available only if you have selected __Bring Your Own License (BYOL)__
+    - __Oracle Database Edition__ - Select __Oracle Database Enterprise Edition__. This option is available only if you have selected __Bring Your Own License (BYOL)__
   
 1. The **Contact Email** field allows you to list contacts to receive operational notices and announcements as well as unplanned maintenance notifications. This is optional. 
 
@@ -114,13 +114,13 @@ In this lab, you will:
 
     ![Click Create ADW Button.](images/create-adw-button.png)
  
-2.   Your instance will begin provisioning. In a few minutes, the state will turn from Provisioning to Available. At this point, your Autonomous Data Warehouse database is ready to use! Have a look at your instance's details here including its name, database version, OCPU count, and storage size.
+2.   Your instance will begin provisioning. In a few minutes, the State will turn from Provisioning to Available. At this point, your Autonomous Data Warehouse database is ready to use! Have a look at your instance's details here, including its name, database version, OCPU count, and storage size.
 
     ![Database instance homepage.](./images/instance-live.png "Database instance homepage ")
 
 ## Task 3: Create a database user and tables 
  
-1. Let us create a new database user and a couple of tables using the sample SH schema. SH schema is pre-installed with default Autonomous Database Instance creation.  
+1. Let us create a new database user and a couple of tables using the sample SH schema. SH schema is pre-installed with default instance creation.  
 
     Click the **Database Actions** button.
   
@@ -162,7 +162,7 @@ In this lab, you will:
  
 ## Task 4: Download the wallet for this database
  
-1. Click on the **DB Connection** button. This will open up Database Connection dialog box.
+1. Click on the **DB Connection** button. This will open up the Database Connection dialog box.
 
     ![Database Connection](images/database-connection.png =50%x* "Database Connection")
 

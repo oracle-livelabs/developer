@@ -13,10 +13,13 @@ In this lab, you will:
 * Write Java code to access Oracle Database 
 * Run the code
 
-### Prerequisites 
-This lab assumes you have:
+### Prerequisites  
 
-* Autonomous Database has been created
+This lab assumes:
+
+* An Autonomous Database has been created.
+* A wallet has been downloaded. 
+* One-way TLS connection has been configured.
 
 ## Task 1: Install JDK8 or higher
 
@@ -24,7 +27,7 @@ Download [JDK8](https://www.oracle.com/java/technologies/javase/javase-jdk8-down
   
 ## Task 2: Download JDBC driver and other jar files
    
-> **Note:** ojdbc8-full.tar.gz and ojdbc10-full.tar.gz contains oraclepki.jar, osdt\_core.jar, and osdt\_cert.jar required for connecting with Autonomous database.  
+> **Note:** ojdbc8-full.tar.gz and ojdbc10-full.tar.gz contains oraclepki.jar, osdt\_core.jar, and osdt\_cert.jar required for connecting with an Autonomous Database.  
 
 * Download either 19c or 18c JDBC driver from the following download page. [ojdbc10-full.tar.gz or ojdbc8-full.tar.gz and ucp.jar](https://www.oracle.com/database/technologies/appdev/jdbc-downloads.html)
 * 21c is an Innovation Release. 21c has premier support until April 2024. Refer to [Lifetime Support Policy](https://www.oracle.com/us/support/library/lifetime-support-technology-069183.pdf) for more details.
@@ -78,7 +81,7 @@ Download [JDK8](https://www.oracle.com/java/technologies/javase/javase-jdk8-down
 
 ## Task 4: Extract the downloaded wallet
 
-Please note since we had created Autonomous Database instance by the name DEMOADW, our wallet zip file name will be Wallet_DEMOADW
+Please note since we had created an Autonomous Database instance by the name DEMOADW, our wallet zip file name will be Wallet_DEMOADW
  
 ```
 <copy>
@@ -91,7 +94,7 @@ unzip Wallet_DEMOADW.zip -d $HOME/< path to wallet folder>
 1. In the vi editor or Visual studio code write sales360.java replace hostname ,service name, database username and password as per your installation and configuration
 2. Write the Java code
    
-      Database URL **DB_URL** will be a string consisting of Autonomous Database instance name and path the the extracted Autonomous Database wallet folder
+      Database URL **DB_URL** will be a string consisting of an Autonomous Database instance name and path the the extracted Autonomous Database wallet folder
 
       ```
       <copy>

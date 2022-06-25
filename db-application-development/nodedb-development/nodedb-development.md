@@ -18,10 +18,12 @@ In this lab, you will:
 * Run the code
 
 ### Prerequisites 
-This lab assumes you have:
- 
+
+This lab assumes:
+
 * An Autonomous Database has been created.
 * A wallet has been downloaded. 
+* One-way TLS connection has been configured.
  
 ## Task 1: Install the Oracle Instant Client Basic Package
  
@@ -69,7 +71,7 @@ For other Linux flavors, install the Instant Client zip files and follow the ins
 
 You can also refer [Database Client Installation Guide for Linux](https://docs.oracle.com/en/database/oracle/oracle-database/21/lacli/install-instant-client-using-zip.html#GUID-D3DCB4FB-D3CA-4C25-BE48-3A1FB5A22E84)
    
-## Task 2: Extract Autonomous Database wallet under the Instant Client network/admin folder
+## Task 2: Extract an Autonomous Database wallet under the Instant Client network/admin folder
  
 ### macOS
    
