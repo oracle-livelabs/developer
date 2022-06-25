@@ -44,7 +44,7 @@ In this lab, you will:
     <if type="freetier">
     ![Check the workload type on the left.](images/compartment-name.png " Check the workload type on the left.")
 
-    > **Note:** Avoid the use of the `ManagedCompartmentforPaaS` compartment, as this is an Oracle default used for Oracle Platform Services.
+    > **Note:** Avoid using the `ManagedCompartmentforPaaS` compartment, as this is an Oracle default used for Oracle Platform Services.
    </if>
 
 5. This console shows that no databases yet exist. If there were a long list of databases, you could filter the list by the **State** of the databases (Available, Stopped, Terminated). You can also sort by __Workload Type__. In this example, __Data Warehouse__ is the workload type.
@@ -52,7 +52,7 @@ In this lab, you will:
     ![Autonomous Databases console.](./images/no-adb-instances.png "Autonomous Databases console. ")
 
 <if type="freetier">
-1. You can see your current default **region** in the top, right hand corner of the page. 
+1. You can see your current default **region** in the top right-hand corner of the page. 
     ![Select region on the far upper-right corner of the page.](./images/region-select.png " ")
 </if>
 

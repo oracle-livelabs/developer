@@ -2,11 +2,11 @@
 
 ## Introduction
 
-Node.js an asynchronous event-driven JavaScript runtime, It is designed to build scalable network applications. Thread-based networking is relatively inefficient and very difficult to use. Furthermore, users of Node.js are free from worries of dead-locking the process, since there are no locks. Almost no function in Node.js directly performs I/O, so the process never blocks except when the I/O is performed using synchronous methods of Node.js standard library. Because nothing blocks, scalable systems are very reasonable to develop in Node.js.
+Node.js, an asynchronous event-driven JavaScript runtime, is designed to build scalable network applications. Thread-based networking is relatively inefficient and very difficult to use. Furthermore, users of Node.js are free from worries of dead-locking the process since there are no locks. Almost no function in Node.js directly performs I/O, so the process never blocks except when the I/O is performed using synchronous methods of the Node.js standard library. Because nothing blocks, scalable systems are very reasonable to develop in Node.js.
 
 ### About this Lab
 
-This lab uses node-oracledb module, which lets you do SQL, PL/SQL, and Oracle's document storage, SODA calls. Node-oracledb can be used with TypeScript or directly with Node.js. 
+This Lab uses node-oracledb module, which lets you do SQL, PL/SQL, and Oracle's document storage, SODA calls. Node-oracledb can be used with TypeScript or directly with Node.js. 
 
 Estimated Time: 20 minutes
  
@@ -45,11 +45,11 @@ Mount the DMG and run its install_ic.sh script. [More details are in the Instant
 
 Download the free Oracle Instant Client Basic zip file from [Oracle Instant Client for Microsoft Windows (x64) 64-bit](https://www.oracle.com/database/technologies/instant-client/winx64-64-downloads.html) . (If your Node.js is 32-bit, then you will need to download the 32-bit Basic package from here instead). Remember to install the matching VS Re distributable, as shown on the download page.
 
-Extract the libraries to an accessible directory, for example the libraries could be in C:\oracle\instantclient\_19\_8
+Extract the libraries to an accessible directory. For example,  the libraries could be in C:\oracle\instantclient\_19\_8
 
 ### Oracle Linux
  
-If you are using Oracle Linux 7 run these commands
+If you are using Oracle Linux 7, run these commands
 
 ```
 <copy>
@@ -58,7 +58,7 @@ sudo yum install oracle-instantclient-basic
 </copy>
 ```   
 
-If you are using Oracle Linux 8 run these commands
+If you are using Oracle Linux 8, run these commands
 
 ```
 <copy>

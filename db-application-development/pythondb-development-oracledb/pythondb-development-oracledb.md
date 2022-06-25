@@ -18,7 +18,7 @@ By default, python-oracledb runs in a Thin mode which connects directly to Oracl
 * Python-oracledb is now a Thin driver by default - it connects directly to Oracle Database. 
 * Python-oracledb has comprehensive functionality conforming to the Python Database API v2.0 Specification, with many additions and just a couple of exclusions.
 * A Thick mode can be optionally enabled by an application call. This mode has similar functionality to cx_Oracle and supports Oracle Database features that extend the Python DB API. To use this mode, the widely used and tested Oracle Client libraries such as from Oracle Instant Client must be installed separately.
-* Python-oracledb runs on many platforms including favorites like Linux, macOS and Windows. It can also be used on platforms where Oracle Client libraries are not available (such as Apple M1, Alpine Linux, or IoT devices), or where the client libraries are not easily installed (such as some cloud environments).
+* Python-oracledb runs on many platforms, including favourites like Linux, macOS and Windows. It can also be used on platforms where Oracle Client libraries are not available (such as Apple M1, Alpine Linux, or IoT devices), or where the client libraries are not easily installed (such as some cloud environments).
 
 Estimated Time: 20 minutes
 
@@ -26,7 +26,7 @@ Estimated Time: 20 minutes
 
 In this lab, you will:
 
-* Write Python code to access Oracle Database using python-oracledb with an Autonomous Database wallet
+* Write Python code to access Oracle Database using python-oracledb with an Autonomous Database wallet.
 * Run Python code without an Autonomous Database wallet (wallet-less) using a One-way TLS connection string copied from Lab 1
   
 ### Prerequisites
@@ -39,7 +39,7 @@ This lab assumes:
 
 ## Task 1: Install python
 
-To use python-oracledb you need Python 3.6, 3.7, 3.8, 3.9 or 3.10 depending on the operating system  
+To use python-oracledb you need Python 3.6, 3.7, 3.8, 3.9 or 3.10 depending on the operating system. 
 
 ### macOS
 
@@ -61,11 +61,11 @@ Use Python 3.6 to 3.10. Install [Python 3](https://yum.oracle.com/oracle-linux-p
       </copy>
       ``` 
 
-      On Oracle Linux 8, you can use pre-installed Python 3.6 and On Oracle Linux 7, you might need to install [Python 3](https://yum.oracle.com/oracle-linux-python.html).
+      On Oracle Linux 8, you can use pre-installed Python 3.6, and On Oracle Linux 7, you might need to install [Python 3](https://yum.oracle.com/oracle-linux-python.html).
  
 ## Task 2: Install python-oracledb
 
-1. Install python-oracledb use to following command, The --user option may be useful if you do not have permission to write to system directories
+1. Install python-oracledb use to the following command. The --user option may be useful if you do not have permission to write to system directories
 
       ```
       <copy>
@@ -85,7 +85,7 @@ Use Python 3.6 to 3.10. Install [Python 3](https://yum.oracle.com/oracle-linux-p
 
       Copy these two files into a folder named *mywalletfiles* in any directory of your choice, 
 
-      View **tnsnames.ora** for connection details and copy the name of the connection string in the python script. For example connection name will can be DEMOADW_high or DEMOADW_low if your ADB Instance name is DEMOADW
+      View **tnsnames.ora** for connection details and copy the name of the connection string in the python script. For example connection name will can be DEMOADW\_high or DEMOADW\_low if your ADB Instance name is DEMOADW
 
       ```
       <copy>
@@ -144,7 +144,7 @@ Use Python 3.6 to 3.10. Install [Python 3](https://yum.oracle.com/oracle-linux-p
    
 ## Task 4: Python Application Development with One-way TLS wallet-less connection 
  
-1. To make a wallet-less connection with Autonomous Database, task 5 (One-way TLS connection to Oracle Autonomous Database for wallet-less connections) in Lab 1 has to be completed.
+1. To make a wallet-less connection with Autonomous Database, Task 5 (One-way TLS connection to Oracle Autonomous Database for wallet-less connections) in Lab 1 of this workshop has to be completed.
 
 2. Create *customers360.py* to view data in the customers360 table.  
  
@@ -188,7 +188,7 @@ Use Python 3.6 to 3.10. Install [Python 3](https://yum.oracle.com/oracle-linux-p
 
       You will now be able to view customer data from customers360 table.
  
-   You successfully made it to the end this lab. You may now  **proceed to the next lab** .
+   You successfully made it to the end this of this. You may now  **proceed to the next lab**.
 
 ## Learn More
     
