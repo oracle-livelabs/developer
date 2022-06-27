@@ -313,6 +313,8 @@ You may now [proceed to the next lab](#next).
 
 ## Acknowledgements
 
+
  - **Author** - Jeff Smith, Distinguished Product Manager
  - **Last Updated By/Date** - Jeff Smith, July 2022
+
 
