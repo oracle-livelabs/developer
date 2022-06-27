@@ -14,7 +14,7 @@ Autonomous Database supports four main types of workload:
 * Oracle APEX Application Development
 
 This lab walks you through the steps to get started using the Oracle Autonomous Database on Oracle Cloud. You will provision a new Autonomous Data Warehouse instance.  
-  
+
 Estimated Time: 20 minutes
 
 ### Objectives
@@ -31,7 +31,7 @@ In this lab, you will:
 ## Task 1: Choose Autonomous Database from the services menu
 
 1. Log in to the Oracle Cloud.
-2. Once you log in, the cloud services dashboard shows all the services available to you. Click the **navigation menu** in the upper left to show top-level navigation choices. 
+2. Once you log in, the cloud services dashboard shows all the services available to you. Click the **navigation menu** in the upper left to show top-level navigation choices.
 
 3. This lab shows the provisioning of an Autonomous Data Warehouse database. Click on **Oracle Database**, then select **Autonomous Data Warehouse**.
 
@@ -52,7 +52,7 @@ In this lab, you will:
     ![Autonomous Databases console.](./images/no-adb-instances.png "Autonomous Databases console. ")
 
 <if type="freetier">
-1. You can see your current default **region** in the top right-hand corner of the page. 
+1. You can see your current default **region** in the top right-hand corner of the page.
     ![Select region on the far upper-right corner of the page.](./images/region-select.png " ")
 </if>
 
@@ -62,42 +62,42 @@ In this lab, you will:
 
     ![Click Create Autonomous Database.](./images/create-autonomous-database.png "Click Create Autonomous Database. ")
 
-2.  This brings up the __Create Autonomous Database__ screen, where you will specify the instance's configuration. 
-  
+2.  This brings up the __Create Autonomous Database__ screen, where you will specify the instance's configuration.
+
 3. Specify basic information for the Autonomous Database:
 
     - __Compartment__ - Leave the default compartment.
     - __Display Name__ - Enter a memorable name for the database for display purposes. For example, use __DEMO\_ADW__.
     - __Database Name__ - Use letters and numbers only, starting with a letter. The maximum length is 30 characters.  
-    - __Workload Type__ - For this lab, choose __Data Warehouse__ as the workload type. 
+    - __Workload Type__ - For this lab, choose __Data Warehouse__ as the workload type.
     - __Deployment Type__ - For this lab, choose __Shared Infrastructure__ as the deployment type.
-    
+
     <if type="freetier">
     ![Create ADW screen](./images/create-adw-screen1.png "Create ADW screen ")
-    </if> 
-  
+    </if>
+
 4. Configure the database:
 
-    - __Always Free__ - For this lab, we will leave Always Free **unchecked**. 
+    - __Always Free__ - For this lab, we will leave Always Free **unchecked**.
     - __Choose database version__ - Select a database version **19c** from the available versions.
     - __OCPU count__ - Number of CPUs for your service. For this lab, specify __1 CPU__.  
     - __Storage (TB)__ - Select your storage capacity in terabytes. For this lab, specify __1 TB__ of storage.  
     - __Auto Scaling__ - Auto Scaling - For this lab, keep auto-scaling **unchecked**. If autoscaling is enabled, the system will automatically use up to three times more CPU and IO resources to meet workload demand. learn more about [auto scaling](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/autonomous-auto-scale.html)
-    
-    > **Note:** This Lab can also run on an **Always Free** configuration. If you select Always Free, the Autonomous Database can utilize up to 1 core and 20 GB of storage. The CPU core count and storage cannot be adjusted. 
-    
+
+    > **Note:** This Lab can also run on an **Always Free** configuration. If you select Always Free, the Autonomous Database can utilize up to 1 core and 20 GB of storage. The CPU core count and storage cannot be adjusted.
+
     ![Choose a workload type.](./images/create-adw-screen2.png " ")
-  
+
     Create administrator credentials:
 
     - __Password and Confirm Password__ - Specify the password for the **ADMIN** user of the service instance.  
-    - Autonomous Database requires strong passwords. The password you specify must meet the [default password complexity rules](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcu/#ADBCU-GUID-0E019845-31AE-44D7-B55C-9BCBA7E1377F). 
-  
+    - Autonomous Database requires strong passwords. The password you specify must meet the [default password complexity rules](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcu/#ADBCU-GUID-0E019845-31AE-44D7-B55C-9BCBA7E1377F).
+
 5. Choose network access:
-    - For this lab, accept the default, **Secure access from everywhere**. 
-    
+    - For this lab, accept the default, **Secure access from everywhere**.
+
      ![Choose a deployment type.](./images/create-adw-screen3.png " ")
- 
+
 <if type="freetier">
 1. Choose a license type. For this lab, choose __License Included__. The two license types are:
 </if>
@@ -105,34 +105,34 @@ In this lab, you will:
     - __Bring Your Own License (BYOL)__ - Select this type when your organization has existing database licenses. [learn more](https://www.oracle.com/cloud/pricing/)
     - __License Included__ - Select this type when you want to subscribe to new database software licenses and the database cloud service.
     - __Oracle Database Edition__ - Select __Oracle Database Enterprise Edition__. This option is available only if you have selected __Bring Your Own License (BYOL)__
-  
-1. The **Contact Email** field allows you to list contacts to receive operational notices and announcements as well as unplanned maintenance notifications. This is optional. 
+
+1. The **Contact Email** field allows you to list contacts to receive operational notices and announcements as well as unplanned maintenance notifications. This is optional.
 
     ![Do not provide a contact email address.](images/contact-email-field.png)
- 
+
     Click on __Create Autonomous Database__. button
 
     ![Click Create ADW Button.](images/create-adw-button.png)
- 
+
 2.   Your instance will begin provisioning. In a few minutes, the State will turn from Provisioning to Available. At this point, your Autonomous Data Warehouse database is ready to use! Have a look at your instance's details here, including its name, database version, OCPU count, and storage size.
 
     ![Database instance homepage.](./images/instance-live.png "Database instance homepage ")
 
-## Task 3: Create a database user and tables 
- 
+## Task 3: Create a database user and tables
+
 1. Let us create a new database user and a couple of tables using the sample SH schema. SH schema is pre-installed with default instance creation.  
 
     Click the **Database Actions** button.
-  
+
     ![database actions](images/autonomous-database-actions.png =50%x*  "database actions")
 
     Select the **SQL** tab to open the **SQL worksheet**.
 
     ![database actions](images/db-actions.png =50%x*  "database actions")
- 
+
     ![sql worksheet](images/sql-worksheet.png =50%x*  "sql worksheet")
 
-2. Create an Autonomous Database user <db\_user\> and grant required privileges to create tables. Copy-paste the code below into the SQL worksheet. 
+2. Create an Autonomous Database user <db\_user\> and grant required privileges to create tables. Copy-paste the code below into the SQL worksheet.
 
     ```
     <copy>    
@@ -141,7 +141,7 @@ In this lab, you will:
     alter user &USERNAME
         default tablespace users
         temporary tablespace temp
-        quota unlimited on users; 
+        quota unlimited on users;
     grant create session,
         create view,
         create sequence,
@@ -150,76 +150,76 @@ In this lab, you will:
         create trigger,
         create type,
         create materialized view
-        to &USERNAME; 
+        to &USERNAME;
     create table &USERNAME.sales360 as (select * from sh.sales);
-    create table &USERNAME.customers360 as (select * from sh.customers); 
+    create table &USERNAME.customers360 as (select * from sh.customers);
     </copy>
     ```
 
     Substitute <db\_user\> and <password\> with the username and password of your choice. Press the green button to run the script.
 
     ![sql worksheet](images/app-user.png =50%x*  "sql worksheet")
- 
+
 ## Task 4: Download the wallet for this database
- 
+
 1. Click on the **DB Connection** button. This will open up the Database Connection dialog box.
 
     ![Database Connection](images/database-connection.png =50%x* "Database Connection")
 
     **Download** the Autonomous Database wallet.
 
-    ![Download wallet](images/download-wallet.png =50%x*  "Download wallet") 
+    ![Download wallet](images/download-wallet.png =50%x*  "Download wallet")
 
-    Choose a new wallet password. 
+    Choose a new wallet password.
 
-    ![Wallet password](images/wallet-password.png =50%x*  "Wallet password") 
+    ![Wallet password](images/wallet-password.png =50%x*  "Wallet password")
 
     Click on the **Download** button.
 
     Extract the wallet zip file to the folder of your choice. We will be using this **wallet folder** in future labs of this workshop.
 
 ## Task 5: One-way TLS connection to Oracle Autonomous Database for wallet-less connections  
- 
+
 > **Note:**  This Task is required if you plan to use a wallet-less connection with Autonomous Database using Python or . NET. Otherwise, you can still connect to Autonomous Database using the wallet downloaded in the previous Task.
-    
-1. One-way TLS connection to Oracle Autonomous Database 
+
+1. One-way TLS connection to Oracle Autonomous Database
 
     Complete the following steps in an Oracle Cloud console in the Autonomous Database Information section of the ADB instance details:
 
     Click the **Edit** link next to **Access Control List** to update the Access Control List (ACL).  
-    ![Edit access type](images/access-type.png =75%x*  "Autonomous-database") 
+    ![Edit access type](images/access-type.png =75%x*  "Autonomous-database")
 
     The **Edit Access Control List** dialog box is displayed. select the type of address list entries and the corresponding values. You can include the required IP addresses, hostnames, or Virtual Cloud Networks (VCNs). The ACL limits access to only the IP addresses or VCNs that have been defined and blocks all other incoming traffic.  
 
     ![access control list](images/acl.png =75%x*  "access control list")   
 
-    You should be able to establish a connection with the database by just clicking on **Add My IP Address** button. If you have issues establishing a connection, please follow the instructions below to get the IP address. 
+    You should be able to establish a connection with the database by just clicking on **Add My IP Address** button. If you have issues establishing a connection, please follow the instructions below to get the IP address.
 
-      > **Windows:** 
+      > **Windows:**
       To get your public IP address:  
-      1. Open the command prompt and run *ipconfig /all*. 
-      2. Search for 'IPv4 address:' under 'Wifi' or 'EthernetX' section based on your current network adapter to get the IP address. 
-   
-      > **macOS:** 
+      1. Open the command prompt and run *ipconfig /all*.
+      2. Search for 'IPv4 address:' under 'Wifi' or 'EthernetX' section based on your current network adapter to get the IP address.
+
+      > **macOS:**
       To get your public IP address:  
       1. From the Apple menu, select System Preferences. In *System Preferences*, select *Network* from the View menu.
       2. In the Network window, select a network port (e.g., AirPort, Ethernet, Wi-Fi). The IP address will be visible under "Status:" section if it is connected.
 
-      > **Linux/UNIX:** 
-      To get your public IP address: 
+      > **Linux/UNIX:**
+      To get your public IP address:
       1. Run *ifconfig*.
       2. This command displays a list of all the network interfaces available on the machine. Look for the appropriate network interface (e.g., ens3 in Oracle Linux), and you will see an "inet" section under this containing your IP address.
 
     In the **Autonomous Database Information** tab and click the **Edit** link next to **Mutual TLS (mTLS) Authentication**. The Edit Mutual TLS Authentication dialog is displayed.   
 
-    In the **Edit Mutual TLS Authentication** dialog box, **un-check** the **Require mutual TLS (mTLS) authentication** checkbox  and click **Save Changes**. 
+    In the **Edit Mutual TLS Authentication** dialog box, **un-check** the **Require mutual TLS (mTLS) authentication** checkbox  and click **Save Changes**.
 
-    ![access type](images/tls-authentication.png =75%x*  "access type") 
+    ![access type](images/tls-authentication.png =75%x*  "access type")
 
-    In the **Autonomous Database Information** page and click **DB Connection** on the top of the page. A **Database Connection** dialog box is displayed. 
-    In the **Database Connection** dialog box, select **TLS** under **TLS Authentication** drop-down list. 
+    In the **Autonomous Database Information** page and click **DB Connection** on the top of the page. A **Database Connection** dialog box is displayed.
+    In the **Database Connection** dialog box, select **TLS** under **TLS Authentication** drop-down list.
 
-    ![connection string](images/tls-conn-string.png =75%x*  "connection string") 
+    ![connection string](images/tls-conn-string.png =75%x*  "connection string")
 
     The connection string will look like this.
 
@@ -232,12 +232,12 @@ In this lab, you will:
         (ssl_server_cert_dn="CN=<cn name>, OU=Oracle BMCS US, O=Oracle Corporation, L=Redwood City, ST=California, C=US")))
     </copy>
     ```  
- 
+
     Copy the appropriate Connection String of the database instance in a text file which can be used by your applications. The  <region\_identifier\> and <service\_prefix\> will change depending on your ADB environment and the cloud region that you have selected.
 
     > **Note:** Please select **TLS** in the **TLS Authentication** dropdown while copying the connection string.  
-     
-    
+
+
 You may now **proceed to the next lab**.
 
 ## Learn more
@@ -251,6 +251,6 @@ You may now **proceed to the next lab**.
 
 ## Acknowledgements
 
-- **Author** - Madhusudhan Rao, Principal Product Manager, Database 
+- **Author** - Madhusudhan Rao, Principal Product Manager, Database
 - **Contributors** - Kevin Lazarz, Senior Principal Product Manager and Christopher Jones, Senior Principal Product Manager
 - **Last Updated By/Date** - Madhusudhan Rao, June 2022
