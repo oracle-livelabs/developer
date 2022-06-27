@@ -2,13 +2,13 @@
 
 ## Introduction
 
-In this lab, you will make changes and deploy the pre-built SpringBoot Java backend Docker image to OKE, then configure the API Gateway.
+In this lab, you will make changes and deploy the pre-built SpringBoot Java backend Docker image to OKE, update the code to reflect the IP address of the API Gateway, and finally update your kubernetes pod to use the latest docker image.
 
 Estimated time: 15 minutes
 
-Watch the video below for a quick walk-through of the lab.
+<!-- Watch the video below for a quick walk-through of the lab.
 
-[](youtube:-twDGXrjOrI)
+[](youtube:-twDGXrjOrI) -->
 
 ### Understand the Java backend application
 
@@ -36,7 +36,6 @@ The backend is implemented using the following Java classes (under ./backend/src
 * Build and deploy the Docker image of the application
 * Deploy the image on the Oracle Kubernetes Engine (OKE)
 * Describe the steps for Undeploying
-* Configure the API Gateway
 * Test the backend application
 
 ### Prerequisites
@@ -144,42 +143,47 @@ The OCI Container Registry is where your Docker images are managed. A container 
 
 In order to call the API's that are built to retrieve the list of Todo items, update items etc, we must update the value of API_LIST to point to the load balancer ip address.
 
-1. Navigate to the following directory
-  ```
-  <copy>
-  cd reacttodo/oci-react-samples-1/MtdrSpring/backend/src/main/frontend/src
-  </copy>
-  ```
-2. Change API_LIST to the external IP address of your load balancer, and append /todolist
-  ```
-  <copy>
-  vi API.js
-  </copy>
-  ```
+  1. Navigate to the following directory
+    ```
+    <copy>
+    cd reacttodo/oci-react-samples-1/MtdrSpring/backend/src/main/frontend/src
+    </copy>
+    ```
+  2. Change API_LIST to the external IP address of your load balancer, and append /todolist, for example like: http://`<ip_address>`/todolist
 
-![](images/api-list.png "api_list")
-3. Navigate back to the backend folder 
-  ```
-  <copy>
-  cd ../../../..
-  source build.sh
-  </copy>
-  ```
-4. Next in order for the code change to be reflected in your pod you must update the image.
-  ```
-  <copy>
-  kubectl set image deployments/todolistapp-springboot-deployment todolistapp-springboot=phx.ocir.io/<tenancy_name>/reacttodo/todolistapp-springboot:0.1 -n mtdrworkshop
-  </copy>
-  ```
-  Replace `phx` with your region.
-  ```
+    ```
+    <copy>
+    vi API.js
+    </copy>
+    ```
+
+  ![](images/api-list.png "api_list")
+
+  3. Navigate back to the backend folder 
+
+    ```
+    <copy>
+    cd ../../../..
+    source build.sh
+    </copy>
+    ```
+
+  4. Next, in order for the code change to be reflected in your pod you must update the pod to use the latest image
+
+    ```
+    <copy>
+    kubectl set image deployments/todolistapp-springboot-deployment todolistapp-springboot=phx.ocir.io/<tenancy_name>/reacttodo/todolistapp-springboot:0.1 -n mtdrworkshop
+    </copy>
+    ```
+  
+    Replace `phx` with your region.
+  
 5. Give your pods a couple minutes to restart. Check their progress using the `pods` command.
-![](images/todolist-login.png "todolist-login")
+  ![](images/todolist-login.png "todolist-login")
 
 
 6. Once your pods are up and running. Go to your web browser and navigate to the load balancer IP address. Once you login you should see the following output, which means your deployment is successful!
-
-![](images/successful-todo.png "successful-todo")
+  ![](images/successful-todo.png "successful-todo")
 
 
 You may now **proceed to the next lab**.
