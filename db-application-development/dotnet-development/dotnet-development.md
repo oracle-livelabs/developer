@@ -2,16 +2,15 @@
 
 ## Introduction
  
-This lab shows you how to connect .NET Core applications to Oracle Autonomous Database with Oracle Data Provider for .NET (ODP.NET) Core, Visual Studio Code, and the Oracle Developer Tools for VS Code extension.  
+This lab shows you how to connect .NET Core applications to Oracle Autonomous Database with Oracle Data Provider for .NET (ODP.NET) Core using Visual Studio Code and the Oracle Developer Tools for VS Code extension.  
 
 Estimated Time: 30 minutes
  
 ### Objectives
  
 In this lab, you will: 
-
 * Develop .NET Applications for Oracle Autonomous Database with ODP.NET Core and Visual Studio Code
-* Using Oracle Developer Tools For VS Code
+* Utilize the Oracle Developer Tools For VS Code extension
 
 ### Prerequisites 
 This lab assumes you have:
@@ -23,11 +22,11 @@ This lab assumes you have:
 
 1. Download and install [VS Code](https://code.visualstudio.com/download).
 
-## Task 2: Install the required Visual Studio Code extensions
+## Task 2: Install the .NET SDK and Visual Studio Code extensions
 
 1. Click on the Extensions icon in the Activity Bar on the side of VS Code or use the View: **Show Extensions** command (Ctrl+Shift+X).
 2. Type **Oracle** in the extension search bar.  
-3. Locate **Oracle Developer Tools** for VS Code and click it to open the extension's page.
+3. Locate **Oracle Developer Tools for VS Code** and click it to open the extension's page.
 
       ![dev-tools](images/dev-tools.png =50%x* "dev-tools") 
 
@@ -47,7 +46,7 @@ This lab assumes you have:
 
       When the installation is complete, restart Visual Studio Code.
 
-## Task 2: Develop .NET Applications for Oracle Autonomous Database with ODP.NET Core and Visual Studio Code
+## Task 3: Develop .NET Applications for Oracle Autonomous Database with ODP.NET Core and Visual Studio Code
 
 In this Task we will be using an Autonomous Database wallet to establish a connection. Follow the below instructions to run the sample code in VS Code.
 
@@ -147,10 +146,12 @@ In this Task we will be using an Autonomous Database wallet to establish a conne
       </copy>
       ``` 
 
+      ![customer-list](images/customer-list.png "customer-list") 
+
 6. The entire project folder should now look as below  
       ![customer-list](images/proj-folder.png "customer-list")   
  
-## Task 3: Develop .NET Applications for Oracle Autonomous Database with ODP.NET Core and Visual Studio Code (Wallet-less Connection)
+## Task 4: Develop .NET Applications for Oracle Autonomous Database with ODP.NET Core and Visual Studio Code (Wallet-less Connection)
 
 In this task, we will establish a wallet-less connection with Autonomous Database. Please follow the below instructions to run the sample code in VS Code.
 
@@ -251,7 +252,7 @@ In this task, we will establish a wallet-less connection with Autonomous Databas
 
       The output will be same as Task 3 but with only difference being this time we are establishing wallet-less connection.
 
-## Task 4: Using Oracle Developer Tools for VS Code to explore database schema and run SQL scripts  
+## Task 5: Utilize the Oracle Developer Tools For VS Code extension to explore database schema and run SQL scripts  
 
 This Lab task shows how to use Oracle Developer Tools for VS Code, Connect to Autonomous Database Instance, and Run SQL Queries.
    
@@ -286,11 +287,11 @@ This Lab task shows how to use Oracle Developer Tools for VS Code, Connect to Au
       </copy>
       ``` 
 
-      ![new-sql](images/query.png "new-sql")
+      ![new-sql query](images/query-3.png "new-sql query")
 
 5. View the result of SQL query and expand Tables under Autonomous Database connection to view the list of tables.
 
-      ![view-result](images/result.png "view-result")
+      ![view-result](images/view-results-2.png "view-result")
  
 
 ## Learn More
@@ -305,4 +306,4 @@ This Lab task shows how to use Oracle Developer Tools for VS Code, Connect to Au
 
 - **Author** - Madhusudhan Rao, Principal Product Manager, Database
 * **Contributors** - Kevin Lazarz, Senior Principal Product Manager, Database. Alex Keh, Senior Principal Product Manager and Christian Shay, Senior Principal Product Manager
-* **Last Updated By/Date** -  Madhusudhan Rao, June 24th 2022 
+* **Last Updated By/Date** -  Madhusudhan Rao, June 28th 2022 
