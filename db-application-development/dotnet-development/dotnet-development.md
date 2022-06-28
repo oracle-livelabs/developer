@@ -146,7 +146,7 @@ In this Task we will be using an Autonomous Database wallet to establish a conne
       </copy>
       ``` 
 
-      ![customer-list](images/customer-list.png "customer-list") 
+      ![customer-list](images/customer-list.png =75%x*  "customer-list") 
 
 6. The entire project folder should now look as below  
       ![customer-list](images/proj-folder.png "customer-list")   
@@ -157,7 +157,7 @@ In this task, we will establish a wallet-less connection with Autonomous Databas
 
   > **Note:** It is essential to have completed Lab 1 Task 5 **One-way TLS connection to Oracle Autonomous Database** for wallet-less connections to run the example below in this task. 
 
-1. From the Visual Studio Code menu choose **View->Terminal** to open the Terminal window. At the command prompt in the terminal, create a new directory for your application and change into that directory.  
+1. From the Visual Studio Code menu, choose **View->Terminal** to open the Terminal window. At the command prompt in the terminal, create a new directory for your application and change into that directory.  
 2. Run **dotnet new console** from the command line to create a new project. 
 
       ```
@@ -166,7 +166,7 @@ In this task, we will establish a wallet-less connection with Autonomous Databas
       </copy>
       ```   
 
-      From the Visual Studio Code menu choose **File->Open Folder** and select the directory you created above.
+      From the Visual Studio Code menu, choose **File->Open Folder** and select the directory you created above.
 
       ![dotnet new console](images/dotnet-new-console.png "dotnet new console") 
 
@@ -174,11 +174,11 @@ In this task, we will establish a wallet-less connection with Autonomous Databas
 
       ![c hash extension](images/dotnet-obj.png "managed access core")
 
-3. Access the Autonomous Database Information page, click on **DB Connection**, under Connection String, select **TLS** Option, and copy the connection string into a text file, which we will be using in this Task.   
+3. Access the Autonomous Database Information page, click on **DB Connection**, under Connection String, select **TLS** Option, and copy the connection string into a text file or clipboard, which we will be using in the next step.   
 
    ![tls](images/tls.png "tls")
-
-4. Open the **Program.cs** and copy the sample code contents below and save the file.
+ 
+4. Open the **Program.cs** and copy the code contents below and save the file.
    
       ```
       <copy>
@@ -193,7 +193,7 @@ In this task, we will establish a wallet-less connection with Autonomous Databas
             {  
                   string conString = "User Id=<db_user>;Password=<password>;" +
       
-                  "Data Source =(description= (retry_count=20)(retry_delay=3)(address=(protocol=tcps)(port=1521)(host=adb.<region_id>.oraclecloud.com))(connect_data=(service_name=<servicename_prefix>_<instance_name>_high.adb.oraclecloud.com))(security=(ssl_server_dn_match=yes)(ssl_server_cert_dn=\"CN=adwc.<region_id>.oraclecloud.com, OU=Oracle BMCS US, O=Oracle Corporation,L=Redwood City, ST=California, C=US\")));";
+                  "Data Source = <copied_connection_string>  ";
 
                   using (OracleConnection con = new OracleConnection(conString))
                   {
@@ -228,7 +228,17 @@ In this task, we will establish a wallet-less connection with Autonomous Databas
       </copy>
       ``` 
 
-      - Substitute <db\_user\>, <password\>, <servicename\_prefix\>, <instance\_name\> and <region\_id\> depending upon the string that we copied to the text file   
+      Substitute <db\_user\> , <password\> and <copied\_connection\_string\> depending upon the string that we copied in previous step. 
+
+      > **Note:** Your Data Source connection string in the above code might look like this below. Add the \ escape sequence in front of the quotes.  
+
+      ```
+      <copy>
+      "Data Source =(description= (retry_count=20)(retry_delay=3)(address=(protocol=tcps)(port=1521)(host=adb.<region_id>.oraclecloud.com))(connect_data=(service_name=<servicename_prefix>_<instance_name>_high.adb.oraclecloud.com))(security=(ssl_server_dn_match=yes)(ssl_server_cert_dn=\"CN=adwc.<region_id>.oraclecloud.com, OU=Oracle BMCS US, O=Oracle Corporation,L=Redwood City, ST=California, C=US\"))) ";
+      </copy>
+      ``` 
+
+       
    
 5. Run  **dotnet add package Oracle.ManagedDataAccess.Core**  from the command line to add ODP.NET Core to the project.
       
@@ -240,7 +250,7 @@ In this task, we will establish a wallet-less connection with Autonomous Databas
 
       ![managed access core](images/managed-access-core.png "managed access core") 
 
-6. Execute the app by running **dotnet run** from the command line. You should see the customers sample data
+6. Execute the app by running **dotnet run** from the command line. You should see the customers data
 
       ```
       <copy>
@@ -248,9 +258,9 @@ In this task, we will establish a wallet-less connection with Autonomous Databas
       </copy>
       ``` 
 
-      ![customer-list](images/customer-list.png "customer-list") 
+      ![customer-list](images/customer-list.png =75%x*  "customer-list") 
 
-      The output will be same as Task 3 but with only difference being this time we are establishing wallet-less connection.
+      The output will be the same as Task 3 but with only difference being this time we are establishing wallet-less connection.
 
 ## Task 5: Utilize the Oracle Developer Tools For VS Code extension to explore database schema and run SQL scripts  
 
@@ -270,11 +280,11 @@ This Lab task shows how to use Oracle Developer Tools for VS Code, Connect to Au
      - **Use Wallet File**: Check this box
      - Wallet File Location: Set to the same path you used in the TNS Admin Location field above
      - **Role**: Default
-     - **User name**: Enter ADMIN which is the user created by default during the creation of Autonomous Database. (If you created another Autonomous Database user, you can use that user instead.)
+     - **User name**: Enter ADMIN, which is the user created by default during the creation of Autonomous Database. (If you created another Autonomous Database user, you can use that user instead.)
      - **Password**: Enter user's password. If ADMIN user is used, enter the password that was provided during the Create Autonomous Database step while provisioning Autonomous Database.
      - **Save password**: Check this box if desired.
 
-3. Right-click on the connection node, and from the menu, choose **Open New SQL File**
+3. Right-click on the connection node, and from the menu, choose **Open New SQL File**.
 
       ![new-sql](images/new-sql.png "new-sql")
 
@@ -289,7 +299,7 @@ This Lab task shows how to use Oracle Developer Tools for VS Code, Connect to Au
 
       ![new-sql query](images/query-3.png "new-sql query")
 
-5. View the result of SQL query and expand Tables under Autonomous Database connection to view the list of tables.
+5. View the result of the SQL query and expand Tables under Autonomous Database connection to view the list of tables.
 
       ![view-result](images/view-results-2.png "view-result")
  
