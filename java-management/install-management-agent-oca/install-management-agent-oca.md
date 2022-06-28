@@ -26,38 +26,38 @@ In this lab, you will:
 
 1. In the Oracle Cloud Console, open the navigation menu, click **Compute**, and then click **Instances**. Select the instance that you are interested in. This instance should be in the compartment created in [Lab 1](?lab=set-up-oci-for-jms).
 
-  ![image of console navigation to compute instances](/../images/console-navigation-instance.png)
+  ![image of console navigation to compute instances](images/console-navigation-instance.png)
 
 2. Click the **Oracle Cloud Agent** (OCA) tab. The list of OCA plugins is displayed. Toggle the Enabled switch for the Management Agent plugin.
 
-  ![image of enable management agent plugin](/../images/enable-management-agent-plugin.png)
+  ![image of enable management agent plugin](images/enable-management-agent-plugin.png)
 
 3. The status of the Management Agent plugin may be set to **Stopped** initially. It may take 5-10 minutes before the status is changed to **Running**.
 Do not disturb the setup in this time and only proceed after the status of the Management Agent plugin is set to **Running**.
-  ![image of management agent plugin with running status](/../images/management-agent-plugin-running.png)
+  ![image of management agent plugin with running status](images/management-agent-plugin-running.png)
 
 5. We will need to verify that our agent is enabled successfully. In the Oracle Cloud Console, open the navigation menu, click **Observability & Management**, and under **Management Agent**, click **Agents**.
 
-  ![image of console navigation to access management agent overview](/../images/management-agent-overview.png)
+  ![image of console navigation to access management agent overview](images/management-agent-overview.png)
 
 6. Ensure that your agent is in the list of agents. The name of the Agent should be of the form of  `Agent(<YOUR-INSTANCE-NAME>)`. This Agent should also be in the compartment created in [Lab 1](?lab=set-up-oci-for-jms).
 
-  ![image of agent in agent overview list](/../images/agent-overview-list.png)
+  ![image of agent in agent overview list](images/agent-overview-list.png)
 
 
 ## Task 2: Deploy Java Management Service plugin
 1. In your agent, click **Deploy plug-ins**.
-  ![image of agent with deploy plug-ins button](/../images/agent-deploy-plugins.png)
+  ![image of agent with deploy plug-ins button](images/agent-deploy-plugins.png)
 
 2. Check the **Java Usage Tracking** box and click **Update**. This will deploy the Java Usage Tracking service plugin.
-  ![image of checking java usage tracking box](/../images/agent-check-java-usage-tracking.png)
+  ![image of checking java usage tracking box](images/agent-check-java-usage-tracking.png)
 
   You may observe that the Java Management Service service plugin, which is reponsible for enabling advanced Lifecycle Management (LCM) operations, is not deployed here.
-  ![image of unchecked java management service service plugin box](/../images/agent-unchecked-java-management-service.png)
+  ![image of unchecked java management service service plugin box](images/agent-unchecked-java-management-service.png)
 
 
   It is important to note that it is not necessary to deploy the JMS service plugin here as users who are interested in enabling LCM operations using OCA can do so using the Oracle Java Management Service plugin in OCA:
-  ![image of oracle java management service oca plugin on oca](/../images/oracle-java-management-service-oca-plugin.png)
+  ![image of oracle java management service oca plugin on oca](images/oracle-java-management-service-oca-plugin.png)
 
 
   If you would like to learn more about Lifecycle Management, you may refer to the set up instructions for OCI hosts at the [Java Lifecycle Management with Java Management Service](../../java-management-lifecycle-management/workshops/freetier/index.html?lab=set-up-and-enable-lcm-on-jms) workshop.
@@ -67,33 +67,33 @@ Do not disturb the setup in this time and only proceed after the status of the M
 
 1. In the Oracle Cloud Console, open the navigation menu, click **Observability & Management**, and then click **Fleets** under **Java Management**.
 
-  ![image of console navigation to java management service](/../images/console-navigation-jms.png)
+  ![image of console navigation to java management service](images/console-navigation-jms.png)
 
 2. Select the fleet you would like to associate your agent with.
 
 3. Take note of the fleet ocid for your fleet.
 
-  ![image of fleet ocid](/../images/check-fleet-ocid.png)
+  ![image of fleet ocid](images/check-fleet-ocid.png)
 
 4. In the Oracle Cloud Console, open the navigation menu, click **Observability & Management**, and under **Management Agent**, click **Agents**.
 
-    ![image of console navigation to access management agent overview](/../images/management-agent-overview.png)
+    ![image of console navigation to access management agent overview](images/management-agent-overview.png)
 
 5. Select the agent that you have just enabled in Task 1.
 
 6. Click the **Add Tags** button. Alternatively, you can click the **Tags** tab, followed by **Add Tags**.
 
-  ![image of tag tab](/../images/agent-tags.png)
+  ![image of tag tab](images/agent-tags.png)
 
 7. Add a `jms` tag to the management agent with the following details and click **Add Tags** once done:
     * **Tag namespace**: jms
     * **Tag key**: fleet_ocid
     * **Tag value**: the OCID of your fleet
 
-  ![image of add tag to agent](/../images/add-agent-tag.png)
+  ![image of add tag to agent](images/add-agent-tag.png)
 
 ## Task 4: Configure Java Usage Tracker
-1. Configure Java Usage Tracker by executing the following JMS service plug-in setup scripts:
+1. Connect to the instance, then configure Java Usage Tracker by executing the following JMS service plug-in setup scripts:
     ```
     <copy>
     VERSION=$(sudo ls /var/lib/oracle-cloud-agent/plugins/oci-managementagent/polaris/agent_inst/config/destinations/OCI/services/jms/)
@@ -101,7 +101,7 @@ Do not disturb the setup in this time and only proceed after the status of the M
     ```
     ```
     <copy>
-    sudo bash /var/lib/oracle-cloud-agent/plugins/oci-managementagent/polaris/agent_inst/config/destinations/OCI/services/jms/"${VERSION}"/scripts/setup.sh
+    sudo bash /var/lib/oracle-cloud-agent/plugins/oci-managementagent/polaris/agent_inst/config/destinations/OCI/services/jms/"${VERSION}"/scripts/setup.sh --force
     </copy>
     ```
 
@@ -133,7 +133,7 @@ We shall demonstrate the detection of the Java compiler and HelloWorld applicati
 
 2. In the Oracle Cloud Console, open the navigation menu, click **Observability & Management**, and then click **Fleets** under **Java Management**.
 
-  ![image of console navigation to java management](/../images/console-navigation-jms.png)
+  ![image of console navigation to java management](images/console-navigation-jms.png)
 
 3. Select the compartment that the fleet is in and click the fleet.
 
@@ -141,11 +141,11 @@ We shall demonstrate the detection of the Java compiler and HelloWorld applicati
 
   You should see only one Java Runtime. This corresponds to the Java 8 installation from [Lab 3](?lab=deploy-a-java-application).
 
-  ![image of successful installation](/../images/successful-installation.png)
+  ![image of successful installation](images/successful-installation.png)
 
-12. Click **Applications** under **Resources**. You should now see two applications. The first is from the javac compiler command and the second is from the HelloWorld application.
+5. Click **Applications** under **Resources**. You should now see two applications. The first is from the javac compiler command and the second is from the HelloWorld application.
 
-  ![image of applications after successful installation](/../images/successful-installation-applications.png)
+  ![image of applications after successful installation](images/successful-installation-applications.png)
 
   You may now **proceed to the next lab.**
 
@@ -160,4 +160,4 @@ We shall demonstrate the detection of the Java compiler and HelloWorld applicati
 ## Acknowledgements
 
 * **Author** - Xin Yi Tay, Java Management Service
-* **Last Updated By** - Xin Yi Tay, April 2022
+* **Last Updated By** - Yixin Wei, June 2022

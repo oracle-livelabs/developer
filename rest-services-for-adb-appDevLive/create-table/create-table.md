@@ -1,4 +1,4 @@
-# Modern Application Development with Oracle REST Data Services - Create and auto-REST enable a table
+# How to build powerful, secure REST APIs for your Oracle Database - Create and auto-REST enable a table
 
 ## Introduction
 
@@ -157,6 +157,5 @@ You may now [proceed to the next lab](#next).
 
 ## Acknowledgements
 
-- **Author** - Jeff Smith, Distinguished Product Manager and Brian Spendolini, Trainee Product Manager
-- **Last Updated By/Date** - Brian Spendolini, April 2022
-- **Workshop Expiry Date** - June 2022
+ - **Author** - Jeff Smith, Distinguished Product Manager
+ - **Last Updated By/Date** - Jeff Smith, July 2022

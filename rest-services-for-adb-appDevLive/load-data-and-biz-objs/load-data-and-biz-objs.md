@@ -1,4 +1,4 @@
-# Modern Application Development with Oracle REST Data Services - Loading Data and Creating Business Objects
+# How to build powerful, secure REST APIs for your Oracle Database - Loading Data and Creating Business Objects
 
 ## Introduction
 
@@ -213,7 +213,6 @@ You may now [proceed to the next lab](#next).
 
 ## Acknowledgements
 
-- **Author** - Jeff Smith, Distinguished Product Manager and Brian Spendolini, Trainee Product Manager
-- **Last Updated By/Date** - Brianna Ambler, June 2021
-- **Workshop Expiry Date** - May 2022
+ - **Author** - Jeff Smith, Distinguished Product Manager
+ - **Last Updated By/Date** - Jeff Smith, July 2022
 

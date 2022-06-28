@@ -1,4 +1,4 @@
-# Modern Application Development with Oracle REST Data Services
+# How to build powerful, secure REST APIs for your Oracle Database
 
 ## Introduction
 Oracle REST Data Services (ORDS) bridges HTTPS and your Oracle Database. A mid-tier Java application, ORDS provides a Database Management REST API, SQL Developer Web, a PL/SQL Gateway, SODA for REST, and the ability to publish RESTful Web Services for interacting with the data and stored procedures in your Oracle Database. 
@@ -14,7 +14,11 @@ Watch the video below for a comprehensive overview of REST and how ORDS provides
 
 ### About this Workshop
 
-This lab will walk you through creating a REST service using Oracle REST Data Services (ORDS) on an Autonomous Database. You will start creating a table in the database and using the same UI, REST enable that table so that endpoints created for all major operations (create, update, query, delete). Next, the Batch Load API will be used to load millions of records into the database in seconds. Lastly, we will use OAuth to secure the REST service endpoints. This lab will be done entirely from within the Oracle Cloud Infrastructure Cloud Console using Oracle Cloud Infrastructure.
+Starting with a simple CSV document, you'll quickly create a new Autonomous Database with a new table based on that CSV. And instead of using SQL or PL/SQL to interact with your new table, we'll show you how to quickly build no-code full Create Read Update Delete (CRUD) REST APIs.
+
+Like code? No problem! We'll show you how to take YOUR SQL and/or PLSQL and leverage that with your own REST APIs. No need to learn Java, JavaScript, Python, or anything else - it's all done via the language of the Oracle Database.
+
+Once your APIs are ready for prime-time, we'll show you how to SECURE them with OAuth2 clients.
 
 Estimated Workshop Time: 60-90 minutes
 
@@ -87,5 +91,5 @@ select empno, ename, dept from emp where empno = :id
 
 ## Acknowledgements
 
- - **Author** - Jeff Smith, Distinguished Product Manager and Brian Spendolini, Product Manager
- - **Last Updated By/Date** - Brian Spendolini, September 2021
+ - **Authors** - Jeff Smith, Distinguished Product Manager, The Raleigh Cobra, Product Manager ![RC](./images/cobra.png)
+ - **Last Updated By/Date** - Jeff Smith, July 2022

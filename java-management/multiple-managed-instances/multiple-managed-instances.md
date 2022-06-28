@@ -6,7 +6,7 @@ The Management Gateway provides a single point of communication between the Mana
 Using the Management Gateway as the single point for traffic to and from the Oracle Cloud Infrastructure means that the enterprise firewall only needs to allow HTTPS communication from the host where the Management Gateway resides. This scenario allows installing Management Agent on the hosts which do not need to have direct access to the internet. Oracle recommends to configure the Management Gateway first and then the Management Agent on the other hosts.
 
 
-  ![image of gateway concepts](/../images/gateway-concepts-diagram.png =400x*)
+  ![image of gateway concepts](images/gateway-concepts-diagram.png =400x*)
   
 This lab walks you through the steps to install and configure Management Gateway on an on-premises host and have another on-premises host proxy through it to communicate with OCI network and JMS.
 
@@ -36,15 +36,15 @@ In this lab, you will:
 
 2. Open navigation menu, click **Observability & Management**, and then click **Downloads and Keys** under **Management Agent**.  
 
-  ![image of navigating to Management Agent page, Download and Keys section](/../images/navigate-to-management-agent.png)
+  ![image of navigating to Management Agent page, Download and Keys section](images/navigate-to-management-agent.png)
   
 
   The Software Download pane will display at the top of the page.
 
-  ![image of Software download pan view](/../images/software-download-pane-view.png)
+  ![image of Software download pan view](images/software-download-pane-view.png)
 
 3. The Software Download pane lists all the software available to download for the Management Agent and Management Gateway. Select the operating system that the Management Gateway will be installed on from the Download column. In this case, click on **Gateway for LINUX (X84_64)** link to download the Management Gateway software file.
-  ![image of downloading management gateway software](/../images/download-gateway-software.png)
+  ![image of downloading management gateway software](images/download-gateway-software.png)
 
 4. Alternatively, you can run the following command to download **Management Gateway software for Linux**. 
     ```
@@ -54,14 +54,14 @@ In this lab, you will:
     ```    
 
 5. On the same **Downloads and Keys** page, click on **Create key** to create a new **Install key**. An install key is issued against your identity domain and validates the authenticity of the installation. 
-  ![image of clicking on create install key button](/../images/create-install-key.png)
+  ![image of clicking on create install key button](images/create-install-key.png)
 
 6. Enter the required details in Create Key window and click **Create** button.
 
-  ![image of entering details for Install key](/../images/create-install-key-popup.png)
+  ![image of entering details for Install key](images/create-install-key-popup.png)
 
 7. On the Install Keys pane select the newly created Install Key. Then on the right side of the selected key, click the action menu and select **Download Key to File** option. 
-  ![image of download key to file option](/../images/download-key-to-file-option.png)
+  ![image of download key to file option](images/download-key-to-file-option.png)
 
 8. Create a gateway.rsp response file on your host. This will be used by the Management Gateway installation script to read the parameters specific to your environment.
 
@@ -81,7 +81,7 @@ In this lab, you will:
      > **Note:** This lab will be using **GatewayPort** 4479, but you can choose any port recommended by your organization.
 
   A sample response file is included for reference, modify AgentDisplayName and GatewayPort parameters accordingly.
-  ![image of final response file](/../images/terminal-edit-install-key.png)
+  ![image of final response file](images/terminal-edit-install-key.png)
 
   To save the file, type CTRL+x. Before exiting, nano will ask you if you wish to save the file: Type y to save and exit, type n to abandon your changes and exit.
 
@@ -201,7 +201,7 @@ Gateway Proxy started successfully
     ```  
     The output may look like this.
 
-  ![image of result of ifconfig command](/../images/terminal-ip-address.png)
+  ![image of result of ifconfig command](images/terminal-ip-address.png)
 
     This IP address will be used as value for `ProxyHost` in Management Agent response file in Task 4.
   
@@ -211,11 +211,11 @@ Gateway Proxy started successfully
 
 1. Open navigation menu, click **Observability & Management**, and then click **Agents** under **Management Agent**.  
 
-  ![image of navigating to Management Agent page, Agents section](/../images/navigate-to-agents-page.png)
+  ![image of navigating to Management Agent page, Agents section](images/navigate-to-agents-page.png)
 
 2. Select the correct compartment from left hand side panel. In this case it is `Fleet_Compartment`. You should be able to see newly created Management gateway in the **Agents and Gateways** list.
 
-  ![image of verification on running Management Gateway](/../images/view-management-gateway.png)
+  ![image of verification on running Management Gateway](images/view-management-gateway.png)
 
 ### Using Command Line Interface on Linux:
 
@@ -240,7 +240,7 @@ Gateway Proxy started successfully
    
     If the Management Gateway is running, the output of the command should look like this.
 
-    ![image of Management Gateway logs](/../images/management-gateway-status.png)
+    ![image of Management Gateway logs](images/management-gateway-status.png)
 
     For more details, check the log file: 
     
@@ -251,7 +251,7 @@ Gateway Proxy started successfully
     ```
     The logs may look like this.
 
-    ![image of Management Gateway logs](/../images/management-gateway-status-logs.png)
+    ![image of Management Gateway logs](images/management-gateway-status-logs.png)
 
 
 
@@ -271,7 +271,7 @@ After installing the Management Gateway, you will need to configure each Managem
     * **ProxyPort**: 4479 
  
   A sample response file is included for reference.
-  ![image of final response file](/../images/response-file-parameters.png)
+  ![image of final response file](images/response-file-parameters.png)
 
 * Follow [Task 2 - 6 to  of Lab 5](?lab=set-up-of-management-agent-linux) to Install, configure and verify Management Agent installation on Linux OS and [Task 2 - 6 of Lab 6](?lab=set-up-of-management-agent-windows) for Windows OS.
 
@@ -281,7 +281,7 @@ After installing the Management Gateway, you will need to configure each Managem
 ## Task 5: Verify detection of Managed Instance
 1. In the Oracle Cloud Console, open the navigation menu, click **Observability & Management**, and then click on **Fleets** under **Java Management**.
 
-  ![image of console navigation to java management](/../images/console-navigation-jms.png)
+  ![image of console navigation to java management](images/console-navigation-jms.png)
 
 2. Select the compartment that the fleet is in and click the fleet.
 
@@ -289,7 +289,7 @@ After installing the Management Gateway, you will need to configure each Managem
 
   You should be able to see new Managed Instance with latest time stamp.
 
-  ![image of managed instance after successful installation](/../images/successful-installation.png)
+  ![image of managed instance after successful installation](images/successful-installation.png)
 
 
 
