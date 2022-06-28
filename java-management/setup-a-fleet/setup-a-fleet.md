@@ -22,11 +22,11 @@ In this lab, you will:
 
 1. In the Oracle Cloud Console, open the navigation menu, click **Observability & Management**, and then click **Fleets** under **Java Management**.
 
-  ![image of console navigation to java management service](/../images/console-navigation-jms.png)
+  ![image of console navigation to java management service](images/console-navigation-jms.png)
 
 2. Select the compartment created for JMS resources in Lab 1 (Compartment name should be **Fleet_Compartment**) and **Create Fleet**.
 
-  ![image of create fleet](/../images/create-fleet-create-new.png)
+  ![image of create fleet](images/create-fleet-create-new.png)
 
 3. In the Create Fleet dialog box, enter a name for the Fleet Name (for example, `fleet_1`), and a description.
 
@@ -34,11 +34,11 @@ In this lab, you will:
 
 5. Click **Show Advanced Options**.
 
-  ![image of create fleet options page](/../images/create-fleet.png)
+  ![image of create fleet options page](images/create-fleet.png)
 
 6. Under **Advanced Options**:
 
-  ![image of fleet advanced options](/../images/create-fleet-advanced-configuration.png)
+  ![image of fleet advanced options](images/create-fleet-advanced-configuration.png)
 
   If you would like to keep the default name of the Install key, no changes are needed, or else deselect **Use Fleet Name** for Install Key Name and enter an alternative name for the management agent install key, for this example, enter "management-agent-install-key-fleet-1".
 
@@ -50,13 +50,23 @@ In this lab, you will:
 
 8. Click **Create**. This creates a new fleet and a new management agent install key using the information you provided.
 
-  ![image of create fleet confirm creation](/../images/create-fleet-create.png)
+  ![image of create fleet confirm creation](images/create-fleet-create.png)
 
 9. Click **Download Install Key** to download the install key. The install key is issued against your identity domain and validates the authenticity of the installation.
 
-  ![image of page to download management agent software](/../images/download-management-agent-software-new.png)
+  ![image of page to download management agent software](images/download-management-agent-software-new.png)
 
   Click **Done** once the download is complete. The downloaded file will be used in [Lab 5: Install Management Agent on non-OCI Hosts - Linux](?lab=set-up-of-management-agent-linux) to install the Management Agent.
+
+10. After JMS is linked to the management agent, it will collect information on your Java runtimes. As the management agent will scan the instance periodically, the information may not appear immediately. The scanning frequency can be changed here.
+
+11. Click the fleet. In the detail page, click on **Modify Agent Settings**.
+
+  ![image of fleet details page](images/fleet-details-page-new.png)
+
+12. Change the **Java Runtime Discovery** and **Java Runtime Usage** to the desired value. For this example, change **Java Runtime Discovery** to **3 hours**, and **Java Runtime Usage** to **5 minutes**.
+
+  ![image of modify agent settings page](images/fleet-modify-agent-settings-new.png)
 
 You may now **proceed to the next lab**.
 
@@ -73,4 +83,4 @@ You may now **proceed to the next lab**.
 ## Acknowledgements
 
 * **Author** - Esther Neoh, Java Management Service
-* **Last Updated By** - Xin Yi Tay, April 2022
+* **Last Updated By** - Yixin Wei, June 2022

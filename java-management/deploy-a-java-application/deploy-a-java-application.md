@@ -33,7 +33,7 @@ In this workshop, you will:
 
 3. To get started installing your Compute Instance with the **Create a VM Instance** wizard, follow these steps:
   From the main landing page, select **Create a VM Instance** wizard.
-    ![image of quick actions menu on the main landing page](/../images/action-menu.png)
+    ![image of quick actions menu on the main landing page](images/action-menu.png)
 
     The **Create Compute Instance** page is displayed. It has a section for **Placement**, **Image and shape**, **Networking**, **Add SSH keys**, and **Boot volume**.
 
@@ -45,7 +45,7 @@ In this workshop, you will:
 
       It is important for Compute Instance to be created in a Compartment with correct set of Policies. So, select the `Fleet_Compartment` Compartment if you selected Onboarding Wizard option in Lab 1, otherwise select the Compartment that you have created.
 
-      ![image of selecting correct compartment for the Compute Instance](/../images/select-correct-compartment.png)
+      ![image of selecting correct compartment for the Compute Instance](images/select-correct-compartment.png)
 
     Enter a value for the name or leave the system supplied default.
 
@@ -59,8 +59,8 @@ In this workshop, you will:
     Review the **Image and shape** settings. Take the default values provided by the wizard.
 
     **Image**
-    * **Image**: Oracle Linux 7.9
-    * **Image build**: 2022.01.24-0
+    * **Image**: Oracle Linux 8
+    * **Image build**: Default image build
     * **Shape**: Any AMD or Intel shape
     * **OCPU count**: 1
     * **Memory (GB)**: 1
@@ -92,7 +92,7 @@ In this workshop, you will:
 
 1. Open the navigation menu and click **Compute**. Under **Compute**, click **Instances**.
 
-  ![image of console navigation to instance](/../images/console-navigation-instance.png)
+  ![image of console navigation to instance](images/console-navigation-instance.png)
 
 2. Click the link to the Instance you created in the previous step.
 
@@ -155,7 +155,7 @@ In this workshop, you will:
     </copy>
     ```
 
-4. To save the file, type **CTRL+x**. Before exiting, nano will ask you if you wish to save the file: Type **y** to save and exit, type **n** to abandon your changes and exit.
+4. To save the file, type **CTRL+x**. Before exiting, nano will ask you if you wish to save the file: Type **y** and **Enter** to save and exit, type **n** to abandon your changes and exit.
 
 ### For **Windows**
 
@@ -196,7 +196,7 @@ In this workshop, you will:
     ```
     <copy>
     public class HelloWorld {
-      public static void main(String[] args){
+      public static void main(String[] args) throws InterruptedException{
         System.out.println("This is my first program in java");
         int number=15;  
         System.out.println("List of even numbers from 1 to "+number+": ");  
@@ -242,6 +242,13 @@ You may now **proceed to the next lab.**
     </copy>
     ```
 
+**For Task 3**
+
+* If you encounter an error similar to the following:
+    ```
+    No match for argument: jdk1.8.x86_64
+    ```
+  Please use a new instance with AMD or Intel shape instead of Ampere.
 
 ## Learn More
 
@@ -252,4 +259,4 @@ You may now **proceed to the next lab.**
 ## Acknowledgements
 
 * **Author** - Esther Neoh, Java Management Service
-* **Last Updated By** - Xin Yi Tay, April 2022
+* **Last Updated By** - Yixin Wei, June 2022
