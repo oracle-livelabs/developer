@@ -15,25 +15,25 @@ If you just created a new Cloud account following the instructions in Getting St
 
 1.  On the Oracle Cloud Get Started page, click the menu in the upper left corner to display the services you can provision:
 
-    ![](./images/hamburger.png "The image highlights the hamburger menu on the Oracle Cloud Get Started page.")
+    ![](images/hamburger.png "The image highlights the hamburger menu on the Oracle Cloud Get Started page.")
 
 2.  Click **Developer Services**, then select **Visual Builder**:
 
-    ![](./images/platform.png "This image shows navigation to Visual Builder under Developer Services")
+    ![](images/platform.png "This image shows navigation to Visual Builder under Developer Services")
 
 3.  Select the Visual Builder instance's compartment in the **Compartment** field on the left, then click **Create Instance**:
 
-    ![](./images/create-instance.png "This image shows the Visual Builder Instances screen, with the Compartment drop-down on the left and the Create Instance button on the right. ")
+    ![](images/create-instance.png "This image shows the Visual Builder Instances screen, with the Compartment drop-down on the left and the Create Instance button on the right. ")
 
 4.  On the Create Instance screen, give your instance a unique name, one that is unlikely to be chosen by another user.  Click **Create Visual Builder instance**.
 
-    ![](./images/detail.png "This image shows details of the Create Instance page, with the Name, Compartment, and Nodes fields. The Create Visual Builder instance button is also shown.")
+    ![](images/detail.png "This image shows details of the Create Instance page, with the Name, Compartment, and Nodes fields. The Create Visual Builder instance button is also shown.")
 
     Instance creation takes some time. If you attempt to click the instance name and receive a <code>401: Authorization failed or a 404: Not Found</code> error, but followed all the correct steps, instance creation has not completed. Wait a few more minutes.  
 
     When instance creation completes successfully, the instance shows as **Active** in the **State** column.
 
-5. At the far right, click ![Task menu icon](./images/task_menu.png) and select **Service Homepage** to open the Visual Builder login page.
+5. At the far right, click ![Task menu icon](images/task_menu.png) and select **Service Homepage** to open the Visual Builder login page.
 
   You're now in Visual Builder and can **proceed to the next lab**.
 

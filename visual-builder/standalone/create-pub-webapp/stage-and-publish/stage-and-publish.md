@@ -41,23 +41,23 @@ As a final step before you stage the app, enable it to run as a Progressive Web 
 
 Let's now stage the application, so other users can test its behavior.
 
-1.  Click the **Menu** ![Menu icon](./images/vbcssp_menu3_icon.png) icon in the header and select **Stage**.
+1.  Click the **Menu** ![Menu icon](images/vbcssp_menu3_icon.png) icon in the header and select **Stage**.
 
-    ![](./images/vbcssp_sta_s2.png "This image shows the Menu options in the header. Stage is selected.")
+    ![](images/vbcssp_sta_s2.png "This image shows the Menu options in the header. Stage is selected.")
 
 2.  In the Stage Application dialog box, select the **Populate Stage with Development data** option and click **Stage**.
 
-    ![](./images/vbcssp_sta_s3.png "This image shows the Stage application dialog. The Populate Stage with Development data option and the Stage button is selected.")
+    ![](images/vbcssp_sta_s3.png "This image shows the Stage application dialog. The Populate Stage with Development data option and the Stage button is selected.")
 
     The application is staged, and its status in the header changes from `DEV` to `STAGE`.
 
-3.  From the header **Menu** ![Menu icon](./images/vbcssp_menu3_icon.png), click **Open Staged Application**.
+3.  From the header **Menu** ![Menu icon](images/vbcssp_menu3_icon.png), click **Open Staged Application**.
 
-    ![](./images/vbcssp_sta_s4.png "This image shows the Menu option with a new Open Staged Application option.")
+    ![](images/vbcssp_sta_s4.png "This image shows the Menu option with a new Open Staged Application option.")
 
-    The staged application opens in a new browser tab. The tables are populated with the data from Development. Also, an **Install HR Application** ![Install HR Application icon](./images/install-app-icon.png) icon that lets you install the app as a PWA shows up on the address bar—we'll test this functionality in a later step.
+    The staged application opens in a new browser tab. The tables are populated with the data from Development. Also, an **Install HR Application** ![Install HR Application icon](images/install-app-icon.png) icon that lets you install the app as a PWA shows up on the address bar—we'll test this functionality in a later step.
 
-    ![](./images/open-shared-application-result.png "This image shows the staged version of the HR web app open in a browser tab. The Install HR Application icon is highlighted.")
+    ![](images/open-shared-application-result.png "This image shows the staged version of the HR web app open in a browser tab. The Install HR Application icon is highlighted.")
 
 4.  Make a note of the application's URL to share with your team.
 
@@ -69,61 +69,61 @@ To add more records to your data in the staging database, let's import data for 
 
 1.  Click [this link](https://objectstorage.us-ashburn-1.oraclecloud.com/p/LNAcA6wNFvhkvHGPcWIbKlyGkicSOVCIgWLIu6t7W2BQfwq2NSLCsXpTL9wVzjuP/n/c4u04/b/livelabsfiles/o/developer-library/HR_Application_Stage.zip ) and save the `HR_Application_Stage.zip` file. The ZIP file contains CSV files of the Department and Employee business objects of the HR Application schema with a few more records.
 
-2.  In the Navigator, click the **Business Objects** ![Business Objects icon](./images/bo-icon.png) tab, then click **Menu** ![Menu icon](./images/vbcssp_menu2_icon.png) and select **Data Manager**.
+2.  In the Navigator, click the **Business Objects** ![Business Objects icon](images/bo-icon.png) tab, then click **Menu** ![Menu icon](images/vbcssp_menu2_icon.png) and select **Data Manager**.
 
-    ![](./images/vbcssp_imp_s3.png "This image shows the Data Manager option selected from the Menu in the Business Objects pane.")
+    ![](images/vbcssp_imp_s3.png "This image shows the Data Manager option selected from the Menu in the Business Objects pane.")
 
 3.  From the drop-down list in the upper right corner, select **Staging** to import the data into the staging database.  
 
-    ![](./images/vbcssp_imp_s4.png "This image shows the Manage Application Data page. The Development option is selected in the drop-down.")
+    ![](images/vbcssp_imp_s4.png "This image shows the Manage Application Data page. The Development option is selected in the drop-down.")
 
 4.  Click **Import from File**.
 
 5.  In the Import Data dialog box, click the import box, select `HR_Application_Stage.zip`, and click **Import**. When the import succeeds, click **Close**.
 
-    ![](./images/vbcssp_imp_s6.png "This image shows the Import from File dialog following a successful import.")
+    ![](images/vbcssp_imp_s6.png "This image shows the Import from File dialog following a successful import.")
 
 6.  In the Business Objects pane, switch to the **Objects** tab and click **Department**.
 
 7.  Click the **Data** tab if necessary, then select **Staging** from the drop-down list to view the new departments.
 
-    ![](./images/vbcssp_imp_s8.png "This image shows the data of the Staging database for the Department object.")
+    ![](images/vbcssp_imp_s8.png "This image shows the data of the Staging database for the Department object.")
 
 8.  Click **Employee** and **Data**, then select **Staging** to view the new employees.
 
-    ![](./images/vbcssp_imp_s9.png "This image shows the data of the staging database for the Employee object.")
+    ![](images/vbcssp_imp_s9.png "This image shows the data of the staging database for the Employee object.")
 
 ## Task 4: Publish the Application
 
 After you have successfully tested the staged application, you can publish it and make the application live. The live application is visible to users with proper credentials.
 
-1.  Click the **Menu** ![Menu icon](./images/vbcssp_menu3_icon.png) icon in the header and select **Publish**.
+1.  Click the **Menu** ![Menu icon](images/vbcssp_menu3_icon.png) icon in the header and select **Publish**.
 
 2.  In the Publish Application dialog box, select the **Include data from Stage** option and click **Publish**.  
 
-    ![](./images/vbcssp_pub_s2.png "This image shows the Publish Application dialog. The Include data from Stage option and the Publish button are selected.")
+    ![](images/vbcssp_pub_s2.png "This image shows the Publish Application dialog. The Include data from Stage option and the Publish button are selected.")
 
     The application is now live. Notice the status change in the header next to the application name.
 
 3.  Click **ORACLE Visual Builder** in the header to go to the Visual Applications page. Locate the HR Application, click **Live** in the Status column, then select **hrwebapp** to open the app.
 
-    ![](./images/vbcssp_pub_s4_result.png "This image shows the hrwebapp selected under Live in the Status column for the HR Application. ")
+    ![](images/vbcssp_pub_s4_result.png "This image shows the hrwebapp selected under Live in the Status column for the HR Application. ")
 
     The application opens in a new browser tab, with the schema and data from the staging database copied to the live database.
 
-    ![](./images/published-view.png "This image shows the HR web app with data from the staging database.")
+    ![](images/published-view.png "This image shows the HR web app with data from the staging database.")
 
     You can make a note of this URL to share with public users.
 
-4.  To install the app as a PWA, click the **Install HR Application** ![Install HR Application icon](./images/install-app-icon.png) icon in the address bar, then **Install** when prompted.
+4.  To install the app as a PWA, click the **Install HR Application** ![Install HR Application icon](images/install-app-icon.png) icon in the address bar, then **Install** when prompted.
 
-    ![](./images/install-as-pwa.png "This image shows the Install app? prompt that appears when a user click the Install HR Application icon in the address bar. Install is selected.")
+    ![](images/install-as-pwa.png "This image shows the Install app? prompt that appears when a user click the Install HR Application icon in the address bar. Install is selected.")
 
     If you access this app on a mobile device, you'll be prompted to add the app to your phone's home screen as well.
 
 5. When the app opens on your device as a standalone app, try it out and test its functionality.
 
-    ![](./images/pwa-installed.png "This image shows the HR Application installed as a PWA on a device.")
+    ![](images/pwa-installed.png "This image shows the HR Application installed as a PWA on a device.")
 
     When you are done, click **X** to close the app. You can always click ![](images/pwa-desktop-icon.png) on your device's home screen or laptop to open the app again.
 
