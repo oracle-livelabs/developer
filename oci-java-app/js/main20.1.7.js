@@ -6,7 +6,7 @@ Version: 20.1.7
 */
 
 "use strict";
-var showdown = "https://objectstorage.us-phoenix-1.oraclecloud.com/p/SJgQwcGUvQ4LqtQ9xGsxRcgoSN19Wip9vSdk-D_lBzi7bhDP6eG1zMBl0I21Qvaz/n/c4u02/b/common/o/redwood-hol/js/showdown.min.js";
+var showdown = "https://oracle-livelabs.github.io/common/redwood-hol/js/showdown.min.js";
 const manifestFileName = "manifest.json";
 const expandText = "Expand All Steps";
 const collapseText = "Collapse All Steps";

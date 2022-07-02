@@ -5,7 +5,7 @@
         {
             "title": "Getting Started",
             "description": "Login to Oracle Cloud",
-            "filename": "https://objectstorage.us-phoenix-1.oraclecloud.com/p/SJgQwcGUvQ4LqtQ9xGsxRcgoSN19Wip9vSdk-D_lBzi7bhDP6eG1zMBl0I21Qvaz/n/c4u02/b/common/o/labs/cloud-login/cloud-login-livelabs2.md"
+            "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/cloud-login-livelabs2.md"
         },{
             "title": "Introduction",
             "description": "About the New features for Developers Workshop",
@@ -15,7 +15,7 @@
             "title": "Lab 1: Environment Setup",
             "description": "Setup compute instance running 19c using Terraform script and Resource Manager",
             "publisheddate": "3/24/2020",
-            "filename": "https://objectstorage.us-phoenix-1.oraclecloud.com/p/SJgQwcGUvQ4LqtQ9xGsxRcgoSN19Wip9vSdk-D_lBzi7bhDP6eG1zMBl0I21Qvaz/n/c4u02/b/common/o/labs/setup-compute/verify-setup-19c-livelabs.md"
+            "filename": "https://oracle-livelabs.github.io/common/labs/setup-compute/verify-setup-19c-livelabs.md"
         },
         {
             "title": "Lab 2: Sample Schema Setup",
@@ -56,7 +56,7 @@
         {
             "title": "Need Help?",
             "description": "Solutions to Common Problems and Directions for Receiving Live Help",
-            "filename":"https://objectstorage.us-phoenix-1.oraclecloud.com/p/SJgQwcGUvQ4LqtQ9xGsxRcgoSN19Wip9vSdk-D_lBzi7bhDP6eG1zMBl0I21Qvaz/n/c4u02/b/common/o/labs/need-help/need-help-livelabs.md"
+            "filename":"https://oracle-livelabs.github.io/common/labs/need-help/need-help-livelabs.md"
         }
     ]
 }
