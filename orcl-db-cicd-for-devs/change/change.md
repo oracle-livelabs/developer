@@ -202,7 +202,7 @@ It is now time to apply this change into our dbuser schema simulating how we wou
 
 ## Terminate your ADB (optional)
 
-To terminate your Always Free Autonomous Database, follow [these instructions](https://objectstorage.us-phoenix-1.oraclecloud.com/p/SJgQwcGUvQ4LqtQ9xGsxRcgoSN19Wip9vSdk-D_lBzi7bhDP6eG1zMBl0I21Qvaz/n/c4u02/b/common/o/labs/terminate-adb/terminate-adb.md).
+To terminate your Always Free Autonomous Database, follow [these instructions](https://oracle-livelabs.github.io/common/labs/terminate-adb/terminate-adb.md).
 
 
 
