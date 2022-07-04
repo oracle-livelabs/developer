@@ -9,22 +9,22 @@
         },
         {
             "title": "Login to Oracle Cloud",
-            "filename": "https://objectstorage.us-phoenix-1.oraclecloud.com/p/SJgQwcGUvQ4LqtQ9xGsxRcgoSN19Wip9vSdk-D_lBzi7bhDP6eG1zMBl0I21Qvaz/n/c4u02/b/common/o/labs/cloud-login/cloud-login-livelabs.md"
+            "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/cloud-login-livelabs.md"
         },
         {
             "title": "Lab 1: Provisioning Autonomous Database (ADW and ATP)",
             "description": "Provision an Autonomous Database - ATP or ADW",
-            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/data-management-library/autonomous-database/shared/adb-provision/adb-provision.md"
+            "filename": "https://oracle-livelabs.github.io/adb/shared/adb-provision/adb-provision.md"
         },
         {
             "title": "Lab 2: Connect to an Autonomous Database",
             "description": "Connect to an Autonomous Database with SQL Developer Web",
-            "filename": "https://objectstorage.us-phoenix-1.oraclecloud.com/p/SJgQwcGUvQ4LqtQ9xGsxRcgoSN19Wip9vSdk-D_lBzi7bhDP6eG1zMBl0I21Qvaz/n/c4u02/b/common/o/labs/sqldevweb-login/sqldevweb-login.md"
+            "filename": "https://oracle-livelabs.github.io/common/labs/sqldevweb-login/sqldevweb-login.md"
         },
         {
             "title": "Lab 3: Connect to your Autonomous Database using Database Actions/SQL Developer Web",
             "description": "Connect to your Autonomous Database using Database Actions/SQL Developer Web",
-            "filename": "https://objectstorage.us-phoenix-1.oraclecloud.com/p/SJgQwcGUvQ4LqtQ9xGsxRcgoSN19Wip9vSdk-D_lBzi7bhDP6eG1zMBl0I21Qvaz/n/c4u02/b/common/o/labs/sqldevweb-login/sqldevweb-login.md"
+            "filename": "https://oracle-livelabs.github.io/common/labs/sqldevweb-login/sqldevweb-login.md"
         },
         {
             "title": "Lab 4: Create and Auto-REST enable a table",
@@ -49,12 +49,12 @@
         {
             "title": "Terminate your Always Free Autonomous Database",
             "description": "Terminate your Always Free Autonomous Database",
-            "filename": "https://objectstorage.us-phoenix-1.oraclecloud.com/p/SJgQwcGUvQ4LqtQ9xGsxRcgoSN19Wip9vSdk-D_lBzi7bhDP6eG1zMBl0I21Qvaz/n/c4u02/b/common/o/labs/terminate-adb/terminate-adb.md"
+            "filename": "https://oracle-livelabs.github.io/common/labs/terminate-adb/terminate-adb.md"
         },
         {
             "title": "Need Help?",
             "description": "Solutions to Common Problems and Directions for Receiving Live Help",
-            "filename":"https://objectstorage.us-phoenix-1.oraclecloud.com/p/SJgQwcGUvQ4LqtQ9xGsxRcgoSN19Wip9vSdk-D_lBzi7bhDP6eG1zMBl0I21Qvaz/n/c4u02/b/common/o/labs/need-help/need-help-livelabs.md"
+            "filename":"https://oracle-livelabs.github.io/common/labs/need-help/need-help-livelabs.md"
         }
     ]
 }
