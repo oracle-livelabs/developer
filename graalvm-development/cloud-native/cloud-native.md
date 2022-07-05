@@ -111,7 +111,7 @@
     ```
     Ctrl＋Xを押し、内容保存の確認メッセージに対し、"Y"を入力し、Enterを押下してソースファイルを保存します。
 
-2. Dockerメージをビルドします。以下のコマンドをspdemo配下で実行します。
+2. Dockerイメージを作成します。以下のコマンドをspdemo配下で実行します。
 
     <!--
     ```
@@ -231,7 +231,9 @@
     </copy>
     ```
        
-4. Dockerコンテナをビルドします。以下のコマンドをspdemo配下で実行します。
+4. Dockerイメージを作成します。以下のコマンドをspdemo配下で実行します。
+
+    * distrolessベース・イメージをダウンロードします。
 
     ```
     <copy>
@@ -244,12 +246,13 @@
     </copy>
     ```
 
+    * Dockerイメージを作成します。
     ```
     <copy>
     sudo docker build -f Dockerfile.native-light -t spring-native-light .
     </copy>
     ```
-    生成されたコンテナイメージを確認します。  
+    * 生成されたコンテナイメージを確認します。  
     ```
     <copy>
     sudo docker images
