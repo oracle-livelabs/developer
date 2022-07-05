@@ -15,7 +15,7 @@ In this lab you will create a series of scenarios in OCI where Oracle REST Data 
 
 ### Prerequisites
 This lab assumes you have:
-* Completed the [Getting Started](https://objectstorage.us-phoenix-1.oraclecloud.com/p/SJgQwcGUvQ4LqtQ9xGsxRcgoSN19Wip9vSdk-D_lBzi7bhDP6eG1zMBl0I21Qvaz/n/c4u02/b/common/o/labs/cloud-login/pre-register-free-tier-account.md) lab
+* Completed the [Getting Started](https://oracle-livelabs.github.io/common/labs/cloud-login/pre-register-free-tier-account.md) lab
 
 ## Learn More
 

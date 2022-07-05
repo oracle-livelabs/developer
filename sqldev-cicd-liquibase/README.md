@@ -15,7 +15,7 @@ Run this hands-on workshop to learn how to capture changes from your Oracle Data
 
 ## Access the Labs Using Our Web Interface
 
-**[Click here](https://oracle.github.io/learning-library/developer-library/sqldev-cicd-liquibase/index.html)** to use our easy to navigate HTML format.
+**[Click here](https://oracle-livelabs.github.io/developer/sqldev-cicd-liquibase/index.html)** to use our easy to navigate HTML format.
 
 ## Oracle Cloud Account
 
