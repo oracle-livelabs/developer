@@ -413,6 +413,7 @@ One of the objectives of this workshop is to show the integration of Oracle Auto
 
     ![Run App](./images/task4/run-app.png)
 
+
 2. **Log In** to Companies using the following credentials:
 
     - Username: **demows**
