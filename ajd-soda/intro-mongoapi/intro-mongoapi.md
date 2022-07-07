@@ -29,7 +29,7 @@ In this lab, you will:
 
 ## Prerequisites
 
-* An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account - You can check Getting Started section for more information.
+* [An Oracle Free Tier](https://bit.ly/free-tier-1207), Always Free, Paid or LiveLabs Cloud Account - You can check Getting Started section for more information.
 * MongoDB Cloud account (or Google account)
 * Deploy Atlas document store on MongoDB Cloud before the workshop
 

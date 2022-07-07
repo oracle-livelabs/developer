@@ -289,7 +289,6 @@ One of the objectives of this workshop is to show the integration of Oracle Auto
 
     ![POST company Third and Fourth curl](./images/task2/curl-company-seven-eight.png)
 
-
 9. Use the **web browser** on your laptop to navigate to your micro-service to list JSON documents inserted into Oracle Autonomous Database.
 
     http://[DEVM public-ip address]:5000/mongo/
@@ -413,7 +412,6 @@ One of the objectives of this workshop is to show the integration of Oracle Auto
 1. Execute **Companies Application**. 
 
     ![Run App](./images/task4/run-app.png)
-
 
 2. **Log In** to Companies using the following credentials:
 

@@ -223,9 +223,7 @@ In this lab, you will:
     ssh -i <private-key-file-name>.key opc@<Public_IP>
     </copy>
     ````
-
     ![ssh Connection](./images/task3/ssh.png)
-
 
 2. We will **export** the **paths** and **Access** to python-simple-project folder using the following commands:
 
@@ -250,7 +248,7 @@ In this lab, you will:
     cat insert-mongoapi-app.py
     </copy>
     ````
-
+    
     ![cat insert-mongoapi-app](./images/task3/cat-insert-mongoapi-app.png)
 
 3. **Verify** all connection **variables are correct**. This time we are using Oracle variables that we have used in previous labs and those will be use for connection variables that we will use. Following this method, you don't need to edit them.
