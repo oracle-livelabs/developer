@@ -100,11 +100,11 @@ One of the objectives of this workshop is to show the integration of Oracle Auto
 
 8. Click **Create Database**, and name it **SimpleDatabase**, and the collection **SimpleCollection**. This will be used for our Python application development in the next lab.
 
-    - Database Name:
+    - Database Name: **SimpleDatabase**
     ```
     <copy>SimpleDatabase</copy>
     ```
-    - Collection Name:
+    - Collection Name: **SimpleDatabase**
     ```
     <copy>SimpleCollection</copy>
     ```
@@ -129,7 +129,23 @@ One of the objectives of this workshop is to show the integration of Oracle Auto
 
     ![ssh Connection](./images/task2/ssh.png)
 
-2. Lets have a look at **double-app.py**. In this file, we have the Python application code. Run the following command to see the code:
+2. We will **export** the **paths** and **Access** to python-simple-project folder using the following commands:
+
+    ````
+    <copy>
+    export TNS_ADMIN=/home/opc/Wallet_AJDEV
+    export LD_LIBRARY_PATH=/usr/lib/oracle/21/client64/lib
+    export PATH=$PATH:/usr/lib/oracle/21/client64/bin/
+    cd python-simple-project
+    . bin/activate
+    </copy>
+    ````
+
+    ![Export Paths and Access to Python-simple-project](./images/task2/exports-access.png)
+
+    > Note: We have run these commands before, if you are not desconnected from cloud shell, you don't have to run them again.
+
+3. Lets have a look at **double-app.py**. In this file, we have the Python application code. Run the following command to see the code:
 
     ````
     <copy>
@@ -140,7 +156,7 @@ One of the objectives of this workshop is to show the integration of Oracle Auto
     ![cat double-app part 1](./images/task2/cat-double-app.png)
     ![cat double-app part 2](./images/task2/cat2-double-app.png)
 
-3. **Verify** all connection **variables are correct**. 
+4. **Verify** all connection **variables are correct**. 
 
     - For the Oracle Autonomous JSON database connection: We are using **demo** user and the **password** that we have recommended during the workshop **DBlearnPTS#22_**.
 
@@ -173,7 +189,7 @@ One of the objectives of this workshop is to show the integration of Oracle Auto
     export MONGO_COLLECTION="SimpleCollection"
     ````
 
-4. **After checking if all variables are correct**. **Run** double-app application using the following command:
+5. **After checking if all variables are correct**. **Run** double-app application using the following command:
 
     ````
     <copy>
@@ -189,7 +205,7 @@ One of the objectives of this workshop is to show the integration of Oracle Auto
 
     ![double-app Execution](./images/task2/double-app-launch.png)
 
-5. Lets see what **double-app.py is doing**, use the following command:
+6. Lets see what **double-app.py is doing**, use the following command:
 
     ````
     <copy>
@@ -203,7 +219,7 @@ One of the objectives of this workshop is to show the integration of Oracle Auto
 
     **Your micro-service double-app.py is being executed** so we can start inserting the documents.
 
-6. **Copy** the following commands to perform **POST request with CURL client**. Make sure you press Enter after each one. First and Second POST:
+7. **Copy** the following commands to perform **POST request with CURL client**. Make sure you press **Enter** after each one. First and Second POST:
 
     ````
     <copy>
@@ -238,7 +254,7 @@ One of the objectives of this workshop is to show the integration of Oracle Auto
 
     ![POST company One curl](./images/task2/curl-company-five-six.png)
 
-7. **Copy** the following commands to perform **POST request with CURL client**. Make sure you press Enter after each one. Third and Fourth POST:
+8. **Copy** the following commands to perform **POST request with CURL client**. Make sure you press **Enter** after each one. Third and Fourth POST:
 
     ````
     <copy>
@@ -274,7 +290,7 @@ One of the objectives of this workshop is to show the integration of Oracle Auto
     ![POST company Third and Fourth curl](./images/task2/curl-company-seven-eight.png)
 
 
-8. Use the **web browser** on your laptop to navigate to your micro-service to list JSON documents inserted into Oracle Autonomous Database.
+9. Use the **web browser** on your laptop to navigate to your micro-service to list JSON documents inserted into Oracle Autonomous Database.
 
     http://[DEVM public-ip address]:5000/mongo/
 
@@ -285,7 +301,7 @@ One of the objectives of this workshop is to show the integration of Oracle Auto
         - http://[DEVM public-ip address]:5000/oracle/ -> for Oracle Autonomous Database
         - http://[DEVM public-ip address]:5000/mongo/ -> for MongoDB
 
-9. We can check that the **Four Companies** (Five, Six, Seven and Eight) are being stored on **MongoDB** cloud, on **SimpleDatabase.SimpleCollection** that we created in Task 1 of this Lab.
+10. We can check that the **Four Companies** (Five, Six, Seven and Eight) are being stored on **MongoDB** cloud, on **SimpleDatabase.SimpleCollection** that we created in Task 1 of this Lab.
 
     ![MongoDB Companies Added](./images/task2/mongodb-companies-added.png)
 
@@ -302,7 +318,23 @@ One of the objectives of this workshop is to show the integration of Oracle Auto
 
     ![ssh Connection](./images/task3/ssh.png)
 
-2. Lets have a look at **migrate-app.py**. In this file, we have the Python application code. Run the following command to see the code:
+2. We will **export** the **paths** and **Access** to python-simple-project folder using the following commands:
+
+    ````
+    <copy>
+    export TNS_ADMIN=/home/opc/Wallet_AJDEV
+    export LD_LIBRARY_PATH=/usr/lib/oracle/21/client64/lib
+    export PATH=$PATH:/usr/lib/oracle/21/client64/bin/
+    cd python-simple-project
+    . bin/activate
+    </copy>
+    ````
+
+    ![Export Paths and Access to Python-simple-project](./images/task3/exports-access.png)
+
+    > Note: We have run these commands before, if you are not desconnected from cloud shell, you don't have to run them again.
+
+3. Lets have a look at **migrate-app.py**. In this file, we have the Python application code. Run the following command to see the code:
 
     ````
     <copy>
@@ -382,18 +414,19 @@ One of the objectives of this workshop is to show the integration of Oracle Auto
 
     ![Run App](./images/task4/run-app.png)
 
+
 2. **Log In** to Companies using the following credentials:
 
-    - Username:
+    - Username: **demows**
     ```
-    <copy>demo</copy>
+    <copy>demows</copy>
     ```
-    - Password:
+    - Password: **DBlearnPTS#22_**
     ```
     <copy>DBlearnPTS#22_</copy>
     ```
 
-    ![Log In Companies](./images/task4/log-in-companies.png)
+    ![Log In Companies](./images/task4/log-in-companies-new.png)
 
 3. Click **Report**. 
 
@@ -409,7 +442,7 @@ One of the objectives of this workshop is to show the integration of Oracle Auto
 ## Acknowledgements
 * **Author** - Valentin Leonard Tabacaru, Database Product Management and Priscila Iruela, Technology Product Strategy Director
 * **Contributors** - Victor Martin Alvarez, Technology Product Strategy Director
-* **Last Updated By/Date** - Priscila Iruela, June 2022
+* **Last Updated By/Date** - Priscila Iruela, July 2022
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.

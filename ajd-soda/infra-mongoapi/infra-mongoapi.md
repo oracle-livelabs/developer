@@ -55,7 +55,7 @@ In this lab, you will:
 
 5. Provide the following information:
 
-    - VCN Name: 
+    - VCN Name: **DEVCN**
     ```
     <copy>DEVCN</copy>
     ```
@@ -87,15 +87,15 @@ In this lab, you will:
 
 11. Provide the following information:
 
-    - CIDR Block: 
+    - CIDR Block: **0.0.0.0/0**
     ```
     <copy>0.0.0.0/0</copy>
     ```
-    - Destination Port Range: 
+    - Destination Port Range: **5000**
     ```
     <copy>5000</copy>
     ```
-    - Description: 
+    - Description: **Python Flask**
     ```
     <copy>Python Flask</copy>
     ```
@@ -105,15 +105,15 @@ In this lab, you will:
 
 12. Provide the following information:
 
-    - CIDR Block:
+    - CIDR Block: **0.0.0.0/0**
     ```
     <copy>0.0.0.0/0</copy>
     ```
-    - Destination Port Range:
+    - Destination Port Range: **80**
     ```
     <copy>80</copy>
     ```
-    - Description: 
+    - Description: **HTTP**
     ```
     <copy>HTTP</copy>
     ```
@@ -150,7 +150,7 @@ In this lab, you will:
 
 5. Provide the following information:
 
-    - Name: 
+    - Name: **DEVM**
     ```
     <copy>DEVM</copy>
     ```
@@ -163,7 +163,7 @@ In this lab, you will:
 
     If you are using your own cloud account, not just a trial, you can see this section different. Just be sure you have all the information as following selected:
 
-    - Name: 
+    - Name: **DEVM**
     ```
     <copy>DEVM</copy>
     ```
@@ -211,11 +211,11 @@ On the Instance Details page, copy Public IP Address in your notes.
 3. Provide the following information:
 
     - Comparment: Be sure you have selected the correct one for this workshop purpose. *Root* is the recommended one
-    - Display name: 
+    - Display name: **AJDEV**
     ```
     <copy>AJDEV</copy>
     ```
-    - Database name:
+    - Database name: **AJDEV**
     ```
     <copy>AJDEV</copy>
     ```
@@ -230,7 +230,7 @@ On the Instance Details page, copy Public IP Address in your notes.
 
 4. Under **Create administrator** credentials:
 
-    - Password: 
+    - Password: **DBlearnPTS#22_**
     ```
     <copy>DBlearnPTS#22_</copy>
     ```
@@ -241,9 +241,19 @@ On the Instance Details page, copy Public IP Address in your notes.
     
 5. Under **Choose network access**:
 
-    - Access Type: Secure access from everywhere
+    - Access Type: **Secure access from allowed IPs and VCNs only**
 
-    ![Creation AJD Network](./images/task3/creation-ajson-network.png)
+    - IP notation type:**IP Address**
+    - Click **Add My IP Address**
+
+    ![Creation AJD Network](./images/task3/creation-ajson-network-new.png)
+
+    - Click **+ Access Control Rule**
+
+    - IP notation type: **IP Address**
+    - Values: Type your **DEVM-Public-IP**, you just copy it at the end of the previous task.
+     
+    ![Creation AJD Network](./images/task3/creation-ajson-network-public-ip.png)
 
 6. Under **Choose a license type**:
     
@@ -270,11 +280,11 @@ On the Instance Details page, copy Public IP Address in your notes.
 
 11. Type the following information:
 
-    - Password:
+    - Password: **DBlearnPTS#22_**
     ```
     <copy>DBlearnPTS#22_</copy>
     ```
-    - Confirm Password:
+    - Confirm Password: **DBlearnPTS#22_**
     ```
     <copy>DBlearnPTS#22_</copy>
     ```
@@ -309,6 +319,11 @@ On the Instance Details page, copy Public IP Address in your notes.
     ````
     <copy>
     chmod 400 <private-key-file-name>.key
+    </copy>
+    ```
+
+    ```
+    <copy>
     scp -i <private-key-file-name>.key ./Wallet_AJDEV.zip opc@<Public_IP>:/home/opc
     </copy>
     ````
@@ -355,141 +370,171 @@ On the Instance Details page, copy Public IP Address in your notes.
 ## Task 4: Prepare Document Store
 
 
-1. **Click** on main menu ≡, then Oracle Database > **Autonomous JSON Database**. 
+1. On the Oracle Cloud Infrastructure Console, click **Database Actions** next to the big green box. Allow pop-ups from cloud.oracle.com.
+
+    ![DB Actions](./images/task4/db-actions.png)
+
+    If you need to **Sign in** again remember doing it as admin:
+    - User: **admin**
+    ```
+    <copy>admin</copy>
+    ```
+    - Password: **DBlearnPTS#22_**
+    ```
+    <copy>DBlearnPTS#22_</copy>
+    ```
+
+2. Under the **Administration** section, click on **Database Users**.
+
+    ![DB Actions - Database Users](./images/task4/database-actions-database-users.png)
+
+3. Click **+ Create User**.
+
+    ![DB Actions - Create User](./images/task4/create-user.png)
+
+4. Create the new user using the following information in the **User** tab:
+
+    - User Name: **DEMO**
+    ```
+    <copy>DEMO</copy>
+    ```
+    - Password: **DBlearnPTS#22_**
+    ```
+    <copy>DBlearnPTS#22_</copy>
+    ```
+    - Confirm Password: **DBlearnPTS#22_**
+    ```
+    <copy>DBlearnPTS#22_</copy>
+    ```
+    - Quota on tablespace DATA: **UNLIMITED**
+    - Enable **Web Access** and **OML**
+
+    ![DB Actions - Info DEMO User](./images/task4/demo-user-info.png)
+
+4. Change to **Granted Roles** tab. Search by SODA_APP and select **Granted** and **Default**. After click **Create User**.
+
+    ![DB Actions - Info DEMO Granted Roles](./images/task4/granted-roles.png)
+
+    Be sure that the user has been created correctly, exactly like the screenshoot.
+    
+    ![DB Actions - DEMO User Ready](./images/task4/demo-user-ready.png)
+
+5. Go back to the main menu ≡, then Oracle Database > **Autonomous JSON Database**. 
 
     ![AJD Dashboard](./images/task4/ajson-dashboard.png)
 
-2. On **Tools tab**, under **Oracle Application Express**, click **Open APEX**. 
+6. On **Tools tab**, under **Oracle Application Express**, click **Open APEX**. 
 
     ![Apex](./images/task4/apex.png)
 
-3. On **Administration Services** login page, use password for **ADMIN**.
+7. On **Administration Services** login page, use password for **ADMIN**.
 
-    - Password: 
+    - Password: **DBlearnPTS#22_**
     ```
     <copy>DBlearnPTS#22_</copy>
     ```
 
     ![Apex ADMIN](./images/task4/apex-admin.png)
 
-4. Click **Create Workspace**.
+8. Click **Create Workspace**.
 
     ![Apex Workspace](./images/task4/apex-workspace.png)
 
-5. Type the following information:
+9. In the **How would you like to create your workspace?** screen, select **Existing Schema**.
 
-    - Database User:
+    ![Apex Workspace](./images/task4/create-workspace.png)
+
+10. Type the following information:
+
+    - Database User: **DEMO**. Use the search menu to find DEMO and select it. You can't type on this field.
+    - Workspace User: **DEMO**
     ```
     <copy>DEMO</copy>
     ```
-    - Password: 
+    - Workspace Username: **DEMOWS**
+    ```
+    <copy>DEMOWS</copy>
+    ```
+    - Workspace Password: **DBlearnPTS#22_**
     ```
     <copy>DBlearnPTS#22_</copy>
     ```
-    - Workspace Name:
-    ```
-    <copy>DEMO</copy>
-    ```
-
-    ![Apex Workspace DEMO](./images/task4/apex-workspace-demo.png)
+    - Click **Create Workspace**
     
-6. Click **DEMO** in the middle of the page to **Sign in** as **DEMO** user.
+    ![Apex Workspace DEMO](./images/task4/create-workspace-info.png)
+    
+11. Click **DEMO** in the middle of the page to **Sign in** as **DEMO** user.
  
     ![Apex Login DEMO](./images/task4/apex-log-in-demo.png)
  
-7. Click **Sign In** Page using the following information:
+12. Click **Sign In** Page using the following information:
 
-    - Workspace: 
+    - Workspace: **demo**
     ```
     <copy>demo</copy>
     ```
-    - Username:
+    - Username: **demows**
     ```
-    <copy>demo</copy>
+    <copy>demows</copy>
     ```
-    - Password: 
+    - Password: **DBlearnPTS#22_**
     ```
     <copy>DBlearnPTS#22_</copy>
     ```
 
-    ![Login DEMO](./images/task4/log-in-demo.png)
+    ![Login DEMO](./images/task4/log-in-demo-new.png)
 
     **Oracle APEX** uses low-code development to let you build data-driven apps quickly without having to learn complex web technologies. This also gives you access to Oracle REST Data Services, that allows developers to readily expose and/or consume RESTful Web Services by defining REST end points.
 
-8. On Oracle Cloud Infrastructure Console, click **Database Actions** next to the big green box. Allow pop-ups from cloud.oracle.com. If you need to **Sign in** again remember doing it as admin:
-    - User:
-    ```
-    <copy>admin</copy>
-    ```
-    - Password:
-    ```
-    <copy>DBlearnPTS#22_</copy>
-    ```
+13. Go again to **Database Actions** section if yout browser tab has being closed.
 
     ![DB Actions](./images/task4/db-actions.png)
 
-9. Click **Development** > **SQL** (first button).
+14. **Sign out** as **ADMIN**.
 
-    ![DB Actions SQL](./images/task4/db-actions-sql.png)
+    ![DB Actions ADMIN sign out](./images/task4/sign-out-admin.png)
 
-10. Run the following code using **Run Script** button:
-
-    ````
-    <copy>
-    BEGIN 
-       ords_admin.enable_schema (
-          p_enabled => TRUE,
-          p_schema => 'DEMO',
-          p_url_mapping_type => 'BASE_PATH',
-          p_url_mapping_pattern => 'demo',
-          p_auto_rest_auth => NULL
-       ) ;
-      commit ;
-    END ; 
-    /
-    </copy>
-    ````
-
-    ![Enable Schema Script](./images/task4/enable-schema-script.png)
+15. **Sign in** as **DEMO** user.
     
-    >**Note** : For all code you run in SQL Developer Web, make sure you receive a success message:
+    ![DB Actions sign in](./images/task4/database-actions-sign-in.png)
 
-    ````
-    PL/SQL procedure successfully completed.
-    ````
-    
-    ![PLSQL Successfully completed](./images/task4/plsql-success.png)    
-
-11. Grant **SODA_APP** to DEMO user. This role provides privileges to use the SODA APIs, in particular, to create, drop, and list document collections. Use **Run Statement** button to execute this command.
-
-    ````
-    <copy>
-    GRANT SODA_APP TO demo;
-    </copy>
-    ````
-
-    ![GRANT SODA](./images/task4/grant-soda.png)
-
-12. Click **ADMIN** upper right corner, and **Sign Out**. 
-
-    ![Sign Out](./images/task4/sign-out.png)
-
-13. Click **Sign In**. Login using DEMO user credentials.
-
-    - Username:
-     ```
+    - Username: **demo**
+    ```
     <copy>demo</copy>
     ```
-    - Password:
-     ```
+    - Password: **DBlearnPTS#22_**
+    ```
     <copy>DBlearnPTS#22_</copy>
     ```
+
+    ![DB Actions DEMO sign in](./images/task4/sign-in-demo.png)
+
+    You should be connected now as **DEMO** user, check it on the right top corner side of the page.
+
+    ![DB Actions DEMO](./images/task4/database-actions-demo.png)
+
     
-    ![Sign In DEMO](./images/task4/sign-in-demo.png)
-    
-14. Click **Development** > **JSON**, and follow the tips. This is the interface you will use to manage your JSON collections in this document store.
+16. Click **Development** > **JSON**, and follow the tips. This is the interface you will use to manage your JSON collections in this document store.
 
     ![DB Actions JSON](./images/task4/db-actions-json.png)
+
+17. We will create a Collection to store JSON documents. Click **Create Collection**.
+
+    ![DB Actions JSON Create Collection](./images/task4/create-collection.png)
+
+18. Provide the following information:
+
+    - Collection Name: **SimpleCollection**
+    ```
+    <copy>SimpleCollection</copy>
+    ```
+    - Click **Create** 
+    
+    ![DB Actions JSON Create Collection](./images/task4/create-simple-collection.png)
+
+    You can see the new Collection under the JSON Collection section page.
+    
+    ![DB Actions JSON Create Collection](./images/task4/simple-collection.png)
 
 
 *You can proceed to the next lab…*
@@ -497,7 +542,7 @@ On the Instance Details page, copy Public IP Address in your notes.
 ## Acknowledgements
 * **Author** - Valentin Leonard Tabacaru, Database Product Management and Priscila Iruela, Technology Product Strategy Director
 * **Contributors** - Victor Martin Alvarez, Technology Product Strategy Director
-* **Last Updated By/Date** - Priscila Iruela, June 2022
+* **Last Updated By/Date** - Priscila Iruela, July 2022
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.

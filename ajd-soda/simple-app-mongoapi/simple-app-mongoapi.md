@@ -139,7 +139,7 @@ Use SODA for Python on Oracle Autonomous JSON Database to develop a micro-servic
 
     **Your micro-service simple-app.py is being executed** so we can start inserting the documents.
 
-11. **Copy** the following commands to perform **POST request with CURL client**. Make sure you press Enter after each one. First POST:
+11. **Copy** the following commands to perform **POST request with CURL client**. Make sure you press **Enter** after each one. First POST:
 
     ````
     <copy>
@@ -161,7 +161,7 @@ Use SODA for Python on Oracle Autonomous JSON Database to develop a micro-servic
 
     ![POST company One curl](./images/task1/curl-company-one.png)
 
-12. **Copy** the following commands to perform **POST request with CURL client**. Make sure you press Enter after each one. Second POST:
+12. **Copy** the following commands to perform **POST request with CURL client**. Make sure you press **Enter** after each one. Second POST:
 
     ````
     <copy>
@@ -183,7 +183,7 @@ Use SODA for Python on Oracle Autonomous JSON Database to develop a micro-servic
 
     ![POST company Two curl](./images/task1/curl-company-two.png)
 
-13. **Copy** the following commands to perform **POST request with CURL client**. Make sure you press Enter after each one. Third and Fourth POST:
+13. **Copy** the following commands to perform **POST request with CURL client**. Make sure you press **Enter** after each one. Third and Fourth POST:
 
     ````
     <copy>
@@ -240,25 +240,27 @@ Use SODA for Python on Oracle Autonomous JSON Database to develop a micro-servic
 
 1. Use the **web browser** tab where Oracle Application Express (Apex) is opened, or open Apex from AJDEV using the browser on your laptop. If you need to **Sign In** again use the following credentials:
 
-    - Database User: 
+     - Workspace Name: **demo**
     ```
-    <copy>DEMO</copy>
+    <copy>demo</copy>
     ```
-    - Password:
+    - Database User: **demows**
+    ```
+    <copy>demows</copy>
+    ```
+    - Password: **DBlearnPTS#22_**
     ```
     <copy>DBlearnPTS#22_</copy>
     ```
-    - Workspace Name:
-    ```
-    <copy>DEMO</copy>
-    ```
 
-    Click **SQL Workshop** > **SQL Commands**. 
+    ![Login DEMO](./images/task2/log-in-demo-new.png)
+
+2. Click **SQL Workshop** > **SQL Commands**. 
 
     ![Apex SQL Workshop](./images/task2/apex-sql-workshop.png)
     ![Apex SQL Commands](./images/task2/apex-sql-commands.png)
 
-2. **Run** this SQL query:
+3. **Run** this SQL query:
 
     ````
     <copy>
@@ -268,7 +270,7 @@ Use SODA for Python on Oracle Autonomous JSON Database to develop a micro-servic
 
     ![Select](./images/task2/select.png)
 
-3. **Describe** the table that holds JSON documents data in the collection. The name of the column that stores JSON documents is JSON_DOCUMENT.
+4. **Describe** the table that holds JSON documents data in the collection. The name of the column that stores JSON documents is JSON_DOCUMENT.
 
     ````
     <copy>
@@ -278,7 +280,7 @@ Use SODA for Python on Oracle Autonomous JSON Database to develop a micro-servic
 
     ![Desc](./images/task2/desc.png)
 
-4. SQL dot-notation syntax is designed for easy queries to return JSON values from tables. **Run** a JSON dot-notation query.
+5. SQL dot-notation syntax is designed for easy queries to return JSON values from tables. **Run** a JSON dot-notation query.
 
     ````
     <copy>
@@ -293,17 +295,17 @@ Use SODA for Python on Oracle Autonomous JSON Database to develop a micro-servic
 
     ![Select JSON](./images/task2/select-json.png)
 
-5. JSON data can be accessed via SQL from your applications. Click **App Builder** > **Create**. 
+6. JSON data can be accessed via SQL from your applications. Click **App Builder** > **Create**. 
     
     ![New App](./images/task2/new-app.png)
 
-6. Click **New Application**.
+7. Click **New Application**.
 
     ![New App Dashboard](./images/task2/new-app-dashboard.png)
 
-7. Provide the following information:
+8. Provide the following information:
 
-    - Name: 
+    - Name: **Companies**
     ```
     <copy>Companies</copy>
     ```
@@ -315,7 +317,7 @@ Use SODA for Python on Oracle Autonomous JSON Database to develop a micro-servic
 
     ![Interactive Report](./images/task2/interactive-report.png)
 
-    - Page Name: 
+    - Page Name: **Report**
     ```
     <copy>Report</copy>
     ```
@@ -349,16 +351,16 @@ Use SODA for Python on Oracle Autonomous JSON Database to develop a micro-servic
 
 9. **Log In** to Companies using the following credentials:
 
-    - Username:
+    - Username: **demows**
     ```
-    <copy>demo</copy>
+    <copy>demows</copy>
     ```
-    - Password:
+    - Password: **DBlearnPTS#22_**
     ```
     <copy>DBlearnPTS#22_</copy>
     ```
 
-    ![Log In Companies](./images/task2/log-in-companies.png)
+    ![Log In Companies](./images/task2/log-in-companies-new.png)
 
 10. Click **Report**. 
 
@@ -373,9 +375,9 @@ Use SODA for Python on Oracle Autonomous JSON Database to develop a micro-servic
 *You can proceed to the next lab…*
 
 ## Acknowledgements
-* **Author** - Valentin Leonard Tabacaru, Database Product Management and Priscila Iruela, Technology Product Strategy Director
+* **Author** - Valentin Leonard Tabacaru, Database Product Management and Priscila Iruela, Technology Product Strategy Directorf
 * **Contributors** - Victor Martin Alvarez, Technology Product Strategy Director
-* **Last Updated By/Date** - Priscila Iruela, June 2022
+* **Last Updated By/Date** - Priscila Iruela, July 2022
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
