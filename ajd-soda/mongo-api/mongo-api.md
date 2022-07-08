@@ -73,20 +73,20 @@ In this lab, you will:
 
     ![cat mongoapi-app](./images/task1/cat-mongoapi-app.png)
 
-3. **Verify** all connection **variables are correct**. This time we are using Oracle variables that we have used in previous labs and those will be use for connection variables that we will use. Following this method, you don't need to edit them.
+3. For the Oracle Autonomous JSON database connection: We are using **demo** user and the **password** that we have recommended during the workshop **DBlearnPTS#22_**. The name of the Oracle Databases is **demo** too. And the Oracle schema **SimpleCollection**. We will **run** the following export commands:
 
-
-    - For the Oracle Autonomous JSON database connection: We are using **demo** user and the **password** that we have recommended during the workshop **DBlearnPTS#22_**. The name of the Oracle Databases is **demo** too. And the Oracle schema **SimpleCollection**.
-
-    > Note: If you have change the following variables to a different value, please run this commands providing the variable that you have changed. **Remember, we are using the Oracle connections under the MongoDB variables for nor editing the parameters. If you prefer, you can eddit them.  Following this method, it is cleaner for the application point of view.**
-    >
     ````
+    <copy>
     export MONGO_USER="demo"
     export MONGO_PASSWORD="DBlearnPTS#22_"
     export MONGO_CLUSTER="Cluster0"
     export MONGO_DB="demo"
     export MONGO_COLLECTION="SimpleCollection"
+    </copy>
     ````
+
+    > Note: If you have change the following variables to a different value, please run this commands providing the variable that you have changed. **Remember, we are using the Oracle connections under the MongoDB variables for nor editing the parameters. If you prefer, you can eddit them.  Following this method, it is cleaner for the application point of view.**
+    >
 
     The only variable that we need to define, if you haven't changed any variable from the recomended, is **ATP_URL**. A new URL that our AJD has created after adding our IPs in Task 1 of this Lab.
 
@@ -119,13 +119,14 @@ In this lab, you will:
     mongodb://[user:password@]<ATP_URL_including_tenancy_id.oraclecloudapp.com>:27017[user]authMechanism=PLAIN&authSource=$external&ssl=true&retryWrites=false&loadBalanced=true
     ````
 
-    We need to copy the URL string after `@]` and until `:27017`. 
+    We need to copy the URL string after your _`[user:password@]`_ and until _`:27017`_, including _`oraclecloudapps.com`_. It should be something like: _`AAA8EFD9AA64AA4-AJDEV.adb.eu-frankfurt-1.oraclecloudapps.com`_
+
 
 7. We will **export** the URL using the following command:
 
     ````
     <copy>
-    export ATP_URL="[URL_AFTER_@_AND_]_UNTIL_SEMICOLON_27017]" 
+    export ATP_URL="URL_FROM_ABOVE" 
     </copy>
     ````
 
@@ -147,7 +148,7 @@ In this lab, you will:
 
      ![Microservice Company MongoAPI capability](./images/task1/microservice-mongoapi.png)
     
-    > This micro-service has 1 URL. We already had used previosly the Oracle one and the Mongo one. In this case we are using a new one / oracle/mongo. Here you have the others URLS too:
+    > This micro-service has 1 URL. We already had used previosly the Oracle one and the Mongo one. In this case we are using a new one /oracle/mongo. Here you have the others URLS too:
     >
         - http://[DEVM public-ip address]:5000/oracle/ -> for Oracle Autonomous Database
         - http://[DEVM public-ip address]:5000/mongo/ -> for MongoDB
@@ -241,7 +242,7 @@ In this lab, you will:
 
     > Note: We have run these commands before, if you are not desconnected from cloud shell, you don't have to run them again.
 
-2. Lets have a look at **insert-mongoapi-app.py**. In this file, we have the Python application code. Run the following command to see the code:
+3. Lets have a look at **insert-mongoapi-app.py**. In this file, we have the Python application code. Run the following command to see the code:
 
     ````
     <copy>
@@ -251,24 +252,26 @@ In this lab, you will:
     
     ![cat insert-mongoapi-app](./images/task3/cat-insert-mongoapi-app.png)
 
-3. **Verify** all connection **variables are correct**. This time we are using Oracle variables that we have used in previous labs and those will be use for connection variables that we will use. Following this method, you don't need to edit them.
+4. For the Oracle Autonomous JSON database connection: We are using **demo** user and the **password** that we have recommended during the workshop **DBlearnPTS#22_**. The name of the Oracle Databases is **demo** too. And the Oracle schema **SimpleCollection**. We will **run** the following export commands:
 
-    - For the Oracle Autonomous JSON database connection: We are using **demo** user and the **password** that we have recommended during the workshop **DBlearnPTS#22_**. The name of the Oracle Databases is **demo** too. And the new Oracle JSON Collection **MongoCollection**.
-
-    > Note: If you have change the following variables to a different value, please run this commands providing the variable that you have changed. **Remember, we are using the Oracle connections under the MongoDB variables for nor editing the parameters. If you prefer, you can eddit them.  Following this method, it is cleaner for the application point of view.**
-    >
     ````
+    <copy>
     export MONGO_USER="demo"
     export MONGO_PASSWORD="DBlearnPTS#22_"
     export MONGO_CLUSTER="Cluster0"
     export MONGO_DB="demo"
-    export MONGO_COLLECTION="MongoCollection"
-    export ATP_URL="[URL_AFTER_@_AND_]_UNTIL_SEMICOLON_27017]" 
+    export MONGO_COLLECTION="SimpleCollection"
+    export ATP_URL="URL_FROM_ABOVE" 
+    </copy>
     ````
+
+    > Note: If you have change the following variables to a different value, please run this commands providing the variable that you have changed. **Remember, we are using the Oracle connections under the MongoDB variables for nor editing the parameters. If you prefer, you can eddit them.  Following this method, it is cleaner for the application point of view.**
+    >
 
     > Note: Remember that we have exported **ATP_URL** on Task number 2 of this lab, so we don't need to export it again.
 
-4. **After checking if all variables are correct**. **Run** mongoapi-app application using the following command:
+
+5. **After checking if all variables are correct**. **Run** mongoapi-app application using the following command:
 
     ````
     <copy>
@@ -283,7 +286,7 @@ In this lab, you will:
 
     ![insert-mongoapi-app Execution](./images/task3/insert-mongoapi-app-execution.png)
 
-5. Lets see what **insert-mongoapi-app.py is doing**, use the following command:
+6. Lets see what **insert-mongoapi-app.py is doing**, use the following command:
 
     ````
     <copy>
@@ -297,7 +300,7 @@ In this lab, you will:
 
     **Your micro-service nsert-mongoapi-app.py is being executed** so we can start inserting the documents.
 
-6. **Copy** the following commands to perform **POST request with CURL client**. Make sure you press **Enter** after each one. First and Second POST:
+7. **Copy** the following commands to perform **POST request with CURL client**. Make sure you press **Enter** after each one. First and Second POST:
 
     ````
     <copy>
@@ -332,7 +335,7 @@ In this lab, you will:
 
     ![POST company nine and ten curl](./images/task3/curl-company-nine-ten.png)
 
-7. Use the **web browser** on your laptop to navigate to your micro-service to list JSON documents inserted into Oracle Autonomous Database using MongoAPI capability.
+8. Use the **web browser** on your laptop to navigate to your micro-service to list JSON documents inserted into Oracle Autonomous Database using MongoAPI capability.
 
     http://[DEVM public-ip address]:5000/oracle/mongo/
 
@@ -343,11 +346,11 @@ In this lab, you will:
         - http://[DEVM public-ip address]:5000/oracle/mongo/ -> for Oracle Autonomous Database using MongoAPI
 
 
-8. We can check that the **Two New Companies** (Nice and Ten) are being stored on our **Autonomous JSON Database**, on **MongoCollection** that we created in Task 3 of this Lab. Go to **Database Actions** again and click green **Play** button.
+9. We can check that the **Two New Companies** (Nice and Ten) are being stored on our **Autonomous JSON Database**, on **MongoCollection** that we created in Task 3 of this Lab. Go to **Database Actions** again and click green **Play** button.
 
     ![MongoDB Companies Added Database Actions](./images/task3/database-actions-nine-ten.png)
 
-9. Go to **cloud shell terminal.** We will **stop insert-mongoapi-app.py** running the following command. 
+10. Go to **cloud shell terminal.** We will **stop insert-mongoapi-app.py** running the following command. 
 
     ````
     <copy>

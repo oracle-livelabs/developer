@@ -92,13 +92,7 @@ One of the objectives of this workshop is to show the integration of Oracle Auto
     
     > Note: Save this string in your notes. Replace `[password]` (DBlearnPTS#22_), `[cluster_name]` (Cluster0), `[sub_domain_name]` and `[dbname]` (SimpleDatabase) with your values.
 
-7. Click the cluster name **Cluster0**. Under **Collections**, use **Load a Sample Dataset wizard** to generate some JSON documents for different use cases in your MongoDB database. **Navigate** these sample datasets and familiarize yourself with JSON documents, if this is your first experience.
-
-    ![MongoDB Collections](./images/task1/mongodb-collections.png)
-    ![MongoDB Load Sample](./images/task1/mongodb-load-sample.png)
-    ![MongoDB Load Sample Two](./images/task1/mongodb-load-sample-two.png)
-
-8. Click **Create Database**, and name it **SimpleDatabase**, and the collection **SimpleCollection**. This will be used for our Python application development in the next lab.
+7. Click the cluster name **Cluster0**. Under **Collections**, click **Create Database**, and name it **SimpleDatabase**, and the collection **SimpleCollection**. This will be used for our Python application development in the next lab.
 
     - Database Name: **SimpleDatabase**
     ```
@@ -112,7 +106,7 @@ One of the objectives of this workshop is to show the integration of Oracle Auto
     ![MongoDB Create Database](./images/task1/mongodb-create-database.png)
     ![MongoDB Simple DB](./images/task1/mongodb-simple-db.png)
 
-9. On the Collections left-side menu, select **SimpleDatabase** > **SimpleCollection**. This collection is now empty.
+8. On the Collections left-side menu, select **SimpleDatabase** > **SimpleCollection**. This collection is now empty.
 
     ![MongoDB SimpleDB Empty](./images/task1/mongodb-simple-db-empty.png)
 
@@ -409,12 +403,29 @@ One of the objectives of this workshop is to show the integration of Oracle Auto
 
 ## Task 4: Final Results in Companies App built with APEX
 
-1. Execute **Companies Application**. 
+1. Use the **web browser** tab where Oracle Application Express (Apex) is opened, or open Apex from AJDEV using the browser on your laptop. If you need to **Sign In** again use the following credentials:
+
+     - Workspace Name: **demo**
+    ```
+    <copy>demo</copy>
+    ```
+    - Database User: **demows**
+    ```
+    <copy>demows</copy>
+    ```
+    - Password: **DBlearnPTS#22_**
+    ```
+    <copy>DBlearnPTS#22_</copy>
+    ```
+
+    ![Login DEMO](./images/task4/log-in-demo-new.png)
+
+2. Execute **Companies Application**. 
 
     ![Run App](./images/task4/run-app.png)
 
 
-2. **Log In** to Companies using the following credentials:
+3. **Log In** to Companies using the following credentials:
 
     - Username: **demows**
     ```
@@ -427,7 +438,7 @@ One of the objectives of this workshop is to show the integration of Oracle Auto
 
     ![Log In Companies](./images/task4/log-in-companies-new.png)
 
-3. Click **Report**. 
+4. Click **Report**. 
 
     ![Report App](./images/task4/report-app.png)
     
