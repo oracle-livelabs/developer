@@ -260,7 +260,7 @@ In this lab, you will:
     export MONGO_PASSWORD="DBlearnPTS#22_"
     export MONGO_CLUSTER="Cluster0"
     export MONGO_DB="demo"
-    export MONGO_COLLECTION="SimpleCollection"
+    export MONGO_COLLECTION="MongoCollection"
     export ATP_URL="URL_FROM_ABOVE" 
     </copy>
     ````
