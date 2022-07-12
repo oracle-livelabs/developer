@@ -77,46 +77,52 @@ We will create a simple web application that returns the current tasks (DESCRIPT
 1. Copy and paste the following .NET sample code to a local text file to modify.
 
     ```
-<copy>using Oracle.ManagedDataAccess.Client;
-using System.Data;
-var builder = WebApplication.CreateBuilder(args);
-var app = builder.Build();
-app.MapGet("/", () => "Hello World!");
-app.Run(async context =>
-{
-      //Set the user id and password			
-      string conString = "User Id=appuser;Password=<PASSWORD>;Connection Timeout=180;" +
-      //Set Data Source value to an Oracle connect descriptor or an Oracle net service name
-        "Data Source=<CONNECT DESCRIPTOR>;";
-      using (OracleConnection con = new OracleConnection(conString))
-      {
-        using (OracleCommand cmd = con.CreateCommand())
-        {
-          try
+    <copy>using Oracle.ManagedDataAccess.Client;
+    using System.Data;
+    
+    var builder = WebApplication.CreateBuilder(args);
+    var app = builder.Build();
+    app.MapGet("/", () => "Hello World!");
+    
+    app.Run(async context =>
+    {
+          //Set the user id and password			
+          string conString = "User Id=appuser;Password=<PASSWORD>;Connection Timeout=180;" +
+    
+          //Set Data Source value to an Oracle connect descriptor or an Oracle net service name
+            "Data Source=<CONNECT DESCRIPTOR>;";
+    
+          using (OracleConnection con = new OracleConnection(conString))
           {
-            con.Open();
-            await context.Response.WriteAsync("Connected to Oracle Autonomous DB.\n\n");
-            //Retrieve TODOITEM table with completion status of each task
-            cmd.CommandText = "SELECT description, done FROM todoitem";
-            OracleDataReader reader = cmd.ExecuteReader();
-            while (reader.Read())
+            using (OracleCommand cmd = con.CreateCommand())
             {
-              if (reader.GetBoolean(1))
-                await context.Response.WriteAsync(reader.GetString(0) + " is done.\n");
-              else
-                await context.Response.WriteAsync(reader.GetString(0) + " is NOT done.\n");
-            }              
-            reader.Dispose();
+              try
+              {
+                con.Open();
+                await context.Response.WriteAsync("Connected to Oracle Autonomous DB.\n\n");
+    
+                //Retrieve TODOITEM table with completion status of each task
+                cmd.CommandText = "SELECT description, done FROM todoitem";
+                OracleDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                  if (reader.GetBoolean(1))
+                    await context.Response.WriteAsync(reader.GetString(0) + " is done.\n");
+                  else
+                    await context.Response.WriteAsync(reader.GetString(0) + " is NOT done.\n");
+                }              
+    
+                reader.Dispose();
+              }
+              catch (Exception ex)
+              {
+                await context.Response.WriteAsync(ex.Message);
+              }
+            }
           }
-          catch (Exception ex)
-          {
-            await context.Response.WriteAsync(ex.Message);
-          }
-        }
-      }
-});
-app.Run();
-</copy>
+    });
+    app.Run();
+    </copy>
     ```
 
 2. The **User Id** value has already been set to APPUSER. Add the **Password** and **Data Source** entries. 
