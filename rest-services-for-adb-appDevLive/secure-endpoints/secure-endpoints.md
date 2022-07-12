@@ -2,7 +2,7 @@
 
 ## Introduction
 
-In this lab you will Securing the REST Endpoints you created in the previous lab.
+In this lab you will secure the REST endpoints you created in the previous lab.
 
 Estimated Lab Time: 10 minutes
 
@@ -14,7 +14,7 @@ Watch the video below for a quick walk through of the lab.
 
 - Create an OAuth2 token
 - Secure REST endpoints
-- Test the secure end to end flow
+- Test the secure end-to-end flow
 
 ### Prerequisites
 
@@ -32,7 +32,7 @@ This lab assumes you have completed the following labs:
 
 **If this is your first time accessing the REST Workshop, you will be presented with a guided tour. Complete the tour or click the X in any tour popup window to quit the tour.**
 
-1. If not already there from the previous lab, we need to be on the **REST Database Actions** page. To do this, use the **Database Actions menu** in the upper left of the page and choose **REST** in the Development list.
+1. If not already there from the previous lab, we need to navigate to the **REST Database Actions** page. To do this, use the **Database Actions menu** in the upper left of the page and choose **REST** in the Development list.
 
     ![Database Actions Menu, Development then REST](./images/sec-1.png)
 
@@ -109,17 +109,17 @@ This lab assumes you have completed the following labs:
 
     ![Roles shuttle](./images/sec-15.png)
 
-    You can see that when we auto-REST enabled our table, privileges and roles where automatically created for us (oracle.dbtools.role.autorest.ADMIN.CSV_DATA)
+    You can see that when we auto-REST enabled our table, privileges and roles were automatically created for us (oracle.dbtools.role.autorest.ADMIN.CSV_DATA)
 
-15. When the single role have been moved to the right of the shuttle, left click the **Protected Modules** tab on the top of the **Create Privilege** slider.
+15. When the single role has been moved to the right of the shuttle, left click the **Protected Modules** tab on the top of the **Create Privilege** slider.
 
     ![Protected Modules tab](./images/sec-16.png)
 
-16. We see on the **Protected Modules tab** the module name we created in the pervious lab; **com.oracle.livelab.api**. Just as we did in the previous shuttle, move **com.oracle.livelab.api** from the left side to the right side. 
+16. We see on the **Protected Modules tab** the module name we created in the previous lab; **com.oracle.livelab.api**. Just as we did in the previous shuttle, move **com.oracle.livelab.api** from the left side to the right side. 
 
     ![Protected Modules shuttle](./images/sec-17.png)
 
-    When done, left click the **Create** button on the **Create Privilege** slider.
+    When complete, left click the **Create** button on the **Create Privilege** slider.
 
     ![click the Create button on the Create Privilege slider](./images/sec-18.png)
 
@@ -127,11 +127,11 @@ This lab assumes you have completed the following labs:
 
     ![On the Top Menu Bar, click Security Tab then select OAuth Clients](./images/sec-19.png)
 
-18. To create our OAuth client we will secure our REST endpoints with, click the **+ Create OAuth Client** button in the upper right of the page.
+18. To create our OAuth client we will secure our REST endpoints. Click the **+ Create OAuth Client** button in the upper right of the page.
 
     ![Click the Create OAuth Client button](./images/sec-20.png)
 
-19. The **Create OAuth Client** slider will come out on the right of the page. 
+19. The **Create OAuth Client** slider will emerge from the right of the page. 
 
     ![Create OAuth Client slider](./images/sec-21.png)
 
@@ -143,7 +143,7 @@ This lab assumes you have completed the following labs:
 
     ![Name Field](./images/sec-22.png)
     
-21. Next we can give it a description. Let use **Security on my REST Service** as a value in the **Description Field**.
+21. Next we can give it a description. We can use **Security on my REST Service** as a value in the **Description Field**.
     
     ````
     <copy>Security on my REST Service</copy>
@@ -159,10 +159,10 @@ This lab assumes you have completed the following labs:
     
     ![Support URI Field](./images/sec-24.png)
 
-23. Finally, we need an **support email** for contacting someone. You can enter your email address or use admin@dinosaurfootball.com in the **Support Email** field of the form.
+23. Finally, we need a **support email** for contacting someone. You can enter your email address or use gary@dinosaurfootball.com in the **Support Email** field of the form.
 
      ````
-    <copy>admin@dinosaurfootball.com</copy>
+    <copy>gary@dinosaurfootball.com</copy>
     ````
 
     ![Support Email Field](./images/sec-25.png)
@@ -187,11 +187,11 @@ This lab assumes you have completed the following labs:
 
     ![OAuth Client tile on the OAuth Clients page](./images/sec-30.png)
 
-28. Before we secure the REST endpoint, we need to get a token to pass to the secured REST service once its enabled. To get this token, we can click the pop out menu icon ![pop out menu icon](./images/three-dot-pop.png) on our OAuth tile and select **Get Bearer Token**.
+28. Before we secure the REST endpoint, we need to obtain a token to pass to the secured REST service once its enabled. To get this token, we can click the pop out menu icon ![pop out menu icon](./images/three-dot-pop.png) on our OAuth tile and select **Get Bearer Token**.
 
     ![click the pop out menu icon on our OAuth tile and select Get Bearer Token](./images/sec-31.png)
 
-29. The OAuth Token modal will provide the token text in the **Current Token** field. You can use the copy icon ![copy icon](./images/copy-copy.png) to copy this token text. Save it to a text document or notes application because we will need it when calling the secured REST service. The modal also gives us a cURL command to get a token if we need to include this in our applications.
+29. The OAuth Token modal will provide the token text in the **Current Token** field. You can use the copy icon ![copy icon](./images/copy-copy.png) to copy this token text. Save it to a text document or notes application because we will need it when calling the secured REST service. The modal will also provide us with a cURL command to obtain a token should we need to include it in our applications.
 
     ![Click the copy icon to save the Token Text](./images/sec-32.png)
 
@@ -230,9 +230,9 @@ This lab assumes you have completed the following labs:
         "instance": "tag:oracle.com,2020:ecid/8576f44b797d6adfbe7b21e3718bf3b6"
     }%  
     ```
-    We are not not authorized to use this REST endpoint any longer.
+    We are not authorized to use this REST endpoint any longer.
 
-31. To get this REST API working again, we need to add **--header 'Authorization: Bearer VALUE'** to our cURL command. The **VALUE** is going to be the token text we saved off from a few steps back. (**NOTE: your URL hostname will be different than the below command**)
+31. To get this REST API working again, we need to add **--header 'Authorization: Bearer VALUE'** to our cURL command. The **VALUE** is going to be the token text we saved from a few steps back. (**NOTE: your URL hostname will be different than the below command**)
 
     We can add this to our cURL command as follows:
 
@@ -258,7 +258,7 @@ This lab assumes you have completed the following labs:
     }'
     ``` 
 
-    We now see that we do get a value back from the REST API
+    We now see a value from the REST API is returned
     ```
     {"output":8204}% 
     ```
@@ -276,7 +276,7 @@ This lab assumes you have completed the following labs:
     curl -X GET  'https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/admin/api/sqlreport/a1'
     ```
 
-    and as expection, we get **Unauthorized**.
+    and as expected, we get **Unauthorized**.
 
 34. Now lets add the token (**--header 'Authorization: Bearer VALUE'**) to this command. (**NOTE: your URL hostname will be different than the below command**)
 
@@ -284,7 +284,7 @@ This lab assumes you have completed the following labs:
     curl -X GET --header 'Authorization: Bearer tW-AM_cDQu0l8oAsh707vw' 'https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/admin/api/sqlreport/a1'
     ```
 
-    and we see the results we expect
+    and we see the our expected results
 
     ```
     {"items":[{"col1":"798812df","col2":"a1","col3":"4166997"},{"col1":"59fd433c","col2":"a1","col3":"32470891"},{"col1":"6c1298ef","col2":"a1",

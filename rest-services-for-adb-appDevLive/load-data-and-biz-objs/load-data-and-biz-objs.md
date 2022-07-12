@@ -52,9 +52,11 @@ This lab assumes you have completed the following labs:
     'https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/admin/csv_data/batchload' 
     ```
 
-    **Save this code in a text editor or a notes application, we will be using it in just a bit.**
+    **Save this code in a text editor or a notes application, as we will be using it momentarily.**
 
 4.  We are going to alter this a bit for our data load. First, we need to be in either the **Oracle Cloud Infrastructure Cloud Shell** or a local computer with cURL installed. Every Oracle Cloud Infrastructure account has Cloud Shell so we would encourage using that. 
+
+**Oracle Cloud Infrastructure (OCI) Cloud Shell is a web browser-based terminal accessible from the Oracle Cloud Console. Cloud Shell provides access to a Linux shell, with a pre-authenticated Oracle Cloud Infrastructure CLI, a pre-authenticated Ansible installation, and other useful tools. Cloud Shell is a feature available to all OCI users. It will appear in the Oracle Cloud Console as a persistent frame of the Console, and will stay active as you navigate to different pages of the Console.**
 
     To use the Cloud Shell, after logging into your Oracle Cloud Infrastructure account, click the Cloud Shell icon in the upper right of the Oracle Cloud Infrastructure banner:
 
@@ -72,7 +74,7 @@ This lab assumes you have completed the following labs:
     <copy>curl -o 2M.csv https://objectstorage.us-ashburn-1.oraclecloud.com/p/LNAcA6wNFvhkvHGPcWIbKlyGkicSOVCIgWLIu6t7W2BQfwq2NSLCsXpTL9wVzjuP/n/c4u04/b/livelabsfiles/o/developer-library/2M.csv</copy>
     ````
 
-6. Now that we have the file local, we can load it into the database. Remember that cURL command we saved just a bit ago? Time to alter a few commands in there and run it via the Cloud Shell. 
+6. Now that we have the file locally, we can load it into the database. Remember that cURL command from earlier? Time to alter a few options in there and run it via the Cloud Shell. 
 
     **Seeing we are going to be constructing a command, please use a text editor or notes application.**
 
@@ -85,7 +87,7 @@ This lab assumes you have completed the following labs:
     'https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/admin/csv_data/batchload' 
     ```
 
-    Let's add a few modifications. First, we can add **--write-out '%{time_total}'** so we can see exactly how long this data load took. 
+    Let's make a few alterations. First, we can add **--write-out '%{time_total}'** so we can see exactly how long this data load took. 
 
     ```
     curl --write-out '%{time_total}'
@@ -97,13 +99,13 @@ This lab assumes you have completed the following labs:
     curl --write-out '%{time_total}' -X POST
     ```
 
-    File Time! We indicate that we have this csv file we want to use and the file name itself with the following addition to the command: **--data-binary "@2M.csv"**
+    File Time! We indicate the csv file and name we want to use with the following option: **--data-binary "@2M.csv"**
 
     ```
     curl --write-out '%{time_total}' -X POST --data-binary "@2M.csv"
     ```
 
-    Time to set the headers of this HTTP request. We are going to set the content type and tell it we are sending over a csv file. -H indicated we are setting header variables and we want to set the Content-Type one: **-H "Content-Type:text/csv"**
+    Time to set the headers of this HTTP request. We'll set the content type and tell it we are sending over a csv file. The -H option indicates we are setting header variables and we indcluder the Cotent Type like this: **-H "Content-Type:text/csv"**
 
     ```
     curl --write-out '%{time_total}' -X POST --data-binary "@2M.csv" -H "Content-Type:text/csv"
@@ -124,7 +126,7 @@ This lab assumes you have completed the following labs:
     "https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/admin/csv_data/batchload?batchRows=5000&errorsMax=20"
     ```
 
-    There it is, the final cURL command we will use to load the data into the table. Remember to replace **PASSWORD** with your password you used when we first created the user in Lab 1.
+    There it is, the final cURL command we will use to load the data into the table. Remember to replace **PASSWORD** with our own password used when we first created the user in Lab 1. 
 
 7. Using the **Cloud Shell**, **paste** your constructed cURL at the **command prompt**.
 
@@ -144,7 +146,7 @@ This lab assumes you have completed the following labs:
     29.447
     ```
         
-    the 29.447 is the result of the **--write-out '%{time_total}'** command we added indicating it took about 30 seconds to load 2 million records.
+    the 29.447 is the result of the **--write-out '%{time_total}'** option we added, indicating it took about 30 seconds to load 2 million records.
 
 9. Back in the **SQL worksheet**, we can verify the load by running the following SQL. **In the worksheet**, enter the following statement:
 
@@ -207,7 +209,7 @@ This lab assumes you have completed the following labs:
 
 ## Conclusion
 
-In this lab, you loaded over two million rows into a table with curl and REST as well as added business logic to the database.
+In this lab, you loaded over two million rows into a table with cURL and REST as well as added business logic to the database.
 
 You may now [proceed to the next lab](#next).
 

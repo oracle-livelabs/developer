@@ -19,7 +19,7 @@ Watch the video below for a quick walk through of the lab.
 This lab assumes you have completed the following labs:
 * Lab 1: [Login to Oracle Cloud](https://oracle-livelabs.github.io/common/labs/cloud-login/pre-register-free-tier-account.md)
 * Lab 2: [Provision an Autonomous Database](https://oracle-livelabs.github.io/adb/shared/adb-provision/adb-provision.md)
-* Lab 3: [Connect to your Autonomous Database using Database Actions/SQL Developer Web](https://oracle-livelabs.github.io/common/labs/sqldevweb-login/sqldevweb-login.md)
+* Lab 3: [Connect to an Autonomous Database with SQL Developer Web](https://oracle-livelabs.github.io/common/labs/sqldevweb-login/sqldevweb-login.md)
 
 ## Task 1: Create a Table in the Autonomous Database
 
@@ -37,17 +37,17 @@ This lab assumes you have completed the following labs:
 
     ![Click the Center of the Data Loading Tab Area](./images/sdw-17.png)
 
-4. The **Upload Data into New Table model** will appear.
+4. The **Upload Data into New Table modal** will appear.
 
-    ![To upload a file, Drag into the File Load Modal or Click Select File and use the OS File Browser](./images/sdw-18.png)
+    ![To upload a file, drag into the File Load Modal or Click Select File and use the OS File Browser](./images/sdw-18.png)
 
-5. We are going to use some sample data to load data into the database and create a table at the same time. Start by **downloading** this file
+5. We'll load some sample data into the database and create a table at the same time. Start by **downloading** this file
 
     **(right-click and download the file with the following link)**
 
     [csv data](https://objectstorage.us-ashburn-1.oraclecloud.com/p/LNAcA6wNFvhkvHGPcWIbKlyGkicSOVCIgWLIu6t7W2BQfwq2NSLCsXpTL9wVzjuP/n/c4u04/b/livelabsfiles/o/developer-library/csv_data.csv)
 
-6. Once on your desktop, **drag the file into the Upload Data into New Table model**. You can also click the Select Files button and find where you downloaded it via your operating system's/Web Browser's file browser.
+6. Once on your desktop, **drag the file into the Upload Data into New Table modal**. You can also click the Select Files button and find where you downloaded it via your operating system's/Web Browser's file browser.
 
     ![Click the Next Button](./images/sdw-19.png)
 
@@ -59,7 +59,7 @@ This lab assumes you have completed the following labs:
 
     ![Data Column Layout from uploaded file](./images/sdw-21.png)
 
-    Set all the columns to be of VARCHAR2 with the length of 4000. This will provide a flawless data loading experience.
+    Set all columns to VARCHAR2 with a length of 4000. This will provide a flawless data loading experience.
     
     ![Set Columns to VARCHAR2 4000](./images/sdw-21a.png)
 
@@ -79,7 +79,7 @@ This lab assumes you have completed the following labs:
 
     ![Check out data then Click Next Button](./images/sdw-25.png)
 
-10. When you are done taking a look, **click the Finish button** in the lower right of the modal.
+10. When you are finished reviewing, **click the Finish button** in the lower right of the modal.
 
     ![Click Finish in the Data Loading Modal](./images/sdw-27.png)
 
@@ -95,7 +95,7 @@ This lab assumes you have completed the following labs:
 
     ![Using the navigator on the left of the SQL Worksheet, we can see out new table](./images/sdw-30.png)
 
-    In the slider that has come out from the right of the page, we can look at the data definition, triggers, constraints and even the data itself.
+    In the slider that extends from the right of the page, we can reveiw the data definition, triggers, constraints and even the data itself.
 
     ![Click the Data option to view the table data](./images/sdw-31.png)
 
@@ -113,7 +113,7 @@ This lab assumes you have completed the following labs:
 
     ![The REST Enable Object Slider, view the Preview URL](./images/sdw-34.png)
 
-4. Thats it! Your table is REST enabled. We can work with the REST endpoints by using cURL commands that the SQL Worksheet can provide to us. To get to these endpoints, again right click the table name as we did in the previous step, select **REST**, then **cURL Command**.
+4. Thats it! Your table is REST enabled. We can work with the REST endpoints by using cURL commands provided by SQL Worksheet. To get to these endpoints, again right click the table name as we did in the previous step, select **REST**, then **cURL Command**.
 
     ![right click the table name in the navigator, select REST, then cURL Command](./images/sdw-37.png)
 
@@ -125,7 +125,7 @@ This lab assumes you have completed the following labs:
 
     ![Click the copy icon for GET ALL](./images/sdw-39.png)
 
-6. You can use this** cURL command** we just copied in the **Oracle Cloud Infrastructure Cloud Shell** or on your local compute if cURL is installed. Here is the command running:
+6. You can use this **cURL command** we just copied in the **Oracle Cloud Infrastructure Cloud Shell** or on your local compute if cURL is installed. Here is the command running:
 
     ```
     >curl --location \

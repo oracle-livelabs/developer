@@ -55,6 +55,7 @@ This lab assumes you have completed the following labs:
     ````
     <copy>com.oracle.livelab.api</copy>
     ````
+**A module is an organizational unit used to group related resource templates. Templates will have handlers, which are responsible for providing the logic required to service a specific HTTP method (e.g., GET, POST, PUT, DELETE, UPDATE, etc.)**
 
     ![Create Modules slider](./images/rest-5.png)
 
@@ -78,15 +79,15 @@ This lab assumes you have completed the following labs:
 
     ![The Modules page](./images/rest-8.png)
 
-    We are now going to create a **Template** for the newly created module. Start by left clicking the **+ Create Template** button on the right side of the page, right under our module we just created.
+    Next we'll create a **Template** for our newly created module. Start by left clicking the **+ Create Template** button on the right side of the page, located directly under the module we just created.
 
     ![Left click the + Create Template button](./images/rest-9.png)
 
-9. The **Create Template** slider comes out of the right of the page. 
+9. The **Create Template** slider emerges from the right of the page. 
 
     ![Create Template slider](./images/rest-10.png)
     
-    Here we will create the endpoint or URL location for our REST enabled SQL Statement that takes in a value.
+    Here we will create the endpoint, or URL location, for our REST enabled SQL Statement. This statement will expect a value.
 
 10. In the **URI Template** template field, enter **sqlreport/:id**
 
@@ -112,7 +113,7 @@ This lab assumes you have completed the following labs:
 
     ![Create Handler slider](./images/rest-15.png)
 
-    Here we will be entering the SQL the REST endpoint will use.
+    Here we will enter the SQL used by our REST endpoint.
 
 14. Enter **select * from csv_data where col2 = :id** in the **Source** section of the **Create Handler** slider:
 
@@ -126,7 +127,7 @@ This lab assumes you have completed the following labs:
 
     ![Create Handler slider with all info, left click create](./images/rest-17.png)
 
-16. Back on Template page, we can try our handler out. Click the **execute** button ![execute query button](./images/execute-button.png) in the **Source** section of the page.
+16. Back on Template page, we can test our handler. Click the **execute** button ![execute query button](./images/execute-button.png) in the **Source** section of the page.
 
     ![Execute button in source section of the page](./images/rest-18.png)
 
@@ -152,11 +153,11 @@ This lab assumes you have completed the following labs:
 
 ## Task 2: REST Enable Business Logic (PL/SQL procedure)
 
-1. It's now time to REST enable our Business Logic or PL/SQL procedure we created in the previous lab. To start, left click our module com.oracle.livelab.api in the Database Actions breadcrumbs in the upper left of the page.
+1. It's now time to REST enable our Business Logic, or PL/SQL procedure, we created in the previous lab. Start by left clicking our module com.oracle.livelab.api in the Database Actions breadcrumbs in the upper left of the page.
 
     ![Database Actions breadcrumbs](./images/rest-25.png)
 
-2. As before, we are going to create a new **Template**. Left click the **+ Create Template** button on the right side of the page, right under our module.
+2. Like before, we'll create a new **Template**. Left click the **+ Create Template** button on the right side of the page, right under our module.
 
     ![Left click the + Create Template button](./images/rest-9.png)
 
@@ -176,7 +177,7 @@ This lab assumes you have completed the following labs:
 
     ![Create Modules slider with all info, left click create](./images/rest-27.png)
 
-6. Click the **+ Create Handler** button on the right of the page, just below our newly created template just as we did before.
+6. Click the **+ Create Handler** button on the right of the page, located below our newly created template just as we did before.
 
     ![Left click the + Create Handler button](./images/rest-28.png)
 
@@ -210,7 +211,7 @@ This lab assumes you have completed the following labs:
 
     ![Left click the + Create Parameter button](./images/rest-32.png)
 
-12. The **Create Parameter** slider comes out of the right of the page. 
+12. The **Create Parameter** slider emerges from the right of the page. 
 
     ![Create Parameter slider](./images/rest-33.png)
 
@@ -226,7 +227,7 @@ This lab assumes you have completed the following labs:
 
     ![Source Type field](./images/rest-36.png)
 
-15. For the **Parameter Type** field, use the dropdown and select **INT**. (We are returning a number remember)
+15. For the **Parameter Type** field, use the dropdown and select **INT**. (Remember, we are returning a number)
 
     ![Parameter Type field](./images/rest-37.png)
 
@@ -264,7 +265,7 @@ This lab assumes you have completed the following labs:
 
     ![Copied cURL command](./images/rest-45.png)
 
-23. Using the Oracle Cloud Infrastructure Cloud Shell, paste and run the cURL command and see that the count is returned as the output variable.
+23. Using the Oracle Cloud Infrastructure Cloud Shell, paste and run the cURL command to confirm that the count is returned as the output variable.
 
     ```
     curl -X POST \
@@ -279,11 +280,11 @@ This lab assumes you have completed the following labs:
 
     ![Cloud shell and cURL](./images/rest-46.png)
 
-    You can test other values by changing the id variable. Valid combinations are the first character is a lowercase **a** through **f** and the second character can be *1* though **9**. Valid examples are a1, e9, d3, b6, etc.
+    You can test other values by changing the id variable. Valid combinations are those with a lowercase first character of **a** through **f** and second character of **1** though **9**. Valid examples are a1, e9, d3, b6, etc.
 
 ## Task 3: Explore the OpenAPI View created by ORDS
 
-1. Start by going back to the module's main page. This can be done by clicking the module's name in the breadcrumbs in the upper left of the page.
+1. Return to the Module's main page. This can be done by clicking the module's name in the breadcrumbs in the upper left of the page.
 
     ![breadcrumbs in the upper left of the page](./images/rest-47.png)
 
@@ -295,18 +296,18 @@ This lab assumes you have completed the following labs:
 
     ![OpenAPI View](./images/rest-49.png)
 
-    You can explore the APIs you created and try them out right there in the page 
+    You can explore the APIs you created and try them out right there in the page.
     
     ![OpenAPI explore](./images/rest-50.png)
 
-    as well as export this page as an OpenAPI doc for use in other tools and services using the pop out icon ![pop out icon](./images/pop-menu.png) and selecting **Export Module** then **OpenAPI**.
+    You can also export this page as an OpenAPI doc for use in other tools and services using the pop out icon. ![pop out icon](./images/pop-menu.png) Select **Export Module** then **OpenAPI**.
 
     ![OpenAPI doc export](./images/rest-51.png)
 
 
 ## Conclusion
 
-In this lab, you published a REST API using Custom SQL and accepting an input as well as published a REST API using a stored PL/SQL procedure.
+In this lab, you published a REST API using Custom SQL to accept an input as well as published a REST API using a stored PL/SQL procedure.
 
 You may now [proceed to the next lab](#next).
 
