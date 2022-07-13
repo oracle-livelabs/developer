@@ -32,6 +32,7 @@ This lab assumes you have completed the following labs:
     ![right click the table name in the navigator, select REST, then cURL Command](./images/ld-1.png)
 
 2. We now see the cURL for the table CSV_DATA slideout on the right side of the web broswer. 
+<!-- Images id-2, id-3, id-4, and id-5 need to be changed to include the new "show code" functionality in latest DB Actions version. We have a ticket in to make a code change. Will update when code is changed-->
 
     ![cURL for the table CSV_DATA slideout](./images/ld-2.png)
 

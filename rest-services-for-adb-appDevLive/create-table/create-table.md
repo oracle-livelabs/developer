@@ -117,9 +117,13 @@ This lab assumes you have completed the following labs:
 
     ![right click the table name in the navigator, select REST, then cURL Command](./images/sdw-37.png)
 
-    On the right of the page, we see the cURL for the table CSV_DATA side out panel.
+    To the right of the page, you'll see the cURL command for the table CSV_DATA side out panel. Once you've selected the appropriate cURL command (Command Prompt, PowerShell, or Bash), click the copy icon to copy the entire command.
 
-    ![the cURL for the table CSV_DATA side out panel](./images/sdw-38.png)
+    ![the Command Prompt cURL for the table CSV_DATA side out panel](./images/sdw-38a.png)
+
+    ![the PowerShell cURL for the table CSV_DATA side out panel](./images/sdw-38b.png)
+
+    ![the Bash cURL for the table CSV_DATA side out panel](./images/sdw-38c.png)
 
 5. Here we can work with the various REST endpoints. To try one, click the copy icon ![copy icon](./images/copy-copy.png) for the **GET ALL** endpoint.
 

@@ -2,6 +2,7 @@
 
 ## Introduction
 
+<!-- Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum -->
 In this lab you will secure the REST endpoints you created in the previous lab.
 
 Estimated Lab Time: 10 minutes
@@ -162,7 +163,7 @@ This lab assumes you have completed the following labs:
 23. Finally, we need a **support email** for contacting someone. You can enter your email address or use gary@dinosaurfootball.com in the **Support Email** field of the form.
 
      ````
-    <copy>gary@dinosaurfootball.com</copy>
+    <copy>support@support.com</copy>
     ````
 
     ![Support Email Field](./images/sec-25.png)
