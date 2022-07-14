@@ -7,7 +7,6 @@
             "description": "Modern Application Development with Oracle REST Data Services Introduction",
             "filename": "../../intro/intro.md"
         },
-        // Should the "Getting Started" be a  lab? It is referenced as such in the intro.md file. 
         {
             "title": "Get Started",
             "description": "Obtain an Always Free tier Oracle Cloud Infrastructure account",
