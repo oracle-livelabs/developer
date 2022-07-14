@@ -8,7 +8,7 @@
             "filename": "../../intro/intro.md"
         },
         {
-            "title": "Getting Started",
+            "title": "Get Started",
             "description": "Login to Oracle Cloud Infrastructure",
             "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/cloud-login-livelabs2.md"
         },
@@ -48,7 +48,7 @@
             "filename": "../../secure-endpoints/secure-endpoints.md"
         },
         {
-            "title": "Retire your Always Free Autonomous Database",
+            "title": "Clean up your Always Free Autonomous Database",
             "description": "Terminate your Always Free Autonomous Database",
             "filename": "https://oracle-livelabs.github.io/common/labs/terminate-adb/terminate-adb.md"
         },

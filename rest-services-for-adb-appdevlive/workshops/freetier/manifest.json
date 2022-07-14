@@ -7,9 +7,8 @@
             "description": "Modern Application Development with Oracle REST Data Services Introduction",
             "filename": "../../intro/intro.md"
         },
-        // Should the "Getting Started" be a  lab? It is referenced as such in the intro.md file. 
         {
-            "title": "Getting Started",
+            "title": "Get Started",
             "description": "Obtain an Always Free tier Oracle Cloud Infrastructure account",
             "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/pre-register-free-tier-account.md"
         },
@@ -44,7 +43,7 @@
             "filename": "../../secure-endpoints/secure-endpoints.md"
         },
         {
-            "title": "Retire your Always Free Autonomous Database",
+            "title": "Clean up your Always Free Autonomous Database",
             "description": "Terminate your Always Free Autonomous Database",
             "filename": "https://oracle-livelabs.github.io/common/labs/terminate-adb/terminate-adb.md"
         },
