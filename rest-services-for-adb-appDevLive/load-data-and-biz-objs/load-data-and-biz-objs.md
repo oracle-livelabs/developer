@@ -29,20 +29,20 @@ This lab assumes you have completed the following labs:
 
 1. Start by again using the **cURL slide out** on our **REST enabled table**.
 
-    ![right click the table name in the navigator, select REST, then cURL Command](./images/ld-1.png)
+    ![right click the table name in the navigator, select REST, then cURL Command](./images/right-click-for-rest.png)
 
 2. We now see the cURL for the table CSV_DATA slideout on the right side of the web broswer. 
 <!-- Images id-2, id-3, id-4, and id-5 need to be changed to include the new "show code" functionality in latest DB Actions version. We have a ticket in to make a code change. Will update when code is changed-->
 
-    ![cURL for the table CSV_DATA slideout](./images/ld-2.png)
+    ![cURL for the table CSV_DATA slideout](./images/curl-command-slider.png)
 
     Left click the **BATCH LOAD** side tab.
 
-    ![left click the BATCH LOAD side tab](./images/ld-3.png)
+    ![left click the BATCH LOAD side tab](./images/curl-command-batchload.png)
 
-3. Next, click the copy icon ![copy icon](./images/copy-copy.png) for the **BATCH LOAD** endpoint.
+3. Next, click the copy icon ![copy icon](./images/copy-icon.png) for the **BATCH LOAD** endpoint.
 
-    ![left click the BATCH LOAD side tab](./images/ld-4.png)
+    ![left click the BATCH LOAD side tab](./images/copy-curl-command-action.png)
 
     It should be similar to the following:
 
@@ -61,11 +61,11 @@ This lab assumes you have completed the following labs:
 
     To use the Cloud Shell, after logging into your Oracle Cloud Infrastructure account, click the Cloud Shell icon in the upper right of the Oracle Cloud Infrastructure banner:
 
-    ![Cloud Shell on Oracle Cloud Infrastructure Banner](./images/ld-5.png)
+    ![Cloud Shell on Oracle Cloud Infrastructure Banner](./images/cloud-shell-icon-action.png)
 
     The Cloud Shell will open on the lower part of the web browser:
 
-    ![Cloud Shell on bottom of browser](./images/ld-6.png)
+    ![Cloud Shell on bottom of browser](./images/lower-cloud-shell-welcome.png)
 
     We will be using the Oracle Cloud Infrastructure Cloud Shell for examples in this lab going forward.
 
@@ -131,7 +131,7 @@ This lab assumes you have completed the following labs:
 
 7. Using the **Cloud Shell**, **paste** your constructed cURL at the **command prompt**.
 
-    ![running the command in cloud shell](./images/ld-7.png)
+    ![running the command in cloud shell](./images/execute-curl-command-cloud-shell.png)
 
 8. When the **command is finished**, you should see that all **2,097,148 records were inserted** into the table.
 
@@ -157,11 +157,11 @@ This lab assumes you have completed the following labs:
 
     You can highlight the command with your mouse/point and click the green arrow **Run Statement** button in the tool bar or press ctrl-enter/return (Windows)/command-enter/return (MacOS) while on the same line as the statement in the worksheet.
 
-    ![running a SQL command in the sql worksheet](./images/ld-8.png)
+    ![running a SQL command in the sql worksheet](./images/run-statement-sql-worksheet.png)
 
     Either method will give the following result:
 
-    ![SQL results](./images/ld-9.png)
+    ![SQL results](./images/lower-review-query-result.png)
 
 10. **Business logic** is up next. We will be **adding a function** to our database schema to simulate some business logic. 
 
@@ -186,7 +186,7 @@ This lab assumes you have completed the following labs:
 
     Copy and paste this code into the SQL Worksheet and left click the **Run Script** button on the toolbar:
 
-    ![compile the function in the sql worksheet](./images/ld-10.png)
+    ![compile the function in the sql worksheet](./images/run-script-action-compile-function.png)
 
 1.  We can test this function with a quick PL/SQL procedure. Copy and paste the following into the SQL Worksheet and run the procedure with the **Run Script** button:
 
@@ -206,7 +206,7 @@ This lab assumes you have completed the following labs:
     </copy>
     ````
 
-    ![SQL to try out the procedure](./images/ld-11.png)
+    ![SQL to try out the procedure](./images/test-procedure-with-sql.png)
 
 ## Conclusion
 
