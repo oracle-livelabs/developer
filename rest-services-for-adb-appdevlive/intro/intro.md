@@ -14,11 +14,11 @@ Watch the video below for a comprehensive overview of REST and how ORDS provides
 
 ### About this Workshop
 
-Starting with a simple CSV document, you'll quickly create a new Autonomous Database with a new table based on that CSV. And instead of using SQL or PL/SQL to interact with your new table, we'll show you how to quickly build no-code full Create Read Update Delete (CRUD) REST APIs.
+Starting with a simple CSV document, you'll quickly create a new Autonomous Database with a new table based on that CSV. And instead of using SQL or PL/SQL to interact with your new table. Additionally, we'll show you how to quickly build no-code full Create Read Update Delete (CRUD) REST APIs.
 
-Like code? No problem! We'll show you how to take YOUR SQL and/or PLSQL and leverage that with your own REST APIs. No need to learn Java, JavaScript, Python, or anything else - it's all done via the language of the Oracle Database.
+Like code? No problem! We'll show you how to take your existing SQL and/or PLSQL and transform it into your very own REST APIs. No need to learn Java, JavaScript, Python, or anything else - it's all done via the language of the Oracle Database.
 
-Once your APIs are ready for prime-time, we'll show you how to SECURE them with OAuth2 clients.
+Once your APIs are ready for prime-time, we'll show you how to easily secure them with OAuth2 clients.
 
 Estimated Workshop Time: 60-90 minutes
 
@@ -33,27 +33,25 @@ Estimated Workshop Time: 60-90 minutes
 
 ### Prerequisites
 This lab assumes you have completed the following labs:
-* Lab: [Login to Oracle Cloud](https://oracle-livelabs.github.io/common/labs/cloud-login/pre-register-free-tier-account.md)
-* Lab: [Provision an Autonomous Database](https://oracle-livelabs.github.io/adb/shared/adb-provision/adb-provision.md)
-* Lab: [Connect to your Autonomous Database using Database Actions/SQL Developer Web](https://oracle-livelabs.github.io/common/labs/sqldevweb-login/sqldevweb-login.md)
+* "Get Started" section: [Get Started](https://oracle-livelabs.github.io/common/labs/cloud-login/pre-register-free-tier-account.md)
 
 ## Developing RESTful Services in Autonomous Database
 
 In this lab you will use the browser-based SQL and REST workshop tools, connect to your Autonomous Database and REST enable a table. You will then secure that REST endpoint all within a single UI.
 
-### **Lab 1:** Login to the Oracle Cloud
+### **Get Started:** Obtain and Login to Oracle Cloud Infrastructure
 
-### **Lab 2:** Provision an Autonomous Database
+### **Lab 1:** Provision an Autonomous Database
 
-### **Lab 3:** Connect to your Autonomous Database using Database Actions/SQL Developer Web
+### **Lab 2:** Connect to your Autonomous Database using Database Actions/SQL Developer Web
 
-### **Lab 4:** Create and Auto-REST enable a table
+### **Lab 3:** Create and Auto-REST enable a table
 
-### **Lab 5:** Load data and create business logic in the database
+### **Lab 4:** Load data into a table then create business logic for the database
 
-### **Lab 6:** REST enable tables and business logic
+### **Lab 5:** REST enable tables and add business logic
 
-### **Lab 7:** Securing the REST endpoints
+### **Lab 6:** Secure REST-enabled endpoints
 
 ## Learn More about REST
 
@@ -91,5 +89,5 @@ select empno, ename, dept from emp where empno = :id
 
 ## Acknowledgements
 
- - **Authors** - Jeff Smith, Distinguished Product Manager, The Raleigh Cobra, Product Manager ![RC](./images/cobra.png)
- - **Last Updated By/Date** - Jeff Smith, July 2022
+ - **Authors** - Jeff Smith, Distinguished Product Manager, The Raleigh Cobra, Product Manager ![RC](./intro/images/raleigh_cobra.jpg)
+ - **Last Updated By/Date** - Chris Hoina, July 2022

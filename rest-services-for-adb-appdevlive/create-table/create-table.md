@@ -2,7 +2,7 @@
 
 ## Introduction
 
-In this lab you will use Database Actions/SQL Developer Web to connect to your Database, create and REST enable a table.
+In this lab you will use Database Actions/SQL Developer Web to connect to your database, create a table, and then REST enable the table.
 
 Estimated Lab Time: 20 minutes
 
@@ -16,10 +16,10 @@ Watch the video below for a quick walk through of the lab.
 
 ### Prerequisites
 
-This lab assumes you have completed the following labs:
-* Lab 1: [Login to Oracle Cloud](https://oracle-livelabs.github.io/common/labs/cloud-login/pre-register-free-tier-account.md)
-* Lab 2: [Provision an Autonomous Database](https://oracle-livelabs.github.io/adb/shared/adb-provision/adb-provision.md)
-* Lab 3: [Connect to an Autonomous Database with SQL Developer Web](https://oracle-livelabs.github.io/common/labs/sqldevweb-login/sqldevweb-login.md)
+This lab assumes you have completed the following:
+* Login to OCI: [Login to Oracle Cloud](https://oracle-livelabs.github.io/common/labs/cloud-login/pre-register-free-tier-account.md)
+* Lab 1: [Provision an Autonomous Database](https://github.com/oracle-livelabs/database/blob/main/db-quickstart/db-provision/db-provision.md)
+* Lab 2: [Connect to an Autonomous Database with SQL Developer Web](https://github.com/oracle-livelabs/common/blob/main/labs/sqldevweb-login/sqldevweb-login.md)
 
 ## Task 1: Create a Table in the Autonomous Database
 
@@ -91,7 +91,7 @@ This lab assumes you have completed the following labs:
 
     ![Row indicating data load is finished in the Data Loading Tab of the SQL Worksheet](./images/data-load-results-tab.png)
 
-11. We can take a look at our newly created table and the data in it **by using the navigator on the left of the SQL Worksheet**. Just **right click the table name** and **select Open** from the pop up menu.
+11. We can take a look at our newly created table and the data in it **by using the navigator on the left of the SQL Worksheet**. Just **right click the table name CSV_DATA** and **select Open** from the pop up menu.
 
     ![Using the navigator on the left of the SQL Worksheet, we can see out new table](./images/navigating-reviewing-new-table.png)
 
@@ -101,7 +101,7 @@ This lab assumes you have completed the following labs:
 
 ## Task 2: Auto-REST Enable a Table
 
-1. REST enabling a table couldn't be easier. To do this, find the table we just created named **CSV_DATA** in the navigator on the left of the SQL Worksheet.
+1. REST enabling a table is simple. To do this, find the table we just created named **CSV_DATA** in the navigator on the left of the SQL Worksheet.
 
     ![Using the navigator on the left of the SQL Worksheet, find the CSV_DATA Table](./images/using-navigator-to-find-table.png)
 
@@ -129,7 +129,7 @@ This lab assumes you have completed the following labs:
 
     ![Click the copy icon for GET ALL](./images/copy-curl-command-action.png)
 
-6. You can use this **cURL command** we just copied in the **Oracle Cloud Infrastructure Cloud Shell** or on your local compute if cURL is installed. Here is the command running:
+6. You can use the **cURL command** you've just copied in the **Oracle Cloud Infrastructure Cloud Shell** or on your local compute, if cURL is installed. Here is the command running:
 
     ```
     >curl --location \
