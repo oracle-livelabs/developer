@@ -13,7 +13,7 @@ In this lab, you will use *Records*, a Java language feature going through a sec
 
 ## Task 1: A simple Record
 
-💡 Make sure that Preview Features are enabled, see [Lab 4](/?lab=lab-4-java-se-preview-features).
+💡 Make sure that Preview Features are enabled, see [Lab 4](./?lab=lab-4-java-se-preview-features).
 
 
 Similar to enums, Records are technically a special form of classes optimized for certain specific situations.
