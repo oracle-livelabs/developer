@@ -1,0 +1,63 @@
+{
+    "workshoptitle": "Manage Java Runtimes, Applications and Managed Instances Inventory with Java Management Service",
+    "include": {
+    },
+    "help": "livelabs-help-oci_us@oracle.com",
+    "tutorials": [
+        {
+            "title": "Introduction",
+            "filename": "../../introduction/introduction.md"
+        },
+        {
+            "title": "Get Started",
+            "description": "This is the prerequisites for customers using Free Trial and Paid tenancies, and Always Free accounts (if applicable). The title of the lab and the Contents Menu title (the title above) match for Prerequisite lab. This lab is always first.",
+            "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/cloud-login.md"
+        },
+        {
+            "title": "Lab 1: Set up Oracle Cloud Infrastructure for Java Management Service",
+            "filename": "../../set-up-oci-for-jms/set-up-oci-for-jms.md"
+        },
+        {
+            "title": "Lab 2: Set Up a Fleet",
+            "filename": "../../setup-a-fleet/setup-a-fleet.md"
+        },
+        {
+            "title": "Lab 3: Deploy a Java Application",
+            "filename": "../../deploy-a-java-application/deploy-a-java-application.md"
+        },
+        {
+            "title": "Lab 4: Understand Concepts related to Management Agent installation",
+            "filename": "../../understand-concepts-related-to-management-agent/understand-concepts-related-to-management-agent.md"
+        },
+        {
+            "title": "Lab 5: Install Management Agent on non-OCI hosts - Linux ",
+            "filename": "../../set-up-of-management-agent-linux/set-up-of-management-agent-linux.md"
+        },
+        {
+            "title": "Lab 6: Install Management Agent on non-OCI hosts - Windows ",
+            "filename": "../../set-up-of-management-agent-windows/set-up-of-management-agent-windows.md"
+        },
+        {
+            "title": "Lab 7: Install Management Agent on OCI computes - Oracle Cloud Agent (OCA)",
+            "filename": "../../install-management-agent-oca/install-management-agent-oca.md"
+        },
+        {
+            "title": "Lab 8: Set up multiple Managed Instances and Management Gateway",
+            "filename": "../../multiple-managed-instances/multiple-managed-instances.md"
+        },
+        {
+            "title": "Lab 9: Track Java Usage in a Container",
+            "filename": "../../track-java-usage-in-a-container/track-java-usage-in-a-container.md"
+        },
+        {
+            "title": "Lab 10: Set up Logrotate",
+            "filename":"../../set-up-logrotate/set-up-logrotate.md"
+
+        },
+        {
+            "title": "Need Help?",
+            "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+            "filename": "https://oracle-livelabs.github.io/common/labs/need-help/need-help-freetier.md"
+        }
+    ]
+}

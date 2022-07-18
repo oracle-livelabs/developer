@@ -1,0 +1,31 @@
+{
+    "workshoptitle": "Event Driven Oracle Functions with Autonomous Data Warehouse",
+    "help": "livelabs-help-oci_us@oracle.com",
+	"tutorials": [
+        {
+            "title": "Introduction",
+            "filename": "../../../labs/functions-load-file-into-adw-python/intro/intro.md"
+        },
+        {
+            "title": "Getting Started with LiveLabs OCI Tenancy",
+            "filename": "../../../../../common/labs/cloud-login/cloud-login-livelabs2.md"
+        },
+        {
+            "title": "Lab 1: Functions Prerequisites",
+            "filename": "../../../labs/functions-load-file-into-adw-python/prerequisites/prereq.md"
+        },
+        {
+            "title": "Lab 2: Create Buckets, Policies and Autonomous Database (ADW)",
+            "filename": "../../../labs/functions-load-file-into-adw-python/oci-services/oci.md"
+        },
+        {
+            "title": "Lab 3: Create the Function",
+            "filename": "../../../labs/functions-load-file-into-adw-python/function/func.md"
+        },
+        {
+            "title": "Need Help?",
+            "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+            "filename": "https://oracle-livelabs.github.io/common/labs/need-help/need-help-freetier.md"
+        }
+    ]
+}

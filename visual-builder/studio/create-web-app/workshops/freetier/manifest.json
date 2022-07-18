@@ -1,0 +1,57 @@
+{
+    "workshoptitle": "Create a Web Application in Oracle Visual Builder Studio",
+    "help": "livelabs-help-oci_us@oracle.com",
+    "tutorials": [
+        {
+            "title": "Introduction",
+            "description": "The Introduction is always first. The title and contents menu title match for the Introduction.",
+            "filename": "../../introduction/introduction.md"
+        },
+        {
+            "title": "Get Started",
+            "description": "This is the prerequisites for customers using Free Trial and Paid tenancies, and Always Free accounts (if applicable). The title of the lab and the Contents Menu title (the title above) match for Prerequisite lab. This lab is always first.",
+            "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/pre-register-free-tier-account.md"
+        },
+        {
+            "title": "Lab 1: Provision Your Instances",
+            "filename": "../../provision/provision.md"
+        },
+        {
+            "title": "Lab 2: Create a Project for a New Visual Application",
+            "filename": "../../create-project/create-project.md"
+        },
+        {
+            "title": "Lab 3: Create a Web App in a Visual Application",
+            "filename": "../../create-app/create-app.md"
+        },
+        {
+            "title": "Lab 4: Create Pages for a Web App",
+            "filename": "../../add-pages/add-pages.md"
+        },
+        {
+            "title": "Lab 5: Save Changes to a Remote Branch",
+            "filename": "../../save-changes/save-changes.md"
+        },
+        {
+            "title": "Lab 6: Add Navigation and Data",
+            "filename": "../../add-data/add-data.md"
+        },
+        {
+            "title": "Lab 7: Add Pages to Manage Data",
+            "filename": "../../add-other-pages/add-other-pages.md"
+        },
+        {
+            "title": "Lab 8: Share a Web App",
+            "filename": "../../share-app/share-app.md"
+        },
+        {
+             "title": "Lab 9: Publish a Web App",
+             "filename": "../../publish-app/publish-app.md"
+        },
+        {
+            "title": "Need Help?",
+            "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+            "filename":"https://oracle-livelabs.github.io/common/labs/need-help/need-help-freetier.md"
+        }
+    ]
+}

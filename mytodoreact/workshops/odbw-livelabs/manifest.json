@@ -1,0 +1,39 @@
+{
+  "workshoptitle": "React+Java+ADB = Native Cloud App",
+  "help": "livelabs-help-db_us@oracle.com",
+    "tutorials": [
+
+      {
+        "title": "Getting started",
+        "description": "Login to Oracle Cloud",
+        "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/cloud-login-livelabs2.md"
+      },
+      {
+        "title": "Introduction",
+        "description": "Introduction",
+        "type": "odbw",
+        "filename": "../../intro/intro.md"
+      },
+      {
+        "title": "Tutorial 1: Setup Dev Environment",
+        "filename": "../../setup-dev-environment/setup-dev-environment-gb.md"
+      },
+      {
+        "title": "Tutorial 2: Backend (Java/Helidon)",
+        "filename": "../../backend/backend.md"
+      },
+      {
+        "title": "Tutorial 3: Frontend (React JS)",
+        "filename": "../../frontend/frontend.md"
+      },
+      {
+        "title": "Tutorial 4: Tear down",
+        "filename": "../../teardown/teardown.md"
+      },
+      {
+        "title": "Need Help?",
+        "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+        "filename":"https://oracle-livelabs.github.io/common/labs/need-help/need-help-livelabs.md"
+      }
+   ]
+}

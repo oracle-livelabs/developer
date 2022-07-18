@@ -1,0 +1,21 @@
+{
+    "workshoptitle": "Simple Oracle Document Access (SODA) using Python",
+    "tutorials": [
+        {
+            "title": "Lab 1: Development environment preparation",
+            "description": "Provision Oracle Cloud Infrastructure basic resources.",
+            "filename": "./../../introduction/intro-soda-pts.md"
+        },
+        {
+            "title": "Lab 2: Build Python application using SODA and JSON",
+            "description": "This lab shows how easy it is to build a simple Python application that uses JSON documents from MongoDB Cloud Atlas and Oracle Autonomous JSON Database using SODA APIs.",
+            "filename": "./../../soda-python/soda-python.md"
+        },
+        {
+            "title": "Need Help?",
+            "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+            "filename":"https://oracle-livelabs.github.io/common/labs/need-help/need-help-freetier.md"
+        }
+        
+    ]
+}

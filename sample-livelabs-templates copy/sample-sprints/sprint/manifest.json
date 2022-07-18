@@ -1,0 +1,22 @@
+{
+   "workshoptitle": "LiveLabs Sprints",
+   "help": "livelabs-help-**enterarea**_us@oracle.com",
+   "tutorials": [
+      {
+         "title": "Sprint - Title",
+         "description": "",
+         "filename": "sprint-title.md"
+      },
+      {
+         "title": "Other related Sprints 1 - How to loreum ipsum larum?",
+         "description": "",
+         "filename": "sprint-title.md"
+      },
+      {
+         "title": "Other related Sprints n - How to Mauris sit amet dolor?",
+         "description": "",
+         "filename": "sprint-title.md"
+      }
+   ],
+   "task_type": "Sections"
+}

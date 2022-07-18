@@ -1,0 +1,29 @@
+{
+    "workshoptitle": "Simple Oracle Document Access (SODA) using Python",
+    "tutorials": [
+        {
+            "title": "Oracle Cloud Free Tier",
+            "description": "Use your Always Free resources as long as you want with no time constraints—subject only to the capacity limits noted. When your 30-day trial period for the expanded set of services ends, you can continue using Always Free services with no interruption.",
+            "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/pre-register-free-tier-account.md"
+        },
+        {
+            "title": "Lab 1: Create SSH Keys",
+            "filename": "https://oracle-livelabs.github.io/common/labs/generate-ssh-key/generate-ssh-keys.md"
+        },
+        {
+            "title": "Lab 2: Development environment preparation",
+            "description": "Provision Oracle Cloud Infrastructure basic resources.",
+            "filename": "./../../introduction/intro-soda.md"
+        },
+        {
+            "title": "Lab 3: Build Python application using SODA and JSON",
+            "description": "This lab shows how easy it is to build a simple Python application that uses JSON documents from MongoDB Cloud Atlas and Oracle Autonomous JSON Database using SODA APIs.",
+            "filename": "./../../soda-python/soda-python.md"
+        },
+        {
+            "title": "Need Help?",
+            "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+            "filename":"https://oracle-livelabs.github.io/common/labs/need-help/need-help-freetier.md"
+        }
+    ]
+}

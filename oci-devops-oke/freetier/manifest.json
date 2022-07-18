@@ -1,0 +1,32 @@
+{
+    "workshoptitle": "Automate the Deployment of Java Apps to Oracle Cloud Infrastructure",
+    "help": "livelabs-help-oci_us@oracle.com",
+	"tutorials": [
+        {
+            "title": "Introduction",
+            "filename": "../../../labs/oci-devops-oke/intro/intro.md"
+        },
+        {
+            "title": "Getting Started with Free Trial Account",
+            "filename": "../../../../../common/labs/cloud-login/pre-register-free-tier-account.md"
+        },
+        {
+            "title": "Lab 1: Provision the Infrastructure using Resource Manager",
+            "filename": "../../../labs/oci-devops-oke/deploy-infra/deploy-infra.md"
+        },
+        {
+            "title": "Lab 2: Continuous Deployment with OCI DevOps Pipeline",
+            "filename": "../../../labs/oci-devops-oke/devops-pipeline/devops-pipeline.md"
+        },    
+        {
+            "title": "Lab 3: Release resources created through the workshop",
+            "filename": "../../../labs/oci-devops-oke/cleanup/cleanup.md"
+        },        
+        {
+            "title": "Need Help?",
+            "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+            "filename":"https://oracle-livelabs.github.io/common/labs/need-help/need-help-freetier.md"
+        }
+    ]
+}
+    

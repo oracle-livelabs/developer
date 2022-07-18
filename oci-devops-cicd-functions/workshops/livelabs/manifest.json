@@ -1,0 +1,38 @@
+{
+  "workshoptitle": "OCI Devops with OCI Functions",
+  "help": "dex_dlc_sa_ww_grp@oracle.com",
+  "tutorials": [
+    {
+      "title": "Get Started with OCI devops and functions",
+      "description": "Introduction to the lab with OCI devops and OCI functions",
+      "filename": "https://oracle-livelabs.github.io/developer/oci-devops-cicd-functions/intro/intro.md"
+    },
+    {
+      "title": "Lab 1: Provision the infrastructure",
+      "description": "Instruction to provision OCI devops and OCI function infrastructure",
+      "filename": "https://oracle-livelabs.github.io/developer/oci-devops-cicd-functions/deploy-infra/deploy-infra.md"
+    },
+    {
+      "title": "Lab 2: Get to know more about OCI Devops and Functions",
+      "description": "Get to know more about OCI devops and OCI function resources",
+      "filename": "https://oracle-livelabs.github.io/developer/oci-devops-cicd-functions/devops-resources/devops-resources.md"
+    },
+    {
+      "title": "Lab 3: New version release",
+      "description": "Release a new version for OCI function via OCI devops",
+      "filename": "https://oracle-livelabs.github.io/developer/oci-devops-cicd-functions/newrelease/newrelease.md"
+    },
+    {
+      "title": "Lab4: Cleanup of lab resources",
+      "description" : "Clean all the lab infra components",
+      "filename":"https://oracle-livelabs.github.io/developer/oci-devops-cicd-functions/cleanup/cleanup.md"
+
+    },
+  
+    {
+      "title": "Need Help?",
+      "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+      "filename": "https://oracle-livelabs.github.io/common/labs/need-help/need-help-livelabs.md"
+    }
+  ]
+}
