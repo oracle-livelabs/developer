@@ -30,7 +30,9 @@ Oracleアカウントは以下二つのステップで作成できます。
 
 ## Task 2: ハンズオンワークショップリソースの予約
 
-1. [LiveLabs 2.0](http://bit.ly/golivelabs) へナビゲートし、「次世代Java高速実行基盤GraalVMハンズオン」のトップページにある「Run On Livelabs Sandbox」ボタンををクリックします。
+
+1. [LiveLabs 2.0](http://developer.oracle.com/livelabs) へナビゲートし、「次世代Java高速実行基盤GraalVMハンズオン」のトップページにある「Run On Livelabs Sandbox」ボタンををクリックします。
+
 　![Navigate to workshp page.](images/livelabs01.png)
 
 2. Oracleアカウントログイン画面より事前に作成したユーザ名、パスワードを入力してログインします。

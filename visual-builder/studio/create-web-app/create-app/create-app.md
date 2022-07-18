@@ -11,7 +11,7 @@ Web and mobile applications in VB Studio take shape within the _Designer_, a ric
 
 In this lab, you'll create the Employee, Department, and Location business objects for the HR web application. Each business object has its own set of fields as shown here:
 
-![](/images/dbdiagram.png)
+![](./images/dbdiagram.png)
 
 Once you have your business objects, you'll use them to build the HR web application in which every employee belongs to a department, and every department has a location.
 
