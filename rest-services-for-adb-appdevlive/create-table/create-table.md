@@ -6,20 +6,20 @@ In this lab you will use Database Actions/SQL Developer Web to connect to your d
 
 Estimated Lab Time: 20 minutes
 
-Watch the video below for a quick walk through of the lab.
+Yuo may review the video below for a quick walk through of the lab.
 
 [](youtube:xr957th1h3U)
 
 ### Objectives
-
+rest-services-for-adb-appdevlive/create-table/create-table.md
 - Create and Auto-REST enable a table
 
 ### Prerequisites
 
 This lab assumes you have completed the following:
-* Login to OCI: [Login to Oracle Cloud](https://oracle-livelabs.github.io/common/labs/cloud-login/pre-register-free-tier-account.md)
-* Lab 1: [Provision an Autonomous Database](https://github.com/oracle-livelabs/database/blob/main/db-quickstart/db-provision/db-provision.md)
-* Lab 2: [Connect to an Autonomous Database with SQL Developer Web](https://github.com/oracle-livelabs/common/blob/main/labs/sqldevweb-login/sqldevweb-login.md)
+* Login to OCI: [Login to Oracle Cloud](https://oracle-livelabs.github.io/adb/shared/adb-provision/adb-provision.md)
+* Lab 1: [Provision an Autonomous Database](https://oracle-livelabs.github.io/adb/shared/adb-provision/adb-provision.md)
+* Lab 2: [Connect to an Autonomous Database with SQL Developer Web](https://oracle-livelabs.github.io/common/labs/sqldevweb-login/sqldevweb-login.md)
 
 ## Task 1: Create a Table in the Autonomous Database
 

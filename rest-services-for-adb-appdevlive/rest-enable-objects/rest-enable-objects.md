@@ -26,11 +26,9 @@ Watch the video below for a quick walk through of the lab.
 This lab assumes you have completed the following:
 * Login to OCI: [Login to Oracle Cloud](https://github.com/oracle-livelabs/common/blob/main/labs/cloud-login/pre-register-free-tier-account.md)
 * Lab 1: [Provision an Autonomous Database](https://github.com/oracle-livelabs/database/blob/main/db-quickstart/db-provision/db-provision.md)
-* Lab 2: [Connect to your Autonomous Database using Database Actions/SQL Developer Web](https://github.com/oracle-livelabs/common/blob/main/labs/sqldevweb-login/sqldevweb-login.md)
+* Lab 2: [Connect to your Autonomous Database using Database Actions/SQL Developer Web](https://oracle-livelabs.github.io/common/labs/sqldevweb-login/sqldevweb-login.md)
 * Lab 3: [Create and auto-REST enable a table](../create-table/create-table.md)
 * Lab 4: [Loading Data and Creating Business Objects](../load-data-and-biz-objs/load-data-and-biz-objs.md)
-* Lab 4: [REST Enable Business Logic and Custom SQL Lab](../rest-enable-objects/rest-enable-objects.md)
-* Lab 5: [Loading Data and Creating Business Objects](../load-data-and-biz-objs/load-data-and-biz-objs.md)
 
 ## Task 1: REST Enable a custom SQL Statement
 
