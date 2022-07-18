@@ -26,35 +26,35 @@ In this lab, you will:
 
 2. Open the Profile menu, click the **Profile icon** and click User Settings.
 
-  ![image of profile menu](/../images/user-profile.png)
+  ![image of profile menu](./../images/user-profile.png)
 
-  ![image of user settings](/../images/user-settings.png)
+  ![image of user settings](./../images/user-settings.png)
 
 3. Click **API Keys**.
 
-  ![image of create api key](/../images/api-key.png)
+  ![image of create api key](./../images/api-key.png)
 
 4. Click **Add API Key**.
 
-  ![image of add api key](/../images/add-api-key.png)
+  ![image of add api key](./../images/add-api-key.png)
 
 5. Download private and public key. Click **Add**.
 
-  ![image of download api key](/../images/api-key-download.png)
+  ![image of download api key](./../images/api-key-download.png)
 
 6. The key is added and the **Configuration File Preview** is displayed. Click **Copy** to copy the file snippets and paste it into a text file. Save the file as **config**. 
 
 7. The file snippet includes required parameters and values you'll need to create your configuration file. Refer to [SDK and CLI Configuration File](https://docs.oracle.com/en-us/iaas/Content/API/Concepts/sdkconfig.htm) to see an example of configuration file and `key_file` entry.
 
-  ![image of configuration file](/../images/config-file-preview.png)
+  ![image of configuration file](./../images/config-file-preview.png)
 
 8. Create a folder called **.oci** in the Home directory and save the **config file** and **private key** there.
 
-  ![image of configuration file in .oci folder](/../images/config-file-oci-location.png)
+  ![image of configuration file in .oci folder](./../images/config-file-oci-location.png)
 
 9. Set the root user to have **Read-only** permissions for the config file. No other user should have permissions.
 
-  ![image of configuration file permissions](/../images/config-file-permissions.png)
+  ![image of configuration file permissions](./../images/config-file-permissions.png)
 
   Alternatively, you may use the Terminal to change the permissions.
 
@@ -66,7 +66,7 @@ In this lab, you will:
 
 10. An API Key is successfully created.
 
-  ![image of successful api key creation](/../images/api-key-created.png)
+  ![image of successful api key creation](./../images/api-key-created.png)
 
 
 ## Task 2: Install OCI Command Line Interface (CLI)
@@ -169,15 +169,15 @@ Find the fleet OCID
 
 1. In the Oracle Cloud Console, open the navigation menu, click **Observability & Management**, and then click **Fleets** under **Java Management**.
 
-  ![image of console navigation to java management service](/../images/console-navigation-jms.png)
+  ![image of console navigation to java management service](./../images/console-navigation-jms.png)
 
   * Select the Fleet created in Lab 3.
 
-  ![image of fleet page](/../images/check-fleet-ocid-page.png)
+  ![image of fleet page](./../images/check-fleet-ocid-page.png)
 
   * Take note of the fleet ocid for steps 2-4.
 
-  ![image of fleet ocid](/../images/check-fleet-ocid.png)
+  ![image of fleet ocid](./../images/check-fleet-ocid.png)
 <!--  -->
 
 

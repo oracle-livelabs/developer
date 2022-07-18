@@ -252,7 +252,7 @@ In this lab, you will:
     
     ![cat insert-mongoapi-app](./images/task3/cat-insert-mongoapi-app.png)
 
-4. For the Oracle Autonomous JSON database connection: We are using **demo** user and the **password** that we have recommended during the workshop **DBlearnPTS#22_**. The name of the Oracle Databases is **demo** too. And the Oracle schema **SimpleCollection**. We will **run** the following export commands:
+4. For the Oracle Autonomous JSON database connection: We are using **demo** user and the **password** that we have recommended during the workshop **DBlearnPTS#22_**. The name of the Oracle Databases is **demo** too. And the Oracle schema **MongoCollection**. We will **run** the following export commands:
 
     ````
     <copy>
@@ -260,7 +260,7 @@ In this lab, you will:
     export MONGO_PASSWORD="DBlearnPTS#22_"
     export MONGO_CLUSTER="Cluster0"
     export MONGO_DB="demo"
-    export MONGO_COLLECTION="SimpleCollection"
+    export MONGO_COLLECTION="MongoCollection"
     export ATP_URL="URL_FROM_ABOVE" 
     </copy>
     ````
