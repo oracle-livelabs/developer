@@ -212,18 +212,10 @@ This lab assumes you have completed the following:
     "output": "" 
     }'</copy>
     ```
-    and using the Oracle Cloud Infrastructure Cloud Shell, run it again:
+    and after running this commang again, using the Oracle Cloud Infrastructure Cloud Shell, the following response will be returned:
 
     ```
-    > curl --location --request POST \
-    'https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/admin/api/bizlogic' \
-    --header 'Content-Type: application/json' \
-    --data-binary '{
-    "id": "a1",
-    "output": ""
-    }'
-
-    {
+    >{
         "code": "Unauthorized",
         "message": "Unauthorized",
         "type": "tag:oracle.com,2020:error/Unauthorized",

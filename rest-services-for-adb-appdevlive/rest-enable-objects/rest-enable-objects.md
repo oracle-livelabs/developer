@@ -286,14 +286,13 @@ This lab assumes you have completed the following:
 23. Using the Oracle Cloud Infrastructure Cloud Shell, paste and run the cURL command to confirm that the count is returned as the output variable.
 
     ```
-    curl -X POST \
+    <copy>curl -X POST \
     'https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/admin/api/bizlogic' \
     --header 'Content-Type: application/json' \
     --data-binary '{
     "id": "a1",
     "output": "" 
-    }'
-    {"output":8204}%                                                                
+    }'</copy>                                                                
     ```
 
     ![Cloud shell and cURL](./images/curl-command-in-cloud-shell.png)

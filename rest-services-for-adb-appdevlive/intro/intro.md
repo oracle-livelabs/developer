@@ -36,7 +36,7 @@ Estimated Workshop Time: 60-90 minutes
 - Publish RESTful services for various database objects
 - Secure the REST endpoints
 
-## Developing RESTful Services in Autonomous Database
+## Task 1: Developing RESTful Services in Autonomous Database
 
 In this lab you will use the browser-based SQL and REST workshop tools, connect to your Autonomous Database and REST enable a table. You will then secure that REST endpoint all within a single UI. Activities will indlude: 
 
@@ -54,7 +54,7 @@ In this lab you will use the browser-based SQL and REST workshop tools, connect 
 
 ### **Lab 6:** Secure REST-enabled endpoints
 
-## Learn More about REST
+## Task 2: Learn More about REST
 
 ### About RESTful Web Services
 
@@ -83,12 +83,12 @@ This section introduces some common terms that are used throughout this lab:
 
 **Resource handler**: Provides the logic required to service a specific HTTP method for a specific resource template. For example, the logic of the GET HTTP method for the preceding resource template might be:
 ```
-select empno, ename, dept from emp where empno = :id
+<copy>select empno, ename, dept from emp where empno = :id</copy> 
 ```
 **HTTP operation**: HTTP (HyperText Transport Protocol) defines standard methods that can be performed on resources: GET (retrieve the resource contents), POST (store a new resource), PUT (update an existing resource), and DELETE (remove a resource).
 
 
 ## Acknowledgements
 
- - **Authors** - Jeff Smith, Distinguished Product Manager, The Raleigh Cobra, Product Manager ![RC](./intro/images/raleigh_cobra.jpg)
+ - **Authors** - Jeff Smith, Distinguished Product Manager, The Raleigh Cobra, Product Manager ![RC](../intro/images/raleigh_cobra.jpg) 
  - **Last Updated By/Date** - Chris Hoina, July 2022
