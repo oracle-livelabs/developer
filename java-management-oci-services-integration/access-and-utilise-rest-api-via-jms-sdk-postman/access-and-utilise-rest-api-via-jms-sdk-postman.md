@@ -278,6 +278,10 @@ The steps above can be applied for the Typescript, .NET, Ruby and GO SDKs.
 
     ![image of get fleet response](images/get-fleet-200.png)
 
+
+You may now **proceed to the next lab.**
+
+
 ## Troubleshoot Postman Issues
 
 **For Task 2**
