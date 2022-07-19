@@ -57,7 +57,7 @@ This lab assumes you have:
 
 ## Learn More
 
-*(optional - include links to docs, white papers, blogs, etc)*
+<!-- *(optional - include links to docs, white papers, blogs, etc)* -->
 
 * [About ORDS](https://www.oracle.com/database/technologies/appdev/rest.html)
 * [ORDS Best Practices](https://www.oracle.com/database/technologies/appdev/rest/best-practices/)
