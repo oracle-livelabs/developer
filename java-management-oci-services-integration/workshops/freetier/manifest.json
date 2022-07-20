@@ -22,6 +22,10 @@
       "filename": "../../access-and-utilise-rest-api-via-jms-sdk-postman/access-and-utilise-rest-api-via-jms-sdk-postman.md"
     },
     {
+      "title": "Lab 3: Set up Site-to-Site VPN",
+      "filename": "../../setup-site-to-site-vpn/setup-site-to-site-vpn.md"
+    },
+    {
       "title": "Need Help?",
       "description": "Solutions to Common Problems and Directions for Receiving Live Help",
       "filename": "https://oracle-livelabs.github.io/common/labs/need-help/need-help-freetier.md"
