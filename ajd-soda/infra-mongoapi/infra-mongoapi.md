@@ -352,7 +352,7 @@ On the Instance Details page, copy Public IP Address in your notes.
 
     ![ssh Connection](./images/task3/unzip-wallet.png)
 
-19. We will **export** the **paths** and give access to the **firewall** using the following commands:
+19. We will **export** the **paths** using the following commands:
 
     ````
     <copy>
@@ -360,8 +360,6 @@ On the Instance Details page, copy Public IP Address in your notes.
     export TNS_ADMIN=/home/opc/Wallet_AJDEV
     export LD_LIBRARY_PATH=/usr/lib/oracle/21/client64/lib
     export PATH=$PATH:/usr/lib/oracle/21/client64/bin/
-    sudo firewall-cmd --zone=public --add-port=5000/tcp --permanent
-    sudo firewall-cmd --reload
     </copy>
     ````
 

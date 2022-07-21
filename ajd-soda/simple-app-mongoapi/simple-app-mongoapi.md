@@ -316,6 +316,8 @@ Use SODA for Python on Oracle Autonomous JSON Database to develop a micro-servic
     -  **Interactive Report**
 
     ![Interactive Report](./images/task2/interactive-report.png)
+    
+    > Note: Be sure you select **Interactive Report** and not **Interactive Grid**, otherwise, you will face an error.
 
     - Page Name: **Report**
     ```
