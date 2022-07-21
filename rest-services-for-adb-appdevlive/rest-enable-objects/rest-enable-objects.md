@@ -10,7 +10,7 @@ Watch the video below for a quick walk through of the lab.
 
 [](youtube:6Y_BArzNgaw)
 
-### You can learn more about REST in the  **Learn More About REST** section the [introduction](../intro/intro.md) page of this lab.
+### You can learn more about REST in the  **Learn More About REST** section the [introduction](https://github.com/oracle-livelabs/developer/blob/main/rest-services-for-adb-appdevlive/intro/intro.md) page of this lab.
 
 ### Objectives
 
@@ -23,12 +23,12 @@ Watch the video below for a quick walk through of the lab.
 
 - The following lab requires an <a href="https://www.oracle.com/cloud/free/" target="\_blank">Oracle Cloud account</a>. You may use your own cloud account, a cloud account that you obtained through a trial, or a training account whose details were given to you by an Oracle instructor.
 
-This lab assumes you have completed the following labs:
-* Lab 1: [Login to Oracle Cloud](https://oracle-livelabs.github.io/common/labs/cloud-login/pre-register-free-tier-account.md)
-* Lab 2: [Provision an Autonomous Database](https://oracle-livelabs.github.io/adb/shared/adb-provision/adb-provision.md)
-* Lab 3: [Connect to your Autonomous Database using Database Actions/SQL Developer Web](https://oracle-livelabs.github.io/common/labs/sqldevweb-login/sqldevweb-login.md)
-* Lab 4: [Create and auto-REST enable a table](../create-table/create-table.md)
-* Lab 5: [Loading Data and Creating Business Objects](../load-data-and-biz-objs/load-data-and-biz-objs.md)
+This lab assumes you have completed the following:
+* Login to OCI: [Login to Oracle Cloud](https://github.com/oracle-livelabs/common/blob/main/labs/cloud-login/pre-register-free-tier-account.md)
+* Lab 1: [Provision an Autonomous Database](https://github.com/oracle-livelabs/database/blob/main/db-quickstart/db-provision/db-provision.md)
+* Lab 2: [Connect to your Autonomous Database using Database Actions/SQL Developer Web](https://oracle-livelabs.github.io/common/labs/sqldevweb-login/sqldevweb-login.md)
+* Lab 3: [Create and auto-REST enable a table](../create-table/create-table.md)
+* Lab 4: [Loading Data and Creating Business Objects](../load-data-and-biz-objs/load-data-and-biz-objs.md)
 
 ## Task 1: REST Enable a custom SQL Statement
 
@@ -55,7 +55,7 @@ This lab assumes you have completed the following labs:
     ````
     <copy>com.oracle.livelab.api</copy>
     ````
-**A module is an organizational unit used to group related resource templates. Templates will have handlers, which are responsible for providing the logic required to service a specific HTTP method (e.g., GET, POST, PUT, DELETE, UPDATE, etc.)**
+    **A module is an organizational unit used to group related resource templates. Templates will have handlers, which are responsible for providing the logic required to service a specific HTTP method (e.g., GET, POST, PUT, DELETE, UPDATE, etc.)**
 
 
     ![Create Modules slider](./images/module-name-field.png) 
@@ -76,7 +76,7 @@ This lab assumes you have completed the following labs:
 
     ![Create Modules slider](./images/create-module-submit.png)
 
-**Here you can toggle "Show Code" to review what module creation might look like if it was performed manually.**
+    **Here you can toggle "Show Code" to review what module creation might look like if it was performed manually.**
 
     ![Toggle Show Code to review what is happening under the covers](./images/toggle-show-code-option.png)
 
@@ -106,7 +106,7 @@ This lab assumes you have completed the following labs:
 
     ![Create Modules slider with all info, left click create](./images/create-template-finish.png)
 
-**Toggle "Show Code" to review what template creation might look like if it was performed manually.**
+    **Toggle "Show Code" to review what template creation might look like if it was performed manually.**
 
     ![Toggle Show Code to review what is happening under the covers](./images/show-template-code-toggle.png)
 
@@ -271,7 +271,7 @@ This lab assumes you have completed the following labs:
 
     ![cURL Command modal](./images/curl-command-modal-bizlogic.png)
 
-**Remember to select the appropriate cURL command for your environment**
+    **Remember to select the appropriate cURL command for your environment**
 
     ![cURL Command reminder](./images/curl-command-reminder.png)
 
@@ -286,14 +286,13 @@ This lab assumes you have completed the following labs:
 23. Using the Oracle Cloud Infrastructure Cloud Shell, paste and run the cURL command to confirm that the count is returned as the output variable.
 
     ```
-    curl -X POST \
+    <copy>curl -X POST \
     'https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/admin/api/bizlogic' \
     --header 'Content-Type: application/json' \
     --data-binary '{
     "id": "a1",
     "output": "" 
-    }'
-    {"output":8204}%                                                                
+    }'</copy>                                                                
     ```
 
     ![Cloud shell and cURL](./images/curl-command-in-cloud-shell.png)
@@ -322,7 +321,7 @@ This lab assumes you have completed the following labs:
 
     ![OpenAPI doc export](./images/export-open-apis-action.png)
 
-**An example of what the OpenAPI export will look like.**
+    **An example of what the OpenAPI export will look like.**
 
     ![OpenAPI example export](./images/open-api-example-export.png)
 
@@ -330,7 +329,7 @@ This lab assumes you have completed the following labs:
 
 ## Conclusion
 
-In this lab, you published a REST API using Custom SQL to accept an input as well as published a REST API using a stored PL/SQL procedure.
+In this lab, you published a REST API using custom SQL to accept an input as well as published a REST API using a stored PL/SQL procedure.
 
 You may now [proceed to the next lab](#next).
 
