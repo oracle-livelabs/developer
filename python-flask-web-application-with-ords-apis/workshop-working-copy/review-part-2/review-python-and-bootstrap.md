@@ -108,25 +108,64 @@ This lab assumes you have:
 
 6. Review our application routes
 
-    If you are familiar with Flask, then you'll know all about routes. You may skim this section to become acquainted with the behavior of the application. If not, here is the primer: application routes (aka `app.route()`) are triggered when actions are performed in the application. In some cases the results of a function may be passed back to the user, in other cases a new HTML page may load, in other cases the user may be redirected to a new page.
-
+    If you are familiar with Flask, then you'll know all about routes. You may skim this section to become acquainted with the behavior of the application. If not, here is the primer: application routes (aka `app.route()`) are triggered when actions are performed in the application. 
+    
+    In some cases the results of a function may be passed back to the user, in other cases a new HTML page may load, in other cases the user may be redirected to a new page.
+    
     In all cases, you'll notice that an ORDS endpoint is used for either a `GET` or `POST` method.
 
-      ![The Index and Get Price routes](images/app-route-index-and-get-price.png)
+    #### The Routes 
 
-      1. `@app.route('/')` - this route contains the `index()` function. When a user navigates to the home page they'll be presented with the `index.html` page. We are also including our newly constructed Folium map, `lvnmap` as an argument. We'll review the HTML pages shortly so you can view all functions and their output in context.
+    1. `@app.route('/')`
+          
+        ![The Index route](images/app-route-index.png)
 
-      2. `@app.route('/get_price')` - 
+        This route contains the `index()` function. When a user navigates to the home page they'll be presented with the `index.html` page. We are also including our newly constructed Folium map, `lvnmap` as an argument. 
+      
+        We'll review the HTML pages shortly so you can view all functions and their output in context.
 
+    2. `@app.route('/get_price')`
 
+        ![The Get Price route](images/app-route-get-price.png)
     
+        The function of this route `getPrice()` appends `a` to an ORDS endpoint. From there we retrieve product prices from a product table. This will be one of the fields we'll use in a drop-down menu (found on the `orderform.html` page). 
     
+        You'll notice the final line in this function `return jsonify(product_price)` which takes the response and converts it to the JSON format while also assigning it a mimetype of "application/json". Later, we'll review this route along with a JavaScript function, to learn how they work in tandem with our ORDS endpoint. 
+
+    3. `@app.route('/get_description')`
+
+        ![The Get Description route](images/app-route-get-description.png)
+    
+        Much like the `get_price` app route, this function requests product description information from our database. It uses a similar syntax as before. We then `return jsonify(product_description)` which takes the response and converts it like before. 
+    
+    4. `@app.route('/orderform')`
+
+        ![The Order Form route](images/app-route-order-form.png)
+    
+        Using a separate ORDS endpoint, our application performs a more typical `GET` request. Here we return a list of products, along with the `orderform.html` page. You'll notice how we set some of these items similar, but not quite the same, names. This is done for the benefit of the associated JavaScript we'll rely on. We'll review this in the next lab. 
+
+    5. `@app.route('/orderhistory')`
+
+        ![The order history route](images/app-route-order-history.png)
+
+        Performing a `GET` request to this endpoint will return the items in a table that stores customer order history. While this particular application doesn't cover credentialing of individual customers, the aim is to showcase the ease of retrieving <i>specific</i> customer data with relative ease.
+
+        You'll see how this app route is triggering in the `orderform.html` page. 
+
+    6. `@app.route(/result', methods = ['POST', 'GET'])`
+
+        ![The result route](images/app-route-result.png)
+
+        Using the same ORDS endpoint as the `orderhistory` app route, we can infer that this route expects a `POST` request originating from the Flask application. This function also performs actions such as establishing the key:value pairs of the incoming data, and the JSON payload headers well. 
+
+        In short, this function is triggered by the submit action on the `orderform.html` page. But rather than staying on that page, the user is redirected to the 'orderhistory.html` page. 
+
       
 
 
     
 
-## Task 2: Concise Step Description
+<!-- ## Task 2: Concise Step Description
 
 1. Sub step 1 - tables sample
 
@@ -156,7 +195,7 @@ This lab assumes you have:
 
 	```
   <copy>ssh -i <ssh-key-file></copy>
-  ```
+  ``` -->
 
 ## Learn More
 * [A minimal application in Flask](https://flask.palletsprojects.com/en/2.1.x/quickstart/#a-minimal-application)
