@@ -9,6 +9,8 @@ Estimated Time: 20 minutes
 ### About this Lab
 If you just created a new Cloud account following the instructions in Getting Started, you might want to wait before you attempt to create Visual Builder and VB Studio instances. It could take anywhere between 10 and 30 minutes for a new user account to be fully provisioned and for the navigation menu to show. If you already have a Cloud account, you don't need to wait. Either way, make sure you've signed in to the Oracle Cloud as an Oracle Identity Cloud Service user before proceeding. *Note: If you log in using an Oracle Cloud Infrastructure account, the navigation menu to Visual Builder won't show.*
 
+> **Note:** To successfully provision Visual Builder and VB Studio instances using a Free Tier account, you need an Oracle Cloud account with active credits. If you don't have credits, you'll need to upgrade to a paid account. See [Oracle Cloud Infrastructure Free Tier](https://www.oracle.com/cloud/free/#always-free) for details.
+
 ### Objectives
 In this lab, you will:
 * Create an instance of Visual Builder
@@ -25,26 +27,26 @@ Provision a service instance of Visual Builder to host apps created in VB Studio
 
 1.  On the Oracle Cloud Get Started page, click the menu in the upper left corner to display the services you can provision:
 
-    ![](./images/hamburger.png)
+   ![](./images/hamburger.png "The image highlights the hamburger menu on the Oracle Cloud Get Started page.")
 
-2.  Click **OCI Classic Services**, then select **Visual Builder**:
+2.  Click **Developer Services**, then select **Visual Builder**:
 
-    ![](./images/platform.png)
+    ![](./images/platform.png "This image shows navigation to Visual Builder under Developer Services")
 
-3.  On the Instances tab, click **Create Instance**:
+3.  Select the Visual Builder instance's compartment in the **Compartment** field on the left, then click **Create Instance**:
 
-    ![](./images/create-instance.png)
+    ![](images/create-instance.png "This image shows the Visual Builder Instances screen, with the Compartment drop-down on the left and the Create Instance button on the right. ")
 
+4.  On the Create Instance screen, give your instance a unique name, one that is unlikely to be chosen by another user.  Click **Create Visual Builder instance**.
 
-4.  On the Create Instance page, fill in the information required. Give your instance a unique name, one that is unlikely to be chosen by another user.  Be sure to select the Region nearest to your location.  Click **Next**.
+    ![](images/detail.png "This image shows details of the Create Instance page, with the Name, Compartment, and Nodes fields. The Create Visual Builder instance button is also shown.")
 
-    ![](./images/detail.png)
+    Instance creation takes some time. If you attempt to click the instance name and receive a <code>401: Authorization failed or a 404: Not Found</code> error, but followed all the correct steps, instance creation has not completed. Wait a few more minutes.  
 
-    When the instance has finished provisioning, you'll receive an email.  
+    When instance creation completes successfully, the instance shows as **Active** in the **State** column.
 
-5. From the Action menu on the Instances page, click **Open Visual Builder Home Page**.
+5. At the far right, click ![Task menu icon](images/task_menu.png) and select **Service Homepage** to open the Visual Builder login page.
 
-   ![](./images/open.png)
 
 ## Task 2: Create an instance of VB Studio
 Provision a service instance of VB Studio to develop and deploy your web app. You can create only one VB Studio instance in an Oracle Cloud account. Before you attempt to create an instance, make sure there's no existing VB Studio instance in your account.
@@ -262,4 +264,4 @@ With all the necessary information copied, connect your VB Studio instance to th
 
 ## Acknowledgements
 * **Author** - Sheryl Manoharan, VB Studio User Assistance, November 2021
-* **Last Updated By/Date** - Sheryl Manoharan, February 2022
+* **Last Updated By/Date** - Sheryl Manoharan, July 2022
