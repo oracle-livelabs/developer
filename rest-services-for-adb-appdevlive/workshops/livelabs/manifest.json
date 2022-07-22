@@ -13,7 +13,7 @@
             "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/cloud-login-livelabs.md"
         },
         {
-            "title": "Lab 1: Provisioning Autonomous Database (ADW and ATP)",
+            "title": "Lab 1: Provision an Autonomous Database (ADW and ATP)",
             "description": "Provision an Autonomous Database - ATP or ADW",
             "filename": "https://oracle-livelabs.github.io/adb/shared/adb-provision/adb-provision.md"
         },
