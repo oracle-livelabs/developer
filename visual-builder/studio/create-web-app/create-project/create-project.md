@@ -33,7 +33,7 @@ As someone who creates a project, you'll automatically become the project's owne
 
 1.  On VB Studio's Organization page, click the **Projects** tab, then click **\+ Create**.
 
-    ![](images/welcome.png " ")
+    ![](images/welcome.png "This image shows the Welcome page when the Organization tab is selected on the main menu. The All Projects area of the page is empty, with the Create button selected.")
 
 2.  On the Project Details page of the New Project wizard, enter:
 
@@ -54,7 +54,7 @@ As someone who creates a project, you'll automatically become the project's owne
 
     Wait for the project to be provisioned. Once provisioning completes, you'll see the Project Home page, which serves as a window to your workspace, your environments, and repositories, as well as a recent activities feed. On the left are a series of tabs showing all the project components that are available.
 
-    ![](images/project-home.png " ")
+    ![](images/project-home.png "This image shows the Project Home page after the Tutorial HR Project is created. It includes a Workspaces area with the newly created HR Visual Application workspace. An Environments area shows the Development instance associated with this project. A Recent Activities feed lists what was done in the project today. On the right, the Repositories tab is selected to show the tutorial-hr-project.git. The Statistics and Team tabs are also visible.")
 
 ## Task 2: Explore the project environment
 
@@ -62,40 +62,40 @@ Everything you need to start building a visual application is now created for yo
 
 1.  On the Project Home page, you'll see the **tutorial-hr-project.git** repository under Workspaces as well as in the Repositories tab on the right. This Git repository stores your visual application's source files and is also known as the project's _remote_ repository. Click the **tutorial-hr-project.git** link to see your project's remote branches, `main` and `hrbranch`, created with initial content for your visual application. Select **hrbranch**; the `main` branch is the default branch created when a new repository is generated and is the project's source of truth.
 
-    ![](images/repo.png " ")
+    ![](images/repo.png "This image shows the contents of the tutorial-hr-project.git repository. Both the main and hrbranch branches are visible, with the main branch selected to show its source files.")
 
 2.  In the left navigator, click **Workspaces**![Workspaces icon](images/vbs-workspaces-icon.png)to view the **HR Visual Application** workspace. This workspace contains a working copy of `hrbranch` and serves as your _local_ repository. The `hrbranch` initially has the same set of source files as the `main` branch, but as you work with your visual application, it will include the changes you make. Your changes can't be seen by others until you save them from the local branch to a remote branch.
 
-    ![](images/workspace.png " ")
+    ![](images/workspace.png "This image shows the newly created HR Visual Application in the Workspaces table. Its repository is set to tutorial-hr-project.git, current branch is set to hrbranch, and environment is set to Development.")
 
 3.  Click **Environments** ![Environments icon](images/vbs-environments-icon.png) in the left navigator to view the development environment that points to your VB instance. Here, you can view details of your VB instance and all the applications you deploy to this instance.  
 
-    ![](images/env.png " ")
+    ![](images/env.png "This image shows the Development enviroment, with a single Visual Builder instance shown in the Service Instances tab. The Details, Certificates, and Deployments tabs are also visible.")
 
 4.  Click **Builds** ![Builds icon](images/vbs-builds-icon.png) in the left navigator to view the default build jobs that package and deploy your visual application to the development instance. The `Visual-Application-Package` job generates the visual application's artifact files. The `Visual-Application-Deploy` job deploys the artifact files to the development instance.
 
-    ![](images/build-jobs.png " ")
+    ![](images/build-jobs.png "This image shows the Jobs tab on the Builds page. It lists two default jobs Visual-Application-Deploy and Visual-Application-Package in the All Jobs tab. Both jobs include Actions on the right to Build, Configure, View Last Build Log, and Delete. Other tabs that you can use to filter are Successful Jobs, Failed Jobs, and Test Failed Jobs. A Create Job button is also visible.")
 
 5.  On the Builds page, click **Pipelines** to view the sequence of build jobs that package and deploy your application to your development environment.
 
-    ![](images/build-pipeline.png " ")
+    ![](images/build-pipeline.png "This image shows the Pipelines tab on the Builds page, with a diagram showing the sequence of jobs: Visual-Application-Package followed by Visual-Application-Deploy. A Create Pipeline button is also visible. On the right, there are action buttons to view Instances of a pipeline as well as Build, Configure, and Delete a pipeline.")
 
 ## Task 3: Add credentials to deploy the visual application
 
 Now that your project is provisioned, let's set up the credentials that VB Studio will use to deploy your visual application to the VB development instance.
 
-1.  Click **Jobs** on the Builds page, then click **Configure** ![Configure icon](images/vbs-builds-configure-icon.png) for the `Visual-Application-Deploy` job.
+1.  Click **Jobs** on the Builds page, then under **Actions**, click **Configure** ![Configure icon](images/vbs-builds-configure-icon.png) for the `Visual-Application-Deploy` job.
 
-    ![](images/build-auth.png)
+    ![](images/build-auth.png "This image shows the Jobs tab on the Builds page. The Visual-Application-Deploy job in the table is selected, with its Configure button in focus.")
 
 2.  On the Job Configuration page, click **Steps**.
 
 3.  In the **Username** and **Password** fields, enter the credentials of a user who can deploy to the VB development instance.
 
-    ![](images/build-auth-credentials.png)
+    ![](images/build-auth-credentials.png "This image shows the Steps tab in the Job Configuration page. Both the Username and Password fields are highlighted to indicate that these fields must be updated.")
 
    **Tip:** Before you save your changes, take a quick look at other advanced settings on this page:
-    - Notice the **Include the application version in the URL** check box that's selected by default. This option adds a version to the URL when your application is deployed, for example, https://host/something-else/**0.1**/index.html. This version number is useful to identify multiple versions during development, but when your app is ready to go live, you'll want to deselect this option, so your application URL is something like https:/host/something-else/**live**/index.html, without a version number in it.
+    - Notice the **Include the application version in the URL** check box that's selected by default. This option adds a version to the URL when your application is deployed (for example, https://host/something-else/**0.1**/index.html) and is useful to identify multiple versions during development. When your app is ready to go live, you'll want to deselect this option so your application URL is something like https:/host/something-else/**live**/index.html (without a version number in it).
     - Take note of the **Use clean database** option, also selected by default. This option uses a new database by default to store your application's data. To keep your data after initially importing it (which we'll do in a later lab), you'll need to select the **Keep existing environment data** option.
 
     Click **Save**.
@@ -108,16 +108,16 @@ For the purposes of this workshop, let's assume that other members of your team 
 
 2.  On the Project Home page, click **Team**, then **\+ Add Member**.
 
-    ![](images/team.png " ")
+    ![](images/team.png "This image shows the Team tab on the Project Home page. The person who creates the project is listed as the Project owner. The Add Member button is also visible.")
 
 3.  In the Add Member dialog box, enter the username of a teammate, select the new user's membership, and click **Add**. For demonstration purposes, this lab adds Clara Coder with the Developer Limited Access role, which lets her access most project components but limits management actions.
 
-    ![](images/team-add-member.png " ")
+    ![](images/team-add-member.png "This image shows the Add Member dialog box, with Membership set to Developer Limited Access and Username set to Clara Coder. The Add button is selected.")
 
-    Your recent activities feed is updated and an email containing project details is sent to Clara Coder. To receive email notifications, the teammate's email address must be verified and notifications set properly in Preferences. 
+    An email containing project details is sent to Clara Coder. To receive email notifications, the teammate's email address must be verified and notifications set properly in Preferences.
 
     You may **proceed to the next lab**.
 
 ## Acknowledgements
 * **Author** - Sheryl Manoharan, VB Studio User Assistance, November 2021
-* **Last Updated By/Date** - Sheryl Manoharan, February 2022
+* **Last Updated By/Date** - Sheryl Manoharan, July 2022
