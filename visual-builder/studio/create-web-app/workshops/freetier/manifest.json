@@ -41,6 +41,10 @@
             "filename": "../../add-other-pages/add-other-pages.md"
         },
         {
+            "title": "Lab 8: Access Data From an External REST Service",
+            "filename": "../../create-service-connection/create-service-connection.md"
+        },
+        {
             "title": "Lab 8: Share a Web App",
             "filename": "../../share-app/share-app.md"
         },
