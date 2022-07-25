@@ -28,7 +28,7 @@ In this workshop, you will:
 
 ## Acknowledgements
 
-* **Author** - Alex Keh
-* **Contributors** - Marion Smith
-* **Last Updated By/Date** - Alex Keh, June 2022
+- **Author** - Alex Keh
+- **Contributors** - Marion Smith
+- **Last Updated By/Date** - Alex Keh, August 2022
 

@@ -1,4 +1,4 @@
-# Develop and Deploy the .NET Web Application
+# Develop and deploy the .NET web application
 
 ## Introduction
 
@@ -149,6 +149,8 @@ In the previous lab, you retrieved the connect descriptor after configuring one-
     ![](./images/ssh.png " ")
 
 Congratulations! You have completed this workshop.
+
+The next lab cleans up the resources you created during the workshop. You may now **proceed to the next lab.**
 
 ## Want to Learn More?
 

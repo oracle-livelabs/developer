@@ -1,4 +1,4 @@
-# Enable One-Way TLS without Wallets
+# Enable one-way TLS without wallets
 
 ## Introduction
 

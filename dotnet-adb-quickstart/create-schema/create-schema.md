@@ -1,4 +1,4 @@
-# Create User and Setup Schema
+# Create user and setup schema
 
 ## Introduction
 
@@ -25,21 +25,17 @@ Although you can connect to your autonomous database from local desktop tools, s
 
     ![Click the Database Actions button](./images/click-database-actions-button.png " ")
 
-2. A sign-in page opens for Database Actions. For this lab, simply use your database instance's default administrator account, **Username - admin**, and click **Next**.
+2. A sign-in page opens for Database Actions. For this lab, simply use your database instance's default administrator account, **Username - ADMIN**, and **Password** you specified when creating the database. Click **Sign in**.
 
-    ![Enter the admin username.](./images/db-actions-sign-in.png " ")
+    ![Enter the user id and password](./images/db-actions-sign-in-complete.png " ")
 
-3. Enter the Administrator **Password** you specified when creating the database. Click **Sign in**.
+3. The Database Actions page opens. In the **Development** box, click **SQL**.
 
-    ![Enter the admin password.](./images/db-actions-sign-in-complete.png " ")
+    ![Click on SQL](./images/click-sql.png " ")
 
-4. The Database Actions page opens. In the **Development** box, click **SQL**.
+4. The first time you open SQL Worksheet, a series of pop-up informational boxes introduce you to the main features. Click **Next** to take a tour through the informational boxes.
 
-    ![Click on SQL.](./images/click-sql.png " ")
-
-5. The first time you open SQL Worksheet, a series of pop-up informational boxes introduce you to the main features. Click **Next** to take a tour through the informational boxes.
-
-    ![Click Next to take tour.](./images/sql-worksheet-tour.png " ")
+    ![Click Next to take tour](./images/sql-worksheet-tour.png " ")
 
     After touring through the informational boxes, keep this SQL Worksheet open and please **proceed to the next task.**
 
@@ -61,9 +57,9 @@ Creating a user is a way to create a schema. In this section, you execute the `C
 
 1. In this lab's previous task, you connected to SQL Worksheet as the autonomous database administrator. When connected as administrator, open a SQL Worksheet and create a user named `APPUSER`.
 
-    ````
+    ```
     <copy>CREATE USER appuser IDENTIFIED BY Lab_practice1;</copy>
-    ````
+    ```
 
   ![Create user](./images/user-created.png " ")
 
@@ -101,7 +97,7 @@ Syntax: `GRANT <privilege> TO <user>;`
     </copy>
     ```
 
-  ![](./images/assign-privileges.png " ")
+  ![Assign privileges to the user](./images/assign-privileges.png " ")
 
 
 ## Task 4: Create a Table and Add Records
@@ -124,7 +120,7 @@ Syntax: `GRANT <privilege> TO <user>;`
       </copy>
       ```
 
-  ![](./images/create-table-todoitem.png " ")
+  ![Create table](./images/create-table-todoitem.png " ")
 
 4. You will now populate the table with sample data. You will add rows by executing `INSERT` statements.
 
@@ -143,14 +139,15 @@ COMMIT;
 
     </copy>
     ```
-  ![](./images/insert-into-tables.png " ")
+  ![Insert rows into table](./images/insert-into-tables.png " ")
 
 5. You can retrieve the data from the `TODOITEM` table. Execute the following statement to select all the `DESCRIPTION` and `DONE` columns and view the results:
 
     ```
     <copy>SELECT DESCRIPTION, DONE FROM APPUSER.TODOITEM;</copy>
     ```
-  ![](./images/select-data.png " ")
+  ![Retrieve data to validate was added as expected](./images/select-data.png " ")
+  You may now **proceed to the next lab.**
 
 ## Want to Learn More?
 
@@ -159,4 +156,4 @@ Click [here](https://docs.oracle.com/en/database/oracle/oracle-database/19/cncpt
 ## Acknowledgements
 
 - **Author** - Rick Green, Alex Keh
-- **Last Updated By/Date** - Alex Keh, June 2022
+- **Last Updated By/Date** - Alex Keh, August 2022

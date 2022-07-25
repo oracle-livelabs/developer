@@ -1,4 +1,4 @@
-# Provision an Autonomous Database
+# Provision an Oracle Autonomous Database
 
 ## Introduction
 
@@ -23,48 +23,48 @@ Estimated Lab Time: 10 minutes
 
     __Note:__ You can also directly access your Autonomous Transaction Processing or Autonomous Data Warehouse service in the __Quick Actions__ section of the dashboard.
 
-    ![](./images/quick-actions-adb.png" ")
+    ![Begin navigation in OCI menu](./images/begin-oci-menu.png" ")
 
 3. The following steps apply similarly to either Autonomous Data Warehouse or Autonomous Transaction Processing. This lab shows provisioning of an Autonomous Transaction Processing database, so click **Oracle Database** -> **Autonomous Transaction Processing**.
 
-    ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/database-adw.png " ")
+    ![Select Autonomous Transaction Processing from menu](./images/select-atp.png" ")
 
-4. Make sure your workload type is __Transaction Processing__ or __All__ to see your Autonomous Transaction Processing instances. You can use the __List Scope__ drop-down menu to select a compartment. Select your __root compartment__, or __another compartment of your choice__ where you will create your new ATP instance. If you want to create a new compartment, click <a href="https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#three" target="\_blank">here</a>. To learn more about compartments, click <a href="https://docs.cloud.oracle.com/en-us/iaas/Content/GSG/Concepts/settinguptenancy.htm#Setting_Up_Your_Tenancy" target="\_blank">here</a>.
+4. Make sure your workload type is __Transaction Processing__ or __All__ to see your Autonomous Transaction Processing instances. You can use the __List Scope__ drop-down menu to select a compartment. Select your __root compartment__, or __another compartment of your choice__ where you will create your new ATP instance. If you want to create a new compartment, click [here](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#Working). To learn more about compartments, click [here](https://docs.cloud.oracle.com/en-us/iaas/Content/GSG/Concepts/settinguptenancy.htm#Setting_Up_Your_Tenancy).
 
  __Note__ - Avoid the use of the ManagedCompartmentforPaaS compartment as this is an Oracle default used for Oracle Platform Services.
 
 5. This console shows that no databases yet exist. If there were a long list of databases, you could filter the list by the state of the databases (available, stopped, terminated, and so on). You can also sort by __Workload Type__. Here, the __Transaction Processing__ workload type is selected.
 
-    ![](./images/compartment.png " ")
+    ![View Oracle Autonomous Transaction Processing Databases in compartment](./images/compartment.png " ")
 
 ## Task 2: Creating the Autonomous Database Instance
 
 1. Click **Create Autonomous Database** to start the instance creation process.
 
-    ![](./images/create-adb.png " ")
+    ![Create Autonomous Database](./images/create-adb.png " ")
 
 2.  This brings up the __Create Autonomous Database__ screen where you will specify the configuration of the instance.
 3. Provide basic information for the autonomous database:
 
-    - __Choose a compartment__ - Select a compartment for the database from the drop-down list.
-    - __Display Name__ - Enter a memorable name for the database for display purposes. For this lab, use __QUICK-START__.
+    - __Choose a compartment__ - Select a compartment for the database from the drop-down list. In example below, MyCompartment was created ahead of time and chosen.
+    - __Display Name__ - Enter a memorable name for the database for display purposes. For this lab, use __QUICKSTART__.
     - __Database Name__ - Use letters and numbers only, starting with a letter. Maximum length is 14 characters. (Underscores not initially supported.) For this lab, use __QUICKSTART__.
 
-    ![](./images/compartment-name.png " ")
+    ![Specify database instance configuration](./images/compartment-name.png " ")
 
 4. Choose a workload type. Select the workload type for your database from the choices:
 
     - __Transaction Processing__ - For this lab, choose __Transaction Processing__ as the workload type.
     - __Data Warehouse__ - Alternately, you could have chosen Data Warehouse as the workload type.
 
-    ![](./images/adb-workload-type.png " ")
+    ![Chose a workload type](./images/adb-workload-type.png " ")
 
 5. Choose a deployment type. Select the deployment type for your database from the choices:
 
     - __Shared Infrastructure__ - For this lab, choose __Shared Infrastructure__ as the deployment type.
     - __Dedicated Infrastructure__ - Alternately, you could have chosen Dedicated Infrastructure as the workload type.
 
-    ![](./images/deployment-type.png " ")
+    ![Choose a deployment type](./images/deployment-type.png " ")
 
 6. Configure the database:
 
@@ -76,7 +76,7 @@ Estimated Lab Time: 10 minutes
     - __Storage Auto Scaling__ - For this lab, you can disable storage auto scaling. The Always Free database does not scale up/down.
     - __New Database Preview__ - If a checkbox is available to preview a new database version, do __not__ select it.
 
-    ![](./images/configure-db.png " ")
+    ![Configure the database](./images/configure-db.png " ")
 
 7. Create administrator credentials:
 
@@ -88,36 +88,36 @@ Estimated Lab Time: 10 minutes
     - The password must not be the same password that is set less than 24 hours ago.
     - Re-enter the password to confirm it. Make a note of this password.
 
-    ![](./images/create-admin.png " ")
+    ![Set administrator credentials](./images/create-admin.png " ")
 8. Choose network access:
     - For this lab, accept the default, "Secure access from everywhere."
     - If you want to allow traffic only from the IP addresses and VCNs you specify - where access to the database from all public IPs or VCNs is blocked, select "Secure access from allowed IPs and VCNs only" in the Choose network access area.
     - If you want to restrict access to a private endpoint within an OCI VCN, select "Private endpoint access only" in the Choose network access area.
     - If the "Require mutual TLS (mTLS) authentication" option is selected, mTLS will be required to authenticate connections to your Autonomous Database. TLS connections allows Oracle Data Provider for .NET to connect to your Autonomous Database without a wallet. See the [documentation for network options](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/support-tls-mtls-authentication.html#GUID-3F3F1FA4-DD7D-4211-A1D3-A74ED35C0AF5) for options to allow TLS, or to require only mutual TLS (mTLS) authentication.
 
-    ![Choose the network access type.](./images/network-access.png " ")
+    ![Choose the network access type](./images/network-access.png " ")
 
 9. Choose a license type. For this lab, choose __License Included__. The two license types are:
 
     - __Bring Your Own License (BYOL)__ - Select this type when your organization has existing database licenses.
     - __License Included__ - Select this type when you want to subscribe to new database software licenses and the database cloud service.
-    ![Choose database license type.](images/license.png)
+    ![Choose database license type](images/license.png)
 
 10. For this lab, do not provide a contact email address. The "Contact Email" field allows you to list contacts to receive operational notices and announcements as well as unplanned maintenance notifications.
 
-    ![Do not provide a contact email address.](images/contact-email-field.png)
+    ![Do not provide a contact email address](images/contact-email-field.png)
 
 
 10. Click __Create Autonomous Database__.
 
-    ![](./images/create-adb-button.png " ")
+    ![Click Create Autonomous Database button](./images/create-adb-button.png " ")
 
 11.  Your instance will begin provisioning. In a few minutes the state will turn from Provisioning to Available. At this point, your Autonomous Transaction Processing database is ready to use! Have a look at your instance's details here including its name, database version, CPU count and storage size.
 
-    ![Provisioning an Autonomous Database instance.](./images/adb-provisioning.png " ")
+    ![Provisioning an Autonomous Database instance](./images/adb-provisioning.png " ")
     Provisioning an Autonomous Database instance.
 
-    ![Autonomous Database instance successfully provisioned.](./images/adb-provisioned.png " ")
+    ![Autonomous Database instance successfully provisioned](./images/adb-provisioned.png " ")
     Autonomous Database instance successfully provisioned.
 
 You may now **proceed to the next lab.**
@@ -129,4 +129,4 @@ Click [here](https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-clo
 ## Acknowledgements
 
 - **Author** - Richard Green, Alex Keh
-- **Last Updated By/Date** - Alex Keh, June 2022
+- **Last Updated By/Date** - Alex Keh, August 2022

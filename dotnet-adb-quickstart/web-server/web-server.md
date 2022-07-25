@@ -1,8 +1,8 @@
-# Provision and Set Up the Web Server and Networking
+# Provision and set up the web server
 
 ## Introduction
 
-In this lab, you will provision and configure an Oracle Cloud Infrastructure Linux compute host and NGINX web server. You will then setup ASP.NET Core support for NGINX and tests the web server is working properly. Finally, you will configure the Virtual Cloud Network to setup connectivity between the compute and database layers.
+In this lab, you will provision and configure an Oracle Cloud Infrastructure Linux compute host and NGINX web server. You will then setup ASP.NET Core support for NGINX and tests the web server is working properly. Finally, you will complete Virtual Cloud Network configuration for connectivity between the compute and database layers.
 
 Oracle Cloud Infrastructure Compute lets you provision and manage compute hosts, known as instances. You can launch instances as needed to meet your compute and application requirements. After you launch an instance, you can access it securely from your computer, restart it, attach and detach volumes, and terminate it when you're done with it. Any changes made to the instance's local drives are lost when you terminate it. Any saved changes to volumes attached to the instance are retained.
 
@@ -36,10 +36,10 @@ An Oracle Cloud Infrastructure VM compute instance runs on the same hardware as 
 
 1. Click the **Navigation Menu** in the upper left. Navigate to **Compute**, and select **Instances**.
 
-	![](images/compute-instances.png " ")
+	![Navigate to compute instance section](images/compute-instances.png " ")
 
 2. On the drop-down menu on the left side of the web page, select the compartment that you wish to create the VM instance. Then, click the **Create Instance** button. This will launch a VM instance for this lab.
-  ![](images/create-instance.png)
+    ![Create compute instance](images/create-instance.png)
 
 3. The Create Compute Instance wizard will launch.
     Enter **Web-Server** as the name of the server. Click **Edit** on the **Image and Shape** area of the page. 
@@ -201,4 +201,4 @@ You have completed this lab. You may now **proceed to the next lab.**
 ## Acknowledgements
 
 - **Author** - Rajeshwari Rai, Prasenjit Sarkar, Alex Keh
-- **Last Updated By/Date** - Alex Keh, June 2022
+- **Last Updated By/Date** - Alex Keh, August 2022
