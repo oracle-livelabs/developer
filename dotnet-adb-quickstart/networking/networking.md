@@ -26,15 +26,11 @@ In this lab, you will:
 
 ## Task 1: Create Your VCN
 
-<if type="livelabs"></if>
--LL
-You are running this workshop in a LiveLabs environment. Our LiveLabs environments use a pre-configured Virtual Cloud Network (VCN), so you will not create a VCN in this workshop. However, you can see how a VCN is created in Oracle Cloud Infrastructure by watching this short video:
+If you are running this workshop in a LiveLabs environment, understand that it uses a pre-configured Virtual Cloud Network (VCN). As such, you will not create a VCN in this workshop. However, you can observe how a VCN is created in Oracle Cloud Infrastructure by watching this short video:
 
  [](youtube:lxQYHuvipx8)
 
-
-<if type="freetier"></if>
-To create a VCN on Oracle Cloud Infrastructure:
+If running this workshop from other environments, create a VCN on Oracle Cloud Infrastructure:
 
 1. On the Oracle Cloud Infrastructure Console Home page, under the **Launch Resources** header, click **Set up a network with a wizard**.
 
