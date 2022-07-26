@@ -101,7 +101,8 @@ This lab assumes you have:
       - We'll then include information pop-ups for all the museums
         - Notice how we include the `museum_name` as HTML, the icon color and type, along with `tooltip`
 
-          :bulb: <i>The tooltip generates a helpful bubble when hovered over that reads "Click me!"; you'll see it soon enough.</i>
+      <i>:bulb: **Note:** The tooltip generates a helpful bubble when hovered over that reads "Click me!"; you'll see it soon enough.</i>
+
     5. Finally you'll see the line: 
     `lvmap = m._repr_html_()`
     We include this to temporarily save our map as a HTML iframe (this includes all necessary HTML and JavaScript properties), which we'll later use as an argument in our application's index page (in Flask)
@@ -128,8 +129,8 @@ This lab assumes you have:
 
         ![The Get Price route](images/app-route-get-price.png)
     
-        The function of this route `getPrice()` appends `a` to an ORDS endpoint. From there we retrieve product prices from a product table. This will be one of the fields we'll use in a drop-down menu (found on the `orderform.html` page). 
-    
+        The function of this route `getPrice()` appends `a` to an ORDS endpoint. From there we retrieve product prices from a product table. This will be one of the fields we'll use in a drop-down menu (found on the `orderform.html` page).
+        
         You'll notice the final line in this function `return jsonify(product_price)` which takes the response and converts it to the JSON format while also assigning it a mimetype of "application/json". Later, we'll review this route along with a JavaScript function, to learn how they work in tandem with our ORDS endpoint. 
 
     3. `@app.route('/get_description')`
