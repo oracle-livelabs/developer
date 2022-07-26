@@ -26,22 +26,20 @@ This lab assumes you have:
 
 As a final step before you share your app, enable it to run as a Progressive Web App—or PWA for short. PWAs are designed to be capable, reliable, and provide a platform-specific look and feel. When you enable a web app as a PWA, it can be installed directly from a browser on a user's device, including Android and iOS mobile devices.
 
-1.  If necessary, click **Workspaces** ![Workspaces icon](images/vbs-workspaces-icon.png)and **HR Visual Application** in the Workspaces table to open your workspace.
+1.  In the Web Apps pane, click the **hrwebapp** node.
 
-2.  In the Web Apps pane, click the **hrwebapp** node.
-
-3.   Click **Settings** and **PWA**, then toggle **Enable Progressive Web App (PWA)**.
+2.   Click **Settings** and **PWA**, then toggle **Enable Progressive Web App (PWA)**.
 
     ![](images/enable.png "This image shows the PWA tab of the Settings editor, with the Enable Progressive Web App switch enabled. ")
 
-4.  Review the **Manifest Settings** included with the PWA's web manifest, a JSON file that contains information about your application:
+3.  Review the **Manifest Settings** included with the PWA's web manifest, a JSON file that contains information about your application:
 
     -   **Application Name:** Accept the default value or specify another name to be displayed when you are prompted to install the application.  
 
     -   **Short Name:** Accept the default value. When both the application name and short name are specified, the short name is used on the home screen, launcher, and other places where space is limited.
 
     -   **Theme Color**: Accept the default background and theme colors.
-5. Under **Resources**, click **Create** next to **Offline Fallback Page** to add a page that is displayed when the user performs an action in the PWA that requires a connection, but the device is offline.
+4. Under **Resources**, click **Create** next to **Offline Fallback Page** to add a page that is displayed when the user performs an action in the PWA that requires a connection, but the device is offline.
 
     ![](images/offlinepage.png "This image shows an offlinePage.html created under the Offline Fallback Page option in the Resources section. ")
 

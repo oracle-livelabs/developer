@@ -60,7 +60,7 @@ Now that we have our service connection, let's change the Edit Employee page to 
 
 1. Click the **Web Applications** ![Web Applications icon](images/webapp-icon.png) tab, then select the **main-edit-employee** page.
 
-2. Click the Components palette, locate the **Heading** component and drag and drop it onto the canvas, just above the Toolbar component with the Cancel and Save buttons.
+2. In the Components palette, locate the **Heading** component and drag and drop it onto the canvas, just above the Toolbar component with the Cancel and Save buttons.
 
 3. In the Heading's properties, change the **Text** field's value to `Country Info` and move the **Level** slider to H6.  
 

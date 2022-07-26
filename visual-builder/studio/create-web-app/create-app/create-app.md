@@ -58,15 +58,15 @@ The first thing we'll do is add a web app to the HR visual application you just 
 3.  Click **\+ Web Application** (or the **+** sign at the top of the pane).
 4.  In the Create Web Application window, enter `hrwebapp` as the **Application Name**. (You can specify uppercase as well as lowercase characters in the application name, but the name is converted to lowercase.) Leave the **Navigation Style** set to the default, **None**, and click **Create**.
 
-    The application opens on the `main-start` page, which is the default home page created automatically for you. By convention, a page name takes its flow as a prefix. This simple application uses only the `main` flow. More complex applications can have more than one flow.
+    The application opens on the **main-start** page, which is your application's default home page created automatically for you. By convention, a page name takes its flow as a prefix. This simple application uses only the **main** flow. More complex applications can have more than one flow.
 
     (You can ignore the **This dot says that you have made some changes** dialog that appears in the header for now; we'll explore Git changes in a later lab.)
 
     ![](images/designer.png "This image shows the Web Apps pane after the hrwebapp has been created. The app itself is open on the right, on the main-start page, showing the Components Palette. On the far right, the Properties tab shows the Page view.")
 
-    What you see under the `main-start` tab is your application's main work area. Just under `main-start` are several horizontal tabs: Page Designer, Actions, Event Listeners, and so on. Each tab provides editors to help you examine and modify artifacts used in the page. By default, the page opens in the Page Designer that features the Components palette, the Data palette, and the Structure view on the left edge of the work area. To design your pages, you'll drag UI components from the Components palette to the canvas. Once you add components, the hierarchy of those components on your page will show in the Structure view.
+    What you see under the **main-start** tab is your application's main work area. Just under main-start are several horizontal tabs: **Page Designer**, **Actions**, **Event Listeners**, and so on. Each tab provides editors to help you examine and modify artifacts used in the page. By default, the page opens in the **Page Designer** that features the **Components** palette, the **Data** palette, and the **Structure** view on the left edge of the work area. To design your pages, you'll drag UI components from the Components palette to the canvas. Once you add components, the hierarchy of those components on your page will show in the Structure view.
 
-    On the far right is the Properties pane, which lets you view or edit a component's properties. When the entire page is selected (as it is now), the Properties pane shows the Page view, where you can choose a preferred page layout. Click **Properties** (the vertical tab located along the right-most edge of your browser) to hide the Properties pane and expand your work area.
+    On the far right is the **Properties** pane, which lets you view or edit a component's properties. When the entire page is selected (as it is now), the Properties pane shows the Page view, where you can choose a preferred page layout. Click **Properties** (the vertical tab located along the right-most edge of your browser) to hide the Properties pane and expand your work area.
 
     You can also move different panes to customize your work area. For example, right-click **Structure** at the bottom of your work area, then select **Move to Top Left** to move the Structure view right under **Components** and **Data**.
 
@@ -94,9 +94,9 @@ Let's create your first business object and add data to it by importing a CSV fi
     -   **Field Name**: `location` (automatically populated)
     -   **Type**: **String** ![String](images/bo-string-icon.png) (selected by default)
 
-    Click **Create Field**.
-
     ![](images/location-bo-location-field.png "This image shows the + Field pop-up box, with Location entered in the Label field, location filled in as the Field Name value, and the String type selected. The Create Field button is selected.")
+
+    Click **Create Field**.
 
 7.  In the **Location** field's properties, select **Required** under Constraints.
 
@@ -104,7 +104,7 @@ Let's create your first business object and add data to it by importing a CSV fi
 
     A check mark is displayed in the Required column for the Location field.
 
-8.  Click [this link](https://objectstorage.us-ashburn-1.oraclecloud.com/p/CSv7IOyvydHG3smC6R5EGtI3gc1vA3t-68MnKgq99ivKAbwNf8BVnXVQ2V3H2ZnM/n/c4u04/b/livelabsfiles/o/solutions-library/Location.csv) to download the `Location.csv` file to your file system. This file contains four locations and provides the data for the Location business object.
+8.  Click [this link](https://objectstorage.us-ashburn-1.oraclecloud.com/p/LNAcA6wNFvhkvHGPcWIbKlyGkicSOVCIgWLIu6t7W2BQfwq2NSLCsXpTL9wVzjuP/n/c4u04/b/livelabsfiles/o/developer-library/Location.csv) to download the `Location.csv` file to your file system. This file contains four locations and provides the data for the Location business object.
 
 9.  Click the **Data** tab, then **Import from File** ![Import from File icon](images/import_icon.png).
 
@@ -120,7 +120,7 @@ Let's create your first business object and add data to it by importing a CSV fi
 
 ## Task 3: Create the Department and Employee business objects
 
-Let's now create the Department and Employee business objects. But instead of creating the business objects and fields one by one and importing data for them, you'll import a ZIP file that defines two business objects, their fields, and data all at once.
+Let's now create the Department and Employee business objects. But instead of creating the business objects and fields one by one and importing data for them, you'll import a ZIP file that defines the two business objects, their fields, and data all at once.
 
 1.  Click [this link](https://objectstorage.us-ashburn-1.oraclecloud.com/p/LNAcA6wNFvhkvHGPcWIbKlyGkicSOVCIgWLIu6t7W2BQfwq2NSLCsXpTL9wVzjuP/n/c4u04/b/livelabsfiles/o/developer-library/Department-Employee-BO.zip) and download the `Department-Employee-BO.zip` file. This ZIP file contains CSV files for the Department and Employee business objects. Feel free to review the contents.
 
@@ -132,7 +132,7 @@ Let's now create the Department and Employee business objects. But instead of cr
 
      ![](images/import-bos.png "This image shows the Manage Application Data page, also known as the Data Manager. Import Business Objects is selected.")
 
-4. On the Upload File step of the Import New Business Objects wizard, click the drag and drop box, select the Department-Employee-BO.zip file, and click **Upload**.
+4. On the Upload File step of the Import New Business Objects wizard, click the drag and drop box, select the `Department-Employee-BO.zip` file, and click **Upload**.
 
   When the file is uploaded, you'll see a message that the import contains records for the Department and Employee business objects. Click **Next**.
 

@@ -24,14 +24,14 @@ This lab assumes you have:
 
 ## Task 1: Use the **main-start** page to display departments
 
-Let's create a table to display your departments on the `main-start` page. The Table component is useful when you want to show lots of data in columns.
+Let's create a table to display your departments on the main-start page. The Table component is useful when you want to show lots of data in columns.
 
 1.  Click **Web Applications** ![Web Applications icon](images/web-applications-icon.png) in the Navigator.
 2.  If necessary, expand the **hrwebapp** and **main** nodes, then click **main-start**, the page that was automatically created as the default home page for your web application. (You can also open the page by clicking the **main-start** tab just below the header.)
 
     You might want to click the **Web Applications** tab to close the Navigator pane and expand your work area. You can also widen your browser window.
 
-3.  Now that you're in the Page Designer, let's give the `main-start` page a title. Click `main` on the page canvas—notice how the title text uses the Bind Text component, also selected in the Structure view. (If you're having trouble selecting the component, you'll need to expand the canvas area to better view its elements.)
+3.  Now that you're in the Page Designer, let's give the main-start page a title. Click **main** on the page canvas—notice how the title text uses the Bind Text component, also selected in the Structure view. (If you're having trouble selecting the component, you'll need to expand the canvas area to better view its elements.)
 
     ![](images/department-heading.png "This image shows the Page Designer tab for the main-start page, with the 'main' text featured in the Bind Text component selected on the canvas.")
 
@@ -39,7 +39,7 @@ Let's create a table to display your departments on the `main-start` page. The T
 
     ![](images/departments.png "This image shows the Bind Text's Properties pane, with the Value field set to Departments.")
 
-5.  Click **Components** on the left edge of your work area to open the Components palette. Enter `table` in the Components Filter field, then drag and drop **Table** from the **Collection** category onto the canvas.
+5.  Click **Components** on the left edge of your work area to open the Components palette. Enter `table` in the Filter field, then drag and drop **Table** from the **Collection** category onto the canvas.
 
    ![](images/department-add-table.png "This image shows a Table component being dragged onto the page canvas.")
 
@@ -73,14 +73,14 @@ Let's create a table to display your departments on the `main-start` page. The T
 
 Now that we have a way to show departments, we'll add a Create page that lets users create new departments. With the help of the Add Create Page Quick Start, we'll connect to our data source, the Department business object, and select the fields that we want the user to provide values for.
 
-1.  With the Departments table on the `main-start` page selected, click **Quick Start**, then click **Add Create Page**.
+1.  With the Departments table on the main-start page selected, click **Add Create Page** in the **Quick Start** menu.
 2.  On the Select Endpoint step of the Add Create Page wizard, select **Department** under Business Objects (if necessary) and click **Next**.
 3.  On the Page Detail step, select **location** (**department** is already selected because it's a required field). Department and Location are the only fields the user needs to specify to create a department.
 
    ![](images/department-add-create.png "This image shows the Page Detail page of the Add Create Page quick start. Under the request check box, the location and department check boxes are selected. The Button label field is set to Create Department. The Page title is Create Department, and the Page name is main-create-department.")
 4.  Leave other values set to their defaults. Click **Finish**.
 
-    A **Create Department** button appears in a Toolbar component above the table on the `main-start` page. (You might need to click next to the **Create Department** button to see the Toolbar component.) Click  **Web Applications** in the Navigator to see the `main-create-department` page created in the pages list under `main`.
+    A **Create Department** button appears in a Toolbar component above the table on the main-start page. (You might need to click next to the **Create Department** button to see the Toolbar component.) Click  **Web Applications** in the Navigator to see the **main-create-department** page created in the pages list under **main**.
 
     ![](images/department-add-create-result.png "This image shows the result of the Add Create Page quick start. The main-start page has a button with the label Create in a Toolbar component below the heading and above the table. In the Navigator, the main-create-department page has been added to the pages list under the main flow.")
 
@@ -96,13 +96,13 @@ Now that we have a way to show departments, we'll add a Create page that lets us
 
     ![](images/department-add-create-live.png "This image shows the use of the Create Department page when you run the application. IT has been entered in the Department field, and Floor 4 has been selected from the Location list.")
 
-    Click **Save**. A message appears briefly and you are taken to the application's **Diagram** tab, which displays the application's `main` flow and navigational relationships between pages in the flow.
+    Click **Save**. A message appears briefly and you are taken to the application's **Diagram** tab, which displays the application's **main** flow and navigational relationships between pages in the flow.
 
     ![](images/department-add-create-mainflow.png "This image shows the web application's main flow, with the main-start page pointing to the main-create-department page.")
 
-    **Tip:** A page that's marked with a warning triangle usually indicates that the page's code has issues that you might want to review. For example, the warning for the `main-start` page here relates to a translation issue, which you can safely ignore. If you want, click **Audits** at the bottom of the screen to review and resolve issues in the Audits pane. You can also select messages that you don't want to be flagged and disable reporting for those messages in the Code editor.
+    **Tip:** A page that's marked with a warning triangle usually indicates that the page's code has issues that you might want to review. For example, the warning for the main-start page here relates to a translation issue, which you can safely ignore. If you want, click **Audits** at the bottom of the screen to review and resolve issues in the Audits pane. You can also select messages that you don't want to be flagged and disable reporting for those messages in the Code editor.
 
-8.  Double-click the **main-start** tile to open the page (you can also click the `main-start` tab just below the header or click the page in the Web Apps pane), then click **Reload Design Preview** ![Reload Design Preview icon](images/reload-icon.png) to see the department you created.
+8.  Double-click the **main-start** tile to open the page (you can also click the **main-start** tab just below the header or click the page in the Web Apps pane). Click **Reload Design Preview** ![Reload Design Preview icon](images/reload-icon.png) to see the department you created.
 
     ![](images/department-add-create-reload.png "This image shows the Departments page with the Create Department button and the table. The Reload Design Preview icon is selected.")
 
@@ -110,7 +110,7 @@ Now that we have a way to show departments, we'll add a Create page that lets us
 
 ## Task 3: Add a page to display employees
 
-We'll now create a page to display employees, similar to the one you created to show departments. In addition to a table that lists employees, we'll add a chart that lets you display your data visually.
+We'll now create a page to display employees, similar to the one you created to show departments. In addition to a table that lists employees, we'll add a chart that lets you display employee salary visually.
 
 1.  In the Web Apps pane, under **hrwebapp**, click **+** (Create Page) next to the **main** node and select **Create Page**.
 
@@ -147,7 +147,7 @@ We'll now create a page to display employees, similar to the one you created to 
 
     ![](images/employees-add-data-1.png "This image shows part of the Bind Data page of the Add Data quick start. Under the item[i] check box, the name and picture check boxes are selected. In the Columns list, the name and picture columns appear in the order in which the check boxes were selected.")
 
-8.  Expand the **departmentObject** and **items** nodes (expand **item\[i\]** if it isn't already expanded) and select **department**, then click **Next**.
+8.  Expand the **departmentObject** and **items** nodes (expand **item\[i\]** if it isn't already expanded) and select **department**.
 
     ![](images/employees-add-data-2.png "This image shows part of the Bind Data page of the Add Data quick start after the departmentObject node has been expanded. The items and item[i] nodes are expanded, and the department check box is selected. In the Columns list, department appears at the bottom. ")
 
@@ -192,7 +192,7 @@ Now that you've displayed some employee data in a table, let's add a chart to vi
 
   ![](images/panel-on-page-chart-data.png "This image shows the Bar Chart populated with employee data, with name as the X Axis and salary as the Y Axis.")
 
-8. Click the chart's General tab in the Properties pane. In the **X Axis, Title** field, change **name** to **Employee Name**. In the **Y Axis, Title** field, change **salary** to **Salary**. Change the Orientation from **Vertical** to **Horizontal**.
+8. Click the chart's **General** tab in the Properties pane. In the **X Axis, Title** field, change **name** to **Employee Name**. In the **Y Axis, Title** field, change **salary** to **Salary**. Change the Orientation from **Vertical** to **Horizontal**.
 
   ![](images/panel-on-page-chart-properties.png "This image shows the Bar Chart's properties. X Axis Title is set to Employee Name, Y Axis Title is set to Salary, Orientation is set to Horizontal.")
 
@@ -208,7 +208,7 @@ Add a Create page that lets your users create new employees.
 
 4.  Leave the **Button label** field and other fields to their default values. Click **Finish**.
 
-    A **Create Employee** button appears above the table, and the `main-create-employee` page appears in the pages list.
+    A **Create Employee** button appears above the table, and the **main-create-employee** page appears in the pages list.
 
 5.  In the pages list, click the **main-create-employee** page to open it in the Page Designer.
 6.  Click within the form on the page but outside of a component (that is, in the Form Layout component on the page). In the **General** tab of the Form Layout's properties, set the **Max Columns** value to **2**.
@@ -234,17 +234,17 @@ Add a Create page that lets your users create new employees.
     ![](images/employees-add-create-mainflow.png "This image shows the page flow for the application's main flow. The main-employees page points to the main-create-employee page, and  the main-start page points to the main-create-department page.")
 
 8.  Return to the main-employees page. (You can double-click the page tile, in addition to using other navigation mechanisms.) If necessary, click **Reload Design Preview** ![Reload Design Preview icon](images/reload-icon.png) to display the new employee, both in the table and the bar chart.
-9.  Click **Code** (next to **Design** in the Page Designer toolbar) to view the HTML code for the `main-employees` page. You can see the code for the title, the table, and the chart within `div` elements.  The components and classes all begin with `oj-`, indicating that they are Oracle JavaScript Extension Toolkit (JET) components.  
+9.  Click **Code** (next to **Design** in the Page Designer toolbar) to view the HTML code for the main-employees page. You can see the code for the title, the table, and the chart within `div` elements.  The components and classes all begin with `oj-`, indicating that they are Oracle JavaScript Extension Toolkit (JET) components.  
 
     ![](images/employees-add-create-code.png "This image shows the HTML code for the main-employees page.")
 
-    Select the **oj-bind-text** value and change `Employees` to `My Employees`, then click **Design** to see your changes reflected in the page's visual editor.
+    Select the **oj-bind-text** value (at the top) and change `Employees` to `My Employees`, then click **Design** to see your changes reflected in the page's visual editor.
 
     ![](images/employees-code-view-changetitle.png "This image shows the <oj-bind-text> component code, with its value changed to My Employees. ")
 
      Whichever mode you choose to work in (visual or source code), your changes are synced to keep both views consistent.
 
-10.  Now click **Structure** to view the structure of components on the main-employees page. Components that aren't currently visible on the page fade into the background to allow you to focus on parts of a page, a section at a time
+10.  Now click **Structure** to view the structure of components on the main-employees page. Components that aren't currently visible on the page fade into the background to allow you to focus on parts of a page, a section at a time.
 
     ![](images/employees-add-create-structure.png " ")
 
