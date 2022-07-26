@@ -62,7 +62,7 @@ Let's now share the application so your team can test its behavior.
     A brief confirmation appears, and the application is deployed to your VB instance.
 
 
-## Task 2: View the shared application
+## Task 3: View the shared application
 
 Now that you've shared your application, you need to get its URL so you can pass it along to your team. You do this by opening the application itself, or by copying the URL when you shared the application. Remember that your team members will need the proper credentials to view your shared application.
 

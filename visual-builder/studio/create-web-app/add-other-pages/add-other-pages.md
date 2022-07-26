@@ -87,7 +87,7 @@ Now that we've added options to let users manage departments, we'll do the same 
   The employee's image now displays on the page. If you were to update the URL in the **Picture** field, the employee's image will also update.
   ![](images/avatar-picture-field.png "This image shows the updated Edit Employee page with the employee picture showing above the other form fields on the page.")
 
-## Task 6: Add a button to delete an employee
+## Task 5: Add a button to delete an employee
 
 1.  Go to the **main-employees** page. If necessary, click the table, then **Quick Start** in the Properties pane.
 2.  In the Quick Start menu, click **Add Delete Action**.
@@ -111,7 +111,7 @@ Now that we've added options to let users manage departments, we'll do the same 
 
        Now you're ready to test your pages.
 
-## Task 7: Test your Employee pages
+## Task 6: Test your Employee pages
 
 1.  Click **Preview** ![Preview icon](images/preview-icon.png).
 

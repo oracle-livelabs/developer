@@ -75,14 +75,14 @@ After your application is successfully deployed to the development environment, 
 ## Task 4: Import data to the deployed application
 A deployed application does not automatically include its business object data, so you'll need to manually import data for the application in the development environment. You can import the data you used in your workspace or add entirely different data, as we'll do now.
 
-1.  Click [this link](https://objectstorage.us-ashburn-1.oraclecloud.com/p/CSv7IOyvydHG3smC6R5EGtI3gc1vA3t-68MnKgq99ivKAbwNf8BVnXVQ2V3H2ZnM/n/c4u04/b/livelabsfiles/o/solutions-library/HR_Application.zip) and download the `HR_Application.zip` file. The zip file contains CSV files of the Location, Department, and Employee business objects with more records and data.
+1.  Click [this link](https://objectstorage.us-ashburn-1.oraclecloud.com/p/CSv7IOyvydHG3smC6R5EGtI3gc1vA3t-68MnKgq99ivKAbwNf8BVnXVQ2V3H2ZnM/n/c4u04/b/livelabsfiles/o/solutions-library/HR-Application.zip) and download the `HR-Application.zip` file. The zip file contains CSV files of the Location, Department, and Employee business objects with more records and data.
 2.  In the Environments page, click **Actions** ![Actions icon](images/vbs-actions-icon.png) for the deployed tutorial-hr-project and select **Import Data**.
 
     ![](images/deployed-application-import-data.png "This image shows how you get to the Import Data option from the Actions menu of a deployed application.")
 
-3.  In the Import Data dialog box, click the upload box, select the `HR_Application.zip` file you previously downloaded, and click **Import Data**.
+3.  In the Import Data dialog box, click the upload box, select the `HR-Application.zip` file you previously downloaded, and click **Import Data**.
 
-    ![](images/deployed-application-import-data-1.png "This image shows the Import Data dialog with the HR_Application.zip selected for import. The Import Data button is selected.")
+    ![](images/deployed-application-import-data-1.png "This image shows the Import Data dialog with the HR-Application.zip selected for import. The Import Data button is selected.")
 
     When the import succeeds, click **Close**.
 

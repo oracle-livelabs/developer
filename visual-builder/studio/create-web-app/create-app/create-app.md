@@ -138,9 +138,9 @@ Let's now create the Department and Employee business objects. But instead of cr
 
   ![](images/import-bos-upload-result.png "This image shows the Import New Business Objects wizard on the Upload File screen. A zip file has been uploaded and the results show at the bottom.")
 
-  5. On the Business Objects step, you'll see the definitions that will be used to create the Department and Employee business objects. Leave them as is and click **Next**.
+5. On the Business Objects step, you'll see the definitions that will be used to create the Department and Employee business objects. Leave them as is and click **Next**.
 
-  6. On the Fields step, you'll need to make some changes. For the Department business object (selected by default), look for the `Location` field in the second row and click **#** in the Type column. Change the type setting as follows:
+6. On the Fields step, you'll need to make some changes. For the Department business object (selected by default), look for the `Location` field in the second row and click **#** in the Type column. Change the type setting as follows:
 
       -   **Type**: **Reference** ![Reference icon](images/reference-icon.png)
       -   **Referenced Business Object**: **Location** (the default for a **Referenced Business Object** is always the current business object (in this case, Department), so make sure you select **Location** from the drop-down list)
@@ -181,7 +181,7 @@ Let's now create the Department and Employee business objects. But instead of cr
 
   Click ![Back to Table icon](images/backtotable-icon.png) Endpoints to return to the main Endpoints page.
 
-## Task 5: Create a business object diagram
+## Task 4: Create a business object diagram
 
 Now that you have your business objects, create a diagram that visualizes the business objects and their relationships.
 
