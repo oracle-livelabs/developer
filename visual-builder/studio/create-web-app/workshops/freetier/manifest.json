@@ -25,7 +25,7 @@
             "filename": "../../create-app/create-app.md"
         },
         {
-            "title": "Lab 4: Create Pages for a Web App",
+            "title": "Lab 4: Create Pages to Display Data",
             "filename": "../../add-pages/add-pages.md"
         },
         {
@@ -33,11 +33,11 @@
             "filename": "../../save-changes/save-changes.md"
         },
         {
-            "title": "Lab 6: Add Navigation and Data",
+            "title": "Lab 6: Add Navigation Between Pages",
             "filename": "../../add-data/add-data.md"
         },
         {
-            "title": "Lab 7: Add Pages to Manage Data",
+            "title": "Lab 7: Add Pages to Interact With Data",
             "filename": "../../add-other-pages/add-other-pages.md"
         },
         {
