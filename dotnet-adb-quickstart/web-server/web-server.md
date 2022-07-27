@@ -23,9 +23,9 @@ In this lab, you will:
 
 ### Prerequisites
 
--   This lab requires completion of the **Getting Started** section in the Contents menu on the left.
+-   This lab requires completion of the **Get started** section in the Contents menu on the left.
   
-## Task 1: Create <if type="freetier">a Web Server on </if>a Compute Instance
+## Task 1: Create a Compute Instance
 
 Oracle Cloud Infrastructure  offers both Bare Metal and Virtual Machine instances:
 
@@ -38,63 +38,46 @@ An Oracle Cloud Infrastructure VM compute instance runs on the same hardware as 
 
 	![Navigate to compute instance section](images/compute-instances.png " ")
 
-2. On the drop-down menu on the left side of the web page, select the compartment that you wish to create the VM instance. Then, click the **Create Instance** button. This will launch a VM instance for this lab.
+2. On the **Compartment** drop-down menu on the left side of the web page, select the compartment that you wish to create the VM instance (e.g. MyCompartment). Then, click the **Create Instance** button. This will launch a VM instance for this lab.
+
     ![Create compute instance](images/create-instance.png)
 
 3. The Create Compute Instance wizard will launch.
-    Enter **Web-Server** as the name of the server. Click **Edit** on the **Image and Shape** area of the page. 
+    Enter **Web-Server** as the name of the server. Click **Edit** on the right side of the **Image and Shape** area of the page. 
 
-    ![](images/instance-name.png " ")
-
-    LL - Enter your username + *-Instance* as the name of the server.
-
-    ![](images/create-compute-livelabs-2.png)
+    ![Enter a server name and begin editing the compute's image and shape](images/name-instance.png " ")
    
-<if type="livelabs"></if>
-<if type="freetier"></if>
-4. LL - Click *Change Shape* to choose a VM shape.
+4. The **Image and Shape** section expands. Click the **Change image** button to select an operating system image to install on the compute instance.
 
-    ![](images/create-compute-livelabs-3.png)
+    ![Click Change image button to choose operating system image](images/change-image.png)
 
-5. LL - Click **Edit** on the **Networking** area of the page.
+5. Select **Oracle Linux Cloud Developer** image check box and accept the default values. This image includes Oracle Linux, .NET (Core) Software Development Kit, Visual Studio Code, and PowerShell. Review the *Oracle Linux Cloud Developer Image Terms of Use*. Select the check box if you accept the terms. Click the **Select image** button.
 
-    ![](images/create-compute-livelabs-4.png)
-
-4. Click *Change image* to choose a VM image.
-
-    ![](images/create-compute-livelabs-3.png)
-
-5. In the Change Image section, allow the **Platform Images** in the image sources to load. Select the **Oracle Linux Cloud Developer** check box and accept the default values. This Linux image has .NET Core Software Development Kit and Visual Studio Code installed. Select the checkbox indicating that you have reviewed the image's terms and conditions. Click the **Select Image** button.
-
-    ![](images/create-compute-livelabs-4.png)
+    ![Select Oracle Linux Cloud Developer image](images/choose-cloud-developer-image.png)
 
 6. Move to the next section on networking. Click **Edit** on the **Networking** area of the page. 
 
-    ![](images/instance-name.png " ")
+    ![Edit the compute's networking settings](images/select-networking.png " ")
 
-7. Scroll down and select the **Assign a public IPv4 address** option.
+7. Scroll down and select the **Assign a public IPv4 address** option if it's not already been selected.
 
-    ![](images/assign-ip.png " ")
-
-    LL - ![](images/create-compute-livelabs-4b.png)
+    ![Select public IPv4 address](images/assign-ip.png " ")
 
     **Note:** You need a public IP address to be able to SSH into the running instance later in this lab.
 
-8. Scroll down to the **Add SSH keys** area of the page. Select **Generate a key pair for me**. Click on the **Save Private Key** and **Save Public Key** buttons that appear to save the two files: **ssh-key-&lt;date&gt;.key** (private key) and **ssh-key-&lt;date&gt;.key.pub** (public key). Keep the private key safe and don't share its content with anyone. The public key will be needed for use with Oracle Cloud Shell to secure cloud communications.
+8. Scroll down to the **Add SSH keys** area of the page. Select **Generate a key pair for me**. Click on the **Save Private Key** and **Save Public Key** links that appear to save the two files: **ssh-key-&lt;date&gt;.key** (private key) and **ssh-key-&lt;date&gt;.key.pub** (public key). Keep the private key safe and don't share its content with anyone. The public key will be needed for use with Oracle Cloud Shell to secure cloud communications.
 
-    ![](images/ssh-keys.png)
+    ![Add and save SSH keys](images/add-ssh-keys.png)
 
-9. Press the **Create** button to create your instance. 
+9. Press the **Create** button at the bottom of the page to create your instance. 
 
-    ![](images/ssh-keys.png)
+    ![Click Create button to begin compute instance creation](images/create-instance-button.png)
 
     Launching an instance is simple and intuitive with few options to select. The provisioning of the compute instance will complete in less than a minute, and the instance state will change from *PROVISIONING* to *RUNNING*.
 
-9. Once the instance state changes to *RUNNING*, you can SSH to the Public IP address of the instance. The Public IP address is noted under *Instance Access*. Record this IP address for use when you SSH and set up one-way TLS without wallets later on.
+10. Once the instance state changes to *RUNNING*, you can SSH to the Public IP address of the instance. The Public IP address is noted under *Instance Access*. Record this IP address for use when you SSH and set up one-way TLS without wallets later on.
 
-    ![](images/public-ip.png " ")
-
-    LL - ![](images/compute-livelabs-running.png)
+    ![Running compute instance with public IP address](images/public-ip.png " ")
 
 ## Task 2: Connect to the Instance and Install NGINX Web Server
 

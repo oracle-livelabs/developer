@@ -14,7 +14,7 @@ Estimated Lab Time: 10 minutes
 
 ### Prerequisites
 
--   This lab requires completion of the **Getting Started** section in the Contents menu on the left.  
+-   This lab requires completion of the **Get Started** section in the Contents menu on the left.  
 
 ## Task 1: Choosing ATP or ADW from the Services Menu
 
