@@ -34,11 +34,11 @@ If running this workshop from other environments, create a VCN on Oracle Cloud I
 
 1. On the Oracle Cloud Infrastructure Console Home page, under the **Launch Resources** header, click **Set up a network with a wizard**.
 
-    ![Setup a network with the wizard](images/setup-vcn.png " ")
+    ![Setup a network with the wizard](./images/setup-vcn.png " ")
 
 2. Select **Create VCN with Internet Connectivity**, and then click **Start VCN Wizard**.
 
-    ![Start VCN wizard](images/start-wizard.png " ")
+    ![Start VCN wizard](./images/start-wizard.png " ")
 
 3. Complete the following fields:
 
@@ -53,16 +53,16 @@ If running this workshop from other environments, create a VCN on Oracle Cloud I
 
     Your screen should look similar to the following:
 
-    ![Configure VCN](images/vcn-configuration.png " ")
+    ![Configure VCN](./images/vcn-configuration.png " ")
 
      Click the **Next** button at the bottom of the screen.
 
 4. Review your settings to be sure they are correct. Click the **Create** button to create the VCN. 
-    ![Review VCN configuration](images/review-vcn.png " ")
+    ![Review VCN configuration](./images/review-vcn.png " ")
 
 5. It will take a moment to create the VCN and a progress screen will keep you apprised of the workflow.
 
-    ![VCN workflow progress](images/workflow.png " ")
+    ![VCN workflow progress](./images/workflow.png " ")
 
 6. Once you see that the creation is complete (see previous screenshot), click the **View Virtual Cloud Network** button.
 

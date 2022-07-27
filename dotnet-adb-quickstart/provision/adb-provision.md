@@ -101,11 +101,11 @@ Estimated Lab Time: 10 minutes
 
     - __Bring Your Own License (BYOL)__ - Select this type when your organization has existing database licenses.
     - __License Included__ - Select this type when you want to subscribe to new database software licenses and the database cloud service.
-    ![Choose database license type](images/license.png)
+    ![Choose database license type](./images/license.png)
 
 10. For this lab, do not provide a contact email address. The "Contact Email" field allows you to list contacts to receive operational notices and announcements as well as unplanned maintenance notifications.
 
-    ![Do not provide a contact email address](images/contact-email-field.png)
+    ![Do not provide a contact email address](./images/contact-email-field.png)
 
 
 10. Click __Create Autonomous Database__.

@@ -30,7 +30,7 @@ We will connect to Cloud Shell again to begin developing the ASP.NET Core part o
     <copy>ssh -i <private_ssh_key> opc@<public_ip_address></copy>
     ```
 
-    ![](images/ssh.png)
+    ![](./images/ssh.png)
 
 2. From Cloud Shell, use the .NET Command Line Interface (CLI) included as part of the Oracle Cloud Developer image by issuing the following command to create a new ASP.NET Core web app project in a new directory TODOLIST.
 
@@ -159,4 +159,4 @@ Click [here](https://www.oracle.com/database/technologies/appdev/dotnet.html) to
 ## Acknowledgements
 
 - **Author** - Alex Keh
-- **Last Updated By/Date** - Alex Keh, July 2022
+- **Last Updated By/Date** - Alex Keh, August 2022
