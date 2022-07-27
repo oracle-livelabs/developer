@@ -17,7 +17,7 @@ As part of your project, you'll also create a _workspace_, a completely private 
 ### Objectives
 In this lab, you will:
 * Create a project for a visual application and explore your project's environment
-* Add credentials to deploy the visual application to your Visual Builder instance
+* Add credentials to deploy the visual application to your VB instance
 * Add team members to your project
 
 
@@ -70,7 +70,7 @@ Everything you need to start building a visual application is now created for yo
 
 3.  Click **Environments** ![Environments icon](images/vbs-environments-icon.png) in the left navigator to view the development environment that points to your VB instance. Here, you can view details of your VB instance and all the applications you deploy to this instance.  
 
-    ![](images/env.png "This image shows the Development enviroment, with a single Visual Builder instance shown in the Service Instances tab. The Details, Certificates, and Deployments tabs are also visible.")
+    ![](images/env.png "This image shows the Development environment, with a single Visual Builder instance shown in the Service Instances tab. The Details, Certificates, and Deployments tabs are also visible.")
 
 4.  Click **Builds** ![Builds icon](images/vbs-builds-icon.png) in the left navigator to view the default build jobs that package and deploy your visual application to the development instance. The `Visual-Application-Package` job generates the visual application's artifact files. The `Visual-Application-Deploy` job deploys the artifact files to the development instance.
 

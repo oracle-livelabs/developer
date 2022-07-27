@@ -163,7 +163,7 @@ Let's now create the Department and Employee business objects. But instead of cr
 
   ![](images/import-bos-result.png "This image shows the Applying Changes dialog, stating that data import finished successfully.")
 
-11. In the Business Objects pane, you'll now see two new business objects, each of which becomes a table in Visual Builder's embedded database. Click **Department**, then **Data** to view four departments imported from the spreadsheet. See how the **location** column shows each department's floor, as defined in the referenced Location object.
+11. In the Business Objects pane, you'll now see two new business objects, each of which becomes a table in VB Studio's embedded database. Click **Department**, then **Data** to view four departments imported from the spreadsheet. See how the **location** column shows each department's floor, as defined in the referenced Location object.
 
   ![](images/new-bos.png "This image shows the newly created Department and Employee objects on the Business Objects page. Department is open on the Data tab, showing four departments.")
 

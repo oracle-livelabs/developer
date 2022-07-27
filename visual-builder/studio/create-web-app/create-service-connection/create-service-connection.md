@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This lab shows you how to use Visual Builder to access data from an external REST service.
+This lab shows you how to access data from an external REST service.
 
 Estimated Time:  15 minutes
 
@@ -46,7 +46,7 @@ In this step, we'll connect the HR application to an external REST endpoint that
 
   ![](images/service-connection-wizard-sendrequest.png "This image shows the Test tab. Under Path Parameters in the Request section, the value of the code parameter is set to CN. The Send Request button is selected.")
 
-  When the request is successful, click **Save as Example Response** to save the response and create a schema. This way, you tell Visual Builder that this response is the typical structure of data received from this service.  
+  When the request is successful, click **Save as Example Response** to save the response and create a schema. This way, you tell VB Studio that this response is the typical structure of data received from this service.  
 
   ![](images/service-connection-wizard-saveresponse.png "This image shows the response returned by the service. The structure of the data is shown under Body in the Response section and the Save as Example Response is selected.")
 
@@ -127,7 +127,7 @@ In this step, we'll assign data to the variables by adding a "value" event that 
 
     ![](images/callrest-assign-parameter.png "This image shows the Call REST action's properties. Endpoint is set to Countries/getAlphaCode. Under Input Parameters, code is shown as Not Mapped; the Assign link next to Input Parameters is selected.")
 
-7. On the Sources side, expand **employee** under **Page** and **Variables**, then drag **country** to **code** under **Parameters** on the Target side. This mapping tells Visual Builder to use the value of the Country field as the input for the code parameter.
+7. On the Sources side, expand **employee** under **Page** and **Variables**, then drag **country** to **code** under **Parameters** on the Target side. This mapping tells VB Studio to use the value of the Country field as the input for the code parameter.
 
     ![](images/callrest-assign-parameter-valuetocode.png "This image shows the country variable under the page-level employee object on the Sources side mapped to the code parameter on the Target side.")
 
@@ -137,7 +137,7 @@ In this step, we'll assign data to the variables by adding a "value" event that 
 
     ![](images/assignvariable-bodytocountrytypevar.png "This image shows the mapping between body under callRestGetAlphaCode on the Source side to countryTypeVar on the Target side.")
 
-  What we're doing is mapping the data returned by the getAlphaCode REST call to the variables that populate components on the page. Because the field names are identical to the REST response, Visual Builder automatically knows how to map each field to its data source. Click **Save**.
+  What we're doing is mapping the data returned by the getAlphaCode REST call to the variables that populate components on the page. Because the field names are identical to the REST response, VB Studio automatically knows how to map each field to its data source. Click **Save**.
 
 ## Task 5: Test the employee's country details
 
