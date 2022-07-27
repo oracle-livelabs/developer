@@ -2,9 +2,9 @@
 
 ## About this Workshop
 
-This tutorial is an introduction to using Python with Oracle Database. It contains beginner and advanced material. Sections can be done in any order. Choose the content that interests you and your skill level.
+This tutorial is an introduction to using Python with Oracle Database. It contains beginner and advanced material to explore the features of the Python python-oracledb driver for Oracle Database. Sections can be done in any order. Choose the content that interests you and your skill level.
 
-Follow the steps in this document. The **tutorial** directory has scripts to run and modify. The **tutorial/solutions** directory has scripts with the suggested code changes.
+Follow the steps in this document. The **tutorial** directory has scripts to run and modify. 
 
 Estimated Workshop Time: 60 minutes
 
@@ -12,8 +12,8 @@ Estimated Workshop Time: 60 minutes
 
 In this workshop, you will:
 
-- Generate SSH Keys
-- Setup compute instance
+- Setup an Oracle Autonomous Database Instance (Always Free)
+- Configure the environment to use python-oracledb driver
 - Use Python and the Oracle Database and do Python Programming
 
 ### Prerequisites
@@ -24,7 +24,7 @@ In this workshop, you will:
 
 ## Acknowledgements
 
-* **Author** - Christopher Jones, Anthony Tuininga
-* **Contributors** - Jaden McElvey, Technical Lead, Oracle LiveLabs Interns
-* **Last Updated By/Date** - Troy Anthony, DB Product Management, December 2020
+- **Authors** - Christopher Jones, Anthony Tuininga, Veronica Dumitriu
+- **Contributors** - Jaden McElvey, Technical Lead, Oracle LiveLabs Interns
+- **Last Updated By/Date** - Veronica Dumitriu, DB Product Management, July 2022
 
