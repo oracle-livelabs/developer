@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Oracle Autonomous Database on Shared Exadata Infrastructure secures connectionsby using the Transport Layer Security (TLS) protocol. TLS encrypts ODP.NET and database communication and enables both sides to authenticate each other. For Oracle Autonomous Database TLS, there are are two options available:
+Oracle Autonomous Database on Shared Exadata Infrastructure secures connections by using the Transport Layer Security (TLS) protocol. TLS encrypts ODP.NET and database communication and enables both sides to authenticate each other. With Oracle Autonomous Database TLS, there are are two options available:
 - mutual TLS (mTLS)
 - one-way TLS
 
@@ -30,49 +30,47 @@ In this lab, you will:
 
 Connect to the Oracle Autonomous Database instance you created in a previous lab to enable one-way TLS connectivity with the web server.
 
-1. From the cloud console, click the navigation menu in the upper left to show top level navigation choices. Then, click **Oracle Database** -> **Autonomous Database**.
+1. From the cloud console, click the navigation menu in the upper left to show top level navigation choices. Then, click **Oracle Database** -> **Autonomous Transaction Processing** if you created this database earlier. If you created a data warehouse, then select **Autonomous Data Warehouse** instead.
 
-    ![](./images/database-adb.png " ")
+    ![Select Autonomous Database from the cloud console navigation menu](./images/select-atp.png " ")
 
-2. Click on the **QUICKSTART** instance you created previusly.
+2. Verify you are in the correct compartment (i.e. MyCompartment). Click on the **QUICKSTART** instance previously created.
 
-    ![](./images/click-adb.png " ")
+    ![Click your existing Oracle Autonomous Database instance](./images/click-adb.png " ")
 
 3.  In the **Network** section, click **Edit** on the **Access Control List** line.
 
-    ![](./images/click-adb-network.png " ")
+    ![Edit the network access control list](./images/click-adb-network.png " ")
 
-4.  Let's add the web server to the database's one-way TLS ACL allow-list. For the **IP Notation Type** "IP Address", add the web server's IP address that you recorded earlier after creating the web server VM under **Values** text box. Then, click the **Save Changes** button.
+4.  Add the web server IP address to the database's one-way TLS ACL allow-list. For the **IP Notation Type** "IP Address", enter the IP address in the **Values** text box. You recorded the IP earlier after creating the web server in the last lab. When finished, click the **Save Changes** button.
 
-    ![](./images/add-ip.png " ")
+    ![Add your web server's IP to the one-way TLS allow list](./images/add-ip.png " ")
 
 5. In the **Network** section, click the **Edit** on the **Mutual TLS (mTLS) Authentication** line.
 
-    ![](./images/click-adb-network.png " ")
+    ![Edit TLS options](./images/click-adb-network.png " ")
 
 6.  Uncheck the **Require mutual TLS (mTLS) authentication** box and click the **Save Changes** button.
 
-    ![](./images/uncheck-mtls.png " ")
+    ![Allow one-way TLS to support walletless connectivity](./images/uncheck-mtls.png " ")
 
 The web server can now connect to Oracle Autonomous Database via one-way TLS without a wallet.
 
 ## Task 2: Retrieve the Database Connect Descriptor
 
-Now that a wallet is no longer needed, you will record the database's connect descriptor information, which will eliminate the need to deploy sqlnet.ora and tnsnames.ora on the web server.
+Now that a wallet is no longer needed, retrieve the database's connect descriptor information to eliminate the need to deploy sqlnet.ora and tnsnames.ora on the web server.
 
 1. Click on the **DB Connection** button near the top of the page.
 
-    ![](./images/click-db-connection.png " ")
+    ![Click the DB Connection button](./images/click-db-connection.png " ")
 
-2. Scroll down to the **Connection Strings** section. Choose **TLS** from the **TLS Authentication** drop down box. This selection provides a connection string value for each of the database TNS Names. Click on **Copy** next to the connection string text value you plan to use for your web application (e.g. quickstart_tpurgent).
+2. Scroll down to the **Connection Strings** section. Choose **TLS** from the **TLS Authentication** drop down box. This selection provides a connection string value for each database TNS name. Click on **Copy** next to the connection string text value you plan to use for your web application (e.g. quickstart_high). Click the **Close** button when finished.
 
-    ![](./images/connection-strings.png " ")
+    ![Copy the connection string your web application will conenct to the database with](./images/connection-strings.png " ")
 
-3. Paste this connection string to a file for use when configuring the .NET web application connection in the next lab. **Some versions of cloud console** use a connect descriptor that includes the distinguished name in double quotes. If present, remove the two double quotes that enclose the distinguished name and save the file. The end of the connection string should now look similar to the following:
+3. Paste the copied connection string to a file. We will use it when configuring the .NET web application connection in the next lab. 
 
-        ```
-        ...(ssl_server_cert_dn=CN=adwc.uscom-east-1.oraclecloud.com, OU=Oracle BMCS US, O=Oracle Corporation, L=Redwood City, ST=California, C=US)))
-        ``` 
+Some versions of cloud console use a connection string with the distinguished name in double quotes. If present, remove the two double quotes that enclose the distinguished name and save the string. If there is no distinguished name in your connection string, then this change doesn't apply to your connection string.
 
 You may now **proceed to the next lab.**
 

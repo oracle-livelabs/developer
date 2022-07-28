@@ -79,90 +79,123 @@ An Oracle Cloud Infrastructure VM compute instance runs on the same hardware as 
 
     ![Running compute instance with public IP address](./images/public-ip.png " ")
 
-## Task 2: Connect to the Instance and Install NGINX Web Server
+## Task 2: Connect to the Instance via SSH
 
->**Note**: You may need to log in as the *admin* user to use cloud shell.
+>**Note**: You may need to log in as the *admin* user to use Cloud Shell.
 
-1. To connect to the instance, use Cloud Shell and enter the following command:
+1. To connect to the instance, open Cloud Shell by clicking on its icon on the top right part of the menu bar.
 
-    >**Note:** For Oracle Linux VMs, the default username is **opc**
+    ![Click Cloud Shell icon](./images/cloud-shell-icon.png)
+
+2. Cloud Shell will open. We will use SSH to securely connect to the compute instance. In Cloud Shell, change to the **.ssh** directory by entering the following command:
+
+    ```
+    <copy>cd .ssh</copy>
+    ```
+
+3. Open the Cloud Shell menu in the upper left of Cloud Shell. Click **Upload** to begin uploading the private key to the compute instance.
+
+    ![Click Upload from menu](./images/cloud-shell-choose-upload.png)
+
+4. Upload the private key through Cloud Shell that you auto-generated in the last task. Its default name is in the format, **ssh-key-&lt;date&gt;.key**. Either drop the file into the window or navigate to its location on your local machine. When completed, click the **Upload** button.
+
+    ![Upload the private key](./images/cloud-shell-key-upload.png)
+
+5. Since this is a private key, assign permissions to protect the key from other users. Enter the following into Cloud Shell:
+
+    ```
+    <copy>chmod 600 <private_ssh_key></copy>
+    ```
+
+6. SSH into the compute instance. In Oracle Cloud Linux VMs, the default username is **opc**. The compute instance's public IP address is availabe from the cloud console. Run the following command from Cloud Shell:
 
     ```
     <copy>ssh -i <private_ssh_key> opc@<public_ip_address></copy>
     ```
 
-    ![Use Cloud Shell to SSH into compute instance](./images/ssh.png)
+    ![SSH into compute instance from Cloud Shell](./images/ssh.png)
+
+
+## Task 3: Install NGINX Web Server
    
-2. For this lab, we are going to install an NGINX web server and try to connect to it over the public Internet. *Make sure you have SSH'ed into the Linux instance* and run following commands:
+For this lab, we are going to install an NGINX web server and connect to it over the public Internet. *Make sure you have completed the prior tasks so that you are SSH'ed into the Linux instance*.
 
-    >**Note:** NGINX web server is a free, open-source web server. The NGINX server hosts web content, and responds to requests for this content from web browsers.
+NGINX web server is a popular, free, and open-source web server. The NGINX server hosts web content, and responds to requests for this content from web browsers.
 
-    - Install NGINX and its dependencies
+1. Run the following commands in Cloud Shell:
+
+    - Install NGINX and its dependencies.
 
         ```
         <copy>sudo dnf install -y nginx</copy>
         ```
 
-    - Change the default incoming TCP port to 81 by by opening the file, <i>/etc/nginx/conf.d/default.conf</i>, for editing. Modify the following two lines:
+    - Edit the NGINX configuration file in a text editor, such as nano, from Cloud Shell.
+
+        ```
+        <copy>sudo nano /etc/nginx/nginx.conf</copy>
+        ```
+
+      After the text editor opens, change the default incoming TCP port. Search for the following two lines that use port 80:
 
         ```
         listen 80 default_server;
         listen [::]:80 default_server;
         ```
-to use port 81:
+
+      Modify them to use port 81.
 
         ```
         <copy>listen 81 default_server;
         listen [::]:81 default_server;</copy>
         ```
 
-    - Start the NGINX server and configure it to start after system reboots
+      Exit nano and save the file by typing **Ctrl-X**, then **Y**, and finally the carriage return.
+
+    - Start the NGINX server and configure it to start after system reboots.
 
         ```
         <copy>sudo systemctl enable --now nginx.service</copy>
         ```
 
-    - Run a quick check on NGINX status
+    - Run a quick check on NGINX status.
 
         ```
         <copy>sudo systemctl status nginx</copy>
         ```
 
-    - Create firewall rules to allow access to the ports on which the HTTP server listens
+    - Create firewall rules to allow access to the ports on which the HTTP server listens.
 
         ```
         <copy>sudo firewall-cmd --add-service=http --permanent
 	sudo firewall-cmd --reload</copy>
         ```
 
-    - (Delete?)Create an index file for your web server
+3. Let's now open port 81 in the VCN security list. Click the **Navigation Menu** in the upper left. Navigate to **Networking**, and select **Virtual Cloud Networks**. 
 
-        ```
-        <copy>sudo bash -c 'echo This is my web server running on Oracle Cloud Infrastructure >> /usr/share/nginx/html/index.html'</copy>
-        ```
+     ![Navigate to configure the VCN](./images/networking-vcn.png " ")
 
-3. Let's now open port 81 in the VCN security list. Click the **Navigation Menu** in the upper left. Navigate to **Networking**, and select **Virtual Cloud Networks**. Then click on the VCN name you created for this workshop.
-
-	![](./images/networking-vcn.png " ")
-
-4. Now click **Security Lists** on the left navigation bar for the VCN.
+4. Then click on the VCN name you created for this workshop. Now click **Security Lists** on the left navigation bar for the VCN.
  
      ![Click on Security Lists](./images/security-list.png " ")
 
-5. Click on the **Default Security List**.
+5. The compartment's security lists will appear. Click on the **Default Security List**.
 
-6. Here you need to open port 81. Click **Add Ingress Rules** and add the following values as shown below:
+     ![Click on default security list](./images/default-security-list.png " ")
+
+6. Open port 81 by clicking **Add Ingress Rules** and add the following values as shown below:
 
     - **Source Type:** CIDR
     - **Source CIDR**: 0.0.0.0/0
     - **IP Protocol:** TCP
     - **Source Port Range:** All
     - **Destination Port Range:** 81
-    - Click **Add Ingress Rules** at the bottom
 
-    ![Add Ingress Rule](./images/ingress-rule.png " ")
+    Click **Add Ingress Rules** at the bottom.
 
-7. Navigate to `http://<public_ip_address>` (the IP address of the Linux VM) in your browser. And now you should see the index page of the web server we created above.
+    ![Add ingress rule](./images/ingress-rule.png " ")
+
+7. In your browser, navigate to `http://<public_ip_address>`. Use the Linux VM's IP address. You should see the text you added to the web server's index page.
 
     ![Open you browser to the public IP address](./images/browser.png " ")
 
@@ -174,12 +207,12 @@ You have completed this lab. You may now **proceed to the next lab.**
     - VCN Security Lists is blocking traffic, Check VCN Security List for ingress rule for port 81
     - Firewall on the linux instance is blocking traffic
 
-        - `# sudo firewall-cmd --zone=public --list-services` (this should show http service as part of the public zone)
-        - `# sudo netstat -tulnp | grep httpd` (an httpd service should be listening on the port 81, if it’s a different port, open up that port on your VCN SL)
+        - `# sudo firewall-cmd --zone=public --list-services` (This should show http service as part of the public zone.)
+        - `# sudo netstat -tulnp | grep nginx` (An NGINX service should be listening on the port 81. If it’s a different port, open up that port on your VCN security list.)
 
     - Your company VPN is blocking traffic
 
-2. If you cannot successfully run the `sudo` commands, please make sure you have SSH'ed into your compute instance by following Task 2 -> Step 1.
+2. If you cannot successfully run the `sudo` commands, make sure you can SSH into your compute instance by following Task 2.
 
 ## Acknowledgements
 
