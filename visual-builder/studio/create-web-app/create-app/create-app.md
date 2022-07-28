@@ -153,7 +153,13 @@ Let's now create the Department and Employee business objects. But instead of cr
 
 7. For the same **Location** field, click **Required** to deselect the setting (**Department** is the only required field for the Department object).
 
-8. Now click the **Employee** tab and change the **Department** field's type to a reference, similar to what you did for the **Location** field previously.
+8. Now click the **Employee** tab and change the **Department** field to a reference, similar to what you did for the **Location** field. Click **#** in the **Department** field's Type column and change the Type setting as follows:
+
+    -   **Type**: **Reference** ![Reference icon](images/reference-icon.png)
+    -   **Referenced Business Object**: **Department**
+    -   **Display Field**: **Department** (automatically populated)
+
+    Click **OK**.
 
 9. Remove **Required** for all Employee fields, except **Name**.
 
