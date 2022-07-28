@@ -94,11 +94,11 @@ For this lab we'll rely on Swagger's Open Source Editor to review our ORDS Base 
 
       ![The OpenAPI info](images/open-api-paths.png)
 
-    - `components` - here you can review the components, or those <i>globally-defined</i> parameters that may be shared across the various Paths and their HTTPS Operations. 
+    - `components` - here you can review the components, or those <i>globally-defined</i> parameters that may be shared across the various Paths and their HTTPS Operations.
 
       ![The OpenAPI info](images/open-api-components.png)
 
-## Task 3: Explore ORDS Templates and Handlers 
+## Task 3: Explore ORDS Templates and Handlers
 
 1. Locate the Paths
 
@@ -112,7 +112,7 @@ For this lab we'll rely on Swagger's Open Source Editor to review our ORDS Base 
 
 2. Explore the Paths
 
-    Here we'll briefly review each Paths (recall there are <i>four</i> Resource Templates) and discuss their importance to the Flask application. 
+    Here we'll briefly selected Paths (recall there are <i>four</i> Resource Templates) and discuss their importance to the Flask application.
 
       1. `GET` `/locations/map/data`
 
@@ -132,47 +132,49 @@ For this lab we'll rely on Swagger's Open Source Editor to review our ORDS Base 
 
           4. Scroll down slightly, to see the <b>Response Body</b> of the `GET` request. What does this payload look like it could be used for? If you guessed a map rendering, then you're correct. We'll use this information to populate a Folium map for our Flask application's main page (aka `index.html`)
 
+              ![The OpenAPI info](images/get-path-for-folium-response.png)
+
               :bulb: <i>Folium is a Python library, based on the Lealflet.js, used for visualizing data on interactive Leaflet maps. Refer to the "Learn More" section for details.</i>
-              
+
       2. `GET` `/products/info/{product_id}`
-      3. `GET` `/products/value/{product_id}`
-      4. `POST` `/purchases/history`
-      5. `GET` `/purchases/history`
 
+          1. Once you've expanded this window, click `Try it out`. Notice the input field for an Implicit Parameter; we'll be updating this shortly. 
+          
+              ![The OpenAPI info](images/get-path-product-info.png)
 
+          2. Your Flask application has three different products, each with their own Product ID (i.e. `product_id`). For testing this Path, input the number`1`. And then click `Execute`.
+          
+              ![The OpenAPI info](images/get-path-product-info-execute.png)
 
-      1. Expand the 'GET' '/locations/map/data` Template 
+          3. Notice how the Request URL has changed slightly, to include the `product_id` we included. Next, take a look at the Server response. You'll see the `product_description` for this product.
 
-  :bulb: Note: Since there is only one path (`GET`), the Resource Template and Path are one in the same. <i>However</i> if an additional 
+          You'll see this `product_description` later in the HTML page for ordering/purchasing.Each time a product is selected/changed a separate API call is executed to return back the description for that product.
 
+          A similar Path has been created for `GET` `/products/value/{product_id}`. But instead of a product description, the unit price for a product is returned. 
+          
+              ![The OpenAPI info](images/get-path-product-info-response.png)
 
-  Use tables sparingly:
+      3. `POST` `/purchases/history`
 
-  | Column 1 | Column 2 | Column 3 |
-  | --- | --- | --- |
-  | 1 | Some text or a link | More text  |
-  | 2 |Some text or a link | More text |
-  | 3 | Some text or a link | More text |
+          1. Next we'll review the `/purchases/history` Path. Recall this Path has both a `GET` and a `POST` request. We'll review the `POST` request for this example. 
+          
+              Expand the window and click `Try it out`. Notice the Example Value - Schema. This is what a JSON object would look like when `POST` requests are send.
+          
+              ![The OpenAPI info](images/post-purchase-history.png)
 
-2. You can also include bulleted lists - make sure to indent 4 spaces:
+          2. After clicking `Try it out` the Request body will expand and have a placeholder array. We'll remove this for our test `POST` request. 
+          
+              ![The OpenAPI info](images/post-purchase-history-execute.png)
 
-    - List item 1
-    - List item 2
+          3. You may leave the `{}` in place, and click `Execute`. We have included SQL in our database to accept an empty array for testing purposes. This way, the `POST` request will be a success (as indicated by our `200` Server Response Code).
+                        
+              ![The OpenAPI info](images/post-purchase-history-remove-payload-execute.png)
 
-3. Code examples
+          4. Once the `POST` completes, you'll see in the Response body, a `201` Server Response code which indicates that a new resource was created. The action we just performed mirrors what customer would do should they complete a transaction in our sample Flask application.
 
-    ```
-    Adding code examples
-  	Indentation is important for the code example to appear inside the step
-    Multiple lines of code
-  	<copy>Enclose the text you want to copy in <copy></copy>.</copy>
-    ```
+              ![The OpenAPI info](images/post-purchase-history-response.png)
 
-4. Code examples that include variables
-
-	```
-  <copy>ssh -i <ssh-key-file></copy>
-  ```
+  :bulb: <i>Recall that the `/purchases/history` Path has both a `GET` and a `POST` Operation. The steps for the `GET` of this Path are similar to what we explored in the `/locations/map/data` Path.</i>
 
 ## Learn More
 
@@ -181,31 +183,6 @@ For this lab we'll rely on Swagger's Open Source Editor to review our ORDS Base 
 * [About ORDS Resource Templates and Handlers](https://docs.oracle.com/en/database/oracle/oracle-rest-data-services/22.2/orddg/developing-REST-applications.html#GUID-50E24524-32BB-470D-8015-6C25C9B47A44)
 * [About Folium](http://python-visualization.github.io/folium/)
 * [About Leaflet.js](https://leafletjs.com/)
-
-
-* [About cURL](https://curl.se/)
-* [About Python](https://www.python.org/)
-* [About Flask for Python](https://flask.palletsprojects.com/en/2.1.x/)
-* [About Folium for Python](https://github.com/python-visualization/folium)
-* [About Json for Python ](https://docs.python.org/3/library/json.html)
-* [About Requests for Python](https://requests.readthedocs.io/en/latest/)
-* [About Bootstrap](https://getbootstrap.com/docs/5.2/getting-started/introduction/)
-* [Mozilla Developer Network (MDN) Web Docs](https://developer.mozilla.org/en-US/)
-
-Oracle REST Data Services (ORDS)
-Oracle Clould Infrastructure (OCI) <i>Always Free</i> Tier Tenancy
-Datbase Actions
-<!-- I'm actually not sure about cURL, but I don't want to forget it -->
-<!-- Make sure any changes here are also included in the Learn More section - we'll want to include those resources as well  -->
-- cURL
-- Python 3.10.x and later 
-- Python packages (libraries) such as: 
-  - Flask 
-  - Folium 
-  - Json
- - Requests 
-- <i>select</i>JavaScript functions 
-- Bootstrap HTML and CSS frameworks
 
 ## Acknowledgements
 * **Author** - <Name, Title, Group>
