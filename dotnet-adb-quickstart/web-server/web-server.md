@@ -152,6 +152,18 @@ NGINX web server is a popular, free, and open-source web server. The NGINX serve
 
       Exit nano and save the file by typing **Ctrl-X**, then **Y**, and finally the carriage return.
 
+    - Create firewall rules to allow access to HTTP on port 81.
+
+        ```
+        <copy>sudo firewall-cmd --permanent --add-service=http</copy>
+        ```
+        ```
+        <copy>sudo firewall-cmd --permanent --add-port=81/tcp</copy>
+        ```
+        ```
+	<copy>sudo firewall-cmd --reload</copy></copy>
+        ```
+
     - Start the NGINX server and configure it to start after system reboots.
 
         ```
@@ -162,13 +174,6 @@ NGINX web server is a popular, free, and open-source web server. The NGINX serve
 
         ```
         <copy>sudo systemctl status nginx</copy>
-        ```
-
-    - Create firewall rules to allow access to the ports on which the HTTP server listens.
-
-        ```
-        <copy>sudo firewall-cmd --add-service=http --permanent
-	sudo firewall-cmd --reload</copy>
         ```
 
 3. Let's now open port 81 in the VCN security list. Click the **Navigation Menu** in the upper left. Navigate to **Networking**, and select **Virtual Cloud Networks**. 
@@ -195,7 +200,7 @@ NGINX web server is a popular, free, and open-source web server. The NGINX serve
 
     ![Add ingress rule](./images/ingress-rule.png " ")
 
-7. In your browser, navigate to `http://<public_ip_address>`. Use the Linux VM's IP address. You should see the text you added to the web server's index page.
+7. In your browser, navigate to `http://<public_ip_address>:81`. Use the Linux VM's IP address with the port to use appended since we're using a non-standard HTTP port. You should see the text you added to the web server's index page.
 
     ![Open you browser to the public IP address](./images/browser.png " ")
 
