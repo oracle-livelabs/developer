@@ -48,80 +48,98 @@ For this lab we'll rely on Swagger's Open Source Editor to review our ORDS Base 
 
 1. Navigate to the Swagger home page and select the Swagger editor link:
 
-   ![Navigating to the Swagger editor](images/select-swagger-editor.png)
+    ![Navigating to the Swagger editor](images/select-swagger-editor.png)
 
 2. Next, select "Live Demo"; a blank Swagger Editor session should load. 
 
-   ![Select live demo for Swagger editor](images/select-live-demo-option.png)
+    ![Select live demo for Swagger editor](images/select-live-demo-option.png)
 
 3. If a new Editor session page does not appear, navigate to the `File` menu option, and select `Clear Editor`. A new blank session should then appear.
 
-   ![Clear previous Swagger editor session](images/clear-swagger-editor-optional.png)
+    ![Clear previous Swagger editor session](images/clear-swagger-editor-optional.png)
 
 4. Next, navigate to `File` then `Import URL`. Take the URL (the ORDS Base URI) you copied to your clipboard (or refer above, to copy) and enter it into the input field, click `OK`. 
 
-   ![Select Import URL in Swagger](images/import-url-into-editor.png)
+    ![Select Import URL in Swagger](images/import-url-into-editor.png)
 
-   ![Inputting the ORDS Base URI](images/enter-url-to-import.png)
+    ![Inputting the ORDS Base URI](images/enter-url-to-import.png)
 
 5. Locate Swagger documentation, available Paths and their Operations.
 
     Once loaded, Swagger documentation will appear on the left, along with a list of the available ORDS Paths and their Operations on the right of your screen. These few Paths and Operations are all you will need for our Flask application to work properly.
 
-    ![Newly imported ORDS Base URI](images/newly-imported-ords-url.png)
+      ![Newly imported ORDS Base URI](images/newly-imported-ords-url.png)
 
 ## Task 2: Review the OpenAPI 3.0 definitions
 
 1. First, collapse the Swagger documentation tree: 
  
-   ![Collapsed Swagger tree](images/collapse-swagger-tree.png)
+    ![Collapsed Swagger tree](images/collapse-swagger-tree.png)
 
 2. We'll briefly review the tree, before reviewing the ORDS Paths and their Operations.
 
     - `openapi` - this particular ORDS API adheres to the OpenAPI 3.0 specification for API documentation. To learn more about OpenAPI specifications, you may refer to the resources provided in the "Learn More" section of this lab.
 
-   ![The OpenAPI specification version](images/open-api-specification-version.png)
+      ![The OpenAPI specification version](images/open-api-specification-version.png)
 
     - `info` - here you can see the `title` and `version` of the ORDS API <i>Base URI</i>.
 
-    ![The Base URI for our ORDS API](images/open-api-title-version.png)
+      ![The Base URI for our ORDS API](images/open-api-title-version.png)
 
     - `servers` - this is the actual Base URI for this ORDS API. All Paths and parameters will be added to this existing <b>U</b>niversal <b>R</b>esource <b>I</b>dentifier (URI), referred to as a **URL** here. 
     
-    ![The OpenAPI info](images/open-api-base-uri.png)
+      ![The OpenAPI info](images/open-api-base-uri.png)
 
     - `paths` - here you'll see an example of one of our Paths. Of the two, you can see all properties of the first `/products/info/{product_id}`. You'll also see the HTTPS Operations for both - `GET` methods.
 
-    ![The OpenAPI info](images/open-api-paths.png)
+      ![The OpenAPI info](images/open-api-paths.png)
 
     - `components` - here you can review the components, or those <i>globally-defined</i> parameters that may be shared across the various Paths and their HTTPS Operations. 
 
-    ![The OpenAPI info](images/open-api-components.png)
-
-4. Example with inline navigation icon ![Image alt text](images/sample2.png) click **Navigation**.
-
-5. Example with bold **text**.
-
-   If you add another paragraph, add 3 spaces before the line.
+      ![The OpenAPI info](images/open-api-components.png)
 
 ## Task 3: Explore ORDS Templates and Handlers 
 
-1. Locate the Resource Templates. 
+1. Locate the Paths
 
-    Under the "default" section of the browser (on the right side of your window), you'll see the various Resource Templates that have been provided to you. They, are: 
+    Under the "default" section of the browser (on the right side of your window), you'll see the <i>Paths</i> available to us: 
     - `GET` `/locations/map/data` 
     - `GET` `/products/info/{product_id}`
     - `GET` `/products/value/{product_id}`
     - `POST` <i>and</i> `GET` `/purchases/history`
 
-:bulb: <i>Notice that each Template has either a `GET` or `POST` prefix. Also notice how the last Template has both.</i>
+    While these are all considered Paths, ORDS would also consider that there are **four** different Resource Templates. All are unique, with the exception of the `/purchases/history` Resource Template. This Resource Template has a Resource <i>Handler</i> for `GET` <i>and</i> `POST` Operations. Please refer to the "Learn More" section of this Lab to learn more about Resource Templates and their relationship to Resource Handlers. 
 
-2. Explore selected Resource Templates
+2. Explore the Paths
 
-    On the right side of your browser window, you'll see some of the contents you saw in the Editor, but presented in a different way. You can explore all the Templates here. We'll discuss each briefly so you'll better understand their interactions with the provided Flask application. 
-    - `GET` `/locations/map/data`
-    - `GET` `/products/info/{product_id}`
-    - `POST` `/purchases/history`
+    Here we'll briefly review each Paths (recall there are <i>four</i> Resource Templates) and discuss their importance to the Flask application. 
+
+      1. `GET` `/locations/map/data`
+
+          1. Hover over this Path and a dropdown arrow will appear. Click this to expand the window. 
+          
+              :bulb: <i>You'll follow similar actions for subsequent Paths.</i>
+
+              ![The OpenAPI info](images/path-main-screen-image.png)
+
+          2. Click "Try it out".
+
+              ![The OpenAPI info](images/get-path-for-folium-map.png)
+          
+          3. The "Execute" button will appear, click it to issue a `GET` request.
+
+              ![The OpenAPI info](images/get-path-for-folium-execute-request.png)
+
+          4. Scroll down slightly, to see the <b>Response Body</b> of the `GET` request. What does this payload look like it could be used for? If you guessed a map rendering, then you're correct. We'll use this information to populate a Folium map for our Flask application's main page (aka `index.html`)
+
+              :bulb: <i>Folium is a Python library, based on the Lealflet.js, used for visualizing data on interactive Leaflet maps. Refer to the "Learn More" section for details.</i>
+              
+      2. `GET` `/products/info/{product_id}`
+      3. `GET` `/products/value/{product_id}`
+      4. `POST` `/purchases/history`
+      5. `GET` `/purchases/history`
+
+
 
       1. Expand the 'GET' '/locations/map/data` Template 
 
@@ -160,6 +178,9 @@ For this lab we'll rely on Swagger's Open Source Editor to review our ORDS Base 
 
 * [About ORDS](https://www.oracle.com/database/technologies/appdev/rest.html)
 * [About OpenAPI Specifications](https://swagger.io/docs/specification/basic-structure/)
+* [About ORDS Resource Templates and Handlers](https://docs.oracle.com/en/database/oracle/oracle-rest-data-services/22.2/orddg/developing-REST-applications.html#GUID-50E24524-32BB-470D-8015-6C25C9B47A44)
+* [About Folium](http://python-visualization.github.io/folium/)
+* [About Leaflet.js](https://leafletjs.com/)
 
 
 * [About cURL](https://curl.se/)
