@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This lab will show how to use PL/SQL data using python-oracledb driver
+Subclassing enables application to "hook" connection and cursor creation. This can be used to alter or log connection and execution parameters, and to extend python-oracledb functionality. Documentation link for further reading: Application Tracing.
 
 Estimated Lab Time: 10 minutes
 

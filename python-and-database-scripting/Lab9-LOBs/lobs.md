@@ -2,13 +2,14 @@
 
 ## Introduction
 
-This lab will show how to use PL/SQL data using python-oracledb driver
+Oracle Database "LOB" long objects can be streamed using a LOB locator, or worked with directly as strings or bytes. Documentation link for further reading: [Using CLOB and BLOB Data](https://python-oracledb.readthedocs.io/en/latest/user_guide/lob_data.html).
+This lab will show how to use LOBs with python-oracledb driver
 
-Estimated Lab Time: 10 minutes
+Estimated Lab Time: 5 minutes
 
 ### Objectives
 
-*  Learn best practices and efficient techniques for .....
+*  Learn best practices and efficient techniques for manipulating LOBs from Python.
 
 ### Prerequisites
 
@@ -19,17 +20,15 @@ This lab assumes you have completed the following labs:
 
 ## LOBs
 
-Oracle Database "LOB" long objects can be streamed using a LOB locator, or worked with directly as strings or bytes.
-
 1.  Fetching a CLOB using a locator
 
-    Review the code contained in **clob.py**:
+    Review the code contained in *clob.py*:
 
     ````
-    import cx_Oracle
+    import oracledb
     import db_config
 
-    con = cx_Oracle.connect(db_config.user, db_config.pw, db_config.dsn)
+    con = oracledb.connect(user=db_config.user, password=db_config.pw, dsn=db_config.dsn, wallet_location=db_config.wallet_location, wallet_password=db_config.wallet_password)
     cur = con.cursor()
 
     print("Inserting data...")
@@ -51,18 +50,17 @@ Oracle Database "LOB" long objects can be streamed using a LOB locator, or worke
     print("CLOB data:", clobdata)
     ````
 
-    This inserts some test string data and then fetches one record into clob, which is a cx\_Oracle character LOB Object. Methods on LOB include size() and read().
+    This inserts some test string data and then fetches one record into clob, which is a python-oracledb character LOB Object. Methods on LOB include size() and read().
 
     To see the output, run the file:
 
     ````
     <copy>
-    cd ~/python/tutorial
     python3 clob.py
     </copy>
     ````
 
-    ![](./images/clobOutput.png " " )
+    ![](./images/clob.png " " )
 
     Edit the file and experiment reading chunks of data by giving start character position and length, such as clob.read(1,10)
 
@@ -70,13 +68,13 @@ Oracle Database "LOB" long objects can be streamed using a LOB locator, or worke
 
     For CLOBs small enough to fit in the application memory, it is much faster to fetch them directly as strings.
 
-    Review the code contained in **clob\_string.py**. The differences from clob.py are shown in bold:
+    Review the code contained in *clob\_string.py*. The differences from clob.py are shown in bold:
 
     ````
-    import cx_Oracle
+    import oracledb
     import db_config
 
-    con = cx_Oracle.connect(db_config.user, db_config.pw, db_config.dsn)
+    con = oracledb.connect(user=db_config.user, password=db_config.pw, dsn=db_config.dsn, wallet_location=db_config.wallet_location, wallet_password=db_config.wallet_password)
     cur = con.cursor()
 
     print("Inserting data...")
@@ -103,9 +101,9 @@ Oracle Database "LOB" long objects can be streamed using a LOB locator, or worke
     print("CLOB data:", clobdata)
     ````
 
-    The OutputTypeHandler causes cx\_Oracle to fetch the CLOB as a string. Standard Python string functions such as len() can be used on the result.
+    The OutputTypeHandler causes python-oracledb to fetch the CLOB as a string. Standard Python string functions such as len() can be used on the result.
 
-    The output is the same as for clob.py. To check, run the file:
+    The output is the same as for clob.py. To check, run the file clob_string.py in Cloud Shell:
 
     ````
     <copy>
@@ -113,11 +111,11 @@ Oracle Database "LOB" long objects can be streamed using a LOB locator, or worke
     </copy>
     ````
 
+    ![](./images/clob_string.png " " )
+
 ## Conclusion
 
-In this lab, you had an opportunity to try out connecting Python to the Oracle Database.
-You have learned how to:
-* Use python-oracledb for .......
+In this lab, you had an opportunity to try out manipulating Oracle LOBs in your Python Python code
 
 ## Acknowledgements
 

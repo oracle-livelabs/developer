@@ -2,13 +2,13 @@
 
 ## Introduction
 
-This lab will show how to use PL/SQL data using python-oracledb driver
+Rowfactory functions enable queries to return objects other than tuples. They can be used to provide names for the various columns or to return custom objects. This lab will show how to use rowfactory functions from Python
 
-Estimated Lab Time: 10 minutes
+Estimated Lab Time: 5 minutes
 
 ### Objectives
 
-*  Learn best practices and efficient techniques for .....
+*  Learn best practices and efficient techniques for mapping column names,  objects using rowfactory functions.
 
 ### Prerequisites
 
@@ -19,18 +19,16 @@ This lab assumes you have completed the following labs:
 
 ## Rowfactory functions
 
-Rowfactory functions enable queries to return objects other than tuples. They can be used to provide names for the various columns or to return custom objects.
-
 1.  Rowfactory for mapping column names.
 
-    Review the code contained in **rowfactory.py**:
+    Review the code contained in *rowfactory.py*:
 
     ````
     import collections
-    import cx_Oracle
+    import oracledb
     import db_config
 
-    con = cx_Oracle.connect(db_config.user, db_config.pw, db_config.dsn)
+    con = oracledb.connect(user=db_config.user, password=db_config.pw, dsn=db_config.dsn, wallet_location=db_config.wallet_location, wallet_password=db_config.wallet_password)
     cur = con.cursor()
 
     cur.execute("select deptno, dname from dept")
@@ -51,12 +49,11 @@ Rowfactory functions enable queries to return objects other than tuples. They ca
 
     ````
     <copy>
-    cd ~/python/tutorial
     python3 rowfactory.py
     </copy>
     ````
 
-    ![](./images/rowFactoryOutput.png " " )
+    ![](./images/rowfactory1.png " " )
 
     Both access methods gives the same results.
 
@@ -78,7 +75,7 @@ Rowfactory functions enable queries to return objects other than tuples. They ca
 
     The print() function shows the use of the new named tuple fields. This coding style can help reduce coding errors.
 
-    Run the script again:
+    Run the script again in Cloud Shell:
 
     ````
     <copy>
@@ -88,14 +85,14 @@ Rowfactory functions enable queries to return objects other than tuples. They ca
 
     The output results are the same.
 
-    ![](./images/step12.1-rowfactory.png " ")
+    ![](./images/rowfactory2.png " ")
 
 
 ## Conclusion
 
 In this lab, you had an opportunity to try out connecting Python to the Oracle Database.
 You have learned how to:
-* Use python-oracledb for .......
+* Use rowfactory functions to map column names from Python code.
 
 ## Acknowledgements
 

@@ -2,13 +2,13 @@
 
 ## Introduction
 
-This lab will show how to use PL/SQL data using python-oracledb driver
+This lab will show how to use type handlers in order to alter data that is fetch from or sent to the database. You may read more about type handlers at [Changing Fetched Data Types with Output Type Handlers](https://python-oracledb.readthedocs.io/en/latest/user_guide/sql_execution.html#changing-fetched-data-types-with-output-type-handlers) and [Changing Bind Data Types using an Input Type Handler](https://python-oracledb.readthedocs.io/en/latest/user_guide/bind.html#changing-bind-data-types-using-an-input-type-handler).
 
-Estimated Lab Time: 10 minutes
+Estimated Lab Time: 5 minutes
 
 ### Objectives
 
-*  Learn best practices and efficient techniques for .....
+*  Learn best practices and efficient techniques for using type handlers
 
 ### Prerequisites
 
@@ -16,7 +16,6 @@ This lab assumes you have completed the following labs:
 * Login to Oracle Cloud
 * Create Autonomous Database
 * Environment Setup
-
 
 ## Type Handlers
 
@@ -26,13 +25,13 @@ This lab assumes you have completed the following labs:
 
     A type handler is enabled by setting the outputtypehandler attribute on either a cursor or the connection. If set on a cursor it only affects queries executed by that cursor. If set on a connection it affects all queries executed on cursors created by that connection.
 
-    Review the code contained in **type\_output.py**:
+    Review the code contained in *type\_output.py*:
 
     ````
-    import cx_Oracle
+    import oracledb
     import db_config
 
-    con = cx_Oracle.connect(db_config.user, db_config.pw, db_config.dsn)
+    con = oracledb.connect(user=db_config.user, password=db_config.pw, dsn=db_config.dsn, wallet_location=db_config.wallet_location, wallet_password=db_config.wallet_password)
     cur = con.cursor()
 
     print("Standard output...")
@@ -40,18 +39,17 @@ This lab assumes you have completed the following labs:
         print(row)
     ````
 
-    In a terminal window, run:
+    In Cloud Shell, run:
 
     ````
     <copy>
-    cd ~/python/tutorial
     python3 type_output.py
     </copy>
     ````
 
     This shows the department number represented as digits like 10.
 
-    ![](./images/step10.1-typeoutput.png " ")
+    ![](./images/typehandler.png " ")
 
     Add an output type handler to the bottom of the **type\_output.py** file:
 
@@ -81,7 +79,7 @@ This lab assumes you have completed the following labs:
 
     The new output shows the department numbers are now strings within quotes like '10'.
 
-    ![](./images/step10.1-typeoutput2.png " ")
+    ![](./images/type_handler1.png " ")
 
 2.  Output type handlers and variable converters
 
@@ -89,13 +87,13 @@ This lab assumes you have completed the following labs:
 
     Output type handlers can be combined with variable converters to change how data is fetched.
 
-    Review **type\_converter.py**:
+    Review *type\_converter.py*:
 
     ````
-    import cx_Oracle
+    import oracledb
     import db_config
-
-    con = cx_Oracle.connect(db_config.user, db_config.pw, db_config.dsn)
+    
+    con = oracledb.connect(user=db_config.user, password=db_config.pw, dsn=db_config.dsn, wallet_location=db_config.wallet_location, wallet_password=db_config.wallet_password)
     cur = con.cursor()
 
     for value, in cur.execute("select 0.1 from dual"):
@@ -116,15 +114,15 @@ This lab assumes you have completed the following labs:
     Value: 0.1 * 3 = 0.30000000000000004
     ````
 
-    Replace the text file in the **type_converter.py** file with the text below to add a type handler that uses a Python decimal converter:
+    Replace the text file in the *type_converter.py* file with the text below to add a type handler that uses a Python decimal converter:
 
     ````
     <copy>
-    import cx_Oracle
+    import oracledb
     import decimal
     import db_config
 
-    con = cx_Oracle.connect(db_config.user, db_config.pw, db_config.dsn)
+    con = oracledb.connect(user=db_config.user, password=db_config.pw, dsn=db_config.dsn, wallet_location=db_config.wallet_location, wallet_password=db_config.wallet_password)
     cur = con.cursor()
 
     def ReturnNumbersAsDecimal(cursor, name, defaultType, size, precision, scale):
@@ -154,25 +152,12 @@ This lab assumes you have completed the following labs:
     Value: 0.1 * 3 = 0.3
     ````
 
-    Although the code demonstrates the use of outconverter, in this particular case, the variable can be created simply by using the following code to replace the outputtypehandler function defined above. Replace the file with the text below.
+    The code above demonstrates the use of outconverter, but in this particular case, python-oracledb offers a simple convenience attribute to do the same conversion:
 
     ````
     <copy>
-    import cx_Oracle
-    import decimal
-    import db_config
-
-    con = cx_Oracle.connect(db_config.user, db_config.pw, db_config.dsn)
-    cur = con.cursor()
-
-    def ReturnNumbersAsDecimal(cursor, name, defaultType, size, precision, scale):
-        if defaultType == cx_Oracle.NUMBER:
-            return cursor.var(decimal.Decimal, arraysize = cursor.arraysize)
-
-    cur.outputtypehandler = ReturnNumbersAsDecimal
-
-    for value, in cur.execute("select 0.1 from dual"):
-        print("Value:", value, "* 3 =", value * 3)
+    import oracledb
+    oracledb.defaults.fetch_decimals = True
     </copy>
     ````
 
@@ -180,103 +165,94 @@ This lab assumes you have completed the following labs:
 
     Input type handlers enable applications to change how data is bound to statements, or to enable new types to be bound directly without having to be converted individually.
 
-    Review **type\_input.py**, which is similar to the final bind\_sdo.py from section 4.4, with the addition of a new class and converter (shown in bold):
+    Review *type\_input.py*, which is similar to the final bind\_sdo.py, with the addition of a new class and converter (shown in bold):
 
     ````
-    import cx_Oracle
+    import oracledb
     import db_config
+    import json
 
-    con = cx_Oracle.connect(db_config.user, db_config.pw, db_config.dsn)
+    con = oracledb.connect(user=db_config.user, password=db_config.pw, dsn=db_config.dsn, wallet_location=db_config.wallet_location, wallet_password=db_config.wallet_password)
     cur = con.cursor()
 
     # Create table
     cur.execute("""begin
-                    execute immediate 'drop table testgeometry';
+                    execute immediate 'drop table BuildingTable';
                     exception when others then
                     if sqlcode <> -942 then
                         raise;
                     end if;
                 end;""")
-    cur.execute("""create table testgeometry (
-                id number(9) not null,
-                geometry MDSYS.SDO_GEOMETRY not null)""")
+    cur.execute("""create table BuildingTable (
+                    ID number(9) not null,
+                    BuildingDetails varchar2(400),
+                    constraint TestTempTable_pk primary key (ID))""")
+    # Create a Python class for a Building
+    class Building(object):
 
-    # Create a Python class for an SDO
-    class mySDO(object):
+    def __init__(self, building_id, description, num_floors):
+        self.building_id = building_id
+        self.description = description
+        self.num_floors = num_floors
 
-       def __init__(self, gtype, elemInfo, ordinates):
-          self.gtype = gtype
-          self.elemInfo = elemInfo
-          self.ordinates = ordinates
+    def __repr__(self):
+        return "<Building %s: %s>" % (self.building_id, self.description)
 
-    # Get Oracle type information
-    objType = con.gettype("MDSYS.SDO_GEOMETRY")
-    elementInfoTypeObj = con.gettype("MDSYS.SDO_ELEM_INFO_ARRAY")
-    ordinateTypeObj = con.gettype("MDSYS.SDO_ORDINATE_ARRAY")
+    def __eq__(self, other):
+        if isinstance(other, Building):
+            return other.building_id == self.building_id \
+                and other.description == self.description \
+                and other.num_floors == self.num_floors
+        return NotImplemented
 
-    # Convert a Python object to MDSYS.SDO_GEOMETRY
-    def SDOInConverter(value):
-        obj = objType.newobject()
-        obj.SDO_GTYPE = value.gtype
-        obj.SDO_ELEM_INFO = elementInfoTypeObj.newobject()
-        obj.SDO_ELEM_INFO.extend(value.elemInfo)
-        obj.SDO_ORDINATES = ordinateTypeObj.newobject()
-        obj.SDO_ORDINATES.extend(value.ordinates)
-        return obj
+    def to_json(self):
+        return json.dumps(self.__dict__)
 
-    def SDOInputTypeHandler(cursor, value, numElements):
-        if isinstance(value, mySDO):
-            return cursor.var(cx_Oracle.OBJECT, arraysize = numElements,
-                    inconverter = SDOInConverter, typename = objType.name)
-
-    sdo = mySDO(2003, [1, 1003, 3], [1, 1, 5, 7])  # Python object
-    cur.inputtypehandler = SDOInputTypeHandler
-    cur.execute("insert into testgeometry values (:1, :2)", (1, sdo))
-
-    # Define a function to dump the contents of an Oracle object
-    def dumpobject(obj, prefix = "  "):
-        if obj.type.iscollection:
-            print(prefix, "[")
-            for value in obj.aslist():
-                if isinstance(value, cx_Oracle.Object):
-                    dumpobject(value, prefix + "  ")
-                else:
-                    print(prefix + "  ", repr(value))
-            print(prefix, "]")
-        else:
-            print(prefix, "{")
-            for attr in obj.type.attributes:
-                value = getattr(obj, attr.name)
-                if isinstance(value, cx_Oracle.Object):
-                    print(prefix + "  " + attr.name + " :")
-                    dumpobject(value, prefix + "    ")
-                else:
-                    print(prefix + "  " + attr.name + " :", repr(value))
-            print(prefix, "}")
-
+    @classmethod
+    def from_json(cls, value):
+        result = json.loads(value)
+        return cls(**result)
+    
+    # Convert a Python building object to SQL JSON type that can be read as a string def building_in_converter(value):
+    return value.to_json()
+    
+    def input_type_handler(cursor, value, num_elements):
+    if isinstance(value, Building):
+        return cursor.var(oracledb.STRING, arraysize=num_elements,
+                          inconverter=building_in_converter)
+                          
+    building = Building(1, "The First Building", 5)  # Python object
+    cur.execute("truncate table BuildingTable")
+    
+    cur.inputtypehandler = input_type_handler
+    cur.execute("insert into BuildingTable (ID, BuildingDetails) values (:1, :2)",
+            (building.building_id, building))
+    con.commit()
+    
     # Query the row
-    print("Querying row just inserted...")
-    cur.execute("select id, geometry from testgeometry")
-    for (id, obj) in cur:
-        print("Id: ", id)
-        dumpobject(obj)
+    print("Querying the row just inserted...")
+    cur.execute("select ID, BuildingDetails from BuildingTable")
+    
+    for (int_col, string_col) in cur:
+    print("Building ID:", int_col)
+    print("Building Details in JSON format:", string_col)
     ````
 
-    In the new file, a Python class mySDO is defined, which has attributes corresponding to each Oracle MDSYS.SDO\_GEOMETRY attribute. The mySDO class is used lower in the code to create a Python instance:
+    In the new file, a Python class Building is defined, which holds basic information about a building. The Building class is used lower in the code to create a Python instance:
 
     ````
-    sdo = mySDO(2003, [1, 1003, 3], [1, 1, 5, 7])
+    building = Building(1, "The First Building", 5)
     ````
 
     which is then directly bound into the INSERT statement like:
 
     ````
-    cur.execute("insert into testgeometry values (:1, :2)", (1, sdo))
+    cur.execute("insert into BuildingTable (ID, BuildingDetails) values (:1, :2)", (building.building_id, building))
     ````
 
-    The mapping between Python and Oracle objects is handled in SDOInConverter which uses the cx\_Oracle newobject() and extend() methods to create an Oracle object from the Python object values. The SDOInConverter method is called by the input type handler SDOInputTypeHandler whenever an instance of mySDO is inserted with the cursor.
-
-    To confirm the behavior, run the file:
+    The mapping between Python and Oracle objects is handled in building\_in\_converter which creates an Oracle STRING object from the Building Python object in a JSON format. The building\_in\_converter method is called by the input type handler input\_type\_handler,whenever an instance of Building is inserted with the cursor.
+    
+    In Cloud Shell, run:
 
     ````
     <copy>
@@ -284,13 +260,13 @@ This lab assumes you have completed the following labs:
     </copy>
     ````
 
-    ![](./images/step10.3-typeinput.png " ")
+    ![](./images/type_input.png " ")
     
 ## Conclusion
 
 In this lab, you had an opportunity to try out connecting Python to the Oracle Database.
 You have learned how to:
-* Use python-oracledb for .......
+* Use type handlers in order to alter data that is fetch from or sent to the database.
 
 ## Acknowledgements
 

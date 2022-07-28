@@ -1,0 +1,96 @@
+{
+    "workshoptitle": "Python and Oracle for Developers",
+    "help": "livelabs-help-db_us@oracle.com",
+    "tutorials": [
+        {
+            "title": "Introduction",
+            "description": "Introduction to the Python and Database scripting workshop.",
+            "filename": "../../intro/intro.md"
+        },
+        {
+            "title": "Getting Started",
+            "description": "This is the prerequisites for customers using Free Trial and Paid tenancies, and Always Free accounts (if applicable).",
+            "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/pre-register-free-tier-account.md"
+        },
+        {
+            "title": "Lab 1: Create Autonomous Database Instance",
+            "description": "Create Autonomous Database Instance",
+            "filename": "../../Lab1-adb/adb.md"
+        },
+        {
+            "title": "Lab 2: Environment Setup",
+            "description": "Install python-oracledb driver and test connection to the Autonomous Database",
+            "filename": "../../Lab2-env-setup/env-setup.md"
+        },
+        {
+            "title": "Lab 3: Python-oracledb driver for Oracle Database: The New Wave of Scripting",
+            "description": "Use Python and the Oracle Database",
+            "filename": "../../Lab3-python-scripting/python-scripting.md"
+        },
+        {
+            "title": "Lab 4: Connection Pools",
+            "description": "Use python-oracledb connection pools to connect to the Oracle Database",
+            "filename": "../../Lab4-connection-pool/conn-pool.md"
+        },
+        {
+            "title": "Lab 5: Fetching Data",
+            "description": "Use python-oracledb connection pools to fetch data from the Oracle Database",
+            "filename": "../../Lab5-data-fetching/data-fetch.md"
+        },
+        {
+            "title": "Lab 6: Binding Data",
+            "description": "Use python-oracledb to bind data from the Oracle Database",
+            "filename": "../../Lab6-binding-data/binding-data.md"
+        },
+        {
+            "title": "Lab 7: PL/SQL",
+            "description": "Use python-oracledb to ......",
+            "filename": "../../Lab7-plsql/plsql.md"
+        },
+        {
+            "title": "Lab 8: Type Handlers",
+            "description": "Use python-oracledb to ......",
+            "filename": "../../Lab8-type-handlers/type-handlers.md"
+        },
+        {
+            "title": "Lab 9: LOBS",
+            "description": "Use python-oracledb to ......",
+            "filename": "../../Lab9-lobs/lobs.md"
+        },
+        {
+            "title": "Lab 10: Rowfactory Functions",
+            "description": "Use python-oracledb to ......",
+            "filename": "../../Lab10-rowfactory-functions/func.md"
+        },
+        {
+            "title": "Lab 11: Subclassing Connections and Cursors",
+            "description": "Use python-oracledb to ......",
+            "filename": "../../Lab11-con-and-cursors/con-and-cursors.md"
+        },
+        {
+            "title": "Lab 12: Advanced Queueing",
+            "description": "Use python-oracledb to ......",
+            "filename": "../../Lab12-advanced-queueing/queue.md"
+        },
+        {
+            "title": "Lab 13: Simple Oracle Document Access (SODA)",
+            "description": "Use python-oracledb to ......",
+            "filename": "../../Lab13-SODA/soda.md"
+        },
+        {
+            "title": "Lab 14: Thick Mode",
+            "description": "Use python-oracledb to ......",
+            "filename": "../../Lab14-thick-mode/thick.md"
+        },
+        {
+            "title": "Lab 15: Scrollable Cursors",
+            "description": "Use python-oracledb to ......",
+            "filename": "../../Lab15-scrollable-cursors/cursor.md"
+        },
+        {
+            "title": "Need Help?",
+            "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+            "filename":"https://oracle-livelabs.github.io/common/labs/need-help/need-help-freetier.md"
+        }
+    ]
+}
