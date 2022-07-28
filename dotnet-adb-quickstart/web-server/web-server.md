@@ -107,7 +107,7 @@ An Oracle Cloud Infrastructure VM compute instance runs on the same hardware as 
     <copy>chmod 600 <private_ssh_key></copy>
     ```
 
-6. SSH into the compute instance. In Oracle Cloud Linux VMs, the default username is **opc**. The compute instance's public IP address is availabe from the cloud console. Run the following command from Cloud Shell:
+6. SSH into the compute instance. In Oracle Cloud Linux VMs, the default username is **opc**. The compute instance's public IP address is available from the cloud console. Run the following command from Cloud Shell:
 
     ```
     <copy>ssh -i <private_ssh_key> opc@<public_ip_address></copy>

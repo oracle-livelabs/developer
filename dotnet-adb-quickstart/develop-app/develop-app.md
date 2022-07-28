@@ -22,47 +22,31 @@ Estimated lab time: 10 minutes
 
 We will connect to Cloud Shell again to begin developing the ASP.NET Core part of the To Do List application. The project will incorporate ODP.NET Core for data access between the app and Oracle Autonomous Database.
 
-1. To connect to the instance, use Cloud Shell and enter the following command:
+1. Open Cloud Shell by clicking on its icon on the top right part of the menu bar.
 
-    >**Note:** For Oracle Linux VMs, the default username is **opc**
+    ![Click Cloud Shell icon](./images/cloud-shell-icon.png)
+
+2. SSH into the web server machine by running the following command from Cloud Shell:
 
     ```
-    <copy>ssh -i <private_ssh_key> opc@<public_ip_address></copy>
+    <copy>ssh -i <key_directory_path><private_ssh_key> opc@<public_ip_address></copy>
     ```
+Provide the same private key, the key directory path (i.e. .ssh/) and machine public IP as previously done in Lab 4.
 
-    ![](./images/ssh.png)
-
-2. From Cloud Shell, use the .NET Command Line Interface (CLI) included as part of the Oracle Cloud Developer image by issuing the following command to create a new ASP.NET Core web app project in a new directory TODOLIST.
+3. We will use the .NET Command Line Interface (CLI) included with the Oracle Cloud Developer image. Execute the following command to create a new ASP.NET Core web app project in a new directory TODOLIST:
 
     ```
     <copy>dotnet new web -o todolist</copy>
     ```
 
-    ![](./images/ssh.png " ")
-
   This command creates an empty ASP.NET Core empty web project. 
 
-3. Change directory into the TODOLIST directory. Then, add the ODP.NET Core assembly to the project from NuGet Gallery.
+4. Change directory into the TODOLIST directory. Then, add the ODP.NET Core assembly to the project from NuGet Gallery.
 
     ```
     <copy>cd todolist
 	dotnet add package Oracle.ManagedDataAccess.Core</copy>
     ```
-
-    ![](./images/ssh.png " ")
-
-4. Open the **Program.cs** with the Nano editor from the command line.
-
-    ```
-    <copy>nano Program.cs
-    </copy>
-    ```
-
-    ![](./images/ssh.png " ")
-
-5. A new editor window is now open. We will replace all lines of code in this app. Delete all code by typing ***Ctrl-K*** on each line so that you have a blank file.
-
-    ![](./images/ssh.png " ")
 
 ## Task 2: Configure App to Use NGINX Web Server
 We will now configure the web project to be able to use the NGINX web server.
@@ -86,12 +70,12 @@ We will create a simple web application that returns the current tasks (DESCRIPT
     
     app.Run(async context =>
     {
-          //Set the user id and password			
-          string conString = "User Id=appuser;Password=<PASSWORD>;Connection Timeout=180;" +
+          //Set the user id, password and data source
+          //Set Data Source value to Oracle connect descriptor or net service name
+          string conString = "User Id=appuser;Password=<PASSWORD>;Data Source=<CONNECT DESCRIPTOR>;Connection Timeout=180;";
     
-          //Set Data Source value to an Oracle connect descriptor or an Oracle net service name
-            "Data Source=<CONNECT DESCRIPTOR>;";
-    
+     
+
           using (OracleConnection con = new OracleConnection(conString))
           {
             using (OracleCommand cmd = con.CreateCommand())
@@ -125,16 +109,29 @@ We will create a simple web application that returns the current tasks (DESCRIPT
     </copy>
     ```
 
-2. The **User Id** value has already been set to APPUSER. Add the **Password** and **Data Source** entries. 
-In the previous lab, you retrieved the connect descriptor after configuring one-way TLS for Oracle Autonomous Database.
+2. The **User Id** value has already been set to APPUSER. Change this value if the database user you created has another name. 
 
-	Save the file and copy the file contents.
+     Add the **Password** and **Data Source** entries. In the previous lab, you retrieved the connect descriptor after configuring one-way TLS for Oracle Autonomous Database.
 
-3. Return to the Cloud Console to the open **Program.cs** file. Paste the code to this file by typing ***Ctrl-U***.
+     Save the file and copy the entire file text.
 
-    ![](./images/ssh.png " ")
+3. Return to the Cloud Console to modify the **Program.cs** file with this code. First, delete the default file contents first.
 
-4. Close and save the file by typing ***Ctrl-X*** and then ***Y***. The app is now ready to run the app.
+    ```
+    <copy>echo "" > Program.cs
+    </copy>
+    ```
+
+4. Open the **Program.cs** with the Nano editor from the command line.
+
+    ```
+    <copy>nano Program.cs
+    </copy>
+    ```
+
+5. Paste the code to this file by typing ***Ctrl-V***.
+
+6. Save and close the file by typing ***Ctrl-X***, then ***Y***, then a carriage return. The app is now ready to run.
 
 ## Task 4: Build and Run the App
 1. In Cloud Console, build and run the app using the following command:
@@ -146,7 +143,7 @@ In the previous lab, you retrieved the connect descriptor after configuring one-
 
 2. Navigate to `http://<public_ip_address>` (the IP address of the Linux VM) in your browser. You should see that you are connected to your Oracle Autonomous Database and the completed and incomplete tasks in the To Do list.
 
-    ![](./images/ssh.png " ")
+    ![Connect to web app and see the database results](./images/see-results.png " ")
 
 Congratulations! You have completed this workshop.
 
