@@ -116,7 +116,7 @@ We'll now create a page to display employees, similar to the one you created to 
 
     ![](images/create-page.png "This image shows the web application with the main node expanded. The + sign next to main is selected to show the Create Page and Create Flow options.")
 
-2.  In the Create Page dialog box, enter `employees` in the **Page ID** field after the `main-` prefix and click **Create**.
+2.  In the Create Page dialog box, enter `employees` in the **Page ID** field after the **main-** prefix and click **Create**.
 
     ![](images/employees-create-page.png "This image shows the Create Page dialog box, with main-employees entered in the Page ID field, and the Create button selected.")
 
@@ -246,7 +246,7 @@ Add a Create page that lets your users create new employees.
 
 10.  Now click **Structure** to view the structure of components on the main-employees page. Components that aren't currently visible on the page fade into the background to allow you to focus on parts of a page, a section at a time.
 
-    ![](images/employees-add-create-structure.png " ")
+    ![](images/employees-add-create-structure.png "This image shows the component Structure of the main-employees page.")
 
 11.  Click **Structure** again to close the Structure view.
 
@@ -256,16 +256,16 @@ It makes sense at this point to change the name of the main-start page to main-d
 
 1.  In the Web Apps pane, right-click the **main-start** page and select **Rename**.
 
-    ![](images/main-start-rename.png " ")
+    ![](images/main-start-rename.png "This image shows the hrwebapp and main nodes expanded in the Navigator. The right-click menu for the main-start page is open, and the Rename menu item is selected.")
 
 2.  In the Rename dialog box, replace `start` with `departments` in the **ID** field and click **Rename**.
 3.  Click **main**. The page flow Diagram shows the now renamed page. Note how the main-departments page is still badged ![Default and Flow Entry badge](images/default-badge.png), indicating it as the page where your application starts when you run it.
 
-    ![](images/main-start-rename-mainflow.png " ")
+    ![](images/main-start-rename-mainflow.png "This image shows the page flow of the main flow after main-start has been renamed. The main-departments page still points to the main-create-department page, and the main-employees page points to the main-create-employee page.")
 
 4.  To find out why, click **Source** ![Source icon](images/sourceview-icon.png) in the Navigator. Under **webApps**, expand the **hrwebapp**, **flows**, and **main** nodes. Then click **main-flow.json** to open it.
 
-    ![](images/mainflow-json.png " ")
+    ![](images/mainflow-json.png "This image shows the Source view pane, with the webApps, hrwebapp, flows, and main nodes expanded. The main-flow.json file has been selected and is open. In it, the 'defaultPage' property is set to the value 'main-departments'.")
 
     You can see that the `defaultPage` property has been set to the value `main-departments`, making it the starting page for the web application flow. (If we'd looked before, it would have been set to `main-start`.)
 
