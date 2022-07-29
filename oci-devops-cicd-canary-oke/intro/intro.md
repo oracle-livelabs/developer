@@ -1,15 +1,15 @@
+
 # Introduction
 
-## Automating the software lifecycle with OCI devops and OCI functions.
+## Automating the software lifecycle with OCI DevOps and OCI functions.
 
-You will learn how to build your infrastructure and automate the build and deployment of a Cloud Native Python  application to Oracle Kubernetes Engine(OKE),with a canary deployment model.
+You will learn how to build your infrastructure and automate the build and deployment of a Cloud Native Python application to Oracle Kubernetes Engine(OKE), with a canary deployment model.
 
 With a Canary deployment strategy, the application release happens incrementally to a subset of users. Initially, the new version gets deployed to a canary environment with no user traffic. The DevOps release pipeline can run validation tests against the new version and, once ready, route only a subset of users to the canary environment.
 
 
 
-Estimated time: 45 minutes
-
+Estimated time: 90 minutes
 
 ## Cloud Native Applications Overview
 
@@ -22,12 +22,12 @@ These techniques enable loosely coupled systems that are resilient, manageable, 
 
 ## Oracle DevOps
 
-Oracle Cloud Infrastructure DevOps service provides an end-to-end CI/CD platform for developers. OCI Devops services broadly  covers all the essential needs for a software lifecycle .Such as 
+Oracle Cloud Infrastructure DevOps service provides an end-to-end CI/CD platform for developers. OCI DevOps services broadly cover all the essential needs for a software lifecycle. Such as
 
-- OCI Deployment pipelines  – automate releases with declarative Pipeline release strategies to OCI Platforms like VM and Baremetals,Oracle Container Engine for Kubernetes (OKE) and OCI Functions
-- OCI Artifact repositories – A place to store versioned artifact,including immutable ones.
-- OCI Code repositories – OCI provided scalable code repository service.
-- OCI Build pipelines – A serverless, scalable service to automate build ,test ,artifacts and deployment invokations.
+- OCI Deployment pipelines  – automate releases with declarative Pipeline release strategies to OCI Platforms like VM and Baremetals, Oracle Container Engine for Kubernetes (OKE) and OCI Functions
+- OCI Artifact repositories – A place to store versioned artifacts, including immutable ones.
+- OCI Code repositories – OCI provided a scalable code repository service.
+- OCI Build pipelines – A serverless, scalable service to automate build, test, artefacts and deployment invocations.
 
 
 ![](images/oci-devops.png)
@@ -35,7 +35,7 @@ Oracle Cloud Infrastructure DevOps service provides an end-to-end CI/CD platform
 
 ## Role Play Scenario
 
-In this LiveLab, you will build and deploy python application by using OCI DevOps and OCI OKE ,with canary deployment strategy
+In this LiveLab, you will build and deploy a python application by using OCI DevOps and OCI OKE, with a canary deployment strategy
 
 With a Canary deployment strategy, the application release happens incrementally to a subset of users. Initially, the new version gets deployed to a canary environment with no user traffic. The DevOps release pipeline can run validation tests against the new version and, once ready, route only a subset of users to the canary environment.
 
@@ -49,7 +49,7 @@ Canary deployments offer these benefits:
 However, you should be aware of these drawbacks:
 
 - Testing and validating a new release at scale can be complex.
-- Fetching feedback from user testing against a new release is time consuming.
+- Fetching feedback from user testing against a new release is time-consuming.
 
 ![](images/oci-canary-oke-ref-arch.png)
 
@@ -59,28 +59,29 @@ However, you should be aware of these drawbacks:
 In this lab, you will:
 
 * Provisioning Infrastructure using IaC and OCI Resource Manager.
-* Build and deploy a sample python application on to OCI OKE.
+* Build and deploy a sample python application onto OCI OKE.
 * Test and validate the canary deployment functionality.
 * Clean up the infra.
 
-### Prerequisites 
+### Prerequisites
 
 1. An Oracle Free Tier(Trial), Paid or LiveLabs Cloud Account
 1. [Familiarity with OCI console](https://docs.us-phoenix-1.oraclecloud.com/Content/GSG/Concepts/console.htm)
 1. [Overview of Networking](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/overview.htm)
 1. [Familiarity with Compartments](https://docs.us-phoenix-1.oraclecloud.com/Content/GSG/Concepts/concepts.htm)
-1. [OCI Devops services.](https://docs.oracle.com/en-us/iaas/Content/devops/using/home.htm)
+1. [OCI DevOps services.](https://docs.oracle.com/en-us/iaas/Content/devops/using/home.htm)
 
 You may now **proceed to the next lab**.
 
 
 ## Learn More
 
-* [Reference Architecture:Understand modern app deployment strategies with Oracle Cloud Infrastructure DevOps ](https://docs.oracle.com/en/solutions/mod-app-deploy-strategies-oci/index.html)
+* [Reference Architecture: Understand modern app deployment strategies with Oracle Cloud Infrastructure DevOps ](https://docs.oracle.com/en/solutions/mod-app-deploy-strategies-oci/index.html)
 
 
 ## Acknowledgements
 
 * **Author** - Rahul M R
-* **Contributors** -  
+* **Contributors** -
 * **Last Updated By/Date** - Rahul M R - July 2022
+

@@ -1,8 +1,8 @@
- # A new release to the existing application 
+ # A new release and rollback to validate the canary deployment
 
 ## Introduction
 
-In this lab as a developer /SRE you  will be updating the existing code against a bug or a new feature and publish back to the repo.Followed by an automated build and deploy and a validation of application.
+In this lab as a developer /SRE you  will be updating the existing code against a bug or a new feature and publish back to the repo.Followed by an automated build and deploy with a canary deployment mode. We will be validating the changes via Canary stage first and then releasing it to the production .At the end we will also perform a rollback to the pervious version 
 
 
 Estimated time: 30 minutes
@@ -14,266 +14,322 @@ In this lab, as a developer or SRE,
 * Clone the code repo.
 * Update the code base with a change.
 * Push the content back to repo and wait for an automated build-deploy.
-* A function invokation and validate the outcome.
+* Validate the canary deployment and proceed for production deployment.
+* Do a rollback to previous version.
 
-## Task 1: Clone the code repo..
+## Task 1: Clone the code repo.
 
-1. Go to Navigation Menu (aka "Hamburger" menu on the top left side of the page ) on the OCI Console -> Developer Services
+1. Ensure that you have the `User access token ` (which was created during the previous lab ) before proceeding.
 
-    ![OCI Console](./images/oci-console-devservices.png)
+2. Use `OCI Console ` > `Developer Services ` > `DevOps` >`Projects`
 
-1. Select Devops -> Project
+    ![oci-devops-prj-list](images/oci-devops-prj-list.png)
 
+3. Ensure on the right compartment ,in this samples it should cicd.
 
-    ![Devops projects](./images/oci-cosole-projects.png)
+   ![oci-devops-project-ct](images/oci-devops-project-ct.png)
 
+4. Click on the project `DevOpsCanaryOKE_devopsproject_<ID>`
+5. Under `DevOps` project resources , click on the `Code Repositories`
 
-1. On the Project page ensure that you are on the right compartment ,in our case it should be `cicd`.
+   ![oci-code-repo](images/oci-code-repo.png)
 
-    ![Compartment view](./images/oci-compartment-list.png)
+6. Click  code repo named `oci_devops_oke_canary_sample`
 
-1. In the samepage you should see a project named as `oci-function-cicd-<Unique Key>-devops-project`,click on it.
+   ![oci-coderepo-canary](images/oci-coderepo-canary.png)
 
-    ![](./images/oci-devops-project.png)
+7. Click on the `Clone` button.
 
+   ![oci-coderepo-clone-btn](images/oci-coderepo-clone-btn.png)
 
-1. It will lead to a summary of all the devops resources that we created.
+8. Copy the `Clone with HTTPS` url.
 
-    ![Project view](./images/oci-devops-project-view.png)
+   ![oci-coderepo-clone-https](images/oci-coderepo-clone-https.png)
 
-1. Click on the repository named `python-function-helloworld` under Latest code repositories.That will lead to the code repo and the python code which will be deployed to the functions.
+9 . From the top right hand corner on the `OCI console` open OCI Cloud shell.
+10. Run command `git clone <HTTPS URL>` in the Cloud shell. Provide the username (with properformat) and the user access token created as password.
 
-    ![Repo summary](./images/oci-devops-repoview1.png)
+   ![oci-cs-clone-actions](images/oci-cs-clone-actions.png)
 
-     ![Repo details](./images/oci-repo-detailed.png)
+11. This will cone our code repo content under the directory `oci_devops_oke_canary_sample`.In order to make a new release ,we will making some changes in the code and push back to the core repo.
+12. Switch to the clone directory by running command `cd oci_devops_oke_canary_sample`.Edit the file `main.py` and change the version as 1.0 and save.
 
-1. Click the `clone` button.
+```markdown
+vi main.py
+```
+   ![oci-cs-vi-edit](images/oci-cs-vi-edit.png)
 
-    ![Clone btn](./images/oci-repo-clone-btn.png)
+ As this is a python program ,the intentation is very important and incase of any confusion please use the copy of content from below
 
-1. Click `copy` option for Clone with Https url
 
-    ![http path](./images/coi-repo-https-path.png)
+```markdown
+from typing import Optional
 
-1. Use the cloudshell to clone .If the cloudshell is not opened ,use the `cloudshell` icon on the top right side of the OCI console.
+from fastapi import FastAPI
 
-    ![cs icon](./images/oci-cloudhshell-btn.png)
+import os
 
-1. Clone the OCI Code repo.
+app = FastAPI()
 
-    ```
-    git clone https://devops.scmservice.<region>.oci.oraclecloud.com/namespaces/<name space >/projects/<project name>/repositories/<repo name>
-    ```
 
-    ![cs git clone](./images/oci-cs-git-clone.png)
+@app.get("/")
+def read_root():
+    version="1.0"
+    namespace = os.getenv('POD_NAMESPACE', default = 'ns-red')
+    return {"Message": "with Love from OCI Devops ","Version":version,"Namespace":namespace}
+```
 
-1. When prompted enter the username and password .Username is the one used for login in to the OCI console prefixed with the tenancy name or identity service url
+13. Run command `git status` and you should see the edited file.
 
-    example : mytenacy/myuser
+   ![oci-cs-git-status](images/oci-cs-git-status.png)
 
-    ![sc git username](./images/oci-cs-git-username.png)
+14. Run the set of commands and push the edited changes back to OCI repo.When promted provider the username and useraccess token.If its the first time that you are performing git actions ,it will ask you setup the configurations too 
 
-1. Provide the password ,here the password is the `Auth token` that created and used while building the infra strecture.
+```markdown
+git add main.py
+git config --global user.email "Your mail ID"
+git config --global user.name "User Name"
+git commit -m "version 1.0"
+git push origin main
+```
 
-    ![sc git password](./images/oci-git-pwd.png)
+   ![oci-cs-git-add](images/oci-cs-git-add.png)
+   ![oci-cs-git-configure](images/oci-cs-git-configure.png)
+   ![oci-cs-git-commit](images/oci-cs-git-commit.png)
+   ![oci-cs-git-push](images/oci-cs-git-push.png)
 
-1. Switch the clone repo.
+15. You may verify the changes via the OCI Code repo as well ,by switching back to OCI Console.
 
-    ```
-    cd python-function-helloworld/
-    ls -ltr 
+   ![oci-code-repo-modified](images/oci-code-repo-modified.png)
+   ![oci-coderepo-file-edited](images/oci-coderepo-file-edited.png)
 
-    ```
-    ![List files](./images/oci-list-files.png)
+16. From the OCI DevOps project overview , click on the `Build Pipelines` > and open pipeline named `oci_devops_canary-build-pipeline`
 
-## Task 2: Update the code base with a change.
+   ![oci-devops-buildpipeline](images/oci-devops-buildpipeline.png)
 
-1. Update the function code
+17. Use optin `Start manual run` and start  a build run.
 
-    ```
-    vi fn-with-defaultImage/func.py
-    ```
+   ![oci-buildpipeline-run](images/oci-buildpipeline-run.png)
 
-1. Once it opened the vi prompt press  `ESC` and `i` and change to `insert` mode for vi editor.
-   Use the cursor and update the status message with a new message
+18. Wait for all the build stages to complete ,it would take 6 to 8 minutes to finish the build stages.
 
-      ![vi default file](./images/oci-cs-vi-default-file.png)
+   ![oci-buildstages-done](images/oci-buildstages-done.png)
 
-1. Press `ESC` and `wq!` and save the file.
+19. Switch back to `Devops project overview ` and click `Deployment Pipelines`
 
-    ![vi save](./images/oci-cs-vi-save.png)
+   ![oci-deploymentpipeline-list](images/oci-deploymentpipeline-list.png)
 
-1. Open the file and valid the content is as below.
+20. Click on pipeline named `devops-oke-pipeline_<ID>` and Click on `Deployments`
 
-    ```
-    cat fn-with-defaultImage/func.py
-    ```
+   ![oci-deployments-progress](images/oci-deployments-progress.png)
 
-    ```
-    #
-    # oci-load-file-into-adw-python version 1.0.
-    #
-    # Copyright (c) 2020 Oracle, Inc.
-    # Licensed under the Universal Permissive License v 1.0 as shown at https://oss.oracle.com/licenses/upl.
-    #
+21. Click the one ,which is progress . Wait for couple of minutes and it will the first stages and hold at the Approval stage. 
 
-    import io
-    import json
-    import logging
+   ![oci-deploy-hold-for-approval](images/oci-deploy-hold-for-approval.png)
 
-    from fdk import response
+22. At this stage the new version is deployed on the canary stage and 25% of calls will be routed via version 1.0. In order to test the application ,fetch the ingress IP by running below commands via cloud shell where its authenticated to interface with the OKE Cluster.Fetch the `ADDRESS` values form the command output
 
+```markdown
+kubectl get ingress -n nscanaryprd
+```
 
-    def handler(ctx, data: io.BytesIO=None):
-        logging.getLogger().info("Invoked function with default  image")
-        return response.Response(
-            ctx, 
-            response-data=json.dumps({"status": "New release with DefaultImage"}),
-            headers={"Content-Type": "application/json"}
-        )
+   ![oci-cs-kubectl-get-ing](images/oci-cs-kubectl-get-ing.png)
 
-    ```
+23. Using the curl or browser launch and test the application. If you using the browser keep referesing the page 4 to 5 times and you should see 1.0 version with namespace as nscanarystage intermittently.
 
+   - Using Curl and fetch the output  via cloud shell
+```markdown
+for i in {1..10}; do curl http://<INGRESS ADDRESS>;echo ""; done
+```
+   ![oci-oke-ingress-curl](images/oci-oke-ingress-curl.png)
 
-1. Update the code base for custom function codebase.
+   - Using browser
+   ![oci-oke-ingress-browser-1](images/oci-oke-ingress-browser-1.png)
+   ![oci-oke-ingress-browser-2](images/oci-oke-ingress-browser-2.png)
 
-    ```
-    vi fn-with-customImage/func.py
+   -Using curl and with `redirect-to-canary` header. This would ensure that the traffic is always from canary namespace.
 
-    ```
-1. Use `ESC` + `i` and switch to insert mode and change the status message.
+```markdown
+for i in {1..10}; do curl http://<INGRESS ADDRESS> -H "redirect-to-canary:always" ;echo ""; done
+```
 
+   ![oci-cs-curl-with-header](images/oci-cs-curl-with-header.png)
 
-    ![save custom file](./images/oci-cs-vi-save-custome-file.png)
 
+24. Once we validated , let proceed to deploy the same to the production namespace. Switch to back to OCI Console , deployment view .Click on the 3 dots and select approve.
 
-1. Press `ESC` and `wq!` and save the file.
+   ![oci-deploy-approve](images/oci-deploy-approve.png)
 
-    ![vi save](./images/oci-cs-vi-save.png)
+25. Provide a reason and click on approve .Wait for all the stages to complete.
 
-1. Open the file and valid the content is as below.
+   ![oci-deployment-approved](images/oci-deployment-approved.png)
 
-     ```   
+26. Validate the changes using the ingress address and it should the version as 1.0 and the traffic will be served via production namespace.
 
-    cat fn-with-customImage/func.py
-    ```
+   ![oci-devops-prod-released](images/oci-devops-prod-released.png)
 
-    ```
-    # Copyright (c) 2020 Oracle, Inc.
-    # Licensed under the Universal Permissive License v 1.0 as shown at https://oss.oracle.com/licenses/upl.
-    #
 
-    import io
-    import json
-    import logging
 
-    from fdk import response
+## Task 2: Optional - View related artifacts and spec files.
 
+Here we are going to take look on to the container images thats got created and push to the artifacts ,build and deploy speficications.
 
-    def handler(ctx, data: io.BytesIO=None):
-        logging.getLogger().info("Invoked function with custom image") 
-        return response.Response(
-            ctx, 
-            response-data=json.dumps({"status": "New Release with customImage"}),
-            headers={"Content-Type": "application/json"}
-        )
+1. Use path `OCI Console` > `Developer Services` > `Container Registry`.Always ensure you are on the correct comparment.Once you expand you would see two images which has been pushed during the two build runs.
+
+   ![oci-container-registry](images/oci-container-registry.png)
+   ![oci-container-images](images/oci-container-images.png)
+2. Switch to back to `Devops project` to do so ,type `project` with in the search bar under oci console.Click on `Projects` from service category.
+
+   ![oci-console-project](images/oci-console-project.png)
+
 
-    ```
-## Task 3: Push the content back to repo and wait for an automated build-deploy.
+3. Click on project `DevOpsCanaryOKE_devopsproject_<ID>` > Click on `Code Repositories` > and click on repo named as `oci_devops_oke_canary_sample`. Few of the key files here are 
 
-1. Push the changes back to the OCI code repo.
+   - Dockerfile - For building container images.
+   - build_spec.yaml - For all steps under `managed build stages`.
+   - oci-oke-deployment.yaml - For the deployment on to OKE.
+
+4. The `build_spec.yaml` contains various steps as below .
 
+   - Define unique image tag - To generate the tages what you could see on the contaimer images under OCI Container registry repos.
+   - Build container image - Creating docker contaimer images with the app files.
+   - outputArtifacts - Refers to the outcome ,in our case we have two references
+     - oke_app_base : Container images
+     - oke_deploy_manifest - OKE deployment manifest.
+   
+Thought the container images builds with `latest ` tag ,the same will be replaced with the uniq tag created here via the `OCI Devops Artifact` `Allow parameterization` options
 
-    ```
-    git add -A
-    git commit -m "updated the codebase"
-    git push origin
-    ```
 
-1. Provide the `username` and `Auth token` when prompted.
+   ![oci-devops-artifact-edit](images/oci-devops-artifact-edit.png)
 
-    ![git push](./images/oci-cs-git-clone-finished.png)
 
-1. Check the status back to `OCI Console Devops Project view`.From the `DevOps project resource` click on `Build History`.
+5. The oci-oke-deployment.yaml is the manifest that does deploy below resourced on to OKE .
+   - namespace
+   - deployment
+   - service
+   - ingress 
 
-    ![Build history](./images/oci-build-history.png)
+```markdown
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sample-oke-canary-app-deployment
+spec:
+  selector:
+    matchLabels:
+      app: sample-oke-canary-app
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: sample-oke-canary-app
+    spec:
+      containers:
+        - name: sample-oke-canary-app
+          # enter the path to your image, be sure to include the correct region prefix
+          image: <REGION>.ocir.io/<NAMESPACE>/devopscanaryoke_containerrepo_<ID>:${BUILDRUN_HASH}
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 80
+              protocol: TCP
+          livenessProbe:
+            exec:
+              command:
+              - cat
+            initialDelaySeconds: 5
+            periodSeconds: 5
+          env:
+            - name: POD_NAMESPACE
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.namespace
 
-    You should see an ongoing build .The build is triggered automatically based on the git push action completed.
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: sample-oke-canary-app-service
+  annotations: 
+    service.beta.kubernetes.io/oci-load-balancer-shape: "10Mbps"
+spec:
+  type: ClusterIP
+  ports:
+    - port: 8080
+      protocol: TCP
+      targetPort: 80
+  selector:
+    app: sample-oke-canary-app
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: sample-oke-canary-app-ing
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+spec:
+  # tls:
+  # - secretName: tls-secret
+  rules:
+  - http:
+      paths:
+        - path: /
+          pathType: Prefix
+          backend:
+            service:
+              name: sample-oke-canary-app-service
+              port:
+                number: 8080
+```
 
-1. Click on the `the same build run` progressing and wait for all the steps to complete.
 
-    ![Build progress](./images/oci-build-progress.png)
+## Task 3: Rollback the deployment.
 
-    ![Build done](./images/oci-build-done.png)
+OCI Devops deployment with canary allows user to 
+   - REJECT a change at the canary stage itself or 
+   - ROLLBACK from a production deployed version to the pervious. 
+Here we are going to look at a rollback from production version to pervious one .
 
-1. Switch back to `Devops Project page` and from `DevOps project resources` click on the `Deployments`
+1. Validate the application version - It should be in version `1.0`
 
-    ![Deployments](./images/oci-deployments.png)
+   ![oci-deploy-rollback-version](images/oci-deploy-rollback-version.png)
 
-1. Click on the very last deployment and ensure that all the steps are completed.
+2. Using oci console , open the deloyments for the deployment pipeline.
 
-    ![Deployments Done](./images/oci-deployments-done.png)
+   ![oci-deploy-deployments](images/oci-deploy-deployments.png)
 
+3. Click on the last successful deployment.
 
-## Task 4:A function invokation and validate the outcome.
+   ![oci-devops-last-success](images/oci-devops-last-success.png)
 
-1. Switch back to cloud shell.Validate the function apps.
+4. Click on the 3 dots on the last stage - `Deployment OKE:Rolling` and click on `manual rollback`. It will lead you to a detailed page.
 
-    ```
-    fn list apps
-    ```
+   ![oci-deploy-manual-rollback](images/oci-deploy-manual-rollback.png)
 
-    ![fn apps](./images/oci-fn-list-apps.png)
+5. Expand the option `Deployment input` and verify the references used for that deployment.In our case the container images holding version 1.0.
 
+   ![oci-rollback-details](images/oci-rollback-details.png)
 
-    Incase the function app is not valid ,go back to `OCI Console` >`Developer Services` >`Functions`>`Applications`>`oci-function-cicdApp`>`Resources` > `Getting started` and follow till step 3.
+6. Click on `Select Deployment` button and select the one of the previous successful deployment and click on `Save Change`.
 
-    ![Fn context](./images/oci-fn-set-context.png)
+   ![oci-deploy-rollback-selecton](images/oci-deploy-rollback-selecton.png)
+   ![oci-deploy-previous-selected](images/oci-deploy-previous-selected.png)
 
-1. List the functions.
+7. Validate the container image tage and click on `Rollback Stage`
 
-    ```
-    fn list functions oci-function-cicdApp
+   ![oci-deploy-rollback-started](images/oci-deploy-rollback-started.png)
 
-    ```
+8. This will invoke a production deployment stage .Wait for the stage to complet.
 
-    ![fn list fuctions](./images/oci-fn-list-functions.png)
+   ![oci-rollback-done](images/oci-rollback-done.png)
 
-1. Invoke the function with deault image and validate the changes 
+9. Validate the application version via browser of curl command.This should show prwvious version 0.0 via production namespace.
 
-    ```
-    fn invoke oci-function-cicdApp oci-function-cicd-defaultImage
-    ```
-    Output should  be 
+   ![oci-deploy-back-to-0.0](images/oci-deploy-back-to-0.0.png)
 
-    ```
-    {"status": "New release with DefaultImage"}
+10 . So we rollback production to 0.0 version and the canary still hold version 1.0 incase of any isolated tests.
 
-    ```
 
-    ![fn invoke default](./images/oci-fn-invoke-default.png)
-
-1. Invoke the function with custom  image and validate the changes 
-
-    ```
-    fn invoke oci-function-cicdApp oci-function-cicd-customImage
-    ```
-    Output should  be 
-
-    ```
-    {"status": "New Release with customImage"}
-
-    ```
-    ![fn invoke custom](./images/oci-fn-invoke-custom.png)
-
-
-    Optional: You may verify the execution via OCI Apps Log object as well ,via OCI `Function application view` >`Resources` >`Logs`>`Log Name`>`Explore Log`
-
-    ![Fn log list](./images/oci-log-list.png)
-
-    ![Oci logs1](./images/oci-logs-1.png)
-
-    ![Oci logs2](./images/oci-logs-2.png)
+   Optional : Read more about different deployment strategies on OCI devops [here.](https://docs.oracle.com/en/solutions/mod-app-deploy-strategies-oci/index.html)
 
 
 You may now **proceed to the next lab**.
@@ -283,7 +339,7 @@ You may now **proceed to the next lab**.
 
 * **Author** - Rahul M R
 * **Contributors** -  
-* **Last Updated By/Date** - Rahul M R - Feb 2022
+* **Last Updated By/Date** - Rahul M R - Jul 2022
 
 
 

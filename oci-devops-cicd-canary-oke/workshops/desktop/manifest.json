@@ -3,23 +3,23 @@
   "help": "dex_dlc_sa_ww_grp@oracle.com",
   "tutorials": [
     {
-      "title": "Get Started with OCI devops and functions",
-      "description": "Introduction to the lab with OCI devops and OCI functions",
+      "title": "Get Started with OCI devops deployment with Canary mode",
+      "description": "Introduction to the lab with OCI devops ",
       "filename": "https://oracle-livelabs.github.io/developer/oci-devops-cicd-functions/intro/intro.md"
     },
     {
       "title": "Lab 1: Provision the infrastructure",
-      "description": "Instruction to provision OCI devops and OCI function infrastructure",
+      "description": "Instruction to provision OCI devops ,OKE and related infrastructure",
       "filename": "https://oracle-livelabs.github.io/developer/oci-devops-cicd-functions/deploy-infra/deploy-infra.md"
     },
     {
-      "title": "Lab 2: Get to know more about OCI Devops and Functions",
-      "description": "Get to know more about OCI devops and OCI function resources",
+      "title": "Lab 2: Get to know more about OCI Devops components",
+      "description": "Get to know more about OCI devops components and artifacts",
       "filename": "https://oracle-livelabs.github.io/developer/oci-devops-cicd-functions/devops-resources/devops-resources.md"
     },
     {
       "title": "Lab 3: New version release",
-      "description": "Release a new version for OCI function via OCI devops",
+      "description": "Release a new version and experience canary mode",
       "filename": "https://oracle-livelabs.github.io/developer/oci-devops-cicd-functions/newrelease/newrelease.md"
     },
     {
