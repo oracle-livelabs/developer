@@ -25,19 +25,29 @@ This lab assumes you have:
 ## Task 1: Create an instance of Visual Builder
 Provision a service instance of Visual Builder to host apps created in VB Studio. The Visual Builder instance provides the runtime environment for the web app you'll create in VB Studio. You must provision the Visual Builder instance first, so you have it available for selection as a deployment target when you create a project in VB Studio.
 
-1.  On the Oracle Cloud Get Started page, click the menu in the upper left corner to display the services you can provision:
+1. To create a Visual Builder instance, you must first create a compartment. You can use the root compartment and the tenancy user that was created when the OCI account was created, but it's recommended to create a dedicated compartment to host the Visual Builder instance.
+
+       a. On the Oracle Cloud Get Started page, click the menu in the upper left corner.
+
+       b. Select **Identity & Security**, then **Compartments** under **Identity**.
+
+       c. Click **Create Compartment**.
+
+       d. Enter a name, add a description, and leave the Parent Compartment set to the default root compartment. Click **Create Compartment**.
+
+2. Return to the Oracle Cloud Get Started page and click the menu in the upper left corner to display the services you can provision:
 
    ![](./images/hamburger.png "The image highlights the hamburger menu on the Oracle Cloud Get Started page.")
 
-2.  Click **Developer Services**, then select **Visual Builder**:
+3.  Click **Developer Services**, then select **Visual Builder**:
 
     ![](./images/platform.png "This image shows navigation to Visual Builder under Developer Services")
 
-3.  Select the Visual Builder instance's compartment in the **Compartment** field on the left, then click **Create Instance**:
+4.  In the **Compartment** field on the Visual Builder instances page, select the compartment you created to host the Visual Builder instance, then click **Create Instance**:
 
     ![](images/create-instance.png "This image shows the Visual Builder Instances screen, with the Compartment drop-down on the left and the Create Instance button on the right. ")
 
-4.  On the Create Instance screen, give your instance a unique name, one that is unlikely to be chosen by another user.  Click **Create Visual Builder instance**.
+5.  On the Create Instance screen, give your instance a unique name, one that is unlikely to be chosen by another user.  Click **Create Visual Builder instance**.
 
     ![](images/detail.png "This image shows details of the Create Instance page, with the Name, Compartment, and Nodes fields. The Create Visual Builder instance button is also shown.")
 
@@ -45,7 +55,7 @@ Provision a service instance of Visual Builder to host apps created in VB Studio
 
     When instance creation completes successfully, the instance shows as **Active** in the **State** column.
 
-5. At the far right, click ![Task menu icon](images/task_menu.png) and select **Service Homepage** to open the Visual Builder login page.
+6. At the far right, click ![Task menu icon](images/task_menu.png) and select **Service Homepage** to open the Visual Builder login page.
 
 
 ## Task 2: Create an instance of VB Studio
