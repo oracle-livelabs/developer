@@ -44,7 +44,7 @@
             "filename": "../../secure-endpoints/secure-endpoints.md"
         },
           {
-            "title": "Clean up your Always Free Autonomous Database",
+            "title": "Lab 7: Clean up your Always Free Autonomous Database",
             "description": "Terminate your Always Free Autonomous Database",
               "filename": "https://oracle-livelabs.github.io/common/labs/terminate-adb/terminate-adb.md"
           },
