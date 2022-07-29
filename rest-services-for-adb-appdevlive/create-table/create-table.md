@@ -6,12 +6,11 @@ In this lab you will use Database Actions/SQL Developer Web to connect to your d
 
 Estimated Lab Time: 20 minutes
 
-Yuo may review the video below for a quick walk through of the lab.
+You may review the video below for a quick walk through of the lab.
 
-[](youtube:xr957th1h3U)
+[ORDS Overview](youtube:xr957th1h3U)
 
 ### Objectives
-rest-services-for-adb-appdevlive/create-table/create-table.md
 - Create and Auto-REST enable a table
 
 ### Prerequisites
@@ -25,17 +24,17 @@ This lab assumes you have completed the following:
 
 1. Start by signing in as the **admin** using [Database Actions](https://oracle-livelabs.github.io/common/labs/sqldevweb-login/sqldevweb-login.md) if not already there. Once logged in, click the **SQL tile**.
 
-    ![Database Actions Home Page, Click SQL tile](./images/clickforsqlworksheet.png)
+    ![Database Actions Home Page, Click SQL tile](images/click-for-sql-worksheet.png)
 
-**If this is your first time accessing the SQL Worksheet, you will be presented with a guided tour. Complete the tour or click the X in any tour popup window to quit the tour.**
+:bulb: <i>**Note: If this is your first time accessing the SQL Worksheet, you will be presented with a guided tour. Complete the tour or click the X in any tour popup window to quit the tour.**</i>
 
 2. We are now ready to load data into the database. For this task, we will use the **Data Loading tab** in the SQL Worksheet.
 
-    ![Click Data Loading Tab on SQL Worksheet](./images/data-load-tab.png)
+    ![Click Data Loading Tab on SQL Worksheet](images/data-load-tab.png)
 
 3. Click the **Data Loading area**; the center of the gray dotted-line box.
 
-    ![Click the Center of the Data Loading Tab Area](./images/data-load-area.png)
+    ![Click the Center of the Data Loading Tab Area](images/data-load-tab.png))
 
 4. The **Upload Data into New Table modal** will appear.
 
@@ -45,7 +44,7 @@ This lab assumes you have completed the following:
 
     **(right-click and download the file with the following link)**
 
-    [csv data](https://objectstorage.us-ashburn-1.oraclecloud.com/p/LNAcA6wNFvhkvHGPcWIbKlyGkicSOVCIgWLIu6t7W2BQfwq2NSLCsXpTL9wVzjuP/n/c4u04/b/livelabsfiles/o/developer-library/csv_data.csv)
+    [CSV data](https://objectstorage.us-ashburn-1.oraclecloud.com/p/LNAcA6wNFvhkvHGPcWIbKlyGkicSOVCIgWLIu6t7W2BQfwq2NSLCsXpTL9wVzjuP/n/c4u04/b/livelabsfiles/o/developer-library/csv_data.csv)
 
 6. Once on your desktop, **drag the file into the Upload Data into New Table modal**. You can also click the Select Files button and find where you downloaded it via your operating system's/Web Browser's file browser.
 
