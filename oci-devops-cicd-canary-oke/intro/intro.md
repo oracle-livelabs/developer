@@ -1,19 +1,34 @@
 
 # Introduction
 
-## Automating the software lifecycle with OCI DevOps and OCI functions.
+## About this workshop.
 
 You will learn how to build your infrastructure and automate the build and deployment of a Cloud Native Python application to Oracle Kubernetes Engine(OKE), with a canary deployment model.
 
 With a Canary deployment strategy, the application release happens incrementally to a subset of users. Initially, the new version gets deployed to a canary environment with no user traffic. The DevOps release pipeline can run validation tests against the new version and, once ready, route only a subset of users to the canary environment.
 
-
-
 Estimated time: 90 minutes
+
+### Objectives
+
+In this lab, you will:
+
+* Provisioning Infrastructure using IaC and OCI Resource Manager.
+* Build and deploy a sample python application onto OCI OKE.
+* Test and validate the canary deployment functionality.
+* Clean up the infra.
+
+### Prerequisites
+
+1. An Oracle Free Tier(Trial), Paid or LiveLabs Cloud Account
+1. [Familiarity with OCI console](https://docs.us-phoenix-1.oraclecloud.com/Content/GSG/Concepts/console.htm)
+1. [Overview of Networking](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/overview.htm)
+1. [Familiarity with Compartments](https://docs.us-phoenix-1.oraclecloud.com/Content/GSG/Concepts/concepts.htm)
+1. [OCI DevOps services.](https://docs.oracle.com/en-us/iaas/Content/devops/using/home.htm)
+
 
 ## Cloud Native Applications Overview
 
-Here is the definition of Cloud Native Applications accordingly to [Cloud Native Computing Foundation (CNCF)](https://github.com/cncf/foundation/blob/master/charter.md):
 
 "Cloud native technologies empower organizations to build and run scalable applications in modern, dynamic environments such as public, private, and hybrid clouds. Containers, service meshes, microservices, immutable infrastructure, and declarative APIs exemplify this approach.
 
@@ -54,22 +69,6 @@ However, you should be aware of these drawbacks:
 ![](images/oci-canary-oke-ref-arch.png)
 
 
-### Objectives
-
-In this lab, you will:
-
-* Provisioning Infrastructure using IaC and OCI Resource Manager.
-* Build and deploy a sample python application onto OCI OKE.
-* Test and validate the canary deployment functionality.
-* Clean up the infra.
-
-### Prerequisites
-
-1. An Oracle Free Tier(Trial), Paid or LiveLabs Cloud Account
-1. [Familiarity with OCI console](https://docs.us-phoenix-1.oraclecloud.com/Content/GSG/Concepts/console.htm)
-1. [Overview of Networking](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/overview.htm)
-1. [Familiarity with Compartments](https://docs.us-phoenix-1.oraclecloud.com/Content/GSG/Concepts/concepts.htm)
-1. [OCI DevOps services.](https://docs.oracle.com/en-us/iaas/Content/devops/using/home.htm)
 
 You may now **proceed to the next lab**.
 
