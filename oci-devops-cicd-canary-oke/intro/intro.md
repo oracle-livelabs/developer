@@ -9,6 +9,24 @@ With a Canary deployment strategy, the application release happens incrementally
 
 Estimated time: 90 minutes
 
+### Objectives
+
+In this lab, you will:
+
+* Provisioning Infrastructure using IaC and OCI Resource Manager.
+* Build and deploy a sample python application onto OCI OKE.
+* Test and validate the canary deployment functionality.
+* Clean up the infra.
+
+### Prerequisites
+
+1. An Oracle Free Tier(Trial), Paid or LiveLabs Cloud Account
+1. [Familiarity with OCI console](https://docs.us-phoenix-1.oraclecloud.com/Content/GSG/Concepts/console.htm)
+1. [Overview of Networking](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/overview.htm)
+1. [Familiarity with Compartments](https://docs.us-phoenix-1.oraclecloud.com/Content/GSG/Concepts/concepts.htm)
+1. [OCI DevOps services.](https://docs.oracle.com/en-us/iaas/Content/devops/using/home.htm)
+
+
 ## Cloud Native Applications Overview
 
 
@@ -51,22 +69,6 @@ However, you should be aware of these drawbacks:
 ![](images/oci-canary-oke-ref-arch.png)
 
 
-### Objectives
-
-In this lab, you will:
-
-* Provisioning Infrastructure using IaC and OCI Resource Manager.
-* Build and deploy a sample python application onto OCI OKE.
-* Test and validate the canary deployment functionality.
-* Clean up the infra.
-
-### Prerequisites
-
-1. An Oracle Free Tier(Trial), Paid or LiveLabs Cloud Account
-1. [Familiarity with OCI console](https://docs.us-phoenix-1.oraclecloud.com/Content/GSG/Concepts/console.htm)
-1. [Overview of Networking](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/overview.htm)
-1. [Familiarity with Compartments](https://docs.us-phoenix-1.oraclecloud.com/Content/GSG/Concepts/concepts.htm)
-1. [OCI DevOps services.](https://docs.oracle.com/en-us/iaas/Content/devops/using/home.htm)
 
 You may now **proceed to the next lab**.
 
