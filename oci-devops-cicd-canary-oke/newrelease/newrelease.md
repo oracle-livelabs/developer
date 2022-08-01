@@ -1,4 +1,4 @@
- # A new release and rollback to validate the canary deployment
+# A new release and rollback to validate the canary deployment
 
 ## Introduction
 
