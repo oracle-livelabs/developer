@@ -1,7 +1,7 @@
 
 # Introduction
 
-## Automating the software lifecycle with OCI DevOps and OCI functions.
+## About this workshop.
 
 You will learn how to build your infrastructure and automate the build and deployment of a Cloud Native Python application to Oracle Kubernetes Engine(OKE), with a canary deployment model.
 
@@ -13,7 +13,6 @@ Estimated time: 90 minutes
 
 ## Cloud Native Applications Overview
 
-Here is the definition of Cloud Native Applications accordingly to [Cloud Native Computing Foundation (CNCF)](https://github.com/cncf/foundation/blob/master/charter.md):
 
 "Cloud native technologies empower organizations to build and run scalable applications in modern, dynamic environments such as public, private, and hybrid clouds. Containers, service meshes, microservices, immutable infrastructure, and declarative APIs exemplify this approach.
 
