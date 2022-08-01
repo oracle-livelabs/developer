@@ -1,11 +1,11 @@
 {
-  "workshoptitle": "OCI Devops with OCI Functions",
+  "workshoptitle": "Creating a fully automated CI/CD release pipeline with canary deployment strategy",
   "help": "dex_dlc_sa_ww_grp@oracle.com",
  "tutorials": [
     {
       "title": "Introduction",
       "description": "Introduction to the lab with OCI devops ",
-      "filename": "https://oracle-livelabs.github.io/developer/oci-devops-cicd-functions/intro/intro.md"
+      "filename": "../../intro/intro.md"
     },
     {
       "title": "Get Started",
@@ -15,22 +15,22 @@
     {
       "title": "Lab 1: Provision the infrastructure",
       "description": "Instruction to provision OCI devops ,OKE and related infrastructure",
-      "filename": "https://oracle-livelabs.github.io/developer/oci-devops-cicd-functions/deploy-infra/deploy-infra.md"
+      "filename": "../../deploy-infra/deploy-infra.md"
     },
     {
       "title": "Lab 2: Get to know more about OCI Devops components",
       "description": "Get to know more about OCI devops components and artifacts",
-      "filename": "https://oracle-livelabs.github.io/developer/oci-devops-cicd-functions/devops-resources/devops-resources.md"
+      "filename": "../../devops-resources/devops-resources.md"
     },
     {
       "title": "Lab 3: New version release",
       "description": "Release a new version and experience canary mode",
-      "filename": "https://oracle-livelabs.github.io/developer/oci-devops-cicd-functions/newrelease/newrelease.md"
+      "filename": "../../newrelease/newrelease.md"
     },
     {
       "title": "Lab4: Cleanup of lab resources",
       "description" : "Clean all the lab infra components",
-      "filename":"https://oracle-livelabs.github.io/developer/oci-devops-cicd-functions/cleanup/cleanup.md"
+      "filename":"../../cleanup/cleanup.md"
 
     },
 
