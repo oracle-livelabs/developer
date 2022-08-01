@@ -15,10 +15,9 @@ You may review the video below for a quick walk through of the lab.
 
 ### Prerequisites
 
-This lab assumes you have completed the following:
-* Login to OCI: [Login to Oracle Cloud](https://oracle-livelabs.github.io/adb/shared/adb-provision/adb-provision.md)
-* Lab 1: [Provision an Autonomous Database](https://oracle-livelabs.github.io/adb/shared/adb-provision/adb-provision.md)
-* Lab 2: [Connect to an Autonomous Database with SQL Developer Web](https://oracle-livelabs.github.io/common/labs/sqldevweb-login/sqldevweb-login.md)
+- The following lab requires an <a href="https://www.oracle.com/cloud/free/" target="\_blank">Oracle Cloud account</a>. You may use your own cloud account, a cloud account that you obtained through a trial, or a training account whose details were given to you by an Oracle instructor.
+
+- This lab assumes you have completed all previous Labs. 
 
 ## Task 1: Create a Table in the Autonomous Database
 
@@ -149,16 +148,17 @@ This lab assumes you have completed the following:
     coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/admin/csv_data/"}]}% 
     ```
 
-The next lab will go over using the **BATCH LOAD** endpoint.
+The next lab you will learn about using a **BATCH LOAD** endpoint.
 
-## Conclusion
-
-In this lab, you created a table from a csv file and REST enabled it with auto-REST.
+7. In this lab, you created a table from a csv file and REST enabled it with auto-REST.
 
 You may now [proceed to the next lab](#next).
 
-
 ## Acknowledgements
 
- - **Author** - Jeff Smith, Distinguished Product Manager
- - **Last Updated By/Date** - Jeff Smith, July 2022
+ - **Author** 
+    - Jeff Smith, Distinguished Product Manager
+    - Chris Hoina, Senior Product Manager 
+    - Brian Spendolini
+ - **Last Updated By/Date** 
+    - Chris Hoina, August 2022
