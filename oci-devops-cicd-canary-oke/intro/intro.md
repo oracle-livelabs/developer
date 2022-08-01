@@ -7,8 +7,6 @@ You will learn how to build your infrastructure and automate the build and deplo
 
 With a Canary deployment strategy, the application release happens incrementally to a subset of users. Initially, the new version gets deployed to a canary environment with no user traffic. The DevOps release pipeline can run validation tests against the new version and, once ready, route only a subset of users to the canary environment.
 
-
-
 Estimated time: 90 minutes
 
 ## Cloud Native Applications Overview

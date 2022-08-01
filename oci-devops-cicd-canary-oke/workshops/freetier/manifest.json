@@ -1,7 +1,7 @@
 {
   "workshoptitle": "OCI Devops with OCI Functions",
   "help": "dex_dlc_sa_ww_grp@oracle.com",
-  "tutorials": [
+ "tutorials": [
     {
       "title": "Introduction",
       "description": "Introduction to the lab with OCI devops ",

@@ -2,8 +2,7 @@
 
 ## Introduction
 
-<!-- Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum -->
-In this lab you will secure the REST endpoints you created in the previous lab.
+In this lab you will be securing the REST endpoints you created in the previous lab.
 
 Estimated Lab Time: 10 minutes
 
@@ -21,13 +20,13 @@ Watch the video below for a quick walk through of the lab.
 
 - The following lab requires an <a href="https://www.oracle.com/cloud/free/" target="\_blank">Oracle Cloud account</a>. You may use your own cloud account, a cloud account that you obtained through a trial, or a training account whose details were given to you by an Oracle instructor.
 
-This lab assumes you have completed the following labs:
-* Lab 1: [Login to Oracle Cloud](https://oracle-livelabs.github.io/common/labs/cloud-login/pre-register-free-tier-account.md)
-* Lab 2: [Provision an Autonomous Database](https://oracle-livelabs.github.io/adb/shared/adb-provision/adb-provision.md)
-* Lab 3: [Connect to your Autonomous Database using Database Actions/SQL Developer Web](https://oracle-livelabs.github.io/common/labs/sqldevweb-login/sqldevweb-login.md)
-* Lab 4: [Create and auto-REST enable a table](../create-table/create-table.md)
-* Lab 5: [Loading Data and Creating Business Objects](../load-data-and-biz-objs/load-data-and-biz-objs.md)
-* Lab 6: [REST Enable Business Logic and Custom SQL Lab](../rest-enable-objects/rest-enable-objects.md)
+This lab assumes you have completed the following:
+* Login to OCI: [Login to Oracle Cloud](https://github.com/oracle-livelabs/common/blob/main/labs/cloud-login/pre-register-free-tier-account.md)
+* Lab 1: [Provision an Autonomous Database](https://github.com/oracle-livelabs/database/blob/main/db-quickstart/db-provision/db-provision.md)
+* Lab 2: [Connect to your Autonomous Database using Database Actions/SQL Developer Web](https://oracle-livelabs.github.io/common/labs/sqldevweb-login/sqldevweb-login.md)
+* Lab 3: [Create and auto-REST enable a table](../create-table/create-table.md)
+* Lab 4: [Loading Data and Creating Business Objects](../load-data-and-biz-objs/load-data-and-biz-objs.md)
+* Lab 5: [REST Enable Business Logic and Custom SQL Lab](../rest-enable-objects/rest-enable-objects.md)
 
 ## Task 1: Securing the REST Endpoint
 
@@ -205,26 +204,18 @@ This lab assumes you have completed the following labs:
     Remember in the last lab, we created a REST API for our bizlogic? Let's take that cURL command again:
 
     ```
-    curl --location --request POST \
+    <copy>curl --location --request POST \
     'https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/admin/api/bizlogic' \
     --header 'Content-Type: application/json' \
     --data-binary '{
     "id": "a1",
     "output": "" 
-    }'
+    }'</copy>
     ```
-    and using the Oracle Cloud Infrastructure Cloud Shell, run it again:
+    and after running this commang again, using the Oracle Cloud Infrastructure Cloud Shell, the following response will be returned:
 
     ```
-    > curl --location --request POST \
-    'https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/admin/api/bizlogic' \
-    --header 'Content-Type: application/json' \
-    --data-binary '{
-    "id": "a1",
-    "output": ""
-    }'
-
-    {
+    >{
         "code": "Unauthorized",
         "message": "Unauthorized",
         "type": "tag:oracle.com,2020:error/Unauthorized",
@@ -238,25 +229,25 @@ This lab assumes you have completed the following labs:
     We can add this to our cURL command as follows:
 
     ```
-    curl -X POST --header 'Authorization: Bearer tW-AM_cDQu0l8oAsh707vw' \
+    <copy>curl -X POST --header 'Authorization: Bearer tW-AM_cDQu0l8oAsh707vw' \
     'https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/admin/api/bizlogic' \
     --header 'Content-Type: application/json' \
     --data-binary '{
     "id": "a1",
     "output": "" 
-    }'
+    }'</copy>
     ```    
 
 32. Now using the Oracle Cloud Infrastructure Cloud Shell and your new cURL command with the **--header 'Authorization: Bearer VALUE'** section added with your token text, run the new cURL command. (**NOTE: your URL hostname will be different than the below command**)
 
     ```
-    curl -X POST --header 'Authorization: Bearer tW-AM_cDQu0l8oAsh707vw' \
+    <copy>curl -X POST --header 'Authorization: Bearer tW-AM_cDQu0l8oAsh707vw' \
     'https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/admin/api/bizlogic' \
     --header 'Content-Type: application/json' \
     --data-binary '{
     "id": "a1",
     "output": ""
-    }'
+    }'</copy>
     ``` 
 
     We now see a value from the REST API is returned
@@ -268,13 +259,13 @@ This lab assumes you have completed the following labs:
     The endpoint for that REST API was
 
     ```
-    https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/admin/api/sqlreport/<VALUE>
+    <copy>https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/admin/api/sqlreport/<VALUE></copy>
     ```
 
     So we can try out the following (**NOTE: your URL hostname will be different than the below command**):
     
     ```
-    curl -X GET  'https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/admin/api/sqlreport/a1'
+    <copy>curl -X GET  'https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/admin/api/sqlreport/a1'</copy>
     ```
 
     and as expected, we get **Unauthorized**.
@@ -282,7 +273,7 @@ This lab assumes you have completed the following labs:
 34. Now lets add the token (**--header 'Authorization: Bearer VALUE'**) to this command. (**NOTE: your URL hostname will be different than the below command**)
 
     ```
-    curl -X GET --header 'Authorization: Bearer tW-AM_cDQu0l8oAsh707vw' 'https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/admin/api/sqlreport/a1'
+    <copy>curl -X GET --header 'Authorization: Bearer tW-AM_cDQu0l8oAsh707vw' 'https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/admin/api/sqlreport/a1'</copy>
     ```
 
     and we see the our expected results
