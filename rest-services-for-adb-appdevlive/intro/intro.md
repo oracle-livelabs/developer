@@ -90,5 +90,5 @@ This section introduces some common terms that are used throughout this lab:
 
 ## Acknowledgements
 
- - **Authors** - Jeff Smith, Distinguished Product Manager, The Raleigh Cobra, Product Manager ![RC](images/raleigh-cobra.jpg) 
+ - **Authors** - Jeff Smith, Distinguished Product Manager, The Raleigh Cobra, Product Manager ![RC](../intro/images/raleigh_cobra.jpg) 
  - **Last Updated By/Date** - Chris Hoina, July 2022

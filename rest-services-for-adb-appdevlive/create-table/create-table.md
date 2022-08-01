@@ -11,6 +11,7 @@ You may review the video below for a quick walk through of the lab.
 [ORDS Overview](youtube:xr957th1h3U)
 
 ### Objectives
+rest-services-for-adb-appdevlive/create-table/create-table.md
 - Create and Auto-REST enable a table
 
 ### Prerequisites
