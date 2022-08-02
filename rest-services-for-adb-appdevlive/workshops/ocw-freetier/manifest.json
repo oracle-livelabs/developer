@@ -44,11 +44,7 @@
             "filename": "../../secure-endpoints/secure-endpoints.md"
         },
           {
-<<<<<<<< HEAD:rest-services-for-adb-appdevlive/workshops/ocw-freetier/manifest.json
             "title": "Lab 7: Clean up your Always Free Autonomous Database",
-========
-            "title": "Clean up your Always Free Autonomous Database",
->>>>>>>> upstream/main:rest-services-for-adb-appdevlive/workshops/ocw-tenancy/manifest.json
             "description": "Terminate your Always Free Autonomous Database",
               "filename": "https://oracle-livelabs.github.io/common/labs/terminate-adb/terminate-adb.md"
           },
