@@ -1,0 +1,43 @@
+{
+    "workshoptitle": "Introduction to Cloud Native",
+    "help": "livelabs-help-oci_us@oracle.com",
+	"tutorials": [
+        {
+            "title": "Introduction",
+            "filename": "../../intro/intro.md"
+        },
+        {
+            "title": "Get Started",
+            "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/pre-register-free-tier-account.md"
+        },
+        {
+            "title": "Lab 1: Setup Cloud Environment",
+            "filename": "../../setup-cloud-env/setup-cloud-env.md"
+        },
+        {
+            "title": "Lab 2: Deploy the Microservices App",
+            "filename": "../../../mushop/deploy/deploy.md"
+        },
+        {
+            "title": "Lab 3: Monitoring the deployment",
+            "filename": "../../../mushop/observability/monitoring.md"
+        },
+        {
+            "title": "Functions Prerequisites",
+            "filename": "../../../da-functions-load-file-into-adw-python/prerequisites/functions.md"
+        },
+        {
+            "title": "Lab 4: Functions",
+            "filename": "../../../da-functions-load-file-into-adw-python/fn-lab/lab.md"
+        },
+        {
+            "title": "Lab 5 (OPTIONAL): Clean Up",
+            "filename": "../../cleanup/cleanup.md"
+        },
+        {
+            "title": "Need Help?",
+            "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+            "filename": "https://oracle-livelabs.github.io/common/labs/need-help/need-help-livelabs.md"
+        }
+    ]
+}

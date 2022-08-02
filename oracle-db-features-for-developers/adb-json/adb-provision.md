@@ -28,7 +28,7 @@ Estimated time: 5 minutes
 
 3. The following steps apply similarly to Autonomous Data Warehouse, Autonomous Transaction Processing or Autonomous JSON Database. This lab shows provisioning of an Autonomous Transaction Processing database, so click **Autonomous Transaction Processing**.
 
-    ![](https://objectstorage.us-phoenix-1.oraclecloud.com/p/SJgQwcGUvQ4LqtQ9xGsxRcgoSN19Wip9vSdk-D_lBzi7bhDP6eG1zMBl0I21Qvaz/n/c4u02/b/common/o/images/console/database-adw.png " ")
+    ![](https://oracle-livelabs.github.io/common/images/console/database-adw.png " ")
 
 4. If you already have a list of databases, you can filter the list by the **State** of the databases (Available, Stopped, Terminated, and so on). You can also sort by __Workload Type__. Here, the __Transaction Processing__ workload type is selected.
 
@@ -117,7 +117,7 @@ Estimated time: 5 minutes
 
 ## Task 3: Connect to your ADB with SQL Developer Web
 
-While you can also connect to your autonomous database using local PC desktop tools like Oracle SQL Developer (see this [ADB lab](https://oracle.github.io/learning-library/data-management-library/autonomous-database/shared/adb-advanced-workshop/freetier/?lab=lab-6-using-wallets-for-secure) for an example), you can now conveniently access the browser-based SQL Developer Web directly from your ADW or ATP console.
+While you can also connect to your autonomous database using local PC desktop tools like Oracle SQL Developer (see this [ADB lab](https://oracle-livelabs.github.io/adb/shared/adb-advanced-workshop/freetier/?lab=lab-6-using-wallets-for-secure) for an example), you can now conveniently access the browser-based SQL Developer Web directly from your ADW or ATP console.
 
 1.  While in your database **OCI console** from Step 2, click the **Tools** tab.
 
