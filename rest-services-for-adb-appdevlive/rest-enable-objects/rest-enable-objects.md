@@ -133,9 +133,9 @@ This lab assumes you have completed the following:
 
     ![Source Field](./images/adding-source-field.png)
 
-**Toggle "Show Code" to review the code for fields in the GUI.**
+    **Toggle "Show Code" to review the code for fields in the GUI.**
 
-    ![Source Field](./images/![Source Field](./images/adding-source-field.png)
+    ![Source Field Toggle](images/adding-source-field-code-toggle.png)
 
 15. When the **Create Handler** slider looks like the below image (**NOTE: your URL hostname will be different than the below image**), left click the **Create** button.
 
@@ -275,15 +275,19 @@ This lab assumes you have completed the following:
 
     ![cURL Command reminder](./images/curl-command-reminder.png)
 
-    Use the **Fill Bind Variables Values** icon ![Fill Bind Variables Values icon](./images/fill-bind.png) to fill in the **id** field with the value of **a1** in the **Substitutions** modal. Then click OK when done.
-    
-    ![Substitutions modal](./images/rest-44.png)
+    Click the `Substitutions` icon, a modal will appear.
 
-22. Click the copy icon ![Fill Bind Variables Values icon](./images/copy-copy.png) to copy the cURL command with the added Substitution value.
+    ![Substitutions icon](images/substitutions-icon-for-bizlogic.png)
+    
+    Enter `a1` into the **id** field, and place a :heavy_check_mark: in the `Null` option for the `Output` field. Then click OK when done.
+
+    ![Substitutions modal](images/adding-substitution-value-null-output.png)
+
+22. Click the copy icon to copy the cURL command with the added Substitution value.
 
     ![Copied cURL command](./images/copied-curl-command-bizlogic.png)
 
-23. Using the Oracle Cloud Infrastructure Cloud Shell, paste and run the cURL command to confirm that the count is returned as the output variable.
+23. Then, using the Oracle Cloud Infrastructure Cloud Shell, paste and run the cURL command to confirm that the count is returned as the output variable.
 
     ```
     <copy>curl -X POST \
@@ -307,7 +311,7 @@ This lab assumes you have completed the following:
 
 2. Click the the pop out icon ![pop out icon](./images/pop-menu.png) in the Module region and select **OpenAPI View**.
 
-    ![the pop out icon and select OpenAPI View](./images/open-api-select-module.png)
+    ![The pop out icon and select OpenAPI View](./images/open-api-select-module.png)
 
 3. The OpenAPI View page displays your REST services as a Swagger UI implementation.
 
