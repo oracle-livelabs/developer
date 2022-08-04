@@ -44,54 +44,30 @@ Users with the right roles can access Visual Builder Studio from the TEST instan
 
 	  ![Image alt text](images/sample1.png)
 
-4. You'll be taken into the project home page. From here you can navigate to all the components of your project. Including Environments, Git repositories, CI/CD pipelines, Issue tracking system, wiki and much more. In this lab we'll only focus on the Workspace part. 
+4. You'll be taken into the project home page. From here you can navigate to all the components of your project. Including Environments, Git repositories, CI/CD pipelines, Issue tracking system, wiki and much more. In this lab we'll only focus on the Workspace part.
 
 			  ![Image alt text](images/sample1.png)
 
-4. Example with inline navigation icon ![Image alt text](images/sample2.png) click **Navigation**.
+5. Click the **Workspaces** section on the left navigation menu ![Image alt text](images/sample2.png) click **Navigation**.
 
-5. Example with bold **text**.
+6. Click the **New** button and select **New Application Extension** to create a new workspace for your own extension.
 
-   If you add another paragraph, add 3 spaces before the line.
+7. In the creation dialog that pops up populate the fields with these values
+| Field | Value | Explanation |
+| --- | --- | --- |
+| Extension Name | YourName-Accounts | To keep a distinct name use your name  |
+| Development Environment |Choose the option available | This is mapped to your SaaS instance|
+| Base Oracle Cloud Application | None | We are creating a new app without dependencies |
+| Use Scratch Repository | Checked | For now we just want your personal copy of the code |
+Click Create - this might take a couple of minutes to complete and then you'll be taken into the Visual Editor.
 
-## Task 1: Concise Step Description
-
-1. Sub step 1 - tables sample
-
-  Use tables sparingly:
-
-  | Column 1 | Column 2 | Column 3 |
-  | --- | --- | --- |
-  | 1 | Some text or a link | More text  |
-  | 2 |Some text or a link | More text |
-  | 3 | Some text or a link | More text |
-
-2. You can also include bulleted lists - make sure to indent 4 spaces:
-
-    - List item 1
-    - List item 2
-
-3. Code examples
-
-    ```
-    Adding code examples
-  	Indentation is important for the code example to appear inside the step
-    Multiple lines of code
-  	<copy>Enclose the text you want to copy in <copy></copy>.</copy>
-    ```
-
-4. Code examples that include variables
-
-	```
-  <copy>ssh -i <ssh-key-file></copy>
-  ```
 
 ## Learn More
 
 *(optional - include links to docs, white papers, blogs, etc)*
 
-* [URL text 1](http://docs.oracle.com)
-* [URL text 2](http://docs.oracle.com)
+* [What is an Extension](https://docs.oracle.com/en/cloud/paas/visual-builder/visualbuilder-building-appui/basics.html#GUID-A729A4FB-CD2E-48C8-BDE3-577DEE835332)
+* [What is a Workspace](https://docs.oracle.com/en/cloud/paas/visual-builder/visualbuilder-building-appui/basics.html#GUID-8E1EF322-51B5-4411-BAAA-F2AB3796C8FB)
 
 ## Acknowledgements
 * **Author** - <Name, Title, Group>
