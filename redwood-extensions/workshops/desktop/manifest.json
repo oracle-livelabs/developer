@@ -20,8 +20,8 @@
       "filename": "../../welcome/welcome.md"
     },
     {
-      "title": "Lab 2: Setup the Environment",
-      "filename": "../../setup/setup.md"
+      "title": "Connecting to Oracle Fusion Apps Data",
+      "filename": "../../saasservice/saasservice.md"
     },
     {
       "title": "Lab 3: Load Data into an Instance",
