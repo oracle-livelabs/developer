@@ -111,8 +111,8 @@ Syntax: `GRANT <privilege> TO <user>;`
 3. Create the `TODOITEM` table with the `ID` column as the primary key.
 
     ```
-    <copy>CREATE TABLE APPUSER.TODOITEM (
-	id NUMBER GENERATED ALWAYS AS IDENTITY,
+    <copy>CREATE TABLE APPUSER.TODOITEM ( 
+	id NUMBER GENERATED ALWAYS AS IDENTITY, 
 	description VARCHAR2(4000), 
 	creation_ts TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP, 
 	done NUMBER(1, 0), 
