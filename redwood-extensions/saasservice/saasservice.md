@@ -77,55 +77,18 @@ A table with the selected fields is added to your page and the data for it will 
 10. Switch to the code view by pressing the **Code** button at the top of the preview. Locate the line that starts with <oj-table... that's the definition of the table. Stand in an empty space in the line click space and start typing **sc** note how code completion helps you choose the right property. Choose **scroll-policy-option.scroller** and in the value for the attribute use **"html"**.
 
 The result code for the line should look similar to this:
-```
-<oj-table scroll-policy-option.scorller="html" scroll-policy="loadMoreOnScroll" data....>
-```
-  Use tables sparingly:
 
-  | #| Tab | Functionality |
-  | --- | --- | --- |
-  | 1 | Components | Contain UI components you can add to a page  |
-  | 2 |Data | List data objects you can work with - based on connections you created to SaaS objects |
-  | 3 | Structure | Hierarchical view of the structure of your page |
-	  | 4 | Properties | A declarative way to define the properties of the selected component in your page |
-	  | 5 | Visual Editor | Shows you a design/live and code view of your page content |
+		<oj-table scroll-policy-option.scorller="html" scroll-policy="loadMoreOnScroll" ...>
 
-2. The components palette contains over a hundred UI components that you can drag and drop to your page to design your interfaces. We are going to leverage page templates designed by the Oracle Design team for the Redwood apps so accelerate our application development. The templates provide a responsive user experience and will adjust your application to the device accessing it.
+Switch back to the design mode to see the resulting table with data fetched into it.
 
+We are now ready to preview the application's Functionality
 
-3. Use the search box at the top of the components palette to search for **welcome** which will find the **welcome page template**. Drag the component from the component palette and drop it on the visual editor.  
+11. Click the preview button at the top right of the page. This will prepare your application to be previewed and then will open a new tab in your browser where you can see your running app.
 
-4. Let's set some properties of the template. Click the **All** tab in the component palette and modify the following properties:
+12. Play around with your live app, providing search criteria to filter the list. Also note the smart pagination happening when you scroll through the records in the table. Records are being fetched as needed.
 
-| # | Property | Value |
-| --- | --- | --- |
-| 1 | Background Color | Choose your preferred color  |
-| 2 |Page Title | Accounts |
-| 3 | Description Text| Search and edit accounts |
-| 4 | Illustration Foreground | https://static.oracle.com/cdn/fnd/gallery/2107.1.0/images/illust-welcome-banner-fg-03.png |
-
-## Task 3: Adding a search component and defining a variable
-
-1. In the search box for the components palette type **search**. This will locate a component called **input search**.
-2. Drag the input search and drop it on the page in the visual editor. A popup will let you choose into which slot of the template to drop the component. Drop it into the **search slot**.
-3. We need to keep track of the term the user is searching for. To do that we'll use a page variable.
-While the input search is selected in the visual editor, click the **data** tab in the properties palette.
-
-4. Click the little arrow at the top right of the value field to popup a list of variables.
-
-5. Click the create **create variable** next to the page to create a page level variable. Note that we have multiple scopes for variables which makes it easy to share the values of these variables across pages and flow in the application when needed.
-
-6. For the id of the variable type **searchString** and keep the type as String and click create. The value property now has a reference to the variable in it.
-
-## Task 4: Adding a collection container and working with the structure pane
-
-1. In the search box for the components palette type **collection**. This will locate a component called **collection container**.
-2. Drag the collection container to the structure pane onto the Welcome Page template.
-
-3. Select the **default** slot as the location for the collection container.
-
-The layout of our first page is ready now, and the next step is to add some data to the page from Oracle Fusion Cloud Apps.
-Note how so far all the design of the page was done with simple drag and drop functionality and setting properties. This visual development approach is key to the productivity offered by Visual Builder. Note however that there is a code button at the top right of the visual preview area. If you'll click on it you'll be able to see the actual HTML code used in your page. The code can be modified directly if needed, but for now we'll return to the design view by clicking the design button.
+Now that we have a running page that fetches data, the next step is to add pages that will allow us to edit the data and update Oracle's SaaS.
 
 ## Learn More
 

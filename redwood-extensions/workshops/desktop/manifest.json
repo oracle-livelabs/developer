@@ -24,12 +24,12 @@
       "filename": "../../saasservice/saasservice.md"
     },
     {
-      "title": "Lab 3: Load Data into an Instance",
-      "filename": "../../data-load/data-load.md"
+      "title": "Adding an Edit Page and a Details Page",
+      "filename": "../../editpage/editpage.md"
     },
     {
-      "title": "Lab 4: Query Data",
-      "filename": "../../query/query.md"
+      "title": "Adding Buttons and Action Chains",
+      "filename": "../../tableedit/tableedit.md"
     },
     {
         "title": "Lab 5: Tables in LiveLabs",
