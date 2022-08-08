@@ -6,11 +6,11 @@ In this lab we will explore the technologies and frameworks that comprise our sa
 
 Estimated Time: 20 minutes
 
-### About Oracle REST Data Services (ORDS) and developer tools 
-This lab will discuss a variety of Enterpruise and open source technologies, including: 
+### About Oracle REST Data Services (ORDS) and Developer Tools 
+This lab will discuss a variety of Enterprise and open source technologies, including: 
 - Oracle REST Data Services (ORDS)
-- Oracle Clould Infrastructure (OCI) <i>Always Free</i> Tier Tenancy
-- Datbase Actions
+- Oracle Cloud Infrastructure (OCI) <i>Always Free</i> Tier Tenancy
+- Database Actions
 <!-- I'm actually not sure about cURL, but I don't want to forget it -->
 <!-- Make sure any changes here are also included in the Learn More section - we'll want to include those resources as well  -->
 - cURL
@@ -61,13 +61,13 @@ This lab assumes you have:
 
 1. Locate your Python application.
 
-    Once you have located the Workshop contents (either forked or saved locally), open the <b>app.py</b> file inwith your preferred editor. This Workshop uses Visual Studio Code (VS Code or VSC) for file editing/review.
+    Once you have located the Workshop contents (either forked or saved locally), open the <b>app.py</b> file in your preferred editor. This Workshop uses Visual Studio Code (VS Code or VSC) for file editing/review.
 
     ![Opening the Python application](images/right-click-to-open-app.png)
 
 2. Review the libraries included in this application. 
 
-    Once the application loads into your editor, notice the libraries we've imported to allow this application work: 
+    Once the application loads into your editor, notice the libraries we've imported to allow this application to work: 
 
     ![Imported libraries for Python application](images/imported-libraries-for-application.png)
 
@@ -79,7 +79,7 @@ This lab assumes you have:
       - Icon
     - Flask
       - Flask 
-      - Json
+      - json
       - render_template
       - request
       - redirect
@@ -93,24 +93,27 @@ This lab assumes you have:
 
       ```app = Flask(__name__)```
 
-    You may have seen this before, but in this case the argument `(__name__)` is sufficient, for a small scale application as this. You may review the selected documentation on this subject in the "Learn More" section of this lab. 
+    You may have seen this before, here the argument `(__name__)` is sufficient for such a small scale application. You may review the selected documentation on this subject in the "Learn More" section of this lab. 
 
     ![Reviewing the flask app name](images/first-line-flask-app-name.png)
 
 4. Review the Folium contents of the application
 
     Here you'll see several parts to the Folium section of the application. 
-    1. We set the initial, base Folium map = `m`
-      - You'll also notice we've included starting coordinates, set minimum and maximum zoom properties, as well as a visual presentation option (i.e. "Stamen Toner")
-    2. We include a tooltip; which you'll later when we load the application 
-    3. Next we rely on the "Requests" library to `GET` json from our Autonomous Database, via ORDS APIs
-      - We perform an iteration to gather the necessary information for populating our map
-    4. We'll then create individual markers for the museum locations we retrieved from our database 
-      - Here we'll pass the latitude and longitude coordinates
-      - We'll then include information pop-ups for all the museums
-        - Notice how we include the `museum_name` as HTML, the icon color and type, along with `tooltip`
 
-      <i>:bulb: **Note:** The tooltip generates a helpful bubble when hovered over that reads "Click me!"; you'll see it soon enough.</i>
+    ![Reviewing Folium content in the application](images/reviewing-folium-content-in-app.png)
+
+    1. We set the initial, base Folium map = `m`
+        - You'll also notice we've included starting coordinates, set minimum and maximum zoom properties, as well as a visual presentation option (i.e. "Stamen Toner")
+    2. We include a tooltip; which you'll see later when we load the application 
+    3. Next we rely on the "Requests" library to `GET` json from our Autonomous Database, via ORDS APIs
+        - We perform an iteration to gather the necessary information for populating our map
+    4. We'll then create individual markers for the museum locations we retrieved from our database 
+        - Here we'll pass the latitude and longitude coordinates
+        - We'll then include information pop-ups for all the museums
+          - Notice how we include the `museum_name` as HTML, the icon color and type, along with `tooltip`
+
+      :bulb: <i>**Note:** The tooltip generates a helpful bubble when hovered over that reads "Click me!"; you'll see it soon enough.</i>
 
     5. Finally you'll see the line: 
     `lvmap = m._repr_html_()`
@@ -152,7 +155,7 @@ This lab assumes you have:
 
         ![The Order Form route](images/app-route-order-form.png)
     
-        Using a separate ORDS endpoint, our application performs a more typical `GET` request. Here we return a list of products, along with the `orderform.html` page. You'll notice how we set some of these items similar, but not quite the same, names. This is done for the benefit of the associated JavaScript we'll rely on. We'll review this in the next lab. 
+        Using a separate ORDS endpoint, our application performs a more typical `GET` request. Here we return a list of products, along with the `orderform.html` page. Notice how we create new variables, which we'll use for with our JavaScript functions. We'll review our three JavaScript functions in the next lab. 
 
     5. `@app.route('/orderhistory')`
 

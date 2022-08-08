@@ -2,12 +2,12 @@
 
 ## Introduction
 
-In this lab we will explore the technologies and frameworks that comprise our sample web application.
+In this lab we will explore the Oracle REST Data Services (ORDS) APIs used within the OpenAPI Swagger editor.
 
 Estimated Time: 20 minutes
 
-### About Oracle REST Data Services (ORDS) and developer tools 
-This lab will discuss a variety of Enterpruise and open source technologies, including: 
+### About OpenAPI and Swagger
+This lab will discuss a variety of Enterprise and open source technologies, including: 
 - Oracle REST Data Services (ORDS)
 - Oracle Clould Infrastructure (OCI) <i>Always Free</i> Tier Tenancy
 - Datbase Actions
@@ -31,22 +31,18 @@ We will discuss and explore these technologies and solutions in a practical sens
 In this lab, you will:
 * Inspect the provided ORDS API
 * Review the available Paths and HTTPS Operations
-<!-- Should we inspect in DB Actions as well? What is more realistic? -->
-<!-- Or should we import the module and go from there?  -->
+
 ### Prerequisites
-<!-- At least for this lab, do we even need prerequisites? -->
 This lab assumes you have:
-* An Oracle Cloud Infrastructure account
 * All previous labs successfully completed
-
-
-<!-- *This is the "fold" - below items are collapsed by default* -->
 
 ## Task 1: Navigate to Swagger Editor 
 
-For this lab we'll rely on Swagger's Open Source Editor to review our ORDS Base URI, as well as the available API Paths and Operations. 
+For this lab we'll rely on Swagger's Open Source Editor to review our ORDS Base URI, as well as the available API <i>Paths</i> and <i>Operations</i>. 
 
-1. Navigate to the Swagger home page and select the Swagger editor link:
+:bulb: <i>You may skip straight to the [Swagger Editor](https://editor.swagger.io/), or follow along below.</i>
+
+1. Navigate to the [Swagger home page](https://swagger.io/) and select the Swagger editor link (located under the <b>Tools</b> dropdown):
 
     ![Navigating to the Swagger editor](images/select-swagger-editor.png)
 
@@ -58,9 +54,18 @@ For this lab we'll rely on Swagger's Open Source Editor to review our ORDS Base 
 
     ![Clear previous Swagger editor session](images/clear-swagger-editor-optional.png)
 
-4. Next, navigate to `File` then `Import URL`. Take the URL (the ORDS Base URI) you copied to your clipboard (or refer above, to copy) and enter it into the input field, click `OK`. 
+4. Next, navigate to `File` then `Import URL`.
+
+    Copy the following ORDS Base URI: 
+
+    ```
+    <copy></copy>
+    ```
+
 
     ![Select Import URL in Swagger](images/import-url-into-editor.png)
+    
+    Paste it into the input field, click `OK`.
 
     ![Inputting the ORDS Base URI](images/enter-url-to-import.png)
 
@@ -94,7 +99,7 @@ For this lab we'll rely on Swagger's Open Source Editor to review our ORDS Base 
 
       ![The OpenAPI info](images/open-api-paths.png)
 
-    - `components` - here you can review the components, or those <i>globally-defined</i> parameters that may be shared across the various Paths and their HTTPS Operations.
+    - `components` - here you can review the Components;<i>globally-defined</i> parameters that may be shared across the various Paths and their HTTPS Operations.
 
       ![The OpenAPI info](images/open-api-components.png)
 
@@ -108,11 +113,13 @@ For this lab we'll rely on Swagger's Open Source Editor to review our ORDS Base 
     - `GET` `/products/value/{product_id}`
     - `POST` <i>and</i> `GET` `/purchases/history`
 
-    While these are all considered Paths, ORDS would also consider that there are **four** different Resource Templates. All are unique, with the exception of the `/purchases/history` Resource Template. This Resource Template has a Resource <i>Handler</i> for `GET` <i>and</i> `POST` Operations. Please refer to the "Learn More" section of this Lab to learn more about Resource Templates and their relationship to Resource Handlers. 
+        ![Paths overview](images/paths-overview-page.png)
+
+    While these are all considered Paths, ORDS would also consider that these are **four** different <i>Resource Templates</i>. All are unique, with the exception of the `/purchases/history` Resource Template. This Resource Template has a Resource <i>Handler</i> for `GET` <i>and</i> `POST` Operations. Please refer to the "Learn More" section of this Lab to learn more about Resource Templates and their relationship to Resource Handlers. 
 
 2. Explore the Paths
 
-    Here we'll briefly selected Paths (recall there are <i>four</i> Resource Templates) and discuss their importance to the Flask application.
+    Here we'll review selected Paths (recall there are <i>four</i> Resource Templates) and discuss their importance to the Flask application.
 
       1. `GET` `/locations/map/data`
 
@@ -130,7 +137,7 @@ For this lab we'll rely on Swagger's Open Source Editor to review our ORDS Base 
 
               ![The OpenAPI info](images/get-path-for-folium-execute-request.png)
 
-          4. Scroll down slightly, to see the <b>Response Body</b> of the `GET` request. What does this payload look like it could be used for? If you guessed a map rendering, then you're correct. We'll use this information to populate a Folium map for our Flask application's main page (aka `index.html`)
+          4. Scroll down slightly, to see the <b>Response Body</b> of the `GET` request. What does this payload look like it could be used for? If you guessed a map rendering, than you're correct. We'll use this information to populate a Folium map for our Flask application's main page (aka `index.html`)
 
               ![The OpenAPI info](images/get-path-for-folium-response.png)
 
@@ -148,7 +155,7 @@ For this lab we'll rely on Swagger's Open Source Editor to review our ORDS Base 
 
           3. Notice how the Request URL has changed slightly, to include the `product_id` we included. Next, take a look at the Server response. You'll see the `product_description` for this product.
 
-          You'll see this `product_description` later in the HTML page for ordering/purchasing.Each time a product is selected/changed a separate API call is executed to return back the description for that product.
+          You'll see this `product_description` later in the HTML page for ordering/purchasing. Each time a product is selected/changed a separate API call is executed to return back the description for that product.
 
           A similar Path has been created for `GET` `/products/value/{product_id}`. But instead of a product description, the unit price for a product is returned. 
           

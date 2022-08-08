@@ -71,7 +71,7 @@ This lab assumes you have:
 ## Acknowledgements
 * **Author** - Chris Hoina, Senior Product Manager, Database Tools
 * **Contributors**
-  - Jeff Smith, Distuinguished Product Manager, Database Tools
+  - Jeff Smith, Distinguished Product Manager, Database Tools
   - Justin Biard, Senior Member of Technical Staff, Database Tools 
   - Zachary Talke, Product Manager, Database Tools
   - Brian Spendolini, Principal Product Manager
