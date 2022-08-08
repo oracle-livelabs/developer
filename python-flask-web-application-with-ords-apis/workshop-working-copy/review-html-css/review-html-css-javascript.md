@@ -2,44 +2,27 @@
 
 ## Introduction
 
-In this lab we'll continue to review the technologies and frameworks used in this web application.
+In this lab we'll review Bootstrap's HTML and CSS, JavaScript functions, and Jinja. We'll also review how JavaScript and Jinja interact with ORDS to allow our application to function. 
 
 Estimated Time: 20 minutes
 
-### About Oracle REST Data Services (ORDS) and developer tools 
-This lab will discuss a variety of Enterprise and open source technologies, including: 
-- Oracle REST Data Services (ORDS)
-- Oracle Clould Infrastructure (OCI) <i>Always Free</i> Tier Tenancy
-- Datbase Actions
-<!-- I'm actually not sure about cURL, but I don't want to forget it -->
-<!-- Make sure any changes here are also included in the Learn More section - we'll want to include those resources as well  -->
-- cURL
-- Python 3.10.x and later 
-- Python packages (libraries) such as: 
-  - Flask 
-  - Folium 
-  - Json
- - Requests 
-- <i>select</i> JavaScript functions 
-- Bootstrap HTML and CSS frameworks
-- Microsoft Visual Studio Code 
+### About Bootstrap, JavaScript functions Jinja, and ORDS 
+This lab will discuss how we've implemented Bootstrap, select Javascript functions and Jinja in our Flask application. 
+- Bootstrap 
+- JavaScript
+- Jinja 
 
-We will discuss and explore these technologies and solutions in a practical sense. However, should you wish explore above what this workshop covers, we encourage you to refer to the "Learn More" section of this page. 
+We will discuss and explore these technologies and solutions in a practical sense. However, should you wish explore further, refer to the "Learn More" section of this page. 
 
 ### Objectives
-In this lab, you will review the applications's:
+In this lab, you will review the application's:
 * HTML templates
-* CSS
 * JavaScript functions
-* Review the API's paths and functions
+* Included Jinja 
 
 ### Prerequisites
 This lab assumes you have:
-* An Oracle Cloud Infrastructure account
 * All previous labs successfully completed
-
-
-<!-- *This is the "fold" - below items are collapsed by default* -->
 
 ## Task 1: Review the application module
 
@@ -47,7 +30,7 @@ This lab assumes you have:
 
 	![Review of the Static and Templates folders](images/static-and-template-folders.png)
 
-	Collapse all folders to get a more focused view of the application and its dependencies. You'll notice a `static` and `template` folder. Typically, the `static` folder will contain any CSS or Javascript files. In this application, since we are using Bootstrap almost exclusively, we're largely removed the need for separate CSS files. Most of the HTML and CSS work is done through Bootstrap's APIs. You will however see images that are unique to our sample application. 
+	Collapse all folders to get a more focused view of the application and its dependencies. You'll notice a `static` and `template` folder. Typically, the `static` folder will contain any CSS or Javascript files. In this application, since we are using Bootstrap almost exclusively, we've largely removed the need for separate CSS files. Most of the HTML and CSS work is done through Bootstrap's APIs. You will however see images that are unique to our sample application. 
 
   The other, more comprehensive folder, is the `template` folder. Here you'll find all HTML pages used for this application. We'll also explore how we've integrated Bootstrap as well as JavaScript <i>directly</i> into our HTML pages. You'll see the `template` folder is simple. It includes all the HTML pages a user would interact with: 
   - `base.html`
@@ -147,33 +130,14 @@ This lab assumes you have:
 
 ## Learn More
 
-*(optional - include links to docs, white papers, blogs, etc)*
-
+* [Bootstrap]()
+* The HTML `onchange` event:
+  * [The `onchange` event](https://www.w3schools.com/jsref/event_onchange.asp)
+  * [The `onchange` Event Attribute](https://www.w3schools.com/tags/ev_onchange.asp)
+  * [The `HTMLElement` change event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/change_event)
 * [Flask and Stripe](https://stripe.com/docs/legacy-checkout/flask)
-<!-- * [About Database Actions](https://docs.oracle.com/en/database/oracle/sql-developer-web/)
-* [About cURL](https://curl.se/)
-* [About Python](https://www.python.org/)
-* [About Flask for Python](https://flask.palletsprojects.com/en/2.1.x/)
-* [About Folium for Python](https://github.com/python-visualization/folium)
-* [About Json for Python ](https://docs.python.org/3/library/json.html)
-* [About Requests for Python](https://requests.readthedocs.io/en/latest/)
-* [About Bootstrap](https://getbootstrap.com/docs/5.2/getting-started/introduction/)
-* [Mozilla Developer Network (MDN) Web Docs](https://developer.mozilla.org/en-US/) -->
-
-Oracle REST Data Services (ORDS)
-Oracle Clould Infrastructure (OCI) <i>Always Free</i> Tier Tenancy
-Datbase Actions
-<!-- I'm actually not sure about cURL, but I don't want to forget it -->
-<!-- Make sure any changes here are also included in the Learn More section - we'll want to include those resources as well  -->
-- cURL
-- Python 3.10.x and later 
-- Python packages (libraries) such as: 
-  - Flask 
-  - Folium 
-  - Json
- - Requests 
-- <i>select</i>JavaScript functions 
-- Bootstrap HTML and CSS frameworks
+* [Jinja basics](https://jinja.palletsprojects.com/en/3.1.x/api/#basics)
+* [About Bootstrap version 5.2](https://getbootstrap.com/docs/5.2/getting-started/introduction/)
 
 ## Acknowledgements
 * **Author** - Chris Hoina, Senior Product Manager, Database Tools
