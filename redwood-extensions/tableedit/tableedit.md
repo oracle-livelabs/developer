@@ -83,38 +83,43 @@ Now let's add content to the empty columns we just created.
 
 Your table now has action buttons that look good. The next step is to tell Visual Builder what these buttons should do when the user clicks on them.
 
+## Task 3: Define Action Chains
+
+Visual Builder apps are event driven, when an end user performs an operation in the user interface it fires up an event. Developers create action chains to handle those events. An action chain defines a set of actions that will take place. Action chains are created visually in the action chain editor.
+
+1. In the Design view of the application, select the Edit button, and in the properties palette switch to the **events** tab.
+
+	![Image alt text](images/sample1.png)
+
+	> **Note:** Use this format for notes, hints, tips. Only use one "Note" at a time in a step.
+
+2. Click the **New Event** button and select the **On ojAction** option. This will take you into the action chain editor.
+
+On the left side you see all the actions you can declaratively define including calling REST endpoints, invoking JavaScript function, and many more. The quick starts we used to create the edit and details page already created action chains that invoke the needed logic for us. All we need to do is call those existing action chains from the new action chain we are defining.
+
+3. From the list of actions on the left select the **Call Action Chain** action and drag and drop it onto the + sign.
+
+4. In the property inspector, in the drop down list for the **Action Chain ID** select the **NavigateToEditAccountsChain**.
+
+5. Note that this action expects a value for the input parameter **accountsid**. Click the **Not Mapped** text.
+
+6. The dialog that shows up allows you to map values into variables in an easy drag and drop way.
+
+7. From the left side select **Key** which is an Action Chain->Variable and drag it over to the right side's **accountsid** parameter.
+
+8. Click the **Save** button to save your assignment.
+
+9. Click the **Page Designer** tab to go back to the visual view of the main-start page.
+
+10. Repeat steps 1-9 this time for the **info** button. Create an **On ojAction** action chain, and in it add a **Call Action Chain** action. For the action you map this time choose the **NavigateToAccountsDetailChain** action and map the input parameter to the **Key** variable.
+
+11. Click to **Preview** your updated page. See how you can now click the buttons in the lines to edit and get further information about each account.
+
+12. If your buttons are working as expected, go back to the page editor and in the structure pane select the **Toolbar** component that contains the two buttons that were added by the quick starts. **Right Click** and  choose **delete** to remove them from your page.
 
 
-  ![Image alt text](images/sample1.png)
-3. This time pick the **Add Detail Page**, this will create a page that will let us edit the details of a row we selected from the table.
-	  ![Image alt text](images/sample1.png)
+Your table now has action buttons that look good and work as expected. The next step is to fine tune the look and feel of the pages created by the quick starts and apply some Redwood templates to them.
 
-
-4. In the dialog that pops up for selecting the object from which we pick a specific record the **Accounts** object is already selected, keep it that way and click **next**.
-
-5. In the field selection page use the Filter at the top of list of fields to locate specific fields.
-
-6. Select the following fields:
-* OrganizationName
-* CEOName
-* OwnerName
-* AddressLine1
-* AddressLine2
-* AddressLine3
-* AddressLine4
-* City
-* County
-* Country
-
-7. Click **Finish** to complete the quick start and create the page.
-
-8. Let's preview the updated app. Click the Preview button to run the new app, and navigate to the other browser tab to see the updated page loaded.
-
-9. When the page loads, search to locate a specific record, then select that record in the table and click the **edit accounts** button, this takes you to the edit page. Update information such as the CEO Name and revenue for the account and click the **Save** button. The data is submitted to Oracle Cloud Apps and is saved there. It will show up in your table too.
-
-10. Click on another record and then click the "account Details" button to find out the address of the account. Use the browser's back button to return to the list page.
-
-Our application is functioning well. The next step would be to fine tune the look and feel of the pages and apply some of the Redwood page templates.
 
 ## Learn More
 

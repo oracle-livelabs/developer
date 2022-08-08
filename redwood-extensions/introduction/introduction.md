@@ -4,15 +4,17 @@
 
 This lab walks you through building an extension application for Oracle Fusion Cloud Applications using Oracle Visual Builder and leveraging the Oracle Redwood user experience.
 
-In our scenario we want to create a streamlined experience for account managers to be able to update key data points about their accounts, and to view the contact information for each account.
+In our scenario we want to create a streamlined experience for account managers to be able to update key data points about their accounts, and to view the contact information for each account. Oracle Cloud Apps Digital Sales module has pages that allow account managers to do this today. But those pages contain many other fields and might involve navigation through several steps to get to the data. We are creating a specific simplified flow for the end of the quarter update.
+
+The spec we got for the app require us to provide a page that will let us search for an account by name, then click to update key fields (CEO and projected revenue for this and next year). In addition we want and easy way to check the address of each of those accounts.
+
+Let's see how we can go about building such an extension leveraging Oracle Visual Builder.
 
 Estimated Workshop Time: 1 hour
 
   [](youtube:kqC2wLWw-cM)
 
 ### Objectives
-
-*List objectives for the workshop*
 
 In this workshop, you will learn how to:
 * Create Visual Builder Studio Workspaces
@@ -22,19 +24,13 @@ In this workshop, you will learn how to:
 
 ### Prerequisites (Optional)
 
-*List the prerequisites for this lab using the format below. Fill in whatever knowledge, accounts, etc. is needed to complete the lab. **Do NOT list** each previous lab as a prerequisite.*
-
 This lab assumes you have:
-* Access to Oracle Fusion Cloud Applications
+* Access to Oracle Fusion Cloud Applications (Specifically the CX modules)
 * Access to the Oracle Visual Builder Studio that is part of Oracle Fusion Cloud Applications
-
-*This is the "fold" - below items are collapsed by default*
 
 In general, the Introduction does not have Steps.
 
 ## Learn More
-
-*(optional - include links to docs, white papers, blogs, etc)*
 
 * [Oracle Visual Builder](https://www.oracle.com/application-development/visual-builder/)
 * [Extending Oracle Cloud Applications with Oracle Visual Builder](https://docs.oracle.com/en/cloud/paas/visual-builder/visualbuilder-building-appui/index.html)

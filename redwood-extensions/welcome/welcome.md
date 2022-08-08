@@ -2,30 +2,28 @@
 
 ## Introduction
 
-*Describe the lab in one or two sentences, for example:* This lab walks you through creating a new page in an App UI extension that will let you search a list of accounts from Oracle's Customer Experience SaaS app showing specific fields you are interested in.
+This lab walks you through creating a new App UI extension with a page. We then use a Redwood template to design the page's overall structure.
 
-Estimated Time: 10 minutes
+Estimated Time: 5 minutes
 
 ### About <Product/Technology> (Optional)
 In this lab we leverage the Redwood welcome page template along with Oracle JET UI components to create a page that connects to Oracle SaaS's object and show you a list of accounts and allows filtering the list.
 
 ### Objectives
 
-*List objectives for this lab using the format below*
-
 In this lab, you will:
-* Creating pages
+* Get familiar with the development environment
+* Learn to create pages
 * Leverage Redwood templates and components
-* Binding data from Oracle Cloud Apps data objects
-* Previewing your application
+
 
 *This is the "fold" - below items are collapsed by default*
 
 ## Task 1: Create an App UI application
 
-You are now seeing the home page of the visual development area for Visual Builder applications. We'll now create a new application that could be deployed as an App UI extension to the Oracle SaaS instance. With App UIs you can create new interfaces that match specific business needs on top of Orace SaaS data.
+You are now seeing the welcome page of the visual development area for Visual Builder applications. We'll now create a new application that could be deployed as an App UI extension to the Oracle SaaS instance. With App UIs you can create new interfaces that address specific business needs for your company.
 
-1. On the left side application overview area click to create a new App UI
+1. On the left side of the application overview area click to create a new App UI
 
 	![Image alt text](images/sample1.png)
 
@@ -35,17 +33,15 @@ You are now seeing the home page of the visual development area for Visual Build
 
   ![Image alt text](images/sample1.png)
 
-4. The application is created and you are taken into the application overview tab where you can see your flows and pages. A flow is a part of your application that contains pages that relate to each other. An application can contain multiple flows, and a flow can contain many pages.
+4. The application is created, and you are taken into the application overview tab where you can see your flows and pages. A flow is a part of your application that contains pages that relate to each other. An application can contain multiple flows, and a flow can contain many pages.
 
 5. Double click the **main-start** page that was created in the main flow. This will open the page in the visual editor.
 
-   If you add another paragraph, add 3 spaces before the line.
 
 ## Task 2: Designing your page
 
 1. Let's explore the areas of the visual editor. Note that you can click on the various tabs to expand/collapse areas of your development environment.
 
-  Use tables sparingly:
 
   | #| Tab | Functionality |
   | --- | --- | --- |
@@ -55,8 +51,7 @@ You are now seeing the home page of the visual development area for Visual Build
 	  | 4 | Properties | A declarative way to define the properties of the selected component in your page |
 	  | 5 | Visual Editor | Shows you a design/live and code view of your page content |
 
-2. The components palette contains over a hundred UI components that you can drag and drop to your page to design your interfaces. We are going to leverage page templates designed by the Oracle Design team for the Redwood apps so accelerate our application development. The templates provide a responsive user experience and will adjust your application to the device accessing it.
-
+2. The components palette contains over a hundred UI components that you can drag and drop onto your pages to design your interfaces. We are going to leverage page templates designed by Oracle's Design team for the Redwood apps to accelerate our application development. The templates provide a responsive user experience and will adjust your application to the device accessing it.
 
 3. Use the search box at the top of the components palette to search for **welcome** which will find the **welcome page template**. Drag the component from the component palette and drop it on the visual editor.  
 

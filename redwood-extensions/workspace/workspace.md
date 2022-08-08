@@ -2,33 +2,23 @@
 
 ## Introduction
 
-*Starting from inside Oracle Fusion Cloud Applications, we'll navigate to Visual Builder and create a new workspace where we can develop our new Application Extension.
+Starting inside Oracle Fusion Cloud Applications, we'll navigate to Visual Builder and create a new workspace where we can develop our new Application Extension.
 
-Estimated Lab Time: 10 minutes
+Estimated Lab Time: 5 minutes
 
-### About <Product/Technology> (Optional)
+### About Oracle Visual Builder
 Oracle Visual Builder Studio is included as one of the configuration tools that come with Oracle Cloud Apps. We'll be using it to create and manage a project where we develop extensions.
 
 ### Objectives
 
-*List objectives for this lab using the format below*
-
 In this lab, you will:
-* Navigate to Visual Builder
+* Access Oracle Visual Builder
 * Create a new workspace
-
-### Prerequisites (Optional)
-
-*List the prerequisites for this lab using the format below. Fill in whatever knowledge, accounts, etc. is necessary to complete the lab. Do NOT list each previous lab as a prerequisite.*
-
-This lab assumes you have:
-* An Oracle Cloud account
-* All previous labs successfully completed
 
 
 *This is the "fold" - below items are collapsed by default*
 
-## Task 1: Open Visual Builder
+## Task 1: Access Visual Builder and Create a Workspace
 
 Users with the right roles can access Visual Builder Studio from the TEST instance of their Oracle Cloud Applications.
 
@@ -36,11 +26,11 @@ Users with the right roles can access Visual Builder Studio from the TEST instan
 
 	![Image alt text](images/sample1.png)
 
-2. From the hamburger menu at the top right, navigate to the configuration section and expand it. Select the Visual Builder option.
+2. From the hamburger menu at the top right, navigate to the **Configuration** section and expand it. Select the **Visual Builder** option.
 
   ![Image alt text](images/sample1.png)
 
-3. When prompted to select a project choose the CloudWorld project. Visual Builder Studio uses projects to manage development teams activities.
+3. When prompted to select a project choose the **CloudWorld-lab** project. Visual Builder Studio uses projects to manage development teams activities.
 
 	  ![Image alt text](images/sample1.png)
 
@@ -59,7 +49,8 @@ Users with the right roles can access Visual Builder Studio from the TEST instan
 | Development Environment |Choose the option available | This is mapped to your SaaS instance|
 | Base Oracle Cloud Application | None | We are creating a new app without dependencies |
 | Use Scratch Repository | Checked | For now we just want your personal copy of the code |
-Click Create - this might take a couple of minutes to complete and then you'll be taken into the Visual Editor.
+
+8. Click Create - this might take a couple of minutes to complete and then you'll be taken into the Visual Builder development environment.
 
 
 ## Learn More
