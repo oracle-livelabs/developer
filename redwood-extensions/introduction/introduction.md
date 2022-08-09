@@ -17,18 +17,16 @@ Estimated Workshop Time: 1 hour
 ### Objectives
 
 In this workshop, you will learn how to:
-* Create Visual Builder Studio Workspaces
+* Learn to use Oracle Visual Builder Studio
 * Create App UI extensions for Oracle Fusion Cloud Applications
 * Leverage Oracle Redwood templates and components
-* Connect to Oracle Cloud Apps data
+* Create new user interfaces that interact with data in Oracle SaaS
 
-### Prerequisites (Optional)
+### Prerequisites 
 
 This lab assumes you have:
 * Access to Oracle Fusion Cloud Applications (Specifically the CX modules)
 * Access to the Oracle Visual Builder Studio that is part of Oracle Fusion Cloud Applications
-
-In general, the Introduction does not have Steps.
 
 ## Learn More
 
@@ -37,5 +35,5 @@ In general, the Introduction does not have Steps.
 
 ## Acknowledgements
 * **Author** - Shay Shmeltzer, Oracle Cloud Development Tools, August 2022
-* **Contributors** -  <Name, Group> -- optional
-* **Last Updated By/Date** - <Name, Month Year>
+* **Contributors** -  Blaine Carter, Oracle Cloud Development Tools
+* **Last Updated By/Date** - Shay Shmeltzer, Oracle Cloud Development Tools, August 2022
