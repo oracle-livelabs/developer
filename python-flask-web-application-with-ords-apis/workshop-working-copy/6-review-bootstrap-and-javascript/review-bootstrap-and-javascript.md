@@ -47,16 +47,21 @@ This lab assumes you have:
 
     ![Base HTML page](images/base-html-page.png)
 
-    The `base` HTML page is quite literally the base, foundation of this application. You'll notice we include an API for Bootstrap's CSS framework. At the bottom of this page, you'll see we include the API for JavaScript as well. This all allows us to easily extend the Bootstrap framework - which allows us to rely no Bootstrap for much of the presentation layer of this application. For if not, all HTML and CSS would need to be coded from scratch. 
+    The `base` HTML page is quite literally the foundation of this application. Notice we've included an API for Bootstrap's CSS framework. At the bottom of this page, you'll see we include the API for JavaScript as well. This all allows us to easily extend the Bootstrap framework - which allows us to rely on Bootstrap for much of the application's presentation layer. 
 
-    You'll also notice three JavScript functions: `totalPrice()`, `getPrice()`, and `getDescription()` These functions are triggered when a user visits and/or interacts with the `orderform.html` page. We'll discuss in more detail the output of each function shortly. 
+    Also note our three JavScript functions: 
+    - `totalPrice()`
+    - `getPrice()`
+    - `getDescription()` 
+    
+    These functions are triggered when a user visits and/or interacts with the `orderform.html` page. We'll discuss in more detail the output of each function shortly. 
 
     You may also notice Jinja templating near the `</head>`, and `<main>` HTML tags. The different variations (which you'll see throughout) are referred to as "delimiters": 
-    - `{% ... %}` are used statements
-    - `{{ ... }}` are used for Expressions
-    - `{# ... #}` 
+    - `{% ... %}` Statements
+    - `{{ ... }}` Expressions
+    - `{# ... #}` Comments
     
-    Each serve different purposes, but all allow us to easily and dynamically pass in additional information while using syntax similar to python. While Jinja education is outside the scope of this lab, you may review the **Learn More** section of this lab to review the Jinja documentation.
+    Each serve different purposes, but all allow us to easily and dynamically pass in additional information while using syntax similar to Python. While Jinja education is outside the scope of this lab, you may review the **Learn More** section of this lab to review the Jinja documentation.
 
     We will rely on this `base.html` page across the application. We will also need the navigation bar across all pages, thus we include it so it will render in all pages (i.e. the `{% include 'navbar.html' %}` placeholder).
 
@@ -80,11 +85,11 @@ This lab assumes you have:
 
     ![Index HTML page](images/index-html-page.png)
 
-    This page acts as the "landing page" for the user. When the user is first welcomed, there is copy related to the product/service. Notice the Jinja here as well. Recall how "block content" works in concert with the `base.html` page. The HTML on this `index.html` page will "extend" the `base` page (i.e. `{% extends "base.html" %}`), while still displaying the `index.html` page. And since the `navbar` is included in the `base` page, it will display here as well.
+    This page acts as the "landing page" for the user. When a user arrives, they'll first see a description related to the product/service. Notice the Jinja here as well. Recall how "block content" works in concert with the `base.html` page. The HTML on this `index.html` page will "extend" the `base` page (i.e. `{% extends "base.html" %}`), while still displaying the `index.html` page. And since the `navbar` is included in the `base` page, it will display here as well.
 
-    Further down, you will see `{{ lvmap | safe }}`, this allows us to pass in the Folium map (which was created in our `app.py` file). We use the "safe" filter to indicate that this should <i>not</i> be escaped, should there be a case where automatic escaping is enabled. Otherwise, we run the risk of our map not rendering. 
+    Further down, you will see `{{ lvmap | safe }}`, this allows us to pass in the Folium map (which was created in our `app.py` file). We use the "safe" filter to indicate that this should <i>not</i> be escaped, should there be a case where automatic escaping is <u>`enabled`</u>. Otherwise, we run the risk of our map not rendering. 
 
-    Finally, you'll see a button (surrounded by the blue box), which when clicked, will take the user to the `orderform.html` page.
+    Finally, you'll see the line `<a href=`<u>`"/orderform"`</u>`class="btn btn-outline-primary">Purchase Day Passes!</a>` (surrounded by the blue box in the image), which when clicked, will take the user to the `orderform.html` page.
 
 4. `orderform.html`
 
@@ -96,7 +101,7 @@ This lab assumes you have:
 
       1. ![Order form action](images/order-form-action.png)
       
-          Here you will notice, that once the form is submitted, `@app.route('result')` is triggered. Recall on the `app.py` file that this route accepts both `POST` and `GET` methods (aka "requests"). The function included in `@app.route('result')`, has an ORDS endpoint, which expects a json payload. After receiving this `POST` request, the related table will be updated to include a customer's order information.
+          Here you will notice, that once the form is submitted, `@app.route('result')` is triggered. Recall on the `app.py` file that this route accepts both `POST` and `GET` methods (aka "requests"). The function included in `@app.route('result')`, has an ORDS endpoint, which expects a JSON payload. After receiving this `POST` request, the related table will be updated to include a customer's order information.
 
       2.  ![Price and description JavaScript functions](images/order-form-get-price-get-description.png)
       

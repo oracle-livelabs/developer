@@ -1,8 +1,8 @@
-# Title of the Lab
+# Review the Application and routes
 
 ## Introduction
 
-In this lab we will explore the technologies and frameworks that comprise our sample web application.
+In this Lab we will obtain the Python application and related contents for this Workshop. We will then briefly explore our Flask application's routes and their contents. 
 
 Estimated Time: 20 minutes
 
@@ -38,7 +38,6 @@ In this lab, you will:
 * A text editor (such as Visual Studio Code or Sublime Text)
 
 This lab assumes you have:
-* An Oracle Cloud Infrastructure account
 * All previous labs successfully completed
 
 ## Task 1: Obtain code for this Workshop
@@ -87,7 +86,7 @@ This lab assumes you have:
     - requests
     - json 
 
-3. Review the Python application
+3. Python application overview
 
     Beginning with the first line in our code you'll see we have created an instance of the `Flask` class: 
 
@@ -127,65 +126,57 @@ This lab assumes you have:
     
     In all cases, you'll notice that an ORDS endpoint is used for either a `GET` or `POST` method.
 
-    #### The Routes 
-
-    1. `@app.route('/')`
-          
-        ![The Index route](images/app-route-index.png)
-
-        This route contains the `index()` function. When a user navigates to the home page they'll be presented with the `index.html` page. We are also including our newly constructed Folium map, `lvnmap` as an argument. 
-      
-        We'll review the HTML pages shortly so you can view all functions and their output in context.
-
-    2. `@app.route('/get_price')`
-
-        ![The Get Price route](images/app-route-get-price.png)
+## Task 3: Review the Routes 
     
-        The function of this route `getPrice()` appends `a` to an ORDS endpoint. From there we retrieve product prices from a product table. This will be one of the fields we'll use in a drop-down menu (found on the `orderform.html` page).
+1. `@app.route('/')`
         
-        You'll notice the final line in this function `return jsonify(product_price)` which takes the response and converts it to the JSON format while also assigning it a mimetype of "application/json". Later, we'll review this route along with a JavaScript function, to learn how they work in tandem with our ORDS endpoint. 
+    ![The Index route](images/app-route-index.png)
 
-    3. `@app.route('/get_description')`
-
-        ![The Get Description route](images/app-route-get-description.png)
+    This route contains the `index()` function. When a user navigates to the home page they'll be presented with the `index.html` page. We are also including our newly constructed Folium map, `lvnmap` as an argument. 
     
-        Much like the `get_price` app route, this function requests product description information from our database. It uses a similar syntax as before. We then `return jsonify(product_description)` which takes the response and converts it like before. 
+    We'll review the HTML pages shortly so you can view all functions and their output in context.
+
+2. `@app.route('/get_price')`
+
+    ![The Get Price route](images/app-route-get-price.png)
+
+    The function of this route `getPrice()` appends `a` to an ORDS endpoint. From there we retrieve product prices from a product table. This will be one of the fields we'll use in a drop-down menu (found on the `orderform.html` page).
     
-    4. `@app.route('/orderform')`
+    You'll notice the final line in this function `return jsonify(product_price)` which takes the response and converts it to the JSON format while also assigning it a mimetype of "application/json". Later, we'll review this route along with a JavaScript function, to learn how they work in tandem with our ORDS endpoint. 
 
-        ![The Order Form route](images/app-route-order-form.png)
+3. `@app.route('/get_description')`
+
+    ![The Get Description route](images/app-route-get-description.png)
+
+    Much like the `get_price` app route, this function requests product description information from our database. It uses a similar syntax as before. We then `return jsonify(product_description)` which takes the response and converts it like before. 
+
+4. `@app.route('/orderform')`
+
+    ![The Order Form route](images/app-route-order-form.png)
+
+    Using a separate ORDS endpoint, our application performs a more typical `GET` request. Here we return a list of products, along with the `orderform.html` page. Notice how we create new variables, which we'll use for with our JavaScript functions. We'll review our three JavaScript functions in the next lab. 
+
+5. `@app.route('/orderhistory')`
+
+    ![The order history route](images/app-route-order-history.png)
+
+    Performing a `GET` request to this endpoint will return the items in a table that stores customer order history. While this particular application doesn't cover credentialing of individual customers, the aim is to showcase the ease of retrieving <i>specific</i> customer data with relative ease.
+
+    You'll see how this app route is triggering in the `orderform.html` page. 
+
+6. `@app.route(/result', methods = ['POST', 'GET'])`
+
+    ![The result route](images/app-route-result.png)
+
+    Using the same ORDS endpoint as the `orderhistory` app route, we can infer that this route expects a `POST` request originating from the Flask application. This function also performs actions such as establishing the key:value pairs of the incoming data, and the JSON payload headers well. 
+
+    In short, this function is triggered by the submit action on the `orderform.html` page. But rather than staying on that page, the user is redirected to the `orderhistory.html` page. 
     
-        Using a separate ORDS endpoint, our application performs a more typical `GET` request. Here we return a list of products, along with the `orderform.html` page. Notice how we create new variables, which we'll use for with our JavaScript functions. We'll review our three JavaScript functions in the next lab. 
-
-    5. `@app.route('/orderhistory')`
-
-        ![The order history route](images/app-route-order-history.png)
-
-        Performing a `GET` request to this endpoint will return the items in a table that stores customer order history. While this particular application doesn't cover credentialing of individual customers, the aim is to showcase the ease of retrieving <i>specific</i> customer data with relative ease.
-
-        You'll see how this app route is triggering in the `orderform.html` page. 
-
-    6. `@app.route(/result', methods = ['POST', 'GET'])`
-
-        ![The result route](images/app-route-result.png)
-
-        Using the same ORDS endpoint as the `orderhistory` app route, we can infer that this route expects a `POST` request originating from the Flask application. This function also performs actions such as establishing the key:value pairs of the incoming data, and the JSON payload headers well. 
-
-        In short, this function is triggered by the submit action on the `orderform.html` page. But rather than staying on that page, the user is redirected to the `orderhistory.html` page. 
-      
-      7. You may now proceed to the next Lab.
+7. You may now proceed to the next Lab.
 
 ## Learn More
 * [A minimal application in Flask](https://flask.palletsprojects.com/en/2.1.x/quickstart/#a-minimal-application)
 * [About the Flask "Application Object"](https://flask.palletsprojects.com/en/2.1.x/api/#application-object)
-<!-- * [About cURL](https://curl.se/)
-* [About Python](https://www.python.org/)
-* [About Flask for Python](https://flask.palletsprojects.com/en/2.1.x/)
-* [About Folium for Python](https://github.com/python-visualization/folium)
-* [About Json for Python ](https://docs.python.org/3/library/json.html)
-* [About Requests for Python](https://requests.readthedocs.io/en/latest/)
-* [About Bootstrap](https://getbootstrap.com/docs/5.2/getting-started/introduction/)
-* [Mozilla Developer Network (MDN) Web Docs](https://developer.mozilla.org/en-US/) -->
 
 ## Acknowledgements
 * **Author** - Chris Hoina, Senior Product Manager, Database Tools
