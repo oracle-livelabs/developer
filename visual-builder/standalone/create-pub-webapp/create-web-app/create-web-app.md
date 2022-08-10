@@ -14,7 +14,7 @@ Each component depends on a _business object_ for its data. A business object is
 
 In this lab, you'll create the Employee, Department, and Location business objects to build a simple Human Resources application. Each business object has its own set of fields as shown here:
 
-![](images/vbcsca_dbdiagram.png "This illustration shows the database schema for the HR visual web application. Every table has a system-defined Id field. The Location table has one user-defined field, Name. The Department table has two user-defined fields, Name and Location. The Employee table has seven user-defined fields: Country, Department, Email, Hire Date, Name, Picture, and Salary. ")
+![](images/db-diagram.png "This illustration shows the database schema for the HR visual web application. Every table has a system-defined Id field. The Location table has one user-defined field, Name. The Department table has two user-defined fields, Name and Location. The Employee table has seven user-defined fields: Country, Department, Email, Hire Date, Name, Picture, and Salary. ")
 
 Once you have your business objects, you'll use them to build the HR web app in which every employee belongs to a department, and every department has a location. Your goal is to allow your users to add employee names and their departments to the database, and to change that data when necessary.
 
@@ -25,11 +25,11 @@ The first thing we'll do is create the web application itself. Later, we'll cons
 1.  In the web browser, log in to Visual Builder.
     -   If you don't have any applications, the landing page appears. Click **+ New Application**.
 
-        ![](images/vbcsca_cra_s1a.png "This image shows Oracle Visual Builder's Welcome page, with a New Application button to create an application and an Import Application button to import an application.")
+        ![](images/homepage.png "This image shows Oracle Visual Builder's Welcome page, with a New Application button to create an application and an Import Application button to import an application.")
 
     -   If you have one or more current applications, the Visual Applications page shows you a list of them. Click **New**.
 
-        ![](images/vbcsca_cra_s1b.png "This image shows the top part of the Visual Applications page of Oracle Visual Builder. The New button is selected.")
+        ![](images/homepage-new.png "This image shows the top part of the Visual Applications page of Oracle Visual Builder. The New button is selected.")
 
 2.  In the Create Application dialog box, enter:
 
@@ -40,11 +40,11 @@ The first thing we'll do is create the web application itself. Later, we'll cons
 
 3.  Click **Finish**.
 
-    The application is created and opens on the Welcome page.
+    The newly created visual application opens on the Welcome page.
 
     ![](images/vbcsca_cra_s3.png "This image shows a new application's Welcome page. It contains tiles in three sections. The Connect to Data contains the Service Connections and Business Objects tiles. The Create Apps section contains the Mobile Apps and Web Apps tiles. The Add Artifacts section contains the Components and Process tiles. On the right are Learn and Help sections with references to documentation and other resources.")
 
-    The Welcome page contains sets of tiles in three groups: Connect to Data, Create Apps, and Add Artifacts. On the far left are icons representing Mobile Applications, Web Applications, Services, Business Objects, Components, Processes, and Source. This vertical toolbar is the Navigator.
+    The Welcome page contains a set of tiles in three groups: **Connect to Data**, **Create Apps**, and **Add Artifacts**. On the far left are icons representing Mobile Applications, Web Applications, Services, Business Objects, Components, Processes, and Source. This vertical toolbar is the Navigator.
 
     Now take note of the header:
     ![](images/header.png "This image shows the visual application's header. The application name HR Visual Application is on the left. On the right are icons that let you perform other actions: Undo, Redo, Git, Go to File, Preview, and Menu.")
@@ -65,9 +65,9 @@ The first thing we'll do is create the web application itself. Later, we'll cons
 
     ![](images/vbcsca_cra_s7.png "This image shows the Web Apps pane after the hrwebapp has been created. The app itself is open on the right, on the main-start page, showing the Components Palette. On the far right, the Properties tab shows the Page view.")
 
-    What you see under the **main-start** tab is your application's work area. Just under **main-start** are several horizontal tabs: Page Designer, Actions, Event Listeners, and so on. By default, a page opens in the Page Designer, with the Components palette, the Data palette, and the Structure view on the left edge of the work area. To design your pages, you'll drag UI components from the Components palette to the canvas. Once you add components, the hierarchy of those components on your page will show in the Structure view.
+    What you see under the **main-start** tab is your application's work area. Just under **main-start** are several horizontal tabs: **Page Designer**, **Actions**, **Event Listeners**, and so on. By default, a page opens in the **Page Designer** and features the **Components** palette, the **Data** palette, and the **Structure** view on the left edge of the work area. To design your pages, you'll drag UI components from the Components palette to the canvas. Once you add components, the hierarchy of those components on your page will show in the Structure view.
 
-    On the far right is the Properties pane, which lets you view or edit a component's properties. When the entire page is selected (as it is now), the Properties pane shows the Page view, where you can choose a preferred page layout. Click **Properties** (the vertical tab located along the right-most edge of your browser) to hide the Properties pane and expand your work area.
+    On the far right is the **Properties** pane, which lets you view or edit a component's properties. When the entire page is selected (as it is now), you'll see the Page view, where you can choose a preferred page layout. Click **Properties** (the vertical tab located along the right-most edge of your browser) to hide the Properties pane and expand your work area.
 
     You can also move different panes to customize your work area. For example, right-click **Structure** at the bottom of your work area, then select **Move to Top Left** to move the Structure view right under **Components** and **Data**.
 
@@ -95,9 +95,9 @@ Let's create your first business object and add data to it by importing a CSV fi
     -   **Field Name**: `location` (automatically populated)
     -   **Type**: **String** ![String](images/vbcsca_textfield_icon.png) (selected by default)
 
-    Click **Create Field**.
-
     ![](images/vbcsca_imp_s6.png "This image shows the + Field pop-up box, with Location entered in the Label field, location filled in as the Field Name value, and the String type selected. The Create Field button is selected.")
+
+    Click **Create Field**.
 
 7.  Click **Properties** on the right (if necessary) to view the **Location** field's properties, then select the **Required** check box under **Constraints**.
 
@@ -111,7 +111,7 @@ Let's create your first business object and add data to it by importing a CSV fi
 
     ![](images/vbcsca_imp_s9.png "This image shows the Data tab of the Location business objects. No data is displayed.")
 
-10.  In the Import Data dialog box,  click the drag and drop box, browse to select the `Location.csv` file, and click **Import**.
+10.  In the Import Data dialog box, click the drag and drop box, browse to select the `Location.csv` file, and click **Import**.
 
     ![](images/vbcsca_imp_s11.png "This image shows the Import from File dialog box after the Location.csv file has been imported. The Close button is selected.")
 
@@ -127,7 +127,7 @@ Let's now create the Department and Employee business objects. But instead of cr
 
 2. In the Navigator's Business Object pane, click **Menu** ![Menu icon](images/vbcsca_menu_icon.png) and select **Data Manager**. The Data Manager is what you use to import data from a variety of sources.
 
-  ![](images/data-mgr.png "")
+  ![](images/data-mgr.png "This image shows the Data Manager option on Menu option highlighted on the Business Objects pane.")
 
 3. On the Manage Application Data page, select **Import Business Objects**.
 
@@ -136,7 +136,7 @@ Let's now create the Department and Employee business objects. But instead of cr
 
 4. On the Upload File step of the Import New Business Objects wizard, click the drag and drop box, select the Department-Employee-BO.zip file, and click **Upload**.
 
-   When the file is uploaded, you'll see a message that the import contains records for two business objects. Click **Next**.
+   When the file is uploaded, you'll see a message that the import contains records for the Department and Employee business objects. Click **Next**.
 
  ![](images/import-bos-upload-result.png "This image shows the Import New Business Objects wizard on the Upload File screen. A zip file has been uploaded and the results show at the bottom.")
 
@@ -155,7 +155,14 @@ Let's now create the Department and Employee business objects. But instead of cr
 
 7. For the same **Location** field, click **Required** to deselect the setting (**Department** is the only required field for the Department object).
 
-8. Now click the **Employee** tab and change the **Department** field's type to a reference, similar to what you did for the **Location** field previously.
+8. Now click the **Employee** tab and change the **Department** field's type to a reference, similar to what you did for the **Location** field. Click **#** in the **Department** field's Type column and change the Type setting as follows:
+
+    -   **Type**: **Reference** ![Reference icon](images/vbcsca_referencefield_icon.png)
+    -   **Referenced Business Object**: **Department**
+    -   **Display Field**: **Department** (automatically populated)
+
+    Click **OK**.
+
 
 9. Remove **Required** for all Employee fields, except **Name**.
 
