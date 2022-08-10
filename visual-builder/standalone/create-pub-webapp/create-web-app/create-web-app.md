@@ -209,4 +209,4 @@ Now that we have our business objects, let's create a diagram that provides a vi
 ## Acknowledgements
 
 * **Author** - Sheryl Manoharan, Visual Builder User Assistance, August 2021
-* **Last Updated By** - June 2022
+* **Last Updated By** - August 2022

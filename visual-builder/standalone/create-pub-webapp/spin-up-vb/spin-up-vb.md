@@ -56,4 +56,4 @@ Visual Builder instances use Oracle Cloud Infrastructure (OCI) as their underlyi
 ## Acknowledgements
 
 * **Author** - Sheryl Manoharan, Visual Builder User Assistance, August 2021
-* **Last Updated** - July 2022
+* **Last Updated** - August 2022
