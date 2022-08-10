@@ -2,7 +2,7 @@
 
 ## Introduction
 
-In this lab, you will use Database Actions and the REST console to build a REST API using a parametrized PL/SQL procedure and SQL statement. 
+In this lab, you will use Database Actions and the REST console to build a REST API using a parameterized PL/SQL procedure and SQL statement. 
 
 Estimated Lab Time: 20 minutes
 
@@ -10,35 +10,27 @@ Watch the video below for a quick walk through of the lab.
 
 [](youtube:6Y_BArzNgaw)
 
-### You can learn more about REST in the  **Learn More About REST** section the [introduction](../intro/intro.md) page of this lab.
-
 ### Objectives
 
 - Publish REST API using Custom SQL
 - Publish REST API using stored PL/SQL procedure
 - Explore the OpenAPI View created by ORDS
 
-
 ### Prerequisites
 
 - The following lab requires an <a href="https://www.oracle.com/cloud/free/" target="\_blank">Oracle Cloud account</a>. You may use your own cloud account, a cloud account that you obtained through a trial, or a training account whose details were given to you by an Oracle instructor.
 
-This lab assumes you have completed the following labs:
-* Lab 1: [Login to Oracle Cloud](https://oracle-livelabs.github.io/common/labs/cloud-login/pre-register-free-tier-account.md)
-* Lab 2: [Provision an Autonomous Database](https://oracle-livelabs.github.io/adb/shared/adb-provision/adb-provision.md)
-* Lab 3: [Connect to your Autonomous Database using Database Actions/SQL Developer Web](https://oracle-livelabs.github.io/common/labs/sqldevweb-login/sqldevweb-login.md)
-* Lab 4: [Create and auto-REST enable a table](../create-table/create-table.md)
-* Lab 5: [Loading Data and Creating Business Objects](../load-data-and-biz-objs/load-data-and-biz-objs.md)
+- This lab assumes you have completed all previous Labs. 
 
 ## Task 1: REST Enable a custom SQL Statement
 
-**If this is your first time accessing the REST Workshop, you will be presented with a guided tour. Complete the tour or click the X in any tour popup window to quit the tour.**
+:bulb: <i>If this is your first time accessing the REST Workshop, you will be presented with a guided tour. Complete the tour or click the `X` in any tour popup window to quit the tour.</i>
 
-1. Start by using the **Database Actions Menu** in the upper left of the page and select **REST**
+1. Start by navigating to the **Database Actions Menu** in the upper left of the page and select **REST**.
 
     ![DB Actions Menus, choose REST](./images/choose-rest-db-actions-menu.png)
 
-2. Once on the **REST page**, use the upper tab bar to select **Modules**
+2. Once on the **REST page**, use the upper tab bar to select **Modules**.
 
     ![REST Tab Menu, choose Modules](./images/choose-modules-actions-menu.png)
 
@@ -46,21 +38,20 @@ This lab assumes you have completed the following labs:
 
     ![Left click the + Create Modules button](./images/create-module-action.png)
 
-4. The **Create Module** slider comes out from the right of the page.
+4. The **Create Module** slider appears from the right of the page.
 
     ![Create Modules slider](./images/create-new-module-slider.png)
 
-5. Using the **Create Module** slider, we start with the Module name. Lets use the following value of **com.oracle.livelab.api**
+5. Using the **Create Module** slider, begin by adding a Module name. Use the following: **com.oracle.livelab.api**
 
     ````
     <copy>com.oracle.livelab.api</copy>
     ````
-**A module is an organizational unit used to group related resource templates. Templates will have handlers, which are responsible for providing the logic required to service a specific HTTP method (e.g., GET, POST, PUT, DELETE, UPDATE, etc.)**
-
+    :bulb: <i>A module is an organizational unit used to group related resource templates. Templates will have handlers, which are responsible for providing the logic required to service a specific HTTP method (e.g., GET, POST, PUT, DELETE, UPDATE, etc.).</i>
 
     ![Create Modules slider](./images/module-name-field.png) 
 
-6. For the **Base Path** field, we can use the default of **/api/**. Enter **/api/** in the **base path field**.
+6. For the **Base Path** field, use the default of **/api/**. Enter **/api/** in the **base path field**:
 
     ````
     <copy>/api/</copy>
@@ -68,7 +59,7 @@ This lab assumes you have completed the following labs:
 
     ![Create Modules slider](./images/base-path-field.png)
 
-    Also select **Not Protected** with the **Protected By Privilege** select list.
+    Next, select **Not Protected** from the **Protected By Privilege** dropdown list.
 
     ![Protected By Privilege** select list](./images/setting-privileges-field.png)
 
@@ -76,7 +67,7 @@ This lab assumes you have completed the following labs:
 
     ![Create Modules slider](./images/create-module-submit.png)
 
-**Here you can toggle "Show Code" to review what module creation might look like if it was performed manually.**
+    :bulb: <i>Here you can toggle "Show Code" to review what module creation might look like if it was performed manually.</i>
 
     ![Toggle Show Code to review what is happening under the covers](./images/toggle-show-code-option.png)
 
@@ -106,7 +97,7 @@ This lab assumes you have completed the following labs:
 
     ![Create Modules slider with all info, left click create](./images/create-template-finish.png)
 
-**Toggle "Show Code" to review what template creation might look like if it was performed manually.**
+    **Toggle "Show Code" to review what template creation might look like if it was performed manually.**
 
     ![Toggle Show Code to review what is happening under the covers](./images/show-template-code-toggle.png)
 
@@ -133,15 +124,15 @@ This lab assumes you have completed the following labs:
 
     ![Source Field](./images/adding-source-field.png)
 
-**Toggle "Show Code" to review the code for fields in the GUI.**
+    **Toggle "Show Code" to review the code for fields in the GUI.**
 
-    ![Source Field](./images/![Source Field](./images/adding-source-field.png)
+    ![Source Field Toggle](images/adding-source-field-code-toggle.png)
 
 15. When the **Create Handler** slider looks like the below image (**NOTE: your URL hostname will be different than the below image**), left click the **Create** button.
 
     ![Create Handler slider with all info, left click create](./images/create-handler-final-action.png)
 
-16. Back on Template page, we can test our handler. Click the **execute** button ![execute query button](./images/execute-button.png) in the **Source** section of the page.
+16. We can test our Handler on the Template page. Click the **execute** button ![execute query button](./images/execute-button.png) in the **Source** section of the page.
 
     ![Execute button in source section of the page](./images/execute-button-in-source.png)
 
@@ -149,37 +140,37 @@ This lab assumes you have completed the following labs:
 
     ![Bind Variables modal](./images/bind-variable-modal.png)
 
-18. You can see the results of the query just below the **Source** section. (You may need to scroll the page down)
+18. You can see the results of the query just below the **Source** section. (You may need to scroll the page down):
 
     ![Source query results](./images/source-query-results.png)
 
-19. We can try the REST endpoint by clicking the pop out icon ![pop out icon](./images/popout.png) in the Template region on the top of the page.
+19. We can try test the REST endpoint by clicking the pop out icon ![pop out icon](./images/popout.png) in the Template region on the top of the page.
 
     ![pop out icon in the Template region on the top of the page](./images/pop-out-icon-template-region.png)
 
-20. In the new browser tab/window with the REST endpoint URL
+20. In the new browser tab/window with the REST endpoint URL...
 
     ![URL with bind variable](./images/url-with-bind-variable.png)
 
-    replace the :id with a1 and submit the URL
+    ...replace the :id with a1 and submit the URL.
 
     ![submitted URL and working REST service](./images/updated-url-with-bind-variable.png)
 
 ## Task 2: REST Enable Business Logic (PL/SQL procedure)
 
-1. It's now time to REST enable our Business Logic, or PL/SQL procedure, we created in the previous lab. Start by left clicking our module com.oracle.livelab.api in the Database Actions breadcrumbs in the upper left of the page.
+1. Next, we'll REST enable our Business Logic, or PL/SQL procedure, created in the previous lab. Begin by left clicking the `com.oracle.livelab.api` Module in the Database Actions breadcrumbs in the upper left of the page.
 
     ![Database Actions breadcrumbs](./images/db-actions-breadcrumbs.png)
 
-2. Like before, we'll create a new **Template**. Left click the **+ Create Template** button on the right side of the page, right under our module.
+2. We'll again create a new **Template**. Left click the **+ Create Template** button on the right side of the page (located under our Module).
 
     ![Left click the + Create Template button](./images/create-template-action.png)
 
-3. The **Create Template** slider comes out of the right of the page. 
+3. The **Create Template** appears from the right of the page. 
 
     ![Create Template slider](./images/create-template-slider.png)
     
-4. In the **URI Template** template field, enter bizlogic
+4. In the **URI Template** template field, enter `bizlogic`
 
     ````
     <copy>bizlogic</copy>
@@ -191,21 +182,21 @@ This lab assumes you have completed the following labs:
 
     ![Create Template slider with all info, left click create](./images/creat-template-finish.png)
 
-6. Click the **+ Create Handler** button on the right of the page, located below our newly created template just as we did before.
+6. Click the **+ Create Handler** button on the right of the page, located below our newly created Template.
 
     ![Left click the + Create Handler button](./images/create-handler-bizlogic.png)
 
-7. The **Create Handler** slider comes out of the right of the page. 
+7. The **Create Handler** slider appears from the right of the page. 
 
     ![Create Handler slider](./images/handler-slider-for-bizlogic.png)
 
-8. We need to change the **Method** from GET to POST because we are submitting a value to the REST Service. Use the dropdown in the **Method** field to select **POST**.
+8. We need to change the **Method** from `GET` to `POST` since we are <i>submitting</i> a value to the REST Service. Use the dropdown in the **Method** field to select **POST**.
 
     ![Selecting POST using the dropdown in the Method field](./images/select-post-for-handler.png)
 
     Upon changing the **Method** to post, we see the **Source Type** change to PL/SQL.
 
-9. Now, in the **Source** field, enter the following PL/SQL
+9. Now, in the **Source** field, enter the following PL/SQL:
 
     ````
     <copy>
@@ -221,11 +212,15 @@ This lab assumes you have completed the following labs:
 
     ![Create Handler slider with all info, left click create](./images/create-final-handler-slider.png)
 
-11. Next step we need to create an output parameter so we can return the result; the count or rows where the passed in value is equal to the values in col2 in our table. On the bottom on the bizlogic details page, under the **Source** area, we see the **+ Create Parameter** button. Left click the **+ Create Parameter** button.
-
+11. Next we'll create an output parameter so we can return a result. 
+    
+    :bulb: <i>We should expect the count or rows where the passed in value is equal to the values in col2 in our table.</i> 
+        
+    On the bottom on the bizlogic details page, under the **Source** area, locate the **+ Create Parameter** button. Left click the **+ Create Parameter** button.
+   
     ![Left click the + Create Parameter button](./images/create-parameter-button.png)
 
-12. The **Create Parameter** slider emerges from the right of the page. 
+12. The **Create Parameter** slider appears from the right of the page:
 
     ![Create Parameter slider](./images/create-parameter-slider.png)
 
@@ -267,38 +262,48 @@ This lab assumes you have completed the following labs:
 
     ![selecting Get cURL command](./images/select-bizlogic-handler-curl-command.png)
 
-21. The cURL Command modal pops up.
+21. The cURL Command modal appears:
 
     ![cURL Command modal](./images/curl-command-modal-bizlogic.png)
 
-**Remember to select the appropriate cURL command for your environment**
+    :bulb: <i>Remember to select the appropriate cURL command for your environment!</i>
 
     ![cURL Command reminder](./images/curl-command-reminder.png)
 
-    Use the **Fill Bind Variables Values** icon ![Fill Bind Variables Values icon](./images/fill-bind.png) to fill in the **id** field with the value of **a1** in the **Substitutions** modal. Then click OK when done.
-    
-    ![Substitutions modal](./images/rest-44.png)
+    Click the `Substitutions` icon, a modal will appear.
 
-22. Click the copy icon ![Fill Bind Variables Values icon](./images/copy-copy.png) to copy the cURL command with the added Substitution value.
+    ![Substitutions icon](images/substitutions-icon-for-bizlogic.png)
+    
+    Enter `a1` into the **id** field, and place a :heavy_check_mark: in the `Null` option for the `Output` field. Then click `OK` when done.
+
+    ![Substitutions modal](images/adding-substitution-value-null-output.png)
+
+22. Click the copy icon to copy the cURL command with the added Substitution value.
 
     ![Copied cURL command](./images/copied-curl-command-bizlogic.png)
 
-23. Using the Oracle Cloud Infrastructure Cloud Shell, paste and run the cURL command to confirm that the count is returned as the output variable.
+23. Then, using the Oracle Cloud Infrastructure Cloud Shell, paste and run the cURL command to confirm that the count is returned as the output variable.
 
     ```
-    curl -X POST \
+    <copy>curl -X POST \
     'https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/admin/api/bizlogic' \
     --header 'Content-Type: application/json' \
     --data-binary '{
     "id": "a1",
     "output": "" 
-    }'
-    {"output":8204}%                                                                
+    }'</copy>                                                                
     ```
 
     ![Cloud shell and cURL](./images/curl-command-in-cloud-shell.png)
 
-    You can test other values by changing the id variable. Valid combinations are those with a lowercase first character of **a** through **f** and second character of **1** though **9**. Valid examples are a1, e9, d3, b6, etc.
+    You can test other values by changing the id variable. Valid combinations are: 
+
+    | Variable position | Valid characters | Case      | 
+    | ----------------- | ---------------- | --------- | 
+    | First character   | `a` through `f`  | lower-case|
+    | Second character  | `1` through `9`  | n/a       |
+
+    - <i>Some valid examples are: a1, e9, d3, b6</i>
 
 ## Task 3: Explore the OpenAPI View created by ORDS
 
@@ -308,13 +313,13 @@ This lab assumes you have completed the following labs:
 
 2. Click the the pop out icon ![pop out icon](./images/pop-menu.png) in the Module region and select **OpenAPI View**.
 
-    ![the pop out icon and select OpenAPI View](./images/open-api-select-module.png)
+    ![The pop out icon and select OpenAPI View](./images/open-api-select-module.png)
 
 3. The OpenAPI View page displays your REST services as a Swagger UI implementation.
 
     ![OpenAPI View](./images/open-api-as-swagger-view.png)
 
-    You can explore the APIs you created and try them out right there in the page.
+    You can explore the APIs you created and try them out <i>directly</i> in the browser window.
     
     ![OpenAPI explore](./images/explore-apis-in-open-api-view.png)
 
@@ -322,23 +327,21 @@ This lab assumes you have completed the following labs:
 
     ![OpenAPI doc export](./images/export-open-apis-action.png)
 
-**An example of what the OpenAPI export will look like.**
+    **An example of what the OpenAPI export will look like.**
 
     ![OpenAPI example export](./images/open-api-example-export.png)
 
-
-
-## Conclusion
-
-In this lab, you published a REST API using Custom SQL to accept an input as well as published a REST API using a stored PL/SQL procedure.
+4. In this lab, you published a REST API using custom SQL to accept an input as well as published a REST API using a stored PL/SQL procedure.
 
 You may now [proceed to the next lab](#next).
 
-
 ## Acknowledgements
 
-
- - **Author** - Jeff Smith, Distinguished Product Manager
- - **Last Updated By/Date** - Jeff Smith, July 2022
+ - **Author** 
+    - Jeff Smith, Distinguished Product Manager
+    - Chris Hoina, Senior Product Manager 
+    - Brian Spendolini
+ - **Last Updated By/Date** 
+    - Chris Hoina, August 2022
 
 
