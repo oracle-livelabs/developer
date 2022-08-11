@@ -84,7 +84,7 @@ While the main focus of this Workshop is not Flask, we will periodically review 
 
         ![Right-click development server address](images/right-click-ip-for-flask-app.png)
 
-### Task 3: Review the basic operations of the Flask application
+### Task 3: Review the basic HTTPS operations of the Flask application
 
 1. Review the `index.html` page.
 
@@ -129,101 +129,106 @@ While the main focus of this Workshop is not Flask, we will periodically review 
             
         You can probably tell by now, but we restricted our results to a very narrow window of latitudes. We have only scratched the surface with filtering in queries. But once you understand how your data is structured, and what is available, the possibilities are endless.
 
-    3. 
+    3. The ability to perform myriad `GET` requests with a single API + query parameters is powerful. But its not just the `GET` operation. Lets take a look at a`POST` request.
 
-        ![Reviewing the flask app name](images/folium-tool-tip-focus.png)
+4. Remixing the `POST` request
 
-3. Review the `orderhistory.html` page.
+    We've created a Resource Handler for this table that can be used for the `POST` operation/method. 
 
-    ![Reviewing the flask app name](images/first-line-flask-app-name.png)
+    Let's say you'd like to add another location to this table. You as the developer can do that. This is <i>your</i> application, you should be able to make changes on-the-fly, as you deem necessary. Once the logic is set up on the database end, anything you feed to the table (that fits that logic) is fair game.
 
-### Task 4: Explore Oracle REST API capability 
+    1. First, begin by copying the cURL command that is appropriate for your environment. 
 
-    Beginning with the first li ne in our code you'll see we have created an instance of the `Flask` class: 
+        1. Command Prompt:
+            ```
+            <copy>curl -v -X POST ^
+            -H "Content-Type: application/json" "https://[Place your ORDS REST API here]" ^
+            -d "{\"MUSEUM_NAME\":\"<VALUE>\",\"MUSEUM_LOCATION\":\"<VALUE>\",\"MUSEUM_LAT\":\<VALUE>\,\"MUSEUM_LONG\":\<VALUE>\}"</copy>
+            ```
+        2. Power Shell:
+            ```
+            <copy>curl.exe -v -X POST `
+            -H "Content-Type: application/json" "https://[Place your ORDS REST API here]" `
+            -d "{\"MUSEUM_NAME\":\"<VALUE>\",\"MUSEUM_LOCATION\":\"<VALUE>\",\"MUSEUM_LAT\":\<VALUE>\,\"MUSEUM_LONG\":\<VALUE>\}"</copy>
+            ```
+        3. Bash:
+            ```
+            <copy>curl --location --request POST \
+            'https://[Place your ORDS REST API here]' \
+            --header 'Content-Type: application/json' \
+            --data-binary '{
+            "MUSEUM_NAME": "<VALUE>",
+            "MUSEUM_LOCATION": "<VALUE>",
+            "MUSEUM_LAT": <VALUE>,
+            "MUSEUM_LONG": <VALUE> 
+            }'</copy>
+            ```
+    2. Then add whatever values you'd like, as long as they adhere to the datatypes ORDS expects. You may want to choose something unique so you can easily identify it. In this case we'd expect: 
 
-      ```app = Flask(__name__)```
+        |Key              |Value's Data Type |Example Value                   |
+        |---------------- | ---------------- | ------------------------------ |
+        |`MUSEUM_NAME`    |VARCHAR2(500 BYTE)|"Henry's Old Time Saloon Museum"|
+        |`MUSEUM_LOCATION`|VARCHAR2(500 BYTE)|"123 Tipsy Ave."                |
+        |`MUSEUM_LAT`     |NUMBER(8,6)       |50.000000 <sup>a<sup>            |
+        |`MUSEUM_LONG`    |NUMBER(9,6)       |100.000000 <sup>b</sup>          |
 
-    You may have seen this before, here the argument `(__name__)` is sufficient for such a small scale application. You may review the selected documentation on this subject in the "Learn More" section of this lab. 
+        <sup>a</sup> We've specified "Precision" and "Scale for the latitude. That's 8 digits in the number; 6 of them to the <i>right</i> of the decimal. 
 
-    ![Reviewing the flask app name](images/first-line-flask-app-name.png)
+        <sup>b</sup> We've also specified "Precision" and "Scale for the longitude. Here we have 9 digits in the number; 6 of them to the <i>right</i> of the decimal. 
 
-4. Review the Folium contents of the application
+        <i>An example <b>Bash</b> cURL Command:</i>
+        ```<copy>
+        curl --location --request POST \
+        'https://[Place your ORDS REST API here]' \
+        --header 'Content-Type: application/json' \
+        --data-binary '{
+        "MUSEUM_NAME": "test1",
+        "MUSEUM_LOCATION": "test1",
+        "MUSEUM_LAT": 50.000000,
+        "MUSEUM_LONG": 100.000000 
+        }'</copy>
+        ```
+    3. Enter your cURL Command in your terminal. 
 
-    Here you'll see several parts to the Folium section of the application. 
-
-    ![Reviewing Folium content in the application](images/reviewing-folium-content-in-app.png)
-
-    1. We set the initial, base Folium map = `m`
-        - You'll also notice we've included starting coordinates, set minimum and maximum zoom properties, as well as a visual presentation option (i.e. "Stamen Toner")
-    2. We include a tooltip; which you'll see later when we load the application 
-    3. Next we rely on the "Requests" library to `GET` json from our Autonomous Database, via ORDS APIs
-        - We perform an iteration to gather the necessary information for populating our map
-    4. We'll then create individual markers for the museum locations we retrieved from our database 
-        - Here we'll pass the latitude and longitude coordinates
-        - We'll then include information pop-ups for all the museums
-          - Notice how we include the `museum_name` as HTML, the icon color and type, along with `tooltip`
-
-      :bulb: <i>**Note:** The tooltip generates a helpful bubble when hovered over that reads "Click me!"; you'll see it soon enough.</i>
-
-    5. Finally you'll see the line: 
-    `lvmap = m._repr_html_()`
-    We include this to temporarily save our map as a HTML iframe (this includes all necessary HTML and JavaScript properties), which we'll later use as an argument in our application's index page (in Flask)
-
-5. Review our application routes
-
-    If you are familiar with Flask, then you'll know all about routes. You may skim this section to become acquainted with the behavior of the application. If not, here is the primer: application routes (aka `app.route()`) are triggered when actions are performed in the application. 
+        ![The cURL command in the terminal](images/post-curl-command-in-terminal.png)
     
-    In some cases the results of a function may be passed back to the user, in other cases a new HTML page may load, in other cases the user may be redirected to a new page.
+    4. Then, using the URI from that first/previous `GET` request, enter it into your browser's address bar. You should now see the new record added to your list.  
+
+        ![Reviewing the changes from your POST request](images/reviewing-the-post-request-changes.png)
     
-    In all cases, you'll notice that an ORDS endpoint is used for either a `GET` or `POST` method.
+        - You're probably wondering how this actually gets added to the database. Well, you as the developer may never see this part but the logic for this `POST` Resource Handler actually looks like this: 
 
-## Task 3: Review the Routes 
+            ![Reviewing the changes from your POST request](images/pl-sql-logic-in-resource-handler.png)
+
+        - But you as the developer may never even see this. However, when provided credentials to Oracle Cloud Infrastructure you may one day use the Database Actions interface to create your very own custom APIs. 
+
+5.  Congratulations! You've sent a `POST` request with the help of ORDS. By now you should have a better understanding of what occurs "under the covers" on the database.
+
+### Task 4: Review the remainder of application
+
+1. With your application open, click the "Purchase Day Passes" button.
+
+    ![Purchase day passes focus](images/purchase-day-passes-focus.png)
+
+2. You should see the `orderform.html` page load. Yet again, we have information provided to us by ORDS. The "choose an option" dropdown has already been populated with choices. This was done upon page load, and the information came from our database and was handled exclusively by our Oracle REST APIs.
+
+    ![Choosing a purchase option in the order form](images/choose-an-option-focus.png)
+
+3. When you make a selection, you'll see the "Description" <i>and</i> "Price per" fields change to reflect your product selection. If you thought "Oracle REST APIs" just then, you'd be correct. We have <i>yet another</i> REST API for requesting product description and pricing information.  
+
+    ![Description has been updated in order form](images/single-access-pass-option-description-updated.png)
+
+4.  Next, update the "Passes needed", you'll see the "Total Price" field update. When you're satisfied with your selections click the "Complete my purchase" button. 
+
+    ![Total price updates on order form](images/total-price-updates-with-quantity.png)
+
+5. You'll then see the `orderhistory.html` page load. To keep this simple, we've omitted the payment gateway step, but since you have access to the code, you <i>could</i> always add that in later. 
+
+    A table with our previous orders will appear. Yet again, we have been served this data through another Oracle REST API. You'll see how all this works in our `app.py` file. But for now, its important to understand what is happening as we step through the next few Labs. 
     
-1. `@app.route('/')`
-        
-    ![The Index route](images/app-route-index.png)
+    ![Reviewing the changes from your POST request](images/table-with-previous-orders.png) 
 
-    This route contains the `index()` function. When a user navigates to the home page they'll be presented with the `index.html` page. We are also including our newly constructed Folium map, `lvnmap` as an argument. 
-    
-    We'll review the HTML pages shortly so you can view all functions and their output in context.
-
-2. `@app.route('/get_price')`
-
-    ![The Get Price route](images/app-route-get-price.png)
-
-    The function of this route `getPrice()` appends `a` to an ORDS endpoint. From there we retrieve product prices from a product table. This will be one of the fields we'll use in a drop-down menu (found on the `orderform.html` page).
-    
-    You'll notice the final line in this function `return jsonify(product_price)` which takes the response and converts it to the JSON format while also assigning it a mimetype of "application/json". Later, we'll review this route along with a JavaScript function, to learn how they work in tandem with our ORDS endpoint. 
-
-3. `@app.route('/get_description')`
-
-    ![The Get Description route](images/app-route-get-description.png)
-
-    Much like the `get_price` app route, this function requests product description information from our database. It uses a similar syntax as before. We then `return jsonify(product_description)` which takes the response and converts it like before. 
-
-4. `@app.route('/orderform')`
-
-    ![The Order Form route](images/app-route-order-form.png)
-
-    Using a separate ORDS endpoint, our application performs a more typical `GET` request. Here we return a list of products, along with the `orderform.html` page. Notice how we create new variables, which we'll use for with our JavaScript functions. We'll review our three JavaScript functions in the next lab. 
-
-5. `@app.route('/orderhistory')`
-
-    ![The order history route](images/app-route-order-history.png)
-
-    Performing a `GET` request to this endpoint will return the items in a table that stores customer order history. While this particular application doesn't cover credentialing of individual customers, the aim is to showcase the ease of retrieving <i>specific</i> customer data with relative ease.
-
-    You'll see how this app route is triggering in the `orderform.html` page. 
-
-6. `@app.route(/result', methods = ['POST', 'GET'])`
-
-    ![The result route](images/app-route-result.png)
-
-    Using the same ORDS endpoint as the `orderhistory` app route, we can infer that this route expects a `POST` request originating from the Flask application. This function also performs actions such as establishing the key:value pairs of the incoming data, and the JSON payload headers well. 
-
-    In short, this function is triggered by the submit action on the `orderform.html` page. But rather than staying on that page, the user is redirected to the `orderhistory.html` page. 
-    
-7. You may now proceed to the next Lab.
+6. You made it! Continue to the next Lab for more.
 
 ## Learn More
 * [A minimal application in Flask](https://flask.palletsprojects.com/en/2.1.x/quickstart/#a-minimal-application)
