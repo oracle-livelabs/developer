@@ -1,0 +1,50 @@
+{
+  "workshoptitle": "The Title of the Workshop is defined in the manifest",
+  "help": "livelabs-help-**enterarea**_us@oracle.com",
+  "tutorials": [
+    {
+      "title": "Introduction",
+      "description": "The Introduction is always second for LiveLabs. The title and contents menu title match for the Introduction.",
+      "filename": "../../introduction/introduction.md"
+    },
+    {
+      "title": "Get Started with noVNC Remote Desktop",
+      "description": "Using noVNC Remote Desktop",
+      "filename": "https://oracle-livelabs.github.io/common/labs/remote-desktop/using-novnc-remote-desktop.md"
+    },
+    {
+      "title": "Lab 1: OBP Environment Setup",
+      "description": "OBP Environment Setup",
+      "publisheddate": "3/24/2020",
+      "filename": "../../1-labs-obp-env-setup/obp-console.md"
+    },
+    {
+      "title": "Lab 2: OBP App Builder",
+      "description": "OBP App Builder",
+      "publisheddate": "3/24/2020",
+      "filename": "../../2-labs-obp-appbuilder/obp-appbuilder.md"
+    },
+    {
+      "title": "Lab 3: OBP - API Gateway",
+      "description": "AOBP - API Gateway",
+      "publisheddate": "4/05/2020",
+      "filename": "../../3-labs-obp-apigateway/obp-apigateway.md"
+    },
+    {
+      "title": "Lab 4: OBP - Application (Apex)",
+      "description": "OBP - Application (Apex)",
+      "publisheddate": "4/05/2020",
+      "filename": "../../4-labs-obp-application/obp-marketplace-apex.md"
+    },
+    {
+      "title": "Need Help?",
+      "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+      "filename": "https://oracle-livelabs.github.io/common/labs/need-help/need-help-livelabs.md"
+    },
+    {
+      "title": "Other LiveLabs you might like",
+      "description": "Other LiveLabs you might like",
+      "filename": "../../other-livelabs/other-livelabs.md"
+    }
+  ]
+}
