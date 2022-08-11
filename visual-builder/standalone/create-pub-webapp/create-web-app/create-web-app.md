@@ -186,7 +186,7 @@ Let's now create the Department and Employee business objects. But instead of cr
 
   If you click an endpoint, an endpoint viewer displays details of endpoint settings and headers sent in a request. You can also test requests and view responses. To do this, click the **getall_Employee** endpoint, then in the Test tab, click **Send Request** (you can supply your own parameter values if you want):
 
-  ![](images/vbcsca_cde_s9_result.png "This image shows the Test tab for the getall_Employee endpoint. When you click Send Request, the Response section shows the results in the Body tab.")
+  ![](images/endpoint-test-result.png "This image shows the Test tab for the getall_Employee endpoint. When you click Send Request, the Response section shows the results in the Body tab.")
 
   Click ![Back to Table icon](images/backtotable-icon.png) Endpoints to return to the main Endpoints page.
 
