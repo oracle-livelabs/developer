@@ -69,4 +69,4 @@ With the Department and Employee pages now available, you'll need to make sure u
 ## Acknowledgements
 
 * **Author** - Sheryl Manoharan, Visual Builder User Assistance, August 2021
-* **Last Updated By** - August 11, 2022
+* **Last Updated By** - August 2022
