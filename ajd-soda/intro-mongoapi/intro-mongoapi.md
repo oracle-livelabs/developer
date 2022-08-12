@@ -1,6 +1,6 @@
-# MongoDB Developers Full Python App Development with Autonomous JSON
+# Full Python App Development with Autonomous JSON for MongoDB Developers
 
-![Intro MongoDB Developers Full Python App Development with Autonomous JSON](./images/intro.png)
+![Intro Full Python App Development with Autonomous JSON for MongoDB Developers](./images/intro.png)
 
 ## Introduction
 
