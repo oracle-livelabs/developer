@@ -184,8 +184,8 @@ While the main focus of this Workshop is not Flask, we will periodically review 
         --data-binary '{
         "MUSEUM_NAME": "test1",
         "MUSEUM_LOCATION": "test1",
-        "MUSEUM_LAT": 50.000000,
-        "MUSEUM_LONG": 100.000000 
+        "MUSEUM_LAT": 50.12345,
+        "MUSEUM_LONG": 100.12345 
         }'</copy>
         ```
     3. Enter your cURL Command in your terminal. 
@@ -225,7 +225,7 @@ While the main focus of this Workshop is not Flask, we will periodically review 
 5. You'll then see the `orderhistory.html` page load. To keep this simple, we've omitted the payment gateway step, but since you have access to the code, you <i>could</i> always add that in later. 
 
     A table with our previous orders will appear. Yet again, we have been served this data through another Oracle REST API. You'll see how all this works in our `app.py` file. But for now, its important to understand what is happening as we step through the next few Labs. 
-    
+
     ![Reviewing the changes from your POST request](images/table-with-previous-orders.png) 
 
 6. You made it! Continue to the next Lab for more.
