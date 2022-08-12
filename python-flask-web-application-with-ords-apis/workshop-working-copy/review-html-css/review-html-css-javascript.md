@@ -85,6 +85,7 @@ This lab assumes you have:
     We take a similar approach with the following placeholders:
 
     `{% block content %} {% endblock %}`
+    <!-- {% endraw %} -->
 
     Now, anywhere else in our HTML where we specify  "block content" it will render in the corresponding body section of the `base.html`. You'll also see later, that other pages will "extend" the `base.html` file; this will ensure that each page includes the properties of the `base.html` page (like our JavaScript functions, and Bootstrap's HTML and CSS). But to the user, they will still remain on the page of focus, as we'll see in the `index.html` page.
 
