@@ -69,9 +69,11 @@ This lab assumes you have:
     You'll also notice three JavScript functions: `totalPrice()`, `getPrice()`, and `getDescription()` These functions are triggered when a user visits and/or interacts with the `orderform.html` page. We'll discuss in more detail the output of each function shortly. 
 
     You may also notice Jinja templating near the `</head>`, and `<main>` HTML tags. The different variations (which you'll see throughout) are referred to as "delimiters": 
+    <!-- 
     - `{% ... %}` are used statements
     - `{{ ... }}` are used for Expressions
     - `{# ... #}` 
+    - -->
     
     Each serve different purposes, but all allow us to easily and dynamically pass in additional information while using syntax similar to python. While Jinja education is outside the scope of this lab, you may review the **Learn More** section of this lab to review the Jinja documentation.
 
@@ -182,4 +184,6 @@ Datbase Actions
   - Justin Biard, Senior Member of Technical Staff, Database Tools 
   - Zachary Talke, Product Manager, Database Tools
   - Brian Spendolini, Principal Product Manager
-* **Last Updated By/Date** - Chris Hoina, August 2022
+* **Last Updated By/Date** - Chris Hoina, August 2022, 
+<!-- Updated by Madhusudhan Rao on 12th Aug to resolve github issue on line 72 -->
+<!-- commented line 72 to 76 -->
