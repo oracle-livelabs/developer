@@ -85,7 +85,7 @@ This lab assumes you have:
     We take a similar approach with the following placeholders:
 
     `{% block content %} {% endblock %}`
-    <!-- {% endraw %} -->
+
 
     Now, anywhere else in our HTML where we specify  "block content" it will render in the corresponding body section of the `base.html`. You'll also see later, that other pages will "extend" the `base.html` file; this will ensure that each page includes the properties of the `base.html` page (like our JavaScript functions, and Bootstrap's HTML and CSS). But to the user, they will still remain on the page of focus, as we'll see in the `index.html` page.
 
@@ -106,6 +106,8 @@ This lab assumes you have:
     Further down, you will see `{{ lvmap | safe }}`, this allows us to pass in the Folium map (which was created in our `app.py` file). We use the "safe" filter to indicate that this should <i>not</i> be escaped, should there be a case where automatic escaping is enabled. Otherwise, we run the risk of our map not rendering. 
 
     Finally, you'll see a button (surrounded by the blue box), which when clicked, will take the user to the `orderform.html` page.
+
+    <!-- {% endraw %} -->
 
 4. `orderform.html`
 
