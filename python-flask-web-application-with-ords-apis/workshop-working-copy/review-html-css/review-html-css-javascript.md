@@ -107,6 +107,8 @@ This lab assumes you have:
 
     Finally, you'll see a button (surrounded by the blue box), which when clicked, will take the user to the `orderform.html` page.
 
+    <!-- {% endraw %} -->
+
 4. `orderform.html`
 
     ![Order form HTML page](images/order-form-html-page.png)
