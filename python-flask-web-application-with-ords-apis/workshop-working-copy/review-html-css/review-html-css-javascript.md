@@ -70,9 +70,9 @@ This lab assumes you have:
 
     You may also notice Jinja templating near the `</head>`, and `<main>` HTML tags. The different variations (which you'll see throughout) are referred to as "delimiters":
 
-    - `{% ... %}` are used statements
-    - `{{ ... }}` are used for Expressions
-    - `{# ... #}`
+    - {%<!-- --> ... %<!-- -->} are used statements
+    - {{ ... }} are used for Expressions
+    - {# ... #}
 
     Each serve different purposes, but all allow us to easily and dynamically pass in additional information while using syntax similar to python. While Jinja education is outside the scope of this lab, you may review the **Learn More** section of this lab to review the Jinja documentation.
 
