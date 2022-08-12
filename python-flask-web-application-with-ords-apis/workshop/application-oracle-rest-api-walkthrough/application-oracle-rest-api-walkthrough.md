@@ -1,4 +1,4 @@
-# Title of the Lab
+# Lab 1: Walk-through of Flask application and Oracle REST APIs
 
 ## Introduction
 

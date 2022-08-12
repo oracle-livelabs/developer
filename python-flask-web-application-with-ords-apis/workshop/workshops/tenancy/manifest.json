@@ -9,8 +9,8 @@
     "tutorials": [
         {
             "title": "Introduction",
-            "description": "The Introduction is always first. The title and contents menu title match for the Introduction.",
-            "filename": "../../introduction/introduction.md"
+            "description": "Introduction for this workshop; provides a brief overview of what to expect.",
+            "filename": "../../workshop-introduction/workshop-introduction.md"
         },
         {
             "title": "Get Started",
@@ -18,29 +18,24 @@
             "filename": "https://oracle-livelabs.github.io/common//labs/cloud-login/cloud-login.md"
         },
         {
-            "title": "Lab 1: Provision an Instance",
-            "description": "Labs that follow the introduction are numbered, starting with Lab 1",
-            "filename": "../../provision/provision.md"
+            "title": "Lab 1: Walk-through of Flask application and Oracle REST APIs",
+            "description": "This Lab will open the Flask application and step through, while also discussing Oracle REST API capabilities",
+            "filename": "../../workshop/application-oracle-rest-api-walkthrough/application-oracle-rest-api-walkthrough.md"
         },
         {
-            "title": "Lab 2: Setup the Environment",
-            "filename": "../../setup/setup.md"
+            "title": "Lab 2: Oracle REST API deeper dive",
+            "description": "We review Oracle REST APIs in this Workshop in a Swagger Editor session.",
+            "filename": "../../workshop/oracle-rest-api-deep-dive/oracle-rest-api-deep-dive.md"
         },
         {
-            "title": "Lab 3: Load Data into an Instance",
-            "filename": "../../data-load/data-load.md"
+            "title": "Lab 3: Understanding the Python and Oracle REST API relationship",
+            "description": "We review the Python application and its relationship with the provided Oracle REST APIs",
+            "filename": "../../workshop/understanding-python-and-oracle-rest-api-relationship/understanding-python-and-oracle-rest-api-relationship.md"
         },
         {
-            "title": "Lab 4: Query Data",
-            "filename": "../../query/query.md"
-        },
-        {
-            "title": "Lab 5: Tables in LiveLabs",
-            "filename": "../../tables/tables.md"
-        },
-        {
-            "title": "Lab 6: Variables in LiveLabs",
-            "filename": "../../variables/variables.md"
+            "title": "Lab 4: A Bootstrap and JavaScript primer",
+            "description": "We review the Bootstrap and JavaScript that is included in this Flask application.",
+            "filename": "../../workshop/bootstrap-and-javascript-primer/bootstrap-and-javascript-primer.md"
         },
         {
             "title": "Need Help?",

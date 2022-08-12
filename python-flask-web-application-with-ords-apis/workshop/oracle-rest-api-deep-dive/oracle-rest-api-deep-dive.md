@@ -1,4 +1,4 @@
-# Title of the Lab
+# Lab 2: Oracle REST API <i>deeper</i> dive
 
 ## Introduction
 
