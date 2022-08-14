@@ -1,4 +1,4 @@
-# Car Dealer Marketplace 
+# Create Blockchain Network connecting multiple organizations in Oracle Blockchain Platform (OBP)
 
 ## Introduction: Oracle Blockchain Platform (OBP)
 
@@ -6,13 +6,17 @@ Oracle Blockchain Platform is based on the Hyperledger Fabric project from the L
 
 As a preassembled PaaS, Oracle Blockchain Platform includes all the dependencies required to provision and manage a blockchain network: compute, storage, containers, identity services, event services, and management services. Oracle Blockchain Platform also includes the blockchain network console to support integrated operations. This helps you start developing applications within minutes.
 
-Estimated Lab Time: 45 minutes
+*Estimated Lab Time: 20 minutes*
 
 
-## Objectives
+### Objectives
 
-In Lab 1, you will:
-* Create a permissioned network that consists of 1 founder and 2 partner blockchain instances
+- Create a permissioned network that consists of 1 founder and 2 partner blockchain instances
+
+### Pre-Requisites
+
+This lab assumes you have:
+* An Oracle Cloud account
 
 
 ## Task 1: Environment Setup
@@ -61,21 +65,11 @@ You will also need to create a new [Compartment](https://docs.oracle.com/en-us/i
     - Name your instances 'dealer1' and 'dealer2'
     - For both instances, select 'Join an existing network' under **Platform Role**
 
+## Task 4: Complete Tasks 1 - 4 in Lab2 (App Builder)
 
-*Go To AppBuilder*********
+ - Link to Lab2 (Tasks 1 - 4)
 
-
-
-
-
-
-
-
-
-
-
-
-## Task 4: Add Participant Organizations to Network
+## Task 5: Add Participant Organizations to Network
 
 To join the partner organizations to your network, you need to export their settings and import them into the founder.
 
@@ -116,7 +110,7 @@ To join the partner organizations to your network, you need to export their sett
   ![Topology View](images/1-obp-4-10.png)
 
 
-## Task 5: Create a Channel
+## Task 6: Create a Channel
 
 We now need to join the organizations at the channel level to allow communication between the founder and participants. 
 
@@ -144,7 +138,7 @@ We now need to join the organizations at the channel level to allow communicatio
   ![Check Channel Orgs](images/1-obp-5-5.png)
 
 
-## Task 6: Join Participant Organizations to Channel
+## Task 7: Join Participant Organizations to Channel
 
 You're almost done setting up your blockchain network! Simply use the participant instances to join the channel created in the previous step.
 
@@ -159,7 +153,7 @@ You're almost done setting up your blockchain network! Simply use the participan
 4. Repeat Steps 1-3 from the 'dealer2' console.
 
 
-## Task 7: Set Anchor Peers
+## Task 8: Set Anchor Peers
 
 Each member using a channel (whether founder or participant) must designate at least one anchor peer. Anchor peers are primary network contact points, and are used to discover and communicate with other network peers on the channel.
 
@@ -182,7 +176,7 @@ Each member using a channel (whether founder or participant) must designate at l
 5. Repeat for both participant organizations, 'dealer1' and 'dealer2'.
 
 
-## Task 8: Create Dealership Accounts
+## Task 9: Create Dealership Accounts
 
 Use IDCS to create and add both 'john_\dealer1' and 'sam_\dealer2' users, and then assign them roles to control usage of their OBP instances: 'dealer1' and 'dealer2'.
 
@@ -248,11 +242,12 @@ Use IDCS to create and add both 'john_\dealer1' and 'sam_\dealer2' users, and th
 
 16. Repeat tasks 1-16 to create the 'sam\_dealer2' user and add to the 'dealer2' instance.
 
+## What's Next?
 
-## Learn More
+  **You are all set to begin next lab! Click Lab 2: Create, Deploy & Execute Smart Contracts using Oracle Blockchain App Builder.**
 
 
 ## Acknowledgements
 * **Author** - Amal Tyagi, Cloud Engineer
 * **Contributors** -  Teodora Gheorghe, Adrien Lhemann, Diego Morales, Lokeswara Nushisarva, Siddesh C. Prabhu Dev Ujjni
-* **Last Updated By/Date** - Amal Tyagi, 06-22
+* **Last Updated By/Date** - Amal Tyagi, August 2022

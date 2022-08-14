@@ -1,45 +1,49 @@
 # Introduction
 
-## About this Workshop
+This Car Marketplace workshop is comprised of individual exercises that allow you to get first hands-on exposure to build an end to end Blockchain solution using Oracle Blockchain Platform in OCI, where you will see how key features and functionality are used and deployed.
 
-This introduction covers the complete "parent" workshop. Use this text to set up the story for the workshop. Be engaging - what will the learner get from spending their time on this workshop?
+## About Oracle Blockchain Platform & Oracle Blockchain App Builder
 
-Estimated Workshop Time: -- hours -- minutes (This estimate is for the entire workshop - it is the sum of the estimates provided for each of the labs included in the workshop.)
+Oracle Blockchain Platform gives you a pre-assembled platform for building and running smart contracts and maintaining a tamper-proof distributed ledger. Blockchain App Builder for Oracle Blockchain Platform is a tool set that assists with rapid development, testing, debugging, and deployment of chaincode on Oracle Blockchain Platform networks, comprising cloud BaaS nodes on Oracle Cloud Infrastructure or on-premises nodes using Enterprise Edition.
 
-*You may add an option video, using this format: [](youtube:YouTube video id)*
 
-  [](youtube:zNKxJjkq0Pw)
+### Workshop Objectives
 
-### Objectives
+In this lab, you will:
+* Become familiar with Oracle Blockchain Platform and it's components
+* Become Familiar with Oracle Blockchain Platform Provisioning and Administration
+* Using Oracle Blockchain Platform Admin Console for Admin tasks and Monitoring
+* Learn How to Develop, Deploy, Execute Smart Contracts using Oracle App Builder
+* Create and operate your own multi-organization Blockchain network
+* Learn How to integrate with external applications by leveraging OBP REST Proxy
+* Learn how to build a end-to-end solution for use case with Oralce Blockchain Platform
 
-*List objectives for the workshop*
 
-In this workshop, you will learn how to:
-* Provision
-* Setup
-* Load
-* Query
+### Lab Breakdown
+- **Lab 1:** Create Blockchain Network connecting multiple organizations in Oracle Blockchain Platform
+- **Lab 2:** Create, Deploy & Execute Smart Contracts using Oracle Blockchain App Builder
+- **Lab 3:** Setup & Configure API Gateway for external applications to connect with Smart Contract API's published by Oracle Blockchain REST Proxy.
+- **Lab 4:** How to Build User Interface using Oracle APEX and Integrate with Oracle Blockchain Platform
 
-### Prerequisites (Optional)
+## What's Next?
 
-*List the prerequisites for this lab using the format below. Fill in whatever knowledge, accounts, etc. is needed to complete the lab. **Do NOT list** each previous lab as a prerequisite.*
-
-This lab assumes you have:
-* An Oracle account
-* All previous labs successfully completed
-
-*This is the "fold" - below items are collapsed by default*
-
-In general, the Introduction does not have Steps.
+  **You are all set to begin the labs! Click Lab 1: Create Blockchain Network connecting multiple organizations in Oracle Blockchain Platform.**
 
 ## Learn More
 
-*(optional - include links to docs, white papers, blogs, etc)*
-
-* [URL text 1](http://docs.oracle.com)
-* [URL text 2](http://docs.oracle.com)
+* [Try OBP Cloud at ](https://www.oracle.com/application-development/
+cloud-services/blockchain-platform/)
+* [Once OBP Cloud instance has been provisioned, bring up the Console and navigate to Developer Tools tab to download the Blockchain App Builder for Oracle Blockchain Platform]
+* [Download OBP Enterprise] (https://www.oracle.com/database/technologies/
+blockchain-platform-enterprise-edition.html)
+* [App Builder Video:] (https://www.youtube.com/watch?v=nO0AniQCzVg)
+* [App Builder Documentation] (https://docs.oracle.com/en/cloud/paas/blockchain-cloud/usingoci/using-chaincode-development-tools.html)
+* [Oracle Blockchain Blog](blogs.oracle.com/blockchain)
 
 ## Acknowledgements
-* **Author** - <Name, Title, Group>
+
+* **Authors** 
+* Mark Rakhmilevich, Senior Director, Oracle Blockchain Product Management
+* Bala Vellanki, Director, Oracle Blockchain Product Management
 * **Contributors** -  <Name, Group> -- optional
 * **Last Updated By/Date** - <Name, Month Year>
