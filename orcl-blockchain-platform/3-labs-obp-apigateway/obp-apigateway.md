@@ -1,4 +1,4 @@
-# Car Dealer Marketplace 
+# Setup & Configure API Gateway for external applications to connect with Smart Contract API's published by Oracle Blockchain REST Proxy.
 
 ## Introduction: Oracle API Gateway
 
@@ -6,13 +6,19 @@ The API Gateway service enables you to publish APIs with private endpoints that 
 
 In this lab, you will be introduced to API Gateway. The gateway is necessary for configuring Oracle Blockchain Platform REST API endpoints on the front-end application.
 
-Estimated Lab Time: --find out--
+*Estimated Lab Time: 15 minutes*
 
-
-## Objectives
+### Objectives
 
 In this lab, you will:
 * Create and configure REST endpoints to be accessed by front-end applications
+
+### Pre-Requisites
+
+This lab assumes you have:
+* Completed Lab1 - Create Blockchain Network connecting multiple organizations in Oracle Blockchain Platform (OBP)
+* Completed Lab2 - Create, Deploy & Execute Smart Contracts using Oracle Blockchain App Builder
+
 
 ## Task 1: Setup VCN and Subnet
 
@@ -156,7 +162,11 @@ Once active, the deployment can be used to make REST API calls between APEX and 
 2. --complete after above is confirmed--
 
 
+## What's Next?
+
+  **You are all set to begin the next lab! Click Lab 4: How to Build User Interface using Oracle APEX and Integrate with Oracle Blockchain Platform.**
+
 ## Acknowledgements
 * **Author** - Amal Tyagi, Cloud Engineer
 * **Contributors** -  Teodora Gheorghe, Adrien Lhemann, Diego Morales, Lokeswara Nushisarva, Siddesh C. Prabhu Dev Ujjni
-* **Last Updated By/Date** - Amal Tyagi, 03-22
+* **Last Updated By/Date** - Amal Tyagi, August 2022
