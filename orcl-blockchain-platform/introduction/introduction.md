@@ -31,13 +31,10 @@ In this lab, you will:
 
 ## Learn More
 
-* [Try OBP Cloud at ](https://www.oracle.com/application-development/
-cloud-services/blockchain-platform/)
-* [Once OBP Cloud instance has been provisioned, bring up the Console and navigate to Developer Tools tab to download the Blockchain App Builder for Oracle Blockchain Platform]
-* [Download OBP Enterprise] (https://www.oracle.com/database/technologies/
-blockchain-platform-enterprise-edition.html)
-* [App Builder Video:] (https://www.youtube.com/watch?v=nO0AniQCzVg)
-* [App Builder Documentation] (https://docs.oracle.com/en/cloud/paas/blockchain-cloud/usingoci/using-chaincode-development-tools.html)
+* [Try OBP Cloud at](https://www.oracle.com/application-development/cloud-services/blockchain-platform/)
+* [Download OBP Enterprise](https://www.oracle.com/database/technologies/blockchain-platform-enterprise-edition.html)
+* [App Builder Video](https://www.youtube.com/watch?v=nO0AniQCzVg)
+* [App Builder Documentation](https://docs.oracle.com/en/cloud/paas/blockchain-cloud/usingoci/using-chaincode-development-tools.html)
 * [Oracle Blockchain Blog](blogs.oracle.com/blockchain)
 
 ## Acknowledgements
