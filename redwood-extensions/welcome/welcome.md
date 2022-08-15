@@ -6,7 +6,7 @@ This lab walks you through creating a new App UI extension with a page. We then 
 
 Estimated Time: 5 minutes
 
-### About <Product/Technology> (Optional)
+### About Oracle Visual Builder
 In this lab we leverage the Redwood welcome page template along with Oracle JET UI components to create a page that connects to Oracle SaaS's object and show you a list of accounts and allows filtering the list.
 
 ### Objectives
@@ -15,9 +15,6 @@ In this lab, you will:
 * Get familiar with the development environment
 * Learn to create pages
 * Leverage Redwood templates and components
-
-
-*This is the "fold" - below items are collapsed by default*
 
 ## Task 1: Create an App UI application
 
@@ -33,9 +30,9 @@ You are now seeing the welcome page of the visual development area for Visual Bu
 
   ![Image alt text](images/sample1.png)
 
-4. The application is created, and you are taken into the application overview tab where you can see your flows and pages. A flow is a part of your application that contains pages that relate to each other. An application can contain multiple flows, and a flow can contain many pages.
+3. The application is created, and you are taken into the application overview tab where you can see your flows and pages. A flow is a part of your application that contains pages that relate to each other. An application can contain multiple flows, and a flow can contain many pages.
 
-5. Double click the **main-start** page that was created in the main flow. This will open the page in the visual editor.
+4. Double click the **main-start** page that was created in the main flow. This will open the page in the visual editor.
 
 
 ## Task 2: Designing your page
@@ -89,12 +86,10 @@ Note how so far all the design of the page was done with simple drag and drop fu
 
 ## Learn More
 
-*(optional - include links to docs, white papers, blogs, etc)*
-
-* [URL text 1](http://docs.oracle.com)
-* [URL text 2](http://docs.oracle.com)
+* [Use the Page Designer](https://docs.oracle.com/en/cloud/paas/visual-builder/visualbuilder-building-appui/get-started1.html#GUID-CC2B203D-51D3-4408-8D0B-4E26C86BCBC0)
+* [Oracle JET](http://oracle.com/jet)
 
 ## Acknowledgements
-* **Author** - <Name, Title, Group>
-* **Contributors** -  <Name, Group> -- optional
-* **Last Updated By/Date** - <Name, Month Year>
+* **Author** - Shay Shmeltzer, Oracle Cloud Development Tools, August 2022
+* **Contributors** -  Blaine Carter, Oracle Cloud Development Tools
+* **Last Updated By/Date** - Shay Shmeltzer, Oracle Cloud Development Tools, August 2022

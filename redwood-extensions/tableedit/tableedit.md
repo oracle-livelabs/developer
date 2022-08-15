@@ -6,19 +6,17 @@ This lab shows you how to work with components, events, and action chains to add
 
 Estimated Time: 10 minutes
 
-### About <Product/Technology> (Optional)
+### About Visual Builder
 Visual Builder simplifies the way you handle user interface events enabling you to create business logic in a visual way with action chains.
 
 ### Objectives
 
-*List objectives for this lab using the format below*
 
 In this lab, you will:
 * Add user interfaces components to your page
 * Define action chains that respond to UI events
 * Work with variables
 
-*This is the "fold" - below items are collapsed by default*
 
 ## Task 1: Add Empty Columns to the table
 
@@ -125,10 +123,9 @@ Your table now has action buttons that look good and work as expected. The next 
 
 *(optional - include links to docs, white papers, blogs, etc)*
 
-* [URL text 1](http://docs.oracle.com)
-* [URL text 2](http://docs.oracle.com)
+* [Action Chains](https://docs.oracle.com/en/cloud/paas/visual-builder/visualbuilder-building-appui/work-action-chains.html)
 
 ## Acknowledgements
-* **Author** - <Name, Title, Group>
-* **Contributors** -  <Name, Group> -- optional
-* **Last Updated By/Date** - <Name, Month Year>
+* **Author** - Shay Shmeltzer, Oracle Cloud Development Tools, August 2022
+* **Contributors** -  Blaine Carter, Oracle Cloud Development Tools
+* **Last Updated By/Date** - Shay Shmeltzer, Oracle Cloud Development Tools, August 2022

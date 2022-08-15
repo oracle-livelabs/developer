@@ -6,19 +6,17 @@ This lab we'll apply a couple of the Redwood page template to improve the user e
 
 Estimated Time: 10 minutes
 
-### About <Product/Technology> (Optional)
+### About Oracle Redwood Experience
 The Redwood user experience and design is the results of years of usability study conducted by the Oracle Design Experience team. They implement clear patterns that help end users work with your application in a smooth way.
 
 ### Objectives
 
-*List objectives for this lab using the format below*
 
 In this lab, you will:
 * Using the simple create and edit template
 * Using the foldout template
 
 
-*This is the "fold" - below items are collapsed by default*
 
 ## Task 1: Applying Template to the Edit Page
 
@@ -120,10 +118,9 @@ Your table now has action buttons that look good and work as expected. The next 
 
 *(optional - include links to docs, white papers, blogs, etc)*
 
-* [URL text 1](http://docs.oracle.com)
-* [URL text 2](http://docs.oracle.com)
+* [Oracle Redwood](http://oracle.com/redwood)
 
 ## Acknowledgements
-* **Author** - <Name, Title, Group>
-* **Contributors** -  <Name, Group> -- optional
-* **Last Updated By/Date** - <Name, Month Year>
+* **Author** - Shay Shmeltzer, Oracle Cloud Development Tools, August 2022
+* **Contributors** -  Blaine Carter, Oracle Cloud Development Tools
+* **Last Updated By/Date** - Shay Shmeltzer, Oracle Cloud Development Tools, August 2022

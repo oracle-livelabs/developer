@@ -2,23 +2,21 @@
 
 ## Introduction
 
-This lab leverages quick starts in Oracle Visual Builder to create additional pages that will let you manipulate data in Oracle Clous Apps.
+This lab leverages quick starts in Oracle Visual Builder to create additional pages that will let you manipulate data in Oracle Cloud Apps.
 
 Estimated Time: 10 minutes
 
-### About <Product/Technology> (Optional)
+### About Visual Builder Quick Starts
 Visual Builder simplifies creating user interfaces on top of data with quick starts - guided dialogs that create pages that can update, insert, delete and view data.
 
 ### Objectives
 
-*List objectives for this lab using the format below*
 
 In this lab, you will:
 * Create an Edit Page
 * Create a Details Page
 * Preview your application
 
-*This is the "fold" - below items are collapsed by default*
 
 ## Task 1: Create an Edit Page
 
@@ -97,10 +95,10 @@ Our application is functioning well. The next step would be to fine tune the loo
 
 *(optional - include links to docs, white papers, blogs, etc)*
 
-* [URL text 1](http://docs.oracle.com)
-* [URL text 2](http://docs.oracle.com)
+* [Quick Starts](https://docs.oracle.com/en/cloud/paas/visual-builder/visualbuilder-building-appui/work-pages-and-flows1.html#GUID-DD40C71D-A8AE-43E2-A2F4-798AF3D49983)
+
 
 ## Acknowledgements
-* **Author** - <Name, Title, Group>
-* **Contributors** -  <Name, Group> -- optional
-* **Last Updated By/Date** - <Name, Month Year>
+* **Author** - Shay Shmeltzer, Oracle Cloud Development Tools, August 2022
+* **Contributors** -  Blaine Carter, Oracle Cloud Development Tools
+* **Last Updated By/Date** - Shay Shmeltzer, Oracle Cloud Development Tools, August 2022

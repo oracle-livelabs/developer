@@ -6,20 +6,16 @@ This lab walks you through creating a connection to data from Oracle Fusion Clou
 
 Estimated Time: 5 minutes
 
-### About <Product/Technology> (Optional)
-Oracle Cloud Apps provide REST based access to information in the system. Visual Builder is built to use these endpoints leveraging a service catalog, single-sign-on and knowledge of advnced functionality of the services such as filtering and pagination.
+### About Oracle Cloud Apps REST APIs
+Oracle Cloud Apps provide REST based access to information in the system. Visual Builder is built to use these endpoints leveraging a service catalog, single-sign-on and knowledge of advanced functionality of the services such as filtering and pagination.
 
 ### Objectives
-
-*List objectives for this lab using the format below*
 
 In this lab, you will:
 * Work with service catalog
 * Leverage the data palette
 * Define filtering on data
 * Previewing your application
-
-*This is the "fold" - below items are collapsed by default*
 
 ## Task 1: Browser the service catalog
 
@@ -94,10 +90,10 @@ Now that we have a running page that fetches data, the next step is to add pages
 
 *(optional - include links to docs, white papers, blogs, etc)*
 
-* [URL text 1](http://docs.oracle.com)
-* [URL text 2](http://docs.oracle.com)
+* [Service Connections](https://docs.oracle.com/en/cloud/paas/visual-builder/visualbuilder-building-appui/add-service-connections-your-extension1.html)
+
 
 ## Acknowledgements
-* **Author** - <Name, Title, Group>
-* **Contributors** -  <Name, Group> -- optional
-* **Last Updated By/Date** - <Name, Month Year>
+* **Author** - Shay Shmeltzer, Oracle Cloud Development Tools, August 2022
+* **Contributors** -  Blaine Carter, Oracle Cloud Development Tools
+* **Last Updated By/Date** - Shay Shmeltzer, Oracle Cloud Development Tools, August 2022
