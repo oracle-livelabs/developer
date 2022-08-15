@@ -266,12 +266,14 @@ You can use these commands to see when applications were deployed, what their cu
 
 1. Get the last created pod to inspect
 
+    <!-- {% raw %} -->
     ````shell
     <copy>
     export POD_NAME=$(kubectl get pods -o go-template --template '{{range .items}}{{.metadata.name}}{{"\n"}}{{end}}'|awk '{print $1}'|tail -n 1) && \
     echo Using Pod: $POD_NAME
     </copy>
     ````
+    <!-- {% endraw %} -->
 
 1. View what containers are inside that Pod and what images are used to build those containers
 
