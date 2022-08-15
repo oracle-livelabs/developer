@@ -68,13 +68,14 @@ This lab assumes you have:
 
     You'll also notice three JavScript functions: `totalPrice()`, `getPrice()`, and `getDescription()` These functions are triggered when a user visits and/or interacts with the `orderform.html` page. We'll discuss in more detail the output of each function shortly. 
 
-    You may also notice Jinja templating near the `</head>`, and `<main>` HTML tags. The different variations (which you'll see throughout) are referred to as "delimiters": 
-    <!-- 
-    - `{% ... %}` are used statements
-    - `{{ ... }}` are used for Expressions
-    - `{# ... #}` 
-    - -->
+    You may also notice Jinja templating near the `</head>`, and `<main>` HTML tags. The different variations (which you'll see throughout) are referred to as "delimiters":
+
+    <!-- {% raw %} -->
+    - {% ... %} are used statements
+    - {{ ... }} are used for Expressions
+    - {# ... #}
     
+
     Each serve different purposes, but all allow us to easily and dynamically pass in additional information while using syntax similar to python. While Jinja education is outside the scope of this lab, you may review the **Learn More** section of this lab to review the Jinja documentation.
 
     We will rely on this `base.html` page across the application. We will also need the navigation bar across all pages, thus we include it so it will render in all pages (i.e. the `{% include 'navbar.html' %}` placeholder).
@@ -84,6 +85,7 @@ This lab assumes you have:
     We take a similar approach with the following placeholders:
 
     `{% block content %} {% endblock %}`
+
 
     Now, anywhere else in our HTML where we specify  "block content" it will render in the corresponding body section of the `base.html`. You'll also see later, that other pages will "extend" the `base.html` file; this will ensure that each page includes the properties of the `base.html` page (like our JavaScript functions, and Bootstrap's HTML and CSS). But to the user, they will still remain on the page of focus, as we'll see in the `index.html` page.
 
@@ -104,6 +106,8 @@ This lab assumes you have:
     Further down, you will see `{{ lvmap | safe }}`, this allows us to pass in the Folium map (which was created in our `app.py` file). We use the "safe" filter to indicate that this should <i>not</i> be escaped, should there be a case where automatic escaping is enabled. Otherwise, we run the risk of our map not rendering. 
 
     Finally, you'll see a button (surrounded by the blue box), which when clicked, will take the user to the `orderform.html` page.
+
+    <!-- {% endraw %} -->
 
 4. `orderform.html`
 
@@ -185,5 +189,3 @@ Datbase Actions
   - Zachary Talke, Product Manager, Database Tools
   - Brian Spendolini, Principal Product Manager
 * **Last Updated By/Date** - Chris Hoina, August 2022, 
-<!-- Updated by Madhusudhan Rao on 12th Aug to resolve github issue on line 72 -->
-<!-- commented line 72 to 76 -->
