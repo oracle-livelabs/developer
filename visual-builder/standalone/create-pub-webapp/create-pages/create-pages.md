@@ -27,7 +27,7 @@ Create a table to display your departments on the main-start page. The Table com
 
     ![](images/vbcscp_dd_s4.png "This image shows the Bind Text's Properties pane, with the Value field set to Departments.")
 
-5.  Click **Components** on the left edge of your work area to open the Components palette. Scroll down to the **Collection** section, then drag and drop a **Table** component onto the canvas.
+5.  Click **Components** on the left edge of your work area to open the Components palette. Enter `table` in the Filter field, then drag and drop Table from the Collection category onto the canvas.
 
     ![](images/department_add_table.png "This image shows a Table component being dragged onto the page canvas.")
 
@@ -47,7 +47,7 @@ Create a table to display your departments on the main-start page. The Table com
 
     ![](images/vbcscp_dd_s8.png "This image shows the Bind Data page of the Add Data quick start. Under the item[i] check box, the id and department check boxes are selected. In the Columns list, the columns are id and department (the order in which the check boxes were selected).")
 
-9.  Expand the **location2** and **items** nodes (**item\[i\]** is expanded automatically) and select **location**. Because we created a reference from the Department business object to the Location business object, the location field is now available to us through the location2 accessor, which lets us traverse relationships between the two objects. Click **Next**.
+9.  Expand the **locationObject** and **items** nodes (**item\[i\]** is expanded automatically) and select **location**. Because we created a reference from the Department business object to the Location business object, the location field is now available to us through the locationObject accessor, which lets us traverse relationships between the two objects. Click **Next**.
 
     ![](images/vbcscp_dd_s9.png "This image shows part of the Bind Data page of the Add Data quick start after the location2 node has been expanded. The items and item[i] nodes are expanded, and the location check box is selected. In the Columns list, location appears at the bottom of the list.")
 
@@ -99,9 +99,9 @@ Now that we have a way to show departments, we'll add a Create page that lets us
 
 ## Task 3: Add a page to display employees
 
-We'll now create a page to display employees, similar to the one you created to show departments. In addition to a table that lists employees, we'll add a chart that lets you display your data visually.
+We'll now create a page to display employees, similar to the one you created to show departments. In addition to a table that lists employees, we'll add a chart that lets you display employee salary  visually.
 
-1.  In the Web Apps tree, under **hrwebapp**, click **\+** next to the main node and select **Create Page**.
+1.  In the Web Apps tree, under **hrwebapp**, click **\+** next to the **main** node and select **Create Page**.
 
     ![](images/vbcscp_cpe_s1.png "This image shows the web application with the main node expanded. The + sign next to main is selected to show the Create Page and Create Flow options.")
 
@@ -125,7 +125,7 @@ We'll now create a page to display employees, similar to the one you created to 
 
     You see the REST endpoints that Visual Builder created for you when the Employee business object was created.
 
-8. Drag and drop the **Get Many** endpoint (which provides a list of employees) into the Panel component on the canvas.
+8. Drag and drop the **Get Many** endpoint (which fetches a list of employees) into the Panel component on the canvas.
 
     ![](images/data-palette-employee-object-table.png "The image shows the Render as pop-up with the following options: Table Dynamic, List Dynamic, Table, and List. ")
 
@@ -189,7 +189,7 @@ Add a Create page that lets your users create new employees.
 1.  Select the table component within the panel on the main-employees page, click the **Quick Start** tab in the Properties pane, and click **Add Create Page**.
 2.  On the Select Endpoint step of the Add Create Page Quick Start, select **Employee** under Business Objects (if necessary) and click **Next**.
 
-3.  On the Page Detail page, select the **picture**, **hireDate**, **email**, **department**, **salary**, and **country** check boxes in that order (**name** is already selected, because it's a required field). Change the **email** field's control type from **Input Text** to **Email** for format validation. Because our employee images are stored in a database elsewhere and we only reference their paths, change the **picture** field's type to **URL**.   
+3.  On the Page Detail page, select the **picture**, **hireDate**, **email**, **department**, **salary**, and **country** check boxes in that order (**name** is already selected, because it's a required field). Because our employee images are stored in a database elsewhere and we only reference their paths, change the **picture** field's type to **URL** for validation. Change the **email** field's control type from **Input Text** to **Email**.   
 
     ![](images/vbcscp_cpc_s4.png "This image shows the Select Endpoint page of the Add Create Page quick start. Under request, the country, department, email, hireDate, name, picture, and salary check boxes are selected, and those fields are shown under Fields. The Button label field is set to Create Employee. The Page title is Create Employee, and the Page name is main-create-employee.")
 
@@ -226,7 +226,7 @@ Add a Create page that lets your users create new employees.
 
     ![](images/vbcscp_cpc_s9.png "This image shows the HTML code for the main-employees page.")
 
-    Select the **oj-bind-text** value and change `Employees` to `My Employees`, then click **Design** to see your changes reflected in the page's visual editor.
+    Select the **oj-bind-text** value in line 34 and change `Employees` to `My Employees`, then click **Design** to see your changes reflected in the page's visual editor.
 
     ![](images/employees-code-view-changetitle.png "This image shows the <oj-bind-text> component code, with its value changed to My Employees. ")
 
@@ -263,4 +263,4 @@ It makes sense at this point to change the name of the main-start page to main-d
 ## Acknowledgements
 
 * **Author** - Sheryl Manoharan, Visual Builder User Assistance, August 2021
-* **Last Updated By** - June 2022
+* **Last Updated By** - August 2022
