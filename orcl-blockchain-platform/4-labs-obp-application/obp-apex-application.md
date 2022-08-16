@@ -29,22 +29,22 @@ This lab assumes you have:
 3. In the form, first choose a **Display name** (e.g. CarMarketplaceAPEX), a **Database name** (e.g. CarMarketplace), and then **Choose a workload type** (in this case, APEX) as shown.
   ![Choose instance name and DB type](images/4-adb-2.png)
 
-3. Toggle 'Always Free' as shown.
+4. Toggle 'Always Free' as shown.
   ![Choose Always Free](images/4-adb-3.png)
 
-4. Check that your **database version** is 19c.
+5. Check that your **database version** is 19c.
   ![Choose DB version](images/4-adb-4.png)
 
-5. **Create administrator credentials** and store these credentials somwhere safe.
+6. **Create administrator credentials** and store these credentials somwhere safe.
   ![Create admin credentials](images/4-adb-5.png)
 
-6. Choose **network access** and **license type** as shown:
+7. Choose **network access** and **license type** as shown:
   ![Choose network access and license type](images/4-adb-6.png)
 
-7. Finally, enter a **Contact Email**.
+8. Finally, enter a **Contact Email**.
   ![Enter contact email](images/4-adb-7.png)
 
-8. Click 'Create Autonomous Database' and wait a few minutes for the database to provision.
+9. Click 'Create Autonomous Database' and wait a few minutes for the database to provision.
 
 
 ## Task 2: Configure Database Schema and User Credentials
@@ -245,7 +245,7 @@ This lab assumes you have:
   - dealer-1-auth-obp (john_dealer1 account)
   - dealer-2-obp-auth (sam_dealer2 account)
 
- ## Task 6: Make Query and Invoke Calls via APEX to Transfer Vehicles
+## Task 6: Make Query and Invoke Calls via APEX to Transfer Vehicles
 
 Congrats on making it to the last task of this workshop!
 
@@ -255,7 +255,7 @@ You will now create a car and simulate a transaction between the founder organiz
 
 ![Car Delaership](images/dealer1-login.png)
 
-![Car Delaership](images/apex-myinventory.png)
+![Car Delaership](images/apex-myInventory.png)
 
 2. Click 'Add Car' and fill out the form to create a car, as shown. 
     - Enter Vehicle Vin (Must be 17 characters)
@@ -283,37 +283,37 @@ You will now create a car and simulate a transaction between the founder organiz
 
 ![Car Delaership](images/apex-accountBalance.png)
 
-5. Navigate to Marketplace 
+6. Navigate to Marketplace 
 
 ![Car Delaership](images/apex-viewMarketplace.png)
 
-6. Select vehicle to view payment details and proceed with Payment
+7. Select vehicle to view payment details and proceed with Payment
 
-![Car Delaership](images/apex-carDetailsPayment.png)
+![Car Delaership](images/apex-CarDetailsPayment.png)
 
-6. Confirm vehicle payment 
+8. Confirm vehicle payment 
 
-![Car Delaership](images/apex-confirmPayment.png)
+![Car Delaership](images/apex-ConfirmPayment.png)
 
 Purchase order will now be created.
 
-8. Return to dealer 1's account, and navigate to orders received. You should be able to see the order placed by dealer 2. 
+9. Return to dealer 1's account, and navigate to orders received. You should be able to see the order placed by dealer 2. 
 
 ![Car Delaership](images/apex-MyOrders.png)
    
-9. Select the actions icon (pencil) on the order received and process the order. 
+10. Select the actions icon (pencil) on the order received and process the order. 
 
 ![Car Delaership](images/apex-processOrder.png)
 
 This action confirms the order by the seller. 
 
-10. Return to dealers 2's account, and navigate to orders placed. You will see the order placed should now be processed and ready to complete the purchase. 
+11. Return to dealers 2's account, and navigate to orders placed. You will see the order placed should now be processed and ready to complete the purchase. 
 
 ![Car Delaership](images/apex-confirmReceipt.png)
 
 Select "Accept Receipt" to complete order or "Withdraw Offer" to cancel the order. 
 
-11. Once purchaser Accepts receipt, the token transfer will now occur and the vehicle will be delivered to the new owner. 
+12. Once purchaser Accepts receipt, the token transfer will now occur and the vehicle will be delivered to the new owner. 
 
 ![Car Delaership](images/apex-VehicleDelivered.png)
 
