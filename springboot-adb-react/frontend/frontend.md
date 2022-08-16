@@ -38,7 +38,7 @@ In this lab, you will:
 
 1. This lab requires the completion of **Setup Dev Environment** and **Backend (Java/SpringBoot)**.
 
-## **Task 1**: Learn how the frontend build is automated
+## Task 1: Learn how the frontend build is automated
 
 1. The frontend folder is located inside `MtdrSpring/backend/src/main`. The reason it is inside the backend folder is because we copy the `src` directory into our docker container. We could move the frontend folder somewhere else, we would just have to make the appropriate changes to the other files.
 

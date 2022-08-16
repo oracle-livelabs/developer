@@ -42,7 +42,7 @@ The backend is implemented using the following Java classes (under ./backend/src
 
 * This lab requires the completion of the **Setup Dev Environment** tutorial (aka Lab 1).
 
-## **Task 1**: Build and Push the Docker Images to the OCI Registry
+## Task 1: Build and Push the Docker Images to the OCI Registry
 
 The OCI Container Registry is where your Docker images are managed. A container registry should have been created for you in Lab 1 in your compartment.
 
@@ -71,7 +71,7 @@ The OCI Container Registry is where your Docker images are managed. A container 
 
   ![](images/build-image.png "build-image")
 
-## **Task 2**: Deploy on Kubernetes and Check the Status
+## Task 2: Deploy on Kubernetes and Check the Status
 
 1. Run the `deploy.sh` script
 
@@ -121,10 +121,10 @@ The OCI Container Registry is where your Docker images are managed. A container 
 
   Example: `kubectl -n mtdrworkshop logs -f todolistapp-springboot-deployment-54c967665-6482r`
 
-    ![](images/deploy-success.png "deploy-success")
+![](images/deploy-success.png "deploy-success")
 
   If the logs return **'Tomcat started on port(s): 8080 (HTTP) with context path'**, then you can move on to task 4!
-## **Task 3**: UnDeploy (optional)
+## Task 3: UnDeploy (optional)
 
   If you make changes to the image, you need to delete the service and the pods by running undeploy.sh then redo Steps 2 & 3.
 
@@ -139,7 +139,7 @@ The OCI Container Registry is where your Docker images are managed. A container 
 
   2. Rebuild the image + Deploy + (Re)Configure the API Gateway
 
-## **Task 4**: Build and Re-Deploy with Load Balancer IP address
+## Task 4: Build and Re-Deploy with Load Balancer IP address
 
 In order to call the API's that are built to retrieve the list of Todo items, update items etc, we must update the value of API_LIST to point to the load balancer ip address.
 
