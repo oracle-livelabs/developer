@@ -24,7 +24,7 @@ Mac:
 
 * This lab requires an [Oracle Cloud account](https://www.oracle.com/cloud/free/). You may use your own cloud account, a cloud account that you obtained through a trial, a Free Tier account, or a LiveLabs account.
 
-## **Task 1**: Create Group and Appropriate Policies
+## Task 1: Create Group and Appropriate Policies
 [Policies](https://docs.oracle.com/en-us/iaas/Content/Identity/Concepts/policies.htm) determine what resources users are allowed to access and what level of access they have. You can create a group and add as many users as you like to that group. 
 
 If you are not the tenancy administrator, there may be additional policies you must have in your group to perform some of the steps for this lab. If you cannot create a group and add specific policies, please ask your tenancy administrator for the correct policies to follow.
@@ -77,7 +77,7 @@ Select **Show manual editor** and copy and paste these policies in the box below
 
 	![](images/add-user-group.png "add-user-group")
 
-## **Task 2**: Launch the Cloud Shell
+## Task 2: Launch the Cloud Shell
 
 
 1. Launch Cloud Shell
@@ -89,7 +89,7 @@ Select **Show manual editor** and copy and paste these policies in the box below
 
 	![](images/open-cloud-shell.png "cloud-shell")
 
-## **Task 3**: Create a Folder for the Workshop Code
+## Task 3: Create a Folder for the Workshop Code
 
 1. Create a directory, which will be used to create a compartment of the same name in your tenancy if you do not provide one of your own. The directory name **must be between 1 and 13 characters, contain only letters or numbers, and start with a letter**. Make sure that a compartment of the same name does not already exist in your tenancy or the setup will fail. 
 
@@ -104,7 +104,7 @@ Select **Show manual editor** and copy and paste these policies in the box below
 	</copy>
 	````
 
-## **Task 4**: Clone the Workshop Code
+## Task 4: Clone the Workshop Code
 
 1. Clone the workshop code into the directory you've just created.
 	````
@@ -114,7 +114,7 @@ Select **Show manual editor** and copy and paste these policies in the box below
 	````
   You should now see `oci-react-springboot-simple` in your root directory
 
-## **Task 5**: Start the Setup
+## Task 5: Start the Setup
 
 The setup script uses Terraform, Bash scripts, and SQL to automate the creation of the resources needed for this lab. The script will ask for the necessary components to automate resource creation. 
 
@@ -161,7 +161,7 @@ The setup script uses Terraform, Bash scripts, and SQL to automate the creation 
 
   To use an existing compartment, you must enter the OCID of the compartment yourself. To find the OCID of an existing compartment, click on the Navigation Menu of the cloud console, navigate to **Identity & Security** and click on **Compartments**
 
-	![](images/compartment-navigate.png "navigate-to-compartment")
+	![](images/compartment-navgate.png "navigate-to-compartment")
   Click the appropriate compartment and copy the OCID 
 
   	![](images/compartment-ocid.png "compartment-ocid")
@@ -184,7 +184,7 @@ The setup script uses Terraform, Bash scripts, and SQL to automate the creation 
 	![](images/db-password-prompt.png "db-password-prompt")
     
 
-## **Task 6**: Monitor the Setup
+## Task 6: Monitor the Setup
 The setup should take around 20 minutes to complete. During the setup, the cloud shell will output its progress so keep an eye on it to see exactly what it's doing. If there are any errors, you should check the logs located in the $MTDRWORKSHOP_LOG directory.
 
 1. The setup will update you with the progress of the resource creation. Wait for the setup to complete to move on to the next lab
@@ -197,7 +197,7 @@ You can also monitor the setup using the following command:
 	ps -ef
 	</copy>
 	```
-## **Task 7**: Complete the Setup
+## Task 7: Complete the Setup
 
 When the setup is done running, you will see a message: **SETUP VERIFIED**
 

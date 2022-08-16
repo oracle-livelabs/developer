@@ -32,7 +32,7 @@ In this 3 part workshop, you will:
 
 ### Prerequisites
 
-* An Oracle Free Tier or Paid Cloud Account
+* Please refer to "Get Started"
 
 You may now **proceed to the next lab**.
 

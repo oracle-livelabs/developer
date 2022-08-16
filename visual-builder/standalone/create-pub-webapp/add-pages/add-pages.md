@@ -8,7 +8,7 @@ Estimated Time:  15 minutes
 
 ### About this lab
 
-In a previous lab, you used a couple of Quick Starts to create pages that let your users add departments and employees. In this lab, you'll use the rest of them to add pages for users to edit and delete departments and employees. You'll also get a chance to test your web pages as they will appear to the user.
+In a previous lab, you used a couple of Quick Starts to create pages that let your users add departments and employees. In this lab, you'll use the rest of them to add pages for users to edit and delete departments and employees. You'll also get a chance to test all your web pages as they will appear to the user.
 
 ## Task 1: Add a page to edit a department's details
 
@@ -80,8 +80,8 @@ Now that we've added options to let users manage departments, we'll do the same 
 
 8.   To make the form's fields display in two columns, click within the form on the page but outside of a component (that is, in the **Form Layout** component on the page). In the **General** tab of the Properties pane, set the **Max Columns** value to **2**. The fields now appear in two columns.
 
-9. Let's also set up the employee's picture field to display as an image. To do this, drag an Avatar component from the Components palette and drop it onto the **div** element just above the Form Layout on the page.
-    ![](images/avatar.png "Thisimage shows an Avatar component being dropped into the div element above the Form Layout component on the Edit Employee page. ")
+9. Let's also set up the employee's picture field to display as an image. To do this, search for an Avatar component in the Components palette, then drag and drop it onto the **div** element just above the Form Layout on the page.
+    ![](images/avatar.png "This image shows an Avatar component being dropped into the div element above the Form Layout component on the Edit Employee page. ")
 
 10. In the Avatar's Properties pane, select **Large** in the **Size** drop-down list to increase the component's size.  
 
@@ -105,7 +105,7 @@ Now that we've added options to let users manage departments, we'll do the same 
 
   ![](images/deleteEmployeeChain.png "This image shows the Events tab selected for the button, listing the deleteEmployeeChain as the action chain trigged by the ojAction event.")
 
-5. On the success branch of the Call REST action, drag and drop a new Fire Data Provider Event (used to dispatch an event on a data provider) and position it between the other Fire Data Provider Event and Fire Notification actions. You might need to drop the action at the **+** sign, then move it up where you want it.  
+5. On the success branch of the Call REST action, drag and drop a new Fire Data Provider Event (used to dispatch an event on a data provider) and position it between the other Fire Data Provider Event and Fire Notification actions. You might need to drop the Fire Data Provider Event action on the **+** sign, then drag the Fire Notification action down onto the **+** sign.  
 
   ![](images/deleteEmployeeChain-actionchain.png "This image shows the deleteEmployeeChain in diagram view. On the success branch of the Call REST action, a second Fire Data Provider Event action has been added. Its properties pane show on the right: Event Target is undefined and Type is set to Mutate.")
 
@@ -170,4 +170,4 @@ Now that we have our web pages, let's change the application's home page from De
 ## Acknowledgements
 
 * **Author** - Sheryl Manoharan, Visual Builder User Assistance, August 2021
-* **Last Updated By** - June 2022
+* **Last Updated By** - August 2022
