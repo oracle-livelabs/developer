@@ -55,7 +55,7 @@ Creating a user is a way to create a schema. In this section, you execute the `C
   - The password cannot contain the double quote (") character.
   - The password must not be the same password that is set less than 24 hours ago.
 
-1. In this lab's previous task, you connected to SQL Worksheet as the autonomous database administrator. When connected as administrator, open a SQL Worksheet and create a user named `APPUSER`.
+1. In this lab's previous task, you connected to SQL Worksheet as the autonomous database administrator. When connected as administrator, open a SQL Worksheet and create a user named `APPUSER` by copying and pasting the following command to the worksheet. Click on the green and white Run Statement button to execute the command.
 
     ```
     <copy>CREATE USER appuser IDENTIFIED BY Lab_practice1;</copy>
@@ -90,7 +90,7 @@ You use the `GRANT` statement to assign privileges to users and roles. To assign
 
 Syntax: `GRANT <privilege> TO <user>;`
 
-1. When you create a user with the `CREATE USER` statement, the user's privilege domain is empty by default. The administrator assigns privileges to the user based on the tasks that the user may perform in the future. In this lab, the APPUSER user establishes a session, creates a table, and writes DML statements against tables. Execute the following statements to assign the required privileges to the APPUSER user:
+1. When you create a user with the `CREATE USER` statement, the user's privilege domain is empty by default. The administrator assigns privileges to the user based on the tasks that the user may perform in the future. In this lab, the APPUSER user establishes a session, creates a table, and writes DML statements against tables. Execute the following statement to assign the required privileges to the APPUSER user:
 
     ```
     <copy>GRANT CREATE SESSION, CREATE TABLE, UNLIMITED TABLESPACE TO appuser;
@@ -111,8 +111,8 @@ Syntax: `GRANT <privilege> TO <user>;`
 3. Create the `TODOITEM` table with the `ID` column as the primary key.
 
     ```
-    <copy>CREATE TABLE APPUSER.TODOITEM (
-	id NUMBER GENERATED ALWAYS AS IDENTITY,
+    <copy>CREATE TABLE APPUSER.TODOITEM ( 
+	id NUMBER GENERATED ALWAYS AS IDENTITY, 
 	description VARCHAR2(4000), 
 	creation_ts TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP, 
 	done NUMBER(1, 0), 
@@ -127,7 +127,7 @@ Syntax: `GRANT <privilege> TO <user>;`
     **Syntax**: ```INSERT INTO table [(column [, column...])]
                 VALUES (value [, value...]);```
 
-    Execute the following statements to insert data into the `TODOITEM` table. We will again prepend APPUSER to the table name.
+    Execute the following statements to insert data into the `TODOITEM` table. We will again prepend APPUSER to the table name. When executing more than one statement in the worksheet at a time, highlight all the SQL Oracle should execute.
 
     ```
     <copy>INSERT INTO APPUSER.TODOITEM (DESCRIPTION, DONE) VALUES('Task 1', 0);
