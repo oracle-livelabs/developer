@@ -239,7 +239,7 @@ This lab assumes you have:
 
 4. Using the same password used for the founder instance (marketplace, Section 1- Task 2), update the password in 'Client or Password' field and 'Apply Changes'. 
 
-    ![Web Credentials](images/wc-updatePassword.png)
+![Web Credentials](images/wc-updatePassword.png)
 
 5. Repeat step 1-4 for the other two web credentials, using the passwords belonging to the Dealership accounts in Section 1 - task 8.
   - dealer-1-auth-obp (john_dealer1 account)
@@ -253,9 +253,9 @@ You will now create a car and simulate a transaction between the founder organiz
 
 1. Login as a dealer (e.g. Dealer1) and land on My Inventory.
 
-![Car Delaership](images/dealer1-login.png)
+  ![Car Delaership](images/dealer1-login.png)
 
-![Car Delaership](images/apex-myInventory.png)
+  ![Car Delaership](images/apex-myInventory.png)
 
 2. Click 'Add Car' and fill out the form to create a car, as shown. 
     - Enter Vehicle Vin (Must be 17 characters)
@@ -267,7 +267,7 @@ You will now create a car and simulate a transaction between the founder organiz
     - Select a vehicle type.
     - Set 'For Sale' to true.
 
-![Car Delaership](images/apex-addcar.png)
+  ![Car Delaership](images/apex-addcar.png)
 
 3. Now login as the other dealer, Dealer2.
 
@@ -279,49 +279,49 @@ You will now create a car and simulate a transaction between the founder organiz
 
 5. Select Deposit Money, and enter desired ammount. Account Balance should be updated to reflect amount deposited. 
 
-![Car Delaership](images/apex-depositMoney.png)
+  ![Car Delaership](images/apex-depositMoney.png)
 
-![Car Delaership](images/apex-accountBalance.png)
+  ![Car Delaership](images/apex-accountBalance.png)
 
 6. Navigate to Marketplace 
 
-![Car Delaership](images/apex-viewMarketplace.png)
+  ![Car Delaership](images/apex-viewMarketplace.png)
 
 7. Select vehicle to view payment details and proceed with Payment
 
-![Car Delaership](images/apex-CarDetailsPayment.png)
+  ![Car Delaership](images/apex-CarDetailsPayment.png)
 
 8. Confirm vehicle payment 
 
-![Car Delaership](images/apex-ConfirmPayment.png)
+  ![Car Delaership](images/apex-ConfirmPayment.png)
 
 Purchase order will now be created.
 
 9. Return to dealer 1's account, and navigate to orders received. You should be able to see the order placed by dealer 2. 
 
-![Car Delaership](images/apex-MyOrders.png)
+  ![Car Delaership](images/apex-MyOrders.png)
    
 10. Select the actions icon (pencil) on the order received and process the order. 
 
-![Car Delaership](images/apex-processOrder.png)
+  ![Car Delaership](images/apex-processOrder.png)
 
 This action confirms the order by the seller. 
 
 11. Return to dealers 2's account, and navigate to orders placed. You will see the order placed should now be processed and ready to complete the purchase. 
 
-![Car Delaership](images/apex-confirmReceipt.png)
+  ![Car Delaership](images/apex-confirmReceipt.png)
 
 Select "Accept Receipt" to complete order or "Withdraw Offer" to cancel the order. 
 
 12. Once purchaser Accepts receipt, the token transfer will now occur and the vehicle will be delivered to the new owner. 
 
-![Car Delaership](images/apex-VehicleDelivered.png)
+  ![Car Delaership](images/apex-VehicleDelivered.png)
 
-![Car Delaership](images/apex-vehicleDeliverdToDelaer.png)
+  ![Car Delaership](images/apex-vehicleDeliverdToDelaer.png)
 
 Additionaly, you are able to view the invoice from the purchase in the Orders > Invoice received section
 
-![Car Delaership](images/apex-invoiceReceived.png)
+  ![Car Delaership](images/apex-invoiceReceived.png)
 
 
 
