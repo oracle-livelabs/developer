@@ -68,4 +68,4 @@ You may now **proceed to the next lab**.
 
 * **Authors** -  Kuassi Mensah, Dir. Product Management, Java Database Access; Peter Song, Developer Advocate JDBC
 * **Contributors** - Jean de Lavarene, Sr. Director of Development, JDBC/UCP
-* **Last Updated By/Date** - Peter Song, Developer Advocate JDBC
+* **Last Updated By/Date** - Kuassi Mensah, Sept 2022

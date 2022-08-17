@@ -62,7 +62,8 @@ If you are not the tenancy administrator, there may be additional policies you m
 	![Policy creation](images/create-policy.png "create-policy")
 6. You should see a page like this. This is where you will create the policy that will give the group permission to execute the setup for this workshop. (note: replace oracleonpremjava(root) with the root of your tenancy)
 
-	![Policy details](images/policy-details.png "policy-details")
+![Policy details](images/policy-details.png "policy-details")
+
 Select **Show manual editor** and copy and paste these policies in the box below.
 	```
 	<copy>
@@ -214,4 +215,4 @@ You may now **proceed to the next lab**.
 
 * **Authors** -  - Kuassi Mensah, Dir. Product Management, Java Database Access; Peter Song, Developer Advocate JDBC
 * **Contributors** - Jean de Lavarene, Sr. Director of Development JDBC/UCP
-* **Last Updated By/Date** - Peter Song, Developer Advocate,  Feb 2022
+* **Last Updated By/Date** - Kuassi Mensah,  Sept 2022

@@ -102,7 +102,7 @@ pods
 
 Pods is an alias for `kubectl get pods`.
 ![Get Pods](images/get-pods.png)
-4. You can tail the log of one of the pods by running:
+4\. You can tail the log of one of the pods by running:
 
 ```
 <copy>
@@ -115,7 +115,7 @@ $ kubectl logs -f
 <br>
 Example: `kubectl -n mtdrworkshop logs -f todolistapp-springboot-deployment-54c967665-6482r`
 
-  ![Deploy Success](images/deploy-success.png " ")
+![Deploy Success](images/deploy-success.png)
 
 If the logs return **'Tomcat started on port(s): 8080 (HTTP) with context path'**, then you can move on to task 4!
 
@@ -154,7 +154,7 @@ vi API.js
 </copy>
 ```
 
-![API List](images/api-list.png " ")
+![API List](images/api-list.png)
 
 3. Navigate back to the backend folder
 
@@ -166,7 +166,7 @@ source build.sh
 ```
 
 4. Next, for the code change to be reflected in your pod, you must update the pod to use the latest image.
-Replace `phx` with your region.
+Note: Replace `phx` with your region.
 
 ```
 <copy>
@@ -174,15 +174,14 @@ kubectl set image deployments/todolistapp-springboot-deployment todolistapp-spri
 </copy>
 ```
 
+5. Give your pods a couple of minutes to restart. Check their progress using the `pods` command.
 
-5. Give your pods a couple of minutes to restart. Check their progress using the `pods` command. 
-
-6. Once your pods are up and running. Go to your web browser and navigate to the load balancer IP address. 
+6\. Once your pods are up and running\. Go to your web browser and navigate to the load balancer IP address\.
 The application login screen will appear
-![Login](images/todolist-login.png " ")
+![Login](images/todolist-login.png)
 
 Once you log in, you should see the following output, which means your deployment is successful!
-![Success](images/successful-todo.png " ")
+![Success](images/successful-todo.png)
 
 You may now **proceed to the next lab**.
 
@@ -190,4 +189,5 @@ You may now **proceed to the next lab**.
 
 * **Author** \- Peter Song\, Developer Advocate JDBC
 * **Contributors** \- Kuassi Mensah\, Director Product Management and Jean de Lavarene\, Sr\. Director of Development\, JDBC/UCP
-* **Last Updated By/Date** \- Peter Song Developer Advocate February 2022
+* **Last Updated By/Date** \- Kuassi Mensah\, September 2022
+*
