@@ -13,23 +13,25 @@
             "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/cloud-login-livelabs2.md"
         },
         {
-            "title": "Lab 2: Develop Node.js Applications",
+            "title": "Lab 1: Download the wallet file and set up Access Control List ",
+            "description": "Provision an Oracle Autonomous Database",
+            "type": "sandbox",
+            "filename": "../../adb-with-wallet/adb-with-wallet-sandbox.md"
+        }, 
+        {
+            "title": "Lab 2: Develop Python Applications",
+            "filename": "../../pythondb-development-oracledb/pythondb-development-oracledb.md" 
+        }, 
+        {
+            "title": "Lab 3: Develop Node.js Applications",
             "filename": "../../nodedb-development/nodedb-development.md"
-        },  
+        }, 
         {
-            "title": "Lab 3: Develop Python Applications (python-oracledb)",
-            "filename": "../../pythondb-development-oracledb/pythondb-development-oracledb.md"
-        },
-        {
-            "title": "Lab 4: Develop Python Applications",
-            "filename": "../../pythondb-development/pythondb-development.md"
-        },  
-        {
-            "title": "Lab 5: Develop Java Applications",
+            "title": "Lab 4: Develop Java Applications",
             "filename": "../../javadb-development/javadb-development.md"
         }, 
         {
-            "title": "Lab 6: Develop .NET Applications",
+            "title": "Lab 5: Develop .NET Applications",
             "filename": "../../dotnet-development/dotnet-development.md"
         } 
         ,
