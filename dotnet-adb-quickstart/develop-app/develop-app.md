@@ -137,7 +137,7 @@ We will create a simple web application that returns the current tasks (DESCRIPT
 1. In Cloud Console, build and run the app using the following command:
 
     ```
-    <copy>dotnet watch run
+    <copy>dotnet run
     </copy>
     ```
 

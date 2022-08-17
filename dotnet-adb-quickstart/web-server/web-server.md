@@ -87,19 +87,22 @@ An Oracle Cloud Infrastructure VM compute instance runs on the same hardware as 
 
     ![Click Cloud Shell icon](./images/cloud-shell-icon.png)
 
-2. Cloud Shell will open. We will use SSH to securely connect to the compute instance. In Cloud Shell, change to the **.ssh** directory by entering the following command:
-
-    ```
-    <copy>cd .ssh</copy>
-    ```
-
-3. Open the Cloud Shell menu in the upper left of Cloud Shell. Click **Upload** to begin uploading the private key to the compute instance.
+2. Cloud Shell will open. Open the Cloud Shell menu in the upper left of Cloud Shell. Click **Upload** to begin uploading the private key to the compute instance.
 
     ![Click Upload from menu](./images/cloud-shell-choose-upload.png)
 
-4. Upload the private key through Cloud Shell that you auto-generated in the last task. Its default name is in the format, **ssh-key-&lt;date&gt;.key**. Either drop the file into the window or navigate to its location on your local machine. When completed, click the **Upload** button.
+3. Upload the private key through Cloud Shell that you auto-generated in the last task. Its default name is in the format, **ssh-key-&lt;date&gt;.key**. Either drop the file into the window or navigate to its location on your local machine. When completed, click the **Upload** button.
 
     ![Upload the private key](./images/cloud-shell-key-upload.png)
+
+4. We will use SSH to securely connect to the compute instance. In Cloud Shell, move the private key to the **.ssh** directory and change into that directory by entering the following commands:
+
+    ```
+    <copy>mv <private_ssh_key> .ssh</copy>
+    ```
+    ```
+    <copy>cd .ssh</copy>
+     ```
 
 5. Since this is a private key, assign permissions to protect the key from other users. Enter the following into Cloud Shell:
 
