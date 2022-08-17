@@ -13,9 +13,9 @@ Autonomous Database supports four main types of workload:
 * Transactions and analytics on JSON data
 * Oracle APEX Application Development
 
-This lab walks you through the steps to get started using the Oracle Autonomous Database on Oracle Cloud. You will provision a new Autonomous Data Warehouse instance.  
+This lab walks you through the steps to get started using the Oracle Autonomous Database on Oracle Cloud. You will download the wallet where Autonomous Database has already been created. You will then set up the Access control list.
 
-Estimated Time: 20 minutes
+Estimated Time: 10 minutes
 
 ### Objectives
 
@@ -33,91 +33,19 @@ In this lab, you will:
 1. Log in to the Oracle Cloud.
 2. Once you log in, the cloud services dashboard shows all the services available to you. Click the **navigation menu** in the upper left to show top-level navigation choices.
 
-3. This lab shows the provisioning of an Autonomous Data Warehouse database. Click on **Oracle Database**, then select **Autonomous Data Warehouse**.
+3. Select the allocated compartment and the region. The compartment name and the region will be available under LiveLabs My Reservations.
 
-    ![Click Autonomous Data Warehouse.](https://oracle-livelabs.github.io/common/images/console/database-adw.png " ")
+    ![select compartment](images/select-ll-compartment.png " ")
+
+    You will then be able to view the pre-provisioned Autonomous Database instance.
+
+    ![selected compartment](images/selected-compartment-2.png " ")
 
 
-4. Make sure your Workload Type is __Data Warehouse__ or __All__ to see your Autonomous Data Warehouse instances. Use the __List Scope__ drop-down menu to select a compartment. <if type="livelabs">Enter the first part of your user name, for example `LL185` in the Search Compartments field to quickly locate your compartment.
+4. Make sure your Workload Type is __Data Warehouse__ or __All__ to see your Autonomous Data Warehouse instances. Use the __List Scope__ drop-down menu to select a compartment. 
+5. Click on Display Name Polyglot_Dev to view detailed information about the Autonomous Database provisioned.
  
-    <if type="freetier">
-    ![Check the workload type on the left.](images/compartment-name.png " Check the workload type on the left.")
-
-    > **Note:** Avoid using the `ManagedCompartmentforPaaS` compartment, as this is an Oracle default used for Oracle Platform Services.
-   </if>
-
-5. This console shows that no databases yet exist. If there were a long list of databases, you could filter the list by the **State** of the databases (Available, Stopped, Terminated). You can also sort by __Workload Type__. In this example, __Data Warehouse__ is the workload type.
-
-    ![Autonomous Databases console.](./images/no-adb-instances.png "Autonomous Databases console. ")
-
-<if type="freetier">
-1. You can see your current default **region** in the top right-hand corner of the page.
-    ![Select region on the far upper-right corner of the page.](./images/region-select.png " ")
-</if>
-
-## Task 2: Create the Oracle Autonomous Database instance
-
-1. Click **Create Autonomous Database** to start the instance creation process.
-
-    ![Click Create Autonomous Database.](./images/create-autonomous-database.png "Click Create Autonomous Database. ")
-
-2.  This brings up the __Create Autonomous Database__ screen, where you will specify the instance's configuration.
-
-3. Specify basic information for the Autonomous Database:
-
-    - __Compartment__ - Leave the default compartment.
-    - __Display Name__ - Enter a memorable name for the database for display purposes. For example, use __DEMO\_ADW__.
-    - __Database Name__ - Use letters and numbers only, starting with a letter. The maximum length is 30 characters.  
-    - __Workload Type__ - For this lab, choose __Data Warehouse__ as the workload type.
-    - __Deployment Type__ - For this lab, choose __Shared Infrastructure__ as the deployment type.
-
-    <if type="freetier">
-    ![Create ADW screen](./images/create-adw-screen1.png "Create ADW screen ")
-    </if>
-
-4. Configure the database:
-
-    - __Always Free__ - For this lab, we will leave Always Free **unchecked**.
-    - __Choose database version__ - Select a database version **19c** from the available versions.
-    - __OCPU count__ - Number of CPUs for your service. For this lab, specify __1 CPU__.  
-    - __Storage (TB)__ - Select your storage capacity in terabytes. For this lab, specify __1 TB__ of storage.  
-    - __Auto Scaling__ - Auto Scaling - For this lab, keep auto-scaling **unchecked**. If autoscaling is enabled, the system will automatically use up to three times more CPU and IO resources to meet workload demand. learn more about [auto scaling](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/autonomous-auto-scale.html)
-
-    > **Note:** This Lab can also run on an **Always Free** configuration. If you select Always Free, the Autonomous Database can utilize up to 1 core and 20 GB of storage. The CPU core count and storage cannot be adjusted.
-
-    ![Choose a workload type.](./images/create-adw-screen2.png " ")
-
-    Create administrator credentials:
-
-    - __Password and Confirm Password__ - Specify the password for the **ADMIN** user of the service instance.  
-    - Autonomous Database requires strong passwords. The password you specify must meet the [default password complexity rules](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcu/#ADBCU-GUID-0E019845-31AE-44D7-B55C-9BCBA7E1377F).
-
-5. Choose network access:
-    - For this lab, accept the default, **Secure access from everywhere**.
-
-     ![Choose a deployment type.](./images/create-adw-screen3.png " ")
-
-<if type="freetier">
-1. Choose a license type. For this lab, choose __License Included__. The two license types are:
-</if>
-
-    - __Bring Your Own License (BYOL)__ - Select this type when your organization has existing database licenses. [learn more](https://www.oracle.com/cloud/pricing/)
-    - __License Included__ - Select this type when you want to subscribe to new database software licenses and the database cloud service.
-    - __Oracle Database Edition__ - Select __Oracle Database Enterprise Edition__. This option is available only if you have selected __Bring Your Own License (BYOL)__
-
-1. The **Contact Email** field allows you to list contacts to receive operational notices and announcements as well as unplanned maintenance notifications. This is optional.
-
-    ![Do not provide a contact email address.](images/contact-email-field.png)
-
-    Click on __Create Autonomous Database__. button
-
-    ![Click Create ADW Button.](images/create-adw-button.png)
-
-2.   Your instance will begin provisioning. In a few minutes, the State will turn from Provisioning to Available. At this point, your Autonomous Data Warehouse database is ready to use! Have a look at your instance's details here, including its name, database version, OCPU count, and storage size.
-
-    ![Database instance homepage.](./images/instance-live.png "Database instance homepage ")
-
-## Task 3: Create a database user and tables
+## Task 2: Create a database user and tables
 
 1. Let us create a new database user and a couple of tables using the sample SH schema. SH schema is pre-installed with default instance creation.  
 
@@ -159,7 +87,7 @@ In this lab, you will:
 
     ![sql worksheet](images/app-user.png =50%x*  "sql worksheet")
 
-## Task 4: Download the wallet for this database
+## Task 3: Download the wallet for this database
 
 1. Click on the **DB Connection** button. This will open up the Database Connection dialog box.
 
@@ -177,7 +105,7 @@ In this lab, you will:
 
     Extract the wallet zip file to the folder of your choice. We will be using this **wallet folder** in future labs of this workshop.
 
-## Task 5: One-way TLS connection to Oracle Autonomous Database for wallet-less connections  
+## Task 4: One-way TLS connection to Oracle Autonomous Database for wallet-less connections  
 
 > **Note:**  This Task is required if you plan to use a wallet-less connection with Autonomous Database using Python or . NET. Otherwise, you can still connect to Autonomous Database using the wallet downloaded in the previous Task.
 
@@ -252,4 +180,4 @@ You may now **proceed to the next lab**.
 
 - **Author** - Madhusudhan Rao, Principal Product Manager, Database
 - **Contributors** - Kevin Lazarz, Senior Principal Product Manager and Christopher Jones, Senior Principal Product Manager
-- **Last Updated By/Date** - Madhusudhan Rao, June 2022
+- **Last Updated By/Date** - Madhusudhan Rao, Aug 2022
