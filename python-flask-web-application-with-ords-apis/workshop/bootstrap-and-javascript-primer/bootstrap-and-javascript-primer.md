@@ -2,27 +2,44 @@
 
 ## Introduction
 
-In this lab we'll review Bootstrap's HTML and CSS, JavaScript functions, and Jinja. We'll also review how JavaScript and Jinja interact with ORDS to allow our application to function. 
+In this lab we'll continue to review the technologies and frameworks used in this web application.
 
 Estimated Time: 20 minutes
 
-### About Bootstrap, JavaScript functions Jinja, and ORDS 
-This lab will discuss how we've implemented Bootstrap, select Javascript functions and Jinja in our Flask application. 
-- Bootstrap 
-- JavaScript
-- Jinja 
+### About Oracle REST Data Services (ORDS) and developer tools 
+This lab will discuss a variety of Enterprise and open source technologies, including: 
+- Oracle REST Data Services (ORDS)
+- Oracle Clould Infrastructure (OCI) <i>Always Free</i> Tier Tenancy
+- Datbase Actions
+<!-- I'm actually not sure about cURL, but I don't want to forget it -->
+<!-- Make sure any changes here are also included in the Learn More section - we'll want to include those resources as well  -->
+- cURL
+- Python 3.10.x and later 
+- Python packages (libraries) such as: 
+  - Flask 
+  - Folium 
+  - Json
+ - Requests 
+- <i>select</i> JavaScript functions 
+- Bootstrap HTML and CSS frameworks
+- Microsoft Visual Studio Code 
 
-We will discuss and explore these technologies and solutions in a practical sense. However, should you wish explore further, refer to the "Learn More" section of this page. 
+We will discuss and explore these technologies and solutions in a practical sense. However, should you wish explore above what this workshop covers, we encourage you to refer to the "Learn More" section of this page. 
 
 ### Objectives
-In this lab, you will review the application's:
+In this lab, you will review the applications's:
 * HTML templates
+* CSS
 * JavaScript functions
-* Included Jinja 
+* Review the API's paths and functions
 
 ### Prerequisites
 This lab assumes you have:
+* An Oracle Cloud Infrastructure account
 * All previous labs successfully completed
+
+
+<!-- *This is the "fold" - below items are collapsed by default* -->
 
 ## Task 1: Review the application module
 
@@ -30,7 +47,7 @@ This lab assumes you have:
 
 	![Review of the Static and Templates folders](images/static-and-template-folders.png)
 
-	Collapse all folders to get a more focused view of the application and its dependencies. You'll notice a `static` and `template` folder. Typically, the `static` folder will contain any CSS or Javascript files. In this application, since we are using Bootstrap almost exclusively, we've largely removed the need for separate CSS files. Most of the HTML and CSS work is done through Bootstrap's APIs. You will however see images that are unique to our sample application. 
+	Collapse all folders to get a more focused view of the application and its dependencies. You'll notice a `static` and `template` folder. Typically, the `static` folder will contain any CSS or Javascript files. In this application, since we are using Bootstrap almost exclusively, we're largely removed the need for separate CSS files. Most of the HTML and CSS work is done through Bootstrap's APIs. You will however see images that are unique to our sample application. 
 
   The other, more comprehensive folder, is the `template` folder. Here you'll find all HTML pages used for this application. We'll also explore how we've integrated Bootstrap as well as JavaScript <i>directly</i> into our HTML pages. You'll see the `template` folder is simple. It includes all the HTML pages a user would interact with: 
   - `base.html`
@@ -47,21 +64,19 @@ This lab assumes you have:
 
     ![Base HTML page](images/base-html-page.png)
 
-    The `base` HTML page is quite literally the foundation of this application. Notice we've included an API for Bootstrap's CSS framework. At the bottom of this page, you'll see we include the API for JavaScript as well. This all allows us to easily extend the Bootstrap framework - which allows us to rely on Bootstrap for much of the application's presentation layer. 
+    The `base` HTML page is quite literally the base, foundation of this application. You'll notice we include an API for Bootstrap's CSS framework. At the bottom of this page, you'll see we include the API for JavaScript as well. This all allows us to easily extend the Bootstrap framework - which allows us to rely no Bootstrap for much of the presentation layer of this application. For if not, all HTML and CSS would need to be coded from scratch. 
 
-    Also note our three JavScript functions: 
-    - `totalPrice()`
-    - `getPrice()`
-    - `getDescription()` 
-    
-    These functions are triggered when a user visits and/or interacts with the `orderform.html` page. We'll discuss in more detail the output of each function shortly. 
+    You'll also notice three JavScript functions: `totalPrice()`, `getPrice()`, and `getDescription()` These functions are triggered when a user visits and/or interacts with the `orderform.html` page. We'll discuss in more detail the output of each function shortly. 
 
-    You may also notice Jinja templating near the `</head>`, and `<main>` HTML tags. The different variations (which you'll see throughout) are referred to as "delimiters": 
-    - `{% ... %}` Statements
-    - `{{ ... }}` Expressions
-    - `{# ... #}` Comments
+    You may also notice Jinja templating near the `</head>`, and `<main>` HTML tags. The different variations (which you'll see throughout) are referred to as "delimiters":
+
+    <!-- {% raw %} -->
+    - {% ... %} are used statements
+    - {{ ... }} are used for Expressions
+    - {# ... #}
     
-    Each serve different purposes, but all allow us to easily and dynamically pass in additional information while using syntax similar to Python. While Jinja education is outside the scope of this lab, you may review the **Learn More** section of this lab to review the Jinja documentation.
+
+    Each serve different purposes, but all allow us to easily and dynamically pass in additional information while using syntax similar to python. While Jinja education is outside the scope of this lab, you may review the **Learn More** section of this lab to review the Jinja documentation.
 
     We will rely on this `base.html` page across the application. We will also need the navigation bar across all pages, thus we include it so it will render in all pages (i.e. the `{% include 'navbar.html' %}` placeholder).
 
@@ -70,6 +85,7 @@ This lab assumes you have:
     We take a similar approach with the following placeholders:
 
     `{% block content %} {% endblock %}`
+
 
     Now, anywhere else in our HTML where we specify  "block content" it will render in the corresponding body section of the `base.html`. You'll also see later, that other pages will "extend" the `base.html` file; this will ensure that each page includes the properties of the `base.html` page (like our JavaScript functions, and Bootstrap's HTML and CSS). But to the user, they will still remain on the page of focus, as we'll see in the `index.html` page.
 
@@ -85,11 +101,13 @@ This lab assumes you have:
 
     ![Index HTML page](images/index-html-page.png)
 
-    This page acts as the "landing page" for the user. When a user arrives, they'll first see a description related to the product/service. Notice the Jinja here as well. Recall how "block content" works in concert with the `base.html` page. The HTML on this `index.html` page will "extend" the `base` page (i.e. `{% extends "base.html" %}`), while still displaying the `index.html` page. And since the `navbar` is included in the `base` page, it will display here as well.
+    This page acts as the "landing page" for the user. When the user is first welcomed, there is copy related to the product/service. Notice the Jinja here as well. Recall how "block content" works in concert with the `base.html` page. The HTML on this `index.html` page will "extend" the `base` page (i.e. `{% extends "base.html" %}`), while still displaying the `index.html` page. And since the `navbar` is included in the `base` page, it will display here as well.
 
-    Further down, you will see `{{ lvmap | safe }}`, this allows us to pass in the Folium map (which was created in our `app.py` file). We use the "safe" filter to indicate that this should <i>not</i> be escaped, should there be a case where automatic escaping is <u>`enabled`</u>. Otherwise, we run the risk of our map not rendering. 
+    Further down, you will see `{{ lvmap | safe }}`, this allows us to pass in the Folium map (which was created in our `app.py` file). We use the "safe" filter to indicate that this should <i>not</i> be escaped, should there be a case where automatic escaping is enabled. Otherwise, we run the risk of our map not rendering. 
 
-    Finally, you'll see the line `<a href=`<u>`"/orderform"`</u>`class="btn btn-outline-primary">Purchase Day Passes!</a>` (surrounded by the blue box in the image), which when clicked, will take the user to the `orderform.html` page.
+    Finally, you'll see a button (surrounded by the blue box), which when clicked, will take the user to the `orderform.html` page.
+
+    <!-- {% endraw %} -->
 
 4. `orderform.html`
 
@@ -101,7 +119,7 @@ This lab assumes you have:
 
       1. ![Order form action](images/order-form-action.png)
       
-          Here you will notice, that once the form is submitted, `@app.route('result')` is triggered. Recall on the `app.py` file that this route accepts both `POST` and `GET` methods (aka "requests"). The function included in `@app.route('result')`, has an ORDS endpoint, which expects a JSON payload. After receiving this `POST` request, the related table will be updated to include a customer's order information.
+          Here you will notice, that once the form is submitted, `@app.route('result')` is triggered. Recall on the `app.py` file that this route accepts both `POST` and `GET` methods (aka "requests"). The function included in `@app.route('result')`, has an ORDS endpoint, which expects a json payload. After receiving this `POST` request, the related table will be updated to include a customer's order information.
 
       2.  ![Price and description JavaScript functions](images/order-form-get-price-get-description.png)
       
@@ -135,14 +153,33 @@ This lab assumes you have:
 
 ## Learn More
 
-* [Bootstrap]()
-* The HTML `onchange` event:
-  * [The `onchange` event](https://www.w3schools.com/jsref/event_onchange.asp)
-  * [The `onchange` Event Attribute](https://www.w3schools.com/tags/ev_onchange.asp)
-  * [The `HTMLElement` change event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/change_event)
+*(optional - include links to docs, white papers, blogs, etc)*
+
 * [Flask and Stripe](https://stripe.com/docs/legacy-checkout/flask)
-* [Jinja basics](https://jinja.palletsprojects.com/en/3.1.x/api/#basics)
-* [About Bootstrap version 5.2](https://getbootstrap.com/docs/5.2/getting-started/introduction/)
+<!-- * [About Database Actions](https://docs.oracle.com/en/database/oracle/sql-developer-web/)
+* [About cURL](https://curl.se/)
+* [About Python](https://www.python.org/)
+* [About Flask for Python](https://flask.palletsprojects.com/en/2.1.x/)
+* [About Folium for Python](https://github.com/python-visualization/folium)
+* [About Json for Python ](https://docs.python.org/3/library/json.html)
+* [About Requests for Python](https://requests.readthedocs.io/en/latest/)
+* [About Bootstrap](https://getbootstrap.com/docs/5.2/getting-started/introduction/)
+* [Mozilla Developer Network (MDN) Web Docs](https://developer.mozilla.org/en-US/) -->
+
+Oracle REST Data Services (ORDS)
+Oracle Clould Infrastructure (OCI) <i>Always Free</i> Tier Tenancy
+Datbase Actions
+<!-- I'm actually not sure about cURL, but I don't want to forget it -->
+<!-- Make sure any changes here are also included in the Learn More section - we'll want to include those resources as well  -->
+- cURL
+- Python 3.10.x and later 
+- Python packages (libraries) such as: 
+  - Flask 
+  - Folium 
+  - Json
+ - Requests 
+- <i>select</i>JavaScript functions 
+- Bootstrap HTML and CSS frameworks
 
 ## Acknowledgements
 * **Author** - Chris Hoina, Senior Product Manager, Database Tools
@@ -151,4 +188,4 @@ This lab assumes you have:
   - Justin Biard, Senior Member of Technical Staff, Database Tools 
   - Zachary Talke, Product Manager, Database Tools
   - Brian Spendolini, Principal Product Manager
-* **Last Updated By/Date** - Chris Hoina, August 2022
+* **Last Updated By/Date** - Chris Hoina, August 2022, 
