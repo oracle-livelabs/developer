@@ -2,7 +2,7 @@
 
 ## Introduction
 
-In this lab, you will make changes and deploy the pre-built SpringBoot Java backend Docker image to OKE, update the code to reflect the IP address of the API Gateway, and finally update your kubernetes pod to use the latest docker image.
+In this lab, you will make changes and deploy the pre-built SpringBoot Java backend Docker image to OKE, update the code to reflect the IP address of the API Gateway, and finally update your Kubernetes pod to use the latest docker image.
 
 Estimated time: 15 minutes
 
@@ -12,7 +12,7 @@ Estimated time: 15 minutes
 
 ### Understand the Java backend application
 
-As with most React applications (https://reactjs.org/), this application uses remote APIs to handle data persistence. The backend implements five REST APIs including:
+As with most React applications (https://reactjs.org/), this application uses remote APIs to handle data persistence. The backend implements five REST APIs including
 
 * Retrieving the current list of todo items
 * Adding a new todo item
@@ -20,7 +20,7 @@ As with most React applications (https://reactjs.org/), this application uses re
 * Updating an existing todo item
 * Deleting a todo item
 
-The APIs are documented using Swagger. You can search for this address: https://objectstorage.eu-frankfurt-1.oraclecloud.com/n/oracleonpremjava/b/todolist/o/swagger_APIs_definition.json in swagger's console
+The APIs are documented using Swagger. You can search for this address: https://bit.ly/3piu4cp in Swagger's console
 
 The backend is implemented using the following Java classes (under ./backend/src/main/java/com/springboot...):
 
@@ -67,7 +67,7 @@ The OCI Container Registry is where your Docker images are managed. A container 
   In a couple of minutes, you should have successfully built and pushed the images into the OCI repository.
 
 3. Check your container registry in your compartment
-  - Go to the Console, click the hamburger menu in the top-left corner and open **Developer Services > Container Registry**.
+  - Go to the console, click the hamburger menu in the top-left corner, and open **Developer Services > Container Registry**.
 
   ![](images/build-image.png "build-image")
 
@@ -82,7 +82,7 @@ The OCI Container Registry is where your Docker images are managed. A container 
     </copy>
     ```
 
-  If everything runs correctly the script will output something like this:
+  If everything runs correctly, the script will output something like this:
 
   ![](images/deploy-output.png "deploy-output")
 
@@ -141,7 +141,7 @@ The OCI Container Registry is where your Docker images are managed. A container 
 
 ## Task 4: Build and Re-Deploy with Load Balancer IP address
 
-In order to call the API's that are built to retrieve the list of Todo items, update items etc, we must update the value of API_LIST to point to the load balancer ip address.
+In order to call the APIs that are built to retrieve the list of Todo items, update items, and so on, we must update the value of API_LIST to point to the load balancer IP address.
 
   1. Navigate to the following directory
     ```
@@ -149,7 +149,7 @@ In order to call the API's that are built to retrieve the list of Todo items, up
     cd reacttodo/oci-react-samples-1/MtdrSpring/backend/src/main/frontend/src
     </copy>
     ```
-  2. Change API_LIST to the external IP address of your load balancer, and append /todolist, for example like: http://`<ip_address>`/todolist
+  2. Change API_LIST to the external IP address of your load balancer, and append /todolist, for example http://`<ip_address>`/todolist
 
     ```
     <copy>
@@ -168,7 +168,7 @@ In order to call the API's that are built to retrieve the list of Todo items, up
     </copy>
     ```
 
-  4. Next, in order for the code change to be reflected in your pod you must update the pod to use the latest image
+  4. Next, for the code change to be reflected in your pod, you must update the pod to use the latest image
 
     ```
     <copy>
@@ -178,11 +178,11 @@ In order to call the API's that are built to retrieve the list of Todo items, up
   
     Replace `phx` with your region.
   
-5. Give your pods a couple minutes to restart. Check their progress using the `pods` command.
+5. Give your pods a couple of minutes to restart. Check their progress using the `pods` command.
   ![](images/todolist-login.png "todolist-login")
 
 
-6. Once your pods are up and running. Go to your web browser and navigate to the load balancer IP address. Once you login you should see the following output, which means your deployment is successful!
+6. Once your pods are up and running. Go to your web browser and navigate to the load balancer IP address. Once you log in, you should see the following output, which means your deployment is successful!
   ![](images/successful-todo.png "successful-todo")
 
 
@@ -191,5 +191,5 @@ You may now **proceed to the next lab**.
 ## Acknowledgements
 
 * **Author** -  Peter Song, Developer Advocate JDBC
-* **Contributors** - Jean de Lavarene, Sr. Director of Development, JDBC/UCP
+* **Contributors** - Kuassi Mensah, Director Product Management and Jean de Lavarene, Sr. Director of Development, JDBC/UCP
 * **Last Updated By/Date** - Peter Song Developer Advocate February 2022
