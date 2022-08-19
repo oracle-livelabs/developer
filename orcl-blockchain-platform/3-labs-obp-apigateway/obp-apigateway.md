@@ -136,6 +136,9 @@ This lab assumes you have:
   ![Deployment Step 1](images/3-gateway-4-4.png)
 
 4. Next in your deployment, you need to add 4 routes: 1 for each participant instance and 2 for the founder instance. Under 'Routes', fill out the form for your first route as follows:
+
+***Explain How the URL is constructed for 2 and 3 routes ***
+
     - Enter a **Path**. For Route 1, this will be /dealer-1/transactions
     - Select 'POST' under **Methods**
     - Specify 'HTTP' as the **Type**
@@ -144,6 +147,7 @@ This lab assumes you have:
   ![Route 1](3-gateway-4-5.png)
 
 5. Click the '+ Another Route' button and repeat Step 2 for the remaining 3 routes as shown:
+***Explain How the URL is constructed for 2 and 3 routes ***
   ![Route 2](3-gateway-4-6.png)
   ![Route 3](images/3-gateway-4-7.png)
   ![Route 4](images/3-gateway-4-8.png)

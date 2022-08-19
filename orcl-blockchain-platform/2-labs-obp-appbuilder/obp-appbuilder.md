@@ -2,7 +2,19 @@
 
 ## Introduction: Oracle Blockchain App Builder
 
-Blockchain App Builder is a tool set that assists Oracle Blockchain Platform users with rapid development, testing, debugging, and deployment of chaincode on Oracle Blockchain Platform networks. Blockchain App Builder is accessible through Visual Studio Code as an extension and through a lightweight command line interface. 
+Blockchain App Builder is a tool set that assists Oracle Blockchain Platform users with rapid development, testing, debugging, and deployment of chaincode on Oracle Blockchain Platform networks. Blockchain App Builder is accessible through Visual Studio Code as an extension and through a lightweight command line interface. Blockchain App Builder to manage the complete life cycle of a token. Developers can tokenize existing assets and automatically generate token classes and methods to use for token lifecycle management.
+
+## About OBP Tokenization
+
+1. Tokenization is a process where physical or digital assets are represented by tokens, which can be transferred, tracked, and stored on a blockchain. By representing assets as tokens, you can use the blockchain ledger to establish the state and ownership of an asset and use standard blockchain platform functions to transfer ownership of an asset.
+
+2. You can use the Blockchain App Builder Extension to manage the complete life cycle of a token. You can tokenize existing assets and automatically generate token classes and methods to use for token lifecycle management. 
+
+3. This lab incorporates tokenization, enabling our car marketplace administrator to initialize, mint, and transfer fungible, fractional tokens to and from john_dealer1 and sam_dealer2. 
+
+4. The tokenization feature uses an account/balance model to represent tokenized assets as balances in accounts, john_dealer1 and sam_dealer2. The balance of their accounts is tracked globally, to ensure that transaction amounts are valid when buying/selling cars. The on-hold balance and transaction history are also tracked.
+
+5. Feel free to learn more about [Tokenization support with OBP](https://docs.oracle.com/en/cloud/paas/blockchain-cloud/usingoci/tokenization-support.html).
 
 *Estimated Lab Time: 25 minutes*
 
@@ -17,7 +29,7 @@ This lab assumes you have:
 * Completed Lab - Initialize Environment (Link to Initialize Environment)
 * Completed Lab - Prepare Setup (Link to Prepare Setup)
 
-## Task 1: Environment Setup
+## Task 1:Blockchain AppBuilder Environment Setup
 
 You will be using Oracle's Blockchain App Builder extension, accessible through Visual Studio Code, for this lab. First you will need to set up environments for each of the 3 blockchain platform instances you created in Lab 1.
 
@@ -47,6 +59,8 @@ Explain the CarMarketplace yaml - Hover
 2. In Visual Studio Code, click on the **O** icon on the left-hand menu to use the Blockchain App Builder Extension. 
 
 3. Hover over the **Specifications** pane, click on the three dots, and then **Import Specification**. Alternatively, copy the path of the specification file and import manually. 
+
+4. Click on the yml specification imported. You can see the specficiations defined for each object and attribute. If you want change any specification of an attribute, you can do so. For example: Change line number 102 to - format: ["PO%1%t", "recipient"]. [Specifications Help](https://docs.oracle.com/en/cloud/paas/blockchain-cloud/usingoci/input-configuration-file.html)
 
 Make sure the **Details** of your specification read:
 
@@ -80,11 +94,199 @@ Select 'car_marketplace_cc.controller.go' under 'car_marketplace_cc/src.' The Co
 
 2. We've modified existing CRUD operations and defined custom methods for the following functions:
   - 'CreateCar': Adds car to dealer's inventory. The function retrieves dealer from blockchain, appends the car to dealer's inventory and records car on ledger.
+  ```
+    func (t *Controller) CreateCarWrapper(asset Car) (interface{}, error) {
+
+    //Verify dealer exists
+    owner, err := t.GetDealerById(asset.OwnerId)
+    if err != nil {
+      return nil, fmt.Errorf("dealer with id: %s does not exist", asset.OwnerId)
+    }
+
+    //append car to owner's inventory
+    owner.Inventory = append(owner.Inventory, asset.Vin)
+
+    //Update and commit dealer inventory to blockchain
+    t.UpdateDealer(owner)
+    t.CreateCar(asset)
+
+    return nil, err
+
+    }
+
+  ```
   - 'CreatePO': Creates purchase order once buyer places order on vehicle. The function verifies car exists on ledger, places car off the market, and records purchase order on ledger.
+
+  ```
+    func (t *Controller) CreatePOWrapper(asset PO) (interface{}, error) {
+
+    //Verify that car exists
+    car, err := t.GetCarById(asset.Vin)
+    if err != nil {
+      return nil, fmt.Errorf("car with id: %s does not exist", asset.Vin)
+    }
+
+    //Car no longer on sale as purchase order is created
+    car.ForSale = false
+    t.UpdateCar(car)
+    t.CreatePO(asset)
+
+    return nil, err
+
+    }
+
+  ```
+
   - 'UpdatePO': Updates purchase order. If order status is:
     - 'Delivered': Car is successfully delivered to buyer, an invoice is generated, and custom function 'CarTransfer' is invoked.
     - 'Rejected': Order is canceled, and car is placed back on the market.
+    
+  ```
+    func (t *Controller) UpdatePOWrapper(asset PO) (interface{}, error) {
+
+    //Verifies purchase order exists
+    _, err := t.GetPOById(asset.PO)
+    if err != nil {
+      return nil, fmt.Errorf("po with id: %s does not exist", asset.PO)
+    }
+
+    //If vehicle is delivered to buyer
+    if asset.OrderStatus == "Delivered" {
+
+      var invoiceObject Invoice
+
+      //Verify car exists in ledger
+      car, err := t.GetCarById(asset.Vin)
+      if err != nil {
+        return nil, fmt.Errorf("car with id: %s does not exist", asset.Vin)
+      }
+
+      car.ForSale = true
+
+      t.UpdateCar(car)
+
+      //Create invoice sent to buyer
+      invoiceObject.Vin = asset.Vin
+      invoiceObject.Po_number = asset.PO
+      invoiceObject.Price = car.Price
+      invoiceObject.Recipient = asset.Purchaser
+      invoiceObject.Status = false
+
+      invoiceObject.InvoiceId = asset.InvoiceId
+
+      t.CreateInvoice(invoiceObject)
+
+      currentTime := time.Now().String()
+
+      var ts_formatted string
+
+      for i, c := range currentTime {
+        fmt.Printf("Start Index: %d Value:%s\n", i, string(c))
+
+        if string(c) == " " {
+          fmt.Println(ts_formatted)
+          break
+        }
+        ts_formatted += string(c)
+      }
+
+      //Invoke Custom Method: Car Transfer
+      t.CarTransfer(asset.Vin, asset.Purchaser, car.OwnerId, asset.PO, car.Price, ts_formatted)
+
+    }
+
+    //If vehicle is rejected by buyer
+    if asset.OrderStatus == "Rejected" {
+
+      car, err := t.GetCarById(asset.Vin)
+      if err != nil {
+        return nil, fmt.Errorf("car with id: %s does not exist", asset.Vin)
+      }
+
+      //Set car for sale back to true
+      car.ForSale = true
+      t.UpdateCar(car)
+
+    }
+    t.UpdatePO(asset)
+    return nil, err
+
+    }
+
+  ```
+   
   - 'CarTransfer': Transfer vehicle ownership from one dealer to another. Validations are written to check that car being sold and dealer receiving vehicle exist in ledger and that the owner isn't selling a vehicle to themselves. We update car object properties to reflect the new owner of the vehicle, removing the car from the seller's inventory, adding it to the buyer's inventory. Finally, we commit car and dealer changes to the ledger.
+
+  ```
+    func (t *Controller) CarTransfer(vin string, buyerId string, sellerId string, PO string, price int, dateString string) (interface{}, error) {
+
+    //Date formatting and handling
+    dateBytes, err := json.Marshal(dateString)
+    if err != nil {
+      return nil, fmt.Errorf("error in marshalling %s", err.Error())
+    }
+
+    var dateValue date.Date
+    err = json.Unmarshal(dateBytes, &dateValue)
+    if err != nil {
+      return nil, fmt.Errorf("error in unmarshalling the date %s", err.Error())
+    }
+
+    if buyerId == sellerId {
+      return nil, fmt.Errorf(`buyer and seller cannot be same`)
+    }
+
+    //Verify car exists
+    car, err := t.GetCarById(vin)
+    if err != nil {
+      return nil, err
+    }
+
+    //Verify dealer exists
+    buyer, err := t.GetDealerById(buyerId)
+    if err != nil {
+      return nil, err
+    }
+
+    if car.OwnerId != sellerId {
+
+      return nil, fmt.Errorf("car with vin %s does not belong to the seller %s", vin, sellerId)
+    }
+    if car.OwnerId == buyerId {
+
+      return nil, fmt.Errorf("car with vin %s already exist with owner %s", vin, buyerId)
+    }
+
+    //Update car object properties
+
+    car.OwnerId = buyerId
+    car.Price = price
+    car.LastSold = dateValue
+
+    buyer.Inventory = append(buyer.Inventory, vin)
+
+    seller, err := t.GetDealerById(sellerId)
+    if err != nil {
+      return nil, err
+    }
+
+    //Remove car from seller's inventory
+    for i := 0; i < len(seller.Inventory)-1; i++ {
+      if seller.Inventory[i] == vin {
+        seller.Inventory = append(seller.Inventory[:i], seller.Inventory[i+1:]...)
+      }
+    }
+
+    //Commit changes to the ledger
+    t.UpdateDealer(seller)
+    t.UpdateCar(car)
+    t.UpdateDealer(buyer)
+
+    return nil, err
+
+    }
+
+  ```
 
 3. Copy and Paste the custom Methods. - Location and details - Use the feature in the Lively MD Verbatim
 
@@ -189,6 +391,8 @@ To install and re-deploy the chaincode on partner instances, we need to export t
 
   ![Close Advanced Deployment Form](images/2-car-marketplace-7-8.png)
 
+****--Add Endorsement - Majority of the Organizations + the founder ***
+
 9. Now click 'Channels,' then the 'car-marketplace' channel, and navigate to 'Deployed Channels' as you did in steps 3 and 4. 
 
 10. Find and click on the hamburger icon on the right of the row containing your chaincode. Select 'Approve.'
@@ -206,20 +410,7 @@ To install and re-deploy the chaincode on partner instances, we need to export t
 13. Repeat steps 2-12 for 'dealer2.'
 
 
-## Task 10: Read About OBP Tokenization
-
-1. Tokenization is a process where physical or digital assets are represented by tokens, which can be transferred, tracked, and stored on a blockchain. By representing assets as tokens, you can use the blockchain ledger to establish the state and ownership of an asset and use standard blockchain platform functions to transfer ownership of an asset.
-
-2. You can use the Blockchain App Builder Extension to manage the complete life cycle of a token. You can tokenize existing assets and automatically generate token classes and methods to use for token lifecycle management. 
-
-3. This lab incorporates tokenization, enabling our car marketplace administrator to initialize, mint, and transfer fungible, fractional tokens to and from john_dealer1 and sam_dealer2. 
-
-4. The tokenization feature uses an account/balance model to represent tokenized assets as balances in accounts, john_dealer1 and sam_dealer2. The balance of their accounts is tracked globally, to ensure that transaction amounts are valid when buying/selling cars. The on-hold balance and transaction history are also tracked.
-
-5. Feel free to learn more about [Tokenization support with OBP](https://docs.oracle.com/en/cloud/paas/blockchain-cloud/usingoci/tokenization-support.html).
-
-
-## Task 11: Administrator Enrollment 
+## Task 10: User Enrollment  - For All the Nodes.
 
 Oracle Blockchain Platform supports enrollments to the REST proxy. You use enrollments with token chaincodes to ensure the identities of the users completing token transactions. To do this, when you add enrollments for token use cases, specify a user ID for each enrollment (founder ID in this case), and specify one and only one user for each enrollment.
 
@@ -239,7 +430,7 @@ Oracle Blockchain Platform supports enrollments to the REST proxy. You use enrol
 5. Click Enroll.
 
 
-## Task 12: Deploy Tokenization Chaincode
+## Task 11: Create & Deploy Tokenization Chaincode
 
 The flow for developing smart contracts for tokenization begins with creating a specification file that describes our fiat token. 'Car_Tokenization.yml' describes our FiatToken structure: AssetType, Token_id, Token_name, Token_desc, Token_type, and behavior. The specification file is then used to scaffold a smart contract project ('car_tokenization_cc') and generate source code for models and controllers.
 

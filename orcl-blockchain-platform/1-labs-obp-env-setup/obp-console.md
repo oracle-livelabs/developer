@@ -64,6 +64,7 @@ You will also need to create a new [Compartment](https://docs.oracle.com/en-us/i
 1. Repeat the previous task twice, this time to create 2 participant instances.
     - Name your instances 'dealer1' and 'dealer2'
     - For both instances, select 'Join an existing network' under **Platform Role**
+**** NOTE: - Go to Lab2.
 
 ## Task 4: Complete Tasks 1 - 4 in Lab2 (App Builder)
 
