@@ -133,6 +133,8 @@ This lab assumes you have:
 
   ![Import Template 1](images/4-apex-3-6.png)
 
+  ***Link to the Zip file***
+
 7. Click 'Next.'
 
   ![Import Template 2](images/4-apex-3-7.png)
@@ -209,6 +211,7 @@ This lab assumes you have:
   ![Apply Changes to Remote Server](images/4-apex-4-10.png)
 
 10. Set **URL Path Prefix** to v0/marketplace/chaincode/queries and click 'Apply Changes.'
+****Make sure Gateway URL Matches this URL - Update ****
 
   ![Edit URL Path Prefix and Apply Changes](images/4-apex-4-11.png)
 
@@ -287,11 +290,11 @@ You will now create a car and simulate a transaction between the founder organiz
 
   ![Car Delaership](images/apex-viewMarketplace.png)
 
-7. Select vehicle to view payment details and proceed with Payment
+7. Select vehicle to view Car Details & Price
 
   ![Car Delaership](images/apex-CarDetailsPayment.png)
 
-8. Confirm vehicle payment 
+8. Confirm vehicle Purchase 
 
   ![Car Delaership](images/apex-ConfirmPayment.png)
 
@@ -311,7 +314,7 @@ This action confirms the order by the seller.
 
   ![Car Delaership](images/apex-confirmReceipt.png)
 
-Select "Accept Receipt" to complete order or "Withdraw Offer" to cancel the order. 
+Select "Accept Receipt" to complete order or "Cancel Order" to cancel the order. 
 
 12. Once purchaser Accepts receipt, the token transfer will now occur and the vehicle will be delivered to the new owner. 
 
