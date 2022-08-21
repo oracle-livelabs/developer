@@ -133,13 +133,13 @@ NGINX web server is a popular, free, and open-source web server. The NGINX serve
         <copy>sudo dnf install -y nginx</copy>
         ```
 
-    - Edit the NGINX configuration file in a text editor, such as nano, from Cloud Shell.
+    - Edit the NGINX configuration file in a text editor, such as Nano, from Cloud Shell, to set the listening port to 81. This step is unnecessary if you intend to keep port 80 as the HTTP port. However, later lab steps assume port 81 is now the listening port.
 
         ```
         <copy>sudo nano /etc/nginx/nginx.conf</copy>
         ```
 
-      After the text editor opens, change the default incoming TCP port. Search for the following two lines that use port 80:
+      After the text editor opens, search for the following two lines that use port 80 in the *server* context area:
 
         ```
         listen 80 default_server;
@@ -153,7 +153,7 @@ NGINX web server is a popular, free, and open-source web server. The NGINX serve
         listen [::]:81 default_server;</copy>
         ```
 
-      Exit nano and save the file by typing **Ctrl-X**, then **Y**, and finally the carriage return.
+      Exit Nano and save the file by typing **Ctrl-X**, then **Y**, and finally the carriage return.
 
     - Create firewall rules to allow access to HTTP on port 81.
 
@@ -167,10 +167,10 @@ NGINX web server is a popular, free, and open-source web server. The NGINX serve
 	<copy>sudo firewall-cmd --reload</copy></copy>
         ```
 
-    - Start the NGINX server and configure it to start after system reboots.
+    - Start the NGINX server and load the new web server settings.
 
         ```
-        <copy>sudo systemctl enable --now nginx.service</copy>
+        <copy>sudo systemctl start nginx</copy>
         ```
 
     - Run a quick check on NGINX status.
@@ -203,7 +203,7 @@ NGINX web server is a popular, free, and open-source web server. The NGINX serve
 
     ![Add ingress rule](./images/ingress-rule.png " ")
 
-7. In your browser, navigate to `http://<public_ip_address>:81`. Use the Linux VM's IP address with the port to use appended since we're using a non-standard HTTP port. You should see the text you added to the web server's index page.
+7. In your browser, navigate to *http://&lt;public_ip_address&gt;:81*. Use the Linux VM's IP address with the port to use appended since we're using a non-standard HTTP port. You should see the text you added to the web server's index page.
 
     ![Open you browser to the public IP address](./images/browser.png " ")
 
