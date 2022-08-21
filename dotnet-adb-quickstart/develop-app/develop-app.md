@@ -26,12 +26,12 @@ We will connect to Cloud Shell again to begin developing the ASP.NET Core part o
 
     ![Click Cloud Shell icon](./images/cloud-shell-icon.png)
 
-2. SSH into the web server machine by running the following command from Cloud Shell:
+2. If you have been logged out of the last SSH session, SSH into the web server machine once again:
 
     ```
     <copy>ssh -i <key_directory_path><private_ssh_key> opc@<public_ip_address></copy>
     ```
-Provide the same private key, the key directory path (i.e. .ssh/) and machine public IP as previously done in Lab 4.
+Provide the key directory path (i.e. .ssh/), if applicable, the private key name, and machine public IP as in Lab 4.
 
 3. We will use the .NET Command Line Interface (CLI) included with the Oracle Cloud Developer image. Execute the following command to create a new ASP.NET Core web app project in a new directory, "todolist":
 
@@ -145,12 +145,12 @@ You have completed deploying the ASP.NET Core web app.
 ## Task 3: Configure NGINX Web Server and Service to Run the ASP.NET Core App
 We will now configure the NGINX web server so that it can run ASP.NET Core apps from Oracle Linux.
 
-1. Configure NGINX as a reverse proxy to forward HTTP requests to your ASP.NET Core app.
+1. Configure NGINX to enable HTTP to initiate a connection to the network.
 
-    - Enable the web server to be used as a forward or reverse proxy from Cloud Shell.
+    - Enable the web server from Cloud Shell.
 
         ```
-        <copy>sudo setsebool -P httpd_can_network_relay 1</copy>
+        <copy>sudo setsebool -P httpd_can_network_connect 1</copy>
         ```
 
     - Edit the NGINX configuration file in a text editor, such as Nano, to add the proxied server.

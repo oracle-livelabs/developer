@@ -95,7 +95,7 @@ An Oracle Cloud Infrastructure VM compute instance runs on the same hardware as 
 
     ![Upload the private key](./images/cloud-shell-key-upload.png)
 
-4. We will use SSH to securely connect to the compute instance. In Cloud Shell, move the private key to the **.ssh** directory and change into that directory by entering the following commands:
+4. We will use SSH to securely connect to the compute instance. In Cloud Shell, move the private key to the **.ssh** directory and change into that directory. If the **.ssh** directory is not available, you can skip this step.
 
     ```
     <copy>mv <private_ssh_key> .ssh</copy>
@@ -179,11 +179,13 @@ NGINX web server is a popular, free, and open-source web server. The NGINX serve
         <copy>sudo systemctl status nginx</copy>
         ```
 
-3. Let's now open port 81 in the VCN security list. Click the **Navigation Menu** in the upper left. Navigate to **Networking**, and select **Virtual Cloud Networks**. 
+2. Let's now open port 81 in the VCN security list. Click the **Navigation Menu** in the upper left. Navigate to **Networking**, and select **Virtual Cloud Networks**. 
 
      ![Navigate to configure the VCN](./images/networking-vcn.png " ")
 
-4. Then click on the VCN name you created for this workshop. Now click **Security Lists** on the left navigation bar for the VCN.
+3. Click on the VCN you created earlier (i.e. OCI\_HOL\_VCN) under the **Virtual Cloud Networks** page area.
+
+4. Now click **Security Lists** on the left navigation bar for the VCN.
  
      ![Click on Security Lists](./images/security-list.png " ")
 
