@@ -6,7 +6,7 @@ In this lab, you will create a simple ASP.NET Core app, connnect to Oracle Auton
 
 Note: This lab has been validated with ASP.NET Core 6. Some variations in the ASP.NET Core code may be necessary if you are using another version.
 
-Estimated lab time: 10 minutes
+Estimated lab time: 15 minutes
 
 ### Objectives
 -   Create a new ASP.NET Core web app

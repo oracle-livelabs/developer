@@ -10,7 +10,7 @@ Oracle Cloud Infrastructure (OCI) Compute lets you create multiple Virtual Cloud
 
 Be sure to review [Best Practices for Your Compute Instance](https://docs.cloud.oracle.com/iaas/Content/Compute/References/bestpracticescompute.htm) for important information about working with your Oracle Cloud Infrastructure Compute instance.
 
-Estimated Time: 20 minutes
+Estimated lab time: 20 minutes
 
 [](youtube:09kahbIF0Ew)
 
@@ -127,7 +127,7 @@ NGINX web server is a popular, free, and open-source web server. The NGINX serve
 
 1. Run the following commands in Cloud Shell:
 
-    - Install NGINX and its dependencies.
+    - Install NGINX and its dependencies. This command can take some time to complete.
 
         ```
         <copy>sudo dnf install -y nginx</copy>

@@ -6,11 +6,11 @@ Oracle Cloud Infrastructure (OCI) Compute lets you create multiple Virtual Cloud
 
 In this lab, we will create a VCN that will be used to connect the OCI Compute web server with Oracle Autonomous Database.
 
-Be sure to review [Overview of Networking](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/overview.htm) to gain a full understanding of the network components and their relationships, or take a look at this video:
+You may review [Overview of Networking](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/overview.htm) to gain a full understanding of the network components and their relationships, or take a look at this video:
 
 [](youtube:mIYSgeX5FkM)
 
-Estimated Time: 15 minutes
+Estimated lab time: 5 minutes
 
 Here is an instructional video, going through the process of making a VCN:
 

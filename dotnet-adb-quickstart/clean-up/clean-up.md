@@ -8,7 +8,7 @@ This lab walks you through the steps to terminate an Oracle Autonomous Database 
 
 For the purpose of this lab, an always free Oracle Autonomous Transaction Processing database instance named DEMOATP will be deleted. The compute host, Web-Server, and VCN, OCI\_HOL\_VCN will then be terminated.
 
-Estimated Time - 10 minutes
+Estimated lab time - 5 minutes
 
 ### Objectives
 
