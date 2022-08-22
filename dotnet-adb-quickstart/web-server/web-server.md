@@ -10,7 +10,7 @@ Oracle Cloud Infrastructure (OCI) Compute lets you create multiple Virtual Cloud
 
 Be sure to review [Best Practices for Your Compute Instance](https://docs.cloud.oracle.com/iaas/Content/Compute/References/bestpracticescompute.htm) for important information about working with your Oracle Cloud Infrastructure Compute instance.
 
-Estimated Time: 20 minutes
+Estimated lab time: 20 minutes
 
 [](youtube:09kahbIF0Ew)
 
@@ -87,19 +87,22 @@ An Oracle Cloud Infrastructure VM compute instance runs on the same hardware as 
 
     ![Click Cloud Shell icon](./images/cloud-shell-icon.png)
 
-2. Cloud Shell will open. We will use SSH to securely connect to the compute instance. In Cloud Shell, change to the **.ssh** directory by entering the following command:
-
-    ```
-    <copy>cd .ssh</copy>
-    ```
-
-3. Open the Cloud Shell menu in the upper left of Cloud Shell. Click **Upload** to begin uploading the private key to the compute instance.
+2. Cloud Shell will open. Open the Cloud Shell menu in the upper left of Cloud Shell. Click **Upload** to begin uploading the private key to the compute instance.
 
     ![Click Upload from menu](./images/cloud-shell-choose-upload.png)
 
-4. Upload the private key through Cloud Shell that you auto-generated in the last task. Its default name is in the format, **ssh-key-&lt;date&gt;.key**. Either drop the file into the window or navigate to its location on your local machine. When completed, click the **Upload** button.
+3. Upload the private key through Cloud Shell that you auto-generated in the last task. Its default name is in the format, **ssh-key-&lt;date&gt;.key**. Either drop the file into the window or navigate to its location on your local machine. When completed, click the **Upload** button.
 
     ![Upload the private key](./images/cloud-shell-key-upload.png)
+
+4. We will use SSH to securely connect to the compute instance. In Cloud Shell, move the private key to the **.ssh** directory and change into that directory. If the **.ssh** directory is not available, you can skip this step.
+
+    ```
+    <copy>mv <private_ssh_key> .ssh</copy>
+    ```
+    ```
+    <copy>cd .ssh</copy>
+     ```
 
 5. Since this is a private key, assign permissions to protect the key from other users. Enter the following into Cloud Shell:
 
@@ -124,19 +127,19 @@ NGINX web server is a popular, free, and open-source web server. The NGINX serve
 
 1. Run the following commands in Cloud Shell:
 
-    - Install NGINX and its dependencies.
+    - Install NGINX and its dependencies. This command can take some time to complete.
 
         ```
         <copy>sudo dnf install -y nginx</copy>
         ```
 
-    - Edit the NGINX configuration file in a text editor, such as nano, from Cloud Shell.
+    - Edit the NGINX configuration file in a text editor, such as Nano, from Cloud Shell, to set the listening port to 81. This step is unnecessary if you intend to keep port 80 as the HTTP port. However, later lab steps assume port 81 is now the listening port.
 
         ```
         <copy>sudo nano /etc/nginx/nginx.conf</copy>
         ```
 
-      After the text editor opens, change the default incoming TCP port. Search for the following two lines that use port 80:
+      After the text editor opens, search for the following two lines that use port 80 in the *server* context area:
 
         ```
         listen 80 default_server;
@@ -150,7 +153,7 @@ NGINX web server is a popular, free, and open-source web server. The NGINX serve
         listen [::]:81 default_server;</copy>
         ```
 
-      Exit nano and save the file by typing **Ctrl-X**, then **Y**, and finally the carriage return.
+      Exit Nano and save the file by typing **Ctrl-X**, then **Y**, and finally the carriage return.
 
     - Create firewall rules to allow access to HTTP on port 81.
 
@@ -164,10 +167,10 @@ NGINX web server is a popular, free, and open-source web server. The NGINX serve
 	<copy>sudo firewall-cmd --reload</copy></copy>
         ```
 
-    - Start the NGINX server and configure it to start after system reboots.
+    - Start the NGINX server and load the new web server settings.
 
         ```
-        <copy>sudo systemctl enable --now nginx.service</copy>
+        <copy>sudo systemctl start nginx</copy>
         ```
 
     - Run a quick check on NGINX status.
@@ -176,11 +179,13 @@ NGINX web server is a popular, free, and open-source web server. The NGINX serve
         <copy>sudo systemctl status nginx</copy>
         ```
 
-3. Let's now open port 81 in the VCN security list. Click the **Navigation Menu** in the upper left. Navigate to **Networking**, and select **Virtual Cloud Networks**. 
+2. Let's now open port 81 in the VCN security list. Click the **Navigation Menu** in the upper left. Navigate to **Networking**, and select **Virtual Cloud Networks**. 
 
      ![Navigate to configure the VCN](./images/networking-vcn.png " ")
 
-4. Then click on the VCN name you created for this workshop. Now click **Security Lists** on the left navigation bar for the VCN.
+3. Click on the VCN you created earlier (i.e. OCI\_HOL\_VCN) under the **Virtual Cloud Networks** page area.
+
+4. Now click **Security Lists** on the left navigation bar for the VCN.
  
      ![Click on Security Lists](./images/security-list.png " ")
 
@@ -200,7 +205,7 @@ NGINX web server is a popular, free, and open-source web server. The NGINX serve
 
     ![Add ingress rule](./images/ingress-rule.png " ")
 
-7. In your browser, navigate to `http://<public_ip_address>:81`. Use the Linux VM's IP address with the port to use appended since we're using a non-standard HTTP port. You should see the text you added to the web server's index page.
+7. In your browser, navigate to *http://&lt;public_ip_address&gt;:81*. Use the Linux VM's IP address with the port to use appended since we're using a non-standard HTTP port. You should see the text you added to the web server's index page.
 
     ![Open you browser to the public IP address](./images/browser.png " ")
 

@@ -4,7 +4,7 @@
 
 This lab walks you through the steps to quickly provision an Oracle Autonomous Database (either Autonomous Transaction Processing [ATP] or Autonomous Data Warehouse [ADW]) on Oracle Cloud. You will use this database in subsequent labs of this workshop.
 
-Estimated Lab Time: 10 minutes
+Estimated lab time: 10 minutes
 
 *Note: While this lab uses ATP, the steps are identical for creating and connecting to an ADW database.*
 

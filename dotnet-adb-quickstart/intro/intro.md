@@ -6,7 +6,7 @@ This workshop guides users how to get started using .NET applications with Oracl
 
 If you do not have an existing Oracle Cloud account, this workshop will guide you how to create a free account.
 
-Estimated Workshop Time: 75 minutes
+Estimated workshop time: 75 minutes
 
 ### Objectives
 
@@ -16,7 +16,7 @@ In this workshop, you will:
 - Create an Oracle Autonomous Database instance
 - Create a sample schema in the instance
 - Create a Oracle Cloud infrastructure virtual machine
-- Set up an ASP.NET Core web server
+- Set up an ASP.NET Core web server with NGINX
 - Develop an Oracle .NET web application that retrieves data from the Autonomous Database sample schema
 - Deploy and test the web application
 

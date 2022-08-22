@@ -14,7 +14,7 @@ One-way TLS feature just the client authenticating against the database server. 
 
 In this lab, you will enable one-way TLS without wallets to simplify web application set up easier with Oracle Autonomous Database. You will add the web server's IP to the ACL. You will also record the database's connect descriptor. With just the connect descriptor information, you will be able to connect to the database without having to deploy wallet, sqlnet.ora, nor tnsnames.ora files in the next lab when you deploy a web application.
 
-Estimated Time: 5 minutes
+Estimated lab time: 5 minutes
 
 ### Objectives
 In this lab, you will:
