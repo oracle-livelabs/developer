@@ -8,7 +8,7 @@
             "filename": "../../intro/intro.md"
         },
         {
-            "title": "Getting Started",
+            "title": "Get started",
             "description": "This is the prerequisites for customers using Free Trial and Paid tenancies, and Always Free accounts (if applicable).",
             "filename": "https://objectstorage.us-phoenix-1.oraclecloud.com/p/SJgQwcGUvQ4LqtQ9xGsxRcgoSN19Wip9vSdk-D_lBzi7bhDP6eG1zMBl0I21Qvaz/n/c4u02/b/common/o/labs/cloud-login/pre-register-free-tier-account.md"
         },
@@ -18,29 +18,34 @@
             "filename": "../../provision/adb-provision.md"
         },
         {
-            "title": "Lab 2: Create User and Setup Schema",
+            "title": "Lab 2: Create user and setup schema",
             "description": "Create a database user and setup a table with sample data.",
             "filename": "../../create-schema/create-schema.md"
         },
         {
-            "title": "Lab 3: Setup Networking",
-            "description": "Setup networking to facilitate communication between the web server and Oracle Autonomous Database.",
+            "title": "Lab 3: Set up networking",
+            "description": "Set up networking to facilitate communication between the web server and Oracle Autonomous Database.",
             "filename": "../../networking/networking.md"
         },
         {
-            "title": "Lab 4: Provision and Set Up the Web Server",
+            "title": "Lab 4: Provision and set up the web server",
             "description": "Create an Oracle Cloud Infrastructure virtual machine and set up the web server with ASP.NET Core.",
             "filename": "../../web-server/web-server.md"
         },
         {
-            "title": "Lab 5: Enable One-Way TLS without Wallets",
+            "title": "Lab 5: Enable one-way TLS without wallets",
             "description": "Permit the web server to connect to Oracle Autonomous Database without requiring a wallet.",
             "filename": "../../tls/tls.md"
         },
         {
-            "title": "Lab 6: Develop and Deploy the .NET Web Application",
+            "title": "Lab 6: Develop and deploy the .NET web application",
             "description": "Create a simple ASP.NET Core app, connnect to the database using Oracle Data Provider for .NET, and retrieve sample data to the web page.",
             "filename": "../../develop-app/develop-app.md"
+        },
+        {
+            "title": "Lab 7: Clean up lab resources",
+            "description": "Terminate resources used in this lab if they will no longer be used.",
+            "filename": "../../clean-up/clean-up.md"
         },
         {
             "title": "Need Help?",
