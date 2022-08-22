@@ -24,6 +24,7 @@ In this lab, you will:
 - **Lab 2:** Create, Deploy & Execute Smart Contracts using Oracle Blockchain App Builder
 - **Lab 3:** Setup & Configure API Gateway for external applications to connect with Smart Contract API's published by Oracle Blockchain REST Proxy.
 - **Lab 4:** How to Build User Interface using Oracle APEX and Integrate with Oracle Blockchain Platform
+- **Lab 5:** Car Trading Marketplace using Tokens in Oracle Blockchain Platform
 
 ## What's Next?
 

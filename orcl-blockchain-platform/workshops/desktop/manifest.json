@@ -36,10 +36,16 @@
       "filename": "../../3-labs-obp-apigateway/obp-apigateway.md"
     },
     {
-      "title": "Lab 4: OBP - Application (Apex)",
-      "description": "OBP - Application (Apex)",
+      "title": "Lab 4: Building Car Marketplace application using APEX",
+      "description": "Building Car Marketplace application using APEX",
       "publisheddate": "4/05/2020",
       "filename": "../../4-labs-obp-application/obp-apex-application.md"
+    },
+    {
+      "title": "Lab 4: Trading Cars using Tokens in Car Marketplace",
+      "description": "OBP - Application (Apex)",
+      "publisheddate": "4/05/2020",
+      "filename": "../../4-labs-obp-application/obp-apex-application-tokenXchange.md"
     },
     {
       "title": "Need Help?",
