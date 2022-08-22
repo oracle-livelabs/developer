@@ -17,12 +17,12 @@ In this workshop, you will:
 ### Prerequisites
 
 * You have signed up for an account with Oracle Cloud Infrastructure and have received your sign-in credentials.
-* You are using an Oracle Linux image on your host machine or compute instance for this workshop.
+* You are using an Oracle Linux image on your Managed Instance for this workshop.
 * Access to the cloud environment and resources configured in the previous workshop
 
 ## Task 1: Create a Compute Instance
 
-1. Sign in to the Oracle Cloud Console as an administrator using the credentials provided by Oracle, as described in [Signing into the Console](https://docs.oracle.com/en-us/iaas/Content/GSG/Tasks/signingin.htm).
+1. Sign in to the Oracle Cloud Console as an administrator using the credentials provided by Oracle, as described in [Sign In for the First Time](https://docs.oracle.com/en-us/iaas/Content/GSG/Tasks/signingin.htm).
 &nbsp;
 
 2. Use the **Create a VM Instance** wizard to create a new compute instance. The wizard does several things when installing the instance.
@@ -99,14 +99,22 @@ In this workshop, you will:
 3. From the **Instance Details** page look under the **Instance Access** section. Write down the public IP address the system created for you. You use this IP address to connect to your Instance.
 
 4. Open a **Terminal** or **Command Prompt** window.
-  Change into the directory where you stored the ssh encryption keys you created.
-  Connect to your instance with this SSH command
+  Change into the directory where you stored the SSH encryption keys you created.
+  To use SSH command, you need to change the read and write permissions to your key with this command
+    ```
+    <copy>
+    chmod 400 ./<your-private-key-file>
+    </copy>
+    ```
+
+5. Connect to your instance with this SSH command
     ```
     <copy>
     ssh -i <your-private-key-file> opc@<x.x.x.x>
     </copy>
-    ```    
-5. Since you identified your public key when you created the instance, this command logs you into your Instance.
+    ```
+
+6. Since you identified your public key when you created the instance, this command logs you into your Instance.
 
 ## Task 3: Install Java 8 and create a simple Java application
 
@@ -155,7 +163,7 @@ In this workshop, you will:
     </copy>
     ```
 
-4. To save the file, type **CTRL+x**. Before exiting, nano will ask you if you wish to save the file: Type **y** and **Enter** to save and exit, type **n** to abandon your changes and exit.
+4. To save the file, type **CTRL+x**. Before exiting, nano will ask you if you wish to save the file: Type **y** and **Enter** to save and exit.
 
 ### For **Windows**
 
@@ -215,32 +223,11 @@ In this workshop, you will:
 
 4. Go to the File option and click the Save button to save the file. Close the notepad window. Move to the command prompt window again.
 
-
-
-## Task 4: Shutdown the Instance
-
-
-Do remember to stop your Compute Instance after you are done running it to conserve resources and reduce charges. If you are using an always free tier Compute Instance, there are no associated charges.
+> **Note:** Do remember to stop your Compute Instance after you are done running it to conserve resources and reduce charges. If you are using an always free tier Compute Instance, there are no associated charges.
 
 You may now **proceed to the next lab.**
 
 ## Troubleshoot Java application deployment issues
-
-**For Task 2**
-
-* If you encounter a permissions error similar to the following:
-    ```
-    Permissions 0644 for '<your-keyfile-name>.key' are too open.
-
-    It is required that your private key files are NOT accessible by others.
-    ```
-  You will need to assign read and write permissions to your key. Enter the following:
-
-    ```
-    <copy>
-    chmod 400 ./<your-private-key-file>
-    </copy>
-    ```
 
 **For Task 3**
 
@@ -259,4 +246,4 @@ You may now **proceed to the next lab.**
 ## Acknowledgements
 
 * **Author** - Esther Neoh, Java Management Service
-* **Last Updated By** - Yixin Wei, June 2022
+* **Last Updated By** - Yixin Wei, August 2022

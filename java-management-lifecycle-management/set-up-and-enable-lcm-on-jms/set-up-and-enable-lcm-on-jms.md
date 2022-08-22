@@ -11,21 +11,37 @@ Estimated Time: 30 minutes
 
 In this lab, you will:
 
-  *  Configure an OCI host to enable LCM operations.
-  *  Configure a non-OCI host to enable LCM operations.
-
+  *  Configure a fleet to enable LCM operations.
+  *  Configure an OCI Managed Instance to enable LCM operations.
+  *  Configure a non-OCI Managed Instance to enable LCM operations.
 
 ### Prerequisites
 
  * You have signed up for an account with Oracle Cloud Infrastructure and have received your sign-in credentials.
- * You are using an Oracle Linux image on your host machine or compute instance for this workshop.
- * You have successfully completed the installation of the Management Agent on your OCI or non-OCI hosts following steps in [Manage Java Runtimes, Applications and Managed Instances Inventory with Java Management Service](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=912).
+ * You are using an Oracle Linux image or Windows OS on your Managed Instance for this workshop.
+ * You have successfully completed the installation of the Management Agent on your OCI or non-OCI Managed Instances following steps in [Manage Java Runtimes, Applications and Managed Instances Inventory with Java Management Service](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=912).
+ * **Proceed to Task 2 and 3 if the management agent was installed manually (i.e. using the management agent software or enabled using the Management Agent plugin on your OCI compute instance's Oracle Cloud Agent) and not using the installation script.**
 
-## Task 1: Configure an OCI host to enable LCM operations
+## Task 1: Configure a fleet to enable LCM operations
+
+1. In the Oracle Cloud Console, open the navigation menu, click **Observability & Management**, and then click **Fleets** under **Java Management**. Select the fleet that you are interested in.
+  ![image of console navigation to access fleet](images/console-navigation-jms.png)
+
+2. Click **Edit Properties**.
+
+  ![image of edit fleet properties](images/fleet-edit-properties.png)
+
+3. Ensure that the **Enable advanced features** box is checked.
+
+  ![image of edit fleet properties detail](images/fleet-edit-properties-detail.png)
+
+## Task 2: Configure an OCI Managed Instance to enable LCM operations
+
+> **Note:** Please refer to this task if the **installation script was not used** to install the management agent. The management agent should have been installed using the management agent software or enabled using the Management Agent plugin on your OCI compute instance's Oracle Cloud Agent).
 
 After you have installed the Management Agent, follow the steps below to verify required plugins and enable LCM operations.
 
-### **OCI Compute Instance host**
+### **OCI Compute Instance Managed Instance**
 If you are using an OCI compute instance and it already has the Management Agent installed using OCA and `Java Usage Tracking` plugin deployed, then follow the steps to enable Oracle Java Management plugin and Verify the OCA installation package version.
 
 1. There are two ways to verify and enable `Oracle Java Management Service` plugin.
@@ -179,12 +195,13 @@ If you are using an OCI compute instance and it already has the Management Agent
     sudo yum update oracle-cloud-agent -y
     </copy>
     ```
-    
-## Task 2: Configure a non-OCI host to enable LCM operations
 
+## Task 3: Configure a non-OCI Managed Instance to enable LCM operations
 
-### **Non-OCI host**
-If you are using a non-OCI host and it has the Management Agent installed following the steps in the workshop [Manage Java Runtimes, Applications and Managed Instances Inventory with Java Management Service](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=912), then you just need to make a few changes to start using LCM features.
+> **Note:** Please refer to this task if the **installation script was not used** to install the management agent. The management agent should have been installed using the management agent software or enabled using the Management Agent plugin on your OCI compute instance's Oracle Cloud Agent)
+
+### **Non-OCI Managed Instance**
+If you are using a non-OCI Managed Instance and it has the Management Agent installed following the steps in the workshop [Manage Java Runtimes, Applications and Managed Instances Inventory with Java Management Service](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=912), then you just need to make a few changes to start using LCM features.
 
 
 1. Open the `/etc/sudoers` file.
@@ -231,22 +248,16 @@ If you are using a non-OCI host and it has the Management Agent installed follow
 
 
 
-
-
-
-
-
-
 You may now **proceed to the next lab.**
 
 ## Learn More
 
-* Refer to the [Managing Plugins with Oracle Cloud Agent ](https://docs.oracle.com/en-us/iaas/Content/Compute/Tasks/manage-plugins.htm#console)
-* Refer to the [Installation of Management Agents ](https://docs.oracle.com/en-us/iaas/management-agents/doc/install-management-agent-chapter.htm). It has details of installation of Management Agent on various Operating Systems.
+* Refer to the [Managing Plugins with Oracle Cloud Agent](https://docs.oracle.com/en-us/iaas/Content/Compute/Tasks/manage-plugins.htm#console).
+* Refer to the [Installing a Management Agent](https://docs.oracle.com/en-us/iaas/jms/doc/management-agent-chapter.html#GUID-FFC4FD17-B48A-46F2-A77F-7367CF6458F0). It has details of installation of Management Agent on various Operating Systems.
 * Refer to the [Viewing a Java Runtime](https://docs.oracle.com/en-us/iaas/jms/doc/fleet-views.html#GUID-F57179D9-C736-4058-B381-9ECAC776895F) for details of all the field shown in Java Runtime table.
 
 
 ## Acknowledgements
 
 * **Author** - Bhuvesh Kumar, Java Management Service
-* **Last Updated By** - Bhuvesh Kumar, April 2022
+* **Last Updated By** - Yixin Wei, August 2022
