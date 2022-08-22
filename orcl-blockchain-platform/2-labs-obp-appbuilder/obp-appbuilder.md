@@ -144,80 +144,80 @@ Select 'car_marketplace_cc.controller.go' under 'car_marketplace_cc/src.' The Co
     - 'Delivered': Car is successfully delivered to buyer, an invoice is generated, and custom function 'CarTransfer' is invoked.
     - 'Rejected': Order is canceled, and car is placed back on the market.
     
-      ```
-        <copy>
-        func (t *Controller) UpdatePOWrapper(asset PO) (interface{}, error) {
+    ```
+      <copy>
+      func (t *Controller) UpdatePOWrapper(asset PO) (interface{}, error) {
 
-        //Verifies purchase order exists
-        _, err := t.GetPOById(asset.PO)
+      //Verifies purchase order exists
+      _, err := t.GetPOById(asset.PO)
+      if err != nil {
+        return nil, fmt.Errorf("po with id: %s does not exist", asset.PO)
+      }
+
+      //If vehicle is delivered to buyer
+      if asset.OrderStatus == "Delivered" {
+
+        var invoiceObject Invoice
+
+        //Verify car exists in ledger
+        car, err := t.GetCarById(asset.Vin)
         if err != nil {
-          return nil, fmt.Errorf("po with id: %s does not exist", asset.PO)
+          return nil, fmt.Errorf("car with id: %s does not exist", asset.Vin)
         }
 
-        //If vehicle is delivered to buyer
-        if asset.OrderStatus == "Delivered" {
+        car.ForSale = true
 
-          var invoiceObject Invoice
+        t.UpdateCar(car)
 
-          //Verify car exists in ledger
-          car, err := t.GetCarById(asset.Vin)
-          if err != nil {
-            return nil, fmt.Errorf("car with id: %s does not exist", asset.Vin)
+        //Create invoice sent to buyer
+        invoiceObject.Vin = asset.Vin
+        invoiceObject.Po_number = asset.PO
+        invoiceObject.Price = car.Price
+        invoiceObject.Recipient = asset.Purchaser
+        invoiceObject.Status = false
+
+        invoiceObject.InvoiceId = asset.InvoiceId
+
+        t.CreateInvoice(invoiceObject)
+
+        currentTime := time.Now().String()
+
+        var ts_formatted string
+
+        for i, c := range currentTime {
+          fmt.Printf("Start Index: %d Value:%s\n", i, string(c))
+
+          if string(c) == " " {
+            fmt.Println(ts_formatted)
+            break
           }
-
-          car.ForSale = true
-
-          t.UpdateCar(car)
-
-          //Create invoice sent to buyer
-          invoiceObject.Vin = asset.Vin
-          invoiceObject.Po_number = asset.PO
-          invoiceObject.Price = car.Price
-          invoiceObject.Recipient = asset.Purchaser
-          invoiceObject.Status = false
-
-          invoiceObject.InvoiceId = asset.InvoiceId
-
-          t.CreateInvoice(invoiceObject)
-
-          currentTime := time.Now().String()
-
-          var ts_formatted string
-
-          for i, c := range currentTime {
-            fmt.Printf("Start Index: %d Value:%s\n", i, string(c))
-
-            if string(c) == " " {
-              fmt.Println(ts_formatted)
-              break
-            }
-            ts_formatted += string(c)
-          }
-
-          //Invoke Custom Method: Car Transfer
-          t.CarTransfer(asset.Vin, asset.Purchaser, car.OwnerId, asset.PO, car.Price, ts_formatted)
-
+          ts_formatted += string(c)
         }
 
-        //If vehicle is rejected by buyer
-        if asset.OrderStatus == "Rejected" {
+        //Invoke Custom Method: Car Transfer
+        t.CarTransfer(asset.Vin, asset.Purchaser, car.OwnerId, asset.PO, car.Price, ts_formatted)
 
-          car, err := t.GetCarById(asset.Vin)
-          if err != nil {
-            return nil, fmt.Errorf("car with id: %s does not exist", asset.Vin)
-          }
+      }
 
-          //Set car for sale back to true
-          car.ForSale = true
-          t.UpdateCar(car)
+      //If vehicle is rejected by buyer
+      if asset.OrderStatus == "Rejected" {
 
+        car, err := t.GetCarById(asset.Vin)
+        if err != nil {
+          return nil, fmt.Errorf("car with id: %s does not exist", asset.Vin)
         }
-        t.UpdatePO(asset)
-        return nil, err
 
-        }
-        <\copy>
-        ```
+        //Set car for sale back to true
+        car.ForSale = true
+        t.UpdateCar(car)
+
+      }
+      t.UpdatePO(asset)
+      return nil, err
+
+      }
+      <\copy>
+      ```
    
   - 'CarTransfer': Transfer vehicle ownership from one dealer to another. Validations are written to check that car being sold and dealer receiving vehicle exist in ledger and that the owner isn't selling a vehicle to themselves. We update car object properties to reflect the new owner of the vehicle, removing the car from the seller's inventory, adding it to the buyer's inventory. Finally, we commit car and dealer changes to the ledger.
 
