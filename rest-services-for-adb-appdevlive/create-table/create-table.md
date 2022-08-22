@@ -2,40 +2,38 @@
 
 ## Introduction
 
-In this lab you will use Database Actions/SQL Developer Web to connect to your Database, create and REST enable a table.
+In this lab you will use Database Actions/SQL Developer Web to connect to your database, create a table, and then REST enable the table.
 
 Estimated Lab Time: 20 minutes
 
-Watch the video below for a quick walk through of the lab.
+You may review the video below for a quick walk through of the lab.
 
-[](youtube:xr957th1h3U)
+[ORDS Overview](youtube:xr957th1h3U)
 
 ### Objectives
-
 - Create and Auto-REST enable a table
 
 ### Prerequisites
 
-This lab assumes you have completed the following labs:
-* Lab 1: [Login to Oracle Cloud](https://oracle-livelabs.github.io/common/labs/cloud-login/pre-register-free-tier-account.md)
-* Lab 2: [Provision an Autonomous Database](https://oracle-livelabs.github.io/adb/shared/adb-provision/adb-provision.md)
-* Lab 3: [Connect to an Autonomous Database with SQL Developer Web](https://oracle-livelabs.github.io/common/labs/sqldevweb-login/sqldevweb-login.md)
+- The following lab requires an <a href="https://www.oracle.com/cloud/free/" target="\_blank">Oracle Cloud account</a>. You may use your own cloud account, a cloud account that you obtained through a trial, or a training account whose details were given to you by an Oracle instructor.
+
+- This lab assumes you have completed all previous Labs. 
 
 ## Task 1: Create a Table in the Autonomous Database
 
 1. Start by signing in as the **admin** using [Database Actions](https://oracle-livelabs.github.io/common/labs/sqldevweb-login/sqldevweb-login.md) if not already there. Once logged in, click the **SQL tile**.
 
-    ![Database Actions Home Page, Click SQL tile](./images/clickforsqlworksheet.png)
+    ![Database Actions Home Page, Click SQL tile](images/click-for-sql-worksheet.png)
 
-**If this is your first time accessing the SQL Worksheet, you will be presented with a guided tour. Complete the tour or click the X in any tour popup window to quit the tour.**
+:bulb: <i>**Note: If this is your first time accessing the SQL Worksheet, you will be presented with a guided tour. Complete the tour or click the X in any tour popup window to quit the tour.**</i>
 
 2. We are now ready to load data into the database. For this task, we will use the **Data Loading tab** in the SQL Worksheet.
 
-    ![Click Data Loading Tab on SQL Worksheet](./images/data-load-tab.png)
+    ![Click Data Loading Tab on SQL Worksheet](images/data-load-tab.png)
 
 3. Click the **Data Loading area**; the center of the gray dotted-line box.
 
-    ![Click the Center of the Data Loading Tab Area](./images/data-load-area.png)
+    ![Click the Center of the Data Loading Tab Area](images/data-load-tab.png))
 
 4. The **Upload Data into New Table modal** will appear.
 
@@ -45,7 +43,7 @@ This lab assumes you have completed the following labs:
 
     **(right-click and download the file with the following link)**
 
-    [csv data](https://objectstorage.us-ashburn-1.oraclecloud.com/p/LNAcA6wNFvhkvHGPcWIbKlyGkicSOVCIgWLIu6t7W2BQfwq2NSLCsXpTL9wVzjuP/n/c4u04/b/livelabsfiles/o/developer-library/csv_data.csv)
+    [CSV data](https://objectstorage.us-ashburn-1.oraclecloud.com/p/LNAcA6wNFvhkvHGPcWIbKlyGkicSOVCIgWLIu6t7W2BQfwq2NSLCsXpTL9wVzjuP/n/c4u04/b/livelabsfiles/o/developer-library/csv_data.csv)
 
 6. Once on your desktop, **drag the file into the Upload Data into New Table modal**. You can also click the Select Files button and find where you downloaded it via your operating system's/Web Browser's file browser.
 
@@ -91,7 +89,7 @@ This lab assumes you have completed the following labs:
 
     ![Row indicating data load is finished in the Data Loading Tab of the SQL Worksheet](./images/data-load-results-tab.png)
 
-11. We can take a look at our newly created table and the data in it **by using the navigator on the left of the SQL Worksheet**. Just **right click the table name** and **select Open** from the pop up menu.
+11. We can take a look at our newly created table and the data in it **by using the navigator on the left of the SQL Worksheet**. Just **right click the table name CSV_DATA** and **select Open** from the pop up menu.
 
     ![Using the navigator on the left of the SQL Worksheet, we can see out new table](./images/navigating-reviewing-new-table.png)
 
@@ -101,7 +99,7 @@ This lab assumes you have completed the following labs:
 
 ## Task 2: Auto-REST Enable a Table
 
-1. REST enabling a table couldn't be easier. To do this, find the table we just created named **CSV_DATA** in the navigator on the left of the SQL Worksheet.
+1. REST enabling a table is simple. To do this, find the table we just created named **CSV_DATA** in the navigator on the left of the SQL Worksheet.
 
     ![Using the navigator on the left of the SQL Worksheet, find the CSV_DATA Table](./images/using-navigator-to-find-table.png)
 
@@ -129,7 +127,7 @@ This lab assumes you have completed the following labs:
 
     ![Click the copy icon for GET ALL](./images/copy-curl-command-action.png)
 
-6. You can use this **cURL command** we just copied in the **Oracle Cloud Infrastructure Cloud Shell** or on your local compute if cURL is installed. Here is the command running:
+6. You can use the **cURL command** you've just copied in the **Oracle Cloud Infrastructure Cloud Shell** or on your local compute, if cURL is installed. Here is the command running:
 
     ```
     >curl --location \
@@ -150,16 +148,17 @@ This lab assumes you have completed the following labs:
     coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/admin/csv_data/"}]}% 
     ```
 
-The next lab will go over using the **BATCH LOAD** endpoint.
+The next lab you will learn about using a **BATCH LOAD** endpoint.
 
-## Conclusion
-
-In this lab, you created a table from a csv file and REST enabled it with auto-REST.
+7. In this lab, you created a table from a csv file and REST enabled it with auto-REST.
 
 You may now [proceed to the next lab](#next).
 
-
 ## Acknowledgements
 
- - **Author** - Jeff Smith, Distinguished Product Manager
- - **Last Updated By/Date** - Jeff Smith, July 2022
+ - **Author** 
+    - Jeff Smith, Distinguished Product Manager
+    - Chris Hoina, Senior Product Manager 
+    - Brian Spendolini
+ - **Last Updated By/Date** 
+    - Chris Hoina, August 2022
