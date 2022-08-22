@@ -52,11 +52,11 @@ Users with the right roles can access Visual Builder Studio from the TEST instan
 | Base Oracle Cloud Application | None | We are creating a new app without dependencies |
 | Use Scratch Repository | Checked | For now we just want your personal copy of the code |
 
-	![Image alt text](images/workspacesettings.png) 
+	![workspace settings](images/workspacesettings.png)
 
 8. Click Create - this might take a couple of minutes to complete and then you'll be taken into the Visual Builder development environment.
 
-
+	![visual editor](images/results.png)
 ## Learn More
 
 * [What is an Extension](https://docs.oracle.com/en/cloud/paas/visual-builder/visualbuilder-building-appui/basics.html#GUID-A729A4FB-CD2E-48C8-BDE3-577DEE835332)
