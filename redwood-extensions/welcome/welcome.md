@@ -95,6 +95,9 @@ While the input search is selected in the visual editor, click the **data** tab 
 The layout of our first page is ready now, and the next step is to add some data to the page from Oracle Fusion Cloud Apps.
 Note how so far all the design of the page was done with simple drag and drop functionality and setting properties. This visual development approach is key to the productivity offered by Visual Builder. Note however that there is a code button at the top right of the visual preview area. If you'll click on it you'll be able to see the actual HTML code used in your page. The code can be modified directly if needed, but for now we'll return to the design view by clicking the design button.
   ![Image alt text](images/complete.png)
+
+Now that our layout for the page is ready, it is time to get some data from Oracle SaaS into the page, which is what the next lab does.
+
 ## Learn More
 
 * [Use the Page Designer](https://docs.oracle.com/en/cloud/paas/visual-builder/visualbuilder-building-appui/get-started1.html#GUID-CC2B203D-51D3-4408-8D0B-4E26C86BCBC0)
