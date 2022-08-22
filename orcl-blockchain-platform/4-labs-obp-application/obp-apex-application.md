@@ -4,7 +4,7 @@
 
 APEX is a low-code development platform that enables you to build scalable, secure enterprise apps, with world-class features, that can be deployed anywhere.
 
-Estimated Lab Time: 15 mi
+*Estimated Lab Time: 15 mi*
 
 
 ### Objectives
