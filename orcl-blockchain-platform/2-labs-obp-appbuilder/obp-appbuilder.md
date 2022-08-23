@@ -291,7 +291,7 @@ Select 'car_marketplace_cc.controller.go' under 'car_marketplace_cc/src.' The Co
       </copy>
       ```
 
-## Task 5: Deploy Marketplace Chaincode on Peer Nodes Partitioned by Channels
+## Task 5: Deploy Marketplace Chaincode in local Environment
 
 Blockchain App Builder chaincode deployment starts the Hyperledger Fabric basic network, other services, and installs and instantiates the chaincode for you.
 
@@ -308,7 +308,6 @@ Blockchain App Builder chaincode deployment starts the Hyperledger Fabric basic 
 
   If you receive an error message in the **Output** console window (located at the bottom of your Visual Studio window), open the Docker Desktop app and copy/paste the given command into your terminal to start the Docker daemon. Restart Visual Studio and repeat steps 1-3 as necessary.
 
-  If you get a user session error, you may need to log into the 'Marketplace' environment by hovering over 'Marketplace' (lower-left corner) and clicking on the 'i' details icon.
 
 ## Task 6: Invoke and Query Ledger marketplace chaincode from App Builder in local environment
 
@@ -354,7 +353,7 @@ Blockchain App Builder chaincode deployment starts the Hyperledger Fabric basic 
 
   ![Car Marketplace Chaincode Package](images/2-app-builder-7-1.png)
 
-## Task 9: Install and Deploy Marketplace chaincode package onto Participant Instances
+## Task 9: Install and Deploy Marketplace chaincode package onto Participant Instances (dealer1 & dealer2)
 
   To install and re-deploy the chaincode on partner instances, use the package in Task7 and then approve the chaincode definition from the partner instances (in this case, 'dealer1' and 'dealer2').
 
@@ -404,12 +403,13 @@ Blockchain App Builder chaincode deployment starts the Hyperledger Fabric basic 
 
   ![Approve Chaincode Form](images/2-car-marketplace-7-11.png)
 
-11. Assign the Endorsement policy by selecting signature under the endorsement policy. Add the policy of performing an endorsement signature by one of the organizations in the network.
-  ```
-  <copy>
-  OR ('dealer1.member', dealer2.member)
-  </copy>
-  ```
+11. Assign the [Endorsement policy](https://docs.oracle.com/en/cloud/paas/blockchain-cloud/usingoci/specify-endorsement-policy.html) by selecting signature under the endorsement policy. Add the policy of performing an endorsement signature by one of the organizations in the network. ou can add an endorsement policy when you instantiate a chaincode. An endorsement policy specifies the members with peers that must approve, or properly endorse, a chaincode transaction before it’s added to a block and submitted to the ledger.
+
+    ```
+    <copy>
+    OR ('dealer1.member', dealer2.member)
+    </copy>
+    ```
 
   ![Check Approved Field](images/2-car-marketplace-7-11.1.png)
 
@@ -420,7 +420,7 @@ Blockchain App Builder chaincode deployment starts the Hyperledger Fabric basic 
 13. Repeat steps 2-12 for 'dealer2.'
 
 
-## Task 11: User Enrollment  - For All the Nodes.
+## Task 11: User Enrollment - Perform on All nodes (marketplace, dealer1, dealer2)
 
   Oracle Blockchain Platform supports enrollments to the REST proxy. You use enrollments with token chaincodes to ensure the identities of the users completing token transactions. To do this, when you add enrollments for token use cases, specify a user ID for each enrollment (founder ID in this case), and specify one and only one user for each enrollment.
 
@@ -444,14 +444,15 @@ Blockchain App Builder chaincode deployment starts the Hyperledger Fabric basic 
 
 The flow for developing smart contracts for tokenization begins with creating a specification file that describes our fiat token. [Car_Tokenization.yml](../2-labs-obp-appbuilder/files/Car_Tokenization.yml) describes our [FiatToken structure](https://docs.oracle.com/en/cloud/paas/blockchain-cloud/usingoci/input-specification-file-fungible-tokens.html): AssetType, Token_id, Token_name, Token_desc, Token_type, and behavior.  The specification file is then used to scaffold a smart contract project ('car_tokenization_cc') and generate source code for models and controllers. Each object has properties that characterize the assets, data types and validations. You can see sample specification files (and write your own specifications) in either YAML or JSON using the Blockchain App Builder package. 
 
-1. Locate the sample specification, [Car_Tokenization.yml](../2-labs-obp-appbuilder/files/Car_Tokenization.yml), in the **Samples** folder.
+1. Locate the sample specification, [Car_Tokenization.yml](../2-labs-obp-appbuilder/files/Car_Tokenization.yml), in the **Samples** folder. 
+
 
 2. In Visual Studio Code, click on the **O** icon on the left-hand menu to use the Blockchain App Builder Extension. 
 
 3. Hover over the **Specifications** pane, click on the three dots, and then **Import Specification**. Alternatively, copy the path of the specification file and import manually. 
 
 Make sure the **Details** of your specification read:
-  ![Car Tokenization Specification Details](images/2-app-builder-tokenization-yml.png)
+    ![Car Tokenization Specification Details](images/2-app-builder-tokenization-yml.png)
 
 
 ## Task 13: Deploy Tokenization chaincode to Founder Instance
@@ -476,12 +477,6 @@ Make sure the **Details** of your specification read:
 2. Hover over the **Chaincodes** pane, Right Click on the chaincode to be packaged --> Select the directory on your laptop to save the chaincode package file. 
 
   ![Car Tokenization Chaincode Package](images/2-appbuilder-chaincodepackage-tokenization.png)
-
-<---->
-1. Repeat Tasks 1-7, this time using 'Car_Tokenization.yml' as the specification file and 'car_tokenization' as the sample chaincode. In Tasks 4 and 6, add the following **Initial Parameters** to your chaincode deployment:
-
-  ![View or Manage Enrollments](images/2-app-builder-9-1.png)
-<---->
 
 ## Task 15: Install and Deploy Tokenization chaincode package onto Participant Instances
 
