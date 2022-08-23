@@ -11,8 +11,6 @@ This lab will discuss a variety of Enterprise and open source technologies, incl
 - Oracle REST Data Services (ORDS)
 - Oracle Cloud Infrastructure (OCI) <i>Always Free</i> Tier Tenancy
 - Database Actions
-<!-- I'm actually not sure about cURL, but I don't want to forget it -->
-<!-- Make sure any changes here are also included in the Learn More section - we'll want to include those resources as well  -->
 - cURL
 - Python 3.10.x and later 
 - Python packages (libraries) such as: 
@@ -172,7 +170,7 @@ This lab assumes you have:
 
     In short, this function is triggered by the submit action on the `orderform.html` page. But rather than staying on that page, the user is redirected to the `orderhistory.html` page. 
     
-7. You may now proceed to the next Lab.
+### You may now proceed to the [next Lab](#next).
 
 ## Learn More
 * [A minimal application in Flask](https://flask.palletsprojects.com/en/2.1.x/quickstart/#a-minimal-application)

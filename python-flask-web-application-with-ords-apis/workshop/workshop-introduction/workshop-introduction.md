@@ -2,16 +2,19 @@
 
 ## About this Workshop
 
-In this workshop you'll explore a Python application built atop the Flask micro-framework. This application uses Oracle Database REST <b>A</b>pplication <b>P</b>rogramming <b>I</b>nterfaces (APIs) to serve, display, and store product information as well as customer orders in a fictitious online ticket ordering service. This online storefront, is based in Las Vegas, Nevada (to coincide with Oracle's Cloud World 2022 event). 
+Welcome! In this Workshop we'll explore a Python application built atop the Flask micro-framework. In the next Lab you'll see how this sample sample application uses Oracle Database REST <b>A</b>pplication <b>P</b>rogramming <b>I</b>nterfaces (APIs) to serve, display, and store product information as well as customer orders in a fictitious online ticket ordering service. 
 
-In later Labs you will learn how a user can access this site and order tickets to local attractions. The attractions range from museums to art installations; all are family-friendly. You'll learn how this Flask application, developed primarily in Python can omit the tedious steps of creating, mapping, and modeling a database. Additionally, since all necessary information is provided through Oracle REST APIs, Object-Relational Mapping (ORM) tools are completely unnecessary.
+Our online storefront, is based in Las Vegas, Nevada (to coincide with Oracle's Cloud World 2022 event) and is designed to make it easier for visitors to sample local venues and attractions. In the Labs you will learn how a user can access our web application (site) and make ticket purchased to local attractions. 
 
-By the end of this lab, you will have a thorough understanding of how Oracle REST APIs can accelerate the development of Flask/Python web applications. You will also be provided with Python code (you may choose to install locally or fork our repository from GitHub) and Database scripts required to:
+Attractions range from museums to art installations; all are family-friendly. You'll learn how this Flask application, developed primarily in Python, can omit the tedious steps of creating, mapping, and modeling a database. Additionally, since all necessary information is provided through Oracle REST APIs, Object-Relational Mapping (ORM) tools are completely unnecessary.
+
+By the end of this lab, you will have a thorough understanding of how Oracle REST APIs can accelerate the development of Flask/Python web applications. You will also be provided with Python code (you may choose to install locally) and Database scripts required to:
 - establish your own schema in an Autonomous Database
 - run this Flask application locally
+- extend already existing functionality
 
 Throughout this Workshop we'll explore key concepts related: 
-- Oracle REST Data Services (ORDS) APIs and characteristics:
+- Oracle REST Data Services (ORDS) APIs and characteristics such as:
   - Templates
   - Handlers 
   - Methods 
@@ -41,22 +44,22 @@ In this workshop, you will:
 
 This Workshop assumes you have experience with Python development. This Workshop also assumes you have some experience with the Flask framework. This includes knowledge of the proper commands to execute a Flask application. 
 
-While familiarity with HTML, CSS, and JavaScript is helpful. Knowledge in these areas is not required as we will be reviewing them in limited scope. 
+While familiarity with HTML, CSS, and JavaScript is helpful, knowledge in these areas is not required as we will be reviewing these concepts in limited scope. 
 
 Finally, this lab assumes you have the following developer environment: 
 - Python 3.10 or later 
 - A text editor (such as Visual Studio Code or Sublime Text)
-- A Package Manager (i.e., Homebrew for Mac, or pip)
+- A Package Manager (i.e., Homebrew for Mac, <i>aka</i> pip)
 - Select Python packages: 
   - Requests 
   - Folium
   - Json
   - Flask 
-  - Virtual Environment (venv) <i>or</i>the Live Server extension for VS Code 
+  - Virtual Environment (venv) <i>or</i> the Live Server extension for VS Code 
 
-:bulb: <i>If your development environment is not properly set-up, you may refer to the <b>Learn More</b> section for resources on how to help you set up your environment.</i>
+  :bulb: <i>If your development environment is not set-up according to the above, you may refer to the <b>Learn More</b> section for resources on how to set-up your environment.</i>
 
-#### You may now proceed to the next Lab.
+### You may now proceed to the [next Lab](#next).
 
 ## Learn More
 

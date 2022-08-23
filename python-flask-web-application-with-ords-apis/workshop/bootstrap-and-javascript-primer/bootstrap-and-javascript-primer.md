@@ -149,7 +149,7 @@ This lab assumes you have:
 
   :bulb: <i>Note: Since you're sharing these endpoints, you may see orders from participants; that is to be expected.</i>
 
-5. You may now proceed to the next Lab.
+### You may now proceed to the [next Lab](#next).
 
 ## Learn More
 

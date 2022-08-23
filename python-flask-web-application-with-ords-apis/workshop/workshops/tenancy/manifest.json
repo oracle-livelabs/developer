@@ -38,14 +38,19 @@
             "filename": "../../workshop/bootstrap-and-javascript-primer/bootstrap-and-javascript-primer.md"
         },
         {
-            "title": "Need Help?",
-            "description": "Solutions to Common Problems and Directions for Receiving Live Help",
-            "filename":"https://oracle-livelabs.github.io/common//labs/need-help/need-help-freetier.md"
+            "title": "Lab 5: Securing your Oracle REST APIs with the OAuth 2.0 security protocol",
+            "description": "We introduce the concept of the OAuth2 2.0 security protocol, and how it can benefit our Flask application.",
+            "filename": "../../workshop/securing-oracle-rest-apis/securing-oracle-rest-apis.md"
         },
         {
             "title": "Other LiveLabs you might like",
             "description": "Other LiveLabs you might like",
             "filename": "../../other-livelabs/other-livelabs.md"
         }
-    ]
+        {
+            "title": "Need Help?",
+            "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+            "filename":"https://oracle-livelabs.github.io/common//labs/need-help/need-help-freetier.md"
+        },
+                ]
 }
