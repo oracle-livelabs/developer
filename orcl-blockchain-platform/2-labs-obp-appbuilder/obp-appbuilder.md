@@ -50,11 +50,9 @@ You will be using Oracle's Blockchain App Builder extension, accessible through 
 
 The flow for developing smart contracts begins with creating a [specification file](https://docs.oracle.com/en/cloud/paas/blockchain-cloud/usingoci/input-configuration-file.html) that describes car marketplace assets being maintained on the blockchain ledger. 
 
-'Car_Marketplace.yml' describes marketplace assets: Car, Dealer, Invoice, and Purchase Order (PO). Each object has properties that characterize the assets, data types and validations. You can see sample specification files (and write your own specifications) in either YAML or JSON using the Blockchain App Builder package. 
+[Car_Marketplace.yml](../2-labs-obp-appbuilder/files/Car_Marketplace.yml) describes [marketplace assets](https://docs.oracle.com/en/cloud/paas/blockchain-cloud/usingoci/input-configuration-file.html): Car, Dealer, Invoice, and Purchase Order (PO). Each object has properties that characterize the assets, data types and validations. You can see sample specification files (and write your own specifications) in either YAML or JSON using the Blockchain App Builder package. 
 
-Explain the CarMarketplace yaml - Hover
-
-1. Locate the sample specification, Car_Marketplace.yml, in the **Samples** folder.
+1. Locate the sample specification, [Car_Marketplace.yml](../2-labs-obp-appbuilder/files/Car_Marketplace.yml), in the **Samples** folder.
 
 2. In Visual Studio Code, click on the **O** icon on the left-hand menu to use the Blockchain App Builder Extension. 
 
@@ -64,7 +62,7 @@ Explain the CarMarketplace yaml - Hover
 
 Make sure the **Details** of your specification read:
 
-    ![Car Marketplace Specification Details](images/2-app-builder-1-3.png)
+  ![Car Marketplace Specification Details](images/2-app-builder-1-3.png)
 
 
 ## Task 3:Generate Chaincode Project
@@ -114,7 +112,7 @@ Select 'car_marketplace_cc.controller.go' under 'car_marketplace_cc/src.' The Co
         return nil, err
 
         }
-        <\copy>
+        </copy>
 
         ```
   - 'CreatePO': Creates purchase order once buyer places order on vehicle. The function verifies car exists on ledger, places car off the market, and records purchase order on ledger.
@@ -137,7 +135,7 @@ Select 'car_marketplace_cc.controller.go' under 'car_marketplace_cc/src.' The Co
         return nil, err
 
         }
-        <\copy>
+        </copy>
       ```
 
   - 'UpdatePO': Updates purchase order. If order status is:
@@ -216,7 +214,7 @@ Select 'car_marketplace_cc.controller.go' under 'car_marketplace_cc/src.' The Co
       return nil, err
 
       }
-      <\copy>
+      </copy>
       ```
    
   - 'CarTransfer': Transfer vehicle ownership from one dealer to another. Validations are written to check that car being sold and dealer receiving vehicle exist in ledger and that the owner isn't selling a vehicle to themselves. We update car object properties to reflect the new owner of the vehicle, removing the car from the seller's inventory, adding it to the buyer's inventory. Finally, we commit car and dealer changes to the ledger.
@@ -293,9 +291,7 @@ Select 'car_marketplace_cc.controller.go' under 'car_marketplace_cc/src.' The Co
       </copy>
       ```
 
-3. Copy and Paste the custom Methods. - Location and details - Use the feature in the Lively MD Verbatim
-
-## Task 5: Deploy Chaincode on Peer Nodes Partitioned by Channels -- check whether Docker is installed on image; else create local env
+## Task 5: Deploy Chaincode on Peer Nodes Partitioned by Channels
 
 Blockchain App Builder chaincode deployment starts the Hyperledger Fabric basic network, other services, and installs and instantiates the chaincode for you.
 
@@ -335,16 +331,8 @@ Blockchain App Builder chaincode deployment starts the Hyperledger Fabric basic 
 
 4. Display Request and Response - Request/Response.
 
-## Task 7: Import chaincode package from app builder
 
-1. In Visual Studio Code, click on the **O** icon on the left-hand menu to use the Blockchain App Builder Extension. 
-
-2. Hover over the **Chaincodes** pane, Right Click on the chaincode to be packaged --> Select the directory on your laptop to save the chaincode package file. 
-
-  ![Car Marketplace Chaincode Package](images/2-app-builder-7-1.png)
-
- 
-## Task 8: Deploy to Founder Instance
+## Task 7: Deploy to Founder Instance
 
   Now that we have tested our project locally, we can connect to our remote instances.
 
@@ -357,6 +345,14 @@ Blockchain App Builder chaincode deployment starts the Hyperledger Fabric basic 
 4. Now, repeat Tasks 5 and 6, changing the target environment from 'Local Environment' to 'Marketplace.' Also change the channel to 'car-marketplace' as set in Lab 1, Task 5. 
 
   ![Founder Deployment](images/2-car-marketplace-6-4.png)
+
+## Task 8: Import chaincode package from app builder
+
+1. In Visual Studio Code, click on the **O** icon on the left-hand menu to use the Blockchain App Builder Extension. 
+
+2. Hover over the **Chaincodes** pane, Right Click on the chaincode to be packaged --> Select the directory on your laptop to save the chaincode package file. 
+
+  ![Car Marketplace Chaincode Package](images/2-app-builder-7-1.png)
 
 ## Task 9: Install and Deploy onto Participant Instances
 
@@ -383,7 +379,7 @@ Blockchain App Builder chaincode deployment starts the Hyperledger Fabric basic 
   ![Advanced Deployment](images/2-car-marketplace-7-6.png)
 
 6. Fill out the form as follows:
-    - For **Package Label**, open up the 'Service Console' for the 'Marketplace' founder instance, click the **Chaincodes** tab, and copy the text as shown. You may use car_marketplace_cc_car-marketplace_v1, or any other name, but make sure to use the same name when repeating these steps for 'dealer2.'
+    - For **Package Label**, open up the 'Service Console' for the 'Marketplace' founder instance, click the **Chaincodes** tab, and copy the text as shown. You may use `car_marketplace_cc_car-marketplace_v1`, or any other name, but make sure to use the same name when repeating these steps for 'dealer2.'
 
     ![Package Label](images/2-car-marketplace-7-7-1.png)
 
@@ -412,7 +408,7 @@ Blockchain App Builder chaincode deployment starts the Hyperledger Fabric basic 
   ```
   <copy>
   OR ('dealer1.member', dealer2.member)
-  <\copy>
+  </copy>
   ```
 
   ![Check Approved Field](images/2-car-marketplace-7-11.1.png)
@@ -437,27 +433,123 @@ Blockchain App Builder chaincode deployment starts the Hyperledger Fabric basic 
 
   ![Create New Enrollment](images/Create_new_enrollment.png)
 
-4. Input enrollment information. See sample enrollment as example. 
+4. Input enrollment information. See sample enrollment as example. Enrollment user had to be created in idcs. In this example local.user is used. Make sure the user has REST_Client role assoicated with the Blockchain instance.
+
   ![Input Enrollment](images/input_enrollment.png)
   ![Sample Enrollment](images/Sample_enrollment.png)
 
 5. Click Enroll.
 
-## Task 12: Create & Deploy Tokenization Chaincode
+## Task 12: Create Tokenization Chaincode
 
-  The flow for developing smart contracts for tokenization begins with creating a specification file that describes our fiat token. 'Car_Tokenization.yml' describes our FiatToken structure: AssetType, Token_id, Token_name, Token_desc, Token_type, and behavior. The specification file is then used to scaffold a smart contract project ('car_tokenization_cc') and generate source code for models and controllers.
+The flow for developing smart contracts for tokenization begins with creating a specification file that describes our fiat token. [Car_Tokenization.yml](../2-labs-obp-appbuilder/files/Car_Tokenization.yml) describes our [FiatToken structure](https://docs.oracle.com/en/cloud/paas/blockchain-cloud/usingoci/input-specification-file-fungible-tokens.html): AssetType, Token_id, Token_name, Token_desc, Token_type, and behavior.  The specification file is then used to scaffold a smart contract project ('car_tokenization_cc') and generate source code for models and controllers. Each object has properties that characterize the assets, data types and validations. You can see sample specification files (and write your own specifications) in either YAML or JSON using the Blockchain App Builder package. 
 
-  Select 'car_tokenization_cc.model.go' under 'car_tokenization_cc/src'. The Model file contains the property definitions of all the assets defined in the spec file.
+1. Locate the sample specification, [Car_Tokenization.yml](../2-labs-obp-appbuilder/files/Car_Tokenization.yml), in the **Samples** folder.
 
-  Select 'car_tokenization_cc.controller.go' under 'car_tokenization_cc/src.' The Controller file defines all the behavior and methods for those assets.
+2. In Visual Studio Code, click on the **O** icon on the left-hand menu to use the Blockchain App Builder Extension. 
 
-1. Repeat Tasks 1-7, this time using 'Car_Tokenization.yml' as the specification file and 'car_tokenization_cc' as the sample chaincode. In Tasks 4 and 6, add the following **Initial Parameters** to your chaincode deployment:
+3. Hover over the **Specifications** pane, click on the three dots, and then **Import Specification**. Alternatively, copy the path of the specification file and import manually. 
+
+Make sure the **Details** of your specification read:
+  ![Car Tokenization Specification Details](images/2-app-builder-tokenization-yml.png)
+
+
+## Task 13: Deploy to Founder Instance
+
+  Now that we have tested our project locally, we can connect to our remote instances.
+
+1. In the OCI services menu, select 'Developer Services' and click on 'Blockchain Platform.'
+
+2. Ensure that the right **Compartment** is selected and click on the 'Marketplace' founder instance. 
+
+3. Access the 'Service Console' and copy the REST Proxy URL of this platform instance.
+   ![Service Console](images/2-app-builder-tokenization-deploy-marketplace.png)
+
+4. Changing the target environment in Blockchain AppBuilder from 'Local Environment' to 'Marketplace.' Also change the channel to 'car-marketplace'. 
+
+  ![Founder Deployment](images/2-app-builder-tokenization-deploy-marketplace.png)
+
+## Task 14: Import chaincode package from app builder
+
+1. In Visual Studio Code, click on the **O** icon on the left-hand menu to use the Blockchain App Builder Extension. 
+
+2. Hover over the **Chaincodes** pane, Right Click on the chaincode to be packaged --> Select the directory on your laptop to save the chaincode package file. 
+
+  ![Car Tokenization Chaincode Package](images/2-appbuilder-chaincodepackage-tokenization.png)
+
+<---->
+1. Repeat Tasks 1-7, this time using 'Car_Tokenization.yml' as the specification file and 'car_tokenization' as the sample chaincode. In Tasks 4 and 6, add the following **Initial Parameters** to your chaincode deployment:
 
   ![View or Manage Enrollments](images/2-app-builder-9-1.png)
+<---->
 
-Task - Post Install on Laptop or Image  - Replace Postman with app Builder
+## Task 15: Install and Deploy onto Participant Instances
 
-## Task 12: Initialization and Issuance of Car Marketplace Fiat Token - Run It with App Builder. Save Input.
+  To install and re-deploy the chaincode on partner instances, use the package in Task7 and then approve the chaincode definition from the partner instances (in this case, 'dealer1' and 'dealer2').
+
+1. Access the 'Service Console' for the 'dealer1' instance.
+
+  ![Download Package](images/2-car-marketplace-7-2.png)
+
+2. Click the **Channels** tab and then the 'car-marketplace' channel.
+
+  ![car-marketplace Channel](images/2-car-marketplace-7-3.png)
+
+3. Select on 'Deployed Chaincodes' on the left-hand navigation pane. You will see that 1 chaincode has been committed to the channel, but has not yet been approved by the participant organization.
+
+  ![Deployed Chaincodes](images/2-car-marketplace-7-4.png)
+
+4. Now click the **Chaincodes** tab and then 'Deploy a New Chaincode.'
+
+  ![Deploy a New Chaincode](images/2-car-marketplace-7-5.png)
+
+5. Select 'Advanced Deployment.'
+
+  ![Advanced Deployment](images/2-car-marketplace-7-6.png)
+
+6. Fill out the form as follows:
+    - For **Package Label**, open up the 'Service Console' for the 'Marketplace' founder instance, click the **Chaincodes** tab, and copy the text as shown. You may use `car_tokenization_v1`, or any other name, but make sure to use the same name when repeating these steps for 'dealer2.'
+
+    ![Package Label](images/2-car-marketplace-7-7-1.png)
+
+    - Keep 'GoLang' as the **Chaincode Language**.
+    - Select both available peers as the **Target Peers**.
+    - Upload the package .zip file you exported from the App Builder VS Code extension. We stored this in the **Samples** folder.
+
+  ![Advanced Deployment Form](images/2-car-marketplace-7-7-2.png)
+
+7. Click 'Close.' We will only be installing (not deploying) the chaincode onto the participant instances.
+
+  ![Close Advanced Deployment Form](images/2-car-marketplace-7-8.png)
+
+8. Now click 'Channels,' then the 'car-marketplace' channel, and navigate to 'Deployed Chaincodes' as you did in steps 3 and 4. 
+
+
+9. Find and click on the hamburger icon on the right of the row containing your chaincode. Select 'Approve.'
+
+  ![Hamburger and Approve](images/2-car-marketplace-7-10.png)
+
+10. Simply select the **Package ID** as shown and click 'Approve.' 
+
+  ![Approve Chaincode Form](images/2-car-marketplace-7-11.png)
+
+11. Assign the Endorsement policy by selecting signature under the endorsement policy. Add the policy of performing an endorsement signature by one of the organizations in the network.
+  ```
+  <copy>
+  OR ('dealer1.member', dealer2.member)
+  </copy>
+  ```
+
+  ![Check Approved Field](images/2-car-marketplace-7-11.1.png)
+
+12. Check that the chaincode has now been approved by the current participant. 
+
+  ![Check Approved Field](images/2-car-marketplace-7-12.png)
+
+13. Repeat steps 2-12 for 'dealer2.'
+
+
+## Task 16: Initialization and Issuance of Car Marketplace Fiat Token - Run It with App Builder. Save Input.
 
 1. Import the Marketplace Tokenization Postman collection (Marketplace_Tokenization.postman_collection.json) and assign variable definitions as shown.
 
