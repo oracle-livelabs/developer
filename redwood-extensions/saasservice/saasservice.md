@@ -88,8 +88,9 @@ Switch back to the design mode to see the resulting table with data fetched into
 We are now ready to preview the application's Functionality
 
 11. Click the preview button at the top right of the page. This will prepare your application to be previewed and then will open a new tab in your browser where you can see your running app.
-
+											  ![Image alt text](images/preview.png)
 12. Play around with your live app, providing search criteria to filter the list. Also note the smart pagination happening when you scroll through the records in the table. Records are being fetched as needed.
+											  ![Image alt text](images/running.png)
 
 Now that we have a running page that fetches data, the next step is to add pages that will allow us to edit the data and update Oracle's SaaS.
 
