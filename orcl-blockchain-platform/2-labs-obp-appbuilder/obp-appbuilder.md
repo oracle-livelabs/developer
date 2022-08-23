@@ -60,8 +60,8 @@ The flow for developing smart contracts begins with creating a [specification fi
 
 4. Click on the yml specification imported. You can see the specficiations defined for each object and attribute. If you want change any specification of an attribute, you can do so. For example: Change line number 102 to - format: ["PO%1%t", "recipient"]. [Specifications Help](https://docs.oracle.com/en/cloud/paas/blockchain-cloud/usingoci/input-configuration-file.html)
 
-Make sure the **Details** of your specification read:
-
+  Make sure the **Details** of your specification read:
+  
   ![Car Marketplace Specification Details](images/2-app-builder-1-3.png)
 
 
@@ -116,7 +116,6 @@ Select 'car_marketplace_cc.controller.go' under 'car_marketplace_cc/src.' The Co
 
         ```
   - 'CreatePO': Creates purchase order once buyer places order on vehicle. The function verifies car exists on ledger, places car off the market, and records purchase order on ledger.
-
         ```
         <copy>
         func (t *Controller) CreatePOWrapper(asset PO) (interface{}, error) {
@@ -136,91 +135,91 @@ Select 'car_marketplace_cc.controller.go' under 'car_marketplace_cc/src.' The Co
 
         }
         </copy>
-      ```
+        ```
 
   - 'UpdatePO': Updates purchase order. If order status is:
     - 'Delivered': Car is successfully delivered to buyer, an invoice is generated, and custom function 'CarTransfer' is invoked.
     - 'Rejected': Order is canceled, and car is placed back on the market.
     
-    ```
-      <copy>
-      func (t *Controller) UpdatePOWrapper(asset PO) (interface{}, error) {
+        ```
+        <copy>
+        func (t *Controller) UpdatePOWrapper(asset PO) (interface{}, error) {
 
-      //Verifies purchase order exists
-      _, err := t.GetPOById(asset.PO)
-      if err != nil {
-        return nil, fmt.Errorf("po with id: %s does not exist", asset.PO)
-      }
-
-      //If vehicle is delivered to buyer
-      if asset.OrderStatus == "Delivered" {
-
-        var invoiceObject Invoice
-
-        //Verify car exists in ledger
-        car, err := t.GetCarById(asset.Vin)
+        //Verifies purchase order exists
+        _, err := t.GetPOById(asset.PO)
         if err != nil {
-          return nil, fmt.Errorf("car with id: %s does not exist", asset.Vin)
+          return nil, fmt.Errorf("po with id: %s does not exist", asset.PO)
         }
 
-        car.ForSale = true
+        //If vehicle is delivered to buyer
+        if asset.OrderStatus == "Delivered" {
 
-        t.UpdateCar(car)
+          var invoiceObject Invoice
 
-        //Create invoice sent to buyer
-        invoiceObject.Vin = asset.Vin
-        invoiceObject.Po_number = asset.PO
-        invoiceObject.Price = car.Price
-        invoiceObject.Recipient = asset.Purchaser
-        invoiceObject.Status = false
-
-        invoiceObject.InvoiceId = asset.InvoiceId
-
-        t.CreateInvoice(invoiceObject)
-
-        currentTime := time.Now().String()
-
-        var ts_formatted string
-
-        for i, c := range currentTime {
-          fmt.Printf("Start Index: %d Value:%s\n", i, string(c))
-
-          if string(c) == " " {
-            fmt.Println(ts_formatted)
-            break
+          //Verify car exists in ledger
+          car, err := t.GetCarById(asset.Vin)
+          if err != nil {
+            return nil, fmt.Errorf("car with id: %s does not exist", asset.Vin)
           }
-          ts_formatted += string(c)
+
+          car.ForSale = true
+
+          t.UpdateCar(car)
+
+          //Create invoice sent to buyer
+          invoiceObject.Vin = asset.Vin
+          invoiceObject.Po_number = asset.PO
+          invoiceObject.Price = car.Price
+          invoiceObject.Recipient = asset.Purchaser
+          invoiceObject.Status = false
+
+          invoiceObject.InvoiceId = asset.InvoiceId
+
+          t.CreateInvoice(invoiceObject)
+
+          currentTime := time.Now().String()
+
+          var ts_formatted string
+
+          for i, c := range currentTime {
+            fmt.Printf("Start Index: %d Value:%s\n", i, string(c))
+
+            if string(c) == " " {
+              fmt.Println(ts_formatted)
+              break
+            }
+            ts_formatted += string(c)
+          }
+
+          //Invoke Custom Method: Car Transfer
+          t.CarTransfer(asset.Vin, asset.Purchaser, car.OwnerId, asset.PO, car.Price, ts_formatted)
+
+          }
+
+        //If vehicle is rejected by buyer
+        if asset.OrderStatus == "Rejected" {
+
+          car, err := t.GetCarById(asset.Vin)
+          if err != nil {
+            return nil, fmt.Errorf("car with id: %s does not exist", asset.Vin)
+          }
+
+          //Set car for sale back to true
+          car.ForSale = true
+          t.UpdateCar(car)
+
         }
+        t.UpdatePO(asset)
+        return nil, err
 
-        //Invoke Custom Method: Car Transfer
-        t.CarTransfer(asset.Vin, asset.Purchaser, car.OwnerId, asset.PO, car.Price, ts_formatted)
-
-      }
-
-      //If vehicle is rejected by buyer
-      if asset.OrderStatus == "Rejected" {
-
-        car, err := t.GetCarById(asset.Vin)
-        if err != nil {
-          return nil, fmt.Errorf("car with id: %s does not exist", asset.Vin)
         }
-
-        //Set car for sale back to true
-        car.ForSale = true
-        t.UpdateCar(car)
-
-      }
-      t.UpdatePO(asset)
-      return nil, err
-
-      }
-      </copy>
-      ```
+        </copy>
+        ```
    
   - 'CarTransfer': Transfer vehicle ownership from one dealer to another. Validations are written to check that car being sold and dealer receiving vehicle exist in ledger and that the owner isn't selling a vehicle to themselves. We update car object properties to reflect the new owner of the vehicle, removing the car from the seller's inventory, adding it to the buyer's inventory. Finally, we commit car and dealer changes to the ledger.
 
-      ```
-      <copy>
+        ```
+        <copy>
         func (t *Controller) CarTransfer(vin string, buyerId string, sellerId string, PO string, price int, dateString string) (interface{}, error) {
 
         //Date formatting and handling
@@ -288,8 +287,8 @@ Select 'car_marketplace_cc.controller.go' under 'car_marketplace_cc/src.' The Co
         return nil, err
 
         }
-      </copy>
-      ```
+        </copy>
+        ```
 
 ## Task 5: Deploy Marketplace Chaincode in local Environment
 
@@ -451,20 +450,20 @@ The flow for developing smart contracts for tokenization begins with creating a 
 
 3. Hover over the **Specifications** pane, click on the three dots, and then **Import Specification**. Alternatively, copy the path of the specification file and import manually. 
 
-Make sure the **Details** of your specification read:
-    ![Car Tokenization Specification Details](images/2-app-builder-tokenization-yml.png)
+  Make sure the **Details** of your specification read:
+  ![Car Tokenization Specification Details](images/2-app-builder-tokenization-yml.png)
 
 
 ## Task 13: Deploy Tokenization chaincode to Founder Instance
 
-  Now that we have tested our project locally, we can connect to our remote instances.
+Now that we have tested our project locally, we can connect to our remote instances.
 
 1. In the OCI services menu, select 'Developer Services' and click on 'Blockchain Platform.'
 
 2. Ensure that the right **Compartment** is selected and click on the 'Marketplace' founder instance. 
 
 3. Access the 'Service Console' and copy the REST Proxy URL of this platform instance.
-   ![Service Console](images/2-app-builder-tokenization-deploy-marketplace.png)
+  ![Service Console](images/2-app-builder-tokenization-deploy-marketplace.png)
 
 4. Changing the target environment in Blockchain AppBuilder from 'Local Environment' to 'Marketplace.' Also change the channel to 'car-marketplace'. 
 
@@ -503,13 +502,14 @@ Make sure the **Details** of your specification read:
   ![Advanced Deployment](images/2-car-marketplace-7-6.png)
 
 6. Fill out the form as follows:
-    - For **Package Label**, open up the 'Service Console' for the 'Marketplace' founder instance, click the **Chaincodes** tab, and copy the text as shown. You may use `car_tokenization_v1`, or any other name, but make sure to use the same name when repeating these steps for 'dealer2.'
 
-    ![Package Label](images/2-car-marketplace-7-7-1.png)
+  - For **Package Label**, open up the 'Service Console' for the 'Marketplace' founder instance, click the **Chaincodes** tab, and copy the text as shown. You may use `car_tokenization_v1`, or any other name, but make sure to use the same name when repeating these steps for 'dealer2.'
 
-    - Keep 'GoLang' as the **Chaincode Language**.
-    - Select both available peers as the **Target Peers**.
-    - Upload the package .zip file you exported from the App Builder VS Code extension. We stored this in the **Samples** folder.
+  ![Package Label](images/2-car-marketplace-7-7-1.png)
+
+  - Keep 'GoLang' as the **Chaincode Language**.
+  - Select both available peers as the **Target Peers**.
+  - Upload the package .zip file you exported from the App Builder VS Code extension. We stored this in the **Samples** folder.
 
   ![Advanced Deployment Form](images/2-car-marketplace-7-7-2.png)
 
