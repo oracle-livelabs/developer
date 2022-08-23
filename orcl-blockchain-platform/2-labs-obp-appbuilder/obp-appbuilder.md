@@ -46,7 +46,7 @@ You will be using Oracle's Blockchain App Builder extension, accessible through 
   ![Car Marketplace Environment Details](images/2-app-builder-0.png)
 
 
-## Task 2: Import YAML Specification File
+## Task 2: Import Marketplace YAML Specification File
 
 The flow for developing smart contracts begins with creating a [specification file](https://docs.oracle.com/en/cloud/paas/blockchain-cloud/usingoci/input-configuration-file.html) that describes car marketplace assets being maintained on the blockchain ledger. 
 
@@ -65,7 +65,7 @@ Make sure the **Details** of your specification read:
   ![Car Marketplace Specification Details](images/2-app-builder-1-3.png)
 
 
-## Task 3:Generate Chaincode Project
+## Task 3:Generate Marketplace Chaincode Project
 
 The specification file is then used to scaffold a smart contract project ('car_marketplace_cc') and generate source code for models and controllers. 
 
@@ -86,7 +86,7 @@ The specification file is then used to scaffold a smart contract project ('car_m
 4. Select 'car_marketplace_cc.model.go' under 'car_marketplace_cc/src'. The Model file contains the property definitions of all the assets defined in the spec file.
 Select 'car_marketplace_cc.controller.go' under 'car_marketplace_cc/src.' The Controller file defines all the behavior and methods for those assets. 'Car_Marketplace.yml' spec file allows defining additional custom methods that users implement to provide business logic of smart contracts. 
 
-## Task 4: View Custom Methods
+## Task 4: View Custom Methods in Marketplace
 
 1. Open the Car Marketplace specification file and scroll to the bottom. This is where your customMethods are listed.
 
@@ -291,7 +291,7 @@ Select 'car_marketplace_cc.controller.go' under 'car_marketplace_cc/src.' The Co
       </copy>
       ```
 
-## Task 5: Deploy Chaincode on Peer Nodes Partitioned by Channels
+## Task 5: Deploy Marketplace Chaincode on Peer Nodes Partitioned by Channels
 
 Blockchain App Builder chaincode deployment starts the Hyperledger Fabric basic network, other services, and installs and instantiates the chaincode for you.
 
@@ -310,7 +310,7 @@ Blockchain App Builder chaincode deployment starts the Hyperledger Fabric basic 
 
   If you get a user session error, you may need to log into the 'Marketplace' environment by hovering over 'Marketplace' (lower-left corner) and clicking on the 'i' details icon.
 
-## Task 6: Invoke and Query Ledger using App Builder in local environment
+## Task 6: Invoke and Query Ledger marketplace chaincode from App Builder in local environment
 
   Once your chaincode project is running on a local network, you can test it.
 
@@ -332,7 +332,7 @@ Blockchain App Builder chaincode deployment starts the Hyperledger Fabric basic 
 4. Display Request and Response - Request/Response.
 
 
-## Task 7: Deploy to Founder Instance
+## Task 7: Deploy to Founder Instance (Marketplace)
 
   Now that we have tested our project locally, we can connect to our remote instances.
 
@@ -346,7 +346,7 @@ Blockchain App Builder chaincode deployment starts the Hyperledger Fabric basic 
 
   ![Founder Deployment](images/2-car-marketplace-6-4.png)
 
-## Task 8: Import chaincode package from app builder
+## Task 8: Import Marketplace chaincode package from app builder
 
 1. In Visual Studio Code, click on the **O** icon on the left-hand menu to use the Blockchain App Builder Extension. 
 
@@ -354,7 +354,7 @@ Blockchain App Builder chaincode deployment starts the Hyperledger Fabric basic 
 
   ![Car Marketplace Chaincode Package](images/2-app-builder-7-1.png)
 
-## Task 9: Install and Deploy onto Participant Instances
+## Task 9: Install and Deploy Marketplace chaincode package onto Participant Instances
 
   To install and re-deploy the chaincode on partner instances, use the package in Task7 and then approve the chaincode definition from the partner instances (in this case, 'dealer1' and 'dealer2').
 
@@ -454,7 +454,7 @@ Make sure the **Details** of your specification read:
   ![Car Tokenization Specification Details](images/2-app-builder-tokenization-yml.png)
 
 
-## Task 13: Deploy to Founder Instance
+## Task 13: Deploy Tokenization chaincode to Founder Instance
 
   Now that we have tested our project locally, we can connect to our remote instances.
 
@@ -469,7 +469,7 @@ Make sure the **Details** of your specification read:
 
   ![Founder Deployment](images/2-app-builder-tokenization-deploy-marketplace.png)
 
-## Task 14: Import chaincode package from app builder
+## Task 14: Import Tokenization chaincode package from app builder
 
 1. In Visual Studio Code, click on the **O** icon on the left-hand menu to use the Blockchain App Builder Extension. 
 
@@ -483,7 +483,7 @@ Make sure the **Details** of your specification read:
   ![View or Manage Enrollments](images/2-app-builder-9-1.png)
 <---->
 
-## Task 15: Install and Deploy onto Participant Instances
+## Task 15: Install and Deploy Tokenization chaincode package onto Participant Instances
 
   To install and re-deploy the chaincode on partner instances, use the package in Task7 and then approve the chaincode definition from the partner instances (in this case, 'dealer1' and 'dealer2').
 
