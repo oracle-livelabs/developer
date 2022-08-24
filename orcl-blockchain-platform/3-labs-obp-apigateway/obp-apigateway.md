@@ -135,26 +135,34 @@ This lab assumes you have:
     - Ensure that the right **Compartment** is selected and click on 'Next'
   ![Deployment Step 1](images/3-gateway-4-4.png)
 
-4. Next in your deployment, you need to add 4 routes: 1 for each participant instance and 2 for the founder instance. Under 'Routes', fill out the form for your first route as follows:
 
-***Explain How the URL is constructed for 2 and 3 routes ***
+## Task 4: Create Routes 
 
-    - Enter a **Path**. For Route 1, this will be /dealer-1/transactions
+1. Next in your deployment, you need to add 6 routes: 2 for each instance , 1 founder instance and 2 participant instances. Each instance will have two routes
+    - One route to perform `transactions`:'insert' and 'update' 
+    - Second route to perform `chaincode-queries`:'query a transactions or transactions'
+    - To create the routes click routes --> Under 'Routes', fill out the form for your first route as follows:
+    - Enter a **Path**. For Route 1, this will be /marketplace-2/transactions
     - Select 'POST' under **Methods**
     - Specify 'HTTP' as the **Type**
-    - Enter the **URL** to serve as a REST endpoint. For Route 1, this will be https://forddealer-orasenatdpltintegration03-iad.blockchain.ocp.oraclecloud.com:7443/restproxy/api/v2/channels/car-marketplace-livelab/chaincode-queries
+    - Enter the **URL** to serve as a REST endpoint. For Route 1, this will be https://marketplace-2-oabcs1-iad.blockchain.ocp.oraclecloud.com:7443/restproxy/api/v2/channels/car-marketplace/transactions
+    - How to Construct Route URL:
+      - From the Blockchain Admin Dashboard --> click on Nodes --> Navigate to restproxy (bottom of the screen) --> Copy the URL
+      - Append to URL --> [api/v2/channels/car-marketplace/transactions](https://docs.oracle.com/en/cloud/paas/blockchain-cloud/restoci/op-restproxy-api-v2-channels-channelname-transactions-post.html)
+      ![Route 1](3-gateway-4.bc.1.png)
     - For **Connection Establishment**, **Request Transmit**, and **Reading Response** timeouts, enter 60, 10, and 10 respectively
-  ![Route 1](3-gateway-4-5.png)
+    
+  ![Route 1](3-gateway-4-5.1.png)
 
-5. Click the '+ Another Route' button and repeat Step 2 for the remaining 3 routes as shown:
-***Explain How the URL is constructed for 2 and 3 routes ***
-  ![Route 2](3-gateway-4-6.png)
-  ![Route 3](images/3-gateway-4-7.png)
-  ![Route 4](images/3-gateway-4-8.png)
+2. Click the '+ Another Route' button and repeat Step 2 for the remaining 5 routes based on the blockchain instances as shown:
+  ![Route 2](3-gateway-4-5.2.png)
+  ![Route 3](images/3-gateway-4-6.1.png)
+  ![Route 4](images/3-gateway-4-6.2.png)
+  ![Route 4](images/3-gateway-4-7.2.png)
+  ![Route 4](images/3-gateway-4-7.2.png)
 
-6. 'Review' the deployment information and click 'Create.'
+3. 'Review' the deployment information and click 'Create.'
   ![Review Deployment](images/3-gateway-4-9.png)
-
 
 ## Task 5: Prefix Query and Invoke Endpoint During Configuration
 
@@ -162,8 +170,6 @@ Once active, the deployment can be used to make REST API calls between APEX and 
 
 1. Find the **Deployment Information** pane and the **Endpoint** as shown.
   ![Deployment Information](images/3-gateway-5-1.png)
-
-2. --complete after above is confirmed--
 
 
 ## What's Next?
