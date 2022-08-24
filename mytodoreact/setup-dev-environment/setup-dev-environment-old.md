@@ -35,7 +35,7 @@ Watch the video below for a quick walk through of the lab.
 
 	``` bash
 	<copy>
-	git clone https://github.com/oracle/oci-react-samples.git
+	git clone --single-branch --branch helidon https://github.com/oracle/oci-react-samples.git
 	</copy>
 	```
 
