@@ -149,13 +149,15 @@ This lab assumes you have:
     - How to Construct Route URL:
       - From the Blockchain Admin Dashboard --> click on Nodes --> Navigate to restproxy (bottom of the screen) --> Copy the URL
       - Append to URL --> [api/v2/channels/car-marketplace/transactions](https://docs.oracle.com/en/cloud/paas/blockchain-cloud/restoci/op-restproxy-api-v2-channels-channelname-transactions-post.html)
-      ![Route 1](3-gateway-4.bc.1.png)
+    
+    ![Blockchain Dashboard](images/3-gateway-4.bc.1.png)
+    
     - For **Connection Establishment**, **Request Transmit**, and **Reading Response** timeouts, enter 60, 10, and 10 respectively
     
-  ![Route 1](3-gateway-4-5.1.png)
+  ![Route 1](images/3-gateway-4-5.1.png)
 
 2. Click the '+ Another Route' button and repeat Step 2 for the remaining 5 routes based on the blockchain instances as shown:
-  ![Route 2](3-gateway-4-5.2.png)
+  ![Route 2](images/3-gateway-4-5.2.png)
   ![Route 3](images/3-gateway-4-6.1.png)
   ![Route 4](images/3-gateway-4-6.2.png)
   ![Route 4](images/3-gateway-4-7.2.png)

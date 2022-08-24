@@ -42,17 +42,20 @@ This lab assumes you have:
   - dealer-1-auth-obp (john_dealer1 account)
   - dealer-2-obp-auth (sam_dealer2 account)
 
-## Task 2: Make Query and Invoke Calls via APEX to Transfer Vehicles
+## Task 2: Hurray!! Complete Car Marketplace Workshop by Trading a Car
 
 Congrats on making it to the last task of this workshop!
 
 You will now create a car and simulate a transaction between the founder organization and a car dealer partner. When a car is added to the Marketplace, tokens are put on hold in the founder instance and then transacted with partner dealerships as necessary.
+
+## Task 3: Add a car to dealer1 Inventory 
 
 1. Login as a dealer (e.g. Dealer1) and land on My Inventory.
 
   ![Car Delaership](images/dealer1-login.png)
 
   ![Car Delaership](images/apex-myInventory.png)
+
 
 2. Click 'Add Car' and fill out the form to create a car, as shown. 
     - Enter Vehicle Vin (Must be 17 characters)
@@ -66,51 +69,62 @@ You will now create a car and simulate a transaction between the founder organiz
 
   ![Car Delaership](images/apex-addcar.png)
 
-3. Now login as the other dealer, Dealer2.
+## Task 4: dealer2 - Deposit Tokens in to the account
+
+1. Now login as the other dealer, Dealer2.
 
   ![Car Delaership](images/dealer2-login.png)
 
-4. Navigate to Orders, and filter to accounting. 
+2. Navigate to Orders, and filter to accounting. 
 
   ![Car Delaership](images/apex-accounting.png)
 
-5. Select Deposit Money, and enter desired ammount. Account Balance should be updated to reflect amount deposited. 
+3. Select Deposit Money, and enter desired ammount. Account Balance should be updated to reflect amount deposited. 
 
   ![Car Delaership](images/apex-depositMoney.png)
 
   ![Car Delaership](images/apex-accountBalance.png)
 
-6. Navigate to Marketplace 
+## Task 5: dealer2 - Search Car
+
+1. Navigate to Marketplace 
 
   ![Car Delaership](images/apex-viewMarketplace.png)
 
-7. Select vehicle to view Car Details & Price
+2. Select vehicle to view Car Details & Price
 
   ![Car Delaership](images/apex-CarDetailsPayment.png)
 
-8. Confirm vehicle Purchase 
+## Task 5: dealer2 - Purchase and Confirm Purchase
+
+1. Confirm vehicle Purchase 
 
   ![Car Delaership](images/apex-ConfirmPayment.png)
 
 Purchase order will now be created.
 
-9. Return to dealer 1's account, and navigate to orders received. You should be able to see the order placed by dealer 2. 
+## Task 6: Dealer1 - Review & Confirm the order place by dealer2
+
+1. Return to dealer 1's account, and navigate to orders received. You should be able to see the order placed by dealer 2. 
 
   ![Car Delaership](images/apex-MyOrders.png)
    
-10. Select the actions icon (pencil) on the order received and process the order. 
+2. Select the actions icon (pencil) on the order received and process the order. 
 
   ![Car Delaership](images/apex-processOrder.png)
 
 This action confirms the order by the seller. 
 
-11. Return to dealers 2's account, and navigate to orders placed. You will see the order placed should now be processed and ready to complete the purchase. 
+## Task 7: dealer2 - Order Processed and Accepted
+
+1. Return to dealers 2's account, and navigate to orders placed. You will see the order placed should now be processed and ready to complete the purchase. 
 
   ![Car Delaership](images/apex-confirmReceipt.png)
 
 Select "Accept Receipt" to complete order or "Cancel Order" to cancel the order. 
 
-12. Once purchaser Accepts receipt, the token transfer will now occur and the vehicle will be delivered to the new owner. 
+## Task 8: dealer2 - Token Transfer & Delivery
+1. Once purchaser Accepts receipt, the token transfer will now occur and the vehicle will be delivered to the new owner. 
 
   ![Car Delaership](images/apex-VehicleDelivered.png)
 
