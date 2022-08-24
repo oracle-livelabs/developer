@@ -2,36 +2,39 @@
 
 ## Introduction
 
-You may have noticed in the previous Labs, none of our Oracle REST APIs required a Bearer Token. And that is because, our goal was to introduce you to the concept of a Flask application <i>plus</i> Oracle REST APIs.
+You may have noticed throughout these Labs, our Oracle REST APIs did not require authentication (in the form of a Bearer Token). We have deliberately disabled security since it can be easier to test and interact with API endpoints. 
 
-However, as security is of high importance, we suggest you complete our separate Workshop <b>How to build powerful, secure REST APIs for your Oracle Database</b>. 
+However, best practices for applications such as our example Flask application would require users to authenticate before accessing services.
 
-- OAuth 2.0 workflow for authentication. 
-- Quick note on security
-- Snippet of python for call for access token 
+## Task 1: Understanding Privileges
 
-Where we can establish Roles:
+1. Controlling access to protected resources is done by defining privileges. Privileges restrict access to only users having at least one of a set of specified roles. 
 
-![Creating a Role in Database Actions](images/select-roles-security-tab.png " ")
+2. A privilege is then associated with one or more resource modules (such as our `flask` Resource Module):
 
-And Privileges for those roles: 
+   ![Our Flask Resource Module](images/flask-resource-module-in-oci.png " ")
 
-![Creating a Privilege in Database Actions](images/select-privilege-security-tab.png " ") 
+   - But before those Resource Modules can be accessed, the user must be authenticated and then authorized to ensure that the user has one of the required roles. Here is an example cURL command that includes a Bearer Token for authentication: 
 
-And even create an OAuth Client for securing our Oracle REST Endpoints:
+   ![Our Flask Resource Module](images/click-copy-icon-to-copy-token-text.png " ")
 
-![Creating an OAuth client in Database Actions](images/oauth-clients-page.png " ")
+## Task 2: Learn about securing Oracle REST APIs 
 
+1. The importance of security cannot be understated. While not required to complete this Workshop, we encourage you to review our <b>How to build powerful, secure REST APIs for your Oracle Database</b> Workshop. 
 
-At which point we could obtain a Bearer Token:
+- There you will learn about security principles related to Oracle REST APIs:
 
-![Getting a Bearer Token from the OAuth Client](images/get-bearer-token-for-oauth-client.png " ")
+  - OAuth 2.0 workflow for authentication. 
+  - Quick note on security
+  - Snippet of python for call for access token 
 
-Which can be used to authenticate a user, as seen in this sample cURL command: 
+2. Once you've completed the Workshop, we encourage you to return to this Flask application and secure your Oracle REST APIs with a workflow like this:
 
-![Creating an OAuth client in Database Actions](images/click-copy-icon-to-copy-token-text.png " ")
+   ![Backend application flow example.](images/backend-application-flow-example.png " ")
 
-You may visit the Modern Application Development with Oracle REST Data Services Workshop [here](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=815). Our, in the <b>Other LiveLabs you might like</b> section of this Workshop.
+ - You can modify it slightly so it complements the sample Flask application; ensuring services are performed <i>securely</i>. 
+
+3. You may visit the Modern Application Development with Oracle REST Data Services Workshop [here](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=815). Or, in the <b>Other LiveLabs you might like</b> section of this Workshop.
 
 There you will complete objectives such as:
   - Create an Autonomous Database
@@ -41,15 +44,16 @@ There you will complete objectives such as:
   - Publish RESTful services for various database objects
   - Secure the REST endpoints
 
-Congratulations, you have successfully completed this Workshop!
+4. Congratulations, you've made it to the end of this Workshop! By now you should have a thorough understanding of this sample Flask application. And you should also be familiar with Oracle REST APIs and their various capabilities and characteristics. 
+
+ - You are encouraged to take the provided database scripts, Flask and Python files, and make this application your own. How can you manipulate the Oracle REST APIs to put your own personal spin on the application? 
 
 ### You may now proceed to the [next Section](#next).
 
 ## Learn More
-
-* [About ORDS](https://www.oracle.com/database/technologies/appdev/rest.html)
-* [ORDS Best Practices](https://www.oracle.com/database/technologies/appdev/rest/best-practices/)
-* [ORDS, SODA & JSON Developer Forum](https://community.oracle.com/tech/developers/categories/oracle_rest_data_services) 
+* [OAuth 2.0 workflows in Python's requests-oauthlib](https://requests-oauthlib.readthedocs.io/en/latest/oauth2_workflow.html#)
+* [Protecting ORDS Resources](https://docs.oracle.com/en/database/oracle/oracle-rest-data-services/22.2/qsord/get-started-with-oracle-rest-data-services.html#GUID-F6961F9D-C0FA-4ED4-AA88-88FDDF208D83)
+* [OAuth 2.0 sessions with Python's Authlib](https://docs.authlib.org/en/latest/client/oauth2.html) 
 
 ## Acknowledgements
 

@@ -137,49 +137,29 @@ This lab assumes you have:
 
 5. If you recall, the submit button acts as the `form action` we highlighted in the first sequence of this HTML page.  
 
-  ![Form submit button action](images/order-form-submit.png)
+   ![Form submit button action](images/order-form-submit.png)
 
-  - Once a user submits their purchase, all information is then sent as a JSON payload to an "Order History" table in our Oracle Autonomous Database. This is accomplished with the assistance of another ORDS endpoint; one that accepts incoming `POST` requests from the application.
+  - Once a user submits their purchase, all information is then sent as a JSON payload to an "Order History" table in our Oracle Autonomous Database.
+  
+    - You learned how this was accomplished with our ORDS endpoints in the previous Lab.
 
-5. `orderhistory.html`
+5. Once a purchase is made, a user will be directed to a page consisting of their order history (contents can be seen in the blue box). 
 
-![Order history HTML page](images/order-history-html-page.png " ")
+   ![Order history HTML page](images/order-history-html-page.png " ")
 
-- Once a purchase is made, a user will be directed to a page consisting of their order history (contents can be seen in the blue box). Of course, in an actual web application, there will be a payment gateway step; this is outside the scope of this workshop. However, should you choose to learn more, Stripe has extensive documentation on how this can be achieved in a Flask application. Refer to the "Learn More" section of this lab for details. 
+- Of course, in an actual web application, there will be a payment gateway step; this is outside the scope of this workshop. However, should you choose to learn more, Stripe has extensive documentation on how this can be achieved in a Flask application. Refer to the "Learn More" section of this lab for details. 
 
 :bulb: <i>Note: Since you're sharing these endpoints, you may see orders from participants; that is to be expected.</i>
+
+6. Congratulations! You should now have a thorough understanding of how the HTML presents the underlying logic to an actual user. In the next Lab we'll introduce to you concepts surrounding security and authentication for Oracle REST APIs. 
 
 ### You may now proceed to the [next Lab](#next).
 
 ## Learn More
 
-*(optional - include links to docs, white papers, blogs, etc)*
-
 * [Flask and Stripe](https://stripe.com/docs/legacy-checkout/flask)
-<!-- * [About Database Actions](https://docs.oracle.com/en/database/oracle/sql-developer-web/)
-* [About cURL](https://curl.se/)
-* [About Python](https://www.python.org/)
-* [About Flask for Python](https://flask.palletsprojects.com/en/2.1.x/)
-* [About Folium for Python](https://github.com/python-visualization/folium)
-* [About Json for Python ](https://docs.python.org/3/library/json.html)
-* [About Requests for Python](https://requests.readthedocs.io/en/latest/)
 * [About Bootstrap](https://getbootstrap.com/docs/5.2/getting-started/introduction/)
-* [Mozilla Developer Network (MDN) Web Docs](https://developer.mozilla.org/en-US/) -->
-
-Oracle REST Data Services (ORDS)
-Oracle Clould Infrastructure (OCI) <i>Always Free</i> Tier Tenancy
-Datbase Actions
-<!-- I'm actually not sure about cURL, but I don't want to forget it -->
-<!-- Make sure any changes here are also included in the Learn More section - we'll want to include those resources as well  -->
-- cURL
-- Python 3.10.x and later 
-- Python packages (libraries) such as: 
-  - Flask 
-  - Folium 
-  - Json
- - Requests 
-- <i>select</i>JavaScript functions 
-- Bootstrap HTML and CSS frameworks
+* [Mozilla Developer Network (MDN) Web Docs](https://developer.mozilla.org/en-US/)
 
 ## Acknowledgements
 * **Author** - Chris Hoina, Senior Product Manager, Database Tools
