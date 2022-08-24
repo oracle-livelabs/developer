@@ -131,12 +131,13 @@ This lab assumes you have:
 
 3. You will be deploying a custom API 'From Scratch.' Fill out the form as follows:
     - Give your deployment a **Name** (e.g. car-marketplace)
-    - Optionally, enter a **Path Prefix** (e.g. /v1)
+    - Optionally, enter a **Path Prefix** (e.g. /v0)
     - Ensure that the right **Compartment** is selected and click on 'Next'
+
   ![Deployment Step 1](images/3-gateway-4-4.png)
 
 
-## Task 4: Create Routes 
+## Task 5: Create Routes 
 
 1. Next in your deployment, you need to add 6 routes: 2 for each instance , 1 founder instance and 2 participant instances. Each instance will have two routes
     - One route to perform `transactions`:'insert' and 'update' 
@@ -160,8 +161,8 @@ This lab assumes you have:
   ![Route 2](images/3-gateway-4-5.2.png)
   ![Route 3](images/3-gateway-4-6.1.png)
   ![Route 4](images/3-gateway-4-6.2.png)
-  ![Route 4](images/3-gateway-4-7.2.png)
-  ![Route 4](images/3-gateway-4-7.2.png)
+  ![Route 5](images/3-gateway-4-7.2.png)
+  ![Route 6](images/3-gateway-4-7.2.png)
 
 3. 'Review' the deployment information and click 'Create.'
   ![Review Deployment](images/3-gateway-4-9.png)

@@ -36,7 +36,7 @@ This lab assumes you have:
 
 4. Using the same password used for the founder instance (marketplace, Section 1- Task 2), update the password in 'Client or Password' field and 'Apply Changes'. 
 
-![Web Credentials](images/4-apex-5-4.png)
+  ![Web Credentials](images/4-apex-5-4.png)
 
 5. Repeat step 1-4 for the other two web credentials, using the passwords belonging to the Dealership accounts in Section 1 - task 8.
   - dealer-1-auth-obp (john_dealer1 account)
