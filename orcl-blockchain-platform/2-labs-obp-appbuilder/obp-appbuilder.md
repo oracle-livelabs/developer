@@ -511,7 +511,7 @@ Now that we have tested our project locally, we can connect to our remote instan
   - Select both available peers as the **Target Peers**.
   - Upload the package .zip file you exported from the App Builder VS Code extension. We stored this in the **Samples** folder.
 
-  ![Advanced Deployment Form](images/2-car-marketplace-7-7-2.png)
+  ![Advanced Deployment Form](images/2-car-tokenization-7-7-2.png)
 
 7. Click 'Close.' We will only be installing (not deploying) the chaincode onto the participant instances.
 
@@ -526,7 +526,7 @@ Now that we have tested our project locally, we can connect to our remote instan
 
 10. Simply select the **Package ID** as shown and click 'Approve.' 
 
-  ![Approve Chaincode Form](images/2-car-marketplace-7-11.png)
+  ![Approve Chaincode Form](images/2-car-tokenization-7-11.png)
 
 11. Assign the Endorsement policy by selecting signature under the endorsement policy. Add the policy of performing an endorsement signature by one of the organizations in the network.
   ```
@@ -535,7 +535,7 @@ Now that we have tested our project locally, we can connect to our remote instan
   </copy>
   ```
 
-  ![Check Approved Field](images/2-car-marketplace-7-11.1.png)
+  ![Check Approved Field](images/2-car-tokenization-7-11.1.png)
 
 12. Check that the chaincode has now been approved by the current participant. 
 
