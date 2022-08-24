@@ -52,7 +52,7 @@ The flow for developing smart contracts begins with creating a [specification fi
 
 [Car_Marketplace.yml](../2-labs-obp-appbuilder/files/Car_Marketplace.yml) describes [marketplace assets](https://docs.oracle.com/en/cloud/paas/blockchain-cloud/usingoci/input-configuration-file.html): Car, Dealer, Invoice, and Purchase Order (PO). Each object has properties that characterize the assets, data types and validations. You can see sample specification files (and write your own specifications) in either YAML or JSON using the Blockchain App Builder package. 
 
-1. Locate the sample specification, [Car_Marketplace.yml](../2-labs-obp-appbuilder/files/Car_Marketplace.yml), in the **Samples** folder.
+1. Locate the sample specification, [Car_Marketplace.yml](../2-labs-obp-appbuilder/files/Car_Marketplace.yml?download=1), in the **Samples** folder.
 
 2. In Visual Studio Code, click on the **O** icon on the left-hand menu to use the Blockchain App Builder Extension. 
 
@@ -141,154 +141,154 @@ Select 'car_marketplace_cc.controller.go' under 'car_marketplace_cc/src.' The Co
     - 'Delivered': Car is successfully delivered to buyer, an invoice is generated, and custom function 'CarTransfer' is invoked.
     - 'Rejected': Order is canceled, and car is placed back on the market.
     
-        ```
-        <copy>
-        func (t *Controller) UpdatePOWrapper(asset PO) (interface{}, error) {
+      ```
+      <copy>
+      func (t *Controller) UpdatePOWrapper(asset PO) (interface{}, error) {
 
-        //Verifies purchase order exists
-        _, err := t.GetPOById(asset.PO)
+      //Verifies purchase order exists
+      _, err := t.GetPOById(asset.PO)
+      if err != nil {
+        return nil, fmt.Errorf("po with id: %s does not exist", asset.PO)
+      }
+
+      //If vehicle is delivered to buyer
+      if asset.OrderStatus == "Delivered" {
+
+        var invoiceObject Invoice
+
+        //Verify car exists in ledger
+        car, err := t.GetCarById(asset.Vin)
         if err != nil {
-          return nil, fmt.Errorf("po with id: %s does not exist", asset.PO)
+          return nil, fmt.Errorf("car with id: %s does not exist", asset.Vin)
         }
 
-        //If vehicle is delivered to buyer
-        if asset.OrderStatus == "Delivered" {
+        car.ForSale = true
 
-          var invoiceObject Invoice
+        t.UpdateCar(car)
 
-          //Verify car exists in ledger
-          car, err := t.GetCarById(asset.Vin)
-          if err != nil {
-            return nil, fmt.Errorf("car with id: %s does not exist", asset.Vin)
+        //Create invoice sent to buyer
+        invoiceObject.Vin = asset.Vin
+        invoiceObject.Po_number = asset.PO
+        invoiceObject.Price = car.Price
+        invoiceObject.Recipient = asset.Purchaser
+        invoiceObject.Status = false
+
+        invoiceObject.InvoiceId = asset.InvoiceId
+
+        t.CreateInvoice(invoiceObject)
+
+        currentTime := time.Now().String()
+
+        var ts_formatted string
+
+        for i, c := range currentTime {
+          fmt.Printf("Start Index: %d Value:%s\n", i, string(c))
+
+          if string(c) == " " {
+            fmt.Println(ts_formatted)
+            break
           }
+          ts_formatted += string(c)
+        }
 
-          car.ForSale = true
-
-          t.UpdateCar(car)
-
-          //Create invoice sent to buyer
-          invoiceObject.Vin = asset.Vin
-          invoiceObject.Po_number = asset.PO
-          invoiceObject.Price = car.Price
-          invoiceObject.Recipient = asset.Purchaser
-          invoiceObject.Status = false
-
-          invoiceObject.InvoiceId = asset.InvoiceId
-
-          t.CreateInvoice(invoiceObject)
-
-          currentTime := time.Now().String()
-
-          var ts_formatted string
-
-          for i, c := range currentTime {
-            fmt.Printf("Start Index: %d Value:%s\n", i, string(c))
-
-            if string(c) == " " {
-              fmt.Println(ts_formatted)
-              break
-            }
-            ts_formatted += string(c)
-          }
-
-          //Invoke Custom Method: Car Transfer
-          t.CarTransfer(asset.Vin, asset.Purchaser, car.OwnerId, asset.PO, car.Price, ts_formatted)
-
-          }
-
-        //If vehicle is rejected by buyer
-        if asset.OrderStatus == "Rejected" {
-
-          car, err := t.GetCarById(asset.Vin)
-          if err != nil {
-            return nil, fmt.Errorf("car with id: %s does not exist", asset.Vin)
-          }
-
-          //Set car for sale back to true
-          car.ForSale = true
-          t.UpdateCar(car)
+        //Invoke Custom Method: Car Transfer
+        t.CarTransfer(asset.Vin, asset.Purchaser, car.OwnerId, asset.PO, car.Price, ts_formatted)
 
         }
-        t.UpdatePO(asset)
-        return nil, err
 
+      //If vehicle is rejected by buyer
+      if asset.OrderStatus == "Rejected" {
+
+        car, err := t.GetCarById(asset.Vin)
+        if err != nil {
+          return nil, fmt.Errorf("car with id: %s does not exist", asset.Vin)
         }
-        </copy>
-        ```
+
+        //Set car for sale back to true
+        car.ForSale = true
+        t.UpdateCar(car)
+
+      }
+      t.UpdatePO(asset)
+      return nil, err
+
+      }
+      </copy>
+      ```
    
   - 'CarTransfer': Transfer vehicle ownership from one dealer to another. Validations are written to check that car being sold and dealer receiving vehicle exist in ledger and that the owner isn't selling a vehicle to themselves. We update car object properties to reflect the new owner of the vehicle, removing the car from the seller's inventory, adding it to the buyer's inventory. Finally, we commit car and dealer changes to the ledger.
 
-        ```
-        <copy>
-        func (t *Controller) CarTransfer(vin string, buyerId string, sellerId string, PO string, price int, dateString string) (interface{}, error) {
+      ```
+      <copy>
+      func (t *Controller) CarTransfer(vin string, buyerId string, sellerId string, PO string, price int, dateString string) (interface{}, error) {
 
-        //Date formatting and handling
-        dateBytes, err := json.Marshal(dateString)
-        if err != nil {
-          return nil, fmt.Errorf("error in marshalling %s", err.Error())
-        }
+      //Date formatting and handling
+      dateBytes, err := json.Marshal(dateString)
+      if err != nil {
+        return nil, fmt.Errorf("error in marshalling %s", err.Error())
+      }
 
-        var dateValue date.Date
-        err = json.Unmarshal(dateBytes, &dateValue)
-        if err != nil {
-          return nil, fmt.Errorf("error in unmarshalling the date %s", err.Error())
-        }
+      var dateValue date.Date
+      err = json.Unmarshal(dateBytes, &dateValue)
+      if err != nil {
+        return nil, fmt.Errorf("error in unmarshalling the date %s", err.Error())
+      }
 
-        if buyerId == sellerId {
-          return nil, fmt.Errorf(`buyer and seller cannot be same`)
-        }
+      if buyerId == sellerId {
+        return nil, fmt.Errorf(`buyer and seller cannot be same`)
+      }
 
-        //Verify car exists
-        car, err := t.GetCarById(vin)
-        if err != nil {
-          return nil, err
-        }
-
-        //Verify dealer exists
-        buyer, err := t.GetDealerById(buyerId)
-        if err != nil {
-          return nil, err
-        }
-
-        if car.OwnerId != sellerId {
-
-          return nil, fmt.Errorf("car with vin %s does not belong to the seller %s", vin, sellerId)
-        }
-        if car.OwnerId == buyerId {
-
-          return nil, fmt.Errorf("car with vin %s already exist with owner %s", vin, buyerId)
-        }
-
-        //Update car object properties
-
-        car.OwnerId = buyerId
-        car.Price = price
-        car.LastSold = dateValue
-
-        buyer.Inventory = append(buyer.Inventory, vin)
-
-        seller, err := t.GetDealerById(sellerId)
-        if err != nil {
-          return nil, err
-        }
-
-        //Remove car from seller's inventory
-        for i := 0; i < len(seller.Inventory)-1; i++ {
-          if seller.Inventory[i] == vin {
-            seller.Inventory = append(seller.Inventory[:i], seller.Inventory[i+1:]...)
-          }
-        }
-
-        //Commit changes to the ledger
-        t.UpdateDealer(seller)
-        t.UpdateCar(car)
-        t.UpdateDealer(buyer)
-
+      //Verify car exists
+      car, err := t.GetCarById(vin)
+      if err != nil {
         return nil, err
+      }
 
+      //Verify dealer exists
+      buyer, err := t.GetDealerById(buyerId)
+      if err != nil {
+        return nil, err
+      }
+
+      if car.OwnerId != sellerId {
+
+        return nil, fmt.Errorf("car with vin %s does not belong to the seller %s", vin, sellerId)
+      }
+      if car.OwnerId == buyerId {
+
+        return nil, fmt.Errorf("car with vin %s already exist with owner %s", vin, buyerId)
+      }
+
+      //Update car object properties
+
+      car.OwnerId = buyerId
+      car.Price = price
+      car.LastSold = dateValue
+
+      buyer.Inventory = append(buyer.Inventory, vin)
+
+      seller, err := t.GetDealerById(sellerId)
+      if err != nil {
+        return nil, err
+      }
+
+      //Remove car from seller's inventory
+      for i := 0; i < len(seller.Inventory)-1; i++ {
+        if seller.Inventory[i] == vin {
+          seller.Inventory = append(seller.Inventory[:i], seller.Inventory[i+1:]...)
         }
-        </copy>
-        ```
+      }
+
+      //Commit changes to the ledger
+      t.UpdateDealer(seller)
+      t.UpdateCar(car)
+      t.UpdateDealer(buyer)
+
+      return nil, err
+
+      }
+      </copy>
+      ```
 
 ## Task 5: Deploy Marketplace Chaincode in local Environment
 
@@ -441,9 +441,9 @@ Blockchain App Builder chaincode deployment starts the Hyperledger Fabric basic 
 
 ## Task 12: Create Tokenization Chaincode
 
-The flow for developing smart contracts for tokenization begins with creating a specification file that describes our fiat token. [Car_Tokenization.yml](../2-labs-obp-appbuilder/files/Car_Tokenization.yml) describes our [FiatToken structure](https://docs.oracle.com/en/cloud/paas/blockchain-cloud/usingoci/input-specification-file-fungible-tokens.html): AssetType, Token_id, Token_name, Token_desc, Token_type, and behavior.  The specification file is then used to scaffold a smart contract project ('car_tokenization_cc') and generate source code for models and controllers. Each object has properties that characterize the assets, data types and validations. You can see sample specification files (and write your own specifications) in either YAML or JSON using the Blockchain App Builder package. 
+The flow for developing smart contracts for tokenization begins with creating a specification file that describes our fiat token. Car_Tokenization.yml describes our FiatToken structure: AssetType, Token_id, Token_name, Token_desc, Token_type, and behavior.  The specification file is then used to scaffold a smart contract project ('car_tokenization_cc') and generate source code for models and controllers. Each object has properties that characterize the assets, data types and validations. You can see sample specification files (and write your own specifications) in either YAML or JSON using the Blockchain App Builder package. [FiatToken Structure](https://docs.oracle.com/en/cloud/paas/blockchain-cloud/usingoci/input-specification-file-fungible-tokens.html)
 
-1. Locate the sample specification, [Car_Tokenization.yml](../2-labs-obp-appbuilder/files/Car_Tokenization.yml), in the **Samples** folder. 
+1. Locate the sample specification, [Car_Tokenization.yml](../2-labs-obp-appbuilder/files/Car_Tokenization.yml)?download=1, in the **Samples** folder. 
 
 
 2. In Visual Studio Code, click on the **O** icon on the left-hand menu to use the Blockchain App Builder Extension. 
@@ -452,7 +452,6 @@ The flow for developing smart contracts for tokenization begins with creating a 
 
   Make sure the **Details** of your specification read:
   ![Car Tokenization Specification Details](images/2-app-builder-tokenization-yml.png)
-
 
 ## Task 13: Deploy Tokenization chaincode to Founder Instance
 
@@ -503,13 +502,13 @@ Now that we have tested our project locally, we can connect to our remote instan
 
 6. Fill out the form as follows:
 
-  - For **Package Label**, open up the 'Service Console' for the 'Marketplace' founder instance, click the **Chaincodes** tab, and copy the text as shown. You may use `car_tokenization_v1`, or any other name, but make sure to use the same name when repeating these steps for 'dealer2.'
+    - For **Package Label**, open up the 'Service Console' for the 'Marketplace' founder instance, click the **Chaincodes** tab, and copy the text as shown. You may use `car_tokenization_v1`, or any other name, but make sure to use the same name when repeating these steps for 'dealer2.'
 
   ![Package Label](images/2-car-marketplace-7-7-1.png)
 
-  - Keep 'GoLang' as the **Chaincode Language**.
-  - Select both available peers as the **Target Peers**.
-  - Upload the package .zip file you exported from the App Builder VS Code extension. We stored this in the **Samples** folder.
+   - Keep 'GoLang' as the **Chaincode Language**.
+    - Select both available peers as the **Target Peers**.
+   - Upload the package .zip file you exported from the App Builder VS Code extension. We stored this in the **Samples** folder.
 
   ![Advanced Deployment Form](images/2-car-tokenization-7-7-2.png)
 
@@ -517,7 +516,7 @@ Now that we have tested our project locally, we can connect to our remote instan
 
   ![Close Advanced Deployment Form](images/2-car-marketplace-7-8.png)
 
-8. Now click 'Channels,' then the 'car-marketplace' channel, and navigate to 'Deployed Chaincodes' as you did in steps 3 and 4. 
+8. Now click 'Channels,' then the 'car-marketplace' channel, and navigate to 'Deployed Chaincodes' as you did in steps 2,3 and 4. 
 
 
 9. Find and click on the hamburger icon on the right of the row containing your chaincode. Select 'Approve.'
@@ -529,11 +528,11 @@ Now that we have tested our project locally, we can connect to our remote instan
   ![Approve Chaincode Form](images/2-car-tokenization-7-11.png)
 
 11. Assign the Endorsement policy by selecting signature under the endorsement policy. Add the policy of performing an endorsement signature by one of the organizations in the network.
-  ```
-  <copy>
-  OR ('dealer1.member', dealer2.member)
-  </copy>
-  ```
+    ```
+    <copy>
+    OR ('dealer1.member', dealer2.member)
+    </copy>
+    ```
 
   ![Check Approved Field](images/2-car-tokenization-7-11.1.png)
 
