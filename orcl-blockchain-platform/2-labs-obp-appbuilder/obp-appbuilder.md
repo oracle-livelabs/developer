@@ -140,81 +140,80 @@ Select 'car_marketplace_cc.controller.go' under 'car_marketplace_cc/src.' The Co
   - 'UpdatePO': Updates purchase order. If order status is:
     - 'Delivered': Car is successfully delivered to buyer, an invoice is generated, and custom function 'CarTransfer' is invoked.
     - 'Rejected': Order is canceled, and car is placed back on the market.
-    
-      ```
-      <copy>
-      func (t *Controller) UpdatePOWrapper(asset PO) (interface{}, error) {
+    ```
+    <copy>
+    func (t *Controller) UpdatePOWrapper(asset PO) (interface{}, error) {
 
-      //Verifies purchase order exists
-      _, err := t.GetPOById(asset.PO)
+    //Verifies purchase order exists
+    _, err := t.GetPOById(asset.PO)
+    if err != nil {
+      return nil, fmt.Errorf("po with id: %s does not exist", asset.PO)
+    }
+
+    //If vehicle is delivered to buyer
+    if asset.OrderStatus == "Delivered" {
+
+      var invoiceObject Invoice
+
+      //Verify car exists in ledger
+      car, err := t.GetCarById(asset.Vin)
       if err != nil {
-        return nil, fmt.Errorf("po with id: %s does not exist", asset.PO)
+        return nil, fmt.Errorf("car with id: %s does not exist", asset.Vin)
       }
 
-      //If vehicle is delivered to buyer
-      if asset.OrderStatus == "Delivered" {
+      car.ForSale = true
 
-        var invoiceObject Invoice
+      t.UpdateCar(car)
 
-        //Verify car exists in ledger
-        car, err := t.GetCarById(asset.Vin)
-        if err != nil {
-          return nil, fmt.Errorf("car with id: %s does not exist", asset.Vin)
+      //Create invoice sent to buyer
+      invoiceObject.Vin = asset.Vin
+      invoiceObject.Po_number = asset.PO
+      invoiceObject.Price = car.Price
+      invoiceObject.Recipient = asset.Purchaser
+      invoiceObject.Status = false
+
+      invoiceObject.InvoiceId = asset.InvoiceId
+
+      t.CreateInvoice(invoiceObject)
+
+      currentTime := time.Now().String()
+
+      var ts_formatted string
+
+      for i, c := range currentTime {
+        fmt.Printf("Start Index: %d Value:%s\n", i, string(c))
+
+        if string(c) == " " {
+          fmt.Println(ts_formatted)
+          break
         }
+        ts_formatted += string(c)
+      }
 
-        car.ForSale = true
-
-        t.UpdateCar(car)
-
-        //Create invoice sent to buyer
-        invoiceObject.Vin = asset.Vin
-        invoiceObject.Po_number = asset.PO
-        invoiceObject.Price = car.Price
-        invoiceObject.Recipient = asset.Purchaser
-        invoiceObject.Status = false
-
-        invoiceObject.InvoiceId = asset.InvoiceId
-
-        t.CreateInvoice(invoiceObject)
-
-        currentTime := time.Now().String()
-
-        var ts_formatted string
-
-        for i, c := range currentTime {
-          fmt.Printf("Start Index: %d Value:%s\n", i, string(c))
-
-          if string(c) == " " {
-            fmt.Println(ts_formatted)
-            break
-          }
-          ts_formatted += string(c)
-        }
-
-        //Invoke Custom Method: Car Transfer
-        t.CarTransfer(asset.Vin, asset.Purchaser, car.OwnerId, asset.PO, car.Price, ts_formatted)
-
-        }
-
-      //If vehicle is rejected by buyer
-      if asset.OrderStatus == "Rejected" {
-
-        car, err := t.GetCarById(asset.Vin)
-        if err != nil {
-          return nil, fmt.Errorf("car with id: %s does not exist", asset.Vin)
-        }
-
-        //Set car for sale back to true
-        car.ForSale = true
-        t.UpdateCar(car)
+      //Invoke Custom Method: Car Transfer
+      t.CarTransfer(asset.Vin, asset.Purchaser, car.OwnerId, asset.PO, car.Price, ts_formatted)
 
       }
-      t.UpdatePO(asset)
-      return nil, err
 
+    //If vehicle is rejected by buyer
+    if asset.OrderStatus == "Rejected" {
+
+      car, err := t.GetCarById(asset.Vin)
+      if err != nil {
+        return nil, fmt.Errorf("car with id: %s does not exist", asset.Vin)
       }
-      </copy>
-      ```
+
+      //Set car for sale back to true
+      car.ForSale = true
+      t.UpdateCar(car)
+
+    }
+    t.UpdatePO(asset)
+    return nil, err
+
+    }
+    </copy>
+    ```
    
   - 'CarTransfer': Transfer vehicle ownership from one dealer to another. Validations are written to check that car being sold and dealer receiving vehicle exist in ledger and that the owner isn't selling a vehicle to themselves. We update car object properties to reflect the new owner of the vehicle, removing the car from the seller's inventory, adding it to the buyer's inventory. Finally, we commit car and dealer changes to the ledger.
 
@@ -443,7 +442,7 @@ Blockchain App Builder chaincode deployment starts the Hyperledger Fabric basic 
 
 The flow for developing smart contracts for tokenization begins with creating a specification file that describes our fiat token. Car_Tokenization.yml describes our FiatToken structure: AssetType, Token_id, Token_name, Token_desc, Token_type, and behavior.  The specification file is then used to scaffold a smart contract project ('car_tokenization_cc') and generate source code for models and controllers. Each object has properties that characterize the assets, data types and validations. You can see sample specification files (and write your own specifications) in either YAML or JSON using the Blockchain App Builder package. [FiatToken Structure](https://docs.oracle.com/en/cloud/paas/blockchain-cloud/usingoci/input-specification-file-fungible-tokens.html)
 
-1. Locate the sample specification, [Car_Tokenization.yml](../2-labs-obp-appbuilder/files/Car_Tokenization.yml)?download=1, in the **Samples** folder. 
+1. Locate the sample specification, [Car_Tokenization.yml](../2-labs-obp-appbuilder/files/Car_Tokenization.yml?download=1), in the **Samples** folder. 
 
 
 2. In Visual Studio Code, click on the **O** icon on the left-hand menu to use the Blockchain App Builder Extension. 
