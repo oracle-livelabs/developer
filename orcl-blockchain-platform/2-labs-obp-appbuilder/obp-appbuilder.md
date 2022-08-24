@@ -501,12 +501,12 @@ Now that we have tested our project locally, we can connect to our remote instan
 
 6. Fill out the form as follows:
 
-    - For **Package Label**, open up the 'Service Console' for the 'Marketplace' founder instance, click the **Chaincodes** tab, and copy the text as shown. You may use `car_tokenization_v1`, or any other name, but make sure to use the same name when repeating these steps for 'dealer2.'
+   - For **Package Label**, open up the 'Service Console' for the 'Marketplace' founder instance, click the **Chaincodes** tab, and copy the text as shown. You may use `car_tokenization_v1`, or any other name, but make sure to use the same name when repeating these steps for 'dealer2.'
 
   ![Package Label](images/2-car-marketplace-7-7-1.png)
 
    - Keep 'GoLang' as the **Chaincode Language**.
-    - Select both available peers as the **Target Peers**.
+   - Select both available peers as the **Target Peers**.
    - Upload the package .zip file you exported from the App Builder VS Code extension. We stored this in the **Samples** folder.
 
   ![Advanced Deployment Form](images/2-car-tokenization-7-7-2.png)
