@@ -225,6 +225,8 @@ This lab assumes you have:
 
   ![Repeat APEX Data Source Steps](images/apex-4-4-12.png)
 
+## Task 5: Proceed to next lab
+
 
 <!-- 10. 
 

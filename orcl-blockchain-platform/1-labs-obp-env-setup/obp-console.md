@@ -16,7 +16,9 @@ As a preassembled PaaS, Oracle Blockchain Platform includes all the dependencies
 ### Pre-Requisites
 
 This lab assumes you have:
-* An Oracle Cloud account
+* Created an Oracle Cloud account
+* Completed Lab - Initialize Environment (Link to Initialize Environment)
+* Completed Lab - Prepare Setup (Link to Prepare Setup)
 
 
 ## Task 1: Environment Setup
@@ -66,9 +68,14 @@ You will also need to create a new [Compartment](https://docs.oracle.com/en-us/i
     - For both instances, select 'Join an existing network' under **Platform Role**
 **** NOTE: - Go to Lab2.
 
-## Task 4: Complete Tasks 1 - 4 in Lab2 (App Builder)
+## Task 4: Complete the following Tasks In Lab2 (App Builder)
 
- - Link to Lab2 (Tasks 1 - 4)
+- [Lab2 Pre-requisites](../2-labs-obp-appbuilder/obp-appbuilder.md#pre-requisites)
+- [Lab2 Task1](../2-labs-obp-appbuilder/obp-appbuilder.md#task-1-blockchain-appbuilder-environment-setup)
+- [Lab2 Task2](../2-labs-obp-appbuilder/obp-appbuilder.md#task-2-import-marketplace-yaml-specification-file)
+- [Lab2 Task3](../2-labs-obp-appbuilder/obp-appbuilder.md#task-3-generate-marketplace-chaincode-project)
+- [Lab2 Task4](../2-labs-obp-appbuilder/obp-appbuilder.md#task-4-view-custom-methods-in-marketplace)
+
 
 ## Task 5: Add Participant Organizations to Network
 
@@ -242,6 +249,8 @@ Use IDCS to create and add both 'john_\dealer1' and 'sam_\dealer2' users, and th
   ![Assign role](images/Assign-role.png)
 
 16. Repeat tasks 1-16 to create the 'sam\_dealer2' user and add to the 'dealer2' instance.
+
+## Task 10: Proceed to next lab
 
 ## What's Next?
 

@@ -16,6 +16,9 @@ In this lab, you will:
 ### Pre-Requisites
 
 This lab assumes you have:
+
+* Completed Lab - Environment Setup
+* Completed Lab - Initialize Environment 
 * Completed Lab1 - Create Blockchain Network connecting multiple organizations in Oracle Blockchain Platform (OBP)
 * Completed Lab2 - Create, Deploy & Execute Smart Contracts using Oracle Blockchain App Builder
 
@@ -174,6 +177,8 @@ Once active, the deployment can be used to make REST API calls between APEX and 
 1. Find the **Deployment Information** pane and the **Endpoint** as shown.
   ![Deployment Information](images/3-gateway-5-1.png)
 
+
+## Task 6: Proceed to next lab
 
 ## What's Next?
 

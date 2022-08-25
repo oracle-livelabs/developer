@@ -4,7 +4,7 @@
 
 Blockchain App Builder is a tool set that assists Oracle Blockchain Platform users with rapid development, testing, debugging, and deployment of chaincode on Oracle Blockchain Platform networks. Blockchain App Builder is accessible through Visual Studio Code as an extension and through a lightweight command line interface. Blockchain App Builder to manage the complete life cycle of a token. Developers can tokenize existing assets and automatically generate token classes and methods to use for token lifecycle management.
 
-## About OBP Tokenization
+### About OBP Tokenization
 
 1. Tokenization is a process where physical or digital assets are represented by tokens, which can be transferred, tracked, and stored on a blockchain. By representing assets as tokens, you can use the blockchain ledger to establish the state and ownership of an asset and use standard blockchain platform functions to transfer ownership of an asset.
 
@@ -18,18 +18,19 @@ Blockchain App Builder is a tool set that assists Oracle Blockchain Platform use
 
 *Estimated Lab Time: 25 minutes*
 
-## Objectives
+### Objectives
 
 In this lab, you will:
 * Scaffold Project, Generate Chaincode, Deploy Smart Contracts locally, Test &  Debug Smart Contract, Package & Deploy Smart Contracts to OBP
 
-## Pre-requisites
+### Pre-requisites
 
 This lab assumes you have:
-* Completed Lab - Initialize Environment (Link to Initialize Environment)
-* Completed Lab - Prepare Setup (Link to Prepare Setup)
+* Completed Lab - Environment Setup
+* Completed Lab - Initialize Environment 
 
-## Task 1:Blockchain AppBuilder Environment Setup
+
+## Task 1: Blockchain AppBuilder Environment Setup
 
 You will be using Oracle's Blockchain App Builder extension, accessible through Visual Studio Code, for this lab. First you will need to set up environments for each of the 3 blockchain platform instances you created in Lab 1.
 
@@ -65,7 +66,7 @@ The flow for developing smart contracts begins with creating a [specification fi
   ![Car Marketplace Specification Details](images/2-app-builder-1-3.png)
 
 
-## Task 3:Generate Marketplace Chaincode Project
+## Task 3: Generate Marketplace Chaincode Project
 
 The specification file is then used to scaffold a smart contract project ('car_marketplace_cc') and generate source code for models and controllers. 
 
@@ -572,6 +573,8 @@ Now that we have tested our project locally, we can connect to our remote instan
 
     - Step 7 – Issue Tokens: This method mints tokens, which are then owned by the caller of the method. The caller must have an account and the minter role. 
   ![Issue Tokens](images/Issue_tokens.png)
+
+  ## Task 17: Proceed to next lab
 
 ## What's Next?
 

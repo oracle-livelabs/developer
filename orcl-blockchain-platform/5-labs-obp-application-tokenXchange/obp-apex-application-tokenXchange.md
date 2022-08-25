@@ -42,9 +42,7 @@ This lab assumes you have:
   - dealer-1-auth-obp (john_dealer1 account)
   - dealer-2-obp-auth (sam_dealer2 account)
 
-## Task 2: Hurray!! Complete Car Marketplace Workshop by Trading a Car
-
-Congrats on making it to the last task of this workshop!
+## Task 2: Complete Car Marketplace Workshop by Trading a Car
 
 You will now create a car and simulate a transaction between the founder organization and a car dealer partner. When a car is added to the Marketplace, tokens are put on hold in the founder instance and then transacted with partner dealerships as necessary.
 
