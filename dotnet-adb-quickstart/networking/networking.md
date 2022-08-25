@@ -22,7 +22,7 @@ In this lab, you will:
 
 ### Prerequisites
 
-* An Oracle Cloud Account.
+* An Oracle Cloud Account
 
 ## Task 1: Create Your VCN
 
@@ -40,7 +40,7 @@ If running this workshop from other environments, create a VCN on Oracle Cloud I
 
     ![Start VCN wizard](./images/start-wizard.png " ")
 
-3. Complete the following fields:
+3. Complete the following fields. Modify the default settings if they don't match the below values.
 
     |                  **Field**              |    **Value**  |
     |----------------------------------------|:------------:|

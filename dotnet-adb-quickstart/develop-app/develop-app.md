@@ -39,7 +39,7 @@ Provide the key directory path (i.e. .ssh/), if applicable, the private key name
     <copy>dotnet new web -o todolist</copy>
     ```
 
-  This command creates an empty ASP.NET Core empty web project. 
+  This command creates an ASP.NET Core empty web project. 
 
 4. Change directory into the "todolist" directory. Then, add the ODP.NET Core assembly to the project from NuGet Gallery.
 
@@ -143,11 +143,10 @@ We will create a simple web application that returns the current tasks (DESCRIPT
 You have completed deploying the ASP.NET Core web app. 
 
 ## Task 3: Configure NGINX Web Server and Service to Run the ASP.NET Core App
-We will now configure the NGINX web server so that it can run ASP.NET Core apps from Oracle Linux.
 
-1. Configure NGINX to enable HTTP to initiate a connection to the network.
+1. Configure the NGINX web server so that it can run ASP.NET Core apps from Oracle Linux.
 
-    - Enable the web server from Cloud Shell.
+    - Configure NGINX to enable HTTP to initiate a connection to the network.
 
         ```
         <copy>sudo setsebool -P httpd_can_network_connect 1</copy>
@@ -238,7 +237,7 @@ We will now configure the NGINX web server so that it can run ASP.NET Core apps 
     - Next, start the application service.
 
         ```
-        <copy>sudo systemctl start todolist.service</copy>
+        <copy>sudo systemctl restart todolist.service</copy>
         ```
 
     - Verify the service status is "<span style="color:green">active (running)</span>" and there are no outstanding issues.

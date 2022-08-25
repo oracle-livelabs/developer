@@ -2,7 +2,7 @@
 
 ## Introduction
 
-In this lab, you will provision and configure an Oracle Cloud Infrastructure Linux compute host and NGINX web server. You will then setup ASP.NET Core support for NGINX and tests the web server is working properly. Finally, you will complete Virtual Cloud Network configuration for connectivity between the compute and database layers.
+In this lab, you will provision and configure an Oracle Cloud Infrastructure Linux compute host and NGINX web server. You will then setup ASP.NET Core for NGINX and test the web server is working properly. Finally, you will complete Virtual Cloud Network configuration for connectivity between the compute and database layers.
 
 Oracle Cloud Infrastructure Compute lets you provision and manage compute hosts, known as instances. You can launch instances as needed to meet your compute and application requirements. After you launch an instance, you can access it securely from your computer, restart it, attach and detach volumes, and terminate it when you're done with it. Any changes made to the instance's local drives are lost when you terminate it. Any saved changes to volumes attached to the instance are retained.
 
@@ -23,7 +23,7 @@ In this lab, you will:
 
 ### Prerequisites
 
--   This lab requires completion of the **Get started** section in the Contents menu on the left.
+-   This lab requires completion of the **Get started** section and networking lab in the Contents menu on the left.
   
 ## Task 1: Create a Compute Instance
 
@@ -87,7 +87,7 @@ An Oracle Cloud Infrastructure VM compute instance runs on the same hardware as 
 
     ![Click Cloud Shell icon](./images/cloud-shell-icon.png)
 
-2. Cloud Shell will open. Open the Cloud Shell menu in the upper left of Cloud Shell. Click **Upload** to begin uploading the private key to the compute instance.
+2. Cloud Shell will open. Open the Cloud Shell menu in the upper right of Cloud Shell. Click **Upload** to begin uploading the private key to the compute instance.
 
     ![Click Upload from menu](./images/cloud-shell-choose-upload.png)
 
@@ -119,7 +119,7 @@ An Oracle Cloud Infrastructure VM compute instance runs on the same hardware as 
     ![SSH into compute instance from Cloud Shell](./images/ssh.png)
 
 
-## Task 3: Install NGINX Web Server
+## Task 3: Install and Configure NGINX Web Server and Setup VCN
    
 For this lab, we are going to install an NGINX web server and connect to it over the public Internet. *Make sure you have completed the prior tasks so that you are SSH'ed into the Linux instance*.
 

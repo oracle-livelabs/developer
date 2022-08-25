@@ -2,7 +2,7 @@
 
 ## Introduction
 
-In this lab, you will connect to the database using SQL Worksheet, a browser-based tool that is easily accessible from the Autonomous Database console. You will then create a database user (schema), assign privileges to the user, and enable the user to log in to the database using SQL Worksheet. Logged in as the user, you will create a table, add records, and query the table to view the results.
+In this lab, you will connect to the database using SQL Worksheet, a browser-based tool that is easily accessible from the Autonomous Database console. You will then create a database user (schema), assign privileges to the user, and enable the user to log in to the database. You will create a table, add records, and query the table to view the results in that user account.
 
 Estimated lab time: 10 minutes
 
@@ -10,8 +10,8 @@ Estimated lab time: 10 minutes
 -   Connect to your new autonomous database using SQL Worksheet
 -   As administrator, create a database user (schema)
 -   Assign privileges to the user
--   Enable database users to log in to the database using SQL Worksheet
--   As the user, create a table and add records
+-   Enable a database user to log in to the database using SQL Worksheet
+-   Create a table and add records
 
 ### Prerequisites
 
@@ -127,7 +127,7 @@ Syntax: `GRANT <privilege> TO <user>;`
     **Syntax**: ```INSERT INTO table [(column [, column...])]
                 VALUES (value [, value...]);```
 
-    Execute the following statements to insert data into the `TODOITEM` table. We will again prepend APPUSER to the table name. When executing more than one statement in the worksheet at a time, highlight all the SQL Oracle should execute.
+    Execute the following statements to insert data into the `TODOITEM` table. We will again prepend APPUSER to the table name. When executing more than one statement in the worksheet at a time, highlight all the SQL to execute with the mouse, then click the green and white Run Statement button.
 
     ```
     <copy>INSERT INTO APPUSER.TODOITEM (DESCRIPTION, DONE) VALUES('Task 1', 0);
