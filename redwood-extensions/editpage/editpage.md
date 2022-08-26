@@ -84,11 +84,10 @@ We'll use a similar process to create a page where we can see more information o
   ![Image alt text](images/edit.png)
 10. Click on another record and then click the "account Details" button to find out the address of the account. Use the browser's back button to return to the list page.
   ![Image alt text](images/details.png)
-Our application is functioning well. The next step would be to fine tune the look and feel of the pages and apply some of the Redwood page templates.
+Our application is functioning well. The next step will be to improve the usability - first by adding buttons to the table rows, and later on by modifying the look and feel.
 
 ## Learn More
 
-*(optional - include links to docs, white papers, blogs, etc)*
 
 * [Quick Starts](https://docs.oracle.com/en/cloud/paas/visual-builder/visualbuilder-building-appui/work-pages-and-flows1.html#GUID-DD40C71D-A8AE-43E2-A2F4-798AF3D49983)
 
