@@ -14,7 +14,7 @@ Estimated time: 5 minutes
 - Have completed the earlier labs
 
 
-## **Task 1**: Run the Destroy Script
+## Task 1: Run the Destroy Script
 
 1. Run the following command to delete the resources created in your tenancy. It will delete everything except the compartment and may take several minutes to run.
 
@@ -24,9 +24,9 @@ Estimated time: 5 minutes
     source destroy.sh
     </copy>
     ```
-## **Task 2**: Delete the Directory
+## Task 2: Delete the Directory
 
-1. Once the destroy script is completed, delete the directory in your cloud shell where you installed the workshop
+1. Once the destroy script completes, delete the directory in your cloud shell where you have installed the workshop
 
     ```
     <copy>
@@ -37,7 +37,7 @@ Estimated time: 5 minutes
 
 ## **Task 3**: Edit ~/.bashrc
 
-1. We need to remove the line we added to ~/.bashrc in Lab 1. Run the following command to remove
+1. We must remove the line we added to ~/.bashrc in Lab 1. Run the following command to remove
     ```
     <copy>
     vi ~/.bashrc
@@ -49,7 +49,7 @@ Estimated time: 5 minutes
 
 ## **Task 4**: Delete the Compartment
 
-1. In the Oracle Cloud Console, navigate to the **compartments** screen in the **Identity** section. Select the compartment that was created for the workshop (if you didn't provide one) and delete it
+1. In the Oracle Cloud Console, navigate to the **compartments** screen in the **Identity** section. Select the compartment that has been created for the workshop (if you didn't provide an existing one) and delete it
 
 
     **Congratulations! You have completed the workshop**

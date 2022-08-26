@@ -6,36 +6,34 @@ In this lab you will use Database Actions/SQL Developer Web to connect to your d
 
 Estimated Lab Time: 20 minutes
 
-Yuo may review the video below for a quick walk through of the lab.
+You may review the video below for a quick walk through of the lab.
 
-[](youtube:xr957th1h3U)
+[ORDS Overview](youtube:xr957th1h3U)
 
 ### Objectives
-rest-services-for-adb-appdevlive/create-table/create-table.md
 - Create and Auto-REST enable a table
 
 ### Prerequisites
 
-This lab assumes you have completed the following:
-* Login to OCI: [Login to Oracle Cloud](https://oracle-livelabs.github.io/adb/shared/adb-provision/adb-provision.md)
-* Lab 1: [Provision an Autonomous Database](https://oracle-livelabs.github.io/adb/shared/adb-provision/adb-provision.md)
-* Lab 2: [Connect to an Autonomous Database with SQL Developer Web](https://oracle-livelabs.github.io/common/labs/sqldevweb-login/sqldevweb-login.md)
+- The following lab requires an <a href="https://www.oracle.com/cloud/free/" target="\_blank">Oracle Cloud account</a>. You may use your own cloud account, a cloud account that you obtained through a trial, or a training account whose details were given to you by an Oracle instructor.
+
+- This lab assumes you have completed all previous Labs. 
 
 ## Task 1: Create a Table in the Autonomous Database
 
 1. Start by signing in as the **admin** using [Database Actions](https://oracle-livelabs.github.io/common/labs/sqldevweb-login/sqldevweb-login.md) if not already there. Once logged in, click the **SQL tile**.
 
-    ![Database Actions Home Page, Click SQL tile](./images/clickforsqlworksheet.png)
+    ![Database Actions Home Page, Click SQL tile](images/click-for-sql-worksheet.png)
 
-**If this is your first time accessing the SQL Worksheet, you will be presented with a guided tour. Complete the tour or click the X in any tour popup window to quit the tour.**
+:bulb: <i>**Note: If this is your first time accessing the SQL Worksheet, you will be presented with a guided tour. Complete the tour or click the X in any tour popup window to quit the tour.**</i>
 
 2. We are now ready to load data into the database. For this task, we will use the **Data Loading tab** in the SQL Worksheet.
 
-    ![Click Data Loading Tab on SQL Worksheet](./images/data-load-tab.png)
+    ![Click Data Loading Tab on SQL Worksheet](images/data-load-tab.png)
 
 3. Click the **Data Loading area**; the center of the gray dotted-line box.
 
-    ![Click the Center of the Data Loading Tab Area](./images/data-load-area.png)
+    ![Click the Center of the Data Loading Tab Area](images/data-load-tab.png))
 
 4. The **Upload Data into New Table modal** will appear.
 
@@ -45,7 +43,7 @@ This lab assumes you have completed the following:
 
     **(right-click and download the file with the following link)**
 
-    [csv data](https://objectstorage.us-ashburn-1.oraclecloud.com/p/LNAcA6wNFvhkvHGPcWIbKlyGkicSOVCIgWLIu6t7W2BQfwq2NSLCsXpTL9wVzjuP/n/c4u04/b/livelabsfiles/o/developer-library/csv_data.csv)
+    [CSV data](https://objectstorage.us-ashburn-1.oraclecloud.com/p/LNAcA6wNFvhkvHGPcWIbKlyGkicSOVCIgWLIu6t7W2BQfwq2NSLCsXpTL9wVzjuP/n/c4u04/b/livelabsfiles/o/developer-library/csv_data.csv)
 
 6. Once on your desktop, **drag the file into the Upload Data into New Table modal**. You can also click the Select Files button and find where you downloaded it via your operating system's/Web Browser's file browser.
 
@@ -150,16 +148,17 @@ This lab assumes you have completed the following:
     coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/admin/csv_data/"}]}% 
     ```
 
-The next lab will go over using the **BATCH LOAD** endpoint.
+The next lab you will learn about using a **BATCH LOAD** endpoint.
 
-## Conclusion
-
-In this lab, you created a table from a csv file and REST enabled it with auto-REST.
+7. In this lab, you created a table from a csv file and REST enabled it with auto-REST.
 
 You may now [proceed to the next lab](#next).
 
-
 ## Acknowledgements
 
- - **Author** - Jeff Smith, Distinguished Product Manager
- - **Last Updated By/Date** - Jeff Smith, July 2022
+ - **Author** 
+    - Jeff Smith, Distinguished Product Manager
+    - Chris Hoina, Senior Product Manager 
+    - Brian Spendolini
+ - **Last Updated By/Date** 
+    - Chris Hoina, August 2022
