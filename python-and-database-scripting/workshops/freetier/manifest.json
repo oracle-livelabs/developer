@@ -59,7 +59,7 @@
         },
         {
             "title": "Lab 10: Subclassing Connections and Cursors",
-            "description": "Use python-oracledb to use subclassing for hooking connection and cursor creation",
+            "description": "Use subclassing for hooking connection and cursor creation with python-oracledb",
             "filename": "../../Lab10-con-and-cursors/con-and-cursors.md"
         },
         {

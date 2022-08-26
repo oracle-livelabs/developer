@@ -23,72 +23,47 @@
             "filename": "../../Lab2-env-setup/env-setup.md"
         },
         {
-            "title": "Lab 3: Python-oracledb driver for Oracle Database: The New Wave of Scripting",
-            "description": "Use Python and the Oracle Database",
-            "filename": "../../Lab3-python-scripting/python-scripting.md"
-        },
-        {
-            "title": "Lab 4: Connection Pools",
+            "title": "Lab 3: Connection Pools",
             "description": "Use python-oracledb connection pools to connect to the Oracle Database",
-            "filename": "../../Lab4-connection-pool/conn-pool.md"
+            "filename": "../../Lab3-connection-pool/conn-pool.md"
         },
         {
-            "title": "Lab 5: Fetching Data",
+            "title": "Lab 4: Fetching Data",
             "description": "Use python-oracledb connection pools to fetch data from the Oracle Database",
-            "filename": "../../Lab5-data-fetching/data-fetch.md"
+            "filename": "../../Lab4-data-fetching/data-fetch.md"
         },
         {
-            "title": "Lab 6: Binding Data",
+            "title": "Lab 5: Binding Data",
             "description": "Use python-oracledb to bind data from the Oracle Database",
-            "filename": "../../Lab6-binding-data/binding-data.md"
+            "filename": "../../Lab5-binding-data/binding-data.md"
         },
         {
-            "title": "Lab 7: PL/SQL",
+            "title": "Lab 6: PL/SQL",
             "description": "Use PL/SQL procedures and functions to access data stored in Oracle databases",
-            "filename": "../../Lab7-plsql/plsql.md"
+            "filename": "../../Lab6-plsql/plsql.md"
         },
         {
-            "title": "Lab 8: Type Handlers",
-            "description": "Use type handlers to alter data fetched or sent to the Oracle database using the python-oracledb to ......",
-            "filename": "../../Lab8-type-handlers/type-handlers.md"
+            "title": "Lab 7: Type Handlers",
+            "description": "Use type handlers to alter data fetched or sent to the Oracle database using the python-oracledb",
+            "filename": "../../Lab7-type-handlers/type-handlers.md"
         },
         {
-            "title": "Lab 9: LOBS",
+            "title": "Lab 8: LOBS",
             "description": "Use python-oracledb to manipulate LOBs in Oracle databases",
-            "filename": "../../Lab9-lobs/lobs.md"
+            "filename": "../../Lab8-lobs/lobs.md"
         },
         {
-            "title": "Lab 10: Rowfactory Functions",
+            "title": "Lab 9: Rowfactory Functions",
             "description": "Use python-oracledb to enable queries to return objects other than tuples",
-            "filename": "../../Lab10-rowfactory-functions/func.md"
+            "filename": "../../Lab9-rowfactory-functions/func.md"
         },
         {
-            "title": "Lab 11: Subclassing Connections and Cursors",
-            "description": "Use python-oracledb to use subclassing for hooking connection and cursor creation",
-            "filename": "../../Lab11-con-and-cursors/con-and-cursors.md"
+            "title": "Lab 10: Subclassing Connections and Cursors",
+            "description": "Use subclassing for hooking connection and cursor creation with python-oracledb",
+            "filename": "../../Lab10-con-and-cursors/con-and-cursors.md"
         },
         {
-            "title": "Lab 12: Thick Mode",
-            "description": "Use python-oracledb thick-mode for accessing advanced Oracle database functionality",
-            "filename": "../../Lab12-thick-mode/thick.md"
-        },
-        {
-            "title": "Lab 13: Advanced Queueing",
-            "description": "Use advanced queueing APIs usable in python-oracledb thick mode allow messages to be passed between applications",
-            "filename": "../../Lab13-advanced-queueing/queue.md"
-        },
-        {
-            "title": "Lab 14: Scrollable Cursors",
-            "description": "Use python-oracledb thick mode applications to move backwards as well as forwards in query results",
-            "filename": "../../Lab14-scrollable-cursors/cursor.md"
-        },
-        {
-            "title": "Lab 15: Simple Oracle Document Access (SODA)",
-            "description": "Use SODA to retrieve, insert and query documents from Oracle databases",
-            "filename": "../../Lab15-SODA/soda.md"
-        },
-        {
-            "title": "Lab 16: Terminate Oracle Autonomous Database",
+            "title": "Lab: Terminate Oracle Autonomous Database",
             "description": "Terminating an Oracle Autonomous Database permanently",
             "filename":"https://oracle-livelabs.github.io/common/labs/terminate-adb/terminate-adb.md"
         },
