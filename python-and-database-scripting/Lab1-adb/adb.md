@@ -12,7 +12,7 @@ Estimated Time: 10 minutes
 
 In this lab, you will:
 
-- Setup an Oracle Autonomous Database
+- Setup an Oracle Autonomous Database, shared infrastructure
 
 ### Prerequisites
 
@@ -27,14 +27,14 @@ This lab assumes you have:
 1.  Login to your Oracle Cloud Account
 2.  Click the **Navigation** Menu in the upper left, navigate to **Oracle Database** and select **Autonomous Database**
 
- ![](./images/create_adb.png " ")
+ ![Create ADB](./images/create_adb.png " ")
 
 3. Create a new Autonomous Database Instance as following:
     - DB Display Name: python_adb
     - Workload Type: Transaction Processing
     - Choose a Deployment Type: Shared Infrastructure
 
- ![](./images/basic_info.png " ")
+ ![Basic Info](./images/basic_info.png " ")
 
 4. Configure the Database
 In the **Configure the Database** section, proceed with the following selections: 
@@ -45,20 +45,20 @@ In the **Configure the Database** section, proceed with the following selections
 
 5. In the **Create Administrator Credentials** section, enter the password for the Admin user and make note of it, as this as this will be required in the subsequent labs.
 
- ![](./images/free_tier.png " ")
+ ![Free Tier](./images/free_tier.png " ")
 
 6. In the **Choose Network Access** section, select 'Secure Access from Everywhere'
 
 In the **Choose License and Oracle Database Edition** section, select 'License Included'
 
 Hit **Create Autonomous Database** button
- ![](./images/adb_network.png " ")
+ ![ADB Network](./images/adb_network.png " ")
 
-This process might take few minutes. You can check the status of the creation of the Autonomous Database by using the Console.
+This process might take few minutes. You can check the status of the creation of the Autonomous Database Shared infrastructure, by using the Console.
 
-Once Autonomous Database Instance is provisioned, it is automatically started and you should see the following summary
+Once Autonomous Database Shared Infrastructure is provisioned, it is automatically started and you should see the following summary
 
- ![](./images/summary.png " ")
+ ![Summary ADB](./images/summary.png " ")
 .
 
 ## Task 2: Download Oracle Autonomous Database Wallet
@@ -69,30 +69,32 @@ To connect to the Oracle Autonomous Database, you need the wallet file.
     -  select Wallet Type: Instance Wallet
     - hit **Download Wallet** button
 
- ![](./images/Wallet.png " ")
+ ![Wallet](./images/Wallet.png " ")
 
-2. Specify a password for the Wallet - enter **python123** for the scope of this exercise
+2. Specify a password for the Wallet
 
 Hit **Download** button and save the wallet as a zip file to a location on your local laptop, then click Close to close the popup window. We will upload this file on Console Shell in the next task, so please make a note of the location where the .zip wallet is saved.
 
- ![](./images/wallet_password.png " ")
+ ![Wallet password](./images/wallet_password.png " ")
+
+Make a note of the password as this will be used for the database connection and it is required in the subsequent labs.
 .
 
 ## Task 3: Upload Wallet to the Cloud Shell
 
 **Cloud Shell**  is a web browser-based terminal accessible from the Oracle Cloud Console and available to all Oracle Cloud Infrastructure users. It’s free to use (within monthly tenancy limits), and it provides access to a Linux shell with a pre-authenticated CLI and other useful tools for following Oracle Cloud Infrastructure service tutorials and labs. The Cloud Shell appears in the Console as a persistent frame and stays active as you navigate to different parts of the Console. Cloud Shell is pre-authenticated with your console credentials.
 
-In the Oracle Autonomous Database Summary screen, we're going to launch Cloud Shell (this has Python pre-installed), and we're going to connect to the Autonomous Database using the Wallet downloaded at the previous task.  
+In the Oracle Autonomous Database Summary screen, we're going to launch Cloud Shell (this has Python pre-installed), and we're going to connect to the Autonomous Database Shared infrastructure, using the Wallet downloaded at the previous task.  
 
 1. To launch Cloud Shell, sign in to your Oracle Cloud Infrastructure tenancy and click the command prompt icon in Console header:
 
- ![](./images/console_shell.png " ")
+ ![Cloud Shell](./images/cloud_shell.png " ")
 
 2. When connected, the following should display:
- ![](./images/cloud_shell_term.png " ")
+ ![Cloud Shell terminal](./images/cloud_shell_term.png " ")
 
 3. Drag and drop the Wallet archive from the location where it was saved, to the Console Shell
- ![](./images/console_shell_wallet.png " ")
+ ![Cloud shell wallet](./images/cloud_shell_wallet.png " ")
 
 4. Unzip the wallet
 In your home folder, create directory _Wallets_ and move the wallet archive to Wallets folder. We are going to unzip the file in this directory
@@ -102,28 +104,18 @@ In your home folder, create directory _Wallets_ and move the wallet archive to W
     $ cd Wallets
     $ unzip Wallet\_python_adb.zip
     ````
-
-    ![](./images/shell_unzip.png " ")
+    ![unzip](./images/shell_unzip.png " ")
 .
 
 ## Task 4: Copy Oracle Autonomous Database DSN string
 
 One of the arguments used in to connect to the Oracle Autonomous Database is the DSN (data source name).  
 
-1.  In the ADB Summary screen, select **DB Connection** tab and in the popup **Database Connection** window, in the **Connection Strings** section, **Show** the connection string for the high_availability TNS name
-2. Click the 'Copy' hyperlink next to the connection string and in the Cloud Shell home location, paste it to a file
+1.  In the ADB Summary screen, select **DB Connection** tab and in the popup **Database Connection** window, in the **TNS Name** section, **Show** the connection string for the high service level TNS name
     
-    ````
-    $ touch dsn.txt
-    $ vi dsn
-    $ paste + save (*esc:wq!*)
-    ````
-    
-3. Click 'Close' to close the popup window.
-
- ![](./images/conn-string.png " ")
+2. Click 'Close' to close the popup window.
 
 ## Acknowledgements
-- **Author** - Veronica Dumitriu
+- **Authors** - Veronica Dumitriu
 - **Contributors** - Chris Jones
 - **Last Updated By/Date** - Veronica Dumitriu, July 2022

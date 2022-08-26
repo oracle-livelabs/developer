@@ -10,7 +10,7 @@
         {
             "title": "Getting Started",
             "description": "This is the prerequisites for customers using Free Trial and Paid tenancies, and Always Free accounts (if applicable).",
-            "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/pre-register-free-tier-account.md"
+            "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/event-register-free-tier-account.md"
         },
         {
             "title": "Lab 1: Create Autonomous Database Instance",
@@ -44,48 +44,53 @@
         },
         {
             "title": "Lab 7: PL/SQL",
-            "description": "Use python-oracledb to ......",
+            "description": "Use PL/SQL procedures and functions to access data stored in Oracle databases",
             "filename": "../../Lab7-plsql/plsql.md"
         },
         {
             "title": "Lab 8: Type Handlers",
-            "description": "Use python-oracledb to ......",
+            "description": "Use type handlers to alter data fetched or sent to the Oracle database using the python-oracledb to ......",
             "filename": "../../Lab8-type-handlers/type-handlers.md"
         },
         {
             "title": "Lab 9: LOBS",
-            "description": "Use python-oracledb to ......",
+            "description": "Use python-oracledb to manipulate LOBs in Oracle databases",
             "filename": "../../Lab9-lobs/lobs.md"
         },
         {
             "title": "Lab 10: Rowfactory Functions",
-            "description": "Use python-oracledb to ......",
+            "description": "Use python-oracledb to enable queries to return objects other than tuples",
             "filename": "../../Lab10-rowfactory-functions/func.md"
         },
         {
             "title": "Lab 11: Subclassing Connections and Cursors",
-            "description": "Use python-oracledb to ......",
+            "description": "Use python-oracledb to use subclassing for hooking connection and cursor creation",
             "filename": "../../Lab11-con-and-cursors/con-and-cursors.md"
         },
         {
-            "title": "Lab 12: Advanced Queueing",
-            "description": "Use python-oracledb to ......",
-            "filename": "../../Lab12-advanced-queueing/queue.md"
+            "title": "Lab 12: Thick Mode",
+            "description": "Use python-oracledb thick-mode for accessing advanced Oracle database functionality",
+            "filename": "../../Lab12-thick-mode/thick.md"
         },
         {
-            "title": "Lab 13: Simple Oracle Document Access (SODA)",
-            "description": "Use python-oracledb to ......",
-            "filename": "../../Lab13-SODA/soda.md"
+            "title": "Lab 13: Advanced Queueing",
+            "description": "Use advanced queueing APIs usable in python-oracledb thick mode allow messages to be passed between applications",
+            "filename": "../../Lab13-advanced-queueing/queue.md"
         },
         {
-            "title": "Lab 14: Thick Mode",
-            "description": "Use python-oracledb to ......",
-            "filename": "../../Lab14-thick-mode/thick.md"
+            "title": "Lab 14: Scrollable Cursors",
+            "description": "Use python-oracledb thick mode applications to move backwards as well as forwards in query results",
+            "filename": "../../Lab14-scrollable-cursors/cursor.md"
         },
         {
-            "title": "Lab 15: Scrollable Cursors",
-            "description": "Use python-oracledb to ......",
-            "filename": "../../Lab15-scrollable-cursors/cursor.md"
+            "title": "Lab 15: Simple Oracle Document Access (SODA)",
+            "description": "Use SODA to retrieve, insert and query documents from Oracle databases",
+            "filename": "../../Lab15-SODA/soda.md"
+        },
+        {
+            "title": "Lab 16: Terminate Oracle Autonomous Database",
+            "description": "Terminating an Oracle Autonomous Database permanently",
+            "filename":"https://oracle-livelabs.github.io/common/labs/terminate-adb/terminate-adb.md"
         },
         {
             "title": "Need Help?",

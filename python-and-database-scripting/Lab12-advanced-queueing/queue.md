@@ -1,35 +1,35 @@
-# Python-oracledb driver for Oracle Database: The New Wave of Scripting
+# Advanced Queueing
 
 ## Introduction
+[Oracle Advanced Queuing (AQ)](https://python-oracledb.readthedocs.io/en/latest/user_guide/aq.html) APIs usable in python-oracledb thick mode allow messages to be passed between applications.
 
-This lab will show how to use PL/SQL data using python-oracledb driver
+This lab will show how to use advanced queueing with python-oracledb driver in thick mode
 
-Estimated Lab Time: 10 minutes
+Estimated Lab Time: 5 minutes
 
 ### Objectives
 
-*  Learn best practices and efficient techniques for .....
+*  Learn best practices and efficient techniques for passing messages between applications using advanced queueing.
 
 ### Prerequisites
 
 This lab assumes you have completed the following labs:
 * Login to Oracle Cloud
-* Create Autonomous Database
+* Create Oracle Autonomous Database shared infrastructure
 * Environment Setup
 
-## Advanced Queueing
+## Task 1: Message passing with Oracle Advanced Queuing
 
-1. Message passing with Oracle Advanced Queuing
+Review **aq.py**:
 
-    Review **aq.py**:
+````
+<copy>
+import oracledb
+import decimal
+import db_config
 
-    ````
-    import cx_Oracle
-    import decimal
-    import db_config
-
-    con = cx_Oracle.connect(db_config.user, db_config.pw, db_config.dsn)
-    cur = con.cursor()
+con =oracledb.connect(db_config.user, db_config.pw, db_config.dsn)
+cur = con.cursor()
 
     BOOK_TYPE_NAME = "UDT_BOOK"
     QUEUE_NAME = "BOOKS"
@@ -96,53 +96,54 @@ This lab assumes you have completed the following labs:
         con.commit()
 
     print("\nDone.")
-    ````
+</copy>
+````
 
-    This file sets up Advanced Queuing using Oracle's DBMS\_AQADM package. The queue is used for passing Oracle UDT\_BOOK objects. The file uses AQ interface features enhanced in cx\_Oracle 7.2.
+This file sets up Advanced Queuing using Oracle's DBMS\_AQADM package. The queue is used for passing Oracle UDT\_BOOK objects. The file uses AQ interface features enhanced in cx\_Oracle 7.2.
 
-    Run the file:
+Run the file:
 
-    ````
-    <copy>
-    cd ~/python/tutorial
-    python3 aq.py
-    </copy>
-    ````
+````
+<copy>
+cd ~/python/tutorial
+python3 aq.py
+</copy>
+````
 
-    The output shows messages being queued and dequeued.
+The output shows messages being queued and dequeued.
 
-    ![](./images/step14.1-aq.png " ")
+![](./images/step14.1-aq.png " ")
 
-    To experiment, split the code into three files: one to create and start the queue, and two other files to queue and dequeue messages. Experiment running the queue and dequeue files concurrently in separate terminal windows.
+To experiment, split the code into three files: one to create and start the queue, and two other files to queue and dequeue messages. Experiment running the queue and dequeue files concurrently in separate terminal windows.
 
-    Try removing the commit() call in **aq-dequeue.py**. Now run **aq-enqueue.py** once and then **aq-dequeue.py** several times. The same messages will be available each time you try to dequeue them.
+Try removing the commit() call in **aq-dequeue.py**. Now run **aq-enqueue.py** once and then **aq-dequeue.py** several times. The same messages will be available each time you try to dequeue them.
 
-    Change **aq-dequeue.py** to commit in a separate transaction by changing the "visibility" setting:
+Change **aq-dequeue.py** to commit in a separate transaction by changing the "visibility" setting:
 
-    ````
-    queue.deqOptions.visibility = cx_Oracle.DEQ_IMMEDIATE
-    ````
+````
+queue.deqOptions.visibility = cx_Oracle.DEQ_IMMEDIATE
+````
 
-    This gives the same behavior as the original code.
+This gives the same behavior as the original code.
 
-    Now change the options of enqueued messages so that they expire from the queue if they have not been dequeued after four seconds:
+Now change the options of enqueued messages so that they expire from the queue if they have not been dequeued after four seconds:
 
-    ````
-    queue.enqOne(con.msgproperties(payload=book, expiration=4))
-    ````
+````
+queue.enqOne(con.msgproperties(payload=book, expiration=4))
+````
 
-    Now run **aq-enqueue.py** and **wait four seconds** before you run **aq-dequeue.py**. There should be no messages to dequeue.
+Now run **aq-enqueue.py** and **wait four seconds** before you run **aq-dequeue.py**. There should be no messages to dequeue.
 
-    If you are stuck, look in the **solutions** directory at the aq-dequeue.py, aq-enqueue.py and aq-queuestart.py files.
+If you are stuck, look in the **solutions** directory at the aq-dequeue.py, aq-enqueue.py and aq-queuestart.py files.
 
 ## Conclusion
 
-In this lab, you had an opportunity to try out connecting Python to the Oracle Database.
+In this lab, you had an opportunity to try out advanced queuing for passing messages between applications.
 You have learned how to:
-* Use python-oracledb for .......
+* Use python-oracledb thick mode advanced queueing functionality
 
 ## Acknowledgements
 
-* **Author** - Christopher Jones, Anthony Tuininga, Veronica Dumitriu
+* **Authors** - Christopher Jones, Anthony Tuininga, Sharad Chandran, Veronica Dumitriu
 * **Contributors** - Jaden McElvey, Anoosha Pilli, Troy Anthony
 * **Last Updated By/Date** - Veronica Dumitriu, DB Product Management, July 2022
