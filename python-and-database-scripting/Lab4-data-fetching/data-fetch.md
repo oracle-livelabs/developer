@@ -180,6 +180,7 @@ The setup file has also inserted around 20000 string values in the bigtab table.
 Review the code contained in *query\_arraysize.py*:
 
 ````
+<copy>
 import oracledb
 import time
 import db_config
@@ -200,6 +201,7 @@ res = cur.fetchall()
 
 elapsed = (time.time() - start)
 print(elapsed, "seconds")
+</copy>
 ````
 
 This uses the 'time' module to measure elapsed time of the query. The prefetchrows and arraysize values are set to 100. This causes batches of 100 records at a time to be returned from the database to a cache in Python. This reduces the number of **roundtrips** made to the database, often reducing network load and reducing the number of context switches on the database server. The **fetchone()**, **fetchmany()** and **fetchall()** methods will read from the cache before requesting more data from the database.

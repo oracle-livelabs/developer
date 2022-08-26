@@ -1,64 +1,73 @@
-# Python-oracledb driver for Oracle Database: The New Wave of Scripting
+# Scrollable Cursors
 
 ## Introduction
+Scrollable cursors enable python-oracledb thick mode applications to move backwards as well as forwards in query results. They can be used to skip rows as well as move to a particular row.
 
-This lab will show how to use PL/SQL data using python-oracledb driver
+This lab will show how to work with srollable cursors using python-oracledb driver
 
-Estimated Lab Time: 10 minutes
+Estimated Lab Time: 3 minutes
 
 ### Objectives
 
-*  Learn best practices and efficient techniques for .....
+*  Learn best practices and efficient techniques for working with scrollable cursors
 
 ### Prerequisites
 
 This lab assumes you have completed the following labs:
 * Login to Oracle Cloud
-* Create Autonomous Database shared infrastructure
+* Create Oracle Autonomous Database shared infrastructure
 * Environment Setup
 
-## Task 1: Scrollable Cursors
+## Task 1: Working with scrollable cursors
 
-Scrollable cursors enable python-oracledb thick mode applications to move backwards as well as forwards in query results. They can be used to skip rows as well as move to a particular row.
+Review the code contained in *query\_scroll.py*:
+````
+<copy>
+import oracledb
+import db_config_thick as db_config
 
-    11.1 Working with scrollable cursors
+con = oracledb.connect(user=db_config.user,
+                        password=db_config.pw, 
+                        dsn=db_config.dsn,
+                        config_dir=db_config.config_dir, wallet_location=db_config.wallet_location, wallet_password=db_config.wallet_password)
+cur = con.cursor(scrollable=True)
 
-    Review the code contained in query_scroll.py:
+cur.execute("select * from dept order by deptno")
 
-    import oracledb
-    import db_config_thick as db_config
+cur.scroll(2, mode="absolute")  # go to second row
+print(cur.fetchone())
 
-    con = oracledb.connect(user=db_config.user, password=db_config.pw, dsn=db_config.dsn)
-    cur = con.cursor(scrollable=True)
+cur.scroll(-1)                    # go back one row
+print(cur.fetchone())
+</copy>
+````
 
-    cur.execute("select * from dept order by deptno")
+Run the script in a terminal window:
+````
+<copy>
+python query_scroll.py
+</copy>
+````
+Edit *query_scroll.py* and experiment with different scroll options and orders, such as:
 
-    cur.scroll(2, mode="absolute")  # go to second row
-    print(cur.fetchone())
+````
+<copy>
+cur.scroll(1)  # go to next row
+print(cur.fetchone())
 
-    cur.scroll(-1)                    # go back one row
-    print(cur.fetchone())
+cur.scroll(mode="first")  # go to first row
+print(cur.fetchone())
+</copy>
+````
 
-    Run the script in a terminal window:
-
-    python query_scroll.py
-
-    Edit query_scroll.py and experiment with different scroll options and orders, such as:
-
-    cur.scroll(1)  # go to next row
-    print(cur.fetchone())
-
-    cur.scroll(mode="first")  # go to first row
-    print(cur.fetchone())
-
-    Try some scroll options that go beyond the number of rows in the resultset.
+Try some scroll options that go beyond the number of rows in the resultset.
 
 
 ## Conclusion
 
 In this lab, you had an opportunity to try out connecting Python to the Oracle Database.
 You have learned how to:
-* Use python-oracledb for .......
+* work with scrollable cursors
 
 ## Acknowledgements
 

@@ -22,6 +22,7 @@ This lab assumes you have completed the following labs:
 Review the code contained in *rowfactory.py*:
 
 ````
+<copy>
 import collections
 import oracledb
 import db_config
@@ -45,7 +46,7 @@ for row in res:
 print('Loop target variables:')
 for c1, c2 in res:
     print(c1, "->", c2)
-
+</copy>
 ````
 
 This shows two methods of accessing result set items from a data row. The first uses array indexes like row[0]. The second uses loop target variables which take the values of each row tuple.

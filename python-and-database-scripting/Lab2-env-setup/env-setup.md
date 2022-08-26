@@ -346,117 +346,121 @@ The version number of the database should be displayed. An exception is raised i
 Adjust the username, password, or connection string parameters to invalid values to see the exception.
 
 3.  Executing a query.
-    Open **query.py** in vi. It looks like:
+Open **query.py** in vi. It looks like:
 
-    ````
-    <copy>
-    import oracledb
-    import db_config
+````
+<copy>
+import oracledb
+import db_config
     
-    con = oracledb.connect(user=db_config.user,
-                        password=db_config.pw, 
-                        dsn=db_config.dsn, 
-                        config_dir=db_config.config_dir, 
-                        wallet_location=db_config.wallet_location, 
-                        wallet_password=db_config.wallet_password)
+con = oracledb.connect(user=db_config.user,
+                    password=db_config.pw, 
+                    dsn=db_config.dsn, 
+                    config_dir=db_config.config_dir, 
+                    wallet_location=db_config.wallet_location, 
+                    wallet_password=db_config.wallet_password)
     
-    cur = con.cursor()
-    cur.execute("select * from dept order by deptno")
-    res = cur.fetchall()
-    for row in res:
-        print(row)
-    ````
+cur = con.cursor()
+cur.execute("select * from dept order by deptno")
+res = cur.fetchall()
+for row in res:
+    print(row)
+</copy>
+````
 
-    Make sure the print(row) line is indented. This lab uses spaces, not tabs.
+Make sure the print(row) line is indented. This lab uses spaces, not tabs.
 
-    The code executes a query and fetches all data.
+The code executes a query and fetches all data.
 
-    Save the file and run it:
+Save the file and run it:
 
-    ````
-    python3 query.py
-    ````
+````
+<copy>
+python3 query.py
+</copy>
+````
 
-    ![Query execution](./images/query.png " " )
+![Query execution](./images/query.png " " )
 
-    In each loop iteration a new row is stored in row as a Python "tuple" and is displayed.
+In each loop iteration a new row is stored in row as a Python "tuple" and is displayed.
 
-    Fetching Data is described in a later section
+Fetching Data is described in a later section
 
 4.  Closing connections
 
-    Connections and other resources used by python-oracledb will automatically be closed at the end of scope. This is a common programming style that takes care of the correct order of resource closure.
+Connections and other resources used by python-oracledb will automatically be closed at the end of scope. This is a common programming style that takes care of the correct order of resource closure.
     
-    Resources can also be explicitly closed to free up database resources if they are no longer needed. This may be useful in blocks of code that remain active for some time.
+Resources can also be explicitly closed to free up database resources if they are no longer needed. This may be useful in blocks of code that remain active for some time.
     
-    Open *query.py* in an editor and add calls to close the cursor and connection like:
+Open *query.py* in Code Editor and add calls to close the cursor and connection like:
+
+````
+<copy>
+import oracledb
+import db_config
     
-    ````
-    <copy>
-    import oracledb
-    import db_config
+con = oracledb.connect(user=db_config.user,
+                    password=db_config.pw, 
+                    dsn=db_config.dsn, 
+                    config_dir=db_config.config_dir, 
+                    wallet_location=db_config.wallet_location, 
+                    wallet_password=db_config.wallet_password)
     
-    con = oracledb.connect(user=db_config.user,
-                        password=db_config.pw, 
-                        dsn=db_config.dsn, 
-                        config_dir=db_config.config_dir, 
-                        wallet_location=db_config.wallet_location, 
-                        wallet_password=db_config.wallet_password)
-    
-    cur = con.cursor()
-    cur.execute("select * from dept order by deptno")
-    res = cur.fetchall()
-    for row in res:
-        print(row)
+cur = con.cursor()
+cur.execute("select * from dept order by deptno")
+res = cur.fetchall()
+for row in res:
+    print(row)
         
-    cur.close()
-    con.close()
-    ````
+cur.close()
+con.close()
+````
     
-    Running the script completes without error:
+Running the script completes without error:
     
-    ````
-    <copy>
-    python3 query.py
-    </copy>
-    ````
+````
+<copy>
+python3 query.py
+</copy>
+````
     
-    ![Query with cursor closed](./images/query.png " " )
+![Query with cursor closed](./images/query.png " " )
     
-    If you swap the order of the two close() calls you will see an error.
+If you swap the order of the two close() calls you will see an error.
 
 5.  Checking versions
 
-    Review the code contained in *versions.py*:
+Review the code contained in *versions.py*:
 
-    ````
-    <copy>
-    import oracledb
-    import db_config
+````
+<copy>
+import oracledb
+import db_config
 
-    con = oracledb.connect(user=db_config.user,
-                        password=db_config.pw, 
-                        dsn=db_config.dsn, 
-                        config_dir=db_config.config_dir, 
-                        wallet_location=db_config.wallet_location, 
-                        wallet_password=db_config.wallet_password)
+con = oracledb.connect(user=db_config.user,
+                    password=db_config.pw, 
+                    dsn=db_config.dsn, 
+                    config_dir=db_config.config_dir, 
+                    wallet_location=db_config.wallet_location, 
+                    wallet_password=db_config.wallet_password)
 
-    print(oracledb.__version__)  # two underscores before and after the version
-    print("Database version:", con.version)
-    </copy>
-    ````
+print(oracledb.__version__)  # two underscores before and after the version
+print("Database version:", con.version)
+</copy>
+````
     
-    Run the script:
+Run the script in Cloud Shell or a terminal window:
 
-    ````
-    python3 versions.py
-    ````
+````
+<copy>
+python3 versions.py
+</copy>
+````
 
-    This gives the version of the oracledb interface.
+This gives the version of the oracledb interface.
 
-    ![Versions results](./images/versions.png " " )
+![Versions results](./images/versions.png " " )
 .
-
 
 ## Conclusion
 
@@ -466,7 +470,6 @@ You have learned how to:
 * Install python-oracledb driver
 * Setup the environment to allow connections to Oracle Autonomous database shared infrastructure using python-oracledb
 * Create connections to Oracle Autonomous database shared infrastructure using the python-oracledb driver
-
 
 ## Acknowledgements
 * **Authors** - Christopher Jones, Anthony Tuininga, Sharad Chandran, Veronica Dumitriu
