@@ -19,13 +19,13 @@ In this lab, you will:
 - Trading Cars using Tokens in Car Marketplace
 
 In this lab, you will:
-* Become familiar with Oracle Blockchain Platform and it's components
-* Become Familiar with Oracle Blockchain Platform Provisioning and Administration
-* Using Oracle Blockchain Platform Admin Console for Admin tasks and Monitoring
-* Learn How to Develop, Deploy, Execute Smart Contracts using Oracle App Builder
-* Create and operate your own multi-organization Blockchain network
-* Learn How to integrate with external applications by leveraging OBP REST Proxy
-* Learn how to build a end-to-end solution for use case with Oralce Blockchain Platform
+- Become familiar with Oracle Blockchain Platform and it's components
+- Become Familiar with Oracle Blockchain Platform Provisioning and Administration
+- Using Oracle Blockchain Platform Admin Console for Admin tasks and Monitoring
+- Learn How to Develop, Deploy, Execute Smart Contracts using Oracle App Builder
+- Create and operate your own multi-organization Blockchain network
+- Learn How to integrate with external applications by leveraging OBP REST Proxy
+- Learn how to build a end-to-end solution for use case with Oralce Blockchain Platform
 
 ## What's Next?
 
