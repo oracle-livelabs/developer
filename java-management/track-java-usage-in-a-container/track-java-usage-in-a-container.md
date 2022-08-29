@@ -1,4 +1,4 @@
-# Track Java Usage in a Container
+# Track Java Usage in a container
 
 ## Introduction
 
@@ -19,11 +19,11 @@ In this lab, you will:
 ### Prerequisites
 
 * An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
-* A compute instance with the resources configured in Lab 1 to Lab 4 (Management Agent, Fleet, Compartments, SSH key pair login). The compute instance should also have **Oracle JDK 8** installed.
+* A compute instance with the resources configured in [Lab 1](?lab=set-up-oci-for-jms) to [Lab 5](?lab=set-up-of-management-agent) (Management Agent, Fleet, Compartments, SSH key pair login). The compute instance should also have **Oracle JDK 8** installed.
 
 ## Task 1: Install Docker on your compute instance
 
-The following steps will describe installation of Docker on a compute instance running Oracle Linux 7, which was covered in Lab 2.
+The following steps will describe installation of Docker on a compute instance running Oracle Linux 7 or above, which was covered in [Lab 3](?lab=deploy-a-java-application#Task1:CreateaComputeInstance).
 
 1. Perform an SSH login into your OCI compute instance.
 
@@ -35,19 +35,13 @@ The following steps will describe installation of Docker on a compute instance r
     ```
     ```
     <copy>
-    sudo yum-config-manager --enable *addons
+    sudo yum config-manager --add-repo=https://download.docker.com/linux/centos/docker-ce.repo
     </copy>
     ```
-3. Continue by running the following commands.
+3. Install Docker and enable it by running.
     ```
     <copy>
-    sudo yum update
-    </copy>
-    ```
-4. Install Docker and enable it by running.
-    ```
-    <copy>
-    sudo yum install docker-engine
+    sudo yum install -y docker-ce --nobest
     </copy>
     ```
     ```
@@ -60,13 +54,13 @@ The following steps will describe installation of Docker on a compute instance r
     sudo systemctl start docker
     </copy>
     ```
-5. You can check the version of your Docker installation by running the following:
+4. You can check the version of your Docker installation by running the following:
     ```
     <copy>
     sudo docker version
     </copy>
     ```
-6. You can verify that Docker is correctly installed by running this.
+5. You can verify that Docker is correctly installed by running this.
     ```
     <copy>
     sudo docker run hello-world
@@ -249,7 +243,7 @@ This section will provide guidance on creating a Docker image running a Oracle J
     </copy>
     ```
 
-  ![image of dockerfile listed](/../images/dockerfile-check.png)
+  ![image of dockerfile listed](images/dockerfile-check.png)
 
 <!--  -->
 4. Edit the Dockerfile to include our jar file in the build by running these commands.
@@ -269,7 +263,7 @@ This section will provide guidance on creating a Docker image running a Oracle J
     </copy>
     ```
 
-    ![image of dockerfile in nano text editor](/../images/dockerfile.png)
+    ![image of dockerfile in nano text editor](images/dockerfile.png)
 
   * When done, save and exit the Nano text editor by pressing **CTRL+x** then **y** and then **ENTER**.
 <!--  -->
@@ -301,7 +295,7 @@ The same output of odd numbers should appear.
 &nbsp;
 
 
-## Task 4: Configure Java Usage Tracker Location
+## Task 4: Configure Java Usage Tracker location
 
 You should now have a compute instance with Docker installed and a Docker image using Oracle JDK.
 
@@ -320,9 +314,9 @@ You should now have a compute instance with Docker installed and a Docker image 
     ```
 
   Check for the "Mounts" section, which should not be empty.
-    ![image of inspect container](/../images/bind-mounts.png)
+    ![image of inspect container](images/bind-mounts.png)
 
-## Task 5: Verify Configuration
+## Task 5: Verify configuration
 
 1. You may wish to check the log files for your Java application. Start by running this command to display the log file content.
 
@@ -333,14 +327,16 @@ You should now have a compute instance with Docker installed and a Docker image 
     ```
   You should be able to see the jar file (OddNumbers.jar) and the Java version (Java 17) used in your Docker container in the log file output.
 
-    ![image of java logs](/../images/java-logs.png)
+    ![image of java logs](images/java-logs.png)
 
   > **Note:** You should only use this configuration with trusted containers or where you do not require isolation between the host and the container, or between containers.
 
 2. You may now check your Fleet in OCI console to see if your Docker container was detected. You should be able to see the OddNumbers.jar under **Applications**.
-  ![image of fleet details page showing jar file in container](/../images/fleets-details-docker.png)
+  ![image of fleet details page showing jar file in container](images/fleets-details-docker.png)
 
-## Troubleshoot Docker Issues
+You may now **proceed to the next lab.**
+
+## Troubleshoot Docker issues
 
 **For Task 1**
 * If you encounter a timeout error similar to the following:
@@ -352,11 +348,12 @@ You should now have a compute instance with Docker installed and a Docker image 
     ```
     You may be connected to proxies or VPNs. Disconnect any connection or resolve any issues related to your proxy or VPN and try again.
 
-## Want to Learn More?
+
+## Learn More
 
 * You may also find more Oracle resources for your containers at the Oracle Github repository [here](https://github.com/oracle/docker-images).
 
 ## Acknowledgements
 
 * **Author** - Alvin Lam, Java Management Service
-* **Last Updated By/Date** - Xin Yi Tay, February 2022
+* **Last Updated By/Date** - Yixin Wei, August 2022
