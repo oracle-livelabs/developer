@@ -15,9 +15,10 @@ In this lab, you will:
 ### Pre-Requisites
 
 This lab assumes you have:
-* Completed Lab1 - Create, Deploy & Execute Smart Contracts using Oracle Blockchain App Builder
-* Completed Lab2 - Create, Deploy & Execute Smart Contracts using Oracle Blockchain App Builder
-* Completed Lab3 - Setup & Configure API Gateway for external applications to connect with Smart Contract API's published by Oracle Blockchain REST Proxy.
+- Created a Blockchain Network connecting 3 organizations
+- Created, Deployed & Executed Smart Contracts using Oracle Blockchain App Builder
+- Created & Setup API Gateway to connect with Smart Contract API's
+
 
 ## Task 1: Spin Up Autonomous Database Instance
 
@@ -225,7 +226,7 @@ This lab assumes you have:
 
   ![Repeat APEX Data Source Steps](images/apex-4-4-12.png)
 
-## Task 5: Proceed to next lab
+## Task 5: [Proceed to next lab](../5-labs-obp-application-tokenXchange/obp-apex-application-tokenXchange.md)
 
 
 <!-- 10. 

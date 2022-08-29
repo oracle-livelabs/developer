@@ -1,4 +1,4 @@
-# Create Blockchain Network connecting multiple organizations in Oracle Blockchain Platform (OBP)
+# Create a Blockchain Network connecting 3 Organizations
 
 ## Introduction: Oracle Blockchain Platform (OBP)
 
@@ -16,9 +16,9 @@ As a preassembled PaaS, Oracle Blockchain Platform includes all the dependencies
 ### Pre-Requisites
 
 This lab assumes you have:
-* Created an Oracle Cloud account
-* Completed Lab - Initialize Environment (Link to Initialize Environment)
-* Completed Lab - Prepare Setup (Link to Prepare Setup)
+- Created an Oracle Cloud account
+- Initialized Environment (Link to Initialize Environment)
+- Prepared Setup (Link to Prepare Setup)
 
 
 ## Task 1: Environment Setup
@@ -250,7 +250,7 @@ Use IDCS to create and add both 'john_\dealer1' and 'sam_\dealer2' users, and th
 
 16. Repeat tasks 1-16 to create the 'sam\_dealer2' user and add to the 'dealer2' instance.
 
-## Task 10: Proceed to next lab
+## Task 10: [Proceed to next lab](../2-labs-obp-appbuilder/obp-appbuilder.md)
 
 ## What's Next?
 

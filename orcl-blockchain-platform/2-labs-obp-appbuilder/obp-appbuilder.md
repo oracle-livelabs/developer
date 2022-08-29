@@ -1,4 +1,4 @@
-# Create, Deploy & Execute Smart Contracts using Oracle Blockchain App Builder
+# Create and Deploy Smart Contracts using Oracle Blockchain App Builder
 
 ## Introduction: Oracle Blockchain App Builder
 
@@ -26,8 +26,8 @@ In this lab, you will:
 ### Pre-requisites
 
 This lab assumes you have:
-* Completed Lab - Environment Setup
-* Completed Lab - Initialize Environment 
+- Setup Environment 
+- Initialized Environment 
 
 
 ## Task 1: Blockchain AppBuilder Environment Setup
@@ -574,7 +574,7 @@ Now that we have tested our project locally, we can connect to our remote instan
     - Step 7 – Issue Tokens: This method mints tokens, which are then owned by the caller of the method. The caller must have an account and the minter role. 
   ![Issue Tokens](images/Issue_tokens.png)
 
-  ## Task 17: Proceed to next lab
+  ## Task 17: [Proceed to next lab](../3-labs-obp-apigateway/obp-apigateway.md)
 
 ## What's Next?
 

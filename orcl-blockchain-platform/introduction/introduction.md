@@ -2,12 +2,21 @@
 
 This Car Marketplace workshop is comprised of individual exercises that allow you to get first hands-on exposure to build an end to end Blockchain solution using Oracle Blockchain Platform in OCI, where you will see how key features and functionality are used and deployed.
 
+*Estimated Lab Time: 1.5 hours*
+
 ## About Oracle Blockchain Platform & Oracle Blockchain App Builder
 
 Oracle Blockchain Platform gives you a pre-assembled platform for building and running smart contracts and maintaining a tamper-proof distributed ledger. Blockchain App Builder for Oracle Blockchain Platform is a tool set that assists with rapid development, testing, debugging, and deployment of chaincode on Oracle Blockchain Platform networks, comprising cloud BaaS nodes on Oracle Cloud Infrastructure or on-premises nodes using Enterprise Edition.
 
 
 ### Workshop Objectives
+
+In this lab, you will:
+- Create a Blockchain Network connecting 3 organizations
+- Create, Deploy & Execute Smart Contracts using Oracle Blockchain App Builder
+- Create & Setup API Gateway to connect with Smart Contract API's
+- Building Car Marketplace application using APEX
+- Trading Cars using Tokens in Car Marketplace
 
 In this lab, you will:
 * Become familiar with Oracle Blockchain Platform and it's components
@@ -17,14 +26,6 @@ In this lab, you will:
 * Create and operate your own multi-organization Blockchain network
 * Learn How to integrate with external applications by leveraging OBP REST Proxy
 * Learn how to build a end-to-end solution for use case with Oralce Blockchain Platform
-
-
-### Lab Breakdown
-- **Lab 1:** Create Blockchain Network connecting multiple organizations in Oracle Blockchain Platform
-- **Lab 2:** Create, Deploy & Execute Smart Contracts using Oracle Blockchain App Builder
-- **Lab 3:** Setup & Configure API Gateway for external applications to connect with Smart Contract API's published by Oracle Blockchain REST Proxy.
-- **Lab 4:** How to Build User Interface using Oracle APEX and Integrate with Oracle Blockchain Platform
-- **Lab 5:** Car Trading Marketplace using Tokens in Oracle Blockchain Platform
 
 ## What's Next?
 
@@ -38,10 +39,12 @@ In this lab, you will:
 * [App Builder Documentation](https://docs.oracle.com/en/cloud/paas/blockchain-cloud/usingoci/using-chaincode-development-tools.html)
 * [Oracle Blockchain Blog](blogs.oracle.com/blockchain)
 
+You may now [proceed to the next lab](../1-labs-obp-env-setup/obp-console.md).
+
 ## Acknowledgements
 
 * **Authors** 
 * Mark Rakhmilevich, Senior Director, Oracle Blockchain Product Management
 * Bala Vellanki, Director, Oracle Blockchain Product Management
-* **Contributors** -  <Name, Group> -- optional
-* **Last Updated By/Date** - <Name, Month Year>
+* **Contributors** -  Amal Tyagi, Diego Morales
+* **Last Updated By/Date** - Bala Vellanki, August 2022

@@ -1,4 +1,4 @@
-# Setup & Configure API Gateway for external applications to connect with Smart Contract API's published by Oracle Blockchain REST Proxy.
+# Create & Setup API Gateway to connect with Smart Contract API's
 
 ## Introduction: Oracle API Gateway
 
@@ -17,10 +17,10 @@ In this lab, you will:
 
 This lab assumes you have:
 
-* Completed Lab - Environment Setup
-* Completed Lab - Initialize Environment 
-* Completed Lab1 - Create Blockchain Network connecting multiple organizations in Oracle Blockchain Platform (OBP)
-* Completed Lab2 - Create, Deploy & Execute Smart Contracts using Oracle Blockchain App Builder
+* Environment Setup
+* Initialize Environment 
+* Created Blockchain Network connecting multiple organizations in Oracle Blockchain Platform (OBP)
+* Created, Deployed & Executed Smart Contracts using Oracle Blockchain App Builder
 
 
 ## Task 1: Setup VCN and Subnet
@@ -178,7 +178,7 @@ Once active, the deployment can be used to make REST API calls between APEX and 
   ![Deployment Information](images/3-gateway-5-1.png)
 
 
-## Task 6: Proceed to next lab
+## Task 6: [Proceed to next lab](../4-labs-obp-application/obp-apex-application.md)
 
 ## What's Next?
 
