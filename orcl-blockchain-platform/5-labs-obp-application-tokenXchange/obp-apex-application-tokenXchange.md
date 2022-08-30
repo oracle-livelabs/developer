@@ -121,6 +121,17 @@ This action confirms the order by the seller.
 
 Select "Accept Receipt" to complete order or "Cancel Order" to cancel the order. 
 
+## Task 10: dealer2 - Generate Invoice & Payment
+
+1. Generate & View the invoice for the order Processed
+
+  ![Car Delaership](images/apex-invoice-details.png)
+
+2. Make a Payment
+
+ ![Car Delaership](images/apex-proceed-payment.png)
+
+
 ## Task 9: dealer2 - Token Transfer & Delivery
 1. Once purchaser Accepts receipt, the token transfer will now occur and the vehicle will be delivered to the new owner. 
 
@@ -132,6 +143,15 @@ Additionaly, you are able to view the invoice from the purchase in the Orders > 
 
   ![Car Delaership](images/apex-invoiceReceived.png)
 
+## Task 10: Check Token Balances for dealer1 & dealer2 after the payment
+
+1. dealer1 token balance
+
+ ![Car Delaership](images/apex-dealer1-balance.png)
+
+2. dealer2 token balance
+
+ ![Car Delaership](images/apex-dealer2-balance.png)
 
 
 <!-- 10. 

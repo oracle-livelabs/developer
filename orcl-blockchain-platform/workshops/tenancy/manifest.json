@@ -13,25 +13,25 @@
       "filename": "https://oracle-livelabs.github.io/common/labs/verify-compute/verify-compute-ssh-and-novnc.md"
     },
     {
-      "title": "Initialize Environment",
+      "title": "Initialize Environment ",
       "description": "Initialize Environment",
       "filename": "../../initialize-environment/initialize-environment.md"
     },
     {
-      "title": "Lab 1: OBP Environment Setup",
+      "title": "Lab 1: Create a Blockchain Network connecting 3 Organizations",
       "description": "OBP Environment Setup",
       "publisheddate": "3/24/2020",
       "filename": "../../1-labs-obp-env-setup/obp-console.md"
     },
     {
-      "title": "Lab 2: OBP App Builder",
+      "title": "Lab 2:Create and Deploy Smart Contracts using Oracle Blockchain App Builder",
       "description": "OBP App Builder",
       "publisheddate": "3/24/2020",
       "filename": "../../2-labs-obp-appbuilder/obp-appbuilder.md"
     },
     {
-      "title": "Lab 4: OBP - API Gateway",
-      "description": "AOBP - API Gateway",
+      "title": "Lab 3: Create & Setup API Gateway to connect with Smart Contract API's",
+      "description": "OBP - API Gateway",
       "publisheddate": "4/05/2020",
       "filename": "../../3-labs-obp-apigateway/obp-apigateway.md"
     },
