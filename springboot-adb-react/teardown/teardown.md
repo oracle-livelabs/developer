@@ -26,7 +26,7 @@ Estimated time: 5 minutes
     ```
 ## Task 2: Delete the Directory
 
-1. Once the destroy script completes, delete the directory in your cloud shell where you have installed the workshop
+1. Once the destroy script completes, delete the directory in your cloud shell where you have installed the workshop (typically *reacttodo*)
 
     ```
     <copy>
@@ -43,9 +43,9 @@ Estimated time: 5 minutes
     vi ~/.bashrc
     </copy>
     ```
-2. Once you're inside ~/.bashrc, delete this line
+2. Once you're inside ~/.bashrc, delete the following line (typically the last line, ending with *env.sh*) and save it (you may re-run the lab w/o cloning the repository).
 
-    ```echo source $(pwd)/env.sh >> ~/.bashrc```
+    ```source $(pwd)/env.sh```
 
 ## **Task 4**: Delete the Compartment
 

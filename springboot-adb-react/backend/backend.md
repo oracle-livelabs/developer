@@ -46,7 +46,7 @@ The backend is implemented using the following Java classes (under ./backend/src
 
 The OCI Container Registry is where your Docker images are managed. A container registry should have been created for you in Lab 1 in your compartment.
 
-1. Edit ./backend/src/main/java/com/springboot/config/CorsConfig.java. Locate the following code fragment:
+1. Edit ./backend/src/main/java/com/springboot/MyTodoList/config/CorsConfig.java. Locate the following code fragment:
 
   ![](images/allowed-origins.png "allowed-origins")
 
@@ -60,13 +60,13 @@ The OCI Container Registry is where your Docker images are managed. A container 
 
     ```
     <copy>
-    cd $MTDRWORKSHOP_LOCATION/backend
-    </copy>
+    cd $MTDRWORKSHOP_LOCATION/backend;
     source build.sh
+    </copy>
     ```
   In a couple of minutes, you should have successfully built and pushed the images into the OCI repository.
 
-3. Check your container registry in your compartment
+3. Check your container registry in your compartment (refresh the console if the image is not shown)
   - Go to the console, click the hamburger menu in the top-left corner, and open **Developer Services > Container Registry**.
 
   ![](images/build-image.png "build-image")
@@ -146,7 +146,7 @@ In order to call the APIs that are built to retrieve the list of Todo items, upd
   1. Navigate to the following directory
     ```
     <copy>
-    cd reacttodo/oci-react-samples-1/MtdrSpring/backend/src/main/frontend/src
+    cd; cd reacttodo/oci-react-samples/MtdrSpring/backend/src/main/frontend/src
     </copy>
     ```
   2. Change API_LIST to the external IP address of your load balancer, and append /todolist, for example http://`<ip_address>`/todolist

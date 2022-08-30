@@ -4,7 +4,7 @@
 
 In this lab, you will configure your development environment and collect information that will be used later throughout this workshop. The setup script requires certain environment variables to be set, which is why a script for configuring the environment variables is necessary. After the environment varialbes are set, the setup script uses Terraform, Bash, and SQL to automate the creation of all the resources needed for this lab, such as VCN's, an OKE Cluster, API Gateway, Autonomous database, etc. The script also creates a table and inserts one row into the table, which we will use to make sure the setup was done correctly.
 
-Estimated time: 30 minutes
+Estimated time: 25 minutes
 
 Watch the video below for a quick walk through of the lab.
 
@@ -53,7 +53,7 @@ If you are not the tenancy administrator, there may be additional policies you m
 
   Once you have filled in these details click create. Your group should show up under Groups
 
-	  ![](images/group-created.png)
+	![](images/group-created.png)
 
 
 
