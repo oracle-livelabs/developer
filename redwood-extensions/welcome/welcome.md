@@ -2,12 +2,9 @@
 
 ## Introduction
 
-This lab walks you through creating a new App UI extension with a page. We then use a Redwood template to design the page's overall structure.
+In this lab we'll use the Redwood Welcome Page template, along with Oracle JET UI components, to create a page that connects to an Oracle SaaS object.  Our page will display a list of accounts, and allow the list to be filtered.
 
 Estimated Time: 5 minutes
-
-### About Oracle Visual Builder
-In this lab we leverage the Redwood welcome page template along with Oracle JET UI components to create a page that connects to Oracle SaaS's object and show you a list of accounts and allows filtering the list.
 
 ### Objectives
 
@@ -16,29 +13,29 @@ In this lab, you will:
 * Learn to create pages
 * Leverage Redwood templates and components
 
-## Task 1: Create an App UI application
+## Task 1: Create an App UI
 
-You are now seeing the welcome page of the visual development area for Visual Builder applications. We'll now create a new application that could be deployed as an App UI extension to the Oracle SaaS instance. With App UIs you can create new interfaces that address specific business needs for your company.
+You should now be in the Designer, VB Studio's visual editor. We'll start by creating our own *App UI*, which is simply an application that includes a user interface component in the form of Visual Builder pages and flows. With App UIs, you can create new interfaces that address specific business needs for your company.
 
-1. On the left side of the application overview area click to create a new App UI
+1. On the left side of the Designer, click **+ App UI**:  
 
 	![Image alt text](images/results.png)
 
 	> **Note:** Use this format for notes, hints, tips. Only use one "Note" at a time in a step.
 
-2. In the dialog that pops up provide a name for your application **YourName-Accounts** and click Create
+2. In the Create App UI dialog, provide a name in the form **YourName-Accounts**, then click **Create**:
 
   ![Image alt text](images/wssettings.png)
 
-3. The application is created, and you are taken into the application overview tab where you can see your flows and pages. A flow is a part of your application that contains pages that relate to each other. An application can contain multiple flows, and a flow can contain many pages.
+3. In the Diagram view on the right, you can see the flows and pages for this App UI. A flow is a part of your application that contains pages that relate to each other. An application can contain multiple flows, and a flow can contain many pages. In this case we have one flow, *main*, and one page, *main-start*:
 
   ![Image alt text](images/appflow.png)
 
-4. Double click the **main-start** page that was created in the main flow. This will open the page in the visual editor.
+4. Double-click  **main-start** to open the page in the Page Designer:
 
   ![Image alt text](images/IDE.png)
 
-## Task 2: Designing your page
+## Task 2: Design Your Page
 
 1. Let's explore the areas of the visual editor. Note that you can click on the various tabs to expand/collapse areas of your development environment.
 
