@@ -118,10 +118,11 @@ change the following template properties:
 	  ![Image alt text](images/dragform.png)
 7. In the components palette locate the **Form Layout** component. Drag it into the second **Foldout Panel** and into the **Default** slot.
 	  ![Image alt text](images/formcomponent.png)
+		![Image alt text](images/dragform2.png)
 8. In the structure pane select the fourth field in the Form Layout, and **shift-select** all the other fields after that. Drag all of them in one go into the new **Form Layout** you created in the second foldout panel.
-
+	  ![Image alt text](images/dragfield2.png)
 9. Select this second **Form Layout** in the structure pane, and update the **Label Edge** property of the form to **Start**. This will make this form look like the other form that is already on your page.
-
+	  ![Image alt text](images/labelset.png)
 10. Switch back to the tab for the **main-start** page and click the preview button to see your completed app.
 
 Your table now has action buttons that look good and work as expected. The next step is to fine tune the look and feel of the pages created by the quick starts and apply some Redwood templates to them.
