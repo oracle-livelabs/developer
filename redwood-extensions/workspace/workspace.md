@@ -1,4 +1,4 @@
-# Creating a New Application Extension
+# Creating a New Extension
 
 ## Introduction
 

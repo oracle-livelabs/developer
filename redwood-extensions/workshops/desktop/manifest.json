@@ -15,16 +15,16 @@
       "filename": "../../workspace/workspace.md"
     },
     {
-      "title": "Creating your first page",
+      "title": "Creating Your First Page",
       "description": "Labs that follow the introduction are numbered, starting with Lab 1",
       "filename": "../../welcome/welcome.md"
     },
     {
-      "title": "Connecting to Oracle Fusion Apps Data",
+      "title": "Connecting to Oracle Fusion Cloud Apps Data",
       "filename": "../../saasservice/saasservice.md"
     },
     {
-      "title": "Adding an Edit Page and a Details Page",
+      "title": "Adding Edit and Details Pages",
       "filename": "../../editpage/editpage.md"
     },
     {
