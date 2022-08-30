@@ -8,7 +8,7 @@ Suppose you want to create a streamlined experience for your account managers, w
 
 We've been asked to provide a page that will let the user search for an account by name, then click to update key fields like CEO name and projected revenue for this year and next. In addition, we want an easy way to check the address of each account.
 
-Let's see how we can go about building such an extension using Oracle Visual Builder Studio.
+Let's see how we can go about building such an extension using Oracle Visual Builder Studio (or "VB Studio" for short).
 
 Estimated Workshop Time: 1 hour
 
@@ -26,7 +26,7 @@ In this workshop, you will learn how to:
 
 This lab assumes you have:
 * Access to Oracle Fusion Cloud Applications (Specifically the CX modules)
-* Access to Oracle Visual Builder Studio that is part of Oracle Fusion Cloud Applications
+* Access to VB Studio that is part of Oracle Fusion Cloud Applications
 
 ## Learn More
 
