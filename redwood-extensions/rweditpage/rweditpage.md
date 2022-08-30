@@ -40,10 +40,11 @@ In this lab, you will:
 |Page Subtitle | Add missing information |
 |Primary Action Label | Save |
 |Display Mode for the Header | Mixed |
+{: title="Template Properties"}
 
 
-![Image alt text](images/editproperties.png)
-
+5. Properties like these make it easier to customize the template.
+	  ![Image alt text](images/editproperties.png)
 5. Now that the template is set, we should bring back the content of the page into it's right location in the template. In the structure pane locate the **Grid Row** inside which is your Form and the surrounding Validation Group.
 	  ![Image alt text](images/grid.png)
 6. Drag the **Grid Row** and drop it onto the  **Simple Create and Edit Page Template** in the structure pane. Your page content should be back in place.
@@ -106,8 +107,7 @@ change the following template properties:
 |PanelTwoTitle | Address |
 |GoToParent | false |
 |BiDirectionalNavigation | false |
-
-
+{: title="Default values for page variables"}
 
 	  ![Image alt text](images/variables.png)
 

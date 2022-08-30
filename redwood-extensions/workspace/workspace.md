@@ -51,6 +51,7 @@ Users with the right roles can access Visual Builder Studio from the TEST instan
 | Development Environment |Choose the option available | This is mapped to your SaaS instance|
 | Base Oracle Cloud Application | None | We are creating a new app without dependencies |
 | Use Scratch Repository | Checked | For now we just want your personal copy of the code |
+{: title="New App Extension Properties"}
 
 	![workspace settings](images/workspacesettings.png)
 

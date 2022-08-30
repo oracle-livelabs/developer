@@ -77,7 +77,7 @@ Now let's add content to the empty columns we just created.
 | --- | --- |
 | Display | icons |
 | Chroming |Borderless |
-
+{: title="Button Properties"}
 
 ![Image alt text](images/buttonproperties.png)
 

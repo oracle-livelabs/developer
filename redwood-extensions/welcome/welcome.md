@@ -51,6 +51,7 @@ You are now seeing the welcome page of the visual development area for Visual Bu
   | 3 | Structure | Hierarchical view of the structure of your page |
 	  | 4 | Properties | A declarative way to define the properties of the selected component in your page |
 	  | 5 | Visual Editor | Shows you a design/live and code view of your page content |
+{: title="IDE areas"}
 
 2. The components palette contains over a hundred UI components that you can drag and drop onto your pages to design your interfaces. We are going to leverage page templates designed by Oracle's Design team for the Redwood apps to accelerate our application development. The templates provide a responsive user experience and will adjust your application to the device accessing it.
 
@@ -65,6 +66,7 @@ You are now seeing the welcome page of the visual development area for Visual Bu
 | 2 |Page Title | Accounts |
 | 3 | Description Text| Search and edit accounts |
 | 4 | Illustration Foreground | https://static.oracle.com/cdn/fnd/gallery/2107.1.0/images/illust-welcome-banner-fg-03.png |
+{: title="Template Properties"}
 
   ![Image alt text](images/properties.png)
 
