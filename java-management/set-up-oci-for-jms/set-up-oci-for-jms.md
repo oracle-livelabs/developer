@@ -27,11 +27,11 @@ You will need an OCI account with administrative privileges to complete this lab
 ## Task 1: Create OCI Resources using Onboarding Wizard
 The Onboarding Wizard helps to create the necessary resources automatically. We recommend this option for users new to OCI.
 
-1. Sign in to the Oracle Cloud Console as an administrator using the credentials provided by Oracle, as described in [Signing into the Console](https://docs.oracle.com/en-us/iaas/Content/GSG/Tasks/signingin.htm). See [Using the Console](https://docs.oracle.com/en-us/iaas/Content/GSG/Concepts/console.htm) for more information.
+1. Sign in to the Oracle Cloud Console as an administrator using the credentials provided by Oracle, as described in [Sign In for the First Time](https://docs.oracle.com/en-us/iaas/Content/GSG/Tasks/signingin.htm). See [Get to Know the Console](https://docs.oracle.com/en-us/iaas/Content/GSG/Concepts/console.htm) for more information.
 &nbsp;
 
-2. In the Oracle Cloud Console, open the navigation menu and click **Observability & Management**. Click **Java Management**.
-    ![image of console navigation to java management](images/console-navigation-java-management.png)
+2. In the Oracle Cloud Console, open the navigation menu, click **Observability & Management**, and then click **Fleets** under **Java Management**.
+    ![image of console navigation to java management](images/console-navigation-jms.png)
     &nbsp;
 3. Select the root compartment under which the Onboarding Wizard will create a new compartment for JMS fleets.
     &nbsp;
@@ -91,7 +91,7 @@ The Onboarding Wizard helps to create the necessary resources automatically. We 
 
 If you would like to customize your OCI resources, you may do so manually with the following steps.
 
-Sign in to the Oracle Cloud Console as an administrator using the credentials provided by Oracle, as described in [Signing into the Console](https://docs.oracle.com/en-us/iaas/Content/GSG/Tasks/signingin.htm). See [Using the Console](https://docs.oracle.com/en-us/iaas/Content/GSG/Concepts/console.htm) for more information.
+Sign in to the Oracle Cloud Console as an administrator using the credentials provided by Oracle, as described in [Sign In for the First Time](https://docs.oracle.com/en-us/iaas/Content/GSG/Tasks/signingin.htm). See [Get to Know the Console](https://docs.oracle.com/en-us/iaas/Content/GSG/Concepts/console.htm) for more information.
 
 1. Create a compartment for your JMS resources.
 
@@ -206,9 +206,8 @@ Sign in to the Oracle Cloud Console as an administrator using the credentials pr
         ![image of dynamic groups create page](images/dynamic-groups-create-example.png)
         &nbsp;
     * Click **Create**.
-        &nbsp;
-        For more information, see [Managing Dynamic Groups](https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingdynamicgroups.htm).
-        &nbsp;
+
+    For more information, see [Managing Dynamic Groups](https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingdynamicgroups.htm).
 
 
 7. Create Policies.
@@ -231,21 +230,23 @@ Sign in to the Oracle Cloud Console as an administrator using the credentials pr
     ```
     <copy>
         ALLOW GROUP FLEET_MANAGERS TO MANAGE fleet IN COMPARTMENT Fleet_Compartment
-        ALLOW GROUP FLEET_MANAGERS TO MANAGE management-agents IN COMPARTMENT Fleet_Compartment
-        ALLOW GROUP FLEET_MANAGERS TO MANAGE management-agent-install-keys IN COMPARTMENT Fleet_Compartment
-        ALLOW GROUP FLEET_MANAGERS TO READ METRICS IN COMPARTMENT Fleet_Compartment
-        ALLOW GROUP FLEET_MANAGERS TO MANAGE tag-namespaces IN TENANCY
-        ALLOW GROUP FLEET_MANAGERS TO MANAGE instance-family IN COMPARTMENT Fleet_Compartment
-        ALLOW GROUP FLEET_MANAGERS TO READ instance-agent-plugins IN COMPARTMENT Fleet_Compartment
-        ALLOW DYNAMIC-GROUP JMS_DYNAMIC_GROUP TO MANAGE management-agents IN COMPARTMENT Fleet_Compartment  
-        ALLOW SERVICE javamanagementservice TO MANAGE metrics IN COMPARTMENT  Fleet_Compartment WHERE  target.metrics.namespace='java_management_service' 
-        ALLOW DYNAMIC-GROUP JMS_DYNAMIC_GROUP TO USE tag-namespaces IN TENANCY
-        ALLOW DYNAMIC-GROUP JMS_DYNAMIC_GROUP TO USE METRICS IN COMPARTMENT Fleet_Compartment
-        ALLOW SERVICE javamanagementservice TO MANAGE log-groups IN COMPARTMENT Fleet_Compartment
-        ALLOW SERVICE javamanagementservice TO MANAGE log-content IN COMPARTMENT Fleet_Compartment
-        ALLOW DYNAMIC-GROUP JMS_DYNAMIC_GROUP TO MANAGE log-content IN COMPARTMENT Fleet_Compartment
-        ALLOW SERVICE javamanagementservice TO READ instances IN tenancy
-        ALLOW SERVICE javamanagementservice TO INSPECT instance-agent-plugins IN tenancy
+    ALLOW GROUP FLEET_MANAGERS TO MANAGE management-agents IN COMPARTMENT Fleet_Compartment
+    ALLOW GROUP FLEET_MANAGERS TO MANAGE management-agent-install-keys IN COMPARTMENT Fleet_Compartment
+    ALLOW GROUP FLEET_MANAGERS TO READ METRICS IN COMPARTMENT Fleet_Compartment
+    ALLOW GROUP FLEET_MANAGERS TO MANAGE tag-namespaces IN TENANCY
+    ALLOW GROUP FLEET_MANAGERS TO MANAGE instance-family IN COMPARTMENT Fleet_Compartment
+    ALLOW GROUP FLEET_MANAGERS TO READ instance-agent-plugins IN COMPARTMENT Fleet_Compartment
+    ALLOW DYNAMIC-GROUP JMS_DYNAMIC_GROUP TO MANAGE management-agents IN COMPARTMENT Fleet_Compartment
+    ALLOW SERVICE javamanagementservice TO MANAGE metrics IN COMPARTMENT Fleet_Compartment WHERE target.metrics.namespace='java_management_service'
+    ALLOW DYNAMIC-GROUP JMS_DYNAMIC_GROUP TO USE tag-namespaces IN TENANCY
+    ALLOW DYNAMIC-GROUP JMS_DYNAMIC_GROUP TO USE METRICS IN COMPARTMENT Fleet_Compartment
+    ALLOW SERVICE javamanagementservice TO MANAGE log-groups IN COMPARTMENT Fleet_Compartment
+    ALLOW SERVICE javamanagementservice TO MANAGE log-content IN COMPARTMENT Fleet_Compartment
+    ALLOW DYNAMIC-GROUP JMS_DYNAMIC_GROUP TO MANAGE log-content IN COMPARTMENT Fleet_Compartment
+    ALLOW SERVICE javamanagementservice TO READ instances IN tenancy
+    ALLOW SERVICE javamanagementservice TO INSPECT instance-agent-plugins IN tenancy
+    ALLOW SERVICE javamanagementservice TO USE management-agent-install-keys IN COMPARTMENT Fleet_Compartment
+    ALLOW DYNAMIC-GROUP JMS_DYNAMIC_GROUP TO MANAGE instances IN COMPARTMENT Fleet_Compartment
     </copy>
     ```
     ![image of policies create page](images/policies-create-example.png)
@@ -274,4 +275,4 @@ You may now **proceed to the next lab**.
 ## Acknowledgements
 
 * **Author** - Alvin Lam, Java Management Service
-* **Last Updated By/Date** - Yixin Wei, June 2022
+* **Last Updated By/Date** - Yixin Wei, August 2022

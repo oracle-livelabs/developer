@@ -111,7 +111,7 @@ Select **Show manual editor** and copy and paste these policies in the box below
 1. Clone the workshop code inside the directory you just created.
 	````
 	<copy>
-	git clone https://github.com/oracle/oci-react-samples.git
+	git clone --single-branch --branch helidon https://github.com/oracle/oci-react-samples.git
 	</copy>
 	````
   You should now see `oci-react-samples` in your root directory
