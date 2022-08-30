@@ -1,14 +1,14 @@
 # Introduction
 
-## About this Workshop
+## About This Workshop
 
 This lab shows you how to build an extension for Oracle Fusion Cloud Applications using Oracle Visual Builder Studio, while leveraging the Oracle Redwood user experience.
 
-In this scenario, we need to create a streamlined experience for account managers that will let them update specific data points about key accounts, and view the contact information for each account. Oracle Cloud Apps Digital Sales module has pages that allow account managers to do this today. But those pages contain many other fields and might involve navigation through several steps to get to the data. We are creating a tailored simplified flow for the end of the quarter update to help accelerate the process.
+Suppose you want to create a streamlined experience for your account managers, which will let them update specific data for key accounts, as well as view the contact information for each account. While Oracle Cloud Apps Digital Sales has pages that allow account managers to do this today, those pages also contain many other fields that might make it difficult to find the data requiring updates. We want a tailored, simplified flow for the end of the quarter update to help accelerate the process.
 
-The spec we got for the app require us to provide a page that will let us search for an account by name, then click to update key fields (CEO and projected revenue for this and next year). In addition we want and easy way to check the address of each of those accounts.
+We've been asked to provide a page that will let the user search for an account by name, then click to update key fields like CEO name and projected revenue for this year and next. In addition, we want an easy way to check the address of each account.
 
-Let's see how we can go about building such an extension leveraging Oracle Visual Builder.
+Let's see how we can go about building such an extension using Oracle Visual Builder Studio.
 
 Estimated Workshop Time: 1 hour
 
@@ -18,7 +18,7 @@ Estimated Workshop Time: 1 hour
 
 In this workshop, you will learn how to:
 * Use Oracle Visual Builder Studio
-* Create App UI extensions for Oracle Fusion Cloud Applications
+* Create extensions for Oracle Fusion Cloud Applications
 * Leverage Oracle Redwood templates and components
 * Interact with data in Oracle SaaS
 
@@ -26,12 +26,12 @@ In this workshop, you will learn how to:
 
 This lab assumes you have:
 * Access to Oracle Fusion Cloud Applications (Specifically the CX modules)
-* Access to the Oracle Visual Builder Studio that is part of Oracle Fusion Cloud Applications
+* Access to Oracle Visual Builder Studio that is part of Oracle Fusion Cloud Applications
 
 ## Learn More
 
 * [Oracle Visual Builder](https://www.oracle.com/application-development/visual-builder/)
-* [Extending Oracle Cloud Applications with Oracle Visual Builder](https://docs.oracle.com/en/cloud/paas/visual-builder/visualbuilder-building-appui/index.html)
+* [Extending Oracle Cloud Applications with Oracle Visual Builder Studio](https://docs.oracle.com/en/cloud/paas/visual-builder/visualbuilder-building-appui/index.html)
 
 ## Acknowledgements
 * **Author** - Shay Shmeltzer, Oracle Cloud Development Tools, August 2022
