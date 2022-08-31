@@ -10,15 +10,7 @@ Oracle Blockchain Platform gives you a pre-assembled platform for building and r
 
 
 ### Workshop Objectives
-
-<!-- In this workshop, you will learn how to:
-- Create a Blockchain Network connecting 3 organizations
-- Create, Deploy & Execute Smart Contracts using Oracle Blockchain App Builder
-- Create & Setup API Gateway to connect with Smart Contract API's
-- Build a Car Marketplace application using APEX
-- Trading Cars using Tokens in Car Marketplace
- -->
-In this laworkshop, you will:
+In this workshop, you will:
 - Become familiar with Oracle Blockchain Platform and it's components
 - Become Familiar with Oracle Blockchain Platform Provisioning and Administration
 - Using Oracle Blockchain Platform Admin Console for Admin tasks and Monitoring
