@@ -23,22 +23,28 @@ This lab assumes you have:
 
 ## Task 1: Environment Setup
 
-Before continuing this workshop, confirm that you have access to the pre-configured environment provided by LiveLabs administrators. This environment comes in the form of a virtual machine instance and includes a configured version of Blockchain App Builder, which you will use to deploy your first chaincode on Oracle Blockchain Platform.
+This environment comes in the form of a virtual machine instance and includes a configured version of Blockchain App Builder, which you will use to deploy your first chaincode on Oracle Blockchain Platform.
 
 You will also need to create a new [Compartment](https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcompartments.htm) for this workshop. This will allow you to organize and isolate your OCI resources.
 
-1. In the OCI services menu, select 'Identity & Security' and click on 'Compartments' to view all compartments available in your tenancy. 
+1. Now with access to your remote desktop session as shown below, fill in your tenancy/account name and click *Next*
+    ![Remote Desktop Landing](images/remote-desktop-landing.png) 
+
+2. Click on the down arrow next to *Oracle Cloud Infrastructure Direct Sign-in* to expand and reveal the login input fields, then provide your OCI credentials and click *Sign-in*
+    ![OCI Console Login](images/oci-console-login.png) 
+
+3. In the OCI services menu, select 'Identity & Security' and click on 'Compartments' to view all compartments available in your tenancy. 
 
   ![Access Identity & Security](images/1-obp-1-1.png)
 
-2. Click 'Create Compartment' and fill out the form as shown:
+4. Click 'Create Compartment' and fill out the form as shown:
     - **Name** your compartment (e.g. Blockchain LiveLabs).
     - Add an optional **Description**.
     - Select a **Parent Compartment**. This is the 'root' compartment by default.
 
   ![View Compartments](images/1-obp-1-2.png)
 
-3. Click 'Create Compartment'. 
+5. Click 'Create Compartment'. 
 
   ![Create Compartment Form](images/1-obp-1-3.png)
 
