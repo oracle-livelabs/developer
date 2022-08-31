@@ -8,17 +8,17 @@ Estimated Time: 5 minutes
 
 ### About this lab
 
-With the Department and Employee pages now available, you'll need to make sure users can navigate between these pages. You can do this by adding buttons that perform specific *actions* when you click them. In Visual Builder, this sequence of actions is known as an *action chain*. In this lab, you'll add buttons that take you from the Departments page to the Employees pages and back again. Each button is associated with an event that sets off a navigation action chain.
+With the Department and Employee pages now available, you'll need to make sure users can navigate between these pages. You do this by adding buttons that perform specific *actions* when you click them. In Visual Builder, this sequence of actions is called an *action chain*. In this lab, you'll add buttons that take you from the Departments page to the Employees pages and back again. Each button is associated with an event that sets off a navigation action chain.
 
 ## Task 1: Create an action chain to navigate from the Departments page to the Employees page
 
 1.  Click the **Web Applications** ![Web Applications icon](images/vbcsnd_webapp_icon.png) tab in the Navigator, and click **main-departments** under the **hrwebapp** and **main** nodes.
-2.  Click the **Components** palette, then drag a **Button** under **Common** to the **Toolbar**, to the right of the **Create Department** button.
+2.  In the Page Designer, click **Components** to open the Components palette. Enter `button` in the Filter field, then drag a Button from the Common category to the Toolbar, to the right of the **Create Department** button on the main-departments page.
 
     ![](images/vbcsnd_cse_s2.png "This image shows the main-departments page, with a Button component being dragged from the Components palette into the toolbar, next to the Create Department button.")
 
 3.  Click **Properties** (if necessary) and in the **General** tab, change the **Label** field to `Show Employees`.
-4.  Click the **Events** tab for the button, then click the **\+ New Event** button. From the menu, select **On 'ojAction'**, the default action suggested for a button click.
+4.  Click the button's **Events** tab, then click the **\+ New Event** button. From the menu, select **On 'ojAction'**, the default action suggested for a button click.
 
     ![](images/vbcsnd_cse_s4.png "This image shows the New Event menu on a Button component's Events tab. The On 'ojAction' option is selected.")
 
@@ -37,6 +37,8 @@ With the Department and Employee pages now available, you'll need to make sure u
 7.  Click **Preview** ![Preview icon](images/vbcsnd_run_icon.png) in the header to run the page in its own browser tab and see how it will appear to a user. (You can continue to use the Live mode to test your app if you prefer, though the Preview form factor is a bit more pleasing.)
 
 8.  In the new browser tab, click **Show Employees**.
+
+    ![](images/preview.png "This image displays the Departments page as it will appear to the user when you run the app.")
 
     You'll notice there's no way to get back to the main-departments page from the main-employees page, something we'll fix in the next task. Close the browser tab.
 
@@ -58,7 +60,7 @@ With the Department and Employee pages now available, you'll need to make sure u
 
 7.  Now click **Preview** ![Preview icon](images/vbcsnd_run_icon.png) and make sure you can get to the Departments page from the Employees page. Close the browser tab.
 
-8. In the Web Apps pane, click **main**, then **Diagram** to view the application's modified page flow. You'll see bi-directional arrows flowing between the main-departments page and the main-employees page. Select the main-departments page tile to see ![Green navigation icon](images/diagram-navigation-icon-green.png) ![Black navigation icon](images/diagram-navigation-icon-black.png) navigation icons appear in the page's Properties pane, indicating that you can now navigate from main-departments to main-employees and back.
+8. In the Web Apps pane, click **main**, then **Diagram** to view the application's modified page flow. You'll see bi-directional arrows flowing between the main-departments page and the main-employees page. Select the main-departments page tile to see ![Blue navigation icon](images/diagram-navigation-icon-green.png) ![Black navigation icon](images/diagram-navigation-icon-black.png) navigation icons appear in the page's Properties pane, indicating that you can now navigate from main-departments to main-employees and back.
 
     ![](images/vbcsnd_cpc_s9.png "This image shows the web app's main page flow. The main-departments page points to both the main-create-department page and the main-employees page. The main-employees page points to the main-create-employee page. The main-departments page is selected to show more details in the Properties pane.")
 
@@ -67,4 +69,4 @@ With the Department and Employee pages now available, you'll need to make sure u
 ## Acknowledgements
 
 * **Author** - Sheryl Manoharan, Visual Builder User Assistance, August 2021
-* **Last Updated By** - June 2022
+* **Last Updated By** - August 2022
