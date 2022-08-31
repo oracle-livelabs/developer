@@ -76,7 +76,7 @@ This lab assumes you have:
 
     ![](./images/init-multitenant.png " ")
 
-You may now [proceed to the next lab](#next).
+You may now proceed to the next lab.
 
 ## Appendix 1: Managing Startup Services
 
@@ -147,6 +147,6 @@ You may now [proceed to the next lab](#next).
     ```
 
 ## Acknowledgements
-* **Author** - Andy Rivenes, Sr. Principal Product Manager, Oracle Database In-Memory
-* **Contributors** - Kay Malcolm, Didi Han, Rene Fontcha
-* **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, October 2021
+* **Author** - Rene Fontcha, LiveLabs Platform Lead, NA Technologyy
+* **Contributors** - Kay Malcolm
+* **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, August 2022

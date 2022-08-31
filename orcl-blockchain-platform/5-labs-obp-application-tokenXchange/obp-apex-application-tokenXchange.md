@@ -4,21 +4,23 @@
 
 APEX is a low-code development platform that enables you to build scalable, secure enterprise apps, with world-class features, that can be deployed anywhere.
 
-*Estimated Lab Time: 10 minutes*
+*Estimated Lab Time:* 10 minutes
 
 ### Objectives
 
 In this lab, you will:
 - Trade a Car making payments using Tokens
 
-### Pre-Requisites
-
+### Prerequisites
 This lab assumes you have:
-- Created a Blockchain Network connecting 3 organizations
-- Created, Deployed & Executed Smart Contracts using Oracle Blockchain App Builder
-- Created & Setup API Gateway to connect with Smart Contract API's
-- Building Car Marketplace application using APEX
-
+- An Oracle Cloud account
+- You have completed:
+    - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
+    - Lab: Environment Setup
+    - Lab: Create a Blockchain Network connecting 3 Organizations
+    - Lab: Create and Deploy Smart Contracts using Oracle Blockchain App Builder
+    - Lab: Create & Setup API Gateway to connect with Smart Contract API's
+    - Lab: Building Car Marketplace application using APEX
 
 ## Task 1: Setup APEX Web Credentials
 
@@ -166,5 +168,5 @@ Additionaly, you are able to view the invoice from the purchase in the Orders > 
 
 ## Acknowledgements
 * **Author** - Amal Tyagi, Cloud Engineer
-* **Contributors** -  Teodora Gheorghe, Adrien Lhemann, Diego Morales, Lokeswara Nushisarva, Siddesh C. Prabhu Dev Ujjni
-* **Last Updated By/Date** - Amal Tyagi, August 2022
+* **Contributors** -  Teodora Gheorghe, Adrien Lhemann, Diego Morales, Lokeswara Nushisarva, Siddesh C. Prabhu Dev Ujjni, Rene Fontcha
+* **Last Updated By/Date** - Rene Fontcha, August 2022
