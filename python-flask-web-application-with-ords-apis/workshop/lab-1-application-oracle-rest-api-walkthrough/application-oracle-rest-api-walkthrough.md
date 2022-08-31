@@ -35,46 +35,50 @@ This lab assumes you have:
 
 ## Task 1: Obtain code for this workshop
 
-1. [Download the ZIP file that contains our the Flask application](https://objectstorage.us-ashburn-1.oraclecloud.com/p/jyHA4nclWcTaekNIdpKPq3u2gsLb00v_1mmRKDIuOEsp--D6GJWS_tMrqGmb85R2/n/c4u04/b/livelabsfiles/o/labfiles/flask-ords-lab.zip).
+1. [Download the ZIP file that contains our the Flask application]().
 
 2. Once downloaded, un-compress the ZIP file and open with your text editor (examples in this Workshop will use Visual Studio Code). The contents should look similar to this: 
 
     ![Reviewing the folders in VS Code](images/review-folders-for-flask-app.png " ")
 
-    - At a <i>minimum</i> you'll want to ensure you have a `static` folder, `templates` folder, and the Python application `app.py`.
-
 > :bulb: *For details on how to run a Flask application in a Virtual Environment (venv), refer to the [Installation](https://flask.palletsprojects.com/en/2.2.x/installation/) and [Quick Start](https://flask.palletsprojects.com/en/2.2.x/quickstart/) steps in the Flask documentation.*
 
-## Task 2: Activate the virtual environment 
+## Task 2: Activate the virtual environment
 
 While the main focus of this Workshop is not Flask, we will periodically review certain helpful actions for the developer. If you have limited experience with the Flask framework, the reviews may be helpful. 
 
 However, if ever you do get stuck, we encourage you to review the [Flask](https://flask.palletsprojects.com/en/2.2.x/installation/#) documentation first, *then* return to this Lab once you are more comfortable with Flask operations. 
 
-1. Activate your virtual environment from your terminal. 
-
+1. Open your terminal.
     ![Open New Terminal in VS Code](images/open-terminal-in-vs-code.png " ")
 
-    - Commands are different for MacOS/Linux and Windows. Alternatively, if using VS Code, we recommend you follow [these instructions](https://code.visualstudio.com/docs/python/tutorial-flask) on how to install Python virtual environments in VS Code. Once complete, come back to this Lab. You may also refer to the "Learn More" section of this Lab for more details on Virtual Environments in VS Code.
-    
-    - If you choose to activate the virtual environment manually, use the following commands to activate:
+    * Commands are different for MacOS/Linux and Windows. Alternatively, if using VS Code, we recommend you follow [these instructions](https://code.visualstudio.com/docs/python/tutorial-flask) on how to install Python virtual environments in VS Code (once complete, come back to this Lab). 
+
+    > :sos: If  your Virtual Environment fails to start in VS Code, check your Python Interpreter. You can do this by:
+    1. Navigating to your Command Palette
+        ![Navigating to the Command Palette.](images/command-palette-action.png " ")
+    2. Searching for and selecting *Python: Select Interpreter*
+        ![Select Interpreter action.](images/python-select-interpreter-action.png " ")
+    3. Selecting the Python Interpreter associated with the Virtual Environment
+        ![Activating the Virtual Environment.](images/selecting-the-venv-python-interpreter.png " ")
+
+2. If you choose to activate the virtual environment *manually*, use the following commands to activate:
 
     ![Activating the Virtual Environment](images/activating-virtual-environment.png " ")
-    
-    - MacOS/Linux
+
+    * MacOS/Linux
     ```
     <copy>. venv/bin/activate</copy>
     ```
-    - Windows
+    * Windows
     ```
     <copy>venv\Scripts\activate</copy>
     ```
-
-2. You should now see the prefix (or similar to) `(.venv)` in your terminal:
+3. You should now see the prefix (or similar to) **`(.venv)`** in your terminal:
     
     ![Opening the Python application](images/verify-venv-is-active.png " ")
 
-## Task 3: Activate Flask
+## Task 4: Activate Flask
 
 Next we'll start the Flask Application.
 
@@ -88,7 +92,7 @@ There are various ways you can start your Flask application, this is the more ma
     
 2. Then:
     ```
-    <copy>export FLASK_APP=app.py</copy>
+    <copy>export FLASK_APP=lab_1_app.py</copy>
     ```
     ![Opening the Python application](images/export-flask-app.png " ")
     
