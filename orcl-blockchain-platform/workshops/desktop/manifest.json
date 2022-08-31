@@ -8,37 +8,37 @@
       "filename": "../../introduction/introduction.md"
     },
     {
-      "title": "Lab 1: Environment Setup",
-      "description": "Verify Setup of compute instance",
-      "filename": "https://oracle-livelabs.github.io/common/labs/verify-compute/verify-compute-ssh-and-novnc.md"
+      "title": "Getting Started",
+      "description": "Using noVNC Remote Desktop",
+      "filename": "https://oracle-livelabs.github.io/common/labs/remote-desktop/using-novnc-remote-desktop.md"
     },
     {
-      "title": "Lab 2: Initialize Environment ",
+      "title": "Lab 1: Initialize Environment ",
       "description": "Initialize Environment",
       "filename": "../../initialize-environment/initialize-environment.md"
     },
     {
-      "title": "Lab 3: Create a Blockchain Network connecting 3 Organizations",
+      "title": "Lab 2: Create a Blockchain Network connecting 3 Organizations",
       "description": "OBP Environment Setup",
       "filename": "../../1-labs-obp-env-setup/obp-console.md"
     },
     {
-      "title": "Lab 4: Create and Deploy Smart Contracts using Oracle Blockchain App Builder",
+      "title": "Lab 3: Create and Deploy Smart Contracts using Oracle Blockchain App Builder",
       "description": "OBP App Builder",
       "filename": "../../2-labs-obp-appbuilder/obp-appbuilder.md"
     },
     {
-      "title": "Lab 5: Create & Setup API Gateway to connect with Smart Contract API's",
+      "title": "Lab 4: Create & Setup API Gateway to connect with Smart Contract API's",
       "description": "OBP - API Gateway",
       "filename": "../../3-labs-obp-apigateway/obp-apigateway.md"
     },
     {
-      "title": "Lab 6: Building Car Marketplace application using APEX",
+      "title": "Lab 5: Building Car Marketplace application using APEX",
       "description": "Building Car Marketplace application using APEX",
       "filename": "../../4-labs-obp-application/obp-apex-application.md"
     },
     {
-      "title": "Lab 7: Trading Cars using Tokens in Car Marketplace",
+      "title": "Lab 6: Trading Cars using Tokens in Car Marketplace",
       "description": "Trading Cars using Tokens in Car Marketplace",
       "filename": "../../5-labs-obp-application-tokenXchange/obp-apex-application-tokenXchange.md"
     },

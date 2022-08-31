@@ -1,6 +1,6 @@
-# Car Trading Marketplace using Tokens in Oracle Blockchain Platform 
+# Car Trading Marketplace using Tokens in Oracle Blockchain Platform and Oracle Application Express (APEX)
 
-## Introduction: Car Trading Marketplace using Tokens built with Oracle Application Express (APEX)
+## Introduction
 
 APEX is a low-code development platform that enables you to build scalable, secure enterprise apps, with world-class features, that can be deployed anywhere.
 

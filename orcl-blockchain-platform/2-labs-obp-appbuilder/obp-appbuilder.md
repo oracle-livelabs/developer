@@ -1,8 +1,10 @@
 # Create and Deploy Smart Contracts using Oracle Blockchain App Builder
 
-## Introduction: Oracle Blockchain App Builder
+## Introduction
 
 Blockchain App Builder is a tool set that assists Oracle Blockchain Platform users with rapid development, testing, debugging, and deployment of chaincode on Oracle Blockchain Platform networks. Blockchain App Builder is accessible through Visual Studio Code as an extension and through a lightweight command line interface. Blockchain App Builder to manage the complete life cycle of a token. Developers can tokenize existing assets and automatically generate token classes and methods to use for token lifecycle management.
+
+*Estimated Lab Time:* 25 minutes
 
 ### About OBP Tokenization
 
@@ -15,8 +17,6 @@ Blockchain App Builder is a tool set that assists Oracle Blockchain Platform use
 4. The tokenization feature uses an account/balance model to represent tokenized assets as balances in accounts - `john_dealer1` and `sam_dealer2`. The balance of their accounts is tracked globally, to ensure that transaction amounts are valid when buying/selling cars. The on-hold balance and transaction history are also tracked.
 
 5. Feel free to learn more about [Tokenization support with OBP](https://docs.oracle.com/en/cloud/paas/blockchain-cloud/usingoci/tokenization-support.html).
-
-*Estimated Lab Time:* 25 minutes
 
 ### Objectives
 

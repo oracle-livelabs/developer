@@ -1,6 +1,6 @@
 # How to Build User Interface using Oracle APEX and Integrate with Oracle Blockchain Platform 
 
-## Introduction: Oracle Application Express (APEX)
+## Introduction
 
 APEX is a low-code development platform that enables you to build scalable, secure enterprise apps, with world-class features, that can be deployed anywhere.
 

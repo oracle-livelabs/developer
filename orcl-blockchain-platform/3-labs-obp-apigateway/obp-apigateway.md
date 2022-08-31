@@ -1,6 +1,6 @@
 # Create & Setup API Gateway to connect with Smart Contract API's
 
-## Introduction: Oracle API Gateway
+## Introduction
 
 The API Gateway service enables you to publish APIs with private endpoints that are accessible from within your network, and which you can expose with public IP addresses if you want them to accept internet traffic. The endpoints support API validation, request and response transformation, CORS, authentication and authorization, and request limiting.
 

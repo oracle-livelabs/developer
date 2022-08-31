@@ -1,6 +1,6 @@
 # Create a Blockchain Network connecting 3 Organizations
 
-## Introduction: Oracle Blockchain Platform (OBP)
+## Introduction
 
 Oracle Blockchain Platform is based on the Hyperledger Fabric project from the Linux Foundation, and it extends the open-source version of Hyperledger Fabric in many ways.
 
