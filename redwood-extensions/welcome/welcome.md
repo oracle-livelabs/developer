@@ -21,7 +21,6 @@ You should now be in the Designer, VB Studio's visual editor. We'll start by cre
 
 	![Image alt text](images/results.png)
 
-> **Note:** Use this format for notes, hints, tips. Only use one "Note" at a time in a step.
 
 2. In the Create App UI dialog, provide a name in the form **YourName-Accounts**, then click **Create**:
 
@@ -31,13 +30,15 @@ In the Diagram view on the right, you can see the flows and pages for this App U
 
   ![Image alt text](images/appflow.png)
 
-3. Double-click  **main-start** to open the page in the Page Designer:
+3. Double-click  **main-start** to open the page in the Page Designer, one of the main visual editors in the Designer:
 
   ![Image alt text](images/IDE.png)
 
 ## Task 2: Design Your Page
 
-1. Let's start by exploring the Designer a bit. There are lots of tabs you can click to expand/collapse different areas and give yourself more room to work.
+1. Let's start by exploring the Designer a bit.
+
+	**Note:** There are lots of tabs you can click to expand/collapse different areas and give yourself more room to work.
 
   ![Image alt text](images/IDE2.png)
 
@@ -61,7 +62,7 @@ The Components palette contains over a hundred UI components that you can drag a
 | --- | --- | --- |
 | 1 | Background Color | Choose your preferred color  |
 | 2 | Description| **Search and edit accounts** |
-| 3 | Illustration Foreground | https://static.oracle.com/cdn/fnd/gallery/2107.1.0/images/illust-welcome-banner-fg-03.png |
+| 3 | Illustration foreground | https://static.oracle.com/cdn/fnd/gallery/2107.1.0/images/illust-welcome-banner-fg-03.png |
 | 4 |Page Title | **Accounts** |
 {: title="Template Properties"}
 
@@ -98,9 +99,9 @@ The Value field in the Properties pane now has a reference to our new variable.
   ![Image alt text](images/collection.png)
 3. In the slots pop-up, select **Default**:
   ![Image alt text](images/slot.png)
-The layout of our first page is now read.  Our next step is to add some data to the page from Oracle Fusion Cloud Apps.
+The layout of our first page is now ready.  Our next step is to add some data to the page from Oracle Fusion Cloud Apps.
 
-Notice how all of our design tasks so far have been done with simple drag and drop functionality and setting properties. This visual development approach is key to the productivity offered by Visual Builder Studio. If you prefer to work in code, however, you can always do so by clicking the Code button right above where the page preview is displayed. Any modifications you make to your page's HTML code while in Code mode are automatically reflected in Design mode, should you choose to return to it.  
+Notice how all of our design tasks so far have been done with simple drag and drop functionality and setting properties. This visual development approach is key to the productivity that Visual Builder Studio provides. If you prefer to work in code, however, you can always do so by clicking the Code button right above where the page preview is displayed. Any modifications you make to your page's HTML code while in Code mode are automatically reflected in Design mode, should you choose to return to it.  
 
 At this point your screen should look like this:
   ![Image alt text](images/complete.png)
