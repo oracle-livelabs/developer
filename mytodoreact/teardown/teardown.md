@@ -19,11 +19,11 @@ The resources in this task weren't created during the setup script, so we must d
 
 1. Since the mtdrworkshop bucket created in Lab 3 wasn't created by the setup script, the destroy script does not know of it and we need to delete it ourselves
 
-    ![](images/delete-bucket.png)
+    ![Delete Buckey](images/delete-bucket.png " ")
 
 2. We can't run the destroy script when there's a deployment in the api gateway. Navigate to Gateway, click on the deployment and click delete.
 
-    ![](images/delete-deployment.png)
+    ![Delete deployment](images/delete-deployment.png " ")
 
 ## **Task 2**: Run the Destroy Script
 
