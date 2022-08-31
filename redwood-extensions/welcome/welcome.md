@@ -1,4 +1,4 @@
-# Creating Your First Page
+# Create Your First Page
 
 ## Introduction
 
@@ -21,81 +21,91 @@ You should now be in the Designer, VB Studio's visual editor. We'll start by cre
 
 	![Image alt text](images/results.png)
 
-	> **Note:** Use this format for notes, hints, tips. Only use one "Note" at a time in a step.
+> **Note:** Use this format for notes, hints, tips. Only use one "Note" at a time in a step.
 
 2. In the Create App UI dialog, provide a name in the form **YourName-Accounts**, then click **Create**:
 
   ![Image alt text](images/wssettings.png)
 
-3. In the Diagram view on the right, you can see the flows and pages for this App UI. A flow is a part of your application that contains pages that relate to each other. An application can contain multiple flows, and a flow can contain many pages. In this case we have one flow, *main*, and one page, *main-start*:
+In the Diagram view on the right, you can see the flows and pages for this App UI. A flow contains pages that relate to each other. An application can contain multiple flows, and a flow can contain many pages. In this case we have one flow, *main*, and one page, *main-start*:
 
   ![Image alt text](images/appflow.png)
 
-4. Double-click  **main-start** to open the page in the Page Designer:
+3. Double-click  **main-start** to open the page in the Page Designer:
 
   ![Image alt text](images/IDE.png)
 
 ## Task 2: Design Your Page
 
-1. Let's explore the areas of the visual editor. Note that you can click on the various tabs to expand/collapse areas of your development environment.
+1. Let's start by exploring the Designer a bit. There are lots of tabs you can click to expand/collapse different areas and give yourself more room to work.
 
   ![Image alt text](images/IDE2.png)
 
   | #| Tab | Functionality |
   | --- | --- | --- |
-  | 1 | Components | Contain UI components you can add to a page  |
-  | 2 |Data | List data objects you can work with - based on connections you created to SaaS objects |
-  | 3 | Structure | Hierarchical view of the structure of your page |
-	  | 4 | Properties | A declarative way to define the properties of the selected component in your page |
-	  | 5 | Visual Editor | Shows you a design/live and code view of your page content |
+  | 1 | Components | UI components you can add to a page, sorted into categories  |
+  | 2 |Data | Data objects you can work with, based on connections you create to SaaS objects |
+  | 3 | Structure | Hierarchical view of the page's structure |
+	  | 4 | Properties | Declarative area to define properties for the component selected in your page |
+	  | 5 | Canvas | Displays a design/live view (or code view) of your page content |
 {: title="IDE areas"}
 
-2. The components palette contains over a hundred UI components that you can drag and drop onto your pages to design your interfaces. We are going to leverage page templates designed by Oracle's Design team for the Redwood apps to accelerate our application development. The templates provide a responsive user experience and will adjust your application to the device accessing it.
+The Components palette contains over a hundred UI components that you can drag and drop onto your pages to design your interfaces. In this workshop, we're going to leverage some page templates designed by Oracle's Redwood Design team to accelerate our application development. The templates provide a responsive user experience, which means your app will adjust to the device accessing it.
 
-3. Use the search box at the top of the components palette to search for **welcome** which will find the **welcome page template**. Drag the component from the component palette and drop it on the visual editor.  
+2. Use the search box at the top of the Components palette to search for **welcome**, which will find the **Welcome Page Template**. Drag the component from the Component palette and drop it on the canvas:
   ![Image alt text](images/welcome.png)
 
-4. Let's set some properties of the template. Click the **All** tab in the component palette and modify the following properties:
+3. Let's set some properties for the template. Click the **All** tab in the Properties pane and modify these properties:
 
 | # | Property | Value |
 | --- | --- | --- |
 | 1 | Background Color | Choose your preferred color  |
-| 2 |Page Title | Accounts |
-| 3 | Description Text| Search and edit accounts |
-| 4 | Illustration Foreground | https://static.oracle.com/cdn/fnd/gallery/2107.1.0/images/illust-welcome-banner-fg-03.png |
+| 2 | Description| **Search and edit accounts** |
+| 3 | Illustration Foreground | https://static.oracle.com/cdn/fnd/gallery/2107.1.0/images/illust-welcome-banner-fg-03.png |
+| 4 |Page Title | **Accounts** |
 {: title="Template Properties"}
 
   ![Image alt text](images/properties.png)
 
-## Task 3: Adding a search component and defining a variable
+## Task 3: Add a Search Component and Define a Variable
 
-1. In the search box for the components palette type **search**. This will locate a component called **input search**.
-2. Drag the input search and drop it on the page in the visual editor (or onto the structure pane on top of the welcome template). A popup will let you choose into which slot of the template to drop the component. Drop it into the **search slot**.
-  ![Image alt text](images/properties.png)
+1. In the Components palette's Search box type **search**, which will locate a component called **Input Search**.
+2. Drag this component and drop it on the page in the canvas. A pop-up will appear asking which slot you want to use; choose **Search slot**:
+  ![Image alt text](images/slot.png)
 
-3. We need to keep track of the term the user is searching for. To do that we'll use a page variable.
-While the input search is selected in the visual editor, click the **data** tab in the properties palette.
+	This field is where users will enter a search term to locate an account. We need to keep track of these terms, so we'll use a page variable to do that.
 
-4. Click the little arrow at the top right of the value field to popup a list of variables.
+3. While the input search is selected in the canvas, click the **Data** tab in the Properties pane.
 
-5. Click the create **create variable** next to the page to create a page level variable. Note that we have multiple scopes for variables which makes it easy to share the values of these variables across pages and flow in the application when needed.
-  ![Image alt text](images/properties.png)
+4. Click the little arrow at the top right of the Value field to display a list of variables.
 
-6. For the id of the variable type **searchString** and keep the type as String and click create. The value property now has a reference to the variable in it.
+5. Next to the **Page** category, click **Create Variable** to create a page-level variable:
+
+  ![Image alt text](images/variable.png)
+
+	Notice that there are multiple scopes for variables, which helps to share their values across pages and flows in the application.
+
+6. In the Create Variable dialog's ID field, type **searchString**, leaving the Type as String. Click **Create**:
+
   ![Image alt text](images/variablesettings.png)
 
-## Task 4: Adding a collection container and working with the structure pane
+The Value field in the Properties pane now has a reference to our new variable.
 
-1. In the search box for the components palette type **collection**. This will locate a component called **collection container**.
-2. Drag the collection container to the structure pane onto the Welcome Page template.
+## Task 4: Add a Collection Container and Work with the Structure Pane
+
+1. In the Components palette's Search box type **collection**, which will locate a component called **Collection Container**.
+2. Drag this component to the Structure pane and drop it on top of the Welcome Page template:
   ![Image alt text](images/collection.png)
-3. Select the **default** slot as the location for the collection container.
+3. In the slots pop-up, select **Default**:
   ![Image alt text](images/slot.png)
-The layout of our first page is ready now, and the next step is to add some data to the page from Oracle Fusion Cloud Apps.
-Note how so far all the design of the page was done with simple drag and drop functionality and setting properties. This visual development approach is key to the productivity offered by Visual Builder. Note however that there is a code button at the top right of the visual preview area. If you'll click on it you'll be able to see the actual HTML code used in your page. The code can be modified directly if needed, but for now we'll return to the design view by clicking the design button.
+The layout of our first page is now read.  Our next step is to add some data to the page from Oracle Fusion Cloud Apps.
+
+Notice how all of our design tasks so far have been done with simple drag and drop functionality and setting properties. This visual development approach is key to the productivity offered by Visual Builder Studio. If you prefer to work in code, however, you can always do so by clicking the Code button right above where the page preview is displayed. Any modifications you make to your page's HTML code while in Code mode are automatically reflected in Design mode, should you choose to return to it.  
+
+At this point your screen should look like this:
   ![Image alt text](images/complete.png)
 
-Now that our layout for the page is ready, it is time to get some data from Oracle SaaS into the page, which is what the next lab does.
+Let's move on to the next lab, where we'll learn how to get some data from Oracle SaaS onto the page.
 
 ## Learn More
 

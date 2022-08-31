@@ -10,29 +10,29 @@
       "filename": "../../introduction/introduction.md"
     },
     {
-      "title": "Working with Projects and Workspaces",
+      "title": "Work with Projects and Workspaces",
       "description": "Use Workspaces to create new Application Extension in your project",
       "filename": "../../workspace/workspace.md"
     },
     {
-      "title": "Creating Your First Page",
+      "title": "Create Your First Page",
       "description": "Labs that follow the introduction are numbered, starting with Lab 1",
       "filename": "../../welcome/welcome.md"
     },
     {
-      "title": "Connecting to Oracle Fusion Cloud Apps Data",
+      "title": "Connect to Oracle Fusion Cloud Apps Data",
       "filename": "../../saasservice/saasservice.md"
     },
     {
-      "title": "Adding Edit and Details Pages",
+      "title": "Add Edit and Details Pages",
       "filename": "../../editpage/editpage.md"
     },
     {
-      "title": "Adding Buttons and Action Chains",
+      "title": "Add Buttons and Action Chains",
       "filename": "../../tableedit/tableedit.md"
     },
     {
-        "title": "Applying Redwood Page Templates",
+        "title": "Apply Redwood Page Templates",
         "filename": "../../rweditpage/rweditpage.md"
     },
     {

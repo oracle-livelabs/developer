@@ -26,7 +26,7 @@ In this workshop, you will learn how to:
 
 This lab assumes you have:
 * Access to Oracle Fusion Cloud Applications (Specifically the CX modules)
-* Access to VB Studio that is part of Oracle Fusion Cloud Applications
+* Access to the VB Studio instance that was provisioned with your Oracle Fusion Cloud Applications instance
 
 ## Learn More
 

@@ -1,4 +1,4 @@
-# Creating a New Extension
+# Create a New Extension
 
 ## Introduction
 
@@ -20,11 +20,11 @@ In this lab, you will:
 
 Users with the right roles can access VB Studio from their Oracle Fusion Cloud Applications' TEST instance.
 
-1. Login to Oracle Cloud Fusion Applications:
+1. Log in to Oracle Cloud Fusion Applications:
 
 	![login screen](images/login.png)
 
-2. From the hamburger menu at the top left, navigate to the **Configuration** section and expand it. Select the **Visual Builder** option (which technically should be "Visual Builder Studio"):
+2. In the hamburger menu at the top left, navigate to the **Configuration** section and expand it. Select the **Visual Builder** option (which technically should be "Visual Builder Studio"):
 
   ![Main menu](images/menu.png)
 
@@ -34,9 +34,11 @@ Users with the right roles can access VB Studio from their Oracle Fusion Cloud A
 
 	VB Studio uses *projects* to manage individual development teams' activities.
 
-4. You are now on the project's home page. From here you can navigate to all your project's components, including environments, Git repositories, CI/CD pipelines, issue tracking system, wikis, and much more. In this lab, we'll focus only on workspaces. A *workspace* is a private area where you can develop your extension. Among other things, the workspace defines your Git repository, your Oracle Fusion Cloud Application environment, and other important details.
+4. You are now on the project's home page:
 
 	![Home Page](images/homepage.png)
+
+	From here you can navigate to all your project's components, including environments, Git repositories, CI/CD pipelines, issue tracking system, wikis, and much more. In this lab, we'll focus only on workspaces. A *workspace* is a private area where you can develop your extension. Among other things, the workspace defines your Git repository, your Oracle Fusion Cloud Application environment, and other important details.
 
 5. Click **Workspaces** in the left navigation menu:
 
@@ -49,7 +51,7 @@ Users with the right roles can access VB Studio from their Oracle Fusion Cloud A
 7. In the New Application Extension dialog, populate the fields with these values:
 | Field | Value | Explanation |
 | --- | --- | --- |
-| Extension Name | YourName-Accounts | To keep the names distinct, use your first name plus first initial of your last name, as in *MaryC-Accounts* |
+| Extension Name | YourName-Accounts | To keep the names distinct, use your first name plus the first initial of your last name, as in *MaryC-Accounts* |
 | Development Environment |Choose the option available | Mapped to your SaaS instance|
 | Base Oracle Cloud Application | None | Not needed in this scenario |
 | Use Scratch Repository | Check | For now, you can just work in a private Git repository |
