@@ -10,39 +10,38 @@ However, best practices for applications such as our example Flask application w
 
 1. Controlling access to protected resources is done by defining privileges. Privileges restrict access to only users having at least one of a set of specified roles. 
 
-2. A privilege is then associated with one or more resource modules (such as our `flask` Resource Module):
+  - A privilege is then associated with one or more resource modules (such as our `flask` Resource Module):
 
-   ![Our Flask Resource Module](images/flask-resource-module-in-oci.png " ")
+    ![Our Flask Resource Module](images/flask-resource-module-in-oci.png " ")
 
-   - But before those Resource Modules can be accessed, the user must be authenticated and then authorized to ensure that the user has one of the required roles. Here is an example cURL command that includes a Bearer Token for authentication: 
+  - But before those Resource Modules can be accessed, the user must be authenticated and then authorized to ensure that the user has one of the required roles. Here is an example cURL command that includes a Bearer Token for authentication: 
 
    ![Our Flask Resource Module](images/click-copy-icon-to-copy-token-text.png " ")
 
 ## Task 2: Learn about securing Oracle REST APIs 
 
-1. The importance of security cannot be understated. While not required to complete this Workshop, we encourage you to review our <b>How to build powerful, secure REST APIs for your Oracle Database</b> Workshop. 
+1. The importance of security cannot be understated. While not required to complete this Workshop, we encourage you to review our **How to build powerful, secure REST APIs for your Oracle Database** Workshop. 
 
-- There you will learn about security principles related to Oracle REST APIs:
-
-  - OAuth 2.0 workflow for authentication. 
-  - Quick note on security
-  - Snippet of python for call for access token 
+  There you will learn about security principles related to Oracle REST APIs:
+    - OAuth 2.0 workflow for authentication. 
+    - Quick note on security
+    - Snippet of python for call for access token 
 
 2. Once you've completed the Workshop, we encourage you to return to this Flask application and secure your Oracle REST APIs with a workflow like this:
 
    ![Backend application flow example.](images/backend-application-flow-example.png " ")
 
- - You can modify it slightly so it complements the sample Flask application; ensuring services are performed <i>securely</i>. 
+     > :brain: You can modify it slightly so it complements the sample Flask application; ensuring services are performed <i>securely</i>. 
 
 3. You may visit the Modern Application Development with Oracle REST Data Services Workshop [here](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=815). Or, in the <b>Other LiveLabs you might like</b> section of this Workshop.
 
-There you will complete objectives such as:
-  - Create an Autonomous Database
-  - Connect to your Autonomous Database using Database Actions/SQL Developer Web
-  - Create and Auto-REST enable a table
-  - Load data into the database
-  - Publish RESTful services for various database objects
-  - Secure the REST endpoints
+  There you will complete objectives such as:
+    - Create an Autonomous Database
+   - Connect to your Autonomous Database using Database Actions/SQL Developer Web
+    - Create and Auto-REST enable a table
+    - Load data into the database
+    - Publish RESTful services for various database objects
+    - Secure the REST endpoints
 
 4. Congratulations, you've made it to the end of this Workshop! By now you should have a thorough understanding of this sample Flask application. And you should also be familiar with Oracle REST APIs and their various capabilities and characteristics. 
 
