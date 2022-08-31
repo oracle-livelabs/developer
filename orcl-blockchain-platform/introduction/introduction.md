@@ -2,7 +2,7 @@
 
 This Car Marketplace workshop is comprised of individual exercises that allow you to get first hands-on exposure to build an end to end Blockchain solution using Oracle Blockchain Platform in OCI, where you will see how key features and functionality are used and deployed.
 
-*Estimated Lab Time: 1.5 hours*
+*Estimated Lab Time:* 1.5 hours
 
 ## About Oracle Blockchain Platform & Oracle Blockchain App Builder
 
@@ -11,14 +11,14 @@ Oracle Blockchain Platform gives you a pre-assembled platform for building and r
 
 ### Workshop Objectives
 
-In this lab, you will:
+<!-- In this workshop, you will learn how to:
 - Create a Blockchain Network connecting 3 organizations
 - Create, Deploy & Execute Smart Contracts using Oracle Blockchain App Builder
 - Create & Setup API Gateway to connect with Smart Contract API's
-- Building Car Marketplace application using APEX
+- Build a Car Marketplace application using APEX
 - Trading Cars using Tokens in Car Marketplace
-
-In this lab, you will:
+ -->
+In this laworkshop, you will:
 - Become familiar with Oracle Blockchain Platform and it's components
 - Become Familiar with Oracle Blockchain Platform Provisioning and Administration
 - Using Oracle Blockchain Platform Admin Console for Admin tasks and Monitoring
@@ -27,9 +27,8 @@ In this lab, you will:
 - Learn How to integrate with external applications by leveraging OBP REST Proxy
 - Learn how to build a end-to-end solution for use case with Oralce Blockchain Platform
 
-## What's Next?
+You may now proceed to the next lab.
 
-  **You are all set to begin the labs! Click Lab 1: Create Blockchain Network connecting multiple organizations in Oracle Blockchain Platform.**
 
 ## Learn More
 
@@ -39,7 +38,6 @@ In this lab, you will:
 * [App Builder Documentation](https://docs.oracle.com/en/cloud/paas/blockchain-cloud/usingoci/using-chaincode-development-tools.html)
 * [Oracle Blockchain Blog](blogs.oracle.com/blockchain)
 
-You may now [proceed to the next lab](../1-labs-obp-env-setup/obp-console.md).
 
 ## Acknowledgements
 
