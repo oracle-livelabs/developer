@@ -52,7 +52,7 @@ You will now create a car and simulate a transaction between the founder organiz
 
   ![Car Delaership](images/dealer1-login.png)
 
-  ![Car Delaership](images/apex-myInventory.png)
+  ![Car Delaership](images/apex-myinventory.png)
 
 
 2. Click 'Add Car' and fill out the form to create a car, as shown. 
@@ -79,25 +79,25 @@ You will now create a car and simulate a transaction between the founder organiz
 
 3. Select Deposit Money, and enter desired ammount. Account Balance should be updated to reflect amount deposited. 
 
-  ![Car Delaership](images/apex-depositMoney.png)
+  ![Car Delaership](images/apex-depositmoney.png)
 
-  ![Car Delaership](images/apex-accountBalance.png)
+  ![Car Delaership](images/apex-accountbalance.png)
 
 ## Task 5: dealer2 - Search Car
 
 1. Navigate to Marketplace 
 
-  ![Car Delaership](images/apex-viewMarketplace.png)
+  ![Car Delaership](images/apex-viewmarketplace.png)
 
 2. Select vehicle to view Car Details & Price
 
-  ![Car Delaership](images/apex-CarDetailsPayment.png)
+  ![Car Delaership](images/apex-carDetailspayment.png)
 
 ## Task 6: dealer2 - Purchase and Confirm Purchase
 
 1. Confirm vehicle Purchase 
 
-  ![Car Delaership](images/apex-ConfirmPayment.png)
+  ![Car Delaership](images/apex-confirmpayment.png)
 
 Purchase order will now be created.
 
@@ -105,11 +105,11 @@ Purchase order will now be created.
 
 1. Return to dealer 1's account, and navigate to orders received. You should be able to see the order placed by dealer 2. 
 
-  ![Car Delaership](images/apex-MyOrders.png)
+  ![Car Delaership](images/apex-myOrders.png)
    
 2. Select the actions icon (pencil) on the order received and process the order. 
 
-  ![Car Delaership](images/apex-processOrder.png)
+  ![Car Delaership](images/apex-processorder.png)
 
 This action confirms the order by the seller. 
 
@@ -117,7 +117,7 @@ This action confirms the order by the seller.
 
 1. Return to dealers 2's account, and navigate to orders placed. You will see the order placed should now be processed and ready to complete the purchase. 
 
-  ![Car Delaership](images/apex-confirmReceipt.png)
+  ![Car Delaership](images/apex-confirmreceipt.png)
 
 Select "Accept Receipt" to complete order or "Cancel Order" to cancel the order. 
 
@@ -135,13 +135,13 @@ Select "Accept Receipt" to complete order or "Cancel Order" to cancel the order.
 ## Task 9: dealer2 - Token Transfer & Delivery
 1. Once purchaser Accepts receipt, the token transfer will now occur and the vehicle will be delivered to the new owner. 
 
-  ![Car Delaership](images/apex-VehicleDelivered.png)
+  ![Car Delaership](images/apex-vehicledelivered.png)
 
-  ![Car Delaership](images/apex-vehicleDeliverdToDelaer.png)
+  ![Car Delaership](images/apex-vehicledeliverdtodelaer.png)
 
 Additionaly, you are able to view the invoice from the purchase in the Orders > Invoice received section
 
-  ![Car Delaership](images/apex-invoiceReceived.png)
+  ![Car Delaership](images/apex-invoicereceived.png)
 
 ## Task 10: Check Token Balances for dealer1 & dealer2 after the payment
 

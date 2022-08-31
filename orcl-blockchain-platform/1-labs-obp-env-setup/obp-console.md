@@ -194,47 +194,47 @@ Use IDCS to create and add both 'john_\dealer1' and 'sam_\dealer2' users, and th
 
 2. Under **My Oracle Services**, search 'identity' and select **Admin Console**. 
 
-  ![Accessing IDCS Dashboard](images/Access-IDCS-dashboard.png)
+  ![Accessing IDCS Dashboard](images/access-idcs-dashboard.png)
 
 3. You will be re-directed to the IDCS Dashboard. Click on the hamburger menu in the top left-hand corner.
 
-  ![IDCS Dashboard](images/IDCS-dashboard.png)
+  ![IDCS Dashboard](images/idcs-dashboard.png)
 
 4. Select **Users**.
 
-  ![Select Users](images/Select-users.png)
+  ![Select Users](images/select-users.png)
 
 5. Click on **Add**.
 
-  ![Add User to Tenancy](images/Add-user-to-tenancy.png)
+  ![Add User to Tenancy](images/add-user-to-tenancy.png)
 
 6. Deselect **Use the email address as the user name**, provide the dealership name (e.g. 'john\_dealer1') for **Last Name** and **User Name**, as well as the **Email** associated to your OCI account and select **Finish** 
 
-  ![Provide User Details](images/Provide-user-details.png)
+  ![Provide User Details](images/provide-user-details.png)
 
 7. 'john\_dealer1' is added successfully. 
 
-  ![Dealer 1 Created](images/Dealer1-created.png)
+  ![Dealer 1 Created](images/dealer1-created.png)
 
 8. Open your email and activate the 'john\_dealer1' account.
 
-  ![Activate account email](images/Activate-account-email.png)
+  ![Activate account email](images/activate-account-email.png)
 
 9. You will be asked to reset your password. Note: Password reset will fail if OCI sessions are still running, please sign out of your OCI account.
 
-  ![Reset Password](images/Reset-password.png)
+  ![Reset Password](images/reset-password.png)
 
 10. Once the account password for 'john\_dealer1' is reset, please close the window.
 
-  ![Close Window](images/Close-window.png)
+  ![Close Window](images/close-window.png)
 
 11. Open a new tab and navigate to the [OCI login page](cloud.oracle.com). Provide your tenancy account name and select **Next**. Sign-in with your admin (*not* the 'john\_dealer1') credentials.
 
-  ![OCI tenancy login](images/OCI-Tenancy-login.png)
+  ![OCI tenancy login](images/oci-tenancy-login.png)
 
 12. Navigate to IDCS (follow steps 1-3), select **Oracle Cloud Services** and click on your OBP instance that begins with 'john\_dealer1' followed by a trail of characters.
 
-  ![Select dealer instance](images/Select-dealer1-instance.png)
+  ![Select dealer instance](images/select-dealer1-instance.png)
 
 13. Click on application roles to grant 'john\_dealer1' **ADMIN** and **REST_CLIENT** privileges. Doing so will give 'john\_dealer1' access to call all REST proxy endpoints available on the REST proxy node along with any necessary admin access control. Please see the [OBP documentation](https://docs.oracle.com/en/cloud/paas/blockchain-cloud/administeroci/set-users-and-application-roles.html#GUID-CF1B1C71-2EFF-456F-B557-7EA07573B373) to learn more.
 
@@ -242,11 +242,11 @@ Use IDCS to create and add both 'john_\dealer1' and 'sam_\dealer2' users, and th
 
 14. Click on the hamburger icon in the right-hand corner to assign both the **ADMIN** and **REST_CLIENT** roles to 'john\_dealer1'.
 
-  ![Assigning users to each role](images/Assign-user.png)
+  ![Assigning users to each role](images/assign-user.png)
 
 15. In the search box, look for the 'john\_dealer1' OBP instance, select the user and click on **OK** to assign role.
 
-  ![Assign role](images/Assign-role.png)
+  ![Assign role](images/assign-role.png)
 
 16. Repeat tasks 1-16 to create the 'sam\_dealer2' user and add to the 'dealer2' instance.
 

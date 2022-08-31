@@ -547,32 +547,32 @@ Now that we have tested our project locally, we can connect to our remote instan
 
 1. Import the Marketplace Tokenization Postman collection (Marketplace_Tokenization.postman_collection.json) and assign variable definitions as shown.
 
-  ![Import Collection](images/Import_collection.png)
-  ![Import Collection 2](images/Import_collection2.png)
+  ![Import Collection](images/import_collection.png)
+  ![Import Collection 2](images/import_collection2.png)
 
 2. Repeat for the Postman Environment 'Tokenization' (tokenization_environment.postman_environment.json) and assign variable definitions. Some sample definitions are shown below.
 
-  ![Tokenization Definitions](images/Tokenization_Definitions.png)
+  ![Tokenization Definitions](images/tokenization_tefinitions.png)
 
 3. Open tokenization collection Marketplace_Tokenization, and run integrations as described in steps 0 – 6 by clicking Send:
 
     - Step 0 - Init: Called when chaincode is instantiated. Token Admin is identified by user_id and org_id. 
-  ![Init](images/Init.png)
+  ![Init](images/init.png)
 
     - Step 1 – Initialize Token: This method creates a token and initializes the token properties. The asset and its properties are saved in the state database. This method can be invoked only by the Token Admin of the chaincode. 
-  ![Initialize Token](images/Initialize_Token.png)
+  ![Initialize Token](images/initialize_token.png)
 
     - Step 2, 3, 4 – Create Accounts:  This method creates an account for a specified user and token. An account must be created for any user who will have tokens at any point. Accounts track balances, on-hold balances, and transation history. 
-  ![Create Accounts](images/Create_accounts.png)
+  ![Create Accounts](images/create_accounts.png)
 
     - Step 5, 6 – Add Role: This method adds a role to a specified user and token. This method can be called only by the Token Admin of the chaincode. 
-  ![Add Role](images/Add_role.png)
+  ![Add Role](images/add_role.png)
 
     - Minter Role: mints a quantity of tokens, which are then owned by the caller of the method.
     - Escrow Role: notary account is specified, which is responsible to either complete or release the hold. When the hold is created, the specified token balance from the payer is put on hold. A held balance cannot be transferred until the hold is either completed or released.
 
     - Step 7 – Issue Tokens: This method mints tokens, which are then owned by the caller of the method. The caller must have an account and the minter role. 
-  ![Issue Tokens](images/Issue_tokens.png)
+  ![Issue Tokens](images/issue_tokens.png)
 
   ## Task 17: [Proceed to next lab](../3-labs-obp-apigateway/obp-apigateway.md)
 
