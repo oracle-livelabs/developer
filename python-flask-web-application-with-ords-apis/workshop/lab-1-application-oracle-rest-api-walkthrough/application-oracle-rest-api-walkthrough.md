@@ -78,7 +78,7 @@ However, if ever you do get stuck, we encourage you to review the [Flask](https:
     
     ![Opening the Python application](images/verify-venv-is-active.png " ")
 
-## Task 4: Activate Flask
+## Task 3: Activate Flask
 
 Next we'll start the Flask Application.
 
@@ -112,36 +112,46 @@ There are various ways you can start your Flask application, this is the more ma
 
     - When the Flask application first loads, you'll see this screen:
 
-    ![The index page in portrait view](images/index-page-portrait-view.png " ")
+    ![The index page in portrait view](images/initial-page-load.png " ")
 > :warning: But first, let's personalize this *Welcome* page.
 
 ## Task 5: Personalize the index.html page
 
-1. You'll notice the filler text at the top of the `index.html` page. Let's customize that to make this application unique *to you*.
+1. You'll notice the filler text at the top of the **`index.html`** page. Let's customize that to make this application unique *to you*.
 
-![Observing the filler text at the top of the page.](images/index-page-portrait-view.png " ")
+    ![Observing the filler text at the top of the page.](images/index-page-portrait-view.png " ")
 
-2. Return to your editor and expand the `templates` folder. There you'll find the `index` file. Select it.
+2. Return to your editor and expand the **`templates`** folder. There you'll find the `index` file. Select it.
 
-![Navigating to the templates folder and the index page.](images/index-page-portrait-view.png " ")
+    ![Navigating to the templates folder and the index page.](images/navigate-to-templates-folder-index-file.png " ")
 
-3. Scroll down till you see the `<div class="card-body">` container on Line 12. Change it to something, anything you like. Once satisfied, save the file. 
+3. Scroll down till you see the **`<div class="card-body">`** container on Line 12. Change the test in Lines 13-14 to something else; anything you like. 
 
-![Changing the card body text to something unique.](images/index-page-portrait-view.png " ")
+    ![Changing the card body text to something unique.](images/change-card-body-text.png " ")
+    *<sub>Once satisfied, save the file.</sub>*
+    ![The updated text in the index template.](images/updated-card-body-text-index-template.png " ")
 
 4. Return to your the browser window where the Flask application is displaying. And reload the page. 
 
-![Reloading the Flask page to reflect changes in index template.](images/index-page-portrait-view.png " ")
+    ![Reloading the Flask page to reflect changes in index template.](images/updated-text-in-flask-application.png " ")
 
-5. You should now see the updated text from the `index` template. Congratulations, you've just personalized the application!
+5. You should now see the updated text from the **`index`** template. Congratulations, you've just personalized the application!
 
 ## Task 6: Review the basic HTTPS operations - Part 2
 
-1. You can explore the navigation tab (hamburger icon on upper right-hand corner). But we'll first explore the Folium map at the bottom of this `index` page. 
+1. You can explore the navigation tab (hamburger icon on upper right-hand corner). 
+
+    ![Hamburger icon for additional resources](images/index-page-hamburger-icon.png " ")
+
+2. Expand, and you'll find helpful Oracle REST API resources.
+
+    ![Additional resources accessed from within the hamburger menu icon.](images/index-page-hamburger-icon.png " ")
+
+3. But we'll first explore the *Folium* map at the bottom of this **`index`** page. 
     
 > :brain: *Folium "makes it easy to visualize data that’s been manipulated in Python on an interactive Leaflet.js map. Manipulate your data in Python, then visualize it on a Leaflet map via Folium...It enables both the binding of data to a map for choropleth visualizations as well as passing rich vector/raster/HTML visualizations as markers on the map To expand your knowledge of Folium and Leaflet.js, visit the "Learn More" section for more details.*
 
-2. While focused on the Folium map, we can interact with location markers - these represent various attractions in the downtown Las Vegas area. In this application we are focused on venues such as museums and art installations.  
+4. When in Folium map, we can interact with location markers - these represent various attractions in the downtown Las Vegas area. In this application we are focused on venues such as museums and art installations.  
 
    - Each marker will have a **Tool-tip**; when hovered over, the user can choose to click it to reveal additional information:
 
@@ -151,7 +161,7 @@ There are various ways you can start your Flask application, this is the more ma
    
 > :smiley: *Here is where we first encounter Oracle REST APIs. You'll see the code in a later Lab, but for now, we'll show you in the browser, the API responsible for providing us with this map's information.*
 
-3. Let's try that now. Copy the following URI, 
+5. Let's try that now. Copy the following URI, 
     ```
     <copy>https://yfuxkbz2ls7taze-ordshandsonlabs.adb.us-phoenix-1.oraclecloudapps.com/ords/python/flask/museums/</copy>
     ```
@@ -159,18 +169,18 @@ There are various ways you can start your Flask application, this is the more ma
 
    ![ORDS API results in browser](images/ords-results-in-browser.png " ")
 
-    - *This* **`GET`** request is where the Folium map *gets* its input.
+    * *This* **`GET`** request is where the Folium map *gets* its input.
 
-4. Manipulating the **`GET`** request:
+6. Manipulating the **`GET`** request:
 
     1. But let's say you are a developer, and you've been provided with a set of Oracle REST APIs like these. On the surface, they are simple enough, but you actually wield much more power than you may realize - with query parameters!
 
     2. Try this. Take the URI we just used, add this to the end:
 
-        ```<copy>
-        ?q={"$orderby":{"museum_lat":"ASC"}}</copy>
         ```
-      and then enter it into your browser's address bar. The new address should look like this: 
+        <copy>?q={"$orderby":{"museum_lat":"ASC"}}</copy>
+        ```
+       Enter it into your browser's address bar. The new address should look like this: 
 
          ![Updated address](images/ords-endpoint-with-ascending-query-parameter.png " ")
 
@@ -180,11 +190,11 @@ There are various ways you can start your Flask application, this is the more ma
 
   > :question: *What do you notice?* If you caught that the venues are all ordered in ascending order, according to their latitudes, you'd be correct!
 
-5. Let's try a trickier one. Take that original URI, add this to the end: 
+7. Let's try a trickier one. Take that original URI, add this to the end: 
     ```
     <copy>?q={"museum_lat":{"$between":[36.05,36.15]}}</copy>
     ```
-  and enter it into your browser's address bar:
+    Enter it into your browser's address bar:
 
       ![Selected ORDS results by latitude](images/ords-api-results-select-latitudes.png " ")
         
@@ -194,7 +204,7 @@ There are various ways you can start your Flask application, this is the more ma
 
     - The ability to perform myriad **`GET`** requests with a single API + query parameters is powerful. But we can manipulate other HTTPS Operations (Methods) too! Lets take a look at a **`POST`** request.
 
-6. Remixing the **`POST`** request. 
+8. Remixing the **`POST`** request. 
    
    We've created a Resource Handler for this table that can be used for the **`POST`** operation/method. 
    
@@ -261,11 +271,11 @@ There are various ways you can start your Flask application, this is the more ma
             "MUSEUM_LONG": 100.12345
             }'</copy>
         ```
-7. Enter the cURL Command in your terminal (*your command may differ slightly*). 
+9. Enter the cURL Command in your terminal (*your command may differ slightly*). 
 
        ![The cURL command in the terminal](images/post-curl-command-in-terminal.png " ")
     
-8. Then, using the URI from the first/previous `GET` request, enter it into your browser's address bar. You should now see the new record added to your list.  
+10. Then, using the URI from the first/previous `GET` request, enter it into your browser's address bar. You should now see the new record added to your list.  
 
     ![Reviewing the changes from your POST request](images/reviewing-the-post-request-changes.png " ")
 
@@ -279,7 +289,7 @@ There are various ways you can start your Flask application, this is the more ma
     
     > :bulb: *Refer to the `README` file retrieved in [Task 1](#Task1Obtaincodeforthisworkshop), for information on how to use the provided database scripts for setting up an Autonomous Database environmen like this one.*
 
-9. Pause for a moment and take pride in what you've accomplished here today! You've just sent a `POST` request with the help of ORDS. At this stage you should have a better understanding of what occurs "under the covers" on the Oracle Autonomous database in this Flask application.
+11. Pause for a moment and take pride in what you've accomplished here today! You've just sent a `POST` request with the help of ORDS. At this stage you should have a better understanding of what occurs "under the covers" on the Oracle Autonomous database in this Flask application.
 
 ### Task 4: Review the remainder of application
 
