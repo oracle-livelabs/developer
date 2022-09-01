@@ -34,7 +34,7 @@ You may now proceed to the next lab.
 ## Acknowledgements
 
 * **Authors** 
-* Mark Rakhmilevich, Senior Director, Oracle Blockchain Product Management
-* Bala Vellanki, Director, Oracle Blockchain Product Management
+    - Mark Rakhmilevich, Senior Director, Oracle Blockchain Product Management
+    - Bala Vellanki, Director, Oracle Blockchain Product Management
 * **Contributors** -  Amal Tyagi, Diego Morales
 * **Last Updated By/Date** - Bala Vellanki, August 2022

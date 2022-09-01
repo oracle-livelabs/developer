@@ -169,4 +169,4 @@ Additionaly, you are able to view the invoice from the purchase in the Orders > 
 ## Acknowledgements
 * **Author** - Amal Tyagi, Cloud Engineer
 * **Contributors** -  Teodora Gheorghe, Adrien Lhemann, Diego Morales, Lokeswara Nushisarva, Siddesh C. Prabhu Dev Ujjni, Rene Fontcha
-* **Last Updated By/Date** - Rene Fontcha, August 2022
+* **Last Updated By/Date** - Rene Fontcha, September 2022

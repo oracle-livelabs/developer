@@ -167,7 +167,7 @@ This lab assumes you have:
 
 The flow for developing smart contracts for tokenization begins with creating a specification file that describes our fiat token. Car_Tokenization.yml describes our FiatToken structure: AssetType, Token_id, Token_name, Token_desc, Token_type, and behavior.  The specification file is then used to scaffold a smart contract project ('car_tokenization_cc') and generate source code for models and controllers. Each object has properties that characterize the assets, data types and validations. You can see sample specification files (and write your own specifications) in either YAML or JSON using the Blockchain App Builder package. [FiatToken Structure](https://docs.oracle.com/en/cloud/paas/blockchain-cloud/usingoci/input-specification-file-fungible-tokens.html)
 
-1. Locate the sample specification, [Car_Tokenization.yml](../2-labs-obp-appbuilder/files/Car_Tokenization.yml?download=1), in the **Samples** folder. 
+1. Locate the sample specification, [Car_Tokenization.yml](files/Car_Tokenization.yml?download=1), in the **Samples** folder. 
 
 
 2. In Visual Studio Code, click on the **O** icon on the left-hand menu to use the Blockchain App Builder Extension. 
@@ -269,18 +269,18 @@ Now that we have tested our project locally, we can connect to our remote instan
 
 ## Task 10: Initialization and Issuance of Car Marketplace Fiat Token - Run It with App Builder. Save Input.
 
-1. Import the Marketplace Tokenization Postman collection (Marketplace_Tokenization.postman_collection.json) and assign variable definitions as shown.
+1. Import the Marketplace Tokenization Postman collection (`Marketplace_Tokenization.postman_collection.json`) and assign variable definitions as shown.
 
   ![Import Collection](images/import_collection.png)
   ![Import Collection 2](images/import_collection2.png)
 
-2. Repeat for the Postman Environment 'Tokenization' (tokenization_environment.postman_environment.json) and assign variable definitions. Some sample definitions are shown below.
+2. Repeat for the Postman Environment 'Tokenization' (`tokenization_environment.postman_environment.json`) and assign variable definitions. Some sample definitions are shown below.
 
-  ![Tokenization Definitions](images/tokenization_tefinitions.png)
+  ![Tokenization Definitions](images/tokenization_definitions.png)
 
 3. Open tokenization collection Marketplace_Tokenization, and run integrations as described in steps 0 – 6 by clicking Send:
 
-    - Step 0 - Init: Called when chaincode is instantiated. Token Admin is identified by user_id and org_id. 
+    - Step 0 - Init: Called when chaincode is instantiated. Token Admin is identified by `user_id` and `org_id`. 
   ![Init](images/init.png)
 
     - Step 1 – Initialize Token: This method creates a token and initializes the token properties. The asset and its properties are saved in the state database. This method can be invoked only by the Token Admin of the chaincode. 
@@ -307,4 +307,4 @@ You may now proceed to the next lab.
 ## Acknowledgements
 * **Author** - Amal Tyagi, Cloud Engineer
 * **Contributors** -  Teodora Gheorghe, Adrien Lhemann, Diego Morales, Lokeswara Nushisarva, Siddesh C. Prabhu Dev Ujjni, Rene Fontcha
-* **Last Updated By/Date** - Rene Fontcha, August 2022
+* **Last Updated By/Date** - Rene Fontcha, September 2022

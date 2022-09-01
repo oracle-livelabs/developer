@@ -181,4 +181,4 @@ Once active, the deployment can be used to make REST API calls between APEX and 
 ## Acknowledgements
 * **Author** - Amal Tyagi, Cloud Engineer
 * **Contributors** -  Teodora Gheorghe, Adrien Lhemann, Diego Morales, Lokeswara Nushisarva, Siddesh C. Prabhu Dev Ujjni, Rene Fontcha
-* **Last Updated By/Date** - Rene Fontcha, August 2022
+* **Last Updated By/Date** - Rene Fontcha, September 2022

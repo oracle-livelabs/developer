@@ -94,9 +94,9 @@ You will be using Oracle's Blockchain App Builder extension, accessible through 
 
 The flow for developing smart contracts begins with creating a [specification file](https://docs.oracle.com/en/cloud/paas/blockchain-cloud/usingoci/input-configuration-file.html) that describes car marketplace assets being maintained on the blockchain ledger. 
 
-[Car_Marketplace.yml](../2-labs-obp-appbuilder/files/Car_Marketplace.yml) describes [marketplace assets](https://docs.oracle.com/en/cloud/paas/blockchain-cloud/usingoci/input-configuration-file.html): Car, Dealer, Invoice, and Purchase Order (PO). Each object has properties that characterize the assets, data types and validations. You can see sample specification files (and write your own specifications) in either YAML or JSON using the Blockchain App Builder package. 
+[`Car_Marketplace.yml`](files/`Car_Marketplace.yml`) describes [marketplace assets](https://docs.oracle.com/en/cloud/paas/blockchain-cloud/usingoci/input-configuration-file.html): Car, Dealer, Invoice, and Purchase Order (PO). Each object has properties that characterize the assets, data types and validations. You can see sample specification files (and write your own specifications) in either YAML or JSON using the Blockchain App Builder package. 
 
-1. Locate the sample specification, [Car_Marketplace.yml](../2-labs-obp-appbuilder/files/Car_Marketplace.yml?download=1), in the **Samples** folder.
+1. Locate the sample specification, [`Car_Marketplace.yml`](files/`Car_Marketplace.yml`?download=1), in the **Samples** folder.
 
 2. In Visual Studio Code, click on the **O** icon on the left-hand menu to use the Blockchain App Builder Extension. 
 
@@ -111,12 +111,12 @@ The flow for developing smart contracts begins with creating a [specification fi
 
 ## Task 6: Generate Marketplace Chaincode Project
 
-The specification file is then used to scaffold a smart contract project ('car_marketplace_cc') and generate source code for models and controllers. 
+The specification file is then used to scaffold a smart contract project ('`car_marketplace_cc`') and generate source code for models and controllers. 
 
 1. Hover over the **Chaincodes** pane, click on the **+**, and fill out the form as follows: 
-    - **Name** your chaincode (e.g. car_marketplace_cc).
+    - **Name** your chaincode (e.g. `car_marketplace_cc`).
     - Select Go as the **Language**.
-    - Select Car_Marketplace.yml as the **Specification**.
+    - Select `Car_Marketplace.yml` as the **Specification**.
     - Choose a **Go Domain** (e.g. Samples).
 
   ![Car Marketplace Chaincode Details](images/2-app-builder-2-1.png)
@@ -127,8 +127,8 @@ The specification file is then used to scaffold a smart contract project ('car_m
 
   ![Chaincode Output](images/2-app-builder-2-2.png)
 
-4. Select 'car_marketplace_cc.model.go' under 'car_marketplace_cc/src'. The Model file contains the property definitions of all the assets defined in the spec file.
-Select 'car_marketplace_cc.controller.go' under 'car_marketplace_cc/src.' The Controller file defines all the behavior and methods for those assets. 'Car_Marketplace.yml' spec file allows defining additional custom methods that users implement to provide business logic of smart contracts. 
+4. Select '`car_marketplace_cc`.model.go' under '`car_marketplace_cc`/src'. The Model file contains the property definitions of all the assets defined in the spec file.
+Select '`car_marketplace_cc`.controller.go' under '`car_marketplace_cc`/src.' The Controller file defines all the behavior and methods for those assets. '`Car_Marketplace.yml`' spec file allows defining additional custom methods that users implement to provide business logic of smart contracts. 
 
 ## Task 7: View Custom Methods in Marketplace
 
@@ -136,54 +136,57 @@ Select 'car_marketplace_cc.controller.go' under 'car_marketplace_cc/src.' The Co
 
 2. We've modified existing CRUD operations and defined custom methods for the following functions:
   - 'CreateCar': Adds car to dealer's inventory. The function retrieves dealer from blockchain, appends the car to dealer's inventory and records car on ledger.
-        ```
-        <copy>
-        func (t *Controller) CreateCarWrapper(asset Car) (interface{}, error) {
 
-        //Verify dealer exists
-        owner, err := t.GetDealerById(asset.OwnerId)
-        if err != nil {
-          return nil, fmt.Errorf("dealer with id: %s does not exist", asset.OwnerId)
-        }
+    ```
+    <copy>
+    func (t *Controller) CreateCarWrapper(asset Car) (interface{}, error) {
 
-        //append car to owner's inventory
-        owner.Inventory = append(owner.Inventory, asset.Vin)
+    //Verify dealer exists
+    owner, err := t.GetDealerById(asset.OwnerId)
+    if err != nil {
+    return nil, fmt.Errorf("dealer with id: %s does not exist", asset.OwnerId)
+    }
 
-        //Update and commit dealer inventory to blockchain
-        t.UpdateDealer(owner)
-        t.CreateCar(asset)
+    //append car to owner's inventory
+    owner.Inventory = append(owner.Inventory, asset.Vin)
 
-        return nil, err
+    //Update and commit dealer inventory to blockchain
+    t.UpdateDealer(owner)
+    t.CreateCar(asset)
 
-        }
-        </copy>
+    return nil, err
 
-        ```
+    }
+    </copy>
+    ```
+
   - 'CreatePO': Creates purchase order once buyer places order on vehicle. The function verifies car exists on ledger, places car off the market, and records purchase order on ledger.
-        ```
-        <copy>
-        func (t *Controller) CreatePOWrapper(asset PO) (interface{}, error) {
 
-        //Verify that car exists
-        car, err := t.GetCarById(asset.Vin)
-        if err != nil {
-          return nil, fmt.Errorf("car with id: %s does not exist", asset.Vin)
-        }
+    ```
+    <copy>
+    func (t *Controller) CreatePOWrapper(asset PO) (interface{}, error) {
 
-        //Car no longer on sale as purchase order is created
-        car.ForSale = false
-        t.UpdateCar(car)
-        t.CreatePO(asset)
+    //Verify that car exists
+    car, err := t.GetCarById(asset.Vin)
+    if err != nil {
+    return nil, fmt.Errorf("car with id: %s does not exist", asset.Vin)
+    }
 
-        return nil, err
+    //Car no longer on sale as purchase order is created
+    car.ForSale = false
+    t.UpdateCar(car)
+    t.CreatePO(asset)
 
-        }
-        </copy>
-        ```
+    return nil, err
+
+    }
+    </copy>
+    ```
 
   - 'UpdatePO': Updates purchase order. If order status is:
     - 'Delivered': Car is successfully delivered to buyer, an invoice is generated, and custom function 'CarTransfer' is invoked.
     - 'Rejected': Order is canceled, and car is placed back on the market.
+    
     ```
     <copy>
     func (t *Controller) UpdatePOWrapper(asset PO) (interface{}, error) {
@@ -258,80 +261,80 @@ Select 'car_marketplace_cc.controller.go' under 'car_marketplace_cc/src.' The Co
     }
     </copy>
     ```
-   
+
   - 'CarTransfer': Transfer vehicle ownership from one dealer to another. Validations are written to check that car being sold and dealer receiving vehicle exist in ledger and that the owner isn't selling a vehicle to themselves. We update car object properties to reflect the new owner of the vehicle, removing the car from the seller's inventory, adding it to the buyer's inventory. Finally, we commit car and dealer changes to the ledger.
 
-      ```
-      <copy>
-      func (t *Controller) CarTransfer(vin string, buyerId string, sellerId string, PO string, price int, dateString string) (interface{}, error) {
+    ```
+    <copy>
+    func (t *Controller) CarTransfer(vin string, buyerId string, sellerId string, PO string, price int, dateString string) (interface{}, error) {
 
-      //Date formatting and handling
-      dateBytes, err := json.Marshal(dateString)
-      if err != nil {
-        return nil, fmt.Errorf("error in marshalling %s", err.Error())
-      }
+    //Date formatting and handling
+    dateBytes, err := json.Marshal(dateString)
+    if err != nil {
+      return nil, fmt.Errorf("error in marshalling %s", err.Error())
+    }
 
-      var dateValue date.Date
-      err = json.Unmarshal(dateBytes, &dateValue)
-      if err != nil {
-        return nil, fmt.Errorf("error in unmarshalling the date %s", err.Error())
-      }
+    var dateValue date.Date
+    err = json.Unmarshal(dateBytes, &dateValue)
+    if err != nil {
+      return nil, fmt.Errorf("error in unmarshalling the date %s", err.Error())
+    }
 
-      if buyerId == sellerId {
-        return nil, fmt.Errorf(`buyer and seller cannot be same`)
-      }
+    if buyerId == sellerId {
+      return nil, fmt.Errorf(`buyer and seller cannot be same`)
+    }
 
-      //Verify car exists
-      car, err := t.GetCarById(vin)
-      if err != nil {
-        return nil, err
-      }
-
-      //Verify dealer exists
-      buyer, err := t.GetDealerById(buyerId)
-      if err != nil {
-        return nil, err
-      }
-
-      if car.OwnerId != sellerId {
-
-        return nil, fmt.Errorf("car with vin %s does not belong to the seller %s", vin, sellerId)
-      }
-      if car.OwnerId == buyerId {
-
-        return nil, fmt.Errorf("car with vin %s already exist with owner %s", vin, buyerId)
-      }
-
-      //Update car object properties
-
-      car.OwnerId = buyerId
-      car.Price = price
-      car.LastSold = dateValue
-
-      buyer.Inventory = append(buyer.Inventory, vin)
-
-      seller, err := t.GetDealerById(sellerId)
-      if err != nil {
-        return nil, err
-      }
-
-      //Remove car from seller's inventory
-      for i := 0; i < len(seller.Inventory)-1; i++ {
-        if seller.Inventory[i] == vin {
-          seller.Inventory = append(seller.Inventory[:i], seller.Inventory[i+1:]...)
-        }
-      }
-
-      //Commit changes to the ledger
-      t.UpdateDealer(seller)
-      t.UpdateCar(car)
-      t.UpdateDealer(buyer)
-
+    //Verify car exists
+    car, err := t.GetCarById(vin)
+    if err != nil {
       return nil, err
+    }
 
+    //Verify dealer exists
+    buyer, err := t.GetDealerById(buyerId)
+    if err != nil {
+      return nil, err
+    }
+
+    if car.OwnerId != sellerId {
+
+      return nil, fmt.Errorf("car with vin %s does not belong to the seller %s", vin, sellerId)
+    }
+    if car.OwnerId == buyerId {
+
+      return nil, fmt.Errorf("car with vin %s already exist with owner %s", vin, buyerId)
+    }
+
+    //Update car object properties
+
+    car.OwnerId = buyerId
+    car.Price = price
+    car.LastSold = dateValue
+
+    buyer.Inventory = append(buyer.Inventory, vin)
+
+    seller, err := t.GetDealerById(sellerId)
+    if err != nil {
+      return nil, err
+    }
+
+    //Remove car from seller's inventory
+    for i := 0; i < len(seller.Inventory)-1; i++ {
+      if seller.Inventory[i] == vin {
+        seller.Inventory = append(seller.Inventory[:i], seller.Inventory[i+1:]...)
       }
-      </copy>
-      ```
+    }
+
+    //Commit changes to the ledger
+    t.UpdateDealer(seller)
+    t.UpdateCar(car)
+    t.UpdateDealer(buyer)
+
+    return nil, err
+
+    }
+    </copy>
+    ```
 
 ## Task 8: Deploy Marketplace Chaincode in local Environment
 
@@ -531,4 +534,4 @@ You may now proceed to the next lab.
 ## Acknowledgements
 * **Author** - Amal Tyagi, Cloud Engineer
 * **Contributors** -  Teodora Gheorghe, Adrien Lhemann, Diego Morales, Lokeswara Nushisarva, Siddesh C. Prabhu Dev Ujjni, Rene Fontcha
-* **Last Updated By/Date** - Rene Fontcha, August 2022
+* **Last Updated By/Date** - Rene Fontcha, September 2022
