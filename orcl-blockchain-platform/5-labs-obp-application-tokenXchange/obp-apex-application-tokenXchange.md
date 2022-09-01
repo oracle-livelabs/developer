@@ -36,7 +36,7 @@ This lab assumes you have:
 
   ![Web Credentials](images/4-apex-5-3.png)
 
-4. Using the same password used for the founder instance (marketplace, Section 1- Task 2), update the password in 'Client or Password' field and 'Apply Changes'. 
+4. Using the same password used for the founder instance (marketplace, Section 1- Task 2), update the password in 'Client or Password' field and 'Apply Changes'.
 
   ![Web Credentials](images/4-apex-5-4.png)
 
@@ -48,7 +48,7 @@ This lab assumes you have:
 
 You will now create a car and simulate a transaction between the founder organization and a car dealer partner. When a car is added to the Marketplace, tokens are put on hold in the founder instance and then transacted with partner dealerships as necessary.
 
-## Task 3: Add a car to dealer1 Inventory 
+## Task 3: Add a car to dealer1 Inventory
 
 1. Login as a dealer (e.g. Dealer1) and land on My Inventory.
 
@@ -57,7 +57,7 @@ You will now create a car and simulate a transaction between the founder organiz
   ![Car Delaership](images/apex-myinventory.png)
 
 
-2. Click 'Add Car' and fill out the form to create a car, as shown. 
+2. Click 'Add Car' and fill out the form to create a car, as shown.
     - Enter Vehicle Vin (Must be 17 characters)
     - Select Vehicle Make
     - Select Year
@@ -75,11 +75,11 @@ You will now create a car and simulate a transaction between the founder organiz
 
   ![Car Delaership](images/dealer2-login.png)
 
-2. Navigate to Orders, and filter to accounting. 
+2. Navigate to Orders, and filter to accounting.
 
   ![Car Delaership](images/apex-accounting.png)
 
-3. Select Deposit Money, and enter desired ammount. Account Balance should be updated to reflect amount deposited. 
+3. Select Deposit Money, and enter desired ammount. Account Balance should be updated to reflect amount deposited.
 
   ![Car Delaership](images/apex-depositmoney.png)
 
@@ -87,7 +87,7 @@ You will now create a car and simulate a transaction between the founder organiz
 
 ## Task 5: dealer2 - Search Car
 
-1. Navigate to Marketplace 
+1. Navigate to Marketplace
 
   ![Car Delaership](images/apex-viewmarketplace.png)
 
@@ -97,7 +97,7 @@ You will now create a car and simulate a transaction between the founder organiz
 
 ## Task 6: dealer2 - Purchase and Confirm Purchase
 
-1. Confirm vehicle Purchase 
+1. Confirm vehicle Purchase
 
   ![Car Delaership](images/apex-confirmpayment.png)
 
@@ -105,23 +105,23 @@ Purchase order will now be created.
 
 ## Task 7: Dealer1 - Review & Confirm the order place by dealer2
 
-1. Return to dealer 1's account, and navigate to orders received. You should be able to see the order placed by dealer 2. 
+1. Return to dealer 1's account, and navigate to orders received. You should be able to see the order placed by dealer 2.
 
   ![Car Delaership](images/apex-myOrders.png)
-   
-2. Select the actions icon (pencil) on the order received and process the order. 
+
+2. Select the actions icon (pencil) on the order received and process the order.
 
   ![Car Delaership](images/apex-processorder.png)
 
-This action confirms the order by the seller. 
+This action confirms the order by the seller.
 
 ## Task 8: dealer2 - Order Processed and Accepted
 
-1. Return to dealers 2's account, and navigate to orders placed. You will see the order placed should now be processed and ready to complete the purchase. 
+1. Return to dealers 2's account, and navigate to orders placed. You will see the order placed should now be processed and ready to complete the purchase.
 
   ![Car Delaership](images/apex-confirmreceipt.png)
 
-Select "Accept Receipt" to complete order or "Cancel Order" to cancel the order. 
+Select "Accept Receipt" to complete order or "Cancel Order" to cancel the order.
 
 ## Task 10: dealer2 - Generate Invoice & Payment
 
@@ -135,7 +135,7 @@ Select "Accept Receipt" to complete order or "Cancel Order" to cancel the order.
 
 
 ## Task 9: dealer2 - Token Transfer & Delivery
-1. Once purchaser Accepts receipt, the token transfer will now occur and the vehicle will be delivered to the new owner. 
+1. Once purchaser Accepts receipt, the token transfer will now occur and the vehicle will be delivered to the new owner.
 
   ![Car Delaership](images/apex-vehicledelivered.png)
 
@@ -156,7 +156,7 @@ Additionaly, you are able to view the invoice from the purchase in the Orders > 
  ![Car Delaership](images/apex-dealer2-balance.png)
 
 
-<!-- 10. 
+<!-- 10.
 
 5. Proceed to payment by clicking a car in the Marketplace. This car will disappear from the Marketplace when sold.
 
