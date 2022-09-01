@@ -94,9 +94,9 @@ You will be using Oracle's Blockchain App Builder extension, accessible through 
 
 The flow for developing smart contracts begins with creating a [specification file](https://docs.oracle.com/en/cloud/paas/blockchain-cloud/usingoci/input-configuration-file.html) that describes car marketplace assets being maintained on the blockchain ledger.
 
-[`Car_Marketplace.yml`](files/`Car_Marketplace.yml`) describes [marketplace assets](https://docs.oracle.com/en/cloud/paas/blockchain-cloud/usingoci/input-configuration-file.html): Car, Dealer, Invoice, and Purchase Order (PO). Each object has properties that characterize the assets, data types and validations. You can see sample specification files (and write your own specifications) in either YAML or JSON using the Blockchain App Builder package.
+[`Car_Marketplace.yml`](files/Car_Marketplace.yml) describes [marketplace assets](https://docs.oracle.com/en/cloud/paas/blockchain-cloud/usingoci/input-configuration-file.html): Car, Dealer, Invoice, and Purchase Order (PO). Each object has properties that characterize the assets, data types and validations. You can see sample specification files (and write your own specifications) in either YAML or JSON using the Blockchain App Builder package.
 
-1. Locate the sample specification, [`Car_Marketplace.yml`](files/`Car_Marketplace.yml`?download=1), in the **Samples** folder.
+1. Locate the sample specification, [`Car_Marketplace.yml`](files/Car_Marketplace.yml?download=1), in the **Samples** folder.
 
 2. In Visual Studio Code, click on the **O** icon on the left-hand menu to use the Blockchain App Builder Extension.
 

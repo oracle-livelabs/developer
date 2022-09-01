@@ -165,7 +165,11 @@ This lab assumes you have:
 
 ## Task 6: Create Tokenization Chaincode
 
-The flow for developing smart contracts for tokenization begins with creating a specification file that describes our fiat token. Car_Tokenization.yml describes our FiatToken structure: AssetType, Token_id, Token_name, Token_desc, Token_type, and behavior.  The specification file is then used to scaffold a smart contract project ('car_tokenization_cc') and generate source code for models and controllers. Each object has properties that characterize the assets, data types and validations. You can see sample specification files (and write your own specifications) in either YAML or JSON using the Blockchain App Builder package. [FiatToken Structure](https://docs.oracle.com/en/cloud/paas/blockchain-cloud/usingoci/input-specification-file-fungible-tokens.html)
+The flow for developing smart contracts for tokenization begins with creating a specification file that describes our fiat token. `Car_Tokenization.yml` describes our FiatToken structure: AssetType, `Token_id`, `Token_name`, `Token_desc`, `Token_type`, and behavior.  
+
+The specification file is then used to scaffold a smart contract project ('`car_tokenization_cc`') and generate source code for models and controllers. Each object has properties that characterize the assets, data types and validations. 
+
+You can see sample specification files (and write your own specifications) in either YAML or JSON using the Blockchain App Builder package. [FiatToken Structure](https://docs.oracle.com/en/cloud/paas/blockchain-cloud/usingoci/input-specification-file-fungible-tokens.html)
 
 1. Locate the sample specification, [Car_Tokenization.yml](files/Car_Tokenization.yml?download=1), in the **Samples** folder.
 
