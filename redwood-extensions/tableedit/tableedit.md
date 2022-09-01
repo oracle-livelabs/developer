@@ -2,12 +2,12 @@
 
 ## Introduction
 
-This lab shows you how to work with components, events, and action chains to add functionality to your application.
+In this lab we'll learn how to work with components, events, and action chains to add functionality to our application.
 
 Estimated Time: 10 minutes
 
-### About Visual Builder
-Visual Builder simplifies the way you handle user interface events enabling you to create business logic in a visual way with action chains.
+### About Action Chains
+In VB Studio, you use a visual editor to create business logic that responds to events occurring in the user interface.  Each sequence of business logic is called an *action chain*.  For example, an action chain might dictate what happens when a user clicks a button on a page.
 
 ### Objectives
 
@@ -18,59 +18,74 @@ In this lab, you will:
 * Work with variables
 
 
-## Task 1: Add Empty Columns to the table
+## Task 1: Add Empty Columns To the Table
 
-While the default UI that was created for us includes buttons at the top of the page - it would be nicer to have buttons at each row of the table that will allow us to choose a record and edit or show details. Let's see how we can modify the button and use icon based buttons for that.
+While the Quick Starts added buttons to the top of the page for editing and displaying details, it might be nicer to have buttons in each row of the table for those functions, so users don't have to select the row first. Let's see how we can make that happen.
 
-1. Back in the Design view of the main-start page, select the table of accounts in either the structure pane or the visual editor.
+First we'll add two columns to the table, to hold each of the buttons.
+
+1. Back in Design view, select the table in either the Structure pane or the canvas:
 
 	![Image alt text](images/tableproperties.png)
 
-2. In the properties palette, select the data tab. Then click the little table icon at the top right of the list of columns.
+2. In the Properties pane, click the **Data** tab, then click the **Edit Columns** icon next to the Table Columns heading:  
 
   ![Image alt text](images/emptycolumn.png)
-3. Click the **New Empty Column** twice to add two empty columns to your table.
+
+3. Click **New Empty Column** twice to add two empty columns to your table:
 	  ![Image alt text](images/columnsadded.png)
 
+	The new columns are represented by the vertical lines at the far left in the Table Columns area (in this example, under **Revenue**).
 
-4. Click to select the first empty column and click the arrow on the right to go into this column's details.
+4. Click the vertical line for the first empty column, then click the arrow on the right to see this column's details.
 
-5. Set the **Columns, Header Text** attribute to **Edit**. Then click the **Table Columns** back arrow at the top of the property palette to go back to the properties of the table.
+5. In the **Columns, Header Text** field, type **Edit**, then click the **Table Columns** back arrow to go back to the Data tab:
 	  ![Image alt text](images/editcolumn.png)
-6. Go into the properties of the second empty column, and set the **Columns, Header Text** to **Info**.
+
+6. Repeat step 5 for the second empty column, this time setting **Columns, Header Text** to **Info**:
 	  ![Image alt text](images/infocolumn.png)
-7. You'll see the new titles reflected in the visual editor too. Note that you can expand your visual editor area by collapsing the application navigator tab.
 
-	  ![Image alt text](images/columnsset.png)
+Your screen should now look something like this:  
 
+  ![Image alt text](images/columnsset.png)
 
+We've now added two more columns to our table, which you can see in the canvas area.  (You may need to close some tabs or resize some areas to see them.)
 
-## Task 2: Adding Icon Buttons
+## Task 2: Add Icon Buttons
 
-Now let's add content to the empty columns we just created.
+Let's use the empty columns we just created to add some icon-based buttons that look like a pencil (for Edit) and an exclamation point (for Details).  Then we'll wire up these buttons to some actions so that they'll do something when the user clicks on them.
 
-1. In the Design view of the application, make sure that the components palette is visible and use the search at the top to locate the button component.
+1. In Design view, click **Components** to display the Components palette, then search for the **Button** component:
 
 	![Image alt text](images/button.png)
 
 
-2. Drag and drop a button into the empty edit column of your table in the visual editor. Note that the editor highlights the location you can drop the button into. Make sure you drop it into the middle of the column.
+2. Drag the Button component and drop it into the empty Edit column in your table. The editor highlights the location you can drop the button into; make sure you drop it into the middle of the column:
 	![Image alt text](images/drag1.png)
-3. Repeat the process and drag another button into the info column.
+
+3. Drag another Button component into the Info column:
 	![Image alt text](images/drag2.png)
-4. Back in the components palette, use the filter to locate the icon component.
+
+4. Back in the Components palette, locate the Icon component:
 	![Image alt text](images/icon.png)
-5. drag the icon into the structure pane and onto the first button (the one in the edit column). When prompted choose the **startIcon** as the slot for the icon.
+
+5. Drag the Icon component into the Structure pane and drop it on to the first button (the one for the Edit column). When prompted, choose **startIcon** as the slot for the icon:
 	![Image alt text](images/dragicon1.png)
-6. In the properties palette for the icon, click the icon to bring up the dialog for choosing a different icon image.
+
+6. In the Properties pane, click the image under Icon to choose a different image:
 	![Image alt text](images/iconproperties.png)
-7. Search and locate an **Edit** icon and **Select** it from the list.
+
+7. In the Icon Gallery, search for **Edit**, then click **Select**:
 	![Image alt text](images/editicon.png)
-8. Drag another icon onto the second button, and then switch the icon for that button to be the **information** icon.
+
+8. Repeat steps 5-7, this time dragging the Icon component onto the second button in Structure view:
+
 	![Image alt text](images/dragicon2.png)
 
+9. Use the Properties palette to select the **Information** icon from the Icon Gallery:
 	![Image alt text](images/infoicon.png)
-9. Pick each of the buttons in the visual editor, and then change the following properties:
+
+10. In the canvas area, click any **Edit** button, then use the Properties pane to set these properties:
 
 
 | Property | Value |
@@ -81,43 +96,64 @@ Now let's add content to the empty columns we just created.
 
 ![Image alt text](images/buttonproperties.png)
 
-Your table now has action buttons that look good. The next step is to tell Visual Builder what these buttons should do when the user clicks on them.
+11. Repeat step 10 for the **Information** button.
+
+We now have nice-looking icon-based buttons for each row, but so far they don't do anything. Let's change that.
 	![Image alt text](images/buttonsformatted.png)
+
 ## Task 3: Define Action Chains
 
-Visual Builder apps are event driven, when an end user performs an operation in the user interface it fires up an event. Developers create action chains to handle those events. An action chain defines a set of actions that will take place. Action chains are created visually in the action chain editor.
+VB Studio apps are event-driven, which means that an event is fired when an end user performs an operation in the user interface. As a developer, you can create an *action chain* that kicks off a series of actions in response to an event. Let's see how to create an action chain visually using the Action Chains editor.
 
-1. In the Design view of the application, select the Edit button, and in the properties palette switch to the **events** tab.
+1. In Design view, select the Edit button, then click **Events** in the Properties pane:
 
 	![Image alt text](images/eventproperties.png)
 
-2. Click the **New Event** button and select the **On ojAction** option. This will take you into the action chain editor.
+2. Click **+ New Event**, then **On ojAction**:
 	![Image alt text](images/newEvent.png)
-On the left side you see all the actions you can declaratively define including calling REST endpoints, invoking JavaScript function, and many more. The quick starts we used to create the edit and details page already created action chains that invoke the needed logic for us. All we need to do is call those existing action chains from the new action chain we are defining.
 
-3. From the list of actions on the left select the **Call Action Chain** action and drag and drop it onto the + sign. (Alternatively you can click the + sign and choose general->call action chain).
+You're now in the Action Chain Editor.
+
+On the left side, you can see all the actions you can define, including calling REST endpoints, invoking JavaScript functions, and many more. The Quick Starts we used to create the Edit and Details pages already created action chains that invoke the needed logic for us. All we need to do is call those action chains from the new action chain we're defining.
+
+3. From the list of actions on the left, drag **Call Action Chain** and drop it onto the + sign:
 	![Image alt text](images/actiondrag.png)
-4. In the property inspector, in the drop down list for the **Action Chain ID** select the **NavigateToEditAccountsChain**.
+
+4. In the Properties pane, click the arrow in the **Action Chain ID** field and select **NavigateToEditAccountsChain** from the drop-down:
 	![Image alt text](images/eventproperties.png)
-5. Note that this action expects a value for the input parameter **accountsid**. Click the **Not Mapped** text.
+
+ In other words, when this action chain is fired, it will navigate to the Edit page created for us by the Quick Start. However, as we can see from the Properties pane, this action chain expects a value for the input parameter **accountsId**.
+
+5. Click the **Not Mapped** label:
 	![Image alt text](images/inputparam.png)
-6. The dialog that shows up allows you to map values into variables in an easy drag and drop way.
 
-7. From the left side select **Key** which is an Action Chain->Variable and drag it over to the right side's **accountsid** parameter.
+ The Assign Input Parameters dialog allows us to easily map values to variables using drag and drop.
+
+6. Under Sources->Action Chain on the left, drag the action chain variable **key** and drop it on the **accountsid** parameter in the Target area on the right:
 	![Image alt text](images/valuemap.png)
-8. Click the **Save** button to save your assignment.
 
-9. Click the **Page Designer** tab to go back to the visual view of the main-start page.
+7. Click **Save**.
+
+8. Click **Page Designer** to go back to the visual view of the main-start page:
 	![Image alt text](images/pagedesigner.png)
-10. Repeat steps 1-9 this time for the **info** button. Create an **On ojAction** action chain, and in it add a **Call Action Chain** action. For the action you map this time choose the **NavigateToAccountsDetailChain** action and map the input parameter to the **Key** variable.
-	![Image alt text](images/action2.png)
-11. Click to **Preview** your updated page. See how you can now click the buttons in the lines to edit and get further information about each account.
 
-12. If your buttons are working as expected, go back to the page editor and in the structure pane select the **Toolbar** component that contains the two buttons that were added by the quick starts. **Right Click** and  choose **delete** to remove them from your page.
-	![Image alt text](images/delete.png)
+9. Repeat steps 2-7, this time for the **Info** button. When creating your **On ojAction** action chain, use the **Call Action Chain** action, and select **NavigateToAccountsDetailChain** in the Action Chain ID field. As before, map the **key** variable to the accountsID input parameter.
+	![Image alt text](images/action2.png)
+
+	Let's see what we've done so far.
+
+10. Click **Preview** in the header, then open the new browser tab.
+
+ You can now click the Edit and Info icons in a row to open the Edit and Detail pages for the organization selected. Pretty cool!
+
+ We don't need the buttons at the top of the page anymore, so let's remove them.
+ 	![Image alt text](images/delete.png)
+
+12. In the Page Editor, go to the Structure pane.  Under **Toolbar**, right-click each button and choose **Delete** to remove it from your page:
+
 	![Image alt text](images/navbar.png)
 
-Your table now has action buttons that look good and work as expected. The next step is to fine tune the look and feel of the pages created by the quick starts and apply some Redwood templates to them.
+Your table now has buttons that are attractively rendered and that work as expected. The next step is to fine-tune the look and feel of the pages created by the Quick Starts by applying some Redwood templates to them.
 
 
 ## Learn More
