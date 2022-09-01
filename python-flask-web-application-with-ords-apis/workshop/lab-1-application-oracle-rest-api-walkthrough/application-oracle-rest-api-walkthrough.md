@@ -106,15 +106,38 @@ There are various ways you can start your Flask application, this is the more ma
 
     ![Right-click development server address](images/right-click-ip-for-flask-app.png " ")
 
-## Task 4: Review the basic HTTPS operations
+## Task 4: Review the basic HTTPS operations - Part 1
 
 1. Review the **`index.html`** page.
 
     - When the Flask application first loads, you'll see this screen:
 
     ![The index page in portrait view](images/index-page-portrait-view.png " ")
+> :warning: But first, let's personalize this *Welcome* page.
 
-    - You may explore the navigation tab (hamburger icon on upper right-hand corner). But we'll first explore the Folium map at the bottom of this `index` page. 
+## Task 5: Personalize the index.html page
+
+1. You'll notice the filler text at the top of the `index.html` page. Let's customize that to make this application unique *to you*.
+
+![Observing the filler text at the top of the page.](images/index-page-portrait-view.png " ")
+
+2. Return to your editor and expand the `templates` folder. There you'll find the `index` file. Select it.
+
+![Navigating to the templates folder and the index page.](images/index-page-portrait-view.png " ")
+
+3. Scroll down till you see the `<div class="card-body">` container on Line 12. Change it to something, anything you like. Once satisfied, save the file. 
+
+![Changing the card body text to something unique.](images/index-page-portrait-view.png " ")
+
+4. Return to your the browser window where the Flask application is displaying. And reload the page. 
+
+![Reloading the Flask page to reflect changes in index template.](images/index-page-portrait-view.png " ")
+
+5. You should now see the updated text from the `index` template. Congratulations, you've just personalized the application!
+
+## Task 6: Review the basic HTTPS operations - Part 2
+
+1. You can explore the navigation tab (hamburger icon on upper right-hand corner). But we'll first explore the Folium map at the bottom of this `index` page. 
     
 > :brain: *Folium "makes it easy to visualize data that’s been manipulated in Python on an interactive Leaflet.js map. Manipulate your data in Python, then visualize it on a Leaflet map via Folium...It enables both the binding of data to a map for choropleth visualizations as well as passing rich vector/raster/HTML visualizations as markers on the map To expand your knowledge of Folium and Leaflet.js, visit the "Learn More" section for more details.*
 
