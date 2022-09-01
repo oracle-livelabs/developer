@@ -19,6 +19,7 @@ In this workshop, you will:
 * Provision instances to obtain a free development environment
 * Create a project for collaborative development
 * Design and develop a simple Human Resources web app
+* Enable the app to run as a PWA
 * Share and publish the web app
 
 ### Prerequisites
@@ -33,4 +34,4 @@ This workshop requires:
 
 ## Acknowledgements
 * **Created By/Date** - Sheryl Manoharan, VB Studio User Assistance, November 2021
-<!--* **Last Updated By** - October 2021 --!>
+* **Last Updated By/Date** - Sheryl Manoharan, July 2022

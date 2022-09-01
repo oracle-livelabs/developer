@@ -1,10 +1,10 @@
-# How to Build User Interface using Oracle APEX and Integrate with Oracle Blockchain Platform 
+# How to Build User Interface using Oracle APEX and Integrate with Oracle Blockchain Platform
 
-## Introduction: Oracle Application Express (APEX)
+## Introduction
 
 APEX is a low-code development platform that enables you to build scalable, secure enterprise apps, with world-class features, that can be deployed anywhere.
 
-*Estimated Lab Time: 15 minutes*
+*Estimated Lab Time:* 15 minutes
 
 
 ### Objectives
@@ -14,10 +14,15 @@ In this lab, you will:
 
 ### Pre-Requisites
 
+### Prerequisites
 This lab assumes you have:
-- Created a Blockchain Network connecting 3 organizations
-- Created, Deployed & Executed Smart Contracts using Oracle Blockchain App Builder
-- Created & Setup API Gateway to connect with Smart Contract API's
+- An Oracle Cloud account
+- You have completed:
+    - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
+    - Lab: Environment Setup
+    - Lab: Create a Blockchain Network connecting 3 Organizations
+    - Lab: Create and Deploy Smart Contracts using Oracle Blockchain App Builder
+    - Lab: Create & Setup API Gateway to connect with Smart Contract API's
 
 
 ## Task 1: Spin Up Autonomous Database Instance
@@ -50,7 +55,7 @@ This lab assumes you have:
 
 ## Task 2: Configure Database Schema and User Credentials
 
-1. When your Autonomous Database instance has provisioned, access the 'Service Console.' 
+1. When your Autonomous Database instance has provisioned, access the 'Service Console.'
 
   ![Access Service Console](images/4-apex-2-1.png)
 
@@ -166,11 +171,11 @@ This lab assumes you have:
 
 ## Task 4: Configure APEX Data Source with API Gateway Endpoint
 
-1. Now, click on 'Shared Components.' Here you will be able to configure application attributes and data sources. 
+1. Now, click on 'Shared Components.' Here you will be able to configure application attributes and data sources.
 
   ![Access Shared Components](images/4-apex-4-1.png)
 
-2. Click on 'Application Definition Attributes,' located under **Application Logic**. 
+2. Click on 'Application Definition Attributes,' located under **Application Logic**.
 
   ![Application Definition Attributes](images/4-apex-4-2.png)
 
@@ -179,11 +184,11 @@ This lab assumes you have:
   ![Substitions](images/4-apex-4-3.png)
 
 4. Set the following **Substitutions** and 'Apply Changes':
-- First, set G\_OCI\_WEB\_CREDENTIAL to OCI\_API\_Credentials.
-- Next, set OBP\_MAIN\_INSTANCE\_URL to the URL you found in the **Deployment Information** section in Lab 3. This allows APEX to connect to the Car Marketplace OBP REST API endpoints via the API Gateway deployment. 
-- Set FABCAR\_CHAINCODE to car\_marketplace\_cc.
-- Set TOKENIZATION\_CHAINCODE to car\_tokenization\_cc.
-- Set DEALER\_1\_URL and DEALER\_2\_URL to john_dealer1 and sam_dealer2, respectively. This gives information on API routing.
+  - First, set G\_OCI\_WEB\_CREDENTIAL to OCI\_API\_Credentials.
+  - Next, set OBP\_MAIN\_INSTANCE\_URL to the URL you found in the **Deployment Information** section in the previous lab (Lab: Created & Setup API Gateway to connect with Smart Contract API's). This allows APEX to connect to the Car Marketplace OBP REST API endpoints via the API Gateway deployment.
+  - Set FABCAR\_CHAINCODE to car\_marketplace\_cc.
+  - Set TOKENIZATION\_CHAINCODE to car\_tokenization\_cc.
+  - Set DEALER\_1\_URL and DEALER\_2\_URL to john_dealer1 and sam_dealer2, respectively. This gives information on API routing.
 
   ![Substitions Form](images/4-apex-4-4.png)
 
@@ -195,7 +200,7 @@ This lab assumes you have:
 
  ![GetDealerByRange](images/apex-4-4-12.png)
 
-7. Click the pencil icon **Remote Server**. 
+7. Click the pencil icon **Remote Server**.
 
   ![Edit Remote Server](images/4-apex-4-8.png)
 
@@ -217,19 +222,19 @@ This lab assumes you have:
   ![Edit URL Path Prefix and Apply Changes](images/4-apex-4-11.png)
 
 11. Now, repeat steps 7-11 for the following REST Sources:
-    - 'GetAccountBalance' 
+    - 'GetAccountBalance'
     - 'GetInvoiceByRange'
     - 'GetCarsByRange'
     - 'GetCarHistoryById'
     - 'GetPOByRange'
-    -'GetInvoiceByRannge' 
+    -'GetInvoiceByRannge'
 
   ![Repeat APEX Data Source Steps](images/apex-4-4-12.png)
 
-## Task 5: [Proceed to next lab](../5-labs-obp-application-tokenXchange/obp-apex-application-tokenXchange.md)
+You may now proceed to the next lab.
 
 
-<!-- 10. 
+<!-- 10.
 
 5. Proceed to payment by clicking a car in the Marketplace. This car will disappear from the Marketplace when sold.
 
@@ -241,5 +246,5 @@ This lab assumes you have:
 
 ## Acknowledgements
 * **Author** - Amal Tyagi, Cloud Engineer
-* **Contributors** -  Teodora Gheorghe, Adrien Lhemann, Diego Morales, Lokeswara Nushisarva, Siddesh C. Prabhu Dev Ujjni
-* **Last Updated By/Date** - Amal Tyagi, August 2022
+* **Contributors** -  Teodora Gheorghe, Adrien Lhemann, Diego Morales, Lokeswara Nushisarva, Siddesh C. Prabhu Dev Ujjni, Rene Fontcha
+* **Last Updated By/Date** - Rene Fontcha, September 2022
