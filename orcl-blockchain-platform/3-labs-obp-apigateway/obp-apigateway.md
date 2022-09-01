@@ -1,26 +1,26 @@
 # Create & Setup API Gateway to connect with Smart Contract API's
 
-## Introduction: Oracle API Gateway
+## Introduction
 
 The API Gateway service enables you to publish APIs with private endpoints that are accessible from within your network, and which you can expose with public IP addresses if you want them to accept internet traffic. The endpoints support API validation, request and response transformation, CORS, authentication and authorization, and request limiting.
 
 In this lab, you will be introduced to API Gateway. The gateway is necessary for configuring Oracle Blockchain Platform REST API endpoints on the front-end application.
 
-*Estimated Lab Time: 15 minutes*
+*Estimated Lab Time:* 15 minutes
 
 ### Objectives
 
 In this lab, you will:
 * Create and configure REST endpoints to be accessed by front-end applications
 
-### Pre-Requisites
-
+### Prerequisites
 This lab assumes you have:
-
-* Environment Setup
-* Initialize Environment 
-* Created Blockchain Network connecting multiple organizations in Oracle Blockchain Platform (OBP)
-* Created, Deployed & Executed Smart Contracts using Oracle Blockchain App Builder
+- An Oracle Cloud account
+- You have completed:
+    - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
+    - Lab: Environment Setup
+    - Lab: Create a Blockchain Network connecting 3 Organizations
+    - Lab: Create and Deploy Smart Contracts using Oracle Blockchain App Builder
 
 
 ## Task 1: Setup VCN and Subnet
@@ -41,7 +41,7 @@ This lab assumes you have:
     - Choose a **VCN Name** (e.g. Car Marketplace VCN).
     - Ensure the correct **Compartment** is selected (e.g. Blockchain LiveLabs).
     - Keep the remaining default fields.
-  
+
   ![VCN Configuration](images/3-gateway-1-3.png)
 
 5. Click 'Next' and then 'Create.'
@@ -140,10 +140,10 @@ This lab assumes you have:
   ![Deployment Step 1](images/3-gateway-4-4.png)
 
 
-## Task 5: Create Routes 
+## Task 5: Create Routes
 
 1. Next in your deployment, you need to add 6 routes: 2 for each instance , 1 founder instance and 2 participant instances. Each instance will have two routes
-    - One route to perform `transactions`:'insert' and 'update' 
+    - One route to perform `transactions`:'insert' and 'update'
     - Second route to perform `chaincode-queries`:'query a transactions or transactions'
     - To create the routes click routes --> Under 'Routes', fill out the form for your first route as follows:
     - Enter a **Path**. For Route 1, this will be /marketplace-2/transactions
@@ -153,11 +153,11 @@ This lab assumes you have:
     - How to Construct Route URL:
       - From the Blockchain Admin Dashboard --> click on Nodes --> Navigate to restproxy (bottom of the screen) --> Copy the URL
       - Append to URL --> [api/v2/channels/car-marketplace/transactions](https://docs.oracle.com/en/cloud/paas/blockchain-cloud/restoci/op-restproxy-api-v2-channels-channelname-transactions-post.html)
-    
+
     ![Blockchain Dashboard](images/3-gateway-4.bc.1.png)
-    
+
     - For **Connection Establishment**, **Request Transmit**, and **Reading Response** timeouts, enter 60, 10, and 10 respectively
-    
+
   ![Route 1](images/3-gateway-4-5.1.png)
 
 2. Click the '+ Another Route' button and repeat Step 2 for the remaining 5 routes based on the blockchain instances as shown:
@@ -178,13 +178,7 @@ Once active, the deployment can be used to make REST API calls between APEX and 
   ![Deployment Information](images/3-gateway-5-1.png)
 
 
-## Task 6: [Proceed to next lab](../4-labs-obp-application/obp-apex-application.md)
-
-## What's Next?
-
-  **You are all set to begin the next lab! Click Lab 4: How to Build User Interface using Oracle APEX and Integrate with Oracle Blockchain Platform.**
-
 ## Acknowledgements
 * **Author** - Amal Tyagi, Cloud Engineer
-* **Contributors** -  Teodora Gheorghe, Adrien Lhemann, Diego Morales, Lokeswara Nushisarva, Siddesh C. Prabhu Dev Ujjni
-* **Last Updated By/Date** - Amal Tyagi, August 2022
+* **Contributors** -  Teodora Gheorghe, Adrien Lhemann, Diego Morales, Lokeswara Nushisarva, Siddesh C. Prabhu Dev Ujjni, Rene Fontcha
+* **Last Updated By/Date** - Rene Fontcha, September 2022
