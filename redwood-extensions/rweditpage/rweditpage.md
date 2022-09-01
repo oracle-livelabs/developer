@@ -1,4 +1,4 @@
-# Applying RedwoodTemplates
+# Apply Redwood Templates
 
 ## Introduction
 

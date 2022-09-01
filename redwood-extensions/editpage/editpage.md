@@ -1,4 +1,4 @@
-# Adding an Edit Page and a Details Page
+# Add an Edit Page and a Details Page
 
 ## Introduction
 

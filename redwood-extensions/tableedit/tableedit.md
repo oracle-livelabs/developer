@@ -1,4 +1,4 @@
-# Adding Buttons and Action Chains
+# Add Buttons and Action Chains
 
 ## Introduction
 
