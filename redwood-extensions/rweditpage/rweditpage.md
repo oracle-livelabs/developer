@@ -2,33 +2,39 @@
 
 ## Introduction
 
-This lab we'll apply a couple of the Redwood page template to improve the user experience of working with our pages. With the Redwood templates we will get the same look and feel of applications created by the Oracle developers for our pages, and we'll be able to leverage the usability features they implement.
+In this lab we'll apply a couple of the Redwood page templates to improve the user experience of working with our pages. The Redwood templates not only provide a consistent look and feel across the pages in our app (remember, we based our current page on the Welcome page template), but we'll also be able to leverage the usability features they offer.
 
 Estimated Time: 10 minutes
 
-### About Oracle Redwood Experience
-The Redwood user experience and design is the results of years of usability study conducted by the Oracle Design Experience team. They implement clear patterns that help end users work with your application in a smooth way.
+### About the Oracle Redwood User Experience
+The Redwood User Experience is a collective reinvention of how Oracle customers interact with technology and consume information. The result of years of usability studies
 
 ### Objectives
 
 
 In this lab, you will:
-* Using the simple create and edit template
-* Using the foldout template
+* Use the simple create and edit template
+* Use the foldout template
 
 
+## Task 1: Apply a Template to the Edit Page
 
-## Task 1: Applying Template to the Edit Page
 
-
-1. Back in the Design view of the main-start page, select the **Live** button at the top, this allows you to interact with the application in the design interface in the same way you do when your run it. Click the Edit button for one of the rows.
+1. Back in Design view, click the **Live** button at the top:
 
 	![Image alt text](images/liveview.png)
 
-2. A new tab is opened with the Edit page in it, and data for the account you selected will be fetched. Switch back to the Design view for the page. This allows you to edit it.
+	Live mode allows you to interact with your app as if it were actually running.
+
+2. Click the edit icon for one of the rows.
+
+	The Edit page opens, with data for the account you selected displayed.
+
+3. Switch back to Design mode so you can edit the page:
 
   ![Image alt text](images/editpage.png)
-3. In the components palette search for **edit**, and locate the **Simple Edit and Create Template**. Drag it to the top of the page hierarchy in the structure pane.
+
+4. In the Components palette search for **edit**, and locate the **Simple Edit and Create Template**. Drag it to the top of the page hierarchy in the structure pane.
 	  ![Image alt text](images/editcomponents.png)
 
 
