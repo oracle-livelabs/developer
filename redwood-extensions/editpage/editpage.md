@@ -1,95 +1,125 @@
-# Add an Edit Page and a Details Page
+# Add Edit and Details Pages
 
 ## Introduction
 
-This lab leverages quick starts in Oracle Visual Builder to create additional pages that will let you manipulate data in Oracle Cloud Apps.
+In this lab we'll use Quick Starts to help us create additional pages for our app, so your users can manipulate the data coming from Oracle Fusion Cloud Apps.
 
 Estimated Time: 10 minutes
 
-### About Visual Builder Quick Starts
-Visual Builder simplifies creating user interfaces on top of data with quick starts - guided dialogs that create pages that can update, insert, delete and view data.
+### About VB Studio Quick Starts
+VB Studio Quick Starts are guided dialogs that help you create user interfaces in a step-by-step fashion.  In this lab, we'll use Quick Starts to create pages that update, insert, delete, and view data.
 
 ### Objectives
 
 
 In this lab, you will:
-* Create an Edit Page
-* Create a Details Page
+* Create an Edit page
+* Create a Details page
 * Preview your application
 
 
 ## Task 1: Create an Edit Page
 
-Now that we have a page that shows data about accounts, we might want to update the data or insert new information about an account. In this section we leverage the quick starts of Visual Builder to create these pages. In this section we'll use the default layouts, and we'll modify the pages in the next tutorial.
+When your account managers locate an account using our new page, it's quite possible that they may need to update the account data or insert new information as well. In this task we'll create pages to let them do that, using the default layouts that the Quick Starts provide. In the next lab, we'll tailor those layouts to provide additional functionality.
 
-1. Back in the Design view of the application, select the table of accounts in either the structure pane or the visual editor.
+1. In Design view, select the table in either the Structure pane or on the canvas:
 
 	![Image alt text](images/Design.png)
 
-
-2. In the properties palette, select the quick start tab.
+2. In the Properties pane, click the **Quick Start** tab:
 
   ![Image alt text](images/tableselected.png)
-3. There are different types of pages we can create for the rows that are shown in the table. We'll start by picking the **Add Edit Page**, this will create a page that will let us edit the details of a row we selected from the table.
+
+	As you can see, there are different types of Quick Starts to help us create pages with different functions.  
+
+3. Click **Add Edit Page**:
 	  ![Image alt text](images/addEdit.png)
 
+	In the Add Edit Page dialog the **accounts** object is already selected, which means this is the object we'll present to users in the UI.
 
-4. In the dialog that pops up for selecting the object from which we pick a specific record the **Accounts** object is already selected, keep it that way and click **next**. Repeat this in the next step of the wizard which points out the object that will be updated, so click **Next** there too.
+4.  Click **Next**.
+
+5. On this page we select the object that will be updated. **accounts** is already selected, so click **Next** here too:
 	  ![Image alt text](images/endpoints1.png)
-5. We now end up on a page that lets us choose the specific fields we want to edit in the page we are creating. We'll use the Filter at the top of list of fields to locate specific fields.
+
+	This page lets us choose the specific fields we want to present on the Edit Page. We know there are four columns in our table, so let's use the filter field at the top to help us find those fields:
 	  ![Image alt text](images/endpoints2.png)
-6. Search for **name** and then **revenue** and select the following fields:
-* OrganizationName
-* CEOName
-* CurrentFiscalYearPotentialRevenueAmount
-* NextFisicalYearPotentialRevenueAmount
+
+6. Filter on **name**, then **revenue**, and select the following fields:
+	* OrganizationName
+	* CEOName
+	* CurrentFiscalYearPotentialRevenueAmount
+	* NextFisicalYearPotentialRevenueAmount
+
 	  ![Image alt text](images/fields.png)
-7. Click **Finish** to complete the quick start and create the page. Note that you'll end up on the Accounts search page, but now there is an Edit Accounts button at the top of the page.
+
+7. Click **Finish** to complete the Quick Start and create the page.
+
+	We're back on the Accounts search page in the Designer, but notice that there's now an **Edit accounts** button at the top of the page:
+
 	  ![Image alt text](images/editButton.png)
+
+We'll come back to this later, but for now let's use another Quick Start to help us create a page that displays more details about each account.
 
 ## Task 2: Create a Detail Page
 
-We'll use a similar process to create a page where we can see more information on each account.
+We'll use a similar process to create a page that displays more information on each account.
 
-1. In the Design view of the application, select the table of accounts in either the structure pane or the visual editor.
+1. In Design view, select the table in either the Structure pane or on the canvas.
 
-2. In the properties palette, select the quick start tab.
+2. In the Properties pane, click the Quick Start tab:
 
   ![Image alt text](images/Design2.png)
-3. This time pick the **Add Detail Page**, this will create a page that will let us edit the details of a row we selected from the table.
 
-4. In the dialog that pops up for selecting the object from which we pick a specific record the **Accounts** object is already selected, keep it that way and click **next**.
+3. This time pick **Add Detail Page**, which will create a page that lets users edit the details of a row selected from the table.
+
+4. On this page, which identifies the object from which users will pick a specific record, the **accounts** object is already selected, so click **Next**:
   ![Image alt text](images/endpoints3.png)
 
-5. In the field selection page use the Filter at the top of list of fields to locate specific fields.
+5. On the Page Details page, use the filter field to search for and select these fields:
 
-6. Select the following fields:
-* OrganizationName
-* CEOName
-* OwnerName
-* AddressLine1
-* AddressLine2
-* AddressLine3
-* AddressLine4
-* City
-* County
-* Country
+	* OrganizationName
+	* CEOName
+	* OwnerName
+	* AddressLine1
+	* AddressLine2
+	* AddressLine3
+	* AddressLine4
+	* City
+	* County
+	* Country
 
   ![Image alt text](images/fields2.png)
-7. Click **Finish** to complete the quick start and create the page.
+
+	These are the fields that will provide more information about the selected record (that is, an individual account).
+
+6. Click **Finish** to complete the Quick Start and create the page:
   ![Image alt text](images/results.png)
-8. Let's preview the updated app. Click the Preview button to run the new app, and navigate to the other browser tab to see the updated page loaded.
+
+Now let's preview the updated app.
+
+7. Click **Preview** in the header, then open the new browser tab:
   ![Image alt text](images/home.png)
-9. When the page loads, search to locate a specific record, then select that record in the table and click the **edit accounts** button, this takes you to the edit page. Update information such as the CEO Name and revenue for the account and click the **Save** button. The data is submitted to Oracle Cloud Apps and is saved there. It will show up in your table too.
+
+8. When the page loads, experiment with searching for a specific record, selecting that record, then clicking the **Edit accounts** button.
+
+9. Now try updating some fields, like the CEO Name and a Revenue field, then click **Save**.
+
+	You'll see a pop-up confirming that this data has been submitted to Oracle Fusion Cloud Apps. It will be reflected in your table, too:
+
   ![Image alt text](images/edit.png)
-10. Click on another record and then click the "account Details" button to find out the address of the account. Use the browser's back button to return to the list page.
+
+10. Click another record, then click the "account Details" button to find out the address of the account:
   ![Image alt text](images/details.png)
-Our application is functioning well. The next step will be to improve the usability - first by adding buttons to the table rows, and later on by modifying the look and feel.
+
+	 Use the browser's back button to return to the search page.
+
+Our application is functioning well. In the next step we'll improve the usability, first by adding buttons to the table rows, and later by modifying the app's look and feel.
 
 ## Learn More
 
 
-* [Quick Starts](https://docs.oracle.com/en/cloud/paas/visual-builder/visualbuilder-building-appui/work-pages-and-flows1.html#GUID-DD40C71D-A8AE-43E2-A2F4-798AF3D49983)
+* [How Do Quick Starts Work?](https://docs.oracle.com/en/cloud/paas/visual-builder/visualbuilder-building-appui/work-pages-and-flows1.html#GUID-DD40C71D-A8AE-43E2-A2F4-798AF3D49983)
 
 
 ## Acknowledgements
