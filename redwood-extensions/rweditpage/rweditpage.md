@@ -7,7 +7,7 @@ In this lab we'll apply a couple of the Redwood page templates to improve the us
 Estimated Time: 10 minutes
 
 ### About the Oracle Redwood User Experience
-The Redwood User Experience is a collective reinvention of how Oracle customers interact with technology and consume information. The result of years of usability studies
+The Redwood User Experience is a collective reinvention of how Oracle customers interact with technology and consume information. While Redwood includes a beautiful new set of user interface elements, including the templates you'll work with in this lab, it's also a philosophical approach to solving customer problems in a differentiated and satisfying way. 
 
 ### Objectives
 
