@@ -35,7 +35,7 @@ When your account managers locate an account using our new page, it's quite poss
 3. Click **Add Edit Page**:
 	  ![Image alt text](images/addEdit.png)
 
-	In the Add Edit Page dialog the **accounts** object is already selected, which means this is the object we'll present to users in the UI.
+	In the Add Edit Page dialog the **accounts** object is already selected, which is what we want.
 
 4.  Click **Next**.
 
@@ -55,7 +55,7 @@ When your account managers locate an account using our new page, it's quite poss
 
 7. Click **Finish** to complete the Quick Start and create the page.
 
-	We're back on the Accounts search page in the Designer, but notice that there's now an **Edit accounts** button at the top of the page:
+	We're back on the Accounts search page in the Designer.  Notice that there's now an **Edit accounts** button at the top of the page:
 
 	  ![Image alt text](images/editButton.png)
 
@@ -76,7 +76,7 @@ We'll use a similar process to create a page that displays more information on e
 4. On this page, which identifies the object from which users will pick a specific record, the **accounts** object is already selected, so click **Next**:
   ![Image alt text](images/endpoints3.png)
 
-5. On the Page Details page, use the filter field to search for and select these fields:
+5. On the Add Detail Page, use the filter field to search for and select these fields:
 
 	* OrganizationName
 	* CEOName

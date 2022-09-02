@@ -13,14 +13,14 @@ The Redwood User Experience is a collective reinvention of how Oracle customers 
 
 
 In this lab, you will:
-* Use the Simple Create and Edit Page Template
-* Use the foldout template
+* Use the Simple Create and Edit Page template
+* Use the Foldout template
 
 
 ## Task 1: Apply a Template to the Edit Page
 
 
-1. Back in Design view, click the **Live** button at the top:
+1. Back in Design view, click the **Live** button:
 
 	![Image alt text](images/liveview.png)
 
@@ -49,6 +49,7 @@ In this lab, you will:
 	|Primary action label | Save |
 	{: title="Template Properties"}
 
+Your screen should look like this:
 	  ![Image alt text](images/editproperties.png)
 
 Now that the template is set, let's redisplay the content of the page in its correct location in the template.
@@ -82,7 +83,7 @@ The Simple Create and Edit Page Template has a primary action built in, Save, bu
 2. In the Properties pane, click **Events**, then click **+ New Event**:
 ![Image alt text](images/newevent.png)
 
-3. Select **spPrimaryAction**, which will map the built-in action to the main button on the page.
+3. Select **On spPrimaryAction**, which will map the built-in action to the main button on the page.
 
 4. In the Action Chain editor, drag **Call Action Chain** and drop it on the + icon om the middle:
 ![Image alt text](images/callaction.png)
@@ -96,37 +97,35 @@ The Simple Create and Edit Page Template has a primary action built in, Save, bu
 7. In the **Current Fiscal Year Potential Revenue** field, enter a value, the click the **Save** button to verify that it works:
 ![Image alt text](images/liveedit.png)
 
-You should see the value you just entered in the canvas area.
+You should see the value you just entered reflected in the canvas area.
 
 ## Task 3: Use the Foldout Template
 
 Now let's apply a template to the Details page.  In this case, we'll use a template that creates a foldout effect for the page.
 
-1. In the Page Designer, click **Live**, then click the **info** icon for one of the rows:
+1. In the Page Designer, click the **info** icon for one of the rows:
 
 	![Image alt text](images/gotoinfo.png)
 
-	You should see the Accounts Detail page in the canvas area showing data for the row you chose.
+	You should see the Accounts Detail page for the row you chose:
 
   ![Image alt text](images/infobefore.png)
 
-2. Switch back to Design mode so you can edit the page by applying a new template.
-
-3. In the Components palette, search for **fold**, and find the **Foldout Layout Horizontal Template Pattern**:
+2. In the Components palette, search for **fold**, and find the **Foldout Layout Horizontal Template Pattern**:
 
  ![Image alt text](images/foldcomponents.png)
 
-4. Drag the template to the top of the page hierarchy in the Structure pane, and drop it when you see the blue line above Grid Row:
+3. Drag the template to the top of the page hierarchy in the Structure pane, and drop it when you see the blue line above Grid Row:
 
 	  ![Image alt text](images/folddrag.png)
 
 A pattern applies more than just a new look and feel to the user interface; it can add variables and actions to your page as well. In the Properties pane, notice that many template properties have been mapped to variables, but they may not be the values we want. To change the values of these properties, we'll need to update the variables' default values.
 
-5. In the row containing the **Page Designer** tab, click **Variables**:
+4. In the row containing the **Page Designer** tab, click **Variables**:
 
 	  ![Image alt text](images/variables.png)
 
-6. Locate each of these variables, then modify its **Default Value** property as shown here. (You don't have to save anything between modifications.)
+5. Locate each of these variables, then modify its **Default Value** property as shown here. (You don't have to save anything between modifications.)
 
 	|Variable |Default Value |
 	| --- | --- |
@@ -137,42 +136,40 @@ A pattern applies more than just a new look and feel to the user interface; it c
 	|biDirectionalNavigation | false |
 	{: title="Default values for page variables"}
 
-	Here's an example:
+	Here's a sample screenshot for the pageTitle variable:
 
 	  ![Image alt text](images/variables.png)
 
-7. Click **Page Designer** to see the effect of your changes in the page.
+6. Click **Page Designer** to see the effect of your changes in the page.
 
 	Now that the template is set, let's re-introduce the content of the page into its rightful location in the template.
 
-8. In the Structure pane, locate the **Form Layout**.
+7. In the Structure pane, locate the **Form Layout**.
 
-9. Drag **Form Layout** and drop it onto the first **div** in the first **Foldout Panel** in the Structure pane:
+8. Drag **Form Layout** and drop it onto the first **div** in the first **Foldout Panel** in the Structure pane:
  ![Image alt text](images/dragform.png)
 
 	Your page content should be back in place. However, we're displaying too much information in this panel, so let's move some of it to the next panel.
 
-10. In the Components palette, find the **Form Layout** component:
+9. In the Components palette, find the **Form Layout** component:
 	  ![Image alt text](images/formcomponent.png)
 
-11. Drag it to the second **Foldout Panel** and drop it onto the first **div**, selecting the **Default** slot.
+10. Drag it to the second **Foldout Panel** and drop it onto the first **div**, selecting the **Default** slot:
 		![Image alt text](images/dragform2.png)
 
-12. In the Structure pane select, click the fourth field in the Form Layout, and **Shift-select** all the other fields after that. Drag all of them into the new **Form Layout** you created in the second foldout panel:
+11. In the Structure pane select, click the fourth field in the Form Layout, and **Shift-select** all the other fields after that. Drag all of them into the new **Form Layout** you created in the second foldout panel:
 	  ![Image alt text](images/dragfield2.png)
 
-13. Select this second **Form Layout** in the Structure pane.  In the Properties pane, change the **Label Edge** property to **Start**.
+12. Select this second **Form Layout** in the Structure pane.  In the Properties pane, change the **Label Edge** property to **Start**.
 	  ![Image alt text](images/labelset.png)
 
-		This will make the form look like the other form that is already on your page.
+	This will make the form look like the other form that is already on your page.
 
-14. Switch back to the tab for the **main-start** page, then click **Preview** in the header to see your completed app.
+13. Switch back to the tab for the **main-start** page, then click **Preview** in the header to see your completed app.
 
-That's it! 
+Your work is finished! In the real world, at this point you would like do more testing, then deploy your extension to your Oracle Fusion Cloud Applications instance. Thanks for completing this workshop!
 
 ## Learn More
-
-*(optional - include links to docs, white papers, blogs, etc)*
 
 * [Oracle Redwood](http://oracle.com/redwood)
 
