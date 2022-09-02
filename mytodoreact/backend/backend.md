@@ -185,13 +185,14 @@ The setup script already creates an API gateway, but you still need to create th
 
 Click **Next**, review, and **Create**
 ![Create the deployment](images/create.png " " )
+
+Wait a moment for the deployment to be created.
 ## **Task 5**: Testing the Backend Application Through the API Gateway
 
 1. Navigate to the newly create Gateway Deployment Detail and copy the endpoint
    ![Copy endpoint](images/copy-endpoint.png " ")
 
-2. Testing through the API Gateway endpoint
-  postfix the gateway endpoint with "/todolist" as shown in the image below
+2. Testing in a browser, through the API Gateway endpoint; postfix the gateway endpoint with "/todolist" as shown in the image below
 
    ![Endpoint successful](images/endpoint-successful.png " ")
 

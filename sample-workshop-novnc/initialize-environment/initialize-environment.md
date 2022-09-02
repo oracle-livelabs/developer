@@ -2,7 +2,7 @@
 
 ## Introduction
 
-In this lab we will review and startup all components required to successfully run this workshop.
+In this lab, we will review and startup all components required to successfully run this workshop.
 
 *Estimated Lab Time:* 30 Minutes.
 
@@ -16,7 +16,7 @@ This lab assumes you have:
     - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
     - Lab: Environment Setup
 
-**NOTE:** *When doing Copy/Paste using the convenient* **Copy** *function used throughout the guide, you must hit the* **ENTER** *key after pasting. Otherwise the last line will remain in the buffer until you hit* **ENTER!**
+>**Note:** *When doing Copy/Paste using the convenient* **Copy** *function used throughout the guide, you must hit the* **ENTER** *key after pasting. Otherwise, the last line will remain in the buffer until you hit* **ENTER!**
 
 ## Task 1: Validate That Required Processes are Up and Running.
 
@@ -29,7 +29,7 @@ This lab assumes you have:
         - CDB1
         - CDB2
 
-    You may test database connectivity clicking on the *+* sign next to the Database(s) as shown below in the *SQL Developer Oracle Connections* panel.
+    You may test database connectivity by clicking on the *+* sign next to the Database(s) as shown below in the *SQL Developer Oracle Connections* panel.
 
     ![](./images/19c_hol_landing.png " ")
 
@@ -50,7 +50,7 @@ This lab assumes you have:
 
     If all expected processes are shown in your output as seen above, then your environment is ready for the next task.  
 
-3. If you see questionable output(s), failure or down component(s), restart the service accordingly
+3. If you see questionable output(s), failure, or down component(s), restart the service accordingly
 
     ```
     <copy>

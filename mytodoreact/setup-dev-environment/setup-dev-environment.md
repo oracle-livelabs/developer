@@ -194,7 +194,6 @@ The setup should take around 20 minutes to complete. During the setup, the cloud
 
 	![Setup progress feedback](images/resource-creation-update.png " ")
 
-
 ## **Task 7**: Complete the Setup
 
 When the setup is done running, you will see a message: **SETUP VERIFIED**
@@ -212,4 +211,4 @@ You may now **proceed to the next lab**.
 
 * **Authors** -  - Kuassi Mensah, Dir. Product Management, Java Database Access; Peter Song, Developer Advocate JDBC
 * **Contributors** - Jean de Lavarene, Sr. Director of Development JDBC/UCP
-* **Last Updated By/Date** - Peter Song, Developer Advocate,  Feb 2022
+* **Last Updated By/Date** - Kuassi Mensah
