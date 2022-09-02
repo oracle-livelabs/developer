@@ -53,9 +53,9 @@ Finally, this lab assumes you have the following developer environment:
   - Flask 
   - Virtual Environment (venv) *or* the Live Server extension for VS Code 
 
-> :bulb: *If your development environment is not set-up accordingly, you may refer to the **Learn More** section for resources on how to set-up your environment.*
+:bulb: *If your development environment is not set-up accordingly, you may refer to the **Learn More** section for resources on how to set-up your environment.*
 
-### You may now proceed to the [next Lab](#Next).
+You may now proceed to the [next Lab](#Next).
 
 ## Learn More
 
