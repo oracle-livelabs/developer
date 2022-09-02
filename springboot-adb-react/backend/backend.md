@@ -16,7 +16,7 @@ As with most React applications (https://reactjs.org/), this application uses re
 * Updating an existing todo item
 * Deleting a todo item
 
-The APIs are documented using Swagger. You can search for this address: https://bit.ly/3piu4cp in Swagger's console
+The APIs are documented using Swagger. You can look it up at for the following address: https://bit.ly/3piu4cp in Swagger's console
 
 The backend is implemented using the following Java classes (under ./backend/src/main/java/com/springboot...):
 
