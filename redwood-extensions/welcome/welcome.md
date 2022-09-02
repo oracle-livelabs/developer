@@ -4,7 +4,7 @@
 
 In this lab we'll use the Redwood Welcome Page template, along with Oracle JET UI components, to create a page that connects to an Oracle SaaS object.  Our page will display a list of accounts, and allow the list to be filtered.
 
-Estimated Time: 5 minutes
+Estimated Time: 15 minutes
 
 ### Objectives
 
@@ -15,7 +15,7 @@ In this lab, you will:
 
 ## Task 1: Create an App UI
 
-You should now be in the Designer, VB Studio's visual editor. We'll start by creating our own *App UI*, which is simply an application that includes a user interface component in the form of Visual Builder pages and flows. With App UIs, you can create new interfaces that address specific business needs for your company.
+You should now be in the Designer, VB Studio's visual editor. We'll start by creating an *App UI*, which is simply an application that includes a user interface component in the form of Visual Builder pages and flows. With App UIs, you can create new interfaces that address specific business needs for your company.
 
 1. On the left side of the Designer, click **+ App UI**:  
 
@@ -26,7 +26,7 @@ You should now be in the Designer, VB Studio's visual editor. We'll start by cre
 
   ![Image alt text](images/wssettings.png)
 
-In the Diagram view on the right, you can see the flows and pages for this App UI. A flow contains pages that relate to each other. An application can contain multiple flows, and a flow can contain many pages. In this case we have one flow, *main*, and one page, *main-start*:
+	In the Diagram view on the right, you can see the flows and pages for this App UI. A flow contains pages that relate to each other. An application can contain multiple flows, and a flow can contain many pages. In this case we have one flow, *main*, and one page, *main-start*:
 
   ![Image alt text](images/appflow.png)
 
@@ -34,29 +34,33 @@ In the Diagram view on the right, you can see the flows and pages for this App U
 
   ![Image alt text](images/IDE.png)
 
-## Task 2: Design Your Page
+## Task 2: Add a Page Template
 
-1. Let's start by exploring the Designer a bit.
+Before we get started, let's explore the Designer a bit.
 
-	**Note:** There are lots of tabs you can click to expand/collapse different areas and give yourself more room to work.
+**Tip:** There are lots of tabs you can click to expand/collapse different areas and give yourself more room to work.
 
   ![Image alt text](images/IDE2.png)
 
-  | #| Tab | Functionality |
-  | --- | --- | --- |
-  | 1 | Components | UI components you can add to a page, sorted into categories  |
-  | 2 |Data | Data objects you can work with, based on connections you create to SaaS objects |
-  | 3 | Structure | Hierarchical view of the page's structure |
-	  | 4 | Properties | Declarative area to define properties for the component selected in your page |
-	  | 5 | Canvas | Displays a design/live view (or code view) of your page content |
-{: title="IDE areas"}
+Here are the key areas of the Designer you'll use throughout this workshop:
 
-The Components palette contains over a hundred UI components that you can drag and drop onto your pages to design your interfaces. In this workshop, we're going to leverage some page templates designed by Oracle's Redwood Design team to accelerate our application development. The templates provide a responsive user experience, which means your app will adjust to the device accessing it.
+| # | Tab | Functionality |
+| --- | --- | --- |
+| 1 | Components | UI components you can add to a page, sorted into categories  |
+| 2 | Data | Data objects you can work with, based on connections you create to SaaS objects |
+| 3 | Structure | Hierarchical view of the page's structure  |
+| 4 |Properties | Declarative area to define properties for the component selected in your page |
+| 5 |Canvas | Displays a design/live view (or code view) of your page content |
+{: title="Designer Regions"}
 
-2. Use the search box at the top of the Components palette to search for **welcome**, which will find the **Welcome Page Template**. Drag the component from the Component palette and drop it on the canvas:
+The Components palette contains over a hundred UI components that you can drag and drop onto your pages to design your interfaces. In this workshop, we're going to leverage some page templates designed by Oracle's Redwood Design team to accelerate our application development. These templates provide a responsive user experience, which means your app will adjust to the device accessing it.
+
+1. Use the search box at the top of the Components palette to search for **welcome**, which will locate the **Welcome Page Template**. Drag the template from the Component palette and drop it on the canvas:
   ![Image alt text](images/welcome.png)
 
-3. Let's set some properties for the template. Click the **All** tab in the Properties pane and modify these properties:
+	Let's set some properties for the template to customize it a bit.
+
+2. Click the **All** tab in the Properties pane and modify these properties:
 
 | # | Property | Value |
 | --- | --- | --- |
@@ -66,11 +70,14 @@ The Components palette contains over a hundred UI components that you can drag a
 | 4 |Page Title | **Accounts** |
 {: title="Template Properties"}
 
+Your screen should look like this:
   ![Image alt text](images/properties.png)
+
+In the next lab, we'll add some more useful components to the page.
 
 ## Task 3: Add a Search Component and Define a Variable
 
-1. In the Components palette's Search box type **search**, which will locate a component called **Input Search**.
+1. In the Components palette's search box, type **search**, which will locate a component called **Input Search**.
 2. Drag this component and drop it on the page in the canvas. A pop-up will appear asking which slot you want to use; choose **Search slot**:
   ![Image alt text](images/slot.png)
 
@@ -90,11 +97,13 @@ The Components palette contains over a hundred UI components that you can drag a
 
   ![Image alt text](images/variablesettings.png)
 
-The Value field in the Properties pane now has a reference to our new variable.
+The Value field in the Properties pane now contains a reference to our new variable.
 
-## Task 4: Add a Collection Container and Work with the Structure Pane
+## Task 4: Add a Collection Container  
 
-1. In the Components palette's Search box type **collection**, which will locate a component called **Collection Container**.
+In this task we'll add a container to the page, which will later hold some data we'll get from Oracle Fusion Cloud Applications.
+
+1. In the Components palette's search box type **collection**, which will locate a component called **Collection Container**.
 2. Drag this component to the Structure pane and drop it on top of the Welcome Page template:
   ![Image alt text](images/collection.png)
 3. In the slots pop-up, select **Default**:
