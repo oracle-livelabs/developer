@@ -19,7 +19,7 @@ In this lab, you will:
 
 ## Task 1: Browse the Service Catalog
 
-Up until now we've worked on the UI (front end) of your application, but now it's time to work with the backend. VB Studio comes with a built-in catalog that automatically connects to your Oracle Fusion Cloud Apps catalog of services, which makes it easy to create a connection allowing us to use data from the Apps.
+Up until now we've worked on the UI (front end) of your application, but now it's time to work with the backend. VB Studio comes with a built-in catalog that automatically connects to your Oracle Fusion Cloud Apps catalog of services, which makes it easy to create a connection to the data from those Apps.
 
 1. On the far left side of the Designer's navigator, click the third tab, **Services**:
 
@@ -68,6 +68,7 @@ Up until now we've worked on the UI (front end) of your application, but now it'
 	* CurrentFiscalYearPotentialRevenueAmount
 	* NextFisicalYearPotentialRevenueAmount
 
+	Your screen should look like this:
 	  ![Image alt text](images/fields2.png)
 
 6. Click **Next**.
@@ -77,7 +78,7 @@ Up until now we've worked on the UI (front end) of your application, but now it'
 7. Click **FilterCriterion** on the right, under Target.
 	This displays the filter builder at the bottom of the dialog:
 	  ![Image alt text](images/FilterCriterion.png)
-8. In the filter builder, click **Click to Add Condition**.
+8. In the filter builder, click **Click to add condition**.
 9. Click in the **Attribute** field, then start typing **Orga ...** until you can choose **OrganizationName**:
 	  ![Image alt text](images/name.png)
 
@@ -88,7 +89,7 @@ Up until now we've worked on the UI (front end) of your application, but now it'
 11. Click **Done**.  Your screen should look like this: 			
 					  ![Image alt text](images/condition.png)
 
-	The filter we just built now says: If the organization name contains the user's search string (that is, the variable name), then filter the data in the table to show that row (or rows).
+	The filter we just built now essentially says: If the organization name contains the user's search string (that is, the variable name), then filter the data in the table to show that row.
 
 12. Click **Finish** to close the dialog.
 
@@ -117,12 +118,12 @@ To leverage the service's pagination capabilities (as opposed to fetching all th
 18. In the Designer's header, click **Preview** in the top right:
 											  ![Image alt text](images/preview.png)
 
-		This opens a new tab in your browser where you can see your running app, complete with our table populated with data.
+	This opens a new tab in your browser where you can see your running app, complete with our table populated with data.
 
-At this point you may want to play around with your live app, using different keywords to filter the list by organization name. Also, notice the smart pagination that occurs when you scroll through the records in the table; records are fetched only as needed.
+At this point you may want to play around with your live app, using different keywords to filter the list by organization name. Also, notice the smart pagination that occurs when you scroll through the records in the table; that is, records are fetched only as needed.
 											  ![Image alt text](images/results.png)
 
-Now that we have a running page that fetches data, the next step is to add pages that will allow us to edit the data and update the Oracle's SaaS business object.
+Now that we have a running page that fetches data, the next step is to add pages that will allow us to edit the data, which means updating the Oracle's SaaS business object behind the scenes.
 
 ## Learn More
 
