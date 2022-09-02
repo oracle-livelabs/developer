@@ -4,11 +4,9 @@
 
 This lab shows you how to build an extension for Oracle Fusion Cloud Applications using Oracle Visual Builder Studio, while leveraging key components from Oracle's Redwood User Experience. An *extension* is what you use to deliver new capabilities into Oracle Fusion Cloud Applications.
 
-Suppose you want to create a streamlined experience for your account managers to let them display information about key accounts, and also update specific fields for those accounts if needed.  While Oracle Cloud Fusion Apps Digital Sales offers pages that allow account managers to do this today, those pages contain many other fields that might make it difficult to zero in on the fields we care about. We want a tailored, simplified flow for the end of the quarter update to help accelerate the process.
+Suppose you want to create a streamlined experience for your account managers to let them display and modify information about key accounts.  While Oracle Cloud Fusion Apps Digital Sales allows account managers to do this today, those pages contain many other fields that make it difficult to zero in on the data we care about. We want a tailored, simplified flow for the end of the quarter update to help accelerate the process, so we'll create an extension that provides a new page to help account managers focus.
 
-We've been asked to provide a page that will let users search for an account by name, then update key fields like CEO name and projected revenue for this year and next. In addition, we want an easy way to check the address of each account.
-
-Let's see how we can go about building such an extension&mdash;in this case, an extension containing our new page&mdash;using Oracle Visual Builder Studio (or "VB Studio" for short).
+Specifically, our page will let users search for an account by name, then update key fields like CEO name and projected revenue for this year and next. In addition, we'll provide easy way to check the address of each account.
 
 Estimated Workshop Time: 1 hour
 
@@ -17,7 +15,7 @@ Estimated Workshop Time: 1 hour
 ### Objectives
 
 In this workshop, you will learn how to:
-  * Use Oracle Visual Builder Studio
+  * Use Oracle Visual Builder Studio (or "VB Studio", for short)
   * Create extensions for Oracle Fusion Cloud Applications
   * Leverage Oracle Redwood templates and components
   * Interact with data in Oracle SaaS
