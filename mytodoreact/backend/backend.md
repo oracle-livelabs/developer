@@ -20,7 +20,7 @@ As with most React applications (https://reactjs.org/), this application uses re
 * Updating an existing todo item
 * Deleting a todo item
 
-The APIs are documented using Swagger at http://130.61.67.158:8780/swagger-ui/#/.
+The APIs are documented using Swagger. You can look it up at for the following address: https://bit.ly/3piu4cp in Swagger's console
 
 The backend is implemented using the following Java classes (under ./backend/src/...):
 
@@ -97,7 +97,7 @@ This will allow the appropriate object storage bucket to access your application
         services
         </copy>
         ```
-    This will run `kubectl get services` in the background, but the setup script creates aliases for ease of use
+    This will run `kubectl get services` in the background, but the setup script creates aliases for ease of use. Wait till the external IP address is displayed.
 ![Get services](images/get-services.png " ")
 
 3. The following command returns all the pods running in your kubernetes cluster:
@@ -147,8 +147,9 @@ The setup script already creates an API gateway, but you still need to create th
 1. From the hamburger  menu navigate **Developer Services** > **API Management > Gateways**
    ![API Gateway](images/api-gateway-navigate.png " ")
 
-2. Click on the todolist gateway that has been created for you
+2. Click on the todolist gateway that has been created for you 
    ![Todo Lits Gateway](images/select-gateway.png " ")
+   \- Click on Deployments on the left pane.
 
 3. Create a todolist deployment by clicking create deployment
    ![Create deployment](images/create-deployment.png " ")
@@ -159,26 +160,31 @@ The setup script already creates an API gateway, but you still need to create th
   - CORS is a security mechanism that will prevent loading resources from unspecified origins (domain, scheme, or port).
   - Allowed Origins: is the list of all servers (origins) that are allowed to access the API deployment typically your Kubernetes cluster IP.
   - Replace the `.us-phoenix-1` portion with whichever region you replaced with in task 1.
-  - Replace the 3rd IP address with the external IP address of your Load Balancer
+  - Replace the 3rd IP address with the external IP address of your Load Balancer and postfix with `:80`
   - Allowed methods: GET, PUT, DELETE, POST, OPTIONS are all needed.
 
   To configure CORS, scroll down and click add next to CORS and fill in this information under allowed origins. These are the origins that can load resources to your application.
 
   ![CORS configuration](images/cors-information.png " ")
-6. Configure the Headers
 
-![Configure the headers](images/headers-new.png " ")
+6. Configure the Headers and apply changes
 
-7. Configure the routes: we will define two routes:
+![Apply changes](images/cors-apply-changes.png " ")
+
+
+7. Configure the routes: we will define two routes (for URL, replace 152.70.144.185 with the external IP address of your Load Balancer):
     - /todolist for the first two APIs: GET, POST and OPTIONS
 
 ![Route 1](images/route-1-new.png " ")
+
+![Add another route](/images/another-route.png " ")
 
     - /todolist/{id} for the remaining three APIs: (GET, PUT and DELETE)
 
 ![Route 2](images/route-2-new.png " ")
 
-
+Click **Next**, review, and **Create**
+![Create the deployment](images/create.png " " )
 ## **Task 5**: Testing the Backend Application Through the API Gateway
 
 1. Navigate to the newly create Gateway Deployment Detail and copy the endpoint

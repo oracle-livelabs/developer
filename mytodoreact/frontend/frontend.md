@@ -70,9 +70,9 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 1. Clone the git repository to a directory on your laptop (we only need the front end in this lab)
 	```
 	<copy>
-	mkdir reacttoo
+	mkdir reacttodo
 	cd reacttodo
-	git clone https://github.com/oracle/oci-react-samples.git
+	git clone --single-branch --branch helidon https://github.com/oracle/oci-react-samples.git
 	</copy>
 	```
 
@@ -95,7 +95,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 	npm install
 	</copy>
 	```
-    In case of errors, try the following command
+    In case of errors, try the following command (sometimes twice)
 	```
 	<copy>
 	npm audit fix --force
@@ -178,7 +178,7 @@ The build folder will be uploaded to object storage so you can access your appli
 
 ![Bucket details](images/bucket-details.png " ")
 
-  Edit visibility to public
+  Edit visibility and change to Public
 
 ![Edit bucket visibility](images/edit-visibility.png " ")
 2. Install the Staci utility for copying directories to OCI object storage

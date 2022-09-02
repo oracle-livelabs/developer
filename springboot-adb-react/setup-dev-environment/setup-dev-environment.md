@@ -125,6 +125,7 @@ The setup script uses Terraform, Bash scripts, and SQL to automate the creation 
 	```
 	<copy>
 	cd oci-react-samples/MtdrSpring
+	chmod +x *.sh
 	</copy>
 	```
 2. Copy this command to make sure that env.sh gets run every time you start up the cloud shell
@@ -192,12 +193,6 @@ The setup should take around 20 minutes to complete. During the setup, the cloud
 
 	![Setup progress feedback](images/resource-creation-update.png "resource-creation-update")
 
-You can also monitor the setup using the following command:
-	```
-	<copy>
-	ps -ef
-	</copy>
-	```
 ## Task 7: Complete the Setup
 
 When the setup completes, you will see a message: **SETUP VERIFIED**
