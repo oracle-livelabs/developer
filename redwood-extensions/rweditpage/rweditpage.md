@@ -141,27 +141,34 @@ A pattern applies more than just a new look and feel to the user interface; it c
 
 	  ![Image alt text](images/variables.png)
 
-5. Click **Page Designer** to see the effect of your changes in the page.
+7. Click **Page Designer** to see the effect of your changes in the page.
 
-Now that the template is set, let's re-introduce the content of the page into its rightful location in the template.
+	Now that the template is set, let's re-introduce the content of the page into its rightful location in the template.
 
-6. In the Structure pane, locate the **Form Layout**.
+8. In the Structure pane, locate the **Form Layout**.
 
-7. Drag **Form Layout** and drop it onto the first **Div** if the first **Foldout Panel** in the Structure pane. 
+9. Drag **Form Layout** and drop it onto the first **div** in the first **Foldout Panel** in the Structure pane:
+ ![Image alt text](images/dragform.png)
 
-	Your page content should be back in place. However, we are showing too much information in this panel, let's move some of it to the next panel.
-	  ![Image alt text](images/dragform.png)
-7. In the components palette locate the **Form Layout** component. Drag it into the second **Foldout Panel** and into the **Default** slot.
+	Your page content should be back in place. However, we're displaying too much information in this panel, so let's move some of it to the next panel.
+
+10. In the Components palette, find the **Form Layout** component:
 	  ![Image alt text](images/formcomponent.png)
+
+11. Drag it to the second **Foldout Panel** and drop it onto the first **div**, selecting the **Default** slot.
 		![Image alt text](images/dragform2.png)
-8. In the structure pane select the fourth field in the Form Layout, and **shift-select** all the other fields after that. Drag all of them in one go into the new **Form Layout** you created in the second foldout panel.
+
+12. In the Structure pane select, click the fourth field in the Form Layout, and **Shift-select** all the other fields after that. Drag all of them into the new **Form Layout** you created in the second foldout panel:
 	  ![Image alt text](images/dragfield2.png)
-9. Select this second **Form Layout** in the structure pane, and update the **Label Edge** property of the form to **Start**. This will make this form look like the other form that is already on your page.
+
+13. Select this second **Form Layout** in the Structure pane.  In the Properties pane, change the **Label Edge** property to **Start**.
 	  ![Image alt text](images/labelset.png)
-10. Switch back to the tab for the **main-start** page and click the preview button to see your completed app.
 
-Your table now has action buttons that look good and work as expected. The next step is to fine tune the look and feel of the pages created by the quick starts and apply some Redwood templates to them.
+		This will make the form look like the other form that is already on your page.
 
+14. Switch back to the tab for the **main-start** page, then click **Preview** in the header to see your completed app.
+
+That's it! 
 
 ## Learn More
 
