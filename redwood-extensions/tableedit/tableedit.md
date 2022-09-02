@@ -2,7 +2,7 @@
 
 ## Introduction
 
-In this lab we'll learn how to work with components, events, and action chains to add functionality to our application.
+In this lab we'll learn how to work with events and action chains to add functionality to our application.
 
 Estimated Time: 10 minutes
 
@@ -32,10 +32,10 @@ First we'll add two columns to the table, to hold each of the buttons.
 
   ![Image alt text](images/emptycolumn.png)
 
-3. Click **New Empty Column** twice to add two empty columns to your table:
+3. Click **New Empty Column** twice to add two empty columns to your table, then click anywhere outside the pop-up to dismiss it:
 	  ![Image alt text](images/columnsadded.png)
 
-	The new columns are represented by the vertical lines at the far left in the Table Columns area (in this example, under **Revenue**).
+	The new columns are represented by the vertical lines at the far left in the Table Columns area (in this example, under the word **Revenue**).
 
 4. Click the vertical line for the first empty column, then click the arrow on the right to see this column's details.
 
@@ -90,7 +90,7 @@ Let's use the empty columns we just created to add some icon-based buttons that 
 
 | Property | Value |
 | --- | --- |
-| Display | icons |
+| Display | Icons |
 | Chroming |Borderless |
 {: title="Button Properties"}
 
@@ -98,7 +98,7 @@ Let's use the empty columns we just created to add some icon-based buttons that 
 
 11. Repeat step 10 for the **Information** button.
 
-We now have nice-looking icon-based buttons for each row, but so far they don't do anything. Let's change that.
+We now have nice-looking icon-based buttons for each row, but so far they don't do anything. We'll change that in the next task.
 	![Image alt text](images/buttonsformatted.png)
 
 ## Task 3: Define Action Chains
@@ -112,17 +112,17 @@ VB Studio apps are event-driven, which means that an event is fired when an end 
 2. Click **+ New Event**, then **On ojAction**:
 	![Image alt text](images/newEvent.png)
 
-You're now in the Action Chain Editor.
+	You're now in the Action Chain Editor.
 
-On the left side, you can see all the actions you can define, including calling REST endpoints, invoking JavaScript functions, and many more. The Quick Starts we used to create the Edit and Details pages already created action chains that invoke the needed logic for us. All we need to do is call those action chains from the new action chain we're defining.
+	On the left side, you can see all the actions you can define, including calling REST endpoints, invoking JavaScript functions, and many more. The Quick Starts we used to create the Edit and Details pages already created action chains that invoke the needed logic for us. All we need to do is call those action chains from the new action chain we're defining.
 
 3. From the list of actions on the left, drag **Call Action Chain** and drop it onto the + sign:
 	![Image alt text](images/actiondrag.png)
 
 4. In the Properties pane, click the arrow in the **Action Chain ID** field and select **NavigateToEditAccountsChain** from the drop-down:
-	![Image alt text](images/eventproperties.png)
+	![Image alt text](images/action2.png)
 
- In other words, when this action chain is fired, it will navigate to the Edit page created for us by the Quick Start. However, as we can see from the Properties pane, this action chain expects a value for the input parameter **accountsId**.
+ Let's take a step back.  We've set things up so that when the Edit button is clicked, we will navigate to the Edit page created for us by the Quick Start. However, as we can see from the Properties pane, this action chain expects a value for the input parameter **accountsId**.
 
 5. Click the **Not Mapped** label:
 	![Image alt text](images/inputparam.png)
@@ -137,10 +137,10 @@ On the left side, you can see all the actions you can define, including calling 
 8. Click **Page Designer** to go back to the visual view of the main-start page:
 	![Image alt text](images/pagedesigner.png)
 
-9. Repeat steps 2-7, this time for the **Info** button. When creating your **On ojAction** action chain, use the **Call Action Chain** action, and select **NavigateToAccountsDetailChain** in the Action Chain ID field. As before, map the **key** variable to the accountsID input parameter.
+9. Repeat steps 1-8, this time for the **Info** button. When creating your **On ojAction** action chain, use the **Call Action Chain** action, and select **NavigateToAccountsDetailChain** in the Action Chain ID field. As before, map the **key** variable to the accountsId input parameter.
 	![Image alt text](images/action2.png)
 
-	Let's see what we've done so far.
+	Let's take another look at the app to see our changes in action.
 
 10. Click **Preview** in the header, then open the new browser tab.
 
@@ -149,7 +149,7 @@ On the left side, you can see all the actions you can define, including calling 
  We don't need the buttons at the top of the page anymore, so let's remove them.
  	![Image alt text](images/delete.png)
 
-12. In the Page Editor, go to the Structure pane.  Under **Toolbar**, right-click each button and choose **Delete** to remove it from your page:
+12. In the Page Designer, go to the Structure pane.  Under **Toolbar**, right-click each button and click **Delete** to remove it from your page:
 
 	![Image alt text](images/navbar.png)
 
