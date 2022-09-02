@@ -31,7 +31,7 @@ In this lab, you will:
 
 ## Task 1: Prepare gateway software and response file for Management Gateway installation
 
-1. Sign in to the Oracle Cloud Console as an administrator using the credentials provided by Oracle, as described in [Signing into the Console](https://docs.oracle.com/en-us/iaas/Content/GSG/Tasks/signingin.htm).
+1. Sign in to the Oracle Cloud Console as an administrator using the credentials provided by Oracle, as described in [Sign In for the First Time](https://docs.oracle.com/en-us/iaas/Content/GSG/Tasks/signingin.htm).
 &nbsp;
 
 2. Open navigation menu, click **Observability & Management**, and then click **Downloads and Keys** under **Management Agent**.  
@@ -83,7 +83,7 @@ In this lab, you will:
   A sample response file is included for reference, modify AgentDisplayName and GatewayPort parameters accordingly.
   ![image of final response file](images/terminal-edit-install-key.png)
 
-  To save the file, type CTRL+x. Before exiting, nano will ask you if you wish to save the file: Type y to save and exit, type n to abandon your changes and exit.
+  To save the file, type CTRL+x. Before exiting, nano will ask you if you wish to save the file: Type y to save and exit.
 
 
 
@@ -254,28 +254,27 @@ Gateway Proxy started successfully
     ![image of Management Gateway logs](images/management-gateway-status-logs.png)
 
 
-
 ## Task 4:  Configure Management Agents after Management Gateway installation
 
 
 After installing the Management Gateway, you will need to configure each Management Agent to use the Management Gateway **during the initial agent installation process**.
 
+* A fleet, `fleet_1`, has already been setup during [Lab 2](?lab=setup-a-fleet) and you should have access to the install key file embedded in the downloaded installation script.
 
-* A fleet, `fleet_1`, has already been setup during [Lab 2](?lab=setup-a-fleet) and you should have access to the downloaded install key file.
+* To install Management Agent, follow [Task 1 of Lab 5](?lab=set-up-of-management-agent#Task1:InstallManagementAgent).
 
-
-* To prepare agent software and response file for Management Agent installation, follow [Task 1 of Lab 5](?lab=set-up-of-management-agent-linux) for Linux OS and [Task 1 of Lab 6](?lab=set-up-of-management-agent-windows) for Windows OS.
-
-* While preparing the response file you must add value for these additional parameters to configure the proxy:
+* Before running the installation script take note of the flags to configure the proxy:
     * **ProxyHost**: The IP address of host that is running Management Gateway
-    * **ProxyPort**: 4479 
- 
-  A sample response file is included for reference.
-  ![image of final response file](images/response-file-parameters.png)
+    * **ProxyPort**: 4479
 
-* Follow [Task 2 - 6 to  of Lab 5](?lab=set-up-of-management-agent-linux) to Install, configure and verify Management Agent installation on Linux OS and [Task 2 - 6 of Lab 6](?lab=set-up-of-management-agent-windows) for Windows OS.
+  Enter the following command to pass flags to the installation script:
+    ```
+     <copy>
+     sudo <path-to-installation-script>/<installation-script-name>.sh --proxy-host="<host-IP-address>" --proxy-port="4479"
+     </copy>
+     ```
 
-
+* Follow [Task 2 - 5 to  of Lab 5](?lab=set-up-of-management-agent) to verify Management Agent installation.
 
 
 ## Task 5: Verify detection of Managed Instance
@@ -311,4 +310,4 @@ You may now **proceed to the next lab.**
 ## Acknowledgements
 
 * **Author** - Bhuvesh Kumar, Java Management Service
-* **Last Updated By** - Bhuvesh Kumar, June 2022
+* **Last Updated By** - Yixin Wei, August 2022

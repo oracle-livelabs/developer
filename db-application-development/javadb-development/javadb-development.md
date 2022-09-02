@@ -150,11 +150,11 @@ unzip Wallet_DEMOADW.zip -d $HOME/< path to wallet folder>
             System.out.println("Database Connection URL is: " + DB_URL);
             System.out.println();
             // Perform a database operation
-            printEmployees(connection);
+            printSalesData(connection);
             }
       }
 
-      public static void printEmployees(Connection connection) throws SQLException {
+      public static void printSalesData(Connection connection) throws SQLException {
       // Statement and ResultSet are AutoCloseable and closed automatically.
       try (Statement statement = connection.createStatement()) {
             try (ResultSet resultSet = statement

@@ -33,36 +33,37 @@ If you are not the tenancy administrator, there may be additional policies you m
 
 1. First, make sure you are in your home region.
 
-	![](images/home-region.png "home-region")
+	![Home region](images/home-region.png "home-region")
 
 
 2. Click the navigation menu in the top left, and click on identity and security. Select Groups.
 
-	![](images/groups.png "groups")
+	![Groups list](images/groups.png "groups")
 
 
 3. Click on Create Group
 
-	![](images/create-group.png "create-group")
+	![Create group](images/create-group.png "create-group")
 
 
 4. Enter the details for the group name and description. Be mindful of the restrictions for the group's name (no spaces, etc.)
 
-	![](images/group-details.png "group-details")
+	![Group details](images/group-details.png "group-details")
 
   Once you have filled in these details, click create. Your group should show up under Groups
 
-	  ![](images/group-created.png "group-created")
+![New group showing up](images/group-created.png "group-created")
 
 
 5. Navigate to policies and click Create Policy
 
-	![](images/policy-navigation.png "policy-navigation")
+	![Policy navigation](images/policy-navigation.png "policy-navigation")
 
-	![](images/create-policy.png "create-policy")
+	![Policy creation](images/create-policy.png "create-policy")
 6. You should see a page like this. This is where you will create the policy that will give the group permission to execute the setup for this workshop. (note: replace oracleonpremjava(root) with the root of your tenancy)
 
-	![](images/policy-details.png "policy-details")
+![Policy details](images/policy-details.png "policy-details")
+
 Select **Show manual editor** and copy and paste these policies in the box below.
 	```
 	<copy>
@@ -75,7 +76,7 @@ Select **Show manual editor** and copy and paste these policies in the box below
 	```
 7. Add your user to the group that you have just created by selecting the name of the group you have made and select "add user to group"
 
-	![](images/add-user-group.png "add-user-group")
+	![Adding user to group](images/add-user-group.png "add-user-group")
 
 ## Task 2: Launch the Cloud Shell
 
@@ -87,7 +88,7 @@ Select **Show manual editor** and copy and paste these policies in the box below
   Click the Cloud Shell icon in the top-right corner of the Console.
 
 
-	![](images/open-cloud-shell.png "cloud-shell")
+![Cloud Shell icon](images/open-cloud-shell.png "cloud-shell")
 
 ## Task 3: Create a Folder for the Workshop Code
 
@@ -112,7 +113,7 @@ Select **Show manual editor** and copy and paste these policies in the box below
 	git clone -b springboot --single-branch https://github.com/oracle/oci-react-samples.git
 	</copy>
 	````
-  You should now see `oci-react-springboot-simple` in your root directory.
+  You should now see `oci-react-samples` in your root directory.
 
 ## Task 5: Start the Setup
 
@@ -142,46 +143,46 @@ The setup script uses Terraform, Bash scripts, and SQL to automate the creation 
 	```
 4. If you did previous steps correctly, the setup will ask for your OCID. 
 
-  	![](images/terminal-user-ocid.png "terminal-user-ocid")
+   ![User OCID](images/terminal-user-ocid.png "terminal-user-ocid")
 
   To find your user's OCID navigate to the upper right within the OCI console and click on your username.
 
 
 
-	![](images/navigate-user-ocid.png "navigate-user-ocid")
+![User OCID navigation](images/navigate-user-ocid.png "navigate-user-ocid")
 
 
   Copy your user's OCID by clicking copy
 
-	![](images/copy-user-ocid.png "user-ocid")
+![Copy User OCID](images/copy-user-ocid.png "user-ocid")
 
 5. The setup will then ask for your compartment OCID. If you have a compartment, enter the compartment's OCID. If you do not have a compartment, then hit enter and it will automatically create a compartment under the root compartment. 
 
-	![](images/compartment-ocid-ask.png "compartment-ocid")
+	![Compartment OCID request](images/compartment-ocid-ask.png "compartment-ocid")
 
   To use an existing compartment, you must enter its OCID, yourself. To find the OCID of an existing compartment, click on the Navigation Menu of the cloud console, navigate to **Identity & Security** and click on **Compartments**
 
-	![](images/compartment-navgate.png "navigate-to-compartment")
+   ![Navigate to compartment](images/compartment-navgate.png "navigate-to-compartment")
   Click the appropriate compartment and copy the OCID 
 
-  	![](images/compartment-ocid.png "compartment-ocid")
+![Copy compartment OCID](images/compartment-ocid.png "compartment-ocid")
 
 
 6. In the next step, the setup will create an authentication token for your tenancy so that Docker can log in to the Oracle Cloud Infrastructure Registry. If there is no room for a new Auth Token, the setup will ask you to remove an existing one and then hit enter when you are ready.
 
-	![](images/navigate-user-ocid.png "navigate-user-ocid")
+	![Navigate to User OCID](images/navigate-user-ocid.png "navigate-user-ocid")
 
   Select Auth Tokens under resources
 
-	![](images/auth-token.png "auth-token")
+![Authentication token](images/auth-token.png "auth-token")
 
   Delete one Auth Token if you have too many
 
-	![](images/delete-auth-token.png "delete-auth-token")
+![Delete authentication token](images/delete-auth-token.png "delete-auth-token")
 
 7. The setup will ask you to enter the admin password for the database. Database passwords must be 12 to 30 characters and contain at least one uppercase letter, one lowercase letter, and one number. The password cannot have the double quote (") character or the word "admin".
 
-	![](images/db-password-prompt.png "db-password-prompt")
+	![Database Admin password](images/db-password-prompt.png "db-password-prompt")
     
 
 ## Task 6: Monitor the Setup
@@ -189,7 +190,7 @@ The setup should take around 20 minutes to complete. During the setup, the cloud
 
 1. The setup will update you with the progress of the resource creation. Wait for the setup to complete to move on to the next lab
 
-	![](images/resource-creation-update.png "resource-creation-update")
+	![Setup progress feedback](images/resource-creation-update.png "resource-creation-update")
 
 You can also monitor the setup using the following command:
 	```
@@ -214,4 +215,4 @@ You may now **proceed to the next lab**.
 
 * **Authors** -  - Kuassi Mensah, Dir. Product Management, Java Database Access; Peter Song, Developer Advocate JDBC
 * **Contributors** - Jean de Lavarene, Sr. Director of Development JDBC/UCP
-* **Last Updated By/Date** - Peter Song, Developer Advocate,  Feb 2022
+* **Last Updated By/Date** - Kuassi Mensah,  Sept 2022
