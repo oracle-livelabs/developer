@@ -101,6 +101,8 @@ To leverage the service's pagination capabilities (as opposed to fetching all th
 					  ![Image alt text](images/codeview.png)
 14. Locate the line that starts with <oj-table.., which is the definition for the table.
 
+	There's already a default scroll policy here, but we're going to add another one.
+
 15. Position your cursor in the space right after <oj table and type **sc**:
 					  ![Image alt text](images/scrollpolicy.png)
 
@@ -118,7 +120,7 @@ To leverage the service's pagination capabilities (as opposed to fetching all th
 18. In the Designer's header, click **Preview** in the top right:
 											  ![Image alt text](images/preview.png)
 
-	This opens a new tab in your browser where you can see your running app, complete with our table populated with data.
+	This opens a new tab in your browser where you can see your running app, complete with our new table.
 
 At this point you may want to play around with your live app, using different keywords to filter the list by organization name. Also, notice the smart pagination that occurs when you scroll through the records in the table; that is, records are fetched only as needed.
 											  ![Image alt text](images/results.png)
