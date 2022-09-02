@@ -33,7 +33,7 @@ This lab assumes you have:
     - **`index.html`**
     - **`navbar.html`**
     - **`orderform.html`** 
-    - **`orderhistory.html** 
+    - **`orderhistory.html`** 
 
   Next we'll review the HTML pages in more detail.
 
@@ -45,7 +45,7 @@ This lab assumes you have:
 
     The **`base`** HTML page is quite literally the base, foundation of this application. You'll notice we include an API for Bootstrap's CSS framework. At the bottom of this page, you'll see we include the API for JavaScript as well. This all allows us to easily extend the Bootstrap framework - which allows us to rely no Bootstrap for much of the presentation layer of this application. For if not, all HTML and CSS would need to be coded from scratch. 
 
-    You'll also notice three JavScript functions:  
+    You'll also notice three JavaScript functions:  
     * **`totalPrice()`**
     * **`getPrice()`**
     * **`getDescription()`** 
@@ -54,8 +54,8 @@ This lab assumes you have:
 
     You may also notice Jinja templating near the **`</head>`**, and **`<main>`** HTML tags. The different variations (which you'll see throughout) are referred to as "delimiters":
     <!-- {% raw %} -->
-    * **`{% ... %}`** - used for Statements
-    * **`{{ ... }}`** - used for Expressions
+    * **`{% ... %}`** - used for statements
+    * **`{{ ... }}`** - used for expressions
     * **`{# ... #}`** - used for comments
     
     Each serve different purposes, but all allow us to easily and dynamically pass in additional information while using syntax similar to python. While Jinja education is outside the scope of this lab, you may review the **Learn More** section of this lab to review the Jinja documentation.
@@ -70,7 +70,7 @@ This lab assumes you have:
 
     Now, anywhere else in our HTML where we specify  "block content" it will render in the corresponding body section of the **`base.html`**. 
     
-    > :bulb: *You'll also see later, that other pages will "extend" the **`base.html`** file; this will ensure that each page includes the properties of the **`base.html`** page (like our JavaScript functions, and Bootstrap's HTML and CSS). But to the user, they will still remain on the page of focus, as we'll see in the **`index.html`** page.*
+    :bulb: *You'll also see later, that other pages will "extend" the **`base.html`** file; this will ensure that each page includes the properties of the **`base.html`** page (like our JavaScript functions, and Bootstrap's HTML and CSS). But to the user, they will still remain on the page of focus, as we'll see in the **`index.html`** page.*
 
 2. **`navbar.html`** 
 
@@ -78,9 +78,9 @@ This lab assumes you have:
 
     Before we review the **`index.html`** page, we'll briefly review the **`navbar.html`** page.  Rather than having to create this navbar from scratch, we borrow extensively from the Bootstrap framework. In fact, much of this navbar remains largely unchanged from the original Bootstrap example (except for the links we've provided, and small design adjustments). 
     
-    > :question: *Look familiar?*
-        
-      ![Offcanvas navbar example](images/off-canvas-navbar-bootstrap.png " ")
+    :question: *Look familiar?*
+    
+       ![Offcanvas navbar example](images/off-canvas-navbar-bootstrap.png " ")
 
 3. **`index.html`** 
 
@@ -88,7 +88,7 @@ This lab assumes you have:
 
     The "landing page" for the user. When the user is first welcomed, there is copy related to the product/service. 
     
-    > :bulb: *Notice the Jinja here as well.*
+    :bulb: *Notice the Jinja here as well.*
   
     Recall how "block content" works in concert with the **`base.html`** page. The HTML on this **`index.html`** page will "extend" the **`base`** page (i.e. **`{% extends "base.html" %}`**), while still displaying the **`index.html`** page. 
     
@@ -148,7 +148,7 @@ This lab assumes you have:
 
   Of course, in an actual web application, there will be a payment gateway step; this is outside the scope of this workshop. However, should you choose to learn more, Stripe has extensive documentation on how this can be achieved in a Flask application. Refer to the "Learn More" section of this lab for details. 
 
-  > :bulb: <i>Note: Since you're sharing these endpoints, you may see orders from participants; that is to be expected.</i>
+  :bulb: <i>Note: Since you're sharing these endpoints, you may see orders from participants; that is to be expected.</i>
 
 ## Task 4: Restart Flask 
 
@@ -176,7 +176,7 @@ This lab assumes you have:
         ```
         2. Point to the application:
         ```
-        <copy>export FLASK_APP=*[your app name]*.py</copy>
+        <copy>export FLASK_APP=[your app name].py</copy>
         ```
         3. Start Flask:
         ```
@@ -186,7 +186,7 @@ This lab assumes you have:
 
 4. Congratulations! You should now have a thorough understanding of how the HTML presents the underlying logic to an actual user. And you should have your own *personalized* version of the Flask application.
 
-In the next section we'll introduce to you concepts surrounding security and authentication for Oracle REST APIs. 
+5. In the next section we'll introduce to you concepts surrounding security and authentication for Oracle REST APIs. 
 
 ### You may now proceed to the [next Lab](#next).
 

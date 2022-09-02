@@ -20,11 +20,11 @@ This lab assumes you have:
 
 ## Task 1: Locate and open the Python file for Flask application
 
-1. Locate your copy of the **`flask-ords-lab`** folder and open the **`lab_3_app.py`** file in your editor. 
+1. Locate your copy of the **`flask-ords-lab`** folder and open the **`lab_3_app.py`** file in your editor.
 
-     ![Open the lab_3_app.py file folder in VS Code.](images/opening-lab-3-app-py-file.png " ")
+   ![Open the lab_3_app.py file folder in VS Code.](images/opening-lab-3-app-py-file.png " ")
 
-      > :pirate_flag: The examples in this Lab will use Visual Studio Code.
+   :pirate_flag: The examples in this Lab will use Visual Studio Code.
 
 ## Task 2: Review the Python application and functions
 
@@ -49,24 +49,24 @@ This lab assumes you have:
 
 1. Here you'll see the Folium section of the application. 
 
-    ![Reviewing Folium content in the application](images/reviewing-folium-content-in-app.png)
+   ![Reviewing Folium content in the application](images/reviewing-folium-content-in-app.png)
+   <sup>*We've included starting coordinates (approximately the downtown Las Vegas, NV area), set minimum and maximum zoom properties, and set the visual presentation option (i.e. "Stamen Terrain").*</sup>
 
-    * We set the initial, base Folium map = `m`
-      
-      *We've also included starting coordinates (approximately the downtown Las Vegas, NV area), set minimum and maximum zoom properties, and set the visual presentation option (i.e. "Stamen Terrain").*
+    * We set the initial, base Folium map = `m`      
+
     * We include a tooltip (which you'll see later when we load the application).
     * We use the "Requests" library along with our Oracle REST APIs to **`GET`** json from our Autonomous Database.
-
-      > :question: *But do you notice anything missing?*
+   
+       :question: *But do you notice anything missing?*
 
        ![Missing ORDS endpoint for Folium map](images/missing-ords-uri-for-folium.png " ")
 
-      > If you guessed an Oracle REST endpoint, you'd be correct. Replace **`ORDS URI HERE`** with the following: 
+2. If you guessed an Oracle REST endpoint, you'd be correct. Replace **`ORDS URI HERE`** with the following: 
 
-       ```
-       <copy>https://yfuxkbz2ls7taze-ordshandsonlabs.adb.us-phoenix-1.oraclecloudapps.com/ords/python/flask/museums/
-       </copy>
-       ```  
+    ```
+    <copy>https://yfuxkbz2ls7taze-ordshandsonlabs.adb.us-phoenix-1.oraclecloudapps.com/ords/python/flask/museums/
+    </copy>
+    ```  
 
    <details>
      <summary>*Reveal code block*</summary>
@@ -97,29 +97,28 @@ This lab assumes you have:
      ```
    </details>
 
-  2. *Now* that we've restored the endpoint, we can iterate on our table data to gather the necessary information for populating our Folium map.
+3. *Now* that we've restored the endpoint, we can iterate on our table data to gather the necessary information for populating our Folium map.
 
     ![Iterating over the map data.](images/iterating-over-the-museum-data.png " ")
   
-  3. We'll then create individual markers for the museum locations we retrieved from our database:
-    
+4. We'll then create individual markers for the museum locations we retrieved from our database:
+
     * Here we'll pass the latitude and longitude coordinates and informational pop-ups for all the locations.
-        
-      *Notice how we include **`museum_name`** as HTML, icon color and type, as well as a **`tooltip`***:
+          
+       ![Creating markers for Folium.](images/creating-markers-for-folium-map.png " ")
+       <sup>*Notice how we include **`museum_name`** as HTML, icon color and type, as well as a **`tooltip`.***</sup>
 
-        ![Creating markers for Folium.](images/creating-markers-for-folium-map.png " ")
+       :bulb: The tooltip generates a helpful bubble when hovered over that reads *Click me!*.
 
-      > :bulb: The tooltip generates a helpful bubble when hovered over that reads *Click me!*.
+5. Finally you'll see the line **`lvmap = m._repr_html_()`**:
 
-  4. Finally you'll see the line **`lvmap = m._repr_html_()`**:
-
-       ![Temporarily saving the Folium map.](images/saving-folium-map-as-lvmap.png " ")
-       
-    * We include this to temporarily save our map as a HTML iframe (this includes all necessary HTML and JavaScript properties), which we'll later use as an argument in our application's index page (in Flask).
+   ![Temporarily saving the Folium map.](images/saving-folium-map-as-lvmap.png " ")
+      
+   <sup>*We include this to temporarily save our map as a HTML iframe (this includes all necessary HTML and JavaScript properties), which we'll later use as an argument in our application's index page (in Flask).*</sup> 
 
 ## Task 4: Review the Flask application routes
 
-   :brain: *A Routes Primer*: Application routes (aka **`app.route()`**) are triggered when actions are performed in the application. The results of a function may be passed back to the user, a new HTML page may load, or may redirect the user to a new page. 
+:brain: *A Routes Primer*: Application routes (aka **`app.route()`**) are triggered when actions are performed in the application. The results of a function may be passed back to the user, a new HTML page may load, or may redirect the user to a new page. 
   
 1. **`@app.route('/')`**
         
@@ -137,21 +136,21 @@ This lab assumes you have:
       <copy>https://yfuxkbz2ls7taze-ordshandsonlabs.adb.us-phoenix-1.oraclecloudapps.com/ords/python/flask/products/pricing/</copy>
       ```
      
-     > :question: *Click **Enter**, what do you see?*
+     :question: *Click **Enter**, what do you see?*
 
-    You might see something like this:
+     You might see something like this:
         
-    ![404 pricing not found error.](images/pricing-not-found-404-error.png " ")
+     ![404 pricing not found error.](images/pricing-not-found-404-error.png " ")
 
-    That's because our function needs a specific **`product_id`**. Remember from the last Lab, this Path: **`/products/pricing/{product_id}`**. 
+     That's because our function needs a specific **`product_id`**. Remember from the last Lab, this Path: **`/products/pricing/{product_id}`**. 
     
     Include a 1, 2, or 3 after that final trailing backslash, and hit enter. *Like this*: 
  
     ![Updated get request with product ID included.](images/pricing-info-with-product-id-included.png " ")
 
-    Now you should have a better idea of how this, and other functions will work "under the covers". At this stage, a user will have triggered the retrieval of product prices from a product table. This information is used as one of the fields in a drop-down menu (found on the `orderform.html` page). 
+    Now you should have a better idea of how this, and other functions will work "under the covers". At this stage, a user will have triggered the retrieval of product prices from a product table. This information is used as one of the fields in a drop-down menu (found on the **`orderform.html`** page). 
     
-    Make sure your `get_price` function has the correct Path: 
+    Make sure your **`get_price`** function has the correct Path: 
       ```
       <copy>https://yfuxkbz2ls7taze-ordshandsonlabs.adb.us-phoenix-1.oraclecloudapps.com/ords/python/flask/products/pricing/</copy>
       ``` 
@@ -274,7 +273,7 @@ This lab assumes you have:
   Performing a **`GET`** request to this endpoint will return all *previously* purchased items; displayed in 
   table format.
 
-  Place this in the correct spot:
+  Place this in the correct location:
     ```
     <copy>https://yfuxkbz2ls7taze-ordshandsonlabs.adb.us-phoenix-1.oraclecloudapps.com/ords/python/flask/orders/</copy>
     ```
@@ -319,7 +318,7 @@ This lab assumes you have:
       ```
   </details>
     
-    > :brain: <i>You've actually seen this app route in action in Lab 1 of this Workshop! Remember the `orderform.html` page?</i>
+    :brain: *You've actually seen this app route in action in Lab 1 of this Workshop! Remember the **`orderform.html`** page?*
 
 6. **`@app.route(/result', methods = ['POST', 'GET'])`**
 
@@ -331,7 +330,7 @@ This lab assumes you have:
 
     And this route expects a **`POST`** request originating from the Flask application. Once this request posts successfully the user is redirected to the **`orderhistory.html`** page (as you saw in the previous step). 
     
-    > :brain: *This function also performs actions such as establishing the key:value pairs of the incoming data, and the JSON payload headers well.*
+    :brain: *This function also performs actions such as establishing the key:value pairs of the incoming data, and the JSON payload headers well.*
 
     Update the function with the following ORDS URL: 
     ```
@@ -362,7 +361,7 @@ This lab assumes you have:
       ```
     </details>
 
-7. At this stage you should have all ORDS endpoints in the proper places. All application routes and their underlying functions should work correctly. Next, we'll briefly review the included HTML and CSS in this Flask application. Congratulations!
+7. At this stage you should have all ORDS endpoints in the proper places. All application routes and their underlying functions should work correctly. Next, we'll briefly review the included HTML and CSS in this Flask application. Zut alors!
     
 ### You may now proceed to the [next Lab](#next).
 

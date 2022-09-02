@@ -24,15 +24,15 @@ This Lab assumes you have:
 
 For this lab we'll rely on Swagger's Open Source Editor to review our ORDS Base URI, as well as the available API *Paths* and *Operations*.
 
-> :bulb: You may skip straight to the [Swagger Editor](https://editor.swagger.io/), or follow along below.
+:bulb: You may skip straight to the [Swagger Editor](https://editor.swagger.io/), or follow along below.
 
 1. Navigate to the [Swagger home page](https://swagger.io/) and select the **Swagger Editor** link (located under the **Tools** dropdown).
 
-    ![Navigating to the Swagger editor](images/select-swagger-editor.png " ")
+   ![Navigating to the Swagger editor](images/select-swagger-editor.png " ")
 
 2. Next, select **Live Demo** - a blank Swagger Editor session should load.
 
-    ![Select live demo for Swagger editor](images/select-live-demo-option.png " ")
+   ![Select live demo for Swagger editor](images/select-live-demo-option.png " ")
 
 3. If a new Editor session page does not appear, navigate to the **`File`** menu option, and select **`Clear Editor`**. A new blank session should then appear.
 
@@ -47,17 +47,17 @@ For this lab we'll rely on Swagger's Open Source Editor to review our ORDS Base 
 
 5. Navigate to **`File`** then **`Import URL`**.
 
- ![Select Import URL in Swagger](images/import-url-into-editor.png " ")
+   ![Select Import URL in Swagger](images/import-url-into-editor.png " ")
 
 6. Paste the URI into the input field, and click **`OK`**.
 
-    ![Inputting the ORDS Base URI](images/enter-url-to-import.png " ")
+   ![Inputting the ORDS Base URI](images/enter-url-to-import.png " ")
 
 7. Locate the Swagger documentation - available Paths and their Operations.
 
-  Once loaded, Swagger documentation will appear on the left of your browser. Additionally a list of the available ORDS Paths and their Operations are located on the right of your screen. These Paths and Operations are the heart and soul of our Flask application.
+   Once loaded, Swagger documentation will appear on the left of your browser. Additionally a list of the available ORDS Paths and their Operations are located on the right of your screen. These Paths and Operations are the heart and soul of our Flask application.
 
-      ![Newly imported ORDS Base URI](images/newly-imported-ords-url.png " ")
+   ![Newly imported ORDS Base URI](images/newly-imported-ords-url.png " ")
 
 ## Task 2: Review the OpenAPI 3.0 definitions
 
@@ -70,8 +70,8 @@ For this lab we'll rely on Swagger's Open Source Editor to review our ORDS Base 
     1. **`openapi`** - this particular ORDS API adheres to the OpenAPI 3.0 specification for API documentation (as seen below). 
 
       ![The OpenAPI specification version](images/open-api-specification-version.png " ")
-
-        > :brain: To learn more about OpenAPI specifications, you may refer to the resources provided in the "Learn More" section of this lab.
+      
+      :brain: To learn more about OpenAPI specifications, you may refer to the resources provided in the "Learn More" section of this lab.
 
     2. **`info`** - here you'll see the **`title`** and **`version`** of the ORDS *Base URI*.
 
@@ -103,7 +103,7 @@ For this lab we'll rely on Swagger's Open Source Editor to review our ORDS Base 
 
     ![The paths overview page.](images/paths-overview-page.png " ")
     
-   > :bulb: *You may refer to the "Learn More" section of this Lab to learn more about Resource Templates and their relationship to Resource Handlers.*
+       :bulb: *You may refer to the "Learn More" section of this Lab to learn more about Resource Templates and their relationship to Resource Handlers.*
 
 2. **Explore the Paths**. Here we'll review selected Paths and discuss their importance to the Flask application.
 
@@ -111,7 +111,7 @@ For this lab we'll rely on Swagger's Open Source Editor to review our ORDS Base 
 
         1. Hover over this Path, a dropdown arrow will appear. Click this to expand the window.
 
-            > :brain: *You'll follow similar actions for subsequent Paths.*
+            :brain: *You'll follow similar actions for subsequent Paths.*
 
             ![Selecting the museums path.](images/path-main-screen-image.png " ")
 
@@ -127,7 +127,7 @@ For this lab we'll rely on Swagger's Open Source Editor to review our ORDS Base 
 
           ![The get response for the folium map](images/get-path-for-folium-response.png " ")
           
-          > :question: *What does this payload look like it could be used for?* If you guessed a map rendering, than you'd be correct! We use this information to populate the Folium map on our Flask application's main page (aka **`index.html`**).
+          :question: *What does this payload look like it could be used for?* If you guessed a map rendering, than you'd be correct! We use this information to populate the Folium map on our Flask application's main page (aka **`index.html`**).
 
     2. **`GET` `/products/descriptions/{product_id}`**
 
@@ -162,11 +162,12 @@ For this lab we'll rely on Swagger's Open Source Editor to review our ORDS Base 
            ![Placeholder array in order post request.](images/post-purchase-history-placeholder-array.png " ")
 
         3. Alter the values slightly. Choose:
-          - 1, 2 or 3 for **`PRODUCT_ID`** value
-          - between 1-100 for **`QUANTITY`** value
-          - between 1.00-500.00 for **`TOTAL_PRICE`** value
-
-        > :pencil2: Choose an *easily recognizable* **`TOTAL_PRICE`*** value. 
+          
+           * 1, 2 or 3 for **`PRODUCT_ID`** value
+           * between 1-100 for **`QUANTITY`** value
+           * between 1.00-500.00 for **`TOTAL_PRICE`** value
+          
+        :pencil2: Choose an *easily recognizable* **`TOTAL_PRICE`*** value. 
           
         4. Once you are satisfied click **`Execute`**.
           
@@ -175,8 +176,8 @@ For this lab we'll rely on Swagger's Open Source Editor to review our ORDS Base 
         5. Scroll down to the Response body. You should see a **`201`** Server Response code, which indicates that your **`POST`** was successful!
 
             ![Scrolling down to review the Response Body for new POST](images/scrolling-down-to-review-new-post.png " ")
-          
-          > :pirate_flag: The action we just performed mirrors what customer would do should they complete a transaction in our sample Flask application.
+            
+            :pirate_flag: The action we just performed mirrors what customer would do should they complete a transaction in our sample Flask application.
 
         6. Let's find your **`POST`** by performing a **`GET`** request on **`/orders/`**. Expand the **`GET /orders/`** window.
 
