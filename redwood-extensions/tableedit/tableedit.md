@@ -69,7 +69,7 @@ Let's use the empty columns we just created to add some icon-based buttons that 
 4. Back in the Components palette, locate the Icon component:
 	![Image alt text](images/icon.png)
 
-5. Drag the Icon component into the Structure pane and drop it on to the first button (the one for the Edit column). When prompted, choose **startIcon** as the slot for the icon:
+5. Drag the Icon component and drop it on to the first button (the one for the Edit column) - you can drag either onto the visual editor or the structe pane. When prompted, choose **startIcon** as the slot for the icon:
 	![Image alt text](images/dragicon1.png)
 
 6. In the Properties pane, click the image under Icon to choose a different image:
@@ -120,7 +120,7 @@ VB Studio apps are event-driven, which means that an event is fired when an end 
 	![Image alt text](images/actiondrag.png)
 
 4. In the Properties pane, click the arrow in the **Action Chain ID** field and select **NavigateToEditAccountsChain** from the drop-down:
-	![Image alt text](images/action2.png)
+	![Image alt text](images/actionedit.png)
 
  Let's take a step back.  We've set things up so that when the Edit button is clicked, we will navigate to the Edit page created for us by the Quick Start. However, as we can see from the Properties pane, this action chain expects a value for the input parameter **accountsId**.
 

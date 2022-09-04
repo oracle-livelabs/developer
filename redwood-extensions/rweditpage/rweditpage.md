@@ -7,7 +7,7 @@ In this lab we'll apply a couple of the Redwood page templates to improve the us
 Estimated Time: 10 minutes
 
 ### About the Oracle Redwood User Experience
-The Redwood User Experience is a collective reinvention of how Oracle customers interact with technology and consume information. While Redwood includes a beautiful new set of user interface elements, including the templates you'll work with in this lab, it's also a philosophical approach to solving customer problems in a differentiated and satisfying way. 
+The Redwood User Experience is a collective reinvention of how Oracle customers interact with technology and consume information. While Redwood includes a beautiful new set of user interface elements, including the templates you'll work with in this lab, it's also a philosophical approach to solving customer problems in a differentiated and satisfying way.
 
 ### Objectives
 
@@ -74,7 +74,7 @@ Now that the template is set, let's redisplay the content of the page in its cor
 
 	  ![Image alt text](images/results1.png)
 
-## Task 2: Hook Up the Template's Primary Action
+## Task 2: Hook Up the Template's Actions
 
 The Simple Create and Edit Page Template has a primary action built in, Save, but we need to make it functional.
 
@@ -92,9 +92,23 @@ The Simple Create and Edit Page Template has a primary action built in, Save, bu
 
 ![Image alt text](images/actionchain.png)
 
-6. Click the **Page Designer** tab and switch to **Live** mode.
+6. Let's also add an action to handle the cancel button. In the Structure pane, select **Simple Create and Edit Page Template**.
 
-7. In the **Current Fiscal Year Potential Revenue** field, enter a value, the click the **Save** button to verify that it works:
+7. In the Properties pane, click **Events**, then click **+ New Event**, and select the **On spCancel** event.
+
+![Image alt text](images/spcancel.png)
+
+8. In the Action Chain editor, click the plus sign to add a **Call Action Chain**.
+
+![Image alt text](images/actionadd.png)
+
+9. In the Properties pane, map the **Action Chain ID** property to the **goBackAction** action chain, which was created by the Quick Start.
+
+![Image alt text](images/goback.png)
+
+10. Click the **Page Designer** tab and switch to **Live** mode.
+
+11. In the **Current Fiscal Year Potential Revenue** field, enter a value, the click the **Save** button to verify that it works:
 ![Image alt text](images/liveedit.png)
 
 You should see the value you just entered reflected in the canvas area.
