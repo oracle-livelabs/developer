@@ -107,38 +107,38 @@ VB Studio apps are event-driven, which means that an event is fired when an end 
 
 1. In Design view, select the Edit button, then click **Events** in the Properties pane:
 
-	![Image alt text](images/eventproperties.png)
+	![Events tab](images/eventproperties.png)
 
 2. Click **+ New Event**, then **On ojAction**:
-	![Image alt text](images/newEvent.png)
+	![New event](images/newEvent.png)
 
 	You're now in the Action Chain Editor.
 
 	On the left side, you can see all the actions you can define, including calling REST endpoints, invoking JavaScript functions, and many more. The Quick Starts we used to create the Edit and Details pages already created action chains that invoke the needed logic for us. All we need to do is call those action chains from the new action chain we're defining.
 
 3. From the list of actions on the left, drag **Call Action Chain** and drop it onto the + sign:
-	![Image alt text](images/actiondrag.png)
+	![Dragging actions](images/actiondrag.png)
 
 4. In the Properties pane, click the arrow in the **Action Chain ID** field and select **NavigateToEditAccountsChain** from the drop-down:
-	![Image alt text](images/actionedit.png)
+	![Action properties](images/actionedit.png)
 
  Let's take a step back.  We've set things up so that when the Edit button is clicked, we will navigate to the Edit page created for us by the Quick Start. However, as we can see from the Properties pane, this action chain expects a value for the input parameter **accountsId**.
 
 5. Click the **Not Mapped** label:
-	![Image alt text](images/inputparam.png)
+	![Input parameter](images/inputparam.png)
 
  The Assign Input Parameters dialog allows us to easily map values to variables using drag and drop.
 
 6. Under Sources->Action Chain on the left, drag the action chain variable **key** and drop it on the **accountsid** parameter in the Target area on the right:
-	![Image alt text](images/valuemap.png)
+	![Mapping variables](images/valuemap.png)
 
 7. Click **Save**.
 
 8. Click **Page Designer** to go back to the visual view of the main-start page:
-	![Image alt text](images/pagedesigner.png)
+	![Page designer](images/pagedesigner.png)
 
 9. Repeat steps 1-8, this time for the **Info** button. When creating your **On ojAction** action chain, use the **Call Action Chain** action, and select **NavigateToAccountsDetailChain** in the Action Chain ID field. As before, map the **key** variable to the accountsId input parameter.
-	![Image alt text](images/action2.png)
+	![Action Chain](images/action2.png)
 
 	Let's take another look at the app to see our changes in action.
 
@@ -147,11 +147,11 @@ VB Studio apps are event-driven, which means that an event is fired when an end 
  You can now click the Edit and Info icons in a row to open the Edit and Detail pages for the organization selected. Pretty cool!
 
  We don't need the buttons at the top of the page anymore, so let's remove them.
- 	![Image alt text](images/delete.png)
+ 	![Delete items](images/delete.png)
 
 12. In the Page Designer, go to the Structure pane.  Under **Toolbar**, right-click each button and click **Delete** to remove it from your page:
 
-	![Image alt text](images/navbar.png)
+	![Delete navbar](images/navbar.png)
 
 Your table now has buttons that are attractively rendered and that work as expected. The next step is to fine-tune the look and feel of the pages created by the Quick Starts by applying some Redwood templates to them.
 
@@ -162,5 +162,5 @@ Your table now has buttons that are attractively rendered and that work as expec
 
 ## Acknowledgements
 * **Author** - Shay Shmeltzer, Oracle Cloud Development Tools, August 2022
-* **Contributors** -  Blaine Carter, Oracle Cloud Development Tools
+* **Contributors** -  Marcie Caccamo, Blaine Carter, Oracle Cloud Development Tools
 * **Last Updated By/Date** - Shay Shmeltzer, Oracle Cloud Development Tools, August 2022

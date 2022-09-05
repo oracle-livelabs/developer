@@ -19,20 +19,20 @@ You should now be in the Designer, VB Studio's visual editor. We'll start by cre
 
 1. On the left side of the Designer, click **+ App UI**:  
 
-	![Image alt text](images/results.png)
+	![App UI button](images/results.png)
 
 
 2. In the Create App UI dialog, provide a name in the form **YourName-Accounts**, then click **Create**:
 
-  ![Image alt text](images/wssettings.png)
+  ![App UI properties](images/wssettings.png)
 
 	In the Diagram view on the right, you can see the flows and pages for this App UI. A flow contains pages that relate to each other. An application can contain multiple flows, and a flow can contain many pages. In this case we have one flow, *main*, and one page, *main-start*:
 
-  ![Image alt text](images/appflow.png)
+  ![Flow diagram](images/appflow.png)
 
 3. Double-click  **main-start** to open the page in the Page Designer, one of the main visual editors in the Designer:
 
-  ![Image alt text](images/IDE.png)
+  ![IDE](images/IDE.png)
 
 ## Task 2: Add a Page Template
 
@@ -40,7 +40,7 @@ Before we get started, let's explore the Designer a bit.
 
 **Tip:** There are lots of tabs you can click to expand/collapse different areas and give yourself more room to work.
 
-  ![Image alt text](images/IDE2.png)
+  ![IDE areas](images/IDE2.png)
 
 Here are the key areas of the Designer you'll use throughout this workshop:
 
@@ -55,12 +55,12 @@ Here are the key areas of the Designer you'll use throughout this workshop:
 
 At the top gray bar on the right side you'll also find the undo and redo buttons - if you make a mistake during this lab, you can click to undo the last steps you did.
 
-  ![Image alt text](images/undo.png)
+  ![Undo button](images/undo.png)
 
 The Components palette contains over a hundred UI components that you can drag and drop onto your pages to design your interfaces. In this workshop, we're going to leverage some page templates designed by Oracle's Redwood Design team to accelerate our application development. These templates provide a responsive user experience, which means your app will adjust to the device accessing it.
 
 1. Use the search box at the top of the Components palette to search for **welcome**, which will locate the **Welcome Page Template**. Drag the template from the Component palette and drop it on the canvas:
-  ![Image alt text](images/welcome.png)
+  ![search box](images/welcome.png)
 
 	Let's set some properties for the template to customize it a bit.
 
@@ -75,7 +75,7 @@ The Components palette contains over a hundred UI components that you can drag a
 {: title="Template Properties"}
 
 Your screen should look like this:
-  ![Image alt text](images/properties.png)
+  ![Template properties](images/properties.png)
 
 In the next lab, we'll add some more useful components to the page.
 
@@ -83,7 +83,7 @@ In the next lab, we'll add some more useful components to the page.
 
 1. In the Components palette's search box, type **search**, which will locate a component called **Input Search**.
 2. Drag this component and drop it on the page in the canvas. A pop-up will appear asking which slot you want to use; choose **Search slot**:
-  ![Image alt text](images/slot.png)
+  ![Search slot](images/slot.png)
 
 	This field is where users will enter a search term to locate an account. We need to keep track of these terms, so we'll use a page variable to do that.
 
@@ -93,13 +93,13 @@ In the next lab, we'll add some more useful components to the page.
 
 5. Next to the **Page** category, click **Create Variable** to create a page-level variable:
 
-  ![Image alt text](images/variable.png)
+  ![Variable creation](images/variable.png)
 
 	Notice that there are multiple scopes for variables, which helps to share their values across pages and flows in the application.
 
 6. In the Create Variable dialog's ID field, type **searchString**, leaving the Type as String. Click **Create**:
 
-  ![Image alt text](images/variablesettings.png)
+  ![Variable settings](images/variablesettings.png)
 
 The Value field in the Properties pane now contains a reference to our new variable.
 
@@ -109,15 +109,15 @@ In this task we'll add a container to the page, which will later hold some data 
 
 1. In the Components palette's search box type **collection**, which will locate a component called **Collection Container**.
 2. Drag this component to the Structure pane and drop it on top of the Welcome Page template:
-  ![Image alt text](images/collection.png)
+  ![Collection component](images/collection.png)
 3. In the slots pop-up, select **Default**:
-  ![Image alt text](images/slot.png)
+  ![Default slot](images/slot.png)
 The layout of our first page is now ready.  Our next step is to add some data to the page from Oracle Fusion Cloud Apps.
 
 Notice how all of our design tasks so far have been done with simple drag and drop functionality and setting properties. This visual development approach is key to the productivity that Visual Builder Studio provides. If you prefer to work in code, however, you can always do so by clicking the Code button right above where the page preview is displayed. Any modifications you make to your page's HTML code while in Code mode are automatically reflected in Design mode, should you choose to return to it.  
 
 At this point your screen should look like this:
-  ![Image alt text](images/complete.png)
+  ![Completed page](images/complete.png)
 
 Let's move on to the next lab, where we'll learn how to get some data from Oracle SaaS onto the page.
 
@@ -128,5 +128,5 @@ Let's move on to the next lab, where we'll learn how to get some data from Oracl
 
 ## Acknowledgements
 * **Author** - Shay Shmeltzer, Oracle Cloud Development Tools, August 2022
-* **Contributors** -  Blaine Carter, Oracle Cloud Development Tools
+* **Contributors** -  Marcie Caccamo, Blaine Carter, Oracle Cloud Development Tools
 * **Last Updated By/Date** - Shay Shmeltzer, Oracle Cloud Development Tools, August 2022

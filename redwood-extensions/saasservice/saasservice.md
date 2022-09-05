@@ -23,42 +23,42 @@ Up until now we've worked on the UI (front end) of your application, but now it'
 
 1. On the far left side of the Designer's navigator, click the third tab, **Services**:
 
-	![Image alt text](images/servicetab.png)
+	![Services](images/servicetab.png)
 
 2. Click **+ Service Connection**.
 
 	There are three options for defining the source of your REST service connection. We'll use the first one, **Select from Catalog**, but it's important to know what the other two options do too.  With these, you can define connections to:
 	 * REST services based on their OpenAPI/Swagger description. This can be useful when working with custom objects you created with the Application Composer, which comes with Oracle SaaS.
 	* REST services based on their endpoints. This option allows you connect to any REST service available over the internet, which can be useful for integrating with third-party apps.
-		  ![Image alt text](images/serviceoptions.png)
+		  ![Service Options](images/serviceoptions.png)
 
 
 4. Click **Select from Catalog**. When it loads, click **Sales and Services**:
-	  ![Image alt text](images/catalog.png)
+	  ![Service Catalogs](images/catalog.png)
 
 	You can use this approach to access services from your HCM, ERP, and SCM Apps too. You may want to take a moment now to explore these catalogs and see the available business objects for the Apps you use.
 
 5. From the list of objects in the Oracle CX system, choose **Accounts**, using the filter at the top to help you, if needed:
-	  ![Image alt text](images/endpoints.png)
+	  ![CX Endpoints](images/endpoints.png)
 
 6. Click **Create**. This creates a connection to the data object and adds it to your app.		
 
 	A tab with information about the service is displayed:
-	  ![Image alt text](images/servicedef.png)
+	  ![Service Definition](images/servicedef.png)
 		We'll keep all the default definitions here, so you can close this tab and return to the tab displaying the main-start page.
 ## Task 2: Add Data to Your Page
 
 1. In the Designer, click the **Data** tab on the left and expand the Services node until you can see the **accounts** service:
-	  ![Image alt text](images/datapalette.png)
+	  ![Data Palette](images/datapalette.png)
 2. Drag and drop the accounts service to the Structure pane and drop it on the **Collection Container**:
-	  ![Image alt text](images/drag1.png)
+	  ![Drag service](images/drag1.png)
 
 	VB Studio can display data in many different formats, including various types of forms that let your users modify data. In this case we just want to display data in a table.   
 
 3. In the **Render as** pop-up, choose **Table** (not Table Dynamic, the first option):
-	  ![Image alt text](images/table.png)
+	  ![Drop as table](images/table.png)
 4. Choose the first endpoint, **getMany**, which shows the top object (an account):
-	  ![Image alt text](images/getmany.png)
+	  ![Get Many endpoints](images/getmany.png)
 
 	The Add Data dialog displays all the fields that are available for the accounts business object&mdash;quite a long list!  
 
@@ -69,7 +69,7 @@ Up until now we've worked on the UI (front end) of your application, but now it'
 	* NextFisicalYearPotentialRevenueAmount
 
 	Your screen should look like this:
-	  ![Image alt text](images/fields2.png)
+	  ![Fields selection](images/fields2.png)
 
 6. Click **Next**.
 
@@ -77,17 +77,17 @@ Up until now we've worked on the UI (front end) of your application, but now it'
 
 7. Click **FilterCriterion** on the right, under Target.
 	This displays the filter builder at the bottom of the dialog:
-	  ![Image alt text](images/FilterCriterion.png)
+	  ![Filter definition](images/FilterCriterion.png)
 8. In the filter builder, click **Click to add condition**.
 9. Click in the **Attribute** field, then start typing **Orga ...** until you can choose **OrganizationName**:
-	  ![Image alt text](images/name.png)
+	  ![Search box](images/name.png)
 
 10. Keep the operator as **Contains ($co)**. In the **Attribute** field on the right, locate the search variable you created by typing **searchString**, which will add **$variable.searchString** to this field:
-			  ![Image alt text](images/search.png)
+			  ![search criteria](images/search.png)
 
 
 11. Click **Done**.  Your screen should look like this: 			
-					  ![Image alt text](images/condition.png)
+					  ![Final result](images/condition.png)
 
 	The filter we just built now essentially says: If the organization name contains the user's search string (that is, the variable name), then filter the data in the table to show that row.
 
@@ -98,18 +98,18 @@ In a moment we'll see that a table with the selected fields has been added to yo
 To leverage the service's pagination capabilities (as opposed to fetching all the records available on start up), let's add a scroll policy to the table.
 
 13. Switch to Code view by clicking **Code** button at the top of the preview:
-					  ![Image alt text](images/codeview.png)
+					  ![Code view](images/codeview.png)
 14. Locate the line that starts with <oj-table.., which is the definition for the table.
 
 	There's already a default scroll policy here, but we're going to add another one.
 
 15. Position your cursor in the space right after <oj table and type **sc**:
-					  ![Image alt text](images/scrollpolicy.png)
+					  ![code insight](images/scrollpolicy.png)
 
 	Notice how VB Studio's code completion feature helps you choose the right property.
 
 16. Choose **scroll-policy-option.scroller**. For the attribute, use **"html"**:
-											  ![Image alt text](images/html.png)
+											  ![html code](images/html.png)
 
 	  The code for this line should now look similar to this:
 
@@ -118,12 +118,12 @@ To leverage the service's pagination capabilities (as opposed to fetching all th
 17. Click **Design** so we can see the resulting table with data fetched into it. We can take an even closer look at the app by using the Preview feature.  
 
 18. In the Designer's header, click **Preview** in the top right:
-											  ![Image alt text](images/preview.png)
+											  ![Preview button](images/preview.png)
 
 	This opens a new tab in your browser where you can see your running app, complete with our new table.
 
 At this point you may want to play around with your live app, using different keywords to filter the list by organization name. Also, notice the smart pagination that occurs when you scroll through the records in the table; that is, records are fetched only as needed.
-											  ![Image alt text](images/results.png)
+											  ![Running app](images/results.png)
 
 Now that we have a running page that fetches data, the next step is to add pages that will allow us to edit the data, which means updating the Oracle's SaaS business object behind the scenes.
 
@@ -134,5 +134,5 @@ Now that we have a running page that fetches data, the next step is to add pages
 
 ## Acknowledgements
 * **Author** - Shay Shmeltzer, Oracle Cloud Development Tools, August 2022
-* **Contributors** -  Blaine Carter, Oracle Cloud Development Tools
+* **Contributors** -  Marcie Caccamo, Blaine Carter, Oracle Cloud Development Tools
 * **Last Updated By/Date** - Shay Shmeltzer, Oracle Cloud Development Tools, August 2022

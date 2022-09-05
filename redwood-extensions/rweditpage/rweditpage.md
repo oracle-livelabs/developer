@@ -22,7 +22,7 @@ In this lab, you will:
 
 1. Back in Design view, click the **Live** button:
 
-	![Image alt text](images/liveview.png)
+	![Live view](images/liveview.png)
 
 	Live mode allows you to interact with your app as if it were actually running.
 
@@ -32,10 +32,10 @@ In this lab, you will:
 
 3. Switch back to Design mode so you can edit the page:
 
-  ![Image alt text](images/editpage.png)
+  ![Design view](images/editpage.png)
 
 4. In the Components palette search for **edit**, and locate the **Simple Edit and Create Template**:
-	  ![Image alt text](images/editcomponents.png)
+	  ![Edit template](images/editcomponents.png)
 
 5. Drag it to the top of the page hierarchy in the Structure pane, and drop it when you see a blue line above Grid Row.
 
@@ -50,29 +50,29 @@ In this lab, you will:
 	{: title="Template Properties"}
 
 Your screen should look like this:
-	  ![Image alt text](images/editproperties.png)
+	  ![template properties](images/editproperties.png)
 
 Now that the template is set, let's redisplay the content of the page in its correct location in the template.
 
 7. In the Structure pane, locate the **Grid Row** that corresponds to the Form Layout:
-	  ![Image alt text](images/grid.png)
+	  ![Grid row](images/grid.png)
 
 8. Drag the **Grid Row** and drop it onto the **Simple Create and Edit Page Template**:
-	  ![Image alt text](images/griddrag.png)
+	  ![Drag row](images/griddrag.png)
 
 	Your page content should be back in place.
 
 	The template we applied already supplies a heading and toolbar, so we can remove the grid rows for those elements in the Structure pane.
 
 9. Select the **Heading Grid Row**, right-click, then click **Delete**:  
-	  ![Image alt text](images/delete1.png)
+	  ![Delete item](images/delete1.png)
 
 10.  Do the same thing for the **Toolbar Grid Row**:
- 	![Image alt text](images/delete2.png)
+ 	![Delete item 2](images/delete2.png)
 
 	Your page should now look something like this:
 
-	  ![Image alt text](images/results1.png)
+	  ![Resulting page](images/results1.png)
 
 ## Task 2: Hook Up the Template's Actions
 
@@ -81,35 +81,35 @@ The Simple Create and Edit Page Template has a primary action built in, Save, bu
 1. In the Structure pane, select **Simple Create and Edit Page Template**.
 
 2. In the Properties pane, click **Events**, then click **+ New Event**:
-![Image alt text](images/newevent.png)
+![Create event](images/newevent.png)
 
 3. Select **On spPrimaryAction**, which will map the built-in action to the main button on the page.
 
 4. In the Action Chain editor, drag **Call Action Chain** and drop it on the + icon om the middle:
-![Image alt text](images/callaction.png)
+![Call action chain action](images/callaction.png)
 
 5. In the Properties pane, map the **Action Chain ID** property to the **saveAccountsChain** action chain, which was created by the Quick Start.
 
-![Image alt text](images/actionchain.png)
+![Action properties](images/actionchain.png)
 
 6. Let's also add an action to handle the cancel button. In the Structure pane, select **Simple Create and Edit Page Template**.
 
 7. In the Properties pane, click **Events**, then click **+ New Event**, and select the **On spCancel** event.
 
-![Image alt text](images/spcancel.png)
+![Create event](images/spcancel.png)
 
 8. In the Action Chain editor, click the plus sign to add a **Call Action Chain**.
 
-![Image alt text](images/actionadd.png)
+![Call action](images/actionadd.png)
 
 9. In the Properties pane, map the **Action Chain ID** property to the **goBackAction** action chain, which was created by the Quick Start.
 
-![Image alt text](images/goback.png)
+![Action properties](images/goback.png)
 
 10. Click the **Page Designer** tab and switch to **Live** mode.
 
 11. In the **Current Fiscal Year Potential Revenue** field, enter a value, the click the **Save** button to verify that it works:
-![Image alt text](images/liveedit.png)
+![Edit values](images/liveedit.png)
 
 You should see the value you just entered reflected in the canvas area.
 
@@ -119,25 +119,25 @@ Now let's apply a template to the Details page.  In this case, we'll use a templ
 
 1. In the Page Designer, click the **info** icon for one of the rows:
 
-	![Image alt text](images/gotoinfo.png)
+	![Info button](images/gotoinfo.png)
 
 	You should see the Accounts Detail page for the row you chose:
 
-  ![Image alt text](images/infobefore.png)
+  ![Details page](images/infobefore.png)
 
 2. In the Components palette, search for **fold**, and find the **Foldout Layout Horizontal Template Pattern**:
 
- ![Image alt text](images/foldcomponents.png)
+ ![Foldout templates](images/foldcomponents.png)
 
 3. Drag the template to the top of the page hierarchy in the Structure pane, and drop it when you see the blue line above Grid Row:
 
-	  ![Image alt text](images/folddrag.png)
+	  ![Structure pane](images/folddrag.png)
 
 A pattern applies more than just a new look and feel to the user interface; it can add variables and actions to your page as well. In the Properties pane, notice that many template properties have been mapped to variables, but they may not be the values we want. To change the values of these properties, we'll need to update the variables' default values.
 
 4. In the row containing the **Page Designer** tab, click **Variables**:
 
-	  ![Image alt text](images/variables.png)
+	  ![page variables](images/variables.png)
 
 5. Locate each of these variables, then modify its **Default Value** property as shown here. (You don't have to save anything between modifications.)
 
@@ -152,7 +152,7 @@ A pattern applies more than just a new look and feel to the user interface; it c
 
 	Here's a sample screenshot for the pageTitle variable:
 
-	  ![Image alt text](images/variables.png)
+	  ![variable settings](images/variables.png)
 
 6. Click **Page Designer** to see the effect of your changes in the page.
 
@@ -161,21 +161,21 @@ A pattern applies more than just a new look and feel to the user interface; it c
 7. In the Structure pane, locate the **Form Layout**.
 
 8. Drag **Form Layout** and drop it onto the first **div** in the first **Foldout Panel** in the Structure pane:
- ![Image alt text](images/dragform.png)
+ ![Form layout component](images/dragform.png)
 
 	Your page content should be back in place. However, we're displaying too much information in this panel, so let's move some of it to the next panel.
 
 9. In the Components palette, find the **Form Layout** component:
-	  ![Image alt text](images/formcomponent.png)
+	  ![Form layout](images/formcomponent.png)
 
 10. Drag it to the second **Foldout Panel** and drop it onto the first **div**, selecting the **Default** slot:
-		![Image alt text](images/dragform2.png)
+		![Second drag](images/dragform2.png)
 
 11. In the Structure pane select, click the fourth field in the Form Layout, and **Shift-select** all the other fields after that. Drag all of them into the new **Form Layout** you created in the second foldout panel:
-	  ![Image alt text](images/dragfield2.png)
+	  ![drag fields](images/dragfield2.png)
 
 12. Select this second **Form Layout** in the Structure pane.  In the Properties pane, change the **Label Edge** property to **Start**.
-	  ![Image alt text](images/labelset.png)
+	  ![label property](images/labelset.png)
 
 	This will make the form look like the other form that is already on your page.
 
@@ -185,9 +185,9 @@ Your work is finished! In the real world, at this point you would like do more t
 
 ## Learn More
 
-* [Oracle Redwood](http://oracle.com/redwood)
+* [Oracle Redwood](http://design.oracle.com/)
 
 ## Acknowledgements
 * **Author** - Shay Shmeltzer, Oracle Cloud Development Tools, August 2022
-* **Contributors** -  Blaine Carter, Oracle Cloud Development Tools
+* **Contributors** -  Marcie Caccamo, Blaine Carter, Oracle Cloud Development Tools
 * **Last Updated By/Date** - Shay Shmeltzer, Oracle Cloud Development Tools, August 2022
