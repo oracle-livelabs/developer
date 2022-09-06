@@ -108,12 +108,12 @@ To leverage the service's pagination capabilities (as opposed to fetching all th
 
 	Notice how VB Studio's code completion feature helps you choose the right property.
 
-16. Choose **scroll-policy-option.scroller**. For the attribute, use **"html"**:
+16. Choose **scroll-policy-options.scroller**. For the attribute, use **"html"**:
 											  ![html code](images/html.png)
 
 	  The code for this line should now look similar to this:
 
-		<oj-table scroll-policy-option.scroller="html" scroll-policy="loadMoreOnScroll" ...>
+		<oj-table scroll-policy-options.scroller="html" scroll-policy="loadMoreOnScroll" ...>
 
 17. Click **Design** so we can see the resulting table with data fetched into it. We can take an even closer look at the app by using the Preview feature.  
 
