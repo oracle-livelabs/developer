@@ -34,7 +34,7 @@ In this lab, you will:
 
   ![Design view](images/editpage.png)
 
-4. In the Components palette search for **edit**, and locate the **Simple Edit and Create Template**:
+4. In the Components palette search for **edit**, and locate the **Simple Create and Edit Template**:
 	  ![Edit template](images/editcomponents.png)
 
 5. Drag it to the top of the page hierarchy in the Structure pane, and drop it when you see a blue line above Grid Row.
@@ -85,7 +85,7 @@ The Simple Create and Edit Page Template has a primary action built in, Save, bu
 
 3. Select **On spPrimaryAction**, which will map the built-in action to the main button on the page.
 
-4. In the Action Chain editor, drag **Call Action Chain** and drop it on the + icon om the middle:
+4. In the Action Chain editor, drag **Call Action Chain** and drop it on the + icon om the middle (another approach is to click the + button in the diagram and choose the action from the menu):
 ![Call action chain action](images/callaction.png)
 
 5. In the Properties pane, map the **Action Chain ID** property to the **saveAccountsChain** action chain, which was created by the Quick Start.
@@ -102,13 +102,13 @@ The Simple Create and Edit Page Template has a primary action built in, Save, bu
 
 ![Call action](images/actionadd.png)
 
-9. In the Properties pane, map the **Action Chain ID** property to the **goBackAction** action chain, which was created by the Quick Start.
+9. In the Properties pane, map the **Action Chain ID** property to the **goBackChain** action chain, which was created by the Quick Start.
 
 ![Action properties](images/goback.png)
 
 10. Click the **Page Designer** tab and switch to **Live** mode.
 
-11. In the **Current Fiscal Year Potential Revenue** field, enter a value, the click the **Save** button to verify that it works:
+11. In the **Revenue** field, enter a value, the click the **Save** button to verify that it works:
 ![Edit values](images/liveedit.png)
 
 You should see the value you just entered reflected in the canvas area.
@@ -178,6 +178,7 @@ A pattern applies more than just a new look and feel to the user interface; it c
 	  ![label property](images/labelset.png)
 
 	This will make the form look like the other form that is already on your page.
+	(You can now delete the original "accounts Details" header that is at the bottom of the screen).
 
 13. Switch back to the tab for the **main-start** page, then click **Preview** in the header to see your completed app.
 
