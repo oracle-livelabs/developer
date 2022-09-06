@@ -24,7 +24,7 @@ Users with [the right roles](https://docs.oracle.com/en/cloud/paas/visual-builde
 
 	![login screen](images/login.png)
 
-2. In the hamburger menu at the top left, navigate to the **Configuration** section and expand it. Select the **Visual Builder** option (in this case synonymous with "Visual Builder Studio"):
+2. In the hamburger menu at the top left, navigate to the **Configuration** section and expand it. Select the **Visual Builder** option (in this case, synonymous with "Visual Builder Studio"):
 
   ![Main menu](images/menu.png)
 
