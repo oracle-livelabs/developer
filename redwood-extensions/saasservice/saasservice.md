@@ -48,7 +48,7 @@ Up until now we've worked on the UI (front end) of your application, but now it'
 		We'll keep all the default definitions here, so you can close this tab and return to the tab displaying the main-start page.
 ## Task 2: Add Data to Your Page
 
-1. In the Designer, click the **Data** tab on the left and expand the Services node until you can see the **accounts** service:
+1. In the Designer, click the **Data** tab on the left and expand the Services node until you can see the **accounts** service. (If no services are shown click the refresh icon next to the Filter box at the top of the pane)
 	  ![Data Palette](images/datapalette.png)
 2. Drag and drop the accounts service to the Structure pane and drop it on the **Collection Container**:
 	  ![Drag service](images/drag1.png)
@@ -66,7 +66,7 @@ Up until now we've worked on the UI (front end) of your application, but now it'
 	* OrganizationName
 	* CEOName
 	* CurrentFiscalYearPotentialRevenueAmount
-	* NextFisicalYearPotentialRevenueAmount
+	* NextFiscalYearPotentialRevenueAmount
 
 	Your screen should look like this:
 	  ![Fields selection](images/fields2.png)
@@ -82,7 +82,7 @@ Up until now we've worked on the UI (front end) of your application, but now it'
 9. Click in the **Attribute** field, then start typing **Orga ...** until you can choose **OrganizationName**:
 	  ![Search box](images/name.png)
 
-10. Keep the operator as **Contains ($co)**. In the **Attribute** field on the right, locate the search variable you created by typing **searchString**, which will add **$variable.searchString** to this field:
+10. Keep the operator as **contains ($co)**. In the **Attribute** field on the right, locate the search variable you created by typing **searchString**, which will add **$variable.searchString** to this field:
 			  ![search criteria](images/search.png)
 
 

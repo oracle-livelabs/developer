@@ -49,7 +49,7 @@ When your account managers locate an account using our new page, it's quite poss
 	* OrganizationName
 	* CEOName
 	* CurrentFiscalYearPotentialRevenueAmount
-	* NextFisicalYearPotentialRevenueAmount
+	* NextFiscalYearPotentialRevenueAmount
 
 	  ![Selected fields](images/fields.png)
 
@@ -107,10 +107,12 @@ Now let's preview the updated app.
 
 	You'll see a pop-up confirming that this data has been submitted to Oracle Fusion Cloud Apps. It will be reflected in your table, too:
 
-  ![Editing data](images/edit.png)
+  ![Record info](images/details.png)
+
 
 10. Click another record, then click the "account Details" button to find out the address of the account:
-  ![Record info](images/details.png)
+
+  ![Editing data](images/edit.png)
 
 	 Use the browser's back button to return to the search page.
 
