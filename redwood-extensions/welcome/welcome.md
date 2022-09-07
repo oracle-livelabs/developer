@@ -53,9 +53,11 @@ Here are the key areas of the Designer you'll use throughout this workshop:
 | 5 |Canvas | Displays a design/live view (or code view) of your page content |
 {: title="Designer Regions"}
 
-At the top gray bar on the right side you'll also find the undo and redo buttons - if you make a mistake during this lab, you can click to undo the last steps you did.
+**Tip:** In the header area (the black bar along the top), you'll also find the Undo and Redo buttons, which look like this:
 
   ![Undo button](images/undo.png)
+
+If you make a mistake during this lab, click Undo to back out of the last step you did.
 
 The Components palette contains over a hundred UI components that you can drag and drop onto your pages to design your interfaces. In this workshop, we're going to leverage some page templates designed by Oracle's Redwood Design team to accelerate our application development. These templates provide a responsive user experience, which means your app will adjust to the device accessing it.
 
