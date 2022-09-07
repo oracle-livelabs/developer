@@ -133,6 +133,6 @@ Now that we have a running page that fetches data, the next step is to add pages
 
 
 ## Acknowledgements
-* **Author** - Shay Shmeltzer, Oracle Cloud Development Tools, August 2022
+* **Author** - Shay Shmeltzer, Oracle Cloud Development Tools, September 2022
 * **Contributors** -  Marcie Caccamo, Blaine Carter, Oracle Cloud Development Tools
-* **Last Updated By/Date** - Shay Shmeltzer, Oracle Cloud Development Tools, August 2022
+* **Last Updated By/Date** - Shay Shmeltzer, Oracle Cloud Development Tools, September 2022

@@ -72,7 +72,7 @@ The Components palette contains over a hundred UI components that you can drag a
 | --- | --- | --- |
 | 1 | Background Color | Choose your preferred color  |
 | 2 | Description| **Search and edit accounts** |
-| 3 | Illustration foreground | https://static.oracle.com/cdn/fnd/gallery/2107.1.0/images/illust-welcome-banner-fg-03.png |
+| 3 | Illustration foreground source URL | https://static.oracle.com/cdn/fnd/gallery/2107.1.0/images/illust-welcome-banner-fg-03.png |
 | 4 |Page Title | **Accounts** |
 {: title="Template Properties"}
 

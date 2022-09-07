@@ -4,7 +4,7 @@
 
 In this lab we'll apply a couple of the Redwood page templates to improve the user experience of working with our pages. The Redwood templates not only provide a consistent look and feel across the pages in our app (remember, we based our current page on the Welcome page template), but we'll also be able to leverage the usability features they offer.
 
-Estimated Time: 10 minutes
+Estimated Time: 20 minutes
 
 ### About the Oracle Redwood User Experience
 The Redwood User Experience is a collective reinvention of how Oracle customers interact with technology and consume information. While Redwood includes a beautiful new set of user interface elements, including the templates you'll work with in this lab, it's also a philosophical approach to solving customer problems in a differentiated and satisfying way.
@@ -182,11 +182,11 @@ A pattern applies more than just a new look and feel to the user interface; it c
 
 13. Switch back to the tab for the **main-start** page, then click **Preview** in the header to see your completed app.
 
-Your work is finished! In the real world, at this point you would like do more testing, then deploy your extension to your Oracle Fusion Cloud Applications instance. Thanks for completing this workshop!
+Your work is finished! In the real world, at this point you would likely do more testing, then deploy your extension to your Oracle Fusion Cloud Applications instance. Thanks for completing this workshop!
 
 ## Learn More
 
-* [Oracle Redwood](http://design.oracle.com/)
+* [Oracle Visual Builder Studio](https://docs.oracle.com/en/cloud/paas/visual-builder/index.html)
 
 ## Acknowledgements
 * **Author** - Shay Shmeltzer, Oracle Cloud Development Tools, August 2022

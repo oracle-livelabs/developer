@@ -119,7 +119,7 @@ VB Studio apps are event-driven, which means that an event is fired when an end 
 3. From the list of actions on the left, drag **Call Action Chain** and drop it onto the + sign:
 	![Dragging actions](images/actiondrag.png)
 
-4. In the Properties pane, click the arrow in the **Action Chain ID** field and select **NavigateToEditAccountsChain** from the drop-down:
+4. In the Properties pane, click the arrow in the **Action Chain ID** field and select **navigateToEditAccountsChain** from the drop-down:
 	![Action properties](images/actionedit.png)
 
  Let's take a step back.  We've set things up so that when the Edit button is clicked, we will navigate to the Edit page created for us by the Quick Start. However, as we can see from the Properties pane, this action chain expects a value for the input parameter **accountsId**.
@@ -137,7 +137,7 @@ VB Studio apps are event-driven, which means that an event is fired when an end 
 8. Click **Page Designer** to go back to the visual view of the main-start page:
 	![Page designer](images/pagedesigner.png)
 
-9. Repeat steps 1-8, this time for the **Info** button. When creating your **On ojAction** action chain, use the **Call Action Chain** action, and select **NavigateToAccountsDetailChain** in the Action Chain ID field. As before, map the **key** variable to the accountsId input parameter.
+9. Repeat steps 1-8, this time for the **Info** button. When creating your **On ojAction** action chain, use the **Call Action Chain** action, and select **navigateToAccountsDetailChain** in the Action Chain ID field. As before, map the **key** variable to the accountsId input parameter.
 	![Action Chain](images/action2.png)
 
 	Let's take another look at the app to see our changes in action.

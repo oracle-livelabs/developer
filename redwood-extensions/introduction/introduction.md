@@ -32,6 +32,6 @@ This lab assumes you have:
 * [Extending Oracle Cloud Applications with Oracle Visual Builder Studio](https://docs.oracle.com/en/cloud/paas/visual-builder/visualbuilder-building-appui/index.html)
 
 ## Acknowledgements
-* **Author** - Shay Shmeltzer, Oracle Cloud Development Tools, August 2022
+* **Author** - Shay Shmeltzer, Oracle Cloud Development Tools, September 2022
 * **Contributors** -  Marcie Caccamo, Blaine Carter, Oracle Cloud Development Tools
-* **Last Updated By/Date** - Shay Shmeltzer, Oracle Cloud Development Tools, August 2022
+* **Last Updated By/Date** - Shay Shmeltzer, Oracle Cloud Development Tools, September 2022

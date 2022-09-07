@@ -68,6 +68,6 @@ Users with [the right roles](https://docs.oracle.com/en/cloud/paas/visual-builde
 * [What Is a Workspace?](https://docs.oracle.com/en/cloud/paas/visual-builder/visualbuilder-building-appui/basics.html#GUID-8E1EF322-51B5-4411-BAAA-F2AB3796C8FB)
 
 ## Acknowledgements
-* **Author** - Shay Shmeltzer, Oracle Cloud Development Tools, August 2022
+* **Author** - Shay Shmeltzer, Oracle Cloud Development Tools, September 2022
 * **Contributors** -  Marcie Caccamo, Blaine Carter, Oracle Cloud Development Tools
-* **Last Updated By/Date** - Shay Shmeltzer, Oracle Cloud Development Tools, August 2022
+* **Last Updated By/Date** - Shay Shmeltzer, Oracle Cloud Development Tools, September 2022
