@@ -85,7 +85,7 @@ The Simple Create and Edit Page Template has a primary action built in, Save, bu
 
 3. Select **On spPrimaryAction**, which will map the built-in action to the main button on the page.
 
-4. In the Action Chain editor, drag **Call Action Chain** and drop it on the + icon om the middle (another approach is to click the + button in the diagram and choose the action from the menu):
+4. In the Action Chain editor, drag **Call Action Chain** and drop it on the + icon om the middle (or you can click the + button in the diagram and choose the action from the menu):
 ![Call action chain action](images/callaction.png)
 
 5. In the Properties pane, map the **Action Chain ID** property to the **saveAccountsChain** action chain, which was created by the Quick Start.

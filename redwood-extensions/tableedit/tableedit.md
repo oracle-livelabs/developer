@@ -69,7 +69,7 @@ Let's use the empty columns we just created to add some icon-based buttons that 
 4. Back in the Components palette, locate the Icon component:
 	![Image alt text](images/icon.png)
 
-5. Drag the Icon component and drop it on to the first button (the one for the Edit column) - you can drag either onto the visual editor or the structe pane. When prompted, choose **startIcon** as the slot for the icon:
+5. Drag the Icon component and drop it on to the first button (the one for the Edit column). You can do this either in the visual editor or in the Structure pane. When prompted, choose **startIcon** as the slot for the icon:
 	![Image alt text](images/dragicon1.png)
 
 6. In the Properties pane, click the image under Icon to choose a different image:
