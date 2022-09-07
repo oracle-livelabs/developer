@@ -189,6 +189,6 @@ Your work is finished! In the real world, at this point you would likely do more
 * [Oracle Visual Builder Studio](https://docs.oracle.com/en/cloud/paas/visual-builder/index.html)
 
 ## Acknowledgements
-* **Author** - Shay Shmeltzer, Oracle Cloud Development Tools, August 2022
+* **Author** - Shay Shmeltzer, Oracle Cloud Development Tools, September 2022
 * **Contributors** -  Marcie Caccamo, Blaine Carter, Oracle Cloud Development Tools
-* **Last Updated By/Date** - Shay Shmeltzer, Oracle Cloud Development Tools, August 2022
+* **Last Updated By/Date** - Shay Shmeltzer, Oracle Cloud Development Tools, September 2022
