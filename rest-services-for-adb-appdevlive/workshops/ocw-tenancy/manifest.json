@@ -11,7 +11,7 @@
           {
               "title": "Get Started",
               "description": "Obtain an Always Free tier Oracle Cloud Infrastructure account",
-              "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/pre-register-free-tier-account.md"
+              "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/cloud-login.md"
           },
           {
               "title": "Lab 1: Provision an Autonomous Database",
@@ -49,9 +49,9 @@
               "filename": "https://oracle-livelabs.github.io/common/labs/terminate-adb/terminate-adb.md"
           },
           {
-            "title": "Need Help?",
+            "title": "Oracle CloudWorld 2022 - Get Help",
             "description": "Solutions to Common Problems and Directions for Receiving Live Help",
-              "filename":"https://oracle-livelabs.github.io/common/labs/need-help/need-help-freetier.md"
+              "filename":"https://oracle-livelabs.github.io/common/support/ocwsupportlab/ocwsupportlab.md"
           }
       ]
   }
