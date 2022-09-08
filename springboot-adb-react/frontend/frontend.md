@@ -44,19 +44,19 @@ In this lab, you will:
 
 2. To see how the frontend build is automated, we must look at the `pom.xml` file.
 
-	![](images/pom-xml.png "pom.xml")
+	![POM XML](images/pom-xml.png "pom.xml")
 
 	Here we can see that a `frontend-src-dir` is specified. 
 3. Inside the `<build>` portion of our `pom.xml`, we specify our working directory as the `frontend-src-dir` we specified earlier, and within the `<execution>` section of the `pom.xml` we specify what we want to accomplish. In this case, we want to install node and npm, then create our build folder. For further detail on this plugin navigate [here](https://github.com/eirslett/frontend-maven-plugin)
 
 
-	![](images/erislett-plugin.png "erislett")
+	![Plugin](images/erislett-plugin.png "erislett")
 
 4. Once the build folder is created, we use the `maven-resources-plugin` to copy the resources from our build folder into the outputDirectory. `${project.build.outputDirectory}` is a default location provided to you by Maven. Read the maven specifications for more details.
 
 5. Finally, we need to ensure our container has the necessary files to run the frontend. We copy the src directory to our container within the dockerfile.
 
-	![](images/dockerfile.png "dockerfile")
+	![Docker file](images/dockerfile.png "dockerfile")
 
 6. We recommend to visit the GitHub Repository to look at the file structure and how everything works together to fully understanding how the frontend is hosted!
 
@@ -68,4 +68,4 @@ You may now **proceed to the next lab**.
 
 * **Authors** -  Kuassi Mensah, Dir. Product Management, Java Database Access; Peter Song, Developer Advocate JDBC
 * **Contributors** - Jean de Lavarene, Sr. Director of Development, JDBC/UCP
-* **Last Updated By/Date** - Peter Song, Developer Advocate JDBC
+* **Last Updated By/Date** - Kuassi Mensah, Sept 2022
