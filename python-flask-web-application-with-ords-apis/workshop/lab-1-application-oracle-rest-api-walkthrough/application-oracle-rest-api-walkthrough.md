@@ -221,11 +221,11 @@ There are various ways you can start your Flask application, this is the more ma
 
       ![Selected ORDS results by latitude](images/ords-api-results-select-latitudes.png " ")
         
-   > ❓ **What do you see now?** You can probably tell by now, but we've restricted our results to a very narrow band of latitudes.
+    > ❓ **What do you see now?** You can probably tell by now, but we've restricted our results to a very narrow band of latitudes.
           
-    - We have only scratched the surface with filtering in queries. But once you understand how your data is structured, and what is available, the possibilities are endless.
+     - We have only scratched the surface with filtering in queries. But once you understand how your data is structured, and what is available, the possibilities are endless.
 
-    - The ability to perform myriad **`GET`** requests with a single API + query parameters is powerful. But we can manipulate other HTTPS Operations (Methods) too! Lets take a look at a **`POST`** request.
+     - The ability to perform myriad **`GET`** requests with a single API + query parameters is powerful. But we can manipulate other HTTPS Operations (Methods) too! Lets take a look at a **`POST`** request.
 
 8. Remixing the **`POST`** request. 
    
@@ -285,17 +285,18 @@ There are various ways you can start your Flask application, this is the more ma
     
       > 🏴‍☠️ *Here is our example of the Bash cURL command we sent:*
    
-        ```bash
-        <copy>curl --location --request POST \
-        'https://[Place your ORDS REST API here]' \
-        --header 'Content-Type: application/json' \
-        --data-binary '{
-            "MUSEUM_NAME": "test1",
-            "MUSEUM_LOCATION": "test1",
-            "MUSEUM_LAT": 50.12345,
-            "MUSEUM_LONG": 100.12345
-            }'</copy>
-        ```
+      ```bash
+      <copy>curl --location --request POST \
+      'https://[Place your ORDS REST API here]' \
+      --header 'Content-Type: application/json' \
+      --data-binary '{
+          "MUSEUM_NAME": "test1",
+          "MUSEUM_LOCATION": "test1",
+          "MUSEUM_LAT": 50.12345,
+          "MUSEUM_LONG": 100.12345
+          }'</copy>
+      ```
+
 9. Enter the cURL Command in your terminal (*your command may differ slightly*). 
 
        ![The cURL command in the terminal](images/post-curl-command-in-terminal.png " ")
@@ -324,11 +325,11 @@ There are various ways you can start your Flask application, this is the more ma
 
 2. You should see the **`orderform.html`** page load. 
 
-  > 😀 Yet again, we have information provided to us by ORDS. 
+     > 😀 Yet again, we have information provided to us by ORDS. 
   
-  The *Choose an option* dropdown has already been populated with product choices; this was done upon page load. The information came from our database and was handled exclusively by our Oracle REST APIs.
+   The *Choose an option* dropdown has already been populated with product choices; this was done upon page load. The information came from our database and was handled exclusively by our Oracle REST APIs.
   
-   ![Choosing a purchase option in the order form](images/choose-an-option-focus.png " ")
+     ![Choosing a purchase option in the order form](images/choose-an-option-focus.png " ")
 
 3. When you make a selection, you'll see the *Description* and *Price per* fields change to reflect your product selection. If you thought "Oracle REST APIs" just then, you'd be correct. We have Oracle REST APIs for requesting product description *and* pricing information.
 
@@ -342,11 +343,11 @@ There are various ways you can start your Flask application, this is the more ma
     
 5. The **`orderhistory.html`** page will load. 
 
-   > 🧠 *To keep this simple, we've omitted the payment gateway step, but since you have access to the code, you *could* always add that in later.*
+     > 🧠 *To keep this simple, we've omitted the payment gateway step, but since you have access to the code, you could always add that in later.*
 
-   A table with our previous orders will appear. Yet again, we have been served this data through another Oracle REST API.
+    A table with our previous orders will appear. Yet again, we have been served this data through another Oracle REST API.
    
-      ![Reviewing the changes from your POST request](images/table-with-previous-orders.png " ") 
+    ![Reviewing the changes from your POST request](images/table-with-previous-orders.png " ") 
 
 6. Later, you'll see how everything works together in our **`app.py`** file. But for now, its important to understand the role Oracle REST APIs play in this application. 
 
