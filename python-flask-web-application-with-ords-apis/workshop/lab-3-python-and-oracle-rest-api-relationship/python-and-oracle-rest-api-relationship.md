@@ -24,7 +24,7 @@ This lab assumes you have:
 
    ![Open the lab_3_app.py file folder in VS Code.](images/opening-lab-3-app-py-file.png " ")
 
-   :pirate_flag: The examples in this Lab will use Visual Studio Code.
+   > 🏴‍☠️ The examples in this Lab will use Visual Studio Code.
 
 ## Task 2: Review the Python application and functions
 
@@ -57,7 +57,7 @@ This lab assumes you have:
     * We include a tooltip (which you'll see later when we load the application).
     * We use the "Requests" library along with our Oracle REST APIs to **`GET`** json from our Autonomous Database.
    
-       :question: *But do you notice anything missing?*
+       > ❓ *But do you notice anything missing?*
 
        ![Missing ORDS endpoint for Folium map](images/missing-ords-uri-for-folium.png " ")
 
@@ -108,7 +108,7 @@ This lab assumes you have:
        ![Creating markers for Folium.](images/creating-markers-for-folium-map.png " ")
        <sup>*Notice how we include **`museum_name`** as HTML, icon color and type, as well as a **`tooltip`.***</sup>
 
-       :bulb: The tooltip generates a helpful bubble when hovered over that reads *Click me!*.
+       > 💡 The tooltip generates a helpful bubble when hovered over that reads *Click me!*.
 
 5. Finally you'll see the line **`lvmap = m._repr_html_()`**:
 
@@ -118,7 +118,7 @@ This lab assumes you have:
 
 ## Task 4: Review the Flask application routes
 
-:brain: *A Routes Primer*: Application routes (aka **`app.route()`**) are triggered when actions are performed in the application. The results of a function may be passed back to the user, a new HTML page may load, or may redirect the user to a new page. 
+> 🧠 *A Routes Primer*: Application routes (aka **`app.route()`**) are triggered when actions are performed in the application. The results of a function may be passed back to the user, a new HTML page may load, or may redirect the user to a new page. 
   
 1. **`@app.route('/')`**
         
@@ -136,7 +136,7 @@ This lab assumes you have:
       <copy>https://yfuxkbz2ls7taze-ordshandsonlabs.adb.us-phoenix-1.oraclecloudapps.com/ords/python/flask/products/pricing/</copy>
       ```
      
-     :question: *Click **Enter**, what do you see?*
+     > ❓ *Click **Enter**, what do you see?*
 
      You might see something like this:
         
@@ -318,7 +318,7 @@ This lab assumes you have:
       ```
   </details>
     
-    :brain: *You've actually seen this app route in action in Lab 1 of this Workshop! Remember the **`orderform.html`** page?*
+    > 🧠 *You've actually seen this app route in action in Lab 1 of this Workshop! Remember the **`orderform.html`** page?*
 
 6. **`@app.route(/result', methods = ['POST', 'GET'])`**
 
@@ -330,7 +330,7 @@ This lab assumes you have:
 
     And this route expects a **`POST`** request originating from the Flask application. Once this request posts successfully the user is redirected to the **`orderhistory.html`** page (as you saw in the previous step). 
     
-    :brain: *This function also performs actions such as establishing the key:value pairs of the incoming data, and the JSON payload headers well.*
+    > 🧠 *This function also performs actions such as establishing the **`{Key: Value}`** pairs of the incoming data, and the JSON payload headers well.*
 
     Update the function with the following ORDS URL: 
     ```
