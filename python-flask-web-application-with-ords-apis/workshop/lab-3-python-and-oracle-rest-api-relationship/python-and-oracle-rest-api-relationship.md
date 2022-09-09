@@ -1,4 +1,4 @@
-# Review the application and routes
+# Lab 3: Review the Python and Oracle REST API relationship
 
 ## Introduction
 
@@ -363,7 +363,7 @@ This lab assumes you have:
 
 7. At this stage you should have all ORDS endpoints in the proper places. All application routes and their underlying functions should work correctly. Next, we'll briefly review the included HTML and CSS in this Flask application. Zut alors!
     
-### You may now proceed to the [next Lab](#next).
+### You may now **proceed to the next lab.**
 
 ## Learn More
 * [A minimal application in Flask](https://flask.palletsprojects.com/en/2.1.x/quickstart/#a-minimal-application)

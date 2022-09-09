@@ -5,7 +5,7 @@
                 "step2.md":"../../data-load/files/step2.md"},
     "variables": ["../../variables/variables.json",
                  "../../variables/variables-in-another-file.json"],
-    "help": "livelabs-help-**enterarea**_us@oracle.com",
+    "help": "livelabs-help-db_us@oracle.com",
     "tutorials": [
         {
             "title": "Introduction",
@@ -28,7 +28,7 @@
             "filename": "../../lab-2-oracle-rest-api-deep-dive/oracle-rest-api-deep-dive.md"
         },
         {
-            "title": "Lab 3: Understanding the Python and Oracle REST API relationship",
+            "title": "Lab 3: Review the Python and Oracle REST API relationship",
             "description": "We review the Python application and its relationship with the provided Oracle REST APIs",
             "filename": "../../lab-3-python-and-oracle-rest-api-relationship/python-and-oracle-rest-api-relationship.md"
         },
