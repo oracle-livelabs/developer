@@ -1,4 +1,4 @@
-# Bootstrap and JavaScript primer
+# Lab 4: A Bootstrap and JavaScript primer
 
 ## Introduction
 
@@ -195,7 +195,7 @@ This lab assumes you have:
 
 5. In the next section we'll introduce to you concepts surrounding security and authentication for Oracle REST APIs. 
 
-### You may now proceed to the [next Lab](#next).
+### You may now **proceed to the next lab.**
 
 ## Learn More
 

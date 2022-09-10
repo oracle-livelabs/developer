@@ -1,4 +1,4 @@
-# Flask and Oracle REST APIs walk-through
+# Lab 1: Walk-through of Flask application and Oracle REST APIs
 
 ## Introduction
 
@@ -358,7 +358,7 @@ There are various ways you can start your Flask application, this is the more ma
      * Accelerate application development, *and*
      * Reduce complexity
 
-### You may now proceed to the [next Lab](#next).
+### You may now **proceed to the next lab.**
 
 ## Learn More
 * [A minimal application in Flask](https://flask.palletsprojects.com/en/2.1.x/quickstart/#a-minimal-application)

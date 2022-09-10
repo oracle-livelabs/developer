@@ -1,4 +1,4 @@
-# Securing Oracle REST APIs
+# A word on security
 
 ## Introduction
 
@@ -47,7 +47,7 @@ However, best practices for applications such as our example Flask application w
 
  - You are encouraged to take the provided database scripts, Flask and Python files, and make this application your own. How can you manipulate the Oracle REST APIs to put your own personal spin on the application? 
 
-### You may now proceed to the [next Section](#next).
+### You may now **proceed to the next lab.**
 
 ## Learn More
 * [OAuth 2.0 workflows in Python's requests-oauthlib](https://requests-oauthlib.readthedocs.io/en/latest/oauth2_workflow.html#)
