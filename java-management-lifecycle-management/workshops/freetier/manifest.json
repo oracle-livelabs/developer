@@ -18,11 +18,15 @@
             "filename": "../../set-up-and-enable-lcm-on-jms/set-up-and-enable-lcm-on-jms.md"
         },
         {
-            "title": "Lab 2: Remove Java Runtimes",
+            "title": "Lab 2: Install Java Runtimes",
+            "filename": "../../install-java-runtimes/install-java-runtimes.md"
+        },
+        {
+            "title": "Lab 3: Remove Java Runtimes",
             "filename": "../../remove-java-runtimes/remove-java-runtimes.md"
         },
         {
-            "title": "Lab 3: View and monitor Lifecycle Management requests",
+            "title": "Lab 4: View and monitor Lifecycle Management requests",
             "filename": "../../view-and-monitor-lcm-requests/view-and-monitor-lcm-requests.md"
         },
         {

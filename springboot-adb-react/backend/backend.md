@@ -2,17 +2,13 @@
 
 ## Introduction
 
-In this lab, you will make changes and deploy the pre-built SpringBoot Java backend Docker image to OKE, update the code to reflect the IP address of the API Gateway, and finally update your kubernetes pod to use the latest docker image.
+In this lab, you will make changes and deploy the pre-built SpringBoot Java backend Docker image to OKE, update the code to reflect the IP address of the API Gateway, and finally update your Kubernetes pod to use the latest docker image.
 
 Estimated time: 15 minutes
 
-<!-- Watch the video below for a quick walk-through of the lab.
-
-[](youtube:-twDGXrjOrI) -->
-
 ### Understand the Java backend application
 
-As with most React applications (https://reactjs.org/), this application uses remote APIs to handle data persistence. The backend implements five REST APIs including:
+As with most React applications (https://reactjs.org/), this application uses remote APIs to handle data persistence. The backend implements five REST APIs including
 
 * Retrieving the current list of todo items
 * Adding a new todo item
@@ -20,7 +16,7 @@ As with most React applications (https://reactjs.org/), this application uses re
 * Updating an existing todo item
 * Deleting a todo item
 
-The APIs are documented using Swagger. You can search for this address: https://objectstorage.eu-frankfurt-1.oraclecloud.com/n/oracleonpremjava/b/todolist/o/swagger_APIs_definition.json in swagger's console
+The APIs are documented using Swagger. You can look it up at for the following address: https://bit.ly/3piu4cp in Swagger's console
 
 The backend is implemented using the following Java classes (under ./backend/src/main/java/com/springboot...):
 
@@ -28,8 +24,8 @@ The backend is implemented using the following Java classes (under ./backend/src
 * ToDoItem.java: Maps a Todo Item instance to and from the JSON document
 * OracleConfiguration.java: Connects SpringBoot backend to Oracle Autonomous Database
 * ToDoItemService.java: Implements the SpringBoot service and exposes the REST APIs
-* ToDoItemController.java: Implements the endpoints and populates data 
-![bcknd apis](images/backend-apis.png "backend-apis")
+* ToDoItemController.java: Implements the endpoints and populates data
+![bcknd apis](images/backend-apis.png)
 
 ### Objectives
 
@@ -46,150 +42,152 @@ The backend is implemented using the following Java classes (under ./backend/src
 
 The OCI Container Registry is where your Docker images are managed. A container registry should have been created for you in Lab 1 in your compartment.
 
-1. Edit ./backend/src/main/java/com/springboot/config/CorsConfig.java. Locate the following code fragment:
+1. Edit ./backend/src/main/java/com/springboot/MyTodoList/config/CorsConfig.java. Locate the following code fragment:
 
-  ![](images/allowed-origins.png "allowed-origins")
+![Allowed origins](images/allowed-origins.png)
 
-    - Replace `us-phoenix-1` in  `"https://objectstorage.us-phoenix-1.oraclecloud.com"` with your region
+\- Replace `us-phoenix-1` in `"[https://objectstorage.us-phoenix-1.oraclecloud.com](https://objectstorage.us-phoenix-1.oraclecloud.com)"` with your region (see the Cloud shell promipt)
 
-    - Save the file
+\- Save the file
 
-    - This will allow the appropriate object storage bucket to access your application.
+\- This will allow the appropriate object storage bucket to access your application\.
 
 2. Run `build.sh` script to build and push the SpringBoot image into the repository
 
-    ```
-    <copy>
-    cd $MTDRWORKSHOP_LOCATION/backend
-    </copy>
-    source build.sh
-    ```
-  In a couple of minutes, you should have successfully built and pushed the images into the OCI repository.
+```
+<copy>
+cd $MTDRWORKSHOP_LOCATION/backend;
+source build.sh
+</copy>
+```
 
-3. Check your container registry in your compartment
-  - Go to the Console, click the hamburger menu in the top-left corner and open **Developer Services > Container Registry**.
+In a couple of minutes, you should have successfully built and pushed the images into the OCI repository.
 
-  ![](images/build-image.png "build-image")
+3. Check your container registry in your compartment (refresh the console if the image is not shown)
+
+* Go to the console, click the hamburger menu in the top-left corner, and open **Developer Services > Container Registry**.
+
+![View of the registry](images/build-image.png)
 
 ## Task 2: Deploy on Kubernetes and Check the Status
 
 1. Run the `deploy.sh` script
 
-    ```
-    <copy>
-    cd $MTDRWORKSHOP_LOCATION/backend
-    ./deploy.sh
-    </copy>
-    ```
+```
+<copy>
+cd $MTDRWORKSHOP_LOCATION/backend
+./deploy.sh
+</copy>
+```
 
-  If everything runs correctly the script will output something like this:
+If everything runs correctly, the script will output something like this:
 
-  ![](images/deploy-output.png "deploy-output")
-
+![Deploy output](images/deploy-output.png)
 
 2. Check the status using the following commands
 
-  The following command returns the Kubernetes services of the MyToDo application with a load balancer exposed through an external API
-    ```
-    <copy>
-    services
-    </copy>
-    ```
-  This will run `kubectl get services` (but the setup script creates aliases for ease of use). After running the command above, it should output the external IP address.
+The following command returns the Kubernetes services of the MyToDo application with a load balancer exposed through an external API
+```<copy> services </copy>```
+This will run `kubectl get services` (but the setup script creates aliases for ease of use). After running the command above, it should output the external IP address.
 
-  ![](images/services.png "kubectl-services")
+![Get Services](images/services.png)
 
 3. The following command returns all the pods running in your Kubernetes cluster:
-    ```
-    <copy>
-    pods
-    </copy>
-    ```
-    Pods is an alias for `kubectl get services`.
 
-    ![](images/get-pods.png "kubectl get pods")
+```
+<copy>
+pods
+</copy>
+```
 
-4. You can tail the log of one of the pods by running:
+Pods is an alias for `kubectl get pods`.
+![Get Pods](images/get-pods.png)
+4\. You can tail the log of one of the pods by running:
 
-    ```
-    <copy>
-    kubectl -n mtdrworkshop logs -f <pod name>
-    </copy>
-    ```
+```
+<copy>
+kubectl -n mtdrworkshop logs -f <pod name>
+</copy>
+```
 
-  $ kubectl logs -f <pod name>
+$ kubectl logs -f
 
-  Example: `kubectl -n mtdrworkshop logs -f todolistapp-springboot-deployment-54c967665-6482r`
+<br>
+Example: `kubectl -n mtdrworkshop logs -f todolistapp-springboot-deployment-54c967665-6482r`
 
-![](images/deploy-success.png "deploy-success")
+![Deploy Success](images/deploy-success.png)
 
-  If the logs return **'Tomcat started on port(s): 8080 (HTTP) with context path'**, then you can move on to task 4!
+If the logs return **'Tomcat started on port(s): 8080 (HTTP) with context path'**, then you can move on to task 4!
+
 ## Task 3: UnDeploy (optional)
 
-  If you make changes to the image, you need to delete the service and the pods by running undeploy.sh then redo Steps 2 & 3.
+If you make changes to the image, you need to delete the service and the pods by running undeploy.sh then redo Steps 2 & 3.
 
-  1. Run the `undeploy.sh` script
+1. Run the `undeploy.sh` script
 
-    ```
-    <copy>
-    cd $MTDRWORKSHOP_LOCATION/backend
-    ./undeploy.sh
-    </copy>
-    ```
+```
+<copy>
+cd $MTDRWORKSHOP_LOCATION/backend
+./undeploy.sh
+</copy>
+```
 
-  2. Rebuild the image + Deploy + (Re)Configure the API Gateway
+2. Rebuild the image + Deploy + (Re)Configure the API Gateway
 
 ## Task 4: Build and Re-Deploy with Load Balancer IP address
 
-In order to call the API's that are built to retrieve the list of Todo items, update items etc, we must update the value of API_LIST to point to the load balancer ip address.
+In order to call the APIs that are built to retrieve the list of Todo items, update items, and so on, we must update the value of API\_LIST to point to the load balancer IP address.
 
-  1. Navigate to the following directory
-    ```
-    <copy>
-    cd reacttodo/oci-react-samples-1/MtdrSpring/backend/src/main/frontend/src
-    </copy>
-    ```
-  2. Change API_LIST to the external IP address of your load balancer, and append /todolist, for example like: http://`<ip_address>`/todolist
+1. Navigate to the following directory
 
-    ```
-    <copy>
-    vi API.js
-    </copy>
-    ```
+```
+<copy>
+cd; cd reacttodo/oci-react-samples/MtdrSpring/backend/src/main/frontend/src
+</copy>
+```
 
-  ![](images/api-list.png "api_list")
+2. Change API\_LIST to the external IP address of your load balancer, and append /todolist, for example http://`<ip_address>`/todolist
 
-  3. Navigate back to the backend folder 
+```
+<copy>
+vi API.js
+</copy>
+```
 
-    ```
-    <copy>
-    cd ../../../..
-    source build.sh
-    </copy>
-    ```
+![API List](images/api-list.png)
 
-  4. Next, in order for the code change to be reflected in your pod you must update the pod to use the latest image
+3. Navigate back to the backend folder
 
-    ```
-    <copy>
-    kubectl set image deployments/todolistapp-springboot-deployment todolistapp-springboot=phx.ocir.io/<tenancy_name>/reacttodo/todolistapp-springboot:0.1 -n mtdrworkshop
-    </copy>
-    ```
-  
-    Replace `phx` with your region.
-  
-5. Give your pods a couple minutes to restart. Check their progress using the `pods` command.
-  ![](images/todolist-login.png "todolist-login")
+```
+<copy>
+cd ../../../..
+source build.sh
+</copy>
+```
 
+4. Next, for the code change to be reflected in your pod, you must update the pod to use the latest image.
+Note: Replace `phx` with your region.
 
-6. Once your pods are up and running. Go to your web browser and navigate to the load balancer IP address. Once you login you should see the following output, which means your deployment is successful!
-  ![](images/successful-todo.png "successful-todo")
+```
+<copy>
+kubectl set image deployments/todolistapp-springboot-deployment todolistapp-springboot=phx.ocir.io/<tenancy_name>/reacttodo/todolistapp-springboot:0.1 -n mtdrworkshop
+</copy>
+```
 
+5. Give your pods a couple of minutes to restart. Check their progress using the `pods` command.
+
+6\. Once your pods are up and running\. Go to your web browser and navigate to the load balancer IP address\.
+The application login screen will appear
+![Login](images/todolist-login.png)
+
+Once you log in, you should see the following output, which means your deployment is successful!
+![Success](images/successful-todo.png)
 
 You may now **proceed to the next lab**.
 
 ## Acknowledgements
 
-* **Author** -  Peter Song, Developer Advocate JDBC
-* **Contributors** - Jean de Lavarene, Sr. Director of Development, JDBC/UCP
-* **Last Updated By/Date** - Peter Song Developer Advocate February 2022
+* **Author** \- Peter Song\, Developer Advocate JDBC
+* **Contributors** \- Kuassi Mensah\, Director Product Management and Jean de Lavarene\, Sr\. Director of Development\, JDBC/UCP
+* **Last Updated By/Date** \- Kuassi Mensah\, September 2022
+*

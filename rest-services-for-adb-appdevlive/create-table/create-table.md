@@ -15,7 +15,7 @@ You may review the video below for a quick walk through of the lab.
 
 ### Prerequisites
 
-- The following lab requires an <a href="https://www.oracle.com/cloud/free/" target="\_blank">Oracle Cloud account</a>. You may use your own cloud account, a cloud account that you obtained through a trial, or a training account whose details were given to you by an Oracle instructor.
+- The following lab requires an [Oracle Cloud account](https://www.oracle.com/cloud/free/). You may use your own cloud account, a cloud account that you obtained through a trial, or a training account whose details were given to you by an Oracle instructor.
 
 - This lab assumes you have completed all previous Labs. 
 
@@ -113,15 +113,15 @@ You may review the video below for a quick walk through of the lab.
 
 4. Thats it! Your table is REST enabled. We can work with the REST endpoints by using cURL commands provided by SQL Worksheet. To get to these endpoints, again right click the table name as we did in the previous step, select **REST**, then **cURL Command**.
 
-    ![right click the table name in the navigator, select REST, then cURL Command](./images/retrieve-curl-command-for-object.png)
+    ![Right click the table name in the navigator, select REST, then cURL Command](./images/retrieve-curl-command-for-object.png)
 
     To the right of the page, you'll see the cURL command for the table CSV_DATA side out panel. Once you've selected the appropriate cURL command (Command Prompt, PowerShell, or Bash), click the copy icon to copy the entire command.
 
-    ![the Command Prompt cURL for the table CSV_DATA side out panel](./images/command-prompt-curl-command.png)
+    ![The Command Prompt cURL for the table CSV_DATA side out panel](./images/command-prompt-curl-command.png)
 
-    ![the PowerShell cURL for the table CSV_DATA side out panel](./images/powershell-curl-command.png)
+    ![The PowerShell cURL for the table CSV_DATA side out panel](./images/powershell-curl-command.png)
 
-    ![the Bash cURL for the table CSV_DATA side out panel](./images/bash-curl-command.png)
+    ![The Bash cURL for the table CSV_DATA side out panel](./images/bash-curl-command.png)
 
 5. Here we can work with the various REST endpoints. To try one, click the copy icon ![copy icon](./images/copy-icon.png) for the **GET ALL** endpoint.
 
@@ -129,9 +129,8 @@ You may review the video below for a quick walk through of the lab.
 
 6. You can use the **cURL command** you've just copied in the **Oracle Cloud Infrastructure Cloud Shell** or on your local compute, if cURL is installed. Here is the command running:
 
-    ```
-    >curl --location \
-    'https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/admin/csv_data/'
+    ```>curl --location \
+    https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/admin/csv_data/'
 
     {"items":[{"col1":"e40a9db6","col2":"1b","col3":"27531","links":[{"rel":"self","href":"https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/
     ords/admin/csv_data/AAAYuOAAAAAAF3%2FAAA"}]},{"col1":"6182c817","col2":"73","col3":"5355332","links":[{"rel":"self","href":"https://coolrestlab-adb21.adb.
@@ -145,8 +144,8 @@ You may review the video below for a quick walk through of the lab.
     "hasMore":false,"limit":25,"offset":0,"count":7,"links":[{"rel":"self","href":"https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/
     admin/csv_data/"},{"rel":"edit","href":"https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/admin/csv_data/"},{"rel":"describedby",
     "href":"https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/admin/metadata-catalog/csv_data/"},{"rel":"first","href":"https://
-    coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/admin/csv_data/"}]}% 
-    ```
+    coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/admin/csv_data/"}]}%```
+    
 
 The next lab you will learn about using a **BATCH LOAD** endpoint.
 
