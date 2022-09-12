@@ -1,4 +1,4 @@
-# How to build powerful, secure REST APIs for your Oracle Database - REST Enable Business Logic and Custom SQL
+# REST-enable tables and add business logic
 
 ## Introduction
 
@@ -342,6 +342,6 @@ You may now [proceed to the next lab](#next).
     - Chris Hoina, Senior Product Manager 
     - Brian Spendolini
  - **Last Updated By/Date** 
-    - Chris Hoina, August 2022
+    - Chris Hoina, September 2022
 
 

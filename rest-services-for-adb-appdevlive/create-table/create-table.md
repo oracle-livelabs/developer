@@ -1,4 +1,4 @@
-# How to build powerful, secure REST APIs for your Oracle Database - Create and auto-REST enable a table
+# Create and auto-REST enable a table
 
 ## Introduction
 
@@ -25,7 +25,7 @@ You may review the video below for a quick walk through of the lab.
 
     ![Database Actions Home Page, Click SQL tile](images/click-for-sql-worksheet.png)
 
-:bulb: <i>**Note: If this is your first time accessing the SQL Worksheet, you will be presented with a guided tour. Complete the tour or click the X in any tour popup window to quit the tour.**</i>
+💡 *If this is your first time accessing the SQL Worksheet, you will be presented with a guided tour. Complete the tour or click the X in any tour popup window to quit the tour.*
 
 2. We are now ready to load data into the database. For this task, we will use the **Data Loading tab** in the SQL Worksheet.
 
@@ -33,7 +33,7 @@ You may review the video below for a quick walk through of the lab.
 
 3. Click the **Data Loading area**; the center of the gray dotted-line box.
 
-    ![Click the Center of the Data Loading Tab Area](images/data-load-tab.png))
+    ![Click the Center of the Data Loading Tab Area](images/data-load-tab.png)
 
 4. The **Upload Data into New Table modal** will appear.
 
@@ -41,9 +41,7 @@ You may review the video below for a quick walk through of the lab.
 
 5. We'll load some sample data into the database and create a table at the same time. Start by **downloading** this file
 
-    **(right-click and download the file with the following link)**
-
-    [CSV data](https://objectstorage.us-ashburn-1.oraclecloud.com/p/LNAcA6wNFvhkvHGPcWIbKlyGkicSOVCIgWLIu6t7W2BQfwq2NSLCsXpTL9wVzjuP/n/c4u04/b/livelabsfiles/o/developer-library/csv_data.csv)
+    💾 [CSV data](https://objectstorage.us-ashburn-1.oraclecloud.com/p/LNAcA6wNFvhkvHGPcWIbKlyGkicSOVCIgWLIu6t7W2BQfwq2NSLCsXpTL9wVzjuP/n/c4u04/b/livelabsfiles/o/developer-library/csv_data.csv)
 
 6. Once on your desktop, **drag the file into the Upload Data into New Table modal**. You can also click the Select Files button and find where you downloaded it via your operating system's/Web Browser's file browser.
 
@@ -93,7 +91,7 @@ You may review the video below for a quick walk through of the lab.
 
     ![Using the navigator on the left of the SQL Worksheet, we can see out new table](./images/navigating-reviewing-new-table.png)
 
-    In the slider that extends from the right of the page, we can reveiw the data definition, triggers, constraints and even the data itself.
+    In the slider that extends from the right of the page, we can review the data definition, triggers, constraints and even the data itself.
 
     ![Click the Data option to view the table data](./images/table-options-slider.png)
 
@@ -160,4 +158,4 @@ You may now [proceed to the next lab](#next).
     - Chris Hoina, Senior Product Manager 
     - Brian Spendolini
  - **Last Updated By/Date** 
-    - Chris Hoina, August 2022
+    - Chris Hoina, September 2022
