@@ -94,12 +94,16 @@ Python comes preinstalled on most Linux distributions, and for this LiveLab, the
 
 ## Task 3: Download the sample files on Cloud Shell
 
-1. Download a zip file with the sample Python scripts from [here]() and unzip the archive.
+1. Get the sample Python scripts from [here](https://github.com/veronicadumitriu/OWC2022) using 'git' to clone the repository
     In the Cloud Shell, run the following:
 
-    TODO
+    ````
+    <copy>
+    git clone https://github.com/veronicadumitriu/OWC2022
+    </copy>
+    ````
 
-    *Note:* When connecting to a locally installed database, the Python scripts used in this LiveLab are in the python-oracledb GitHub repository.
+    *Note:* When connecting to a locally installed database, the Python scripts to be used are in the python-oracledb GitHub repository.
     Use 'git' to clone the repository.
     
     In the Cloud Shell, run the following:
