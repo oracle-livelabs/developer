@@ -94,12 +94,12 @@ Python comes preinstalled on most Linux distributions, and for this LiveLab, the
 
 ## Task 3: Download the sample files on Cloud Shell
 
-1. Get the sample Python scripts from [here](https://github.com/veronicadumitriu/OWC2022) using 'git' to clone the repository
+1. Get the sample Python scripts from [here](https://github.com/veronicadumitriu/OCW2022) using 'git' to clone the repository
     In the Cloud Shell, run the following:
 
     ````
     <copy>
-    git clone https://github.com/veronicadumitriu/OWC2022
+    git clone https://github.com/veronicadumitriu/OCW2022
     </copy>
     ````
 
