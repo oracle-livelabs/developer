@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This lab walks you through the steps to set up Java Management Service and Management Agent plugins on your OCI compute instance host using the installation script to allow Java Usage Tracking and Lifecycle Management by the Java Management Service (JMS).
+This lab walks you through the steps to set up Java Management Service (JMS) and Management Agent plugins on your OCI compute instance host using the installation script. JMS allows Java Usage Tracking and Lifecycle Management.
 
 Estimated Time: 15 minutes
 
@@ -20,7 +20,7 @@ In this lab, you will:
 
 ## Task 1: Transfer installation script to the compute instance
 
-> **Note:** The following tasks make use of OCI Cloud Shell to SSH into the compute instance. You can also use your own preferred command line interface to perform the same tasks, however we recommend using OCI Cloud Shell instead if your local machine has network restrictions and proxies preventing SSH connections. 
+> **Note:** The following tasks make use of OCI Cloud Shell to use SSH to connect to the compute instance. You can also use your own preferred command line interface to perform the same tasks. However, we recommend using OCI Cloud Shell instead if your local machine has network restrictions and proxies preventing SSH connections. 
 
 1. Click the Cloud Shell icon in the console header.
 

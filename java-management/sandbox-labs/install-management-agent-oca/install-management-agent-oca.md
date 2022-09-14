@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This lab walks you through the steps to set up Java Management Service and Management Agent plugins on your OCI compute instance host using OCI console to allow Java Usage Tracking and Lifecycle Management by the Java Management Service (JMS).
+This lab walks you through the steps to set up Java Management Service (JMS) and Management Agent plugins on your OCI compute instance host using OCI console. JMS allows Java Usage Tracking and Lifecycle Management.
 
 Estimated Time: 15 minutes
 
