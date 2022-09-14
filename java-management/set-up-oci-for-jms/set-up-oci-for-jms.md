@@ -85,7 +85,8 @@ The Onboarding Wizard helps to create the necessary resources automatically. We 
     &nbsp;
     * Confirm the creation of new policy labelled `JMS_Policy`.
         ![image of new jms policy](images/new-jms-policy.png)
-    
+
+You may now **proceed to the next lab**.
 
 ## Task 2: Create OCI Resources manually
 
