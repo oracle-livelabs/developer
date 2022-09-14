@@ -63,4 +63,4 @@ If you would like to learn more about using JMS together with other OCI services
 ## Acknowledgements
 
 * **Author** - Alvin Lam, Java Management Service
-* **Last Updated By/Date** - Yixin Wei, August 2022
+* **Last Updated By/Date** - Yixin Wei, September 2022

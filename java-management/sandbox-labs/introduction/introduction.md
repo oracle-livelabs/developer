@@ -69,4 +69,4 @@ To try JMS on your own tenancy, see:
 ## Acknowledgements
 
 * **Author** - Yixin Wei, Java Management Service
-* **Last Updated By/Date** - Yixin Wei, August 2022
+* **Last Updated By/Date** - Yixin Wei, September 2022
