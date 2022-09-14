@@ -10,7 +10,7 @@ Estimated Time: 15 minutes
 
 In this lab, you will:
 
-- Understand important concepts in preparation for installation of Management agents on a host (also known as a Managed Instance in JMS). A Managed Instance can be any computer running in your enterprise. In most cases, the Managed Instance is a computer on your premises, but it can be a compute instance on OCI or on any other cloud platform.
+- Understand important concepts in preparation for installation of Management Agents on a host (also known as a Managed Instance in JMS). A Managed Instance can be any computer running in your enterprise. In most cases, the Managed Instance is a computer on your premises, but it can be a compute instance on OCI or on any other cloud platform.
 
 ### Prerequisites
 - You have signed up for an account with Oracle Cloud Infrastructure and have received your sign-in credentials.

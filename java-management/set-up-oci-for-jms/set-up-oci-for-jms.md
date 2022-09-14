@@ -104,7 +104,7 @@ Sign in to the Oracle Cloud Console as an administrator using the credentials pr
     * Click **Create Compartment**.
         ![image of compartments main page](images/compartments-main-page.png)
     &nbsp;
-    * In the Create Compartment dialog box, enter a name for the compartment (for example, `Fleet_Compartment`), and a description. The compartment name is required when you create policies. (See later.)
+    * In the Create Compartment dialog box, enter a name for the compartment (for example, `Fleet_Compartment`), and a description. The compartment name is required when you create policies.
         &nbsp;
     * Specify the parent compartment: select the root compartment for your tenancy from the drop-down list.
         ![image of create compartments page](images/compartment-create-example.png)
