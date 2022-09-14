@@ -203,7 +203,7 @@ For this lab we'll rely on Swagger's Open Source Editor to review our ORDS Base 
     
       - In the next Lab we'll review our Python file (**`app.py`**) and review routing, functions, and how they interact with these same Oracle REST APIs.  
         
-### You may now proceed to the [next Lab](#next).
+### You may now **proceed to the next lab.**
 
 ## Learn More
 
