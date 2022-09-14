@@ -247,7 +247,6 @@ Sign in to the Oracle Cloud Console as an administrator using the credentials pr
     ALLOW SERVICE javamanagementservice TO READ instances IN tenancy
     ALLOW SERVICE javamanagementservice TO INSPECT instance-agent-plugins IN tenancy
     ALLOW SERVICE javamanagementservice TO USE management-agent-install-keys IN COMPARTMENT Fleet_Compartment
-    ALLOW DYNAMIC-GROUP JMS_DYNAMIC_GROUP TO MANAGE instances IN COMPARTMENT Fleet_Compartment
     </copy>
     ```
     ![image of policies create page](images/policies-create-example.png)

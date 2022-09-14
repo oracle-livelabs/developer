@@ -23,6 +23,18 @@ In this lab, you will:
 
 ## Task 1: Install Management Agent
 
+> **Note:** If you are installing the agent on an **OCI compute instance**, you need to add this policy. You can remove the policy after you've installed the management agent.
+
+  To add a policy, in the Oracle Cloud Console, open the navigation menu and click **Identity & Security**. Under **Identity**, click **Policies**.
+
+  Click **JMS-policies**, and click **Edit Policy Statements**, then click **+Another Statement** at the bottom right.
+
+  ```
+  <copy>
+  ALLOW dynamic-group JMS_DYNAMIC_GROUP TO MANAGE instances IN COMPARTMENT Fleet_Compartment
+  </copy>
+  ```
+
 **On Linux**
 
 1. Prepare the installation script for Linux downloaded in [Lab 2](?lab=setup-a-fleet). Or enter the following command to transfer the script to the remote Managed Instance.
