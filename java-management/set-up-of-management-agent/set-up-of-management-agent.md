@@ -51,6 +51,19 @@ In this lab, you will:
      </copy>
      ```
 
+5. If installation is successful, you'll see a message similar to the following:
+
+     ```
+     <copy>
+     ...
+     Management Agent installation has been completed.
+     Management Agent plugin 'Java Management Service' installation has been completed.
+     Management Agent plugin 'Java Usage Tracking' installation has been completed.
+     Management Agent was successfully registered using key YourFleetName (ocid1.managementagentinstallkey.oc1.iad.<some ocid hash>).
+     Assigned JMS Fleet is YourFleetName (ocid1.jmsfleet.oc1.iad.<some ocid hash>).
+     </copy>
+     ```
+
 **On Windows**
 
 1. Prepare the installation script for Windows downloaded in [Lab 2](?lab=setup-a-fleet).
@@ -72,6 +85,19 @@ In this lab, you will:
     & <path-to-installation-script>
     </copy>
     ```
+
+5. If installation is successful, you'll see a message similar to the following:
+
+     ```
+     <copy>
+     ...
+     Management Agent installation has been completed.
+     Management Agent plugin 'Java Management Service' installation has been completed.
+     Management Agent plugin 'Java Usage Tracking' installation has been completed.
+     Management Agent was successfully registered using key YourFleetName (ocid1.managementagentinstallkey.oc1.iad.<some ocid hash>).
+     Assigned JMS Fleet is YourFleetName (ocid1.jmsfleet.oc1.iad.<some ocid hash>).
+     </copy>
+     ```
 
 ## Task 2: Verify Management Agent Installation
 
