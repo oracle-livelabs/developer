@@ -37,7 +37,7 @@ In this lab, you will:
 
 ## Task 2: Configure an OCI Managed Instance to enable LCM operations
 
-> **Note:** Please refer to this task if the **installation script was not used** to install the management agent. The management agent should have been installed using the management agent software or enabled using the Management Agent plugin on your OCI compute instance's Oracle Cloud Agent).
+> **Note:** Please refer to this task if the **installation script was not used** to install the management agent. The management agent should have been enabled using the Management Agent plugin on your OCI compute instance's Oracle Cloud Agent (OCA).
 
 After you have installed the Management Agent, follow the steps below to verify required plugins and enable LCM operations.
 
@@ -46,7 +46,7 @@ If you are using an OCI compute instance and it already has the Management Agent
 
 1. There are two ways to verify and enable `Oracle Java Management Service` plugin.
 
-  **Using OCI Console:** 
+  **Using OCI Console:**
     * In the Oracle Cloud console, click **Instances** under **Compute**, and select the instance that you are interested in.
 
      ![image of navigate from OCI console menu to computer instances](images/navigate-to-computer-instance.png)
@@ -198,7 +198,7 @@ If you are using an OCI compute instance and it already has the Management Agent
 
 ## Task 3: Configure a non-OCI Managed Instance to enable LCM operations
 
-> **Note:** Please refer to this task if the **installation script was not used** to install the management agent. The management agent should have been installed using the management agent software or enabled using the Management Agent plugin on your OCI compute instance's Oracle Cloud Agent)
+> **Note:** Please refer to this task if the **installation script was not used** to install the management agent. The management agent should have been installed using the management agent software.
 
 ### **Non-OCI Managed Instance**
 If you are using a non-OCI Managed Instance and it has the Management Agent installed following the steps in the workshop [Manage Java Runtimes, Applications and Managed Instances Inventory with Java Management Service](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=912), then you just need to make a few changes to start using LCM features.
