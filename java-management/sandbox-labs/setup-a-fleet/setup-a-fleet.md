@@ -30,7 +30,7 @@ In this lab, you will:
 
     ![image of create fleet](images/create-fleet-create-new.png)
 
-3. In the Create Fleet dialog box, enter a name for the Fleet Name (for example, `fleet_1`), and a description.
+3. In the Create Fleet dialog box, enter a description. Please keep the **default fleet name** here (for example, fleet-20220901-0900).
 
 4. Select **Enable advanced features**.
 
