@@ -1,0 +1,44 @@
+{
+  "workshoptitle": "Building Redwood Application Experiences with the Oracle Applications Platform",
+  "help": "livelabs-help-**enterarea**_us@oracle.com",
+  "variables": ["../../variables/variables.json",
+    "../../variables/variables-in-another-file.json"],
+  "tutorials": [
+    {
+      "title": "Introduction",
+      "description": "The Introduction is always second for LiveLabs. The title and contents menu title match for the Introduction.",
+      "filename": "../../introduction/introduction.md"
+    },
+    {
+      "title": "Lab 1: Work with Projects and Workspaces",
+      "description": "Use Workspaces to create new Application Extension in your project",
+      "filename": "../../workspace/workspace.md"
+    },
+    {
+      "title": "Lab 2: Create Your First Page",
+      "description": "Labs that follow the introduction are numbered, starting with Lab 1",
+      "filename": "../../welcome/welcome.md"
+    },
+    {
+      "title": "Lab 3: Connect to Oracle Fusion Cloud Apps Data",
+      "filename": "../../saasservice/saasservice.md"
+    },
+    {
+      "title": "Lab 4: Add Edit and Details Pages",
+      "filename": "../../editpage/editpage.md"
+    },
+    {
+      "title": "Lab 5: Add Buttons and Action Chains",
+      "filename": "../../tableedit/tableedit.md"
+    },
+    {
+        "title": "Lab 6: Apply Redwood Page Templates",
+        "filename": "../../rweditpage/rweditpage.md"
+    },
+    {
+      "title": "Need Help?",
+      "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+      "filename": "https://oracle-livelabs.github.io/common/labs/need-help/need-help-livelabs.md"
+    }
+  ]
+}
