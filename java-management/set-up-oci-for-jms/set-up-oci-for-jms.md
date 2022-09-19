@@ -85,7 +85,8 @@ The Onboarding Wizard helps to create the necessary resources automatically. We 
     &nbsp;
     * Confirm the creation of new policy labelled `JMS_Policy`.
         ![image of new jms policy](images/new-jms-policy.png)
-    
+
+You may now **proceed to the next lab**.
 
 ## Task 2: Create OCI Resources manually
 
@@ -103,7 +104,7 @@ Sign in to the Oracle Cloud Console as an administrator using the credentials pr
     * Click **Create Compartment**.
         ![image of compartments main page](images/compartments-main-page.png)
     &nbsp;
-    * In the Create Compartment dialog box, enter a name for the compartment (for example, `Fleet_Compartment`), and a description. The compartment name is required when you create policies. (See later.)
+    * In the Create Compartment dialog box, enter a name for the compartment (for example, `Fleet_Compartment`), and a description. The compartment name is required when you create policies.
         &nbsp;
     * Specify the parent compartment: select the root compartment for your tenancy from the drop-down list.
         ![image of create compartments page](images/compartment-create-example.png)
@@ -246,7 +247,6 @@ Sign in to the Oracle Cloud Console as an administrator using the credentials pr
     ALLOW SERVICE javamanagementservice TO READ instances IN tenancy
     ALLOW SERVICE javamanagementservice TO INSPECT instance-agent-plugins IN tenancy
     ALLOW SERVICE javamanagementservice TO USE management-agent-install-keys IN COMPARTMENT Fleet_Compartment
-    ALLOW DYNAMIC-GROUP JMS_DYNAMIC_GROUP TO MANAGE instances IN COMPARTMENT Fleet_Compartment
     </copy>
     ```
     ![image of policies create page](images/policies-create-example.png)
@@ -268,11 +268,11 @@ You may now **proceed to the next lab**.
 
 * Use the [Troubleshooting](https://docs.oracle.com/en-us/iaas/jms/doc/troubleshooting.html#GUID-2D613C72-10F3-4905-A306-4F2673FB1CD3) chapter for explanations on how to diagnose and resolve common problems encountered when installing or using Java Management Service.
 
-* If the problem still persists or if the problem you are facing is not listed, please refer to the [Getting Help and Contacting Support](https://docs.oracle.com/en-us/iaas/Content/GSG/Tasks/contactingsupport.htm) section or you may open a a support service request using the **Help** menu in the OCI console.
+* If the problem still persists or it is not listed, then refer to the [Getting Help and Contacting Support](https://docs.oracle.com/en-us/iaas/Content/GSG/Tasks/contactingsupport.htm) section. You can also open a support service request using the **Help** menu in the OCI console.
 
 * Refer to the [How Policies Work](https://docs.oracle.com/en-us/iaas/Content/Identity/Concepts/policies.htm#How_Policies_Work) section of OCI documentation for more details.
 
 ## Acknowledgements
 
 * **Author** - Alvin Lam, Java Management Service
-* **Last Updated By/Date** - Yixin Wei, August 2022
+* **Last Updated By/Date** - Yixin Wei, September 2022
