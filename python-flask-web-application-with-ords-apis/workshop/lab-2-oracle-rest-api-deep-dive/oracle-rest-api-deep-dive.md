@@ -24,7 +24,7 @@ This Lab assumes you have:
 
 For this lab we'll rely on Swagger's Open Source Editor to review our ORDS Base URI, as well as the available API *Paths* and *Operations*.
 
-:bulb: You may skip straight to the [Swagger Editor](https://editor.swagger.io/), or follow along below.
+> 💡 *You may skip straight to the **[Swagger Editor](https://editor.swagger.io/)**, or follow along below.*
 
 1. Navigate to the [Swagger home page](https://swagger.io/) and select the **Swagger Editor** link (located under the **Tools** dropdown).
 
@@ -71,7 +71,7 @@ For this lab we'll rely on Swagger's Open Source Editor to review our ORDS Base 
 
       ![The OpenAPI specification version](images/open-api-specification-version.png " ")
       
-      :brain: To learn more about OpenAPI specifications, you may refer to the resources provided in the "Learn More" section of this lab.
+      > 🧠 *To learn more about OpenAPI specifications, you may refer to the resources provided in the "Learn More" section of this lab.*
 
     2. **`info`** - here you'll see the **`title`** and **`version`** of the ORDS *Base URI*.
 
@@ -103,7 +103,7 @@ For this lab we'll rely on Swagger's Open Source Editor to review our ORDS Base 
 
     ![The paths overview page.](images/paths-overview-page.png " ")
     
-       :bulb: *You may refer to the "Learn More" section of this Lab to learn more about Resource Templates and their relationship to Resource Handlers.*
+      > 💡 *You may refer to the "Learn More" section of this Lab to learn more about Resource Templates and their relationship to Resource Handlers.*
 
 2. **Explore the Paths**. Here we'll review selected Paths and discuss their importance to the Flask application.
 
@@ -111,7 +111,7 @@ For this lab we'll rely on Swagger's Open Source Editor to review our ORDS Base 
 
         1. Hover over this Path, a dropdown arrow will appear. Click this to expand the window.
 
-            :brain: *You'll follow similar actions for subsequent Paths.*
+            > 💡 *You'll follow similar actions for subsequent Paths.*
 
             ![Selecting the museums path.](images/path-main-screen-image.png " ")
 
@@ -127,7 +127,7 @@ For this lab we'll rely on Swagger's Open Source Editor to review our ORDS Base 
 
           ![The get response for the folium map](images/get-path-for-folium-response.png " ")
           
-          :question: *What does this payload look like it could be used for?* If you guessed a map rendering, than you'd be correct! We use this information to populate the Folium map on our Flask application's main page (aka **`index.html`**).
+          > ❓ *What does this payload look like it could be used for?* If you guessed a map rendering, than you'd be correct! We use this information to populate the Folium map on our Flask application's main page (aka **`index.html`**).
 
     2. **`GET` `/products/descriptions/{product_id}`**
 
@@ -167,7 +167,7 @@ For this lab we'll rely on Swagger's Open Source Editor to review our ORDS Base 
            * between 1-100 for **`QUANTITY`** value
            * between 1.00-500.00 for **`TOTAL_PRICE`** value
           
-        :pencil2: Choose an *easily recognizable* **`TOTAL_PRICE`*** value. 
+        > 📝 Choose an *easily recognizable* **`TOTAL_PRICE`*** value. 
           
         4. Once you are satisfied click **`Execute`**.
           
@@ -177,7 +177,7 @@ For this lab we'll rely on Swagger's Open Source Editor to review our ORDS Base 
 
             ![Scrolling down to review the Response Body for new POST](images/scrolling-down-to-review-new-post.png " ")
             
-            :pirate_flag: The action we just performed mirrors what customer would do should they complete a transaction in our sample Flask application.
+            > 🏴‍☠️ The action we just performed mirrors what customer would do should they complete a transaction in our sample Flask application.
 
         6. Let's find your **`POST`** by performing a **`GET`** request on **`/orders/`**. Expand the **`GET /orders/`** window.
 
@@ -203,7 +203,7 @@ For this lab we'll rely on Swagger's Open Source Editor to review our ORDS Base 
     
       - In the next Lab we'll review our Python file (**`app.py`**) and review routing, functions, and how they interact with these same Oracle REST APIs.  
         
-### You may now proceed to the [next Lab](#next).
+### You may now **proceed to the next lab.**
 
 ## Learn More
 
@@ -220,4 +220,4 @@ For this lab we'll rely on Swagger's Open Source Editor to review our ORDS Base 
   - Jeff Smith, Distuinguished Product Manager, Database Tools
   - Zachary Talke, Product Manager, Database Tools
   - Brian Spendolini, Principal Product Manager
-- **Last Updated By/Date** - Chris Hoina, August 2022
+- **Last Updated By/Date** - Chris Hoina, September 2022
