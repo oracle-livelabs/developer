@@ -23,6 +23,18 @@ In this lab, you will:
 
 ## Task 1: Install Management Agent
 
+> **Note:** If you are installing the agent on an **OCI compute instance**, you need to add this policy. You can remove the policy after you've installed the management agent.
+
+  To add a policy, in the Oracle Cloud Console, open the navigation menu and click **Identity & Security**. Under **Identity**, click **Policies**.
+
+  Click **JMS-policies**, and click **Edit Policy Statements**, then click **+Another Statement** at the bottom right.
+
+  ```
+  <copy>
+  ALLOW dynamic-group JMS_DYNAMIC_GROUP TO MANAGE instances IN COMPARTMENT Fleet_Compartment
+  </copy>
+  ```
+
 **On Linux**
 
 1. Prepare the installation script for Linux downloaded in [Lab 2](?lab=setup-a-fleet). Or enter the following command to transfer the script to the remote Managed Instance.
@@ -51,6 +63,19 @@ In this lab, you will:
      </copy>
      ```
 
+5. If installation is successful, you'll see a message similar to the following:
+
+     ```
+     <copy>
+     ...
+     Management Agent installation has been completed.
+     Management Agent plugin 'Java Management Service' installation has been completed.
+     Management Agent plugin 'Java Usage Tracking' installation has been completed.
+     Management Agent was successfully registered using key YourFleetName (ocid1.managementagentinstallkey.oc1.iad.<some ocid hash>).
+     Assigned JMS Fleet is YourFleetName (ocid1.jmsfleet.oc1.iad.<some ocid hash>).
+     </copy>
+     ```
+
 **On Windows**
 
 1. Prepare the installation script for Windows downloaded in [Lab 2](?lab=setup-a-fleet).
@@ -72,6 +97,19 @@ In this lab, you will:
     & <path-to-installation-script>
     </copy>
     ```
+
+5. If installation is successful, you'll see a message similar to the following:
+
+     ```
+     <copy>
+     ...
+     Management Agent installation has been completed.
+     Management Agent plugin 'Java Management Service' installation has been completed.
+     Management Agent plugin 'Java Usage Tracking' installation has been completed.
+     Management Agent was successfully registered using key YourFleetName (ocid1.managementagentinstallkey.oc1.iad.<some ocid hash>).
+     Assigned JMS Fleet is YourFleetName (ocid1.jmsfleet.oc1.iad.<some ocid hash>).
+     </copy>
+     ```
 
 ## Task 2: Verify Management Agent Installation
 
@@ -225,9 +263,10 @@ You may now **proceed to the next lab.**
 
 - Use the [Troubleshooting](https://docs.oracle.com/en-us/iaas/jms/doc/troubleshooting.html#GUID-2D613C72-10F3-4905-A306-4F2673FB1CD3) chapter for explanations on how to diagnose and resolve common problems encountered when installing or using Java Management Service.
 
-- If the problem still persists or if the problem you are facing is not listed, please refer to the [Getting Help and Contacting Support](https://docs.oracle.com/en-us/iaas/Content/GSG/Tasks/contactingsupport.htm) section or you may open a support service request using the **Help** menu in the Oracle Cloud Console.
+* If the problem still persists or it is not listed, then refer to the [Getting Help and Contacting Support](https://docs.oracle.com/en-us/iaas/Content/GSG/Tasks/contactingsupport.htm) section. You can also open a support service request using the **Help** menu in the OCI console.
+
 
 ## Acknowledgements
 
 - **Author** - Esther Neoh, Java Management Service
-- **Last Updated By** - Yixin Wei, August 2022
+- **Last Updated By** - Yixin Wei, September 2022

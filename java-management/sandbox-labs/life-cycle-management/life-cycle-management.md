@@ -37,7 +37,9 @@ In this lab, you will:
 2. Under **Resources**, select **Java Runtimes**. You should see a list of the Java Runtimes that are currently in your Fleet.
  ![image of fleet details page](images/fleet-details-page-delete.png)
 
-3. Select the Runtime that you would like to remove from your fleet and click **Delete**. Note that OpenJDKs are unable to be removed through Lifecycle Management at the moment.
+3. Select the Runtime that you would like to remove from your fleet and click **Delete**.
+
+    > **Note:** Currently, OpenJDKs cannot be removed through Lifecycle Management.
 
   ![image of select runtime to delete](images/select-java-runtime-to-delete.png)
 
@@ -52,7 +54,7 @@ In this lab, you will:
 
 **Verify Java Runtime Deletion**
 
-> **Note:** The Delete Java Runtime Work Request will take around 10 minutes to complete, you may proceed to the next task first and come back to this section later.
+> **Note:** The Delete Java Runtime Work Request will take around 10 minutes to complete.
 
 1. In the same **Java Management** page, under **Resources**, select **Work Requests**. You should see the Remove Java Runtime Work Request you submitted in Task 1. Click on the Work Request to view its details.
  ![image of work request summary page](images/work-request-summary-page-delete.png)
@@ -101,7 +103,7 @@ In this lab, you will:
 
 **Verify Java Runtime Installation**
 
-> **Note:** The Install Java Runtime Work Request will take around 10 minutes to complete, you may proceed to the next task first and come back to this section later.
+> **Note:** The Install Java Runtime Work Request will take around 10 minutes to complete.
 
 1. In the same **Java Management** page, under **Resources**, select **Work Requests**. You should see the Install Java Runtime Work Request you submitted in Task 1. Click on the Work Request to view its details.
  ![image of work request summary page](images/work-request-summary-page.png)
@@ -151,7 +153,7 @@ In this lab, you will:
   For the list of **Associated Resources**, you may find the following information:
    * **Managed instance**: Name of the managed instance affected by the Work Request.
    * **Path**: The Java Runtime installation path in the managed instance affected by the operation.
-   * **Status**: Status of the operation at the associated resource.
+   * **Status**: Operational status of the associated resource.
    * **Last updated**: Date and time when the status for this associated resource was last updated.
 
   ![image of work request associated resources view](images/work-request-associated-resources-view-monitor.png)
@@ -204,7 +206,8 @@ In this lab, you will:
 
 * Use the [Troubleshooting](https://docs.oracle.com/en-us/iaas/jms/doc/troubleshooting.html#GUID-2D613C72-10F3-4905-A306-4F2673FB1CD3) chapter for explanations on how to diagnose and resolve common problems encountered when installing or using Java Management Service.
 
-* If the problem still persists or if the problem you are facing is not listed, please refer to the [Getting Help and Contacting Support](https://docs.oracle.com/en-us/iaas/Content/GSG/Tasks/contactingsupport.htm) section or you may open a a support service request using the **Help** menu in the OCI console.
+* If the problem still persists or it is not listed, then refer to the [Getting Help and Contacting Support](https://docs.oracle.com/en-us/iaas/Content/GSG/Tasks/contactingsupport.htm) section. You can also open a support service request using the **Help** menu in the OCI console.
+
 
 ## Acknowledgements
 

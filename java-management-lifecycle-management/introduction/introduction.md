@@ -2,7 +2,7 @@
 
 ## About Java Runtime Lifecycle Management
 
-Lifecycle Management (LCM) is a part of JMS's reporting and management infrastructure. JMS enables users to observe and manage the lifecycles of their Java SE runtimes (on-premises or in the Cloud) by performing LCM operations such installing or removing Java Runtimes.
+Lifecycle Management (LCM) is a part of JMS's reporting and management infrastructure. JMS enables users to observe and manage the lifecycles of their Java SE runtimes (on-premises or in the Cloud) by performing LCM operations such as installing or removing Java Runtimes.
 
 As a customer, you can:
   * View and identify the Java Runtimes.
