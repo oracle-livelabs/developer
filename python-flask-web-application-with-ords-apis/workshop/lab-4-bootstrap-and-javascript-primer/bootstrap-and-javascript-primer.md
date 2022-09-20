@@ -22,18 +22,18 @@ This Lab assumes you have:
 
 1. With Visual Studio Code open, locate your **`templates`** folder:
 
-  ![Locating the templates folder](images/locating-the-templates-folder.png " ")
+   ![Locating the templates folder](images/locating-the-templates-folder.png " ")
 
 2. Expand the **`templates`** folder: 
 
    ![Expanding the templates folder](images/expanding-the-templates-folder.png " ")
 
   The **`templates`** folder is quite simple. Here you'll find all HTML pages used in the Flask application: 
-    - **`base.html`**
-    - **`index.html`**
-    - **`navbar.html`**
-    - **`orderform.html`** 
-    - **`orderhistory.html`** 
+    * **`base.html`**
+    * **`index.html`**
+    * **`navbar.html`**
+    * **`orderform.html`** 
+    * **`orderhistory.html`**
 
   Next, we'll review the HTML pages in more detail.
 
@@ -114,13 +114,13 @@ This Lab assumes you have:
 
   Recall on the **`app.py`** file that this route accepts both **`POST`** and **`GET`** methods (aka "requests"). The function included in **`@app.route('result')`**, has an ORDS endpoint, which expects a JSON payload. After receiving this **`POST`** request, the related table will be updated to include a customer's order information.
 
-The **`method="GET"`** and **`action="/"`** code performs a **`GET`** request and returns the results to this page when a change in the product dropdown list is detected. 
+2. The **`method="GET"`** and **`action="/"`** code performs a **`GET`** request and returns the results to this page when a change in the product dropdown list is detected. 
 
-  ![Price and description JavaScript functions](images/order-form-get-price-get-description.png " ")
+   ![Price and description JavaScript functions](images/order-form-get-price-get-description.png " ")
     
-  The two JavaScript functions **`getPrice()`** and **`getDescription`** can be found on the **`base.html`** file. But if you recall, each of these functions is associated with two separate Python functions in the **`app.py`** file. As a user selects a product, one function will retrieve the product's unit price, and the other will retrieve the product description.
+3. The two JavaScript functions **`getPrice()`** and **`getDescription`** can be found on the **`base.html`** file. But if you recall, each of these functions is associated with two separate Python functions in the **`app.py`** file. As a user selects a product, one function will retrieve the product's unit price, and the other will retrieve the product description.
     
-  The results of each are placed in the HTML document according to their Element IDs: **`id="product_description"`** and **`id="product_price"`**. We use **`<span></span>`** to include the contents of these **`GET`** requests directly into the body of the HTML.
+   The results of each are placed in the HTML document according to their Element IDs: **`id="product_description"`** and **`id="product_price"`**. We use **`<span></span>`** to include the contents of these **`GET`** requests directly into the body of the HTML.
 
 3. Here, you'll see a list we populated from the results of a **`GET`** request in our **`@app.route('/orderform')`** route.  
 
@@ -130,23 +130,23 @@ The **`method="GET"`** and **`action="/"`** code performs a **`GET`** request an
 
 4. Yet again, see a JavaScript function. Although this time, no API requests are required. 
 
-  ![Total price Javascript function](images/order-form-total-price.png)
+   ![Total price Javascript function](images/order-form-total-price.png)
 
-  This function calculates the total cost of the purchase based on the quantity and product type selected.
+   This function calculates the total cost of the purchase based on the quantity and product type selected.
 
 5. If you recall, the submit button acts as the **`form action`** we highlighted in the first sequence of this HTML page.  
 
-  ![Form submit button action](images/order-form-submit.png)
+   ![Form submit button action](images/order-form-submit.png)
 
-  Once a user submits their purchase, all information is sent as a JSON payload to an "Order History" table in our Oracle Autonomous Database.
+   Once a user submits their purchase, all information is sent as a JSON payload to an "Order History" table in our Oracle Autonomous Database.
   
-  You learned how this was accomplished with our ORDS endpoints in the previous Lab.
+   You learned how this was accomplished with our ORDS endpoints in the previous Lab.
 
 5. Once a purchase is made, a user will be directed to a page containing their order history (contents can be seen in the blue box). 
 
-  ![Order history HTML page](images/order-history-html-page.png " ")
+   ![Order history HTML page](images/order-history-html-page.png " ")
 
-  Of course, in an actual web application, there will be a payment gateway step; this is outside the scope of this workshop. However, should you wish to learn more, Stripe has extensive documentation on how this can be achieved in a Flask application. Refer to the "Learn More" section of this Lab for details. 
+   Of course, in an actual web application, there will be a payment gateway step; this is outside the scope of this workshop. However, should you wish to learn more, Stripe has extensive documentation on how this can be achieved in a Flask application. Refer to the "Learn More" section of this Lab for details. 
 
   > 💡 *Note: Since you're sharing these endpoints, you may see orders from participants; that is to be expected.*
 
@@ -183,11 +183,11 @@ The **`method="GET"`** and **`action="/"`** code performs a **`GET`** request an
         <copy>flask run</copy>
         ```
 
-      > 🚨 *Recall, for **PC/Windows users**, starting Flask is straightforward. After you've activated your Virtual Environment, you may need to pip install `Flask` and `Folium`. Once complete, you may use the following command to start Flask:* 
+             > 🚨 *Recall, for **PC/Windows users**, starting Flask is straightforward. After you've activated your Virtual Environment, you may need to pip install `Flask` and `Folium`. Once complete, you may use the following command to start Flask:* 
     
-      ```
-      <copy>flask --app lab_1_app.py run</copy>
-      ```
+            ```
+            <copy>flask --app lab_1_app.py run</copy>
+            ```
 
       3. Go forth and create!    
 
