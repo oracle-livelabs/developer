@@ -14,7 +14,7 @@ However, best practices for applications such as our example Flask application w
 
      ![Our Flask Resource Module](images/flask-resource-module-in-oci.png " ")
 
-   - But, before those Resource Modules can be accessed, the user must be authenticated and authorized to ensure that the user has one of the required roles. Here is an example cURL command that includes a Bearer Token for authentication: 
+   - But before those Resource Modules can be accessed, the user must be authenticated and then authorized to ensure that the user has one of the required roles. Here is an example cURL command that includes a Bearer Token for authentication: 
 
      ![Our Flask Resource Module](images/click-copy-icon-to-copy-token-text.png " ")
 
@@ -28,7 +28,7 @@ However, best practices for applications such as our example Flask application w
 
    ![Backend application flow example.](images/backend-application-flow-example.png " ")
 
-     > 🧠 You can modify API requests slightly, so they complement the sample Flask application by ensuring services are performed *securely*.
+     > 🧠 You can modify API requests slightly so they complement the sample Flask application by ensuring services are performed *securely*.
 
 3. You may visit the Modern Application Development with Oracle REST Data Services Workshop [here](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=815). Or, in the **Other LiveLabs you might like** section of this Workshop. There you will complete objectives such as:
     - Create an Autonomous Database
@@ -38,8 +38,8 @@ However, best practices for applications such as our example Flask application w
     - Publish RESTful services for various database objects
     - Secure the REST endpoints
 
-4. Congratulations, you've made it to the end of this Workshop! By now, you should thoroughly understand this sample Flask application. And you should also be familiar with Oracle REST APIs and their various capabilities and characteristics. 
-   - You are encouraged to take the provided database scripts, Flask, and Python files and make this application your own. How can you manipulate the Oracle REST APIs to put your own personal spin on the application? 
+4. Congratulations, you've made it to the end of this Workshop! By now you should have a thorough understanding of this sample Flask application. And you should also be familiar with Oracle REST APIs and their various capabilities and characteristics. 
+   - You are encouraged to take the provided database scripts, Flask and Python files, and make this application your own. How can you manipulate the Oracle REST APIs to put your own personal spin on the application? 
 
 ### You may now **proceed to the next lab.**
 
