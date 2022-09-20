@@ -2,11 +2,11 @@
 
 ## Introduction
 
-In this Lab you'll obtain the code needed for the Flask application. We'll briefly review how to start Flask. We'll then step through the three main `HTML` pages of this application; pausing to review key features and characteristics. 
+In this Lab, you'll obtain the code needed for the Flask application. We'll briefly review how to start Flask. We'll then step through this application's three main `HTML` pages, pausing to examine key features and characteristics. 
 
-The main focus of this Lab will be discovering the flexibility and extensibility of Oracle REST APIs. Throughout this Lab we will discuss the interactions between Oracle REST APIs and the Flask application. 
+The main focus of this Lab will be discovering the flexibility and extensibility of Oracle REST APIs. Throughout this Lab, we will discuss the interactions between Oracle REST APIs and the Flask application. 
 
-This lab will cover topics including: 
+This Lab will cover topics including: 
 
 - Oracle REST Data Services (ORDS) APIs
 - **`GET`** request query parameters
@@ -29,7 +29,7 @@ In this Lab, you will:
 - Flask installation 
 - Virtual environment installation
 
-This lab assumes you have:
+This Lab assumes you have:
 
 - All previous labs successfully completed
 
@@ -37,7 +37,7 @@ This lab assumes you have:
 
 1. [Download the ZIP](https://objectstorage.us-ashburn-1.oraclecloud.com/p/jyHA4nclWcTaekNIdpKPq3u2gsLb00v_1mmRKDIuOEsp--D6GJWS_tMrqGmb85R2/n/c4u04/b/livelabsfiles/o/labfiles/flask-ords-lab-main.zip) file that contains our the Flask application and associated `HTML` files
 
-2. Once downloaded, un-compress the ZIP file and open with your text editor (examples in this Workshop will use Visual Studio Code). The contents should look similar to this: 
+2. Once downloaded, un-compress the ZIP file and open it with your text editor (examples in this Workshop will use Visual Studio Code). The contents should look similar to this: 
 
     ![Reviewing the folders in VS Code](images/review-folders-for-flask-app.png " ")
 
@@ -45,15 +45,15 @@ This lab assumes you have:
 
 ## Task 2: Activate the virtual environment
 
-While the main focus of this Workshop is not Flask, we will periodically review certain helpful actions for the developer. If you have limited experience with the Flask framework, the reviews may be helpful. 
+While the main focus of this Workshop is not Flask, we will periodically review specific practical actions for the developer. The reviews may be helpful if you have limited experience with the Flask framework. 
 
-However, if ever you do get stuck, we encourage you to review the [Flask](https://flask.palletsprojects.com/en/2.2.x/installation/#) documentation first, *then* return to this Lab once you are more comfortable with Flask operations. 
+Stuck? We encourage you to review the [Flask](https://flask.palletsprojects.com/en/2.2.x/installation/#) documentation first, *then* return to this Lab once you are more comfortable with Flask operations. 
 
 1. Open your terminal.
 
     ![Open New Terminal in VS Code](images/open-terminal-in-vs-code.png " ")
 
-    * Commands are different for MacOS/Linux and Windows. Alternatively, if using VS Code, we recommend you follow [these instructions](https://code.visualstudio.com/docs/python/tutorial-flask) on how to install Python virtual environments in VS Code (once complete, come back to this Lab). 
+    * Commands are different for macOS/Linux and Windows. Alternatively, if using VS Code, we recommend you follow [these instructions](https://code.visualstudio.com/docs/python/tutorial-flask) on how to install Python virtual environments in VS Code (once complete, come back to this Lab). 
 
     > 🆘 *If  your Virtual Environment fails to start in VS Code, **check your Python Interpreter**!*
 
@@ -75,7 +75,7 @@ However, if ever you do get stuck, we encourage you to review the [Flask](https:
 
     ![Activating the Virtual Environment](images/activating-virtual-environment.png " ")
 
-    MacOS/Linux
+    macOS/Linux
     ```
     <copy>. venv/bin/activate</copy>
     ```
@@ -90,9 +90,9 @@ However, if ever you do get stuck, we encourage you to review the [Flask](https:
 
 ## Task 3: Activate Flask
 
-Next we'll start the Flask Application.
+Next, we'll start the Flask Application.
 
-There are various ways you can start your Flask application, this is the more manual method. If you'd like to review or learn about automated options for setting environment variables, you may refer to the "Learn More" section of this Lab. 
+There are various ways you can start your Flask application. This is the more manual method. Suppose you'd like to review or learn about automated options for setting environment variables. In that case, you may refer to this Lab's "Learn More" section. 
          
 1. Enter the following command (*Mac OS/Linux users*): 
     ```python
@@ -100,7 +100,7 @@ There are various ways you can start your Flask application, this is the more ma
     ```
   ![Opening the Python application](images/export-flask-dev-env.png " ")
     
-    > 🚨 *For PC/Windows users, starting Flask is straightforward. After you've activated your Virtual Environment, you may need to pip install `Flask` and `Folium`. Once complete you may use the following command to start Flask:* 
+    > 🚨 *For PC/Windows users, starting Flask is straightforward. After you've activated your Virtual Environment, you may need to pip install `Flask` and `Folium`. Once complete, you may use the following command to start Flask:* 
     
     ```
     <copy>flask --app lab_1_app.py run</copy>
@@ -148,15 +148,15 @@ There are various ways you can start your Flask application, this is the more ma
     *<sub>Once satisfied, save the file.</sub>*
     ![The updated text in the index template.](images/updated-card-body-text-index-template.png " ")
 
-4. Return to your the browser window where the Flask application is displaying. And reload the page. 
+4. Return to the browser window where the Flask application is displaying. And reload the page. 
 
-    ![Reloading the Flask page to reflect changes in index template.](images/updated-text-in-flask-application.png " ")
+    ![Reloading the Flask page to reflect changes in the index template.](images/updated-text-in-flask-application.png " ")
 
 5. You should now see the updated text from the **`index`** template. Congratulations, you've just personalized the application!
 
 ## Task 6: Review the basic HTTPS operations - Part 2
 
-1. You can explore the navigation tab (hamburger icon on upper right-hand corner). 
+1. You can explore the navigation tab (hamburger icon on the upper right-hand corner). 
 
     ![Hamburger icon for additional resources](images/index-page-hamberder-icon.png " ")
 
@@ -166,9 +166,9 @@ There are various ways you can start your Flask application, this is the more ma
 
 3. But we'll first explore the *Folium* map at the bottom of this **`index`** page. 
     
-   > 🧠 *Folium "makes it easy to visualize data that’s been manipulated in Python on an interactive Leaflet.js map. Manipulate your data in Python, then visualize it on a Leaflet map via Folium...It enables both the binding of data to a map for choropleth visualizations as well as passing rich vector/raster/HTML visualizations as markers on the map. To expand your knowledge of Folium and Leaflet.js, visit the "Learn More" section for more details.*
+   > 🧠 *Folium "makes it easy to visualize data manipulated in Python on an interactive Leaflet.js map. Manipulate your data in Python, then visualize it on a Leaflet map via Folium...It enables both the binding of data to a map for choropleth visualizations and passing rich vector/raster/HTML visualizations as markers on the map. To expand your knowledge of Folium and Leaflet.js, visit the "Learn More" section for more details.*
 
-4. When in Folium map, we can interact with location markers - these represent various attractions in the downtown Las Vegas area. In this application we are focused on venues such as museums and art installations.  
+4. When in Folium map, we can interact with location markers - these represent various attractions in the downtown Las Vegas area. In this application, we are focused on venues such as museums and art installations.  
 
     - Each marker will have a **Tool-tip**; when hovered over, the user can choose to click it to reveal additional information:
 
@@ -176,7 +176,7 @@ There are various ways you can start your Flask application, this is the more ma
 
     - When clicked, these markers reveal an attraction's name. 
    
-    > 😀 *Here is where we first encounter Oracle REST APIs. You'll see the code in a later Lab, but for now, we'll show you in the browser, the API responsible for providing us with this map's information.*
+    > 😀 *Here is where we first encounter Oracle REST APIs. You'll see the code in a later Lab, but for now, we'll show you, in the browser, the API responsible for providing us with this map's information.*
 
 5. Let's look at this Oracle endpoint now. 
 
@@ -194,9 +194,9 @@ There are various ways you can start your Flask application, this is the more ma
 
 6. Manipulating the **`GET`** request:
 
-   But let's say you are a developer, and you've been provided with a set of Oracle REST APIs like these. On the surface, they are simple enough, but you actually wield much more power than you may realize - with query parameters!
+   But let's say you are a developer, and you've been provided with a set of Oracle REST APIs like these. On the surface, they are simple enough. Still, you wield much more power than you may realize - with query parameters!
 
-   Try this. Take the URI we just used, add this to the end:
+   Try this. Take the URI we just used, and add this to the end:
 
      ```
      <copy>?q={"$orderby":{"museum_lat":"ASC"}}</copy>
@@ -213,7 +213,7 @@ There are various ways you can start your Flask application, this is the more ma
 
    > ❓ **What do you notice?** If you caught that the venues are all ordered in ascending order, according to their latitudes, you'd be correct!
 
-7. Let's try a trickier one. Take that original URI, add this to the end: 
+7. Let's try a trickier one. Take that original URI, and add this to the end: 
     ```
     <copy>?q={"museum_lat":{"$between":[36.05,36.15]}}</copy>
     ```
@@ -221,17 +221,17 @@ There are various ways you can start your Flask application, this is the more ma
 
       ![Selected ORDS results by latitude](images/ords-api-results-select-latitudes.png " ")
         
-    > ❓ **What do you see now?** You can probably tell by now, but we've restricted our results to a very narrow band of latitudes.
+    > ❓ **What do you see now?** You can probably tell by now, but we've restricted our results to a narrow band of latitudes.
           
-     - We have only scratched the surface with filtering in queries. But once you understand how your data is structured, and what is available, the possibilities are endless.
+     - We have only scratched the surface with filtering in queries. But the possibilities are endless once you understand how your data is structured and what is available.
 
-     - The ability to perform myriad **`GET`** requests with a single API + query parameters is powerful. But we can manipulate other HTTPS Operations (Methods) too! Lets take a look at a **`POST`** request.
+     - The ability to perform myriad **`GET`** requests with a single API + query parameters is powerful. But we can manipulate other HTTPS Operations (Methods) too! Let's take a look at a **`POST`** request.
 
 8. Remixing the **`POST`** request. 
    
    We've created a Resource Handler for this table that can be used for the **`POST`** operation/method. 
    
-   Let's say you'd like to add another location to this table. You as the developer can do that. This is *your* application, and you should be able to make changes on-the-fly! Once the logic is set up on the database end, anything you feed to the table (that fits that logic) is acceptable.
+   Let's say you'd like to add another location to this table. You, as the developer, can do that. This is *your* application, and you should be able to make changes on-the-fly! Once the logic is set up on the database end, anything you feed to the table (that fits that logic) is acceptable.
 
     1. First, begin by copying the appropriate cURL command for your environment. 
         - Command Prompt:
@@ -265,7 +265,7 @@ There are various ways you can start your Flask application, this is the more ma
             }'</copy>
             ```
 
-    2. Next, choose some **`{Key : Values}`** that adhere to the datatypes Oracle REST Data Services (ORDS) expects. *Be sure to choose something unique* so you can easily identify it. 
+    2. Next, choose some **`{Key: Values}`** that adhere to the datatypes Oracle REST Data Services (ORDS) expects. *Be sure to choose something unique* so you can quickly identify it. 
     
        Review this table for what our Database table expects:  
       
@@ -307,15 +307,15 @@ There are various ways you can start your Flask application, this is the more ma
 
     > ❓ You're probably wondering, "*how does this actually get added to the database?*"
     
-    - Well, you as the developer may never see this part but the logic for this `POST` Resource Handler actually looks like this: 
+    - Well, you as the developer may never see this part, but the logic for this `POST` Resource Handler actually looks like this: 
     
        ![Reviewing the changes from your POST request](images/pl-sql-logic-in-resource-handler.png " ")
 
-    - *However*, if you've been provided credentials to Oracle Cloud Infrastructure you may one day use the Database Actions interface to create your very own custom APIs. 
+    - *However*, if you've been provided credentials to Oracle Cloud Infrastructure, you may one day use the Database Actions interface to create your own custom APIs. 
     
-    > 💡 *Refer to the `README` file retrieved in [Task 1](#Task1Obtaincodeforthisworkshop), for information on how to use the provided database scripts for setting up an Autonomous Database environmen like this one.*
+    > 💡 *Refer to the `README` file retrieved in [Task 1](#Task1Obtaincodeforthisworkshop) for information on how to use the provided database scripts for setting up an Autonomous Database environment like this one.*
 
-11. Pause for a moment and take pride in what you've accomplished here today! You've just sent a `POST` request with the help of ORDS. At this stage you should have a better understanding of what occurs "under the covers" on the Oracle Autonomous database in this Flask application.
+11. Pause for a moment and take pride in your accomplishments! You've just sent a `POST` request with the help of ORDS. At this stage, you should better understand what occurs "under the covers" on the Oracle Autonomous database in this Flask application.
 
 ## Task 7: Review the remaining pages
 
@@ -331,25 +331,25 @@ There are various ways you can start your Flask application, this is the more ma
   
      ![Choosing a purchase option in the order form](images/choose-an-option-focus.png " ")
 
-3. When you make a selection, you'll see the *Description* and *Price per* fields change to reflect your product selection. If you thought "Oracle REST APIs" just then, you'd be correct. We have Oracle REST APIs for requesting product description *and* pricing information.
+3. When you make a selection, you'll see the *Description* and *Price per* fields change to reflect your product selection. You'd be correct if you thought "Oracle REST APIs" just then. We have Oracle REST APIs requesting product descriptions *and* pricing information.
 
    ![Description has been updated in order form](images/single-access-pass-option-description-updated.png " ")
 
    > 💡 *A more performant alternative* to this approach might be to request all data from a single API. However, this example merely highlights how *multiple* Oracle REST APIs can be used on a single page.
 
-4. Next, update the *Passes needed* field. As you do this you'll see the *Total Price* field update. When you're satisfied with your selections click the "Complete my purchase" button:
+4. Next, update the *Passes needed* field. You'll see the *Total Price* field update as you do this. When you're satisfied with your selections, click the "Complete my purchase" button:
 
    ![Total price updates on order form](images/total-price-updates-with-quantity.png " ")
     
 5. The **`orderhistory.html`** page will load. 
 
-     > 🧠 *To keep this simple, we've omitted the payment gateway step, but since you have access to the code, you could always add that in later.*
+     > 🧠 *To keep this simple, we've omitted the payment gateway step, but since you have access to the code, you could always add that later.*
 
     A table with our previous orders will appear. Yet again, we have been served this data through another Oracle REST API.
    
     ![Reviewing the changes from your POST request](images/table-with-previous-orders.png " ") 
 
-6. Later, you'll see how everything works together in our **`app.py`** file. But for now, its important to understand the role Oracle REST APIs play in this application. 
+6. Later, you'll see how everything works together in our **`app.py`** file. But for now, it's essential to understand Oracle REST APIs' role in this application. 
 
 7. Congratulations, you made it! You should now have a better understanding of:
    * This particular Flask application 
@@ -358,7 +358,7 @@ There are various ways you can start your Flask application, this is the more ma
      * Accelerate application development, *and*
      * Reduce complexity
 
-### You may now **proceed to the next lab.**
+### You may now **proceed to the next Lab.**
 
 ## Learn More
 * [A minimal application in Flask](https://flask.palletsprojects.com/en/2.1.x/quickstart/#a-minimal-application)
@@ -373,7 +373,7 @@ There are various ways you can start your Flask application, this is the more ma
 ## Acknowledgements
 * **Author** - Chris Hoina, Senior Product Manager, Database Tools
 * **Contributors**
-  - Jeff Smith, Distuinguished Product Manager, Database Tools
+  - Jeff Smith, Distinguished Product Manager, Database Tools
   - Justin Biard, Senior Member of Technical Staff, Database Tools 
   - Zachary Talke, Product Manager, Database Tools
   - Brian Spendolini, Principal Product Manager
