@@ -69,7 +69,7 @@ To connect to the Oracle Autonomous Database, you need the wallet file.
     -  select Wallet Type: Instance Wallet
     - hit **Download Wallet** button
 
- ![Wallet](./images/Wallet.png " ")
+ ![Wallet](./images/wallet.png " ")
 
 2. Specify a password for the Wallet
 
