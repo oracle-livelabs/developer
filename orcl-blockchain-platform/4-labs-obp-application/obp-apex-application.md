@@ -32,10 +32,10 @@ This lab assumes you have:
 2. Check your **Compartment** is correct and click on 'Create Autonomous Database.'
   ![Create a new ADB instance from the console](images/4-adb-1.png)
 
-3. In the form, first choose a **Display name** (e.g. CarMarketplaceAPEX), a **Database name** (e.g. CarMarketplace), and then **Choose a workload type** (in this case, APEX) as shown.
+3. In the form, first choose a **Displayname** (e.g. CarMarketplaceAPEX), a **Database name** (e.g. CarMarketplace), and then **Choose a workload type** (in this case, APEX) as shown.
   ![Choose instance name and DB type](images/4-adb-2.png)
 
-4. Toggle 'Always Free' as shown.
+4. Toggle 'Always Free' as shown --> Select a DB Version 19c or above
   ![Choose Always Free](images/4-adb-3.png)
 
 5. Check that your **database version** is 19c.
@@ -55,7 +55,7 @@ This lab assumes you have:
 
 ## Task 2: Configure Database Schema and User Credentials
 
-1. When your Autonomous Database instance has provisioned, access the 'Service Console.'
+1. When your Autonomous Database instance has provisioned, access the 'Tools'
 
   ![Access Service Console](images/4-apex-2-1.png)
 
@@ -70,7 +70,7 @@ This lab assumes you have:
 4. Fill out the form as follows:
     - Enter 'DEVELOPER' as the **Database User**.
     - Choose a **Password** and copy it somewhere safe.
-    - Enter 'DEVELOPER' as the **Workspace Name**.
+    - Enter 'marketplace' as the **Workspace Name**.
 
   ![Access Service Console](images/4-apex-2-4.png)
 
@@ -118,7 +118,7 @@ This lab assumes you have:
 
   ![Login as Developer](images/4-apex-3-1.png)
 
-2. Click 'Set APEX Account Password.'
+2. Click 'Set APEX Account Password' *if required*
 
   ![Set APEX Account Password](images/4-apex-3-2.png)
 
@@ -135,11 +135,9 @@ This lab assumes you have:
 
   ![Import Template](images/4-apex-3-5.png)
 
-6. 'Drag and Drop' the f100.zip file into the pane and click 'Next.'
+6. 'Drag and Drop' the [Apex Marketplace Template](files/f100.sql?download=1) file into the pane and click 'Next.'
 
   ![Import Template 1](images/4-apex-3-6.png)
-
-  ***Link to the Zip file***
 
 7. Click 'Next.'
 

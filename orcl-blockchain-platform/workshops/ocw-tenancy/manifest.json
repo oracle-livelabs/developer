@@ -8,42 +8,37 @@
       "filename": "../../introduction/introduction.md"
     },
     {
-      "title": "Getting Started",
-      "description": "This is the prerequisites for customers using Free Trial and Paid tenancies, and Always Free accounts (if applicable). The title of the lab and the Contents Menu title (the title above) match for Prerequisite lab. This lab is always first.",
-      "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/pre-register-free-tier-account.md"
-    },
-    {
-      "title": "Lab 1: Prepare Setup",
+      "title": "Prepare Setup",
       "description": "How to download your ORM stack and update security rules for an existing VCN",
       "filename": "../../prepare-setup/prepare-setup.md"
     },
     {
-      "title": "Lab 2: Environment Setup",
-      "description": "How to provision the workshop environment and connect to it",
-      "filename": "https://oracle-livelabs.github.io/common/labs/setup-compute-generic/setup-compute-novnc-ssh.md"
+      "title": "Environment Setup",
+      "description": "Using noVNC Remote Desktop",
+      "filename": "https://oracle-livelabs.github.io/common/labs/remote-desktop/using-novnc-remote-desktop.md"
     },
     {
-      "title": "Lab 3: Create a Blockchain Network connecting 3 Organizations",
+      "title": "Lab 1: Create a Blockchain Network connecting 3 Organizations",
       "description": "OBP Environment Setup",
       "filename": "../../1-labs-obp-env-setup/obp-console.md"
     },
     {
-      "title": "Lab 4: Create and Deploy Smart Contracts using Oracle Blockchain App Builder",
+      "title": "Lab 2: Create and Deploy Smart Contracts using Oracle Blockchain App Builder",
       "description": "OBP App Builder",
       "filename": "../../2-labs-obp-appbuilder/obp-appbuilder.md"
     },
     {
-      "title": "Lab 5: Create & Setup API Gateway to connect with Smart Contract API's",
+      "title": "Lab 3: Create & Setup API Gateway to invoke Smart Contract API's",
       "description": "OBP - API Gateway",
       "filename": "../../3-labs-obp-apigateway/obp-apigateway.md"
     },
     {
-      "title": "Lab 6: Building Car Marketplace application using APEX",
+      "title": "Lab 4: Building Car Marketplace application using APEX",
       "description": "Building Car Marketplace application using APEX",
       "filename": "../../4-labs-obp-application/obp-apex-application.md"
     },
     {
-      "title": "Lab 7: Trading Cars using Tokens in Car Marketplace",
+      "title": "Lab 5: Trading Cars using Tokens in Car Marketplace",
       "description": "Trading Cars using Tokens in Car Marketplace",
       "filename": "../../5-labs-obp-application-tokenXchange/obp-apex-application-tokenXchange.md"
     },

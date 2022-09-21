@@ -17,10 +17,10 @@ In this lab, you will:
 This lab assumes you have:
 - An Oracle Cloud account
 - You have completed:
-    - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
-    - Lab: Environment Setup
-    - Lab: Create a Blockchain Network connecting 3 Organizations
-    - Lab: Create and Deploy Smart Contracts using Oracle Blockchain App Builder
+    - Prepare Setup (*Free-tier* and *Paid Tenants* only)
+    - Environment Setup
+    - Lab1: Create a Blockchain Network connecting 3 Organizations & Configuring Oracle
+    - Lab2: Deploy, Test Smart Contracts using Blockchain App Builder & Oracle Blockchain Admin Console
 
 
 ## Task 1: Setup VCN and Subnet
@@ -48,7 +48,7 @@ This lab assumes you have:
 
   ![VCN Creation](images/3-gateway-1-4.png)
 
-6. Once your VCN is available, click 'Create Subnet.'
+6. Once your VCN is available, public subnet is created as part of the process
 
   ![Create Subnet](images/3-gateway-1-5.png)
 
@@ -56,6 +56,7 @@ This lab assumes you have:
     - **Name** your subnet (e.g. Public Subnet for Car Marketplace VCN).
     - Ensure the correct **Compartment** is selected (e.g. Blockchain LiveLabs).
     - Scroll to the bottom and set 'Default DHCP Options for Car Marketplace VCN' as the **DHCP Options Compartment**.
+    - Update CIDR Block (10.0.0.0/24)
     - Similarly, set 'Default Security List for Car Marketplace VCN' as the **Security List Compartment**.
 
   ![Create Subnet Form 1](images/3-gateway-1-6.png)
@@ -75,7 +76,7 @@ This lab assumes you have:
 
   ![Edit DHCP Options Form](images/3-gateway-2-1.png)
 
-3. Now, select 'CIDR Blocks' on the left-hand side menu and click 'Add CIDR Block' to match the screenshot below.
+3. Now, select 'CIDR Block' on the left-hand side menu and click 'Add CIDR Block' that matches the screenshot below.
 
   ![Add CIDR Block](images/3-gateway-2-2.png)
 
@@ -103,7 +104,7 @@ This lab assumes you have:
 
   ![Add Ingress Rules Form](images/3-gateway-2-7.png)
 
-10. Repeat Steps 8-9 four more times so your Ingress Rules match the screenshot below:
+10. **Repeat Steps 8-9** for the first four rows by adding the ingress matching the screenshot below:
 
   ![All Ingress Rules](images/3-gateway-2-8.png)
 
@@ -113,11 +114,7 @@ This lab assumes you have:
 1. From the OCI services mennu, search for 'Gateways' and find the service listed under **API Management**.
   ![Navigate to Gateways](images/3-gateway-3-1.png)
 
-2. Click on 'Create Gateway.'
-
-  ![Create Gateway](images/3-gateway-3-2.png)
-
-3. Fill out the form as follows and click 'Create Gateway.'
+2. Fill out the form as follows and click 'Create Gateway.'
     - Give your gateway a **Name** (e.g. Car Marketplace LiveLab Gateway).
     - Scroll down and select the **Virtual Cloud Network** and **Subnet** you just created.
 
@@ -142,7 +139,8 @@ This lab assumes you have:
 
 ## Task 5: Create Routes
 
-1. Next in your deployment, you need to add 6 routes: 2 for each instance , 1 founder instance and 2 participant instances. Each instance will have two routes
+1. Next, start creating a new routes by add ing new routes
+2. Add 6 routes: 2 for each instance , 1 founder instance and 2 participant instances. Each instance will have two routes
     - One route to perform `transactions`:'insert' and 'update'
     - Second route to perform `chaincode-queries`:'query a transactions or transactions'
     - To create the routes click routes --> Under 'Routes', fill out the form for your first route as follows:
@@ -151,7 +149,7 @@ This lab assumes you have:
     - Specify 'HTTP' as the **Type**
     - Enter the **URL** to serve as a REST endpoint. For Route 1, this will be https://marketplace-2-oabcs1-iad.blockchain.ocp.oraclecloud.com:7443/restproxy/api/v2/channels/car-marketplace/transactions
     - How to Construct Route URL:
-      - From the Blockchain Admin Dashboard --> click on Nodes --> Navigate to restproxy (bottom of the screen) --> Copy the URL
+      - From the Blockchain Admin Dashboard --> Click on Nodes --> Navigate to restproxy (bottom of the screen) --> Copy the URL
       - Append to URL --> [api/v2/channels/car-marketplace/transactions](https://docs.oracle.com/en/cloud/paas/blockchain-cloud/restoci/op-restproxy-api-v2-channels-channelname-transactions-post.html)
 
     ![Blockchain Dashboard](images/3-gateway-4.bc.1.png)
@@ -164,13 +162,13 @@ This lab assumes you have:
   ![Route 2](images/3-gateway-4-5.2.png)
   ![Route 3](images/3-gateway-4-6.1.png)
   ![Route 4](images/3-gateway-4-6.2.png)
-  ![Route 5](images/3-gateway-4-7.2.png)
+  ![Route 5](images/3-gateway-4-7.1.png)
   ![Route 6](images/3-gateway-4-7.2.png)
 
 3. 'Review' the deployment information and click 'Create.'
   ![Review Deployment](images/3-gateway-4-9.png)
 
-## Task 5: Prefix Query and Invoke Endpoint During Configuration
+## Task 6: Prefix Query and Invoke Endpoint During Configuration
 
 Once active, the deployment can be used to make REST API calls between APEX and OBP.
 

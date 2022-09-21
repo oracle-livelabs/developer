@@ -72,22 +72,13 @@ You will also need to create a new [Compartment](https://docs.oracle.com/en-us/i
 1. Repeat the previous task twice, this time to create 2 participant instances.
     - Name your instances 'dealer1' and 'dealer2'
     - For both instances, select 'Join an existing network' under **Platform Role**
+    - This task takes 10 minutes. During this time setup, configure, generate chaincode (*Tasks 4,5,6,7,8*) using  Blockchain App Builder
 
 ## Task 4: Blockchain AppBuilder Environment Setup
 
 You will be using Oracle's Blockchain App Builder extension, accessible through Visual Studio Code, for this lab. First you will need to set up environments for each of the 3 blockchain platform instances you created in previous tasks above.
 
 1. In Visual Studio Code, click on the **O** icon on the left-hand menu to use the Blockchain App Builder Extension.
-
-2. Hover over the **Environments** pane, click on the '+' button, and fill out the form as follows:
-    - Add a **Name** (e.g. Marketplace).
-    - Optionally, add a **Description**.
-    - Paste the **Remote URL** of your marketplace founder instance, which you can find using the OCI services console.
-    - Enter your local **User Name** (e.g. 'local.user') and then enter the **Password**.
-
-3. Click 'Save' and repeat for the two participant instances (e.g. Dealer1 and Dealer2).
-
-  ![Car Marketplace Environment Details](images/2-app-builder-0.png)
 
 
 ## Task 5: Import Marketplace YAML Specification File
@@ -121,14 +112,13 @@ The specification file is then used to scaffold a smart contract project ('`car_
 
   ![Car Marketplace Chaincode Details](images/2-app-builder-2-1.png)
 
-2. Click 'Create' and wait for the chaincode to generate. Check the 'Output' pane at the bottom for more details.
 
-3. Click 'Create' and wait for the chaincode to generate. Check the 'Output' pane at the bottom for more details.
+2. Click 'Create' and wait for the chaincode to generate. Check the 'Output' pane at the bottom for more details.
 
   ![Chaincode Output](images/2-app-builder-2-2.png)
 
-4. Select '`car_marketplace_cc`.model.go' under '`car_marketplace_cc`/src'. The Model file contains the property definitions of all the assets defined in the spec file.
-Select '`car_marketplace_cc`.controller.go' under '`car_marketplace_cc`/src.' The Controller file defines all the behavior and methods for those assets. '`Car_Marketplace.yml`' spec file allows defining additional custom methods that users implement to provide business logic of smart contracts.
+3. Select '`car_marketplace_cc`.model.go' under '`car_marketplace_cc`/src/model'. The Model file contains the property definitions of all the assets defined in the spec file.
+Select '`car_marketplace_cc`.controller.go' under '`car_marketplace_cc`/src/controller.' The Controller file defines all the behavior and methods for those assets. '`Car_Marketplace.yml`' spec file allows defining additional custom methods that users implement to provide business logic of smart contracts.
 
 ## Task 7: View Custom Methods in Marketplace
 
