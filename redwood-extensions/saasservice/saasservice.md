@@ -113,7 +113,7 @@ To leverage the service's pagination capabilities (as opposed to fetching all th
 
 	  The code for this line should now look similar to this:
 
-		<oj-table scroll-policy-options.scroller="html" scroll-policy="loadMoreOnScroll" ...>
+		<copy><oj-table scroll-policy-options.scroller="html" scroll-policy="loadMoreOnScroll" ...></copy>
 
 17. Click **Design** so we can see the resulting table with data fetched into it. We can take an even closer look at the app by using the Preview feature.  
 
@@ -126,6 +126,8 @@ At this point you may want to play around with your live app, using different ke
 											  ![Running app](images/results.png)
 
 Now that we have a running page that fetches data, the next step is to add pages that will allow us to edit the data, which means updating the Oracle's SaaS business object behind the scenes.
+
+You may now **proceed to the next lab**.
 
 ## Learn More
 

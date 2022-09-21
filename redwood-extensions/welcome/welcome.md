@@ -122,6 +122,7 @@ At this point your screen should look like this:
   ![Completed page](images/complete.png)
 
 Let's move on to the next lab, where we'll learn how to get some data from Oracle SaaS onto the page.
+You may now **proceed to the next lab**.
 
 ## Learn More
 

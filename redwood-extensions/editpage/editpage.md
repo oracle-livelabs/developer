@@ -118,6 +118,8 @@ Now let's preview the updated app.
 
 Our application is functioning well. In the next step we'll improve the usability, first by adding buttons to the table rows, and later by modifying the app's look and feel.
 
+You may now **proceed to the next lab**.
+
 ## Learn More
 
 

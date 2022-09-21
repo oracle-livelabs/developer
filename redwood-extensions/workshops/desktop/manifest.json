@@ -1,38 +1,38 @@
 {
   "workshoptitle": "Building Redwood Application Experiences with the Oracle Applications Platform",
-  "help": "livelabs-help-**enterarea**_us@oracle.com",
+  "help": "livelabs-help-oci_us@oracle.com",
   "variables": ["../../variables/variables.json",
     "../../variables/variables-in-another-file.json"],
   "tutorials": [
     {
       "title": "Introduction",
-      "description": "The Introduction is always second for LiveLabs. The title and contents menu title match for the Introduction.",
+      "description": "introduction to the lab's goals",
       "filename": "../../introduction/introduction.md"
     },
     {
-      "title": "Lab 1: Work with Projects and Workspaces",
+      "title": "Lab 1: Create a new extension",
       "description": "Use Workspaces to create new Application Extension in your project",
       "filename": "../../workspace/workspace.md"
     },
     {
-      "title": "Lab 2: Create Your First Page",
+      "title": "Lab 2: Create your first page",
       "description": "Labs that follow the introduction are numbered, starting with Lab 1",
       "filename": "../../welcome/welcome.md"
     },
     {
-      "title": "Lab 3: Connect to Oracle Fusion Cloud Apps Data",
+      "title": "Lab 3: Connect to Oracle Fusion Cloud Apps data",
       "filename": "../../saasservice/saasservice.md"
     },
     {
-      "title": "Lab 4: Add Edit and Details Pages",
+      "title": "Lab 4: Add edit and details pages",
       "filename": "../../editpage/editpage.md"
     },
     {
-      "title": "Lab 5: Add Buttons and Action Chains",
+      "title": "Lab 5: Add buttons and action chains",
       "filename": "../../tableedit/tableedit.md"
     },
     {
-        "title": "Lab 6: Apply Redwood Page Templates",
+        "title": "Lab 6: Apply Redwood page templates",
         "filename": "../../rweditpage/rweditpage.md"
     },
     {
