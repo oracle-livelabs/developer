@@ -1,4 +1,4 @@
-# How to build powerful, secure REST APIs for your Oracle Database - Securing a REST Endpoint
+# Secure REST-enabled endpoints
 
 ## Introduction
 

@@ -62,6 +62,7 @@ Users with [the right roles](https://docs.oracle.com/en/cloud/paas/visual-builde
 
 	![visual editor](images/results.png)
 
+
 You may now **proceed to the next lab**.
 
 ## Learn More

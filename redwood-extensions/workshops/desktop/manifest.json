@@ -1,6 +1,8 @@
 {
   "workshoptitle": "Building Redwood Application Experiences with the Oracle Applications Platform",
+
   "help": "livelabs-help-oci_us@oracle.com",
+
   "variables": ["../../variables/variables.json",
     "../../variables/variables-in-another-file.json"],
   "tutorials": [
@@ -11,6 +13,7 @@
     },
     {
       "title": "Lab 1: Create a new extension",
+
       "description": "Use Workspaces to create new Application Extension in your project",
       "filename": "../../workspace/workspace.md"
     },
@@ -33,6 +36,7 @@
     },
     {
         "title": "Lab 6: Apply Redwood page templates",
+
         "filename": "../../rweditpage/rweditpage.md"
     },
     {

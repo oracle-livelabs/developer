@@ -157,6 +157,7 @@ Your table now has buttons that are attractively rendered and that work as expec
 
 You may now **proceed to the next lab**.
 
+
 ## Learn More
 
 * [Action Chains](https://docs.oracle.com/en/cloud/paas/visual-builder/visualbuilder-building-appui/work-action-chains.html)

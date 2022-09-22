@@ -115,6 +115,7 @@ To leverage the service's pagination capabilities (as opposed to fetching all th
 
 		<copy><oj-table scroll-policy-options.scroller="html" scroll-policy="loadMoreOnScroll" ...></copy>
 
+
 17. Click **Design** so we can see the resulting table with data fetched into it. We can take an even closer look at the app by using the Preview feature.  
 
 18. In the Designer's header, click **Preview** in the top right:
