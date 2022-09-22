@@ -1,4 +1,5 @@
-# Apply Redwood Templates
+
+# Apply Redwood page templates
 
 ## Introduction
 
