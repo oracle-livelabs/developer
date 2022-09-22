@@ -1,9 +1,10 @@
 ## Introduction
+
 In this lab, we're starting from scratch. So the first thing you'll do is create a new skill.
 
 ## Task 1: Create a Skill
 
-In this lab, we're starting from scratch. So the first thing you'll do is create a new skill.
+
 
 1.  With the Oracle Digital Assistant UI open in your browser, click ![](images/hamburger.png "") to open the side menu.
 2.  Click **Development** and then select **Skills**.

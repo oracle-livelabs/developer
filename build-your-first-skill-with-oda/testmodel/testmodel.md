@@ -14,31 +14,31 @@ The Utterance Tester slides out from the right side of the page with its Quick T
 ![](.images/utterance-tester.png)
 
 
-3.  In the **Language** field of the dialog, select **English**.
-4.  In the **Utterance** field, type I want to order pizza. Then click the **Test** button (located at the bottom right of the tester) and look at the test results.
+2.  In the **Language** field of the dialog, select **English**.
+3.  In the **Utterance** field, type I want to order pizza. Then click the **Test** button (located at the bottom right of the tester) and look at the test results.
 
 ![](images/test-results1.png)
 
 
-6.  Click **Reset** (located at the bottom right of the tester).
-7.  Now scroll back to the top of the dialog, enter I feel like eating some pizza in the **Utterance** field, and then click **Test**.
+4.  Click **Reset** (located at the bottom right of the tester).
+5.  Now scroll back to the top of the dialog, enter I feel like eating some pizza in the **Utterance** field, and then click **Test**.
     
     This should also resolve to the OrderPizza intent. Click **Reset**.
     
-8.  Now try Cancel my order.
+6.  Now try Cancel my order.
     
     This should resolve to the CancelPizza intent. Click **Reset**.
     
-9.  And now try Dude, bring me pizza and see what that resolves to.  
+7.  And now try Dude, bring me pizza and see what that resolves to.  
     
-10.  Type You are expensive and you still don't deliver on time in the **Utterance** field and click **Test**.  
+8.  Type You are expensive and you still don't deliver on time in the **Utterance** field and click **Test**.  
     
     ![](images/test_complaint_utterance_1.png)    
     
     
     In all likelihood, the FileComplaint intent did not receive the highest score. In the above screenshot, CancelPizza "won". For us humans it is easy to see that "You are expensive and you still don't deliver on time" is not an order but a complaint. However, a skill first needs to be trained with relevant utterances before it is able to gain the same understanding.
     
-11.  To remedy this, you're going to add this utterance to the FileComplaint intent:
+9.  To remedy this, you're going to add this utterance to the FileComplaint intent:
     
     *   Click **Show More** to access the FileComplaint result.
 
@@ -54,9 +54,9 @@ The Utterance Tester slides out from the right side of the page with its Quick T
     
    **Note:** In these examples, you might get slightly different confidence scores than the ones shown here. And in some cases, the matching intents themselves could vary, should the differing confidence scores push those intents above or below the given confidence thresholds. The cause of this variance is the non-deterministic nature of the AI behind the natural language processing and the fact that these skills have a limited number of training utterances (in order to make the tutorial simpler). In real world scenarios, you would be adding a minimum of 80 to 100 utterances per intent.
     
-12.  Retrain the skill with **Trainer Tm**.
-13.  Think of two or three more phrases that the system might have problems matching to an intent with high confidence and try them in the Intent tester. If you find one that doesn’t match well, select the intent that it should be resolved to and click **Add to Intent**.
-14.  Train the model again and then re-test.
+10.  Retrain the skill with **Trainer Tm**.
+11.  Think of two or three more phrases that the system might have problems matching to an intent with high confidence and try them in the Intent tester. If you find one that doesn’t match well, select the intent that it should be resolved to and click **Add to Intent**.
+12.  Train the model again and then re-test.
 
 ### Notes on What You Just Did
 

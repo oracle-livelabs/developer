@@ -93,18 +93,18 @@ In testing the order pizza intent, you saw how utterance was resolved to the Ord
 ![](images/screenshot_test-intent-qa2.png)
 
 
-3.  Click **Reset**
-4.  In the **Utterance** field, enter `I want to speak to your manager` and then press Enter.
+2.  Click **Reset**
+3.  In the **Utterance** field, enter `I want to speak to your manager` and then press Enter.
     
     ![](images/test_file_complaint.png)
     
     
     The skill should respond with "I am sorry to hear this. Let me take your complaint details."
     
-5.  Now let's try a more random utterance.
+4.  Now let's try a more random utterance.
     
     Click **Reset**.
-6.  In the **Utterance** field, enter `Can you get me a radio taxi now?`
+5.  In the **Utterance** field, enter `Can you get me a radio taxi now?`
     
     ![](images/screenshot_test-intent-qa3.png)
     

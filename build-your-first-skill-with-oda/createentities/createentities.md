@@ -19,7 +19,7 @@ We'll create custom entities for size and topping and later use a built-in entit
 
 
 
-10.  Following the procedure described in the previous four steps, you are going to add two more values to the PizzaSize entity: one for medium-sized pizza orders, and one for large-sized pizza orders.
+9.  Following the procedure described in the previous four steps, you are going to add two more values to the PizzaSize entity: one for medium-sized pizza orders, and one for large-sized pizza orders.
     
     | Value | Synonym(s) |
 | -------- |:----:| 
@@ -29,12 +29,12 @@ We'll create custom entities for size and topping and later use a built-in entit
 
 
     
-11.  Click **Create** to complete the entity.
-12.  Click **\+ Add Entity** to create another entity.
-13.  In the **Name** field, change the value to `PizzaTopping`.
-14.  In the Configuration section, select **Value List** from the **Type** menu
-15.  Add separate values for `Meaty`, `Veggie`, `Hot and Spicy`, and `American Hot`.
-16.  Click **Create**.
+10.  Click **Create** to complete the entity.
+11.  Click **\+ Add Entity** to create another entity.
+12.  In the **Name** field, change the value to `PizzaTopping`.
+13.  In the Configuration section, select **Value List** from the **Type** menu
+14.  Add separate values for `Meaty`, `Veggie`, `Hot and Spicy`, and `American Hot`.
+15.  Click **Create**.
 
 PizzaSize and PizzaToppings should appear in the list of entities, as shown in this image:
 
@@ -81,18 +81,18 @@ In this step, you're going to simplify your development efforts using a composit
 ![](images/add_bag_item_in_editing_page.png)
 
 
-4.  In the Add Bag Item dialog, replace _BagItem1_ in the Name field with `pizzaSize`.
-5.  Select **Entity** as the type.
-6.  Choose **PizzaSize** from the Entity Name list.
+3.  In the Add Bag Item dialog, replace _BagItem1_ in the Name field with `pizzaSize`.
+4.  Select **Entity** as the type.
+5.  Choose **PizzaSize** from the Entity Name list.
 
 ![](images/add_bag_item_dialog.png)
 
 
-8.  Click **Close** (located at the upper right).
-9.  Repeat these steps to create the Create a bag item for the PizzaTopping entity:
+6.  Click **Close** (located at the upper right).
+7.  Repeat these steps to create the Create a bag item for the PizzaTopping entity:
     *   Name the item `pizzaTopping`.
     *   Choose **PizzaTopping** from the Entity Name list.
-10.  In addition to enabling users to select the pizza type and size, the skill will also enable them to enter a delivery time. For this, you're going add another entity item to the bag. Unlike the PizzaSize and PizzaType entities that you created from scratch, you're instead going to use the built-in TIME entity (or if you're skill is Version 22.08 higher, the DATE\_TIME entity), which recognizes various time formats in the user input. To create this item:
+8.  In addition to enabling users to select the pizza type and size, the skill will also enable them to enter a delivery time. For this, you're going add another entity item to the bag. Unlike the PizzaSize and PizzaType entities that you created from scratch, you're instead going to use the built-in TIME entity (or if you're skill is Version 22.08 higher, the DATE\_TIME entity), which recognizes various time formats in the user input. To create this item:
     *   Click **+Bag Item**.
     *   Enter `deliveryTime` in the Name field.
     *   Select **Entity** from the Type list.
@@ -112,8 +112,8 @@ In this step, you're going to simplify your development efforts using a composit
     ![](images/completed_bag_items.png)
     
        
-11.  Click **Train**.
-12.  Select **Entity**, then click **Submit**.
+9.  Click **Train**.
+10.  Select **Entity**, then click **Submit**.
 
 ## Task 5: Associate the Entities with OrderPizza Intent
 
@@ -126,7 +126,7 @@ For an entity to be recognized when parsing the user input message, it needs to 
 ![](images/screenshot_entity-list.png)
 
 
-5.  Retrain the model with Trainer Tm.
+4.  Retrain the model with Trainer Tm.
 
 ## Task 6: Test the Entities
 

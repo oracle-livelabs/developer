@@ -19,6 +19,6 @@ In this lab, you will create a skill that can be used for interactions with a pi
 
 ## Acknowledgements
 
-* **Authors** - Daniel Teixeira, Barry Hiern, Patrick Keegan
-* **Contributors** -  Daniel Teixeira, Barry Hiern, Patrick Keegan
+* **Authors** - John Bassett
+* **Contributors** -  Daniel Teixeira, Patrick Keegan
 * **Last Updated By/Date** - Daniel Teixeira, October 2022

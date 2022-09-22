@@ -31,7 +31,7 @@ For the Pizza King example, you will create intents for ordering pizza, cancelli
 ![](images/utterance-advanced-input.png "")
 
 
-7.  In the **Utterances to Add** field, paste the examples. Then click **Create**.
+6.  In the **Utterances to Add** field, paste the examples. Then click **Create**.
 
 Below the Examples section, you should see a table with the utterances that you just added.
 
@@ -51,7 +51,7 @@ The next two intents are not for a transactional intents like OrderPizza. They a
 ![](images/cancel_answer.png)
 
 
-6.  Select and copy all of the example sentences below to your clipboard:
+5.  Select and copy all of the example sentences below to your clipboard:
     *   Can i cancel my order?
     *   Cancel my order
     *   Cancel my Pizza please
@@ -63,8 +63,8 @@ The next two intents are not for a transactional intents like OrderPizza. They a
     *   Need to cancel my order
     *   Please cancel my pizza order
     *   Please don't deliver my Pizza
-7.  In the **Utterances to Add** field, select **Advanced input mode** (if needed), then paste the examples.
-8.  Click **Create**.
+6.  In the **Utterances to Add** field, select **Advanced input mode** (if needed), then paste the examples.
+7.  Click **Create**.
 
 ## Task 3: Create the File Complaint Intent
 
@@ -99,7 +99,7 @@ To enable the skill to interpret user input based on the utterances that you jus
 
 ![](images/train.png "")
 
-3.  Select **Trainer Tm** and then click **Submit**.  
+2.  Select **Trainer Tm** and then click **Submit**.  
     
 ![](images/train_with_tm.png)
     
