@@ -16,7 +16,7 @@ In this lab, you will create a skill that can be used for interactions with a pi
 ### What Do You Need?
  - Access to the OCI Console  - As used to provision the instance of the Oracle Digital Assistant.
 
-**Note:** If you are using an Oracle hosted ODA instance for this tutorial, the required OCI service permissions as described in section 1 below have been already defined and you could skip that section.  If you are using your own OCI environment (such as a Trial instance) please perform the steps in section 1 prior to building out your Digital Assistant.
+**Note:** If you are using an Oracle hosted ODA instance for this tutorial, the required OCI service permissions as described in LAB 1 below have been already defined and you could skip that section.  If you are using your own OCI environment (such as a Trial instance) please perform the steps in LAB 1 prior to building out your Digital Assistant.
 
  - The starter skill, **AIServiceStarterSkill.zip**, which is included with this tutorial. [Download this file to your local system](https://docs.oracle.com/en/cloud/paas/digital-assistant/tutorial-skill/files/PizzaKing_Complete(1.0).zip) for your reference.
  
