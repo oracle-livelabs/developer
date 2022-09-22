@@ -158,15 +158,15 @@ This lab assumes you have:
 1. While logged into the marketplace founder instance, navigate to Nodes in OBP console.
 
 2. Click on the hamburger menu besides restproxy and select 'View or manage enrollments.'
-  ![View or Manage Enrollments](images/View_or_manage_enrollments.png)
+  ![View or Manage Enrollments](images/view_or_manage_enrollments.png)
 
 3. Select Create New Enrollment.
 
-  ![Create New Enrollment](images/Create_new_enrollment.png)
+  ![Create New Enrollment](images/create_new_enrollment.png)
 
 4. Input enrollment information. See sample enrollment as example. Enrollment user had to be created in idcs. In this example 'local.user' is used. Make sure the user has REST_Client role assoicated with the Blockchain instance.
 
-  ![Sample Enrollment](images/Sample_enrollment.png)
+  ![Sample Enrollment](images/sample_enrollment.png)
 
 5. Click Enroll.
 
@@ -232,13 +232,13 @@ Now that we have tested our project locally, we can connect to our remote instan
 
 5. Select 'Advanced Deployment.'
 
-  ![Advanced Deployment](images/2-car-tokenization-7-6.png)
+  ![Advanced Deployment](images/2-car-marketplance-7-6.png)
 
 6. Fill out the form as follows:
 
    - For **Package Label**, open up the 'Service Console' for the 'Marketplace' founder instance, click the **Chaincodes** tab, and copy the text as shown. You may use `car_tokenization_v1`, or any other name, but make sure to use the same name when repeating these steps for 'dealer2.'
 
-  ![Package Label](images/2-car-marketplace-7-7-1.png)
+  ![Package Label](images/2-car-tokenization-7-6.png)
 
    - Keep 'GoLang' as the **Chaincode Language**.
    - Select both available peers as the **Target Peers**.
