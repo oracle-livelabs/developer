@@ -1,0 +1,44 @@
+{
+    "workshoptitle": "Build your first skill with ODA",
+    "help": "livelabs-help-oci_us@oracle.com",
+    "tutorials": [
+        {
+            "title": "Introduction",
+            "filename": "../../introduction/introduction.md"
+        },
+        {
+            "title": "Get Started",
+            "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/pre-register-free-tier-account.md"
+        },
+        {
+            "title": "Lab 1: Create a Skill",
+            "description": "Labs that follow the introduction are numbered, starting with Lab 1",
+            "filename": "../../createskill/createskill.md"
+        },
+        {
+            "title": "Lab 2: Create Intents",
+            "filename": "../../createintents/createintents.md"
+        },
+        {
+            "title": "Lab 3: Test Your model",
+            "filename": "../../testmodel/testmodel.md"
+        },
+        {
+            "title": "Lab 4: Create Entities",
+            "filename": "../../createentities/createentities.md"
+        },
+        {
+            "title": "Lab 5: Design the Dialog Flow",
+            "filename": "../../createdialog/createdialog.md"
+        },
+        {
+            "title": "Lab 6: Test Your Skill",
+            "filename": "../../testskill/testskill.md"
+        },
+        {
+            "title": "Need Help?",
+            "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/need-help/need-help-livelabs.md"
+        }
+    ]
+}
