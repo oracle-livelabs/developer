@@ -123,6 +123,9 @@ At this point your screen should look like this:
 
 Let's move on to the next lab, where we'll learn how to get some data from Oracle SaaS onto the page.
 
+You may now **proceed to the next lab**.
+
+
 ## Learn More
 
 * [Use the Page Designer](https://docs.oracle.com/en/cloud/paas/visual-builder/visualbuilder-building-appui/get-started1.html#GUID-CC2B203D-51D3-4408-8D0B-4E26C86BCBC0)
