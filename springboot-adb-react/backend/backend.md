@@ -87,10 +87,15 @@ If everything runs correctly, the script will output something like this:
 2. Check the status using the following commands
 
 The following command returns the Kubernetes services of the MyToDo application with a load balancer exposed through an external API
-```<copy> services </copy>```
+
+```
+  <copy>
+  services
+  </copy>
+```
 This will run `kubectl get services` (but the setup script creates aliases for ease of use). After running the command above, it should output the external IP address.
 
-![Get Services](images/services.png)
+![Get Services](images/services.png " ")
 
 3. The following command returns all the pods running in your Kubernetes cluster:
 
@@ -101,7 +106,7 @@ pods
 ```
 
 Pods is an alias for `kubectl get pods`.
-![Get Pods](images/get-pods.png)
+![Get Pods](images/get-pods.png " ")
 4\. You can tail the log of one of the pods by running:
 
 ```
@@ -121,7 +126,7 @@ If the logs return **'Tomcat started on port(s): 8080 (HTTP) with context path'*
 
 ## Task 3: UnDeploy (optional)
 
-If you make changes to the image, you need to delete the service and the pods by running undeploy.sh then redo Steps 2 & 3.
+If you make changes to the image, you need to delete the service and the pods by running undeploy.sh then redo Tasks 1 & 2.
 
 1. Run the `undeploy.sh` script
 
