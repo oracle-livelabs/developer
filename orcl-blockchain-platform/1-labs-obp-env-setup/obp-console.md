@@ -74,7 +74,7 @@ You will also need to create a new [Compartment](https://docs.oracle.com/en-us/i
     - For both instances, select 'Join an existing network' under **Platform Role**
     - This task takes 10 minutes. During this time setup, configure, generate chaincode (*Tasks 4,5,6,7,8*) using  Blockchain App Builder
 
-## Task 4: Blockchain AppBuilder Environment Setup
+## Task 4: Open Blockchain App Builder in VSCode
 
 You will be using Oracle's Blockchain App Builder extension, accessible through Visual Studio Code, for this lab. First you will need to set up environments for each of the 3 blockchain platform instances you created in previous tasks above.
 
@@ -346,7 +346,7 @@ Blockchain App Builder chaincode deployment starts the Hyperledger Fabric basic 
 
 ## Task 9: Add Participant Organizations to Network
 
-To join the partner organizations to your network, you need to export their settings and import them into the founder.
+Configure the Blockchain Instances (Step3) to join the partner organizations to your network, you need to export their settings and import them into the founder.
 
 1. Access the 'Service Console' from the 'dealer1' instance. You will see a wizard and steps 'To join a network':
 

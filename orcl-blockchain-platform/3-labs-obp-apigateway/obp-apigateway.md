@@ -48,7 +48,7 @@ This lab assumes you have:
 
   ![VCN Creation](images/3-gateway-1-4.png)
 
-6. Once your VCN is available, public subnet is created as part of the process
+<!-- 6. Once your VCN is available, public subnet is created as part of the process
 
   ![Create Subnet](images/3-gateway-1-5.png)
 
@@ -60,10 +60,10 @@ This lab assumes you have:
     - Similarly, set 'Default Security List for Car Marketplace VCN' as the **Security List Compartment**.
 
   ![Create Subnet Form 1](images/3-gateway-1-6.png)
-  ![Create Subnet Form 2](images/3-gateway-1-7.png)
+  ![Create Subnet Form 2](images/3-gateway-1-7.png) -->
 
-8. Click 'Create Subnet' and see that the subnet has been successfully created.
-  ![See Subnet](images/3-gateway-1-8.png)
+<!-- 6. Click 'Create Subnet' and see that the subnet has been successfully created.
+  ![See Subnet](images/3-gateway-1-8.png) -->
 
 
 ## Task 2: Configure VCN
@@ -139,7 +139,7 @@ This lab assumes you have:
 
 ## Task 5: Create Routes
 
-1. Next, start creating a new routes by add ing new routes
+1. Next, start creating a new routes by adding new routes
 2. Add 6 routes: 2 for each instance , 1 founder instance and 2 participant instances. Each instance will have two routes
     - One route to perform `transactions`:'insert' and 'update'
     - Second route to perform `chaincode-queries`:'query a transactions or transactions'
@@ -149,10 +149,10 @@ This lab assumes you have:
     - Specify 'HTTP' as the **Type**
     - Enter the **URL** to serve as a REST endpoint. For Route 1, this will be https://marketplace-2-oabcs1-iad.blockchain.ocp.oraclecloud.com:7443/restproxy/api/v2/channels/car-marketplace/transactions
     - How to Construct Route URL:
-      - From the Blockchain Admin Dashboard --> Click on Nodes --> Navigate to restproxy (bottom of the screen) --> Copy the URL
-      - Append to URL --> [api/v2/channels/car-marketplace/transactions](https://docs.oracle.com/en/cloud/paas/blockchain-cloud/restoci/op-restproxy-api-v2-channels-channelname-transactions-post.html)
+        - From the Blockchain Admin Dashboard --> Click on Nodes --> Navigate to restproxy (bottom of the screen) --> Copy the URL
+        - Append to URL --> [api/v2/channels/car-marketplace/transactions](https://docs.oracle.com/en/cloud/paas/blockchain-cloud/restoci/op-restproxy-api-v2-channels-channelname-transactions-post.html)
 
-    ![Blockchain Dashboard](images/3-gateway-4.bc.1.png)
+      ![Blockchain Dashboard](images/3-gateway-4.bc.1.png)
 
     - For **Connection Establishment**, **Request Transmit**, and **Reading Response** timeouts, enter 60, 10, and 10 respectively
 

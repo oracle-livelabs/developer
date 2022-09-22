@@ -80,7 +80,7 @@ This lab assumes you have:
 
 1. In Visual Studio Code, click on the **O** icon on the left-hand menu to use the Blockchain App Builder Extension.
 
-2. Hover over the **Chaincodes** pane, Right Click on the chaincode to be packaged --> Select the directory on your laptop to save the chaincode package file.
+2. Hover over the **Chaincodes** pane, Right Click on the chaincode to be packaged --> Select the directory to save the chaincode package file.
 
   ![Car Marketplace Chaincode Package](images/2-app-builder-7-1.png)
 
@@ -130,7 +130,7 @@ This lab assumes you have:
 
   ![Hamburger and Approve](images/2-car-marketplace-7-10.png)
 
-10. Simply select the **Package ID** copied in Step6 as shown and click 'Upgrade'
+10. Simply select the **Package ID** copied in Step6 as shown and click 'Approve'
 
   ![Approve Chaincode Form](images/2-car-marketplace-7-11.png)
 
@@ -138,7 +138,7 @@ This lab assumes you have:
 
     ```
     <copy>
-    OR('dealer1.member', 'dealer2.member')
+    OR ('dealer1.member','dealer2.member')
     </copy>
     ```
 
@@ -206,7 +206,7 @@ Now that we have tested our project locally, we can connect to our remote instan
 
 1. In Visual Studio Code, click on the **O** icon on the left-hand menu to use the Blockchain App Builder Extension.
 
-2. Hover over the **Chaincodes** pane, Right Click on the chaincode to be packaged --> Select the directory on your laptop to save the chaincode package file.
+2. Hover over the **Chaincodes** pane, Right Click on the chaincode to be packaged --> Select the directory  to save the chaincode package file.
 
   ![Car Tokenization Chaincode Package](images/2-appbuilder-chaincodepackage-tokenization.png)
 
@@ -232,7 +232,7 @@ Now that we have tested our project locally, we can connect to our remote instan
 
 5. Select 'Advanced Deployment.'
 
-  ![Advanced Deployment](images/2-car-marketplace-7-6.png)
+  ![Advanced Deployment](images/2-car-tokenization-7-6.png)
 
 6. Fill out the form as follows:
 
@@ -243,7 +243,7 @@ Now that we have tested our project locally, we can connect to our remote instan
    - Keep 'GoLang' as the **Chaincode Language**.
    - Select both available peers as the **Target Peers**.
    - Upload the package .zip file you exported from the App Builder VS Code extension. We stored this in the **Samples** folder.
-
+  
   ![Advanced Deployment Form](images/2-car-tokenization-7-7-2.png)
 
 7. Click 'Close.' We will only be installing (not deploying) the chaincode onto the participant instances.
@@ -279,7 +279,7 @@ Now that we have tested our project locally, we can connect to our remote instan
 
 ## Task 10: Initialization and Issuance of Car Marketplace Fiat Token - Run It with App Builder. Save Input.
 
-1. Import the Marketplace Tokenization Postman collection (`Marketplace_Tokenization.postman_collection.json`) and assign variable definitions as shown.
+1. Import the Marketplace Tokenization Postman collection [Marketplace Tokenization](files/MarketplaceTokenization.postman_collection.json?download=1) and assign variable definitions as shown.
 
   ![Import Collection](images/import_collection.png)
   ![Import Collection 2](images/import_collection2.png)

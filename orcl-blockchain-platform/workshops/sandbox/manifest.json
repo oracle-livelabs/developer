@@ -14,8 +14,8 @@
     },
     {
       "title": "Environment Setup",
-      "description": "Using noVNC Remote Desktop",
-      "filename": "https://oracle-livelabs.github.io/common/labs/remote-desktop/using-novnc-remote-desktop.md"
+      "description": "How to provision the workshop environment and connect to it",
+      "filename": "https://oracle-livelabs.github.io/common/labs/setup-compute-generic/setup-compute-novnc-ssh.md"
     },
     {
       "title": "Lab 1: Create 3 Organization Blockchain Network & Generate Smart Contracts",
