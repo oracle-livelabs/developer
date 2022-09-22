@@ -1,8 +1,8 @@
-# Review the application and routes
+# Lab 3: Review the Python and Oracle REST API relationship
 
 ## Introduction
 
-In the previous Lab you explored Oracle REST APIs in a Swagger Editor session. By now you should have a better understanding of what these Oracle REST APIs are capable of. 
+In the last Lab, you explored Oracle REST APIs in a Swagger Editor session. By now, you should better understand what these Oracle REST APIs are capable of. 
 
 Next, we'll add Oracle REST APIs to our Flask application's Python file. And briefly discuss the Flask application's routes and their functions.
 
@@ -10,21 +10,21 @@ Estimated Time: 20 minutes
 
 ### Objectives
 
-In this lab, you will:
+In this Lab, you will:
 * Add Oracle REST APIs to our Flask application
 * Review the provided Python application 
 
 ### Prerequisites
-This lab assumes you have:
+This Lab assumes you have:
 * All previous labs successfully completed
 
-## Task 1: Locate and open the Python file for Flask application
+## Task 1: Locate and open the Python file for the Flask application
 
 1. Locate your copy of the **`flask-ords-lab`** folder and open the **`lab_3_app.py`** file in your editor.
 
    ![Open the lab_3_app.py file folder in VS Code.](images/opening-lab-3-app-py-file.png " ")
 
-   :pirate_flag: The examples in this Lab will use Visual Studio Code.
+   > 🏴‍☠️ The examples in this Lab will use Visual Studio Code.
 
 ## Task 2: Review the Python application and functions
 
@@ -32,36 +32,36 @@ This lab assumes you have:
 
      ![Imported libraries for Python application](images/imported-libraries-for-application.png " ")
 
-    You may have used these before. We'll rely mainly on:
+    You may have used these before. We'll rely upon:
       * **`Folium`**
       * **`Flask`**
       * **`jsonify`**
       * **`requests`**
       * **`json`**
 
-2. **Python application overview**. Beginning with the first line in our code you'll see we have created an instance of the **`Flask`** class: **`app = Flask(__name__)`**.
+2. **Python application overview**. Beginning with the first line in our code, you'll see we have created an instance of the **`Flask`** class: **`app = Flask(__name__)`**.
 
-  Here the argument **`(__name__)`** is sufficient for such a small scale application. 
+  Here the argument **`(__name__)`** is sufficient for such a small-scale application. 
 
     ![Reviewing the flask app name](images/first-line-flask-app-name.png)
 
 ## Task 3: Review the Folium map 
 
-1. Here you'll see the Folium section of the application. 
+1. Here, you'll see the Folium section of the application. 
 
    ![Reviewing Folium content in the application](images/reviewing-folium-content-in-app.png)
-   <sup>*We've included starting coordinates (approximately the downtown Las Vegas, NV area), set minimum and maximum zoom properties, and set the visual presentation option (i.e. "Stamen Terrain").*</sup>
+   <sup>*We've included starting coordinates (approximately the downtown Las Vegas, NV area), set minimum and maximum zoom properties, and set the visual presentation option (i.e., "Stamen Terrain").*</sup>
 
-    * We set the initial, base Folium map = `m`      
+    * We set the initial base Folium map = `m`      
 
     * We include a tooltip (which you'll see later when we load the application).
-    * We use the "Requests" library along with our Oracle REST APIs to **`GET`** json from our Autonomous Database.
+    * We use the "Requests" library along with our Oracle REST APIs to **`GET`** JSON from our Autonomous Database.
    
-       :question: *But do you notice anything missing?*
+       > ❓ *But do you notice anything missing?*
 
        ![Missing ORDS endpoint for Folium map](images/missing-ords-uri-for-folium.png " ")
 
-2. If you guessed an Oracle REST endpoint, you'd be correct. Replace **`ORDS URI HERE`** with the following: 
+2. You'd be correct if you guessed an Oracle REST endpoint. Replace **`ORDS URI HERE`** with the following: 
 
     ```
     <copy>https://yfuxkbz2ls7taze-ordshandsonlabs.adb.us-phoenix-1.oraclecloudapps.com/ords/python/flask/museums/
@@ -103,40 +103,40 @@ This lab assumes you have:
   
 4. We'll then create individual markers for the museum locations we retrieved from our database:
 
-    * Here we'll pass the latitude and longitude coordinates and informational pop-ups for all the locations.
+    * Here, we'll pass the latitude and longitude coordinates and informational pop-ups for all the locations.
           
        ![Creating markers for Folium.](images/creating-markers-for-folium-map.png " ")
-       <sup>*Notice how we include **`museum_name`** as HTML, icon color and type, as well as a **`tooltip`.***</sup>
+       <sup>*Notice how we include **`museum_name`** as HTML, icon color, and type, as well as a **`tooltip`.***</sup>
 
-       :bulb: The tooltip generates a helpful bubble when hovered over that reads *Click me!*.
+       > 💡 The tooltip generates a helpful bubble that reads *Click me!*when hovered over.
 
-5. Finally you'll see the line **`lvmap = m._repr_html_()`**:
+5. Finally, you'll see the line **`lvmap = m._repr_html_()`**:
 
    ![Temporarily saving the Folium map.](images/saving-folium-map-as-lvmap.png " ")
       
-   <sup>*We include this to temporarily save our map as a HTML iframe (this includes all necessary HTML and JavaScript properties), which we'll later use as an argument in our application's index page (in Flask).*</sup> 
+   <sup>*We include this to temporarily save our map as an HTML iframe (this consists of all necessary HTML and JavaScript properties), which we'll later use as an argument in our application's index page (in Flask).*</sup> 
 
 ## Task 4: Review the Flask application routes
 
-:brain: *A Routes Primer*: Application routes (aka **`app.route()`**) are triggered when actions are performed in the application. The results of a function may be passed back to the user, a new HTML page may load, or may redirect the user to a new page. 
+> 🧠 *A Routes Primer*: Application routes (aka **`app.route()`**) are triggered when actions are performed in the application. The results of a function may be passed back to the user, a new HTML page may load, or it may redirect the user to a new page. 
   
 1. **`@app.route('/')`**
         
     ![The Index route](images/app-route-index.png " ")
 
-    This route contains the **`index()`** function. When a user navigates to the home page they'll be presented with the **`index.html`** page. We are also including our newly constructed Folium map, **`lvmap`** as an argument. 
+    This route contains the **`index()`** function. When a user navigates to the home page, they'll be presented with the **`index.html`** page. We are also including our newly constructed Folium map, **`lvmap`**, as an argument. 
 
 2. **`@app.route('/get_price')`**
 
     ![The Get Price route](images/app-route-get-price.png " ")
 
-    The function of the **`getPrice()`** route appends **`a`** to an ORDS endpoint. To see this in action take this ORDS URL and place it into your browser's address bar. 
+    The function of the **`getPrice()`** route appends **`a`** to an ORDS endpoint. To see this in action, take this ORDS URL and place it into your browser's address bar. 
     
       ```
       <copy>https://yfuxkbz2ls7taze-ordshandsonlabs.adb.us-phoenix-1.oraclecloudapps.com/ords/python/flask/products/pricing/</copy>
       ```
      
-     :question: *Click **Enter**, what do you see?*
+     > ❓ *Click **Enter**, what do you see?*
 
      You might see something like this:
         
@@ -148,7 +148,7 @@ This lab assumes you have:
  
     ![Updated get request with product ID included.](images/pricing-info-with-product-id-included.png " ")
 
-    Now you should have a better idea of how this, and other functions will work "under the covers". At this stage, a user will have triggered the retrieval of product prices from a product table. This information is used as one of the fields in a drop-down menu (found on the **`orderform.html`** page). 
+    Now you should have a better idea of how this and other functions will work "under the covers." At this stage, a user will have triggered the retrieval of product prices from a product table. This information is used as one of the fields in a drop-down menu (found on the **`orderform.html`** page). 
     
     Make sure your **`get_price`** function has the correct Path: 
       ```
@@ -184,11 +184,11 @@ This lab assumes you have:
     
 3. **`@app.route('/get_description')`**
   
-  Much like the **`get_price`** app route, this function requests product description information from our database using a similar syntax as before. We then **`return jsonify(product_description)`** which takes the response and converts it like we did in the previous function.
+  Much like the **`get_price`** app route, this function requests product description information from our database using a similar syntax. We then **`return jsonify(product_description)`**, which takes the response and converts it as we did in the previous function.
 
     ![The Get Description route](images/app-route-get-description.png " ")
   
-    Take place this in the correct location so our function works:  
+    Take place this in the correct location, so our function works:  
       ```
       <copy>https://yfuxkbz2ls7taze-ordshandsonlabs.adb.us-phoenix-1.oraclecloudapps.com/ords/python/flask/products/descriptions/</copy>
       ```
@@ -232,7 +232,7 @@ This lab assumes you have:
 
     ![The newly added get products ORDS endpoint.](images/get-products-ords-endpoint.png)
     
-  Using a separate ORDS endpoint, our application performs a more typical **`GET`** request. Here we return a list of products, and redirect the user to an **`orderform.html`** page. 
+  Our application performs a more typical **`GET`** request using a separate ORDS endpoint. Here we return a list of products and redirect the user to an **`orderform.html`** page. 
  
   <details>
     <summary>*Reveal code block*</summary>
@@ -318,19 +318,19 @@ This lab assumes you have:
       ```
   </details>
     
-    :brain: *You've actually seen this app route in action in Lab 1 of this Workshop! Remember the **`orderform.html`** page?*
+    > 🧠 *You've seen this app route in action in Lab 1 of this Workshop! Remember the **`orderform.html`** page?*
 
 6. **`@app.route(/result', methods = ['POST', 'GET'])`**
 
-    ![The order history post request result route.](images/app-route-result.png " ")
+    ![The order history post requests result route.](images/app-route-result.png " ")
 
-    Here we have the same ORDS endpoint as in the **`orderhistory`** app route. But instead of a **`GET`** we are working with a **`POST`** request. If you remember back to Lab 1, a user will click:
+    Here we have the same ORDS endpoint as in the **`orderhistory`** app route. But instead of a **`GET`**, we are working with a **`POST`** request. If you remember back to Lab 1, a user will click:
 
-      ![Completing the purchase focused view.](images/complete-my-purchase-focus-view.png " ")
+      ![Completing the purchase focused-view.](images/complete-my-purchase-focus-view.png " ")
 
-    And this route expects a **`POST`** request originating from the Flask application. Once this request posts successfully the user is redirected to the **`orderhistory.html`** page (as you saw in the previous step). 
+    And this route expects a **`POST`** request originating from the Flask application. Once this request posts successfully, the user is redirected to the **`orderhistory.html`** page (as you saw in the previous step). 
     
-    :brain: *This function also performs actions such as establishing the key:value pairs of the incoming data, and the JSON payload headers well.*
+    > 🧠 *This function also performs actions such as establishing the **`{Key: Value}`** pairs of the incoming data and the JSON payload headers.*
 
     Update the function with the following ORDS URL: 
     ```
@@ -361,9 +361,9 @@ This lab assumes you have:
       ```
     </details>
 
-7. At this stage you should have all ORDS endpoints in the proper places. All application routes and their underlying functions should work correctly. Next, we'll briefly review the included HTML and CSS in this Flask application. Zut alors!
+7. At this stage, you should have updated all ORDS endpoints. All application routes and their underlying functions should work correctly. Next, we'll briefly review the included HTML and CSS in this Flask application. Zut Alors!
     
-### You may now proceed to the [next Lab](#next).
+### You may now **proceed to the next Lab.**
 
 ## Learn More
 * [A minimal application in Flask](https://flask.palletsprojects.com/en/2.1.x/quickstart/#a-minimal-application)
@@ -372,7 +372,7 @@ This lab assumes you have:
 ## Acknowledgements
 * **Author** - Chris Hoina, Senior Product Manager, Database Tools
 * **Contributors**
-  - Jeff Smith, Distuinguished Product Manager, Database Tools
+  - Jeff Smith, Distinguished Product Manager, Database Tools
   - Justin Biard, Senior Member of Technical Staff, Database Tools 
   - Zachary Talke, Product Manager, Database Tools
   - Brian Spendolini, Principal Product Manager
