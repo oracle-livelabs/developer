@@ -26,15 +26,15 @@ This lab assumes you have:
 
 1. On the 'App builder' main page page, click on 'Workspace Utilities.'
 
-  ![Web Credentials](images/4-apex-5-1.png)
+ ![Web Credentials](images/4-apex-5-1.1.png)
 
 2. Now, click on 'Web Credentials'
 
+  ![Web Credentials](images/4-apex-5-1.png)
+
+3. Now, click on 'Credentials for OBP Endpoint.'
+
   ![Web Credentials](images/4-apex-5-2.png)
-
-2. Now, click on 'Credentials for OBP Endpoint.'
-
-  ![Web Credentials](images/4-apex-5-3.png)
 
 4. Using the same password used for the founder instance (marketplace, Section 1- Task 2), update the password in 'Client or Password' field and 'Apply Changes'.
 
