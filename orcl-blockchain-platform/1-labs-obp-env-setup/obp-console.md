@@ -74,11 +74,12 @@ You will also need to create a new [Compartment](https://docs.oracle.com/en-us/i
     - For both instances, select 'Join an existing network' under **Platform Role**
     - This task takes 10 minutes. During this time setup, configure, generate chaincode (*Tasks 4,5,6,7,8*) using  Blockchain App Builder
 
-## Task 4: Open Blockchain App Builder in VSCode
+## Task 4: Open Blockchain App Builder in VSCode 
 
 You will be using Oracle's Blockchain App Builder extension, accessible through Visual Studio Code, for this lab. First you will need to set up environments for each of the 3 blockchain platform instances you created in previous tasks above.
 
-1. In Visual Studio Code, click on the **O** icon on the left-hand menu to use the Blockchain App Builder Extension.
+1. Click on the desktop VSCode shortcut on the VNC Desktop --> Opens VSCode
+2. In Visual Studio Code, click on the **O** icon on the left-hand menu to use the Blockchain App Builder Extension.
 
 
 ## Task 5: Import Marketplace YAML Specification File
@@ -124,8 +125,9 @@ Select '`car_marketplace_cc`.controller.go' under '`car_marketplace_cc`/src/cont
 
 1. Open the Car Marketplace specification file and scroll to the bottom. This is where your customMethods are listed.
 
+
 2. We've modified existing CRUD operations and defined custom methods for the following functions:
-  - 'CreateCar': Adds car to dealer's inventory. The function retrieves dealer from blockchain, appends the car to dealer's inventory and records car on ledger.
+  - 'CreateCar': Adds car to dealer's inventory. Copy and paste these custom methods in the controller file, overwriting the stubs for these methods. The function retrieves dealer from blockchain, appends the car to dealer's inventory and records car on ledger.
 
     ```
     <copy>
@@ -344,9 +346,9 @@ Blockchain App Builder chaincode deployment starts the Hyperledger Fabric basic 
   If you receive an error message in the **Output** console window (located at the bottom of your Visual Studio window), open the Docker Desktop app and copy/paste the given command into your terminal to start the Docker daemon. Restart Visual Studio and repeat steps 1-3 as necessary.
 
 
-## Task 9: Add Participant Organizations to Network
+## Task 9: Add Participant Organizations to Network - Task4 Continuation
 
-Configure the Blockchain Instances (Step3) to join the partner organizations to your network, you need to export their settings and import them into the founder.
+Blockchain instances should have been created by now (Task4).  Configure the Blockchain Instances (Step3) to join the partner organizations to your network, you need to export their settings and import them into the founder.
 
 1. Access the 'Service Console' from the 'dealer1' instance. You will see a wizard and steps 'To join a network':
 
@@ -413,7 +415,7 @@ We now need to join the organizations at the channel level to allow communicatio
   ![Check Channel Orgs](images/1-obp-5-5.png)
 
 
-## Task 11: Join Participant Organizations to Channel
+## Task 11: Join Participant Organizations - Peer Nodes to Channel
 
 You're almost done setting up your blockchain network! Simply use the participant instances to join the channel created in the previous step.
 
@@ -457,7 +459,7 @@ Use IDCS to create and add both 'john_\dealer1' and 'sam_\dealer2' users, and th
 
 1. From the OCI dashboard, select the user icon in the top right-hand corner and click on **Service User Console**.
 
-  ![OCI Dashboard](images/OCI-dashboard.png)
+  ![OCI Dashboard](images/oci-dashboard.png)
 
 2. Under **My Oracle Services**, search 'identity' and select **Admin Console**.
 

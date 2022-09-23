@@ -120,4 +120,8 @@ assets:
         others: [getByRange]
 customMethods:
     - executeQuery
+    - "CreateCarWrapper()"
+    - "CreatePOWrapper()"
+    - "UpdatePOWrapper()"
     - "CarTransfer(vin string, buyerId string, sellerId string, price int, PO string, date string)" #Only happens after PO confirm receipt or resolve is accepted
+    
