@@ -6,7 +6,7 @@ To detect which language was entered, and subsequently print it out in the messa
 For this Tutorial, we will replace the default **“intent.unresolved”** flow, with a custom version that calls the AI service to determine the language of any utterance the bot was unable to understand.
 This will follow a similar process to the **Detect Sentiment** flow above.
 
-## Respond to the user if their utterance is in a Foreign Language
+## Task 1: Respond to the user if their utterance is in a Foreign Language
 
 
 1. Navigate to the Flow Designer page for your skill.

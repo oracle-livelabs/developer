@@ -36,6 +36,11 @@
             "description": "Labs that follow the introduction are numbered, starting with Lab 1",
             "filename": "../../language/language.md"
         },
+        {
+            "title": "Lab 6: Add analyze image",
+            "description": "Labs that follow the introduction are numbered, starting with Lab 1",
+            "filename": "../../vision/vision.md"
+        },
         
         {
             "title": "Need Help?",

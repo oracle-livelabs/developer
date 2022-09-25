@@ -1,6 +1,6 @@
 ## Introduction
 
-For the Digital Assistant to advantage of the additional AI services available within the OCI environment, it is necessary to  grant the Digital Assistant itself access to the various AI Services APIs and REST endpoints.  This is achieved by applying the appropriate security policy within your OCI Tenancy. 
+For the Digital Assistant to take advantage of the additional AI services available within the OCI environment, it is necessary to  grant the Digital Assistant itself access to the various AI Services APIs and REST endpoints.  This is achieved by applying the appropriate security policy within your OCI Tenancy. 
 
 While the OCI AI services have SDKs for a number of different languages, including Java, Python, JavaScript, .Net etc. the easiest way to integrate these services into an ODA conversation is via their REST Service APIs.    By utilising the REST connector capability in ODA, the additional AI processing available within the AI services can be easily incorporated into the conversation flow. Thus adding additional functionality to the sophisticated Natural Language Processing (NLP) inherent within the Digital Assistant.
 
@@ -156,3 +156,97 @@ Now we do the same for the Language Sentiment API service.
 4. Test the Validity of the REST Service Resource by clicking on the [> Test Request] button
     - If the outcome was successful (Status 200), click the [Save as Static Response] to save the response payload as MOCK data if the service is not available during the chatbot’s development.
 5. The basic integration of ODA to the **OCI-AI Service Language – Detect Sentiment** is now complete.
+
+
+
+## Task 4: OCI AI Vision Service: Analyze Image
+
+1. Open the ODA Builder, select **“Settings” > “API Services”** from the main menu
+
+	
+	
+2. Click the **[+ Add REST Service]** button to bring up the Create REST Service Dialog
+
+	
+3. Create a REST Service Resource for the OCI AI Vision Service: Analyze Image.
+
+   -  Set the required properties in the Create REST Service Dialog.
+
+ | Property | Value |
+ | ----------- | ----------------- |
+ | Name | AnalyzeImage |
+ | Endpoint | https://vision.aiservice.<**[Data-Center-Region]**.oci.oraclecloud.com/20220125/actions/analyzeImage. <br><br> Where **[Data-Center-Region]** matches the home region to which you have provisioned your tenancy and the ODA instance. <br><br> eg: vision.aiservice.**ap-sydney-1**.oci.oraclecloud.com  |
+ | Description | REST Resource for AI Vision Service – Analyze Image |
+ | Methods | **POST** <br> Choose the POST method from the drop-down list displayed when you click on the Methods field. |
+
+
+![](images/createvision.png =20%x*  "") 
+
+
+- Click **[Create]** to create the initial REST Resource definition.
+
+	
+
+
+4. Supply Security credentials for the API call.
+
+ODA REST Connector resources supports several different credential types to authenticate to secured REST Services.  The Oracle Cloud Infrastructure includes the “OCI Resource Principal” credential type.  This allows a service to securely call another service, within the same tenancy, without the need to supply individual user credentials.
+	
+- Set the Authentication Type to **“OCI Resource Principal”**
+
+		
+![](images/5.OCI_Resource_Principal.png =20%x*  "") 
+
+		
+- Within the Methods section, confirm that the POST Method is highlighted.  If not already expanded, click on the Request Chevron (>) to expose the properties of the REST request.
+		
+- Confirm that the **Content Type** is defined as **application/json**
+
+		
+- Copy the following JSON into the request’s “Body” definition as an example Payload
+
+	```
+    {
+    "features": [
+        {
+            "featureType": "TEXT_DETECTION"
+        }
+    ],
+    "image": {
+        "source": "INLINE",
+        "data": “iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z/C/HgAGgwJ/lK3Q6wAAAABJRU5ErkJggg== "
+    },
+    "compartmentId": "ocid1.compartment.oc1..aaaaaaaavrseiwy3uhon3lkj5ysalqxhezfr3pkkwdgunwkqdumd2pxplpja"
+}
+
+    ```
+	
+       **NOTE:** the “data” payload is a base64 encoded message for a 1 pixel picture. This request needs a base64 payload for the image we want to analyse.
+	
+
+
+-   The compartmentId is the ocid of the compartment where the ODA instance is located (or the root compartment in the tenancy).
+
+In the OCI Console go to **Compartments**
+![](images/ocid.png =20%x*  "") 
+Copy the **OCID** of the root comparment (or the one where the ODA instance is located)
+![](images/comp.png =30%x*  "") 
+
+		
+   
+5. Test the validity of the REST Resource by Clicking on the **[> Test Request]** button.
+
+![](images/7.Language_Response_Payload.png =30%x*  "") 
+
+  
+6. If you did not receive a 200 Status with the corresponding payload indicating that the supplied input was in Portuguese, close the dialog and confirm the validity of the properties for the REST service.
+
+
+If the outcome was successful (Status 200), click the **[Save as Static Response]** to save the response to be used as MOCK data if the service is not available as you build your Conversation flow.
+
+
+ ![](images/response.png =30%x*  "") 
+		
+  		
+ 		
+7. The basic integration of ODA to the **OCI-AI Vision – Analyze Image** is now complete.
