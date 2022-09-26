@@ -62,6 +62,9 @@ Users with [the right roles](https://docs.oracle.com/en/cloud/paas/visual-builde
 
 	![visual editor](images/results.png)
 
+
+You may now **proceed to the next lab**.
+
 ## Learn More
 
 * [What Is an Extension?](https://docs.oracle.com/en/cloud/paas/visual-builder/visualbuilder-building-appui/basics.html#GUID-A729A4FB-CD2E-48C8-BDE3-577DEE835332)
