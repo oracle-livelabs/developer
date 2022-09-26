@@ -20,11 +20,12 @@ While the OCI AI services have SDKs for a number of different languages, includi
 
 	
 3. Having selected the Root compartment, click **[Create Policy]** to open the policy editor.  Fill in the form with the following details:
-  | Property | Value |
- | ----------- | ----------------- |
- | Name | AIServicesAccessPolicy |
- | Description | Allow any users in the Tenancy to access the Language & Vision AI Services |
- | Compartment | Confirm this is pointing to your root compartment.  Tenancy Name -> Root |
+
+    *   **Name** - `AIServicesAccessPolicy`
+    *   **Description** - `Allow any users in the Tenancy to access the Language & Vision AI Services`
+    *   **Compartment** - `Confirm this is pointing to your root compartment.  Tenancy Name -> Root`
+    
+
 	
 4. Set the Policy Builder’s **“Show Manual Editor”** toggle to **“ON”**
 
@@ -161,6 +162,8 @@ Now we do the same for the Language Sentiment API service.
 
 ## Task 4: OCI AI Vision Service: Analyze Image
 
+The last service to configure is the OCI AI Vision.
+
 1. Open the ODA Builder, select **“Settings” > “API Services”** from the main menu
 
 	
@@ -179,11 +182,10 @@ Now we do the same for the Language Sentiment API service.
  | Description | REST Resource for AI Vision Service – Analyze Image |
  | Methods | **POST** <br> Choose the POST method from the drop-down list displayed when you click on the Methods field. |
 
+    ![](images/createvision.png =20%x*  "") 
 
-![](images/createvision.png =20%x*  "") 
 
-
-- Click **[Create]** to create the initial REST Resource definition.
+Click **[Create]** to create the initial REST Resource definition.
 
 	
 
@@ -216,36 +218,39 @@ ODA REST Connector resources supports several different credential types to auth
         "source": "INLINE",
         "data": “iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z/C/HgAGgwJ/lK3Q6wAAAABJRU5ErkJggg== "
     },
-    "compartmentId": "ocid1.compartment.oc1..aaaaaaaavrseiwy3uhon3lkj5ysalqxhezfr3pkkwdgunwkqdumd2pxplpja"
+    "compartmentId": "ocid1.compartment.oc1..aaaaaaaxxxxx"
 }
 
     ```
 	
-       **NOTE:** the “data” payload is a base64 encoded message for a 1 pixel picture. This request needs a base64 payload for the image we want to analyse.
+***NOTE:*** the “data” payload is a base64 encoded sample message. This request needs a base64 payload for the image we want to analyse.
 	
 
 
--   The compartmentId is the ocid of the compartment where the ODA instance is located (or the root compartment in the tenancy).
+***NOTE:*** Replace the compartmentId with your own value. It's the ocid of the compartment where the ODA instance is located (or the root compartment in the tenancy).
 
 In the OCI Console go to **Compartments**
 ![](images/ocid.png =20%x*  "") 
-Copy the **OCID** of the root comparment (or the one where the ODA instance is located)
+Copy the **OCID** of the root comparment (or the one where the ODA instance is located), and replace it in the above payload.
+
 ![](images/comp.png =30%x*  "") 
 
 		
    
 5. Test the validity of the REST Resource by Clicking on the **[> Test Request]** button.
 
-![](images/7.Language_Response_Payload.png =30%x*  "") 
+![](images/visionbody.png =30%x*  "") 
 
   
-6. If you did not receive a 200 Status with the corresponding payload indicating that the supplied input was in Portuguese, close the dialog and confirm the validity of the properties for the REST service.
+6. If you did not receive a 200 Status with the corresponding payload, close the dialog and confirm the validity of the properties for the REST service.
 
 
 If the outcome was successful (Status 200), click the **[Save as Static Response]** to save the response to be used as MOCK data if the service is not available as you build your Conversation flow.
 
 
  ![](images/response.png =30%x*  "") 
+
+ ***NOTE:*** The payload is of a pixel, hence no identifiable objects/words are present in the response.
 		
   		
  		

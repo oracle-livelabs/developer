@@ -9,45 +9,30 @@ Let’s now extend the basic NLP functionality of the Digital Assistant to take 
 1.  Navigate to the Flow Designer page for your skill.
 	
 2.  Click **[+ Add Flow]** button to add a new intent-driven flow to the skill using the following properties.
-
-| Property | Value |
-| ----------- | ----------------- |
-| Name | collect.feedback |
-| Description | Flow to collect customer feedback on Pizza & service |
-| Intent Name | pizza.reg.giveFeedback |
- {: title="feedback"}
-
+    *   **Name** - `collect.feedback`
+    *   **Description** - `Flow to collect customer feedback on Pizza & service`
+    *   **Intent Name** - `pizza.reg.giveFeedback`
+| 
 ![](images/sentiment1.png =30%x*  "")
 
 Check **“open created flow afterwards”** and click **[Create]**.
 			
 
 3.  Add an **“Ask Question”** component as the Start State for the flow.
-
-| Property | Value |
-| ----------- | ----------------- |
-| Name | PromptForFeedback |
-| Description | Prompt for customer feedback |
- {: title="ask question"}
-		
+    *   **Name** - `PromptForFeedback`
+    *   **Description** - `Prompt for customer feedback`
+	
 
 ![](images/sentiment2.JPG =60%x*  "")
 
-4.  Enter the Question text using the predefined resource bundle
+4.  Enter the Question text using the predefined resource bundle.
 
-```
-${rb('PromptForFeedback.message')}
-```
+    `${rb('PromptForFeedback.message')}`
 
 5.  Click the Variable **[Create v]** button to create a flow variable to store the user’s feedback.
-
-| Property | Value |
-| ----------- | ----------------- |
-| Name | feedbackText |
-| Description | Variable to hold user feedback |
-| Variable Type | String |
- {: title="feedback text"}
-		
+    *   **Name** - `feedbackText`
+    *   **Description** - `Variable to hold user feedback`
+    *   **Variable Type** - `String`
 
 ![](images/sentiment3.JPG =60%x*  "")
 		
@@ -56,15 +41,11 @@ Click **[Apply]** to create the “feedbackText” variable.
 6. Call Language Service via REST Connector
 
    - Add the **“Call REST Service”** component as the **“Next”** state in the flow
+    
+    *   **Name** - `CallSentimentService`
+    *   **Description** - `Calling OCI Language API`
 
      **Note:** You can use the Search filter to quickly find the REST component.
-
-| Property | Value |
-| ----------- | ----------------- |
-| Name | CallSentimentService |
-| Description | Calling OCI Language API |
- {: title="call ai language"}
-				
 
  - Click **[Insert]** to add the component to the flow
 
@@ -93,13 +74,9 @@ Click **[Apply]** to create the “feedbackText” variable.
 10. Confirm that the **“Response Mode”** is set to **“Use Actual REST API Response”**
 	
 11. Click the **[Create]** button to create a “Flow Scope” variable in which to store the Response from the AI REST service.
-
-| Property | Value |
-| ----------- | ----------------- |
-| Name | AIServicePayload |
-| Description | Variable to hold AI Service Response |
-| Variable Type | MAP |
- {: title="Sentiment response"}
+    *   **Name** - `AIServicePayload`
+    *   **Description** - `Variable to hold AI Service Response`
+    *   **Variable Type** - **MAP**
 		
 - Click **[Apply]** to create the variable.
 			
@@ -123,13 +100,8 @@ Click **[Apply]** to create the “feedbackText” variable.
    ![](images/sentiment7.png =20%x*  "")
 
 16. Add a **“Send Message”** component to the flow to indicate an invalid REST service call.
-
-| Property | Value |
-| ----------- | ----------------- |
-| Name | RequestFailed |
-| Description | Unsuccessful REST Request Message |
- {: title="request failed"}
-		
+    *   **Name** - `RequestFailed`
+    *   **Description** - `Unsuccessful REST Request Message`
 
 ![](images/sentiment8.png =20%x*  "")
 
@@ -153,13 +125,9 @@ Click **[Insert]** button to add component to the flow.
 21. Select **“success”** from the **“Action Name”** dropdown list.
 	
 22. Select **“Add State”** from the **“Transition To”** dropdown list.  This time add the invoke flow template.
+    *   **Name** - `RespondToFeedback`
+    *   **Description** - `Calling a predefined flow to respond to the sentiment within the user’s feedback`
 
-| Property | Value |
-| ----------- | ----------------- |
-| Name | RespondToFeedback |
-| Description | Calling a predefined flow to respond to the sentiment within the user’s feedback |
- {: title="respond to feedback"}
-		
 
 ![](images/sentiment9.png =20%x*  "")
 
@@ -184,13 +152,8 @@ Click **[Insert]** button to add component to the flow.
 
 	
 28. Select **“Main Flow”** in the main list of flows and click on the ![](../images/add.png =1%x*  "") next to the **“Intent Events”** to map the correct intent to the **“collect.feedback”**.
-
-| Property | Value |
-| ----------- | ----------------- |
-| Intent Name | pizza.reg.giveFeedback |
-| Mapped Flow | collect.feedback |
- {: title="give feedback"}
-		
+    *   **Intent Name** - `pizza.reg.giveFeedback`
+    *   **Mapped Flow** - `collect.feedback`
 
 ![](images/sentiment11.png =20%x*  "")
 

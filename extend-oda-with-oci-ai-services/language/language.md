@@ -12,25 +12,22 @@ This will follow a similar process to the **Detect Sentiment** flow above.
 1. Navigate to the Flow Designer page for your skill.
 	
 2. Click **[+ Add Flow]** button to add a new flow to the skill using the following properties.
-   | Property | Value |
-   | ----------- | ----------------- |
-   | Name | intent.unresolved.with.language.check |
-   | Description | Customised Unresolved Intent flow that calls the OCI AI Select Language service |
-   | Intent Name | Not Defined |
-    {: title="custom unresolved intent"}
-		
 
-   -  Check **“open created flow afterwards”** and click **[Create]**
+    *   **Name** - `intent.unresolved.with.language.check`
+    *   **Description** - `Customised Unresolved Intent flow that calls the OCI AI Select Language service`
+    *   **Intent Name** - `Not Defined`
+    	
+
+Check **“open created flow afterwards”** and click **[Create]**
 
 			
 3. As we want to check the language, as soon as the Flow is called, add a **“Call REST Service”** component as the Start State for the flow.
-   | Property | Value |
-   | ----------- | ----------------- |
-   | Name | CallLanguageService |
-   | Description | Call OCI Language API – Detect Language |
-    {: title="Detect language"}
 
-   - Click **[Insert]** to update the flow
+    *   **Name** - `CallLanguageService`
+    *   **Description** - `Call OCI Language API – Detect Language`
+
+
+Click **[Insert]** to update the flow
 			
 4. In the **“CallLanguageService”** component palette select the **“DetectLanguage”** REST service from the dropdown list.
 
@@ -43,7 +40,9 @@ This will follow a similar process to the **Detect Sentiment** flow above.
 	- Set the Request Body – **Expression** switch to **“ON”**
 
 	- Paste the following into the Request Body Field
-				`{ "text": "${system.message.messagePayload.text}" }`
+				```
+            { "text": "${system.message.messagePayload.text}" }
+            ```
 			
 	- Click outside the field to accept the input.
 
@@ -51,13 +50,9 @@ This will follow a similar process to the **Detect Sentiment** flow above.
 
 	
 8. As Flow Scoped variables are only available within the flow in which they were created, create another “Flow” variable in which to store the Response from the AI REST service.  As these need only be unique within the current flow, we can use the same name as before.
-
-	| Property | Value |
-	| ----------- | ----------------- |
-	| Name | AIServicePayload |
-	| Description | Variable to hold AI Service Response |
-	| Variable Type | MAP |
-    {: title="Detect response"}
+    *   **Name** - `AIServicePayload`
+    *   **Description** - `Variable to hold AI Service Response`
+    *   **Variable Type** - **MAP**
 
 
     - Click **[Apply]** to create the variable
@@ -75,12 +70,8 @@ This will follow a similar process to the **Detect Sentiment** flow above.
 
 	
 13. Add a **“Send Message”** component to the flow to indicate an invalid REST service call. Again because it is scoped to the specific flow we can reuse the component name.
- 
-    | Property | Value |
-    | ----------- | ----------------- |
-    | Name | RequestFailed |
-    | Description | Unsuccessful REST Request Message |
-     {: title="failed request"}
+    *   **Name** - `RequestFailed`
+    *   **Description** - `Unsuccessful REST Request Message`
 
     - Click **[Insert]** button to add component to the flow.
 
@@ -88,7 +79,7 @@ This will follow a similar process to the **Detect Sentiment** flow above.
 
 15. Again, enter the failed message Resource Bundle reference to print the appropriate output message, if the REST service fails.
 
-		`${rb('requestFailed.message')}`
+		${rb('requestFailed.message')}
 
 	
 16. Select the **“CallLanguageService”** state in the Flow to expose its component palette and navigate to the **“Transitions”** tab.
@@ -101,12 +92,9 @@ This will follow a similar process to the **Detect Sentiment** flow above.
 
 	
 19. Select **“Add State”** from the **“Transition To”** dropdown list.  This time add an **“Invoke flow”** component.
- 
- | Property | Value |
- | ----------- | ----------------- |
- | Name | RespondToLanguage |
- | Description | Calling a predefined flow to respond to the language used in the given utterance |
-  {: title="respond to language"}
+    *   **Name** - `RespondToLanguage`
+    *   **Description** - `Calling a predefined flow to respond to the language used in the given utterance`
+
 		
 
 20. Select the **“respond.to.language”** flow from the choice of available flows in the dropdown list.
@@ -117,7 +105,7 @@ This will follow a similar process to the **Detect Sentiment** flow above.
 
 23. Paste the following ${freemarker expression} to retrieve the language detected in the  utterance.
 
-        `${AIServicePayload.value.responsePayload.languages[0].name}`
+        ${AIServicePayload.value.responsePayload.languages[0].name}
 
 	- Click the ![](../images/save.png =1%x*  "") ("Tick") to save the parameter definition
 			
