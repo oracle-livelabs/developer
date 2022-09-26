@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This lab walks you through the steps to set up Java Management Service and Management Agent plugins on your OCI compute instance host using the installation script to allow Java Usage Tracking and Lifecycle Management by the Java Management Service (JMS).
+This lab walks you through the steps to set up Java Management Service (JMS) and Management Agent plugins on your OCI compute instance host using the installation script. JMS allows Java Usage Tracking and Lifecycle Management.
 
 Estimated Time: 15 minutes
 
@@ -20,7 +20,7 @@ In this lab, you will:
 
 ## Task 1: Transfer installation script to the compute instance
 
-> **Note:** The following tasks make use of OCI Cloud Shell to SSH into the compute instance. You can also use your own preferred command line interface to perform the same tasks, however we recommend using OCI Cloud Shell instead if your local machine has network restrictions and proxies preventing SSH connections. 
+> **Note:** The following tasks make use of OCI Cloud Shell to use SSH to connect to the compute instance. You can also use your own preferred command line interface to perform the same tasks. However, we recommend using OCI Cloud Shell instead if your local machine has network restrictions and proxies preventing SSH connections. 
 
 1. Click the Cloud Shell icon in the console header.
 
@@ -138,7 +138,8 @@ Now that the Management Agent has been set up in your compute instance, it will 
 
 - Use the [Troubleshooting](https://docs.oracle.com/en-us/iaas/jms/doc/troubleshooting.html#GUID-2D613C72-10F3-4905-A306-4F2673FB1CD3) chapter for explanations on how to diagnose and resolve common problems encountered when installing or using Java Management Service.
 
-- If the problem still persists or if the problem you are facing is not listed, please refer to the [Getting Help and Contacting Support](https://docs.oracle.com/en-us/iaas/Content/GSG/Tasks/contactingsupport.htm) section or you may open a support service request using the **Help** menu in the Oracle Cloud Console.
+- If the problem still persists or it is not listed, then refer to the [Getting Help and Contacting Support](https://docs.oracle.com/en-us/iaas/Content/GSG/Tasks/contactingsupport.htm) section. You can also open a support service request using the **Help** menu in the OCI console.
+
 
 ## Acknowledgements
 

@@ -31,7 +31,7 @@ If you are not the tenancy administrator, there may be additional policies you m
 
 **If your group already has the permissions listed in part 6 of this task, you may skip to Task 2.**
 
-1. First, make sure you are in your home region.
+1. First, make sure you are in your home region (under Region in the drop down list)).
 
 	![Home region](images/home-region.png "home-region")
 
@@ -42,7 +42,7 @@ If you are not the tenancy administrator, there may be additional policies you m
 
 
 3. Click on Create Group
-
+For this workshop, you need to create your own group.
 	![Create group](images/create-group.png "create-group")
 
 
@@ -50,17 +50,22 @@ If you are not the tenancy administrator, there may be additional policies you m
 
 	![Group details](images/group-details.png "group-details")
 
-  Once you have filled in these details, click create. Your group should show up under Groups
+  Once you have filled in these details, click *Create*. Your group should show up under Groups
 
 ![New group showing up](images/group-created.png "group-created")
 
+5. Add your user to the group that you have just created by selecting the name of the group you have made and select "add user to group"
 
-5. Navigate to policies and click Create Policy
+	![Adding user to group](images/add-user-group.png "add-user-group")
+
+
+6. Navigate to *Policies* under Identities and click *Create Policy*
 
 	![Policy navigation](images/policy-navigation.png "policy-navigation")
+7. Select a pre-assigned compartment or create a new one. The policies will be associated with that compartment.
 
 	![Policy creation](images/create-policy.png "create-policy")
-6. You should see a page like this. This is where you will create the policy that will give the group permission to execute the setup for this workshop. (note: replace oracleonpremjava(root) with the root of your tenancy)
+8. You should see a page like this. This is where you will create the policy that will give the group permission to execute the setup for this workshop. (note: replace oracleonpremjava(root) with the root of your tenancy)
 
 ![Policy details](images/policy-details.png "policy-details")
 
@@ -74,10 +79,6 @@ Select **Show manual editor** and copy and paste these policies in the box below
 	Allow group myToDoGroup to manage objects in tenancy
 	</copy>
 	```
-7. Add your user to the group that you have just created by selecting the name of the group you have made and select "add user to group"
-
-	![Adding user to group](images/add-user-group.png "add-user-group")
-
 ## Task 2: Launch the Cloud Shell
 
 
@@ -182,14 +183,16 @@ The setup script uses Terraform, Bash scripts, and SQL to automate the creation 
 ![Delete authentication token](images/delete-auth-token.png "delete-auth-token")
 
 7. The setup will ask you to enter the admin password for the database. Database passwords must be 12 to 30 characters and contain at least one uppercase letter, one lowercase letter, and one number. The password cannot have the double quote (") character or the word "admin".
+![Database Admin Password](images/db-password-prompt.png "db-password-prompt")
 
-	![Database Admin password](images/db-password-prompt.png "db-password-prompt")
     
+8. The setup will ask you to create a UI Username and a password for it. You will need this in order to access the application.
+![UI Admin and Password](images/UI-Username-prompt.png "UI-username-prompt")
 
 ## Task 6: Monitor the Setup
 The setup should take around 20 minutes to complete. During the setup, the cloud shell will output its progress, so keep an eye on it to see what it's doing. If there are any errors, you should check the logs located in the $MTDRWORKSHOP_LOG directory.
 
-1. The setup will update you with the progress of the resource creation. Wait for the setup to complete to move on to the next lab
+1. The setup will update you with the progress of the resource creation. Wait few minutes for the setup to complete to move on to the next lab 
 
 	![Setup progress feedback](images/resource-creation-update.png "resource-creation-update")
 
