@@ -36,7 +36,7 @@ This lab assumes you have:
 
   ![Web Credentials](images/4-apex-5-2.png)
 
-4. Using the same password used for the founder instance (marketplace, Section 1- Task 2), update the password in 'Client or Password' field and 'Apply Changes'.
+4. Using the same password used for the founder instance ( marketplace, Lab 1 - Task 13), update the password in 'Client or Password' field and 'Apply Changes'.
 
   ![Web Credentials](images/4-apex-5-4.png)
 
@@ -44,11 +44,11 @@ This lab assumes you have:
   - dealer-1-auth-obp (john_dealer1 account)
   - dealer-2-obp-auth (sam_dealer2 account)
 
-## Task 2: Complete Car Marketplace Workshop by Trading a Car
+## Task 2: Finally - Complete Car Marketplace Workshop by Trading a Car
 
-You will now create a car and simulate a transaction between the founder organization and a car dealer partner. When a car is added to the Marketplace, tokens are put on hold in the founder instance and then transacted with partner dealerships as necessary.
+You will now create a car and simulate a transaction between the founder organization and a car dealer partner. When a car is added to the Marketplace, tokens are put on hold in the founder instance and then transacted with partner dealerships as necessary. 
 
-## Task 3: Add a car to dealer1 Inventory
+# Task 3: Add a car to dealer1 Inventory
 
 1. Login as a dealer (e.g. Dealer1) and land on My Inventory.
 

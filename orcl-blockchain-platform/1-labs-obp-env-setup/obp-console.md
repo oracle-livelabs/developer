@@ -519,6 +519,8 @@ Use IDCS to create and add both 'john_\dealer1' and 'sam_\dealer2' users, and th
 
 16. Repeat tasks 1-16 to create the 'sam\_dealer2' user and add to the 'dealer2' instance.
 
+17. Repeat tasks 1-16 to create the 'marketplace' user and add to the 'marketplace' instance.
+
 
 You may now proceed to the next lab.
 
