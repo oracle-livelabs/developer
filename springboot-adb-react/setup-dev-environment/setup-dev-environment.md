@@ -192,7 +192,7 @@ The setup script uses Terraform, Bash scripts, and SQL to automate the creation 
 ## Task 6: Monitor the Setup
 The setup should take around 20 minutes to complete. During the setup, the cloud shell will output its progress, so keep an eye on it to see what it's doing. If there are any errors, you should check the logs located in the $MTDRWORKSHOP_LOG directory.
 
-1. The setup will update you with the progress of the resource creation. Wait for the setup to complete to move on to the next lab
+1. The setup will update you with the progress of the resource creation. Wait few minutes for the setup to complete to move on to the next lab 
 
 	![Setup progress feedback](images/resource-creation-update.png "resource-creation-update")
 
