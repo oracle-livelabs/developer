@@ -23,7 +23,7 @@ Up until now we've worked on the UI (front end) of your application, but now it'
 
 1. On the far left side of the Designer's navigator, click the third tab, **Services**:
 
-	![Services](images/servicetab.png)
+	![Services](images/servicetab2.png)
 
 2. Click **+ Service Connection**.
 
