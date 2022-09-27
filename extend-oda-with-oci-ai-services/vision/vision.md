@@ -65,10 +65,7 @@ The output will be a base64 payload and that will be stored in a variable named 
 	
 }
 ```
- * **featureType**: You can see above that we have featureType: `TEXT_DETECTION`. 
-That means we want this service to detect text in the image. This service also accepts other types of analysis like `IMAGE_CLASSIFICATION` and `OBJECT_DETECTION`
- * **data**: We passe the variable **b64** value into the request.
- * **ocid**: Replace the compartmentId with your own value, as explained in **LAB 1: Task 4**
+
 
 ![](images/rest3.png =20%x*  "") 
 
