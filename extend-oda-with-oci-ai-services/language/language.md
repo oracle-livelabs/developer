@@ -114,7 +114,7 @@ Click **Insert** to update the flow
 25. Select **Main Flow** in the main list of flows and click on the “Unresolved Intent” entry under “Built-In Event” to expose the edit pencil icon.
 			
 	  ![](images/l1.png.png =60%x*  "")
-      
+
 26. Select **intent.unresolved.with.language.check** from the list of available flows and click **[Apply]**
 
 	![](images/l2.png.png =60%x*  "")
@@ -139,9 +139,5 @@ This completes the development of the custom Unresolved Intent flow that utilise
    - **Chcę zamówić hamburgera” (Polish)**
    - **햄버거를 주문하고 싶어요” (Korean)**
    - **Vreau să comand un hamburger” (Romanian)**
-		
-
-This ends the Hands-on lab!
-
-In this short session you have expanded on the “Pizza Order” bot and would have seen how the Digital Assistant can easily utilise the sophisticated capabilities presented by the OCI AI services.
+	
 
