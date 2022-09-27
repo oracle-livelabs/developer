@@ -61,11 +61,12 @@ The output will be a base64 payload and that will be stored in a variable named 
         "source": "INLINE",
         "data": "${b64.value}"
     },
-    "compartmentId": "<get your ocid>"
+    "compartmentId": "copy your ocid here"
 	
 }
 ```
- * **featureType**: You can see above that we have featureType: **TEXT_DETECTION** . That means we want this service to detect text in the image. This service also accepts other types of analysis like **IMAGE_CLASSIFICATION** and **OBJECT_DETECTION**
+ * **featureType**: You can see above that we have featureType: **TEXT_DETECTION** . 
+That means we want this service to detect text in the image. This service also accepts other types of analysis like **IMAGE_CLASSIFICATION** and **OBJECT_DETECTION**
  * **data**: We passe the variable **b64** value into the request.
  * **ocid**: Replace the compartmentId with your own value, as explained in **LAB 1: Task 4**
 
