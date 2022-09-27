@@ -81,7 +81,7 @@ Save the value in notepad. It will be used further in the LAB.
  | Property | Value |
  | ----------- | ----------------- |
  | Name | DetectLanguage |
- | Endpoint | https://language.aiservice.**<ata-Center-Region>**.oci.oraclecloud.com/20210101/actions/detectDominantLanguage. <br><br> Where **<Data-Center-Region>** matches the home region to which you have provisioned your tenancy and the ODA instance. <br><br> eg: language.aiservice.**ap-sydney-1**.oci.oraclecloud.com  |
+ | Endpoint | https://language.aiservice.**Data-Center-Region**.oci.oraclecloud.com/20210101/actions/detectDominantLanguage. <br><br> Where **Data-Center-Region** matches the home region to which you have provisioned your tenancy and the ODA instance. <br><br> eg: language.aiservice.**ap-sydney-1**.oci.oraclecloud.com  |
  | Description | REST Resource for AI Language Service – Detect Language |
  | Methods | **POST** <br> Choose the POST method from the drop-down list displayed when you click on the Methods field. |
 
@@ -145,7 +145,7 @@ Now we do the same for the Language Sentiment API service.
    | Property | Value |
    | ----------- | ----------------- |
    | Name | DetectSentiment |
-   | Endpoint | https://language.aiservice.**<Data-Center-Region>**.oci.oraclecloud.com/20210101/actions/batchDetectLanguageSentiments <br> <br> Where **<Data-Center-Region>** matches the home region to which you have provisioned your tenancy and the ODA instance. <br><br> eg: language.aiservice.**ap-sydney-1**.oci.oraclecloud.com |
+   | Endpoint | https://language.aiservice.**Data-Center-Region**.oci.oraclecloud.com/20210101/actions/batchDetectLanguageSentiments <br> <br> Where **Data-Center-Region** matches the home region to which you have provisioned your tenancy and the ODA instance. <br><br> eg: language.aiservice.**ap-sydney-1**.oci.oraclecloud.com |
    | Description | REST Resource for AI Language Service – Detect Sentiment |
    | Methods | POST |
    | Authentication Type | OCI Resource Principal |
@@ -186,7 +186,7 @@ The last service to configure is the OCI AI Vision.
  | Property | Value |
  | ----------- | ----------------- |
  | Name | AnalyzeImage |
- | Endpoint | https://vision.aiservice.**<Data-Center-Region>**.oci.oraclecloud.com/20220125/actions/analyzeImage. <br><br> Where **Data-Center-Region** matches the home region to which you have provisioned your tenancy and the ODA instance. <br><br> eg: vision.aiservice.**ap-sydney-1**.oci.oraclecloud.com  |
+ | Endpoint | https://vision.aiservice.**Data-Center-Region**.oci.oraclecloud.com/20220125/actions/analyzeImage. <br><br> Where **Data-Center-Region** matches the home region to which you have provisioned your tenancy and the ODA instance. <br><br> eg: vision.aiservice.**ap-sydney-1**.oci.oraclecloud.com  |
  | Description | REST Resource for AI Vision Service – Analyze Image |
  | Methods | **POST** <br> Choose the POST method from the drop-down list displayed when you click on the Methods field. |
 
