@@ -31,7 +31,7 @@ If you are not the tenancy administrator, there may be additional policies you m
 
 **If your group already has the permissions listed in part 6 of this task, you may skip to Task 2.**
 
-1. First, make sure you are in your home region (under Region in the drop down list)).
+1. Replace us-phoenix-1 in "[https://objectstorage.us-phoenix-1.oraclecloud.com](https://objectstorage.us-phoenix-1.oraclecloud.com)" with your region (see the Cloud shell promipt).
 
 	![Home region](images/home-region.png "home-region")
 
