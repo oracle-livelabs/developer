@@ -27,17 +27,17 @@
             "filename": "../../extend/extend.md"
         },
         {
-            "title": "Lab 4: Add detect sentiment",
+            "title": "Lab 4: Add the Detect Sentiment Capability",
             "description": "Labs that follow the introduction are numbered, starting with Lab 1",
             "filename": "../../sentiment/sentiment.md"
         },
         {
-            "title": "Lab 5: Add detect language",
+            "title": "Lab 5: Add the Detect Language Capability",
             "description": "Labs that follow the introduction are numbered, starting with Lab 1",
             "filename": "../../language/language.md"
         },
         {
-            "title": "Lab 6: Add analyze image",
+            "title": "Lab 6: Add the Analyze Image Capability",
             "description": "Labs that follow the introduction are numbered, starting with Lab 1",
             "filename": "../../vision/vision.md"
         },

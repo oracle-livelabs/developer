@@ -1,9 +1,9 @@
 <h1>Introduction</h1>
 
-While using natural language processing within a chatbot allows for more natural interaction with an end user, it can sometimes be difficult to fully replicate the ability of a live agent to both visualize the real-world object being discussed as well as respond to the user's reactions during the discussion. We investigate how integrating various Oracle Cloud Infrastructure (OCI) AI services can help drive the nature of the conversation. Experiment with enhancing Oracle Digital Assistant so the chatbot can recognize physical objects being discussed and react to user sentiment in conversation._
+Even though natural language processing (NLP) enables a skill to perform naturalistic interactions with its users, it can't fully replicate how a live agent visualizes an actual object and reacts accordingly to customer inquiries and complaints. In these labs, you'll learn how you can build a skill that can also react to customer sentiment and recognize physical objects though the help of various Oracle Cloud Infrastructure (OCI) AI services.
 
 ## Before you Begin
-In this tutorial, you're going to build out a partially built “Pizza skill, to bring in an “order pizza” process as well as introducing the use of the OCI AI services to expand on the native Natureal Language Processing (NLP) capabilities of the Oracle Digital Assistant. functionality that will flow to an existing skill that already has a completed cancel order flow.
+In these labs, you'll build out a Pizza skill and integrate it with Oracle Cloud Infrastructure (OCI) AI services.
 
 ### Background
 Oracle Digital Assistant is an environment for building _digital assistants_, which are user interfaces driven by artificial intelligence (AI) that help users accomplish a variety of tasks in natural language conversations. Digital assistants consist of one or more _skills_, which are individual chatbots that are focused on specific types of tasks.
@@ -14,11 +14,11 @@ In this lab, you will create a skill that can be used for interactions with a pi
  - Validate, debug and test your skill.
 
 ### What Do You Need?
- - Access to the OCI Console  - As used to provision the instance of the Oracle Digital Assistant.
+Access to the  Oracle Cloud Infrastructure (OCI) console, which is used to provision the Oracle Digital Assistant instance.
 
-**Note:** If you are using an Oracle hosted ODA instance for this tutorial, the required OCI service permissions as described in LAB 1 below have been already defined and you could skip that section.  If you are using your own OCI environment (such as a Trial instance) please perform the steps in LAB 1 prior to building out your Digital Assistant.
+***Note:*** If you are using an Oracle-hosted Digital Assistant instance for this tutorial, the OCI service permissions that are described in Lab 1 have been already defined, so you can skip Lab 1. However, if you're using your own OCI environment (such as a trial instance) you must complete Lab 1 or else you won't be able complete Labs 4, 5, and 6.
 
- - The starter skill, **AIServiceStarterSkill.zip**, which is included with this tutorial. [Download this file to your local system](https://docs.oracle.com/en/cloud/paas/digital-assistant/tutorial-skill/files/PizzaKing_Complete(1.0).zip) for your reference.
+ - The starter skill, **HOL4303StarterSkillv11(1.1).zip**, which is included with this tutorial. [Download this file to your local system](https://objectstorage.eu-amsterdam-1.oraclecloud.com/n/idppdqf7rmfq/b/HOL/o/HOL4303StarterSkillv11(1.1).zip) for your reference.
  
  - Access to Oracle Digital Assistant Version 22.06 or higher
 		

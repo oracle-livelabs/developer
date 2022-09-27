@@ -160,8 +160,8 @@ In this step, you're going to declare a variable for the cbe.confirmation entity
 
 ![](images/order_pizza_flow_flow_variables.png)
 
-4.  Click **Add Variable**.
-5.  Complete the dialog by adding the following values before clicking **Apply**.
+3.  Click **Add Variable**.
+4.  Complete the dialog by adding the following values before clicking **Apply**.
     *   **Name** - `confirmation`
     *   **Description** - `Flow branching variable`
     *   **Variable Type** - **Entity**
@@ -301,7 +301,10 @@ If you were writing the dialog definition in YAML instead of the Visual Flow Des
    ``` 
     ${confirmation.value.confirmation.primaryLanguageValue}
     ```
-    This expression uses the format for referencing an item in a composite bag entity: `${cbeVariableName.value.itemName.primaryLanguageValue}`.
+    This expression uses the format for referencing an item in a composite bag entity:
+    ```
+    ${cbeVariableName.value.itemName.primaryLanguageValue}
+    ```
     
 
 ![](images/order_pizza_flow_confirmation_fm.png)
@@ -355,9 +358,9 @@ Repeat the prior conversation in the Skill Tester for both the Yes and No option
     ![](images/order_pizza_flow_diagram.png)
         
 
-*   Click **Reset**.
-*   Enter _Order pizza_ again. Select the pizza type and size.
-*   When you reach the confirmSelection state, choose **No**.
+4.   Click **Reset**.
+5.   Enter _Order pizza_ again. Select the pizza type and size.
+6.  When you reach the confirmSelection state, choose **No**.
     
     The conversation gets routed from the Main Flow, through the intent\_reg.orderPizza flow, and then finally to the intent.reg.cancelOrderflow because of the No answer given for the confirmSelection state.
     
