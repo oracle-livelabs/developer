@@ -10,12 +10,11 @@ In this Lab we will configure the dedicated flow that will allow the user to upl
 ## Task 1: Map the Flow to Intent
 
 1.  The starter skill has a **intent.apply.voucher**, but we need to map it to the intent.
-    - Click <strong>Flows</strong> in the left navbar, then click <strong>Main Flow</strong>.
-    - Click <add event icon> next to Intent Events.
-    - Select <strong>pizza.apply.voucher</strong> from the Intent Name field.
-    - Select <strong>pizza.apply.voucher</strong> from the Mapped Flow field. Then click <strong>Create</strong>.
-
-![](images/map.PNG =20%x*  "")
+    - Click **Flows** in the left navbar, then click **Main Flow**.
+    - Click  ![+](images/add.png)  next to **Intent Events**.
+    - Select **pizza.apply.voucher** from the Intent Name field.
+    - Select **pizza.apply.voucher** from the Mapped Flow field. Then click **Create**.
+        ![](images/map.png =20%x*)
 
 
 
@@ -41,10 +40,10 @@ The output from the custom component is a base64 payload, which gets stored in a
 ![](images/rest.png =20%x*  "") 
 
 - Click the callRestService state to open the Component page of its propety inspector.
-- Select <strong>AnalyeImage</strong> from the Rest Service field.
-- Select <strong>Post</strong> from the Method field.
+- Select **AnalyeImage** from the Rest Service field.
+- Select **Post** from the Method field.
 ![](images/rest2.png =15%x*  "") 
-- Switch on <strong>Expression</strong>.
+- Switch on **Expression**.
 
 - You're going to paste the following object into the Request Body field. Before you do, however, you must define the <code>compartmentId</code> key with the OCID value for the compartment that you set in Task 1: Granting Access to OCI AI Services ![]() in Lab 1. 
 
@@ -66,7 +65,7 @@ The output from the custom component is a base64 payload, which gets stored in a
 The <code>"featureType": "TEXT_DETECTION"</code> means that the service detects text in the image. This service also accepts other types of analysis like <code>IMAGE_CLASSIFICATION</code> and <code>OBJECT_DETECTION</code>. 
 <br><code>"data": "${b64.value}"</code> extracts the value of the b64 variable that stores the base64 payload.
 
- - From the Result Variable menu, select <strong>output</strong>.
+ - From the Result Variable menu, select **output**.
 
 
 ![](images/rest3.png =20%x*  "") 
@@ -82,12 +81,12 @@ Note: The goal of this lab is to just introduce you to the potential of the OCI 
 
 ## Task 3: Test the Flow
 1.	Train the skill using Trainer Tm. This might take a few minutes.
-2. When the training completes, click <strong>Preview</strong>. 
+2. When the training completes, click **Preview**. 
 3. Enter _I have a voucher_.
 
-![](images/voucher1.PNG =20%x*  "") 
+![](images/voucher1.png =20%x*  "") 
 
-4. When prompted to upload a voucher, click <strong>Attach</strong> and then copy one of the following URLs into the Attachement URL field:
+4. When prompted to upload a voucher, click **Attach** and then copy one of the following URLs into the Attachement URL field:
 
 - Pizza Voucher for $25:
 <a href = 'https://objectstorage.eu-amsterdam-1.oraclecloud.com/n/idppdqf7rmfq/b/HOL/o/Pizza%2BVoucher25.png'>https://objectstorage.eu-amsterdam-1.oraclecloud.com/n/idppdqf7rmfq/b/HOL/o/Pizza%2BVoucher25.png</a> 

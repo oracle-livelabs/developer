@@ -90,10 +90,10 @@ You've completed the answer intent flow, but it can't yet display any answers. T
 
 1.  Click **Main Flow**.
 2.  If it's not already open, click **Events**.
-3.  Click ![](../images/add_action_icon.png) next to Built-In Events.
-![](images/add_built-in_event_icon.png)
+3.  Click ![](images/add_action_icon.png) next to Built-In Events.
+            ![](images/add_built-in_event_icon.png)
 4.  Select **Answer Intent** from the Unhandled Event Type list.
-6.  Select **pizza.ans.genericHandler** as the mapped flow. Then click **Create**.
+5.  Select **pizza.ans.genericHandler** as the mapped flow. Then click **Create**.
 
 ![](images/answer_intent_mapping.png)
 <!-- 
