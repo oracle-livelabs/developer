@@ -280,7 +280,7 @@ Now that we have tested our project locally, we can connect to our remote instan
 
 ## Task 10: Initialization and Issuance of Car Marketplace FiatToken
 
-1. Import the Marketplace Tokenization Postman collection [Marketplace Tokenization](files/MarketplaceTokenization.postman_collection_final.json?download=1) and assign variable definitions as shown.
+1. Import the Marketplace Tokenization Postman collection [Marketplace Tokenization](files/MarketplaceTokenization.postman_collection?download=1) and assign variable definitions as shown.
 
   ![Import Collection](images/import_collection.png)
   ![Import Collection 2](images/import_collection2.png)
