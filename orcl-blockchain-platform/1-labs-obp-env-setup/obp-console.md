@@ -126,13 +126,15 @@ Select '`car_marketplace_cc`.controller.go' under '`car_marketplace_cc`/src/cont
 1. Open the Car Marketplace specification file and scroll to the bottom. This is where your customMethods are listed.
 
 2. First, add the imports needed for the custom methods.
+
      ```
     <copy>
-    '"encoding/json"'
-    '"fmt"'
-    '"time"'
+    "encoding/json"
+    "fmt"
+    "time"
     <copy>
-    
+
+    ```
 
 
 3. We've modified existing CRUD operations and defined custom methods for the following functions:
