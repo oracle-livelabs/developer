@@ -32,7 +32,7 @@ This lab assumes you have:
     - Lab: Create a Blockchain Network connecting 3 Organizations & Configuring Oracle Blockchain App Builder
     
 
-## Task 1: Invoke and Query Ledger marketplace chaincode from App Builder in local environment
+<!-- ## Task 1: Invoke and Query Ledger marketplace chaincode from App Builder in local environment
 
   Blockchain App Builder contains a built-in wizard to assist you with invoking or querying your chaincode.
 
@@ -47,12 +47,12 @@ This lab assumes you have:
 
   ![Function parameters](images/2-app-builder-5-2.png)
 
-3. Click **Invoke**. --> Test Some sample invoke methods - App Builder
+3. Click **Invoke**. Test Some sample invoke methods - App Builder
 
-4. Display Request and Response - Request/Response.
+4. Display Request and Response - Request/Response. -->
 
 
-## Task 2: Deploy Smart Contract (Chaincode) to Founder Instance (Marketplace) from Blockchain App Builder
+## Task 1: Deploy Smart Contract (Chaincode) to Founder Instance (Marketplace) from Blockchain App Builder
 
   Now that we have tested our project locally, we can connect to our remote instances.
 
@@ -76,7 +76,7 @@ This lab assumes you have:
 
   ![Founder Deployment](images/2-car-marketplace-6-4.png)
 
-## Task 3: Import Marketplace chaincode package from app builder
+## Task 2: Import Marketplace chaincode package from app builder
 
 1. In Visual Studio Code, click on the **O** icon on the left-hand menu to use the Blockchain App Builder Extension.
 
@@ -84,7 +84,7 @@ This lab assumes you have:
 
   ![Car Marketplace Chaincode Package](images/2-app-builder-7-1.png)
 
-## Task 4: Install and Deploy Marketplace chaincode package onto Participant Instances using Oracle Cloud Blockchain Platform Console(dealer1 & dealer2)
+## Task 3: Install and Deploy Marketplace chaincode package onto Participant Instances using Oracle Cloud Blockchain Platform Console(dealer1 & dealer2)
 
   To install and re-deploy the chaincode on partner instances, use the package in Task3 (above) and then approve the chaincode definition from the partner instances (in this case, 'dealer1' and 'dealer2').
 
@@ -151,7 +151,7 @@ This lab assumes you have:
 13. Repeat steps 1-12 for 'dealer2' instance
 
 
-## Task 5: User Enrollment - Perform on All nodes (marketplace, dealer1, dealer2)
+## Task 4: User Enrollment - Perform on All nodes (marketplace, dealer1, dealer2)
 
   Oracle Blockchain Platform supports enrollments to the REST proxy. You use enrollments with token chaincodes to ensure the identities of the users completing token transactions. To do this, when you add enrollments for token use cases, specify a user ID for each enrollment (founder ID in this case), and specify one and only one user for each enrollment.
 
@@ -164,13 +164,13 @@ This lab assumes you have:
 
   ![Create New Enrollment](images/create_new_enrollment.png)
 
-4. Input enrollment information. See sample enrollment as example. Enrollment user had to be created in idcs. In this example 'local.user' is used. Make sure the user has REST_Client role assoicated with the Blockchain instance.
+4. Input enrollment information. See sample enrollment as example. Enrollment user had to be created in idcs. In this example 'marketplace','dealer1','dealer2' is used. Make sure the user has REST_Client role assoicated with the Blockchain instance.
 
   ![Sample Enrollment](images/sample_enrollment.png)
 
 5. Click Enroll.
 
-## Task 6: Create Tokenization Chaincode
+## Task 5: Create Tokenization Chaincode
 
 The flow for developing smart contracts for tokenization begins with creating a specification file that describes our fiat token. `Car_Tokenization.yml` describes our FiatToken structure: AssetType, `Token_id`, `Token_name`, `Token_desc`, `Token_type`, and behavior.  
 
@@ -187,7 +187,7 @@ You can see sample specification files (and write your own specifications) in ei
   Make sure the **Details** of your specification read:
   ![Car Tokenization Specification Details](images/2-app-builder-tokenization-yml.png)
 
-## Task 7: Deploy Tokenization chaincode to Founder Instance
+## Task 6: Deploy Tokenization chaincode to Founder Instance
 
 Now that we have tested our project locally, we can connect to our remote instances.
 
@@ -203,7 +203,7 @@ Now that we have tested our project locally, we can connect to our remote instan
   ![Founder Deployment](images/2-app-builder-tokenization-deploy-marketplace.png)
   ![Founder Deployment](images/2-appbuilder-tokenization-init.png)
 
-## Task 8: Import Tokenization chaincode package from app builder
+## Task 7: Import Tokenization chaincode package from app builder
 
 1. In Visual Studio Code, click on the **O** icon on the left-hand menu to use the Blockchain App Builder Extension.
 
@@ -211,7 +211,7 @@ Now that we have tested our project locally, we can connect to our remote instan
 
   ![Car Tokenization Chaincode Package](images/2-appbuilder-chaincodepackage-tokenization.png)
 
-## Task 9: Install and Deploy Tokenization chaincode package onto Participant Instances
+## Task 8: Install and Deploy Tokenization chaincode package onto Participant Instances
 
   To install and re-deploy the chaincode on partner instances, use the package in Task7 and then approve the chaincode definition from the partner instances (in this case, 'dealer1' and 'dealer2').
 
@@ -278,14 +278,14 @@ Now that we have tested our project locally, we can connect to our remote instan
 13. Repeat steps 2-12 for 'dealer2.'
 
 
-## Task 10: Initialization and Issuance of Car Marketplace FiatToken
+## Task 9: Initialization and Issuance of Car Marketplace FiatToken
 -
 1. Import the Marketplace Tokenization Postman collection [Marketplace Tokenization](files/MarketplaceTokenization.postman_collection_final.json?download=1) and assign variable definitions as shown.
 
   ![Import Collection](images/import_collection.png)
   ![Import Collection 2](images/import_collection2.png)
 
-2. Repeat for the Postman Environment 'Tokenization' (`tokenization_environment.postman_environment.json`) and assign variable definitions. Some sample definitions are shown below.
+2. Enter the environment setup variables in Postman Environment 'Tokenization' (`tokenization_environment.postman_environment.json`) and assign variable definitions. Some sample definitions are shown below.
 
   ![Tokenization Definitions](images/tokenization_definitions.png)
 

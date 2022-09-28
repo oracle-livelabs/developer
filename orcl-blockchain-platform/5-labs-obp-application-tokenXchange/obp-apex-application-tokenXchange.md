@@ -22,11 +22,38 @@ This lab assumes you have:
     - Lab: Create & Setup API Gateway to connect with Smart Contract API's
     - Lab: Building Car Marketplace application using APEX
 
-## Task 1: Setup APEX Web Credentials
+## Task 1: Initialize marketplace, dealer1 and  dealer2 inventories
+
+1. Import the Marketplace Tokenization Postman collection [Marketplace Tokenization](files/Marketplace-Apex-Livelab-Initialization.postman_collection.json?download=1) and assign variable definitions as shown.
+
+  ![Import Collection](images/import_collection.png)
+  ![Import Collection 2](images/import_collection2.png)
+
+2. Enter the environment setup variables in Postman Environment 'Tokenization' (`marketplace_initialization.postman_environment.json`) and assign variable definitions. Some sample definitions are shown below.
+
+  ![Tokenization Definitions](images/apex_init_tokenization_definitions.png)
+
+3. Open tokenization collection, and run integrations as described in steps 1,2,3 by clicking Send invoking the API calls in postman
+
+  ![Tokenization Definitions](images/apex-marketplace-init.png)
+
+  ![Tokenization Definitions](images/apex-dealer1-inventory-init.png)
+
+  ![Tokenization Definitions](images/apex-dealer2-inventory-init.png)
+
+   
+## Task 2: Setup APEX Web Credentials opening Apex console
+
+1. 'Open the Apex Application' and login to 'DEVELOPER' as shown:
+    - Enter 'marketplace' as the **Workspace**.
+    - Enter 'DEVELOPER' as the **Username**.
+    - Enter the **Password** you setup in *Lab 4 --> Task 2 -->Step 4*
+
+  ![Login as Developer](images/4-apex-3-1.png)
 
 1. On the 'App builder' main page page, click on 'Workspace Utilities.'
 
- ![Web Credentials](images/4-apex-5-1.1.png)
+  ![Web Credentials](images/4-apex-5-1.1.png)
 
 2. Now, click on 'Web Credentials'
 
