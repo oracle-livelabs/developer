@@ -107,7 +107,7 @@ Now we'll use the Skill Tester to make sure that the intent is resolved correctl
 
 1.  Before you can chat with the skill, be sure that it's been trained with Trainer Tm:
     *   Click **Train**.
-    ![](images/train.png)*   Choose **Trainer Tm**, then click **Submit**.
+    ![](images/Train.png)*   Choose **Trainer Tm**, then click **Submit**.
 2.  Click **Preview** to open the Skill Tester.
 ![](images/test-icon.png)
 3.  Enter _How many calories?_
