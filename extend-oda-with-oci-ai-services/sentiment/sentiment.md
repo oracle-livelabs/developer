@@ -23,7 +23,7 @@ Check **open created flow afterwards** and click **Create**.
     *   **Description** - `Prompt for customer feedback`
 	
 
-![](images/sentiment2.JPG =60%x*  "")
+![](images/sentiment2.jpg =60%x*  "")
 
 4.  Enter the Question text using the predefined resource bundle.
 
@@ -34,7 +34,7 @@ Check **open created flow afterwards** and click **Create**.
     *   **Description** - `Variable to hold user feedback`
     *   **Variable Type** - `String`
 
-![](images/sentiment3.JPG =60%x*  "")
+![](images/sentiment3.jpg =60%x*  "")
 		
 Click **Apply** to create the “feedbackText” variable.
 
@@ -48,7 +48,7 @@ Click **Apply** to create the “feedbackText” variable.
 
  - Click **Insert** to add the component to the flow
 
-![](images/sentiment4.JPG =60%x*  "")
+![](images/sentiment4.jpg =60%x*  "")
 
 				
 7. In the **CallSentimentService** component palette select the **DetectSentiment** REST service from the dropdown list.

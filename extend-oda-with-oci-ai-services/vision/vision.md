@@ -98,11 +98,11 @@ Note: The goal of this lab is to just introduce you to the potential of the OCI 
 <a href = 'https://objectstorage.eu-amsterdam-1.oraclecloud.com/n/idppdqf7rmfq/b/HOL/o/Pizza%2BVoucher15.png'>https://objectstorage.eu-amsterdam-1.oraclecloud.com/n/idppdqf7rmfq/b/HOL/o/Pizza%2BVoucher15.png</a>
 
 
-![](images/voucher.PNG =30%x*  "") 
+![](images/voucher.png =30%x*  "") 
 
-![](images/result.PNG =40%x*  "") 
+![](images/result.png =40%x*  "") 
 
-![](images/result2.PNG =40%x*  "") 
+![](images/result2.png =40%x*  "") 
 
 
 
