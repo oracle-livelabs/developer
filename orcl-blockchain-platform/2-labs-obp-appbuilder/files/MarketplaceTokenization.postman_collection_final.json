@@ -117,7 +117,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"chaincode\": \"{{bc-chaincode-name}}\",\n    \"args\": [\n        \"CreateAccount\",\n        \"{{bc-organization-id}}\",\n        \"{{bc-admin-user}}\",\n        \"fungible\"\n    ],\n    \"sync\": true\n}",
+					"raw": "{\n    \"chaincode\": \"{{bc-chaincode-name}}\",\n    \"args\": [\n        \"CreateAccount\",\n        \"{{bc-organization-id-founder}}\",\n        \"{{bc-admin-user}}\",\n        \"fungible\"\n    ],\n    \"sync\": true\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -193,7 +193,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"chaincode\": \"{{bc-chaincode-name}}\",\n    \"args\": [\n        \"CreateAccount\",\n        \"{{bc-organization-id}}\",\n        \"{{bc-user-id-1}}\",\n        \"fungible\"\n    ],\n    \"sync\": true\n}",
+					"raw": "{\n    \"chaincode\": \"{{bc-chaincode-name}}\",\n    \"args\": [\n        \"CreateAccount\",\n        \"{{bc-organization-id-1}}\",\n        \"{{bc-user-id-1}}\",\n        \"fungible\"\n    ],\n    \"sync\": true\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -269,7 +269,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"chaincode\": \"{{bc-chaincode-name}}\",\n    \"args\": [\n        \"CreateAccount\",\n        \"{{bc-organization-id}}\",\n        \"{{bc-user-id-2}}\",\n        \"fungible\"\n    ],\n    \"sync\": true\n}",
+					"raw": "{\n    \"chaincode\": \"{{bc-chaincode-name}}\",\n    \"args\": [\n        \"CreateAccount\",\n        \"{{bc-organization-id-2}}\",\n        \"{{bc-user-id-2}}\",\n        \"fungible\"\n    ],\n    \"sync\": true\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -490,7 +490,7 @@
 			"disabled": true
 		},
 		{
-			"key": "bc-organization-id",
+			"key": "bc-organization-id-founder",
 			"value": "marketplace"
 		},
 		{
@@ -520,6 +520,16 @@
 		{
 			"key": "bc-timeout",
 			"value": "60000"
+		},
+		{
+			"key": "bc-organization-id-1",
+			"value": "dealer1",
+			"type": "default"
+		},
+		{
+			"key": "bc-organization-id-2",
+			"value": "dealer2",
+			"type": "default"
 		}
 	]
 }

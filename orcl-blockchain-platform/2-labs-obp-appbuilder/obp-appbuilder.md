@@ -279,8 +279,8 @@ Now that we have tested our project locally, we can connect to our remote instan
 
 
 ## Task 10: Initialization and Issuance of Car Marketplace FiatToken
-
-1. Import the Marketplace Tokenization Postman collection [Marketplace Tokenization](files/MarketplaceTokenization.postman_collection?download=1) and assign variable definitions as shown.
+-
+1. Import the Marketplace Tokenization Postman collection [Marketplace Tokenization](files/MarketplaceTokenization.postman_collection_final.json?download=1) and assign variable definitions as shown.
 
   ![Import Collection](images/import_collection.png)
   ![Import Collection 2](images/import_collection2.png)
@@ -297,8 +297,11 @@ Now that we have tested our project locally, we can connect to our remote instan
     - Step 1 – Initialize Token: This method creates a token and initializes the token properties. The asset and its properties are saved in the state database. This method can be invoked only by the Token Admin of the chaincode.
   ![Initialize Token](images/initialize_token.png)
 
-    - Step 2, 3, 4 – Create Accounts:  This method creates an account for a specified user and token. An account must be created for any user who will have tokens at any point. Accounts track balances, on-hold balances, and transation history.
+    - Step 2, 3, 4 – Create & Associate Accounts(Token Admin, Token User1, Token User2):  This method creates an account for a specified user and token. An account must be created for any user who will have tokens at any point. Accounts track balances, on-hold balances, and transation history. 
+
   ![Create Accounts](images/create_accounts.png)
+  ![Initialize Token](images/user_tokens.png)
+  ![Initialize Token](images/associate_token1.png)
 
     - Step 5, 6 – Add Role: This method adds a role to a specified user and token. This method can be called only by the Token Admin of the chaincode.
   ![Add Role](images/add_role.png)

@@ -44,13 +44,17 @@ This lab assumes you have:
   - dealer-1-auth-obp (john_dealer1 account)
   - dealer-2-obp-auth (sam_dealer2 account)
 
-## Task 2: Finally - Complete Car Marketplace Workshop by Trading a Car
+## Task 2: Complete Car Marketplace Workshop by Trading a Car - Add a car to dealer1 Inventory
 
 You will now create a car and simulate a transaction between the founder organization and a car dealer partner. When a car is added to the Marketplace, tokens are put on hold in the founder instance and then transacted with partner dealerships as necessary. 
 
-# Task 3: Add a car to dealer1 Inventory
+ 1. Go to AppBuilder --> Car Marketplace --> Run Application
 
-1. Login as a dealer (e.g. Dealer1) and land on My Inventory.
+  ![Car Delaership](images/apex-carmarketplace-app.png)
+
+  ![Car Delaership](images/apex-carmarketplace-run.png)
+ 
+ 2. Login as a dealer (e.g. john_dealer1) and land on My Inventory.
 
   ![Car Delaership](images/dealer1-login.png)
 
@@ -69,9 +73,9 @@ You will now create a car and simulate a transaction between the founder organiz
 
   ![Car Delaership](images/apex-addcar.png)
 
-## Task 4: dealer2 - Deposit Tokens in to the account
+## Task 3: dealer2 - Deposit Tokens in to the account
 
-1. Now login as the other dealer, Dealer2.
+1. Now login as the other dealer, sam_dealer2.
 
   ![Car Delaership](images/dealer2-login.png)
 
@@ -85,7 +89,7 @@ You will now create a car and simulate a transaction between the founder organiz
 
   ![Car Delaership](images/apex-accountbalance.png)
 
-## Task 5: dealer2 - Search Car
+## Task 4: dealer2 - Search Car
 
 1. Navigate to Marketplace
 
@@ -95,7 +99,7 @@ You will now create a car and simulate a transaction between the founder organiz
 
   ![Car Delaership](images/apex-carDetailspayment.png)
 
-## Task 6: dealer2 - Purchase and Confirm Purchase
+## Task 5: dealer2 - Purchase and Confirm Purchase
 
 1. Confirm vehicle Purchase
 
@@ -103,7 +107,7 @@ You will now create a car and simulate a transaction between the founder organiz
 
 Purchase order will now be created.
 
-## Task 7: Dealer1 - Review & Confirm the order place by dealer2
+## Task 6: Dealer1 - Review & Confirm the order place by dealer2
 
 1. Return to dealer 1's account, and navigate to orders received. You should be able to see the order placed by dealer 2.
 
@@ -115,7 +119,7 @@ Purchase order will now be created.
 
 This action confirms the order by the seller.
 
-## Task 8: dealer2 - Order Processed and Accepted
+## Task 7: dealer2 - Order Processed and Accepted
 
 1. Return to dealers 2's account, and navigate to orders placed. You will see the order placed should now be processed and ready to complete the purchase.
 
@@ -123,7 +127,7 @@ This action confirms the order by the seller.
 
 Select "Accept Receipt" to complete order or "Cancel Order" to cancel the order.
 
-## Task 10: dealer2 - Generate Invoice & Payment
+## Task 8: dealer2 - Generate Invoice & Payment
 
 1. Generate & View the invoice for the order Processed
 

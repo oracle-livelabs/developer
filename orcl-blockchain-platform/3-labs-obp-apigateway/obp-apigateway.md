@@ -66,7 +66,7 @@ This lab assumes you have:
   ![See Subnet](images/3-gateway-1-8.png) -->
 
 
-## Task 2: Configure VCN
+<!-- ## Task 2: Configure VCN
 
 1. Select 'DHCP Options' on the left-hand side menu and then 'Edit' the default options.
 
@@ -76,37 +76,30 @@ This lab assumes you have:
 
   ![Edit DHCP Options Form](images/3-gateway-2-1.png)
 
-3. Now, select 'CIDR Block' on the left-hand side menu and click 'Add CIDR Block' that matches the screenshot below.
 
-  ![Add CIDR Block](images/3-gateway-2-2.png)
-
-4. Next, select 'Route Tables' on the left-hand side menu and click 'Default Route Table for Car Marketplace VCN.'
+3. Next, select 'Route Tables' on the left-hand side menu and click 'Default Route Table for Car Marketplace VCN.'
 
   ![Default Route table](images/3-gateway-2-3.png)
 
-5. Click 'Add Route Rules.'
+4. Click 'Add Route Rules.'
 
   ![Add Route Rule](images/3-gateway-2-4.png)
 
-6. Fill out the form as follows and click on 'Add Route Rules.'
+5. Fill out the form as follows and click on 'Add Route Rules.'
 
   ![Add Route Rule Form](images/3-gateway-2-5.png)
 
-7. Next, select 'Security Lists' on the left-hand side menu and click 'Default Security List for Car Marketplace VCN.'
+6. Next, select 'Security Lists' on the left-hand side menu and click 'Default Security List for Car Marketplace VCN.'
 
   ![Security Lists](images/3-gateway-2-6-0.png)
 
-8. Click 'Add Ingress Rules.'
+7. Click 'Add Ingress Rules.'
 
   ![Add Ingress Rules](images/3-gateway-2-6.png)
 
-9. Fill out the form as follows and click on 'Add Ingress Rules.'
+8. Fill out the form as follows and click on 'Add Ingress Rules.'
 
-  ![Add Ingress Rules Form](images/3-gateway-2-7.png)
-
-10. **Repeat Steps 8-9** for the first four rows by adding the ingress matching the screenshot below:
-
-  ![All Ingress Rules](images/3-gateway-2-8.png)
+  ![Add Ingress Rules Form](images/3-gateway-2-7.png) -->
 
 
 ## Task 3: Create API Gateway
@@ -124,7 +117,6 @@ This lab assumes you have:
 ## Task 4: Create Gateway Deployment
 
 1. After ensuring the right **Compartment** is selected, find and click on the the gateway corresponding to this LiveLab (e.g. Car Marketplace LiveLab Gateway).
-  ![Choose Compartment and Gateway](images/3-gateway-4-2.png)
 
 2. Click on 'Deployments' in the **Resources** pane and click 'Create Deployment.'
   ![Create Deployment](images/3-gateway-4-3.png)

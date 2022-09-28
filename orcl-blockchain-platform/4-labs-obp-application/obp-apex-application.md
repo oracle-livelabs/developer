@@ -168,7 +168,7 @@ This lab assumes you have:
 
 1. Now, click on 'Shared Components.' Here you will be able to configure application attributes and data sources.
 
-  ![Access Shared Components](images/4-apex-4-1.png)
+  ![Access Shared Components](images/4-apex-4-2.png)
 
 2. Click on 'Application Definition' located under **Application Logic**.
 
@@ -176,7 +176,7 @@ This lab assumes you have:
 
 3. Click the 'Substitions' tab as shown.
 
-  ![Substitions](images/4-apex-4-3.png)
+  ![Substitions](images/4-apex-4-4.png)
 
 4. Set the following **Substitutions** and 'Apply Changes':
     - First, set G_OCI_WEB_CREDENTIAL to OCI_API_Credentials.
