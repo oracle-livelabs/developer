@@ -11,7 +11,7 @@ In this Lab we will configure the dedicated flow that will allow the user to upl
 
 1.  The starter skill has a **intent.apply.voucher**, but we need to map it to the intent.
     - Click **Flows** in the left navbar, then click **Main Flow**.
-    - Click  ![+](images/add.png)  next to **Intent Events**.
+    - Click  ![](../vision/images/add.png)  next to **Intent Events**.
     - Select **pizza.apply.voucher** from the Intent Name field.
     - Select **pizza.apply.voucher** from the Mapped Flow field. Then click **Create**.
         ![](images/map.png =20%x*)
