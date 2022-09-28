@@ -86,7 +86,7 @@ This lab assumes you have:
 
 ## Task 4: Install and Deploy Marketplace chaincode package onto Participant Instances using Oracle Cloud Blockchain Platform Console(dealer1 & dealer2)
 
-  To install and re-deploy the chaincode on partner instances, use the package in Task7 and then approve the chaincode definition from the partner instances (in this case, 'dealer1' and 'dealer2').
+  To install and re-deploy the chaincode on partner instances, use the package in Task3 (above) and then approve the chaincode definition from the partner instances (in this case, 'dealer1' and 'dealer2').
 
 1. Access the 'Service Console' for the 'dealer1' instance.
 
@@ -134,7 +134,7 @@ This lab assumes you have:
 
   ![Approve Chaincode Form](images/2-car-marketplace-7-11.png)
 
-11. Assign the [Endorsement policy](https://docs.oracle.com/en/cloud/paas/blockchain-cloud/usingoci/specify-endorsement-policy.html) by selecting signature under the endorsement policy. Add the policy of performing an endorsement signature by one of the organizations in the network. ou can add an endorsement policy when you instantiate a chaincode. An endorsement policy specifies the members with peers that must approve, or properly endorse, a chaincode transaction before it’s added to a block and submitted to the ledger.
+11. Assign the [Endorsement policy](https://docs.oracle.com/en/cloud/paas/blockchain-cloud/usingoci/specify-endorsement-policy.html) by selecting signature under the endorsement policy. Add the policy of performing an endorsement signature by one of the organizations in the network. You can add an endorsement policy when you instantiate a chaincode. An endorsement policy specifies the members with peers that must approve, or properly endorse, a chaincode transaction before it’s added to a block and submitted to the ledger.
 
     ```
     <copy>
@@ -148,7 +148,7 @@ This lab assumes you have:
 
   ![Check Approved Field](images/2-car-marketplace-7-12.png)
 
-13. Repeat steps 9-12 for 'dealer2' instance
+13. Repeat steps 1-12 for 'dealer2' instance
 
 
 ## Task 5: User Enrollment - Perform on All nodes (marketplace, dealer1, dealer2)
@@ -198,9 +198,10 @@ Now that we have tested our project locally, we can connect to our remote instan
 3. Click on the 'Service Console' -->  Go to 'Nodes' tab from the Blockchain Admin Console Dashboard --> copy the REST Proxy URL of this platform instance.
   ![Service Console](images/2-app-builder-tokenization-deploy-marketplace.png)
 
-4. Changing the target environment in Blockchain AppBuilder from 'Local Environment' to 'Marketplace.' Also change the channel to 'car-marketplace'.
+4. Changing the target environment in Blockchain AppBuilder from 'Local Environment' to 'Marketplace.' Also change the channel to 'car-marketplace'. Add the Init Parameters needed (org_id: marketplace, user_id: marketplace)
 
   ![Founder Deployment](images/2-app-builder-tokenization-deploy-marketplace.png)
+  ![Founder Deployment](images/2-appbuilder-tokenization-init.png)
 
 ## Task 8: Import Tokenization chaincode package from app builder
 
@@ -277,9 +278,9 @@ Now that we have tested our project locally, we can connect to our remote instan
 13. Repeat steps 2-12 for 'dealer2.'
 
 
-## Task 10: Initialization and Issuance of Car Marketplace Fiat Token - Run It with App Builder. Save Input.
+## Task 10: Initialization and Issuance of Car Marketplace FiatToken
 
-1. Import the Marketplace Tokenization Postman collection [Marketplace Tokenization](files/MarketplaceTokenization.postman_collection.json?download=1) and assign variable definitions as shown.
+1. Import the Marketplace Tokenization Postman collection [Marketplace Tokenization](files/MarketplaceTokenization.postman_collection_final.json?download=1) and assign variable definitions as shown.
 
   ![Import Collection](images/import_collection.png)
   ![Import Collection 2](images/import_collection2.png)
