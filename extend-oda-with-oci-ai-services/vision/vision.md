@@ -1,55 +1,53 @@
 ## Introduction
 
-The Oracle Digital Assistant can manage when the users upload documents or pictures during the conversation, but it does not look into the content of those uploads. 
+The Oracle Digital Assistant can handle uploads of documents or images during the conversation, but it does not look into the content of those uploads.
 
-The OCI AI Vision service brings another AI capability that allows us to detect objects, recognize text and label images. It is also able to identify and extract data from documents such as invoices, receipts, resumes, passports, payslip, drivers license and many more.
+The OCI AI Vision service brings another AI capability that allows the skill to detect objects and recognize text and label images. This API also enables the skill to identify and extract data from documents such as invoices, receipts, resumes, passports, payslips, drivers licenses, and many more.
 
-In this LAB we will  configure the dedicated flow that will allow the user to upload a voucher where the AI Vision service will validate the voucher.
+In this Lab we will configure the dedicated flow that will allow the user to upload a voucher where the AI Vision service will validate the voucher.
 
-## Task 1: Map the flow to intent
 
-1.  The started skill has a **intent.apply.voucher**, but we need to map it to the intent.
-2.  In Flows, press **Map Flow**, and map flow **intent.apply.voucher** to intent **pizza.apply.voucher**
+## Task 1: Map the Flow to Intent
+
+1.  The starter skill has a **intent.apply.voucher**, but we need to map it to the intent.
+    - Click <strong>Flows</strong> in the left navbar, then click <strong>Main Flow</strong>.
+    - Click <add event icon> next to Intent Events.
+    - Select <strong>pizza.apply.voucher</strong> from the Intent Name field.
+    - Select <strong>pizza.apply.voucher</strong> from the Mapped Flow field. Then click <strong>Create</strong>.
 
 ![](images/map.PNG =20%x*  "")
 
-## Task 2: Use the Vision service to validate a voucher
 
--   Let's explore the steps of the existing **intent.apply.voucher** flow
+
+## Task 2: Use the Vision Service to Validate the Discount Voucher Uploaded by Users
+
+1. Before you get to work, take a look check the existing flow **intent.apply.voucher**.  You'll complete this flow by adding the call to the OCI AI Service Vision. 
 
 ![](images/flow.png =90%x*  "") 
 
-1. **askVoucher**: The flow starts with a message from the assistant towards the user, asking for an upload of the voucher.
+- **askVoucher**: The flow starts with a message requesting users to upload their discount pizza vouchers. ![](images/askvoucher3.png =20%x*  "") 
 
--   This is the message sent to the user
-![](images/askvoucher3.png =20%x*  "") 
+- **base64**: Because the AI Vision Service only accepts base64 encoded images, this state intercepts the uploaded image and encodes it as base64. A custom component (base64), which has already been deployed to this skill, handles the encoding.
+![](images/b64.png =10%x*  "") 
+**Note**: While this lab doesn't focus on custom components, it's worth noting that, using the <code>bots-node-sdk</code>, you can implement complex logic and integrations.
 
-2. **base64**: This state will pick up the uploaded picture and encode it into a base64 (this is required as the AI Vision Service accepts base64 encoded images). 
-  <br>Behind the scenes there is a Custom Component already deployed that will take care of this. 
+The output from the custom component is a base64 payload, which gets stored in a variable named **b64**.
+![](images/b64_2.png =10%x*  "") 
 
-* ***NOTE:*** Custom components allow us to use a bot-node-js SDK to implement complex logic or integrations. It is out of scope for this HOL.
-
-![](images/b64.png =20%x*  "") 
-
-The output will be a base64 payload and that will be stored in a variable named **b64**
-
-![](images/b64_2.png =20%x*  "") 
-
-
-3. **callRestService**: Here we call the OCI AI Service Vision, by using the previously configured REST service.
-<br>You can see there is an error in this state, which means we need to configure it properly.
+2. When the custom component returns the base64 payload, the flow transitions to the **callRestService** state. You'll need to edit this state to call OCI AI Service Vision.
 
 ![](images/callrest.png =10%x*  "") 
   
 ![](images/rest.png =20%x*  "") 
 
-*   Select **AnalyzeImage**
+- Click the callRestService state to open the Component page of its propety inspector.
+- Select <strong>AnalyeImage</strong> from the Rest Service field.
+- Select <strong>Post</strong> from the Method field.
+![](images/rest2.png =15%x*  "") 
+- Switch on <strong>Expression</strong>.
 
-![](images/rest2.png =20%x*  "") 
+- You're going to paste the following object into the Request Body field. Before you do, however, you must define the <code>compartmentId</code> key with the OCID value for the compartment that you set in Task 1: Granting Access to OCI AI Services ![]() in Lab 1. 
 
-*   Select **POST**
-
-*   Press **Expression** and paste:
 ```
 {
     "features": [
@@ -65,47 +63,40 @@ The output will be a base64 payload and that will be stored in a variable named 
 	
 }
 ```
- * **featureType**: You can see above that we have featureType: `TEXT_DETECTION`. 
-That means we want this service to detect text in the image. This service also accepts other types of analysis like `IMAGE_CLASSIFICATION` and `OBJECT_DETECTION`
- * **data**: We passe the variable **b64** value into the request.
- * **ocid**: Replace the compartmentId with your own value, as explained in **LAB 1: Task 4**
+The <code>"featureType": "TEXT_DETECTION"</code> means that the service detects text in the image. This service also accepts other types of analysis like <code>IMAGE_CLASSIFICATION</code> and <code>OBJECT_DETECTION</code>. 
+<br><code>"data": "${b64.value}"</code> extracts the value of the b64 variable that stores the base64 payload.
+
+ - From the Result Variable menu, select <strong>output</strong>.
+
 
 ![](images/rest3.png =20%x*  "") 
 
-Select the existing variable called **output**. 
+3. Now that you've created the REST call, take a look at the states that hold the output of the REST call and 
 
-4. **setVariable**: The output of the REST request will contain all the extracted words, so we want to store that in a variable.
+ - **setVariable**: The output of the REST call contains all of the extracted words, which are stored in the voucher variable named in this state.
 
-![](images/set.png =20%x*  "") 
+ - **Switch**: Checks the value stored in the voucher variable and then routes the flow accordingly. 
 
-```
-${output.value.responsePayload.imageText.words[1].text}
-```
+Note: The goal of this lab is to just introduce you to the potential of the OCI AI Vision service, so we took a very simplistic approach. In the real world, you would need a more robust approach to handle a variety of images. 
 
-5. **Switch**: Then we have a Switch statement that will check the value of the variable and based on that take the appropriate transition.
-
-![](images/switch.png =20%x*  "") 
-
-
-***NOTE***: This is a very simplistic approach to the Vision service. We do not know the type of image being uploaded and may need a more robust approach to handle the REST request. The goal of this LAB was just to show the Power of the OCI AI Vision service. 
 
 ## Task 3: Test the Flow
-1.	Train the Skill using “Trainer tm” and once trained open the skill in the Bot Preview
-
-Type:
-```
-I have a voucher
-```
+1.	Train the skill using Trainer Tm. This might take a few minutes.
+2. When the training completes, click <strong>Preview</strong>. 
+3. Enter _I have a voucher_.
 
 ![](images/voucher1.PNG =20%x*  "") 
 
-when prompted to upload a voucher, press the **attach button** and use one of the below URL options (copy the URL):
+4. When prompted to upload a voucher, click <strong>Attach</strong> and then copy one of the following URLs into the Attachement URL field:
 
-* [Pizza Voucher for 25 $](https://objectstorage.eu-amsterdam-1.oraclecloud.com/n/idppdqf7rmfq/b/HOL/o/Pizza%2BVoucher25.png)
+- Pizza Voucher for $25:
+<a href = 'https://objectstorage.eu-amsterdam-1.oraclecloud.com/n/idppdqf7rmfq/b/HOL/o/Pizza%2BVoucher25.png'>https://objectstorage.eu-amsterdam-1.oraclecloud.com/n/idppdqf7rmfq/b/HOL/o/Pizza%2BVoucher25.png</a> 
 
-* [Beer Voucher](https://objectstorage.eu-amsterdam-1.oraclecloud.com/n/idppdqf7rmfq/b/HOL/o/Beer.png)
+- Beer Voucher: 
+<a href = 'https://objectstorage.eu-amsterdam-1.oraclecloud.com/n/idppdqf7rmfq/b/HOL/o/Beer.png'>https://objectstorage.eu-amsterdam-1.oraclecloud.com/n/idppdqf7rmfq/b/HOL/o/Beer.png</a>
 
-* [Pizza Voucher for 15 $](https://objectstorage.eu-amsterdam-1.oraclecloud.com/n/idppdqf7rmfq/b/HOL/o/Pizza%2BVoucher15.png)
+- Pizza Voucher for $15:
+<a href = 'https://objectstorage.eu-amsterdam-1.oraclecloud.com/n/idppdqf7rmfq/b/HOL/o/Pizza%2BVoucher15.png'>https://objectstorage.eu-amsterdam-1.oraclecloud.com/n/idppdqf7rmfq/b/HOL/o/Pizza%2BVoucher15.png</a>
 
 
 ![](images/voucher.PNG =30%x*  "") 
@@ -116,8 +107,6 @@ when prompted to upload a voucher, press the **attach button** and use one of th
 
 
 
-This ends the Hands-on lab!
-
-In this short session you have expanded on the “Pizza Order” bot and would have seen how the Digital Assistant can easily utilise the sophisticated capabilities presented by the OCI AI services.
+***Congratulations!*** In this session, you've expanded the pizzeria skill and enhanced it with Oracle Cloud Infrastructure (OCI) AI services.
 
 
