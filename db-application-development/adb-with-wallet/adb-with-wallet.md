@@ -37,10 +37,9 @@ In this lab, you will:
 
     ![Click Autonomous Data Warehouse.](https://oracle-livelabs.github.io/common/images/console/database-adw.png " ")
 
-4. Make sure your Workload Type is __Data Warehouse__ or __All__ to see your Autonomous Data Warehouse instances. Use the __List Scope__ drop-down menu to select a compartment. <if type="livelabs">Enter the first part of your user name, for example `LL185` in the Search Compartments field to quickly locate your compartment.
 
-    ![Check the workload type on the left.](images/search-adw.png "Check the workload type on the left. ")
-    </if>
+4. Make sure your Workload Type is __Data Warehouse__ or __All__ to see your Autonomous Data Warehouse instances. Use the __List Scope__ drop-down menu to select a compartment. <if type="livelabs">Enter the first part of your user name, for example `LL185` in the Search Compartments field to quickly locate your compartment.
+ 
     <if type="freetier">
     ![Check the workload type on the left.](images/compartment-name.png " Check the workload type on the left.")
 

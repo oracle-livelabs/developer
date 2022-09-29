@@ -60,7 +60,7 @@ Now that we have our service connection, let's change the Edit Employee page to 
 
 1. Click the **Web Applications** ![Web Applications icon](images/webapp-icon.png) tab, then select the **main-edit-employee** page.
 
-2. Click the Components palette and drag and drop a Heading component onto the canvas, just above the Toolbar component with the Cancel and Save buttons.
+2. In the Components palette, locate the **Heading** component and drag and drop it onto the canvas, just above the Toolbar component with the Cancel and Save buttons. It might be easier to drop the component in the Structure view, just above the Grid Row containing the Toolbar.
 
 3. In the Heading's properties, change the **Text** field's value to `Country Info` and move the **Level** slider to H6.  
 
@@ -109,7 +109,7 @@ To pass values to the country fields in the main-edit-employee page, you'll need
 
 ## Task 4: Assign data to variables
 
-In this step, we'll assign data to the variables by adding a "value" event that triggers an action chain, a sequence that first calls the Country endpoint to fetch data, then populates the variables with the returned data. The event is triggered whenever the main-edit-employee page is loaded.
+In this step, we'll use the Country field as the data source for our variables and assign data by adding a "value" event that triggers an action chain, a sequence that first calls the Country endpoint to fetch data, then populates the variables with the returned data. The event is triggered whenever the main-edit-employee page is loaded.
 
 1. Select the **Country** field's Input Text component in the employee form on the main-edit-employee page.
 
@@ -158,4 +158,4 @@ In this step, we'll assign data to the variables by adding a "value" event that 
 ## Acknowledgements
 
 * **Author** - Sheryl Manoharan, Visual Builder User Assistance, August 2021
-* **Last Updated By** - June 2022
+* **Last Updated By** - August 2022

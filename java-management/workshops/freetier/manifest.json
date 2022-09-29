@@ -2,7 +2,7 @@
     "workshoptitle": "Manage Java Runtimes, Applications and Managed Instances Inventory with Java Management Service",
     "include": {
     },
-    "help": "livelabs-help-oci_us@oracle.com",
+    "help": "autonomous_java-dev_us_grp@oracle.com",
     "tutorials": [
         {
             "title": "Introduction",
@@ -26,33 +26,20 @@
             "filename": "../../deploy-a-java-application/deploy-a-java-application.md"
         },
         {
-            "title": "Lab 4: Understand Concepts related to Management Agent installation",
+            "title": "Lab 4: Understand concepts related to Management Agent installation",
             "filename": "../../understand-concepts-related-to-management-agent/understand-concepts-related-to-management-agent.md"
         },
         {
-            "title": "Lab 5: Install Management Agent on non-OCI hosts - Linux ",
-            "filename": "../../set-up-of-management-agent-linux/set-up-of-management-agent-linux.md"
+            "title": "Lab 5: Install Management Agent on your Managed Instances ",
+            "filename": "../../set-up-of-management-agent/set-up-of-management-agent.md"
         },
         {
-            "title": "Lab 6: Install Management Agent on non-OCI hosts - Windows ",
-            "filename": "../../set-up-of-management-agent-windows/set-up-of-management-agent-windows.md"
-        },
-        {
-            "title": "Lab 7: Install Management Agent on OCI computes - Oracle Cloud Agent (OCA)",
-            "filename": "../../install-management-agent-oca/install-management-agent-oca.md"
-        },
-        {
-            "title": "Lab 8: Set up multiple Managed Instances and Management Gateway",
+            "title": "Lab 6: Set up multiple Managed Instances and Management Gateway",
             "filename": "../../multiple-managed-instances/multiple-managed-instances.md"
         },
         {
-            "title": "Lab 9: Track Java Usage in a Container",
+            "title": "Lab 7: Track Java Usage in a Container",
             "filename": "../../track-java-usage-in-a-container/track-java-usage-in-a-container.md"
-        },
-        {
-            "title": "Lab 10: Set up Logrotate",
-            "filename":"../../set-up-logrotate/set-up-logrotate.md"
-
         },
         {
             "title": "Need Help?",

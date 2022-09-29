@@ -18,9 +18,9 @@ This lab shows you how to stage, publish, and access those apps within the Desig
 
 As a final step before you stage the app, enable it to run as a Progressive Web App—or PWA for short. PWAs are designed to be capable, reliable, and provide a platform-specific look and feel. When you enable a web app as a PWA, it can be installed directly from a browser on a user's device, including Android and iOS mobile devices.
 
-1.  In the Web Apps pane, click the **hrwebapp** node and click the **Settings** tab.
+1.  In the Web Apps pane, click the **hrwebapp** node.
 
-2.  Click the **PWA** tab, then click **Enable Progressive Web App (PWA)**.
+2.  Click **Settings** and **PWA**, then toggle **Enable Progressive Web App (PWA)**.
 
     ![](images/enable.png "This image shows the PWA tab of the Settings editor, with the Enable Progressive Web App switched enabled. ")
 
@@ -134,4 +134,4 @@ After you have successfully tested the staged application, you can publish it an
 ## Acknowledgements
 
 * **Author** - Sheryl Manoharan, Visual Builder User Assistance, June 2021
-* **Last Updated By** - June 2022
+* **Last Updated By** - August 2022
