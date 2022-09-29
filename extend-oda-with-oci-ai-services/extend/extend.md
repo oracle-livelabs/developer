@@ -65,7 +65,7 @@ When you're done, the flow should include the displayIntentAnswer state:
     Copy
     
     ```
-	${rb('answerIntentIntroMessage1')} ${rb('systemFlowName\_'+skill.system.event.value.intent.intentName)}. ${rb('answerIntentIntroMessage2')} ${skill.system.event.value.intent.answer}
+	"${rb('answerIntentIntroMessage1')} ${rb('systemFlowName_'+skill.system.event.value.intent.intentName)}. ${rb('answerIntentIntroMessage2')} ${skill.system.event.value.intent.answer}"
 	```
     
     This expression references the following resource bundles to enable the skill to output "Hello! You were asking about <conversation name>. Here is your answer: <answer text>.
