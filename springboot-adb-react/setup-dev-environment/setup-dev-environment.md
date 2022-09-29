@@ -69,7 +69,7 @@ For this workshop, you need to create your own group.
 
 ![Policy details](images/policy-details.png "policy-details")
 
-Select **Show manual editor** and copy and paste these policies in the box below.
+Select **Show manual editor** and copy and paste the policies in the box below.
 	```
 	<copy>
 	Allow group myToDoGroup to use cloud-shell in tenancy
@@ -79,6 +79,10 @@ Select **Show manual editor** and copy and paste these policies in the box below
 	Allow group myToDoGroup to manage objects in tenancy
 	</copy>
 	```
+
+	9. Click "Create".
+
+![Create policy](images/policy-create.png "create")
 ## Task 2: Launch the Cloud Shell
 
 
