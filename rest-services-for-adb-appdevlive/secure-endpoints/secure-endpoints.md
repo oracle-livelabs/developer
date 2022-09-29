@@ -1,4 +1,4 @@
-# How to build powerful, secure REST APIs for your Oracle Database - Securing a REST Endpoint
+# Secure REST-enabled endpoints
 
 ## Introduction
 
@@ -8,7 +8,7 @@ Estimated Lab Time: 10 minutes
 
 Watch the video below for a quick walk through of the lab.
 
-[](youtube:oCJcYj8kbmY)
+[Video overview of this Lab.](youtube:oCJcYj8kbmY)
 
 ### Objectives
 
@@ -18,7 +18,7 @@ Watch the video below for a quick walk through of the lab.
 
 ### Prerequisites
 
-- The following lab requires an <a href="https://www.oracle.com/cloud/free/" target="\_blank">Oracle Cloud account</a>. You may use your own cloud account, a cloud account that you obtained through a trial, or a training account whose details were given to you by an Oracle instructor.
+- The following lab requires an [Oracle Cloud account](https://www.oracle.com/cloud/free/). You may use your own cloud account, a cloud account that you obtained through a trial, or a training account whose details were given to you by an Oracle instructor.
 
 - This lab assumes you have completed all previous Labs. 
 
@@ -199,7 +199,7 @@ Watch the video below for a quick walk through of the lab.
 
     ![Left click the OK button](./images/click-ok-when-finished-in-oauth-slider.png)
 
-3. Next, we'll secure the REST service. It is in fact <i>already</i> secure. When we created the OAuth client with the role, the modules we protected were secured. Test this by running a previously unsecure REST API. (**NOTE: your URL hostname will be different than the below command**)
+3. Next, we'll secure the REST service. It is in fact *already* secure. When we created the OAuth client with the role, the modules we protected were secured. Test this by running a previously unsecure REST API. (**NOTE: your URL hostname will be different than the below command**)
 
     Remember in the last lab, we created a REST API for our bizlogic? Let's take that cURL command again...
 
