@@ -65,7 +65,7 @@ Click **Apply** to create the “feedbackText” variable.
    - Paste the following into the Request Body Field
 
      ```
-     { "documents": [{  "key": "pizzaFB",  "text": "${FeedbackText.value}" }] }
+     { "documents": [{  "key": "pizzaFB",  "text": "${feedbackText.value}" }] }
      ```
 			
    - Click outside the field to accept the input.
@@ -123,7 +123,7 @@ Click **Insert** button to add component to the flow.
 	
 21. Select **success** from the **Action Name** dropdown list.
 	
-22. Select **Add State** from the **Transition To** dropdown list.  This time add the invoke flow template.
+22. Select **Add State** from the **Transition To** dropdown list.  This time add the **Flow Control > Invole Flow** template.
     *   **Name** - `RespondToFeedback`
     *   **Description** - `Calling a predefined flow to respond to the sentiment within the user’s feedback`
 
@@ -147,18 +147,6 @@ Click **Insert** button to add component to the flow.
 
 	- Click the ![](../images/save.png) (tick) to save the parameter definition.
 			
-	Now to associate the flow with the user’s intent to give feedback on the Pizza and/or service.
-
-	
-28. Select **Main Flow** in the main list of flows and click on the ![](../images/add.png =1%x*  "") next to the **Intent Events** to map the correct intent to the **collect.feedback**.
-    *   **Intent Name** - `pizza.reg.giveFeedback`
-    *   **Mapped Flow** - `collect.feedback`
-
-![](images/sentiment11.png =20%x*  "")
-
-- Click **Create**
-			
-
 This completes the development of the feedback flow that captures the sentiment from the user’s feedback.
 
 <!-- 

@@ -171,9 +171,7 @@ Click on the ![](../images/save.png "") to accept the parameter
 
 ## Task 4: OCI AI Vision Service: Analyze Image Model
 
-The last service to configure is the OCI AI Vision.
-
-1. Open the ODA Builder, select **Settings> API Services** from the main menu
+1. We now configure the last of the required services for this HOL, following the same steps as above (from step #2).
 
 		
 2. Click the **+ Add REST Service** button to bring up the Create REST Service Dialog
@@ -186,7 +184,7 @@ The last service to configure is the OCI AI Vision.
  | Property | Value |
  | ----------- | ----------------- |
  | Name | AnalyzeImage |
- | Endpoint | https://vision.aiservice.**Data-Center-Region**.oci.oraclecloud.com/20220125/actions/analyzeImage. <br><br> Where **Data-Center-Region** matches the home region to which you have provisioned your tenancy and the ODA instance. <br><br> eg: vision.aiservice.**ap-sydney-1**.oci.oraclecloud.com  |
+ | Endpoint | https://vision.aiservice.**Data-Center-Region**.oci.oraclecloud.com/20220125/actions/analyzeImage <br><br> Where **Data-Center-Region** matches the home region to which you have provisioned your tenancy and the ODA instance. <br><br> eg: vision.aiservice.**ap-sydney-1**.oci.oraclecloud.com  |
  | Description | REST Resource for AI Vision Service – Analyze Image |
  | Methods | **POST** <br> Choose the POST method from the drop-down list displayed when you click on the Methods field. |
 
@@ -198,8 +196,6 @@ Click **Create** to create the initial REST Resource definition.
 	
 4. Supply Security credentials for the API call.
 
-ODA REST Connector resources supports several different credential types to authenticate to secured REST Services.  The Oracle Cloud Infrastructure includes the “OCI Resource Principal” credential type.  This allows a service to securely call another service, within the same tenancy, without the need to supply individual user credentials.
-	
 - Set the Authentication Type to **OCI Resource Principal**		
 		
 - Within the Methods section, confirm that the POST Method is highlighted.  If not already expanded, click on the Request Chevron (>) to expose the properties of the REST request.
@@ -218,7 +214,7 @@ ODA REST Connector resources supports several different credential types to auth
     ],
     "image": {
         "source": "INLINE",
-        "data": “iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z/C/HgAGgwJ/lK3Q6wAAAABJRU5ErkJggg== "
+        "data": "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z/C/HgAGgwJ/lK3Q6wAAAABJRU5ErkJggg=="
     },
     "compartmentId": "ocid1.compartment.oc1..aaaaaaaxxxxx"
 }

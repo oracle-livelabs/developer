@@ -13,7 +13,7 @@ In this Lab we will configure the dedicated flow that will allow the user to upl
     - Click **Flows** in the left navbar, then click **Main Flow**.
     - Click  ![](../vision/images/add.png)  next to **Intent Events**.
     - Select **pizza.apply.voucher** from the Intent Name field.
-    - Select **pizza.apply.voucher** from the Mapped Flow field. Then click **Create**.
+    - Select **intent.apply.voucher** from the Mapped Flow field. Then click **Create**.
         ![](images/map.png =20%x*)
 
 

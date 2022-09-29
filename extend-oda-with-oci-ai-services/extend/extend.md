@@ -55,9 +55,7 @@ When you're done, the flow should include the displayIntentAnswer state:
 ![](images/edit_response_item_display_intent_answer.png)
 
 11.  Take a look at the default message at the Apache FreeMarker expression for the `text` property that references an answer intent:
-    
-    Copy
-    
+
     ```
 	${skill.system.event.value.intent.answer}
 	```
@@ -267,8 +265,9 @@ If you were writing the dialog definition in YAML instead of the Visual Flow Des
 ![](images/order_pizza_flow_insert_state.png)
 
 2.  From the Add State dialog, select the Resolve Entity template by selecting **User Messaging** > **Resolve Entities** > **Resolve Entity**, or by entering resolve entity in the Search field.
-![](images/search_for_resolve_entity.png)5.  Name the state `confirmSelection`.
-3.  For the description, enter `Resolves Confirmation entity`. Then click **Insert**.
+![](images/search_for_resolve_entity.png)
+
+3.  Name the state `confirmSelection`. For the description, enter `Resolves Confirmation entity`. Then click **Insert**.
 
 ![](images/order_pizza_flow_confirm_selection.png)
 
@@ -301,10 +300,7 @@ If you were writing the dialog definition in YAML instead of the Visual Flow Des
    ``` 
     ${confirmation.value.confirmation.primaryLanguageValue}
     ```
-    This expression uses the format for referencing an item in a composite bag entity:
-    ```
-    ${cbeVariableName.value.itemName.primaryLanguageValue}
-    ```
+    
     
 
 ![](images/order_pizza_flow_confirmation_fm.png)
