@@ -111,13 +111,14 @@ This will follow a similar process to the **Detect Sentiment** flow above.
 
         ${AIServicePayload.value.responsePayload.languages[0].name}
 
-	- Click ![](../images/save.png =1%x*  "") ("Tick") to save the parameter definition
+	- Click ![](../images/save.png =1%x*  "") ("Tick") to save the parameter definition.
+     ![](images/parameter.png =20%x*)
 			
 24. To ensure that this flow executes when the user enters an utterance in a language for which this skill has not been trained:
 
  - Click <strong>Main Flow</strong> from the list of flows.
  - In the Events tab, expand Built-In Events. 
- - Select UnresolvedIntent. Then click ![](images/edit.png =5%x*).
+ - Select UnresolvedIntent. Then click ![](images/edit.png =2%x*).
  - Select <strong> intent.unresolved.with.language.check</strong> from the Mapped Flow list. Then click <strong>Apply</strong>.
 
 ***Congratulations!*** You've completed the custom unresolved intent flow that utlizes the OCI AI Language API.
