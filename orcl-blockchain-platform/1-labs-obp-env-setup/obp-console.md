@@ -219,7 +219,7 @@ Select '`car_marketplace_cc`.controller.go' under '`car_marketplace_cc`/src/cont
       invoiceObject.Vin = asset.Vin
       invoiceObject.Po_number = asset.PO
       invoiceObject.Price = car.Price
-      invoiceObject.Recipient = asset.Recipient
+      invoiceObject.Recipient = asset.Purchaser
       invoiceObject.Status = false
 
       invoiceObject.InvoiceId = asset.InvoiceId

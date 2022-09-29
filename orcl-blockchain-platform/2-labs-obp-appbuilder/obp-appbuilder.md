@@ -32,7 +32,7 @@ This lab assumes you have:
     - Lab: Create a Blockchain Network connecting 3 Organizations & Configuring Oracle Blockchain App Builder
     
 
-<!-- ## Task 1: Invoke and Query Ledger marketplace chaincode from App Builder in local environment
+## Task 1: Invoke and Query Ledger marketplace chaincode from App Builder in local environment
 
   Blockchain App Builder contains a built-in wizard to assist you with invoking or querying your chaincode.
 
@@ -49,7 +49,7 @@ This lab assumes you have:
 
 3. Click **Invoke**. Test Some sample invoke methods - App Builder
 
-4. Display Request and Response - Request/Response. -->
+4. Display Request and Response - Request/Response.
 
 
 ## Task 1: Deploy Smart Contract (Chaincode) to Founder Instance (Marketplace) from Blockchain App Builder

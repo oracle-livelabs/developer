@@ -112,6 +112,9 @@ assets:
           - name: recipient    
             type: string
             mandatory: true
+          - name: purchaser    
+            type: string
+            mandatory: false
           - name: invoiceId   
             type: string
             mandatory: false
