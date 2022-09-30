@@ -21,7 +21,7 @@ This lab assumes you have:
 
 2.  Save in your downloads folder.
 
-We strongly recommend using this stack to create a self-contained/dedicated VCN with your instance(s). Skip to *Task 3* to follow our recommendations. If you would rather use an exiting VCN then proceed to the next task to update your existing VCN with the required Ingress rules.
+We strongly recommend using this stack to create a self-contained/dedicated VCN with your instance(s). Skip to *Task 3* below to follow our recommendations. If you would rather use an exiting VCN then proceed to the next task to update your existing VCN with the required Ingress rules.
 
 ## Task 2: Adding security rules to an existing VCN
 

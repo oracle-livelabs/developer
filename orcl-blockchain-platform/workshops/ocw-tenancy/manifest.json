@@ -18,12 +18,12 @@
       "filename": "https://oracle-livelabs.github.io/common/labs/setup-compute-generic/setup-compute-novnc-ssh.md"
     },
     {
-      "title": "Lab 1: Create 3 Organization Blockchain Network & Generate Smart Contracts ",
+      "title": "Lab 1: Create a Blockchain Network connecting 3 Organizations",
       "description": "OBP Environment Setup",
       "filename": "../../1-labs-obp-env-setup/obp-console.md"
     },
     {
-      "title": "Lab 2: Deploy Smart Contracts using Oracle Blockchain App Builder",
+      "title": "Lab 2: Create and Deploy Smart Contracts using Oracle Blockchain App Builder",
       "description": "OBP App Builder",
       "filename": "../../2-labs-obp-appbuilder/obp-appbuilder.md"
     },
@@ -45,7 +45,7 @@
     {
       "title": "Need Help?",
       "description": "Solutions to Common Problems and Directions for Receiving Live Help",
-      "filename": "https://oracle-livelabs.github.io/common/labs/need-help/need-help-livelabs.md"
+      "filename": "https://oracle-livelabs.github.io/common/support/ocwsupportlab/ocwsupportlab.md"
     }
   ]
 }
