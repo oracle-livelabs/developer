@@ -130,11 +130,8 @@ This lab assumes you have:
 
   ![Hamburger and Approve](images/2-car-marketplace-7-10.png)
 
-10. Simply select the **Package ID** copied in Step6 as shown and click 'Approve'
 
-  ![Approve Chaincode Form](images/2-car-marketplace-7-11.png)
-
-11. Assign the [Endorsement policy](https://docs.oracle.com/en/cloud/paas/blockchain-cloud/usingoci/specify-endorsement-policy.html) by selecting signature under the endorsement policy. Add the policy of performing an endorsement signature by one of the organizations in the network. You can add an endorsement policy when you instantiate a chaincode. An endorsement policy specifies the members with peers that must approve, or properly endorse, a chaincode transaction before it’s added to a block and submitted to the ledger.
+11. Assign the [Endorsement policy](https://docs.oracle.com/en/cloud/paas/blockchain-cloud/usingoci/specify-endorsement-policy.html) by selecting signature under the endorsement policy. Add the policy of performing an endorsement signature by one of the organizations in the network. You can add an endorsement policy when you instantiate a chaincode. An endorsement policy specifies the members with peers that must approve, or properly endorse, a chaincode transaction before it’s added to a block and submitted to the ledger. Now assign the endorsement policy by by selecting the signature policy and click on 'Upgrade'
 
     ```
     <copy>
@@ -279,7 +276,7 @@ Now that we have tested our project locally, we can connect to our remote instan
 
 
 ## Task 9: Initialization and Issuance of Car Marketplace FiatToken
--
+
 1. Import the Marketplace Tokenization Postman collection [Marketplace Tokenization](files/MarketplaceTokenization.postman_collection_final.json?download=1) and assign variable definitions as shown.
 
   ![Import Collection](images/import_collection.png)
