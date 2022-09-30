@@ -66,9 +66,9 @@ This lab assumes you have:
   ![See Subnet](images/3-gateway-1-8.png) -->
 
 
-<!-- ## Task 2: Configure VCN
+## Task 2: Configure VCN
 
-1. Select 'DHCP Options' on the left-hand side menu and then 'Edit' the default options.
+<!-- 1. Select 'DHCP Options' on the left-hand side menu and then 'Edit' the default options.
 
   ![Edit DHCP Options](images/3-gateway-2-0.png)
 
@@ -91,7 +91,7 @@ This lab assumes you have:
 
 6. Next, select 'Security Lists' on the left-hand side menu and click 'Default Security List for Car Marketplace VCN.'
 
-  ![Security Lists](images/3-gateway-2-6-0.png)
+  ![Security Lists](images/3-gateway-2-6-0.png) -->
 
 7. Click 'Add Ingress Rules.'
 
@@ -99,7 +99,7 @@ This lab assumes you have:
 
 8. Fill out the form as follows and click on 'Add Ingress Rules.'
 
-  ![Add Ingress Rules Form](images/3-gateway-2-7.png) -->
+  ![Add Ingress Rules Form](images/3-gateway-2-7.png)
 
 
 ## Task 3: Create API Gateway
@@ -142,10 +142,10 @@ This lab assumes you have:
     - Enter the **URL** to serve as a REST endpoint. For Route 1, this will be https://marketplace-2-oabcs1-iad.blockchain.ocp.oraclecloud.com:7443/restproxy/api/v2/channels/car-marketplace/transactions
     - How to Construct Route URL:
         - From the Blockchain Admin Dashboard --> Click on Nodes --> Navigate to restproxy (bottom of the screen) --> Copy the URL
+    ![Blockchain Dashboard](images/3-gateway-4.bc.1.png)
         - Append to URL --> [api/v2/channels/car-marketplace/transactions](https://docs.oracle.com/en/cloud/paas/blockchain-cloud/restoci/op-restproxy-api-v2-channels-channelname-transactions-post.html)
 
-      ![Blockchain Dashboard](images/3-gateway-4.bc.1.png)
-
+      
     - For **Connection Establishment**, **Request Transmit**, and **Reading Response** timeouts, enter 60, 10, and 10 respectively
 
   ![Route 1](images/3-gateway-4-5.1.png)

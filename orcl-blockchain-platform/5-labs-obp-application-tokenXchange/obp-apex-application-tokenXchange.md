@@ -81,7 +81,7 @@ You will now create a car and simulate a transaction between the founder organiz
 
   ![Car Delaership](images/apex-carmarketplace-run.png)
  
- 2. Login as a dealer (e.g. john_dealer1) and land on My Inventory.
+ 2. Login as a dealer (e.g. john_dealer1) and land on My Inventory. Use the same password configured for john_dealer1 in *Lab4*
 
   ![Car Delaership](images/dealer1-login.png)
 
