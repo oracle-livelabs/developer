@@ -1,0 +1,29 @@
+{
+    "workshoptitle": "Modernize Oracle's PeopleSoft with Automation and Conversational AI",
+    "help": "livelabs-help-oci_us@oracle.com",
+    "tutorials": [
+        {
+            "title": "Introduction",
+            "filename": "../../introduction/introduction.md"
+        },
+   
+        {
+            "title": "Lab 1: Configure ODA",
+            "description": "Labs that follow the introduction are numbered, starting with Lab 1",
+            "filename": "../../Lab1/1-configure-oda.md"
+        },
+        {
+            "title": "Lab 2: ODA PSFT",
+            "filename": "../../Lab2/2-ODA-psft.md"
+        },
+        {
+            "title": "Lab 3: Test ODA",
+            "filename": "../../Lab3/3-test-oda.md"
+        },
+        {
+            "title": "Need Help?",
+            "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/need-help/need-help-livelabs.md"
+        }
+    ]
+}
