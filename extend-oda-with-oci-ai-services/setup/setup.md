@@ -47,7 +47,8 @@ Once you gain access to these services, you'll incorporate them into the REST co
 
 In the OCI Console go to **Compartments**
 ![](images/ocid.png =20%x*  "") 
-Copy the **OCID** of the root comparment (or the one where the ODA instance is located), 
+Copy the **OCID** of the root comparment (or the one where the ODA instance is located).<br>
+You can hover the mouse over the compartment OCID and click on the copy button there.
 ![](images/comp.png =30%x*  "") 
 
 Save the value in notepad. It will be used further in the LAB.
@@ -123,8 +124,9 @@ ODA REST Connector resources supports several different credential types to auth
 ![](images/7.Language_Response_Payload.png =30%x*  "") 
 
   
-6. If you did not receive a 200 Status with the corresponding payload indicating that the supplied input was in Portuguese, close the dialog and confirm the validity of the properties for the REST service.
-
+6. If you did not receive a 200 Status with the corresponding payload indicating that the supplied input was in Portuguese, close the dialog and:
+-   Confirm the validity of the properties for the REST service.
+-   Check if the OCI policies are configured correctly.  
 
 If the outcome was successful (Status 200), click the **Save as Static Response** to save the response to be used as MOCK data if the service is not available as you build your Conversation flow.
 

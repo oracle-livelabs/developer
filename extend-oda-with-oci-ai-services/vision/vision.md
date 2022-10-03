@@ -20,7 +20,7 @@ In this Lab we will configure the dedicated flow that will allow the user to upl
 
 ## Task 2: Use the Vision Service to Validate the Discount Voucher Uploaded by Users
 
-1. Before you get to work, take a look check the existing flow **intent.apply.voucher**.  You'll complete this flow by adding the call to the OCI AI Service Vision. 
+1. Before you get to work, take a look at the existing flow **intent.apply.voucher**.  You'll complete this flow by adding the call to the OCI AI Service Vision. 
 
 ![](images/flow.png =90%x*  "") 
 
@@ -43,9 +43,9 @@ The output from the custom component is a base64 payload, which gets stored in a
 - Select **AnalyeImage** from the Rest Service field.
 - Select **Post** from the Method field.
 ![](images/rest2.png =15%x*  "") 
-- Switch on **Expression**.
+- Switch on **Expression** for the “request body” field.
 
-- You're going to paste the following object into the Request Body field. Before you do, however, you must define the <code>compartmentId</code> key with the OCID value for the compartment that you set in Task 1: Granting Access to OCI AI Services ![]() in Lab 1. 
+- You're going to paste the following object into the Request Body field. Before you do, however, you must define the <bold>compartmentId</bold> key with the OCID value for the compartment that you set in _LAB 1: Task 1 - Granting Access to OCI AI Services_. 
 
 ```
 {
