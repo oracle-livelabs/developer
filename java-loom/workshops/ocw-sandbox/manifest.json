@@ -12,15 +12,15 @@
             "filename": "../../introduction.md"
         },
         {
-            "title": "Your Lab Environment",
+            "title": "Lab 1: Your Lab Environment",
             "filename": "../../environment.md"
         },
         {
-            "title": "Lab 1: Exploring Virtual Threads",
+            "title": "Lab 2: Exploring Virtual Threads",
             "filename": "../../lab1.md"
         },
         {
-            "title": "Lab 2: Exploring Structured Concurrency",
+            "title": "Lab 3: Exploring Structured Concurrency",
             "filename": "../../lab2.md"
         },
         {
