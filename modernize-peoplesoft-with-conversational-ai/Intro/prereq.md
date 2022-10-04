@@ -8,7 +8,7 @@ The Oracle Digital Assistant is an OCI solution provided by Oracle and connectiv
 
 ***The following has already been set up for you***:
 
-![](images/arch.png " ")
+![architecture](images/arch.png " ")
 
 **Chat Client**: The Chatbot Integration Framework supports the Web Channel as a part of integration with ODA. Chat clients rendered within PeopleSoft PIA page establish a connection with ODA Skills through the Web channel. ODA provides a set of Javascript files named as WebSDK, which takes care of construction of Chat Client within PeopleSoft PIA. The communication between PeopleSoft chat client and ODA instance is established using the WebSDK files provided by ODA. 
 

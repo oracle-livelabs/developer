@@ -15,7 +15,7 @@ Estimated Time: 5 minutes
 
 1. Go back to the Employee Self Service page and select the New_Skill tile to access your bot.
 
-    ![](images/new_skill.png " ")
+    ![new skill](images/new_skill.png " ")
 
 2. Test your bot.
 
@@ -29,9 +29,9 @@ Estimated Time: 5 minutes
     - User: where is item XXX?
     - Bot: Requisition(s) for Item XXX ......
 
-      ![](images/bot1.png " ")
+      ![bot](images/bot1.png " ")
 
-      ![](images/bot2.png " ")  
+      ![bot](images/bot2.png " ")  
       
       
 
@@ -39,17 +39,17 @@ Estimated Time: 5 minutes
 
 1. On your PeopleSoft instance, navigate to the Employee Self Service Page.
 
-    ![](images/EmployeeSelfService.png " ")
+    ![employee ](images/EmployeeSelfService.png " ")
 
 2. Select the eProcurement tile > My Requisitions. If you don't find any requisitions, go back to the eProcurement page and create a Requisition.
 
 3. Now select '>' next to any Requisition name to check the details of the requisition.
 
-    ![](images/myreq.png " ")
+    ![req](images/myreq.png " ")
 
 4. Copy the Item ID in a *Notepad* to verify the item details from the bot.
 
-    ![](images/reqdetails.png " ")
+    ![req](images/reqdetails.png " ")
 
 
 ## **Summary**
@@ -62,7 +62,7 @@ Congratulations, you have successfully deployed the Requisition Skill on PeopleS
 
 2. On the next screen, select Ping Gateway button to check whether the gateway is active.
 
-    ![](images/gateway.png " ")
+    ![gateway](images/gateway.png " ")
 
 3. Now, go back to the Configuration Status page and select Node Network configured.
 
@@ -70,4 +70,4 @@ Congratulations, you have successfully deployed the Requisition Skill on PeopleS
 
 5. Switch to the Connectors tab and select Ping Node button corresponding to your Node name to check whether the Node is responding.
 
-    ![](images/nodeactive.png " ")
+    ![node](images/nodeactive.png " ")

@@ -16,11 +16,11 @@ Estimated Time: 10 minutes
 
 2. (Do not do this step, since prior to the class, the instructor searched for "PeopleSoft Epro Requester Inquiry Bot" and clicked on the 3 dots icon in the lower left corner and selected Pull.)
 
-    ![](images/pullskill.png " ")
+    ![get skill](images/pullskill.png " ")
 
 3. Navigate to Development > Skills and search from Epro. Click on the 3 dots icons and select Extend.
 
-	 ![](images/a.png " ")
+	 ![store](images/a.png " ")
 
  In the ensuing dialog name the skill **'ocw\_psft\_oda_YOURINITIALS'** and then click Extend to dismiss that dialog.
 
@@ -34,17 +34,17 @@ Estimated Time: 10 minutes
 
 4. Navigate to **Development > Channels**. Click on **+ Add Channel** to add one and set the values as seen in this picture. 
 
-    ![](images/1.png " ")
+    ![channel](images/1.png " ")
 
 Ie, Enter the Channel name, Description, Channel type - Oracle Web, Allowed Domain *, Client authentication enabled - uncheck and select Create.
 
 3. Route the channel to the Skill you have configured in Step 1 via this dropdown.  Slide the Channel Enabled widget above it so that it is On.
 
-    ![](images/2.png " ")
+    ![route](images/2.png " ")
     
 4.  Slide the Channel Enabled widget above it so that it is On
 
-![](images/3.png " ")
+![enable](images/3.png " ")
 
     
 
