@@ -1,4 +1,4 @@
-# Create and Deploy Smart Contracts using Oracle Blockchain App Builder
+# Deploy, Test Smart Contracts using Blockchain App Builder & Oracle Blockchain Admin Console
 
 ## Introduction
 
@@ -29,32 +29,30 @@ This lab assumes you have:
 - You have completed:
     - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
     - Lab: Environment Setup
-    - Lab: Create a Blockchain Network connecting 3 Organizations
-
+    - Lab: Create a Blockchain Network connecting 3 Organizations & Configuring Oracle Blockchain App Builder
+    
 
 ## Task 1: Invoke and Query Ledger marketplace chaincode from App Builder in local environment
 
-  Once your chaincode project is running on a local network, you can test it.
-
   Blockchain App Builder contains a built-in wizard to assist you with invoking or querying your chaincode.
 
-1. Select your chaincode project in the **Chaincodes** pane. In the **Chaincode Details** pane, select **Execute**.
+1. Select your chaincode project in the **Chaincodes** pane. In the **Chaincode Details** pane, select **Deploy**.
 
 2. In the deployment wizard:
     - Ensure the correct chaincode name is selected.
     - Select your target environment. In this case, choose Local Environment.
     - The channel will default to **mychannel**.
-    - In the **Function** field, select **addCar** from the drop-down list. Every method available in the chaincode is listed.
+    - In the **Function** field, select **createCar** from the drop-down list. Every method available in the chaincode is listed.
     - In the **Parameters** field, select the **More Actions** (…) button. This will launch a window with available properties for your selected method. Enter sample properties as shown and click **Save**.
 
   ![Function parameters](images/2-app-builder-5-2.png)
 
-3. Click **Invoke**. --> Test Some sample invoke methods - App Builder
+3. Click **Invoke**. Test Some sample invoke methods - App Builder
 
 4. Display Request and Response - Request/Response.
 
 
-## Task 2: Deploy to Founder Instance (Marketplace)
+## Task 1: Deploy Smart Contract (Chaincode) to Founder Instance (Marketplace) from Blockchain App Builder
 
   Now that we have tested our project locally, we can connect to our remote instances.
 
@@ -62,23 +60,33 @@ This lab assumes you have:
 
 2. Ensure that the right **Compartment** is selected and click on the 'Marketplace' founder instance.
 
-3. Access the 'Service Console' and copy the URL of this platform instance.
+3. Click the 'Service Console' -->Go to Markplace Blockchain Instance Dashboard.
 
-4. Now, repeat Tasks 5 and 6, changing the target environment from 'Local Environment' to 'Marketplace.' Also change the channel to 'car-marketplace' as set in (Lab: Create a Blockchain Network connecting 3 Organizations), Task 5.
+4. Navigate to Nodes tab and copy the rest proxy url.
+
+  ![Founder Deployment](images/2-app-builder-4-4.png)
+
+5. Hover over the **Environments** pane, click on the '+' button, and fill out the form as follows:
+    - Add a **Name** (e.g. Marketplace).
+    - Optionally, add a **Description**.
+    - Paste the **Marketpalce rest proxy url from step3** of your marketplace founder instance.
+    - Enter your **User Name** (e.g. 'username') and then enter the **Password**.
+
+5. Now, changing the target environment from 'Local Environment' to 'Marketplace' in App Builder. Obtain the channel name as set in *Lab1 - Task 5 (car-marketplace)* 
 
   ![Founder Deployment](images/2-car-marketplace-6-4.png)
 
-## Task 3: Import Marketplace chaincode package from app builder
+## Task 2: Import Marketplace chaincode package from app builder
 
 1. In Visual Studio Code, click on the **O** icon on the left-hand menu to use the Blockchain App Builder Extension.
 
-2. Hover over the **Chaincodes** pane, Right Click on the chaincode to be packaged --> Select the directory on your laptop to save the chaincode package file.
+2. Hover over the **Chaincodes** pane, Right Click on the chaincode to be packaged --> Select the directory to save the chaincode package file.
 
   ![Car Marketplace Chaincode Package](images/2-app-builder-7-1.png)
 
-## Task 4: Install and Deploy Marketplace chaincode package onto Participant Instances (dealer1 & dealer2)
+## Task 3: Install and Deploy Marketplace chaincode package onto Participant Instances using Oracle Cloud Blockchain Platform Console(dealer1 & dealer2)
 
-  To install and re-deploy the chaincode on partner instances, use the package in Task7 and then approve the chaincode definition from the partner instances (in this case, 'dealer1' and 'dealer2').
+  To install and re-deploy the chaincode on partner instances, use the package in Task3 (above) and then approve the chaincode definition from the partner instances (in this case, 'dealer1' and 'dealer2').
 
 1. Access the 'Service Console' for the 'dealer1' instance.
 
@@ -92,7 +100,7 @@ This lab assumes you have:
 
   ![Deployed Chaincodes](images/2-car-marketplace-7-4.png)
 
-4. Now click the **Chaincodes** tab and then 'Deploy a New Chaincode.'
+4. Now click the **Chaincodes** tab and then 'Deploy a New Chaincode'
 
   ![Deploy a New Chaincode](images/2-car-marketplace-7-5.png)
 
@@ -101,13 +109,14 @@ This lab assumes you have:
   ![Advanced Deployment](images/2-car-marketplace-7-6.png)
 
 6. Fill out the form as follows:
-    - For **Package Label**, open up the 'Service Console' for the 'Marketplace' founder instance, click the **Chaincodes** tab, and copy the text as shown. You may use `car_marketplace_cc_car-marketplace_v1`, or any other name, but make sure to use the same name when repeating these steps for 'dealer2.'
+    - For **Package Label**, open up the 'Service Console' for the 'Marketplace' founder instance, click the **Chaincodes** tab, and copy the text as shown. You may use `car_marketplace_cc_car-marketplace_v1`, or any other name, but make sure to use the same name when repeating these steps for 'dealer2'
 
     ![Package Label](images/2-car-marketplace-7-7-1.png)
 
     - Keep 'GoLang' as the **Chaincode Language**.
     - Select both available peers as the **Target Peers**.
     - Upload the package .zip file you exported from the App Builder VS Code extension. We stored this in the **Samples** folder.
+    - Click 'Next'
 
   ![Advanced Deployment Form](images/2-car-marketplace-7-7-2.png)
 
@@ -117,20 +126,19 @@ This lab assumes you have:
 
 8. Now click 'Channels,' then the 'car-marketplace' channel, and navigate to 'Deployed Chaincodes' as you did in steps 3 and 4.
 
-
 9. Find and click on the hamburger icon on the right of the row containing your chaincode. Select 'Approve.'
 
   ![Hamburger and Approve](images/2-car-marketplace-7-10.png)
 
-10. Simply select the **Package ID** as shown and click 'Approve.'
+10. Simply select the **Package ID** copied in Step6 as shown and click 'Approve'
 
   ![Approve Chaincode Form](images/2-car-marketplace-7-11.png)
 
-11. Assign the [Endorsement policy](https://docs.oracle.com/en/cloud/paas/blockchain-cloud/usingoci/specify-endorsement-policy.html) by selecting signature under the endorsement policy. Add the policy of performing an endorsement signature by one of the organizations in the network. ou can add an endorsement policy when you instantiate a chaincode. An endorsement policy specifies the members with peers that must approve, or properly endorse, a chaincode transaction before it’s added to a block and submitted to the ledger.
+11. Assign the [Endorsement policy](https://docs.oracle.com/en/cloud/paas/blockchain-cloud/usingoci/specify-endorsement-policy.html) by selecting signature under the endorsement policy. Add the policy of performing an endorsement signature by one of the organizations in the network. You can add an endorsement policy when you instantiate a chaincode. An endorsement policy specifies the members with peers that must approve, or properly endorse, a chaincode transaction before it’s added to a block and submitted to the ledger.
 
     ```
     <copy>
-    OR ('dealer1.member', dealer2.member)
+    OR ('dealer1.member','dealer2.member')
     </copy>
     ```
 
@@ -140,39 +148,37 @@ This lab assumes you have:
 
   ![Check Approved Field](images/2-car-marketplace-7-12.png)
 
-13. Repeat steps 2-12 for 'dealer2.'
+13. Repeat steps 1-12 for 'dealer2' instance
 
 
-## Task 5: User Enrollment - Perform on All nodes (marketplace, dealer1, dealer2)
+## Task 4: User Enrollment - Perform on All nodes (marketplace, dealer1, dealer2)
 
   Oracle Blockchain Platform supports enrollments to the REST proxy. You use enrollments with token chaincodes to ensure the identities of the users completing token transactions. To do this, when you add enrollments for token use cases, specify a user ID for each enrollment (founder ID in this case), and specify one and only one user for each enrollment.
 
 1. While logged into the marketplace founder instance, navigate to Nodes in OBP console.
 
 2. Click on the hamburger menu besides restproxy and select 'View or manage enrollments.'
-  ![View or Manage Enrollments](images/View_or_manage_enrollments.png)
+  ![View or Manage Enrollments](images/view_or_manage_enrollments.png)
 
 3. Select Create New Enrollment.
 
-  ![Create New Enrollment](images/Create_new_enrollment.png)
+  ![Create New Enrollment](images/create_new_enrollment.png)
 
-4. Input enrollment information. See sample enrollment as example. Enrollment user had to be created in idcs. In this example local.user is used. Make sure the user has REST_Client role assoicated with the Blockchain instance.
+4. Input enrollment information. See sample enrollment as example. Enrollment user had to be created in idcs. In this example 'marketplace','dealer1','dealer2' is used. Make sure the user has REST_Client role assoicated with the Blockchain instance.
 
-  ![Input Enrollment](images/input_enrollment.png)
-  ![Sample Enrollment](images/Sample_enrollment.png)
+  ![Sample Enrollment](images/sample_enrollment.png)
 
 5. Click Enroll.
 
-## Task 6: Create Tokenization Chaincode
+## Task 5: Create Tokenization Chaincode
 
 The flow for developing smart contracts for tokenization begins with creating a specification file that describes our fiat token. `Car_Tokenization.yml` describes our FiatToken structure: AssetType, `Token_id`, `Token_name`, `Token_desc`, `Token_type`, and behavior.  
 
-The specification file is then used to scaffold a smart contract project ('`car_tokenization_cc`') and generate source code for models and controllers. Each object has properties that characterize the assets, data types and validations. 
+The specification file is then used to scaffold a smart contract project ('`car_tokenization_cc`') and generate source code for models and controllers. Each object has properties that characterize the assets, data types and validations.
 
 You can see sample specification files (and write your own specifications) in either YAML or JSON using the Blockchain App Builder package. [FiatToken Structure](https://docs.oracle.com/en/cloud/paas/blockchain-cloud/usingoci/input-specification-file-fungible-tokens.html)
 
-1. Locate the sample specification, [Car_Tokenization.yml](files/Car_Tokenization.yml?download=1), in the **Samples** folder.
-
+1. Download the sample specification, [Car_Tokenization.yml](files/Car_Tokenization.yml?download=1)
 
 2. In Visual Studio Code, click on the **O** icon on the left-hand menu to use the Blockchain App Builder Extension.
 
@@ -181,7 +187,7 @@ You can see sample specification files (and write your own specifications) in ei
   Make sure the **Details** of your specification read:
   ![Car Tokenization Specification Details](images/2-app-builder-tokenization-yml.png)
 
-## Task 7: Deploy Tokenization chaincode to Founder Instance
+## Task 6: Deploy Tokenization chaincode to Founder Instance
 
 Now that we have tested our project locally, we can connect to our remote instances.
 
@@ -189,22 +195,23 @@ Now that we have tested our project locally, we can connect to our remote instan
 
 2. Ensure that the right **Compartment** is selected and click on the 'Marketplace' founder instance.
 
-3. Access the 'Service Console' and copy the REST Proxy URL of this platform instance.
+3. Click on the 'Service Console' -->  Go to 'Nodes' tab from the Blockchain Admin Console Dashboard --> copy the REST Proxy URL of this platform instance.
   ![Service Console](images/2-app-builder-tokenization-deploy-marketplace.png)
 
-4. Changing the target environment in Blockchain AppBuilder from 'Local Environment' to 'Marketplace.' Also change the channel to 'car-marketplace'.
+4. Changing the target environment in Blockchain AppBuilder from 'Local Environment' to 'Marketplace.' Also change the channel to 'car-marketplace'. Add the Init Parameters needed (org_id: marketplace, user_id: marketplace)
 
   ![Founder Deployment](images/2-app-builder-tokenization-deploy-marketplace.png)
+  ![Founder Deployment](images/2-appbuilder-tokenization-init.png)
 
-## Task 8: Import Tokenization chaincode package from app builder
+## Task 7: Import Tokenization chaincode package from app builder
 
 1. In Visual Studio Code, click on the **O** icon on the left-hand menu to use the Blockchain App Builder Extension.
 
-2. Hover over the **Chaincodes** pane, Right Click on the chaincode to be packaged --> Select the directory on your laptop to save the chaincode package file.
+2. Hover over the **Chaincodes** pane, Right Click on the chaincode to be packaged --> Select the directory  to save the chaincode package file.
 
   ![Car Tokenization Chaincode Package](images/2-appbuilder-chaincodepackage-tokenization.png)
 
-## Task 9: Install and Deploy Tokenization chaincode package onto Participant Instances
+## Task 8: Install and Deploy Tokenization chaincode package onto Participant Instances
 
   To install and re-deploy the chaincode on partner instances, use the package in Task7 and then approve the chaincode definition from the partner instances (in this case, 'dealer1' and 'dealer2').
 
@@ -226,18 +233,18 @@ Now that we have tested our project locally, we can connect to our remote instan
 
 5. Select 'Advanced Deployment.'
 
-  ![Advanced Deployment](images/2-car-marketplace-7-6.png)
+  ![Advanced Deployment](images/2-car-marketplance-7-6.png)
 
 6. Fill out the form as follows:
 
    - For **Package Label**, open up the 'Service Console' for the 'Marketplace' founder instance, click the **Chaincodes** tab, and copy the text as shown. You may use `car_tokenization_v1`, or any other name, but make sure to use the same name when repeating these steps for 'dealer2.'
 
-  ![Package Label](images/2-car-marketplace-7-7-1.png)
+  ![Package Label](images/2-car-tokenization-7-6.png)
 
    - Keep 'GoLang' as the **Chaincode Language**.
    - Select both available peers as the **Target Peers**.
    - Upload the package .zip file you exported from the App Builder VS Code extension. We stored this in the **Samples** folder.
-
+  
   ![Advanced Deployment Form](images/2-car-tokenization-7-7-2.png)
 
 7. Click 'Close.' We will only be installing (not deploying) the chaincode onto the participant instances.
@@ -271,14 +278,14 @@ Now that we have tested our project locally, we can connect to our remote instan
 13. Repeat steps 2-12 for 'dealer2.'
 
 
-## Task 10: Initialization and Issuance of Car Marketplace Fiat Token - Run It with App Builder. Save Input.
-
-1. Import the Marketplace Tokenization Postman collection (`Marketplace_Tokenization.postman_collection.json`) and assign variable definitions as shown.
+## Task 9: Initialization and Issuance of Car Marketplace FiatToken
+-
+1. Import the Marketplace Tokenization Postman collection [Marketplace Tokenization](files/MarketplaceTokenization.postman_collection_final.json?download=1) and assign variable definitions as shown.
 
   ![Import Collection](images/import_collection.png)
   ![Import Collection 2](images/import_collection2.png)
 
-2. Repeat for the Postman Environment 'Tokenization' (`tokenization_environment.postman_environment.json`) and assign variable definitions. Some sample definitions are shown below.
+2. Enter the environment setup variables in Postman Environment 'Tokenization' (`tokenization_environment.postman_environment.json`) and assign variable definitions. Some sample definitions are shown below.
 
   ![Tokenization Definitions](images/tokenization_definitions.png)
 
@@ -290,8 +297,11 @@ Now that we have tested our project locally, we can connect to our remote instan
     - Step 1 – Initialize Token: This method creates a token and initializes the token properties. The asset and its properties are saved in the state database. This method can be invoked only by the Token Admin of the chaincode.
   ![Initialize Token](images/initialize_token.png)
 
-    - Step 2, 3, 4 – Create Accounts:  This method creates an account for a specified user and token. An account must be created for any user who will have tokens at any point. Accounts track balances, on-hold balances, and transation history.
+    - Step 2, 3, 4 – Create & Associate Accounts(Token Admin, Token User1, Token User2):  This method creates an account for a specified user and token. An account must be created for any user who will have tokens at any point. Accounts track balances, on-hold balances, and transation history. 
+
   ![Create Accounts](images/create_accounts.png)
+  ![Initialize Token](images/user_tokens.png)
+  ![Initialize Token](images/associate_token1.png)
 
     - Step 5, 6 – Add Role: This method adds a role to a specified user and token. This method can be called only by the Token Admin of the chaincode.
   ![Add Role](images/add_role.png)
