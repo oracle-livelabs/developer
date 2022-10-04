@@ -14,15 +14,15 @@ Estimated Time: 10 minutes
 
 1. Sign in to your ODA instance. Click on the hamburger icon on the left and navigate to Development > Store. 
 
-2. (Do not do this step, since prior to the class, the instructor searched for "PeopleSoft Epro Requester Inquiry Bot" and clicked on the 3 dots icon in the lower left corner and selected Pull.)
+2. (**Do not do this step**, since prior to the class, the moderators searched for "PeopleSoft Epro Requester Inquiry Bot" and clicked on the 3 dots icon in the lower left corner and selected Pull.)
 
     ![get skill](images/pullskill.png " ")
 
-3. Navigate to Development > Skills and search from Epro. Click on the 3 dots icons and select Extend.
+3. Navigate to Development > Skills and search from Epro (this is what was 'pulled' in Step 2). Click on the 3 dots icons and select **Clone**.
 
 	 ![store](images/a.png " ")
 
- In the ensuing dialog name the skill **'ocw\_psft\_oda_YOURINITIALS'** and then click Extend to dismiss that dialog.
+ In the ensuing dialog name the skill **'ocw\_psft\_oda_YOURSTUDENTNUMBER'** and then click Extend to save the changes.
 
 
 
@@ -31,26 +31,26 @@ Estimated Time: 10 minutes
 ## **Step 2:** Create the web channel for this Skill
 
 
+4. Navigate to Development > Channels. Click on + Channel to add one and set the values as seen in this picture. 
 
-4. Navigate to **Development > Channels**. Click on **+ Add Channel** to add one and set the values as seen in this picture. 
+    ![channels](images/1.png " ")
 
-    ![channel](images/1.png " ")
+Ie, Enter the Channel name, Description, Channel type - Oracle Web, Allowed Domain *, Client authentication enabled - uncheck and select Create
 
-Ie, Enter the Channel name, Description, Channel type - Oracle Web, Allowed Domain *, Client authentication enabled - uncheck and select Create.
-
-3. Route the channel to the Skill you have configured in Step 1 via this dropdown.  Slide the Channel Enabled widget above it so that it is On.
+5. Route the channel to the Skill **you have created above** via this dropdown.  Slide the Channel Enabled widget above it so that it is On.
 
     ![route](images/2.png " ")
     
-4.  Slide the Channel Enabled widget above it so that it is On
+6.  Slide the Channel Enabled widget above it so that it is On
 
 ![enable](images/3.png " ")
-
     
 
 ## **Step 3:** Copy config values
 
-Copy 
-1. the generated Channel ID
-2. ODA URI - Ex: "oda-XXXX-da2.data.digitalassistant.oci.oraclecloud.com" and save them as they'll be used in a later lab.
+Copy a.the generated Channel ID and b. ODA URI - Ex: "oda-XXXX-da2.data.digitalassistant.oci.oraclecloud.com" and save them locally on your machine as they'll be used in a later lab.
 
+
+7. In upper right corner click Train and accept the defaults
+
+![train](images/train.png " ")
