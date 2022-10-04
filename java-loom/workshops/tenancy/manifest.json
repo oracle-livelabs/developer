@@ -1,0 +1,27 @@
+{
+   "workshoptitle": "Project Loom Hands-on Labs",
+    "help": "java_devrel_grp@oracle.com",
+    "tutorials": [
+        {
+            "title": "Introduction",
+            "filename": "../../introduction.md"
+        },
+        {
+            "title": "Your Lab Environment",
+            "filename": "../../environment.md"
+        },
+        {
+            "title": "Lab 1: Exploring Virtual Threads",
+            "filename": "../../lab1.md"
+        },
+        {
+            "title": "Lab 2: Exploring Structured Concurrency",
+            "filename": "../../lab2.md"
+        },
+        {
+            "title": "Conclsuion",
+            "filename": "../../conclusion.md"
+        }
+
+    ]
+}
