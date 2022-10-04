@@ -30,6 +30,10 @@
             "title": "Conclusion",
             "description": "",
             "filename": "../../conclusion.md"
+        },
+        {
+            "title": "JavaOne / CloudWorld - Get Help",
+            "filename": "https://oracle-livelabs.github.io/common/support/ocwsupportlab/ocwsupportlab.md"
         }
     ]
 }
