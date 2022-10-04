@@ -124,7 +124,7 @@ You will now create a car and simulate a transaction between the founder organiz
 
 2. Select vehicle to view Car Details & Price
 
-  ![Car Delaership](images/apex-carDetailspayment.png)
+  ![Car Delaership](images/apex-cardetailspayment.png)
 
 ## Task 5: dealer2 - Purchase and Confirm Purchase
 

@@ -162,8 +162,18 @@ This lab assumes you have:
   ![Create New Enrollment](images/create_new_enrollment.png)
 
 4. Input enrollment information. See sample enrollment as example. Enrollment user had to be created in idcs. In this example 'marketplace','dealer1','dealer2' is used. Make sure the user has REST_Client role assoicated with the Blockchain instance.
+    - For marketplace Instance
 
   ![Sample Enrollment](images/sample_enrollment.png)
+  ![Sample Enrollment](images/enrollment_marketplace.png)
+
+    - For dealer1 Instance
+
+  ![Sample Enrollment](images/enrollment_dealer1.png)
+
+    - For dealer2 Instance
+
+  ![Sample Enrollment](images/enrollment_dealer2.png)
 
 5. Click Enroll.
 
