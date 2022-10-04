@@ -1,0 +1,39 @@
+{
+    "workshoptitle": "Project Panama Hands-On Lab",
+    "help": "java_devrel_grp@oracle.com",
+    "tutorials": [
+        {
+            "title": "Introduction",
+            "filename": "../../introduction.md"
+        },
+        {
+            "title": "Lab 1: Your workshop environment",
+            "filename": "../../environment.md"
+        },
+        {
+            "title": "Lab 2: Foreign Function & Memory API",
+            "filename": "../../ffm-intro.md"
+        },
+        {
+            "title": "Lab 3: A Simple Downcall",
+            "filename": "../../simple-downcall.md"
+        },
+        {
+            "title": "Lab 4: Upcalls",
+            "filename": "../../upcall.md"
+        },
+        {
+            "title": "Lab 5: Using jextract",
+            "filename": "../../jextract.md"
+        },
+        {
+            "title": "Conclusion",
+            "description": "",
+            "filename": "../../conclusion.md"
+        },
+        {
+            "title": "JavaOne / CloudWorld - Get Help",
+            "filename": "https://oracle-livelabs.github.io/common/support/ocwsupportlab/ocwsupportlab.md"
+        }
+    ]
+}
