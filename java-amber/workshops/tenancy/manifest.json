@@ -1,0 +1,34 @@
+{
+   "workshoptitle": "Exploring New Language Features With Java 19",
+    "help": "java_devrel_grp@oracle.com",
+    "tutorials": [
+        {
+            "title": "Introduction",
+            "filename": "../../introduction.md"
+        },
+        {
+            "title": "Your workshop environment",
+            "filename": "../../environment.md"
+        },
+        {
+            "title": "Records, First Steps",
+            "filename": "../../records-1-intro.md"
+        },
+        {
+            "title": "Records, Customizing Construction",
+            "filename": "../../records-2-construction.md"
+        },
+        {
+            "title": "Records, More Customization",
+            "filename": "../../records-3-customization.md"
+        },
+        {
+            "title": "Text Blocks",
+            "filename": "../../text-blocks.md"
+        },
+        {
+            "title": "Conclusion",
+            "filename": "../../conclusion.md"
+        }
+    ]
+}
