@@ -12,23 +12,23 @@
             "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/cloud-login.md"
         },
         {
-            "title": "Your workshop environment",
+            "title": "Lab 1: Your workshop environment",
             "filename": "../../environment.md"
         },
         {
-            "title": "Records, First Steps",
+            "title": "Lab 2: Records, First Steps",
             "filename": "../../records-1-intro.md"
         },
         {
-            "title": "Records, Customizing Construction",
+            "title": "Lab 3: Records, Customizing Construction",
             "filename": "../../records-2-construction.md"
         },
         {
-            "title": "Records, More Customization",
+            "title": "Lab 4: Records, More Customization",
             "filename": "../../records-3-customization.md"
         },
         {
-            "title": "Text Blocks",
+            "title": "Lab 5: Text Blocks",
             "filename": "../../text-blocks.md"
         },
         {
