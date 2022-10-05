@@ -107,10 +107,10 @@ VB Studio apps are event-driven, which means that an event is fired when an end 
 
 1. In Design view, select the Edit button, then click **Events** in the Properties pane:
 
-	![Events tab](images/eventpropertie2.png)
+	![Events tab](images/eventproperties2.png)
 
 2. Click **+ New Event**, then **On ojAction**:
-	![New event](images/newEvent.png)
+	![New event](images/newevent2.png)
 
 	You're now in the Action Chain Editor.
 
