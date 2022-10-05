@@ -12,7 +12,7 @@ There are a number of functions you can use to query an Oracle database, but the
 
 This lab will show how to fetch the data using python-oracledb driver
 
-Estimated Lab Time: 5 minutes
+Estimated Lab Time: 10 minutes
 
 ### Objectives
 
