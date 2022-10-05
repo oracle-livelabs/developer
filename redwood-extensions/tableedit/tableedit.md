@@ -109,7 +109,7 @@ VB Studio apps are event-driven, which means that an event is fired when an end 
 
 	![Events tab](images/eventproperties2.png)
 
-2. Click **+ New Event**, then **On ojAction**:
+2. Click **+ New Event**, then **On ojAction**. Note if you see an onClick event instead, it means you selected the icon instead of the button - switch to select the button in the structure panel.:
 	![New event](images/newevent2.png)
 
 	You're now in the Action Chain Editor.
