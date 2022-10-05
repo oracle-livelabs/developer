@@ -8,22 +8,27 @@
       "filename": "../../introduction/introduction.md"
     },
     {
-      "title": "Getting Started",
-      "description": "Using noVNC Remote Desktop",
-      "filename": "https://oracle-livelabs.github.io/common/labs/remote-desktop/using-novnc-remote-desktop.md"
+      "title": "Prepare Setup",
+      "description": "How to download your ORM stack and update security rules for an existing VCN",
+      "filename": "../../prepare-setup/prepare-setup.md"
     },
     {
-      "title": "Lab 1: Create a Blockchain Network connecting 3 Organizations",
+      "title": "Environment Setup",
+      "description": "How to provision the workshop environment and connect to it",
+      "filename": "https://oracle-livelabs.github.io/common/labs/setup-compute-generic/setup-compute-novnc-ssh.md"
+    },
+    {
+      "title": "Lab 1: Create 3 Organization Blockchain Network & Generate Smart Contracts ",
       "description": "OBP Environment Setup",
       "filename": "../../1-labs-obp-env-setup/obp-console.md"
     },
     {
-      "title": "Lab 2: Create and Deploy Smart Contracts using Oracle Blockchain App Builder",
+      "title": "Lab 2: Deploy Smart Contracts using Oracle Blockchain App Builder",
       "description": "OBP App Builder",
       "filename": "../../2-labs-obp-appbuilder/obp-appbuilder.md"
     },
     {
-      "title": "Lab 3: Create & Setup API Gateway to connect with Smart Contract API's",
+      "title": "Lab 3: Create & Setup API Gateway to invoke Smart Contract API's",
       "description": "OBP - API Gateway",
       "filename": "../../3-labs-obp-apigateway/obp-apigateway.md"
     },

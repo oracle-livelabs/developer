@@ -31,7 +31,7 @@ If you are not the tenancy administrator, there may be additional policies you m
 
 **If your group already has the permissions listed in part 6 of this task, you may skip to Task 2.**
 
-1. First, make sure you are in your home region (under Region in the drop down list)).
+1. Replace us-phoenix-1 in "[https://objectstorage.us-phoenix-1.oraclecloud.com](https://objectstorage.us-phoenix-1.oraclecloud.com)" with your region (see the Cloud shell promipt).
 
 	![Home region](images/home-region.png "home-region")
 
@@ -69,7 +69,7 @@ For this workshop, you need to create your own group.
 
 ![Policy details](images/policy-details.png "policy-details")
 
-Select **Show manual editor** and copy and paste these policies in the box below.
+Select **Show manual editor** and copy and paste the policies in the box below.
 	```
 	<copy>
 	Allow group myToDoGroup to use cloud-shell in tenancy
@@ -79,6 +79,10 @@ Select **Show manual editor** and copy and paste these policies in the box below
 	Allow group myToDoGroup to manage objects in tenancy
 	</copy>
 	```
+
+	9. Click "Create".
+
+![Create policy](images/policy-create.png "create")
 ## Task 2: Launch the Cloud Shell
 
 
@@ -192,7 +196,7 @@ The setup script uses Terraform, Bash scripts, and SQL to automate the creation 
 ## Task 6: Monitor the Setup
 The setup should take around 20 minutes to complete. During the setup, the cloud shell will output its progress, so keep an eye on it to see what it's doing. If there are any errors, you should check the logs located in the $MTDRWORKSHOP_LOG directory.
 
-1. The setup will update you with the progress of the resource creation. Wait for the setup to complete to move on to the next lab
+1. The setup will update you with the progress of the resource creation. Wait few minutes for the setup to complete to move on to the next lab 
 
 	![Setup progress feedback](images/resource-creation-update.png "resource-creation-update")
 

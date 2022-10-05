@@ -1,6 +1,4 @@
-# How to build powerful, secure REST APIs for your Oracle database
-
-## Introduction
+# Introduction
 
 Beginning with a simple CSV document, you'll quickly create a new Autonomous Database with a new table based on that same CSV document. And instead of using SQL or PL/SQL to interact with your new table we'll show you how to quickly build no-code full Create Read Update Delete (CRUD) REST APIs.
 
@@ -8,7 +6,7 @@ You'll also learn how to take your existing SQL and/or PLSQL and transform it in
 
 Once your APIs are ready, we'll show you how to easily secure them with OAuth2 clients.
 
-### About this Workshop
+## About this Workshop
 
 In this lab you will use the browser-based SQL and REST workshop tools, connect to your Autonomous Database and REST enable a table. You will then secure that REST endpoint all within a single UI.
 
