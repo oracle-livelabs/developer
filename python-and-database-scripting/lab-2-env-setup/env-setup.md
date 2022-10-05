@@ -139,24 +139,28 @@ The example above connects as ADMIN user using db\_config_sys file discussed in 
     The new user *pythondemo* is created.
 
 2. If for any reason you need to drop the user, review the *samples/tutorial/sql/drop\_user.sql* file and then run
-    ````
-    <copy>
-    python3 drop_user.py
-    </copy>
-    ````
+    
+````
+<copy>
+python3 drop_user.py
+</copy>
+````
 
 *Note: if you have not used the default **pythonuser** schema, you'd need to modify the script to explicitely mention the name of the schema to be dropped or alternatively edit edit ~/.bash_profile to use the schema that you have created earlier.*
 
 3. Install the tables and other database objects for the Livelab
 Once you have a database user, then you can create the key tables and database objects for the Livelab by running *setup\_tutorial.py* (the environment setup file), using your values for the Livelab username, password and connection string:
-    ````
-    <copy>
-    python3 setup_tutorial.py
-    </copy>
-    ````
+
+````
+<copy>
+python3 setup_tutorial.py
+</copy>
+````
+
 This will call the setup_tutorial.sql file from tutorials/sql directory to setup some sample tables and database objects required for running the examples in the tutorial.
+
 If it runs successfully, you will see something similar below:
-    ![Setup Tutorial](./images/setup_tut.png " ")
+![Setup Tutorial](./images/setup_tut.png " ")
 
 ## Task 5: Environment setup
 
