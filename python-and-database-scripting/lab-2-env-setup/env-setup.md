@@ -119,50 +119,7 @@ Python comes preinstalled on most Linux distributions, and for this LiveLab, the
 The **samples/tutorial** directory has scripts to run and modify. The **samples/tutorial/sql** directory has all the SQL scripts used by the Python files to create database tables and other objects.
 .
 
-## Task 4: Add a New Schema in your Oracle Autonomous Database
-
-1.  In this tutorial you will create a new schema in Oracle Autonomous database shared infrastructure.
-Review the grants created in *samples/tutorial/sql/create\_user.sql* by opening it in Code Editor. Then open a terminal window and run create\_user.py to execute the create\_user.sql script and create the new schema. This tutorial uses the name **pythondemo** for the new schema.
-
-*Note: The password you enter for the schema must contain at least an Upper letter, should be 12 characters or more, one digit required.
-
-The example above connects as ADMIN user using db\_config_sys file discussed in the earlier section.
-    ````
-    <copy>
-    python3 create_user.py
-    </copy>
-    ````
-    If it runs successfully, you will see something similar below:
-
-![Create User](./images/create_user.png " ")
-    
-    The new user *pythondemo* is created.
-
-2. If for any reason you need to drop the user, review the *samples/tutorial/sql/drop\_user.sql* file and then run
-    
-````
-<copy>
-python3 drop_user.py
-</copy>
-````
-
-*Note: if you have not used the default **pythonuser** schema, you'd need to modify the script to explicitely mention the name of the schema to be dropped or alternatively edit edit ~/.bash_profile to use the schema that you have created earlier.*
-
-3. Install the tables and other database objects for the Livelab
-Once you have a database user, then you can create the key tables and database objects for the Livelab by running *setup\_tutorial.py* (the environment setup file), using your values for the Livelab username, password and connection string:
-
-````
-<copy>
-python3 setup_tutorial.py
-</copy>
-````
-
-This will call the setup_tutorial.sql file from tutorials/sql directory to setup some sample tables and database objects required for running the examples in the tutorial.
-
-If it runs successfully, you will see something similar below:
-![Setup Tutorial](./images/setup_tut.png " ")
-
-## Task 5: Environment setup
+## Task 4: Environment setup
 
 We are going to use the [Code Editor](https://docs.oracle.com/en-us/iaas/Content/API/Concepts/code_editor_intro.htm) functionality available on your tenancy in order to edit the Python and SQL scripts, as needed.
 Oracle Cloud Infrastructure (OCI) Code Editor provides a rich, in-console editing environment that enables you to edit code and update service workflows and scripts without having to switch between the Console and your local development environment.
@@ -308,6 +265,48 @@ At runtime, the module name of the python-oracledb package is oracledb:
 ````
 import oracledb
 ````
+## Task 5: Add a New Schema in your Oracle Autonomous Database
+
+1.  In this tutorial you will create a new schema in Oracle Autonomous database shared infrastructure.
+Review the grants created in *samples/tutorial/sql/create\_user.sql* by opening it in Code Editor. Then open a terminal window and run create\_user.py to execute the create\_user.sql script and create the new schema. This tutorial uses the name **pythondemo** for the new schema.
+
+*Note: The password you enter for the schema must contain at least an Upper letter, should be 12 characters or more, one digit required.
+
+The example above connects as ADMIN user using db\_config_sys file discussed in the earlier section.
+    ````
+    <copy>
+    python3 create_user.py
+    </copy>
+    ````
+    If it runs successfully, you will see something similar below:
+
+![Create User](./images/create_user.png " ")
+    
+    The new user *pythondemo* is created.
+
+2. If for any reason you need to drop the user, review the *samples/tutorial/sql/drop\_user.sql* file and then run
+    
+````
+<copy>
+python3 drop_user.py
+</copy>
+````
+
+*Note: if you have not used the default **pythonuser** schema, you'd need to modify the script to explicitely mention the name of the schema to be dropped or alternatively edit edit ~/.bash_profile to use the schema that you have created earlier.*
+
+3. Install the tables and other database objects for the Livelab
+Once you have a database user, then you can create the key tables and database objects for the Livelab by running *setup\_tutorial.py* (the environment setup file), using your values for the Livelab username, password and connection string:
+
+````
+<copy>
+python3 setup_tutorial.py
+</copy>
+````
+
+This will call the setup_tutorial.sql file from tutorials/sql directory to setup some sample tables and database objects required for running the examples in the tutorial.
+
+If it runs successfully, you will see something similar below:
+![Setup Tutorial](./images/setup_tut.png " ")
 
 ## Task 6: Test Connection to Oracle Autonomous Database
 By default, python-oracledb runs in a ‘Thin’ mode which connects directly to Oracle Database. This mode does not need Oracle Client libraries. However, some additional functionality is available when python-oracledb uses them. Python-oracledb is said to be in ‘Thick’ mode when Oracle Client libraries are used. Both modes have comprehensive functionality supporting the Python Database API v2.0 Specification.
