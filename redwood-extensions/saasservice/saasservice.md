@@ -116,8 +116,10 @@ To leverage the service's pagination capabilities (as opposed to fetching all th
 		<copy><oj-table scroll-policy-options.scroller="html" scroll-policy="loadMoreOnScroll" ...></copy>
 
 
+
 P.S. If setting this in code didn't work, go to the property inspector for the table, locate the scroll policy options property and drill down to the sub properties by clicking the right arrow. Then set the scroller to html over there.
 					  ![scroller property](images/scroller.png)
+
 
 17. Click **Design** so we can see the resulting table with data fetched into it. We can take an even closer look at the app by using the Preview feature.  
 
