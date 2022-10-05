@@ -1,0 +1,34 @@
+{
+    "workshoptitle": "Modernize Oracle's PeopleSoft with Automation and Conversational AI",
+    "help": "livelabs-help-oci_us@oracle.com",
+    "tutorials": [
+        {
+            "title": "Get Started",
+            "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/cloud-login.md"
+            },
+        {
+            "title": "Introduction",
+            "filename": "../../introduction/introduction.md"
+        },
+   
+        {
+            "title": "Lab 1: Configure ODA",
+            "description": "Labs that follow the introduction are numbered, starting with Lab 1",
+            "filename": "../../Lab1/1-configure-oda.md"
+        },
+        {
+            "title": "Lab 2: ODA PSFT",
+            "filename": "../../Lab2/2-ODA-psft.md"
+        },
+        {
+            "title": "Lab 3: Test ODA",
+            "filename": "../../Lab3/3-test-oda.md"
+        },
+        {
+            "title": "Oracle CloudWorld 2022 - Get Help",
+            "filename": "https://oracle-livelabs.github.io/common/support/ocwsupportlab/ocwsupportlab.md"
+ }
+
+
+    ]
+}
