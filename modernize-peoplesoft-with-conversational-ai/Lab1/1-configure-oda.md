@@ -2,7 +2,7 @@
 
 ## **Introduction**
 
-- This lab will guide you through the steps to configure the Requisition Skill on Oracle Digital Assistant.
+This lab will guide you through the steps to configure the Requisition Skill on Oracle Digital Assistant. **Prior to the class, the moderators 'pulled' the "PeopleSoft Epro Requester Inquiry Bot" from the ODA Skill Store.**
 
 Estimated Time: 10 minutes
 
@@ -12,45 +12,39 @@ Estimated Time: 10 minutes
 
 ## **Step 1:** Install and Configure the Skill
 
-1. Sign in to your ODA instance. Click on the hamburger icon on the left and navigate to Development > Store. 
+1. Sign in to your ODA instance; URL and credentials will be provided by the moderators. 
 
-2. (**Do not do this step**, since prior to the class, the moderators searched for "PeopleSoft Epro Requester Inquiry Bot" and clicked on the 3 dots icon in the lower left corner and selected Pull.)
+2. Click on the Hamburger icon in the far left to expand the side menu; then navigate to Development > Skills and search for Epro (this is what was 'pulled' in Step 2). Click on the 3 dots icons and select **Clone**.
 
-    ![get skill](images/pullskill.png " ")
+    * In the ensuing dialog name the skill ocw\_psft\_oda\_YOURSTUDENTNUMBER 
 
-3. Navigate to Development > Skills and search from Epro (this is what was 'pulled' in Step 2). Click on the 3 dots icons and select **Clone**.
+    * Also select **21.10** from the drop-down Platform Versions then click Clone to save the changes.
 
-	 ![store](images/a.png " ")
+ ![clone](images/a.png " ")
 
- In the ensuing dialog name the skill **'ocw\_psft\_oda_YOURSTUDENTNUMBER'** and then click Extend to save the changes.
+3. In upper right corner click Train and accept the defaults.
 
-
+ ![train](images/train.png " ")
 
 
 
 ## **Step 2:** Create the web channel for this Skill
 
+4. Navigate to Development > Channels. Click on + Add Channel button and set the values:
 
-4. Navigate to Development > Channels. Click on + Channel to add one and set the values as seen in this picture. 
+ Enter the Channel name as webchannel_YOURSTUDENTNUMBER, any brief Description, Channel type - Oracle Web, Allowed Domain '*', Client Authentication Enabled  uncheck and select Create. 
 
-    ![channels](images/1.png " ")
+   ![1](images/1.png " ")
 
-Ie, Enter the Channel name, Description, Channel type - Oracle Web, Allowed Domain *, Client authentication enabled - uncheck and select Create
+5. Route the channel to the Skill you have created above via this dropdown (and filter the ensuing list for the name of the skill you cloned earlier.)
 
-5. Route the channel to the Skill **you have created above** via this dropdown.  Slide the Channel Enabled widget above it so that it is On.
-
-    ![route](images/2.png " ")
+    ![2](images/2.png " ")
     
 6.  Slide the Channel Enabled widget above it so that it is On
 
-![enable](images/3.png " ")
+![3](images/3.png " ")
     
 
 ## **Step 3:** Copy config values
 
-Copy a.the generated Channel ID and b. ODA URI - Ex: "oda-XXXX-da2.data.digitalassistant.oci.oraclecloud.com" and save them locally on your machine as they'll be used in a later lab.
-
-
-7. In upper right corner click Train and accept the defaults
-
-![train](images/train.png " ")
+7. On that same screen copy a. the generated Channel ID and b. the ODA URI from the browser window - Ex: "oda-XXXX-da2.data.digitalassistant.oci.oraclecloud.com" and save them locally in NotePad as they'll be used in a later lab.

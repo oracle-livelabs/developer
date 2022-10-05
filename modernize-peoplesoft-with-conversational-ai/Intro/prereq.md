@@ -22,53 +22,40 @@ Estimated Time: 1.5 hours
 
 ## **We created an environment where:**
 
-1. ODA is running
+1. ODA is running (you'll see that in a later lab.)
 
-2. PeopleSoft's a. Application Service is accessible on the open internet for the ODA Cloud instance to consume and b. Integration Broker is configured, up and running
+1. PeopleSofts Application Service is accessible on the open internet for the ODA Cloud instance to consume. The Integration Broker is configured, up and running
 
-**Note:** You will need a browser that allows HTTP connections since our lab environment is not using HTTPS
+Note: You will need a browser that allows HTTP connections since our lab environment is not using HTTPS
 
 
 ## **On your laptop:**
 
-The moderators during the course will assign each of you a StudentNumber (#);use your number in the table below to modify your /etc/hosts file so URL resolution will work
+The moderators during the course will assign each of you a StudentNumber (#).
+
+Use your number in the table below to modify your /etc/hosts file so URL resolution will work
+
+| IP      | URL |  Student # |
+| ----------- | ----------- | -------- |
+| 150.136.145.221 | ocw-psft-oda-blank.sub09280255350.ocwpsftoda.oraclevcn.com | #1 |
+! 132.145.181.58 | ocw-psft-oda-blank-557945.sub09280255350.ocwpsftoda.oraclevcn.com | #2 |
+| 158.101.127.11 | ocw-psft-oda-blank-212946.sub09280255350.ocwpsftoda.oraclevcn.com | #3
+| 132.145.182.100 | ocw-psft-oda-blank-846019.sub09280255350.ocwpsftoda.oraclevcn.com | #4
+| 129.213.202.144 | ocw-psft-oda-blank-768308.sub09280255350.ocwpsftoda.oraclevcn.com | #5 
+| 129.213.26.90 | ocw-psft-oda-blank-752568.sub09280255350.ocwpsftoda.oraclevcn.com | #6
+| 129.213.31.140 | ocw-psft-oda-blank-893139.sub09280255350.ocwpsftoda.oraclevcn.com | #7
+| 129.213.30.101 | ocw-psft-oda-blank-254959.sub09280255350.ocwpsftoda.oraclevcn.com | #8
+| 150.136.92.217 | ocw-psft-oda-blank-941682.sub09280255350.ocwpsftoda.oraclevcn.com | #9
+| 150.136.208.155 | ocw-psft-oda-blank-124176.sub09280255350.ocwpsftoda.oraclevcn.com | #10
+| 150.136.38.16 | ocw-psft-oda-blank-711742.sub09280255350.ocwpsftoda.oraclevcn.com | #11
+| 129.213.83.35 | ocw-psft-oda-blank-127032.sub09280255350.ocwpsftoda.oraclevcn.com | #12
+| 150.136.218.111 |  ocw-psft-oda-blank-484162.sub09280255350.ocwpsftoda.oraclevcn.com | #13
+| 132.145.130.100 | ocw-psft-oda-blank-13142.sub09280255350.ocwpsftoda.oraclevcn.com | #14
 
 
-IP	URL	**#StudentNumber**
+Also, copy to NotePad the middle value (URL) and add port 8000 to it; this will be your PSFT instance:
 
-150.136.145.221 ocw-psft-oda-blank.sub09280255350.ocwpsftoda.oraclevcn.com #1
-
-132.145.181.58 ocw-psft-oda-blank-557945.sub09280255350.ocwpsftoda.oraclevcn.com #2
-
-158.101.127.11 ocw-psft-oda-blank-212946.sub09280255350.ocwpsftoda.oraclevcn.com #3
-
-132.145.182.100 ocw-psft-oda-blank-846019.sub09280255350.ocwpsftoda.oraclevcn.com #4
-
-129.213.202.144 ocw-psft-oda-blank-768308.sub09280255350.ocwpsftoda.oraclevcn.com #5 
-
-129.213.26.90 ocw-psft-oda-blank-752568.sub09280255350.ocwpsftoda.oraclevcn.com #6
-
-129.213.31.140 ocw-psft-oda-blank-893139.sub09280255350.ocwpsftoda.oraclevcn.com #7
-
-129.213.30.101 ocw-psft-oda-blank-254959.sub09280255350.ocwpsftoda.oraclevcn.com #8
-
-150.136.92.217 ocw-psft-oda-blank-941682.sub09280255350.ocwpsftoda.oraclevcn.com #9
-
-150.136.208.155 ocw-psft-oda-blank-124176.sub09280255350.ocwpsftoda.oraclevcn.com #10
-
-150.136.38.16 ocw-psft-oda-blank-711742.sub09280255350.ocwpsftoda.oraclevcn.com #11
-
-129.213.83.35 ocw-psft-oda-blank-127032.sub09280255350.ocwpsftoda.oraclevcn.com #12
-
-150.136.218.111 ocw-psft-oda-blank-484162.sub09280255350.ocwpsftoda.oraclevcn.com #13
-
-132.145.130.100 ocw-psft-oda-blank-13142.sub09280255350.ocwpsftoda.oraclevcn.com #14
-
-
-Copy to NotePad the middle value (URL) and add port 8000 to it; this is your PSFT instance:
-
-ie: http:ocw-psft-oda-blank-13142.sub09280255350.ocwpsftoda.oraclevcn.com:8000
-
+ie: http://ocw-psft-oda-blank-13142.sub09280255350.ocwpsftoda.oraclevcn.com:8000
 
 You may now *proceed to the next lab*.
 
