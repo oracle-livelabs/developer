@@ -58,7 +58,7 @@ This lab assumes you have:
 5. Display Request and Response - Request/Response.
 
 
-## Task 1: Deploy Smart Contract (Chaincode) to Founder Instance (Marketplace) from Blockchain App Builder
+## Task 2: Deploy Smart Contract (Chaincode) to Founder Instance (Marketplace) from Blockchain App Builder
 
   Now that we have tested our project locally, we can connect to our remote instances.
 
@@ -82,7 +82,7 @@ This lab assumes you have:
 
   ![Founder Deployment](images/2-car-marketplace-6-4.png)
 
-## Task 2: Import Marketplace chaincode package from app builder
+## Task 3: Import Marketplace chaincode package from app builder
 
 1. In Visual Studio Code, click on the **O** icon on the left-hand menu to use the Blockchain App Builder Extension.
 
@@ -90,7 +90,7 @@ This lab assumes you have:
 
   ![Car Marketplace Chaincode Package](images/2-app-builder-7-1.png)
 
-## Task 3: Install and Deploy Marketplace chaincode package onto Participant Instances using Oracle Cloud Blockchain Platform Console(dealer1 & dealer2)
+## Task 4: Install and Deploy Marketplace chaincode package onto Participant Instances using Oracle Cloud Blockchain Platform Console(dealer1 & dealer2)
 
   To install and re-deploy the chaincode on partner instances, use the package in Task3 (above) and then approve the chaincode definition from the partner instances (in this case, 'dealer1' and 'dealer2').
 
@@ -154,7 +154,7 @@ This lab assumes you have:
 13. Repeat steps 1-12 for 'dealer2' instance
 
 
-## Task 4: User Enrollment - Perform on All nodes (marketplace, dealer1, dealer2)
+## Task 5: User Enrollment - Perform on All nodes (marketplace, dealer1, dealer2)
 
   Oracle Blockchain Platform supports enrollments to the REST proxy. You use enrollments with token chaincodes to ensure the identities of the users completing token transactions. To do this, when you add enrollments for token use cases, specify a user ID for each enrollment (founder ID in this case), and specify one and only one user for each enrollment.
 
@@ -183,7 +183,7 @@ This lab assumes you have:
 
 5. Click Enroll.
 
-## Task 5: Create Fiat Tokenization Chaincode
+## Task 6: Create Fiat Tokenization Chaincode
 
 The flow for developing smart contracts for tokenization begins with creating a specification file that describes our fiat token. `Car_Tokenization.yml` describes our FiatToken structure: AssetType, `Token_id`, `Token_name`, `Token_desc`, `Token_type`, and behavior.  
 
@@ -200,7 +200,7 @@ You can see sample specification files (and write your own specifications) in ei
   Make sure the **Details** of your specification read:
   ![Car Tokenization Specification Details](images/2-app-builder-tokenization-yml.png)
 
-## Task 6: Deploy Fiat Tokenization chaincode to Founder Instance
+## Task 7: Deploy Fiat Tokenization chaincode to Founder Instance
 
 1. In the OCI services menu, select 'Developer Services' and click on 'Blockchain Platform.'
 
@@ -222,7 +222,7 @@ You can see sample specification files (and write your own specifications) in ei
 
   ![Car Tokenization Chaincode Package](images/2-appbuilder-chaincodepackage-tokenization.png)  -->
 
-## Task 7: Approve the chaincode on Participant Instances
+## Task 8: Approve the chaincode on Participant Instances
 
 Approve the chaincode definition from the partner instances (in this case, 'dealer1' and 'dealer2').
 
@@ -290,7 +290,7 @@ Approve the chaincode definition from the partner instances (in this case, 'deal
 6. Repeat steps 2-12 for 'dealer2.'
 
 
-## Task 8: Initialization and Issuance of Car Marketplace FiatToken
+## Task 9: Initialization and Issuance of Car Marketplace FiatToken
 
 1. Import the Marketplace Tokenization Postman collection [Marketplace Tokenization](files/MarketplaceTokenization.postman_collection_final.json?download=1) and assign variable definitions as shown.
 
@@ -324,7 +324,7 @@ Approve the chaincode definition from the partner instances (in this case, 'deal
     - Step 7 – Issue Tokens: This method mints tokens, which are then owned by the caller of the method. The caller must have an account and the minter role.
   ![Issue Tokens](images/issue_tokens.png)
 
-## Task 9: Create Car Title Registration NFT  Chaincode
+## Task 10: Create Car Title Registration NFT  Chaincode
 
 This flow is for developing smart contracts to create a NFT for Car Title Registrations which begins with creating a specification file that describes our NFT. `Car_Title_Registration.yml` describes our NFT structure: AssetType, `Token_id`, `Token_name`, `Token_desc`, `Token_type`,  `behavior` and metadata.  
 
@@ -341,7 +341,7 @@ You can see sample specification files (and write your own specifications) in ei
   Make sure the **Details** of your specification read:
   ![Car NFT Specification Details](images/2-app-builder-cartitleregistration-yml.png)
 
-## Task 10: Deploy Car Title Registration NFT chaincode to Founder Instance
+## Task 11: Deploy Car Title Registration NFT chaincode to Founder Instance
 
 1. In the OCI services menu, select 'Developer Services' and click on 'Blockchain Platform.'
 
@@ -355,7 +355,7 @@ You can see sample specification files (and write your own specifications) in ei
   ![Founder Deployment](images/2-app-builder-cartitlereg-deploy-2.png)
   ![Founder Deployment](images/2-app-builder-cartitlereg-deploy-3.png)
 
-## Task 11: Approve the chaincode on Participant Instances
+## Task 12: Approve the chaincode on Participant Instances
 
 Approve the chaincode definition from the partner instances (in this case, 'dealer1' and 'dealer2').
 
@@ -423,7 +423,7 @@ Approve the chaincode definition from the partner instances (in this case, 'deal
 6. Repeat steps 2-12 for 'dealer2.'
 
 
-## Task 12: Initialization and Issuance of Car Title Registration NFT
+## Task 13: Initialization and Issuance of Car Title Registration NFT
 
 1. Import the Car Title Registration NFT Postman collection [CarTitle NFT](files/Marketplace_CarTitleRegistration_Final.postman_collection.json?download=1) and assign variable definitions as shown.
 
