@@ -22,7 +22,7 @@ This lab assumes you have completed the following labs:
 
 Additionally, you need to make Oracle Client libraries available. Follow the documentation on [Installing python-oracledb](https://python-oracledb.readthedocs.io/en/latest/user_guide/installation.html).
 
-When you have installed Oracle Client libraries, review the library path settings in *db\_config\_thick.py* file. If python-oracledb cannot locate Oracle Client libraries, then your applications will fail with an error like "DPI-1047: Cannot locate a 64-bit Oracle Client library". For our examples, we are using Oracle Instant Client libraries.
+When you have installed [Oracle Client](https://yum.oracle.com/oracle-instant-client.html) libraries, review the library path settings in *db\_config\_thick.py* file. If python-oracledb cannot locate Oracle Client libraries, then your applications will fail with an error like "DPI-1047: Cannot locate a 64-bit Oracle Client library". For our examples, we are using Oracle Instant Client libraries.
 
 ````
 # On Linux, this must be None.
