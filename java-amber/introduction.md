@@ -51,4 +51,4 @@ Today's goal is to give you, in a short amount of time, an introduction to recen
 
 * **Author** - [Nicolai Parlog, DevRel, Java Platform Group - Oracle](https://nipafx.dev/)
 * **Contributor** -  [David Delabassée, DevRel, Java Platform Group - Oracle](https://twitter.com/delabassee)
-* **Last Updated By/Date** - Nicolai Parlog, Sep. 19th 2022
+* **Last Updated By/Date** - Nicolai Parlog, Sep. 19 2022
