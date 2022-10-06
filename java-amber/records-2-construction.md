@@ -226,4 +226,4 @@ public record Range(int start, int end) {
 
 * **Author** - [Nicolai Parlog, DevRel, Java Platform Group - Oracle](https://nipafx.dev/)
 * **Contributor** - [José Paumard, DevRel, Java Platform Group - Oracle](https://twitter.com/JosePaumard)
-* **Last Updated By/Date** - Nicolai Parlog, Sep. 19th 2022
+* **Last Updated By/Date** - Nicolai Parlog, Sep. 19 2022
