@@ -190,7 +190,9 @@ import json
 con = oracledb.connect(user=db_config.user,
                         password=db_config.pw,
                         dsn=db_config.dsn, 
-                        config_dir=db_config.config_dir, wallet_location=db_config.wallet_location,  wallet_password=db_config.wallet_password)
+                        config_dir=db_config.config_dir, 
+                        wallet_location=db_config.wallet_location, 
+                        wallet_password=db_config.wallet_password)
 
 cur = con.cursor()
 
