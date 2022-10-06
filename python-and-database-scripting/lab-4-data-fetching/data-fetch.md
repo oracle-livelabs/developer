@@ -163,7 +163,7 @@ This section demonstrates a way to improve query performance by increasing the n
 
 Row prefetching and array fetching are both internal buffering techniques to reduce round-trips to the database. The difference is the code layer that is doing the buffering, and when the buffering occurs.
 
-During the setup_environment.py run, a table was created and populated with a large number of rows to be used by the query\_arraysize.py file) by internally running the sql script below:
+During the setup_environment.py run, a table was created and populated with a large number of rows to be used by the query\_arraysize.py file by internally running the sql script below:
 
 ````
 create table bigtab (mycol varchar2(20));
