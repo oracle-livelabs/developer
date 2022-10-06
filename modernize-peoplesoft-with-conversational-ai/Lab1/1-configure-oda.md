@@ -14,7 +14,7 @@ Estimated Time: 10 minutes
 
 1. Sign in to your ODA instance; URL and credentials will be provided by the moderators. 
 
-2. Click on the Hamburger icon in the far left to expand the side menu; then navigate to Development > Skills and search for Epro (this is what was 'pulled' in Step 2). Click on the 3 dots icons and select **Clone**.
+2. Click on the Hamburger icon in the far left to expand the side menu; then navigate to Development > Skills and search for Epro (this is what was 'pulled' in prior). Click on the 3 dots icons and select **Clone**.
 
     * In the ensuing dialog name the skill ocw\_psft\_oda\_YOURSTUDENTNUMBER 
 

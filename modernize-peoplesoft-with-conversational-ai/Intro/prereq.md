@@ -38,7 +38,7 @@ Use your number in the table below to modify your /etc/hosts file so URL resolut
 | IP      | URL |  Student # |
 | ----------- | ----------- | -------- |
 | 150.136.145.221 | ocw-psft-oda-blank.sub09280255350.ocwpsftoda.oraclevcn.com | #1 |
-! 132.145.181.58 | ocw-psft-oda-blank-557945.sub09280255350.ocwpsftoda.oraclevcn.com | #2 |
+| 132.145.181.58 | ocw-psft-oda-blank-557945.sub09280255350.ocwpsftoda.oraclevcn.com | #2 |
 | 158.101.127.11 | ocw-psft-oda-blank-212946.sub09280255350.ocwpsftoda.oraclevcn.com | #3
 | 132.145.182.100 | ocw-psft-oda-blank-846019.sub09280255350.ocwpsftoda.oraclevcn.com | #4
 | 129.213.202.144 | ocw-psft-oda-blank-768308.sub09280255350.ocwpsftoda.oraclevcn.com | #5 
@@ -55,7 +55,7 @@ Use your number in the table below to modify your /etc/hosts file so URL resolut
 
 Also, copy to NotePad the middle value (URL) and add port 8000 to it; this will be your PSFT instance:
 
-ie: http://ocw-psft-oda-blank-13142.sub09280255350.ocwpsftoda.oraclevcn.com:8000
+ie: http://ocw-psft-oda-YOURVALUEHEREFROMTABLEABOVE.ocwpsftoda.oraclevcn.com:8000
 
 You may now *proceed to the next lab*.
 
