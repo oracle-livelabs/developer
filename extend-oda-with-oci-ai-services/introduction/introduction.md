@@ -28,4 +28,5 @@ Access to the  Oracle Cloud Infrastructure (OCI) console, which is used to provi
 ## Acknowledgements
 
 * **Author** - John Basset, Barry Hiern, Daniel Teixeira
+* **Contributor** - Anshuman Panda
 * **Last Updated By/Date** - Daniel Teixeira, October 2022
