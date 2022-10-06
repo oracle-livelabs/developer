@@ -53,6 +53,8 @@ Here are the key areas of the Designer you'll use throughout this workshop:
 | 5 |Canvas | Displays a design/live view (or code view) of your page content |
 {: title="Designer Regions"}
 
+Note that you can collapse and expand tabs to better manage your working area. When collapsed the tab will show as a vertical tab on the side of the editor. To expand/collapse a tab click that specific tab.
+
 **Tip:** In the header area (the black bar along the top), you'll also find the Undo and Redo buttons, which look like this:
 
   ![Undo button](images/undo.png)
@@ -91,7 +93,9 @@ In the next lab, we'll add some more useful components to the page.
 
 3. While the input search is selected in the canvas, click the **Data** tab in the Properties pane.
 
-4. Click the little arrow at the top right of the Value field to display a list of variables.
+4. Click the little arrow at the top right of the **Value** field to display a list of variables. (you might need to hover your mouse on the field first)
+
+  ![Variable creation](images/valuefield.png)
 
 5. Next to the **Page** category, click **Create Variable** to create a page-level variable:
 

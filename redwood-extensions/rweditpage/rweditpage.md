@@ -38,7 +38,7 @@ In this lab, you will:
 4. In the Components palette search for **edit**, and locate the **Simple Create and Edit Template**:
 	  ![Edit template](images/editcomponents.png)
 
-5. Drag it to the top of the page hierarchy in the Structure pane, and drop it when you see a blue line above Grid Row.
+5. Drag it to the top of the page hierarchy in the Structure pane, and drop it when you see a blue line above the first Grid Row.
 
 6. In the Properties pane, set these properties to customize the template:
 
@@ -93,7 +93,7 @@ The Simple Create and Edit Page Template has a primary action built in, Save, bu
 
 ![Action properties](images/actionchain.png)
 
-6. Let's also add an action to handle the cancel button. In the Structure pane, select **Simple Create and Edit Page Template**.
+6. Let's also add an action to handle the cancel button. Switch back to the Designer view of the page and in the Structure pane, select **Simple Create and Edit Page Template**.
 
 7. In the Properties pane, click **Events**, then click **+ New Event**, and select the **On spCancel** event.
 
@@ -130,7 +130,7 @@ Now let's apply a template to the Details page.  In this case, we'll use a templ
 
  ![Foldout templates](images/foldcomponents.png)
 
-3. Drag the template to the top of the page hierarchy in the Structure pane, and drop it when you see the blue line above Grid Row:
+3. Drag the template to the top of the page hierarchy in the Structure pane, and drop it when you see the blue line above the first Grid Row:
 
 	  ![Structure pane](images/folddrag.png)
 
