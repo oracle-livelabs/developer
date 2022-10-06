@@ -8,7 +8,7 @@ Estimated Lab Time: 10 minutes
 
 ### Objectives
 
-*  Learn best practices and efficient techniques for .....
+*  Learn best practices and efficient techniques for using subclassing for connecting and cursors creation with Oracle Autonomous Database.
 
 ### Prerequisites
 
