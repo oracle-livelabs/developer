@@ -216,4 +216,4 @@ As you can see, this is also a way to have the closing delimiter on its own line
 ## Acknowledgements
 
 * **Author** - [Nicolai Parlog, DevRel, Java Platform Group - Oracle](https://nipafx.dev/)
-* **Last Updated By/Date** - Nicolai Parlog, Sep. 21st 2022
+* **Last Updated By/Date** - Nicolai Parlog, Sep. 21 2022
