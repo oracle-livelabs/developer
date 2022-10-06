@@ -289,7 +289,7 @@ You should expect results as below:
 
 In this lab, you had an opportunity to try out connecting Python to the Oracle Database.
 You have learned how to:
-* Use type handlers in order to alter data that is fetch from or sent to the database.
+* Use type handlers in order to alter data that is fetched from or sent to the database.
 
 ## Acknowledgements
 
