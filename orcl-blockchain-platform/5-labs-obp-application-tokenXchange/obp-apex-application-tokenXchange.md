@@ -71,7 +71,7 @@ This lab assumes you have:
   - dealer-1-auth-obp (john_dealer1 account)
   - dealer-2-obp-auth (sam_dealer2 account)
 
-## Task 2: Complete Car Marketplace Workshop by Trading a Car - Add a car to dealer1 Inventory
+## Task 3: Complete Car Marketplace Workshop by Trading a Car - Add a car to dealer1 Inventory
 
 You will now create a car and simulate a transaction between the founder organization and a car dealer partner. When a car is added to the Marketplace, tokens are put on hold in the founder instance and then transacted with partner dealerships as necessary. 
 
@@ -100,7 +100,7 @@ You will now create a car and simulate a transaction between the founder organiz
 
   ![Car Delaership](images/apex-addcar.png)
 
-## Task 3: dealer2 - Deposit Tokens in to the account
+## Task 4: dealer2 - Deposit Tokens in to the account
 
 1. Now login as the other dealer, sam_dealer2.
 
@@ -116,7 +116,7 @@ You will now create a car and simulate a transaction between the founder organiz
 
   ![Car Delaership](images/apex-accountbalance.png)
 
-## Task 4: dealer2 - Search Car
+## Task 5: dealer2 - Search Car
 
 1. Navigate to Marketplace
 
@@ -126,7 +126,7 @@ You will now create a car and simulate a transaction between the founder organiz
 
   ![Car Delaership](images/apex-cardetailspayment.png)
 
-## Task 5: dealer2 - Purchase and Confirm Purchase
+## Task 6: dealer2 - Purchase and Confirm Purchase
 
 1. Confirm vehicle Purchase
 
@@ -134,7 +134,7 @@ You will now create a car and simulate a transaction between the founder organiz
 
 Purchase order will now be created.
 
-## Task 6: Dealer1 - Review & Confirm the order place by dealer2
+## Task 7: Dealer1 - Review & Confirm the order place by dealer2
 
 1. Return to dealer 1's account, and navigate to orders received. You should be able to see the order placed by dealer 2.
 
@@ -146,7 +146,7 @@ Purchase order will now be created.
 
 This action confirms the order by the seller.
 
-## Task 7: dealer2 - Order Processed and Accepted
+## Task 8: dealer2 - Order Processed and Accepted
 
 1. Return to dealers 2's account, and navigate to orders placed. You will see the order placed should now be processed and ready to complete the purchase.
 
@@ -154,7 +154,7 @@ This action confirms the order by the seller.
 
 Select "Accept Receipt" to complete order or "Cancel Order" to cancel the order.
 
-## Task 8: dealer2 - Generate Invoice & Payment
+## Task 9: dealer2 - Generate Invoice & Payment
 
 1. Generate & View the invoice for the order Processed
 
@@ -165,7 +165,7 @@ Select "Accept Receipt" to complete order or "Cancel Order" to cancel the order.
  ![Car Delaership](images/apex-proceed-payment.png)
 
 
-## Task 9: dealer2 - Token Transfer & Delivery
+## Task 10: dealer2 - Token Transfer & Delivery
 1. Once purchaser Accepts receipt, the token transfer will now occur and the vehicle will be delivered to the new owner.
 
   ![Car Delaership](images/apex-vehicledelivered.png)
@@ -176,7 +176,7 @@ Additionaly, you are able to view the invoice from the purchase in the Orders > 
 
   ![Car Delaership](images/apex-invoicereceived.png)
 
-## Task 10: Check Token Balances for dealer1 & dealer2 after the payment
+## Task 11: Check Token Balances for dealer1 & dealer2 after the payment
 
 1. dealer1 token balance
 
