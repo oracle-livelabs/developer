@@ -179,7 +179,7 @@ oracledb.defaults.fetch_decimals = True
 
 Input type handlers enable applications to change how data is bound to statements, or to enable new types to be bound directly without having to be converted individually.
 
-Review *type\_input.py*, which is similar to the final *bind\_sdo.py*, with the addition of a new class (**class Building(object)**) and converter:
+Review *type\_input.py*:
 
 ````
 <copy>
