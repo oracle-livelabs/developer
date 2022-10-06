@@ -232,12 +232,13 @@ def from_json(cls, value):
     result = json.loads(value)
     return cls(**result)
     
-# Convert a Python building object to SQL JSON type that can be read as a string def building_in_converter(value):
-return value.to_json()
+# Convert a Python building object to SQL JSON type that can be read as a string 
+def building_in_converter(value):
+    return value.to_json()
     
 def input_type_handler(cursor, value, num_elements):
-if isinstance(value, Building):
-    return cursor.var(oracledb.STRING, arraysize=num_elements,
+    if isinstance(value, Building):
+        return cursor.var(oracledb.STRING, arraysize=num_elements,
                         inconverter=building_in_converter)
                           
 building = Building(1, "The First Building", 5)  # Python object
