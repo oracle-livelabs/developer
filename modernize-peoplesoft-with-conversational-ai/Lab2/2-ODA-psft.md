@@ -159,6 +159,3 @@ Estimated Time: 60 minutes
 
     
 Congratulations! Move on to the final lab
-
-
-

@@ -2,12 +2,14 @@
 
 ## Introduction
 
+The Structured concurrency API simplifies multithreaded programming by giving developers a powerful means to coordinate and manage cooperating groups of virtual threads. It treats multiple tasks running in different threads as a single unit of work, thereby streamlining error handling and cancellation, improving reliability, and enhancing observability. This is an incubating API in JDK 19.
+
+
+### Objectives
 
 This lab introduces you to Structured Concurrency, its programming model, and its API.
 
 Estimated Time: 35 minutes
-
-### Objectives
 
 In this lab, you will:
 * Create an asynchronous system using the Structured Concurrency API
@@ -220,5 +222,5 @@ You should be able to very easily write unit tests for all the steps of your asy
 
 ## Acknowledgements
 * **Author** - [José Paumard, Java Developer Advocate, Java Platform Group - Oracle](https://twitter.com/JosePaumard)
-* **Contributors** -  Billy Korando, Java Developer Advocate, Java Platform Group
-* **Last Updated By/Date** - José Paumard, October 2022
+* **Contributor** -  Billy Korando, Java Developer Advocate, Java Platform Group
+* **Last Updated By/Date** - David Delabassée, Oct. 6 2022

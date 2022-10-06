@@ -55,6 +55,7 @@ Use your number in the table below to modify your /etc/hosts file so URL resolut
 
 Also, copy to NotePad the middle value (URL) and add port 8000 to it; this will be your PSFT instance:
 
+
 ie: http://ocw-psft-oda-YOURVALUEHEREFROMTABLEABOVE.ocwpsftoda.oraclevcn.com:8000
 
 You may now *proceed to the next lab*.
