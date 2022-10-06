@@ -46,4 +46,4 @@ Cloud Shell:
 
 * **Author** - [Nicolai Parlog, DevRel, Java Platform Group - Oracle](https://nipafx.dev/)
 * **Contributor** -  [David Delabassée, DevRel, Java Platform Group - Oracle](https://twitter.com/delabassee)
-* **Last Updated By/Date** - Nicolai Parlog, Oct. 2nd 2022
+* **Last Updated By/Date** - Nicolai Parlog, Oct. 2 2022
