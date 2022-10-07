@@ -2,6 +2,8 @@
 
 Even though natural language processing (NLP) enables a skill to perform naturalistic interactions with its users, it can't fully replicate how a live agent visualizes an actual object and reacts accordingly to customer inquiries and complaints. In these labs, you'll learn how you can build a skill that can also react to customer sentiment and recognize physical objects though the help of various Oracle Cloud Infrastructure (OCI) AI services.
 
+Estimated Time: 90 minutes
+
 ## Before you Begin
 In these labs, you'll build out a Pizza skill and integrate it with Oracle Cloud Infrastructure (OCI) AI services.
 
