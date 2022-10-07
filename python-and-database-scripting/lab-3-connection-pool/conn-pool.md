@@ -5,7 +5,7 @@ Connection pooling is important for performance when multi-threaded applications
 
 This lab will show how to create connection pools using python-oracledb driver
 
-Estimated Lab Time: 5 minutes
+Estimated Lab Time: 10 minutes
 
 ### Objectives
 
@@ -122,10 +122,10 @@ Pool configurations where min is the same as max (and increment = 0) are often r
 
 In this lab, you had an opportunity to try out connecting Python to the Oracle Database.
 You have learned how to:
-* Use python-oracledb connection pooling and Database Resident Connection Pooling
+* Use python-oracledb connection pooling
 
 ## Acknowledgements
 
 * **Authors** - Christopher Jones, Anthony Tuininga, Sharad Chandran, Veronica Dumitriu
 * **Contributors** - Jaden McElvey, Anoosha Pilli, Troy Anthony
-* **Last Updated By/Date** - Veronica Dumitriu, DB Product Management, July 2022
+* **Last Updated By/Date** - Veronica Dumitriu, DB Product Management, Oct 2022

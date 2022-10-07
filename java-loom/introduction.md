@@ -29,4 +29,4 @@ In this hands-on workshop, you will
 ## Acknowledgements
 * **Author** - [José Paumard, Java Developer Advocate, Java Platform Group - Oracle](https://twitter.com/JosePaumard)
 * **Contributors** -  Billy Korando, Java Developer Advocate, Java Platform Group
-* **Last Updated By/Date** - José Paumard, October 2022
+* **Last Updated By/Date** - José Paumard, Oct. 1 2022

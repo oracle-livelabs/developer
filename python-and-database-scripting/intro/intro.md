@@ -6,7 +6,7 @@ This tutorial is an introduction to using Python with Oracle Database. It contai
 
 Follow the steps in this document. The **tutorial** directory has scripts to run and modify. 
 
-Estimated Workshop Time: 60 minutes
+Estimated Workshop Time: 90 minutes
 
 ### Objectives
 
