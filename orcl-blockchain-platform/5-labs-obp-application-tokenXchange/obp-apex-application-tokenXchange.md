@@ -47,7 +47,7 @@ This lab assumes you have:
 1. 'Open the Apex Application' and login to 'DEVELOPER' as shown:
     - Enter 'marketplace' as the **Workspace**.
     - Enter 'DEVELOPER' as the **Username**.
-    - Enter the **Password** you setup in *Lab 4 --> Task 2 -->Step 4*
+    - Enter the **Password** you setup in *Lab 4 --> Task 2 -->Step 5*
 
   ![Login as Developer](images/4-apex-3-1.png)
 
@@ -59,7 +59,7 @@ This lab assumes you have:
 
   ![Web Credentials](images/4-apex-5-1.png)
 
-3. Now, click on 'Credentials for OBP Endpoint.'
+3. Next, click on 'Credentials for OBP Endpoint.'
 
   ![Web Credentials](images/4-apex-5-2.png)
 
@@ -68,8 +68,8 @@ This lab assumes you have:
   ![Web Credentials](images/4-apex-5-4.png)
 
 5. Repeat step 1-4 for the other two web credentials, using the passwords belonging to the Dealership accounts in Section 1 - task 8.
-  - dealer-1-auth-obp (john_dealer1 account)
-  - dealer-2-obp-auth (sam_dealer2 account)
+  - dealer_1_obp_auth (john_dealer1 account)
+  - dealer_2_obp_auth (sam_dealer2 account)
 
 ## Task 3: Complete Car Marketplace Workshop by Trading a Car - Add a car to dealer1 Inventory
 
@@ -99,6 +99,11 @@ You will now create a car and simulate a transaction between the founder organiz
     - Set 'For Sale' to true.
 
   ![Car Delaership](images/apex-addcar.png)
+
+3. Click on the car added in previous step (marketplace inventory)
+
+
+
 
 ## Task 4: dealer2 - Deposit Tokens in to the account
 

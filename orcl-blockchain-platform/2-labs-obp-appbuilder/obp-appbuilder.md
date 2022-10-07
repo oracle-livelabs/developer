@@ -78,7 +78,9 @@ This lab assumes you have:
     - Paste the **Marketpalce rest proxy url from step3** of your marketplace founder instance.
     - Enter your **User Name** (e.g. 'username') and then enter the **Password**.
 
-5. Now, changing the target environment from 'Local Environment' to 'Marketplace' in App Builder. Obtain the channel name as set in *Lab1 - Task 5 (car-marketplace)* 
+  ![Founder Deployment](images/2-app-builder-4-4.1.png)
+
+6. Now, changing the target environment from 'Local Environment' to 'Marketplace' in App Builder. Obtain the channel name as set in *Lab1 - Task 5 (car-marketplace)* 
 
   ![Founder Deployment](images/2-car-marketplace-6-4.png)
 
@@ -151,7 +153,7 @@ This lab assumes you have:
 
   ![Check Approved Field](images/2-car-marketplace-7-12.png)
 
-13. Repeat steps 1-12 for 'dealer2' instance
+13. Repeat steps 1-11 for 'dealer2' instance
 
 
 ## Task 5: User Enrollment - Perform on All nodes (marketplace, dealer1, dealer2)
@@ -170,7 +172,6 @@ This lab assumes you have:
 4. Input enrollment information. See sample enrollment as example. Enrollment user had to be created in idcs. In this example 'marketplace','dealer1','dealer2' is used. Make sure the user has REST_Client role assoicated with the Blockchain instance.
     - For marketplace Instance
 
-  ![Sample Enrollment](images/sample_enrollment.png)
   ![Sample Enrollment](images/enrollment_marketplace.png)
 
     - For dealer1 Instance
@@ -207,7 +208,7 @@ You can see sample specification files (and write your own specifications) in ei
 2. Ensure that the right **Compartment** is selected and click on the 'Marketplace' founder instance.
 
 3. Click on the 'Service Console' -->  Go to 'Nodes' tab from the Blockchain Admin Console Dashboard --> copy the REST Proxy URL of this platform instance.
-  ![Service Console](images/2-app-builder-tokenization-deploy-marketplace.png)
+  ![Service Console](images/3-gateway-4.bc.1.png)
 
 4. Changing the target environment in Blockchain AppBuilder to 'Marketplace.' Also change the channel to 'car-marketplace'. Add the Init Parameters needed (org_id: marketplace, user_id: marketplace)
 
@@ -285,14 +286,14 @@ Approve the chaincode definition from the partner instances (in this case, 'deal
 
 5. Check that the chaincode has now been approved by the current participant.
 
-  ![Check Approved Field](images/2-car-marketplace-7-12-4.png)
+  ![Check Approved Field](images/2-car-tokenization-7-12.4.png)
 
-6. Repeat steps 2-12 for 'dealer2.'
+6. Repeat steps 1-5 for 'dealer2.'
 
 
 ## Task 9: Initialization and Issuance of Car Marketplace FiatToken
 
-1. Import the Marketplace Tokenization Postman collection [Marketplace Tokenization](files/MarketplaceTokenization.postman_collection_final.json?download=1) and assign variable definitions as shown.
+1. Import the Marketplace Tokenization Postman collection [Marketplace Tokenization](files/Marketplace_Tokenization_Final.postman_collection.json?download=1) and assign variable definitions as shown.
 
   ![Import Collection](images/import_collection.png)
   ![Import Collection 2](images/import_collection2.png)
@@ -309,10 +310,14 @@ Approve the chaincode definition from the partner instances (in this case, 'deal
     - Step 1 – Initialize Token: This method creates a token and initializes the token properties. The asset and its properties are saved in the state database. This method can be invoked only by the Token Admin of the chaincode.
   ![Initialize Token](images/initialize_token.png)
 
-    - Step 2, 3, 4 – Create & Associate Accounts(Token Admin, Token User1, Token User2):  This method creates an account for a specified user and token. An account must be created for any user who will have tokens at any point. Accounts track balances, on-hold balances, and transation history. 
+    - Step 2, 3, 4 – Create & Associate Accounts(Token User1, Token User2):  This method creates an account for a specified user and token. An account must be created for any user who will have tokens at any point. Accounts track balances, on-hold balances, and transation history. 
 
   ![Create Accounts](images/create_accounts.png)
+  
+    - Copy the account id received when creating the account. Substitute the accountid while associating the account as shown.
   ![Initialize Token](images/user_tokens.png)
+
+    - Repeate the tasks create and associate token accounts for user Token User1 and Token User2
   ![Initialize Token](images/associate_token1.png)
 
     - Step 5, 6 – Add Role: This method adds a role to a specified user and token. This method can be called only by the Token Admin of the chaincode.
@@ -348,9 +353,9 @@ You can see sample specification files (and write your own specifications) in ei
 2. Ensure that the right **Compartment** is selected and click on the 'Marketplace' founder instance.
 
 3. Click on the 'Service Console' -->  Go to 'Nodes' tab from the Blockchain Admin Console Dashboard --> copy the REST Proxy URL of this platform instance.
-  ![Service Console](images/2-app-builder-cartitlereg-deploy-1.png)
+  ![Service Console](images/3-gateway-4.bc.1.png)
 
-4. Changing the target environment in Blockchain AppBuilder to 'Marketplace.' Also change the channel to 'car-marketplace'. Add the Init Parameters needed (org_id: marketplace, user_id: marketplace)
+4. Changing the target environment in Blockchain AppBuilder to 'Marketplace' Also change the channel to 'car-marketplace'. Add the Init Parameters needed (org/_id: marketplace, user/_id: marketplace)
 
   ![Founder Deployment](images/2-app-builder-cartitlereg-deploy-2.png)
   ![Founder Deployment](images/2-app-builder-cartitlereg-deploy-3.png)
@@ -369,7 +374,7 @@ Approve the chaincode definition from the partner instances (in this case, 'deal
 
 3. Select on 'Deployed Chaincodes' on the left-hand navigation pane. You will see that 1 chaincode has been committed to the channel, but has not yet been approved by the participant organization.
 
-  ![Deployed Chaincodes](images/2-car-tokenization-7-12.1.png)
+  ![Deployed Chaincodes](images/2-car-title-reg-7-12.1.png)
 
 <!-- 4. Now click the **Chaincodes** tab and then 'Deploy a New Chaincode.'
 
@@ -400,8 +405,8 @@ Approve the chaincode definition from the partner instances (in this case, 'deal
 
 4. Find and click on the hamburger icon on the right of the row containing your chaincode. Select 'Approve.'
 
-  ![Deployed Chaincodes](images/2-car-tokenization-7-12.2.png)
-  ![Deployed Chaincodes](images/2-car-tokenization-7-12.3.png)
+  ![Deployed Chaincodes](images/2-car-title-reg-7-12.1.1.png)
+  ![Deployed Chaincodes](images/2-car-title-reg-7-12.3.png)
 
 <!-- 10. Simply select the **Package ID** as shown and click 'Approve.'
 
@@ -418,9 +423,9 @@ Approve the chaincode definition from the partner instances (in this case, 'deal
 
 5. Check that the chaincode has now been approved by the current participant.
 
-  ![Check Approved Field](images/2-car-tokenization-7-12.4.png)
+  ![Check Approved Field](images/2-car-title-reg-7-12.2.2.png)
 
-6. Repeat steps 2-12 for 'dealer2.'
+6. Repeat steps 1-5 for 'dealer2.'
 
 
 ## Task 13: Initialization and Issuance of Car Title Registration NFT

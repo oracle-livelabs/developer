@@ -119,11 +119,12 @@ The specification file is then used to scaffold a smart contract project ('`car_
   ![Chaincode Output](images/2-app-builder-2-2.png)
 
 3. Select '`car_marketplace_cc`.model.go' under '`car_marketplace_cc`/src/model'. The Model file contains the property definitions of all the assets defined in the spec file.
+
 Select '`car_marketplace_cc`.controller.go' under '`car_marketplace_cc`/src/controller.' The Controller file defines all the behavior and methods for those assets. '`Car_Marketplace.yml`' spec file allows defining additional custom methods that users implement to provide business logic of smart contracts.
 
 ## Task 7: View Custom Methods in Marketplace
 
-1. Open the Car Marketplace specification file and scroll to the bottom. This is where your customMethods are listed.
+1. Open the Car Marketplace specification file and scroll to the bottom. This is where your customMethods are listed. Go to `car_marketplace_cc`.controller.go' under '`car_marketplace_cc`/src/controller' to make the changes mentioned below. 
 
 2. First, add the imports needed for the custom methods.
 
@@ -155,9 +156,7 @@ Select '`car_marketplace_cc`.controller.go' under '`car_marketplace_cc`/src/cont
 
     //Update and commit dealer inventory to blockchain
     t.UpdateDealer(owner)
-    t.CreateCar(asset)
-
-    return nil, err
+    return t.Ctx.Model.Save(&asset)
 
     }
     </copy>
@@ -178,9 +177,7 @@ Select '`car_marketplace_cc`.controller.go' under '`car_marketplace_cc`/src/cont
     //Car no longer on sale as purchase order is created
     car.ForSale = false
     t.UpdateCar(car)
-    t.CreatePO(asset)
-
-    return nil, err
+    return t.Ctx.Model.Save(&asset)
 
     }
     </copy>
@@ -258,8 +255,7 @@ Select '`car_marketplace_cc`.controller.go' under '`car_marketplace_cc`/src/cont
       t.UpdateCar(car)
 
     }
-    t.UpdatePO(asset)
-    return nil, err
+    return t.Ctx.Model.Update(&asset)
 
     }
     </copy>
@@ -434,11 +430,11 @@ You're almost done setting up your blockchain network! Simply use the participan
 
   ![Create Channel](images/1-obp-6-1.png)
 
-3. Select both 'peer0' and 'peer1' to join the channel and click 'Join.'
+2. Select both 'peer0' and 'peer1' to join the channel and click 'Join.'
 
   ![Join Peers to Channel](images/1-obp-6-2.png)
 
-4. Repeat Steps 1-3 from the 'dealer2' console.
+3. Repeat Steps 1-2 from the 'dealer2' console.
 
 
 ## Task 12: Set Anchor Peers
@@ -466,7 +462,7 @@ Each member using a channel (whether founder or participant) must designate at l
 
 ## Task 13: Create Dealership Accounts
 
-Use IDCS to create and add both 'john_\dealer1' and 'sam_\dealer2' users, and then assign them roles to control usage of their OBP instances: 'dealer1' and 'dealer2'.
+Use IDCS to create and add both 'john\_dealer1' and 'sam\_dealer2' users, and then assign them roles to control usage of their OBP instances: 'dealer1' and 'dealer2'.
 
 1. From the OCI dashboard, select the user icon in the top right-hand corner and click on **Service User Console**.
 

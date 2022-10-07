@@ -1,8 +1,8 @@
 {
 	"info": {
-		"_postman_id": "99f1816d-53b2-4506-90ea-e26830ec3976",
-		"name": "Marketplace Tokenization",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+		"_postman_id": "46284070-d0a5-4548-8ff9-7c20feb625bb",
+		"name": "Marketplace Tokenization Copy 2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
 	},
 	"item": [
 		{
@@ -10,50 +10,23 @@
 			"request": {
 				"auth": {
 					"type": "basic",
-					"basic": [
-						{
-							"key": "password",
-							"value": "{{bc-admin-user-password}}",
-							"type": "string"
-						},
-						{
-							"key": "username",
-							"value": "{{bc-admin-user}}",
-							"type": "string"
-						}
-					]
+					"basic": {
+						"password": "{{bc-admin-user-password}}",
+						"username": "{{bc-admin-user}}"
+					}
 				},
 				"method": "POST",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"chaincode\": \"car_tokenization_cc\",\n    \"args\": [\n        \"Init\",\n        \"'[{\\\"org_id\\\":\\\"{{bc-organization-id}}\\\",\\\"user_id\\\":\\\"{{bc-admin-user}}\\\"}]'\"\n    ],\n    \"isInit\": true,\n    \"sync\": true\n}\n\n\n",
+					"raw": "{\n    \"chaincode\": \"{{bc-chaincode-name}}\",\n    \"args\": [\n        \"Init\",\n        \"'[{\\\"org_id\\\":\\\"{{bc-organization-id}}\\\",\\\"user_id\\\":\\\"{{bc-admin-user}}\\\"}]'\"\n    ],\n    \"isInit\": true,\n    \"sync\": true\n}\n\n\n",
 					"options": {
 						"raw": {
 							"language": "json"
 						}
 					}
 				},
-				"url": {
-					"raw": "https://marketplace-3-oabcs1-ams.blockchain.ocp.oraclecloud.com:7443/restproxy/api/v2/channels/car-marketplace/transactions",
-					"protocol": "https",
-					"host": [
-						"marketplace-3-oabcs1-ams",
-						"blockchain",
-						"ocp",
-						"oraclecloud",
-						"com"
-					],
-					"port": "7443",
-					"path": [
-						"restproxy",
-						"api",
-						"v2",
-						"channels",
-						"car-marketplace",
-						"transactions"
-					]
-				}
+				"url": "{{bc-rest-url}}"
 			},
 			"response": []
 		},
@@ -62,18 +35,10 @@
 			"request": {
 				"auth": {
 					"type": "basic",
-					"basic": [
-						{
-							"key": "username",
-							"value": "{{bc-admin-user}}",
-							"type": "string"
-						},
-						{
-							"key": "password",
-							"value": "{{bc-admin-user-password}}",
-							"type": "string"
-						}
-					]
+					"basic": {
+						"username": "{{bc-admin-user}}",
+						"password": "{{bc-admin-user-password}}"
+					}
 				},
 				"method": "POST",
 				"header": [],
@@ -86,12 +51,7 @@
 						}
 					}
 				},
-				"url": {
-					"raw": "{{bc-rest-url}}",
-					"host": [
-						"{{bc-rest-url}}"
-					]
-				}
+				"url": "{{bc-rest-url}}"
 			},
 			"response": []
 		},
@@ -100,18 +60,10 @@
 			"request": {
 				"auth": {
 					"type": "basic",
-					"basic": [
-						{
-							"key": "password",
-							"value": "{{bc-admin-user-password}}",
-							"type": "string"
-						},
-						{
-							"key": "username",
-							"value": "{{bc-admin-user}}",
-							"type": "string"
-						}
-					]
+					"basic": {
+						"password": "{{bc-admin-user-password}}",
+						"username": "{{bc-admin-user}}"
+					}
 				},
 				"method": "POST",
 				"header": [],
@@ -124,12 +76,7 @@
 						}
 					}
 				},
-				"url": {
-					"raw": "{{bc-rest-url}}",
-					"host": [
-						"{{bc-rest-url}}"
-					]
-				}
+				"url": "{{bc-rest-url}}"
 			},
 			"response": []
 		},
@@ -138,18 +85,10 @@
 			"request": {
 				"auth": {
 					"type": "basic",
-					"basic": [
-						{
-							"key": "password",
-							"value": "{{bc-admin-user-password}}",
-							"type": "string"
-						},
-						{
-							"key": "username",
-							"value": "{{bc-admin-user}}",
-							"type": "string"
-						}
-					]
+					"basic": {
+						"password": "{{bc-admin-user-password}}",
+						"username": "{{bc-admin-user}}"
+					}
 				},
 				"method": "POST",
 				"header": [],
@@ -162,12 +101,7 @@
 						}
 					}
 				},
-				"url": {
-					"raw": "{{bc-rest-url}}",
-					"host": [
-						"{{bc-rest-url}}"
-					]
-				}
+				"url": "{{bc-rest-url}}"
 			},
 			"response": []
 		},
@@ -176,18 +110,10 @@
 			"request": {
 				"auth": {
 					"type": "basic",
-					"basic": [
-						{
-							"key": "username",
-							"value": "{{bc-admin-user}}",
-							"type": "string"
-						},
-						{
-							"key": "password",
-							"value": "{{bc-admin-user-password}}",
-							"type": "string"
-						}
-					]
+					"basic": {
+						"username": "{{bc-admin-user}}",
+						"password": "{{bc-admin-user-password}}"
+					}
 				},
 				"method": "POST",
 				"header": [],
@@ -200,12 +126,7 @@
 						}
 					}
 				},
-				"url": {
-					"raw": "{{bc-rest-url}}",
-					"host": [
-						"{{bc-rest-url}}"
-					]
-				}
+				"url": "{{bc-rest-url}}"
 			},
 			"response": []
 		},
@@ -214,18 +135,10 @@
 			"request": {
 				"auth": {
 					"type": "basic",
-					"basic": [
-						{
-							"key": "password",
-							"value": "{{bc-admin-user-password}}",
-							"type": "string"
-						},
-						{
-							"key": "username",
-							"value": "{{bc-admin-user}}",
-							"type": "string"
-						}
-					]
+					"basic": {
+						"password": "{{bc-admin-user-password}}",
+						"username": "{{bc-admin-user}}"
+					}
 				},
 				"method": "POST",
 				"header": [],
@@ -238,12 +151,7 @@
 						}
 					}
 				},
-				"url": {
-					"raw": "{{bc-rest-url}}",
-					"host": [
-						"{{bc-rest-url}}"
-					]
-				}
+				"url": "{{bc-rest-url}}"
 			},
 			"response": []
 		},
@@ -252,18 +160,10 @@
 			"request": {
 				"auth": {
 					"type": "basic",
-					"basic": [
-						{
-							"key": "password",
-							"value": "{{bc-admin-user-password}}",
-							"type": "string"
-						},
-						{
-							"key": "username",
-							"value": "{{bc-admin-user}}",
-							"type": "string"
-						}
-					]
+					"basic": {
+						"password": "{{bc-admin-user-password}}",
+						"username": "{{bc-admin-user}}"
+					}
 				},
 				"method": "POST",
 				"header": [],
@@ -276,12 +176,7 @@
 						}
 					}
 				},
-				"url": {
-					"raw": "{{bc-rest-url}}",
-					"host": [
-						"{{bc-rest-url}}"
-					]
-				}
+				"url": "{{bc-rest-url}}"
 			},
 			"response": []
 		},
@@ -290,18 +185,10 @@
 			"request": {
 				"auth": {
 					"type": "basic",
-					"basic": [
-						{
-							"key": "password",
-							"value": "{{bc-admin-user-password}}",
-							"type": "string"
-						},
-						{
-							"key": "username",
-							"value": "{{bc-admin-user}}",
-							"type": "string"
-						}
-					]
+					"basic": {
+						"password": "{{bc-admin-user-password}}",
+						"username": "{{bc-admin-user}}"
+					}
 				},
 				"method": "POST",
 				"header": [],
@@ -314,12 +201,7 @@
 						}
 					}
 				},
-				"url": {
-					"raw": "{{bc-rest-url}}",
-					"host": [
-						"{{bc-rest-url}}"
-					]
-				}
+				"url": "{{bc-rest-url}}"
 			},
 			"response": []
 		},
@@ -328,36 +210,23 @@
 			"request": {
 				"auth": {
 					"type": "basic",
-					"basic": [
-						{
-							"key": "password",
-							"value": "{{bc-admin-user-password}}",
-							"type": "string"
-						},
-						{
-							"key": "username",
-							"value": "{{bc-admin-user}}",
-							"type": "string"
-						}
-					]
+					"basic": {
+						"password": "{{bc-admin-user-password}}",
+						"username": "{{bc-admin-user}}"
+					}
 				},
 				"method": "POST",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"chaincode\": \"{{bc-chaincode-name}}\",\n    \"args\": [\n        \"AddRole\",\n        \"{{bc-token-id}}\",\n        \"minter\",\n        \"{{bc-organization-id}}\",\n        \"{{bc-admin-user}}\"\n    ],\n    \"sync\": true\n}",
+					"raw": "{\n    \"chaincode\": \"{{bc-chaincode-name}}\",\n    \"args\": [\n        \"AddRole\",\n        \"{{bc-token-id}}\",\n        \"minter\",\n        \"{{bc-organization-id-founder}}\",\n        \"{{bc-admin-user}}\"\n    ],\n    \"sync\": true\n}",
 					"options": {
 						"raw": {
 							"language": "json"
 						}
 					}
 				},
-				"url": {
-					"raw": "{{bc-rest-url}}",
-					"host": [
-						"{{bc-rest-url}}"
-					]
-				}
+				"url": "{{bc-rest-url}}"
 			},
 			"response": []
 		},
@@ -366,36 +235,23 @@
 			"request": {
 				"auth": {
 					"type": "basic",
-					"basic": [
-						{
-							"key": "password",
-							"value": "{{bc-admin-user-password}}",
-							"type": "string"
-						},
-						{
-							"key": "username",
-							"value": "{{bc-admin-user}}",
-							"type": "string"
-						}
-					]
+					"basic": {
+						"password": "{{bc-admin-user-password}}",
+						"username": "{{bc-admin-user}}"
+					}
 				},
 				"method": "POST",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"chaincode\": \"{{bc-chaincode-name}}\",\n    \"args\": [\n        \"AddRole\",\n        \"{{bc-token-id}}\",\n        \"notary\",\n        \"{{bc-organization-id}}\",\n        \"{{bc-admin-user}}\"\n    ],\n    \"sync\": true\n}",
+					"raw": "{\n    \"chaincode\": \"{{bc-chaincode-name}}\",\n    \"args\": [\n        \"AddRole\",\n        \"{{bc-token-id}}\",\n        \"notary\",\n        \"{{bc-organization-id-founder}}\",\n        \"{{bc-admin-user}}\"\n    ],\n    \"sync\": true\n}",
 					"options": {
 						"raw": {
 							"language": "json"
 						}
 					}
 				},
-				"url": {
-					"raw": "{{bc-rest-url}}",
-					"host": [
-						"{{bc-rest-url}}"
-					]
-				}
+				"url": "{{bc-rest-url}}"
 			},
 			"response": []
 		},
@@ -404,18 +260,10 @@
 			"request": {
 				"auth": {
 					"type": "basic",
-					"basic": [
-						{
-							"key": "password",
-							"value": "{{bc-admin-user-password}}",
-							"type": "string"
-						},
-						{
-							"key": "username",
-							"value": "{{bc-admin-user}}",
-							"type": "string"
-						}
-					]
+					"basic": {
+						"password": "{{bc-admin-user-password}}",
+						"username": "{{bc-admin-user}}"
+					}
 				},
 				"method": "POST",
 				"header": [],
@@ -428,12 +276,7 @@
 						}
 					}
 				},
-				"url": {
-					"raw": "{{bc-rest-url}}",
-					"host": [
-						"{{bc-rest-url}}"
-					]
-				}
+				"url": "{{bc-rest-url}}"
 			},
 			"response": []
 		}
@@ -469,7 +312,7 @@
 		},
 		{
 			"key": "bc-chaincode-name",
-			"value": "car_tokenization_cc"
+			"value": "cartokenizationcc"
 		},
 		{
 			"key": "bc-token-id",
@@ -499,7 +342,7 @@
 		},
 		{
 			"key": "bc-admin-user-password",
-			"value": "Welcome@12345"
+			"value": "######"
 		},
 		{
 			"key": "bc-user-id-1",
@@ -507,7 +350,7 @@
 		},
 		{
 			"key": "bc-user-id-1-password",
-			"value": "Welcome#12345!"
+			"value": "######"
 		},
 		{
 			"key": "bc-user-id-2",
@@ -515,7 +358,7 @@
 		},
 		{
 			"key": "bc-user-id-2-password",
-			"value": "Welcome#12345"
+			"value": "#####"
 		},
 		{
 			"key": "bc-timeout",
