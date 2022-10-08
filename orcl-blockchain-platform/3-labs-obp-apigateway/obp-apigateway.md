@@ -93,7 +93,6 @@ This lab assumes you have:
 
   ![Security Lists](images/3-gateway-2-6-0.png) -->
 
-<<<<<<< HEAD
 1. Click 'Add Ingress Rules.'
 
   ![Add Ingress Rules](images/3-gateway-2-6.png)
@@ -101,15 +100,6 @@ This lab assumes you have:
 2. Fill out the form as follows and click on 'Add Ingress Rules.'
 
   ![Add Ingress Rules Form](images/3-gateway-2-7.png)
-=======
-7. Click 'Add Ingress Rules.'
-
-  ![Add Ingress Rules](images/3-gateway-2-6.png)
-
-8. Fill out the form as follows and click on 'Add Ingress Rules.'
-
-  ![Add Ingress Rules Form](images/3-gateway-2-7.png) -->
->>>>>>> upstream/main
 
 
 ## Task 3: Create API Gateway
@@ -154,14 +144,8 @@ This lab assumes you have:
     - Enter the **URL** to serve as a REST endpoint. For Route 1, this will be https://marketplace-2-oabcs1-iad.blockchain.ocp.oraclecloud.com:7443/restproxy/api/v2/channels/car-marketplace/transactions
     - How to Construct Route URL:
         - From the Blockchain Admin Dashboard --> Click on Nodes --> Navigate to restproxy (bottom of the screen) --> Copy the URL
-<<<<<<< HEAD
     ![Blockchain Dashboard](images/3-gateway-4.bc.1.png)
         - Append to URL --> [api/v2/channels/car-marketplace/transactions](https://docs.oracle.com/en/cloud/paas/blockchain-cloud/restoci/op-restproxy-api-v2-channels-channelname-transactions-post.html)
-=======
-        - Append to URL --> [api/v2/channels/car-marketplace/transactions](https://docs.oracle.com/en/cloud/paas/blockchain-cloud/restoci/op-restproxy-api-v2-channels-channelname-transactions-post.html)
-
-      ![Blockchain Dashboard](images/3-gateway-4.bc.1.png)
->>>>>>> upstream/main
 
       
     - For **Connection Establishment**, **Request Transmit**, and **Reading Response** timeouts, enter 60, 10, and 10 respectively
