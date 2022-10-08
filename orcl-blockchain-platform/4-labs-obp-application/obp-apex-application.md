@@ -147,11 +147,11 @@ This lab assumes you have:
 
   ![Install Application 1](images/4-apex-3-8.png)
 
-7. Click 'Next.'
+7. Click 'Next.' --> Enter username and password in the respective fields
 
   ![Install Application 2](images/4-apex-3-9.png)
 
-8. Click 'Next' again.
+8. Click 'Next' again --> Parsing Schema should be 'WKSP_MARKETPLACE'
 
   ![Install Application 3](images/4-apex-3-10.png)
 
@@ -170,9 +170,9 @@ This lab assumes you have:
 
   ![Access Shared Components](images/4-apex-4-2.png)
 
-2. Click on 'Application Definition Attributes' located under **Application Logic**.
+2. Click on 'Application Definition' located under **Application Logic**.
 
-  ![Application Definition Attributes](images/4-apex-4-2.png)
+  ![Application Definition](images/4-apex-4-2.png)
 
 3. Click the 'Substitions' tab as shown.
 
@@ -220,13 +220,17 @@ This lab assumes you have:
 
   ![Edit URL Path Prefix and Apply Changes](images/4-apex-4-11.png)
 
-11. Now, repeat steps 7-11 for the following REST Sources:
+11. Now, repeat steps 7-10 for the following REST Sources:
     - 'GetAccountBalance'
     - 'GetInvoiceByRange'
     - 'GetCarsByRange'
     - 'GetCarHistoryById'
     - 'GetPOByRange'
     - 'GetInvoiceByRannge'
+    - 'GetCarTitleToken1
+    - 'GetCarTitleToken2'
+    - 'GetCarServicesDealer1'
+    - 'GetCarServicesDealer2'
 
   ![Repeat APEX Data Source Steps](images/apex-4-4-12.png)
 

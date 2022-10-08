@@ -122,7 +122,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"chaincode\": \"{{bc_chaincode_name}}\",\n    \"args\": [\n        \"GetUsersByRole\",\n        \"TestNFT1\",\n        \"minter\"\n    ],\n    \"timeout\": 0,\n    \"sync\": true\n}",
+							"raw": "{\n    \"chaincode\": \"{{bc_chaincode_name}}\",\n    \"args\": [\n        \"GetUsersByRole\",\n        \"minter\"\n    ],\n    \"timeout\": 0,\n    \"sync\": true\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -130,136 +130,6 @@
 							}
 						},
 						"url": "{{bc_marketplace_url}}/api/v2/channels/{{bc_channel_name}}/transactions"
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "Dealer1",
-			"item": [
-				{
-					"name": "Step-5: Create / Mint NFT",
-					"request": {
-						"auth": {
-							"type": "basic",
-							"basic": {
-								"password": "{{bc_dealer1_password}}",
-								"username": "{{bc_dealer1_userid}}"
-							}
-						},
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"chaincode\": \"{{bc_chaincode_name}}\",\n    \"args\":  [\"CreateCarTitleToken\",\"{\\\"TokenId\\\":\\\"TestNFT1\\\",\\\"TokenDesc\\\":\\\"Car Title NFT\\\",\\\"TokenUri\\\":\\\"https://ipfs.io/ipfs/QmPRyqxwb1qeL9jgVFg8HwAdSsWFS4kNzWZ7rxWumUBE9n?filename=Car_Title.json\\\",\\\"TokenMetadata\\\":{\\\"VIN\\\":\\\"12345678902132134\\\",\\\"Make\\\":\\\"TATA\\\",\\\"Model\\\":\\\"Wagner\\\",\\\"Year\\\":2019,\\\"Year1stsold\\\":2019,\\\"Fuel\\\":\\\"Gas\\\"},\\\"Title\\\":[{\\\"Dealership\\\":\\\"John Dealership\\\",\\\"Dealernumber\\\":\\\"JD123345\\\",\\\"Location\\\":\\\"Dallas\\\",\\\"Mileage\\\":20000,\\\"Newowner\\\":\\\"BalaV\\\",\\\"Purchaseprice\\\":12000,\\\"Purchasedate\\\":\\\"2022-09-21T17:30:16Z\\\"}],\\\"Service\\\":[{\\\"Eventno\\\":324323,\\\"Accident\\\":false,\\\"Eventdesc\\\":\\\"Crash today\\\",\\\"Mileage\\\":19000,\\\"Servicecost\\\":5000,\\\"Servicedate\\\":\\\"2022-09-21T17:30:16Z\\\",\\\"Claimnumber\\\":\\\"CLA12345\\\"}]}\"],\n    \"timeout\": {{bc_timeout}},\n    \"sync\": true\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": "{{bc_dealer1_url}}/api/v2/channels/{{bc_channel_name}}/transactions"
-					},
-					"response": []
-				},
-				{
-					"name": "Step-7: Update NFT",
-					"request": {
-						"auth": {
-							"type": "basic",
-							"basic": {
-								"username": "{{bc_dealer1_userid}}",
-								"password": "{{bc_dealer1_password}}"
-							}
-						},
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"chaincode\": \"{{bc_chaincode_name}}\",\n    \"args\":  [\"UpdateCarTitleToken\",\"{\\\"TokenId\\\":\\\"TestNFT1\\\",\\\"TokenDesc\\\":\\\"Car Title NFT\\\",\\\"TokenUri\\\":\\\"https://ipfs.io/ipfs/QmPRyqxwb1qeL9jgVFg8HwAdSsWFS4kNzWZ7rxWumUBE9n?filename=Car_Title.json\\\",\\\"TokenMetadata\\\":{\\\"VIN\\\":\\\"12345678902132134\\\",\\\"Make\\\":\\\"TATA\\\",\\\"Model\\\":\\\"Wagner\\\",\\\"Year\\\":2019,\\\"Year1stsold\\\":2019,\\\"Fuel\\\":\\\"Gas\\\"},\\\"Title\\\":[{\\\"Dealership\\\":\\\"John Dealership\\\",\\\"Dealernumber\\\":\\\"JD123345\\\",\\\"Location\\\":\\\"Dallas\\\",\\\"Mileage\\\":20000,\\\"Newowner\\\":\\\"KrishnaV\\\",\\\"Purchaseprice\\\":12000,\\\"Purchasedate\\\":\\\"2022-09-21T17:30:16Z\\\"}],\\\"Service\\\":[{\\\"Eventno\\\":324323,\\\"Accident\\\":false,\\\"Eventdesc\\\":\\\"Crash today\\\",\\\"Mileage\\\":12100,\\\"Servicecost\\\":5000,\\\"Servicedate\\\":\\\"2021-09-21T17:30:16Z\\\",\\\"Claimnumber\\\":\\\"CLA12345\\\"}]}\"],\n    \"timeout\": {{bc_timeout}},\n    \"sync\": true\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": "{{bc_dealer1_url}}/api/v2/channels/{{bc_channel_name}}/transactions"
-					},
-					"response": []
-				},
-				{
-					"name": "Step-6: Transfer Token",
-					"request": {
-						"auth": {
-							"type": "basic",
-							"basic": {
-								"password": "{{bc_dealer1_password}}",
-								"username": "{{bc_dealer1_userid}}"
-							}
-						},
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"chaincode\": \"{{bc_chaincode_name}}\",\n    \"args\": [\"TransferFrom\",\"dealer1\",\"john_dealer1\",\"dealer2\",\"sam_dealer2\",\"TestNFT1\"],\n    \"timeout\": {{bc_timeout}},\n    \"sync\": true\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": "{{bc_dealer1_url}}/api/v2/channels/{{bc_channel_name}}/transactions"
-					},
-					"response": []
-				},
-				{
-					"name": "Step-8: Get Token History",
-					"request": {
-						"auth": {
-							"type": "basic",
-							"basic": {
-								"password": "{{bc_dealer1_password}}",
-								"username": "{{bc_dealer1_userid}}"
-							}
-						},
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"chaincode\": \"{{bc_chaincode_name}}\",\n    \"args\": [\n        \"GetTokenHistory\",\n        \"TestNFT1\"\n    ],\n    \"timeout\": {{bc_timeout}},\n    \"sync\": true\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": "{{bc_dealer1_url}}/api/v2/channels/{{bc_channel_name}}/chaincode-queries"
-					},
-					"response": []
-				},
-				{
-					"name": "Step-9: Get Token Details",
-					"request": {
-						"auth": {
-							"type": "basic",
-							"basic": {
-								"password": "{{bc_dealer1_password}}",
-								"username": "{{bc_dealer1_userid}}"
-							}
-						},
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"chaincode\": \"{{bc_chaincode_name}}\",\n    \"args\": [\n        \"GetTokenById\",\n        \"TestNFT1\"\n    ],\n    \"timeout\": {{bc_timeout}},\n    \"sync\": true\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": "{{bc_dealer1_url}}/api/v2/channels/{{bc_channel_name}}/chaincode-queries"
 					},
 					"response": []
 				}
@@ -299,17 +169,12 @@
 		},
 		{
 			"key": "bc_channel_name",
-			"value": "car-marketplace",
+			"value": "test-marketplace",
 			"type": "string"
 		},
 		{
 			"key": "bc_chaincode_name",
 			"value": "car_title_reg_cc",
-			"type": "string"
-		},
-		{
-			"key": "bc_nft_token_id",
-			"value": "CANFT1",
 			"type": "string"
 		},
 		{
@@ -324,7 +189,7 @@
 		},
 		{
 			"key": "bc_marketplace_password",
-			"value": "",
+			"value": "#####",
 			"type": "string"
 		},
 		{
@@ -339,7 +204,7 @@
 		},
 		{
 			"key": "bc_dealer1_password",
-			"value": "",
+			"value": "####",
 			"type": "string"
 		},
 		{
@@ -349,7 +214,7 @@
 		},
 		{
 			"key": "bc_dealer2_password",
-			"value": "",
+			"value": "#####",
 			"type": "string"
 		},
 		{
@@ -363,9 +228,9 @@
 			"type": "default"
 		},
 		{
-			"value": "",
-			"type": "default",
-			"disabled": true
+			"key": "bc_marketplace_orgid",
+			"value": "marketplace",
+			"type": "default"
 		}
 	]
 }

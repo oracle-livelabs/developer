@@ -435,7 +435,7 @@ Approve the chaincode definition from the partner instances (in this case, 'deal
   ![Import Collection](images/import_collection.png)
   ![Import Collection 2](images/import_collection2.png)
 
-2. Enter the environment setup variables in Postman Environment 'CarTitle NFT' (`tokenization_environment.postman_environment.json`) and assign variable definitions. Some sample definitions are shown below.
+2. Enter the environment setup variables in Postman Environment 'CarTitle NFT' (`tokenization_environment.postman_environment.json`) and assign variable definitions. Some sample definitions are shown below. Update the passwords and URL's based on your setup and configuration.
 
   ![NFT Definitions](images/2-app-builder-cartitle-definitions.png)
 

@@ -29,9 +29,12 @@ This lab assumes you have:
   ![Import Collection](images/import_collection.png)
   ![Import Collection 2](images/import_collection2.png)
 
-2. Enter the environment setup variables in Postman Environment 'Tokenization' (`marketplace_initialization.postman_environment.json`) and assign variable definitions. Some sample definitions are shown below.
+2. Enter the environment setup variables in Postman Environment 'Tokenization' (`marketplace_initialization.postman_environment.json`) and assign variable definitions. Some sample definitions are shown below. Obtain the REST URL from the Blockchain Admin Console dashboard
 
   ![Tokenization Definitions](images/apex_init_tokenization_definitions.png)
+  ![Tokenization Definitions](images/3-gateway-4.bc.1.png)
+
+
 
 3. Open tokenization collection, and run integrations as described in steps 1,2,3 by clicking Send invoking the API calls in postman
 
@@ -51,25 +54,26 @@ This lab assumes you have:
 
   ![Login as Developer](images/4-apex-3-1.png)
 
-1. On the 'App builder' main page page, click on 'Workspace Utilities.'
+2. On the 'App builder' main page page, click on 'Workspace Utilities.'
 
   ![Web Credentials](images/4-apex-5-1.1.png)
 
-2. Now, click on 'Web Credentials'
+3. Now, click on 'Web Credentials'
 
   ![Web Credentials](images/4-apex-5-1.png)
 
-3. Next, click on 'Credentials for OBP Endpoint.'
+4. Next, click on 'Credentials for OBP Endpoint.'
 
   ![Web Credentials](images/4-apex-5-2.png)
 
-4. Using the same password used for the founder instance ( marketplace, Lab 1 - Task 13), update the password in 'Client or Password' field and 'Apply Changes'.
+5. Using the same password used for the founder instance ( marketplace, Lab 1 - Task 13), update the password in 'Client or Password' field and 'Apply Changes'.
 
   ![Web Credentials](images/4-apex-5-4.png)
 
-5. Repeat step 1-4 for the other two web credentials, using the passwords belonging to the Dealership accounts in Section 1 - task 8.
+6. Repeat step 1-4 for the other two web credentials, using the passwords belonging to the Dealership accounts in Section 1 - task 8.
   - dealer_1_obp_auth (john_dealer1 account)
   - dealer_2_obp_auth (sam_dealer2 account)
+
 
 ## Task 3: Complete Car Marketplace Workshop by Trading a Car - Add a car to dealer1 Inventory
 
@@ -81,7 +85,7 @@ You will now create a car and simulate a transaction between the founder organiz
 
   ![Car Delaership](images/apex-carmarketplace-run.png)
  
- 2. Login as a dealer (e.g. john_dealer1) and land on My Inventory. Use the same password configured for john_dealer1 in *Lab4*
+ 2. Login as a dealer (e.g. john_dealer1) and land on My Inventory. Use the same password configured for john\_dealer1 in *Lab4*
 
   ![Car Delaership](images/dealer1-login.png)
 
@@ -100,9 +104,19 @@ You will now create a car and simulate a transaction between the founder organiz
 
   ![Car Delaership](images/apex-addcar.png)
 
-3. Click on the car added in previous step (marketplace inventory)
+3. Car is now added to the inventory
+
+  ![Car Delaership](images/apex-addcar-inventory.png)
+
+4. Click on the car added in the Inventory
+
+  ![Car Delaership](images/apex-cardetails.png)
 
 
+5. Click on the NFT Title Token and Services registered.
+
+  ![Car Delaership](images/apex-car-titlenft.png)
+  ![Car Delaership](images/apex-car-nftservices.png)
 
 
 ## Task 4: dealer2 - Deposit Tokens in to the account
