@@ -57,20 +57,12 @@ This lab assumes you have:
 
   ![Function parameters](images/2-app-builder-5-2.png)
 
-<<<<<<< HEAD
 4. Click **Invoke**. Test Some sample invoke methods - App Builder
-=======
-3. Click **Invoke**. Test Some sample invoke methods - App Builder
->>>>>>> upstream/main
 
 5. Display Request and Response - Request/Response.
 
 
-<<<<<<< HEAD
 ## Task 2: Deploy Smart Contract (Chaincode) to Founder Instance (Marketplace) from Blockchain App Builder
-=======
-## Task 1: Deploy Smart Contract (Chaincode) to Founder Instance (Marketplace) from Blockchain App Builder
->>>>>>> upstream/main
 
   Now that we have tested our project locally, we can connect to our remote instances.
 
@@ -90,13 +82,9 @@ This lab assumes you have:
     - Paste the **Marketpalce rest proxy url from step3** of your marketplace founder instance.
     - Enter your **User Name** (e.g. 'username') and then enter the **Password**.
 
-<<<<<<< HEAD
   ![Founder Deployment](images/2-app-builder-4-4.1.png)
 
 6. Now, changing the target environment from 'Local Environment' to 'Marketplace' in App Builder. Obtain the channel name as set in *Lab1 - Task 5 (car-marketplace)* 
-=======
-5. Now, changing the target environment from 'Local Environment' to 'Marketplace' in App Builder. Obtain the channel name as set in *Lab1 - Task 5 (car-marketplace)* 
->>>>>>> upstream/main
 
   ![Founder Deployment](images/2-car-marketplace-6-4.png)
 
@@ -108,11 +96,7 @@ This lab assumes you have:
 
   ![Car Marketplace Chaincode Package](images/2-app-builder-7-1.png)
 
-<<<<<<< HEAD
 ## Task 4: Install and Deploy Marketplace chaincode package onto Participant Instances using Oracle Cloud Blockchain Platform Console(dealer1 & dealer2)
-=======
-## Task 3: Install and Deploy Marketplace chaincode package onto Participant Instances using Oracle Cloud Blockchain Platform Console(dealer1 & dealer2)
->>>>>>> upstream/main
 
   To install and re-deploy the chaincode on partner instances, use the package in Task3 (above) and then approve the chaincode definition from the partner instances (in this case, 'dealer1' and 'dealer2').
 
@@ -158,16 +142,8 @@ This lab assumes you have:
 
   ![Hamburger and Approve](images/2-car-marketplace-7-10.png)
 
-<<<<<<< HEAD
 
 11. Assign the [Endorsement policy](https://docs.oracle.com/en/cloud/paas/blockchain-cloud/usingoci/specify-endorsement-policy.html) by selecting signature under the endorsement policy. Add the policy of performing an endorsement signature by one of the organizations in the network. You can add an endorsement policy when you instantiate a chaincode. An endorsement policy specifies the members with peers that must approve, or properly endorse, a chaincode transaction before it’s added to a block and submitted to the ledger. Now assign the endorsement policy by by selecting the signature policy and click on 'Upgrade'
-=======
-10. Simply select the **Package ID** copied in Step6 as shown and click 'Approve'
-
-  ![Approve Chaincode Form](images/2-car-marketplace-7-11.png)
-
-11. Assign the [Endorsement policy](https://docs.oracle.com/en/cloud/paas/blockchain-cloud/usingoci/specify-endorsement-policy.html) by selecting signature under the endorsement policy. Add the policy of performing an endorsement signature by one of the organizations in the network. You can add an endorsement policy when you instantiate a chaincode. An endorsement policy specifies the members with peers that must approve, or properly endorse, a chaincode transaction before it’s added to a block and submitted to the ledger.
->>>>>>> upstream/main
 
     ```
     <copy>
@@ -181,11 +157,7 @@ This lab assumes you have:
 
   ![Check Approved Field](images/2-car-marketplace-7-12.png)
 
-<<<<<<< HEAD
 13. Repeat steps 1-11 for 'dealer2' instance
-=======
-13. Repeat steps 1-12 for 'dealer2' instance
->>>>>>> upstream/main
 
 
 ## Task 4: User Enrollment - Perform on All nodes (marketplace, dealer1, dealer2)
@@ -202,7 +174,6 @@ This lab assumes you have:
   ![Create New Enrollment](images/create_new_enrollment.png)
 
 4. Input enrollment information. See sample enrollment as example. Enrollment user had to be created in idcs. In this example 'marketplace','dealer1','dealer2' is used. Make sure the user has REST_Client role assoicated with the Blockchain instance.
-<<<<<<< HEAD
     - For marketplace Instance
 
   ![Sample Enrollment](images/enrollment_marketplace.png)
@@ -218,14 +189,6 @@ This lab assumes you have:
 5. Click Enroll.
 
 ## Task 6: Create Fiat Tokenization Chaincode
-=======
-
-  ![Sample Enrollment](images/sample_enrollment.png)
-
-5. Click Enroll.
-
-## Task 5: Create Tokenization Chaincode
->>>>>>> upstream/main
 
 The flow for developing smart contracts for tokenization begins with creating a specification file that describes our fiat token. `Car_Tokenization.yml` describes our FiatToken structure: AssetType, `Token_id`, `Token_name`, `Token_desc`, `Token_type`, and behavior.  
 
@@ -242,53 +205,29 @@ You can see sample specification files (and write your own specifications) in ei
   Make sure the **Details** of your specification read:
   ![Car Tokenization Specification Details](images/2-app-builder-tokenization-yml.png)
 
-<<<<<<< HEAD
 ## Task 7: Deploy Fiat Tokenization chaincode to Founder Instance
-=======
-## Task 6: Deploy Tokenization chaincode to Founder Instance
-
-Now that we have tested our project locally, we can connect to our remote instances.
->>>>>>> upstream/main
 
 1. In the OCI services menu, select 'Developer Services' and click on 'Blockchain Platform.'
 
 2. Ensure that the right **Compartment** is selected and click on the 'Marketplace' founder instance.
 
 3. Click on the 'Service Console' -->  Go to 'Nodes' tab from the Blockchain Admin Console Dashboard --> copy the REST Proxy URL of this platform instance.
-<<<<<<< HEAD
   ![Service Console](images/3-gateway-4.bc.1.png)
 
 4. Changing the target environment in Blockchain AppBuilder to 'Marketplace.' Also change the channel to 'car-marketplace'. Add the Init Parameters needed (org_id: marketplace, user_id: marketplace)
-=======
-  ![Service Console](images/2-app-builder-tokenization-deploy-marketplace.png)
-
-4. Changing the target environment in Blockchain AppBuilder from 'Local Environment' to 'Marketplace.' Also change the channel to 'car-marketplace'. Add the Init Parameters needed (org_id: marketplace, user_id: marketplace)
->>>>>>> upstream/main
 
   ![Founder Deployment](images/2-app-builder-tokenization-deploy-marketplace.png)
   ![Founder Deployment](images/2-appbuilder-tokenization-init.png)
 
-<<<<<<< HEAD
  <!-- ## Task 7: Import Tokenization chaincode package from app builder
 
 1. In Visual Studio Code, click on the **O** icon on the left-hand menu to use the Blockchain App Builder Extension.
 
 2. Hover over the **Chaincodes** pane, Right Click on the chaincode to be packaged Select the directory  to save the chaincode package file. 
-=======
-## Task 7: Import Tokenization chaincode package from app builder
-
-1. In Visual Studio Code, click on the **O** icon on the left-hand menu to use the Blockchain App Builder Extension.
-
-2. Hover over the **Chaincodes** pane, Right Click on the chaincode to be packaged --> Select the directory  to save the chaincode package file.
->>>>>>> upstream/main
 
   ![Car Tokenization Chaincode Package](images/2-appbuilder-chaincodepackage-tokenization.png)  -->
 
-<<<<<<< HEAD
 ## Task 8: Approve the chaincode on Participant Instances
-=======
-## Task 8: Install and Deploy Tokenization chaincode package onto Participant Instances
->>>>>>> upstream/main
 
 Approve the chaincode definition from the partner instances (in this case, 'dealer1' and 'dealer2').
 
