@@ -423,7 +423,7 @@ Approve the chaincode definition from the partner instances (in this case, 'deal
 
 5. Check that the chaincode has now been approved by the current participant.
 
-  ![Check Approved Field](images/2-car-title-reg-7-12.2.2.png)
+  ![Check Approved Field](images/2-car-title-reg-7-12.2.png)
 
 6. Repeat steps 1-5 for 'dealer2.'
 
