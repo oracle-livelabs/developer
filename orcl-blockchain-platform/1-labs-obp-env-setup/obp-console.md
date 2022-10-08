@@ -119,7 +119,10 @@ The specification file is then used to scaffold a smart contract project ('`car_
   ![Chaincode Output](images/2-app-builder-2-2.png)
 
 3. Select '`car_marketplace_cc`.model.go' under '`car_marketplace_cc`/src/model'. The Model file contains the property definitions of all the assets defined in the spec file.
+<<<<<<< HEAD
 
+=======
+>>>>>>> upstream/main
 Select '`car_marketplace_cc`.controller.go' under '`car_marketplace_cc`/src/controller.' The Controller file defines all the behavior and methods for those assets. '`Car_Marketplace.yml`' spec file allows defining additional custom methods that users implement to provide business logic of smart contracts.
 
 ## Task 7: View Custom Methods in Marketplace
@@ -133,7 +136,11 @@ Select '`car_marketplace_cc`.controller.go' under '`car_marketplace_cc`/src/cont
     "encoding/json"
     "fmt"
     "time"
+<<<<<<< HEAD
     </copy>
+=======
+    <\copy>
+>>>>>>> upstream/main
 
     ```
 

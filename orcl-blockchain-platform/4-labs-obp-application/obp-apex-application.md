@@ -55,7 +55,11 @@ This lab assumes you have:
 
 ## Task 2: Configure Database Schema and User Credentials
 
+<<<<<<< HEAD
 1. When your Autonomous Database instance has provisioned, access the 'Tools' --> 'Open APEX'
+=======
+1. When your Autonomous Database instance has provisioned, access the 'Tools'
+>>>>>>> upstream/main
 
   ![Access Service Console](images/4-apex-2-1.png)
 
@@ -72,7 +76,11 @@ This lab assumes you have:
   ![Create Workspace](images/4-apex-2-3.1.png)
 
 5. Fill out the form as follows:
+<<<<<<< HEAD
     - Enter 'DEVELOPER' as the **Workspace Username**.
+=======
+    - Enter 'DEVELOPER' as the **Database User**.
+>>>>>>> upstream/main
     - Choose a **Password** and copy it somewhere safe.
     - Enter 'marketplace' as the **Workspace Name**.
 
@@ -147,11 +155,19 @@ This lab assumes you have:
 
   ![Install Application 1](images/4-apex-3-8.png)
 
+<<<<<<< HEAD
 7. Click 'Next.' --> Enter username and password in the respective fields
 
   ![Install Application 2](images/4-apex-3-9.png)
 
 8. Click 'Next' again --> Parsing Schema should be 'WKSP_MARKETPLACE'
+=======
+7. Click 'Next.'
+
+  ![Install Application 2](images/4-apex-3-9.png)
+
+8. Click 'Next' again.
+>>>>>>> upstream/main
 
   ![Install Application 3](images/4-apex-3-10.png)
 
@@ -179,8 +195,13 @@ This lab assumes you have:
   ![Substitions](images/4-apex-4-4.png)
 
 4. Set the following **Substitutions** and 'Apply Changes':
+<<<<<<< HEAD
     - First, set G\_OCI\_WEB\_CREDENTIAL to OCI_API_Credentials.
     - Next, set OBP\_MAIN\_INSTANCE\_URL to the URL you found in the **Deployment Information**  section in the previous lab (Lab: Created & Setup API Gateway to connect with Smart Contract API's). This allows APEX to connect to the Car Marketplace OBP REST API endpoints via the API Gateway deployment. Change OBP\_MAIN\_INSTANCE\_URL, OBP\_DEALER\_1\_URL, OBP\_DEALER\_2\_URL based on the routes configured in *Lab 4*  
+=======
+    - First, set G_OCI_WEB_CREDENTIAL to OCI_API_Credentials.
+    - Next, set OBP\_MAIN\_INSTANCE\_URL to the URL you found in the **Deployment Information**  section in the previous lab (Lab: Created & Setup API Gateway to connect with Smart Contract API's). This allows APEX to connect to the Car Marketplace OBP REST API endpoints via the API Gateway deployment. Change OBP\_MAIN\_INSTANCE\_URL, OBP\_DEALER\_1_\URL, OBP_DEALER_2_URL based on the routes configured in *Lab 4*  
+>>>>>>> upstream/main
 
     ![Substitions Form](images/4-apex-4-4-1.png)
     ![Substitions Form](images/4-apex-4-4-2.png)
@@ -216,7 +237,12 @@ This lab assumes you have:
 
   ![Apply Changes to Remote Server](images/4-apex-4-10.png)
 
+<<<<<<< HEAD
 10. Set **URL Path Prefix** to 'v0/marketplace/chaincode-queries' and click 'Apply Changes'
+=======
+10. Set **URL Path Prefix** to 'v0/marketplace/chaincode-queries' and click 'Apply Changes.'
+****Make sure Gateway URL Matches this URL - Update ****
+>>>>>>> upstream/main
 
   ![Edit URL Path Prefix and Apply Changes](images/4-apex-4-11.png)
 
@@ -227,10 +253,13 @@ This lab assumes you have:
     - 'GetCarHistoryById'
     - 'GetPOByRange'
     - 'GetInvoiceByRannge'
+<<<<<<< HEAD
     - 'GetCarTitleToken1
     - 'GetCarTitleToken2'
     - 'GetCarServicesDealer1'
     - 'GetCarServicesDealer2'
+=======
+>>>>>>> upstream/main
 
   ![Repeat APEX Data Source Steps](images/apex-4-4-12.png)
 
