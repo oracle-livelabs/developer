@@ -55,7 +55,7 @@ This lab assumes you have:
 
 ## Task 2: Configure Database Schema and User Credentials
 
-1. When your Autonomous Database instance has provisioned, access the 'Tools'
+1. When your Autonomous Database instance has provisioned, access the 'Tools' --> 'Open APEX'
 
   ![Access Service Console](images/4-apex-2-1.png)
 
@@ -72,7 +72,7 @@ This lab assumes you have:
   ![Create Workspace](images/4-apex-2-3.1.png)
 
 5. Fill out the form as follows:
-    - Enter 'DEVELOPER' as the **Database User**.
+    - Enter 'DEVELOPER' as the **Workspace Username**.
     - Choose a **Password** and copy it somewhere safe.
     - Enter 'marketplace' as the **Workspace Name**.
 
@@ -93,7 +93,7 @@ This lab assumes you have:
 9. Fill out the form as follows and click 'Create User' to save:
     - Enter 'john_dealer1' as the **Username**.
     - Enter 'john_dealer1@dealer.com' as the **Email Address**.
-    - Select the 'DEVELOPER' **Workspace**.
+    - Select the 'Marketplace' **Workspace**.
     - Enter a **Password** and then **Confirm Password**.
 
   ![Create User Form](images/4-apex-2-8.png)
@@ -101,7 +101,7 @@ This lab assumes you have:
 10. Repeat Steps 7 and 8 to create a second user:
     - Enter 'sam_dealer2' as the **Username**.
     - Enter 'sam_dealer2@dealer.com' as the **Email Address**.
-    - Select the 'DEVELOPER' **Workspace**.
+    - Select the 'Marketplace' **Workspace**.
     - Enter a **Password** and then **Confirm Password**.
   
   ![Create User Form](images/4-apex-2-8.1.png)
@@ -147,11 +147,11 @@ This lab assumes you have:
 
   ![Install Application 1](images/4-apex-3-8.png)
 
-7. Click 'Next.'
+7. Click 'Next.' --> Enter username and password in the respective fields
 
   ![Install Application 2](images/4-apex-3-9.png)
 
-8. Click 'Next' again.
+8. Click 'Next' again --> Parsing Schema should be 'WKSP_MARKETPLACE'
 
   ![Install Application 3](images/4-apex-3-10.png)
 
@@ -172,15 +172,15 @@ This lab assumes you have:
 
 2. Click on 'Application Definition' located under **Application Logic**.
 
-  ![Application Definition Attributes](images/4-apex-4-2.png)
+  ![Application Definition](images/4-apex-4-2.png)
 
 3. Click the 'Substitions' tab as shown.
 
   ![Substitions](images/4-apex-4-4.png)
 
 4. Set the following **Substitutions** and 'Apply Changes':
-    - First, set G_OCI_WEB_CREDENTIAL to OCI_API_Credentials.
-    - Next, set OBP\_MAIN\_INSTANCE\_URL to the URL you found in the **Deployment Information**  section in the previous lab (Lab: Created & Setup API Gateway to connect with Smart Contract API's). This allows APEX to connect to the Car Marketplace OBP REST API endpoints via the API Gateway deployment. Change OBP\_MAIN\_INSTANCE\_URL, OBP\_DEALER\_1_\URL, OBP_DEALER_2_URL based on the routes configured in *Lab 4*  
+    - First, set G\_OCI\_WEB\_CREDENTIAL to OCI_API_Credentials.
+    - Next, set OBP\_MAIN\_INSTANCE\_URL to the URL you found in the **Deployment Information**  section in the previous lab (Lab: Created & Setup API Gateway to connect with Smart Contract API's). This allows APEX to connect to the Car Marketplace OBP REST API endpoints via the API Gateway deployment. Change OBP\_MAIN\_INSTANCE\_URL, OBP\_DEALER\_1\_URL, OBP\_DEALER\_2\_URL based on the routes configured in *Lab 4*  
 
     ![Substitions Form](images/4-apex-4-4-1.png)
     ![Substitions Form](images/4-apex-4-4-2.png)
@@ -216,18 +216,21 @@ This lab assumes you have:
 
   ![Apply Changes to Remote Server](images/4-apex-4-10.png)
 
-10. Set **URL Path Prefix** to 'v0/marketplace/chaincode-queries' and click 'Apply Changes.'
-****Make sure Gateway URL Matches this URL - Update ****
+10. Set **URL Path Prefix** to 'v0/marketplace/chaincode-queries' and click 'Apply Changes'
 
   ![Edit URL Path Prefix and Apply Changes](images/4-apex-4-11.png)
 
-11. Now, repeat steps 7-11 for the following REST Sources:
+11. Now, repeat steps 7-10 for the following REST Sources:
     - 'GetAccountBalance'
     - 'GetInvoiceByRange'
     - 'GetCarsByRange'
     - 'GetCarHistoryById'
     - 'GetPOByRange'
     - 'GetInvoiceByRannge'
+    - 'GetCarTitleToken1
+    - 'GetCarTitleToken2'
+    - 'GetCarServicesDealer1'
+    - 'GetCarServicesDealer2'
 
   ![Repeat APEX Data Source Steps](images/apex-4-4-12.png)
 
