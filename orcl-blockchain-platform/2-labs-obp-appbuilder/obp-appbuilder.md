@@ -305,28 +305,35 @@ Approve the chaincode definition from the partner instances (in this case, 'deal
 3. Open tokenization collection Marketplace_Tokenization, and run integrations as described in steps 0 – 6 by clicking Send:
 
     - Step 0 - Init: Called when chaincode is instantiated. Token Admin is identified by `user_id` and `org_id`.
+
   ![Init](images/init.png)
 
     - Step 1 – Initialize Token: This method creates a token and initializes the token properties. The asset and its properties are saved in the state database. This method can be invoked only by the Token Admin of the chaincode.
+
+  
   ![Initialize Token](images/initialize_token.png)
 
-    - Step 2, 3, 4 – Create & Associate Accounts(Token User1, Token User2):  This method creates an account for a specified user and token. An account must be created for any user who will have tokens at any point. Accounts track balances, on-hold balances, and transation history. 
+  - Step 2, 3, 4 – Create & Associate Accounts(Token User1, Token User2):  This method creates an account for a specified user and token. An account must be created for any user who will have tokens at any point. Accounts track balances, on-hold balances, and transation history. 
 
   ![Create Accounts](images/create_accounts.png)
   
     - Copy the account id received when creating the account. Substitute the accountid while associating the account as shown.
+
   ![Initialize Token](images/user_tokens.png)
 
     - Repeate the tasks create and associate token accounts for user Token User1 and Token User2
+
   ![Initialize Token](images/associate_token1.png)
 
     - Step 5, 6 – Add Role: This method adds a role to a specified user and token. This method can be called only by the Token Admin of the chaincode.
+
   ![Add Role](images/add_role.png)
 
     - Minter Role: mints a quantity of tokens, which are then owned by the caller of the method.
     - Escrow Role: notary account is specified, which is responsible to either complete or release the hold. When the hold is created, the specified token balance from the payer is put on hold. A held balance cannot be transferred until the hold is either completed or released.
 
     - Step 7 – Issue Tokens: This method mints tokens, which are then owned by the caller of the method. The caller must have an account and the minter role.
+
   ![Issue Tokens](images/issue_tokens.png)
 
 ## Task 10: Create Car Title Registration NFT  Chaincode
