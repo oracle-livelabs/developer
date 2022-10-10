@@ -48,50 +48,8 @@ This lab assumes you have:
 
   ![VCN Creation](images/3-gateway-1-4.png)
 
-<!-- 6. Once your VCN is available, public subnet is created as part of the process
+ ## Task 2: Configure Ingress Rules 
 
-  ![Create Subnet](images/3-gateway-1-5.png)
-
-7. Fill out the 'Create Subnet' form as follows:
-    - **Name** your subnet (e.g. Public Subnet for Car Marketplace VCN).
-    - Ensure the correct **Compartment** is selected (e.g. Blockchain LiveLabs).
-    - Scroll to the bottom and set 'Default DHCP Options for Car Marketplace VCN' as the **DHCP Options Compartment**.
-    - Update CIDR Block (10.0.0.0/24)
-    - Similarly, set 'Default Security List for Car Marketplace VCN' as the **Security List Compartment**.
-
-  ![Create Subnet Form 1](images/3-gateway-1-6.png)
-  ![Create Subnet Form 2](images/3-gateway-1-7.png) -->
-
-<!-- 6. Click 'Create Subnet' and see that the subnet has been successfully created.
-  ![See Subnet](images/3-gateway-1-8.png) -->
-
-
-<!-- ## Task 2: Configure VCN
-
-<!-- 1. Select 'DHCP Options' on the left-hand side menu and then 'Edit' the default options.
-
-  ![Edit DHCP Options](images/3-gateway-2-0.png)
-
-2. Ensure that your options match those on the form below and click 'Save Changes.'
-
-  ![Edit DHCP Options Form](images/3-gateway-2-1.png)
-
-
-3. Next, select 'Route Tables' on the left-hand side menu and click 'Default Route Table for Car Marketplace VCN.'
-
-  ![Default Route table](images/3-gateway-2-3.png)
-
-4. Click 'Add Route Rules.'
-
-  ![Add Route Rule](images/3-gateway-2-4.png)
-
-5. Fill out the form as follows and click on 'Add Route Rules.'
-
-  ![Add Route Rule Form](images/3-gateway-2-5.png)
-
-6. Next, select 'Security Lists' on the left-hand side menu and click 'Default Security List for Car Marketplace VCN.'
-
-  ![Security Lists](images/3-gateway-2-6-0.png) -->
 
 1. Click 'Add Ingress Rules.'
 
@@ -129,8 +87,6 @@ This lab assumes you have:
   ![Deployment Step 1](images/3-gateway-4-4.png)
   ![Deployment Step 1](images/3-gateway-4-4.1.png)
    
-
-
 ## Task 5: Create Routes
 
 1. Next, start creating a new routes by adding new routes
@@ -153,7 +109,6 @@ This lab assumes you have:
   ![Route 1](images/3-gateway-4-5.1.png)
 
   
-
 2. Click the '+ Another Route' button and repeat Step 2 for the remaining 5 routes based on the blockchain instances as shown:
   ![Route 2](images/3-gateway-4-4.1.png)
   ![Route 3](images/3-gateway-4-6.1.png)

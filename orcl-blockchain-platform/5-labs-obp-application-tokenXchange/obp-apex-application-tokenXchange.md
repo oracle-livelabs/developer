@@ -139,7 +139,7 @@ You will now create a car and simulate a transaction between the founder organiz
 
   ![Car Delaership](images/apex-accountbalance.png)
 
-## Task 4: dealer2 - Search Car
+## Task 5: dealer2 - Search Car
 
 1. Navigate to Marketplace
 
@@ -149,7 +149,7 @@ You will now create a car and simulate a transaction between the founder organiz
 
   ![Car Delaership](images/apex-cardetailspayment.png)
 
-## Task 5: dealer2 - Purchase and Confirm Purchase
+## Task 6: dealer2 - Purchase and Confirm Purchase
 
 1. Confirm vehicle Purchase
 
@@ -157,7 +157,7 @@ You will now create a car and simulate a transaction between the founder organiz
 
 Purchase order will now be created.
 
-## Task 6: Dealer1 - Review & Confirm the order place by dealer2
+## Task 7: Dealer1 - Review & Confirm the order place by dealer2
 
 1. Return to dealer 1's account, and navigate to orders received. You should be able to see the order placed by dealer 2.
 
@@ -169,7 +169,7 @@ Purchase order will now be created.
 
 This action confirms the order by the seller.
 
-## Task 7: dealer2 - Order Processed and Accepted
+## Task 8: dealer2 - Order Processed and Accepted
 
 1. Return to dealers 2's account, and navigate to orders placed. You will see the order placed should now be processed and ready to complete the purchase.
 

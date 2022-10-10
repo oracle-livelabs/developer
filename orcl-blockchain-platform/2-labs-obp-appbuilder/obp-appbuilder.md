@@ -84,7 +84,7 @@ This lab assumes you have:
 
   ![Founder Deployment](images/2-car-marketplace-6-4.png)
 
-## Task 2: Import Marketplace chaincode package from app builder
+## Task 3: Import Marketplace chaincode package from app builder
 
 1. In Visual Studio Code, click on the **O** icon on the left-hand menu to use the Blockchain App Builder Extension.
 
@@ -156,7 +156,7 @@ This lab assumes you have:
 13. Repeat steps 1-11 for 'dealer2' instance
 
 
-## Task 4: User Enrollment - Perform on All nodes (marketplace, dealer1, dealer2)
+## Task 5: User Enrollment - Perform on All nodes (marketplace, dealer1, dealer2)
 
   Oracle Blockchain Platform supports enrollments to the REST proxy. You use enrollments with token chaincodes to ensure the identities of the users completing token transactions. To do this, when you add enrollments for token use cases, specify a user ID for each enrollment (founder ID in this case), and specify one and only one user for each enrollment.
 
@@ -428,7 +428,7 @@ Approve the chaincode definition from the partner instances (in this case, 'deal
 6. Repeat steps 1-5 for 'dealer2.'
 
 
-## Task 13: Initialization and Issuance of Car Title Registration NFT
+## Task 10: Initialization and Issuance of Car Title Registration NFT
 
 1. Import the Car Title Registration NFT Postman collection [CarTitle NFT](files/Marketplace_CarTitleRegistration_Final.postman_collection.json?download=1) and assign variable definitions as shown.
 
