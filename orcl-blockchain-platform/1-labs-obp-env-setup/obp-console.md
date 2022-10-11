@@ -532,6 +532,6 @@ You may now proceed to the next lab.
 
 
 ## Acknowledgements
-* **Author** - Amal Tyagi, Cloud Engineer
-* **Contributors** -  Teodora Gheorghe, Adrien Lhemann, Diego Morales, Lokeswara Nushisarva, Siddesh C. Prabhu Dev Ujjni, Rene Fontcha
+* **Author** - Oracle Blockchain Product Management
+* **Contributors** - Amal Tyagi, Dev Sony  Teodora Gheorghe, Adrien Lhemann, Diego Morales, Lokeswara Nushisarva, Siddesh C. Prabhu Dev Ujjni, Rene Fontcha
 * **Last Updated By/Date** - Rene Fontcha, September 2022

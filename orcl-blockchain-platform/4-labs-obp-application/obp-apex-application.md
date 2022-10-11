@@ -179,7 +179,7 @@ This lab assumes you have:
   ![Substitions](images/4-apex-4-4.png)
 
 4. Set the following **Substitutions** and 'Apply Changes':
-    - First, set G\_OCI\_WEB\_CREDENTIAL to OCI_API_Credentials.
+    - First, set G\_OCI\_WEB\_CREDENTIAL to OCI\_\API_\Credentials.
     - Next, set OBP\_MAIN\_INSTANCE\_URL to the URL you found in the **Deployment Information**  section in the previous lab (Lab: Created & Setup API Gateway to connect with Smart Contract API's). This allows APEX to connect to the Car Marketplace OBP REST API endpoints via the API Gateway deployment. Change OBP\_MAIN\_INSTANCE\_URL, OBP\_DEALER\_1\_URL, OBP\_DEALER\_2\_URL based on the routes configured in *Lab 4*  
 
     ![Substitions Form](images/4-apex-4-4-1.png)
@@ -187,7 +187,7 @@ This lab assumes you have:
     
     - Set FABCAR\_CHAINCODE to car\_marketplace\_cc.
     - Set TOKENIZATION\_CHAINCODE to car\_tokenization\_cc.
-    - Set DEALER\_1\_URL and DEALER\_2\_URL to john_dealer1 and sam_dealer2, respectively. This gives information on API routing.
+    - Set DEALER\_1\_URL and DEALER\_2\_URL to john\_dealer1 and sam\_dealer2, respectively. This gives information on API routing.
     - Set MARKETPLACE to marketplace.
 
   ![Substitions Form](images/4-apex-4-4.png)
@@ -248,6 +248,6 @@ You may now proceed to the next lab.
 --describe tokenization-- tokens will be put on hold while transaction is processed and order is confirmed -->
 
 ## Acknowledgements
-* **Author** - Amal Tyagi, Cloud Engineer
-* **Contributors** -  Teodora Gheorghe, Adrien Lhemann, Diego Morales, Lokeswara Nushisarva, Siddesh C. Prabhu Dev Ujjni, Rene Fontcha
+* **Author** - Oracle Blockchain Product Management
+* **Contributors** - Dev Sony, Amal Tyagi, Teodora Gheorghe, Adrien Lhemann, Diego Morales, Lokeswara Nushisarva, Siddesh C. Prabhu Dev Ujjni, Rene Fontcha
 * **Last Updated By/Date** - Rene Fontcha, September 2022
