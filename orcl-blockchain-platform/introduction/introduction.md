@@ -28,7 +28,7 @@ You may now proceed to the next lab.
 * [Download OBP Enterprise](https://www.oracle.com/database/technologies/blockchain-platform-enterprise-edition.html)
 * [App Builder Video](https://www.youtube.com/watch?v=nO0AniQCzVg)
 * [App Builder Documentation](https://docs.oracle.com/en/cloud/paas/blockchain-cloud/usingoci/using-chaincode-development-tools.html)
-* [Oracle Blockchain Blog](blogs.oracle.com/blockchain)
+* [Oracle Blockchain Blog](https://blogs.oracle.com/blockchain)
 
 
 ## Acknowledgements

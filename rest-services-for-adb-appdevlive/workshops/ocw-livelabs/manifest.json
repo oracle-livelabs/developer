@@ -24,12 +24,12 @@
             "filename": "https://oracle-livelabs.github.io/common/labs/sqldevweb-login/sqldevweb-login.md"
         },
         {
-            "title": "Lab 3: Create and Auto-REST enable a table",
+            "title": "Lab 3: Create and auto-REST enable a table",
             "description": "Modern App Dev with Oracle REST Data Services",
             "filename": "../../create-table/create-table.md"
         },
         {
-            "title": "Lab 4: Load data into a table then create business logic for the database",
+            "title": "Lab 4: Load data and create business logic",
             "description": "Modern App Dev with Oracle REST Data Services",
             "filename": "../../load-data-and-biz-objs/load-data-and-biz-objs.md"
         },

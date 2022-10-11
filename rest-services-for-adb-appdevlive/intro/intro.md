@@ -1,6 +1,4 @@
-# How to build powerful, secure REST APIs for your Oracle Database
-
-## Introduction
+# Introduction
 
 Beginning with a simple CSV document, you'll quickly create a new Autonomous Database with a new table based on that same CSV document. And instead of using SQL or PL/SQL to interact with your new table we'll show you how to quickly build no-code full Create Read Update Delete (CRUD) REST APIs.
 
@@ -8,7 +6,7 @@ You'll also learn how to take your existing SQL and/or PLSQL and transform it in
 
 Once your APIs are ready, we'll show you how to easily secure them with OAuth2 clients.
 
-### About this Workshop
+## About this Workshop
 
 In this lab you will use the browser-based SQL and REST workshop tools, connect to your Autonomous Database and REST enable a table. You will then secure that REST endpoint all within a single UI.
 
@@ -69,9 +67,9 @@ This section introduces some common terms that are used throughout this Workshop
 - **URI template**: A simple grammar that defines the specific patterns of URIs that a given resource template can handle. For example, the pattern employees/{id} will match any URI whose path begins with employees/, such as employees/2560.
 
 - **Resource handler**: Provides the logic required to service a specific HTTP method for a specific resource template. For example, the logic of the GET HTTP method for the preceding resource template might be:
-   ```
-   <copy>select empno, ename, dept from emp where empno = :id</copy> 
-   ```
+     ```
+     <copy>select empno, ename, dept from emp where empno = :id</copy> 
+     ```
 - **HTTP operation**: HTTP (HyperText Transport Protocol) defines standard methods that can be performed on resources: GET (retrieve the resource contents), POST (store a new resource), PUT (update an existing resource), and DELETE (remove a resource).
 
 ## Acknowledgements
@@ -81,4 +79,4 @@ This section introduces some common terms that are used throughout this Workshop
     - Chris Hoina, Senior Product Manager
     - Brian Spendolini 
  - **Last Updated By/Date** 
-    - Chris Hoina, August 2022
+    - Chris Hoina, September 2022
