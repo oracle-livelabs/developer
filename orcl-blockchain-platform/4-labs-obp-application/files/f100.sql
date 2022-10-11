@@ -15,172 +15,379 @@ begin
 wwv_flow_imp.import_begin (
  p_version_yyyy_mm_dd=>'2022.04.12'
 ,p_release=>'22.1.4'
-,p_default_workspace_id=>9123115522168521
-,p_default_application_id=>100
-,p_default_id_offset=>26143221653118612
-,p_default_owner=>'DEVELOPER'
+wwv_flow_imp_shared.create_data_profile_col(
+,p_max_length=>4000
+,p_name=>'SYMBOL'
+);
+,p_data_type=>'VARCHAR2'
+,p_max_length=>4000
+,p_has_time_zone=>false
+,p_selector=>'TokenId'
+);
+wwv_flow_imp_shared.create_data_profile_col(
+ p_id=>wwv_flow_imp.id(7793636672895083)
+,p_data_profile_id=>wwv_flow_imp.id(7784902201871801)
+,p_name=>'ISBURNED'
+,p_sequence=>6
+,p_column_type=>'DATA'
+,p_data_type=>'VARCHAR2'
+,p_max_length=>4000
+,p_has_time_zone=>false
+,p_selector=>'IsBurned'
+);
+wwv_flow_imp_shared.create_data_profile_col(
+ p_id=>wwv_flow_imp.id(7794194014895083)
+,p_data_profile_id=>wwv_flow_imp.id(7784902201871801)
+,p_name=>'MAX_MINT_QUANTITY'
+,p_sequence=>7
+,p_column_type=>'DATA'
+,p_data_type=>'NUMBER'
+,p_has_time_zone=>false
+,p_selector=>'Mintable.Max_mint_quantity'
+);
+wwv_flow_imp_shared.create_data_profile_col(
+ p_id=>wwv_flow_imp.id(7794620834895083)
+,p_data_profile_id=>wwv_flow_imp.id(7784902201871801)
+,p_name=>'TOKENURI'
+,p_sequence=>8
+,p_column_type=>'DATA'
+,p_data_type=>'VARCHAR2'
+,p_max_length=>4000
+,p_has_time_zone=>false
+,p_selector=>'TokenUri'
+);
+wwv_flow_imp_shared.create_data_profile_col(
+ p_id=>wwv_flow_imp.id(7795153153895083)
+,p_data_profile_id=>wwv_flow_imp.id(7784902201871801)
+,p_name=>'ASSETTYPE'
+,p_sequence=>9
+,p_column_type=>'DATA'
+,p_data_type=>'VARCHAR2'
+,p_max_length=>4000
+,p_has_time_zone=>false
+,p_selector=>'AssetType'
+);
+wwv_flow_imp_shared.create_data_profile_col(
+ p_id=>wwv_flow_imp.id(7795629084895084)
+,p_data_profile_id=>wwv_flow_imp.id(7784902201871801)
+,p_name=>'CREATEDBY'
+,p_sequence=>10
+,p_column_type=>'DATA'
+,p_data_type=>'VARCHAR2'
+,p_max_length=>4000
+,p_has_time_zone=>false
+,p_selector=>'CreatedBy'
+);
+wwv_flow_imp_shared.create_data_profile_col(
+ p_id=>wwv_flow_imp.id(7796140440895084)
+,p_data_profile_id=>wwv_flow_imp.id(7784902201871801)
+,p_name=>'TOKENDESC'
+,p_sequence=>11
+,p_column_type=>'DATA'
+,p_data_type=>'VARCHAR2'
+,p_max_length=>4000
+,p_has_time_zone=>false
+,p_selector=>'TokenDesc'
+);
+wwv_flow_imp_shared.create_data_profile_col(
+ p_id=>wwv_flow_imp.id(7796696278895084)
+,p_data_profile_id=>wwv_flow_imp.id(7784902201871801)
+,p_name=>'TOKENNAME'
+,p_sequence=>12
+,p_column_type=>'DATA'
+,p_data_type=>'VARCHAR2'
+,p_max_length=>4000
+,p_has_time_zone=>false
+,p_selector=>'TokenName'
+);
+wwv_flow_imp_shared.create_data_profile_col(
+ p_id=>wwv_flow_imp.id(7797155126895084)
+,p_data_profile_id=>wwv_flow_imp.id(7784902201871801)
+,p_name=>'TOKENTYPE'
+,p_sequence=>13
+,p_column_type=>'DATA'
+,p_data_type=>'VARCHAR2'
+,p_max_length=>4000
+,p_has_time_zone=>false
+,p_selector=>'TokenType'
+);
+wwv_flow_imp_shared.create_data_profile_col(
+ p_id=>wwv_flow_imp.id(7797687264895085)
+,p_data_profile_id=>wwv_flow_imp.id(7784902201871801)
+,p_name=>'TOKENUNIT'
+,p_sequence=>14
+,p_column_type=>'DATA'
+,p_data_type=>'VARCHAR2'
+,p_max_length=>4000
+,p_has_time_zone=>false
+,p_selector=>'TokenUnit'
+);
+wwv_flow_imp_shared.create_data_profile_col(
+ p_id=>wwv_flow_imp.id(7798171808895085)
+,p_data_profile_id=>wwv_flow_imp.id(7784902201871801)
+,p_name=>'CREATIONDATE'
+,p_sequence=>15
+,p_column_type=>'DATA'
+,p_data_type=>'TIMESTAMP WITH TIME ZONE'
+,p_format_mask=>'YYYY"-"MM"-"DD"T"HH24":"MI:SS.FF9TZR'
+,p_has_time_zone=>true
+,p_selector=>'CreationDate'
+);
+wwv_flow_imp_shared.create_data_profile_col(
+ p_id=>wwv_flow_imp.id(7798670218895085)
+,p_data_profile_id=>wwv_flow_imp.id(7784902201871801)
+,p_name=>'VIN'
+,p_sequence=>16
+,p_column_type=>'DATA'
+,p_data_type=>'VARCHAR2'
+,p_max_length=>4000
+,p_has_time_zone=>false
+,p_selector=>'TokenMetadata.VIN'
+);
+wwv_flow_imp_shared.create_data_profile_col(
+ p_id=>wwv_flow_imp.id(7799122566895085)
+,p_data_profile_id=>wwv_flow_imp.id(7784902201871801)
+,p_name=>'FUEL'
+,p_sequence=>17
+,p_column_type=>'DATA'
+,p_data_type=>'VARCHAR2'
+,p_max_length=>4000
+,p_has_time_zone=>false
+,p_selector=>'TokenMetadata.Fuel'
+);
+wwv_flow_imp_shared.create_data_profile_col(
+ p_id=>wwv_flow_imp.id(7799687253895086)
+,p_data_profile_id=>wwv_flow_imp.id(7784902201871801)
+,p_name=>'MAKE'
+,p_sequence=>18
+,p_column_type=>'DATA'
+,p_data_type=>'VARCHAR2'
+,p_max_length=>4000
+,p_has_time_zone=>false
+,p_selector=>'TokenMetadata.Make'
+);
+wwv_flow_imp_shared.create_data_profile_col(
+ p_id=>wwv_flow_imp.id(7800191983895086)
+,p_data_profile_id=>wwv_flow_imp.id(7784902201871801)
+,p_name=>'YEAR'
+,p_sequence=>19
+,p_column_type=>'DATA'
+,p_data_type=>'NUMBER'
+,p_has_time_zone=>false
+,p_selector=>'TokenMetadata.Year'
+);
+wwv_flow_imp_shared.create_data_profile_col(
+ p_id=>wwv_flow_imp.id(7800694336895086)
+,p_data_profile_id=>wwv_flow_imp.id(7784902201871801)
+,p_name=>'MODEL'
+,p_sequence=>20
+,p_column_type=>'DATA'
+,p_data_type=>'VARCHAR2'
+,p_max_length=>4000
+,p_has_time_zone=>false
+,p_selector=>'TokenMetadata.Model'
+);
+wwv_flow_imp_shared.create_data_profile_col(
+ p_id=>wwv_flow_imp.id(7801127727895086)
+,p_data_profile_id=>wwv_flow_imp.id(7784902201871801)
+,p_name=>'YEAR1STSOLD'
+,p_sequence=>21
+,p_column_type=>'DATA'
+,p_data_type=>'NUMBER'
+,p_has_time_zone=>false
+,p_selector=>'TokenMetadata.Year1stsold'
+);
+wwv_flow_imp_shared.create_data_profile_col(
+ p_id=>wwv_flow_imp.id(7801695347895087)
+,p_data_profile_id=>wwv_flow_imp.id(7784902201871801)
+,p_name=>'TOKENSTANDARD'
+,p_sequence=>22
+,p_column_type=>'DATA'
+,p_data_type=>'VARCHAR2'
+,p_max_length=>4000
+,p_has_time_zone=>false
+,p_selector=>'TokenStandard'
 );
 end;
 /
- 
-prompt APPLICATION 100 - Car Marketplace
---
--- Application Export:
---   Application:     100
---   Name:            Car Marketplace
---   Date and Time:   15:10 Tuesday September 20, 2022
---   Exported By:     DEVELOPER
---   Flashback:       0
---   Export Type:     Application Export
---     Pages:                     23
---       Items:                  106
---       Validations:              2
---       Processes:               18
---       Regions:                 39
---       Buttons:                 32
---       Dynamic Actions:         36
---     Shared Components:
---       Logic:
---         Items:                  1
---         Computations:           1
---         Build Options:          2
---       Navigation:
---         Lists:                  3
---         Breadcrumbs:            1
---           Entries:              2
---       Security:
---         Authentication:         1
---         Authorization:          1
---       User Interface:
---         Themes:                 1
---         Templates:
---           Page:                 9
---           Region:              18
---           Label:                7
---           List:                13
---           Popup LOV:            1
---           Calendar:             1
---           Breadcrumb:           1
---           Button:               3
---           Report:              11
---         LOVs:                   3
---         Shortcuts:              1
---       Globalization:
---       Reports:
---       E-Mail:
---     Supporting Objects:  Included
---   Version:         22.1.4
---   Instance ID:     9019938735351208
---
-
-prompt --application/delete_application
+prompt --application/shared_components/data_profiles/getcarservicesdealer1
 begin
-wwv_flow_imp.remove_flow(wwv_flow.g_flow_id);
-end;
-/
-prompt --application/create_application
-begin
-wwv_flow_imp.create_flow(
- p_id=>wwv_flow.g_flow_id
-,p_owner=>nvl(wwv_flow_application_install.get_schema,'DEVELOPER')
-,p_name=>nvl(wwv_flow_application_install.get_application_name,'Car Marketplace')
-,p_alias=>nvl(wwv_flow_application_install.get_application_alias,'CAR-MARKETPLACE103100')
-,p_page_view_logging=>'YES'
-,p_page_protection_enabled_y_n=>'Y'
-,p_checksum_salt=>'296BEF4738BA83E9E012295D7CABD9E16412D8ACA408BE73398CCBA453240E8A'
-,p_bookmark_checksum_function=>'SH512'
-,p_compatibility_mode=>'19.2'
-,p_flow_language=>'en'
-,p_flow_language_derived_from=>'FLOW_PRIMARY_LANGUAGE'
-,p_allow_feedback_yn=>'Y'
-,p_date_format=>'DS'
-,p_timestamp_format=>'DS'
-,p_timestamp_tz_format=>'DS'
-,p_direction_right_to_left=>'N'
-,p_flow_image_prefix => nvl(wwv_flow_application_install.get_image_prefix,'')
-,p_documentation_banner=>'Application created from create application wizard 2021.07.13.'
-,p_authentication=>'PLUGIN'
-,p_authentication_id=>wwv_flow_imp.id(67344036304865510)
-,p_application_tab_set=>1
-,p_logo_type=>'T'
-,p_logo_text=>'Dealership Marketplace'
-,p_app_builder_icon_name=>'car_icon4928.ico'
-,p_public_user=>'APEX_PUBLIC_USER'
-,p_proxy_server=>nvl(wwv_flow_application_install.get_proxy,'')
-,p_no_proxy_domains=>nvl(wwv_flow_application_install.get_no_proxy_domains,'')
-,p_flow_version=>'Release 1.0'
-,p_flow_status=>'AVAILABLE_W_EDIT_LINK'
-,p_flow_unavailable_text=>'This application is currently unavailable at this time.'
-,p_exact_substitutions_only=>'Y'
-,p_browser_cache=>'N'
-,p_browser_frame=>'D'
-,p_referrer_policy=>'strict-origin-when-cross-origin'
-,p_runtime_api_usage=>'T'
-,p_rejoin_existing_sessions=>'N'
-,p_csv_encoding=>'Y'
-,p_auto_time_zone=>'N'
-,p_tokenize_row_search=>'N'
-,p_substitution_string_01=>'APP_NAME'
-,p_substitution_value_01=>'Car Marketplace'
-,p_substitution_string_03=>'G_OCI_WEB_CREDENTIAL'
-,p_substitution_value_03=>'OCI_API_Credentials'
-,p_substitution_string_04=>'OBP_MAIN_INSTANCE_URL'
-,p_substitution_value_04=>'https://brb4rdlaher7t6pxzzudxns52y.apigateway.us-ashburn-1.oci.customer-oci.com/v0/marketplace/transactions'
-,p_substitution_string_05=>'FABCAR_CHAINCODE'
-,p_substitution_value_05=>'mktplace_cc'
-,p_substitution_string_06=>'TOKENIZATION_CHAINCODE'
-,p_substitution_value_06=>'livelab_token_cc'
-,p_substitution_string_07=>'OBP_DEALER_1_URL'
-,p_substitution_value_07=>'https://brb4rdlaher7t6pxzzudxns52y.apigateway.us-ashburn-1.oci.customer-oci.com/v0/dealer1/transactions'
-,p_substitution_string_08=>'OBP_DEALER_2_URL'
-,p_substitution_value_08=>'https://brb4rdlaher7t6pxzzudxns52y.apigateway.us-ashburn-1.oci.customer-oci.com/v0/dealer2/transactions'
-,p_substitution_string_09=>'DEALER_1'
-,p_substitution_value_09=>'john_dealer1'
-,p_substitution_string_10=>'DEALER_2'
-,p_substitution_value_10=>'sam_dealer2'
-,p_substitution_string_11=>'MARKETPLACE'
-,p_substitution_value_11=>'marketplace'
-,p_last_updated_by=>'DEVELOPER'
-,p_last_upd_yyyymmddhh24miss=>'20220825190136'
-,p_file_prefix => nvl(wwv_flow_application_install.get_static_app_file_prefix,'')
-,p_files_version=>13
-,p_ui_type_name => null
-,p_print_server_type=>'NATIVE'
-,p_is_pwa=>'N'
+wwv_flow_imp_shared.create_data_profile(
+ p_id=>wwv_flow_imp.id(7813710493313713)
+,p_name=>'GetCarServicesDealer1'
+,p_format=>'JSON'
+,p_row_selector=>'result.payload.Service'
+);
+wwv_flow_imp_shared.create_data_profile_col(
+ p_id=>wwv_flow_imp.id(7892470472737029)
+,p_data_profile_id=>wwv_flow_imp.id(7813710493313713)
+,p_name=>'EVENTNO'
+,p_sequence=>1
+,p_column_type=>'DATA'
+,p_data_type=>'NUMBER'
+,p_has_time_zone=>false
+,p_selector=>'Eventno'
+);
+wwv_flow_imp_shared.create_data_profile_col(
+ p_id=>wwv_flow_imp.id(7892994782737029)
+,p_data_profile_id=>wwv_flow_imp.id(7813710493313713)
+,p_name=>'MILEAGE'
+,p_sequence=>2
+,p_column_type=>'DATA'
+,p_data_type=>'NUMBER'
+,p_has_time_zone=>false
+,p_selector=>'Mileage'
+);
+wwv_flow_imp_shared.create_data_profile_col(
+ p_id=>wwv_flow_imp.id(7893403331737029)
+,p_data_profile_id=>wwv_flow_imp.id(7813710493313713)
+,p_name=>'ACCIDENT'
+,p_sequence=>3
+,p_column_type=>'DATA'
+,p_data_type=>'VARCHAR2'
+,p_max_length=>4000
+,p_has_time_zone=>false
+,p_selector=>'Accident'
+);
+wwv_flow_imp_shared.create_data_profile_col(
+ p_id=>wwv_flow_imp.id(7893927503737029)
+,p_data_profile_id=>wwv_flow_imp.id(7813710493313713)
+,p_name=>'EVENTDESC'
+,p_sequence=>4
+,p_column_type=>'DATA'
+,p_data_type=>'VARCHAR2'
+,p_max_length=>4000
+,p_has_time_zone=>false
+,p_selector=>'Eventdesc'
+);
+wwv_flow_imp_shared.create_data_profile_col(
+ p_id=>wwv_flow_imp.id(7894492423737030)
+,p_data_profile_id=>wwv_flow_imp.id(7813710493313713)
+,p_name=>'CLAIMNUMBER'
+,p_sequence=>5
+,p_column_type=>'DATA'
+,p_data_type=>'VARCHAR2'
+,p_max_length=>4000
+,p_has_time_zone=>false
+,p_selector=>'Claimnumber'
+);
+wwv_flow_imp_shared.create_data_profile_col(
+ p_id=>wwv_flow_imp.id(7894982525737030)
+,p_data_profile_id=>wwv_flow_imp.id(7813710493313713)
+,p_name=>'SERVICECOST'
+,p_sequence=>6
+,p_column_type=>'DATA'
+,p_data_type=>'NUMBER'
+,p_has_time_zone=>false
+,p_selector=>'Servicecost'
+);
+wwv_flow_imp_shared.create_data_profile_col(
+ p_id=>wwv_flow_imp.id(7895440080737030)
+,p_data_profile_id=>wwv_flow_imp.id(7813710493313713)
+,p_name=>'SERVICEDATE'
+,p_sequence=>7
+,p_column_type=>'DATA'
+,p_data_type=>'TIMESTAMP WITH TIME ZONE'
+,p_format_mask=>'YYYY"-"MM"-"DD"T"HH24":"MI:SS.FF9TZR'
+,p_has_time_zone=>true
+,p_selector=>'Servicedate'
 );
 end;
 /
-prompt --workspace/credentials/credentials_for_obp_endpoint
+prompt --application/shared_components/data_profiles/getcarservicesdealer2
 begin
-wwv_imp_workspace.create_credential(
- p_id=>wwv_flow_imp.id(27923588256374434)
-,p_name=>'Credentials for OBP-Endpoint'
-,p_static_id=>'Credentials_for_OBP_Endpoint'
-,p_authentication_type=>'BASIC'
-,p_prompt_on_install=>true
+wwv_flow_imp_shared.create_data_profile(
+ p_id=>wwv_flow_imp.id(7896223814771760)
+,p_name=>'GetCarServicesDealer2'
+,p_format=>'JSON'
+,p_row_selector=>'result.payload.Service'
 );
-end;
-/
-prompt --workspace/remote_servers/brb4rdlaher7t6pxzzudxns52y_apigateway_us_ashburn_1_oci_customer_oci_com
-begin
-wwv_imp_workspace.create_remote_server(
- p_id=>wwv_flow_imp.id(27923829357374436)
-,p_name=>'brb4rdlaher7t6pxzzudxns52y-apigateway-us-ashburn-1-oci-customer-oci-com'
-,p_static_id=>'brb4rdlaher7t6pxzzudxns52y_apigateway_us_ashburn_1_oci_customer_oci_com'
-,p_base_url=>nvl(wwv_flow_application_install.get_remote_server_base_url('brb4rdlaher7t6pxzzudxns52y_apigateway_us_ashburn_1_oci_customer_oci_com'),'https://brb4rdlaher7t6pxzzudxns52y.apigateway.us-ashburn-1.oci.customer-oci.com/')
-,p_https_host=>nvl(wwv_flow_application_install.get_remote_server_https_host('brb4rdlaher7t6pxzzudxns52y_apigateway_us_ashburn_1_oci_customer_oci_com'),'')
-,p_server_type=>'WEB_SERVICE'
-,p_ords_timezone=>nvl(wwv_flow_application_install.get_remote_server_ords_tz('brb4rdlaher7t6pxzzudxns52y_apigateway_us_ashburn_1_oci_customer_oci_com'),'')
-,p_remote_sql_default_schema=>nvl(wwv_flow_application_install.get_remote_server_default_db('brb4rdlaher7t6pxzzudxns52y_apigateway_us_ashburn_1_oci_customer_oci_com'),'')
-,p_mysql_sql_modes=>nvl(wwv_flow_application_install.get_remote_server_sql_mode('brb4rdlaher7t6pxzzudxns52y_apigateway_us_ashburn_1_oci_customer_oci_com'),'')
-,p_prompt_on_install=>false
+wwv_flow_imp_shared.create_data_profile_col(
+ p_id=>wwv_flow_imp.id(7896448453771760)
+,p_data_profile_id=>wwv_flow_imp.id(7896223814771760)
+,p_name=>'EVENTNO'
+,p_sequence=>1
+,p_column_type=>'DATA'
+,p_data_type=>'NUMBER'
+,p_has_time_zone=>false
+,p_selector=>'Eventno'
+);
+wwv_flow_imp_shared.create_data_profile_col(
+ p_id=>wwv_flow_imp.id(7896789192771760)
+,p_data_profile_id=>wwv_flow_imp.id(7896223814771760)
+,p_name=>'MILEAGE'
+,p_sequence=>2
+,p_column_type=>'DATA'
+,p_data_type=>'NUMBER'
+,p_has_time_zone=>false
+,p_selector=>'Mileage'
+);
+wwv_flow_imp_shared.create_data_profile_col(
+ p_id=>wwv_flow_imp.id(7897077233771760)
+,p_data_profile_id=>wwv_flow_imp.id(7896223814771760)
+,p_name=>'ACCIDENT'
+,p_sequence=>3
+,p_column_type=>'DATA'
+,p_data_type=>'VARCHAR2'
+,p_max_length=>4000
+,p_has_time_zone=>false
+,p_selector=>'Accident'
+);
+wwv_flow_imp_shared.create_data_profile_col(
+ p_id=>wwv_flow_imp.id(7897376383771761)
+,p_data_profile_id=>wwv_flow_imp.id(7896223814771760)
+,p_name=>'EVENTDESC'
+,p_sequence=>4
+,p_column_type=>'DATA'
+,p_data_type=>'VARCHAR2'
+,p_max_length=>4000
+,p_has_time_zone=>false
+,p_selector=>'Eventdesc'
+);
+wwv_flow_imp_shared.create_data_profile_col(
+ p_id=>wwv_flow_imp.id(7897695210771761)
+,p_data_profile_id=>wwv_flow_imp.id(7896223814771760)
+,p_name=>'CLAIMNUMBER'
+,p_sequence=>5
+,p_column_type=>'DATA'
+,p_data_type=>'VARCHAR2'
+,p_max_length=>4000
+,p_has_time_zone=>false
+,p_selector=>'Claimnumber'
+);
+wwv_flow_imp_shared.create_data_profile_col(
+ p_id=>wwv_flow_imp.id(7897979580771761)
+,p_data_profile_id=>wwv_flow_imp.id(7896223814771760)
+,p_name=>'SERVICECOST'
+,p_sequence=>6
+,p_column_type=>'DATA'
+,p_data_type=>'NUMBER'
+,p_has_time_zone=>false
+,p_selector=>'Servicecost'
+);
+wwv_flow_imp_shared.create_data_profile_col(
+ p_id=>wwv_flow_imp.id(7898276184771761)
+,p_data_profile_id=>wwv_flow_imp.id(7896223814771760)
+,p_name=>'SERVICEDATE'
+,p_sequence=>7
+,p_column_type=>'DATA'
+,p_data_type=>'TIMESTAMP WITH TIME ZONE'
+,p_format_mask=>'YYYY"-"MM"-"DD"T"HH24":"MI:SS.FF9TZR'
+,p_has_time_zone=>true
+,p_selector=>'Servicedate'
 );
 end;
 /
 prompt --application/shared_components/data_profiles/getaccountbalance
 begin
 wwv_flow_imp_shared.create_data_profile(
+ p_id=>wwv_flow_imp.id(45559945987901515)
+=======
+prompt --application/shared_components/data_profiles/getaccountbalance
+begin
+wwv_flow_imp_shared.create_data_profile(
  p_id=>wwv_flow_imp.id(38263672130055876)
+>>>>>>> upstream/main
 ,p_name=>'GetAccountBalance'
 ,p_format=>'JSON'
 ,p_row_selector=>'result.payload'
@@ -287,19 +494,14 @@ wwv_flow_imp_shared.create_data_profile_col(
 ,p_selector=>'Year'
 );
 wwv_flow_imp_shared.create_data_profile_col(
- p_id=>wwv_flow_imp.id(38319347317176928)
-,p_data_profile_id=>wwv_flow_imp.id(38317931024176926)
+,p_data_profile_id=>wwv_flow_imp.id(45614204882022565)
 ,p_name=>'MODEL'
-,p_sequence=>4
-,p_column_type=>'DATA'
-,p_data_type=>'VARCHAR2'
-,p_max_length=>4000
 ,p_has_time_zone=>false
 ,p_selector=>'Model'
 );
 wwv_flow_imp_shared.create_data_profile_col(
- p_id=>wwv_flow_imp.id(38319695512176929)
-,p_data_profile_id=>wwv_flow_imp.id(38317931024176926)
+ p_id=>wwv_flow_imp.id(45615969370022568)
+,p_data_profile_id=>wwv_flow_imp.id(45614204882022565)
 ,p_name=>'PRICE'
 ,p_sequence=>5
 ,p_column_type=>'DATA'
@@ -308,8 +510,8 @@ wwv_flow_imp_shared.create_data_profile_col(
 ,p_selector=>'Price'
 );
 wwv_flow_imp_shared.create_data_profile_col(
- p_id=>wwv_flow_imp.id(38319995310176929)
-,p_data_profile_id=>wwv_flow_imp.id(38317931024176926)
+ p_id=>wwv_flow_imp.id(45616269168022568)
+,p_data_profile_id=>wwv_flow_imp.id(45614204882022565)
 ,p_name=>'FORSALE'
 ,p_sequence=>6
 ,p_column_type=>'DATA'
@@ -319,8 +521,8 @@ wwv_flow_imp_shared.create_data_profile_col(
 ,p_selector=>'ForSale'
 );
 wwv_flow_imp_shared.create_data_profile_col(
- p_id=>wwv_flow_imp.id(38320307661176929)
-,p_data_profile_id=>wwv_flow_imp.id(38317931024176926)
+ p_id=>wwv_flow_imp.id(45616581519022568)
+,p_data_profile_id=>wwv_flow_imp.id(45614204882022565)
 ,p_name=>'MILEAGE'
 ,p_sequence=>7
 ,p_column_type=>'DATA'
@@ -329,8 +531,8 @@ wwv_flow_imp_shared.create_data_profile_col(
 ,p_selector=>'Mileage'
 );
 wwv_flow_imp_shared.create_data_profile_col(
- p_id=>wwv_flow_imp.id(38320534786176929)
-,p_data_profile_id=>wwv_flow_imp.id(38317931024176926)
+ p_id=>wwv_flow_imp.id(45616808644022568)
+,p_data_profile_id=>wwv_flow_imp.id(45614204882022565)
 ,p_name=>'OWNERID'
 ,p_sequence=>8
 ,p_column_type=>'DATA'
@@ -340,8 +542,8 @@ wwv_flow_imp_shared.create_data_profile_col(
 ,p_selector=>'OwnerId'
 );
 wwv_flow_imp_shared.create_data_profile_col(
- p_id=>wwv_flow_imp.id(38320857433176929)
-,p_data_profile_id=>wwv_flow_imp.id(38317931024176926)
+ p_id=>wwv_flow_imp.id(45617131291022568)
+,p_data_profile_id=>wwv_flow_imp.id(45614204882022565)
 ,p_name=>'LASTSOLD'
 ,p_sequence=>9
 ,p_column_type=>'DATA'
@@ -351,8 +553,8 @@ wwv_flow_imp_shared.create_data_profile_col(
 ,p_selector=>'LastSold'
 );
 wwv_flow_imp_shared.create_data_profile_col(
- p_id=>wwv_flow_imp.id(38321130973176929)
-,p_data_profile_id=>wwv_flow_imp.id(38317931024176926)
+ p_id=>wwv_flow_imp.id(45617404831022568)
+,p_data_profile_id=>wwv_flow_imp.id(45614204882022565)
 ,p_name=>'ASSETTYPE'
 ,p_sequence=>10
 ,p_column_type=>'DATA'
@@ -362,8 +564,8 @@ wwv_flow_imp_shared.create_data_profile_col(
 ,p_selector=>'AssetType'
 );
 wwv_flow_imp_shared.create_data_profile_col(
- p_id=>wwv_flow_imp.id(38321465932176929)
-,p_data_profile_id=>wwv_flow_imp.id(38317931024176926)
+ p_id=>wwv_flow_imp.id(45617739790022568)
+,p_data_profile_id=>wwv_flow_imp.id(45614204882022565)
 ,p_name=>'DESCRIPTION'
 ,p_sequence=>11
 ,p_column_type=>'DATA'
@@ -373,8 +575,8 @@ wwv_flow_imp_shared.create_data_profile_col(
 ,p_selector=>'Description'
 );
 wwv_flow_imp_shared.create_data_profile_col(
- p_id=>wwv_flow_imp.id(38318165162176927)
-,p_data_profile_id=>wwv_flow_imp.id(38317931024176926)
+ p_id=>wwv_flow_imp.id(45614439020022566)
+,p_data_profile_id=>wwv_flow_imp.id(45614204882022565)
 ,p_name=>'CARIMAGE'
 ,p_sequence=>12
 ,p_column_type=>'DATA'
@@ -389,14 +591,14 @@ end;
 prompt --application/shared_components/data_profiles/getdealerbyrange
 begin
 wwv_flow_imp_shared.create_data_profile(
- p_id=>wwv_flow_imp.id(73193505214532895)
+ p_id=>wwv_flow_imp.id(80489779072378534)
 ,p_name=>'GetDealerByRange'
 ,p_format=>'JSON'
 ,p_row_selector=>'result.payload'
 );
 wwv_flow_imp_shared.create_data_profile_col(
- p_id=>wwv_flow_imp.id(73199057244537421)
-,p_data_profile_id=>wwv_flow_imp.id(73193505214532895)
+ p_id=>wwv_flow_imp.id(80495331102383060)
+,p_data_profile_id=>wwv_flow_imp.id(80489779072378534)
 ,p_name=>'NAME'
 ,p_sequence=>1
 ,p_column_type=>'DATA'
@@ -406,8 +608,8 @@ wwv_flow_imp_shared.create_data_profile_col(
 ,p_selector=>'Name'
 );
 wwv_flow_imp_shared.create_data_profile_col(
- p_id=>wwv_flow_imp.id(73199570588537421)
-,p_data_profile_id=>wwv_flow_imp.id(73193505214532895)
+ p_id=>wwv_flow_imp.id(80495844446383060)
+,p_data_profile_id=>wwv_flow_imp.id(80489779072378534)
 ,p_name=>'EMAIL'
 ,p_sequence=>2
 ,p_column_type=>'DATA'
@@ -417,8 +619,8 @@ wwv_flow_imp_shared.create_data_profile_col(
 ,p_selector=>'Email'
 );
 wwv_flow_imp_shared.create_data_profile_col(
- p_id=>wwv_flow_imp.id(73200030532537421)
-,p_data_profile_id=>wwv_flow_imp.id(73193505214532895)
+ p_id=>wwv_flow_imp.id(80496304390383060)
+,p_data_profile_id=>wwv_flow_imp.id(80489779072378534)
 ,p_name=>'PHONE'
 ,p_sequence=>3
 ,p_column_type=>'DATA'
@@ -428,8 +630,8 @@ wwv_flow_imp_shared.create_data_profile_col(
 ,p_selector=>'Phone'
 );
 wwv_flow_imp_shared.create_data_profile_col(
- p_id=>wwv_flow_imp.id(73200599462537422)
-,p_data_profile_id=>wwv_flow_imp.id(73193505214532895)
+ p_id=>wwv_flow_imp.id(80496873320383061)
+,p_data_profile_id=>wwv_flow_imp.id(80489779072378534)
 ,p_name=>'DEALERID'
 ,p_sequence=>4
 ,p_column_type=>'DATA'
@@ -580,8 +782,8 @@ wwv_flow_imp_shared.create_data_profile_col(
 ,p_selector=>'Value.AssetType'
 );
 wwv_flow_imp_shared.create_data_profile_col(
- p_id=>wwv_flow_imp.id(73530158829472267)
-,p_data_profile_id=>wwv_flow_imp.id(73514791285463126)
+ p_id=>wwv_flow_imp.id(80826432687317906)
+,p_data_profile_id=>wwv_flow_imp.id(80811065143308765)
 ,p_name=>'DESCRIPTION'
 ,p_sequence=>12
 ,p_column_type=>'DATA'
@@ -636,18 +838,13 @@ wwv_flow_imp_shared.create_data_profile_col(
 ,p_selector=>'Vin'
 );
 wwv_flow_imp_shared.create_data_profile_col(
- p_id=>wwv_flow_imp.id(73634735971540800)
-,p_data_profile_id=>wwv_flow_imp.id(73627929311537765)
+,p_data_profile_id=>wwv_flow_imp.id(80924203169383404)
 ,p_name=>'PRICE'
-,p_sequence=>2
-,p_column_type=>'DATA'
-,p_data_type=>'NUMBER'
-,p_has_time_zone=>false
 ,p_selector=>'Price'
 );
 wwv_flow_imp_shared.create_data_profile_col(
- p_id=>wwv_flow_imp.id(73635269269540800)
-,p_data_profile_id=>wwv_flow_imp.id(73627929311537765)
+ p_id=>wwv_flow_imp.id(80931543127386439)
+,p_data_profile_id=>wwv_flow_imp.id(80924203169383404)
 ,p_name=>'STATUS'
 ,p_sequence=>3
 ,p_column_type=>'DATA'
@@ -657,8 +854,8 @@ wwv_flow_imp_shared.create_data_profile_col(
 ,p_selector=>'Status'
 );
 wwv_flow_imp_shared.create_data_profile_col(
- p_id=>wwv_flow_imp.id(73635791291540800)
-,p_data_profile_id=>wwv_flow_imp.id(73627929311537765)
+ p_id=>wwv_flow_imp.id(80932065149386439)
+,p_data_profile_id=>wwv_flow_imp.id(80924203169383404)
 ,p_name=>'ASSETTYPE'
 ,p_sequence=>4
 ,p_column_type=>'DATA'
@@ -668,8 +865,8 @@ wwv_flow_imp_shared.create_data_profile_col(
 ,p_selector=>'AssetType'
 );
 wwv_flow_imp_shared.create_data_profile_col(
- p_id=>wwv_flow_imp.id(73636265798540801)
-,p_data_profile_id=>wwv_flow_imp.id(73627929311537765)
+ p_id=>wwv_flow_imp.id(80932539656386440)
+,p_data_profile_id=>wwv_flow_imp.id(80924203169383404)
 ,p_name=>'INVOICEID'
 ,p_sequence=>5
 ,p_column_type=>'DATA'
@@ -679,8 +876,8 @@ wwv_flow_imp_shared.create_data_profile_col(
 ,p_selector=>'InvoiceId'
 );
 wwv_flow_imp_shared.create_data_profile_col(
- p_id=>wwv_flow_imp.id(73636820856540801)
-,p_data_profile_id=>wwv_flow_imp.id(73627929311537765)
+ p_id=>wwv_flow_imp.id(80933094714386440)
+,p_data_profile_id=>wwv_flow_imp.id(80924203169383404)
 ,p_name=>'PO_NUMBER'
 ,p_sequence=>6
 ,p_column_type=>'DATA'
