@@ -464,6 +464,6 @@ You may now proceed to the next lab.
 [Tokenization support with OBP](https://docs.oracle.com/en/cloud/paas/blockchain-cloud/usingoci/tokenization-support.html)
 
 ## Acknowledgements
-* **Author** - Amal Tyagi, Cloud Engineer
-* **Contributors** -  Teodora Gheorghe, Adrien Lhemann, Diego Morales, Lokeswara Nushisarva, Siddesh C. Prabhu Dev Ujjni, Rene Fontcha
+* **Author** - Oracle Blockchain Product Management
+* **Contributors** - Amal Tyagi, Teodora Gheorghe, Adrien Lhemann, Diego Morales, Lokeswara Nushisarva, Siddesh C. Prabhu Dev Ujjni, Rene Fontcha
 * **Last Updated By/Date** - Rene Fontcha, September 2022
