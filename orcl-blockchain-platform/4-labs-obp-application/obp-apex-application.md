@@ -132,7 +132,7 @@ This lab assumes you have:
 
   ![Import Template](images/4-apex-3-5.png)
 
-4. 'Drag and Drop' the [Apex Marketplace Template](files/f100.sql?download=1) file into the pane and click 'Next.'
+4. 'Drag and Drop' the [Apex Marketplace Template](files/f105.sql?download=1) file into the pane and click 'Next.'
 
   ![Import Template 1](images/4-apex-3-6.png)
 
@@ -166,9 +166,9 @@ This lab assumes you have:
 
 ## Task 4: Configure APEX Data Source with API Gateway Endpoint
 
-1. Now, click on 'Shared Components.' Here you will be able to configure application attributes and data sources.
+1. Go to 'App Builder' on the top left hand corner of the screen --> Click on Car Marketplace  --> Click on 'Shared Components.' Here you will be able to configure application attributes and data sources.
 
-  ![Access Shared Components](images/4-apex-4-2.png)
+  ![Access Shared Components](images/4-apex-4-2.1.png)
 
 2. Click on 'Application Definition' located under **Application Logic**.
 
@@ -192,35 +192,47 @@ This lab assumes you have:
 
   ![Substitions Form](images/4-apex-4-4.png)
 
-5. Next, scroll towards the bottom of your 'App Builder' homepage and under **Data Sources**, select 'REST Data Sources.'
+5. Go back and  Select 'App Builder' as shown.
 
-  ![REST Data Sources](images/4-apex-4-6.png)
+  ![Access App Builder](images/4-apex-3-4.png)
 
-6. Click 'GetDealerByRange' to view information regarding this data source.
+6. Navigate to 'Workspace Utilities'
 
- ![GetDealerByRange](images/apex-4-4-12.png)
+  ![Access App Builder](images/4-apex-4-1.1.png)
 
-7. Click the pencil icon **Remote Server**.
+7. Click on to 'Remote Servers'
 
-  ![Edit Remote Server](images/4-apex-4-8.png)
+  ![Access App Builder](images/4-apex-4-1.2.png)
 
-8. Make the following updates:
+8. Create new remote server cofiguration based on the Gateway configuration in *Lab 3*
+
+  Build Remote server configuration based on *Lab3 Task4*:
     - Set **Name** to the 'Hostname' found in the Gateway details, accessible from the OCI service console.
+  
   ![Gateway Hostname](images/4-apex-4-9-1.png)
     - Give your server a  **Static Identifier** (e.g. by changing all punctuation in **Name** to underscores as shown).
     - Set **Endpoint URL** to the same https://'Hostname' from the Gateway details.
+    - Now, create remote server in Apex and apply changes
+  
+  ![Access App Builder](images/4-apex-4-1.3.png)
 
-  ![Edit Remote Server Form](images/4-apex-4-9-2.png)
+9. Next, scroll towards the bottom of your 'App Builder' homepage and under **Data Sources**, select 'REST Data Sources.'
 
-9. Click on 'Apply Changes.'
+  ![REST Data Sources](images/4-apex-4-6.png)
 
-  ![Apply Changes to Remote Server](images/4-apex-4-10.png)
+10. Click 'GetDealerByRange' to view information regarding this data source.
 
-10. Set **URL Path Prefix** to 'v0/marketplace/chaincode-queries' and click 'Apply Changes'
+ ![GetDealerByRange](images/apex-4-4-12.png)
+
+11. Select the remote server configured *Step 4*
+
+  ![Edit Remote Server](images/4-apex-4-8.png)
+
+12. Set **URL Path Prefix** to 'v0/marketplace/chaincode-queries' and click 'Apply Changes'
 
   ![Edit URL Path Prefix and Apply Changes](images/4-apex-4-11.png)
 
-11. Now, repeat steps 7-10 for the following REST Sources:
+13. Now, repeat steps 11-12 for the following REST Sources:
     - 'GetAccountBalance'
     - 'GetInvoiceByRange'
     - 'GetCarsByRange'

@@ -139,7 +139,9 @@ This lab assumes you have:
   ![Hamburger and Approve](images/2-car-marketplace-7-10.png)
 
 
-11. Assign the [Endorsement policy](https://docs.oracle.com/en/cloud/paas/blockchain-cloud/usingoci/specify-endorsement-policy.html) by selecting signature under the endorsement policy. Add the policy of performing an endorsement signature by one of the organizations in the network. You can add an endorsement policy when you instantiate a chaincode. An endorsement policy specifies the members with peers that must approve, or properly endorse, a chaincode transaction before it’s added to a block and submitted to the ledger. Now assign the endorsement policy by by selecting the signature policy and click on 'Upgrade'
+10. Assign the [Endorsement policy](https://docs.oracle.com/en/cloud/paas/blockchain-cloud/usingoci/specify-endorsement-policy.html) by selecting signature under the endorsement policy. Add the policy of performing an endorsement signature by one of the organizations in the network. You can add an endorsement policy when you instantiate a chaincode. An endorsement policy specifies the members with peers that must approve, or properly endorse, a chaincode transaction before it’s added to a block and submitted to the ledger. 
+
+Now assign the endorsement policy by by selecting the signature policy and click on 'Upgrade'
 
     ```
     <copy>
@@ -147,14 +149,22 @@ This lab assumes you have:
     </copy>
     ```
 
+  ![Check Approved Field](images/2-car-marketplace-7-11.0.png)
+
   ![Check Approved Field](images/2-car-marketplace-7-11.1.png)
 
-12. Check that the chaincode has now been approved by the current participant.
+11. Check that the chaincode has now been approved by the current participant.
 
   ![Check Approved Field](images/2-car-marketplace-7-12.png)
 
-13. Repeat steps 1-11 for 'dealer2' instance
+12. Repeat steps 1-10 for 'dealer2' instance
 
+13. Now, Go to marketplace founder Instance --> Channels --> car-marketplace --> Deployed Chaincodes --> car-marketplace-cc2 --> Approve
+
+  [Check Approved Field](images/2-car-marketplace-7-13.1.png)
+  [Check Approved Field](images/2-car-marketplace-7-13.2.png)
+  [Check Approved Field](images/2-car-marketplace-7-13.4.png)
+  [Check Approved Field](images/2-car-marketplace-7-13.5.png)
 
 ## Task 5: User Enrollment - Perform on All nodes (marketplace, dealer1, dealer2)
 
@@ -448,8 +458,8 @@ Approve the chaincode definition from the partner instances (in this case, 'deal
 
 3. Open tokenization collection Marketplace_CarTitleRegistration, and run integrations as described in steps 0 – 6 by clicking Send:
 
-       - Step 1, 2, 3, 4 – Create & Add Role (Minter) to Car Title Registration NFT Accounts (Dealer1 Account, Dealer2 Account) for creating a Car Title NFT's to trade vehicles between dealer1 & dealer2:  These methods creates an account for a specified user and add role to trade a NFT's between dealer1 and dealer2. An account must be created for any user who will have tokens at any point. Accounts are created to track Car tile NFT's for each vehicle created and traded. 
-      - Minter Role: mints a quantity of tokens, which are then owned by the caller of the method. This method mints tokens, which are then owned by the caller of the method. The caller must have an account and the minter role.
+    - Step 1, 2, 3, 4 – Create & Add Role (Minter) to Car Title Registration NFT Accounts (Dealer1 Account, Dealer2 Account) for creating a Car Title NFT's to trade vehicles between dealer1 & dealer2:  These methods creates an account for a specified user and add role to trade a NFT's between dealer1 and dealer2. An account must be created for any user who will have tokens at any point. Accounts are created to track Car tile NFT's for each vehicle created and traded. 
+    - Minter Role: mints a quantity of tokens, which are then owned by the caller of the method. This method mints tokens, which are then owned by the caller of the method. The caller must have an account and the minter role.
 
   ![Create Accounts](images/2-app-builder-cartitle-createaccount-dealer1.png)
   ![Initialize Token](images/2-app-builder-cartitle-associateaccount-dealer1.png)
