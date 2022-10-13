@@ -7,6 +7,9 @@ This lab will show you how to install the **python-oracledb** driver and how to 
 
 Estimated Time: 15 minutes
 
+Watch the video below for a quick walk-through of the lab.
+[Environment Setup](videohub:1_s2pdny0p)
+
 ### About python-oracledb driver
 
 **python-oracledb** driver is a Python extension module that enables access to Oracle Database. This latest, renamed release of the widely used cx_Oracle driver introduces a new ‘Thin’ mode for direct connection to the database and it conforms to the Python database API 2.0 specification with a considerable number of additions and a couple of exclusions.

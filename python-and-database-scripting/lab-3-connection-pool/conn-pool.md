@@ -7,6 +7,9 @@ This lab will show how to create connection pools using python-oracledb driver
 
 Estimated Lab Time: 10 minutes
 
+Watch the video below for a quick walk-through of the lab.
+[Connection Pools](videohub:1_2lx58yh3)
+
 ### Objectives
 
 *  Learn best practices and efficient techniques for connection pooling.
