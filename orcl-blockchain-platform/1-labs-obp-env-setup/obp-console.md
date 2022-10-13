@@ -143,21 +143,21 @@ Select '`car_marketplace_cc`.controller.go' under '`car_marketplace_cc`/src/cont
     ```
     <copy>
     func (t *Controller) CreateCarWrapper(asset Car) (interface{}, error) {
+        //Verify dealer exists
+        owner, err := t.GetDealerById(asset.OwnerId)
+        if err != nil {
+          return nil, fmt.Errorf("dealer with id: %s does not exist", asset.OwnerId)
+        }
 
-    //Verify dealer exists
-    owner, err := t.GetDealerById(asset.OwnerId)
-    if err != nil {
-    return nil, fmt.Errorf("dealer with id: %s does not exist", asset.OwnerId)
-    }
+        //append car to owner's inventory
+        owner.Inventory = append(owner.Inventory, asset.Vin)
 
-    //append car to owner's inventory
-    owner.Inventory = append(owner.Inventory, asset.Vin)
+        //Update and commit dealer inventory to blockchain
+        t.UpdateDealer(owner)
 
-    //Update and commit dealer inventory to blockchain
-    t.UpdateDealer(owner)
-    t.CreateCar(asset)
 
-    return nil, err
+        return t.Ctx.Model.Save(&asset)
+        return t.Ctx.Model.Save(&asset)
 
     }
     </copy>
@@ -169,18 +169,18 @@ Select '`car_marketplace_cc`.controller.go' under '`car_marketplace_cc`/src/cont
     <copy>
     func (t *Controller) CreatePOWrapper(asset PO) (interface{}, error) {
 
-    //Verify that car exists
-    car, err := t.GetCarById(asset.Vin)
-    if err != nil {
-    return nil, fmt.Errorf("car with id: %s does not exist", asset.Vin)
-    }
+        //Verify that car exists
+        car, err := t.GetCarById(asset.Vin)
+        if err != nil {
+          return nil, fmt.Errorf("car with id: %s does not exist", asset.Vin)
+        }
 
-    //Car no longer on sale as purchase order is created
-    car.ForSale = false
-    t.UpdateCar(car)
-    t.CreatePO(asset)
+        //Car no longer on sale as purchase order is created
+        car.ForSale = false
+        t.UpdateCar(car)
+        
 
-    return nil, err
+        return t.Ctx.Model.Save(&asset)
 
     }
     </copy>
@@ -194,72 +194,71 @@ Select '`car_marketplace_cc`.controller.go' under '`car_marketplace_cc`/src/cont
     <copy>
     func (t *Controller) UpdatePOWrapper(asset PO) (interface{}, error) {
 
-    //Verifies purchase order exists
-    _, err := t.GetPOById(asset.PO)
-    if err != nil {
-      return nil, fmt.Errorf("po with id: %s does not exist", asset.PO)
-    }
-
-    //If vehicle is delivered to buyer
-    if asset.OrderStatus == "Delivered" {
-
-      var invoiceObject Invoice
-
-      //Verify car exists in ledger
-      car, err := t.GetCarById(asset.Vin)
-      if err != nil {
-        return nil, fmt.Errorf("car with id: %s does not exist", asset.Vin)
-      }
-
-      car.ForSale = true
-
-      t.UpdateCar(car)
-
-      //Create invoice sent to buyer
-      invoiceObject.Vin = asset.Vin
-      invoiceObject.Po_number = asset.PO
-      invoiceObject.Price = car.Price
-      invoiceObject.Recipient = asset.Purchaser
-      invoiceObject.Status = false
-
-      invoiceObject.InvoiceId = asset.InvoiceId
-
-      t.CreateInvoice(invoiceObject)
-
-      currentTime := time.Now().String()
-
-      var ts_formatted string
-
-      for i, c := range currentTime {
-        fmt.Printf("Start Index: %d Value:%s\n", i, string(c))
-
-        if string(c) == " " {
-          fmt.Println(ts_formatted)
-          break
+        //Verifies purchase order exists
+        _, err := t.GetPOById(asset.PO)
+        if err != nil {
+          return nil, fmt.Errorf("po with id: %s does not exist", asset.PO)
         }
-        ts_formatted += string(c)
-      }
 
-      //Invoke Custom Method: Car Transfer
-      t.CarTransfer(asset.Vin, asset.Purchaser, car.OwnerId, asset.PO, car.Price, ts_formatted)
+        //If vehicle is delivered to buyer
+        if asset.OrderStatus == "Delivered" {
 
-      }
+          var invoiceObject Invoice
 
-    //If vehicle is rejected by buyer
-    if asset.OrderStatus == "Rejected" {
+          //Verify car exists in ledger
+          car, err := t.GetCarById(asset.Vin)
+          if err != nil {
+            return nil, fmt.Errorf("car with id: %s does not exist", asset.Vin)
+          }
 
-      car, err := t.GetCarById(asset.Vin)
-      if err != nil {
-        return nil, fmt.Errorf("car with id: %s does not exist", asset.Vin)
-      }
+          car.ForSale = true
 
-      //Set car for sale back to true
-      car.ForSale = true
-      t.UpdateCar(car)
+          t.UpdateCar(car)
 
-    }
-    t.UpdatePO(asset)
-    return nil, err
+          //Create invoice sent to buyer
+          invoiceObject.Vin = asset.Vin
+          invoiceObject.Po_number = asset.PO
+          invoiceObject.Price = car.Price
+          invoiceObject.Recipient = asset.Purchaser
+          invoiceObject.Status = false
+
+          invoiceObject.InvoiceId = asset.InvoiceId
+
+          t.CreateInvoice(invoiceObject)
+
+          currentTime := time.Now().String()
+
+          var ts_formatted string
+
+          for i, c := range currentTime {
+            fmt.Printf("Start Index: %d Value:%s\n", i, string(c))
+
+            if string(c) == " " {
+              fmt.Println(ts_formatted)
+              break
+            }
+            ts_formatted += string(c)
+          }
+
+          //Invoke Custom Method: Car Transfer
+          t.CarTransfer(asset.Vin, asset.Purchaser, car.OwnerId, asset.PO, car.Price, ts_formatted)
+
+        }
+
+        //If vehicle is rejected by buyer
+        if asset.OrderStatus == "Rejected" {
+
+          car, err := t.GetCarById(asset.Vin)
+          if err != nil {
+            return nil, fmt.Errorf("car with id: %s does not exist", asset.Vin)
+          }
+
+          //Set car for sale back to true
+          car.ForSale = true
+          t.UpdateCar(car)
+
+        }
+        return t.Ctx.Model.Update(&asset)
 
     }
     </copy>
@@ -271,69 +270,69 @@ Select '`car_marketplace_cc`.controller.go' under '`car_marketplace_cc`/src/cont
     <copy>
     func (t *Controller) CarTransfer(vin string, buyerId string, sellerId string, PO string, price int, dateString string) (interface{}, error) {
 
-    //Date formatting and handling
-    dateBytes, err := json.Marshal(dateString)
-    if err != nil {
-      return nil, fmt.Errorf("error in marshalling %s", err.Error())
-    }
+        //Date formatting and handling
+        dateBytes, err := json.Marshal(dateString)
+        if err != nil {
+          return nil, fmt.Errorf("error in marshalling %s", err.Error())
+        }
 
-    var dateValue date.Date
-    err = json.Unmarshal(dateBytes, &dateValue)
-    if err != nil {
-      return nil, fmt.Errorf("error in unmarshalling the date %s", err.Error())
-    }
+        var dateValue date.Date
+        err = json.Unmarshal(dateBytes, &dateValue)
+        if err != nil {
+          return nil, fmt.Errorf("error in unmarshalling the date %s", err.Error())
+        }
 
-    if buyerId == sellerId {
-      return nil, fmt.Errorf(`buyer and seller cannot be same`)
-    }
+        if buyerId == sellerId {
+          return nil, fmt.Errorf(`buyer and seller cannot be same`)
+        }
 
-    //Verify car exists
-    car, err := t.GetCarById(vin)
-    if err != nil {
-      return nil, err
-    }
+        //Verify car exists
+        car, err := t.GetCarById(vin)
+        if err != nil {
+          return nil, err
+        }
 
-    //Verify dealer exists
-    buyer, err := t.GetDealerById(buyerId)
-    if err != nil {
-      return nil, err
-    }
+        //Verify dealer exists
+        buyer, err := t.GetDealerById(buyerId)
+        if err != nil {
+          return nil, err
+        }
 
-    if car.OwnerId != sellerId {
+        if car.OwnerId != sellerId {
 
-      return nil, fmt.Errorf("car with vin %s does not belong to the seller %s", vin, sellerId)
-    }
-    if car.OwnerId == buyerId {
+          return nil, fmt.Errorf("car with vin %s does not belong to the seller %s", vin, sellerId)
+        }
+        if car.OwnerId == buyerId {
 
-      return nil, fmt.Errorf("car with vin %s already exist with owner %s", vin, buyerId)
-    }
+          return nil, fmt.Errorf("car with vin %s already exist with owner %s", vin, buyerId)
+        }
 
-    //Update car object properties
+        //Update car object properties
 
-    car.OwnerId = buyerId
-    car.Price = price
-    car.LastSold = dateValue
+        car.OwnerId = buyerId
+        car.Price = price
+        car.LastSold = dateValue
 
-    buyer.Inventory = append(buyer.Inventory, vin)
+        buyer.Inventory = append(buyer.Inventory, vin)
 
-    seller, err := t.GetDealerById(sellerId)
-    if err != nil {
-      return nil, err
-    }
+        seller, err := t.GetDealerById(sellerId)
+        if err != nil {
+          return nil, err
+        }
 
-    //Remove car from seller's inventory
-    for i := 0; i < len(seller.Inventory)-1; i++ {
-      if seller.Inventory[i] == vin {
-        seller.Inventory = append(seller.Inventory[:i], seller.Inventory[i+1:]...)
-      }
-    }
+        //Remove car from seller's inventory
+        for i := 0; i < len(seller.Inventory)-1; i++ {
+          if seller.Inventory[i] == vin {
+            seller.Inventory = append(seller.Inventory[:i], seller.Inventory[i+1:]...)
+          }
+        }
 
-    //Commit changes to the ledger
-    t.UpdateDealer(seller)
-    t.UpdateCar(car)
-    t.UpdateDealer(buyer)
+        //Commit changes to the ledger
+        t.UpdateDealer(seller)
+        t.UpdateCar(car)
+        t.UpdateDealer(buyer)
 
-    return nil, err
+        return nil, err
 
     }
     </copy>
