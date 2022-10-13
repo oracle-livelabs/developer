@@ -115,3 +115,4 @@ assets:
 
 customMethods:
     - executeQuery
+    - UpdateTitle(tokenId string, dealerno string,dealername string,dealerloc string,mileage int,newowner string,purchaseprice float64,dateString string)

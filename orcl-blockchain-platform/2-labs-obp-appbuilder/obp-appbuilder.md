@@ -58,11 +58,11 @@ This lab assumes you have:
 5. Display Request and Response - Request/Response.
 
 
-## Task 2: Deploy Smart Contract (Chaincode) to Founder Instance (Marketplace) from Blockchain App Builder
+## Task 2: Deploy Car Marketplace Smart Contract (Chaincode) to Founder Instance (Marketplace) from Blockchain App Builder
 
   Now that we have tested our project locally, we can connect to our remote instances.
 
-1. In the OCI services menu, select 'Developer Services' and click on 'Blockchain Platform.'
+1. In the OCI services menu, select 'Developer Services' and click on 'Blockchain Platform'
 
 2. Ensure that the right **Compartment** is selected and click on the 'Marketplace' founder instance.
 
@@ -84,7 +84,7 @@ This lab assumes you have:
 
   ![Founder Deployment](images/2-car-marketplace-6-4.png)
 
-## Task 3: Import Marketplace chaincode package from app builder
+## Task 3: Import Car Marketplace chaincode package from App Builder
 
 1. In Visual Studio Code, click on the **O** icon on the left-hand menu to use the Blockchain App Builder Extension.
 
@@ -194,7 +194,7 @@ Now assign the endorsement policy by by selecting the signature policy and click
 
 5. Click Enroll.
 
-## Task 6: Create Fiat Tokenization Chaincode
+## Task 6: Create Fiat Tokenization Specifications
 
 The flow for developing smart contracts for tokenization begins with creating a specification file that describes our fiat token. `Car_Tokenization.yml` describes our FiatToken structure: AssetType, `Token_id`, `Token_name`, `Token_desc`, `Token_type`, and behavior.  
 
@@ -211,9 +211,27 @@ You can see sample specification files (and write your own specifications) in ei
   Make sure the **Details** of your specification read:
   ![Car Tokenization Specification Details](images/2-app-builder-tokenization-yml.png)
 
-## Task 7: Deploy Fiat Tokenization chaincode to Founder Instance
+## Task 7: Generate FiatToken Chaincode
 
-1. In the OCI services menu, select 'Developer Services' and click on 'Blockchain Platform.'
+The specification file is then used to scaffold a smart contract project ('`car_tokenization_cc`') and generate source code for models and controllers.
+
+1. Hover over the **Chaincodes** pane, click on the **+**, and fill out the form as follows:
+    - **Name** your chaincode (e.g. `car_tokenization_cc`).
+    - Select Go as the **Language**.
+    - Select `Car_Tokenization.yml` as the **Specification**.
+    - Choose a **Go Domain** (e.g. Samples).
+
+  ![Car Marketplace Chaincode Details](images/2-app-builder-2-2.2.1.4.png)
+
+
+2. Click 'Create' and wait for the chaincode to generate. Check the 'Output' pane at the bottom for more details.
+
+3. Select '`car_tokenization_cc`.model.go' under '`car_tokenization_cc`/src/model'. The Model file contains the property definitions of all the assets defined in the spec file.
+Select '`car_tokenization_cc`.controller.go' under '`car_tokenization_cc`/src/controller.' The Controller file defines all the behavior and methods for those assets. '`Car_Tokenization.yml`' spec file allows defining additional custom methods that users implement to provide business logic of smart contracts.
+
+## Task 8: Deploy Fiat Tokenization chaincode to Founder Instance
+
+1. In the OCI services menu, select 'Developer Services' and click on 'Blockchain Platform'
 
 2. Ensure that the right **Compartment** is selected and click on the 'Marketplace' founder instance.
 
@@ -233,7 +251,7 @@ You can see sample specification files (and write your own specifications) in ei
 
   ![Car Tokenization Chaincode Package](images/2-appbuilder-chaincodepackage-tokenization.png)  -->
 
-## Task 8: Approve the chaincode on Participant Instances
+## Task 9: Approve the chaincode on Participant Instances
 
 Approve the chaincode definition from the partner instances (in this case, 'dealer1' and 'dealer2').
 
@@ -301,7 +319,7 @@ Approve the chaincode definition from the partner instances (in this case, 'deal
 6. Repeat steps 1-5 for 'dealer2.'
 
 
-## Task 9: Initialization and Issuance of Car Marketplace FiatToken
+## Task 10: Initialization and Issuance of Car Marketplace FiatToken
 
 1. Import the Marketplace Tokenization Postman collection [Marketplace Tokenization](files/Marketplace_Tokenization_Final.postman_collection.json?download=1) and assign variable definitions as shown.
 
@@ -323,7 +341,7 @@ Approve the chaincode definition from the partner instances (in this case, 'deal
   
   ![Initialize Token](images/initialize_token.png)
 
-  - Step 2, 3, 4 – Create & Associate Accounts(Token User1, Token User2):  This method creates an account for a specified user and token. An account must be created for any user who will have tokens at any point. Accounts track balances, on-hold balances, and transation history. 
+    - Step 2, 3, 4 – Create & Associate Accounts(Token User1, Token User2):  This method creates an account for a specified user and token. An account must be created for any user who will have tokens at any point. Accounts track balances, on-hold balances, and transation history. 
 
   ![Create Accounts](images/create_accounts.png)
   
@@ -346,7 +364,7 @@ Approve the chaincode definition from the partner instances (in this case, 'deal
 
   ![Issue Tokens](images/issue_tokens.png)
 
-## Task 10: Create Car Title Registration NFT  Chaincode
+## Task 11: Create Car Title Registration NFT Specificaitons
 
 This flow is for developing smart contracts to create a NFT for Car Title Registrations which begins with creating a specification file that describes our NFT. `Car_Title_Registration.yml` describes our NFT structure: AssetType, `Token_id`, `Token_name`, `Token_desc`, `Token_type`,  `behavior` and metadata.  
 
@@ -363,9 +381,84 @@ You can see sample specification files (and write your own specifications) in ei
   Make sure the **Details** of your specification read:
   ![Car NFT Specification Details](images/2-app-builder-cartitleregistration-yml.png)
 
-## Task 11: Deploy Car Title Registration NFT chaincode to Founder Instance
+## Task 12: Generate Car Title RegistrationNFT Chaincode
 
-1. In the OCI services menu, select 'Developer Services' and click on 'Blockchain Platform.'
+The specification file is then used to scaffold a smart contract project ('`car_title_registration_cc`') and generate source code for models and controllers.
+
+1. Hover over the **Chaincodes** pane, click on the **+**, and fill out the form as follows:
+    - **Name** your chaincode (e.g. `car_title_registration_cc`).
+    - Select Go as the **Language**.
+    - Select `Car_Title_Registration.yml` as the **Specification**.
+    - Choose a **Go Domain** (e.g. Samples).
+
+  ![Car Marketplace Chaincode Details](images/2-app-builder-2-2.0.png)
+
+
+2. Click 'Create' and wait for the chaincode to generate. Check the 'Output' pane at the bottom for more details.
+
+  ![Chaincode Output](images/2-app-builder-2-2.1.png)
+
+3. Select '`car_title_registration_cc`.model.go' under '`car_title_registration_cc`/src/model'. The Model file contains the property definitions of all the assets defined in the spec file.
+Select '`car_title_registration_cc`.controller.go' under '`car_title_registration_cc`/src/controller.' The Controller file defines all the behavior and methods for those assets. '`Car_Title_Registration.yml`' spec file allows defining additional custom methods that users implement to provide business logic of smart contracts.
+
+## Task 13: View Custom Methods in Marketplace
+
+1. Open the Car Marketplace specification file and scroll to the bottom. This is where your customMethods are listed. Go to `car_title_registration_cc`.controller.go' under '`car_title_registration_cc`/src/controller' to make the changes mentioned below. 
+
+2. Add the imports needed for the custom methods.
+
+    ```
+      <copy>
+      func (t *Controller) UpdateTitle(tokenId string, dealerno string,dealername string,dealerloc string,mileage int,newowner string,purchaseprice float64,dateString string) (interface{}, error) {
+
+        var tokenAsset CarTitle
+        _, err := t.Ctx.ERC721Token.Get(tokenId, &tokenAsset)
+
+        if err != nil {
+          return nil, fmt.Errorf("Token with id: %s does not exist", tokenId)
+        }
+
+        dateBytes, err := json.Marshal(dateString)
+        if err != nil {
+          return nil, fmt.Errorf("error in marshalling %s", err.Error())
+        }
+
+        var dateValue date.Date
+        err = json.Unmarshal(dateBytes, &dateValue)
+        if err != nil {
+          return nil, fmt.Errorf("error in unmarshalling the date %s", err.Error())
+        }
+
+
+        newTitle := Title_entries {
+          Dealernumber:  dealerno, 
+          Dealership: dealername,
+          Location: dealerloc,
+          Mileage: mileage,
+          Newowner:newowner,
+          Purchaseprice:purchaseprice,
+          Purchasedate: dateValue,
+        }
+
+
+        tokenAsset.Title = append(tokenAsset.Title, newTitle)
+        
+        
+        _, err = t.UpdateCarTitleToken(tokenAsset)
+          if err != nil {
+          return nil, err
+        }
+
+        msg := fmt.Sprintf("Title Updated")
+        return msg, nil
+      }
+      </copy>
+
+      ```
+
+## Task 14: Deploy Car Title Registration NFT chaincode to Founder Instance
+
+1. In the OCI services menu, select 'Developer Services' and click on 'Blockchain Platform'
 
 2. Ensure that the right **Compartment** is selected and click on the 'Marketplace' founder instance.
 
@@ -377,7 +470,7 @@ You can see sample specification files (and write your own specifications) in ei
   ![Founder Deployment](images/2-app-builder-cartitlereg-deploy-2.png)
   ![Founder Deployment](images/2-app-builder-cartitlereg-deploy-3.png)
 
-## Task 12: Approve the chaincode on Participant Instances
+## Task 15: Approve the chaincode on Participant Instances
 
 Approve the chaincode definition from the partner instances (in this case, 'dealer1' and 'dealer2').
 
@@ -445,7 +538,7 @@ Approve the chaincode definition from the partner instances (in this case, 'deal
 6. Repeat steps 1-5 for 'dealer2.'
 
 
-## Task 10: Initialization and Issuance of Car Title Registration NFT
+## Task 16: Initialization and Issuance of Car Title Registration NFT
 
 1. Import the Car Title Registration NFT Postman collection [CarTitle NFT](files/Marketplace_CarTitleRegistration_Final.postman_collection.json?download=1) and assign variable definitions as shown.
 
