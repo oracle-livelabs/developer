@@ -366,7 +366,7 @@ Approve the chaincode definition from the partner instances (in this case, 'deal
 
 ## Task 11: Create Car Title Registration NFT Specificaitons
 
-This flow is for developing smart contracts to create a NFT for Car Title Registrations which begins with creating a specification file that describes our NFT. `Car_Title_Registration.yml` describes our NFT structure: AssetType, `Token_id`, `Token_name`, `Token_desc`, `Token_type`,  `behavior` and metadata.  
+This flow is for developing smart contracts to create a NFT for Car Title Registrations which begins with creating a specification file that describes our NFT. `Car_Title_Registration.yml` describes our NFT structure: `AssetType`, `Token_id`, `Token_name`, `Token_desc`, `Token_type`,  `behavior` and metadata.  
 
 The specification file is then used to scaffold a smart contract project ('`car_title_registration.cc`') and generate source code for models and controllers. Each object has properties that characterize the assets, data types and validations.
 
@@ -465,7 +465,7 @@ Select '`car_title_registration_cc`.controller.go' under '`car_title_registratio
 3. Click on the 'Service Console' -->  Go to 'Nodes' tab from the Blockchain Admin Console Dashboard --> copy the REST Proxy URL of this platform instance.
   ![Service Console](images/3-gateway-4.bc.1.png)
 
-4. Changing the target environment in Blockchain AppBuilder to 'Marketplace' Also change the channel to 'car-marketplace'. Add the Init Parameters needed (org/_id: marketplace, user/_id: marketplace)
+4. Changing the target environment in Blockchain AppBuilder to 'Marketplace' Also change the channel to 'car-marketplace'. Add the Init Parameters needed (org\_id: marketplace, user\_id: marketplace)
 
   ![Founder Deployment](images/2-app-builder-cartitlereg-deploy-2.png)
   ![Founder Deployment](images/2-app-builder-cartitlereg-deploy-3.png)
@@ -515,7 +515,8 @@ Approve the chaincode definition from the partner instances (in this case, 'deal
 
 4. Find and click on the hamburger icon on the right of the row containing your chaincode. Select 'Approve.'
 
-  ![Deployed Chaincodes](images/2-car-title-reg-7-12.1.1.png)
+  ![Deployed Chaincodes](images/2-car-title-reg-7-12.1.png)
+  ![Deployed Chaincodes](images/2-car-title-reg-7-12.2.png)
   ![Deployed Chaincodes](images/2-car-title-reg-7-12.3.png)
 
 <!-- 10. Simply select the **Package ID** as shown and click 'Approve.'
