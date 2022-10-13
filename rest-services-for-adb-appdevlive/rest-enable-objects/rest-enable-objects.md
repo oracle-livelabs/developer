@@ -6,9 +6,8 @@ In this lab, you will use Database Actions and the REST console to build a REST 
 
 Estimated Lab Time: 20 minutes
 
-Watch the video below for a quick walk through of the lab.
-
-[Video overview of this lab.](youtube:6Y_BArzNgaw)
+Watch the video below for a quick walk-through of the lab.
+[REST-enable tables and add business logic](videohub:1_y8l03s43)
 
 ### Objectives
 
