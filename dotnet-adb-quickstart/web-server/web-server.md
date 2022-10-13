@@ -12,7 +12,8 @@ Be sure to review [Best Practices for Your Compute Instance](https://docs.cloud.
 
 Estimated lab time: 20 minutes
 
-[](youtube:09kahbIF0Ew)
+Watch the video below for a quick walk-through of the lab.
+[Provision and set up the web server](videohub:1_yg1f33ir)
 
 ### Objectives
 In this lab, you will:

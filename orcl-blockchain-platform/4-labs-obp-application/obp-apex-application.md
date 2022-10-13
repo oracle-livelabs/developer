@@ -32,13 +32,13 @@ This lab assumes you have:
 2. Check your **Compartment** is correct and click on 'Create Autonomous Database.'
   ![Create a new ADB instance from the console](images/4-adb-1.png)
 
-3. In the form, first choose a **Display name** (e.g. CarMarketplaceAPEX), a **Database name** (e.g. CarMarketplace), and then **Choose a workload type** (in this case, APEX) as shown.
+3. In the form, first choose a **Displayname** (e.g. CarMarketplaceAPEX - No Spaces), a **Database name** (e.g. CarMarketplace), and then **Choose a workload type** (in this case, APEX) as shown.
   ![Choose instance name and DB type](images/4-adb-2.png)
 
-4. Toggle 'Always Free' as shown.
+4. Toggle 'Always Free' as shown
   ![Choose Always Free](images/4-adb-3.png)
 
-5. Check that your **database version** is 19c.
+5. Check that your **database version** is 19c or above
   ![Choose DB version](images/4-adb-4.png)
 
 6. **Create administrator credentials** and store these credentials somwhere safe.
@@ -55,7 +55,7 @@ This lab assumes you have:
 
 ## Task 2: Configure Database Schema and User Credentials
 
-1. When your Autonomous Database instance has provisioned, access the 'Service Console.'
+1. When your Autonomous Database instance has provisioned, access the 'Tools' --> 'Open APEX'
 
   ![Access Service Console](images/4-apex-2-1.png)
 
@@ -67,44 +67,50 @@ This lab assumes you have:
 
   ![Create Workspace](images/4-apex-2-3.png)
 
-4. Fill out the form as follows:
-    - Enter 'DEVELOPER' as the **Database User**.
+4. Select 'Create New Schema'
+
+  ![Create Workspace](images/4-apex-2-3.1.png)
+
+5. Fill out the form as follows:
+    - Enter 'DEVELOPER' as the **Workspace Username**.
     - Choose a **Password** and copy it somewhere safe.
-    - Enter 'DEVELOPER' as the **Workspace Name**.
+    - Enter 'marketplace' as the **Workspace Name**.
 
   ![Access Service Console](images/4-apex-2-4.png)
 
-5. From the 'Administration Services' page, click on 'Manage Workspaces.'
+6. From the 'Administration Services' page, click on 'Manage Workspaces.'
 
   ![Manage Instance](images/4-apex-2-5.png)
 
-6. Now click on 'Manage Developers and Users' as shown.
+7. Now click on 'Manage Developers and Users' as shown.
 
   ![Manage Developers and Users](images/4-apex-2-6.png)
 
-7. Click on the green 'Create User' button.
+8. Click on the green 'Create User' button.
 
   ![Create User](images/4-apex-2-7.png)
 
-8. Fill out the form as follows and click 'Create User' to save:
+9. Fill out the form as follows and click 'Create User' to save:
     - Enter 'john_dealer1' as the **Username**.
     - Enter 'john_dealer1@dealer.com' as the **Email Address**.
-    - Select the 'DEVELOPER' **Workspace**.
+    - Select the 'Marketplace' **Workspace**.
     - Enter a **Password** and then **Confirm Password**.
 
   ![Create User Form](images/4-apex-2-8.png)
 
-9. Repeat Steps 7 and 8 to create a second user:
+10. Repeat Steps 7 and 8 to create a second user:
     - Enter 'sam_dealer2' as the **Username**.
     - Enter 'sam_dealer2@dealer.com' as the **Email Address**.
-    - Select the 'DEVELOPER' **Workspace**.
+    - Select the 'Marketplace' **Workspace**.
     - Enter a **Password** and then **Confirm Password**.
+  
+  ![Create User Form](images/4-apex-2-8.1.png)
 
-9. After clicking 'Create User' again, check that both new users are displayed on the 'Manage Developers and Users' page as shown. Then click on the APEX logo to return to 'Administration Services.'
+11. After clicking 'Create User' again, check that both new users are displayed on the 'Manage Developers and Users' page as shown. Then click on the APEX logo to return to 'Administration Services.'
 
   ![Check User Page](images/4-apex-2-9.png)
 
-10. Sign out of ADMIN in the upper-right hand corner.
+11. Sign out of ADMIN in the upper-right hand corner.
 
   ![Sign Out](images/4-apex-2-10.png)
 
@@ -118,53 +124,42 @@ This lab assumes you have:
 
   ![Login as Developer](images/4-apex-3-1.png)
 
-2. Click 'Set APEX Account Password.'
-
-  ![Set APEX Account Password](images/4-apex-3-2.png)
-
-3. Enter an **Email Address** (e.g. DEVELOPER@dealer.com) and scroll down to enter a **Password**.
-
-  ![Set APEX Account Password 1](images/4-apex-3-3-1.png)
-  ![Set APEX Account Password 2](images/4-apex-3-3-2.png)
-
-4. Select 'App Builder' as shown.
+2. Select 'App Builder' as shown.
 
   ![Access App Builder](images/4-apex-3-4.png)
 
-5. Select 'Import' to import an app template.
+3. Select 'Import' to import an app template.
 
   ![Import Template](images/4-apex-3-5.png)
 
-6. 'Drag and Drop' the f100.zip file into the pane and click 'Next.'
+4. 'Drag and Drop' the [Apex Marketplace Template](files/f100.sql?download=1) file into the pane and click 'Next.'
 
   ![Import Template 1](images/4-apex-3-6.png)
 
-  ***Link to the Zip file***
-
-7. Click 'Next.'
+5. Click 'Next.'
 
   ![Import Template 2](images/4-apex-3-7.png)
 
-8. Fill out the 'Install Database Application' form as follows:
-    - Choose 'DEVELOPER' for the **Parsing Schema**.
+6. Fill out the 'Install Database Application' form as follows:
+    - Choose 'WKSP_MARKETPLACE' for the **Parsing Schema**.
     - Select 'Run and Build Application' as the **Build Status**.
     - Keep 'Auto Assign New Application ID' selected and click 'Install Application.'
 
   ![Install Application 1](images/4-apex-3-8.png)
 
-9. Click 'Next.'
+7. Click 'Next.' --> Enter username and password in the respective fields
 
   ![Install Application 2](images/4-apex-3-9.png)
 
-10. Click 'Next' again.
+8. Click 'Next' again --> Parsing Schema should be 'WKSP_MARKETPLACE'
 
   ![Install Application 3](images/4-apex-3-10.png)
 
-11. Finally, click on 'Install.'
+9. Finally, click on 'Install.'
 
   ![Install Application 4](images/4-apex-3-11.png)
 
-12. Click 'Edit Application' and proceed to Task 4 to further configure your APEX app.
+10. Click 'Edit Application' and proceed to Task 4 to further configure your APEX app.
 
   ![Edit Application](images/4-apex-3-12.png)
 
@@ -173,22 +168,27 @@ This lab assumes you have:
 
 1. Now, click on 'Shared Components.' Here you will be able to configure application attributes and data sources.
 
-  ![Access Shared Components](images/4-apex-4-1.png)
+  ![Access Shared Components](images/4-apex-4-2.png)
 
-2. Click on 'Application Definition Attributes,' located under **Application Logic**.
+2. Click on 'Application Definition' located under **Application Logic**.
 
-  ![Application Definition Attributes](images/4-apex-4-2.png)
+  ![Application Definition](images/4-apex-4-2.png)
 
 3. Click the 'Substitions' tab as shown.
 
-  ![Substitions](images/4-apex-4-3.png)
+  ![Substitions](images/4-apex-4-4.png)
 
 4. Set the following **Substitutions** and 'Apply Changes':
-  - First, set G\_OCI\_WEB\_CREDENTIAL to OCI\_API\_Credentials.
-  - Next, set OBP\_MAIN\_INSTANCE\_URL to the URL you found in the **Deployment Information** section in the previous lab (Lab: Created & Setup API Gateway to connect with Smart Contract API's). This allows APEX to connect to the Car Marketplace OBP REST API endpoints via the API Gateway deployment.
-  - Set FABCAR\_CHAINCODE to car\_marketplace\_cc.
-  - Set TOKENIZATION\_CHAINCODE to car\_tokenization\_cc.
-  - Set DEALER\_1\_URL and DEALER\_2\_URL to john_dealer1 and sam_dealer2, respectively. This gives information on API routing.
+    - First, set G\_OCI\_WEB\_CREDENTIAL to OCI_API_Credentials.
+    - Next, set OBP\_MAIN\_INSTANCE\_URL to the URL you found in the **Deployment Information**  section in the previous lab (Lab: Created & Setup API Gateway to connect with Smart Contract API's). This allows APEX to connect to the Car Marketplace OBP REST API endpoints via the API Gateway deployment. Change OBP\_MAIN\_INSTANCE\_URL, OBP\_DEALER\_1\_URL, OBP\_DEALER\_2\_URL based on the routes configured in *Lab 4*  
+
+    ![Substitions Form](images/4-apex-4-4-1.png)
+    ![Substitions Form](images/4-apex-4-4-2.png)
+    
+    - Set FABCAR\_CHAINCODE to car\_marketplace\_cc.
+    - Set TOKENIZATION\_CHAINCODE to car\_tokenization\_cc.
+    - Set DEALER\_1\_URL and DEALER\_2\_URL to john_dealer1 and sam_dealer2, respectively. This gives information on API routing.
+    - Set MARKETPLACE to marketplace.
 
   ![Substitions Form](images/4-apex-4-4.png)
 
@@ -208,7 +208,7 @@ This lab assumes you have:
     - Set **Name** to the 'Hostname' found in the Gateway details, accessible from the OCI service console.
   ![Gateway Hostname](images/4-apex-4-9-1.png)
     - Give your server a  **Static Identifier** (e.g. by changing all punctuation in **Name** to underscores as shown).
-    - Set **Endpoint URL** to the same 'Hostname' from the Gateway details.
+    - Set **Endpoint URL** to the same https://'Hostname' from the Gateway details.
 
   ![Edit Remote Server Form](images/4-apex-4-9-2.png)
 
@@ -216,18 +216,21 @@ This lab assumes you have:
 
   ![Apply Changes to Remote Server](images/4-apex-4-10.png)
 
-10. Set **URL Path Prefix** to v0/marketplace/chaincode/queries and click 'Apply Changes.'
-****Make sure Gateway URL Matches this URL - Update ****
+10. Set **URL Path Prefix** to 'v0/marketplace/chaincode-queries' and click 'Apply Changes'
 
   ![Edit URL Path Prefix and Apply Changes](images/4-apex-4-11.png)
 
-11. Now, repeat steps 7-11 for the following REST Sources:
+11. Now, repeat steps 7-10 for the following REST Sources:
     - 'GetAccountBalance'
     - 'GetInvoiceByRange'
     - 'GetCarsByRange'
     - 'GetCarHistoryById'
     - 'GetPOByRange'
-    -'GetInvoiceByRannge'
+    - 'GetInvoiceByRannge'
+    - 'GetCarTitleToken1
+    - 'GetCarTitleToken2'
+    - 'GetCarServicesDealer1'
+    - 'GetCarServicesDealer2'
 
   ![Repeat APEX Data Source Steps](images/apex-4-4-12.png)
 

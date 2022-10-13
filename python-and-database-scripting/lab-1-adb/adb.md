@@ -6,7 +6,7 @@ This lab will show you how to setup a Free TIER Autonomous Database  instance.
 
 **Oracle Cloud Infrastructure’s Autonomous Database** is a fully managed, preconfigured database environment with two workload types available: Autonomous Transaction Processing and Autonomous Data Warehouse. You don’t need to configure or manage any hardware, or install any software. After provisioning, you can scale the number of CPU cores or the storage capacity of the database at any time without impacting availability or performance.
 
-Estimated Time: 10 minutes
+Estimated Time: 15 minutes
 
 ### Objectives
 
