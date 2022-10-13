@@ -55,7 +55,7 @@ This lab assumes you have:
 
 ## Task 2: Configure Database Schema and User Credentials
 
-1. When your Autonomous Database instance has provisioned, access the 'Tools' --> 'Open APEX'
+1. When your Autonomous Database instance has provisioned, access the 'Tools' --> 'Open APEX' --> 'Open APEX'
 
   ![Access Service Console](images/4-apex-2-1.png)
 
@@ -147,7 +147,7 @@ This lab assumes you have:
 
   ![Install Application 1](images/4-apex-3-8.png)
 
-7. Click 'Next.' --> Enter username and password in the respective fields
+7. Click 'Next.' --> Enter username and password in the respective fields --> Enter username and password in the respective fields
 
   ![Install Application 2](images/4-apex-3-9.png)
 
@@ -239,6 +239,10 @@ This lab assumes you have:
     - 'GetCarHistoryById'
     - 'GetPOByRange'
     - 'GetInvoiceByRannge'
+    - 'GetCarTitleToken1
+    - 'GetCarTitleToken2'
+    - 'GetCarServicesDealer1'
+    - 'GetCarServicesDealer2'
     - 'GetCarTitleToken1
     - 'GetCarTitleToken2'
     - 'GetCarServicesDealer1'

@@ -89,7 +89,7 @@ You will now create a car and simulate a transaction between the founder organiz
 
   ![Car Delaership](images/apex-carmarketplace-run.png)
  
- 2. Login as a dealer (e.g. john_dealer1) and land on My Inventory. Use the same password configured for john\_dealer1 in *Lab4*
+ 2. Login as a dealer (e.g. john_dealer1) and land on My Inventory. Use the same password configured for john\_dealer1 in *Lab4* Use the same password configured for john\_dealer1 in *Lab4*
 
   ![Car Delaership](images/dealer1-login.png)
 
@@ -178,7 +178,7 @@ This action confirms the order by the seller.
 
 Select "Accept Receipt" to complete order or "Cancel Order" to cancel the order.
 
-## Task 9: dealer2 - Generate Invoice & Payment
+## Task 8: dealer2 - Generate Invoice & Payment
 
 1. Generate & View the invoice for the order Processed
 
@@ -200,7 +200,7 @@ Additionaly, you are able to view the invoice from the purchase in the Orders > 
 
   ![Car Delaership](images/apex-invoicereceived.png)
 
-## Task 11: Check Token Balances for dealer1 & dealer2 after the payment
+## Task 10: Check Token Balances for dealer1 & dealer2 after the payment
 
 1. dealer1 token balance
 
