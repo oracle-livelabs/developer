@@ -6,6 +6,9 @@ This lab walks you through the steps to quickly provision an Oracle Autonomous D
 
 Estimated lab time: 10 minutes
 
+Watch the video below for a quick walk-through of the lab.
+[Provision Oracle Autonomous Database](videohub:1_ika287la)
+
 *Note: While this lab uses ATP, the steps are identical for creating and connecting to an ADW database.*
 
 ### Objectives

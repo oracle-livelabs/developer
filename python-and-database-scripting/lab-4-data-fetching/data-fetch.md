@@ -14,6 +14,9 @@ This lab will show how to fetch the data using python-oracledb driver
 
 Estimated Lab Time: 10 minutes
 
+Watch the video below for a quick walk-through of the lab.
+[Fetching Data](videohub:1_5r4lafnz)
+
 ### Objectives
 
 * Learn best practices and efficient techniques for fetching data.

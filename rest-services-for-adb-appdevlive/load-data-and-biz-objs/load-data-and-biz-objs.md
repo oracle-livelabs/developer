@@ -6,9 +6,8 @@ In this lab you will use the batch load API to load large amounts of data into a
 
 Estimated Lab Time: 20 minutes
 
-Watch the video below for a quick walk through of the lab.
-
-[Video overview of the Lab.](youtube:t57IlegnhjA)
+Watch the video below for a quick walk-through of the lab.
+[Load data and create business logic](videohub:1_rgksftgt)
 
 ### Objectives
 

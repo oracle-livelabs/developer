@@ -7,6 +7,9 @@ This lab will show how to call PL/SQL code from Python
 
 Estimated Lab Time: 5 minutes
 
+Watch the video below for a quick walk-through of the lab.
+[PL/SQL](videohub:1_5815o1t4)
+
 ### Objectives
 
 *  Learn best practices and efficient techniques for how to make use of PL/SQL code, functions and procedures from Python, when needing to manipulate data stored in Oracle databases.
