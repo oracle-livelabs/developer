@@ -157,7 +157,7 @@ Select '`car_marketplace_cc`.controller.go' under '`car_marketplace_cc`/src/cont
 
 
         return t.Ctx.Model.Save(&asset)
-        return t.Ctx.Model.Save(&asset)
+ 
 
     }
     </copy>
