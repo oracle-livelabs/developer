@@ -140,11 +140,11 @@ This lab assumes you have:
       - marketplace transactions prefix  Path: /marketplace/atomicTransactions
       - marketplace URL: Example - https://marketplace-3-oabcs1-iad.blockchain.ocp.oraclecloud.com:7443/restproxy/api/v2/atomicTransactions
   ![Route 7](images/3-gateway-4-8.1.png)
-      - dealer1 transactions prefix  Path: /marketplace/atomicTransactions
+      - dealer1 transactions prefix  Path: /dealer1/atomicTransactions
       - dealer1 URL: Example - https://dealer1-2-oabcs1-iad.blockchain.ocp.oraclecloud.com:7443/restproxy/api/v2/atomicTransactions
   ![Route 8](images/3-gateway-4-8.2.png)
-      - dealer2 transactions prefix  Path: /marketplace/atomicTransactions
-      - dealer2 URL: Example - https://dealer1-2-oabcs1-iad.blockchain.ocp.oraclecloud.com:7443/restproxy/api/v2/atomicTransactions
+      - dealer2 transactions prefix  Path: /dealer2/atomicTransactions
+      - dealer2 URL: Example - https://dealer2-2-oabcs1-iad.blockchain.ocp.oraclecloud.com:7443/restproxy/api/v2/atomicTransactions
   ![Route 9](images/3-gateway-4-8.3.png)
 
 
