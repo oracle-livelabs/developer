@@ -30,7 +30,7 @@ You will also need to create a new [Compartment](https://docs.oracle.com/en-us/i
 1. Now with access to your remote desktop session as shown below, fill in your tenancy/account name and click *Next*
     ![Remote Desktop Landing](images/remote-desktop-landing.png)
 
-2. Click on the down arrow next to *Oracle Cloud Infrastructure Direct Sign-in* to expand and reveal the login input fields, then provide your OCI credentials and click *Sign-in*
+2. Click on the down arrow next to *Oracle Cloud Infrastructure Direct Sign-in* to expand and reveal the login input fields, then provide your OCI credentials and click *Sign-in*. Make sure you select oracle idenity cloud service.
     ![OCI Console Login](images/oci-console-login.png)
 
 3. In the OCI services menu, select 'Identity & Security' and click on 'Compartments' to view all compartments available in your tenancy.
