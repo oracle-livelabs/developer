@@ -405,54 +405,66 @@ Select '`car_title_registration_cc`.controller.go' under '`car_title_registratio
 
 1. Open the Car Marketplace specification file and scroll to the bottom. This is where your customMethods are listed. Go to `car_title_registration_cc`.controller.go' under '`car_title_registration_cc`/src/controller' to make the changes mentioned below. 
 
-2. Add the imports needed for the custom methods.
+2. First, add the imports needed for the custom methods.
+
+     ```
+    <copy>
+    "encoding/json"
+    "time"
+    "example.com/car_title_registration_cc/lib/util/date"
+    </copy>
 
     ```
-      <copy>
-      func (t *Controller) UpdateTitle(tokenId string, dealerno string,dealername string,dealerloc string,mileage int,newowner string,purchaseprice float64,dateString string) (interface{}, error) {
-
-        var tokenAsset CarTitle
-        _, err := t.Ctx.ERC721Token.Get(tokenId, &tokenAsset)
-
-        if err != nil {
-          return nil, fmt.Errorf("Token with id: %s does not exist", tokenId)
-        }
-
-        dateBytes, err := json.Marshal(dateString)
-        if err != nil {
-          return nil, fmt.Errorf("error in marshalling %s", err.Error())
-        }
-
-        var dateValue date.Date
-        err = json.Unmarshal(dateBytes, &dateValue)
-        if err != nil {
-          return nil, fmt.Errorf("error in unmarshalling the date %s", err.Error())
-        }
 
 
-        newTitle := Title_entries {
-          Dealernumber:  dealerno, 
-          Dealership: dealername,
-          Location: dealerloc,
-          Mileage: mileage,
-          Newowner:newowner,
-          Purchaseprice:purchaseprice,
-          Purchasedate: dateValue,
-        }
+3. Add the imports needed for the custom methods.
 
+    ```
+    <copy>
+    func (t *Controller) UpdateTitle(tokenId string, dealerno string,dealername string,dealerloc string,mileage int,newowner string,purchaseprice float64,dateString string) (interface{}, error) {
 
-        tokenAsset.Title = append(tokenAsset.Title, newTitle)
-        
-        
-        _, err = t.UpdateCarTitleToken(tokenAsset)
-          if err != nil {
-          return nil, err
-        }
+      var tokenAsset CarTitle
+      _, err := t.Ctx.ERC721Token.Get(tokenId, &tokenAsset)
 
-        msg := fmt.Sprintf("Title Updated")
-        return msg, nil
+      if err != nil {
+        return nil, fmt.Errorf("Token with id: %s does not exist", tokenId)
       }
-      </copy>
+
+      dateBytes, err := json.Marshal(dateString)
+      if err != nil {
+        return nil, fmt.Errorf("error in marshalling %s", err.Error())
+      }
+
+      var dateValue date.Date
+      err = json.Unmarshal(dateBytes, &dateValue)
+      if err != nil {
+        return nil, fmt.Errorf("error in unmarshalling the date %s", err.Error())
+      }
+
+
+      newTitle := Title_entries {
+        Dealernumber:  dealerno, 
+        Dealership: dealername,
+        Location: dealerloc,
+        Mileage: mileage,
+        Newowner:newowner,
+        Purchaseprice:purchaseprice,
+        Purchasedate: dateValue,
+      }
+
+
+      tokenAsset.Title = append(tokenAsset.Title, newTitle)
+      
+      
+      _, err = t.UpdateCarTitleToken(tokenAsset)
+        if err != nil {
+        return nil, err
+      }
+
+      msg := fmt.Sprintf("Title Updated")
+      return msg, nil
+    }
+    </copy>
 
       ```
 
