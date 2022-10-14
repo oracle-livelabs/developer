@@ -8,6 +8,9 @@ This lab will show you how to setup a Free TIER Autonomous Database  instance.
 
 Estimated Time: 15 minutes
 
+Watch the video below for a quick walk-through of the lab.
+[Set up Autonomous Database Instance](videohub:1_dwsfp4a3)
+
 ### Objectives
 
 In this lab, you will:
