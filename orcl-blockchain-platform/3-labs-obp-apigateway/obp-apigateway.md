@@ -100,7 +100,9 @@ This lab assumes you have:
     - Enter the **URL** to serve as a REST endpoint. For Route 1, this will be https://marketplace-2-oabcs1-iad.blockchain.ocp.oraclecloud.com:7443/restproxy/api/v2/channels/car-marketplace/transactions
     - How to Construct Route URL:
         - From the Blockchain Admin Dashboard --> Click on Nodes --> Navigate to restproxy (bottom of the screen) --> Copy the URL
-    ![Blockchain Dashboard](images/3-gateway-4.bc.1.png)
+
+  ![Blockchain Dashboard](images/3-gateway-4.bc.1.png)
+
         - Append to URL --> [api/v2/channels/car-marketplace/transactions](https://docs.oracle.com/en/cloud/paas/blockchain-cloud/restoci/op-restproxy-api-v2-channels-channelname-transactions-post.html)
 
       
@@ -110,6 +112,7 @@ This lab assumes you have:
 
   
 2. Click the '+ Another Route' button and repeat Step 2 for the remaining 5 routes based on the blockchain instances as shown:
+
   ![Route 2](images/3-gateway-4-4.1.png)
   
     - Marketplace Routes
@@ -117,6 +120,7 @@ This lab assumes you have:
       - marketplace URL: Example - https://marketplace-3-oabcs1-iad.blockchain.ocp.oraclecloud.com:7443/restproxy/api/v2/channels/car-marketplace/transactions
       - marketplace chaincode queries prefix  Path: /dealer1/chaincode-queries
       - marketplace URL: Example - https://marketplace-3-oabcs1-iad.blockchain.ocp.oraclecloud.com:7443/restproxy/api/v2/channels/car-marketplace/chaincode-queries
+
   ![Route 11](images/3-gateway-4-5.1.png)
   ![Route 22](images/3-gateway-4-5.2.png)
 
@@ -125,6 +129,7 @@ This lab assumes you have:
       - dealer1 URL: Example - https://dealer1-3-oabcs1-iad.blockchain.ocp.oraclecloud.com:7443/restproxy/api/v2/channels/car-marketplace/transactions
       - dealer2 chaincode queries prefix  Path: /dealer1/chaincode-queries
       - dealer2 URL: Example - https://dealer1-3-oabcs1-iad.blockchain.ocp.oraclecloud.com:7443/restproxy/api/v2/channels/car-marketplace/chaincode-queries
+
   ![Route 3](images/3-gateway-4-6.1.png)
   ![Route 4](images/3-gateway-4-6.2.png)
 
@@ -133,22 +138,27 @@ This lab assumes you have:
       - dealer2 URL: Example - https://dealer2-3-oabcs1-iad.blockchain.ocp.oraclecloud.com:7443/restproxy/api/v2/channels/car-marketplace/transactions
       - dealer2 chaincode queries prefix  Path: /dealer2/chaincode-queries
       - dealer2 URL: Example - https://dealer2-3-oabcs1-iad.blockchain.ocp.oraclecloud.com:7443/restproxy/api/v2/channels/car-marketplace/chaincode-queries
+
   ![Route 5](images/3-gateway-4-7.1.png)
   ![Route 6](images/3-gateway-4-7.2.png)
 
   - Atomic Transaction routes --> marketplace, dealer1, dealer2
       - marketplace transactions prefix  Path: /marketplace/atomicTransactions
       - marketplace URL: Example - https://marketplace-3-oabcs1-iad.blockchain.ocp.oraclecloud.com:7443/restproxy/api/v2/atomicTransactions
+
   ![Route 7](images/3-gateway-4-8.1.png)
       - dealer1 transactions prefix  Path: /dealer1/atomicTransactions
       - dealer1 URL: Example - https://dealer1-2-oabcs1-iad.blockchain.ocp.oraclecloud.com:7443/restproxy/api/v2/atomicTransactions
+
   ![Route 8](images/3-gateway-4-8.2.png)
       - dealer2 transactions prefix  Path: /dealer2/atomicTransactions
       - dealer2 URL: Example - https://dealer2-2-oabcs1-iad.blockchain.ocp.oraclecloud.com:7443/restproxy/api/v2/atomicTransactions
+
   ![Route 9](images/3-gateway-4-8.3.png)
 
 
 3. 'Review' the deployment information and click 'Create.'
+  
   ![Review Deployment](images/3-gateway-4-9.png)
 
 ## Task 6: Prefix Query and Invoke Endpoint During Configuration
@@ -156,6 +166,7 @@ This lab assumes you have:
 Once active, the deployment can be used to make REST API calls between APEX and OBP.
 
 1. Find the **Deployment Information** pane and the **Endpoint** as shown.
+  
   ![Deployment Information](images/3-gateway-5-1.png)
 
 
