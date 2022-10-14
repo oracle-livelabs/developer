@@ -111,10 +111,42 @@ This lab assumes you have:
   
 2. Click the '+ Another Route' button and repeat Step 2 for the remaining 5 routes based on the blockchain instances as shown:
   ![Route 2](images/3-gateway-4-4.1.png)
+  
+    - Marketplace Routes
+      - marketplace transactions prefix  Path: /dealer1/transactions
+      - marketplace URL: Example - https://marketplace-3-oabcs1-iad.blockchain.ocp.oraclecloud.com:7443/restproxy/api/v2/channels/car-marketplace/transactions
+      - marketplace chaincode queries prefix  Path: /dealer1/chaincode-queries
+      - marketplace URL: Example - https://marketplace-3-oabcs1-iad.blockchain.ocp.oraclecloud.com:7443/restproxy/api/v2/channels/car-marketplace/chaincode-queries
+  ![Route 11](images/3-gateway-4-5.1.png)
+  ![Route 22](images/3-gateway-4-5.2.png)
+
+    - dealer1 routes
+      - dealer1 transactions prefix  Path: /dealer1/transactions
+      - dealer1 URL: Example - https://dealer1-3-oabcs1-iad.blockchain.ocp.oraclecloud.com:7443/restproxy/api/v2/channels/car-marketplace/transactions
+      - dealer2 chaincode queries prefix  Path: /dealer1/chaincode-queries
+      - dealer2 URL: Example - https://dealer1-3-oabcs1-iad.blockchain.ocp.oraclecloud.com:7443/restproxy/api/v2/channels/car-marketplace/chaincode-queries
   ![Route 3](images/3-gateway-4-6.1.png)
   ![Route 4](images/3-gateway-4-6.2.png)
+
+    - dealer2 routes
+      - dealer2 transactions prefix  Path: /dealer2/transactions
+      - dealer2 URL: Example - https://dealer2-3-oabcs1-iad.blockchain.ocp.oraclecloud.com:7443/restproxy/api/v2/channels/car-marketplace/transactions
+      - dealer2 chaincode queries prefix  Path: /dealer2/chaincode-queries
+      - dealer2 URL: Example - https://dealer2-3-oabcs1-iad.blockchain.ocp.oraclecloud.com:7443/restproxy/api/v2/channels/car-marketplace/chaincode-queries
   ![Route 5](images/3-gateway-4-7.1.png)
   ![Route 6](images/3-gateway-4-7.2.png)
+
+  - Atomic Transaction routes --> marketplace, dealer1, dealer2
+      - marketplace transactions prefix  Path: /marketplace/atomicTransactions
+      - marketplace URL: Example - https://marketplace-3-oabcs1-iad.blockchain.ocp.oraclecloud.com:7443/restproxy/api/v2/atomicTransactions
+  ![Route 7](images/3-gateway-4-8.1.png)
+      - dealer1 transactions prefix  Path: /marketplace/atomicTransactions
+      - dealer1 URL: Example - https://dealer1-2-oabcs1-iad.blockchain.ocp.oraclecloud.com:7443/restproxy/api/v2/atomicTransactions
+  ![Route 8](images/3-gateway-4-8.2.png)
+      - dealer2 transactions prefix  Path: /marketplace/atomicTransactions
+      - dealer2 URL: Example - https://dealer1-2-oabcs1-iad.blockchain.ocp.oraclecloud.com:7443/restproxy/api/v2/atomicTransactions
+  ![Route 9](images/3-gateway-4-8.3.png)
+
 
 3. 'Review' the deployment information and click 'Create.'
   ![Review Deployment](images/3-gateway-4-9.png)
