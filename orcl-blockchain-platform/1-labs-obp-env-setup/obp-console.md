@@ -518,7 +518,7 @@ Use IDCS to create and add both 'john_\dealer1' and 'sam_\dealer2' users, and th
 
 13. Click on application roles to grant 'john\_dealer1' **ADMIN** and **REST_CLIENT** privileges. Doing so will give 'john\_dealer1' access to call all REST proxy endpoints available on the REST proxy node along with any necessary admin access control. Please see the [OBP documentation](https://docs.oracle.com/en/cloud/paas/blockchain-cloud/administeroci/set-users-and-application-roles.html#GUID-CF1B1C71-2EFF-456F-B557-7EA07573B373) to learn more.
 
-  ![Select Application Roles](images/Application-roles.png)
+  ![Select Application Roles](images/application-roles.png)
 
 14. Click on the hamburger icon in the right-hand corner to assign both the **ADMIN** and **REST_CLIENT** roles to 'john\_dealer1'.
 
@@ -530,7 +530,7 @@ Use IDCS to create and add both 'john_\dealer1' and 'sam_\dealer2' users, and th
 
 16. Repeat tasks 1-16 to create the 'sam\_dealer2' user and add to the 'dealer2' instance.
 
-17. Repeat tasks 1-16 to create the 'marketplace' user and add to the 'marketplace' instance.
+17. Repeat tasks 1-16 to create the 'marketplace' user and add to the 'marketplace' instance. Assign john\_dealer1 and sam\_dealer2 roles to marketplace REST\_CLIENT.
 
 
 You may now proceed to the next lab.
