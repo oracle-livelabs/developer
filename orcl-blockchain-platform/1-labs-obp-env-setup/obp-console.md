@@ -30,7 +30,7 @@ You will also need to create a new [Compartment](https://docs.oracle.com/en-us/i
 1. Now with access to your remote desktop session as shown below, fill in your tenancy/account name and click *Next*
     ![Remote Desktop Landing](images/remote-desktop-landing.png)
 
-2. Click on the down arrow next to *Oracle Cloud Infrastructure Direct Sign-in* to expand and reveal the login input fields, then provide your OCI credentials and click *Sign-in*
+2. Click on the down arrow next to *Oracle Cloud Infrastructure Direct Sign-in* to expand and reveal the login input fields, then provide your OCI credentials and click *Sign-in*. Make sure you select oracle idenity cloud service.
     ![OCI Console Login](images/oci-console-login.png)
 
 3. In the OCI services menu, select 'Identity & Security' and click on 'Compartments' to view all compartments available in your tenancy.
@@ -56,11 +56,11 @@ You will also need to create a new [Compartment](https://docs.oracle.com/en-us/i
 
 2. Ensure that the right **Compartment** is selected and click on 'Create Blockchain Platform.'
 
-  ![OBP Compartment, Create](images/1-obp-2-2.png)
+  ![OBP Compartment, Create](images/1-obp-2-3.png)
 
 3. Give your platform a **Display Name** (e.g. 'marketplace'), optionally add a **Description**, and keep the remaining default selections. Click 'Create'.
 
-  ![OBP Form](images/1-obp-2-3.png)
+  ![OBP Form](images/1-obp-2-2.png)
 
 4. Once the platform instance is 'Active' as shown, you can access the 'Service Console' to begin managing your blockchain network as the founder.
 
@@ -78,7 +78,11 @@ You will also need to create a new [Compartment](https://docs.oracle.com/en-us/i
 
 You will be using Oracle's Blockchain App Builder extension, accessible through Visual Studio Code, for this lab. First you will need to set up environments for each of the 3 blockchain platform instances you created in previous tasks above.
 
-1. Click on the desktop VSCode shortcut on the VNC Desktop --> Opens VSCode
+1. Open Terminal --> Enter code --> This opens VSCode
+
+  ![VSCode](images/2-app-builder-vscode.png)
+  ![VSCode](images/2-app-builder-vscode-1.png)
+
 2. In Visual Studio Code, click on the **O** icon on the left-hand menu to use the Blockchain App Builder Extension.
 
 

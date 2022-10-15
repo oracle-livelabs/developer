@@ -220,19 +220,7 @@ This lab assumes you have:
 
   ![REST Data Sources](images/4-apex-4-6.png)
 
-10. Click 'GetDealerByRange' to view information regarding this data source.
-
- ![GetDealerByRange](images/apex-4-4-12.png)
-
-11. Select the remote server configured *Step 4*
-
-  ![Edit Remote Server](images/4-apex-4-8.png)
-
-12. Set **URL Path Prefix** to 'v0/marketplace/chaincode-queries' and click 'Apply Changes'
-
-  ![Edit URL Path Prefix and Apply Changes](images/4-apex-4-11.png)
-
-13. Now, repeat steps 11-12 for the following REST Sources:
+10. Now, we can see the following REST Sources configured with remote server URL configured:
     - 'GetAccountBalance'
     - 'GetInvoiceByRange'
     - 'GetCarsByRange'
