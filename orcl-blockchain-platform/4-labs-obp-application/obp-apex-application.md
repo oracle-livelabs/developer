@@ -110,7 +110,7 @@ This lab assumes you have:
 
   ![Check User Page](images/4-apex-2-9.png)
 
-11. Sign out of ADMIN in the upper-right hand corner.
+11. Sign out of ADMIN in the upper-right hand corner
 
   ![Sign Out](images/4-apex-2-10.png)
 
@@ -124,15 +124,15 @@ This lab assumes you have:
 
   ![Login as Developer](images/4-apex-3-1.png)
 
-2. Select 'App Builder' as shown.
+2. Select 'App Builder' as shown
 
   ![Access App Builder](images/4-apex-3-4.png)
 
-3. Select 'Import' to import an app template.
+3. Select 'Import' to import an app template
 
   ![Import Template](images/4-apex-3-5.png)
 
-4. 'Drag and Drop' the [Apex Marketplace Template](files/f105.sql?download=1) file into the pane and click 'Next.'
+4. 'Drag and Drop' the [Apex Marketplace Template](files/f100.sql?download=1) file into the pane and click 'Next.'
 
   ![Import Template 1](images/4-apex-3-6.png)
 
