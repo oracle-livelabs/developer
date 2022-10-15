@@ -132,7 +132,7 @@ This lab assumes you have:
 
   ![Import Template](images/4-apex-3-5.png)
 
-4. 'Drag and Drop' the [Apex Marketplace Template](files/f100.sql?download=1) file into the pane and click 'Next.'
+4. 'Drag and Drop' the [Apex Marketplace Template](files/f105.sql?download=1) file into the pane and click 'Next.'
 
   ![Import Template 1](images/4-apex-3-6.png)
 
