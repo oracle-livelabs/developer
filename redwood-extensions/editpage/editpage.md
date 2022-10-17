@@ -36,14 +36,15 @@ When your account managers locate an account using our new page, it's quite poss
 	  ![Add edit page](images/addEdit.png)
 
 	In the Add Edit Page dialog the **accounts** object is already selected, which is what we want.
+	  ![endpoint selection](images/endpoints1.png)
 
 4.  Click **Next**.
 
 5. On this page we select the object that will be updated. **accounts** is already selected, so click **Next** here too:
-	  ![endpoint selection](images/endpoints1.png)
+  ![Fields selection](images/endpoints2.png)
 
 	This page lets us choose the specific fields we want to present on the Edit Page. We know there are four columns in our table, so let's use the filter field at the top to help us find those fields:
-	  ![Fields selection](images/endpoints2.png)
+
 
 6. Filter on **name**, then **revenue**, and select the following fields:
 	* OrganizationName

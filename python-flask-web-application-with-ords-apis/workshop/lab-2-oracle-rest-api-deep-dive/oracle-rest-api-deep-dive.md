@@ -8,6 +8,9 @@ You may have some experience with APIs and API development as a developer. You m
 
 Estimated Time: 20 minutes
 
+Watch the video below for a quick walk-through of the lab.
+[Oracle REST API deeper dive](videohub:1_18mea1p9)
+
 ### Objectives
 
 In this Lab, you will:

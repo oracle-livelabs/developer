@@ -8,7 +8,7 @@ Estimated Lab Time: 10 minutes
 
 ### Objectives
 
-*  Learn best practices and efficient techniques for .....
+*  Learn best practices and efficient techniques for using subclassing for connecting and cursors creation with Oracle Autonomous Database.
 
 ### Prerequisites
 
@@ -46,7 +46,7 @@ print("Number of rows:", count)
 </copy>
 ````
 
-This creates a new class "MyConnection" that from the python-oracledb Connection class. The \__init\__ method is invoked when an instance of the new class is created. It prints a message and calls the base class, passing the connection credentials.
+This creates a new class "MyConnection" that inherits from the python-oracledb Connection class. The \__init\__ method is invoked when an instance of the new class is created. It prints a message and calls the base class, passing the connection credentials.
 
 In the "normal" application, the application code:
 

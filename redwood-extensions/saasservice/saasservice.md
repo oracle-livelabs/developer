@@ -23,7 +23,7 @@ Up until now we've worked on the UI (front end) of your application, but now it'
 
 1. On the far left side of the Designer's navigator, click the third tab, **Services**:
 
-	![Services](images/servicetab.png)
+	![Services](images/servicetab2.png)
 
 2. Click **+ Service Connection**.
 
@@ -33,7 +33,7 @@ Up until now we've worked on the UI (front end) of your application, but now it'
 		  ![Service Options](images/serviceoptions.png)
 
 
-4. Click **Select from Catalog**. When it loads, click **Sales and Services**:
+4. Click **Select from Catalog**. When it loads, click **Sales and Service**:
 	  ![Service Catalogs](images/catalog.png)
 
 	You can use this approach to access services from your HCM, ERP, and SCM Apps too. You may want to take a moment now to explore these catalogs and see the available business objects for the Apps you use.
@@ -77,7 +77,7 @@ Up until now we've worked on the UI (front end) of your application, but now it'
 
 7. Click **FilterCriterion** on the right, under Target.
 	This displays the filter builder at the bottom of the dialog:
-	  ![Filter definition](images/FilterCriterion.png)
+	  ![Filter definition](images/filtercriterion.png)
 8. In the filter builder, click **Click to add condition**.
 9. Click in the **Attribute** field, then start typing **Orga ...** until you can choose **OrganizationName**:
 	  ![Search box](images/name.png)
@@ -95,7 +95,7 @@ Up until now we've worked on the UI (front end) of your application, but now it'
 
 In a moment we'll see that a table with the selected fields has been added to your page. The data for this table will be fetched live from Oracle SaaS using the service connection we defined in this lab.
 
-To leverage the service's pagination capabilities (as opposed to fetching all the records available on start up), let's add a scroll policy to the table.
+To leverage the service's pagination capabilities (as opposed to fetching all the records available on start up), let's add a scroll policy to the table. While we can do this by setting the property directly in the property inspector, we'll show you that you can also directly modify your application at the code level.
 
 13. Switch to Code view by clicking **Code** button at the top of the preview:
 					  ![Code view](images/codeview.png)
@@ -114,6 +114,11 @@ To leverage the service's pagination capabilities (as opposed to fetching all th
 	  The code for this line should now look similar to this:
 
 		<copy><oj-table scroll-policy-options.scroller="html" scroll-policy="loadMoreOnScroll" ...></copy>
+
+
+
+P.S. If setting this in code didn't work, go to the property inspector for the table, locate the scroll policy options property and drill down to the sub properties by clicking the right arrow. Then set the scroller to html over there.
+					  ![scroller property](images/scroller.png)
 
 
 17. Click **Design** so we can see the resulting table with data fetched into it. We can take an even closer look at the app by using the Preview feature.  

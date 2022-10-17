@@ -4,7 +4,10 @@
 
 Bind variables enable you to re-execute statements with new data values without the overhead of re-parsing the statement. Binding improves code reusability, improves application scalability, and can reduce the risk of SQL injection attacks. Using bind variables is strongly recommended. Documentation link for further reading: [Using Bind Variables](https://python-oracledb.readthedocs.io/en/latest/user_guide/bind.html).
 
-Estimated Lab Time: 5 minutes
+Estimated Lab Time: 10 minutes
+
+Watch the video below for a quick walk-through of the lab.
+[Binding Data](videohub:1_mrlbewgm)
 
 ### Objectives
 

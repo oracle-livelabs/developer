@@ -4,7 +4,10 @@
 
 This lab will show how to use type handlers in order to alter data that is fetched from or sent to the database. You may read more about type handlers at [Changing Fetched Data Types with Output Type Handlers](https://python-oracledb.readthedocs.io/en/latest/user_guide/sql_execution.html#changing-fetched-data-types-with-output-type-handlers) and [Changing Bind Data Types using an Input Type Handler](https://python-oracledb.readthedocs.io/en/latest/user_guide/bind.html#changing-bind-data-types-using-an-input-type-handler).
 
-Estimated Lab Time: 5 minutes
+Estimated Lab Time: 10 minutes
+
+Watch the video below for a quick walk-through of the lab.
+[Type Handlers](videohub:1_e1omeg5y)
 
 ### Objectives
 
@@ -179,7 +182,7 @@ oracledb.defaults.fetch_decimals = True
 
 Input type handlers enable applications to change how data is bound to statements, or to enable new types to be bound directly without having to be converted individually.
 
-Review *type\_input.py*, which is similar to the final *bind\_sdo.py*, with the addition of a new class (**class Building(object)**) and converter:
+Review *type\_input.py*:
 
 ````
 <copy>
@@ -190,7 +193,9 @@ import json
 con = oracledb.connect(user=db_config.user,
                         password=db_config.pw,
                         dsn=db_config.dsn, 
-                        config_dir=db_config.config_dir, wallet_location=db_config.wallet_location,  wallet_password=db_config.wallet_password)
+                        config_dir=db_config.config_dir, 
+                        wallet_location=db_config.wallet_location, 
+                        wallet_password=db_config.wallet_password)
 
 cur = con.cursor()
 
@@ -232,12 +237,13 @@ def from_json(cls, value):
     result = json.loads(value)
     return cls(**result)
     
-# Convert a Python building object to SQL JSON type that can be read as a string def building_in_converter(value):
-return value.to_json()
+# Convert a Python building object to SQL JSON type that can be read as a string 
+def building_in_converter(value):
+    return value.to_json()
     
 def input_type_handler(cursor, value, num_elements):
-if isinstance(value, Building):
-    return cursor.var(oracledb.STRING, arraysize=num_elements,
+    if isinstance(value, Building):
+        return cursor.var(oracledb.STRING, arraysize=num_elements,
                         inconverter=building_in_converter)
                           
 building = Building(1, "The First Building", 5)  # Python object
@@ -288,7 +294,7 @@ You should expect results as below:
 
 In this lab, you had an opportunity to try out connecting Python to the Oracle Database.
 You have learned how to:
-* Use type handlers in order to alter data that is fetch from or sent to the database.
+* Use type handlers in order to alter data that is fetched from or sent to the database.
 
 ## Acknowledgements
 
