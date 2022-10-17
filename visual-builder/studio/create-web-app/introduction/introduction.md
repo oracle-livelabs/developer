@@ -2,11 +2,11 @@
 
 ## About this Workshop
 
-This workshop shows how you can create a web app in a collaborative team environment using Oracle Visual Builder Studio. You'll see how easy it is to design a web app, manage its changes as part of a Git repository, and seamlessly deploy it for users—all within a short time.
+This workshop shows how you can use Oracle Visual Builder Studio—also known as VB Studio—to create a web app in a collaborative team environment. You'll see how easy it is to design a web app, manage its changes as part of a Git repository, and seamlessly deploy it for users—all within a short time.
 
-Oracle Visual Builder Studio—aka VB Studio—is a development platform that helps your team plan and manage your application's lifecycle, from design and develop right through test and deploy. A rich visual designer lets you drag and drop UI components to create web apps, including progressive web apps that support on-device mobile apps. This intuitive approach lends itself to low-code developers, but experienced programmers can just as easily access the underlying source code and  customize it for their requirements.
+VB Studio is a visual development platform that helps your team plan and manage your application's lifecycle, right from design and develop through test and deploy. It provides a rich set of UI components that you can drag and drop in a visual designer to rapidly build engaging and responsive web apps. This intuitive approach lends itself to low-code developers, but experienced programmers can just as easily access the underlying source code and customize it for their requirements.
 
-Integrated Git repositories enable a collaborative environment to share and version code; Agile dashboards and issue tracking systems help teams track progress; and automated builds support continuous integration and delivery pipelines. A separate instance of Oracle Visual Builder provides easy publishing and database options when you’re ready to host your app.
+Integrated Git repositories enable a collaborative environment to share and version code; Agile dashboards and issue tracking systems help teams track progress; and automated builds support continuous integration and delivery pipelines. A separate instance of Oracle Visual Builder provides easy publishing and database options when you’re ready to deploy your app. This means, you can publish your app instantly and access it on any device, anytime. You can even deploy it as a Progressive Web App (PWA), so it can be installed on the user’s device to tap into device capabilities such as camera and GPS.
 
 All this and more make VB Studio a complete solution to simplify application development and accelerate time to market. Take a look at this video to learn more, or just dive right into the labs.
   [](youtube:pMmrNIypI7c)
@@ -16,6 +16,7 @@ Estimated Workshop Time: 1 hour 55 minutes
 ### Objectives
 
 In this workshop, you will:
+
 * Provision instances to obtain a free development environment
 * Create a project for collaborative development
 * Design and develop a simple Human Resources web app
@@ -23,9 +24,11 @@ In this workshop, you will:
 * Share and publish the web app
 
 ### Prerequisites
+
 This workshop requires:
+
 * An Oracle account
-* A browser (works best in Chrome)
+* A Chrome browser
 
 ## Learn More
 
@@ -33,5 +36,6 @@ This workshop requires:
 * [VB Studio](https://blogs.oracle.com/vbcs/category/vbc-visual-builder-studio) and [Visual Builder blogs](https://blogs.oracle.com/vbcs/)
 
 ## Acknowledgements
+
 * **Created By/Date** - Sheryl Manoharan, VB Studio User Assistance, November 2021
-* **Last Updated By/Date** - Sheryl Manoharan, July 2022
+* **Last Updated By/Date** - Sheryl Manoharan, October 2022
