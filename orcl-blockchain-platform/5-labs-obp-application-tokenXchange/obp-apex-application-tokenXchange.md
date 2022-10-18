@@ -81,7 +81,7 @@ This lab assumes you have:
 
 ## Task 3: Complete Car Marketplace Workshop by Trading a Car - Add a car to dealer1 Inventory
 
-You will now create a car and simulate a transaction between the founder organization and a car dealer partner. When a car is added to the Marketplace, tokens are put on hold in the founder instance and then transacted with partner dealerships as necessary. 
+You will now create a car and simulate a transaction between the founder organization and a car dealer partner. When a car is added to the Marketplace, fiat tokens are put on hold in the founder instance and then transacted with partner dealerships as necessary. 
 
  1. Go to AppBuilder --> Car Marketplace --> Run Application
 
@@ -89,7 +89,7 @@ You will now create a car and simulate a transaction between the founder organiz
 
   ![Car Delaership](images/apex-carmarketplace-run.png)
  
- 2. Login as a dealer (e.g. john_dealer1) and land on My Inventory. Use the same password configured for john\_dealer1 in *Lab4*
+ 2. Login as a dealer (e.g. john_dealer1) and land on My Inventory. Use the same password configured for john\_dealer1 in *Lab4* Use the same password configured for john\_dealer1 in *Lab4*
 
   ![Car Delaership](images/dealer1-login.png)
 
@@ -117,7 +117,8 @@ You will now create a car and simulate a transaction between the founder organiz
   ![Car Delaership](images/apex-cardetails.png)
 
 
-5. Click on the NFT Title Token and Services registered.
+5. Click on the NFT Title Token and Services registered. Creating the car also creates an car title NFT token utilizing the car details. This transaction (Add car) uses 2PC atomic transaction feature provided by the oracle blockchain platform. More details of the [atomic transactions](https://docs.oracle.com/en/cloud/paas/blockchain-cloud/restoci/op-restproxy-api-v2-atomictransactions-post.html)
+
 
   ![Car Delaership](images/apex-car-titlenft.png)
   ![Car Delaership](images/apex-car-nftservices.png)
@@ -139,7 +140,7 @@ You will now create a car and simulate a transaction between the founder organiz
 
   ![Car Delaership](images/apex-accountbalance.png)
 
-## Task 4: dealer2 - Search Car
+## Task 5: dealer2 - Search Car
 
 1. Navigate to Marketplace
 
@@ -149,7 +150,7 @@ You will now create a car and simulate a transaction between the founder organiz
 
   ![Car Delaership](images/apex-cardetailspayment.png)
 
-## Task 5: dealer2 - Purchase and Confirm Purchase
+## Task 6: dealer2 - Purchase and Confirm Purchase
 
 1. Confirm vehicle Purchase
 
@@ -157,7 +158,7 @@ You will now create a car and simulate a transaction between the founder organiz
 
 Purchase order will now be created.
 
-## Task 6: Dealer1 - Review & Confirm the order place by dealer2
+## Task 7: Dealer1 - Review & Confirm the order placed by dealer2
 
 1. Return to dealer 1's account, and navigate to orders received. You should be able to see the order placed by dealer 2.
 
@@ -169,7 +170,7 @@ Purchase order will now be created.
 
 This action confirms the order by the seller.
 
-## Task 7: dealer2 - Order Processed and Accepted
+## Task 8: dealer2 - Order Processed and Accepted
 
 1. Return to dealers 2's account, and navigate to orders placed. You will see the order placed should now be processed and ready to complete the purchase.
 
@@ -177,7 +178,7 @@ This action confirms the order by the seller.
 
 Select "Accept Receipt" to complete order or "Cancel Order" to cancel the order.
 
-## Task 9: dealer2 - Generate Invoice & Payment
+## Task 8: dealer2 - Generate Invoice & Payment
 
 1. Generate & View the invoice for the order Processed
 
@@ -199,7 +200,7 @@ Additionaly, you are able to view the invoice from the purchase in the Orders > 
 
   ![Car Delaership](images/apex-invoicereceived.png)
 
-## Task 11: Check Token Balances for dealer1 & dealer2 after the payment
+## Task 10: Check Token Balances for dealer1 & dealer2 after the payment
 
 1. dealer1 token balance
 
@@ -221,6 +222,6 @@ Additionaly, you are able to view the invoice from the purchase in the Orders > 
 --describe tokenization-- tokens will be put on hold while transaction is processed and order is confirmed -->
 
 ## Acknowledgements
-* **Author** - Amal Tyagi, Cloud Engineer
-* **Contributors** -  Teodora Gheorghe, Adrien Lhemann, Diego Morales, Lokeswara Nushisarva, Siddesh C. Prabhu Dev Ujjni, Rene Fontcha
+* **Author** - Oracle Blockchain Product Management
+* **Contributors** - Dev Sony, Amal Tyagi, Teodora Gheorghe, Adrien Lhemann, Diego Morales, Lokeswara Nushisarva, Siddesh C. Prabhu Dev Ujjni, Rene Fontcha
 * **Last Updated By/Date** - Rene Fontcha, September 2022

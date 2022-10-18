@@ -30,7 +30,7 @@ You will also need to create a new [Compartment](https://docs.oracle.com/en-us/i
 1. Now with access to your remote desktop session as shown below, fill in your tenancy/account name and click *Next*
     ![Remote Desktop Landing](images/remote-desktop-landing.png)
 
-2. Click on the down arrow next to *Oracle Cloud Infrastructure Direct Sign-in* to expand and reveal the login input fields, then provide your OCI credentials and click *Sign-in*
+2. Click on the down arrow next to *Oracle Cloud Infrastructure Direct Sign-in* to expand and reveal the login input fields, then provide your OCI credentials and click *Sign-in*. Make sure you select oracle idenity cloud service.
     ![OCI Console Login](images/oci-console-login.png)
 
 3. In the OCI services menu, select 'Identity & Security' and click on 'Compartments' to view all compartments available in your tenancy.
@@ -56,11 +56,11 @@ You will also need to create a new [Compartment](https://docs.oracle.com/en-us/i
 
 2. Ensure that the right **Compartment** is selected and click on 'Create Blockchain Platform.'
 
-  ![OBP Compartment, Create](images/1-obp-2-2.png)
+  ![OBP Compartment, Create](images/1-obp-2-3.png)
 
 3. Give your platform a **Display Name** (e.g. 'marketplace'), optionally add a **Description**, and keep the remaining default selections. Click 'Create'.
 
-  ![OBP Form](images/1-obp-2-3.png)
+  ![OBP Form](images/1-obp-2-2.png)
 
 4. Once the platform instance is 'Active' as shown, you can access the 'Service Console' to begin managing your blockchain network as the founder.
 
@@ -78,7 +78,11 @@ You will also need to create a new [Compartment](https://docs.oracle.com/en-us/i
 
 You will be using Oracle's Blockchain App Builder extension, accessible through Visual Studio Code, for this lab. First you will need to set up environments for each of the 3 blockchain platform instances you created in previous tasks above.
 
-1. Click on the desktop VSCode shortcut on the VNC Desktop --> Opens VSCode
+1. Open Terminal --> Enter code --> This opens VSCode
+
+  ![VSCode](images/2-app-builder-vscode.png)
+  ![VSCode](images/2-app-builder-vscode-1.png)
+
 2. In Visual Studio Code, click on the **O** icon on the left-hand menu to use the Blockchain App Builder Extension.
 
 
@@ -119,15 +123,11 @@ The specification file is then used to scaffold a smart contract project ('`car_
   ![Chaincode Output](images/2-app-builder-2-2.png)
 
 3. Select '`car_marketplace_cc`.model.go' under '`car_marketplace_cc`/src/model'. The Model file contains the property definitions of all the assets defined in the spec file.
-<<<<<<< HEAD
-
-=======
->>>>>>> upstream/main
 Select '`car_marketplace_cc`.controller.go' under '`car_marketplace_cc`/src/controller.' The Controller file defines all the behavior and methods for those assets. '`Car_Marketplace.yml`' spec file allows defining additional custom methods that users implement to provide business logic of smart contracts.
 
 ## Task 7: View Custom Methods in Marketplace
 
-1. Open the Car Marketplace specification file and scroll to the bottom. This is where your customMethods are listed. Go to `car_marketplace_cc`.controller.go' under '`car_marketplace_cc`/src/controller' to make the changes mentioned below. 
+1. Open the Car Marketplace specification file and scroll to the bottom. This is where your customMethods are listed.
 
 2. First, add the imports needed for the custom methods.
 
@@ -136,11 +136,8 @@ Select '`car_marketplace_cc`.controller.go' under '`car_marketplace_cc`/src/cont
     "encoding/json"
     "fmt"
     "time"
-<<<<<<< HEAD
+    "example.com/car_marketplace_cc/lib/util/date"
     </copy>
-=======
-    <\copy>
->>>>>>> upstream/main
 
     ```
 
@@ -151,19 +148,21 @@ Select '`car_marketplace_cc`.controller.go' under '`car_marketplace_cc`/src/cont
     ```
     <copy>
     func (t *Controller) CreateCarWrapper(asset Car) (interface{}, error) {
+        //Verify dealer exists
+        owner, err := t.GetDealerById(asset.OwnerId)
+        if err != nil {
+          return nil, fmt.Errorf("dealer with id: %s does not exist", asset.OwnerId)
+        }
 
-    //Verify dealer exists
-    owner, err := t.GetDealerById(asset.OwnerId)
-    if err != nil {
-    return nil, fmt.Errorf("dealer with id: %s does not exist", asset.OwnerId)
-    }
+        //append car to owner's inventory
+        owner.Inventory = append(owner.Inventory, asset.Vin)
 
-    //append car to owner's inventory
-    owner.Inventory = append(owner.Inventory, asset.Vin)
+        //Update and commit dealer inventory to blockchain
+        t.UpdateDealer(owner)
 
-    //Update and commit dealer inventory to blockchain
-    t.UpdateDealer(owner)
-    return t.Ctx.Model.Save(&asset)
+
+        return t.Ctx.Model.Save(&asset)
+ 
 
     }
     </copy>
@@ -175,16 +174,18 @@ Select '`car_marketplace_cc`.controller.go' under '`car_marketplace_cc`/src/cont
     <copy>
     func (t *Controller) CreatePOWrapper(asset PO) (interface{}, error) {
 
-    //Verify that car exists
-    car, err := t.GetCarById(asset.Vin)
-    if err != nil {
-    return nil, fmt.Errorf("car with id: %s does not exist", asset.Vin)
-    }
+        //Verify that car exists
+        car, err := t.GetCarById(asset.Vin)
+        if err != nil {
+          return nil, fmt.Errorf("car with id: %s does not exist", asset.Vin)
+        }
 
-    //Car no longer on sale as purchase order is created
-    car.ForSale = false
-    t.UpdateCar(car)
-    return t.Ctx.Model.Save(&asset)
+        //Car no longer on sale as purchase order is created
+        car.ForSale = false
+        t.UpdateCar(car)
+        
+
+        return t.Ctx.Model.Save(&asset)
 
     }
     </copy>
@@ -198,71 +199,71 @@ Select '`car_marketplace_cc`.controller.go' under '`car_marketplace_cc`/src/cont
     <copy>
     func (t *Controller) UpdatePOWrapper(asset PO) (interface{}, error) {
 
-    //Verifies purchase order exists
-    _, err := t.GetPOById(asset.PO)
-    if err != nil {
-      return nil, fmt.Errorf("po with id: %s does not exist", asset.PO)
-    }
-
-    //If vehicle is delivered to buyer
-    if asset.OrderStatus == "Delivered" {
-
-      var invoiceObject Invoice
-
-      //Verify car exists in ledger
-      car, err := t.GetCarById(asset.Vin)
-      if err != nil {
-        return nil, fmt.Errorf("car with id: %s does not exist", asset.Vin)
-      }
-
-      car.ForSale = true
-
-      t.UpdateCar(car)
-
-      //Create invoice sent to buyer
-      invoiceObject.Vin = asset.Vin
-      invoiceObject.Po_number = asset.PO
-      invoiceObject.Price = car.Price
-      invoiceObject.Recipient = asset.Purchaser
-      invoiceObject.Status = false
-
-      invoiceObject.InvoiceId = asset.InvoiceId
-
-      t.CreateInvoice(invoiceObject)
-
-      currentTime := time.Now().String()
-
-      var ts_formatted string
-
-      for i, c := range currentTime {
-        fmt.Printf("Start Index: %d Value:%s\n", i, string(c))
-
-        if string(c) == " " {
-          fmt.Println(ts_formatted)
-          break
+        //Verifies purchase order exists
+        _, err := t.GetPOById(asset.PO)
+        if err != nil {
+          return nil, fmt.Errorf("po with id: %s does not exist", asset.PO)
         }
-        ts_formatted += string(c)
-      }
 
-      //Invoke Custom Method: Car Transfer
-      t.CarTransfer(asset.Vin, asset.Purchaser, car.OwnerId, asset.PO, car.Price, ts_formatted)
+        //If vehicle is delivered to buyer
+        if asset.OrderStatus == "Delivered" {
 
-      }
+          var invoiceObject Invoice
 
-    //If vehicle is rejected by buyer
-    if asset.OrderStatus == "Rejected" {
+          //Verify car exists in ledger
+          car, err := t.GetCarById(asset.Vin)
+          if err != nil {
+            return nil, fmt.Errorf("car with id: %s does not exist", asset.Vin)
+          }
 
-      car, err := t.GetCarById(asset.Vin)
-      if err != nil {
-        return nil, fmt.Errorf("car with id: %s does not exist", asset.Vin)
-      }
+          car.ForSale = true
 
-      //Set car for sale back to true
-      car.ForSale = true
-      t.UpdateCar(car)
+          t.UpdateCar(car)
 
-    }
-    return t.Ctx.Model.Update(&asset)
+          //Create invoice sent to buyer
+          invoiceObject.Vin = asset.Vin
+          invoiceObject.Po_number = asset.PO
+          invoiceObject.Price = car.Price
+          invoiceObject.Recipient = asset.Purchaser
+          invoiceObject.Status = false
+
+          invoiceObject.InvoiceId = asset.InvoiceId
+
+          t.CreateInvoice(invoiceObject)
+
+          currentTime := time.Now().String()
+
+          var ts_formatted string
+
+          for i, c := range currentTime {
+            fmt.Printf("Start Index: %d Value:%s\n", i, string(c))
+
+            if string(c) == " " {
+              fmt.Println(ts_formatted)
+              break
+            }
+            ts_formatted += string(c)
+          }
+
+          //Invoke Custom Method: Car Transfer
+          t.CarTransfer(asset.Vin, asset.Purchaser, car.OwnerId, asset.PO, car.Price, ts_formatted)
+
+        }
+
+        //If vehicle is rejected by buyer
+        if asset.OrderStatus == "Rejected" {
+
+          car, err := t.GetCarById(asset.Vin)
+          if err != nil {
+            return nil, fmt.Errorf("car with id: %s does not exist", asset.Vin)
+          }
+
+          //Set car for sale back to true
+          car.ForSale = true
+          t.UpdateCar(car)
+
+        }
+        return t.Ctx.Model.Update(&asset)
 
     }
     </copy>
@@ -274,69 +275,69 @@ Select '`car_marketplace_cc`.controller.go' under '`car_marketplace_cc`/src/cont
     <copy>
     func (t *Controller) CarTransfer(vin string, buyerId string, sellerId string, PO string, price int, dateString string) (interface{}, error) {
 
-    //Date formatting and handling
-    dateBytes, err := json.Marshal(dateString)
-    if err != nil {
-      return nil, fmt.Errorf("error in marshalling %s", err.Error())
-    }
+        //Date formatting and handling
+        dateBytes, err := json.Marshal(dateString)
+        if err != nil {
+          return nil, fmt.Errorf("error in marshalling %s", err.Error())
+        }
 
-    var dateValue date.Date
-    err = json.Unmarshal(dateBytes, &dateValue)
-    if err != nil {
-      return nil, fmt.Errorf("error in unmarshalling the date %s", err.Error())
-    }
+        var dateValue date.Date
+        err = json.Unmarshal(dateBytes, &dateValue)
+        if err != nil {
+          return nil, fmt.Errorf("error in unmarshalling the date %s", err.Error())
+        }
 
-    if buyerId == sellerId {
-      return nil, fmt.Errorf(`buyer and seller cannot be same`)
-    }
+        if buyerId == sellerId {
+          return nil, fmt.Errorf(`buyer and seller cannot be same`)
+        }
 
-    //Verify car exists
-    car, err := t.GetCarById(vin)
-    if err != nil {
-      return nil, err
-    }
+        //Verify car exists
+        car, err := t.GetCarById(vin)
+        if err != nil {
+          return nil, err
+        }
 
-    //Verify dealer exists
-    buyer, err := t.GetDealerById(buyerId)
-    if err != nil {
-      return nil, err
-    }
+        //Verify dealer exists
+        buyer, err := t.GetDealerById(buyerId)
+        if err != nil {
+          return nil, err
+        }
 
-    if car.OwnerId != sellerId {
+        if car.OwnerId != sellerId {
 
-      return nil, fmt.Errorf("car with vin %s does not belong to the seller %s", vin, sellerId)
-    }
-    if car.OwnerId == buyerId {
+          return nil, fmt.Errorf("car with vin %s does not belong to the seller %s", vin, sellerId)
+        }
+        if car.OwnerId == buyerId {
 
-      return nil, fmt.Errorf("car with vin %s already exist with owner %s", vin, buyerId)
-    }
+          return nil, fmt.Errorf("car with vin %s already exist with owner %s", vin, buyerId)
+        }
 
-    //Update car object properties
+        //Update car object properties
 
-    car.OwnerId = buyerId
-    car.Price = price
-    car.LastSold = dateValue
+        car.OwnerId = buyerId
+        car.Price = price
+        car.LastSold = dateValue
 
-    buyer.Inventory = append(buyer.Inventory, vin)
+        buyer.Inventory = append(buyer.Inventory, vin)
 
-    seller, err := t.GetDealerById(sellerId)
-    if err != nil {
-      return nil, err
-    }
+        seller, err := t.GetDealerById(sellerId)
+        if err != nil {
+          return nil, err
+        }
 
-    //Remove car from seller's inventory
-    for i := 0; i < len(seller.Inventory)-1; i++ {
-      if seller.Inventory[i] == vin {
-        seller.Inventory = append(seller.Inventory[:i], seller.Inventory[i+1:]...)
-      }
-    }
+        //Remove car from seller's inventory
+        for i := 0; i < len(seller.Inventory)-1; i++ {
+          if seller.Inventory[i] == vin {
+            seller.Inventory = append(seller.Inventory[:i], seller.Inventory[i+1:]...)
+          }
+        }
 
-    //Commit changes to the ledger
-    t.UpdateDealer(seller)
-    t.UpdateCar(car)
-    t.UpdateDealer(buyer)
+        //Commit changes to the ledger
+        t.UpdateDealer(seller)
+        t.UpdateCar(car)
+        t.UpdateDealer(buyer)
 
-    return nil, err
+        return nil, err
 
     }
     </copy>
@@ -437,11 +438,11 @@ You're almost done setting up your blockchain network! Simply use the participan
 
   ![Create Channel](images/1-obp-6-1.png)
 
-2. Select both 'peer0' and 'peer1' to join the channel and click 'Join.'
+3. Select both 'peer0' and 'peer1' to join the channel and click 'Join.'
 
   ![Join Peers to Channel](images/1-obp-6-2.png)
 
-3. Repeat Steps 1-2 from the 'dealer2' console.
+4. Repeat Steps 1-3 from the 'dealer2' console.
 
 
 ## Task 12: Set Anchor Peers
@@ -469,7 +470,7 @@ Each member using a channel (whether founder or participant) must designate at l
 
 ## Task 13: Create Dealership Accounts
 
-Use IDCS to create and add both 'john\_dealer1' and 'sam\_dealer2' users, and then assign them roles to control usage of their OBP instances: 'dealer1' and 'dealer2'.
+Use IDCS to create and add both 'john_\dealer1' and 'sam_\dealer2' users, and then assign them roles to control usage of their OBP instances: 'dealer1' and 'dealer2'.
 
 1. From the OCI dashboard, select the user icon in the top right-hand corner and click on **Service User Console**.
 
@@ -521,7 +522,7 @@ Use IDCS to create and add both 'john\_dealer1' and 'sam\_dealer2' users, and th
 
 13. Click on application roles to grant 'john\_dealer1' **ADMIN** and **REST_CLIENT** privileges. Doing so will give 'john\_dealer1' access to call all REST proxy endpoints available on the REST proxy node along with any necessary admin access control. Please see the [OBP documentation](https://docs.oracle.com/en/cloud/paas/blockchain-cloud/administeroci/set-users-and-application-roles.html#GUID-CF1B1C71-2EFF-456F-B557-7EA07573B373) to learn more.
 
-  ![Select Application Roles](images/Application-roles.png)
+  ![Select Application Roles](images/application-roles.png)
 
 14. Click on the hamburger icon in the right-hand corner to assign both the **ADMIN** and **REST_CLIENT** roles to 'john\_dealer1'.
 
@@ -533,13 +534,13 @@ Use IDCS to create and add both 'john\_dealer1' and 'sam\_dealer2' users, and th
 
 16. Repeat tasks 1-16 to create the 'sam\_dealer2' user and add to the 'dealer2' instance.
 
-17. Repeat tasks 1-16 to create the 'marketplace' user and add to the 'marketplace' instance.
+17. Repeat tasks 1-16 to create the 'marketplace' user and add to the 'marketplace' instance. Assign john\_dealer1 and sam\_dealer2 roles to marketplace REST\_CLIENT.
 
 
 You may now proceed to the next lab.
 
 
 ## Acknowledgements
-* **Author** - Amal Tyagi, Cloud Engineer
-* **Contributors** -  Teodora Gheorghe, Adrien Lhemann, Diego Morales, Lokeswara Nushisarva, Siddesh C. Prabhu Dev Ujjni, Rene Fontcha
+* **Author** - Oracle Blockchain Product Management
+* **Contributors** - Amal Tyagi, Dev Sony  Teodora Gheorghe, Adrien Lhemann, Diego Morales, Lokeswara Nushisarva, Siddesh C. Prabhu Dev Ujjni, Rene Fontcha
 * **Last Updated By/Date** - Rene Fontcha, September 2022
