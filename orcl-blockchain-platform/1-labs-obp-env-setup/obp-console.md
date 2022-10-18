@@ -8,6 +8,8 @@ As a preassembled PaaS, Oracle Blockchain Platform includes all the dependencies
 
 *Estimated Lab Time:* 20 minutes
 
+Watch the video below for a quick walk-through of the lab.
+[Create a Blockchain Network connecting 3 Organizations](videohub:1_9ze86gbw)
 
 ### Objectives
 
