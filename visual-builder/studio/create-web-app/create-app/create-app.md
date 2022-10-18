@@ -77,6 +77,8 @@ The first thing we'll do is add a web app to the HR visual application you just 
 
     Right-click the **main-start** tab to see how you can manage tabs in the tab bar. By default, the active tab will always be in focus.
 
+     ![The main-start page tab's right-click menu, with options to 'Close Tab', 'Close Other Tabs', 'Close Tabs to the Right', 'Close All Tabs', and 'Select in Navigator'.](images/tab.png "main-start page tab right-click menu")
+
     In the Web Apps pane, expand the **hrwebapp** and **main** nodes to get a tree view of your web application.
 
 ## Task 2: Create a Location business object and import data
@@ -139,9 +141,9 @@ Let's now create the Department and Employee business objects. But instead of cr
 
 4. On the Upload File step of the Import New Business Objects wizard, click the drag and drop box, select the `Department-Employee-BO.zip` file, and click **Upload**.
 
-  When the file is uploaded, you'll see a message that the import contains records for the Department and Employee business objects. Click **Next**.
+    When the file is uploaded, you'll see a message that the import contains records for the Department and Employee business objects. Click **Next**.
 
-  ![Import New Business Objects wizard on the Upload File screen. A zip file has been uploaded and the results show at the bottom.](images/import-bos-upload-result.png "Upload File Screen in the Import New Business Objects wizard")
+    ![Import New Business Objects wizard on the Upload File screen. A zip file has been uploaded and the results show at the bottom.](images/import-bos-upload-result.png "Upload File Screen in the Import New Business Objects wizard")
 
 5. On the Business Objects step, you'll see the definitions that will be used to create the Department and Employee business objects. Leave them as is and click **Next**.
 
@@ -150,11 +152,12 @@ Let's now create the Department and Employee business objects. But instead of cr
       * **Type**: **Reference** ![Reference icon](images/reference-icon.png)
       * **Referenced Business Object**: **Location** (the default for a **Referenced Business Object** is always the current business object (in this case, Department), so make sure you select **Location** from the drop-down list)
       * **Display Field**: **Location** (automatically populated)
-      ![Type option of the location field selected. A pop-up box shows the Type set to Reference, the Referenced Business Object set as Location, and the Default Field shown as Location.](images/import-bos-upload-fields-deptlocationfield.png "Type option of the location field")
 
-      Click **OK**.
+    ![Type option of the location field selected. A pop-up box shows the Type set to Reference, the Referenced Business Object set as Location, and the Default Field shown as Location.](images/import-bos-upload-fields-deptlocationfield.png "Type option of the location field")
 
-      A Reference field is like a foreign key in a database table: it's a field that refers to the key (the Id field) of another business object to link the two business objects together. When you create a department, you'll be able to specify one of the floors as the department's location.
+    Click **OK**.
+
+    A Reference field is like a foreign key in a database table: it's a field that refers to the key (the Id field) of another business object to link the two business objects together. When you create a department, you'll be able to specify one of the floors as the department's location.
 
 7. For the same **Location** field, click **Required** to deselect the setting (**Department** is the only required field for the Department object).
 
@@ -168,29 +171,29 @@ Let's now create the Department and Employee business objects. But instead of cr
 
 9. Remove **Required** for all Employee fields, except **Name**.
 
-  ![Employee object's fields. The Required column is highlighted and deselected for all fields, except Name.](images/import-bos-upload-fields-employee.png "Employee object's fields")
+    ![Employee object's fields. The Required column is highlighted and deselected for all fields, except Name.](images/import-bos-upload-fields-employee.png "Employee object's fields")
 
 10. Click **Finish**. When the import completes successfully, click **Close**.
 
-  ![The Applying Changes dialog, stating that data import finished successfully.](images/import-bos-result.png "Applying Changes dialog")
+    ![The Applying Changes dialog, stating that data import finished successfully.](images/import-bos-result.png "Applying Changes dialog")
 
 11. In the Business Objects pane, you'll now see two new business objects, each of which becomes a table in VB Studio's embedded database. Click **Department**, then **Data** to view four departments imported from the spreadsheet. See how the **location** column shows each department's floor, as defined in the referenced Location object.
 
-  ![The newly created Department and Employee objects on the Business Objects page. Department is open on the Data tab, showing four departments.](images/new-bos.png "Department and Employee objects")
+    ![The newly created Department and Employee objects on the Business Objects page. Department is open on the Data tab, showing four departments.](images/new-bos.png "Department and Employee objects")
 
 12. Click **Employee** in the Business Objects pane, then **Data** to view six employees imported from the spreadsheet. See how the **picture** column uses paths to images stored elsewhere. If you want to change the data, select a row and click ![Edit row icon](images/edit-row-icon.png).
 
 13. Now click **Endpoints** to view the Employee object's REST endpoints. These endpoints expose the object's data and let you perform operations to create, read, update, delete as well as query this data in your pages.
 
-  ![Endpoints tab for the Employee business object. It displays 5 endpoints for the Employee; the referenced departmentObject is not expanded. Above the Endpoints node are the Resource APIs and the Resource Cache Control nodes, which are also not expanded.](images/employee-bo-endpoints.png "Endpoints tab for the Employee business object")
+    ![Endpoints tab for the Employee business object. It displays 5 endpoints for the Employee; the referenced departmentObject is not expanded. Above the Endpoints node are the Resource APIs and the Resource Cache Control nodes, which are also not expanded.](images/employee-bo-endpoints.png "Endpoints tab for the Employee business object")
 
-  Because the Employee object refers to the Department object, you'll see the Department endpoints also listed here under **departmentObject**.
+     Because the Employee object refers to the Department object, you'll see the Department endpoints also listed here under **departmentObject**.
 
-  If you click an endpoint, an endpoint viewer displays details of endpoint settings and headers sent in a request. You can also test requests and view responses. To do this, click the **getall_Employee** endpoint, then in the Test tab, click **Send Request** (you can supply your own parameter values if you want):
+    If you click an endpoint, an endpoint viewer displays details of endpoint settings and headers sent in a request. You can also test requests and view responses. To do this, click the **getall_Employee** endpoint, then in the Test tab, click **Send Request** (you can supply your own parameter values if you want):
 
-  ![Test tab for the getall_Employee endpoint. When you click Send Request, the Response section shows the results in the Body tab.](images/employee-bo-endpoints-getall.png "Test tab for the getall_Employee endpoint")
+    ![Test tab for the getall_Employee endpoint. When you click Send Request, the Response section shows the results in the Body tab.](images/employee-bo-endpoints-getall.png "Test tab for the getall_Employee endpoint")
 
-  Click ![Back to Table icon](images/backtotable-icon.png) Endpoints to return to the main Endpoints page.
+    Click ![Back to Table icon](images/backtotable-icon.png) Endpoints to return to the main Endpoints page.
 
 ## Task 4: Create a business object diagram
 
@@ -215,4 +218,4 @@ Now that you have your business objects, create a diagram that visualizes the bu
 ## Acknowledgements
 
 * **Author** - Sheryl Manoharan, VB Studio User Assistance, November 2021
-* **Last Updated By/Date** - Sheryl Manoharan, July 2022
+* **Last Updated By/Date** - Sheryl Manoharan, October 2022
