@@ -159,7 +159,7 @@ Now that we have our web pages, let's change the application's home page from De
 
    ![The General tab of the Settings editor is shown. Under Flow Settings, the Default Page field lists the pages available for selection. The main-employees page is selected.](images/default-page-change.png "")
 
-3. Click **Diagram** to see the **main** flow's new navigation.
+3. Click **Diagram** to see the **main** flow's new navigation. Notice how the main-employees page is badged ![Default and Flow Entry badge](images/default-badge.png), indicating it as the starting page for your application. Previously, it was the main-departments page.
 
 4. Click **Preview** ![Preview icon](images/preview-icon.png) to see the HR app now open on the Employees page.
 
