@@ -6,6 +6,9 @@ Blockchain App Builder is a tool set that assists Oracle Blockchain Platform use
 
 *Estimated Lab Time:* 25 minutes
 
+Watch the video below for a quick walk-through of the lab.
+[Create and Deploy Smart Contracts using Oracle Blockchain App Builder](videohub:1_cmqtk3w0)
+
 ### About OBP Tokenization
 
 1. Tokenization is a process where physical or digital assets are represented by tokens, which can be transferred, tracked, and stored on a blockchain. By representing assets as tokens, you can use the blockchain ledger to establish the state and ownership of an asset and use standard blockchain platform functions to transfer ownership of an asset.
