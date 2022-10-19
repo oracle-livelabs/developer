@@ -51,7 +51,7 @@ Add a Delete button to remove a department, so user can remove a department if t
 
 ## Task 3: Test your new Department pages
 
-1. Click **Preview** ![Preview icon](images/preview-icon.png) to open the application in another browser tab. The three buttons you created are inactive.
+1. Click **Preview** ![Preview icon](images/preview-icon.png). The two buttons you created are inactive.
 
 2. Select a row. All the buttons are now active.
 3. Click **Edit Department**.
@@ -95,7 +95,7 @@ Now that we've added options to let users manage departments, we'll do the same 
 
 ## Task 5: Add a button to delete an employee
 
-1. Go to the **main-employees** page. If necessary, click the table, then **Quick Start** in the Properties pane.
+1. Go to the **main-employees** page. If necessary, select the table, then click **Quick Start** in the Properties pane.
 2. In the Quick Start menu, click **Add Delete Action**.
 3. On the Select Endpoint step of the Add Delete Action Quick Start, select **Employee** under Business Objects (if necessary) and click **Finish**.
 

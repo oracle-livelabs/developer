@@ -14,7 +14,7 @@ Each component depends on a _business object_ for its data. A business object is
 
 In this lab, you'll create the Employee, Department, and Location business objects for the HR web application. Each business object has its own set of fields as shown here:
 
-![Database schema for the HR visual web application. Every table has a system-defined Id field. The Location table has one user-defined field, Location. The Department table has two user-defined fields, Department and Location. The Employee table has seven user-defined fields: Country, Department, Email, Hire Date, Name, Picture, and Salary.](./images/dbdiagram.png "Database schema")
+![Database schema for the HR visual web application. Every table has a system-defined Id field. The Location table has one user-defined field, Location. The Department table has two user-defined fields, Department and Location. The Employee table has seven user-defined fields: Country, Department, Email, Hire Date, Name, Picture, and Salary.](images/dbdiagram.png "Database schema")
 
 ### Objectives
 
@@ -49,11 +49,11 @@ The first thing we'll do is add a web app to the HR visual application you just 
 
     On the left is the name of your current workspace, **HR Visual Application**; next to it is the project's Git repository (**tutorial-hr-project.git**) and the branch currently associated with your workspace (**hrbranch**). Click each option to see other actions that you can perform from here. Clicking ![Go to Project Page icon](images/go-to-project-home-icon.png) will take you back to the Project Home page.
 
-    Elements on the right let you perform various other actions. For example, you can undo your most recent change, redo a change after clicking Undo, or search the Git repository for a file. This workshop primarily demonstrates the options to preview your app and publish changes.
+    Elements on the right let you perform various other actions. For example, you can undo your most recent change, redo a change after clicking Undo, or search the Git repository for a file. This workshop primarily demonstrates the options to preview your app, share it, and publish changes.
 
 2. We want to create a web application, so under **Create Apps**, let's click the **Web Apps** tile.
 
-    The Web Apps pane opens in the navigator.
+    The Web Apps pane opens in the Navigator.
 
     ![Web Apps pane of the Navigator. There is a plus sign at the top and a + Web Application button at the bottom.](images/web-apps.png "Web Apps pane")
 
@@ -71,11 +71,11 @@ The first thing we'll do is add a web app to the HR visual application you just 
 
     On the far right is the **Properties** pane, which lets you view or edit a component's properties. When the entire page is selected (as it is now), the Properties pane shows the Page view, where you can choose a preferred page layout. Click **Properties** (the vertical tab located along the right-most edge of your browser) to hide the Properties pane and expand your work area.
 
-    You can also move different panes to customize your work area. For example, right-click **Structure** at the bottom of your work area, then select **Move to Top Left** to move the Structure view right under **Components** and **Data**.
+    You can move different panes to customize your work area. For example, right-click **Structure** at the bottom of your work area, then select **Move to Top Left** to move the Structure view right under **Components** and **Data**.
 
     ![Structure view's right-click menu, with the option to 'Move to Top Left' selected. Other options are 'Move to Bottom Left', 'Move to Top Right', 'Move to Bottom Right', and 'Reset All Panels to Default'.](images/structure-view-move.png "Structure view right-click menu")
 
-    Right-click the **main-start** tab to see how you can manage tabs in the tab bar. By default, the active tab will always be in focus.
+    See also how you can manage tabs that open in the tab bar. Right-click the **main-start** tab to see the available options. Note that the active tab will always be in focus.
 
      ![The main-start page tab's right-click menu, with options to 'Close Tab', 'Close Other Tabs', 'Close Tabs to the Right', 'Close All Tabs', and 'Select in Navigator'.](images/tab.png "main-start page tab right-click menu")
 
@@ -83,11 +83,11 @@ The first thing we'll do is add a web app to the HR visual application you just 
 
 ## Task 2: Create a Location business object and import data
 
-Let's create your first business object and add data to it by importing a CSV file. Every business object needs data associated with it, and there are many ways to do that, as you'll see.
+Let's now create your first business object and add data to it by importing a CSV file. Every business object needs data associated with it, and there are many ways to do that, as you'll see.
 
-1. Click **Business Objects** ![Business Objects icon](images/bo-icon.png) in the navigator.
+1. Click **Business Objects** ![Business Objects icon](images/bo-icon.png) in the Navigator.
 2. Click **\+ Business Object**.
-3. In the New Business Object dialog box, enter `Location` in the **Name** field. `Location` is also filled in automatically as the **Display Label** value. Click **Create**.
+3. In the New Business Object dialog box, enter `Location` in the **Name** field. `Location` is also filled in automatically as the **Display Label**. Click **Create**.
 4. Click **Fields** for the newly created Location business object.
 
     Every business object you create has five default fields: an id, plus fields that provide information on who created and updated the object and when.
@@ -109,7 +109,7 @@ Let's create your first business object and add data to it by importing a CSV fi
 
     ![Part of the Properties pane for the Location field. The Field Name value is location, the Display Label is Location, the Type is String, and the Value Calculation is None. Under Constraints, the Required check box is selected.](images/location-bo-location-required.png "Location field's Properties pane")
 
-    A check mark is displayed in the Required column for the Location field.
+    A check mark is displayed in the Location field's Required column.
 
 8. Click [this link](https://objectstorage.us-ashburn-1.oraclecloud.com/p/LNAcA6wNFvhkvHGPcWIbKlyGkicSOVCIgWLIu6t7W2BQfwq2NSLCsXpTL9wVzjuP/n/c4u04/b/livelabsfiles/o/developer-library/Location.csv) to download the `Location.csv` file to your file system. This file contains four locations and provides the data for the Location business object.
 
@@ -157,7 +157,7 @@ Let's now create the Department and Employee business objects. But instead of cr
 
     Click **OK**.
 
-    A Reference field is like a foreign key in a database table: it's a field that refers to the key (the Id field) of another business object to link the two business objects together. When you create a department, you'll be able to specify one of the floors as the department's location.
+    A Reference field is like a foreign key in a database table: it's a field that refers to the key (the Id field) of another business object to link the two business objects together. If you were to create a department now, you'll be able to specify one of the floors as the department's location.
 
 7. For the same **Location** field, click **Required** to deselect the setting (**Department** is the only required field for the Department object).
 

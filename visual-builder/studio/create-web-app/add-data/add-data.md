@@ -25,7 +25,7 @@ This lab assumes you have:
 
 1. Click **Workspaces**![Workspaces icon](images/vbs-workspaces-icon.png), then click **HR Visual Application** in the Workspaces table.
 2. Click **Web Applications** ![Web Applications icon](images/web-applications-icon.png), then **main-departments** under the **hrwebapp** and **main** nodes.
-3. In the Page Designer, click **Components** to open the Components palette. Enter `button` in the Filter field, then drag a **Button** from the Common category to the Toolbar, to the right of the Create Department button on the main-departments page.
+3. In the Page Designer, click **Components** to open the Components palette. Enter `button` in the Filter field, then drag a **Button** onto the Toolbar, to the right of the Create Department button on the main-departments page.
 
     ![The main-departments page is shown, with a Button component being dragged from the Components palette into the toolbar, next to the Create Department button.](images/departments-button.png "")
 
