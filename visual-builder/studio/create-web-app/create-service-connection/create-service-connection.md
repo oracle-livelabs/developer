@@ -8,7 +8,7 @@ Estimated Time:  15 minutes
 
 ### About this lab
 
-So far in this workshop, you've created business objects to store data in an embedded database and accessed that data through REST endpoints that were automatically created for you. But business objects aren't the only option for data access; in fact, you can connect to *any* REST-enabled data source by creating a *service connection*.
+So far in this workshop, you've created business objects to store your data in an embedded database and accessed that data through REST endpoints that were automatically created for you. But business objects aren't the only option for data access; in fact, you can connect to *any* REST-based data source by creating a *service connection*.
 
 Service connections let you access data objects exposed by Oracle services as well as external services. If you want to connect to REST APIs exposed by Oracle Cloud Applications or Oracle Integration, you have access to an integrated service catalog. If you want to call an external REST service, you can do that too with just a few clicks. In this lab, we'll create a service connection to a publicly available REST service and wire our pages to get information about the country that an employee works from.
 
