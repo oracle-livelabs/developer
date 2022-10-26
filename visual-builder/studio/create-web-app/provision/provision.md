@@ -33,15 +33,21 @@ Provision a service instance of Visual Builder to host apps created in VB Studio
 
 1. To create a Visual Builder instance, you must first create a compartment. You can use the root compartment and the tenancy user that was created when the OCI account was created, but it's recommended to create a dedicated compartment to host the Visual Builder instance.
 
-   a. On the Oracle Cloud Get Started page, click the menu in the upper left corner.
+   a. On the Oracle Cloud Get Started page, click the menu ![Menu icon](images/hamburger.png) in the upper left corner.
 
    b. Select **Identity & Security**, then **Compartments** under **Identity**.
 
+   ![This image shows navigation to Identity & Security, Compartments, then Identity.](images/oci-compartments.png "")
+
    c. Click **Create Compartment**.
 
-   d. Enter a name, add a description, and leave the Parent Compartment set to the default root compartment. Click **Create Compartment**.
+   ![This image shows a list of existing compartments on the Compartments page. The Create Compartment button is highlighted.](images/oci-compartments-create.png "")
 
-2. Return to the Oracle Cloud Get Started page and click ![Menu icon](images/hamburger.png) in the upper left corner to display the services you can provision.
+   d. Enter `VBCompartment` as the name, add a description (for example, `VBCompartment for workshop`), and leave the Parent Compartment set to the default root compartment. Click **Create Compartment**.
+
+   ![This image shows the Create Compartment dialog with fields filled in.](images/oci-compartments-vb-create-details.png "")
+
+2. Return to the Oracle Cloud Get Started page and click the menu in the upper left corner to display the services you can provision.
 
    <!-- ![The hamburger menu on the Oracle Cloud Get Started page is highlighted.](images/hamburger.png "") -->
 
@@ -49,7 +55,7 @@ Provision a service instance of Visual Builder to host apps created in VB Studio
 
     ![Navigation to Visual Builder under Developer Services is shown.](images/platform.png "")
 
-4. In the **Compartment** field on the Visual Builder instances page, select the compartment you created to host the Visual Builder instance, then click **Create Instance**:
+4. In the **Compartment** field on the Visual Builder instances page, select the `VBCompartment` you created to host the Visual Builder instance, then click **Create Instance**:
 
     ![The Visual Builder Instances screen is shown, with the Compartment drop-down on the left and the Create Instance button on the right.](images/create-instance.png " ")
 
@@ -65,7 +71,7 @@ Provision a service instance of Visual Builder to host apps created in VB Studio
 
 ## Task 2: Create an instance of VB Studio
 
-Provision a service instance of VB Studio to develop and deploy your web app. You can create only one VB Studio instance in an Oracle Cloud account. Before you attempt to create an instance, make sure there's no existing VB Studio instance in your account.
+Provision a service instance of VB Studio to develop and deploy your web app. You can create only one VB Studio instance in an Oracle Cloud account. Before you attempt to create an instance, make sure your account has no other VB Studio instance provisioned.
 
 1. Navigate back to your Cloud Console and click the menu in the upper left corner, click **OCI Classic Services**, then select **Developer**.
 
@@ -90,13 +96,13 @@ Provision a service instance of VB Studio to develop and deploy your web app. Yo
    The VB Studio console opens in a new browser tab, on the Organization page in the Projects tab.
    ![This image shows the landing page when VB Studio is opened.](images/vbs-home.png "")
 
-   When you first log in, you see the Welcome page with a link to an introductory video, along with a news feed of additional screens. Close **X** to dismiss the news feed and expand your work area.
+   When you first log in, you see the Welcome page with a link to an introductory video, along with a news feed of additional screens. Close **X** to dismiss the news feed and expand your work area. Close the news banner prompt.
 
-   It's also a good idea to set your preferences. To do this, click the user initials in the upper right corner, and select **Preferences**. Use this page to change your display name, set an avatar, change the email address, or set email notification preferences. The email address (yours as well as that of any teammates you add to the project) must be verified and notifications set properly to be able to receive email.
+   Now is a good time to set your preferences. To do this, click the user initials in the upper right corner, and select **Preferences**. Use this page to change your display name, set an avatar, change the email address, or set email notification preferences. The email address (yours as well as that of any teammates you add to the project) must be verified and notifications set properly to be able to receive email.
 
    ![This image shows the options available when the User icon is clicked. Preferences is selected.](images/preferences.png "")
 
-   You are now ready to create a project but before you do that, you might want to check if your instance is preconfigured with a built-in Oracle Cloud Infrastructure (OCI) account, which lets you access resources to run builds in VB Studio. This free account isn't available in all OCI regions and data centers, so click the **OCI Account** tab to check if your instance includes it. If you see something similar to this image, it means your instance is connected to the built-in free account:
+   You are now ready to create a project, but before you do that, you might want to check if your instance is preconfigured with a built-in Oracle Cloud Infrastructure (OCI) account, which lets you access resources to run builds in VB Studio. This free account isn't available in all OCI regions and data centers, so click the **OCI Account** tab to check if your instance includes it. If you see something similar to this image, it means your instance is connected to the built-in free account:
 
   ![This image shows the OCI Account tab when a free Built-in account is available. A Built-in Free section on the left shows the instance connected by default using this free account. On the right, a Connect Your Own section provides an option to connect your own OCI Account to the instance.](images/oci-free-account.png "")
 
@@ -114,7 +120,7 @@ To connect your VB Studio instance to OCI resources such as VMs for builds and s
 
    b. Click **Create Compartment**.
 
-      ![This image shows a list of existing compartments on the Compartments page. The Create Compartment button is highlighted.](images/oci-compartments-create.png "")
+      ![This image shows a list of existing compartments on the Compartments page. The Create Compartment button is highlighted.](images/oci-compartments-create-vbs.png "")
 
    c. Enter `VBStudioCompartment` as the Name, add a description (for example, `VBStudioCompartment for workshop`), and leave the Parent Compartment set to the default root compartment. Click **Create Compartment**.
 

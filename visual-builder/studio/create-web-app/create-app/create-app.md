@@ -43,13 +43,20 @@ The first thing we'll do is add a web app to the HR visual application you just 
 
     The Welcome page contains a set of tiles in three groups: **Connect to Data**, **Create Apps**, and **Add Artifacts**. On the far left are icons representing Mobile Applications, Web Applications, Services, Business Objects, Layouts, Components, Processes, Source, and Git artifacts. This vertical toolbar is the Navigator, which helps you move between the artifacts in your visual application.
 
-    Now take note of the header:
+    Take note of the header:
 
     ![Header in the HR Visual Application workspace. The workspace name HR Visual Application is on the left. Next to it, the Git repository and current branch tutorial-hr-project.git / hrbranch are visible. On the right are icons that let you perform other actions: Undo, Redo, Preview, Publish Changes, Product Feedback, Go to File, and Menu.](images/header.png "Header")
 
     On the left is the name of your current workspace, **HR Visual Application**; next to it is the project's Git repository and the branch currently associated with your workspace (**tutorial-hr-project.git/hrbranch**). Click each option to see other actions that you can perform from here. Clicking ![Go to Project Page icon](images/go-to-project-home-icon.png) will take you back to the Project Home page.
 
     Elements on the right let you perform various other actions, such as undo a change or search the Git repository for a file. This workshop primarily demonstrates the options to preview your app, share it, and publish changes. If you make a mistake during this lab, click Undo to back out of the last step you did.
+
+    Now take a look at the footer, which has tools that help you debug and maintain your visual app (we'll briefly look at Audits and Git History in this workshop):
+
+    ![Footer in the HR Visual Application workspace, which shows Audits, Find in Files, Git History, and Tests tabs.](images/footer.png "Header")
+
+
+    Keep in mind that VB Studio saves your changes automatically as you work. A timestamp at the bottom of the page will show the time  your work was last saved. Note that your changes are only saved to your local workspace repo—but more on that later.
 
 2. We want to create a web application, so under **Create Apps**, let's click the **Web Apps** tile.
 
@@ -63,21 +70,21 @@ The first thing we'll do is add a web app to the HR visual application you just 
 
     The application opens on the **main-start** page, which is your application's default home page created automatically for you. (Ignore the **This dot says that you have made some changes** dialog that appears in the header for now; we'll explore Git changes in a later lab.)
 
-    What you see under the **main-start** tab is your application's main work area:
     ![Web Apps pane after the hrwebapp has been created. The app itself is open on the right, on the main-start page, showing the Components Palette. On the far right, the Properties tab shows the Page view.](images/designer.png "Web Apps pane with the hrwebapp")
 
-    Here are the key areas you'll use throughout this workshop:
+    What you see under the **main-start** tab is your application's main work area. Just under main-start are several horizontal tabs: **Page Designer**, **Actions**, **Event Listeners**, and so on. Each tab provides editors to help you examine and modify artifacts used in the page. By default, the page opens in the **Page Designer**, which is where you'll do the bulk of your work in VB Studio.
+
+    Here are the main Page Designer areas you'll use throughout this workshop:
     | # | Tab | Functionality |
     | --- | ---- | --- |
-    | 1 | Editors | Horizontal tabs (**Page Designer**, **Actions**, and so on) that provide editors to help you examine and modify artifacts used in the page |
-    | 2 | Components | UI components (sorted by categories) that you can drag and drop onto a page|
-    | 3 | Data | Data endpoints based on business objects you create |
-    | 4 | Structure | Hierarchical view of the page's structure  |
-    | 5 | Properties | Properties for a component selected in your page. When the entire page is selected (as it is now), you'll see the Page view where you can choose a preferred page layout.|
-    | 6 | Canvas | A design/live view (or code view) of your page content |
-    {: title="Work Area"}
+    | 1 | Components | UI components (sorted by categories) that you can drag and drop onto a page|
+    | 2 | Data | Data endpoints based on business objects you create |
+    | 3 | Structure | Hierarchical view of the page's structure  |
+    | 4 | Properties | Properties for a component selected in your page. When the entire page is selected (as it is now), you'll see the Page view where you can choose a preferred page layout.|
+    | 5 | Canvas | A design, live, or code view of your page content |
+    {: title="Page Designer Work Area"}
 
-    As you design pages, you can collapse and expand tabs to better manage your working area. For example, click **Properties** to hide the Properties pane and expand your work area. When collapsed, the tab will show as a vertical tab on the side of the editor. To expand or collapse a tab, click that specific tab.
+    You can collapse and expand tabs to better manage your working area. For example, click **Properties** to hide the Properties pane and expand your work area. When collapsed, the tab will show as a vertical tab on the side of the editor. Click the tab again to expand it.
 
     You can also move different panes to customize your work area. For example, right-click **Structure** at the bottom of your work area, then select **Move to Top Left** to move the Structure view right under **Components** and **Data**.
 
@@ -91,7 +98,7 @@ The first thing we'll do is add a web app to the HR visual application you just 
 
      ![The Web Apps pane shows the hrwebapp's tree view. Under hrwebapp, main is expanded with main-start nested under. At the same level as main are the Fragments, Resources, and Root Pages nodes.](images/treeview.png "")
 
-    A _flow_ contains pages that relate to each other. An application can have multiple flows, and a flow can contain many pages. This simple application contains only one flow, **main**, and one page, **main-start**, though we'll add more pages during this workshop. By convention, a page takes its flow name as a prefix.
+    A _flow_ contains pages that relate to each other. An application can have multiple flows, and a flow can contain many pages. This simple application contains only one flow, **main**, and one page, **main-start**—though we'll add more pages during this workshop. By convention, a page takes its flow name as a prefix.
 
 ## Task 2: Create a Location business object and import data
 
