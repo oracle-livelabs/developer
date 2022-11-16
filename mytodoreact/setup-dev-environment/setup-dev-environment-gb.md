@@ -30,7 +30,7 @@ The Oracle Cloud Shell is a small virtual machine running a Bash shell that you 
 
 	``` bash
 	<copy>
-	git clone https://github.com/oracle/oci-react-samples.git
+	git clone --single-branch --branch helidon https://github.com/oracle/oci-react-samples.git
 	</copy>
 	```
 

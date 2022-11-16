@@ -6,7 +6,7 @@ Welcome to the Python and Oracle Database Workshop. In this tutorial, you will l
 - Execute queries and fetch data
 - Use bind variables
 - Use PL/SQL stored functions and procedures
-- Extend cx_Oracle classes
+- Extend python-oracledb classes
 - Use Oracle Advanced Queuing
 
 

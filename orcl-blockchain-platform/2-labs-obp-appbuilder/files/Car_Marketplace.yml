@@ -1,0 +1,130 @@
+assets:
+    - name: car              # Information about the car
+      properties:
+          - name: vin         # Vehicle identification number
+            type: string
+            mandatory: true
+            id: true
+            validate: min(17),max(17)   # Always 17 characters - additional validation possible
+          - name: make        # Manufacturer, limited to one of: Cheverolet,Ford,General Motors,Toyota,Hyundai,Tesla,Tata,Fiat,Volkswagen,Peugeot
+            type: string
+            validate: /^\s*(cheverolet|ford|general\smotors|toyota|hyundai|tesla|tata|fiat|volkswagen|peugeot)\s*$/
+            mandatory: true
+          - name: model       # Model name
+            type: string
+            mandatory: true
+          - name: year        # Model year
+            type: number
+            mandatory: true
+            validate: min(1910),max(2020)
+          - name: ownerId     # Id of the current owner
+            type: string
+            mandatory: true
+          - name: price       # Current price of the vehicle
+            type: number
+            validate: positive()
+            mandatory: true
+          - name: lastSold    #Optional if car is brand new (has not been sold)
+            type: date
+            mandatory: false
+          - name: mileage    
+            type: number
+            mandatory: true
+          - name: description  #Car description
+            type: string
+            mandatory: false
+          - name: carImage  
+            type: string
+            mandatory: false   
+          - name: forSale      #Dealer choses to make car available for sale. ex. 'true' or 'false'
+            type: boolean
+            mandatory: true
+      methods:
+          crud: [create, getById, update]
+          others: [getHistoryById, getByRange]
+    - name: dealer            # Informmation about the dealer
+      properties:
+          - name: dealerId    # Unique ID for each dealer
+            type: string
+            mandatory: true
+            id: true
+          - name: name        # Name of the dealer
+            type: string
+            mandatory: true
+          - name: phone       # Phone number - validate as (ddd)-ddd-dddd where dashes could also be periods or spaces
+            type: string
+            mandatory: true
+            validate: /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/
+          - name: email       # Dealer's email address
+            type: string
+            validate: email() # Validate it as a valid email address
+            mandatory: true
+          - name: inventory   # The list of car VINs owned by this dealer. Inventory could be empty
+            type: string[]
+            mandatory: false
+      methods:
+        crud: [create, getById, update]
+    - name: invoice            #An invoice is a bill that details goods and services that have been or will be purchased by a buyer
+      properties:
+          - name: invoiceId
+            type: string
+            mandatory: true
+            id: true
+            derived:
+                strategy: concat
+                format: ["INV%t"] 
+          - name: po_number      #Purcahse Order (PO) association
+            type: string
+            mandatory: true
+          - name: status         #Has invoice been paid     
+            type: boolean
+            mandatory: true
+          - name: vin
+            type: string
+            mandatory: true
+          - name: price
+            type: number
+            mandatory: true
+          - name: recipient
+            type: string
+            mandatory: true
+      methods:
+        crud: [create, getById, update]
+        others: [getByRange]
+    - name: PO       
+      properties:
+          - name: PO    
+            type: string
+            mandatory: true
+            id: true
+            derived:
+                strategy: concat
+                format: ["PO%t"] 
+          - name: vin        
+            type: string
+            mandatory: true
+          - name: orderStatus #Pending, Processed, Rejected, Delivered 
+            type: string
+            mandatory: true
+          - name: orderProcessed  #true or false
+            type: boolean
+            mandatory: true
+          - name: recipient    
+            type: string
+            mandatory: true
+          - name: purchaser    
+            type: string
+            mandatory: false
+          - name: invoiceId   
+            type: string
+            mandatory: false
+      methods:
+        crud: [create, getById, update]
+        others: [getByRange]
+customMethods:
+    - executeQuery
+    - "CreateCarWrapper()"
+    - "CreatePOWrapper()"
+    - "UpdatePOWrapper()"
+    - "CarTransfer(vin string, buyerId string, sellerId string, price int, PO string, date string)" #Only happens after PO confirm receipt or resolve is accepted
+    

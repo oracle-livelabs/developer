@@ -1,0 +1,44 @@
+{
+    "workshoptitle": "Project Panama Hands-On Lab",
+    "help": "java_devrel_grp@oracle.com",
+    "tutorials": [
+        {
+            "title": "Get Started",
+            "description": "Prerequisites for LiveLabs (Oracle-owned tenancies). The title of the lab and the Contents Menu title (the title above) match for Prerequisite lab. This lab is always first.",
+            "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/cloud-login-livelabs2.md"
+        },
+        {
+            "title": "Introduction",
+            "filename": "../../introduction.md"
+        },
+        {
+            "title": "Lab 1: Your workshop environment",
+            "filename": "../../environment.md"
+        },
+        {
+            "title": "Lab 2: Foreign Function & Memory API",
+            "filename": "../../ffm-intro.md"
+        },
+        {
+            "title": "Lab 3: A Simple Downcall",
+            "filename": "../../simple-downcall.md"
+        },
+        {
+            "title": "Lab 4: Upcalls",
+            "filename": "../../upcall.md"
+        },
+        {
+            "title": "Lab 5: Using jextract",
+            "filename": "../../jextract.md"
+        },
+        {
+            "title": "Conclusion",
+            "description": "",
+            "filename": "../../conclusion.md"
+        },
+        {
+            "title": "JavaOne / CloudWorld - Get Help",
+            "filename": "https://oracle-livelabs.github.io/common/support/ocwsupportlab/ocwsupportlab.md"
+        }
+    ]
+}
