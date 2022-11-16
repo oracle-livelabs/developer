@@ -187,7 +187,7 @@ A wizard will walk you through the steps of configuring the Business Service. Th
 12. Confirm http is selected in the transport field
 13. Confirm Endpoint URI* is pointed to the ValidatePayment composite app. It should look similar to:
 
-`http://localhost:7101/soa-infra/services/default/ValidatePayment/validatepaymentprocess_client_ep`
+`http://localhost:7102/soa-infra/services/default/ValidatePayment/validatepaymentprocess_client_ep`
 
 14. Click **Finish**. The canvas would now resemble like:
 
