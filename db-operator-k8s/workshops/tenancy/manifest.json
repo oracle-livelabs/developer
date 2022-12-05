@@ -1,0 +1,46 @@
+{
+    "workshoptitle": "Oracle Database Kubernetes Operator",
+    "help": "jan.leemans@oracle.com",
+    "tutorials": [
+        {
+            "title": "Introduction",
+            "description": "Introduction to the lab sequence.",
+            "filename": "../../introduction/introduction.md"
+        },
+        {
+            "title": "Access your Cloud Account",
+            "description": "How to get access to an OCI tenancy to run this lab.",
+            "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/pre-register-free-tier-account.md"
+        },
+        {
+            "title": "Lab 1: Set up an Oracle Kubernetes Engine instance on OCI",
+            "description": "OKE instance setup in your tenancy.",
+            "filename": "../../setup-oke/setup-oke.md"
+        },
+        {
+            "title": "Lab 2: Install the Oracle Database Kubernetes Operator",
+            "description": "Oracle DB Operator installation into OKE.",
+            "filename": "../../install-operator/install-operator.md"
+        },
+        {
+            "title": "Lab 3: Deploy a SingleInstance Database using a dynamically allocated Block Volume",
+            "description": "Deploy DB on dynamic Block Volume.",
+            "filename": "../../deploy-db-bv/deploy-db-on-bv.md"
+        },
+        {
+            "title": "Lab 4: Deploy a SingleInstance Database using a static NFS filesystem",
+            "description": "Deploy DB on NFS Volume.",
+            "filename": "../../deploy-db-fss/deploy-db-on-fss.md"
+        },
+        {
+            "title": "Lab 5: Failover to another node and redeploying the DB",
+            "description": "Test DB failover to another node of K8S ckuster.",
+            "filename": "../../db-actions/db-actions.md"
+        },
+        {
+            "title": "Need Help?",
+            "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+            "filename": "https://oracle-livelabs.github.io/common/labs/need-help/need-help-livelabs.md"
+        }
+    ]
+}
