@@ -21,7 +21,7 @@ Estimated Lab Time: 20 minutes
 
 
 ## Task 1: Prepare your NFS persistent volume
-1. On the OCI console, navigate to **Storage**, section **File Storage**, and select **Mount Targets**
+On the OCI console, navigate to **Storage**, section **File Storage**, and select **Mount Targets**
    Create a new mount target using the **Create Mount Target** button.
 
    - Make sure to select the **Virtual Cloud Network** that was created as part of the OKE Cluster creation - it will have a name starting with `oke-vcn-quick-...`
@@ -43,7 +43,7 @@ Estimated Lab Time: 20 minutes
 
      
 
-2. Now navigate to the **File Storage**, then **File Systems** menu, and click the **Create File System** button
+Now navigate to the **File Storage**, then **File Systems** menu, and click the **Create File System** button
 
    - All parameters are pre-filled, just validate the selected Mount Target is indeed the mount target you just created
 
@@ -59,7 +59,7 @@ Estimated Lab Time: 20 minutes
 
      ![FS created](images/fs-ready.png)
 
-3. To finalize the configuration of the volume we need to **open the appropriate ports** on the subnet used to allow the Kubernetes nodes and the NFS volume to communicate with each other : 
+To finalize the configuration of the volume we need to **open the appropriate ports** on the subnet used to allow the Kubernetes nodes and the NFS volume to communicate with each other : 
 
    - Navigate to **Networking**, and select **Virtual Cloud Networks**
 
@@ -87,13 +87,13 @@ Estimated Lab Time: 20 minutes
 
    - Here click the **Add Egress Rules** to create a Stateful *egress* from **TCP** ALL ports to ports 111, 2048, 2049, and 2050 in *destination CIDR block*.
 
-     - **Source CIDR** : 0.0.0.0/0
+     - **Destination CIDR** : 0.0.0.0/0
      - IP Protocol: TCP
      - Destination Port Range: 111,2048,2049,2050
 
    - Repeat the operation but this time specifying the **UDP protocol** to set a Stateful *egress* from **UDP** ALL ports to port 111 in *destination CIDR block*.
 
-     - **Source CIDR** : 0.0.0.0/0
+     - **Destination CIDR** : 0.0.0.0/0
 
      - IP Protocol: UDP
 
@@ -101,7 +101,7 @@ Estimated Lab Time: 20 minutes
 
        
 
-4. Next we need to create a kubernetes **persistent volume** that points to the configuration we just created.  To do this, we'll use the OCI Cloud shell command interface
+Next we need to create a kubernetes **persistent volume** that points to the configuration we just created.  To do this, we'll use the OCI Cloud shell command interface
 
    - Edit a new file to contain the definition of the persistent volume, using the `vi` or `nano` editor
 
@@ -109,7 +109,7 @@ Estimated Lab Time: 20 minutes
 
      - Paste the below content into the file
 
-       - ```
+        ```
             apiVersion: v1
             kind: PersistentVolume
             metadata:
@@ -121,11 +121,11 @@ Estimated Lab Time: 20 minutes
               volumeMode: Filesystem
               accessModes:
                - ReadWriteMany
-                 persistentVolumeReclaimPolicy: Retain
-                   csi:
-                     driver: fss.csi.oraclecloud.com
-                     volumeHandle: <OCID of the file system>:<Mount Target IP Address>:/<Export Path>"
-            ```
+              persistentVolumeReclaimPolicy: Retain
+              csi:
+                driver: fss.csi.oraclecloud.com
+                volumeHandle: <OCID of the file system>:<Mount Target IP Address>:/<Export Path>"
+        ```
 
      - Replace the placeholders for the parameter `volumeHandle`: 
 
@@ -135,9 +135,9 @@ Estimated Lab Time: 20 minutes
 
        - Example `volumeHandle`: 
 
-            ```
-            volumeHandle: "ocid1.filesystem.oc1.eu_frankfurt_1.aaaaaqe3bj...eaaa:10.0.10.156:/FileSystem-20220713-1036-02"
-            ```
+        ```
+        volumeHandle: "ocid1.filesystem.oc1.eu_frankfurt_1.aaaaaqe3bj...eaaa:10.0.10.156:/FileSystem-20220713-1036-02"
+        ```
 
    - Now apply the config using `kubectl`: 
 
@@ -153,7 +153,7 @@ Estimated Lab Time: 20 minutes
 
 ## Task 2: Creating the DB Config file for the Operator
 
-To initiate the creation of the database by the Operator we'll have to create a config file describing the desired database setup.  For this lab we'll use the file [singleinstancedatabase_fss.yaml](https://github.com/oracle/cloudtestdrive/blob/master/AppDev/database-operator/deploy-db-fss/singleinstancedatabase_fss.yaml) which contains a configuration ready to use for this part of the lab.
+To initiate the creation of the database by the Operator we'll have to create a config file describing the desired database setup.  For this lab we'll use the file [singleinstancedatabase_fss.yaml](https://github.com/oracle-livelabs/developer/blob/main/db-operator-k8s/deploy-db-fss/files/singleinstancedatabase-fss.yaml) which contains a configuration ready to use for this part of the lab.
 
 We'll be highlighting some of the sections of this file that differ from the first lab we ran:
 
@@ -192,7 +192,7 @@ Launching the creation of the database is done through the same single command a
 1. Apply the config file to initiate the DB creation : 
 
 ```
-kubectl apply -f https://raw.githubusercontent.com/oracle/cloudtestdrive/master/AppDev/database-operator/deploy-db-fss/singleinstancedatabase_fss.yaml
+kubectl apply -f https://raw.githubusercontent.com/oracle-livelabs/developer/main/db-operator-k8s/deploy-db-fss/files/singleinstancedatabase-fss.yaml
 ```
 
 2. You can validate the process of creation of the database as in the pevious lab, using the below set of commands :
@@ -225,10 +225,10 @@ kubectl logs -n oracle-database-operator-system oracle-database-operator-control
   kubectl get singleinstancedatabase sidb-test2 -o "jsonpath={.status.pdbConnectString}" && echo -e "\n"
   ```
 
-- Use your string to compose a command looking like the below, replacing <your_passwd> with the one you specified:
+- Use your string to compose a command looking like the below, replacing \<your_passwd\> with the one you specified:
 
   ```
-  sqlplus sys/<your_passwd>@132.145.249.43:1521/ORCLPDB1 as sysdba
+  sqlplus sys/\<your_passwd\>@132.145.249.43:1521/ORCLPDB1 as sysdba
   ```
 
   

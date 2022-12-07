@@ -26,10 +26,10 @@ Estimated Lab Time: 10 minutes
   kubectl get singleinstancedatabase sidb-test2 -o "jsonpath={.status.pdbConnectString}" && echo -e "\n"
   ```
 
-- Use your string to compose a command looking like the below, replacing <your_passwd> with the one you specified:
+- Use your connect string to compose a command looking like the below, replacing \<your_passwd\> with the one you specified:
 
   ```
-  sqlplus sys/<your_passwd>@132.145.249.43:1521/ORCLPDB1 as sysdba
+  sqlplus sys/\<your_passwd\>@132.145.249.43:1521/ORCLPDB1 as sysdba
   ```
 
 
@@ -69,7 +69,7 @@ Estimated Lab Time: 10 minutes
 
    - Click on the instance that had the active pod
    - Click on the **Stop** button to stop the instance, then the **Stop Instance** button
-   - In the Cloud Shell, you can enter the command `kubectl get nodes`to detect the moment the kubernetes cluster detects the stop of the node
+   - In the Cloud Shell, you can enter the command `kubectl get nodes` to detect the moment the kubernetes cluster detects the stop of the node
    - Now re-issue the command to visualize the pods `kubectl get pods -o wide` and notice another pod has become active, running on another node of the cluster 
 
    
@@ -84,6 +84,15 @@ Congratulations, you tested the failover of the database across the cluster node
 
 You finished this lab, please don't hesitate to visit the documentation  on the [Single Instance Databases with Oracle Database Operator for Kubernetes](https://github.com/oracle/oracle-database-operator/blob/main/docs/sidb/README.md) page for more options. 
 
+
+
+In case you want to free up the resources taken up by this database (three pods in your Kubernetes cluser and a load balancer), you can issue the following command to delete the database :
+
+````
+kubectl delete singleinstancedatabase.database.oracle.com sidb-test2
+````
+
+The NFS volume you used has been created separately and will survive the deletion of the instance, so you should delete the File system and Mount Point manually via the OCI console.
 
 
 ## Acknowledgements

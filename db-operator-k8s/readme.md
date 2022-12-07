@@ -6,5 +6,5 @@ This folder contains the material for running the Oracle Database Kubernetes Ope
 
 
 
-- Best way to experience this lab : use the [LiveLab Webpage](https://oracle.github.io/cloudtestdrive/AppDev/database-operator/workshops/freetier/) visualization
+- Best way to experience this lab : use the [LiveLab Webpage](https://oracle-livelabs.github.io/developer/db-operator-k8s/workshops/tenancy/) visualization
 

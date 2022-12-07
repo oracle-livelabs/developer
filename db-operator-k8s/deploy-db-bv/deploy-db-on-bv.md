@@ -39,17 +39,17 @@ In kubernetes we store these passwords in secrets.
 
    Please note we're assuming you are in the home directory of your cloud shell, if not please make sure to correct the path to the .docker directory accordingly.
 
-3. Let's now create a secret containing the admin password we'll want to specify for the new database: 
+3. Let's now create a secret containing the **admin password** we'll want to specify for the new database: 
 
    ```
-   kubectl create secret generic admin-secret --from-literal=oracle_pwd=Oracle123456
+   kubectl create secret generic admin-secret --from-literal=oracle_pwd=Your-DB-Password
    ```
-
+   Replace `Your-DB-Password` with a password of your choosing, it should be 12 characters long, have letters, numbers and Capitals
 
 
 ## Task 2: Creating the DB Config file for the Operator
 
-To initiate the creation of the database by the Operator we'll have to create a config file describing the desired database setup.  For this lab we'll use the file [singleinstancedatabase_create.yaml](https://github.com/oracle/cloudtestdrive/blob/master/AppDev/database-operator/deploy-db-bv/singleinstancedatabase_create.yaml) which contains a configuration ready to use for this part of the lab.
+To initiate the creation of the database by the Operator we'll have to create a config file describing the desired database setup.  For this lab we'll use the file [singleinstancedatabase-create.yaml](https://github.com/oracle-livelabs/developer/blob/main/db-operator-k8s/deploy-db-bv/singleinstancedatabase-create.yaml) which contains a configuration ready to use for this part of the lab.
 
 We'll be highlighting some of the sections of this file below :
 
@@ -106,7 +106,7 @@ In this section we'll explain a number of commands that allow you to track what 
 1. Apply the config file to initiate the DB creation : 
 
 ```
-kubectl apply -f https://raw.githubusercontent.com/oracle/cloudtestdrive/master/AppDev/database-operator/deploy-db-bv/singleinstancedatabase_create.yaml
+kubectl apply -f https://raw.githubusercontent.com/oracle-livelabs/developer/main/db-operator-k8s/deploy-db-bv/files/singleinstancedatabase-create.yaml
 ```
 
 2. Validate the instance definition was submitted to the operator:
@@ -269,7 +269,7 @@ Alternatively, you can use the command line to connect via sqlplus:
 - Use your string to compose a command looking like the below, replacing \<your_passwd\> with the one you specified:
 
   ```
-  sqlplus sys/<your_passwd>@132.145.249.43:1521/ORCLPDB1 as sysdba
+  sqlplus sys/\<your_passwd\>@132.145.249.43:1521/ORCLPDB1 as sysdba
   ```
 
   You can quit sqlplus with the `quit` command.
@@ -279,7 +279,14 @@ Alternatively, you can use the command line to connect via sqlplus:
 Congratulations, your database is up and running, and you are able to connect to it through Enterprise Manager and Sqlplus !  You may now **proceed to the next lab**.
 
 
+We will not use the database instance `sidb-test1` in this lab anymore.  In case you want to free up the resources taken up by this database (a pod in your Kubernetes cluser, a Block Volume and a load balancer), you can issue the following command to delete the database and automatically delete the associated resources:
+
+````
+kubectl delete singleinstancedatabase.database.oracle.com sidb-test1
+````
+
+
 
 ## Acknowledgements
 * **Author** - Jan Leemans, July 2022
-* **Last Updated By/Date**
+* **Last Updated By/Date** - Jan Leemans, December 2022 
