@@ -266,10 +266,10 @@ Alternatively, you can use the command line to connect via sqlplus:
   132.145.249.43:1521/ORCLPDB1
   ```
 
-- Use your string to compose a command looking like the below, replacing \<your_passwd\> with the one you specified:
+- Use your string to compose a command looking like the below, replacing **Your_passwd** with the one you specified:
 
   ```
-  sqlplus sys/\<your_passwd\>@132.145.249.43:1521/ORCLPDB1 as sysdba
+  sqlplus sys/Your_Passwd@132.145.249.43:1521/ORCLPDB1 as sysdba
   ```
 
   You can quit sqlplus with the `quit` command.

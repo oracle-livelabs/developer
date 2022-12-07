@@ -26,10 +26,10 @@ Estimated Lab Time: 10 minutes
   kubectl get singleinstancedatabase sidb-test2 -o "jsonpath={.status.pdbConnectString}" && echo -e "\n"
   ```
 
-- Use your connect string to compose a command looking like the below, replacing \<your_passwd\> with the one you specified:
+- Use your connect string to compose a command looking like the below, replacing Your_Passwd with the one you specified:
 
   ```
-  sqlplus sys/\<your_passwd\>@132.145.249.43:1521/ORCLPDB1 as sysdba
+  sqlplus sys/Your_Passwd@132.145.249.43:1521/ORCLPDB1 as sysdba
   ```
 
 

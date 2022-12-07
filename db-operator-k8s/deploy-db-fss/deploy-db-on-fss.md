@@ -124,7 +124,7 @@ Next we need to create a kubernetes **persistent volume** that points to the con
               persistentVolumeReclaimPolicy: Retain
               csi:
                 driver: fss.csi.oraclecloud.com
-                volumeHandle: <OCID of the file system>:<Mount Target IP Address>:/<Export Path>"
+                volumeHandle: "<OCID of the file system>:<Mount Target IP Address>:/<Export Path>"
         ```
 
      - Replace the placeholders for the parameter `volumeHandle`: 
@@ -225,10 +225,10 @@ kubectl logs -n oracle-database-operator-system oracle-database-operator-control
   kubectl get singleinstancedatabase sidb-test2 -o "jsonpath={.status.pdbConnectString}" && echo -e "\n"
   ```
 
-- Use your string to compose a command looking like the below, replacing \<your_passwd\> with the one you specified:
+- Use your string to compose a command looking like the below, replacing **Your_Passwd** with the one you specified:
 
   ```
-  sqlplus sys/\<your_passwd\>@132.145.249.43:1521/ORCLPDB1 as sysdba
+  sqlplus sys/Your_Passwd@132.145.249.43:1521/ORCLPDB1 as sysdba
   ```
 
   
