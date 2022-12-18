@@ -8,7 +8,7 @@
             "filename": "../../introduction/introduction.md"
         },
         {
-            "title": "Access your Cloud Account",
+            "title": "Get Started",
             "description": "How to get access to an OCI tenancy to run this lab.",
             "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/pre-register-free-tier-account.md"
         },

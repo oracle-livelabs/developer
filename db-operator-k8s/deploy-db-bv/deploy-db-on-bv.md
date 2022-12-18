@@ -23,7 +23,6 @@ When creating a database we will need a few passwords:
 In kubernetes we store these passwords in secrets.
 
 1. In the Cloud Shell, log into the oracle repository with the below command :
-
    ```
    docker login container-registry.oracle.com
    ```
@@ -32,7 +31,6 @@ In kubernetes we store these passwords in secrets.
    If all goes well you'll get a `Login Succeeded` message.
 
 2. Now use the local config file to create the secret we'll pass to the operator:
-
    ```
    kubectl create secret generic oracle-container-registry-secret --from-file=.dockerconfigjson=.docker/config.json --type=kubernetes.io/dockerconfigjson
    ```
@@ -40,7 +38,6 @@ In kubernetes we store these passwords in secrets.
    Please note we're assuming you are in the home directory of your cloud shell, if not please make sure to correct the path to the .docker directory accordingly.
 
 3. Let's now create a secret containing the **admin password** we'll want to specify for the new database: 
-
    ```
    kubectl create secret generic admin-secret --from-literal=oracle_pwd=Your-DB-Password
    ```
