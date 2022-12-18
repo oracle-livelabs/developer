@@ -24,7 +24,7 @@ In kubernetes we store these passwords in secrets.
 
 1. In the Cloud Shell, log into the oracle repository with the below command :
    ```
-   docker login container-registry.oracle.com
+   <copy>docker login container-registry.oracle.com</copy>
    ```
 
    You'll be prompted for your username and password, please enter your Oracle website username and password (**not** your OCI Cloud username !)
@@ -32,14 +32,14 @@ In kubernetes we store these passwords in secrets.
 
 2. Now use the local config file to create the secret we'll pass to the operator:
    ```
-   kubectl create secret generic oracle-container-registry-secret --from-file=.dockerconfigjson=.docker/config.json --type=kubernetes.io/dockerconfigjson
+   <copy>kubectl create secret generic oracle-container-registry-secret --from-file=.dockerconfigjson=.docker/config.json --type=kubernetes.io/dockerconfigjson</copy>
    ```
 
    Please note we're assuming you are in the home directory of your cloud shell, if not please make sure to correct the path to the .docker directory accordingly.
 
 3. Let's now create a secret containing the **admin password** we'll want to specify for the new database: 
    ```
-   kubectl create secret generic admin-secret --from-literal=oracle_pwd=Your-DB-Password
+   <copy>kubectl create secret generic admin-secret --from-literal=oracle_pwd=Your-DB-Password</copy>
    ```
    Replace `Your-DB-Password` with a password of your choosing, it should be 12 characters long, have letters, numbers and Capitals
 
@@ -48,7 +48,7 @@ In kubernetes we store these passwords in secrets.
 
 To initiate the creation of the database by the Operator we'll have to create a config file describing the desired database setup.  For this lab we'll use the file [singleinstancedatabase-create.yaml](https://github.com/oracle-livelabs/developer/blob/main/db-operator-k8s/deploy-db-bv/singleinstancedatabase-create.yaml) which contains a configuration ready to use for this part of the lab.
 
-We'll be highlighting some of the sections of this file below :
+We'll be highlighting some of the sections of this file below, no need to do any edits in this Task :
 
 - In the top level section of the file, the parameter `kind`refers to the type of database to create, in this case we will be launching a DB in a container running on the Kubernetes cluster, known as a **Single Instance Database**.  Other possible choices are to use an Autonomous DB on OCI, to use a, external Container database, and more.
   The parameter `name` defines the oracle dabatase name we'll be creating, as well as the name used to refer to the database via the various `kubectl` commands
@@ -103,13 +103,13 @@ In this section we'll explain a number of commands that allow you to track what 
 1. Apply the config file to initiate the DB creation : 
 
 ```
-kubectl apply -f https://raw.githubusercontent.com/oracle-livelabs/developer/main/db-operator-k8s/deploy-db-bv/files/singleinstancedatabase-create.yaml
+<copy>kubectl apply -f https://raw.githubusercontent.com/oracle-livelabs/developer/main/db-operator-k8s/deploy-db-bv/files/singleinstancedatabase-create.yaml</copy>
 ```
 
 2. Validate the instance definition was submitted to the operator:
 
 ```
-kubectl get singleinstancedatabase sidb-test1
+<copy>kubectl get singleinstancedatabase sidb-test1</copy>
 ```
 
 This will result in the following output:
@@ -124,7 +124,7 @@ The object was created, but the db instance is not yet available.
 3. We can use the below command to see more details:
 
    ```
-   kubectl describe singleinstancedatabase sidb-test1
+   <copy>kubectl describe singleinstancedatabase sidb-test1</copy>
    ```
 
    Output of the command at this stage:
@@ -156,7 +156,7 @@ We see the operator is waiting for the pod to become available.
 4. We can check the status of the pod where the db will be launched, and follow the different steps of the creation process:	
 
 ```
-kubectl get pod
+<copy>kubectl get pod</copy>
 ```
 
 ​	Initially this command will report the following:
@@ -169,7 +169,7 @@ sidb-test1-xe06x   0/1     Init:0/2   0          82s
 5. To get more details on the creation, you can issue the following command, replacing the exact name of the pod with the name in your environment:
 
    ```
-   kubectl describe pod sidb-test1-xe06x
+   <copy>kubectl describe pod sidb-test1-xe06x</copy>
    ```
 
    This will allow you to see the events happening on the pod level - and any issues, like for example an incorrect password for the container registry
@@ -178,7 +178,7 @@ sidb-test1-xe06x   0/1     Init:0/2   0          82s
 
 ​		You can execute this command a few times to see the evolution.
 
-While the pod is starting up, you can check the creation of the block volume and a loadbalancer that were specified in the config file:
+6. While the pod is starting up, you can check the creation of the block volume and a loadbalancer that were specified in the config file:
 
 - Navigate to **Storage**, then under **Block Storage** select **Block Volumes**.  You will see a new block volume has appeared :
 
@@ -188,10 +188,10 @@ While the pod is starting up, you can check the creation of the block volume and
 
   ![block volume](images/lb.png)
 
-- By now the pod should be running, but not yet **ready** : re-issue the command below:
+7. By now the pod should be running, but not yet **ready** : re-issue the command below:
 
   ```
-  kubectl get pod
+  <copy>kubectl get pod</copy>
   ```
 
   You'll see:
@@ -201,10 +201,10 @@ While the pod is starting up, you can check the creation of the block volume and
   sidb-test1-xe06x   0/1     Running   0          5m26s
 ```
 
-- We can now re-issue the describe command against the database entity to see more details on the database creation :
+8. We can now re-issue the describe command against the database entity to see more details on the database creation :
 
 ```
-kubectl describe singleinstancedatabase sidb-test1
+<copy>kubectl describe singleinstancedatabase sidb-test1</copy>
 ```
 
 Output of the command at this stage:
@@ -215,10 +215,10 @@ And re-issuing the same command a few more times will finally show following :
 
 ![describe dbinstance](images/desc-db-2.png)
 
-- It looks like the DB is now up and running !  Let's re-issue the get command : 
+9. It looks like the DB is now up and running !  Let's re-issue the get command : 
 
 ```
-kubectl get singleinstancedatabase sidb-test1
+<copy>kubectl get singleinstancedatabase sidb-test1</copy>
 ```
 
 Resulting output: 
@@ -228,13 +228,17 @@ NAME         EDITION      STATUS     VERSION      CONNECT STR                 OE
 sidb-test1   Enterprise   Patching   21.3.0.0.0   132.145.249.43:1521/ORCL1   https://132.145.249.43:5500/em
 ```
 
+## Task 4: Connecting to the Database
+
 OK, it looks like our database is indeed up and running !  Let's try to connect to the Enterprise Manager ...
 
--  Click on the link in the above output, in my case this is  https://132.145.249.43:5500/em, use your IP address !
+1. Click on the link in the above output, in my case this is  https://132.145.249.43:5500/em, use your IP address !
 
   ![not private message](images/not-private.png)
 
-You will now get a warning because we did not configure certificates.  In Chrome you can get around this message by simply typing the following text in your browser when visualizing the above screen :
+You will now get a warning because we did not configure certificates.  In Chrome you can get around this message quite simply:
+
+2. Type the following text in your browser when visualizing the above screen :
 	**thisisunsafe**
 
 After entering this string of characters, the connection is accepted and you end up on the login screen :
@@ -243,7 +247,7 @@ After entering this string of characters, the connection is accepted and you end
 
 
 
-- Enter the username `sys`, the password you specified for the database earlier, and the container db name `orclpdb1`.  You should now see the console :
+3. Enter the username `sys`, the password you specified for the database earlier, and the container db name `orclpdb1`.  You should now see the console :
 
   ![em console](images/em-open.png)
 
@@ -251,10 +255,10 @@ After entering this string of characters, the connection is accepted and you end
 
 Alternatively, you can use the command line to connect via sqlplus:
 
-- Get the connect string with the below command : 
+4. Get the connect string with the below command : 
 
   ```
-  kubectl get singleinstancedatabase sidb-test1 -o "jsonpath={.status.pdbConnectString}" && echo -e "\n"
+  <copy>kubectl get singleinstancedatabase sidb-test1 -o "jsonpath={.status.pdbConnectString}" && echo -e "\n"</copy>
   ```
 
   This should output something like : 
@@ -263,13 +267,13 @@ Alternatively, you can use the command line to connect via sqlplus:
   132.145.249.43:1521/ORCLPDB1
   ```
 
-- Use your string to compose a command looking like the below, replacing **Your_passwd** with the one you specified:
+5. Use your string to compose a command looking like the below, replacing **Your_passwd** with the one you specified:
 
   ```
-  sqlplus sys/Your_Passwd@132.145.249.43:1521/ORCLPDB1 as sysdba
+  <copy>sqlplus sys/Your_Passwd@132.145.249.43:1521/ORCLPDB1 as sysdba</copy>
   ```
 
-  You can quit sqlplus with the `quit` command.
+6. You can quit sqlplus with the `quit` command.
 
   
 
@@ -279,7 +283,7 @@ Congratulations, your database is up and running, and you are able to connect to
 We will not use the database instance `sidb-test1` in this lab anymore.  In case you want to free up the resources taken up by this database (a pod in your Kubernetes cluser, a Block Volume and a load balancer), you can issue the following command to delete the database and automatically delete the associated resources:
 
 ````
-kubectl delete singleinstancedatabase.database.oracle.com sidb-test1
+<copy>kubectl delete singleinstancedatabase.database.oracle.com sidb-test1</copy>
 ````
 
 

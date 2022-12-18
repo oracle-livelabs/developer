@@ -21,7 +21,7 @@ Estimated Lab Time: 20 minutes
 
 
 ## Task 1: Prepare your NFS persistent volume
-On the OCI console, navigate to **Storage**, section **File Storage**, and select **Mount Targets**
+1. On the OCI console, navigate to **Storage**, section **File Storage**, and select **Mount Targets**
    Create a new mount target using the **Create Mount Target** button.
 
    - Make sure to select the **Virtual Cloud Network** that was created as part of the OKE Cluster creation - it will have a name starting with `oke-vcn-quick-...`
@@ -43,7 +43,7 @@ On the OCI console, navigate to **Storage**, section **File Storage**, and selec
 
      
 
-Now navigate to the **File Storage**, then **File Systems** menu, and click the **Create File System** button
+2. Now navigate to the **File Storage**, then **File Systems** menu, and click the **Create File System** button
 
    - All parameters are pre-filled, just validate the selected Mount Target is indeed the mount target you just created
 
@@ -59,7 +59,7 @@ Now navigate to the **File Storage**, then **File Systems** menu, and click the 
 
      ![FS created](images/fs-ready.png)
 
-To finalize the configuration of the volume we need to **open the appropriate ports** on the subnet used to allow the Kubernetes nodes and the NFS volume to communicate with each other : 
+3. To finalize the configuration of the volume we need to **open the appropriate ports** on the subnet used to allow the Kubernetes nodes and the NFS volume to communicate with each other : 
 
    - Navigate to **Networking**, and select **Virtual Cloud Networks**
 
@@ -101,7 +101,7 @@ To finalize the configuration of the volume we need to **open the appropriate po
 
        
 
-Next we need to create a kubernetes **persistent volume** that points to the configuration we just created.  To do this, we'll use the OCI Cloud shell command interface
+4. Next we need to create a kubernetes **persistent volume** that points to the configuration we just created.  To do this, we'll use the OCI Cloud shell command interface
 
    - Edit a new file to contain the definition of the persistent volume, using the `vi` or `nano` editor
 
@@ -142,7 +142,7 @@ Next we need to create a kubernetes **persistent volume** that points to the con
    - Now apply the config using `kubectl`: 
 
      ```
-     kubectl apply -f pv.yaml
+     <copy>kubectl apply -f pv.yaml</copy>
      ```
 
      This should show you :  `persistentvolume/nfs-vol-1 created`
@@ -192,16 +192,16 @@ Launching the creation of the database is done through the same single command a
 1. Apply the config file to initiate the DB creation : 
 
 ```
-kubectl apply -f https://raw.githubusercontent.com/oracle-livelabs/developer/main/db-operator-k8s/deploy-db-fss/files/singleinstancedatabase-fss.yaml
+<copy>kubectl apply -f https://raw.githubusercontent.com/oracle-livelabs/developer/main/db-operator-k8s/deploy-db-fss/files/singleinstancedatabase-fss.yaml</copy>
 ```
 
 2. You can validate the process of creation of the database as in the pevious lab, using the below set of commands :
 
 ```
-kubectl get singleinstancedatabase sidb-test2
-kubectl describe singleinstancedatabase sidb-test2
-kubectl get pod
-kubectl describe pod sidb-test2-<your_id>
+<copy>kubectl get singleinstancedatabase sidb-test2</copy>
+<copy>kubectl describe singleinstancedatabase sidb-test2</copy>
+<copy>kubectl get pod</copy>
+<copy>kubectl describe pod sidb-test2-<your_id></copy>
 ```
 
 ​	Note you will see 3 pods, choose 1 to validate correct launch of the pods
@@ -209,9 +209,9 @@ kubectl describe pod sidb-test2-<your_id>
 ​	Some extra commands that might be useful to debug any issues: 	
 
 ```
-kubectl logs sidb-test2-<your_id>
-kubectl get pod -n oracle-database-operator-system
-kubectl logs -n oracle-database-operator-system oracle-database-operator-controller-manager-<your-id>
+<copy>kubectl logs sidb-test2-<your_id></copy>
+<copy>kubectl get pod -n oracle-database-operator-system</copy>
+<copy>kubectl logs -n oracle-database-operator-system oracle-database-operator-controller-manager-<your-id></copy>
 ```
 
 
@@ -222,13 +222,13 @@ kubectl logs -n oracle-database-operator-system oracle-database-operator-control
 - Get the connect string with the below command : 
 
   ```
-  kubectl get singleinstancedatabase sidb-test2 -o "jsonpath={.status.pdbConnectString}" && echo -e "\n"
+  <copy>kubectl get singleinstancedatabase sidb-test2 -o "jsonpath={.status.pdbConnectString}" && echo -e "\n"</copy>
   ```
 
 - Use your string to compose a command looking like the below, replacing **Your_Passwd** with the one you specified:
 
   ```
-  sqlplus sys/Your_Passwd@132.145.249.43:1521/ORCLPDB1 as sysdba
+  <copy>sqlplus sys/Your_Passwd@132.145.249.43:1521/ORCLPDB1 as sysdba</copy>
   ```
 
   

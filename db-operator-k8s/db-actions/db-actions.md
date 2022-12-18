@@ -23,22 +23,22 @@ Estimated Lab Time: 10 minutes
 - Get the connect string with the below command : 
 
   ```
-  kubectl get singleinstancedatabase sidb-test2 -o "jsonpath={.status.pdbConnectString}" && echo -e "\n"
+  <copy>kubectl get singleinstancedatabase sidb-test2 -o "jsonpath={.status.pdbConnectString}" && echo -e "\n"</copy>
   ```
 
 - Use your connect string to compose a command looking like the below, replacing Your_Passwd with the one you specified:
 
   ```
-  sqlplus sys/Your_Passwd@132.145.249.43:1521/ORCLPDB1 as sysdba
+  <copy>sqlplus sys/Your_Passwd@132.145.249.43:1521/ORCLPDB1 as sysdba</copy>
   ```
 
 
 2. Create a table called **my_test** and insert some values
 
 ```
-    create table mytest (my_id int, mytext varchar(255) ) ;
+    <copy>create table mytest (my_id int, mytext varchar(255) ) ;
     insert into mytest values (10,'Hello World');
-    select * from mytest;
+    select * from mytest;</copy>
 ```
 
 
@@ -48,7 +48,7 @@ Estimated Lab Time: 10 minutes
    - Check the IP address of the active pod : 
 
      ```
-     kubectl get pods -o wide
+     <copy>kubectl get pods -o wide</copy>
      ```
 
      This should show something like the below:
