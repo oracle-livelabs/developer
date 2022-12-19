@@ -55,7 +55,7 @@ The *Quick Create* feature uses the default settings to create a *quick cluster*
     * **Compartment**: The name of the compartment. Leave the default value.
     * **Kubernetes version**: The version of Kubernetes. This lab was validated with *v1.23.4* and *v1.24.1*, but higher versions should also work.
     * **Kubernetes API Endpoint**: Are the cluster master nodes going to be routable or not. Select the *Public Endpoint* value.
-    * **Kubernetes Worker Nodes**: Are the cluster worker nodes going to be routable or not. Select *Public Workers* value, as this allows direct access to the nodes without necesarily using a load balancer or bastion host.
+    * **Kubernetes Worker Nodes**: Are the cluster worker nodes going to be routable or not. Select *Public Workers* value, as this allows direct access to the nodes without necessarily using a load balancer or bastion host.
 
     ![Quick Cluster](images/quickcluster-1.png)
 

@@ -6,7 +6,7 @@ This lab shows you how to deploy and run an Oracle Database inside a Kubernetes 
 
 See the [Oracle Database Operator for Kubernetes](https://github.com/oracle/oracle-database-operator) documentation for more details on the other deployment options the Operator offers (for example running an Autonomous database, or running an on-premise PDB on a CDB)
 
-In this lab we'll be using 2 types of persistant storage : 
+In this lab we'll be using 2 types of persistent storage : 
 
 - a dynamic Block Volume, that will be deleted automatically once the database is deleted, 
 - a static NFS filesystem, which allows to have automatic failover between nodes of the kubernetes cluster.
@@ -30,9 +30,9 @@ In this lab we'll be using 2 types of persistant storage :
 
 Access to an Oracle Cloud account
 
+You may now **proceed to the next lab**.
 
-
-## Learn More
+### Learn More
 
 * [WebLogic Kubernetes Operator Documentation](https://github.com/oracle/oracle-database-operator)
 

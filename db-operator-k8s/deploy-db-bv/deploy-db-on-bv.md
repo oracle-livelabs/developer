@@ -51,7 +51,7 @@ To initiate the creation of the database by the Operator we'll have to create a 
 We'll be highlighting some of the sections of this file below, no need to do any edits in this Task :
 
 - In the top level section of the file, the parameter `kind`refers to the type of database to create, in this case we will be launching a DB in a container running on the Kubernetes cluster, known as a **Single Instance Database**.  Other possible choices are to use an Autonomous DB on OCI, to use a, external Container database, and more.
-  The parameter `name` defines the oracle dabatase name we'll be creating, as well as the name used to refer to the database via the various `kubectl` commands
+  The parameter `name` defines the oracle database name we'll be creating, as well as the name used to refer to the database via the various `kubectl` commands
 
   ```
   apiVersion: database.oracle.com/v1alpha1
@@ -96,7 +96,7 @@ We'll be highlighting some of the sections of this file below, no need to do any
 
 ## Task 3: Launching and tracking the DB creation
 
-Launching the creation of the database is done through a single command applying the config file on the cluser.  Next the operator will initiate the necessary operations to spin up the database, and this will take approximately 15 minutes in a fresh environment - as for example the images have to be copied over from the container repository.
+Launching the creation of the database is done through a single command applying the config file on the cluster.  Next the operator will initiate the necessary operations to spin up the database, and this will take approximately 15 minutes in a fresh environment - as for example the images have to be copied over from the container repository.
 
 In this section we'll explain a number of commands that allow you to track what is happening during this creation process and how to debug issues you might encounter.
 
@@ -178,7 +178,7 @@ sidb-test1-xe06x   0/1     Init:0/2   0          82s
 
 ​		You can execute this command a few times to see the evolution.
 
-6. While the pod is starting up, you can check the creation of the block volume and a loadbalancer that were specified in the config file:
+6. While the pod is starting up, you can check the creation of the block volume and a load balancer that were specified in the config file:
 
 - Navigate to **Storage**, then under **Block Storage** select **Block Volumes**.  You will see a new block volume has appeared :
 
@@ -280,7 +280,7 @@ Alternatively, you can use the command line to connect via sqlplus:
 Congratulations, your database is up and running, and you are able to connect to it through Enterprise Manager and Sqlplus !  You may now **proceed to the next lab**.
 
 
-We will not use the database instance `sidb-test1` in this lab anymore.  In case you want to free up the resources taken up by this database (a pod in your Kubernetes cluser, a Block Volume and a load balancer), you can issue the following command to delete the database and automatically delete the associated resources:
+We will not use the database instance `sidb-test1` in this lab anymore.  In case you want to free up the resources taken up by this database (a pod in your Kubernetes cluster, a Block Volume and a load balancer), you can issue the following command to delete the database and automatically delete the associated resources:
 
 ````
 <copy>kubectl delete singleinstancedatabase.database.oracle.com sidb-test1</copy>

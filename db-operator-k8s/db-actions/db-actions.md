@@ -89,7 +89,7 @@ You finished this lab, please don't hesitate to visit the documentation  on the 
 In case you want to free up the resources taken up by this database (three pods in your Kubernetes cluser and a load balancer), you can issue the following command to delete the database :
 
 ````
-kubectl delete singleinstancedatabase.database.oracle.com sidb-test2
+<copy>kubectl delete singleinstancedatabase.database.oracle.com sidb-test2</copy>
 ````
 
 The NFS volume you used has been created separately and will survive the deletion of the instance, so you should delete the File system and Mount Point manually via the OCI console.

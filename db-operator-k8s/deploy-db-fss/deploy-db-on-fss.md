@@ -39,7 +39,7 @@ Estimated Lab Time: 20 minutes
 
      ![mount size edit](images/mount-size-edit.png)
 
-   - Before navigating away from this screen, take note of the **IP Address** of the mointpoint, you will need this information later in the setup.  In the example above, the address is 10.0.10.143
+   - Before navigating away from this screen, take note of the **IP Address** of the mount point, you will need this information later in the setup.  In the example above, the address is 10.0.10.143
 
      
 
@@ -130,7 +130,7 @@ Estimated Lab Time: 20 minutes
      - Replace the placeholders for the parameter `volumeHandle`: 
 
        - `<OCID of the file system>` : this is the OCID you noted down after the creation of the filesystem
-       - `<Mount Target IP Address>` : the IP address of the moount point you noted earlier
+       - `<Mount Target IP Address>` : the IP address of the mount point you noted earlier
        - `<Export Path>` : the export path you noted earlier
 
        - Example `volumeHandle`: 
@@ -167,7 +167,7 @@ We'll be highlighting some of the sections of this file that differ from the fir
     namespace: default
   ```
   
-- The section `persistence` defines the type of persistent storage to use.  In this case we'll use the class `oci-fss`.  The parameter `accessMode` is now defined as `ReadWriteMany`, as we'll be running multiple pods that all have access to the volume.  Only one pod will hold the active database, the others are in stand-by.  The parameter `volumeName` is the link to the Persistenet Volume `nfs-vol-1` we defined earlier.
+- The section `persistence` defines the type of persistent storage to use.  In this case we'll use the class `oci-fss`.  The parameter `accessMode` is now defined as `ReadWriteMany`, as we'll be running multiple pods that all have access to the volume.  Only one pod will hold the active database, the others are in stand-by.  The parameter `volumeName` is the link to the Persistent Volume `nfs-vol-1` we defined earlier.
 
   ```
   persistence:
@@ -198,10 +198,10 @@ Launching the creation of the database is done through the same single command a
 2. You can validate the process of creation of the database as in the pevious lab, using the below set of commands :
 
 ```
-<copy>kubectl get singleinstancedatabase sidb-test2</copy>
-<copy>kubectl describe singleinstancedatabase sidb-test2</copy>
-<copy>kubectl get pod</copy>
-<copy>kubectl describe pod sidb-test2-<your_id></copy>
+<copy>kubectl get singleinstancedatabase sidb-test2
+kubectl describe singleinstancedatabase sidb-test2
+kubectl get pod
+kubectl describe pod sidb-test2-<your_id></copy>
 ```
 
 ​	Note you will see 3 pods, choose 1 to validate correct launch of the pods
@@ -209,9 +209,9 @@ Launching the creation of the database is done through the same single command a
 ​	Some extra commands that might be useful to debug any issues: 	
 
 ```
-<copy>kubectl logs sidb-test2-<your_id></copy>
-<copy>kubectl get pod -n oracle-database-operator-system</copy>
-<copy>kubectl logs -n oracle-database-operator-system oracle-database-operator-controller-manager-<your-id></copy>
+<copy>kubectl logs sidb-test2-<your_id>
+kubectl get pod -n oracle-database-operator-system
+kubectl logs -n oracle-database-operator-system oracle-database-operator-controller-manager-<your-id></copy>
 ```
 
 
