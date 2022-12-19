@@ -110,7 +110,7 @@ We will use `kubectl` to manage the cluster remotely using the Cloud Shell. It n
     For example, the command looks like the following:
 
     ```bash
-    oci ce cluster create-kubeconfig --cluster-id ocid1.cluster.oc1.phx.aaaaaaaaaezwen..................zjwgm2tqnjvgc2dey3emnsd --file $HOME/.kube/config --region us-phoenix-1 --token-version 2.0.0
+    <copy>oci ce cluster create-kubeconfig --cluster-id ocid1.cluster.oc1.phx.aaaaaaaaaezwen..................zjwgm2tqnjvgc2dey3emnsd --file $HOME/.kube/config --region us-phoenix-1 --token-version 2.0.0</copy>
     ```
 
     ![kubectl config](images/kubectlconfig.png)
@@ -119,10 +119,7 @@ We will use `kubectl` to manage the cluster remotely using the Cloud Shell. It n
 
     ```bash
     <copy>kubectl get node</copy>
-    ```
-
-    ```bash
-    $ kubectl get node
+    
     NAME          STATUS   ROLES   AGE   VERSION
     10.0.10.193   Ready    node    10m   v1.21.5
     10.0.10.194   Ready    node    10m   v1.21.5
