@@ -18,13 +18,28 @@
             "filename": "../../sandbox-labs/setup-a-fleet/setup-a-fleet.md"
         },
         {
-            "title": "Lab 2: Install Management Agent on your Managed Instance using Cloud Shell",
+            "title": "Lab 2: Install Management Agent on your Managed Instance",
             "filename": "../../sandbox-labs/install-management-agent-script/install-management-agent-script.md"
         },
         {
-            "title": "Lab 3: Perform Java Lifecycle Management with Java Management Service",
+            "title": "Lab 3: Perform Advanced Usage Tracking with Java Management Service",
+            "filename": "../../sandbox-labs/advanced-usage-tracking/advanced-usage-tracking.md"
+        },
+        {
+            "title": "Lab 4: Perform Crypto event analysis on Java applications",
+            "filename": "../../sandbox-labs/crypto-event-analysis/crypto-event-analysis.md"
+        },
+        {
+            "title": "Lab 5: Run Java Flight Recorder (JFR) on a Java application",
+            "filename": "../../sandbox-labs/java-flight-recorder/java-flight-recorder.md"
+        },
+        {
+            "title": "Lab 6: Perform Java Lifecycle Management with Java Management Service",
             "filename":"../../sandbox-labs/life-cycle-management/life-cycle-management.md"
-
+        },
+        {
+            "title": "Lab 7: View and monitor work request",
+            "filename": "../../sandbox-labs/view-and-monitor-work-request/view-and-monitor-work-request.md"
         },
         {
             "title": "Need Help?",
