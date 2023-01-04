@@ -132,7 +132,7 @@ We will use `kubectl` to manage the cluster remotely using the Cloud Shell. It n
 
     ![cloud shell](images/cloudshell.png)
 
-Leave this *Cloud Shell* open; we will use it for further labs.
+    Leave this *Cloud Shell* open; we will use it for further labs.
 
 You may now **proceed to the next lab**.
 

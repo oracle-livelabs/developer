@@ -11,10 +11,10 @@ In this lab we'll be using the database with the NFS volume persistence we set u
 - We'll reconnect to the database to validate our data is still there
 
 ### Objective
-Demonstrate database failover
+* Demonstrate database failover
 
 ### Prerequisites
-Lab 4 - Deploy a SingleInstance Database using a static NFS filesystem
+* You have executed Lab 4 - Deploy a SingleInstance Database using a static NFS filesystem
 
   
 

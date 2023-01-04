@@ -19,10 +19,10 @@ Therefore we'll be using an NFS volume, which can be mounted on all 3 nodes at o
 Estimated Time: 20 minutes
 
 ### Objective
-Create a database running on Kubernetes, using an NFS volume as persistency store
+* Create a database running on Kubernetes, using an NFS volume as persistency store
 
 ### Prerequisites
-Lab 2: Install the Oracle Database Kubernetes Operator
+* You have executed Lab 2: Install the Oracle Database Kubernetes Operator
 
 
 ## Task 1: Prepare your NFS persistent volume
@@ -38,11 +38,11 @@ Lab 2: Install the Oracle Database Kubernetes Operator
     You can now hit the **Create** button.
 
     - After the creation you are redirected to the Details screen of the mount point.  Before we move on, you need to change the **Reported Size** of the mount target.  To  do this, use the **pencil** icon on the side of the **Reported Size** parameter:
-    - ![mount size](images/mount-size.png)
+    ![mount size](images/mount-size.png)
 
     - After clicking the pencil, enter a value of **2000** GiB in the edit box, and hit the **Save** icon
 
-     ![mount size edit](images/mount-size-edit.png)
+    ![mount size edit](images/mount-size-edit.png)
 
     - Before navigating away from this screen, take note of the **IP Address** of the mount point, you will need this information later in the setup.  In the example above, the address is 10.0.10.143
 
@@ -76,33 +76,31 @@ Lab 2: Install the Oracle Database Kubernetes Operator
 
     - Click the **Add Ingress Rule** button and create a Stateful *ingress* from ALL ports in *source CIDR block* to **TCP** ports 111, 2048, 2049, and 2050 :
 
-      - **Source CIDR** : 0.0.0.0/0
-      - IP Protocol: TCP
-      - Destination Port Range: 111,2048,2049,2050
+          - **Source CIDR** : 0.0.0.0/0
+          - IP Protocol: TCP
+          - Destination Port Range: 111,2048,2049,2050
 
     ![ingress rules](images/ingress-1.png)
 
     - Repeat the operation but this time specifying the **UDP protocol** to set a Stateful *ingress* from ALL ports in *source CIDR block* to **UDP** ports 111 and 2048:
 
-      - **Source CIDR** : 0.0.0.0/0
-      - IP Protocol: UDP
-      - Destination Port Range: 111,2048
+          - **Source CIDR** : 0.0.0.0/0
+          - IP Protocol: UDP
+          - Destination Port Range: 111,2048
 
     - Now select the **Egress Rules** resources on the left of the screen
 
     - Here click the **Add Egress Rules** to create a Stateful *egress* from **TCP** ALL ports to ports 111, 2048, 2049, and 2050 in *destination CIDR block*.
 
-      - **Destination CIDR** : 0.0.0.0/0
-      - IP Protocol: TCP
-      - Destination Port Range: 111,2048,2049,2050
+          - **Destination CIDR** : 0.0.0.0/0
+          - IP Protocol: TCP
+          - Destination Port Range: 111,2048,2049,2050
 
     - Repeat the operation but this time specifying the **UDP protocol** to set a Stateful *egress* from **UDP** ALL ports to port 111 in *destination CIDR block*.
 
-      - **Destination CIDR** : 0.0.0.0/0
-
-      - IP Protocol: UDP
-
-      - Destination Port Range: 111
+          - **Destination CIDR** : 0.0.0.0/0
+          - IP Protocol: UDP
+          - Destination Port Range: 111
 
        
 

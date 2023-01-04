@@ -13,10 +13,10 @@ We'll also be specifying the  `Reclaim Policy` of the dynamically provisioned vo
 Estimated Time: 20 minutes
 
 ### Objective
-Create a database running on Kubernetes, using a block volume as persistency store
+* Create a database running on Kubernetes, using a block volume as persistency store
 
 ### Prerequisites
-Lab 2: Install the Oracle Database Kubernetes Operator
+* You have executed Lab 2: Install the Oracle Database Kubernetes Operator
 
 
 
@@ -165,7 +165,7 @@ In this section we'll explain a number of commands that allow you to track what 
     <copy>kubectl get pod</copy>
     ```
 
-​	  Initially this command will report the following:
+    Initially this command will report the following:
 
     ```
     NAME               READY   STATUS     RESTARTS   AGE
@@ -182,7 +182,7 @@ In this section we'll explain a number of commands that allow you to track what 
 
     ![describe pods](images/desc-pod-1.png)
 
-​		 You can execute this command a few times to see the evolution.
+​    You can execute this command a few times to see the evolution.
 
 6. While the pod is starting up, you can check the creation of the block volume and a load balancer that were specified in the config file:
 
@@ -242,7 +242,7 @@ OK, it looks like our database is indeed up and running !  Let's try to connect 
 
     ![not private message](images/not-private.png)
 
-You will now get a warning because we did not configure certificates.  In Chrome you can get around this message quite simply:
+    You will now get a warning because we did not configure certificates.  In Chrome you can get around this message quite simply:
 
 2. Type the following text in your browser when visualizing the above screen :
 	  **thisisunsafe**
@@ -283,14 +283,14 @@ You will now get a warning because we did not configure certificates.  In Chrome
 
   
 
-Congratulations, your database is up and running, and you are able to connect to it through Enterprise Manager and Sqlplus !  
+    Congratulations, your database is up and running, and you are able to connect to it through Enterprise Manager and Sqlplus !  
 
+7. Optional deletion of the database
+    We will not use the database instance `sidb-test1` in this lab anymore.  In case you want to free up the resources taken up by this database (a pod in your Kubernetes cluster, a Block Volume and a load balancer), you can issue the following command to delete the database and automatically delete the associated resources:
 
-We will not use the database instance `sidb-test1` in this lab anymore.  In case you want to free up the resources taken up by this database (a pod in your Kubernetes cluster, a Block Volume and a load balancer), you can issue the following command to delete the database and automatically delete the associated resources:
-
-````
-<copy>kubectl delete singleinstancedatabase.database.oracle.com sidb-test1</copy>
-````
+    ````
+    <copy>kubectl delete singleinstancedatabase.database.oracle.com sidb-test1</copy>
+    ````
 
 You may now **proceed to the next lab**.
 

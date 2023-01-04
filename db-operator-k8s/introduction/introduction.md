@@ -28,7 +28,7 @@ In this lab we'll be using 2 types of persistent storage :
 
 ### Prerequisites
 
-Access to an Oracle Cloud account
+* Access to an Oracle Cloud account
 
 You may now **proceed to the next lab**.
 
