@@ -22,7 +22,7 @@ In this lab, you will:
     * Create policies.
  
 ### Prerequisites
-You will need an OCI account with administrative privileges to complete this lab. If you do not have one, you may sign up [here](https://www.oracle.com/cloud/free/) for a free-tier account.
+You will need an OCI account with administrative privileges to complete this lab. If you do not have one, you may sign up [here](https://www.oracle.com/cloud/free/).
 
 ## Task 1: Create OCI Resources using Onboarding Wizard
 The Onboarding Wizard helps to create the necessary resources automatically. We recommend this option for users new to OCI.
@@ -77,7 +77,7 @@ The Onboarding Wizard helps to create the necessary resources automatically. We 
     * In the Oracle Cloud Console, open the navigation menu and click **Identity & Security**. Under **Identity**, click **Dynamic Groups**.
         ![image of console navigation to dynamic groups](images/console-navigation-dynamic-groups.png)
     &nbsp;
-    * Confirm the creation of new dynamic group labelled `JMS_DYNAMIC_GROUP`.
+    * Confirm the creation of new dynamic group labelled `JMS_DYNAMIC_GROUP` and 2 Matching Rules.
         ![image of new dynamic group](images/new-dynamic-group.png)
     &nbsp;
     * In the Oracle Cloud Console, open the navigation menu and click **Identity & Security**. Under **Identity**, click **Policies**.
@@ -244,6 +244,8 @@ Sign in to the Oracle Cloud Console as an administrator using the credentials pr
     ALLOW SERVICE javamanagementservice TO MANAGE log-groups IN COMPARTMENT Fleet_Compartment
     ALLOW SERVICE javamanagementservice TO MANAGE log-content IN COMPARTMENT Fleet_Compartment
     ALLOW DYNAMIC-GROUP JMS_DYNAMIC_GROUP TO MANAGE log-content IN COMPARTMENT Fleet_Compartment
+    ALLOW GROUP FLEET_MANAGERS TO MANAGE log-groups IN COMPARTMENT Fleet_Compartment
+    ALLOW GROUP FLEET_MANAGERS TO MANAGE log-content IN COMPARTMENT Fleet_Compartment
     ALLOW SERVICE javamanagementservice TO READ instances IN tenancy
     ALLOW SERVICE javamanagementservice TO INSPECT instance-agent-plugins IN tenancy
     ALLOW SERVICE javamanagementservice TO USE management-agent-install-keys IN COMPARTMENT Fleet_Compartment
@@ -275,4 +277,4 @@ You may now **proceed to the next lab**.
 ## Acknowledgements
 
 * **Author** - Alvin Lam, Java Management Service
-* **Last Updated By/Date** - Yixin Wei, September 2022
+* **Last Updated By/Date** - Bao Jin Lee, November 2022
