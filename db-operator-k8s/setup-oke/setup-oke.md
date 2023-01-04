@@ -1,10 +1,10 @@
-# Create Oracle Container Engine for Kubernetes (OKE) on Oracle Cloud Infrastructure (OCI)
+# Set up an Oracle Kubernetes Engine instance on OCI
 
 ## Introduction
 
 This lab walks you through the steps to create a managed Kubernetes environment on the Oracle Cloud Infrastructure.
 
-Estimated Lab Time: 20 minutes
+Estimated Time: 20 minutes
 
 ### About Product/Technology
 
@@ -134,7 +134,9 @@ We will use `kubectl` to manage the cluster remotely using the Cloud Shell. It n
 
 Leave this *Cloud Shell* open; we will use it for further labs.
 
+You may now **proceed to the next lab**.
+
 ## Acknowledgements
 * **Author** -  Ankit Pandey
 * **Contributors** - Maciej Gruszka, Peter Nagy
-* **Last Updated By/Date** - Jan Leemans, July 2022
+* **Last Updated By/Date** - Jan Leemans, January 2023

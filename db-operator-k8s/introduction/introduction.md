@@ -32,10 +32,10 @@ Access to an Oracle Cloud account
 
 You may now **proceed to the next lab**.
 
-### Learn More
+## Learn More
 
 * [WebLogic Kubernetes Operator Documentation](https://github.com/oracle/oracle-database-operator)
 
 ## Acknowledgements
 * **Author** - Jan Leemans, July 2022
-* **Last Updated By/Date** - n.a.
+* **Last Updated By/Date** - Jan Leemans, January 2023
