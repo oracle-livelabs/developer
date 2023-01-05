@@ -86,15 +86,14 @@ Estimated Time: 10 minutes
 
 
 
-Congratulations, you tested the failover of the database across the cluster nodes !
+    Congratulations, you tested the failover of the database across the cluster nodes !
 
-In case you want to free up the resources taken up by this database (three pods in your Kubernetes cluser and a load balancer), you can issue the following command to delete the database :
-
+6. In case you want to free up the resources taken up by this database (three pods in your Kubernetes cluser and a load balancer), you can issue the following command to delete the database :
     ````
     <copy>kubectl delete singleinstancedatabase.database.oracle.com sidb-test2</copy>
     ````
 
-The NFS volume you used has been created separately and will survive the deletion of the instance, so you should delete the File system and Mount Point manually via the OCI console.
+7. The NFS volume you used has been created separately and will survive the deletion of the instance, so you should delete the File system and Mount Point manually via the OCI console.
 
 You **finished this lab**, please don't hesitate to visit the documentation  on the [Single Instance Databases with Oracle Database Operator for Kubernetes](https://github.com/oracle/oracle-database-operator/blob/main/docs/sidb/README.md) page for more options. 
 
