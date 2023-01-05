@@ -113,7 +113,7 @@ Estimated Time: 20 minutes
       - Paste the below content into the file
 
         ```
-            apiVersion: v1
+        <copy>    apiVersion: v1
             kind: PersistentVolume
             metadata:
               name: nfs-vol-1
@@ -127,14 +127,14 @@ Estimated Time: 20 minutes
               persistentVolumeReclaimPolicy: Retain
               csi:
                 driver: fss.csi.oraclecloud.com
-                volumeHandle: "<OCID of the file system>:<Mount Target IP Address>:/<Export Path>"
+                volumeHandle: "<OCID of the file system>:<Mount Target IP Address>:/<Export Path>"</copy>
         ```
 
     - Replace the placeholders for the parameter `volumeHandle`: 
 
-      - `<OCID of the file system>` : this is the OCID you noted down after the creation of the filesystem
-      - `<Mount Target IP Address>` : the IP address of the mount point you noted earlier
-      - `<Export Path>` : the export path you noted earlier
+          - `<OCID of the file system>` : this is the OCID you noted down after the creation of the filesystem
+          - `<Mount Target IP Address>` : the IP address of the mount point you noted earlier
+          - `<Export Path>` : the export path you noted earlier
 
       - Example `volumeHandle`: 
 

@@ -181,7 +181,7 @@ In this section we'll explain a number of commands that allow you to track what 
     This will allow you to see the events happening on the pod level - and any issues, like for example an incorrect password for the container registry
 
     ![describe pods](images/desc-pod-1.png)
-
+    
 ​    You can execute this command a few times to see the evolution.
 
 6. While the pod is starting up, you can check the creation of the block volume and a load balancer that were specified in the config file:
