@@ -60,9 +60,9 @@ As someone who creates a project, you'll automatically become the project's owne
 
 Everything you need to start building a visual application is now created for you in this project. Let's step through some key components to better understand your project environment.
 
-1. On the Project Home page, the **tutorial-hr-project.git** repository shows  under Workspaces as well as in the Repositories tab on the right. This Git repo stores your visual application's source files and is also known as the project's _remote_ repository. Click the **tutorial-hr-project.git** link in the Workspaces table to see your project's remote branches, `main` and `hrbranch`, created with initial content for your visual application. Select **hrbranch**; the `main` branch is the default branch created when a new repository is generated and is the project's source of truth.
+1. On the Project Home page, the **tutorial-hr-project.git** repository shows  under Workspaces as well as in the Repositories tab on the right. This Git repo stores your visual application's source files and is also known as the project's _remote_ repository. Click the **tutorial-hr-project.git** link in the Workspaces table to see your project's remote branches, `main` and `hrbranch`, created with initial content for your visual application. The `main` branch is the default branch created when a new repository is generated and is the project's source of truth.
 
-    ![Contents of the tutorial-hr-project.git repository. Both the main and hrbranch branches are visible, with the main branch selected to show its source files.](images/repo.png "Git page")
+    ![Contents of the tutorial-hr-project.git repository. Both the main and hrbranch branches are visible, with the hrbranch selected.](images/repo.png "Git page")
 
 2. In the left navigator, click **Workspaces**![Workspaces icon](images/vbs-workspaces-icon.png)to view the **HR Visual Application** workspace. This workspace contains a working copy of `hrbranch` and serves as your _local_ repository. The `hrbranch` initially has the same set of source files as the `main` branch, but as you work with your visual application, it will include the changes you make. Your changes can't be seen by others until you save them from the local branch to a remote branch.
 
@@ -76,15 +76,17 @@ Everything you need to start building a visual application is now created for yo
 
     ![Jobs tab on the Builds page. It lists two default jobs Visual-Application-Deploy and Visual-Application-Package in the All Jobs tab. Both jobs include Actions on the right to Build, Configure, View Last Build Log, and Delete. Other tabs that you can use to filter are Successful Jobs, Failed Jobs, and Test Failed Jobs. A Create Job button is also visible.](images/build-jobs.png "Jobs tab on Builds page")
 
-5. On the Builds page, click **Pipelines** to view the sequence of build jobs that package and deploy your application to your development environment.
+5. On the Builds page, click **Pipelines**, then from the **Actions** ![Actions icon](images/vbs-actions-icon.png) menu, select **View Layout** to view the sequence of build jobs that package and deploy your application to your development environment.
 
     ![This image shows the Pipelines tab on the Builds page, with a diagram showing the sequence of jobs: Visual-Application-Package followed by Visual-Application-Deploy. A Create Pipeline button is also visible. On the right, there are action buttons to view Instances of a pipeline as well as Build, Configure, and Delete a pipeline.](images/build-pipeline.png "Pipelines tab on Builds page")
+
+6. Click **Builds** in the breadcrumbs trail to return to the main Builds page.
 
 ## Task 3: Add credentials to deploy the visual application
 
 Now that your project is provisioned, let's set up the credentials that VB Studio will use to deploy your visual application to the VB development instance.
 
-1. Click **Jobs** on the Builds page, then under **Actions**, click **Configure** ![Configure icon](images/vbs-builds-configure-icon.png) for the `Visual-Application-Deploy` job.
+1. Click **Jobs** on the Builds page, then from the **Actions**![Actions icon](images/vbs-actions-icon.png) menu for the `Visual-Application-Deploy` job, click **Configure**.
 
     ![Jobs tab on the Builds page. The Visual-Application-Deploy job in the table is selected, with its Configure button in focus.](images/build-auth.png "Configure option for Visual-Application-Deploy")
 
@@ -121,4 +123,4 @@ For the purposes of this workshop, let's assume that other members of your team 
 ## Acknowledgements
 
 * **Author** - Sheryl Manoharan, VB Studio User Assistance, November 2021
-* **Last Updated By/Date** - Sheryl Manoharan, November 2022
+* **Last Updated By/Date** - Sheryl Manoharan, January 2023
