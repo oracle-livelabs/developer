@@ -52,7 +52,7 @@ In kubernetes we store these passwords in secrets.
 
 ## Task 2: Creating the DB Config file for the Operator
 
-To initiate the creation of the database by the Operator we'll have to create a config file describing the desired database setup.  For this lab we'll use the file [singleinstancedatabase-create.yaml](https://github.com/oracle-livelabs/developer/blob/main/db-operator-k8s/deploy-db-bv/singleinstancedatabase-create.yaml) which contains a configuration ready to use for this part of the lab.
+To initiate the creation of the database by the Operator we'll have to create a config file describing the desired database setup.  For this lab we'll use the file [singleinstancedatabase-create.yaml](https://objectstorage.us-ashburn-1.oraclecloud.com/p/LNAcA6wNFvhkvHGPcWIbKlyGkicSOVCIgWLIu6t7W2BQfwq2NSLCsXpTL9wVzjuP/n/c4u04/b/livelabsfiles/o/developer-library/singleinstancedatabase-create.yaml) which contains a configuration ready to use for this part of the lab.
 
 We'll be highlighting some of the sections of this file below, no need to do any edits in this Task :
 
@@ -109,7 +109,7 @@ In this section we'll explain a number of commands that allow you to track what 
 1. Apply the config file to initiate the DB creation : 
 
     ```
-    <copy>kubectl apply -f https://raw.githubusercontent.com/oracle-livelabs/developer/main/db-operator-k8s/deploy-db-bv/files/singleinstancedatabase-create.yaml</copy>
+    <copy>kubectl apply -f https://objectstorage.us-ashburn-1.oraclecloud.com/p/LNAcA6wNFvhkvHGPcWIbKlyGkicSOVCIgWLIu6t7W2BQfwq2NSLCsXpTL9wVzjuP/n/c4u04/b/livelabsfiles/o/developer-library/singleinstancedatabase-create.yaml</copy>
     ```
 
 2. Validate the instance definition was submitted to the operator:

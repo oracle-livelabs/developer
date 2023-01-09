@@ -156,7 +156,7 @@ Estimated Time: 20 minutes
 
 ## Task 2: Creating the DB Config file for the Operator
 
-To initiate the creation of the database by the Operator we'll have to create a config file describing the desired database setup.  For this lab we'll use the file [singleinstancedatabase_fss.yaml](https://github.com/oracle-livelabs/developer/blob/main/db-operator-k8s/deploy-db-fss/files/singleinstancedatabase-fss.yaml) which contains a configuration ready to use for this part of the lab.
+To initiate the creation of the database by the Operator we'll have to create a config file describing the desired database setup.  For this lab we'll use the file [singleinstancedatabase_fss.yaml](https://objectstorage.us-ashburn-1.oraclecloud.com/p/LNAcA6wNFvhkvHGPcWIbKlyGkicSOVCIgWLIu6t7W2BQfwq2NSLCsXpTL9wVzjuP/n/c4u04/b/livelabsfiles/o/developer-library/singleinstancedatabase-fss.yaml) which contains a configuration ready to use for this part of the lab.
 
 We'll be highlighting some of the sections of this file that differ from the first lab we ran:
 
@@ -195,7 +195,7 @@ Launching the creation of the database is done through the same single command a
 1. Apply the config file to initiate the DB creation : 
 
     ```
-    <copy>kubectl apply -f https://raw.githubusercontent.com/oracle-livelabs/developer/main/db-operator-k8s/deploy-db-fss/files/singleinstancedatabase-fss.yaml</copy>
+    <copy>kubectl apply -f https://objectstorage.us-ashburn-1.oraclecloud.com/p/LNAcA6wNFvhkvHGPcWIbKlyGkicSOVCIgWLIu6t7W2BQfwq2NSLCsXpTL9wVzjuP/n/c4u04/b/livelabsfiles/o/developer-library/singleinstancedatabase-fss.yaml</copy>
     ```
 
 2. You can validate the process of creation of the database as in the previous lab, using the below set of commands :
