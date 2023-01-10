@@ -49,7 +49,7 @@ The first thing we'll do is add a web app to the HR visual application you just 
 
     On the left is the name of your current workspace, **HR Visual Application**; next to it is the project's Git repository and the branch currently associated with your workspace (**tutorial-hr-project.git/hrbranch**). Click each option to see other actions that you can perform from here. Clicking ![Go to Project Page icon](images/go-to-project-home-icon.png) will take you back to the Project Home page.
 
-    Elements on the right let you perform various other actions, such as undo a change or search the Git repository for a file. This workshop primarily demonstrates the options to preview your app, share it, and publish changes. If you make a mistake during this lab, click Undo to back out of the last step you did.
+    Elements on the right let you perform various other actions, such as undo a change or search the Git repository for a file. This workshop primarily demonstrates the options to preview your app, share it, and publish changes. If you make a mistake during this workshop, click ![Undo icon](images/undo-icon.png)  to back out of the last step you did.
 
     Now take a look at the footer, which has tools that help you debug and maintain your visual app (we'll briefly look at Audits and Git History in this workshop):
 
@@ -60,19 +60,17 @@ The first thing we'll do is add a web app to the HR visual application you just 
 
 2. We want to create a web application, so under **Create Apps**, let's click the **Web Apps** tile.
 
-    The Web Apps pane opens in the Navigator.
-
     ![Web Apps pane of the Navigator. There is a plus sign at the top and a + Web Application button at the bottom.](images/web-apps.png "Web Apps pane")
+
+    The Web Apps pane opens in the Navigator.
 
 3. Click **\+ Web Application** (or the **+** sign at the top of the Web Apps pane).
 
 4. In the Create Web Application window, enter `hrwebapp` as the **Application Name**. (You can specify uppercase as well as lowercase characters in the application name, but the name is converted to lowercase.) Leave the **Navigation Style** set to the default, **None**, and click **Create**.
 
-    The application opens on the **main-start** page, which is your application's default home page created automatically for you. (Ignore the **This dot says that you have made some changes** dialog that appears in the header for now; we'll explore Git changes in a later lab.)
+    The application opens on the **main-start** page, which is your application's default home page created automatically for you. (Ignore the **This dot says that you have made some changes** dialog that appears in the header for now; we'll explore Git changes in a later lab.) What you see under the **main-start** tab is your application's main work area. Just under main-start are several horizontal tabs: **Page Designer**, **Actions**, **Event Listeners**, and so on. Each tab provides editors to help you examine and modify artifacts used in the page. By default, the page opens in the **Page Designer**, which is where you'll do the bulk of your work in VB Studio.
 
     ![Web Apps pane after the hrwebapp has been created. The app itself is open on the right, on the main-start page, showing the Components Palette. On the far right, the Properties tab shows the Page view.](images/designer.png "Web Apps pane with the hrwebapp")
-
-    What you see under the **main-start** tab is your application's main work area. Just under main-start are several horizontal tabs: **Page Designer**, **Actions**, **Event Listeners**, and so on. Each tab provides editors to help you examine and modify artifacts used in the page. By default, the page opens in the **Page Designer**, which is where you'll do the bulk of your work in VB Studio.
 
     Here are the main Page Designer areas you'll use throughout this workshop:
     | # | Tab | Functionality |
@@ -98,7 +96,7 @@ The first thing we'll do is add a web app to the HR visual application you just 
 
      ![The Web Apps pane shows the hrwebapp's tree view. Under hrwebapp, main is expanded with main-start nested under. At the same level as main are the Fragments, Resources, and Root Pages nodes.](images/treeview.png "")
 
-    A _flow_ contains pages that relate to each other. An application can have multiple flows, and a flow can contain many pages. This simple application contains only one flow, **main**, and one page, **main-start**—though we'll add more pages during this workshop. By convention, a page takes its flow name as a prefix.
+    A _flow_ contains pages that relate to each other. An application can have multiple flows, and a flow can contain many pages. This simple application contains only one flow, **main**, and one page, **main-start**—though we'll add more pages later on. By convention, a page takes its flow name as a prefix.
 
 ## Task 2: Create a Location business object and import data
 
@@ -178,7 +176,7 @@ Let's now create the Department and Employee business objects. But instead of cr
 
     A Reference field is like a foreign key in a database table: it's a field that refers to the key (the Id field) of another business object to link the two business objects together. If you were to create a department now, you'll be able to specify one of the floors as the department's location.
 
-7. For the same **Location** field, click **Required** to deselect the setting (**Department** is the only required field for the Department object).
+7. For the same **Location** field, click **Required** to deselect the setting (**Department** and **Id** are the only required fields for the Department object).
 
 8. Now click the **Employee** tab and change the **Department** field to a reference, similar to what you did for the **Location** field. Click **#** in the **Department** field's Type column and change the Type setting as follows:
 
@@ -188,7 +186,7 @@ Let's now create the Department and Employee business objects. But instead of cr
 
     Click **OK**.
 
-9. Remove **Required** for all Employee fields, except **Name**.
+9. Remove **Required** for all Employee fields, except **Name** and **Id**.
 
     ![Employee object's fields. The Required column is highlighted and deselected for all fields, except Name.](images/import-bos-upload-fields-employee.png "Employee object's fields")
 
