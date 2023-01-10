@@ -1,0 +1,40 @@
+{
+    "workshoptitle": "Create a Conversational Interface for your Database with ODA's SQL Dialog",
+    "help": "livelabs-help-oci_us@oracle.com",
+    "tutorials": [
+        {
+            "title": "Introduction",
+            "filename": "../../introduction/introduction.md"
+        },
+    {
+            "title": "Introduction",
+            "filename": "../../introduction/introduction.md"
+        },
+        {
+            "title": "Lab 1: Configure Databse",
+            "description": "Labs that follow the introduction are numbered, starting with Lab 1",
+            "filename": "../../configuredatabase/configuredatabase.md"
+        },
+        {
+            "title": "Lab 2: Create Skill",
+            "filename": "../../createskill/createskill.md"
+        },
+        {
+            "title": "Lab 3: Enhance Model",
+            "filename": "../../enhancemodel/enhancemodel.md"
+        },
+        {
+            "title": "Lab 4: Test Queries",
+            "filename": "../../testqueries/testqueries.md"
+        },
+        {
+            "title": "Lab 5 (Optional): Train with custom data",
+            "filename": "../../customdata/customdata.md"
+        },
+        {
+            "title": "Need Help?",
+            "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/need-help/need-help-livelabs.md"
+        }
+    ]
+}
