@@ -76,9 +76,9 @@ Now that you've shared your application, you need to get its URL so you can pass
 
     The shared application opens in a new browser tab. It includes all the changes you've made in your workspace, even those that were not pushed to the remote branch; it also displays data from your workspace.
 
-    ![The shared web application is shown in a new browser tab, with the data imported from your workspace.](images/open-shared-application-result.png "")
+    An **Install HR Application** ![Install HR Application icon](images/install-app-icon.png) icon that lets you install the app as a PWA also shows up on the address bar—we'll see how this works in a later lab.
 
-    Also, an **Install HR Application** ![Install HR Application icon](images/install-app-icon.png) icon that lets you install the app as a PWA shows up on the address bar—we'll see how this works in a later lab.
+    ![The shared web application is shown in a new browser tab, with the data imported from your workspace.](images/open-shared-application-result.png "")
 
 2. Make a note of the application's URL to share with your team, then close the browser tab.
 3. To view the same shared application now deployed to your development environment, click **Go to Project page** ![Go to Project Page icon](images/go-to-project-home-icon.png) in the header, then click **Environments** ![Environments icon](images/vbs-environments-icon.png) and **Deployments**. Expand **tutorial-hr-project** to view the shared application in your list of deployments.
@@ -94,4 +94,4 @@ Now that you've shared your application, you need to get its URL so you can pass
 ## Acknowledgements
 
 * **Author** - Sheryl Manoharan, VB Studio User Assistance, November 2021
-* **Last Updated By/Date** - Sheryl Manoharan, November 2022
+* **Last Updated By/Date** - Sheryl Manoharan, January 2023
