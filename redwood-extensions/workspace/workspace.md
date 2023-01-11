@@ -108,7 +108,7 @@ From here you can navigate to all your project's components, including environme
 
 ## Task 4: Install Components
 
-VB has some of the most commonly used components pre-installed.  Other components are available in the Component Exchange.  In this lab you will be installing the **Redwood** components you will need for the extension.
+VB has some of the most commonly used components pre-installed.  Other components are available in the Component Exchange.  In this lab you will be installing the Redwood components you will need for the extension.
 
 * Collection Container
 * Foldout Layout Horizontal Template Pattern
@@ -117,10 +117,11 @@ VB has some of the most commonly used components pre-installed.  Other component
 * Welcome Page Template
 
 1. On the far left side of the Designer's navigator, click the fifth tab, Components:
+Clicking the name of components in the list will open a details page for that component.
 ![Edit values](images/OpenComponentsTab.png)
-2. Click Browse:
-
-Clicking the name of any component in the list will open a details page for that component.
+2. Click the Installed tab and check if the Redwood components are already installed in your app, if they are you can skip the following steps and continue to the next lab:
+![Edit values](images/InstalledComponents.png)
+3. If any of the above components are not installed, click the Browse tab:
 
 Install the **Collection Container** component.
 1. In the **Search** field, enter **Collection Container**:
