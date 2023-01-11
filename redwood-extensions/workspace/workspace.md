@@ -77,7 +77,7 @@ Environments consist of servers into which your extension will be deployed. Spec
 
 Make sure the environment has a green checkmark indicating it is available to use.
 
-## Task 2: Create a Workspace
+## Task 3: Create a Workspace
 You are on the project's home page
 
 From here you can navigate to all your project's components, including environments, Git repositories, CI/CD pipelines, issue tracking system, wikis, and much more. In this lab, we'll focus only on workspaces. A *workspace* is a private area where you can develop your extension. Among other things, the workspace defines your Git repository, your Oracle Fusion Cloud Application environment, and other important details.
@@ -106,7 +106,7 @@ From here you can navigate to all your project's components, including environme
 
 	![visual editor](images/results.png)
 
-## Task 3: Install Components
+## Task 4: Install Components
 
 VB has some of the most commonly used components pre-installed.  Other components are available in the Component Exchange.  In this lab you will load the components you will need for the extension.
 
