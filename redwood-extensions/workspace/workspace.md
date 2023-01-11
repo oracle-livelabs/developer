@@ -114,6 +114,8 @@ VB has some of the most commonly used components pre-installed.  Other component
 ![Edit values](images/OpenComponentsTab.png)
 2. Click Browse:
 
+Clicking the name of any component in the list will open a details page for that component.
+
 Install the **Collection Container** component.
 1. In the **Search** field, enter **Collection Container**:
 2. If the button under **Collection Container** says **Install**, click the button.  If it says **Installed**, proceed to the next component:
