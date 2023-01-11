@@ -53,7 +53,7 @@ Let's create a table to display your departments on the main-start page. The Tab
 
     ![Quick Start menu for a new Table. The Add Data quick start is the only option available for selection.](images/department-add-data-quick-start.png "")
 
-    Quick Starts simplify complex processes to quickly build common functionality that every application provides. Here, we'll use the Add Data Quick Start to connect your table to the Department business object and display that data. The Quick Start wizard will prompt you to select your data source, select the fields from the business object that you want to show in your table, and filter data (which we won't do here).
+    Quick Starts simplify things so you can quickly build common functionality that every application provides. Here, we'll use the Add Data Quick Start to connect your table to the Department business object and display that data. The Quick Start wizard will prompt you to select your data source, select the fields from the business object that you want to show in your table, and filter data (which we won't do here).
 
 7. On the Locate Data step of the Add Data wizard, select **Department** under Business Objects, then click **Next**.
 
@@ -105,7 +105,7 @@ Now that we have a way to show departments, we'll add a Create page that lets us
 
     ![Web application's main flow, with the main-start page pointing to the main-create-department page.](images/department-add-create-mainflow.png "")
 
-    **Tip:** A page that's marked with a warning triangle usually indicates that the page's code has issues that you might want to review. For example, the warning for the main-start page here relates to a translation issue, which you can safely ignore. If you want, click **Audits** at the bottom of the screen to review and resolve issues in the Audits pane. You can also select messages that you don't want to be flagged and disable reporting for those messages in the Code editor.
+    **Tip:** A page that's marked with a warning triangle usually indicates that the page's code has issues that you might want to review. For example, the warnings for the main-start and main-create-department pages here relate to a translation issue, which you can safely ignore. If you want, click **Audits** at the bottom of the screen to review and resolve issues in the Audits pane. You can also select warnings you don't want flagged and disable reporting for those messages in the Audits Menu ![Audits Menu icon](images/audits-menu-icon.png).
 
 8. Double-click the **main-start** tile to open the page (you can also click the page in the Web Apps pane, click the **main-start** tab just below the header if it's visible, or click ![Tab icon icon](images/overflow-tab-icon.png) in the tab bar and select the page in the drop-down list). Now click **Reload Design Preview** ![Reload Design Preview icon](images/reload-icon.png) to see the department you created.
 
@@ -238,11 +238,11 @@ Add a Create page that lets your users create new employees.
 
     ![The HTML code for the main-employees page is shown.](images/employees-add-create-code.png "")
 
-    Select the **oj-bind-text** value (at the top) and change `Employees` to `My Employees`, then click **Design** to see your changes reflected in the page's visual editor.
+    Select the **oj-bind-text** value (at the top) and change `Employees` to `My Employees`:
 
     ![The \<oj-bind-text>\ component code is shown, with its value changed to My Employees. ](images/employees-code-view-changetitle.png "")
 
-     Whichever mode you choose to work in (visual or source code), your changes are synced to keep both views consistent.
+     Now click **Design** to see your changes reflected in the page's visual editor. Whichever mode you choose to work in (visual or source code), your changes are synced to keep both views consistent.
 
 10. Click **Structure** to view the structure of components on the main-employees page. Components that aren't currently visible on the page fade into the background to allow you to focus on parts of a page, a section at a time.
 
@@ -272,4 +272,4 @@ It makes sense at this point to change the name of the main-start page to main-d
 ## Acknowledgements
 
 * **Author** - Sheryl Manoharan, VB Studio User Assistance, November 2021
-* **Last Updated By/Date** - Sheryl Manoharan, November 2022
+* **Last Updated By/Date** - Sheryl Manoharan, January 2023
