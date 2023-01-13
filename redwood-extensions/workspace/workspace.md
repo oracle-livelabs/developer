@@ -77,7 +77,7 @@ Environments consist of servers into which your extension will be deployed. Spec
 
 Make sure the environment has a green checkmark indicating it is available to use.
 
-## Task 2: Create a Workspace
+## Task 3: Create a Workspace
 You are on the project's home page
 
 From here you can navigate to all your project's components, including environments, Git repositories, CI/CD pipelines, issue tracking system, wikis, and much more. In this lab, we'll focus only on workspaces. A *workspace* is a private area where you can develop your extension. Among other things, the workspace defines your Git repository, your Oracle Fusion Cloud Application environment, and other important details.
@@ -106,8 +106,33 @@ From here you can navigate to all your project's components, including environme
 
 	![visual editor](images/results.png)
 
+## Task 4: Install Components
 
-You may now **proceed to the next lab**.
+VB has some of the most commonly used components pre-installed.  Other components are available in the Component Exchange.  In this lab you will be installing the Redwood components you will need for the extension.
+
+* Collection Container
+* Foldout Layout Horizontal Template Pattern
+* Summarizing Foldout Panel
+* Simple Create and Edit Page Template Pattern
+* Welcome Page Template
+
+1. On the far left side of the Designer's navigator, click the fifth tab, Components:
+Clicking the name of components in the list will open a details page for that component.
+![Edit values](images/opencomponentstab.png)
+2. Click the Installed tab and check if the Redwood components are already installed in your app, if they are you can skip the following steps and continue to the next lab:
+![Edit values](images/installedcomponents.png)
+3. If any of the above components are not installed, click the Browse tab:
+
+Install the **Collection Container** component.
+1. In the **Search** field, enter **Collection Container**:
+![Edit values](images/collectioncontainersearchresults.png)
+2. If the button under **Collection Container** says **Install**, click the button.  If it says **Installed**, proceed to the next component:
+3. In the popup window, check the box to accept the license and click the **Install** button:
+![Edit values](images/installcollectioncontainer.png)
+
+Repeat this process for each of the components.  Some of the components have names similar to other components not used in this lab.  Double check that you are installing the correct component.
+
+Once you have all of the components installed, you may **proceed to the next lab**.
 
 ## Learn More
 
