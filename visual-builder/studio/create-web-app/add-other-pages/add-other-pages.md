@@ -125,7 +125,7 @@ Now that we've added options to let users manage departments, we'll do the same 
 
 2. Click **Show Employees**.
 
-    The three buttons you created are inactive.
+    The two buttons you created are inactive.
 
 3. Select a row. All the buttons are now active.
 
