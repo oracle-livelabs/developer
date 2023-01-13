@@ -52,7 +52,7 @@ As someone who creates a project, you'll automatically become the project's owne
 
 6. Leave other fields to their default settings and click **Finish**.
 
-    Wait for the project to be provisioned. Once provisioning completes, you'll see the Project Home page, which serves as a window to your workspace, your environments, and repositories, as well as a recent activities feed (you'll need to click **Reset Filters** under Recent Activities - Today to see details). On the left are a series of tabs showing all the project components that are available.
+    Wait for the project to be provisioned. Once provisioning completes, you'll see the Project Home page, which serves as a window to your workspace, your environments, and repositories, as well as a recent activities feed. On the left are a series of tabs showing all the project components that are available. Click ![Show/Hide Labels icon](images/show-hide-labels-icon.png) to hide the labels and increase screen space.
 
     ![The Project Home page includes a Workspaces area with the newly created HR Visual Application workspace. An Environments area shows the Development instance associated with this project. If you click Reset Filters, a Recent Activities feed lists what was done in the project today. On the right, the Repositories tab is selected to show the tutorial-hr-project.git. The Statistics and Team tabs are also visible.](images/project-home.png "Project Home page")
 

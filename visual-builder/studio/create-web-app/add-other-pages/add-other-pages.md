@@ -78,14 +78,13 @@ Now that we've added options to let users manage departments, we'll do the same 
     An **Edit Employee** button is displayed in the toolbar on the main-employees page. The button is inactive.
 
 6. Click **Live**, select a row, and click **Edit Employee** to open the main-edit-employee page.
-7. Click **Design** to switch to Design mode.
-8. To make the form's fields display in two columns, click within the form on the page but outside of a component (that is, in the **Form Layout** component on the page). In the General tab of the form's properties, set the **Max Columns** value to **2**. The fields now appear in two columns.
-9. Let's also set up the employee's picture field to display as an image. To do this, search for an Avatar component in the Components palette, then drag and drop it onto the **div** element just above the Form Layout on the page.
+7. To make the form's fields display in two columns, click within the form on the page but outside of a component (that is, in the **Form Layout** component on the page) in Design mode. In the General tab of the form's properties, set the **Max Columns** value to **2**. The fields now appear in two columns.
+8. Let's also set up the employee's picture field to display as an image. To do this, search for an Avatar component in the Components palette, then drag and drop it onto the **div** element just above the Form Layout on the page.
     ![An Avatar component is dropped into the div element above the Form Layout component on the Edit Employee page. ](images/avatar.png "")
 
-10. In the Avatar's Properties pane, select **Large** in the **Size** drop-down list to increase the component's size.
+9. In the Avatar's Properties pane, select **Large** in the **Size** drop-down list to increase the component's size.
 
-11. Click the **Data** tab and bind the component to a data source. Components are typically bound to variables that store and display data from your data source. Quick Starts automate this for you, but in this step, we'll manually bind the Avatar component to the **picture** variable that retrieves its data from the **picture** field in the Employee business object. To do this, hover over the **Src** field in the Data tab, click ![Select Variable icon](images/variable-picker-icon.png) to open the Variable picker, then select **picture** under the **employee** object.
+10. Click the **Data** tab and bind the component to a data source. Components are typically bound to variables that store and display data from your data source. Quick Starts automate this for you, but in this step, we'll manually bind the Avatar component to the **picture** variable that retrieves its data from the **picture** field in the Employee business object. To do this, hover over the **Src** field in the Data tab, click ![Select Variable icon](images/variable-picker-icon.png) to open the Variable picker, then select **picture** under the **employee** object.
 
     ![A combined image that shows the Select Variable picker being selected in the Avatar component's Data tab. The lower half of the image shows the contents of the Variable picker, with picture under the employee object selected.](images/avatar-bind-data.png "")
 
@@ -95,7 +94,7 @@ Now that we've added options to let users manage departments, we'll do the same 
 
 ## Task 5: Add a button to delete an employee
 
-1. Go to the **main-employees** page. If necessary, select the table, then click **Quick Start** in the Properties pane.
+1. Go to the **main-employees** page. If necessary, switch to **Design** mode, then select the table and click **Quick Start** in the Properties pane.
 2. In the Quick Start menu, click **Add Delete Action**.
 3. On the Select Endpoint step of the Add Delete Action Quick Start, select **Employee** under Business Objects (if necessary) and click **Finish**.
 
@@ -105,11 +104,11 @@ Now that we've added options to let users manage departments, we'll do the same 
 
     ![The button's Events tab shows the deleteEmployeeChain as the action chain triggered by the ojAction event.](images/deleteEmployeeChain.png "")
 
-5. On the success branch of the Call REST action, drag and drop a new Fire Data Provider Event (used to dispatch an event on a data provider) and position it between the other Fire Data Provider Event and Fire Notification actions. You might need to drop the action at the **+** sign, then move it up where you want it.
+5. On the success branch of the Call REST action, drag and drop a new Fire Data Provider Event (used to dispatch an event on a data provider) and position it between the other Fire Data Provider Event and Fire Notification actions. You might need to drop the new action at the **+** sign, then move the Fire Notification action down.
 
     ![The deleteEmployeeChain shows in diagram view. On the success branch of the Call REST action, a second Fire Data Provider Event action has been added. Its properties pane show on the right: Event Target is undefined and Type is set to Mutate.](images/deleteEmployeeChain-actionchain.png "")
 
-6. In the action's Properties pane, click ![Select Variable icon](images/variable-picker-icon.png) next to **Event Target** (you'll need to hover over the field to see the icon). Select **employeeListSDP2** (which is the data provider backing the bar chart).
+6. In the second Fire Data Provider Event action's Properties pane, click ![Select Variable icon](images/variable-picker-icon.png) next to **Event Target** (you'll need to hover over the field to see the icon). Select **employeeListSDP2** (which is the data provider backing the bar chart).
 
 7. Change the Type from **Mutate** to **Refresh**.
 

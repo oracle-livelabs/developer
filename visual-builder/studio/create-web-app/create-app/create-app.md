@@ -68,7 +68,9 @@ The first thing we'll do is add a web app to the HR visual application you just 
 
 4. In the Create Web Application window, enter `hrwebapp` as the **Application Name**. (You can specify uppercase as well as lowercase characters in the application name, but the name is converted to lowercase.) Leave the **Navigation Style** set to the default, **None**, and click **Create**.
 
-    The application opens on the **main-start** page, which is your application's default home page created automatically for you. (Ignore the **This dot says that you have made some changes** dialog that appears in the header for now; we'll explore Git changes in a later lab.) What you see under the **main-start** tab is your application's main work area. Just under main-start are several horizontal tabs: **Page Designer**, **Actions**, **Event Listeners**, and so on. Each tab provides editors to help you examine and modify artifacts used in the page. By default, the page opens in the **Page Designer**, which is where you'll do the bulk of your work in VB Studio.
+    The application opens on the **main-start** page, which is your application's default home page created automatically for you. (Ignore the **This dot says that you have made some changes** dialog that appears in the header for now; we'll explore Git changes in a later lab.)
+
+    What you see under the **main-start** tab is your application's main work area. Just under main-start are several horizontal tabs: **Page Designer**, **Actions**, **Event Listeners**, and so on. Each tab provides editors to help you examine and modify artifacts used in the page. By default, the page opens in the **Page Designer**, which is where you'll do the bulk of your work in VB Studio.
 
     ![Web Apps pane after the hrwebapp has been created. The app itself is open on the right, on the main-start page, showing the Components Palette. On the far right, the Properties tab shows the Page view.](images/designer.png "Web Apps pane with the hrwebapp")
 
@@ -107,7 +109,7 @@ Let's now create your first business object and add data to it by importing a CS
 3. In the New Business Object dialog box, enter `Location` in the **Name** field. `Location` is also filled in automatically as the **Display Label**. Click **Create**.
 4. Click **Fields** for the newly created Location business object.
 
-    Every business object you create has five default fields: an id, plus fields that provide information on who created and updated the object and when.
+    Every business object you create has six default fields: an id, plus fields that provide information on who created and updated the object and when.
 
     ![Business object page for the Location business object, with the Fields tab open. The other tabs are Overview, Security, Business Rules, Endpoints, and Data. A table shows the current fields, with the Type, Field Name, Display Label, Required, and Description columns visible for each.](images/location-bo-fields.png "Location business object page")
 
@@ -144,7 +146,7 @@ Let's now create your first business object and add data to it by importing a CS
 
 ## Task 3: Create the Department and Employee business objects
 
-Let's now create the Department and Employee business objects. But instead of creating the business objects and fields one by one and importing data for them, you'll import a ZIP file that defines the two business objects, their fields, and data all at once.
+Let's now create the Department and Employee business objects. But instead of creating the business objects and fields one by one and importing data for them, you'll import a ZIP file that defines the two business objects with their fields and data all at once.
 
 1. Click [this link](https://objectstorage.us-ashburn-1.oraclecloud.com/p/LNAcA6wNFvhkvHGPcWIbKlyGkicSOVCIgWLIu6t7W2BQfwq2NSLCsXpTL9wVzjuP/n/c4u04/b/livelabsfiles/o/developer-library/Department-Employee-BO.zip) and download the `Department-Employee-BO.zip` file. This ZIP file contains CSV files for the Department and Employee business objects. Feel free to review the contents.
 
