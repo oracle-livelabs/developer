@@ -62,6 +62,53 @@ Users with [the right roles](https://docs.oracle.com/en/cloud/paas/visual-builde
 
 	![visual editor](images/results.png)
 
+## Task 3: Install Components
+
+VB has some of the most commonly used components pre-installed.  Other components are available in the Component Exchange.  In this lab you will load the components you will need for the extension.
+
+1. On the far left side of the Designer's navigator, click the fifth tab, Components:
+![Edit values](images/OpenComponentsTab.png)
+2. Click Browse:
+
+Clicking the name of any component in the list will open a details page for that component.
+
+Install the **Collection Container** component.
+1. In the **Search** field, enter **Collection Container**:
+2. If the button under **Collection Container** says **Install**, click the button.  If it says **Installed**, proceed to the next component:
+3. In the popup window, check the box to accept the license and click the **Install** button:
+![Edit values](images/InstallCollectionContainer.png)
+
+Install the **Foldout Layout Horizontal Template Pattern** component.
+1. In the **Search** field, enter **Foldout Layout Horizontal Template Pattern**:
+2. If the button under **Foldout Layout Horizontal Template Pattern** says **Install**, click the button.  If it says **Installed**, proceed to the next component:
+3. In the popup window, check the box to accept the license and click the **Install** button:
+![Edit values](images/InstallFoldoutLayoutHorizontalTemplatePattern.png)
+
+Install the **Summarizing Foldout Panel** component.
+1. In the **Search** field, enter **Summarizing Foldout Panel**:
+2. If the button under **Summarizing Foldout Panel** says **Install**, click the button.  If it says **Installed**, proceed to the next component:
+3. In the popup window, check the box to accept the license and click the **Install** button:
+![Edit values](images/InstallSummarizingFoldoutPanel.png)
+
+Install the **Simple Create and Edit Page Template Pattern** component.
+1. In the **Search** field, enter **Simple Create and Edit Page Template Pattern**:
+2. If the button under **Simple Create and Edit Page Template Pattern** says **Install**, click the button.  If it says **Installed**, proceed to the next component:
+3. In the popup window, check the box to accept the license and click the **Install** button:
+![Edit values](images/InstallSimpleCreateEditPageTemplatePattern.png)
+
+Install the **Welcome Page Template** component.
+1. In the **Search** field, enter **Welcome Page Template**:
+2. If the button under **Welcome Page Template** says **Install**, click the button.  If it says **Installed**, verify that you have all 5 components loaded:
+3. In the popup window, check the box to accept the license and click the **Install** button:
+![Edit values](images/InstallWelcomePageTemplate.png)
+
+You should now have the following components installed.
+* Collection Container
+* Foldout Layout Horizontal Template Pattern
+* Summarizing Foldout Panel
+* Simple Create and Edit Page Template Pattern
+* Welcome Page Template
+![visual editor](images/InstalledComponents.png)
 
 You may now **proceed to the next lab**.
 
