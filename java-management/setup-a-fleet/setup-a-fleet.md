@@ -126,7 +126,7 @@ You may now **proceed to the next lab**.
     ```
     ALLOW dynamic-group JMS_Advanced_Features_INSTANCE_PRINCIPALS_GROUP to MANAGE object-family in compartment Fleet_Compartment
     ALLOW dynamic-group JMS_Advanced_Features_MACS_GROUP to MANAGE objects in compartment Fleet_Compartment
-    ALLOW service javamanagementservice to USE object-family in compartment Fleet_Compartment
+    ALLOW service javamanagementservice to MANAGE object-family in compartment Fleet_Compartment
     ```
 
     ![image of policy details page](images/policy-details-page.png)
