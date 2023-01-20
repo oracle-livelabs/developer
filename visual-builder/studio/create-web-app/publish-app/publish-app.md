@@ -81,7 +81,7 @@ After your application is successfully deployed to the development environment, 
 
 A deployed application does not automatically include its business object data, so you'll need to manually import data for the application in the development environment. You can import the data you used in your workspace or add entirely different data, as we'll do now.
 
-1. Click [this link](https://objectstorage.us-ashburn-1.oraclecloud.com/p/LNAcA6wNFvhkvHGPcWIbKlyGkicSOVCIgWLIu6t7W2BQfwq2NSLCsXpTL9wVzjuP/n/c4u04/b/livelabsfiles/o/developer-library/HR-Application.zip) and download the `HR-Application.zip` file. The zip file contains CSV files of the Location, Department, and Employee business objects with more records and data.
+1. Click [this link](https://objectstorage.us-ashburn-1.oraclecloud.com/p/Ei1_2QRw4M8tQpk59Qhao2JCvEivSAX8MGB9R6PfHZlqNkpkAcnVg4V3-GyTs1_t/n/c4u04/b/livelabsfiles/o/oci-library/HR-Application.zip) and download the `HR-Application.zip` file. The zip file contains CSV files of the Location, Department, and Employee business objects with more records and data.
 2. In the Environments page, click **Actions** ![Actions icon](images/vbs-actions-icon.png) for the deployed tutorial-hr-project and select **Import Data**.
 
     ![The Import Data option from the Actions menu of a deployed application is shown.](images/deployed-application-import-data.png "")

@@ -220,7 +220,7 @@ Add a Create page that lets your users create new employees.
 
 7. Click **Live** to make the form active. Enter or select the following (you can use other data if you wish):
     * **Name**: `Walter`
-    * **Picture**: `https://www.oracle.com/webfolder/technetwork/jet/images/hcm/placeholder-male-05.png`
+    * **Picture**: `https://www.oracle.com/webfolder/technetwork/jet/content/images/hcm/placeholder-male-05.png`
     * **Hire Date**:  Select today's date
     * **Email**: `walter@example.com`
     * **Department**: `IT`
