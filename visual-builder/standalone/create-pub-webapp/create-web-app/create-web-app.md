@@ -1,4 +1,4 @@
-M# Create a Web Application
+# Create a Web Application
 
 ## Introduction
 
@@ -49,31 +49,57 @@ The first thing we'll do is create the web application itself. Later, we'll cons
     Now take note of the header:
     ![](images/header.png "This image shows the visual application's header. The application name HR Visual Application is on the left. On the right are icons that let you perform other actions: Undo, Redo, Git, Go to File, Preview, and Menu.")
 
-    The `DEV` and `1.0` tags next to the application name on the left indicate the application status (DEV for development) and version (1.0). Elements on the right let you perform various actions. For example, you can undo your most recent change, redo a change after clicking Undo, or search for a file. This workshop primarily demonstrates the options to preview your app and publish changes.
+    The `DEV` and `1.0` tags next to the application name on the left indicate the application status (DEV for development) and version (1.0). Elements on the right let you perform various actions. For example, you can undo your most recent change or search for a file. This workshop primarily demonstrates the options to preview your app, stage, then publish it. If you make a mistake during this workshop, click ![Undo icon](images/undo-icon.png) to back out of the last step you did.
 
-4.  We want to create a web app, so under **Create Apps**, click **Web Apps**.
+    Now take a look at the footer, which has tools that help you debug and maintain your visual app (we'll briefly look at Audits in this workshop):
+
+    ![Footer in the HR Visual Application, which shows Audits, Find in Files, Logs, Tests, and Trace tabs.](images/footer.png "Footer")
+
+    Keep in mind that Visual Builder saves your changes automatically as you work. A timestamp at the bottom of the page will show the time  your work was last saved.
+
+
+4. We want to create a web app, so under **Create Apps**, click **Web Apps**.
 
     The Navigator opens in the Web Apps pane.
 
-5.  Click **+ Web Application** (or the **+** sign at the top of the pane).
+5. Click **+ Web Application** (or the **+** sign at the top of the pane).
 
     ![](images/vbcsca_cra_s5.png "This image shows the Web Apps pane of the Navigator. There is a plus sign at the top and a + Web Application button at the bottom")
 
 6.  In the Create Web Application dialog box, enter `hrwebapp` in the **Application Name** field under General Information. (You can specify uppercase as well as lowercase characters in the application name, but the name is converted to lowercase.) Leave the **Navigation Style** set to the default, **None**, and click **Create**.
 
-    The application opens on the **main-start** page, which is your application's default home page created automatically for you. By convention, a page name takes its flow as a prefix. This simple application uses only the **main** flow. More complex applications can have more than one flow.
+    The application opens on the **main-start** page, which is your application's default home page created automatically for you.
+
+    What you see under the **main-start** tab is your application's work area. Just under **main-start** are several horizontal tabs: **Page Designer**, **Actions**, **Event Listeners**, and so on. Each tab provides editors to help you examine and modify artifacts used in the page. By default, the page opens in the **Page Designer**, which is where you'll do the bulk of your work.
+
 
     ![](images/vbcsca_cra_s7.png "This image shows the Web Apps pane after the hrwebapp has been created. The app itself is open on the right, on the main-start page, showing the Components Palette. On the far right, the Properties tab shows the Page view.")
 
-    What you see under the **main-start** tab is your application's work area. Just under **main-start** are several horizontal tabs: **Page Designer**, **Actions**, **Event Listeners**, and so on. By default, a page opens in the **Page Designer** and features the **Components** palette, the **Data** palette, and the **Structure** view on the left edge of the work area. To design your pages, you'll drag UI components from the Components palette to the canvas. Once you add components, the hierarchy of those components on your page will show in the Structure view.
+    Here are the main Page Designer areas you'll use throughout this workshop:
+    | # | Tab | Functionality |
+    | --- | ---- | --- |
+    | 1 | Components | UI components (sorted by categories) that you can drag and drop onto a page|
+    | 2 | Data | Data endpoints based on business objects you create |
+    | 3 | Structure | Hierarchical view of the page's structure  |
+    | 4 | Properties | Properties for a component selected in your page. When the entire page is selected (as it is now), you'll see the Page view where you can choose a preferred page layout.|
+    | 5 | Canvas | A design, live, or code view of your page content |
+    {: title="Page Designer Work Area"}
 
-    On the far right is the **Properties** pane, which lets you view or edit a component's properties. When the entire page is selected (as it is now), you'll see the Page view, where you can choose a preferred page layout. Click **Properties** (the vertical tab located along the right-most edge of your browser) to hide the Properties pane and expand your work area.
+    You can collapse and expand tabs to better manage your working area. For example, click **Properties** to hide the Properties pane and expand your work area. When collapsed, the tab will show as a vertical tab on the side of the editor. Click the tab again to expand it.
 
-    You can also move different panes to customize your work area. For example, right-click **Structure** at the bottom of your work area, then select **Move to Top Left** to move the Structure view right under **Components** and **Data**.
+   You can also move different panes to customize your work area. For example, right-click **Structure** at the bottom of your work area, then select **Move to Top Left** to move the Structure view right under **Components** and **Data**.
 
     ![](images/structure-view-move.png "This image shows the Structure view's right-click menu, with the option to 'Move to Top Left' selected. Other options are 'Move to Bottom Left', 'Move to Top Right', 'Move to Bottom Right', and 'Reset All Panels to Default'.")
 
-    In the Web Apps pane, expand the **hrwebapp** and **main** nodes to get a tree view of your web application.
+    See also how you can manage tabs that open in the tab bar. Right-click the main-start tab to see the available options. Note that the active tab will always be in focus.
+
+    ![The main-start page tab's right-click menu, with options to 'Close Tab', 'Close Other Tabs', 'Close Tabs to the Right', 'Close All Tabs', and 'Select in Navigator'.](images/tab.png "main-start page tab right-click menu")
+
+    In the Web Apps pane, expand the **hrwebapp** and **main** nodes to get a tree view of your web application's flows and pages.
+
+    ![The Web Apps pane shows the hrwebapp's tree view. Under hrwebapp, main is expanded with main-start nested under. At the same level as main are the Fragments, Resources, and Root Pages nodes.](images/treeview.png "")
+
+    A _flow_ contains pages that relate to each other. An application can have multiple flows, and each flow can contain many pages. This simple application contains only one flow, **main**, and one page, **main-start**—though we'll add more pages later on. By convention, a page takes its flow name as a prefix.
 
 ## Task 2: Create a Location business object and import data
 
@@ -81,10 +107,10 @@ Let's create your first business object and add data to it by importing a CSV fi
 
 1.  Click the **Business Objects** ![Business Objects icon](images/vbcsca_bo_icon.png) tab in the Navigator.
 2.  Click the **\+ Business Object** button.
-3.  In the New Business Object dialog box, enter `Location` in the **Label** field. `Location` is also filled in automatically as the **Name** value. Click **Create**
+3.  In the New Business Object dialog box, enter `Location` in the **Name** field. `Location` is also filled in automatically as the **Display Label** field. Click **Create**
 4.  Click the **Fields** tab for the newly created Location object.
 
-    Every business object you create has five default fields: an ID, plus fields that provide information on who created and updated the object and when.
+    Every business object you create has six default fields: an id, plus fields that provide information on who created and updated the object and when.
 
     ![](images/vbcsca_imp_s4.png "This image shows the business object page for the Location business object, with the Fields tab open. The other tabs are Overview, Security, Business Rules, Endpoints, and Data. A table shows the current fields, with the Type, Field Name, Display Label, Required, and Description columns visible for each.")
 
@@ -153,7 +179,7 @@ Let's now create the Department and Employee business objects. But instead of cr
 
     A Reference field is like a foreign key in a database table: it's a field that refers to the key (the Id field) of another business object to link the two business objects together. When you create a department, you'll be able to specify one of the floors as the department's location.
 
-7. For the same **Location** field, click **Required** to deselect the setting (**Department** is the only required field for the Department object).
+7. For the same **Location** field, click **Required** to deselect the setting (**Department** and **Id** are the only required fields for the Department object).
 
 8. Now click the **Employee** tab and change the **Department** field's type to a reference, similar to what you did for the **Location** field. Click **#** in the **Department** field's Type column and change the Type setting as follows:
 
@@ -209,4 +235,4 @@ Now that we have our business objects, let's create a diagram that provides a vi
 ## Acknowledgements
 
 * **Author** - Sheryl Manoharan, Visual Builder User Assistance, August 2021
-* **Last Updated By** - August 2022
+* **Last Updated By** - January 2023

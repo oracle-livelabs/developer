@@ -53,7 +53,7 @@ The first thing we'll do is add a web app to the HR visual application you just 
 
     Now take a look at the footer, which has tools that help you debug and maintain your visual app (we'll briefly look at Audits and Git History in this workshop):
 
-    ![Footer in the HR Visual Application workspace, which shows Audits, Find in Files, Git History, and Tests tabs.](images/footer.png "Header")
+    ![Footer in the HR Visual Application workspace, which shows Audits, Find in Files, Git History, and Tests tabs.](images/footer.png "Footer")
 
 
     Keep in mind that VB Studio saves your changes automatically as you work. A timestamp at the bottom of the page will show the time  your work was last saved. Note that your changes are only saved to your local workspace repo—but more on that later.
