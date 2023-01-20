@@ -138,7 +138,7 @@ Now that we've added options to let users manage departments, we'll do the same 
 
 6.  Click **Create** and specify the data for a new employee, for example:
     - **Name**: `Shayla`
-    - **Picture**: `https://www.oracle.com/webfolder/technetwork/jet/images/hcm/placeholder-female-16.png`
+    - **Picture**: `https://www.oracle.com/webfolder/technetwork/jet/content/images/hcm/placeholder-female-16.png`
     - **Hire Date**: Select today's date
     - **Email**: `shayla@example.com`
     - **Department**: `Marketing`
