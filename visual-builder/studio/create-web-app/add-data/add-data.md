@@ -46,7 +46,7 @@ This lab assumes you have:
 
     The action now has the label `Navigate main-employees`.
 
-8. Click **Preview** ![Preview icon](images/preview-icon.png) in the header to run the page in its own browser tab and see how it will appear to a user. (You can continue to use the Live mode to test your app if you prefer, though the Preview form factor is a bit more pleasing.)
+8. Click **Preview** ![Preview icon](images/preview-icon.png) in the header to run the page in its own browser tab and see how it will appear to a user. (You can use the Live mode to test your app if you prefer, though the Preview form factor is a bit more pleasing.)
 
 9. In the new browser tab, click **Show Employees**.
 

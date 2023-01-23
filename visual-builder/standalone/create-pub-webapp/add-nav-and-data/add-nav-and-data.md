@@ -8,12 +8,12 @@ Estimated Time: 5 minutes
 
 ### About this lab
 
-With the Department and Employee pages now available, you'll need to make sure users can navigate between these pages. You do this by adding buttons that perform specific *actions* when you click them. In Visual Builder, this sequence of actions is called an *action chain*. In this lab, you'll add buttons that take you from the Departments page to the Employees pages and back again. Each button is associated with an event that sets off a navigation action chain.
+With the Department and Employee pages now available, you'll want your users to be able to navigate between these pages. You can do this by adding buttons that perform specific *actions* when you click them. This sequence of actions is called an *action chain* in Visual Builder. In this lab, you'll add buttons that take you from the Departments page to the Employees pages and back again. Each button is associated with an 'onclick' event that sets off a navigation action chain.
 
 ## Task 1: Create an action chain to navigate from the Departments page to the Employees page
 
 1.  Click the **Web Applications** ![Web Applications icon](images/vbcsnd_webapp_icon.png) tab in the Navigator, and click **main-departments** under the **hrwebapp** and **main** nodes.
-2.  In the Page Designer, click **Components** to open the Components palette. Enter `button` in the Filter field, then drag a Button from the Common category to the Toolbar, to the right of the **Create Department** button on the main-departments page.
+2.  In the Page Designer, click **Components** to open the Components palette. Enter `button` in the Filter field, then drag a Button onto the Toolbar, to the right of the **Create Department** button on the main-departments page.
 
     ![](images/vbcsnd_cse_s2.png "This image shows the main-departments page, with a Button component being dragged from the Components palette into the toolbar, next to the Create Department button.")
 
@@ -34,7 +34,7 @@ With the Department and Employee pages now available, you'll need to make sure u
 
     The action now has the label `Navigate main-employees`.
 
-7.  Click **Preview** ![Preview icon](images/vbcsnd_run_icon.png) in the header to run the page in its own browser tab and see how it will appear to a user. (You can continue to use the Live mode to test your app if you prefer, though the Preview form factor is a bit more pleasing.)
+7.  Click **Preview** ![Preview icon](images/vbcsnd_run_icon.png) in the header to run the page in its own browser tab and see how it will appear to a user. (You can use the Live mode to test your app if you prefer, though the Preview form factor is a bit more pleasing.)
 
 8.  In the new browser tab, click **Show Employees**.
 
@@ -69,4 +69,4 @@ With the Department and Employee pages now available, you'll need to make sure u
 ## Acknowledgements
 
 * **Author** - Sheryl Manoharan, Visual Builder User Assistance, August 2021
-* **Last Updated By** - August 2022
+* **Last Updated By** - January 2023
