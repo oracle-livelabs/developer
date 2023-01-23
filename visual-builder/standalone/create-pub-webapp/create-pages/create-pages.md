@@ -19,9 +19,12 @@ Create a table to display your departments on the main-start page. The Table com
 
     You might want to click the **Web Applications** tab to close the Navigator pane and expand your work area. You can also widen your browser window.
 
-3.  Now that you're in the Page Designer, let's give this page a title. Click **main** on the page canvas—notice how the title text uses the Bind Text component, also selected in the Structure view. (If you're having trouble selecting the component, you'll need to expand the canvas area.)
-
+3.  Now that you're in the Page Designer, let's give this page a title. Click **main** on the page canvas—notice how the title text uses the Bind Text component.
     ![](images/vbcscp_dd_s3.png "This image shows the Page Designer tab for the main-start page, with the 'main' text featured in the Bind Text component selected on the canvas.")
+
+    If you're having trouble selecting the component, you'll need to expand the canvas area to better view its elements. Make sure you select the Bind Text component, not the div element surrounding it.
+
+
 
 4.  In the Bind Text component's Properties pane (click **Properties** if needed), replace `main` with `Departments` in the **Value** field.
 
@@ -33,11 +36,11 @@ Create a table to display your departments on the main-start page. The Table com
 
     A table with some sample data is added to the page. We'll use this table to display three columns that map to the Department business object's id, department, and location fields.
 
-6.  Select the table if necessary, then click **Add Data** in the Properties pane's Quick Start tab to open the Add Data Quick Start.  
+6.  Select the table if necessary, then click **Add Data** in the Properties pane's Quick Start tab to open the Add Data Quick Start.
 
     ![](images/vbcscp_dd_s6.png "This image shows the Quick Start menu for a new Table. The Add Data quick start is the only option available for selection.")
 
-    Quick Starts simplify complex processes to quickly build common functionality that every application provides. Here, we'll use the Add Data Quick Start to connect your table to the Department business object and display that data. The Quick Start wizard will prompt you to select your data source, select the fields from the business object that you want to show in your table, and filter data (which we won't do here).
+    Quick Starts simplify things so you can quickly build common functionality that every application provides. Here, we'll use the Add Data Quick Start to connect your table to the Department business object and display that data. The Quick Start wizard will prompt you to select your data source, select the fields from the business object that you want to show in your table, and filter data (which we won't do here).
 
 7.  On the Locate Data step of the Quick Start, select **Department** under Business Objects, then click **Next**.  
 
@@ -91,11 +94,11 @@ Now that we have a way to show departments, we'll add a Create page that lets us
 
     ![](images/vbcscp_cpd_s7_result.png "This image shows the web application's main flow, with the main-start page pointing to the main-create-department page.")
 
+   **Tip:** A page that's marked with a warning triangle usually indicates that the page's code has issues that you might want to review. For example, the warnings for the main-start and main-create-department pages here relate to a translation issue, which you can safely ignore. If you want, click **Audits** at the bottom of the screen to review and resolve issues in the Audits pane. You can also select warnings you don't want flagged and disable reporting for those messages in the Audits Menu ![Audits Menu icon](images/audits-menu-icon.png).
+
 8.  Double-click the **main-start** tile to open the page (you can also click the **main-start** tab just below the header or click the page in the Web Apps pane), then click **Reload Design Preview** ![Reload design preview icon](images/vbcscp_reload_icon.png) to see the department you created.
 
     ![](images/vbcscp_cpd_s8.png "This image shows the Departments page with the Create Department button and the table. The Reload Design Preview icon is selected.")
-
-9.  Click **Design** to return to Design view.
 
 ## Task 3: Add a page to display employees
 
@@ -119,7 +122,7 @@ We'll now create a page to display employees, similar to the one you created to 
 
     ![](images/panel-on-page-resize.png "This image shows a panel component on the page, with the pane's resize cursor being dragged to resize it to seven columns.")
 
-7.  Now let's add our table. This time, instead of using the Components palette, let's use the Data palette, which provides a *data-first approach* to UI design. The Data palette provides access to your business objects and allows you to drag and drop them onto the canvas to create UI components that readily map to them. To see this in action, click the **Data** tab, then expand **Business Objects** and **Employee**.
+7.  Now let's add our table. This time, instead of using the Components palette, let's use the Data palette, which provides a *data-first approach* to UI design. The Data palette provides access to your business objects and allows you to drag and drop them onto the canvas to readily map them to UI components. To see this in action, click the **Data** tab, then expand **Business Objects** and **Employee**.
 
     ![](images/data-palette-employee-object.png "This image shows the Data palette. The Employee business object under Business Objects is expanded to show its REST endpoints.")
 
@@ -157,7 +160,7 @@ Now that you've displayed some employee data in a table, let's add a chart to vi
 
 1. Click **Components**, then drag another Panel component onto the page, next to the existing table.
 
-2. Enter `chart` in the Components Filter field, then from the **Chart** section, drag a **Bar Chart** into the panel on the page:   
+2. Enter `chart` in the Components Filter field, then from the **Chart** section, drag a **Bar Chart** into the panel on the page:
 
   ![](images/panel-on-page-chart.png "This image shows a Bar Chart component being dropped into the panel component next to the Employee table.")
 
@@ -189,7 +192,7 @@ Add a Create page that lets your users create new employees.
 1.  Select the table component within the panel on the main-employees page, click the **Quick Start** tab in the Properties pane, and click **Add Create Page**.
 2.  On the Select Endpoint step of the Add Create Page Quick Start, select **Employee** under Business Objects (if necessary) and click **Next**.
 
-3.  On the Page Detail page, select the **picture**, **hireDate**, **email**, **department**, **salary**, and **country** check boxes in that order (**name** is already selected, because it's a required field). Because our employee images are stored in a database elsewhere and we only reference their paths, change the **picture** field's type to **URL** for validation. Change the **email** field's control type from **Input Text** to **Email**.   
+3.  On the Page Detail page, select the **picture**, **hireDate**, **email**, **department**, **salary**, and **country** check boxes in that order (**name** is already selected, because it's a required field). Because our employee images are stored in a database elsewhere and we only reference their paths, change the **picture** field's type to **URL** for validation. Change the **email** field's control type from **Input Text** to **Email**.
 
     ![](images/vbcscp_cpc_s4.png "This image shows the Select Endpoint page of the Add Create Page quick start. Under request, the country, department, email, hireDate, name, picture, and salary check boxes are selected, and those fields are shown under Fields. The Button label field is set to Create Employee. The Page title is Create Employee, and the Page name is main-create-employee.")
 
@@ -234,8 +237,6 @@ Add a Create page that lets your users create new employees.
 
 10.  Now click **Structure** to view the structure of components on the main-employees page. Components that aren't currently visible on the page fade into the background to allow you to focus on parts of a page, a section at a time.
 
-    ![](images/vbcscp_cpc_s10.png "This image shows the component Structure of the main-employees page.")
-
 11.  Click **Structure** again to close the structure view.
 
 ## Task 6: Change the name of the **main-start** page
@@ -263,4 +264,4 @@ It makes sense at this point to change the name of the main-start page to main-d
 ## Acknowledgements
 
 * **Author** - Sheryl Manoharan, Visual Builder User Assistance, August 2021
-* **Last Updated By** - August 2022
+* **Last Updated By** - January 2023

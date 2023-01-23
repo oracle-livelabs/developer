@@ -238,7 +238,7 @@ Add a Create page that lets your users create new employees.
 
     ![The HTML code for the main-employees page is shown.](images/employees-add-create-code.png "")
 
-    Select the **oj-bind-text** value (at the top) and change `Employees` to `My Employees`:
+    Select the **oj-bind-text** value in line 34 and change `Employees` to `My Employees`:
 
     ![The \<oj-bind-text>\ component code is shown, with its value changed to My Employees. ](images/employees-code-view-changetitle.png "")
 
