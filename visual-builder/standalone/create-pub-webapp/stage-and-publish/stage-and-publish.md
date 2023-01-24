@@ -55,7 +55,7 @@ Let's now stage the application, so other users can test its behavior.
 
     ![](images/vbcssp_sta_s4.png "This image shows the Menu option with a new Open Staged Application option.")
 
-    The staged application opens in a new browser tab. The tables are populated with the data from Development. Also, an **Install HR Application** ![Install HR Application icon](images/install-app-icon.png) icon that lets you install the app as a PWA shows up on the address bar—we'll test this functionality in a later step.
+    The staged application opens in a new browser tab. The tables are populated with the data from Development. An **Install HR Application** ![Install HR Application icon](images/install-app-icon.png) icon that lets you install the app as a PWA also shows up on the address bar—we'll test this functionality in a later step.
 
     ![](images/open-shared-application-result.png "This image shows the staged version of the HR web app open in a browser tab. The Install HR Application icon is highlighted.")
 
@@ -134,4 +134,4 @@ After you have successfully tested the staged application, you can publish it an
 ## Acknowledgements
 
 * **Author** - Sheryl Manoharan, Visual Builder User Assistance, June 2021
-* **Last Updated By** - August 2022
+* **Last Updated By** - January 2023

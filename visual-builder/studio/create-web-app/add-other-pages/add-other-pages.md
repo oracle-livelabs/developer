@@ -100,7 +100,7 @@ Now that we've added options to let users manage departments, we'll do the same 
 
     A **Delete Employee** button is displayed in the toolbar on the main-employees page. The button is inactive.
 
-4. Because the page features a bar chart as well, let's update the action chain created by the Quick Start to refresh the chart whenever an employee is deleted. Select the **Delete Employee** button, select the **Events** tab in the Properties pane, then click the **deleteEmployeeChain** Action Chain.
+4. Because the page features a bar chart as well, let's update the action chain created by the Quick Start to refresh the chart whenever an employee is deleted. Select the **Delete Employee** button, then select the **Events** tab in the Properties pane and click the **deleteEmployeeChain** action chain.
 
     ![The button's Events tab shows the deleteEmployeeChain as the action chain triggered by the ojAction event.](images/deleteEmployeeChain.png "")
 
@@ -108,7 +108,7 @@ Now that we've added options to let users manage departments, we'll do the same 
 
     ![The deleteEmployeeChain shows in diagram view. On the success branch of the Call REST action, a second Fire Data Provider Event action has been added. Its properties pane show on the right: Event Target is undefined and Type is set to Mutate.](images/deleteEmployeeChain-actionchain.png "")
 
-6. In the second Fire Data Provider Event action's Properties pane, click ![Select Variable icon](images/variable-picker-icon.png) next to **Event Target** (you'll need to hover over the field to see the icon). Select **employeeListSDP2** (which is the data provider backing the bar chart).
+6. In the second Fire Data Provider Event action's Properties pane, click ![Select Variable icon](images/variable-picker-icon.png) next to **Event Target** (you'll need to hover over the field to see the icon) and select **employeeListSDP2**, which is the data provider backing the bar chart.
 
 7. Change the Type from **Mutate** to **Refresh**.
 
@@ -133,7 +133,7 @@ Now that we've added options to let users manage departments, we'll do the same 
 4. Click **Edit Employee**.
 5. On the Edit Employee page, change the **Department** to `IT` and **Salary** to 6000. Click **Save**. A success message appears, and you are returned to the Employees page. Notice how the bar chart also changes to show the employee's updated salary.
 
-6. Click **Create** and specify the data for a new employee, for example:
+6. Click **Create Employee** and specify the data for a new employee, for example:
     * **Name**: `Shayla`
     * **Picture**: `https://www.oracle.com/webfolder/technetwork/jet/content/images/hcm/placeholder-female-16.png`
     * **Hire Date**: Select today's date

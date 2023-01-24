@@ -94,22 +94,22 @@ Now that we've added options to let users manage departments, we'll do the same 
 
 ## Task 5: Add a page to delete an employee
 
-1.  Go to the **main-employees** page. If necessary, click the table, then click the **Quick Start** tab.
+1.  Go to the **main-employees** page. If necessary, switch to **Design** mode, then select the table and click **Quick Start** in the Properties pane.
 2.  Click **Add Delete Action**.
 
 3.  On the Select Endpoint step of the Add Delete Action Quick Start, select **Employee** under Business Objects (if necessary) and click **Finish**.
 
     A **Delete Employee** button is displayed in the toolbar on the main-employees page. The button is inactive.
 
-4. Because the page features a bar chart as well, let's update the action chain created by the Quick Start to refresh the chart whenever an employee is deleted. Select the **Delete Employee** button, select the **Events** tab in the Properties pane, then click the **deleteEmployeeChain** Action Chain.
+4. Because the page features a bar chart as well, let's update the action chain created by the Quick Start to refresh the chart whenever an employee is deleted. Select the **Delete Employee** button, then select the **Events** tab in the Properties pane and click the **deleteEmployeeChain** action chain.
 
   ![](images/deleteEmployeeChain.png "This image shows the Events tab selected for the button, listing the deleteEmployeeChain as the action chain trigged by the ojAction event.")
 
-5. On the success branch of the Call REST action, drag and drop a new Fire Data Provider Event (used to dispatch an event on a data provider) and position it between the other Fire Data Provider Event and Fire Notification actions. You might need to drop the Fire Data Provider Event action on the **+** sign, then drag the Fire Notification action down onto the **+** sign.  
+5. On the success branch of the Call REST action, drag and drop a new Fire Data Provider Event (used to dispatch an event on a data provider) and position it between the other Fire Data Provider Event and Fire Notification actions. You might need to drop the Fire Data Provider Event action on the **+** sign, then drag the Fire Notification action down.
 
   ![](images/deleteEmployeeChain-actionchain.png "This image shows the deleteEmployeeChain in diagram view. On the success branch of the Call REST action, a second Fire Data Provider Event action has been added. Its properties pane show on the right: Event Target is undefined and Type is set to Mutate.")
 
-6. In the action's Properties pane, click ![Select Variable icon](images/variable-picker-icon.png) next to **Event Target** (you'll need to hover over the field to see the icon). Select **employeeListSDP2** (which is the data provider backing the bar chart).
+6. In the action's Properties pane, click ![Select Variable icon](images/variable-picker-icon.png) next to **Event Target** (you'll need to hover over the field to see the icon) and select **employeeListSDP2**, which is the data provider backing the bar chart.
 
 7. Change the Type from **Mutate** to **Refresh**.
 
@@ -120,7 +120,7 @@ Now that we've added options to let users manage departments, we'll do the same 
 
 ## Task 6: Test your Employee pages
 
-1.  Click **Preview** ![Preview icon](images/vbcsmd_run_icon.png).
+1. Click **Preview** ![Preview icon](images/vbcsmd_run_icon.png).
 
     The application opens in another browser tab, displaying the Departments page.
 
@@ -136,7 +136,7 @@ Now that we've added options to let users manage departments, we'll do the same 
 
 5.  On the Edit Employee page, change the **Department** to `IT` and **Salary** to 6000. Click **Save**. A success message appears, and you are returned to the Employees page. Notice how the bar chart also changes to show the employee's updated salary.
 
-6.  Click **Create** and specify the data for a new employee, for example:
+6.  Click **Create Employee** and specify the data for a new employee, for example:
     - **Name**: `Shayla`
     - **Picture**: `https://www.oracle.com/webfolder/technetwork/jet/content/images/hcm/placeholder-female-16.png`
     - **Hire Date**: Select today's date
@@ -161,7 +161,7 @@ Now that we have our web pages, let's change the application's home page from De
 
    ![](images/default-page-change.png "This image shows the General tab of the Settings editor. Under Flow Settings, the Default Page field lists the pages available for selection. The main-employees page is selected.")
 
-3. Click **Diagram** to see the **main** flow's new navigation.  
+3. Click **Diagram** to see the **main** flow's new navigation. Notice how the main-employees page is badged ![Default and Flow Entry badge](images/default-badge.png), indicating it as the starting page for your application. Previously, it was the main-departments page.  
 
 4. Click **Preview** ![Preview icon](images/vbcsmd_run_icon.png) to now see the HR app open on the Employees page.
 

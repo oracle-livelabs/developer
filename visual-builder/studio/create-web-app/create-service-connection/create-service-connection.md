@@ -67,7 +67,7 @@ Now that we have our service connection, let's change the Edit Employee page to 
 5. Let's now add a bunch of other components to this form layout to display country information:
 
     - Drag and drag an **Avatar** component into the empty form Layout. Change the avatar's **Size** to **Large** in the Properties pane.
-    - Drag an **Input Text** component under **Field** and drop it onto the page under Avatar, then change its **Label Hint** in the Properties pane to `Time Zone`.
+    - Drag an **Input Text** component and drop it onto the page under Avatar, then change its **Label Hint** in the Properties pane to `Time Zone`.
     - Drag another **Input Text** onto the page and change its **Label Hint** to `Region`.
 
     When you're done, your form layout may look something like this:

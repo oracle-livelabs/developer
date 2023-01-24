@@ -34,15 +34,13 @@ In this step, we'll connect the HR application to an external REST endpoint that
 
   ![](images/service-connection-wizard-url.png "This image shows the Define by Endpoint page. The Method field is set to GET, the URL is set to the base URI of a service, and Get One is selected in the Action Hint drop-down list.")
 
-  With this definition, you'll enter a country code (for example, US or IN) as a path parameter to get information about that country.
-
 4. Here you'll see several tabs where you can provide additional details for the service connection. In the Overview tab, change the **Service Name** to `Countries` and the **Title** to `Country`.
 
   ![](images/service-connection-tabs.png "With the service connection details specified in previous steps, this image shows the Overview tab, where Service Name and Title is set to v2, Version is set to 1.0.0, and Source under Transforms is set to None.")
 
     > **Tip:** Step through the different tabs to see what options you can specify. For example, if your service required a user name and password, you have authentication options on the Server tab that allow your users to access the service securely.
 
-4. When you're ready, test the service connection. Click the **Test** tab, enter `CN` (for China) as the value of the `code` parameter under Path Parameters, and click **Send Request**.
+4. When you're ready, test the service connection. Click the **Test** tab, enter `CN` (for China) as the value of the `code` parameter under Path Parameters. Essentially, you're entering a country code as a path parameter to get information about that country. Click **Send Request**.
 
   ![](images/service-connection-wizard-sendrequest.png "This image shows the Test tab. Under Path Parameters in the Request section, the value of the code parameter is set to CN. The Send Request button is selected.")
 
@@ -60,7 +58,7 @@ Now that we have our service connection, let's change the Edit Employee page to 
 
 1. Click the **Web Applications** ![Web Applications icon](images/webapp-icon.png) tab, then select the **main-edit-employee** page.
 
-2. In the Components palette, locate the **Heading** component and drag and drop it onto the canvas, just above the Toolbar component with the Cancel and Save buttons. It might be easier to drop the component in the Structure view, just above the Grid Row containing the Toolbar.
+2. In the Components palette, locate the **Heading** component and drag and drop it onto the canvas, just above the Toolbar component with the Cancel and Save buttons.
 
 3. In the Heading's properties, change the **Text** field's value to `Country Info` and move the **Level** slider to H6.  
 
@@ -69,7 +67,7 @@ Now that we have our service connection, let's change the Edit Employee page to 
 5. Let's now add a bunch of other components to this form layout to display country information:
 
     - Drag and drag an **Avatar** component into the empty form Layout, then in the Properties pane, change the avatar's **Size** to **Large**.  
-    - Drag an **Input Text** component under **Field** and drop it onto the page under Avatar, then change its **Label Hint** in the Properties pane to `Time Zone`.
+    - Drag an **Input Text** component and drop it onto the page under Avatar, then change its **Label Hint** in the Properties pane to `Time Zone`.
     - Drag another **Input Text** onto the page and change its **Label Hint** to `Region`.
 
     When you're done, your form layout may look something like this:
@@ -158,4 +156,4 @@ In this step, we'll use the Country field as the data source for our variables a
 ## Acknowledgements
 
 * **Author** - Sheryl Manoharan, Visual Builder User Assistance, August 2021
-* **Last Updated By** - August 2022
+* **Last Updated By** - January 2023
