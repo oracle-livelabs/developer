@@ -14,13 +14,11 @@ If you just created a new Cloud account following the instructions in Getting St
 
 ## Task 1: Create a compartment for Visual Builder
 
-Visual Builder instances use Oracle Cloud Infrastructure (OCI) as their underlying infrastructure. To connect your Visual Builder instance to OCI resources, you need a dedicated compartment. While you can use the `root` compartment for your Visual Builder, it's recommended that you create a dedicated compartment to better organize and isolate your Visual Builder resources.
+Visual Builder instances use Oracle Cloud Infrastructure (OCI) as underlying infrastructure. To connect your Visual Builder instance to OCI resources, you need a dedicated compartment. While you can use the `root` compartment for your Visual Builder, it's recommended that you create a dedicated compartment to better organize and isolate your Visual Builder resources.
 
-1. On the Oracle Cloud Get Started page, click the menu in the upper left corner:
+1. On the Oracle Cloud Get Started page, click the menu ![Menu icon](images/hamburger.png) in the upper left corner:
 
-    ![The image highlights the hamburger menu on the Oracle Cloud Get Started page.](images/hamburger.png "")
-
-2. Select **Identity & Security**, then **Compartments** under **Identity**.
+2. Select **Identity & Security**, then **Compartments**.
 
     ![This image shows navigation to Identity & Security, Compartments, then Identity.](./images/oci-compartments.png "")
 
@@ -31,6 +29,9 @@ Visual Builder instances use Oracle Cloud Infrastructure (OCI) as their underlyi
 4. Enter a name (for example, `VBCompartment`), add a description (say, `Compartment for workshop`), and leave the Parent Compartment set to the default. Click **Create Compartment**.
 
   ![This image shows the Create Compartment dialog with fields filled in.](./images/oci-compartments-create-details.png "")
+
+   A new **VBCompartment** shows in the Compartments table.
+
 
 ## Task 2: Create an instance of Visual Builder
 
@@ -46,7 +47,7 @@ Visual Builder instances use Oracle Cloud Infrastructure (OCI) as their underlyi
 
     ![This image shows details of the Create Instance page, with the Name, Compartment, and Nodes fields. The Create Visual Builder instance button is also shown.](images/detail.png "")
 
-    Instance creation takes some time. If you attempt to click the instance name and receive a <code>401: Authorization failed or a 404: Not Found</code> error, but followed all the correct steps, instance creation has not completed. Wait a few more minutes.
+    Instance creation takes some time. If you attempt to click the instance name and receive a "401: Authorization failed or a 404: Not Found" error, but followed all the correct steps, instance creation has not completed. Wait a few more minutes.
 
     When instance creation completes successfully, the instance shows as **Active** in the **State** column.
 
@@ -57,4 +58,4 @@ Visual Builder instances use Oracle Cloud Infrastructure (OCI) as their underlyi
 ## Acknowledgements
 
 * **Author** - Sheryl Manoharan, Visual Builder User Assistance, August 2021
-* **Last Updated** - August 2022
+* **Last Updated** - January 2023
