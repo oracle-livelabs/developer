@@ -74,7 +74,7 @@ Now that we have our service connection, let's change the Edit Employee page to 
 
 ## Task 3: Create a type and variable from the REST endpoint
 
-To pass values to the country fields in the main-edit-employee page, you'll need to create variables. Variables, when bound to components, store data values retrieved from a REST endpoint and display them to your users. A quick way to do this is by creating a *type* based off the endpoint, so all variables assigned this type have the same data structure.
+To pass values to the country fields in the main-edit-employee page, you'll need to create variables. Variables, when bound to components, store data retrieved from a REST endpoint and display them to your users. A quick way to do this is by creating a *type* based off the endpoint, so all variables assigned this type have the same data structure.
 
 1. Switch to the **Types** tab, then click **+ Type** and select **From Endpoint**.
 

@@ -2,13 +2,13 @@
 
 ## Introduction
 
-This lab shows you how to create web pages to display the business objects you created in the previous lab.
+This lab shows how to create web pages to display the business objects you created in the previous lab.
 
 Estimated Time:  15 minutes
 
 ### About this lab
 
-Now that you've created the Location, Department, and Employee business objects, we'll see how to create web pages to display data from these business objects. You'll create one page to display departments and another to display employees. You'll also add pages that let your users create a new department or a new employee (in other words, create a new instance of the business object in the database). We'll do all this using Quick Starts, a handy set of wizards that work behind the scenes and make it easy for you to create pages and interact with your data.
+Now that you've created the Location, Department, and Employee business objects, we'll see how you can create web pages to display data from these business objects. You'll create one page to display departments and another to display employees. You'll also add pages that let your users create a new department or a new employee (in other words, create a new instance of the business object in the database). We'll do all this using Quick Starts, a handy set of wizards that work behind the scenes and make it easy for you to create pages and interact with your data.
 
 ## Task 1: Use the **main-start** page to display departments
 
@@ -28,7 +28,7 @@ Create a table to display your departments on the main-start page. The Table com
 
     ![This image shows the Bind Text's Properties pane, with the Value field set to Departments.](images/vbcscp_dd_s4.png "")
 
-5. Click **Components** on the left edge of your work area to open the Components palette. Enter `table` in the Filter field, then drag and drop Table from the Collection category onto the canvas.
+5. Click **Components** on the left edge of your work area to open the Components palette. Enter `table` in the Filter field, then drag and drop the Table from the Collections category onto the canvas.
 
     ![This image shows a Table component being dragged onto the page canvas.](images/department_add_table.png "")
 
@@ -44,7 +44,7 @@ Create a table to display your departments on the main-start page. The Table com
 
     ![This image shows part of the Locate Data page of the Add Data quick start. The Department business object is selected.](images/vbcscp_dd_s7.png "")
 
-8. On the Bind Data step, under **item\[i\]**, select the **id** and **department** check boxes (in that order). These two fields will show as columns for your Departments table.
+8. On the Bind Data step, under **item\[i\]**, select the **id** and **department** check boxes (in that order). These two fields will show as Columns for your Departments table.
 
     ![This image shows the Bind Data page of the Add Data quick start. The id and department check boxes are selected.](images/vbcscp_dd_s8.png "")
 
@@ -121,7 +121,7 @@ We'll now create a page to display employees, similar to the one you created to 
 
     ![This image shows a panel component on the page, with the pane's resize cursor being dragged to resize it to seven columns.](images/panel-on-page-resize.png "")
 
-6. Now let's add our table. This time, instead of using the Components palette, let's use the Data palette, which provides a *data-first approach* to UI design. The Data palette provides access to your business objects and allows you to drag and drop them onto the canvas to readily map them to UI components. To see this in action, click the **Data** tab, then expand **Business Objects** and **Employee**.
+6. Now let's add our table. This time, instead of using the Components palette, let's use the Data palette, which provides a *data-first approach* to UI design. The Data palette provides access to your business objects, allowing you to drag and drop them onto the canvas and create UI components that readily map to them. To see this in action, click the **Data** tab, then expand **Business Objects** and **Employee**.
 
     ![This image shows the Data palette. The Employee business object under Business Objects is expanded to show its REST endpoints.](images/data-palette-employee-object.png "")
 

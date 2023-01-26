@@ -16,7 +16,7 @@ If you just created a new Cloud account following the instructions in Getting St
 
 Visual Builder instances use Oracle Cloud Infrastructure (OCI) as underlying infrastructure. To connect your Visual Builder instance to OCI resources, you need a dedicated compartment. While you can use the `root` compartment for your Visual Builder, it's recommended that you create a dedicated compartment to better organize and isolate your Visual Builder resources.
 
-1. On the Oracle Cloud Get Started page, click the menu ![Menu icon](images/hamburger.png) in the upper left corner:
+1. On the Oracle Cloud Get Started page, click the menu ![Menu icon](images/hamburger.png) in the upper left corner.
 
 2. Select **Identity & Security**, then **Compartments**.
 
@@ -26,7 +26,7 @@ Visual Builder instances use Oracle Cloud Infrastructure (OCI) as underlying inf
 
    ![This image shows a list of existing compartments on the Compartments page. The Create Compartment button is highlighted.](./images/oci-compartments-create.png "")
 
-4. Enter a name (for example, `VBCompartment`), add a description (say, `Compartment for workshop`), and leave the Parent Compartment set to the default. Click **Create Compartment**.
+4. Enter a name (for example, `VBCompartment`) and add a description (`Compartment for workshop`). Leave the Parent Compartment set to the default and click **Create Compartment**.
 
   ![This image shows the Create Compartment dialog with fields filled in.](./images/oci-compartments-create-details.png "")
 
@@ -35,11 +35,11 @@ Visual Builder instances use Oracle Cloud Infrastructure (OCI) as underlying inf
 
 ## Task 2: Create an instance of Visual Builder
 
-1. From the menu in the upper left corner, click **Developer Services**, then select **Visual Builder**:
+1. From the menu in the upper left corner, click **Developer Services**, then select **Visual Builder**.
 
     ![This image shows navigation to Visual Builder under Developer Services](images/platform.png "")
 
-2. In the **Compartment** field on the Visual Builder page, select the compartment you created to host the Visual Builder instance, then click **Create Instance**:
+2. In the **Compartment** field on the Visual Builder page, select the compartment you created to host the Visual Builder instance, then click **Create Instance**.
 
     ![This image shows the Visual Builder Instances screen, with the Compartment drop-down on the left and the Create Instance button on the right.](images/create-instance.png "")
 

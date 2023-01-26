@@ -10,7 +10,7 @@ Estimated Time:  15 minutes
 
 Visual Builder, as the name suggests, is a *visual* development tool for web and mobile applications. It provides an easy-to-use graphical interface that lets you design and develop applications simply by dragging and dropping *components* on a page. You can use these components—all based on the open-source Oracle JavaScript Extension Toolkit (JET)—to create rich UIs that span multiple devices.
 
-Each component depends on a *business object* for its data. A business object is a resource—like a purchase order or invoice—that has fields to hold your application's data. It is similar to a database table, as it provides the structure for your data; in fact, business objects are stored in a database. Your application accesses the data in these business objects through  REST endpoints that Visual Builder automatically generates for you.
+Each UI component depends on a *business object* for its data. A business object is a resource—like a purchase order or invoice—that has fields to hold your application's data. It is similar to a database table, as it provides the structure for your data; in fact, business objects are stored in a database. Your application accesses the data in these business objects through  REST endpoints that Visual Builder automatically generates for you.
 
 In this lab, you'll create the Employee, Department, and Location business objects to build a simple Human Resources application. Each business object has its own set of fields as shown here:
 
@@ -44,7 +44,7 @@ The first thing we'll do is create the web application itself. Later, we'll cons
 
     ![This image shows a new application's Welcome page. It contains tiles in three sections. The Connect to Data contains the Service Connections and Business Objects tiles. The Create Apps section contains the Mobile Apps and Web Apps tiles. The Add Artifacts section contains the Components and Process tiles. On the right are Learn and Help sections with references to documentation and other resources.](images/vbcsca_cra_s3.png "")
 
-    The Welcome page contains a set of tiles in three groups: **Connect to Data**, **Create Apps**, and **Add Artifacts**. On the far left are icons representing Mobile Applications, Web Applications, Services, Business Objects, Components, Processes, and Source. This vertical toolbar is the Navigator.
+    The Welcome page contains a set of tiles in three groups: **Connect to Data**, **Create Apps**, and **Add Artifacts**. On the far left are icons representing Mobile Applications, Web Applications, Services, Business Objects, Layouts, Components, Processes, and Source. This vertical toolbar is the Navigator.
 
     Now take note of the header:
     ![This image shows the visual application's header. The application name HR Visual Application is on the left. On the right are icons that let you perform other actions: Undo, Redo, Git, Go to File, Preview, and Menu.](images/header.png "")
@@ -67,7 +67,7 @@ The first thing we'll do is create the web application itself. Later, we'll cons
 
 6. In the Create Web Application dialog box, enter `hrwebapp` in the **Application Name** field under General Information. (You can specify uppercase as well as lowercase characters in the application name, but the name is converted to lowercase.) Leave the **Navigation Style** set to the default, **None**, and click **Create**.
 
-    The application opens on the **main-start** page, which is your application's default home page created automatically for you.
+    The **hrwebapp** opens on the **main-start** page, which is the application's default home page created automatically for you.
 
     What you see under the **main-start** tab is your application's work area. Just under **main-start** are several horizontal tabs: **Page Designer**, **Actions**, **Event Listeners**, and so on. Each tab provides editors to help you examine and modify artifacts used in the page. By default, the page opens in the **Page Designer**, which is where you'll do the bulk of your work.
 
@@ -77,19 +77,19 @@ The first thing we'll do is create the web application itself. Later, we'll cons
     | # | Tab | Functionality |
     | --- | ---- | --- |
     | 1 | Components | UI components (sorted by categories) that you can drag and drop onto a page|
-    | 2 | Data | Data endpoints based on business objects you create |
+    | 2 | Data | Data endpoints exposed when you create business objects or service connections |
     | 3 | Structure | Hierarchical view of the page's structure  |
-    | 4 | Properties | Properties for a component selected in your page. When the entire page is selected (as it is now), you'll see the Page view where you can choose a preferred page layout.|
-    | 5 | Canvas | A design, live, or code view of your page content |
+    | 4 | Properties | Properties of a component selected on the page. When the entire page is selected (as it is now), you'll see the Page view where you can choose a preferred page layout.|
+    | 5 | Canvas | A design, live, or code view of your page's content |
     {: title="Page Designer Work Area"}
 
-    You can collapse and expand tabs to better manage your working area. For example, click **Properties** to hide the Properties pane and expand your work area. When collapsed, the tab will show as a vertical tab on the side of the editor. Click the tab again to expand it.
+    You can collapse and expand tabs to better manage your working area. For example, click **Properties** to hide the Properties pane and expand your work area. When collapsed, each tab will show as a vertical tab on the side of the editor. Click the tab again to expand it.
 
    You can also move different panes to customize your work area. For example, right-click **Structure** at the bottom of your work area, then select **Move to Top Left** to move the Structure view right under **Components** and **Data**.
 
     ![This image shows the Structure view's right-click menu, with the option to 'Move to Top Left' selected. Other options are 'Move to Bottom Left', 'Move to Top Right', 'Move to Bottom Right', and 'Reset All Panels to Default'.](images/structure-view-move.png "")
 
-    See also how you can manage tabs that open in the tab bar. Right-click the main-start tab to see the available options. Note that the active tab will always be in focus.
+    See also how you can manage tabs that open in the tab bar. Right-click the **main-start** tab to see the available options. Note that the active tab  always stays in focus.
 
     ![The main-start page tab's right-click menu, with options to 'Close Tab', 'Close Other Tabs', 'Close Tabs to the Right', 'Close All Tabs', and 'Select in Navigator'.](images/tab.png "main-start page tab right-click menu")
 
@@ -105,7 +105,7 @@ Let's create your first business object and add data to it by importing a CSV fi
 
 1. Click the **Business Objects** ![Business Objects icon](images/vbcsca_bo_icon.png) tab in the Navigator.
 2. Click the **\+ Business Object** button.
-3. In the New Business Object dialog box, enter `Location` in the **Name** field. `Location` is also filled in automatically as the **Display Label** field. Click **Create**
+3. In the New Business Object dialog box, enter `Location` in the **Name** field. `Location` is also filled in automatically as the **Display Label** field. Click **Create**.
 4. Click the **Fields** tab for the newly created Location object.
 
     Every business object you create has six default fields: an id, plus fields that provide information on who created and updated the object and when.
@@ -169,16 +169,17 @@ Let's now create the Department and Employee business objects. But instead of cr
 
     - **Type**: **Reference** ![Reference icon](images/vbcsca_referencefield_icon.png)
     - **Referenced Business Object**: **Location** (the default for a **Referenced Business Object** is always the current business object (in this case, Department), so make sure you select **Location** from the drop-down list)
+
+        A Reference field is like a foreign key in a database table: it's a field that refers to the key (the Id field) of another business object to link the two business objects together. So when you create a department, you'll be able to specify one of the floors as the department's location.
+
     - **Display Field**: **Location** (automatically populated)
     ![This image shows the Type option of the location field selected. A pop-up box shows the Type set to Reference, the Referenced Business Object set as Location, and the Default Field shown as Location.](images/import-bos-upload-fields-deptlocationfield.png "")
 
     Click **OK**.
 
-    A Reference field is like a foreign key in a database table: it's a field that refers to the key (the Id field) of another business object to link the two business objects together. When you create a department, you'll be able to specify one of the floors as the department's location.
-
 7. For the same **Location** field, click **Required** to deselect the setting (**Department** and **Id** are the only required fields for the Department object).
 
-8. Now click the **Employee** tab and change the **Department** field's type to a reference, similar to what you did for the **Location** field. Click **#** in the **Department** field's Type column and change the Type setting as follows:
+8. Now click the **Employee** tab and change the **Department** field's type to a reference. Click **#** in the **Department** field's Type column and change the Type setting as follows:
 
     - **Type**: **Reference** ![Reference icon](images/vbcsca_referencefield_icon.png)
     - **Referenced Business Object**: **Department**
@@ -186,7 +187,7 @@ Let's now create the Department and Employee business objects. But instead of cr
 
     Click **OK**.
 
-9. Remove **Required** for all Employee fields, except **Name**.
+9. Remove **Required** for all Employee fields, except **Name** and **Id**.
 
     ![This image shows the Employee object's fields. The Required column is highlighted and deselected for all fields, except Name.](images/import-bos-upload-fields-employee.png "")
 
