@@ -2,7 +2,7 @@
 
 ## Introduction
 
-The Structured concurrency API simplifies multithreaded programming by giving developers a powerful means to coordinate and manage cooperating groups of virtual threads. It treats multiple tasks running in different threads as a single unit of work, thereby streamlining error handling and cancellation, improving reliability, and enhancing observability. This is an incubating API in JDK 19.
+The Structured concurrency API simplifies multithreaded programming by giving developers a powerful means to coordinate and manage cooperating groups of virtual threads. It treats multiple tasks running in different threads as a single unit of work, thereby streamlining error handling and cancellation, improving reliability, and enhancing observability. This is an incubating API in JDK 20.
 
 
 ### Objectives
@@ -29,10 +29,10 @@ All the files in this part are located under the `src` folder, in the `loom.stru
 
 In case you are stuck at some point, you can check the content of the `solutions` directory with solutions to the questions in this lab.
 
-Structured Concurrency is an incubator feature in JDK 19. You will need to add this module at compile and run time explicitly. The below commands demonstrate how this is done:
+Structured Concurrency is an second incubator feature in JDK 20. You will need to add this module at compile and run time explicitly. The below commands demonstrate how this is done:
 
 ```text
-<copy>javac --enable-preview --release 19 --add-modules jdk.incubator.concurrent A_VersionCheck.java</copy>
+<copy>javac --enable-preview --release 20 --add-modules jdk.incubator.concurrent loom/virtualthreads/A_VersionCheck.java</copy>
 ```
 Compiling this class will give you the following warning, which is expected: 
 
@@ -44,14 +44,14 @@ warning: using incubating module(s): jdk.incubator.concurrent
 You can run this `A_VersionCheck` class with the following command:
 
 ```text
-<copy>java --enable-preview --add-modules jdk.incubator.concurrent A_VersionCheck</copy>
+<copy>java --enable-preview --add-modules jdk.incubator.concurrent loom/virtualthreads/A_VersionCheck</copy>
 ```
 
 It will print the following message on the console: 
 
 ```text
 WARNING: Using incubator modules: jdk.incubator.concurrent
-JDK version = 19
+JDK version = 20
 JDK vendor  = Oracle Corporation
 ```
 
@@ -92,7 +92,7 @@ Every time you submit a callable to a structured task scope, it creates a virtua
 You can compile this class with the following command: 
 
 ```text
-<copy>javac --enable-preview --release 19 --add-modules jdk.incubator.concurrent loom/structuredconcurrency/B_FirstScope.java</copy>
+<copy>javac --enable-preview --release 20 --add-modules jdk.incubator.concurrent loom/structuredconcurrency/B_FirstScope.java</copy>
 ```
 
 And run it with the following command: 
@@ -119,13 +119,13 @@ You want to query more than one server, and because all results are equivalent (
 You can compile this class with the following command:
 
 ```text
-<copy>javac --enable-preview --release 19 --add-modules jdk.incubator.concurrent loom/structuredconcurrency/C_ShutdownOnSuccess.java</copy>
+<copy>javac --enable-preview --release 20 --add-modules jdk.incubator.concurrent loom/structuredconcurrency/C_ShutdownOnSuccessScope.java</copy>
 ```
 
 And run it with the following command:
 
 ```text
-<copy>java --enable-preview --add-modules jdk.incubator.concurrent loom/structuredconcurrency/C_ShutdownOnSuccess</copy>
+<copy>java --enable-preview --add-modules jdk.incubator.concurrent loom/structuredconcurrency/C_ShutdownOnSuccessScope</copy>
 ```
 
 
@@ -162,7 +162,7 @@ Writing unit tests for this class is also easy. Because all your code is synchro
 You can compile this class with the following command:
 
 ```text
-<copy>javac --enable-preview --release 19 --add-modules jdk.incubator.concurrent loom/structuredconcurrency/D_ExtendingScope.java</copy>
+<copy>javac --enable-preview --release 20 --add-modules jdk.incubator.concurrent loom/structuredconcurrency/D_ExtendingScope.java</copy>
 ```
 
 And run it with the following command:
@@ -188,14 +188,14 @@ Before building your travel page, let us think about these two components.
 
    1. You get a `Future<PageCompoment>` that can carry a value or an exception. So there are two things you need to do: check the state of this future and the type of value it carries. Checking the state first is your best choice. 
    2. You can follow what you did for the `QuotationScope` class and handle the `RUNNING` and `CANCELLED` cases in the same way.
-   3. Handling the `SUCCESS` case is interesting. You need to check if the produced value is a `Weather` or a `Quotation`. You can do that with a switch on types, another preview feature of the JDK 19. Because you are working with Loom, preview features are already enabled, so you can use the switch on type without further configuration. You can even go one step further and seal the `PageComponent` interface, only permitting `Weather` and `Quotation` to implement. Your switch is now exhaustive without having to add a default case. You can now save the produced quotation and weather as instance fields of this scope. Make sure that they are volatile because they need to be visible. 
+   3. Handling the `SUCCESS` case is interesting. You need to check if the produced value is a `Weather` or a `Quotation`. You can do that with a switch on types, another preview feature of the JDK 20. Because you are working with Loom, preview features are already enabled, so you can use the switch on type without further configuration. You can even go one step further and seal the `PageComponent` interface, only permitting `Weather` and `Quotation` to implement. Your switch is now exhaustive without having to add a default case. You can now save the produced quotation and weather as instance fields of this scope. Make sure that they are volatile because they need to be visible. 
    4. Handling the `FAILURE` case can be done similarly. You may need to check if the exception is an instance of `Quotation.QuotationException`, handle it specifically, and catch all the other exceptions. 
 
 
 You can compile this class with the following command:
 
 ```text
-<copy>javac --enable-preview --release 19 --add-modules jdk.incubator.concurrent loom/structuredconcurrency/E_BuildingTravelPage.java</copy>
+<copy>javac --enable-preview --release 20 --add-modules jdk.incubator.concurrent loom/structuredconcurrency/E_BuildingTravelPage.java</copy>
 ```
 
 And run it with the following command:
