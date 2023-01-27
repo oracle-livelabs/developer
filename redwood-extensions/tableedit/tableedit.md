@@ -155,7 +155,7 @@ VB Studio apps are event-driven, which means that an event is fired when an end 
 
 Your table now has buttons that are attractively rendered and that work as expected. The next step is to fine-tune the look and feel of the pages created by the Quick Starts by applying some Redwood templates to them.
 
-You may now **proceed to the next lab**.
+You may now close the preview browser tab and **proceed to the next lab**.
 
 
 ## Learn More
