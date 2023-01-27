@@ -130,7 +130,7 @@ In this step, we'll use the Country field as the data source for our variables a
 
     Click **Save**.
 
-8. On the success branch of the Call REST action, drag and drop an **Assign Variables** action, then click **Assign** next to Variables in the Properties pane. In the Sources pane of the Assign Variables wizard, expand **callRestGetAlphaCode** under **Action Chain** and **Results** and map **body** to **countryTypeVar** under **Page** in the Target pane.
+8. On the success branch of the Call REST action, drag and drop an **Assign Variables** action, then click **Assign** next to Variables in the Properties pane. In the Sources pane of the Assign Variables wizard, expand **callRestGetAlphaCode** under **Action Chain** and **results** and map **body** to **countryTypeVar** under **Page** in the Target pane.
 
     ![This image shows the mapping between body under callRestGetAlphaCode on the Source side to countryTypeVar on the Target side.](images/assignvariable-bodytocountrytypevar.png "")
 
