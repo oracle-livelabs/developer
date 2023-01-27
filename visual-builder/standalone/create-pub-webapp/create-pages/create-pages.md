@@ -107,7 +107,7 @@ We'll now create a page to display employees, similar to the one you created to 
 
     ![This image shows the web application with the main node expanded. The + sign next to main is selected to show the Create Page and Create Flow options.](images/vbcscp_cpe_s1.png "")
 
-2. In the Create Page dialog box, enter `employees` in the **Page ID** field after `main-` and click **Create**.
+2. In the Create Page dialog box, add `employees` in the **Page ID** field after `main-` and click **Create**.
 
     ![This image shows the Create Page dialog box, with main-employees entered in the Page ID field, and the Create button selected.](images/vbcscp_cpe_s2.png "")
 
@@ -167,7 +167,7 @@ Now that you've displayed some employee data in a table, let's add a chart to vi
 
     ![This image shows the sample Bar Chart expanded to take up the entire panel. With the Bar Chart selected, its Properties pane shows on the right on the Quick Start tab.](images/panel-on-page-chart-resize.png " ")
 
-4. In the Properties pane, click **Add Data** to open the Add Data Quick Start.
+4. In the Properties pane's Quick Start tab, click **Add Data** to open the Add Data Quick Start.
 
 5. On the Locate Data step of the Quick Start, select **Employee** under Business Objects and click **Next**.
 
