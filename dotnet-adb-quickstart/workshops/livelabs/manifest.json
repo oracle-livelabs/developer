@@ -1,0 +1,51 @@
+{
+    "workshoptitle": ".NET Development with Oracle Autonomous Database Quick Start",
+    "help": "livelabs-help-db_us@oracle.com",
+    "tutorials": [
+        {
+            "title": "Introduction",
+            "description": ".NET Development with Oracle Autonomous Database Quick Start",
+            "filename": "../../intro/intro.md"
+        },
+        {
+            "title": "Get started",
+            "description": "This is the prerequisites for customers using Free Trial and Paid tenancies, and Always Free accounts (if applicable).",
+            "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/cloud-login.md"
+        },
+        {
+            "title": "Lab 1: Provision Oracle Autonomous Database",
+            "description": "Create an Oracle Autonomous Database instance",
+            "filename": "../../provision/adb-provision.md"
+        },
+        {
+            "title": "Lab 2: Create user and setup schema",
+            "description": "Create a database user and setup a table with sample data.",
+            "filename": "../../create-schema/create-schema.md"
+        },
+        {
+            "title": "Lab 3: Set up networking",
+            "description": "Set up networking to facilitate communication between the web server and Oracle Autonomous Database.",
+            "filename": "../../networking/networking.md"
+        },
+        {
+            "title": "Lab 4: Provision and set up the web server",
+            "description": "Create an Oracle Cloud Infrastructure virtual machine and set up the web server with ASP.NET Core.",
+            "filename": "../../web-server/web-server.md"
+        },
+        {
+            "title": "Lab 5: Enable one-way TLS without wallets",
+            "description": "Permit the web server to connect to Oracle Autonomous Database without requiring a wallet.",
+            "filename": "../../tls/tls.md"
+        },
+        {
+            "title": "Lab 6: Develop and deploy the .NET web application",
+            "description": "Create a simple ASP.NET Core app, connnect to the database using Oracle Data Provider for .NET, and retrieve sample data to the web page.",
+            "filename": "../../develop-app/develop-app.md"
+        },
+        {
+            "title": "Need Help?",
+            "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+            "filename":"https://oracle-livelabs.github.io/common/labs/need-help/need-help-freetier.md"
+        }
+    ]
+}

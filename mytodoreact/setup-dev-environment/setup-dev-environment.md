@@ -37,7 +37,7 @@ If you are not the tenancy administrator, there may be additional policies you m
 	![Home region](images/home-region.png " ")
 
 
-2. Click the navigation menu in the top left, click on identity and security and select Groups.
+2. Click the navigation menu in the top left, click on **Identity and Security** and select Groups.
 
 	![Groups](images/groups.png " ")
 
@@ -75,9 +75,9 @@ Select **Show manual editor** and copy and paste these policies in the box below
 	Allow group myToDoGroup to manage objects in tenancy
 	</copy>
 	```
-7. Add your user to the group that you have just created by selecting the name of the group you have created and selecting add user to group
+7. Add your user to the group that you have just created by selecting the name of the group you have created and selecting **Add User to Group**
 
-	![Add user group](images/add-user-group.png " ")
+	![Add user to group](images/add-user-group.png " ")
 
 ## **Task 2**: Launch the Cloud Shell
 
@@ -126,6 +126,7 @@ The setup script uses terraform, bash scripts, and SQL to automate the creation 
 	```
 	<copy>
 	cd oci-react-samples/mtdrworkshop
+	chmod +x *.sh
 	</copy>
 	```
 2. Copy this command to make sure that env.sh gets run everytime you start up cloud shell
@@ -193,12 +194,6 @@ The setup should take around 20 minutes to complete. During the setup, the cloud
 
 	![Setup progress feedback](images/resource-creation-update.png " ")
 
-You can also monitor the setup using the following command:
-		```
-		<copy>
-		ps -ef
-		</copy>
-		```
 ## **Task 7**: Complete the Setup
 
 When the setup is done running, you will see a message: **SETUP VERIFIED**
@@ -216,4 +211,4 @@ You may now **proceed to the next lab**.
 
 * **Authors** -  - Kuassi Mensah, Dir. Product Management, Java Database Access; Peter Song, Developer Advocate JDBC
 * **Contributors** - Jean de Lavarene, Sr. Director of Development JDBC/UCP
-* **Last Updated By/Date** - Peter Song, Developer Advocate,  Feb 2022
+* **Last Updated By/Date** - Kuassi Mensah

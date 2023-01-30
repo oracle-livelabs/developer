@@ -1,4 +1,4 @@
-# How to build powerful, secure REST APIs for your Oracle Database - REST Enable Business Logic and Custom SQL
+# REST-enable tables and add business logic
 
 ## Introduction
 
@@ -6,9 +6,8 @@ In this lab, you will use Database Actions and the REST console to build a REST 
 
 Estimated Lab Time: 20 minutes
 
-Watch the video below for a quick walk through of the lab.
-
-[](youtube:6Y_BArzNgaw)
+Watch the video below for a quick walk-through of the lab.
+[REST-enable tables and add business logic](videohub:1_y8l03s43)
 
 ### Objectives
 
@@ -18,13 +17,13 @@ Watch the video below for a quick walk through of the lab.
 
 ### Prerequisites
 
-- The following lab requires an <a href="https://www.oracle.com/cloud/free/" target="\_blank">Oracle Cloud account</a>. You may use your own cloud account, a cloud account that you obtained through a trial, or a training account whose details were given to you by an Oracle instructor.
+- The following lab requires an [Oracle Cloud account](https://www.oracle.com/cloud/free/). You may use your own cloud account, a cloud account that you obtained through a trial, or a training account whose details were given to you by an Oracle instructor.
 
 - This lab assumes you have completed all previous Labs. 
 
 ## Task 1: REST Enable a custom SQL Statement
 
-:bulb: <i>If this is your first time accessing the REST Workshop, you will be presented with a guided tour. Complete the tour or click the `X` in any tour popup window to quit the tour.</i>
+:bulb: <*If this is your first time accessing the REST Workshop, you will be presented with a guided tour. Complete the tour or click the `X` in any tour popup window to quit the tour.*
 
 1. Start by navigating to the **Database Actions Menu** in the upper left of the page and select **REST**.
 
@@ -47,7 +46,7 @@ Watch the video below for a quick walk through of the lab.
     ````
     <copy>com.oracle.livelab.api</copy>
     ````
-    :bulb: <i>A module is an organizational unit used to group related resource templates. Templates will have handlers, which are responsible for providing the logic required to service a specific HTTP method (e.g., GET, POST, PUT, DELETE, UPDATE, etc.).</i>
+    :bulb: *A module is an organizational unit used to group related resource templates. Templates will have handlers, which are responsible for providing the logic required to service a specific HTTP method (e.g., GET, POST, PUT, DELETE, UPDATE, etc.).*
 
     ![Create Modules slider](./images/module-name-field.png) 
 
@@ -67,7 +66,7 @@ Watch the video below for a quick walk through of the lab.
 
     ![Create Modules slider](./images/create-module-submit.png)
 
-    :bulb: <i>Here you can toggle "Show Code" to review what module creation might look like if it was performed manually.</i>
+    :bulb: *Here you can toggle "Show Code" to review what module creation might look like if it was performed manually.*
 
     ![Toggle Show Code to review what is happening under the covers](./images/toggle-show-code-option.png)
 
@@ -144,7 +143,7 @@ Watch the video below for a quick walk through of the lab.
 
     ![Source query results](./images/source-query-results.png)
 
-19. We can try test the REST endpoint by clicking the pop out icon ![pop out icon](./images/popout.png) in the Template region on the top of the page.
+19. We can try test the REST endpoint by clicking the pop out icon in the Template region on the top of the page.
 
     ![pop out icon in the Template region on the top of the page](./images/pop-out-icon-template-region.png)
 
@@ -214,7 +213,7 @@ Watch the video below for a quick walk through of the lab.
 
 11. Next we'll create an output parameter so we can return a result. 
     
-    :bulb: <i>We should expect the count or rows where the passed in value is equal to the values in col2 in our table.</i> 
+    :bulb: *We should expect the count or rows where the passed in value is equal to the values in col2 in our table.*
         
     On the bottom on the bizlogic details page, under the **Source** area, locate the **+ Create Parameter** button. Left click the **+ Create Parameter** button.
    
@@ -303,7 +302,7 @@ Watch the video below for a quick walk through of the lab.
     | First character   | `a` through `f`  | lower-case|
     | Second character  | `1` through `9`  | n/a       |
 
-    - <i>Some valid examples are: a1, e9, d3, b6</i>
+    - *Some valid examples are: a1, e9, d3, b6*
 
 ## Task 3: Explore the OpenAPI View created by ORDS
 
@@ -319,7 +318,7 @@ Watch the video below for a quick walk through of the lab.
 
     ![OpenAPI View](./images/open-api-as-swagger-view.png)
 
-    You can explore the APIs you created and try them out <i>directly</i> in the browser window.
+    You can explore the APIs you created and try them out *directly* in the browser window.
     
     ![OpenAPI explore](./images/explore-apis-in-open-api-view.png)
 
@@ -342,6 +341,6 @@ You may now [proceed to the next lab](#next).
     - Chris Hoina, Senior Product Manager 
     - Brian Spendolini
  - **Last Updated By/Date** 
-    - Chris Hoina, August 2022
+    - Chris Hoina, September 2022
 
 

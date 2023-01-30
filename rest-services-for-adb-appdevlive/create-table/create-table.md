@@ -1,4 +1,4 @@
-# How to build powerful, secure REST APIs for your Oracle Database - Create and auto-REST enable a table
+# Create and auto-REST enable a table
 
 ## Introduction
 
@@ -6,16 +6,15 @@ In this lab you will use Database Actions/SQL Developer Web to connect to your d
 
 Estimated Lab Time: 20 minutes
 
-You may review the video below for a quick walk through of the lab.
-
-[ORDS Overview](youtube:xr957th1h3U)
+Watch the video below for a quick walk-through of the lab.
+[Create and auto-REST enable a table](videohub:1_7agj8yum)
 
 ### Objectives
 - Create and Auto-REST enable a table
 
 ### Prerequisites
 
-- The following lab requires an <a href="https://www.oracle.com/cloud/free/" target="\_blank">Oracle Cloud account</a>. You may use your own cloud account, a cloud account that you obtained through a trial, or a training account whose details were given to you by an Oracle instructor.
+- The following lab requires an [Oracle Cloud account](https://www.oracle.com/cloud/free/). You may use your own cloud account, a cloud account that you obtained through a trial, or a training account whose details were given to you by an Oracle instructor.
 
 - This lab assumes you have completed all previous Labs. 
 
@@ -25,7 +24,7 @@ You may review the video below for a quick walk through of the lab.
 
     ![Database Actions Home Page, Click SQL tile](images/click-for-sql-worksheet.png)
 
-:bulb: <i>**Note: If this is your first time accessing the SQL Worksheet, you will be presented with a guided tour. Complete the tour or click the X in any tour popup window to quit the tour.**</i>
+💡 *If this is your first time accessing the SQL Worksheet, you will be presented with a guided tour. Complete the tour or click the X in any tour popup window to quit the tour.*
 
 2. We are now ready to load data into the database. For this task, we will use the **Data Loading tab** in the SQL Worksheet.
 
@@ -33,7 +32,7 @@ You may review the video below for a quick walk through of the lab.
 
 3. Click the **Data Loading area**; the center of the gray dotted-line box.
 
-    ![Click the Center of the Data Loading Tab Area](images/data-load-tab.png))
+    ![Click the Center of the Data Loading Tab Area](images/data-load-tab.png)
 
 4. The **Upload Data into New Table modal** will appear.
 
@@ -41,9 +40,7 @@ You may review the video below for a quick walk through of the lab.
 
 5. We'll load some sample data into the database and create a table at the same time. Start by **downloading** this file
 
-    **(right-click and download the file with the following link)**
-
-    [CSV data](https://objectstorage.us-ashburn-1.oraclecloud.com/p/LNAcA6wNFvhkvHGPcWIbKlyGkicSOVCIgWLIu6t7W2BQfwq2NSLCsXpTL9wVzjuP/n/c4u04/b/livelabsfiles/o/developer-library/csv_data.csv)
+    💾 [CSV data](https://objectstorage.us-ashburn-1.oraclecloud.com/p/LNAcA6wNFvhkvHGPcWIbKlyGkicSOVCIgWLIu6t7W2BQfwq2NSLCsXpTL9wVzjuP/n/c4u04/b/livelabsfiles/o/developer-library/csv_data.csv)
 
 6. Once on your desktop, **drag the file into the Upload Data into New Table modal**. You can also click the Select Files button and find where you downloaded it via your operating system's/Web Browser's file browser.
 
@@ -93,7 +90,7 @@ You may review the video below for a quick walk through of the lab.
 
     ![Using the navigator on the left of the SQL Worksheet, we can see out new table](./images/navigating-reviewing-new-table.png)
 
-    In the slider that extends from the right of the page, we can reveiw the data definition, triggers, constraints and even the data itself.
+    In the slider that extends from the right of the page, we can review the data definition, triggers, constraints and even the data itself.
 
     ![Click the Data option to view the table data](./images/table-options-slider.png)
 
@@ -113,15 +110,15 @@ You may review the video below for a quick walk through of the lab.
 
 4. Thats it! Your table is REST enabled. We can work with the REST endpoints by using cURL commands provided by SQL Worksheet. To get to these endpoints, again right click the table name as we did in the previous step, select **REST**, then **cURL Command**.
 
-    ![right click the table name in the navigator, select REST, then cURL Command](./images/retrieve-curl-command-for-object.png)
+    ![Right click the table name in the navigator, select REST, then cURL Command](./images/retrieve-curl-command-for-object.png)
 
     To the right of the page, you'll see the cURL command for the table CSV_DATA side out panel. Once you've selected the appropriate cURL command (Command Prompt, PowerShell, or Bash), click the copy icon to copy the entire command.
 
-    ![the Command Prompt cURL for the table CSV_DATA side out panel](./images/command-prompt-curl-command.png)
+    ![The Command Prompt cURL for the table CSV_DATA side out panel](./images/command-prompt-curl-command.png)
 
-    ![the PowerShell cURL for the table CSV_DATA side out panel](./images/powershell-curl-command.png)
+    ![The PowerShell cURL for the table CSV_DATA side out panel](./images/powershell-curl-command.png)
 
-    ![the Bash cURL for the table CSV_DATA side out panel](./images/bash-curl-command.png)
+    ![The Bash cURL for the table CSV_DATA side out panel](./images/bash-curl-command.png)
 
 5. Here we can work with the various REST endpoints. To try one, click the copy icon ![copy icon](./images/copy-icon.png) for the **GET ALL** endpoint.
 
@@ -129,9 +126,8 @@ You may review the video below for a quick walk through of the lab.
 
 6. You can use the **cURL command** you've just copied in the **Oracle Cloud Infrastructure Cloud Shell** or on your local compute, if cURL is installed. Here is the command running:
 
-    ```
-    >curl --location \
-    'https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/admin/csv_data/'
+    ```>curl --location \
+    https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/admin/csv_data/'
 
     {"items":[{"col1":"e40a9db6","col2":"1b","col3":"27531","links":[{"rel":"self","href":"https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/
     ords/admin/csv_data/AAAYuOAAAAAAF3%2FAAA"}]},{"col1":"6182c817","col2":"73","col3":"5355332","links":[{"rel":"self","href":"https://coolrestlab-adb21.adb.
@@ -145,8 +141,8 @@ You may review the video below for a quick walk through of the lab.
     "hasMore":false,"limit":25,"offset":0,"count":7,"links":[{"rel":"self","href":"https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/
     admin/csv_data/"},{"rel":"edit","href":"https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/admin/csv_data/"},{"rel":"describedby",
     "href":"https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/admin/metadata-catalog/csv_data/"},{"rel":"first","href":"https://
-    coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/admin/csv_data/"}]}% 
-    ```
+    coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/admin/csv_data/"}]}%```
+    
 
 The next lab you will learn about using a **BATCH LOAD** endpoint.
 
@@ -161,4 +157,4 @@ You may now [proceed to the next lab](#next).
     - Chris Hoina, Senior Product Manager 
     - Brian Spendolini
  - **Last Updated By/Date** 
-    - Chris Hoina, August 2022
+    - Chris Hoina, September 2022

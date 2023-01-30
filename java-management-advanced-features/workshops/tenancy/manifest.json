@@ -1,0 +1,54 @@
+{
+    "workshoptitle": "Using Java Management Service Advanced Features",
+    "include": {
+    },
+    "help": "autonomous_java-dev_us_grp@oracle.com",
+    "tutorials": [
+        {
+            "title": "Introduction",
+            "filename": "../../introduction/introduction.md"
+        },
+        {
+            "title": "Get Started",
+            "description": "This is the prerequisites for customers using Free Trial and Paid tenancies, and Always Free accounts (if applicable). The title of the lab and the Contents Menu title (the title above) match for Prerequisite lab. This lab is always first.",
+            "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/cloud-login.md"
+        },
+        {
+            "title": "Lab 1: Set up and enable Advanced Features on Java Management Service",
+            "filename": "../../set-up-and-enable-advanced-features-on-java-management-service/set-up-and-enable-advanced-features-on-java-management-service.md"
+        },
+        {
+            "title": "Lab 2: Configure post install actions and install Java Runtimes",
+            "filename": "../../configure-post-install-actions-and-install-java-runtimes/configure-post-install-actions-and-install-java-runtimes.md"
+        },
+        {
+            "title": "Lab 3: Remove Java Runtimes",
+            "filename": "../../remove-java-runtimes/remove-java-runtimes.md"
+        },
+        {
+            "title": "Lab 4: Track Java Servers",
+            "filename": "../../track-java-servers/track-java-servers.md"
+        },
+        {
+            "title": "Lab 5: Detect Java Libraries",
+            "filename": "../../detect-java-libraries/detect-java-libraries.md"
+        },
+        {
+            "title": "Lab 6: Run Crypto Event Analysis",
+            "filename": "../../run-crypto-event-analysis/run-crypto-event-analysis.md"
+        },
+        {
+            "title": "Lab 7: Run Java Flight Recorder",
+            "filename": "../../run-java-flight-recorder-jfr/run-java-flight-recorder-jfr.md"
+        },
+        {
+            "title": "Lab 8: View and monitor Work Requests",
+            "filename": "../../view-and-monitor-work-requests/view-and-monitor-work-requests.md"
+        },
+        {
+            "title": "Need Help?",
+            "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+            "filename": "https://oracle-livelabs.github.io/common/labs/need-help/need-help-freetier.md"
+        }
+    ]
+}

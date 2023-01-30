@@ -41,7 +41,7 @@ Add a delete button to remove a department, so users can delete a department if 
 
 ## Task 3: Test your new Department pages
 
-1.  Click **Preview** ![Preview icon](images/vbcsmd_run_icon.png) to open your application in another browser tab. The three buttons you created are inactive.
+1.  Click **Preview** ![Preview icon](images/vbcsmd_run_icon.png) to open your application in another browser tab. The two buttons you created are inactive.
 
 2.  Select a row. All the buttons are now active.
 
@@ -126,7 +126,7 @@ Now that we've added options to let users manage departments, we'll do the same 
 
 2.  Click **Show Employees**.
 
-    The three buttons you created are inactive.
+    The two buttons you created are inactive.
 
 3.  Select a row. All the buttons are now active.
 

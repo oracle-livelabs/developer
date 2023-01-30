@@ -1,4 +1,4 @@
-# How to build powerful, secure REST APIs for your Oracle Database - Loading Data and Creating Business Objects
+# Load data and create business logic
 
 ## Introduction
 
@@ -6,9 +6,8 @@ In this lab you will use the batch load API to load large amounts of data into a
 
 Estimated Lab Time: 20 minutes
 
-Watch the video below for a quick walk through of the lab.
-
-[](youtube:t57IlegnhjA)
+Watch the video below for a quick walk-through of the lab.
+[Load data and create business logic](videohub:1_rgksftgt)
 
 ### Objectives
 
@@ -17,7 +16,7 @@ Watch the video below for a quick walk through of the lab.
 
 ### Prerequisites
 
-- The following lab requires an <a href="https://www.oracle.com/cloud/free/" target="\_blank">Oracle Cloud account</a>. You may use your own cloud account, a cloud account that you obtained through a trial, or a training account whose details were given to you by an Oracle instructor.
+- The following lab requires an [Oracle Cloud account](https://www.oracle.com/cloud/free/). You may use your own cloud account, a cloud account that you obtained through a trial, or a training account whose details were given to you by an Oracle instructor.
 
 - This lab assumes you have completed all previous Labs. 
 
@@ -25,7 +24,7 @@ Watch the video below for a quick walk through of the lab.
 
 1. Start by again using the **cURL slide out** on our **REST enabled table**.
 
-    ![right click the table name in the navigator, select REST, then cURL Command](./images/right-click-for-rest.png)
+    ![Right click the table name in the navigator, select REST, then cURL Command](./images/right-click-for-rest.png)
 
 2. We now see the cURL for the table CSV_DATA slideout on the right side of the web browser. 
 
@@ -33,11 +32,11 @@ Watch the video below for a quick walk through of the lab.
 
     Left click the **BATCH LOAD** side tab.
 
-    ![left click the BATCH LOAD side tab](./images/curl-command-batchload.png)
+    ![Left click the BATCH LOAD side tab](./images/curl-command-batchload.png)
 
 3. Next, click the copy icon ![copy icon](./images/copy-icon.png) for the **BATCH LOAD** endpoint.
 
-    ![left click the BATCH LOAD side tab](./images/copy-curl-command-action.png)
+    ![Left click the BATCH LOAD side tab](./images/copy-curl-command-action.png)
 
     It should be similar to the following:
 
@@ -52,8 +51,8 @@ Watch the video below for a quick walk through of the lab.
 
 4.  We'll alter this for our data load. First, we need to be in either the **Oracle Cloud Infrastructure Cloud Shell** or a local computer with cURL installed. Every Oracle Cloud Infrastructure account has Cloud Shell so we would encourage using that. 
 
-    :bulb: <i>**Oracle Cloud Infrastructure (OCI) Cloud Shell is a web browser-based terminal accessible from the Oracle Cloud Console. It provides access to a Linux shell, with a pre-authenticated Oracle Cloud Infrastructure CLI, pre-authenticated Ansible installation, and other useful tools. Available to all OCI users, the Cloud Shell will appear in the Oracle Cloud Console as a persistent frame of the Console, and will stay active as you navigate to different pages of the Console.**</i>
-
+    💡 ***Oracle Cloud Infrastructure (OCI) Cloud Shell is a web browser-based terminal accessible from the Oracle Cloud Console. It provides access to a Linux shell, with a pre-authenticated Oracle Cloud Infrastructure CLI, pre-authenticated Ansible installation, and other useful tools. Available to all OCI users, the Cloud Shell will appear in the Oracle Cloud Console as a persistent frame of the Console, and will stay active as you navigate to different pages of the Console.***
+    
     To use the Cloud Shell, after logging into your Oracle Cloud Infrastructure account, click the Cloud Shell icon in the upper right of the Oracle Cloud Infrastructure banner:
 
     ![Cloud Shell on Oracle Cloud Infrastructure Banner](./images/cloud-shell-icon-action.png)
@@ -72,7 +71,7 @@ Watch the video below for a quick walk through of the lab.
 
 6. Now that we have the file locally, we can load it into the database. Using our cURL command from earlier, we'll make a few adjustments and then run it in the Cloud Shell. 
 
-    :bulb: <i>**We'll be adding to this command, so use a text editor or notes application on the side.**</i>
+    💡 *We'll be adding to this command, so use a text editor or notes application on the side.*
 
     Our **BATCH LOAD** cURL command was similar to the following:
 
@@ -219,5 +218,5 @@ You may now [proceed to the next lab](#next).
     - Chris Hoina, Senior Product Manager 
     - Brian Spendolini
  - **Last Updated By/Date** 
-    - Chris Hoina, August 2022
+    - Chris Hoina, September 2022
 
