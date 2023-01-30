@@ -15,7 +15,7 @@ This lab assumes you have:
 - SSH Keys
 
 ## Task 1: Download Oracle Resource Manager (ORM) stack zip file
-1.  Click on the link below to download the Resource Manager zip file you need to build your environment: [appdev-int-soa-mkplc-freetier.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/pzLwUYnrbOL8jBFMtCAlIVFWy6L4afiO__t0eKeSG48tz9DEWIu9ZBMOiSOHqbZO/n/natdsecurity/b/stack/o/appdev-int-soa-mkplc-freetier.zip)
+1.  Click on the link below to download the Resource Manager zip file you need to build your environment: [appdev-int-soa-mkplc-freetier.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/vCqOmWXrgh-pg9oAXgxJNZ3xjAgqgCvNS8JQ9WQkHpDkRiBz6ll0sJsSteV3Q-LX/n/natdsecurity/b/stack/o/appdev-int-soa-mkplc-freetier.zip)
 
 2.  Save in your downloads folder.
 
