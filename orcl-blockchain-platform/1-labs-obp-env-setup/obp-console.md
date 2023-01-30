@@ -156,11 +156,8 @@ Select '`car_marketplace_cc`.controller.go' under '`car_marketplace_cc`/src/cont
           return nil, fmt.Errorf("dealer with id: %s does not exist", asset.OwnerId)
         }
 
-    //Verify dealer exists
-    owner, err := t.GetDealerById(asset.OwnerId)
-    if err != nil {
-    return nil, fmt.Errorf("dealer with id: %s does not exist", asset.OwnerId)
-    }
+        //append car to owner's inventory
+        owner.Inventory = append(owner.Inventory, asset.Vin)
 
         //Update and commit dealer inventory to blockchain
         t.UpdateDealer(owner)
@@ -179,9 +176,11 @@ Select '`car_marketplace_cc`.controller.go' under '`car_marketplace_cc`/src/cont
     <copy>
     func (t *Controller) CreatePOWrapper(asset PO) (interface{}, error) {
 
-    ```
-    <copy>
-    func (t *Controller) CreatePOWrapper(asset PO) (interface{}, error) {
+        //Verify that car exists
+        car, err := t.GetCarById(asset.Vin)
+        if err != nil {
+          return nil, fmt.Errorf("car with id: %s does not exist", asset.Vin)
+        }
 
         //Car no longer on sale as purchase order is created
         car.ForSale = false
