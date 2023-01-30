@@ -33,7 +33,7 @@ This lab assumes you have:
     - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
     - Lab: Environment Setup
     - Lab: Create a Blockchain Network connecting 3 Organizations & Configuring Oracle Blockchain App Builder
-    
+
 
 ## Task 1: Invoke and Query Ledger marketplace chaincode from App Builder in local environment
 
@@ -83,7 +83,7 @@ This lab assumes you have:
 
   ![Founder Deployment](images/2-app-builder-4-4.1.png)
 
-6. Now, changing the target environment from 'Local Environment' to 'Marketplace' in App Builder. Obtain the channel name as set in *Lab1 - Task 5 (car-marketplace)* 
+6. Now, changing the target environment from 'Local Environment' to 'Marketplace' in App Builder. Obtain the channel name as set in *Lab1 - Task 5 (car-marketplace)*
 
   ![Founder Deployment](images/2-car-marketplace-6-4.png)
 
@@ -142,7 +142,7 @@ This lab assumes you have:
   ![Hamburger and Approve](images/2-car-marketplace-7-10.png)
 
 
-10. Assign the [Endorsement policy](https://docs.oracle.com/en/cloud/paas/blockchain-cloud/usingoci/specify-endorsement-policy.html) by selecting signature under the endorsement policy. Add the policy of performing an endorsement signature by one of the organizations in the network. You can add an endorsement policy when you instantiate a chaincode. An endorsement policy specifies the members with peers that must approve, or properly endorse, a chaincode transaction before it’s added to a block and submitted to the ledger. 
+10. Assign the [Endorsement policy](https://docs.oracle.com/en/cloud/paas/blockchain-cloud/usingoci/specify-endorsement-policy.html) by selecting signature under the endorsement policy. Add the policy of performing an endorsement signature by one of the organizations in the network. You can add an endorsement policy when you instantiate a chaincode. An endorsement policy specifies the members with peers that must approve, or properly endorse, a chaincode transaction before it’s added to a block and submitted to the ledger.
 
 Now assign the endorsement policy by by selecting the signature policy and click on 'Upgrade'
 
@@ -250,7 +250,7 @@ Select '`car_tokenization_cc`.controller.go' under '`car_tokenization_cc`/src/co
 
 1. In Visual Studio Code, click on the **O** icon on the left-hand menu to use the Blockchain App Builder Extension.
 
-2. Hover over the **Chaincodes** pane, Right Click on the chaincode to be packaged Select the directory  to save the chaincode package file. 
+2. Hover over the **Chaincodes** pane, Right Click on the chaincode to be packaged Select the directory  to save the chaincode package file.
 
   ![Car Tokenization Chaincode Package](images/2-appbuilder-chaincodepackage-tokenization.png)  -->
 
@@ -287,7 +287,7 @@ Approve the chaincode definition from the partner instances (in this case, 'deal
    - Keep 'GoLang' as the **Chaincode Language**.
    - Select both available peers as the **Target Peers**.
    - Upload the package .zip file you exported from the App Builder VS Code extension. We stored this in the **Samples** folder.
-  
+
   ![Advanced Deployment Form](images/2-car-tokenization-7-7-2.png)
 
 7. Click 'Close.' We will only be installing (not deploying) the chaincode onto the participant instances.
@@ -341,13 +341,13 @@ Approve the chaincode definition from the partner instances (in this case, 'deal
 
     - Step 1 – Initialize Token: This method creates a token and initializes the token properties. The asset and its properties are saved in the state database. This method can be invoked only by the Token Admin of the chaincode.
 
-  
+
   ![Initialize Token](images/initialize_token.png)
 
-    - Step 2, 3, 4 – Create & Associate Accounts(Token User1, Token User2):  This method creates an account for a specified user and token. An account must be created for any user who will have tokens at any point. Accounts track balances, on-hold balances, and transation history. 
+    - Step 2, 3, 4 – Create & Associate Accounts(Token User1, Token User2):  This method creates an account for a specified user and token. An account must be created for any user who will have tokens at any point. Accounts track balances, on-hold balances, and transation history.
 
   ![Create Accounts](images/create_accounts.png)
-  
+
     - Copy the account id received when creating the account. Substitute the accountid while associating the account as shown.
 
   ![Initialize Token](images/user_tokens.png)
@@ -406,7 +406,7 @@ Select '`car_title_registration_cc`.controller.go' under '`car_title_registratio
 
 ## Task 13: View Custom Methods in Marketplace
 
-1. Open the Car Marketplace specification file and scroll to the bottom. This is where your customMethods are listed. Go to `car_title_registration_cc`.controller.go' under '`car_title_registration_cc`/src/controller' to make the changes mentioned below. 
+1. Open the Car Marketplace specification file and scroll to the bottom. This is where your customMethods are listed. Go to `car_title_registration_cc`.controller.go' under '`car_title_registration_cc`/src/controller' to make the changes mentioned below.
 
 2. First, add the imports needed for the custom methods.
 
@@ -446,7 +446,7 @@ Select '`car_title_registration_cc`.controller.go' under '`car_title_registratio
 
 
       newTitle := Title_entries {
-        Dealernumber:  dealerno, 
+        Dealernumber:  dealerno,
         Dealership: dealername,
         Location: dealerloc,
         Mileage: mileage,
@@ -457,8 +457,8 @@ Select '`car_title_registration_cc`.controller.go' under '`car_title_registratio
 
 
       tokenAsset.Title = append(tokenAsset.Title, newTitle)
-      
-      
+
+
       _, err = t.UpdateCarTitleToken(tokenAsset)
         if err != nil {
         return nil, err
@@ -518,7 +518,7 @@ Approve the chaincode definition from the partner instances (in this case, 'deal
    - Keep 'GoLang' as the **Chaincode Language**.
    - Select both available peers as the **Target Peers**.
    - Upload the package .zip file you exported from the App Builder VS Code extension. We stored this in the **Samples** folder.
-  
+
   ![Advanced Deployment Form](images/2-car-tokenization-7-7-2.png)
 
 7. Click 'Close.' We will only be installing (not deploying) the chaincode onto the participant instances.
@@ -567,7 +567,7 @@ Approve the chaincode definition from the partner instances (in this case, 'deal
 
 3. Open tokenization collection Marketplace_CarTitleRegistration, and run integrations as described in steps 0 – 6 by clicking Send:
 
-    - Step 1, 2, 3, 4 – Create & Add Role (Minter) to Car Title Registration NFT Accounts (Dealer1 Account, Dealer2 Account) for creating a Car Title NFT's to trade vehicles between dealer1 & dealer2:  These methods creates an account for a specified user and add role to trade a NFT's between dealer1 and dealer2. An account must be created for any user who will have tokens at any point. Accounts are created to track Car tile NFT's for each vehicle created and traded. 
+    - Step 1, 2, 3, 4 – Create & Add Role (Minter) to Car Title Registration NFT Accounts (Dealer1 Account, Dealer2 Account) for creating a Car Title NFT's to trade vehicles between dealer1 & dealer2:  These methods creates an account for a specified user and add role to trade a NFT's between dealer1 and dealer2. An account must be created for any user who will have tokens at any point. Accounts are created to track Car tile NFT's for each vehicle created and traded.
     - Minter Role: mints a quantity of tokens, which are then owned by the caller of the method. This method mints tokens, which are then owned by the caller of the method. The caller must have an account and the minter role.
 
   ![Create Accounts](images/2-app-builder-cartitle-createaccount-dealer1.png)

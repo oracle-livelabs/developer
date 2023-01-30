@@ -82,7 +82,7 @@ Up until now we've worked on the UI (front end) of your application, but now it'
 9. Click in the **Attribute** field, then start typing **Orga ...** until you can choose **OrganizationName**:
 	  ![Search box](images/name.png)
 
-10. Keep the operator as **contains ($co)**. In the **Attribute** field on the right, locate the search variable you created by typing **searchString**, which will add **$variable.searchString** to this field:
+10. Keep the operator as **contains ($co)**. In the **Attribute** field on the right, locate the search variable you created by typing **searchString**, which will add **$variables.searchString** to this field:
 			  ![search criteria](images/search.png)
 
 
@@ -133,7 +133,7 @@ At this point you may want to play around with your live app, using different ke
 
 Now that we have a running page that fetches data, the next step is to add pages that will allow us to edit the data, which means updating the Oracle's SaaS business object behind the scenes.
 
-You may now **proceed to the next lab**.
+You may now close the preview browser tab and **proceed to the next lab**.
 
 ## Learn More
 

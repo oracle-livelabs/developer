@@ -17,7 +17,7 @@ In this lab, you will:
 
 You should now be in the Designer, VB Studio's visual editor. We'll start by creating an *App UI*, which is simply an application that includes a user interface component in the form of Visual Builder pages and flows. With App UIs, you can create new interfaces that address specific business needs for your company.
 
-1. On the left side of the Designer, click **+ App UI**:  
+1. On the left side of the Designer's navigator, click the first tab, App UIs, click **+ App UI**:
 
 	![App UI button](images/results.png)
 
