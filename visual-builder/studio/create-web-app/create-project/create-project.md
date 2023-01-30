@@ -44,7 +44,7 @@ As someone who creates a project, you'll automatically become the project's owne
 
     Click **Next**.
 
-3. On the Template page, select **Visual Application**. Click **Next**.
+3. On the Project Template page, select **Visual Application** and click **Next**.
 
 4. On the Project Properties page, click **Development VB Instance** to select the VB instance where you plan to deploy and host your application. When you have only one VB instance provisioned, it will be automatically selected as your environment's development instance.
 
@@ -52,19 +52,21 @@ As someone who creates a project, you'll automatically become the project's owne
 
 6. Leave other fields to their default settings and click **Finish**.
 
-    Wait for the project to be provisioned. Once provisioning completes, you'll see the Project Home page, which serves as a window to your workspace, your environments, and repositories, as well as a recent activities feed. On the left are a series of tabs showing all the project components that are available. Click ![Show/Hide Labels icon](images/show-hide-labels-icon.png) to hide the labels and increase screen space.
+    Wait for the project to be provisioned. Once provisioning completes, you'll see the Project Home page, which serves as a window to your workspace, your environments, and repositories, as well as a recent activities feed. On the left are a series of tabs showing the available project components.
 
     ![The Project Home page includes a Workspaces area with the newly created HR Visual Application workspace. An Environments area shows the Development instance associated with this project. If you click Reset Filters, a Recent Activities feed lists what was done in the project today. On the right, the Repositories tab is selected to show the tutorial-hr-project.git. The Statistics and Team tabs are also visible.](images/project-home.png "Project Home page")
+
+    Click ![Show/Hide Labels icon](images/show-hide-labels-icon.png) to hide the labels and increase screen space.
 
 ## Task 2: Explore the project environment
 
 Everything you need to start building a visual application is now created for you in this project. Let's step through some key components to better understand your project environment.
 
-1. On the Project Home page, the **tutorial-hr-project.git** repository shows  under Workspaces as well as in the Repositories tab on the right. This Git repo stores your visual application's source files and is known as the project's _remote_ repository. Click the **tutorial-hr-project.git** link in the Workspaces table to see your project's remote branches, `main` and `hrbranch`, created with initial content for your visual application. Select **hrbranch**; the `main` branch is the default branch created when a new repository is generated and is the project's source of truth.
+1. On the Project Home page, the **tutorial-hr-project.git** repository shows  under Workspaces as well as in the Repositories tab on the right. This Git repo stores your visual application's source files and is known as the project's _remote_ repository. Click the **tutorial-hr-project.git** link in the Workspaces table to go to the Git page. Here, you can see your project's remote branches, `main` and `hrbranch`, created with initial content for your visual application. Select **hrbranch**; the `main` branch is the default branch created when a new repository is generated and is the project's source of truth.
 
     ![Contents of the tutorial-hr-project.git repository. Both the main and hrbranch branches are visible, with the hrbranch selected.](images/repo.png "Git page")
 
-2. In the left navigator, click **Workspaces**![Workspaces icon](images/vbs-workspaces-icon.png)to view the **HR Visual Application** workspace. This workspace contains a working copy of `hrbranch` and serves as your _local_ repository. The `hrbranch` initially has the same set of source files as the `main` branch, but as you work with your visual application, it will include the changes you make. Your changes can't be seen by others until you save them from the local branch to a remote branch.
+2. In the left navigator, click **Workspaces**![Workspaces icon](images/vbs-workspaces-icon.png)to view the **HR Visual Application** workspace. This workspace contains a working copy of the `hrbranch` and serves as your _local_ repository. The `hrbranch` initially has the same set of source files as the `main` branch, but as you work with your visual application, it will include the changes you make. Your changes can't be seen by others until you save them from the local branch to a remote branch.
 
     ![The newly created HR Visual Application in the Workspaces table. Its repository is set to tutorial-hr-project.git, current branch is set to hrbranch, and environment is set to Development.](images/workspace.png "Workspaces page")
 
@@ -76,7 +78,7 @@ Everything you need to start building a visual application is now created for yo
 
     ![Jobs tab on the Builds page. It lists two default jobs Visual-Application-Deploy and Visual-Application-Package in the All Jobs tab. Both jobs include Actions on the right to Build, Configure, View Last Build Log, and Delete. Other tabs that you can use to filter are Successful Jobs, Failed Jobs, and Test Failed Jobs. A Create Job button is also visible.](images/build-jobs.png "Jobs tab on Builds page")
 
-5. On the Builds page, click **Pipelines** to view the default Visual Application pipeline that packages and deploys the application to your development instance. From the pipeline's **Actions** ![Actions icon](images/vbs-actions-icon.png) menu, select **View Layout** to view the sequence of build jobs that do this.
+5. On the Builds page, click **Pipelines** to view the `Visual Application - Package and Deploy` pipeline, which contains the two jobs we saw in the previous step. Pipelines create a chain of builds to define job dependencies. By default, the visual application pipeline runs the package job before the deploy job, so the latest application artifacts are packaged for deployment. From the pipeline's **Actions** ![Actions icon](images/vbs-actions-icon.png) menu, select **View Layout** to view the defined sequence of jobs.
 
     ![This image shows the Pipelines tab on the Builds page, with a diagram showing the sequence of jobs: Visual-Application-Package followed by Visual-Application-Deploy. A Create Pipeline button is also visible. On the right, there are action buttons to view Instances of a pipeline as well as Build, Configure, and Delete a pipeline.](images/build-pipeline.png "Pipelines tab on Builds page")
 
@@ -86,7 +88,7 @@ Everything you need to start building a visual application is now created for yo
 
 Now that your project is provisioned, let's set up the credentials that VB Studio will use to deploy your visual application to the VB development instance.
 
-1. Click **Jobs** on the Builds page, then from the **Actions**![Actions icon](images/vbs-actions-icon.png) menu for the `Visual-Application-Deploy` job, click **Configure**.
+1. Click **Jobs** on the Builds page, then from the **Actions**![Actions icon](images/vbs-actions-icon.png) menu for the `Visual-Application-Deploy` job, select **Configure**.
 
     ![Jobs tab on the Builds page. The Visual-Application-Deploy job in the table is selected, with its Configure button in focus.](images/build-auth.png "Configure option for Visual-Application-Deploy")
 
@@ -97,8 +99,8 @@ Now that your project is provisioned, let's set up the credentials that VB Studi
     ![Steps tab in the Job Configuration page. Both the Username and Password fields are highlighted to indicate that these fields must be updated.](images/build-auth-credentials.png "Steps tab on Job Configuration page")
 
    **Tip:** Before you save your changes, take a quick look at some other settings on this page:
-    * Take note of the **Include the application version in the URL** check box that's selected by default. This option adds a version to the URL when your application is deployed (for example, <https://host/something-else/>**0.1**/index.html) and is useful to identify multiple versions during development. When your app is ready to go live, you'll want to deselect this option so your application URL is something like https:/host/something-else/**live**/index.html (without a version number in it).
-    * Take note of the **Use clean database** option, also selected by default. This option uses a new database by default to store your application's data. To keep your data after initially importing it (which we'll do in a later lab), you'll need to select the **Keep existing environment data** option.
+    * The **Include the application version in the URL** check box (selected by default) adds a version to the URL when your application is deployed (for example, <https://host/something-else/0.1/index.html>) and is useful to identify multiple versions during development. When your app is ready to go live, you'll want to deselect this option so your application URL is something like <https://host/something-else/live/index.html> (without a version number in it).
+    * The **Use clean database** option (also selected by default) uses a new database to store your application's data. To keep your data after initially importing it (which we'll do in a later lab), you'll need to select the **Keep existing environment data** option.
 
     Click **Save**.
 
@@ -123,4 +125,4 @@ For the purposes of this workshop, let's assume that other members of your team 
 ## Acknowledgements
 
 * **Author** - Sheryl Manoharan, VB Studio User Assistance, November 2021
-* **Last Updated By/Date** - Sheryl Manoharan, January 2023
+* **Last Updated By/Date** - Sheryl Manoharan, February 2023

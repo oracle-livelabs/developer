@@ -131,7 +131,7 @@ In this step, we'll assign data to the variables by adding a "value" event that 
 
     Click **Save**.
 
-8. On the success branch of the Call REST action, drag and drop an **Assign Variables** action, then click **Assign** next to Variables in the Properties pane. In the Sources pane of the Assign Variables wizard, expand **callRestGetAlphaCode** under **Action Chain** and **Results** and map **body** to **countryTypeVar** under **Page** in the Target pane.
+8. On the success branch of the Call REST action, drag and drop an **Assign Variables** action, then click **Assign** next to Variables in the Properties pane. In the Sources pane of the Assign Variables wizard, expand **callRestGetAlphaCode** under **Action Chain** and **results** and map **body** to **countryTypeVar** under **Page** in the Target pane.
 
     ![The mapping between body under callRestGetAlphaCode on the Source side to countryTypeVar on the Target side is shown.](images/assignvariable-bodytocountrytypevar.png "")
 
@@ -156,4 +156,4 @@ In this step, we'll assign data to the variables by adding a "value" event that 
 ## Acknowledgements
 
 - **Author** - Sheryl Manoharan, VB Studio User Assistance, July 2022
-- **Last Updated By/Date** - Sheryl Manoharan, January 2023
+- **Last Updated By/Date** - Sheryl Manoharan, February 2023

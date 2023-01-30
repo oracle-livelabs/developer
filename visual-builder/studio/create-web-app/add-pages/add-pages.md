@@ -59,7 +59,7 @@ Let's create a table to display your departments on the main-start page. The Tab
 
     ![Part of the Locate Data page of the Add Data quick start. The Department business object is selected.](images/department-add-data.png "")
 
-8. On the Bind Data step, under item\[i\], select **id** and **department** (in that order). These two fields will show as columns in your Departments table.
+8. On the Bind Data step, under item\[i\], select **id** and **department** (in that order). These two fields will show as Columns for your Departments table.
 
    ![The Bind Data page of the Add Data quick start. The id and department check boxes are selected. In the Columns list, the columns are id and department.](images/department-add-data-selectfields.png "name")
 
@@ -119,7 +119,7 @@ We'll now create a page to display employees, similar to the one you created to 
 
     ![Web application with the main node expanded. The + sign next to main is selected to show the Create Page and Create Flow options.](images/create-page.png "")
 
-2. In the Create Page dialog box, enter `employees` in the **Page ID** field after the **main-** prefix and click **Create**.
+2. In the Create Page dialog box, add `employees` in the **Page ID** field after the **main-** prefix and click **Create**.
 
     ![The Create Page dialog box is shown, with main-employees entered in the Page ID field, and the Create button selected.](images/employees-create-page.png "")
 
@@ -133,7 +133,7 @@ We'll now create a page to display employees, similar to the one you created to 
 
     ![A panel component on the page, with the pane's resize cursor being dragged to resize it to seven columns.](images/panel-on-page-resize.png "")
 
-6. Now let's add our table. This time, instead of using the Components palette, let's use the Data palette, which provides a *data-first approach* to UI design. The Data palette provides access to your business objects and allows you to drag and drop them onto the canvas to create UI components that readily map to them. To see this in action, click the **Data** tab, then expand **Business Objects** and **Employee**.
+6. Now let's add our table. This time, instead of using the Components palette, let's use the Data palette, which provides a *data-first approach* to UI design. The Data palette provides access to your business objects, allowing you to drag and drop them onto the canvas and create UI components that readily map to them. To see this in action, click the **Data** tab, then expand **Business Objects** and **Employee**.
 
     ![The Data palette, with the Employee business object under Business Objects  expanded to show its REST endpoints.](images/data-palette-employee-object.png "")
 
@@ -179,7 +179,7 @@ Now that you've displayed some employee data in a table, let's add a chart to vi
 
    ![The sample Bar Chart is expanded to take up the entire panel. With the Bar Chart selected, its Properties pane shows on the right on the Quick Start tab. ](images/panel-on-page-chart-resize.png "")
 
-4. In the Properties pane, click **Add Data** to open the Add Data Quick Start.
+4. In the Properties pane's Quick Start tab, click **Add Data** to open the Add Data Quick Start.
 
 5. On the Locate Data step of the Quick Start, select **Employee** under Business Objects and click **Next**.
 
@@ -272,4 +272,4 @@ It makes sense at this point to change the name of the main-start page to main-d
 ## Acknowledgements
 
 * **Author** - Sheryl Manoharan, VB Studio User Assistance, November 2021
-* **Last Updated By/Date** - Sheryl Manoharan, January 2023
+* **Last Updated By/Date** - Sheryl Manoharan, February 2023

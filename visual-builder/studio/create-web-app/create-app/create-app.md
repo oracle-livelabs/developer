@@ -43,7 +43,7 @@ The first thing we'll do is add a web app to the HR visual application you just 
 
     The Welcome page contains a set of tiles in three groups: **Connect to Data**, **Create Apps**, and **Add Artifacts**. On the far left are icons representing Mobile Applications, Web Applications, Services, Business Objects, Layouts, Components, Processes, Source, and Git artifacts. This vertical toolbar is the Navigator, which helps you move between the artifacts in your visual application.
 
-    Take note of the header:
+    Now take a look at the header:
 
     ![Header in the HR Visual Application workspace. The workspace name HR Visual Application is on the left. Next to it, the Git repository and current branch tutorial-hr-project.git / hrbranch are visible. On the right are icons that let you perform other actions: Undo, Redo, Preview, Publish Changes, Product Feedback, Go to File, and Menu.](images/header.png "Header")
 
@@ -51,10 +51,9 @@ The first thing we'll do is add a web app to the HR visual application you just 
 
     Elements on the right let you perform various other actions, such as undo a change or search the Git repository for a file. This workshop primarily demonstrates the options to preview your app, share it, and publish changes. If you make a mistake during this workshop, click ![Undo icon](images/undo-icon.png)  to back out of the last step you did.
 
-    Now take a look at the footer, which has tools that help you debug and maintain your visual app (we'll briefly look at Audits and Git History in this workshop):
+    Take note of the footer, which has tools that help you debug and maintain your visual app (we'll briefly look at Audits and Git History in this workshop):
 
     ![Footer in the HR Visual Application workspace, which shows Audits, Find in Files, Git History, and Tests tabs.](images/footer.png "Footer")
-
 
     Keep in mind that VB Studio saves your changes automatically as you work. A timestamp at the bottom of the page will show the time  your work was last saved. Note that your changes are only saved to your local workspace repo—but more on that later.
 
@@ -78,19 +77,19 @@ The first thing we'll do is add a web app to the HR visual application you just 
     | # | Tab | Functionality |
     | --- | ---- | --- |
     | 1 | Components | UI components (sorted by categories) that you can drag and drop onto a page|
-    | 2 | Data | Data endpoints based on business objects you create |
+    | 2 | Data | Data endpoints exposed when you create business objects or service connections |
     | 3 | Structure | Hierarchical view of the page's structure  |
-    | 4 | Properties | Properties for a component selected in your page. When the entire page is selected (as it is now), you'll see the Page view where you can choose a preferred page layout.|
-    | 5 | Canvas | A design, live, or code view of your page content |
+    | 4 | Properties | Properties of a component selected on the page. When the entire page is selected (as it is now), you'll see the Page view where you can choose a preferred page layout.|
+    | 5 | Canvas | A design, live, or code view of your page's content |
     {: title="Page Designer Work Area"}
 
-    You can collapse and expand tabs to better manage your working area. For example, click **Properties** to hide the Properties pane and expand your work area. When collapsed, the tab will show as a vertical tab on the side of the editor. Click the tab again to expand it.
+    You can collapse and expand tabs to better manage your working area. For example, click **Properties** to hide the Properties pane and expand your work area. When collapsed, each tab will show as a vertical tab on the side of the editor. Click the tab again to expand it.
 
     You can also move different panes to customize your work area. For example, right-click **Structure** at the bottom of your work area, then select **Move to Top Left** to move the Structure view right under **Components** and **Data**.
 
     ![Structure view's right-click menu, with the option to 'Move to Top Left' selected. Other options are 'Move to Bottom Left', 'Move to Top Right', 'Move to Bottom Right', and 'Reset All Panels to Default'.](images/structure-view-move.png "Structure view right-click menu")
 
-    See also how you can manage tabs that open in the tab bar. Right-click the **main-start** tab to see the available options. Note that the active tab will always be in focus.
+    See also how you can manage tabs that open in the tab bar. Right-click the **main-start** tab to see the available options. Note that the active tab always stays in focus.
 
      ![The main-start page tab's right-click menu, with options to 'Close Tab', 'Close Other Tabs', 'Close Tabs to the Right', 'Close All Tabs', and 'Select in Navigator'.](images/tab.png "main-start page tab right-click menu")
 
@@ -98,7 +97,7 @@ The first thing we'll do is add a web app to the HR visual application you just 
 
      ![The Web Apps pane shows the hrwebapp's tree view. Under hrwebapp, main is expanded with main-start nested under. At the same level as main are the Fragments, Resources, and Root Pages nodes.](images/treeview.png "")
 
-    A _flow_ contains pages that relate to each other. An application can have multiple flows, and a flow can contain many pages. This simple application contains only one flow, **main**, and one page, **main-start**—though we'll add more pages later on. By convention, a page takes its flow name as a prefix.
+    A _flow_ contains pages that relate to each other. An application can have multiple flows, and each flow can contain many pages. This simple application contains only one flow, **main**, and one page, **main-start**—though we'll add more pages later on. By convention, a page takes its flow name as a prefix.
 
 ## Task 2: Create a Location business object and import data
 
@@ -170,17 +169,19 @@ Let's now create the Department and Employee business objects. But instead of cr
 
       * **Type**: **Reference** ![Reference icon](images/reference-icon.png)
       * **Referenced Business Object**: **Location** (the default for a **Referenced Business Object** is always the current business object (in this case, Department), so make sure you select **Location** from the drop-down list)
+
+        A Reference field is like a foreign key in a database table: it's a field that refers to the key (the Id field) of another business object to link the two business objects together. So when you create a department, you'll be able to specify one of the floors as the department's location.
+
       * **Display Field**: **Location** (automatically populated)
 
     ![Type option of the location field selected. A pop-up box shows the Type set to Reference, the Referenced Business Object set as Location, and the Default Field shown as Location.](images/import-bos-upload-fields-deptlocationfield.png "Type option of the location field")
 
     Click **OK**.
 
-    A Reference field is like a foreign key in a database table: it's a field that refers to the key (the Id field) of another business object to link the two business objects together. If you were to create a department now, you'll be able to specify one of the floors as the department's location.
 
 7. For the same **Location** field, click **Required** to deselect the setting (**Department** and **Id** are the only required fields for the Department object).
 
-8. Now click the **Employee** tab and change the **Department** field to a reference, similar to what you did for the **Location** field. Click **#** in the **Department** field's Type column and change the Type setting as follows:
+8. Now click the **Employee** tab and change the **Department** field to a reference. Click **#** in the **Department** field's Type column and change the Type setting as follows:
 
     * **Type**: **Reference** ![Reference icon](images/reference-icon.png)
     * **Referenced Business Object**: **Department**
@@ -237,4 +238,4 @@ Now that you have your business objects, create a diagram that visualizes the bu
 ## Acknowledgements
 
 * **Author** - Sheryl Manoharan, VB Studio User Assistance, November 2021
-* **Last Updated By/Date** - Sheryl Manoharan, January 2023
+* **Last Updated By/Date** - Sheryl Manoharan, February 2023

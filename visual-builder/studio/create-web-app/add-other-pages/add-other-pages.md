@@ -42,7 +42,7 @@ In this task, you'll add an edit page that lets users change a department's Name
 
 ## Task 2: Add a button to delete a department
 
-Add a Delete button to remove a department, so user can remove a department if they wanted.
+Add a Delete button to remove a department, so users can remove a department if they wanted.
 
 1. With the table on the **main-departments** page selected, click **Quick Start** if necessary, then **Add Delete Action**.
 2. On the Select Endpoint step (the only step of the quick start), select **Department** under Business Objects (if necessary) and click **Finish**. As with other quick starts, the endpoint to delete a record will be automatically selected.
@@ -94,23 +94,22 @@ Now that we've added options to let users manage departments, we'll do the same 
 
 ## Task 5: Add a button to delete an employee
 
-1. Go to the **main-employees** page. If necessary, switch to **Design** mode, then select the table and click **Quick Start** in the Properties pane.
-2. In the Quick Start menu, click **Add Delete Action**.
-3. On the Select Endpoint step of the Add Delete Action Quick Start, select **Employee** under Business Objects (if necessary) and click **Finish**.
+1. Go to the **main-employees** page. Switch to **Design** mode, click the table, and select **Add Delete Action** under **Quick Start** in the Properties pane.
+2. On the Select Endpoint step of the Add Delete Action Quick Start, select **Employee** under Business Objects (if necessary) and click **Finish**.
 
     A **Delete Employee** button is displayed in the toolbar on the main-employees page. The button is inactive.
 
-4. Because the page features a bar chart as well, let's update the action chain created by the Quick Start to refresh the chart whenever an employee is deleted. Select the **Delete Employee** button, then select the **Events** tab in the Properties pane and click the **deleteEmployeeChain** action chain.
+3. Because the page features a bar chart as well, let's update the action chain created by the Quick Start to refresh the chart whenever an employee is deleted. Select the **Delete Employee** button, then select the **Events** tab in the Properties pane and click **deleteEmployeeChain** under Action Chain.
 
     ![The button's Events tab shows the deleteEmployeeChain as the action chain triggered by the ojAction event.](images/deleteEmployeeChain.png "")
 
-5. On the success branch of the Call REST action, drag and drop a new Fire Data Provider Event (used to dispatch an event on a data provider) and position it between the other Fire Data Provider Event and Fire Notification actions. You might need to drop the new action at the **+** sign, then move the Fire Notification action down.
+4. On the success branch of the Call REST action, drag and drop a new Fire Data Provider Event (used to dispatch an event on a data provider) and position it between the other Fire Data Provider Event and Fire Notification actions. You might need to drop the new action on the **+** sign, then drag the Fire Notification action down.
 
     ![The deleteEmployeeChain shows in diagram view. On the success branch of the Call REST action, a second Fire Data Provider Event action has been added. Its properties pane show on the right: Event Target is undefined and Type is set to Mutate.](images/deleteEmployeeChain-actionchain.png "")
 
-6. In the second Fire Data Provider Event action's Properties pane, click ![Select Variable icon](images/variable-picker-icon.png) next to **Event Target** (you'll need to hover over the field to see the icon) and select **employeeListSDP2**, which is the data provider backing the bar chart.
+5. In the second Fire Data Provider Event action's Properties pane, click ![Select Variable icon](images/variable-picker-icon.png) next to **Event Target** (you'll need to hover over the field to see the icon) and select **employeeListSDP2**, which is the data provider backing the bar chart.
 
-7. Change the Type from **Mutate** to **Refresh**.
+6. Change the Type from **Mutate** to **Refresh**.
 
     ![The Fire Data Provider Event action's properties are shown. The Event Target is set to $page.variables.employeeListSDP2 and Type is set to Refresh.](images/deleteEmployeeChain-actionchain-updated.png "")
 
@@ -167,4 +166,4 @@ Now that we have our web pages, let's change the application's home page from De
 ## Acknowledgements
 
 * **Author** - Sheryl Manoharan, VB Studio User Assistance, November 2021
-* **Last Updated By/Date** - Sheryl Manoharan, January 2023
+* **Last Updated By/Date** - Sheryl Manoharan, February 2023
