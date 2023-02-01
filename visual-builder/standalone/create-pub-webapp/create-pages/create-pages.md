@@ -113,7 +113,7 @@ We'll now create a page to display employees, similar to the one you created to 
 
     The main-employees page opens in the Page Designer.
 
-3. Click **main employees** on the page to select the Bind Text component, then in the Properties pane (click **Properties** if you need to), enter `Employees` in the **Value** field.
+3. Click **main employees** on the page to select the Bind Text component, then in the Properties pane (click **Properties** if you need to), replace `main employees` with `Employees` in the **Value** field.
 
 4. Because we want to show a table as well as a chart, it might help to split the page into two distinct areas, which we'll do using panels. A panel encapsulates content with a border and padding. To add a panel to the page, enter `panel` in the Components Filter field, then drag and drop the **Panel** component onto the page.
 
@@ -121,7 +121,7 @@ We'll now create a page to display employees, similar to the one you created to 
 
     ![This image shows a panel component on the page, with the pane's resize cursor being dragged to resize it to seven columns.](images/panel-on-page-resize.png "")
 
-6. Now let's add our table. This time, instead of using the Components palette, let's use the Data palette, which provides a *data-first approach* to UI design. The Data palette provides access to your business objects, allowing you to drag and drop them onto the canvas and create UI components that readily map to them. To see this in action, click the **Data** tab, then expand **Business Objects** and **Employee**.
+6. Now let's add our table. This time, instead of using the Components palette, let's use the Data palette, which provides a *data-first approach* to UI design. The Data palette provides access to your business objects, allowing you to drag and drop them onto the canvas and readily map to UI components. To see this in action, click the **Data** tab, then expand **Business Objects** and **Employee**.
 
     ![This image shows the Data palette. The Employee business object under Business Objects is expanded to show its REST endpoints.](images/data-palette-employee-object.png "")
 

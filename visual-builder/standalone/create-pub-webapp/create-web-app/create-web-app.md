@@ -12,11 +12,7 @@ Visual Builder, as the name suggests, is a *visual* development tool for web and
 
 Each UI component depends on a *business object* for its data. A business object is a resource—like a purchase order or invoice—that has fields to hold your application's data. It is similar to a database table, as it provides the structure for your data; in fact, business objects are stored in a database. Your application accesses the data in these business objects through  REST endpoints that Visual Builder automatically generates for you.
 
-In this lab, you'll create the Employee, Department, and Location business objects to build a simple Human Resources application. Each business object has its own set of fields as shown here:
-
-![Database schema for the HR visual application. Every table has a system-defined Id field. The Location table has one user-defined field, Location. The Department table has two user-defined fields, Department and Location. The Employee table has seven user-defined fields: Country, Department, Email, Hire Date, Name, Picture, and Salary.](images/db-diagram.png " ")
-
-Once you have your business objects, you'll use them to build the HR web app in which every employee belongs to a department, and every department has a location. Your goal is to allow your users to add employee names and their departments to the database, and to change that data when necessary.
+In this lab, you'll create the Employee, Department, and Location business objects to build a simple Human Resources application. You'll use data from these business objects to build the HR web app in which every employee belongs to a department, and every department has a location. Your goal is to allow your users to add employee names and their departments to the database, and to change that data when necessary.
 
 ## Task 1: Create a web app
 
@@ -123,7 +119,7 @@ Let's create your first business object and add data to it by importing a CSV fi
 
     Click **Create Field**.
 
-7. Click **Properties** on the right (if necessary) to view the **Location** field's properties, then select the **Required** check box under **Constraints**.
+7. In the **Location** field's properties, select the **Required** check box under **Constraints**.
 
     ![This image shows part of the Properties pane for the Name field. The Field Name value is location, the Display Label is Location, the Type is String, and the Value Calculation is None. Under Constraints, the Required check box is selected.](images/vbcsca_imp_s7.png "")
 
@@ -223,11 +219,15 @@ Now that we have our business objects, let's create a diagram that provides a vi
 
 2. In the Create Business Object Diagram dialog box, enter `HRDiagram` in the **Diagram name** field and click **Create**.
 
-3. In the Properties pane, click **Select All** next to Business Objects to see the three business objects you created and their relationships.
+3. In the Properties pane, click **Select All** next to Business Objects.
 
     ![This image shows the Properties pane for the HRDiagram, with all three business objects selected.](images/vbcsca_cde_s12.png "")
 
-    The diagram looks just like the graphic in the About this lab section. You may **proceed to the next lab**.
+    You'll see a diagram representing the three business objects you created and their relationships:
+
+    ![Database schema for the HR visual application. Every table has a system-defined Id field. The Location table has one user-defined field, Location. The Department table has two user-defined fields, Department and Location. The Employee table has seven user-defined fields: Country, Department, Email, Hire Date, Name, Picture, and Salary.](images/db-diagram.png " ")
+
+    You may **proceed to the next lab**.
 
 ## Acknowledgements
 
