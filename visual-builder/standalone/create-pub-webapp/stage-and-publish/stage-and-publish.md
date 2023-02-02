@@ -125,11 +125,11 @@ After you have successfully tested the staged application, you can publish it an
 
     ![This image shows the HR Application installed as a PWA on a device.](images/pwa-installed.png "")
 
-    When you are done, click **X** to close the app. You can always click ![PWA desktop icon](images/pwa-desktop-icon.png) on your device's home screen or laptop to open the app again.
+    When you are done, click **X** to close the app. You can always click ![PWA desktop icon](images/pwa-desktop-icon.png) on your device's home screen or laptop to open the app again. Remember also to close the staged app's browser tab.
 
     Now that the HR app is published, you won't be able to make changes to it. To do that, you'll need to create a new version from the application's Options menu on the Visual Applications page. This creates a development version of the app for you to work on while the published version stays live. Once you are ready to go live with your updates, you'll need to re-stage and re-publish the new version.
 
-    And that's it for this workshop! If you want, click the user menu in the top-right corner and select Sign Out from the menu.
+    And that's it for this workshop!
 
 ## Acknowledgements
 

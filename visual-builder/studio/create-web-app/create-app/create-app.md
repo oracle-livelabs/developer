@@ -12,9 +12,7 @@ Web and mobile applications in VB Studio take shape within the _Designer_, a ric
 
 Each component depends on a _business object_ for its data. A business object is just a resource—like a purchase order or invoice—that has fields to hold your application's data. It is similar to a database table, as it provides the structure for your data; in fact, business objects are stored in a database. Your application accesses the data in these business objects through REST endpoints that VB Studio generates for you.
 
-In this lab, you'll create the Employee, Department, and Location business objects for the HR web application. Each business object has its own set of fields as shown here:
-
-![Database schema for the HR visual web application. Every table has a system-defined Id field. The Location table has one user-defined field, Location. The Department table has two user-defined fields, Department and Location. The Employee table has seven user-defined fields: Country, Department, Email, Hire Date, Name, Picture, and Salary.](images/dbdiagram.png "Database schema")
+In this lab, you'll create the Employee, Department, and Location business objects for the HR web application.
 
 ### Objectives
 
@@ -227,11 +225,12 @@ Now that you have your business objects, create a diagram that visualizes the bu
 
     An empty diagram page opens.
 
-3. In the Properties pane, click **Select All** to see the three business objects you created and their relationships.
+3. In the Properties pane, click **Select All** next to Business Objects.
 
     ![Properties pane for the HRDiagram, with all three business objects selected.](images/bo-diagram-selectall.png "Properties pane for the HRDiagram")
 
-    The diagram looks just like the graphic in the About this Lab section.
+    You'll see a diagram representing the three business objects you created and their relationships:
+    ![Database schema for the HR visual web application. Every table has a system-defined Id field. The Location table has one user-defined field, Location. The Department table has two user-defined fields, Department and Location. The Employee table has seven user-defined fields: Country, Department, Email, Hire Date, Name, Picture, and Salary.](images/dbdiagram.png "Database schema")
 
     You may **proceed to the next lab**.
 

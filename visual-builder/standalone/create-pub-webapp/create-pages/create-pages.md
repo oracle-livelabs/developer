@@ -121,7 +121,7 @@ We'll now create a page to display employees, similar to the one you created to 
 
     ![This image shows a panel component on the page, with the pane's resize cursor being dragged to resize it to seven columns.](images/panel-on-page-resize.png "")
 
-6. Now let's add our table. This time, instead of using the Components palette, let's use the Data palette, which provides a *data-first approach* to UI design. The Data palette provides access to your business objects, allowing you to drag and drop them onto the canvas and readily map to UI components. To see this in action, click the **Data** tab, then expand **Business Objects** and **Employee**.
+6. Now let's add our table. This time, instead of using the Components palette, let's use the Data palette, which provides a *data-first approach* to UI design. The Data palette provides access to your business objects, so you can drag and drop them onto the canvas and readily map them to UI components. To see this in action, click the **Data** tab, then expand **Business Objects** and **Employee**.
 
     ![This image shows the Data palette. The Employee business object under Business Objects is expanded to show its REST endpoints.](images/data-palette-employee-object.png "")
 

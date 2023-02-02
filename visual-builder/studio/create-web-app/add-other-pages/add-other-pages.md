@@ -78,7 +78,7 @@ Now that we've added options to let users manage departments, we'll do the same 
     An **Edit Employee** button is displayed in the toolbar on the main-employees page. The button is inactive.
 
 6. Click **Live**, select a row, and click **Edit Employee** to open the main-edit-employee page.
-7. To make the form's fields display in two columns, click within the form on the page but outside of a component (that is, in the **Form Layout** component on the page) in Design mode. In the General tab of the form's properties, set the **Max Columns** value to **2**. The fields now appear in two columns.
+7. To make the fields on the main-edit-employee page display in two columns, click within the form on the page but outside of a component (that is, in the **Form Layout** component on the page). In the General tab of the form's properties, set the **Max Columns** value to **2**. The fields now appear in two columns.
 8. Let's also set up the employee's picture field to display as an image. To do this, search for an Avatar component in the Components palette, then drag and drop it onto the **div** element just above the Form Layout on the page.
     ![An Avatar component is dropped into the div element above the Form Layout component on the Edit Employee page. ](images/avatar.png "")
 
@@ -161,7 +161,9 @@ Now that we have our web pages, let's change the application's home page from De
 
 4. Click **Preview** ![Preview icon](images/preview-icon.png) to see the HR app now open on the Employees page.
 
-   You may **proceed to the next lab**.
+    Close the browser tab.
+
+    You may **proceed to the next lab**.
 
 ## Acknowledgements
 

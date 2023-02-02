@@ -58,7 +58,7 @@ With the Department and Employee pages now available, you'll want your users to 
 
     The action now has the label `Navigate main-departments`.
 
-7. Now click **Preview** ![Preview icon](images/vbcsnd_run_icon.png) and make sure you can get to the Departments page from the Employees page. Close the browser tab.
+7. Now click **Preview** ![Preview icon](images/vbcsnd_run_icon.png), then **Show Employees** in the new browser tab. Make sure you can get to the Departments page from the Employees page. Close the browser tab.
 
 8. In the Web Apps pane, click **main**, then **Diagram** to view the application's modified page flow. You'll see bi-directional arrows flowing between the main-departments page and the main-employees page. Select the main-departments page tile to see ![Blue navigation icon](images/diagram-navigation-icon-green.png) ![Black navigation icon](images/diagram-navigation-icon-black.png) navigation icons appear in the page's Properties pane, indicating that you can now navigate from main-departments to main-employees and back.
 

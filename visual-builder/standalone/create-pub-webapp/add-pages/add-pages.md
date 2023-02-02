@@ -74,7 +74,7 @@ Now that we've added options to let users manage departments, we'll do the same 
 
 6. Click **Live**, select a row, and click the **Edit Employee** button to open the main-edit-employee page.
 
-7. To make the form's fields display in two columns, click within the form on the page but outside of a component (that is, in the **Form Layout** component on the page). In the **General** tab of the Properties pane, set the **Max Columns** value to **2**. The fields now appear in two columns.
+7. To make the fields on the main-edit-employee page display in two columns, click within the form on the page but outside of a component (that is, in the **Form Layout** component on the page). In the **General** tab of the Properties pane, set the **Max Columns** value to **2**. The fields now appear in two columns.
 
 8. Let's also set up the employee's picture field to display as an image. To do this, search for an Avatar component in the Components palette, then drag and drop it onto the **div** element just above the Form Layout on the page.
     ![This image shows an Avatar component being dropped into the div element above the Form Layout component on the Edit Employee page.](images/avatar.png "")
@@ -158,6 +158,8 @@ Now that we have our web pages, let's change the application's home page from De
 3. Click **Diagram** to see the **main** flow's new navigation. Notice how the main-employees page is badged ![Default and Flow Entry badge](images/default-badge.png), indicating it as the starting page for your application. Previously, it was the main-departments page.
 
 4. Click **Preview** ![Preview icon](images/vbcsmd_run_icon.png) to now see the HR app open on the Employees page.
+
+    Close the browser tab.
 
    You may **proceed to the next lab**.
 
