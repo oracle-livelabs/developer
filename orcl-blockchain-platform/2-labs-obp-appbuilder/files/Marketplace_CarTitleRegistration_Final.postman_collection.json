@@ -1,0 +1,236 @@
+{
+	"info": {
+		"_postman_id": "2c64250e-087e-4eaa-b46e-4261a416518a",
+		"name": "Marketplace - Car Title Registration Final",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Marketplace",
+			"item": [
+				{
+					"name": "Step-1: Create Account - for Dealer1",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": {
+								"password": "{{bc_marketplace_password}}",
+								"username": "{{bc_marketplace_userid}}"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"chaincode\": \"{{bc_chaincode_name}}\",\n    \"args\": [\n        \"CreateAccount\",\n        \"{{bc_dealer1_orgid}}\",\n        \"{{bc_dealer1_userid}}\",\n        \"nonfungible\"\n    ],\n    \"timeout\": {{bc_timeout}},\n    \"sync\": true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{bc_marketplace_url}}/api/v2/channels/{{bc_channel_name}}/transactions"
+					},
+					"response": []
+				},
+				{
+					"name": "Step-1: Create Account - for Dealer2",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": {
+								"password": "{{bc_marketplace_password}}",
+								"username": "{{bc_marketplace_userid}}"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"chaincode\": \"{{bc_chaincode_name}}\",\n    \"args\": [\n        \"CreateAccount\",\n        \"{{bc_dealer2_orgid}}\",\n        \"{{bc_dealer2_userid}}\",\n        \"nonfungible\"\n    ],\n    \"timeout\": {{bc_timeout}},\n    \"sync\": true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{bc_marketplace_url}}/api/v2/channels/{{bc_channel_name}}/transactions"
+					},
+					"response": []
+				},
+				{
+					"name": "Step-3: Add Role - NFT Minter to Dealer1",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": {
+								"password": "{{bc_marketplace_password}}",
+								"username": "{{bc_marketplace_userid}}"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"chaincode\": \"{{bc_chaincode_name}}\",\n    \"args\": [\n        \"AddRole\",\n        \"minter\",\n        \"{{bc_dealer1_orgid}}\",\n        \"{{bc_dealer1_userid}}\"\n    ],\n    \"timeout\": {{bc_timeout}},\n    \"sync\": true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{bc_marketplace_url}}/api/v2/channels/{{bc_channel_name}}/transactions"
+					},
+					"response": []
+				},
+				{
+					"name": "Step-4: Add Role - NFT Minter to Dealer2",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": {
+								"password": "{{bc_marketplace_password}}",
+								"username": "{{bc_marketplace_userid}}"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"chaincode\": \"{{bc_chaincode_name}}\",\n    \"args\": [\n        \"AddRole\",\n        \"minter\",\n        \"{{bc_dealer2_orgid}}\",\n        \"{{bc_dealer2_userid}}\"\n    ],\n    \"timeout\": 0,\n    \"sync\": true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{bc_marketplace_url}}/api/v2/channels/{{bc_channel_name}}/transactions"
+					},
+					"response": []
+				},
+				{
+					"name": "GetUserRole",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": {
+								"password": "{{bc_marketplace_password}}",
+								"username": "{{bc_marketplace_userid}}"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"chaincode\": \"{{bc_chaincode_name}}\",\n    \"args\": [\n        \"GetUsersByRole\",\n        \"minter\"\n    ],\n    \"timeout\": 0,\n    \"sync\": true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{bc_marketplace_url}}/api/v2/channels/{{bc_channel_name}}/transactions"
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "bc_marketplace_url",
+			"value": "https://marketplace-3-oabcs1-ams.blockchain.ocp.oraclecloud.com:7443/restproxy",
+			"type": "string"
+		},
+		{
+			"key": "bc_dealer1_url",
+			"value": "https://dealer1-3-oabcs1-ams.blockchain.ocp.oraclecloud.com:7443/restproxy",
+			"type": "string"
+		},
+		{
+			"key": "bc_channel_name",
+			"value": "test-marketplace",
+			"type": "string"
+		},
+		{
+			"key": "bc_chaincode_name",
+			"value": "car_title_reg_cc",
+			"type": "string"
+		},
+		{
+			"key": "bc_dealer2_orgid",
+			"value": "dealer2",
+			"type": "string"
+		},
+		{
+			"key": "bc_marketplace_userid",
+			"value": "marketplace",
+			"type": "string"
+		},
+		{
+			"key": "bc_marketplace_password",
+			"value": "#####",
+			"type": "string"
+		},
+		{
+			"key": "bc_dealer1_orgid",
+			"value": "dealer1",
+			"type": "string"
+		},
+		{
+			"key": "bc_dealer1_userid",
+			"value": "john_dealer1",
+			"type": "string"
+		},
+		{
+			"key": "bc_dealer1_password",
+			"value": "####",
+			"type": "string"
+		},
+		{
+			"key": "bc_dealer2_userid",
+			"value": "sam_dealer2",
+			"type": "string"
+		},
+		{
+			"key": "bc_dealer2_password",
+			"value": "#####",
+			"type": "string"
+		},
+		{
+			"key": "bc_timeout",
+			"value": "60000",
+			"type": "string"
+		},
+		{
+			"key": "bc_dealer2_url",
+			"value": "https://dealer2-3-oabcs1-ams.blockchain.ocp.oraclecloud.com:7443/restproxy",
+			"type": "default"
+		},
+		{
+			"key": "bc_marketplace_orgid",
+			"value": "marketplace",
+			"type": "default"
+		}
+	]
+}

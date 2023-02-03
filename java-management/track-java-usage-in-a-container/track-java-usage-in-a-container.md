@@ -18,7 +18,7 @@ In this lab, you will:
 
 ### Prerequisites
 
-* An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
+* You have signed up for an account with Oracle Cloud Infrastructure and have received your sign-in credentials.
 * A compute instance with the resources configured in [Lab 1](?lab=set-up-oci-for-jms) to [Lab 5](?lab=set-up-of-management-agent) (Management Agent, Fleet, Compartments, SSH key pair login). The compute instance should also have **Oracle JDK 8** installed.
 
 ## Task 1: Install Docker on your compute instance
@@ -334,8 +334,6 @@ You should now have a compute instance with Docker installed and a Docker image 
 2. You may now check your Fleet in OCI console to see if your Docker container was detected. You should be able to see the OddNumbers.jar under **Applications**.
   ![image of fleet details page showing jar file in container](images/fleets-details-docker.png)
 
-You may now **proceed to the next lab.**
-
 ## Troubleshoot Docker issues
 
 **For Task 1**
@@ -356,4 +354,4 @@ You may now **proceed to the next lab.**
 ## Acknowledgements
 
 * **Author** - Alvin Lam, Java Management Service
-* **Last Updated By/Date** - Yixin Wei, August 2022
+* **Last Updated By/Date** - Bao Jin Lee, November 2022

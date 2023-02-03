@@ -6,6 +6,9 @@ In this lab, you will make changes and deploy the pre-built SpringBoot Java back
 
 Estimated time: 15 minutes
 
+Watch the video below for a quick walk-through of the lab.
+[Backend (Java/SpringBoot)](videohub:1_jy6y991b)
+
 ### Understand the Java backend application
 
 As with most React applications (https://reactjs.org/), this application uses remote APIs to handle data persistence. The backend implements five REST APIs including

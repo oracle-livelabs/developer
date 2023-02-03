@@ -6,9 +6,8 @@ In this lab you secure the REST endpoints created in the previous lab.
 
 Estimated Lab Time: 10 minutes
 
-Watch the video below for a quick walk through of the lab.
-
-[Video overview of this Lab.](youtube:oCJcYj8kbmY)
+Watch the video below for a quick walk-through of the lab.
+[Secure REST-enabled endpoints](videohub:1_6ox6rq26)
 
 ### Objectives
 
