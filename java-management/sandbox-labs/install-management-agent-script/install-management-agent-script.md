@@ -146,7 +146,15 @@ In this lab, you will:
 1. You should now have a terminal / cloud shell open and connected to the instance. Ensure that you are in the directory where the installation script is located.
     >**NOTE:** If you have downloaded the installation script in **Task 1**, please ensure that the terminal is in the Downloads directory. (Step 12 of **Task 1**)
 
-2. Enter the following command to change file permissions.
+2. Enter the following command to update the oracle cloud agent version.
+
+     ```
+     <copy>
+     sudo yum update oracle-cloud-agent -y
+     </copy>
+     ```
+   
+3. Enter the following command to change file permissions.
 
      ```
      <copy>
@@ -154,7 +162,7 @@ In this lab, you will:
      </copy>
      ```
 
-3. Enter the following command to run the installation script. The installation may take around 10 minutes to complete. Please do not close your browser, Cloud Shell or your terminal while the installation is taking place.
+4. Enter the following command to run the installation script. The installation may take around 10 minutes to complete. Please do not close your browser, Cloud Shell or your terminal while the installation is taking place.
 
      ```
      <copy>
@@ -162,7 +170,7 @@ In this lab, you will:
      </copy>
      ```
 
-4. If installation is successful, you'll see a message similar to the following:
+5. If installation is successful, you'll see a message similar to the following:
 
      ```
      ...
@@ -173,7 +181,7 @@ In this lab, you will:
      Assigned JMS Fleet is YourFleetName (ocid1.jmsfleet.oc1.iad.<some ocid hash>).
      ```
 
-5. Remove the installation script.
+6. Remove the installation script.
       ```
      <copy>
      rm ./JMS_<your-fleet-name>_Linux.sh
