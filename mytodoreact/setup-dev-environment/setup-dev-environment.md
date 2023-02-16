@@ -4,7 +4,7 @@
 
 In this lab, you will configure your development environment and collect information that will be used later throughout this workshop. The setup script requires certain environment variables to be set, which is why a script for configuring the environment variables is necessary. After the environment varialbes are set, the setup script uses Terraform, Bash, and SQL to automate the creation of all the resources needed for this lab, such as VCN's, an OKE Cluster, API Gateway, Autonomous database, etc. The script also creates a table and inserts one row into the table, which we will use to make sure the setup was done correctly.
 
-Estimated time: 30 minutes
+Estimated time: 25 minutes
 
 Watch the video below for a quick walk through of the lab.
 
@@ -34,37 +34,37 @@ If you are not the tenancy administrator, there may be additional policies you m
 
 1. First make sure you are in your home region.
 
-	![](images/home-region.png)
+	![Home region](images/home-region.png " ")
 
 
-2. Click the navigation menu in the top left, click on identity and security and select Groups.
+2. Click the navigation menu in the top left, click on **Identity and Security** and select Groups.
 
-	![](images/groups.png)
+	![Groups](images/groups.png " ")
 
 
 3. Click on Create Group
 
-	![](images/create-group.png)
+	![Create Group](images/create-group.png " ")
 
 
 4. Enter the details for group name and description. Be mindful of the restrictions for group name (no spaces, etc.)
 
-	![](images/group-details.png)
+	![Group details](images/group-details.png " ")
 
   Once you have filled in these details click create. Your group should show up under Groups
 
-	  ![](images/group-created.png)
+  ![Group created](images/group-created.png " ")
 
 
 
 5. Navigate to policies and click Create Policy
 
-	![](images/policy-navigation.png)
+	![Policy navigation](images/policy-navigation.png " ")
 
-	![](images/create-policy.png)
-6. You should see a page like this. This is where you will create the policy that will give the group permissions to execute the setup for this workshop.
+	![Create Policy](images/create-policy.png " ")
+6. You should see a page like the following. This is where you will create the policy that will give the group permissions to execute the setup for this workshop.
 
-	![](images/policy-details.png)
+	![:Policy details](images/policy-details.png " ")
 Select **Show manual editor** and copy and paste these policies in the box below
 	```
 	<copy>
@@ -75,9 +75,9 @@ Select **Show manual editor** and copy and paste these policies in the box below
 	Allow group myToDoGroup to manage objects in tenancy
 	</copy>
 	```
-7. Add your user to the group that you have just created by selecting the name of the group you have created and selecting add user to group
+7. Add your user to the group that you have just created by selecting the name of the group you have created and selecting **Add User to Group**
 
-	![](images/add-user-group.png)
+	![Add user to group](images/add-user-group.png " ")
 
 ## **Task 2**: Launch the Cloud Shell
 
@@ -89,7 +89,7 @@ Select **Show manual editor** and copy and paste these policies in the box below
   Click the Cloud Shell icon in the top-right corner of the Console.
 
 
-  ![](images/7-open-cloud-shell.png)
+  ![Cloud Shell](images/7-open-cloud-shell.png " ")
 
 ## **Task 3**: Create a Folder for the Workshop Code
 
@@ -111,7 +111,7 @@ Select **Show manual editor** and copy and paste these policies in the box below
 1. Clone the workshop code inside the directory you just created.
 	````
 	<copy>
-	git clone https://github.com/oracle/oci-react-samples.git
+	git clone --single-branch --branch helidon https://github.com/oracle/oci-react-samples.git
 	</copy>
 	````
   You should now see `oci-react-samples` in your root directory
@@ -126,6 +126,7 @@ The setup script uses terraform, bash scripts, and SQL to automate the creation 
 	```
 	<copy>
 	cd oci-react-samples/mtdrworkshop
+	chmod +x *.sh
 	</copy>
 	```
 2. Copy this command to make sure that env.sh gets run everytime you start up cloud shell
@@ -144,46 +145,46 @@ The setup script uses terraform, bash scripts, and SQL to automate the creation 
 	```
 4. If the previous steps were done correctly, the setup will ask for your OCID. 
 
-  ![](images/terminal-user-ocid.png)
+  ![User OCID](images/terminal-user-ocid.png " ")
 
   To find your user's OCID navigate to the upper right within the OCI console and click on your username.
 
 
 
-	![](images/navigate-user-ocid.png)
+![Navigate user OCID](images/navigate-user-ocid.png " ")
 
 
   Copy your user's OCID by clicking copy
 
-  	![](images/copy-user-ocid.png)
+![Copy user OCID](images/copy-user-ocid.png " ")
 
 5. The setup will then ask for your compartment OCID. If you have a compartment, enter the compartment's OCID. If you do not have a compartment then hit enter and it will create a compartment under the root compartment for you automatically. 
 
-  	![](images/compartment-ocid-ask.png)
+![Compartment OCID](images/compartment-ocid-ask.png " ")
 
   To use an existing compartment, you must enter the OCID of the compartment yourself. To find the OCID of an existing compartment, click on the Navigation Menu of the cloud console, navigate to **Identity & Security** and click on **Compartments**
 
-  	![](images/compartment-navigate.png)
+![Navigate compartment](images/compartment-navigate.png " ")
   Click the appropriate compartment and copy the OCID 
 
-  	![](images/compartment-ocid.png)
+![Compartment OCID](images/compartment-ocid.png " ")
 
 
 6. Next the setup will create an authentication token for your tenancy so that docker can log in to the Oracle Cloud Infrastructure Registry. If there is no space for a new Auth Token, the setup will ask you to remove an auth token then hit enter when you are ready.
 
-  ![](images/navigate-user-ocid.png)
+  ![Navigate user OCID](images/navigate-user-ocid.png " ")
 
   Select Auth Tokens under resources
 
-  ![](images/auth-token.png)
+  ![Token authentication](images/auth-token.png " ")
 
   Delete one auth token if you have too many
 
-  ![](images/delete-auth-token.png)
+  ![Delete Token](images/delete-auth-token.png " ")
 
 7. The setup will ask you to enter the admin password for the database. Database passwords must be 12 to 30 characters and contain at least one uppercase leter, one lowercase leter, and one number. The password cannot contain the double quote (") character or the word "admin".
 
-	![](images/db-password-prompt.png)
+	![Database password](images/db-password-prompt.png " ")
     
 
 ## **Task 6**: Monitor the Setup
@@ -191,14 +192,8 @@ The setup should take around 20 minutes to complete. During the setup, the cloud
 
 1. The setup will update you with the progress of the resource creation. Wait for the setup to complete to move on to the next lab
 
-	![](images/resource-creation-update.png)
+	![Setup progress feedback](images/resource-creation-update.png " ")
 
-You can also monitor the setup using the following command:
-		```
-		<copy>
-		ps -ef
-		</copy>
-		```
 ## **Task 7**: Complete the Setup
 
 When the setup is done running, you will see a message: **SETUP VERIFIED**
@@ -216,4 +211,4 @@ You may now **proceed to the next lab**.
 
 * **Authors** -  - Kuassi Mensah, Dir. Product Management, Java Database Access; Peter Song, Developer Advocate JDBC
 * **Contributors** - Jean de Lavarene, Sr. Director of Development JDBC/UCP
-* **Last Updated By/Date** - Peter Song, Developer Advocate,  Feb 2022
+* **Last Updated By/Date** - Kuassi Mensah

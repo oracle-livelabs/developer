@@ -1,4 +1,4 @@
-# Add Pages to Manage a Web App's Data
+# Add Pages to Interact With Your Data
 
 ## Introduction
 
@@ -7,140 +7,165 @@ This lab shows how you can create pages and buttons that allow you to edit data,
 Estimated Time: 15 minutes
 
 ### About this Lab
+
 In a previous lab, you used a couple of Quick Starts to create pages that let your users add departments and employees. In this lab, you'll use the rest of them to add pages for users to edit and delete departments and employees. You'll also get a chance to test your web pages as they will appear to the user.
 
 ### Objectives
+
 In this lab, you will:
+
 * Add web pages to view details, edit data, and delete data
 * Test your web pages
 
 ### Prerequisites
 
 This lab assumes you have:
+
 * A Chrome browser
 * All previous labs successfully completed
 
 ## Task 1: Add a page to edit a department's details
 
-An Edit page lets you edit a row in your table. In this task, you'll add a page that lets users change a department's Name and Location. 
+In this task, you'll add an edit page that lets users change a department's Name and Location. An Edit page lets you edit a selected row in your table.
 
-1.  Click **Web Applications** ![Web Applications icon](images/web-applications-icon.png), then select the **main-departments** page.  Click **Page Designer** and select the **Table** component on the page. If necessary, click **Reload page** ![Reload page icon](images/reload-icon.png) to view the new departments.
-2.  In the Properties pane, click **Quick Start** to display the Quick Start menu, then click **Add Edit Page**.
+1. Select the **main-departments** page in the Web Apps pane.  Click **Page Designer**, then select the **Table** component on the page.
+2. In the table's Properties pane, click **Quick Start** to display the Quick Start menu, then click **Add Edit Page**.
 
-    ![](images/departments-add-edit-quick-start.png " ")
+    ![The Quick Start menu for the Departments table, with the Add Edit Page selected, is shown.](images/departments-add-edit-quick-start.png "")
 
-3.  On the Select Read Endpoint step of the Add Edit Page wizard, select **Department** under Business Objects (if necessary) and click **Next**. VB Studio will automatically select the Department object's read endpoint.
-4.  On the Select Update Endpoint step, select **Department** under Business Objects again (if necessary) and click **Next**. As with the read endpoint, VB Studio will automatically select the Department object's update endpoint.
+3. On the Select Read Endpoint step of the Add Edit Page wizard, select **Department** under Business Objects (if necessary) and click **Next**. VB Studio will automatically select the Department object's read endpoint.
+4. On the Select Update Endpoint step, select **Department** under Business Objects again (if necessary) and click **Next**. As with the read endpoint, VB Studio will automatically select the Department object's update endpoint.
 
-5.  On the Page Details step, select **location** (**name** is already selected). Click **Finish**.
+5. On the Page Details step, select **location** (**department** is already selected). Click **Finish**.
 
-    An **Edit Department** button is displayed in the toolbar on the `main-departments` page. The button is inactive.
+    An **Edit Department** button is displayed in the toolbar on the main-departments page. The button is inactive.
 
-## Task 2: Add a page to view a department's details
+## Task 2: Add a button to delete a department
 
-A Detail page lets you view additional details of a row in your table. In this task, you'll add a page for users to see more information about each of your departments.
+Add a Delete button to remove a department, so users can remove a department if they wanted.
 
-1.  In the Quick Start menu, click **Add Detail Page**.
-2.  On the Select Endpoint step of the Add Details Page wizard, select **Department** under Business Objects (if necessary) and click **Next**. VB Studio will automatically select the endpoint to read a single record.
-3.  On the Page Details step, select **name**. Expand the **locationObject** and **items** nodes (expand **item\[i\]** if it isn't already expanded) and select **name**. With this selection, both the department's name and location will show as additional details for the user. Change the **Button label** field to `View Department Detail`. Click **Finish**.
+1. With the table on the **main-departments** page selected, click **Quick Start** if necessary, then **Add Delete Action**.
+2. On the Select Endpoint step (the only step of the quick start), select **Department** under Business Objects (if necessary) and click **Finish**. As with other quick starts, the endpoint to delete a record will be automatically selected.
 
-   ![](images/department-add-detail-page-fields.png " ")
+    A **Delete Department** button is displayed in the toolbar on the main-departments page. The button is inactive.
 
-    A **View Department Detail** button is displayed in the toolbar on the `main-departments` page. The button is inactive.
+## Task 3: Test your new Department pages
 
-4.  Click **Live**, select a row, and then click **View Department Detail** to open the `main-department-detail` page.
-5.  Click **Design** to return to Design view.
-6.  Click the **Input Text** field for the second **Name** label to open the Input Text's properties. In the **General** tab, change the **Label Hint** value to `Location`.
+1. Click **Preview** ![Preview icon](images/preview-icon.png). The two buttons you created are inactive.
 
-## Task 3: Add a button to delete a department
-A Delete button lets you delete a selected row in your table. In this task, you'll add a delete button to remove a department if you wanted.
+2. Select a row. All the buttons are now active.
+3. Click **Edit Department**.
 
-1.  Return to the **main-departments** page. Click **Quick Start** if necessary, and click **Add Delete Action**.
-2.  On the Select Endpoint step (the only step of the Add Delete Action wizard), select **Department** under Business Objects (if necessary) and click **Finish**. As with other quick starts, the endpoint to delete a record will be automatically selected.
+    ![The Departments page shows in Preview, with a table row selected and with the Edit Department button selected.](images/departments-edit.png "")
 
-    A **Delete Department** button is displayed in the toolbar on the `main-departments` page. The button is inactive.
+4. On the Edit Department page, change the **Location** field to `Floor 4` and click **Save**. A success message appears briefly, and you are returned to the Departments page.
+5. Click **Create Department** and specify the name and location of a new department, then click **Save**. A success message appears. The new department is displayed in the table.
 
-## Task 4: Test your new Department pages
+6. Select the new department and click **Delete Department**. A success message appears. The department is no longer displayed.
 
-Now, let's test your web pages.
+7. Close the browser tab.
 
-1.  Click **Preview** ![Preview icon](images/preview-icon.png).
-
-    The application opens in another browser tab. The three buttons you created are inactive.
-
-2.  Select a row. All the buttons are now active.
-3.  Click **Edit Department**.
-
-    ![](images/departments-edit.png " ")
-
-4.  On the Edit Department page, change the **Location** field to `Floor 4` and click **Save**. A success message appears briefly, and you are returned to the Departments page.
-5.  Select the row again and click **View Department Detail** to display the data.
-
-    ![](images/departments-detail.png " ")
-
-6.  Click **Back**.
-7.  Click **Create Department** and specify the name and location of a new department, and then click **Save**. A success message appears. The new department is displayed in the table.
-8.  Select the new department and click **Delete Department**. A success message appears. The department is no longer displayed.
-9.  Close the browser tab.
-
-## Task 5: Add a page to edit an employee's details
+## Task 4: Add a page to edit an employee's details
 
 Now that we've added options to let users manage departments, we'll do the same for employees. In this task, you'll add an Edit page to update details of your employees.
 
-1.  Go to the **main-employees** page, click **Page Designer**, and select the **Table** component.
-2.  Click **Quick Start** to display the Quick Start menu, then click **Add Edit Page**.
-3.  On the Select Read Endpoint step of the Add Edit Page wizard, select **Employee** under Business Objects (if necessary) and click **Next**.
-4.  On the Select Update Endpoint step, again select **Employee** under Business Objects (if necessary) and click **Next**.
-5.  On the Page Details step, select **hireDate**, **email**, and **department** (**name** is already selected) and click **Finish**.
+1. Go to the **main-employees** page, click **Page Designer**, and select the **Table** component.
+2. In the Properties pane, click **Quick Start** to display the Quick Start menu, then click **Add Edit Page**.
+3. On the Select Read Endpoint step of the Add Edit Page wizard, select **Employee** under Business Objects (if necessary) and click **Next**.
+4. On the Select Update Endpoint step, again select **Employee** under Business Objects (if necessary) and click **Next**.
+5. On the Page Details step, select **picture**, **hireDate**, **email**, **department**, **salary**, and **country** (**name** is already selected). Click **Finish**.
 
-    An **Edit Employee** button is displayed in the toolbar on the `main-employees` page. The button is inactive.
+    An **Edit Employee** button is displayed in the toolbar on the main-employees page. The button is inactive.
 
-6.  Click **Live**, select a row, and click **Edit Employee** to open the `main-edit-employee` page.
-7.  Click **Design**.
-8.  Click within the form on the page but outside of a component (that is, in the **Form Layout** component on the page). In the General tab of the form's properties, set the **Max Columns** value to **2**. The fields now appear in two columns.
+6. Click **Live**, select a row, and click **Edit Employee** to open the main-edit-employee page.
+7. To make the fields on the main-edit-employee page display in two columns, click within the form on the page but outside of a component (that is, in the **Form Layout** component on the page). In the General tab of the form's properties, set the **Max Columns** value to **2**. The fields now appear in two columns.
+8. Let's also set up the employee's picture field to display as an image. To do this, search for an Avatar component in the Components palette, then drag and drop it onto the **div** element just above the Form Layout on the page.
+    ![An Avatar component is dropped into the div element above the Form Layout component on the Edit Employee page. ](images/avatar.png "")
 
-## Task 6: Add a page to view an employee's details and a button to delete an employee
+9. In the Avatar's Properties pane, select **Large** in the **Size** drop-down list to increase the component's size.
 
-1.  Go to the **main-employees** page. Click the table, then **Quick Start** in the Properties pane.
-2.  In the Quick Start menu, click **Add Detail Page**.
-3.  On the Select Endpoint step of the Add Detail Page wizard, select **Employee** under Business Objects (if necessary) and click **Next**.
-4.  On the Page Details step, select **name**, **hireDate**, and **email**. Expand the **departmentObject** and **items** nodes (expand **item\[i\]** if it isn't already expanded) and select **name**. Change the **Button label** field to `View Employee Detail`, then click **Finish**.
+10. Click the **Data** tab and bind the component to a data source. Components are typically bound to variables that store and display data from your data source. Quick Starts automate this for you, but in this step, we'll manually bind the Avatar component to the **picture** variable that retrieves its data from the **picture** field in the Employee business object. To do this, hover over the **Src** field in the Data tab, click ![Select Variable icon](images/variable-picker-icon.png) to open the Variable picker, then select **picture** under the **employee** object.
 
-    A **View Employee Detail** button is displayed in the toolbar on the `main-employees` page. The button is inactive.
+    ![A combined image that shows the Select Variable picker being selected in the Avatar component's Data tab. The lower half of the image shows the contents of the Variable picker, with picture under the employee object selected.](images/avatar-bind-data.png "")
 
-5.  Now click **Add Delete Action** in the Quick Start menu.
-6.  On the Select Endpoint step of the Add Delete Action wizard, select **Employee** under Business Objects (if necessary) and click **Finish**.
+    The employee's image now displays on the page. If you were to update the URL in the **Picture** field, the employee's image will also update.
 
-    A **Delete Employee** button is displayed in the toolbar on the `main-employees` page. The button is inactive.
+    ![The updated Edit Employee page is shown with the employee picture  above the other form fields on the page.](images/avatar-picture-field.png "")
 
-7.  Click **Live**, select a row, and click **View Employee Detail** to open the `main-employee-detail` page.
-8.  Click **Design**.
-9.  Click the **Input Text** component for the second **Name** label. In the Properties pane, change the **Label Hint** value to `Department`.
-10.  Click within the form on the page but outside of a component (that is, in the **Form Layout** component on the page). In the General tab, set the **Max Columns** value to **2**.
+## Task 5: Add a button to delete an employee
 
-## Task 7: Test your Employee pages
+1. Go to the **main-employees** page. Switch to **Design** mode, click the table, and select **Add Delete Action** under **Quick Start** in the Properties pane.
+2. On the Select Endpoint step of the Add Delete Action Quick Start, select **Employee** under Business Objects (if necessary) and click **Finish**.
 
-1.  Click **Preview** ![Preview icon](images/preview-icon.png).
+    A **Delete Employee** button is displayed in the toolbar on the main-employees page. The button is inactive.
+
+3. Because the page features a bar chart as well, let's update the action chain created by the Quick Start to refresh the chart whenever an employee is deleted. Select the **Delete Employee** button, then select the **Events** tab in the Properties pane and click **deleteEmployeeChain** under Action Chain.
+
+    ![The button's Events tab shows the deleteEmployeeChain as the action chain triggered by the ojAction event.](images/deleteEmployeeChain.png "")
+
+4. On the success branch of the Call REST action, drag and drop a new Fire Data Provider Event (used to dispatch an event on a data provider) and position it between the other Fire Data Provider Event and Fire Notification actions. You might need to drop the new action on the **+** sign, then drag the Fire Notification action down.
+
+    ![The deleteEmployeeChain shows in diagram view. On the success branch of the Call REST action, a second Fire Data Provider Event action has been added. Its properties pane show on the right: Event Target is undefined and Type is set to Mutate.](images/deleteEmployeeChain-actionchain.png "")
+
+5. In the second Fire Data Provider Event action's Properties pane, click ![Select Variable icon](images/variable-picker-icon.png) next to **Event Target** (you'll need to hover over the field to see the icon) and select **employeeListSDP2**, which is the data provider backing the bar chart.
+
+6. Change the Type from **Mutate** to **Refresh**.
+
+    ![The Fire Data Provider Event action's properties are shown. The Event Target is set to $page.variables.employeeListSDP2 and Type is set to Refresh.](images/deleteEmployeeChain-actionchain-updated.png "")
+
+    Now you're ready to test your pages.
+
+## Task 6: Test your Employee pages
+
+1. Click **Preview** ![Preview icon](images/preview-icon.png).
 
     The application opens in another browser tab, displaying the Departments page.
 
-2.  Click **Display Employees**.
+2. Click **Show Employees**.
 
-    The three buttons you created are inactive.
+    The two buttons you created are inactive.
 
-3.  Select a row. All the buttons are now active.
+3. Select a row. All the buttons are now active.
 
-    ![](images/employees-edit.png " ")
+    ![The Employees page is shown in Preview, with a table row selected and the Edit Employee button selected. The bar chart on the right also shows.](images/employees-edit.png "")
 
-4.  Click **Edit Employee**.
-5.  On the Edit Employee page, change **Department** to `IT` and click **Save**. A success message appears, and you are returned to the Employees page.
-6.  Select the row again and click **View Employee Detail** to display the data, then click **Back**.
-7.  Click **Create Employee** and specify the data for a new employee, then click **Save**. A success message appears, and the new employee is displayed in the table.
-8.  Select the new employee and click **Delete Employee**. A success message appears. The employee is no longer displayed.
-9.  Close the browser tab.
+4. Click **Edit Employee**.
+5. On the Edit Employee page, change the **Department** to `IT` and **Salary** to 6000. Click **Save**. A success message appears, and you are returned to the Employees page. Notice how the bar chart also changes to show the employee's updated salary.
+
+6. Click **Create Employee** and specify the data for a new employee, for example:
+    * **Name**: `Shayla`
+    * **Picture**: `https://www.oracle.com/webfolder/technetwork/jet/content/images/hcm/placeholder-female-16.png`
+    * **Hire Date**: Select today's date
+    * **Email**: `shayla@example.com`
+    * **Department**: `Marketing`
+    * **Salary**: `4000`
+    * **Country**: `NZ`
+
+    Click **Save**. A success message appears, and the new employee is displayed in the table and bar chart.
+
+7. Select the new employee and click **Delete Employee**. A success message appears. The employee is no longer displayed in the table or the chart.
+
+8. Close the browser tab.
+
+## Task 7: Change the app's default page
+
+Now that we have our web pages, let's change the application's home page from Departments to Employees—after all, an HR app is about employees.
+
+1. In the Web Apps pane, click the **main** node, then click **Settings**.
+
+2. In the **General** tab, set **main-employees** as the **Default Page**.
+
+   ![The General tab of the Settings editor is shown. Under Flow Settings, the Default Page field lists the pages available for selection. The main-employees page is selected.](images/default-page-change.png "")
+
+3. Click **Diagram** to see the **main** flow's new navigation. Notice how the main-employees page is badged ![Default and Flow Entry badge](images/default-badge.png), indicating it as the starting page for your application. Previously, it was the main-departments page.
+
+4. Click **Preview** ![Preview icon](images/preview-icon.png) to see the HR app now open on the Employees page.
+
+    Close the browser tab.
 
     You may **proceed to the next lab**.
 
 ## Acknowledgements
+
 * **Author** - Sheryl Manoharan, VB Studio User Assistance, November 2021
-* **Last Updated By/Date** - Sheryl Manoharan, February 2022
+* **Last Updated By/Date** - Sheryl Manoharan, February 2023

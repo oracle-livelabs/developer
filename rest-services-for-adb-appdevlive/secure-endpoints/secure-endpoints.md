@@ -1,14 +1,13 @@
-# How to build powerful, secure REST APIs for your Oracle Database - Securing a REST Endpoint
+# Secure REST-enabled endpoints
 
 ## Introduction
 
-In this lab you will be securing the REST endpoints you created in the previous lab.
+In this lab you secure the REST endpoints created in the previous lab.
 
 Estimated Lab Time: 10 minutes
 
-Watch the video below for a quick walk through of the lab.
-
-[](youtube:oCJcYj8kbmY)
+Watch the video below for a quick walk-through of the lab.
+[Secure REST-enabled endpoints](videohub:1_6ox6rq26)
 
 ### Objectives
 
@@ -18,38 +17,32 @@ Watch the video below for a quick walk through of the lab.
 
 ### Prerequisites
 
-- The following lab requires an <a href="https://www.oracle.com/cloud/free/" target="\_blank">Oracle Cloud account</a>. You may use your own cloud account, a cloud account that you obtained through a trial, or a training account whose details were given to you by an Oracle instructor.
+- The following lab requires an [Oracle Cloud account](https://www.oracle.com/cloud/free/). You may use your own cloud account, a cloud account that you obtained through a trial, or a training account whose details were given to you by an Oracle instructor.
 
-This lab assumes you have completed the following:
-* Login to OCI: [Login to Oracle Cloud](https://github.com/oracle-livelabs/common/blob/main/labs/cloud-login/pre-register-free-tier-account.md)
-* Lab 1: [Provision an Autonomous Database](https://github.com/oracle-livelabs/database/blob/main/db-quickstart/db-provision/db-provision.md)
-* Lab 2: [Connect to your Autonomous Database using Database Actions/SQL Developer Web](https://oracle-livelabs.github.io/common/labs/sqldevweb-login/sqldevweb-login.md)
-* Lab 3: [Create and auto-REST enable a table](../create-table/create-table.md)
-* Lab 4: [Loading Data and Creating Business Objects](../load-data-and-biz-objs/load-data-and-biz-objs.md)
-* Lab 5: [REST Enable Business Logic and Custom SQL Lab](../rest-enable-objects/rest-enable-objects.md)
+- This lab assumes you have completed all previous Labs. 
 
-## Task 1: Securing the REST Endpoint
+## Task 1: Create a Role to secure a REST Endpoint
 
-**If this is your first time accessing the REST Workshop, you will be presented with a guided tour. Complete the tour or click the X in any tour popup window to quit the tour.**
+**If this is your first time accessing the REST Workshop, you will be presented with a guided tour. Complete the tour or click the `X` in any tour popup window to quit the tour.**
 
-1. If not already there from the previous lab, we need to navigate to the **REST Database Actions** page. To do this, use the **Database Actions menu** in the upper left of the page and choose **REST** in the Development list.
+1. If not there already, navigate to the **REST Database Actions** page. Do this by navigating to the **Database Actions menu** in the upper left of the page. Choose **REST** in the Development list.
 
     ![Database Actions Menu, Development then REST](./images/select-rest-dbactions-menu.png)
 
-2. Next, we want to select the **Security Tab** on the top of the page and then select **Roles**.
+2. Next, select the **Security Tab** on the top of the page and then select **Roles**.
 
     ![On the Top Menu Bar, click Security Tab then select Roles](./images/select-roles-security-tab.png)
 
 
-3. On the **Roles** page, start by left clicking the **+ Create Role** button in the upper right of the page.
+3. Once on the **Roles** page, left click the **+ Create Role** button in the upper right of the page.
 
     ![Click the Create Role button](./images/create-roll-button.png)
 
-4. The **Role Definition** modal will pop up.
+4. The **Role Definition** modal will appear.
 
     ![Role Definition Modal](./images/role-definition-role-name-field.png)
 
-5.  Use the **Role Name** field to name our role. Let's use **oracle.livelabs.role.admin**.
+5.  Use the **Role Name** field to name our role. We'll use **oracle.livelabs.role.admin**.
 
      ````
     <copy>oracle.livelabs.role.admin</copy>
@@ -61,19 +54,21 @@ This lab assumes you have completed the following:
 
     ![Click the Create button](./images/create-role-action.png)
 
-7. We now must assign **privileges** to this role. Again using the REST Tab Bar on the top of the page, left click **Security** and select **Privileges**
+## Task 2: Create a Privilege to secure a REST Endpoint
+
+1. We'll now assign **Privileges** to this role. Again using the REST Tab Bar on the top of the page, left click **Security** and select **Privileges**
 
     ![On the Top Menu Bar, click Security Tab then select privileges](./images/select-privilege-security-tab.png)
 
-8. On the **Privileges** page, start by left clicking the **+ Create Privilege** button in the upper right of the page.
+2. Once on the **Privileges** page, left click the **+ Create Privilege** button in the upper right of the page.
 
     ![Click the Create Privilege button](./images/create-privilege-button.png)
 
-9. The **Create Privilege** slider appears from the right.
+3. The **Create Privilege** slider appears from the right.
 
     ![Create Privilege slider](./images/create-privilege-slider.png)
 
-10. In the **Label** field, we can name this privilege **Livelabs REST Privilege**.
+4. In the **Label** field, we'll name this privilege **Livelabs REST Privilege**.
 
      ````
     <copy>Livelabs REST Privilege</copy>
@@ -81,7 +76,7 @@ This lab assumes you have completed the following:
 
     ![Label Field](./images/privilege-label-input.png)
 
-11. For the **Name** field, we can enter this **oracle.livelabs.privilege.admin**.
+5. For the **Name** field, we can enter this **oracle.livelabs.privilege.admin**.
 
      ````
     <copy>oracle.livelabs.privilege.admin</copy>
@@ -89,7 +84,7 @@ This lab assumes you have completed the following:
 
     ![Name Field](./images/privilege-name-input-field.png)
 
-12. Next, in the **Description** field, enter **Livelabs Privilege for Business Logic REST Services**.
+6. Next, in the **Description** field, enter **Livelabs Privilege for Business Logic REST Services**.
 
      ````
     <copy>Livelabs Privilege for Business Logic REST Services</copy>
@@ -97,25 +92,25 @@ This lab assumes you have completed the following:
 
     ![Description Field](./images/privilege-description-input-field.png)
 
-13. When your **Create Privilege** slider looks like the following image
+7. When your **Create Privilege** slider looks like the following image...
 
     ![Completed Create Privilege** slider](./images/completed-created-privilege-slider.png)
 
-    left click the **Roles** tab on the top of the slider.
+    ...left click the **Roles** tab on the top of the slider.
 
     ![Roles tab on the top of the slider](./images/create-privilege-roles-tab.png)
 
-14. On the **Roles** tab, use the shuttle to move the role we created, **oracle.livelabs.role.admin**, to the right side. We can do this by double left clicking on it or by left clicking it and then clicking the single arrow pointing to the right. Ensure the shuttle looks like the below image where **oracle.livelabs.role.admin** is on the right side.
+8. On the **Roles** tab, use the shuttle to move (the role we created) **oracle.livelabs.role.admin** to the right side. We can do this by double left clicking the role or by left clicking it and then clicking the single arrow pointing to the right. Ensure the shuttle looks like the below image where **oracle.livelabs.role.admin** is on the right side.
 
     ![Roles shuttle](./images/roles-shuttle-window.png)
 
     You can see that when we auto-REST enabled our table, privileges and roles were automatically created for us (oracle.dbtools.role.autorest.ADMIN.CSV_DATA)
 
-15. When the single role has been moved to the right of the shuttle, left click the **Protected Modules** tab on the top of the **Create Privilege** slider.
+9. When the single role has been moved to the right of the shuttle, left click the **Protected Modules** tab on the top of the **Create Privilege** slider.
 
     ![Protected Modules tab](./images/protected-modules-tab-option.png)
 
-16. We see on the **Protected Modules tab** the module name we created in the previous lab; **com.oracle.livelab.api**. Just as we did in the previous shuttle, move **com.oracle.livelab.api** from the left side to the right side. 
+10. We see the module name we created in the previous lab, **com.oracle.livelab.api**, on the **Protected Modules tab**. Like we did with the previous shuttle, move **com.oracle.livelab.api** from the left side to the right side. 
 
     ![Protected Modules shuttle](./images/protected-modules-shuttle.png)
 
@@ -123,19 +118,21 @@ This lab assumes you have completed the following:
 
     ![click the Create button on the Create Privilege slider](./images/click-create-for-privilege.png)
 
-17. Next, we want to select the **Security Tab** on the top of the page and then select **OAuth Clients**.
+## Task 3: Create an OAuth Client for secure REST Endpoint
+
+1. Next, we'll select the **Security Tab** on the top of the page and then select **OAuth Clients**.
 
     ![On the Top Menu Bar, click Security Tab then select OAuth Clients](./images/oauth-client-security-tab.png)
 
-18. To create our OAuth client we will secure our REST endpoints. Click the **+ Create OAuth Client** button in the upper right of the page.
+2. To create our OAuth client we will secure our REST endpoints. Click the **+ Create OAuth Client** button in the upper right of the page.
 
     ![Click the Create OAuth Client button](./images/oauth-client-create-button.png)
 
-19. The **Create OAuth Client** slider will emerge from the right of the page. 
+3. The **Create OAuth Client** slider will emerge from the right of the page. 
 
     ![Create OAuth Client slider](./images/create-oauth-client-slider.png)
 
-20. In this form we first need to name our OAuth Client. Enter **oauthclient** into the **Name** field. 
+4. In this form we first need to name our OAuth Client. Enter **oauthclient** into the **Name** field. 
 
     ````
     <copy>oauthclient</copy>
@@ -143,7 +140,7 @@ This lab assumes you have completed the following:
 
     ![Name Field](./images/oauth-client-name-field.png)
     
-21. Next we can give it a description. We can use **Security on my REST Service** as a value in the **Description Field**.
+5. Next we can provide a description. We'll use **Security on my REST Service** as a value in the **Description Field**.
     
     ````
     <copy>Security on my REST Service</copy>
@@ -151,7 +148,7 @@ This lab assumes you have completed the following:
 
     ![Description Field](./images/oauth-client-description-field.png)
 
-22. The following field, **Support URI**, is where a client will be taken upon an authorization error or failure. For this lab, we will use "https://www.oracle.com/rest/"
+6. The following field, **Support URI**, is where a client will be taken upon an authorization error or failure. For this lab, we will use "https://www.oracle.com/rest/"
     
      ````
     <copy>https://www.oracle.com/rest/</copy>
@@ -159,7 +156,7 @@ This lab assumes you have completed the following:
     
     ![Support URI Field](./images/oauth-client-support-uri.png)
 
-23. Finally, we need a **support email** for contacting someone. You can enter your email address or use support@support.com in the **Support Email** field of the form.
+7. Finally, we need a **support email** for contacting someone. You can enter your email address or use support@support.com in the **Support Email** field of the form.
 
      ````
     <copy>support@support.com</copy>
@@ -167,31 +164,33 @@ This lab assumes you have completed the following:
 
     ![Support Email Field](./images/support-email-field.png)
 
-24. Once your form looks similar to the image below:
+8. Once your form looks similar to the image below...
 
     ![Completed OAuth Slider](./images/completed-oauth-slider.png)    
     
-    left click the **Roles Tab** on the top of the Create OAuth Client slider.
+    ...left click the **Roles Tab** on the top of the Create OAuth Client slider.
 
     ![Roles Tab on the OAuth Client Slide Out Panel](./images/roles-tab-oauth-slider.png)
 
-25. Use the **shuttle** to move the **oracle.livelabs.role.admin** role to the right side.
+9. Use the **shuttle** to move the **oracle.livelabs.role.admin** role to the right side.
 
     ![Use the shuttle to move the oracle.livelabs.role.admin role to the right side](./images/oauth-shuttle.png)
 
-26. When your **Roles Tab** looks like the below image in the  Create OAuth Client slider, left click the **Create** button.
+10. When your **Roles Tab** looks like the below image in the  Create OAuth Client slider, left click the **Create** button.
 
     ![left click the create button](./images/oauth-create-button-action.png)
 
-27. You can now see the created **OAuth Client** tile on the OAuth Clients page.
+11. You'll now see the newly created **OAuth Client** tile on the OAuth Clients page.
 
     ![OAuth Client tile on the OAuth Clients page](./images/oauth-clients-page.png)
 
-28. Before we secure the REST endpoint, we need to obtain a token to pass to the secured REST service once its enabled. To get this token, we can click the pop out menu icon ![pop out menu icon](./images/three-dot-pop.png) on our OAuth tile and select **Get Bearer Token**.
+## Task 4: Obtain a Bearer Token for accessing a secure REST Endpoint
+
+1. Before we secure the REST endpoint, we need to obtain a token to pass to the secured REST service once its enabled. To obtain this token, we can click the pop out menu icon ![pop out menu icon](./images/three-dot-pop.png) on our OAuth tile and select **Get Bearer Token**.
 
     ![click the pop out menu icon on our OAuth tile and select Get Bearer Token](./images/get-bearer-token-for-oauth-client.png)
 
-29. The OAuth Token modal will provide the token text in the **Current Token** field. You can use the copy icon ![copy icon](./images/copy-copy.png) to copy this token text. Save it to a text document or notes application because we will need it when calling the secured REST service. The modal will also provide us with a cURL command to obtain a token should we need to include it in our applications.
+2. The OAuth Token modal will provide the token text in the **Current Token** field. You can use the copy icon ![copy icon](./images/copy-copy.png) to copy this token text. Save it to a text document or notes application as you'll need it when calling the secured REST service. The modal will also provide us with a cURL command to obtain a token should we need to include it in our applications.
 
     ![Click the copy icon to save the Token Text](./images/click-copy-icon-to-copy-token-text.png)
 
@@ -199,9 +198,9 @@ This lab assumes you have completed the following:
 
     ![Left click the OK button](./images/click-ok-when-finished-in-oauth-slider.png)
 
-30. Now its the moment you have been waiting for; time to secure the REST service. Actually, its already secure. When we created the OAuth client with the role, the modules we protected are now secure. We can try this by running a previously working REST API. (**NOTE: your URL hostname will be different than the below command**)
+3. Next, we'll secure the REST service. It is in fact *already* secure. When we created the OAuth client with the role, the modules we protected were secured. Test this by running a previously unsecure REST API. (**NOTE: your URL hostname will be different than the below command**)
 
-    Remember in the last lab, we created a REST API for our bizlogic? Let's take that cURL command again:
+    Remember in the last lab, we created a REST API for our bizlogic? Let's take that cURL command again...
 
     ```
     <copy>curl --location --request POST \
@@ -212,7 +211,7 @@ This lab assumes you have completed the following:
     "output": "" 
     }'</copy>
     ```
-    and after running this commang again, using the Oracle Cloud Infrastructure Cloud Shell, the following response will be returned:
+   ...and after running this command again, using the Oracle Cloud Infrastructure Cloud Shell, the following response will be returned:
 
     ```
     >{
@@ -224,7 +223,7 @@ This lab assumes you have completed the following:
     ```
     We are not authorized to use this REST endpoint any longer.
 
-31. To get this REST API working again, we need to add **--header 'Authorization: Bearer VALUE'** to our cURL command. The **VALUE** is going to be the token text we saved from a few steps back. (**NOTE: your URL hostname will be different than the below command**)
+4. To get this REST API working again, we need to add **--header 'Authorization: Bearer VALUE'** to our cURL command. The **VALUE** will be taken from the token text we saved from earlier. (**NOTE: your URL hostname will be different than the below command**)
 
     We can add this to our cURL command as follows:
 
@@ -238,7 +237,7 @@ This lab assumes you have completed the following:
     }'</copy>
     ```    
 
-32. Now using the Oracle Cloud Infrastructure Cloud Shell and your new cURL command with the **--header 'Authorization: Bearer VALUE'** section added with your token text, run the new cURL command. (**NOTE: your URL hostname will be different than the below command**)
+5. Now using the Oracle Cloud Infrastructure Cloud Shell and your new cURL command with the **--header 'Authorization: Bearer VALUE'** section added with your token text, run the new cURL command. (**NOTE: your URL hostname will be different than the below command**)
 
     ```
     <copy>curl -X POST --header 'Authorization: Bearer tW-AM_cDQu0l8oAsh707vw' \
@@ -250,13 +249,13 @@ This lab assumes you have completed the following:
     }'</copy>
     ``` 
 
-    We now see a value from the REST API is returned
+    We now see a value from the REST API is returned.
     ```
     {"output":8204}% 
     ```
-33. We can also use this on our other REST API that takes in a value and returns a report. (**NOTE: your URL hostname will be different than the below command**)
+6. We can also use this on our other REST API that takes in a value and returns a report. (**NOTE: your URL hostname will be different than the below command**)
 
-    The endpoint for that REST API was
+    The endpoint for that REST API was:
 
     ```
     <copy>https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/admin/api/sqlreport/<VALUE></copy>
@@ -270,7 +269,7 @@ This lab assumes you have completed the following:
 
     and as expected, we get **Unauthorized**.
 
-34. Now lets add the token (**--header 'Authorization: Bearer VALUE'**) to this command. (**NOTE: your URL hostname will be different than the below command**)
+7. Now lets add the token (**--header 'Authorization: Bearer VALUE'**) to this command. (**NOTE: your URL hostname will be different than the below command**)
 
     ```
     <copy>curl -X GET --header 'Authorization: Bearer tW-AM_cDQu0l8oAsh707vw' 'https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/admin/api/sqlreport/a1'</copy>
@@ -294,14 +293,16 @@ This lab assumes you have completed the following:
     "href":"https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/admin/api/sqlreport/a1?offset=25"}]}% 
     ```
 
-## Conclusion
-
-In this lab, you secured your custom REST APIs with OAuth2 authentication.
+8. In this lab, you secured your custom REST APIs with OAuth2 authentication.
 
 You may now [proceed to the next lab](#next).
 
 ## Acknowledgements
 
- - **Author** - Jeff Smith, Distinguished Product Manager
- - **Last Updated By/Date** - Jeff Smith, July 2022
+ - **Author** 
+    - Jeff Smith, Distinguished Product Manager
+    - Chris Hoina, Senior Product Manager 
+    - Brian Spendolini 
+ - **Last Updated By/Date** 
+    - Chris Hoina, August 2022
 

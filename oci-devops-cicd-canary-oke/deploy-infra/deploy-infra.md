@@ -124,7 +124,7 @@ Oracle has published a [Reference Architecture](https://docs.oracle.com/en/solut
     ![oci-stack-apply-btn](images/oci-stack-apply-btn.png)
 
 15. Click `Create`.
-16. This will start with an `Apply for Job`.This would take around 20+ months to finish the job.
+16. OCI Resource manager will start creating the infra and this would take approximatly 20 minutes.
 
     ![oci-stack-orm-job](images/oci-stack-orm-job.png)
 
