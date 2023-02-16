@@ -50,12 +50,11 @@ In this lab, as a developer or SRE,
 
 10. Run command `git clone <HTTPS URL>` in the Cloud shell. Provide the username (with properformat) and the user access token created as password.Refer below for the format of user and access token information.
 
-```markdown
 - For a federated user (single sign-on with an identity provider), enter the username in the following format: TenancyName/Federation/UserName. 
 - For example, if you use OCI's identity provider, your login would be, Acme/oracleidentitycloudservice/alice.jones@acme.com. 
 - If you are using OCI's direct sign-in, enter the username in the following format: TenancyName/YourUserName. For example, Acme/alice_jones. Your password is the auth token you created previously.
 - You can get the auth token from your Profile menu -> click User Settings -> On left side  click *Auth Tokens -> Generate Token
-```
+
 
    ![oci-cs-clone-actions](images/oci-cs-clone-actions.png)
 
@@ -93,12 +92,12 @@ def read_root():
 
 14. Run the set of commands and push the edited changes back to OCI repo.When promted provider the username and useraccess token.If its the first time that you are performing git actions ,it will ask you setup the configurations too.Refer below for the format of user and access token information.
 
-```markdown
+
 - For a federated user (single sign-on with an identity provider), enter the username in the following format: TenancyName/Federation/UserName. 
 - For example, if you use OCI's identity provider, your login would be, Acme/oracleidentitycloudservice/alice.jones@acme.com. 
 - If you are using OCI's direct sign-in, enter the username in the following format: TenancyName/YourUserName. For example, Acme/alice_jones. Your password is the auth token you created previously.
 - You can get the auth token from your Profile menu -> click User Settings -> On left side  click *Auth Tokens -> Generate Token
-```
+
 
 ```markdown
 git add main.py
