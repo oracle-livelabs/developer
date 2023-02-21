@@ -27,10 +27,8 @@ In this workshop, you will:
 
 ### What do you need?
 
-- An Oracle Cloud Account using a Free Tier or Paid tenancy
+- An Oracle Cloud Account
 - A Chrome browser
-
-> **Note:** An Oracle Cloud Free Tier account provides a free trial with credits to use on eligible Oracle Cloud Infrastructure services for up to 30 days. To provision a Visual Builder instance, you need an Oracle Cloud account with active credits; otherwise, you'll need to upgrade to a paid account. See [Oracle Cloud Infrastructure Free Tier](https://www.oracle.com/cloud/free/#always-free) for details.
 
 ## Acknowledgements
 

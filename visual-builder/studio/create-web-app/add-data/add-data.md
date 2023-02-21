@@ -1,4 +1,4 @@
-# Add Navigation to Your Web App
+# Add navigation between pages
 
 ## Introduction
 

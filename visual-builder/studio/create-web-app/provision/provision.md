@@ -1,4 +1,4 @@
-# Provision Your Instances
+# Provision your instances
 
 ## Introduction
 
@@ -106,7 +106,7 @@ Provision a service instance of VB Studio to develop and deploy your web app. Yo
 
   ![This image shows the OCI Account tab when a free Built-in account is available. A Built-in Free section on the left shows the instance connected by default using this free account. On the right, a Connect Your Own section provides an option to connect your own OCI Account to the instance.](images/oci-free-account.png "")
 
-  The free account provides a minimal set of resources (detailed [here](https://docs.oracle.com/en/cloud/paas/visual-builder/visualbuilder-administration/set-oracle-visual-builder-studio.html#GUID-759853ED-5561-4031-AC01-773D58992CA3)), sufficient to try out VB Studio. If this is enough for your needs, you can [jump to the next lab](#next) and get started with creating a project. If your data center does not include this free account or you want to explore more of VB Studio, continue with the following tasks to connect your own OCI account.
+  The free account provides a minimal set of resources detailed ([here](https://docs.oracle.com/en/cloud/paas/visual-builder/visualbuilder-administration/set-oracle-visual-builder-studio.html#GUID-759853ED-5561-4031-AC01-773D58992CA3)), sufficient to try out VB Studio. If this is enough for your needs, you can [jump to the next lab](#next) and get started with creating a project. If your data center does not include this free account or you want to explore more of VB Studio, continue with the following tasks to connect your own OCI account.
 
 ## Task 3: Set up the OCI account
 
@@ -143,7 +143,7 @@ To connect your VB Studio instance to OCI resources such as VMs for builds and s
 
     b. Run the following commands in the cloudshell to generate a public and private key pair.
 
-    ```
+    ```text
     <copy>
     mkdir ~/.oci
     openssl genrsa -out ~/.oci/oci.api.key.pem 2048
@@ -157,7 +157,7 @@ To connect your VB Studio instance to OCI resources such as VMs for builds and s
 
     c. Run the following command to **copy the generated *public* key** and paste it in a text editor like notepad, we will need it for the next step.
 
-    ```
+    ```text
     <copy>
     cat ~/.oci/oci.api.key.public.pem
     </copy>
@@ -169,7 +169,7 @@ To connect your VB Studio instance to OCI resources such as VMs for builds and s
 
     e. Run the following command to **copy the generated *private* key** and paste it in a notepad, we will need it later on.
 
-    ```
+    ```text
     <copy>
     cat ~/.oci/oci.api.key.pem
     </copy>
@@ -225,12 +225,11 @@ To connect your VB Studio instance to OCI resources such as VMs for builds and s
     d. Enter `VBStudioPolicy` as the Name and add a description (for example, `Policy for VB Studio`). Make sure the root compartment is selected as the Compartment.
 
     e. Under Policy Builder, click **Show manual editor** and enter these statements:
-       ```
+       ```text
        <copy>
        Allow group VBStudioGroup to manage all-resources in compartment VBStudioCompartment
        Allow group VBStudioGroup to read all-resources in tenancy
-       </copy>
-       ```
+       </copy>```
     f. Click **Create**.
        ![This image shows the Create Policy dialog with Name, Description, and Compartment. The Policy Builder is set to manual with two policy statements entered in the text area. The Create button is also shown.](images/oci-policies-create-details.png "")
 
@@ -244,7 +243,7 @@ You now need the unique Oracle Cloud Identifiers (OCIDs) of the VB Studio compar
 
 2. In a notepad, copy and paste the Tenancy OCID from the **OCID**, Home Region from the **Home Region**, and the Storage Namespace from the **Object Storage Namespace**.
 
-   ![This image shows the OCID, Home Regision, and Object Storage Namespace fields highlighted on the Tenancy Information page.](images/oci-credentials-tenancydetails.png "")
+   ![This image shows the OCID, Home Region, and Object Storage Namespace fields highlighted on the Tenancy Information page.](images/oci-credentials-tenancydetails.png "")
 
    Now, let's retrieve the User OCID and Fingerprint.
 
