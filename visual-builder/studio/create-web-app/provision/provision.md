@@ -106,7 +106,7 @@ Provision a service instance of VB Studio to develop and deploy your web app. Yo
 
   ![This image shows the OCI Account tab when a free Built-in account is available. A Built-in Free section on the left shows the instance connected by default using this free account. On the right, a Connect Your Own section provides an option to connect your own OCI Account to the instance.](images/oci-free-account.png "")
 
-  The free account provides a minimal set of resources detailed ([here](https://docs.oracle.com/en/cloud/paas/visual-builder/visualbuilder-administration/set-oracle-visual-builder-studio.html#GUID-759853ED-5561-4031-AC01-773D58992CA3)), sufficient to try out VB Studio. If this is enough for your needs, you can [jump to the next lab](#next) and get started with creating a project. If your data center does not include this free account or you want to explore more of VB Studio, continue with the following tasks to connect your own OCI account.
+  The free account provides a minimal set of resources (detailed [here](https://docs.oracle.com/en/cloud/paas/visual-builder/visualbuilder-administration/set-oracle-visual-builder-studio.html#GUID-759853ED-5561-4031-AC01-773D58992CA3)), sufficient to try out VB Studio. If this is enough for your needs, you can [jump to the next lab](#next) and get started with creating a project. If your data center does not include this free account or you want to explore more of VB Studio, continue with the following tasks to connect your own OCI account.
 
 ## Task 3: Set up the OCI account
 
@@ -116,7 +116,7 @@ To connect your VB Studio instance to OCI resources such as VMs for builds and s
 
    a. Return to your Oracle Cloud console, then click the menu in the upper left corner, select **Identity & Security**, then **Compartments**.
 
-      ![This image shows navigation to Identity & Security, Compartments, then Identity.](images/oci-compartments.png "")
+      ![This image shows navigation to Identity & Security, then Compartments, under Identity.](https://oracle-livelabs.github.io/common/images/console/id-compartment.png "")
 
    b. Click **Create Compartment**.
 
@@ -129,7 +129,7 @@ To connect your VB Studio instance to OCI resources such as VMs for builds and s
 2. Create a local user to access the compartment you've created:
 
       a. In the navigation menu, select **Identity & Security**, then under **Identity**, select **Users**.
-      ![This image shows navigation to Identity & Security, then Users.](images/oci-users.png "")
+      ![This image shows navigation to Identity & Security, then Users.](https://oracle-livelabs.github.io/common/images/console/id-users.png "")
 
       b. Click **Create User**.
       ![This image shows a list of existing users on the Users page. The Create User button is highlighted.](images/oci-users-create.png "")
@@ -141,7 +141,7 @@ To connect your VB Studio instance to OCI resources such as VMs for builds and s
 
     a. In the Console header, click the Developer tools icon ![Developer tools icon](images/oci-api-key-shell.png) and select **Cloud Shell**. Note that the OCI CLI running in the Cloud Shell will execute commands against the region selected in the Console's Region selection menu when the Cloud Shell was started.
 
-    b. Run the following commands in the cloudshell to generate a public and private key pair.
+    b. Run the following commands in the cloud shell to generate a public and private key pair.
 
     ```text
     <copy>
@@ -153,7 +153,7 @@ To connect your VB Studio instance to OCI resources such as VMs for builds and s
     ```
 
     Here are the steps for reference:
-    ![This image shows the results of the cloudshell commands with the commands to enter highlighted.](images/oci-api-key-shell-commands.png "")
+    ![This image shows the results of the cloud shell commands with the commands to enter highlighted.](images/oci-api-key-shell-commands.png "")
 
     c. Run the following command to **copy the generated *public* key** and paste it in a text editor like notepad, we will need it for the next step.
 
@@ -183,22 +183,20 @@ To connect your VB Studio instance to OCI resources such as VMs for builds and s
 
 4. Upload the public key to the user's details page:
 
-    a. If necessary, click **vbstudiouser** on the Users page.
-       ![This image shows the vbstudiouser added to the list of users on the Users page.](images/oci-users-vbstudiouser.png "")
-
-    b. On the **vbstudiouser** details page, scroll down and click **API Keys**, then click **Add Public Key**.
+    a. On the **vbstudiouser** details page, scroll down and click **API Keys**, then click **Add Public Key**.
        ![This image shows the Add Public Key button highlighted on the vbstudiouser page, under API Keys.](images/oci-add-public-api-key.png "")
 
-    c. Click **Paste Public Key** and paste the contents of the public key that you copied. Click **Add**, then **Close**.
+    b. Click **Paste Public Key** and paste the contents of the public key that you copied. Click **Add**, then **Close**.
       ![This image shows the Add Public Key dialog, with the public key added to the text area with the Paste Public Key option selected.](images/oci-paste-public-api-key.png "")
 
 5. Create a group for the user who can access the VB Studio compartment and add the user to the group:
 
     a. In the navigation menu, select **Identity & Security**, then select **Groups** under **Identity**.
-       ![This image shows navigation to Identity & Security, then Groups.](images/oci-groups.png "")
+       ![This image shows navigation to Identity & Security, then Groups.](https://oracle-livelabs.github.io/common/images/console/id-groups.png "")
 
     b. Click **Create Group**.
-       ![This image shows existing groups on the Groups page. The Create Group button is highlighted.](images/oci-groups-create.png "")
+
+      ![This image shows existing groups on the Groups page. The Create Group button is highlighted.](images/oci-groups-create.png "")
 
     c. Enter `VBStudioGroup` as the Name, add a description (for example, `Group for VB Studio users`), and click **Create**.
 
@@ -214,7 +212,7 @@ To connect your VB Studio instance to OCI resources such as VMs for builds and s
 6. In the **root** compartment, create a policy to allow the group you created access to the VB Studio compartment:
 
     a. In the navigation menu, select **Identity & Security**, then select **Policies** under **Identity**.
-       ![This image shows navigation to Identity & Security, then Policies.](images/oci-policies.png "")
+       ![This image shows navigation to Identity & Security, then Policies.](https://oracle-livelabs.github.io/common/images/console/id-policies.png "")
 
     b. Make sure the root compartment is selected in the Compartment list.
        ![This image shows the root compartment selected in the Compartment list.](images/oci-policies-rootselection.png "")
@@ -249,7 +247,7 @@ You now need the unique Oracle Cloud Identifiers (OCIDs) of the VB Studio compar
 
 3. Click the navigation menu again and select **Identity & Security**. Under **Identity**, select **Users**.
 
-   ![This image shows navigation to Identity & Security, then Users.](images/oci-users.png "")
+   ![This image shows navigation to Identity & Security, then Users.](https://oracle-livelabs.github.io/common/images/console/id-users.png "")
 
 4. On the Users page, click the **vbstudiouser** you created.
 
@@ -264,7 +262,8 @@ You now need the unique Oracle Cloud Identifiers (OCIDs) of the VB Studio compar
    ![This image shows the fingerprint of the vbstudiouser under API Keys.](images/oci-credentials-user-fingerprint.png "")
 
 7. Now let's get the Compartment OCID. In the navigation menu, select **Identity & Security**, then **Compartments** under **Identity**.
-   ![This image shows navigation to Identity & Security, then Compartments.](images/oci-compartments.png "")
+
+   ![This image shows navigation to Identity & Security, then Compartments under Identity.](https://oracle-livelabs.github.io/common/images/console/id-compartment.png "")
 
 8. On the Compartments page, click **VBStudioCompartment**.
    ![This image shows the VBStudioCompartment highlighted on the Compartments page.](images/oci-credentials-compartments.png "")
