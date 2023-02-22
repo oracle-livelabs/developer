@@ -44,7 +44,7 @@ This lab assumes you have:
 
   ![Tokenization Definitions](images/apex-dealer2-inventory-init.png)
 
-   
+
 ## Task 2: Setup APEX Web Credentials opening Apex console
 
 1. 'Open the Apex Application' and login to 'DEVELOPER' as shown:
@@ -81,14 +81,14 @@ This lab assumes you have:
 
 ## Task 3: Complete Car Marketplace Workshop by Trading a Car - Add a car to dealer1 Inventory
 
-You will now create a car and simulate a transaction between the founder organization and a car dealer partner. When a car is added to the Marketplace, fiat tokens are put on hold in the founder instance and then transacted with partner dealerships as necessary. 
+You will now create a car and simulate a transaction between the founder organization and a car dealer partner. When a car is added to the Marketplace, fiat tokens are put on hold in the founder instance and then transacted with partner dealerships as necessary.
 
  1. Go to AppBuilder --> Car Marketplace --> Run Application
 
   ![Car Delaership](images/apex-carmarketplace-app.png)
 
   ![Car Delaership](images/apex-carmarketplace-run.png)
- 
+
  2. Login as a dealer (e.g. john_dealer1) and land on My Inventory. Use the same password configured for john\_dealer1 in *Lab4* Use the same password configured for john\_dealer1 in *Lab4*
 
   ![Car Delaership](images/dealer1-login.png)

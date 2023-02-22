@@ -81,7 +81,7 @@ After your application is successfully deployed to the development environment, 
 
 A deployed application does not automatically include its business object data, so you'll need to manually import data for the application in the development environment. You can import the data you used in your workspace or add entirely different data, as we'll do now.
 
-1. Click [this link](https://objectstorage.us-ashburn-1.oraclecloud.com/p/LNAcA6wNFvhkvHGPcWIbKlyGkicSOVCIgWLIu6t7W2BQfwq2NSLCsXpTL9wVzjuP/n/c4u04/b/livelabsfiles/o/developer-library/HR-Application.zip) and download the `HR-Application.zip` file. The zip file contains CSV files of the Location, Department, and Employee business objects with more records and data.
+1. Click [this link](https://objectstorage.us-ashburn-1.oraclecloud.com/p/Ei1_2QRw4M8tQpk59Qhao2JCvEivSAX8MGB9R6PfHZlqNkpkAcnVg4V3-GyTs1_t/n/c4u04/b/livelabsfiles/o/oci-library/HR-Application.zip) and download the `HR-Application.zip` file. The zip file contains CSV files of the Location, Department, and Employee business objects with more records and data.
 2. In the Environments page, click **Actions** ![Actions icon](images/vbs-actions-icon.png) for the deployed tutorial-hr-project and select **Import Data**.
 
     ![The Import Data option from the Actions menu of a deployed application is shown.](images/deployed-application-import-data.png "")
@@ -100,23 +100,23 @@ A deployed application does not automatically include its business object data, 
 
     You can now make a note of this URL to share with public users.
 
-4. To install the app as a PWA, click the **Install HR Application** ![Install HR Visual Application icon](images/install-app-icon.png) icon in the address bar, then **Install** when prompted.
+5. To install the app as a PWA, click the **Install HR Application** ![Install HR Visual Application icon](images/install-app-icon.png) icon in the address bar, then **Install** when prompted.
 
     ![The Install app? prompt that appears when a user clicks the Install HR Application icon in the address bar is shown. Install is selected.](images/install-as-pwa.png "")
 
     If you access this app on a mobile device, you'll be prompted to add the app to your phone's home screen as well.
 
-5. When the app opens on your device as a standalone app, try it out and test its functionality.
+6. When the app opens on your device as a standalone app, try it out and test its functionality.
 
    ![The HR Application is shown when installed as a PWA on a device.](images/pwa-installed.png "")
 
-    When you are done, click **X** to close the app. You can always click ![PWA icon](images/pwa-desktop-icon.png) on your device's home screen or laptop to open the app again.
+    When you are done, click **X** to close the app. You can always click ![PWA icon](images/pwa-desktop-icon.png) on your device's home screen or laptop to open the app again. Remember also to close the deployed app's browser tab.
 
     Now that the HR web app is published, you won't be able to make changes to it. To do that, you'll need to create a new branch off your project's `main` branch. You can do this in your existing workspace using the **Switch Branch** option in the Git repository menu. Or you can clone this repository in a new workspace using the **Clone From Git** option on the Workspaces page and start afresh.
 
-    And that's it for this workshop! If you want, click the user menu in the top-right corner and select **Sign Out**.
+    And that's it for this workshop!
 
 ## Acknowledgements
 
 * **Author** - Sheryl Manoharan, VB Studio User Assistance, November 2021
-* **Last Updated By/Date** - Sheryl Manoharan, November 2022
+* **Last Updated By/Date** - Sheryl Manoharan, February 2023

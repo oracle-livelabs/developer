@@ -7,10 +7,9 @@ Before using JMS advanced features, you must ensure that your Oracle Cloud Infra
 Estimated Time: 30 minutes
 
 ### Requirements to use Advanced Features
-* To use **Oracle JDK 8** or higher to run applications, not the Java 8 JRE.
-* To use **Oracle JDK 8u351-b31** Bundled Patch Release (BPR) or higher to run applications.
-* For Java 11 both the agent and application must be using Oracle JDK 8, 11 or higher.
-* Non oracle JDKs does not support any advanced features, so use Oracle JDKs only.
+* Run applications or java servers using **Oracle JDK 8u361** Bundled Patch Release (BPR) or higher, not the Java 8 JRE or Oracle and Non-Oracle JDK 11 and above.
+* Management Agent should use either **Oracle JDK 8u361** Bundled Patch Release (BPR) or higher for on-premise environment or Oracle JDK 11 for OCI compute instances.
+* Lifecycle Management is only supported for Oracle JDKs.
 * Windows defaults to JRE on Java installation and needs to be changed to use Oracle JDK.
 
 

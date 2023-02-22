@@ -67,7 +67,7 @@ Now that we have our service connection, let's change the Edit Employee page to 
 5. Let's now add a bunch of other components to this form layout to display country information:
 
     - Drag and drag an **Avatar** component into the empty form Layout. Change the avatar's **Size** to **Large** in the Properties pane.
-    - Drag an **Input Text** component under **Field** and drop it onto the page under Avatar, then change its **Label Hint** in the Properties pane to `Time Zone`.
+    - Drag an **Input Text** component and drop it onto the page under Avatar, then change its **Label Hint** in the Properties pane to `Time Zone`.
     - Drag another **Input Text** onto the page and change its **Label Hint** to `Region`.
 
     When you're done, your form layout may look something like this:
@@ -131,7 +131,7 @@ In this step, we'll assign data to the variables by adding a "value" event that 
 
     Click **Save**.
 
-8. On the success branch of the Call REST action, drag and drop an **Assign Variables** action, then click **Assign** next to Variables in the Properties pane. In the Sources pane of the Assign Variables wizard, expand **callRestGetAlphaCode** under **Action Chain** and **Results** and map **body** to **countryTypeVar** under **Page** in the Target pane.
+8. On the success branch of the Call REST action, drag and drop an **Assign Variables** action, then click **Assign** next to Variables in the Properties pane. In the Sources pane of the Assign Variables wizard, expand **callRestGetAlphaCode** under **Action Chain** and **results** and map **body** to **countryTypeVar** under **Page** in the Target pane.
 
     ![The mapping between body under callRestGetAlphaCode on the Source side to countryTypeVar on the Target side is shown.](images/assignvariable-bodytocountrytypevar.png "")
 
@@ -156,4 +156,4 @@ In this step, we'll assign data to the variables by adding a "value" event that 
 ## Acknowledgements
 
 - **Author** - Sheryl Manoharan, VB Studio User Assistance, July 2022
-- **Last Updated By/Date** - Sheryl Manoharan, November 2022
+- **Last Updated By/Date** - Sheryl Manoharan, February 2023

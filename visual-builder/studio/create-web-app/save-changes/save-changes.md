@@ -46,7 +46,7 @@ Let's group the changes you've made so far in your local branch for a commit. Id
 
     ![The Commit dialog is shown with an example commit message. The Commit button is selected.](images/commit.png "")
 
-    A successful message appears on the page. Click ![Close message icon](images/x-icon.png) to close the message.
+    A successful message appears on the page, in the lower right corner. Click ![Close message icon](images/x-icon.png) to close the message.
 
 ## Task 2: Push changes to a remote branch
 
@@ -88,4 +88,4 @@ Now that your changes have been pushed, let's check them in the remote `hrbranch
 ## Acknowledgements
 
 * **Author** - Sheryl Manoharan, VB Studio User Assistance, November 2021
-* **Last Updated By/Date** - Sheryl Manoharan, November 2022
+* **Last Updated By/Date** - Sheryl Manoharan, February 2023
