@@ -29,7 +29,7 @@ All the files in this part are located under the `src` folder, in the `loom.stru
 
 In case you are stuck at some point, you can check the content of the `solutions` directory with solutions to the questions in this lab.
 
-Structured Concurrency is an second incubator feature in JDK 20. You will need to add this module at compile and run time explicitly. The below commands demonstrate how this is done:
+Structured Concurrency is an incubator module (2nd incubation) in JDK 20. You will need to add this module at compile and run time explicitly. The below commands demonstrate how this is done:
 
 ```text
 <copy>javac --enable-preview --release 20 --add-modules jdk.incubator.concurrent loom/virtualthreads/A_VersionCheck.java</copy>
@@ -222,5 +222,5 @@ You should be able to very easily write unit tests for all the steps of your asy
 
 ## Acknowledgements
 * **Author** - [José Paumard, Java Developer Advocate, Java Platform Group - Oracle](https://twitter.com/JosePaumard)
-* **Contributor** -  Billy Korando, Java Developer Advocate, Java Platform Group
+* **Contributors** -  Billy Korando, Java Developer Advocate Java Platform Group; Ana-Maria Mihalceanu, Java Developer Advocate Java Platform Group
 * **Last Updated By/Date** - David Delabassée, Oct. 6 2022

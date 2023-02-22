@@ -40,7 +40,7 @@ On the Instances Compute page, check the **Compartment** dropdown-list, and expa
 Cloud Shell is a browser-based terminal that provides an ephemeral Linux machine. Cloud Shell simplifies working with cloud resources on OCI. Under the hood, Cloud Shell uses an OCI pre-configured Virtual Machine with preinstalled tools, including Java. And as you will see in this workshop, Cloud Shell can also be used to develop simple applications.
 
 
-To launch Cloud Shell, simply click on the Cloud Shell icon (see top right) in the [OCI console](https://cloud.oracle.com).
+To launch Cloud Shell, simply click on the Developer Tools icon (see top right) in the [OCI console](https://cloud.oracle.com).
 
 ![Starting Cloud Shell](images/cs-start.png)
 
@@ -73,8 +73,8 @@ This script will take roughly a minute to execute, it will download and configur
 ```text
 > <copy>java -version</copy>
 openjdk version "20" 2023-03-21
-OpenJDK Runtime Environment (build 20-ea+24-1795)
-OpenJDK 64-Bit Server VM (build 20-ea+24-1795, mixed mode, sharing)
+OpenJDK Runtime Environment (build 20+36-2238)
+OpenJDK 64-Bit Server VM (build 20+36-2238, mixed mode, sharing)
 ```
 
 ## Task 4: Cloud Editor
