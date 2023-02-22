@@ -1,4 +1,4 @@
-# Add Pages to Interact With Your Data
+# Add pages to interact with your data
 
 ## Introduction
 
