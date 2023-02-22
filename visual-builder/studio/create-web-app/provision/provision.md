@@ -35,7 +35,7 @@ Provision a service instance of Visual Builder to host apps created in VB Studio
 
    a. On the Oracle Cloud Get Started page, click the menu ![Menu icon](images/hamburger.png) in the upper left corner.
 
-   b. Select **Identity & Security**, then **Compartments** under **Identity**.
+   b. Select **Identity & Security**, then **Compartments**.
 
    ![This image shows navigation to Identity & Security, Compartments, then Identity.](images/oci-compartments.png "")
 
@@ -47,7 +47,7 @@ Provision a service instance of Visual Builder to host apps created in VB Studio
 
    ![This image shows the Create Compartment dialog with fields filled in.](images/oci-compartments-vb-create-details.png "")
 
-2. Return to the Oracle Cloud Get Started page and click the menu in the upper left corner to display the services you can provision.
+2. Return to the Oracle Cloud Get Started page and click the menu in the upper left corner.
 
    <!-- ![The hamburger menu on the Oracle Cloud Get Started page is highlighted.](images/hamburger.png "") -->
 
@@ -114,7 +114,7 @@ To connect your VB Studio instance to OCI resources such as VMs for builds and s
 
 1. Create a separate compartment to host VB Studio resources:
 
-   a. Return to your Oracle Cloud console, then click the menu in the upper left corner, select **Identity & Security**, then **Compartments** under **Identity**.
+   a. Return to your Oracle Cloud console, then click the menu in the upper left corner, select **Identity & Security**, then **Compartments**.
 
       ![This image shows navigation to Identity & Security, Compartments, then Identity.](images/oci-compartments.png "")
 
@@ -139,7 +139,7 @@ To connect your VB Studio instance to OCI resources such as VMs for builds and s
 
 3. On your computer, generate a private-public key pair in the PEM format:
 
-    a. In the Console header, click the Cloud Shell icon ![Cloud Shell icon](images/oci-api-key-shell.png). Note that the OCI CLI running in the Cloud Shell will execute commands against the region selected in the Console's Region selection menu when the Cloud Shell was started.
+    a. In the Console header, click the Developer tools icon ![Developer tools icon](images/oci-api-key-shell.png) and select **Cloud Shell**. Note that the OCI CLI running in the Cloud Shell will execute commands against the region selected in the Console's Region selection menu when the Cloud Shell was started.
 
     b. Run the following commands in the cloudshell to generate a public and private key pair.
 
@@ -179,14 +179,14 @@ To connect your VB Studio instance to OCI resources such as VMs for builds and s
 
     ![This image shows the private key being copied to the clipboard through the right-click Copy option.](images/oci-api-key-shell-private-copy.png "")
 
-    g. Click **X** to exit the cloudshell.
+    g. Click **X**, then **Exit** to exit the cloud shell.
 
 4. Upload the public key to the user's details page:
 
-    a. On the Users page, click **vbstudiouser**.
+    a. If necessary, click **vbstudiouser** on the Users page.
        ![This image shows the vbstudiouser added to the list of users on the Users page.](images/oci-users-vbstudiouser.png "")
 
-    b. Scroll down and click **API Keys**, then click **Add Public Key**.
+    b. On the **vbstudiouser** details page, scroll down and click **API Keys**, then click **Add Public Key**.
        ![This image shows the Add Public Key button highlighted on the vbstudiouser page, under API Keys.](images/oci-add-public-api-key.png "")
 
     c. Click **Paste Public Key** and paste the contents of the public key that you copied. Click **Add**, then **Close**.
