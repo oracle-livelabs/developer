@@ -35,7 +35,7 @@ In this lab, you will:
 
   ![Design view](images/editpage.png)
 
-4. In the Components palette search for **edit**, and locate the **Simple Create and Edit Template**:
+4. In the Components palette search for **edit**, and locate the **Simple Create and Edit Page Template**:
 	  ![Edit template](images/editcomponents.png)
 
 5. Drag it to the top of the page hierarchy in the Structure pane, and drop it when you see a blue line above the first Grid Row.
@@ -50,7 +50,7 @@ In this lab, you will:
 	|Primary action label | Save |
 	{: title="Template Properties"}
 
-Your screen should look like this:
+Your screen should look similar to this:
 	  ![template properties](images/editproperties.png)
 
 Now that the template is set, let's redisplay the content of the page in its correct location in the template.

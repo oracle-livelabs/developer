@@ -7,6 +7,9 @@ This lab will show how to use LOBs with python-oracledb driver
 
 Estimated Lab Time: 5 minutes
 
+Watch the video below for a quick walk-through of the lab.
+[LOBs](videohub:1_or7leb07)
+
 ### Objectives
 
 *  Learn best practices and efficient techniques for manipulating LOBs from Python.

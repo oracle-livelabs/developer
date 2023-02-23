@@ -8,6 +8,9 @@ In this Lab, we'll review the HTML pages, the Bootstrap framework, and the JavaS
 
 Estimated Time: 10 minutes
 
+Watch the video below for a quick walk-through of the lab.
+[A Bootstrap and JavaScript primer](videohub:1_35mhjhhg)
+
 ### Objectives
 In this Lab, you will review:
 * HTML templates

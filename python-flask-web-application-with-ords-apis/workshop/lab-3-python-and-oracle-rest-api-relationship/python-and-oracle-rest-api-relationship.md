@@ -8,6 +8,9 @@ Next, we'll add Oracle REST APIs to our Flask application's Python file. And bri
 
 Estimated Time: 20 minutes
 
+Watch the video below for a quick walk-through of the lab.
+[Review the Python and Oracle REST API relationship](videohub:1_9clchh0f)
+
 ### Objectives
 
 In this Lab, you will:
