@@ -30,7 +30,7 @@ In case you are stuck at some point, you can check the content of the `solutions
 Virtual Threads are a preview feature of the JDK 19. You will need to enable preview features at compile and runtime explicitly. The below command demonstrates how to compile with preview features: 
 
 ```text
-<copy>javac --enable-preview --release 19 Main.java </copy>
+<copy>javac --enable-preview --release 20 Main.java </copy>
 ```
 
 Running code with preview features would look like this:
@@ -62,7 +62,7 @@ This first class is just there to ensure that you are running the correct versio
 It should display the following: 
 
 ```text
-JDK version = 19
+JDK version = 20
 JDK vendor  = Oracle Corporation
 ```
 
@@ -99,13 +99,13 @@ Do not forget to call `join()` on this virtual thread.
 To run this class, you need to compile it first, with the following command: 
 
 ```text
-<copy>javac --enable-preview --release 19 loom/virtualthreads/C_StartingVirtualThreads.java</copy>
+<copy>javac --enable-preview --release 20 loom/virtualthreads/C_StartingVirtualThreads.java</copy>
 ```
 
 If your code is correct, it will compile it and give you the following notes: 
 
 ```text
-Note: loom\virtualthreads\C_StartingVirtualThreads.java uses preview features of Java SE 19.
+Note: loom\virtualthreads\C_StartingVirtualThreads.java uses preview features of Java SE 20.
 Note: Recompile with -Xlint:preview for details.
 ```
 
@@ -137,7 +137,7 @@ You need to create an unstarted virtual thread in the code that does the followi
 
 You can compile your code using the following command:
 ```text
-<copy>javac --enable-preview --release 19 loom/virtualthreads/D_YieldingVirtualThreads.java</copy>
+<copy>javac --enable-preview --release 20 loom/virtualthreads/D_YieldingVirtualThreads.java</copy>
 ```
 
 Then you can run it with the following command: 
@@ -168,7 +168,7 @@ You can paste the code from the previous exercise here. Then, you can call the t
 
 You can compile this code using the following command:
 ```text
-<copy>javac --enable-preview --release 19 loom/virtualthreads/E_HowManyPlatformThreads.java</copy>
+<copy>javac --enable-preview --release 20 loom/virtualthreads/E_HowManyPlatformThreads.java</copy>
 ```
 
 Then you can run it with the following command:
@@ -198,5 +198,5 @@ In this lab you have learned:
 
 ## Acknowledgements
 * **Author** - [José Paumard, Java Developer Advocate, Java Platform Group - Oracle](https://twitter.com/JosePaumard)
-* **Contributors** -  Billy Korando, Java Developer Advocate, Java Platform Group
+* **Contributors** -  Billy Korando, Java Developer Advocate Java Platform Group; Ana-Maria Mihalceanu, Java Developer Advocate Java Platform Group
 * **Last Updated By/Date** - José Paumard, Oct. 1 2022

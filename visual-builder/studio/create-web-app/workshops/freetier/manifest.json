@@ -1,5 +1,5 @@
 {
-    "workshoptitle": "Create a Web Application in Oracle Visual Builder Studio",
+    "workshoptitle": "Create a web application in Oracle Visual Builder Studio",
     "help": "livelabs-help-oci_us@oracle.com",
     "tutorials": [
         {
@@ -8,52 +8,52 @@
             "filename": "../../introduction/introduction.md"
         },
         {
-            "title": "Get Started",
+            "title": "Get started",
             "description": "This is the prerequisites for customers using Free Trial and Paid tenancies, and Always Free accounts (if applicable). The title of the lab and the Contents Menu title (the title above) match for Prerequisite lab. This lab is always first.",
-            "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/pre-register-free-tier-account.md"
+            "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/cloud-login.md"
         },
         {
-            "title": "Lab 1: Provision Your Instances",
+            "title": "Lab 1: Provision your instances",
             "filename": "../../provision/provision.md"
         },
         {
-            "title": "Lab 2: Create a Project for a New Visual Application",
+            "title": "Lab 2: Create a project for a new visual application",
             "filename": "../../create-project/create-project.md"
         },
         {
-            "title": "Lab 3: Create a Web App in a Visual Application",
+            "title": "Lab 3: Create a web app in a visual application",
             "filename": "../../create-app/create-app.md"
         },
         {
-            "title": "Lab 4: Create Pages to Display Data",
+            "title": "Lab 4: Create pages to display data",
             "filename": "../../add-pages/add-pages.md"
         },
         {
-            "title": "Lab 5: Save Changes to a Remote Branch",
+            "title": "Lab 5: Save changes to a remote branch",
             "filename": "../../save-changes/save-changes.md"
         },
         {
-            "title": "Lab 6: Add Navigation Between Pages",
+            "title": "Lab 6: Add navigation between pages",
             "filename": "../../add-data/add-data.md"
         },
         {
-            "title": "Lab 7: Add Pages to Interact With Data",
+            "title": "Lab 7: Add pages to interact with data",
             "filename": "../../add-other-pages/add-other-pages.md"
         },
         {
-            "title": "Lab 8: Access Data From an External REST Service",
+            "title": "Lab 8: Access data from an external REST service",
             "filename": "../../create-service-connection/create-service-connection.md"
         },
         {
-            "title": "Lab 9: Share a Web App",
+            "title": "Lab 9: Share a web app",
             "filename": "../../share-app/share-app.md"
         },
         {
-             "title": "Lab 10: Publish a Web App",
+             "title": "Lab 10: Publish a web app",
              "filename": "../../publish-app/publish-app.md"
         },
         {
-            "title": "Need Help?",
+            "title": "Need help?",
             "description": "Solutions to Common Problems and Directions for Receiving Live Help",
             "filename":"https://oracle-livelabs.github.io/common/labs/need-help/need-help-freetier.md"
         }

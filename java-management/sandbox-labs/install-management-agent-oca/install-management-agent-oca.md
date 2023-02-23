@@ -23,23 +23,23 @@ In this lab, you will:
 
 1. In the Oracle Cloud Console, open the navigation menu, click **Compute**, and then click **Instances**. Select the instance **LLxxxxx-INSTANCE-JMS**. This instance should be in the same compartment in [Lab 1](?lab=setup-a-fleet).
 
-  ![image of console navigation to compute instances](images/console-navigation-instance.png)
+   ![image of console navigation to compute instances](images/console-navigation-instance.png)
 
 2. Click the **Oracle Cloud Agent** (OCA) tab. The list of OCA plugins is displayed. Toggle the Enabled switch for the **Oracle Java Management Service** and **Management Agent** plugins.
 
-  ![image of enable management agent plugin](images/enable-management-agent-plugin.png)
+   ![image of enable management agent plugin](images/enable-management-agent-plugin.png)
 
 3. The status of the plugins may be set to **Stopped** initially. It may take 5-10 minutes before the status is changed to **Running**.
 Do not disturb the setup in this time and only proceed after the status of the plugins are set to **Running**.
-  ![image of management agent plugin with running status](images/management-agent-plugin-running.png)
+   ![image of management agent plugin with running status](images/management-agent-plugin-running.png)
 
-5. We will need to verify that our agent is enabled successfully. In the Oracle Cloud Console, open the navigation menu, click **Observability & Management**, and under **Management Agent**, click **Agents**.
+4. We will need to verify that our agent is enabled successfully. In the Oracle Cloud Console, open the navigation menu, click **Observability & Management**, and under **Management Agent**, click **Agents**.
 
-  ![image of console navigation to access management agent overview](images/management-agent-overview.png)
+   ![image of console navigation to access management agent overview](images/management-agent-overview.png)
 
-6. Ensure that your agent is in the list of agents. The name of the Agent should be of the form of  `Agent(<YOUR-INSTANCE-NAME>)`. This Agent should also be in the same compartment in [Lab 1](?lab=setup-a-fleet).
+5. Ensure that your agent is in the list of agents. The name of the Agent should be of the form of  `Agent(<YOUR-INSTANCE-NAME>)`. This Agent should also be in the same compartment in [Lab 1](?lab=setup-a-fleet).
 
-  ![image of agent in agent overview list](images/agent-overview-list.png)
+   ![image of agent in agent overview list](images/agent-overview-list.png)
 
 
 ## Task 2: Deploy Java Usage Tracking plugin
@@ -55,13 +55,13 @@ Do not disturb the setup in this time and only proceed after the status of the p
 
 1. In the Oracle Cloud Console, open the navigation menu, click **Observability & Management**, and then click **Fleets** under **Java Management**.
 
-  ![image of console navigation to java management service](images/console-navigation-jms.png)
+   ![image of console navigation to java management service](images/console-navigation-jms.png)
 
 2. Select the fleet you would like to associate your agent with.
 
 3. Take note of the fleet ocid for your fleet.
 
-  ![image of fleet ocid](images/check-fleet-ocid.png)
+   ![image of fleet ocid](images/check-fleet-ocid.png)
 
 4. In the Oracle Cloud Console, open the navigation menu, click **Observability & Management**, and under **Management Agent**, click **Agents**.
 
@@ -71,14 +71,14 @@ Do not disturb the setup in this time and only proceed after the status of the p
 
 6. Click the **Add Tags** button. Alternatively, you can click the **Tags** tab, followed by **Add Tags**.
 
-  ![image of tag tab](images/agent-tags.png)
+   ![image of tag tab](images/agent-tags.png)
 
 7. Add a `jms` tag to the management agent with the following details and click **Add Tags** once done:
     * **Tag namespace**: jms
     * **Tag key**: fleet_ocid
     * **Tag value**: the OCID of your fleet
 
-  ![image of add tag to agent](images/add-agent-tag.png)
+   ![image of add tag to agent](images/add-agent-tag.png)
 
 
 ## Task 4: Verify detection of Java Runtimes and applications
@@ -86,7 +86,7 @@ Now that the Management Agent has been set up in your compute instance, it will 
 
 1. In the Oracle Cloud Console, open the navigation menu, click **Observability & Management**, and then click **Fleets** under **Java Management**.
 
-  ![image of console navigation to java management](images/console-navigation-jms.png)
+   ![image of console navigation to java management](images/console-navigation-jms.png)
 
 2. Select the compartment that the fleet is in and click the fleet.
 
@@ -96,11 +96,11 @@ Now that the Management Agent has been set up in your compute instance, it will 
 
 4. Click **Java Runtimes** under **Resources**. You should see a list of Java Runtimes from Java 8 to Java 18, these Java Runtimes are preloaded in the compute instance in Task 1.
 
-  ![image of successful installation](images/successful-installation.png)
+   ![image of successful installation](images/successful-installation.png)
 
 5. Click **Applications** under **Resources**. You should now see four applications. The first three are examples of DropWizard, SpringBoot and Micronaut, these applications are preloaded and running in the compute instance in Task 1. The fourth is the Oracle Java Management Service plugin.
 
-  ![image of applications after successful installation](images/successful-installation-applications.png)
+   ![image of applications after successful installation](images/successful-installation-applications.png)
 
   You may now **proceed to the next lab.**
 
