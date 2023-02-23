@@ -107,7 +107,7 @@ Python comes preinstalled on most Linux distributions, and for this LiveLab, the
     ````
 
     *Note:* When connecting to a locally installed database, the Python scripts to be used are in the python-oracledb GitHub repository.
-    Use 'git' to clone the repository.
+    Use 'git' to clone the repository as explained below.
     
     In the Cloud Shell, run the following:
 
@@ -268,6 +268,7 @@ At runtime, the module name of the python-oracledb package is oracledb:
 ````
 import oracledb
 ````
+
 ## Task 5: Add a New Schema in your Oracle Autonomous Database
 
 1.  In this tutorial you will create a new schema in Oracle Autonomous database shared infrastructure.
@@ -484,4 +485,4 @@ You have learned how to:
 ## Acknowledgements
 * **Authors** - Christopher Jones, Anthony Tuininga, Sharad Chandran, Veronica Dumitriu
 * **Contributors** - Jaden McElvey, Anoosha Pilli, Troy Anthony
-* **Last Updated By/Date** - Veronica Dumitriu, DB Product Management, August 2022
+* **Last Updated By/Date** - Veronica Dumitriu, Oracle Database Drivers Product Management, Feb 2023

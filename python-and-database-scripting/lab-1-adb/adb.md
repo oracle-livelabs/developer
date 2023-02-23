@@ -68,7 +68,7 @@ Once Autonomous Database Shared Infrastructure is provisioned, it is automatical
 
 To connect to the Oracle Autonomous Database, you need the wallet file.
 
-1.  In the Autonomous Database Summary screen, select **DB Connection** tab and in the popup **Database Connection** window, in the **Download Client Credentials (Wallet)** section, 
+1.  In the Autonomous Database Summary screen, select **Database Connection** tab and in the popup **Database Connection** window, in the **Download Client Credentials (Wallet)** section, 
     -  select Wallet Type: Instance Wallet
     - hit **Download Wallet** button
 
@@ -114,11 +114,13 @@ In your home folder, create directory _Wallets_ and move the wallet archive to W
 
 One of the arguments used in to connect to the Oracle Autonomous Database is the DSN (data source name).  
 
-1.  In the ADB Summary screen, select **DB Connection** tab and in the popup **Database Connection** window, in the **TNS Name** section, **Show** the connection string for the high service level TNS name
-    
+1.  In the ADB Summary screen, select **Database Connection** tab and in the popup **Database Connection** window, in the **TNS Name** section, **Copy** the connection string for the high service level TNS name
+
+![DSN copy](./images/dsn_copy.png " ")
+
 2. Click 'Close' to close the popup window.
 
 ## Acknowledgements
 - **Authors** - Veronica Dumitriu
 - **Contributors** - Chris Jones
-- **Last Updated By/Date** - Veronica Dumitriu, July 2022
+- **Last Updated By/Date** - Veronica Dumitriu, Oracle Database Drivers Product Management, Feb 2023
