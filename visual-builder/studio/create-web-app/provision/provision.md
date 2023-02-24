@@ -89,7 +89,9 @@ Provision a VB Studio instance to develop and deploy a web app. You can create o
 
    ![This image shows the CI/CD Setup screen, with the root compartment selected.](images/confirm-vbs.png "")
 
-6. Once your instance is created, its details show on the Instance Details page. Now click **Service Console** to open Visual Builder Studio.
+   When your instance is created, its details show in the Instance Info tab. You'll also receive an email with the subject **Verify your Oracle Visual Builder Studio email**. Make sure you click the URL link in the email body to verify your email. This is required to receive email notifications from VB Studio.
+
+6. Now click **Service Console** to open Visual Builder Studio.
 
    ![This image shows the Instance Details page of the newly provisioned VB Studio instance, named vbstudio-devinstance. Under the instance name the Service Console button is highlighted.](images/vbs-instance-created.png "")
 
