@@ -20,7 +20,9 @@ In this lab, you will:
 
 * Create a connection to an external REST service
 * Add UI components on a page to display data from the REST endpoint
-* Create a type and variable to store and display values from the REST endpoint
+* Create a type and variable to store data from the REST endpoint
+* Assign data to the variable
+* Test data received from the REST endpoint
 
 ### Prerequisites
 

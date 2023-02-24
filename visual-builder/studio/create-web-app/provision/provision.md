@@ -8,7 +8,7 @@ Estimated Time: 20 minutes
 
 ### About this Lab
 
-If you just created a new Cloud account following the instructions in Getting Started, you might want to wait before you attempt to create Visual Builder and VB Studio instances. It could take anywhere between 10 and 30 minutes for a new user account to be fully provisioned and for the navigation menu to show. If you already have a Cloud account, you don't need to wait. Either way, make sure you've signed in to the Oracle Cloud as an Oracle Identity Cloud Service user before proceeding. *Note: If you log in using an Oracle Cloud Infrastructure account, the navigation menu to Visual Builder won't show.*
+If you just created a Cloud Account using the instructions in the previous lab, you might want to wait before you attempt to create Visual Builder and VB Studio instances. It could take anywhere between 10 and 30 minutes for a new user account to be fully provisioned (you'll get a email when provisioning is complete). If you already have a Cloud Account, you don't need to wait. Either way, make sure you've signed in to the Oracle Cloud as an Oracle Identity Cloud Service user before proceeding. *Note: If you log in using an Oracle Cloud Infrastructure account, the navigation menu to Visual Builder won't show.*
 
 ### Objectives
 
@@ -25,9 +25,9 @@ This lab assumes you have:
 * An Oracle Cloud Account
 * A Chrome browser
 
-## Task 1: Create an instance of Visual Builder
+## Task 1: Create a Visual Builder instance
 
-Provision a service instance of Visual Builder to host apps created in VB Studio. The Visual Builder instance provides the runtime environment for the web app you'll create in VB Studio. You must provision the Visual Builder instance first, so you have it available for selection as a deployment target when you create a project in VB Studio.
+Provision a Visual Builder instance to host the web app you'll create in VB Studio. Visual Builder is a managed service that provides everything your apps need to run successfully, including a web server for hosting and to secure data access. You must provision the Visual Builder instance first, so you have it available for selection as a deployment target when you create a project in VB Studio.
 
 1. To create a Visual Builder instance, you must first create a compartment. You can use the root compartment and the tenancy user that was created when the OCI account was created, but it's recommended to create a dedicated compartment to host the Visual Builder instance.
 
@@ -49,37 +49,35 @@ Provision a service instance of Visual Builder to host apps created in VB Studio
 
    <!-- ![The hamburger menu on the Oracle Cloud Get Started page is highlighted.](images/hamburger.png "") -->
 
-3. Click **Developer Services**, then select **Visual Builder**:
+3. Select **Developer Services**, then **Visual Builder**.
 
     ![Navigation to Visual Builder under Developer Services is shown.](images/platform.png "")
 
-4. In the **Compartment** field on the Visual Builder instances page, select the `VBCompartment` you created to host the Visual Builder instance, then click **Create Instance**:
+4. In the **Compartment** field on the Visual Builder instances page, select the `VBCompartment` you created to host the Visual Builder instance, then click **Create Instance**.
 
     ![The Visual Builder Instances screen is shown, with the Compartment drop-down on the left and the Create Instance button on the right.](images/create-instance.png " ")
 
-5. On the Create Instance screen, give your instance a unique name, one that is unlikely to be chosen by another user.  Click **Create Visual Builder instance**.
+5. On the Create Instance screen, give your instance a unique name, one that is unlikely to be chosen by another user. Click **Create Visual Builder Instance**.
 
     ![Details of the Create Instance page is shown, with the Name, Compartment, and Nodes fields. The Create Visual Builder instance button is also shown.](images/detail.png "")
 
-    Instance creation takes some time. If you attempt to click the instance name and receive a "401: Authorization failed or a 404: Not Found" error, but followed all the correct steps, instance creation has not completed. Wait a few more minutes.
+     When instance creation completes successfully, the instance shows as **Active** in the **Status** column. If you don't see the status change, try refreshing your browser.
 
-    When instance creation completes successfully, the instance shows as **Active** in the **State** column.
+    ![The newly provisioned Visual Builder instance is shown. Its state in the Status column is set to Active.](images/vb-instance-created.png " ")
 
-6. At the far right, click ![Task menu icon](images/task_menu.png) and select **Service Homepage** to open the Visual Builder login page.
+## Task 2: Create a VB Studio instance
 
-## Task 2: Create an instance of VB Studio
+Provision a VB Studio instance to develop and deploy a web app. You can create only one VB Studio instance in an Oracle Cloud account. Before you attempt to create an instance, make sure your account has no other VB Studio instance provisioned.
 
-Provision a service instance of VB Studio to develop and deploy your web app. You can create only one VB Studio instance in an Oracle Cloud account. Before you attempt to create an instance, make sure your account has no other VB Studio instance provisioned.
-
-1. Navigate back to your Cloud Console and click the menu in the upper left corner, click **Developer Services**, then select **Visual Builder Studio**.
+1. In your Cloud Console, click the menu in the upper left corner, select **Developer Services**, then **Visual Builder Studio**.
 
    ![Navigation to Visual Builder Studio under Developer Services is shown.](images/oci-service-navigation-vbs.png "")
 
-2. In the Compartment field on the Visual Builder Studio instances page, select your `root` compartment:
+2. In the Compartment field on the Visual Builder Studio instances page, select your `root` compartment.
 
    ![The Visual Builder Studio Instances screen is shown, with the Compartment drop-down on the left set to the root compartment.](images/oci-compartments-selectroot.png "")
 
-3. Click **Create Visual Builder Studio**:
+3. Click **Create Visual Builder Studio**.
 
     ![The Visual Builder Studio Instances page is shown, with the Create Visual Builder Studio  button highlighted.](images/create-instance-vbs.png "")
 
@@ -87,11 +85,15 @@ Provision a service instance of VB Studio to develop and deploy your web app. Yo
 
    ![This image shows the Instance Name screen. The Instance Name is entered as vbstudio-devinstance and the Compartment field is set to root.](images/detail-vbs.png "")
 
-5. On the CI/CD Setup screen, select your root compartment and make sure you've selected **Yes, I authorize this** to authorize Oracle to create instances on your behalf. Click **Create Visual Builder Studio**.
+5. On the CI/CD Setup screen, select your root compartment and make sure you select **Yes, I authorize this** to allow Oracle to create instances on your behalf. Click **Create Visual Builder Studio**.
 
    ![This image shows the CI/CD Setup screen, with the root compartment selected.](images/confirm-vbs.png "")
 
-6. Once your service instance is created (you'll receive email that your instance is available), click ![Task menu icon](images/task_menu.png) and select **Service Homepage** to open the Visual Builder Studio login page.
+   When your instance is created, its details show in the Instance Info tab. You'll also receive an email with the subject **Verify your Oracle Visual Builder Studio email**. Make sure you click the URL link in the email body to verify your email. This is required to receive email notifications from VB Studio.
+
+6. Now click **Service Console** to open Visual Builder Studio.
+
+   ![This image shows the Instance Details page of the newly provisioned VB Studio instance, named vbstudio-devinstance. Under the instance name the Service Console button is highlighted.](images/vbs-instance-created.png "")
 
    The VB Studio console opens in a new browser tab, on the Organization page in the Projects tab.
    ![This image shows the landing page when VB Studio is opened.](images/vbs-home.png "")
