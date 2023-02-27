@@ -30,26 +30,19 @@ Mac:
 ## Task 1: Create Group and Appropriate Policies
 [Policies](https://docs.oracle.com/en-us/iaas/Content/Identity/Concepts/policies.htm) determine what resources users can access and the level of access they have. You can create a group and add as many users as you like to it. 
 
-If you are not the tenancy administrator, there may be additional policies you must have in your group to perform some of the steps for this lab. If you cannot create a group and add specific policies, please ask your tenancy administrator for the correct policies to follow.
+**If you are not the tenancy administrator, there may be additional policies you must have in your group to perform some of the steps for this lab. If you cannot create a group and add specific policies, please ask your tenancy administrator for the correct policies to follow.**
 
-**If your group already has the permissions listed in part 6 of this task, you may skip to Task 2.**
-
-1. Replace us-phoenix-1 in "[https://objectstorage.us-phoenix-1.oraclecloud.com](https://objectstorage.us-phoenix-1.oraclecloud.com)" with your region (see the Cloud shell promipt).
-
-	![Home region](images/home-region.png "home-region")
-
-
-2. Click the navigation menu in the top left, and click on identity and security. Select Groups.
+1. Click the navigation menu in the top left, and click on identity and security. Select Groups.
 
 	![Groups list](images/groups.png "groups")
 
 
-3. Click on Create Group
+2. Click on Create Group
 For this workshop, you need to create your own group.
 	![Create group](images/create-group.png "create-group")
 
 
-4. Enter the details for the group name and description. Be mindful of the restrictions for the group's name (no spaces, etc.)
+3. Enter the details for the group name and description. Be mindful of the restrictions for the group's name (no spaces, etc.)
 
 	![Group details](images/group-details.png "group-details")
 
@@ -57,18 +50,18 @@ For this workshop, you need to create your own group.
 
 ![New group showing up](images/group-created.png "group-created")
 
-5. Add your user to the group that you have just created by selecting the name of the group you have made and select "add user to group"
+4. Add your user to the group that you have just created by selecting the name of the group you have made and select "add user to group"
 
 	![Adding user to group](images/add-user-group.png "add-user-group")
 
 
-6. Navigate to *Policies* under Identities and click *Create Policy*
+5. Navigate to *Policies* under Identities and click *Create Policy*
 
 	![Policy navigation](images/policy-navigation.png "policy-navigation")
-7. Select a pre-assigned compartment or create a new one. The policies will be associated with that compartment.
+6. Select a pre-assigned compartment or create a new one. The policies will be associated with that compartment.
 
 	![Policy creation](images/create-policy.png "create-policy")
-8. You should see a page like this. This is where you will create the policy that will give the group permission to execute the setup for this workshop. (note: replace oracleonpremjava(root) with the root of your tenancy)
+7. You should see a page like this. This is where you will create the policy that will give the group permission to execute the setup for this workshop. (note: replace oracleonpremjava(root) with the root of your tenancy)
 
 ![Policy details](images/policy-details.png "policy-details")
 
@@ -83,7 +76,9 @@ Select **Show manual editor** and copy and paste the policies in the box below.
 	</copy>
 	```
 
-	9. Click "Create".
+	
+
+8. Click "Create".
 
 ![Create policy](images/policy-create.png "create")
 ## Task 2: Launch the Cloud Shell
