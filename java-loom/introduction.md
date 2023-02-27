@@ -5,7 +5,7 @@ Welcome to the Project Loom hands-on lab!
 
 ## About this Workshop
 
-This hands-on workshop introduces you to Project Loom and the benefits it brings to the Java platform. It focuses on two key Loom technologies: Virtual threads ([https://openjdk.org/jeps/425](https://openjdk.org/jeps/425)) and Structured Concurrency ([https://openjdk.org/jeps/428](https://openjdk.org/jeps/428)). These features are preview and incubator features of JDK 19 release recently. This means that both Virtual threads and Structured Concurrenc are available for testing and evaluation but are still subject to change before the become final and permanent features. 
+This hands-on workshop introduces you to Project Loom and the benefits it brings to the Java platform. It focuses on two key Loom technologies: Virtual threads ([https://openjdk.org/jeps/436](https://openjdk.org/jeps/436)) and Structured Concurrency ([https://openjdk.org/jeps/437](https://openjdk.org/jeps/437)). These features are second preview and incubator features of the recent JDK 20 release. This means that both Virtual threads and Structured Concurrenc are available for testing and evaluation but are still subject to change before the become final and permanent features. 
 
 ### Objectives
 
@@ -25,8 +25,12 @@ In this hands-on workshop, you will
 * [Java 19 Virtual Threads - JEP Café #11](https://www.youtube.com/watch?v=lKSSBvRDmTg)
 * [Launching 10 millions virtual threads with Loom - JEP Café #12](https://www.youtube.com/watch?v=UVoGE0GZZPI)
 * [Java Asynchronous Programming Full Tutorial with Loom and Structured Concurrency - JEP Café #13](https://www.youtube.com/watch?v=2nOj8MKHvmw)
+* [Java 20 - From ThreadLocal to ScopedValue with Loom Full Tutorial](https://www.youtube.com/watch?v=fjvGzBFmyhM)
 
 ## Acknowledgements
 * **Author** - [José Paumard, Java Developer Advocate, Java Platform Group - Oracle](https://twitter.com/JosePaumard)
-* **Contributors** -  Billy Korando, Java Developer Advocate, Java Platform Group
+* **Contributors** -  Billy Korando, Java Developer Advocate Java Platform Group; Ana-Maria Mihalceanu, Java Developer Advocate Java Platform Group
 * **Last Updated By/Date** - José Paumard, Oct. 1 2022
+
+
+javac --enable-preview --release 20 --add-modules jdk.incubator.concurrent    loom/structuredconcurrency/B_FirstScope.java loom/structuredconcurrency/Model/Weather.java

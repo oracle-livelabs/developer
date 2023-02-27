@@ -1,4 +1,4 @@
-# Add Pages to Interact With Your Data
+# Add pages to interact with your data
 
 ## Introduction
 
@@ -14,8 +14,9 @@ In a previous lab, you used a couple of Quick Starts to create pages that let yo
 
 In this lab, you will:
 
-* Add web pages to view details, edit data, and delete data
+* Add web pages to edit and delete data
 * Test your web pages
+* Change the web app's default home page
 
 ### Prerequisites
 

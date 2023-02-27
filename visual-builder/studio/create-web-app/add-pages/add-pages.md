@@ -1,4 +1,4 @@
-# Create Pages to Display Your Data
+# Create pages to display your data
 
 ## Introduction
 
