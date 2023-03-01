@@ -27,7 +27,7 @@ All the files in this part are located under the `src` folder, in the `loom.virt
 
 In case you are stuck at some point, you can check the content of the `solutions` directory with solutions to the questions in this lab. 
 
-Virtual Threads are a preview feature of the JDK 19. You will need to enable preview features at compile and runtime explicitly. The below command demonstrates how to compile with preview features: 
+Virtual Threads are a preview feature of the JDK 20. You will need to enable preview features at compile and runtime explicitly. The below command demonstrates how to compile with preview features: 
 
 ```text
 <copy>javac --enable-preview --release 20 Main.java </copy>
