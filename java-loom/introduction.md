@@ -31,6 +31,3 @@ In this hands-on workshop, you will
 * **Author** - [José Paumard, Java Developer Advocate, Java Platform Group - Oracle](https://twitter.com/JosePaumard)
 * **Contributors** -  Billy Korando, Java Developer Advocate Java Platform Group; Ana-Maria Mihalceanu, Java Developer Advocate Java Platform Group
 * **Last Updated By/Date** - José Paumard, Oct. 1 2022
-
-
-javac --enable-preview --release 20 --add-modules jdk.incubator.concurrent    loom/structuredconcurrency/B_FirstScope.java loom/structuredconcurrency/Model/Weather.java
