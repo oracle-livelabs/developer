@@ -54,7 +54,7 @@ You now can use Cloud Shell as a regular shell.
 
 ## Task 3: Add Java 20 support
 
-This workshop uses Java 20 which was released in September 2022. And although Cloud Shell supports Java, it doesn't come yet with Java 20 support. You will now install Java 20. And don't worry, this is easy.
+This workshop uses Java 20 which was released in March 20223. And although Cloud Shell supports Java, it doesn't come yet with Java 20 support. You will now install Java 20. And don't worry, this is easy.
 
 In Cloud Shell, enter the following command.
 
