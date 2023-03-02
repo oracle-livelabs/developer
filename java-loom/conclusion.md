@@ -19,4 +19,4 @@ If you want to stay connected and see how Loom is evolving but also get the late
 
 * **Author** - [José Paumard, Java Developer Advocate, Java Platform Group - Oracle](https://twitter.com/JosePaumard)
 * **Contributor** -  [David Delabassée, DevRel, Java Platform Group - Oracle](https://twitter.com/delabassee)
-* **Last Updated By/Date** - Nicolai Parlog, Oct. 2 2022
+* **Last Updated By/Date** - Ana-Maria Mihalceanu, March 2 2023

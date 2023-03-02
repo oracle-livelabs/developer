@@ -54,7 +54,7 @@ You now can use Cloud Shell as a regular shell.
 
 ## Task 3: Add Java 20 support
 
-This workshop uses Java 20 which was released in September 2022. And although Cloud Shell supports Java, it doesn't come yet with Java 19 support. You will now install Java 19. And don't worry, this is easy.
+This workshop uses Java 20 which was released in September 2022. And although Cloud Shell supports Java, it doesn't come yet with Java 20 support. You will now install Java 20. And don't worry, this is easy.
 
 In Cloud Shell, enter the following command.
 
@@ -62,7 +62,7 @@ In Cloud Shell, enter the following command.
 <copy>source <(wget -qO- https://objectstorage.us-phoenix-1.oraclecloud.com/n/jpginfra/b/LevelUpRWS-202303/o/download.sh)</copy>
 ```
 
-Now you can launch the setup script.
+Now you can launch the setup script (located inside `~/soft` directory).
 
 ```text
 <copy>setup-ce.sh</copy>
@@ -129,4 +129,5 @@ Congratulations, you are now all set for the next step!
 
 ## Acknowledgements
 * **Author** - [David Delabassée, DevRel, Java Platform Group - Oracle](https://twitter.com/delabassee)
-* **Last Updated By/Date** - David Delabassée, Oct. 6 2022
+* **Contributors** -  Ana-Maria Mihalceanu, Java Developer Advocate Java Platform Group
+* **Last Updated By/Date** - Ana-Maria Mihalceanu, March 2 2023
