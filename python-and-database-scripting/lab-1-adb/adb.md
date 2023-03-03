@@ -114,7 +114,9 @@ In your home folder, create directory _Wallets_ and move the wallet archive to W
 
 One of the arguments used in to connect to the Oracle Autonomous Database is the DSN (data source name).  
 
-1.  In the ADB Summary screen, select **Database Connection** tab and in the popup **Database Connection** window, in the **TNS Name** section, **Copy** the connection string for the high service level TNS name
+1.  In the ADB Summary screen, select **Database Connection** tab and in the popup **Database Connection** window, in the **TNS Name** section, **Copy** the TNS name and the connection string for the high service level TNS name
+
+    ![connection string](./images/conn-string.png " ")
 
 2. Click 'Close' to close the popup window.
 
