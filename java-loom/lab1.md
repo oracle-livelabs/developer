@@ -199,4 +199,4 @@ In this lab you have learned:
 ## Acknowledgements
 * **Author** - [José Paumard, Java Developer Advocate, Java Platform Group - Oracle](https://twitter.com/JosePaumard)
 * **Contributors** -  Billy Korando, Java Developer Advocate Java Platform Group; Ana-Maria Mihalceanu, Java Developer Advocate Java Platform Group
-* **Last Updated By/Date** - José Paumard, Oct. 1 2022
+* **Last Updated By/Date** - Ana-Maria Mihalceanu, March 3 2023
