@@ -33,7 +33,7 @@ This lab assumes you have:
  ![Create ADB](./images/create_adb.png " ")
 
 3. Create a new Autonomous Database Instance as following:
-    - DB Display Name: python_adb
+    - Display Name: python_adb
     - Workload Type: Transaction Processing
     - Choose a Deployment Type: Shared Infrastructure
 
@@ -89,7 +89,7 @@ Make a note of the password as this will be used for the database connection and
 
 In the Oracle Autonomous Database Summary screen, we're going to launch Cloud Shell (this has Python pre-installed), and we're going to connect to the Autonomous Database Shared infrastructure, using the Wallet downloaded at the previous task.  
 
-1. To launch Cloud Shell, sign in to your Oracle Cloud Infrastructure tenancy and click the command prompt icon in Console header:
+1. To launch Cloud Shell, sign in to your Oracle Cloud Infrastructure tenancy and click the command prompt icon in Console header, then select Cloud Shell from the drop down:
 
  ![Cloud Shell](./images/cloud_shell.png " ")
 
