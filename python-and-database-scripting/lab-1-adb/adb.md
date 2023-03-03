@@ -116,10 +116,14 @@ One of the arguments used in to connect to the Oracle Autonomous Database is the
 
 1.  In the ADB Summary screen, select **Database Connection** tab and in the popup **Database Connection** window, in the **TNS Name** section, **Copy** the connection string for the high service level TNS name
 
-![DSN copy](./images/dsn_copy.png " ")
-
 2. Click 'Close' to close the popup window.
 
+3. Paste the clipboard content to a file called DSN_ADB.txt and then save your changes.
+    ````
+    <copy>
+    vi DSN_ADB.txt
+    </copy>
+    ````
 ## Acknowledgements
 - **Authors** - Veronica Dumitriu
 - **Contributors** - Chris Jones

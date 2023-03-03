@@ -39,7 +39,8 @@ This lab assumes you have completed the following labs:
 
 ## Task 1: Install Python 3
 
-Python comes preinstalled on most Linux distributions, and for this LiveLab, the Cloud Shell already has Python 3.8.13 preinstalled. The Python packages can be obtained from the software repository of your Linux distribution using the package manager.
+Python comes preinstalled on most Linux distributions, and for this LiveLab, the Cloud Shell already has Python 3.8.13 preinstalled, so you don't have to run this step. We however provide the step in case you wanted to run this in your own environment, outside of Cloud Shell. 
+The Python packages can be obtained from the software repository of your Linux distribution using the package manager.
 
 1.  Open up the Oracle Cloud Shell check if python3 has been installed by running the command.
 
@@ -103,6 +104,17 @@ python3 -V
     wget https://objectstorage.us-sanjose-1.oraclecloud.com/p/samples.zip
     </copy>
     ````
+2. In the Cloud Shell, unzip the sample.zip file, then after unarchiving, remove the .zip file:
+    ````
+    <copy>
+    unzip samples.zip
+    </copy>
+    ````
+    ````
+    <copy>
+    rm samples.zip
+    </copy>
+    ````
 
 
     ![Sample Files Git Clone](./images/git-clone.png " ")
@@ -114,25 +126,25 @@ The **samples/tutorial** directory has scripts to run and modify. The **samples/
 We are going to use the [Code Editor](https://docs.oracle.com/en-us/iaas/Content/API/Concepts/code_editor_intro.htm) functionality available on your tenancy in order to edit the Python and SQL scripts, as needed.
 Oracle Cloud Infrastructure (OCI) Code Editor provides a rich, in-console editing environment that enables you to edit code and update service workflows and scripts without having to switch between the Console and your local development environment.
 
-To access Code Editor, once logged in to your Oracle Cloud Account, select your tenancy and press the Edit icon as in the image below
+To access Code Editor, once logged in to your Oracle Cloud Account, select your tenancy and press command prompt icon in Console header, then select Code Editor as in the image below:
 ![Code Editor](./images/code-editor.png " ")
 
 During this lab you will be reviewing and editing the sample tutorial files provided, so you need to open them in Code Editor:
-    - From the Menu, select File > Open...
-    ![Code Editor Open](./images/code-editor-open.png " ")
-    - Select the location of the samples/tutorial directory and click **Open**
-    ![Code Editor Open Dir](./images/code-editor-open-dir.png " ")
-    - On the left side Pane > Files you should see all the files and subdirectories in the Tutorial directory. To review or modify a file, select the desired file and this opens in the file editor.
-    ![Code Editor Files](./images/code-editor-files.png " ")
-    - Set Autosave option under File > Autosave menu, to avoid loosing changes you make to the files.
 
-To access the local development environment from Code Editor, you may launch Terminal:
+- From the Menu, select File > Open...
+    ![Code Editor Open](./images/code-editor-open.png " ")
+- Select the location of the samples/tutorial directory and click **Open**
+    ![Code Editor Open Dir](./images/code-editor-open-dir.png " ")
+- On the left side Pane > Files you should see all the files and subdirectories in the /tutorial directory. To review or modify a file, select the desired file and this opens in the file editor.
+    ![Code Editor Files](./images/code-editor-files.png " ")
+- Set Autosave option under File > Autosave menu, to avoid loosing changes you make to the files.
+
+To access the local development environment from Code Editor, you may launch Terminal.
 
 ![Launch Terminal](./images/terminal.png " ")
+Alternatively, you may want to keep Cloud Shell open side by side. 
 
-
-1. In order to connect to the Oracle Autonomous Database, we need a few arguments used by the connection:
-
+1. Let's do the necessary configurations to connect to the Oracle Autonomous Database. First, we need a few arguments used by the connection:
     - **user**:         for this exercise we'll be using the **pythondemo** user
     - **password**:     password for the **pythondemo** user
     - **dsn**:          data source name for the Oracle Autonomous Database shared infrastructure
@@ -140,7 +152,7 @@ To access the local development environment from Code Editor, you may launch Ter
     - **wallet location**: the location where the wallet was saved
     - **wallet password**: the password setup for the wallet
     
-You need to set the default values to match the system connection information for your environment, as they would be used by the config files *db\_config\_sys.py* in the tutorial directory.
+You need to set the default values to match the system connection information for your environment, as they would be used by the config files *db\_config.py* and *db\_config\_sys.py* in the samples/tutorial directory.
     
 In this lab you are going to set the given environment variables in your terminal window.
     
@@ -151,6 +163,10 @@ vi ~/.bash_profile
 ````
 
 Add the folowing lines to the file, with values to match the system connection information for your environment:
+
+*Note*: Populate **DSN\_ADB** with the value stored in file DSN\_ADB.txt that you copied in Lab 1, Task 4.
+
+*Note*: Replace **localuser** in the path with the value of the actual localuser on your OCI environment
 
 ````
 <copy>
@@ -171,6 +187,8 @@ export PYTHON_PASSWORD="xxxxxxxx"
 export WALLET_PASSWORD="xxxxxxxx"
 </copy>
 ````
+
+*Note*: SYSPASSWORD is the ADMIN password that you set when you created the Oracle Autonomous Database; WALLET\_PASSWORD is the value of the Wallet password you set when saving the Wallet; PYTHON\_PASSWORD is going to be used in one of the subsequent tasks so you might have to edit the file again  to enter it later.
 
 Run the following in the terminal window:
 
@@ -234,7 +252,7 @@ if wallet_password is None:
 </copy>
 ````
 
-Also, change the database username and connection string in the SQL configuration file  *db\_config.sql* and enter values to match the system connection information for your environment:
+Also, change the database username and connection string in the SQL configuration file  *db\_config.sql* in samples/tutorial/sql directory and enter values to match the system connection information for your environment:
 
 ````
 <copy>
@@ -289,9 +307,10 @@ python3 drop_user.py
 </copy>
     ````
 
-*Note: if you have not used the default **pythonuser** schema, you'd need to modify the script to explicitely mention the name of the schema to be dropped or alternatively edit edit ~/.bash_profile to use the schema that you have created earlier.*
+*Note: if you have not used the default **pythonuser** schema, you'd need to modify the script to explicitely mention the name of the schema to be dropped or alternatively edit ~/.bash_profile to use the schema that you have created earlier.*
 
-3. Install the tables and other database objects for the Livelab
+3. Install the tables and other database objects for the Livelab.
+
 Once you have a database user, then you can create the key tables and database objects for the Livelab by running *setup\_tutorial.py* (the environment setup file), using your values for the Livelab username, password and connection string:
 
 ````
@@ -310,11 +329,11 @@ By default, python-oracledb runs in a ‘Thin’ mode which connects directly to
 
 There are two ways to create a connection to Oracle Autonomous Database using python-oracledb driver:
 - **Standalone connections**: [standalone connections](https://python-oracledb.readthedocs.io/en/latest/user_guide/connection_handling.html#standaloneconnection) are useful when the application needs a single connection to the database. Connections are created by calling **oracledb.connect()**
-- **Pooled connections**: [connection pooling](https://python-oracledb.readthedocs.io/en/latest/user_guide/connection_handling.html#connpooling) is important for performance when applications frequently connect and disconnect from the database. Pools support Oracle's [high-availability](https://python-oracledb.readthedocs.io/en/latest/user_guide/ha.html#highavailability) features and are recommended for applications that must be reliable. Small pools can also be useful for applications that want a few connections available for infrequent use. Pools are created with **oracledb.create_pool()** at application initialization time, and then **ConnectionPool.acquire()** can be called to obtain a connection from the pool
+- **Pooled connections**: [connection pooling](https://python-oracledb.readthedocs.io/en/latest/user_guide/connection_handling.html#connpooling) is important for performance when applications frequently connect and disconnect from the database. Pools support Oracle's [high-availability](https://python-oracledb.readthedocs.io/en/latest/user_guide/ha.html#highavailability) features and are recommended for applications that must be reliable. Small pools can also be useful for applications that want a few connections available for infrequent use. Pools are created with **oracledb.create_pool()** at application initialization time, and then **ConnectionPool.acquire()** can be called to obtain a connection from the pool.
 
-Connect to the Oracle database and print the version of the database via python. (This confirms you are connected to an Oracle instance and returns the database version.)
+Connect to the Oracle database and print the version of the database via Python. This confirms you are connected to an Oracle instance and returns the database version.
 
-1. Review the code contained in *connect.py*:
+1. in Code Editor, review the code contained in *connect.py*:
     
 ````
 <copy>
@@ -332,10 +351,11 @@ print("Database version:", con.version)
 </copy>
 ````
 
-The username, the password, the connection string and the wallet information that you configured in the db\_config.py module is passed to the connect() method. By default, Oracle's Easy Connect connection string syntax is used.
+The username, the password, the connection string and the wallet information that you configured in the db\_config.py module is passed to the connect() method. By default, Oracle's EasyConnect connection string syntax is used.
 
 2. Create a basic connection
-Run the script and expect output as below:
+
+In a Terminal window or in Cloud Shell, run the script as below:
 
 ````
 <copy>
@@ -350,7 +370,8 @@ The version number of the database should be displayed. An exception is raised i
 Adjust the username, password, or connection string parameters to invalid values to see the exception.
 
 3.  Executing a query.
-Open **query.py** in vi. It looks like:
+
+Open **query.py** in Code Editor. It looks like:
 
 ````
 <copy>
@@ -472,8 +493,8 @@ In this lab, you had an opportunity to try out connecting Python to the Oracle D
 You have learned how to:
 * Install Python 3 if not already available
 * Install python-oracledb driver
-* Setup the environment to allow connections to Oracle Autonomous database shared infrastructure using python-oracledb
-* Create connections to Oracle Autonomous database shared infrastructure using the python-oracledb driver
+* Setup the environment to allow connections to Oracle Autonomous Database, shared infrastructure using python-oracledb
+* Create connections to Oracle Autonomous Database, shared infrastructure using the python-oracledb driver
 
 ## Acknowledgements
 * **Authors** - Christopher Jones, Anthony Tuininga, Sharad Chandran, Veronica Dumitriu
