@@ -223,4 +223,4 @@ You should be able to very easily write unit tests for all the steps of your asy
 ## Acknowledgements
 * **Author** - [José Paumard, Java Developer Advocate, Java Platform Group - Oracle](https://twitter.com/JosePaumard)
 * **Contributors** -  Billy Korando, Java Developer Advocate Java Platform Group; Ana-Maria Mihalceanu, Java Developer Advocate Java Platform Group
-* **Last Updated By/Date** - Ana-Maria Mihalceanu, March 2 2023
+* **Last Updated By/Date** - Ana-Maria Mihalceanu, March 3 2023

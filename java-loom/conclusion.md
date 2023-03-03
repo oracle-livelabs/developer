@@ -3,7 +3,7 @@
 ## Project Loom Hands-On Lab
 
 
-The goal of Project Loom is to explore, incubate and deliver Java VM features and APIs built on top of them for the purpose of supporting easy-to-use, high-throughput lightweight concurrency and new programming models on the Java platform. And with Virtal Threads (preview) and Structured Conccurency in JDK 19, we now starts to see the fruits on of that ambitious project. Unfortunately, we cannot do this project justice in the short amount of time allocated for this workshop. We hope that you leave this workshop with a better understanding of what Project Loom is and that, through this initial hands-on experience, you learned enough to start to think about how you could benefit from using Virtual Threads and Structured Concurrency in your projects.
+The goal of Project Loom is to explore, incubate and deliver Java VM features and APIs built on top of them for the purpose of supporting easy-to-use, high-throughput lightweight concurrency and new programming models on the Java platform. And with Virtal Threads (preview) and Structured Conccurency in JDK 20, we now start to see the fruits on of that ambitious project. Unfortunately, we cannot do this project justice in the short amount of time allocated for this workshop. We hope that you leave this workshop with a better understanding of what Project Loom is and that, through this initial hands-on experience, you learned enough to start to think about how you could benefit from using Virtual Threads and Structured Concurrency in your projects.
 
 If you want to stay connected and see how Loom is evolving but also get the latest news on Java and OpenJDK, we invite you to check the following resources:
 
@@ -19,4 +19,4 @@ If you want to stay connected and see how Loom is evolving but also get the late
 
 * **Author** - [José Paumard, Java Developer Advocate, Java Platform Group - Oracle](https://twitter.com/JosePaumard)
 * **Contributor** -  [David Delabassée, DevRel, Java Platform Group - Oracle](https://twitter.com/delabassee)
-* **Last Updated By/Date** - Ana-Maria Mihalceanu, March 2 2023
+* **Last Updated By/Date** - Ana-Maria Mihalceanu, March 3 2023
