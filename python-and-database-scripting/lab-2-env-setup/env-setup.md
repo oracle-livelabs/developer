@@ -46,9 +46,9 @@ Python comes preinstalled on most Linux distributions, and for this LiveLab, the
 1.  Open up the Oracle Cloud Shell check if python3 has been installed by running the command.
 
     ````
-    <copy>
-    python3 -V
-    </copy>
+<copy>
+python3 -V
+</copy>
     ````
 
     For this tutorial Python Version 3.6 (or later) is preferred. python-oracledb version 1.0 (or later) is needed.
@@ -57,9 +57,9 @@ Python comes preinstalled on most Linux distributions, and for this LiveLab, the
 2.  Upgrade Python if you do not have Python 3 installed. There is no harm in running this command multiple times, the system will either install packages or let you know they are already installed.
 
     ````
-    <copy>
+<copy>
     sudo yum -y install python3 python3-tools
-    </copy>
+</copy>
     ````
 
     ![install python](./images/p_installPython.jpg " ")
@@ -71,9 +71,9 @@ Python comes preinstalled on most Linux distributions, and for this LiveLab, the
     On Oracle Linux 8, run the following in the Cloud Shell:
 
     ````
-    <copy>
+<copy>
     python3 -m pip install oracledb cryptography --user
-    </copy>
+</copy>
     ````
  ![install driver](./images/install-driver.png " ")
 
@@ -92,35 +92,24 @@ Python comes preinstalled on most Linux distributions, and for this LiveLab, the
 
     ![oracledb modules](./images/oracledb.png " ")
 
-    Type exit() to return to the comman line prompt
-.
+    Type exit() to return to the command line prompt
 
 ## Task 3: Download the sample files on Cloud Shell
 
-1. Get the sample Python scripts from [here](https://github.com/veronicadumitriu/OCW2022) using 'git' to clone the repository
+1. Get the sample Python scripts from [here](https://github.com/veronicadumitriu/OCW2022):
+
     In the Cloud Shell, run the following:
 
     ````
     <copy>
-    git clone https://github.com/veronicadumitriu/OCW2022
+    wget https://objectstorage.us-sanjose-1.oraclecloud.com/p/samples.zip
     </copy>
     ````
 
-    *Note:* When connecting to a locally installed database, the Python scripts to be used are in the python-oracledb GitHub repository.
-    Use 'git' to clone the repository as explained below.
-    
-    In the Cloud Shell, run the following:
-
-    ````
-    <copy>
-    git clone https://github.com/oracle/python-oracledb.git
-    </copy>
-    ````
 
     ![Sample Files Git Clone](./images/git-clone.png " ")
 
 The **samples/tutorial** directory has scripts to run and modify. The **samples/tutorial/sql** directory has all the SQL scripts used by the Python files to create database tables and other objects.
-.
 
 ## Task 4: Environment setup
 
@@ -145,6 +134,7 @@ To access the local development environment from Code Editor, you may launch Ter
 
 
 1. In order to connect to the Oracle Autonomous Database, we need a few arguments used by the connection:
+
     - **user**:         for this exercise we'll be using the **pythondemo** user
     - **password**:     password for the **pythondemo** user
     - **dsn**:          data source name for the Oracle Autonomous Database shared infrastructure
@@ -194,75 +184,83 @@ Run the following in the terminal window:
 
 2. In Code Editor, review the *db\_config\_sys.py* in the tutorial directory. This file is included in other Python files for creating and dropping the tutorial user.
 
-    ````
-    <copy>
-    import oracledb
-    import os
-    import getpass
-    #
-    # Tutorial credentials and connection string for the SYSTEM (ADMIN) user.
-    # Environment variable values are used, if they are defined.
-    #
+````
+<copy>
+import oracledb
+import os
+import getpass
+#
+# Tutorial credentials and connection string for the SYSTEM (ADMIN) user.
+# Environment variable values are used, if they are defined.
+#
     
-    user = os.environ.get("SYSUSER")                    
-    pw = os.environ.get("SYSPASSWORD")                
-    dsn = os.environ.get("DSN_ADB")
-    config_dir = os.environ.get("CONFIG_DIR")
-    wallet_location = os.environ.get("WALLET_LOCATION")
-    wallet_password = os.environ.get("WALLET_PASSWORD")
+user = os.environ.get("SYSUSER")                    
+pw = os.environ.get("SYSPASSWORD")                
+dsn = os.environ.get("DSN_ADB")
+config_dir = os.environ.get("CONFIG_DIR")
+wallet_location = os.environ.get("WALLET_LOCATION")
+wallet_password = os.environ.get("WALLET_PASSWORD")
     
-    if pw is None:
-        pw = getpass.getpass("Enter password for %s: " % user)
+if pw is None:
+    pw = getpass.getpass("Enter password for %s: " % user)
     
-    if wallet_password is None:
-        wallet_password = getpass.getpass("Enter password for the Wallet: ")
-    </copy>
-    ````
+if wallet_password is None:
+    wallet_password = getpass.getpass("Enter password for the Wallet: ")
+</copy>
+````
 
 3. In Code Editor, review *db\_config.py* (thin mode), and *db\_config.sql* files in the samples/tutorial and samples/tutorial/sql directories respectively.
 These files are included in other Python and SQL files for setting up the database connection.
 
-    Review *db\_config.py* in Code Editor:
+Review *db\_config.py* in Code Editor:
 
-    ````
-    <copy>
-    import oracledb
-    import os
-    import getpass
+````
+<copy>
+import oracledb
+import os
+import getpass
     
-    # Tutorial credentials and connection string.
-    # Environment variable values are used, if they are defined.
+# Tutorial credentials and connection string.
+# Environment variable values are used, if they are defined.
 
-    user = os.environ.get("PYTHON_USER", "pythondemo")      #pythondemo schema, or your preferred schema when connecting to ADB
-    pw = os.environ.get("PYTHON_PASSWORD")
-    if pw is None:
-        pw = getpass.getpass("Enter password for %s: " % user)
-    config_dir = os.environ.get("CONFIG_DIR") 
-    dsn = os.environ.get("DSN_ADB")
-    wallet_location = os.environ.get("WALLET_LOCATION")
-    wallet_password = os.environ.get("WALLET_PASSWORD")
-    if wallet_password is None:
-        wallet_password = getpass.getpass("Enter password for the Wallet: " )
-    </copy>
-    ````
+user = os.environ.get("PYTHON_USER", "pythondemo")      #pythondemo schema, or your preferred schema when connecting to ADB
+pw = os.environ.get("PYTHON_PASSWORD")
+if pw is None:
+    pw = getpass.getpass("Enter password for %s: " % user)
+config_dir = os.environ.get("CONFIG_DIR") 
+dsn = os.environ.get("DSN_ADB")
+wallet_location = os.environ.get("WALLET_LOCATION")
+wallet_password = os.environ.get("WALLET_PASSWORD")
+if wallet_password is None:
+    wallet_password = getpass.getpass("Enter password for the Wallet: " )
+</copy>
+````
+
+Also, change the database username and connection string in the SQL configuration file  *db\_config.sql* and enter values to match the system connection information for your environment:
+
+````
+<copy>
+-- Default database username
+def user = "pythondemo"
     
+-- Default database connection string
+def connect_string="""(description= (retry_count=20)(retry_delay=3)(address=(protocol=tcps)(port=1522)(host=adb.us-sanjose-1.oraclecloud.com))(connect_data=(service_name=g3f2a0f6aeefec7_db20220721220247_high.adb.oraclecloud.com))(security=(ssl_server_cert_dn="CN=adb.us-sanjose-1.oraclecloud.com, OU=Oracle ADB SANJOSE, O=Oracle Corporation, L=Redwood City, ST=California, C=US")))"""
 
-    Also, change the database username and connection string in the SQL configuration file  *db\_config.sql* and enter values to match the system connection information for your environment:
+-- Prompt for the password
+accept pw char prompt 'Enter database password for &user: ' hide
+</copy>
+````
 
-    ````
-    <copy>
-    -- Default database username
-    def user = "pythondemo"
-    
-    -- Default database connection string
-    def connect_string="""(description= (retry_count=20)(retry_delay=3)(address=(protocol=tcps)(port=1522)(host=adb.us-sanjose-1.oraclecloud.com))(connect_data=(service_name=g3f2a0f6aeefec7_db20220721220247_high.adb.oraclecloud.com))(security=(ssl_server_cert_dn="CN=adb.us-sanjose-1.oraclecloud.com, OU=Oracle ADB SANJOSE, O=Oracle Corporation, L=Redwood City, ST=California, C=US")))"""
+4. In Code Editor, navigate to home/localuser/Wallets directory and edit the *sqlnet.ora* file to add the wallet
+location directory and save
 
-    -- Prompt for the password
-    accept pw char prompt 'Enter database password for &user: ' hide
-    </copy>
-    ````
+````
+<copy>
+WALLET_LOCATION = (SOURCE = (METHOD = file) (METHOD_DATA = (DIRECTORY="/home/localuser/Wallets")))
+</copy>
+````
 
-4. Runtime Naming
+5. Runtime Naming
 
 At runtime, the module name of the python-oracledb package is oracledb:
 ````
@@ -270,31 +268,28 @@ import oracledb
 ````
 
 ## Task 5: Add a New Schema in your Oracle Autonomous Database
-
-1.  In this tutorial you will create a new schema in Oracle Autonomous database shared infrastructure.
+1. In this tutorial you will create a new schema in Oracle Autonomous database shared infrastructure.
 Review the grants created in *samples/tutorial/sql/create\_user.sql* by opening it in Code Editor. Then open a terminal window and run create\_user.py to execute the create\_user.sql script and create the new schema. This tutorial uses the name **pythondemo** for the new schema.
 
-*Note: The password you enter for the schema must contain at least an Upper letter, should be 12 characters or more, one digit required.
+    *Note: The password you enter for the schema must contain at least an Upper letter, should be 12 characters or more, one digit required.*
 
-The example above connects as ADMIN user using db\_config_sys file discussed in the earlier section.
+    The example above connects as ADMIN user using db\_config_sys file discussed in the earlier section.
     ````
     <copy>
     python3 create_user.py
     </copy>
     ````
     If it runs successfully, you will see something similar below:
-
-![Create User](./images/create_user.png " ")
+    ![Create User](./images/create_user.png " ")
     
     The new user *pythondemo* is created.
 
 2. If for any reason you need to drop the user, review the *samples/tutorial/sql/drop\_user.sql* file and then run
-    
-````
+    ````
 <copy>
 python3 drop_user.py
 </copy>
-````
+    ````
 
 *Note: if you have not used the default **pythonuser** schema, you'd need to modify the script to explicitely mention the name of the schema to be dropped or alternatively edit edit ~/.bash_profile to use the schema that you have created earlier.*
 
