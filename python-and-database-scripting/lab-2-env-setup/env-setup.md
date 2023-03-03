@@ -63,7 +63,7 @@ python3 -V
 
     ![install python](./images/p_installPython.jpg " ")
 
-## Task 2: Install _python-oracledb_ driver
+## Task 2: Install python-oracledb driver
 
 1.  Install the `python-oracledb` module using python3 and pip.
 
@@ -351,7 +351,7 @@ print("Database version:", con.version)
 </copy>
 ````
 
-The username, the password, the connection string and the wallet information that you configured in the db\_config.py module is passed to the connect() method. By default, Oracle's EasyConnect connection string syntax is used.
+The username, the password, the connection string and the wallet information that you configured in the db\_config.py module is passed to the connect() method. By default, Oracle's Easy Connect connection string syntax is used.
 
 2. Create a basic connection
 
