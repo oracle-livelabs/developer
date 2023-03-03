@@ -59,7 +59,7 @@ This workshop uses Java 20 which was released in September 2022. And although Cl
 In Cloud Shell, enter the following command.
 
 ```text
-<copy>source <(wget -qO- https://objectstorage.us-phoenix-1.oraclecloud.com/n/jpginfra/b/j12022-hol-bucket/o/download.sh)</copy>
+<copy>source <(wget -qO- https://objectstorage.us-phoenix-1.oraclecloud.com/n/jpginfra/b/LevelUpRWS-202303/o/download.sh)</copy>
 ```
 
 Now you can launch the setup script.
