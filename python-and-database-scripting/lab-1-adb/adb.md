@@ -33,7 +33,7 @@ This lab assumes you have:
  ![Create ADB](./images/create_adb.png " ")
 
 3. Create a new Autonomous Database Instance as following:
-    - DB Display Name: python_adb
+    - Display Name: python_adb
     - Workload Type: Transaction Processing
     - Choose a Deployment Type: Shared Infrastructure
 
@@ -68,7 +68,7 @@ Once Autonomous Database Shared Infrastructure is provisioned, it is automatical
 
 To connect to the Oracle Autonomous Database, you need the wallet file.
 
-1.  In the Autonomous Database Summary screen, select **DB Connection** tab and in the popup **Database Connection** window, in the **Download Client Credentials (Wallet)** section, 
+1.  In the Autonomous Database Summary screen, select **Database Connection** tab and in the popup **Database Connection** window, in the **Download Client Credentials (Wallet)** section, 
     -  select Wallet Type: Instance Wallet
     - hit **Download Wallet** button
 
@@ -89,7 +89,7 @@ Make a note of the password as this will be used for the database connection and
 
 In the Oracle Autonomous Database Summary screen, we're going to launch Cloud Shell (this has Python pre-installed), and we're going to connect to the Autonomous Database Shared infrastructure, using the Wallet downloaded at the previous task.  
 
-1. To launch Cloud Shell, sign in to your Oracle Cloud Infrastructure tenancy and click the command prompt icon in Console header:
+1. To launch Cloud Shell, sign in to your Oracle Cloud Infrastructure tenancy and click the command prompt icon in Console header, then select Cloud Shell from the drop down:
 
  ![Cloud Shell](./images/cloud_shell.png " ")
 
@@ -114,11 +114,17 @@ In your home folder, create directory _Wallets_ and move the wallet archive to W
 
 One of the arguments used in to connect to the Oracle Autonomous Database is the DSN (data source name).  
 
-1.  In the ADB Summary screen, select **DB Connection** tab and in the popup **Database Connection** window, in the **TNS Name** section, **Show** the connection string for the high service level TNS name
-    
+1.  In the ADB Summary screen, select **Database Connection** tab and in the popup **Database Connection** window, in the **TNS Name** section, **Copy** the connection string for the high service level TNS name
+
 2. Click 'Close' to close the popup window.
 
+3. Paste the clipboard content to a file called DSN_ADB.txt and then save your changes.
+    ````
+    <copy>
+    vi DSN_ADB.txt
+    </copy>
+    ````
 ## Acknowledgements
 - **Authors** - Veronica Dumitriu
 - **Contributors** - Chris Jones
-- **Last Updated By/Date** - Veronica Dumitriu, July 2022
+- **Last Updated By/Date** - Veronica Dumitriu, Oracle Database Drivers Product Management, Feb 2023
