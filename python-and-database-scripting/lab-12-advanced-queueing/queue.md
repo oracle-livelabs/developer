@@ -115,7 +115,7 @@ python3 aq.py
 
 The output shows messages being queued and dequeued.
 
-![AQ Results](./images/step14.1-aq.png " ")
+![AQ Results](./images/aq.png " ")
 
 To experiment, split the code into three files: one to create and start the queue, and two other files to queue and dequeue messages. Experiment running the queue and dequeue files concurrently in separate terminal windows.
 
@@ -151,4 +151,4 @@ You have learned how to:
 
 * **Authors** - Christopher Jones, Anthony Tuininga, Sharad Chandran, Veronica Dumitriu
 * **Contributors** - Jaden McElvey, Anoosha Pilli, Troy Anthony
-* **Last Updated By/Date** - Veronica Dumitriu, DB Product Management, Aug 2022
+* **Last Updated By/Date** - Veronica Dumitriu, DB Product Management, Feb 2023
