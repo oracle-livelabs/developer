@@ -39,8 +39,7 @@ On the Instances Compute page, check the **Compartment** dropdown-list, and expa
 
 Cloud Shell is a browser-based terminal that provides an ephemeral Linux machine. Cloud Shell simplifies working with cloud resources on OCI. Under the hood, Cloud Shell uses an OCI pre-configured Virtual Machine with preinstalled tools, including Java. And as you will see in this workshop, Cloud Shell can also be used to develop simple applications.
 
-
-To launch Cloud Shell, simply click on the Developer Tools icon (see top right) in the [OCI console](https://cloud.oracle.com).
+Before opening Cloud Shell, make sure your browser window is not in private mode. To launch Cloud Shell, simply click on the Developer Tools icon (see top right) in the [OCI console](https://cloud.oracle.com).
 
 ![Starting Cloud Shell](images/cs-start.png)
 
@@ -54,15 +53,15 @@ You now can use Cloud Shell as a regular shell.
 
 ## Task 3: Add Java 20 support
 
-This workshop uses Java 20 which was released in September 2022. And although Cloud Shell supports Java, it doesn't come yet with Java 19 support. You will now install Java 19. And don't worry, this is easy.
+This workshop uses Java 20 which was released in March 2023. And although Cloud Shell supports Java, it doesn't come yet with Java 20 support. You will now install Java 20. And don't worry, this is easy.
 
 In Cloud Shell, enter the following command.
 
 ```text
-<copy>source <(wget -qO- https://objectstorage.us-phoenix-1.oraclecloud.com/n/jpginfra/b/j12022-hol-bucket/o/download.sh)</copy>
+<copy>source <(wget -qO- https://objectstorage.us-phoenix-1.oraclecloud.com/n/jpginfra/b/LevelUpRWS-202303/o/download.sh)</copy>
 ```
 
-Now you can launch the setup script.
+Now you can launch the setup script (located inside `~/soft` directory).
 
 ```text
 <copy>setup-ce.sh</copy>
@@ -129,4 +128,5 @@ Congratulations, you are now all set for the next step!
 
 ## Acknowledgements
 * **Author** - [David Delabassée, DevRel, Java Platform Group - Oracle](https://twitter.com/delabassee)
-* **Last Updated By/Date** - David Delabassée, Oct. 6 2022
+* **Contributors** -  Ana-Maria Mihalceanu, Java Developer Advocate Java Platform Group
+* **Last Updated By/Date** - Ana-Maria Mihalceanu, March 3 2023

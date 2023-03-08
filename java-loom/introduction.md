@@ -5,7 +5,7 @@ Welcome to the Project Loom hands-on lab!
 
 ## About this Workshop
 
-This hands-on workshop introduces you to Project Loom and the benefits it brings to the Java platform. It focuses on two key Loom technologies: Virtual threads ([https://openjdk.org/jeps/436](https://openjdk.org/jeps/436)) and Structured Concurrency ([https://openjdk.org/jeps/437](https://openjdk.org/jeps/437)). These features are second preview and incubator features of the recent JDK 20 release. This means that both Virtual threads and Structured Concurrenc are available for testing and evaluation but are still subject to change before the become final and permanent features. 
+This hands-on workshop introduces you to Project Loom and the benefits it brings to the Java platform. It focuses on two key Loom technologies: Virtual threads ([https://openjdk.org/jeps/436](https://openjdk.org/jeps/436)) and Structured Concurrency ([https://openjdk.org/jeps/437](https://openjdk.org/jeps/437)). These features are second preview and incubator features of the recent JDK 20 release. This means that both Virtual threads and Structured Concurrency are available for testing and evaluation but are still subject to change before the become final and permanent features. 
 
 ### Objectives
 
@@ -30,7 +30,4 @@ In this hands-on workshop, you will
 ## Acknowledgements
 * **Author** - [José Paumard, Java Developer Advocate, Java Platform Group - Oracle](https://twitter.com/JosePaumard)
 * **Contributors** -  Billy Korando, Java Developer Advocate Java Platform Group; Ana-Maria Mihalceanu, Java Developer Advocate Java Platform Group
-* **Last Updated By/Date** - José Paumard, Oct. 1 2022
-
-
-javac --enable-preview --release 20 --add-modules jdk.incubator.concurrent    loom/structuredconcurrency/B_FirstScope.java loom/structuredconcurrency/Model/Weather.java
+* **Last Updated By/Date** - Ana-Maria Mihalceanu, March 3 2023

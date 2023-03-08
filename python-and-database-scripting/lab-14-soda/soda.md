@@ -118,7 +118,7 @@ python3 soda.py
 
 The find operation filters the collection and returns documents where the city is Melbourne. Note the **insertMany()** method is currently in preview.
 
-![Melbourne City results](./images " ")
+![Melbourne City results](./images/melbourne.png " ")
 
 SODA supports query by example (QBE) with an extensive set of operators. Extend *soda.py* with a QBE to find documents where the age is less than 25:
 
@@ -135,7 +135,7 @@ for doc in myDocuments:
 
 Running the script displays the names.
 
-![Age less 25](./images " ")
+![Age less 25](./images/lessthan25.png " ")
 
 ## Conclusion
 
@@ -146,4 +146,4 @@ You have learned how to use SODA to query, insert and retrieve documents from Or
 
 * **Authors** - Christopher Jones, Anthony Tuininga, Sharad Chandran, Veronica Dumitriu
 * **Contributors** - Jaden McElvey, Anoosha Pilli, Troy Anthony
-* **Last Updated By/Date** - Veronica Dumitriu, DB Product Management, Aug 2022
+* **Last Updated By/Date** - Veronica Dumitriu, DB Product Management, Feb 2023
