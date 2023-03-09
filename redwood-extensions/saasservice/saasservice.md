@@ -30,7 +30,7 @@ Up until now we've worked on the UI (front end) of your application, but now it'
 	There are three options for defining the source of your REST service connection. We'll use the first one, **Select from Catalog**, but it's important to know what the other two options do too.  With these, you can define connections to:
 	 * REST services based on their OpenAPI/Swagger description. This can be useful when working with custom objects you created with the Application Composer, which comes with Oracle SaaS.
 	* REST services based on their endpoints. This option allows you connect to any REST service available over the internet, which can be useful for integrating with third-party apps.
-		  ![Service Options](images/serviceoptions.png)
+		  ![Service Options](images/serviceOptions.png)
 
 
 4. Click **Select from Catalog**. When it loads, click **Sales and Service**:
@@ -143,4 +143,4 @@ You may now close the preview browser tab and **proceed to the next lab**.
 ## Acknowledgements
 * **Author** - Shay Shmeltzer, Oracle Cloud Development Tools, September 2022
 * **Contributors** -  Marcie Caccamo, Blaine Carter, Oracle Cloud Development Tools
-* **Last Updated By/Date** - Shay Shmeltzer, Oracle Cloud Development Tools, September 2022
+* **Last Updated By/Date** - Blaine Carter, Oracle Cloud Development Tools, March 2023
