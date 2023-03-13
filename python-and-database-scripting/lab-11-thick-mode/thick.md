@@ -1,7 +1,7 @@
 # python-oracledb Thick Mode
 
 ## Introduction
-Labs 1 to 10 use python-oracledb in thin mode. However, there are certain features which are only available in the **thick mode** of the python-oracledb driver. Note that you can also run labs 1 to 10 in thick mode by just changing the import line in the sample files from **import db\_config** to **import db\_config\_thick as db_config**.
+Labs 3 to 10 use python-oracledb in thin mode. However, there are certain features which are only available in the **thick mode** of the python-oracledb driver. Note that you can also run labs 3 to 10 in thick mode by just changing the import line in the sample files from **import db\_config** to **import db\_config\_thick as db_config**.
 
 This lab will show how to use python-oracledb driver in thick mode.
 
@@ -43,14 +43,17 @@ if wallet_password is None:
 
 ## Task 2: Review the Oracle client library path
 
-In **db\_config\_thick.py** the Oracle Client library path is set by the *instant\_client\_dir* variable.
-* Note: For this tutorial instant\_client\_dir is already set to None and the **db\_config\_thick.py** file does not require any changes. Depending on your environment you will need to edit **db\_config\_thick.py** and set instant\_client\_dir to None or to a valid path according to the following notes:
+In *db\_config\_thick.py* the Oracle Client library path is set by the **instant\_client\_dir** variable.
 
-    - If you are on macOS (Intel x86) or Windows, and you have installed Oracle Instant Client libraries because your database is on a remote machine, then set instant\_client\_dir to the path of the Instant Client libraries.
+*Note*: For this tutorial **instant\_client\_dir** is already set to **None** and the *db\_config\_thick.py* file does not require any changes. 
 
-    - If you are on Windows and have a local database installed, then comment out the two Windows lines, so that instant\_client\_dir remains None.
+Depending on your environment you will need to edit db\_config\_thick.py and set instant\_client\_dir to **None** or to a valid path according to the following notes:
 
-    - In all other cases (including Linux with Oracle Instant Client), make sure that instant\_client\_dir is set to None. In these cases you must make sure that the Oracle libraries from Instant Client or your ORACLE\_HOME are in your system library search path before you start Python. On Linux, the path can be configured with ldconfig or with the LD\_LIBRARY\_PATH environment variable.
+- If you are on macOS (Intel x86) or Windows, and you have installed Oracle Instant Client libraries because your database is on a remote machine, then set instant\_client\_dir to the path of the Instant Client libraries.
+
+- If you are on Windows and have a local database installed, then comment out the two Windows lines, so that instant\_client\_dir remains None.
+
+- In all other cases (including Linux with Oracle Instant Client), make sure that instant\_client\_dir is set to None. In these cases you must make sure that the Oracle libraries from Instant Client or your ORACLE\_HOME are in your system library search path before you start Python. On Linux, the path can be configured with ldconfig or with the LD\_LIBRARY\_PATH environment variable.
 
 *Important!* Calling the **init\_oracle\_client()** function enables python-oracledb driver in **thick** mode.
 
