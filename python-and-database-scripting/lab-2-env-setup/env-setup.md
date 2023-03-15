@@ -25,7 +25,7 @@ Python is open-source, cross-platform, and free of cost. There's no excuse not t
 
 In this lab, you will:
 
-* Install Python 3, if not already installed. *Note: Cloud Shell has Python 3.8.13 preinstalled.*
+* Install Python 3, if not already installed. *Note: This Livelab is using Cloud Shell, which has Python 3.8.14 preinstalled.*
 * Install python-oracledb driver
 * Connect to the Oracle Autonomous Database shared infrastructure using the python-oracledb driver
 * Learn how to validate Python operations
@@ -39,10 +39,10 @@ This lab assumes you have completed the following labs:
 
 ## Task 1: Install Python 3
 
-Python comes preinstalled on most Linux distributions, and for this LiveLab, the Cloud Shell already has Python 3.8.13 preinstalled, so you don't have to run this step. We however provide the step in case you wanted to run this in your own environment, outside of Cloud Shell. 
+Python comes preinstalled on most Linux distributions, and for this LiveLab, the Cloud Shell already has Python 3.8.14 preinstalled, so you don't have to run this step. In case you wanted to install Python in your own environment, outside of Cloud Shell, the steps for installing it are provided below.
 The Python packages can be obtained from the software repository of your Linux distribution using the package manager.
 
-1.  Open up the Oracle Cloud Shell check if python3 has been installed by running the command.
+1.  Open up the Oracle Cloud Shell and check if python3 has been installed, by running the command:
 
     ````
 <copy>
@@ -50,8 +50,8 @@ python3 -V
 </copy>
     ````
 
-    For this tutorial Python Version 3.6 (or later) is preferred. python-oracledb version 1.0 (or later) is needed.
-    Oracle Autonomous Database needs to be created in order to connect to it using the python-oracledb driver.
+    For this tutorial, Python version 3.6 (or later) is preferred. python-oracledb version 1.0 (or later) is needed.
+    You must have an Oracle Autonomous Database already created, in order to connect to it using the python-oracledb driver.
 
 2.  Upgrade Python if you do not have Python 3 installed. There is no harm in running this command multiple times, the system will either install packages or let you know they are already installed.
 
@@ -95,16 +95,16 @@ python3 -V
 
 ## Task 3: Download the sample files on Cloud Shell
 
-1. Get the sample Python scripts from [here](https://github.com/veronicadumitriu/OCW2022):
+1. Get the sample Python scripts from [here](https://objectstorage.us-ashburn-1.oraclecloud.com/p/G1OGqC7vt8o0M_AOM_MU18yrJ3-6_1f82XIHoZYc1au3mszv_brD6trhq9CsTd6l/n/c4u04/b/livelabsfiles/o/samples.zip):
 
     In the Cloud Shell, run the following:
 
     ````
     <copy>
-    wget https://objectstorage.us-sanjose-1.oraclecloud.com/p/samples.zip
+    wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/G1OGqC7vt8o0M_AOM_MU18yrJ3-6_1f82XIHoZYc1au3mszv_brD6trhq9CsTd6l/n/c4u04/b/livelabsfiles/o/samples.zip
     </copy>
     ````
-2. In the Cloud Shell, unzip the sample.zip file, then after unarchiving, remove the .zip file:
+2. In the Cloud Shell, unzip the sample.zip file, then remove the .zip file:
     ````
     <copy>
     unzip samples.zip
@@ -269,6 +269,8 @@ accept pw char prompt 'Enter database password for &user: ' hide
 
 4. In Code Editor, navigate to home/localuser/Wallets directory and edit the *sqlnet.ora* file to add the wallet
 location directory and save
+
+*Note*: Replace **localuser** in the path with the value of the actual localuser on your OCI environment
 
 ````
 <copy>
