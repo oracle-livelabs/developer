@@ -3,7 +3,7 @@
 ## Introduction
 In this lab, you will explore Hybrid Partitioning, a new feature introduced in Oracle Database 19c.
 
-Estimated Lab Time:  30 minutes
+Estimated Time:  30 minutes
 
 ### About Partitioning
 
@@ -796,4 +796,4 @@ Partitions of hybrid partitioned tables can reside on both Oracle tablespaces an
 
 - **Author** - Valentin Tabacaru, Database Product Management, Oracle PTS
 - **Contributors** - Troy Anthony, Anoosha Pilli,  Dylan McLeod
-- **Last Updated By/Date** - Kay Malcolm, August 2020
+- **Last Updated By/Date** - Valentin Tabacaru, Mar 2023

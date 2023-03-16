@@ -1,4 +1,5 @@
-{    "workshoptitle":"Oracle DB19c New Features for Developers",  
+{
+    "workshoptitle":"Oracle DB19c New Features for Developers",  
     "help": "livelabs-help-db_us@oracle.com",
 	"tutorials": [
         {
@@ -7,7 +8,7 @@
             "filename": "../../intro/intro.md"
           },
           {
-            "title": "Getting Started",
+            "title": "Get Started",
             "description": "Login to Oracle Cloud",
             "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/pre-register-free-tier-account.md"
         },
