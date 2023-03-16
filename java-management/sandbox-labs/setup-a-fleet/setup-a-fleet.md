@@ -30,27 +30,9 @@ In this lab, you will:
 
     ![image of reservation info compartment](images/reservation-info-compartment.png)
 
-    >**Note:** There is an occasional issue with the compartment naming which is in the midst of being resolved. If the compartment stated in the reservation info cannot be found in the **LiveLabs** compartment or if there is a **Authorization failed or requested resource not found error** in that compartment, please refer to the guide below.
+    >**Note:** There is an occasional issue with the compartment naming which is in the midst of being resolved. If the compartment stated in the reservation info cannot be found in the **LiveLabs** compartment or if there is a **Authorization failed or requested resource not found error** in that compartment, please refer to the troubleshooting guide [here](#TroubleshootFleetsetupissues).
 
     ![image of view compartment fleet error](images/view-compartment-fleet-error.png)
-
-    Locating the correct compartment:
-
-     - Ensure that you are viewing a sub compartment in **LiveLabs**.
-
-       ![image of compartment list in fleets](images/compartment-list-in-fleet.png)
-
-     - Check for other compartments named **ZZ-EMPTY-20XXXXXX-XXXXXX-XXXX**. 
-
-       ![image of empty fleet name](images/empty-fleet-name.png)
-
-     - Select the compartment. Check that able to show **No fleets found**.
-
-       ![image of empty fleet error free](images/empty-fleet-error-free.png)
-     
-     - You may have to check all the **ZZ-EMPTY** compartments if there are multiple of them.
-
-     - The compartment where you are able to view 'No fleets found' has the permissions for fleet creation, even though the compartment name is different from login page details. Utilise this compartment for subsequent steps.
          
 3. Click **Create Fleet**.
 
@@ -76,7 +58,7 @@ In this lab, you will:
     - Lifecycle management (LCM) - Manage the lifecycle of Java runtimes in your fleet by installing or removing reported Java runtime.
     - Advanced usage tracking - Analyze the usage of Java servers and identify potential vulnerabilities associated with the Java libraries used by your application
     - Crypto event analysis - Assess the impact of Oracle JRE and JDK Cryptographic roadmap on the applications running in your fleet.
-    - Java Flight Recorder (JFR) - Collect information about events in the application running in your fleet using Java Flight Recorder (JFR), a tool for collecting diagnostic and profiling data about a running Java application.
+    - JDK Flight Recorder (JFR) - Collect information about events in the application running in your fleet using JDK Flight Recorder (JFR), a tool for collecting diagnostic and profiling data about a running Java application.
 
    To learn more about the advanced features available, see [Using Java Management Service Advanced Features](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=3202).
 
@@ -142,13 +124,35 @@ In this lab, you will:
     
     **Java Runtime Discovery**: How frequent agents scan for Java installation.
      
-18. For the purpose of this workshop, change **Java Runtime Discovery** to **3 hours**, and **Java Runtime Usage** to **5 minutes**.
+18. For the purpose of this workshop, change **Java Runtime Usage** to **5 minutes**, and **Java Runtime Discovery** to **3 hours**.
     ![image of modify agent settings page](images/fleet-modify-agent-settings-new.png)
 
 19. Click **Save changes** to save the new setting
     ![image of save modify changes page](images/fleet-modify-agent-settings-save.png)
 
 You may now **proceed to the next lab**.
+
+## Troubleshoot Fleet set up issues
+
+If you encounter **Authorization failed or requested resource not found error**, refer to the following steps.
+
+* Locating the correct compartment:
+
+     - Ensure that you are viewing a sub compartment in **LiveLabs**.
+
+       ![image of compartment list in fleets](images/compartment-list-in-fleet.png)
+
+     - Check for other compartments named **ZZ-EMPTY-20XXXXXX-XXXXXX-XXXX**. 
+
+       ![image of empty fleet name](images/empty-fleet-name.png)
+
+     - Select the compartment. Check that able to show **No fleets found**.
+
+       ![image of empty fleet error free](images/empty-fleet-error-free.png)
+     
+     - You may have to check all the **ZZ-EMPTY** compartments if there are multiple of them.
+
+     - The compartment where you are able to view 'No fleets found' has the permissions for fleet creation, even though the compartment name is different from login page details. Utilise this compartment for subsequent steps.
 
 ## Learn More
 
@@ -165,4 +169,4 @@ You may now **proceed to the next lab**.
 ## Acknowledgements
 
 * **Author** - Yixin Wei, Java Management Service
-* **Last Updated By** - Bao Jin Lee, January 2023
+* **Last Updated By** - Ivan Eng, March 2023
