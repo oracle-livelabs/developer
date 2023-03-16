@@ -111,4 +111,4 @@ The above copyright notice and this permission notice shall be included in all c
 
 - **Author** - Troy Anthony, DB Product Management
 - **Contributors** - Anoosha Pilli, Kay Malcolm, Madhusudhan Rao
-* **Last Updated By/Date** -  Madhusudhan Rao, Feb 2022
+* **Last Updated By/Date** - Valentin Tabacaru, Mar 2023
