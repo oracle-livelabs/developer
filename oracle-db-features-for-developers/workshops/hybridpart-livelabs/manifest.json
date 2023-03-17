@@ -3,7 +3,7 @@
     "help": "livelabs-help-db_us@oracle.com",
 	"tutorials": [
         {
-            "title": "Getting Started",
+            "title": "Get Started",
             "description": "Login to Oracle Cloud",
             "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/cloud-login-livelabs2.md"
         },{
