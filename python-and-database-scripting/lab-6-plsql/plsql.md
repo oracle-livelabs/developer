@@ -7,6 +7,9 @@ This lab will show how to call PL/SQL code from Python
 
 Estimated Lab Time: 5 minutes
 
+Watch the video below for a quick walk-through of the lab.
+[PL/SQL](videohub:1_5815o1t4)
+
 ### Objectives
 
 *  Learn best practices and efficient techniques for how to make use of PL/SQL code, functions and procedures from Python, when needing to manipulate data stored in Oracle databases.
@@ -20,7 +23,7 @@ This lab assumes you have completed the following labs:
 
 ## Task 1: PL/SQL functions
 
-The [environment setup](https://oracle.github.io/python-oracledb/samples/tutorial/Python-and-Oracle-Database-The-New-Wave-of-Scripting.html#installsampleenv) file has already created the new table named **ptab** and a PL/SQL stored function **myfunc** to insert a row into ptab, and return double the inserted value, by internally running the sql script below:
+The environment setup file **setup_tutorial.py** has already created the new table named **ptab** and a PL/SQL stored function **myfunc** to insert a row into ptab, and return double the inserted value, by internally running the sql script below:
 
 ````
 create table ptab (mydata varchar(20), myid number);
@@ -33,7 +36,7 @@ end;
 /
 ````
     
-The myfunc PL/SQL stored function will be used by the *plsql_func.py* file below.
+The **myfunc** PL/SQL stored function will be used by the *plsql_func.py* file below.
 
 Review the code contained in *plsql\_func.py*:
 
@@ -54,7 +57,7 @@ print(res)
 </copy>
 ````
 
-This uses the callfunc() method to execute the function. The second parameter is the type of the returned value. It should be one of the types supported by python-oracledb or one of the type constants defined by python-oracledb (such as oracledb.NUMBER). The two PL/SQL function parameters are passed as a tuple, binding them to the function parameter arguments.
+This uses the **callfunc()** method to execute the function. The second parameter is the type of the returned value. It should be one of the types supported by python-oracledb or one of the type constants defined by python-oracledb (such as oracledb.NUMBER). The two PL/SQL function parameters are passed as a tuple, binding them to the function parameter arguments.
 
 From the Cloud Shell or a terminal window, run:
 
@@ -69,7 +72,6 @@ The output is a result of the PL/SQL function calculation.
 ````
 4
 ````
-.
 
 ## Task 2: PL/SQL procedures
 
@@ -83,17 +85,21 @@ end;
 /
 ````
 
-Review the code contained in *plsql\_proc.py*:
+Review the code contained in *plsql\_proc.py* :
 
 ````
 <copy>
 import oracledb
 import db_config
 
-con = oracledb.connect(user=db_config.user,
-                password=db_config.pw, 
-                dsn=db_config.dsn,
-                config_dir=db_config.config_dir, wallet_location=db_config.wallet_location, wallet_password=db_config.wallet_password) 
+con = oracledb.connect(
+    user=db_config.user,
+    password=db_config.pw, 
+    dsn=db_config.dsn,
+    config_dir=db_config.config_dir, 
+    wallet_location=db_config.wallet_location, 
+    wallet_password=db_config.wallet_password
+    ) 
     
 cur = con.cursor()
 
@@ -103,11 +109,11 @@ print(myvar.getvalue())
 </copy>
 ````
 
-This creates an integer variable myvar to hold the value returned by the PL/SQL OUT parameter. The input number 123 and the output variable name are bound to the procedure call parameters using a tuple.
+This creates an integer variable 'myvar' to hold the value returned by the PL/SQL OUT parameter. The input number 123 and the output variable name are bound to the procedure call parameters using a tuple.
 
 To call the PL/SQL procedure, the **callproc()** method is used.
 
-In Cloud Shell, run:
+In Cloud Shell or in a terminal window, run:
 
 ````
 <copy>

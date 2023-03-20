@@ -6,6 +6,9 @@ In this lab, you will configure your development environment and collect informa
 
 Estimated time: 25 minutes
 
+Watch the video below for a quick walk-through of the lab.
+[Setup the development environment](videohub:1_dwo39ivc)
+
 ### Objectives
 
 * Create a group and give the appropriate permissions to run the setup
@@ -16,10 +19,6 @@ Estimated time: 25 minutes
     * 1 OCI Registry
     * 1 Virtual Cloud Network
 
-Watch this video for a quick walk-through of this lab
-
-Mac:
-[](youtube:Zo7r8Ahdhsc)
 ### Prerequisites
 
 * This lab requires an [Oracle Cloud account](https://www.oracle.com/cloud/free/). You may use your own cloud account, a cloud account that you obtained through a trial, a Free Tier account, or a LiveLabs account.
@@ -27,26 +26,19 @@ Mac:
 ## Task 1: Create Group and Appropriate Policies
 [Policies](https://docs.oracle.com/en-us/iaas/Content/Identity/Concepts/policies.htm) determine what resources users can access and the level of access they have. You can create a group and add as many users as you like to it. 
 
-If you are not the tenancy administrator, there may be additional policies you must have in your group to perform some of the steps for this lab. If you cannot create a group and add specific policies, please ask your tenancy administrator for the correct policies to follow.
+**If you are not the tenancy administrator, there may be additional policies you must have in your group to perform some of the steps for this lab. If you cannot create a group and add specific policies, please ask your tenancy administrator for the correct policies to follow.**
 
-**If your group already has the permissions listed in part 6 of this task, you may skip to Task 2.**
-
-1. First, make sure you are in your home region (under Region in the drop down list)).
-
-	![Home region](images/home-region.png "home-region")
-
-
-2. Click the navigation menu in the top left, and click on identity and security. Select Groups.
+1. Click the navigation menu in the top left, and click on identity and security. Select Groups.
 
 	![Groups list](images/groups.png "groups")
 
 
-3. Click on Create Group
+2. Click on Create Group
 For this workshop, you need to create your own group.
 	![Create group](images/create-group.png "create-group")
 
 
-4. Enter the details for the group name and description. Be mindful of the restrictions for the group's name (no spaces, etc.)
+3. Enter the details for the group name and description. Be mindful of the restrictions for the group's name (no spaces, etc.)
 
 	![Group details](images/group-details.png "group-details")
 
@@ -54,22 +46,22 @@ For this workshop, you need to create your own group.
 
 ![New group showing up](images/group-created.png "group-created")
 
-5. Add your user to the group that you have just created by selecting the name of the group you have made and select "add user to group"
+4. Add your user to the group that you have just created by selecting the name of the group you have made and select "add user to group"
 
 	![Adding user to group](images/add-user-group.png "add-user-group")
 
 
-6. Navigate to *Policies* under Identities and click *Create Policy*
+5. Navigate to *Policies* under Identities and click *Create Policy*
 
 	![Policy navigation](images/policy-navigation.png "policy-navigation")
-7. Select a pre-assigned compartment or create a new one. The policies will be associated with that compartment.
+6. Select a pre-assigned compartment or create a new one. The policies will be associated with that compartment.
 
 	![Policy creation](images/create-policy.png "create-policy")
-8. You should see a page like this. This is where you will create the policy that will give the group permission to execute the setup for this workshop. (note: replace oracleonpremjava(root) with the root of your tenancy)
+7. You should see a page like this. This is where you will create the policy that will give the group permission to execute the setup for this workshop. (note: replace oracleonpremjava(root) with the root of your tenancy)
 
 ![Policy details](images/policy-details.png "policy-details")
 
-Select **Show manual editor** and copy and paste these policies in the box below.
+Select **Show manual editor** and copy and paste the policies in the box below.
 	```
 	<copy>
 	Allow group myToDoGroup to use cloud-shell in tenancy
@@ -79,6 +71,12 @@ Select **Show manual editor** and copy and paste these policies in the box below
 	Allow group myToDoGroup to manage objects in tenancy
 	</copy>
 	```
+
+	
+
+8. Click "Create".
+
+![Create policy](images/policy-create.png "create")
 ## Task 2: Launch the Cloud Shell
 
 

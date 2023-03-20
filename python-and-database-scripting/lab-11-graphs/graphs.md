@@ -1,4 +1,4 @@
-# Fetching Data
+# Graphs
 
 ## Introduction
 

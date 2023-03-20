@@ -4,7 +4,10 @@
 
 Bind variables enable you to re-execute statements with new data values without the overhead of re-parsing the statement. Binding improves code reusability, improves application scalability, and can reduce the risk of SQL injection attacks. Using bind variables is strongly recommended. Documentation link for further reading: [Using Bind Variables](https://python-oracledb.readthedocs.io/en/latest/user_guide/bind.html).
 
-Estimated Lab Time: 5 minutes
+Estimated Lab Time: 10 minutes
+
+Watch the video below for a quick walk-through of the lab.
+[Binding Data](videohub:1_mrlbewgm)
 
 ### Objectives
 
@@ -79,7 +82,7 @@ You would set the statement cache size to the number of unique statements common
 
 ## Task 2:  Binding in inserts
     
-The [environment setup file](https://oracle.github.io/python-oracledb/samples/tutorial/Python-and-Oracle-Database-The-New-Wave-of-Scripting.html#installsampleenv) has already created the **mytab** table (to be used by the *bind\_insert.py* file) by internally running the sql script below:
+The environment setup file **setup_tutorial.py** has already created the **mytab** table (to be used by the *bind\_insert.py* file) by internally running the sql script below:
 
 ````
 create table mytab (id number, data varchar2(20), constraint my_pk primary key (id));

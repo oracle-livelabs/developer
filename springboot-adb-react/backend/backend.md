@@ -6,6 +6,9 @@ In this lab, you will make changes and deploy the pre-built SpringBoot Java back
 
 Estimated time: 15 minutes
 
+Watch the video below for a quick walk-through of the lab.
+[Backend (Java/SpringBoot)](videohub:1_6h0vwu1q)
+
 ### Understand the Java backend application
 
 As with most React applications (https://reactjs.org/), this application uses remote APIs to handle data persistence. The backend implements five REST APIs including
@@ -16,7 +19,7 @@ As with most React applications (https://reactjs.org/), this application uses re
 * Updating an existing todo item
 * Deleting a todo item
 
-The APIs are documented using Swagger. 
+The APIs are documented using Swagger.
 
 The backend is implemented using the following Java classes (under ./backend/src/main/java/com/springboot...):
 
@@ -42,17 +45,8 @@ The backend is implemented using the following Java classes (under ./backend/src
 
 The OCI Container Registry is where your Docker images are managed. A container registry should have been created for you in Lab 1 in your compartment.
 
-1. Edit ./backend/src/main/java/com/springboot/MyTodoList/config/CorsConfig.java. Locate the following code fragment:
 
-![Allowed origins](images/allowed-origins.png)
-
-\- Replace `us-phoenix-1` in `"[https://objectstorage.us-phoenix-1.oraclecloud.com](https://objectstorage.us-phoenix-1.oraclecloud.com)"` with your region (see the Cloud shell promipt)
-
-\- Save the file
-
-\- This will allow the appropriate object storage bucket to access your application\.
-
-2. Run `build.sh` script to build and push the SpringBoot image into the repository
+1. Run `build.sh` script to build and push the SpringBoot image into the repository
 
 ```
 <copy>
@@ -63,7 +57,7 @@ source build.sh
 
 In a couple of minutes, you should have successfully built and pushed the images into the OCI repository.
 
-3. Check your container registry in your compartment (refresh the console if the image is not shown)
+2. Check your container registry in your compartment (refresh the console if the image is not shown)
 
 * Go to the console, click the hamburger menu in the top-left corner, and open **Developer Services > Container Registry**.
 
@@ -93,9 +87,10 @@ The following command returns the Kubernetes services of the MyToDo application 
   services
   </copy>
 ```
+
 This will run `kubectl get services` (but the setup script creates aliases for ease of use). After running the command above, it should output the external IP address.
 
-![Get Services](images/services.png " ")
+![Get Services](images/services.png)
 
 3. The following command returns all the pods running in your Kubernetes cluster:
 
@@ -106,7 +101,7 @@ pods
 ```
 
 Pods is an alias for `kubectl get pods`.
-![Get Pods](images/get-pods.png " ")
+![Get Pods](images/get-pods.png)
 4\. You can tail the log of one of the pods by running:
 
 ```
@@ -122,7 +117,13 @@ Example: `kubectl -n mtdrworkshop logs -f todolistapp-springboot-deployment-54c9
 
 ![Deploy Success](images/deploy-success.png)
 
-If the logs return **'Tomcat started on port(s): 8080 (HTTP) with context path'**, then everything looks good.
+If the logs return
+
+
+"Tomcat started on port(s): 8080 (HTTP) with context path"
+
+
+then everything looks good.
 
 5\. Once your pods are up and running\. Go to your web browser and navigate to the load balancer IP address\.
 The application login screen will appear
@@ -133,8 +134,6 @@ Once you log in, you should see the following output, which means your deploymen
 
 You may now **proceed to the next lab**.
 
-
-
 ## Task 3: UnDeploy (optional)
 
 If you make changes to the image, you need to delete the service and the pods by running undeploy.sh then redo Tasks 1 & 2.
@@ -144,7 +143,7 @@ If you make changes to the image, you need to delete the service and the pods by
 ```
 <copy>
 cd $MTDRWORKSHOP_LOCATION/backend
-./undeploy.sh
+source undeploy.sh
 </copy>
 ```
 

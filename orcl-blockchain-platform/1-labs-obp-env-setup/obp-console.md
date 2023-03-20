@@ -8,6 +8,8 @@ As a preassembled PaaS, Oracle Blockchain Platform includes all the dependencies
 
 *Estimated Lab Time:* 20 minutes
 
+Watch the video below for a quick walk-through of the lab.
+[Create a Blockchain Network connecting 3 Organizations](videohub:1_9ze86gbw)
 
 ### Objectives
 
@@ -30,7 +32,7 @@ You will also need to create a new [Compartment](https://docs.oracle.com/en-us/i
 1. Now with access to your remote desktop session as shown below, fill in your tenancy/account name and click *Next*
     ![Remote Desktop Landing](images/remote-desktop-landing.png)
 
-2. Click on the down arrow next to *Oracle Cloud Infrastructure Direct Sign-in* to expand and reveal the login input fields, then provide your OCI credentials and click *Sign-in*
+2. Click on the down arrow next to *Oracle Cloud Infrastructure Direct Sign-in* to expand and reveal the login input fields, then provide your OCI credentials and click *Sign-in*. Make sure you select oracle identity cloud service.
     ![OCI Console Login](images/oci-console-login.png)
 
 3. In the OCI services menu, select 'Identity & Security' and click on 'Compartments' to view all compartments available in your tenancy.
@@ -56,11 +58,11 @@ You will also need to create a new [Compartment](https://docs.oracle.com/en-us/i
 
 2. Ensure that the right **Compartment** is selected and click on 'Create Blockchain Platform.'
 
-  ![OBP Compartment, Create](images/1-obp-2-2.png)
+  ![OBP Compartment, Create](images/1-obp-2-3.png)
 
 3. Give your platform a **Display Name** (e.g. 'marketplace'), optionally add a **Description**, and keep the remaining default selections. Click 'Create'.
 
-  ![OBP Form](images/1-obp-2-3.png)
+  ![OBP Form](images/1-obp-2-2.png)
 
 4. Once the platform instance is 'Active' as shown, you can access the 'Service Console' to begin managing your blockchain network as the founder.
 
@@ -72,22 +74,18 @@ You will also need to create a new [Compartment](https://docs.oracle.com/en-us/i
 1. Repeat the previous task twice, this time to create 2 participant instances.
     - Name your instances 'dealer1' and 'dealer2'
     - For both instances, select 'Join an existing network' under **Platform Role**
+    - This task takes 10 minutes. During this time setup, configure, generate chaincode (*Tasks 4,5,6,7,8*) using  Blockchain App Builder
 
-## Task 4: Blockchain AppBuilder Environment Setup
+## Task 4: Open Blockchain App Builder in VSCode
 
 You will be using Oracle's Blockchain App Builder extension, accessible through Visual Studio Code, for this lab. First you will need to set up environments for each of the 3 blockchain platform instances you created in previous tasks above.
 
-1. In Visual Studio Code, click on the **O** icon on the left-hand menu to use the Blockchain App Builder Extension.
+1. Open Terminal --> Enter code --> This opens VSCode
 
-2. Hover over the **Environments** pane, click on the '+' button, and fill out the form as follows:
-    - Add a **Name** (e.g. Marketplace).
-    - Optionally, add a **Description**.
-    - Paste the **Remote URL** of your marketplace founder instance, which you can find using the OCI services console.
-    - Enter your local **User Name** (e.g. 'local.user') and then enter the **Password**.
+  ![VSCode](images/2-app-builder-vscode.png)
+  ![VSCode](images/2-app-builder-vscode-1.png)
 
-3. Click 'Save' and repeat for the two participant instances (e.g. Dealer1 and Dealer2).
-
-  ![Car Marketplace Environment Details](images/2-app-builder-0.png)
+2. In Visual Studio Code, click on the **O** icon on the left-hand menu to use the Blockchain App Builder Extension.
 
 
 ## Task 5: Import Marketplace YAML Specification File
@@ -121,40 +119,52 @@ The specification file is then used to scaffold a smart contract project ('`car_
 
   ![Car Marketplace Chaincode Details](images/2-app-builder-2-1.png)
 
-2. Click 'Create' and wait for the chaincode to generate. Check the 'Output' pane at the bottom for more details.
 
-3. Click 'Create' and wait for the chaincode to generate. Check the 'Output' pane at the bottom for more details.
+2. Click 'Create' and wait for the chaincode to generate. Check the 'Output' pane at the bottom for more details.
 
   ![Chaincode Output](images/2-app-builder-2-2.png)
 
-4. Select '`car_marketplace_cc`.model.go' under '`car_marketplace_cc`/src'. The Model file contains the property definitions of all the assets defined in the spec file.
-Select '`car_marketplace_cc`.controller.go' under '`car_marketplace_cc`/src.' The Controller file defines all the behavior and methods for those assets. '`Car_Marketplace.yml`' spec file allows defining additional custom methods that users implement to provide business logic of smart contracts.
+3. Select '`car_marketplace_cc`.model.go' under '`car_marketplace_cc`/src/model'. The Model file contains the property definitions of all the assets defined in the spec file.
+Select '`car_marketplace_cc`.controller.go' under '`car_marketplace_cc`/src/controller.' The Controller file defines all the behavior and methods for those assets. '`Car_Marketplace.yml`' spec file allows defining additional custom methods that users implement to provide business logic of smart contracts.
 
 ## Task 7: View Custom Methods in Marketplace
 
 1. Open the Car Marketplace specification file and scroll to the bottom. This is where your customMethods are listed.
 
-2. We've modified existing CRUD operations and defined custom methods for the following functions:
-  - 'CreateCar': Adds car to dealer's inventory. The function retrieves dealer from blockchain, appends the car to dealer's inventory and records car on ledger.
+2. First, add the imports needed for the custom methods.
+
+     ```
+    <copy>
+    "encoding/json"
+    "fmt"
+    "time"
+    "example.com/car_marketplace_cc/lib/util/date"
+    </copy>
+
+    ```
+
+
+3. We've modified existing CRUD operations and defined custom methods for the following functions:
+  - 'CreateCar': Adds car to dealer's inventory. Copy and paste these custom methods in the controller file, overwriting the stubs for these methods. The function retrieves dealer from blockchain, appends the car to dealer's inventory and records car on ledger.
 
     ```
     <copy>
     func (t *Controller) CreateCarWrapper(asset Car) (interface{}, error) {
+        //Verify dealer exists
+        owner, err := t.GetDealerById(asset.OwnerId)
+        if err != nil {
+          return nil, fmt.Errorf("dealer with id: %s does not exist", asset.OwnerId)
+        }
 
-    //Verify dealer exists
-    owner, err := t.GetDealerById(asset.OwnerId)
-    if err != nil {
-    return nil, fmt.Errorf("dealer with id: %s does not exist", asset.OwnerId)
-    }
+        //append car to owner's inventory
+        owner.Inventory = append(owner.Inventory, asset.Vin)
 
-    //append car to owner's inventory
-    owner.Inventory = append(owner.Inventory, asset.Vin)
+        //Update and commit dealer inventory to blockchain
+        t.UpdateDealer(owner)
 
-    //Update and commit dealer inventory to blockchain
-    t.UpdateDealer(owner)
-    t.CreateCar(asset)
 
-    return nil, err
+        return t.Ctx.Model.Save(&asset)
+
 
     }
     </copy>
@@ -166,18 +176,18 @@ Select '`car_marketplace_cc`.controller.go' under '`car_marketplace_cc`/src.' Th
     <copy>
     func (t *Controller) CreatePOWrapper(asset PO) (interface{}, error) {
 
-    //Verify that car exists
-    car, err := t.GetCarById(asset.Vin)
-    if err != nil {
-    return nil, fmt.Errorf("car with id: %s does not exist", asset.Vin)
-    }
+        //Verify that car exists
+        car, err := t.GetCarById(asset.Vin)
+        if err != nil {
+          return nil, fmt.Errorf("car with id: %s does not exist", asset.Vin)
+        }
 
-    //Car no longer on sale as purchase order is created
-    car.ForSale = false
-    t.UpdateCar(car)
-    t.CreatePO(asset)
+        //Car no longer on sale as purchase order is created
+        car.ForSale = false
+        t.UpdateCar(car)
 
-    return nil, err
+
+        return t.Ctx.Model.Save(&asset)
 
     }
     </copy>
@@ -191,72 +201,71 @@ Select '`car_marketplace_cc`.controller.go' under '`car_marketplace_cc`/src.' Th
     <copy>
     func (t *Controller) UpdatePOWrapper(asset PO) (interface{}, error) {
 
-    //Verifies purchase order exists
-    _, err := t.GetPOById(asset.PO)
-    if err != nil {
-      return nil, fmt.Errorf("po with id: %s does not exist", asset.PO)
-    }
-
-    //If vehicle is delivered to buyer
-    if asset.OrderStatus == "Delivered" {
-
-      var invoiceObject Invoice
-
-      //Verify car exists in ledger
-      car, err := t.GetCarById(asset.Vin)
-      if err != nil {
-        return nil, fmt.Errorf("car with id: %s does not exist", asset.Vin)
-      }
-
-      car.ForSale = true
-
-      t.UpdateCar(car)
-
-      //Create invoice sent to buyer
-      invoiceObject.Vin = asset.Vin
-      invoiceObject.Po_number = asset.PO
-      invoiceObject.Price = car.Price
-      invoiceObject.Recipient = asset.Purchaser
-      invoiceObject.Status = false
-
-      invoiceObject.InvoiceId = asset.InvoiceId
-
-      t.CreateInvoice(invoiceObject)
-
-      currentTime := time.Now().String()
-
-      var ts_formatted string
-
-      for i, c := range currentTime {
-        fmt.Printf("Start Index: %d Value:%s\n", i, string(c))
-
-        if string(c) == " " {
-          fmt.Println(ts_formatted)
-          break
+        //Verifies purchase order exists
+        _, err := t.GetPOById(asset.PO)
+        if err != nil {
+          return nil, fmt.Errorf("po with id: %s does not exist", asset.PO)
         }
-        ts_formatted += string(c)
-      }
 
-      //Invoke Custom Method: Car Transfer
-      t.CarTransfer(asset.Vin, asset.Purchaser, car.OwnerId, asset.PO, car.Price, ts_formatted)
+        //If vehicle is delivered to buyer
+        if asset.OrderStatus == "Delivered" {
 
-      }
+          var invoiceObject Invoice
 
-    //If vehicle is rejected by buyer
-    if asset.OrderStatus == "Rejected" {
+          //Verify car exists in ledger
+          car, err := t.GetCarById(asset.Vin)
+          if err != nil {
+            return nil, fmt.Errorf("car with id: %s does not exist", asset.Vin)
+          }
 
-      car, err := t.GetCarById(asset.Vin)
-      if err != nil {
-        return nil, fmt.Errorf("car with id: %s does not exist", asset.Vin)
-      }
+          car.ForSale = true
 
-      //Set car for sale back to true
-      car.ForSale = true
-      t.UpdateCar(car)
+          t.UpdateCar(car)
 
-    }
-    t.UpdatePO(asset)
-    return nil, err
+          //Create invoice sent to buyer
+          invoiceObject.Vin = asset.Vin
+          invoiceObject.Po_number = asset.PO
+          invoiceObject.Price = car.Price
+          invoiceObject.Recipient = asset.Purchaser
+          invoiceObject.Status = false
+
+          invoiceObject.InvoiceId = asset.InvoiceId
+
+          t.CreateInvoice(invoiceObject)
+
+          currentTime := time.Now().String()
+
+          var ts_formatted string
+
+          for i, c := range currentTime {
+            fmt.Printf("Start Index: %d Value:%s\n", i, string(c))
+
+            if string(c) == " " {
+              fmt.Println(ts_formatted)
+              break
+            }
+            ts_formatted += string(c)
+          }
+
+          //Invoke Custom Method: Car Transfer
+          t.CarTransfer(asset.Vin, asset.Purchaser, car.OwnerId, asset.PO, car.Price, ts_formatted)
+
+        }
+
+        //If vehicle is rejected by buyer
+        if asset.OrderStatus == "Rejected" {
+
+          car, err := t.GetCarById(asset.Vin)
+          if err != nil {
+            return nil, fmt.Errorf("car with id: %s does not exist", asset.Vin)
+          }
+
+          //Set car for sale back to true
+          car.ForSale = true
+          t.UpdateCar(car)
+
+        }
+        return t.Ctx.Model.Update(&asset)
 
     }
     </copy>
@@ -268,69 +277,69 @@ Select '`car_marketplace_cc`.controller.go' under '`car_marketplace_cc`/src.' Th
     <copy>
     func (t *Controller) CarTransfer(vin string, buyerId string, sellerId string, PO string, price int, dateString string) (interface{}, error) {
 
-    //Date formatting and handling
-    dateBytes, err := json.Marshal(dateString)
-    if err != nil {
-      return nil, fmt.Errorf("error in marshalling %s", err.Error())
-    }
+        //Date formatting and handling
+        dateBytes, err := json.Marshal(dateString)
+        if err != nil {
+          return nil, fmt.Errorf("error in marshalling %s", err.Error())
+        }
 
-    var dateValue date.Date
-    err = json.Unmarshal(dateBytes, &dateValue)
-    if err != nil {
-      return nil, fmt.Errorf("error in unmarshalling the date %s", err.Error())
-    }
+        var dateValue date.Date
+        err = json.Unmarshal(dateBytes, &dateValue)
+        if err != nil {
+          return nil, fmt.Errorf("error in unmarshalling the date %s", err.Error())
+        }
 
-    if buyerId == sellerId {
-      return nil, fmt.Errorf(`buyer and seller cannot be same`)
-    }
+        if buyerId == sellerId {
+          return nil, fmt.Errorf(`buyer and seller cannot be same`)
+        }
 
-    //Verify car exists
-    car, err := t.GetCarById(vin)
-    if err != nil {
-      return nil, err
-    }
+        //Verify car exists
+        car, err := t.GetCarById(vin)
+        if err != nil {
+          return nil, err
+        }
 
-    //Verify dealer exists
-    buyer, err := t.GetDealerById(buyerId)
-    if err != nil {
-      return nil, err
-    }
+        //Verify dealer exists
+        buyer, err := t.GetDealerById(buyerId)
+        if err != nil {
+          return nil, err
+        }
 
-    if car.OwnerId != sellerId {
+        if car.OwnerId != sellerId {
 
-      return nil, fmt.Errorf("car with vin %s does not belong to the seller %s", vin, sellerId)
-    }
-    if car.OwnerId == buyerId {
+          return nil, fmt.Errorf("car with vin %s does not belong to the seller %s", vin, sellerId)
+        }
+        if car.OwnerId == buyerId {
 
-      return nil, fmt.Errorf("car with vin %s already exist with owner %s", vin, buyerId)
-    }
+          return nil, fmt.Errorf("car with vin %s already exist with owner %s", vin, buyerId)
+        }
 
-    //Update car object properties
+        //Update car object properties
 
-    car.OwnerId = buyerId
-    car.Price = price
-    car.LastSold = dateValue
+        car.OwnerId = buyerId
+        car.Price = price
+        car.LastSold = dateValue
 
-    buyer.Inventory = append(buyer.Inventory, vin)
+        buyer.Inventory = append(buyer.Inventory, vin)
 
-    seller, err := t.GetDealerById(sellerId)
-    if err != nil {
-      return nil, err
-    }
+        seller, err := t.GetDealerById(sellerId)
+        if err != nil {
+          return nil, err
+        }
 
-    //Remove car from seller's inventory
-    for i := 0; i < len(seller.Inventory)-1; i++ {
-      if seller.Inventory[i] == vin {
-        seller.Inventory = append(seller.Inventory[:i], seller.Inventory[i+1:]...)
-      }
-    }
+        //Remove car from seller's inventory
+        for i := 0; i < len(seller.Inventory)-1; i++ {
+          if seller.Inventory[i] == vin {
+            seller.Inventory = append(seller.Inventory[:i], seller.Inventory[i+1:]...)
+          }
+        }
 
-    //Commit changes to the ledger
-    t.UpdateDealer(seller)
-    t.UpdateCar(car)
-    t.UpdateDealer(buyer)
+        //Commit changes to the ledger
+        t.UpdateDealer(seller)
+        t.UpdateCar(car)
+        t.UpdateDealer(buyer)
 
-    return nil, err
+        return nil, err
 
     }
     </copy>
@@ -354,9 +363,9 @@ Blockchain App Builder chaincode deployment starts the Hyperledger Fabric basic 
   If you receive an error message in the **Output** console window (located at the bottom of your Visual Studio window), open the Docker Desktop app and copy/paste the given command into your terminal to start the Docker daemon. Restart Visual Studio and repeat steps 1-3 as necessary.
 
 
-## Task 9: Add Participant Organizations to Network
+## Task 9: Add Participant Organizations to Network - Task4 Continuation
 
-To join the partner organizations to your network, you need to export their settings and import them into the founder.
+Blockchain instances should have been created by now (Task4).  Configure the Blockchain Instances (Step3) to join the partner organizations to your network, you need to export their settings and import them into the founder.
 
 1. Access the 'Service Console' from the 'dealer1' instance. You will see a wizard and steps 'To join a network':
 
@@ -423,7 +432,7 @@ We now need to join the organizations at the channel level to allow communicatio
   ![Check Channel Orgs](images/1-obp-5-5.png)
 
 
-## Task 11: Join Participant Organizations to Channel
+## Task 11: Join Participant Organizations - Peer Nodes to Channel
 
 You're almost done setting up your blockchain network! Simply use the participant instances to join the channel created in the previous step.
 
@@ -467,7 +476,7 @@ Use IDCS to create and add both 'john_\dealer1' and 'sam_\dealer2' users, and th
 
 1. From the OCI dashboard, select the user icon in the top right-hand corner and click on **Service User Console**.
 
-  ![OCI Dashboard](images/OCI-dashboard.png)
+  ![OCI Dashboard](images/oci-dashboard.png)
 
 2. Under **My Oracle Services**, search 'identity' and select **Admin Console**.
 
@@ -515,7 +524,7 @@ Use IDCS to create and add both 'john_\dealer1' and 'sam_\dealer2' users, and th
 
 13. Click on application roles to grant 'john\_dealer1' **ADMIN** and **REST_CLIENT** privileges. Doing so will give 'john\_dealer1' access to call all REST proxy endpoints available on the REST proxy node along with any necessary admin access control. Please see the [OBP documentation](https://docs.oracle.com/en/cloud/paas/blockchain-cloud/administeroci/set-users-and-application-roles.html#GUID-CF1B1C71-2EFF-456F-B557-7EA07573B373) to learn more.
 
-  ![Select Application Roles](images/Application-roles.png)
+  ![Select Application Roles](images/application-roles.png)
 
 14. Click on the hamburger icon in the right-hand corner to assign both the **ADMIN** and **REST_CLIENT** roles to 'john\_dealer1'.
 
@@ -527,11 +536,13 @@ Use IDCS to create and add both 'john_\dealer1' and 'sam_\dealer2' users, and th
 
 16. Repeat tasks 1-16 to create the 'sam\_dealer2' user and add to the 'dealer2' instance.
 
+17. Repeat tasks 1-16 to create the 'marketplace' user and add to the 'marketplace' instance. Assign john\_dealer1 and sam\_dealer2 roles to marketplace REST\_CLIENT.
+
 
 You may now proceed to the next lab.
 
 
 ## Acknowledgements
-* **Author** - Amal Tyagi, Cloud Engineer
-* **Contributors** -  Teodora Gheorghe, Adrien Lhemann, Diego Morales, Lokeswara Nushisarva, Siddesh C. Prabhu Dev Ujjni, Rene Fontcha
+* **Author** - Oracle Blockchain Product Management
+* **Contributors** - Amal Tyagi, Dev Sony  Teodora Gheorghe, Adrien Lhemann, Diego Morales, Lokeswara Nushisarva, Siddesh C. Prabhu Dev Ujjni, Rene Fontcha
 * **Last Updated By/Date** - Rene Fontcha, September 2022

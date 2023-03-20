@@ -15,6 +15,9 @@ This Lab will cover topics including:
 
 Estimated Time: 25 minutes
 
+Watch the video below for a quick walk-through of the lab.
+[Walk-through of Flask application and Oracle REST APIs](videohub:1_vvob20bc)
+
 ### Objectives
 
 In this Lab, you will:

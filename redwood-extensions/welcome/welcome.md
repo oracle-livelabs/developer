@@ -17,7 +17,7 @@ In this lab, you will:
 
 You should now be in the Designer, VB Studio's visual editor. We'll start by creating an *App UI*, which is simply an application that includes a user interface component in the form of Visual Builder pages and flows. With App UIs, you can create new interfaces that address specific business needs for your company.
 
-1. On the left side of the Designer, click **+ App UI**:  
+1. On the left side of the Designer's navigator, click the first tab, App UIs, click **+ App UI**:
 
 	![App UI button](images/results.png)
 
@@ -32,7 +32,7 @@ You should now be in the Designer, VB Studio's visual editor. We'll start by cre
 
 3. Double-click  **main-start** to open the page in the Page Designer, one of the main visual editors in the Designer:
 
-  ![IDE](images/IDE.png)
+  ![IDE](images/ide.png)
 
 ## Task 2: Add a Page Template
 
@@ -40,7 +40,7 @@ Before we get started, let's explore the Designer a bit.
 
 **Tip:** There are lots of tabs you can click to expand/collapse different areas and give yourself more room to work.
 
-  ![IDE areas](images/IDE2.png)
+  ![IDE areas](images/ide2.png)
 
 Here are the key areas of the Designer you'll use throughout this workshop:
 
@@ -52,6 +52,8 @@ Here are the key areas of the Designer you'll use throughout this workshop:
 | 4 |Properties | Declarative area to define properties for the component selected in your page |
 | 5 |Canvas | Displays a design/live view (or code view) of your page content |
 {: title="Designer Regions"}
+
+Note that you can collapse and expand tabs to better manage your working area. When collapsed the tab will show as a vertical tab on the side of the editor. To expand/collapse a tab click that specific tab.
 
 **Tip:** In the header area (the black bar along the top), you'll also find the Undo and Redo buttons, which look like this:
 
@@ -91,7 +93,9 @@ In the next lab, we'll add some more useful components to the page.
 
 3. While the input search is selected in the canvas, click the **Data** tab in the Properties pane.
 
-4. Click the little arrow at the top right of the Value field to display a list of variables.
+4. Click the little arrow at the top right of the **Value** field to display a list of variables. (you might need to hover your mouse on the field first)
+
+  ![Variable creation](images/valuefield.png)
 
 5. Next to the **Page** category, click **Create Variable** to create a page-level variable:
 
@@ -134,4 +138,4 @@ You may now **proceed to the next lab**.
 ## Acknowledgements
 * **Author** - Shay Shmeltzer, Oracle Cloud Development Tools, August 2022
 * **Contributors** -  Marcie Caccamo, Blaine Carter, Oracle Cloud Development Tools
-* **Last Updated By/Date** - Shay Shmeltzer, Oracle Cloud Development Tools, August 2022
+* **Last Updated By/Date** - Blaine Carter, Oracle Cloud Development Tools, March 2023

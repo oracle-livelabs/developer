@@ -4,7 +4,10 @@
 
 Rowfactory functions enable queries to return objects other than tuples. They can be used to provide names for the various columns or to return custom objects. This lab will show how to use rowfactory functions from Python
 
-Estimated Lab Time: 2 minutes
+Estimated Lab Time: 3 minutes
+
+Watch the video below for a quick walk-through of the lab.
+[Rowfactory Functions](videohub:1_l5w1xt8h)
 
 ### Objectives
 
