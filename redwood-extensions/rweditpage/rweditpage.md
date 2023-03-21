@@ -35,7 +35,7 @@ In this lab, you will:
 
   ![Design view](images/editpage.png)
 
-4. In the Components palette search for **edit**, and locate the **Simple Create and Edit Template**:
+4. In the Components palette search for **edit**, and locate the **Simple Create and Edit Page Template**:
 	  ![Edit template](images/editcomponents.png)
 
 5. Drag it to the top of the page hierarchy in the Structure pane, and drop it when you see a blue line above the first Grid Row.
@@ -50,7 +50,7 @@ In this lab, you will:
 	|Primary action label | Save |
 	{: title="Template Properties"}
 
-Your screen should look like this:
+Your screen should look similar to this:
 	  ![template properties](images/editproperties.png)
 
 Now that the template is set, let's redisplay the content of the page in its correct location in the template.
@@ -161,7 +161,7 @@ A pattern applies more than just a new look and feel to the user interface; it c
 
 7. In the Structure pane, locate the **Form Layout**.
 
-8. Drag **Form Layout** and drop it onto the first **div** in the first **Foldout Panel** in the Structure pane:
+8. Drag **Form Layout** and drop it onto the first **div** in the first **Summarizing Foldout Panel** in the Structure pane:
  ![Form layout component](images/dragform.png)
 
 	Your page content should be back in place. However, we're displaying too much information in this panel, so let's move some of it to the next panel.
@@ -169,10 +169,10 @@ A pattern applies more than just a new look and feel to the user interface; it c
 9. In the Components palette, find the **Form Layout** component:
 	  ![Form layout](images/formcomponent.png)
 
-10. Drag it to the second **Foldout Panel** and drop it onto the first **div**, selecting the **Default** slot:
+10. Drag it to the second **Summarizing Foldout Panel** and drop it onto the first **div**:
 		![Second drag](images/dragform2.png)
 
-11. In the Structure pane select, click the fourth field in the Form Layout, and **Shift-select** all the other fields after that. Drag all of them into the new **Form Layout** you created in the second foldout panel:
+11. In the Structure pane select, click the fourth field in the Form Layout, and **Shift-select** all the other fields after that. Drag all of them into the new **Form Layout** you created in the second **Summarizing Foldout Panel**:
 	  ![drag fields](images/dragfield2.png)
 
 12. Select this second **Form Layout** in the Structure pane.  In the Properties pane, change the **Label Edge** property to **Start**.
@@ -192,4 +192,4 @@ Your work is finished! In the real world, at this point you would likely do more
 ## Acknowledgements
 * **Author** - Shay Shmeltzer, Oracle Cloud Development Tools, September 2022
 * **Contributors** -  Marcie Caccamo, Blaine Carter, Oracle Cloud Development Tools
-* **Last Updated By/Date** - Shay Shmeltzer, Oracle Cloud Development Tools, September 2022
+* **Last Updated By/Date** - Blaine Carter, Oracle Cloud Development Tools, March 2023

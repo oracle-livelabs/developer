@@ -44,7 +44,7 @@ Users with [the right roles](https://docs.oracle.com/en/cloud/paas/visual-builde
 
 5. Click **New**, then select **New Application Extension** to create a new workspace for your extension:
 
-	![new workspace](images/newWorkspace.png)
+	![new workspace](images/newworkspace.png)
 
 6. In the New Application Extension dialog, populate the fields with these values:
 | Field | Value | Explanation |
@@ -120,4 +120,4 @@ You may now **proceed to the next lab**.
 ## Acknowledgements
 * **Author** - Shay Shmeltzer, Oracle Cloud Development Tools, September 2022
 * **Contributors** -  Marcie Caccamo, Blaine Carter, Oracle Cloud Development Tools
-* **Last Updated By/Date** - Shay Shmeltzer, Oracle Cloud Development Tools, September 2022
+* **Last Updated By/Date** - Blaine Carter, Oracle Cloud Development Tools, March 2023

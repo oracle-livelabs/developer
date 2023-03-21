@@ -1,4 +1,4 @@
-# Add Navigation to Your Web App
+# Add navigation between pages
 
 ## Introduction
 
@@ -8,7 +8,7 @@ Estimated Time: 5 minutes
 
 ### About this Lab
 
-Now that your changes are committed to a remote branch, you'll want to continue updating your web pages to make sure users can navigate between the Department and Employee pages. You do this by adding buttons that perform specific _actions_ when you click them. In VB Studio, this sequence of actions is called an _action chain_. In this lab, you'll add buttons that take you from the Departments page to the Employees pages and back again. Each button is associated with an event that sets off a navigation action chain.
+Now that your changes are committed to a remote branch, you'll want to continue updating your web pages to make sure users can navigate between the Department and Employee pages. You do this by adding buttons that perform specific _actions_ when you click them. In VB Studio, this sequence of actions is called an _action chain_. In this lab, you'll add buttons that take you from the Departments page to the Employees pages and back again. Each button is associated with an 'onclick' event that sets off a navigation action chain.
 
 ### Objectives
 
@@ -46,7 +46,7 @@ This lab assumes you have:
 
     The action now has the label `Navigate main-employees`.
 
-8. Click **Preview** ![Preview icon](images/preview-icon.png) in the header to run the page in its own browser tab and see how it will appear to a user. (You can continue to use the Live mode to test your app if you prefer, though the Preview form factor is a bit more pleasing.)
+8. Click **Preview** ![Preview icon](images/preview-icon.png) in the header to run the page in its own browser tab and see how it will appear to a user. (You can use the Live mode to test your app if you prefer, though the Preview form factor is a bit more pleasing.)
 
 9. In the new browser tab, click **Show Employees**.
 
@@ -68,7 +68,7 @@ This lab assumes you have:
 
     The action now has the label `Navigate main-departments`.
 
-7. Now click **Preview** ![Preview icon](images/preview-icon.png) and make sure you can get to the Departments page from the Employees page. Close the browser tab.
+7. Now click **Preview** ![Preview icon](images/preview-icon.png), then **Show Employees** in the new browser tab. Make sure you can get to the Departments page from the Employees page. Close the browser tab.
 8. In the Web Apps pane, click **main**, then **Diagram** to view the application's modified page flow. You'll see bi-directional arrows flowing between the main-departments page and the main-employees page. Select the main-departments page tile to see ![Green navigation icon](images/diagram-navigation-icon-green.png) ![Black navigation icon](images/diagram-navigation-icon-black.png) navigation icons appear in the page's Properties pane, indicating that you can now navigate from main-departments to main-employees and back.
 
     ![The web app's main page flow is shown. The main-departments page points to both the main-create-department page and the main-employees page. The main-employees page points to the main-create-employee page. The main-departments page is selected to show more details in the Properties pane.](images/page-flow.png "")
@@ -78,4 +78,4 @@ This lab assumes you have:
 ## Acknowledgements
 
 * **Author** - Sheryl Manoharan, VB Studio User Assistance, November 2021
-* **Last Updated By/Date** - Sheryl Manoharan, November 2022
+* **Last Updated By/Date** - Sheryl Manoharan, February 2023

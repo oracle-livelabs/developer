@@ -35,9 +35,9 @@ First we'll add two columns to the table, to hold each of the buttons.
 3. Click **New Empty Column** twice to add two empty columns to your table, then click anywhere outside the pop-up to dismiss it:
 	  ![Image alt text](images/columnsadded.png)
 
-	The new columns are represented by the vertical lines at the far left in the Table Columns area (in this example, under the word **Revenue**).
+	The new columns are represented by the horizontal lines at the far left in the Table Columns area (in this example, under the word **Revenue**).
 
-4. Click the vertical line for the first empty column, then click the arrow on the right to see this column's details.
+4. Click the horizontal line for the first empty column, then click the arrow on the right to see this column's details.
 
 5. In the **Columns, Header Text** field, type **Edit**, then click the **Table Columns** back arrow to go back to the Data tab:
 	  ![Image alt text](images/editcolumn.png)
@@ -53,7 +53,7 @@ We've now added two more columns to our table, which you can see in the canvas a
 
 ## Task 2: Add Icon Buttons
 
-Let's use the empty columns we just created to add some icon-based buttons that look like a pencil (for Edit) and an exclamation point (for Details).  Then we'll wire up these buttons to some actions so that they'll do something when the user clicks on them.
+Let's use the empty columns we just created to add some icon-based buttons that look like a pencil (for Edit) and a circled 'i' (for Details).  Then we'll wire up these buttons to some actions so that they'll do something when the user clicks on them.
 
 1. In Design view, click **Components** to display the Components palette, then search for the **Button** component:
 
@@ -155,7 +155,7 @@ VB Studio apps are event-driven, which means that an event is fired when an end 
 
 Your table now has buttons that are attractively rendered and that work as expected. The next step is to fine-tune the look and feel of the pages created by the Quick Starts by applying some Redwood templates to them.
 
-You may now **proceed to the next lab**.
+You may now close the preview browser tab and **proceed to the next lab**.
 
 
 ## Learn More
@@ -165,4 +165,4 @@ You may now **proceed to the next lab**.
 ## Acknowledgements
 * **Author** - Shay Shmeltzer, Oracle Cloud Development Tools, September 2022
 * **Contributors** -  Marcie Caccamo, Blaine Carter, Oracle Cloud Development Tools
-* **Last Updated By/Date** - Shay Shmeltzer, Oracle Cloud Development Tools, September 2022
+* **Last Updated By/Date** - Blaine Carter, Oracle Cloud Development Tools, March 2023
