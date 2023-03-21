@@ -7,7 +7,7 @@ In this lab, you will configure your development environment and collect informa
 Estimated time: 25 minutes
 
 Watch the video below for a quick walk-through of the lab.
-[Setup the development environment](videohub:1_5a1h7id1)
+[Setup the development environment](videohub:1_dwo39ivc)
 
 ### Objectives
 
@@ -19,10 +19,6 @@ Watch the video below for a quick walk-through of the lab.
     * 1 OCI Registry
     * 1 Virtual Cloud Network
 
-Watch this video for a quick walk-through of this lab
-
-Mac:
-[](youtube:Zo7r8Ahdhsc)
 ### Prerequisites
 
 * This lab requires an [Oracle Cloud account](https://www.oracle.com/cloud/free/). You may use your own cloud account, a cloud account that you obtained through a trial, a Free Tier account, or a LiveLabs account.

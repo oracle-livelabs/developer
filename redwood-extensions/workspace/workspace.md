@@ -88,7 +88,7 @@ From here you can navigate to all your project's components, including environme
 
 2. Click **New**, then select **New Application Extension** to create a new workspace for your extension:
 
-	![new workspace](images/newWorkspace.png)
+	![new workspace](images/newworkspace.png)
 
 3. In the New Application Extension dialog, populate the fields with these values:
 | Field | Value | Explanation |
@@ -142,4 +142,4 @@ Once you have all of the components installed, you may **proceed to the next lab
 ## Acknowledgements
 * **Author** - Shay Shmeltzer, Oracle Cloud Development Tools, September 2022
 * **Contributors** -  Marcie Caccamo, Blaine Carter, Oracle Cloud Development Tools
-* **Last Updated By/Date** - Shay Shmeltzer, Oracle Cloud Development Tools, September 2022
+* **Last Updated By/Date** - Blaine Carter, Oracle Cloud Development Tools, March 2023

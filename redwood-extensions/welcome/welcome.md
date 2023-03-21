@@ -32,7 +32,7 @@ You should now be in the Designer, VB Studio's visual editor. We'll start by cre
 
 3. Double-click  **main-start** to open the page in the Page Designer, one of the main visual editors in the Designer:
 
-  ![IDE](images/IDE.png)
+  ![IDE](images/ide.png)
 
 ## Task 2: Add a Page Template
 
@@ -40,7 +40,7 @@ Before we get started, let's explore the Designer a bit.
 
 **Tip:** There are lots of tabs you can click to expand/collapse different areas and give yourself more room to work.
 
-  ![IDE areas](images/IDE2.png)
+  ![IDE areas](images/ide2.png)
 
 Here are the key areas of the Designer you'll use throughout this workshop:
 
@@ -138,4 +138,4 @@ You may now **proceed to the next lab**.
 ## Acknowledgements
 * **Author** - Shay Shmeltzer, Oracle Cloud Development Tools, August 2022
 * **Contributors** -  Marcie Caccamo, Blaine Carter, Oracle Cloud Development Tools
-* **Last Updated By/Date** - Shay Shmeltzer, Oracle Cloud Development Tools, August 2022
+* **Last Updated By/Date** - Blaine Carter, Oracle Cloud Development Tools, March 2023

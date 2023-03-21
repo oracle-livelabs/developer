@@ -24,7 +24,7 @@ When your account managers locate an account using our new page, it's quite poss
 
 1. In Design view, select the table in either the Structure pane or on the canvas:
 
-	![Table selection](images/Design.png)
+	![Table selection](images/design.png)
 
 2. In the Properties pane, click the **Quick Start** tab:
 
@@ -33,7 +33,7 @@ When your account managers locate an account using our new page, it's quite poss
 	As you can see, there are different types of Quick Starts to help us create pages with different functions.  
 
 3. Click **Add Edit Page**:
-	  ![Add edit page](images/addEdit.png)
+	  ![Add edit page](images/addedit.png)
 
 	In the Add Edit Page dialog the **accounts** object is already selected, which is what we want.
 	  ![endpoint selection](images/endpoints1.png)
@@ -58,7 +58,7 @@ When your account managers locate an account using our new page, it's quite poss
 
 	We're back on the Accounts search page in the Designer.  Notice that there's now an **Edit accounts** button at the top of the page:
 
-	  ![Edit button](images/editButton.png)
+	  ![Edit button](images/editbutton.png)
 
 We'll come back to this later, but for now let's use another Quick Start to help us create a page that displays more details about each account.
 
@@ -70,7 +70,7 @@ We'll use a similar process to create a page that displays more information on e
 
 2. In the Properties pane, click the Quick Start tab:
 
-  ![Quick start](images/Design2.png)
+  ![Quick start](images/design2.png)
 
 3. This time pick **Add Detail Page**, which will create a page that lets users edit the details of a row selected from the table.
 
@@ -130,4 +130,4 @@ You may now close the preview browser tab and **proceed to the next lab**.
 ## Acknowledgements
 * **Author** - Shay Shmeltzer, Oracle Cloud Development Tools, September 2022
 * **Contributors** -  Marcie Caccamo, Blaine Carter, Oracle Cloud Development Tools
-* **Last Updated By/Date** - Shay Shmeltzer, Oracle Cloud Development Tools, September 2022
+* **Last Updated By/Date** - Blaine Carter, Oracle Cloud Development Tools, March 2023
