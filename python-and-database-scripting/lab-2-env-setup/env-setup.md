@@ -65,12 +65,13 @@ python3 -V
 
 ## Task 2: Install python-oracledb driver
 
-1.  Install the `python-oracledb` module using python3 and pip.
+1.  Check if the Python driver is already installed. If you get a warning that the module is not found, then proceed to install the `python-oracledb` module using python3 and pip.
 
     On Oracle Linux 8, run the following in the Cloud Shell:
 
     ````
 <copy>
+    pip show oracledb
     python3 -m pip install oracledb cryptography --user
 </copy>
     ````
@@ -104,9 +105,10 @@ python3 -V
     wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/G1OGqC7vt8o0M_AOM_MU18yrJ3-6_1f82XIHoZYc1au3mszv_brD6trhq9CsTd6l/n/c4u04/b/livelabsfiles/o/samples.zip
     </copy>
     ````
-2. In the Cloud Shell, unzip the sample.zip file, then remove the .zip file:
+2. In the Cloud Shell, navigate to your home directory and unzip the sample.zip file, then remove the .zip file:
     ````
     <copy>
+    cd 
     unzip samples.zip
     </copy>
     ````
