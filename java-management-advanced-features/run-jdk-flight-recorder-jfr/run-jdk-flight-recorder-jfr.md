@@ -1,8 +1,8 @@
-# Run Java Flight Recorder (JFR)
+# Run JDK Flight Recorder (JFR)
 
 ## Introduction
 
-This lab walks you through the steps to run Java Flight Recorder (JFR) on any java app on your Fleet.
+This lab walks you through the steps to run JDK Flight Recorder (JFR) on any java app on your Fleet.
 
 Estimated Time: 20 mins
 
@@ -10,7 +10,7 @@ Estimated Time: 20 mins
 
 In this lab, you will:
 
-* Create a Java Flight Recorder Work Request using the Java Management Service console interface with the "Default.jfc" profile.
+* Create a JDK Flight Recorder Work Request using the Java Management Service console interface with the "Default.jfc" profile.
 * View and monitor the status of Work Requests created using the Java Management Service console interface.
 * Download the generated JFR file for further analysis.
 
@@ -23,7 +23,7 @@ In this lab, you will:
 * Access to the cloud environment and resources configured in [Lab 1](?lab=set-up-and-enable-advanced-features-on-java-management-service).
 * Have a Java application capable of running longer then 15 mins in your instance.
 
-## Task 1: Submit Java Flight Recorder Work Request
+## Task 1: Submit JDK Flight Recorder Work Request
 
 1. First, open the navigation menu, click **Observability & Management**, and then click **Fleets** under **Java Management**. Select the fleet that you have configured in [Lab 1](?lab=set-up-and-enable-advanced-features-on-java-management-service).
   
@@ -35,11 +35,11 @@ In this lab, you will:
   
     ![image of fleet details page with crypto event analysis button](images/fleet-managed-instances.png)
 
-3. Scroll down and under **Resources**, select **Applications**. You should see a list of Java applications running in this managed instance. Select the long running Java application you want to run with JFR and click **Run Java Flight Recorder** button.
+3. Scroll down and under **Resources**, select **Applications**. You should see a list of Java applications running in this managed instance. Select the long running Java application you want to run with JFR and click **Run JDK Flight Recorder** button.
   
     ![image of crypto event run settings](images/managed-instance-applications-run-jfr.png)
 
-4. In the **Java Flight Recorder** (JFR) Window, select **Recording option**: **Select from default profiles**
+4. In the **JDK Flight Recorder** (JFR) Window, select **Recording option**: **Select from default profiles**
 
     Under the **Select default profiles**, click on the dropdown menu and select **Default.jfc**
 
@@ -55,7 +55,7 @@ In this lab, you will:
 
     ![image of work request](images/managed-instance-to-fleet-navigation.png)
 
-6. Scroll down to the **Resources** menu and select **Work requests**. You should see a list of the Work Requests that are currently in your Fleet. **Java Flight Recorder** that was started should be at the top of the list.
+6. Scroll down to the **Resources** menu and select **Work requests**. You should see a list of the Work Requests that are currently in your Fleet. **JDK Flight Recorder** that was started should be at the top of the list.
   
     ![image of work request](images/jfr-work-request-started.png)
 
@@ -69,12 +69,12 @@ In this lab, you will:
 
     ![image of crypto event run settings](images/fleet-bucket-link.png)
 
-9. The raw copy of the **Java Flight Recorder** report is stored in the file: **JMS** > **JFR** > **fleet-ocid** > **instance-ocid** > **application-name.jfr**
+9. The raw copy of the **JDK Flight Recorder** report is stored in the file: **JMS** > **JFR** > **fleet-ocid** > **instance-ocid** > **application-name.jfr**
 
     ![image of crypto event analysis bucket object](images/jfr-recording-download.png)
 
 
-10. You can open the **Java Flight Recorder** recording in your favorite JFR viewer or you can use the Oracle's **JDK Mission Control** to view the files. 
+10. You can open the **JDK Flight Recorder** recording in your favorite JFR viewer or you can use the Oracle's **JDK Mission Control** to view the files. 
 
     JMC download link: https://www.oracle.com/java/technologies/jdk-mission-control.html
 
@@ -92,4 +92,4 @@ You may now **proceed to the next lab.**
 ## Acknowledgements
 
 * **Author** - Somik Khan, November 2022
-* **Last Updated By** - Somik Khan, November 2022
+* **Last Updated By** - Sherlin Yeo, March 2023
