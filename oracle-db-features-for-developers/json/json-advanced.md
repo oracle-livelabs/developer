@@ -4,7 +4,7 @@
 
 This lab will explore advanced concepts around JSON data and how you can use SQL and PL/SQL against JSON data stored in Oracle Database 19c.  
 
-Estimated Lab Time:  30 minutes
+Estimated Time:  30 minutes
 
 ### About JSON in the Oracle Database
 
@@ -39,7 +39,7 @@ If you have logged out of the Cloud Shell, perform the commands below.
     sudo su - oracle
     </copy>
     ````
-    ![](./images/sudo-oracle.png " ")
+    ![substitute user](./images/sudo-oracle.png " ")
 
 3.  Set your oracle environment.  When prompted enter **[ORCL]**
     ````
@@ -49,7 +49,7 @@ If you have logged out of the Cloud Shell, perform the commands below.
     ORACLE_SID = [ORCL] ? ORCL
     The Oracle base remains unchanged with value /u01/app/oracle
     ````
-    ![](./images/oraenv.png " ")
+    ![set environment](./images/oraenv.png " ")
 
 4.  Use SQLPlus to connect to the **PDB01** Pluggable database as SYS.
 
@@ -59,7 +59,7 @@ If you have logged out of the Cloud Shell, perform the commands below.
     </copy>
     ````
 
-    ![](./images/sqlplus.png " ")
+    ![SQLPlus](./images/sqlplus.png " ")
 
 5.  Once connected to SQL\*Plus, connect to the OE user.
     ````
@@ -100,7 +100,7 @@ If you have logged out of the Cloud Shell, perform the commands below.
     </copy>
     ````
 
-    ![](./images/step2.1-jsondocintable.png " " )
+    ![retrieve the sub-regions](./images/step2.1-jsondocintable.png " " )
 
 2.  Query the regions and sub-regions stored in these 19 documents, retrieving them as relational data.
 
@@ -132,7 +132,7 @@ If you have logged out of the Cloud Shell, perform the commands below.
     </copy>
     ````
 
-    ![](./images/p_jsonDoc_9.png " ")
+    ![nested clause](./images/p_jsonDoc_9.png " ")
 
     Now we have the entire geographic division.
 
@@ -160,7 +160,7 @@ If you have logged out of the Cloud Shell, perform the commands below.
     </copy>
     ````
 
-    ![](./images/step3.1-retrieveinfo.png " " )
+    ![all castles in sub-region](./images/step3.1-retrieveinfo.png " " )
 
 2.  Test get_castles function, using as input *Valencia* region (adminCode1 : 60), and *Provincia de Alicante* sub-region (adminCode2: A).
 
@@ -170,7 +170,7 @@ If you have logged out of the Cloud Shell, perform the commands below.
     </copy>
     ````
 
-    ![](./images/p_jsonDoc_10.png " ")
+    ![test function](./images/p_jsonDoc_10.png " ")
 
 3.  Use this function in a loop to retrieve castles from all sub-regions, as shown in the following example, storing the JSON documents inside the same table.
 
@@ -203,7 +203,7 @@ If you have logged out of the Cloud Shell, perform the commands below.
     </copy>
     ````
 
-    ![](./images/p_jsonFunc_3.png " ")
+    ![insert documents](./images/p_jsonFunc_3.png " ")
 
 4.  At this point we have enough JSON documents inside the database, and all the information to develop our application that provides information about medieval castles in Spain.
 
@@ -227,7 +227,7 @@ If you have logged out of the Cloud Shell, perform the commands below.
     </copy>
     ````
 
-    ![](./images/p_jsonDoc_11.png " ")
+    ![medieval castles in Spain](./images/p_jsonDoc_11.png " ")
 
     This query should return 269 rows.
 
@@ -388,7 +388,7 @@ In Oracle Database 19c, there were some improvements in the simplicity of queryi
     </copy>
     ````
 
-    ![](./images/step4.1-orderstable.png " " )
+    ![select orders](./images/step4.1-orderstable.png " " )
 
 2.  SQL/JSON function *JSON\_OBJECT* constructs JSON objects from relational (SQL) data. Using this function on a relational table to generate JSON, prior to 19c, it was necessary to specify for each column an explicit field name–value pair.
 
@@ -401,7 +401,7 @@ In Oracle Database 19c, there were some improvements in the simplicity of queryi
     </copy>
     ````
 
-    ![](./images/step4.2-orderstable.png " " )
+    ![JSON objects from relational data](./images/step4.2-orderstable.png " " )
 
     This requires more time and code to be written.
 
@@ -415,7 +415,7 @@ In Oracle Database 19c, there were some improvements in the simplicity of queryi
     </copy>
     ````
 
-    ![](./images/step5.1-jsonarg.png " " )
+    ![generate JSON objects](./images/step5.1-jsonarg.png " " )
 
 2.  Another improvement was made in generating JSON documents in 19c using wildcard. The argument in this case can be the table name or alias, or a view name, followed by a dot and an asterisk wildcard (.\*), or just an asterisk wildcard like in the following example.
 
@@ -425,7 +425,7 @@ In Oracle Database 19c, there were some improvements in the simplicity of queryi
     </copy>
     ````
 
-    ![](./images/step5.2-wildcard.png " " )
+    ![generate JSON documents using wildcard](./images/step5.2-wildcard.png " " )
 
 In conclusion, in Oracle 19c we can say that the *JSON\_OBJECT* function follows what is allowed for column names and wildcards in a SQL SELECT query.
 
@@ -476,7 +476,7 @@ In conclusion, in Oracle 19c we can say that the *JSON\_OBJECT* function follows
     ORA-40579: star expansion is not allowed
     ````
 
-    ![](./images/p_synExp-1.png " ")
+    ![star expansion is not allowed](./images/p_synExp-1.png " ")
 
 2.  There is a solution for that. The workaround for this issue is to create a view on the original table. This view will compile the custom data types and will use the result as standard data types.
 
@@ -512,7 +512,7 @@ You can use *JSON_MERGEPATCH* in a SELECT list, to modify the selected documents
     </copy>
     ````
 
-    ![](./images/p_updateJsonDoc_1.png " ")
+    ![country description](./images/p_updateJsonDoc_1.png " ")
 
 2.  JSON Merge Patch acts a bit like a UNIX patch utility — you give it:
     * a source document to patch and
@@ -526,7 +526,7 @@ You can use *JSON_MERGEPATCH* in a SELECT list, to modify the selected documents
     </copy>
     ````
 
-    ![](./images/p_updateJsonDoc_2.png " ")
+    ![change one attribute](./images/p_updateJsonDoc_2.png " ")
 
 3.  However, you cannot use it to add, remove, or change array elements (except by explicitly replacing the whole array). For example, our documents received from GeoNames are all arrays.
 
@@ -555,7 +555,7 @@ You can use *JSON_MERGEPATCH* in a SELECT list, to modify the selected documents
     </copy>
     ````
 
-    ![](./images/p_updateJsonDoc_3.png " ")
+    ![object with 17 fields](./images/p_updateJsonDoc_3.png " ")
 
     Take a note of the capital attribute in that document — *"capital":"Madrid"*. There is always a solution.
 
@@ -570,7 +570,7 @@ You can use *JSON_MERGEPATCH* in a SELECT list, to modify the selected documents
     </copy>
     ````
 
-    ![](./images/p_updateJsonDoc_4.png " ")
+    ![pretty format](./images/p_updateJsonDoc_4.png " ")
 
 5.  Change two attributes in that JSON document. Remember, the return value for a dot-notation query is always a string, and we can work with strings. For example we can add the first part of it, before element geonames[0], and the last part, to convert this single element back into an array, and print the resulted array in a pretty format.
 
@@ -581,7 +581,7 @@ You can use *JSON_MERGEPATCH* in a SELECT list, to modify the selected documents
     </copy>
     ````
 
-    ![](./images/p_updateJsonDoc_5.png " ")
+    ![dot-notation query](./images/p_updateJsonDoc_5.png " ")
 
 6.  Further, we can add the altered element with the updated values, as an additional JSON document, to the first element with the original value. For example, we can keep our original array elements, and add new ones with new values.
 
@@ -592,7 +592,7 @@ You can use *JSON_MERGEPATCH* in a SELECT list, to modify the selected documents
     </copy>
     ````
 
-    ![](./images/p_updateJsonDoc_6.png " ")
+    ![add new elements](./images/p_updateJsonDoc_6.png " ")
 
     In the end, everything is possible, there are no restrictions.
 
@@ -607,7 +607,7 @@ You can use *JSON_MERGEPATCH* in a SELECT list, to modify the selected documents
     </copy>
     ````
 
-    ![](./images/step7.7-insertnewdoc.png " " )
+    ![JSON_MERGEPATCH function](./images/step7.7-insertnewdoc.png " " )
 
     In this case, we insert a new document.
 
@@ -621,7 +621,7 @@ You can use *JSON_MERGEPATCH* in a SELECT list, to modify the selected documents
     </copy>
     ````
 
-    ![](./images/p_updateJsonDoc_7.png " ")
+    ![update documents in JSON column](./images/p_updateJsonDoc_7.png " ")
 
     This is a simple JSON document, with three fields. The third field is also a collection with three fields.
 
@@ -635,7 +635,7 @@ You can use *JSON_MERGEPATCH* in a SELECT list, to modify the selected documents
     </copy>
     ````
 
-    ![](./images/step7.9-updatefield.png " " )
+    ![update second field](./images/step7.9-updatefield.png " " )
 
     ````
     <copy>
@@ -643,7 +643,7 @@ You can use *JSON_MERGEPATCH* in a SELECT list, to modify the selected documents
     </copy>
     ````
 
-    ![](./images/p_updateJsonDoc_8.png " ")
+    ![select document](./images/p_updateJsonDoc_8.png " ")
 
 10.  You can add the *PRETTY* clause to the UPDATE statement, and have more clarity when returning the document from our table.
 
@@ -653,7 +653,7 @@ You can use *JSON_MERGEPATCH* in a SELECT list, to modify the selected documents
     </copy>
     ````
 
-    ![](./images/step7.10-prettyupdatefield.png " " )
+    ![update pretty document](./images/step7.10-prettyupdatefield.png " " )
 
     ````
     <copy>
@@ -661,7 +661,7 @@ You can use *JSON_MERGEPATCH* in a SELECT list, to modify the selected documents
     </copy>
     ````
 
-    ![](./images/p_updateJsonDoc_9.png " ")
+    ![select pretty document](./images/p_updateJsonDoc_9.png " ")
 
     This one looks much nicer. Remember to commit changes if you want to keep them in the database.
 
@@ -712,7 +712,7 @@ As a performance enhancement in Oracle 19c, if you create a refresh-on-statement
     </copy>
     ````
 
-    ![](./images/step8.1-materializedview.png " " )
+    ![materialized view](./images/step8.1-materializedview.png " " )
 
 2.  Test the materialized view with the following query. Optionally, use set timing on when running this query, and the query we used to retrieve information about castles after we retrieved all required JSON documents from the GeoNames web service, and compare the results. The difference may look insignificant, because there are only 269 castles, but imagine that we could have millions of rows in one application, and thousands of concurrent users.
 
@@ -728,7 +728,7 @@ As a performance enhancement in Oracle 19c, if you create a refresh-on-statement
     </copy>
     ````
 
-    ![](./images/step8.2-testmaterializedview.png " " )
+    ![test materialized view](./images/step8.2-testmaterializedview.png " " )
 
     In the following Step we will get into more details about performance.
 
@@ -760,9 +760,9 @@ Significant performance gains can often be achieved using query rewrite and mate
     </copy>
     ````
 
-    ![](./images/p_mvSupp_1a.png " ")
+    ![first castle in every sub-region](./images/p_mvSupp_1a.png " ")
 
-    ![](./images/p_mvSupp_1b.png " ")
+    ![45 castles](./images/p_mvSupp_1b.png " ")
 
 4.  Flush the shared pool, flushing the cached execution plan and SQL Queries from memory.
 
@@ -772,7 +772,7 @@ Significant performance gains can often be achieved using query rewrite and mate
     </copy>
     ````
 
-    ![](./images/step8.4-flushsharedpool.png " " )
+    ![flush shared pool](./images/step8.4-flushsharedpool.png " " )
 
 5.  Display the execution plan chosen by the Oracle optimizer for this statement.
 
@@ -791,7 +791,7 @@ Significant performance gains can often be achieved using query rewrite and mate
     </copy>
     ````
 
-    ![](./images/step8.5-explainplan.png " " )
+    ![display execution plan](./images/step8.5-explainplan.png " " )
 
 6.  The *DBMS\_XPLAN* package provides an easy way to display the output of the *EXPLAIN PLAN* command in several, predefined formats. By default, the table function *DISPLAY* format and display the contents of a plan table.  We can see the dot notation calls get rewritten as a *JSON\_TABLE* call, because we can see the *JSONTABLE EVALUATION* step in the plan (6), and we can see the data has been returned from the *JSON\_CASTLES\_MV* materialized view (4).
 
@@ -815,7 +815,7 @@ Significant performance gains can often be achieved using query rewrite and mate
     ---------------------------------------------------------------------------------------------------
     ````
 
-    ![](./images/p_mvSupp_2.png " ")
+    ![execution plan](./images/p_mvSupp_2.png " ")
 
     If the query is too simple, there may not be a query rewrite, in this case it will not be eligible to be rewritten to use the materialized view.
 
@@ -844,7 +844,7 @@ We will start with the second use case, generating JSON data using SQL/JSON func
     </copy>
     ````
 
-    ![](./images/p_jsonObject_1.png " ")
+    ![generate data](./images/p_jsonObject_1.png " ")
 
 2.  Some client drivers (like SQL Developer, for example) might try to scan query text and identify bind variables before sending the query to the database. In some such cases a colon as name–value separator in *JSON\_OBJECT* might be misinterpreted as introducing a bind variable. You can use keyword VALUE as the separator to avoid this problem ('Country ' VALUE country), or you can simply enclose the value part of the pair in parentheses: 'Country':(country). Here is the same SELECT statement, that can be executed successfully in SQL Developer.
 
@@ -861,7 +861,7 @@ We will start with the second use case, generating JSON data using SQL/JSON func
     </copy>
     ````
 
-    ![](./images/step9.2-colonseperate.png " " )
+    ![avoid colon](./images/step9.2-colonseperate.png " " )
 
 3.  These JSON documents generated from the relational data, and having a completely personalized structure, can be inserted in our table.
 
@@ -885,7 +885,7 @@ We will start with the second use case, generating JSON data using SQL/JSON func
     </copy>
     ````
 
-    ![](./images/p_jsonObject_2.png " ")
+    ![personalized structure](./images/p_jsonObject_2.png " ")
 
 4.  Run the following select to verify the inserted documents, and observe these are individual JSON objects, describing each medieval castle, from the 269 entries we have in this database.
 
@@ -895,7 +895,7 @@ We will start with the second use case, generating JSON data using SQL/JSON func
     </copy>
     ````
 
-    ![](./images/p_jsonObject_3.png " ")
+    ![verify documents](./images/p_jsonObject_3.png " ")
 
     Observe the structure, and values, in these JSON documents. Note it is easier for our Tourist Recommendations application to list these castles for our end users.
 
@@ -920,7 +920,7 @@ Conversely, you can convert JSON documents to a user-defined object type.
     </copy>
     ````
 
-    ![](./images/step9.5-createtype.png " " )
+    ![create type](./images/step9.5-createtype.png " " )
 
 6.  Now convert the JSON data to an instance of a SQL object type using the SQL/JSON function *JSON\_VALUE*. This can be done in just one query.
 
@@ -930,7 +930,7 @@ Conversely, you can convert JSON documents to a user-defined object type.
     </copy>
     ````
 
-    ![](./images/p_jsonObject_4.png " ")
+    ![convert data](./images/p_jsonObject_4.png " ")
 
     In Oracle Database 19c, the function *JSON\_VALUE* also accepts an optional *RETURNING* clause, apart from the optional ERROR clause we tested already. In this case, the *JSON_VALUE* function uses the user-defined object type in the *RETURNING* clause, and returns the instantiated object type from a query, based on the data in the source JSON document.
 
@@ -948,7 +948,7 @@ Conversely, you can convert JSON documents to a user-defined object type.
     </copy>
     ````
 
-    ![](./images/step9.7-createobjecttype.png " " )
+    ![create new type](./images/step9.7-createobjecttype.png " " )
 
 8.  Review the results of this query, compared with the previous one, and check the differences.
 
@@ -958,7 +958,7 @@ Conversely, you can convert JSON documents to a user-defined object type.
     </copy>
     ````
 
-    ![](./images/p_jsonObject_5.png " ")
+    ![review results](./images/p_jsonObject_5.png " ")
 
     These custom object types can be used to optimize our applications, directly from the database layer.
 
@@ -972,7 +972,7 @@ Conversely, you can convert JSON documents to a user-defined object type.
     </copy>
     ````
 
-    ![](./images/step9.9-customtypetable.png " " )
+    ![create table](./images/step9.9-customtypetable.png " " )
 
 10. Insert into the new table the information about our all 269 medieval castles.
 
@@ -990,7 +990,7 @@ Conversely, you can convert JSON documents to a user-defined object type.
     </copy>
     ````
 
-    ![](./images/step9.10-valuesinsert.png " " )
+    ![insert documents](./images/step9.10-valuesinsert.png " " )
 
 11. Select all 269 records from the new table, returned as user-defined SQL objects.
 
@@ -1000,7 +1000,7 @@ Conversely, you can convert JSON documents to a user-defined object type.
     </copy>
     ````
 
-    ![](./images/p_jsonObject_6.png " ")
+    ![select all documents](./images/p_jsonObject_6.png " ")
 
     Now we have just the castles in a new table, with the attributes we need in our application.
 
@@ -1018,7 +1018,7 @@ It would be equally easy to convert user-defined SQL object type instances into 
     </copy>
     ````
 
-    ![](./images/p_jsonObject_7.png " ")
+    ![select user-defined types](./images/p_jsonObject_7.png " ")
 
     In this case our application uses JSON format, and you can make this conversion on the fly from the SELECT statement.
 
@@ -1032,7 +1032,7 @@ It would be equally easy to convert user-defined SQL object type instances into 
     </copy>
     ````
 
-    ![](./images/p_jsonObject_8.png " ")
+    ![pretty format](./images/p_jsonObject_8.png " ")
 
     This is a very simple example, and it is not totally necessary, but imagine you have JSON documents with hundreds of attributes.
 
@@ -1046,7 +1046,7 @@ It would be equally easy to convert user-defined SQL object type instances into 
     </copy>
     ````
 
-    ![](./images/p_jsonObject_9.png " ")
+    ![castle ID numbers](./images/p_jsonObject_9.png " ")
 
     The output is a collection with two records, having a valid JSON structure.
 
@@ -1060,7 +1060,7 @@ It would be equally easy to convert user-defined SQL object type instances into 
     </copy>
     ````
 
-    ![](./images/p_jsonObject_10.png " ")
+    ![pretty format](./images/p_jsonObject_10.png " ")
 
 This lab is now complete.
 
@@ -1068,5 +1068,4 @@ This lab is now complete.
 
 - **Author** - Valentin Leonard Tabacaru
 - **Contributors** - Anoosha Pilli, Troy Anthony, Product Manager, Dylan McLeod, LiveLabs QA Intern
-- **Last Updated By/Date** - Kay Malcolm, DB Product Management, August 2020
-
+- **Last Updated By/Date** - Valentin Tabacaru, Mar 2023
