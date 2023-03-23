@@ -1,4 +1,4 @@
-# Deploy a SingleInstance Database using a static NFS filesystem
+# Deploy a SingleInstance Database with a static NFS filesystem
 
 ## Introduction
 
