@@ -45,7 +45,7 @@ In this lab, you will:
 
   ![image of download api key](images/api-key-download.png)
 
-6. The key is added and the **Configuration File Preview** is displayed. Click **Copy** to copy the file snippets and paste it into a text file. Replace `<path to your private keyfile>` and save the file as **config**.
+6. The key is added and the **Configuration File Preview** is displayed. Click **Copy** to copy the file snippets and paste it into a text file, using a text editor. Replace `<path to your private keyfile>` and save the file as **config**.
 
 7. The file snippet includes required parameters and values you'll need to create your configuration file. Refer to the [SDK and CLI Configuration File](https://docs.oracle.com/en-us/iaas/Content/API/Concepts/sdkconfig.htm) to see an example of the configuration file and `key_file` entry.
 
@@ -55,7 +55,7 @@ In this lab, you will:
 
   ![image of configuration file in .oci folder](images/config-file-oci-location.png)
 
-9. Set the root user to have **Read-only** permissions for the config file. No other user should have permissions.
+9. Set the root user to have **Read-only** permissions for the config file and private key. No other user should have permissions.
 
   ![image of configuration file permissions](images/config-file-permissions.png)
 
@@ -274,4 +274,4 @@ You may now **proceed to the next lab.**
 ## Acknowledgements
 
 * **Author** - Esther Neoh, Java Management Service
-* **Last Updated By** - Yixin Wei, June 2022
+* **Last Updated By** - Sherlin Yeo, March 2023
