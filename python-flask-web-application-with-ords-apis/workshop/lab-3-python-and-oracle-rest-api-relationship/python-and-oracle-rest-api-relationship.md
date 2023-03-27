@@ -2,9 +2,9 @@
 
 ## Introduction
 
-In the last Lab, you explored Oracle REST APIs in a Swagger Editor session. By now, you should better understand what these Oracle REST APIs are capable of. 
+In the previous Lab, you explored Oracle REST APIs in a Swagger Editor session. By now, you should better understand what these Oracle REST APIs are capable of. 
 
-Next, we'll add Oracle REST APIs to our Flask application's Python file. And briefly discuss the Flask application's routes and their functions.
+Next, we'll add Oracle REST APIs to our Flask application and briefly discuss the application's routes and their functions.
 
 Estimated Time: 20 minutes
 
@@ -14,12 +14,15 @@ Watch the video below for a quick walk-through of the lab.
 ### Objectives
 
 In this Lab, you will:
-* Add Oracle REST APIs to our Flask application
-* Review the provided Python application 
+
+* Add Oracle REST APIs to a Flask application
+* Review the basic operations of the application
 
 ### Prerequisites
+
 This Lab assumes you have:
-* All previous labs successfully completed
+
+* Successfully completed all previous Labs
 
 ## Task 1: Locate and open the Python file for the Flask application
 
@@ -27,7 +30,7 @@ This Lab assumes you have:
 
    ![Open the lab_3_app.py file folder in VS Code.](images/opening-lab-3-app-py-file.png " ")
 
-   > 🏴‍☠️ The examples in this Lab will use Visual Studio Code.
+   > 🏴‍☠️ The examples in this Lab will rely on Visual Studio Code for code editing.
 
 ## Task 2: Review the Python application and functions
 
@@ -111,7 +114,7 @@ This Lab assumes you have:
        ![Creating markers for Folium.](images/creating-markers-for-folium-map.png " ")
        <sup>*Notice how we include **`museum_name`** as HTML, icon color, and type, as well as a **`tooltip`.***</sup>
 
-       > 💡 The tooltip generates a helpful bubble that reads *Click me!*when hovered over.
+       > 💡 The tooltip generates a helpful bubble that reads *Click me!* when hovered over.
 
 5. Finally, you'll see the line **`lvmap = m._repr_html_()`**:
 
@@ -133,7 +136,7 @@ This Lab assumes you have:
 
     ![The Get Price route](images/app-route-get-price.png " ")
 
-    The function of the **`getPrice()`** route appends **`a`** to an ORDS endpoint. To see this in action, take this ORDS URL and place it into your browser's address bar. 
+    The function of the **`getPrice()`** route appends the letter **`a`** to an ORDS endpoint. To see this in action, take this ORDS URL and place it into your browser's address bar. 
     
       ```
       <copy>https://yfuxkbz2ls7taze-ordshandsonlabs.adb.us-phoenix-1.oraclecloudapps.com/ords/python/flask/products/pricing/</copy>
@@ -145,15 +148,15 @@ This Lab assumes you have:
         
      ![404 pricing not found error.](images/pricing-not-found-404-error.png " ")
 
-     That's because our function needs a specific **`product_id`**. Remember from the last Lab, this Path: **`/products/pricing/{product_id}`**. 
+     That's because our function needs a specific **`product_id`**. Recall from the previous Lab, we encountered this Path: **`/products/pricing/{product_id}`**.
     
-    Include a 1, 2, or 3 after that final trailing backslash, and hit enter. *Like this*: 
+    This time, include a 1, 2, or 3 after that final trailing backslash, and hit enter. *Like this*: 
  
     ![Updated get request with product ID included.](images/pricing-info-with-product-id-included.png " ")
 
     Now you should have a better idea of how this and other functions will work "under the covers." At this stage, a user will have triggered the retrieval of product prices from a product table. This information is used as one of the fields in a drop-down menu (found on the **`orderform.html`** page). 
     
-    Make sure your **`get_price`** function has the correct Path: 
+    Before moving on, m ake sure your **`get_price`** function has the correct Path: 
       ```
       <copy>https://yfuxkbz2ls7taze-ordshandsonlabs.adb.us-phoenix-1.oraclecloudapps.com/ords/python/flask/products/pricing/</copy>
       ``` 
@@ -187,11 +190,11 @@ This Lab assumes you have:
     
 3. **`@app.route('/get_description')`**
   
-  Much like the **`get_price`** app route, this function requests product description information from our database using a similar syntax. We then **`return jsonify(product_description)`**, which takes the response and converts it as we did in the previous function.
+  Much like the **`get_price`** app route, this function requests product description information from our database using a similar syntax. We then **`return jsonify(product_description)`**, which takes the response (production description information) and converts it as we saw in the previous function.
 
     ![The Get Description route](images/app-route-get-description.png " ")
   
-    Take place this in the correct location, so our function works:  
+    Take this and place it in the correct location (so our function works properly):  
       ```
       <copy>https://yfuxkbz2ls7taze-ordshandsonlabs.adb.us-phoenix-1.oraclecloudapps.com/ords/python/flask/products/descriptions/</copy>
       ```
@@ -369,14 +372,18 @@ This Lab assumes you have:
 ### You may now **proceed to the next Lab.**
 
 ## Learn More
-* [A minimal application in Flask](https://flask.palletsprojects.com/en/2.1.x/quickstart/#a-minimal-application)
-* [About the Flask "Application Object"](https://flask.palletsprojects.com/en/2.1.x/api/#application-object)
+* [A minimal application in Flask](https://flask.palletsprojects.com/en/2.2.x/quickstart/)
+* [About the Flask "Application Object"](https://flask.palletsprojects.com/en/2.2.x/api/)
 
 ## Acknowledgements
+
 * **Author** - Chris Hoina, Senior Product Manager, Database Tools
+
 * **Contributors**
-  - Jeff Smith, Distinguished Product Manager, Database Tools
-  - Justin Biard, Senior Member of Technical Staff, Database Tools 
-  - Zachary Talke, Product Manager, Database Tools
-  - Brian Spendolini, Principal Product Manager
-* **Last Updated By/Date** - Chris Hoina, August 2022
+
+  * Jeff Smith, Distinguished Product Manager, Database Tools
+  * Justin Biard, Senior Member of Technical Staff, Database Tools 
+  * Zachary Talke, Product Manager, Database Tools
+  * Brian Spendolini, Contributor
+
+* **Last Updated By/Date** - Chris Hoina/March 2023

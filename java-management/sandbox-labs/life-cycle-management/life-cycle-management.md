@@ -18,7 +18,7 @@ In this lab, you will:
 
 * Understand LCM operations
 * Remove Java runtime
-* Create a set of post java installation action consisting of changing the minimum key length for RSA to >2048 bits and disabling tls 1.0 and tls 1.1
+* Create a set of post Java installation action consisting of changing the minimum key length for RSA to >2048 bits and disabling TLS 1.0 and TLS 1.1
 * Install Java Runtimes
 * View and monitor LCM Work Requests
 
@@ -90,11 +90,11 @@ In this lab, you will:
 
    ![image of post java install action](images/post-java-install-action.png)
 
-4. Click on the combo box. A dropdown list of available post java installation actions will be shown.
+4. Click on the combo box. A dropdown list of available post Java installation actions will be shown.
 
    ![image of list of post java install action](images/post-java-install-action-list.png)
    
-   There are a total of 6 different post java installation actions to choose from.
+   There are a total of 6 different post Java installation actions to choose from.
    | Actions                                | Options   |
    |----------------------------------------|-----------|
    | Change minimum key length for EC       | 256 bits|
@@ -110,7 +110,7 @@ In this lab, you will:
       * Minimum key length for RSA > 2048 bits (e.g. for signed jars)
       * Disable TLS 1.0 and TLS 1.1
 
-      The post java installation actions can be configured differently based on different requirements.
+      The post Java installation actions can be configured differently based on different requirements.
   
 6. Select the  **Change minimum key length for RSA** option from the dropdown list. Another combo box will appear to the right. This contains the new minimum key length (in bits) that will be set for RSA signed jars.
 
@@ -120,7 +120,7 @@ In this lab, you will:
 
    ![image of LCM minimimum-rsa-key-length](images/post-install-rsa-select.png)
 
-7. Click on the **+ another action** button to add an additional post java installation action. Another combo box with the placeholder "Select an action" should appear in the next line. 
+7. Click on the **+ another action** button to add an additional post Java installation action. Another combo box with the placeholder "Select an action" should appear in the next line. 
 
    ![image of LCM add another action](images/lcm-add-another-action.png)
 
@@ -132,11 +132,11 @@ In this lab, you will:
 
    ![image of LCM disable tls options](images/lcm-disable-tls-options.png)
 
-9. Click on the **Save** button below. This should save all the defined post java installation actions.
+9. Click on the **Save** button below. This should save all the defined post Java installation actions.
 
     ![image of LCM post install action save](images/lcm-post-install-action-save.png)
 
-10. Return to the fleet details page, click on the tab **Lifecycle management settings**. The post java installation actions that had been defined earlier will be shown.
+10. Return to the fleet details page, click on the tab **Lifecycle management settings**. The post Java installation actions that had been defined earlier will be shown.
 
     ![image of fleet page post install action view](images/fleet-page-post-install-action-view.png)
 
@@ -161,11 +161,11 @@ In this lab, you will:
    Select the Java Runtime version you want to install.Click **Next**
    ![image of install java runtime selected next](images/install-java-runtime-selected-next.png)
   
-5. The next page should display a list of post java installation actions which had been defined previously in [Task 2](##task-2:-Setup post Java installation actions). Select the post java installation you want to perform. 
+5. The next page should display a list of post Java installation actions which had been defined previously in [Task 2](#Task2:SetuppostJavainstallationactions). Select the post Java installation you want to perform. 
 
    ![image of install java runtime select post install action](images/install-java-runtime-select-post-install-action.png)
 
-   >**Note:** If no post java installation action is selected, no post-install action will be executed after the java installation
+   >**Note:** If no post Java installation action is selected, no post-install action will be executed after the java installation
 
 6. Click **Install** to confirm the installation and submit a request for installation. This request is termed as a **Work Request**.
 
@@ -209,13 +209,13 @@ In this lab, you will:
     ```
 
 ## Task 4: (Optional) Modifying/Removing Post Java Installation Action
-1. This task is applicable if changes are to be made to the post java installation action.
+1. This task is applicable if changes are to be made to the post Java installation action.
 
 2. On the fleet details page, click on **More actions** and select **Modify Java runtime lifecycle management setting**. 
 
    ![image of fleet details post install action](images/fleet-details-page-lifecycle-management.png)
 
-   The **Lifecycle management settings** window should appear. It should show a list of actions defined earlier in [Task 1](##task-1:-Defining-Post-Java-Installation-Actions). 
+   The **Lifecycle management settings** window should appear. It should show a list of actions defined earlier in [Task 2](#Task2:SetuppostJavainstallationactions). 
    ![image of post install action two actions](images/post-install-action-two-actions.png)
 
 3. To add another action, click on the **+ another action** button. Another combo box with the placeholder "Select an action" should appear in the next line. 
@@ -238,12 +238,12 @@ In this lab, you will:
 
 6. Once all the modifications are made, click on the **Save** button below to save all the changes
 
-7. Return to the fleet details page, click on the tab **Lifecycle management settings** to view the updated post java installation actions.
+7. Return to the fleet details page, click on the tab **Lifecycle management settings** to view the updated post Java installation actions.
 
 You may now **proceed to the next lab**.
 
 ## Learn More
-* Refer to the [Java Runtime Lifecycle Management](https://docs.oracle.com/en-us/iaas/jms/doc/advanced-features.html#GUID-08673CB1-D87D-4BC5-A61D-E59DCC879ABB), [Work Request](https://docs.oracle.com/en-us/iaas/jms/doc/getting-started-java-management-service.html#GUID-47C63464-BC0C-4059-B552-ED9F33E77ED3) and [Viewing a Work Request](https://docs.oracle.com/en-us/iaas/jms/doc/fleet-views.html#GUID-F649F0E5-DD54-4DEC-A0F1-942FE3552C93) sections of the JMS documentation for more details.
+* Refer to the [Java Runtime Lifecycle Management](https://docs.oracle.com/en-us/iaas/jms/doc/advanced-features.html#GUID-08673CB1-D87D-4BC5-A61D-E59DCC879ABB), [Work Request](https://docs.oracle.com/en-us/iaas/jms/doc/getting-started-java-management-service.html#GUID-47C63464-BC0C-4059-B552-ED9F33E77ED3) and [Viewing a Work Request](https://docs.oracle.com/en-us/iaas/jms/doc/viewing-work-request.html#GUID-F649F0E5-DD54-4DEC-A0F1-942FE3552C93) sections of the JMS documentation for more details.
 
 * Use the [Troubleshooting](https://docs.oracle.com/en-us/iaas/jms/doc/troubleshooting.html#GUID-2D613C72-10F3-4905-A306-4F2673FB1CD3) chapter for explanations on how to diagnose and resolve common problems encountered when installing or using Java Management Service.
 
@@ -253,4 +253,4 @@ You may now **proceed to the next lab**.
 ## Acknowledgements
 
 * **Author** - Yixin Wei, Java Management Service
-* **Last Updated By** - Bao Jin Lee, January 2023
+* **Last Updated By** - Ivan Eng, March 2023

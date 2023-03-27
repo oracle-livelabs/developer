@@ -68,7 +68,15 @@ In this workshop, you will:
 
     > **Note:** Usage of Ampere shapes is not recommended for Java Management Service as they are not supported.
 
-    Review the **Networking** settings. Take the default values provided by the wizard.
+    Click **Edit** to review the **Networking** settings. 
+
+    ![image of networking settings overview](images/networking-overview.png)
+
+    If there are no VCNs available, click **Create new virtual cloud network**.
+
+    ![image of networking settings with no vcns available](images/networking-settings-no-vcn.png)
+    
+    Take the default values provided by the wizard.
 
     **Virtual cloud network**: vcn-'date'-'time'
     * **Subnet**: subnet-'date'-'time'
@@ -80,11 +88,17 @@ In this workshop, you will:
 
     Click **Save Private Key** and **Save Public Key** to save the private and public SSH keys for this compute instance.
 
+    ![image of selecting save private key and save public key](images/ssh-keys-save-keys.png)
+
     If you want to use your own SSH keys, select one of the options to provide your public key. Put your private and public key files in a safe location. You cannot retrieve keys again after the compute instance has been created.
+
+    ![image of selecting options to use own SSH keys](images/ssh-keys-use-own-keys.png)
 
     Review the **Boot volume** settings. Take the default values provided by the wizard.
 
 4. Click **Create** to create the instance. Provisioning the system might take several minutes.
+
+  ![image of creating compute instance](images/compute-create-instance.png)
 
 5. You have successfully created an Oracle Linux instance.
 
@@ -97,6 +111,8 @@ In this workshop, you will:
 2. Click the link to the Instance you created in the previous step.
 
 3. From the **Instance Details** page look under the **Instance Access** section. Write down the public IP address the system created for you. You use this IP address to connect to your Instance.
+
+  ![image of compute instance details with public ip highlighted](images/compute-public-ip.png)
 
 4. Open a **Terminal** or **Command Prompt** window.
   Change into the directory where you stored the SSH encryption keys you created.
@@ -247,4 +263,4 @@ You may now **proceed to the next lab.**
 ## Acknowledgements
 
 * **Author** - Esther Neoh, Java Management Service
-* **Last Updated By** - Yixin Wei, September 2022
+* **Last Updated By** - Ivan Eng, March 2023

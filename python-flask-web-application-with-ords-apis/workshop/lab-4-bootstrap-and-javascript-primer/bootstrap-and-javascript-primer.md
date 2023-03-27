@@ -192,11 +192,11 @@ This Lab assumes you have:
             <copy>flask --app lab_1_app.py run</copy>
             ```
 
-      3. Go forth and create!    
+      3. Go forth and create!
 
 4. Congratulations! You should thoroughly understand how HTML presents the underlying logic to an actual user. And you should have your own *personalized* version of the Flask application.
 
-5. In the next section, we'll introduce concepts surrounding security and authentication for Oracle REST APIs. 
+5. In the next section, we'll introduce concepts surrounding security and authentication for Oracle REST APIs.
 
 ### You may now **proceed to the next Lab.**
 
@@ -207,10 +207,14 @@ This Lab assumes you have:
 * [Mozilla Developer Network (MDN) Web Docs](https://developer.mozilla.org/en-US/)
 
 ## Acknowledgements
+
 * **Author** - Chris Hoina, Senior Product Manager, Database Tools
+
 * **Contributors**
-  - Jeff Smith, Distinguished Product Manager, Database Tools
-  - Justin Biard, Senior Member of Technical Staff, Database Tools 
-  - Zachary Talke, Product Manager, Database Tools
-  - Brian Spendolini, Principal Product Manager
-* **Last Updated By/Date** - Chris Hoina, August 2022, 
+
+  * Jeff Smith, Distinguished Product Manager, Database Tools
+  * Justin Biard, Senior Member of Technical Staff, Database Tools
+  * Zachary Talke, Product Manager, Database Tools
+  * Brian Spendolini, Contributor
+
+* **Last Updated By/Date** - Chris Hoina/March 2023
