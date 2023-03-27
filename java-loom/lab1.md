@@ -194,7 +194,8 @@ In this lab you have learned:
 
 ## Learn More
 
-* [Virtual Threads - JEP 425](https://openjdk.org/jeps/425)
+* [Virtual Threads (Preview) - JEP 425](https://openjdk.org/jeps/425)
+* [Virtual Threads (Second Preview) - JEP 436](https://openjdk.org/jeps/436)
 
 ## Acknowledgements
 * **Author** - [José Paumard, Java Developer Advocate, Java Platform Group - Oracle](https://twitter.com/JosePaumard)
