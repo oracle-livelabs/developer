@@ -20,6 +20,7 @@ In this lab, you will:
 - You have signed up for an account with Oracle Cloud Infrastructure and have received your sign-in credentials.
 - You are using an Oracle Linux image or Windows OS on your Managed Instance for this lab.
 - Access to the cloud environment and resources configured in [Lab 2](?lab=setup-a-fleet).
+- You have installed the latest version of Oracle JDK 8 in your machine according to [Lab 3 Task 3](?lab=deploy-a-java-application#Task3:InstallJava8andcreateasimpleJavaapplication).
 
 ## Task 1: Install Management Agent on an OCI Host
 
@@ -129,13 +130,15 @@ This task is for the installation of Management Agent in an OCI Host (OCI Comput
 
 ## Task 2: Install Management Agent on a non-OCI Host
 
-This task is for the installation of Management Agent in a non OCI host(e.g. on premise, other cloud computer). 
+This task is for the installation of Management Agent in a non-OCI host(e.g. on premise, other cloud compute). 
 
 >**Note:** If you have installed the management agent on an OCI instance in Task 1, please skip this task and proceed to Task 3.
 
-For installation of Management agent on Non OCI hosts, you need to have both the installation script and the management agent software from [Lab 2](?lab=setup-a-fleet). 
+For installation of Management agent on non-OCI hosts, you need to have both the installation script and the management agent software from [Lab 2](?lab=setup-a-fleet). 
 
 Both files need to be placed in the same directory before you proceed.
+
+>**Note:** Ensure that you have installed the latest Oracle JDK 8 on your machine before you proceed according to [Lab 3 Task 3](?lab=deploy-a-java-application#Task3:InstallJava8andcreateasimpleJavaapplication). Management Agents require Oracle JDK 8 to be installed.
 
 **On Linux (Non-OCI Host)**
 
@@ -198,7 +201,12 @@ Both files need to be placed in the same directory before you proceed.
     </copy>
     ```
 
-5. Enter the following command to run the installation script. The installation may take some time to complete.
+5. To ensure you have the correct permissions to run the script, type Set-ExecutionPolicy RemoteSigned and answer A.
+
+    It should look similar to the following:
+    ![setting execution policy in windows powershell](images/set-execution-policy.png)
+
+6. Enter the following command to run the installation script. The installation may take some time to complete.
 
     ```
     <copy>
@@ -206,7 +214,7 @@ Both files need to be placed in the same directory before you proceed.
     </copy>
     ```
 
-6. If installation is successful, you'll see a message similar to the following:
+7. If installation is successful, you'll see a message similar to the following:
 
      ```
      ...
@@ -357,7 +365,7 @@ You may now **proceed to the next lab.**
 
   ![image of installation script unable to find error](images/troubleshoot-unable-to-find-jdk.png)
 
-  Please manually download and install Oracle JDK 1.8 from [official Oracle page](https://www.oracle.com/java/technologies/javase/javase8u211-later-archive-downloads.html).
+  Please manually download and install Oracle JDK 8 from [official Oracle page](https://www.oracle.com/java/technologies/javase/javase8u211-later-archive-downloads.html).
 
 - If you encounter an error similar to the following:
 
