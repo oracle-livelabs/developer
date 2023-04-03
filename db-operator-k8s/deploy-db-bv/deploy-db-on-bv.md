@@ -1,13 +1,12 @@
-# Deploy a SingleInstance Database using a dynamically allocated Block Volume
+# Deploy a SingleInstance Database with a dynamically allocated Block Volume
 
 ## Introduction
 
 #### Dynamic Persistence
 
-In this lab we'll be using **Dynamic Persistence Provisioning**, a persistent volume that is automatically provisioned by mentioning a storage class. As we are running on Oracle OCI, we'll use the **oci-bv** storage class. This storage class facilitates dynamic provisioning of the OCI block volumes. The supported access mode for this class is `ReadWriteOnce`. For other cloud providers, you can similarly use their dynamic provisioning storage classes.
+In this lab we'll use **Dynamic Persistence Provisioning**, a persistent volume that is automatically provisioned by mentioning a storage class. As we are running on Oracle OCI, we'll use the **oci-bv** storage class. This storage class facilitates dynamic provisioning of the OCI block volumes. The supported access mode for this class is `ReadWriteOnce`. For other cloud providers, you can similarly use their dynamic provisioning storage classes.
 
-We'll also be specifying the  `Reclaim Policy` of the dynamically provisioned volumes as `Delete`. In this case the volume is deleted when the corresponding database deployment is deleted.
-
+We'll also specify the  `Reclaim Policy` of the dynamically provisioned volumes as `Delete`. In this case the volume is deleted when the corresponding database deployment is deleted.
 
 
 Estimated Time: 20 minutes
@@ -50,7 +49,7 @@ In kubernetes we store these passwords in secrets.
     Replace `Your-DB-Password` with a password of your choosing, it should be 12 characters long, have letters, numbers and Capitals
 
 
-## Task 2: Creating the DB Config file for the Operator
+## Task 2: Create the DB Config file for the Operator
 
 To initiate the creation of the database by the Operator we'll have to create a config file describing the desired database setup.  For this lab we'll use the file [singleinstancedatabase-create.yaml](https://objectstorage.us-ashburn-1.oraclecloud.com/p/LNAcA6wNFvhkvHGPcWIbKlyGkicSOVCIgWLIu6t7W2BQfwq2NSLCsXpTL9wVzjuP/n/c4u04/b/livelabsfiles/o/developer-library/singleinstancedatabase-create.yaml) which contains a configuration ready to use for this part of the lab.
 
@@ -100,7 +99,7 @@ We'll be highlighting some of the sections of this file below, no need to do any
 
   
 
-## Task 3: Launching and tracking the DB creation
+## Task 3: Launch and track the DB creation
 
 Launching the creation of the database is done through a single command applying the config file on the cluster.  Next the operator will initiate the necessary operations to spin up the database, and this will take approximately 15 minutes in a fresh environment - as for example the images have to be copied over from the container repository.
 
@@ -188,11 +187,11 @@ In this section we'll explain a number of commands that allow you to track what 
 
     - Navigate to **Storage**, then under **Block Storage** select **Block Volumes**.  You will see a new block volume has appeared :
 
-    ![](images/block-vol.png)
+    ![Block volumes list](images/block-vol.png)
 
     - Navigate to **Networking**, then select **Load Balancers**.  You will see a new load balancer serving the EM and SQLplus ports of the DB:
 
-    ![block volume](images/lb.png)
+    ![load balancer](images/lb.png)
 
 7. By now the pod should be running, but not yet **ready** : re-issue the command below:
 
@@ -234,7 +233,7 @@ In this section we'll explain a number of commands that allow you to track what 
     sidb-test1   Enterprise   Patching   21.3.0.0.0   132.145.249.43:1521/ORCL1   https://132.145.249.43:5500/em
     ```
 
-## Task 4: Connecting to the Database
+## Task 4: Connect to the Database
 
 OK, it looks like our database is indeed up and running !  Let's try to connect to the Enterprise Manager ...
 
@@ -296,4 +295,5 @@ You may now **proceed to the next lab**.
 
 ## Acknowledgements
 * **Author** - Jan Leemans, July 2022
-* **Last Updated By/Date** - Jan Leemans, January 2023
+* **Last Updated By/Date** - Jan Leemans, March 2023
+    

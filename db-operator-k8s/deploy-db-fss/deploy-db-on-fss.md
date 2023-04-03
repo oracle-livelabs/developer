@@ -1,4 +1,4 @@
-# Deploy a SingleInstance Database using a static NFS filesystem
+# Deploy a SingleInstance Database with a static NFS filesystem
 
 ## Introduction
 
@@ -50,11 +50,13 @@ Estimated Time: 20 minutes
 
 2. Now navigate to the **File Storage**, then **File Systems** menu, and click the **Create File System** button
 
+    - Keep the default workflow: *File System for NFS*
+    
     - All parameters are pre-filled, just validate the selected Mount Target is indeed the mount target you just created
 
     - Take note of the Export Path : you will need this information later in the database configuration file.  In the below example the path is `/FileSystem-20220727-1600-55`
 
-    ![create FS](images/file-system.png)
+    ![create FS](images/file-system2.png)
 
     - Click the **Create** button to finish the operation
 
@@ -113,21 +115,21 @@ Estimated Time: 20 minutes
       - Paste the below content into the file
 
         ```
-        <copy>    apiVersion: v1
-            kind: PersistentVolume
-            metadata:
-              name: nfs-vol-1
-            spec:
-              storageClassName: oci-fss
-              capacity:
-                storage: 224Gi
-              volumeMode: Filesystem
-              accessModes:
-               - ReadWriteMany
-              persistentVolumeReclaimPolicy: Retain
-              csi:
-                driver: fss.csi.oraclecloud.com
-                volumeHandle: "<OCID of the file system>:<Mount Target IP Address>:/<Export Path>"</copy>
+        apiVersion: v1
+        kind: PersistentVolume
+        metadata:
+          name: nfs-vol-1
+        spec:
+          storageClassName: oci-fss
+          capacity:
+            storage: 224Gi
+          volumeMode: Filesystem
+          accessModes:
+           - ReadWriteMany
+          persistentVolumeReclaimPolicy: Retain
+          csi:
+            driver: fss.csi.oraclecloud.com
+            volumeHandle: "<OCID of the file system>:<Mount Target IP Address>:/<Export Path>"
         ```
 
     - Replace the placeholders for the parameter `volumeHandle`: 
@@ -246,4 +248,4 @@ You may now **proceed to the next lab**, where we'll look at what happens when t
 
 ## Acknowledgements
 * **Author** - Jan Leemans, July 2022
-* **Last Updated By/Date** - Jan Leemans, January 2023
+* **Last Updated By/Date** - Jan Leemans, March 2023

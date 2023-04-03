@@ -2,7 +2,7 @@
 
 ## About Java Management Service Advanced Features
 
-Java Management Service (JMS) consists of a series of advanced features that enables the customers deeper observation and management of the Java SE Runtime and applications, track the Java servers and libraries as well as performing the Java Flight Recorder and the cryptographic analysis on the Java applications.
+Java Management Service (JMS) consists of a series of advanced features that enables the customers deeper observation and management of the Java SE Runtime and applications, track the Java servers and libraries as well as performing the JDK Flight Recorder and the cryptographic analysis on the Java applications.
 
 As a customer, you can:
   * View and identify the Java Runtimes.
@@ -10,7 +10,7 @@ As a customer, you can:
   * Remove unwanted Java Runtimes.
   * Track Java servers and libraries.
   * Perform cryptographic analysis of Java applications.
-  * Perform Java Flight Recording on Java applications.
+  * Perform JDK Flight Recording on Java applications.
   * View and understand various statuses and logs of work requests.
 
 ## About this Workshop
@@ -21,9 +21,9 @@ Additionally, JMS offers 4 different advanced features to manage the:
   * Lifecycle management (LCM) - Manage the lifecycle of Java runtimes in your fleet by installing or removing reported Java runtimes.
   * Advanced usage tracking - Gain advanced insights into your Java workloads in the fleet by tracking application server, Oracle JDK and OpenJDK used by applications. 
   * Crypto event analysis - Assess the impact of Oracle JRE and JDK Cryptographic roadmap on the applications running in your fleet.
-  * Java Flight Recorder (JFR) - Collect information about events in the application running in your fleet using Java Flight Recorder (JFR), a tool for collecting diagnostic and profiling data about a running Java application.
+  * JDK Flight Recorder (JFR) - Collect information about events in the application running in your fleet using JDK Flight Recorder (JFR), a tool for collecting diagnostic and profiling data about a running Java application.
 
-Usage of these JMS advanced features requires only minor changes to the configuration. This workshop will walk you through the steps to enable JMS advanced features in OCI and non-OCI Managed Instances, configure post Java installation actions, install/remove Java Runtime, view/monitor work request, track Java servers, detect Java libraries, run crypto event analysis as well as run Java flight Recorder. 
+Usage of these JMS advanced features requires only minor changes to the configuration. This workshop will walk you through the steps to enable JMS advanced features in OCI and non-OCI Managed Instances, configure post Java installation actions, install/remove Java Runtime, view/monitor work request, track Java servers, detect Java libraries, run crypto event analysis as well as run JDK Flight Recorder. 
 
 _Estimated Time:_ 195 minutes
 
@@ -36,7 +36,7 @@ _Estimated Time:_ 195 minutes
 * Track Java Servers
 * Detect Java Libraries
 * Run Crypto Event Analysis
-* Run Java Flight Recorder
+* Run JDK Flight Recorder
 * View and monitor Work Requests
 
 
@@ -52,4 +52,4 @@ _Estimated Time:_ 195 minutes
 
 ## Acknowledgements
 * **Author** - Bhuvesh Kumar, Java Management Service
-* **Last Updated By** - Bao Jin Lee, November 2022
+* **Last Updated By** - Sherlin Yeo, March 2023

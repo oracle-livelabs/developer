@@ -45,8 +45,9 @@ Finally, this lab assumes you have the following developer environment:
 
 - Python 3.10 or later 
 - A text editor (such as Visual Studio Code or Sublime Text)
-- A Package Manager (i.e., Homebrew for Mac, *aka* pip)
-- Select Python packages: 
+- A Package Manager (we'll refer to both Homebrew and PIP in this Workshop)
+- Select Python packages:
+
   - Requests 
   - Folium
   - Json
@@ -62,7 +63,7 @@ Finally, this lab assumes you have the following developer environment:
 * [About ORDS](https://www.oracle.com/database/technologies/appdev/rest.html)
 * [ORDS Best Practices](https://www.oracle.com/database/technologies/appdev/rest/best-practices/)
 * [ORDS, SODA & JSON Developer Forum](https://community.oracle.com/tech/developers/categories/oracle_rest_data_services) 
-* [Installing Flask and Virtual Environment](https://flask.palletsprojects.com/en/2.1.x/installation/)
+* [Installing Flask and Virtual Environment](https://flask.palletsprojects.com/en/2.2.x/installation/)
 * [Download VS Code](https://code.visualstudio.com/download)
 * [Installing Home Brew - Package Manager for Linux and MacOS](https://docs.brew.sh/Installation)
 * [MS Windows Package Manager](https://docs.microsoft.com/en-us/windows/package-manager/)
@@ -74,7 +75,7 @@ Finally, this lab assumes you have the following developer environment:
 * **Author** - Chris Hoina, Senior Product Manager, Database Tools
 * **Contributors**
   - Jeff Smith, Distinguished Product Manager, Database Tools
-  - Justin Biard, Senior Member of Technical Staff, Database Tools 
+  - Justin Biard, Senior Member of Technical Staff, Database Tools
   - Zachary Talke, Product Manager, Database Tools
-  - Brian Spendolini, Principal Product Manager
-* **Last Updated By/Date** - Chris Hoina, August 2022
+  - Brian Spendolini, Contributor
+* **Last Updated By/Date** - Chris Hoina, March 2023

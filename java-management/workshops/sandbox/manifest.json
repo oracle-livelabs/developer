@@ -30,8 +30,8 @@
             "filename": "../../sandbox-labs/crypto-event-analysis/crypto-event-analysis.md"
         },
         {
-            "title": "Lab 5: Run Java Flight Recorder (JFR) on a Java application",
-            "filename": "../../sandbox-labs/java-flight-recorder/java-flight-recorder.md"
+            "title": "Lab 5: Run JDK Flight Recorder (JFR) on a Java application",
+            "filename": "../../sandbox-labs/jdk-flight-recorder/jdk-flight-recorder.md"
         },
         {
             "title": "Lab 6: Perform Java Lifecycle Management with Java Management Service",

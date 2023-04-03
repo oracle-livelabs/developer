@@ -78,7 +78,7 @@ In this lab, you will:
 3. If you would like to view the log messages for the Work Request, select **Log Messages** under **Resources**. You should see the log messages in detail.
    ![image of work request log messages](images/delete-work-request-log-messages-view-monitor.png)
 
-4. If your Work Request was unsuccessful, you may view the error messages by selecting **Error Messages** under **Resources**. You should see the status as **Failed** and the corresponding error messages.
+4. If your Work Request was unsuccessful, you may view the error messages by selecting **Error Messages** under **Resources**. You should see the status as **Completed with Errors** and the corresponding error messages.
    ![image of work request failed error messages](images/delete-work-request-failed-error-message.png)
 
 ## Task 3: Cancel work request
@@ -97,7 +97,7 @@ In this lab, you will:
 
 
 ## Learn More
-* Refer to [Work Request](https://docs.oracle.com/en-us/iaas/jms/doc/getting-started-java-management-service.html#GUID-47C63464-BC0C-4059-B552-ED9F33E77ED3) and [Viewing a Work Request](https://docs.oracle.com/en-us/iaas/jms/doc/fleet-views.html#GUID-F649F0E5-DD54-4DEC-A0F1-942FE3552C93) sections of the JMS documentation for more details.
+* Refer to [Work Request](https://docs.oracle.com/en-us/iaas/jms/doc/getting-started-java-management-service.html#GUID-47C63464-BC0C-4059-B552-ED9F33E77ED3) and [Viewing a Work Request](https://docs.oracle.com/en-us/iaas/jms/doc/viewing-work-request.html#GUID-F649F0E5-DD54-4DEC-A0F1-942FE3552C93) sections of the JMS documentation for more details.
 
 * Use the [Troubleshooting](https://docs.oracle.com/en-us/iaas/jms/doc/troubleshooting.html#GUID-2D613C72-10F3-4905-A306-4F2673FB1CD3) chapter for explanations on how to diagnose and resolve common problems encountered when installing or using Java Management Service.
 
@@ -107,4 +107,4 @@ In this lab, you will:
 ## Acknowledgements
 
 * **Author** - Bao Jin Lee, Java Management Service
-* **Last Updated By** - Bao Jin Lee, January 2023
+* **Last Updated By** - Ivan Eng, March 2023
