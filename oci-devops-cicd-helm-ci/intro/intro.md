@@ -5,7 +5,7 @@
 
 You will learn to use OCI DevOps helm deployment with provenance and integrity checks as well as deployment of a sample application onto Oracle container instances.
 
-Estimated time: 90 minutes
+Estimated total time: 90 minutes
 
 ### Objectives
 
