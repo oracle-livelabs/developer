@@ -12,7 +12,7 @@ Estimated time: 20 minutes
 In this lab, as a developer or SRE,
 
 * Create necessary keys for helm chart verification
-* Run a build and deployment pipeline with helm chart.
+* Run a build and deployment pipeline with a helm chart.
 * Validate the helm deployment
 
 ## Task 1: GPG Key Setup (For Helm Signing and Verification).
@@ -22,7 +22,7 @@ In this lab, as a developer or SRE,
 1. We are going to install gpg and the instruction here is related to a Linux machine. You may change the procedure accordingly - https://www.gnupg.org/howtos/card-howto/en/ch02.html.
 
 
-1. Follow below instructions and download the stable version of gpg onto your workstation.
+1. Follow the below instructions and download the stable version of gpg onto your workstation.
 
 ```java
 $ mkdir ~/gpg
@@ -49,7 +49,7 @@ Name-Email: ocidevops@domain.com
 Expire-Date: 0
 ```
 
-1. Setup a strong passphrase for the key.Use the same passphrase enter during the resource manager actions.
+1. Set up a strong passphrase for the key. Use the same passphrase enter during the resource manager's actions.
 
 ```java
 $ passphrase="AStrongPassword@198"
@@ -60,6 +60,7 @@ $ echo "Passphrase: ${passphrase}" >> ./gpg_template.txt
 
 ```java
 $ gpg --gen-key --batch ./gpg_template.txt
+$ gpg -k
 $ rm -f ./gpg_template.txt
 ```
 
@@ -84,7 +85,7 @@ $ gpg --output ./helm-attestation-public-key.pgp --export oci_devops
 
 ![oci-artifact-registry.png](images/oci-artifact-registry.png)
 
-1. Click on the repo.Click `upload artifact` button.
+1. Click on the repo. Click the `upload artifact` button.
 
 ![oci-upload-artifact-btn.png](images/oci-upload-artifact-btn.png)
 
@@ -96,11 +97,11 @@ $ gpg --output ./helm-attestation-public-key.pgp --export oci_devops
 
 ![oci-artifact-ocid.png](images/oci-artifact-ocid.png)
 
-1. We will be using OCI Vault to store the base64 value of the gpg public key and the passphrase to sign and verify the helm chart.Search `vault` in the search box and open the vault.
+1. We will be using OCI Vault to store the base64 value of the gpg public key and the passphrase to sign and verify the helm chart. Search `vault` in the search box and open the vault.
 
 ![oci-vault-list.png](images/oci-vault-list.png)
 
-1. With the secret a dummy placeholder is created with name `gpg_pub_key`
+1. With the secret a dummy placeholder is created with the name `gpg_pub_key`
 
 ![oci-secert-dummay.png](images/oci-secert-dummay.png)
 
@@ -112,41 +113,49 @@ $ base64 -i helm-attestation-public-key.pgp
 
 ![gpg-pub-base64.png](images/gpg-pub-base64.png)
 
-1. Click the vault secret `gpg_pub_key` and click `Create Secret Version` button.
+1. Click the vault secret `gpg_pub_key` and click the `Create Secret Version` button.
 
 ![oci-new-secret.png](images/oci-new-secret.png)
 
-1. Create a secret for the public key and copy the base64 value to it. Ensure to use the secret Type Template as `Base64`.Clck create.
+1. Create a secret for the public key and copy the base64 value to it. Ensure to use the secret Type Template as `Base64`.Click creates.
 
 ![oci-new-secret-key-created.png](images/oci-new-secret-key-created.png)
 
-## Task 2: Run devops pipeline.
+## Task 2: Run the DevOps pipeline.
 
-1. Search `Projects` in the search box and open the devops projects.
+1. If you will be using an OKE cluster, which is outside of the resource manager, be aware the deployment uses the below parameters. You can override them by manually editing the `helm chart` deployment stage within the deployment pipeline.
+
+```java
+Namespace: Default
+Helm Release Name: ocidevops
+```
+
+
+1. Search `Projects` in the search box and open the DevOps projects.
 
 ![oci-devops-projects.png](images/oci-devops-projects.png)
 
-1. Click on the project name .
+1. Click on the project name.
 
 ![oci-project-sub-resources.png](images/oci-project-sub-resources.png)
 
-1. With in `Devops Project resources` and click `Build pipeline` and click on pipeline named as `<STRING>_build_helmpackages`.
+1. Within `DevOps Project resources` and click `Build pipeline` and click on pipeline named `<STRING>_build_helmpackages`.
 
 ![oci-helm-build-pipelines.png](images/oci-helm-build-pipelines.png)
 
-1. click `Paramters` and edit the value for `GPG_ARTIFACT_OCID` using the `pen` icon.
+1. click `Parameters` and edit the value for `GPG_ARTIFACT_OCID` using the `pen` icon.
 
 ![oci-build-params.png](images/oci-build-params.png)
 
-1. Update the value with `OCID of Artifacts uploaded` and use `tick` symbol and save it .
+1. Update the value with `OCID of Artifacts uploaded` and use the `tick` symbol and save it.
 
 ![](images/oci-build-params-edit.png)
 
-1. Switch back to `build pipeline` and click on `Start manual run` and start a build job.
+1. Switch back to `build a pipeline` and click on `Start manual run` and start a building job.
 
 ![oci-build-manual-run.png](images/oci-build-manual-run.png)
 
-1. This will start the build job .While waiting for the job to complete ,switch back to `Build pipeline` tab ,Click `view details` under managed build stage.
+1. This will start the build job. While waiting for the job to complete, switch back to the `Build pipeline` tab, Click `View details` under managed build stage.
 
 ![oci-managed-build-stage-details.png](images/oci-managed-build-stage-details.png)
 
@@ -154,13 +163,64 @@ $ base64 -i helm-attestation-public-key.pgp
 
 ![oci-build-custom-shapes.png](images/oci-build-custom-shapes.png)
 
-1. Close the tab,Switch to `Build histroy` and follow the current ongoing taks and wait for it to finish.
+1. Close the tab, Switch to `Build history and follow the current ongoing tasks and wait for it to finish.
 
 ![oci-build-done.png](images/oci-build-done.png)
 
-1. Switch to `Devops Project Resources` > `Deployment pipelines`
+1. Switch to `DevOps Project Resources` > `Deployment pipelines`
 
 ![oci-devops-pipelines.png](images/oci-devops-pipelines.png)
 
-1. Click the pipeline named `deploy_helmchart_<ID>` and click on `Deployments` tab.
+1. Click the pipeline named `deploy_helmchart_<ID>`.In the pipeline use `3 dots` and view details of the helm chart stage.
+
+![oci-helm-stage-details.png](images/oci-helm-stage-details.png)
+
+1. You can verify the different helm options and dynamic values set for the deployments.
+
+![oci-helm-options.png](images/oci-helm-options.png)
+
+1. Close and click on the `Deployments` tab and open the recent deployments done or ongoing.
+
+![oci-deployment-recent.png](images/oci-deployment-recent.png)
+
+1. Click on the deployment and validate the stages and logs.
+
+![](images/oci-helm-deployment-logs.png)
+
+1. Search `OKE` in the search bar and open the OKE Cluster to view the deployment.
+
+![oci-oke-cluster-view.png](images/oci-oke-cluster-view.png)
+
+1. Click on the `Access Cluster` button.
+
+![oci-oke-access-cluster.png](images/oci-oke-access-cluster.png)
+
+1. Preferably use `Cloud Shell Access` and set up access to your OKE Cluster.
+
+![oci-oke-cs-access.png](images/oci-oke-cs-access.png)
+
+1. On the cloud shell run `kubectl get service/ocidevops-node-service` and fetch the Load Balancer IP address.
+
+![oci-kubec-lb-ip.png](images/oci-kubec-lb-ip.png)
+
+1. Launch the application by using the URL `http://LoadBalancer IP`
+
+![oci-app-url.png](images/oci-app-url.png)
+
+1. Optionally you can update the helm chart of the application and re-deploy the application, by running a manual build once the updated code is pushed back to the code repo.
+
+You may now **proceed to the next lab**.
+
+## Learn More
+
+* [OCI Devops documentation](https://docs.oracle.com/en-us/iaas/Content/devops/using/home.htm)
+
+
+## Acknowledgements
+
+* **Author** - Rahul M R
+* **Contributors** -
+* **Last Updated By/Date** - Rahul M R - April 2023
+
+
 
