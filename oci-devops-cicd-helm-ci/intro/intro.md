@@ -7,14 +7,6 @@ You will learn to use OCI DevOps helm deployment with provenance and integrity c
 
 Estimated total time: 90 minutes
 
-### Objectives
-
-In this lab, you will:
-
-* You will provision OCI infrastructure using Oracle resource managers.
-* Build and deploy a sample helm packages application with provenance and integrity checked.
-* Deploy a sample application to OCI Container instances.
-
 ### Features covered
 
 - Helm Chart Deployment with Provenance & Integrity checks: Signing a helm package and validating the integrity, by using GNU Privacy guard keys via deployment pipelines.
@@ -23,13 +15,22 @@ In this lab, you will:
 - Managed build stage using custom build runner. : Custom build runner allows to set desired OCPU and Memory for the build runner to support necessary resources for build instructions to run.
 - Using terraform with Remote state backend from OCI DevOps build pipeline. : The S3-compatible OCI Object storage bucket will be used as a remote backend to store the terraform states. The terraform will be executed from the OCI Build pipeline, which is enabled with resource principal so that the client can control the resource access based on policies.
 
-### Prerequisites
 
-1. An Oracle Free Tier(Trial), Paid or LiveLabs Cloud Account
-1. [Familiarity with OCI console](https://docs.us-phoenix-1.oraclecloud.com/Content/GSG/Concepts/console.htm)
-1. [Overview of Networking](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/overview.htm)
-1. [Familiarity with Compartments](https://docs.us-phoenix-1.oraclecloud.com/Content/GSG/Concepts/concepts.htm)
-1. [OCI DevOps services.](https://docs.oracle.com/en-us/iaas/Content/devops/using/home.htm)
+### Objectives
+
+In this lab, you will:
+
+* You will provision OCI infrastructure using Oracle resource managers.
+* Build and deploy a sample helm packages application with provenance and integrity checked.
+* Deploy a sample application to OCI Container instances.
+
+
+### Prerequisites
+- An Oracle Free Tier(Trial), Paid or LiveLabs Cloud Account
+- [Familiarity with OCI console](https://docs.us-phoenix-1.oraclecloud.com/Content/GSG/Concepts/console.htm)
+- [Overview of Networking](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/overview.htm)
+- [Familiarity with Compartments](https://docs.us-phoenix-1.oraclecloud.com/Content/GSG/Concepts/concepts.htm)
+- [OCI DevOps services.](https://docs.oracle.com/en-us/iaas/Content/devops/using/home.htm)
 
 
 ## Oracle DevOps
@@ -41,17 +42,13 @@ Oracle Cloud Infrastructure DevOps service provides an end-to-end CI/CD platform
 - OCI Code repositories – OCI provided a scalable code repository service.
 - OCI Build pipelines – A serverless, scalable service to automate build, test, artefacts and deployment invocations.
 
-
-![](images/oci-devops.png)
+    ![devops](images/oci-devops.png)
 
 
 ## Role Play Architecture
 
 You will be building and deploying the below-mentioned architecture using OCI services and features.
-
-![arch-flow.png](images/arch-flow.png)
-
-
+    ![arch-flow.png](images/arch-flow.png)
 
 You may now **proceed to the next lab**.
 
@@ -64,6 +61,5 @@ You may now **proceed to the next lab**.
 ## Acknowledgements
 
 * **Author** - Rahul M R
-* **Contributors** -
 * **Last Updated By/Date** - Rahul M R - April 2023
 
