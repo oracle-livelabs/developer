@@ -35,22 +35,24 @@ As someone who creates a project, you'll automatically become the project's owne
 
     ![The All Projects page that appears when the Organization tab is selected on the main menu. The Projects tab is empty, with the Create button selected.](images/welcome.png "All projects screen")
 
-2. On the Project Details page of the New Project wizard, enter:
+2. On the Project Details screen of the New Project wizard, enter or select:
 
     * **Project Name**: `Tutorial HR Project` (you may want to add your name to the project name if you're in a large organization)
     * **Description**: `Tutorial project`
-    * **Security**: **Private** (the default)
+    * **Security**: **Private** and **Discoverable** (the default)
     * **Preferred Language**: the language of your choice
 
     Click **Next**.
 
-3. On the Project Template page, select **Visual Application** and click **Next**.
+3. On the Project Template screen, select **Visual Application** and click **Next**.
 
-4. On the Project Properties page, click **Development VB Instance** to select the VB instance where you plan to deploy and host your application. When you have only one VB instance provisioned, it will be automatically selected as your environment's development instance.
+4. On the Project Properties page, click **Development VB Instance** and select the VB instance where you plan to deploy and host your application. When you have only one VB instance provisioned, it will be automatically selected as your environment's development instance.
 
-5. Change the **Workspace Name** from the default `Workspace1` to `HR Visual Application`. Also change the **Working Branch Name** from `branch1` to `hrbranch`.
+5. Change the **Workspace Name** from the default `Workspace1` to `HR Workspace`. Also change the **Working Branch Name** from `branch1` to `hrbranch`.
 
-6. Leave other fields to their default settings and click **Finish**.
+    Leave other fields to their default settings and click **Next**.
+
+6. On the Project Team Members screen, add other members of your team who will work with you on this visual application. As the project owner, you can also control what others can do in this project by granting them membership as a Developer Full Access, Developer Limited Access, or Contributor. For demonstration purposes, let's add  Clara Coder with the Developer Limited Access role, which lets her access most project components. Click **Finish**.
 
     Wait for the project to be provisioned. Once provisioning completes, you'll see the Project Home page, which serves as a window to your workspace, your environments, and repositories, as well as a recent activities feed. On the left are a series of tabs showing the available project components.
 
