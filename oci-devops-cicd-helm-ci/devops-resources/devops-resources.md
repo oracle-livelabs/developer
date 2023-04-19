@@ -40,23 +40,24 @@ In this lab, as a developer or SRE,
    - build_spec.yaml - Build pipeline instructions.
    - command_spec.yaml - Instructions for shell stage.
 
-1. Switch back to the `DevOps project resources` list and click `Build pipelines` and check the stages within each of the pipelines created. Click each one of them and verify the stages.
+6. Switch back to the `DevOps project resources` list and click `Build pipelines` and check the stages within each of the pipelines created. Click each one of them and verify the stages.
 
     ![oci-buildpipelines-list.png](images/oci-buildpipelines-list.png)
 
-1. Switch back to the `DevOps project resources` list and click `Deployment pipelines’. There will be two of them and click each one of them to verify the stages.
+7. Switch back to the `DevOps project resources` list and click `Deployment pipelines’. There will be two of them and click each one of them to verify the stages.
 
     ![oci-deployment-pipelines.png](images/oci-deployment-pipelines.png)
 
-1. The deployment pipeline for container instances contains a single shell stage to perform the deployment of new images onto container instances.
+8. The deployment pipeline for container instances contains a single shell stage to perform the deployment of new images onto container instances.
 
     ![oci-deplo-ci-stages.png](images/oci-deplo-ci-stages.png)
 
-1. Likewise for the deployment pipeline for `helm chart deployment`, there will be a stage names `helm chart` for the actions.
+
+9. Likewise for the deployment pipeline for `helm chart deployment`, there will be a stage names `helm chart` for the actions.
 
     ![oci-deploy-helm.png](images/oci-deploy-helm.png)
 
-1. Switch back to the `DevOps project resources` list and click `Artifacts` and verify the various artefacts and their target paths accordingly. Refer to the table below to know more about various artifacts and their usages
+10. Switch back to the `DevOps project resources` list and click `Artifacts` and verify the various artefacts and their target paths accordingly. Refer to the table below to know more about various artifacts and their usages
 
     ![oci-devops-artifacts.png](images/oci-devops-artifacts.png)
 
@@ -69,11 +70,11 @@ In this lab, as a developer or SRE,
 | command_spec_cs |     Command specification      | It's a yaml-based instruction for the shell stage to execute.                                                                            |
 | command_spec_ga |     General artifact      | It is a yaml-based file that will generate as an outputArtifact from a build and then gets pushed to Oci artifactory registry.        |
 
-1. Switch back to the `DevOps project resources` list and click `Triggers`.Using the `3 dots` against the name, click `view details
+11. Switch back to the `DevOps project resources` list and click `Triggers`.Using the `3 dots` against the name, click `view details
 
     ![oci-triger-view.png](images/oci-triger-view.png)
 
-1. The details will display the `file-based triggers` configured with what to be considered (`Files to include:`) and what not to be considered (`Files to exclude`) from a code repo's merge events to trigger a build pipeline.
+12. The details will display the `file-based triggers` configured with what to be considered (`Files to include:`) and what not to be considered (`Files to exclude`) from a code repo's merge events to trigger a build pipeline.
 
     ![oci-trigger-details.png](images/oci-trigger-details.png)
 

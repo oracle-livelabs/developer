@@ -65,7 +65,7 @@ The token is essential for further steps, so save it securely and do not expose 
 ## Task3: Create a Customer Secret Key.
 
 We will be using a Customer secret key to provide object storage access as a
-backend for Terraform (via S3 compatible mode). To create, from the same user page select option Customer Secret Key.
+backend for Terraform (via S3 compatible mode). To create, from the same user page select option Customer Secret Key. 
     ![customer-secret-key.png](images/customer-secret-key.png)
 
 1. Click the `Generate Secret Key` button.
@@ -116,56 +116,56 @@ Oracle has published a `Reference Architecture` with a `Deploy to Cloud` option 
 
     ![oci-rms-required-1.png](images/oci-rms-required-1.png)
 
-1. For `A strong password for GPG Key`, provide a strong password with the necessary complexity. The password must be more than 8 characters and include at least one uppercase letter, one lowercase letter, one number, and one of the following special characters: !@#%^*_+-:?.,[]{}. Keep a note of this password as we will be using this while creating GPG Key.
+11. For `A strong password for GPG Key`, provide a strong password with the necessary complexity. The password must be more than 8 characters and include at least one uppercase letter, one lowercase letter, one number, and one of the following special characters: !@#%^*_+-:?.,[]{}. Keep a note of this password as we will be using this while creating GPG Key.
 
     ![oci-gpg-password.png](images/oci-gpg-password.png)
 
-1. With the `DevOps Project Configuration` variable block select the desired compartment for DevOps projects.
+12. With the `DevOps Project Configuration` variable block select the desired compartment for DevOps projects.
 
     ![oci-devops-compartment.png](images/oci-devops-compartment.png)
 
-1. Scroll down and can check/update any variables as optional.
-1. Uncheck option `Create new OCI Vault?` if you would wish to use an existing vault and ensure to add all the necessary policies.
+13. Scroll down and can check/update any variables as optional.
+14. Uncheck option `Create new OCI Vault?` if you would wish to use an existing vault and ensure to add all the necessary policies.
 
     ![oci-create-new-vault.png](images/oci-create-new-vault.png)
 
-1. Likewise uncheck option `Create new OKE cluster?` to reuse an existing OKE. You need to ensure relevant policies /VCN configurations accordingly.
+15. Likewise uncheck option `Create new OKE cluster?` to reuse an existing OKE. You need to ensure relevant policies /VCN configurations accordingly.
 
-1. Click `Next` to review the configuration.
+16. Click `Next` to review the configuration.
 
     ![oci-rms-review.png](images/oci-rms-review.png)
 
-1. Click `create` to start the stack `apply job`
+17. Click `create` to start the stack `apply job`
 
     ![oci-rms-apply-accepted.png](images/oci-rms-apply-accepted.png)
 
-1. The apply job would take 20 or more minutes to complete. Follow the logs to know the progress.
+18. The apply job would take 20 or more minutes to complete. Follow the logs to know the progress.
 
-1. In case of failure, refer to the logs and act accordingly. You may fix the concern and can apply again accordingly. Some resources may incur costs, so ensure to clean them using destroy if you would like not to proceed further.
+19. In case of failure, refer to the logs and act accordingly. You may fix the concern and can apply again accordingly. Some resources may incur costs, so ensure to clean them using destroy if you would like not to proceed further.
 
-1. Once the stacking job completes successfully you can move to the next lab.
+20. Once the stacking job completes successfully you can move to the next lab.
 
     ![oci-stack-done.png](images/oci-stack-done.png)
 
 *Optional Information*
 
-1. Incase to edit the stack configuration, from the `Stack details` page, select the `Edit terraform configuration in code editor` options.
+21. Incase to edit the stack configuration, from the `Stack details` page, select the `Edit terraform configuration in code editor` options.
 
     ![oci-stack-edit.png](images/oci-stack-edit.png)
 
-1. It will launch the OCI Code editor.
+22. It will launch the OCI Code editor.
 
     ![oci-codeeditor-launch.png](images/oci-codeeditor-launch.png)
 
-1. Within the code editor, under `Resource Manager`, select the desired compartment and select the stack.
+23. Within the code editor, under `Resource Manager`, select the desired compartment and select the stack.
 
     ![oci-ce-stack-compartments.png](images/oci-ce-stack-compartments.png)
 
-1. Post the update, we can plan or apply job initiation directly from the code editor itself.
+24. Post the update, we can plan or apply job initiation directly from the code editor itself.
 
     ![oci-ce-options.png](images/oci-ce-options.png)
 
-1. Check the status of the job via Resource Manager UI.
+25. Check the status of the job via Resource Manager UI.
 
     ![oci-stack-plan-from-ce.png](images/oci-stack-plan-from-ce.png)
 
