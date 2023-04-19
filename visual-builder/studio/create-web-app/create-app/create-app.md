@@ -33,9 +33,9 @@ This lab assumes you have:
 
 The first thing we'll do is add a web app to the HR visual application you just created. A visual application is a container for all your web and mobile applications. In this task, you add a single web app to your visual application, but you can have more than one, even both web and mobile apps in the same visual application.
 
-1. On the Project Home page, click **HR Visual Application** under Workspaces.
+1. 1. Click **Workspaces**![Workspaces icon](images/vbs-workspaces-icon.png), then click **HR Workspace** to open your workspace.
 
-    The visual application opens on the Designer's Welcome page.
+    The HR visual application opens on the Designer's Welcome page.
 
     ![This image shows part of the HR Visual Application's Welcome page. The page contains tiles in three sections: Connect to Data, Create Apps, and Add Artifacts. On  the right are sections with references to documentation and other resources.](images/visual-app-welcome.png "Welcome page in the Designer")
 
@@ -45,7 +45,7 @@ The first thing we'll do is add a web app to the HR visual application you just 
 
     ![Header in the HR Visual Application workspace. The workspace name HR Visual Application is on the left. Next to it, the Git repository and current branch tutorial-hr-project.git / hrbranch are visible. On the right are icons that let you perform other actions: Undo, Redo, Preview, Publish Changes, Product Feedback, Go to File, and Menu.](images/header.png "Header")
 
-    On the left is the name of your current workspace, **HR Visual Application**; next to it is the project's Git repository and the branch currently associated with your workspace (**tutorial-hr-project.git/hrbranch**). Click each option to see other actions that you can perform from here. Clicking ![Go to Project Page icon](images/go-to-project-home-icon.png) will take you back to the Project Home page.
+    On the left is the name of your current workspace, **HR Workspace**; next to it is the project's Git repository and the branch currently associated with your workspace (**tutorial-hr-project.git/hrbranch**). Click each option to see other actions that you can perform from here. Clicking ![Go to Project Page icon](images/go-to-project-home-icon.png) will take you back to the Project Home page.
 
     Elements on the right let you perform various other actions, such as undo a change or search the Git repository for a file. This workshop primarily demonstrates the options to preview your app, share it, and publish changes. If you make a mistake during this workshop, click ![Undo icon](images/undo-icon.png)  to back out of the last step you did.
 
@@ -81,11 +81,11 @@ The first thing we'll do is add a web app to the HR visual application you just 
     | 5 | Canvas | A design, live, or code view of your page's content |
     {: title="Page Designer Work Area"}
 
-    You can collapse and expand tabs to better manage your working area. For example, click **Properties** to hide the Properties pane and expand your work area. When collapsed, each tab will show as a vertical tab on the side of the editor. Click the tab again to expand it.
-
-    You can also move different panes to customize your work area. For example, right-click **Structure** at the bottom of your work area, then select **Move to Top Left** to move the Structure view right under **Components** and **Data**.
+    You can collapse and expand tabs to better manage your working area. For example, click **Properties** to hide the Properties pane and expand your work area. You can also move different panes to customize your work area. For example, right-click **Structure** at the bottom of your work area, then select **Move to Top Left** to move the Structure view right under **Components** and **Data**.
 
     ![Structure view's right-click menu, with the option to 'Move to Top Left' selected. Other options are 'Move to Bottom Left', 'Move to Top Right', 'Move to Bottom Right', and 'Reset All Panels to Default'.](images/structure-view-move.png "Structure view right-click menu")
+
+    When collapsed, each tab will show as a vertical tab on the side of the editor. Click the tab again to expand it.
 
     See also how you can manage tabs that open in the tab bar. Right-click the **main-start** tab to see the available options. Note that the active tab always stays in focus.
 
@@ -157,7 +157,7 @@ Let's now create the Department and Employee business objects. But instead of cr
 
 4. On the Upload File step of the Import New Business Objects wizard, click the drag and drop box, select the `Other-BOs.zip` file, and click **Upload**.
 
-    When the file is uploaded, you'll see a message that the import contains records for the Department and Employee business objects. Click **Next**.
+    When the upload succeeds, you'll see a message that the import contains records for the Department and Employee business objects. Click **Next**.
 
     ![Import New Business Objects wizard on the Upload File screen. A zip file has been uploaded and the results show at the bottom.](images/import-bos-upload-result.png "Upload File Screen in the Import New Business Objects wizard")
 
@@ -166,7 +166,7 @@ Let's now create the Department and Employee business objects. But instead of cr
 6. On the Fields step, you'll need to make some changes. For the Department business object (selected by default), look for the `Location` field in the second row and click **#** in the Type column. Change the type setting as follows:
 
       * **Type**: **Reference** ![Reference icon](images/reference-icon.png)
-      * **Referenced Business Object**: **Location** (the default for a **Referenced Business Object** is always the current business object (in this case, Department), so make sure you select **Location** from the drop-down list)
+      * **Referenced Business Object**: **Location** (the default for a **Referenced Business Object** is always the current business object, in this case, Department, so make sure you select **Location** from the drop-down list)
 
         A Reference field is like a foreign key in a database table: it's a field that refers to the key (the Id field) of another business object to link the two business objects together. So when you create a department, you'll be able to specify one of the floors as the department's location.
 
@@ -237,4 +237,4 @@ Now that you have your business objects, create a diagram that visualizes the bu
 ## Acknowledgements
 
 * **Author** - Sheryl Manoharan, VB Studio User Assistance, November 2021
-* **Last Updated By/Date** - Sheryl Manoharan, February 2023
+* **Last Updated By/Date** - Sheryl Manoharan, April 2023

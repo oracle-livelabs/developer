@@ -40,19 +40,29 @@ As someone who creates a project, you'll automatically become the project's owne
     * **Project Name**: `Tutorial HR Project` (you may want to add your name to the project name if you're in a large organization)
     * **Description**: `Tutorial project`
     * **Security**: **Private** and **Discoverable** (the default)
-    * **Preferred Language**: the language of your choice
+    * **Preferred Language**: **English** (the default)
 
     Click **Next**.
 
 3. On the Project Template screen, select **Visual Application** and click **Next**.
 
-4. On the Project Properties page, click **Development VB Instance** and select the VB instance where you plan to deploy and host your application. When you have only one VB instance provisioned, it will be automatically selected as your environment's development instance.
+4. On the Project Properties screen, specify additional properties for your project:
 
-5. Change the **Workspace Name** from the default `Workspace1` to `HR Workspace`. Also change the **Working Branch Name** from `branch1` to `hrbranch`.
+    * **Git Repository Name**: **tutorial-hr-project.git** (based on your project name)
+    * **Development VB Instance**: Select the VB instance where you plan to deploy and host your application (if you have only one VB instance provisioned, it will be automatically selected as your environment's development instance)
+    * **Workspace Name**: Replace the default `Workspace1` with `HR Workspace`
+    * **Working Branch Name**: Replace the default `branch1` with `hrbranch`
 
-    Leave other fields to their default settings and click **Next**.
+    Click **Next**.
 
-6. On the Project Team Members screen, add other members of your team who will work with you on this visual application. As the project owner, you can also control what others can do in this project by granting them membership as a Developer Full Access, Developer Limited Access, or Contributor. For demonstration purposes, let's add  Clara Coder with the Developer Limited Access role, which lets her access most project components. Click **Finish**.
+5. On the Project Team Members screen, add other members of your team who will work with you on this visual application.
+
+    * Select a user in the **Add Members** list. You can also enter the user's name to filter the results.
+    * Select a membership role (Project Owner, Developer Full Access, Developer Limited Access, or Contributor) to control what the user can do in this project.
+
+    For demonstration purposes, let's add  Clara Coder with the Developer Limited Access role, which lets her access most project components. Click **Add**. An email containing project details is sent to Clara Coder. To receive email notifications, the teammate's email address must be verified and notifications set properly in Preferences.
+
+    Now click **Finish**.
 
     Wait for the project to be provisioned. Once provisioning completes, you'll see the Project Home page, which serves as a window to your workspace, your environments, and repositories, as well as a recent activities feed. On the left are a series of tabs showing the available project components.
 
@@ -68,7 +78,7 @@ Everything you need to start building a visual application is now created for yo
 
     ![Contents of the tutorial-hr-project.git repository. Both the main and hrbranch branches are visible, with the hrbranch selected.](images/repo.png "Git page")
 
-2. In the left navigator, click **Workspaces**![Workspaces icon](images/vbs-workspaces-icon.png)to view the **HR Visual Application** workspace. This workspace contains a working copy of the `hrbranch` and serves as your _local_ repository. The `hrbranch` initially has the same set of source files as the `main` branch, but as you work with your visual application, it will include the changes you make. Your changes can't be seen by others until you save them from the local branch to a remote branch.
+2. In the left navigator, click **Workspaces**![Workspaces icon](images/vbs-workspaces-icon.png)to view the **HR Workspace**. This workspace contains a working copy of the `hrbranch` and serves as your _local_ repository. The `hrbranch` initially has the same set of source files as the `main` branch, but as you work with your visual application, it will include the changes you make. Your changes can't be seen by others until you save them from the local branch to a remote branch.
 
     ![The newly created HR Visual Application in the Workspaces table. Its repository is set to tutorial-hr-project.git, current branch is set to hrbranch, and environment is set to Development.](images/workspace.png "Workspaces page")
 
@@ -80,11 +90,13 @@ Everything you need to start building a visual application is now created for yo
 
     ![Jobs tab on the Builds page. It lists two default jobs Visual-Application-Deploy and Visual-Application-Package in the All Jobs tab. Both jobs include Actions on the right to Build, Configure, View Last Build Log, and Delete. Other tabs that you can use to filter are Successful Jobs, Failed Jobs, and Test Failed Jobs. A Create Job button is also visible.](images/build-jobs.png "Jobs tab on Builds page")
 
-5. On the Builds page, click **Pipelines** to view the `Visual Application - Package and Deploy` pipeline, which contains the two jobs we saw in the previous step. Pipelines create a chain of builds to define job dependencies. By default, the visual application pipeline runs the package job before the deploy job, so the latest application artifacts are packaged for deployment. From the pipeline's **Actions** ![Actions icon](images/vbs-actions-icon.png) menu, select **View Layout** to view the defined sequence of jobs.
+5. On the Builds page, click **Pipelines** to view the `Visual Application - Package and Deploy` pipeline, which contains the two jobs we saw in the previous step. Pipelines create a chain of builds to define job dependencies. From the pipeline's **Actions** ![Actions icon](images/vbs-actions-icon.png) menu, select **View Layout** to view the defined sequence of jobs.
 
     ![This image shows the Pipelines tab on the Builds page, with a diagram showing the sequence of jobs: Visual-Application-Package followed by Visual-Application-Deploy. A Create Pipeline button is also visible. On the right, there are action buttons to view Instances of a pipeline as well as Build, Configure, and Delete a pipeline.](images/build-pipeline.png "Pipelines tab on Builds page")
 
-6. Click **Builds** in the breadcrumbs trail to return to the main Builds page.
+    You'll see that the visual application pipeline, by default, runs the package job before the deploy job, so the latest application artifacts are packaged for deployment.
+
+    Click **Builds** in the breadcrumbs trail to return to the main Builds page.
 
 ## Task 3: Add credentials to deploy the visual application
 
@@ -106,25 +118,9 @@ Now that your project is provisioned, let's set up the credentials that VB Studi
 
     Click **Save**.
 
-## Task 4: Add team members
-
-For the purposes of this workshop, let's assume that other members of your team will work with you on this visual application—which means you'll need to add them to this project. As the project owner, you can control what others can do in this project by granting them membership as a Developer Full Access, Developer Limited Access, or Contributor.
-
-1. Click **Project Home** ![Project Home icon](images/vbs-project-home-icon.png) in the left navigator.
-
-2. On the Project Home page, click **Team**, then **\+ Add Member**.
-
-    ![Team tab on the Project Home page. The person who creates the project is listed as the Project owner. The Add Member button is also visible.](images/team.png "Team tab")
-
-3. In the Add Member dialog box, enter the username of a teammate, select the new user's membership, and click **Add**. For demonstration purposes, this lab adds Clara Coder with the Developer Limited Access role, which lets her access most project components but limits management actions.
-
-    ![Add Member dialog box, with Membership set to Developer Limited Access and Username set to Clara Coder. The Add button is selected.](images/team-add-member.png "Add Member dialog box")
-
-    An email containing project details is sent to Clara Coder. To receive email notifications, the teammate's email address must be verified and notifications set properly in Preferences.
-
     You may **proceed to the next lab**.
 
 ## Acknowledgements
 
 * **Author** - Sheryl Manoharan, VB Studio User Assistance, November 2021
-* **Last Updated By/Date** - Sheryl Manoharan, February 2023
+* **Last Updated By/Date** - Sheryl Manoharan, April 2023
