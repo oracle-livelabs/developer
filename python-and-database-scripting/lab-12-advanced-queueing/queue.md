@@ -5,7 +5,7 @@
 
 This lab will show how to use advanced queueing with python-oracledb driver in thick mode
 
-Estimated Lab Time: 5 minutes
+Estimated Lab Time: 10 minutes
 
 ### Objectives
 
@@ -115,11 +115,11 @@ python3 aq.py
 
 The output shows messages being queued and dequeued.
 
-![AQ Results](./images/step14.1-aq.png " ")
+![AQ Results](./images/aq.png " ")
 
-To experiment, split the code into three files: one to create and start the queue, and two other files to queue and dequeue messages. Experiment running the queue and dequeue files concurrently in separate terminal windows.
+To experiment, split the code into three files: one to create and start the queue (*aq-queuestart.py*), and two other files to queue (*aq-enqueue.py*) and dequeue (*aq-dequeue.py*) messages. Experiment running the queue and dequeue files concurrently in separate terminal windows.
 
-Try removing the commit() call in **aq-dequeue.py**. Now run **aq-enqueue.py** once and then **aq-dequeue.py** several times. The same messages will be available each time you try to dequeue them.
+Try removing the **commit()** call in **aq-dequeue.py**. Now run **aq-enqueue.py** once and then **aq-dequeue.py** several times. The same messages will be available each time you try to dequeue them.
 
 Change **aq-dequeue.py** to commit in a separate transaction by changing the "visibility" setting:
 
@@ -151,4 +151,4 @@ You have learned how to:
 
 * **Authors** - Christopher Jones, Anthony Tuininga, Sharad Chandran, Veronica Dumitriu
 * **Contributors** - Jaden McElvey, Anoosha Pilli, Troy Anthony
-* **Last Updated By/Date** - Veronica Dumitriu, DB Product Management, Aug 2022
+* **Last Updated By/Date** - Veronica Dumitriu, DB Product Management, Feb 2023

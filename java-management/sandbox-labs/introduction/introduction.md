@@ -4,7 +4,7 @@
 
 Java Management Service (JMS) is a reporting and management infrastructure integrated with Oracle Cloud Infrastructure (OCI) Platform services to observe and manage your use of Java SE (on-premises or in the Cloud).
 
-Additionally, JMS offers a series of advanced features which enables a deeper observation and management of the Java SE Runtime and applications, track the Java servers and libraries, performing the Java Flight Recorder and the cryptographic analysis on the Java applications.
+Additionally, JMS offers a series of advanced features which enables a deeper observation and management of the Java SE Runtime and applications, track the Java servers and libraries, performing the JDK Flight Recorder and the cryptographic analysis on the Java applications.
 
 Watch the video below for an introduction to Java Management Service and a brief demo.
 
@@ -16,11 +16,11 @@ As a customer, you can:
 * Use insights from JMS to optimize your workloads across your enterprise (desktop, server, cloud).
 * Protect your Java SE investments by identifying outdated Java installations and unauthorized applications.
 * View and identify Java Runtimes.
-* Install Java Runtimes and perform post java installation actions.
+* Install Java Runtimes and perform post Java installation actions.
 * Remove unwanted Java Runtimes.
 * Track Java servers and libraries.
 * Perform cryptographic analysis of Java applications.
-* Perform Java Flight Recording on Java applications.
+* Perform JDK Flight Recording on Java applications.
 
 JMS helps systems administrators to answer questions such as:
 
@@ -29,10 +29,10 @@ JMS helps systems administrators to answer questions such as:
 * Are my applications using their intended Java installations?
 * Are there any unauthorized applications running?
 * How many outdated Java installations do I have?
-* Which Java Servers are running in my environment
-* Which applications are running on the Java Servers
-* Which libraries are being used on the applications in my environment
-* Are there any crypto event that needs to be addressed
+* Which Java Servers are running in my environment?
+* Which applications are running on the Java Servers?
+* Which libraries are being used on the applications in my environment?
+* Are there any crypto event that needs to be addressed?
 
 As the stewards of Java, Oracle can provide answers to these questions. Oracle uniquely leverages its expertise to gain critical insights into Java application behavior, compliance, and performance.
 
@@ -45,8 +45,8 @@ As the stewards of Java, Oracle can provide answers to these questions. Oracle u
  Next, you will proceed to use the advanced features available in JMS, which consist of:
  - Using Advanced Usage Tracking to identify Java servers such as Weblogic that are running in your fleet and the applications that are deployed by these Java servers.
  - Using Advanced Usage Tracking to find the libraries in the running applications identify potential vulnerabilities associated with the Java libraries used by your application
- - Perform a cyrpto event analysis to access the impact of Oracle JRE and JDK Cryptographic roadmap on the applications running in your fleet. 
- - Running the Java Flight Recorder (JFR) on a Java application which is running on the fleet to collect diagnostic and profiling data on the application.
+ - Perform a crypto event analysis to access the impact of Oracle JRE and JDK Cryptographic roadmap on the applications running in your fleet. 
+ - Running the JDK Flight Recorder (JFR) on a Java application which is running on the fleet to collect diagnostic and profiling data on the application.
  - Using the Lifecycle Management (LCM) operation to remove a Java runtime
  - Using the Lifecycle Management (LCM) operation to install a Java runtime and run the post Java installation actions
  
@@ -67,7 +67,7 @@ Finally, you will learn how to view and monitor work requests, understand the lo
 * Scan for Java servers
 * Scan for Java libraries
 * Perform cryptographic analysis of Java applications
-* Run a Java Flight Recorder (JFR) for a Java application
+* Run a JDK Flight Recorder (JFR) for a Java application
 * Understand and perform LCM operations with JMS
 
 ### Prerequisites
@@ -93,4 +93,4 @@ To try JMS on your own tenancy, see:
 ## Acknowledgements
 
 * **Author** - Yixin Wei, Java Management Service
-* **Last Updated By/Date** - Bao Jin Lee, January 2023
+* **Last Updated By/Date** - Ivan Eng, March 2023

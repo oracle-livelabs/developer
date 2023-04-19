@@ -1,4 +1,4 @@
-# Publish a Web App
+# Publish a web app
 
 ## Introduction
 

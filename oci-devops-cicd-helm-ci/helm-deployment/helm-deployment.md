@@ -231,5 +231,3 @@ You may now **proceed to the next lab**.
 * **Author** - Rahul M R
 * **Last Updated By/Date** - Rahul M R - April 2023
 
-
-

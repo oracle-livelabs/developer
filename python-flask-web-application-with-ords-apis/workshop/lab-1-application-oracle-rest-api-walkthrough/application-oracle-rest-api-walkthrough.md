@@ -103,12 +103,6 @@ There are various ways you can start your Flask application. This is the more ma
     ```
   ![Opening the Python application](images/export-flask-dev-env.png " ")
     
-    > 🚨 *For PC/Windows users, starting Flask is straightforward. After you've activated your Virtual Environment, you may need to pip install `Flask` and `Folium`. Once complete, you may use the following command to start Flask:* 
-    
-    ```
-    <copy>flask --app lab_1_app.py run</copy>
-    ```
-    
 2. Then(*Mac OS/Linux users*):
     ```
     <copy>export FLASK_APP=lab_1_app.py</copy>
@@ -120,6 +114,12 @@ There are various ways you can start your Flask application. This is the more ma
     <copy>flask run</copy>
     ```
     ![Opening the Python application](images/flask-run-command.png " ")
+
+> 🚨 **PC/Windows users**, starting Flask is straightforward (Once you've activated your Virtual Environment you will still need to install `Flask` and `Folium`). You may use the following command to start Flask:*
+
+    ```
+    <copy>flask --app lab_1_app.py run</copy>
+    ```
 
 4. Once the development server is live, right-click the server IP address to open the Flask application. The application will automatically open in your default browser. 
 
@@ -133,7 +133,7 @@ There are various ways you can start your Flask application. This is the more ma
 
     ![The index page in portrait view](images/initial-page-load.png " ")
 
-   🏗 *But first, let's personalize this *Welcome* page.*
+   🏗 *But first, let's personalize this Welcome page.*
 
 ## Task 5: Personalize the index.html page
 
@@ -141,11 +141,11 @@ There are various ways you can start your Flask application. This is the more ma
 
     ![Observing the filler text at the top of the page.](images/index-page-portrait-view.png " ")
 
-2. Return to your editor and expand the **`templates`** folder. There you'll find the `index` file. Select it.
+2. Return to your editor and expand the **`templates`** folder. There you'll find the **`index.html`** file. Select it.
 
     ![Navigating to the templates folder and the index page.](images/navigate-to-templates-folder-index-file.png " ")
 
-3. Scroll down till you see the **`<div class="card-body">`** container on Line 12. Change the test in Lines 13-14 to something else; anything you like. 
+3. Scroll down till you see the **`<div class="card-body">`** container on Line 12. Change the text in Lines 13-14 to something of your choosing. 
 
     ![Changing the card body text to something unique.](images/change-card-body-text.png " ")
     *<sub>Once satisfied, save the file.</sub>*
@@ -169,7 +169,7 @@ There are various ways you can start your Flask application. This is the more ma
 
 3. But we'll first explore the *Folium* map at the bottom of this **`index`** page. 
     
-   > 🧠 *Folium "makes it easy to visualize data manipulated in Python on an interactive Leaflet.js map. Manipulate your data in Python, then visualize it on a Leaflet map via Folium...It enables both the binding of data to a map for choropleth visualizations and passing rich vector/raster/HTML visualizations as markers on the map. To expand your knowledge of Folium and Leaflet.js, visit the "Learn More" section for more details.*
+   > 🧠 *Folium "makes it easy to visualize data manipulated in Python on an interactive Leaflet.js map. Manipulate your data in Python, then visualize it on a Leaflet map via Folium...It enables both the binding of data to a map for choropleth visualizations and passing rich vector/raster/HTML visualizations as markers on the map. To expand your knowledge of Folium and Leaflet.js, see the "Learn More" section for more details.*
 
 4. When in Folium map, we can interact with location markers - these represent various attractions in the downtown Las Vegas area. In this application, we are focused on venues such as museums and art installations.  
 
@@ -236,7 +236,8 @@ There are various ways you can start your Flask application. This is the more ma
    
    Let's say you'd like to add another location to this table. You, as the developer, can do that. This is *your* application, and you should be able to make changes on-the-fly! Once the logic is set up on the database end, anything you feed to the table (that fits that logic) is acceptable.
 
-    1. First, begin by copying the appropriate cURL command for your environment. 
+    1. We'll do this next step in a terminal. First, begin by copying the appropriate cURL command for your environment.
+
         - Command Prompt:
 
             ```bash
@@ -247,7 +248,7 @@ There are various ways you can start your Flask application. This is the more ma
 
         - Power Shell:
         
-            ```powershell
+            ```shell
             <copy>curl.exe -v -X POST `
             -H "Content-Type: application/json" "https://yfuxkbz2ls7taze-ordshandsonlabs.adb.us-phoenix-1.oraclecloudapps.com/ords/python/flask/museums/" `
             -d "{\"MUSEUM_NAME\":\"<VALUE>\",\"MUSEUM_LOCATION\":\"<VALUE>\",\"MUSEUM_LAT\":\"<VALUE>\",\"MUSEUM_LONG\":\"<VALUE>\",\"message\":\"<VALUE>\"}"</copy>
@@ -268,9 +269,7 @@ There are various ways you can start your Flask application. This is the more ma
             }'</copy>
             ```
 
-    2. Next, choose some **`{Key: Values}`** that adhere to the datatypes Oracle REST Data Services (ORDS) expects. *Be sure to choose something unique* so you can quickly identify it. 
-    
-       Review this table for what our Database table expects:  
+    2. Next, choose some **`{Key: Values}`** that adhere to the datatypes Oracle REST Data Services (ORDS) expects. *Be sure to choose something unique* so you can quickly identify it. Review this table for what our Database table expects:  
       
         |Key              |Value's Data Type |Example Value                                |
         |---------------- | ---------------- | ------------------------------------------- |
@@ -280,11 +279,11 @@ There are various ways you can start your Flask application. This is the more ma
         |`MUSEUM_LONG`    |NUMBER(9,6)       |100.000000 <sup>c</sup>                      |
         {: title="`{Key:Value}` Reminder Table"}
     
-      <sup><sup>a</sup> Both Name and Location are strings, so they you'll need to retain the quotes in your cURL command.</sup>
+       <sup><sup>a</sup> Both Name and Location are strings, so they you'll need to retain the quotes in your cURL command.</sup>
       
-      <sup><sup>b</sup> We've specified "Precision" and "Scale" for the latitude. That's 8 digits in the number; 6 of them to the *right* of the decimal.</sup>
+       <sup><sup>b</sup> We've specified "Precision" and "Scale" for the latitude. That's 8 digits in the number; 6 of them to the *right* of the decimal.</sup>
       
-      <sup><sup>c</sup> We've also specified "Precision" and "Scale for the longitude. Here we have 9 digits in the number; 6 of them to the *right* of the decimal.</sup>
+       <sup><sup>c</sup> We've also specified "Precision" and "Scale for the longitude. Here we have 9 digits in the number; 6 of them to the *right* of the decimal.</sup>
     
       > 🏴‍☠️ *Here is our example of the Bash cURL command we sent:*
    
@@ -300,7 +299,7 @@ There are various ways you can start your Flask application. This is the more ma
           }'</copy>
       ```
 
-9. Enter the cURL Command in your terminal (*your command may differ slightly*). 
+9. Enter the cURL Command in your terminal (*your command may differ slightly*) to `POST` this entry to the associated table (located in our Autonomous Database).
 
        ![The cURL command in the terminal](images/post-curl-command-in-terminal.png " ")
     
@@ -343,35 +342,40 @@ There are various ways you can start your Flask application. This is the more ma
 4. Next, update the *Passes needed* field. You'll see the *Total Price* field update as you do this. When you're satisfied with your selections, click the "Complete my purchase" button:
 
    ![Total price updates on order form](images/total-price-updates-with-quantity.png " ")
-    
+
 5. The **`orderhistory.html`** page will load. 
 
      > 🧠 *To keep this simple, we've omitted the payment gateway step, but since you have access to the code, you could always add that later.*
 
     A table with our previous orders will appear. Yet again, we have been served this data through another Oracle REST API.
-   
+
     ![Reviewing the changes from your POST request](images/table-with-previous-orders.png " ") 
 
-6. Later, you'll see how everything works together in our **`app.py`** file. But for now, it's essential to understand Oracle REST APIs' role in this application. 
+6. To exit the Flask application, return to your terminal and press the `Control` + `C` keys.
 
-7. Congratulations, you made it! You should now have a better understanding of:
-   * This particular Flask application 
-   * The interactions between Oracle REST APIs and this application
-   * How Oracle REST APIs can:
-     * Accelerate application development, *and*
-     * Reduce complexity
+7. Soon, you'll see how everything works together in our **`app.py`** file. But for now, it's essential to understand Oracle REST APIs' role in this application. 
+
+8. Congratulations, you made it! You should now have a better understanding of:
+
+   - This particular Flask application
+   - The interactions between Oracle REST APIs and this application
+   - How Oracle REST APIs can:
+     - Accelerate application development, *and*
+     - Reduce complexity
 
 ### You may now **proceed to the next Lab.**
 
 ## Learn More
-* [A minimal application in Flask](https://flask.palletsprojects.com/en/2.1.x/quickstart/#a-minimal-application)
-* [About the Flask "Application Object"](https://flask.palletsprojects.com/en/2.1.x/api/#application-object)
-* [Python Virtual Environments in VS Code](https://code.visualstudio.com/docs/python/environments)
-* About environment variables in Flask:
-    * [The `python-dotenv` library](https://github.com/theskumar/python-dotenv#readme)
-    * [Flask documentation - Environment variables](https://flask.palletsprojects.com/en/2.2.x/cli/#environment-variables-from-dotenv)
-* [About Folium](https://python-visualization.github.io/folium/)
-* [About Leaflet.js](https://leafletjs.com/)
+
+- [A minimal application in Flask](https://flask.palletsprojects.com/en/2.2.x/quickstart/)
+- [About the Flask "Application Object"](https://flask.palletsprojects.com/en/2.2.x/api/)
+- [Python Virtual Environments in VS Code](https://code.visualstudio.com/docs/python/environments)
+- About environment variables in Flask:
+
+  - [The `python-dotenv` library](https://github.com/theskumar/python-dotenv#readme)
+  - [Flask documentation - Environment variables](https://flask.palletsprojects.com/en/2.2.x/cli/#environment-variables-from-dotenv)
+- [About Folium](https://python-visualization.github.io/folium/)
+- [About Leaflet.js](https://leafletjs.com/)
 
 ## Acknowledgements
 * **Author** - Chris Hoina, Senior Product Manager, Database Tools
@@ -379,5 +383,5 @@ There are various ways you can start your Flask application. This is the more ma
   - Jeff Smith, Distinguished Product Manager, Database Tools
   - Justin Biard, Senior Member of Technical Staff, Database Tools 
   - Zachary Talke, Product Manager, Database Tools
-  - Brian Spendolini, Principal Product Manager
-* **Last Updated By/Date** - Chris Hoina, September 2022
+  - Brian Spendolini, Contributor
+* **Last Updated By/Date** - Chris Hoina, March 2023

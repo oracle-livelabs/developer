@@ -14,17 +14,17 @@
         {
             "title": "Lab 1: Setups",
             "description": "Setup your OCI Account and Create an Oracle Autonomous Database",
-            "filename": "../../setups/setups.md"
+            "filename": "../../lab-1-setups/lab-1-setups.md"
         },
         {
             "title": "Lab 2: Create a Function to Batch Load Data into the Database Using ORDS",
             "description": "Create a Function to Batch Load Data into the Database Using ORDS",
-            "filename": "../../csv-function/csv-function.md"
+            "filename": "../../lab-2-csv-function/lab-2-csv-function.md"
         },
         {
             "title": "Lab 3: Create a Function and Service Connector to Load Logs from the Logging Service into the Database Using ORDS",
             "description": "Create a Function and Service Connector to Load Logs from the Logging Service into the Database Using ORDS",
-            "filename": "../../json-logging/json-logging.md"
+            "filename": "../../lab-3-json-logging/lab-3-json-logging.md"
         },
         {
             "title": "Need Help?",

@@ -7,8 +7,6 @@ Oracle Enterprise Data Quality provides a comprehensive data quality management 
 
 *Estimated Lab Time*: 3 Hours
 
-  ![](./images/edq_architecture.png " ")
-
 Key reasons why companies choose Oracle Enterprise Data Quality for their data quality needs:
   * Faster and simpler development and maintenance
   * Simple, efficient architecture
