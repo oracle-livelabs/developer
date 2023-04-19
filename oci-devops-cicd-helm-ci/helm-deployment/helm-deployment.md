@@ -87,33 +87,33 @@ $ gpg --output ./helm-attestation-public-key.pgp --export oci_devops
    ![gpg-fetch-keys.png](images/gpg-fetch-keys.png)
 
 
-1. The file `./secring.gpg` contains the private key and ..`/helm-attestation-public-key.pgp` contains the public key. You won't be able to read them unless convert into a base64 format.
+8. The file `./secring.gpg` contains the private key and ..`/helm-attestation-public-key.pgp` contains the public key. You won't be able to read them unless convert into a base64 format.
 
-1. Search `artifact registry` in the search box and open the page
+9. Search `artifact registry` in the search box and open the page
 
     ![oci-artifact-registry.png](images/oci-artifact-registry.png)
 
-1. Click on the repo. Click the `upload artifact` button.
+10. Click on the repo. Click the `upload artifact` button.
 
     ![oci-upload-artifact-btn.png](images/oci-upload-artifact-btn.png)
 
-1. Upload the file ./secring.gpg to the artifact repo. You may use version 0.0 with any name.
+11. Upload the file ./secring.gpg to the artifact repo. You may use version 0.0 with any name.
 
     ![oci-upload-file.png](images/oci-upload-file.png)
 
-1. Use the `3 dots` and copy the OCID of the artifacts.
+12. Use the `3 dots` and copy the OCID of the artifacts.
 
     ![oci-artifact-ocid.png](images/oci-artifact-ocid.png)
 
-1. We will be using OCI Vault to store the base64 value of the gpg public key and the passphrase to sign and verify the helm chart. Search `vault` in the search box and open the vault.
+13. We will be using OCI Vault to store the base64 value of the gpg public key and the passphrase to sign and verify the helm chart. Search `vault` in the search box and open the vault.
 
     ![oci-vault-list.png](images/oci-vault-list.png)
 
-1. With the secret a dummy placeholder is created with the name `gpg_pub_key`
+14. With the secret a dummy placeholder is created with the name `gpg_pub_key`
 
     ![oci-secert-dummay.png](images/oci-secert-dummay.png)
 
-1. Fetch the base64 value of file helm-attestation-public-key.pgp
+15. Fetch the base64 value of file helm-attestation-public-key.pgp
 
     ```java
     <copy>
@@ -123,11 +123,11 @@ $ gpg --output ./helm-attestation-public-key.pgp --export oci_devops
     
     ![gpg-pub-base64.png](images/gpg-pub-base64.png)
 
-1. Click the vault secret `gpg_pub_key` and click the `Create Secret Version` button.
+16. Click the vault secret `gpg_pub_key` and click the `Create Secret Version` button.
 
     ![oci-new-secret.png](images/oci-new-secret.png)
 
-1. Create a secret for the public key and copy the base64 value to it. Ensure to use the secret Type Template as `Base64`.Click creates.
+17. Create a secret for the public key and copy the base64 value to it. Ensure to use the secret Type Template as `Base64`.Click creates.
 
     ![oci-new-secret-key-created.png](images/oci-new-secret-key-created.png)
 
@@ -230,6 +230,4 @@ You may now **proceed to the next lab**.
 
 * **Author** - Rahul M R
 * **Last Updated By/Date** - Rahul M R - April 2023
-
-
 
