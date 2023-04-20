@@ -36,7 +36,7 @@ This lab assumes you have:
 
     An empty action chain with the ID ButtonActionChain is created.
 
-6. In the Actions palette, scroll down to the **Navigation** section, then drag the **Navigate To Page** action onto the editor.
+6. In the Actions palette, scroll down to the **Navigation** section, then drag the **Navigate To Page** action onto the canvas.
 
     ![The Action Chain editor is shown, with the Navigate To Page action being dragged onto the canvas.](images/new-buttonactionchain.png "")
 
@@ -63,7 +63,7 @@ This lab assumes you have:
 
     Another empty action chain with the ID ButtonActionChain is created. Because this action chain is for a different page, it doesn't matter that it has the same name as the one for the main-departments page.
 
-5. Drag the **Navigate To Page** action from the **Navigation** section onto the editor.
+5. Drag the **Navigate To Page** action from the **Navigation** section onto the canvas.
 6. In the Navigate To Page action's Properties pane, select **main-departments** from the **Page** list.
 
     The action now has the label **Navigate To Page main-departments**.
