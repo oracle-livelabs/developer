@@ -119,7 +119,6 @@ python3 connect_pool2.py
 Experiment with different values of the pool parameters and **numberOfThreads**. Larger initial pool sizes will make the pool creation slower, but the connections will be available immediately when needed. When **numberOfThreads** exceeds the maximum size of the pool, the **acquire()** call will generate an error such as **ORA-24459: OCISessionGet() timed out waiting for the pool to create new connections**. 
 
 Pool configurations where min is the same as max (and increment = 0) are often recommended as a best practice. This avoids connection storms on the database server.
-.
 
 ## Conclusion
 
@@ -131,4 +130,4 @@ You have learned how to:
 
 * **Authors** - Christopher Jones, Anthony Tuininga, Sharad Chandran, Veronica Dumitriu
 * **Contributors** - Jaden McElvey, Anoosha Pilli, Troy Anthony
-* **Last Updated By/Date** - Veronica Dumitriu, DB Product Management, Oct 2022
+* **Last Updated By/Date** - Veronica Dumitriu, Oracle Database Drivers Product Management, Oct 2022

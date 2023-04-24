@@ -20,6 +20,7 @@ In this lab, you will:
 - You have signed up for an account with Oracle Cloud Infrastructure and have received your sign-in credentials.
 - You are using an Oracle Linux image or Windows OS on your Managed Instance for this lab.
 - Access to the cloud environment and resources configured in [Lab 2](?lab=setup-a-fleet).
+- You have installed the latest version of Oracle JDK 8 in your machine according to [Lab 3 Task 3](?lab=deploy-a-java-application#Task3:InstallJava8andcreateasimpleJavaapplication).
 
 ## Task 1: Install Management Agent on an OCI Host
 
@@ -33,7 +34,7 @@ This task is for the installation of Management Agent in an OCI Host (OCI Comput
 
   ![image of console navigation to java management](images/navigate-policies.png)
 
-  2. Click **JMS-policies**.
+  2. Click **JMS_Policy**.
   
   ![image of console navigation to java management](images/root-compartment-jms-policy.png)
 
@@ -57,7 +58,7 @@ This task is for the installation of Management Agent in an OCI Host (OCI Comput
 
 **On Linux (on OCI)**
 
-1. Prepare the **installation script** for Linux downloaded in [Lab 2](?lab=setup-a-fleet). Or enter the following command to transfer the script to the remote Managed Instance.
+1. Prepare the **installation script** for Linux downloaded in [Lab 2](?lab=setup-a-fleet). Enter the following command to transfer the script to the remote Managed Instance.
 
     ```
     <copy>
@@ -84,14 +85,14 @@ This task is for the installation of Management Agent in an OCI Host (OCI Comput
 
 5. If installation is successful, you'll see a message similar to the following:
 
-     ```
-     ...
-     Management Agent installation has been completed.
-     Management Agent plugin 'Java Management Service' installation has been completed.
-     Management Agent plugin 'Java Usage Tracking' installation has been completed.
-     Management Agent was successfully registered using key YourFleetName (ocid1.managementagentinstallkey.oc1.iad.<some ocid hash>).
-     Assigned JMS Fleet is YourFleetName (ocid1.jmsfleet.oc1.iad.<some ocid hash>).
-     ```
+      ```
+      ...
+      Oracle Cloud Agent plugin 'Oracle Java Management Service' installation has been completed.
+      Oracle Cloud Agent plugin 'Management Agent' installation has been completed.
+      Management Agent plugin 'Java Usage Tracking' installation has been completed.
+      Management Agent was successfully registered using key YourFleetName (ocid1.managementagentinstallkey.oc1.<region>.<some ocid hash>).
+      Assigned JMS Fleet is YourFleetName (ocid1.jmsfleet.oc1.<region>.<some ocid hash>).
+      ```
 
 **On Windows (on OCI)**
 
@@ -117,25 +118,27 @@ This task is for the installation of Management Agent in an OCI Host (OCI Comput
 
 5. If installation is successful, you'll see a message similar to the following:
 
-     ```
-     ...
-     Management Agent installation has been completed.
-     Management Agent plugin 'Java Management Service' installation has been completed.
-     Management Agent plugin 'Java Usage Tracking' installation has been completed.
-     Management Agent was successfully registered using key YourFleetName (ocid1.managementagentinstallkey.oc1.iad.<some ocid hash>).
-     Assigned JMS Fleet is YourFleetName (ocid1.jmsfleet.oc1.iad.<some ocid hash>).
-     ```
+      ```
+      ...
+      Oracle Cloud Agent plugin 'Oracle Java Management Service' installation has been completed.
+      Oracle Cloud Agent plugin 'Management Agent' installation has been completed.
+      Management Agent plugin 'Java Usage Tracking' installation has been completed.
+      Management Agent was successfully registered using key YourFleetName (ocid1.managementagentinstallkey.oc1.<region>.<some ocid hash>).
+      Assigned JMS Fleet is YourFleetName (ocid1.jmsfleet.oc1.<region>.<some ocid hash>).
+      ```
 
 
 ## Task 2: Install Management Agent on a non-OCI Host
 
-This task is for the installation of Management Agent in a non OCI host(e.g. on premise, other cloud computer). 
+This task is for the installation of Management Agent in a non-OCI host(e.g. on premise, other cloud compute). 
 
 >**Note:** If you have installed the management agent on an OCI instance in Task 1, please skip this task and proceed to Task 3.
 
-For installation of Management agent on Non OCI hosts, you need to have both the installation script and the management agent software from [Lab 2](?lab=setup-a-fleet). 
+For installation of Management agent on non-OCI hosts, you need to have both the installation script and the management agent software from [Lab 2](?lab=setup-a-fleet). 
 
 Both files need to be placed in the same directory before you proceed.
+
+>**Note:** Ensure that you have installed the latest Oracle JDK 8 on your machine before you proceed according to [Lab 3 Task 3](?lab=deploy-a-java-application#Task3:InstallJava8andcreateasimpleJavaapplication). Management Agents require Oracle JDK 8 to be installed.
 
 **On Linux (Non-OCI Host)**
 
@@ -198,7 +201,12 @@ Both files need to be placed in the same directory before you proceed.
     </copy>
     ```
 
-5. Enter the following command to run the installation script. The installation may take some time to complete.
+5. To ensure you have the correct permissions to run the script, type Set-ExecutionPolicy RemoteSigned and answer A.
+
+    It should look similar to the following:
+    ![setting execution policy in windows powershell](images/set-execution-policy.png)
+
+6. Enter the following command to run the installation script. The installation may take some time to complete.
 
     ```
     <copy>
@@ -206,7 +214,7 @@ Both files need to be placed in the same directory before you proceed.
     </copy>
     ```
 
-6. If installation is successful, you'll see a message similar to the following:
+7. If installation is successful, you'll see a message similar to the following:
 
      ```
      ...
@@ -246,7 +254,7 @@ Both files need to be placed in the same directory before you proceed.
 
   ![image of oca plug-in detail page](images/jut-plugin-oci.png)
 
-2. For **Java Management Service** plug-in, go to compute instance page.
+2. For **Java Management Service** plug-in, go to Compute Instance page.
 
   ![image of navigation to instance](images/nav-compute-instance.png)
 
@@ -327,11 +335,17 @@ We shall demonstrate the detection of the Java compiler and HelloWorld applicati
 
 4. Click **Java Runtimes** under **Resources**. If tagging and installation of management agents is successful, Java Runtimes will be indicated on the Fleet Main Page after 5 minutes.
 
+  **For Non-OCI Hosts:**
   You should see only one Java Runtime. This corresponds to the Java 8 installation from [Lab 3](?lab=deploy-a-java-application).
 
-  ![image of runtimes after successful installation](images/successful-installation.png)
+  ![image of runtimes after successful installation on non-oci host](images/successful-installation-non-oci.png)
 
-5. Click **Applications** under **Resources**. You should now see two applications. The first is from the javac compiler command and the second is from the HelloWorld application.
+  **For OCI Hosts:**
+  You should see two Java Runtimes. This corresponds to the Java 8 installation from [Lab 3](?lab=deploy-a-java-application), and Java 11 installation from the installation script at [Lab 5 Task 1](?lab=set-up-of-management-agent#task1installmanagementagentonanocihost).
+
+  ![image of runtimes after successful installation on oci host](images/successful-installation-oci.png)
+
+5. Click **Applications** under **Resources**. You should now see two applications. The first is from the HelloWorld application and the second is from the javac compiler command.
 
   ![image of applications after successful installation](images/successful-installation-applications.png)
 
@@ -351,7 +365,7 @@ You may now **proceed to the next lab.**
 
   ![image of installation script unable to find error](images/troubleshoot-unable-to-find-jdk.png)
 
-  Please manually download and install Oracle JDK 1.8 from [official Oracle page](https://www.oracle.com/java/technologies/javase/javase8u211-later-archive-downloads.html).
+  Please manually download and install Oracle JDK 8 from [official Oracle page](https://www.oracle.com/java/technologies/javase/javase8u211-later-archive-downloads.html).
 
 - If you encounter an error similar to the following:
 
@@ -377,4 +391,4 @@ You may now **proceed to the next lab.**
 ## Acknowledgements
 
 - **Author** - Esther Neoh, Java Management Service
-- **Last Updated By** - Bao Jin Lee, November 2022
+- **Last Updated By** - Ivan Eng, March 2023

@@ -1,4 +1,4 @@
-# Access Data From an External REST Service
+# Access data from an external REST service
 
 ## Introduction
 
@@ -13,6 +13,23 @@ So far in this workshop, you've created business objects to store data in an emb
 Service connections let you access data objects exposed by Oracle services as well as external services. If you want to connect to REST APIs exposed by Oracle Cloud Applications or Oracle Integration, you have access to an integrated service catalog. If you want to call an external REST service, you can do that too with just a few clicks. In this lab, we'll create a service connection to a publicly available REST service and wire our pages to get information about the country that an employee works from.
 
 Remember that no matter what form your data takes (business objects or service connections), the basic principles of creating an application are the same. The key difference between the two data sources: business objects store data as part of the app itself, service connections receive data from REST APIs.
+
+### Objectives
+
+In this lab, you will:
+
+* Create a connection to an external REST service
+* Add UI components on a page to display data from the REST endpoint
+* Create a type and variable to store data from the REST endpoint
+* Assign data to the variable
+* Test data received from the REST endpoint
+
+### Prerequisites
+
+This lab assumes you have:
+
+* A Chrome browser
+* All previous labs successfully completed
 
 ## Task 1: Create a connection to an external REST endpoint
 
@@ -138,7 +155,7 @@ In this step, we'll use the Country field as the data source for our variables a
 
 ## Task 5: Test the employee's country details
 
-1. Click **Preview** ![Preview icon](images/run-icon.png) to run your application.
+1. Click **Preview** ![Preview icon](images/preview-icon.png) to run your application.
 
 2. Select a row, then click **Edit Employee**.
 

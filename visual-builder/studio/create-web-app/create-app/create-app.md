@@ -1,4 +1,4 @@
-# Create a Web App in a Visual Application
+# Create a web app in a visual application
 
 ## Introduction
 

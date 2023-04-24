@@ -56,7 +56,7 @@ You will need to download the HERE (Formerly NAVTEQ) archive, a sample geographi
 ````
     ls -al /home/opc/labs/python/world_sample_q114
 ````
-![](./images/p_worldSample-list.png)
+![list files](./images/p_worldSample-list.png)
 
 
 
@@ -486,4 +486,3 @@ An additional lab on using Python with Spatial data is also available elsewhere 
 
 - **Author** - Troy Anthony
 - **Last Updated By/Date** - Troy Anthony, April 2020
-

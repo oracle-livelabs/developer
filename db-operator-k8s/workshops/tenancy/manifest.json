@@ -23,17 +23,17 @@
             "filename": "../../install-operator/install-operator.md"
         },
         {
-            "title": "Lab 3: Deploy a SingleInstance Database using a dynamically allocated Block Volume",
+            "title": "Lab 3: Deploy a SingleInstance Database with a dynamically allocated Block Volume",
             "description": "Deploy DB on dynamic Block Volume.",
             "filename": "../../deploy-db-bv/deploy-db-on-bv.md"
         },
         {
-            "title": "Lab 4: Deploy a SingleInstance Database using a static NFS filesystem",
+            "title": "Lab 4: Deploy a SingleInstance Database with a static NFS filesystem",
             "description": "Deploy DB on NFS Volume.",
             "filename": "../../deploy-db-fss/deploy-db-on-fss.md"
         },
         {
-            "title": "Lab 5: Failover to another node and redeploying the DB",
+            "title": "Lab 5: Failover to another node and redeploy the DB",
             "description": "Test DB failover to another node of K8S ckuster.",
             "filename": "../../db-actions/db-actions.md"
         },

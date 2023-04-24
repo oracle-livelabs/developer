@@ -29,9 +29,11 @@ Before the set up of the Management Agent, it is important to understand the con
 
   ![image of java usage tracking service plugin](images/java-usage-tracking-service-plugin.png)
 
-- **Java Management Service plugin**: A Service Plugin responsible for enabling Java runtime Lifecycle Management, which is an advanced feature of JMS. This workshop will focus on the basics of JMS. If you would like to learn more about the Lifecycle Management feature, you may refer to [Perform Java Lifecycle Management with Java Management Service](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=3202).
+- **Java Management Service plugin**: A Service Plugin responsible for enabling Java runtime Lifecycle Management, which is an advanced feature of JMS. This workshop will focus on the basics of JMS. If you would like to learn more about the Lifecycle Management feature, you may refer to [Using Java Management Service Advanced Features](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=3202).
 
-  Java Management Service plugin is deployed in different ways on OCI and non-OCI Managed Instances. On non-OCI Managed Instances, it is deployed through Management Agent, and can be found under Observability & Management -> Management Agent -> Agents -> Deploy plug-ins. On OCI Managed Instances, it is deployed through Oracle Cloud Agent (OCA), and can be found under Compute -> Instances -> Oracle Cloud Agent.
+  Java Management Service plugin is deployed in different ways on OCI and non-OCI Managed Instances. 
+    * On non-OCI Managed Instances, it is deployed through Management Agent, and can be found under Observability & Management -> Management Agent -> Agents -> Deploy plug-ins. 
+    * On OCI Managed Instances, it is deployed through Oracle Cloud Agent (OCA), and can be found under Compute -> Instances -> Oracle Cloud Agent.
 
   **On non-OCI Managed Instances:**
   ![image of JMS plugin on non-OCI Managed Instances](images/jms-plugin-non-oci.png)
@@ -62,7 +64,7 @@ Before the set up of the Management Agent, it is important to understand the con
 ## Learn More
 
 * Refer to the [Management Agent Concepts](https://docs.oracle.com/en-us/iaas/management-agents/doc/you-begin.html),
-  [Configuring a Management Agent on an OCI Compute Instance](https://docs.oracle.com/en-us/iaas/jms/doc/agent-management.html) and [Installation of Management Agents](https://docs.oracle.com/en-us/iaas/management-agents/doc/install-management-agent-chapter.html) sections of the JMS documentation for more details.
+  [Configuring a Management Agent on an OCI Compute Instance](https://docs.oracle.com/en-us/iaas/jms/doc/management-agent.html#AJSUG-GUID-7BC69124-4807-4D79-B89B-2605D7EE9E71) and [Installation of Management Agents](https://docs.oracle.com/en-us/iaas/management-agents/doc/install-management-agent-chapter.html) sections of the JMS documentation for more details.
 
 * Use the [Troubleshooting](https://docs.oracle.com/en-us/iaas/jms/doc/troubleshooting.html#GUID-2D613C72-10F3-4905-A306-4F2673FB1CD3) chapter for explanations on how to diagnose and resolve common problems encountered when installing or using Java Management Service.
 
@@ -72,4 +74,4 @@ Before the set up of the Management Agent, it is important to understand the con
 ## Acknowledgements
 
 - **Author** - Xin Yi Tay, Java Management Service
-- **Last Updated By** - Bao Jin Lee, November 2022
+- **Last Updated By** - Ivan Eng, March 2023

@@ -7,7 +7,7 @@ In this lab, you will make changes and deploy the pre-built SpringBoot Java back
 Estimated time: 15 minutes
 
 Watch the video below for a quick walk-through of the lab.
-[Backend (Java/SpringBoot)](videohub:1_jy6y991b)
+[Backend (Java/SpringBoot)](videohub:1_6h0vwu1q)
 
 ### Understand the Java backend application
 
@@ -45,17 +45,8 @@ The backend is implemented using the following Java classes (under ./backend/src
 
 The OCI Container Registry is where your Docker images are managed. A container registry should have been created for you in Lab 1 in your compartment.
 
-1. Edit ./backend/src/main/java/com/springboot/MyTodoList/config/CorsConfig.java. Locate the following code fragment:
 
-![Allowed origins](images/allowed-origins.png)
-
-\- Replace `us-phoenix-1` in `"[https://objectstorage.us-phoenix-1.oraclecloud.com](https://objectstorage.us-phoenix-1.oraclecloud.com)"` with your region (see the Cloud shell promipt)
-
-\- Save the file
-
-\- This will allow the appropriate object storage bucket to access your application\.
-
-2. Run `build.sh` script to build and push the SpringBoot image into the repository
+1. Run `build.sh` script to build and push the SpringBoot image into the repository
 
 ```
 <copy>
@@ -66,7 +57,7 @@ source build.sh
 
 In a couple of minutes, you should have successfully built and pushed the images into the OCI repository.
 
-3. Check your container registry in your compartment (refresh the console if the image is not shown)
+2. Check your container registry in your compartment (refresh the console if the image is not shown)
 
 * Go to the console, click the hamburger menu in the top-left corner, and open **Developer Services > Container Registry**.
 
@@ -128,9 +119,9 @@ Example: `kubectl -n mtdrworkshop logs -f todolistapp-springboot-deployment-54c9
 
 If the logs return
 
-```
-Tomcat started on port(s): 8080 (HTTP) with context path
-```
+
+"Tomcat started on port(s): 8080 (HTTP) with context path"
+
 
 then everything looks good.
 

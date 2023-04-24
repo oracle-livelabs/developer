@@ -1,4 +1,4 @@
-# Share a Web App
+# Share a web app
 
 ## Introduction
 
@@ -29,7 +29,7 @@ This lab assumes you have:
 * A Chrome browser
 * All previous labs successfully completed
 
-## Task 1: Enable the Web App as a PWA
+## Task 1: Enable the web app as a PWA
 
 As a final step before you share your app, enable it to run as a Progressive Web App—or PWA for short. PWAs are designed to be capable, reliable, and provide a platform-specific look and feel. When you enable a web app as a PWA, it can be installed directly from a browser on a user's device, including Android and iOS mobile devices.
 

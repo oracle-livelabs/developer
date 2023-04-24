@@ -39,36 +39,39 @@ The *Quick Create* feature uses the default settings to create a *quick cluster*
 
     ![Hamburger Menu](images/hamburgermenu.png)
 
-2. In the Cluster List page, select the Compartment of your choice, where you are allowed to create a cluster, and then click *Create Cluster*.
+2. In the Cluster List page, select the Compartment of your choice, where you are allowed to create a cluster.
 
     ![Select Compartment](images/selectcompartment.png)
 
-3. In the Create Cluster Solution dialog, select *Quick Create* and click *Launch Workflow*.
+3. Now click *Create Cluster* button to start the creation of a new cluster
 
-    ![Launch Workflow](images/launchworkflow.png)
+4. In the Create Cluster Solution dialog, select *Quick Create* and click *Launch Workflow*.
 
-    *Quick Create* will create a new cluster with the default settings, along with new network resources for the new cluster.
+    ![Launch Workflow](images/launchworkflow2.png)
+
+    Select the *Quick Create* option, this will create a new cluster with the default settings, along with new network resources for the new cluster.
 
     Specify the following configuration details on the Cluster Creation page (please pay attention to the value you place in the *Shape* field):
 
     * **Name**: The name of the cluster. Leave the default value.
     * **Compartment**: The name of the compartment. Leave the default value.
-    * **Kubernetes version**: The version of Kubernetes. This lab was validated with *v1.23.4* and *v1.24.1*, but higher versions should also work.
+    * **Kubernetes version**: The version of Kubernetes. This lab was validated with *v1.23.4*,  *v1.24.1* and v1.25.4, but higher versions should also work.
     * **Kubernetes API Endpoint**: Are the cluster master nodes going to be routable or not. Select the *Public Endpoint* value.
+    * **Node Type**: We'll be using the *Managed* version, so we'll be able to see the actual compute nodes of the cluster as virtual machines.
+
+    ![Quick Cluster](images/quickcluster-2.png)
+
     * **Kubernetes Worker Nodes**: Are the cluster worker nodes going to be routable or not. Select *Public Workers* value, as this allows direct access to the nodes without necessarily using a load balancer or bastion host.
-
-    ![Quick Cluster](images/quickcluster-1.png)
-
     * **Shape**: The shape to use for each node in the node pool. The shape determines the number of CPUs and the amount of memory allocated to each node. The list shows only those shapes available in your tenancy that are supported by OKE. Select the default *VM.Standard.E3.Flex* (which is typically available in Oracle Free Tier Account).
     * **Number of nodes**: The number of worker nodes to create. Leave the default value, *3*.
 
     ![Enter Data](images/enterdata-1.png)
 
-4. Click *Next* to review the details you entered for the new cluster.
+5. Click *Next* to review the details you entered for the new cluster.  You do not need to check the *Basic Cluster* checkbox.
 
     
 
-5. On the *Review* page, click *Create Cluster* to create the new network resources and the new cluster.
+6. On the *Review* page, click *Create Cluster* to create the new network resources and the new cluster.
 
     ![Review Cluster](images/reviewcluster.png)
 
@@ -139,4 +142,4 @@ You may now **proceed to the next lab**.
 ## Acknowledgements
 * **Author** -  Ankit Pandey
 * **Contributors** - Maciej Gruszka, Peter Nagy
-* **Last Updated By/Date** - Jan Leemans, January 2023
+* **Last Updated By/Date** - Jan Leemans, March 2023

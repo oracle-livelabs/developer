@@ -82,7 +82,7 @@ You would set the statement cache size to the number of unique statements common
 
 ## Task 2:  Binding in inserts
     
-The [environment setup file](https://oracle.github.io/python-oracledb/samples/tutorial/Python-and-Oracle-Database-The-New-Wave-of-Scripting.html#installsampleenv) has already created the **mytab** table (to be used by the *bind\_insert.py* file) by internally running the sql script below:
+The environment setup file **setup_tutorial.py** has already created the **mytab** table (to be used by the *bind\_insert.py* file) by internally running the sql script below:
 
 ````
 create table mytab (id number, data varchar2(20), constraint my_pk primary key (id));

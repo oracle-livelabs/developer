@@ -1,4 +1,4 @@
-# Create a Project for a New Visual Application
+# Create a project for a new visual application
 
 ## Introduction
 
