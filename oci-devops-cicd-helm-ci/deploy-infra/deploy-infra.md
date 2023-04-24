@@ -1,4 +1,4 @@
-# Provision the Infrastructure using a Resource Manager
+# Provision the Infrastructure
 
 ## Introduction
 
@@ -109,12 +109,12 @@ Oracle has published a `Reference Architecture` with a `Deploy to Cloud` option 
 1. Click `Next` to configure the variables.
 1. With the `Required configuration` provide the necessary values as below.
 
-   - OCI username: The username that is used for Signing In.
-   - OCI user auth token: The value of auth token created.
-   - OCI Customer Secret Key: The value of the customer secret key created.
-   - OCI Customer Secret Key ID: The ID of the customer secret key created.
+    - OCI username: The username that is used for Signing In.
+    - OCI user auth token: The value of auth token created.
+    - OCI Customer Secret Key: The value of the customer secret key created.
+    - OCI Customer Secret Key ID: The ID of the customer secret key created.
 
-    ![oci-rms-required-1.png](images/oci-rms-required-1.png)
+   ![oci-rms-required-1.png](images/oci-rms-required-1.png)
 
 11. For `A strong password for GPG Key`, provide a strong password with the necessary complexity. The password must be more than 8 characters and include at least one uppercase letter, one lowercase letter, one number, and one of the following special characters: !@#%^*_+-:?.,[]{}. Keep a note of this password as we will be using this while creating GPG Key.
 
@@ -169,7 +169,6 @@ Oracle has published a `Reference Architecture` with a `Deploy to Cloud` option 
 
     ![oci-stack-plan-from-ce.png](images/oci-stack-plan-from-ce.png)
 
-*End of Optional information*
 
 You may now **proceed to the next lab**.
 

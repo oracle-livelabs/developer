@@ -1,4 +1,4 @@
-# Deployment of application onto Container Instance using OCI DevOps Shell stage.
+# Deployment onto container instance via OCI Devops
 
 ## Introduction
 
