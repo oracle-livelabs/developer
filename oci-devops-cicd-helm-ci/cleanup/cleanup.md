@@ -1,4 +1,4 @@
-# Release resources created through the workshop
+# Release resources created through the workshop.
 
 ## Introduction
 
@@ -18,7 +18,7 @@ In this lab, you will:
 * GitHub account
 
 
-## Task1: Release resources manually.
+## Task 1: Release resources manually.
 
 1. The resources that are created outside of the resource manager need to delete manually. Always double-check and confirm before performing any deletion, as once deleted data or resources won't be recovered.
 
@@ -40,7 +40,7 @@ In this lab, you will:
 
     ![oci-kube-delete-commands.png](images/oci-kube-delete-commands.png)
 
-## Task2: Release resources using OCI Resource Manager.
+## Task 2: Clean up the OCI Resources.
 
 1. We will be using OCI Resource Manager to remove all the infrastructures created at the beginning of this workshop. The actions will clean up all the resources (unattended).
 
