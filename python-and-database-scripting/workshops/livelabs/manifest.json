@@ -92,7 +92,6 @@
             "description": "Load JSON data into an Oracle database table using Python's interface",
             "filename": "../../lab-16-load-json/load-json.md"
         },
-        
         {
             "title": "Lab: Terminate Oracle Autonomous Database",
             "description": "Terminating an Oracle Autonomous Database permanently",

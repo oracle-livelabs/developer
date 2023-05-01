@@ -175,7 +175,7 @@ Add the folowing lines to the file, with values to match the system connection i
 export SYSUSER="ADMIN"
 export PYTHON_USER="pythondemo"
 export CONFIG_DIR="/home/localuser/Wallets"
-export DSN_ADB="db20220721220247_high"
+export DSN_ADB="xxxxx_high"
 export WALLET_LOCATION="/home/localuser/Wallets"
 </copy>
 ````
@@ -184,9 +184,9 @@ Additionally, if you do not want the system to keep prompting you to enter the p
 
 ````
 <copy>
-export SYSPASSWORD="xxxxxxxx"
-export PYTHON_PASSWORD="xxxxxxxx"
-export WALLET_PASSWORD="xxxxxxxx"
+export SYSPASSWORD="xxxxxxxxx"
+export PYTHON_PASSWORD="xxxxxxxxx"
+export WALLET_PASSWORD="xxxxxxxxx"
 </copy>
 ````
 
@@ -283,9 +283,6 @@ WALLET_LOCATION = (SOURCE = (METHOD = file) (METHOD_DATA = (DIRECTORY="/home/loc
 5. Runtime Naming
 
 At runtime, the module name of the python-oracledb package is oracledb:
-````
-import oracledb
-````
 
 ## Task 5: Add a New Schema in your Oracle Autonomous Database
 1. In this tutorial you will create a new schema in Oracle Autonomous database shared infrastructure.
