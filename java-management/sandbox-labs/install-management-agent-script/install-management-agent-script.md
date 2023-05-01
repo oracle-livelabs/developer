@@ -76,7 +76,7 @@ In this lab, you will:
     </copy>
     ```
     
-    The installation script **JMS_&lt;your-fleet-name&gt;_Linux.sh** should be displayed.
+    The installation script **JMS\_your-fleet-name\_linux.sh** should be displayed.
     ![image of novnc terminal downloads directory](images/novnc-terminal-downloads-dir.png)
 
 15. Proceed to **Task 3** to install the management agent.
@@ -84,7 +84,7 @@ In this lab, you will:
 
 ## Task 2: (Optional) Transfer installation script to the compute instance using Cloud Shell 
 
-1. This task makes use of OCI Cloud Shell to use SSH to connect to the compute instance. If you have completed task 1, please skip this task and proceed to **Task 3**.
+1. This task makes use of OCI Cloud Shell to use SSH to connect to the compute instance. If you have completed Task 1, please skip this task and proceed to **Task 3**.
 
    >**NOTE:** For this task, you can also use your own preferred command line interface to perform the same tasks. However, we recommend using OCI Cloud Shell instead if your local machine has network restrictions and proxies preventing SSH connections. 
 
@@ -172,14 +172,14 @@ In this lab, you will:
 
 5. If installation is successful, you'll see a message similar to the following:
 
-     ```
-     ...
-     Management Agent installation has been completed.
-     Management Agent plugin 'Java Management Service' installation has been completed.
-     Management Agent plugin 'Java Usage Tracking' installation has been completed.
-     Management Agent was successfully registered using key YourFleetName (ocid1.managementagentinstallkey.oc1.iad.<some ocid hash>).
-     Assigned JMS Fleet is YourFleetName (ocid1.jmsfleet.oc1.iad.<some ocid hash>).
-     ```
+    ```
+    ...
+    Oracle Cloud Agent plugin 'Oracle Java Management Service' installation has been completed.
+    Oracle Cloud Agent plugin 'Management Agent' installation has been completed.
+    Management Agent plugin 'Java Usage Tracking' installation has been completed.
+    Management Agent was successfully registered using key YourFleetName (ocid1.managementagentinstallkey.oc1.iad.<some ocid hash>).
+    Assigned JMS Fleet is YourFleetName (ocid1.jmsfleet.oc1.iad.<some ocid hash>).
+    ```
 
 6. Remove the installation script.
       ```
@@ -235,4 +235,4 @@ You may now **proceed to the next lab.**
 ## Acknowledgements
 
 - **Author** - Yixin Wei, Java Management Service
-- **Last Updated By** - Bao Jin Lee, January 2023
+- **Last Updated By** - Ivan Eng, March 2023
