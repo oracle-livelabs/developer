@@ -13,27 +13,27 @@
       "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/cloud-login.md"
     },
     {
-      "title": "Lab 1: Provision the infrastructure",
+      "title": "Lab 1: Provision the Infrastructure using OCI Resource manager",
       "description": "Instruction to provision OCI devops and related infrastructure",
       "filename": "../../deploy-infra/deploy-infra.md"
     },
     {
-      "title": "Lab 2: Get to know more about OCI Devops components",
+      "title": "Lab 2: Know more about OCI Devops resources",
       "description": "Get to know more about OCI devops resources and configurations",
       "filename": "../../devops-resources/devops-resources.md"
     },
     {
-      "title": "Lab 3: Shell stage deployment",
+      "title": "Lab 3: Deployment onto container instance via OCI Devops",
       "description": "Use OCI Devops Shell stage to deploy and update OCI Container Instance.",
       "filename": "../../shellstage-deployment/shellstage-deployment.md"
     },
     {
-      "title": "Lab 4: Helm chart deployment",
+      "title": "Lab 4: Validate and deploy Helm chart via OCI Devops",
       "description": "Use OCI Devops Helm chart stage to deploy with provenance and integrity checks",
       "filename": "../../helm-deployment/helm-deployment.md"
     },
     {
-      "title": "Lab 5: Cleanup of lab resources",
+      "title": "Lab 5: Clean up the OCI Resources",
       "description" : "Clean all the lab infra components",
       "filename":"../../cleanup/cleanup.md"
 

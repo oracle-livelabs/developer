@@ -1,4 +1,4 @@
-# Get to know OCI DevOps and related resources.
+# Know more about OCI Devops resources.
 
 ## Introduction
 
@@ -34,11 +34,11 @@ In this lab, as a developer or SRE,
 
 1. You should see below a list of files/folders accordingly.
 
-   - helm_chart - A node js-based helm chart for helm deployment.
-   - python_app - A sample python application for container instance deployment.
-   - terraform - Contains terraform files to manage container instance creation and states.
-   - build_spec.yaml - Build pipeline instructions.
-   - command_spec.yaml - Instructions for shell stage.
+    - helm_chart - A node js-based helm chart for helm deployment.
+    - python_app - A sample python application for container instance deployment.
+    - terraform - Contains terraform files to manage container instance creation and states.
+    - build_spec.yaml - Build pipeline instructions.
+    - command_spec.yaml - Instructions for shell stage.
 
 6. Switch back to the `DevOps project resources` list and click `Build pipelines` and check the stages within each of the pipelines created. Click each one of them and verify the stages.
 
@@ -61,14 +61,14 @@ In this lab, as a developer or SRE,
 
     ![oci-devops-artifacts.png](images/oci-devops-artifacts.png)
 
-|  Name   |     Type     | Remarks                                                                                                                             |
-|:-------:|:------------:|:------------------------------------------------------------------------------------------------------------------------------------|
-| node_helm_package |  Helm chart  | It refers to the helm chart that will be pushed to the OCI Container registry and then will be used during helm chart deployment.       |
-| docker_image_static | Docker image | It is the docker image URL with a static tag for container instance deployment.                                                     |
-| docker_image_for_helm | Docker image | It is the docker image URL for the helm chart                                                                                       |
-| docker_image_dynamic |     Docker image      | t is the docker image URL with a unique tag to ensure an immutable image reference for any rollback scenarios on the container instance. |
-| command_spec_cs |     Command specification      | It's a yaml-based instruction for the shell stage to execute.                                                                            |
-| command_spec_ga |     General artifact      | It is a yaml-based file that will generate as an outputArtifact from a build and then gets pushed to Oci artifactory registry.        |
+|          Name           |     Type     | Remarks                                                                                                                             |
+|:-----------------------:|:------------:|:------------------------------------------------------------------------------------------------------------------------------------|
+|   node\_helm\_package   |  Helm chart  | It refers to the helm chart that will be pushed to the OCI Container registry and then will be used during helm chart deployment.       |
+|  docker\_image\_static  | Docker image | It is the docker image URL with a static tag for container instance deployment.                                                     |
+| docker\_image\_for_helm | Docker image | It is the docker image URL for the helm chart                                                                                       |
+| docker\_image\_dynamic  |     Docker image      | t is the docker image URL with a unique tag to ensure an immutable image reference for any rollback scenarios on the container instance. |
+|command\_spec\_cs    |     Command specification      | It's a yaml-based instruction for the shell stage to execute.                                                                            |
+|command\_spec\_ga    |     General artifact      | It is a yaml-based file that will generate as an outputArtifact from a build and then gets pushed to Oci artifactory registry.        |
 
 11. Switch back to the `DevOps project resources` list and click `Triggers`.Using the `3 dots` against the name, click `view details
 

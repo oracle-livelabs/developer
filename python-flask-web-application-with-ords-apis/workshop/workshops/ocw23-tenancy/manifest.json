@@ -17,7 +17,7 @@
             "description": "This is the prerequisites for customers using Free Trial and Paid tenancies, and Always Free accounts (if applicable). The title of the lab and the Contents Menu title (the title above) match for Prerequisite lab. This lab is always first.",
             "filename": "https://oracle-livelabs.github.io/common//labs/cloud-login/cloud-login.md"
         },
-             {
+        {
             "title": "Lab 1: Walk-through of Flask application and Oracle REST APIs",
             "description": "This Lab will open the Flask application and step through, while also discussing Oracle REST API capabilities",
             "filename": "../../lab-1-application-oracle-rest-api-walkthrough/application-oracle-rest-api-walkthrough.md"
@@ -47,10 +47,10 @@
             "description": "Other LiveLabs you might like",
             "filename": "../../other-livelabs/other-livelabs.md"
         },
-             {
-            "title": "Oracle CloudWorld 2022 - Get Help",
+        {
+            "title": "Need Help?",
             "description": "Solutions to Common Problems and Directions for Receiving Live Help",
-            "filename":"https://oracle-livelabs.github.io/common/support/ocwsupportlab/ocwsupportlab.md"
+            "filename":"https://oracle-livelabs.github.io/common//labs/need-help/need-help-freetier.md"
         }
     
                 ]

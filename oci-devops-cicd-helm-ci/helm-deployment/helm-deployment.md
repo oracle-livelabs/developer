@@ -1,4 +1,4 @@
-# Deployment of helm chart with valid provenance and integrity checks.
+# Validate and deploy Helm chart via OCI Devops
 
 ## Introduction
 
@@ -75,14 +75,16 @@ In this lab, as a developer or SRE,
 
 1. Fetch the keys and files, we will be using the private key to sign the chart and the public key and passphrase for the OCI Vault as secrets to verify during the deployment.
 
-```markdown
-$ echo "use-agent" > ~/.gnupg/gpg.conf
-$ echo "pinentry-mode loopback" >> ~/.gnupg/gpg.conf
-$ echo "allow-loopback-pinentry" > ~/.gnupg/gpg-agent.conf
-$ echo RELOADAGENT | gpg-connect-agent
-$ echo $passphrase | gpg --batch --no-tty --export-secret-keys  --passphrase-fd 0 oci_devops >./secring.gpg 
-$ gpg --output ./helm-attestation-public-key.pgp --export oci_devops
-```
+    ```markdown
+    <copy>
+    $ echo "use-agent" > ~/.gnupg/gpg.conf
+    $ echo "pinentry-mode loopback" >> ~/.gnupg/gpg.conf
+    $ echo "allow-loopback-pinentry" > ~/.gnupg/gpg-agent.conf
+    $ echo RELOADAGENT | gpg-connect-agent
+    $ echo $passphrase | gpg --batch --no-tty --export-secret-keys  --passphrase-fd 0 oci_devops >./secring.gpg 
+    $ gpg --output ./helm-attestation-public-key.pgp --export oci_devops
+    </copy>
+    ```
 
    ![gpg-fetch-keys.png](images/gpg-fetch-keys.png)
 
@@ -230,4 +232,3 @@ You may now **proceed to the next lab**.
 
 * **Author** - Rahul M R
 * **Last Updated By/Date** - Rahul M R - April 2023
-
