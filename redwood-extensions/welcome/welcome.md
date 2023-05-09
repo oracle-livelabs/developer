@@ -1,8 +1,8 @@
-# Create Your First Page
+# Configure the Welcome page
 
 ## Introduction
 
-In this lab we'll use the Redwood Welcome Page template, along with Oracle JET UI components, to create a page that connects to an Oracle SaaS object.  Our page will display a list of accounts, and allow the list to be filtered.
+In this lab we'll use add Oracle JET UI components to the Welcome page you created using the Redwood Welcome Page template.  Our page will display a list of accounts, and allow the list to be filtered.
 
 Estimated Time: 15 minutes
 
@@ -10,31 +10,7 @@ Estimated Time: 15 minutes
 
 In this lab, you will:
 * Get familiar with the development environment
-* Learn to create pages
 * Leverage Redwood templates and components
-
-## Task 1: Create an App UI
-
-You should now be in the Designer, VB Studio's visual editor. We'll start by creating an *App UI*, which is simply an application that includes a user interface component in the form of Visual Builder pages and flows. With App UIs, you can create new interfaces that address specific business needs for your company.
-
-1. On the left side of the Designer's navigator, click the first tab, App UIs, click **+ App UI**:
-
-	![App UI button](images/results.png)
-
-
-2. In the Create App UI dialog, provide a name in the form **YourName-Accounts**, then click **Create**:
-
-  ![App UI properties](images/wssettings.png)
-
-	In the Diagram view on the right, you can see the flows and pages for this App UI. A flow contains pages that relate to each other. An application can contain multiple flows, and a flow can contain many pages. In this case we have one flow, *main*, and one page, *main-start*:
-
-  ![Flow diagram](images/appflow.png)
-
-3. Double-click  **main-start** to open the page in the Page Designer, one of the main visual editors in the Designer:
-
-  ![IDE](images/ide.png)
-
-## Task 2: Add a Page Template
 
 Before we get started, let's explore the Designer a bit.
 
@@ -55,20 +31,22 @@ Here are the key areas of the Designer you'll use throughout this workshop:
 
 Note that you can collapse and expand tabs to better manage your working area. When collapsed the tab will show as a vertical tab on the side of the editor. To expand/collapse a tab click that specific tab.
 
-**Tip:** In the header area (the black bar along the top), you'll also find the Undo and Redo buttons, which look like this:
-
-  ![Undo button](images/undo.png)
-
-If you make a mistake during this lab, click Undo to back out of the last step you did.
-
 The Components palette contains over a hundred UI components that you can drag and drop onto your pages to design your interfaces. In this workshop, we're going to leverage some page templates designed by Oracle's Redwood Design team to accelerate our application development. These templates provide a responsive user experience, which means your app will adjust to the device accessing it.
 
-1. Use the search box at the top of the Components palette to search for **welcome**, which will locate the **Welcome Page Template**. Drag the template from the Component palette and drop it on the canvas:
-  ![search box](images/welcome.png)
+## Task 1: Configure the Welcome Page
 
-	Let's set some properties for the template to customize it a bit.
+You will configure the Welcome Page by setting some of the template properties.
 
-2. Click the **All** tab in the Properties pane and modify these properties:
+1. Switch back to **main** tab:
+
+	![App UI button](images/maintab.png)
+
+
+2. Double-click  **main-start** to open the page in the Page Designer, one of the main visual editors in the Designer.  Then under **Structure** click on **Welcome Page Template**:
+
+  ![IDE](images/ide.png)
+
+3. Click the **All** tab in the Properties pane and modify these properties:
 
 | # | Property | Value |
 | --- | --- | --- |
