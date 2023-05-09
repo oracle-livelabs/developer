@@ -20,7 +20,7 @@
     {
       "title": "Lab 2: Create pages from templates",
       "description": "Create and configure the application pages",
-      "filename": "../../apppages/addpages.md"
+      "filename": "../../addpages/addpages.md"
     },
     {
       "title": "Lab 3: Configure the Welcome page",
@@ -31,17 +31,16 @@
       "filename": "../../saasservice/saasservice.md"
     },
     {
-      "title": "Lab 5: Add edit and details pages",
-      "filename": "../../editpage/editpage.md"
-    },
-    {
-      "title": "Lab 6: Add buttons and action chains",
+      "title": "Lab 5: Add buttons and action chains",
       "filename": "../../tableedit/tableedit.md"
     },
     {
-        "title": "Lab 7: Apply Redwood page templates",
-
+        "title": "Lab 6: Account Details page",
         "filename": "../../rweditpage/rweditpage.md"
+    },
+    {
+      "title": "Lab 7: Edit account page",
+      "filename": "../../editpage/editpage.md"
     },
     {
       "title": "Need Help?",

@@ -2,9 +2,12 @@
 
 ## Introduction
 
-In this lab we'll create a new application and add pages built from Redwood Page Templates.
+In this lab we'll create a new application and add pages built from Redwood Page Templates.  Redwood page templates improve the user experience of working with our pages. The Redwood templates not only provide a consistent look and feel across the pages in our app, but we'll also be able to leverage the usability features they offer.
 
 Estimated Time: 5 minutes
+
+About the Oracle Redwood User Experience
+The Redwood User Experience is a collective reinvention of how Oracle customers interact with technology and consume information. While Redwood includes a beautiful new set of user interface elements, including the templates you'll work with in this lab, it's also a philosophical approach to solving customer problems in a differentiated and satisfying way.
 
 ### Objectives
 

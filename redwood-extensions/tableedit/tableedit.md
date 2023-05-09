@@ -20,7 +20,7 @@ In this lab, you will:
 
 ## Task 1: Add Empty Columns To the Table
 
-While the Quick Starts added buttons to the top of the page for editing and displaying details, it might be nicer to have buttons in each row of the table for those functions, so users don't have to select the row first. Let's see how we can make that happen.
+Earlier, you created pages for displaying and editing the accounts data.  You will configure those later.  Now you will add buttons in each row of the table that will be used to navigate to those pages. Let's see how we can make that happen.
 
 First we'll add two columns to the table, to hold each of the buttons.
 
@@ -114,22 +114,24 @@ VB Studio apps are event-driven, which means that an event is fired when an end 
 
 	You're now in the Action Chain Editor.
 
-	On the left side, you can see all the actions you can define, including calling REST endpoints, invoking JavaScript functions, and many more. The Quick Starts we used to create the Edit and Details pages already created action chains that invoke the needed logic for us. All we need to do is call those action chains from the new action chain we're defining.
+	On the left side, you can see all the actions you can define, including calling REST endpoints, invoking JavaScript functions, and many more.
 
-3. From the list of actions on the left, drag **Call Action Chain** and drop it onto the + sign:
+3. From the list of actions on the left, drag **Navigate**
 	![Dragging actions](images/actiondrag.png)
+  and drop it onto the + sign:
+	![Dropping actions](images/actiondrop.png)
 
-4. In the Properties pane, click the arrow in the **Action Chain ID** field and select **navigateToEditAccountsChain** from the drop-down:
+4. In the Properties pane, click the arrow in the **Page** field and select **main-edit-accounts** from the drop-down:
 	![Action properties](images/actionedit.png)
 
- Let's take a step back.  We've set things up so that when the Edit button is clicked, we will navigate to the Edit page created for us by the Quick Start. However, as we can see from the Properties pane, this action chain expects a value for the input parameter **accountsId**.
+ Let's take a step back.  We've set things up so that when the Edit button is clicked, we will navigate to the Edit page we created earlier. However, as we can see from the Properties pane, this action chain expects a value for the input parameter **objectId**.
 
 5. Click the **Not Mapped** label:
 	![Input parameter](images/inputparam.png)
 
  The Assign Input Parameters dialog allows us to easily map values to variables using drag and drop.
 
-6. Under Sources->Action Chain on the left, drag the action chain variable **key** and drop it on the **accountsid** parameter in the Target area on the right:
+6. Under Sources->Action Chain on the left, drag the action chain variable **key** and drop it on the **objectId** parameter in the Target area on the right:
 	![Mapping variables](images/valuemap.png)
 
 7. Click **Save**.
@@ -137,7 +139,7 @@ VB Studio apps are event-driven, which means that an event is fired when an end 
 8. Click **Page Designer** to go back to the visual view of the main-start page:
 	![Page designer](images/pagedesigner.png)
 
-9. Repeat steps 1-8, this time for the **Info** button. When creating your **On ojAction** action chain, use the **Call Action Chain** action, and select **navigateToAccountsDetailChain** in the Action Chain ID field. As before, map the **key** variable to the accountsId input parameter.
+9. Repeat steps 1-8, this time for the **Info** button. When creating your **On ojAction** action chain, use the **CNavigate** action, and select **main-accounts-detail** in the **Page** field. As before, map the **key** variable to the **rowIndex** input parameter.
 	![Action Chain](images/action2.png)
 
 	Let's take another look at the app to see our changes in action.
@@ -146,17 +148,9 @@ VB Studio apps are event-driven, which means that an event is fired when an end 
 
  You can now click the Edit and Info icons in a row to open the Edit and Detail pages for the organization selected. Pretty cool!
 
- We don't need the buttons at the top of the page anymore, so let's remove them.
- 	![Delete items](images/delete.png)
-
-12. In the Page Designer, go to the Structure pane.  Under **Toolbar**, right-click each button and click **Delete** to remove it from your page:
-
-	![Delete navbar](images/navbar.png)
-
-Your table now has buttons that are attractively rendered and that work as expected. The next step is to fine-tune the look and feel of the pages created by the Quick Starts by applying some Redwood templates to them.
+Your table now has buttons that are attractively rendered and that work as expected. The next step is to configure the pages you created earlier to display and edit data using Oracle's SaaS business object behind the scenes.
 
 You may now close the preview browser tab and **proceed to the next lab**.
-
 
 ## Learn More
 
@@ -165,4 +159,4 @@ You may now close the preview browser tab and **proceed to the next lab**.
 ## Acknowledgements
 * **Author** - Shay Shmeltzer, Oracle Cloud Development Tools, September 2022
 * **Contributors** -  Marcie Caccamo, Blaine Carter, Oracle Cloud Development Tools
-* **Last Updated By/Date** - Blaine Carter, Oracle Cloud Development Tools, March 2023
+* **Last Updated By/Date** - Blaine Carter, Oracle Cloud Development Tools, May 2023
