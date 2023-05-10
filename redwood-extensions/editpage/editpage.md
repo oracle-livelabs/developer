@@ -117,9 +117,9 @@ Now let's preview the updated app.
 
 	 Use the browser's back button to return to the search page.
 
-Our application is functioning well. In the next step we'll improve the usability, first by adding buttons to the table rows, and later by modifying the app's look and feel.
+13. Switch back to the tab for the **main-start** page, then click **Preview** in the header to see your completed app.
 
-You may now close the preview browser tab and **proceed to the next lab**.
+Your work is finished! In the real world, at this point you would likely do more testing, then deploy your extension to your Oracle Fusion Cloud Applications instance. Thanks for completing this workshop!
 
 ## Learn More
 

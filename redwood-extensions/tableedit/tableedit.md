@@ -139,7 +139,15 @@ VB Studio apps are event-driven, which means that an event is fired when an end 
 8. Click **Page Designer** to go back to the visual view of the main-start page:
 	![Page designer](images/pagedesigner.png)
 
-9. Repeat steps 1-8, this time for the **Info** button. When creating your **On ojAction** action chain, use the **CNavigate** action, and select **main-accounts-detail** in the **Page** field. As before, map the **key** variable to the **rowIndex** input parameter.
+9. Repeat steps 1-8, this time for the **Info** button. When creating your **On ojAction** action chain, use the **CNavigate** action, and select **main-accounts-detail** in the **Page** field.
+
+10. Map the **key** variable to the **rowIndex** input parameter.
+
+11. Map the **Flow/System/currentPage** variable to the **parentPage** parameter.  This will enable the return to parent page functionality in the **Foldout Layout Horizontal Template Pattern**.
+
+	![Action Chain](images/mapdetailvariables.png)
+
+12. Click **Save**.
 	![Action Chain](images/action2.png)
 
 	Let's take another look at the app to see our changes in action.
