@@ -25,7 +25,7 @@ In this lab, you will:
 
 2. Click the info icon for one of the rows.
 
-	The Details page opens.  This page uses the Redwood **Horizontal Foldout Layout Page Template**. 
+	The Details page opens.  This page uses the Redwood **Horizontal Foldout Layout Page Template**.
 
 A pattern or template applies more than just a new look and feel to the user interface; it can add variables and actions to your page as well. In the Properties pane, notice that many template properties have been mapped to variables, but they may not be the values we want. To change the values of these properties, we'll need to update the variables' default values.
 
@@ -103,12 +103,10 @@ Notice the template includes a button to take you back to the parent page.  You 
 3. In the Structure pane select, click the fourth field in the Form Layout, and **Shift-select** all the other fields after that. Drag all of them into the new **Form Layout** you created in the second **Summarizing Foldout Panel**:
 	  ![drag fields](images/dragfield2.png)
 
-4. Select this second **Form Layout** in the Structure pane.  In the Properties pane, change the **Label Edge** property to **Start**.
-	  ![label property](images/labelset.png)
+4. Your app should now look something like this.
+	  ![label property](images/finishdetails.png)
 
-	This will make the form look like the other form that is already on your page.
-
-5. Switch back to the tab for the **main-start** page, then click **Preview** in the header to see your app.
+5. Use the **Parent page** button to switch back to the **main-start** page, then click **Preview** in the header to see your app live.
 
 You may now close the preview browser tab and **proceed to the next lab**.
 
