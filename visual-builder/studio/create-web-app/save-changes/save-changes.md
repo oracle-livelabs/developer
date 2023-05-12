@@ -12,13 +12,13 @@ While developing the HR web application, you might have noticed a yellow dot in 
 
 ![Your Git repo in the header, tutorial-hr-project.git/hrbranch, shows with a yellow dot next to it.](images/git-changes-badge.png "")
 
-This dot indicates you've made changes in your local branch that haven't been saved to the remote branch. It's important to save your changes as often as you can, but first, let's review a few concepts.
+This dot indicates changes in your local branch that haven't been saved to the remote branch. It's important to save your changes as often as you can, but first, let's review a few concepts.
 
-When you first created a workspace, you created a new branch called `hrbranch`, which was a copy of the default branch (`main`) in the project’s Git repository and contained the same set of source files initially. Since then, all the changes you've made to the HR web app have been automatically saved to `hrbranch`, but these changes are not visible to others because this `hrbranch` is local to your workspace. To let others view your changes, you'll need to save your changes from the local branch in your workspace to a branch in a remote repository.
+When you first created a workspace, you created a new branch called **hrbranch**, which was a copy of the default branch (**main**) in the project’s Git repository and contained the same set of source files. Since then, all the changes you've made to the HR web app have been automatically saved to **hrbranch**, but these changes are not visible to others because this **hrbranch** is local to your workspace. To let others view your changes, you'll need to save your changes from the local branch in your workspace to a branch in a remote repository.
 
 Saving changes to a remote branch is a two-step process: _commit_ and _push_. The first step you'll do is "commit". A commit groups the files in your local branch that you want to save to the remote branch and provides a description of the group. Next, you'll "push" your changes. A push saves all the files in the groups that you've "committed" to the remote branch.
 
-Once you commit and push your changes, all the changes from your local `hrbranch` become available to others in your project through the remote `hrbranch`.
+Once you commit and push your changes, all the changes from your _local_ **hrbranch** become available to others in your project through the _remote_ **hrbranch**.
 
 ### Objectives
 
@@ -61,7 +61,7 @@ Push your commits from the local branch in your workspace to the remote branch.
 
 ## Task 3: View changes in the remote branch
 
-Now that your changes have been pushed, let's check them in the remote `hrbranch`.
+Now that your changes have been pushed, let's check them in the remote **hrbranch**.
 
 1. Click **Git History** at the bottom of your application window to view a summary of your push operation.
 
@@ -73,7 +73,7 @@ Now that your changes have been pushed, let's check them in the remote `hrbranch
 
 3. Click **Git** ![Git icon](images/git-icon.png) in the left navigator.
 
-   You'll see your changes added to the remote `hrbranch`, indicated by your last commit message.
+   You'll see your changes added to the remote **hrbranch**, indicated by your last commit message.
 
     ![The hrbranch in the repository is shown. With the Files tab selected, the latest commit message shows against the businessObjects / default folder at the top.](images/git-view-hrbranch.png "")
 
@@ -81,11 +81,11 @@ Now that your changes have been pushed, let's check them in the remote `hrbranch
 
     ![The Logs tab on the Git page is shown with details of all commits made to the remote hrbranch since the branch was first created.](images/git-view-hrbranch-logs.png "")
 
-    Now if a teammate (for example, Clara Coder) wanted to work on this web application, she could use the **Clone From Git** option on the Workspaces page to clone `hrbranch` in her workspace, then use it as a base for her updates.
+    Now if a teammate (for example, Clara Coder) wanted to work on this web application, she could use the **Clone From Git** option on the Workspaces page to clone hrbranch in her workspace, then use it as a base for her updates.
 
     You may **proceed to the next lab**.
 
 ## Acknowledgements
 
 * **Author** - Sheryl Manoharan, VB Studio User Assistance, November 2021
-* **Last Updated By/Date** - Sheryl Manoharan, February 2023
+* **Last Updated By/Date** - Sheryl Manoharan, May 2023

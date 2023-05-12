@@ -132,7 +132,7 @@ In this step, we'll assign data to the variables by adding a "value" event that 
 
 2. Click the component's **Events** tab in the Properties pane, then select **+ New Event** and **On 'value'**.
 
-3. When the InputTextValueChangeChain opens in the Action Chains editor, drag a **Call REST** action from the Actions palette to the **+** sign pointed to by the **Start** arrow.
+3. When the InputTextValueChangeChain opens in the Action Chain editor, double-click the **Call REST** action in the Actions palette to add it to the canvas.
 
 4. In the action's Properties pane, click **Select** next to Endpoint to open the Select Endpoint wizard.
 
@@ -148,11 +148,11 @@ In this step, we'll assign data to the variables by adding a "value" event that 
 
     Click **Save**.
 
-8. On the success branch of the Call REST action, drag and drop an **Assign Variables** action, then click **Assign** next to Variables in the Properties pane. In the Sources pane of the Assign Variables wizard, expand **callRestGetAlphaCode** under **Action Chain** and **results** and map **body** to **countryTypeVar** under **Page** in the Target pane.
+8. Drag and drop an **Assign Variables** action on the canvas to follow the Call REST action. In the Assign Variable action's Properties pane, hover over the **Variable** property, click ![Select Variable icon](images/variable-picker-icon.png) to open the Variable picker, and select **countryTypeVar** under **Page**. Hover over the **Value** property, open the Variable picker, expand **callRestCountriesGetAlphaCodeResult** under **Action Chain**, and select **body**.
 
-    ![The mapping between body under callRestGetAlphaCode on the Source side to countryTypeVar on the Target side is shown.](images/assignvariable-bodytocountrytypevar.png "")
+    ![The Assign Variable action's properties show the Variable property set to $page.variables.countryTypeVar. The Value property shows the variable picker, with body under Action Chain and callRestCountriesGetAlphaCodeResult highlighted.](images/assignvariable-bodytocountrytypevar.png "")
 
-    What we're doing is mapping the data returned by the getAlphaCode REST call to the variables that populate components on the page. Because the field names are identical to the REST response, VB Studio automatically knows how to map each field to its data source. Click **Save**.
+    What we're doing is mapping the data returned by the getAlphaCode REST call to the variables that populate components on the page. Because the field names are identical to the REST response, VB Studio automatically knows how to map each field to its data source.
 
 ## Task 5: Test the employee's country details
 
@@ -164,13 +164,11 @@ In this step, we'll assign data to the variables by adding a "value" event that 
 
 3. Change the employee's Country field to `IE` (for Ireland).
 
-   The employee's information reflects the update in the Country Info section.  Click **Save**.
-
-4. Close the browser tab.
+   The employee's information reflects the update in the Country Info section.  Click **Save**, then close the browser tab.
 
    You may **proceed to the next lab**.
 
 ## Acknowledgements
 
 * **Author** - Sheryl Manoharan, VB Studio User Assistance, July 2022
-* **Last Updated By/Date** - Sheryl Manoharan, February 2023
+* **Last Updated By/Date** - Sheryl Manoharan, May 2023
