@@ -32,7 +32,7 @@ When your account managers locate an account using our new page, it's quite poss
 
 A pattern or template applies more than just a new look and feel to the user interface; it can add variables and actions to your page as well. We will set some of the values in the **Properties** pane to update the user interface.
 
-3. Switch back to the **Page Designer** tab, click **Design** so you can edit the page:
+3. In the **Page Designer** tab, click **Design** so you can edit the page:
 
   ![Design view](images/emptydetailspage.png)
 
@@ -103,7 +103,7 @@ Next you will modify the **Primary Action** (Save button) included with the **Si
 
 	  ![Edit button](images/clickevents.png)
 
-3. Locate the **spPrimaryAction** section and click **Select** next to **Event**
+3. Locate the **spPrimaryAction** section and click **Select** next to **Action Chain**
 
 	  ![Edit button](images/selectactionchain.png)
 

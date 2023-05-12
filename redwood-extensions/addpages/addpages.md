@@ -99,7 +99,7 @@ In the Components tab you will see a page named **Simple Create and Edit Page Te
 
 Next you will configure a variable to work as an input parameter for the edit page.
 
-3. Double-click **main-edit** to open the page:
+3. Double-click **main-edit-accounts** to open the page:
 
   ![Open Edit page](images/openmain-edit.png)
 

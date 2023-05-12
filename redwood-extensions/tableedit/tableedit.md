@@ -139,7 +139,7 @@ VB Studio apps are event-driven, which means that an event is fired when an end 
 8. Click **Page Designer** to go back to the visual view of the main-start page:
 	![Page designer](images/pagedesigner.png)
 
-9. Repeat steps 1-8, this time for the **Info** button. When creating your **On ojAction** action chain, use the **CNavigate** action, and select **main-accounts-detail** in the **Page** field.
+9. Repeat steps 1-8, this time for the **Info** button. When creating your **On ojAction** action chain, use the **Navigate** action, and select **main-accounts-detail** in the **Page** field.
 
 10. Map the **key** variable to the **rowIndex** input parameter.
 
