@@ -89,7 +89,7 @@ Now that the template is set, let's add the FA data to the page.
 
 	  ![Edit button](images/addeddata.png)
 
-## Task 2: Configure the Save Button
+## Task 3: Configure the Save Button
 
 When you added the **Form Layout** to the template it automatically created a save button with an action chain that includes all of the actions needed to correctly save changes.
 
@@ -127,7 +127,7 @@ Next you will modify the **Primary Action** (Save button) included with the **Si
 
 	  ![Edit button](images/chooseobjectid.png)
 
-## Task 3: Add Navigation to the Action Chain
+## Task 4: Add Navigation to the Action Chain
 
 Now that the save button is configured, you will add an action to navigate back to the search page.
 
@@ -149,7 +149,7 @@ Now that the save button is configured, you will add an action to navigate back 
 
 5. Switch back to the **Page Designer** tab
 
-## Task 4: Clean up
+## Task 5: Clean up
 
 You can now remove the unneeded objects from the page.
 
@@ -169,7 +169,7 @@ You can now remove the unneeded objects from the page.
 
 	  ![Edit button](images/confirmdeletebutton.png)
 
-## Task 5: Test your Application
+## Task 6: Test your Application
 
 1. Switch to Live mode
 

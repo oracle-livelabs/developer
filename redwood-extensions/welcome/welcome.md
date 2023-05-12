@@ -61,7 +61,7 @@ Your screen should look like this:
 
 In the next lab, we'll add some more useful components to the page.
 
-## Task 3: Add a Search Component and Define a Variable
+## Task 2: Add a Search Component and Define a Variable
 
 1. In the Components palette's search box, type **search**, which will locate a component called **Input Search**.
 2. Drag this component and drop it on the page in the canvas. A pop-up will appear asking which slot you want to use; choose **Search slot**:
@@ -87,7 +87,7 @@ In the next lab, we'll add some more useful components to the page.
 
 The Value field in the Properties pane now contains a reference to our new variable.
 
-## Task 4: Add a Collection Container  
+## Task 3: Add a Collection Container
 
 In this task we'll add a container to the page, which will later hold some data we'll get from Oracle Fusion Cloud Applications.
 
@@ -98,7 +98,7 @@ In this task we'll add a container to the page, which will later hold some data 
   ![Default slot](images/slot.png)
 The layout of our first page is now ready.  Our next step is to add some data to the page from Oracle Fusion Cloud Apps.
 
-Notice how all of our design tasks so far have been done with simple drag and drop functionality and setting properties. This visual development approach is key to the productivity that Visual Builder Studio provides. If you prefer to work in code, however, you can always do so by clicking the Code button right above where the page preview is displayed. Any modifications you make to your page's HTML code while in Code mode are automatically reflected in Design mode, should you choose to return to it.  
+Notice how all of our design tasks so far have been done with simple drag and drop functionality and setting properties. This visual development approach is key to the productivity that Visual Builder Studio provides. If you prefer to work in code, however, you can always do so by clicking the Code button right above where the page preview is displayed. Any modifications you make to your page's HTML code while in Code mode are automatically reflected in Design mode, should you choose to return to it.
 
 At this point your screen should look like this:
   ![Completed page](images/complete.png)
