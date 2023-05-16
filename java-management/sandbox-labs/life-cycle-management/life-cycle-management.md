@@ -200,7 +200,7 @@ In this lab, you will:
 
     ![image of verify java runtime installation](images/verify-java-runtime-installation.png)
 
-6. Alternatively, you may use SSH command to connect to the compute instance and enter the following command to check the deletion manually. 
+6. Alternatively, you may use SSH command to connect to the compute instance and enter the following command to check the installation manually. 
 
     ```
     <copy>

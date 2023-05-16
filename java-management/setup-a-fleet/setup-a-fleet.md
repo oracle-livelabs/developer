@@ -11,7 +11,7 @@ Estimated Time: 5 minutes
 In this lab, you will:
 
 * Set up a Fleet using the Java Management Service user interface
-* Download the installation script to be used in [Lab 5: Install Management Agent on your Managed Instances](?lab=set-up-of-management-agent)
+* Download the installation script to be used in [Lab 6: Install Management Agent on your Managed Instances](?lab=set-up-of-management-agent)
 
 ### Prerequisites
 
@@ -38,18 +38,20 @@ In this lab, you will:
 
   ![image of agree advanced features](images/select-advanced-agree.png)
 
-  There are 4 different advanced features available:
+  There are 6 different advanced features available:
      * Lifecycle management (LCM) - Manage the lifecycle of Java runtimes in your fleet by installing or removing reported Java runtime.
      * Advanced usage tracking - Gain advanced insights into your Java workloads in the fleet by tracking application server, Oracle JDK and openJDK used by applications.
      * Crypto event analysis - Assess the impact of Oracle JRE and JDK Cryptographic roadmap on the applications running in your fleet.
+     * Performance analysis - Evaluates applications and provides customized recommendations to improve performance.
      * JDK Flight Recorder (JFR) - Collect information about events in the application running in your fleet using JDK Flight Recorder (JFR), a tool for collecting diagnostic and profiling data about a running Java application.
+     * Java migration analysis - Assists in migrating applications from older JDK versions to newer JDK version by providing a detailed analysis that helps to assess the potential efforts and risks of migration.
 
 
   To learn more about the advanced features, see [Using Java Management Service Advanced Features](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=3202).
 
   ![image of selected create fleet options](images/create-fleet-advanced-feature.png)
 
-5. Click **Next**. You are prompted to review the fleet information and management agent configuration. If you wish to modify your choices, click **Previous**.
+5. Click **Next**. You are prompted to review the fleet information and management agent configuration. If you want to modify your choices, click **Previous**.
 
 6. Click **Create**. This creates a new fleet and its configuration.
 
@@ -65,7 +67,7 @@ In this lab, you will:
 
   ![image of page to select installation script os](images/download-installation-script-os.png)
 
-  Click **Close** and **Done** once the download is complete. The downloaded file will be used in [Lab 5: Install Management Agent on your Managed Instances](?lab=set-up-of-management-agent) to install the Management Agent. You can still download the installation script after the fleet is created.
+  Click **Close** and **Done** once the download is complete. The downloaded file will be used in [Lab 6: Install Management Agent on your Managed Instances](?lab=set-up-of-management-agent) to install the Management Agent. You can still download the installation script after the fleet is created.
 
   ![image of page to download installation script done](images/download-installation-script-done.png)
 
@@ -77,7 +79,7 @@ In this lab, you will:
 
 10. Change the **Java Runtime Usage**, **Agent Polling Interval**, **Work Request Validity** and  **Java Runtime Discovery** to the desired value. 
 
-    **Java Runtime Usage**: How frequent agents reports Java usage. 
+    **Java Runtime Usage**: How frequent agents reports Java usage.
 
     **Agent Polling Interval**: How frequent which agents check for work request to execute.
  
@@ -131,19 +133,103 @@ In this lab, you will:
 
   ![image of policies page](images/policies-page.png)
 
-6. The **JMS-Advanced-Features** policy contains 3 policy statements.
+7. The **JMS-Advanced-Features** policy contains 4 policy statements.
 
     ```
     <copy>
     ALLOW dynamic-group JMS_Advanced_Features_INSTANCE_PRINCIPALS_GROUP to MANAGE object-family in compartment Fleet_Compartment
     ALLOW dynamic-group JMS_Advanced_Features_MACS_GROUP to MANAGE objects in compartment Fleet_Compartment
-    ALLOW service javamanagementservice to MANAGE object-family in compartment Fleet_Compartment
+    ALLOW resource jms server-components to MANAGE object-family in compartment Fleet_Compartment
+    ALLOW group FLEET_MANAGERS to MANAGE object-family in compartment Fleet_Compartment
     </copy>
     ```
 
     ![image of policy details page](images/policy-details-page.png)
+  
+
+## Task 3: Understanding the Oracle Cloud Infrastructure Services which Java Management Service leverages on
+
+JMS taps into the following OCI services to generate logs, object storage information and metrics of the fleet for the users to view. These are the details of these services:
+
+1. Logging Service
+  
+    - These logs are event logs contributed by Java Management Service and by the service plugins deployed on the management agent of the host machine.
+
+    - All the different log objects will belong to the fleet log group.
+
+    - Each log object will contain its own category of logs e.g. Inventory log will contain logs of the scanning of Java installations in the Managed Instance.
+
+    - Note that the Inventory log is crucial as a fleet cannot be successfully created without it.
+
+    To access the fleet logs, you may click on the respective log object displayed on the fleet main page.
+
+    ![image of log configuration in fleet overview page](images/fleet-log-configuration.png)
+
+    As we proceed with the subsequent labs, you will be able to see logs here.
+
+    To view the logs in detail, click on the drop-down arrow.
+
+    ![image of fleet inventory log page](images/fleet-inventory-log.png)
+
+    An example of a log event:
+
+    ![image of jvm installation log](images/jvm-installation-log.png)
+
+    - See [Logging in JMS](https://docs.oracle.com/en-us/iaas/jms/doc/appendix.html#GUID-559AECF8-4FAD-45CC-AE3B-69CA0DC9BDDD) to learn more details about the logs managed by JMS.
+
+2. Object Storage Service
+
+    - This is required for some of the advanced features of JMS and will be explained in the next workshop: [Using Java Management Service Advanced Features](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=3202)
+
+3. Monitoring Service
+
+    - This service processes the information generated by JMS and displays it as graphs of Managed Instances, Java runtimes and applications.
+
+    - You may create your own alarms for notifications based on these metrics.
+
+    You may view the fleet metrics on the fleet overview page, by clicking **Metrics** under Resources.
+
+    ![image of metrics in fleet main page](images/fleet-metrics.png)
+
+    - See [Java Management Metrics](https://docs.oracle.com/en-us/iaas/jms/doc/appendix.html#GUID-E7908768-AE97-4BB9-85CB-17A1BD87A271) to learn more about metrics in JMS.
+
 
 You may now **proceed to the next lab**.
+
+
+## Troubleshoot fleet creation issues
+
+If you encounter any errors similar to the following, check policy statements in your root compartment:
+
+**For Task 1 Step 6: Create fleet**
+![image of create fleet errors](images/create-fleet-errors.png =50%x*)
+    ```
+    <copy>
+    ALLOW GROUP <user_group> TO MANAGE fleet IN COMPARTMENT <compartment_name>
+    ALLOW GROUP <user_group> TO MANAGE tag-namespaces IN TENANCY
+    ALLOW GROUP <user_group> TO MANAGE log-groups IN COMPARTMENT <compartment_name>
+    ALLOW GROUP <user_group> TO MANAGE log-content IN COMPARTMENT <compartment_name>
+    ALLOW GROUP <user_group> TO MANAGE management-agents IN COMPARTMENT <compartment_name>
+    ALLOW GROUP <user_group> TO MANAGE management-agent-install-keys IN COMPARTMENT <compartment_name>
+    ALLOW GROUP <user_group> TO MANAGE dynamic-groups IN TENANCY
+    ALLOW GROUP <user_group> TO MANAGE policies IN COMPARTMENT <compartment_name>
+    ALLOW GROUP <user_group> TO READ metrics IN COMPARTMENT <compartment_name>
+    ALLOW GROUP <user_group> TO READ instance-agent-plugins IN COMPARTMENT <compartment_name>
+    </copy>
+    ```
+
+**Fleet state failed**
+![image of failed fleet](images/failed-fleet.png)
+    ```
+    <copy>
+    ALLOW resource jms server-components TO MANAGE log-groups IN COMPARTMENT <compartment_name>
+    ALLOW resource jms server-components TO MANAGE log-content IN COMPARTMENT <compartment_name>
+    ALLOW resource jms server-components TO USE management-agent-install-keys IN COMPARTMENT <compartment_name>
+    ALLOW resource jms server-components TO MANAGE metrics IN COMPARTMENT <compartment_name> WHERE target.metrics.namespace='java_management_service'
+    ALLOW resource jms server-components TO READ instances IN tenancy
+    ALLOW resource jms server-components TO INSPECT instance-agent-plugins IN tenancy
+    </copy>
+    ```
 
 ## Learn More
 
@@ -158,4 +244,4 @@ You may now **proceed to the next lab**.
 ## Acknowledgements
 
 * **Author** - Esther Neoh, Java Management Service
-* **Last Updated By** - Ivan Eng, March 2023
+* **Last Updated By** - Ivan Eng, June 2023

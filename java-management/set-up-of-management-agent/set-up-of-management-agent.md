@@ -19,12 +19,12 @@ In this lab, you will:
 
 - You have signed up for an account with Oracle Cloud Infrastructure and have received your sign-in credentials.
 - You are using an Oracle Linux image or Windows OS on your Managed Instance for this lab.
-- Access to the cloud environment and resources configured in [Lab 2](?lab=setup-a-fleet).
-- You have installed the latest version of Oracle JDK 8 in your machine according to [Lab 3 Task 3](?lab=deploy-a-java-application#Task3:InstallJava8andcreateasimpleJavaapplication).
+- Access to the cloud environment and resources configured in [Lab 2](?lab=set-up-oci-for-jms).
+- You have installed the latest version of Oracle JDK 8 in your machine according to [Lab 4 Task 3](?lab=create-a-java-application#Task3:InstallJava8andcreateasimpleJavaapplication).
 
 ## Task 1: Install Management Agent on an OCI Host
 
-This task is for the installation of Management Agent in an OCI Host (OCI Compute Instance). If you are installing the agent on a non-OCI host (e.g. on premise, other cloud computes) please skip to Task 2.
+This task is for the installation of Management Agent in an OCI Host (OCI Compute Instance). If you are installing the agent on a non-OCI host (e.g. on premise, other cloud computes), skip to Task 2.
 
 **Pre-installation Policy Requirement**
 
@@ -58,7 +58,7 @@ This task is for the installation of Management Agent in an OCI Host (OCI Comput
 
 **On Linux (on OCI)**
 
-1. Prepare the **installation script** for Linux downloaded in [Lab 2](?lab=setup-a-fleet). Enter the following command to transfer the script to the remote Managed Instance.
+1. Prepare the **installation script** for Linux downloaded in [Lab 3](?lab=setup-a-fleet). Enter the following command to transfer the script to the remote Managed Instance.
 
     ```
     <copy>
@@ -67,23 +67,15 @@ This task is for the installation of Management Agent in an OCI Host (OCI Comput
     ```
 2. Connect to your instance using SSH.
 
-3. Enter the following command to change file permissions.
+3. Enter the following command to run the installation script. The installation may take some time to complete.
 
      ```
      <copy>
-     chmod +x <copy-to-path>/<installation-script-name>.sh
+     sudo bash <copy-to-path>/<installation-script-name>.sh
      </copy>
      ```
 
-4. Enter the following command to run the installation script. The installation may take some time to complete.
-
-     ```
-     <copy>
-     sudo <copy-to-path>/<installation-script-name>.sh
-     </copy>
-     ```
-
-5. If installation is successful, you'll see a message similar to the following:
+4. If installation is successful, you'll see a message similar to the following:
 
       ```
       ...
@@ -96,7 +88,7 @@ This task is for the installation of Management Agent in an OCI Host (OCI Comput
 
 **On Windows (on OCI)**
 
-1. Prepare the **installation script** for Windows downloaded in [Lab 2](?lab=setup-a-fleet).
+1. Prepare the **installation script** for Windows downloaded in [Lab 3](?lab=setup-a-fleet).
 
 2. Run Windows Powershell as administrator.
 
@@ -112,7 +104,7 @@ This task is for the installation of Management Agent in an OCI Host (OCI Comput
 
     ```
     <copy>
-    & <path-to-installation-script>
+    .\<path-to-installation-script>
     </copy>
     ```
 
@@ -132,24 +124,24 @@ This task is for the installation of Management Agent in an OCI Host (OCI Comput
 
 This task is for the installation of Management Agent in a non-OCI host(e.g. on premise, other cloud compute). 
 
->**Note:** If you have installed the management agent on an OCI instance in Task 1, please skip this task and proceed to Task 3.
+>**Note:** If you have installed the management agent on an OCI instance in Task 1, skip this task and proceed to Task 3.
 
-For installation of Management agent on non-OCI hosts, you need to have both the installation script and the management agent software from [Lab 2](?lab=setup-a-fleet). 
+For installation of Management agent on non-OCI hosts, you need to have both the installation script and the management agent software from [Lab 3](?lab=setup-a-fleet). 
 
 Both files need to be placed in the same directory before you proceed.
 
->**Note:** Ensure that you have installed the latest Oracle JDK 8 on your machine before you proceed according to [Lab 3 Task 3](?lab=deploy-a-java-application#Task3:InstallJava8andcreateasimpleJavaapplication). Management Agents require Oracle JDK 8 to be installed.
+>**Note:** Ensure that you have installed the latest Oracle JDK 8 on your machine before you proceed according to [Lab 4 Task 3](?lab=create-a-java-application#Task3:InstallJava8andcreateasimpleJavaapplication). Management Agents require Oracle JDK 8 to be installed.
 
 **On Linux (Non-OCI Host)**
 
-1. Prepare the **installation script** for Linux downloaded in [Lab 2](?lab=setup-a-fleet). Or enter the following command to transfer the script to the remote Managed Instance.
+1. Prepare the **installation script** for Linux downloaded in [Lab 3](?lab=setup-a-fleet). Or enter the following command to transfer the script to the remote Managed Instance.
 
     ```
     <copy>
     scp -i <your-private-key-file> <path-to-installation-script> <username>@<x.x.x.x>:<copy-to-path>
     </copy>
     ```
-2. Prepare the **management agent** software for linux downloaded in [Lab 2](?lab=setup-a-fleet) or enter the following command to transfer the script to the remote instance. Both the **management agent** software and the **installation script** must be placed in the same directory.
+2. Prepare the **management agent** software for linux downloaded in [Lab 3](?lab=setup-a-fleet) or enter the following command to transfer the script to the remote instance. Both the **management agent** software and the **installation script** must be placed in the same directory.
 
     ```
     <copy>
@@ -158,23 +150,15 @@ Both files need to be placed in the same directory before you proceed.
     ```
 3. Connect to your instance using SSH.
 
-4. Enter the following command to change file permissions.
+4. Enter the following command to run the installation script. The installation may take some time to complete.
 
      ```
      <copy>
-     chmod +x <copy-to-path>/<installation-script-name>.sh
+     sudo bash <copy-to-path>/<installation-script-name>.sh
      </copy>
      ```
 
-5. Enter the following command to run the installation script. The installation may take some time to complete.
-
-     ```
-     <copy>
-     sudo <copy-to-path>/<installation-script-name>.sh
-     </copy>
-     ```
-
-6. If installation is successful, you'll see a message similar to the following:
+5. If installation is successful, you'll see a message similar to the following:
 
      ```
      ...
@@ -187,9 +171,9 @@ Both files need to be placed in the same directory before you proceed.
 
 **On Windows (Non-OCI Host)**
 
-1. Prepare the **installation script** for Windows downloaded in [Lab 2](?lab=setup-a-fleet).
+1. Prepare the **installation script** for Windows downloaded in [Lab 3](?lab=setup-a-fleet).
 
-2. Prepare the **management agent** software for Windows downloaded in [Lab 2](?lab=setup-a-fleet). Both the **management agent** software and the **installation script** must be placed in the same directory.
+2. Prepare the **management agent** software for Windows downloaded in [Lab 3](?lab=setup-a-fleet). Both the **management agent** software and the **installation script** must be placed in the same directory.
 
 3. Run Windows Powershell as administrator.
 
@@ -210,7 +194,7 @@ Both files need to be placed in the same directory before you proceed.
 
     ```
     <copy>
-    & <path-to-installation-script>
+    .\<path-to-installation-script>
     </copy>
     ```
 
@@ -232,7 +216,7 @@ Both files need to be placed in the same directory before you proceed.
 
   ![image of console navigation to access management agent overview](images/management-agent-overview.png)
 
-2. From the Agents list, look for the agent that was recently installed. This agent should be in the compartment created in [Lab 1](?lab=set-up-oci-for-jms). The Availability of the Agent should be Active.
+2. From the Agents list, look for the agent that was recently installed. This agent should be in the compartment created in [Lab 2](?lab=set-up-oci-for-jms). The Availability of the Agent should be Active.
 
   ![image of agents main page](images/agents-main-page-new.png)
 
@@ -282,7 +266,7 @@ Both files need to be placed in the same directory before you proceed.
 
   ![image of console navigation to java management service](images/console-navigation-jms.png)
 
-2. Select the Fleet created in [Lab 2](?lab=setup-a-fleet).
+2. Select the Fleet created in [Lab 3](?lab=setup-a-fleet).
 
 
 3. Take note of the fleet ocid.
@@ -303,13 +287,13 @@ Both files need to be placed in the same directory before you proceed.
 
   ![image of agents details page](images/tagged-mgmt-agent.png)
 
-8. The management agent has been associated to your fleet in JMS. It will now collect information on your Java runtimes and Java Usage based on the scanning frequency defined in [Lab 2: Set Up a Fleet](?lab=setup-a-fleet).
+8. The management agent has been associated to your fleet in JMS. It will now collect information on your Java runtimes and Java Usage based on the scanning frequency defined in [Lab 3: Set Up a Fleet](?lab=setup-a-fleet).
 
 ## Task 6: Verify detection of Java applications and runtimes
 
 For the logging of applications to be visible, Java applications must be run again after the installation of the Management Agent. Now that the Management Agent has been set up in your compute instance, it will be able to detect new Java applications that have been executed. This can be observed in the Oracle Cloud Console.
 
-We shall demonstrate the detection of the Java compiler and HelloWorld application created in [Lab 3](?lab=deploy-a-java-application).
+We shall demonstrate the detection of the Java compiler and HelloWorld application created in [Lab 4](?lab=create-a-java-application).
 
 1. First, compile the HelloWorld.java file:
 
@@ -319,13 +303,37 @@ We shall demonstrate the detection of the Java compiler and HelloWorld applicati
      </copy>
      ```
 
-   Then execute the HelloWorld application:
+   Second, run the following command to create a HelloWorld jar file:
 
      ```
      <copy>
-     java HelloWorld
+     jar -cfe HelloWorld.jar HelloWorld HelloWorld.class
      </copy>
      ```
+
+   Third, create a new directory by entering this command:
+     ```
+     <copy>
+     sudo mkdir introduction
+     </copy>
+     ```
+
+   Fourth, enter this command to copy the HelloWorld.jar file into the introduction sub-directory
+     ```
+     <copy>
+     sudo cp HelloWorld.jar introduction
+     </copy>
+     ```
+
+   Lastly, execute the HelloWorld applications in these two paths by running the following commands:
+     ```
+     <copy>
+     java -jar ./HelloWorld.jar
+     java -jar ./introduction/HelloWorld.jar
+     </copy>
+     ```
+
+   This ensures the same name Java application is installed and deployed in two different paths for detection by JMS.
 
 2. In the Oracle Cloud Console, open the navigation menu, click **Observability & Management**, and then click **Fleets** under **Java Management**.
 
@@ -336,18 +344,26 @@ We shall demonstrate the detection of the Java compiler and HelloWorld applicati
 4. Click **Java Runtimes** under **Resources**. If tagging and installation of management agents is successful, Java Runtimes will be indicated on the Fleet Main Page after 5 minutes.
 
   **For Non-OCI Hosts:**
-  You should see only one Java Runtime. This corresponds to the Java 8 installation from [Lab 3](?lab=deploy-a-java-application).
+  You should see only one Java Runtime. This corresponds to the Java 8 installation from [Lab 4](?lab=create-a-java-application).
 
   ![image of runtimes after successful installation on non-oci host](images/successful-installation-non-oci.png)
 
   **For OCI Hosts:**
-  You should see two Java Runtimes. This corresponds to the Java 8 installation from [Lab 3](?lab=deploy-a-java-application), and Java 11 installation from the installation script at [Lab 5 Task 1](?lab=set-up-of-management-agent#task1installmanagementagentonanocihost).
+  You should see two Java Runtimes. This corresponds to the Java 8 installation from [Lab 4](?lab=create-a-java-application), and Java 11 installation from the installation script at [Lab 6 Task 1](?lab=set-up-of-management-agent#task1installmanagementagentonanocihost).
 
   ![image of runtimes after successful installation on oci host](images/successful-installation-oci.png)
 
-5. Click **Applications** under **Resources**. You should now see two applications. The first is from the HelloWorld application and the second is from the javac compiler command.
+5. Click **Applications** under **Resources**. You should now see two new applications. The first is from the HelloWorld application and the second is from the javac compiler command.
 
   ![image of applications after successful installation](images/successful-installation-applications.png)
+
+6. Click on the HelloWorld application to view the details of HelloWorld application. Click on **Application installations** under **Resources** and the two paths that HelloWorld application is installed in would be shown under **Application installation path**.
+
+  ![image of application installation path](images/application-installation-path.png)
+
+7. The application installation path can also be viewed under Fleet management → Resources (Managed Instances) → Select an instance to click on → Resources (Applications).
+
+  ![image of managed instance applications page](images/managed-instance-applications.png)
 
 You may now **proceed to the next lab.**
 
@@ -359,19 +375,19 @@ You may now **proceed to the next lab.**
 
   ![image of connection closed](images/troubleshoot-connection-closed-by-remote.png)
 
-  Please reconnect to your instance and rerun the installation script.
+  Reconnect to your instance and rerun the installation script.
 
 - If you encounter an error similar to the following:
 
   ![image of installation script unable to find error](images/troubleshoot-unable-to-find-jdk.png)
 
-  Please manually download and install Oracle JDK 8 from [official Oracle page](https://www.oracle.com/java/technologies/javase/javase8u211-later-archive-downloads.html).
+  Manually download and install Oracle JDK 8 from [official Oracle page](https://www.oracle.com/java/technologies/javase/javase8u211-later-archive-downloads.html).
 
 - If you encounter an error similar to the following:
 
   ![image of installation script no directory](images/troubleshoot-no-directory.png)
 
-  Please enter the following command to delete management agent and run the installation script again:
+  Enter the following command to delete management agent and run the installation script again:
 
     ```
      <copy>
@@ -391,4 +407,4 @@ You may now **proceed to the next lab.**
 ## Acknowledgements
 
 - **Author** - Esther Neoh, Java Management Service
-- **Last Updated By** - Ivan Eng, March 2023
+- **Last Updated By** - Ivan Eng, June 2023
