@@ -18,28 +18,23 @@
       "filename": "../../workspace/workspace.md"
     },
     {
-      "title": "Lab 2: Create pages from templates",
-      "description": "Create and configure the application pages",
-      "filename": "../../addpages/addpages.md"
-    },
-    {
-      "title": "Lab 3: Configure the Welcome page",
+      "title": "Lab 2: Welcome page",
       "filename": "../../welcome/welcome.md"
     },
     {
-      "title": "Lab 4: Connect to Oracle Fusion Cloud Apps data",
+      "title": "Lab 3: Connect to Oracle Fusion Cloud Apps data",
       "filename": "../../saasservice/saasservice.md"
     },
     {
-      "title": "Lab 5: Add buttons and action chains",
+      "title": "Lab 4: Add buttons and action chains",
       "filename": "../../tableedit/tableedit.md"
     },
     {
-        "title": "Lab 6: Account Details page",
-        "filename": "../../detailspage/detailspage.md"
+      "title": "Lab 5: Account Details page",
+      "filename": "../../detailspage/detailspage.md"
     },
     {
-      "title": "Lab 7: Edit account page",
+      "title": "Lab 6: Edit account page",
       "filename": "../../editpage/editpage.md"
     },
     {

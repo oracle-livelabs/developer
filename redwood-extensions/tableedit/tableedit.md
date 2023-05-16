@@ -101,11 +101,59 @@ Let's use the empty columns we just created to add some icon-based buttons that 
 We now have nice-looking icon-based buttons for each row, but so far they don't do anything. We'll change that in the next task.
 	![Image alt text](images/buttonsformatted.png)
 
-## Task 3: Define Action Chains
+## Task 3: Info button Action Chain
 
 VB Studio apps are event-driven, which means that an event is fired when an end user performs an operation in the user interface. As a developer, you can create an *action chain* that kicks off a series of actions in response to an event. Let's see how to create an action chain visually using the Action Chains editor.
 
-1. In Design view, select the Edit button, then click **Events** in the Properties pane:
+1. In Design view, select the Info button, then click **Events** in the Properties pane:
+
+	![Events tab](images/infobuttonevents.png)
+
+2. Click **+ New Event**, then **On ojAction**. Note if you see an onClick event instead, it means you selected the icon instead of the button - switch to select the button in the structure panel.:
+	![New event](images/infobuttonnewevent.png)
+
+	You're now in the Action Chain Editor.
+
+	On the left side, you can see all the actions you can define, including calling REST endpoints, invoking JavaScript functions, and many more.
+
+3. From the list of actions on the left, drag **Navigate To Page**
+	![Dragging actions](images/actiondrag.png)
+  and drop it onto the canvas:
+	![Dropping actions](images/actiondrop.png)
+
+4. In the Properties pane, locate the page list and click **Create**:
+	![Action properties](images/clickcreateeditpage.png)
+
+5. In **Create Page** window, set the **Page Id** to **main-accounts-detail**:
+
+6. Select the **Horizontal Foldout Layout Page Template**:
+
+7. Click **Create**:
+	![Action properties](images/createeditpage.png)
+
+8. In the properties panel, locate the **rowIndex** parameter and click **Select Variable**:
+
+  ![Set input parameter](images/selectrowindexvariable.png)
+
+9. Under **Action Chain** select  **key**:
+
+  ![Set input parameter](images/selectkey.png)
+
+10. In the properties panel, locate the **parentPage** parameter and click **Select Variable**:
+
+  ![Set input parameter](images/selectparrentpagevariable.png)
+
+11. Under **Flow / System** select  **currentPage**:
+
+  ![Set input parameter](images/navdetailssetparentpage.png)
+
+Your **ButtonActionChain** should look like this:
+
+  ![Set input parameter](images/buttonactionchain.png)
+
+## Task 4: Edit button Action Chain
+
+1. Switch back to the Design view in the Page Designer tab, select the Edit button, then click **Events** in the Properties pane:
 
 	![Events tab](images/eventproperties2.png)
 
@@ -116,49 +164,64 @@ VB Studio apps are event-driven, which means that an event is fired when an end 
 
 	On the left side, you can see all the actions you can define, including calling REST endpoints, invoking JavaScript functions, and many more.
 
-3. From the list of actions on the left, drag **Navigate**
+3. From the list of actions on the left, drag **Navigate To Page**
 	![Dragging actions](images/actiondrag.png)
-  and drop it onto the + sign:
+  and drop it onto the canvas:
 	![Dropping actions](images/actiondrop.png)
 
-4. In the Properties pane, click the arrow in the **Page** field and select **main-edit-accounts** from the drop-down:
-	![Action properties](images/actionedit.png)
+4. In the Properties pane, locate the page list and click **Create**:
+	![Action properties](images/clickcreateeditpage.png)
 
- Let's take a step back.  We've set things up so that when the Edit button is clicked, we will navigate to the Edit page we created earlier. However, as we can see from the Properties pane, this action chain expects a value for the input parameter **objectId**.
+5. In **Create Page** window, set the **Page Id** to **main-edit-accounts**:
 
-5. Click the **Not Mapped** label:
-	![Input parameter](images/inputparam.png)
+6. Select the **Simple Create and Edit Page Template**:
 
- The Assign Input Parameters dialog allows us to easily map values to variables using drag and drop.
+7. Click **Create**:
+	![Action properties](images/createeditpage.png)
 
-6. Under Sources->Action Chain on the left, drag the action chain variable **key** and drop it on the **objectId** parameter in the Target area on the right:
-	![Mapping variables](images/valuemap.png)
+ Let's take a step back.  We set things up so that when the Edit button is clicked, we will navigate to a new edit page created with the Redwood **Simple Create and Edit Page Template**. However, since we intend to use this as an **Edit** page, we need to enable an input parameter that we can use to link the record on the welcome page to the record being edited in the new page.
 
-7. Click **Save**.
+8. Click the **Go to Page** link to open the new page:
+	![Input parameter](images/gotopage.png)
 
-8. Click **Page Designer** to go back to the visual view of the main-start page:
-	![Page designer](images/pagedesigner.png)
+9. Switch to the **variables** tab:
 
-9. Repeat steps 1-8, this time for the **Info** button. When creating your **On ojAction** action chain, use the **Navigate** action, and select **main-accounts-detail** in the **Page** field.
+  ![Variables tab](images/variablestab.png)
 
-10. Map the **key** variable to the **rowIndex** input parameter.
+10. In the list of variables, click on **objectId**:
 
-11. Map the **Flow/System/currentPage** variable to the **parentPage** parameter.  This will enable the return to parent page functionality in the **Foldout Layout Horizontal Template Pattern**.
+  ![Select objectId](images/selectobjectid.png)
 
-	![Action Chain](images/mapdetailvariables.png)
+11. In the properties on the right set **Input Parameter** to **Required**:
 
-12. Click **Save**.
-	![Action Chain](images/action2.png)
+  ![Set input parameter](images/setobjectidrequired.png)
 
-	Let's take another look at the app to see our changes in action.
+12. Switch back to **main-start** and open the **actions** tab:
 
-10. Click **Preview** in the header, then open the new browser tab.
+  ![Set input parameter](images/switchmainstartactions.png)
 
- You can now click the Edit and Info icons in a row to open the Edit and Detail pages for the organization selected. Pretty cool!
+13. Switch to **ButtonActionChain1** then click on the **Navigate To Page** action:
 
-Your table now has buttons that are attractively rendered and that work as expected. The next step is to configure the pages you created earlier to display and edit data using Oracle's SaaS business object behind the scenes.
+  ![Set input parameter](images/switchbuttonactionchain1.png)
 
-You may now close the preview browser tab and **proceed to the next lab**.
+14. In the properties panel, locate the **objectId** parameter and click **Select Variable**:
+If you don't see the parameter, you may need to refresh your screen.
+
+  ![Set input parameter](images/selectobjectidvariable.png)
+
+15. Under **Action Chain** select  **key**:
+
+  ![Set input parameter](images/selectkey.png)
+
+Your **ButtonActionChain1** should look like this:
+
+  ![Set input parameter](images/buttonactionchain1.png)
+
+You have created two new pages for your application and setup buttons to navigate to them.
+
+Let's move on to the next lab, where we'll learn how to configure the Account Details page.
+
+You may now **proceed to the next lab**.
 
 ## Learn More
 

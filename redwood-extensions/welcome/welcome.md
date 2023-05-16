@@ -1,8 +1,12 @@
-# Configure the Welcome page
+# Welcome page
 
 ## Introduction
 
-In this lab we'll use add Oracle JET UI components to the Welcome page you created using the Redwood Welcome Page template.  Our page will display a list of accounts, and allow the list to be filtered.
+In this lab we'll create a new application and create a welcome page built from the Redwood **Welcome Page Template**.  We will use Oracle JET UI components to display a list of accounts, and allow the list to be filtered.
+
+**About the Oracle Redwood User Experience**
+
+The Redwood User Experience is a collective reinvention of how Oracle customers interact with technology and consume information. While Redwood includes a beautiful new set of user interface elements, including the templates you'll work with in this lab, it's also a philosophical approach to solving customer problems in a differentiated and satisfying way.  Redwood page templates improve the user experience of working with our pages. The Redwood templates not only provide a consistent look and feel across the pages in our app, but we'll also be able to leverage the usability features they offer.
 
 Estimated Time: 15 minutes
 
@@ -10,7 +14,8 @@ Estimated Time: 15 minutes
 
 In this lab, you will:
 * Get familiar with the development environment
-* Leverage Redwood templates and components
+* Leverage Redwood templates and components to create a welcome page
+* Add Oracle JET UI components to your page
 
 Before we get started, let's explore the Designer a bit.
 
@@ -33,20 +38,61 @@ Note that you can collapse and expand tabs to better manage your working area. W
 
 The Components palette contains over a hundred UI components that you can drag and drop onto your pages to design your interfaces. In this workshop, we're going to leverage some page templates designed by Oracle's Redwood Design team to accelerate our application development. These templates provide a responsive user experience, which means your app will adjust to the device accessing it.
 
-## Task 1: Configure the Welcome Page
+**Tip:** In the header area (the black bar along the top), you'll also find the Undo and Redo buttons, which look like this:
 
-You will configure the Welcome Page by setting some of the template properties.
+  ![Undo button](images/undo.png)
 
-1. Switch back to **main** tab:
+If you make a mistake during this lab, click Undo to back out of the last step you did.
 
-	![App UI button](images/maintab.png)
+## Task 1: Create an App UI
 
+You should now be in the Designer, VB Studio's visual editor. We'll start by creating an *App UI*, which is simply an application that includes a user interface component in the form of Visual Builder pages and flows. With App UIs, you can create new interfaces that address specific business needs for your company.
 
-2. Double-click  **main-start** to open the page in the Page Designer, one of the main visual editors in the Designer.  Then under **Structure** click on **Welcome Page Template**:
+1. On the left side of the Designer's navigator, click the first tab, App UIs, click **+ App UI**:
+
+  ![App UI button](images/results.png)
+
+2. In the Create App UI dialog, provide a name in the form **YourName-Accounts**, then click **Create**:
+
+  ![App UI properties](images/wssettings.png)
+
+In the Diagram view on the right, you can see the flows and pages for this App UI. A flow contains pages that relate to each other. An application can contain multiple flows, and a flow can contain many pages. In this case we have one flow, *main*, and one page, *main-start*:
+
+  ![Flow diagram](images/appflow.png)
+
+## Task 2: Add a Welcome Page as the New Default Page
+
+You should be in the Diagram tab with the Components open.
+
+1. Double-click  **main** to open its flow diagram:
+
+  ![Double-Click Main](images/doubleclickmain.png)
+
+You are going to replace the main-start page with one that uses a Redwood template, so the existing page can be deleted.
+
+2. Right-click on the main-start page, select **Delete**:
+
+  ![Set Default page](images/deletemainstart.png)
+
+In the Components tab you will see a page named **Welcome Page Template**.  If you do not see this template, go back to the first lab and make sure you have all of the components installed.
+
+  ![Welcome page template](images/welcomepagetemplate.png)
+
+3. Drag the **Welcome Page Template** into the diagram editor:
+
+  ![Drag Welcome page template](images/dropwelcometemplate.png)
+
+4. Name the new page **main-start**, then click **Create**:
+
+  ![Name Welcome page](images/namewelcomepage.png)
+
+## Task 3: Configure the Welcome Page
+
+1. Double-click  **main-start** to open the page in the Page Designer, one of the main visual editors in the Designer.  Then under **Structure** click on **Welcome Page Template**:
 
   ![IDE](images/ide.png)
 
-3. Click the **All** tab in the Properties pane and modify these properties:
+2. Click the **All** tab in the Properties pane and modify these properties:
 
 | # | Property | Value |
 | --- | --- | --- |
@@ -61,7 +107,7 @@ Your screen should look like this:
 
 In the next lab, we'll add some more useful components to the page.
 
-## Task 2: Add a Search Component and Define a Variable
+## Task 4: Add a Search Component and Define a Variable
 
 1. In the Components palette's search box, type **search**, which will locate a component called **Input Search**.
 2. Drag this component and drop it on the page in the canvas. A pop-up will appear asking which slot you want to use; choose **Search slot**:
@@ -87,7 +133,7 @@ In the next lab, we'll add some more useful components to the page.
 
 The Value field in the Properties pane now contains a reference to our new variable.
 
-## Task 3: Add a Collection Container
+## Task 5: Add a Collection Container
 
 In this task we'll add a container to the page, which will later hold some data we'll get from Oracle Fusion Cloud Applications.
 

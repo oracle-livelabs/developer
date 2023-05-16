@@ -111,19 +111,11 @@ Next you will modify the **Primary Action** (Save button) included with the **Si
 
 	  ![Edit button](images/selectactionchain2.png)
 
-5. Under the **Input Parameters** for the Action Chain, locate **accounts** and click the **Select Variable** icon
-
-	  ![Edit button](images/accountsclickselectvar.png)
-
-6. Choose **Page/Variables/ { } accounts**
-
-	  ![Edit button](images/chooseaccounts.png)
-
-7. Under the **Input Parameters** for the Action Chain, locate **accountsId** and click the **Select Variable** icon
+5. Under the **Input Parameters** for the Action Chain, locate **accountsId** and click the **Select Variable** icon
 
 	  ![Edit button](images/accountidclickselectvar.png)
 
-8. Choose **Page/Variables/ { } objectId** (use the filter if you have trouble locating the objectId)
+6. Choose **Page/Variables/ { } objectId** (use the filter if you have trouble locating the objectId)
 
 	  ![Edit button](images/chooseobjectid.png)
 
@@ -139,7 +131,7 @@ Now that the save button is configured, you will add an action to navigate back 
 
 	  ![Edit button](images/locatenavigateback.png)
 
-3. Drag the **Navigate Back** action onto the diagram and drop it on the line after **Reload accounts data**.  You will know you are in the correct location when you see the triangle next to the line.
+3. Drag the **Navigate Back** action onto the diagram and drop it when you see a green line on the bottom of **Call Action Chain loadAccountsChain**.
 
 	  ![Edit button](images/dropnavigateback.png)
 
