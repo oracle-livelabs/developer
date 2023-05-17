@@ -1,4 +1,4 @@
-# Title of the Lab
+# Create a New Version
 
 ## Introduction
 
@@ -89,6 +89,7 @@ This lab assumes you have:
 * [URL text 2](http://docs.oracle.com)
 
 ## Acknowledgements
-* **Author** - <Name, Title, Group>
-* **Contributors** -  <Name, Group> -- optional
-* **Last Updated By/Date** - <Name, Month Year>
+
+* **Author** - Sheryl Manoharan, VB Studio User Assistance, May 2023
+* **Last Updated By/Date** - Sheryl Manoharan, May 2023
+

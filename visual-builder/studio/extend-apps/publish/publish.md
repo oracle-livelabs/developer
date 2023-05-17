@@ -2,31 +2,48 @@
 
 ## Introduction
 
-Now that we have an App UI in our extension, we'll test the App UI's pages to make sure they're working correctly. We'll then publish the extension and view the App UI deployed to your Oracle Cloud Applications instance.
+Now that we've set up the App UI in our extension, we'll test it to make sure it's working correctly. We'll then publish the extension and view the App UI deployed to your Oracle Cloud Applications instance.
+
+### Objectives
+
+In this lab, you will:
+
+* Test your App UI's pages
+* Deploy your App UI's extension to your Oracle Cloud Application instance
+* Access the deployed extension
 
 ## Task 1: Test the App UI
 
-1. Click **Preview** in the header to run the App UI in its own browser tab and see how it will appear to a user.
+You can preview your App UI's pages to run it in its own browser tab and see how it will appear to a user.
 
-2. To filter the list, enter a search criteria, like the first name `David`:
+1. Click **Preview** ![Preview icon](images/icon-preview.png) in the header.
+
+2. When the App UI opens displaying a list of employees, enter criteria, like the first name `David`, in the **Emp Name** field to filter the list:
 
     ![This image shows a preview of the App UI. The name "David" is entered in the search field and the results of the search are listed underneath.](images/preview.png)
 
-3. After you've confirmed search is working, click **Publish** to publish your extension with its App UI.
+3. Close the browser tab.
+
+## Task 2: Publish the extension
+
+After you've confirmed search is working, you are ready to deploy the extension with its App UI to your Oracle Cloud Applications instance.
+
+1. Click **Publish** in the header.
 
     ![This image show the Publish button selected in the upper right corner of the Designer.](images/publish.png)
 
-4. In the Publish Changes dialog, enter a description of the changes in the **Commit Message** field, then click **Publish Changes**:
+2. In the Publish Changes dialog, enter a description of the changes in the **Commit Message** field, then click **Publish Changes**:
 
     ![This image shows the Publish Changes dialog with Merge Now selected and the "Search Application for HCM" entered in the Commit Message field.](images/publish-changes-dialog.png)
 
-5. If prompted, provide your user name and password for your development instance. These **must** be Oracle Cloud Application credentials, as opposed to Visual Builder Studio or SSO credentials:
+3. If prompted, provide your user name and password for your development instance. These **must** be Oracle Cloud Application credentials, as opposed to Visual Builder Studio or SSO credentials:
 
     ![This image shows the Missing Deployment Credentials dialog. The User Name and Password fields are empty.](images/deployment-creds.png)
 
-6. When the changes are published to your project's Git repository, click **Close**.
+4. When the changes are published to your project's Git repository, click **Close**.
+    ![This image shows the steps taken to deploy changes from your workspace to the project's repository.](images/published.png)
 
-## Task 2: View the Deployed Extension
+## Task 3: View the deployed extension
 
 Once your changes are successfully merged, VB Studio automatically kicks off the packaging and deployment jobs to deploy the extension to your environment's Oracle Cloud Applications instance.
 
@@ -36,16 +53,18 @@ Once your changes are successfully merged, VB Studio automatically kicks off the
 
     ![This image shows the Builds section Job Queue tab in VB Studio. A progress indicator shows status for the HCMSearch-Package job.](images/job-queue.png)
 
-    To view the sequence of build jobs, click the **Pipelines** tab, then select **View Layout** under the Actions menu ![Actions menu icon](images/icon-actions-menu.png) for the HCMSearch-Package and Deploy job.
+3. Click the **Environments** tab, then select **Deployments**.
 
-    ![This image shows a completed build pipeline for HCMSearch-Package_and_Deploy. In the Actions drop-down menu, the View Layout option is selected.](images/pipelines-view-layout.png)
-
-3. Click the **Environments** tab in the Navigator and select the **Deployments** tab.
-
-4. Click the **Application Extension** tab , then expand the **HCMSearch** extension:
+4. Expand the **YourInitials-HCMSearch** extension:
 
     ![This image shows The Visual Builder Studio project Environments tab. The Development environment is selected and the Deployments tab is shown. In the Applications Extensions section, HCM Search is highlighted and expanded and hcmsearch is highlighted in the App UIs column.](images/deployment.png)
 
 5. Click **Open** ![Open icon](images/icon-openappui.png) next to your App UI to open it in a new browser tab.
 
-You may **proceed to the next lab**.
+<!-- You may **proceed to the next lab**. -->
+
+## Acknowledgements
+
+* **Author** - Sheryl Manoharan, VB Studio User Assistance, May 2023
+* **Contributors** -  Lisa Dawson, VB Studio User Assistance
+* **Last Updated By/Date** - Sheryl Manoharan, May 2023
