@@ -12,7 +12,6 @@ In this lab, you will:
 * Connect your extension to Oracle Cloud App data
 * Set up your App UI to filter and display data
 
-
 ## Task 1: Create an App UI
 
 Start by creating an App UI that takes the form of VB Studio pages and flows. A *flow* is just a way to keep related pages together.

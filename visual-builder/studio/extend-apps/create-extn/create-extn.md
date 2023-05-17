@@ -59,11 +59,26 @@ Once you have your project, create a workspace where you can develop your extens
 
   Here are values used for demo purposes:
   ![This image shows the New Application Extension dialog, with fields filled as follows: Extension Name: HCM Search; Extension Id: site_HCM Search; Workspace Name: HCM Search; Development Environment: Development; Base Oracle Application: None; Sandbox: No sandbox selected. The Create new repository option is selected. HCMSearch is entered in the Repository Name field and branch1 is entered into the Working Branch field.](images/create-workspace.png)
-
 4. Click **Create**.
 
-  VB Studio opens your workspace in the Designer, where you can begin creating your App UI. Your screen might look something like this:
+  VB Studio opens your workspace in the Designer, where you can get started with developing your App UI.
+
+## Task 3: Explore your extension
+
+1. When your workspace first opens in the Designer, your screen might look something like this:
   ![Shows the New App Extension Project dialog with blank Project Name and Add Members fields](images/welcome.png)
+
+  On the far left are icons representing App UIs, Services, Dependencies, and so on. This vertical toolbar is the Navigator, which helps you move between the artifacts in your extension.
+2. Take a look at the header:
+  ![Shows the New App Extension Project dialog with blank Project Name and Add Members fields](images/header.png)
+
+    * On the left is the name of your current workspace, **DemoHCMSearch**; next to it is the project's Git repository (**DemoHCMSearch.git**) and the branch currently associated with your workspace (**branch1**).
+
+     The **DemoHCMSearch.git** repo stores your extension's files and is known as your project's *remote* repository. It includes the **main** branch, created by default when a new repo is generated and which serves as the project's source of truth. The **branch1** branch you see in your workspace is a working copy of your project's repo. It initially has the same set of source files as the **main** branch, but as you develop your extension, it will include the changes you make.
+
+    * Elements on the right let you perform various other actions, such as undo a change or search the Git repository for a file. This workshop primarily demonstrates the options to preview your App UI and publish changes. If you make a mistake during this workshop, click ![Undo icon](images/icon-workspaces.png) to back out of the last step you did.
+
+  Keep in mind that VB Studio saves your changes automatically as you work. A timestamp at the bottom of the page will show the time your work was last saved.
 
 You may **proceed to the next lab**.
 

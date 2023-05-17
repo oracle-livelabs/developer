@@ -14,7 +14,7 @@ In this lab, you will:
 
 ## Task 1: Test the App UI
 
-You can preview your App UI's pages to run it in its own browser tab and see how it will appear to a user.
+You can preview your App UI to run it in its own browser tab and see how it will appear to a user.
 
 1. Click **Preview** ![Preview icon](images/icon-preview.png) in the header.
 
@@ -45,9 +45,9 @@ After you've confirmed search is working, you are ready to deploy the extension 
 
 ## Task 3: View the deployed extension
 
-Once your changes are successfully merged, VB Studio automatically kicks off the packaging and deployment jobs to deploy the extension to your environment's Oracle Cloud Applications instance.
+Once your changes are successfully merged to your remote repo, VB Studio automatically kicks off the packaging and deployment jobs to deploy the extension to your environment's Oracle Cloud Applications instance.
 
-1. Click **Go to project page** ![Go to project page icon](images/icon-gotoprojectpage.png) in the header to go to the Project Home page.
+1. Click ![Go to project page icon](images/icon-gotoprojectpage.png) in the header to go to the Project Home page.
 
 2. In the main navigation, click the **Builds** ![Builds icon](images/icon-builds.png) tab to check the build jobs that package and deploy the extension to your development instance. If the build job is still running, you can view its progress in the **Job Queue** tab. It might take a few minutes for the build to start if an executor isn't immediately available.
 
@@ -55,7 +55,7 @@ Once your changes are successfully merged, VB Studio automatically kicks off the
 
 3. Click the **Environments** tab, then select **Deployments**.
 
-4. Expand the **YourInitials-HCMSearch** extension:
+4. Expand the **Demo-HCMSearch** extension:
 
     ![This image shows The Visual Builder Studio project Environments tab. The Development environment is selected and the Deployments tab is shown. In the Applications Extensions section, HCM Search is highlighted and expanded and hcmsearch is highlighted in the App UIs column.](images/deployment.png)
 
