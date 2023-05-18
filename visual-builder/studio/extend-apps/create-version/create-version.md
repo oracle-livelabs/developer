@@ -2,7 +2,7 @@
 
 ## Introduction
 
-*Describe the lab in one or two sentences, for example:* This lab walks you through the steps to ...
+Now that your extension is published, you won't be able to make changes to it. To do that, you'll need to create a new branch off your project's **main** branch. After you've *Describe the lab in one or two sentences, for example:* This lab walks you through the steps to ...
 
 Estimated Time: -- minutes
 

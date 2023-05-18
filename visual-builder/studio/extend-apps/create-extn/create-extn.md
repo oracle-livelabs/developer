@@ -4,13 +4,13 @@
 
 Starting in Oracle Cloud Applications, we'll navigate to Visual Builder Studio and access a project where we can develop our extension.
 
-Estimated Time: -- minutes
+Estimated Time: 5 minutes
 
 ### About this lab
 
 To extend Oracle Cloud Applications in VB Studio, you must belong to a *project*. Every project in VB Studio is devoted to a discrete software effort, and the project you use in this lab is exclusive to your Oracle Cloud Application. The project brings together all the tools you need to create your App UI: a Git repository to store your source code, a pipeline to provide continuous integration and delivery, and more.
 
-Within your project, you'll create a *workspace*, a completely private area for you to work on your application. The changes you make in your workspace are stored in a clone of the project's Git repository, and are not visible to others until you share or publish them. A workspace also connects you to the Oracle Cloud Applications instance where you deploy your extension.
+Within your project, you'll create a *workspace*, a completely private area for you to work on your application. The changes you make in your workspace are stored in a clone of the project's Git repository, and are not visible to others until you share or publish them.
 
 ### Objectives
 
@@ -18,6 +18,13 @@ In this lab, you will:
 
 * Access VB Studio from your Oracle Cloud Application environment
 * Create an extension (also considered a workspace) for your Oracle Cloud App
+
+### Prerequisites
+
+This lab assumes you have:
+
+* An Oracle Cloud account
+* All previous labs successfully completed
 
 ## Task 1: Access VB Studio from Oracle Cloud Applications
 
@@ -35,9 +42,9 @@ Users with [the right roles](https://docs.oracle.com/en/cloud/paas/visual-builde
 
 ## Task 2: Create a workspace for your extension
 
-Once you have your project, create a workspace where you can develop your extension. It's your ticket into the Designer, a visual environment that lets you design and develop your user interface by dragging and dropping components on a page.
+Once you have your project, create a workspace where you can develop your extension. This workspace is your ticket into the Designer, a visual environment that lets you design and develop your user interface by dragging and dropping components on a page.
 
-1. In the navigation menu, click the **Workspaces** ![Workspaces icon](images/icon-workspaces.png) tab.
+1. In the VB Studio navigation menu, click the **Workspaces** ![Workspaces icon](images/icon-workspaces.png) tab.
 
 2. Click **New** and select **New Application Extension**:
   ![This image shows the Workspaces tab for the project with the New menu expanded. The New Application Extension option is selected in the menu.](images/create-extension.png)
@@ -46,18 +53,18 @@ Once you have your project, create a workspace where you can develop your extens
 
   | Field | Value | Explanation |
   | --- | --- | --- |
-  | Extension Name | YourInitials-HCMSearch | To keep the names distinct, use `HCMSearch` prefaced by your initials, as in `SM-HCMSearch` |
-  | Extension ID | site_YourInitials-HCMSearch | Automatically filled in, but you can change it if you like |
-  | Workspace Name | YourInitials-HCMSearch | Automatically filled in, but you can change it if you like |
+  | Extension Name | YourName-HCMSearch | To keep the names distinct, use your first name and the initial of your last name, as in `JohnD-HCMSearch` |
+  | Extension ID | site_YourName-HCMSearch | Automatically filled in, but you can change it if you like |
+  | Workspace Name | YourName-HCMSearch | Automatically filled in, but you can change it if you like |
   | Development Environment | Development | Mapped to your current identity domain's Oracle Cloud Applications instance |
   | Base Oracle Cloud Application | None | Not needed in this scenario |
   | Sandbox | No sandbox selected | Not needed in this scenario |
   | Create new repository | Select | Creates a Git repository and branch where your extension's files will be stored |
-  | Repository Name | YourInitials-HCMSearch | Name of the Git repository |
+  | Repository Name | YourName-HCMSearch | Name of the Git repository |
   | Working branch Name | branch1 | Working copy of your Git repository default branch |
   {: title="New App Extension Fields"}
 
-  Here are values used for demo purposes:
+  Here are the values used for demo purposes in this workshop:
   ![This image shows the New Application Extension dialog, with fields filled as follows: Extension Name: HCM Search; Extension Id: site_HCM Search; Workspace Name: HCM Search; Development Environment: Development; Base Oracle Application: None; Sandbox: No sandbox selected. The Create new repository option is selected. HCMSearch is entered in the Repository Name field and branch1 is entered into the Working Branch field.](images/create-workspace.png)
 4. Click **Create**.
 
@@ -74,13 +81,13 @@ Once you have your project, create a workspace where you can develop your extens
 
     * On the left is the name of your current workspace, **DemoHCMSearch**; next to it is the project's Git repository (**DemoHCMSearch.git**) and the branch currently associated with your workspace (**branch1**).
 
-     The **DemoHCMSearch.git** repo stores your extension's files and is known as your project's *remote* repository. It includes the **main** branch, created by default when a new repo is generated and which serves as the project's source of truth. The **branch1** branch you see in your workspace is a working copy of your project's repo. It initially has the same set of source files as the **main** branch, but as you develop your extension, it will include the changes you make.
+     The **DemoHCMSearch.git** repo stores your extension's files and is known as your project's *remote* repository. It includes the **main** and **branch1** branches, created with initial content for your extension. The **main** branch is the default branch created when a new repo is generated and is the project's source of truth. The **branch1** you see in your workspace is a working copy of your project's repo and serves as your *local* repository. It initially has the same set of source files as the remote branch, but as you develop your extension, it will include the changes you make.
 
-    * Elements on the right let you perform various other actions, such as undo a change or search the Git repository for a file. This workshop primarily demonstrates the options to preview your App UI and publish changes. If you make a mistake during this workshop, click ![Undo icon](images/icon-workspaces.png) to back out of the last step you did.
+    * Elements on the right let you perform various other actions, such as undo a change or search the Git repository for a file. This workshop primarily demonstrates the options to preview your App UI and publish changes. If you make a mistake during this workshop, click ![Undo icon](images/icon-undo.png) to back out of the last step you did.
 
   Keep in mind that VB Studio saves your changes automatically as you work. A timestamp at the bottom of the page will show the time your work was last saved.
 
-You may **proceed to the next lab**.
+You may now **proceed to the next lab**.
 
 ## Acknowledgements
 

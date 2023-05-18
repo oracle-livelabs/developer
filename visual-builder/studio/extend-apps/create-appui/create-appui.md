@@ -4,17 +4,23 @@
 
 We're now ready to build a simple App UI that allows users to search for an employee, based on data that we'll get from Human Capital Management (HCM).
 
+Estimated Time: 10 minutes
+
 ### Objectives
 
 In this lab, you will:
 
 * Create an App UI
 * Connect your extension to Oracle Cloud App data
-* Set up your App UI to filter and display data
+* Set up the App UI to filter and display data
+
+### Prerequisites
+
+This lab assumes you have all previous labs successfully completed.
 
 ## Task 1: Create an App UI
 
-Start by creating an App UI that takes the form of VB Studio pages and flows. A *flow* is just a way to keep related pages together.
+Start by creating an App UI that takes the form of VB Studio pages and flows.
 
 1. In the **App UIs** pane, click **+ App UI**:
 
@@ -24,10 +30,10 @@ Start by creating an App UI that takes the form of VB Studio pages and flows. A 
 
 3. Click **Create**.
 
-    The App UI opens on the Diagram view, which provides a visual representation of your App UI. You'll see the App UI's flow (**main**) and page (**main-start**) automatically created for you. The **main-start** page is your App UI's starter page and is what users first see when interacting with your App UI.
+    The App UI opens on the Diagram view, which shows the App UI's flows and pages. A flow is just a way to keep related pages together. An application can contain multiple flows, and a flow can contain many pages. In this case, we have one flow, **main**, and one page, **main-start**:
     ![This image shows the Visual Builder Navigator with the App UIs tab displayed. The + App UI button is selected.](images/newappui.png)
 
-4. Click the **main-start** tile to open the page in the Designer.
+4. Double-click the **main-start** tile to open the page in the Designer.
 
     What you see under the **main-start** tab is your main work area. Just under **main-start** are several horizontal tabs: Page Designer, Actions, Event Listeners, and so on. Each tab provides editors to help you examine and modify artifacts used in the page. By default, the page opens in the Page Designer, which is where you'll do the bulk of your work in VB Studio.
     ![This image shows the Visual Builder Navigator with the App UIs tab displayed. The + App UI button is selected.](images/pagedesigner.png)
@@ -42,29 +48,33 @@ Start by creating an App UI that takes the form of VB Studio pages and flows. A 
     | 5 | Canvas | A design, live, or code view of your page's content |
     {: title="Page Designer Work Area"}
 
-    Let's get started by dropping components onto the page.
+    You can collapse and expand tabs to better manage your working area. For example, click **Properties** to hide the Properties pane and expand your work area. You can also move different panes to customize your work area. For example, right-click **Structure** at the bottom of your work area, then select **Move to Top Left** to move the Structure view right under Components and Data. Right-click the tab again and select **Reset All Panels to Default** to revert your change.
 
-5. In the Components palette, enter **heading** in the filter field to locate the Heading component, then drag and drop it onto the canvas.
+## Task 2: Add components to a page
 
-6. In the Heading's Properties pane, enter **Employee Search** in the Text field:
+Let's now develop our App UI by dragging and dropping components onto the main-start page.
+
+1. In the Components palette, enter **heading** in the filter field to locate the Heading component, then drag and drop it onto the canvas.
+
+2. In the Heading's Properties pane, enter **Employee Search** in the Text field:
 
     ![This image shows the Visual Builder Navigator with the App UIs tab displayed. The + App UI button is selected.](images/heading.png)
 
-7. In the Components palette, filter to find the **Input Text** component, then drag and drop it under the header on the canvas. Make sure you see the plus sign (+) before you drop the component, so you know you're working in a valid area:
+3. In the Components palette, filter to find the **Input Text** component, then drag and drop it under the header on the canvas. Make sure you see the plus sign (+) before you drop the component, so you know you're working in a valid area:
 
     ![This image shows the Visual Builder Navigator with the App UIs tab displayed. The + App UI button is selected.](images/input-text.png)
 
-8. In the Input Text component's Properties pane, change the **Label Hint** to `Emp Name`. You'll see this as placeholder text in the component on the canvas.
+4. In the Input Text component's Properties pane, change the **Label Hint** to `Emp Name`. You'll see this as placeholder text in the component on the canvas.
 
-9. Let's now create a variable that we can map the input text field to. This variable will hold the employee data that the user will be able to search. In the Input Text component's Properties pane, click the **Data** tab. Hover over the **Value** text and click the ![Select Variable icon](images/icon-selectvariable.png) **Select Variable** icon next to **fx**.
+5. Let's now create a variable that we can map the input text field to. This variable will hold the employee data that the user will be able to search. In the Input Text component's Properties pane, click the **Data** tab. Hover over the **Value** text and click the ![Select Variable icon](images/icon-selectvariable.png) **Select Variable** icon next to **fx**.
 
     ![This image shows the Input Text component selected and the Variables dialog displayed. The Create Variable link next to Page is highlighted.](images/select-var.png)
 
-10. Click **Create Variable** next to **Page**.
+6. Click **Create Variable** next to **Page**.
 
-11. In the **ID** field, enter `searchString`, leave the **Type** set to `string`, and click **Create**.
+7. In the **ID** field, enter `searchString`, leave the **Type** set to `string`, and click **Create**.
 
-## Task 2: Connect to a data source
+## Task 3: Connect to a data source
 
 Below the input text field, we want to show a list of employees that the user can choose from. To do this, we need to establish a service connection to Oracle Human Capital Management (HCM) so we can get the data we need.
 
@@ -88,7 +98,7 @@ Below the input text field, we want to show a list of employees that the user ca
 
     Now we can use this service connection to create the list of employees we want.
 
-## Task 3: Set up filtering
+## Task 4: Set up filtering
 
 In this task, we're going to set up a filtering mechanism for our list based on the display name of the employee. We want to compare each name to whatever the user enters as a search string, in order to find the proper match.
 
@@ -130,10 +140,10 @@ In this task, we're going to set up a filtering mechanism for our list based on 
 
 10. Click **Done**, then **Finish**.
 
-    The **main-start** page should filter and display a list of employees in a List View component:
+    The main-start page should filter and display a list of employees in a List View component:
     ![This image shows a list of employees in the Input Text field under the Emp Name search field.](images/empdisplay.png)
 
-You may **proceed to the next lab**.
+You may now **proceed to the next lab**.
 
 ## Acknowledgements
 

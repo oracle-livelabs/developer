@@ -4,6 +4,8 @@
 
 Now that we've set up the App UI in our extension, we'll test it to make sure it's working correctly. We'll then publish the extension and view the App UI deployed to your Oracle Cloud Applications instance.
 
+Estimated Time: 5 minutes
+
 ### Objectives
 
 In this lab, you will:
@@ -11,6 +13,10 @@ In this lab, you will:
 * Test your App UI's pages
 * Deploy your App UI's extension to your Oracle Cloud Application instance
 * Access the deployed extension
+
+### Prerequisites
+
+This lab assumes you have all previous labs successfully completed.
 
 ## Task 1: Test the App UI
 
@@ -43,13 +49,15 @@ After you've confirmed search is working, you are ready to deploy the extension 
 4. When the changes are published to your project's Git repository, click **Close**.
     ![This image shows the steps taken to deploy changes from your workspace to the project's repository.](images/published.png)
 
+    What you're seeing are the Git steps taken to push your changes from the local **branch1** to the remote **branch1**, then merge them to the project's **main** branch.
+
 ## Task 3: View the deployed extension
 
-Once your changes are successfully merged to your remote repo, VB Studio automatically kicks off the packaging and deployment jobs to deploy the extension to your environment's Oracle Cloud Applications instance.
+Once your changes are successfully merged to your project's repo, VB Studio automatically kicks off the default build jobs that deploy the extension to your environment's Oracle Cloud Applications instance.
 
 1. Click ![Go to project page icon](images/icon-gotoprojectpage.png) in the header to go to the Project Home page.
 
-2. In the main navigation, click the **Builds** ![Builds icon](images/icon-builds.png) tab to check the build jobs that package and deploy the extension to your development instance. If the build job is still running, you can view its progress in the **Job Queue** tab. It might take a few minutes for the build to start if an executor isn't immediately available.
+2. In the main navigation, click the **Builds** ![Builds icon](images/icon-builds.png) tab to check the packaging and deployments jobs. If the build job is still running, you can view its progress in the **Job Queue** tab. It might take a few minutes for the build to start if an executor isn't immediately available.
 
     ![This image shows the Builds section Job Queue tab in VB Studio. A progress indicator shows status for the HCMSearch-Package job.](images/job-queue.png)
 
@@ -61,7 +69,7 @@ Once your changes are successfully merged to your remote repo, VB Studio automat
 
 5. Click **Open** ![Open icon](images/icon-openappui.png) next to your App UI to open it in a new browser tab.
 
-<!-- You may **proceed to the next lab**. -->
+<!-- You may now **proceed to the next lab**. -->
 
 ## Acknowledgements
 
