@@ -1,4 +1,4 @@
-# Create an App UI and Connect to Data
+# Create an App UI and connect to data
 
 ## Introduction
 
@@ -24,19 +24,19 @@ Start by creating an App UI that takes the form of VB Studio pages and flows.
 
 1. In the **App UIs** pane, click **+ App UI**:
 
-    ![This image shows the Visual Builder Navigator with the App UIs tab displayed. The + App UI button is selected.](images/create-app.png)
+    ![This image shows the App UIs tab, with the + App UI button selected.](images/create-app.png)
 
 2. In **App UI Name**, enter a name, perhaps something like `HCMSearch`. The App UI ID is automatically filled in, but you can change it if you like.
 
 3. Click **Create**.
 
     The App UI opens on the Diagram view, which shows the App UI's flows and pages. A flow is just a way to keep related pages together. An application can contain multiple flows, and a flow can contain many pages. In this case, we have one flow, **main**, and one page, **main-start**:
-    ![This image shows the Visual Builder Navigator with the App UIs tab displayed. The + App UI button is selected.](images/newappui.png)
+    ![This image shows a new hcmsearch App UI open on the canvas in the Designer tab. On the left is a Components palette; on the right is the  main tile indicating a flow with the main-search tile indicating a page nested within.](images/newappui.png)
 
 4. Double-click the **main-start** tile to open the page in the Designer.
 
     What you see under the **main-start** tab is your main work area. Just under **main-start** are several horizontal tabs: Page Designer, Actions, Event Listeners, and so on. Each tab provides editors to help you examine and modify artifacts used in the page. By default, the page opens in the Page Designer, which is where you'll do the bulk of your work in VB Studio.
-    ![This image shows the Visual Builder Navigator with the App UIs tab displayed. The + App UI button is selected.](images/pagedesigner.png)
+    ![This image shows the main-start page with several components labelled. On the left are the Components, Data, and Structure tabs, in the middle is the canvas area, and on the right is the Properties pane.](images/pagedesigner.png)
 
     Here are the main Page Designer areas you'll use throughout this workshop:
     | # | Tab | Functionality |
@@ -58,17 +58,17 @@ Let's now develop our App UI by dragging and dropping components onto the main-s
 
 2. In the Heading's Properties pane, enter **Employee Search** in the Text field:
 
-    ![This image shows the Visual Builder Navigator with the App UIs tab displayed. The + App UI button is selected.](images/heading.png)
+    ![TThis image shows the Heading component highlighted in the Components palette and selected in the Page Designer, and Employee Search entered in the Text field in the Properties pane.](images/heading.png)
 
 3. In the Components palette, filter to find the **Input Text** component, then drag and drop it under the header on the canvas. Make sure you see the plus sign (+) before you drop the component, so you know you're working in a valid area:
 
-    ![This image shows the Visual Builder Navigator with the App UIs tab displayed. The + App UI button is selected.](images/input-text.png)
+    ![This image shows the Input Text component highlighted in the Components palette and being dragged onto the canvas under the heading. ](images/input-text.png)
 
 4. In the Input Text component's Properties pane, change the **Label Hint** to `Emp Name`. You'll see this as placeholder text in the component on the canvas.
 
 5. Let's now create a variable that we can map the input text field to. This variable will hold the employee data that the user will be able to search. In the Input Text component's Properties pane, click the **Data** tab. Hover over the **Value** text and click the ![Select Variable icon](images/icon-selectvariable.png) **Select Variable** icon next to **fx**.
 
-    ![This image shows the Input Text component selected and the Variables dialog displayed. The Create Variable link next to Page is highlighted.](images/select-var.png)
+    ![This image shows the Input Text component's Properties pane, with the cursor hovering over the Select Variable icon.](images/select-var.png)
 
 6. Click **Create Variable** next to **Page**.
 
@@ -92,7 +92,7 @@ Below the input text field, we want to show a list of employees that the user ca
 
 5. In the **Create Service Connection** screen, enter `work` in the search box, then select **publicWorkers** from the search results:
 
-    ![This image shows the Create Service Connection wizard Service Catalog screen with the Human Capital Management tile selected.](images/publicworkers.png)
+    ![This image shows the Create Service Connection page with the word "work" entered in the search field and the publicWorkers object selected.](images/publicworkers.png)
 
 6. Click **Create**.
 
@@ -106,11 +106,11 @@ In this task, we're going to set up a filtering mechanism for our list based on 
 
 2. Select the **Data** tab in the Page Designer, then expand **Services** and **hcmRest**. Drag **publicWorkers** onto the page underneath the Input Text component:
 
-    ![This image shows the Page Designer Data tab with the Services and siteHCMSearch:hcmRest nodes expanded and publicWorkers selected.](images/publicworkers-datatab.png)
+    ![This image shows the Data tab in the Page Designer with Services and hcmRest nodes expanded. The publicWorkers is being dragged and dropped on the canvas.](images/publicworkers-datatab.png)
 
 3. When prompted with a list of options for presenting the data, choose the second **List** item:
 
-    ![This image shows the Page Designer with a "Render as" list of options displayed below the Input Text component. The second "List" item is selected.](images/render-as-list-selection.png)
+    ![This image shows a "Render as" list of options displayed below the Input Text component. The second "List" item is selected.](images/render-as-list-selection.png)
 
 4. In the Add Data wizard, accept the default template in the **Select Template** screen and click **Next**:
 
@@ -122,7 +122,7 @@ In this task, we're going to set up a filtering mechanism for our list based on 
     * **Secondary slot**: PhoneNumber
     * **Tertiary slot**: LocationTownOrCity
 
-    ![This image shows the Add Data page with the word "city" in the Endpoint Structure search field. In the Item Template Fields, DisplayName is in the Default slot, PhoneNumber is in the Secondary slot, and LocationTownOrCity is in the Tertiary slot.](images/add-data-wizard-binddata.png)
+    ![This image shows the Add Data page with the word "LocationTownOrCity" in the Endpoint Structure search field. In the Item Template Fields, DisplayName is in the Default slot, PhoneNumber is in the Secondary slot, and LocationTownOrCity is in the Tertiary slot.](images/add-data-wizard-binddata.png)
 
 6. Click **Next**.
 
@@ -136,12 +136,12 @@ In this task, we're going to set up a filtering mechanism for our list based on 
     * **Operator**: contains ($co)
     * **Value**: $variables.searchString
 
-    ![This image shows the Add Data page with { } filterCriterion selected in the Target pane. The the bottom of the page, the Builder tab is selected and DisplayName is entered in the IF field, contains ($co) is chosen in the operator field, and $variables.searchString is in the variable field.](images/add-data-wizard-definequery.png)
+    ![This image shows the Add Data page with { } filterCriterion selected in the Target pane. At the bottom of the page, the Builder tab is selected and DisplayName is entered in the IF field, contains ($co) is chosen in the operator field, and $variables.searchString is in the variable field.](images/add-data-wizard-definequery.png)
 
 10. Click **Done**, then **Finish**.
 
     The main-start page should filter and display a list of employees in a List View component:
-    ![This image shows a list of employees in the Input Text field under the Emp Name search field.](images/empdisplay.png)
+    ![This image shows a list of employees under the Emp Name input text field.](images/empdisplay.png)
 
 You may now **proceed to the next lab**.
 

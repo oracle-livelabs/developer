@@ -1,4 +1,4 @@
-# Test and Publish the Application
+# Test and publish the extension
 
 ## Introduction
 
@@ -36,7 +36,7 @@ After you've confirmed search is working, you are ready to deploy the extension 
 
 1. Click **Publish** in the header.
 
-    ![This image show the Publish button selected in the upper right corner of the Designer.](images/publish.png)
+    ![This image show the Publish button selected in the upper right corner of the workspace.](images/publish.png)
 
 2. In the Publish Changes dialog, enter a description of the changes in the **Commit Message** field, then click **Publish Changes**:
 
@@ -44,10 +44,10 @@ After you've confirmed search is working, you are ready to deploy the extension 
 
 3. If prompted, provide your user name and password for your development instance. These **must** be Oracle Cloud Application credentials, as opposed to Visual Builder Studio or SSO credentials:
 
-    ![This image shows the Missing Deployment Credentials dialog. The User Name and Password fields are empty.](images/deployment-creds.png)
+    ![This image shows the Missing Deployment Credentials dialog. The User Name field has john.dunbar entered in it and the Password field is empty.](images/deployment-creds.png)
 
 4. When the changes are published to your project's Git repository, click **Close**.
-    ![This image shows the steps taken to deploy changes from your workspace to the project's repository.](images/published.png)
+    ![This image shows Publish CHanges dialog detailing the steps taken to deploy changes from your workspace to the project's repository in this order: Checking environments and build jobs, git commit branch1, git fetch, git merge main to branch1, git merge branch1 to main, and git push. There's also a message asking the user not to use the current branch as changes are being deployed and that a new branch johndunbar-20230517171431 has been temporarily created for the user.](images/published.png)
 
     What you're seeing are the Git steps taken to push your changes from the local **branch1** to the remote **branch1**, then merge them to the project's **main** branch.
 
@@ -59,13 +59,13 @@ Once your changes are successfully merged to your project's repo, VB Studio auto
 
 2. In the main navigation, click the **Builds** ![Builds icon](images/icon-builds.png) tab to check the packaging and deployments jobs. If the build job is still running, you can view its progress in the **Job Queue** tab. It might take a few minutes for the build to start if an executor isn't immediately available.
 
-    ![This image shows the Builds section Job Queue tab in VB Studio. A progress indicator shows status for the HCMSearch-Package job.](images/job-queue.png)
+    ![This image shows the Builds section Job Queue tab in VB Studio. A progress indicator shows status for the DemoHCMSearch-Package job.](images/job-queue.png)
 
 3. Click the **Environments** tab, then select **Deployments**.
 
 4. Expand the **Demo-HCMSearch** extension:
 
-    ![This image shows The Visual Builder Studio project Environments tab. The Development environment is selected and the Deployments tab is shown. In the Applications Extensions section, HCM Search is highlighted and expanded and hcmsearch is highlighted in the App UIs column.](images/deployment.png)
+    ![This image shows the Environments tab. The Development environment is selected and the Deployments tab is shown. In the Applications Extensions section, DemoHCMSearch is highlighted and expanded and hcmsearch is highlighted in the App UIs column.](images/deployment.png)
 
 5. Click **Open** ![Open icon](images/icon-openappui.png) next to your App UI to open it in a new browser tab.
 

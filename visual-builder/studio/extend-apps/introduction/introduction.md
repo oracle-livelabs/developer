@@ -30,7 +30,7 @@ This lab assumes you have:
 
 ## Learn More
 
-* [Extending Oracle Cloud Applications With Visual Builder Studio](https://docs.oracle.com/en/cloud/paas/visual-builder/visualbuilder-building-appui/index.html)
+* [Extending Oracle Cloud Applications With Visual Builder Studio](https://docs.oracle.com/en/cloud/paas/visual-builder/visualbuilder-building-appui/basics.html#GUID-E7893E94-781C-4A7B-87AE-74E7EA60C726)
 
 ## Acknowledgements
 
