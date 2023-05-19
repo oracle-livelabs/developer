@@ -71,4 +71,4 @@ In this lab, you will:
 ## Acknowledgements
 
 * **Author** - Xin Yi Tay, Java Management Service
-* **Last Updated By** - Sherlin Yeo, March 2023
+* **Last Updated By** - Sherlin Yeo, June 2023

@@ -7,11 +7,10 @@ Before using JMS advanced features, you must ensure that your Oracle Cloud Infra
 Estimated Time: 30 minutes
 
 ### Requirements to use Advanced Features
-* Run applications or java servers using **Oracle JDK 8u361** Bundled Patch Release (BPR) or higher, not the Java 8 JRE or Oracle and Non-Oracle JDK 11 and above.
-* Management Agent should use either **Oracle JDK 8u361** Bundled Patch Release (BPR) or higher for on-premise environment or Oracle JDK 11 for OCI compute instances.
+* Run applications or java servers using **JDK 11** or higher 
+* If the applications or Java servers must be using **Java 8**, then it needs to use at least **Oracle JDK 8u361** or higher
+* Management Agent should use either **Oracle JDK 8u361** or higher for on-premise environment or **Oracle JDK 11** for OCI compute instances.
 * Lifecycle Management is only supported for Oracle JDKs.
-* Windows defaults to JRE on Java installation and needs to be changed to use Oracle JDK.
-
 
 ### Objectives
 
@@ -26,8 +25,7 @@ In this lab, you will configure:
  * You have signed up for an account with Oracle Cloud Infrastructure and have received your sign-in credentials.
  * You are using an Oracle Linux image or Windows OS on your Managed Instance for this workshop.
  * You have successfully completed the installation of the Management Agent on your OCI or non-OCI Managed Instances following steps in [Manage Java Runtimes, Applications and Managed Instances Inventory with Java Management Service](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=912).
- * **JDK Flight Recorder** and by extension **Crypto Event Analysis** are a commercial features  available only in the commercial packages based on Java Platform Standard Edition (Oracle Java SE Advanced and Oracle Java SE Suite). By selecting the **JDK Flight Recorder** and/or **Crypto Event Analysis** advanced options, you are agreeing to unlock this commercial feature in your JVM that will run the **JDK Flight Recorder** and/or **Crypto Event Analysis**.<br> 
-  For more details, go to [About JDK Flight Recorder](https://docs.oracle.com/javacomponents/jmc-5-4/jfr-runtime-guide/about.htm#JFRUH170)
+ * **JDK Flight Recorder** and by extension **Crypto Event Analysis** and **Performance Analysis** are commercial features  available only in the commercial packages based on Java Platform Standard Edition (Oracle Java SE Advanced and Oracle Java SE Suite). By selecting any of these features, you are agreeing to unlock this commercial feature in your JVM that will run the **JDK Flight Recorder**. For more details, go to [About JDK Flight Recorder](https://docs.oracle.com/javacomponents/jmc-5-4/jfr-runtime-guide/about.htm#JFRUH170)
  * **Proceed to Task 2 or 3 if the management agent was installed manually (i.e. using the management agent software or enabled using the Management Agent plugin on your OCI compute instance's Oracle Cloud Agent) and not using the installation script.**
 
 ## Task 1: Configure a fleet to enable advanced features
@@ -38,11 +36,13 @@ In this lab, you will configure:
 2. Click **Edit Properties**. A separate edit fleet properties window should appear
    ![image of edit fleet properties](images/fleet-edit-properties.png)
 
-3. The advanced features section should display the 4 different advanced features:
+3. The advanced features section should display the 6 different advanced features:
     * Lifecycle management
     * Advanced usage tracking
     * Crypto event analysis
     * JDK Flight Recorder (JFR)
+    * Java migration analysis
+    * Performance analysis
 
 4. For the purpose of this workshop, click on the **Select all advanced features**. This will check the boxes of all the individual features. 
     
@@ -270,4 +270,4 @@ You may now **proceed to the next lab.**
 ## Acknowledgements
 
 * **Author** - Bhuvesh Kumar, Java Management Service
-* **Last Updated By** - Sherlin Yeo, March 2023
+* **Last Updated By** - Sherlin Yeo, June 2023
