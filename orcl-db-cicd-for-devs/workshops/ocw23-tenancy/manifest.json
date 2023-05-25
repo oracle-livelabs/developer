@@ -28,7 +28,7 @@
             "filename": "../../lab1-help-generate-update/lab1-help-generate-update.md"
         },
         {
-            "title": "(Optional) Lab 2: Get under the hood - understanding changelog tables & changelogs",
+            "title": "(Optional) Lab 2: Look under the hood - understanding changelog tables & changelogs",
             "description": "Learn The Details Of How Changelog Tables & Changelogs Work",
             "filename": "../../lab2-changelogtables-changelogs/lab2-changelogtables-changelogs.md"
         },
@@ -36,11 +36,6 @@
             "title": "Lab 3: Tag, you're it! - tag, update, and rollback",
             "description": "Learn how to bookmark your database state & undo changelogs",
             "filename": "../../lab3-tag-rollback/lab3-tag-rollback.md"
-        },
-        {
-            "title": "(Optional) Conclusion",
-            "description": "Close out the workshop and learn about additional resources",
-            "filename": "../../conclusion/conclusion.md"
         },
         {
             "title": "Terminate your Always Free Autonomous Database",

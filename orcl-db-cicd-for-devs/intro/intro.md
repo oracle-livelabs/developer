@@ -1,4 +1,4 @@
-# Take control of your database with automated schema changes
+# Introduction
 
 ## About this workshop
 

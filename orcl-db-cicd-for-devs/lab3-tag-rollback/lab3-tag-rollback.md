@@ -89,26 +89,41 @@ Completion of:
          * The `-tag` mandatory parameter is the specific tag you are rolling back to in your databasechangelog table.
 
 
-   ```na
-   <copy>
-   liquibase rollback -changelog-file merchandise_table.xml -tag version1
-   </copy>
-   ```
+      ```na
+      <copy>
+      liquibase rollback -changelog-file merchandise_table.xml -tag version1
+      </copy>
+      ```
 
    ![Liquibase Rollback](./images/6liquibaserollback.png)
 
    4. With the `tables` command you can see that merchandise is no longer in the table list.
 
-   ```na
-   <copy>
-   tables;
-   </copy>
-   ```
+      ```na
+      <copy>
+      tables;
+      </copy>
+      ```
 
    ![Tables Post Rollback](./images/7tablespostrollback.png)
 
-   5. Congratulations, you just learned how to apply a tag and perform a rollback! You have completed lab 3! You may now **proceed to the conclusion**.
+   5. Congratulations, you just learned how to apply a tag and perform a rollback! You have completed lab 3! You may now **proceed to the conclusion below**.
 
+## Conclusion
+You have completed all the labs in this workshop and learned the fundamentals of SQLcl Liquibase. Congratulations! This was a lot of info to take in.
+
+Your life is about to get a whole lot easier. You are now equipped to automate your database changes and supercharge your software development process; saving you valuable time, money, and resources.
+
+If you have any questions about SQLcl Liquibase at all, please reach out to Database Tools Product Manager Zachary Talke @:
+* zachary.talke@oracle.com
+* [LinkedIn](https://www.linkedin.com/in/zachary-talke/)
+* [Twitter](https://twitter.com/talke_tech)
+
+Even though this LiveLab workshop teaches you plenty to be dangerous with SQLcl Liquibase, this is just the beginning of the journey. There are more resources to be found in the Learn More section below.
+
+Check out [Talke Tech](https://www.talke.tech/) and [thatjeffsmith](https://www.thatjeffsmith.com/) for the latest in SQLcl Liquibase news and educational content.
+
+Stay tuned for future content where we cover how to use SQLcl Liquibase to automate you API and low-code application development!
 
 ## Learn More
 * [Product Page (SQLcl)](https://www.oracle.com/database/sqldeveloper/technologies/sqlcl/)

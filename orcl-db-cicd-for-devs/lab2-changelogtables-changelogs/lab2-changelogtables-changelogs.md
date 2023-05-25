@@ -1,4 +1,4 @@
-# (Optional) Lab 2: Get under the hood - understanding changelog tables & changelogs
+# (Optional) Lab 2: Look under the hood - understanding changelog tables & changelogs
 
 ## Introduction
 Welcome to Lab 2! Now that you’ve populated your MOVIESTREAM_DEV schema and it’s all ready for you to load your data and start developing, let’s learn a little bit more about some important Liquibase concepts.
