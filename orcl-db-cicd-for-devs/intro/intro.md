@@ -35,6 +35,8 @@ This workshop requires an Oracle Cloud account or your own Oracle Database with 
 
 For using your own Oracle Database you may skip any workshop areas that don't apply to you (such as [Create Your Autonomous Database](../workshops/freetier/?lab=adb-provision-conditional)) and simply input your connection credentials into SQLcl.
 
+You may now **proceed to the next section**.
+
 ## How this workshop can help you
 Working on a software development team isn’t easy. If you’ve been a part of one, at some point or another you’ve probably encountered these overarching themes:
 * The expectation of frequent delivery and updates
@@ -109,7 +111,6 @@ While Continuous Integration focuses on automatically creating software builds f
 
 The CD in CI/CD along with referring to Continuous Delivery, can additionally (and less frequently) refer to Continuous Deployment. While groups might vary on their specific interpretations of the difference between Continuous Delivery and Continuous Deployment, it is generally considered that Continuous Delivery is focused on creating simple and repeatable delivery steps to release software, which often includes automating elements of this process, whereas Continuous Deployment is about intentionally seeking to automate the entire release process or as much of it as possible.  
 
-You may now **proceed to the next section**.
 
 ## Learn More
 * [Product Page (SQLcl)](https://www.oracle.com/database/sqldeveloper/technologies/sqlcl/)
