@@ -32,7 +32,7 @@ If you are running this workshop in a LiveLabs environment, understand that it u
 
 If running this workshop from other environments, create a VCN on Oracle Cloud Infrastructure:
 
-1. On the Oracle Cloud Infrastructure Console Home page, under the **Launch Resources** header, click **Set up a network with a wizard**.
+1. On the Oracle Cloud Infrastructure Console home page, under the **Get started** tab, scroll down to the **Launch Resources** header, click **Set up a network with a wizard**.
 
     ![Setup a network with the wizard](./images/setup-vcn.png " ")
 
@@ -44,12 +44,13 @@ If running this workshop from other environments, create a VCN on Oracle Cloud I
 
     |                  **Field**              |    **Value**  |
     |----------------------------------------|:------------:|
-    |VCN Name |OCI\_HOL\_VCN|
+    |VCN name |OCI\_HOL\_VCN|
     |Compartment |  Choose the same compartment as the Oracle Autonomous Database (i.e. MyCompartment)
-    |VCN CIDR Block|10.0.0.0/16|
-    |Public Subnet CIDR Block|10.0.2.0/24|
-    |Private Subnet CIDR Block|10.0.1.0/24|
-    |Use DNS Hostnames In This VCN| Checked|
+    |VCN IPv4 CIDR Block|10.0.0.0/16|
+    |Use DNS hostnames In This VCN| Checked|
+    |Public subnet IPv4 CIDR block|10.0.2.0/24|
+    |Private subnet IPv4 CIDR block|10.0.1.0/24|
+
 
     Your screen should look similar to the following:
 
@@ -64,7 +65,7 @@ If running this workshop from other environments, create a VCN on Oracle Cloud I
 
     ![VCN workflow progress](./images/workflow.png " ")
 
-6. Once you see that the creation is complete (see previous screenshot), click the **View Virtual Cloud Network** button.
+6. Once you see that the creation is complete (see previous screenshot), click the **View VCN** button.
 
 
 ### Summary
@@ -76,4 +77,4 @@ You may now **proceed to the next lab.**
 ## Acknowledgements
 
 - **Author** - Rajeshwari Rai, Prasenjit Sarkar, Alex Keh 
-- **Last Updated By/Date** - Alex Keh, August 2022
+- **Last Updated By/Date** - Alex Keh, June 2023

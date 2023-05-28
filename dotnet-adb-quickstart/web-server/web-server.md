@@ -51,7 +51,7 @@ An Oracle Cloud Infrastructure VM compute instance runs on the same hardware as 
 
     ![Click Change image button to choose operating system image](./images/change-image.png)
 
-5. Select **Oracle Linux Cloud Developer** image check box and accept the default values. This image includes Oracle Linux, .NET (Core) Software Development Kit, Visual Studio Code, and PowerShell. Review the *Oracle Linux Cloud Developer Image Terms of Use*. Select the check box if you accept the terms. Click the **Select image** button.
+5. Select **Oracle Linux Cloud Developer 8** image check box and accept the default values. This image includes Oracle Linux, .NET (Core) Software Development Kit, Visual Studio Code, and PowerShell. Review the *Oracle Linux Cloud Developer Image Terms of Use*. Select the check box if you accept the terms. Click the **Select image** button.
 
     ![Select Oracle Linux Cloud Developer image](./images/choose-cloud-developer-image.png)
 
@@ -83,7 +83,7 @@ An Oracle Cloud Infrastructure VM compute instance runs on the same hardware as 
 
 >**Note**: You may need to log in as the *admin* user to use Cloud Shell.
 
-1. To connect to the instance, open Cloud Shell by clicking on its icon on the top right part of the menu bar.
+1. To connect to the instance, open Cloud Shell by clicking the Developer Tools icon on the top right of the menu bar, then click **Cloud Shell**.
 
     ![Click Cloud Shell icon](./images/cloud-shell-icon.png)
 
@@ -115,6 +115,14 @@ An Oracle Cloud Infrastructure VM compute instance runs on the same hardware as 
     ```
     <copy>ssh -i <private_ssh_key> opc@<public_ip_address></copy>
     ```
+
+7. If the host authenticity can't be established, you will be asked: "Are you sure you want to continue connecting (yes/no)?" To continue, answer yes.
+
+    ```
+    <copy>yes</copy>
+    ```
+
+8. After the completion of these command line steps, you will be connected to the compute instance.
 
     ![SSH into compute instance from Cloud Shell](./images/ssh.png)
 
@@ -214,17 +222,22 @@ You have completed this lab. You may now **proceed to the next lab.**
 
 1. If you are unable to see the web server on your browser, possible scenarios include:
 
-    - VCN Security Lists is blocking traffic, Check VCN Security List for ingress rule for port 81
-    - Firewall on the linux instance is blocking traffic
+    - VCN Security Lists is blocking traffic. Check VCN Security List for ingress rule for port 81.
+    - Firewall on the linux instance is blocking traffic. This command shows HTTP service as part of the public zone.
 
-        - `# sudo firewall-cmd --zone=public --list-services` (This should show http service as part of the public zone.)
-        - `# sudo netstat -tulnp | grep nginx` (An NGINX service should be listening on the port 81. If it’s a different port, open up that port on your VCN security list.)
+        ```
+        <copy>sudo firewall-cmd --zone=public --list-services</copy>
+        ```
+        Check the NGINX service is listening on port 81. If it’s a different port, open up that port on your VCN security list.
+        ```
+        <copy>sudo netstat -tulnp | grep nginx</copy>
+        ```
 
-    - Your company VPN is blocking traffic
+    - Your company VPN is blocking traffic.
 
 2. If you cannot successfully run the `sudo` commands, make sure you can SSH into your compute instance by following Task 2.
 
 ## Acknowledgements
 
 - **Author** - Rajeshwari Rai, Prasenjit Sarkar, Alex Keh
-- **Last Updated By/Date** - Alex Keh, August 2022
+- **Last Updated By/Date** - Alex Keh, June 2023
