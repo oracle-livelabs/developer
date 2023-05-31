@@ -1,130 +1,129 @@
-# Oracle Database CI/CD for Developers
+# Introduction
 
-## About this Workshop
+## About this workshop
 
-This workshop will walk you through database change management via CI/CD using SQLcl. You will be using an Autonomous Database to create database objects and see database change tracking via SQLcl and Liquibase. These skills will set the baseline for expanding CI/CD into areas such as repositories, pipelines and automated deployment.
+In this workshop you will follow the story of a new developer at the fictitious venture by Oracle: MovieStream! MovieStream is a fake but fun company that provides a full catalog of movies customers can stream globally, no matter their location.
 
-*Estimated Workshop Time:* 1 Hour
+![Pipeline Example](./images/moviestream-dashboard.png)
 
-<if type="odbw">If you would like to watch us do the workshop, click [here](https://youtu.be/RtcvWhF5iwI).</if>
+We will be focusing on our new hire’s use of the latest in database change management technology: SQLcl Liquibase. Using SQLcl Liquibase, our developer and their team will be able to capture, version, and deploy database object changes consistently and automatically.
+
+This will save them invaluable time and energy, and the startup: precious resources.
+
+With SQLcl Liquibase you can integrate database change automation into your larger CI/CD (Continuous Integration/Continuous Delivery) pipeline.
+
+![Pipeline Example](./images/pipeline-image.png)
+**Note:** Example database section of a CI/CD pipeline utilizing SQLcl Liquibase. Changelogs are the files Liquibase saves database objects to. We'll talk more about them later.
+
+*Estimated Workshop Time:* 1 Hour 15 Minutes
+
 
 ### Objectives
+Learn the core functionality of SQLcl Liquibase in this hands-on workshop:
+* Learn how to use `liquibase help` for guidance on the tool
+* Capture an entire Oracle Database schema into files with `liquibase generate-schema`
+* Capture a single database object into a file with `liquibase generate-object`
+* Preview the SQL code for review before executing an update with `liquibase update-sql`
+* Run `liquibase update` to create database objects from Liquibase files
+* Learn how changelog files and tables work
+* Create tags bookmarking your database at different states of your Liquibase changes with `liquibase tag`
+* Roll your database back to a specified tag with `liquibase rollback`
 
-In this lab you will learn to use SQLcl and git to track and apply changes across databases for CI/CD processes.
-
-- Create an autonomous database, objects and schemas
-- Use SQLcl to create a baseline of an Oracle Database schema
-- Create and track database object changes with SQLcl
-- Apply the changes to a new schema and see how SQLcl and Liquibase manage database change tracking
 
 ### Prerequisites
-This lab assumes you have:
-* Completed the [Getting Started](https://oracle-livelabs.github.io/common/labs/cloud-login/pre-register-free-tier-account.md) lab
+This workshop requires an Oracle Cloud account or your own Oracle Database with SQLcl installed on your computer.
 
-## Oracle Database CI/CD for Developers
+For using your own Oracle Database you may skip any workshop areas that don't apply to you (such as [Create Your Autonomous Database](../workshops/freetier/?lab=adb-provision-conditional)) and simply input your connection credentials into SQLcl.
 
-### **Lab 1:** Use SQLcl for Database Change Management/Tracking
+You may now **proceed to the next section**.
 
-### **Lab 2:** Create and Apply Database Changes with SQLcl
+## How this workshop can help you
+Working on a software development team isn’t easy. If you’ve been a part of one, at some point or another you’ve probably encountered these overarching themes:
+* The expectation of frequent delivery and updates
+* Changing requirements and specifications, sometimes even late in the development process
+* The ability to deliver quality products that at the end of the day, people enjoy using and bring them value
+
+These themes all point to the need to retain and even improve quality in today’s fast and everchanging world where software is expected to be ever adapting.
+
+This is a pretty tall order and on top of it, more often than not you are additionally managing a war of attrition where you are constantly burning through resources.
+
+Luckily, there are ways to break up this dragon of a task into more manageable chunks that you can then tackle and conquer.
+
+At Oracle, something we wanted to focus on is identifying DevOps challenges database administrators (DBAs), developers, and teams face that we can help solve.
+
+One of the major challenges we found is outside the actual coding, a lot of resources go into getting the development environments themselves set up and all your ducks in a row. Developers need databases configured to have the data objects they work with and with teams constantly committing code to new software builds, their databases need to be consistent and up to date.
+
+This requires a lot of manual work and is prone to human error. If you are a small team, resources are probably stretched thin as is. If you are a large one, it might make you uneasy to think about how much time is taken up on these types of tasks.
+
+So we developed SQLcl Liquibase to solve this problem! In this workshop you will be introduced to the basics of the Liquibase feature for our free Oracle Database tool: SQLcl.
+
+## SQLcl
+SQLcl (Structured Query Language command line) is a free tool for the Oracle Database that lets you connect to your database and execute SQL, PL/SQL, and SQL*Plus commands directly from the command line.
+
+It’s a modern replacement to SQL\*Plus, our legacy command line interface solution for working with the Oracle Database. SQLcl contains all of SQL\*Plus’ commands and more.
+
+SQLcl is loaded with features such as:
+* Query History
+* Formatting Options
+* Code Completion
+* Customizable Status Bar
+* vi & EMACS Support
+* Oracle Data Pump
+* Liquibase
+
+You can learn more in our [Documentation](https://docs.oracle.com/en/database/oracle/sql-developer-command-line/)
+
+It’s available on Windows, Mac, Linux, and is also automatically embedded in our command prompt for [Oracle Cloud Infrastructure (OCI)](https://www.oracle.com/cloud/), Cloud Shell. You can download it directly from our website [Download Page](https://www.oracle.com/database/sqldeveloper/technologies/sqlcl/download/)
+
+## SQLcl's Liquibase feature
+SQLcl Liquibase is a database change management tool that allows you to capture, version, and deploy database changes simply and in an automated fashion. This cuts back on manual work such as recreating tables, making sure database object change scripts are properly working, and rolling back unwanted alterations.
+
+You capture database objects such as tables, procedures, and constraints with one of the ````liquibase generate```` commands which then saves these objects to files called changelogs. Within changelog files are metadata information and changeset sections. Changesets are the actual set of instructions for the database changes being applied. These changeset instructions are the specific information being read when you run the ````liquibase update```` command to populate a new database user schema or update an existing one.
+
+With SQLcl Liquibase, you can capture database objects on one user schema and use the changelogs to recreate these objects on a different user or Oracle Database entirely.
+
+SQLcl Liquibase is built on top of the open-source Liquibase platform and contains all of its great features with much more extended functionality.
+
+We’ve added commands optimized for capturing:
+* The entire Oracle Database schema
+* Individual database objects
+* Objects for APEX ([Our Low Code Development Platform](https://apex.oracle.com/))
+* Oracle REST Data Service (ORDS) objects ([Our API Building and Management Tool](https://www.oracle.com/database/technologies/appdev/rest.html))
+
+All of these powerful new additions are exclusively for the Oracle Database.
+
+SQLcl Liquibase is automatically included in our free command line interface tool: [SQLcl](https://www.oracle.com/database/sqldeveloper/technologies/sqlcl)
+
+## DevOps & Continuous Integration/Continuous Delivery (CI/CD)
+The main objective of SQLcl Liquibase is to help you save time, energy, and money by freeing yourself of repetitive, tedious, and error prone tasks so that your DevOps and CI/CD processes are more efficient.
+
+DevOps is a combination of software development (Dev) and IT operations (Ops). It is a philosophy aimed at seeking to shorten the software development lifecycle through the investigation and application of tools and practices. Traditionally a DevOps centered mindset seeks to erode the silos between development and operations teams so that better communication, collaboration, and automation can be achieved.
+
+Continuous Integration/Continuous Delivery (CI/CD) falls within the umbrella of DevOps and specifically focuses on the combined practices of continuous integration and continuous delivery.
+
+Continuous Integration (CI) is the act of regularly and frequently integrating your code changes into the main branch of your team’s shared code repository.
+
+Continuous Integration done efficiently and effectively seeks to automate the tasks of:
+* Creating new builds when you merge your code changes to your team’s repository
+* Running tests against these builds.
+
+While Continuous Integration focuses on automatically creating software builds from your team’s changes and testing them, Continuous Delivery (CD) by extension focuses on streamlining the software release process and seeks to deploy changes to production as early as possible and frequently. This breaks up released software changes into smaller batches making it easier to identify, troubleshoot, and address bugs.
+
+The CD in CI/CD along with referring to Continuous Delivery, can additionally (and less frequently) refer to Continuous Deployment. While groups might vary on their specific interpretations of the difference between Continuous Delivery and Continuous Deployment, it is generally considered that Continuous Delivery is focused on creating simple and repeatable delivery steps to release software, which often includes automating elements of this process, whereas Continuous Deployment is about intentionally seeking to automate the entire release process or as much of it as possible.  
+
 
 ## Learn More
-
-### What is CI/CD
-
-Continuous Integration (CI) and Continuous Delivery/Deployment (CD) are a set of principles or methodologies that empower development teams to deliver code faster, more reliably, and with fewer bugs compared to traditional software development such as the waterfall model. Teams that use CI/CD also usually adhere to some version of the Agile Methodology, working on smaller features as part of a larger overarching requirement in sprints rather than monolithic tasks spanning months or years.
-
-We also have the emergence of DevOps (Developer Operations) as the Agile Methodology collided with the ability to quickly create infrastructure as code in the cloud. As these teams surveyed their new development landscape, it became apparent that they could no longer work in a vacuum, living in their own worlds as they had done in the past. As traditional job roles blurred and more work was done by fewer people, order needed to rise from the chaos of this new complexity.
-
-So, what is CI/CD? What does it do to help with this mess of developers, operations, and stakeholders who need to get features and functions into their software? To answer this, let’s start with the CI of CI/CD, Continuous Integration.
-
-Continuous Integration brings us the ability to have multiple development and operations teams working on different features on a single project simultaneously without stepping all over each other. While this premise sounds too good to be true, there is some truth to be had here.
-
-To have a common thread we can always refer to, this set of posts will be using a common example with real code behind it to illustrate the concepts and processes we will be talking about. So, let’s jump right into it with an example we can reference as we build upon our development process.
-
-Here is our scenario: we have a team of developers working on an application that tracks local trees in a community via a web interface on the city’s web site. A citizen can access this app and enter the information for a historic tree they find in the city. Now this team also uses the Agile Methodology and it’s time for the next sprint. We have a few features we need to get in, mainly the ability to see these trees on a map and the ability to upload a picture with the tree entry form. The tasks are assigned to the developers and the sprint starts.
-
-When does Continuous Integration start? When the tasks are handed out, each developer will copy the code from the latest release in a repository and create their own copy or branch. This latest code release is an exact copy of the code that is currently deployed and running in production. Each developer will also be given a personal development database, more on this later. As the developers finish the tasks they were assigned, they commit their code branch to the repository. Before they create a pull request/merge, they check the current main branch of code in the repository for any changes from other developers merging clean code branches. If found, they will pull these changes down and commit their code again. One of these changes might have affected their code in a negative way and the build process that occurs when a pull request/merge happens will catch this. A code review is scheduled and if accepted, the developer can now create the pull request/merge into the main branch. There is also a build process that occurs every time code is merged into main to catch any bugs or issues that may show up or issues that other developers code may have caused. If so, the issues are addressed, a pull request/merge is created, and the automated testing again happens. Once the testing comes back clean, the code can be merged into the main branch.
-
-![CICD Flow](./images/cicd_flow1.png)
-
-Summary Points of the CI/CD Process:
-
-   - Start Sprint
-   - Pull Code from Main
-   - Create Local Branch
-   - Work on Tickets/Features
-   - Check for Updates in Main
-   - Commit Branch
-   - Create Merge Request
-   - Code Review
-   - Merge into Main/Current Release
-
-What advantages do we gain from this process? First, as we can see throughout this process, we can catch issues before they get into production. By running automated tests on code changes, we can simulate what is going to happen at deployment time and eliminate surprises. This leads to better releases, more confidence in the development team by stakeholders and end users, as well as a higher standard of code from our developers.
-
-Accountability is another advantage. We can see through code commits, merges and reviews exactly what is being put into our code repository and by whom. We can catch any code supply chain issues or hacks because each file and line of code can be reviewed upon a merge. Modern code repositories also track these changes with who and when, so a historical record is always present.
-
-### Stateless vs. Stateful
-
-Continuous Integration works very well with stateless files and deployments; static files such as java classes or JavaScript combined with a stateless container deployment; in with the new and out with the old. It very easy to create a new deployment in a docker container with the latest code and replace the old container if working with stateless files.
-
-We see this with blue-green deployment models. In this model, you have your running application container, the blue. The green is your idle newly deployed application container. As some point you switch to the green and all traffic is now using the new version while the blue one is idle. If you need to roll or switch back, you just change back to the idle blue container.
-
-![green/blue deployment model](./images/g_b1.png)
-
-We quickly see these models are not going to work for database deployments. The database has state, transactions are being committed all the time so unless we can afford downtime to copy the entire database, deploy the changes and then resume operations, this poses a challenge. And because of this challenge, DBA’s and database developers are all too often blamed for these deployment bottlenecks. They are often told that databases can never do DevOps let alone CI/CD, it’s too legacy. Where does this leave the DBA and Database Developer? They will be branded with a legacy stigma and seen as a roadblock to CI/CD.
-
-### Tools of the Trade
-
-While we wish there was a magic wand to make all database deployments easy and drop right into stateless CD/CD flows, we do have to accept that there is some truth with these DevOps concerns. But not all hope is lost! Oracle Database CI/CD can be a reality, but it requires some shifts in traditional methodologies and processes as well as some new tricks using features and functions of the Oracle Database that may have not been used before.
-
-Let’s refer to our process flow and see where we can add database development specific steps:
-
-![CICD Flow](./images/cicd_flow2.png)
-
-The sprint starts and we have our database developers pull the latest code from the latest release. Where is this code? What tools can we use to allow developers to have local copies of our database code? We use a Code Repository.
-What is a Code Repository?
-
-There are many code repositories available to us such as Git, GitHub, GitLab and BitBucket. These repositories will help us store our files and provide versioning, accountability and visibility into our development process. But we are starting from scratch here, we have no repository or code release to work with. We will need to create a baseline with a Change Management/Tracking tool.
-How can I do Change Management/Tracking with Oracle?
-
-### SQLcl and Liquibase
-
-**What’s SQLcl?**
-
-Oracle SQLcl (SQL Developer Command Line) is a small, lightweight, Java-based command-line interface for Oracle Database. SQLcl provides inline editing, statement completion, command recall, and also supports existing SQL*Plus scripts. You can download SQLcl from oracle.com and it is installed in the OCI Cloud Shell by default.
-
-**What’s Liquibase?**
-
-Liquibase is an open-source database-independent library for tracking, managing and applying database schema changes.
-How do they work together?
-
-The Liquibase feature in SQLcl enables you to execute commands to generate a changelog for a single object or for a full schema (changeset and changelogs). We also add Oracle specific features and enhancements to Liquibase in SQLcl.
-
-**What Database?**
-
-For this LiveLab, the simplest way to get up and running with an Oracle Database is a free OCI account and an always free Autonomous Database. They come up in minutes and are never going to cost you a dime to use. If you do not have an always free OCI account, you can start [here](https://cloud.oracle.com). Once you are logged into your account, you can create an always free Autonomous Database by following this guide here. For our purposes, an Autonomous Transaction Processing database is fine. Just remember the password you used when creating the database; we will need it later.
-
-**No Really, What Database?**
-
-While we will use a single autonomous database for this LiveLab’s examples, outside of this exercise, you have many choices but the most important take away is that all developers MUST have personal databases to work in; and this point cannot be stressed enough. This can be tricky due to many factors but here are some suggestions on making this step a reality in your development organization.
-
-- **Use Multi-tenant in the Oracle Database**
-
-   Did you know that with 19c and later, you can have up to 3 pluggable databases for free? No need for the multi-tenant license, just create and use. PDBs (pluggable databases) also have the ability to clone just the metadata from an origin PDB. This makes it super simple to create copies of a production code database for all developers. It also aids in the testing automation process. Another quick note is that by installing Oracle REST Data Services (ORDS) on a database enables APIs for cloning and creating PDBs via REST calls.
-
-- **The Autonomous Database in OCI**
-
-   Using ADB in OCI works very similar to multi-tenant where you can create full and metadata only clones of any ADB. And these ADB instances may only need to be up for minutes to weeks. This is what we will be using in this LiveLab.
-
-- **Reusable Instances**
-
-   There are many features in the Oracle Database that will allow you to recover state so that developers have clean slates to work with in non multi-tenant instances. Features such as Guaranteed Restore Points/Flashback Database, RMAN duplicates/clones and Data Pump allow you to have clean instances for each developer as sprints start.
-
-- **Docker/Virtual Machines**
-
-   Either cloud based or local, virtualization technologies can also give developers personal instances to work in with copies of our main code repository within. Developers can also create VM instances of databases in OCI based on the lastet backup of our production instance if need be as well to help with the personal database effort.
+* [Product Page (SQLcl)](https://www.oracle.com/database/sqldeveloper/technologies/sqlcl/)
+* [Documentation (SQLcl & SQLcl Liquibase)](https://docs.oracle.com/en/database/oracle/sql-developer-command-line/)
+* Blog Posts/Articles
+    * [CI/CD With Oracle Database and APEX](https://www.thatjeffsmith.com/archive/2021/04/ci-cd-with-oracle-database-and-apex/)
+    * [SQLcl Liquibase in 6 Minutes](https://www.talke.tech/blog/learn-sqlcl-liquibase-in-6-minutes)
+    * [Data Definition Language (DDL) Settings with SQLcl & Liquibase](https://www.thatjeffsmith.com/archive/2023/01/physical-properties-in-oracle-table-liquibase-changesets/)
+    * [How to Run SQLcl Liquibase Updates in Different Target Schemas](https://www.thatjeffsmith.com/archive/2022/12/run-liquibase-updates-for-a-specific-schema-with-sqlcl/)
+    * [Use JSON, XML, and YAML Formats With SQLcl Liquibase](https://www.thatjeffsmith.com/archive/2022/12/how-to-use-json-xml-yaml-liquibase-changesets-in-sqlcl/)
+    * [What's The Difference Between An Oracle Database Schema & User](https://www.talke.tech/blog/whats-the-difference-between-a-db-schema-and-db-user)
 
 ## Acknowledgements
 
-- **Authors** - Jeff Smith, Distinguished Product Manager and Brian Spendolini, Trainee Product Manager
-- **Last Updated By/Date** - Brian Spendolini, September 2021
+- **Author** - Zachary Talke, Product Manager
+- **Last Updated By/Date** - Zachary Talke, May 2023
