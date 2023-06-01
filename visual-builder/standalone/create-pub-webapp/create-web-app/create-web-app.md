@@ -140,15 +140,15 @@ Let's create your first business object and add data to it by importing a CSV fi
 
     You can see that there's now a check mark in the **Required** column for the **Location** field.
 
-8. Click [this link](https://objectstorage.us-ashburn-1.oraclecloud.com/p/LNAcA6wNFvhkvHGPcWIbKlyGkicSOVCIgWLIu6t7W2BQfwq2NSLCsXpTL9wVzjuP/n/c4u04/b/livelabsfiles/o/developer-library/Location.csv) to download the `Location.csv` file. This file contains four locations and  provides the data for the Location business object.
+8. Click [this link](https://objectstorage.us-ashburn-1.oraclecloud.com/p/Ei1_2QRw4M8tQpk59Qhao2JCvEivSAX8MGB9R6PfHZlqNkpkAcnVg4V3-GyTs1_t/n/c4u04/b/livelabsfiles/o/oci-library/location.csv) to download the `location.csv` file. This file contains four locations and  provides the data for the Location business object.
 
 9. Click the **Data** tab, then **Import from File** ![Import from File icon](images/import_icon.png).
 
     ![This image shows the Data tab of the Location business objects. No data is displayed.](images/location-data.png "")
 
-10. In the Import Data dialog box, click the drag and drop box, browse to select the `Location.csv` file, and click **Import**.
+10. In the Import Data dialog box, click the drag and drop box, browse to select the `location.csv` file, and click **Import**.
 
-    ![This image shows the Import from File dialog box after the Location.csv file has been imported. The Close button is selected.](images/location-data-import.png "")
+    ![This image shows the Import from File dialog box after the location.csv file has been imported. The Close button is selected.](images/location-data-import.png "")
 
     When the import succeeds, click **Close**. You'll see a list of locations.
 
@@ -158,7 +158,7 @@ Let's create your first business object and add data to it by importing a CSV fi
 
 Let's now create the Department and Employee business objects. But instead of creating the business objects and fields one by one and importing data for them, you'll import a ZIP file that defines two business objects, their fields, and data all at once.
 
-1. Click [this link](https://objectstorage.us-ashburn-1.oraclecloud.com/p/Ei1_2QRw4M8tQpk59Qhao2JCvEivSAX8MGB9R6PfHZlqNkpkAcnVg4V3-GyTs1_t/n/c4u04/b/livelabsfiles/o/oci-library/Department-Employee-BO.zip) and download the `Department-Employee-BO.zip` file. This ZIP file contains CSV files for the Department and Employee business objects. Feel free to review the contents.
+1. Click [this link](https://objectstorage.us-ashburn-1.oraclecloud.com/p/Ei1_2QRw4M8tQpk59Qhao2JCvEivSAX8MGB9R6PfHZlqNkpkAcnVg4V3-GyTs1_t/n/c4u04/b/livelabsfiles/o/oci-library/department-employee-bo.zip) and download the `department-employee-bo.zip` file. This ZIP file contains CSV files for the Department and Employee business objects. Feel free to review the contents.
 
 2. In the Navigator's Business Object pane, click **Menu** ![Menu icon](images/menu-icon.png) and select **Data Manager**. The Data Manager is what you use to import data from a variety of sources.
 
@@ -168,7 +168,7 @@ Let's now create the Department and Employee business objects. But instead of cr
 
    ![This image shows the Manage Application Data page, also known as the Data Manager. Import Business Objects is selected.](images/import-bos.png "")
 
-4. On the Upload File step of the Import New Business Objects wizard, click the drag and drop box, select the Department-Employee-BO.zip file, and click **Upload**.
+4. On the Upload File step of the Import New Business Objects wizard, click the drag and drop box, select the department-employee-bo.zip file, and click **Upload**.
 
    When the file is uploaded, you'll see a message that the import contains records for the Department and Employee business objects. Click **Next**.
 
