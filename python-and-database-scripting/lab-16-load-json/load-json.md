@@ -21,13 +21,14 @@ This lab assumes you have completed the following labs:
 
 ## Task 1: Create a Directory
 
-The access driver requires that a DIRECTORY object is defined to specify the location from which to read and write files. A DIRECTORY object assigns a name to a directory name on the file system. For example, the following statement creates a directory object named downloads that is mapped to a directory located at */home/oracle/labs/python/External*. Usually, all directories are created by the SYSDBA user, DBAs, or any user with the CREATE ANY DIRECTORY privilege.
+The access driver requires that a DIRECTORY object is defined to specify the location from which to read and write files. A DIRECTORY object assigns a name to a directory name on the file system. For example, the following statement creates a directory object named "downloads" that is mapped to a directory located at */home/localuser/External*. Usually, all directories are created by the SYSDBA user, DBAs, or any user with the CREATE ANY DIRECTORY privilege.
 
 Note: the pythondemo user has been granted the CREATE ANY DIRECTORY privilege upon creation.
 
 You need to create a file-system directory and place a JSON document in this directory.
 
 1. In Cloud Shell, create a directory:
+
 *Note*: you need to replace **localuser** with your actual username below:
 
 ````
@@ -55,14 +56,14 @@ Review the code contained in *create_directory.py*:
 import oracledb
 import db_config
 
-con = oracledb.connect(user=db_config.user,
-                    password=db_config.pw, 
-                    dsn=db_config.dsn, 
-                    config_dir=db_config.config_dir, 
-                    wallet_location=db_config.wallet_location, wallet_password=db_config.wallet_password)
+con = oracledb.connect(user=db_config_sys.user,
+                    password=db_config_sys.pw, 
+                    dsn=db_config_sys.dsn, 
+                    config_dir=db_config_sys.config_dir, 
+                    wallet_location=db_config_sys.wallet_location, wallet_password=db_config_sys.wallet_password)
 cur = con.cursor()
 
-cur.execute('create directory samples as '''/home/localuser/External''';')
+cur.execute('create directory samples as \'/home/veronica_d/External\;')
 cur.execute('grant read,write on directory samples to pythondemo')
 
 </copy>
