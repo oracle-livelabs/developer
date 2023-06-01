@@ -26,8 +26,8 @@ In this lab, you will configure:
  * You have signed up for an account with Oracle Cloud Infrastructure and have received your sign-in credentials.
  * You are using an Oracle Linux image or Windows OS on your Managed Instance for this workshop.
  * You have successfully completed the installation of the Management Agent on your OCI or non-OCI Managed Instances following steps in [Manage Java Runtimes, Applications and Managed Instances Inventory with Java Management Service](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=912).
- * **Java Flight Recorder** and by extension **Crypto Event Analysis** are a commercial features  available only in the commercial packages based on Java Platform Standard Edition (Oracle Java SE Advanced and Oracle Java SE Suite). By selecting the **Java Flight Recorder** and/or **Crypto Event Analysis** advanced options, you are agreeing to unlock this commercial feature in your JVM that will run the **Java Flight Recorder** and/or **Crypto Event Analysis**.<br> 
-  For more details, go to [About Java Flight Recorder](https://docs.oracle.com/javacomponents/jmc-5-4/jfr-runtime-guide/about.htm#JFRUH170)
+ * **JDK Flight Recorder** and by extension **Crypto Event Analysis** are a commercial features  available only in the commercial packages based on Java Platform Standard Edition (Oracle Java SE Advanced and Oracle Java SE Suite). By selecting the **JDK Flight Recorder** and/or **Crypto Event Analysis** advanced options, you are agreeing to unlock this commercial feature in your JVM that will run the **JDK Flight Recorder** and/or **Crypto Event Analysis**.<br> 
+  For more details, go to [About JDK Flight Recorder](https://docs.oracle.com/javacomponents/jmc-5-4/jfr-runtime-guide/about.htm#JFRUH170)
  * **Proceed to Task 2 or 3 if the management agent was installed manually (i.e. using the management agent software or enabled using the Management Agent plugin on your OCI compute instance's Oracle Cloud Agent) and not using the installation script.**
 
 ## Task 1: Configure a fleet to enable advanced features
@@ -42,7 +42,7 @@ In this lab, you will configure:
     * Lifecycle management
     * Advanced usage tracking
     * Crypto event analysis
-    * Java Flight Recorder (JFR)
+    * JDK Flight Recorder (JFR)
 
 4. For the purpose of this workshop, click on the **Select all advanced features**. This will check the boxes of all the individual features. 
     
@@ -196,11 +196,14 @@ If you are using an OCI compute instance and it already has the Management Agent
 4. Check the version of the current OCA installation package.
     ```
     <copy>
-    yum info oracle-cloud-agent
+    sudo yum info oracle-cloud-agent
     </copy>
     ```
-   If current version of the OCA installation package is the latest one, then no further steps are required. Else you should see output something like this:
-    ![image of terminal showing how to check for available oca packages](images/oca-version-checking-console.png)
+   If current version of the OCA installation package is the latest one, then no further steps are required. It should look like this:
+   ![image of terminal showing how to check for available oca packages](images/oca-version-checking-console-latest.png)
+
+   Else you should see output something like this:
+  ![image of terminal showing how to check for available oca packages](images/oca-version-checking-console-outdated.png)
 
 5. Update the OCA Installation Package.
     ```
@@ -247,22 +250,13 @@ If you are using a Managed Instance that is not on OCI and it has the Management
 5. From the Agents list, select for the agent that was recently installed.
    ![image of agents main page](images/agents-main-page.png)
 
-6. In order to enable advanced features `Java Management Service` Plug-in is required to be enabled. Take note of `Service Plug-ins` field. If `Java Management Service` plug-in missing then follow the next steps, else if `Java Management Service` and `Java Usage Tracker` both plug-ins are available then you can move to the next Task.
+6. In order to enable advanced features, `Java Management Service` Plug-in is required to be enabled. Take note of `Service Plug-ins` field.Both `Java Management Service` and `Java Usage Tracker` plug-ins should be available. If `Java Management Service` plug-in is missing then follow the next step, else you can move to the next Task.
 
-  ![image of agent detail page](images/check-deploy-plug-ins.png)
+  ![image of agent detail page](images/deploy-jms-plug-in-done.png)
 
+7. To enable `Java Management Service` plug-in, click on **Deploy plug-ins** button, check `Java Management Service` option and click on Update button. After 5-10 minutes, you should see the `Java Management Service` plug-in enabled under `Service Plug-ins` field.
 
-7. To enable `Java Management Service` plug-in, click on **Deploy plug-ins** button.
-
-  ![image of click on deploy plug-in button](images/deploy-plug-in-button.png)
-
-8. Check `Java Management Service` option and click on Update button.
   ![image of updating the plug-in](images/deploy-jms-plug-in.png)
-
-9. After 5-10 minutes, you should see the `Java Management Service` plug-in enabled under `Service Plug-ins` field.
-  ![image of updated plug-in](images/deploy-jms-plug-in-done.png)
-
-
 
 You may now **proceed to the next lab.**
 
@@ -276,4 +270,4 @@ You may now **proceed to the next lab.**
 ## Acknowledgements
 
 * **Author** - Bhuvesh Kumar, Java Management Service
-* **Last Updated By** - Bao Jin Lee, November 2022
+* **Last Updated By** - Sherlin Yeo, March 2023

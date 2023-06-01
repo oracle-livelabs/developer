@@ -149,6 +149,7 @@ This task will guide you on how to create a simple Java application that can be 
     }//End of OddNumbers Class
     </copy>
     ```
+    To save the file, type CTRL+x. Before exiting, nano will ask you if you wish to save the file: Type y and Enter to save and exit.
 
   * Compile the Java code using this command.
 
@@ -168,7 +169,7 @@ This task will guide you on how to create a simple Java application that can be 
     </copy>
     ```
 
-  * Test the jar file to see if the output and entry point is correct. Sample output shown below. For more information on jar file creation, see this [article](https://docs.oracle.com/    javase/tutorial/deployment/jar/build.html).
+  * Test the jar file to see if the output and entry point is correct. Sample output shown below. For more information on jar file creation, see this [article](https://docs.oracle.com/javase/tutorial/deployment/jar/build.html).
 
     ```
     <copy>
@@ -354,4 +355,4 @@ You should now have a compute instance with Docker installed and a Docker image 
 ## Acknowledgements
 
 * **Author** - Alvin Lam, Java Management Service
-* **Last Updated By/Date** - Bao Jin Lee, November 2022
+* **Last Updated By/Date** - Ivan Eng, March 2023

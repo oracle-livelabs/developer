@@ -36,23 +36,23 @@ The Onboarding Wizard helps to create the necessary resources automatically. We 
 3. Select the root compartment under which the Onboarding Wizard will create a new compartment for JMS fleets.
     &nbsp;
 
-4. Click on the **Inspect Prerequisites** button. This launches the Onboarding Wizard.
-        ![image of fleets main page](images/fleets-main-page.png)
-    &nbsp;
+4. Click **Details** to view details of the resources that will be created by the Onboarding Wizard. The resources created are a new compartment, user group, dynamic group, policy and tag namespace.
 
-5. Click **Details** to view details of the resources that will be created by the Onboarding Wizard. The resources created are a new compartment, user group, dynamic group, policy and tag namespace.
+    > **Note:** If the **Details** button does not appear, click on the **Inspect prerequisites** button.
+
     ![image of onboarding wizard buttons](images/fleets-setup-jms.png)
+    
     &nbsp;
 
-6. Scroll down to the bottom of the page and click **Set up JMS** to start the Onboarding Wizard.
+5. Scroll down to the bottom of the page and click **Set up JMS** to start the Onboarding Wizard.
     ![image of onboarding wizard window](images/fleets-setup-details.png)
 
-7. You will see a screen informing you that the prerequisites have been successfully set-up. Click **Done** to close the window.
+6. You will see a screen informing you that the prerequisites have been successfully set-up. Click **Done** to close the window.
     ![image of onboarding wizard success window](images/fleets-setup-success.png)
     > **Note:** If an error occurs in the creation process, you will see the error message being displayed. Resolve the error and restart the Onboarding Wizard to continue.
     &nbsp;
 
-8. Verify creation of prerequisite resources (Optional)
+7. Verify creation of prerequisite resources (Optional)
 
     You can confirm the prerequisite resources have been created through your OCI console.
     &nbsp;
@@ -62,20 +62,29 @@ The Onboarding Wizard helps to create the necessary resources automatically. We 
     * Confirm the creation of new compartment labelled `Fleet_Compartment`.
         ![image of new compartment](images/new-compartment.png)
     &nbsp;
-    * In the Oracle Cloud Console, open the navigation menu and click **Governance & Administration**. Under **Governance**, click **Tag Namespaces**.
+    * In the Oracle Cloud Console, open the navigation menu and click **Governance & Administration**. Under **Tenancy Management**, click **Tag Namespaces**.
         ![image of console navigation to tag namespaces](images/console-navigation-tag-namespaces.png)
     &nbsp;
     * Confirm the creation of new tag namespace and tag key.
         ![image of new tag namespace and tag key](images/new-tag-namespace.png)
     &nbsp;
-    * In the Oracle Cloud Console, open the navigation menu and click **Identity & Security**. Under **Identity**, click **Groups**.
-        ![image of console navigation to groups](images/console-navigation-groups.png)
+    * In the Oracle Cloud Console, open the navigation menu and click **Identity & Security**. Under **Identity**, click **Domains**.
+
+        > **Note:** If **Domains** does not appear, your tenancy and/or region has not been updated to use identity domains. You can access groups and dynamic groups directly under **Identity**. For more information, see [Documentation to Use for Cloud Identity](https://docs.oracle.com/en-us/iaas/Content/Identity/getstarted/identity-domains.htm#identity_documentation).
+
+        ![image of console navigation to groups](images/console-navigation-domains.png)
+    &nbsp;
+    * In the Domains page, click **Default**.
+        ![image of domains navigation to default domain](images/domains-navigation-default.png)
+    &nbsp;
+    * In the Overview page, click **Groups**.
+        ![image of domain overview navigation to groups](images/domain-overview-groups.png)
     &nbsp;
     * You can see the new user group labelled `FLEET_MANAGERS`.
         ![image of new group](images/new-group.png)
     &nbsp;
-    * In the Oracle Cloud Console, open the navigation menu and click **Identity & Security**. Under **Identity**, click **Dynamic Groups**.
-        ![image of console navigation to dynamic groups](images/console-navigation-dynamic-groups.png)
+    * Return to the Overview page and click **Dynamic groups**.
+        ![image of console navigation to dynamic groups](images/domain-overview-dynamic-groups.png)
     &nbsp;
     * Confirm the creation of new dynamic group labelled `JMS_DYNAMIC_GROUP` and 2 Matching Rules.
         ![image of new dynamic group](images/new-dynamic-group.png)
@@ -115,32 +124,34 @@ Sign in to the Oracle Cloud Console as an administrator using the credentials pr
         &nbsp;
         ![image of compartments main page after creation](images/compartment-main-page-after-create.png)
         &nbsp;
-    For more information, see [Setting Up Your Tenancy](https://docs.oracle.com/en-us/iaas/Content/GSG/Concepts/settinguptenancy.htm) and [Managing Compartments](https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcompartments.htm).
-    &nbsp;
+        
+        For more information, see [Setting Up Your Tenancy](https://docs.oracle.com/en-us/iaas/Content/GSG/Concepts/settinguptenancy.htm) and [Managing Compartments](https://docs.oracle.com/en-us/iaas/Content/Identity/compartments/managingcompartments.htm).
+        &nbsp;
 
 2. Create a new tag namespace.
 
-    * In the Oracle Cloud Console, open the navigation menu and click **Governance & Administration**. Under **Governance**, click **Tag Namespaces**.
+    * In the Oracle Cloud Console, open the navigation menu and click **Governance & Administration**. Under **Tenancy Management**, click **Tag Namespaces**.
         ![image of console navigation to tag namespaces](images/console-navigation-tag-namespaces.png)
     &nbsp;
-    * Click **Create Namespace Definition**.
+    * Click **Create Tag Namespace**.
         ![image of tag namespaces main page](images/tag-namespaces-main-page.png)
     &nbsp;
-    * In the Create Namespace Definition dialog box select the root compartment for your tenancy from the drop-down list.
+    * In the Create Tag Namespace Definition dialog box select the root compartment for your tenancy from the drop-down list.
         &nbsp;
     * In the Namespace Definition Name field, enter `jms`.
         &nbsp;
     * In the Description field, enter `For OCI Java Management use only`.
         ![image of tag namespaces create page](images/tag-namespaces-create-example.png)
         &nbsp;
-    * Click **Create Namespace Definition**.
+    * Click **Create Tag Namespace**.
         &nbsp;
-    For more information, see [Managing Tags and Tag Namespaces](https://docs.oracle.com/en-us/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm).
-    &nbsp;
+
+        For more information, see [Managing Tags and Tag Namespaces](https://docs.oracle.com/en-us/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm).
+        &nbsp;
 
 3. Create a new tag key definition in the new tag namespace.
 
-    * In the Oracle Cloud Console, open the navigation menu and click **Governance & Administration**. Under **Governance**, click **Tag Namespaces**.
+    * In the Oracle Cloud Console, open the navigation menu and click **Governance & Administration**. Under **Tenancy Management**, click **Tag Namespaces**.
         &nbsp;
     * From the list of namespaces, click **jms**.
         ![image of tag namespaces main page after creation](images/tag-namespaces-main-page-after-creating.png)
@@ -155,25 +166,32 @@ Sign in to the Oracle Cloud Console as an administrator using the credentials pr
 
 4. Create a user group.
 
-    * In the Oracle Cloud Console, open the navigation menu and click **Identity & Security**. Under Identity, click **Groups**.
+    * In the Oracle Cloud Console, open the navigation menu and click **Identity & Security**. Under **Identity**, click **Domains**.
 
-        > **Note:** If **Groups** is not indicated under Identity, Click **Domains** -> **Default** -> **Groups**.
+        > **Note:** If **Domains** does not appear, your tenancy and/or region has not been updated to use identity domains. You can access groups and dynamic groups directly under **Identity**. For more information, see [Documentation to Use for Cloud Identity](https://docs.oracle.com/en-us/iaas/Content/Identity/getstarted/identity-domains.htm#identity_documentation).
 
-        ![image of console navigation to groups](images/console-navigation-groups.png)
+        ![image of console navigation to groups](images/console-navigation-domains.png)
         &nbsp;
-    * Click **Create Group**.
+    * In the Domains page, click **Default**.
+        ![image of domains navigation to default domain](images/domains-navigation-default.png)
+        &nbsp;
+    * In the Overview page, click **Groups**.
+        ![image of domain overview navigation to groups](images/domain-overview-groups.png)
+        &nbsp;
+    * Click **Create group**.
         ![image of groups main page](images/groups-main-page.png)
         &nbsp;
-    * In the Create Group dialog box, enter a name for the group (for example, `FLEET_MANAGERS`), and a description.
+    * In the Create group dialog box, enter a name for the group (for example, `FLEET_MANAGERS`), and a description.
         ![image of groups create page](images/groups-create-example.png)
         &nbsp;
     * Click **Create**.
         &nbsp;
-        For more information, see [Managing Groups](https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managinggroups.htm).
+
+        For more information, see [Managing Groups](https://docs.oracle.com/en-us/iaas/Content/Identity/groups/managinggroups.htm).
         &nbsp;
 
 5. Create user accounts for each of your users by following these instructions: [Adding Users](https://docs.oracle.com/en-us/iaas/Content/GSG/Tasks/addingusers.htm).
-    For more information, see [Managing Users](https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingusers.htm).
+    For more information, see [Managing Users](https://docs.oracle.com/en-us/iaas/Content/Identity/users/about-managing-users.htm).
     &nbsp;
 
 
@@ -182,13 +200,19 @@ Sign in to the Oracle Cloud Console as an administrator using the credentials pr
 
     Create a dynamic group of all agents. To interact with the Oracle Cloud Infrastructure service end-points, users must explicitly consent to let the management agents work with JMS.
 
-    * In the Oracle Cloud Console, open the navigation menu and click **Identity & Security**. Under **Identity**, click **Dynamic Groups**.
-        ![image of console navigation to dynamic groups](images/console-navigation-dynamic-groups.png)
+    * In the Oracle Cloud Console, open the navigation menu and click **Identity & Security**. Under **Identity**, click **Domains**.
+        ![image of console navigation to groups](images/console-navigation-domains.png)
         &nbsp;
-    * Click **Create Dynamic Group**.
+    * In the Domains page, click **Default**.
+        ![image of domains navigation to default domain](images/domains-navigation-default.png)
+        &nbsp;
+    * In the Overview page, click **Dynamic groups**.
+        ![image of domain overview navigation to groups](images/domain-overview-dynamic-groups.png)
+        &nbsp;
+    * Click **Create dynamic group**.
         ![image of dynamic groups main page](images/dynamic-groups-main-page.png)
         &nbsp;
-    * In the Create Dynamic Group dialog box, enter a name for the dynamic group (for example, `JMS_DYNAMIC_GROUP`), a description, and a matching rule.
+    * In the Create dynamic group dialog box, enter a name for the dynamic group (for example, `JMS_DYNAMIC_GROUP`), a description, and a matching rule.
 
         For **Rule 1**, enter
         ```
@@ -207,8 +231,10 @@ Sign in to the Oracle Cloud Console as an administrator using the credentials pr
         ![image of dynamic groups create page](images/dynamic-groups-create-example.png)
         &nbsp;
     * Click **Create**.
+        &nbsp;
 
-    For more information, see [Managing Dynamic Groups](https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingdynamicgroups.htm).
+        For more information, see [Managing Dynamic Groups](https://docs.oracle.com/en-us/iaas/Content/Identity/dynamicgroups/managingdynamicgroups.htm).
+        &nbsp;
 
 
 7. Create Policies.
@@ -218,8 +244,10 @@ Sign in to the Oracle Cloud Console as an administrator using the credentials pr
     Create policies for the user group to access and manage JMS fleets, management agents, agent install keys, metrics, tag namespaces, logging and LCM operations.
     &nbsp;
     * In the Oracle Cloud Console, open the navigation menu and click **Identity & Security**. Under **Identity**, click **Policies**.
+    ![image of console navigation to policies](images/console-navigation-policies.png)
     &nbsp;
     * Click **Create Policy**.
+    ![image of policies main page](images/policies-main-page.png)
     &nbsp;
     * In the Create Policy dialog box, enter a name for the policy (for example, `JMS_Policy`), and a description.
     &nbsp;
@@ -230,7 +258,7 @@ Sign in to the Oracle Cloud Console as an administrator using the credentials pr
     * In the text box, enter the following statements:
     ```
     <copy>
-        ALLOW GROUP FLEET_MANAGERS TO MANAGE fleet IN COMPARTMENT Fleet_Compartment
+    ALLOW GROUP FLEET_MANAGERS TO MANAGE fleet IN COMPARTMENT Fleet_Compartment
     ALLOW GROUP FLEET_MANAGERS TO MANAGE management-agents IN COMPARTMENT Fleet_Compartment
     ALLOW GROUP FLEET_MANAGERS TO MANAGE management-agent-install-keys IN COMPARTMENT Fleet_Compartment
     ALLOW GROUP FLEET_MANAGERS TO READ METRICS IN COMPARTMENT Fleet_Compartment
@@ -277,4 +305,4 @@ You may now **proceed to the next lab**.
 ## Acknowledgements
 
 * **Author** - Alvin Lam, Java Management Service
-* **Last Updated By/Date** - Bao Jin Lee, November 2022
+* **Last Updated By/Date** - Ivan Eng, March 2023

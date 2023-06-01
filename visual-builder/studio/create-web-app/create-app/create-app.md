@@ -33,19 +33,19 @@ This lab assumes you have:
 
 The first thing we'll do is add a web app to the HR visual application you just created. A visual application is a container for all your web and mobile applications. In this task, you add a single web app to your visual application, but you can have more than one, even both web and mobile apps in the same visual application.
 
-1. On the Project Home page, click **HR Visual Application** under Workspaces.
+1. Click **Workspaces**![Workspaces icon](images/vbs-workspaces-icon.png), then click **HR Workspace** in the Workspaces table.
 
-    The visual application opens on the Designer's Welcome page.
+    The HR application opens in the Designer on the Welcome page, which serves as a launching point for connecting to data, creating apps, or adding artifacts.
 
     ![This image shows part of the HR Visual Application's Welcome page. The page contains tiles in three sections: Connect to Data, Create Apps, and Add Artifacts. On  the right are sections with references to documentation and other resources.](images/visual-app-welcome.png "Welcome page in the Designer")
 
-    The Welcome page contains a set of tiles in three groups: **Connect to Data**, **Create Apps**, and **Add Artifacts**. On the far left are icons representing Mobile Applications, Web Applications, Services, Business Objects, Layouts, Components, Processes, Source, and Git artifacts. This vertical toolbar is the Navigator, which helps you move between the artifacts in your visual application.
+    On the far left are icons representing Mobile Applications, Web Applications, Business Objects, and so on. This vertical toolbar is the Navigator, which helps you move between the artifacts in your visual application.
 
     Now take a look at the header:
 
     ![Header in the HR Visual Application workspace. The workspace name HR Visual Application is on the left. Next to it, the Git repository and current branch tutorial-hr-project.git / hrbranch are visible. On the right are icons that let you perform other actions: Undo, Redo, Preview, Publish Changes, Product Feedback, Go to File, and Menu.](images/header.png "Header")
 
-    On the left is the name of your current workspace, **HR Visual Application**; next to it is the project's Git repository and the branch currently associated with your workspace (**tutorial-hr-project.git/hrbranch**). Click each option to see other actions that you can perform from here. Clicking ![Go to Project Page icon](images/go-to-project-home-icon.png) will take you back to the Project Home page.
+    On the left is the name of your current workspace, **HR Workspace**; next to it is the project's Git repository and the branch currently associated with your workspace (**tutorial-hr-project.git/hrbranch**). Click each option to see other actions that you can perform. Clicking ![Go to Project Page icon](images/go-to-project-home-icon.png) will take you back to the Project Home page.
 
     Elements on the right let you perform various other actions, such as undo a change or search the Git repository for a file. This workshop primarily demonstrates the options to preview your app, share it, and publish changes. If you make a mistake during this workshop, click ![Undo icon](images/undo-icon.png)  to back out of the last step you did.
 
@@ -53,7 +53,7 @@ The first thing we'll do is add a web app to the HR visual application you just 
 
     ![Footer in the HR Visual Application workspace, which shows Audits, Find in Files, Git History, and Tests tabs.](images/footer.png "Footer")
 
-    Keep in mind that VB Studio saves your changes automatically as you work. A timestamp at the bottom of the page will show the time  your work was last saved. Note that your changes are only saved to your local workspace repo—but more on that later.
+    Keep in mind that VB Studio saves your changes automatically as you work. A timestamp at the bottom of the page will show the time  your work was last saved. Note that changes are only saved to your local workspace repo—but more on that later.
 
 2. We want to create a web application, so under **Create Apps**, let's click the **Web Apps** tile.
 
@@ -67,7 +67,7 @@ The first thing we'll do is add a web app to the HR visual application you just 
 
     The application opens on the **main-start** page, which is your application's default home page created automatically for you. (Ignore the **This dot says that you have made some changes** dialog that appears in the header for now; we'll explore Git changes in a later lab.)
 
-    What you see under the **main-start** tab is your application's main work area. Just under main-start are several horizontal tabs: **Page Designer**, **Actions**, **Event Listeners**, and so on. Each tab provides editors to help you examine and modify artifacts used in the page. By default, the page opens in the **Page Designer**, which is where you'll do the bulk of your work in VB Studio.
+    What you see under the **main-start** tab is your application's main work area. Just under main-start are several horizontal tabs: **Page Designer**, **Actions**, **Event Listeners**, and so on. Each tab provides editors to help you examine and modify artifacts used in the page. By default, the page opens in the Page Designer, which is where you'll do the bulk of your work in VB Studio.
 
     ![Web Apps pane after the hrwebapp has been created. The app itself is open on the right, on the main-start page, showing the Components Palette. On the far right, the Properties tab shows the Page view.](images/designer.png "Web Apps pane with the hrwebapp")
 
@@ -81,11 +81,11 @@ The first thing we'll do is add a web app to the HR visual application you just 
     | 5 | Canvas | A design, live, or code view of your page's content |
     {: title="Page Designer Work Area"}
 
-    You can collapse and expand tabs to better manage your working area. For example, click **Properties** to hide the Properties pane and expand your work area. When collapsed, each tab will show as a vertical tab on the side of the editor. Click the tab again to expand it.
-
-    You can also move different panes to customize your work area. For example, right-click **Structure** at the bottom of your work area, then select **Move to Top Left** to move the Structure view right under **Components** and **Data**.
+    You can collapse and expand tabs to better manage your working area. For example, click **Properties** to hide the Properties pane and expand your work area. You can also move different panes to customize your work area. For example, right-click **Structure** at the bottom of your work area, then select **Move to Top Left** to move the Structure view right under **Components** and **Data**.
 
     ![Structure view's right-click menu, with the option to 'Move to Top Left' selected. Other options are 'Move to Bottom Left', 'Move to Top Right', 'Move to Bottom Right', and 'Reset All Panels to Default'.](images/structure-view-move.png "Structure view right-click menu")
+
+    When collapsed, each tab will show as a vertical tab on the side of the editor. Click the tab again to expand it.
 
     See also how you can manage tabs that open in the tab bar. Right-click the **main-start** tab to see the available options. Note that the active tab always stays in focus.
 
@@ -95,7 +95,7 @@ The first thing we'll do is add a web app to the HR visual application you just 
 
      ![The Web Apps pane shows the hrwebapp's tree view. Under hrwebapp, main is expanded with main-start nested under. At the same level as main are the Fragments, Resources, and Root Pages nodes.](images/treeview.png "")
 
-    A _flow_ contains pages that relate to each other. An application can have multiple flows, and each flow can contain many pages. This simple application contains only one flow, **main**, and one page, **main-start**—though we'll add more pages later on. By convention, a page takes its flow name as a prefix.
+    A _flow_ contains pages that relate to each other. An application can have multiple flows, and each flow can contain many pages. This application contains only one flow, **main**, and one page, **main-start**—though we'll add more pages later on. By convention, a page takes its flow name as a prefix.
 
 ## Task 2: Create a Location business object and import data
 
@@ -103,7 +103,7 @@ Let's now create your first business object and add data to it by importing a CS
 
 1. Click **Business Objects** ![Business Objects icon](images/bo-icon.png) in the Navigator.
 2. Click **\+ Business Object**.
-3. In the New Business Object dialog box, enter `Location` in the **Name** field. `Location` is also filled in automatically as the **Display Label**. Click **Create**.
+3. In the New Business Object dialog box, enter `Location` in the **Name** field. **Location** is also filled in automatically as the **Display Label**. Click **Create**.
 4. Click **Fields** for the newly created Location business object.
 
     Every business object you create has six default fields: an id, plus fields that provide information on who created and updated the object and when.
@@ -111,11 +111,7 @@ Let's now create your first business object and add data to it by importing a CS
     ![Business object page for the Location business object, with the Fields tab open. The other tabs are Overview, Security, Business Rules, Endpoints, and Data. A table shows the current fields, with the Type, Field Name, Display Label, Required, and Description columns visible for each.](images/location-bo-fields.png "Location business object page")
 
 5. Click **\+** and select **Field** to add a field specific to this business object. This is a very simple business object, so we'll only add one new field.
-6. In the pop-up box, enter:
-
-    * **Label**: `Location`
-    * **Field Name**: `location` (automatically populated)
-    * **Type**: **String** ![String](images/bo-string-icon.png) (selected by default)
+6. In the pop-up box, enter `Location` as the **Label**. The **Field Name** is automatically populated as **Location** and the **Type** set to **String** ![String](images/bo-string-icon.png) by default.
 
     ![The + Field pop-up box, with Location entered in the Label field, location filled in as the Field Name value, and the String type selected. The Create Field button is selected.](images/location-bo-location-field.png "Create Field pop-up box")
 
@@ -157,7 +153,7 @@ Let's now create the Department and Employee business objects. But instead of cr
 
 4. On the Upload File step of the Import New Business Objects wizard, click the drag and drop box, select the `Other-BOs.zip` file, and click **Upload**.
 
-    When the file is uploaded, you'll see a message that the import contains records for the Department and Employee business objects. Click **Next**.
+    When the upload succeeds, you'll see a message that the import contains records for the Department and Employee business objects. Click **Next**.
 
     ![Import New Business Objects wizard on the Upload File screen. A zip file has been uploaded and the results show at the bottom.](images/import-bos-upload-result.png "Upload File Screen in the Import New Business Objects wizard")
 
@@ -165,12 +161,9 @@ Let's now create the Department and Employee business objects. But instead of cr
 
 6. On the Fields step, you'll need to make some changes. For the Department business object (selected by default), look for the `Location` field in the second row and click **#** in the Type column. Change the type setting as follows:
 
-      * **Type**: **Reference** ![Reference icon](images/reference-icon.png)
-      * **Referenced Business Object**: **Location** (the default for a **Referenced Business Object** is always the current business object (in this case, Department), so make sure you select **Location** from the drop-down list)
-
-        A Reference field is like a foreign key in a database table: it's a field that refers to the key (the Id field) of another business object to link the two business objects together. So when you create a department, you'll be able to specify one of the floors as the department's location.
-
-      * **Display Field**: **Location** (automatically populated)
+      * Select the **Type** as **Reference** ![Reference icon](images/reference-icon.png). A Reference field is like a foreign key in a database table: it's a field that refers to the key (the Id field) of another business object to link the two business objects together.
+      * Select **Location** as the **Referenced Business Object**. The default for a **Referenced Business Object** is always the current business object (in this case, Department), so make sure you select **Location** from the drop-down list. Now when you create a department, you'll be able to specify one of the floors as the department's location.
+      * Leave the **Display Field** as **Location** (automatically populated).
 
     ![Type option of the location field selected. A pop-up box shows the Type set to Reference, the Referenced Business Object set as Location, and the Default Field shown as Location.](images/import-bos-upload-fields-deptlocationfield.png "Type option of the location field")
 
@@ -181,9 +174,9 @@ Let's now create the Department and Employee business objects. But instead of cr
 
 8. Now click the **Employee** tab and change the **Department** field to a reference. Click **#** in the **Department** field's Type column and change the Type setting as follows:
 
-    * **Type**: **Reference** ![Reference icon](images/reference-icon.png)
-    * **Referenced Business Object**: **Department**
-    * **Display Field**: **Department** (automatically populated)
+    * Select the **Type** as **Reference** ![Reference icon](images/reference-icon.png).
+    * Select **Department** as the **Referenced Business Object**.
+    * Leave the **Display Field** as **Department** (automatically populated).
 
     Click **OK**.
 
@@ -237,4 +230,4 @@ Now that you have your business objects, create a diagram that visualizes the bu
 ## Acknowledgements
 
 * **Author** - Sheryl Manoharan, VB Studio User Assistance, November 2021
-* **Last Updated By/Date** - Sheryl Manoharan, February 2023
+* **Last Updated By/Date** - Sheryl Manoharan, May 2023

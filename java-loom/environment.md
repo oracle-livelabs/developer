@@ -67,7 +67,7 @@ Now you can launch the setup script (located inside `~/soft` directory).
 <copy>setup-ce.sh</copy>
 
 ```
-This script will take roughly a minute to execute, it will download and configure Java 19, set environment variables, configure Cloud Editor Java 19 support, etc. You can check and confirm that Java 19 is now installed.
+This script will take roughly a minute to execute, it will download and configure Java 20, set environment variables, configure Cloud Editor Java 20 support, etc. You can check and confirm that Java 20 is now installed.
 
 ```text
 > <copy>java -version</copy>
@@ -92,9 +92,9 @@ After ~15 seconds, you will see Cloud Editor in your browser.
 ![Cloud Editor default layout](images/cs-ce-horizontal.png)
 
 
-💡 Cloud Editor runs in the Cloud Shell VM but you don't have to start Cloud Shell prior to use Cloud Editor. If you don't, the Cloud Shell VM will automatically be started when Cloud Editor is launched. It is although required to perform Task 3 before launching Cloud Editor to have Java 19 properly set in Cloud Editor.
+💡 Cloud Editor runs in the Cloud Shell VM but you don't have to start Cloud Shell prior to use Cloud Editor. If you don't, the Cloud Shell VM will automatically be started when Cloud Editor is launched. It is although required to perform Task 3 before launching Cloud Editor to have Java 20 properly set in Cloud Editor.
 
-We suggest to perform the labs in a sepecifc directory. 
+We suggest to perform the labs in a specific directory. 
 
 ```text
 <copy>mkdir ~/lab</copy>
