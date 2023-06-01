@@ -60,35 +60,29 @@ In the Diagram view on the right, you can see the flows and pages for this App U
 
   ![Flow diagram](images/appflow.png)
 
-## Task 2: Add a Welcome Page as the New Default Page
+## Task 2: Change the Page Template
 
 You should be in the Diagram tab with the Components open.
 
-1. Double-click  **main** to open its flow diagram:
+1. Double-click  **main-start** to open the default page:
 
-  ![Double-Click Main](images/doubleclickmain.png)
+  ![Double-Click Main](images/doubleclickmainstart.png)
 
-You are going to replace the main-start page with one that uses a Redwood template, so the existing page can be deleted.
+You are going to configure the main-start page to use the Redwood **Welcome Page Template**.
 
-2. Right-click on the main-start page, select **Delete**:
+2. In the right panel you'll find the page properties, click the **Select Page Template** button:
 
-  ![Set Default page](images/deletemainstart.png)
+  ![Set Default page](images/selectpagetemplate.png)
 
-In the Components tab you will see a page named **Welcome Page Template**.  If you do not see this template, go back to the first lab and make sure you have all of the components installed.
+In the **Page Templates** window you will see a page named **Welcome Page Template**.  If you do not see this template, go back to the first lab and make sure you have all of the components installed.
+
+3. Select the **Welcome Page Template** and click **Select**:
 
   ![Welcome page template](images/welcomepagetemplate.png)
 
-3. Drag the **Welcome Page Template** into the diagram editor:
-
-  ![Drag Welcome page template](images/dropwelcometemplate.png)
-
-4. Name the new page **main-start**, then click **Create**:
-
-  ![Name Welcome page](images/namewelcomepage.png)
-
 ## Task 3: Configure the Welcome Page
 
-1. Double-click  **main-start** to open the page in the Page Designer, one of the main visual editors in the Designer.  Then under **Structure** click on **Welcome Page Template**:
+1. Under **Structure** click on **Welcome Page Template**:
 
   ![IDE](images/ide.png)
 
