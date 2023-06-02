@@ -1,7 +1,7 @@
 # python-oracledb Thick Mode
 
 ## Introduction
-Labs 3 to 10 use python-oracledb in thin mode. However, there are certain features which are only available in the **thick mode** of the python-oracledb driver. Note that you can also run labs 3 to 10 in thick mode by just changing the import line in the sample files from **import db\_config** to **import db\_config\_thick as db_config**.
+Previous las use python-oracledb in thin mode. However, there are certain features which are only available in the **thick mode** of the python-oracledb driver. Note that you can also run thse labs in thick mode by just changing the import line in the sample files from **import db\_config** to **import db\_config\_thick as db_config**.
 
 This lab will show how to use python-oracledb driver in thick mode.
 
@@ -91,4 +91,4 @@ In this lab, you had an opportunity to learn about configuring python-oracledb d
 
 * **Authors** - Christopher Jones, Anthony Tuininga, Sharad Chandran, Veronica Dumitriu
 * **Contributors** - Jaden McElvey, Anoosha Pilli, Troy Anthony
-* **Last Updated By/Date** - Veronica Dumitriu, Oracle Data Drivers Product Management, Feb 2023
+* **Last Updated By/Date** - Veronica Dumitriu, Oracle Data Drivers Product Management, June 2023

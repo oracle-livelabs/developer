@@ -63,16 +63,30 @@
             "filename": "../../lab-10-con-and-cursors/con-and-cursors.md"
         },
         {
-            "title": "Lab: Query a JSON table from Python",
+            "title": "Lab 11: Thick Mode",
+            "description": "Use python-oracledb thick-mode for accessing advanced Oracle database functionality",
+            "filename": "../../lab-11-thick-mode/thick.md"
+        },
+        {
+            "title": "Lab 12: Advanced Queueing",
+            "description": "Use advanced queueing APIs usable in python-oracledb thick mode allow messages to be passed between applications",
+            "filename": "../../lab-12-advanced-queueing/queue.md"
+        },
+        {
+            "title": "Lab 13: Scrollable Cursors",
+            "description": "Use python-oracledb thick mode applications to move backwards as well as forwards in query results",
+            "filename": "../../lab-13-scrollable-cursors/cursor.md"
+        },
+        {
+            "title": "Lab 14: Simple Oracle Document Access (SODA)",
+            "description": "Use SODA to retrieve, insert and query documents from Oracle databases",
+            "filename": "../../lab-14-soda/soda.md"
+        },
+        {
+            "title": "Lab 15: Query a JSON table from Python",
             "description": "Work with JSON data in Oracle databases using Python's interface",
             "filename": "../../lab-15-query-json/query-json.md"
         },
-        {
-            "title": "Lab: Load JSON data into a table using Python",
-            "description": "Load JSON data into an Oracle database table using Python's interface",
-            "filename": "../../lab-16-load-json/load-json.md"
-        },
-
         {
             "title": "Lab: Terminate Oracle Autonomous Database",
             "description": "Terminating an Oracle Autonomous Database permanently",

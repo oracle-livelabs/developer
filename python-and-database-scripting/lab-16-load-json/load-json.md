@@ -315,4 +315,4 @@ You have learned how to create a table having JSON data, and to query the JSON d
 
 * **Authors** - Troy Anthony, Veronica Dumitriu
 * **Contributors** - Anoosha Pilli, Dylan McLeod, Arabella Yao
-* **Last Updated By/Date** - Veronica Dumitriu, Product Management, Apr 2023
+* **Last Updated By/Date** - Veronica Dumitriu, Product Management, June 2023

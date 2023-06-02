@@ -53,12 +53,17 @@
             "filename": "../../lab-10-con-and-cursors/con-and-cursors.md"
         },
         {
-            "title": "Lab 10: Query a JSON table from Python",
+            "title": "Lab 10: Thick Mode",
+            "description": "Use python-oracledb thick-mode for accessing advanced Oracle database functionality",
+            "filename": "../../lab-11-thick-mode/thick.md"
+        },
+        {
+            "title": "Lab 11: Query a JSON table from Python",
             "description": "Work with JSON data in Oracle databases using Python's interface",
             "filename": "../../lab-15-query-json/query-json.md"
         },
         {
-            "title": "Oracle CloudWorld 2022 - Get Help",
+            "title": "Oracle CloudWorld 2023 - Get Help",
             "filename": "https://oracle-livelabs.github.io/common/support/ocwsupportlab/ocwsupportlab.md"
         }
     ]

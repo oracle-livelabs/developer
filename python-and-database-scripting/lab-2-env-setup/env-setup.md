@@ -16,7 +16,7 @@ Watch the video below for a quick walk-through of the lab.
 
 python-oracledb driver is compatible with Python versions 3.6 through 3.11. Prebuilt packages are available on Windows for Python 3.7 or later, on macOS for Python 3.7 or later, and on Linux for Python 3.6 or later.
 
-python-oracledb 1.2 is available. It has a default **Thin** mode for direct connection to Oracle Database and Oracle client libraries are optional.
+python-oracledb 1.3 is available. It has a default **Thin** mode for direct connection to Oracle Database and Oracle client libraries are optional.
 In **Thick** mode, some advanced Oracle Database functionality is currently only available when optional Oracle Client libraries are loaded by python-oracledb. Libraries are available in the free Oracle Instant Client packages. Python-oracledb can use Oracle Client libraries 11.2 through 21c.
 
 Python is open-source, cross-platform, and free of cost. There's no excuse not to give Python a try!
@@ -34,7 +34,7 @@ In this lab, you will:
 
 This lab assumes you have completed the following labs:
 * Login to Oracle Cloud
-* Create Autonomous Database shared infrastructure [Setup Autonomous Database Instance](../Lab1-adb/adb.md)
+* Create Oracle Autonomous Database, shared infrastructure [Setup Autonomous Database Instance](../Lab1-adb/adb.md)
 * Install Python 3, if not already available. It can be obtained from your operating system package library or from [python.org](https://python.org). On Windows, use Python 3.7 or later. On macOS, use Python 3.8 or later. On Linux, use Python 3.6 or later.
 
 ## Task 1: Install Python 3
@@ -492,12 +492,12 @@ This gives the version of the oracledb interface.
 
 In this lab, you had an opportunity to try out connecting Python to the Oracle Database.
 You have learned how to:
-* Install Python 3 if not already available
-* Install python-oracledb driver
+* Install Python 3, if not already available
+* Install the python-oracledb driver
 * Setup the environment to allow connections to Oracle Autonomous Database, shared infrastructure using python-oracledb
 * Create connections to Oracle Autonomous Database, shared infrastructure using the python-oracledb driver
 
 ## Acknowledgements
 * **Authors** - Christopher Jones, Anthony Tuininga, Sharad Chandran, Veronica Dumitriu
 * **Contributors** - Jaden McElvey, Anoosha Pilli, Troy Anthony
-* **Last Updated By/Date** - Veronica Dumitriu, Oracle Database Drivers Product Management, Feb 2023
+* **Last Updated By/Date** - Veronica Dumitriu, Oracle Database Drivers Product Management, June 2023

@@ -16,7 +16,7 @@ Watch the video below for a quick walk-through of the lab.
 
 python-oracledb driver is compatible with Python versions 3.6 through 3.11. Prebuilt packages are available on Windows for Python 3.7 or later, on macOS for Python 3.7 or later, and on Linux for Python 3.6 or later.
 
-python-oracledb 1.2 is available. It has a default **Thin** mode for direct connection to Oracle Database and Oracle client libraries are optional.
+python-oracledb 1.3 is available. It has a default **Thin** mode for direct connection to Oracle Database and Oracle client libraries are optional.
 In **Thick** mode, some advanced Oracle Database functionality is currently only available when optional Oracle Client libraries are loaded by python-oracledb. Libraries are available in the free Oracle Instant Client packages. Python-oracledb can use Oracle Client libraries 11.2 through 21c.
 
 Python is open-source, cross-platform, and free of cost. There's no excuse not to give Python a try!
@@ -25,16 +25,16 @@ Python is open-source, cross-platform, and free of cost. There's no excuse not t
 
 In this lab, you will:
 
-* Install Python 3, if not already installed. *Note: This Livelab is using Cloud Shell, which has Python 3.8.14 preinstalled.*
 * Install python-oracledb driver
+* *Note: This Livelab is using Cloud Shell, which has Python 3.8.14 preinstalled.*
 * Connect to the Oracle Autonomous Database shared infrastructure using the python-oracledb driver
 * Learn how to validate Python operations
 
 ### Prerequisites
 
 This lab assumes you have completed the following labs:
-* Login to Oracle Cloud
-* Create Autonomous Database shared infrastructure [Setup Autonomous Database Instance](../Lab1-adb/adb.md)
+* Login to the Oracle Sandbox
+* Have an Oracle Autonomous Database, shared infrastructure already created
 * Install Python 3, if not already available. It can be obtained from your operating system package library or from [python.org](https://python.org). On Windows, use Python 3.7 or later. On macOS, use Python 3.8 or later. On Linux, use Python 3.6 or later.
 
 ## Task 1: Install Python 3
@@ -122,8 +122,51 @@ python3 -V
     ![Sample Files Git Clone](./images/git-clone.png " ")
 
 The **samples/tutorial** directory has scripts to run and modify. The **samples/tutorial/sql** directory has all the SQL scripts used by the Python files to create database tables and other objects.
+## Task 4: Download Oracle Autonomous Database Wallet
 
-## Task 4: Environment setup
+1.  Login to your Oracle Cloud Account
+2.  Click the **Navigation** Menu in the upper left, navigate to **Oracle Database** and select **Autonomous Database**
+3.  In the Autonomous Database Summary screen, select **Database Connection** tab and in the popup **Database Connection** window, in the **Download Client Credentials (Wallet)** section,
+    -  select Wallet Type: Instance Wallet
+    - hit **Download Wallet** button
+![Wallet](./images/wallet.png " ")
+
+2. Specify password for the Wallet
+
+Hit **Download** button and save the wallet as a zip file to a location on your local laptop, then click Close to close the popup window. We will upload this file on Console Shell in the next task, so please make a note of the location where the .zip wallet is saved.
+
+ ![Wallet password](./images/wallet_password.png " ")
+
+Make a note of the password as this will be used for the database connection and it is required in the subsequent labs.
+
+## Task 5: Upload Wallet to the Cloud Shell
+
+**Cloud Shell**  is a web browser-based terminal accessible from the Oracle Cloud Console and available to all Oracle Cloud Infrastructure users. It’s free to use (within monthly tenancy limits), and it provides access to a Linux shell with a pre-authenticated CLI and other useful tools for following Oracle Cloud Infrastructure service tutorials and labs. The Cloud Shell appears in the Console as a persistent frame and stays active as you navigate to different parts of the Console. Cloud Shell is pre-authenticated with your console credentials.
+
+In the Oracle Autonomous Database Summary screen, we're going to launch Cloud Shell (this has Python pre-installed), and in the subsequent labs we're going to connect to the Autonomous Database Shared infrastructure using the Wallet downloaded at the previous task.  
+
+1. To launch the Cloud Shell, sign in to your Oracle Cloud Infrastructure tenancy and click the command prompt icon in Console header, then select Cloud Shell from the drop down:
+
+ ![Cloud Shell](./images/cloud_shell.png " ")
+
+2. When connected, the following should display:
+ ![Cloud Shell terminal](./images/cloud_shell_term.png " ")
+
+3. Drag and drop the Wallet archive from the location where it was saved, to the Console Shell
+ ![Cloud shell wallet](./images/cloud_shell_wallet.png " ")
+
+4. Unzip the wallet
+In your home folder, create directory _Wallets_ and move the wallet archive to the Wallets folder. We are going to unzip the file in this directory
+    ````
+    $ mkdir Wallets
+    $ mv Wallet_pythonadb.zip ./Wallets
+    $ cd Wallets
+    $ unzip Wallet_python_adb.zip
+    ````
+    ![unzip](./images/shell_unzip.png " ")
+.
+
+## Task 6: Environment setup
 
 We are going to use the [Code Editor](https://docs.oracle.com/en-us/iaas/Content/API/Concepts/code_editor_intro.htm) functionality available on your tenancy in order to edit the Python and SQL scripts, as needed.
 Oracle Cloud Infrastructure (OCI) Code Editor provides a rich, in-console editing environment that enables you to edit code and update service workflows and scripts without having to switch between the Console and your local development environment.
@@ -144,15 +187,15 @@ During this lab you will be reviewing and editing the sample tutorial files prov
 To access the local development environment from Code Editor, you may launch Terminal.
 
 ![Launch Terminal](./images/terminal.png " ")
-Alternatively, you may want to keep Cloud Shell open side by side. 
+Alternatively, you may want to keep Cloud Shell open side by side.
 
-1. Let's do the necessary configurations to connect to the Oracle Autonomous Database. First, we need a few arguments used by the connection:
-    - **user**:         for this exercise we'll be using the **pythondemo** user
-    - **password**:     password for the **pythondemo** user
-    - **dsn**:          data source name for the Oracle Autonomous Database shared infrastructure
-    - **config dir**:   the location where the dsn connection string resides
-    - **wallet location**: the location where the wallet was saved
-    - **wallet password**: the password setup for the wallet
+Let's do the necessary configurations to connect to the Oracle Autonomous Database. First, we need a few arguments used by the connection:
+* **user**:         for this exercise we'll be using the **pythondemo** user
+* **password**:     password for the **pythondemo** user (the schema has already been created in the Oracle Autonomous Database)
+* **dsn**:          data source name for the Oracle Autonomous Database shared infrastructure
+* **config dir**:   the location where the dsn connection string resides
+* **wallet location**: the location where the wallet was saved
+* **wallet password**: the password setup for the wallet
     
 You need to set the default values to match the system connection information for your environment, as they would be used by the config files *db\_config.py* and *db\_config\_sys.py* in the samples/tutorial directory.
     
@@ -166,16 +209,14 @@ vi ~/.bash_profile
 
 Add the folowing lines to the file, with values to match the system connection information for your environment:
 
-*Note*: Populate **DSN\_ADB** with the value stored in file DSN\_ADB.txt that you copied in Lab 1, Task 4.
-
-*Note*: Replace **localuser** in the path with the value of the actual localuser on your OCI environment
+*Note*: Replace **localuser** in the path with the value of the actual localuser on your OCI environment (in the Terminal, run _pwd_ in the command line, to get the actual value)
 
 ````
 <copy>
 export SYSUSER="ADMIN"
 export PYTHON_USER="pythondemo"
 export CONFIG_DIR="/home/localuser/Wallets"
-export DSN_ADB="xxxxx_high"
+export DSN_ADB="pythonadb_high"
 export WALLET_LOCATION="/home/localuser/Wallets"
 </copy>
 ````
@@ -190,7 +231,7 @@ export WALLET_PASSWORD="xxxxxxxxx"
 </copy>
 ````
 
-*Note*: SYSPASSWORD is the ADMIN password that you set when you created the Oracle Autonomous Database; WALLET\_PASSWORD is the value of the Wallet password you set when saving the Wallet; PYTHON\_PASSWORD is going to be used in one of the subsequent tasks so you might have to edit the file again  to enter it later.
+*Note*: SYSPASSWORD is the ADMIN password; WALLET\_PASSWORD is the value of the Wallet password you set when saving the Wallet; PYTHON\_PASSWORD is the password for the schema used in this tutorial.
 
 Run the following in the terminal window:
 
@@ -227,10 +268,8 @@ if wallet_password is None:
 </copy>
 ````
 
-3. In Code Editor, review *db\_config.py* (thin mode), and *db\_config.sql* files in the samples/tutorial and samples/tutorial/sql directories respectively.
-These files are included in other Python and SQL files for setting up the database connection.
-
-Review *db\_config.py* in Code Editor:
+3. In Code Editor, review *db\_config.py* (thin mode), in the samples/tutorial directory.
+This file is used by other Python files for setting up the database connection.
 
 ````
 <copy>
@@ -254,7 +293,7 @@ if wallet_password is None:
 </copy>
 ````
 
-Also, change the database username and connection string in the SQL configuration file  *db\_config.sql* in samples/tutorial/sql directory and enter values to match the system connection information for your environment:
+4. Change the database username and connection string in the SQL configuration file  *db\_config.sql* in samples/tutorial/sql directory and enter values to match the system connection information for your environment:
 
 ````
 <copy>
@@ -269,7 +308,7 @@ accept pw char prompt 'Enter database password for &user: ' hide
 </copy>
 ````
 
-4. In Code Editor, navigate to home/localuser/Wallets directory and edit the *sqlnet.ora* file to add the wallet
+5. In Code Editor, navigate to home/localuser/Wallets directory and edit the *sqlnet.ora* file to add the wallet
 location directory and save
 
 *Note*: Replace **localuser** in the path with the value of the actual localuser on your OCI environment
@@ -280,53 +319,12 @@ WALLET_LOCATION = (SOURCE = (METHOD = file) (METHOD_DATA = (DIRECTORY="/home/loc
 </copy>
 ````
 
-5. Runtime Naming
+6. Runtime Naming
 
-At runtime, the module name of the python-oracledb package is oracledb:
+At runtime, the module name of the python-oracledb package is **oracledb**
 
-## Task 5: Add a New Schema in your Oracle Autonomous Database
-1. In this tutorial you will create a new schema in Oracle Autonomous database shared infrastructure.
-Review the grants created in *samples/tutorial/sql/create\_user.sql* by opening it in Code Editor. Then open a terminal window and run create\_user.py to execute the create\_user.sql script and create the new schema. This tutorial uses the name **pythondemo** for the new schema.
-
-    *Note: The password you enter for the schema must contain at least an Upper letter, should be 12 characters or more, one digit required.*
-
-    The example above connects as ADMIN user using db\_config_sys file discussed in the earlier section.
-    ````
-    <copy>
-    python3 create_user.py
-    </copy>
-    ````
-    If it runs successfully, you will see something similar below:
-    ![Create User](./images/create_user.png " ")
-    
-    The new user *pythondemo* is created.
-
-2. If for any reason you need to drop the user, review the *samples/tutorial/sql/drop\_user.sql* file and then run
-    ````
-<copy>
-python3 drop_user.py
-</copy>
-    ````
-
-*Note: if you have not used the default **pythonuser** schema, you'd need to modify the script to explicitely mention the name of the schema to be dropped or alternatively edit ~/.bash_profile to use the schema that you have created earlier.*
-
-3. Install the tables and other database objects for the Livelab.
-
-Once you have a database user, then you can create the key tables and database objects for the Livelab by running *setup\_tutorial.py* (the environment setup file), using your values for the Livelab username, password and connection string:
-
-````
-<copy>
-python3 setup_tutorial.py
-</copy>
-````
-
-This will call the setup_tutorial.sql file from tutorials/sql directory to setup some sample tables and database objects required for running the examples in the tutorial.
-
-If it runs successfully, you will see something similar below:
-![Setup Tutorial](./images/setup_tut.png " ")
-
-## Task 6: Test Connection to Oracle Autonomous Database
-By default, python-oracledb runs in a ‘Thin’ mode which connects directly to Oracle Database.
+## Task 7: Test Connection to Oracle Autonomous Database
+By default, python-oracledb runs in a _Thin_ mode which connects directly to Oracle Database.
 
 There are two ways to create a connection to Oracle Autonomous Database using python-oracledb driver:
 - **Standalone connections**: [standalone connections](https://python-oracledb.readthedocs.io/en/latest/user_guide/connection_handling.html#standaloneconnection) are useful when the application needs a single connection to the database. Connections are created by calling **oracledb.connect()**
@@ -492,12 +490,12 @@ This gives the version of the oracledb interface.
 
 In this lab, you had an opportunity to try out connecting Python to the Oracle Database.
 You have learned how to:
-* Install Python 3 if not already available
-* Install python-oracledb driver
+* Install Python 3, if not already available
+* Install the python-oracledb driver
 * Setup the environment to allow connections to Oracle Autonomous Database, shared infrastructure using python-oracledb
 * Create connections to Oracle Autonomous Database, shared infrastructure using the python-oracledb driver
 
 ## Acknowledgements
 * **Authors** - Christopher Jones, Anthony Tuininga, Sharad Chandran, Veronica Dumitriu
 * **Contributors** - Jaden McElvey, Anoosha Pilli, Troy Anthony
-* **Last Updated By/Date** - Veronica Dumitriu, Oracle Database Drivers Product Management, Feb 2023
+* **Last Updated By/Date** - Veronica Dumitriu, Oracle Database Drivers Product Management, June 2023
