@@ -85,7 +85,6 @@ python3 soda.py
 
 The output shows the content of the new document.
 
-
 ## Task 2:  Searching SODA Documents
 
 Extend *soda.py* to insert some more documents and perform a find filter operation:
