@@ -33,7 +33,7 @@ Learn the core functionality of SQLcl Liquibase in this hands-on workshop:
 ### Prerequisites
 This workshop requires an Oracle Cloud account or your own Oracle Database with SQLcl installed on your computer.
 
-For using your own Oracle Database you may skip any workshop areas that don't apply to you (such as [Create Your Autonomous Database](../workshops/freetier/?lab=adb-provision-conditional)) and simply input your connection credentials into SQLcl.
+For using your own Oracle Database you may skip any workshop areas that don't apply to you (such as the create your Autonomous Database steps in [Lab 1: Setup](../workshops/freetier/?lab=lab1-setup)) and simply input your connection credentials into SQLcl.
 
 You may now **proceed to the next section**.
 

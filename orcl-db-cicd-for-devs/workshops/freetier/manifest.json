@@ -13,29 +13,24 @@
             "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/cloud-login.md"
         },
         {
-            "title": "Create your autonomous database",
-            "description": "Create an autonomous database for use in the workshop",
-            "filename": "../../adb-provision-conditional/adb-provision-conditional.md"
-        },
-        {
-            "title": "Setup",
+            "title": "Lab 1: Setup",
             "description": "Set up your environment for this workshop",
-            "filename": "../../setup/setup.md"
+            "filename": "../../lab1-setup/lab1-setup.md"
         },
         {
-            "title": "Lab 1: Liquibase basics - help, generate, and update commands",
+            "title": "Lab 2: Liquibase basics - help, generate, and update commands",
             "description": "Become familiar with the core Liquibase commands",
-            "filename": "../../lab1-help-generate-update/lab1-help-generate-update.md"
+            "filename": "../../lab2-help-generate-update/lab2-help-generate-update.md"
         },
         {
-            "title": "(Optional) Lab 2: Look under the hood - understanding changelog tables & changelogs",
+            "title": "(Optional) Lab 3: Look under the hood - understanding changelog tables & changelogs",
             "description": "Learn The Details Of How Changelog Tables & Changelogs Work",
-            "filename": "../../lab2-changelogtables-changelogs/lab2-changelogtables-changelogs.md"
+            "filename": "../../lab3-changelogtables-changelogs/lab3-changelogtables-changelogs.md"
         },
         {
-            "title": "Lab 3: Tag, you're it! - tag, update, and rollback",
+            "title": "Lab 4: Tag, you're it! - tag, update, and rollback",
             "description": "Learn how to bookmark your database state & undo changelogs",
-            "filename": "../../lab3-tag-rollback/lab3-tag-rollback.md"
+            "filename": "../../lab4-tag-rollback/lab4-tag-rollback.md"
         },
         {
             "title": "Terminate your Always Free Autonomous Database",
