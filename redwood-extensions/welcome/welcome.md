@@ -6,14 +6,14 @@ In this lab we'll create a new application and create a welcome page built from 
 
 **About the Oracle Redwood User Experience**
 
-The Redwood User Experience is a collective reinvention of how Oracle customers interact with technology and consume information. While Redwood includes a beautiful new set of user interface elements, including the templates you'll work with in this lab, it's also a philosophical approach to solving customer problems in a differentiated and satisfying way.  Redwood page templates improve the user experience of working with our pages. The Redwood templates not only provide a consistent look and feel across the pages in our app, but we'll also be able to leverage the usability features they offer.
+The Redwood User Experience is a collective reinvention of how Oracle customers interact with technology and consume information. While Redwood includes a beautiful new set of user interface elements, including the templates you'll work with in this lab; it's also a philosophical approach to solving customer problems in a differentiated and satisfying way.  Redwood page templates improve the user experience of working with our pages. The Redwood templates not only provide a consistent look and feel across the pages in our app, but we'll also be able to leverage the usability features they offer.
 
 Estimated Time: 15 minutes
 
 ### Objectives
 
 In this lab, you will:
-* Get familiar with the development environment
+* Become familiar with the development environment
 * Leverage Redwood templates and components to create a welcome page
 * Add Oracle JET UI components to your page
 

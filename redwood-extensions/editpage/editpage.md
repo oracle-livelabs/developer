@@ -91,7 +91,7 @@ Now that the template is set, let's add the FA data to the page.
 
 ## Task 3: Configure the Save Button
 
-When you added the **Form Layout** to the template it automatically created a save button with an action chain that includes all of the actions needed to correctly save changes.
+When you added the Edit Form containing the**Form Layout** to the template it automatically created a save button with an action chain that includes all of the actions needed to correctly save changes.
 
 Next you will modify the **Primary Action** (Save button) included with the **Simple Create and Edit Page Template** to use the action chain from the form's save button.
 
@@ -115,7 +115,7 @@ Next you will modify the **Primary Action** (Save button) included with the **Si
 
 	  ![Edit button](images/accountidclickselectvar.png)
 
-6. Choose **Page/Variables/ { } objectId** (use the filter if you have trouble locating the objectId)
+6. Choose **Page/Variables/objectId** (use the filter if you have trouble locating the objectId)
 
 	  ![Edit button](images/chooseobjectid.png)
 
@@ -127,7 +127,7 @@ Now that the save button is configured, you will add an action to navigate back 
 
 	  ![Edit button](images/openactionchain.png)
 
-2. In the **Actions** panel on the right, locate the **Navigate Back** action
+2. In the **Actions** panel on the left, locate the **Navigate Back** action
 
 	  ![Edit button](images/locatenavigateback.png)
 
@@ -141,7 +141,7 @@ Now that the save button is configured, you will add an action to navigate back 
 
 5. Switch back to the **Page Designer** tab
 
-## Task 5: Clean up
+## Task 5: Cleanup
 
 You can now remove the unneeded objects from the page.
 
@@ -180,7 +180,7 @@ Your work is finished! In the real world, at this point you would likely do more
 ## Learn More
 
 
-* [How Do Quick Starts Work?](https://docs.oracle.com/en/cloud/paas/visual-builder/visualbuilder-building-appui/work-pages-and-flows1.html#GUID-DD40C71D-A8AE-43E2-A2F4-798AF3D49983)
+* [Work with JavaScript Action Chains](https://docs.oracle.com/en/cloud/paas/visual-builder/visualbuilder-building-appui/jsac-work-javascript-action-chains.html#GUID-3ED147D5-8152-4586-B228-C283BF7EE8A6)
 
 
 ## Acknowledgements

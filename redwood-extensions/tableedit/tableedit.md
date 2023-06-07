@@ -196,7 +196,7 @@ Your **ButtonActionChain** should look like this:
 
   ![Set input parameter](images/setobjectidrequired.png)
 
-12. Switch back to **main-start** and open the **actions** tab:
+12. Switch back to **main-start** and open the **Actions** tab:
 
   ![Set input parameter](images/switchmainstartactions.png)
 

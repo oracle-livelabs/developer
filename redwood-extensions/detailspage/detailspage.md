@@ -90,7 +90,7 @@ Notice the template includes a button to take you back to the parent page.  You 
 7. Click **Finish** to return to the details page:
   ![Resulting page](images/results.png)
 
-	Your page content should be displayed in the first panel (if you don't see the data refresh the layout.). However, we're displaying too much information in this panel, so let's move some of it to the next panel.
+	Your page content should be displayed in the first panel (if you don't see the data refresh the layout). However, we're displaying too much information in this panel, so let's move some of it to the next panel.
 
 ## Task 3: Display the data across both foldout sections
 
