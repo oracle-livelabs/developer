@@ -1,7 +1,9 @@
 # (Optional) Lab 3: Look under the hood - understanding changelog tables & changelogs
 
 ## Introduction
-![MovieStream Work Area](./images/1moviestreamworkarea.png)
+
+![MovieStream Work Area](./images/moviestreamworkarea.png)
+
 Welcome to Lab 3! Now that you’ve populated your MOVIESTREAM_DEV schema and it’s all ready for you to load your data and start developing, let’s learn a little bit more about some important Liquibase concepts.
 
 >**Note:** This lab is optional and does not contain steps necessary for the completion of the workshop. It does however teach core concepts important for fully understanding and utilizing SQLcl Liquibase
@@ -274,5 +276,5 @@ Completion of:
 
 ## Acknowledgements
 
-- **Author** - Zachary Talke, Product Manager
+- **Author** - Zachary Talke, Senior Product Manager
 - **Last Updated By/Date** - Zachary Talke, May 2023

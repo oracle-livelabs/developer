@@ -406,5 +406,5 @@ Just as you can create and have different tables in your database (`employees`, 
 
 ## Acknowledgements
 
-- **Author** - Zachary Talke, Product Manager
+- **Author** - Zachary Talke, Senior Product Manager
 - **Last Updated By/Date** - Zachary Talke, May 2023
