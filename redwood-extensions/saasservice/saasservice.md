@@ -131,7 +131,7 @@ P.S. If setting this in code didn't work, go to the property inspector for the t
 At this point you may want to play around with your live app, using different keywords to filter the list by organization name. Also, notice the smart pagination that occurs when you scroll through the records in the table; that is, records are fetched only as needed.
 											  ![Running app](images/results.png)
 
-Now that we have a running page that fetches data, the next step is to add pages that will allow us to edit the data, which means updating the Oracle's SaaS business object behind the scenes.
+Now that we have a running page that fetches data, in the next step we'll improve the usability by adding buttons to the table rows.
 
 You may now close the preview browser tab and **proceed to the next lab**.
 
@@ -143,4 +143,4 @@ You may now close the preview browser tab and **proceed to the next lab**.
 ## Acknowledgements
 * **Author** - Shay Shmeltzer, Oracle Cloud Development Tools, September 2022
 * **Contributors** -  Marcie Caccamo, Blaine Carter, Oracle Cloud Development Tools
-* **Last Updated By/Date** - Blaine Carter, Oracle Cloud Development Tools, March 2023
+* **Last Updated By/Date** - Blaine Carter, Oracle Cloud Development Tools, May 2023
