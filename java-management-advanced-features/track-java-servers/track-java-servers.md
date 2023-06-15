@@ -74,13 +74,13 @@ In this lab, you will:
     If your request is submitted successfully, you should receive a notification in green as seen below: 
     ![image of work request created for scan java servers](images/work-request-of-servers-scan-created.png)
 
-3. Scroll down the Fleet details page, under **Resource** menu, select **Work Request**. You should see the Scan for Java servers Work Request you submitted in step 1. Wait for the work request to complete.
+3. Scroll down the Fleet details page, under **Resources** menu, select **Work Request**. You should see the Scan for Java servers Work Request you submitted in step 1. Wait for the work request to complete.
     ![image of work request for java servers scan in progress](images/work-request-of-servers-scan-in-progress.png)
 
 4. If your request is successful, you should see that the Status of the request is marked as **Completed without errors**.  
 It will take approximately 10 minutes for the request to be completed.
     ![image of work request for java servers scan completed](images/work-request-of-servers-scan-completed.png)
-5. In the same Fleet details page, under **Resource** menu, select **Java servers**. You should be able to see all the Java servers present in the fleet.
+5. In the same Fleet details page, under **Resources** menu, select **Java servers**. You should be able to see all the Java servers present in the fleet.
     ![image of detected java servers](images/java-server-detected.png)
 
 6. Click **WebLogic Server** under **Java servers**, you should be able to see a series of applications deployed for **MedRec** and their target types (clustered / non-clustered) under **Deployed applications**.
@@ -108,4 +108,4 @@ You may now **proceed to the next lab.**
 ## Acknowledgements
 
 * **Author** - Youcheng Li, Java Management Service
-* **Last Updated By** - Sherlin Yeo, March 2023
+* **Last Updated By** - Sherlin Yeo, June 2023

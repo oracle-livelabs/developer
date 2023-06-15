@@ -84,14 +84,19 @@ In this lab, you will:
 1. In the **Fleet** page, under **Resources**, select **Work Requests**. You should see the Work Requests you submitted. Click on the Work Request to view its details.
  ![image of work request summary page](images/work-request-summary-page.png)
 
-
 2. If your Work Request is still in progress and you would like to cancel it, click **Cancel Work Request**.
   ![image of work request details page](images/delete-work-request-details-page.png)
 
 3. Click **Cancel work request** again to confirm.
   ![image of cancel work request](images/cancel-delete-work-request.png)
 
-4. If your request has been canceled successfully, you should see that the **Status** of the request is marked as **Canceled**.
+4. Alternatively, you may cancel your Work Request on the **Fleet** page by clicking on the icon at the right corner and selecting **Cancel Work Request**. Click **Cancel work request** again to confirm.
+
+   ![image of alternative work request cancellation fleet page](images/work-request-summary-page-cancel.png)
+
+   ![image of alternative cancel work request ](images/cancel-delete-work-request-alternative.png)
+
+5. If your request has been canceled successfully, you should see that the **Status** of the request is marked as **Canceled**.
   ![image of cancelled work request](images/canceled-delete-work-request.png)
 
 
@@ -108,4 +113,4 @@ In this lab, you will:
 ## Acknowledgements
 
  * **Author** - Xin Yi Tay, Java Management Service
- * **Last Updated By** - Sherlin Yeo, March 2023
+ * **Last Updated By** - Sherlin Yeo, June 2023

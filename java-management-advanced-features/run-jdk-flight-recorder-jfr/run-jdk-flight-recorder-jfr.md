@@ -33,11 +33,11 @@ In this lab, you will:
 
     You should see a list of Managed instances that are currently in your Fleet. Select the Managed instance you are interested in.
   
-    ![image of fleet details page with crypto event analysis button](images/fleet-managed-instances.png)
+    ![image of fleet details page with jfr button](images/fleet-managed-instances.png)
 
-3. Scroll down and under **Resources**, select **Applications**. You should see a list of Java applications running in this managed instance. Select the long running Java application you want to run with JFR and click **Run JDK Flight Recorder** button.
+3. Scroll down and under **Resources**, select **Applications**. You should see a list of Java applications running in this managed instance. Select the long running Java application you want to run with JFR.  Click on **Actions** and select **Run JDK Flight Recorder**.
   
-    ![image of crypto event run settings](images/managed-instance-applications-run-jfr.png)
+    ![image of jfr run settings](images/managed-instance-applications-run-jfr.png)
 
 4. In the **JDK Flight Recorder** (JFR) Window, select **Recording option**: **Select from default profiles**
 
@@ -92,4 +92,4 @@ You may now **proceed to the next lab.**
 ## Acknowledgements
 
 * **Author** - Somik Khan, November 2022
-* **Last Updated By** - Sherlin Yeo, March 2023
+* **Last Updated By** - Sherlin Yeo, June 2023
