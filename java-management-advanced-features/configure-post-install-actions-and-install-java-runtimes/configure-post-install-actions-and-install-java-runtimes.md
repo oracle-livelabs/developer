@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This lab walks you through the steps to install the Java Runtimes and configuring the post installation actions to be carried out.
+This lab walks you through the steps to install Java Runtimes and configure post installation actions.
 
 Estimated Time: 20 minutes
 
@@ -106,7 +106,7 @@ In this lab, you will:
 
 14. The post Java installation actions can be configured differently based on different requirements.
 
-   Return to the fleet details page, click on the tab **Lifecycle management settings**. The post Java installation actions that had been defined earlier will be shown.
+   Return to the fleet details page, click **Lifecycle management settings**. The post Java installation actions that had been defined earlier will be shown.
 
    ![image of fleet page post install action view](images/fleet-page-post-install-action-view.png)
 
@@ -145,11 +145,11 @@ In this lab, you will:
 
    ![image of extract java with customized path](images/install-java-advanced-customized-path.png)
 
-8. The next page should display a list of post Java installation actions which had been defined previously in [Task 1](#Task1:EnableandSetupPostJavaInstallationActions). Select the post Java installation you want to perform. 
+8. The next page displays the list of post Java installation actions defined previously in [Task 1](#Task1:EnableandSetupPostJavaInstallationActions). Select the post Java installation you want to perform. 
 
    ![image of install java runtime select post install action](images/install-java-runtime-select-post-install-action.png)
 
-   >**Note:** If no post Java installation action is selected, no post-install action will be executed after the Java installation
+   >**Note:** If you don’t select any post Java installation action, no post-install action will be executed after the Java installation.
 
 9. Click **Install Java runtime** to confirm the installation and submit a request for installation. This request is termed as a **Work Request**.
 
@@ -188,14 +188,14 @@ In this lab, you will:
 ## Task 4: (Optional) Modifying/Removing Post Java Installation Action
 1. This task is applicable if changes are to be made to the post Java installation action.
 
-2. On the fleet details page, click on **More actions** and select **Modify Java runtime lifecycle management setting**. 
+2. On the fleet details page, click **More actions** and select **Modify Java runtime lifecycle management setting**. 
 
    ![image of fleet details post install action](images/fleet-details-page-lifecycle-management.png)
 
    The **Lifecycle management settings** window should appear. It should show a list of actions defined earlier in [Task 1](##task-1:-Defining-Post-Java-Installation-Actions). 
    ![image of post install action window](images/post-install-action-window.png)
 
-3. To add another action, click on the **+ another action** button. Another combo box with the placeholder "Select an action" should appear in the next line. 
+3. To add another action, click **+ another action**. Another combo box with the placeholder "Select an action" should appear in the next line. 
 
    ![image of LCM add another action third](images/lcm-add-another-action-third.png)
 
@@ -203,20 +203,20 @@ In this lab, you will:
 
    ![image of updated LCM actions](images/lcm-updated-actions.png)
 
-4. To modify an existing action, click on the combo box of the action and select a new action. A list of available actions should appear
+4. To modify an existing action, click the combo box of the action and select a new action. A list of available actions should appear
 
    ![image of LCM modify existing action](images/lcm-modify-existing-action.png)
 
    ![image of LCM modify existing action list](images/lcm-modify-existing-action-list.png)
 
-5. To remove an existing action, click on the **X** beside the action to remove it.
+5. To remove an existing action, click the **X** beside the action to remove it.
    ![image of post install action cross button](images/post-install-action-cross-button.png)
 
-   >**Note:** To remove all existing action, click on the **X** beside all of the actions until no action remains
+   >**Note:** To remove all existing action, click the **X** beside all of the actions until no action remains
 
-6. Once all the modifications are made, click on the **Save** button below to save all the changes
+6. Once all the modifications are made, click **Save** to save all the changes
 
-7. Return to the fleet details page, click on the tab **Lifecycle management settings** to view the updated post Java installation actions.
+7. Return to the fleet details page, click the tab **Lifecycle management settings** to view the updated post Java installation actions.
 
  You may now **proceed to the next lab.**
 

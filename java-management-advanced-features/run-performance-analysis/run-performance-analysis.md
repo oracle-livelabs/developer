@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This lab walks you through the steps to run Performance analysis on a Java application on your Fleet.
+This lab walks you through the steps to run Performance analysis on a Java application in your fleet.
 
 Estimated Time: 30 mins
 
@@ -79,7 +79,7 @@ In this lab, you will:
 
 ## Task 2: (Optional) Download Performance Analysis Report
 
-1. To access the report, navigate to the **Fleet** details page and click on the **Object storage bucket** name under **Object storage**.
+1. To access the report, navigate to the **Fleet** details page and click the **Object storage bucket** name under **Object storage**.
 
    ![image of fleet object storage bucket link](images/fleet-bucket-link.png)
 

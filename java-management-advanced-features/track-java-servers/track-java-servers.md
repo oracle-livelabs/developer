@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Advanced usage tracking allows you to monitor the usage of Java servers in your fleet which includes the applications deployed on the Java server, the managed server and managed instances on which an application is deployed. 
+Advanced usage tracking allows you to monitor the usage of Java servers in your fleet which includes the applications deployed on the Java server, the managed servers and the managed instances.
 
 This lab walks you through the steps to track Java servers in a managed instance.
 
@@ -31,7 +31,7 @@ In this lab, you will:
 
 ## Task 1: Ensure WebLogic Server is installed and configured
 
-1. If you do not have WebLogic server installed and configured in your managed instance, please refer to following steps.
+1. If you do not have WebLogic server installed and configured in your managed instance, refer to following steps.
     * [Download WebLogic Server](https://www.oracle.com/middleware/technologies/weblogic-server-installers-downloads.html)
     * [Install WebLogic Server with Sample Applications](https://docs.oracle.com/en/middleware/standalone/weblogic-server/14.1.1.0/intro/examples.html#GUID-F9F246B1-E186-46C7-846C-DA510295582F)
 

@@ -62,18 +62,18 @@ In this lab, you will:
 
     ![image of crypto event analysis report](images/crypto-result-final2.png)
 
-7. You can click on the **Name** of the **Analysis report** and scroll down to get more details about the issue.
+7. You can click the **Name** of the **Analysis report** and scroll down to get more details about the issue.
 
     ![image of crypto event analysis report](images/crypto-result-final-details.png)
 
 
 ## Task 2: (Optional) Download Crypto Event Analysis Report
 
-1. Java Management Service taps on the **Object Storage Service** for some of its advanced features so that resources associated with the fleet such as **JDK Flight Recording (JFR)** files and **crypto event analysis** reports are stored for users to view. 
+1. For some of its advanced features, the Java Management Service uses the **Object Storage Service** to store fleet resources, such as **JDK Flight Recording** (JFR) files and **Crypto Event Analysis** reports for users to view.
    In crypto event analysis, the JFR recordings are uploaded to the object storage bucket before retrieval for analysis. The report is then uploaded to object storage bucket.
    See [Object Storage Overview]( https://docs.oracle.com/en-us/iaas/Content/Object/Concepts/objectstorageoverview.htm) to read more about object storage service.
 
-2. To access the report, navigate to the **Fleet** details page and click on the **Object storage bucket** name under **Object storage**.
+2. To access the report, navigate to the **Fleet** details page and click the **Object storage bucket** name under **Object storage**.
 
     ![image of crypto event run settings](images/fleet-bucket-link.png)
 

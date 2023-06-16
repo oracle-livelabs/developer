@@ -6,11 +6,11 @@ Before using JMS advanced features, you must ensure that your Oracle Cloud Infra
 
 Estimated Time: 30 minutes
 
-### Requirements to use Advanced Features
-* Run applications or java servers using **JDK 11** or higher 
+### Requirements to use advanced features
+* Run applications or Java servers using **JDK 11** or higher 
 * If the applications or Java servers must be using **Java 8**, then it needs to use at least **Oracle JDK 8u361** or higher
-* Management Agent should use either **Oracle JDK 8u361** or higher for on-premise environment or **Oracle JDK 11** for OCI compute instances.
-* Lifecycle Management is only supported for Oracle JDKs.
+* Management Agent should use either **Oracle JDK 8u361** or higher for on-premises environment or **Oracle JDK 11** for OCI compute instances.
+* Lifecycle Management is supported only for Oracle JDKs.
 
 ### Objectives
 
@@ -44,15 +44,15 @@ In this lab, you will configure:
     * Java migration analysis
     * Performance analysis
 
-4. For the purpose of this workshop, click on the **Select all advanced features**. This will check the boxes of all the individual features. 
-    
+4. For the purpose of this workshop, click **Select all advanced features**. This will select all individual features.
+
     ![image of edit fleet properties detail](images/fleet-edit-properties-detail.png)
 
-    Click on the **Save changes** button to confirm the modification. This will enable all the advanced features.
+    Click **Save changes** to confirm the modification.
 
-    If the **Select all advanced features** is checked, click on **cancel** to close the window.
+    If the **Select all advanced features** is checked, click **cancel** to close the window.
 
-    > **Note:** If only certain advanced features are required, check the box corresponding to the respective advanced features and save any modifications made. Only advanced features which has been enabled can be used.
+    > **Note:** To enable only certain advanced features, select the check box next to the desired advanced feature and save your changes. Only advanced features that have been enabled can be used.
 
 ## Task 2: Enable Advanced Features on Managed Instance (OCI Compute)
 
@@ -61,7 +61,7 @@ In this lab, you will configure:
 After you have installed the Management Agent, follow the steps below to verify required plugins and enable Java Management Service.
 
 ### **Managed Instance on OCI Compute**
-If you are using an OCI compute instance and it already has the Management Agent installed using OCA and `Java Usage Tracking` plugin deployed, then follow the steps to enable Oracle Java Management plugin and Verify the OCA installation package version.
+Follow these steps to enable Oracle Java Management plugin and verify the OCA installation package version on the OCI compute instance having OCA installed and Java Usage Tracking plugin deployed:
 
 1. There are two ways to verify and enable `Oracle Java Management Service` plugin.
 
@@ -70,11 +70,11 @@ If you are using an OCI compute instance and it already has the Management Agent
      * In the Oracle Cloud console, click **Instances** under **Compute**, and select the instance that you are interested in.
        ![image of navigate from OCI console menu to compute instances](images/navigate-to-compute-instance.png)
 
-     * Click the **Oracle Cloud Agent** tab. The list of plugins is displayed. Verify that the **Oracle Java Management Service** OCA plugin is enabled. If it is disabled, toggle the switch for the Oracle Java Management Service plugin and ensure that the status is set to **Running**. This may take 5 to 10 minutes. This will enable the advanced features for the chosen OCI Compute Instance.
+     * Click the **Oracle Cloud Agent** tab. The list of plugins is displayed. Verify that the **Oracle Java Management Service** OCA plugin is enabled. If it is disabled, toggle the Oracle Java Management Service plugin switch and ensure the status is **Running**. This may take 5 to 10 minutes. This will enable the advanced features for the chosen OCI Compute Instance.
       ![image of disabled oracle java management service oca plugin](images/oracle-jms-oca-plugin-disabled.png)
 
     **Using Cloud Shell:**
-     * Alternatively, you can use Cloud Shell to verify and enable `Oracle Java Management Service` plugin. Click the Cloud Shell icon in the Console header. This icon is accessible from mostly all the OCI Console pages.
+     * Alternatively, you can use Cloud Shell to verify and enable `Oracle Java Management Service` plugin. Click the Cloud Shell icon in the Console header. You can access this icon from all OCI console pages.
        ![image of location of Cloud Shell icon](images/oci-cloud-shell-navigate.png)
      The Cloud Shell will open and may look something like this.
       ![image of Cloud Shell terminal](images/oci-cloud-shell-console.png)
@@ -174,7 +174,7 @@ If you are using an OCI compute instance and it already has the Management Agent
        </copy>
        ```
 
-       If you see the response like this, the `Oracle Java Management Service` plugin has been enabled. Else in case of any error, please refer to this link [Using CLI](https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/cliusing.htm).
+       If you see the response like this, the `Oracle Java Management Service` plugin has been enabled. Else in case of any error, refer to this link [Using CLI](https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/cliusing.htm).
 
        ![image of entering a command in Cloud Shell](images/oci-cloud-shell-update-instance-command.png)
 
@@ -219,7 +219,7 @@ If you are using an OCI compute instance and it already has the Management Agent
 > **Note:** Please refer to this task if the **installation script was not used** to install the management agent. The management agent should have been installed using the management agent software.
 
 ### **Managed Instance on Non-OCI host**
-If you are using a Managed Instance that is not on OCI and it has the Management Agent installed following the steps in the workshop [Manage Java Runtimes, Applications and Managed Instances Inventory with Java Management Service](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=912), then you just need to make a few changes to start using advanced features.
+If you are using a Managed Instance that is not on OCI and you have installed the Management Agent by following the steps in the workshop [Manage Java Runtimes, Applications and Managed Instances Inventory with Java Management Service](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=912), you just need to make a few changes to start using advanced features.
 
 
 1. Open the `/etc/sudoers` file.
@@ -250,11 +250,11 @@ If you are using a Managed Instance that is not on OCI and it has the Management
 5. From the Agents list, select for the agent that was recently installed.
    ![image of agents main page](images/agents-main-page.png)
 
-6. In order to enable advanced features, `Java Management Service` Plug-in is required to be enabled. Take note of `Service Plug-ins` field.Both `Java Management Service` and `Java Usage Tracker` plug-ins should be available. If `Java Management Service` plug-in is missing then follow the next step, else you can move to the next Task.
+6. In order to enable advanced features, enable `Java Management Service` plug-in. Check `Service Plug-ins` field and ensure both `Java Management Service` and `Java Usage Tracker` plug-ins are available. If `Java Management Service` plug-in is missing follow the next step, else you can move to the next Task.
 
   ![image of agent detail page](images/deploy-jms-plug-in-done.png)
 
-7. To enable `Java Management Service` plug-in, click on **Deploy plug-ins** button, check `Java Management Service` option and click on Update button. After 5-10 minutes, you should see the `Java Management Service` plug-in enabled under `Service Plug-ins` field.
+7. To enable `Java Management Service` plug-in, click **Deploy plug-ins**, check `Java Management Service` option and click **Update**. After 5-10 minutes, you should see the `Java Management Service` plug-in enabled under `Service Plug-ins` field.
 
   ![image of updating the plug-in](images/deploy-jms-plug-in.png)
 
