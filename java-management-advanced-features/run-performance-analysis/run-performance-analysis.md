@@ -69,7 +69,7 @@ In this lab, you will:
 
 9. Click on the **Name** of the **Performance analysis report** and scroll down to get more details.
 
-   ![image of performance analysis report details](images/perf-analysis-report-details.png)our
+   ![image of performance analysis report details](images/perf-analysis-report-details.png)
 
    The performance analysis result details are shown under **Performance analysis result**.
 
@@ -118,7 +118,7 @@ In this lab, you will:
 
 ## Learn More
 
-* Refer to the [Advanced Features](https://docs.oracle.com/en-us/iaas/jms/doc/advanced-features.html), [Work Request](https://docs.oracle.com/en-us/iaas/jms/doc/getting-started-java-management-service.html#GUID-47C63464-BC0C-4059-B552-ED9F33E77ED3) and [Fleet Work Requests](https://docs.oracle.com/en-us/iaas/jms/doc/fleet-work-requests.html) sections of the JMS documentation for more details.
+* Refer to the [Advanced Features](https://docs.oracle.com/en-us/iaas/jms/doc/advanced-features.html), [Work Requests](https://docs.oracle.com/en-us/iaas/jms/doc/using-java-management-service.html#GUID-77AEEBC0-93A5-4E99-96D6-BEE0FEE4539F) sections of the JMS documentation for more details.
 
 * Use the [Troubleshooting](https://docs.oracle.com/en-us/iaas/jms/doc/troubleshooting.html#GUID-2D613C72-10F3-4905-A306-4F2673FB1CD3) chapter for explanations on how to diagnose and resolve common problems encountered when installing or using Java Management Service.
 

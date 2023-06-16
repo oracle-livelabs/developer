@@ -58,7 +58,7 @@ This task is for the installation of Management Agent in an OCI Host (OCI Comput
 
 **On Linux (on OCI)**
 
-1. Prepare the **installation script** for Linux downloaded in [Lab 3](?lab=setup-a-fleet). Enter the following command to transfer the script to the remote Managed Instance.
+1. Use the **installation script** for Linux downloaded in [Lab 3](?lab=setup-a-fleet). Enter the following command to transfer the script to the remote Managed Instance.
 
     ```
     <copy>
@@ -88,7 +88,7 @@ This task is for the installation of Management Agent in an OCI Host (OCI Comput
 
 **On Windows (on OCI)**
 
-1. Prepare the **installation script** for Windows downloaded in [Lab 3](?lab=setup-a-fleet).
+1. Use the **installation script** for Windows downloaded in [Lab 3](?lab=setup-a-fleet).
 
 2. Run Windows Powershell as administrator.
 
@@ -134,14 +134,14 @@ Both files need to be placed in the same directory before you proceed.
 
 **On Linux (Non-OCI Host)**
 
-1. Prepare the **installation script** for Linux downloaded in [Lab 3](?lab=setup-a-fleet). Or enter the following command to transfer the script to the remote Managed Instance.
+1. Use the **installation script** for Linux downloaded in [Lab 3](?lab=setup-a-fleet). Or enter the following command to transfer the script to the remote Managed Instance.
 
     ```
     <copy>
     scp -i <your-private-key-file> <path-to-installation-script> <username>@<x.x.x.x>:<copy-to-path>
     </copy>
     ```
-2. Prepare the **management agent** software for linux downloaded in [Lab 3](?lab=setup-a-fleet) or enter the following command to transfer the script to the remote instance. Both the **management agent** software and the **installation script** must be placed in the same directory.
+2. Use the **management agent** software for linux downloaded in [Lab 3](?lab=setup-a-fleet) or enter the following command to transfer the script to the remote instance. Both the **management agent** software and the **installation script** must be placed in the same directory.
 
     ```
     <copy>
@@ -171,9 +171,9 @@ Both files need to be placed in the same directory before you proceed.
 
 **On Windows (Non-OCI Host)**
 
-1. Prepare the **installation script** for Windows downloaded in [Lab 3](?lab=setup-a-fleet).
+1. Use the **installation script** for Windows downloaded in [Lab 3](?lab=setup-a-fleet).
 
-2. Prepare the **management agent** software for Windows downloaded in [Lab 3](?lab=setup-a-fleet). Both the **management agent** software and the **installation script** must be placed in the same directory.
+2. Use the **management agent** software for Windows downloaded in [Lab 3](?lab=setup-a-fleet). Both the **management agent** software and the **installation script** must be placed in the same directory.
 
 3. Run Windows Powershell as administrator.
 
@@ -291,7 +291,7 @@ Both files need to be placed in the same directory before you proceed.
 
 ## Task 6: Verify detection of Java applications and runtimes
 
-For the logging of applications to be visible, Java applications must be run again after the installation of the Management Agent. Now that the Management Agent has been set up in your compute instance, it will be able to detect new Java applications that have been executed. This can be observed in the Oracle Cloud Console.
+For application logging to be visible, re-run Java application after Management Agent installation. The Management Agent can detect new Java applications that are executed in your compute instance. You can observe this in the Oracle Cloud Console.
 
 We shall demonstrate the detection of the Java compiler and HelloWorld application created in [Lab 4](?lab=create-a-java-application).
 

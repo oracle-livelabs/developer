@@ -263,8 +263,7 @@ You may now **proceed to the next lab.**
 ## Learn More
 
 * Refer to the [Managing Plugins with Oracle Cloud Agent](https://docs.oracle.com/en-us/iaas/Content/Compute/Tasks/manage-plugins.htm#console).
-* Refer to the [Installing a Management Agent](https://docs.oracle.com/en-us/iaas/jms/doc/management-agent-chapter.html#GUID-FFC4FD17-B48A-46F2-A77F-7367CF6458F0). It has details of installation of Management Agent on various Operating Systems.
-* Refer to the [Viewing a Java Runtime](https://docs.oracle.com/en-us/iaas/jms/doc/fleet-views.html#GUID-F57179D9-C736-4058-B381-9ECAC776895F) for details of all the field shown in Java Runtime table.
+* Refer to the [Installing a Management Agent](https://docs.oracle.com/en-us/iaas/jms/doc/installing-management-agent.html). It has details of installation of Management Agent on various Operating Systems.
 
 
 ## Acknowledgements

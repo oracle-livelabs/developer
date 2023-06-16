@@ -77,15 +77,15 @@ In this lab, you will:
 
   ![image of fleet details page](images/fleet-details-page-new.png)
 
-10. Change the **Java Runtime Usage**, **Agent Polling Interval**, **Work Request Validity** and  **Java Runtime Discovery** to the desired value. 
+10. Change the **Java Runtime Usage**, **Agent Polling Interval**, **Work Request Validity** and  **Java Runtime Discovery** to the desired value.
 
-    **Java Runtime Usage**: How frequent agents reports Java usage.
+    **Java runtime usage in minutes**: specify the frequency at which the management agent must report Java usage to JMS. The values must be between 5 and 90 minutes. The default value is 5 minutes.
 
-    **Agent Polling Interval**: How frequent which agents check for work request to execute.
- 
-    **Work Request Validity**: The time period for accepting the work request by the agents involved.
+    **Agent polling interval**: specify the frequency at which the management agent must check the work requests. For example, if the value specified is 10 minutes, the agent checks the work requests every 10 minutes and executes them. The values must be between 10 minutes and 12 hours. The default value is 10 minutes.
 
-    **Java Runtime Discovery**: How frequent agents scan for Java installation.
+    **Work request validity**: specify the time for JMS to store the work requests. The values must be between 7 to 30 days. The default value is 2 weeks.
+
+    **Java runtime discovery**: specify frequency at which the management agents should scan their hosts for Java runtime installations. The values must be between 3 to 24 hours. The default value is 24 hours.
 
   For this example, change **Java Runtime Discovery** to **3 hours**, and **Java Runtime Usage** to **5 minutes**.
 
@@ -103,13 +103,13 @@ In this lab, you will:
 
     * In the Oracle Cloud Console, open the navigation menu and click **Identity & Security**. Under **Identity**, click **Domains**.
         ![image of console navigation to groups](images/console-navigation-domains.png)
-        
+
     * In the Domains page, click **Default**.
         ![image of domains navigation to default domain](images/domains-navigation-default.png)
-        
+
     * In the Overview page, click **Dynamic groups**.
         ![image of domain overview navigation to groups](images/domain-overview-dynamic-groups.png)
-        
+
 
 3. There will be 2 additional dynamic groups created. 
     * **JMS\_Advanced\_Features\_MACS_GROUP** with 2 Matching Rules
@@ -145,27 +145,27 @@ In this lab, you will:
     ```
 
     ![image of policy details page](images/policy-details-page.png)
-  
+
 
 ## Task 3: Understanding the Oracle Cloud Infrastructure Services which Java Management Service leverages on
 
-JMS taps into the following OCI services to generate logs, object storage information and metrics of the fleet for the users to view. These are the details of these services:
+JMS uses the following OCI services to generate logs, object storage information and fleet metrics for users to view:
 
 1. Logging Service
-  
+
     - These logs are event logs contributed by Java Management Service and by the service plugins deployed on the management agent of the host machine.
 
-    - All the different log objects will belong to the fleet log group.
+    - All log objects belong to the fleet log group.
 
-    - Each log object will contain its own category of logs e.g. Inventory log will contain logs of the scanning of Java installations in the Managed Instance.
+    - Each log object has its own category of logs, for example, Inventory log contains the logs of Java installation scanning in the Managed Instance.
 
-    - Note that the Inventory log is crucial as a fleet cannot be successfully created without it.
+    - Note that the inventory logs are essential for fleet creation.
 
-    To access the fleet logs, you may click on the respective log object displayed on the fleet main page.
+    To access the fleet logs, click the respective log object displayed on the fleet main page.
 
     ![image of log configuration in fleet overview page](images/fleet-log-configuration.png)
 
-    As we proceed with the subsequent labs, you will be able to see logs here.
+    You can view the logs as we proceed with subsequent labs.
 
     To view the logs in detail, click on the drop-down arrow.
 
@@ -187,7 +187,7 @@ JMS taps into the following OCI services to generate logs, object storage inform
 
     - You may create your own alarms for notifications based on these metrics.
 
-    You may view the fleet metrics on the fleet overview page, by clicking **Metrics** under Resources.
+    Click **Metrics** under **Resources** to view the fleet metrics on the fleet overview page.
 
     ![image of metrics in fleet main page](images/fleet-metrics.png)
 
@@ -233,7 +233,7 @@ If you encounter any errors similar to the following, check policy statements in
 
 ## Learn More
 
-* Refer to the [Fleet Management](https://docs.oracle.com/en-us/iaas/jms/doc/fleet-management.html) section of the JMS documentation for more details.
+* Refer to the [Fleet Management](https://docs.oracle.com/en-us/iaas/jms/doc/overview-java-management-service.html#GUID-836D680E-5577-45A0-81C0-C71BECD38F3F) section of the JMS documentation for more details.
 
 * Use the [Troubleshooting](https://docs.oracle.com/en-us/iaas/jms/doc/troubleshooting.html#GUID-2D613C72-10F3-4905-A306-4F2673FB1CD3) chapter for explanations on how to diagnose and resolve common problems encountered when installing or using Java Management Service.
 
