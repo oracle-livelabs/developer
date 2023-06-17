@@ -19,11 +19,11 @@ In this lab, you will:
 ### Prerequisites
 
 * You have signed up for an account with Oracle Cloud Infrastructure and have received your sign-in credentials.
-* A compute instance with the resources configured in [Lab 1](?lab=set-up-oci-for-jms) to [Lab 5](?lab=set-up-of-management-agent) (Management Agent, Fleet, Compartments, SSH key pair login). The compute instance should also have **Oracle JDK 8** installed.
+* A compute instance with the resources configured in [Lab 1](?lab=set-up-oci-for-jms) to [Lab 6](?lab=set-up-of-management-agent) (Management Agent, Fleet, Compartments, SSH key pair login). The compute instance should also have **Oracle JDK 8** installed.
 
 ## Task 1: Install Docker on your compute instance
 
-The following steps will describe installation of Docker on a compute instance running Oracle Linux 7 or above, which was covered in [Lab 3](?lab=deploy-a-java-application#Task1:CreateaComputeInstance).
+The following steps will describe installation of Docker on a compute instance running Oracle Linux 7 or above, which was covered in [Lab 4](?lab=create-a-java-application#Task1:CreateaComputeInstance).
 
 1. Perform an SSH login into your OCI compute instance.
 
@@ -125,7 +125,7 @@ This task will guide you on how to create a simple Java application that can be 
 
     ```
     <copy>
-    sudo nano OddNumbers.java
+    nano OddNumbers.java
     </copy>
     ```
     ```
@@ -149,7 +149,7 @@ This task will guide you on how to create a simple Java application that can be 
     }//End of OddNumbers Class
     </copy>
     ```
-    To save the file, type CTRL+x. Before exiting, nano will ask you if you wish to save the file: Type y and Enter to save and exit.
+    To save the file, type CTRL+x. Before exiting, nano will ask you if you want to save the file: Type y and Enter to save and exit.
 
   * Compile the Java code using this command.
 
@@ -319,7 +319,7 @@ You should now have a compute instance with Docker installed and a Docker image 
 
 ## Task 5: Verify configuration
 
-1. You may wish to check the log files for your Java application. Start by running this command to display the log file content.
+1. You may want to check the log files for your Java application. Start by running this command to display the log file content.
 
     ```
     <copy>
@@ -355,4 +355,4 @@ You should now have a compute instance with Docker installed and a Docker image 
 ## Acknowledgements
 
 * **Author** - Alvin Lam, Java Management Service
-* **Last Updated By/Date** - Ivan Eng, March 2023
+* **Last Updated By/Date** - Ivan Eng, June 2023
