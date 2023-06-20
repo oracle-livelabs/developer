@@ -188,7 +188,7 @@ Completion of:
                 * A namespace is a uniform resource identifier (URI). Think of it as a collection of unique elements available to use
                    * A URI is a way to uniquely identify “anything”
                    * XML namespaces are used to provide uniquely named elements and attributes in an XML document
-                * The second is the location of the XML schema to use for that namespace  
+             * The second is the location of the XML schema to use for that namespace  
    </details>
 
    <details>
