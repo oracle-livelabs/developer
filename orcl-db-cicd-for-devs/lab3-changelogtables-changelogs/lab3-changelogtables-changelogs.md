@@ -1,4 +1,4 @@
-# (Optional) Lab 3: Look under the hood - understanding changelog tables & changelogs
+# Lab 3: Look under the hood - understanding changelog tables & changelogs
 
 ## Introduction
 
@@ -6,7 +6,7 @@
 
 Welcome to Lab 3! Now that you’ve populated your MOVIESTREAM_DEV schema and it’s all ready for you to load your data and start developing, let’s learn a little bit more about some important Liquibase concepts.
 
->**Note:** This lab is optional and does not contain steps necessary for the completion of the workshop. It does however teach core concepts important for fully understanding and utilizing SQLcl Liquibase
+>**Note:** This lab is informational and does not contain steps necessary for the completion of the workshop. It does however teach core concepts important for fully understanding and utilizing SQLcl Liquibase
 
 *Estimated Time:* 15 Minutes
 
