@@ -16,7 +16,7 @@ Watch the video below for a quick walk-through of the lab.
 
 python-oracledb driver is compatible with Python versions 3.6 through 3.11. Prebuilt packages are available on Windows for Python 3.7 or later, on macOS for Python 3.7 or later, and on Linux for Python 3.6 or later.
 
-python-oracledb 1.2 is available. It has a default **Thin** mode for direct connection to Oracle Database and Oracle client libraries are optional.
+python-oracledb 1.3 is available. It has a default **Thin** mode for direct connection to Oracle Database and Oracle client libraries are optional.
 In **Thick** mode, some advanced Oracle Database functionality is currently only available when optional Oracle Client libraries are loaded by python-oracledb. Libraries are available in the free Oracle Instant Client packages. Python-oracledb can use Oracle Client libraries 11.2 through 21c.
 
 Python is open-source, cross-platform, and free of cost. There's no excuse not to give Python a try!
@@ -34,7 +34,7 @@ In this lab, you will:
 
 This lab assumes you have completed the following labs:
 * Login to Oracle Cloud
-* Create Autonomous Database shared infrastructure [Setup Autonomous Database Instance](../Lab1-adb/adb.md)
+* Create Oracle Autonomous Database, shared infrastructure [Setup Autonomous Database Instance](../Lab1-adb/adb.md)
 * Install Python 3, if not already available. It can be obtained from your operating system package library or from [python.org](https://python.org). On Windows, use Python 3.7 or later. On macOS, use Python 3.8 or later. On Linux, use Python 3.6 or later.
 
 ## Task 1: Install Python 3
@@ -65,12 +65,13 @@ python3 -V
 
 ## Task 2: Install python-oracledb driver
 
-1.  Install the `python-oracledb` module using python3 and pip.
+1.  Check if the Python driver is already installed. If you get a warning that the module is not found, then proceed to install the `python-oracledb` module using python3 and pip.
 
     On Oracle Linux 8, run the following in the Cloud Shell:
 
     ````
 <copy>
+    pip show oracledb
     python3 -m pip install oracledb cryptography --user
 </copy>
     ````
@@ -104,9 +105,10 @@ python3 -V
     wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/G1OGqC7vt8o0M_AOM_MU18yrJ3-6_1f82XIHoZYc1au3mszv_brD6trhq9CsTd6l/n/c4u04/b/livelabsfiles/o/samples.zip
     </copy>
     ````
-2. In the Cloud Shell, unzip the sample.zip file, then remove the .zip file:
+2. In the Cloud Shell, navigate to your home directory and unzip the sample.zip file, then remove the .zip file:
     ````
     <copy>
+    cd 
     unzip samples.zip
     </copy>
     ````
@@ -173,7 +175,7 @@ Add the folowing lines to the file, with values to match the system connection i
 export SYSUSER="ADMIN"
 export PYTHON_USER="pythondemo"
 export CONFIG_DIR="/home/localuser/Wallets"
-export DSN_ADB="db20220721220247_high"
+export DSN_ADB="xxxxx_high"
 export WALLET_LOCATION="/home/localuser/Wallets"
 </copy>
 ````
@@ -182,9 +184,9 @@ Additionally, if you do not want the system to keep prompting you to enter the p
 
 ````
 <copy>
-export SYSPASSWORD="xxxxxxxx"
-export PYTHON_PASSWORD="xxxxxxxx"
-export WALLET_PASSWORD="xxxxxxxx"
+export SYSPASSWORD="xxxxxxxxx"
+export PYTHON_PASSWORD="xxxxxxxxx"
+export WALLET_PASSWORD="xxxxxxxxx"
 </copy>
 ````
 
@@ -281,9 +283,6 @@ WALLET_LOCATION = (SOURCE = (METHOD = file) (METHOD_DATA = (DIRECTORY="/home/loc
 5. Runtime Naming
 
 At runtime, the module name of the python-oracledb package is oracledb:
-````
-import oracledb
-````
 
 ## Task 5: Add a New Schema in your Oracle Autonomous Database
 1. In this tutorial you will create a new schema in Oracle Autonomous database shared infrastructure.
@@ -327,13 +326,13 @@ If it runs successfully, you will see something similar below:
 ![Setup Tutorial](./images/setup_tut.png " ")
 
 ## Task 6: Test Connection to Oracle Autonomous Database
-By default, python-oracledb runs in a ‘Thin’ mode which connects directly to Oracle Database. This mode does not need Oracle Client libraries. However, some additional functionality is available when python-oracledb uses them. Python-oracledb is said to be in ‘Thick’ mode when Oracle Client libraries are used. Both modes have comprehensive functionality supporting the Python Database API v2.0 Specification.
+By default, python-oracledb runs in a ‘Thin’ mode which connects directly to Oracle Database.
 
 There are two ways to create a connection to Oracle Autonomous Database using python-oracledb driver:
 - **Standalone connections**: [standalone connections](https://python-oracledb.readthedocs.io/en/latest/user_guide/connection_handling.html#standaloneconnection) are useful when the application needs a single connection to the database. Connections are created by calling **oracledb.connect()**
 - **Pooled connections**: [connection pooling](https://python-oracledb.readthedocs.io/en/latest/user_guide/connection_handling.html#connpooling) is important for performance when applications frequently connect and disconnect from the database. Pools support Oracle's [high-availability](https://python-oracledb.readthedocs.io/en/latest/user_guide/ha.html#highavailability) features and are recommended for applications that must be reliable. Small pools can also be useful for applications that want a few connections available for infrequent use. Pools are created with **oracledb.create_pool()** at application initialization time, and then **ConnectionPool.acquire()** can be called to obtain a connection from the pool.
 
-Connect to the Oracle database and print the version of the database via Python. This confirms you are connected to an Oracle instance and returns the database version.
+Connect to the Oracle Database and print the version of the database via Python. This confirms you are connected to an Oracle instance and returns the database version.
 
 1. in Code Editor, review the code contained in *connect.py*:
     
@@ -493,12 +492,12 @@ This gives the version of the oracledb interface.
 
 In this lab, you had an opportunity to try out connecting Python to the Oracle Database.
 You have learned how to:
-* Install Python 3 if not already available
-* Install python-oracledb driver
+* Install Python 3, if not already available
+* Install the python-oracledb driver
 * Setup the environment to allow connections to Oracle Autonomous Database, shared infrastructure using python-oracledb
 * Create connections to Oracle Autonomous Database, shared infrastructure using the python-oracledb driver
 
 ## Acknowledgements
 * **Authors** - Christopher Jones, Anthony Tuininga, Sharad Chandran, Veronica Dumitriu
 * **Contributors** - Jaden McElvey, Anoosha Pilli, Troy Anthony
-* **Last Updated By/Date** - Veronica Dumitriu, Oracle Database Drivers Product Management, Feb 2023
+* **Last Updated By/Date** - Veronica Dumitriu, Oracle Database Drivers Product Management, June 2023

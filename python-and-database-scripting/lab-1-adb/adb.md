@@ -69,7 +69,7 @@ Once Autonomous Database Shared Infrastructure is provisioned, it is automatical
 
 To connect to the Oracle Autonomous Database, you need the wallet file.
 
-1.  In the Autonomous Database Summary screen, select **Database Connection** tab and in the popup **Database Connection** window, in the **Download Client Credentials (Wallet)** section, 
+1.  In the Autonomous Database Summary screen, select **Database Connection** tab and in the popup **Database Connection** window, in the **Download Client Credentials (Wallet)** section,
     -  select Wallet Type: Instance Wallet
     - hit **Download Wallet** button
 

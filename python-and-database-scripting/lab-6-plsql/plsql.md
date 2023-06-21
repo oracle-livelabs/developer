@@ -23,7 +23,7 @@ This lab assumes you have completed the following labs:
 
 ## Task 1: PL/SQL functions
 
-The environment setup file **setup_tutorial.py** has already created the new table named **ptab** and a PL/SQL stored function **myfunc** to insert a row into ptab, and return double the inserted value, by internally running the sql script below:
+As part of environment setup, the table **ptab** and the PL/SQL stored function **myfunc** to insert a row into ptab, and return double the inserted value, were already created as following:
 
 ````
 create table ptab (mydata varchar(20), myid number);
@@ -137,4 +137,4 @@ You have learned how to execute PL/SQL code in order to perform data manipulatio
 
 * **Authors** - Christopher Jones, Anthony Tuininga, Sharad Chandran, Veronica Dumitriu
 * **Contributors** - Jaden McElvey, Anoosha Pilli, Troy Anthony
-* **Last Updated By/Date** - Veronica Dumitriu, DB Product Management, July 2022
+* **Last Updated By/Date** - Veronica Dumitriu, DB Product Management, June 2023

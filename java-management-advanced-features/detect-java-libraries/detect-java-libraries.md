@@ -36,13 +36,13 @@ In this lab, you will:
 	If your request is submitted successfully, you should receive a notification in green as seen below: 
 	![image of created work request for java libraries](images/work-request-of-libraries-scan-created.png)
 
-4. Scroll down the Fleet details page, under **Resource** menu, select **Work Request**. You should see the Scan for Java libraries Work Request you submitted in step 2. Wait for the work request to complete.
+4. Scroll down the Fleet details page, under **Resources** menu, select **Work Request**. You should see the Scan for Java libraries Work Request you submitted in step 2. Wait for the work request to complete.
 	![image of work request for java libraries in progress](images/work-request-of-libraries-scan-in-progress.png)
 
 5. If your request is successful, you should see that the Status of the request is marked as **Completed without errors**. It will take approximately 10 minutes for the request to be completed.
 	![image of work request for java libraries in progress completed](images/work-request-of-libraries-scan-completed.png)
 
-6. In the same Fleet details page, under **Resource** menu, select **Java libraries** you should see Java libraries included for the deployed sample Java Web Application in lab 4.
+6. In the same Fleet details page, under **Resources** menu, select **Java libraries** you should see Java libraries included for the deployed sample Java Web Application in lab 4.
 	![image of detected java libraries](images/java-libraries-web.png)
 	The [CVSS](https://www.oracle.com/security-alerts/cvssscoringsystem.html) score is the indication of the security vulnerability associated with the Java library. The score **varies** over time and there might be new vulnerabilities affecting your application since JMS refreshes data from the National Vulnerability Database(NVD) on a weekly basis.  
 	There are **3** categories of CVSS scores for Java libraries in the scan result based on availability in NVD as following:
@@ -94,13 +94,13 @@ In this lab, you will:
 	If your request is submitted successfully, you should receive a notification in green as seen below: 
 	![image of created work request for java libraries](images/work-request-of-libraries-scan-created.png)
 
-3. Scroll down the Fleet details page, under **Resource** menu, select **Work Request**. You should see the Scan for Java libraries Work Request you submitted in step 2. Wait for the work request to complete.
+3. Scroll down the Fleet details page, under **Resources** menu, select **Work Request**. You should see the Scan for Java libraries Work Request you submitted in step 2. Wait for the work request to complete.
 	![image of work request for java libraries in progress](images/work-request-of-libraries-scan-in-progress.png)
 
 4. If your request is successful, you should see that the Status of the request is marked as **Completed without errors**. It will take approximately 10 minutes for the request to be completed.
 	![image of work request for java libraries completed](images/work-request-of-libraries-scan-completed.png)
 
-5. On the Fleet details pages, scroll down to the **Resource** menu and select **Java libraries**. You should be able to see a list of libraries detected. Additional Java libraries are added in the result list which are **oci-java-sdk-common** itself and dependency libraries it included.
+5. On the Fleet details pages, scroll down to the **Resources** menu and select **Java libraries**. You should be able to see a list of libraries detected. Additional Java libraries are added in the result list which are **oci-java-sdk-common** itself and dependency libraries it included.
 	![image of detected java libraries](images/java-libraries-oci.png)
 > **Note:** The Java libraries detected in the list varies depend on the dependencies of your sample application.
 
@@ -126,4 +126,4 @@ You may now **proceed to the next lab.**
 ## Acknowledgements
 
 * **Author** - Youcheng Li, Java Management Service
-* **Last Updated By** - Sherlin Yeo, March 2023
+* **Last Updated By** - Sherlin Yeo, June 2023
