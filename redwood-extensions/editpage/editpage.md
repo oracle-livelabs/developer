@@ -91,7 +91,7 @@ Now that the template is set, let's add the FA data to the page.
 
 ## Task 3: Configure the Save Button
 
-When you added the Edit Form containing the**Form Layout** to the template it automatically created a save button with an action chain that includes all of the actions needed to correctly save changes.
+When you added the Edit Form containing the **Form Layout** to the template it automatically created a save button with an action chain that includes all of the actions needed to correctly save changes.
 
 Next you will modify the **Primary Action** (Save button) included with the **Simple Create and Edit Page Template** to use the action chain from the form's save button.
 
