@@ -228,7 +228,7 @@ Management Gateway Plugin set up successfully.
     </copy>
     ```  
 
-5. As we set the Gateway port to 4479. Open this port on the host firewall by configuring the firewall. 
+5. Since we have set the Gateway port to 4479, configure the host firewall to open this port.
 
     ```
     <copy>
@@ -236,9 +236,9 @@ Management Gateway Plugin set up successfully.
 
     sudo firewall-cmd --reload
     </copy>
-    ```  
+    ```
 
-    > **Note:** This set of commands is specifically for Oracle Linux. Adjust the commands based on your Operating System and Setup.
+    > **Note:** This set of commands is specifically for Oracle Linux. Change the commands based on your Operating System and Setup.
 
 6. Take note of IP address of the host by running following command.
     ```
@@ -382,9 +382,6 @@ The bottom of the emd.properties file should look like this:
     </copy>
     ```
 
-
-
-
 ## Task 6: Verify detection of Managed Instance
 1. In the Oracle Cloud Console, open the navigation menu, click **Observability & Management**, and then click on **Fleets** under **Java Management**.
 
@@ -426,6 +423,8 @@ You may now **proceed to the next lab.**
 
 
 ## Learn More
+
+* Refer to the [Management Gateway Documentation](https://docs.oracle.com/en-us/iaas/management-agents/doc/management-gateway.html) for more details.
 
 * Use the [Troubleshooting](https://docs.oracle.com/en-us/iaas/management-agents/doc/troubleshoot-management-gateway-installation-issues.html) chapter for explanations on how to diagnose and resolve common problems encountered when installing or using Management Gateway.
 
