@@ -51,9 +51,9 @@ for deptno, dname, loc in cur:
 </copy>
 ````
 
-The cursor() method opens a cursor for statements to use.
+The **cursor()** method opens a cursor for statements to use.
 
-The execute() method parses and executes the statement.
+The **execute()** method parses and executes the statement.
 
 The loop fetches each row from the cursor and unpacks the returned tuple into the variables deptno, dname, loc, which are then printed.
 
@@ -64,6 +64,7 @@ Run the script in the Cloud Shell or in a terminal window:
 python3 query2.py
 </copy>
 ````
+
 The output is:
 
 ![Fetch data](./images/fetch_data.png " " )
@@ -95,7 +96,7 @@ print(row)
 </copy>
 ````
 
-This uses the fetchone() method to return just a single row as a tuple. When called multiple time, consecutive rows are returned:
+This uses the **fetchone()** method to return just a single row as a tuple. When called multiple time, consecutive rows are returned:
 
 Run the script in Cloud Shell or in a terminal window:
 
@@ -108,7 +109,6 @@ python3 query_one.py
 ![Query one results](./images/queryone.png " " )
 
 The first two rows of the table are printed.
-.
 
 ## Task 3: Fetching data using fetchmany()
 
@@ -133,7 +133,7 @@ print(res)
 </copy>
 ````
 
-The fetchmany() method returns a list of tuples. By default the number of rows returned is specified by the cursor attribute **arraysize** (which defaults to 100). Here the numRows parameter specifies that three rows should be returned.
+The **fetchmany()** method returns a list of tuples. By default the number of rows returned is specified by the cursor attribute **arraysize** (which defaults to 100). Here the num_Rows parameter specifies that three rows should be returned.
 
 Run the script in a terminal window:
 
@@ -233,10 +233,10 @@ Rerun the *query_arraysize.py* script to compare the performance of different ar
 
 ![Querry array time 2](./images/query_array1.png " ")
 
-In general, larger array sizes improve performance. Depending on how fast your system is, you may need to use different arraysizes than those given here to see a meaningful time difference.
+In general, larger array sizes improve performance. Depending on how fast your system is, you may need to use different arraysizes than those given here, to see a meaningful time difference.
 
 There is a time/space tradeoff for increasing the values. Larger values will require more memory in Python for buffering the records.
-If you know the query returns a fixed number of rows, for example 20 rows, then set arraysize to 20 and prefetchrows to 21.  The addition of one to prefetchrows prevents a round-trip to check for end-of-fetch.  The statement execution and fetch will take a total of one round-trip.  This minimizes load on the database.
+If you know the query returns a fixed number of rows, for example 20 rows, then set arraysize to 20 and prefetchrows to 21.  The addition of one to prefetchrows prevents a round-trip to check for end-of-fetch.  The statement execution and fetch will take a total of one round-trip.  This minimizes the load on the database.
 
 If you know a query only returns a few records, decrease the arraysize from the default to reduce memory usage.
 

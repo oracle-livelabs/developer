@@ -2,15 +2,15 @@
 
 ## Introduction
 
-You may have noticed that our Oracle REST APIs did not require authentication (in the form of a Bearer Token) throughout these Labs. We have deliberately disabled security since testing and interacting with API endpoints can be more manageable. 
+You may have noticed that our Oracle REST APIs did not require authentication (in the form of a Bearer Token) throughout these Labs. We have deliberately disabled security since testing and interacting with API endpoints can be more manageable.
 
 However, best practices for applications such as our example Flask application would require users to authenticate before accessing services.
 
 ## Task 1: Understanding Privileges
 
-1. Controlling access to protected resources is done by defining privileges. Privileges restrict access to only users with at least one set of specified roles. 
+1. Controlling access to protected resources is done by defining privileges. Privileges restrict access to only users with at least one set of specified roles.
 
-   * A privilege is then associated with one or more resource modules (such as our `flask` Resource Module):
+   * A Privilege is then associated with one or more Resource Modules (such as our `flask` Resource Module):
 
      ![Our Flask Resource Module](images/flask-resource-module-in-oci.png " ")
 
@@ -54,8 +54,10 @@ However, best practices for applications such as our example Flask application w
 ## Acknowledgements
 
 * **Author** - Chris Hoina, Senior Product Manager, Database Tools
+
 * **Contributors**
   * Jeff Smith, Distinguished Product Manager, Database Tools
   * Zachary Talke, Product Manager, Database Tools
-  * Brian Spendolini, Principal Product Manager
-* **Last Updated By/Date** - Chris Hoina, August 2022
+  * Brian Spendolini, Contributor
+  
+* **Last Updated By/Date** - Chris Hoina/March 2023

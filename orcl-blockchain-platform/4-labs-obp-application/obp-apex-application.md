@@ -6,6 +6,8 @@ APEX is a low-code development platform that enables you to build scalable, secu
 
 *Estimated Lab Time:* 15 minutes
 
+Watch the video below for a quick walk-through of the lab.
+[Building Car Marketplace application using APEX](videohub:1_oqqqhg96)
 
 ### Objectives
 
@@ -103,7 +105,7 @@ This lab assumes you have:
     - Enter 'sam_dealer2@dealer.com' as the **Email Address**.
     - Select the 'Marketplace' **Workspace**.
     - Enter a **Password** and then **Confirm Password**.
-  
+
   ![Create User Form](images/4-apex-2-8.1.png)
 
 11. After clicking 'Create User' again, check that both new users are displayed on the 'Manage Developers and Users' page as shown. Then click on the APEX logo to return to 'Administration Services.'
@@ -184,7 +186,7 @@ This lab assumes you have:
 
     ![Substitions Form](images/4-apex-4-4-1.png)
     ![Substitions Form](images/4-apex-4-4-2.png)
-    
+
     - Set FABCAR\_CHAINCODE to car\_marketplace\_cc.
     - Set TOKENIZATION\_CHAINCODE to car\_tokenization\_cc.
     - Set DEALER\_1\_URL and DEALER\_2\_URL to john\_dealer1 and sam\_dealer2, respectively. This gives information on API routing.
@@ -208,12 +210,12 @@ This lab assumes you have:
 
   Build Remote server configuration based on *Lab3 Task4*:
     - Set **Name** to the 'Hostname' found in the Gateway details, accessible from the OCI service console.
-  
+
   ![Gateway Hostname](images/4-apex-4-9-1.png)
     - Give your server a  **Static Identifier** (e.g. by changing all punctuation in **Name** to underscores as shown).
     - Set **Endpoint URL** to the same https://'Hostname' from the Gateway details.
     - Now, create remote server in Apex and apply changes
-  
+
   ![Access App Builder](images/4-apex-4-1.3.png)
 
 9. Next, scroll towards the bottom of your 'App Builder' homepage and under **Data Sources**, select 'REST Data Sources.'
