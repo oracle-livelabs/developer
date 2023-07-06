@@ -8,6 +8,9 @@ In this lab, you will be introduced to API Gateway. The gateway is necessary for
 
 *Estimated Lab Time:* 15 minutes
 
+Watch the video below for a quick walk-through of the lab.
+[Create & Setup API Gateway to connect with Smart Contract API's](videohub:1_w01l6lxc)
+
 ### Objectives
 
 In this lab, you will:
@@ -48,7 +51,7 @@ This lab assumes you have:
 
   ![VCN Creation](images/3-gateway-1-4.png)
 
- ## Task 2: Configure Ingress Rules 
+ ## Task 2: Configure Ingress Rules
 
 
 1. Click 'Add Ingress Rules.'
@@ -86,7 +89,7 @@ This lab assumes you have:
 
   ![Deployment Step 1](images/3-gateway-4-4.png)
   ![Deployment Step 1](images/3-gateway-4-4.1.png)
-   
+
 ## Task 5: Create Routes
 
 1. Next, start creating a new routes by adding new routes
@@ -105,16 +108,16 @@ This lab assumes you have:
 
         - Append to URL --> [api/v2/channels/car-marketplace/transactions](https://docs.oracle.com/en/cloud/paas/blockchain-cloud/restoci/op-restproxy-api-v2-channels-channelname-transactions-post.html)
 
-      
+
     - For **Connection Establishment**, **Request Transmit**, and **Reading Response** timeouts, enter 60, 10, and 10 respectively
 
   ![Route 1](images/3-gateway-4-5.1.png)
 
-  
+
 2. Click the '+ Another Route' button and repeat Step 2 for the remaining 5 routes based on the blockchain instances as shown:
 
   ![Route 2](images/3-gateway-4-4.1.png)
-  
+
     - Marketplace Routes
       - marketplace transactions prefix  Path: /dealer1/transactions
       - marketplace URL: Example - https://marketplace-3-oabcs1-iad.blockchain.ocp.oraclecloud.com:7443/restproxy/api/v2/channels/car-marketplace/transactions
@@ -158,7 +161,7 @@ This lab assumes you have:
 
 
 3. 'Review' the deployment information and click 'Create.'
-  
+
   ![Review Deployment](images/3-gateway-4-9.png)
 
 ## Task 6: Prefix Query and Invoke Endpoint During Configuration
@@ -166,7 +169,7 @@ This lab assumes you have:
 Once active, the deployment can be used to make REST API calls between APEX and OBP.
 
 1. Find the **Deployment Information** pane and the **Endpoint** as shown.
-  
+
   ![Deployment Information](images/3-gateway-5-1.png)
 
 

@@ -1,46 +1,27 @@
-# Create Your First Page
+# Welcome page
 
 ## Introduction
 
-In this lab we'll use the Redwood Welcome Page template, along with Oracle JET UI components, to create a page that connects to an Oracle SaaS object.  Our page will display a list of accounts, and allow the list to be filtered.
+In this lab we'll create a new application and create a welcome page built from the Redwood **Welcome Page Template**.  We will use Oracle JET UI components to display a list of accounts, and allow the list to be filtered.
+
+**About the Oracle Redwood User Experience**
+
+The Redwood User Experience is a collective reinvention of how Oracle customers interact with technology and consume information. While Redwood includes a beautiful new set of user interface elements, including the templates you'll work with in this lab; it's also a philosophical approach to solving customer problems in a differentiated and satisfying way.  Redwood page templates improve the user experience of working with our pages. The Redwood templates not only provide a consistent look and feel across the pages in our app, but we'll also be able to leverage the usability features they offer.
 
 Estimated Time: 15 minutes
 
 ### Objectives
 
 In this lab, you will:
-* Get familiar with the development environment
-* Learn to create pages
-* Leverage Redwood templates and components
-
-## Task 1: Create an App UI
-
-You should now be in the Designer, VB Studio's visual editor. We'll start by creating an *App UI*, which is simply an application that includes a user interface component in the form of Visual Builder pages and flows. With App UIs, you can create new interfaces that address specific business needs for your company.
-
-1. On the left side of the Designer, click **+ App UI**:  
-
-	![App UI button](images/results.png)
-
-
-2. In the Create App UI dialog, provide a name in the form **YourName-Accounts**, then click **Create**:
-
-  ![App UI properties](images/wssettings.png)
-
-	In the Diagram view on the right, you can see the flows and pages for this App UI. A flow contains pages that relate to each other. An application can contain multiple flows, and a flow can contain many pages. In this case we have one flow, *main*, and one page, *main-start*:
-
-  ![Flow diagram](images/appflow.png)
-
-3. Double-click  **main-start** to open the page in the Page Designer, one of the main visual editors in the Designer:
-
-  ![IDE](images/IDE.png)
-
-## Task 2: Add a Page Template
+* Become familiar with the development environment
+* Leverage Redwood templates and components to create a welcome page
+* Add Oracle JET UI components to your page
 
 Before we get started, let's explore the Designer a bit.
 
 **Tip:** There are lots of tabs you can click to expand/collapse different areas and give yourself more room to work.
 
-  ![IDE areas](images/IDE2.png)
+  ![IDE areas](images/ide2.png)
 
 Here are the key areas of the Designer you'll use throughout this workshop:
 
@@ -55,18 +36,55 @@ Here are the key areas of the Designer you'll use throughout this workshop:
 
 Note that you can collapse and expand tabs to better manage your working area. When collapsed the tab will show as a vertical tab on the side of the editor. To expand/collapse a tab click that specific tab.
 
+The Components palette contains over a hundred UI components that you can drag and drop onto your pages to design your interfaces. In this workshop, we're going to leverage some page templates designed by Oracle's Redwood Design team to accelerate our application development. These templates provide a responsive user experience, which means your app will adjust to the device accessing it.
+
 **Tip:** In the header area (the black bar along the top), you'll also find the Undo and Redo buttons, which look like this:
 
   ![Undo button](images/undo.png)
 
 If you make a mistake during this lab, click Undo to back out of the last step you did.
 
-The Components palette contains over a hundred UI components that you can drag and drop onto your pages to design your interfaces. In this workshop, we're going to leverage some page templates designed by Oracle's Redwood Design team to accelerate our application development. These templates provide a responsive user experience, which means your app will adjust to the device accessing it.
+## Task 1: Create an App UI
 
-1. Use the search box at the top of the Components palette to search for **welcome**, which will locate the **Welcome Page Template**. Drag the template from the Component palette and drop it on the canvas:
-  ![search box](images/welcome.png)
+You should now be in the Designer, VB Studio's visual editor. We'll start by creating an *App UI*, which is simply an application that includes a user interface component in the form of Visual Builder pages and flows. With App UIs, you can create new interfaces that address specific business needs for your company.
 
-	Let's set some properties for the template to customize it a bit.
+1. On the left side of the Designer's navigator, click the first tab, App UIs, click **+ App UI**:
+
+  ![App UI button](images/results.png)
+
+2. In the Create App UI dialog, provide a name in the form **YourName-Accounts**, then click **Create**:
+
+  ![App UI properties](images/wssettings.png)
+
+In the Diagram view on the right, you can see the flows and pages for this App UI. A flow contains pages that relate to each other. An application can contain multiple flows, and a flow can contain many pages. In this case we have one flow, *main*, and one page, *main-start*:
+
+  ![Flow diagram](images/appflow.png)
+
+## Task 2: Change the Page Template
+
+You should be in the Diagram tab with the Components open.
+
+1. Double-click  **main-start** to open the default page:
+
+  ![Double-Click Main](images/doubleclickmainstart.png)
+
+You are going to configure the main-start page to use the Redwood **Welcome Page Template**.
+
+2. In the right panel you'll find the page properties, click the **Select Page Template** button:
+
+  ![Set Default page](images/selectpagetemplate.png)
+
+In the **Page Templates** window you will see a page named **Welcome Page Template**.  If you do not see this template, go back to the first lab and make sure you have all of the components installed.
+
+3. Select the **Welcome Page Template** and click **Select**:
+
+  ![Welcome page template](images/welcomepagetemplate.png)
+
+## Task 3: Configure the Welcome Page
+
+1. Under **Structure** click on **Welcome Page Template**:
+
+  ![IDE](images/ide.png)
 
 2. Click the **All** tab in the Properties pane and modify these properties:
 
@@ -83,7 +101,7 @@ Your screen should look like this:
 
 In the next lab, we'll add some more useful components to the page.
 
-## Task 3: Add a Search Component and Define a Variable
+## Task 4: Add a Search Component and Define a Variable
 
 1. In the Components palette's search box, type **search**, which will locate a component called **Input Search**.
 2. Drag this component and drop it on the page in the canvas. A pop-up will appear asking which slot you want to use; choose **Search slot**:
@@ -109,7 +127,7 @@ In the next lab, we'll add some more useful components to the page.
 
 The Value field in the Properties pane now contains a reference to our new variable.
 
-## Task 4: Add a Collection Container  
+## Task 5: Add a Collection Container
 
 In this task we'll add a container to the page, which will later hold some data we'll get from Oracle Fusion Cloud Applications.
 
@@ -120,7 +138,7 @@ In this task we'll add a container to the page, which will later hold some data 
   ![Default slot](images/slot.png)
 The layout of our first page is now ready.  Our next step is to add some data to the page from Oracle Fusion Cloud Apps.
 
-Notice how all of our design tasks so far have been done with simple drag and drop functionality and setting properties. This visual development approach is key to the productivity that Visual Builder Studio provides. If you prefer to work in code, however, you can always do so by clicking the Code button right above where the page preview is displayed. Any modifications you make to your page's HTML code while in Code mode are automatically reflected in Design mode, should you choose to return to it.  
+Notice how all of our design tasks so far have been done with simple drag and drop functionality and setting properties. This visual development approach is key to the productivity that Visual Builder Studio provides. If you prefer to work in code, however, you can always do so by clicking the Code button right above where the page preview is displayed. Any modifications you make to your page's HTML code while in Code mode are automatically reflected in Design mode, should you choose to return to it.
 
 At this point your screen should look like this:
   ![Completed page](images/complete.png)
@@ -138,4 +156,4 @@ You may now **proceed to the next lab**.
 ## Acknowledgements
 * **Author** - Shay Shmeltzer, Oracle Cloud Development Tools, August 2022
 * **Contributors** -  Marcie Caccamo, Blaine Carter, Oracle Cloud Development Tools
-* **Last Updated By/Date** - Shay Shmeltzer, Oracle Cloud Development Tools, August 2022
+* **Last Updated By/Date** - Blaine Carter, Oracle Cloud Development Tools, March 2023

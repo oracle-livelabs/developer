@@ -33,9 +33,10 @@ This lab assumes you have:
  ![Create ADB](./images/create_adb.png " ")
 
 3. Create a new Autonomous Database Instance as following:
-    - DB Display Name: python_adb
-    - Workload Type: Transaction Processing
-    - Choose a Deployment Type: Shared Infrastructure
+    - Compartment: (default compartment (root))
+    - Display Name: python_adb
+    - Choose a workload type: Transaction Processing
+    - Choose a deployment type: Shared Infrastructure
 
  ![Basic Info](./images/basic_info.png " ")
 
@@ -59,7 +60,7 @@ Hit **Create Autonomous Database** button
 
 This process might take few minutes. You can check the status of the creation of the Autonomous Database Shared infrastructure, by using the Console.
 
-Once Autonomous Database Shared Infrastructure is provisioned, it is automatically started and you should see the following summary
+Once Autonomous Database Shared Infrastructure is provisioned, it is automatically started and you should see the following summary:
 
  ![Summary ADB](./images/summary.png " ")
 .
@@ -68,7 +69,7 @@ Once Autonomous Database Shared Infrastructure is provisioned, it is automatical
 
 To connect to the Oracle Autonomous Database, you need the wallet file.
 
-1.  In the Autonomous Database Summary screen, select **DB Connection** tab and in the popup **Database Connection** window, in the **Download Client Credentials (Wallet)** section, 
+1.  In the Autonomous Database Summary screen, select **Database Connection** tab and in the popup **Database Connection** window, in the **Download Client Credentials (Wallet)** section,
     -  select Wallet Type: Instance Wallet
     - hit **Download Wallet** button
 
@@ -81,15 +82,14 @@ Hit **Download** button and save the wallet as a zip file to a location on your 
  ![Wallet password](./images/wallet_password.png " ")
 
 Make a note of the password as this will be used for the database connection and it is required in the subsequent labs.
-.
 
 ## Task 3: Upload Wallet to the Cloud Shell
 
 **Cloud Shell**  is a web browser-based terminal accessible from the Oracle Cloud Console and available to all Oracle Cloud Infrastructure users. It’s free to use (within monthly tenancy limits), and it provides access to a Linux shell with a pre-authenticated CLI and other useful tools for following Oracle Cloud Infrastructure service tutorials and labs. The Cloud Shell appears in the Console as a persistent frame and stays active as you navigate to different parts of the Console. Cloud Shell is pre-authenticated with your console credentials.
 
-In the Oracle Autonomous Database Summary screen, we're going to launch Cloud Shell (this has Python pre-installed), and we're going to connect to the Autonomous Database Shared infrastructure, using the Wallet downloaded at the previous task.  
+In the Oracle Autonomous Database Summary screen, we're going to launch Cloud Shell (this has Python pre-installed), and in the subsequent labs we're going to connect to the Autonomous Database Shared infrastructure using the Wallet downloaded at the previous task.  
 
-1. To launch Cloud Shell, sign in to your Oracle Cloud Infrastructure tenancy and click the command prompt icon in Console header:
+1. To launch the Cloud Shell, sign in to your Oracle Cloud Infrastructure tenancy and click the command prompt icon in Console header, then select Cloud Shell from the drop down:
 
  ![Cloud Shell](./images/cloud_shell.png " ")
 
@@ -103,9 +103,9 @@ In the Oracle Autonomous Database Summary screen, we're going to launch Cloud Sh
 In your home folder, create directory _Wallets_ and move the wallet archive to Wallets folder. We are going to unzip the file in this directory
     ````
     $ mkdir Wallets
-    $ mv Wallet\_python_adb.zip ./Wallets
+    $ mv Wallet_python_adb.zip ./Wallets
     $ cd Wallets
-    $ unzip Wallet\_python_adb.zip
+    $ unzip Wallet_python_adb.zip
     ````
     ![unzip](./images/shell_unzip.png " ")
 .
@@ -114,11 +114,19 @@ In your home folder, create directory _Wallets_ and move the wallet archive to W
 
 One of the arguments used in to connect to the Oracle Autonomous Database is the DSN (data source name).  
 
-1.  In the ADB Summary screen, select **DB Connection** tab and in the popup **Database Connection** window, in the **TNS Name** section, **Show** the connection string for the high service level TNS name
-    
+1.  In the ADB Summary screen, select **Database Connection** tab and in the popup **Database Connection** window, in the **TNS Name** section, **Copy** the TNS name and the connection string for the high service level TNS name
+
+    ![connection string](./images/conn-string.png " ")
+
 2. Click 'Close' to close the popup window.
 
+3. Paste the clipboard content to a file called DSN_ADB.txt and then save your changes.
+    ````
+    <copy>
+    vi DSN_ADB.txt
+    </copy>
+    ````
 ## Acknowledgements
 - **Authors** - Veronica Dumitriu
 - **Contributors** - Chris Jones
-- **Last Updated By/Date** - Veronica Dumitriu, July 2022
+- **Last Updated By/Date** - Veronica Dumitriu, Oracle Database Drivers Product Management, Feb 2023

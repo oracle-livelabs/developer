@@ -8,6 +8,8 @@ As a preassembled PaaS, Oracle Blockchain Platform includes all the dependencies
 
 *Estimated Lab Time:* 20 minutes
 
+Watch the video below for a quick walk-through of the lab.
+[Create a Blockchain Network connecting 3 Organizations](videohub:1_9ze86gbw)
 
 ### Objectives
 
@@ -30,7 +32,7 @@ You will also need to create a new [Compartment](https://docs.oracle.com/en-us/i
 1. Now with access to your remote desktop session as shown below, fill in your tenancy/account name and click *Next*
     ![Remote Desktop Landing](images/remote-desktop-landing.png)
 
-2. Click on the down arrow next to *Oracle Cloud Infrastructure Direct Sign-in* to expand and reveal the login input fields, then provide your OCI credentials and click *Sign-in*. Make sure you select oracle idenity cloud service.
+2. Click on the down arrow next to *Oracle Cloud Infrastructure Direct Sign-in* to expand and reveal the login input fields, then provide your OCI credentials and click *Sign-in*. Make sure you select oracle identity cloud service.
     ![OCI Console Login](images/oci-console-login.png)
 
 3. In the OCI services menu, select 'Identity & Security' and click on 'Compartments' to view all compartments available in your tenancy.
@@ -74,7 +76,7 @@ You will also need to create a new [Compartment](https://docs.oracle.com/en-us/i
     - For both instances, select 'Join an existing network' under **Platform Role**
     - This task takes 10 minutes. During this time setup, configure, generate chaincode (*Tasks 4,5,6,7,8*) using  Blockchain App Builder
 
-## Task 4: Open Blockchain App Builder in VSCode 
+## Task 4: Open Blockchain App Builder in VSCode
 
 You will be using Oracle's Blockchain App Builder extension, accessible through Visual Studio Code, for this lab. First you will need to set up environments for each of the 3 blockchain platform instances you created in previous tasks above.
 
@@ -162,7 +164,7 @@ Select '`car_marketplace_cc`.controller.go' under '`car_marketplace_cc`/src/cont
 
 
         return t.Ctx.Model.Save(&asset)
- 
+
 
     }
     </copy>
@@ -183,7 +185,7 @@ Select '`car_marketplace_cc`.controller.go' under '`car_marketplace_cc`/src/cont
         //Car no longer on sale as purchase order is created
         car.ForSale = false
         t.UpdateCar(car)
-        
+
 
         return t.Ctx.Model.Save(&asset)
 

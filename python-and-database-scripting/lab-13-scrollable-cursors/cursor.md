@@ -5,7 +5,7 @@ Scrollable cursors enable python-oracledb thick mode applications to move backwa
 
 This lab will show how to work with srollable cursors using python-oracledb driver
 
-Estimated Lab Time: 3 minutes
+Estimated Lab Time: 5 minutes
 
 ### Objectives
 
@@ -73,4 +73,4 @@ You have learned how to:
 
 * **Authors** - Christopher Jones, Anthony Tuininga, Sharad Chandran, Veronica Dumitriu
 * **Contributors** - Jaden McElvey, Anoosha Pilli, Troy Anthony
-* **Last Updated By/Date** - Veronica Dumitriu, DB Product Management, July 2022
+* **Last Updated By/Date** - Veronica Dumitriu, DB Product Management, June 2023

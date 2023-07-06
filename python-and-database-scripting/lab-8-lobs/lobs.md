@@ -56,7 +56,7 @@ print("CLOB data:", clobdata)
 </copy>
 ````
 
-This inserts some test string data and then fetches one record into clob, which is a python-oracledb character LOB Object. Methods on LOB include size() and read().
+This inserts some test string data and then fetches one record into clob, which is a python-oracledb character LOB Object. Methods on LOB include **size()** and **read()**.
 
 To see the output, run the file:
 
@@ -120,9 +120,9 @@ print("CLOB data:", clobdata)
 </copy>
 ````
 
-The OutputTypeHandler causes python-oracledb to fetch the CLOB as a string. Standard Python string functions such as len() can be used on the result.
+The **OutputTypeHandler** causes python-oracledb to fetch the CLOB as a string. Standard Python string functions such as len() can be used on the result.
 
-The output is the same as for clob.py. To check, run the file clob_string.py in Cloud Shell or in a terminal window:
+The output is the same as for clob.py. To check, run the file *clob_string.py* in Cloud Shell or in a terminal window:
 
 ````
 <copy>
@@ -140,4 +140,4 @@ In this lab, you had an opportunity to try out manipulating Oracle LOBs in your 
 
 * **Authors** - Christopher Jones, Anthony Tuininga, Sharad Chandran, Veronica Dumitriu
 * **Contributors** - Jaden McElvey, Anoosha Pilli, Troy Anthony
-* **Last Updated By/Date** - Veronica Dumitriu, DB Product Management, July 2022
+* **Last Updated By/Date** - Veronica Dumitriu, DB Product Management, June 2023

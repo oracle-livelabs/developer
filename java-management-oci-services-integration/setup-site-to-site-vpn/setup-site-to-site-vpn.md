@@ -690,10 +690,10 @@ if [[ "$FLAG" == "FALSE" ]]; then
 
      > **Note:** Manual addition to IP route table does not persist on restart. You need to re-run json-parser.sh to add those routes again upon restart of your Libreswan host.
 
-## Task 8: Setup Managemnet Gateway and Management Agent
+## Task 8: Setup Management Gateway and Management Agent
 Once you have finishing setting up Site-to-Site VPN, you can install and configure Management Gateway on same host as Libreswan and Management Agent on other on-premises host (in the same network) to demonstrate the working of Site-to-Site VPN setup along with JMS.
 
-* Follow [Manage Java Runtimes, Applications and Managed Instances Inventory with Java Management Service Workshop, Lab 8](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=912) to install, configure and verify Management Gateway and Management Agent.
+* Follow [Manage Java Runtimes, Applications and Managed Instances Inventory with Java Management Service Workshop, Lab 6](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=912) to install, configure and verify Management Gateway and Management Agent.
 
 
 ## Task 9: Verify the Site-to-Site VPN set up
@@ -751,7 +751,7 @@ Once you have finishing setting up Site-to-Site VPN, you can install and configu
     * From the Agents and Gateway list, look for the gateway and agent that was recently installed. The **Availability** should be **Silent**.
     ![image of agents main page](images/silent-agent-and-gateway.png)
 
-    * **Conclusion**: As the traffic from on-premises host is being routed to OCI via VPN and within OCI  through DRG and SGW, the Agents and Gateway change status to from `Active` to `Silent`, as soon as the SGW traffic is `Blocked`.
+    * **Conclusion**: As the traffic from on-premises host is being routed to OCI via VPN and within OCI  through DRG and SGW, the Agents and Gateway change status from `Active` to `Silent`, as soon as the SGW traffic is `Blocked`.
 
 
 
@@ -766,4 +766,4 @@ Once you have finishing setting up Site-to-Site VPN, you can install and configu
 ## Acknowledgements
 
 * **Author** - Bhuvesh Kumar, Java Management Service
-* **Last Updated By** - Bhuvesh Kumar, July 2022
+* **Last Updated By** - Sherlin Yeo, March 2023

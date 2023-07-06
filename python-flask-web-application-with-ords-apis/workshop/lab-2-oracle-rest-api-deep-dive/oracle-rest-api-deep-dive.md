@@ -88,7 +88,7 @@ For this Lab, we'll rely on Swagger's Open Source Editor to review our ORDS Base
 
       ![The OpenAPI info](images/open-api-paths.png " ")
 
-      Expand the **`/orders/`** Path. We've designed this Path to accept both **`GET`** and **POST`** requests.
+      Expand the **`/orders/`** Path. We've designed this Path to accept both **`GET`** and **`POST`** requests.
 
       ![The OpenAPI info](images/orders-paths-detail.png " ")
 
@@ -156,7 +156,7 @@ For this Lab, we'll rely on Swagger's Open Source Editor to review our ORDS Base
 
         Next, we'll review the **`/orders/`** Path. Recall this Path has both a **`GET`** and a **`POST`** request. We'll review the **`POST`** request for this example.
         
-        1. Expand the window and click **Try it out**. Notice the Example Value - Schema; how a JSON object is structured when a **`POST`** request is sent.
+        1. Expand the window and click **Try it out**. Pause and review the Example Value - Schema section. You'll notice how the **`POST`** request is structured as a JSON object.
 
             ![Orders post path overview.](images/post-purchase-history.png " ")
 
@@ -222,5 +222,5 @@ For this Lab, we'll rely on Swagger's Open Source Editor to review our ORDS Base
 - **Contributors**
   - Jeff Smith, Distinguished Product Manager, Database Tools
   - Zachary Talke, Product Manager, Database Tools
-  - Brian Spendolini, Principal Product Manager
-- **Last Updated By/Date** - Chris Hoina, September 2022
+  - Brian Spendolini, Contributor
+- **Last Updated By/Date** - Chris Hoina, March 2023

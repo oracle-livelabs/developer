@@ -49,9 +49,9 @@ In this lab, you will:
                 <dependency>
                     <groupId>com.oracle.oci.sdk</groupId>
                     <artifactId>oci-java-sdk-bom</artifactId>
-                    <!-- Version 2.33.0 is the latest version at the time of writing-->
+                    <!-- Version 3.8.0 is the latest version at the time of writing-->
                     <!-- Obtain the latest sdk version from https://github.com/oracle/oci-java-sdk/releases-->
-                    <version>2.33.0</version>
+                    <version>3.8.0</version>
                     <type>pom</type>
                     <scope>import</scope>
                 </dependency>
@@ -61,6 +61,11 @@ In this lab, you will:
             <dependency>
                 <groupId>com.oracle.oci.sdk</groupId>
                 <artifactId>oci-java-sdk-jms</artifactId>
+            </dependency>
+            <dependency>
+                <groupId>com.oracle.oci.sdk</groupId>
+                <artifactId>oci-java-sdk-common-httpclient-jersey</artifactId>
+                <version>3.8.0</version>
             </dependency>
         </dependencies>
 
@@ -102,7 +107,8 @@ In this lab, you will:
             final AuthenticationDetailsProvider provider = new ConfigFileAuthenticationDetailsProvider(configFile);
 
             /* Create a service client */
-            JavaManagementServiceClient client = new JavaManagementServiceClient(provider);
+            JavaManagementServiceClient.Builder builder = JavaManagementServiceClient.builder();
+            JavaManagementServiceClient client = builder.build(provider);
 
             /* Create a request and dependent object(s). */
             GetFleetRequest getFleetRequest = GetFleetRequest.builder()
@@ -137,7 +143,7 @@ In this lab, you will:
 1. Set up a virtual environment.
 
   Oracle recommends that you run the SDK in a virtual environment with virtualenv. This allows you to isolate the dependencies for the SDK and avoids any potential conflicts with other Python packages which may already be installed (e.g. in your system-wide Python).
-  With Linux, virtualenv is usually in a separate package from the main Python package. If you need to install virtualenv, use `pip install virtualenv`.
+  With Linux, virtualenv is usually in a separate package from the main Python package. If you need to install virtualenv, use `pip install virtualenv` or `pip3 install virtualenv` .
 
   Start by creating a new directory to work with:
 
@@ -172,7 +178,9 @@ In this lab, you will:
 3. Install `oci` package with:
 
     ```
+    <copy>
     pip install oci
+    </copy>
     ```
 
 4. Access the sample [API](https://docs.oracle.com/en-us/iaas/api/#/en/jms/20210610/Fleet/GetFleet) lab.
@@ -322,4 +330,4 @@ You may now **proceed to the next lab.**
 ## Acknowledgements
 
 * **Author** - Esther Neoh, Java Management Service
-* **Last Updated By** - Yixin Wei, June 2022
+* **Last Updated By** - Sherlin Yeo, March 2023
