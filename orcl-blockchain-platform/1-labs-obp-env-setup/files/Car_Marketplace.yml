@@ -64,6 +64,8 @@ assets:
             mandatory: false
       methods:
         crud: [create, getById, update]
+
+
     - name: invoice            #An invoice is a bill that details goods and services that have been or will be purchased by a buyer
       properties:
           - name: invoiceId
@@ -91,6 +93,8 @@ assets:
       methods:
         crud: [create, getById, update]
         others: [getByRange]
+
+        
     - name: PO       
       properties:
           - name: PO    
@@ -121,10 +125,143 @@ assets:
       methods:
         crud: [create, getById, update]
         others: [getByRange]
+
+    - name: FiatToken # Asset name
+      type: token  # Asset type
+      standard: erc1155+   # Token standard
+
+      anatomy: 
+          type: fungible # Token type
+          unit: fractional # Token unit
+
+      behavior: # Token behaviors
+          - divisible: 
+                decimal: 2  
+          - mintable: #Mint tokens
+          - transferable #Transfers tokens from the caller to a specified account
+          - burnable #Deactivates or burns, tokens from transaction caller's account
+          - holdable #Notary, responsible to either complete or release the hold.
+          - roles: 
+                minter_role_name: minter
+                notary_role_name: notary 
+
+      properties:
+          - name: currency_name # Custom attribute to represent the token in certain currency. This attribute is helpful for exchanging the tokens with fiat currency.
+            type: string
+
+          - name: token_to_currency_ratio # Custom attribute to specify the token to currency ratio. This attribute is helpful for exchanging the tokens with fiat currency.
+            type: number
+
+    - name: CarTitle #Asset name
+      type: token #Asset type
+      symbol: CTNFT    # Token symbol
+      standard: erc1155+   # Token standard
+      
+      anatomy:
+          type: nonfungible # Token type
+          unit: whole  #Token unit
+      
+      behavior:
+        - indivisible                
+        - singleton                   
+        - mintable:                   
+            max_mint_quantity: 20000
+        - transferable                
+        - burnable
+        - roles:
+            minter_role_name: minter
+            burner_role_name: burner
+      
+      properties:  # Custom asset attributes for non-fungible token 
+          - name: title # Array of title transfer events
+            type: title_entries[]
+          - name: service # Array of service entries and accidents
+            type: service_entries[]
+      metadata: # To maintain the metadata on-chain, this tag will be used. The user creating the non-fungible token for the first time, can only update the metadata attribute values.
+          
+          - name: VIN
+            type: string
+            validate: min(17),max(17)
+            mandatory: true
+           
+          - name: make
+            type: string
+            validate: /^\s*(cheverolet|ford|general\smotors|toyota|hyundai|tesla|tata|fiat|volkswagen|peugeot)\s*$/
+            mandatory: true
+
+          - name: model
+            type: string
+            mandatory: true
+
+          - name: year
+            type: number
+            validate: positive()
+            mandatory: true
+
+          - name: year1stsold
+            type: number
+            validate: positive()
+            mandatory: true
+
+          - name: fuel
+            type: string
+
+  
+    - name: title_entries
+      type: embedded
+      properties:
+          - name: dealership
+            type: string
+            mandatory: true
+          - name: dealernumber  
+            type: string
+            mandatory: true
+          - name: location  
+            type: string
+            mandatory: true
+          - name: mileage  
+            type: number
+            mandatory: true
+          - name: newowner
+            type: string
+            mandatory: true
+          - name: purchaseprice
+            type: float
+            mandatory: true
+          - name: purchasedate 
+            type: date
+            mandatory: true
+
+    - name: service_entries
+      type: embedded
+      properties:
+          - name: eventno
+            type: number
+            mandatory: true
+          - name: accident  
+            type: boolean
+            mandatory: true
+          - name: eventdesc  
+            type: string
+            mandatory: true
+          - name: mileage
+            type: number
+            mandatory: true
+          - name: servicecost
+            type: float
+            mandatory: true
+          - name: servicedate 
+            type: date
+            mandatory: true
+          - name: claimnumber 
+            type: string
+            mandatory: true
+
+
 customMethods:
     - executeQuery
-    - "CreateCarWrapper()"
-    - "CreatePOWrapper()"
-    - "UpdatePOWrapper()"
-    - "CarTransfer(vin string, buyerId string, sellerId string, price int, PO string, date string)" #Only happens after PO confirm receipt or resolve is accepted
-    
+    - CreateCarWrapper()
+    - CreatePOWrapper()
+    - UpdatePOWrapper()
+    - CarTransfer(vin string, buyerId string, sellerId string, price int, PO string, date string) #Only happens after PO confirm receipt or resolve is accepted
+    - UpdateTitle(tokenId string, dealerno string,dealername string,dealerloc string,mileage int,newowner string,purchaseprice float64,dateString string)

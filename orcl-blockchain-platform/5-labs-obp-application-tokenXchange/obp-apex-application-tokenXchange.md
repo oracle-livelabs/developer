@@ -17,35 +17,12 @@ This lab assumes you have:
 - You have completed:
     - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
     - Lab: Environment Setup
-    - Lab: Create a Blockchain Network connecting 3 Organizations
+    - Lab: Create a Blockchain Network connecting 2 Organizations
     - Lab: Create and Deploy Smart Contracts using Oracle Blockchain App Builder
     - Lab: Create & Setup API Gateway to connect with Smart Contract API's
     - Lab: Building Car Marketplace application using APEX
-
-## Task 1: Initialize marketplace, dealer1 and  dealer2 inventories
-
-1. Import the Marketplace Tokenization Postman collection [Marketplace Tokenization](files/Marketplace-Apex-Livelab-Initialization.postman_collection.json?download=1) and assign variable definitions as shown.
-
-  ![Import Collection](images/import_collection.png)
-  ![Import Collection 2](images/import_collection2.png)
-
-2. Enter the environment setup variables in Postman Environment 'Tokenization' (`marketplace_initialization.postman_environment.json`) and assign variable definitions. Some sample definitions are shown below. Obtain the REST URL from the Blockchain Admin Console dashboard
-
-  ![Tokenization Definitions](images/apex_init_tokenization_definitions.png)
-  ![Tokenization Definitions](images/3-gateway-4.bc.1.png)
-
-
-
-3. Open tokenization collection, and run integrations as described in steps 1,2,3 by clicking Send invoking the API calls in postman
-
-  ![Tokenization Definitions](images/apex-marketplace-init.png)
-
-  ![Tokenization Definitions](images/apex-dealer1-inventory-init.png)
-
-  ![Tokenization Definitions](images/apex-dealer2-inventory-init.png)
-
    
-## Task 2: Setup APEX Web Credentials opening Apex console
+## Task 1: Setup APEX Web Credentials opening Apex console
 
 1. 'Open the Apex Application' and login to 'DEVELOPER' as shown:
     - Enter 'marketplace' as the **Workspace**.
@@ -79,7 +56,7 @@ This lab assumes you have:
   - dealer_2_obp_auth (sam_dealer2 account)
 
 
-## Task 3: Complete Car Marketplace Workshop by Trading a Car - Add a car to dealer1 Inventory
+## Task 2: Complete Car Marketplace Workshop by Trading a Car - Add a car to dealer1 Inventory
 
 You will now create a car and simulate a transaction between the founder organization and a car dealer partner. When a car is added to the Marketplace, fiat tokens are put on hold in the founder instance and then transacted with partner dealerships as necessary. 
 
@@ -124,7 +101,7 @@ You will now create a car and simulate a transaction between the founder organiz
   ![Car Delaership](images/apex-car-nftservices.png)
 
 
-## Task 4: dealer2 - Deposit Tokens in to the account
+## Task 3: dealer2 - Deposit Tokens in to the account
 
 1. Now login as the other dealer, sam_dealer2.
 
@@ -140,7 +117,7 @@ You will now create a car and simulate a transaction between the founder organiz
 
   ![Car Delaership](images/apex-accountbalance.png)
 
-## Task 5: dealer2 - Search Car
+## Task 4: dealer2 - Search Car
 
 1. Navigate to Marketplace
 
@@ -150,7 +127,7 @@ You will now create a car and simulate a transaction between the founder organiz
 
   ![Car Delaership](images/apex-cardetailspayment.png)
 
-## Task 6: dealer2 - Purchase and Confirm Purchase
+## Task 5: dealer2 - Purchase and Confirm Purchase
 
 1. Confirm vehicle Purchase
 
@@ -158,7 +135,7 @@ You will now create a car and simulate a transaction between the founder organiz
 
 Purchase order will now be created.
 
-## Task 7: Dealer1 - Review & Confirm the order placed by dealer2
+## Task 6: Dealer1 - Review & Confirm the order placed by dealer2
 
 1. Return to dealer 1's account, and navigate to orders received. You should be able to see the order placed by dealer 2.
 
@@ -170,7 +147,7 @@ Purchase order will now be created.
 
 This action confirms the order by the seller.
 
-## Task 8: dealer2 - Order Processed and Accepted
+## Task 7: dealer2 - Order Processed and Accepted
 
 1. Return to dealers 2's account, and navigate to orders placed. You will see the order placed should now be processed and ready to complete the purchase.
 
@@ -189,7 +166,7 @@ Select "Accept Receipt" to complete order or "Cancel Order" to cancel the order.
  ![Car Delaership](images/apex-proceed-payment.png)
 
 
-## Task 10: dealer2 - Token Transfer & Delivery
+## Task 9: dealer2 - Token Transfer & Delivery
 1. Once purchaser Accepts receipt, the token transfer will now occur and the vehicle will be delivered to the new owner.
 
   ![Car Delaership](images/apex-vehicledelivered.png)

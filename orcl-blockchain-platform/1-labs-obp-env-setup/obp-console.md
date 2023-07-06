@@ -174,7 +174,7 @@ Select '`car_marketplace_cc`.controller.go' under '`car_marketplace_cc`/src/cont
     <copy>
     func (t *Controller) CreatePOWrapper(asset PO) (interface{}, error) {
 
-        //Verify that car exists
+       //Verify that car exists
         car, err := t.GetCarById(asset.Vin)
         if err != nil {
           return nil, fmt.Errorf("car with id: %s does not exist", asset.Vin)
@@ -183,7 +183,6 @@ Select '`car_marketplace_cc`.controller.go' under '`car_marketplace_cc`/src/cont
         //Car no longer on sale as purchase order is created
         car.ForSale = false
         t.UpdateCar(car)
-        
 
         return t.Ctx.Model.Save(&asset)
 
@@ -200,72 +199,73 @@ Select '`car_marketplace_cc`.controller.go' under '`car_marketplace_cc`/src/cont
     func (t *Controller) UpdatePOWrapper(asset PO) (interface{}, error) {
 
         //Verifies purchase order exists
-        _, err := t.GetPOById(asset.PO)
+      _, err := t.GetPOById(asset.PO)
+      if err != nil {
+        return nil, fmt.Errorf("po with id: %s does not exist", asset.PO)
+      }
+
+      //If vehicle is delivered to buyer
+      if asset.OrderStatus == "Delivered" {
+
+        var invoiceObject Invoice
+
+        //Verify car exists in ledger
+        car, err := t.GetCarById(asset.Vin)
         if err != nil {
-          return nil, fmt.Errorf("po with id: %s does not exist", asset.PO)
+          return nil, fmt.Errorf("car with id: %s does not exist", asset.Vin)
         }
 
-        //If vehicle is delivered to buyer
-        if asset.OrderStatus == "Delivered" {
+        car.ForSale = true
 
-          var invoiceObject Invoice
+        t.UpdateCar(car)
 
-          //Verify car exists in ledger
-          car, err := t.GetCarById(asset.Vin)
-          if err != nil {
-            return nil, fmt.Errorf("car with id: %s does not exist", asset.Vin)
+        //Create invoice sent to buyer
+        invoiceObject.Vin = asset.Vin
+        invoiceObject.Po_number = asset.PO
+        invoiceObject.Price = car.Price
+        invoiceObject.Recipient = asset.Purchaser
+        invoiceObject.Status = false
+
+        invoiceObject.InvoiceId = asset.InvoiceId
+
+        t.CreateInvoice(invoiceObject)
+
+        currentTime := time.Now().String()
+
+        var ts_formatted string
+
+        for i, c := range currentTime {
+          fmt.Printf("Start Index: %d Value:%s\n", i, string(c))
+
+          if string(c) == " " {
+            fmt.Println(ts_formatted)
+            break
           }
-
-          car.ForSale = true
-
-          t.UpdateCar(car)
-
-          //Create invoice sent to buyer
-          invoiceObject.Vin = asset.Vin
-          invoiceObject.Po_number = asset.PO
-          invoiceObject.Price = car.Price
-          invoiceObject.Recipient = asset.Purchaser
-          invoiceObject.Status = false
-
-          invoiceObject.InvoiceId = asset.InvoiceId
-
-          t.CreateInvoice(invoiceObject)
-
-          currentTime := time.Now().String()
-
-          var ts_formatted string
-
-          for i, c := range currentTime {
-            fmt.Printf("Start Index: %d Value:%s\n", i, string(c))
-
-            if string(c) == " " {
-              fmt.Println(ts_formatted)
-              break
-            }
-            ts_formatted += string(c)
-          }
-
-          //Invoke Custom Method: Car Transfer
-          t.CarTransfer(asset.Vin, asset.Purchaser, car.OwnerId, asset.PO, car.Price, ts_formatted)
-
+          ts_formatted += string(c)
         }
 
-        //If vehicle is rejected by buyer
-        if asset.OrderStatus == "Rejected" {
+        //Invoke Custom Method: Car Transfer
+        t.CarTransfer(asset.Vin, asset.Purchaser, car.OwnerId, asset.PO, car.Price, ts_formatted)
 
-          car, err := t.GetCarById(asset.Vin)
-          if err != nil {
-            return nil, fmt.Errorf("car with id: %s does not exist", asset.Vin)
-          }
+      }
 
-          //Set car for sale back to true
-          car.ForSale = true
-          t.UpdateCar(car)
+      //If vehicle is rejected by buyer
+      if asset.OrderStatus == "Rejected" {
 
+        car, err := t.GetCarById(asset.Vin)
+        if err != nil {
+          return nil, fmt.Errorf("car with id: %s does not exist", asset.Vin)
         }
-        return t.Ctx.Model.Update(&asset)
+
+        //Set car for sale back to true
+        car.ForSale = true
+        t.UpdateCar(car)
+
+      }
+      return t.Ctx.Model.Update(&asset)
 
     }
+
     </copy>
     ```
 
@@ -342,26 +342,56 @@ Select '`car_marketplace_cc`.controller.go' under '`car_marketplace_cc`/src/cont
     }
     </copy>
     ```
+  
+  - 'UpdateTitle': Transfer vehicle ownership from one dealer to another..
 
-## Task 8: Deploy Marketplace Chaincode in local Environment
+  ```
+    <copy>
 
-Blockchain App Builder chaincode deployment starts the Hyperledger Fabric basic network, other services, and installs and instantiates the chaincode for you.
+    func (t *Controller) UpdateTitle(tokenId string, dealerno string, dealername string, dealerloc string, mileage int, newowner string, purchaseprice float64, dateString string) (interface{}, error) {
 
-1. In the **Chaincode Details** pane, select 'Deploy.'
+        var tokenAsset CarTitle
+        _, err := t.Ctx.ERC1155Token.Get(tokenId, &tokenAsset)
 
-2. In the deployment wizard:
-    - Ensure the correct chaincode is selected.
-    - Select your target environment. In this case, choose **Local Environment**.
-    - Select the channel you want to deploy to. A channel named **mychannel** is created by default with the extension's installation, and can be used for testing.
+        if err != nil {
+          return nil, fmt.Errorf("Token with id: %s does not exist", tokenId)
+        }
 
-3. Ensure that your form reads as shown and click 'Deploy.'
+        dateBytes, err := json.Marshal(dateString)
+        if err != nil {
+          return nil, fmt.Errorf("error in marshalling %s", err.Error())
+        }
 
-  ![Deploy chaincode](images/2-app-builder-4-3.png)
+        var dateValue date.Date
+        err = json.Unmarshal(dateBytes, &dateValue)
+        if err != nil {
+          return nil, fmt.Errorf("error in unmarshalling the date %s", err.Error())
+        }
 
-  If you receive an error message in the **Output** console window (located at the bottom of your Visual Studio window), open the Docker Desktop app and copy/paste the given command into your terminal to start the Docker daemon. Restart Visual Studio and repeat steps 1-3 as necessary.
+        newTitle := Title_entries{
+          Dealernumber:  dealerno,
+          Dealership:    dealername,
+          Location:      dealerloc,
+          Mileage:       mileage,
+          Newowner:      newowner,
+          Purchaseprice: purchaseprice,
+          Purchasedate:  dateValue,
+        }
 
+        tokenAsset.Title = append(tokenAsset.Title, newTitle)
 
-## Task 9: Add Participant Organizations to Network - Task4 Continuation
+        _, err = t.UpdateCarTitleToken(tokenAsset)
+        if err != nil {
+          return nil, err
+        }
+
+        msg := fmt.Sprintf("Title Updated")
+        return msg, nil
+   }
+   </copy>
+   ```
+
+## Task 8: Add Participant Organizations to Network - Task4 Continuation
 
 Blockchain instances should have been created by now (Task4).  Configure the Blockchain Instances (Step3) to join the partner organizations to your network, you need to export their settings and import them into the founder.
 
@@ -402,7 +432,7 @@ Blockchain instances should have been created by now (Task4).  Configure the Blo
   ![Topology View](images/1-obp-4-10.png)
 
 
-## Task 10: Create a Channel
+## Task 9: Create a Channel
 
 We now need to join the organizations at the channel level to allow communication between the founder and participants.
 
@@ -430,7 +460,7 @@ We now need to join the organizations at the channel level to allow communicatio
   ![Check Channel Orgs](images/1-obp-5-5.png)
 
 
-## Task 11: Join Participant Organizations - Peer Nodes to Channel
+## Task 10: Join Participant Organizations - Peer Nodes to Channel
 
 You're almost done setting up your blockchain network! Simply use the participant instances to join the channel created in the previous step.
 
@@ -445,7 +475,7 @@ You're almost done setting up your blockchain network! Simply use the participan
 4. Repeat Steps 1-3 from the 'dealer2' console.
 
 
-## Task 12: Set Anchor Peers
+## Task 11: Set Anchor Peers
 
 Each member using a channel (whether founder or participant) must designate at least one anchor peer. Anchor peers are primary network contact points, and are used to discover and communicate with other network peers on the channel.
 
@@ -468,7 +498,7 @@ Each member using a channel (whether founder or participant) must designate at l
 5. Repeat for both participant organizations, 'dealer1' and 'dealer2'.
 
 
-## Task 13: Create Dealership Accounts
+## Task 12: Create Dealership Accounts
 
 Use IDCS to create and add both 'john_\dealer1' and 'sam_\dealer2' users, and then assign them roles to control usage of their OBP instances: 'dealer1' and 'dealer2'.
 
