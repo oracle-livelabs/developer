@@ -1,4 +1,4 @@
-# Create a Blockchain Network connecting 3 Organizations
+# Create a Blockchain Network connecting 2 Organizations
 
 ## Introduction
 
@@ -11,7 +11,7 @@ As a preassembled PaaS, Oracle Blockchain Platform includes all the dependencies
 
 ### Objectives
 
-- Create a permissioned network that consists of 1 founder and 2 partner blockchain instances
+- Create a permissioned network that consists of 1 founder and 1 partner blockchain instances
 
 ### Prerequisites
 This lab assumes you have:
