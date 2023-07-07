@@ -29,7 +29,7 @@ This lab assumes you have:
 - You have completed:
     - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
     - Lab: Environment Setup
-    - Lab: Create a Blockchain Network connecting 3 Organizations & Configuring Oracle Blockchain App Builder
+    - Lab: Create a Blockchain Network connecting 2 Organizations & Configuring Oracle Blockchain App Builder
     
 ## Task 1: Deploy Car Marketplace Smart Contract (Chaincode) to Founder Instance (Marketplace) from Blockchain App Builder
 
@@ -188,7 +188,7 @@ Now assign the endorsement policy by by selecting the signature policy and click
     - Step 1 – Initialize Token: This method creates a token and initializes the token properties. The asset and its properties are saved in the state database. This method can be invoked only by the Token Admin of the chaincode.
 
 
-  ![Initialize Token](images/initialize_token.png)
+  ![Initialize Token](images/initialize_token_1.png)
 
     - Step 2, 3, 4 – Create & Associate Account(Admin User):  This method creates an account for a specified user and token. An account must be created for any user who will have tokens at any point. Accounts track balances, on-hold balances, and transation history.
 
@@ -196,7 +196,7 @@ Now assign the endorsement policy by by selecting the signature policy and click
 
     - Copy the account id received when creating the account. Substitute the accountid while associating the account as shown.
 
-  ![Initialize Token](images/user_tokens.png)
+  ![Initialize Token](images/associate_token.png)
 
     - Step 5, 6 – Add Role: This method adds a role to a specified user and token. This method can be called only by the Token Admin of the chaincode.
 
@@ -228,7 +228,7 @@ Now assign the endorsement policy by by selecting the signature policy and click
 
 ## Task 7: Initialize dealer1 and  dealer2 inventories
 
-1. Use the same postman collection imported in Task5 --> Step 1 & 2
+1. Use the same postman collection imported in Task5 --> Step 10 & 11
 
 2. Initialize inventory for Dealer1 & Dealer2
 

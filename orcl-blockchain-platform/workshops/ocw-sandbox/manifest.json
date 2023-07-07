@@ -18,7 +18,7 @@
       "filename": "https://oracle-livelabs.github.io/common/labs/setup-compute-generic/setup-compute-novnc-ssh.md"
     },
     {
-      "title": "Lab 1: Create 3 Organization Blockchain Network & Generate Smart Contracts ",
+      "title": "Lab 1: Create 2 Organization Blockchain Network & Generate Smart Contracts",
       "description": "OBP Environment Setup",
       "filename": "../../1-labs-obp-env-setup/obp-console.md"
     },
