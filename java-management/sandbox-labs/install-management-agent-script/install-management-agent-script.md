@@ -30,8 +30,14 @@ In this lab, you will:
 3. Open the generated remote desktop URL located at the bottom of the **Reservation Information** panel.
     ![image of novnc link](images/novnc-link.png)
 
-4. The remote graphical desktop of the compute instance will be displayed on the browser. On the left side of the screen is the livelab workshop. On the right side of the screen is a browser.
-   ![image of location of novnc browser](images/novnc-browser-main-page.png)
+4. The remote graphical desktop of the compute instance will be displayed on the browser. Click the title bar to show the Chrome dialog box.
+    ![image of chrome dialog box](images/novnc-chrome-dialog-box.png)
+
+  Click **X** to close the dialog box.
+    ![image of close dialog box](images/novnc-chrome-close-dialog-box.png)
+
+  On the left side of the screen is the LiveLabs workshop. On the right side of the screen is a browser.
+    ![image of location of novnc browser](images/novnc-browser-main-page.png)
 
 5. On the bookmarks bar of the browser, click on the bookmark **OCI**. This opens the Oracle Cloud Infrastructure (OCI) login page.
    ![image of browser bookmark](images/browser-bookmark.png)
@@ -51,7 +57,7 @@ In this lab, you will:
 9. On the fleet details page, click **Set up management agent**.
     ![image of novnc fleet page setup management agent](images/novnc-fleet-page-setup-management-agent.png)
 
-10. Under the download installation script, select the Linux version of the installation script and click to download it. The installation script will be downloaded to the downloads folder.
+10. Under **Download installation script**, select the Linux version of the installation script and click to download it. The installation script will be downloaded to the Downloads folder.
 
     ![image of page to select installation script os](images/novnc-download-installation-script-os.png)
 
