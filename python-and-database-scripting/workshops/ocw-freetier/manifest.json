@@ -88,7 +88,7 @@
             "filename": "../../lab-15-query-json/query-json.md"
         },
         {
-            "title": "Lab: Terminate Oracle Autonomous Database",
+            "title": "Lab 16: Terminate Oracle Autonomous Database (Optional)",
             "description": "Terminating an Oracle Autonomous Database permanently",
             "filename":"https://oracle-livelabs.github.io/common/labs/terminate-adb/terminate-adb.md"
         },
