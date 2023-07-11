@@ -20,47 +20,50 @@ This lab assumes you have completed the following labs:
 
 ## Task 1: Working with scrollable cursors
 
-Review the code contained in *query\_scroll.py*:
-````
-<copy>
-import oracledb
-import db_config_thick as db_config
+1. Review the code contained in *query\_scroll.py*:
 
-con = oracledb.connect(user=db_config.user,
-                        password=db_config.pw, 
-                        dsn=db_config.dsn,
-                        config_dir=db_config.config_dir, wallet_location=db_config.wallet_location, wallet_password=db_config.wallet_password)
-cur = con.cursor(scrollable=True)
+    ````
+    <copy>
+    import oracledb
+    import db_config_thick as db_config
 
-cur.execute("select * from dept order by deptno")
+    con = oracledb.connect(user=db_config.user,
+                            password=db_config.pw, 
+                            dsn=db_config.dsn,
+                            config_dir=db_config.config_dir, wallet_location=db_config.wallet_location, wallet_password=db_config.wallet_password)
+    cur = con.cursor(scrollable=True)
 
-cur.scroll(2, mode="absolute")  # go to second row
-print(cur.fetchone())
+    cur.execute("select * from dept order by deptno")
 
-cur.scroll(-1)                    # go back one row
-print(cur.fetchone())
-</copy>
-````
+    cur.scroll(2, mode="absolute")  # go to second row
+    print(cur.fetchone())
 
-Run the script in a terminal window:
-````
-<copy>
-python query_scroll.py
-</copy>
-````
-Edit *query_scroll.py* and experiment with different scroll options and orders, such as:
+    cur.scroll(-1)                    # go back one row
+    print(cur.fetchone())
+    </copy>
+    ````
 
-````
-<copy>
-cur.scroll(1)  # go to next row
-print(cur.fetchone())
+2. Run the script in a terminal window:
 
-cur.scroll(mode="first")  # go to first row
-print(cur.fetchone())
-</copy>
-````
+    ````
+    <copy>
+    python query_scroll.py
+    </copy>
+    ````
 
-Try some scroll options that go beyond the number of rows in the resultset.
+3. Edit *query_scroll.py* and experiment with different scroll options and orders, such as:
+
+    ````
+    <copy>
+    cur.scroll(1)  # go to next row
+    print(cur.fetchone())
+
+    cur.scroll(mode="first")  # go to first row
+    print(cur.fetchone())
+    </copy>
+    ````
+
+4. Try some scroll options that go beyond the number of rows in the resultset.
 
 
 ## Conclusion
