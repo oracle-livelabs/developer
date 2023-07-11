@@ -50,7 +50,7 @@ In this lab, you will:
 
     >**Note:** It will take approximately 15 minutes for the request to be completed.
 
-6. Once the work request status shows **Completed without Errors**, scroll down to the **Resource** menu and select **Analysis reports**. 
+6. Once the work request status shows **Completed without Errors**, scroll down to the **Resources** menu and select **Analysis reports**. 
 
     You should see a list of Crypto analysis reports that have been conducted in your Fleet. The latest **Crypto event analysis** that has been completed should be displayed at the top of the list.
 
@@ -62,14 +62,18 @@ In this lab, you will:
 
     ![image of crypto event analysis report](images/crypto-result-final2.png)
 
-7. You can click on the **Name** of the **Analysis report** and scroll down to get more details about the issue.
+7. You can click the **Name** of the **Analysis report** and scroll down to get more details about the issue.
 
     ![image of crypto event analysis report](images/crypto-result-final-details.png)
 
 
 ## Task 2: (Optional) Download Crypto Event Analysis Report
 
-1. To access the report, navigate to the **Fleet** details page and click on the **Object storage bucket** name under **Object storage**.
+1. For some of its advanced features, the Java Management Service uses the **Object Storage Service** to store fleet resources, such as **JDK Flight Recording** (JFR) files and **Crypto Event Analysis** reports for users to view.
+   In crypto event analysis, the JFR recordings are uploaded to the object storage bucket before retrieval for analysis. The report is then uploaded to object storage bucket.
+   See [Object Storage Overview]( https://docs.oracle.com/en-us/iaas/Content/Object/Concepts/objectstorageoverview.htm) to read more about object storage service.
+
+2. To access the report, navigate to the **Fleet** details page and click the **Object storage bucket** name under **Object storage**.
 
     ![image of crypto event run settings](images/fleet-bucket-link.png)
 
@@ -149,7 +153,7 @@ In this lab, you will:
 You may now **proceed to the next lab.**
 
 ## Learn More
- * Refer to the [Advanced Features](https://docs.oracle.com/en-us/iaas/jms/doc/advanced-features.html), [Work Request](https://docs.oracle.com/en-us/iaas/jms/doc/getting-started-java-management-service.html#GUID-47C63464-BC0C-4059-B552-ED9F33E77ED3) and [Viewing a Work Request](https://docs.oracle.com/en-us/iaas/jms/doc/fleet-views.html#GUID-F649F0E5-DD54-4DEC-A0F1-942FE3552C93) sections of the JMS documentation for more details.
+ * Refer to the [Advanced Features](https://docs.oracle.com/en-us/iaas/jms/doc/advanced-features.html), [Work Requests](https://docs.oracle.com/en-us/iaas/jms/doc/using-java-management-service.html#GUID-77AEEBC0-93A5-4E99-96D6-BEE0FEE4539F) sections of the JMS documentation for more details.
 
  * Use the [Troubleshooting](https://docs.oracle.com/en-us/iaas/jms/doc/troubleshooting.html#GUID-2D613C72-10F3-4905-A306-4F2673FB1CD3) chapter for explanations on how to diagnose and resolve common problems encountered when installing or using Java Management Service.
 
@@ -157,5 +161,5 @@ You may now **proceed to the next lab.**
 
 ## Acknowledgements
 
-* **Author** - Somik Khan, November 2022
-* **Last Updated By** - Sherlin Yeo, March 2023
+* **Author** - Somik Khan, Java Management Service
+* **Last Updated By** - Sherlin Yeo, June 2023

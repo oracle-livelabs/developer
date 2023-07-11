@@ -4,7 +4,7 @@
 
 In this workshop you will follow the story of a new developer at the fictitious venture by Oracle: MovieStream! MovieStream is a fake but fun company that provides a full catalog of movies customers can stream globally, no matter their location.
 
-![Pipeline Example](./images/moviestream-dashboard.png)
+![MovieStream Dashboard](./images/moviestream-dashboard.png)
 
 We will be focusing on our new hire’s use of the latest in database change management technology: SQLcl Liquibase. Using SQLcl Liquibase, our developer and their team will be able to capture, version, and deploy database object changes consistently and automatically.
 
@@ -33,11 +33,14 @@ Learn the core functionality of SQLcl Liquibase in this hands-on workshop:
 ### Prerequisites
 This workshop requires an Oracle Cloud account or your own Oracle Database with SQLcl installed on your computer.
 
-For using your own Oracle Database you may skip any workshop areas that don't apply to you (such as [Create Your Autonomous Database](../workshops/freetier/?lab=adb-provision-conditional)) and simply input your connection credentials into SQLcl.
+For using your own Oracle Database you may skip any workshop areas that don't apply to you (such as the create your Autonomous Database steps in [Lab 1: Setup](../workshops/freetier/?lab=lab1-setup)) and simply input your connection credentials into SQLcl.
 
 You may now **proceed to the next section**.
 
 ## How this workshop can help you
+
+![Development Team](./images/softwaredevteam.jpg)
+
 Working on a software development team isn’t easy. If you’ve been a part of one, at some point or another you’ve probably encountered these overarching themes:
 * The expectation of frequent delivery and updates
 * Changing requirements and specifications, sometimes even late in the development process
@@ -58,6 +61,9 @@ This requires a lot of manual work and is prone to human error. If you are a sma
 So we developed SQLcl Liquibase to solve this problem! In this workshop you will be introduced to the basics of the Liquibase feature for our free Oracle Database tool: SQLcl.
 
 ## SQLcl
+
+![SQLcl](./images/sqlcl.png)
+
 SQLcl (Structured Query Language command line) is a free tool for the Oracle Database that lets you connect to your database and execute SQL, PL/SQL, and SQL*Plus commands directly from the command line.
 
 It’s a modern replacement to SQL\*Plus, our legacy command line interface solution for working with the Oracle Database. SQLcl contains all of SQL\*Plus’ commands and more.
@@ -76,6 +82,9 @@ You can learn more in our [Documentation](https://docs.oracle.com/en/database/or
 It’s available on Windows, Mac, Linux, and is also automatically embedded in our command prompt for [Oracle Cloud Infrastructure (OCI)](https://www.oracle.com/cloud/), Cloud Shell. You can download it directly from our website [Download Page](https://www.oracle.com/database/sqldeveloper/technologies/sqlcl/download/)
 
 ## SQLcl's Liquibase feature
+
+![SQLcl Liquibase](./images/sqlclliquibase.png)
+
 SQLcl Liquibase is a database change management tool that allows you to capture, version, and deploy database changes simply and in an automated fashion. This cuts back on manual work such as recreating tables, making sure database object change scripts are properly working, and rolling back unwanted alterations.
 
 You capture database objects such as tables, procedures, and constraints with one of the ````liquibase generate```` commands which then saves these objects to files called changelogs. Within changelog files are metadata information and changeset sections. Changesets are the actual set of instructions for the database changes being applied. These changeset instructions are the specific information being read when you run the ````liquibase update```` command to populate a new database user schema or update an existing one.
@@ -95,6 +104,9 @@ All of these powerful new additions are exclusively for the Oracle Database.
 SQLcl Liquibase is automatically included in our free command line interface tool: [SQLcl](https://www.oracle.com/database/sqldeveloper/technologies/sqlcl)
 
 ## DevOps & Continuous Integration/Continuous Delivery (CI/CD)
+
+![DevOps](./images/devops.jpg)
+
 The main objective of SQLcl Liquibase is to help you save time, energy, and money by freeing yourself of repetitive, tedious, and error prone tasks so that your DevOps and CI/CD processes are more efficient.
 
 DevOps is a combination of software development (Dev) and IT operations (Ops). It is a philosophy aimed at seeking to shorten the software development lifecycle through the investigation and application of tools and practices. Traditionally a DevOps centered mindset seeks to erode the silos between development and operations teams so that better communication, collaboration, and automation can be achieved.
@@ -125,5 +137,5 @@ The CD in CI/CD along with referring to Continuous Delivery, can additionally (a
 
 ## Acknowledgements
 
-- **Author** - Zachary Talke, Product Manager
+- **Author** - Zachary Talke, Senior Product Manager
 - **Last Updated By/Date** - Zachary Talke, May 2023
