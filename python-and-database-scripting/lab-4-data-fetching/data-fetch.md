@@ -1,4 +1,4 @@
-# Fetching Data
+# Data Fetching
 
 ## Introduction
 
@@ -15,7 +15,7 @@ This lab will show how to fetch the data using python-oracledb driver
 Estimated Lab Time: 10 minutes
 
 Watch the video below for a quick walk-through of the lab.
-[Fetching Data](videohub:1_5r4lafnz)
+[Data Fetching](videohub:1_5r4lafnz)
 
 ### Objectives
 
@@ -31,133 +31,133 @@ This lab assumes you have completed the following labs:
 
 ## Task 1: A simple query
 
-Review the code contained in *query2.py*:
+1. Review the code contained in *query2.py*:
 
-````
-<copy>
-import oracledb
-import db_config
+  ````
+  <copy>
+  import oracledb
+  import db_config
 
-con = oracledb.connect(user=db_config.user,
-                    password=db_config.pw, 
-                    dsn=db_config.dsn, 
-                    config_dir=db_config.config_dir, wallet_location=db_config.wallet_location,  wallet_password=db_config.wallet_password)
-cur = con.cursor()
-cur.execute("select * from dept order by deptno")
-for deptno, dname, loc in cur:
-    print("Department number: ", deptno)
-    print("Department name: ", dname)
-    print("Department location:", loc)
-</copy>
-````
+  con = oracledb.connect(user=db_config.user,
+                      password=db_config.pw, 
+                      dsn=db_config.dsn, 
+                      config_dir=db_config.config_dir, wallet_location=db_config.wallet_location,  wallet_password=db_config.wallet_password)
+  cur = con.cursor()
+  cur.execute("select * from dept order by deptno")
+  for deptno, dname, loc in cur:
+      print("Department number: ", deptno)
+      print("Department name: ", dname)
+      print("Department location:", loc)
+  </copy>
+  ````
 
-The **cursor()** method opens a cursor for statements to use.
+  The **cursor()** method opens a cursor for statements to use.
 
-The **execute()** method parses and executes the statement.
+  The **execute()** method parses and executes the statement.
 
-The loop fetches each row from the cursor and unpacks the returned tuple into the variables deptno, dname, loc, which are then printed.
+  The loop fetches each row from the cursor and unpacks the returned tuple into the variables deptno, dname, loc, which are then printed.
 
-Run the script in the Cloud Shell or in a terminal window:
+2. Run the script in the Cloud Shell or in a terminal window:
 
-````
-<copy>
-python3 query2.py
-</copy>
-````
+  ````
+  <copy>
+  python3 query2.py
+  </copy>
+  ````
 
-The output is:
+  The output is:
 
-![Fetch data](./images/fetch_data.png " " )
+  ![Fetch data](./images/fetch_data.png " " )
 
 
-## Task 2: Fetching data using fetchone()
+## Task 2: Data fetching using fetchone()
 
 When the number of rows is large, the fetchall() call may use too much memory.
 
-Review the code contained in *query\_one.py*:
+1. Review the code contained in *query\_one.py*:
 
-````
-<copy>
-import oracledb
-import db_config
+  ````
+  <copy>
+  import oracledb
+  import db_config
 
-con = oracledb.connect(user=db_config.user,
-                    password=db_config.pw, 
-                    dsn=db_config.dsn, 
-                    config_dir=db_config.config_dir, wallet_location=db_config.wallet_location, wallet_password=db_config.wallet_password)
-cur = con.cursor()
+  con = oracledb.connect(user=db_config.user,
+                      password=db_config.pw, 
+                      dsn=db_config.dsn, 
+                      config_dir=db_config.config_dir, wallet_location=db_config.wallet_location, wallet_password=db_config.wallet_password)
+  cur = con.cursor()
 
-cur.execute("select * from dept order by deptno")
-row = cur.fetchone()
-print(row)
+  cur.execute("select * from dept order by deptno")
+  row = cur.fetchone()
+  print(row)
 
-row = cur.fetchone()
-print(row)
-</copy>
-````
+  row = cur.fetchone()
+  print(row)
+  </copy>
+  ````
 
-This uses the **fetchone()** method to return just a single row as a tuple. When called multiple time, consecutive rows are returned:
+  This uses the **fetchone()** method to return just a single row as a tuple. When called multiple time, consecutive rows are returned:
 
-Run the script in Cloud Shell or in a terminal window:
+2. Run the script in Cloud Shell or in a terminal window:
 
-````
-<copy>
-python3 query_one.py
-</copy>
-````
+  ````
+  <copy>
+  python3 query_one.py
+  </copy>
+  ````
 
-![Query one results](./images/queryone.png " " )
+  ![Query one results](./images/queryone.png " " )
 
-The first two rows of the table are printed.
+  The first two rows of the table are printed.
 
-## Task 3: Fetching data using fetchmany()
+## Task 3: Data fetching using fetchmany()
 
-Review the code contained in *query\_many.py*:
+1. Review the code contained in *query\_many.py*:
 
-````
-<copy>
-import oracledb
-import db_config
+  ````
+  <copy>
+  import oracledb
+  import db_config
 
-con = oracledb.connect(user=db_config.user,
-                    password=db_config.pw, 
-                    dsn=db_config.dsn, 
-                    config_dir=db_config.config_dir, wallet_location=db_config.wallet_location, wallet_password=db_config.wallet_password)
+  con = oracledb.connect(user=db_config.user,
+                      password=db_config.pw, 
+                      dsn=db_config.dsn, 
+                      config_dir=db_config.config_dir, wallet_location=db_config.wallet_location, wallet_password=db_config.wallet_password)
 
-cur = con.cursor()
+  cur = con.cursor()
 
-cur.execute("select * from dept order by deptno")
-num_rows=3
-res = cur.fetchmany(num_rows)
-print(res)
-</copy>
-````
+  cur.execute("select * from dept order by deptno")
+  num_rows=3
+  res = cur.fetchmany(num_rows)
+  print(res)
+  </copy>
+  ````
 
-The **fetchmany()** method returns a list of tuples. By default the number of rows returned is specified by the cursor attribute **arraysize** (which defaults to 100). Here the num_Rows parameter specifies that three rows should be returned.
+  The **fetchmany()** method returns a list of tuples. By default the number of rows returned is specified by the cursor attribute **arraysize** (which defaults to 100). Here the num_Rows parameter specifies that three rows should be returned.
 
-Run the script in a terminal window:
+2. Run the script in a terminal window:
+  ````
+  <copy>
+  python3 query_many.py
+  </copy>
+  ````
 
-````
-<copy>
-python3 query_many.py
-</copy>
-````
+  ![Query many results](./images/query_many.png " " )
 
-![Query many results](./images/query_many.png " " )
+  The first three rows of the table are returned as a list (Python's name for an array) of tuples.
 
-The first three rows of the table are returned as a list (Python's name for an array) of tuples.
+3. You can access elements of the lists by position indexes. To see this, edit the file *query\_many.py* and add:
 
-You can access elements of the lists by position indexes. To see this, edit the file *query\_many.py* and add:
+  ````
+  <copy>
+  print(res[0])    # first row
+  print(res[0][1]) # second element of first row
+  </copy>
+  ````
 
-````
-<copy>
-print(res[0])    # first row
-print(res[0][1]) # second element of first row
-</copy>
-````
-Run the script *query_many.py* in the terminal window to see the output:
+  Run the script *query_many.py* in the terminal window to see the output:
 
-![Query many 2](./images/query-many-2.png " " )
+  ![Query many 2](./images/query-many-2.png " " )
 .
 
 ## Taks 4:  Tuning with arraysize and prefetch rows

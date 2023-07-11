@@ -30,7 +30,7 @@ This lab assumes you have:
 1.  Login to your Oracle Cloud Account
 2.  Click the **Navigation** Menu in the upper left, navigate to **Oracle Database** and select **Autonomous Database**
 
- ![Create ADB](./images/create_adb.png " ")
+    ![Create ADB](./images/create_adb.png " ")
 
 3. Create a new Autonomous Database Instance as following:
     - Compartment: (default compartment (root))
@@ -38,10 +38,11 @@ This lab assumes you have:
     - Choose a workload type: Transaction Processing
     - Choose a deployment type: Shared Infrastructure
 
- ![Basic Info](./images/basic_info.png " ")
+    ![Basic Info](./images/basic_info.png " ")
 
-4. Configure the Database
-In the **Configure the Database** section, proceed with the following selections: 
+4. Configure the Database.
+
+    In the **Configure the Database** section, proceed with the following selections: 
     - Toggle: Always FREE
     - DB Version: 19c
     - Default OCPU count(1)
@@ -49,21 +50,21 @@ In the **Configure the Database** section, proceed with the following selections
 
 5. In the **Create Administrator Credentials** section, enter the password for the Admin user and make note of it, as this as this will be required in the subsequent labs.
 
- ![Free Tier](./images/free_tier.png " ")
+    ![Free Tier](./images/free_tier.png " ")
 
 6. In the **Choose Network Access** section, select 'Secure Access from Everywhere'
 
-In the **Choose License and Oracle Database Edition** section, select 'License Included'
+    In the **Choose License and Oracle Database Edition** section, select 'License Included'
 
-Hit **Create Autonomous Database** button
- ![ADB Network](./images/adb_network.png " ")
+    Hit **Create Autonomous Database** button
+    ![ADB Network](./images/adb_network.png " ")
 
-This process might take few minutes. You can check the status of the creation of the Autonomous Database Shared infrastructure, by using the Console.
+    This process might take few minutes. You can check the status of the creation of the Autonomous Database Shared infrastructure, by using the Console.
 
-Once Autonomous Database Shared Infrastructure is provisioned, it is automatically started and you should see the following summary:
+    Once Autonomous Database Shared Infrastructure is provisioned, it is automatically started and you should see the following summary:
 
- ![Summary ADB](./images/summary.png " ")
-.
+    ![Summary ADB](./images/summary.png " ")
+
 
 ## Task 2: Download Oracle Autonomous Database Wallet
 
@@ -77,11 +78,11 @@ To connect to the Oracle Autonomous Database, you need the wallet file.
 
 2. Specify a password for the Wallet
 
-Hit **Download** button and save the wallet as a zip file to a location on your local laptop, then click Close to close the popup window. We will upload this file on Console Shell in the next task, so please make a note of the location where the .zip wallet is saved.
+    Hit **Download** button and save the wallet as a zip file to a location on your local laptop, then click Close to close the popup window. We will upload this file on Console Shell in the next task, so please make a note of the location where the .zip wallet is saved.
 
- ![Wallet password](./images/wallet_password.png " ")
+    ![Wallet password](./images/wallet_password.png " ")
 
-Make a note of the password as this will be used for the database connection and it is required in the subsequent labs.
+    Make a note of the password as this will be used for the database connection and it is required in the subsequent labs.
 
 ## Task 3: Upload Wallet to the Cloud Shell
 
@@ -91,21 +92,23 @@ In the Oracle Autonomous Database Summary screen, we're going to launch Cloud Sh
 
 1. To launch the Cloud Shell, sign in to your Oracle Cloud Infrastructure tenancy and click the command prompt icon in Console header, then select Cloud Shell from the drop down:
 
- ![Cloud Shell](./images/cloud_shell.png " ")
+    ![Cloud Shell](./images/cloud_shell.png " ")
 
 2. When connected, the following should display:
- ![Cloud Shell terminal](./images/cloud_shell_term.png " ")
+    ![Cloud Shell terminal](./images/cloud_shell_term.png " ")
 
 3. Drag and drop the Wallet archive from the location where it was saved, to the Console Shell
- ![Cloud shell wallet](./images/cloud_shell_wallet.png " ")
+    ![Cloud shell wallet](./images/cloud_shell_wallet.png " ")
 
 4. Unzip the wallet
-In your home folder, create directory _Wallets_ and move the wallet archive to Wallets folder. We are going to unzip the file in this directory
+    In your home folder, create directory _Wallets_ and move the wallet archive to Wallets folder. We are going to unzip the file in this directory
     ````
+    <copy>
     $ mkdir Wallets
     $ mv Wallet_python_adb.zip ./Wallets
     $ cd Wallets
     $ unzip Wallet_python_adb.zip
+    </copy>
     ````
     ![unzip](./images/shell_unzip.png " ")
 .
