@@ -200,5 +200,5 @@ Additionaly, you are able to view the invoice from the purchase in the Orders > 
 
 ## Acknowledgements
 * **Author** - Oracle Blockchain Product Management
-* **Contributors** - Dev Sony, Amal Tyagi, Teodora Gheorghe, Adrien Lhemann, Diego Morales, Lokeswara Nushisarva, Siddesh C. Prabhu Dev Ujjni, Rene Fontcha
-* **Last Updated By/Date** - Rene Fontcha, September 2022
+* **Contributors** -  Diego Morales, Lokeswara Nushisarva, Siddesh C. Prabhu Dev Ujjni, Rene Fontcha
+* **Last Updated By/Date** - Rene Fontcha, July 2023

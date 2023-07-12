@@ -245,5 +245,5 @@ You may now proceed to the next lab.
 
 ## Acknowledgements
 * **Author** - Oracle Blockchain Product Management
-* **Contributors** - Amal Tyagi, Teodora Gheorghe, Adrien Lhemann, Diego Morales, Lokeswara Nushisarva, Siddesh C. Prabhu Dev Ujjni, Rene Fontcha
-* **Last Updated By/Date** - Rene Fontcha, September 2022
+* **Contributors** - Diego Morales, Lokeswara Nushisarva, Siddesh C. Prabhu Dev Ujjni, Rene Fontcha
+* **Last Updated By/Date** - Rene Fontcha, July 2023
