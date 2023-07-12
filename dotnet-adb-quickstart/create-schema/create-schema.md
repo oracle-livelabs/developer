@@ -6,6 +6,9 @@ In this lab, you will connect to the database using SQL Worksheet, a browser-bas
 
 Estimated lab time: 10 minutes
 
+Watch the video below for a quick walk-through of the lab.
+[Create user and setup schema](videohub:1_btcu4q9g)
+
 ### Objectives
 -   Connect to your new autonomous database using SQL Worksheet
 -   As administrator, create a database user (schema)

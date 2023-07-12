@@ -8,6 +8,9 @@ Note: This lab has been validated with ASP.NET Core 6. Some variations in the AS
 
 Estimated lab time: 15 minutes
 
+Watch the video below for a quick walk-through of the lab.
+[Develop and deploy the .NET web application](videohub:1_rkt0mw3p)
+
 ### Objectives
 -   Create a new ASP.NET Core web app
 -   Develop and deploy ODP.NET Core app that connects to your Oracle Autonomous Database
