@@ -8,6 +8,9 @@ In this lab, you will be introduced to API Gateway. The gateway is necessary for
 
 *Estimated Lab Time:* 15 minutes
 
+Watch the video below for a quick walk-through of the lab.
+[Create & Setup API Gateway to connect with Smart Contract API's](videohub:1_w01l6lxc)
+
 ### Objectives
 
 In this lab, you will:
@@ -17,10 +20,10 @@ In this lab, you will:
 This lab assumes you have:
 - An Oracle Cloud account
 - You have completed:
-    - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
-    - Lab: Environment Setup
-    - Lab: Create a Blockchain Network connecting 3 Organizations
-    - Lab: Create and Deploy Smart Contracts using Oracle Blockchain App Builder
+    - Prepare Setup (*Free-tier* and *Paid Tenants* only)
+    - Environment Setup
+    - Lab1: Create a Blockchain Network connecting 3 Organizations & Configuring Oracle
+    - Lab2: Deploy, Test Smart Contracts using Blockchain App Builder & Oracle Blockchain Admin Console
 
 
 ## Task 1: Setup VCN and Subnet
@@ -48,64 +51,16 @@ This lab assumes you have:
 
   ![VCN Creation](images/3-gateway-1-4.png)
 
-6. Once your VCN is available, click 'Create Subnet.'
-
-  ![Create Subnet](images/3-gateway-1-5.png)
-
-7. Fill out the 'Create Subnet' form as follows:
-    - **Name** your subnet (e.g. Public Subnet for Car Marketplace VCN).
-    - Ensure the correct **Compartment** is selected (e.g. Blockchain LiveLabs).
-    - Scroll to the bottom and set 'Default DHCP Options for Car Marketplace VCN' as the **DHCP Options Compartment**.
-    - Similarly, set 'Default Security List for Car Marketplace VCN' as the **Security List Compartment**.
-
-  ![Create Subnet Form 1](images/3-gateway-1-6.png)
-  ![Create Subnet Form 2](images/3-gateway-1-7.png)
-
-8. Click 'Create Subnet' and see that the subnet has been successfully created.
-  ![See Subnet](images/3-gateway-1-8.png)
+ ## Task 2: Configure Ingress Rules
 
 
-## Task 2: Configure VCN
-
-1. Select 'DHCP Options' on the left-hand side menu and then 'Edit' the default options.
-
-  ![Edit DHCP Options](images/3-gateway-2-0.png)
-
-2. Ensure that your options match those on the form below and click 'Save Changes.'
-
-  ![Edit DHCP Options Form](images/3-gateway-2-1.png)
-
-3. Now, select 'CIDR Blocks' on the left-hand side menu and click 'Add CIDR Block' to match the screenshot below.
-
-  ![Add CIDR Block](images/3-gateway-2-2.png)
-
-4. Next, select 'Route Tables' on the left-hand side menu and click 'Default Route Table for Car Marketplace VCN.'
-
-  ![Default Route table](images/3-gateway-2-3.png)
-
-5. Click 'Add Route Rules.'
-
-  ![Add Route Rule](images/3-gateway-2-4.png)
-
-6. Fill out the form as follows and click on 'Add Route Rules.'
-
-  ![Add Route Rule Form](images/3-gateway-2-5.png)
-
-7. Next, select 'Security Lists' on the left-hand side menu and click 'Default Security List for Car Marketplace VCN.'
-
-  ![Security Lists](images/3-gateway-2-6-0.png)
-
-8. Click 'Add Ingress Rules.'
+1. Click 'Add Ingress Rules.'
 
   ![Add Ingress Rules](images/3-gateway-2-6.png)
 
-9. Fill out the form as follows and click on 'Add Ingress Rules.'
+2. Fill out the form as follows and click on 'Add Ingress Rules.'
 
   ![Add Ingress Rules Form](images/3-gateway-2-7.png)
-
-10. Repeat Steps 8-9 four more times so your Ingress Rules match the screenshot below:
-
-  ![All Ingress Rules](images/3-gateway-2-8.png)
 
 
 ## Task 3: Create API Gateway
@@ -113,11 +68,7 @@ This lab assumes you have:
 1. From the OCI services mennu, search for 'Gateways' and find the service listed under **API Management**.
   ![Navigate to Gateways](images/3-gateway-3-1.png)
 
-2. Click on 'Create Gateway.'
-
-  ![Create Gateway](images/3-gateway-3-2.png)
-
-3. Fill out the form as follows and click 'Create Gateway.'
+2. Fill out the form as follows and click 'Create Gateway.'
     - Give your gateway a **Name** (e.g. Car Marketplace LiveLab Gateway).
     - Scroll down and select the **Virtual Cloud Network** and **Subnet** you just created.
 
@@ -127,7 +78,6 @@ This lab assumes you have:
 ## Task 4: Create Gateway Deployment
 
 1. After ensuring the right **Compartment** is selected, find and click on the the gateway corresponding to this LiveLab (e.g. Car Marketplace LiveLab Gateway).
-  ![Choose Compartment and Gateway](images/3-gateway-4-2.png)
 
 2. Click on 'Deployments' in the **Resources** pane and click 'Create Deployment.'
   ![Create Deployment](images/3-gateway-4-3.png)
@@ -138,47 +88,92 @@ This lab assumes you have:
     - Ensure that the right **Compartment** is selected and click on 'Next'
 
   ![Deployment Step 1](images/3-gateway-4-4.png)
-
+  ![Deployment Step 1](images/3-gateway-4-4.1.png)
 
 ## Task 5: Create Routes
 
-1. Next in your deployment, you need to add 6 routes: 2 for each instance , 1 founder instance and 2 participant instances. Each instance will have two routes
+1. Next, start creating a new routes by adding new routes
+2. Add 6 routes: 2 for each instance , 1 founder instance and 2 participant instances. Each instance will have two routes
     - One route to perform `transactions`:'insert' and 'update'
     - Second route to perform `chaincode-queries`:'query a transactions or transactions'
     - To create the routes click routes --> Under 'Routes', fill out the form for your first route as follows:
-    - Enter a **Path**. For Route 1, this will be /marketplace-2/transactions
+    - Enter a **Path**. For Route 1, this will be /marketplace/transactions
     - Select 'POST' under **Methods**
     - Specify 'HTTP' as the **Type**
     - Enter the **URL** to serve as a REST endpoint. For Route 1, this will be https://marketplace-2-oabcs1-iad.blockchain.ocp.oraclecloud.com:7443/restproxy/api/v2/channels/car-marketplace/transactions
     - How to Construct Route URL:
-      - From the Blockchain Admin Dashboard --> click on Nodes --> Navigate to restproxy (bottom of the screen) --> Copy the URL
-      - Append to URL --> [api/v2/channels/car-marketplace/transactions](https://docs.oracle.com/en/cloud/paas/blockchain-cloud/restoci/op-restproxy-api-v2-channels-channelname-transactions-post.html)
+        - From the Blockchain Admin Dashboard --> Click on Nodes --> Navigate to restproxy (bottom of the screen) --> Copy the URL
 
-    ![Blockchain Dashboard](images/3-gateway-4.bc.1.png)
+  ![Blockchain Dashboard](images/3-gateway-4.bc.1.png)
+
+        - Append to URL --> [api/v2/channels/car-marketplace/transactions](https://docs.oracle.com/en/cloud/paas/blockchain-cloud/restoci/op-restproxy-api-v2-channels-channelname-transactions-post.html)
+
 
     - For **Connection Establishment**, **Request Transmit**, and **Reading Response** timeouts, enter 60, 10, and 10 respectively
 
   ![Route 1](images/3-gateway-4-5.1.png)
 
+
 2. Click the '+ Another Route' button and repeat Step 2 for the remaining 5 routes based on the blockchain instances as shown:
-  ![Route 2](images/3-gateway-4-5.2.png)
+
+  ![Route 2](images/3-gateway-4-4.1.png)
+
+    - Marketplace Routes
+      - marketplace transactions prefix  Path: /dealer1/transactions
+      - marketplace URL: Example - https://marketplace-3-oabcs1-iad.blockchain.ocp.oraclecloud.com:7443/restproxy/api/v2/channels/car-marketplace/transactions
+      - marketplace chaincode queries prefix  Path: /dealer1/chaincode-queries
+      - marketplace URL: Example - https://marketplace-3-oabcs1-iad.blockchain.ocp.oraclecloud.com:7443/restproxy/api/v2/channels/car-marketplace/chaincode-queries
+
+  ![Route 11](images/3-gateway-4-5.1.png)
+  ![Route 22](images/3-gateway-4-5.2.png)
+
+    - dealer1 routes
+      - dealer1 transactions prefix  Path: /dealer1/transactions
+      - dealer1 URL: Example - https://dealer1-3-oabcs1-iad.blockchain.ocp.oraclecloud.com:7443/restproxy/api/v2/channels/car-marketplace/transactions
+      - dealer2 chaincode queries prefix  Path: /dealer1/chaincode-queries
+      - dealer2 URL: Example - https://dealer1-3-oabcs1-iad.blockchain.ocp.oraclecloud.com:7443/restproxy/api/v2/channels/car-marketplace/chaincode-queries
+
   ![Route 3](images/3-gateway-4-6.1.png)
   ![Route 4](images/3-gateway-4-6.2.png)
-  ![Route 5](images/3-gateway-4-7.2.png)
+
+    - dealer2 routes
+      - dealer2 transactions prefix  Path: /dealer2/transactions
+      - dealer2 URL: Example - https://dealer2-3-oabcs1-iad.blockchain.ocp.oraclecloud.com:7443/restproxy/api/v2/channels/car-marketplace/transactions
+      - dealer2 chaincode queries prefix  Path: /dealer2/chaincode-queries
+      - dealer2 URL: Example - https://dealer2-3-oabcs1-iad.blockchain.ocp.oraclecloud.com:7443/restproxy/api/v2/channels/car-marketplace/chaincode-queries
+
+  ![Route 5](images/3-gateway-4-7.1.png)
   ![Route 6](images/3-gateway-4-7.2.png)
 
+  - Atomic Transaction routes --> marketplace, dealer1, dealer2
+      - marketplace transactions prefix  Path: /marketplace/atomicTransactions
+      - marketplace URL: Example - https://marketplace-3-oabcs1-iad.blockchain.ocp.oraclecloud.com:7443/restproxy/api/v2/atomicTransactions
+
+  ![Route 7](images/3-gateway-4-8.1.png)
+      - dealer1 transactions prefix  Path: /dealer1/atomicTransactions
+      - dealer1 URL: Example - https://dealer1-2-oabcs1-iad.blockchain.ocp.oraclecloud.com:7443/restproxy/api/v2/atomicTransactions
+
+  ![Route 8](images/3-gateway-4-8.2.png)
+      - dealer2 transactions prefix  Path: /dealer2/atomicTransactions
+      - dealer2 URL: Example - https://dealer2-2-oabcs1-iad.blockchain.ocp.oraclecloud.com:7443/restproxy/api/v2/atomicTransactions
+
+  ![Route 9](images/3-gateway-4-8.3.png)
+
+
 3. 'Review' the deployment information and click 'Create.'
+
   ![Review Deployment](images/3-gateway-4-9.png)
 
-## Task 5: Prefix Query and Invoke Endpoint During Configuration
+## Task 6: Prefix Query and Invoke Endpoint During Configuration
 
 Once active, the deployment can be used to make REST API calls between APEX and OBP.
 
 1. Find the **Deployment Information** pane and the **Endpoint** as shown.
+
   ![Deployment Information](images/3-gateway-5-1.png)
 
 
 ## Acknowledgements
-* **Author** - Amal Tyagi, Cloud Engineer
-* **Contributors** -  Teodora Gheorghe, Adrien Lhemann, Diego Morales, Lokeswara Nushisarva, Siddesh C. Prabhu Dev Ujjni, Rene Fontcha
+* **Author** - Oracle Blockchain Product Management
+* **Contributors** -  Dev Sony, Amal Tyagi, Teodora Gheorghe, Adrien Lhemann, Diego Morales, Lokeswara Nushisarva, Siddesh C. Prabhu Dev Ujjni, Rene Fontcha
 * **Last Updated By/Date** - Rene Fontcha, September 2022

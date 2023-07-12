@@ -46,12 +46,7 @@ In this lab, you will:
 3. The Software Download pane lists all the software available to download for the Management Agent and Management Gateway. Select the operating system that the Management Gateway will be installed on from the Download column. In this case, click on **Gateway for LINUX (X84_64)** link to download the Management Gateway software file.
   ![image of downloading management gateway software](images/download-gateway-software.png)
 
-4. Alternatively, you can run the following command to download **Management Gateway software for Linux**. 
-    ```
-    <copy>
-    wget oracle.mgmt-gateway.rpm https://objectstorage.us-ashburn-1.oraclecloud.com/n/idtskf8cjzhp/b/installer/o/Linux-x86_64/latest/oracle.mgmt_gateway.rpm
-    </copy>
-    ```    
+4. Alternatively, you can download **Management Gateway software for Linux** using OCI CLI. For details, see [Download the Gateway Software Using CLI](https://docs.oracle.com/en-us/iaas/management-agents/doc/install-management-gateway-main.html#GUID-52C54F84-020C-485D-B1A4-000AA796286B__GUID-DF8E9F65-944C-4EB3-B7CE-C74207D3099B).
 
 5. On the same **Downloads and Keys** page, click on **Create key** to create a new **Install key**. An install key is issued against your identity domain and validates the authenticity of the installation. 
   ![image of clicking on create install key button](images/create-install-key.png)
@@ -83,11 +78,54 @@ In this lab, you will:
   A sample response file is included for reference, modify AgentDisplayName and GatewayPort parameters accordingly.
   ![image of final response file](images/terminal-edit-install-key.png)
 
-  To save the file, type CTRL+x. Before exiting, nano will ask you if you wish to save the file: Type y to save and exit.
+  To save the file, type CTRL+x. Before exiting, nano will ask you if you want to save the file: Type y to save and exit.
+
+## Task 2: Configure Certificates for Management Gateway
+
+  Communication between Agent, Gateway and OCI requires certificates. This task walks you though the steps to setup the automatic creation of the certificates and other required entities.
+
+1. Create a dynamic group of name `Credential_Dynamic_Group` with the rule below:
+    ```
+    <copy>
+    ALL {resource.type='certificateauthority', resource.compartment.id='<fleet_compartment_ocid>'}
+    </copy>
+    ```
+2. Create a dynamic group of name `Management_Gateway_Dynamic_Group` with the rule below:
+    ```
+    <copy>
+    ALL {resource.type='managementagent', resource.compartment.id='<fleet_compartment_ocid>'}
+    </copy>
+    ```
+3. You should see two dynamic groups created.
+  ![image of new dynamic groups for certificate creation](images/dynamic-groups-new.png)
+
+4. Create policies to allow for automatic certificate creation.
+  * In the Oracle Cloud Console, open the navigation menu and click **Identity & Security**. Under **Identity**, click **Policies**.
+  * Click **Create Policy**.
+  * Enter a name (for example, `Management_Gateway`) and a description.
+  * Select the **Fleet_Compartment** from the drop-down list.
+  * Click **Show manual editor**.
+  * In the text box, enter the following statements:
+    ```
+    <copy>
+    Allow DYNAMIC-GROUP Credential_Dynamic_Group to USE certificate-authority-delegates in compartment Fleet_Compartment
+    Allow DYNAMIC-GROUP Credential_Dynamic_Group to USE vaults in compartment Fleet_Compartment
+    Allow DYNAMIC-GROUP Credential_Dynamic_Group to USE keys in compartment Fleet_Compartment
+    Allow DYNAMIC-GROUP Management_Gateway_Dynamic_Group to READ certificate-authority-bundle in compartment Fleet_Compartment
+    Allow DYNAMIC-GROUP Management_Gateway_Dynamic_Group to READ leaf-certificate-bundle in compartment Fleet_Compartment
+    Allow DYNAMIC-GROUP Management_Gateway_Dynamic_Group to MANAGE certificate-authorities in compartment Fleet_Compartment where any{request.permission='CERTIFICATE_AUTHORITY_CREATE', request.permission='CERTIFICATE_AUTHORITY_INSPECT', request.permission='CERTIFICATE_AUTHORITY_READ'} 
+    Allow DYNAMIC-GROUP Management_Gateway_Dynamic_Group to MANAGE leaf-certificates in compartment Fleet_Compartment where any{request.permission='CERTIFICATE_CREATE', request.permission='CERTIFICATE_INSPECT', request.permission ='CERTIFICATE_UPDATE', request.permission='CERTIFICATE_READ'}
+    Allow DYNAMIC-GROUP Management_Gateway_Dynamic_Group to MANAGE vaults in compartment Fleet_Compartment where any{request.permission='VAULT_CREATE', request.permission='VAULT_INSPECT', request.permission='VAULT_READ', request.permission='VAULT_CREATE_KEY', request.permission='VAULT_IMPORT_KEY', request.permission='VAULT_CREATE_SECRET'} 
+    Allow DYNAMIC-GROUP Management_Gateway_Dynamic_Group to MANAGE keys in compartment Fleet_Compartment where any{request.permission='KEY_CREATE', request.permission='KEY_INSPECT', request.permission='KEY_READ'}
+    Allow DYNAMIC-GROUP Management_Gateway_Dynamic_Group to USE certificate-authority-delegates in compartment Fleet_Compartment
+    Allow DYNAMIC-GROUP Management_Gateway_Dynamic_Group to USE key-delegate in compartment Fleet_Compartment
+    </copy>
+    ```
+
+    ![image of create policy dialog box](images/create-policy-popup.png)
 
 
-
-## Task 2: Install Management Gateway
+## Task 3: Install Management Gateway
 1. Open the terminal. 
 
 2. Navigate to the directory where you have downloaded the management gateway RPM file and run the following command to install the RPM file: 
@@ -164,12 +202,21 @@ Deploying service plugin(s)......Done.
 Gateway setup completed and the gateway is running.
 In the future gateway can be started by directly running: sudo systemctl start mgmt_gateway
 
-Please make sure that you delete <user_home_directory>/gateway.rsp or store it in secure location.
+Make sure that you delete <user_home_directory>/gateway.rsp or store it in secure location.
+
+Creating gateway system properties file
+Creating properties file
+Creating or validating certificates
+
+Waiting for Management Gateway to create or validate certificates...
+Waiting for Management Gateway to create or validate certificates...
+Waiting for Management Gateway to create or validate certificates...
+Waiting for Management Gateway to create or validate certificates...
 
 Creating Wallets
 Wallets created successfully
-Waiting for Gateway to start...
-Gateway Proxy started successfully
+Waiting for Management Gateway to start...
+Management Gateway Plugin set up successfully.
    
     ``` 
 
@@ -181,7 +228,7 @@ Gateway Proxy started successfully
     </copy>
     ```  
 
-5. As we set the Gateway port to 4479. Open this port on the host firewall by configuring the firewall. 
+5. Since we have set the Gateway port to 4479, configure the host firewall to open this port.
 
     ```
     <copy>
@@ -189,9 +236,9 @@ Gateway Proxy started successfully
 
     sudo firewall-cmd --reload
     </copy>
-    ```  
+    ```
 
-    > **Note:** This set of commands is specifically for Oracle Linux. Please adjust the commands based on your Operating System and Setup.
+    > **Note:** This set of commands is specifically for Oracle Linux. Change the commands based on your Operating System and Setup.
 
 6. Take note of IP address of the host by running following command.
     ```
@@ -205,7 +252,7 @@ Gateway Proxy started successfully
 
     This IP address will be used as value for `ProxyHost` in Management Agent response file in Task 4.
   
-## Task 3: Verify the Management Gateway installation 
+## Task 4: Verify the Management Gateway installation 
 
 ### Using OCI Console:
 
@@ -254,14 +301,14 @@ Gateway Proxy started successfully
     ![image of Management Gateway logs](images/management-gateway-status-logs.png)
 
 
-## Task 4:  Configure Management Agents after Management Gateway installation
+## Task 5:  Configure Management Agents after Management Gateway installation
 
 
 After installing the Management Gateway, you will need to configure each Management Agent to use the Management Gateway **during the initial agent installation process**.
 
-* A fleet, `fleet_1`, has already been setup during [Lab 2](?lab=setup-a-fleet) and you should have access to the install key file embedded in the downloaded installation script.
+* A fleet, `fleet-1`, has already been setup during [Lab 3](?lab=setup-a-fleet) and you should have access to the install key file embedded in the downloaded installation script.
 
-* To install Management Agent, follow [Task 1 of Lab 5](?lab=set-up-of-management-agent#Task1:InstallManagementAgent).
+* To install Management Agent, follow [Task 2 of Lab 6](?lab=set-up-of-management-agent#Task2:InstallManagementAgentonanonOCIHost).
 
 * Before running the installation script take note of the flags to configure the proxy:
     * **ProxyHost**: The IP address of host that is running Management Gateway
@@ -274,10 +321,68 @@ After installing the Management Gateway, you will need to configure each Managem
      </copy>
      ```
 
-* Follow [Task 2 - 5 to  of Lab 5](?lab=set-up-of-management-agent) to verify Management Agent installation.
+* Follow [Task 3 - 6 to  of Lab 6](?lab=set-up-of-management-agent#Task3:VerifyManagementAgentInstallation) to verify Management Agent installation.
 
+You can configure an existing Management Agent to use the Management Gateway. For details, see [Perform Postinstallation Tasks for Management Gateway](https://docs.oracle.com/en-us/iaas/management-agents/doc/perform-postinstallation-tasks-management-gateway-installation.html)
 
-## Task 5: Verify detection of Managed Instance
+* Ensure the management agent is running. You can check by running the following command:
+    ```
+    <copy>
+    systemctl status mgmt_agent
+    </copy>
+    ```
+* If the Management Gateway is set up to require authentication, create a credentials file containing the username and password required to connect to the Management Gateway.
+
+  For example, a file /opc/my\_cred\_file.json, could be created, containing the credentials to be configured.
+    ```
+    <copy>
+    {
+      "source":"agent.<OCID_OF_THE_AGENT>",  <---Prefix the OCID of the agent with "agent."
+      "name":"ManagementAgent-Gateway",
+      "type":"ProxyCreds",
+      "description":"These credentials are used to connect to Management Gateway.",
+      "tags":["GatewayServerHost:gatewayhost.myco.com","GatewayServerPort:3128"],
+      "properties":
+      [
+        { "name":"ProxyUser", "value":"<USER_NAME>" },
+        { "name":"ProxyPassword", "value":"<USER_PASSWORD>" }
+      ]
+    }
+    </copy>
+    ```
+* Add the credentials specified in the /opc/my\_cred\_file.json file using the credential\_mgmt.sh script.
+    ```
+    <copy>
+    cat /opc/my_cred_file.json | sudo -u mgmt_agent /opt/oracle/mgmt_agent/agent_inst/bin/credential_mgmt.sh -o upsertCredentials -s Agent
+    </copy>
+    ```
+* Delete the credential file /opc/my\_cred\_file.json. 
+* Stop the management agent by running the following command:
+    ```
+    <copy>
+    systemctl stop mgmt_agent
+    </copy>
+    ```
+* Update the management agent's emd.properties file by adding GatewayServerHost and GatewayServerPort parameters. 
+The emd.properties file is located in the /opt/oracle/mgmt\_agent/agent\_inst/config directory.
+For example: 
+    ```
+    <copy>
+    GatewayServerHost=<host-ip-address>
+    GatewayServerPort=4479
+    </copy>
+    ```
+The bottom of the emd.properties file should look like this:
+  ![image of emd.properties file](images/emd-properties.png)
+
+* Start the management agent by running the following command:
+    ```
+    <copy>
+    systemctl start mgmt_agent
+    </copy>
+    ```
+
+## Task 6: Verify detection of Managed Instance
 1. In the Oracle Cloud Console, open the navigation menu, click **Observability & Management**, and then click on **Fleets** under **Java Management**.
 
   ![image of console navigation to java management](images/console-navigation-jms.png)
@@ -296,18 +401,37 @@ You may now **proceed to the next lab.**
 
 ## Troubleshoot Management Gateway issues
 
-**For Task 1 Step 4**
+**For Task 3 Step 2**
 
-* To download the Management Gateway software from a different commercial region, edit the above download URL and replace it with the corresponding region's Object Storage API end point. For details, see [Object Storage Service API](https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/). 
+* If you encounter an error similar to the following:
+    ```
+    Gateway only supports JDK 8 with a miniumum upgrade version JDK 8u281 -b02. Set your preferred path in JAVA_HOME.
+    ```
+    Enter the following command to check if jdk1.8.x exists, and select it as the default JDK:
+    ```
+    <copy>
+      sudo update-alternatives --config java
+    </copy>
+    ```
+
+**For Task 3 Step 3**
+* If you encounter an error similar to the following:
+    ```
+    Could not resolve hostname <hostname> in the installation environment. Resolve the hostname or provide the GatewayCertCommonName in the response file and rerun the gateway setup script.
+    ```
+    Add the parameter **GatewayCertCommonName** = test.gateway.com (or other Fully Qualified Domain Name of your choice) in the gateway.rsp response file created earlier in [Task 1](?lab=multiple-managed-instances#task1preparegatewaysoftwareandresponsefileformanagementgatewayinstallation).
 
 
 ## Learn More
 
+* Refer to the [Management Gateway Documentation](https://docs.oracle.com/en-us/iaas/management-agents/doc/management-gateway.html) for more details.
+
 * Use the [Troubleshooting](https://docs.oracle.com/en-us/iaas/management-agents/doc/troubleshoot-management-gateway-installation-issues.html) chapter for explanations on how to diagnose and resolve common problems encountered when installing or using Management Gateway.
 
-* If the problem still persists or if the problem you are facing is not listed, please refer to the [Getting Help and Contacting Support](https://docs.oracle.com/en-us/iaas/Content/GSG/Tasks/contactingsupport.htm) section or you may open a a support service request using the **Help** menu in the OCI console.
+* If the problem still persists or it is not listed, then refer to the [Getting Help and Contacting Support](https://docs.oracle.com/en-us/iaas/Content/GSG/Tasks/contactingsupport.htm) section. You can also open a support service request using the **Help** menu in the OCI console.
+
 
 ## Acknowledgements
 
 * **Author** - Bhuvesh Kumar, Java Management Service
-* **Last Updated By** - Yixin Wei, August 2022
+* **Last Updated By** - Ivan Eng, June 2023

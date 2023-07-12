@@ -1,4 +1,4 @@
-# How to build powerful, secure REST APIs for your Oracle Database - REST Enable Business Logic and Custom SQL
+# REST-enable tables and add business logic
 
 ## Introduction
 
@@ -6,9 +6,8 @@ In this lab, you will use Database Actions and the REST console to build a REST 
 
 Estimated Lab Time: 20 minutes
 
-Watch the video below for a quick walk through of the lab.
-
-[Video overview of this lab.](youtube:6Y_BArzNgaw)
+Watch the video below for a quick walk-through of the lab.
+[REST-enable tables and add business logic](videohub:1_y8l03s43)
 
 ### Objectives
 
@@ -342,6 +341,6 @@ You may now [proceed to the next lab](#next).
     - Chris Hoina, Senior Product Manager 
     - Brian Spendolini
  - **Last Updated By/Date** 
-    - Chris Hoina, August 2022
+    - Chris Hoina, September 2022
 
 

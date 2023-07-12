@@ -25,7 +25,7 @@ This lab assumes you have:
     - Database Server Instances
     - EDQ Services
 
-    ![](./images/edq-novnc-guide.png " ")
+    ![EDQ novnc guide](./images/edq-novnc-guide.png " ")
 
 2. On the web browser window on the right preloaded with *Weblogic Server Administration Console* login page, click on the *Username* field and provide the credentials below to login.
 
@@ -41,7 +41,7 @@ This lab assumes you have:
     <copy>oraedq123</copy>
     ```
 
-    ![](images/ws-edq-login.png " ")
+    ![Weblogic login](images/ws-edq-login.png " ")
 
 3. Confirm successful login. Please note that it takes about 10 minutes after instance provisioning for all processes to fully start.
 
@@ -49,8 +49,8 @@ This lab assumes you have:
     
     In the landing home page, click on *servers* and Confirm that EDQ server and Admin server are running.
 
-    ![](images/ws-edq-landing-1.png " ")
-    ![](images/ws-edq-landing-2.png " ")
+    ![WebLogic home page](images/ws-edq-landing-1.png " ")
+    ![WebLogic - Summary of Servers](images/ws-edq-landing-2.png " ")
 
     If successful, the page above is displayed and as a result your environment is now ready.  
 
@@ -63,8 +63,8 @@ This lab assumes you have:
     </copy>
     ```
 
-    ![](images/edq-db-status.png " ")
-    ![](images/edq-db-status2.png " ")
+    ![EDQ DB status - 1](images/edq-db-status.png " ")
+    ![EDQ DB status - 2](images/edq-db-status2.png " ")
 
     - WLS Admin Server, EDQ Service
     ```
@@ -73,7 +73,7 @@ This lab assumes you have:
     </copy>
     ```
 
-    ![](images/edq-status.png " ")
+    ![EDQ status](images/edq-status.png " ")
 
 5. If you see questionable output(s), failure or down component(s), restart the corresponding service(s) accordingly
 
@@ -97,15 +97,15 @@ This lab assumes you have:
 
 1.	On the desktop, double click on *Director* icon.
 
-    ![](./images/edq-desktop-launch.png " ")
+    ![EDQ desktop launch](./images/edq-desktop-launch.png " ")
 
 2.	Select "Later" if prompted for the java update option.
 
-    ![](./images/java_update.png " ")
+    ![Java update message](./images/java_update.png " ")
 
 3.	Wait a few minutes, you will receive a new message, click on *“Run”*.
 
-    ![](./images/image1200_7.png " ")
+    ![Confirm EDQ launch](./images/image1200_7.png " ")
 
 4.	EDQ director will appear on your screen. Provide the Director login credentials.
 
@@ -116,15 +116,13 @@ This lab assumes you have:
     Password: <copy>oraedq123</copy>
     ```
 
-    ![](./images/image1200_4.png " ")
-
 5. Take a moment to familiarize yourself with the Terminology of each of the four different areas of the Director application.
 
-    ![](./images/image1200_8.png " ")
+    ![EDQ director](./images/image1200_8.png " ")
 
 6.	In the "Project Browser", right-click "Projects" and select "New Project…" to start the wizard.
 
-    ![](./images/image1200_9.png " ")
+    ![Create new project](./images/image1200_9.png " ")
 
 7.	Provide the following information:
 
@@ -137,11 +135,11 @@ This lab assumes you have:
 
 8.	Click on “Next >” button located at the bottom right corner.
 
-    ![](./images/image1200_10.png " ")
+    ![Provide project name](./images/image1200_10.png " ")
 
 9.	Ensure the “All Groups” checkbox is selected in “Project Permissions”; then click “Finish” button located at the bottom right.
 
-    ![](./images/image1200_11.png " ")
+    ![Project permissions](./images/image1200_11.png " ")
 
 The “Exploring Customer Data” project now appears in the Projects list!
 
@@ -150,13 +148,13 @@ Now that we have created a project, the next step is creating a Data Store. A Da
 
 1.	Expand the newly created project “Exploring Customer Data”, right click “Data Stores”, and select “New Data Store” to launch the wizard.
 
-    ![](./images/image1200_12.png " ")
+    ![Create new data store](./images/image1200_12.png " ")
 
 2.	Select "Server" on “Data is accessed from” field.
 3.	Select “Database” on “Category” field.
 4.	Select “Oracle” on the “Type” list and click “Next >” to continue.
 
-    ![](./images/image1200_13.png " ")
+    ![select the data source](./images/image1200_13.png " ")
 
 5.	Provide the following data:
     ```
@@ -171,11 +169,11 @@ Now that we have created a project, the next step is creating a Data Store. A Da
 
 6.	Click on “Test…” button located on the bottom right corner.
 
-    ![](./images/image1200_14.png " ")
+    ![Data store configuration](./images/image1200_14.png " ")
 
 7.	When all information is correct, you will receive a message about connection success, click “OK”.
 
-    ![](./images/image1200_15.png " ")
+    ![Successful data store connection](./images/image1200_15.png " ")
 
 8.	Click on “Next > ” button located on the bottom right corner.
 9.	Provide the following information as given below.
@@ -183,40 +181,40 @@ Now that we have created a project, the next step is creating a Data Store. A Da
     Name: <copy>Connection to Oracle Database</copy>
     ```
     ```
-    Description: <copy>Connection to US Custom Data</copy>
+    Description: <copy>Connection to US Customer Data</copy>
     ```
 
 10.	Click on “Finish” button located on the bottom right corner.
 
-    ![](./images/image1200_16.png " ")
+    ![Provide new data store name](./images/image1200_16.png " ")
 
 11.	Now we will use this new connection and select a table for profiling and cleansing; the goal is to stage some of the data so we can begin to understand it. Right click “Staged Data” under your project and select “New Snapshot…”.
 
-    ![](./images/image1200_17.png " ")
+    ![Create new snapshot](./images/image1200_17.png " ")
 
 12.	Select the newly created database connection, then click “Next >” to continue.
 
-    ![](./images/image1200_18.png " ")
+    ![Setup snapshot](./images/image1200_18.png " ")
 
 13.	In “Table Selection”, select "`US_Customers`" from the list.  Click “Next >” to continue.
 
-    ![](./images/image1200_19.png " ")
+    ![Select the table](./images/image1200_19.png " ")
 
 14.	In “Column Selection”, ensure all columns are selected, then click “Next >” to continue.
 
-    ![](./images/image1200_20.png " ")
+    ![Snapshot setup - column details](./images/image1200_20.png " ")
 
 15.	In “Filter Options”, leave the default value of Simple and click “Next >” to continue.
 
-    ![](./images/image1200_21.png " ")
+    ![Snapshot setup](./images/image1200_21.png " ")
 
 16.	Sampling Options allows to specify the amount of data brought to the snapshot. If needed, it is possible to specify a certain “Count” or “Percentage” of data to be read for the snapshot. Leave the default and click “Next >“.
 
-    ![](./images/image1200_22.png " ")
+    ![Snapshot setup - sampling](./images/image1200_22.png " ")
 
 17.	Leave the default empty value for the ‘No Data’ Reference Data field, click on “Next >“.
 
-    ![](./images/image1200_23.png " ")
+    ![Snapshot setup - reference data](./images/image1200_23.png " ")
 
 18.	Provide the following data:
     ```
@@ -228,11 +226,11 @@ Now that we have created a project, the next step is creating a Data Store. A Da
 
 19.	Verify that checkbox “Run Now?” is checked and click on “Finish”.
 
-    ![](./images/image1200_24.png " ")
+    ![Snapshot name](./images/image1200_24.png " ")
 
 After a short delay, the Results Browser panel is populated. Taking the Snapshot causes EDQ to stage the data from the database into the EDQ data repository. From now on we will be working with the data residing in the "`US_Customer`" Data Snapshot and we will not be modifying or in any way accessing the source data.
 
-You may now [proceed to the next lab](#next).
+You may now proceed to the next lab.
 
 ## Appendix 1: Troubleshooting
 ### **Optional:** If EDQ is not running, use EDQ Start Script to start the Services
@@ -260,7 +258,7 @@ You may now [proceed to the next lab](#next).
     </copy>
     ```
 
-    ![](images/validate-services.png " ")
+    ![Validate services](images/validate-services.png " ")
 
 5. For any service failure, login as user *"opc"* from an SSH client using the private SSH key from the key pair you used while requesting your instance, and restart the problematic services accordingly
 
@@ -331,5 +329,5 @@ You may now [proceed to the next lab](#next).
 ## Acknowledgements
 * **Author** - Ravi Lingam, Sri Vishnu Gullapalli, Data Integration Team, Oracle, August 2020
 * **Contributors** - Meghana Banka, Narayanan Ramakrishnan, Rene Fontcha
-* **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, February 2021
+* **Last Updated By/Date** - Sri Vishnu Gullapalli, Senior solution engineer, NA Technology, March 2023
 

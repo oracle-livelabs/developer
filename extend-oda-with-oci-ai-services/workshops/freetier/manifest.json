@@ -1,0 +1,51 @@
+{
+    "workshoptitle": "Deliver Immersive Conversational User Experiences with OCI AI Services",
+    "help": "livelabs-help-oci_us@oracle.com",
+    "tutorials": [
+        {
+            "title": "Introduction",
+            "filename": "../../introduction/introduction.md"
+        },
+        {
+            "title": "Get Started",
+            "description": "This is the prerequisites for customers using Free Trial and Paid tenancies, and Always Free accounts (if applicable). The title of the lab and the Contents Menu title (the title above) match for Prerequisite lab. This lab is always first.",
+            "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/cloud-login.md"
+        },
+        {
+            "title": "Lab 1: OCI AI Services",
+            "description": "Labs that follow the introduction are numbered, starting with Lab 1",
+            "filename": "../../setup/setup.md"
+        },
+        {
+            "title": "Lab 2: Explore the Starter Skill",
+            "description": "Labs that follow the introduction are numbered, starting with Lab 1",
+            "filename": "../../explore/explore.md"
+        },
+        {
+            "title": "Lab 3: Extend the Starter Skill",
+            "description": "Labs that follow the introduction are numbered, starting with Lab 1",
+            "filename": "../../extend/extend.md"
+        },
+        {
+            "title": "Lab 4: Add the Detect Sentiment Capability",
+            "description": "Labs that follow the introduction are numbered, starting with Lab 1",
+            "filename": "../../sentiment/sentiment.md"
+        },
+        {
+            "title": "Lab 5: Add the Detect Language Capability",
+            "description": "Labs that follow the introduction are numbered, starting with Lab 1",
+            "filename": "../../language/language.md"
+        },
+        {
+            "title": "Lab 6: Add the Analyze Image Capability",
+            "description": "Labs that follow the introduction are numbered, starting with Lab 1",
+            "filename": "../../vision/vision.md"
+        },
+        
+        {
+            "title": "Need Help?",
+            "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+            "filename": "https://oracle-livelabs.github.io/common/labs/need-help/need-help-livelabs.md"
+          }
+    ]
+}

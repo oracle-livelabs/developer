@@ -1,0 +1,126 @@
+{
+	"info": {
+		"_postman_id": "058a4214-a600-414c-be4d-f8539f8b360f",
+		"name": "Marketplace-Apex-Livelab-Initialization",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Step-0 : Init Marketplace",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": {
+						"password": "{{bc-admin-password}}",
+						"username": "{{bc-admin-user}}"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " { \"chaincode\": \"car_marketplace_cc\",\n \"args\": [\"Init\"],\n \"isInit\": true,\n \"sync\": true\n }\n\n ",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{bc-rest-url}}"
+			},
+			"response": []
+		},
+		{
+			"name": "Step1 : Initialize Dealer1 Inventory",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": {
+						"password": "{{bc-admin-password}}",
+						"username": "{{bc-admin-user}}"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"chaincode\":\"car_marketplace_cc\", \n    \"args\":[\"CreateDealer\",\"{\\\"DealerId\\\":\\\"john_dealer1\\\",\\\"Name\\\":\\\"john_dealer1\\\",\\\"Phone\\\":\\\"222-222-2222\\\",\\\"Email\\\":\\\"john_dealer1@dealer.com\\\",\\\"Inventory\\\":[]}\"],\n    \"sync\":true\n    }\n\n\n\n\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{bc-rest-url}}"
+			},
+			"response": []
+		},
+		{
+			"name": "Step2 : Initialize Dealer2 Inventory",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": {
+						"password": "{{bc-admin-password}}",
+						"username": "{{bc-admin-user}}"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"chaincode\":\"car_marketplace_cc\", \n    \"args\":[\"CreateDealer\",\"{\\\"DealerId\\\":\\\"sam_dealer2\\\",\\\"Name\\\":\\\"sam_dealer2\\\",\\\"Phone\\\":\\\"222-222-2222\\\",\\\"Email\\\":\\\"sam_dealer2@dealer.com\\\",\\\"Inventory\\\":[]}\"],\n    \"sync\":true\n    }\n\n\n\n\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{bc-rest-url}}"
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "bc-rest-url",
+			"value": "https://marketplace-3-oabcs1-ams.blockchain.ocp.oraclecloud.com:7443/restproxy/api/v2/channels/car-marketplace/transactions",
+			"type": "default"
+		},
+		{
+			"key": "bc-chaincode",
+			"value": "car_marketplace_cc",
+			"type": "default"
+		},
+		{
+			"key": "bc-admin-user",
+			"value": "marketplace",
+			"type": "default"
+		},
+		{
+			"key": "bc-admin-password",
+			"value": "####",
+			"type": "default"
+		}
+	]
+}
