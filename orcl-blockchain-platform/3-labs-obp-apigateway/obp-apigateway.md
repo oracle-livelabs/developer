@@ -58,7 +58,7 @@ This lab assumes you have:
 
   ![Start Stack Wizard](images/carmkplace-parameters-1.png)
 
-8. Stack is created. Open the stack by clicking on the new stack linkC.
+8. Stack is created. Open the stack by clicking on the new stack link.
 
   ![Start Stack Wizard](images/carmkplace-createstack-1.png)
 
