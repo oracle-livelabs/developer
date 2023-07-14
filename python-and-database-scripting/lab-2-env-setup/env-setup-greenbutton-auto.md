@@ -75,6 +75,7 @@ In the Oracle Autonomous Database Summary screen, we're going to launch Cloud Sh
 
  ![Cloud Shell](./images/cloud_shell.png " ")
 
+
 2. When connected, the following should display:
  ![Cloud Shell terminal](./images/cloud_shell_term.png " ")
 
@@ -114,7 +115,7 @@ The **samples/tutorial** directory has scripts to run and modify. The **samples/
 ### Additional notes, for your own reference (you do not need to take any action during this lab):
 
 
-## Install Python 3
+### Install Python 3
 
 Python comes preinstalled on most Linux distributions, and for this LiveLab, the Cloud Shell already has Python 3.8.14 preinstalled, so you don't have to run this step. In case you wanted to install Python in your own environment, outside of Oracle Sandbox, the steps for installing it are provided below.
 The Python packages can be obtained from the software repository of your Linux distribution using the package manager.
@@ -140,7 +141,7 @@ You must have an Oracle Autonomous Database already created, in order to connect
 
     ![install python](./images/p_installPython.jpg " ")
 
-## Install python-oracledb driver
+### Install python-oracledb driver
 
 1.  Check if the Python driver is already installed. If you get a warning that the module is not found, then proceed to install the `python-oracledb` module using python3 and pip.
 
@@ -172,7 +173,7 @@ You must have an Oracle Autonomous Database already created, in order to connect
 
     Type exit() to return to the command line prompt
 
-## Task 6: Environment setup
+## Task 4: Environment setup
 
 We are going to use the [Code Editor](https://docs.oracle.com/en-us/iaas/Content/API/Concepts/code_editor_intro.htm) functionality available on your tenancy in order to edit the Python scripts, as needed.
 Oracle Cloud Infrastructure (OCI) Code Editor provides a rich, in-console editing environment that enables you to edit code and update service workflows and scripts without having to switch between the Console and your local development environment.
@@ -242,7 +243,7 @@ if wallet_password is None:
 
 At runtime, the module name of the python-oracledb package is **oracledb**
 
-## Task 7: Test Connection to Oracle Autonomous Database
+## Task 5: Test Connection to Oracle Autonomous Database
 By default, python-oracledb runs in a _Thin_ mode which connects directly to Oracle Database.
 
 There are two ways to create a connection to Oracle Autonomous Database using python-oracledb driver:
