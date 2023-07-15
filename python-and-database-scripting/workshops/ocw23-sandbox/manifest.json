@@ -14,7 +14,7 @@
         {
             "title": "Lab 1: Environment Setup",
             "description": "Use python-oracledb connection pools to connect to the Oracle Database",
-            "filename": "../../lab-2-env-setup/env-setup-greenbutton.md"
+            "filename": "../../lab-2-env-setup/env-setup-greenbutton-auto.md"
         },
         {
             "title": "Lab 2: Connection Pools",
