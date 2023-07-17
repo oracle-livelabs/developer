@@ -29,11 +29,11 @@ This lab assumes you have:
 - You have completed:
     - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
     - Lab: Environment Setup
-    - Lab: Create a Blockchain Network connecting 2 Organizations & Configuring Oracle Blockchain App Builder
+    - Lab1: Create a Blockchain Network connecting 3 Organizations & Configuring Oracle Blockchain App Builder
     
 ## Task 1: Deploy Car Marketplace Smart Contract (Chaincode) to Founder Instance (Marketplace) from Blockchain App Builder
 
-  Now that we have tested our project locally, we can connect to our remote instances.
+  Now that we have configured completed Lab1, let's connect to the cloud instances to deploy and test the chaincodes.
 
 1. In the OCI services menu, select 'Developer Services' and click on 'Blockchain Platform'
 
@@ -45,17 +45,19 @@ This lab assumes you have:
 
   ![Founder Deployment](images/2-app-builder-4-4.png)
 
-5. Hover over the **Environments** pane, click on the '+' button, and fill out the form as follows:
+5. Go to VSCode AppBuilder and Hover over the **Environments** pane, click on the '+' button, and fill out the form as follows:
     - Add a **Name** (e.g. Marketplace).
     - Optionally, add a **Description**.
-    - Paste the **Marketpalce rest proxy url from step3** of your marketplace founder instance.
+    - Paste the **Marketpalce rest proxy url from step4** of your marketplace founder instance.
     - Enter your **User Name** (e.g. 'username') and then enter the **Password**.
 
   ![Founder Deployment](images/2-app-builder-4-4.1.png)
 
-6. Now, changing the target environment from 'Local Environment' to 'Marketplace' in App Builder. Obtain the channel name as set in *Lab1 - Task 5 (car-marketplace)* 
+6. Once all the information is captured from admin console and configured in AppBuilder Environment setup, let's deply the chaincode. Change the target environment from 'Local Environment' to 'Marketplace' in App Builder, add init parameters (e.g:'OrgId': marketplace, 'UserId':marketplace ) Obtain the channel name as set in *Lab1 - Task 5 (e.g:car-marketplace)* 
+
 
   ![Founder Deployment](images/2-car-marketplace-6-4.png)
+  ![Founder Deployment](images/2-car-marketplace-6-4-1.png)
 
 ## Task 2: Import Car Marketplace chaincode package from App Builder
 
@@ -177,7 +179,7 @@ Now assign the endorsement policy by by selecting the signature policy and click
 
 2. Enter the collection setup variables in Postman Environment. Some sample definitions are shown below.
 
-  ![Tokenization Definitions](images/tokenization_definitions_1.png)
+  ![Tokenization Definitions](images/tokenization_definitions_1-1.png)
 
 3. Open tokenization collection Marketplace_Tokenization, and run integrations as described in steps 0 – 6 by clicking Send:
 
@@ -190,21 +192,21 @@ Now assign the endorsement policy by by selecting the signature policy and click
 
   ![Initialize Token](images/initialize_token_1.png)
 
-    - Step 2, 3, 4 – Create & Associate Account(Admin User):  This method creates an account for a specified user and token. An account must be created for any user who will have tokens at any point. Accounts track balances, on-hold balances, and transation history.
+    - Step 2 – Create(Admin User):  This method creates an account for a specified user and token. An account must be created for any user who will have tokens at any point. Accounts track balances, on-hold balances, and transation history.
 
   ![Create Accounts](images/create_accounts_1.png)
 
-    - Copy the account id received when creating the account. Substitute the accountid while associating the account as shown.
+    - Step 3 – Associate Acoount: Copy the account id  received from Step2 when creating the account in step. Substitute the accountid while associating the account as shown.
 
   ![Initialize Token](images/associate_token.png)
 
-    - Step 5, 6 – Add Role: This method adds a role to a specified user and token. This method can be called only by the Token Admin of the chaincode.
+    - Step 4 – Add Role: This method adds a role to a specified user and token. This method can be called only by the Token Admin of the chaincode.
 
   ![Add Role](images/add_role_1.png)
 
     - Minter Role: mints a quantity of tokens, which are then owned by the caller of the method.
 
-    - Step 7 – Mint Fiat Token Tokens: This method mints batch of tokens, which are then owned by the caller of the method. The caller must have an account and the minter role.
+    - Step 5 – Mint Fiat Token Tokens: This method mints batch of tokens, which are then owned by the caller of the method. The caller must have an account and the minter role.
 
   ![Issue Tokens](images/mint_fiat_token.png)
 

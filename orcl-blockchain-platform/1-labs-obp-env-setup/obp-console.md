@@ -1,4 +1,4 @@
-# Create a Blockchain Network connecting 2 Organizations
+# Create a Blockchain Network connecting 3 Organizations
 
 ## Introduction
 
@@ -11,7 +11,7 @@ As a preassembled PaaS, Oracle Blockchain Platform includes all the dependencies
 
 ### Objectives
 
-- Create a permissioned network that consists of 1 founder and 1 partner blockchain instances
+- Create a permissioned network that consists of 1 founder and 2 partner blockchain instances
 
 ### Prerequisites
 This lab assumes you have:
@@ -90,7 +90,7 @@ You will be using Oracle's Blockchain App Builder extension, accessible through 
 
 The flow for developing smart contracts begins with creating a [specification file](https://docs.oracle.com/en/cloud/paas/blockchain-cloud/usingoci/input-configuration-file.html) that describes car marketplace assets being maintained on the blockchain ledger.
 
-[`Car_Marketplace.yml`](files/Car_Marketplace.yml) describes [marketplace assets](https://docs.oracle.com/en/cloud/paas/blockchain-cloud/usingoci/input-configuration-file.html): Car, Dealer, Invoice, and Purchase Order (PO). Each object has properties that characterize the assets, data types and validations. You can see sample specification files (and write your own specifications) in either YAML or JSON using the Blockchain App Builder package.
+[`Car_Marketplace.yml`](files/Car_Marketplace.yml?download=1) describes [marketplace assets](https://docs.oracle.com/en/cloud/paas/blockchain-cloud/usingoci/input-configuration-file.html): Car, Dealer, Invoice, and Purchase Order (PO). Each object has properties that characterize the assets, data types and validations. You can see sample specification files (and write your own specifications) in either YAML or JSON using the Blockchain App Builder package.
 
 1. Locate the sample specification, [`Car_Marketplace.yml`](files/Car_Marketplace.yml?download=1), in the **Samples** folder.
 
@@ -98,7 +98,7 @@ The flow for developing smart contracts begins with creating a [specification fi
 
 3. Hover over the **Specifications** pane, click on the three dots, and then **Import Specification**. Alternatively, copy the path of the specification file and import manually.
 
-4. Click on the yml specification imported. You can see the specficiations defined for each object and attribute. If you want change any specification of an attribute, you can do so. For example: Change line number 102 to - format: ["PO%1%t", "recipient"]. [Specifications Help](https://docs.oracle.com/en/cloud/paas/blockchain-cloud/usingoci/input-configuration-file.html)
+4. Click on the yml specification imported. You can see the specficiations defined for each object and attribute. If you want to change any specification of an attribute, you can do so. For example: Change line number 102 to - format: ["PO%1%t", "recipient"]. [Specifications Help](https://docs.oracle.com/en/cloud/paas/blockchain-cloud/usingoci/input-configuration-file.html)
 
   Make sure the **Details** of your specification read:
 
@@ -129,20 +129,7 @@ Select '`car_marketplace_cc`.controller.go' under '`car_marketplace_cc`/src/cont
 
 1. Open the Car Marketplace specification file and scroll to the bottom. This is where your customMethods are listed.
 
-2. First, add the imports needed for the custom methods.
-
-     ```
-    <copy>
-    "encoding/json"
-    "fmt"
-    "time"
-    "example.com/car_marketplace_cc/lib/util/date"
-    </copy>
-
-    ```
-
-
-3. We've modified existing CRUD operations and defined custom methods for the following functions:
+2. We've modified existing CRUD operations and defined custom methods for the following functions:
   - 'CreateCar': Adds car to dealer's inventory. Copy and paste these custom methods in the controller file, overwriting the stubs for these methods. The function retrieves dealer from blockchain, appends the car to dealer's inventory and records car on ledger.
 
     ```
@@ -542,7 +529,7 @@ Use IDCS to create and add both 'john_\dealer1' and 'sam_\dealer2' users, and th
 
   ![Close Window](images/close-window.png)
 
-11. Open a new tab and navigate to the [OCI login page](cloud.oracle.com). Provide your tenancy account name and select **Next**. Sign-in with your admin (*not* the 'john\_dealer1') credentials.
+11. Open a new tab and navigate to the [OCI login page](https://cloud.oracle.com). Provide your tenancy account name and select **Next**. Sign-in with your admin (*not* the 'john\_dealer1') credentials.
 
   ![OCI tenancy login](images/oci-tenancy-login.png)
 
@@ -572,5 +559,5 @@ You may now proceed to the next lab.
 
 ## Acknowledgements
 * **Author** - Oracle Blockchain Product Management
-* **Contributors** - Amal Tyagi, Dev Sony  Teodora Gheorghe, Adrien Lhemann, Diego Morales, Lokeswara Nushisarva, Siddesh C. Prabhu Dev Ujjni, Rene Fontcha
-* **Last Updated By/Date** - Rene Fontcha, September 2022
+* **Contributors** - Jassi Singh, Gourav Sarkar, Siddesh C. Prabhu Dev Ujjni, Rene Fontcha
+* **Last Updated By/Date** - Rene Fontcha, July 2023

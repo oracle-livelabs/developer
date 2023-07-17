@@ -33,7 +33,7 @@ This lab assumes you have:
     - https://markeptplace-abcd-iad.blockchain.ocp.oraclecloud.com:7443
 
 2. Click on the link below to download the Resource Manager zip file you need to build your environment:
-    - Download ORM Stack zip file [`carmkplace-apigateway-vcn.zip`](files/carmkplace-apigateway-vcn.zip?download=1)
+    - Download ORM Stack zip file [`carmkplace-apigateway-vcn.zip`](https://objectstorage.us-ashburn-1.oraclecloud.com/p/5Lvyu9jrscwQ0FQtZmjy61dhY0rJNf9D2we4GpP-RhkP3OKfolVTMkxWe0gZSFyB/n/oabcs1/b/livelabs/o/carmkplace-apigateway-vcncarmkplace_apigateway_vcn.zip)
 3.  Login to Oracle Cloud
 4.  Open up the hamburger menu in the left hand corner.  Choose the compartment in which you would like to install.  Under the **Solutions and Platform** submenu, choose **Resource Manager > Stacks**.  
 
