@@ -85,28 +85,28 @@ In this lab, you will:
 
 You must use Telegram to create your chatbot and get the details about your token ID and chat ID, respectively.
 
-  1. Open a web browser and access the Telegram platform (web or smartphone) at [https://web.telegram.org/](https://web.telegram.org/)
+1. Open a web browser and access the Telegram platform (web or smartphone) at [https://web.telegram.org/](https://web.telegram.org/)
 
-  2. Search for "BotFather" on Telegram, then click on it.
-![telegram-bot-father](images/telegram-bot-father.png "telegram bot father")
+2. Search for "BotFather" on Telegram, then click on it.
+    ![telegram-bot-father](images/telegram-bot-father.png "telegram bot father")
 
-  3. Select START on BotFather's screen.
-  ![telegram-bot-father-start](images/telegram-bot-father-start.png "telegram bot father start")
+3. Select START on BotFather's screen.
+    ![telegram-bot-father-start](images/telegram-bot-father-start.png "telegram bot father start")
 
-  4. Click "\newbot" as below to create a new bot.
-  ![telegram-new-bot](images/telegram-new-bot.png "telegram new bot")
+4. Click "\newbot" as below to create a new bot.
+    ![telegram-new-bot](images/telegram-new-bot.png "telegram new bot")
 
-  5. Define a name for your bot. "Oracle Java Bot" is used below.
-  ![telegram-bot-name](images/telegram-bot-name.png "telegram bot name")
+5. Define a name for your bot. "Oracle Java Bot" is used below.
+    ![telegram-bot-name](images/telegram-bot-name.png "telegram bot name")
 
-  6. Define a unique username for your bot. It must end with 'bot'.
-  ![telegram-bot-username](images/telegram-bot-username.png "telegram bot username")
+6. Define a unique username for your bot. It must end with 'bot'.
+    ![telegram-bot-username](images/telegram-bot-username.png "telegram bot username")
 
-  7. Take note of your "Telegram Bot Token" which is required to access the Telegram Bot (HTTP) API. Besides, also take note of your bot URL "(t.me/your_bot_unique_name)" and use it to access your bot, as below.
-  ![telegram-bot-url-main-screen](images/telegram-bot-url-main-screen.png "telegram bot url main screen")
+7. Take note of your "Telegram Bot Token" which is required to access the Telegram Bot (HTTP) API. Besides, also take note of your bot URL "(t.me/your_bot_unique_name)" and use it to access your bot, as below.
+    ![telegram-bot-url-main-screen](images/telegram-bot-url-main-screen.png "telegram bot url main screen")
 
-  8. Configure the Telegram Bot details. Navigate to `MtdrSpring/backend/src/main/resources`, use a text editor (vi, vim, nano, etc) to open the application.properties file, then uncomment the two entries below to configure the "Telegram Bot Token" and "Telegram Bot Name" properties with the values you got from the Telegram Bot platform in the previous steps.
-  ![telegram-bot-configuration](images/telegram-bot-configuration.png "telegram bot configuration")
+8. Configure the Telegram Bot details. Navigate to `MtdrSpring/backend/src/main/resources`, use a text editor (vi, vim, nano, etc) to open the application.properties file, then uncomment the two entries below to configure the "Telegram Bot Token" and "Telegram Bot Name" properties with the values you got from the Telegram Bot platform in the previous steps.
+    ![telegram-bot-configuration](images/telegram-bot-configuration.png "telegram bot configuration")
 
 You may now **proceed to the next lab**.
 
@@ -114,4 +114,4 @@ You may now **proceed to the next lab**.
 
 * **Authors** -  Juarez Barbosa, Sr. Principal Java Developer Evangelist, Java Database Access; 
 * **Contributors** - Kuassi Mensah, Dir. Product Management, Java Database Access
-* **Last Updated By/Date** - Juarez Barbosa, June 2023
+* **Last Updated By/Date** - Juarez Barbosa, July 2023
