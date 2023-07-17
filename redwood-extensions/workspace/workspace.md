@@ -117,7 +117,7 @@ VB has some of the most commonly used components pre-installed.  Other component
 * Collection Container
 * Horizontal Foldout Layout Page Template
 * Summarizing Foldout Panel
-* Simple Create and Edit Page Template Pattern
+* Simple Create and Edit Page Template (There are two in the list, choose the **oj-sp-simple-create-edit-pattern** component)
 * Welcome Page Template
 
 1. On the far left side of the Designer's navigator, click the fifth tab, Components:

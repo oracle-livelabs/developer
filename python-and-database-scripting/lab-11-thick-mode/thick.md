@@ -26,20 +26,20 @@ To enable **thick** mode, the Oracle client libraries are required.
 1. In Code Editor, review the *db\_config\_thick.py* file in the samples/tutorial directory.
 Note that the default values are used to match the connection information for your enviroment. For example, the default username is "pythondemo", in case the enviroment variable "PYTHON_USER" has not been initialized.
 
-````
-<copy>
-user = os.environ.get("PYTHON_USER", "pythondemo")
-config_dir = os.environ.get("CONFIG_DIR")
-dsn = os.environ.get("DSN_ADB")
-wallet_location = os.environ.get("WALLET_LOCATION")
-wallet_password = os.environ.get("WALLET_PASSWORD")
-pw = os.environ.get("PYTHON_PASSWORD")
-if pw is None:
-    pw = getpass.getpass("Enter password for %s: " % user)
-if wallet_password is None:
-    wallet_password = getpass.getpass("Enter password for the Wallet: ")
-</copy>
-````
+    ````
+    <copy>
+    user = os.environ.get("PYTHON_USER", "pythondemo")
+    config_dir = os.environ.get("CONFIG_DIR")
+    dsn = os.environ.get("DSN_ADB")
+    wallet_location = os.environ.get("WALLET_LOCATION")
+    wallet_password = os.environ.get("WALLET_PASSWORD")
+    pw = os.environ.get("PYTHON_PASSWORD")
+    if pw is None:
+        pw = getpass.getpass("Enter password for %s: " % user)
+    if wallet_password is None:
+        wallet_password = getpass.getpass("Enter password for the Wallet: ")
+    </copy>
+    ````
 
 ## Task 2: Review the Oracle client library path
 
@@ -81,7 +81,7 @@ oracledb.init_oracle_client(lib_dir=instant_client_dir,config_dir=config_dir)
 </copy>
 ````
 
-Labs 12 to 14 labs are specific to the python-oracledb thick modes in this release of python-oracledb.
+Labs __Advanced Queueing__, __Scrollable Cursors__ and __SODA__ are specific to the python-oracledb thick modes in this release of python-oracledb.
 
 ## Conclusion
 

@@ -78,7 +78,7 @@ In this lab, you will:
   A sample response file is included for reference, modify AgentDisplayName and GatewayPort parameters accordingly.
   ![image of final response file](images/terminal-edit-install-key.png)
 
-  To save the file, type CTRL+x. Before exiting, nano will ask you if you wish to save the file: Type y to save and exit.
+  To save the file, type CTRL+x. Before exiting, nano will ask you if you want to save the file: Type y to save and exit.
 
 ## Task 2: Configure Certificates for Management Gateway
 
@@ -202,7 +202,7 @@ Deploying service plugin(s)......Done.
 Gateway setup completed and the gateway is running.
 In the future gateway can be started by directly running: sudo systemctl start mgmt_gateway
 
-Please make sure that you delete <user_home_directory>/gateway.rsp or store it in secure location.
+Make sure that you delete <user_home_directory>/gateway.rsp or store it in secure location.
 
 Creating gateway system properties file
 Creating properties file
@@ -228,7 +228,7 @@ Management Gateway Plugin set up successfully.
     </copy>
     ```  
 
-5. As we set the Gateway port to 4479. Open this port on the host firewall by configuring the firewall. 
+5. Since we have set the Gateway port to 4479, configure the host firewall to open this port.
 
     ```
     <copy>
@@ -236,9 +236,9 @@ Management Gateway Plugin set up successfully.
 
     sudo firewall-cmd --reload
     </copy>
-    ```  
+    ```
 
-    > **Note:** This set of commands is specifically for Oracle Linux. Please adjust the commands based on your Operating System and Setup.
+    > **Note:** This set of commands is specifically for Oracle Linux. Change the commands based on your Operating System and Setup.
 
 6. Take note of IP address of the host by running following command.
     ```
@@ -306,9 +306,9 @@ Management Gateway Plugin set up successfully.
 
 After installing the Management Gateway, you will need to configure each Management Agent to use the Management Gateway **during the initial agent installation process**.
 
-* A fleet, `fleet-1`, has already been setup during [Lab 2](?lab=setup-a-fleet) and you should have access to the install key file embedded in the downloaded installation script.
+* A fleet, `fleet-1`, has already been setup during [Lab 3](?lab=setup-a-fleet) and you should have access to the install key file embedded in the downloaded installation script.
 
-* To install Management Agent, follow [Task 2 of Lab 5](?lab=set-up-of-management-agent#Task2:InstallManagementAgentonanonOCIHost).
+* To install Management Agent, follow [Task 2 of Lab 6](?lab=set-up-of-management-agent#Task2:InstallManagementAgentonanonOCIHost).
 
 * Before running the installation script take note of the flags to configure the proxy:
     * **ProxyHost**: The IP address of host that is running Management Gateway
@@ -321,7 +321,7 @@ After installing the Management Gateway, you will need to configure each Managem
      </copy>
      ```
 
-* Follow [Task 3 - 6 to  of Lab 5](?lab=set-up-of-management-agent#Task3:VerifyManagementAgentInstallation) to verify Management Agent installation.
+* Follow [Task 3 - 6 to  of Lab 6](?lab=set-up-of-management-agent#Task3:VerifyManagementAgentInstallation) to verify Management Agent installation.
 
 You can configure an existing Management Agent to use the Management Gateway. For details, see [Perform Postinstallation Tasks for Management Gateway](https://docs.oracle.com/en-us/iaas/management-agents/doc/perform-postinstallation-tasks-management-gateway-installation.html)
 
@@ -382,9 +382,6 @@ The bottom of the emd.properties file should look like this:
     </copy>
     ```
 
-
-
-
 ## Task 6: Verify detection of Managed Instance
 1. In the Oracle Cloud Console, open the navigation menu, click **Observability & Management**, and then click on **Fleets** under **Java Management**.
 
@@ -408,7 +405,7 @@ You may now **proceed to the next lab.**
 
 * If you encounter an error similar to the following:
     ```
-    Gateway only supports JDK 8 with a miniumum upgrade version JDK 8u281 -b02. Please set your preferred path in JAVA_HOME
+    Gateway only supports JDK 8 with a miniumum upgrade version JDK 8u281 -b02. Set your preferred path in JAVA_HOME.
     ```
     Enter the following command to check if jdk1.8.x exists, and select it as the default JDK:
     ```
@@ -420,12 +417,14 @@ You may now **proceed to the next lab.**
 **For Task 3 Step 3**
 * If you encounter an error similar to the following:
     ```
-    Could not resolve hostname <hostname> in the installation environment. Resolve the hostname or provide the gatewayCertCommonName in the response file and rerun the gateway setup script.
+    Could not resolve hostname <hostname> in the installation environment. Resolve the hostname or provide the GatewayCertCommonName in the response file and rerun the gateway setup script.
     ```
-    Add the parameter **GatewayCertCommonName** = NewGatewayCert (Or any other name of your choice) in the gateway.rsp response file created earlier in [Task 1](?lab=multiple-managed-instances#task1preparegatewaysoftwareandresponsefileformanagementgatewayinstallation).
+    Add the parameter **GatewayCertCommonName** = test.gateway.com (or other Fully Qualified Domain Name of your choice) in the gateway.rsp response file created earlier in [Task 1](?lab=multiple-managed-instances#task1preparegatewaysoftwareandresponsefileformanagementgatewayinstallation).
 
 
 ## Learn More
+
+* Refer to the [Management Gateway Documentation](https://docs.oracle.com/en-us/iaas/management-agents/doc/management-gateway.html) for more details.
 
 * Use the [Troubleshooting](https://docs.oracle.com/en-us/iaas/management-agents/doc/troubleshoot-management-gateway-installation-issues.html) chapter for explanations on how to diagnose and resolve common problems encountered when installing or using Management Gateway.
 
@@ -435,4 +434,4 @@ You may now **proceed to the next lab.**
 ## Acknowledgements
 
 * **Author** - Bhuvesh Kumar, Java Management Service
-* **Last Updated By** - Ivan Eng, March 2023
+* **Last Updated By** - Ivan Eng, June 2023

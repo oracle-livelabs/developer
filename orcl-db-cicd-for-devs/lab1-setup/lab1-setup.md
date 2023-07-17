@@ -70,14 +70,14 @@ In this lab, you will:
     - __Data Warehouse__ - For this lab, choose __Data Warehouse__ as the workload type.
     - __Transaction Processing__ - Additionally, you can also complete the lab with Transaction Processing as the workload type.
 
-    ![Choose a workload type.](./images/chooseworkload.png " ")
+    ![Choose a workload type.](./images/chooseworkloadv2.png " ")
 
 5. Choose a deployment type. Select the deployment type for your database from the choices:
 
-    - __Shared Infrastructure__ - For this lab, choose __Shared Infrastructure__ as the deployment type.
+    - __Serverless__ - For this lab, choose __Serverless__ as the deployment type.
     - __Dedicated Infrastructure__ - Dedicated Infrastructure allows you to run Autonomous Database on Dedicated Exadata infrastructure. The lab can also be run with this option.
 
-    ![Choose a deployment type.](./images/deploymenttype.png " ")
+    ![Choose a deployment type.](./images/deploymenttypev2.png " ")
 
 6. Configure the database:
 
@@ -90,7 +90,7 @@ In this lab, you will:
 
     > **Note:** You cannot scale up/down an Always Free autonomous database.
 
-    ![Choose the remaining parameters.](./images/remainingparameters.png " ")
+    ![Choose the remaining parameters.](./images/remainingparametersv2.png " ")
 
 7. Create administrator credentials:
 
@@ -149,7 +149,7 @@ Let’s create the database users you will need for this workshop. Oracle Cloud 
          - The password cannot contain the double quote (") character.
          - The password must be different from the last 4 passwords used.
          - The password must not be the same password that you set less than 24 hours ago.
-    * You can then select the Run Script icon
+    * You can then select the Run Script icon. *Expand the line right below to view the copiable code block*
 
          <details>
          <summary>[EXPAND] Create MOVIESTREAM\_MANAGER and MOVIESTREAM\_DEV Code</summary>
@@ -406,5 +406,5 @@ Just as you can create and have different tables in your database (`employees`, 
 
 ## Acknowledgements
 
-- **Author** - Zachary Talke, Product Manager
+- **Author** - Zachary Talke, Senior Product Manager
 - **Last Updated By/Date** - Zachary Talke, May 2023

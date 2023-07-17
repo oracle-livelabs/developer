@@ -62,7 +62,7 @@ Completion of:
 
 ## Task 2: Apply a changelog and roll it back
    1. Now that creating a tag has been taken care of, you are all set to run the merchandise\_table.xml changelog and create your merchandise table!
-      * This is the table you created and saved to a changelog [Back In Lab 2 Task 3 Step 5](/workshops/freetier/?lab=lab2-help-generate-update#Task3:Generateyourdatabaseschemafiles)
+      * This is the table you created and saved to a changelog [Back In Lab 2 Task 3 Step 5](../workshops/freetier/?lab=lab2-help-generate-update#Task3:Generateyourdatabaseschemafiles)
 
       ```na
       <copy>
@@ -137,5 +137,5 @@ Stay tuned for future content where we cover how to use SQLcl Liquibase to autom
 
 ## Acknowledgements
 
-- **Author** - Zachary Talke, Product Manager
+- **Author** - Zachary Talke, Senior Product Manager
 - **Last Updated By/Date** - Zachary Talke, May 2023
