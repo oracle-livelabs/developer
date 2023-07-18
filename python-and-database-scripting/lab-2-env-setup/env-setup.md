@@ -342,7 +342,7 @@ There are two ways to create a connection to Oracle Autonomous Database using py
 
 Connect to the Oracle Database and print the version of the database via Python. This confirms you are connected to an Oracle instance and returns the database version.
 
-1. in Code Editor, review the code contained in *connect.py*:
+1. In Code Editor, review the code contained in *connect.py*:
     
     ````
     <copy>
@@ -448,10 +448,10 @@ Connect to the Oracle Database and print the version of the database via Python.
             
     cur.close()
     con.close()
+    </copy>
     ````
         
     Running the script completes without error:
-        
     ````
     <copy>
     python3 query.py

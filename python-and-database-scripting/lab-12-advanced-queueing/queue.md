@@ -5,7 +5,7 @@
 
 This lab will show how to use advanced queueing with python-oracledb driver in thick mode
 
-Estimated Lab Time: 10 minutes
+Estimated Time: 10 minutes
 
 ### Objectives
 
