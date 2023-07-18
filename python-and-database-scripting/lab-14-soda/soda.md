@@ -4,7 +4,7 @@
 
 Simple Oracle Document Access (SODA) is a set of NoSQL-style APIs. Documents can be inserted, queried, and retrieved from Oracle Database. By default, documents are JSON strings. SODA APIs exist in many languages. It is usable in python-oracledb's thick mode. Documentation link for further reading: [Simple Oracle Document Access (SODA)](https://python-oracledb.readthedocs.io/en/latest/user_guide/soda.html).
 
-Estimated Lab Time: 5 minutes
+Estimated Time: 5 minutes
 
 ### Objectives
 

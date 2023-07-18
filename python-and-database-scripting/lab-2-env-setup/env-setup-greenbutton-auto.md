@@ -59,9 +59,9 @@ This lab assumes you have completed the following steps:
 
 5. Specify password for the Wallet (please use the password provided by your Tutor)
 
-Hit **Download** button and save the wallet as a zip file to a location on your local laptop, then click Close to close the popup window. We will upload this file on Console Shell in the next task, so please make a note of the location where the .zip wallet is saved.
+    Hit **Download** button and save the wallet as a zip file to a location on your local laptop, then click Close to close the popup window. We will upload this file on Console Shell in the next task, so please make a note of the location where the .zip wallet is saved.
 
- ![Wallet password](./images/wallet_password.png " ")
+    ![Wallet password](./images/wallet_password.png " ")
 
 6. Click __Close__.
 
@@ -74,12 +74,14 @@ In the Oracle Autonomous Database Summary screen, we're going to launch Cloud Sh
 1. To launch the Cloud Shell, sign in to the Sandbox Oracle Cloud Infrastructure tenancy and click the command prompt icon in Console header, then select Cloud Shell from the drop down:
 
  ![Cloud Shell](./images/cloud_shell.png " ")
+2. When prompted to run tutorial, type N and enter.
+ 
+ ![Cloud Shell](./images/run_tutorial.png " ")
 
-
-2. When connected, the following should display:
+3. When connected, the following should display:
  ![Cloud Shell terminal](./images/cloud_shell_term.png " ")
 
-3. Drag and drop the Wallet archive from the location where it was saved, to the Console Shell
+4. Drag and drop the Wallet archive from the location where it was saved, to the Console Shell
  ![Cloud shell wallet](./images/cloud_shell_wallet.png " ")
 
 
@@ -103,14 +105,14 @@ In the Oracle Autonomous Database Summary screen, we're going to launch Cloud Sh
     </copy>
     ````
 
-The script will run all the enviroment configuration for you, including:
-* python-oracledb driver install
-* download the sample files on Cloud Shell
-* environment setup to allow connection to the Oracle Autonomous Database, shared infrastructure.
+    The script will run all the enviroment configuration for you, including:
+    * python-oracledb driver install
+    * download the sample files on Cloud Shell
+    * environment setup to allow connection to the Oracle Autonomous Database, shared infrastructure.
 
-The **samples/tutorial** directory has scripts to run and modify. The **samples/tutorial/sql** directory has all the SQL scripts used by the Python files to create database tables and other objects.
+    The **samples/tutorial** directory has scripts to run and modify. The **samples/tutorial/sql** directory has all the SQL scripts used by the Python files to create database tables and other objects.
 
-**NOTE**: if by any reason you need to logon back to the Sandbox OCI environment, you need to rerun the script in order to set the environment variables again
+    **NOTE**: if by any reason you need to logon back to the Sandbox OCI environment, you need to rerun the script in order to set the environment variables again
 
 ### Additional notes, for your own reference (you do not need to take any action during this lab):
 
@@ -120,18 +122,19 @@ The **samples/tutorial** directory has scripts to run and modify. The **samples/
 Python comes preinstalled on most Linux distributions, and for this LiveLab, the Cloud Shell already has Python 3.8.14 preinstalled, so you don't have to run this step. In case you wanted to install Python in your own environment, outside of Oracle Sandbox, the steps for installing it are provided below.
 The Python packages can be obtained from the software repository of your Linux distribution using the package manager.
 
-1.  Open up the Oracle Cloud Shell and check if python3 has been installed, by running the command:
+1. Open up the Oracle Cloud Shell and check if python3 has been installed, by running the command:
 
     ````
     <copy>
     python3 -V
     </copy>
-        ````
+    ````
+    
+    For this tutorial, Python version 3.6 (or later) is preferred. python-oracledb version 1.0 (or later) is needed.
+    
+    You must have an Oracle Autonomous Database already created, in order to connect to it using the python-oracledb driver.
 
-* For this tutorial, Python version 3.6 (or later) is preferred. python-oracledb version 1.0 (or later) is needed.
-You must have an Oracle Autonomous Database already created, in order to connect to it using the python-oracledb driver.
-
-2.  Upgrade Python if you do not have Python 3 installed. There is no harm in running this command multiple times, the system will either install packages or let you know they are already installed.
+2. Upgrade Python if you do not have Python 3 installed. There is no harm in running this command multiple times, the system will either install packages or let you know they are already installed.
 
     ````
     <copy>
@@ -178,70 +181,69 @@ You must have an Oracle Autonomous Database already created, in order to connect
 We are going to use the [Code Editor](https://docs.oracle.com/en-us/iaas/Content/API/Concepts/code_editor_intro.htm) functionality available on your tenancy in order to edit the Python scripts, as needed.
 Oracle Cloud Infrastructure (OCI) Code Editor provides a rich, in-console editing environment that enables you to edit code and update service workflows and scripts without having to switch between the Console and your local development environment.
 
-To access Code Editor, once logged in to the Sandbox Oracle Cloud Infrastructure, press the command prompt icon in Console header, then select Code Editor as in the image below:
+1. To access Code Editor, once logged in to the Sandbox Oracle Cloud Infrastructure, press the command prompt icon in Console header, then select Code Editor as in the image below:
 
-![Code Editor](./images/code-editor.png " ")
+    ![Code Editor](./images/code-editor.png " ")
 
-During this lab you will be reviewing and editing the sample tutorial files provided, so you need to open them in Code Editor:
+    During this lab you will be reviewing and editing the sample tutorial files provided, so you need to open them in Code Editor:
 
-- From the Menu, select File > Open...
+    - From the Menu, select File > Open...
 
-![Code Editor Open](./images/code-editor-open.png " ")
+    ![Code Editor Open](./images/code-editor-open.png " ")
 
-- Select the location of the samples/tutorial directory and click **Open**
+    - Select the location of the samples/tutorial directory and click **Open**
 
-![Code Editor Open Dir](./images/code-editor-open-dir.png " ")
+    ![Code Editor Open Dir](./images/code-editor-open-dir.png " ")
 
-- On the left side Pane > Files you should see all the files and subdirectories in the /tutorial directory. To review or modify a file, select the desired file and this opens in the file editor.
+    - On the left side Pane > Files you should see all the files and subdirectories in the /tutorial directory. To review or modify a file, select the desired file and this opens in the file editor.
 
-![Code Editor Files](./images/code-editor-files.png " ")
-- Set Autosave option under File > Autosave menu, to avoid loosing changes you make to the files.
+    ![Code Editor Files](./images/code-editor-files.png " ")
+    - Set Autosave option under File > Autosave menu, to avoid loosing changes you make to the files.
 
-To access the local development environment from Code Editor, you may launch Terminal.
+    To access the local development environment from Code Editor, you may launch Terminal.
 
-![Launch Terminal](./images/terminal.png " ")
-Alternatively, you may want to keep Cloud Shell open side by side.
+    ![Launch Terminal](./images/terminal.png " ")
+    Alternatively, you may want to keep Cloud Shell open side by side.
 
-All the necessary configurations to connect to the Oracle Autonomous Database have been automated for you. 
-The connection to Oracle Autonomous Database is using a few arguments:
-* **user**:         for this exercise we'll be using the **pythondemo** user
-* **password**:     password for the **pythondemo** user (the schema has already been created in the Oracle Autonomous Database)
-* **dsn**:          data source name for the Oracle Autonomous Database shared infrastructure
-* **config dir**:   the location where the dsn connection string resides
-* **wallet location**: the location where the wallet was saved
-* **wallet password**: the password setup for the wallet
+    All the necessary configurations to connect to the Oracle Autonomous Database have been automated for you. 
     
-The default values to match the system connection information for your environment, are used by the config files *db\_config.py* and *db\_config\_sys.py* in the samples/tutorial directory.
-    
-The arguments are setup as environment variables and passed to the config files.
+    The connection to Oracle Autonomous Database is using a few arguments:
+    * **user**:         for this exercise we'll be using the **pythondemo** user
+    * **password**:     password for the **pythondemo** user (the schema has already been created in the Oracle Autonomous Database)
+    * **dsn**:          data source name for the Oracle Autonomous Database shared infrastructure
+    * **config dir**:   the location where the dsn connection string resides
+    * **wallet location**: the location where the wallet was saved
+    * **wallet password**: the password setup for the wallet
+        
+    The default values to match the system connection information for your environment, are used by the config files *db\_config.py* and *db\_config\_sys.py* in the samples/tutorial directory.
+        
+    The arguments are setup as environment variables and passed to the config files.
     
 
-1. In Code Editor, review *db\_config.py* (thin mode), in the samples/tutorial directory.
+2. In Code Editor, review *db\_config.py* (thin mode), in the samples/tutorial directory.
 This file is used by other Python files for setting up the database connection.
 
-````
-<copy>
-import oracledb
-import os
-import getpass
-    
-# Tutorial credentials and connection string.
-# Environment variable values are used, if they are defined.
+    ````
+    import oracledb
+    import os
+    import getpass
+        
+    # Tutorial credentials and connection string.
+    # Environment variable values are used, if they are defined.
 
-user = os.environ.get("PYTHON_USER", "pythondemo")      #pythondemo schema, or your preferred schema when connecting to ADB
-pw = os.environ.get("PYTHON_PASSWORD")
-if pw is None:
-    pw = getpass.getpass("Enter password for %s: " % user)
-config_dir = os.environ.get("CONFIG_DIR") 
-dsn = os.environ.get("DSN_ADB")
-wallet_location = os.environ.get("WALLET_LOCATION")
-wallet_password = os.environ.get("WALLET_PASSWORD")
-if wallet_password is None:
-    wallet_password = getpass.getpass("Enter password for the Wallet: " )
-</copy>
-````
+    user = os.environ.get("PYTHON_USER", "pythondemo")      #pythondemo schema, or your preferred schema when connecting to ADB
+    pw = os.environ.get("PYTHON_PASSWORD")
+    if pw is None:
+        pw = getpass.getpass("Enter password for %s: " % user)
+    config_dir = os.environ.get("CONFIG_DIR") 
+    dsn = os.environ.get("DSN_ADB")
+    wallet_location = os.environ.get("WALLET_LOCATION")
+    wallet_password = os.environ.get("WALLET_PASSWORD")
+    if wallet_password is None:
+        wallet_password = getpass.getpass("Enter password for the Wallet: " )
+    ````
 
-At runtime, the module name of the python-oracledb package is **oracledb**
+    At runtime, the module name of the python-oracledb package is **oracledb**
 
 ## Task 5: Test Connection to Oracle Autonomous Database
 By default, python-oracledb runs in a _Thin_ mode which connects directly to Oracle Database.
@@ -252,164 +254,162 @@ There are two ways to create a connection to Oracle Autonomous Database using py
 
 Connect to the Oracle Database and print the version of the database via Python. This confirms you are connected to an Oracle instance and returns the database version.
 
-1. in Code Editor, review the code contained in *connect.py*:
+1. In Code Editor, review the code contained in *connect.py*:
     
-````
-<copy>
-import oracledb
-import db_config
+    ````
+    <copy>
+    import oracledb
+    import db_config
     
-con = oracledb.connect(user=db_config.user,
-                    password=db_config.pw, 
-                    dsn=db_config.dsn, 
-                    config_dir=db_config.config_dir, 
-                    wallet_location=db_config.wallet_location,
-                    wallet_password=db_config.wallet_password)
+    con = oracledb.connect(
+                        user=db_config.user,
+                        password=db_config.pw, 
+                        dsn=db_config.dsn, 
+                        config_dir=db_config.config_dir, 
+                        wallet_location=db_config.wallet_location,
+                        wallet_password=db_config.wallet_password)
 
-print("Database version:", con.version)
-</copy>
-````
+    print("Database version:", con.version)
+    </copy>
+    ````
 
-The username, the password, the connection string and the wallet information that you configured in the db\_config.py module is passed to the connect() method. By default, Oracle's Easy Connect connection string syntax is used.
+    The username, the password, the connection string and the wallet information that you configured in the db\_config.py module is passed to the connect() method. By default, Oracle's Easy Connect connection string syntax is used.
 
 2. Create a basic connection
 
-In a Terminal window or in Cloud Shell, run the script as below:
+    In a Terminal window or in Cloud Shell, run the script as below:
 
-````
-<copy>
-python3 connect.py
-</copy>
-````
+    ````
+    <copy>
+    python3 connect.py
+    </copy>
+    ````
 
-The version number of the database should be displayed. An exception is raised if the connection fails.
+    The version number of the database should be displayed. An exception is raised if the connection fails.
 
-![Connect](./images/connect.png " ")
+    ![Connect](./images/connect.png " ")
 
 3.  Executing a query.
 
-Open **query.py** in Code Editor. It looks like:
+    Open **query.py** in Code Editor. It looks like:
 
-````
-<copy>
-import oracledb
-import db_config
+    ````
+    <copy>
+    import oracledb
+    import db_config
     
-con = oracledb.connect(user=db_config.user,
-                    password=db_config.pw, 
-                    dsn=db_config.dsn, 
-                    config_dir=db_config.config_dir, 
-                    wallet_location=db_config.wallet_location, 
-                    wallet_password=db_config.wallet_password)
-    
-cur = con.cursor()
-cur.execute("select * from dept order by deptno")
-res = cur.fetchall()
-for row in res:
-    print(row)
-</copy>
-````
+    con = oracledb.connect(user=db_config.user,
+                        password=db_config.pw, 
+                        dsn=db_config.dsn, 
+                        config_dir=db_config.config_dir, 
+                        wallet_location=db_config.wallet_location, 
+                        wallet_password=db_config.wallet_password)
+        
+    cur = con.cursor()
+    cur.execute("select * from dept order by deptno")
+    res = cur.fetchall()
+    for row in res:
+        print(row)
+    </copy>
+    ````
 
-Make sure the print(row) line is indented. This lab uses spaces, not tabs.
+    Make sure the print(row) line is indented. This lab uses spaces, not tabs.
 
-The code executes a query and fetches all data.
+    The code executes a query and fetches all data.
 
-Save the file and run it:
+    Save the file and run it:
 
-````
-<copy>
-python3 query.py
-</copy>
-````
+    ````
+    <copy>
+    python3 query.py
+    </copy>
+    ````
 
-![Query execution](./images/query.png " " )
+    ![Query execution](./images/query.png " " )
 
-In each loop iteration a new row is stored in row as a Python "tuple" and is displayed.
+    In each loop iteration a new row is stored in row as a Python "tuple" and is displayed.
 
-Fetching Data is described in a later section
+    Fetching Data is described in a later section
 
 4.  Closing connections
 
-Connections and other resources used by python-oracledb will automatically be closed at the end of scope. This is a common programming style that takes care of the correct order of resource closure.
-    
-Resources can also be explicitly closed to free up database resources if they are no longer needed. This may be useful in blocks of code that remain active for some time.
-    
-Open *query.py* in Code Editor and add calls to close the cursor and connection like:
-
-````
-<copy>
-import oracledb
-import db_config
-    
-con = oracledb.connect(user=db_config.user,
-                    password=db_config.pw, 
-                    dsn=db_config.dsn, 
-                    config_dir=db_config.config_dir, 
-                    wallet_location=db_config.wallet_location, 
-                    wallet_password=db_config.wallet_password)
-    
-cur = con.cursor()
-cur.execute("select * from dept order by deptno")
-res = cur.fetchall()
-for row in res:
-    print(row)
+    Connections and other resources used by python-oracledb will automatically be closed at the end of scope. This is a common programming style that takes care of the correct order of resource closure.
         
-cur.close()
-con.close()
-````
-    
-Running the script completes without error:
-    
-````
-<copy>
-python3 query.py
-</copy>
-````
-    
-![Query with cursor closed](./images/query.png " " )
-    
-If you swap the order of the two close() calls you will see an error.
+    Resources can also be explicitly closed to free up database resources if they are no longer needed. This may be useful in blocks of code that remain active for some time.
+        
+    Open *query.py* in Code Editor and add calls to close the cursor and connection like:
+
+    ````
+    <copy>
+    import oracledb
+    import db_config
+        
+    con = oracledb.connect(user=db_config.user,
+                        password=db_config.pw, 
+                        dsn=db_config.dsn, 
+                        config_dir=db_config.config_dir, 
+                        wallet_location=db_config.wallet_location, 
+                        wallet_password=db_config.wallet_password)
+        
+    cur = con.cursor()
+    cur.execute("select * from dept order by deptno")
+    res = cur.fetchall()
+    for row in res:
+        print(row)
+            
+    cur.close()
+    con.close()
+    ````
+        
+    Running the script completes without error:
+        
+    ````
+    <copy>
+    python3 query.py
+    </copy>
+    ````
+        
+    ![Query with cursor closed](./images/query.png " " )
+        
+    If you swap the order of the two close() calls you will see an error.
 
 5.  Checking versions
 
-Review the code contained in *versions.py*:
+    Review the code contained in *versions.py*:
 
-````
-<copy>
-import oracledb
-import db_config
+    ````
+    <copy>
+    import oracledb
+    import db_config
 
-con = oracledb.connect(user=db_config.user,
-                    password=db_config.pw, 
-                    dsn=db_config.dsn, 
-                    config_dir=db_config.config_dir, 
-                    wallet_location=db_config.wallet_location, 
-                    wallet_password=db_config.wallet_password)
+    con = oracledb.connect(user=db_config.user,
+                        password=db_config.pw, 
+                        dsn=db_config.dsn, 
+                        config_dir=db_config.config_dir, 
+                        wallet_location=db_config.wallet_location, 
+                        wallet_password=db_config.wallet_password)
 
-print(oracledb.__version__)  # two underscores before and after the version
-print("Database version:", con.version)
-</copy>
-````
-    
-Run the script in Cloud Shell or a terminal window:
+    print(oracledb.__version__)  # two underscores before and after the version
+    print("Database version:", con.version)
+    </copy>
+    ````
+        
+    Run the script in Cloud Shell or a terminal window:
 
-````
-<copy>
-python3 versions.py
-</copy>
-````
+    ````
+    <copy>
+    python3 versions.py
+    </copy>
+    ````
 
-This gives the version of the oracledb interface.
+    This gives the version of the oracledb interface.
 
-![Versions results](./images/versions.png " " )
-.
+    ![Versions results](./images/versions.png " " )
 
 ## Conclusion
 
 In this lab, you had an opportunity to try out connecting Python to the Oracle Database.
 You have learned how to:
-* Install Python 3, if not already available
-* Install the python-oracledb driver
 * Setup the environment to allow connections to Oracle Autonomous Database, shared infrastructure using python-oracledb
 * Create connections to Oracle Autonomous Database, shared infrastructure using the python-oracledb driver
 

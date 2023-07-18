@@ -4,7 +4,7 @@
 
 This section provides detail on how to work with JSON data in Oracle Autonomous Database using Python’s interface. The exercises include loading JSON data into a table, validating documents with IS JSON check, and querying JSON data from Python.
 
-Estimated Lab Time: 10 minutes
+Estimated Time: 10 minutes
 
 ### Objectives
 
@@ -87,8 +87,16 @@ Next you're going to insert a row into the table and re-query the table.
 
     </copy>
     ````
+2. Run *insert_json.py* in Cloud Shell or in a terminal window:
 
-2. Re-query the table in Cloud Shell or in a terminal window:
+    ````
+    <copy>
+    python3 insert_json.py
+    </copy>
+    ````
+
+
+3. Re-query the table in Cloud Shell or in a terminal window:
 
     ````
     <copy>
@@ -105,13 +113,13 @@ Next you're going to insert a row into the table and re-query the table.
 
 Retrieve and print the **rating** portion of the JSON document.
 
-1. Edit query_json.py to append the following lines:
+1. Edit *query_json.py* to append the following lines:
 
     ````
     <copy>
 
     # task 3
-    cur.execute('select json_value(json_data, \'$.rating\') from test_json_table')
+    cur.execute('select json_value(json_data, \'$.rating\') from TEST_JSON_TABLE')
 
     for row in cur:
         print (row)
@@ -214,7 +222,7 @@ The results of the query are retrieved by a simple print row call. Now try retri
 
 ## Task 5: Is it JSON or not?
 
-You are going to insert a second row into the TEST_JSON_TABLE  table in a non-JSON format.
+You are going to insert a second row into the TEST\_JSON\_TABLE  table in a non-JSON format.
 
 1. In Code Editor, edit *insert_json.py* to add the following lines of code before closing the cursor and the connection:
 
