@@ -489,33 +489,25 @@ Each member using a channel (whether founder or participant) must designate at l
 
 Use IDCS to create and add both 'john_\dealer1' and 'sam_\dealer2' users, and then assign them roles to control usage of their OBP instances: 'dealer1' and 'dealer2'.
 
-1. From the OCI dashboard, select the user icon in the top right-hand corner and click on **Service User Console**.
+1. Login to your OCI Tenancy and browse to **Domains**.  
 
-  ![OCI Dashboard](images/oci-dashboard.png)
+  ![OCI Dashboard](images/oci-dashboard-1.png)
 
-2. Under **My Oracle Services**, search 'identity' and select **Admin Console**.
+2. Select the required Compartment and click on the **Domain Name** _link. Note that if you have not created any Custom domains, by default, all your resources will be under 'Default' _domain.
 
-  ![Accessing IDCS Dashboard](images/access-idcs-dashboard.png)
+  ![Accessing IDCS Dashboard](images/access-idcs-domains.png)
 
-3. You will be re-directed to the IDCS Dashboard. Click on the hamburger menu in the top left-hand corner.
+3. Click on the **Default Domain** and click on **Create user**. 
 
-  ![IDCS Dashboard](images/idcs-dashboard.png)
+  ![IDCS Dashboard](images/idcs-create-user.png)
 
-4. Select **Users**.
+4. Deselect Use the email address as the user name, provide the dealership name (e.g. 'john_\dealer1') for Last Name and User Name, as well as the email associated to your OCI account and select Create.
 
-  ![Select Users](images/select-users.png)
+  ![Select Users](images/idcs-user-details.png)
 
-5. Click on **Add**.
+5. 'john_\dealer1' is added successfully.
 
-  ![Add User to Tenancy](images/add-user-to-tenancy.png)
-
-6. Deselect **Use the email address as the user name**, provide the dealership name (e.g. 'john\_dealer1') for **Last Name** and **User Name**, as well as the **Email** associated to your OCI account and select **Finish**
-
-  ![Provide User Details](images/provide-user-details.png)
-
-7. 'john\_dealer1' is added successfully.
-
-  ![Dealer 1 Created](images/dealer1-created.png)
+  ![Add User to Tenancy](images/idcs-user-details-1.png)
 
 8. Open your email and activate the 'john\_dealer1' account.
 
@@ -533,25 +525,13 @@ Use IDCS to create and add both 'john_\dealer1' and 'sam_\dealer2' users, and th
 
   ![OCI tenancy login](images/oci-tenancy-login.png)
 
-12. Navigate to IDCS (follow steps 1-3), select **Oracle Cloud Services** and click on your OBP instance that begins with 'john\_dealer1' followed by a trail of characters.
+12. Navigate to Identity Domain (follow steps 1-3), select Oracle Cloud Services and click on your OBP instance that begins with 'dealer1' followed by a trail of characters.
 
-  ![Select dealer instance](images/select-dealer1-instance.png)
+  ![Select dealer instance](images/select-dealer1-instance-1.png)
 
-13. Click on application roles to grant 'john\_dealer1' **ADMIN** and **REST_CLIENT** privileges. Doing so will give 'john\_dealer1' access to call all REST proxy endpoints available on the REST proxy node along with any necessary admin access control. Please see the [OBP documentation](https://docs.oracle.com/en/cloud/paas/blockchain-cloud/administeroci/set-users-and-application-roles.html#GUID-CF1B1C71-2EFF-456F-B557-7EA07573B373) to learn more.
+13. Click on application roles to grant 'john_dealer1' ADMIN and REST_CLIENT privileges. Doing so will give 'john_dealer1' access to call all REST proxy endpoints available on the REST proxy node along with any necessary admin access control. Please see the OBP documentation to learn more.
 
-  ![Select Application Roles](images/application-roles.png)
-
-14. Click on the hamburger icon in the right-hand corner to assign both the **ADMIN** and **REST_CLIENT** roles to 'john\_dealer1'.
-
-  ![Assigning users to each role](images/assign-user.png)
-
-15. In the search box, look for the 'john\_dealer1' OBP instance, select the user and click on **OK** to assign role.
-
-  ![Assign role](images/assign-role.png)
-
-16. Repeat tasks 1-16 to create the 'sam\_dealer2' user and add to the 'dealer2' instance.
-
-17. Repeat tasks 1-16 to create the 'marketplace' user and add to the 'marketplace' instance. Assign john\_dealer1 and sam\_dealer2 roles to marketplace REST\_CLIENT.
+  ![Select Application Roles](images/application-roles-1.png)
 
 
 You may now proceed to the next lab.

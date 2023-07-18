@@ -523,7 +523,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"chaincode\":\"{{bc-chaincode-name}}\", \n    \"args\":[\"CreateDealer\",\"{\\\"DealerId\\\":\\\"john_dealer1\\\",\\\"Name\\\":\\\"john_dealer1\\\",\\\"Phone\\\":\\\"222-222-2222\\\",\\\"Email\\\":\\\"john_dealer1@dealer.com\\\",\\\"Inventory\\\":[]}\"],\n    \"sync\":true\n    }\n\n\n\n\n",
+					"raw": "{\n    \"chaincode\":\"{{bc-chaincode-name}}\", \n    \"args\":[\"CreateDealer\",\"{\\\"DealerId\\\":\\\"{{bc-user-id-1}}\\\",\\\"Name\\\":\\\"{{bc-user-id-1}}\\\",\\\"Phone\\\":\\\"222-222-2222\\\",\\\"Email\\\":\\\"{{bc-user-id-1}}@dealer.com\\\",\\\"Inventory\\\":[]}\"],\n    \"sync\":true\n    }\n\n\n\n\n",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -561,7 +561,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"chaincode\":\"{{bc-chaincode-name}}\", \n    \"args\":[\"CreateDealer\",\"{\\\"DealerId\\\":\\\"sam_dealer2\\\",\\\"Name\\\":\\\"sam_dealer2\\\",\\\"Phone\\\":\\\"222-222-2222\\\",\\\"Email\\\":\\\"sam_dealer2@dealer.com\\\",\\\"Inventory\\\":[]}\"],\n    \"sync\":true\n    }\n\n\n\n\n",
+					"raw": "{\n    \"chaincode\":\"{{bc-chaincode-name}}\", \n    \"args\":[\"CreateDealer\",\"{\\\"DealerId\\\":\\\"{{bc-user-id-2}}\\\",\\\"Name\\\":\\\"{{bc-user-id-2}}\\\",\\\"Phone\\\":\\\"222-222-2222\\\",\\\"Email\\\":\\\"{{bc-user-id-2}}@dealer.com\\\",\\\"Inventory\\\":[]}\"],\n    \"sync\":true\n    }\n\n\n\n\n",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -609,7 +609,7 @@
 		},
 		{
 			"key": "bc-chaincode-name",
-			"value": "cartokenizationcc"
+			"value": "car_marketplace_cc"
 		},
 		{
 			"key": "bc-token-id",

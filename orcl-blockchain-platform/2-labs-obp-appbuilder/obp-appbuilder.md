@@ -155,15 +155,15 @@ Now assign the endorsement policy by by selecting the signature policy and click
   ![Create New Enrollment](images/create_new_enrollment.png)
 
 4. Input enrollment information. See sample enrollment as example. Enrollment user had to be created in idcs. In this example 'marketplace','dealer1','dealer2' is used. Make sure the user has REST_Client role assoicated with the Blockchain instance.
-    - For marketplace Instance
+    - For marketplace Instance --> Create enrollments for marketplace, dealer1 & dealer2
 
   ![Sample Enrollment](images/enrollment_marketplace.png)
 
-    - For dealer1 Instance
+    - For dealer1 Instance --> Create enrollemnt for dealer1
 
   ![Sample Enrollment](images/enrollment_dealer1.png)
 
-    - For dealer2 Instance
+    - For dealer2 Instance ---> Create enrollemnt for dealer2
 
   ![Sample Enrollment](images/enrollment_dealer2.png)
 

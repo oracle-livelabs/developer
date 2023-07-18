@@ -35,7 +35,7 @@ This lab assumes you have:
 2. Click on the link below to download the Resource Manager zip file you need to build your environment:
     - Download ORM Stack zip file [`carmkplace-apigateway-vcn.zip`](https://objectstorage.us-ashburn-1.oraclecloud.com/p/5Lvyu9jrscwQ0FQtZmjy61dhY0rJNf9D2we4GpP-RhkP3OKfolVTMkxWe0gZSFyB/n/oabcs1/b/livelabs/o/carmkplace-apigateway-vcncarmkplace_apigateway_vcn.zip)
 3.  Login to Oracle Cloud
-4.  Open up the hamburger menu in the left hand corner.  Choose the compartment in which you would like to install.  Under the **Solutions and Platform** submenu, choose **Resource Manager > Stacks**.  
+4.  Open up the hamburger menu in the left hand corner.  Choose the compartment in which you would like to install.  Under the **Developer Services** submenu, choose **Resource Manager > Stacks**.  
 
   ![](https://oracle-livelabs.github.io/common/images/console/developer-resmgr-stacks.png " ")
 
@@ -47,7 +47,7 @@ This lab assumes you have:
 
 6. Enter the required details for creating API Gateway to invoke blockchain car marketplace API's :
     - Enter **Activity Domain** (e.g. AD1, AD2, AD3) 
-    - Enter **Blockchain Channel Name** (e.g. car-markeplace) configured in Lab1 --> Task10 --> Step 1
+    - Enter **Blockchain Channel Name** (e.g. car-marketplace) configured in Lab1 --> Task10 --> Step 1
     - Enter **Endpoints** (Copy from Step1) 
     - Keep the remaining default fields.
 
@@ -62,10 +62,6 @@ This lab assumes you have:
 
   ![Start Stack Wizard](images/carmkplace-createstack-1.png)
 
-9. Create a plan by clicking on 'Plan' button.
-
-  ![Start Stack Wizard](images/carmkplace-planjob-1.png)
-  ![Start Stack Wizard](images/carmkplace-planjob-2.png)
 
 9. Create a plan by clicking on 'Plan' button.
 
@@ -77,16 +73,28 @@ This lab assumes you have:
   ![Start Stack Wizard](images/carmkplace-applyjob.png)
   ![Start Stack Wizard](images/carmkplace-applyjob-1.png)
 
-11. Once plan is applied and successful, validate APIGatewway created.
+11. Once plan is applied and successful, validate APIGateway created as part of plan execution following steps below. 
+
+  - Under the **Developer Services** submenu, choose **Gateways**
 
   ![Start Stack Wizard](images/carmkplace-apigateway.png)
+  
+  - Click on **carmkplace-blockchain-apigateway**
+
   ![Start Stack Wizard](images/carmkplace-apigateway-1.png)
+
+  - On the left nav menu --> Click on **Deployments**
+
   ![Start Stack Wizard](images/carmkplace-apigateway-2.png)
+
+
+  - View all the routes created by clicking on **Routes** for Apex UI application to communicate with Blockchain REST API's
+
   ![Start Stack Wizard](images/carmkplace-apigateway-3.png)
   ![Start Stack Wizard](images/carmkplace-apigateway-4.png)
 
 
 ## Acknowledgements
 * **Author** - Oracle Blockchain Product Management
-* **Contributors** -  Dev Sony, Diego Morales, Lokeswara Nushisarva, Siddesh C. Prabhu Dev Ujjni, Rene Fontcha
+* **Contributors** -  Dev Sony, Diego Morales, Jassi Singh, Gourav Sarkar, Rene Fontcha
 * **Last Updated By/Date** - Rene Fontcha, July 2023
