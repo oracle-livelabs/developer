@@ -359,6 +359,7 @@ Connect to the Oracle Database and print the version of the database via Python.
 
     cur.close()
     con.close()
+    </copy>
     ````
 
     Running the script completes without error:
