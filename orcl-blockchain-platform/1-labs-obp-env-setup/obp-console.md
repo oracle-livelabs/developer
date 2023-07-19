@@ -50,11 +50,11 @@ You will also need to create a new [Compartment](https://docs.oracle.com/en-us/i
 
 ## Task 2: Create a Blockchain Network Founder Instance
 
-1. In the OCI services menu, select 'Developer Services' and click on 'Blockchain Platform.'
+1. In the OCI services menu, select 'Developer Services' and click on 'Blockchain Platform'
 
   ![Access OBP](images/1-obp-2-1.png)
 
-2. Ensure that the right **Compartment** is selected and click on 'Create Blockchain Platform.'
+2. Ensure that the right **Compartment** is selected and click on 'Create Blockchain Platform'
 
   ![OBP Compartment, Create](images/1-obp-2-3.png)
 
