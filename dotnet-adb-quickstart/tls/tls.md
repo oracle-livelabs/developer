@@ -45,15 +45,15 @@ Connect to the Oracle Autonomous Database instance you created in a previous lab
 
     ![Edit the network access control list](./images/click-adb-network.png " ")
 
-4.  Add the web server IP address to the database's one-way TLS ACL allow-list. For the **IP Notation Type** "IP Address", enter the IP address in the **Values** text box. You recorded the IP earlier after creating the web server in the last lab. When finished, click the **Save Changes** button.
+4.  Add the web server IP address to the database's one-way TLS ACL allow-list. For the **IP notation type** "IP Address", enter the web server's public IP address in the **Values** text box. You recorded the IP earlier after creating the web server in the last lab. When finished, click the **Save** button.
 
     ![Add your web server's IP to the one-way TLS allow list](./images/add-ip.png " ")
 
-5. In the **Network** section, click the **Edit** on the **Mutual TLS (mTLS) Authentication** line.
+5. The Oracle Autonomous Database instance will take a moment to make the update. When the update completes, go to the **Network** section, click the **Edit** on the **Mutual TLS (mTLS) Authentication** line.
 
     ![Edit TLS options](./images/click-adb-network.png " ")
 
-6.  Uncheck the **Require mutual TLS (mTLS) authentication** box and click the **Save Changes** button.
+6.  Uncheck the **Require mutual TLS (mTLS) authentication** box and click the **Save** button.
 
     ![Allow one-way TLS to support walletless connectivity](./images/uncheck-mtls.png " ")
 
@@ -63,9 +63,9 @@ The web server can now connect to Oracle Autonomous Database via one-way TLS wit
 
 Now that a wallet is no longer needed, retrieve the database's connect descriptor information to eliminate the need to deploy sqlnet.ora and tnsnames.ora on the web server.
 
-1. Click on the **DB Connection** button near the top of the page.
+1. Click on the **Database Connection** button near the top of the page.
 
-    ![Click the DB Connection button](./images/click-db-connection.png " ")
+    ![Click the Database Connection button](./images/click-db-connection.png " ")
 
 2. Scroll down to the **Connection Strings** section. Choose **TLS** from the **TLS Authentication** drop down box. This selection provides a connection string value for each database TNS name. Click on **Copy** next to the connection string text value you plan to use for your web application (e.g. quickstart_high). Click the **Close** button when finished.
 
@@ -80,4 +80,4 @@ You may now **proceed to the next lab.**
 ## Acknowledgements
 
 - **Author** - Alex Keh 
-- **Last Updated By/Date** - Alex Keh, August 2022
+- **Last Updated By/Date** - Alex Keh, June 2023
