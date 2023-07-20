@@ -33,6 +33,11 @@
       "filename": "../../5-labs-obp-application-tokenXchange/obp-apex-application-tokenXchange.md"
     },
     {
+      "title": "Environment Cleanup",
+      "description": "Cleanly dispose of all OCI resources created by ORM for the workshop, and delete the stack",
+      "filename": "https://oracle-livelabs.github.io/common/labs/cleanup-stack/cleanup-stack.md"
+    },
+    {
       "title": "Need Help?",
       "description": "Solutions to Common Problems and Directions for Receiving Live Help",
       "filename": "https://oracle-livelabs.github.io/common/labs/need-help/need-help-livelabs.md"
