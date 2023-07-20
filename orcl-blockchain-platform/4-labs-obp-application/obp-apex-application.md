@@ -34,7 +34,7 @@ This lab assumes you have:
 2. Check your **Compartment** is correct and click on 'Create Autonomous Database.'
   ![Create a new ADB instance from the console](images/4-adb-1.png)
 
-3. In the form, first choose a **Displayname** (e.g. CarMarketplaceAPEX - No Spaces), a **Database name** (e.g. CarMarketplace), and then **Choose a workload type** (in this case, APEX) as shown.
+3. In the form, first choose a **Displayname** (e.g. CarMarketplaceAPEX - No Spaces), a **Database name** (e.g. CarMarketplaceApex), and then **Choose a workload type** (in this case, APEX) as shown.
   ![Choose instance name and DB type](images/4-adb-2.png)
 
 4. Toggle 'Always Free' as shown
