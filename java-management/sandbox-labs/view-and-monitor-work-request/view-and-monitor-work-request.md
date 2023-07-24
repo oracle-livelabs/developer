@@ -32,10 +32,12 @@ In this lab, you will:
    ![image of fleet details page](images/fleet-details-page-view-monitor.png)
 
 3. The detailed view of a Work Request is divided into two sections:
-    * Information about the Work Request, including:
-        * The **OCID** of the Work Request.
-        * **Date and time** when the Work Request **started**, **accepted** and **last updated**.
-        * **Number of sub-tasks** completed for the Work Request.
+    * Work request information including:
+        * The **OCID** of the Work Request
+        * **Date and time** when the Work Request **started**
+        * **Number of sub-tasks** completed for the Work Request
+        * **Date and time** when the Work Request was **accepted**
+        * View in logging service option available for "Failed" work requests. Use this option to view detailed logs of this work request in the OCI logging service.
     * A list of resources from which you can view the individual metrics for the Work Requests:
         * Associated Resources
         * Log Messages
@@ -46,10 +48,10 @@ In this lab, you will:
 4. For the list of resources which include **Associated Resources**, **Log Messages** and **Error Messages**, each list displays **50** rows at a time. You may click the header of a column to sort the list based on the title of the column, or use the text field to search the contents of the table.
 
    For the list of **Associated Resources**, you may find the following information:
-   * **Managed instance**: Name of the managed instance affected by the Work Request.
-   * **Path**: The Java Runtime installation path in the managed instance affected by the operation.
-   * **Status**: Operational status of the associated resource.
-   * **Last updated**: Date and time when the status for this associated resource was last updated.
+   * **Managed instance**: name of the managed instance affected by the work request
+   * **Work request item type**: the type of the advanced feature for which the work request has been initiated, such as Advanced usage tracking
+   * **Current status**: current status of the operation of the associated resource. The status can of any one of: Pending / Retrying / In progress / Canceling, Canceled, Completed with Errors, Succeeded
+   * **Last updated**: date and time when the status for this associated resource was last updated.
 
    ![image of work request associated resources view](images/work-request-associated-resources-view-monitor.png)
 
@@ -67,21 +69,7 @@ In this lab, you will:
 
    ![image of work request error messages view](images/work-request-error-messages.png)
 
-## Task 2: View status and logs of work request
-
-1. In the **Fleet** page, under **Resources**, select **Work Requests**. Click on the Work Request you are interested in to view its details.
-   ![image of work request summary page](images/work-request-summary-page-view-monitor.png)
-
-2. If your request was successful, you should see that the **Status** of the request is marked as **Succeeded** and **Completed without errors**.
-   ![image of successful work request](images/delete-java-runtime-succeeded-view-monitor.png)
-
-3. If you would like to view the log messages for the Work Request, select **Log Messages** under **Resources**. You should see the log messages in detail.
-   ![image of work request log messages](images/delete-work-request-log-messages-view-monitor.png)
-
-4. If your Work Request was unsuccessful, you may view the error messages by selecting **Error Messages** under **Resources**. You should see the status as **Failed** and the corresponding error messages.
-   ![image of work request failed error messages](images/delete-work-request-failed-error-message.png)
-
-## Task 3: Cancel work request
+## Task 2: Cancel work request
 
 1. In the **Fleet** page, under **Resources**, select **Work Requests**. You should see the Work Requests you submitted. Click on the Work Request to view its details.
   ![image of work request summary page](images/work-request-summary-page.png)
@@ -97,7 +85,7 @@ In this lab, you will:
 
 
 ## Learn More
-* Refer to [Work Request](https://docs.oracle.com/en-us/iaas/jms/doc/getting-started-java-management-service.html#GUID-47C63464-BC0C-4059-B552-ED9F33E77ED3) and [Viewing a Work Request](https://docs.oracle.com/en-us/iaas/jms/doc/fleet-views.html#GUID-F649F0E5-DD54-4DEC-A0F1-942FE3552C93) sections of the JMS documentation for more details.
+* Refer to [Work Request](https://docs.oracle.com/en-us/iaas/jms/doc/using-java-management-service.html#GUID-77AEEBC0-93A5-4E99-96D6-BEE0FEE4539F) section of the JMS documentation for more details.
 
 * Use the [Troubleshooting](https://docs.oracle.com/en-us/iaas/jms/doc/troubleshooting.html#GUID-2D613C72-10F3-4905-A306-4F2673FB1CD3) chapter for explanations on how to diagnose and resolve common problems encountered when installing or using Java Management Service.
 
@@ -107,4 +95,4 @@ In this lab, you will:
 ## Acknowledgements
 
 * **Author** - Bao Jin Lee, Java Management Service
-* **Last Updated By** - Bao Jin Lee, January 2023
+* **Last Updated By** - Ivan Eng, June 2023

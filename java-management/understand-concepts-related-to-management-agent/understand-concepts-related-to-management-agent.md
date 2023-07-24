@@ -1,8 +1,8 @@
-# Understand concepts related to Management Agent installation
+# Understand concepts related to Oracle Management Agent installation
 
 ## Introduction
 
-This lab walks you through the key concepts that need to be understood before installing a management agent on your compute instance Managed Instance as part of the set up for Java Management Service (JMS) on Oracle Cloud Infrastructure (OCI).
+This lab walks you through the key concepts to understand before installing a management agent on your Managed instance. This is part of the Java Management Service (JMS) setup on Oracle Cloud Infrastructure (OCI).
 
 Estimated Time: 15 minutes
 
@@ -10,37 +10,44 @@ Estimated Time: 15 minutes
 
 In this lab, you will:
 
-- Understand important concepts in preparation for installation of Management Agents on a host (also known as a Managed Instance in JMS). A Managed Instance can be any computer running in your enterprise. In most cases, the Managed Instance is a computer on your premises, but it can be a compute instance on OCI or on any other cloud platform.
+- Understand important concepts in preparation for installation of Oracle Management Agents on a host (also known as a Managed Instance in JMS). A Managed Instance can be any computer running in your enterprise. In most cases, the Managed Instance is a computer on your premises, but it can be a compute instance on OCI or on any other cloud platform.
 
 ### Prerequisites
 - You have signed up for an account with Oracle Cloud Infrastructure and have received your sign-in credentials.
 - You are using an Oracle Linux image or Windows OS on your Managed Instance for this workshop.
-- Access to the cloud environment and resources configured in [Lab 2](?lab=setup-a-fleet).
+- Access to the cloud environment and resources configured in [Lab 2](?lab=set-up-oci-for-jms).
 
 ## Task 1: Understand Concepts related to Management Agent installation
 
-Before the set up of the Management Agent, it is important to understand the concepts behind the Java Management Service:
+Before the set up of the Oracle Management Agent, it is important to understand the concepts behind the Java Management Service:
 
 - **Java Management Service (JMS)**: A reporting and management infrastructure integrated with Oracle Cloud Infrastructure Platform services to observe and manage your use of Java SE (on-premises or in the Cloud) in your enterprise.
 
-- **Management Agents**: Can be installed on a Managed Instance to allow a service plug-in to collect data from the Managed Instance where you installed the Management Agent. In the case of JMS, the management agent allows the JMS plug-in to collect data about Java Applications, Java Runtimes and Installations from the Managed Instance which can be either on-premises or OCI Compute Instance Managed Instances or from other cloud providers.
+- **Oracle Management Agent**: Oracle Management Agent is installed on a host. It allows the JMS plug-ins to monitor and collect data from the sources that reside on hosts or virtual hosts.
 
-- **Java Usage Tracking plugin**: A Service Plugin allows Management Agents to interact with data sources and send the data back to the cloud service. In the case of the Java Usage Tracking service plugin, data about Java Applications, Java Runtimes and Installations is collected from the Managed Instance which can be either on-premises or from other cloud providers.
+- **Oracle Cloud Agent**: An Oracle Cloud Agent is a lightweight process that manages plug-ins running on a compute instance. Its plug-ins collect performance metrics, install OS updates, and perform other instance management tasks. An example plug-in is a JMS Plug-in.
+
+- **JMS Plug-In**: Java Management Service (JMS) plug-in allows JMS to interact with hosts and send the data back to the cloud service. JMS plug-ins are provided by Oracle Management Agent and Oracle Cloud Agent for OCI Compute Instances.
+Deploy JMS plug-ins on:
+
+    * **Oracle Cloud Agent**: to monitor OCI Oracle Linux compute instances that are in the same tenancy and region
+
+      ![image of JMS plugin on OCI Managed Instances](images/jms-plugin-oci.png)
+
+    * **Oracle Management Agent**: to monitor all other hosts
+      ![image of JMS plugin on non-OCI Managed Instances](images/jms-plugin-non-oci.png)
+
+  A host that contain deployed JMS plug-ins is a Managed Instance.
+
+- **Managed Instance**: A Managed Instance is a host that contain deployed JMS plug-ins. Hosts can be any computer running in your enterprise, either on premise or in the cloud. A managed instance has a unique identity that's used by JMS to distinguish it from other managed instances and can only be part of a single Fleet at any given time.
+
+
+- **Java Usage Tracker**: JMS relies on Java Usage Tracker to report Java usage. Using the Java Usage Tracker, you can monitor Oracle Java Runtime Environment usage and capture information such as the JRE version, vendor, applications running, and other details.
 
   ![image of java usage tracking service plugin](images/java-usage-tracking-service-plugin.png)
 
-- **Java Management Service plugin**: A Service Plugin responsible for enabling Java runtime Lifecycle Management, which is an advanced feature of JMS. This workshop will focus on the basics of JMS. If you would like to learn more about the Lifecycle Management feature, you may refer to [Perform Java Lifecycle Management with Java Management Service](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=3202).
+- **Installation Script**: JMS provides an installation script that you can use to set up management agents using a single command. The script has been automatically generated for you in [Lab 3](?lab=setup-a-fleet).
 
-  Java Management Service plugin is deployed in different ways on OCI and non-OCI Managed Instances. On non-OCI Managed Instances, it is deployed through Management Agent, and can be found under Observability & Management -> Management Agent -> Agents -> Deploy plug-ins. On OCI Managed Instances, it is deployed through Oracle Cloud Agent (OCA), and can be found under Compute -> Instances -> Oracle Cloud Agent.
-
-  **On non-OCI Managed Instances:**
-  ![image of JMS plugin on non-OCI Managed Instances](images/jms-plugin-non-oci.png)
-
-  **On OCI Managed Instances:**
-  ![image of JMS plugin on OCI Managed Instances](images/jms-plugin-oci.png)
-
-- **Installation Script**: JMS provides an installation script that you can use to set up management agents using a single command. The script has been automatically generated for you in [Lab 2](?lab=setup-a-fleet). 
-  
   The script does the following functions:
     - Install the Management Agent software.
     - Configure the agent with the specific key for the fleet.
@@ -62,7 +69,7 @@ Before the set up of the Management Agent, it is important to understand the con
 ## Learn More
 
 * Refer to the [Management Agent Concepts](https://docs.oracle.com/en-us/iaas/management-agents/doc/you-begin.html),
-  [Configuring a Management Agent on an OCI Compute Instance](https://docs.oracle.com/en-us/iaas/jms/doc/agent-management.html) and [Installation of Management Agents](https://docs.oracle.com/en-us/iaas/management-agents/doc/install-management-agent-chapter.html) sections of the JMS documentation for more details.
+  [JMS Plug-in](https://docs.oracle.com/en-us/iaas/jms/doc/management-agent.html#AJSUG-GUID-7BC69124-4807-4D79-B89B-2605D7EE9E71) and [Installation of Management Agents](https://docs.oracle.com/en-us/iaas/management-agents/doc/install-management-agent-chapter.html) sections of the JMS documentation for more details.
 
 * Use the [Troubleshooting](https://docs.oracle.com/en-us/iaas/jms/doc/troubleshooting.html#GUID-2D613C72-10F3-4905-A306-4F2673FB1CD3) chapter for explanations on how to diagnose and resolve common problems encountered when installing or using Java Management Service.
 
@@ -72,4 +79,4 @@ Before the set up of the Management Agent, it is important to understand the con
 ## Acknowledgements
 
 - **Author** - Xin Yi Tay, Java Management Service
-- **Last Updated By** - Bao Jin Lee, November 2022
+- **Last Updated By** - Ivan Eng, June 2023

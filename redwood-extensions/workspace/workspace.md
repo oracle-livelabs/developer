@@ -43,15 +43,19 @@ Users with [the right roles](https://docs.oracle.com/en/cloud/paas/visual-builde
 
 	![project template](images/projecttemplate.png)
 
-6. In the third step you choose a syntax for the project's wiki, we can keep the default value and then click **Finish**.
+6. In the third step you choose a syntax for the project's wiki, we can keep the default value and then click **Next**.
 
 	![wiki markup](images/wikimarkup.png)
 
-7. Visual Builder Studio will now create the project, this may take a minute or two to complete.
+7. In the fourth step you choose team members for the project, we can keep the default values and then click **Finish**.
+
+	![wiki markup](images/projectteam.png)
+
+8. Visual Builder Studio will now create the project, this may take a minute or two to complete.
 
 	![Project creation](images/projectcreation.png)
 
-8. When the creation finishes you'll be taken to the project home page.
+9. When the creation finishes you'll be taken to the project home page.
 
 	![Project page](images/emptyproject.png)
 
@@ -67,7 +71,7 @@ Environments consist of servers into which your extension will be deployed. Spec
 
 	![Add server](images/addserver.png)
 
-3. In the Instance Type switch to look for **Oracle Cloud Applications**, this will tell VB Studio to look up for the Fusion Cloud App instance in your tenancy. Once it is located check the checkbox next to it. then press the **Add** button to add this instance to your environment.
+3. In the Instance Type switch to look for **Oracle Cloud Applications**, this will tell VB Studio to look up for the Fusion Cloud App instance in your tenancy. Once it is located check the checkbox next to it. Then press the **Add** button to add this instance to your environment.
 
 	![Add Instance](images/addinstance.png)
 
@@ -88,7 +92,7 @@ From here you can navigate to all your project's components, including environme
 
 2. Click **New**, then select **New Application Extension** to create a new workspace for your extension:
 
-	![new workspace](images/newWorkspace.png)
+	![new workspace](images/newworkspace.png)
 
 3. In the New Application Extension dialog, populate the fields with these values:
 | Field | Value | Explanation |
@@ -111,15 +115,15 @@ From here you can navigate to all your project's components, including environme
 VB has some of the most commonly used components pre-installed.  Other components are available in the Component Exchange.  In this lab you will be installing the Redwood components you will need for the extension.
 
 * Collection Container
-* Foldout Layout Horizontal Template Pattern
+* Horizontal Foldout Layout Page Template
 * Summarizing Foldout Panel
-* Simple Create and Edit Page Template Pattern
+* Simple Create and Edit Page Template (There are two in the list, choose the **oj-sp-simple-create-edit-pattern** component)
 * Welcome Page Template
 
 1. On the far left side of the Designer's navigator, click the fifth tab, Components:
 Clicking the name of components in the list will open a details page for that component.
 ![Edit values](images/opencomponentstab.png)
-2. Click the Installed tab and check if the Redwood components are already installed in your app, if they are you can skip the following steps and continue to the next lab:
+2. Click the Installed tab and check if the five Redwood components listed at the start of this task are already installed in your app, if they are you can skip the following steps and continue to the next lab:
 ![Edit values](images/installedcomponents.png)
 3. If any of the above components are not installed, click the Browse tab:
 
@@ -142,4 +146,4 @@ Once you have all of the components installed, you may **proceed to the next lab
 ## Acknowledgements
 * **Author** - Shay Shmeltzer, Oracle Cloud Development Tools, September 2022
 * **Contributors** -  Marcie Caccamo, Blaine Carter, Oracle Cloud Development Tools
-* **Last Updated By/Date** - Shay Shmeltzer, Oracle Cloud Development Tools, September 2022
+* **Last Updated By/Date** - Blaine Carter, Oracle Cloud Development Tools, March 2023

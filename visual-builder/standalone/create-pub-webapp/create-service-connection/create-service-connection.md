@@ -1,4 +1,4 @@
-# Access Data From an External REST Service
+# Access data from an external REST service
 
 ## Introduction
 
@@ -14,6 +14,23 @@ Service connections let you access data objects exposed by Oracle services as we
 
 Remember that no matter what form your data takes (business objects or service connections), the basic principles of creating an application are the same. The key difference between the two data sources: business objects store data as part of the app itself, service connections receive data from REST APIs.
 
+### Objectives
+
+In this lab, you will:
+
+* Create a connection to an external REST service
+* Add UI components on a page to display data from the REST endpoint
+* Create a type and variable to store data from the REST endpoint
+* Assign data to the variable
+* Test data received from the REST endpoint
+
+### Prerequisites
+
+This lab assumes you have:
+
+* A Chrome browser
+* All previous labs successfully completed
+
 ## Task 1: Create a connection to an external REST endpoint
 
 In this step, we'll connect the HR application to an external REST endpoint that provides information about a country.
@@ -24,9 +41,9 @@ In this step, we'll connect the HR application to an external REST endpoint that
     ![This image shows the Select Source screen of the Create Service Connection. Three options are visible: Select from Catalog, Define by Specification, and Define by Endpoint.](images/service-connection-wizard.png "")
 
     This wizard presents various options to connect to REST endpoints:
-    - When you have access to an Oracle Cloud Applications or Oracle Integration instance, you use the **Select from Catalog** option to access endpoints exposed by these Oracle services.
-    - When you have access to a Swagger or Oracle ADF file that describes a service, you use the **Define by Specification** option.
-    - When you know the URL of an external REST endpoint, you use the **Define by Endpoint** option—which is what we'll do here.
+    * When you have access to an Oracle Cloud Applications or Oracle Integration instance, you use the **Select from Catalog** option to access endpoints exposed by these Oracle services.
+    * When you have access to a Swagger or Oracle ADF file that describes a service, you use the **Define by Specification** option.
+    * When you know the URL of an external REST endpoint, you use the **Define by Endpoint** option—which is what we'll do here.
 
     Click **Define by Endpoint**.
 
@@ -65,9 +82,9 @@ Now that we have our service connection, let's change the Edit Employee page to 
 
 5. Let's now add a bunch of other components to this form layout to display country information:
 
-    - Drag and drag an **Avatar** component into the empty form Layout, then in the Properties pane, change the avatar's **Size** to **Large**.
-    - Drag an **Input Text** component and drop it onto the page under Avatar, then change its **Label Hint** in the Properties pane to `Time Zone`.
-    - Drag another **Input Text** onto the page and change its **Label Hint** to `Region`.
+    * Drag and drag an **Avatar** component into the empty form Layout, then in the Properties pane, change the avatar's **Size** to **Large**.
+    * Drag an **Input Text** component and drop it onto the page under Avatar, then change its **Label Hint** in the Properties pane to `Time Zone`.
+    * Drag another **Input Text** onto the page and change its **Label Hint** to `Region`.
 
     When you're done, your form layout may look something like this:
     ![This image shows the Country Info section added to the Edit Employee page. There's a Country Info heading, an Avatar, and two Input Text components for Time Zone and Region.](images/country-form-layout.png "")
@@ -98,9 +115,9 @@ To pass values to the country fields in the main-edit-employee page, you'll need
 
 5. Now return to the Page Designer tab for the main-edit-employee page and bind each country field to its corresponding variable. To do this:
 
-    - Select the Avatar component and click its Data tab in the Properties pane. Hover over the **Src** field, click ![Select Variable icon](images/variable-picker-icon.png) to open the Variable picker. Expand the **countryTypeVar** object and select **flag**.
-    - Select the Time Zone Input Text component, then in its Data tab, click ![Select Variable icon](images/variable-picker-icon.png) next to Value. Under **countryTypeVar**, expand **timezones** and select **item[0]**.
-    - Select the Region Input Number component, then in its Data tab, click ![Select Variable icon](images/variable-picker-icon.png) next to Value and select **region** under **countryTypeVar**.
+    * Select the Avatar component and click its Data tab in the Properties pane. Hover over the **Src** field, click ![Select Variable icon](images/variable-picker-icon.png) to open the Variable picker. Expand the **countryTypeVar** object and select **flag**.
+    * Select the Time Zone Input Text component, then in its Data tab, click ![Select Variable icon](images/variable-picker-icon.png) next to Value. Under **countryTypeVar**, expand **timezones** and select **item[0]**.
+    * Select the Region Input Number component, then in its Data tab, click ![Select Variable icon](images/variable-picker-icon.png) next to Value and select **region** under **countryTypeVar**.
 
     Each of the components are now bound to the corresponding variable, but no values show because the variables don't have any data yet.
 
@@ -138,7 +155,7 @@ In this step, we'll use the Country field as the data source for our variables a
 
 ## Task 5: Test the employee's country details
 
-1. Click **Preview** ![Preview icon](images/run-icon.png) to run your application.
+1. Click **Preview** ![Preview icon](images/preview-icon.png) to run your application.
 
 2. Select a row, then click **Edit Employee**.
 
@@ -154,5 +171,5 @@ In this step, we'll use the Country field as the data source for our variables a
 
 ## Acknowledgements
 
-- **Author** - Sheryl Manoharan, Visual Builder User Assistance, August 2021
-- **Last Updated By** - February 2023
+* **Author** - Sheryl Manoharan, Visual Builder User Assistance, August 2021
+* **Last Updated By** - February 2023

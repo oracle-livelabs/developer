@@ -1,4 +1,4 @@
-# Access Data From an External REST Service
+# Access data from an external REST service
 
 ## Introduction
 
@@ -14,6 +14,23 @@ Service connections let you access data objects exposed by Oracle services as we
 
 Remember that no matter what form your data takes (business objects or service connections), the basic principles of creating an application are the same. The key difference between the two data sources: business objects store data as part of the app itself, service connections receive data from REST APIs.
 
+### Objectives
+
+In this lab, you will:
+
+* Create a connection to an external REST service
+* Add UI components on a page to display data from the REST endpoint
+* Create a type and variable to store data from the REST endpoint
+* Assign data to the variable
+* Test data received from the REST endpoint
+
+### Prerequisites
+
+This lab assumes you have:
+
+* A Chrome browser
+* All previous labs successfully completed
+
 ## Task 1: Create a connection to an external REST endpoint
 
 In this step, we'll connect the HR application to an external REST endpoint that provides information about a country.
@@ -24,9 +41,9 @@ In this step, we'll connect the HR application to an external REST endpoint that
     ![The Select Source screen of the Create Service Connection is shown. Three options are visible: Select from Catalog, Define by Specification, and Define by Endpoint.](images/service-connection-wizard.png "")
 
     This wizard presents various options to connect to REST endpoints:
-    - When you have access to an Oracle Cloud Applications or Oracle Integration instance, you use the **Select from Catalog** option to access endpoints exposed by these Oracle services.
-    - When you have access to a Swagger or Oracle ADF file that describes a service, you use the **Define by Specification** option.
-    - When you know the URL of an external REST endpoint, you use the **Define by Endpoint** option—which is what we'll do here.
+    * When you have access to an Oracle Cloud Applications or Oracle Integration instance, you use the **Select from Catalog** option to access endpoints exposed by these Oracle services.
+    * When you have access to a Swagger or Oracle ADF file that describes a service, you use the **Define by Specification** option.
+    * When you know the URL of an external REST endpoint, you use the **Define by Endpoint** option—which is what we'll do here.
 
     Click **Define by Endpoint**.
 
@@ -66,9 +83,9 @@ Now that we have our service connection, let's change the Edit Employee page to 
 
 5. Let's now add a bunch of other components to this form layout to display country information:
 
-    - Drag and drag an **Avatar** component into the empty form Layout. Change the avatar's **Size** to **Large** in the Properties pane.
-    - Drag an **Input Text** component and drop it onto the page under Avatar, then change its **Label Hint** in the Properties pane to `Time Zone`.
-    - Drag another **Input Text** onto the page and change its **Label Hint** to `Region`.
+    * Drag and drag an **Avatar** component into the empty form Layout. Change the avatar's **Size** to **Large** in the Properties pane.
+    * Drag an **Input Text** component and drop it onto the page under Avatar, then change its **Label Hint** in the Properties pane to `Time Zone`.
+    * Drag another **Input Text** onto the page and change its **Label Hint** to `Region`.
 
     When you're done, your form layout may look something like this:
     ![The Country Info section is added to the Edit Employee page. There's a Country Info heading, an Avatar, and two Input Text components for Time Zone and Region.](images/country-form-layout.png "")
@@ -99,9 +116,9 @@ To pass values to the fields under Country Info in the main-edit-employee page, 
 
 5. Now return to the Page Designer tab for the main-edit-employee page and bind each country field to its corresponding variable. To do this:
 
-    - Select the Avatar component and click its Data tab in the Properties pane. Hover over the **Src** field, click ![Select Variable icon](images/variable-picker-icon.png) to open the Variable picker. Expand the **countryTypeVar** object and select **flag**.
-    - Select the Time Zone Input Text component, then in its Data tab, click ![Select Variable icon](images/variable-picker-icon.png) next to Value. Under **countryTypeVar**, expand **timezones** and select **item[0]**.
-    - Select the Region Input Number component, then in its Data tab, click ![Select Variable icon](images/variable-picker-icon.png) next to Value and select **region** under **countryTypeVar**.
+    * Select the Avatar component and click its Data tab in the Properties pane. Hover over the **Src** field, click ![Select Variable icon](images/variable-picker-icon.png) to open the Variable picker. Expand the **countryTypeVar** object and select **flag**.
+    * Select the Time Zone Input Text component, then in its Data tab, click ![Select Variable icon](images/variable-picker-icon.png) next to Value. Under **countryTypeVar**, expand **timezones** and select **item[0]**.
+    * Select the Region Input Number component, then in its Data tab, click ![Select Variable icon](images/variable-picker-icon.png) next to Value and select **region** under **countryTypeVar**.
 
     Each of the components are now bound to the corresponding variable, but no values show because the variables don't have any data yet.
 
@@ -115,7 +132,7 @@ In this step, we'll assign data to the variables by adding a "value" event that 
 
 2. Click the component's **Events** tab in the Properties pane, then select **+ New Event** and **On 'value'**.
 
-3. When the InputTextValueChangeChain opens in the Action Chains editor, drag a **Call REST** action from the Actions palette to the **+** sign pointed to by the **Start** arrow.
+3. When the InputTextValueChangeChain opens in the Action Chain editor, double-click the **Call REST** action in the Actions palette to add it to the canvas.
 
 4. In the action's Properties pane, click **Select** next to Endpoint to open the Select Endpoint wizard.
 
@@ -131,11 +148,11 @@ In this step, we'll assign data to the variables by adding a "value" event that 
 
     Click **Save**.
 
-8. On the success branch of the Call REST action, drag and drop an **Assign Variables** action, then click **Assign** next to Variables in the Properties pane. In the Sources pane of the Assign Variables wizard, expand **callRestGetAlphaCode** under **Action Chain** and **results** and map **body** to **countryTypeVar** under **Page** in the Target pane.
+8. Drag and drop an **Assign Variables** action on the canvas to follow the Call REST action. In the Assign Variable action's Properties pane, hover over the **Variable** property, click ![Select Variable icon](images/variable-picker-icon.png) to open the Variable picker, and select **countryTypeVar** under **Page**. Hover over the **Value** property, open the Variable picker, expand **callRestCountriesGetAlphaCodeResult** under **Action Chain**, and select **body**.
 
-    ![The mapping between body under callRestGetAlphaCode on the Source side to countryTypeVar on the Target side is shown.](images/assignvariable-bodytocountrytypevar.png "")
+    ![The Assign Variable action's properties show the Variable property set to $page.variables.countryTypeVar. The Value property shows the variable picker, with body under Action Chain and callRestCountriesGetAlphaCodeResult highlighted.](images/assignvariable-bodytocountrytypevar.png "")
 
-    What we're doing is mapping the data returned by the getAlphaCode REST call to the variables that populate components on the page. Because the field names are identical to the REST response, VB Studio automatically knows how to map each field to its data source. Click **Save**.
+    What we're doing is mapping the data returned by the getAlphaCode REST call to the variables that populate components on the page. Because the field names are identical to the REST response, VB Studio automatically knows how to map each field to its data source.
 
 ## Task 5: Test the employee's country details
 
@@ -147,13 +164,11 @@ In this step, we'll assign data to the variables by adding a "value" event that 
 
 3. Change the employee's Country field to `IE` (for Ireland).
 
-   The employee's information reflects the update in the Country Info section.  Click **Save**.
-
-4. Close the browser tab.
+   The employee's information reflects the update in the Country Info section.  Click **Save**, then close the browser tab.
 
    You may **proceed to the next lab**.
 
 ## Acknowledgements
 
-- **Author** - Sheryl Manoharan, VB Studio User Assistance, July 2022
-- **Last Updated By/Date** - Sheryl Manoharan, February 2023
+* **Author** - Sheryl Manoharan, VB Studio User Assistance, July 2022
+* **Last Updated By/Date** - Sheryl Manoharan, May 2023

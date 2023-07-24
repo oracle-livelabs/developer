@@ -1,4 +1,4 @@
-# Add Pages to Interact With Your Data
+# Add pages to interact with your data
 
 ## Introduction
 
@@ -10,6 +10,21 @@ Estimated Time:  15 minutes
 
 In a previous lab, you used a couple of Quick Starts to create pages that let your users add departments and employees. In this lab, you'll use the rest of them to add pages for users to edit and delete departments and employees. You'll also get a chance to test all your web pages as they will appear to the user.
 
+### Objectives
+
+In this lab, you will:
+
+* Add web pages to edit and delete data
+* Test your web pages
+* Change the web app's default home page
+
+### Prerequisites
+
+This lab assumes you have:
+
+* A Chrome browser
+* All previous labs successfully completed
+
 ## Task 1: Add a page to edit a department's details
 
 In this task, you'll add an edit page that lets users change a department's Name and Location. An Edit page lets you edit a selected row in your table.
@@ -18,7 +33,7 @@ In this task, you'll add an edit page that lets users change a department's Name
 
 2. In the Table's Properties pane, click the **Quick Start** tab to display the Quick Start menu, then click **Add Edit Page**.
 
-    ![This image shows the Quick Start menu for the Departments table, with Add Edit Page selected.](images/vbcsmd_aep_s2.png "")
+    ![This image shows the Quick Start menu for the Departments table, with Add Edit Page selected.](images/departments-add-edit-quick-start.png "")
 
 3. On the Select Read Endpoint step of the Add Edit Page Quick Start, select **Department** under Business Objects (if necessary) and click **Next**.
 
@@ -40,13 +55,13 @@ Add a delete button to remove a department, so users can delete a department if 
 
 ## Task 3: Test your new Department pages
 
-1. Click **Preview** ![Preview icon](images/vbcsmd_run_icon.png) to open your application in another browser tab. The two buttons you created are inactive.
+1. Click **Preview** ![Preview icon](images/preview-icon.png) to open your application in another browser tab. The two buttons you created are inactive.
 
 2. Select a row. All the buttons are now active.
 
 3. Click **Edit Department**.
 
-    ![This image shows the Departments page in Preview, with a table row selected and with the Edit Department button selected.](images/vbcsmd_test_s3.png "")
+    ![This image shows the Departments page in Preview, with a table row selected and with the Edit Department button selected.](images/departments-edit.png "")
 
 4. On the Edit Department page, change the **Location** field to `Floor 4` and click **Save**. A success message appears briefly, and you are returned to the Departments page.
 
@@ -114,7 +129,7 @@ Now that we've added options to let users manage departments, we'll do the same 
 
 ## Task 6: Test your Employee pages
 
-1. Click **Preview** ![Preview icon](images/vbcsmd_run_icon.png).
+1. Click **Preview** ![Preview icon](images/preview-icon.png).
 
     The application opens in another browser tab, displaying the Departments page.
 
@@ -124,20 +139,20 @@ Now that we've added options to let users manage departments, we'll do the same 
 
 3. Select a row. All the buttons are now active.
 
-    ![This image shows the Employees page in Preview, with a table row selected and the Edit Employee button selected. The bar chart on the right also shows. ](images/vbcsmd_testemp_s3.png "")
+    ![This image shows the Employees page in Preview, with a table row selected and the Edit Employee button selected. The bar chart on the right also shows. ](images/employees-edit.png "")
 
 4. Click the **Edit Employee** button.
 
 5. On the Edit Employee page, change the **Department** to `IT` and **Salary** to 6000. Click **Save**. A success message appears, and you are returned to the Employees page. Notice how the bar chart also changes to show the employee's updated salary.
 
 6. Click **Create Employee** and specify the data for a new employee, for example:
-    - **Name**: `Shayla`
-    - **Picture**: `https://www.oracle.com/webfolder/technetwork/jet/content/images/hcm/placeholder-female-16.png`
-    - **Hire Date**: Select today's date
-    - **Email**: `shayla@example.com`
-    - **Department**: `Marketing`
-    - **Salary**: `4000`
-    - **Country**: `NZ`
+    * **Name**: `Shayla`
+    * **Picture**: `https://www.oracle.com/webfolder/technetwork/jet/content/images/hcm/placeholder-female-16.png`
+    * **Hire Date**: Select today's date
+    * **Email**: `shayla@example.com`
+    * **Department**: `Marketing`
+    * **Salary**: `4000`
+    * **Country**: `NZ`
 
     Click **Save**. A success message appears, and the new employee is displayed in the table and bar chart.
 
@@ -157,7 +172,7 @@ Now that we have our web pages, let's change the application's home page from De
 
 3. Click **Diagram** to see the **main** flow's new navigation. Notice how the main-employees page is badged ![Default and Flow Entry badge](images/default-badge.png), indicating it as the starting page for your application. Previously, it was the main-departments page.
 
-4. Click **Preview** ![Preview icon](images/vbcsmd_run_icon.png) to now see the HR app open on the Employees page.
+4. Click **Preview** ![Preview icon](images/preview-icon.png) to now see the HR app open on the Employees page.
 
     Close the browser tab.
 
@@ -165,5 +180,5 @@ Now that we have our web pages, let's change the application's home page from De
 
 ## Acknowledgements
 
-- **Author** - Sheryl Manoharan, Visual Builder User Assistance, August 2021
-- **Last Updated By** - February 2023
+* **Author** - Sheryl Manoharan, Visual Builder User Assistance, August 2021
+* **Last Updated By** - February 2023

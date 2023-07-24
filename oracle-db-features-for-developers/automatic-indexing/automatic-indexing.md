@@ -3,11 +3,11 @@
 ## Introduction
 In this lab you will explore the various features and benefits of Oracle's Automatic Indexing feature added in Oracle Database 19c.
 
-Estimated Lab Time: 20 minutes
+Estimated Time: 20 minutes
 
 Watch the video below to view the Automatic Indexing in action.
 
-[](youtube:5ZNlmw0rGU0)
+[Automatic Indexing in action](youtube:5ZNlmw0rGU0)
 
 ### About Automatic Indexing
 
@@ -18,11 +18,11 @@ Traditionally, DBAs have been responsible for monitoring performance and decidin
 Automatic indexing addresses these issues. It is not a simple advisor, but instead, it is an expert system that implements indexes based on what a performance engineer skilled in index tuning would do. The Oracle Database analyzes the application workload and identifies the queries that will benefit from additional indexes. In other words, it identifies candidate indexes and validates them before implementation, and the entire process is fully automatic.
 
 Here is a summary of the workflow:
-  ![](images/ai_flow.png " ")
+  ![workflow](images/ai_flow.png " ")
 
 Watch the video below to view the benefits of the Automatic Indexing feature.
 
-[](youtube:vde8buK9kVk)
+[Automatic Indexing feature](youtube:vde8buK9kVk)
 
 ### Objectives
 
@@ -60,7 +60,7 @@ This Lab will use the Sales History (SH) sample schema.
     sudo su - oracle
     </copy>
     ````
-    ![](./images/sudo-oracle.png " ")
+    ![oracle user](./images/sudo-oracle.png " ")
 
 3.  Set your oracle environment.  When prompted enter **[ORCL]**
     ````
@@ -70,7 +70,7 @@ This Lab will use the Sales History (SH) sample schema.
     ORACLE_SID = [ORCL] ? ORCL
     The Oracle base remains unchanged with value /u01/app/oracle
     ````
-    ![](./images/oraenv.png " ")
+    ![set environment](./images/oraenv.png " ")
 
 4.  Use SQLPlus to connect to the **PDB01** Pluggable database as SYS.
 
@@ -80,7 +80,7 @@ This Lab will use the Sales History (SH) sample schema.
     </copy>
     ````
 
-    ![](./images/sqlplus.png " ")
+    ![SQLPlus](./images/sqlplus.png " ")
 
 5.  List all existing indexes in the **SH** schema.
 
@@ -97,7 +97,7 @@ This Lab will use the Sales History (SH) sample schema.
     </copy>
     ````
 
-    ![](images/ai_indexes.png " ")
+    ![list all indexes](images/ai_indexes.png " ")
 
 6.  For the purpose of this exercise, we will drop all existing secondary indexes. *NOTE: DO NOT DO THIS ON ANY PRODUCTION SYSTEM.*
 
@@ -123,7 +123,7 @@ This Lab will use the Sales History (SH) sample schema.
     </copy>
     ````
 
-    ![](./images/step1.3-dropindexes.png " " )
+    ![drop indexes](./images/step1.3-dropindexes.png " " )
 
 7.  Gather **SH** schema statistics.
 
@@ -133,7 +133,7 @@ This Lab will use the Sales History (SH) sample schema.
     </copy>
     ````
 
-    ![](./images/step1.4-gatherstats.png " " )
+    ![gather statistics](./images/step1.4-gatherstats.png " " )
 
 ## Task 2: Logging In and Examining Schema
 
@@ -213,7 +213,7 @@ The Oracle environment is already set up so sqlplus can be invoked directly from
     </copy>
     ````
 
-    ![](images/ai_config.png " ")
+    ![configuration details](images/ai_config.png " ")
 
     When automatic indexing is enabled in a database, all the schemas in the database can use auto indexes by default.
 
@@ -255,7 +255,7 @@ The Oracle environment is already set up so sqlplus can be invoked directly from
     </copy>
     ````
 
-    ![](images/ai_config.png " ")
+    ![confirm configuration](images/ai_config.png " ")
 
 7.  Generate a report on Automatic Indexing operations. You can generate reports related to automatic indexing operations in an Oracle database using the REPORT\_ACTIVITY and REPORT\_LAST\_ACTIVITY functions of the DBMS\_AUTO\_INDEX package.
 
@@ -288,7 +288,7 @@ In this lab, we don’t have any application running on our database, so we will
     </copy>
     ````
 
-    ![](images/ai_cr_temp.png " ")
+    ![dummy table](images/ai_cr_temp.png " ")
 
 2.  Insert data into your newly created tables.
 
@@ -304,7 +304,7 @@ In this lab, we don’t have any application running on our database, so we will
     </copy>
     ````
 
-    ![](images/ai_temp_ins.png " ")
+    ![insert data](images/ai_temp_ins.png " ")
 
 3.  Copy the **CUSTOMERS** table using CTAS (create table as select).
 
@@ -316,7 +316,7 @@ In this lab, we don’t have any application running on our database, so we will
     </copy>
     ````
 
-    ![](images/ai_cr_cust.png " ")
+    ![create table as select](images/ai_cr_cust.png " ")
 
     Now you have some tables you can modify, and at the same time, some OLTP workload was generated on our database. You can check how automatic indexing feature reacts to this type of workload, but before doing that it is recommended to gather statistics.
 
@@ -326,7 +326,7 @@ In this lab, we don’t have any application running on our database, so we will
     </copy>
     ````
 
-    ![](images/ai_stats_gather.png " ")
+    ![gather statistics](images/ai_stats_gather.png " ")
 
 ## Task 5: View Advisor Tasks
 
@@ -355,7 +355,7 @@ DBA\_ADVISOR\_TASKS displays information about all tasks in the database. The vi
     </copy>
     ````
 
-    ![](images/ai_dba_advisor_tasks.png " ")
+    ![advisory task](images/ai_dba_advisor_tasks.png " ")
 
 2.  Filter the query to focus on SYS\_AUTO\_INDEX\_TASK. This task is run by default every 15 minutes.
 
@@ -406,7 +406,7 @@ Automatic indexing improves database performance by managing indexes automatical
     </copy>
     ````
 
-    ![](images/ai_query1_results.png " ")
+    ![query executed multiple times](images/ai_query1_results.png " ")
 
 3.  Similar query selecting from different quarters (file /home/oracle/labs/new-features-for-developers/automaticindexing/ai_query2.sql).
 
@@ -430,7 +430,7 @@ Automatic indexing improves database performance by managing indexes automatical
     </copy>
     ````
 
-    ![](images/ai_query2_results.png " ")
+    ![selecting from different quarters](images/ai_query2_results.png " ")
 
 4.  Run the code blocks repeatedly from within SQLPlus (file /home/oracle/labs/new-features-for-developers/automaticindexing/ai_query3.sql).
 
@@ -452,7 +452,7 @@ Automatic indexing improves database performance by managing indexes automatical
     </copy>
     ````
 
-    ![](images/ai_query3_results.png " ")
+    ![run code blocks](images/ai_query3_results.png " ")
 
 5.  You can also run queries against the new tables we created earlier (file /home/oracle/labs/new-features-for-developers/automaticindexing/ai_query4.sql).
 
@@ -471,7 +471,7 @@ Automatic indexing improves database performance by managing indexes automatical
     </copy>
     ````
 
-    ![](images/ai_query4_results.png " ")
+    ![run queries against the new tables](images/ai_query4_results.png " ")
 
 6.  These tables will be also used to identify candidate indexes, and we gathered optimizer statistics after their creation (file /home/oracle/labs/new-features-for-developers/automaticindexing/ai_query5.sql).
 
@@ -490,7 +490,7 @@ Automatic indexing improves database performance by managing indexes automatical
     </copy>
     ````
 
-    ![](images/ai_query5_results.png " ")
+    ![identify candidate indexes](images/ai_query5_results.png " ")
 
 7.  Automatic indexing is also capable of handling advanced business intelligence queries.
 
@@ -565,7 +565,7 @@ Automatic indexing improves database performance by managing indexes automatical
     </copy>
     ````
 
-    ![](images/ai_change_markt_share_results.png " ")
+    ![advanced analytical SQL statement](images/ai_change_markt_share_results.png " ")
 
 ## Task 7: Calculate a sales projection
 
@@ -583,7 +583,7 @@ You can build a query that projects sales for 2002 based on the sales of 2000 an
     </copy>
     ````
 
-    ![](images/step7.1-createtable.png " ")
+    ![currency conversion factors](images/step7.1-createtable.png " ")
 
 2.  Populate the table with conversion factors for each month for each country (file /home/oracle/labs/new-features-for-developers/automaticindexing/ai\_ins\_curr\_conv.sql).
 
@@ -599,7 +599,7 @@ You can build a query that projects sales for 2002 based on the sales of 2000 an
     </copy>
     ````
 
-    ![](images/ai_ins_curr_results.png " ")
+    ![populate currency conversion factors](images/ai_ins_curr_results.png " ")
 
 3.  For this example we will only set the conversion factor for "Canada".
 
@@ -609,7 +609,7 @@ You can build a query that projects sales for 2002 based on the sales of 2000 an
     </copy>
     ````
 
-    ![](images/step7.3-setconvfactor.png " ")
+    ![set the conversion factor](images/step7.3-setconvfactor.png " ")
 
 4.  Build the sales projection query (file /home/oracle/labs/new-features-for-developers/automaticindexing/ai\_sales\_proj.sql).
 
@@ -659,7 +659,7 @@ You can build a query that projects sales for 2002 based on the sales of 2000 an
     </copy>
     ````
 
-    ![](images/ai_sales_proj_results.png " ")
+    ![sales projection query](images/ai_sales_proj_results.png " ")
 
 5.  Commit all results.
 
@@ -825,5 +825,4 @@ In this lab, you had an opportunity to examine the Automatic Indexing capabiliti
 
 - **Author** - Jean-Francois Verrier
 - **Contributors** - Anoosha Pilli, Product Manager, DB Product Management | Dylan McLeod, LiveLabs QA Intern
-- **Last Updated By/Date** - Arabella Yao, Product Manager Intern, DB Product Management, July 2020
-
+- **Last Updated By/Date** - Valentin Tabacaru, Mar 2023
