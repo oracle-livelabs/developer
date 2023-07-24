@@ -222,13 +222,13 @@ Add a Create page that lets your users create new employees.
     The fields now appear in two columns. If you don't see the change, click **Properties** to hide the Properties pane and expand your view.
 
 7. Click **Live** to make the form active. Enter or select the following (you can use other data if you wish):
-    - **Name**: `Walter`
-    - **Picture**: `https://www.oracle.com/webfolder/technetwork/jet/content/images/hcm/placeholder-male-05.png`
-    - **Hire Date**:  Select today's date
-    - **Email**: `walter@example.com`
-    - **Department**: `IT`
-    - **Salary**: `2500`
-    - **Country**: `CA`
+    * **Name**: `Walter`
+    * **Picture**: `https://www.oracle.com/webfolder/technetwork/jet/content/images/hcm/placeholder-male-05.png`
+    * **Hire Date**:  Select today's date
+    * **Email**: `walter@example.com`
+    * **Department**: `IT`
+    * **Salary**: `2500`
+    * **Country**: `CA`
 
     Click **Save**.
 
@@ -276,5 +276,5 @@ It makes sense at this point to change the name of the main-start page to main-d
 
 ## Acknowledgements
 
-- **Author** - Sheryl Manoharan, Visual Builder User Assistance, August 2021
-- **Last Updated By** - February 2023
+* **Author** - Sheryl Manoharan, Visual Builder User Assistance, August 2021
+* **Last Updated By** - February 2023

@@ -23,7 +23,7 @@ This lab assumes you have:
 
 ## Task 1: Create an action chain to navigate from the Departments page to the Employees page
 
-1. Click **Workspaces**![Workspaces icon](images/vbs-workspaces-icon.png), then click **HR Visual Application** in the Workspaces table.
+1. Click **Workspaces**![Workspaces icon](images/vbs-workspaces-icon.png), then click **HR Workspace** in the Workspaces table.
 2. Click **Web Applications** ![Web Applications icon](images/web-applications-icon.png), then **main-departments** under the **hrwebapp** and **main** nodes.
 3. In the Page Designer, click **Components** to open the Components palette. Enter `button` in the Filter field, then drag a **Button** onto the Toolbar, to the right of the Create Department button on the main-departments page.
 
@@ -36,15 +36,15 @@ This lab assumes you have:
 
     An empty action chain with the ID ButtonActionChain is created.
 
-6. In the Actions palette, scroll down to the **Navigation** section, then drag the **Navigate** action to the **+** sign pointed to by the Start arrow.
+6. In the Actions palette, scroll down to the **Navigation** section, then drag the **Navigate To Page** action onto the canvas.
 
-    ![The Action Chain editor is shown, with the Navigate action being dragged to + sign on the diagram area.](images/new-buttonactionchain.png "")
+    ![The Action Chain editor is shown, with the Navigate To Page action being dragged onto the canvas.](images/new-buttonactionchain.png "")
 
-7. In the Navigate action's properties, select **main-employees** from the **Page** list.
+7. In the Navigate To Page action's properties, select **main-employees** from the **Page** list.
 
-    ![The Action Chain editor is shown, with the Navigate action added to the action chain, and main-employees under Peer Pages selected in the Page drop-down list. A warning icon appears on the Navigate icon because the target has not yet been selected.](images/departments-button-events-navigate.png "")
+    ![The Action Chain editor is shown, with the Navigate To Page action, and main-employees under Peer Pages selected in the Page drop-down list.](images/departments-button-events-navigate.png "")
 
-    The action now has the label `Navigate main-employees`.
+    The action now has the label **Navigate To Page main-employees**.
 
 8. Click **Preview** ![Preview icon](images/preview-icon.png) in the header to run the page in its own browser tab and see how it will appear to a user. (You can use the Live mode to test your app if you prefer, though the Preview form factor is a bit more pleasing.)
 
@@ -63,10 +63,10 @@ This lab assumes you have:
 
     Another empty action chain with the ID ButtonActionChain is created. Because this action chain is for a different page, it doesn't matter that it has the same name as the one for the main-departments page.
 
-5. Drag the **Navigate** action from the **Navigation** section to the **+** sign pointed to by the Start arrow.
-6. In the Navigate action's Properties pane, select **main-departments** from the **Page** list.
+5. Drag the **Navigate To Page** action from the **Navigation** section onto the canvas.
+6. In the Navigate To Page action's Properties pane, select **main-departments** from the **Page** list.
 
-    The action now has the label `Navigate main-departments`.
+    The action now has the label **Navigate To Page main-departments**.
 
 7. Now click **Preview** ![Preview icon](images/preview-icon.png), then **Show Employees** in the new browser tab. Make sure you can get to the Departments page from the Employees page. Close the browser tab.
 8. In the Web Apps pane, click **main**, then **Diagram** to view the application's modified page flow. You'll see bi-directional arrows flowing between the main-departments page and the main-employees page. Select the main-departments page tile to see ![Green navigation icon](images/diagram-navigation-icon-green.png) ![Black navigation icon](images/diagram-navigation-icon-black.png) navigation icons appear in the page's Properties pane, indicating that you can now navigate from main-departments to main-employees and back.
@@ -78,4 +78,4 @@ This lab assumes you have:
 ## Acknowledgements
 
 * **Author** - Sheryl Manoharan, VB Studio User Assistance, November 2021
-* **Last Updated By/Date** - Sheryl Manoharan, February 2023
+* **Last Updated By/Date** - Sheryl Manoharan, May 2023

@@ -3,6 +3,10 @@
 ## Introduction
 Before you can use Java Management Service, you must ensure that your Oracle Cloud Infrastructure environment is set up correctly to allow the communication flow between all required components and cloud services.
 
+The following diagram illustrates the topology of the environment for Java Management Service:
+
+![image of jms topology](images/jms-topology.png =40%x*)
+
 This section describes the steps to set up Oracle Cloud Infrastructure for Java Management Service. To set up your OCI resources, you may choose to use either the **Onboarding Wizard** or perform the steps **manually**. We recommend users new to OCI to use the **Onboarding Wizard** option.
 
 Before you begin, review the prerequisites and the overview of the steps.
@@ -20,7 +24,7 @@ In this lab, you will:
     * Create one or more user accounts for your JMS users.
     * Create a dynamic group of all agents.
     * Create policies.
- 
+
 ### Prerequisites
 You will need an OCI account with administrative privileges to complete this lab. If you do not have one, you may sign up [here](https://www.oracle.com/cloud/free/).
 
@@ -41,7 +45,8 @@ The Onboarding Wizard helps to create the necessary resources automatically. We 
     > **Note:** If the **Details** button does not appear, click on the **Inspect prerequisites** button.
 
     ![image of onboarding wizard buttons](images/fleets-setup-jms.png)
-    
+
+
     &nbsp;
 
 5. Scroll down to the bottom of the page and click **Set up JMS** to start the Onboarding Wizard.
@@ -59,7 +64,7 @@ The Onboarding Wizard helps to create the necessary resources automatically. We 
     * In the Oracle Cloud Console, open the navigation menu and click **Identity & Security**. Under **Identity**, click **Compartments**.
         ![image of console navigation to compartments](images/console-navigation-compartments.png)
     &nbsp;
-    * Confirm the creation of new compartment labelled `Fleet_Compartment`.
+    * Confirm the creation of new compartment labeled `Fleet_Compartment`.
         ![image of new compartment](images/new-compartment.png)
     &nbsp;
     * In the Oracle Cloud Console, open the navigation menu and click **Governance & Administration**. Under **Tenancy Management**, click **Tag Namespaces**.
@@ -80,19 +85,19 @@ The Onboarding Wizard helps to create the necessary resources automatically. We 
     * In the Overview page, click **Groups**.
         ![image of domain overview navigation to groups](images/domain-overview-groups.png)
     &nbsp;
-    * You can see the new user group labelled `FLEET_MANAGERS`.
+    * You can see the new user group labeled `FLEET_MANAGERS`.
         ![image of new group](images/new-group.png)
     &nbsp;
     * Return to the Overview page and click **Dynamic groups**.
         ![image of console navigation to dynamic groups](images/domain-overview-dynamic-groups.png)
     &nbsp;
-    * Confirm the creation of new dynamic group labelled `JMS_DYNAMIC_GROUP` and 2 Matching Rules.
+    * Confirm the creation of new dynamic group labeled `JMS_DYNAMIC_GROUP` and 2 Matching Rules.
         ![image of new dynamic group](images/new-dynamic-group.png)
     &nbsp;
     * In the Oracle Cloud Console, open the navigation menu and click **Identity & Security**. Under **Identity**, click **Policies**.
         ![image of console navigation to policies](images/console-navigation-policies.png)
     &nbsp;
-    * Confirm the creation of new policy labelled `JMS_Policy`.
+    * Confirm the creation of new policy labeled `JMS_Policy`.
         ![image of new jms policy](images/new-jms-policy.png)
 
 You may now **proceed to the next lab**.
@@ -104,6 +109,8 @@ If you would like to customize your OCI resources, you may do so manually with t
 Sign in to the Oracle Cloud Console as an administrator using the credentials provided by Oracle, as described in [Sign In for the First Time](https://docs.oracle.com/en-us/iaas/Content/GSG/Tasks/signingin.htm). See [Get to Know the Console](https://docs.oracle.com/en-us/iaas/Content/GSG/Concepts/console.htm) for more information.
 
 1. Create a compartment for your JMS resources.
+
+    ![image of compartment in jms topology](images/jms-topology-compartment.png =40%x*)
 
     When you sign up for OCI, Oracle creates your tenancy with a root compartment that holds all of your cloud resources. You can think of the root compartment like the root folder in a file system. Oracle recommends that you set up a dedicated compartment for each project so you can associate a compartment with a particular activity or task.
     &nbsp;
@@ -124,11 +131,13 @@ Sign in to the Oracle Cloud Console as an administrator using the credentials pr
         &nbsp;
         ![image of compartments main page after creation](images/compartment-main-page-after-create.png)
         &nbsp;
-        
+
         For more information, see [Setting Up Your Tenancy](https://docs.oracle.com/en-us/iaas/Content/GSG/Concepts/settinguptenancy.htm) and [Managing Compartments](https://docs.oracle.com/en-us/iaas/Content/Identity/compartments/managingcompartments.htm).
         &nbsp;
 
 2. Create a new tag namespace.
+
+    ![image of tag namespace in jms topology](images/jms-topology-tag-namespace.png =40%x*)
 
     * In the Oracle Cloud Console, open the navigation menu and click **Governance & Administration**. Under **Tenancy Management**, click **Tag Namespaces**.
         ![image of console navigation to tag namespaces](images/console-navigation-tag-namespaces.png)
@@ -166,6 +175,8 @@ Sign in to the Oracle Cloud Console as an administrator using the credentials pr
 
 4. Create a user group.
 
+    ![image of user group in jms topology](images/jms-topology-user-group.png =40%x*)
+
     * In the Oracle Cloud Console, open the navigation menu and click **Identity & Security**. Under **Identity**, click **Domains**.
 
         > **Note:** If **Domains** does not appear, your tenancy and/or region has not been updated to use identity domains. You can access groups and dynamic groups directly under **Identity**. For more information, see [Documentation to Use for Cloud Identity](https://docs.oracle.com/en-us/iaas/Content/Identity/getstarted/identity-domains.htm#identity_documentation).
@@ -195,8 +206,9 @@ Sign in to the Oracle Cloud Console as an administrator using the credentials pr
     &nbsp;
 
 
-
 6. Create Dynamic Group.
+
+    ![image of dynamic group in jms topology](images/jms-topology-dynamic-group.png =40%x*)
 
     Create a dynamic group of all agents. To interact with the Oracle Cloud Infrastructure service end-points, users must explicitly consent to let the management agents work with JMS.
 
@@ -239,6 +251,8 @@ Sign in to the Oracle Cloud Console as an administrator using the credentials pr
 
 7. Create Policies.
 
+    ![image of jms topology](images/jms-topology-policy.png =40%x*)
+
     **Policy**: A policy is a document that specifies who can access which Oracle Cloud Infrastructure resources that your company has, and how. A policy simply allows a group to work in certain ways with specific types of resources  in a particular compartment.
 
     Create policies for the user group to access and manage JMS fleets, management agents, agent install keys, metrics, tag namespaces, logging and LCM operations.
@@ -261,27 +275,27 @@ Sign in to the Oracle Cloud Console as an administrator using the credentials pr
     ALLOW GROUP FLEET_MANAGERS TO MANAGE fleet IN COMPARTMENT Fleet_Compartment
     ALLOW GROUP FLEET_MANAGERS TO MANAGE management-agents IN COMPARTMENT Fleet_Compartment
     ALLOW GROUP FLEET_MANAGERS TO MANAGE management-agent-install-keys IN COMPARTMENT Fleet_Compartment
-    ALLOW GROUP FLEET_MANAGERS TO READ METRICS IN COMPARTMENT Fleet_Compartment
     ALLOW GROUP FLEET_MANAGERS TO MANAGE tag-namespaces IN TENANCY
     ALLOW GROUP FLEET_MANAGERS TO MANAGE instance-family IN COMPARTMENT Fleet_Compartment
     ALLOW GROUP FLEET_MANAGERS TO READ instance-agent-plugins IN COMPARTMENT Fleet_Compartment
-    ALLOW DYNAMIC-GROUP JMS_DYNAMIC_GROUP TO MANAGE management-agents IN COMPARTMENT Fleet_Compartment
-    ALLOW SERVICE javamanagementservice TO MANAGE metrics IN COMPARTMENT Fleet_Compartment WHERE target.metrics.namespace='java_management_service'
-    ALLOW DYNAMIC-GROUP JMS_DYNAMIC_GROUP TO USE tag-namespaces IN TENANCY
-    ALLOW DYNAMIC-GROUP JMS_DYNAMIC_GROUP TO USE METRICS IN COMPARTMENT Fleet_Compartment
-    ALLOW SERVICE javamanagementservice TO MANAGE log-groups IN COMPARTMENT Fleet_Compartment
-    ALLOW SERVICE javamanagementservice TO MANAGE log-content IN COMPARTMENT Fleet_Compartment
-    ALLOW DYNAMIC-GROUP JMS_DYNAMIC_GROUP TO MANAGE log-content IN COMPARTMENT Fleet_Compartment
     ALLOW GROUP FLEET_MANAGERS TO MANAGE log-groups IN COMPARTMENT Fleet_Compartment
     ALLOW GROUP FLEET_MANAGERS TO MANAGE log-content IN COMPARTMENT Fleet_Compartment
-    ALLOW SERVICE javamanagementservice TO READ instances IN tenancy
-    ALLOW SERVICE javamanagementservice TO INSPECT instance-agent-plugins IN tenancy
-    ALLOW SERVICE javamanagementservice TO USE management-agent-install-keys IN COMPARTMENT Fleet_Compartment
+    ALLOW GROUP FLEET_MANAGERS TO READ METRICS IN COMPARTMENT Fleet_Compartment
+
+    ALLOW DYNAMIC-GROUP JMS_DYNAMIC_GROUP TO MANAGE management-agents IN COMPARTMENT Fleet_Compartment
+    ALLOW DYNAMIC-GROUP JMS_DYNAMIC_GROUP TO USE tag-namespaces IN TENANCY
+    ALLOW DYNAMIC-GROUP JMS_DYNAMIC_GROUP TO USE METRICS IN COMPARTMENT Fleet_Compartment
+    ALLOW DYNAMIC-GROUP JMS_DYNAMIC_GROUP TO MANAGE log-content IN COMPARTMENT Fleet_Compartment
+
+    ALLOW resource jms server-components TO MANAGE log-groups IN COMPARTMENT Fleet_Compartment
+    ALLOW resource jms server-components TO MANAGE log-content IN COMPARTMENT Fleet_Compartment
+    ALLOW resource jms server-components TO USE management-agent-install-keys IN COMPARTMENT Fleet_Compartment
+    ALLOW resource jms server-components TO MANAGE metrics IN COMPARTMENT Fleet_Compartment WHERE target.metrics.namespace='java_management_service'
+    ALLOW resource jms server-components TO READ instances IN tenancy
+    ALLOW resource jms server-components TO INSPECT instance-agent-plugins IN tenancy
     </copy>
     ```
     ![image of policies create page](images/policies-create-example.png)
-
-
 
     &nbsp;
     * Click **Create**.
@@ -294,7 +308,7 @@ You may now **proceed to the next lab**.
 
 ## Learn More
 
-* Refer to the [Getting Started with Java Management Service](https://docs.oracle.com/en-us/iaas/jms/doc/getting-started-java-management-service.html) section of the JMS documentation for more details.
+* Refer to the [Getting Started with Java Management Service](https://docs.oracle.com/en-us/iaas/jms/doc/getting-started-jms.html) section of the JMS documentation for more details.
 
 * Use the [Troubleshooting](https://docs.oracle.com/en-us/iaas/jms/doc/troubleshooting.html#GUID-2D613C72-10F3-4905-A306-4F2673FB1CD3) chapter for explanations on how to diagnose and resolve common problems encountered when installing or using Java Management Service.
 
@@ -305,4 +319,4 @@ You may now **proceed to the next lab**.
 ## Acknowledgements
 
 * **Author** - Alvin Lam, Java Management Service
-* **Last Updated By/Date** - Ivan Eng, March 2023
+* **Last Updated By/Date** - Ivan Eng, June 2023

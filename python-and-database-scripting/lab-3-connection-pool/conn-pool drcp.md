@@ -5,7 +5,7 @@ Connection pooling is important for performance when multi-threaded applications
 
 This lab will show how to create connection pools using python-oracledb driver
 
-Estimated Lab Time: 5 minutes
+Estimated Time: 5 minutes
 
 ### Objectives
 

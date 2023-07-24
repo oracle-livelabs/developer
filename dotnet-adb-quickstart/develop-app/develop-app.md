@@ -25,9 +25,9 @@ Watch the video below for a quick walk-through of the lab.
 
 We will connect to Cloud Shell again to begin developing the ASP.NET Core part of the To Do List application. The project will incorporate ODP.NET Core for data access between the app and Oracle Autonomous Database.
 
-1. Open Cloud Shell by clicking on its icon on the top right part of the menu bar.
+1. Open Cloud Shell by clicking the Developer Tools icon on the top right of the menu bar, then click **Cloud Shell**.
 
-    ![Click Cloud Shell icon](./images/cloud-shell-icon.png)
+    ![Open Cloud Shell](./images/cloud-shell-icon.png)
 
 2. If you have been logged out of the last SSH session, SSH into the web server machine once again:
 
@@ -271,4 +271,4 @@ Click [here](https://www.oracle.com/database/technologies/appdev/dotnet.html) to
 ## Acknowledgements
 
 - **Author** - Alex Keh
-- **Last Updated By/Date** - Alex Keh, August 2022
+- **Last Updated By/Date** - Alex Keh, June 2023

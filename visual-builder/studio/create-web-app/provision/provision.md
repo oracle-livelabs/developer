@@ -8,7 +8,7 @@ Estimated Time: 20 minutes
 
 ### About this Lab
 
-If you just created a Cloud Account using the instructions in the previous lab, you might want to wait before you attempt to create Visual Builder and VB Studio instances. It could take anywhere between 10 and 30 minutes for a new user account to be fully provisioned (you'll get a email when provisioning is complete). If you already have a Cloud Account, you don't need to wait. Either way, make sure you've signed in to the Oracle Cloud as an Oracle Identity Cloud Service user before proceeding. *Note: If you log in using an Oracle Cloud Infrastructure (OCI) account, the navigation menu to Visual Builder won't show.*
+If you just created a Cloud Account using the instructions in the previous lab, you might want to wait before you attempt to create Visual Builder and VB Studio instances. It could take anywhere between 10 and 30 minutes for a new user account to be fully provisioned (you'll get a email when provisioning is complete). If you already have a Cloud Account, you don't need to wait. Either way, make sure you've signed in to Oracle Cloud as an Oracle Identity Cloud Service user. *Note: If you log in using an Oracle Cloud Infrastructure (OCI) account, the navigation menu to Visual Builder won't show.*
 
 ### Objectives
 
@@ -16,7 +16,6 @@ In this lab, you will:
 
 * Create an instance of Visual Builder
 * Create an instance of VB Studio
-* Connect your OCI account to your VB Studio instance (optional)
 
 ### Prerequisites
 
@@ -27,9 +26,9 @@ This lab assumes you have:
 
 ## Task 1: Create a Visual Builder instance
 
-Provision a Visual Builder instance to host the web app you'll create in VB Studio. Visual Builder is a managed service that provides everything your apps need to run successfully, including a web server for hosting and to secure data access. You must provision the Visual Builder instance first, so you have it available for selection as a deployment target when you create a project in VB Studio.
+Before you provision a VB Studio instance, create a Visual Builder instance to host the web app you'll create in VB Studio. Visual Builder is a managed service that provides everything your apps need to run successfully, including a web server and a built-in database. You must provision the Visual Builder instance first, so you have it available for selection as a deployment target when you create a project in VB Studio.
 
-1. To create a Visual Builder instance, you must first create a compartment. You can use the root compartment and the tenancy user that was created when the OCI account was created, but it's recommended to create a dedicated compartment to host the Visual Builder instance.
+1. Create a compartment to host OCI resources for your Visual Builder instance. You can use the root compartment and the tenancy user that was created when the OCI account was created, but a dedicated compartment is the recommended approach.
 
    a. On the Oracle Cloud Get Started page, click the menu ![Menu icon](images/hamburger.png) in the upper left corner.
 
@@ -126,7 +125,7 @@ Provision a VB Studio instance to develop and deploy a web app. You can create o
 
    ![This image shows the OCI Account tab when a free Built-in account is connected to the tenancy. A Built-in Free section on the left shows the instance connected using this free account. On the right, a Connect Your Own section provides an option to connect your own OCI Account to the instance.](images/oci-free-account.png "")
 
-   You will need to create your VM build executor as described in the next task before you proceed with the rest of the workshop.
+   In this case, you will need to create your VM build executor as described in the next task before you proceed with the rest of the workshop.
 
 ## Task 3: Create the Free VM Build Executor
 
@@ -146,4 +145,4 @@ If you did *not* authorize Oracle to create instances on your behalf when provis
 ## Acknowledgements
 
 * **Author** - Sheryl Manoharan, VB Studio User Assistance, November 2021
-* **Last Updated By/Date** - Sheryl Manoharan, March 2023
+* **Last Updated By/Date** - Sheryl Manoharan, May 2023

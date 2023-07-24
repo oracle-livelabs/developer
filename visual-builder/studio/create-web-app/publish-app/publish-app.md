@@ -8,9 +8,9 @@ Estimated Time: 15 minutes
 
 ### About this Lab
 
-When the process of reviewing your HR web app is done, you are ready to publish the application and make your changes public. Publishing saves your application's code to a remote branch and then to the project's default (`main`) branch. You can use the **Commit** and **Push** Git options in your workspace to save your changes to a remote branch (as we did in a previous lab), then use the **Merge** option to push your changes to `main`. Or, you can do all of this at the click of a single **Publish** button (as we'll do in this lab).
+When the process of reviewing your HR web app is done, you are ready to publish the application and make your changes public. Publishing saves your application's code to a remote branch and then to the project's default (**main**) branch. You can use the **Commit** and **Push** Git options in your workspace to save your changes to a remote branch (as we did in a previous lab), then use the **Merge** option to push your changes to **main**. Or, you can do all of this at the click of a single **Publish** button (as we'll do in this lab).
 
-No matter how you decide to save your changes, it's a good idea to always get your code reviewed and approved before you merge it to the project's `main` branch. Because the `main` code base is meant to be stable, it is usually protected, requiring code to be reviewed through a merge request. If your project was set up to protect the `main` branch, merging your changes will require approval. In this lab, you'll create a merge request to review your changes, but for demonstration purposes, you'll merge the code to the `main` branch without approval.
+No matter how you decide to save your changes, it's a good idea to always get your code reviewed and approved before you merge it to the project's **main** branch. Because this code base is meant to be stable, it is usually protected, requiring code to be reviewed through a merge request. If your project was set up to protect the **main** branch, merging your changes will require approval. In this lab, you'll create a merge request to review your changes, but for demonstration purposes, you'll merge the code to the **main** branch without approval.
 
 Once your changes are successfully merged, VB Studio automatically deploys the web app to your environment's VB instance and creates a permanent URL to access the application.
 
@@ -33,14 +33,14 @@ This lab assumes you have:
 
 Now that you are ready to publish your changes to the project's `main` branch, let's create a merge request to get someone to sign off on your changes.
 
-1. Click **Workspaces**![Workspaces icon](images/vbs-workspaces-icon.png), then **HR Visual Application** in the Workspaces table.
+1. Click **Workspaces**![Workspaces icon](images/vbs-workspaces-icon.png), then **HR Workspace** in the Workspaces table.
 2. When your workspace opens, click **Publish** in the header.
 3. In the Publish Changes dialog box, click **Merge After Review**.
 4. Enter a message for your commit, select another project member as a reviewer, and click **Publish Changes**.
 
     ![The Publish Changes dialog box is shown, with the Merge After Review tab selected. An example commit message is shown and Clara Coder is set as a reviewer. The Publish Changes button is selected.](images/create-mr.png "")
 
-    Once the request to merge your changes from `hrbranch` to `main` is created, click **Close**. Both your reviewer and you will be notified that a new merge request has been created.
+    Once the request to merge your changes from **hrbranch** to **main** is created, click **Close**. Both your reviewer and you will be notified that a new merge request has been created.
 
     ![The results when you click the Publish Changes button are shown, with the message '1 Merge hrbranch to master merge request has been created' at the end. The Close button is selected.](images/create-mr-result.png "")
 
@@ -53,7 +53,7 @@ Now that you are ready to publish your changes to the project's `main` branch, l
 
 ## Task 2: Merge changes to the default branch
 
-Assuming your merge request has been approved, let's now merge your changes to the project's `main` branch in the remote repository.
+Assuming your merge request has been approved, let's now merge your changes to the project's **main** branch in the remote repository.
 
 1. Click **Merge** on the Merge Requests page.
 2. In the Merge dialog, enter a message, select **Delete branch** if you want to delete the branch after the merge, and click **Create a Merge Commit**.
@@ -100,7 +100,7 @@ A deployed application does not automatically include its business object data, 
 
     You can now make a note of this URL to share with public users.
 
-5. To install the app as a PWA, click the **Install HR Application** ![Install HR Visual Application icon](images/install-app-icon.png) icon in the address bar, then **Install** when prompted.
+5. To install the app as a PWA, click the **Install HR App** ![Install HR App icon](images/install-app-icon.png) icon in the address bar, then **Install** when prompted.
 
     ![The Install app? prompt that appears when a user clicks the Install HR Application icon in the address bar is shown. Install is selected.](images/install-as-pwa.png "")
 
@@ -119,4 +119,4 @@ A deployed application does not automatically include its business object data, 
 ## Acknowledgements
 
 * **Author** - Sheryl Manoharan, VB Studio User Assistance, November 2021
-* **Last Updated By/Date** - Sheryl Manoharan, February 2023
+* **Last Updated By/Date** - Sheryl Manoharan, May 2023

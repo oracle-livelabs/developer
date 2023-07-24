@@ -36,24 +36,22 @@ In this lab, you will:
 	If your request is submitted successfully, you should receive a notification in green as seen below: 
 	![image of created work request for java libraries](images/work-request-of-libraries-scan-created.png)
 
-4. Scroll down the Fleet details page, under **Resource** menu, select **Work Request**. You should see the Scan for Java libraries Work Request you submitted in step 2. Wait for the work request to complete.
+4. Scroll down the Fleet details page, under **Resources** menu, select **Work Request**. You should see the Scan for Java libraries Work Request you submitted in step 2. Wait for the work request to complete.
 	![image of work request for java libraries in progress](images/work-request-of-libraries-scan-in-progress.png)
 
 5. If your request is successful, you should see that the Status of the request is marked as **Completed without errors**. It will take approximately 10 minutes for the request to be completed.
 	![image of work request for java libraries in progress completed](images/work-request-of-libraries-scan-completed.png)
 
-6. In the same Fleet details page, under **Resource** menu, select **Java libraries** you should see Java libraries included for the deployed sample Java Web Application in lab 4.
+6. In the same Fleet details page, under **Resources** menu, select **Java libraries** you should see the Java libraries included in the deployed sample Java Web Application in Lab 4.
 	![image of detected java libraries](images/java-libraries-web.png)
-	The [CVSS](https://www.oracle.com/security-alerts/cvssscoringsystem.html) score is the indication of the security vulnerability associated with the Java library. The score **varies** over time and there might be new vulnerabilities affecting your application since JMS refreshes data from the National Vulnerability Database(NVD) on a weekly basis.  
-	There are **3** categories of CVSS scores for Java libraries in the scan result based on availability in NVD as following:
+	The [CVSS](https://www.oracle.com/security-alerts/cvssscoringsystem.html) score are provided by the National Vulnerability Database and denote the following: 
+	- 7 - 10: This library has vulnerabilities with High severity. 
+    - 4 - 6.9: This library has vulnerabilities with Medium severity. 
+    - 0.1 - 3.9: This library has vulnerabilities with Low severity. 
+    - 0: This library has no vulnerabilities.
+    - Unknown: The severity of the vulnerabilities in this library is unknown. There could be a lack of information needed to determine the CVSS scores, but this doesn't guarantee that there are no vulnerabilities. 
 
-	1. When the Java library is found in the NVD and a CVSS score is obtained, the CVSS score will be displayed with a score and severity status. Severity statuses have categories of Low (green), Medium (yellow), High (red) as per CVSS score categories.
-
-	2. When a Java library is found in the NVD but a CVSS score is not computed, **Unknown** will be shown under the **CVSS score** column.
-
-	3. When the Java library is not found in the NVD, **No matches found** will be shown under the **CVSS score** column.
-	![image of sample if detected java libraries](images/java-libraries-categories.png)
-
+	When the Java library is not found in the NVD, No matches found will be shown under the CVSS score column.
 	> Note: Java library detection is not supported for JBoss/Wildfly webservers.
 
 7. You can stop the WebLogic server now by pressing **CTRL + c**.
@@ -62,8 +60,8 @@ In this lab, you will:
 
 ## Task 2: Run Sample Java SE Application
 
-1. If you do not have a Sample Java SE Application in your managed instance, please create and build on your own behalf.
-2. The Sample Java SE Application used in this task is called **Sample-JavaSE-App** packaged in executable Java Archive (JAR) file. Below is the partial print of the pom.xml configuration file for the sample Java SE Application which indicates the dependency on Java libraries.
+1. You must build a Sample Java SE Application if it does not exist in your managed instance.
+2. The Sample Java SE Application used in this task is called **Sample-JavaSE-App** packaged in executable Java Archive (JAR) file. An example of the sample Java SE application's pom.xml configuration file is shown below, indicating its dependency on Java libraries.
 	```xml
 	...
 		<dependency>
@@ -94,20 +92,21 @@ In this lab, you will:
 	If your request is submitted successfully, you should receive a notification in green as seen below: 
 	![image of created work request for java libraries](images/work-request-of-libraries-scan-created.png)
 
-3. Scroll down the Fleet details page, under **Resource** menu, select **Work Request**. You should see the Scan for Java libraries Work Request you submitted in step 2. Wait for the work request to complete.
+3. Scroll down the Fleet details page, under **Resources** menu, select **Work Request**. You should see the Scan for Java libraries Work Request you submitted in step 2. Wait for the work request to complete.
 	![image of work request for java libraries in progress](images/work-request-of-libraries-scan-in-progress.png)
 
 4. If your request is successful, you should see that the Status of the request is marked as **Completed without errors**. It will take approximately 10 minutes for the request to be completed.
 	![image of work request for java libraries completed](images/work-request-of-libraries-scan-completed.png)
 
-5. On the Fleet details pages, scroll down to the **Resource** menu and select **Java libraries**. You should be able to see a list of libraries detected. Additional Java libraries are added in the result list which are **oci-java-sdk-common** itself and dependency libraries it included.
-	![image of detected java libraries](images/java-libraries-oci.png)
-> **Note:** The Java libraries detected in the list varies depend on the dependencies of your sample application.
+5. On the Fleet details pages, scroll down to the **Resources** menu and select **Java libraries**. You should be able to see a list of libraries detected. The result list includes additional Java libraries, along with oci-java-sdk-common and its dependency libraries.
 
-6. In the same Fleet details page, Click the **oci-java-sdk-common** library, you should see details of selected library and list of applications that was run with selected library. 
+	![image of detected java libraries](images/java-libraries-oci.png)
+> **Note:** The Java libraries detected in the list vary according to the dependencies of your sample application.
+
+6. In the same Fleet details page, click the **oci-java-sdk-common** library; you should see details of selected library and list of applications that were run with the selected library. 
 	![image of details of oci sdk libraries](images/java-se-app-info.png)
 
-7. In the same page, click **Sample-JavaSE-App.jar**, You should see the details of sample Java SE Application that was run previously.
+7. In the same page, click **Sample-JavaSE-App.jar**; you should see the details of the sample Java SE Application that was run previously.
 	![image of details of GreetingApp](images/java-se-app-detail.png)
 
 > **Note:** Tracking of Java Application that is running with **Non-Oracle JDKs** in the fleet is also supported.
@@ -117,7 +116,7 @@ In this lab, you will:
 You may now **proceed to the next lab.**
 
 ## Learn More
-* Refer to the [Advanced Features](https://docs.oracle.com/en-us/iaas/jms/doc/advanced-features.html), [Work Request](https://docs.oracle.com/en-us/iaas/jms/doc/getting-started-java-management-service.html#GUID-47C63464-BC0C-4059-B552-ED9F33E77ED3) and [Viewing a Work Request](https://docs.oracle.com/en-us/iaas/jms/doc/fleet-views.html#GUID-F649F0E5-DD54-4DEC-A0F1-942FE3552C93) sections of the JMS documentation for more details.
+* Refer to the [Advanced Features](https://docs.oracle.com/en-us/iaas/jms/doc/advanced-features.html), [Work Requests](https://docs.oracle.com/en-us/iaas/jms/doc/using-java-management-service.html#GUID-77AEEBC0-93A5-4E99-96D6-BEE0FEE4539F) sections of the JMS documentation for more details.
 
 * Use the [Troubleshooting](https://docs.oracle.com/en-us/iaas/jms/doc/troubleshooting.html#GUID-2D613C72-10F3-4905-A306-4F2673FB1CD3) chapter for explanations on how to diagnose and resolve common problems encountered when installing or using Java Management Service.
 
@@ -126,4 +125,4 @@ You may now **proceed to the next lab.**
 ## Acknowledgements
 
 * **Author** - Youcheng Li, Java Management Service
-* **Last Updated By** - Sherlin Yeo, March 2023
+* **Last Updated By** - Sherlin Yeo, June 2023
