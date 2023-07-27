@@ -178,21 +178,18 @@ This lab assumes you have:
 
 3. Click the 'Substitions' tab as shown.
 
-  ![Substitions](images/4-apex-4-4.png)
+  ![Substitions](images/lab-4-task4-step3.png)
 
 4. Set the following **Substitutions** and 'Apply Changes':
-    - First, set G\_OCI\_WEB\_CREDENTIAL to OCI\_\API_\Credentials.
-    - Next, set OBP\_MAIN\_INSTANCE\_URL to the URL you found in the **Deployment Information**  section in the previous lab (Lab: Created & Setup API Gateway to connect with Smart Contract API's). This allows APEX to connect to the Car Marketplace OBP REST API endpoints via the API Gateway deployment. Change OBP\_MAIN\_INSTANCE\_URL, OBP\_DEALER\_1\_URL, OBP\_DEALER\_2\_URL based on the routes configured in *Lab 4*  
+    - Set OBP\_MAIN\_INSTANCE\_URL to the URL you found in the **Deployment Information**  section in the previous lab (Lab: Created & Setup API Gateway to connect with Smart Contract API's). This allows APEX to connect to the Car Marketplace OBP REST API endpoints via the API Gateway deployment. Change OBP\_MAIN\_INSTANCE\_URL, OBP\_DEALER\_1\_URL, OBP\_DEALER\_2\_URL based on the routes configured in *Lab 4*  
 
     ![Substitions Form](images/4-apex-4-4-1.png)
     ![Substitions Form](images/4-apex-4-4-2.png)
 
-    - Set FABCAR\_CHAINCODE to car\_marketplace\_cc.
-    - Set TOKENIZATION\_CHAINCODE to car\_tokenization\_cc.
     - Set DEALER\_1\_URL and DEALER\_2\_URL to john\_dealer1 and sam\_dealer2, respectively. This gives information on API routing.
     - Set MARKETPLACE to marketplace.
 
-  ![Substitions Form](images/4-apex-4-4.png)
+  ![Substitions Form](lab-4-task4-step3.png)
 
 5. Go back and  Select 'App Builder' as shown.
 
@@ -238,7 +235,7 @@ This lab assumes you have:
     - 'GetCarServicesDealer1'
     - 'GetCarServicesDealer2'
 
-  ![Repeat APEX Data Source Steps](images/apex-4-4-12.png)
+  ![Repeat APEX Data Source Steps](images/lab-4-task4-step10.png)
 
 You may now proceed to the next lab.
 
