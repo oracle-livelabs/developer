@@ -97,13 +97,13 @@ The Python packages can be obtained from the software repository of your Linux d
 
 ## Task 3: Download the sample files on Cloud Shell
 
-1. Get the sample Python scripts from [here](https://objectstorage.us-ashburn-1.oraclecloud.com/p/G1OGqC7vt8o0M_AOM_MU18yrJ3-6_1f82XIHoZYc1au3mszv_brD6trhq9CsTd6l/n/c4u04/b/livelabsfiles/o/samples.zip):
+1. Get the sample Python scripts from [here](https://objectstorage.us-ashburn-1.oraclecloud.com/p/LNAcA6wNFvhkvHGPcWIbKlyGkicSOVCIgWLIu6t7W2BQfwq2NSLCsXpTL9wVzjuP/n/c4u04/b/livelabsfiles/o/developer-library/python_samples.zip):
 
     In the Cloud Shell, run the following:
 
     ````
     <copy>
-    wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/G1OGqC7vt8o0M_AOM_MU18yrJ3-6_1f82XIHoZYc1au3mszv_brD6trhq9CsTd6l/n/c4u04/b/livelabsfiles/o/samples.zip
+    wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/LNAcA6wNFvhkvHGPcWIbKlyGkicSOVCIgWLIu6t7W2BQfwq2NSLCsXpTL9wVzjuP/n/c4u04/b/livelabsfiles/o/developer-library/python_samples.zip
     </copy>
     ````
 2. In the Cloud Shell, navigate to your home directory and unzip the sample.zip file, then remove the .zip file:
