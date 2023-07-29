@@ -135,7 +135,7 @@ Select '`car_marketplace_cc`.controller.go' under '`car_marketplace_cc`/src/cont
     <copy>
     "encoding/json"
     "time"
-    "Samples/Car_Marketplace/lib/util/date"
+    "Samples/car_marketplace_cc/lib/util/date"
     </copy>
     ```
 
