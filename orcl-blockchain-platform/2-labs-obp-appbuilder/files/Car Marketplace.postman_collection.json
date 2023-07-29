@@ -29,7 +29,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"chaincode\": \"{{bc-chaincode-name}}\",\n    \"args\": [\n        \"Init\",\n        \"'[{\\\"org_id\\\":\\\"{{bc-organization-id}}\\\",\\\"user_id\\\":\\\"{{bc-admin-user}}\\\"}]'\"\n    ],\n    \"isInit\": true,\n    \"sync\": true\n}\n\n\n",
+					"raw": "{\n    \"chaincode\": \"{{bc-chaincode-name}}\",\n    \"args\": [\n        \"Init\",\n        \"'[{\\\"orgId\\\":\\\"{{bc-organization-id-founder}}\\\",\\\"userId\\\":\\\"{{bc-admin-user}}\\\"}]'\"\n    ],\n    \"isInit\": true,\n    \"sync\": true    \n}\n\n\n",
 					"options": {
 						"raw": {
 							"language": "json"

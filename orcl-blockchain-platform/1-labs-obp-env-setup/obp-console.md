@@ -129,7 +129,17 @@ Select '`car_marketplace_cc`.controller.go' under '`car_marketplace_cc`/src/cont
 
 1. Open the Car Marketplace specification file and scroll to the bottom. This is where your customMethods are listed.
 
-2. We've modified existing CRUD operations and defined custom methods for the following functions:
+2. First, select 'car_marketplace_cc.controller.go' under 'car_marketplace_cc/src/controller'. Add the imports in 'car_marketplace_cc.controller.go' needed for the custom methods.
+
+    ```
+    <copy>
+    "encoding/json"
+    "time"
+    "Samples/Car_Marketplace/lib/util/date"
+    </copy>
+    ```
+
+3. We've modified existing CRUD operations and defined custom methods for the following functions:
   - 'CreateCar': Adds car to dealer's inventory. Copy and paste these custom methods in the controller file, overwriting the stubs for these methods. The function retrieves dealer from blockchain, appends the car to dealer's inventory and records car on ledger.
 
     ```
