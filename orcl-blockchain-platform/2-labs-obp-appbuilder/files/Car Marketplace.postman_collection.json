@@ -29,7 +29,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"chaincode\": \"{{bc-chaincode-name}}\",\n    \"args\": [\n        \"Init\",\n        \"'[{\\\"orgId\\\":\\\"{{bc-organization-id-founder}}\\\",\\\"userId\\\":\\\"{{bc-admin-user}}\\\"}]'\"\n    ],\n    \"isInit\": true,\n    \"sync\": true    \n}\n\n\n",
+					"raw": "{\n    \"chaincode\": \"{{bc-chaincode-name}}\",\n    \"args\": [\n        \"Init\",\n        \"'[{\\\"OrgId\\\":\\\"{{bc-organization-id-founder}}\\\",\\\"UserId\\\":\\\"{{bc-admin-user}}\\\"}]'\"\n    ],\n    \"isInit\": true,\n    \"sync\": true    \n}\n\n\n",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -609,7 +609,7 @@
 		},
 		{
 			"key": "bc-chaincode-name",
-			"value": "car_marketplace_cc"
+			"value": "Car_Marketplace"
 		},
 		{
 			"key": "bc-token-id",
@@ -633,7 +633,7 @@
 		},
 		{
 			"key": "bc_organization1_url",
-			"value": "https://dealer1-3-oabcs1-iad.blockchain.ocp.oraclecloud.com:7443/restproxy/api/v2/channels/default/transactions",
+			"value": "https://dealer1-3-oabcs1-iad.blockchain.ocp.oraclecloud.com:7443/restproxy/api/v2/channels/car-marketplace/transactions",
 			"type": "string"
 		},
 		{
@@ -651,7 +651,7 @@
 		},
 		{
 			"key": "bc_organization2_url",
-			"value": "https://dealer2-3-oabcs1-iad.blockchain.ocp.oraclecloud.com:7443/restproxy/api/v2/channels/default/transactions",
+			"value": "https://dealer2-3-oabcs1-iad.blockchain.ocp.oraclecloud.com:7443/restproxy/api/v2/channels/car-marketplace/transactions",
 			"type": "string"
 		},
 		{

@@ -129,7 +129,7 @@ Select '`car_marketplace_cc`.controller.go' under '`car_marketplace_cc`/src/cont
 
 1. Open the Car Marketplace specification file and scroll to the bottom. This is where your customMethods are listed.
 
-2. First, select 'car_marketplace_cc.controller.go' under 'car_marketplace_cc/src/controller'. Add the imports in 'car_marketplace_cc.controller.go' needed for the custom methods.
+2. First, select '`car_marketplace_cc`.controller.go' under '`car_marketplace_cc`/src/controller'. Add the imports in '`car_marketplace_cc`.controller.go' needed for the custom methods.
 
     ```
     <copy>
