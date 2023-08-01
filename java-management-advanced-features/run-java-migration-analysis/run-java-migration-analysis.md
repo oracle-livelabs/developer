@@ -51,7 +51,7 @@ In this lab, you will:
 
 5. In the **Java migration analysis** panel, the source JDK is auto-populated to JDK 8, which is used for compiling and running this java application. 
 
-   Under the **Target JDK for migration analysis**, click on the dropdown menu and select **JDK 19**. Click **Analyze** to start the Java migration analysis.
+   Under the **Target JDK for migration analysis**, click the dropdown menu and select **JDK 19**. Click **Analyze** to start the Java migration analysis.
 
     ![image of java migration configs before starting](images/java-migration-analysis-config-start.png)
 
@@ -105,7 +105,7 @@ In this lab, you will:
 
 15. Select **Recommended changes** under **Resources** to view the classes associated with this change type and the specific counts for terminally deprecated as well as deprecated API(s).
 
-   You may click on any of the hyperlinks displaying the **Terminally deprecated API(s)** or **Deprecated API(s)** count to view more details.
+   You may click any of the hyperlinks displaying the **Terminally deprecated API(s)** or **Deprecated API(s)** count to view more details.
 
     ![image of java migration analysis report](images/java-migration-analysis-result-final-4.png)
 
@@ -125,7 +125,7 @@ In this lab, you will:
 
 ## Task 2: (Optional) Download Java Migration Analysis Report
 
-1. To access the consolidated report and the raw results in multiple json files, navigate to the **Fleet** details page and click on the **Object storage bucket** name under **Object storage**.
+1. To access the consolidated report and the raw results in multiple json files, navigate to the **Fleet** details page and click the **Object storage bucket** name under **Object storage**.
 
    ![image of java migration analysis bucket object](images/fleet-bucket-link.png)
 
@@ -149,7 +149,7 @@ In this lab, you will:
 You may now **proceed to the next lab.**
 
 ## Learn More
- * Refer to the [Advanced Features](https://docs.oracle.com/en-us/iaas/jms/doc/advanced-features.html), [Work Request](https://docs.oracle.com/en-us/iaas/jms/doc/getting-started-java-management-service.html#GUID-47C63464-BC0C-4059-B552-ED9F33E77ED3) and [Viewing a Work Request](https://docs.oracle.com/en-us/iaas/jms/doc/fleet-views.html#GUID-F649F0E5-DD54-4DEC-A0F1-942FE3552C93) sections of the JMS documentation for more details.
+ * Refer to the [Advanced Features](https://docs.oracle.com/en-us/iaas/jms/doc/advanced-features.html), [Work Requests](https://docs.oracle.com/en-us/iaas/jms/doc/using-java-management-service.html#GUID-77AEEBC0-93A5-4E99-96D6-BEE0FEE4539F) sections of the JMS documentation for more details.
 
  * Use the [Troubleshooting](https://docs.oracle.com/en-us/iaas/jms/doc/troubleshooting.html#GUID-2D613C72-10F3-4905-A306-4F2673FB1CD3) chapter for explanations on how to diagnose and resolve common problems encountered when installing or using Java Management Service.
 

@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This lab walks you through the key concepts that need to be understood before installing a management agent on your compute instance Managed Instance as part of the set up for Java Management Service (JMS) on Oracle Cloud Infrastructure (OCI).
+This lab walks you through the key concepts to understand before installing a management agent on your Managed instance. This is part of the Java Management Service (JMS) setup on Oracle Cloud Infrastructure (OCI).
 
 Estimated Time: 15 minutes
 
@@ -69,7 +69,7 @@ Deploy JMS plug-ins on:
 ## Learn More
 
 * Refer to the [Management Agent Concepts](https://docs.oracle.com/en-us/iaas/management-agents/doc/you-begin.html),
-  [Configuring a Management Agent on an OCI Compute Instance](https://docs.oracle.com/en-us/iaas/jms/doc/management-agent.html#AJSUG-GUID-7BC69124-4807-4D79-B89B-2605D7EE9E71) and [Installation of Management Agents](https://docs.oracle.com/en-us/iaas/management-agents/doc/install-management-agent-chapter.html) sections of the JMS documentation for more details.
+  [JMS Plug-in](https://docs.oracle.com/en-us/iaas/jms/doc/management-agent.html#AJSUG-GUID-7BC69124-4807-4D79-B89B-2605D7EE9E71) and [Installation of Management Agents](https://docs.oracle.com/en-us/iaas/management-agents/doc/install-management-agent-chapter.html) sections of the JMS documentation for more details.
 
 * Use the [Troubleshooting](https://docs.oracle.com/en-us/iaas/jms/doc/troubleshooting.html#GUID-2D613C72-10F3-4905-A306-4F2673FB1CD3) chapter for explanations on how to diagnose and resolve common problems encountered when installing or using Java Management Service.
 

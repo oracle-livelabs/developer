@@ -15,7 +15,7 @@ In this lab, you will:
 
 ## Task 1: Understand concepts related to Oracle Cloud Infrastructure Resources and Services for Java Management Service
 
-Before the set up of Oracle Cloud Infrastructure (OCI) resources and services for Java Management Service (JMS), it is important to understand the concepts behind them and how JMS taps on them to operate.
+Learn about Oracle Cloud Infrastructure (OCI) resources and services, and how Java Management Service (JMS) uses them to operate.
 
 This diagram illustrates the purpose of OCI resources and services in JMS with details of each resource and service explained below:
 
@@ -102,7 +102,7 @@ This diagram illustrates the purpose of OCI resources and services in JMS with d
 
 5. Fleet:
 
-    - A fleet is the primary collection with which you interact when using JMS. It contains Managed Instances that share rules and policies. See [Managed Instance](https://docs.oracle.com/en-us/iaas/jms/doc/getting-started-java-management-service.html#GUID-141F2F39-8078-481A-ACE7-65792E314ABB) for the definition of a Managed Instance.
+    - A fleet is the primary collection with which you interact when using JMS. It contains Managed Instances that share rules and policies. See [Managed Instance](https://docs.oracle.com/en-us/iaas/jms/doc/overview-java-management-service.html#GUID-141F2F39-8078-481A-ACE7-65792E314ABB) for the definition of a Managed Instance.
 
     - It is created in a compartment and contain information about the Managed Instances such as logs, object storage and metrics.
 
@@ -112,15 +112,21 @@ This diagram illustrates the purpose of OCI resources and services in JMS with d
 
     - JMS uses a tag in the namespace *jms* with the key *fleet_ocid* to identify the contents of a fleet. The managed instances contained in a fleet are identified by the tag value corresponding to the OCID of the fleet.
 
-JMS also taps on the following OCI services (7. Logging Service, 8. Object Storage Service, 9. Monitoring Service) to generate logs, object storage information and metrics of the fleet for the users to view. These services will be explained after the set up of JMS fleet, under [Lab 3 Task 3](?lab=setup-a-fleet#Task3:UnderstandingtheOracleCloudInfrastructureServiceswhichJavaManagementServiceleverageson).
+JMS also uses OCI services such as:
+
+7. Logging service to generate logs
+8. Object storage service to generate object storage information
+9. Monitoring service to view fleet metrics
+
+You will learn about these services in Lab 3 Task 3 after you setup the fleet.
 
 You may now **proceed to the next lab.**
 
 ## Learn More
 
-* Refer to the [Getting Started with Java Management Service](https://docs.oracle.com/en-us/iaas/jms/doc/getting-started-java-management-service.html) for more details.
+* Refer to the [Getting Started with Java Management Service](https://docs.oracle.com/en-us/iaas/jms/doc/getting-started-jms.html) for more details.
 
 ## Acknowledgements
 
 - **Author** - Sherlin Yeo, Java Management Service
-- **Last Updated By** - Sherlin Yeo, June 2023
+- **Last Updated By** - Ivan Eng, June 2023
