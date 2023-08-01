@@ -1,4 +1,4 @@
-# Lab 3: Tag, you're it! - tag, update, and rollback
+# Lab 4: Tag, you're it! - tag, update, and rollback
 
 ## Introduction
 ![Email](./images/1email.png)
