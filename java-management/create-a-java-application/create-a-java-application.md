@@ -141,7 +141,7 @@ In this workshop, you will:
 1. Install Oracle JDK 8 (64-bit) using `yum`.
     ```
     <copy>
-    sudo yum -y install jdk1.8.x86_64
+    sudo yum -y install jdk-1.8-headful.x86_64
     java -version
     </copy>
     ```
