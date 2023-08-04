@@ -112,6 +112,9 @@ assets:
           - name: recipient    
             type: string
             mandatory: true
+          - name: purchaser    
+            type: string
+            mandatory: false
           - name: invoiceId   
             type: string
             mandatory: false
@@ -120,4 +123,8 @@ assets:
         others: [getByRange]
 customMethods:
     - executeQuery
+    - "CreateCarWrapper()"
+    - "CreatePOWrapper()"
+    - "UpdatePOWrapper()"
     - "CarTransfer(vin string, buyerId string, sellerId string, price int, PO string, date string)" #Only happens after PO confirm receipt or resolve is accepted
+    

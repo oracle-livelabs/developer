@@ -1,31 +1,36 @@
 {
-  "workshoptitle": "Oracle Database CI/CD for Developers",
+  "workshoptitle": "Take control of your database with automated schema changes",
     "help": "livelabs-help-db_us@oracle.com",
 	"tutorials": [
         {
             "title": "Introduction",
-            "description": "Oracle Database CI/CD for Developers",
+            "description": "Take control of your database with automated schema changes",
             "filename": "../../intro/intro.md"
         },
         {
-            "title": "Getting Started",
-            "description": "Get a Free Trial",
-            "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/pre-register-free-tier-account.md"
+            "title": "Get started",
+            "description": "Get started - Cloud login",
+            "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/cloud-login.md"
         },
         {
-            "title": "Setups",
-            "description": "Setup your environment for this lab",
-            "filename": "../../setups/setups.md"
+            "title": "Lab 1: Setup",
+            "description": "Set up your environment for this workshop",
+            "filename": "../../lab1-setup/lab1-setup.md"
         },
         {
-            "title": "Lab 1: Use SQLcl for Database Change Management/Tracking",
-            "description": "Use SQLcl for Database Change Management/Tracking",
-            "filename": "../../sqlcl/sqlcl.md"
+            "title": "Lab 2: Liquibase basics - help, generate, and update commands",
+            "description": "Become familiar with the core Liquibase commands",
+            "filename": "../../lab2-help-generate-update/lab2-help-generate-update.md"
         },
         {
-            "title": "Lab 2: Create and Apply Database Changes with SQLcl",
-            "description": "Create and Apply Database Changes with SQLcl",
-            "filename": "../../change/change.md"
+            "title": "Lab 3: Look under the hood - understanding changelog tables & changelogs",
+            "description": "Learn The Details Of How Changelog Tables & Changelogs Work",
+            "filename": "../../lab3-changelogtables-changelogs/lab3-changelogtables-changelogs.md"
+        },
+        {
+            "title": "Lab 4: Tag, you're it! - tag, update, and rollback",
+            "description": "Learn how to bookmark your database state & undo changelogs",
+            "filename": "../../lab4-tag-rollback/lab4-tag-rollback.md"
         },
         {
             "title": "Terminate your Always Free Autonomous Database",

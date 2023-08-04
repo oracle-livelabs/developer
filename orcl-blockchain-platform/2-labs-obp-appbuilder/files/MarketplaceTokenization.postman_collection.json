@@ -1,0 +1,395 @@
+{
+	"info": {
+		"_postman_id": "d9c1624a-5fce-41e8-873b-c6452db5b7f1",
+		"name": "Marketplace Tokenization",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Step-0 : Init",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "{{bc-admin-user-password}}",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "{{bc-admin-user}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"chaincode\": \"{{bc-chaincode-name}}\",\n    \"args\": [\n        \"Init\",\n        \"{{bc-organization-id-founder}}\",\n        {{bc-admin-user}}\n    ],\n    \"isInit\": true,\n    \"sync\": true\n}\n\n\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{bc-rest-url}}",
+					"host": [
+						"{{bc-rest-url}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Step-1 : Initialize Token",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "{{bc-admin-user}}",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "{{bc-admin-user-password}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"chaincode\": \"{{bc-chaincode-name}}\",\n    \"args\": [\n        \"InitializeFiatToken\",\n        \"{\\\"Token_id\\\":\\\"{{bc-token-id}}\\\", \\\"Token_desc\\\":\\\"Fractional Fungible Token\\\", \\\"Currency_name\\\":\\\"USD\\\", \\\"Token_to_currency_ratio\\\":1}\"\n    ],\n    \"sync\": true\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{bc-rest-url}}",
+					"host": [
+						"{{bc-rest-url}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Step-2 : Create Account for Token Admin",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "{{bc-admin-user-password}}",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "{{bc-admin-user}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"chaincode\": \"{{bc-chaincode-name}}\",\n    \"args\": [\n        \"CreateAccount\",\n        \"{{bc-token-id}}\",\n        \"{{bc-organization-id-founder}}\",\n        \"{{bc-admin-user}}\"\n    ],\n    \"sync\": true\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{bc-rest-url}}",
+					"host": [
+						"{{bc-rest-url}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Step-3 : Create Account for Token User1",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "{{bc-admin-user}}",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "{{bc-admin-user-password}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"chaincode\": \"{{bc-chaincode-name}}\",\n    \"args\": [\n        \"CreateAccount\",\n        \"{{bc-token-id}}\",\n        \"{{bc-organization-id-1}}\",\n        \"{{bc-user-id-1}}\"\n    ],\n    \"sync\": true\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{bc-rest-url}}",
+					"host": [
+						"{{bc-rest-url}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Step-4 : Create Account for Token User2",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "{{bc-admin-user-password}}",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "{{bc-admin-user}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"chaincode\": \"{{bc-chaincode-name}}\",\n    \"args\": [\n        \"CreateAccount\",\n        \"{{bc-token-id}}\",\n        \"{{bc-organization-id-2}}\",\n        \"{{bc-user-id-2}}\"\n    ],\n    \"sync\": true\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{bc-rest-url}}",
+					"host": [
+						"{{bc-rest-url}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Step-5 : Add Minter Role",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "{{bc-admin-user-password}}",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "{{bc-admin-user}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"chaincode\": \"{{bc-chaincode-name}}\",\n    \"args\": [\n        \"AddRole\",\n        \"{{bc-token-id}}\",\n        \"minter\",\n        \"{{bc-organization-id-founder}}\",\n        \"{{bc-admin-user}}\"\n    ],\n    \"sync\": true\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{bc-rest-url}}",
+					"host": [
+						"{{bc-rest-url}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Step-6 : Add Escrow Role",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "{{bc-admin-user-password}}",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "{{bc-admin-user}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"chaincode\": \"{{bc-chaincode-name}}\",\n    \"args\": [\n        \"AddRole\",\n        \"{{bc-token-id}}\",\n        \"notary\",\n        \"{{bc-organization-id-founder}}\",\n        \"{{bc-admin-user}}\"\n    ],\n    \"sync\": true\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{bc-rest-url}}",
+					"host": [
+						"{{bc-rest-url}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Step-7 : Issue Tokens",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "{{bc-admin-user-password}}",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "{{bc-admin-user}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"chaincode\": \"{{bc-chaincode-name}}\",\n    \"args\": [\n        \"IssueTokens\",\n        \"{{bc-token-id}}\",\n        \"{{bc-mint-quantity}}\"\n    ],\n    \"timeout\": {{bc-timeout}},\n    \"sync\": true\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{bc-rest-url}}",
+					"host": [
+						"{{bc-rest-url}}"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "bc-url",
+			"value": "https://test-oabcs1-iad.blockchain.ocp.oraclecloud.com:7443"
+		},
+		{
+			"key": "bc-channel",
+			"value": "default"
+		},
+		{
+			"key": "bc-chaincode-name",
+			"value": "OBPToken"
+		},
+		{
+			"key": "bc-token-id",
+			"value": "T1"
+		},
+		{
+			"key": "bc-mint-quantity",
+			"value": "500"
+		},
+		{
+			"key": "bc-transfer-quantity",
+			"value": "175.25"
+		},
+		{
+			"key": "bc-burn-quantity",
+			"value": "50"
+		},
+		{
+			"key": "bc-organization-id",
+			"value": "Organization1"
+		},
+		{
+			"key": "bc-admin-user",
+			"value": "admin.user@oracle.com"
+		},
+		{
+			"key": "bc-admin-user-password",
+			"value": ""
+		},
+		{
+			"key": "bc-user-id-1",
+			"value": "tokenuser1"
+		},
+		{
+			"key": "bc-user-id-1-password",
+			"value": ""
+		},
+		{
+			"key": "bc-user-id-2",
+			"value": "tokenuser2"
+		},
+		{
+			"key": "bc-user-id-2-password",
+			"value": ""
+		},
+		{
+			"key": "bc-timeout",
+			"value": "60000"
+		}
+	]
+}

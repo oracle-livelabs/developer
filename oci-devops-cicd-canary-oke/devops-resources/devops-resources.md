@@ -52,7 +52,7 @@ In this lab, as a developer or SRE,
 
    ![oci_devops_canary-build-pipeline](images/oci-devops-buildpipeline-1.png)
 
-9. Build pipeline contains four stages
+9. Build pipeline contains three stages
 
    - A manage build stage to build the python application.
    - A deliver artifact stage to push the image to the OCI Container registry repo.
@@ -194,7 +194,7 @@ As the OKE cluster doesn't have an ingress controller by default, an NGINX ingre
    ![oci-oke-cluster-ui](images/oci-oke-cluster-ui.png)
 
 
-3. Fetch the information from OKE namespace `nscanaryprd`, via running command `kubectl get all, ingress -n nscanaryprd` on cloud shell.
+3. Fetch the information from OKE namespace `nscanaryprd`, via running command `kubectl get ingress -n nscanaryprd` on cloud shell.
 
    ![oci-kubectl-fetch-prodns](images/oci-kubectl-fetch-prodns.png)
 
@@ -202,7 +202,7 @@ As the OKE cluster doesn't have an ingress controller by default, an NGINX ingre
 
    ![oci-deploy-ingress-ip](images/oci-deploy-ingress-ip.png)
 
-   Optional: You can run the command `kubectl get all, ingress -n nscanarystage` and fetch the information from the canary namespace which will be exactly that of the prod namespace, as its the very first deployment.
+   Optional: You can run the command `kubectl get ingress -n nscanarystage` and fetch the information from the canary namespace which will be exactly that of the prod namespace, as its the very first deployment.
 
    ![oci-canarynamespace-details](images/oci-canarynamespace-details.png)
 
