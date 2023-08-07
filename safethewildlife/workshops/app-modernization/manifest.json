@@ -1,0 +1,44 @@
+{
+  "workshoptitle": "App Modernization Adventure, Save The Wildlife",
+  "help": "livelabs-help-oci_us@oracle.com",
+  "tutorials": [
+    {
+      "title": "Introduction",
+      "description": "What the workshop is about",
+      "filename": "../../app-modernization/intro/intro.md"
+    },
+    {
+      "title": "Get Started",
+      "description": "Prerequisites for LiveLabs (Oracle-owned tenancies). The title of the lab and the Contents Menu title (the title above) match for Prerequisite lab. This lab is always first.",
+      "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/cloud-login.md"
+    },
+    {
+      "title": "Lab 1: Deploy on Virtual Machines",
+      "description": "Deploy on Virtual Machines",
+      "filename": "../../app-modernization/vm/vm.md"
+    },
+    {
+      "title": "Lab 2: Deploy on Container Instances",
+      "description": "Deploy on Container Instances",
+      "filename": "../../app-modernization/ci/ci.md"
+    },
+    {
+      "title": "Lab 3: Deploy on Kubernetes",
+      "description": "Deploy on Kubernetes",
+      "filename": "../../app-modernization/k8s/k8s.md"
+    },
+    {
+      "title": "Lab 4: Clean Up (Optional)",
+      "description": "Clean Up (Optional)",
+      "filename": "../../app-modernization/cleanup/cleanup.md"
+    },
+    {
+      "title": "Need help",
+      "filename": "https://oracle-livelabs.github.io/common/labs/need-help/need-help-livelabs.md"
+    },
+    {
+      "title": "Oracle CloudWorld 2023 - Get Help",
+      "filename": "https://oracle-livelabs.github.io/common/support/ocwsupportlab/ocwsupportlab.md"
+    }
+  ]
+}
