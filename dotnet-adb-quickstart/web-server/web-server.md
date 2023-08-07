@@ -2,7 +2,7 @@
 
 ## Introduction
 
-In this lab, you will provision and configure an Oracle Cloud Infrastructure Linux compute host and NGINX web server. You will then setup ASP.NET Core for NGINX and test the web server is working properly. Finally, you will complete Virtual Cloud Network configuration for connectivity between the compute and database layers.
+In this lab, you will provision and configure an Oracle Cloud Infrastructure Linux compute host and NGINX web server. You will then setup ASP.NET Core support for NGINX and tests the web server is working properly. Finally, you will complete Virtual Cloud Network configuration for connectivity between the compute and database layers.
 
 Oracle Cloud Infrastructure Compute lets you provision and manage compute hosts, known as instances. You can launch instances as needed to meet your compute and application requirements. After you launch an instance, you can access it securely from your computer, restart it, attach and detach volumes, and terminate it when you're done with it. Any changes made to the instance's local drives are lost when you terminate it. Any saved changes to volumes attached to the instance are retained.
 
@@ -12,8 +12,7 @@ Be sure to review [Best Practices for Your Compute Instance](https://docs.cloud.
 
 Estimated lab time: 20 minutes
 
-Watch the video below for a quick walk-through of the lab.
-[Provision and set up the web server](videohub:1_yg1f33ir)
+[](youtube:09kahbIF0Ew)
 
 ### Objectives
 In this lab, you will:
@@ -24,7 +23,7 @@ In this lab, you will:
 
 ### Prerequisites
 
--   This lab requires completion of the **Get started** section and networking lab in the Contents menu on the left.
+-   This lab requires completion of the **Get started** section in the Contents menu on the left.
   
 ## Task 1: Create a Compute Instance
 
@@ -52,7 +51,7 @@ An Oracle Cloud Infrastructure VM compute instance runs on the same hardware as 
 
     ![Click Change image button to choose operating system image](./images/change-image.png)
 
-5. Select **Oracle Linux Cloud Developer 8** image check box and accept the default values. This image includes Oracle Linux, .NET (Core) Software Development Kit, Visual Studio Code, and PowerShell. Review the *Oracle Linux Cloud Developer Image Terms of Use*. Select the check box if you accept the terms. Click the **Select image** button.
+5. Select **Oracle Linux Cloud Developer** image check box and accept the default values. This image includes Oracle Linux, .NET (Core) Software Development Kit, Visual Studio Code, and PowerShell. Review the *Oracle Linux Cloud Developer Image Terms of Use*. Select the check box if you accept the terms. Click the **Select image** button.
 
     ![Select Oracle Linux Cloud Developer image](./images/choose-cloud-developer-image.png)
 
@@ -84,11 +83,11 @@ An Oracle Cloud Infrastructure VM compute instance runs on the same hardware as 
 
 >**Note**: You may need to log in as the *admin* user to use Cloud Shell.
 
-1. To connect to the instance, open Cloud Shell by clicking the Developer Tools icon on the top right of the menu bar, then click **Cloud Shell**.
+1. To connect to the instance, open Cloud Shell by clicking on its icon on the top right part of the menu bar.
 
     ![Click Cloud Shell icon](./images/cloud-shell-icon.png)
 
-2. Cloud Shell will open. Open the Cloud Shell menu in the upper right of Cloud Shell. Click **Upload** to begin uploading the private key to the compute instance.
+2. Cloud Shell will open. Open the Cloud Shell menu in the upper left of Cloud Shell. Click **Upload** to begin uploading the private key to the compute instance.
 
     ![Click Upload from menu](./images/cloud-shell-choose-upload.png)
 
@@ -117,18 +116,10 @@ An Oracle Cloud Infrastructure VM compute instance runs on the same hardware as 
     <copy>ssh -i <private_ssh_key> opc@<public_ip_address></copy>
     ```
 
-7. If the host authenticity can't be established, you will be asked: "Are you sure you want to continue connecting (yes/no)?" To continue, answer yes.
-
-    ```
-    <copy>yes</copy>
-    ```
-
-8. After the completion of these command line steps, you will be connected to the compute instance.
-
     ![SSH into compute instance from Cloud Shell](./images/ssh.png)
 
 
-## Task 3: Install and Configure NGINX Web Server and Setup VCN
+## Task 3: Install NGINX Web Server
    
 For this lab, we are going to install an NGINX web server and connect to it over the public Internet. *Make sure you have completed the prior tasks so that you are SSH'ed into the Linux instance*.
 
@@ -223,22 +214,17 @@ You have completed this lab. You may now **proceed to the next lab.**
 
 1. If you are unable to see the web server on your browser, possible scenarios include:
 
-    - VCN Security Lists is blocking traffic. Check VCN Security List for ingress rule for port 81.
-    - Firewall on the linux instance is blocking traffic. This command shows HTTP service as part of the public zone.
+    - VCN Security Lists is blocking traffic, Check VCN Security List for ingress rule for port 81
+    - Firewall on the linux instance is blocking traffic
 
-        ```
-        <copy>sudo firewall-cmd --zone=public --list-services</copy>
-        ```
-        Check the NGINX service is listening on port 81. If it’s a different port, open up that port on your VCN security list.
-        ```
-        <copy>sudo netstat -tulnp | grep nginx</copy>
-        ```
+        - `# sudo firewall-cmd --zone=public --list-services` (This should show http service as part of the public zone.)
+        - `# sudo netstat -tulnp | grep nginx` (An NGINX service should be listening on the port 81. If it’s a different port, open up that port on your VCN security list.)
 
-    - Your company VPN is blocking traffic.
+    - Your company VPN is blocking traffic
 
 2. If you cannot successfully run the `sudo` commands, make sure you can SSH into your compute instance by following Task 2.
 
 ## Acknowledgements
 
 - **Author** - Rajeshwari Rai, Prasenjit Sarkar, Alex Keh
-- **Last Updated By/Date** - Alex Keh, June 2023
+- **Last Updated By/Date** - Alex Keh, August 2022
