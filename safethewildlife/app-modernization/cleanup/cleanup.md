@@ -17,7 +17,7 @@ Watch the video below for a quick walk-through of this lab.
 
 ## Task 1: Kubernetes
 
-1. Run on Cloud Shell the delete command to clean up Kubernetes. This might take a coupe of minutes.
+1. Run on Cloud Shell the delete command to clean up Kubernetes. This might take a couple of minutes.
 
     ```bash
     <copy>kubectl delete -k deploy/k8s/overlays/prod</copy>
