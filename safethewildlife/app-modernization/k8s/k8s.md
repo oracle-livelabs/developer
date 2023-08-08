@@ -1,11 +1,20 @@
 # Enhance the application architecture
 
 ## Introduction
-In this lab, we will enhance our application to continue moving toward a more Cloud Native design. For this, an autonomous database will be deployed, new application components will be added, and the entire solution will be deployed to Oracle Container Engine for Kubernetes (OKE).
+In this lab, we will enhance our application to continue moving toward a more Cloud Native design. For this, an [Autonomous Database](https://www.oracle.com/autonomous-database/) will be deployed, new application components will be added, and the entire solution will be deployed to [Oracle Container Engine for Kubernetes (OKE)](https://www.oracle.com/cloud/cloud-native/container-engine-kubernetes/).
 
 ![OKE Logo](images/oke.png)
 
 Estimated Lab Time: 15 minutes
+
+Watch the video below for a quick walk-through of this lab.
+[AppDev Multiplayer Lab 3](videohub:xxx)
+
+### Prerequisites
+
+- An active Oracle Free Tier (with remaining free credits) or a Paid Oracle Cloud Account.
+- Be an OCI administrator in your account (in Free Tier, you are an administrator by default).
+- Finish the previous Lab.
 
 ### Objectives
 
@@ -77,7 +86,7 @@ In this lab, you will complete the process of deploying the application on a Kub
 
   ![menu oke](./images/menu-oke.png)
 
-2. Wait until the cluster is `Active`.
+2. Wait until the cluster is `Active`. It might take up to 10 minutes.
 
   ![oke list](./images/oke-list.png)
 
@@ -127,7 +136,7 @@ In this lab, you will complete the process of deploying the application on a Kub
 
   ![kubectl apply](./images/kubectl-apply.png)
 
-11. Verify the pods were deployed (it might take a minute or so for all pods to come online).
+11. Verify the pods were deployed (it might take a minute or so for all pods to come online). Re-run the command every couple of minutes until all pods are ready.
 
     ```
     <copy>kubectl get pods</copy>

@@ -6,9 +6,14 @@ In this lab, you are going to destroy all the resources you have created on Orac
 
 Estimated Lab Time: 10 minutes
 
+Watch the video below for a quick walk-through of this lab.
+[AppDev Multiplayer Lab 4](videohub:xxx)
+
 ### Prerequisites
 
-* An Oracle Free Tier, Paid or LiveLabs Cloud Account
+- An active Oracle Free Tier (with remaining free credits) or a Paid Oracle Cloud Account.
+- Be an OCI administrator in your account (in Free Tier, you are an administrator by default).
+- Finish the previous Lab.
 
 ## Task 1: Kubernetes
 
@@ -30,7 +35,7 @@ Estimated Lab Time: 10 minutes
 
 4. Confirm the deletion by typing the name of the cluster, in bold at the top. Click **Delete**.
 
-  ![oke delete button](./images/oke-delete-button.png)
+  ![oke delete button](./images/oke-delete-confirm.png)
 
 ## Task 2: VMs and Container Instances.
 
@@ -46,9 +51,9 @@ Estimated Lab Time: 10 minutes
     <copy>terraform destroy -auto-approve</copy>
     ```
 
-  ![tf ci destroy](./images/tf-ci-destroy.png) 
+  ![tf ci destroy](./images/tf-ci-destroy.png)
 
-  ![tf ci destroy completed](./images/tf-ci-destroy-completed.png) 
+  ![tf ci destroy completed](./images/tf-ci-destroy-completed.png)
 
 3. Change the directory back to the root of the project with the following command:
 
@@ -62,7 +67,7 @@ Estimated Lab Time: 10 minutes
     <copy>npx zx scripts/ci.mjs</copy>
     ```
 
-  ![ci](./images/ci.png) 
+  ![ci](./images/ci.png)
 
 5. Copy and paste on the console the second yellow command to delete the container instance.
 
@@ -70,11 +75,11 @@ Estimated Lab Time: 10 minutes
 
 6. On the list of container instances, you will see the id of your container instance. Replace `CONTAINER_INSTANCE_OCID` with the id and run the command.
 
-  ![ci paste](./images/ci-paste.png) 
+  ![ci paste](./images/ci-paste.png)
 
 7. Confirm that you are sure you want to delete this resource by typing `y`.
 
-  ![ci yes](./images/ci-yes.png) 
+  ![ci yes](./images/ci-yes.png)
 
 8. Clean also the infrastructure from Lab 1 by running this command:
 
@@ -86,7 +91,7 @@ Estimated Lab Time: 10 minutes
 
 1. When Terraform completes the `destroy` you will get this green message.
 
-  ![tf destroy completed](./images/tf-destroy-completed.png)  
+  ![tf destroy completed](./images/tf-destroy-completed.png) 
 
 ## Task 3: Autonomous Database and Networking
 

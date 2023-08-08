@@ -2,19 +2,24 @@
 
 ## Introduction
 
-In this lab, we will create container images for the application components and deploy them to the Container Instances service. Container Instances is an excellent tool for running containerized applications, without the need to manage any underlying infrastructure. Just deploy and go.
+In this lab, we will create container images for the application components and deploy them to the [OCI Container Instances](https://www.oracle.com/cloud/cloud-native/container-instances/) service. Container Instances is an excellent tool for running containerized applications, without the need to manage any underlying infrastructure. Just deploy and go.
 
-To help streamline the process, you'll use a custom script to create and publish container images to the OCI Container Registry. Container Registry makes it easy to store, share, and managed container images. Registries can be private (default) or public.
+To help streamline the process, you'll use a custom script to create and publish container images to the [OCI Container Registry](https://www.oracle.com/cloud/cloud-native/container-registry/). Container Registry makes it easy to store, share, and managed container images. Registries can be private (default) or public.
 
 Estimated Lab Time: 15 minutes
 
+Watch the video below for a quick walk-through of this lab.
+[AppDev Multiplayer Lab 2](videohub:xxx)
+
 ### Prerequisites
 
-* An Oracle Free Tier or Paid Cloud Account
+- An active Oracle Free Tier (with remaining free credits) or a Paid Oracle Cloud Account.
+- Be an OCI administrator in your account (in Free Tier, you are an administrator by default).
+- Finish the previous Lab.
 
 ## Task 1: Prepare the environment
 
-1. Run the script to set the environment. This script will
+1. Run the script to set the environment in the Cloud Shell. This script will:
 
     - check dependencies
     - create self-signed certificates, if needed
@@ -25,9 +30,9 @@ Estimated Lab Time: 15 minutes
     <copy>npx zx scripts/setenv.mjs</copy>
     ```
 
-  ![setenv-command](./images/setenv-command.png) 
+  ![setenv-command](./images/setenv-command.png)
 
-2. The script will ask for the following information. At _`Autonomous Database Compartment Name`_ you just type _**ENTER**_ to select the root compartment. If you are familiar with OCI compartments, then feel free to pick an existing compartment name.
+2. The script will ask for the following information. At _`Autonomous Database Compartment Name`_ you just press _**ENTER**_ to select the root compartment. If you are familiar with [OCI compartments](https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcompartments.htm), then feel free to pick an existing compartment name.
 
   ![Setenv compartment](./images/setenv-compartment.png)
 
@@ -39,13 +44,13 @@ Estimated Lab Time: 15 minutes
 
   ![Setenv ADB name](./images/setenv-adb-name.png)
 
-1. At _`Autonomous Database password`_ you can use the _`Suggested Password`_ in yellow. It is a password generated on the fly by `openssl` for you.
+4. At _`Autonomous Database password`_ you can use the _`Suggested Password`_ in yellow. It is a password generated on the fly by `openssl` for you.
 
     > NOTE: your password will be different to the one on the picture.
 
   ![Setenv ADB password](./images/setenv-adb-password.png)
 
-2. Create and publish the **`server`** container image.
+5. Create and publish the **`server`** container image. It might take up to 5 minutes.
 
     ```
     <copy>npx zx scripts/release.mjs server</copy>
@@ -53,39 +58,43 @@ Estimated Lab Time: 15 minutes
 
   ![release server](./images/release-server.png)
 
-3. Create and publish the **`web`** container image.
+6. Create and publish the **`web`** container image. It might take up to 5 minutes.
 
     ```
     <copy>npx zx scripts/release.mjs web</copy>
     ```
 
-  ![release web](./images/release-web.png) 
+  ![release web](./images/release-web.png)
 
-4. Run the `ci.mjs` command that will give you information about how to create your container instance.
+7. Run the `ci.mjs` command that will give you information about how to create your container instance.
 
     ```
     <copy>npx zx scripts/ci.mjs</copy>
     ```
 
-  ![ci command](./images/ci-command.png) 
+  ![ci command](./images/ci-command.png)
 
-5. Copy the yellow command, paste it on Cloud Shell, and run it.
+    > _**ci.mjs**_ Is a [Google ZX](https://github.com/google/zx) script. We use ZX because if you don't know Bash Shell programming, it is based on JavaScript and it is easy to read. If you know Bash Shell then, ZX is just a wrap on plain Bash Shell. The script will call several [OCI CLI](https://docs.oracle.com/en-us/iaas/Content/API/Concepts/cliconcepts.htm) commands to get information from OCI Container Instances. The commands are complex enough that this script help you out.
 
-  ![ci create command](./images/ci-create-command.png) 
+8. Copy the yellow command, paste it on Cloud Shell, and run it.
 
-6. In the Web UI, you can navigate to **`Developer Services`** -> **`Container Instances`** to watch the progress of the deployment.
+  ![ci create command](./images/ci-create-command.png)
 
-  ![menu ci](./images/menu-ci.png) 
+9. In the Web UI, you can navigate to **`Developer Services`** -> **`Container Instances`** to watch the progress of the deployment.
 
-7. You will see the list of container instances. The one you created will be in `creating` state, or maybe already in `Active` state.
+  ![menu ci](./images/menu-ci.png)
 
-  ![ci list](./images/ci-list.png) 
+10. You will see the list of container instances. The one you created will be in `creating` state, or maybe already in `Active` state.
 
-8. Click on the `oci-Multiplayer` container instance.
+  ![ci list](./images/ci-list.png)
 
-  ![ci list click](./images/ci-list-click.png) 
+    > NOTE: if you selected your own comparment, make sure you select the compartment on the left dropdown.
 
-9. Inside the container instance, on the left-side menu, you can click `Containers` and, you will see the two containers.
+11. Click on the `oci-Multiplayer` container instance.
+
+  ![ci list click](./images/ci-list-click.png)
+
+12. Inside the container instance, on the left-side menu, you can click `Containers` and, you will see the two containers, `WebContainer` and `ServerContainer`.
 
   ![ci container list](images/ci-container-list.png)
 
@@ -99,11 +108,11 @@ In this second and final task, you will add the Container Instance private IP ad
     <copy>npx zx scripts/tfvars.mjs ci</copy>
     ```
 
-2. During the execution of the script, you will have to answer a few questions. The first one is the _CI Deployment Compartment Name_. You just type _**ENTER**_ to select the root compartment. If you are familiar with OCI compartments, then feel free to pick an existing compartment name.
+2. During the execution of the script, you will have to answer a few questions. The first one is the _CI Deployment Compartment Name_. You just press _**ENTER**_ to select the root compartment. If you are familiar with [OCI compartments](https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcompartments.htm), then feel free to pick an existing compartment name.
 
   ![tf ci compartment](images/tf-ci-compartment.png)
 
-3. The second one will be the Private IP address. Locate the private IP address for your container instance on the OCI web console.
+3. The second one will be the Private IP address. Copy the private IP address for your container instance on the OCI web console.
 
   ![tf ci private IP](images/tf-ci-private-ip.png)
 
@@ -125,7 +134,7 @@ In this second and final task, you will add the Container Instance private IP ad
 
   ![tf init](./images/tf-init.png)
 
-7. Run Terraform apply to start creating the resources.
+7. Run Terraform apply to start creating the resources. It might take up to 7 minutes.
 
     ```
     <copy>terraform apply -auto-approve</copy>
@@ -137,7 +146,7 @@ In this second and final task, you will add the Container Instance private IP ad
 
   ![tf-output](images/tf-output.png)
 
-9. Paste it on a browser and try the Container Instance deployment.
+9. Paste the Load Balancer public IP address on a browser tab and try the Container Instance deployment.
 
   ![game](images/game.png)
 

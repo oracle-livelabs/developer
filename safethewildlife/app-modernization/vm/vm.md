@@ -2,20 +2,23 @@
 
 ## Introduction
 
-Terraform is an Open Source tool to deploy resources in the cloud using code. This method is typically referred to as Infrastructure as Code (IaC). Terraform configuration is declarative; you simply define what you want in the Oracle Cloud and it ensures the resources are created to your specifications.
+[Terraform](https://www.terraform.io/) is an Open Source tool to deploy resources in the cloud using code. This method is typically referred to as Infrastructure as Code (IaC). Terraform configuration is declarative; you simply define what you want in the Oracle Cloud and it ensures the resources are created to your specifications.
 
-Ansible is an Open Source tool that provides automation in software deployment. For this workshop, we leverage the configuration management functionality. Once Terraform deploys the infrastructure, Ansible will establish a remote SSH connection to the servers and apply the requisite configuration (app install, file downloads, configuration settings, etc.)
+[Ansible](https://www.ansible.com/) is an Open Source tool that provides automation in software deployment. For this workshop, we leverage the configuration management functionality. Once Terraform deploys the infrastructure, Ansible will establish a remote SSH connection to the servers and apply the requisite configuration (app install, file downloads, configuration settings, etc.)
 
 Estimated Lab Time: 15 minutes
 
+Watch the video below for a quick walk-through of this lab.
+[AppDev Multiplayer Lab 1](videohub:xxx)
+
 ### Objectives
 
-In this lab, you will complete the process of deploying the first form of the Three.js app to the Oracle Cloud. The deployment process utilizes Terraform and Ansible, however, we've provided a script to help streamline the process.
+In this lab, you will complete the process of deploying the first form of the [Three.js](https://threejs.org/) app to the [Oracle Cloud](https://www.oracle.com/cloud/). The deployment process utilizes Terraform and Ansible, however, we've provided a script to help streamline the process.
 
 ### Prerequisites
 
-* An Oracle Free Tier or Paid Cloud Account
-
+- An active Oracle Free Tier (with remaining free credits) or a Paid Oracle Cloud Account.
+- Be an OCI administrator in your account (in Free Tier, you are an administrator by default).
 
 ## Task 1: Cloud Shell
 
@@ -43,14 +46,13 @@ In this lab, you will complete the process of deploying the first form of the Th
     <copy>npx zx scripts/tfvars.mjs vm</copy>
     ```
 
-6. During the execution of the script, you will have to answer a question. The _VM Deployment Compartment Name_. You just type _**ENTER**_ to select the root compartment. If you are familiar with OCI compartments, then feel free to pick an existing compartment name.
+6. During the execution of the script, you will have to answer a question. The _VM Deployment Compartment Name_. You just press _**ENTER**_ to select the root compartment. If you are familiar with [OCI compartments](https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcompartments.htm), then feel free to pick an existing compartment name.
 
   ![TFvars vm command](images/tfvars-vm-command.png)
 
 ## Task 2: Initiate Deployment
 
-1. Run the deployment script which is stored in the _`scripts`_ folder.
-
+1. Run the deployment script which is stored in the _`scripts`_ folder. It might take up to 15 minutes.
 
     ```
     <copy>./scripts/start_VM.sh</copy>
@@ -72,7 +74,7 @@ In this lab, you will complete the process of deploying the first form of the Th
 
     ![Start vm Output](images/start_vm_output.png)
 
-6. Open a new browser tab, and check it out.
+6. Open a new browser tab, paste the load balancer public IP address (_`lb_public_ip`_) and check it out.
 
     ![Game landing](images/game-landing.png)
 
