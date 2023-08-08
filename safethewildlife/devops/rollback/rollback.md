@@ -4,7 +4,7 @@
 
 As part of a normal software development lifecycle, you will have to create new features and deploy those new features. OCI DevOps helps you to do that.
 
-Estimated Lab Time: 15 minutes
+Estimated Time: 15 minutes
 
 ### Objectives
 
@@ -12,7 +12,7 @@ In this lab, you are going to change the code to one of the components and relea
 
 ### Prerequisites
 
-- An active Oracle Free Tier (with remaining free credits) or a Paid Oracle Cloud Account.
+- Oracle Cloud Account.
 - Be an OCI administrator in your account (in Free Tier, you are an administrator by default).
 - GitHub Account
 - Finish the previous Lab.

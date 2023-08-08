@@ -4,7 +4,7 @@
 
 OCI DevOps uses other OCI services like container instances to run code, dependencies on networking components and OCI Logs that will let you know what happened on the execution of the building and deploying pipelines.
 
-Estimated Lab Time: 15 minutes
+Estimated Time: 15 minutes
 
 ### Objectives
 
@@ -20,7 +20,7 @@ In this lab, you are going to deploy OCI DevOps components that include:
 
 ### Prerequisites
 
-- An active Oracle Free Tier (with remaining free credits) or a Paid Oracle Cloud Account.
+- Oracle Cloud Account.
 - Be an OCI administrator in your account (in Free Tier, you are an administrator by default).
 - GitHub Account
 - Finish the previous Lab.

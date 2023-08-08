@@ -6,14 +6,14 @@ In this lab, we will create container images for the application components and 
 
 To help streamline the process, you'll use a custom script to create and publish container images to the [OCI Container Registry](https://www.oracle.com/cloud/cloud-native/container-registry/). Container Registry makes it easy to store, share, and managed container images. Registries can be private (default) or public.
 
-Estimated Lab Time: 15 minutes
+Estimated Time: 15 minutes
 
 Watch the video below for a quick walk-through of this lab.
 [AppDev Multiplayer Lab 2](videohub:xxx)
 
 ### Prerequisites
 
-- An active Oracle Free Tier (with remaining free credits) or a Paid Oracle Cloud Account.
+- Oracle Cloud Account.
 - Be an OCI administrator in your account (in Free Tier, you are an administrator by default).
 - Finish the previous Lab.
 

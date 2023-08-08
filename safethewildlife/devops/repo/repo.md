@@ -4,7 +4,7 @@
 
 The source code of the microservice application lives on GitHub. This is a more complex scenario, the easy way would be to have the code as well on OCI DevOps, but this extra integration can be interesting for those of you that still have the code on other source code control systems.
 
-Estimated Lab Time: 15 minutes
+Estimated Time: 15 minutes
 
 ### Objectives
 
@@ -12,7 +12,7 @@ During this lab, you are going to clone a GitHub repository to have your own cop
 
 ### Prerequisites
 
-- An active Oracle Free Tier (with remaining free credits) or a Paid Oracle Cloud Account.
+- Oracle Cloud Account.
 - Be an OCI administrator in your account (in Free Tier, you are an administrator by default).
 - GitHub Account
 - Finish the previous Lab.

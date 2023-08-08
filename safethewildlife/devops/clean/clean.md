@@ -4,7 +4,7 @@
 
 It is always a good practice to clean up after you learned about OCI DevOps. With Terraform and Kubernetes the process is very simple.
 
-Estimated Lab Time: 10 minutes
+Estimated Time: 10 minutes
 
 ### Objectives
 
@@ -12,7 +12,7 @@ In this optional lab, you are going to clean the resources created during the wo
 
 ### Prerequisites
 
-- An active Oracle Free Tier (with remaining free credits) or a Paid Oracle Cloud Account.
+- Oracle Cloud Account.
 - Be an OCI administrator in your account (in Free Tier, you are an administrator by default).
 - GitHub Account
 - Finish the previous Lab.

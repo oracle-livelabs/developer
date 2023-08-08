@@ -8,7 +8,7 @@ When building and deploying applications in the cloud it is important to underst
 
 ![Save The Wildlife Banner](./images/banner.png)
 
-Estimated Lab Time: 2 minutes
+Estimated Time: 2 minutes
 
 ### Objectives
 In this workshop, you will:

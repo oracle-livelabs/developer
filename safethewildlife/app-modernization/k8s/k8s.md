@@ -5,14 +5,14 @@ In this lab, we will enhance our application to continue moving toward a more Cl
 
 ![OKE Logo](images/oke.png)
 
-Estimated Lab Time: 15 minutes
+Estimated Time: 15 minutes
 
 Watch the video below for a quick walk-through of this lab.
 [AppDev Multiplayer Lab 3](videohub:xxx)
 
 ### Prerequisites
 
-- An active Oracle Free Tier (with remaining free credits) or a Paid Oracle Cloud Account.
+- Oracle Cloud Account.
 - Be an OCI administrator in your account (in Free Tier, you are an administrator by default).
 - Finish the previous Lab.
 

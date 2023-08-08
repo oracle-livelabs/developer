@@ -6,7 +6,7 @@
 
 [Ansible](https://www.ansible.com/) is an Open Source tool that provides automation in software deployment. For this workshop, we leverage the configuration management functionality. Once Terraform deploys the infrastructure, Ansible will establish a remote SSH connection to the servers and apply the requisite configuration (app install, file downloads, configuration settings, etc.)
 
-Estimated Lab Time: 15 minutes
+Estimated Time: 15 minutes
 
 Watch the video below for a quick walk-through of this lab.
 [AppDev Multiplayer Lab 1](videohub:xxx)
@@ -17,7 +17,7 @@ In this lab, you will complete the process of deploying the first form of the [T
 
 ### Prerequisites
 
-- An active Oracle Free Tier (with remaining free credits) or a Paid Oracle Cloud Account.
+- Oracle Cloud Account.
 - Be an OCI administrator in your account (in Free Tier, you are an administrator by default).
 
 ## Task 1: Cloud Shell

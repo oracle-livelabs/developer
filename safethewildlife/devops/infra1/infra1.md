@@ -4,7 +4,7 @@
 
 This is the first, out of two, Terraform deployments. We have split the terraform deployment so you can make changes on OCI DevOps deployment without having to deploy all the foundational infrastructure every time.
 
-Estimated Lab Time: 20 minutes
+Estimated Time: 20 minutes
 
 ### Objectives
 
@@ -17,7 +17,7 @@ In this lab, you are going to deploy that foundational infrastructure that inclu
 
 ### Prerequisites
 
-- An active Oracle Free Tier (with remaining free credits) or a Paid Oracle Cloud Account.
+- Oracle Cloud Account.
 - Be an OCI administrator in your account (in Free Tier, you are an administrator by default).
 - GitHub Account
 - Finish the previous Lab.

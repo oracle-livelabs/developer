@@ -4,14 +4,14 @@
 
 In this lab, you are going to destroy all the resources you have created on Oracle Cloud to make sure your tenancy is clean from everything done during this workshop.
 
-Estimated Lab Time: 10 minutes
+Estimated Time: 10 minutes
 
 Watch the video below for a quick walk-through of this lab.
 [AppDev Multiplayer Lab 4](videohub:xxx)
 
 ### Prerequisites
 
-- An active Oracle Free Tier (with remaining free credits) or a Paid Oracle Cloud Account.
+- Oracle Cloud Account.
 - Be an OCI administrator in your account (in Free Tier, you are an administrator by default).
 - Finish the previous Lab.
 
