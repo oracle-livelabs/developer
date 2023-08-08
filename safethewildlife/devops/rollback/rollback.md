@@ -12,8 +12,10 @@ In this lab, you are going to change the code to one of the components and relea
 
 ### Prerequisites
 
-* An Oracle Free Tier, Paid or LiveLabs Cloud Account
-* Active Oracle Cloud Account with available credits to use for Data Science service.
+- An active Oracle Free Tier (with remaining free credits) or a Paid Oracle Cloud Account.
+- Be an OCI administrator in your account (in Free Tier, you are an administrator by default).
+- GitHub Account
+- Finish the previous Lab.
 
 ## Task 1: Bump the version of a service
 

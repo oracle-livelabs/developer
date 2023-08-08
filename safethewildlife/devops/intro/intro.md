@@ -23,6 +23,10 @@ Watch the video below for a quick walk-through of the workshop.
 
 You must have an OCI account. [Click here](https://www.oracle.com/cloud/free/?source=:ow:o:s:nav::DevoGetStarted&intcmp=:ow:o:s:nav::DevoGetStarted) to create a new cloud account.
 
+If you are using an Oracle Free Tier, it must be active and with remaining free credits.
+
+You must be an OCI administrator in your account (in Free Tier, you are an administrator by default).
+
 You need an active GitHub Account to fork a repository.
 
 This solution is designed to work with several OCI services, allowing you to quickly be up-and-running:
