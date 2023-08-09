@@ -12,8 +12,9 @@ You may review [Overview of Networking](https://docs.cloud.oracle.com/iaas/Conte
 
 Estimated lab time: 5 minutes
 
-Watch the video below for a quick walk-through of the lab.
-[Create a Virtual Cloud Network](videohub:1_n6nklo0z)
+Here is an instructional video, going through the process of making a VCN:
+
+[](youtube:eOGPej8n_ws)
 
 ### Objectives
 In this lab, you will:
@@ -21,7 +22,7 @@ In this lab, you will:
 
 ### Prerequisites
 
-* An Oracle Cloud Account
+* An Oracle Cloud Account.
 
 ## Task 1: Create Your VCN
 
@@ -39,7 +40,7 @@ If running this workshop from other environments, create a VCN on Oracle Cloud I
 
     ![Start VCN wizard](./images/start-wizard.png " ")
 
-3. Complete the following fields. Modify the default settings if they don't match the below values.
+3. Complete the following fields:
 
     |                  **Field**              |    **Value**  |
     |----------------------------------------|:------------:|

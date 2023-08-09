@@ -2,11 +2,11 @@
 
 ## Introduction
 
-You can permanently delete the database instance, the compute instance, and VCN that you created in the lab. Terminating any of these resources permanently removes them and deletes any data they are storing. However, automatic backups are not deleted if you have chosen Recovery Appliance or NFS as a backup destination. You can delete automatic backups directly from the Recovery Appliance or NFS.
+You can permanently delete (terminate) the database instance, the compute instance, and VCN that you created in the lab. Terminating any of these resources permanently removes them and deletes any data they are storing. However, automatic backups are not deleted if you have chosen Recovery Appliance or NFS as a backup destination. You can delete automatic backups directly from the Recovery Appliance or NFS.
 
 This lab walks you through the steps to terminate an Oracle Autonomous Database instance, a compute instance, and VCN.
 
-For the purpose of this lab, an Oracle Autonomous Transaction Processing database instance named DEMOATP will be deleted. The compute host, Web-Server, and VCN, OCI\_HOL\_VCN will then be terminated.
+For the purpose of this lab, an always free Oracle Autonomous Transaction Processing database instance named DEMOATP will be deleted. The compute host, Web-Server, and VCN, OCI\_HOL\_VCN will then be terminated.
 
 Estimated lab time - 5 minutes
 
@@ -22,7 +22,7 @@ Estimated lab time - 5 minutes
 
 ## Task 1: Terminate an Oracle Autonomous Database Instance
 
-1. If you are using a free account, in the Oracle Cloud console, you need to be in the region where your Oracle Autonomous Database resources is provisioned. You can see your current default **Region** in the top right-hand corner of the page. To change the default region, click on the **Region** drop-down and choose the region where your Oracle Autonomous Database resource is provisioned.
+1. If you are using a Free Trial or Always Free account, in the Oracle Cloud console, you need to be in the region where your Oracle Autonomous Database resources is provisioned. You can see your current default **Region** in the top right-hand corner of the page. To change the default region, click on the **Region** drop-down and choose the region where your Oracle Autonomous Database resource is provisioned.
 
     ![Select region on the far upper-right corner of the page.](./images/select-cloud-region.png " ")
 

@@ -6,9 +6,6 @@ This lab walks you through the steps to quickly provision an Oracle Autonomous D
 
 Estimated lab time: 10 minutes
 
-Watch the video below for a quick walk-through of the lab.
-[Provision Oracle Autonomous Database](videohub:1_ika287la)
-
 *Note: While this lab uses ATP, the steps are identical for creating and connecting to an ADW database.*
 
 ### Objectives
@@ -32,13 +29,13 @@ Watch the video below for a quick walk-through of the lab.
 
     ![Select Autonomous Transaction Processing from menu](./images/select-atp.png" ")
 
-4. On the left side, make sure your **Workload Type** is __Transaction Processing__ or __All__ to see your Autonomous Transaction Processing instances. You can use the __Compartment__ drop-down menu to select a compartment. Select your root compartment, or another compartment of your choice where you will create your new ATP instance. If you want to learn how to create a new compartment, click [here](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#Working). To learn more about compartments, click [here](https://docs.cloud.oracle.com/en-us/iaas/Content/GSG/Concepts/settinguptenancy.htm#Setting_Up_Your_Tenancy).
+4. Make sure your workload type is __Transaction Processing__ or __All__ to see your Autonomous Transaction Processing instances. You can use the __List Scope__ drop-down menu to select a compartment. Select your __root compartment__, or __another compartment of your choice__ where you will create your new ATP instance. If you want to create a new compartment, click [here](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#Working). To learn more about compartments, click [here](https://docs.cloud.oracle.com/en-us/iaas/Content/GSG/Concepts/settinguptenancy.htm#Setting_Up_Your_Tenancy).
 
  __Note__ - Avoid the use of the ManagedCompartmentforPaaS compartment as this is an Oracle default used for Oracle Platform Services.
 
-    ![View Oracle Autonomous Transaction Processing Databases in compartment](./images/compartment.png " ")
+5. This console shows that no databases yet exist. If there were a long list of databases, you could filter the list by the state of the databases (available, stopped, terminated, and so on). You can also sort by __Workload Type__. Here, the __Transaction Processing__ workload type is selected.
 
-5. This console in the last screenshot shows that no databases yet exist. If there were a long list of databases, you could filter the list by the state of the databases (available, stopped, terminated, and so on). You can also sort by __Workload Type__. Here, the __Transaction Processing__ workload type is selected.
+    ![View Oracle Autonomous Transaction Processing Databases in compartment](./images/compartment.png " ")
 
 ## Task 2: Creating the Autonomous Database Instance
 
@@ -49,7 +46,7 @@ Watch the video below for a quick walk-through of the lab.
 2.  This brings up the __Create Autonomous Database__ screen where you will specify the configuration of the instance.
 3. Provide basic information for the autonomous database:
 
-    - __Compartment__ - Select a compartment for the database from the drop-down list. In the example below, **MyCompartment** was created ahead of time and chosen.
+    - __Choose a compartment__ - Select a compartment for the database from the drop-down list. In example below, MyCompartment was created ahead of time and chosen.
     - __Display Name__ - Enter a memorable name for the database for display purposes. For this lab, use __QUICKSTART__.
     - __Database Name__ - Use letters and numbers only, starting with a letter. Maximum length is 14 characters. (Underscores not initially supported.) For this lab, use __QUICKSTART__.
 
@@ -71,7 +68,7 @@ Watch the video below for a quick walk-through of the lab.
 
 6. Configure the database:
 
-    - __Always Free__ - If your cloud account offers it, select this option to create an always free autonomous database, which comes with 1 CPU and 20 GB of storage.
+    - __Always Free__ - If your Cloud Account is an Always Free account, select this option to create an always free autonomous database. An always free database comes with 1 CPU and 20 GB of storage. For this lab, you may use Always Free.
     - __Choose database version__ - Select a database version from the available versions.
     - __OCPU count__ - Number of CPUs for your service. For this lab, specify __1 CPU__.  An Always Free database comes with 1 CPU.
     - __Storage (TB)__ - Select your storage capacity in terabytes. For this lab, specify __0.02 TB__ of storage (20 GB). An Always Free database comes with 20 GB of storage.
@@ -94,7 +91,7 @@ Watch the video below for a quick walk-through of the lab.
     ![Set administrator credentials](./images/create-admin.png " ")
 8. Choose network access:
     - For this lab, accept the default, "Secure access from everywhere."
-    - If you want to allow traffic only from the IP addresses and VCNs you specify where access to the database from all public IPs or VCNs is blocked, select "Secure access from allowed IPs and VCNs only" in the Choose network access area.
+    - If you want to allow traffic only from the IP addresses and VCNs you specify - where access to the database from all public IPs or VCNs is blocked, select "Secure access from allowed IPs and VCNs only" in the Choose network access area.
     - If you want to restrict access to a private endpoint within an OCI VCN, select "Private endpoint access only" in the Choose network access area.
     - If the "Require mutual TLS (mTLS) authentication" option is selected, mTLS will be required to authenticate connections to your Autonomous Database. TLS connections allows Oracle Data Provider for .NET to connect to your Autonomous Database without a wallet. See the [documentation for network options](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/support-tls-mtls-authentication.html#GUID-3F3F1FA4-DD7D-4211-A1D3-A74ED35C0AF5) for options to allow TLS, or to require only mutual TLS (mTLS) authentication.
 

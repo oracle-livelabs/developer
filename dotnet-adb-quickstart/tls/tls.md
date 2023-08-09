@@ -16,9 +16,6 @@ In this lab, you will enable one-way TLS without wallets to simplify web applica
 
 Estimated lab time: 5 minutes
 
-Watch the video below for a quick walk-through of the lab.
-[Enable one-way TLS without wallets](videohub:1_jjqu8oxa)
-
 ### Objectives
 In this lab, you will:
 - Add the web server's IP address to the database's ACL
