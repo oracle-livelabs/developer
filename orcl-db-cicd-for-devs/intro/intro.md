@@ -18,7 +18,7 @@ With SQLcl Liquibase you can integrate database change automation into your larg
 
 *Estimated Workshop Time:* 1 Hour 15 Minutes
 
-[Workshop](videohub:1_rw5whknf) 
+[Workshop](videohub:1_rw5whknf)
 
 
 ### Objectives
