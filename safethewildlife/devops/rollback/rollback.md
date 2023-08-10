@@ -6,6 +6,10 @@ As part of a normal software development lifecycle, you will have to create new 
 
 Estimated Time: 15 minutes
 
+Watch the video below for a quick walk-through of this lab.
+
+[DevOps Multiplayer Lab 6](videohub:1_09xwssfx)
+
 ### Objectives
 
 In this lab, you are going to change the code to one of the components and release the application again. The release will be done by running the Build pipeline and Deployment pipeline.

@@ -6,6 +6,10 @@ OCI DevOps has Build pipelines where you can configure the steps to build the di
 
 Estimated Time: 20 minutes
 
+Watch the video below for a quick walk-through of this lab.
+
+[DevOps Multiplayer Lab 4](videohub:1_5x19gk3e)
+
 ### Objectives
 
 In this lab, you are going to build the artifacts from the source code using OCI DevOps build pipeline. As part of the process, you are going to use stages to build and deliver the artifacts built. The outcome will be to have the container images with the application components on Oracle Cloud Image Registry.

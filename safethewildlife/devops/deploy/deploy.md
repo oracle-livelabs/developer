@@ -6,6 +6,10 @@ OCI DevOps has Deployment pipelines responsible for taking the artifacts built o
 
 Estimated Time: 15 minutes
 
+Watch the video below for a quick walk-through of this lab.
+
+[DevOps Multiplayer Lab 5](videohub:1_u5q8b0lt)
+
 ### Objectives
 
 In this lab, you are going to deploy the artifacts (container images) into the Kubernetes Cluster. As part of this lab, you will run the Deployment pipeline that will do all the work for you automatically. The deployment pipeline will access secrets from OCI Vault and create all the config files. Finally, it will deploy with Kustomize running `kubectl`.

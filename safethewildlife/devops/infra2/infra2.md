@@ -6,6 +6,10 @@ OCI DevOps uses other OCI services like container instances to run code, depende
 
 Estimated Time: 15 minutes
 
+Watch the video below for a quick walk-through of this lab.
+
+[DevOps Multiplayer Lab 3](videohub:1_at63rbm7)
+
 ### Objectives
 
 This is the second Terraform deployment.

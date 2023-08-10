@@ -6,6 +6,10 @@ The source code of the microservice application lives on GitHub. This is a more 
 
 Estimated Time: 15 minutes
 
+Watch the video below for a quick walk-through of this lab.
+
+[DevOps Multiplayer Lab 1](videohub:1_blkwoeqo)
+
 ### Objectives
 
 During this lab, you are going to clone a GitHub repository to have your own copy. The rest of the workshop will be working based on your fork.

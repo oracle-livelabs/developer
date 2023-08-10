@@ -6,6 +6,10 @@ It is always a good practice to clean up after you learned about OCI DevOps. Wit
 
 Estimated Time: 10 minutes
 
+Watch the video below for a quick walk-through of this lab.
+
+[DevOps Multiplayer Lab 7](videohub:1_zs28hgqh)
+
 ### Objectives
 
 In this optional lab, you are going to clean the resources created during the workshop.

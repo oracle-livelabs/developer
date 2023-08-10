@@ -6,6 +6,10 @@ This is the first, out of two, Terraform deployments. We have split the terrafor
 
 Estimated Time: 20 minutes
 
+Watch the video below for a quick walk-through of this lab.
+
+[DevOps Multiplayer Lab 2](videohub:1_jruhx4ul)
+
 ### Objectives
 
 In this lab, you are going to deploy that foundational infrastructure that includes:
