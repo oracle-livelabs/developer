@@ -107,7 +107,7 @@ Watch the video below for a quick walk-through of this lab.
 
   ![adb delete confirm](./images/adb-delete-confirm.png)
 
-4. Navigate to **`Oracle Databases`** -> **`Autonomous Transaction Processing`**.
+4. Navigate to **`Oracle Databases`** -> **`Virtual Cloud Networks`**.
 
   ![menu vcn](./images/menu-vcn.png)
 
