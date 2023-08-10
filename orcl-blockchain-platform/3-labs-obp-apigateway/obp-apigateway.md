@@ -49,6 +49,7 @@ This lab assumes you have:
     - Enter **Activity Domain** (e.g. AD1, AD2, AD3) 
     - Enter **Blockchain Channel Name** (e.g. car-marketplace) configured in Lab1 --> Task10 --> Step 1
     - Enter **Endpoints** (Copy from Step1) 
+    - Add the appropriate **Instance Name** (e.g. dealer1, dealer2, marketplace) after each endpoint
     - Keep the remaining default fields.
 
   ![](./images/carmkplace-parameters.png " ")
