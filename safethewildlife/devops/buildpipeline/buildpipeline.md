@@ -4,7 +4,11 @@
 
 OCI DevOps has Build pipelines where you can configure the steps to build the different components that compose your application.
 
-Estimated Lab Time: 20 minutes
+Estimated Time: 20 minutes
+
+Watch the video below for a quick walk-through of this lab.
+
+[DevOps Multiplayer Lab 4](videohub:1_5x19gk3e)
 
 ### Objectives
 
@@ -12,8 +16,10 @@ In this lab, you are going to build the artifacts from the source code using OCI
 
 ### Prerequisites
 
-* An Oracle Free Tier, Paid or LiveLabs Cloud Account
-* Active Oracle Cloud Account with available credits to use for Data Science service.
+- Oracle Cloud Account.
+- Be an OCI administrator in your account (in Free Tier, you are an administrator by default).
+- GitHub Account
+- Finish the previous Lab.
 
 ## Task 1: Get familiar with OCI DevOps
 

@@ -4,7 +4,11 @@
 
 This is the first, out of two, Terraform deployments. We have split the terraform deployment so you can make changes on OCI DevOps deployment without having to deploy all the foundational infrastructure every time.
 
-Estimated Lab Time: 20 minutes
+Estimated Time: 20 minutes
+
+Watch the video below for a quick walk-through of this lab.
+
+[DevOps Multiplayer Lab 2](videohub:1_jruhx4ul)
 
 ### Objectives
 
@@ -17,8 +21,10 @@ In this lab, you are going to deploy that foundational infrastructure that inclu
 
 ### Prerequisites
 
-* An Oracle Free Tier, Paid or LiveLabs Cloud Account
-* Active Oracle Cloud Account with available credits to use for Data Science service.
+- Oracle Cloud Account.
+- Be an OCI administrator in your account (in Free Tier, you are an administrator by default).
+- GitHub Account
+- Finish the previous Lab.
 
 ## Task 1: Set up Terraform configuration file
 
@@ -30,7 +36,7 @@ In this lab, you are going to deploy that foundational infrastructure that inclu
 
     > This `tfvars.mjs` will create a file called `terraform.tfvars` with the values needed by Terraform to create all the foundational infrastructure.
 
-2. During the execution of the script, you will have to answer a few questions. The first one is the _DevOps Compartment Name_. You just type _**ENTER**_ to select the root compartment. If you are familiar with OCI compartments, then feel free to pick an existing compartment name.
+2. During the execution of the script, you will have to answer a few questions. The first one is the _DevOps Compartment Name_. You just press _**ENTER**_ to select the root compartment. If you are familiar with [OCI compartments](https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcompartments.htm), then feel free to pick an existing compartment name.
 
   ![tfvars env compartment](images/tfvars-env-compartment.png)
 

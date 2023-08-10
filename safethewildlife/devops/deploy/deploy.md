@@ -4,7 +4,11 @@
 
 OCI DevOps has Deployment pipelines responsible for taking the artifacts built on previous steps and deploying them on the infrastructure: virtual machines, container instances, Kubernetes clusters or Serverless functions.
 
-Estimated Lab Time: 15 minutes
+Estimated Time: 15 minutes
+
+Watch the video below for a quick walk-through of this lab.
+
+[DevOps Multiplayer Lab 5](videohub:1_u5q8b0lt)
 
 ### Objectives
 
@@ -12,8 +16,10 @@ In this lab, you are going to deploy the artifacts (container images) into the K
 
 ### Prerequisites
 
-* An Oracle Free Tier, Paid or LiveLabs Cloud Account
-* Active Oracle Cloud Account with available credits to use for Data Science service.
+- Oracle Cloud Account.
+- Be an OCI administrator in your account (in Free Tier, you are an administrator by default).
+- GitHub Account
+- Finish the previous Lab.
 
 ## Task 1: Run Deploy Pipeline
 

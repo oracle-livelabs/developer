@@ -4,7 +4,11 @@
 
 The source code of the microservice application lives on GitHub. This is a more complex scenario, the easy way would be to have the code as well on OCI DevOps, but this extra integration can be interesting for those of you that still have the code on other source code control systems.
 
-Estimated Lab Time: 15 minutes
+Estimated Time: 15 minutes
+
+Watch the video below for a quick walk-through of this lab.
+
+[DevOps Multiplayer Lab 1](videohub:1_blkwoeqo)
 
 ### Objectives
 
@@ -12,8 +16,10 @@ During this lab, you are going to clone a GitHub repository to have your own cop
 
 ### Prerequisites
 
-* An Oracle Free Tier, Paid or LiveLabs Cloud Account
-* Active Oracle Cloud Account with available credits to use for Data Science service.
+- Oracle Cloud Account.
+- Be an OCI administrator in your account (in Free Tier, you are an administrator by default).
+- GitHub Account
+- Finish the previous Lab.
 
 ## Task 1: Fork repo
 
