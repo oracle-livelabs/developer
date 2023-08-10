@@ -10,8 +10,6 @@ Welcome to Lab 3! Now that you’ve populated your MOVIESTREAM_DEV schema and it
 
 *Estimated Time:* 15 Minutes
 
-[Lab 3](videohub:1_voa0ehpq)
-
 
 ### Objectives
 In this lab you will:

@@ -11,8 +11,6 @@ Your manager already assigned you the JIRA ticket and passed along a changelog w
 
 *Estimated Time:* 5 Minutes
 
-[Lab 4](videohub:1_4sc63qw3)
-
 
 ### Objectives
 In this lab you will:
