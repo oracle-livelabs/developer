@@ -16,6 +16,7 @@ In this lab, you will be replicating the database schema from the MOVIESTREAM\_M
 
 *Estimated Time:* 25 Minutes
 
+[Lab 2](videohub:1_qzydao2e)
 
 ### Objectives
 In this lab you will:

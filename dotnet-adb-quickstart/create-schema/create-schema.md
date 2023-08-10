@@ -2,19 +2,16 @@
 
 ## Introduction
 
-In this lab, you will connect to the database using SQL Worksheet, a browser-based tool that is easily accessible from the Autonomous Database console. You will then create a database user (schema), assign privileges to the user, and enable the user to log in to the database. You will create a table, add records, and query the table to view the results in that user account.
+In this lab, you will connect to the database using SQL Worksheet, a browser-based tool that is easily accessible from the Autonomous Database console. You will then create a database user (schema), assign privileges to the user, and enable the user to log in to the database using SQL Worksheet. Logged in as the user, you will create a table, add records, and query the table to view the results.
 
 Estimated lab time: 10 minutes
-
-Watch the video below for a quick walk-through of the lab.
-[Create user and setup schema](videohub:1_btcu4q9g)
 
 ### Objectives
 -   Connect to your new autonomous database using SQL Worksheet
 -   As administrator, create a database user (schema)
 -   Assign privileges to the user
--   Enable a database user to log in to the database using SQL Worksheet
--   Create a table and add records
+-   Enable database users to log in to the database using SQL Worksheet
+-   As the user, create a table and add records
 
 ### Prerequisites
 
@@ -106,10 +103,8 @@ Syntax: `GRANT <privilege> TO <user>;`
 ## Task 4: Create a Table and Add Records
 1. You are still connected to SQL Worksheet as administrator. In this section, you execute the `CREATE TABLE` statement to create a table to track to do items in the APPUSER schema.
 
-      **Syntax**: 
-	```
-	CREATE TABLE [schema.]table (column datatype [DEFAULT expr][, ...]);
-	```
+      **Syntax**: ```CREATE TABLE [schema.]table
+            (column datatype [DEFAULT expr][, ...]);```
 
       Perform the following steps to create the `TODOITEMS` table in the APPUSER schema. Since the ADMIN user will be creating these, we will prepend APPUSER to the table name.
 
@@ -129,12 +124,10 @@ Syntax: `GRANT <privilege> TO <user>;`
 
 4. You will now populate the table with sample data. You will add rows by executing `INSERT` statements.
 
-    **Syntax**: 
-	```
-	INSERT INTO [schema.]table [(column [, column...])] VALUES (value [, value...]);
-	```
+    **Syntax**: ```INSERT INTO table [(column [, column...])]
+                VALUES (value [, value...]);```
 
-    Execute the following statements to insert data into the `TODOITEM` table. We will again prepend APPUSER to the table name. When executing more than one statement in the worksheet at a time, highlight all the SQL to execute with the mouse, then click the green and white Run Statement button.
+    Execute the following statements to insert data into the `TODOITEM` table. We will again prepend APPUSER to the table name. When executing more than one statement in the worksheet at a time, highlight all the SQL Oracle should execute.
 
     ```
     <copy>INSERT INTO APPUSER.TODOITEM (DESCRIPTION, DONE) VALUES('Task 1', 0);
@@ -163,4 +156,4 @@ Click [here](https://docs.oracle.com/en/database/oracle/oracle-database/19/cncpt
 ## Acknowledgements
 
 - **Author** - Rick Green, Alex Keh
-- **Last Updated By/Date** - Alex Keh, June 2023
+- **Last Updated By/Date** - Alex Keh, August 2022

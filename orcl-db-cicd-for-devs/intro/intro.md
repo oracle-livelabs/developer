@@ -15,7 +15,10 @@ With SQLcl Liquibase you can integrate database change automation into your larg
 ![Pipeline Example](./images/pipeline-image.png)
 **Note:** Example database section of a CI/CD pipeline utilizing SQLcl Liquibase. Changelogs are the files Liquibase saves database objects to. We'll talk more about them later.
 
+
 *Estimated Workshop Time:* 1 Hour 15 Minutes
+
+[Workshop](videohub:1_rw5whknf)
 
 
 ### Objectives
