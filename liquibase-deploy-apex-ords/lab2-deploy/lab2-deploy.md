@@ -11,7 +11,8 @@ There will be two versions of the application you will be deploying. The first i
 
 Estimated Time: 10 minutes
 
-
+Watch the video below for a quick walk-through of the lab.
+[Lab 2](videohub:1_bv11h5z8)
 
 ### Objectives
 In this lab, you will:

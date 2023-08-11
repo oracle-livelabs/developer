@@ -16,6 +16,9 @@ While this workshop will have you creating your own workspace to then populate w
 
 Estimated Time: 10 minutes
 
+Watch the video below for a quick walk-through of the lab.
+[Lab 1](videohub:1_5sk13ia3)
+
 
 
 ### Objectives
