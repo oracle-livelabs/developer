@@ -7,7 +7,7 @@ In this lab, you are going to destroy all the resources you have created on Orac
 Estimated Time: 10 minutes
 
 Watch the video below for a quick walk-through of this lab.
-[AppDev Multiplayer Lab 4](videohub:xxx)
+[AppDev Multiplayer Lab 4](videohub:1_ksovfl6q)
 
 ### Prerequisites
 
