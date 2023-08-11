@@ -107,7 +107,7 @@ Watch the video below for a quick walk-through of this lab.
 
   ![adb delete confirm](./images/adb-delete-confirm.png)
 
-4. Navigate to **`Oracle Databases`** -> **`Virtual Cloud Networks`**.
+4. Navigate to **`Networking`** -> **`Virtual Cloud Networks`**.
 
   ![menu vcn](./images/menu-vcn.png)
 
@@ -136,4 +136,5 @@ Watch the video below for a quick walk-through of this lab.
 
 * **Author** - Victor Martin - Technology Product Strategy Director - EMEA
 * **Author** - Wojciech (Vojtech) Pluta - Developer Relations - Immersive Technology Lead
+* **Author** - Eli Schilling - Developer Relations - Cloud Native and DevOps
 * **Last Updated By/Date** - August, 2023

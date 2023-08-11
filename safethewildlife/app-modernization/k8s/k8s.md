@@ -156,8 +156,6 @@ In this lab, you will complete the process of deploying the application on a Kub
 
 12. Paste the IP address from the previous step in a new browser tab and check it out!
 
-  ![game](./images/game.png)
-
 Optionally, if you want to clean up the workshop resources on Oracle Cloud; you may now [proceed to the next lab](#next).
 
 ## Acknowledgements

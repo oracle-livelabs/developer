@@ -78,8 +78,6 @@ In this lab, you will complete the process of deploying the first form of the [T
 
 6. Open a new browser tab, paste the load balancer public IP address (_`lb_public_ip`_) and check it out.
 
-    ![Game landing](images/game-landing.png)
-
 You may now [proceed to the next lab](#next).
 
 ## Acknowledgements

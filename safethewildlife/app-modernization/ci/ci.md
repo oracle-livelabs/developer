@@ -150,8 +150,6 @@ In this second and final task, you will add the Container Instance private IP ad
 
 9. Paste the Load Balancer public IP address on a browser tab and try the Container Instance deployment.
 
-  ![game](images/game.png)
-
 You may now [proceed to the next lab](#next).
 
 ## Acknowledgements
