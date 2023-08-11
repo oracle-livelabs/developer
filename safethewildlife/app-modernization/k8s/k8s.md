@@ -3,12 +3,12 @@
 ## Introduction
 In this lab, we will enhance our application to continue moving toward a more Cloud Native design. For this, an [Autonomous Database](https://www.oracle.com/autonomous-database/) will be deployed, new application components will be added, and the entire solution will be deployed to [Oracle Container Engine for Kubernetes (OKE)](https://www.oracle.com/cloud/cloud-native/container-engine-kubernetes/).
 
-![OKE Logo](images/oke.png)
+![oke-architecture](./images/oke-architecture.png)
 
 Estimated Time: 15 minutes
 
 Watch the video below for a quick walk-through of this lab.
-[AppDev Multiplayer Lab 3](videohub:xxx)
+[AppDev Multiplayer Lab 3](videohub:1_squ67l2s)
 
 ### Prerequisites
 
@@ -67,7 +67,7 @@ In this lab, you will complete the process of deploying the application on a Kub
 4. Scroll down and provide a database password for the Admin user. Recover the password you generated before by running this command in Cloud Shell. Copy and paste it twice on the form.
 
     ```bash
-    <copy>cat ~/oci-multiplayer/.env.json | jq .adbPassword</copy>
+    <copy>cat ~/save-the-wildlife/.env.json | jq .adbPassword</copy>
     ```
 
   ![adb create password](./images/adb-create-password.png)
@@ -109,7 +109,7 @@ In this lab, you will complete the process of deploying the application on a Kub
 7. Ensure you are in the root directory.
 
     ```
-    <copy>cd ~/oci-multiplayer</copy>
+    <copy>cd ~/save-the-wildlife</copy>
     ```
 
 8. Release all application components. It will take a few minutes.

@@ -6,10 +6,12 @@
 
 [Ansible](https://www.ansible.com/) is an Open Source tool that provides automation in software deployment. For this workshop, we leverage the configuration management functionality. Once Terraform deploys the infrastructure, Ansible will establish a remote SSH connection to the servers and apply the requisite configuration (app install, file downloads, configuration settings, etc.)
 
+![virtual machine based architecture](./images/vm-architecture.png)
+
 Estimated Time: 15 minutes
 
 Watch the video below for a quick walk-through of this lab.
-[AppDev Multiplayer Lab 1](videohub:xxx)
+[AppDev Multiplayer Lab 1](videohub:1_jczy64ws)
 
 ### Objectives
 
@@ -29,15 +31,15 @@ In this lab, you will complete the process of deploying the first form of the [T
 2. As soon as the Cloud Shell is loaded, you can clone the workshop assets for this workshop. Run the command:
 
     ```
-    <copy>git clone https://github.com/vmleon/oci-multiplayer</copy>
+    <copy>git clone https://github.com/oracle-devrel/save-the-wildlife.git</copy>
     ```
 
   ![Git Clone](images/git-clone.png)
 
-4. Change directory with `cd` to `oci-multiplayer` directory:
+4. Change directory with `cd` to `save-the-wildlife` directory:
 
     ```
-    <copy>cd oci-multiplayer</copy>
+    <copy>cd save-the-wildlife</copy>
     ```
 
 5. Terraform uses a file called `terraform.tfvars` that contains variables used to communicate with the Oracle Cloud. You are going to generate that file by running the following command:

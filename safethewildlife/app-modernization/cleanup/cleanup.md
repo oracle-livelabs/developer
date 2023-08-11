@@ -42,7 +42,7 @@ Watch the video below for a quick walk-through of this lab.
 1. Make sure you are still on the directory `deploy/vm/tf-ci`.
 
     ```
-    <copy>cd ~/oci-multiplayer/deploy/vm/tf-ci</copy>
+    <copy>cd ~/save-the-wildlife/deploy/vm/tf-ci</copy>
     ```
 
 2. Run Terraform destroy to delete the resources.
@@ -58,7 +58,7 @@ Watch the video below for a quick walk-through of this lab.
 3. Change the directory back to the root of the project with the following command:
 
     ```
-    <copy>cd ~/oci-multiplayer</copy>
+    <copy>cd ~/save-the-wildlife</copy>
     ```
 
 4. Run the `ci.mjs` command that will give you information about how to delete your container instance.
