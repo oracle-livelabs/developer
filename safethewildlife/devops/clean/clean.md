@@ -4,7 +4,11 @@
 
 It is always a good practice to clean up after you learned about OCI DevOps. With Terraform and Kubernetes the process is very simple.
 
-Estimated Lab Time: 10 minutes
+Estimated Time: 10 minutes
+
+Watch the video below for a quick walk-through of this lab.
+
+[DevOps Multiplayer Lab 7](videohub:1_zs28hgqh)
 
 ### Objectives
 
@@ -12,8 +16,10 @@ In this optional lab, you are going to clean the resources created during the wo
 
 ### Prerequisites
 
-* An Oracle Free Tier, Paid or LiveLabs Cloud Account
-* Active Oracle Cloud Account with available credits to use for Data Science service.
+- Oracle Cloud Account.
+- Be an OCI administrator in your account (in Free Tier, you are an administrator by default).
+- GitHub Account
+- Finish the previous Lab.
 
 ## Task 1: Delete Load Balancer from Kubernetes
 

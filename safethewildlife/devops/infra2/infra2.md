@@ -4,7 +4,11 @@
 
 OCI DevOps uses other OCI services like container instances to run code, dependencies on networking components and OCI Logs that will let you know what happened on the execution of the building and deploying pipelines.
 
-Estimated Lab Time: 15 minutes
+Estimated Time: 15 minutes
+
+Watch the video below for a quick walk-through of this lab.
+
+[DevOps Multiplayer Lab 3](videohub:1_at63rbm7)
 
 ### Objectives
 
@@ -20,8 +24,10 @@ In this lab, you are going to deploy OCI DevOps components that include:
 
 ### Prerequisites
 
-* An Oracle Free Tier, Paid or LiveLabs Cloud Account
-* Active Oracle Cloud Account with available credits to use for Data Science service.
+- Oracle Cloud Account.
+- Be an OCI administrator in your account (in Free Tier, you are an administrator by default).
+- GitHub Account
+- Finish the previous Lab.
 
 ## Task 1: Set up Terraform configuration file
 

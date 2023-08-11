@@ -8,6 +8,9 @@ Note: This lab has been validated with ASP.NET Core 6. Some variations in the AS
 
 Estimated lab time: 15 minutes
 
+Watch the video below for a quick walk-through of the lab.
+[Develop and deploy the .NET web application](videohub:1_rkt0mw3p)
+
 ### Objectives
 -   Create a new ASP.NET Core web app
 -   Develop and deploy ODP.NET Core app that connects to your Oracle Autonomous Database
@@ -22,9 +25,9 @@ Estimated lab time: 15 minutes
 
 We will connect to Cloud Shell again to begin developing the ASP.NET Core part of the To Do List application. The project will incorporate ODP.NET Core for data access between the app and Oracle Autonomous Database.
 
-1. Open Cloud Shell by clicking on its icon on the top right part of the menu bar.
+1. Open Cloud Shell by clicking the Developer Tools icon on the top right of the menu bar, then click **Cloud Shell**.
 
-    ![Click Cloud Shell icon](./images/cloud-shell-icon.png)
+    ![Open Cloud Shell](./images/cloud-shell-icon.png)
 
 2. If you have been logged out of the last SSH session, SSH into the web server machine once again:
 
@@ -39,7 +42,7 @@ Provide the key directory path (i.e. .ssh/), if applicable, the private key name
     <copy>dotnet new web -o todolist</copy>
     ```
 
-  This command creates an empty ASP.NET Core empty web project. 
+  This command creates an ASP.NET Core empty web project. 
 
 4. Change directory into the "todolist" directory. Then, add the ODP.NET Core assembly to the project from NuGet Gallery.
 
@@ -143,11 +146,10 @@ We will create a simple web application that returns the current tasks (DESCRIPT
 You have completed deploying the ASP.NET Core web app. 
 
 ## Task 3: Configure NGINX Web Server and Service to Run the ASP.NET Core App
-We will now configure the NGINX web server so that it can run ASP.NET Core apps from Oracle Linux.
 
-1. Configure NGINX to enable HTTP to initiate a connection to the network.
+1. Configure the NGINX web server so that it can run ASP.NET Core apps from Oracle Linux.
 
-    - Enable the web server from Cloud Shell.
+    - Configure NGINX to enable HTTP to initiate a connection to the network.
 
         ```
         <copy>sudo setsebool -P httpd_can_network_connect 1</copy>
@@ -238,7 +240,7 @@ We will now configure the NGINX web server so that it can run ASP.NET Core apps 
     - Next, start the application service.
 
         ```
-        <copy>sudo systemctl start todolist.service</copy>
+        <copy>sudo systemctl restart todolist.service</copy>
         ```
 
     - Verify the service status is "<span style="color:green">active (running)</span>" and there are no outstanding issues.
@@ -269,4 +271,4 @@ Click [here](https://www.oracle.com/database/technologies/appdev/dotnet.html) to
 ## Acknowledgements
 
 - **Author** - Alex Keh
-- **Last Updated By/Date** - Alex Keh, August 2022
+- **Last Updated By/Date** - Alex Keh, June 2023
