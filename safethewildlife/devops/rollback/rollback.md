@@ -4,7 +4,11 @@
 
 As part of a normal software development lifecycle, you will have to create new features and deploy those new features. OCI DevOps helps you to do that.
 
-Estimated Lab Time: 15 minutes
+Estimated Time: 15 minutes
+
+Watch the video below for a quick walk-through of this lab.
+
+[DevOps Multiplayer Lab 6](videohub:1_09xwssfx)
 
 ### Objectives
 
@@ -12,8 +16,10 @@ In this lab, you are going to change the code to one of the components and relea
 
 ### Prerequisites
 
-* An Oracle Free Tier, Paid or LiveLabs Cloud Account
-* Active Oracle Cloud Account with available credits to use for Data Science service.
+- Oracle Cloud Account.
+- Be an OCI administrator in your account (in Free Tier, you are an administrator by default).
+- GitHub Account
+- Finish the previous Lab.
 
 ## Task 1: Bump the version of a service
 
