@@ -57,7 +57,7 @@ This lab assumes you have:
 
 ## Task 2: Configure Database Schema and User Credentials
 
-1. When your Autonomous Database instance has provisioned, access the 'Tools' --> 'Open APEX' --> 'Open APEX'
+1. When your Autonomous Database instance has provisioned, access the 'Tools' -->Copy the URL --> open the URL in another browser tab
 
   ![Access Service Console](images/4-apex-2-1.png)
 
@@ -110,9 +110,8 @@ This lab assumes you have:
 
 11. After clicking 'Create User' again, check that both new users are displayed on the 'Manage Developers and Users' page as shown. Then click on the APEX logo to return to 'Administration Services.'
 
-  ![Check User Page](images/4-apex-2-9.png)
 
-11. Sign out of ADMIN in the upper-right hand corner
+12. Sign out of ADMIN in the upper-right hand corner
 
   ![Sign Out](images/4-apex-2-10.png)
 
@@ -149,19 +148,11 @@ This lab assumes you have:
 
   ![Install Application 1](images/4-apex-3-8.png)
 
-7. Click 'Next.' --> Enter username and password in the respective fields --> Enter username and password in the respective fields
+7. Click 'Next.' --> Enter username and password in the respective fields --> Enter username and password in the respective fields.
 
   ![Install Application 2](images/4-apex-3-9.png)
 
-8. Click 'Next' again --> Parsing Schema should be 'WKSP_MARKETPLACE'
-
-  ![Install Application 3](images/4-apex-3-10.png)
-
-9. Finally, click on 'Install.'
-
-  ![Install Application 4](images/4-apex-3-11.png)
-
-10. Click 'Edit Application' and proceed to Task 4 to further configure your APEX app.
+8. Click 'Edit Application' and proceed to Task 4 to further configure your APEX app.
 
   ![Edit Application](images/4-apex-3-12.png)
 
@@ -170,18 +161,18 @@ This lab assumes you have:
 
 1. Go to 'App Builder' on the top left hand corner of the screen --> Click on Car Marketplace  --> Click on 'Shared Components.' Here you will be able to configure application attributes and data sources.
 
-  ![Access Shared Components](images/4-apex-4-2.1.png)
+  ![Access Shared Components](images/4-apex-4-4.1.png)
 
 2. Click on 'Application Definition' located under **Application Logic**.
 
   ![Application Definition](images/4-apex-4-2.png)
 
-3. Click the 'Substitions' tab as shown.
+3. Click the 'Substitutions' tab as shown.
 
   ![Substitions](images/lab-4-task4-step3.png)
 
-4. Set the following **Substitutions** and 'Apply Changes':
-    - Set OBP\_MAIN\_INSTANCE\_URL to the URL you found in the **Deployment Information**  section in the previous lab (Lab: Created & Setup API Gateway to connect with Smart Contract API's). This allows APEX to connect to the Car Marketplace OBP REST API endpoints via the API Gateway deployment. Change OBP\_MAIN\_INSTANCE\_URL, OBP\_DEALER\_1\_URL, OBP\_DEALER\_2\_URL based on the routes configured in *Lab 4*  
+4. Replace all the **Substitutions** copying the URL from *Lab 3* and 'Apply Changes':
+    - Set OBP\_MAIN\_INSTANCE\_URL to the URL you found in the **Deployment Information**  section in the previous lab (Lab 3: Created & Setup API Gateway to connect with Smart Contract API's). This allows APEX to connect to the Car Marketplace OBP REST API endpoints via the API Gateway deployment. Change OBP\_MAIN\_INSTANCE\_URL, OBP\_DEALER\_1\_URL, OBP\_DEALER\_2\_URL based on the routes configured in *Lab 3*  
 
     ![Substitions Form](images/4-apex-4-4-1.png)
     ![Substitions Form](images/4-apex-4-4-2.png)
@@ -189,13 +180,13 @@ This lab assumes you have:
     - Set DEALER\_1\_URL and DEALER\_2\_URL to john\_dealer1 and sam\_dealer2, respectively. This gives information on API routing.
     - Set MARKETPLACE to marketplace.
 
-  ![Substitions Form](lab-4-task4-step3.png)
+    ![Substitions Form](images/lab-4-task4-step3.png)
 
 5. Go back and  Select 'App Builder' as shown.
 
   ![Access App Builder](images/4-apex-3-4.png)
 
-6. Navigate to 'Workspace Utilities'
+6. Click on Car Marketplace Application --> Navigate to 'Workspace Utilities'
 
   ![Access App Builder](images/4-apex-4-1.1.png)
 
