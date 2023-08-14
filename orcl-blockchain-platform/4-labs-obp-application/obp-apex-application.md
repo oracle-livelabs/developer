@@ -206,10 +206,18 @@ This lab assumes you have:
 
   ![Access App Builder](images/4-apex-4-1.3.png)
 
-9. Next, scroll towards the bottom of your 'App Builder' homepage and under **Data Sources**, select 'REST Data Sources.'
+9. Next, scroll towards the bottom of your 'App Builder' ---> 'Car Marketplace Application'
 
+  ![Access App Builder](images/4-apex-4-1.3.1.png)
+
+10. Click on 'Shared Components' -->  Select 'REST Data Sources.'
+
+  ![REST Data Sources](images/4-apex-4-6-1.png)
+
+  ![REST Data Sources](images/4-apex-4-6-2.png)
+  
   ![REST Data Sources](images/4-apex-4-6.png)
-
+  
 10. Now, we can see the following REST Sources configured with remote server URL configured:
     - 'GetAccountBalance'
     - 'GetInvoiceByRange'
