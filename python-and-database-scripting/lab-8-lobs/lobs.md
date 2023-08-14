@@ -5,7 +5,7 @@
 Oracle Database "LOB" long objects can be streamed using a LOB locator, or worked with directly as strings or bytes. Documentation link for further reading: [Using CLOB and BLOB Data](https://python-oracledb.readthedocs.io/en/latest/user_guide/lob_data.html).
 This lab will show how to use LOBs with python-oracledb driver
 
-Estimated Lab Time: 5 minutes
+Estimated Time: 5 minutes
 
 Watch the video below for a quick walk-through of the lab.
 [LOBs](videohub:1_or7leb07)

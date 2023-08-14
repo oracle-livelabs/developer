@@ -180,7 +180,7 @@ In this lab, you will:
 
 ## Task 4: Verify detection of Java runtimes and applications
 
-Now that the Management Agent and JMS plug-in has been set up in your compute instance, it will be able to detect the Java applications that have been executed in the compute instance. This can be observed in the Oracle Cloud Console.
+Now that the Management Agent and JMS plug-in has been set up in your compute instance, it will be able to detect the Java applications that have been executed in the compute instance. This can be observed in the Oracle Cloud Console. If tagging and installation of the management agent is successful, the tagged Managed Instance will be indicated on the Fleet Main Page after **10 minutes**.
 
 1. If you are using the noVNC graphical remote desktop, close the browser for the remote desktop and return to the browser tab containing the **Oracle Cloud Console**.
 
@@ -190,7 +190,7 @@ Now that the Management Agent and JMS plug-in has been set up in your compute in
 
 3. Select the compartment **LLxxxxx-COMPARTMENT** indicated in your Login Info and click on the fleet that was created in [Lab 1](?lab=setup-a-fleet).
 
-4. Scroll down the Fleet details page. Under **Resources** menu, select **Managed instances**. If tagging and installation of the management agent is successful, the tagged Managed Instance will be indicated on the Fleet Main Page after 5 minutes.
+4. Scroll down the Fleet details page. Under **Resources** menu, select **Managed instances**. If tagging and installation of the management agent is successful, the tagged Managed Instance will be indicated on the Fleet Main Page after **10 minutes**.
 
   ![image of successful installation instance](images/successful-installation-instance.png)
 
