@@ -47,7 +47,7 @@ If you would like to learn more about using JMS together with other OCI services
 
 ## Learn More
 
-* [Getting Started with Java Management Service](https://docs.oracle.com/en-us/iaas/jms/doc/getting-started-java-management-service.html)
+* [Java Management](https://docs.oracle.com/en-us/iaas/jms/index.html)
 * [Announcing Java Management Service](https://blogs.oracle.com/java/post/announcing-java-management-service)
 
 

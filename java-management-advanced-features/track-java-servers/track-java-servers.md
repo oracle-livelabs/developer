@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Advanced usage tracking allows you to monitor the usage of Java servers in your fleet which includes the applications deployed on the Java server, the managed server and managed instances on which an application is deployed. 
+Advanced usage tracking allows you to monitor the usage of Java servers in your fleet which includes the applications deployed on the Java server, the managed servers and the managed instances.
 
 This lab walks you through the steps to track Java servers in a managed instance.
 
@@ -31,7 +31,7 @@ In this lab, you will:
 
 ## Task 1: Ensure WebLogic Server is installed and configured
 
-1. If you do not have WebLogic server installed and configured in your managed instance, please refer to following steps.
+1. If you do not have WebLogic server installed and configured in your managed instance, refer to following steps.
     * [Download WebLogic Server](https://www.oracle.com/middleware/technologies/weblogic-server-installers-downloads.html)
     * [Install WebLogic Server with Sample Applications](https://docs.oracle.com/en/middleware/standalone/weblogic-server/14.1.1.0/intro/examples.html#GUID-F9F246B1-E186-46C7-846C-DA510295582F)
 
@@ -99,7 +99,7 @@ It will take approximately 10 minutes for the request to be completed.
 
 You may now **proceed to the next lab.**
 ## Learn More
-* Refer to the [Advanced Features](https://docs.oracle.com/en-us/iaas/jms/doc/advanced-features.html), [Work Request](https://docs.oracle.com/en-us/iaas/jms/doc/getting-started-java-management-service.html#GUID-47C63464-BC0C-4059-B552-ED9F33E77ED3) and [Viewing a Work Request](https://docs.oracle.com/en-us/iaas/jms/doc/fleet-views.html#GUID-F649F0E5-DD54-4DEC-A0F1-942FE3552C93) sections of the JMS documentation for more details.
+* Refer to the [Advanced Features](https://docs.oracle.com/en-us/iaas/jms/doc/advanced-features.html), [Work Requests](https://docs.oracle.com/en-us/iaas/jms/doc/using-java-management-service.html#GUID-77AEEBC0-93A5-4E99-96D6-BEE0FEE4539F) sections of the JMS documentation for more details.
 
 * Use the [Troubleshooting](https://docs.oracle.com/en-us/iaas/jms/doc/troubleshooting.html#GUID-2D613C72-10F3-4905-A306-4F2673FB1CD3) chapter for explanations on how to diagnose and resolve common problems encountered when installing or using Java Management Service.
 

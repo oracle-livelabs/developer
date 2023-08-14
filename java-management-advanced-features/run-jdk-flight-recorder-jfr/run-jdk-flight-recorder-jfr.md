@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This lab walks you through the steps to run JDK Flight Recorder (JFR) on any java app on your Fleet.
+This lab walks you through the steps to run JDK Flight Recorder (JFR) on any Java application in your fleet.
 
 Estimated Time: 20 mins
 
@@ -21,7 +21,7 @@ In this lab, you will:
 * You have signed up for an account with Oracle Cloud Infrastructure and have received your sign-in credentials.
 * You are using an Oracle Linux image or Windows OS on your Managed Instance for this workshop.
 * Access to the cloud environment and resources configured in [Lab 1](?lab=set-up-and-enable-advanced-features-on-java-management-service).
-* Have a Java application capable of running longer then 15 mins in your instance.
+* Have a Java application capable of running longer than 15 mins in your instance.
 
 ## Task 1: Submit JDK Flight Recorder Work Request
 
@@ -39,13 +39,13 @@ In this lab, you will:
   
     ![image of jfr run settings](images/managed-instance-applications-run-jfr.png)
 
-4. In the **JDK Flight Recorder** (JFR) Window, select **Recording option**: **Select from default profiles**
+4. In the **JDK Flight Recorder** (JFR) Window, select **Recording option**: **Select from default profiles**.
 
-    Under the **Select default profiles**, click on the dropdown menu and select **Default.jfc**
+    Under the **Select default profiles**, click the dropdown menu and select **Default.jfc**.
 
     Lower the **Max recording duration** to **5 mins** and keep **Max recording size** at **500MB**. Click **Start** to begin the JFR recording.
 
-    > Note: Ensure your application runs longer then the duration specified.
+    > Note: Ensure your application runs longer than the duration specified.
 
     ![image of jfr configs before starting](images/jfr-config-start.png)
 
@@ -65,7 +65,7 @@ In this lab, you will:
 
     >**Note:** It will take approximately 15 minutes for the request to be completed.
 
-8. To access the report, navigate to the **Fleet** details page and click on the **Object storage bucket** name under **Object storage**.
+8. To access the report, navigate to the **Fleet** details page and click the **Object storage bucket** name under **Object storage**.
 
     ![image of crypto event run settings](images/fleet-bucket-link.png)
 
@@ -83,7 +83,7 @@ In this lab, you will:
 You may now **proceed to the next lab.**
 
 ## Learn More
- * Refer to the [Advanced Features](https://docs.oracle.com/en-us/iaas/jms/doc/advanced-features.html), [Work Request](https://docs.oracle.com/en-us/iaas/jms/doc/getting-started-java-management-service.html#GUID-47C63464-BC0C-4059-B552-ED9F33E77ED3) and [Viewing a Work Request](https://docs.oracle.com/en-us/iaas/jms/doc/fleet-views.html#GUID-F649F0E5-DD54-4DEC-A0F1-942FE3552C93) sections of the JMS documentation for more details.
+ * Refer to the [Advanced Features](https://docs.oracle.com/en-us/iaas/jms/doc/advanced-features.html), [Work Requests](https://docs.oracle.com/en-us/iaas/jms/doc/using-java-management-service.html#GUID-77AEEBC0-93A5-4E99-96D6-BEE0FEE4539F) sections of the JMS documentation for more details.
 
  * Use the [Troubleshooting](https://docs.oracle.com/en-us/iaas/jms/doc/troubleshooting.html#GUID-2D613C72-10F3-4905-A306-4F2673FB1CD3) chapter for explanations on how to diagnose and resolve common problems encountered when installing or using Java Management Service.
 
