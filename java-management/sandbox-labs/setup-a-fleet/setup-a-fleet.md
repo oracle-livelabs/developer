@@ -104,7 +104,7 @@ In this lab, you will:
 
 15. An **Agent settings** window will appear with the following settings:
 
-    **Java runtime usage in minutes**: specify the frequency at which the management agent must report Java usage to JMS. The values must be between 5 and 90 minutes. The default value is 5 minutes.
+    **Java runtime usage in minutes**: specify the frequency at which the management agent must report Java usage to JMS. The values must be between 5 and 90 minutes. The default value is 60 minutes.
 
     **Agent polling interval**: specify the frequency at which the management agent must check the work requests. For example, if the value specified is 10 minutes, the agent checks the work requests every 10 minutes and executes them. The values must be between 10 minutes and 12 hours. The default value is 10 minutes.
 
