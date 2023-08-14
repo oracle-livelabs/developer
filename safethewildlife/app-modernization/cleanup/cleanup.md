@@ -7,7 +7,7 @@ In this lab, you are going to destroy all the resources you have created on Orac
 Estimated Time: 10 minutes
 
 Watch the video below for a quick walk-through of this lab.
-[AppDev Multiplayer Lab 4](videohub:xxx)
+[AppDev Multiplayer Lab 4](videohub:1_ksovfl6q)
 
 ### Prerequisites
 
@@ -42,7 +42,7 @@ Watch the video below for a quick walk-through of this lab.
 1. Make sure you are still on the directory `deploy/vm/tf-ci`.
 
     ```
-    <copy>cd ~/oci-multiplayer/deploy/vm/tf-ci</copy>
+    <copy>cd ~/save-the-wildlife/deploy/vm/tf-ci</copy>
     ```
 
 2. Run Terraform destroy to delete the resources.
@@ -58,7 +58,7 @@ Watch the video below for a quick walk-through of this lab.
 3. Change the directory back to the root of the project with the following command:
 
     ```
-    <copy>cd ~/oci-multiplayer</copy>
+    <copy>cd ~/save-the-wildlife</copy>
     ```
 
 4. Run the `ci.mjs` command that will give you information about how to delete your container instance.
@@ -107,7 +107,7 @@ Watch the video below for a quick walk-through of this lab.
 
   ![adb delete confirm](./images/adb-delete-confirm.png)
 
-4. Navigate to **`Oracle Databases`** -> **`Virtual Cloud Networks`**.
+4. Navigate to **`Networking`** -> **`Virtual Cloud Networks`**.
 
   ![menu vcn](./images/menu-vcn.png)
 
@@ -136,4 +136,5 @@ Watch the video below for a quick walk-through of this lab.
 
 * **Author** - Victor Martin - Technology Product Strategy Director - EMEA
 * **Author** - Wojciech (Vojtech) Pluta - Developer Relations - Immersive Technology Lead
+* **Author** - Eli Schilling - Developer Relations - Cloud Native and DevOps
 * **Last Updated By/Date** - August, 2023
