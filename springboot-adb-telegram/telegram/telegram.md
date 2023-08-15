@@ -6,11 +6,10 @@ In this lab, you will learn how the Telegram Bot that acts as a frontend works.
 
 Estimated time: 10 minutes
 
-<!-- Watch the video below for a quick walk-through of the lab.
+Watch the video below for a quick walk-through of the lab.
 
-Mac:
 
-[](youtube:xCVhmx7KAm8) -->
+[Lab 2](videohub:1_859wfpo0)
 
 ### Understand the Telegram Bot GUI
 
