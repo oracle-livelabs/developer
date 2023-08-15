@@ -16,10 +16,6 @@ In this workshop, you will:
 - Create container images of the application components and migrate them to [OCI Container Images](https://www.oracle.com/cloud/cloud-native/container-instances/).
 - Add [Redis](https://redis.com/) and [Nginx](https://www.nginx.com/) controller to your application to support scalability, while deploying to [Oracle Container Engine for Kubernetes (OKE)](https://www.oracle.com/cloud/cloud-native/container-engine-kubernetes/).
 
-Watch the video below for a quick walk-through of the workshop.
-
-[DevOps Multiplayer Content](videohub:1_nkh18bn1)
-
 ### Prerequisites
 
 You must have an OCI account. [Click here](https://www.oracle.com/cloud/free/?source=:ow:o:s:nav::DevoGetStarted&intcmp=:ow:o:s:nav::DevoGetStarted) to create a new cloud account.
