@@ -66,4 +66,4 @@ You may now **proceed to the next lab**.
 
 * **Authors** -  Kuassi Mensah, Dir. Product Management, Java Database Access; Peter Song, Developer Advocate JDBC
 * **Contributors** - Jean de Lavarene, Sr. Director of Development, JDBC/UCP
-* **Last Updated By/Date** - Juarez Barbosa, July 2023
+* **Last Updated By/Date** - Juarez Barbosa Junior, July 2023

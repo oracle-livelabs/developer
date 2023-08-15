@@ -49,7 +49,7 @@ The OCI Container Registry is where your Docker images are managed. A container 
 
     ```
     <copy>
-    cd $MTDRWORKSHOP_LOCATION/backend;
+    cd $MTDRWORKSHOP_LOCATION/backend
     source build.sh
     </copy>
     ```
@@ -153,6 +153,6 @@ If you make changes to the image, you need to delete the service and the pods by
 
 ## Acknowledgements
 
-* **Author** \- Peter Song\, Developer Advocate JDBC
-* **Contributors** \- Kuassi Mensah\, Director Product Management and Jean de Lavarene\, Sr\. Director of Development\, JDBC/UCP
-* **Last Updated By/Date** \- Juarez Barbosa\, July 2023
+* **Author** - Peter Song, Developer Advocate JDBC
+* **Contributors** - Kuassi Mensah, Director Product Management and Jean de Lavarene, Sr. Director of Development, JDBC/UCP
+* **Last Updated By/Date** - Juarez Barbosa Junior, July 2023

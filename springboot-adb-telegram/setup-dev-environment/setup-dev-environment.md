@@ -13,17 +13,18 @@ Watch the video below for a quick walk-through of the lab.
 
 * Create a group and give the appropriate permissions to run the setup
 * Clone the GitHub repository and execute the setup script to create the following resources:
-    * 1 Autonomous database
-    * 1 Object Storage bucket
-    * 1 OKE cluster
-    * 1 OCI Registry
-    * 1 Virtual Cloud Network
+  * 1 Autonomous database
+  * 1 Object Storage bucket
+  * 1 OKE cluster
+  * 1 OCI Registry
+  * 1 Virtual Cloud Network
 
 ### Prerequisites
 
 * This lab requires an [Oracle Cloud account](https://www.oracle.com/cloud/free/). You may use your own cloud account, a cloud account that you obtained through a trial, a Free Tier account, or a LiveLabs account.
 
 ## Task 1: Create Group and Appropriate Policies
+
 [Policies](https://docs.oracle.com/en-us/iaas/Content/Identity/Concepts/policies.htm) determine what resources users can access and the level of access they have. You can create a group and add as many users as you like to it. 
 
 **If you are not the tenancy administrator, there may be additional policies you must have in your group to perform some of the steps for this lab. If you cannot create a group and add specific policies, please ask your tenancy administrator for the correct policies to follow.**
@@ -61,7 +62,8 @@ Watch the video below for a quick walk-through of the lab.
     ![Policy details](images/policy-details.png "policy-details")
 
     Select **Show manual editor** and copy and paste the policies in the box below.
-	```
+
+    ```
     <copy>
     Allow group myToDoGroup to use cloud-shell in tenancy
     Allow group myToDoGroup to manage users in tenancy
@@ -69,7 +71,7 @@ Watch the video below for a quick walk-through of the lab.
     Allow group myToDoGroup to manage buckets in tenancy
     Allow group myToDoGroup to manage objects in tenancy
     </copy>
-	```
+    ```
 
 8. Click "Create".
 
@@ -83,18 +85,18 @@ Watch the video below for a quick walk-through of the lab.
 
     Click the Cloud Shell icon in the top-right corner of the Console.
 
-
     ![Cloud Shell icon](images/open-cloud-shell.png "cloud-shell")
 
 ## Task 3: Create a Folder for the Workshop Code
 
-1. Create a directory, which will be used to create a compartment of the same name in your tenancy if you do not provide one of your own. The directory name **must be between 1 and 13 characters, contain only letters or numbers, and start with a letter**. Make sure that a compartment of the same name does not already exist in your tenancy otherwise, the setup will fail. 
+1. Create a directory, which will be used to create a compartment of the same name in your tenancy if you do not provide one of your own. The directory name **must be between 1 and 13 characters, contain only letters or numbers, and start with a letter**. Make sure that a compartment of the same name does not already exist in your tenancy otherwise, the setup will fail.
 
     ````
     <copy>
     mkdir reacttodo
     </copy>
     ````
+
     ````
     <copy>
     cd reacttodo
@@ -104,17 +106,18 @@ Watch the video below for a quick walk-through of the lab.
 ## Task 4: Clone the Workshop Code
 
 1. Clone the workshop code into the directory you've just created.
+
     ````
     <copy>
     git clone -b springboot-bot --single-branch https://github.com/oracle/oci-react-samples.git
     </copy>
     ````
+
     You should now see `oci-react-samples` in your root directory.
 
 ## Task 5: Start the Setup
 
-The setup script uses Terraform, Bash scripts, and SQL to automate the creation of the resources needed for this lab. The script will ask for the necessary components to automate resource creation. 
-
+The setup script uses Terraform, Bash scripts, and SQL to automate the creation of the resources needed for this lab. The script will ask for the necessary components to automate resource creation.
 
 1. Change to the MtdrSpring directory:
 
@@ -134,6 +137,7 @@ The setup script uses Terraform, Bash scripts, and SQL to automate the creation 
     ```
 
 3. Run the following sequence of commands to start the setup
+
     ```
     <copy>
     source env.sh
@@ -141,7 +145,7 @@ The setup script uses Terraform, Bash scripts, and SQL to automate the creation 
     </copy>
     ```
 
-4. If you did previous steps correctly, the setup will ask for your OCID. 
+4. If you did previous steps correctly, the setup will ask for your OCID.
 
     ![User OCID](images/terminal-user-ocid.png "terminal-user-ocid")
 
@@ -178,11 +182,12 @@ The setup script uses Terraform, Bash scripts, and SQL to automate the creation 
 
 7. The setup will ask you to enter the admin password for the database. Database passwords must be 12 to 30 characters and contain at least one uppercase letter, one lowercase letter, and one number. The password cannot have the double quote (") character or the word "admin".
     ![Database Admin Password](images/db-password-prompt.png "db-password-prompt")
-    
+
 8. The setup will ask you to create a UI Username and a password for it. You will need this in order to access the application.
     ![UI Admin and Password](images/UI-Username-prompt.png "UI-username-prompt")
 
 ## Task 6: Monitor the Setup
+
 The setup should take around 20 minutes to complete. During the setup, the cloud shell will output its progress, so keep an eye on it to see what it's doing. If there are any errors, you should check the logs located in the $MTDRWORKSHOP_LOG directory.
 
 1. The setup will update you with the progress of the resource creation. Wait few minutes for the setup to complete to move on to the next lab 
@@ -194,11 +199,12 @@ The setup should take around 20 minutes to complete. During the setup, the cloud
 When the setup completes, you will see a message: **SETUP VERIFIED**
 
 You can view the log files in the $MTDRWORKSHOP_LOG directory. The command below will show you all the log files. You can view the contents of the files if you'd like.
-	```
-	<copy>
-	ls -al $MTDRWORKSHOP_LOG
-	</copy>
-	```
+
+    ```
+    <copy>
+    ls -al $MTDRWORKSHOP_LOG
+    </copy>
+    ```
 
 You may now **proceed to the next lab**.
 
@@ -206,4 +212,4 @@ You may now **proceed to the next lab**.
 
 * **Authors** -  - Kuassi Mensah, Dir. Product Management, Java Database Access; Peter Song, Developer Advocate JDBC
 * **Contributors** - Jean de Lavarene, Sr. Director of Development JDBC/UCP
-* **Last Updated By/Date** - Juarez Barbosa,  July 2023
+* **Last Updated By/Date** - Juarez Barbosa Junior,  July 2023
