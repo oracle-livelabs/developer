@@ -11,13 +11,15 @@ Welcome to Save The Wildlife, an Automated Continuous Integration and Continuous
 During this workshop, you will learn how to build, and deploy an application with several components using OCI DevOps. You will use Terraform to automate the infrastructure components in Oracle Cloud and OCI DevOps service to build and deploy the application into an OCI Kubernetes Cluster.
 
 In this workshop, you will learn how to:
+
 - Create a Kubernetes Cluster
 - Create Autonomous Database
 - Create a DevOps Project, a build pipeline and a deployment pipeline
 - Move to the next version and practice a rollback
 
 Watch the video below for a quick walk-through of the workshop.
-[DevOps Multiplayer Content](videohub:xxx)
+
+[DevOps Multiplayer Content](videohub:1_fr3h231r)
 
 ### Prerequisites
 

@@ -8,14 +8,17 @@ When building and deploying applications in the cloud it is important to underst
 
 ![Save The Wildlife Banner](./images/banner.png)
 
-Estimated Time: 2 minutes
-
 ### Objectives
+
 In this workshop, you will:
 
 - Deploy a simple [Three.js](https://threejs.org/) application to OCI Compute with [Terraform](https://www.terraform.io/), using [Ansible](https://www.ansible.com/) to provide code and configuration.
 - Create container images of the application components and migrate them to [OCI Container Images](https://www.oracle.com/cloud/cloud-native/container-instances/).
 - Add [Redis](https://redis.com/) and [Nginx](https://www.nginx.com/) controller to your application to support scalability, while deploying to [Oracle Container Engine for Kubernetes (OKE)](https://www.oracle.com/cloud/cloud-native/container-engine-kubernetes/).
+
+Watch the video below for a quick walk-through of the workshop.
+
+[DevOps Multiplayer Content](videohub:1_nkh18bn1)
 
 ### Prerequisites
 
