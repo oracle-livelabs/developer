@@ -122,7 +122,7 @@ In this lab, you will complete the process of deploying the application on a Kub
 
 9. Update the deployment manifest with the latest versions.
 
-    ```
+    ```bash
     <copy>npx zx scripts/deploy.mjs</copy>
     ```
 
