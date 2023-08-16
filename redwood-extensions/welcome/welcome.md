@@ -60,15 +60,23 @@ In the Diagram view on the right, you can see the flows and pages for this App U
 
   ![Flow diagram](images/appflow.png)
 
+3. Click on **main-start**:
+
+  ![Click Main](images/clickmainstart.png)
+
+4. In the right panel you'll find the page properties, change the **Name** value to **welcome**:
+
+  ![Double-Click welcome](images/welcomepagename.png)
+
 ## Task 2: Change the Page Template
 
 You should be in the Diagram tab with the Components open.
 
-1. Double-click  **main-start** to open the default page:
+1. Double-click  **welcome** to open the default page:
 
-  ![Double-Click Main](images/doubleclickmainstart.png)
+  ![Double-Click welcome](images/doubleclickwelcome.png)
 
-You are going to configure the main-start page to use the Redwood **Welcome Page Template**.
+You are going to configure the welcome page to use the Redwood **Welcome Page Template**.
 
 2. In the right panel you'll find the page properties, click the **Select Page Template** button:
 
@@ -105,7 +113,7 @@ In the next lab, we'll add some more useful components to the page.
 
 1. In the Components palette's search box, type **search**, which will locate a component called **Input Search**.
 2. Drag this component and drop it on the page in the canvas. A pop-up will appear asking which slot you want to use; choose **Search slot**:
-  ![Search slot](images/slot.png)
+  ![Search slot](images/searchslot.png)
 
 	This field is where users will enter a search term to locate an account. We need to keep track of these terms, so we'll use a page variable to do that.
 
