@@ -515,7 +515,7 @@ Use IDCS to create and add both 'john_\dealer1' and 'sam_\dealer2' users, and th
 
   ![Select Users](images/idcs-user-details.png)
 
-5. 'john_\dealer1' is added successfully.
+5. 'john_dealer1' is added successfully.
 
   ![Add User to Tenancy](images/idcs-user-details-1.png)
 
