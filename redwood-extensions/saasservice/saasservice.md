@@ -41,11 +41,11 @@ Up until now we've worked on the UI (front end) of your application, but now it'
 5. From the list of objects in the Oracle CX system, choose **Accounts**, using the filter at the top to help you, if needed:
 	  ![CX Endpoints](images/endpoints.png)
 
-6. Click **Create**. This creates a connection to the data object and adds it to your app.		
+6. Click **Create**. This creates a connection to the data object and adds it to your app.
 
 	A tab with information about the service is displayed:
 	  ![Service Definition](images/servicedef.png)
-		We'll keep all the default definitions here, so you can close this tab and return to the tab displaying the main-start page.
+		We'll keep all the default definitions here, so you can close this tab and return to the tab displaying the welcome page.
 ## Task 2: Add Data to Your Page
 
 1. In the Designer, click the **Data** tab on the left and expand the Services node until you can see the **accounts** service. (If you don't see any services, click the Refresh icon next to the Filter box at the top of the pane.)
@@ -53,14 +53,14 @@ Up until now we've worked on the UI (front end) of your application, but now it'
 2. Drag and drop the accounts service to the Structure pane and drop it on the **Collection Container**:
 	  ![Drag service](images/drag1.png)
 
-	VB Studio can display data in many different formats, including various types of forms that let your users modify data. In this case we just want to display data in a table.   
+	VB Studio can display data in many different formats, including various types of forms that let your users modify data. In this case we just want to display data in a table.
 
 3. In the **Render as** pop-up, choose **Table** (not Table Dynamic, the first option):
 	  ![Drop as table](images/table.png)
 4. Choose the first endpoint, **getMany**, which shows the top object (an account):
 	  ![Get Many endpoints](images/getmany.png)
 
-	The Add Data dialog displays all the fields that are available for the accounts business object&mdash;quite a long list!  
+	The Add Data dialog displays all the fields that are available for the accounts business object&mdash;quite a long list!
 
 5. Using the filter field at the top, locate each of these fields, then click each field name to add it as a column in our table:
 	* OrganizationName
