@@ -129,7 +129,7 @@ VB Studio apps are event-driven, which means that an event is fired when an end 
 6. Select the **Horizontal Foldout Layout Page Template**:
 
 7. Click **Create**:
-	![Action properties](images/createeditpage.png)
+	![Action properties](images/createdetailspage.png)
 
 8. In the properties panel, locate the **rowIndex** parameter and click **Select Variable**:
 

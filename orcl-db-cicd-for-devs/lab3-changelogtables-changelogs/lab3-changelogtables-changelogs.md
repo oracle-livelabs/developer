@@ -1,12 +1,16 @@
-# (Optional) Lab 3: Look under the hood - understanding changelog tables & changelogs
+# Lab 3: Look under the hood - understanding changelog tables & changelogs
 
 ## Introduction
-![MovieStream Work Area](./images/1moviestreamworkarea.png)
+
+![MovieStream Work Area](./images/moviestreamworkarea.png)
+
 Welcome to Lab 3! Now that you’ve populated your MOVIESTREAM_DEV schema and it’s all ready for you to load your data and start developing, let’s learn a little bit more about some important Liquibase concepts.
 
->**Note:** This lab is optional and does not contain steps necessary for the completion of the workshop. It does however teach core concepts important for fully understanding and utilizing SQLcl Liquibase
+>**Note:** This lab is informational and does not contain steps necessary for the completion of the workshop. It does however teach core concepts important for fully understanding and utilizing SQLcl Liquibase
 
 *Estimated Time:* 15 Minutes
+
+[Lab 3](videohub:1_voa0ehpq) 
 
 
 ### Objectives
@@ -186,7 +190,7 @@ Completion of:
                 * A namespace is a uniform resource identifier (URI). Think of it as a collection of unique elements available to use
                    * A URI is a way to uniquely identify “anything”
                    * XML namespaces are used to provide uniquely named elements and attributes in an XML document
-                * The second is the location of the XML schema to use for that namespace  
+             * The second is the location of the XML schema to use for that namespace  
    </details>
 
    <details>
@@ -274,5 +278,5 @@ Completion of:
 
 ## Acknowledgements
 
-- **Author** - Zachary Talke, Product Manager
+- **Author** - Zachary Talke, Senior Product Manager
 - **Last Updated By/Date** - Zachary Talke, May 2023

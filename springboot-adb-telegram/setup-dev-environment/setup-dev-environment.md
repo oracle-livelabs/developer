@@ -102,7 +102,6 @@ Watch the video below for a quick walk-through of the lab.
     cd reacttodo
     </copy>
     ````
-
 ## Task 4: Clone the Workshop Code
 
 1. Clone the workshop code into the directory you've just created.
@@ -205,7 +204,7 @@ You can view the log files in the $MTDRWORKSHOP_LOG directory. The command below
     ls -al $MTDRWORKSHOP_LOG
     </copy>
     ```
-
+    
 You may now **proceed to the next lab**.
 
 ## Acknowledgements

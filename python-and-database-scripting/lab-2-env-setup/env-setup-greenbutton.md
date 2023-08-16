@@ -5,7 +5,7 @@
 This tutorial is an introduction to using Python with Oracle Database. It contains beginner and advanced material. Follow the steps in this document. The **tutorial** directory has scripts to run and modify.
 This lab will show you how to install the **python-oracledb** driver and how to configure and test the connection to the Oracle Autonomous Database, shared infrastructure.
 
-Estimated Time: 15 minutes
+Estimated Time: 5 minutes
 
 Watch the video below for a quick walk-through of the lab.
 [Environment Setup](videohub:1_s2pdny0p)
@@ -16,7 +16,7 @@ Watch the video below for a quick walk-through of the lab.
 
 python-oracledb driver is compatible with Python versions 3.6 through 3.11. Prebuilt packages are available on Windows for Python 3.7 or later, on macOS for Python 3.7 or later, and on Linux for Python 3.6 or later.
 
-python-oracledb 1.3 is available. It has a default **Thin** mode for direct connection to Oracle Database and Oracle client libraries are optional.
+python-oracledb 1.3.2 is available. It has a default **Thin** mode for direct connection to Oracle Database and Oracle client libraries are optional.
 In **Thick** mode, some advanced Oracle Database functionality is currently only available when optional Oracle Client libraries are loaded by python-oracledb. Libraries are available in the free Oracle Instant Client packages. Python-oracledb can use Oracle Client libraries 11.2 through 21c.
 
 Python is open-source, cross-platform, and free of cost. There's no excuse not to give Python a try!

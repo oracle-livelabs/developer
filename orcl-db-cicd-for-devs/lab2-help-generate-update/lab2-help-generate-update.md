@@ -1,7 +1,8 @@
 # Lab 2: Liquibase basics - help, generate, and update commands
 
 ## Introduction
-![MovieStream Workspace](./images/1moviestreamworkspace.png)
+
+![MovieStream Workspace](./images/moviestreamworkspace.png)
 
 Now that your setup is complete, you are going to populate a new database schema: your personal development user MOVIESTREAM\_DEV. This way you have the database objects you will need for your development work.
 
@@ -15,6 +16,7 @@ In this lab, you will be replicating the database schema from the MOVIESTREAM\_M
 
 *Estimated Time:* 25 Minutes
 
+[Lab 2](videohub:1_qzydao2e) 
 
 ### Objectives
 In this lab you will:
@@ -316,5 +318,5 @@ Completion of:
     * [What's The Difference Between An Oracle Database Schema & User](https://www.talke.tech/blog/whats-the-difference-between-a-db-schema-and-db-user)
 ## Acknowledgements
 
-- **Author** - Zachary Talke, Product Manager
+- **Author** - Zachary Talke, Senior Product Manager
 - **Last Updated By/Date** - Zachary Talke, May 2023

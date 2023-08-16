@@ -53,7 +53,6 @@ The OCI Container Registry is where your Docker images are managed. A container 
     source build.sh
     </copy>
     ```
-
 In a couple of minutes, you should have successfully built and pushed the images into the OCI repository.
 
 2. Check your container registry in your compartment (refresh the console if the image is not shown)
@@ -148,7 +147,6 @@ If you make changes to the image, you need to delete the service and the pods by
     source undeploy.sh
     </copy>
     ```
-
 2. Rebuild the image + Deploy + (Re)Configure the API Gateway
 
 ## Acknowledgements

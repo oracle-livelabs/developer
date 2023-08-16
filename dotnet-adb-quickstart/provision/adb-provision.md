@@ -132,4 +132,4 @@ Click [here](https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-clo
 ## Acknowledgements
 
 - **Author** - Richard Green, Alex Keh
-- **Last Updated By/Date** - Alex Keh, August 2022
+- **Last Updated By/Date** - Alex Keh, June 2023

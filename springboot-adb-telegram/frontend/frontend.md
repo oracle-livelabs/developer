@@ -49,7 +49,6 @@ In this lab, you will:
     Here we can see that a `frontend-src-dir` is specified. 
 3. Inside the `<build>` portion of our `pom.xml`, we specify our working directory as the `frontend-src-dir` we specified earlier, and within the `<execution>` section of the `pom.xml` we specify what we want to accomplish. In this case, we want to install node and npm, then create our build folder. For further detail on this plugin navigate [here](https://github.com/eirslett/frontend-maven-plugin)
 
-
     ![Plugin](images/erislett-plugin.png "erislett")
 
 4. Once the build folder is created, we use the `maven-resources-plugin` to copy the resources from our build folder into the outputDirectory. `${project.build.outputDirectory}` is a default location provided to you by Maven. Read the maven specifications for more details.

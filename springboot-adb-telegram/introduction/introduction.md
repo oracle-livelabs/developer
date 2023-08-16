@@ -10,8 +10,6 @@ Estimated Workshop Time: 50 minutes
 
 ![springboot-image](images/springboot-image.png "springboot")
 
-
-
 ![application](images/application-1.png "application")
 
 ### About Product/Technology
