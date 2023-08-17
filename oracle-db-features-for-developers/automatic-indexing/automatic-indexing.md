@@ -18,7 +18,7 @@ Traditionally, DBAs have been responsible for monitoring performance and decidin
 Automatic indexing addresses these issues. It is not a simple advisor, but instead, it is an expert system that implements indexes based on what a performance engineer skilled in index tuning would do. The Oracle Database analyzes the application workload and identifies the queries that will benefit from additional indexes. In other words, it identifies candidate indexes and validates them before implementation, and the entire process is fully automatic.
 
 Here is a summary of the workflow:
-  ![workflow](images/ai_flow.png " ")
+![workflow](images/ai_flow.png " ")
 
 Watch the video below to view the benefits of the Automatic Indexing feature.
 
@@ -32,7 +32,7 @@ Watch the video below to view the benefits of the Automatic Indexing feature.
 
 ### Prerequisites
 
-*Note : This Lab can ONLY be run on Exadata environments; attempting to enable Automatic Indexing on non-Exadata systems will result in an error.*
+>**Note:** This Lab can ONLY be run on Exadata environments; attempting to enable Automatic Indexing on non-Exadata systems will result in an error.*
 
 This lab assumes you have completed the following labs:
 * Lab: Login to Oracle Cloud

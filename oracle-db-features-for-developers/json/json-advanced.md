@@ -142,7 +142,7 @@ If you have logged out of the Cloud Shell, perform the commands below.
 
 1.  In order to retrieve information about castles from GeoNames web service, we have to create a new function. The input for this function is the ISO country code, the code of the region, and the code of the sub-region. The output is a JSON document with all castles in that sub-region.
 
-    Note: Remember to replace ***GeoNames_username***.
+    >**Note:** Remember to replace ***GeoNames_username***.
 
     ````
     <copy>
