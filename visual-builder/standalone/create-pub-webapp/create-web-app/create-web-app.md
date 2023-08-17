@@ -55,20 +55,20 @@ The first thing we'll do is create the web application itself. Later, we'll cons
 
     ![This image shows a new application's Welcome page. It contains tiles in three sections. The Connect to Data contains the Service Connections and Business Objects tiles. The Create Apps section contains the Mobile Apps and Web Apps tiles. The Add Artifacts section contains the Components and Process tiles. On the right are Learn and Help sections with references to documentation and other resources.](images/visual-app-welcome.png "")
 
-    The Welcome page contains a set of tiles in three groups: **Connect to Data**, **Create Apps**, and **Add Artifacts**. On the far left are icons representing Mobile Applications, Web Applications, Services, Business Objects, Layouts, Components, Processes, and Source. This vertical toolbar is the Navigator.
+    The Welcome page contains a set of tiles in three groups: **Create Apps**, **Connect to Data**, and **Add Artifacts**. On the far left are icons representing Web Applications, Services, Business Objects, Layouts, Components, Processes, and Source. This vertical toolbar is the Navigator.
 
-    Now take note of the header:
+    Take note of the header:
     ![This image shows the visual application's header. The application name HR Visual Application is on the left. On the right are icons that let you perform other actions: Undo, Redo, Git, Go to File, Preview, and Menu.](images/header.png "")
 
-    The `DEV` and `1.0` tags next to the application name on the left indicate the application status (DEV for development) and version (1.0). Elements on the right let you perform various actions. For example, you can undo your most recent change or search for a file. This workshop primarily demonstrates the options to preview your app, stage, then publish it. If you make a mistake during this workshop, click ![Undo icon](images/undo-icon.png) to back out of the last step you did.
+    The `DEVELOPMENT` and `1.0` tags next to the application name on the left indicate the application status (DEVELOPMENT, STAGE, or LIVE) and version (1.0). Elements on the right let you perform various actions. For example, you can undo your recent changes or search for a file. This workshop primarily demonstrates the options to preview your app, stage, then publish it. If you make a mistake during this workshop, click ![Undo icon](images/undo-icon.png) to back out of the last step you did.
 
     Now take a look at the footer, which has tools that help you debug and maintain your visual app (we'll briefly look at Audits in this workshop):
 
     ![Footer in the HR Visual Application, which shows Audits, Find in Files, Logs, Tests, and Trace tabs.](images/footer.png "Footer")
 
-    Keep in mind that Visual Builder saves your changes automatically as you work. A timestamp at the bottom of the page will show the time  your work was last saved.
+    Keep in mind that Visual Builder saves your changes automatically as you work. A timestamp at the bottom right of the footer will show when your work was last saved.
 
-4. We want to create a web app, so under **Create Apps**, click **Web Apps**.
+4. We want to create a web app, so under **Create Apps**, click **Responsive Apps**.
 
     The Navigator opens in the Web Apps pane.
 
