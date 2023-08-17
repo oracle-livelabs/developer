@@ -539,7 +539,7 @@ Use IDCS to create and add both 'john\_dealer1' and 'sam\_dealer2' users, and th
 
   ![Select dealer instance](images/select-dealer1-instance-1.png)
 
-13. Click on application roles to grant 'john\_dealer1' ADMIN and REST_CLIENT privileges. Doing so will give 'john_dealer1' access to call all REST proxy endpoints available on the REST proxy node along with any necessary admin access control. Please see the OBP documentation to learn more.
+13. Click on application roles to grant 'john\_dealer1' ADMIN and REST_CLIENT privileges. Doing so will give 'john\ _dealer1' access to call all REST proxy endpoints available on the REST proxy node along with any necessary admin access control. Please see the OBP documentation to learn more.
 
   ![Select Application Roles](images/application-roles-1.png)
 
