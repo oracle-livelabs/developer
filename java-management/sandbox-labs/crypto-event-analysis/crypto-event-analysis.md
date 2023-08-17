@@ -6,6 +6,8 @@ This lab walks you through the steps to perform a Crypto event analysis on the J
 
 Estimated Time: 30 minutes
 
+[Lab 4](videohub:1_7wzu9ihb)
+
 ### Objectives
 
 In this lab, you will:

@@ -6,6 +6,8 @@ This lab walks you through the steps to set up a new fleet in Java Management Se
 
 Estimated Time: 10 minutes
 
+[Lab 1](videohub:1_0xopalqx)
+
 ### Objectives
 
 In this lab, you will:
