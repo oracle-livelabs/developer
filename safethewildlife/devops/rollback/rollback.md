@@ -143,7 +143,7 @@ In this lab, you are going to change the code to one of the components and relea
 
 You may now [proceed to the next lab](#next).
 
-## Acknowledgments
+## Acknowledgements
 
 * **Author** - Victor Martin, Tech Product Strategy Director (EMEA)
 * **Contributors** - Wojciech Pluta - DevRel, Eli Schilling - DevRel

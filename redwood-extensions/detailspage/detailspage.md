@@ -17,7 +17,7 @@ In this lab, you will:
 
 ## Task 1: Configure Redwood page template variables
 
-1. Starting in the main-start page in the **Page Designer** tab, click the **Live** button:
+1. Starting in the welcome page in the **Page Designer** tab, click the **Live** button:
 
 	![Live view](images/liveview.png)
 
@@ -106,7 +106,7 @@ Notice the template includes a button to take you back to the parent page.  You 
 4. Your app should now look something like this.
 	  ![label property](images/finishdetails.png)
 
-5. Switch to **Live** mode and use the **Parent page** button to switch back to the **main-start** page, then click **Preview** in the header to see your app live.
+5. Switch to **Live** mode and use the **Parent page** button to switch back to the **welcome** page, then click **Preview** in the header to see your app live.
 
 You may now close the preview browser tab and **proceed to the next lab**.
 
