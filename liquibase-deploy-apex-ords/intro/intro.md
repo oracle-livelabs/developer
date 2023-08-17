@@ -17,6 +17,9 @@ With SQLcl Liquibase you can integrate database change automation into your larg
 
 *Estimated Workshop Time:* 25 Minutes
 
+Watch the video below for a quick walk-through of the workshop.
+[Full Workshop](videohub:1_yfa0c6n9)
+
 
 ### Objectives
 Learn to deploy an APEX application and supporting components using SQLcl Liquibase in this hands-on workshop:

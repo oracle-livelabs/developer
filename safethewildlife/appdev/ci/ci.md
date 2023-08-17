@@ -6,10 +6,12 @@ In this lab, we will create container images for the application components and 
 
 To help streamline the process, you'll use a custom script to create and publish container images to the [OCI Container Registry](https://www.oracle.com/cloud/cloud-native/container-registry/). Container Registry makes it easy to store, share, and managed container images. Registries can be private (default) or public.
 
+![simplified container instances architecture](./images/container-instances-architecture.png)
+
 Estimated Time: 15 minutes
 
 Watch the video below for a quick walk-through of this lab.
-[AppDev Multiplayer Lab 2](videohub:xxx)
+[AppDev Multiplayer Lab 2](videohub:1_4c5z3rcw)
 
 ### Prerequisites
 
@@ -147,8 +149,6 @@ In this second and final task, you will add the Container Instance private IP ad
   ![tf-output](images/tf-output.png)
 
 9. Paste the Load Balancer public IP address on a browser tab and try the Container Instance deployment.
-
-  ![game](images/game.png)
 
 You may now [proceed to the next lab](#next).
 

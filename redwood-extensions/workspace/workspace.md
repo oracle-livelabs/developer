@@ -125,7 +125,7 @@ Clicking the name of components in the list will open a details page for that co
 ![Edit values](images/opencomponentstab.png)
 2. Click the Installed tab and check if the five Redwood components listed at the start of this task are already installed in your app, if they are you can skip the following steps and continue to the next lab:
 ![Edit values](images/installedcomponents.png)
-3. If any of the above components are not installed, click the Browse tab:
+3. If any of the above components are not installed (Version numbers may be different), click the Browse tab:
 
 Install the **Collection Container** component.
 1. In the **Search** field, enter **Collection Container**:

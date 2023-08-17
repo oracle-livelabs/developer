@@ -102,7 +102,7 @@ In this optional lab, you are going to clean the resources created during the wo
 
 7. Congratulations you have cleaned the infrastructure and learned how to build and deploy your microservice application.
 
-## Acknowledgments
+## Acknowledgements
 
 * **Author** - Victor Martin, Tech Product Strategy Director (EMEA)
 * **Contributors** - Wojciech Pluta - DevRel, Eli Schilling - DevRel
