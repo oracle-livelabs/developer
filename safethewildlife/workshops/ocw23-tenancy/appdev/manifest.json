@@ -5,7 +5,7 @@
     {
       "title": "Introduction",
       "description": "What the workshop is about",
-      "filename": "../../app-modernization/intro/intro.md"
+      "filename": "../../../appdev/intro/intro.md"
     },
     {
       "title": "Get Started",
@@ -15,22 +15,22 @@
     {
       "title": "Lab 1: Deploy on Virtual Machines",
       "description": "Deploy on Virtual Machines",
-      "filename": "../../app-modernization/vm/vm.md"
+      "filename": "../../../appdev/vm/vm.md"
     },
     {
       "title": "Lab 2: Deploy on Container Instances",
       "description": "Deploy on Container Instances",
-      "filename": "../../app-modernization/ci/ci.md"
+      "filename": "../../../appdev/ci/ci.md"
     },
     {
       "title": "Lab 3: Deploy on Kubernetes",
       "description": "Deploy on Kubernetes",
-      "filename": "../../app-modernization/k8s/k8s.md"
+      "filename": "../../../appdev/k8s/k8s.md"
     },
     {
       "title": "Lab 4: Clean Up (Optional)",
       "description": "Clean Up (Optional)",
-      "filename": "../../app-modernization/cleanup/cleanup.md"
+      "filename": "../../../appdev/cleanup/cleanup.md"
     },
     {
       "title": "Need help",

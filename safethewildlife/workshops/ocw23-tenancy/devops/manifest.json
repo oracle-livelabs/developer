@@ -5,7 +5,7 @@
     {
       "title": "Introduction",
       "description": "Introduction",
-      "filename": "../../devops/intro/intro.md"
+      "filename": "../../../devops/intro/intro.md"
     },
     {
       "title": "Get Started",
@@ -15,37 +15,37 @@
     {
       "title": "Lab 1: GitHub Fork",
       "description": "Fork GitHub repo",
-      "filename": "../../devops/repo/repo.md"
+      "filename": "../../../devops/repo/repo.md"
     },
     {
       "title": "Lab 2: Foundation Infrastructure ",
       "description": "Foundation Infrastructure",
-      "filename": "../../devops/infra1/infra1.md"
+      "filename": "../../../devops/infra1/infra1.md"
     },
     {
       "title": "Lab 3: DevOps Infrastructure",
       "description": "DevOps Infrastructure",
-      "filename": "../../devops/infra2/infra2.md"
+      "filename": "../../../devops/infra2/infra2.md"
     },
     {
       "title": "Lab 4: Build Pipeline",
       "description": "Run the OCI DevOps Build Pipeline",
-      "filename": "../../devops/buildpipeline/buildpipeline.md"
+      "filename": "../../../devops/buildpipeline/buildpipeline.md"
     },
     {
       "title": "Lab 5: Deployment Pipeline",
       "description": "Run the OCI DevOps Deployment Pipeline",
-      "filename": "../../devops/deploy/deploy.md"
+      "filename": "../../../devops/deploy/deploy.md"
     },
     {
       "title": "Lab 6: Release New Feature",
       "description": "Develop and deploy a new feature",
-      "filename": "../../devops/rollback/rollback.md"
+      "filename": "../../../devops/rollback/rollback.md"
     },
     {
       "title": "Lab 7: Clean Up (Optional)",
       "description": "Clean up infrastructure",
-      "filename": "../../devops/clean/clean.md"
+      "filename": "../../../devops/clean/clean.md"
     },
     {
       "title": "Need help",

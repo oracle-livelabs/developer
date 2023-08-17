@@ -6,11 +6,9 @@
 
 In this workshop, you will explore how to use SpringBoot to build microservices and deploy a Cloud Native application. You will serve the data to a Telegram Chatbot and persist your data in the Oracle Autonomous database while utilizing Oracle Cloud Infrastructure (OCI) services.
 
-Estimated Time: 50 minutes
+Estimated Workshop Time: 50 minutes
 
 ![springboot-image](images/springboot-image.png "springboot")
-
-
 
 ![application](images/application-1.png "application")
 
@@ -41,4 +39,4 @@ You may now **proceed to the next lab**.
 * **Author** - Juarez Barbosa, Sr. Principal Java Developer Evangelist, Java Database Access; Peter Song, Developer Advocate, JDBC
 * **Contributors** - Jean de Lavarene, Sr. Director of Development, JDBC/UCP; Kuassi Mensah, Dir. Product Management, Java Database Access;
 Peter Song, Developer Advocate, JDBC
-* **Last Updated By Date** - Juarez Barbosa, June 2023
+* **Last Updated By Date** - Juarez Barbosa Junior, June 2023
