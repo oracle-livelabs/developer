@@ -1,10 +1,10 @@
 {
 	"info": {
-		"_postman_id": "fe4b2ed4-6795-4d78-9613-0941612d1ecc",
+		"_postman_id": "96fe6f9e-ce55-42eb-a6b2-67233992d903",
 		"name": "Car Marketplace",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "12346734",
-		"_collection_link": "https://solar-comet-691102.postman.co/workspace/HOL-87~30695f18-4593-414d-b2a9-df879f0cfad1/collection/12346734-fe4b2ed4-6795-4d78-9613-0941612d1ecc?action=share&creator=12346734&source=collection_link"
+		"_collection_link": "https://solar-comet-691102.postman.co/workspace/Hands-On-Lab~657ba252-be89-41e9-8ab0-283731231305/collection/12346734-96fe6f9e-ce55-42eb-a6b2-67233992d903?action=share&creator=12346734&source=collection_link"
 	},
 	"item": [
 		{
@@ -388,7 +388,83 @@
 			"response": []
 		},
 		{
-			"name": "Step-7 : Add NFT Minter Role to Dealer-1",
+			"name": "Step-7 : Add Fiat Token Minter Role to Dealer1",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "{{bc-admin-user-password}}",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "{{bc-admin-user}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"chaincode\": \"{{bc-chaincode-name}}\",\n    \"args\": [\n        \"AddRole\",\n        \"{{bc-organization-id-1}}\",\n        \"{{bc-user-id-1}}\",\n        \"minter\",\n        \"{\\\"tokenId\\\": \\\"{{bc-token-id}}\\\"}\"\n    ],\n    \"timeout\": {{bc-timeout}}, \n    \"sync\": true\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{bc-rest-url}}",
+					"host": [
+						"{{bc-rest-url}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Step-8 : Add Fiat Token Minter Role to Dealer2",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "{{bc-admin-user-password}}",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "{{bc-admin-user}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"chaincode\": \"{{bc-chaincode-name}}\",\n    \"args\": [\n        \"AddRole\",\n        \"{{bc-organization-id-2}}\",\n        \"{{bc-user-id-2}}\",\n        \"minter\",\n        \"{\\\"tokenId\\\": \\\"{{bc-token-id}}\\\"}\"\n    ],\n    \"timeout\": {{bc-timeout}}, \n    \"sync\": true\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{bc-rest-url}}",
+					"host": [
+						"{{bc-rest-url}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Step-9 : Add NFT Minter Role to Dealer-1",
 			"request": {
 				"auth": {
 					"type": "basic",
@@ -426,7 +502,7 @@
 			"response": []
 		},
 		{
-			"name": "Step-8 : Add NFT Minter Role to Dealer-2",
+			"name": "Step-10 : Add NFT Minter Role to Dealer-2",
 			"request": {
 				"auth": {
 					"type": "basic",
@@ -464,7 +540,7 @@
 			"response": []
 		},
 		{
-			"name": "Step-9 : Get Account Details of Token Admin",
+			"name": "Step-11 : Get Account Details of Token Admin",
 			"request": {
 				"auth": {
 					"type": "basic",
@@ -502,7 +578,7 @@
 			"response": []
 		},
 		{
-			"name": "Step-10 : Initialize Dealer1 Inventory",
+			"name": "Step-12 : Initialize Dealer1 Inventory",
 			"request": {
 				"auth": {
 					"type": "basic",
@@ -540,7 +616,7 @@
 			"response": []
 		},
 		{
-			"name": "Step-11 :  Initialize Dealer2 Inventory",
+			"name": "Step-13 :  Initialize Dealer2 Inventory",
 			"request": {
 				"auth": {
 					"type": "basic",

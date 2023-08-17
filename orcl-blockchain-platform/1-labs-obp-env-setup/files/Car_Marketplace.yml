@@ -181,27 +181,18 @@ assets:
           
           - name: VIN
             type: string
-            validate: min(17),max(17)
-            mandatory: true
            
           - name: make
             type: string
-            validate: /^\s*(cheverolet|ford|general\smotors|toyota|hyundai|tesla|tata|fiat|volkswagen|peugeot)\s*$/
-            mandatory: true
 
           - name: model
             type: string
-            mandatory: true
 
           - name: year
             type: number
-            validate: positive()
-            mandatory: true
 
           - name: year1stsold
             type: number
-            validate: positive()
-            mandatory: true
 
           - name: fuel
             type: string

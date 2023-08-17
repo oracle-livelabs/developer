@@ -497,7 +497,7 @@ Each member using a channel (whether founder or participant) must designate at l
 
 ## Task 12: Create Dealership Accounts
 
-Use IDCS to create and add both 'john_\dealer1' and 'sam_\dealer2' users, and then assign them roles to control usage of their OBP instances: 'dealer1' and 'dealer2'.
+Use IDCS to create and add both 'john_dealer1' and 'sam_dealer2' users, and then assign them roles to control usage of their OBP instances: 'dealer1' and 'dealer2'.
 
 1. Login to your OCI Tenancy and browse to **Domains**.  
 
@@ -511,7 +511,7 @@ Use IDCS to create and add both 'john_\dealer1' and 'sam_\dealer2' users, and th
 
   ![IDCS Dashboard](images/idcs-create-user.png)
 
-4. Deselect Use the email address as the user name, provide the dealership name (e.g. 'john_\dealer1') for Last Name and User Name, as well as the email associated to your OCI account and select Create.
+4. Deselect Use the email address as the user name, provide the dealership name (e.g. 'john_dealer1') for Last Name and User Name, as well as the email associated to your OCI account and select Create.
 
   ![Select Users](images/idcs-user-details.png)
 
@@ -531,7 +531,7 @@ Use IDCS to create and add both 'john_\dealer1' and 'sam_\dealer2' users, and th
 
   ![Close Window](images/close-window.png)
 
-11. Open a new tab and navigate to the [OCI login page](https://cloud.oracle.com). Provide your tenancy account name and select **Next**. Sign-in with your admin (*not* the 'john\_dealer1') credentials.
+11. Open a new tab and navigate to the [OCI login page](https://cloud.oracle.com). Provide your tenancy account name and select **Next**. Sign-in with your admin (*not* the 'john_dealer1') credentials.
 
   ![OCI tenancy login](images/oci-tenancy-login.png)
 
