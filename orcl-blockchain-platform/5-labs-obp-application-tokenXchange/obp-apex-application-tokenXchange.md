@@ -129,13 +129,9 @@ You will now create a car and simulate a transaction between the founder organiz
 
 Purchase order will now be created.
 
-## Task 6: Dealer1 - Review & Confirm the order placed by dealer2
+## Task 6: dealer1 - Review & Confirm the order placed by dealer2
 
-1. Return to dealer 1's account, and navigate to orders received. You should be able to see the order placed by dealer 2.
-
-  ![Car Delaership](images/apex-myOrders.png)
-
-2. Select the actions icon (pencil) on the order received and process the order.
+1. Return to dealer 1's account, and navigate to orders received. You should be able to see the order placed by dealer 2. Select the actions icon (pencil) on the order received and process the order.
 
   ![Car Delaership](images/apex-Pic_13.jpg)
 
@@ -149,18 +145,8 @@ This action confirms the order by the seller.
 
 Select "Accept Receipt" to complete order or "Cancel Order" to cancel the order.
 
-## Task 8: dealer2 - Generate Invoice & Payment
 
-1. Generate & View the invoice for the order Processed
-
-  ![Car Delaership](images/apex-invoice-details.png)
-
-2. Make a Payment
-
- ![Car Delaership](images/apex-proceed-payment.png)
-
-
-## Task 9: dealer2 - Token Transfer & Delivery
+## Task 8: dealer2 - Token Transfer & Delivery
 1. Once purchaser Accepts receipt, the token transfer will now occur and the vehicle will be delivered to the new owner.
 
   ![Car Delaership](images/apex-Pic_15.jpg)
