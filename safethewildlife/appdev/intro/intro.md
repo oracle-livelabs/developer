@@ -8,9 +8,8 @@ When building and deploying applications in the cloud it is important to underst
 
 ![Save The Wildlife Banner](./images/banner.png)
 
-Estimated Time: 2 minutes
-
 ### Objectives
+
 In this workshop, you will:
 
 - Deploy a simple [Three.js](https://threejs.org/) application to OCI Compute with [Terraform](https://www.terraform.io/), using [Ansible](https://www.ansible.com/) to provide code and configuration.
