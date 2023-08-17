@@ -8,6 +8,11 @@
       "filename": "../../introduction/introduction.md"
     },
     {
+      "title": "Get Started",
+      "description": "Using noVNC Remote Desktop",
+      "filename": "https://oracle-livelabs.github.io/common/labs/remote-desktop/using-novnc-remote-desktop.md"
+    },
+    {
       "title": "Lab 1: Create 3 Organization Blockchain Network & Generate Smart Contracts ",
       "description": "OBP Environment Setup",
       "filename": "../../1-labs-obp-env-setup/obp-console.md"
