@@ -12,6 +12,8 @@ As a customer, you can:
 
 Estimated Time: 40 minutes
 
+[Lab 8](videohub:1_qdahpt8r)
+
 ### Objectives
 
 In this lab, you will:

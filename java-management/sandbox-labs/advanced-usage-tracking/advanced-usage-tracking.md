@@ -10,6 +10,8 @@ Both of these task can be done in parallel.
 
 Estimated Time: 40 minutes
 
+[Lab 3](videohub:1_uqh7nh75)
+
 ### Objectives
 
 In this lab, you will:
