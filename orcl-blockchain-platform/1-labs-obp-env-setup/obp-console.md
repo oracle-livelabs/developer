@@ -1,4 +1,4 @@
-# Create a Blockchain Network connecting 3 Organizations
+# Create a Blockchain Network the connects 3 Organizations
 
 ## Introduction
 

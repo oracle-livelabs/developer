@@ -1,4 +1,4 @@
-# How to Build User Interface using Oracle APEX and Integrate with Oracle Blockchain Platform
+# How to Build User Interface using Oracle APEX Integrating with Oracle Blockchain Platform
 
 ## Introduction
 

@@ -105,11 +105,11 @@ You will now create a car and simulate a transaction between the founder organiz
 
 2. Navigate to Account Balance tab.
 
-  ![Car Delaership](images/apex-Pic_7.jpg)
+  ![Car Delaership](images/apex-Pic_9.jpg)
 
 3. Select Deposit Money, and enter desired amount. Account Balance should be updated to reflect amount deposited.
 
-  ![Car Delaership](images/apex-Pic_9.jpg)
+  ![Car Delaership](images/apex-Pic_18.jpg)
 
 ## Task 4: dealer2 - Search Car
 
