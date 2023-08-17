@@ -48,8 +48,8 @@ This lab assumes you have:
   ![Web Credentials](images/4-apex-5-4.png)
 
 6. Repeat step 1-4 for the other two web credentials, using the passwords belonging to the Dealership accounts in Lab 1 - Task 12.
-  - dealer_1_obp_auth (john_dealer1 account)
-  - dealer_2_obp_auth (sam_dealer2 account)
+  - dealer\_1\_obp\_auth (john\_dealer1 account)
+  - dealer\_2\_obp\_auth (sam\_dealer2 account)
 
 
 ## Task 2: Complete Car Marketplace Workshop by Trading a Car - Add a car to dealer1 Inventory
@@ -62,7 +62,7 @@ You will now create a car and simulate a transaction between the founder organiz
 
   ![Car Delaership](images/apex-carmarketplace-run.png)
  
- 2. Login as a dealer (e.g. john_dealer1) and land on My Inventory. Use the same password configured for john_dealer1 in *Lab4* Use the same password configured for john_dealer1 in *Lab4*
+ 2. Login as a dealer (e.g. john\_dealer1) and land on My Inventory. Use the same password configured for john\_dealer1 in *Lab4* Use the same password configured for john_dealer1 in *Lab4*
 
   ![Car Delaership](images/dealer1-login.png)
 
