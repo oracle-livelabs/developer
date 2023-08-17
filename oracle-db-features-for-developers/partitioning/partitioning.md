@@ -44,7 +44,9 @@ This lab assumes you have completed the following labs:
 1.  Login to the instance using Oracle Cloud Shell and ssh.
 
     ````
+    <copy>
     ssh -i ~/.ssh/<sshkeyname> opc@<Your Compute Instance Public IP Address>
+    </copy>
     ````
 
 2.  This lab uses the Sales History sample schema (SH). Create two new folders on disk (using the *opc* user). These folders will be used later as a location for some external partitions.
@@ -63,6 +65,7 @@ This lab assumes you have completed the following labs:
     ![create folders](./images/step1.1-shschema.png " ")
 
 2.  Now, switch to the oracle user
+
     ````
     <copy>
     sudo su - oracle
@@ -71,6 +74,7 @@ This lab assumes you have completed the following labs:
     ![substitute user oracle](./images/sudo-oracle.png " ")
 
 3.  Set your oracle environment.  When prompted enter **[ORCL]**
+
     ````
     <copy>
     . oraenv

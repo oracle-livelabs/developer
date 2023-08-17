@@ -35,7 +35,9 @@ Grant Required Privileges to the OE user.
 1.  If you aren't already logged in, login to the instance using ssh.  If you are already logged in as the *opc* user, skip to Step 4.
 
     ````
+    <copy>
     ssh -i ~/.ssh/<sshkeyname> opc@<Your Compute Instance Public IP Address>
+    </copy>
     ````
 
 2.  Switch to the oracle user

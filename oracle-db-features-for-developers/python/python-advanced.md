@@ -43,39 +43,39 @@ You will need to download the HERE (Formerly NAVTEQ) archive, a sample geographi
 
 1. Extract the World Sample Bundle in the directory /home/opc/labs/python
 
-        ````
-        <copy>
-        cd /home/opc/labs/python
+    ````
+    <copy>
+    cd /home/opc/labs/python
 
-        unzip world_sample_q114.zip
-        </copy>
-        ````
+    unzip world_sample_q114.zip
+    </copy>
+    ````
 
 2.	The directory created from the zip file is named *world_sample_q114* and the directory will contain a dump file, a README and 2 SQL files
 
-````
+    ````
     ls -al /home/opc/labs/python/world_sample_q114
-````
-![list files](./images/p_worldSample-list.png)
+    ````
 
-
+    ![list files](./images/p_worldSample-list.png)
 
 3. Create the user *world_sample* in the database and a DIRECTORY object named *world_sample*
 Connect to the *orclpdb* database as the SYS user
-````
-    sqlplus sys/Ora_DB4U@localhost:1521/orclpdb as sysdba
-````
-and create the following user and directory
 
-````
-<copy>
-CREATE USER world_sample IDENTIFIED BY world_sample DEFAULT TABLESPACE example TEMPORARY TABLESPACE temp;
-GRANT connect, resource to world_sample;
-GRANT UNLIMITED TABLESPACE TO world_sample;
-CREATE DIRECTORY world_dupfile_dir AS '/home/oracle/labs/python/world_sample_q114';
-GRANT READ, WRITE ON DIRECTORY world_dumpfile_dir TO world_sample;
-</copy>
-````
+    ````
+    sqlplus sys/Ora_DB4U@localhost:1521/orclpdb as sysdba
+    ````
+    and create the following user and directory
+
+    ````
+    <copy>
+    CREATE USER world_sample IDENTIFIED BY world_sample DEFAULT TABLESPACE example TEMPORARY TABLESPACE temp;
+    GRANT connect, resource to world_sample;
+    GRANT UNLIMITED TABLESPACE TO world_sample;
+    CREATE DIRECTORY world_dupfile_dir AS '/home/oracle/labs/python/world_sample_q114';
+    GRANT READ, WRITE ON DIRECTORY world_dumpfile_dir TO world_sample;
+    </copy>
+    ````
 
 **Note:** If the world sample zip file creates a different directory name than *world_sample_q114*, please modify the CREATE DIRECTORY statement above
 

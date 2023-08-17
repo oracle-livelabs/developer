@@ -51,10 +51,13 @@ This Lab will use the Sales History (SH) sample schema.
 1.  If you aren't already logged in, login to the instance using ssh.  If you are already logged in as the *opc* user, skip to Step 4.
 
     ````
+    <copy>
     ssh -i ~/.ssh/<sshkeyname> opc@<Your Compute Instance Public IP Address>
+    </copy>
     ````
 
 2.  Switch to the oracle user
+
     ````
     <copy>
     sudo su - oracle
@@ -63,6 +66,7 @@ This Lab will use the Sales History (SH) sample schema.
     ![oracle user](./images/sudo-oracle.png " ")
 
 3.  Set your oracle environment.  When prompted enter **[ORCL]**
+
     ````
     <copy>
     . oraenv
