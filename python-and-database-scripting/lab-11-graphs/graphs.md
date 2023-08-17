@@ -4,7 +4,7 @@
 
 This lab will show how to use graphs with your data using python-oracledb driver
 
-Estimated Lab Time: 5 minutes
+Estimated Time: 5 minutes
 
 ### Objectives
 

@@ -47,7 +47,7 @@ Let's create a table to display your departments on the main-start page. The Tab
 
    ![A Table component is being dragged onto the page canvas.](images/department-add-table.png "")
 
-    A table with some sample data is added to the page. We'll use this table to display three columns that map to the department business object's id, department, and location fields.
+    A table with some sample data is added to the page. We'll use this table to display three columns that show a department's id, name, and location.
 
 6. Select the table if necessary, then click **Add Data** in the Properties pane to open the Add Data Quick Start.
 
@@ -59,11 +59,11 @@ Let's create a table to display your departments on the main-start page. The Tab
 
     ![Part of the Locate Data page of the Add Data quick start. The Department business object is selected.](images/department-add-data.png "")
 
-8. On the Bind Data step, under item\[i\], select **id** and **department** (in that order). These two fields will show as Columns for your Departments table.
+8. On the Bind Data step, under item\[i\], select **id** and **department** (in that order). The two fields are added as Columns for your Departments table.
 
    ![The Bind Data page of the Add Data quick start. The id and department check boxes are selected. In the Columns list, the columns are id and department.](images/department-add-data-selectfields.png "name")
 
-9. Expand the **locationObject** and **items** nodes (expand **item\[i\]** if it isn't already expanded) and select **location**. Because we created a reference-type field from the Department business object to the Location business object, the Location field is now available to us through the locationObject accessor, which lets us traverse relationships between the two objects. Click **Next**.
+9. Expand the **locationObject** and **items** nodes (expand **item\[i\]** if it isn't already expanded) and select **location**. Because we created a reference-type field from the Department business object to the Location business object, the Location field is now available to us through the locationObject accessor (which lets us traverse relationships between the two objects). Click **Next**.
 
     ![This image shows part of the Bind Data page of the Add Data quick start after the locationObject node has been expanded. The location check box is selected. In the Columns list, location appears at the bottom of the list.](images/department-add-data-selectitemfields.png "name")
 
@@ -143,7 +143,7 @@ We'll now create a page to display employees, similar to the one you created to 
 
     ![The Render as pop-up shows the following options: Table Dynamic, List Dynamic, Table, and List. ](images/data-palette-employee-object-table.png "")
 
-8. Select **Table** in the pop-up menu (the second Table option, not Table Dynamic) to open the Add Data quick start.  This quick start is similar to the one you used before to create the departments table, except that you don't need to associate a data source.
+8. Select **Table** (not Table Dynamic) in the pop-up menu to open the Add Data quick start.  This quick start is similar to the one you used before to create the departments table, except that you don't need to associate a data source.
 
 9. On the Bind Data step of the Add Data wizard, select **picture** and **name** under item\[i\].
 
@@ -212,11 +212,11 @@ Add a Create page that lets your users create new employees.
     A **Create Employee** button appears above the table, and the **main-create-employee** page appears in the pages list.
 
 5. In the pages list, click the **main-create-employee** page to open it in the Page Designer.
-6. Click within the form on the page but outside of a component (that is, in the Form Layout component on the page). In the **General** tab of the Form Layout's properties, set the **Max Columns** value to **2**.
+6. Click within the form on the page but outside of a component (that is, in the Form Layout component on the page). In the **General** tab of the Form Layout's properties, set the **Columns** value to **2**.
 
-    ![The Form Layout component is selected on the main-create-employee page. The Max Columns field in the General tab of the Properties pane is set to 2, so that the employee fields show in two columns on the page.](images/employees-add-create-max-columns.png "")
+    ![The Form Layout component is selected on the main-create-employee page. The Columns field in the General tab of the Properties pane is set to 2, so that the employee fields show in two columns on the page.](images/employees-add-create-max-columns.png "")
 
-    The fields now appear in two columns. If you don't see the change, click **Properties** to hide the Properties pane and expand your view.
+    The fields now appear in two columns.
 
 7. Click **Live** to make the form active. Enter or select the following (you can use other data if you wish):
     * **Name**: `Walter`
@@ -265,11 +265,11 @@ It makes sense at this point to change the name of the main-start page to main-d
 
     ![The Source view pane, with the webApps, hrwebapp, flows, and main nodes expanded, is shown. The main-flow.json file has been selected and is open. In it, the 'defaultPage' property is set to the value 'main-departments'.](images/mainflow-json.png "")
 
-    You can see that the `defaultPage` property has been set to the value `main-departments`, making it the starting page for the web application flow. (If we'd looked before, it would have been set to `main-start`.)
+    You can see that the **defaultPage** property has been set to the value **main-departments**, making it the starting page for the web application flow. If we'd looked before, it would have been set to **main-start**.
 
     You may **proceed to the next lab**.
 
 ## Acknowledgements
 
 * **Author** - Sheryl Manoharan, VB Studio User Assistance, November 2021
-* **Last Updated By/Date** - Sheryl Manoharan, February 2023
+* **Last Updated By/Date** - Sheryl Manoharan, May 2023

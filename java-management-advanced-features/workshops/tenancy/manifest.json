@@ -38,11 +38,19 @@
             "filename": "../../run-crypto-event-analysis/run-crypto-event-analysis.md"
         },
         {
-            "title": "Lab 7: Run Java Flight Recorder",
-            "filename": "../../run-java-flight-recorder-jfr/run-java-flight-recorder-jfr.md"
+            "title": "Lab 7: Run JDK Flight Recorder",
+            "filename": "../../run-jdk-flight-recorder-jfr/run-jdk-flight-recorder-jfr.md"
         },
         {
-            "title": "Lab 8: View and monitor Work Requests",
+            "title": "Lab 8: Run Java Migration Analysis",
+            "filename": "../../run-java-migration-analysis/run-java-migration-analysis.md"
+        },
+        {
+            "title": "Lab 9: Run Performance Analysis",
+            "filename": "../../run-performance-analysis/run-performance-analysis.md"
+        },
+        {
+            "title": "Lab 10: View and monitor Work Requests",
             "filename": "../../view-and-monitor-work-requests/view-and-monitor-work-requests.md"
         },
         {

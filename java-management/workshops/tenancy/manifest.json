@@ -14,31 +14,35 @@
             "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/cloud-login.md"
         },
         {
-            "title": "Lab 1: Set up Oracle Cloud Infrastructure for Java Management Service",
+            "title": "Lab 1: Understand concepts related to Oracle Cloud Infrastructure Resources for Java Management Service",
+            "filename": "../../understand-concepts-related-to-oci-resources-for-jms/understand-concepts-related-to-oci-resources-for-jms.md"
+        },
+        {
+            "title": "Lab 2: Set up Oracle Cloud Infrastructure for Java Management Service",
             "filename": "../../set-up-oci-for-jms/set-up-oci-for-jms.md"
         },
         {
-            "title": "Lab 2: Set Up a Fleet",
+            "title": "Lab 3: Set Up a Fleet",
             "filename": "../../setup-a-fleet/setup-a-fleet.md"
         },
         {
-            "title": "Lab 3: Deploy a Java Application",
-            "filename": "../../deploy-a-java-application/deploy-a-java-application.md"
+            "title": "Lab 4: Create a Java Application",
+            "filename": "../../create-a-java-application/create-a-java-application.md"
         },
         {
-            "title": "Lab 4: Understand concepts related to Management Agent installation",
+            "title": "Lab 5: Understand concepts related to Management Agent installation",
             "filename": "../../understand-concepts-related-to-management-agent/understand-concepts-related-to-management-agent.md"
         },
         {
-            "title": "Lab 5: Install Management Agent on your Managed Instances ",
+            "title": "Lab 6: Install Management Agent on your Managed Instances",
             "filename": "../../set-up-of-management-agent/set-up-of-management-agent.md"
         },
         {
-            "title": "Lab 6: Set up multiple Managed Instances and Management Gateway",
+            "title": "Lab 7: Set up multiple Managed Instances and Management Gateway",
             "filename": "../../multiple-managed-instances/multiple-managed-instances.md"
         },
         {
-            "title": "Lab 7: Track Java Usage in a Container",
+            "title": "Lab 8: Track Java Usage in a Container",
             "filename": "../../track-java-usage-in-a-container/track-java-usage-in-a-container.md"
         },
         {

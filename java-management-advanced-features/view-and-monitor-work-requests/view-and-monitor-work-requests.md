@@ -76,7 +76,7 @@ In this lab, you will:
 3. If you would like to view the log messages for the Work Request, select **Log Messages** under **Resources**. You should see the log messages in detail.
  ![image of work request log messages](images/delete-work-request-log-messages.png)
 
-4. If your Work Request was unsuccessful, you may view the error messages by selecting **Error Messages** under **Resources**. You should see the status as **Failed** and the corresponding error messages.
+4. If your Work Request was unsuccessful, you may view the error messages by selecting **Error Messages** under **Resources**. You should see the status as **Completed with errors** and the corresponding error messages.
   ![image of work request failed error messages](images/delete-work-request-failed-error-message.png)
 
 
@@ -84,21 +84,26 @@ In this lab, you will:
 1. In the **Fleet** page, under **Resources**, select **Work Requests**. You should see the Work Requests you submitted. Click on the Work Request to view its details.
  ![image of work request summary page](images/work-request-summary-page.png)
 
-
 2. If your Work Request is still in progress and you would like to cancel it, click **Cancel Work Request**.
   ![image of work request details page](images/delete-work-request-details-page.png)
 
 3. Click **Cancel work request** again to confirm.
   ![image of cancel work request](images/cancel-delete-work-request.png)
 
-4. If your request has been canceled successfully, you should see that the **Status** of the request is marked as **Canceled**.
+4. Alternatively, you may cancel your Work Request on the **Fleet** page by clicking on the icon at the right corner and selecting **Cancel Work Request**. Click **Cancel work request** again to confirm.
+
+   ![image of alternative work request cancellation fleet page](images/work-request-summary-page-cancel.png)
+
+   ![image of alternative cancel work request ](images/cancel-delete-work-request-alternative.png)
+
+5. If your request has been canceled successfully, you should see that the **Status** of the request is marked as **Canceled**.
   ![image of cancelled work request](images/canceled-delete-work-request.png)
 
 
 
 
 ## Learn More
- * Refer to the [Advanced Features](https://docs.oracle.com/en-us/iaas/jms/doc/advanced-features.html), [Work Request](https://docs.oracle.com/en-us/iaas/jms/doc/getting-started-java-management-service.html#GUID-47C63464-BC0C-4059-B552-ED9F33E77ED3) and [Viewing a Work Request](https://docs.oracle.com/en-us/iaas/jms/doc/fleet-views.html#GUID-F649F0E5-DD54-4DEC-A0F1-942FE3552C93) sections of the JMS documentation for more details.
+ * Refer to the [Advanced Features](https://docs.oracle.com/en-us/iaas/jms/doc/advanced-features.html), [Work Requests](https://docs.oracle.com/en-us/iaas/jms/doc/using-java-management-service.html#GUID-77AEEBC0-93A5-4E99-96D6-BEE0FEE4539F) sections of the JMS documentation for more details.
 
  * Use the [Troubleshooting](https://docs.oracle.com/en-us/iaas/jms/doc/troubleshooting.html#GUID-2D613C72-10F3-4905-A306-4F2673FB1CD3) chapter for explanations on how to diagnose and resolve common problems encountered when installing or using Java Management Service.
 
@@ -108,4 +113,4 @@ In this lab, you will:
 ## Acknowledgements
 
  * **Author** - Xin Yi Tay, Java Management Service
- * **Last Updated By** - Somik Khan, November 2022
+ * **Last Updated By** - Sherlin Yeo, June 2023

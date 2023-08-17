@@ -31,7 +31,7 @@ This lab assumes you have:
 
 ## Task 1: Enable the web app as a PWA
 
-As a final step before you share your app, enable it to run as a Progressive Web App—or PWA for short. PWAs are designed to be capable, reliable, and provide a platform-specific look and feel. When you enable a web app as a PWA, it can be installed directly from a browser on a user's device, including Android and iOS mobile devices.
+Before you share your app, let's enable it to run as a Progressive Web App—or PWA for short. PWAs are designed to be capable, reliable, and provide a platform-specific look and feel. When you enable a web app as a PWA, it can be installed directly from a browser on a user's device, including Android and iOS mobile devices.
 
 1. In the Web Apps pane, click the **hrwebapp** node.
 
@@ -41,16 +41,19 @@ As a final step before you share your app, enable it to run as a Progressive Web
 
 3. Review the **Manifest Settings** included with the PWA's web manifest, a JSON file that contains information about your application:
 
-    * **Application Name:** Accept the default value or specify another name to be displayed when you are prompted to install the application.
+    * Change the **Application Name** to **HR App**. This name is displayed when you are prompted to install the application.
 
-    * **Short Name:** Accept the default value. When both the application name and short name are specified, the short name is used on the home screen, launcher, and other places where space is limited.
+    * Change the **Short Name** to **HR App**. When both the application name and short name are specified, the short name is used on the home screen, launcher, and other places where space is limited.
 
-    * **Theme Color**: Accept the default background and theme colors.
+    * Update the **Description** to **HR employee app**.
+
+    * Accept the default values for the **Theme Color** and **Background Color**.
+
 4. Under **Resources**, click **Create** next to **Offline Fallback Page** to add a page that is displayed when the user performs an action in the PWA that requires a connection, but the device is offline.
 
     ![An offlinePage.html is created under the Offline Fallback Page option in the Resources section.](images/offlinepage.png " ")
 
-  A default `offlinePage.html` is created for you. You can click this page to customize its code, if you want. For demonstration purposes, we'll accept the default settings.
+  A default **offlinePage.html** is created for you. You can click this page to customize its code, if you want. For demonstration purposes, we'll accept the default settings.
 
 ## Task 2: Share the application
 
@@ -76,7 +79,7 @@ Now that you've shared your application, you need to get its URL so you can pass
 
     The shared application opens in a new browser tab. It includes all the changes you've made in your workspace, even those that were not pushed to the remote branch; it also displays data from your workspace.
 
-    An **Install HR Application** ![Install HR Application icon](images/install-app-icon.png) icon that lets you install the app as a PWA also shows up on the address bar—we'll see how this works in a later lab.
+    An **Install HR App** ![Install HR App icon](images/install-app-icon.png) icon that lets you install the app as a PWA also shows up on the address bar—we'll see how this works in a later lab.
 
     ![The shared web application is shown in a new browser tab, with the data imported from your workspace.](images/open-shared-application-result.png "")
 
@@ -94,4 +97,4 @@ Now that you've shared your application, you need to get its URL so you can pass
 ## Acknowledgements
 
 * **Author** - Sheryl Manoharan, VB Studio User Assistance, November 2021
-* **Last Updated By/Date** - Sheryl Manoharan, February 2023
+* **Last Updated By/Date** - Sheryl Manoharan, May 2023

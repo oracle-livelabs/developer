@@ -64,7 +64,7 @@ Add a Delete button to remove a department, so users can remove a department if 
 
 6. Select the new department and click **Delete Department**. A success message appears. The department is no longer displayed.
 
-7. Close the browser tab.
+    Close the browser tab.
 
 ## Task 4: Add a page to edit an employee's details
 
@@ -79,7 +79,7 @@ Now that we've added options to let users manage departments, we'll do the same 
     An **Edit Employee** button is displayed in the toolbar on the main-employees page. The button is inactive.
 
 6. Click **Live**, select a row, and click **Edit Employee** to open the main-edit-employee page.
-7. To make the fields on the main-edit-employee page display in two columns, click within the form on the page but outside of a component (that is, in the **Form Layout** component on the page). In the General tab of the form's properties, set the **Max Columns** value to **2**. The fields now appear in two columns.
+7. To make the fields on the main-edit-employee page display in two columns, click within the form on the page but outside of a component (that is, in the **Form Layout** component on the page). In the General tab of the form's properties, set the **Columns** value to **2**. The fields now appear in two columns.
 8. Let's also set up the employee's picture field to display as an image. To do this, search for an Avatar component in the Components palette, then drag and drop it onto the **div** element just above the Form Layout on the page.
     ![An Avatar component is dropped into the div element above the Form Layout component on the Edit Employee page. ](images/avatar.png "")
 
@@ -104,15 +104,15 @@ Now that we've added options to let users manage departments, we'll do the same 
 
     ![The button's Events tab shows the deleteEmployeeChain as the action chain triggered by the ojAction event.](images/deleteEmployeeChain.png "")
 
-4. On the success branch of the Call REST action, drag and drop a new Fire Data Provider Event (used to dispatch an event on a data provider) and position it between the other Fire Data Provider Event and Fire Notification actions. You might need to drop the new action on the **+** sign, then drag the Fire Notification action down.
+4. When the deleteEmployeeChain opens in the Action Chain editor, drag a new Fire Data Provider Event (used to dispatch an event on a data provider) and drop it between the other Fire Data Provider Event and Fire Notification actions.
 
     ![The deleteEmployeeChain shows in diagram view. On the success branch of the Call REST action, a second Fire Data Provider Event action has been added. Its properties pane show on the right: Event Target is undefined and Type is set to Mutate.](images/deleteEmployeeChain-actionchain.png "")
 
 5. In the second Fire Data Provider Event action's Properties pane, click ![Select Variable icon](images/variable-picker-icon.png) next to **Event Target** (you'll need to hover over the field to see the icon) and select **employeeListSDP2**, which is the data provider backing the bar chart.
 
-6. Change the Type from **Mutate** to **Refresh**.
+   ![The Fire Data Provider Event action's properties are shown. The Event Target property's variable picker is open, with employeeListSDP2 highlighted.](images/deleteEmployeeChain-actionchain-updated.png "")
 
-    ![The Fire Data Provider Event action's properties are shown. The Event Target is set to $page.variables.employeeListSDP2 and Type is set to Refresh.](images/deleteEmployeeChain-actionchain-updated.png "")
+6. Change the Type from **Mutate** to **Refresh**.
 
     Now you're ready to test your pages.
 
@@ -146,7 +146,7 @@ Now that we've added options to let users manage departments, we'll do the same 
 
 7. Select the new employee and click **Delete Employee**. A success message appears. The employee is no longer displayed in the table or the chart.
 
-8. Close the browser tab.
+    Close the browser tab.
 
 ## Task 7: Change the app's default page
 
@@ -169,4 +169,4 @@ Now that we have our web pages, let's change the application's home page from De
 ## Acknowledgements
 
 * **Author** - Sheryl Manoharan, VB Studio User Assistance, November 2021
-* **Last Updated By/Date** - Sheryl Manoharan, February 2023
+* **Last Updated By/Date** - Sheryl Manoharan, May 2023

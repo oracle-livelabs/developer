@@ -146,13 +146,13 @@ Now that we've added options to let users manage departments, we'll do the same 
 5. On the Edit Employee page, change the **Department** to `IT` and **Salary** to 6000. Click **Save**. A success message appears, and you are returned to the Employees page. Notice how the bar chart also changes to show the employee's updated salary.
 
 6. Click **Create Employee** and specify the data for a new employee, for example:
-    - **Name**: `Shayla`
-    - **Picture**: `https://www.oracle.com/webfolder/technetwork/jet/content/images/hcm/placeholder-female-16.png`
-    - **Hire Date**: Select today's date
-    - **Email**: `shayla@example.com`
-    - **Department**: `Marketing`
-    - **Salary**: `4000`
-    - **Country**: `NZ`
+    * **Name**: `Shayla`
+    * **Picture**: `https://www.oracle.com/webfolder/technetwork/jet/content/images/hcm/placeholder-female-16.png`
+    * **Hire Date**: Select today's date
+    * **Email**: `shayla@example.com`
+    * **Department**: `Marketing`
+    * **Salary**: `4000`
+    * **Country**: `NZ`
 
     Click **Save**. A success message appears, and the new employee is displayed in the table and bar chart.
 
@@ -180,5 +180,5 @@ Now that we have our web pages, let's change the application's home page from De
 
 ## Acknowledgements
 
-- **Author** - Sheryl Manoharan, Visual Builder User Assistance, August 2021
-- **Last Updated By** - February 2023
+* **Author** - Sheryl Manoharan, Visual Builder User Assistance, August 2021
+* **Last Updated By** - February 2023
