@@ -89,7 +89,7 @@ Now that we've added options to let users manage departments, we'll do the same 
 
 6. Click **Live**, select a row, and click the **Edit Employee** button to open the main-edit-employee page.
 
-7. To make the fields on the main-edit-employee page display in two columns, click within the form on the page but outside of a component (that is, in the **Form Layout** component on the page). In the **General** tab of the Properties pane, set the **Max Columns** value to **2**. The fields now appear in two columns.
+7. To make the fields on the main-edit-employee page display in two columns, click within the form on the page but outside of a component (that is, in the **Form Layout** component on the page). In the **General** tab of the Properties pane, set the **Columns** value to **2**. The fields now appear in two columns.
 
 8. Let's also set up the employee's picture field to display as an image. To do this, search for an Avatar component in the Components palette, then drag and drop it onto the **div** element just above the Form Layout on the page.
     ![This image shows an Avatar component being dropped into the div element above the Form Layout component on the Edit Employee page.](images/avatar.png "")
@@ -105,7 +105,7 @@ Now that we've added options to let users manage departments, we'll do the same 
 
 ## Task 5: Add a page to delete an employee
 
-1. Go to the **main-employees** page. Switch to **Design** mode, click the table, and select  **Add Delete Action** under **Quick Start** in the Properties pane.
+1. Go to the **main-employees** page. Switch to **Design** mode, click the table (if necessary), and select  **Add Delete Action** under **Quick Start** in the Properties pane.
 
 2. On the Select Endpoint step of the Add Delete Action Quick Start, select **Employee** under Business Objects (if necessary) and click **Finish**.
 
@@ -115,15 +115,15 @@ Now that we've added options to let users manage departments, we'll do the same 
 
     ![This image shows the Events tab selected for the button, listing the deleteEmployeeChain as the action chain triggered by the ojAction event.](images/deleteEmployeeChain.png "")
 
-4. On the success branch of the Call REST action, drag and drop a new Fire Data Provider Event (used to dispatch an event on a data provider) and position it between the other Fire Data Provider Event and Fire Notification actions. You might need to drop the Fire Data Provider Event action on the **+** sign, then drag the Fire Notification action down.
+4. When the deleteEmployeeChain opens in the Action Chain editor, drag and drop a new Fire Data Provider Event (used to dispatch an event on a data provider) and drop it between the other Fire Data Provider Event and Fire Notification actions.
 
-    ![This image shows the deleteEmployeeChain in diagram view. On the success branch of the Call REST action, a second Fire Data Provider Event action has been added. Its properties pane show on the right: Event Target is undefined and Type is set to Mutate.](images/deleteEmployeeChain-actionchain.png "")
+    ![This image shows the deleteEmployeeChain in diagram view. A new Fire Data Provider Event action is being dropped between the existing Fire Data Provider Event action and Fire Notification action in the If (callRestDeleteEmployeeResult.ok) action.](images/deleteEmployeeChain-actionchain.png "")
 
-5. In the action's Properties pane, click ![Select Variable icon](images/variable-picker-icon.png) next to **Event Target** (you'll need to hover over the field to see the icon) and select **employeeListSDP2**, which is the data provider backing the bar chart.
+5. In the second Fire Data Provider Event action's Properties pane, click ![Select Variable icon](images/variable-picker-icon.png) next to **Event Target** (you'll need to hover over the field to see the icon) and select **employeeListSDP2**, which is the data provider backing the bar chart.
+
+    ![This image shows the Fire Data Provider Event action's properties. The Event Target property's variable picker is open, with employeeListSDP2 highlighted.](images/deleteEmployeeChain-actionchain-updated.png "")
 
 6. Change the Type from **Mutate** to **Refresh**.
-
-    ![This image shows the Fire Data Provider Event action's properties. The Event Target is set to $page.variables.employeeListSDP2 and Type is set to Refresh.](images/deleteEmployeeChain-actionchain-updated.png "")
 
    Now you're ready to test your pages.
 
@@ -181,4 +181,4 @@ Now that we have our web pages, let's change the application's home page from De
 ## Acknowledgements
 
 * **Author** - Sheryl Manoharan, Visual Builder User Assistance, August 2021
-* **Last Updated By** - February 2023
+* **Last Updated By** - August 2023
