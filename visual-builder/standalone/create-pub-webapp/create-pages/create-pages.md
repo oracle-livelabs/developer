@@ -215,9 +215,9 @@ Add a Create page that lets your users create new employees.
 
 5. Click the **main-create-employee** page to open it in the Page Designer.
 
-6. Click within the form on the page but outside of a component (that is, in the **Form Layout** component on the page). In the **General** tab of the Form Layout's properties, set the **Max Columns** value to **2**.
+6. Click within the form on the page but outside of a component (that is, in the **Form Layout** component on the page). In the **General** tab of the Form Layout's properties, set the **Columns** value to **2**.
 
-    ![This image shows the Form Layout component selected on the main-create-employee page. The Max Columns field in the General tab of the Properties pane is set to 2, so that the employee fields show in two columns on the page.](images/employees_add_create_max_columns.png "")
+    ![This image shows the Form Layout component selected on the main-create-employee page. The Columns field in the General tab of the Properties pane is set to 2, so that the employee fields show in two columns on the page.](images/employees_add_create_max_columns.png "")
 
     The fields now appear in two columns. If you don't see the change, click **Properties** to hide the Properties pane and expand your view.
 
@@ -277,4 +277,4 @@ It makes sense at this point to change the name of the main-start page to main-d
 ## Acknowledgements
 
 * **Author** - Sheryl Manoharan, Visual Builder User Assistance, August 2021
-* **Last Updated By** - February 2023
+* **Last Updated By** - August 2023
