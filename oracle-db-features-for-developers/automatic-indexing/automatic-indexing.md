@@ -825,6 +825,8 @@ In this section, you will look at how Automatic Indexing has worked to improve t
 
 In this lab, you had an opportunity to examine the Automatic Indexing capabilities of Oracle Database 19c.
 
+You may now **proceed to the next lab**.
+
 ## **Acknowledgements**
 
 - **Author** - Jean-Francois Verrier

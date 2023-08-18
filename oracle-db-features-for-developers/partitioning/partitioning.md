@@ -791,6 +791,8 @@ Partitions of hybrid partitioned tables can reside on both Oracle tablespaces an
 - ORACLE\_HDFS
 - ORACLE\_HIVE
 
+You may now **proceed to the next lab**.
+
 ## **Acknowledgements**
 
 - **Author** - Valentin Tabacaru, Database Product Management, Oracle PTS

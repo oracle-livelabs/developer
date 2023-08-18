@@ -468,7 +468,7 @@ The objective for our lab is to retrieve information about castles in Europe, an
 
     The SDN syntax returns an array, not a relational view of JSON data in one column.
 
-Please proceed to the next lab.
+    You may now **proceed to the next lab**.
 
 ## **Acknowledgements**
 
