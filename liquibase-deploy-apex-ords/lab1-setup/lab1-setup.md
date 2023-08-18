@@ -26,7 +26,7 @@ In this lab, you will:
 
 -   Create an Oracle Autonomous Database
 -   Create an APEX workspace
--   Review your APEX workspace dashboards
+-   Review your application and component dashboards
 
 ### Prerequisites
 
@@ -161,42 +161,80 @@ In this lab, you will:
 
     ![Sign In To Workspace](./images/21workspace-login.png " ")
 
-## Task 3: Review APEX Workspace Dashboards
+## Task 3: Review Application and Component Dashboards
 
- 1. You are now signed in to your APEX workspace! From this area let's take a glance at the different locations where you will be importing components for your APEX application. First let's check out the Database Objects section:
-    * Select the **SQL Workshop** dropdown at the top and then click **Object Browser**.
+ 1. You are now signed in to your APEX workspace! Let's take a glance at the different locations where you can view the components you will be importing for your APEX application. First let's start by taking a look at where the application itself will be viewable:
+    * Click **App Builder** in the top menu.
 
-    ![Select Object Browser](./images/22select-object-browser.png " ")
+    ![Select App Builder](./images/22select-app-builder.png " ")
 
- 2. This is your database object browser page! The left hand section lists the different database object types. 
-    * As this is a fresh APEX Workspace and Autonomous Database that you created, this list is currently empty. 
-    * After you import database objects to your schema, dropdown icons will appear with lists underneath containing all your objects. 
+ 2. This is your app builder dashboard. When you create or import APEX applications they will be listed on this page. As you currently don't have any applications, there are none displayed.
 
-    ![View Object Browser](./images/23view-object-browser.png " ")
+    ![View App Builder](./images/23view-app-builder.png " ")
 
- 3. Next let's check out the REST API dashboard. Select the **SQL Workshop** dropdown again, this time selecting **RESTful Services**.
-
-    ![Select RESTful Services](./images/24select-restful-services.png " ")
-
- 4. Similar to the database object dashboard, the left hand section lists your REST API components.
-    * This section is additionally empty and will be populated with dropdown icons and lists of items when your REST API schema objects are imported.
-
-    ![View RESTful Services](./images/25view-restful-services.png " ")
-
- 5. Finally let's view the application dashboard. Click **App Builder** in the top menu.
-
-    ![Select App Builder](./images/26select-app-builder.png " ")
-
- 6. This is your app builder dashboard. When you create or import APEX applications they will be listed on this page. As you currently don't have any applications, there are none displayed.
-
-    ![View App Builder](./images/27view-app-builder.png " ")
-
- 7. You can now navigate back to your Autonomous Database dashbaord by selecting the tab in your web browser.
+ 3. Next, let's take a look at where you can view database objects and your REST APIs. Navigate back to your Autonomous Database dashboard by selecting the tab in your web browser.
     * If you closed out of it, you can navigate back from the Oracle Cloud home page by selecting the hamburger menu in the top left -> Oracle Database -> Autonomous Database -> and selecting your **APEX\_Liquibase\_Workshop** database.
 
-    ![Select Autonomous Database Tab](./images/28select-adb-tab.png " ")
+    ![Select Autonomous Database Tab](./images/24select-adb-tab.png " ")
 
- 8. Congratulations! You have completed the setup lab. You may now **proceed to the next lab**.
+ 4. From your Autonomous Database dashboard, select the **Database actions** dropdown and click **View all database actions**.
+
+    ![View All Database Actions](./images/25view-all-db-actions.png " ")
+
+ 5. Select **Database Users** under **Administration**.
+
+    ![Select Database Users](./images/26select-db-users.png " ")
+
+ 6. From this dashboard you are going to quickly REST enable your **WKSP\_LIQUIBASEDEMO** database user containing your APEX Workspace. This database user was created as part of your APEX Workspace creation process.
+    * REST enabling the user allows it to be accessible to Oracle Cloud's REST APIs and therefore the Database Actions menus.
+    * Select the 3 vertical dots next to the **WKSP\_LIQUIBASEDEMO** card and click **Enable REST**.
+
+    ![REST Enable User](./images/27rest-enable-user.png " ")
+
+ 7. Leave the fields as is and click **REST Enable User**.
+ 
+    ![REST Enable Button](./images/28rest-enable-button.png " ")
+
+ 8. Click the **Oracle Database Actions** icon in the top left corner to return to the Database Actions main menu.
+
+    ![Click DB Actions Icon](./images/29click-db-actions-icon.png " ")
+
+ 9. Switch from your **ADMIN** database user to your **WKSP\_LIQUIBASEDEMO** one by clicking **ADMIN** in the upper right and selecting **Sign Out**.
+ 
+    ![Admin User Sign Out](./images/30admin-sign-out.png " ")
+
+ 10. On the sign-in page enter **WKSP\_LIQUIBASEDEMO** as your database user and additionally enter the password you set (this is the database password for **WKSP\_LIQUIBASEDEMO** not the APEX Workspace one).
+
+    ![WKSP_LIQUIBASEDEMO Sign In](./images/31wkspliquibasedemo-sign-in.png " ")
+
+ 11. Let's now take a look at your database object dashboard.
+    * Select the **SQL** section under **Development**.
+
+    ![Select SQL Dashboard](./images/32select-sql.png " ")
+
+ 12. On your SQL Worksheet page, under the left hand navigator, change the middle dropdown to **All Objects**.
+
+    ![Select All Objects](./images/33select-all-objects.png " ")
+
+ 13. As this is a fresh APEX Workspace and Autonomous Database that you created, this list is currently empty. 
+    * After you import database objects to your schema, your objects will appear in this section. 
+
+    ![Database Object Dashboard](./images/34database-object-dashboard.png " ")
+
+ 14. Let's take a look at the Oracle REST Data Services (ORDS) REST API dashboard now. 
+    * Select the hamburger menu in the top left of your screen and click **REST**.
+
+    ![Select REST](./images/35select-rest.png " ")
+
+ 15. This is your REST API dashboard. This dashboard is additionally empty and will be populated with items when your REST API schema objects are imported.
+
+    ![REST Dashboard](./images/36rest-dashboard.png " ")
+
+ 16. You can now navigate back to your Autonomous Database dashboard by selecting the tab in your web browser.
+
+    ![Navigate To Autonomous Database Tab](./images/37navigate-adb-tab.png " ")
+
+ 17. Congratulations! You have completed the setup lab. You may now **proceed to the next lab**.
 
 
 ## Learn more
