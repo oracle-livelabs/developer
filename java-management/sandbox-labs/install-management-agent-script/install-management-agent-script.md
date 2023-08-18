@@ -6,6 +6,8 @@ This lab walks you through the steps to set up Java Management Service (JMS), in
 
 Estimated Time: 15 minutes
 
+[Lab 2](videohub:1_ohg7tob6)
+
 ### Objectives
 
 In this lab, you will:

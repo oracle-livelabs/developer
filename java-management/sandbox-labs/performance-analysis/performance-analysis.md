@@ -6,6 +6,8 @@ This lab walks you through the steps to run Performance analysis on a Java appli
 
 Estimated Time: 30 mins
 
+[Lab 6](videohub:1_hicl2gar)
+
 ### Objectives
 
 In this lab, you will:
