@@ -58,15 +58,15 @@ You will now create a car and simulate a transaction between the founder organiz
 
  1. Go to AppBuilder --> Car Marketplace --> Run Application
 
-  ![Car Delaership](images/apex-carmarketplace-app.png)
+  ![Car Dealership](images/apex-carmarketplace-app.png)
 
-  ![Car Delaership](images/apex-carmarketplace-run.png)
+  ![Car Dealership](images/apex-carmarketplace-run.png)
  
  2. Login as a dealer (e.g. john\_dealer1) and land on My Inventory. Use the same password configured for john\_dealer1 in *Lab4* Use the same password configured for john_dealer1 in *Lab4*
 
-  ![Car Delaership](images/dealer1-login.png)
+  ![Car Dealership](images/dealer1-login.png)
 
-  ![Car Delaership](images/apex-Pic_1.jpg)
+  ![Car Dealership](images/apex-Pic_1.jpg)
 
 
 2. Click 'Add Car' and fill out the form to create a car, as shown.
@@ -79,53 +79,53 @@ You will now create a car and simulate a transaction between the founder organiz
     - Select a vehicle type.
     - Set 'For Sale' to true.
 
-  ![Car Delaership](images/apex-Pic_2.jpg)
+  ![Car Dealership](images/apex-Pic_2.jpg)
 
 3. Car is now added to the inventory
 
-  ![Car Delaership](images/apex-Pic_3.jpg)
+  ![Car Dealership](images/apex-Pic_3.jpg)
 
 4. Click on the car added in the Inventory
 
-  ![Car Delaership](images/apex-Pic_4.jpg)
+  ![Car Dealership](images/apex-Pic_4.jpg)
 
 
 5. Click on the NFT Title Token and Services registered. Creating the car also creates an car title NFT token utilizing the car details. This transaction (Add car) uses 2PC atomic transaction feature provided by the oracle blockchain platform. More details of the [atomic transactions](https://docs.oracle.com/en/cloud/paas/blockchain-cloud/restoci/op-restproxy-api-v2-atomictransactions-post.html)
 
 
-  ![Car Delaership](images/apex-Pic_5.jpg)
-  ![Car Delaership](images/apex-Pic_6.jpg)
+  ![Car Dealership](images/apex-Pic_5.jpg)
+  ![Car Dealership](images/apex-Pic_6.jpg)
 
 
 ## Task 3: dealer2 - Deposit Tokens in to the account
 
 1. Now login as the other dealer, sam_dealer2.
 
-  ![Car Delaership](images/dealer2-login.png)
+  ![Car Dealership](images/dealer2-login.png)
 
 2. Navigate to Account Balance tab.
 
-  ![Car Delaership](images/apex-Pic_9.jpg)
+  ![Car Dealership](images/apex-Pic_9.jpg)
 
 3. Select Deposit Money, and enter desired amount. Account Balance should be updated to reflect amount deposited.
 
-  ![Car Delaership](images/apex-Pic_18.jpg)
+  ![Car Dealership](images/apex-Pic_18.jpg)
 
 ## Task 4: dealer2 - Search Car
 
 1. Navigate to Marketplace
 
-  ![Car Delaership](images/apex-Pic_10.jpg)
+  ![Car Dealership](images/apex-Pic_10.jpg)
 
 2. Select vehicle to view Car Details & Price
 
-  ![Car Delaership](images/apex-Pic_11.jpg)
+  ![Car Dealership](images/apex-Pic_11.jpg)
 
 ## Task 5: dealer2 - Purchase and Confirm Purchase
 
 1. Confirm vehicle Purchase
 
-  ![Car Delaership](images/apex-Pic_12.jpg)
+  ![Car Dealership](images/apex-Pic_12.jpg)
 
 Purchase order will now be created.
 
@@ -133,7 +133,7 @@ Purchase order will now be created.
 
 1. Return to dealer 1's account, and navigate to orders received. You should be able to see the order placed by dealer 2. Select the actions icon (pencil) on the order received and process the order.
 
-  ![Car Delaership](images/apex-Pic_13.jpg)
+  ![Car Dealership](images/apex-Pic_13.jpg)
 
 This action confirms the order by the seller.
 
@@ -141,7 +141,7 @@ This action confirms the order by the seller.
 
 1. Return to dealers 2's account, and navigate to orders placed. You will see the order placed should now be processed and ready to complete the purchase.
 
-  ![Car Delaership](images/apex-Pic_14.jpg)
+  ![Car Dealership](images/apex-Pic_14.jpg)
 
 Select "Accept Receipt" to complete order or "Cancel Order" to cancel the order.
 
@@ -149,13 +149,13 @@ Select "Accept Receipt" to complete order or "Cancel Order" to cancel the order.
 ## Task 8: dealer2 - Token Transfer & Delivery
 1. Once purchaser Accepts receipt, the token transfer will now occur and the vehicle will be delivered to the new owner.
 
-  ![Car Delaership](images/apex-Pic_15.jpg)
+  ![Car Dealership](images/apex-Pic_15.jpg)
 
-  ![Car Delaership](images/apex-Pic_16.jpg)
+  ![Car Dealership](images/apex-Pic_16.jpg)
 
 Additionaly, you are able to view the invoice from the purchase in the Orders > Invoice received section
 
-  ![Car Delaership](images/apex-Pic_17.jpg)
+  ![Car Dealership](images/apex-Pic_17.jpg)
 
 
 <!-- 10.
