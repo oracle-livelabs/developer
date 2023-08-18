@@ -20,7 +20,7 @@ In this lab, you will:
 
 When your account managers locate an account using our new page, it's quite possible that they may need to update the account data or insert new information as well. In this task we'll modify the page created earlier to let them do that.
 
-1. Starting in the main-start page in the **Page Designer** tab, click the **Live** button:
+1. Starting in the welcome page in the **Page Designer** tab, click the **Live** button:
 
 	![Live view](images/liveview.png)
 
@@ -171,7 +171,7 @@ You can now remove the unneeded objects from the page.
 
 	  ![Edit button](images/testedit.png)
 
-The record should be modified and you will navigate back to the **main-start** page.
+The record should be modified and you will navigate back to the **welcome** page.
 
 4. Click **Preview** in the header to see your completed application live and experiment with its functionality.
 
