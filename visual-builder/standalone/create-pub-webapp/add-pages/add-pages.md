@@ -115,15 +115,15 @@ Now that we've added options to let users manage departments, we'll do the same 
 
     ![This image shows the Events tab selected for the button, listing the deleteEmployeeChain as the action chain triggered by the ojAction event.](images/deleteEmployeeChain.png "")
 
-4. On the success branch of the Call REST action, drag and drop a new Fire Data Provider Event (used to dispatch an event on a data provider) and drop it between the other Fire Data Provider Event and Fire Notification actions.
+4. When the deleteEmployeeChain opens in the Action Chain editor, drag and drop a new Fire Data Provider Event (used to dispatch an event on a data provider) and drop it between the other Fire Data Provider Event and Fire Notification actions.
 
-    ![This image shows the deleteEmployeeChain in diagram view. On the success branch of the Call REST action, a second Fire Data Provider Event action has been added. Its properties pane show on the right: Event Target is undefined and Type is set to Mutate.](images/deleteEmployeeChain-actionchain.png "")
+    ![This image shows the deleteEmployeeChain in diagram view. A new Fire Data Provider Event action is being dropped between the existing Fire Data Provider Event action and Fire Notification action in the If (callRestDeleteEmployeeResult.ok) action.](images/deleteEmployeeChain-actionchain.png "")
 
 5. In the second Fire Data Provider Event action's Properties pane, click ![Select Variable icon](images/variable-picker-icon.png) next to **Event Target** (you'll need to hover over the field to see the icon) and select **employeeListSDP2**, which is the data provider backing the bar chart.
 
-6. Change the Type from **Mutate** to **Refresh**.
+    ![This image shows the Fire Data Provider Event action's properties. The Event Target property's variable picker is open, with employeeListSDP2 highlighted.](images/deleteEmployeeChain-actionchain-updated.png "")
 
-    ![This image shows the Fire Data Provider Event action's properties. The Event Target is set to $page.variables.employeeListSDP2 and Type is set to Refresh.](images/deleteEmployeeChain-actionchain-updated.png "")
+6. Change the Type from **Mutate** to **Refresh**.
 
    Now you're ready to test your pages.
 

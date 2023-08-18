@@ -41,9 +41,9 @@ This lab assumes you have:
 
 6. In the Navigate To Page action's Properties pane, select **main-employees** from the **Page** list.
 
-    ![The Action Chain editor is shown, with the Navigate To Page action, and main-employees under Peer Pages selected in the Page drop-down list.](images/departments-button-events-navigate.png "")
+    ![The Action Chain editor is shown, with the Navigate To Page action on the canvas. In the action's Properties pane, main-employees under Peer Pages is selected in the Page drop-down list.](images/departments-button-events-navigate.png "")
 
-    The action now has the label `Navigate To Page main-employees`.
+    The action now has the label **Navigate To Page main-employees**.
 
 7. Click **Preview** ![Preview icon](images/preview-icon.png) in the header to run the page in its own browser tab and see how it will appear to a user. (You can use the Live mode to test your app if you prefer, though the Preview form factor is a bit more pleasing.)
 
@@ -67,7 +67,7 @@ This lab assumes you have:
 
 6. In the Navigate To Page action's Properties pane, select **main-departments** from the **Page** list.
 
-    The action now has the label `Navigate To Page main-departments`.
+    The action now has the label **Navigate To Page main-departments**.
 
 7. Now click **Preview** ![Preview icon](images/preview-icon.png), then **Show Employees** in the new browser tab. Make sure you can get to the Departments page from the Employees page. Close the browser tab.
 

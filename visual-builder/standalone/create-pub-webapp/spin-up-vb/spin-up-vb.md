@@ -4,9 +4,9 @@
 
 This lab walks you through the process of provisioning an instance of Visual Builder, assuming you don't already have one available to you.  If you do, you can skip this lab and move on to the next one.
 
-  **Note:** Visual Builder is also available as part of Oracle Integration, but must be first enabled by an administrator. See [how to enable Visual Builder for your Oracle Integration instance](https://docs.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/application-integration&id=ABCAG-GUID-592A60FD-C6B7-4E65-8AC5-05253EF2A026).
-
 Estimated Time:  5 minutes
+
+  **Note:** If you have access to Oracle Integration, you can use the Visual Builder instance provisioned in Oracle Integration—though an administrator must first enable the instance. See [how to enable Visual Builder for your Oracle Integration instance](https://docs.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/application-integration&id=ABCAG-GUID-592A60FD-C6B7-4E65-8AC5-05253EF2A026).
 
 ### About this lab
 

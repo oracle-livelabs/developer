@@ -36,7 +36,7 @@ The first thing we'll do is create the web application itself. Later, we'll cons
 1. In the web browser, access the Visual Builder console.
     * If you don't have any applications, the landing page appears. Click **+ New Application**.
 
-        ![This image shows Oracle Visual Builder's Welcome page, with a New Application button to create an application and an Import Application button to import an application.](images/homepage.png "")
+        ![This image shows Oracle Visual Builder's Welcome page, with a + New Application button to create an application and an + Import Application button to import an application.](images/homepage.png "")
 
     * If you have one or more current applications, the Visual Applications page shows you a list of them. Click **New**.
 
@@ -66,7 +66,7 @@ The first thing we'll do is create the web application itself. Later, we'll cons
 
     ![Footer in the HR Visual Application, which shows Audits, Find in Files, Logs, Tests, and Trace tabs.](images/footer.png "Footer")
 
-    Keep in mind that Visual Builder saves your changes automatically as you work. A timestamp at the bottom right of the footer will show when your work was last saved.
+    Keep in mind that Visual Builder saves your changes automatically as you work. A timestamp at the bottom right of the footer will show the time your work was last saved.
 
 4. We want to create a web app, so under **Create Apps**, click **Responsive Apps**.
 
@@ -146,7 +146,7 @@ Let's create your first business object and add data to it by importing a CSV fi
 
     ![This image shows the Data tab of the Location business objects. No data is displayed.](images/location-data.png "")
 
-10. In the Import Data dialog box, click the drag and drop box, browse to select the `location.csv` file, and click **Import**.
+10. In the Import Data dialog box, click the drag and drop box, browse to select the **location.csv** file, and click **Import**.
 
     ![This image shows the Import from File dialog box after the location.csv file has been imported. The Close button is selected.](images/location-data-import.png "")
 
@@ -168,7 +168,7 @@ Let's now create the Department and Employee business objects. But instead of cr
 
    ![This image shows the Manage Application Data page, also known as the Data Manager. Import Business Objects is selected.](images/import-bos.png "")
 
-4. On the Upload File step of the Import New Business Objects wizard, click the drag and drop box, select the department-employee-bo.zip file, and click **Upload**.
+4. On the Upload File step of the Import New Business Objects wizard, click the drag and drop box, select the **department-employee-bo.zip** file, and click **Upload**.
 
    When the file is uploaded, you'll see a message that the import contains records for the Department and Employee business objects. Click **Next**.
 
@@ -179,9 +179,7 @@ Let's now create the Department and Employee business objects. But instead of cr
 6. On the Fields step, you'll need to make some changes. For the Department business object (selected by default), look for the `Location` field in the second row and click **#** in the Type column. Change the type setting as follows:
 
     * **Type**: **Reference** ![Reference icon](images/reference-icon.png)
-    * **Referenced Business Object**: **Location** (the default for a **Referenced Business Object** is always the current business object (in this case, Department), so make sure you select **Location** from the drop-down list)
-
-        A Reference field is like a foreign key in a database table: it's a field that refers to the key (the Id field) of another business object to link the two business objects together. So when you create a department, you'll be able to specify one of the floors as the department's location.
+    * **Referenced Business Object**: **Location** (the default for a **Referenced Business Object** is always the current business object (in this case, Department), so make sure you select **Location** from the drop-down list). A Reference field is like a foreign key in a database table: it's a field that refers to the key (the Id field) of another business object to link the two business objects together. So when you create a department, you'll be able to specify one of the floors as the department's location.
 
     * **Display Field**: **Location** (automatically populated)
     ![This image shows the Type option of the location field selected. A pop-up box shows the Type set to Reference, the Referenced Business Object set as Location, and the Default Field shown as Location.](images/import-bos-upload-fields-deptlocationfield.png "")
