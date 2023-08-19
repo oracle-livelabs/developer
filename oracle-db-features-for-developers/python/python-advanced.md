@@ -137,9 +137,9 @@ SQL>> @load_sample_data
 </copy>
 ````
 
-![](./images/p_worldsample-install-a.png)
+![load sample data](./images/p_worldsample-install-a.png)
 
-![](./images/p_worldsample-install-b.png)
+![rows inserted](./images/p_worldsample-install-b.png)
 
 There are 3745011 rows inserted in to the table NTC_MAP_WATER_AREA table.
 
@@ -185,7 +185,7 @@ cur.close()
 con.close()
 </copy>
 ````   
-![](p_worldsample-pointsinpolygon.png)
+![points in polygon](p_worldsample-pointsinpolygon.png)
 
 ## Task 4: Finding Nearest Neighbours
 
@@ -213,7 +213,7 @@ cur.close()
 con.close()
 </copy>    
 ````
-![](p_worldsample-nearestneighbour.png)
+![nearest neighbour](p_worldsample-nearestneighbour.png)
 
 
 ## Task 5: Display Points on a Map with PYTHON
@@ -249,7 +249,7 @@ cur = con.cursor()
 cur.execute('create table test_json (id number generated always as identity, json_data clob)')
 
 ````
-![](./images/p_pythquery-2.png)
+![create table](./images/p_pythquery-2.png)
 
 2. Query the table data.
 
@@ -262,7 +262,7 @@ for row in cur:
    print (row)       
 </copy>
 ````
-![](./images/p_pythquery-3.png)
+![cursor execute](./images/p_pythquery-3.png)
 
 Python returns an empty row
 
@@ -273,7 +273,7 @@ cur.execute('insert into test_json(json_data) values (\'{rating: "3.0 out of 5 s
 
 cur.execute('commit')
 ````
-![](./images/p_pythquery-4.png)
+![insert json](./images/p_pythquery-4.png)
 
 4. Query the table again
 
@@ -284,7 +284,7 @@ for row in cur:
    print (row)       
 </copy>
 ````
-![](./images/p_pythquery-5.png)
+![select json](./images/p_pythquery-5.png)
 We retrieve the LOB pointer
 
 5. Retrieve the *rating* portion of the JSON document
@@ -302,7 +302,7 @@ for row in cur:
    print (row)       
 </copy>
 ````
-![](./images/p_pythquery-6.png)
+![print cursor](./images/p_pythquery-6.png)
 
 7. Retrieve the *comment titles*
 
@@ -314,7 +314,7 @@ for row in cur:
    print (row)       
 </copy>
 ````
-![](./images/p_pythquery-7.png)
+![json value](./images/p_pythquery-7.png)
 
 7. JSON_VALUE and JSON_QUERY
 To retrieve a single value of a JSON document, the JSON_VALUE function was used. JSON_VALUE retrieves only one value. JSON_VALUE uses dot-notation syntax – JSON Path Expression – to navigate through a JSON document hierarchy. The dot-notation syntax is a table alias (represented by the ‘$’ sign) followed by a dot (.) and the name of a JSON column we want to retrieve (or more if the document structure includes nested values).
@@ -329,7 +329,7 @@ for row in cur:
    print (row)       
 </copy>
 ````
-![](./images/p_pythquery-8.png)
+![json query](./images/p_pythquery-8.png)
 
 You will notice that no records are returned even though we know they have been populated with data. This is due to JSON_VALUE being able to work only with scalar SQL data types (that is, not an object or collection data type). To retrieve fragments of a JSON document, JSON_QUERY has to be used:
 
@@ -341,7 +341,7 @@ for row in cur:
    print (row)       
 </copy>
 ````
-![](./images/p_pythquery-9.png)
+![test json](./images/p_pythquery-9.png)
 
 8. Is it JSON? Or NOT?
 
@@ -364,7 +364,7 @@ for row in cur: print (row)
 
 </copy>
 ````
-![](./images/p_pythquery-10.png)
+![count rows](./images/p_pythquery-10.png)
 
 You can filter out records that do not follow JSON format with IS JSON and IS NOT JSON SQL extensions. First, check if there are any non-JSON records in the table:
 ````
@@ -374,7 +374,7 @@ cur.execute('select id from test_json where json_data IS NOT JSON')
 for row in cur: print (row)       
 </copy>
 ````
-![](./images/p_pythquery-11.png)
+![filter records](./images/p_pythquery-11.png)
 
 >**Note:** that the index number may be different in the query executed, in which case change the id from *2* specified in the delete statement following.
 Delete the non-JSON row(s) from *test_json*
@@ -416,7 +416,7 @@ create directory samples as '/home/oracle/labs/python/External';
 grant read,write on directory samples to sh;
 </copy>
 ````
-![](./images/p_pyth_cr_dir.png)
+![create directory](./images/p_pyth_cr_dir.png)
 
 2. Open the python interpreter and connect to the Oracle database as the SH user. Open a cursor
 
@@ -447,7 +447,7 @@ cur.execute('select json_query(deptdoc, \'$\') from empdept')
 for row in cur: print (row)
 </copy>
 ````
-![](./images/p_pythquery-12.png)
+![all documents](./images/p_pythquery-12.png)
 
 5. The data in the file *departments.dmp* is not a single JSON document. Each row is JSON data consisting of a *Department* object which contains an array of *employees* objects. Each employees object has a Name, a Job Title and a Hire Date. The Oracle database can manipulate JSON directly, as you have seen with the SQL/JSON operator json_query. Other operators include json_value, json_table and so on.
 
@@ -467,7 +467,7 @@ print(rv[0]['department'])
 for row in cur: print(row)
 </copy>
 ````
-![](./images/p_pythquery-13.png)
+![departments](./images/p_pythquery-13.png)
 
 6. Now determine how many employees there are per department:
 ````
@@ -478,7 +478,7 @@ for row in rv:
 
 </copy>
 ````
-![](./images/p_pythquery-14.png)
+![employees](./images/p_pythquery-14.png)
 ## Conclusion
 
 In this lab you had an opportunity to try out connecting Python in the Oracle Database.
