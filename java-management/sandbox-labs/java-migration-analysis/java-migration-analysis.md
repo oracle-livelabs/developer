@@ -6,6 +6,8 @@ This lab walks you through the steps to run Java Migration Analysis on any Java 
 
 Estimated Time: 30 mins
 
+[Lab 5](videohub:1_7ukaux6w)
+
 ### Objectives
 
 In this lab, you will:
