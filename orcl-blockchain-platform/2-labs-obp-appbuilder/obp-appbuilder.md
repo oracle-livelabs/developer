@@ -172,7 +172,7 @@ Now assign the endorsement policy by by selecting the signature policy and click
 
 ## Task 5: Initialization and Issuance of Car Marketplace FiatToken
 
-1. Click on Postman on the VNC Desktop --> Import the Marketplace Tokenization Postman collection [Marketplace Tokenization](files/Car_Marketplace.postman_collection.json?download=1) and assign variable definitions as shown.
+1. Click on Postman on the VNC Desktop --> Import the Marketplace Tokenization Postman collection [Marketplace Tokenization](files/car_marketplace.postman_collection.json?download=1) and assign variable definitions as shown.
 
   ![Import Collection](images/import_collection.png)
   ![Import Collection 2](images/import_collection2.png)
