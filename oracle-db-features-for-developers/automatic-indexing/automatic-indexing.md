@@ -18,7 +18,7 @@ Traditionally, DBAs have been responsible for monitoring performance and decidin
 Automatic indexing addresses these issues. It is not a simple advisor, but instead, it is an expert system that implements indexes based on what a performance engineer skilled in index tuning would do. The Oracle Database analyzes the application workload and identifies the queries that will benefit from additional indexes. In other words, it identifies candidate indexes and validates them before implementation, and the entire process is fully automatic.
 
 Here is a summary of the workflow:
-  ![workflow](images/ai_flow.png " ")
+![workflow](images/ai_flow.png " ")
 
 Watch the video below to view the benefits of the Automatic Indexing feature.
 
@@ -32,7 +32,7 @@ Watch the video below to view the benefits of the Automatic Indexing feature.
 
 ### Prerequisites
 
-*Note : This Lab can ONLY be run on Exadata environments; attempting to enable Automatic Indexing on non-Exadata systems will result in an error.*
+>**Note:** This Lab can ONLY be run on Exadata environments; attempting to enable Automatic Indexing on non-Exadata systems will result in an error.*
 
 This lab assumes you have completed the following labs:
 * Lab: Login to Oracle Cloud
@@ -51,10 +51,13 @@ This Lab will use the Sales History (SH) sample schema.
 1.  If you aren't already logged in, login to the instance using ssh.  If you are already logged in as the *opc* user, skip to Step 4.
 
     ````
+    <copy>
     ssh -i ~/.ssh/<sshkeyname> opc@<Your Compute Instance Public IP Address>
+    </copy>
     ````
 
 2.  Switch to the oracle user
+
     ````
     <copy>
     sudo su - oracle
@@ -63,6 +66,7 @@ This Lab will use the Sales History (SH) sample schema.
     ![oracle user](./images/sudo-oracle.png " ")
 
 3.  Set your oracle environment.  When prompted enter **[ORCL]**
+
     ````
     <copy>
     . oraenv
@@ -820,6 +824,8 @@ In this section, you will look at how Automatic Indexing has worked to improve t
 ## Conclusion
 
 In this lab, you had an opportunity to examine the Automatic Indexing capabilities of Oracle Database 19c.
+
+You may now **proceed to the next lab**.
 
 ## **Acknowledgements**
 
