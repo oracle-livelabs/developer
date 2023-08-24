@@ -7,7 +7,7 @@ APEX is a low-code development platform that enables you to build scalable, secu
 *Estimated Lab Time:* 15 minutes
 
 Watch the video below for a quick walk-through of the lab.
-[Building Car Marketplace application using APEX](videohub:1_oqqqhg96)
+[Building Car Marketplace application using APEX](videohub:1_tisx0qgi)
 
 ### Objectives
 
