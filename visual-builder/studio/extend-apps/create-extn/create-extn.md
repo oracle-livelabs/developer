@@ -33,7 +33,7 @@ Users with [the right roles](https://docs.oracle.com/en/cloud/paas/visual-builde
 1. Log in to your Oracle Cloud Applications instance.
   ![The Oracle Cloud Applications sign-in page is shown. The User ID field shows john.dunbar, the Password field is empty.](images/login.png)
 
-2. Click the menu ![Hamburger menu icon](images/icon-menu.png) in the upper left corner, navigate to **Configuration**, then select **Visual Builder** (synonymous with VB Studio):
+2. Click the ![Hamburger menu icon](images/icon-menu.png) menu in the upper left corner, navigate to **Configuration**, then select **Visual Builder** (synonymous with VB Studio):
   ![This image shows the left navigator menu in an Oracle Cloud Applications instance. The Configuration submenu item is expanded and the Visual Builder menu item is highlighted.](images/configuration-vb.png)
 
 3. When VB Studio opens on the Organization page, select the project you want to use to develop extensions for your Oracle Cloud Application.
@@ -44,7 +44,7 @@ Users with [the right roles](https://docs.oracle.com/en/cloud/paas/visual-builde
 
 Once you have your project, create a workspace where you can develop your extension. A workspace is your ticket into the Designer, a visual environment that lets you design and develop your user interface by dragging and dropping components on a page.
 
-1. In the VB Studio navigation menu, click the **Workspaces** ![Workspaces icon](images/icon-workspaces.png) tab.
+1. In the VB Studio navigation menu, click the ![Workspaces icon](images/icon-workspaces.png) **Workspaces** tab.
 
 2. Click **New** and select **New Application Extension**:
   ![This image shows the Workspaces tab for the project with the New menu expanded. The New Application Extension option is selected in the menu.](images/create-extension.png)
@@ -86,7 +86,7 @@ Once you have your project, create a workspace where you can develop your extens
 
      The **DemoHCMSearch.git** repo stores your extension's files and is known as your project's *remote* repository. It includes the **main** and **branch1** branches, created with initial content for your extension. The **main** branch is the default branch created when a new repo is generated and is the project's source of truth. The **branch1** you see in your workspace is a working copy of your project's repo and serves as your *local* repository. It initially has the same set of source files as the remote branch, but will include the changes you make as you develop the extension.
 
-    * Elements on the right let you perform various other actions, such as undo a change or search the Git repository for a file. This workshop primarily demonstrates the options to preview your App UI and publish changes. If you make a mistake during this workshop, click ![Undo icon](images/icon-undo.png) to back out of the last step you did.
+    * Elements on the right let you perform various other actions, such as undo your recent changes or search the Git repository for a file. This workshop primarily demonstrates the options to preview your App UI and publish changes. If you make a mistake during this workshop, click ![Undo icon](images/icon-undo.png) to back out of the last step you did.
 
   Keep in mind that VB Studio saves your changes automatically as you work. A timestamp at the bottom of the page will show the time your work was last saved.
 
@@ -96,4 +96,4 @@ You may now **proceed to the next lab**.
 
 * **Author** - Sheryl Manoharan, VB Studio User Assistance, May 2023
 * **Contributors** -  Lisa Dawson, VB Studio User Assistance
-* **Last Updated By/Date** - Sheryl Manoharan, May 2023
+* **Last Updated By/Date** - Sheryl Manoharan, September 2023

@@ -78,7 +78,7 @@ Let's now develop our App UI by dragging and dropping components onto the main-s
 
 Below the input text field, we want to show a list of employees that the user can choose from. To do this, we need to establish a service connection to Oracle Human Capital Management (HCM) so we can get the data we need.
 
-1. Click **Services** ![Services icon](images/icon-services.png) in the Navigator.
+1. Click ![Services icon](images/icon-services.png) **Services** in the Navigator.
 
 2. In the Services pane, click **+ Service Connection**:
 
@@ -90,11 +90,13 @@ Below the input text field, we want to show a list of employees that the user ca
 
     ![This image shows the Create Service Connection wizard Service Catalog screen with the Human Capital Management tile selected.](images/hcm-tile.png)
 
-5. In the **Create Service Connection** screen, enter `work` in the search box, then select **publicWorkers** from the search results:
+5. In the **Create Service Connection** screen, enter `hcmRest` as the Service Name.
+
+6. In the **Filter Objects/Endpoints** text box, enter `work`, then select **publicWorkers** from the search results:
 
     ![This image shows the Create Service Connection page with the word "work" entered in the search field and the publicWorkers object selected.](images/publicworkers.png)
 
-6. Click **Create**.
+7. Click **Create**.
 
     Now we can use this service connection to create the list of employees we want.
 
@@ -102,7 +104,7 @@ Below the input text field, we want to show a list of employees that the user ca
 
 In this task, we're going to set up a filtering mechanism for our list based on the display name of the employee. We want to compare each name to whatever the user enters as a search string, in order to find the proper match.
 
-1. Click **App UIs** ![App UIs icon](images/icon-appuis.png) in the Navigator, expand the **hcmsearch** and **main** nodes, then select **main-start**.
+1. Click ![App UIs icon](images/icon-appuis.png) **App UIs** in the Navigator, expand the **hcmsearch** and **main** nodes, then select **main-start**.
 
 2. Select the **Data** tab in the Page Designer, then expand **Services** and **hcmRest**. Drag **publicWorkers** onto the page underneath the Input Text component:
 
@@ -149,4 +151,4 @@ You may now **proceed to the next lab**.
 
 * **Author** - Sheryl Manoharan, VB Studio User Assistance, May 2023
 * **Contributors** -  Lisa Dawson, VB Studio User Assistance
-* **Last Updated By/Date** - Sheryl Manoharan, May 2023
+* **Last Updated By/Date** - Sheryl Manoharan, September 2023

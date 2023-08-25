@@ -36,7 +36,7 @@ As someone who creates a project, you'll automatically become the project's owne
 
 2. On the Project Details step of the New Project wizard:
 
-    * Enter **Tutorial HR Project** as the **Project Name**. You may want to add your name to the project name if you're in a large organization.
+    * Enter **Tutorial HR Project** as the **Name**. You may want to add your name to the project name if you're in a large organization.
     * Enter **Tutorial project** as the **Description**.
     * Leave the **Security** settings as **Private** and **Discoverable** (the default).
     * Leave the **Preferred Language** as **English** (the default).
@@ -123,4 +123,4 @@ Now that your project is provisioned, let's set up the credentials that VB Studi
 ## Acknowledgements
 
 * **Author** - Sheryl Manoharan, VB Studio User Assistance, November 2021
-* **Last Updated By/Date** - Sheryl Manoharan, May 2023
+* **Last Updated By/Date** - Sheryl Manoharan, September 2023

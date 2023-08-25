@@ -22,7 +22,7 @@ This lab assumes you have all previous labs successfully completed.
 
 You can preview your App UI to run it in its own browser tab and see how it will appear to a user.
 
-1. Click **Preview** ![Preview icon](images/icon-preview.png) in the header.
+1. Click ![Preview icon](images/icon-preview.png) **Preview** in the header.
 
 2. When the App UI opens displaying a list of employees, enter criteria, like the first name `David`, in the **Emp Name** field to filter the list:
 
@@ -57,7 +57,7 @@ Once your changes are successfully merged to your project's repo, VB Studio auto
 
 1. Click ![Go to project page icon](images/icon-gotoprojectpage.png) in the header to go to the Project Home page.
 
-2. In the main navigation, click the **Builds** ![Builds icon](images/icon-builds.png) tab to check the packaging and deployments jobs. If the build job is still running, you can view its progress in the **Job Queue** tab. It might take a few minutes for the build to start if an executor isn't immediately available.
+2. In the main navigation, click the ![Builds icon](images/icon-builds.png) **Builds** tab to check the packaging and deployments jobs. If the build job is still running, you can view its progress in the **Job Queue** tab. It might take a few minutes for the build to start if an executor isn't immediately available.
 
     ![This image shows the Builds section Job Queue tab in VB Studio. A progress indicator shows status for the DemoHCMSearch-Package job.](images/job-queue.png)
 
@@ -75,4 +75,4 @@ Once your changes are successfully merged to your project's repo, VB Studio auto
 
 * **Author** - Sheryl Manoharan, VB Studio User Assistance, May 2023
 * **Contributors** -  Lisa Dawson, VB Studio User Assistance
-* **Last Updated By/Date** - Sheryl Manoharan, May 2023
+* **Last Updated By/Date** - Sheryl Manoharan, September 2023
