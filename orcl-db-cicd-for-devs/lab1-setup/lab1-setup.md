@@ -13,6 +13,8 @@ Before you start your first project, let's get your environment set up. You will
 
 Estimated Time: 25 minutes
 
+[Lab 1](videohub:1_bf3hvpmu) 
+
 
 
 ### Objectives

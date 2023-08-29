@@ -45,94 +45,95 @@ The backend is implemented using the following Java classes (under ./backend/src
 
 The OCI Container Registry is where your Docker images are managed. A container registry should have been created for you in Lab 1 in your compartment.
 
-
 1. Run `build.sh` script to build and push the SpringBoot image into the repository
 
-```
-<copy>
-cd $MTDRWORKSHOP_LOCATION/backend;
-source build.sh
-</copy>
-```
-
+    ```
+    <copy>
+    cd $MTDRWORKSHOP_LOCATION/backend
+    source build.sh
+    </copy>
+    ```
 In a couple of minutes, you should have successfully built and pushed the images into the OCI repository.
 
 2. Check your container registry in your compartment (refresh the console if the image is not shown)
 
-* Go to the console, click the hamburger menu in the top-left corner, and open **Developer Services > Container Registry**.
+    * Go to the console, click the hamburger menu in the top-left corner, and open **Developer Services > Container Registry**.
 
-![View of the registry](images/build-image.png)
+    ![View of the registry](images/build-image.png)
 
 ## Task 2: Deploy on Kubernetes and Check the Status
 
 1. Run the `deploy.sh` script
 
-```
-<copy>
-cd $MTDRWORKSHOP_LOCATION/backend
-./deploy.sh
-</copy>
-```
+    ```
+    <copy>
+    cd $MTDRWORKSHOP_LOCATION/backend
+    ./deploy.sh
+    </copy>
+    ```
 
-If everything runs correctly, the script will output something like this:
+    If everything runs correctly, the script will output something like this:
 
-![Deploy output](images/deploy-output.png)
+    ![Deploy output](images/deploy-output.png)
 
 2. Check the status using the following commands
 
-The following command returns the Kubernetes services of the MyToDo application with a load balancer exposed through an external API
+    The following command returns the Kubernetes services of the MyToDo application with a load balancer exposed through an external API
 
-```
-  <copy>
-  services
-  </copy>
-```
+    ```
+    <copy>
+    services
+    </copy>
+    ```
 
-This will run `kubectl get services` (but the setup script creates aliases for ease of use). After running the command above, it should output the external IP address.
+    This will run `kubectl get services` (but the setup script creates aliases for ease of use). After running the command above, it should output the external IP address.
 
-![Get Services](images/services.png)
+    ![Get Services](images/services.png)
 
 3. The following command returns all the pods running in your Kubernetes cluster:
 
-```
-<copy>
-pods
-</copy>
-```
+    ```
+    <copy>
+    pods
+    </copy>
+    ```
 
-Pods is an alias for `kubectl get pods`.
-![Get Pods](images/get-pods.png)
-4\. You can tail the log of one of the pods by running:
+    Pods is an alias for `kubectl get pods`.
+    ![Get Pods](images/get-pods.png)
 
-```
-<copy>
-kubectl -n mtdrworkshop logs -f <pod name>
-</copy>
-```
+4. You can tail the log of one of the pods by running:
 
-$ kubectl logs -f
+    ```
+    <copy>
+    kubectl -n mtdrworkshop logs -f <pod name>
+    </copy>
+    ```
 
-<br>
-Example: `kubectl -n mtdrworkshop logs -f todolistapp-springboot-deployment-54c967665-6482r`
+    ```
+    <copy>
+    $ kubectl logs -f
+    </copy>
+    ```
 
-![Deploy Success](images/deploy-success.png)
+    <br>
+    Example: `kubectl -n mtdrworkshop logs -f todolistapp-springboot-deployment-54c967665-6482r`
 
-If the logs return
+    ![Deploy Success](images/deploy-success.png)
 
+    If the logs return
 
-"Tomcat started on port(s): 8080 (HTTP) with context path"
+    "Tomcat started on port(s): 8080 (HTTP) with context path"
 
+    then everything looks good.
 
-then everything looks good.
+5. Once your pods are up and running. Go to your web browser and navigate to the load balancer IP address.
+    The application login screen will appear
+    ![Login](images/todolist-login.png)
 
-5\. Once your pods are up and running\. Go to your web browser and navigate to the load balancer IP address\.
-The application login screen will appear
-![Login](images/todolist-login.png)
+    Once you log in, you should see the following output, which means your deployment is successful!
+    ![Success](images/successful-todo.png)
 
-Once you log in, you should see the following output, which means your deployment is successful!
-![Success](images/successful-todo.png)
-
-You may now **proceed to the next lab**.
+    You may now **proceed to the next lab**.
 
 ## Task 3: UnDeploy (optional)
 
@@ -140,18 +141,16 @@ If you make changes to the image, you need to delete the service and the pods by
 
 1. Run the `undeploy.sh` script
 
-```
-<copy>
-cd $MTDRWORKSHOP_LOCATION/backend
-source undeploy.sh
-</copy>
-```
-
+    ```
+    <copy>
+    cd $MTDRWORKSHOP_LOCATION/backend
+    source undeploy.sh
+    </copy>
+    ```
 2. Rebuild the image + Deploy + (Re)Configure the API Gateway
 
 ## Acknowledgements
 
-* **Author** \- Peter Song\, Developer Advocate JDBC
-* **Contributors** \- Kuassi Mensah\, Director Product Management and Jean de Lavarene\, Sr\. Director of Development\, JDBC/UCP
-* **Last Updated By/Date** \- Kuassi Mensah\, September 2022
-*
+* **Author** - Peter Song, Developer Advocate JDBC
+* **Contributors** - Kuassi Mensah, Director Product Management and Jean de Lavarene, Sr. Director of Development, JDBC/UCP
+* **Last Updated By/Date** - Juarez Barbosa Junior, July 2023

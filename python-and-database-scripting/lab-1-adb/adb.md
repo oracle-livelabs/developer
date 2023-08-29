@@ -15,7 +15,7 @@ Watch the video below for a quick walk-through of the lab.
 
 In this lab, you will:
 
-- Setup an Oracle Autonomous Database, shared infrastructure
+- Create an Oracle Autonomous Database, shared infrastructure instance
 
 ### Prerequisites
 
@@ -129,7 +129,12 @@ One of the arguments used in to connect to the Oracle Autonomous Database is the
     vi DSN_ADB.txt
     </copy>
     ````
+
+## Conclusion
+
+In this lab, you had an opportunity to create an Oracle Autonomous Database, shared infrastructure instance.
+
 ## Acknowledgements
 - **Authors** - Veronica Dumitriu
 - **Contributors** - Chris Jones
-- **Last Updated By/Date** - Veronica Dumitriu, Oracle Database Drivers Product Management, Feb 2023
+- **Last Updated By/Date** - Veronica Dumitriu, Oracle Database Drivers Product Management, July 2023
