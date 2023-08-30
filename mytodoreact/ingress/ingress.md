@@ -61,10 +61,7 @@ Estimated time: 5 minutes
     - requests on the `/` path are mapped to the front-end service named `frontendapp-service`
 
 
-    The following text should appear as output, indicating that the resource todo-ingress has been created:
-    ```
-    ingress.networking.k8s.io/todo-ingress created
-    ```
+    The following text should appear as output, indicating that the resource todo-ingress has been created `ingress.networking.k8s.io/todo-ingress created`
 
 2. You can view and retrieve the list of ingress resources in all namespaces
 

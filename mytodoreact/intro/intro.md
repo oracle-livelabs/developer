@@ -6,8 +6,6 @@ In this workshop, you will learn how to use Oracle Cloud Infrastructure (OCI) se
 
 Estimated Time: 50 minutes
 
-<if type="odbw">If you would like to watch us do the workshop, click [here](https://youtu.be/JiAbVCGRcN8).</if>
-
 ![application](images/Application.png " ")
 
 ### About Product/Technology
@@ -26,8 +24,13 @@ In this 3 parts workshop, you will:
 ### Prerequisites
 
 * An Oracle Free Tier or Paid Cloud Account
+* Please refer to "Get Started"
 
 You may now **proceed to the next lab**.
+
+## Learn More
+
+* [Deploying a Java Helidon Application](https://docs.oracle.com/en-us/iaas/developer-tutorials/tutorials/helidon-k8s/01oci-helidon-k8s-summary.htm)
 
 ## Acknowledgements
 

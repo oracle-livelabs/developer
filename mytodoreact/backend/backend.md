@@ -128,11 +128,12 @@ To test the application, you will need to run a pod that will allow you to run `
 
 	The curl request makes a GET request against the backend-service in the mtdrworkshop namespace, against the `/api/todolist` endpoint and should return a response similar to the following output:
 
-	```json
+	<code>
 	{"items":[{"id":1,"description":"Manual item insert","createdAt":"2023-08-25T19:36:52.701008Z","done":false}]}
-	```
+	</code>
 
 	You can make further requests within the pod (e.g. add a new item). When you are done testing the application, enter
+	
 	```bash
 	<copy>
 	exit
