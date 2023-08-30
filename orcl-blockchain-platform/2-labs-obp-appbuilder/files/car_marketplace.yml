@@ -1,0 +1,267 @@
+assets:
+    - name: car              # Information about the car
+      properties:
+          - name: vin         # Vehicle identification number
+            type: string
+            mandatory: true
+            id: true
+            validate: min(17),max(17)   # Always 17 characters - additional validation possible
+          - name: make        # Manufacturer, limited to one of: Cheverolet,Ford,General Motors,Toyota,Hyundai,Tesla,Tata,Fiat,Volkswagen,Peugeot
+            type: string
+            validate: /^\s*(cheverolet|ford|general\smotors|toyota|hyundai|tesla|tata|fiat|volkswagen|peugeot)\s*$/
+            mandatory: true
+          - name: model       # Model name
+            type: string
+            mandatory: true
+          - name: year        # Model year
+            type: number
+            mandatory: true
+            validate: min(1910),max(2020)
+          - name: ownerId     # Id of the current owner
+            type: string
+            mandatory: true
+          - name: price       # Current price of the vehicle
+            type: number
+            validate: positive()
+            mandatory: true
+          - name: lastSold    #Optional if car is brand new (has not been sold)
+            type: date
+            mandatory: false
+          - name: mileage    
+            type: number
+            mandatory: true
+          - name: description  #Car description
+            type: string
+            mandatory: false
+          - name: carImage  
+            type: string
+            mandatory: false   
+          - name: forSale      #Dealer choses to make car available for sale. ex. 'true' or 'false'
+            type: boolean
+            mandatory: true
+      methods:
+          crud: [create, getById, update]
+          others: [getHistoryById, getByRange]
+    - name: dealer            # Informmation about the dealer
+      properties:
+          - name: dealerId    # Unique ID for each dealer
+            type: string
+            mandatory: true
+            id: true
+          - name: name        # Name of the dealer
+            type: string
+            mandatory: true
+          - name: phone       # Phone number - validate as (ddd)-ddd-dddd where dashes could also be periods or spaces
+            type: string
+            mandatory: true
+            validate: /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/
+          - name: email       # Dealer's email address
+            type: string
+            validate: email() # Validate it as a valid email address
+            mandatory: true
+          - name: inventory   # The list of car VINs owned by this dealer. Inventory could be empty
+            type: string[]
+            mandatory: false
+      methods:
+        crud: [create, getById, update]
+
+
+    - name: invoice            #An invoice is a bill that details goods and services that have been or will be purchased by a buyer
+      properties:
+          - name: invoiceId
+            type: string
+            mandatory: true
+            id: true
+            derived:
+                strategy: concat
+                format: ["INV%t"] 
+          - name: po_number      #Purcahse Order (PO) association
+            type: string
+            mandatory: true
+          - name: status         #Has invoice been paid     
+            type: boolean
+            mandatory: true
+          - name: vin
+            type: string
+            mandatory: true
+          - name: price
+            type: number
+            mandatory: true
+          - name: recipient
+            type: string
+            mandatory: true
+      methods:
+        crud: [create, getById, update]
+        others: [getByRange]
+
+        
+    - name: PO       
+      properties:
+          - name: PO    
+            type: string
+            mandatory: true
+            id: true
+            derived:
+                strategy: concat
+                format: ["PO%t"] 
+          - name: vin        
+            type: string
+            mandatory: true
+          - name: orderStatus #Pending, Processed, Rejected, Delivered 
+            type: string
+            mandatory: true
+          - name: orderProcessed  #true or false
+            type: boolean
+            mandatory: true
+          - name: recipient    
+            type: string
+            mandatory: true
+          - name: purchaser    
+            type: string
+            mandatory: false
+          - name: invoiceId   
+            type: string
+            mandatory: false
+      methods:
+        crud: [create, getById, update]
+        others: [getByRange]
+
+    - name: FiatToken # Asset name
+      type: token  # Asset type
+      standard: erc1155+   # Token standard
+
+      anatomy: 
+          type: fungible # Token type
+          unit: fractional # Token unit
+
+      behavior: # Token behaviors
+          - divisible: 
+                decimal: 2  
+          - mintable: #Mint tokens
+          - transferable #Transfers tokens from the caller to a specified account
+          - burnable #Deactivates or burns, tokens from transaction caller's account
+          - holdable #Notary, responsible to either complete or release the hold.
+          - roles: 
+                minter_role_name: minter
+                notary_role_name: notary 
+
+      properties:
+          - name: currency_name # Custom attribute to represent the token in certain currency. This attribute is helpful for exchanging the tokens with fiat currency.
+            type: string
+
+          - name: token_to_currency_ratio # Custom attribute to specify the token to currency ratio. This attribute is helpful for exchanging the tokens with fiat currency.
+            type: number
+
+    - name: CarTitle #Asset name
+      type: token #Asset type
+      symbol: CTNFT    # Token symbol
+      standard: erc1155+   # Token standard
+      
+      anatomy:
+          type: nonfungible # Token type
+          unit: whole  #Token unit
+      
+      behavior:
+        - indivisible                
+        - singleton                   
+        - mintable:                   
+            max_mint_quantity: 20000
+        - transferable                
+        - burnable
+        - roles:
+            minter_role_name: minter
+            burner_role_name: burner
+      
+      properties:  # Custom asset attributes for non-fungible token 
+          - name: title # Array of title transfer events
+            type: title_entries[]
+          - name: service # Array of service entries and accidents
+            type: service_entries[]
+      metadata: # To maintain the metadata on-chain, this tag will be used. The user creating the non-fungible token for the first time, can only update the metadata attribute values.
+          
+          - name: VIN
+            type: string
+            validate: min(17),max(17)
+            mandatory: true
+           
+          - name: make
+            type: string
+            validate: /^\s*(cheverolet|ford|general\smotors|toyota|hyundai|tesla|tata|fiat|volkswagen|peugeot)\s*$/
+            mandatory: true
+
+          - name: model
+            type: string
+            mandatory: true
+
+          - name: year
+            type: number
+            validate: positive()
+            mandatory: true
+
+          - name: year1stsold
+            type: number
+            validate: positive()
+            mandatory: true
+
+          - name: fuel
+            type: string
+
+  
+    - name: title_entries
+      type: embedded
+      properties:
+          - name: dealership
+            type: string
+            mandatory: true
+          - name: dealernumber  
+            type: string
+            mandatory: true
+          - name: location  
+            type: string
+            mandatory: true
+          - name: mileage  
+            type: number
+            mandatory: true
+          - name: newowner
+            type: string
+            mandatory: true
+          - name: purchaseprice
+            type: float
+            mandatory: true
+          - name: purchasedate 
+            type: date
+            mandatory: true
+
+    - name: service_entries
+      type: embedded
+      properties:
+          - name: eventno
+            type: number
+            mandatory: true
+          - name: accident  
+            type: boolean
+            mandatory: true
+          - name: eventdesc  
+            type: string
+            mandatory: true
+          - name: mileage
+            type: number
+            mandatory: true
+          - name: servicecost
+            type: float
+            mandatory: true
+          - name: servicedate 
+            type: date
+            mandatory: true
+          - name: claimnumber 
+            type: string
+            mandatory: true
+
+
+customMethods:
+    - executeQuery
+    - CreateCarWrapper()
+    - CreatePOWrapper()
+    - UpdatePOWrapper()
+    - CarTransfer(vin string, buyerId string, sellerId string, price int, PO string, date string) #Only happens after PO confirm receipt or resolve is accepted
+    - UpdateTitle(tokenId string, dealerno string,dealername string,dealerloc string,mileage int,newowner string,purchaseprice float64,dateString string)
