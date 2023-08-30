@@ -30,7 +30,9 @@ If you have logged out of the Cloud Shell, perform the commands below.
 1.  If you aren't already logged in, login to the instance using ssh.  If you are already logged in as the *opc* user, skip to Step 4.
 
     ````
+    <copy>
     ssh -i ~/.ssh/<sshkeyname> opc@<Your Compute Instance Public IP Address>
+    </copy>
     ````
 
 2.  Switch to the oracle user
@@ -140,7 +142,7 @@ If you have logged out of the Cloud Shell, perform the commands below.
 
 1.  In order to retrieve information about castles from GeoNames web service, we have to create a new function. The input for this function is the ISO country code, the code of the region, and the code of the sub-region. The output is a JSON document with all castles in that sub-region.
 
-    Note: Remember to replace ***GeoNames_username***.
+    >**Note:** Remember to replace ***GeoNames_username***.
 
     ````
     <copy>
