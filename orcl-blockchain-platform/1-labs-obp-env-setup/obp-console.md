@@ -499,7 +499,7 @@ Each member using a channel (whether founder or participant) must designate at l
 
 ## Task 12: Create Dealership Accounts
 
-Use IDCS to create and add both 'john\_dealer1' and 'sam\_dealer2' users, and then assign them roles to control usage of their OBP instances: 'dealer1' and 'dealer2'.
+Use IDCS to create and add 'john\_dealer1','sam\_dealer2' and 'marketplace' users, then assign them roles to control usage of their OBP instances: 'dealer1','dealer2','marketplace'.
 
 1. Login to your OCI Tenancy and browse to **Domains**.  
 
@@ -537,12 +537,11 @@ Use IDCS to create and add both 'john\_dealer1' and 'sam\_dealer2' users, and th
 
   ![OCI tenancy login](images/oci-tenancy-login.png)
 
-12. Navigate to Identity Domain (follow steps 1-3), select Oracle Cloud Services and click on your OBP instance that begins with 'dealer1' followed by a trail of characters.
+12. Click on the ‘marketplace’ OBP instance, map ‘marketplace’ user to ADMIN and REST_CLIENT roles and 'john\_dealer1’, and ‘sam\_dealer2' users to REST_CLIENT role only.
+    - For ‘dealer1’ OBP instance, map ‘john\_dealer1’ user to ADMIN and REST_CLIENT roles.
+    - For ‘dealer2’ OBP instance, map ‘sam_\dealer2’ user to ADMIN and REST_CLIENT roles.
 
   ![Select dealer instance](images/select-dealer1-instance-1.png)
-
-13. Click on application roles to grant 'john\_dealer1' ADMIN and REST_CLIENT privileges. Doing so will give 'john\ _dealer1' access to call all REST proxy endpoints available on the REST proxy node along with any necessary admin access control. Please see the OBP documentation to learn more.
-
   ![Select Application Roles](images/application-roles-1.png)
 
 
