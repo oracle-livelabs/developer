@@ -43,9 +43,11 @@ This lab assumes you have completed the following labs:
 
 1.  Login to the instance using Oracle Cloud Shell and ssh.
 
-    ````
+    ```
+    <copy>
     ssh -i ~/.ssh/<sshkeyname> opc@<Your Compute Instance Public IP Address>
-    ````
+    </copy>
+    ```
 
 2.  This lab uses the Sales History sample schema (SH). Create two new folders on disk (using the *opc* user). These folders will be used later as a location for some external partitions.
 
@@ -63,6 +65,7 @@ This lab assumes you have completed the following labs:
     ![create folders](./images/step1.1-shschema.png " ")
 
 2.  Now, switch to the oracle user
+
     ````
     <copy>
     sudo su - oracle
@@ -71,6 +74,7 @@ This lab assumes you have completed the following labs:
     ![substitute user oracle](./images/sudo-oracle.png " ")
 
 3.  Set your oracle environment.  When prompted enter **[ORCL]**
+
     ````
     <copy>
     . oraenv
@@ -136,11 +140,8 @@ The Oracle environment is already set up so sqlplus can be invoked directly from
     ````
     <copy>
     set pages 9999
-
     set lines 200
-
-	SET LINESIZE 120
-
+	  SET LINESIZE 120
     column TABLE_NAME format a27
     column PARTITION_NAME format a25
     column TABLESPACE_NAME format a15
@@ -337,15 +338,13 @@ You will copy and then redefine a table (maintaining application transparency). 
 
     ````
     <copy>
-	-- QUERY
-
     set pages 999
-
     set long 90000
-
     col definition format a120
 
-	select dbms_metadata.get_ddl('TABLE','SALES','SH') definition from dual;
+	  -- QUERY
+
+	  select dbms_metadata.get_ddl('TABLE','SALES','SH') definition from dual;
     </copy>
     ````
 
@@ -791,6 +790,8 @@ Partitions of hybrid partitioned tables can reside on both Oracle tablespaces an
 - ORACLE\_LOADER
 - ORACLE\_HDFS
 - ORACLE\_HIVE
+
+You may now **proceed to the next lab**.
 
 ## **Acknowledgements**
 

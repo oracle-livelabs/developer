@@ -64,7 +64,7 @@ Let's now stage the application, so other users can test its behavior.
 
     ![This image shows the Stage application dialog. The Populate Stage with Development data option and the Stage button is selected.](images/stage-application.png "")
 
-    The application is staged, and its status in the header changes from `DEV` to `STAGE`.
+    The application is staged, and its status in the header changes from `DEVELOPMENT` to `STAGE`.
 
 3. From the header **Menu** ![Menu icon](images/options-header-menu.png), click **Open Staged Application**.
 
@@ -153,4 +153,4 @@ After you have successfully tested the staged application, you can publish it an
 ## Acknowledgements
 
 * **Author** - Sheryl Manoharan, Visual Builder User Assistance, June 2021
-* **Last Updated By** - February 2023
+* **Last Updated By** - August 2023

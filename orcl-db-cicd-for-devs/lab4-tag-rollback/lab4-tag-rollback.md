@@ -1,4 +1,4 @@
-# Lab 3: Tag, you're it! - tag, update, and rollback
+# Lab 4: Tag, you're it! - tag, update, and rollback
 
 ## Introduction
 ![Email](./images/1email.png)
@@ -10,6 +10,8 @@ Your manager already assigned you the JIRA ticket and passed along a changelog w
 >**Note:** In this lab you will learn how to bookmark your database state, apply an update, then roll the update back undoing its effects.
 
 *Estimated Time:* 5 Minutes
+
+[Lab 4](videohub:1_4sc63qw3) 
 
 
 ### Objectives

@@ -13,6 +13,8 @@ Before you start your first project, let's get your environment set up. You will
 
 Estimated Time: 25 minutes
 
+[Lab 1](videohub:1_bf3hvpmu) 
+
 
 
 ### Objectives
@@ -39,7 +41,10 @@ In this lab, you will:
 
     ![Click Autonomous Data Warehouse.](https://oracle-livelabs.github.io/common/images/console/database-adw.png " ")
 
-4. Make sure your Workload Type is __Data Warehouse__ or __All__ to see your Autonomous Data Warehouse instances. Use the __List Scope__ drop-down menu to select a compartment.
+4. Use the __List Scope__ drop-down menu to select a compartment. Make sure your Workload Type is __Data Warehouse__ or __All__ to see your Autonomous Data Warehouse instances. 
+    * If you are completing this workshop on a **LiveLabs Sandbox environment, select the compartment assigned to you under "View Login Info"**. 
+    * If you are completing it as part of an **event and were assigned a compartment, select that one**. 
+    * **Otherwise select a compartment of your choice**.
 
     ![Check the workload type on the left.](images/workloadtype.png " ")
 
@@ -61,14 +66,14 @@ In this lab, you will:
 3. Specify basic information for the Autonomous Database:
 
     - __Compartment__ - Choose the compartment you would like to use or assigned to you.
-    - __Display Name__ - Assign as __Liquibase\_Workshop__ or enter a memorable name for the database for display purposes. The instructions will use __Liquibase\_Workshop__ as the display name for this workshop.
-    - __Database Name__ - Assign as __lbworkshop__ or enter a name of your choice. Use letters and numbers only, starting with a letter. Maximum length is 14 characters. (Underscores not initially supported.) The instructions will use __lbworkshop__ as the database name for this workshop.
+        * For workshop environments with an assigned compartment, this field must be that compartment.
+    - __Display Name__ - Assign as __Liquibase\_Workshop__. 
+    - __Database Name__ - Assign as __lbworkshop__.
 
 
 4. Choose a workload type. Select the workload type for your database from the choices:
 
     - __Data Warehouse__ - For this lab, choose __Data Warehouse__ as the workload type.
-    - __Transaction Processing__ - Additionally, you can also complete the lab with Transaction Processing as the workload type.
 
     ![Choose a workload type.](./images/chooseworkloadv2.png " ")
 
@@ -81,11 +86,14 @@ In this lab, you will:
 
 6. Configure the database:
 
-    - __Always Free__ - If your Cloud Account is an Always Free account, or your Cloud Account is a paid account but you want to avoid any charges, you can select this option to create an *Always Free Autonomous Database*. An always free database comes with 1 CPU and 20 GB of storage. 
+    - __Always Free__ - If your Cloud Account is an Always Free account, you can select this option to create an *Always Free Autonomous Database*. An always free database comes with 1 CPU and 20 GB of storage. 
     - __Choose database version__ - Select a database version from the available versions.
-    - __OCPU count__ - Number of CPUs for your service. For this lab, specify __1 CPU__. If you choose an Always Free database, it comes with 1 CPU.
+    - __OCPU count__ - Number of CPUs for your service.
+        * If you choose an **Always Free database**, it comes with 1 OCPU.
+        * If using a **LiveLabs Sandbox** environment, keep 2 ECPU selected.
+        * Otherwise as a default, specify 1 OCPU. 
     - __Storage (TB)__ - Select your storage capacity in terabytes. For this lab, specify __1 TB__ of storage. Or, if you choose an Always Free database, it comes with 20 GB of storage.
-    - __OCPU auto scaling__ - For this lab, there is no need to enable OCPU auto scaling, which enables the system to automatically use up to three times more CPU and IO resources to meet workload demand. 
+    - __OCPU/Compute auto scaling__ - For this lab, there is no need to enable OCPU auto scaling, which enables the system to automatically use up to three times more CPU and IO resources to meet workload demand. 
     - __Storage auto scaling__ - For this lab, there is no need to enable storage auto scaling, which would allow the system to expand up to three times the reserved storage.
 
     > **Note:** You cannot scale up/down an Always Free autonomous database.
@@ -116,7 +124,7 @@ In this lab, you will:
 9. Choose a license type. 
 
     - __Bring Your Own License (BYOL)__ - Select this type when your organization has existing database licenses.
-    - __License Included__ - Select this type when you want to subscribe to new database software licenses and the database cloud service. If using an Always Free Autonomous Database, this will be the option you will use.
+    - __License Included__ - Select this type when you want to subscribe to new database software licenses and the database cloud service. If using an Always Free Autonomous Database or a LiveLabs Sandbox environment, this will be the option you will use.
 
 
 10. The **Contact Email** field is optional and allows you to list contacts to receive operational notices and announcements as well as unplanned maintenance notifications.
@@ -128,14 +136,14 @@ In this lab, you will:
 
     ![Click Create Autonomous Database.](./images/createbutton.png " ")
 
-12.  Your instance will begin provisioning. In a few minutes, the state will turn from Provisioning to Available. At this point, your Autonomous Data Warehouse database is ready to use! Have a look at your instance's details here including its name, database version, OCPU count, and storage size.
+12.  Your instance will begin provisioning. In a few minutes, the state will turn from Provisioning to Available. At this point, your Autonomous Data Warehouse database is ready to use! Have a look at your instance's details here including its name, database version, CPU count, and storage size.
 
     ![Database instance homepage.](./images/instancehomepage.png " ")
 
 ## Task 3: Create your workshop database users
 Let’s create the database users you will need for this workshop. Oracle Cloud and the Autonomous Database make this process simple.
 
- 1. From the dashboard of your freshly created database, select “Database Actions” in the top left.
+ 1. From the dashboard of your freshly created database, select “Database Actions” in the top left and "View all database actions".
     
     ![Click DB Actions](./images/1clickdbactions.png)
 
