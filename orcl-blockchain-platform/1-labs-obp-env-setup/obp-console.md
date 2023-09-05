@@ -499,7 +499,7 @@ Each member using a channel (whether founder or participant) must designate at l
 
 ## Task 12: Create Dealership Accounts
 
-Use IDCS to create and add both 'john_\dealer1' and 'sam_\dealer2' users, and then assign them roles to control usage of their OBP instances: 'dealer1' and 'dealer2'.
+Use IDCS to create and add both 'john\_dealer1' and 'sam\_dealer2' users, and then assign them roles to control usage of their OBP instances: 'dealer1' and 'dealer2'.
 
 1. Login to your OCI Tenancy and browse to **Domains**.  
 
