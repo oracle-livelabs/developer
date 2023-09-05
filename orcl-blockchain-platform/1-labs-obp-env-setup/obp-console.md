@@ -1,4 +1,4 @@
-# Create a Blockchain Network the connects 3 Organizations
+# Create a Blockchain Network that connects 3 Organizations
 
 ## Introduction
 
@@ -9,7 +9,7 @@ As a preassembled PaaS, Oracle Blockchain Platform includes all the dependencies
 *Estimated Lab Time:* 20 minutes
 
 Watch the video below for a quick walk-through of the lab.
-[Create a Blockchain Network the connects 3 Organizations](videohub:1_r7mec8sr)
+[Create a Blockchain Network connecting 3 Organizations](videohub:1_9ze86gbw)
 
 ### Objectives
 
@@ -499,7 +499,7 @@ Each member using a channel (whether founder or participant) must designate at l
 
 ## Task 12: Create Dealership Accounts
 
-Use IDCS to create and add 'john\_dealer1','sam\_dealer2' and 'marketplace' users, then assign them roles to control usage of their OBP instances: 'dealer1','dealer2','marketplace'.
+Use IDCS to create and add both 'john_\dealer1' and 'sam_\dealer2' users, and then assign them roles to control usage of their OBP instances: 'dealer1' and 'dealer2'.
 
 1. Login to your OCI Tenancy and browse to **Domains**.  
 
@@ -537,12 +537,25 @@ Use IDCS to create and add 'john\_dealer1','sam\_dealer2' and 'marketplace' user
 
   ![OCI tenancy login](images/oci-tenancy-login.png)
 
-12. Click on the ‘marketplace’ OBP instance, map ‘marketplace’ user to ADMIN and REST_CLIENT roles and 'john\_dealer1’, and ‘sam\_dealer2' users to REST_CLIENT role only.
-    - For ‘dealer1’ OBP instance, map ‘john\_dealer1’ user to ADMIN and REST_CLIENT roles.
-    - For ‘dealer2’ OBP instance, map ‘sam_\dealer2’ user to ADMIN and REST_CLIENT roles.
+12. Navigate to IDCS (follow steps 1-3), select **Oracle Cloud Services** and click on your OBP instance that begins with 'john\_dealer1' followed by a trail of characters.
 
-  ![Select dealer instance](images/select-dealer1-instance-1.png)
-  ![Select Application Roles](images/application-roles-1.png)
+  ![Select dealer instance](images/select-dealer1-instance.png)
+
+13. Click on application roles to grant 'john\_dealer1' **ADMIN** and **REST_CLIENT** privileges. Doing so will give 'john\_dealer1' access to call all REST proxy endpoints available on the REST proxy node along with any necessary admin access control. Please see the [OBP documentation](https://docs.oracle.com/en/cloud/paas/blockchain-cloud/administeroci/set-users-and-application-roles.html#GUID-CF1B1C71-2EFF-456F-B557-7EA07573B373) to learn more.
+
+  ![Select Application Roles](images/application-roles.png)
+
+14. Click on the hamburger icon in the right-hand corner to assign both the **ADMIN** and **REST_CLIENT** roles to 'john\_dealer1'.
+
+  ![Assigning users to each role](images/assign-user.png)
+
+15. In the search box, look for the 'john\_dealer1' OBP instance, select the user and click on **OK** to assign role.
+
+  ![Assign role](images/assign-role.png)
+
+16. Repeat tasks 1-16 to create the 'sam\_dealer2' user and add to the 'dealer2' instance.
+
+17. Repeat tasks 1-16 to create the 'marketplace' user and add to the 'marketplace' instance. Assign john\_dealer1 and sam\_dealer2 roles to marketplace REST\_CLIENT.
 
 
 You may now proceed to the next lab.

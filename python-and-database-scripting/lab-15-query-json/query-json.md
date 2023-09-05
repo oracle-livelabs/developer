@@ -14,9 +14,10 @@ Estimated Time: 10 minutes
 
 This lab assumes you have completed the following labs:
 * Login to Oracle Cloud
-* Create Oracle Autonomous Database shared infrastructure
+* Create Oracle Autonomous Database Serverless
 * Environment Setup
 
+[Query a JSON table from Python](videohub:1_q6shm5lp)
 ## Task 1: Query data in a JSON table
 
 The exercises include querying JSON data from a table in Oracle Autonomous Database from Python.

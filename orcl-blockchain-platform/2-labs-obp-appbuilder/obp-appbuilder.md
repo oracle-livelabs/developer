@@ -7,7 +7,7 @@ Blockchain App Builder is a tool set that assists Oracle Blockchain Platform use
 *Estimated Lab Time:* 25 minutes
 
 Watch the video below for a quick walk-through of the lab.
-[Test Smart Contracts using Blockchain App Builder & Oracle Blockchain Admin Console](videohub:1_txldn3be)
+[Create and Deploy Smart Contracts using Oracle Blockchain App Builder](videohub:1_cmqtk3w0)
 
 ### About OBP Tokenization
 

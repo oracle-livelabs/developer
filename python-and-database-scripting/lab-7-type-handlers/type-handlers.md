@@ -17,7 +17,7 @@ Watch the video below for a quick walk-through of the lab.
 
 This lab assumes you have completed the following labs:
 * Login to Oracle Cloud
-* Create Oracle Autonomous Database shared infrastructure
+* Create Oracle Autonomous Database Serverless
 * Environment Setup
 
 ## Task 1: Basic output type handler
