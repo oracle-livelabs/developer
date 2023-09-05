@@ -6,6 +6,10 @@ APEX is a low-code development platform that enables you to build scalable, secu
 
 *Estimated Lab Time:* 10 minutes
 
+Watch the video below for a quick walk-through of the lab.
+[Car Trading Marketplace using Tokens in Oracle Blockchain Platform and Oracle Application Express](videohub:1_f207wzkv)
+
+
 ### Objectives
 
 In this lab, you will:
