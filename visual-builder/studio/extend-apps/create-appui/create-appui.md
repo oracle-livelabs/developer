@@ -42,7 +42,7 @@ Start by creating an App UI that takes the form of VB Studio pages and flows.
     | # | Tab | Functionality |
     | --- | ---- | --- |
     | 1 | Components | UI components (sorted by categories) that you can drag and drop onto a page|
-    | 2 | Data | Data endpoints exposed when you create a service connection to your Oracle Cloud App |
+    | 2 | Data | Endpoints you can work with, based on service connections you create to data objects |
     | 3 | Structure | Hierarchical view of the page's structure  |
     | 4 | Properties | Properties of a component selected on the page |
     | 5 | Canvas | A design, live, or code view of your page's content |
@@ -66,7 +66,7 @@ Let's now develop our App UI by dragging and dropping components onto the main-s
 
 4. In the Input Text component's Properties pane, change the **Label Hint** to `Emp Name`. You'll see this as placeholder text in the component on the canvas.
 
-5. Let's now create a variable that we can map the input text field to. This variable will hold the employee data that the user will be able to search. In the Input Text component's Properties pane, click the **Data** tab. Hover over the **Value** text and click the ![Select Variable icon](images/icon-selectvariable.png) **Select Variable** icon next to **fx**.
+5. Let's now create a variable that we can map the input text field to. This variable will hold the employee data that the user will be able to search. In the Input Text component's Properties pane, click the **Data** tab. Hover over the **Value** text and click the ![Select Variable icon](images/icon-selectvariable.png) icon next to **fx**.
 
     ![This image shows the Input Text component's Properties pane, with the cursor hovering over the Select Variable icon.](images/select-var.png)
 
@@ -120,9 +120,9 @@ In this task, we're going to set up a filtering mechanism for our list based on 
 
 5. In the Bind Data screen, the Endpoint Structure panel shows all the fields that are available for us to choose from in the **publicWorkers** object. Drag and drop each of these fields from this panel to the **Item Template Fields** section as specified, using the search field to help you locate them:
 
-    * **Default slot**: DisplayName
-    * **Secondary slot**: PhoneNumber
-    * **Tertiary slot**: LocationTownOrCity
+    * **DisplayName**: Default slot
+    * **PhoneNumber**: Secondary slot
+    * **LocationTownOrCity**: Tertiary slot
 
     ![This image shows the Add Data page with the word "LocationTownOrCity" in the Endpoint Structure search field. In the Item Template Fields, DisplayName is in the Default slot, PhoneNumber is in the Secondary slot, and LocationTownOrCity is in the Tertiary slot.](images/add-data-wizard-binddata.png)
 

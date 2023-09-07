@@ -49,7 +49,7 @@ After you've confirmed search is working, you are ready to deploy the extension 
 4. When the changes are published to your project's Git repository, click **Close**.
     ![This image shows Publish CHanges dialog detailing the steps taken to deploy changes from your workspace to the project's repository in this order: Checking environments and build jobs, git commit branch1, git fetch, git merge main to branch1, git merge branch1 to main, and git push. There's also a message asking the user not to use the current branch as changes are being deployed and that a new branch johndunbar-20230517171431 has been temporarily created for the user.](images/published.png)
 
-    What you're seeing are the Git steps taken to push your changes from the local **branch1** to the remote **branch1**, then merge them to the project's **main** branch.
+    What you're seeing are the Git steps taken to push your changes from the local **branch1** to the remote **branch1**, then to merge them to the project's **main** branch.
 
 ## Task 3: View the deployed extension
 
@@ -61,13 +61,13 @@ Once your changes are successfully merged to your project's repo, VB Studio auto
 
     ![This image shows the Builds section Job Queue tab in VB Studio. A progress indicator shows status for the DemoHCMSearch-Package job.](images/job-queue.png)
 
-3. Click the **Environments** tab, then select **Deployments**.
+3. Click the ![Environments icon](images/icon-environments.png) **Environments** tab, then select **Deployments**.
 
 4. Expand the **Demo-HCMSearch** extension:
 
     ![This image shows the Environments tab. The Development environment is selected and the Deployments tab is shown. In the Applications Extensions section, DemoHCMSearch is highlighted and expanded and hcmsearch is highlighted in the App UIs column.](images/deployment.png)
 
-5. Click **Open** ![Open icon](images/icon-openappui.png) next to your App UI to open it in a new browser tab.
+5. Click ![Open icon](images/icon-openappui.png) next to the **hcmsearch** App UI to open it in a new browser tab.
 
 <!-- You may now **proceed to the next lab**. -->
 
