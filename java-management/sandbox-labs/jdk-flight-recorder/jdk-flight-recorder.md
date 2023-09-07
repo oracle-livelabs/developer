@@ -6,6 +6,8 @@ This lab walks you through the steps to run JDK Flight Recorder on a Java applic
 
 Estimated Time: 30 minutes
 
+[Lab 7](videohub:1_3uf46xvk)
+
 ### Objectives
 
 In this lab, you will:

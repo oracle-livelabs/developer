@@ -1,4 +1,4 @@
-# How to Build User Interface using Oracle APEX and Integrate with Oracle Blockchain Platform
+# How to Build User Interface using Oracle APEX Integrating with Oracle Blockchain Platform
 
 ## Introduction
 
@@ -7,7 +7,7 @@ APEX is a low-code development platform that enables you to build scalable, secu
 *Estimated Lab Time:* 15 minutes
 
 Watch the video below for a quick walk-through of the lab.
-[Building Car Marketplace application using APEX](videohub:1_oqqqhg96)
+[Building Car Marketplace application using APEX](videohub:1_tisx0qgi)
 
 ### Objectives
 
@@ -34,7 +34,7 @@ This lab assumes you have:
 2. Check your **Compartment** is correct and click on 'Create Autonomous Database.'
   ![Create a new ADB instance from the console](images/4-adb-1.png)
 
-3. In the form, first choose a **Displayname** (e.g. CarMarketplaceAPEX - No Spaces), a **Database name** (e.g. CarMarketplace), and then **Choose a workload type** (in this case, APEX) as shown.
+3. In the form, first choose a **Displayname** (e.g. CarMarketplaceAPEX - No Spaces), a **Database name** (e.g. CarMarketplaceApex), and then **Choose a workload type** (in this case, APEX) as shown.
   ![Choose instance name and DB type](images/4-adb-2.png)
 
 4. Toggle 'Always Free' as shown
@@ -57,7 +57,7 @@ This lab assumes you have:
 
 ## Task 2: Configure Database Schema and User Credentials
 
-1. When your Autonomous Database instance has provisioned, access the 'Tools' --> 'Open APEX' --> 'Open APEX'
+1. When your Autonomous Database instance has provisioned, access the 'Tools' -->Copy the URL --> open the URL in another browser tab
 
   ![Access Service Console](images/4-apex-2-1.png)
 
@@ -110,9 +110,8 @@ This lab assumes you have:
 
 11. After clicking 'Create User' again, check that both new users are displayed on the 'Manage Developers and Users' page as shown. Then click on the APEX logo to return to 'Administration Services.'
 
-  ![Check User Page](images/4-apex-2-9.png)
 
-11. Sign out of ADMIN in the upper-right hand corner
+12. Sign out of ADMIN in the upper-right hand corner
 
   ![Sign Out](images/4-apex-2-10.png)
 
@@ -134,7 +133,7 @@ This lab assumes you have:
 
   ![Import Template](images/4-apex-3-5.png)
 
-4. 'Drag and Drop' the [Apex Marketplace Template](files/f100.sql?download=1) file into the pane and click 'Next.'
+4. 'Drag and Drop' the [Apex Marketplace Template](files/f101.sql?download=1) file into the pane and click 'Next.'
 
   ![Import Template 1](images/4-apex-3-6.png)
 
@@ -149,19 +148,11 @@ This lab assumes you have:
 
   ![Install Application 1](images/4-apex-3-8.png)
 
-7. Click 'Next.' --> Enter username and password in the respective fields --> Enter username and password in the respective fields
+7. Click 'Next.' --> Enter username and password in the respective fields --> Enter username and password in the respective fields.
 
   ![Install Application 2](images/4-apex-3-9.png)
 
-8. Click 'Next' again --> Parsing Schema should be 'WKSP_MARKETPLACE'
-
-  ![Install Application 3](images/4-apex-3-10.png)
-
-9. Finally, click on 'Install.'
-
-  ![Install Application 4](images/4-apex-3-11.png)
-
-10. Click 'Edit Application' and proceed to Task 4 to further configure your APEX app.
+8. Click 'Edit Application' and proceed to Task 4 to further configure your APEX app.
 
   ![Edit Application](images/4-apex-3-12.png)
 
@@ -170,35 +161,32 @@ This lab assumes you have:
 
 1. Go to 'App Builder' on the top left hand corner of the screen --> Click on Car Marketplace  --> Click on 'Shared Components.' Here you will be able to configure application attributes and data sources.
 
-  ![Access Shared Components](images/4-apex-4-2.1.png)
+  ![Access Shared Components](images/4-apex-4-4.1.png)
 
 2. Click on 'Application Definition' located under **Application Logic**.
 
   ![Application Definition](images/4-apex-4-2.png)
 
-3. Click the 'Substitions' tab as shown.
+3. Click the 'Substitutions' tab as shown.
 
-  ![Substitions](images/4-apex-4-4.png)
+  ![Substitions](images/lab-4-task4-step3.png)
 
-4. Set the following **Substitutions** and 'Apply Changes':
-    - First, set G\_OCI\_WEB\_CREDENTIAL to OCI\_\API_\Credentials.
-    - Next, set OBP\_MAIN\_INSTANCE\_URL to the URL you found in the **Deployment Information**  section in the previous lab (Lab: Created & Setup API Gateway to connect with Smart Contract API's). This allows APEX to connect to the Car Marketplace OBP REST API endpoints via the API Gateway deployment. Change OBP\_MAIN\_INSTANCE\_URL, OBP\_DEALER\_1\_URL, OBP\_DEALER\_2\_URL based on the routes configured in *Lab 4*  
+4. Replace all the **Substitutions** copying the URL from *Lab 3* and 'Apply Changes':
+    - Set OBP\_MAIN\_INSTANCE\_URL to the URL you found in the **Deployment Information**  section in the previous lab (Lab 3: Created & Setup API Gateway to connect with Smart Contract API's). This allows APEX to connect to the Car Marketplace OBP REST API endpoints via the API Gateway deployment. Change OBP\_MAIN\_INSTANCE\_URL, OBP\_DEALER\_1\_URL, OBP\_DEALER\_2\_URL based on the routes configured in *Lab 3*  
 
     ![Substitions Form](images/4-apex-4-4-1.png)
     ![Substitions Form](images/4-apex-4-4-2.png)
 
-    - Set FABCAR\_CHAINCODE to car\_marketplace\_cc.
-    - Set TOKENIZATION\_CHAINCODE to car\_tokenization\_cc.
     - Set DEALER\_1\_URL and DEALER\_2\_URL to john\_dealer1 and sam\_dealer2, respectively. This gives information on API routing.
     - Set MARKETPLACE to marketplace.
 
-  ![Substitions Form](images/4-apex-4-4.png)
+    ![Substitions Form](images/lab-4-task4-step3.png)
 
 5. Go back and  Select 'App Builder' as shown.
 
   ![Access App Builder](images/4-apex-3-4.png)
 
-6. Navigate to 'Workspace Utilities'
+6. Click on Car Marketplace Application --> Navigate to 'Workspace Utilities'
 
   ![Access App Builder](images/4-apex-4-1.1.png)
 
@@ -218,10 +206,18 @@ This lab assumes you have:
 
   ![Access App Builder](images/4-apex-4-1.3.png)
 
-9. Next, scroll towards the bottom of your 'App Builder' homepage and under **Data Sources**, select 'REST Data Sources.'
+9. Next, scroll towards the bottom of your 'App Builder' ---> 'Car Marketplace Application'
 
+  ![Access App Builder](images/4-apex-4-1.3.1.png)
+
+10. Click on 'Shared Components' -->  Select 'REST Data Sources.'
+
+  ![REST Data Sources](images/4-apex-4-6-1.png)
+
+  ![REST Data Sources](images/4-apex-4-6-2.png)
+  
   ![REST Data Sources](images/4-apex-4-6.png)
-
+  
 10. Now, we can see the following REST Sources configured with remote server URL configured:
     - 'GetAccountBalance'
     - 'GetInvoiceByRange'
@@ -238,7 +234,7 @@ This lab assumes you have:
     - 'GetCarServicesDealer1'
     - 'GetCarServicesDealer2'
 
-  ![Repeat APEX Data Source Steps](images/apex-4-4-12.png)
+  ![Repeat APEX Data Source Steps](images/lab-4-task4-step10.png)
 
 You may now proceed to the next lab.
 
@@ -255,5 +251,5 @@ You may now proceed to the next lab.
 
 ## Acknowledgements
 * **Author** - Oracle Blockchain Product Management
-* **Contributors** - Dev Sony, Amal Tyagi, Teodora Gheorghe, Adrien Lhemann, Diego Morales, Lokeswara Nushisarva, Siddesh C. Prabhu Dev Ujjni, Rene Fontcha
-* **Last Updated By/Date** - Rene Fontcha, September 2022
+* **Contributors** - Adrien Lhemann, Diego Morales, Lokeswara Nushisarva, Siddesh C. Prabhu Dev Ujjni, Rene Fontcha
+* **Last Updated By/Date** - Rene Fontcha, July 2023
