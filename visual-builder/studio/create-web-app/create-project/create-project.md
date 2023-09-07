@@ -78,15 +78,15 @@ Everything you need to start building a visual application is now created for yo
 
     ![Contents of the tutorial-hr-project.git repository. Both the main and hrbranch branches are visible, with the hrbranch selected.](images/repo.png "Git page")
 
-2. In the left navigator, click **Workspaces**![Workspaces icon](images/vbs-workspaces-icon.png)to view the **HR Workspace**. This workspace contains a working copy of **hrbranch** and serves as your _local_ repository. The **hrbranch** initially has the same set of source files as the **main** branch, but as you work with your visual application, it will include the changes you make. Your changes can't be seen by others until you save them from the local branch to a remote branch.
+2. In the left navigator, click![Workspaces icon](images/vbs-workspaces-icon.png)**Workspaces** to view the **HR Workspace**. This workspace contains a working copy of **hrbranch** and serves as your _local_ repository. The **hrbranch** initially has the same set of source files as the **main** branch, but as you work with your visual application, it will include the changes you make. Your changes can't be seen by others until you save them from the local branch to a remote branch.
 
     ![The newly created HR Visual Application in the Workspaces table. Its repository is set to tutorial-hr-project.git, current branch is set to hrbranch, and environment is set to Development.](images/workspace.png "Workspaces page")
 
-3. Click **Environments** ![Environments icon](images/vbs-environments-icon.png) in the left navigator to view the development environment that points to your VB instance. Here, you can view details of your VB instance and all the applications you deploy to this instance.
+3. Click ![Environments icon](images/vbs-environments-icon.png) **Environments** in the left navigator to view the development environment that points to your VB instance. Here, you can view details of your VB instance and all the applications you deploy to this instance.
 
     ![Development environment, with a single Visual Builder instance in the Service Instances tab. The Details, Certificates, and Deployments tabs are also visible.](images/env.png "Environments page")
 
-4. Click **Builds** ![Builds icon](images/vbs-builds-icon.png) in the left navigator to view the default build jobs that package and deploy your visual application to the development instance. The **Visual-Application-Package** job generates the visual application's artifact files. The **Visual-Application-Deploy** job deploys the artifact files to the development instance.
+4. Click ![Builds icon](images/vbs-builds-icon.png)**Builds** in the left navigator to view the default build jobs that package and deploy your visual application to the development instance. The **Visual-Application-Package** job generates the visual application's artifact files. The **Visual-Application-Deploy** job deploys the artifact files to the development instance.
 
     ![Jobs tab on the Builds page. It lists two default jobs Visual-Application-Deploy and Visual-Application-Package in the All Jobs tab. Both jobs include Actions on the right to Build, Configure, View Last Build Log, and Delete. Other tabs that you can use to filter are Successful Jobs, Failed Jobs, and Test Failed Jobs. A Create Job button is also visible.](images/build-jobs.png "Jobs tab on Builds page")
 
