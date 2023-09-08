@@ -4,7 +4,7 @@
 
 This lab will explore JSON data and how you can use SQL and PL/SQL against JSON data stored in Oracle Database 19c.  
 
-Estimated Lab Time:  30 minutes
+Estimated Time:  30 minutes
 
 ### About JSON in the Oracle Database
 
@@ -12,7 +12,7 @@ Estimated Lab Time:  30 minutes
 
 Watch this video to learn more about JSON in the Oracle Database.
 
-[](youtube:OXxA6SFqlJ4)
+[JSON in the Oracle Database](youtube:OXxA6SFqlJ4)
 
 *Schemaless* development based on persisting application data in the form of JSON documents lets you quickly react to changing application requirements. You can change and redeploy your application without needing to change the storage schemas it uses. SQL and relational databases provide flexible support for complex data analysis and reporting, as well as rock-solid data protection and access control. This is typically not the case for NoSQL databases, which have often been associated with schemaless development with JSON in the past. Oracle Database provides all of the benefits of SQL and relational databases to JSON data, which you store and manipulate in the same ways and with the same confidence as any other type of database data.
 
@@ -35,7 +35,9 @@ Grant Required Privileges to the OE user.
 1.  If you aren't already logged in, login to the instance using ssh.  If you are already logged in as the *opc* user, skip to Step 4.
 
     ````
+    <copy>
     ssh -i ~/.ssh/<sshkeyname> opc@<Your Compute Instance Public IP Address>
+    </copy>
     ````
 
 2.  Switch to the oracle user
@@ -44,7 +46,7 @@ Grant Required Privileges to the OE user.
     sudo su - oracle
     </copy>
     ````
-    ![](./images/sudo-oracle.png " ")
+    ![substitute user](./images/sudo-oracle.png " ")
 
 3.  Set your oracle environment.  When prompted enter **[ORCL]**
     ````
@@ -54,7 +56,7 @@ Grant Required Privileges to the OE user.
     ORACLE_SID = [ORCL] ? ORCL
     The Oracle base remains unchanged with value /u01/app/oracle
     ````
-    ![](./images/oraenv.png " ")
+    ![set environment](./images/oraenv.png " ")
 
 4.  Use SQLPlus to connect to the **PDB01** Pluggable database as SYS.
 
@@ -64,7 +66,7 @@ Grant Required Privileges to the OE user.
     </copy>
     ````
 
-    ![](./images/sqlplus.png " ")
+    ![SQLPlus](./images/sqlplus.png " ")
 
 3.  Grant **OE** user some privileges required for the tasks we will execute in this lab.
 
@@ -78,9 +80,9 @@ Grant Required Privileges to the OE user.
     </copy>
     ````
 
-    ![](./images/step1.2-grantpriv.png " " )
+    ![grant privileges](./images/step1.2-grantpriv.png " " )
 
-    *Note: The ALTER SYSTEM privilege is required to flush the Shared Pool in one exercise about performance.*
+    >**Note:** The ALTER SYSTEM privilege is required to flush the Shared Pool in one exercise about performance.
 
 4.  Create Network Access Control List as our database needs to connect to a web service, and retrieve information over HTTP, and this requires an *Access Control List (ACL)*. This ACL can be created by a user with SYSDBA privileges, SYS in this case, from the Pluggable Database called **ORCLPDB**, by executing the following procedure.
 
@@ -97,7 +99,7 @@ Grant Required Privileges to the OE user.
     </copy>
     ````
 
-    ![](./images/p_addACL.png " ")
+    ![Network Access Control List](./images/p_addACL.png " ")
 
 5.  Ensure the execution is successful.  SQL\*Plus Formatting is suggested.
 
@@ -134,7 +136,7 @@ Grant Required Privileges to the OE user.
     </copy>
     ````
 
-    ![](./images/step1.5-connectoe.png " ")
+    ![format the output](./images/step1.5-connectoe.png " ")
 
 ## Task 2:  Register for Geonames
 
@@ -143,7 +145,9 @@ For the purpose of this exercise we will use a web service, that returns informa
 - Share — copy and redistribute the material in any medium or format;
 - Adapt — remix, transform, and build upon the material for any purpose, even commercially.
 
-1.  Click '**login**' link on the upper right corner of GeoNames website, and create a new account. **Note:** When you create your GeoNames account you will receive an email to activate the account (check spam folder).
+1.  Click '**login**' link on the upper right corner of GeoNames website, and create a new account.
+
+    >**Note:** When you create your GeoNames account you will receive an email to activate the account (check spam folder).
 
 2.  Enable the account for web services on the account page [GeoNames Account Page](http://www.geonames.org/manageaccount).
 
@@ -163,7 +167,7 @@ This lab covers the use of database languages and features to work with JSON dat
     </copy>
     ````
 
-    Note: Remember to replace ***GeoNames_username***.
+    >**Note:** Remember to replace ***GeoNames_username***.
 
     ````
     <copy>
@@ -182,7 +186,7 @@ This lab covers the use of database languages and features to work with JSON dat
     </copy>
     ````
 
-    ![](./images/step3.2-replacegeousername.png " " )
+    ![test access](./images/step3.2-replacegeousername.png " " )
 
 3.  Preview the sample output below.
 
@@ -202,7 +206,7 @@ This lab covers the use of database languages and features to work with JSON dat
     </copy>
     ````
 
-    ![](./images/step4.1-createtable.png " " )
+    ![create table](./images/step4.1-createtable.png " " )
 
 2.  Using JSON inside Oracle database is very flexible, and does not require a predefined data structure, or specific schema. You can store any JSON document in a relational table, like the one we just created, with any internal document structure. Here is another JSON document example, with a totally different structure than the one we have received from GeoNames, and we can store it in the same table.
 
@@ -227,7 +231,7 @@ This lab covers the use of database languages and features to work with JSON dat
     </copy>
     ````
 
-    ![](./images/step4.2-insertvalues.png " " )
+    ![insert document](./images/step4.2-insertvalues.png " " )
 
 3.  Once stored, we can query these documents and retrieve the JSON values as traditional relational data.
 
@@ -239,7 +243,7 @@ This lab covers the use of database languages and features to work with JSON dat
     </copy>
     ````
 
-    ![](./images/p_jsonDoc_1.png " ")
+    ![select document](./images/p_jsonDoc_1.png " ")
 
 ## Task 5:  Single Dot Notation
 
@@ -266,7 +270,7 @@ The return value for a dot-notation query is always a string (data type VARCHAR2
     </copy>
     ````
 
-    ![](./images/p_jsonDoc_2.png " ")
+    ![select workshop and region](./images/p_jsonDoc_2.png " ")
 
 3.  Test other queries and review the output.
 
@@ -274,7 +278,7 @@ The return value for a dot-notation query is always a string (data type VARCHAR2
 
 The objective for our lab is to retrieve information about castles in Europe, and use them as JSON documents in different scenarios. Imagine you are starting the development of a new mobile application that provides recommendations for tourists.  For convenience and comfort, we can encapsulate the communication with a web service into a function. This way, we don’t have to write all the code required for a simple request, which in most of the cases is even more complicated than our simple example here, because they require a more complex authentication.
 
-Note: Remember to replace ***GeoNames_username***.
+>**Note:** Remember to replace ***GeoNames_username***.
 
 1.  Create a function to get country information.
 
@@ -296,7 +300,7 @@ Note: Remember to replace ***GeoNames_username***.
     </copy>
     ````
 
-    ![](./images/step6.1-createfunction.png " ")
+    ![create function](./images/step6.1-createfunction.png " ")
 
 2.  The input of the function we just created is the ISO code of a country. Run this query to get information about Spain, for example.
 
@@ -306,7 +310,7 @@ Note: Remember to replace ***GeoNames_username***.
     </copy>
     ````
 
-    ![](./images/p_jsonFunc_1.png " ")
+    ![get information about Spain](./images/p_jsonFunc_1.png " ")
 
 3.  Insert the JSON document retrieved from the web service into the JSON column of that same table, even though this JSON document has a totally different structure.
 
@@ -322,7 +326,7 @@ Note: Remember to replace ***GeoNames_username***.
     </copy>
     ````
 
-    ![](./images/step6.3-insertjsondata.png " ")
+    ![insert information about Spain](./images/step6.3-insertjsondata.png " ")
 
 4.  Select the contents of that table, and notice we use the same column.
 
@@ -332,7 +336,7 @@ Note: Remember to replace ***GeoNames_username***.
     </copy>
     ````
 
-    ![](./images/p_jsonDoc_3.png " ")
+    ![select all columns](./images/p_jsonDoc_3.png " ")
 
 5.  Working with attributes, allows us to get the information we want from a specific document. We can assign default values for attributes that do not match, and treat the issue further from the application. The SQL/JSON function *JSON_VALUE* finds a specified scalar JSON value in JSON data and returns it as a SQL value.
 
@@ -351,7 +355,7 @@ Note: Remember to replace ***GeoNames_username***.
     </copy>
     ````
 
-    ![](./images/p_jsonDoc_4.png " ")
+    ![JSON attributes](./images/p_jsonDoc_4.png " ")
 
 6.  Or we can filter the results to receive only the documents that are useful for the query, using the SDN syntax.
 
@@ -362,13 +366,13 @@ Note: Remember to replace ***GeoNames_username***.
     </copy>
     ````
 
-    ![](./images/p_jsonDoc_5.png " ")
+    ![filter the results](./images/p_jsonDoc_5.png " ")
 
 7.  In both cases, we can see that Spain geonameId is 2510769. This value will be used in the following steps.
 
 8.  A new function is required to retrieve JSON documents with country regions information from GeoNames web service. This function requires the  **geonameId** of the country, and a style value used internally by GeoNames web service to specify the level of details.
 
-    Note: Remember to replace ***GeoNames_username***.
+    >**Note:** Remember to replace ***GeoNames_username***.
 
     ````
     <copy>
@@ -388,7 +392,7 @@ Note: Remember to replace ***GeoNames_username***.
     </copy>
     ````
 
-    ![](./images/step6.8-newfunction.png " " )
+    ![country regions information](./images/step6.8-newfunction.png " " )
 
 9.  Test this function using the following inputs.
 
@@ -398,7 +402,7 @@ Note: Remember to replace ***GeoNames_username***.
     </copy>
     ````
 
-    ![](./images/p_jsonFunc_2.png " ")
+    ![test function](./images/p_jsonFunc_2.png " ")
 
 10. If the test is successful, insert this new JSON document in the same table.
 
@@ -414,7 +418,7 @@ Note: Remember to replace ***GeoNames_username***.
     </copy>
     ````
 
-    ![](./images/step6.10-newjsondoc.png " ")
+    ![insert document](./images/step6.10-newjsondoc.png " ")
 
 11. The SQL/JSON function *JSON\_TABLE* creates a relational view of JSON data. It maps the result of a JSON data evaluation into relational rows and columns. You can query the result returned by the function as a virtual relational table using SQL. The main purpose of *JSON\_TABLE* is to create a row of relational data for each object inside a JSON array and output JSON values from within that object as individual SQL column values. The **NESTED** clause allows you to flatten JSON values in a nested JSON object or JSON array into individual columns in a single row along with JSON values from the parent object or array. You can use this clause recursively to project data from multiple layers of nested objects or arrays into a single row. This path expression is relative to the SQL/JSON row path expression specified in the *JSON\_TABLE* function.
 
@@ -440,7 +444,7 @@ Note: Remember to replace ***GeoNames_username***.
     </copy>
     ````
 
-    ![](./images/p_jsonDoc_6.png " ")
+    ![nested clause](./images/p_jsonDoc_6.png " ")
 
 12. Having all regions from Spain, we can ask the GeoNames web service for more information about each region, for example Andalucia with **geonameId** 2593109.
 
@@ -450,7 +454,7 @@ Note: Remember to replace ***GeoNames_username***.
     </copy>
     ````
 
-    ![](./images/step6.12-moreinfo.png " " )
+    ![Andalucia region](./images/step6.12-moreinfo.png " " )
 
 13. Our next goal is to get more details about each region, and for that we need the geonameId for each region. One option is to use *JSON\_TABLE* to return only that column, or the following SDN syntax.
 
@@ -460,15 +464,14 @@ Note: Remember to replace ***GeoNames_username***.
     </copy>
     ````
 
-    ![](./images/p_jsonDoc_7.png " ")
+    ![return ID column](./images/p_jsonDoc_7.png " ")
 
     The SDN syntax returns an array, not a relational view of JSON data in one column.
 
-Please proceed to the next lab.
+    You may now **proceed to the next lab**.
 
 ## **Acknowledgements**
 
 - **Author** - Valentin Leonard Tabacaru
 - **Contributors** - Anoosha Pilli & Troy Anthony, Product Manager, Dylan McLeod, LiveLabs QA Intern, DB Product Management
-- **Last Updated By/Date** - Kay Malcolm, DB Product Management, August 2020
-
+- **Last Updated By/Date** - Valentin Tabacaru, Mar 2023

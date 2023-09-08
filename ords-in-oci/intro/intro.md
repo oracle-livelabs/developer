@@ -2,26 +2,35 @@
 
 ## About this Workshop
 
-Like a swiss army knife or that as-seen-on-tv multi-tool you got from your grandmother on your birthday, Oracle REST Data Services can work with more than just the Oracle Database. This Lab will walk you through using ORDS to expose the database to multiple other OCI services and product as well as secure REST endpoints for external consumption.
+Like a swiss army knife or that as-seen-on-tv multi-tool you got from your grandmother on your birthday, Oracle REST Data Services APIs can work with more than just the Oracle Database. This Workshop will walk you through using ORDS to expose an Oracle database to multiple other OCI services and products. You will also practice securing Oracle REST Data Services endpoints for external consumption.
 
 *Estimated Workshop Time:* 2 Hours
 
 ### Objectives
 
-In this lab you will create a series of scenarios in OCI where Oracle REST Data Services facilitates loading different types of data into an autonomous database securely. The situations will be:
+In this lab you will create a series of scenarios in OCI where Oracle REST Data Services facilitates the secure loading of different types of data into an Oracle Autonomous Database. Scenarios include:
 
-- Consume a CSV file from Object Store with a REST enabled table in an Autonomous Database using Functions and Events
+- Consume a CSV file from Object Storage with a REST enabled table in an Autonomous Database using Functions and Events
 - Send Log Data to an Autonomous Database using OCI Logging and the Service Connector Hub and Functions
 
 ### Prerequisites
+
 This lab assumes you have:
-* Completed the [Getting Started](https://oracle-livelabs.github.io/common/labs/cloud-login/pre-register-free-tier-account.md) lab
+
+- Completed the [Getting Started](https://oracle-livelabs.github.io/common/labs/cloud-login/cloud-login-livelabs.md) lab
 
 ## Learn More
 
 ### About Oracle REST Data Services
 
-Oracle REST Data Services (ORDS) bridges HTTPS and your Oracle Database. A mid-tier Java application, ORDS provides a Database Management REST API, a web based SQL, JSON and REST workshops, a PL/SQL Gateway, SODA for REST, and the ability to publish RESTful Web Services for interacting with the data and stored procedures in your Oracle Database.
+Oracle REST Data Services (ORDS) brings HTTPS Methods (`GET`, `PUT`, `POST`, `DELETE`) to your Oracle Database objects. As a mid-tier Java application, ORDS provides a bevy of functions such as:
+
+- Database Management REST APIs
+- Database Actions (a web-based version of Oracle SQL Developer)
+- JSON and REST API developer tools
+- a PL/SQL Gateway
+- SODA for REST functions
+- Ability to publish RESTful Web Services for your data and stored procedures
 
 The Java EE implementation offers increased functionality including a command line based configuration, enhanced security, file caching, and RESTful web services. Oracle REST Data Services also provides increased flexibility by supporting deployments using Oracle WebLogic Server, Apache Tomcat, and a standalone mode. Oracle REST Data Services further simplifies the deployment process because there is no Oracle home required, as connectivity is provided using an embedded JDBC driver.
 
@@ -47,5 +56,11 @@ More about Logging can be found [here](https://docs.oracle.com/en-us/iaas/Conten
 
 ## Acknowledgements
 
-- **Authors** - Jeff Smith and Brian Spendolini
-- **Last Updated By/Date** - Brian Spendolini, December 2021
+- **Authors**
+
+  - Jeff Smith, Distinguished Product Manager
+  - Chris Hoina, Senior Product Manager
+
+- **Contributors** - Brian Spendolini
+
+- **Last Updated By/Date** - Chris Hoina, March 2023

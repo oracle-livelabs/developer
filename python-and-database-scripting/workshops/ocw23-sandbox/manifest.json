@@ -1,0 +1,74 @@
+{
+    "workshoptitle": "Python and Oracle for Developers",
+    "help": "livelabs-help-db_us@oracle.com",
+    "tutorials": [
+        {   "title": "Get Started", 
+            "description": "Prerequisites for LiveLabs (Oracle-owned tenancies). The title of the lab and the Contents Menu title (the title above) match for Prerequisite lab. This lab is always first.",    
+            "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/cloud-login-livelabs2.md" 
+        },
+        {
+            "title": "Introduction",
+            "description": "Introduction to the Python and Database scripting workshop.",
+            "filename": "../../intro/intro_gb.md"
+        },
+        {
+            "title": "Lab 1: Environment Setup",
+            "description": "Use python-oracledb connection pools to connect to the Oracle Database",
+            "filename": "../../lab-2-env-setup/env-setup-greenbutton-auto.md"
+        },
+        {
+            "title": "Lab 2: Connection Pools",
+            "description": "Use python-oracledb connection pools to connect to the Oracle Database",
+            "filename": "../../lab-3-connection-pool/conn-pool.md"
+        },
+        {
+            "title": "Lab 3: Fetching Data",
+            "description": "Use python-oracledb connection pools to fetch data from the Oracle Database",
+            "filename": "../../lab-4-data-fetching/data-fetch.md"
+        },
+        {
+            "title": "Lab 4: Binding Data",
+            "description": "Use python-oracledb to bind data from the Oracle Database",
+            "filename": "../../lab-5-binding-data/binding-data.md"
+        },
+        {
+            "title": "Lab 5: PL/SQL",
+            "description": "Use PL/SQL procedures and functions to access data stored in Oracle databases",
+            "filename": "../../lab-6-plsql/plsql.md"
+        },
+        {
+            "title": "Lab 6: Type Handlers",
+            "description": "Use type handlers to alter data fetched or sent to the Oracle database using the python-oracledb",
+            "filename": "../../lab-7-type-handlers/type-handlers.md"
+        },
+        {
+            "title": "Lab 7: LOBS",
+            "description": "Use python-oracledb to manipulate LOBs in Oracle databases",
+            "filename": "../../lab-8-lobs/lobs.md"
+        },
+        {
+            "title": "Lab 8: Rowfactory Functions",
+            "description": "Use python-oracledb to enable queries to return objects other than tuples",
+            "filename": "../../lab-9-rowfactory-functions/func.md"
+        },
+        {
+            "title": "Lab 9: Thick Mode",
+            "description": "Use python-oracledb thick-mode for accessing advanced Oracle database functionality",
+            "filename": "../../lab-11-thick-mode/thick.md"
+        },
+        {
+            "title": "Lab 10: Scrollable Cursors",
+            "description": "Use python-oracledb thick mode applications to move backwards as well as forwards in query results",
+            "filename": "../../lab-13-scrollable-cursors/cursor.md"
+        },
+        {
+            "title": "Lab 11: Query a JSON table from Python",
+            "description": "Work with JSON data in Oracle databases using Python's interface",
+            "filename": "../../lab-15-query-json/query-json.md"
+        },
+        {
+            "title": "Oracle CloudWorld 2023 - Support",
+            "filename": "https://oracle-livelabs.github.io/common/support/ocwsupportlab/ocwsupportlab.md"
+        }
+    ]
+}

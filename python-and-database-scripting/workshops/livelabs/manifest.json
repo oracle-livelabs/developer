@@ -83,7 +83,12 @@
             "filename": "../../lab-14-soda/soda.md"
         },
         {
-            "title": "Lab 15: Terminate Oracle Autonomous Database",
+            "title": "Lab 15: Query a JSON table from Python",
+            "description": "Work with JSON data in Oracle databases using Python's interface",
+            "filename": "../../lab-15-query-json/query-json.md"
+        },
+        {
+            "title": "Lab: Terminate Oracle Autonomous Database",
             "description": "Terminating an Oracle Autonomous Database permanently",
             "filename":"https://oracle-livelabs.github.io/common/labs/terminate-adb/terminate-adb.md"
         },

@@ -6,13 +6,13 @@ This lab will show you how to setup your database schemas for the subsequent lab
 Estimated Time: 10 minutes
 
 ### Objectives
- 
+
 In this lab, you will setup sample schema:
-* Set the environment variables 
+* Set the environment variables
 * Get the Database sample schemas and unzip them
 * Install the Sample Schemas
 
-### Prerequisites 
+### Prerequisites
 This lab assumes you have:
 
 * A LiveLabs Cloud account and assigned compartment
@@ -28,7 +28,8 @@ By completing the instructions below the sample schemas **SH**, **OE**, and **HR
 
 1. Run a *whoami* to ensure the value *oracle* comes back.)
 
-    Note: If you are running in Windows using putty, ensure your Session Timeout is set to greater than 0.
+    >**Note:** If you are running in Windows using putty, ensure your Session Timeout is set to greater than 0.
+    
     ```
     <copy>whoami</copy>
     ```
@@ -39,8 +40,8 @@ By completing the instructions below the sample schemas **SH**, **OE**, and **HR
     sudo su - oracle
     </copy>
     ````
-    
-    ![](./images/sudo-oracle.png " ")
+
+    ![substitute user oracle](./images/sudo-oracle.png " ")
 
 4.  Set the environment variables to point to the Oracle binaries.  When prompted for the SID (Oracle Database System Identifier), enter **ORCL**.
     ````
@@ -49,7 +50,7 @@ By completing the instructions below the sample schemas **SH**, **OE**, and **HR
     </copy>
     ORCL
     ````
-    ![](./images/oraenv.png " ")
+    ![environment variables](./images/oraenv.png " ")
 
 5. Get the Database sample schemas and unzip them. Then set the path in the scripts.
 
@@ -62,7 +63,7 @@ By completing the instructions below the sample schemas **SH**, **OE**, and **HR
     </copy>
     ````
 
-    ![](./images/install-schema-zip.png " " )
+    ![install schema](./images/install-schema-zip.png " " )
 
 6.  Login using SQL*Plus as the **oracle** user.  
 
@@ -71,7 +72,7 @@ By completing the instructions below the sample schemas **SH**, **OE**, and **HR
     sqlplus system/Ora_DB4U@localhost:1521/orclpdb
     </copy>
     ````
-    ![](./images/start-sqlplus.png " ")
+    ![start sqlplus](./images/start-sqlplus.png " ")
 
 7.  Install the Sample Schemas by running the script below.
 
@@ -81,7 +82,7 @@ By completing the instructions below the sample schemas **SH**, **OE**, and **HR
     </copy>
     ````
 
-    ![](./images/schemas-created.png " " )
+    ![schema installed](./images/schemas-created.png " " )
 
 8. Exit SQL Plus and exit the oracle user to return to the opc user.
 
@@ -91,11 +92,11 @@ By completing the instructions below the sample schemas **SH**, **OE**, and **HR
     </copy>
     ```
 
-    ![](images/return-to-opc.png)
+    ![return to opc](images/return-to-opc.png)
 
 Congratulations! Now you have the environment to run the labs.
 
-You may now *proceed to the next lab*.
+You may now **proceed to the next lab**.
 
 ## Oracle Database Sample Schemas Agreement
 
@@ -111,4 +112,4 @@ The above copyright notice and this permission notice shall be included in all c
 
 - **Author** - Troy Anthony, DB Product Management
 - **Contributors** - Anoosha Pilli, Kay Malcolm, Madhusudhan Rao
-* **Last Updated By/Date** -  Madhusudhan Rao, Feb 2022 
+* **Last Updated By/Date** - Valentin Tabacaru, Mar 2023

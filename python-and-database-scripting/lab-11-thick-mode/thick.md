@@ -1,102 +1,90 @@
 # python-oracledb Thick Mode
 
 ## Introduction
-Labs 1 to 10 use python-oracledb in thin mode, but there are certain features which are only available in the **thick mode** of the python-oracledb driver. Note that you can also run labs 1 to 10 in thick mode by just changing the import line in the sample files from **import db\_config** to **import db\_config\_thick as db_config**.
+Previous las use python-oracledb in thin mode. However, there are certain features which are only available in the **thick mode** of the python-oracledb driver. Note that you can also run thse labs in thick mode by just changing the import line in the sample files from **import db\_config** to **import db\_config\_thick as db_config**.
 
 This lab will show how to use python-oracledb driver in thick mode.
 
-Estimated Lab Time: 5 minutes
+Estimated Time: 5 minutes
 
 ### Objectives
 
-*  Connect to Oracle Autonomous Database shared infrastructure using python-oracledb thick mode.
+*  Connect to Oracle Autonomous Database Serverless using the python-oracledb driver thick mode.
 
 ### Prerequisites
 
 This lab assumes you have completed the following labs:
 * Login to Oracle Cloud
-* Create Oracle Autonomous Database shared infrastructure
-* Environment Setup and you have installed the tutorial schema.
+* Create Oracle Autonomous Database Serverless
+* Environment Setup and you have installed the tutorial schema
 
-## Task 1: Review the Oracle Client library path
+## Task 1: Review the configuration file for **thick** mode
 
-Additionally, you need to make Oracle Client libraries available. Follow the documentation on [Installing python-oracledb](https://python-oracledb.readthedocs.io/en/latest/user_guide/installation.html).
+To enable **thick** mode, the Oracle client libraries are required.
+* Note: For this workshop, Cloud Shell already has the Oracle client libraries installed. The instructions for installing the Oracle client libraries are present [here](https://python-oracledb.readthedocs.io/en/latest/user_guide/installation.html#optionally-install-oracle-client). 
 
-When you have installed [Oracle Client](https://yum.oracle.com/oracle-instant-client.html) libraries, review the library path settings in *db\_config\_thick.py* file. If python-oracledb cannot locate Oracle Client libraries, then your applications will fail with an error like "DPI-1047: Cannot locate a 64-bit Oracle Client library". For our examples, we are using Oracle Instant Client libraries.
+1. In Code Editor, review the *db\_config\_thick.py* file in the samples/tutorial directory.
+Note that the default values are used to match the connection information for your enviroment. For example, the default username is "pythondemo", in case the enviroment variable "PYTHON_USER" has not been initialized.
 
-````
-# On Linux, this must be None.
-# Instead, the Oracle environment must be set before Python starts.
-instant_client_dir = None
+    ````
+    user = os.environ.get("PYTHON_USER", "pythondemo")
+    config_dir = os.environ.get("CONFIG_DIR")
+    dsn = os.environ.get("DSN_ADB")
+    wallet_location = os.environ.get("WALLET_LOCATION")
+    wallet_password = os.environ.get("WALLET_PASSWORD")
+    pw = os.environ.get("PYTHON_PASSWORD")
+    if pw is None:
+        pw = getpass.getpass("Enter password for %s: " % user)
+    if wallet_password is None:
+        wallet_password = getpass.getpass("Enter password for the Wallet: ")
+    ````
 
-# On Windows, if your database is on the same machine, comment these lines out
-# and let instant_client_dir be None.  Otherwise, set this to your Instant
-# Client directory.  Note the use of the raw string r"...", which allows backslashes to
-# be used as directory separators.
-if platform.system() == "Windows":
-    instant_client_dir = r"C:\Oracle\instantclient_19_14"
+## Task 2: Review the Oracle client library path
 
-# On macOS (Intel x86) set the directory to your Instant Client directory
-if platform.system() == "Darwin":
-    instant_client_dir = os.environ.get("HOME")+"/Downloads/instantclient_19_8"
+1. Review *db\_config\_thick.py* and notice that the Oracle Client library path is set by the **instant\_client\_dir** variable.
 
-# You must always call init_oracle_client() to use thick mode
-oracledb.init_oracle_client(lib_dir=instant_client_dir)
-````
+    *Note*: For this tutorial **instant\_client\_dir** is already set to **None** and the *db\_config\_thick.py* file does not require any changes. 
 
-*Important!* Calling the init\_oracle_client() function enables the thick mode of python-oracledb. Once python-oracledb is in thick mode, you cannot return to thin mode without removing calls to init\_oracle\_client() and restarting the application.
+    Depending on your environment you will need to edit db\_config\_thick.py and set instant\_client\_dir to **None** or to a valid path according to the following notes:
 
-Edit **db\_config\_thick.py** and set instant\_client\_dir to None or to a valid path according to the following notes:
+    - If you are on macOS (Intel x86) or Windows, and you have installed Oracle Instant Client libraries because your database is on a remote machine, then set instant\_client\_dir to the path of the Instant Client libraries.
 
-- If you are on macOS (Intel x86) or Windows, and you have installed Oracle Instant Client libraries because your database is on a remote machine, then set instant\_client\_dir to the path of the Instant Client libraries.
+    - If you are on Windows and have a local database installed, then comment out the two Windows lines, so that instant\_client\_dir remains None.
 
-- If you are on Windows and have a local database installed, then comment out the two Windows lines, so that instant\_client\_dir remains None.
+    - In all other cases (including Linux with Oracle Instant Client), make sure that instant\_client\_dir is set to None. In these cases you must make sure that the Oracle libraries from Instant Client or your ORACLE\_HOME are in your system library search path before you start Python. On Linux, the path can be configured with ldconfig or with the LD\_LIBRARY\_PATH environment variable.
 
-- In all other cases (including Linux with Oracle Instant Client), make sure that instant\_client\_dir is set to None. In these cases you must make sure that the Oracle libraries from Instant Client or your ORACLE\_HOME are in your system library search path before you start Python. On Linux, the path can be configured with ldconfig or with the LD\_LIBRARY\_PATH environment variable.
+    *Important!* Calling the **init\_oracle\_client()** function enables python-oracledb driver in **thick** mode.
 
-## Task 2: Review the configuration files for thick mode
+    Once python-oracledb is in thick mode, you cannot return to thin mode without removing the calls to **init\_oracle\_client()** and restarting the application.
 
-Review db\_config\_thick.py (thick mode), and db\_config.sql files in the tutorial directory. These are included in other Python and SQL files for setting up the database connection.
+    ````
+    # On Linux, this must be None.
+    # Instead, the Oracle environment must be set before Python starts.
+    instant_client_dir = None
 
-Edit db\_config\_thick.py file and change the default values to match the connection information for your environment. Alternatively, you can set the given environment variables in your terminal window. For example, the default username is "pythondemo" unless the environment variable "PYTHON_USER" contains a different username. The default connection string is for the 'orclpdb' database service on the same machine as Python. In Python Database API terminology, the connection string parameter is called the "data source name" or "dsn". Using environment variables is convenient because you will not be asked to re-enter the password when you run scripts:
+    # On Windows, if your database is on the same machine, comment these lines out
+    # and let instant_client_dir be None.  Otherwise, set this to your Instant
+    # Client directory.  Note the use of the raw string r"...", which allows backslashes to
+    # be used as directory separators.
+    if platform.system() == "Windows":
+        instant_client_dir = r"C:\Oracle\instantclient_19_14"
 
-````
-<copy>
-user = os.environ.get("PYTHON_USER", "pythondemo")
+    # On macOS (Intel x86) set the directory to your Instant Client directory
+    if platform.system() == "Darwin":
+        instant_client_dir = os.environ.get("HOME")+"/Downloads/instantclient_19_8"
 
-dsn = os.environ.get("PYTHON_CONNECT_STRING", "localhost/orclpdb")
+    # You must always call init_oracle_client() to use thick mode
+    oracledb.init_oracle_client(lib_dir=instant_client_dir,config_dir=config_dir)
+    ````
 
-pw = os.environ.get("PYTHON_PASSWORD")
-if pw is None:
-    pw = getpass.getpass("Enter password for %s: " % user)
-</copy>
-````
-
-Also, change the default username and connection string in the SQL configuration file **db\_config.sql** to match the specifics of your environment:
-
-````
-<copy>
--- Default database username
-def user = "pythondemo"
-
--- Default database connection string
-def connect_string = "db20220721220247_high"
-
--- Prompt for the password
-accept pw char prompt 'Enter database password for &user: ' hide
-</copy>
-````
-
-The tutorial instructions may need adjusting, depending on how you have set up your environment.
-
-Labs 12 to 14 labs are specific to the python-oracledb thick modes in this release of python-oracledb.
+    Labs __Advanced Queueing__, __Scrollable Cursors__ and __SODA__ are specific to the python-oracledb thick modes in this release of python-oracledb.
 
 ## Conclusion
 
-In this lab, you had an opportunity to learn about connecting Python to the Oracle Autonomous Database shared infrastructure, using python-oracledb in thick mode.
+In this lab, you had an opportunity to learn about configuring python-oracledb driver to operate in thick mode.
 
 ## Acknowledgements
 
 * **Authors** - Christopher Jones, Anthony Tuininga, Sharad Chandran, Veronica Dumitriu
 * **Contributors** - Jaden McElvey, Anoosha Pilli, Troy Anthony
-* **Last Updated By/Date** - Veronica Dumitriu, DB Product Management, July 2022
+* **Last Updated By/Date** - Veronica Dumitriu, Oracle Data Drivers Product Management, June 2023

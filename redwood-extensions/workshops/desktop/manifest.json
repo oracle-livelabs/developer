@@ -18,8 +18,7 @@
       "filename": "../../workspace/workspace.md"
     },
     {
-      "title": "Lab 2: Create your first page",
-      "description": "Labs that follow the introduction are numbered, starting with Lab 1",
+      "title": "Lab 2: Welcome page",
       "filename": "../../welcome/welcome.md"
     },
     {
@@ -27,17 +26,16 @@
       "filename": "../../saasservice/saasservice.md"
     },
     {
-      "title": "Lab 4: Add edit and details pages",
-      "filename": "../../editpage/editpage.md"
-    },
-    {
-      "title": "Lab 5: Add buttons and action chains",
+      "title": "Lab 4: Add buttons and action chains",
       "filename": "../../tableedit/tableedit.md"
     },
     {
-        "title": "Lab 6: Apply Redwood page templates",
-
-        "filename": "../../rweditpage/rweditpage.md"
+      "title": "Lab 5: Account Details page",
+      "filename": "../../detailspage/detailspage.md"
+    },
+    {
+      "title": "Lab 6: Edit account page",
+      "filename": "../../editpage/editpage.md"
     },
     {
       "title": "Need Help?",
