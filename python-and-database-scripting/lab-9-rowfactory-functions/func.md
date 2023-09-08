@@ -9,9 +9,6 @@ Estimated Time: 5 minutes
 Watch the video below for a quick walk-through of the lab.
 [Rowfactory Functions](videohub:1_l5w1xt8h)
 
-Watch the video below for a quick walk-through of the lab.
-[Rowfactory Functions](videohub:1_l5w1xt8h)
-
 ### Objectives
 
 *  Learn best practices and efficient techniques for mapping column names,  objects using rowfactory functions.

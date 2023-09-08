@@ -9,9 +9,6 @@ Estimated Time: 10 minutes
 Watch the video below for a quick walk-through of the lab.
 [Binding Data](videohub:1_mrlbewgm)
 
-Watch the video below for a quick walk-through of the lab.
-[Binding Data](videohub:1_mrlbewgm)
-
 ### Objectives
 
 *  Learn best practices and efficient techniques for binding data.
