@@ -24,7 +24,7 @@ Watch the video below for a quick walk-through of the lab.
 
     ![Database Actions Home Page, Click SQL tile](images/click-for-sql-worksheet.png)
 
-💡 *If this is your first time accessing the SQL Worksheet, you will be presented with a guided tour. Complete the tour or click the X in any tour popup window to quit the tour.*
+   💡 *If this is your first time accessing the SQL Worksheet, you will be presented with a guided tour. Complete the tour or click the X in any tour popup window to quit the tour.*
 
 2. We are now ready to load data into the database. For this task, we will use the **Data Loading tab** in the SQL Worksheet.
 
@@ -52,15 +52,15 @@ Watch the video below for a quick walk-through of the lab.
 
 8. On the following step of the data loading modal, we can see the **name of the table** we are going to create (CSV_DATA) as well as the column and data types for the table.
 
-    ![Data Column Layout from uploaded file](./images/data-column-layout-preview.png)
+     ![Data Column Layout from uploaded file](./images/data-column-layout-preview.png)
 
-    Set all columns to VARCHAR2 with a length of 4000. This will provide a flawless data loading experience.
-    
-    ![Set Columns to VARCHAR2 4000](./images/set-columns-to-varchar2.png)
+     Set all columns to VARCHAR2 with a length of 4000. This will provide a flawless data loading experience.
 
-    When table and columns look like the below image, **Click Next** on the bottom right of the modal.
+     ![Set Columns to VARCHAR2 4000](./images/set-columns-to-varchar2.png)
 
-    ![Check out data then Click Next Button](./images/data-preview-click-next.png)
+     When table and columns look like the below image, **Click Next** on the bottom right of the modal.
+
+     ![Check out data then Click Next Button](./images/data-preview-click-next.png)
 
 9. On the **last step** of the modal, we can see a review of the table name and source file
 
@@ -112,11 +112,11 @@ Watch the video below for a quick walk-through of the lab.
 
     ![Right click the table name in the navigator, select REST, then cURL Command](./images/retrieve-curl-command-for-object.png " ")
 
-    <h1>
-    <mark>Oracle CloudWorld 2023 <i>Exclusive</i></mark>
-    </h1>
+   <div>
+     <h1 style="background-color:HoneyDew;">Oracle CloudWorld 2023 <i>Exclusive</i></h1>
+   </div>
 
-5. Another way to a retrieve `cURL` commands, is through the built-in OpenAPI Viewer. To do this, navigate back to the Database Actions Launchpad,by clicking the header at the top of your SQL Worksheet.
+5. Another way to a retrieve `cURL` commands, is through the built-in OpenAPI Viewer. To do this, navigate back to the Database Actions Launchpad, by clicking the header at the top of your SQL Worksheet.
 
    ![click-header-to-return-to-database-actions-launchpad](./images/click-header-to-return-to-database-actions-launchpad.png " ")
 
@@ -168,9 +168,8 @@ You may now [proceed to the next lab](#next).
 
 ## Acknowledgements
 
- - **Author** 
+ - **Author**
     - Jeff Smith, Distinguished Product Manager
     - Chris Hoina, Senior Product Manager
-    - Brian Spendolini
  - **Last Updated By/Date**
     - Chris Hoina, September 2022

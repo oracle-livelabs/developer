@@ -18,153 +18,108 @@ Watch the video below for a quick walk-through of the lab.
 
 - The following lab requires an [Oracle Cloud account](https://www.oracle.com/cloud/free/). You may use your own cloud account, a cloud account that you obtained through a trial, or a training account whose details were given to you by an Oracle instructor.
 
-- This lab assumes you have completed all previous Labs. 
+- This lab assumes you have completed all previous Labs.
 
-## Task 1: Load data into the Database
+## Task 1: Download a CSV from an OCI Cloud Storage Bucket
 
-1. Start by again using the **cURL slide out** on our **REST enabled table**.
+1. Next we will use the `BATCHLOAD` `HTTP` method to insert data, from a CSV file, into your table. We'll accomplish this with a `curl` command.
 
-    ![Right click the table name in the navigator, select REST, then cURL Command](./images/right-click-for-rest.png)
+2. Before executing this `curl` command, you'll need to retrieve a large CSV file from an OCI Cloud Storage Bucket. You can perform these next steps using a local computer with `cURL` installed <i>or</i> with the **Oracle Cloud Infrastructure Cloud Shell**.
 
-2. We now see the cURL for the table CSV_DATA slideout on the right side of the web browser. 
+   ![Cloud Shell on Oracle Cloud Infrastructure Banner](./images/cloud-shell-icon-action.png " ")
 
-    ![cURL for the table CSV_DATA slideout](./images/curl-command-slider.png)
+   <details>
+     <summary>💡***CLICK to learn more*** **about the OCI Cloud Shell.**</summary>
+     <div style="background-color:HoneyDew;padding:5px;border-radius:15px;">Every Oracle Cloud Infrastructure account has Cloud Shell--a web browser-based terminal accessible from the Oracle Cloud Console.<p></p>
+     It provides access to a Linux shell, with a pre-authenticated Oracle Cloud Infrastructure CLI, pre-authenticated Ansible installation, and other useful tools. Available to all OCI users, the Cloud Shell will appear in the Oracle Cloud Console as a persistent frame of the Console, and will stay active as you navigate to different pages of the Console.
+     <p></p>
+     To use the Cloud Shell, after logging into your Oracle Cloud Infrastructure account, click the Cloud Shell icon in the upper right of the Oracle Cloud Infrastructure banner.
+   </details>
 
-    Left click the **BATCH LOAD** side tab.
+3. Using the below `curl` command, download the CSV file to a directory in your OCI Cloud Shell, or your local computer.
 
-    ![Left click the BATCH LOAD side tab](./images/curl-command-batchload.png)
-
-3. Next, click the copy icon ![copy icon](./images/copy-icon.png) for the **BATCH LOAD** endpoint.
-
-    ![Left click the BATCH LOAD side tab](./images/copy-curl-command-action.png)
-
-    It should be similar to the following:
-
-    ```
-    <copy>curl --location --request POST \
-    --header "Content-Type: <CONTENT_TYPE>" \
-    --data-binary @<FILE_NAME> \
-    'https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/admin/csv_data/batchload'</copy> 
-    ```
-
-    **Save this code in a text editor or a notes application, as we will be using it momentarily.**
-
-4.  We'll alter this for our data load. First, we need to be in either the **Oracle Cloud Infrastructure Cloud Shell** or a local computer with cURL installed. Every Oracle Cloud Infrastructure account has Cloud Shell so we would encourage using that. 
-
-    💡 ***Oracle Cloud Infrastructure (OCI) Cloud Shell is a web browser-based terminal accessible from the Oracle Cloud Console. It provides access to a Linux shell, with a pre-authenticated Oracle Cloud Infrastructure CLI, pre-authenticated Ansible installation, and other useful tools. Available to all OCI users, the Cloud Shell will appear in the Oracle Cloud Console as a persistent frame of the Console, and will stay active as you navigate to different pages of the Console.***
-    
-    To use the Cloud Shell, after logging into your Oracle Cloud Infrastructure account, click the Cloud Shell icon in the upper right of the Oracle Cloud Infrastructure banner:
-
-    ![Cloud Shell on Oracle Cloud Infrastructure Banner](./images/cloud-shell-icon-action.png)
-
-    The Cloud Shell will open on the lower part of the web browser:
-
-    ![Cloud Shell on bottom of browser](./images/lower-cloud-shell-welcome.png)
-
-    We will be using the Oracle Cloud Infrastructure Cloud Shell for examples in this lab going forward.
-
-5. On to the data load. First, download the CSV file. Using the Cloud Shell, enter the following command:
-
-    ````
+    ````curl
     <copy>curl -o 2M.csv https://objectstorage.us-ashburn-1.oraclecloud.com/p/LNAcA6wNFvhkvHGPcWIbKlyGkicSOVCIgWLIu6t7W2BQfwq2NSLCsXpTL9wVzjuP/n/c4u04/b/livelabsfiles/o/developer-library/2M.csv</copy>
     ````
 
-6. Now that we have the file locally, we can load it into the database. Using our cURL command from earlier, we'll make a few adjustments and then run it in the Cloud Shell. 
+4. Now that you have the file locally, you can batch load it to your `CSV_DATA` table. To do this you will need to retrieve the `BATCHLOAD` ORDS endpoint, from your `REST`-enabled table.
 
-    💡 *We'll be adding to this command, so use a text editor or notes application on the side.*
+## Task 2: Retrieve your Batchload REST-endpoint
 
-    Our **BATCH LOAD** cURL command was similar to the following:
+<div>
+ <h1 style="background-color:HoneyDew;">Oracle CloudWorld 2023 <i>Exclusive</i></h1>
+</div>
 
+1. Navigate to the OpenAPI view for the `CSV_DATA` table, as shown in the previous lab.
+
+   ![opening-open-api-view-for-ords-batchload-endpoint](./images/opening-open-api-view-for-ords-batchload-endpoint.png " ")
+
+2. Expand the `POST/batchload` block. 
+
+   ![expand-the-post-batch-load-open-api-block](./images/expand-the-post-batch-load-open-api-block.png " ")
+
+   Click the `Try it out` button, followed by the `Execute` button.
+
+   ![expand-the-post-batch-load-open-api-block](./images/click-try-it-out-in-batchload-openapi-block.png " ")
+
+   ![click-execute-button-batchload-openapi-view](./images/click-execute-button-batchload-openapi-view.png " ")
+
+   Under the `Responses` section, you will see a sample `curl` command. Copy this command, save it to a clipboard; we'll use this as the basis for your own `curl` command.
+
+   ![obtaining-batchload-curl-command-from-openapi-view-block](./images/obtaining-batchload-curl-command-from-openapi-view-block.png " ")
+
+3. You can retain the headers (indicated by `-H`), but change the `-d` (aka `--data`) to `--data-binary` followed by the filename or filepath [of where you saved the `2M.csv` file].
+
+    <details>
+        <summary>💡***CLICK to learn*** **why we use `--data-binary`.**</summary>
+        <div style="background-color:HoneyDew;padding:5px;border-radius:15px;">This will perform a <code>POST</code> much like when using the <code>--data</code> option, only <i>exactly as specified</i> with no extra processing.
+        <p></p>
+        Newlines and carriage returns are preserved and conversions are never performed. To pass in a filename, use the <code>@</code> character, followed by the filename or filepath.
+    </div>
+    </details>
+
+4. Your `curl` command should resemble what you see below. In this example, you'll notice an additional, *optional* `--write-out` option; which will provide you with a summary of the `POST` request's operation. You'll also notice a `--user` header for your user's credentials.
+
+    ```sh
+      <copy>
+        curl --write-out '%{time_total}' -X 'POST' \
+        'http://localhost:8080/ords/ordstest/csv_data/batchload' \
+        -H 'accept: application/json' \
+        -H 'Content-Type: text/csv' \
+        --user 'ordstest:password1234' \
+        --data-binary '@/Users/choina/Desktop/2M.csv'
+      </copy>
+   ```
+
+## Task 3: Batchload data into your CSV_DATA table
+
+1. You may execute the `curl` command in the shell or your choice (locally or within the OCI Cloud Shell). Below is a sample output:
+
+   ![example-curl-command-in-terminal-for-batchload-of-csv](./images/example-curl-command-in-terminal-for-batchload-of-csv.png " ")
+
+   ![output-from-curl-command-in-terminal-for-batchload-of-csv](./images/output-from-curl-command-in-terminal-for-batchload-of-csv.png " ") 
+
+2. Next, return to the **SQL worksheet**. You can verify the batch load is running (or has completed) by executing the following SQL:
+
+    ```sql
+    <copy>
+       select count(*) from csv_data;
+    </copy>
     ```
-    curl --location --request POST \
-    --header "Content-Type: <CONTENT_TYPE>" \
-    --data-binary @<FILE_NAME> \
-    'https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/admin/csv_data/batchload' 
-    ```
 
-    Next we'll make some adjustments. First, we can include **--write-out '%{time_total}'** to see exactly how long this data load will take. 
-
-    ```
-    curl --write-out '%{time_total}'
-    ```
-
-    We'll need to tell the REST endpoint this will be a POST operation, by including **-X POST**.
-
-    ```
-    curl --write-out '%{time_total}' -X POST
-    ```
-
-    We'll indicate the CSV file and name with the following option: **--data-binary "@2M.csv"**
-
-    ```
-    curl --write-out '%{time_total}' -X POST --data-binary "@2M.csv"
-    ```
-
-    We'll also need to set the headers of this HTTP request. We'll set the content type and tell it we are sending over a CSV file. The -H option indicates we are setting header variables and we include the Content Type like this: **-H "Content-Type:text/csv"**
-
-    ```
-    curl --write-out '%{time_total}' -X POST --data-binary "@2M.csv" -H "Content-Type:text/csv"
-    ```
-
-    Next, we can add basic authentication by passing over the username and password of our database schema with the following: **--user "admin:PASSWORD"**. Remember to replace **PASSWORD** with the password you used when you first created the user in Lab 1.
-
-    ```
-    curl --write-out '%{time_total}' -X POST --data-binary "@2M.csv" \
-    -H "Content-Type:text/csv" --user "admin:PASSWORD"
-    ```
-
-    Finally, we need to **add the URL we copied previously**. We will be replacing **batchload** with **batchload?batchRows=5000&errorsMax=20** to indicate that:
-      
-    - this is a batch load
-    - we want to load them in groups of 5000, and 
-    - to stop running if we hit 20 errors
-
-
-    ```
-    <copy>curl --write-out '%{time_total}' -X POST --data-binary "@2M.csv" \
-    -H "Content-Type:text/csv" --user "admin:123456ZAQWSX!!" \
-    "https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/admin/csv_data/batchload?batchRows=5000&errorsMax=20"</copy>
-    ```
-
-    You should now have the complete cURL command we'll use to load the data into the table. Remember to replace **PASSWORD** with our own password used when we first created the user in Lab 1. 
-
-7. Using the **Cloud Shell**, **paste** your constructed cURL at the **command prompt**.
-
-    ![running the command in cloud shell](./images/execute-curl-command-cloud-shell.png)
-
-8. When the **command is finished**, you should see that all **2,097,148 records were inserted** into the table.
-
-    ```
-    curl --write-out '%{time_total}' -X POST --data-binary "@2M.csv" \
-    -H "Content-Type:text/csv" --user "admin:123456ZAQWSX!!" \
-    "https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/admin/csv_data/batchload?batchRows=5000&errorsMax=20"
-
-    #INFO Number of rows processed: 2,097,148
-    #INFO Number of rows in error: 0
-    #INFO Last row processed in final committed batch: 2,097,148
-    0 - SUCCESS: Load processed without errors
-    29.447
-    ```
-        
-    `29.447` is the result of the **--write-out '%{time_total}'** option we added, indicating it took about 30 seconds to load 2 million records!
-
-9. Back in the **SQL worksheet**, we can verify the load by running the following SQL. **In the worksheet**, enter the following statement:
-
-    ````
-    <copy>select count(*) from csv_data;</copy>
-    ````
-
-    You can highlight the command with your mouse/point and click the green arrow **Run Statement** button in the tool bar or press ctrl-enter/return (Windows)/command-enter/return (MacOS) while on the same line as the statement in the worksheet.
+   Execute the statement by highlighting the command with your mouse, then point and click the green arrow (**Run Statement**) button in the tool bar. Alternatively you may press `Ctrl-Enter / Return` (on Windows) or `Command + Enter / Return` (MacOS) while on the same line as the SQL statement.
 
     ![running a SQL command in the sql worksheet](./images/run-statement-sql-worksheet.png)
 
-    Either method will give the following result:
+    Either method will yield the following result:
 
     ![SQL results](./images/lower-review-query-result.png)
 
-10. Next we will **add a function** to our database schema to simulate some business logic. 
+## Task 4: Add a function to simulate business logic
 
-    The following function returns a count of all the rows that match the input provided to col2 in the table:
+1. Next you'll **add a function** to your database schema to simulate the execution of business logic.
+
+    The following procedure returns a count of all the rows that match an input provided to *col2 of the table*:
 
     ````
     <copy>
@@ -187,9 +142,9 @@ Watch the video below for a quick walk-through of the lab.
 
     ![compile the function in the sql worksheet](./images/run-script-action-compile-function.png)
 
-11.  We can test this function with a quick PL/SQL procedure. Copy and paste the following into the SQL Worksheet and run the procedure with the **Run Script** button:
+2.  We can test this function with the following PL/SQL block. Copy and paste the following into the SQL Worksheet and execute the block with the **Run Script** button:
 
-    ````
+    ````pl/sql
     <copy>
     declare
         l_output number;
@@ -207,7 +162,7 @@ Watch the video below for a quick walk-through of the lab.
 
     ![SQL to try out the procedure](./images/test-procedure-with-sql.png)
 
-12. In this lab, you loaded over two million rows into a table with cURL and REST as well as added business logic to the database.
+3. In this lab, you loaded over two million rows into a table with `cURL` and an ORDS `REST` endpoint as well as added business logic to the database.
 
 You may now [proceed to the next lab](#next).
 
@@ -215,8 +170,7 @@ You may now [proceed to the next lab](#next).
 
  - **Author** 
     - Jeff Smith, Distinguished Product Manager
-    - Chris Hoina, Senior Product Manager 
-    - Brian Spendolini
- - **Last Updated By/Date** 
-    - Chris Hoina, September 2022
+    - Chris Hoina, Senior Product Manager
+ - **Last Updated By/Date**
+    - Chris Hoina, September 2023
 

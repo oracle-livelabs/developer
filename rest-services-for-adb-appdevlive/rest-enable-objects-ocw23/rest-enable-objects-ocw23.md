@@ -211,12 +211,10 @@ Watch the video below for a quick walk-through of the lab.
 
     ![Create Handler slider with all info, left click create](./images/create-final-handler-slider.png)
 
-11. Next we'll create an output parameter so we can return a result. 
-    
-    :bulb: *We should expect the count or rows where the passed in value is equal to the values in col2 in our table.*
-        
+11. Next we'll create an output parameter so we can return a result.
+
     On the bottom on the bizlogic details page, under the **Source** area, locate the **+ Create Parameter** button. Left click the **+ Create Parameter** button.
-   
+
     ![Left click the + Create Parameter button](./images/create-parameter-button.png)
 
 12. The **Create Parameter** slider appears from the right of the page:
@@ -225,7 +223,7 @@ Watch the video below for a quick walk-through of the lab.
 
 13. For the **Parameter Name** field and the **Bind Variable Name** field, enter **output**
 
-    ````
+    ````sql
     <copy>output</copy>
     ````
 
@@ -253,6 +251,10 @@ Watch the video below for a quick walk-through of the lab.
 
     We are now ready to test this REST API.
 
+<div>
+ <h1 style="background-color:HoneyDew;">Oracle CloudWorld 2023 <i>Exclusive</i></h1>
+</div>
+
 19. Left click **bizlogic** in the Database Actions breadcrumbs in the upper left of the page.
 
     ![bizlogic breadcrumb](./images/bizlogic-breadcrum-action.png)
@@ -265,7 +267,7 @@ Watch the video below for a quick walk-through of the lab.
 
     ![cURL Command modal](./images/curl-command-modal-bizlogic.png)
 
-    :bulb: <i>Remember to select the appropriate cURL command for your environment!</i>
+    💡 <i>Remember to select the appropriate cURL command for your environment!</i>
 
     ![cURL Command reminder](./images/curl-command-reminder.png)
 
