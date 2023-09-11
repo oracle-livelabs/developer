@@ -43,16 +43,17 @@ Watch the video below for a quick walk-through of the lab.
 
 5. Using the **Create Module** slider, begin by adding a Module name. Use the following: **com.oracle.livelab.api**
 
-    ````
+    ````sql
     <copy>com.oracle.livelab.api</copy>
     ````
+
     :bulb: *A module is an organizational unit used to group related resource templates. Templates will have handlers, which are responsible for providing the logic required to service a specific HTTP method (e.g., GET, POST, PUT, DELETE, UPDATE, etc.).*
 
     ![Create Modules slider](./images/module-name-field.png) 
 
 6. For the **Base Path** field, use the default of **/api/**. Enter **/api/** in the **base path field**:
 
-    ````
+    ````sql
     <copy>/api/</copy>
     ````
 
@@ -62,7 +63,7 @@ Watch the video below for a quick walk-through of the lab.
 
     ![Protected By Privilege** select list](./images/setting-privileges-field.png)
 
-7. When the **Create Module** slider looks like the below image (**NOTE: your URL hostname will be different than the below image**), left click the **Create** button.
+7. When the **Create Module** slider resembles the below image, left click the **Create** button.
 
     ![Create Modules slider](./images/create-module-submit.png)
 
@@ -81,18 +82,18 @@ Watch the video below for a quick walk-through of the lab.
 9. The **Create Template** slider emerges from the right of the page. 
 
     ![Create Template slider](./images/create-template-slider.png)
-    
+
     Here we will create the endpoint, or URL location, for our REST enabled SQL Statement. This statement will expect a value.
 
 10. In the **URI Template** template field, enter **sqlreport/:id**
 
-    ````
+    ````sql
     <copy>sqlreport/:id</copy>
     ````
 
     ![URI Template field](./images/enter-uri-template-field.png)
 
-11. When the **URI Template** slider looks like the below image (**NOTE: your URL hostname will be different than the below image**), left click the **Create** button.
+11. When the **URI Template** slider resembles the below image, left click the **Create** button.
 
     ![Create Modules slider with all info, left click create](./images/create-template-finish.png)
 
@@ -127,7 +128,7 @@ Watch the video below for a quick walk-through of the lab.
 
     ![Source Field Toggle](images/adding-source-field-code-toggle.png)
 
-15. When the **Create Handler** slider looks like the below image (**NOTE: your URL hostname will be different than the below image**), left click the **Create** button.
+15. When the **Create Handler** slider resembles the below image, left click the **Create** button.
 
     ![Create Handler slider with all info, left click create](./images/create-handler-final-action.png)
 
@@ -168,16 +169,16 @@ Watch the video below for a quick walk-through of the lab.
 3. The **Create Template** appears from the right of the page. 
 
     ![Create Template slider](./images/create-template-slider.png)
-    
+
 4. In the **URI Template** template field, enter `bizlogic`
 
-    ````
+    ````sql
     <copy>bizlogic</copy>
     ````
 
     ![URI Template field](./images/uri-template-field.png)
 
-5. When the **URI Template** slider looks like the below image (**NOTE: your URL hostname will be different than the below image**), left click the **Create** button.
+5. When the **URI Template** slider resembles the below image, left click the **Create** button.
 
     ![Create Template slider with all info, left click create](./images/creat-template-finish.png)
 
@@ -197,7 +198,7 @@ Watch the video below for a quick walk-through of the lab.
 
 9. Now, in the **Source** field, enter the following PL/SQL:
 
-    ````
+    ````plsql
     <copy>
     BEGIN
         return_count(p_input => :id, p_output => :output);
@@ -207,7 +208,7 @@ Watch the video below for a quick walk-through of the lab.
 
     ![Create Handler slider](./images/source-entered-in-handler-slider.png)
 
-10. When the **Create Handler** slider looks like the below image (**NOTE: your URL hostname will be different than the below image**), left click the **Create** button.
+10. When the **Create Handler** slider resembles the below image, left click the **Create** button.
 
     ![Create Handler slider with all info, left click create](./images/create-final-handler-slider.png)
 
@@ -241,78 +242,61 @@ Watch the video below for a quick walk-through of the lab.
 
     ![Access Method field](./images/parameter-access-method-field.png)
 
-17. When the **Create Parameter** slider looks like the below image (**NOTE: your URL hostname will be different than the below image**), left click the **Create** button.
+17. When the **Create Parameter** slider resembles the below image, left click the **Create** button.
 
     ![Create Parameter slider with all info, left click create](./images/final-create-parameter-action.png)
 
-18. You will see the newly created parameter in the parameters table on the bottom of the page.
+18. You will see the newly created parameter in the **Parameters** table on the bottom of the page.
 
     ![Parameter created in report](./images/parameter-in-report-table.png)
 
     We are now ready to test this REST API.
 
-<div>
- <h1 style="background-color:HoneyDew;">Oracle CloudWorld 2023 <i>Exclusive</i></h1>
-</div>
+## Task 3: Test the REST API
 
-19. Left click **bizlogic** in the Database Actions breadcrumbs in the upper left of the page.
+   <div>
+   <h1 style="background-color:HoneyDew;">Oracle CloudWorld 2023 <i>Exclusive</i></h1>
+   </div>
 
-    ![bizlogic breadcrumb](./images/bizlogic-breadcrum-action.png)
+1. Use the REST Workshop breadcrumbs to navigate to the `com.oracle.livelab.api` Resource Module.
 
-20. Now, using the popout menu icon ![popout menu icon](./images/pop-menu.png) on our **bizlogic POST tile**, select **Get cURL command**.
+   ![ bizlogic-breadcrum-action.png](./images/bizlogic-breadcrum-action.png " ")
 
-    ![selecting Get cURL command](./images/select-bizlogic-handler-curl-command.png)
+2. Navigate to the OpenAPI View of the `com.oracle.livelab.api` Resource Module.
 
-21. The cURL Command modal appears:
+   ![![Alt text](navigating-to-bizlogic-openapi-viewer.png)](./images/navigating-to-bizlogic-openapi-viewer.png " ")
 
-    ![cURL Command modal](./images/curl-command-modal-bizlogic.png)
+3. Locate the `POST /bizlogic` block. and expand it.
 
-    💡 <i>Remember to select the appropriate cURL command for your environment!</i>
+   ![bizlogic-block-in-openapi-viewer](./images/bizlogic-block-in-openapi-viewer.png " ")
 
-    ![cURL Command reminder](./images/curl-command-reminder.png)
+4. Click the `Try it out` button.
 
-    Click the `Substitutions` icon, a modal will appear.
+   ![![Alt text](click-try-it-out-button-in-post-block.png)](./images/click-try-it-out-button-in-post-block.png " ")
 
-    ![Substitutions icon](images/substitutions-icon-for-bizlogic.png)
-    
-    Enter `a1` into the **id** field, and place a :heavy_check_mark: in the `Null` option for the `Output` field. Then click `OK` when done.
+5. In the Request Body, replace `"string"` with `"a1"`.
 
-    ![Substitutions modal](images/adding-substitution-value-null-output.png)
+   ![![Alt text](click-try-it-out-button-in-post-block.png)](./images/response-block-with-generic-string-in-post-body.png " ")
 
-22. Click the copy icon to copy the cURL command with the added Substitution value.
+   ![![Alt text](replacing-response-body-string-with-a1-in-post-request)](./images/replacing-response-body-string-with-a1-in-post-request.png " ")
 
-    ![Copied cURL command](./images/copied-curl-command-bizlogic.png)
+6. Click the `Execute` button, and then review the results of the request in the Server response section. You should see `"output"` followed by a count value.
 
-23. Then, using the Oracle Cloud Infrastructure Cloud Shell, paste and run the cURL command to confirm that the count is returned as the output variable.
+   ![output-from-openapi-view-post-test-with-curl-command-included](./images/output-from-openapi-view-post-test-with-curl-command-included.png " ")
 
-    ```
-    <copy>curl -X POST \
-    'https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/admin/api/bizlogic' \
-    --header 'Content-Type: application/json' \
-    --data-binary '{
-    "id": "a1",
-    "output": "" 
-    }'</copy>                                                                
-    ```
+7. Alternatively, you can simulate an application's POST request with a `curl` command. Using the `curl` command from the OpenAPI View's Responses section, issue a `POST` request in your local Terminal or the OCI Cloud Shell. Your results should look similar.
 
-    ![Cloud shell and cURL](./images/curl-command-in-cloud-shell.png)
+   ![example-bizlogic-curl-command-pre-execution](./images/example-bizlogic-curl-command-pre-execution.png " ")
 
-    You can test other values by changing the id variable. Valid combinations are: 
+   ![results-from-bizlogic-curl-command-in-terminal](./images/results-from-bizlogic-curl-command-in-terminal.png " ")
 
-    | Variable position | Valid characters | Case      | 
-    | ----------------- | ---------------- | --------- | 
-    | First character   | `a` through `f`  | lower-case|
-    | Second character  | `1` through `9`  | n/a       |
-
-    - *Some valid examples are: a1, e9, d3, b6*
-
-## Task 3: Explore the OpenAPI View created by ORDS
+<!-- ## Task 4: Explore the OpenAPI View created by ORDS
 
 1. Return to the Module's main page. This can be done by clicking the module's name in the breadcrumbs in the upper left of the page.
 
     ![breadcrumbs in the upper left of the page](./images/return-to-main-with-breadcrumb.png)
 
-2. Click the the pop out icon ![pop out icon](./images/pop-menu.png) in the Module region and select **OpenAPI View**.
+2. Click the the Kebab icon of the `com.oracle.livelab.api` Resource Module region and select **OpenAPI View**.
 
     ![The pop out icon and select OpenAPI View](./images/open-api-select-module.png)
 
@@ -321,7 +305,7 @@ Watch the video below for a quick walk-through of the lab.
     ![OpenAPI View](./images/open-api-as-swagger-view.png)
 
     You can explore the APIs you created and try them out *directly* in the browser window.
-    
+
     ![OpenAPI explore](./images/explore-apis-in-open-api-view.png)
 
     You can also export this page as an OpenAPI doc for use in other tools and services using the pop out icon. ![pop out icon](./images/pop-menu.png) Select **Export Module** then **OpenAPI**.
@@ -330,7 +314,7 @@ Watch the video below for a quick walk-through of the lab.
 
     **An example of what the OpenAPI export will look like.**
 
-    ![OpenAPI example export](./images/open-api-example-export.png)
+    ![OpenAPI example export](./images/open-api-example-export.png) -->
 
 4. In this lab, you published a REST API using custom SQL to accept an input as well as published a REST API using a stored PL/SQL procedure.
 
@@ -338,11 +322,11 @@ You may now [proceed to the next lab](#next).
 
 ## Acknowledgements
 
- - **Author** 
-    - Jeff Smith, Distinguished Product Manager
-    - Chris Hoina, Senior Product Manager 
-    - Brian Spendolini
- - **Last Updated By/Date** 
-    - Chris Hoina, September 2022
+### Author
 
+- Jeff Smith, Distinguished Product Manager
+- Chris Hoina, Senior Product Manager
 
+### Last Updated By/Date
+
+- Chris Hoina, September 2023

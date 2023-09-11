@@ -10,6 +10,7 @@ Watch the video below for a quick walk-through of the lab.
 [Create and auto-REST enable a table](videohub:1_7agj8yum)
 
 ### Objectives
+
 - Create and Auto-REST enable a table
 
 ### Prerequisites
