@@ -46,9 +46,9 @@ Watch the video below for a quick walk-through of the lab.
 
 ## Task 2: Retrieve your Batchload REST-endpoint
 
-<div>
- <h1 style="background-color:HoneyDew;"> Oracle CloudWorld 2023 <i>Exclusive</i></h1>
-</div>
+   <div>
+     <p style="background-color:HoneyDew;font-size:40px;"> Oracle CloudWorld 2023 <i>Exclusive</i></p>
+   </div>
 
 1. Navigate to the OpenAPI view for the `CSV_DATA` table, as shown in the previous lab.
 
@@ -135,7 +135,7 @@ Watch the video below for a quick walk-through of the lab.
 
     The following procedure returns a count of all the rows that match an input provided to *col2 of the table*:
 
-    ````
+    ````plsql
     <copy>
     create or replace procedure return_count (p_input in varchar2, 
                                               p_output out number) 
@@ -182,9 +182,12 @@ You may now [proceed to the next lab](#next).
 
 ## Acknowledgements
 
- - **Author** 
-    - Jeff Smith, Distinguished Product Manager
-    - Chris Hoina, Senior Product Manager
- - **Last Updated By/Date**
-    - Chris Hoina, September 2023
+### Author
+
+- Jeff Smith, Distinguished Product Manager
+- Chris Hoina, Senior Product Manager
+
+### Last Updated By/Date
+
+- Chris Hoina, September 2023
 

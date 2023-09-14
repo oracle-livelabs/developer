@@ -33,24 +33,23 @@ Watch the video below for a quick walk-through of the lab.
 
     ![On the Top Menu Bar, click Security Tab then select Roles](./images/select-roles-security-tab.png)
 
-
 3. Once on the **Roles** page, left click the **+ Create Role** button in the upper right of the page.
 
     ![Click the Create Role button](./images/create-roll-button.png)
 
 4. The **Role Definition** modal will appear.
 
-    ![Role Definition Modal](./images/role-definition-role-name-field.png)
+   ![Role Definition Modal](./images/role-definition-role-name-field.png)
 
-5.  Use the **Role Name** field to name our role. We'll use **oracle.livelabs.role.admin**.
+5. Use the **Role Name** field to name our role. We'll use **oracle.livelabs.role.admin**.
 
-     ````
+     ````na
     <copy>oracle.livelabs.role.admin</copy>
     ````
 
     ![Role Name Field](./images/role-name-field.png)
 
-6.  When your **Role Definition** modal looks like the below image, click the **Create** button.
+6. When your **Role Definition** modal looks like the below image, click the **Create** button.
 
     ![Click the Create button](./images/create-role-action.png)
 
@@ -70,7 +69,7 @@ Watch the video below for a quick walk-through of the lab.
 
 4. In the **Label** field, we'll name this privilege **Livelabs REST Privilege**.
 
-     ````
+     ````na
     <copy>Livelabs REST Privilege</copy>
     ````
 
@@ -78,7 +77,7 @@ Watch the video below for a quick walk-through of the lab.
 
 5. For the **Name** field, we can enter this **oracle.livelabs.privilege.admin**.
 
-     ````
+     ````na
     <copy>oracle.livelabs.privilege.admin</copy>
     ````
 
@@ -86,7 +85,7 @@ Watch the video below for a quick walk-through of the lab.
 
 6. Next, in the **Description** field, enter **Livelabs Privilege for Business Logic REST Services**.
 
-     ````
+     ````na
     <copy>Livelabs Privilege for Business Logic REST Services</copy>
     ````
 
@@ -134,31 +133,31 @@ Watch the video below for a quick walk-through of the lab.
 
 4. In this form we first need to name our OAuth Client. Enter **oauthclient** into the **Name** field. 
 
-    ````
+    ````na
     <copy>oauthclient</copy>
     ````
 
     ![Name Field](./images/oauth-client-name-field.png)
-    
+
 5. Next we can provide a description. We'll use **Security on my REST Service** as a value in the **Description Field**.
-    
-    ````
+
+    ````na
     <copy>Security on my REST Service</copy>
     ````
 
     ![Description Field](./images/oauth-client-description-field.png)
 
 6. The following field, **Support URI**, is where a client will be taken upon an authorization error or failure. For this lab, we will use "https://www.oracle.com/rest/"
-    
-     ````
+
+     ````na
     <copy>https://www.oracle.com/rest/</copy>
     ````
-    
+
     ![Support URI Field](./images/oauth-client-support-uri.png)
 
 7. Finally, we need a **support email** for contacting someone. You can enter your email address or use support@support.com in the **Support Email** field of the form.
 
-     ````
+     ````na
     <copy>support@support.com</copy>
     ````
 
@@ -166,8 +165,8 @@ Watch the video below for a quick walk-through of the lab.
 
 8. Once your form looks similar to the image below...
 
-    ![Completed OAuth Slider](./images/completed-oauth-slider.png)    
-    
+    ![Completed OAuth Slider](./images/completed-oauth-slider.png)
+
     ...left click the **Roles Tab** on the top of the Create OAuth Client slider.
 
     ![Roles Tab on the OAuth Client Slide Out Panel](./images/roles-tab-oauth-slider.png)
@@ -194,7 +193,7 @@ Watch the video below for a quick walk-through of the lab.
 
     ![Click the copy icon to save the Token Text](./images/click-copy-icon-to-copy-token-text.png)
 
-    Left click the **OK** button when you are done getting and saving the token text. 
+    Left click the **OK** button when you are done getting and saving the token text.
 
     ![Left click the OK button](./images/click-ok-when-finished-in-oauth-slider.png)
 
@@ -202,7 +201,7 @@ Watch the video below for a quick walk-through of the lab.
 
     Remember in the last lab, we created a REST API for our bizlogic? Let's take that cURL command again...
 
-    ```
+    ```sh
     <copy>curl --location --request POST \
     'https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/admin/api/bizlogic' \
     --header 'Content-Type: application/json' \
@@ -211,23 +210,27 @@ Watch the video below for a quick walk-through of the lab.
     "output": "" 
     }'</copy>
     ```
+
    ...and after running this command again, using the Oracle Cloud Infrastructure Cloud Shell, the following response will be returned:
 
-    ```
+    ``` json
+    <copy>
     >{
         "code": "Unauthorized",
         "message": "Unauthorized",
         "type": "tag:oracle.com,2020:error/Unauthorized",
         "instance": "tag:oracle.com,2020:ecid/8576f44b797d6adfbe7b21e3718bf3b6"
     }%  
+    </copy>
     ```
+
     We are not authorized to use this REST endpoint any longer.
 
 4. To get this REST API working again, we need to add **--header 'Authorization: Bearer VALUE'** to our cURL command. The **VALUE** will be taken from the token text we saved from earlier. (**NOTE: your URL hostname will be different than the below command**)
 
     We can add this to our cURL command as follows:
 
-    ```
+    ```sh
     <copy>curl -X POST --header 'Authorization: Bearer tW-AM_cDQu0l8oAsh707vw' \
     'https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/admin/api/bizlogic' \
     --header 'Content-Type: application/json' \
@@ -235,11 +238,11 @@ Watch the video below for a quick walk-through of the lab.
     "id": "a1",
     "output": "" 
     }'</copy>
-    ```    
+    ```
 
 5. Now using the Oracle Cloud Infrastructure Cloud Shell and your new cURL command with the **--header 'Authorization: Bearer VALUE'** section added with your token text, run the new cURL command. (**NOTE: your URL hostname will be different than the below command**)
 
-    ```
+    ```sn
     <copy>curl -X POST --header 'Authorization: Bearer tW-AM_cDQu0l8oAsh707vw' \
     'https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/admin/api/bizlogic' \
     --header 'Content-Type: application/json' \
@@ -247,23 +250,27 @@ Watch the video below for a quick walk-through of the lab.
     "id": "a1",
     "output": ""
     }'</copy>
-    ``` 
+    ```
 
     We now see a value from the REST API is returned.
-    ```
+
+    ```sh
+    <copy>
     {"output":8204}% 
+    </copy>
     ```
+
 6. We can also use this on our other REST API that takes in a value and returns a report. (**NOTE: your URL hostname will be different than the below command**)
 
     The endpoint for that REST API was:
 
-    ```
+    ```html
     <copy>https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/admin/api/sqlreport/<VALUE></copy>
     ```
 
     So we can try out the following (**NOTE: your URL hostname will be different than the below command**):
-    
-    ```
+
+    ```sh
     <copy>curl -X GET  'https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/admin/api/sqlreport/a1'</copy>
     ```
 
@@ -271,13 +278,14 @@ Watch the video below for a quick walk-through of the lab.
 
 7. Now lets add the token (**--header 'Authorization: Bearer VALUE'**) to this command. (**NOTE: your URL hostname will be different than the below command**)
 
-    ```
+    ```sh
     <copy>curl -X GET --header 'Authorization: Bearer tW-AM_cDQu0l8oAsh707vw' 'https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/admin/api/sqlreport/a1'</copy>
     ```
 
     and we see the our expected results
 
-    ```
+    ```sh
+    <copy>
     {"items":[{"col1":"798812df","col2":"a1","col3":"4166997"},{"col1":"59fd433c","col2":"a1","col3":"32470891"},{"col1":"6c1298ef","col2":"a1",
     "col3":"506747"},{"col1":"243f5660","col2":"a1","col3":"87300261"},{"col1":"f62af3d4","col2":"a1","col3":"31094545"},{"col1":"af2fc686","col2":"a1",
     "col3":"48206518"},{"col1":"9d4f725e","col2":"a1","col3":"36224185"},{"col1":"041d6b03","col2":"a1","col3":"23890702"},{"col1":"f8c87baa","col2":"a1",
@@ -291,6 +299,7 @@ Watch the video below for a quick walk-through of the lab.
     {"rel":"describedby","href":"https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/admin/metadata-catalog/api/sqlreport/item"},
     {"rel":"first","href":"https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/admin/api/sqlreport/a1"},{"rel":"next",
     "href":"https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/admin/api/sqlreport/a1?offset=25"}]}% 
+    </copy>
     ```
 
 8. In this lab, you secured your custom REST APIs with OAuth2 authentication.
@@ -299,10 +308,11 @@ You may now [proceed to the next lab](#next).
 
 ## Acknowledgements
 
- - **Author** 
-    - Jeff Smith, Distinguished Product Manager
-    - Chris Hoina, Senior Product Manager 
-    - Brian Spendolini 
- - **Last Updated By/Date** 
-    - Chris Hoina, August 2022
+### Author
 
+- Jeff Smith, Distinguished Product Manager
+- Chris Hoina, Senior Product Manager
+
+### Last Updated By/Date
+
+- Chris Hoina, September 2023

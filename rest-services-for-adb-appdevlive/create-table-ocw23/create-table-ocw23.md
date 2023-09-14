@@ -113,9 +113,9 @@ Watch the video below for a quick walk-through of the lab.
 
     ![Right click the table name in the navigator, select REST, then cURL Command](./images/retrieve-curl-command-for-object.png " ")
 
-   <div>
-     <h1 style="background-color:HoneyDew;">Oracle CloudWorld 2023 <i>Exclusive</i></h1>
-   </div>
+    <div>
+      <p style="background-color:HoneyDew;font-size:40px;"> Oracle CloudWorld 2023 <i>Exclusive</i></p>
+    </div>
 
 5. Another way to a retrieve `cURL` commands, is through the built-in OpenAPI Viewer. To do this, navigate back to the Database Actions Launchpad, by clicking the header at the top of your SQL Worksheet.
 

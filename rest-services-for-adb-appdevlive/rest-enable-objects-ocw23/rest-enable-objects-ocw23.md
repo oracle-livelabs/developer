@@ -23,7 +23,7 @@ Watch the video below for a quick walk-through of the lab.
 
 ## Task 1: REST Enable a custom SQL Statement
 
-:bulb: <*If this is your first time accessing the REST Workshop, you will be presented with a guided tour. Complete the tour or click the `X` in any tour popup window to quit the tour.*
+💡 *If this is your first time accessing the REST Workshop, you will be presented with a guided tour. Complete the tour or click the `X` in any tour popup window to quit the tour.*
 
 1. Start by navigating to the **Database Actions Menu** in the upper left of the page and select **REST**.
 
@@ -47,7 +47,7 @@ Watch the video below for a quick walk-through of the lab.
     <copy>com.oracle.livelab.api</copy>
     ````
 
-    :bulb: *A module is an organizational unit used to group related resource templates. Templates will have handlers, which are responsible for providing the logic required to service a specific HTTP method (e.g., GET, POST, PUT, DELETE, UPDATE, etc.).*
+    💡 *A module is an organizational unit used to group related resource templates. Templates will have handlers, which are responsible for providing the logic required to service a specific HTTP method (e.g., GET, POST, PUT, DELETE, UPDATE, etc.).*
 
     ![Create Modules slider](./images/module-name-field.png) 
 
@@ -67,7 +67,7 @@ Watch the video below for a quick walk-through of the lab.
 
     ![Create Modules slider](./images/create-module-submit.png)
 
-    :bulb: *Here you can toggle "Show Code" to review what module creation might look like if it was performed manually.*
+    💡 *Here you can toggle **`Show code`** to review what module creation might look like if it was performed manually.*
 
     ![Toggle Show Code to review what is happening under the covers](./images/toggle-show-code-option.png)
 
@@ -97,16 +97,15 @@ Watch the video below for a quick walk-through of the lab.
 
     ![Create Modules slider with all info, left click create](./images/create-template-finish.png)
 
-    **Toggle "Show Code" to review what template creation might look like if it was performed manually.**
+    💡 *Toggle **`Show code`** to review what template creation might look like if it was performed manually.*
 
     ![Toggle Show Code to review what is happening under the covers](./images/show-template-code-toggle.png)
 
-
-12. Now that the template has been created
+12. Now that the template has been created, we need to create the **Handler** that will contain the SQL Statement.
 
     ![Templates Page](./images/template-page-overview.png)
 
-    we need to create the **Handler** that will contain the SQL Statement. Click the **+ Create Handler** button on the right of the page, just below our newly created template.
+     Click the **+ Create Handler** button on the right of the page, just below our newly created template.
 
     ![Left click the + Create Handler button](./images/create-handler-action.png)
 
@@ -118,13 +117,13 @@ Watch the video below for a quick walk-through of the lab.
 
 14. Enter **select * from csv_data where col2 = :id** in the **Source** section of the **Create Handler** slider:
 
-    ````
+    ````sql
     <copy>select * from csv_data where col2 = :id</copy>
     ````
 
     ![Source Field](./images/adding-source-field.png)
 
-    **Toggle "Show Code" to review the code for fields in the GUI.**
+    💡 *Toggle **`Show code`** to review the code for fields in the GUI.*
 
     ![Source Field Toggle](images/adding-source-field-code-toggle.png)
 
@@ -255,16 +254,17 @@ Watch the video below for a quick walk-through of the lab.
 ## Task 3: Test the REST API
 
    <div>
-   <h1 style="background-color:HoneyDew;">Oracle CloudWorld 2023 <i>Exclusive</i></h1>
+   <p style="background-color:HoneyDew;font-size:40px;"> Oracle CloudWorld 2023 <i>Exclusive</i></p>
    </div>
+
 
 1. Use the REST Workshop breadcrumbs to navigate to the `com.oracle.livelab.api` Resource Module.
 
-   ![ bizlogic-breadcrum-action.png](./images/bizlogic-breadcrum-action.png " ")
+   ![bizlogic-breadcrum-action.png](./images/bizlogic-breadcrum-action.png " ")
 
 2. Navigate to the OpenAPI View of the `com.oracle.livelab.api` Resource Module.
 
-   ![![Alt text](navigating-to-bizlogic-openapi-viewer.png)](./images/navigating-to-bizlogic-openapi-viewer.png " ")
+   ![navigating-to-bizlogic-openapi-viewer](./images/navigating-to-bizlogic-openapi-viewer.png " ")
 
 3. Locate the `POST /bizlogic` block. and expand it.
 
@@ -272,13 +272,13 @@ Watch the video below for a quick walk-through of the lab.
 
 4. Click the `Try it out` button.
 
-   ![![Alt text](click-try-it-out-button-in-post-block.png)](./images/click-try-it-out-button-in-post-block.png " ")
+   ![click-try-it-out-button-in-post-block.png](./images/click-try-it-out-button-in-post-block.png " ")
 
 5. In the Request Body, replace `"string"` with `"a1"`.
 
-   ![![Alt text](click-try-it-out-button-in-post-block.png)](./images/response-block-with-generic-string-in-post-body.png " ")
+   ![response-block-with-generic-string-in-post-body](./images/response-block-with-generic-string-in-post-body.png " ")
 
-   ![![Alt text](replacing-response-body-string-with-a1-in-post-request)](./images/replacing-response-body-string-with-a1-in-post-request.png " ")
+   ![replacing-response-body-string-with-a1-in-post-request](./images/replacing-response-body-string-with-a1-in-post-request.png " ")
 
 6. Click the `Execute` button, and then review the results of the request in the Server response section. You should see `"output"` followed by a count value.
 
@@ -288,35 +288,9 @@ Watch the video below for a quick walk-through of the lab.
 
    ![example-bizlogic-curl-command-pre-execution](./images/example-bizlogic-curl-command-pre-execution.png " ")
 
-   ![results-from-bizlogic-curl-command-in-terminal](./images/results-from-bizlogic-curl-command-in-terminal.png " ")
+    ![results-from-bizlogic-curl-command-in-terminal](./images/results-from-bizlogic-curl-command-in-terminal.png " ")
 
-<!-- ## Task 4: Explore the OpenAPI View created by ORDS
-
-1. Return to the Module's main page. This can be done by clicking the module's name in the breadcrumbs in the upper left of the page.
-
-    ![breadcrumbs in the upper left of the page](./images/return-to-main-with-breadcrumb.png)
-
-2. Click the the Kebab icon of the `com.oracle.livelab.api` Resource Module region and select **OpenAPI View**.
-
-    ![The pop out icon and select OpenAPI View](./images/open-api-select-module.png)
-
-3. The OpenAPI View page displays your REST services as a Swagger UI implementation.
-
-    ![OpenAPI View](./images/open-api-as-swagger-view.png)
-
-    You can explore the APIs you created and try them out *directly* in the browser window.
-
-    ![OpenAPI explore](./images/explore-apis-in-open-api-view.png)
-
-    You can also export this page as an OpenAPI doc for use in other tools and services using the pop out icon. ![pop out icon](./images/pop-menu.png) Select **Export Module** then **OpenAPI**.
-
-    ![OpenAPI doc export](./images/export-open-apis-action.png)
-
-    **An example of what the OpenAPI export will look like.**
-
-    ![OpenAPI example export](./images/open-api-example-export.png) -->
-
-4. In this lab, you published a REST API using custom SQL to accept an input as well as published a REST API using a stored PL/SQL procedure.
+8. In this lab, you published a REST API using custom SQL to accept an input as well as published a REST API using a stored PL/SQL procedure.
 
 You may now [proceed to the next lab](#next).
 
