@@ -47,7 +47,7 @@ Watch the video below for a quick walk-through of the lab.
 ## Task 2: Retrieve your Batchload REST-endpoint
 
 <div>
- <h1 style="background-color:HoneyDew;">Oracle CloudWorld 2023 <i>Exclusive</i></h1>
+ <h1 style="background-color:HoneyDew;"> Oracle CloudWorld 2023 <i>Exclusive</i></h1>
 </div>
 
 1. Navigate to the OpenAPI view for the `CSV_DATA` table, as shown in the previous lab.
@@ -83,7 +83,7 @@ Watch the video below for a quick walk-through of the lab.
     ```sh
       <copy>
         curl --write-out '%{time_total}' -X 'POST' \
-        'http://localhost:8080/ords/ordstest/csv_data/batchload' \
+        'http://localhost:8080/ords/ordstest/csv_data/batchload?batchRows=5000' \
         -H 'accept: application/json' \
         -H 'Content-Type: text/csv' \
         --user 'ordstest:password1234' \
@@ -91,6 +91,20 @@ Watch the video below for a quick walk-through of the lab.
       </copy>
    ```
 
+   <details>
+       <summary>⚠️***CLICK if on Windows/PC*** **your <code>cURL</code> command may look different!**
+       </summary>
+
+      ```sh
+       <copy>
+        curl --write-out '%{time_total}' ^
+         -X POST --data-binary "@/Users/choina/Desktop/2M.csv" ^
+         -H "Content-Type: text/csv" ^
+         "http://localhost:8080/ords/ordstest/csv_data/batchload?batchRows=5000"
+      </copy>
+       ```
+   </details>
+<!-- needs hat, remove single quotes -->
 ## Task 3: Batchload data into your CSV_DATA table
 
 1. You may execute the `curl` command in the shell or your choice (locally or within the OCI Cloud Shell). Below is a sample output:

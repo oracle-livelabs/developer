@@ -149,7 +149,7 @@ Watch the video below for a quick walk-through of the lab.
 
    ![clicking-the-execute-button-for-csv-data-get-request](./images/clicking-the-execute-button-for-csv-data-get-request.png " ")
 
-10. You'll notice a response has been returned to you; simulating what a typical response would look like.
+10. You'll notice a response has been returned to you. 
 
     ![inspecting-the-curl-command-for-csv-data-rest-endpoint-in-openapi](./images/inspecting-the-curl-command-for-csv-data-rest-endpoint-in-openapi.png " ")
 
