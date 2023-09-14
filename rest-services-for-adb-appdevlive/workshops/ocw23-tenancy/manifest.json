@@ -26,22 +26,22 @@
           {
             "title": "Lab 3: Create and auto-REST enable a table",
             "description": "Modern App Dev with Oracle REST Data Services",
-            "filename": "../../create-table/create-table.md"
+            "filename": "../../create-table-ocw23/create-table-ocw23.md"
         },
         {
             "title": "Lab 4: Load data and create business logic",
             "description": "Modern App Dev with Oracle REST Data Services",
-            "filename": "../../load-data-and-biz-objs/load-data-and-biz-objs.md"
+            "filename": "../../load-data-and-biz-objs-ocw23/load-data-and-biz-objs-ocw23.md"
         },
         {
             "title": "Lab 5: REST enable tables and add business logic",
             "description": "Modern App Dev with Oracle REST Data Services",
-            "filename": "../../rest-enable-objects/rest-enable-objects.md"
+            "filename": "../../rest-enable-objects-ocw23/rest-enable-objects-ocw23.md"
         },
         {
             "title": "Lab 6: Secure REST-enabled endpoints",
             "description": "Modern App Dev with Oracle REST Data Services",
-            "filename": "../../secure-endpoints/secure-endpoints.md"
+            "filename": "../../secure-endpoints-ocw23/secure-endpoints-ocw23.md"
         },
           {
             "title": "Lab 7: Clean up your Always Free Autonomous Database",

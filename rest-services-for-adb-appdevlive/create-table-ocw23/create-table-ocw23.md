@@ -10,6 +10,7 @@ Watch the video below for a quick walk-through of the lab.
 [Create and auto-REST enable a table](videohub:1_7agj8yum)
 
 ### Objectives
+
 - Create and Auto-REST enable a table
 
 ### Prerequisites
@@ -24,7 +25,7 @@ Watch the video below for a quick walk-through of the lab.
 
     ![Database Actions Home Page, Click SQL tile](images/click-for-sql-worksheet.png)
 
-💡 *If this is your first time accessing the SQL Worksheet, you will be presented with a guided tour. Complete the tour or click the X in any tour popup window to quit the tour.*
+   💡 *If this is your first time accessing the SQL Worksheet, you will be presented with a guided tour. Complete the tour or click the X in any tour popup window to quit the tour.*
 
 2. We are now ready to load data into the database. For this task, we will use the **Data Loading tab** in the SQL Worksheet.
 
@@ -52,15 +53,15 @@ Watch the video below for a quick walk-through of the lab.
 
 8. On the following step of the data loading modal, we can see the **name of the table** we are going to create (CSV_DATA) as well as the column and data types for the table.
 
-    ![Data Column Layout from uploaded file](./images/data-column-layout-preview.png)
+     ![Data Column Layout from uploaded file](./images/data-column-layout-preview.png)
 
-    Set all columns to VARCHAR2 with a length of 4000. This will provide a flawless data loading experience.
-    
-    ![Set Columns to VARCHAR2 4000](./images/set-columns-to-varchar2.png)
+     Set all columns to VARCHAR2 with a length of 4000. This will provide a flawless data loading experience.
 
-    When table and columns look like the below image, **Click Next** on the bottom right of the modal.
+     ![Set Columns to VARCHAR2 4000](./images/set-columns-to-varchar2.png)
 
-    ![Check out data then Click Next Button](./images/data-preview-click-next.png)
+     When table and columns look like the below image, **Click Next** on the bottom right of the modal.
+
+     ![Check out data then Click Next Button](./images/data-preview-click-next.png)
 
 9. On the **last step** of the modal, we can see a review of the table name and source file
 
@@ -110,51 +111,66 @@ Watch the video below for a quick walk-through of the lab.
 
 4. Thats it! Your table is REST enabled. We can work with the REST endpoints by using cURL commands provided by SQL Worksheet. To get to these endpoints, again right click the table name as we did in the previous step, select **REST**, then **cURL Command**.
 
-    ![Right click the table name in the navigator, select REST, then cURL Command](./images/retrieve-curl-command-for-object.png)
+    ![Right click the table name in the navigator, select REST, then cURL Command](./images/retrieve-curl-command-for-object.png " ")
 
-    To the right of the page, you'll see the cURL command for the table CSV_DATA side out panel. Once you've selected the appropriate cURL command (Command Prompt, PowerShell, or Bash), click the copy icon to copy the entire command.
+    <div>
+      <p style="background-color:HoneyDew;font-size:40px;"> Oracle CloudWorld 2023 <i>Exclusive</i></p>
+    </div>
 
-    ![The Command Prompt cURL for the table CSV_DATA side out panel](./images/command-prompt-curl-command.png)
+5. Another way to a retrieve `cURL` commands, is through the built-in OpenAPI Viewer. To do this, navigate back to the Database Actions Launchpad, by clicking the header at the top of your SQL Worksheet.
 
-    ![The PowerShell cURL for the table CSV_DATA side out panel](./images/powershell-curl-command.png)
+   ![click-header-to-return-to-database-actions-launchpad](./images/click-header-to-return-to-database-actions-launchpad.png " ")
 
-    ![The Bash cURL for the table CSV_DATA side out panel](./images/bash-curl-command.png)
+6. Once you've returned to the Launchpad, select the `REST` tile.
 
-5. Here we can work with the various REST endpoints. To try one, click the copy icon ![copy icon](./images/copy-icon.png) for the **GET ALL** endpoint.
+   ![selecting-the-rest-tile-once-database-actions-launchpad-loads](./images/selecting-the-rest-tile-once-database-actions-launchpad-loads.png " ")
 
-    ![Click the copy icon for GET ALL](./images/copy-curl-command-action.png)
+   This will take you to the `REST` Workshop. Under the `Objects` widget, you'll see the `AUTOREST` card. Click it.
 
-6. You can use the **cURL command** you've just copied in the **Oracle Cloud Infrastructure Cloud Shell** or on your local compute, if cURL is installed. Here is the command running:
+   ![clicking-the-auto-rest-card-under-objects-widget-in-rest-workshop](./images/clicking-the-auto-rest-card-under-objects-widget-in-rest-workshop.png " ")
 
-    ```>curl --location \
-    https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/admin/csv_data/'
+7. A report dashboard will appear. Scroll to the bottom of the page and locate the `CSV_DATA` object.
 
-    {"items":[{"col1":"e40a9db6","col2":"1b","col3":"27531","links":[{"rel":"self","href":"https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/
-    ords/admin/csv_data/AAAYuOAAAAAAF3%2FAAA"}]},{"col1":"6182c817","col2":"73","col3":"5355332","links":[{"rel":"self","href":"https://coolrestlab-adb21.adb.
-    eu-frankfurt-1.oraclecloudapps.com/ords/admin/csv_data/AAAYuOAAAAAAF3%2FAAB"}]},{"col1":"5ed9e437","col2":"d2","col3":"4834758","links":[{"rel":"self",
-    "href":"https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/admin/csv_data/AAAYuOAAAAAAF3%2FAAC"}]},{"col1":"d77868a1","col2":"64",
-    "col3":"2129797","links":[{"rel":"self","href":"https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/admin/csv_data/
-    AAAYuOAAAAAAF3%2FAAD"}]},{"col1":"09bfaa73","col2":"89","col3":"3294896","links":[{"rel":"self","href":"https://coolrestlab-adb21.adb.eu-frankfurt-1.
-    oraclecloudapps.com/ords/admin/csv_data/AAAYuOAAAAAAF3%2FAAE"}]},{"col1":"5054cca2","col2":"97","col3":"3474577","links":[{"rel":"self","href":"https://
-    coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/admin/csv_data/AAAYuOAAAAAAF3%2FAAF"}]},{"col1":"d20e9eb4","col2":"7c","col3":"2728720",
-    "links":[{"rel":"self","href":"https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/admin/csv_data/AAAYuOAAAAAAF3%2FAAG"}]}],
-    "hasMore":false,"limit":25,"offset":0,"count":7,"links":[{"rel":"self","href":"https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/
-    admin/csv_data/"},{"rel":"edit","href":"https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/admin/csv_data/"},{"rel":"describedby",
-    "href":"https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/admin/metadata-catalog/csv_data/"},{"rel":"first","href":"https://
-    coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/admin/csv_data/"}]}%```
-    
+   ![report-dashboard-revealing-auto-rest-modules](./images/report-dashboard-revealing-auto-rest-modules.png " ")
 
-The next lab you will learn about using a **BATCH LOAD** endpoint.
+   Click the kebab icon at the corner of the object card, and select `OpenAPI View`.
 
-7. In this lab, you created a table from a csv file and REST enabled it with auto-REST.
+   ![click-kebab-icon-to-reveal-openapi-view-menu-option](./images/click-kebab-icon-to-reveal-openapi-view-menu-option.png " ")
+
+8. The OpenAPI View will appear. You'll see every auto-`REST` endpoint that has been created for you by ORDS.
+
+   ![openapi-viewer-within-database-actions-for-csv-data-table](./images/openapi-viewer-within-database-actions-for-csv-data-table.png " ")
+
+9. Navigate to the `GET` method. Expand the `GET` Operation block. Click the `Try it out` button.
+
+   ![expanding-get-operation-and-clicking-try-it-out-button](./images/expanding-get-operation-and-clicking-try-it-out-button.png " ")
+
+   Next, click the `Execute` button.
+
+   ![clicking-the-execute-button-for-csv-data-get-request](./images/clicking-the-execute-button-for-csv-data-get-request.png " ")
+
+10. You'll notice a response has been returned to you. 
+
+    ![inspecting-the-curl-command-for-csv-data-rest-endpoint-in-openapi](./images/inspecting-the-curl-command-for-csv-data-rest-endpoint-in-openapi.png " ")
+
+    Under the `Curl` section, locate the pre-built `curl` command. You can use this to execute your own `curl` command in your local Terminal or Command Prompt, or in the Oracle Cloud Shell.
+
+    ![taking-the-curl-command-for-csv-data-rest-endpoint-in-openapi](./images/taking-the-curl-command-for-csv-data-rest-endpoint-in-openapi.png)
+
+11. Here is an example `curl` command in a Terminal session:
+
+    ![example-curl-command-in-terminal-csv-data-table](./images/example-curl-command-in-terminal-csv-data-table.png " ")
+
+12. In this lab, you created a table from a csv file and REST enabled it with auto-REST.
+
+    Next, you will learn about using a **BATCH LOAD** endpoint.
 
 You may now [proceed to the next lab](#next).
 
 ## Acknowledgements
 
- - **Author** 
+ - **Author**
     - Jeff Smith, Distinguished Product Manager
-    - Chris Hoina, Senior Product Manager 
-    - Brian Spendolini
- - **Last Updated By/Date** 
+    - Chris Hoina, Senior Product Manager
+ - **Last Updated By/Date**
     - Chris Hoina, September 2022
