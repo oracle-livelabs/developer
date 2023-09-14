@@ -1,5 +1,5 @@
 # Secure REST-enabled endpoints
-
+<!-- WMSID 4602 -->
 ## Introduction
 
 In this lab you secure the REST endpoints created in the previous lab.

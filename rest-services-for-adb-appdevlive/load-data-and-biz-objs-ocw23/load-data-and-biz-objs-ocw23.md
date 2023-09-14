@@ -1,5 +1,5 @@
 # Load data and create business logic
-
+<!-- WMSID 4602 -->
 ## Introduction
 
 In this lab you will use the batch load API to load large amounts of data into a table.

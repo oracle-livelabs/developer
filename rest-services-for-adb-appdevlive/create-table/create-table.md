@@ -1,5 +1,5 @@
 # Create and auto-REST enable a table
-
+<!-- WMSID 4602 -->
 ## Introduction
 
 In this lab you will use Database Actions/SQL Developer Web to connect to your database, create a table, and then REST enable the table.

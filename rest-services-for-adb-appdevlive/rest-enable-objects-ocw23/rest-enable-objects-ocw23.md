@@ -1,8 +1,8 @@
 # REST-enable tables and add business logic
-
+<!-- WMSID 4602 -->
 ## Introduction
 
-In this lab, you will use Database Actions and the REST console to build a REST API using a parameterized PL/SQL procedure and SQL statement. 
+In this lab, you will use Database Actions and the REST console to build a REST API using a parameterized PL/SQL procedure and SQL statement.
 
 Estimated Lab Time: 20 minutes
 
