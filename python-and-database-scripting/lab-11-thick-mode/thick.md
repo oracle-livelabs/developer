@@ -9,13 +9,13 @@ Estimated Time: 5 minutes
 
 ### Objectives
 
-*  Connect to Oracle Autonomous Database shared infrastructure using python-oracledb thick mode.
+*  Connect to Oracle Autonomous Database Serverless using the python-oracledb driver thick mode.
 
 ### Prerequisites
 
 This lab assumes you have completed the following labs:
 * Login to Oracle Cloud
-* Create Oracle Autonomous Database shared infrastructure
+* Create Oracle Autonomous Database Serverless
 * Environment Setup and you have installed the tutorial schema
 
 ## Task 1: Review the configuration file for **thick** mode

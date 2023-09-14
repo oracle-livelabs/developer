@@ -100,13 +100,16 @@ Notice the template includes a button to take you back to the parent page.  You 
 2. Drag it to the second **Summarizing Foldout Panel** and drop it onto the first **div**:
 		![Second drag](images/dragform2.png)
 
-3. In the Structure pane, select the fourth field in the Form Layout, and **Shift-select** all the other fields after that. Drag all of them into the new **Form Layout** you created in the second **Summarizing Foldout Panel**:
+3. With the form item selected, open the General tab in the properties panel and check the **Readonly** box:
+	  ![drag fields](images/readonly.png)
+
+4. In the Structure pane, select the fourth field in the Form Layout, and **Shift-select** all the other fields after that. Drag all of them into the new **Form Layout** you created in the second **Summarizing Foldout Panel**:
 	  ![drag fields](images/dragfield2.png)
 
-4. Your app should now look something like this.
+5. Your app should now look something like this.
 	  ![label property](images/finishdetails.png)
 
-5. Switch to **Live** mode and use the **Parent page** button to switch back to the **welcome** page, then click **Preview** in the header to see your app live.
+6. Switch to **Live** mode and use the **Parent page** button to switch back to the **welcome** page, then click **Preview** in the header to see your app live.
 
 You may now close the preview browser tab and **proceed to the next lab**.
 
