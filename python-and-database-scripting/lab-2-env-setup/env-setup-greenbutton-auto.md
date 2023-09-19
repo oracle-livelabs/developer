@@ -30,7 +30,7 @@ Python is open-source, cross-platform, and free of cost. There's no excuse not t
 
 In this lab, you will run a Shell script that will automatically install the python-oracledb driver
 
-    *Note: This Livelab is using Cloud Shell, which has Python 3.8.14 preinstalled.*
+*Note: This Livelab is using Cloud Shell, which has Python 3.8.14 preinstalled.*
 
 * Connect to the Oracle Autonomous Database Serverless using the python-oracledb driver
 * Learn how to validate Python operations
