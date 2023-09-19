@@ -12,7 +12,7 @@ During this lab, you will run the Shell script to setup the environment and you 
 
 Estimated Time: 10 minutes
 
-TODO: Watch the video below for a quick walk-through of the lab.
+Watch the video below for a quick walk-through of the lab.
 [Environment Setup](videohub:1_s2pdny0p)
 
 ### About python-oracledb driver

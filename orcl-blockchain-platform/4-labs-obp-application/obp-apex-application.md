@@ -7,7 +7,7 @@ APEX is a low-code development platform that enables you to build scalable, secu
 *Estimated Lab Time:* 15 minutes
 
 Watch the video below for a quick walk-through of the lab.
-[Building Car Marketplace application using APEX](videohub:1_oqqqhg96)
+[Building Car Marketplace application using APEX](videohub:1_tisx0qgi)
 
 ### Objectives
 
@@ -133,7 +133,7 @@ This lab assumes you have:
 
   ![Import Template](images/4-apex-3-5.png)
 
-4. 'Drag and Drop' the [Apex Marketplace Template](files/f101.sql?download=1) file into the pane and click 'Next.'
+4. 'Drag and Drop' the [Apex Marketplace Template](files/marketplaceapp.sql?download=1) file into the pane and click 'Next.'
 
   ![Import Template 1](images/4-apex-3-6.png)
 
@@ -202,7 +202,7 @@ This lab assumes you have:
   ![Gateway Hostname](images/4-apex-4-9-1.png)
     - Give your server a  **Static Identifier** (e.g. by changing all punctuation in **Name** to underscores as shown).
     - Set **Endpoint URL** to the same https://'Hostname' from the Gateway details.
-    - Now, create remote server in Apex and apply changes
+    - Now, update the remote server in Apex and apply changes
 
   ![Access App Builder](images/4-apex-4-1.3.png)
 
@@ -218,7 +218,7 @@ This lab assumes you have:
   
   ![REST Data Sources](images/4-apex-4-6.png)
   
-10. Now, we can see the following REST Sources configured with remote server URL configured:
+10. Now, we can see the following REST Sources configured with remote server URL configured. Leave the marketplace :
     - 'GetAccountBalance'
     - 'GetInvoiceByRange'
     - 'GetCarsByRange'
