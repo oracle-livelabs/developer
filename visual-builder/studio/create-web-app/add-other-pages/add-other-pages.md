@@ -52,7 +52,7 @@ Add a Delete button to remove a department, so users can remove a department if 
 
 ## Task 3: Test your new Department pages
 
-1. Click **Preview** ![Preview icon](images/preview-icon.png). The two buttons you created are inactive.
+1. Click ![Preview icon](images/preview-icon.png) **Preview**. The two buttons you created are inactive.
 
 2. Select a row. All the buttons are now active.
 3. Click **Edit Department**.
@@ -104,7 +104,7 @@ Now that we've added options to let users manage departments, we'll do the same 
 
     ![The button's Events tab shows the deleteEmployeeChain as the action chain triggered by the ojAction event.](images/deleteEmployeeChain.png "")
 
-4. When the deleteEmployeeChain opens in the Action Chain editor, drag a new Fire Data Provider Event (used to dispatch an event on a data provider) and drop it between the other Fire Data Provider Event and Fire Notification actions.
+4. When the deleteEmployeeChain opens in the Action Chain editor, drag a new Fire Data Provider Event (used to dispatch an event on a data provider) and drop it between the other Fire Data Provider Event and Fire Notification actions within the If action.
 
     ![The deleteEmployeeChain shows in diagram view. On the success branch of the Call REST action, a second Fire Data Provider Event action has been added. Its properties pane show on the right: Event Target is undefined and Type is set to Mutate.](images/deleteEmployeeChain-actionchain.png "")
 
@@ -118,7 +118,7 @@ Now that we've added options to let users manage departments, we'll do the same 
 
 ## Task 6: Test your Employee pages
 
-1. Click **Preview** ![Preview icon](images/preview-icon.png).
+1. Click ![Preview icon](images/preview-icon.png) **Preview**.
 
     The application opens in another browser tab, displaying the Departments page.
 
@@ -160,7 +160,7 @@ Now that we have our web pages, let's change the application's home page from De
 
 3. Click **Diagram** to see the **main** flow's new navigation. Notice how the main-employees page is badged ![Default and Flow Entry badge](images/default-badge.png), indicating it as the starting page for your application. Previously, it was the main-departments page.
 
-4. Click **Preview** ![Preview icon](images/preview-icon.png) to see the HR app now open on the Employees page.
+4. Click ![Preview icon](images/preview-icon.png) **Preview** to see the HR app now open on the Employees page.
 
     Close the browser tab.
 
@@ -169,4 +169,4 @@ Now that we have our web pages, let's change the application's home page from De
 ## Acknowledgements
 
 * **Author** - Sheryl Manoharan, VB Studio User Assistance, November 2021
-* **Last Updated By/Date** - Sheryl Manoharan, May 2023
+* **Last Updated By/Date** - Sheryl Manoharan, September 2023
