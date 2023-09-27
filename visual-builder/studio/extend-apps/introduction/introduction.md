@@ -6,7 +6,7 @@ This workshop shows how you can extend Oracle Cloud Applications using Oracle Vi
 
 *Extensions* are what you use to deliver new capabilities into Oracle Cloud Applications. Those capabilities may take the form of customizations you make to the App's user interface, or things like App UIs that deliver new pages or resources to your Oracle Cloud Applications instance. An App UI is simply an application that includes a user interface component in the form of VB Studio pages and flows.
 
-In this workshop, you'll navigate to Visual Builder Studio from an Oracle Cloud Applications page and access a project where you develop your extension. You'll create an App UI that presents employee data from an Oracle SaaS service connection, then allow users to search for a specific employee. You'll also deploy the extension to your Oracle Cloud Applications instance.
+In this workshop, you'll navigate to VB Studio from an Oracle Cloud Applications page and access a project where you develop your extension. You'll create an App UI that presents employee data from an Oracle SaaS service connection, then allow users to search for a specific employee. You'll also deploy the extension to your Oracle Cloud Applications instance.
 
 Estimated Workshop Time: 20 minutes
 
