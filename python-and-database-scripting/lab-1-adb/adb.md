@@ -15,7 +15,7 @@ Watch the video below for a quick walk-through of the lab.
 
 In this lab, you will:
 
-- Create an Oracle Autonomous Database, shared infrastructure instance
+- Create an Oracle Autonomous Database Serverless instance
 
 ### Prerequisites
 
@@ -36,34 +36,32 @@ This lab assumes you have:
     - Compartment: (default compartment (root))
     - Display Name: python_adb
     - Choose a workload type: Transaction Processing
-    - Choose a deployment type: Shared Infrastructure
+    - Choose a deployment type: Serverless
 
-    ![Basic Info](./images/basic_info.png " ")
+    ![Basic Info](./images/adb_basic.png" ")
 
-4. Configure the Database.
+4. Configure the Database
 
     In the **Configure the Database** section, proceed with the following selections: 
-    - Toggle: Always FREE
+    - Toggle: Always Free
     - DB Version: 19c
-    - Default OCPU count(1)
-    - Default Storage (TB 0.02)
 
 5. In the **Create Administrator Credentials** section, enter the password for the Admin user and make note of it, as this as this will be required in the subsequent labs.
 
-    ![Free Tier](./images/free_tier.png " ")
+    ![Free Tier](./images/adb_free.png " ")
 
 6. In the **Choose Network Access** section, select 'Secure Access from Everywhere'
 
     In the **Choose License and Oracle Database Edition** section, select 'License Included'
 
     Hit **Create Autonomous Database** button
-    ![ADB Network](./images/adb_network.png " ")
+    ![ADB Network](./images/adb_network_conf.png " ")
 
-    This process might take few minutes. You can check the status of the creation of the Autonomous Database Shared infrastructure, by using the Console.
+    This process might take few minutes. You can check the status of the creation of the Autonomous Database Serverless, by using the Console.
 
-    Once Autonomous Database Shared Infrastructure is provisioned, it is automatically started and you should see the following summary:
+    Once Autonomous Database Serverless is provisioned, it is automatically started and you should see the following summary:
 
-    ![Summary ADB](./images/summary.png " ")
+    ![Summary ADB](./images/adb_summary.png " ")
 
 
 ## Task 2: Download Oracle Autonomous Database Wallet
@@ -88,7 +86,7 @@ To connect to the Oracle Autonomous Database, you need the wallet file.
 
 **Cloud Shell**  is a web browser-based terminal accessible from the Oracle Cloud Console and available to all Oracle Cloud Infrastructure users. It’s free to use (within monthly tenancy limits), and it provides access to a Linux shell with a pre-authenticated CLI and other useful tools for following Oracle Cloud Infrastructure service tutorials and labs. The Cloud Shell appears in the Console as a persistent frame and stays active as you navigate to different parts of the Console. Cloud Shell is pre-authenticated with your console credentials.
 
-In the Oracle Autonomous Database Summary screen, we're going to launch Cloud Shell (this has Python pre-installed), and in the subsequent labs we're going to connect to the Autonomous Database Shared infrastructure using the Wallet downloaded at the previous task.  
+In the Oracle Autonomous Database Summary screen, we're going to launch Cloud Shell (this has Python pre-installed), and in the subsequent labs we're going to connect to the Autonomous Database Serverless using the Wallet downloaded at the previous task.  
 
 1. To launch the Cloud Shell, sign in to your Oracle Cloud Infrastructure tenancy and click the command prompt icon in Console header, then select Cloud Shell from the drop down:
 
@@ -132,9 +130,9 @@ One of the arguments used in to connect to the Oracle Autonomous Database is the
 
 ## Conclusion
 
-In this lab, you had an opportunity to create an Oracle Autonomous Database, shared infrastructure instance.
+In this lab, you had an opportunity to create an Oracle Autonomous Database Serverless instance.
 
 ## Acknowledgements
 - **Authors** - Veronica Dumitriu
 - **Contributors** - Chris Jones
-- **Last Updated By/Date** - Veronica Dumitriu, Oracle Database Drivers Product Management, July 2023
+- **Last Updated By/Date** - Veronica Dumitriu, Oracle Database Drivers Product Management, Aug 2023
