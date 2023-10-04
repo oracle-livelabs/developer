@@ -36,12 +36,14 @@ Up until now we've worked on the UI (front end) of your application, but now it'
 4. Click **Select from Catalog**. When it loads, click **Sales and Service**:
 	  ![Service Catalogs](images/catalog.png)
 
-	You can use this approach to access services from your HCM, ERP, and SCM Apps too. You may want to take a moment now to explore these catalogs and see the available business objects for the Apps you use.
+	You can use this approach to access services from your HCM, ERP, and SCM Apps too. You may want to take a moment now to explore these catalogs and see the available business objects for the Apps you use. (Your available services may be different than what appears in the image.)
 
-5. From the list of objects in the Oracle CX system, choose **Accounts**, using the filter at the top to help you, if needed:
+5. Enter **crmRest** in the **Service Name** field:
+
+6. From the list of objects in the Oracle CX system, choose **Accounts**, using the filter at the top to help you, if needed:
 	  ![CX Endpoints](images/endpoints.png)
 
-6. Click **Create**. This creates a connection to the data object and adds it to your app.
+7. Click **Create**. This creates a connection to the data object and adds it to your app.
 
 	A tab with information about the service is displayed:
 	  ![Service Definition](images/servicedef.png)

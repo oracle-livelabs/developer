@@ -44,7 +44,7 @@ We will be using data provided by Geonames for this lab.
  
 1.  Login to Oracle Cloud if you are not already logged in
 2.  If you aren't still logged in, login to your ADB screen by clicking on the Hamburger Menu and selecting the Autonomous Database flavor you selected (ATP, ADW or AJD). Otherwise skip to the next step.
-      ![](https://github.com/oracle/learning-library/tree/master/data-management-library/database/21c/fundamentals/set-operators/images/21c-home-adb.png " ")
+      ![](https://oracle-livelabs.github.io/database/db-21c-fundamentals/set-operators/images/21c-home-adb.png " ")
 
 2.  If you can't find your ADB instance, ensure you are in the correct compartment, you have chosen the flavor of ADB you choose in the earlier lab and that you are in the correct region.
 3.  Click on the **Display Name** to go to your ADB main page.

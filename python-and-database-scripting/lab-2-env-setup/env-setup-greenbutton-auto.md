@@ -6,7 +6,7 @@ This tutorial is an introduction to using Python with Oracle Database. It contai
 When you run this lab in Oracle's sandbox, upon login, the creation of an Oracle Autonomous Database, including the 'pythondemo' schema used throughout the tutorial has been created for you. Tables have been created and populated with data.
 During this lab, the following steps have been automated:
 * the installation of the **python-oracledb** driver
-* the setup and configuration of a connection to the Oracle Autonomous Database, shared infrastructure
+* the setup and configuration of a connection to the Oracle Autonomous Database Serverless
 
 During this lab, you will run the Shell script to setup the environment and you will test the connection to Oracle Autonomous Database from Python.
 
@@ -32,14 +32,14 @@ In this lab, you will run a Shell script that will automatically install the pyt
 
     *Note: This Livelab is using Cloud Shell, which has Python 3.8.14 preinstalled.*
 
-* Connect to the Oracle Autonomous Database shared infrastructure using the python-oracledb driver
+* Connect to the Oracle Autonomous Database Serverless using the python-oracledb driver
 * Learn how to validate Python operations
 
 ### Prerequisites
 
 This lab assumes you have completed the following steps:
 * Login to the Oracle Sandbox
-* Have an Oracle Autonomous Database, shared infrastructure already created
+* Have an Oracle Autonomous Database Serverless already created
 * have Python 3 installed. NOTE: In your own instance, Python 3 can be obtained from your operating system package library or from [python.org](https://python.org). On Windows, use Python 3.7 or later. On macOS, use Python 3.8 or later. On Linux, use Python 3.6 or later.
 
 ## Task 1: Download Oracle Autonomous Database Wallet
@@ -69,7 +69,7 @@ This lab assumes you have completed the following steps:
 
 **Cloud Shell**  is a web browser-based terminal accessible from the Oracle Cloud Console and available to all Oracle Cloud Infrastructure users. It’s free to use (within monthly tenancy limits), and it provides access to a Linux shell with a pre-authenticated CLI and other useful tools for following Oracle Cloud Infrastructure service tutorials and labs. The Cloud Shell appears in the Console as a persistent frame and stays active as you navigate to different parts of the Console. Cloud Shell is pre-authenticated with your console credentials.
 
-In the Oracle Autonomous Database Summary screen, we're going to launch Cloud Shell (this has Python pre-installed), and in the subsequent labs we're going to connect to the Autonomous Database Shared infrastructure using the Wallet downloaded at the previous task.  
+In the Oracle Autonomous Database Summary screen, we're going to launch Cloud Shell (this has Python pre-installed), and in the subsequent labs we're going to connect to the Autonomous Database Serverless using the Wallet downloaded at the previous task.  
 
 1. To launch the Cloud Shell, sign in to the Sandbox Oracle Cloud Infrastructure tenancy and click the command prompt icon in Console header, then select Cloud Shell from the drop down:
 
@@ -108,7 +108,7 @@ In the Oracle Autonomous Database Summary screen, we're going to launch Cloud Sh
     The script will run all the enviroment configuration for you, including:
     * python-oracledb driver install
     * download the sample files on Cloud Shell
-    * environment setup to allow connection to the Oracle Autonomous Database, shared infrastructure.
+    * environment setup to allow connection to the Oracle Autonomous Database Serverless.
 
     The **samples/tutorial** directory has scripts to run and modify. The **samples/tutorial/sql** directory has all the SQL scripts used by the Python files to create database tables and other objects.
 
@@ -210,7 +210,7 @@ Oracle Cloud Infrastructure (OCI) Code Editor provides a rich, in-console editin
     The connection to Oracle Autonomous Database is using a few arguments:
     * **user**:         for this exercise we'll be using the **pythondemo** user
     * **password**:     password for the **pythondemo** user (the schema has already been created in the Oracle Autonomous Database)
-    * **dsn**:          data source name for the Oracle Autonomous Database shared infrastructure
+    * **dsn**:          data source name for the Oracle Autonomous Database Serverless
     * **config dir**:   the location where the dsn connection string resides
     * **wallet location**: the location where the wallet was saved
     * **wallet password**: the password setup for the wallet
@@ -411,10 +411,10 @@ Connect to the Oracle Database and print the version of the database via Python.
 
 In this lab, you had an opportunity to try out connecting Python to the Oracle Database.
 You have learned how to:
-* Setup the environment to allow connections to Oracle Autonomous Database, shared infrastructure using python-oracledb
-* Create connections to Oracle Autonomous Database, shared infrastructure using the python-oracledb driver
+* Setup the environment to allow connections to Oracle Autonomous Database Serverless using python-oracledb
+* Create connections to Oracle Autonomous Database Serverless using the python-oracledb driver
 
 ## Acknowledgements
 * **Authors** - Christopher Jones, Anthony Tuininga, Sharad Chandran, Veronica Dumitriu
 * **Contributors** - Jaden McElvey, Anoosha Pilli, Troy Anthony
-* **Last Updated By/Date** - Veronica Dumitriu, Oracle Database Drivers Product Management, July 2023
+* **Last Updated By/Date** - Veronica Dumitriu, Oracle Database Drivers Product Management, Aug 2023
