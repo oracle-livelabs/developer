@@ -6,7 +6,7 @@ In this workshop, you will learn how to use Oracle Cloud Infrastructure (OCI) se
 
 Estimated Time: 50 minutes
 
-![application](images/Application.png " ")
+![application](images/application.png " ")
 
 ### About Product/Technology
 

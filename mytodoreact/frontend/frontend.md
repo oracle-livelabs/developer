@@ -85,7 +85,7 @@ The OCI Container Registry is where your Docker images are managed. A container 
     </copy>
     ```
 
-## Task 4: UnDeploy (Optional)
+## Task 3: UnDeploy (Optional)
 
 If you make changes to the image, you need to delete the service and the pods by running undeploy.sh then redo Steps 1 & 2.
 

@@ -69,12 +69,11 @@ The deployment of Ingress controller creates a LoadBalancer on Oracle Cloud. You
 
 2. Once you're inside ~/.bashrc, find the line that ends with `/oci-react-samples/mtdrworkshop/env.sh` and delete the line (usually found at the bottom and is serving as an argument to `source`)
 
-## Task 4: Delete the Compartment (optional)
+## Task 5: Delete the Compartment (optional)
 
 If you let the setup provision a compartment in Lab 1, Task 5, you can choose to delete the provisioned compartment. 
 
 1. In the Oracle Cloud Console, navigate to the **compartments** screen in the **Identity** section. Select the compartment that was created for the workshop (if you didn't provide one) and delete it
-
 
 Congratulations! You have completed the workshop
 
