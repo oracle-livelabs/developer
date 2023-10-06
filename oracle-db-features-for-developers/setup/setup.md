@@ -28,7 +28,8 @@ By completing the instructions below the sample schemas **SH**, **OE**, and **HR
 
 1. Run a *whoami* to ensure the value *oracle* comes back.)
 
-    Note: If you are running in Windows using putty, ensure your Session Timeout is set to greater than 0.
+    >**Note:** If you are running in Windows using putty, ensure your Session Timeout is set to greater than 0.
+    
     ```
     <copy>whoami</copy>
     ```

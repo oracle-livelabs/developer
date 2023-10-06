@@ -33,7 +33,7 @@ This lab assumes you have:
 
 Now that you are ready to publish your changes to the project's `main` branch, let's create a merge request to get someone to sign off on your changes.
 
-1. Click **Workspaces**![Workspaces icon](images/vbs-workspaces-icon.png), then **HR Workspace** in the Workspaces table.
+1. Click![Workspaces icon](images/vbs-workspaces-icon.png)**Workspaces**, then **HR Workspace** in the Workspaces table.
 2. When your workspace opens, click **Publish** in the header.
 3. In the Publish Changes dialog box, click **Merge After Review**.
 4. Enter a message for your commit, select another project member as a reviewer, and click **Publish Changes**.
@@ -44,7 +44,7 @@ Now that you are ready to publish your changes to the project's `main` branch, l
 
     ![The results when you click the Publish Changes button are shown, with the message '1 Merge hrbranch to master merge request has been created' at the end. The Close button is selected.](images/create-mr-result.png "")
 
-5. Return to the project home, then click **Merge Requests** ![Merge Requests icon](images/vbs-mergerequest-icon.png) in the left navigator. You'll see your merge request listed here. For a quick summary of the merge request, click **Details** ![Details icon](images/details-icon.png).
+5. Return to the project home, then click ![Merge Requests icon](images/vbs-mergerequest-icon.png) **Merge Requests** in the left navigator. You'll see your merge request listed here. For a quick summary of the merge request, click ![Details icon](images/details-icon.png) **Details**.
 6. Click **1 Merge Request for branch 'hrbranch'**. All details of the merge request, including its current status and all previous commits, will be shown:
 
     ![Details of the newly created merge request, #1 Merge Request for branch 'hrbranch', are shown. Its status is shown as OPEN, with a message that the requestor wants to commit 2+ commits to main from hrbranch in tutorial-hr-project.git. The Conversation tab shows an example commit message. The Merge and Close buttons are also visible.](images/create-mr-view.png "")
@@ -62,7 +62,7 @@ Assuming your merge request has been approved, let's now merge your changes to t
 
     The merge request shows as Merged. If you didn't choose to delete the branch, you can do so now if you want.
 
-    Once your changes are merged, VB Studio automatically kicks off the package and deploy jobs in your pipeline to deploy your web app to the development environment. Click **Builds** ![Builds icon](images/vbs-builds-icon.png)to view the progress of your build jobs.
+    Once your changes are merged, VB Studio automatically kicks off the package and deploy jobs in your pipeline to deploy your web app to the development environment. Click ![Builds icon](images/vbs-builds-icon.png) **Builds** to view the progress of your build jobs.
 
     ![The status of the Visual-Application-Package and Visual-Application-Deploy jobs on the Builds page is shown. Both jobs are triggered automatically when your commits are merged to the project's main branch.](images/merge-mr-result.png "")
 
@@ -70,7 +70,7 @@ Assuming your merge request has been approved, let's now merge your changes to t
 
 After your application is successfully deployed to the development environment, you can view it from your environment's list of deployments.
 
-1. In the left Navigator, click **Environments** ![Environments icon](images/vbs-environments-icon.png), then **Deployments**.
+1. In the left Navigator, click ![Environments icon](images/vbs-environments-icon.png) **Environments**, then **Deployments**.
 2. Expand the **tutorial-hr-project** that shows the **Deployed** status, then click the **hrwebapp** application.
 
     ![The applications deployed to your Development environment are shown. The Deployed version of the hrwebapp application is shown with identifying details.](images/deployed-application.png "")
@@ -82,7 +82,7 @@ After your application is successfully deployed to the development environment, 
 A deployed application does not automatically include its business object data, so you'll need to manually import data for the application in the development environment. You can import the data you used in your workspace or add entirely different data, as we'll do now.
 
 1. Click [this link](https://objectstorage.us-ashburn-1.oraclecloud.com/p/Ei1_2QRw4M8tQpk59Qhao2JCvEivSAX8MGB9R6PfHZlqNkpkAcnVg4V3-GyTs1_t/n/c4u04/b/livelabsfiles/o/oci-library/HR-Application.zip) and download the `HR-Application.zip` file. The zip file contains CSV files of the Location, Department, and Employee business objects with more records and data.
-2. In the Environments page, click **Actions** ![Actions icon](images/vbs-actions-icon.png) for the deployed tutorial-hr-project and select **Import Data**.
+2. In the Deployments tab, click **Actions** ![Actions icon](images/vbs-actions-icon.png) for the deployed tutorial-hr-project and select **Import Data**.
 
     ![The Import Data option from the Actions menu of a deployed application is shown.](images/deployed-application-import-data.png "")
 
@@ -119,4 +119,4 @@ A deployed application does not automatically include its business object data, 
 ## Acknowledgements
 
 * **Author** - Sheryl Manoharan, VB Studio User Assistance, November 2021
-* **Last Updated By/Date** - Sheryl Manoharan, May 2023
+* **Last Updated By/Date** - Sheryl Manoharan, September 2023

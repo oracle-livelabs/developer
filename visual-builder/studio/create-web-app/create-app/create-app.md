@@ -33,7 +33,7 @@ This lab assumes you have:
 
 The first thing we'll do is add a web app to the HR visual application you just created. A visual application is a container for all your web and mobile applications. In this task, you add a single web app to your visual application, but you can have more than one, even both web and mobile apps in the same visual application.
 
-1. Click **Workspaces**![Workspaces icon](images/vbs-workspaces-icon.png), then click **HR Workspace** in the Workspaces table.
+1. Click![Workspaces icon](images/vbs-workspaces-icon.png)**Workspaces**, then click **HR Workspace** in the Workspaces table.
 
     The HR application opens in the Designer on the Welcome page, which serves as a launching point for connecting to data, creating apps, or adding artifacts.
 
@@ -47,7 +47,7 @@ The first thing we'll do is add a web app to the HR visual application you just 
 
     On the left is the name of your current workspace, **HR Workspace**; next to it is the project's Git repository and the branch currently associated with your workspace (**tutorial-hr-project.git/hrbranch**). Click each option to see other actions that you can perform. Clicking ![Go to Project Page icon](images/go-to-project-home-icon.png) will take you back to the Project Home page.
 
-    Elements on the right let you perform various other actions, such as undo a change or search the Git repository for a file. This workshop primarily demonstrates the options to preview your app, share it, and publish changes. If you make a mistake during this workshop, click ![Undo icon](images/undo-icon.png)  to back out of the last step you did.
+    Elements on the right let you perform various other actions, such as undo a change or search the Git repository for a file. This workshop primarily demonstrates the options to preview your app, share it, and publish changes. If you make a mistake during this workshop, click ![Undo icon](images/undo-icon.png)  to back out of the last step you did, or the arrow next to it to undo more than one step.
 
     Take note of the footer, which has tools that help you debug and maintain your visual app (we'll briefly look at Audits and Git History in this workshop):
 
@@ -55,7 +55,7 @@ The first thing we'll do is add a web app to the HR visual application you just 
 
     Keep in mind that VB Studio saves your changes automatically as you work. A timestamp at the bottom of the page will show the time  your work was last saved. Note that changes are only saved to your local workspace repo—but more on that later.
 
-2. We want to create a web application, so under **Create Apps**, let's click the **Web Apps** tile.
+2. We want to create a web application, so under **Create Apps**, click **Responsive Apps**.
 
     ![Web Apps pane of the Navigator. There is a plus sign at the top and a + Web Application button at the bottom.](images/web-apps.png "Web Apps pane")
 
@@ -101,7 +101,7 @@ The first thing we'll do is add a web app to the HR visual application you just 
 
 Let's now create your first business object and add data to it by importing a CSV file. Every business object needs data associated with it, and there are many ways to do that, as you'll see.
 
-1. Click **Business Objects** ![Business Objects icon](images/bo-icon.png) in the Navigator.
+1. Click ![Business Objects icon](images/bo-icon.png) **Business Objects** in the Navigator.
 2. Click **\+ Business Object**.
 3. In the New Business Object dialog box, enter `Location` in the **Name** field. **Location** is also filled in automatically as the **Display Label**. Click **Create**.
 4. Click **Fields** for the newly created Location business object.
@@ -230,4 +230,4 @@ Now that you have your business objects, create a diagram that visualizes the bu
 ## Acknowledgements
 
 * **Author** - Sheryl Manoharan, VB Studio User Assistance, November 2021
-* **Last Updated By/Date** - Sheryl Manoharan, May 2023
+* **Last Updated By/Date** - Sheryl Manoharan, September 2023

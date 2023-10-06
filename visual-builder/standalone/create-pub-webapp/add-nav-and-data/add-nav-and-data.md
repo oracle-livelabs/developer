@@ -35,15 +35,15 @@ This lab assumes you have:
 
     An empty action chain with the ID **ButtonActionChain** is created.
 
-5. In the Actions palette, scroll down to the **Navigation** section, then drag the **Navigate** action to the **+** sign pointed to by the **Start** arrow.
+5. In the Actions palette, scroll down to the **Navigation** section, then drag the **Navigate To Page** action onto the canvas.
 
-    ![This image shows the Action Chain editor, with the Navigate action being dragged to + sign on the diagram area.](images/new-buttonactionchain.png "")
+    ![This image shows the Action Chain editor, with the Navigate To Page action being dragged onto the diagram area.](images/new-buttonactionchain.png "")
 
-6. In the Navigate action's Properties pane, select **main-employees** from the **Page** drop-down list.
+6. In the Navigate To Page action's Properties pane, select **main-employees** from the **Page** list.
 
-    ![This image shows the Action Chain editor, with the Navigate action added to the action chain, and main-employees under Peer Pages selected in the Page drop-down list. A warning icon appears on the Navigate icon because the target has not yet been selected.](images/departments-button-events-navigate.png "")
+    ![The Action Chain editor is shown, with the Navigate To Page action on the canvas. In the action's Properties pane, main-employees under Peer Pages is selected in the Page drop-down list.](images/departments-button-events-navigate.png "")
 
-    The action now has the label `Navigate main-employees`.
+    The action now has the label **Navigate To Page main-employees**.
 
 7. Click **Preview** ![Preview icon](images/preview-icon.png) in the header to run the page in its own browser tab and see how it will appear to a user. (You can use the Live mode to test your app if you prefer, though the Preview form factor is a bit more pleasing.)
 
@@ -63,11 +63,11 @@ This lab assumes you have:
 
     Another empty action chain with the ID **ButtonActionChain** is created. Because this action chain is for a different page, it doesn't matter that it has the same name as the one for the main-departments page.
 
-5. Drag the **Navigate** action from the **Navigation** section of the Actions palette to the **+** sign pointed to by the **Start** arrow.
+5. Drag the **Navigate To Page** action from the **Navigation** section of the Actions palette onto the canvas.
 
-6. In the Navigate action's Properties pane, select **main-departments** from the **Page** drop-down list.
+6. In the Navigate To Page action's Properties pane, select **main-departments** from the **Page** list.
 
-    The action now has the label `Navigate main-departments`.
+    The action now has the label **Navigate To Page main-departments**.
 
 7. Now click **Preview** ![Preview icon](images/preview-icon.png), then **Show Employees** in the new browser tab. Make sure you can get to the Departments page from the Employees page. Close the browser tab.
 
@@ -80,4 +80,4 @@ This lab assumes you have:
 ## Acknowledgements
 
 * **Author** - Sheryl Manoharan, Visual Builder User Assistance, August 2021
-* **Last Updated By** - February 2023
+* **Last Updated By** - August 2023

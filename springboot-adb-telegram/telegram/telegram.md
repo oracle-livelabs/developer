@@ -104,7 +104,15 @@ You must use Telegram to create your chatbot and get the details about your toke
 7. Take note of your "Telegram Bot Token" which is required to access the Telegram Bot (HTTP) API. Besides, also take note of your bot URL "(t.me/your_bot_unique_name)" and use it to access your bot, as below.
     ![telegram-bot-url-main-screen](images/telegram-bot-url-main-screen.png "telegram bot url main screen")
 
-8. Configure the Telegram Bot details. Navigate to `MtdrSpring/backend/src/main/resources`, use a text editor (vi, vim, nano, etc) to open the application.properties file, then uncomment the two entries below to configure the "Telegram Bot Token" and "Telegram Bot Name" properties with the values you got from the Telegram Bot platform in the previous steps.
+8. Configure the Telegram Bot details. Navigate to `$MTDRWORKSHOP_LOCATION/backend/src/main/resources`, use a text editor (vi, vim, nano, etc) to open the application.properties file, then uncomment the two entries below to configure the "Telegram Bot Token" and "Telegram Bot Name" properties with the values you got from the Telegram Bot platform in the previous steps.
+
+    ```
+    <copy>
+    cd $MTDRWORKSHOP_LOCATION/backend/src/main/resources
+    vi application.properties
+    </copy>
+    ```
+
     ![telegram-bot-configuration](images/telegram-bot-configuration.png "telegram bot configuration")
 
 You may now **proceed to the next lab**.
