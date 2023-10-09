@@ -110,33 +110,8 @@ From here you can navigate to all your project's components, including environme
 
 	![visual editor](images/results.png)
 
-## Task 4: Install Components
 
-VB has some of the most commonly used components pre-installed.  Other components are available in the Component Exchange.  In this lab you will be installing the Redwood components you will need for the extension.
-
-* Collection Container
-* Horizontal Foldout Layout Page Template
-* Summarizing Foldout Panel
-* Simple Create and Edit Page Template (There are two in the list, choose the **oj-sp-simple-create-edit-pattern** component)
-* Welcome Page Template
-
-1. On the far left side of the Designer's navigator, click the fifth tab, Components:
-Clicking the name of components in the list will open a details page for that component.
-![Edit values](images/opencomponentstab.png)
-2. Click the Installed tab and check if the five Redwood components listed at the start of this task are already installed in your app, if they are you can skip the following steps and continue to the next lab:
-![Edit values](images/installedcomponents.png)
-3. If any of the above components are not installed, click the Browse tab:
-
-Install the **Collection Container** component.
-1. In the **Search** field, enter **Collection Container**:
-![Edit values](images/collectioncontainersearchresults.png)
-2. If the button under **Collection Container** says **Install**, click the button.  If it says **Installed**, proceed to the next component:
-3. In the popup window, check the box to accept the license and click the **Install** button:
-![Edit values](images/installcollectioncontainer.png)
-
-Repeat this process for each of the components.  Some of the components have names similar to other components not used in this lab.  Double check that you are installing the correct component.
-
-Once you have all of the components installed, you may **proceed to the next lab**.
+You may **proceed to the next lab**.
 
 ## Learn More
 
