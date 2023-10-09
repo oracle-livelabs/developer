@@ -1,0 +1,751 @@
+{
+	"info": {
+		"_postman_id": "96fe6f9e-ce55-42eb-a6b2-67233992d903",
+		"name": "Car Marketplace",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "12346734",
+		"_collection_link": "https://solar-comet-691102.postman.co/workspace/Hands-On-Lab~657ba252-be89-41e9-8ab0-283731231305/collection/12346734-96fe6f9e-ce55-42eb-a6b2-67233992d903?action=share&creator=12346734&source=collection_link"
+	},
+	"item": [
+		{
+			"name": "Step-0 : Init",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "{{bc-admin-user-password}}",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "{{bc-admin-user}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"chaincode\": \"{{bc-chaincode-name}}\",\n    \"args\": [\n        \"Init\",\n        \"'[{\\\"OrgId\\\":\\\"{{bc-organization-id-founder}}\\\",\\\"UserId\\\":\\\"{{bc-admin-user}}\\\"}]'\"\n    ],\n    \"isInit\": true,\n    \"sync\": true    \n}\n\n\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{bc-rest-url}}",
+					"host": [
+						"{{bc-rest-url}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Step-1 : Initialize Fiat Token",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "{{bc-admin-user}}",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "{{bc-admin-user-password}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"chaincode\": \"{{bc-chaincode-name}}\",\n    \"args\": [\n        \"CreateFiatTokenToken\",\n        \"{\\\"TokenId\\\":\\\"{{bc-token-id}}\\\", \\\"TokenDesc\\\":\\\"Fractional Fungible Token\\\", \\\"Currency_name\\\":\\\"USD\\\", \\\"Token_to_currency_ratio\\\":1}\"\n    ],\n    \"sync\": true\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{bc-rest-url}}",
+					"host": [
+						"{{bc-rest-url}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Step-2 : Create Account for Token Admin",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "{{bc-admin-user-password}}",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "{{bc-admin-user}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"chaincode\": \"{{bc-chaincode-name}}\",\n    \"args\": [\n        \"CreateAccount\",\n        \"{{bc-organization-id-founder}}\",\n        \"{{bc-admin-user}}\",\n        \"true\",\n        \"false\"\n    ],\n    \"timeout\": {{bc-timeout}},\n    \"sync\": true\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{bc-rest-url}}",
+					"host": [
+						"{{bc-rest-url}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Step-2.1 : Associate Token Admin to Token",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "{{bc-admin-user-password}}",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "{{bc-admin-user}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"chaincode\": \"{{bc-chaincode-name}}\",\n    \"args\": [\n        \"AssociateFungibleTokenToAccount\",\n        \"{{bc-organization-id-founder}}\",\n        \"{{bc-admin-user}}\",\n        \"{{bc-token-id}}\"\n    ],\n    \"timeout\": {{bc-timeout}},\n    \"sync\": true\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{bc-rest-url}}",
+					"host": [
+						"{{bc-rest-url}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Step-3 : Add Fiat Token Minter Role to Token Admin",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "{{bc-admin-user-password}}",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "{{bc-admin-user}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"chaincode\": \"{{bc-chaincode-name}}\",\n    \"args\": [\n        \"AddRole\",\n        \"{{bc-organization-id-founder}}\",\n        \"{{bc-admin-user}}\",\n        \"minter\",\n        \"{\\\"tokenId\\\": \\\"{{bc-token-id}}\\\"}\"\n    ],\n    \"timeout\": {{bc-timeout}}, \n    \"sync\": true\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{bc-rest-url}}",
+					"host": [
+						"{{bc-rest-url}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Step-4 : Mint Fiat Token",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "{{bc-admin-user-password}}",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "{{bc-admin-user}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"chaincode\": \"{{bc-chaincode-name}}\",\n    \"args\": [\n        \"MintBatch\",\n        \"{{bc-organization-id-founder}}\",\n        \"{{bc-admin-user}}\",\n        \"[\\\"{{bc-token-id}}\\\"]\",\n        \"[1000]\"\n    ],\n    \"timeout\": {{bc-timeout}},\n    \"sync\": true\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{bc-rest-url}}",
+					"host": [
+						"{{bc-rest-url}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Step-5 : Create Account for Dealer-1",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "{{bc-admin-user}}",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "{{bc-admin-user-password}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"chaincode\": \"{{bc-chaincode-name}}\",\n    \"args\": [\n        \"CreateAccount\",\n        \"{{bc-organization-id-1}}\",\n        \"{{bc-user-id-1}}\",\n        \"true\",\n        \"true\"\n    ],\n    \"timeout\": {{bc-timeout}},\n    \"sync\": true\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{bc-rest-url}}",
+					"host": [
+						"{{bc-rest-url}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Step-5.1 : Associate Dealer-1 to Fiat Token",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "{{bc-admin-user-password}}",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "{{bc-admin-user}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"chaincode\": \"{{bc-chaincode-name}}\",\n    \"args\": [\n        \"AssociateFungibleTokenToAccount\",\n        \"{{bc-organization-id-1}}\",\n        \"{{bc-user-id-1}}\",\n        \"{{bc-token-id}}\"\n    ],\n    \"timeout\": {{bc-timeout}},\n    \"sync\": true\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{bc-rest-url}}",
+					"host": [
+						"{{bc-rest-url}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Step-6 : Create Account for Dealer-2",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "{{bc-admin-user-password}}",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "{{bc-admin-user}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"chaincode\": \"{{bc-chaincode-name}}\",\n    \"args\": [\n        \"CreateAccount\",\n        \"{{bc-organization-id-2}}\",\n        \"{{bc-user-id-2}}\",\n        \"true\",\n        \"true\"\n    ],\n    \"timeout\": {{bc-timeout}},\n    \"sync\": true\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{bc-rest-url}}",
+					"host": [
+						"{{bc-rest-url}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Step-6.1 : Associate Dealer-2 to Fiat Token",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "{{bc-admin-user-password}}",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "{{bc-admin-user}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"chaincode\": \"{{bc-chaincode-name}}\",\n    \"args\": [\n        \"AssociateFungibleTokenToAccount\",\n        \"{{bc-organization-id-2}}\",\n        \"{{bc-user-id-2}}\",\n        \"{{bc-token-id}}\"\n    ],\n    \"timeout\": {{bc-timeout}},\n    \"sync\": true\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{bc-rest-url}}",
+					"host": [
+						"{{bc-rest-url}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Step-7 : Add Fiat Token Minter Role to Dealer1",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "{{bc-admin-user-password}}",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "{{bc-admin-user}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"chaincode\": \"{{bc-chaincode-name}}\",\n    \"args\": [\n        \"AddRole\",\n        \"{{bc-organization-id-1}}\",\n        \"{{bc-user-id-1}}\",\n        \"minter\",\n        \"{\\\"tokenId\\\": \\\"{{bc-token-id}}\\\"}\"\n    ],\n    \"timeout\": {{bc-timeout}}, \n    \"sync\": true\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{bc-rest-url}}",
+					"host": [
+						"{{bc-rest-url}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Step-8 : Add Fiat Token Minter Role to Dealer2",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "{{bc-admin-user-password}}",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "{{bc-admin-user}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"chaincode\": \"{{bc-chaincode-name}}\",\n    \"args\": [\n        \"AddRole\",\n        \"{{bc-organization-id-2}}\",\n        \"{{bc-user-id-2}}\",\n        \"minter\",\n        \"{\\\"tokenId\\\": \\\"{{bc-token-id}}\\\"}\"\n    ],\n    \"timeout\": {{bc-timeout}}, \n    \"sync\": true\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{bc-rest-url}}",
+					"host": [
+						"{{bc-rest-url}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Step-9 : Add NFT Minter Role to Dealer-1",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "{{bc-admin-user-password}}",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "{{bc-admin-user}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"chaincode\": \"{{bc-chaincode-name}}\",\n    \"args\": [\n        \"AddRole\",\n        \"{{bc-organization-id-1}}\",\n        \"{{bc-user-id-1}}\", \n        \"minter\",\n        \"{\\\"TokenName\\\": \\\"cartitle\\\"}\" \n    ],\n    \"timeout\": {{bc-timeout}},\n    \"sync\": true\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{bc-rest-url}}",
+					"host": [
+						"{{bc-rest-url}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Step-10 : Add NFT Minter Role to Dealer-2",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "{{bc-admin-user-password}}",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "{{bc-admin-user}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"chaincode\": \"{{bc-chaincode-name}}\",\n    \"args\": [\n        \"AddRole\",\n        \"{{bc-organization-id-2}}\",\n        \"{{bc-user-id-2}}\", \n        \"minter\",\n        \"{\\\"TokenName\\\": \\\"cartitle\\\"}\" \n    ],\n    \"timeout\": {{bc-timeout}},\n    \"sync\": true\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{bc-rest-url}}",
+					"host": [
+						"{{bc-rest-url}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Step-11 : Get Account Details of Token Admin",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "{{bc-admin-user-password}}",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "{{bc-admin-user}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"chaincode\": \"{{bc-chaincode-name}}\",\n    \"args\": [\n        \"GetAccountDetailsByUser\",\n        \"{{bc-organization-id-founder}}\",\n        \"{{bc-admin-user}}\"\n    ],\n    \"timeout\": 0,\n    \"sync\": true\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{bc-rest-url}}",
+					"host": [
+						"{{bc-rest-url}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Step-12 : Initialize Dealer1 Inventory",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "{{bc-admin-user-password}}",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "{{bc-admin-user}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"chaincode\":\"{{bc-chaincode-name}}\", \n    \"args\":[\"CreateDealer\",\"{\\\"DealerId\\\":\\\"{{bc-user-id-1}}\\\",\\\"Name\\\":\\\"{{bc-user-id-1}}\\\",\\\"Phone\\\":\\\"222-222-2222\\\",\\\"Email\\\":\\\"{{bc-user-id-1}}@dealer.com\\\",\\\"Inventory\\\":[]}\"],\n    \"sync\":true\n    }\n\n\n\n\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{bc-rest-url}}",
+					"host": [
+						"{{bc-rest-url}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Step-13 :  Initialize Dealer2 Inventory",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "{{bc-admin-user-password}}",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "{{bc-admin-user}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"chaincode\":\"{{bc-chaincode-name}}\", \n    \"args\":[\"CreateDealer\",\"{\\\"DealerId\\\":\\\"{{bc-user-id-2}}\\\",\\\"Name\\\":\\\"{{bc-user-id-2}}\\\",\\\"Phone\\\":\\\"222-222-2222\\\",\\\"Email\\\":\\\"{{bc-user-id-2}}@dealer.com\\\",\\\"Inventory\\\":[]}\"],\n    \"sync\":true\n    }\n\n\n\n\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{bc-rest-url}}",
+					"host": [
+						"{{bc-rest-url}}"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "bc-rest-url",
+			"value": "https://marketplace-4-oabcs1-ams.blockchain.ocp.oraclecloud.com:7443/restproxy/api/v2/channels/car-marketplace/transactions"
+		},
+		{
+			"key": "bc-channel",
+			"value": "car-marketplace"
+		},
+		{
+			"key": "bc-chaincode-name",
+			"value": "Car_Marketplace"
+		},
+		{
+			"key": "bc-token-id",
+			"value": "FiatToken"
+		},
+		{
+			"key": "bc-mint-quantity",
+			"value": "1000000"
+		},
+		{
+			"key": "bc-organization-id-founder",
+			"value": "marketplace"
+		},
+		{
+			"key": "bc-admin-user",
+			"value": "marketplace"
+		},
+		{
+			"key": "bc-admin-user-password",
+			"value": "######"
+		},
+		{
+			"key": "bc_organization1_url",
+			"value": "https://dealer1-3-oabcs1-iad.blockchain.ocp.oraclecloud.com:7443/restproxy/api/v2/channels/car-marketplace/transactions",
+			"type": "string"
+		},
+		{
+			"key": "bc-organization-id-1",
+			"value": "dealer1",
+			"type": "default"
+		},
+		{
+			"key": "bc-user-id-1",
+			"value": "john_dealer1"
+		},
+		{
+			"key": "bc-user-id-1-password",
+			"value": "######"
+		},
+		{
+			"key": "bc_organization2_url",
+			"value": "https://dealer2-3-oabcs1-iad.blockchain.ocp.oraclecloud.com:7443/restproxy/api/v2/channels/car-marketplace/transactions",
+			"type": "string"
+		},
+		{
+			"key": "bc-organization-id-2",
+			"value": "dealer2",
+			"type": "default"
+		},
+		{
+			"key": "bc-user-id-2",
+			"value": "sam_dealer2"
+		},
+		{
+			"key": "bc-user-id-2-password",
+			"value": "#####"
+		},
+		{
+			"key": "bc-timeout",
+			"value": "60000"
+		}
+	]
+}

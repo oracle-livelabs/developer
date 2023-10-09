@@ -2,36 +2,38 @@
 
 ## About this Workshop
 
-In this workshop, you will learn how to build and deploy a simple Cloud native application using the most commonly-used frameworks and the Oracle Cloud Infrastructure (OCI) services.
+In this workshop, you will learn how to use Oracle Cloud Infrastructure (OCI) services to build and deploy a simple cloud native application using some of the most commonly-used frameworks in the industry.
 
 Estimated Time: 50 minutes
 
-<if type="odbw">If you would like to watch us do the workshop, click [here](https://youtu.be/JiAbVCGRcN8).</if>
-
-![application](images/Application.png " ")
+![application](images/application.png " ")
 
 ### About Product/Technology
 
-Learn how to use the Autonomous Database, the Oracle Container Registry (OCR), the Kubernetes Cluster (OKE) , Helidon, and the API Gateway managed services of OCI through the deployment of a simple MyToDo List React JS application.
-
-![intro architecture](images/architecture.png " ")
+Learn how to use an Oracle Autonomous Database, the Oracle Container Registry (OCR) service, the Oracle Kubernetes Engine (OKE) service and GraalVM and deploy a simple todo-list application using Next.js, an open-source React framework, and Helidon SE, an open-source cloud-native ready microframework for writing Java microservices.
 
 ### Objectives
 
 In this 3 parts workshop, you will:
 
-* Provision a Kubernetes cluster, an Oracle Autonomous Database instance, a Container Registry, and an API Gateway
-* Understand, build, and deploy a Java tier implementing the REST APIs, using the Helidon framework Docker, the OCI Container Registry, and a Kubernetes service
-* Understand, build, and deploy a ReactJS frontend/UI making REST calls to the Helidon service implementing the REST APIs; then redeploy the ReactJS frontend over an OCI Object storage bucket
+* Provision all resources including: a Kubernetes cluster, a working network in the cloud, an Oracle Autonomous Database instance and container registries
+* Understand, build, and deploy a Java tier implementing the REST APIs, using the Helidon SE framework, Docker, the OCI Container Registry, and a Kubernetes service
+* Understand, build, and deploy a ReactJS frontend/UI making REST calls to the Helidon service implementing the REST APIs using the Next.js framework
+* Understand and deploy an ingress controller on your Kubernetes cluster to make the application accessible through a Load Balancer on OCI
 
 ### Prerequisites
 
 * An Oracle Free Tier or Paid Cloud Account
+* Please refer to "Get Started"
 
 You may now **proceed to the next lab**.
 
+## Learn More
+
+* [Deploying a Java Helidon Application](https://docs.oracle.com/en-us/iaas/developer-tutorials/tutorials/helidon-k8s/01oci-helidon-k8s-summary.htm)
+
 ## Acknowledgements
 
-* **Author** - Kuassi Mensah, Dir. Product Management, Java Database Access
+* **Author** - Kuassi Mensah, Dir. Product Management, Java Database Access; Norman Aberin, Developer Advocate, Java Database Access
 * **Contributors** - Jean de Lavarene, Sr. Director of Development, JDBC/UCP
-* **Last Updated By Date** - Arabella Yao, Database Product Manager, October 2021
+* **Last Updated By Date** - Norman Aberin, Developer Advocate, August 2023

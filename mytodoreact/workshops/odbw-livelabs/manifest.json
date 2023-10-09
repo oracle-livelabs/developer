@@ -15,19 +15,23 @@
         "filename": "../../intro/intro.md"
       },
       {
-        "title": "Tutorial 1: Setup Dev Environment",
-        "filename": "../../setup-dev-environment/setup-dev-environment-gb.md"
+        "title": "Lab 1: Setup Dev Environment",
+        "filename": "../../setup-dev-environment/setup-dev-environment.md"
       },
       {
-        "title": "Tutorial 2: Backend (Java/Helidon)",
+        "title": "Lab 2: Deploy Backend (Java/Helidon)",
         "filename": "../../backend/backend.md"
       },
       {
-        "title": "Tutorial 3: Frontend (React JS)",
+        "title": "Lab 3: Deploy Frontend (React/NextJS)",
         "filename": "../../frontend/frontend.md"
       },
       {
-        "title": "Tutorial 4: Tear down",
+        "title": "Lab 4: Deploy Ingress",
+        "filename": "../../ingress/ingress.md"
+      },
+      {
+        "title": "Lab 5: Teardown",
         "filename": "../../teardown/teardown.md"
       },
       {

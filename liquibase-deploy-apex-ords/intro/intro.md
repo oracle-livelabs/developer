@@ -25,7 +25,7 @@ Watch the video below for a quick walk-through of the workshop.
 Learn to deploy an APEX application and supporting components using SQLcl Liquibase in this hands-on workshop:
 * Create an Oracle Autonomous Database
 * Create an APEX workspace
-* Review your APEX workspace dashboards
+* Review your application and component dashboards
 * Fetch your database credential wallet
 * Upload your Liquibase changelog files
 * Connect to your database using SQLcl

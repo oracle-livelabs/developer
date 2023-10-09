@@ -69,9 +69,9 @@ Now that your changes have been pushed, let's check them in the remote **hrbranc
 
    The Git History panel logs your Git actions and their results and is useful to keep track of what you've done in your workspace. Click ![Close message icon](images/x-icon.png) when you are done.
 
-2. Now click **Go to project page** ![Go to Project Page icon](images/go-to-project-home-icon.png) in the header to return to the project's home page.
+2. Now click ![Go to Project Page icon](images/go-to-project-home-icon.png) **Go to project page** in the header to return to the project's home page.
 
-3. Click **Git** ![Git icon](images/git-icon.png) in the left navigator.
+3. Click ![Git icon](images/git-icon.png) **Git** in the left navigator.
 
    You'll see your changes added to the remote **hrbranch**, indicated by your last commit message.
 
@@ -88,4 +88,4 @@ Now that your changes have been pushed, let's check them in the remote **hrbranc
 ## Acknowledgements
 
 * **Author** - Sheryl Manoharan, VB Studio User Assistance, November 2021
-* **Last Updated By/Date** - Sheryl Manoharan, May 2023
+* **Last Updated By/Date** - Sheryl Manoharan, September 2023

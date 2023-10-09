@@ -60,15 +60,23 @@ In the Diagram view on the right, you can see the flows and pages for this App U
 
   ![Flow diagram](images/appflow.png)
 
+3. Click on **main-start**:
+
+  ![Click Main](images/clickmainstart.png)
+
+4. In the right panel you'll find the page properties, change the **Name** value to **welcome**:
+
+  ![Double-Click welcome](images/welcomepagename.png)
+
 ## Task 2: Change the Page Template
 
 You should be in the Diagram tab with the Components open.
 
-1. Double-click  **main-start** to open the default page:
+1. Double-click  **welcome** to open the default page:
 
-  ![Double-Click Main](images/doubleclickmainstart.png)
+  ![Double-Click welcome](images/doubleclickwelcome.png)
 
-You are going to configure the main-start page to use the Redwood **Welcome Page Template**.
+You are going to configure the welcome page to use the Redwood **Welcome Page Template**.
 
 2. In the right panel you'll find the page properties, click the **Select Page Template** button:
 
@@ -90,10 +98,11 @@ In the **Page Templates** window you will see a page named **Welcome Page Templa
 
 | # | Property | Value |
 | --- | --- | --- |
-| 1 | Background Color | Choose your preferred color  |
-| 2 | Description| **Search and edit accounts** |
-| 3 | Illustration foreground source URL | https://static.oracle.com/cdn/fnd/gallery/2107.1.0/images/illust-welcome-banner-fg-03.png |
-| 4 |Page Title | **Accounts** |
+| 1 | Page Title | **Accounts** |
+| 2 | Overline | **Customer Management** |
+| 3 | Description| **Search and edit accounts** |
+| 4 | Background Color | Choose your preferred color (dark-ocean, dark-pine, dark-lilac, dark-teal, dark-rose, dark-pebble, dark-slate, dark-plum, dark-sienna, auto)  |
+| 5 | Illustration foreground source URL | https://static.oracle.com/cdn/fnd/gallery/2107.1.0/images/illust-welcome-banner-fg-03.png |
 {: title="Template Properties"}
 
 Your screen should look like this:
@@ -105,7 +114,7 @@ In the next lab, we'll add some more useful components to the page.
 
 1. In the Components palette's search box, type **search**, which will locate a component called **Input Search**.
 2. Drag this component and drop it on the page in the canvas. A pop-up will appear asking which slot you want to use; choose **Search slot**:
-  ![Search slot](images/slot.png)
+  ![Search slot](images/searchslot.png)
 
 	This field is where users will enter a search term to locate an account. We need to keep track of these terms, so we'll use a page variable to do that.
 
@@ -126,22 +135,6 @@ In the next lab, we'll add some more useful components to the page.
   ![Variable settings](images/variablesettings.png)
 
 The Value field in the Properties pane now contains a reference to our new variable.
-
-## Task 5: Add a Collection Container
-
-In this task we'll add a container to the page, which will later hold some data we'll get from Oracle Fusion Cloud Applications.
-
-1. In the Components palette's search box type **collection**, which will locate a component called **Collection Container**.
-2. Drag this component to the Structure pane and drop it on top of the Welcome Page template:
-  ![Collection component](images/collection.png)
-3. In the slots pop-up, select **Default**:
-  ![Default slot](images/slot.png)
-The layout of our first page is now ready.  Our next step is to add some data to the page from Oracle Fusion Cloud Apps.
-
-Notice how all of our design tasks so far have been done with simple drag and drop functionality and setting properties. This visual development approach is key to the productivity that Visual Builder Studio provides. If you prefer to work in code, however, you can always do so by clicking the Code button right above where the page preview is displayed. Any modifications you make to your page's HTML code while in Code mode are automatically reflected in Design mode, should you choose to return to it.
-
-At this point your screen should look like this:
-  ![Completed page](images/complete.png)
 
 Let's move on to the next lab, where we'll learn how to get some data from Oracle SaaS onto the page.
 

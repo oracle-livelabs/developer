@@ -35,7 +35,9 @@ Grant Required Privileges to the OE user.
 1.  If you aren't already logged in, login to the instance using ssh.  If you are already logged in as the *opc* user, skip to Step 4.
 
     ````
+    <copy>
     ssh -i ~/.ssh/<sshkeyname> opc@<Your Compute Instance Public IP Address>
+    </copy>
     ````
 
 2.  Switch to the oracle user
@@ -80,7 +82,7 @@ Grant Required Privileges to the OE user.
 
     ![grant privileges](./images/step1.2-grantpriv.png " " )
 
-    *Note: The ALTER SYSTEM privilege is required to flush the Shared Pool in one exercise about performance.*
+    >**Note:** The ALTER SYSTEM privilege is required to flush the Shared Pool in one exercise about performance.
 
 4.  Create Network Access Control List as our database needs to connect to a web service, and retrieve information over HTTP, and this requires an *Access Control List (ACL)*. This ACL can be created by a user with SYSDBA privileges, SYS in this case, from the Pluggable Database called **ORCLPDB**, by executing the following procedure.
 
@@ -143,7 +145,9 @@ For the purpose of this exercise we will use a web service, that returns informa
 - Share — copy and redistribute the material in any medium or format;
 - Adapt — remix, transform, and build upon the material for any purpose, even commercially.
 
-1.  Click '**login**' link on the upper right corner of GeoNames website, and create a new account. **Note:** When you create your GeoNames account you will receive an email to activate the account (check spam folder).
+1.  Click '**login**' link on the upper right corner of GeoNames website, and create a new account.
+
+    >**Note:** When you create your GeoNames account you will receive an email to activate the account (check spam folder).
 
 2.  Enable the account for web services on the account page [GeoNames Account Page](http://www.geonames.org/manageaccount).
 
@@ -163,7 +167,7 @@ This lab covers the use of database languages and features to work with JSON dat
     </copy>
     ````
 
-    Note: Remember to replace ***GeoNames_username***.
+    >**Note:** Remember to replace ***GeoNames_username***.
 
     ````
     <copy>
@@ -274,7 +278,7 @@ The return value for a dot-notation query is always a string (data type VARCHAR2
 
 The objective for our lab is to retrieve information about castles in Europe, and use them as JSON documents in different scenarios. Imagine you are starting the development of a new mobile application that provides recommendations for tourists.  For convenience and comfort, we can encapsulate the communication with a web service into a function. This way, we don’t have to write all the code required for a simple request, which in most of the cases is even more complicated than our simple example here, because they require a more complex authentication.
 
-Note: Remember to replace ***GeoNames_username***.
+>**Note:** Remember to replace ***GeoNames_username***.
 
 1.  Create a function to get country information.
 
@@ -368,7 +372,7 @@ Note: Remember to replace ***GeoNames_username***.
 
 8.  A new function is required to retrieve JSON documents with country regions information from GeoNames web service. This function requires the  **geonameId** of the country, and a style value used internally by GeoNames web service to specify the level of details.
 
-    Note: Remember to replace ***GeoNames_username***.
+    >**Note:** Remember to replace ***GeoNames_username***.
 
     ````
     <copy>
@@ -464,7 +468,7 @@ Note: Remember to replace ***GeoNames_username***.
 
     The SDN syntax returns an array, not a relational view of JSON data in one column.
 
-Please proceed to the next lab.
+    You may now **proceed to the next lab**.
 
 ## **Acknowledgements**
 
