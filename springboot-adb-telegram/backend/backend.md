@@ -11,13 +11,13 @@ Watch the video below for a quick walk-through of the lab.
 
 ### Understand the Java backend application
 
-As with most React applications (https://reactjs.org/), this application uses remote APIs to handle data persistence. The backend implements five REST APIs including
+As with most React applications (https://react.dev/), this application uses remote APIs to handle data persistence. The backend implements five REST APIs to support the functionality below:
 
-* Retrieving the current list of todo items
-* Adding a new todo item
-* Finding a todo item by its ID
-* Updating an existing todo item
-* Deleting a todo item
+* Retrieve the current list of todo items
+* Add a new todo item
+* Find a todo item by its ID
+* Update an existing todo item
+* Delete a todo item
 
 The APIs are documented using Swagger.
 

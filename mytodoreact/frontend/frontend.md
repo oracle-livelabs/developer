@@ -2,19 +2,14 @@
 
 ## Introduction
 
-In this lab you will deploy a pre-built ReactJS application locally then build it for production and host it on Oracle Cloud Infrastucture.
+In this lab you will build and deploy the pre-built Next.JS application on Oracle Kubernetes Engine (OKE).
 
 Estimated time: 15 minutes
 
-Watch the video below for a quick walk through of the lab.
-
-Mac:
-
-Windows:
 
 ### Understand the ReactJS Application
 
-The application is simple; it uses "functional components" with "state hooks" for managing states. There is a main part called "App," which renders another part called "NewItem" and two tables of todo items: the active ones and the already done ones. The "NewItem" part displays the text field for adding a new item.
+The application is simple; it uses "functional components" with "state hooks" for managing states. There is a main part called "Home," which renders components called NewItem and TodoItems. The NewItem component displays the text field for adding a new item and a button for adding. The TodoItem component provides a reusable component for displaying both complete and incomplete tasks with buttons to mark them either as done, to be deleted or to unmark as done.
 
 The App part includes the items state ([]) which contains the list of todo items. When setItems is called with a new array of items, the part will re-render.
 
@@ -24,225 +19,90 @@ The App part also maintains the following states:
 * "isInserting" is true when waiting for the Java tier to process a newly inserted item. The **Add** button will display a spinning wheel during this time.
 * "error" stores the error messages received during the API calls.
 
-The index.css file has all the styles for the application.
+The Next.js application can be run alone in development mode and is functional, however the tasks will only be temporary and the data will not be persisted elsewhere. Refreshing the browser will revert the application to its default states.
+
+In production mode, the application will make requests against the todolist endpoint: `/api/todolist`.
 
 ### Objectives
 
 In this lab, you will:
 
-* Clone the workshop git repository **on your laptop**
-* Set the API Gateway endpoint
-* Run the ReactJS frontend code in Dev Mode then Build for Production
-* Host the production build on the Oracle Cloud's object storage
+* Build and push a docker image of the frontend code to Oracle Container Registry (OCR)
+* Deploy the container on the Oracle Kubernetes Engine (OKE)
+* Undeploy (optional)
+
 
 ### Prerequisites
+ 
+* This lab requires the completion of the **Setup Dev Environment** tutorial and the provisioning of the Orace Cloud Infrastructure (OCI) components.
 
-1. This lab requires the completion of **Setup Dev Environment** and **Backend (Java/Helidon)**. This lab also requires admin rights.
-2. Make sure the `npm` command is installed.
+## Task 1: Build and Push the Docker Images to the OCI Registry
 
-```
-<copy>npm --version</copy>
-```
+The OCI Container Registry is where your Docker images are managed. A container registry should have been created for you in Lab 1 in your compartment for both the front-end and back-end applications.
 
-3. if `npm` is not installed, install `Node` for your laptop, using `https://bit.ly/3oVTrSh`.
-4. Make sure `Go lang` is installed.
-`go version` shows `go version go1.15.2 darwin/amd64`.
 
-```
-<copy>go version</copy>
-```
+1. Run `build.sh` script to build and push the Next.JS container image into the next-frontendapp repository.
 
-5. If `Go lang` is not installed, see https://golang.org/doc/.
-6. Make sure **git** is installed; if not please follow the instructions @ `https://bit.ly/3DXyjiL`.
+	```
+	<copy>
+	cd $MTDRWORKSHOP_LOCATION/frontend-app
+	./build.sh
+	</copy>
+	```
+	In a couple of minutes, you should have successfully built and pushed the container image into the designated Oracle Container Registry. The `build.sh` script automates:
 
-## **Task 1**: Configure API.js
+	1. Runs `docker build -t <image>:<tag> .` to build the application into the specified containerized image with the provided tag
+	2. Runs `docker push <image>:<tag>` to push the image to Oracle Container Registry (OCR)
 
-In this task you will edit API.js to point to the correct endpoint that will be allowed to access the APIs used in your application
+## Task 2: Deploy on Kubernetes and Check the Status
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+1. Run the `deploy.sh` script
 
-1. Clone the git repository to a directory on your laptop (we only need the front end in this lab)
+    ```
+    <copy>
+    cd $MTDRWORKSHOP_LOCATION/frontend-app 
+    ./deploy.sh
+    </copy>
+    ```
 
-```
-<copy>
-mkdir reacttodo
-cd reacttodo
-git clone --single-branch --branch helidon https://github.com/oracle/oci-react-samples.git
-</copy>
-```
+	If everything runs correctly the script will output something like the following. 
 
-2. Navigate to frontend
+    ![Deployment completeness](images/run-deploy.png " ")
 
-```
-<copy>
-cd oci-react-samples/mtdrworkshop/frontend
-</copy>
-```
+	The deploy script takes the template YAML file that holds the specifications for the native Kubernetes objects related to the backend application: one (1) deployment and one (1) service. The script automates:
 
-3. Run the following npm commands to install the required packages
+	1. Replaces the deployment `spec.template.spec.containers[0].image` with the proper container image name and tag
+	2. Runs `kubectl apply -f <generated-manifest-name>.yaml` to apply the generated YAML file to create the application deployment and service on your OKE cluster
 
-```
-<copy>
-npm install --save typescript
-</copy>
-```
+	To view the generated YAML file, you can run the following shell command: `more $MTDRWORKSHOP_LOCATION/frontend-app/manifest-*.yaml`
 
-```
-<copy>
-npm install
-</copy>
-```
 
-In case of errors, try the following command (sometimes twice)
+3. View the created pods by running the following command, which returns all the pods running in your kubernetes cluster:
+    
+	```
+    <copy>
+    kubectl get pods -n mtdrworkshop
+    </copy>
+    ```
 
-```
-<copy>
-npm audit fix --force
-</copy>
-```
+## Task 3: UnDeploy (Optional)
 
-Ideally, npm -version should return > 6.14.x AND Node version > 14.16.x
-If npm version < 6.14.x then install the latest Node using
-https://bit.ly/3evGlEo
+If you make changes to the image, you need to delete the service and the pods by running undeploy.sh then redo Steps 1 & 2.
 
-4. Update API\_LIST in API.js
+1. Run the `undeploy.sh` script
+    ```
+    <copy>
+    cd $MTDRWORKSHOP_LOCATION/frontend-app
+    ./undeploy.sh
+    </copy>
+    ```
 
-Make sure to be in frontend/src directory
-```<copy> 	cd frontend/src 	</copy>```
-In the Cloud console, navigate to **Developer Services > API Management >Gateways**
-
-![Navigate API Gateway](images/api-gateway-navigate.png " ")
-
-Click on your Gateway and go to Deployment
-Copy the Deployment Endpoint
-
-![API gateway deploy](images/Api-gtw-deploy.png " ")
-
-* Paste the endpoint as the value of API\_LIST and append "/todolist"
-
-Example:
-const API\_LIST = 'https://xxxxxxxxxx.apigateway.eu-frankfurt-1.oci.customer-oci.com/todolist';
-
-* Save the modified API.js file
-
-## **Task 2**: Run in Dev Mode then Build for Production
-
-Here you will run the application locally in development mode, then run in production mode to create the build folder.
-
-1. In the project directory, run the app in the development mode
-
-```
-<copy>
-npm start
-</copy>
-```
-
-2. Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-3. The page will reload if you make edits.
-You will also see any lint errors in the console.
-4. Cancel the developer mode execution and build the app for production to the `build` folder. This will create a folder named `build` for you
-
-* Issue "Ctrl-c" to cancel the developer mode executions
-* Execute npm run build
-
-```
-<copy>
-npm run build
-</copy>
-```
-
-It correctly bundles React in production mode (into the build folder) and optimizes the build for the best performance.
-
-![Run build](images/Run-build.png " ")
-
-The build is minified and the filenames include the hashes.
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-## **Task 3**: Hosting on the Oracle Cloud's Object Storage
-
-The build folder will be uploaded to object storage so you can access your application from OCI.
-
-1. Open up the hamburger menu in the top-left corner of the Console and select
-**Object Storage > Object Storage**.
-
-![Object store navigate](images/object-store-navigate.png " ")
-Create the 'mtdrworkshop' (or another name if that's taken) bucket
-
-![Create bucket](images/Create-bucket.png " ")
-
-Enter in the bucket details.
-
-![Bucket details](images/bucket-details.png)
-
-Edit visibility and change to Public
-
-![Edit bucket visibility](images/edit-visibility.png)
-2\. Install the Staci utility for copying directories to OCI object storage
-bucket with folder hierarchies
-
-* git clone https://github.com/maxjahn/staci.git
-
-```
-<copy>
-git clone https://github.com/maxjahn/staci.git
-</copy>
-```
-
-* cd staci
-
-```
-<copy>
-cd staci
-</copy>
-```
-
-* go mod init staci
-
-```
-<copy>
-go mod init staci
-</copy>
-```
-
-* go get -d
-
-```
-<copy>
-go get -d
-</copy>
-```
-
-* go build
-
-```
-<copy>
-go build
-</copy>
-```
-
-3. If you have never used your laptop for connecting to an Oracle Cloud account, you need to setup an **OCI config file** and create an **API key**
-    * Follow Step #2 in the following doc https://bit.ly/3vM7v2h for that purpose.
-4. Upload a static build into the bucket, using the staci binary.
-`-source build` should be the path to `build` from `npm run build` earlier. `-target mtdrworkshop` should be the name of the bucket
-
-In your shell script, navigate to \*\*reacttodo/oci-react-samples/mtdrworkshop/frontend/src\*\*
-
-![place to be](images/directory.png " ")
-then issue the following command
-```<copy> 	./staci/staci -source ../build -target mtdrworkshop 	</copy>```
-
-* The application is visible in the 'mtdrworkshop' bucket of your tenancy
-* Click on the index.html object and copy the URL of the index object
-![Bucket index](images/bucket-index.png)
-* You may now run the application from Object store, using the URL of the index that you've copied above.
-![My To Do](images/my-todo.png)
+2. Rebuild the image and deploy
 
 You may now **proceed to the next lab**.
 
 ## Acknowledgements
 
-* **Authors** \- Kuassi Mensah\, Dir\. Product Management\, Java Database Access; Peter Song\, Developer Advocate JDBC
-* **Contributors** \- Jean de Lavarene\, Sr\. Director of Development\, JDBC/UCP
-* **Last Updated By/Date** \- Kuassi Mensah
+* **Authors**  Kuassi Mensah, Dir. Product Management, Java Database Access; Norman Aberin, Developer Advocate JDBC
+* **Contributors**  Jean de Lavarene, Sr. Director of Development, JDBC/UCP
+* **Last Updated By/Date**  Norman Aberin, August 2023
