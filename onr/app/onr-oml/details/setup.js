@@ -32,7 +32,6 @@ $python3
 Load OML4Py library:
 >>> import oml
 Establish a database connection
->>> oml.connect(user="pyquser", password="pyquser", host="phil-db23c.sub08201532330.philfnvcn.oraclevcn.com", port=1521, service_name="FREEPDB1")
 
 
 
