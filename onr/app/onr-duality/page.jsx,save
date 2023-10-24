@@ -1,0 +1,345 @@
+'use client';
+import { useState, useEffect } from "react";
+import Link from "next/link";
+import view1 from "./details/view1.js"
+import view2 from "./details/view2.js"
+import view2Inserts from "./details/view2Inserts.js"
+import ReactPlayer from "react-player/lazy";
+import { VictoryBar, VictoryScatter, VictoryChart, VictoryAxis,VictoryTheme, VictoryStack } from 'victory';
+
+
+const Data = () => {
+    const [data, setData] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [query, setQuery] = useState("");
+
+/*
+    const res = await fetch(`/api/books/`,{
+      method: 'POST',
+      headers:{
+          'Content-type': 'application/json'
+      },
+      body: JSON.stringify({                 
+           title: newBookTitle,
+           link: "https://www.amazon.com/Beginning-MERN-Stack-MongoDB-Express/dp/B0979MGJ5J",
+           img: "https://m.media-amazon.com/images/I/41y8qC9RT0S._SX404_BO1,204,203,200_.jpg"                                 
+      })
+    })
+*/
+
+    const fetchData = async () => {
+        const resp = await fetch("database/onr-duality",{
+          method: 'POST'});
+        const res = await fetch("database/onr-duality",{
+          method: 'GET'});
+        const sdata = await res.json(); 
+console.log( typeof sdata);
+console.log(sdata);
+const data = JSON.parse(sdata);
+console.log( typeof data);
+console.log(data);
+        setData(data);
+    }
+
+    useEffect(() => {        
+        fetchData();     
+    },[]);
+
+    //https://formidable.com/open-source/victory/docs/
+    //https://blog.theodo.com/2019/01/data-visualisation-victory-chart/
+    const data2012 = [
+      {quarter: 1, earnings: 13000},
+      {quarter: 2, earnings: 16500},
+      {quarter: 3, earnings: 14250},
+      {quarter: 4, earnings: 19000}
+    ];
+    
+    const data2013 = [
+      {quarter: 1, earnings: 15000},
+      {quarter: 2, earnings: 12500},
+      {quarter: 3, earnings: 19500},
+      {quarter: 4, earnings: 13000}
+    ];
+    
+    const data2014 = [
+      {quarter: 1, earnings: 11500},
+      {quarter: 2, earnings: 13250},
+      {quarter: 3, earnings: 20000},
+      {quarter: 4, earnings: 15500}
+    ];
+    
+    const data2015 = [
+      {quarter: 1, earnings: 18000},
+      {quarter: 2, earnings: 13250},
+      {quarter: 3, earnings: 15000},
+      {quarter: 4, earnings: 12000}
+    ];
+
+return(
+<div className="overflow-x-auto">
+  JSON-Relational Duality Views
+  <br></br>
+  <br></br>
+
+  <table className="table table-xs">
+    <thead>
+      <tr>
+        <th></th> 
+        <th></th>
+        <th></th> 
+        <th></th>
+      </tr>
+    </thead> 
+    <tbody>
+      <tr>
+        <td><div className="card w-96 bg-base-100 shadow-xl">
+    <div className="card-body">
+      <h2 className="card-title">Chart</h2>
+        <VictoryChart
+          domainPadding={20}
+          theme={VictoryTheme.material}
+        >
+          <VictoryAxis
+            tickValues={[1, 2, 3, 4]}
+            tickFormat={["Quarter 1", "Quarter 2", "Quarter 3", "Quarter 4"]}
+          />
+          <VictoryAxis
+            dependentAxis
+            tickFormat={(x) => (`$${x / 1000}k`)}
+          />
+          <VictoryStack>
+            <VictoryBar
+              data={data2012}
+              x="quarter"
+              y="earnings"
+            />
+            <VictoryBar
+              data={data2013}
+              x="quarter"
+              y="earnings"
+            />
+            <VictoryBar
+              data={data2014}
+              x="quarter"
+              y="earnings"
+            />
+            <VictoryBar
+              data={data2015}
+              x="quarter"
+              y="earnings"
+            />
+          </VictoryStack>
+        </VictoryChart>
+      <div className="card-actions justify-end">
+      </div>
+    </div>
+  </div></td> 
+        <td><div className="card w-96 bg-base-100 shadow-xl">
+    <div className="card-body">
+      <h2 className="card-title">Chart</h2>
+        <VictoryChart
+          domainPadding={20}
+          theme={VictoryTheme.material}
+        >
+          <VictoryAxis
+            tickValues={[1, 2, 3, 4]}
+            tickFormat={["Quarter 1", "Quarter 2", "Quarter 3", "Quarter 4"]}
+          />
+          <VictoryAxis
+            dependentAxis
+            tickFormat={(x) => (`$${x / 1000}k`)}
+          />
+          <VictoryStack>
+            <VictoryBar
+              data={data2012}
+              x="quarter"
+              y="earnings"
+            />
+            <VictoryBar
+              data={data2013}
+              x="quarter"
+              y="earnings"
+            />
+            <VictoryBar
+              data={data2014}
+              x="quarter"
+              y="earnings"
+            />
+            <VictoryBar
+              data={data2015}
+              x="quarter"
+              y="earnings"
+            />
+          </VictoryStack>
+        </VictoryChart>
+      <div className="card-actions justify-end">
+      </div>
+    </div>
+  </div></td> 
+        <td><div className="card w-96 bg-base-100 shadow-xl">
+    <div className="card-body">
+      <h2 className="card-title">Chart</h2>
+        <VictoryChart
+          domainPadding={20}
+          theme={VictoryTheme.material}
+        >
+          <VictoryAxis
+            tickValues={[1, 2, 3, 4]}
+            tickFormat={["Quarter 1", "Quarter 2", "Quarter 3", "Quarter 4"]}
+          />
+          <VictoryAxis
+            dependentAxis
+            tickFormat={(x) => (`$${x / 1000}k`)}
+          />
+          <VictoryStack>
+            <VictoryBar
+              data={data2012}
+              x="quarter"
+              y="earnings"
+            />
+            <VictoryBar
+              data={data2013}
+              x="quarter"
+              y="earnings"
+            />
+            <VictoryBar
+              data={data2014}
+              x="quarter"
+              y="earnings"
+            />
+            <VictoryBar
+              data={data2015}
+              x="quarter"
+              y="earnings"
+            />
+          </VictoryStack>
+        </VictoryChart>
+      <div className="card-actions justify-end">
+      </div>
+    </div>
+  </div></td> 
+        <td><div className="card w-96 bg-base-100 shadow-xl">
+    <div className="card-body">
+      <h2 className="card-title">Chart</h2>
+        <VictoryChart
+          domainPadding={20}
+          theme={VictoryTheme.material}
+        >
+          <VictoryAxis
+            tickValues={[1, 2, 3, 4]}
+            tickFormat={["Quarter 1", "Quarter 2", "Quarter 3", "Quarter 4"]}
+          />
+          <VictoryAxis
+            dependentAxis
+            tickFormat={(x) => (`$${x / 1000}k`)}
+          />
+          <VictoryStack>
+            <VictoryBar
+              data={data2012}
+              x="quarter"
+              y="earnings"
+            />
+            <VictoryBar
+              data={data2013}
+              x="quarter"
+              y="earnings"
+            />
+            <VictoryBar
+              data={data2014}
+              x="quarter"
+              y="earnings"
+            />
+            <VictoryBar
+              data={data2015}
+              x="quarter"
+              y="earnings"
+            />
+          </VictoryStack>
+        </VictoryChart>
+      <div className="card-actions justify-end">
+      </div>
+    </div>
+  </div></td> 
+      </tr>
+    </tbody> 
+  </table>
+
+  <br></br>
+  <br></br>
+  <table className="table table-xs">
+    <thead>
+      <tr>
+        <th></th> 
+        <th>empno</th> 
+        <th>ename</th> 
+        <th>job</th> 
+        <th>mgr</th> 
+        <th>hiredate</th> 
+        <th>sal</th>
+        <th>comm</th>
+        <th>deptno</th>
+        <th>dname</th>
+      </tr>
+    </thead> 
+    <tbody>
+{data.map((row) => (
+      <tr>
+        <th>{row.id}</th> 
+        <td>{row.empno}</td> 
+        <td>{row.ename}</td> 
+        <td>{row.job}</td> 
+        <td>{row.mgr}</td> 
+        <td>{row.hiredate}</td> 
+        <td>{row.sal}</td> 
+        <td>{row.comm}</td> 
+        <td>{row.deptno}</td> 
+        <td>{row.dname}</td> 
+      </tr>
+))}
+    </tbody> 
+  </table>
+  <br></br>
+
+  Documentation: https://docs.oracle.com/en/database/oracle/oracle-database/23/jsnvu/overview-json-relational-duality-views.html#GUID-CE7227BF-B4AF-4024-A578-ED52795F4525
+
+  <details className="collapse bg-base-00">
+    <summary className="collapse-title text-xl font-medium">Video Instructions</summary>
+      <div className="collapse-content"> 
+        <div className='player-wrapper'>
+            <ReactPlayer
+            className='react-player fixed-bottom'
+            url= 'videos/onr-duality-video.mp4'
+            width="690px" 
+            height="390px"
+            controls = {true}
+            />
+      </div>
+    </div>
+  </details>
+
+  <details className="collapse bg-base-00">
+    <summary className="collapse-title text-xl font-medium">Duality View dept_emp</summary>
+    <div className="collapse-content"> 
+      <pre style={{ fontSize: 11 }} dangerouslySetInnerHTML={{ __html: JSON.stringify(view2).replace(/"/g, "") }}></pre>
+    </div>
+  </details>
+
+  <details className="collapse bg-base-00">
+    <summary className="collapse-title text-xl font-medium">Duality View dept_emp Inserts</summary>
+    <div className="collapse-content"> 
+      <pre style={{ fontSize: 11 }} dangerouslySetInnerHTML={{ __html: JSON.stringify(view2Inserts).replace(/"/g, "").replace(/\\/g, '"') }}></pre>
+    </div>
+  </details>
+
+  <details className="collapse bg-base-00">
+    <summary className="collapse-title text-xl font-medium">Duality View emp_dept</summary>
+    <div className="collapse-content"> 
+      <pre style={{ fontSize: 11 }} dangerouslySetInnerHTML={{ __html: JSON.stringify(view1).replace(/"/g, "") }}></pre>
+    </div>
+  </details>
+  
+</div>
+)
+}
+
+export default Data;

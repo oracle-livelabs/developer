@@ -1,0 +1,60 @@
+var txt = `
+'use client';
+import Link from "next/link";
+import setup from "./details/setup.js"
+import x from "./dummy.txt"
+import manageDB from "./details/manageDB.js"
+
+const HomePage = () => {
+
+  return (
+    <div>
+      <hi>Oracle 23c Developer Features</hi>
+      <br></br>
+      <br></br>
+      Only the first three links below are implemented right now.
+
+      <ul className="menu bg-base-200 w-75 rounded-box">
+        <li><Link href="/onr-sql">ONR-SQL - Basic SQL and Upsert Views</Link></li>
+        <li><Link href="/onr-duality">ONR-Duality - JSON-Relational Duality Views</Link></li>
+        <li><Link href="/onr-pgq">ONR-SQL/PGQ - Property Graph Query Language, a new part of ISO standard SQL</Link></li>
+        <li><Link href="/onr-rdf">ONR-RDF/SPARQL</Link></li>
+        <li><Link href="/onr-oml">ONR-OML4SQL</Link></li>
+        <li><Link href="/onr-spatial">ONR-Spatial</Link></li>
+        <li>These will not demonstrate converged database features but including them demonstartes how additional features can be added to an app.</li>
+        <li><Link href="/onr-api">ONR-APIs</Link></li>
+        <li><Link href="/onr-mysql">ONR-MySQL Heatwave</Link></li>
+      </ul>
+      <br></br>
+      23c Documatation<br />
+      <br></br>
+
+      <details className="collapse bg-base-00">
+        <summary className="collapse-title text-xl font-medium">Page Code</summary>
+        <div className="collapse-content"> 
+          <pre style={{ fontSize: 11 }} dangerouslySetInnerHTML={{ __html: x }}></pre>
+        </div>
+      </details>
+
+      <details className="collapse bg-base-00">
+        <summary className="collapse-title text-xl font-medium">Setup</summary>
+        <div className="collapse-content"> 
+          <pre style={{ fontSize: 11 }} dangerouslySetInnerHTML={{ __html: JSON.stringify(setup).replace(/"/g, "") }}></pre>
+        </div>
+      </details>
+
+      <details className="collapse bg-base-00">
+        <summary className="collapse-title text-xl font-medium">Manage DB</summary>
+        <div className="collapse-content"> 
+          <pre style={{ fontSize: 11 }} dangerouslySetInnerHTML={{ __html: JSON.stringify(manageDB).replace(/"/g, "") }}></pre>
+        </div>
+      </details>
+    </div>
+  );
+}
+
+  export default HomePage;
+
+`
+
+export default txt
