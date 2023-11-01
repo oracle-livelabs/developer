@@ -12,7 +12,7 @@ As a customer, you can:
 
 Estimated Time: 40 minutes
 
-[Lab 8](videohub:1_qdahpt8r)
+[Lab 9](videohub:1_qdahpt8r)
 
 ### Objectives
 
@@ -96,21 +96,19 @@ In this lab, you will:
 
    ![image of list of post java install action](images/post-java-install-action-security-list.png)
 
-   There are a total of 6 different security configurations to choose from.
+   There are a total of 5 different security configurations to choose from.
    | Actions                                | Options   |
    |----------------------------------------|-----------|
+   | Replace JDK root certificates with default operating system certificates | None |
    | Change minimum key length for EC       | 256 |
+   | Change minimum key length for RSA      | 2048 |
    | Change minimum key length for DSA      | 2048 |
    | Change minimum key length for Diffie-Hellman | 2048 |
-   | Change minimum key length for RSA      | 2048 |
-   | Disable TLS                            | TLS 1.0 , TLS 1.0 and TLS 1.1 |
-   | Replace JDK root certificates with default operating system certificates | None |
    {: title="Available Security Configurations"}
 
 
-5. This lab will simulate the setting up of 2 different installation actions as follows:
+5. This lab will simulate the setting up of 1 installation action as follows:
       * Minimum key length for RSA > 2048 bits (e.g. for signed jars)
-      * Disable TLS 1.0 and TLS 1.1
 
 6. Select the  **Change minimum key length for RSA** option from the drop-down list. Another combo box will appear to the right. This contains the new minimum key length (in bits) that will be set for RSA signed jars.
 
@@ -120,19 +118,7 @@ In this lab, you will:
 
    ![image of LCM minimimum-rsa-key-length](images/post-install-rsa-select.png)
 
-7. Click on the **+ another action** button to add an additional post Java installation action. Another combo box with the placeholder "Select an action" should appear in the next line.
-
-   ![image of LCM add another action](images/lcm-add-another-action.png)
-
-8. Click on the combo box and select the **Disable TLS** option.
-
-   ![image of LCM disable tls](images/lcm-disable-tls.png)
-
-   Click on the combo box that appeared on the right. Select **TLS 1.0 and TLS 1.1**.
-
-   ![image of LCM disable tls options](images/lcm-disable-tls-options.png)
-
-9. Click on the combo box under **Network configuration**. Select **Default to System Proxy settings when they do exist**.
+7. Click on the combo box under **Network configuration**. Select **Default to System Proxy settings when they do exist**.
 
    ![image of default to system proxy](images/lcm-system-proxy.png)
 
@@ -146,11 +132,11 @@ In this lab, you will:
     | Set Socks Proxy                        | Host, Port (default is 80)|
     {: title="Available Network Configurations"}
 
-10. Click on the combo box under **Logging configuration**
+8.  Click on the combo box under **Logging configuration**
 
    ![image of lcm logging configuration](images/lcm-logging-config.png)
 
-11. Add the following actions:
+9.  Add the following actions:
 
       * **Add FileHandler to Log Handler classes**.
       * **Change global logging level**, select **ALL** option.
@@ -162,11 +148,11 @@ In this lab, you will:
    | Change global logging level            | ALL, SEVERE, WARNING, INFO, CONFIG, FINE, FINER, FINEST (lowest value), OFF |
    {: title="Available Logging Configurations"}
 
-12. Click on the **Save** button below. This should save all the defined post Java installation actions.
+10. Click on the **Save** button below. This should save all the defined post Java installation actions.
 
     ![image of LCM post install action save](images/lcm-post-install-action-save.png)
 
-13. Return to the fleet details page, click on the tab **Lifecycle management settings**. The post Java installation actions that had been defined earlier will be shown.
+11. Return to the fleet details page, click on the tab **Lifecycle management settings**. The post Java installation actions that had been defined earlier will be shown.
 
     ![image of fleet page post install action view](images/fleet-page-post-install-action-view.png)
 
@@ -307,4 +293,4 @@ You may now **proceed to the next lab**.
 ## Acknowledgements
 
 * **Author** - Yixin Wei, Java Management Service
-* **Last Updated By** - Ivan Eng, June 2023
+* **Last Updated By** - Chan Wei Quan, October 2023

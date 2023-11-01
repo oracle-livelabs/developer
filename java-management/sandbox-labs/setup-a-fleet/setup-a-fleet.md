@@ -32,19 +32,15 @@ In this lab, you will:
 
     ![image of reservation info compartment](images/reservation-info-compartment.png)
 
-    >**Note:** There is an occasional issue with the compartment naming which is in the midst of being resolved. If the compartment stated in the reservation info cannot be found in the **LiveLabs** compartment or if there is a **Authorization failed or requested resource not found error** in that compartment, refer to the troubleshooting guide [here](#TroubleshootFleetsetupissues).
-
-    ![image of view compartment fleet error](images/view-compartment-fleet-error.png)
-
 3. Click **Create Fleet**.
 
      >**Note:** You **do not** need to click **Inspect Prerequisites** here as the prerequisites are already set up for you.
 
      ![image of create new fleet](images/create-fleet-create-new.png)
 
-4. In the **Fleet details** dialog box, enter a description in the **Fleet description** field.
+4. In the **Fleet details** dialog box, keep the **default fleet name** here (for example, fleet-20230615-1135).
 
-   Keep the **default fleet name** here (for example, fleet-20230615-1135).
+   Enter a description in the **Fleet description** field.
 
    Ensure that **Create operation log** is checked.
 
@@ -79,32 +75,21 @@ In this lab, you will:
 
     >**Note:** If you wish to modify your choices, click **Previous**.
 
-9. Wait for the progress to complete. Click **Download software and installation script**.
-
-    ![image of create fleet download_installation_package](images/create-fleet-download-installation-package.png)
-
-10. Under the download installation script, select the Linux version of the installation script and click to download it.
-    
-     ![image of page to select installation script os](images/create-fleet-download-linux-script.png)
-    
-    Click **Close** once the download is complete. The downloaded file will be used in [Lab 2: Install Management Agent on your Managed Instances using Cloud Shell](?lab=install-management-agent-script) to install the Management Agent. You can still download the installation script after the fleet is created. 
-   
-    Click **Done**.
-    
+9. After the fleet is created, click **Done**.    
      ![image of page to create fleet completed button](images/create-fleet-completed.png)
 
-11. On the **Java Management** page, click on the fleet that was created.
+10. On the **Java Management** page, click on the fleet that was created.
     ![image of fleet-created](images/fleet-created-compartment.png)
 
-12. All the advanced features should be enabled and the required logs should be active.
+11. All the advanced features should be enabled and the required logs should be active.
     ![image of fleet details page](images/fleet-details-page-main.png)
 
-13. After JMS is linked to the management Agent, it will collect information on your Java runtimes. The rate at which the information is updated is dependent on the scan frequency of the management Agent on the instance. This may not occur immediately. The scanning frequency can be changed from the Fleet details page.
+12. After JMS is linked to the management Agent, it will collect information on your Java runtimes. The rate at which the information is updated is dependent on the scan frequency of the management Agent on the instance. This may not occur immediately. The scanning frequency can be changed from the Fleet details page.
 
-14. In the Fleet details page, click **More actions** and select **Modify agent settings**.
+13. In the Fleet details page, click **More actions** and select **Modify agent settings**.
    ![image of fleet details page actions](images/fleet-details-page-new.png)
 
-15. An **Agent settings** window will appear with the following settings:
+14. An **Agent settings** window will appear with the following settings:
 
     **Java runtime usage in minutes**: specify the frequency at which the management agent must report Java usage to JMS. The values must be between 5 and 90 minutes. The default value is 60 minutes.
 
@@ -114,10 +99,10 @@ In this lab, you will:
 
     **Java runtime discovery**: specify frequency at which the management agents should scan their hosts for Java runtime installations. The values must be between 3 to 24 hours. The default value is 24 hours.
 
-16. For the purpose of this workshop, change **Java runtime usage in minutes** to **5 minutes**, and **Java runtime discovery** to **3 hours**.
+15. For the purpose of this workshop, change **Java runtime usage in minutes** to **5 minutes**, and **Java runtime discovery** to **3 hours**.
     ![image of modify agent settings page](images/fleet-modify-agent-settings-new.png)
 
-17. Click **Save changes** to save the new setting.
+16. Click **Save changes** to save the new setting.
     ![image of save modify changes page](images/fleet-modify-agent-settings-save.png)
 
 You may now **proceed to the next lab**.
@@ -159,4 +144,4 @@ If you encounter **Authorization failed or requested resource not found error**,
 ## Acknowledgements
 
 * **Author** - Yixin Wei, Java Management Service
-* **Last Updated By** - Esther Neoh, July 2023
+* **Last Updated By** - Chan Wei Quan, October 2023
