@@ -15,7 +15,7 @@ Estimated Time: 5 minutes
 This lab assumes you have completed the following labs:
 
 * Login to Oracle Cloud
-* Create Oracle Autonomous Database shared infrastructure
+* Create Oracle Autonomous Database Serverless
 * Environment Setup
 
 ## Task 1: Graph example

@@ -9,7 +9,7 @@ In this lab, you will be introduced to API Gateway. The gateway is necessary for
 *Estimated Lab Time:* 15 minutes
 
 Watch the video below for a quick walk-through of the lab.
-[Create & Setup API Gateway to connect with Smart Contract API's](videohub:1_w01l6lxc)
+[Create & Setup API Gateway to connect with Smart Contract API's](videohub:1_cs1nl6g8)
 
 ### Objectives
 

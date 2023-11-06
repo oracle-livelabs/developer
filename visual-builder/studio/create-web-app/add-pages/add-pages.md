@@ -28,7 +28,7 @@ This lab assumes you have:
 
 Let's create a table to display your departments on the main-start page. The Table component is useful when you want to show lots of data in columns.
 
-1. Click **Web Applications** ![Web Applications icon](images/web-applications-icon.png) in the Navigator.
+1. Click ![Web Applications icon](images/web-applications-icon.png) **Web Applications** in the Navigator.
 2. If necessary, expand the **hrwebapp** and **main** nodes, then click **main-start**, the page that was automatically created as the default home page for your web application. (You can also open the page by clicking the **main-start** tab just below the header.)
 
     You might want to click the **Web Applications** tab to close the Navigator pane and expand your work area. You can also widen your browser window.
@@ -261,7 +261,7 @@ It makes sense at this point to change the name of the main-start page to main-d
 
     ![The page flow of the main flow is shown after main-start has been renamed. The main-departments page still points to the main-create-department page, and the main-employees page points to the main-create-employee page.](images/main-start-rename-mainflow.png "")
 
-4. To find out why, click **Source** ![Source icon](images/sourceview-icon.png) in the Navigator. Under **webApps**, expand the **hrwebapp**, **flows**, and **main** nodes. Then click **main-flow.json** to open it.
+4. To find out why, click ![Source icon](images/sourceview-icon.png) **Source** in the Navigator. Under **webApps**, expand the **hrwebapp**, **flows**, and **main** nodes. Then click **main-flow.json** to open it.
 
     ![The Source view pane, with the webApps, hrwebapp, flows, and main nodes expanded, is shown. The main-flow.json file has been selected and is open. In it, the 'defaultPage' property is set to the value 'main-departments'.](images/mainflow-json.png "")
 
@@ -272,4 +272,4 @@ It makes sense at this point to change the name of the main-start page to main-d
 ## Acknowledgements
 
 * **Author** - Sheryl Manoharan, VB Studio User Assistance, November 2021
-* **Last Updated By/Date** - Sheryl Manoharan, May 2023
+* **Last Updated By/Date** - Sheryl Manoharan, September 2023
