@@ -34,19 +34,20 @@ In this lab, you will:
         * **Date and time** when the Work Request **started**, **accepted** and **last updated**.
         * **Number of sub-tasks** completed for the Work Request.
     * A list of resources from which you can view the individual metrics for the Work Requests:
-        * Associated Resources
+        * Work items
         * Log Messages
         * Error Messages
 
   ![image of detailed view of work request page](images/work-request-detailed-view.png)
 
 
-4. For the list of resources which include **Associated Resources**, **Log Messages** and **Error Messages**, each list displays **50** rows at a time. You may click the header of a column to sort the list based on the title of the column, or use the text field to search the contents of the table.
+4. For the list of resources which include **Work items**, **Log Messages** and **Error Messages**, each list displays **50** rows at a time. You may click the header of a column to sort the list based on the title of the column, or use the text field to search the contents of the table.
 
-  For the list of **Associated Resources**, you may find the following information:
+  For the list of **Work items**, you may find the following information:
     * **Managed instance**: Name of the managed instance affected by the Work Request.
+    * **Type**: Type of the work request at the work item.
     * **Path**: The Java runtime installation path in the managed instance affected by the operation.
-    * **Status**: Status of the operation at the associated resource.
+    * **Current status**: Current status of the operation at the associated resource.
     * **Last updated**: Date and time when the status for this associated resource was last updated.
 
   ![image of work request associated resources view](images/work-request-associated-resources.png)
@@ -77,7 +78,7 @@ In this lab, you will:
  ![image of work request log messages](images/delete-work-request-log-messages.png)
 
 4. If your Work Request was unsuccessful, you may view the error messages by selecting **Error Messages** under **Resources**. You should see the status as **Completed with errors** and the corresponding error messages.
-  ![image of work request failed error messages](images/delete-work-request-failed-error-message.png)
+  ![image of work request failed error messages](images/migration-work-request-failed-error-message.png)
 
 
 ## Task 3: Cancel a Work Request
@@ -98,10 +99,7 @@ In this lab, you will:
 
 5. If your request has been canceled successfully, you should see that the **Status** of the request is marked as **Canceled**.
   ![image of cancelled work request](images/canceled-delete-work-request.png)
-
-
-
-
+   
 ## Learn More
  * Refer to the [Advanced Features](https://docs.oracle.com/en-us/iaas/jms/doc/advanced-features.html), [Work Requests](https://docs.oracle.com/en-us/iaas/jms/doc/using-java-management-service.html#GUID-77AEEBC0-93A5-4E99-96D6-BEE0FEE4539F) sections of the JMS documentation for more details.
 
@@ -113,4 +111,4 @@ In this lab, you will:
 ## Acknowledgements
 
  * **Author** - Xin Yi Tay, Java Management Service
- * **Last Updated By** - Sherlin Yeo, June 2023
+ * **Last Updated By** - Yuan Chi Liu, October 2023
