@@ -32,21 +32,23 @@ JMS offers two levels of capabilities:
     * Download and install Oracle Java versions
     * Remove reported Oracle Java versions
     * Configure JDK post installation actions
+    * Apply the Deployment Rule Set (DRS) to your Managed Instances
 
 
 ## About this Workshop
 
  This workshop will walk you through the process of setting up and using Java Management Service (JMS) on Oracle Cloud Infrastructure (OCI).
 
- The first step is to create a fleet, which is the primary collection that you work with when using JMS. A fleet consists of Managed Instances that share rules and policies. You will then learn the process of deploying the JMS Plug-in on a host machine to monitor and view Java applications inside a fleet. A host that contain deployed JMS plug-ins is a Managed Instance.
+ The first step is to create a fleet, which is the primary collection that you work with when using JMS. A fleet consists of Managed Instances that share rules and policies. You will then learn the process of deploying the JMS Plug-in on a host machine to monitor and view Java applications inside a fleet. A host that contains deployed JMS plug-ins is a Managed Instance.
 
  Next, you will proceed to use the advanced features available in JMS:
  - Run Advanced Usage Tracking to to analyze the usage and deployment of Java services in the application servers, such as WebLogic.
  - Run Advanced Usage Tracking to identify and report potential vulnerabilities (CVE) associated with 3rd party Java libraries used by applications.
  - Perform a crypto event analysis to access the impact of Oracle JRE and JDK Cryptographic roadmap changes on the applications running in your fleet.
- - Run the JDK Flight Recorder (JFR) on a Java application which is running on the fleet to gather application insights.
- - Run the Performance Analysis on a Java application to optimize Java workload performance with JVM tuning recommendations.
  - Run the Java Migration Analysis on a Java application to evaluate the effort and feasibility of migrating the application to newer JDK versions.
+ - Run the Performance Analysis on a Java application to optimize Java workload performance with JVM tuning recommendations.
+ - Utilize the Lifecycle Management (LCM) operation to upload a Deployment Rule Set (DRS) Jar file, then apply the uploaded DRS to the Managed Instances in the fleet.
+ - Run the JDK Flight Recorder (JFR) on a Java application which is running on the fleet to gather application insights.
  - Use the Lifecycle Management (LCM) operation to remove a Java runtime.
  - Use the Lifecycle Management (LCM) operation to install a Java runtime and run the post Java installation actions.
 
@@ -59,11 +61,11 @@ Finally, you will learn how to view and monitor work requests, understand the lo
  In the following labs, we will setup JMS and deploy the JMS plug-in on this compute instance, to monitor and manage the Java runtimes and Java applications.
 
 After setting up JMS:
-- **Labs 3, 4, 5 and 6 can be done in parallel**.
-- Labs 7 and 8 should be attempted after the previous Labs are completed.
-- Lab 9 can be attempted at any time.
+- **Labs 3, 4, 5, and 6 can be done in parallel**.
+- Labs 7, 8 and 9 should be attempted after the previous Labs are completed.
+- Lab 10 can be attempted at any time.
 
-*Estimated Time:* 170 minutes
+*Estimated Time:* 190 minutes
 
 ### Objectives
 
@@ -74,6 +76,7 @@ After setting up JMS:
 * Perform cryptographic analysis of Java applications
 * Perform Java Migration Analysis on Java applications
 * Perform performance analysis of Java applications
+* Apply Deployment Rule Set to Managed Instances
 * Run a JDK Flight Recorder (JFR) for a Java application
 * Understand and perform LCM operations with JMS
 
@@ -95,9 +98,10 @@ To try JMS on your own tenancy, see:
 * [Getting Started with Java Management Service](https://docs.oracle.com/en-us/iaas/jms/doc/getting-started-jms.html)
 * [JMS Advanced Features](https://docs.oracle.com/en-us/iaas/jms/doc/advanced-features.html)
 * [Announcing Java Management Service](https://blogs.oracle.com/java/post/announcing-java-management-service)
+* [Oracle University](https://mylearn.oracle.com/ou/home)
 
 
 ## Acknowledgements
 
 * **Author** - Yixin Wei, Java Management Service
-* **Last Updated By/Date** - Ivan Eng, June 2023
+* **Last Updated By/Date** - Chan Wei Quan, October 2023
