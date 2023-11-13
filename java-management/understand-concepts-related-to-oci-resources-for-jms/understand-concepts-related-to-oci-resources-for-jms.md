@@ -91,7 +91,7 @@ This diagram illustrates the purpose of OCI resources and services in JMS with d
         </copy>
         ```
 
-    When advanced features are enabled during the fleet creation, additional dynamic groups and policies would be automatically created in OCI.
+    When advanced features are enabled during the fleet creation, additional dynamic groups and policies will be automatically created in OCI.
     This will be covered in [Lab 3 Task 2](?lab=setup-a-fleet#Task2:VerifyingpoliciesandDynamicGroupsrequiredforadvancedfeatures).
 
 4. Compartment:
