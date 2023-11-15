@@ -97,7 +97,7 @@ Create a workspace for your visual application and connect it to a Git repositor
 
 1. On the Project Home page, click **Go to Workspaces** under Workspaces to go to the Workspaces page.
 
-2. Click **New**, then select **New Visual Application** to create a visual application workspace. This way, your workspace will have everything you need to visually develop an application.
+2. Click **New**, then select **New Visual Application** to create a visual application workspace. This way, your workspace will have everything you need to visually develop an application, including a Git repository and build jobs.
 
     ![The Workspaces page with New and New Visual Application options selected.](images/workspaces-new.png "Workspaces page")
 
