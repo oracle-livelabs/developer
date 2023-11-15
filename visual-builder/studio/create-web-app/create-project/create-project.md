@@ -93,7 +93,7 @@ Define an environment that points to your Visual Builder development instance, w
 
 ## Task 3: Create a workspace
 
-As a final step, create a workspace for your visual application and connect it to a Git repository to store your source files.
+Create a workspace for your visual application and connect it to a Git repository to store your source files.
 
 1. On the Project Home page, click **Go to Workspaces** under Workspaces to go to the Workspaces page.
 
