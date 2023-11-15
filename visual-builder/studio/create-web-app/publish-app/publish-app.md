@@ -40,6 +40,11 @@ Now that you are ready to publish your changes to the project's `main` branch, l
 
     ![The Publish Changes dialog box is shown, with the Merge After Review tab selected. An example commit message is shown and Clara Coder is set as a reviewer. The Publish Changes button is selected.](images/create-mr.png "")
 
+5. When prompted, add credentials that allow your visual application to be deployed to the VB development instance.
+
+    ![The Missing Deployment credentials dialog with mary.jane entered as the user name. Password is empty.](images/credentials.png "")
+
+
     Once the request to merge your changes from **hrbranch** to **main** is created, click **Close**. Both your reviewer and you will be notified that a new merge request has been created.
 
     ![The results when you click the Publish Changes button are shown, with the message '1 Merge hrbranch to master merge request has been created' at the end. The Close button is selected.](images/create-mr-result.png "")
@@ -119,4 +124,4 @@ A deployed application does not automatically include its business object data, 
 ## Acknowledgements
 
 * **Author** - Sheryl Manoharan, VB Studio User Assistance, November 2021
-* **Last Updated By/Date** - Sheryl Manoharan, September 2023
+* **Last Updated By/Date** - Sheryl Manoharan, November 2023
