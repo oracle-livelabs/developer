@@ -8,7 +8,7 @@ Estimated Time: 15 minutes
 
 ### About this Lab
 
-In this workshop, you'll build a simple Human Resources app using a _project_ with a _visual application_ template as the starting point. Every project in VB Studio is devoted to a discrete software effort, and the project you create in this lab is exclusive to the HR app. The project brings together all the tools you need to create your app: a Git repository to store your source code, a pipeline to provide continuous integration and delivery, an issue tracking system, and more. Because it is based on the visual application template, it will have everything you need to visually develop an application.
+In this workshop, you'll build a simple Human Resources app using a _project_ with a _visual application_ template as the starting point. Every project in VB Studio is devoted to a discrete software effort, and the project you create in this lab is exclusive to the HR app. The project brings together all the tools you need to create your app: a Git repository to store your source code, a pipeline to provide continuous integration and delivery, an issue tracking system, and more.
 
 As part of your project, you'll also create a _workspace_, a completely private area for you to work on your application. The changes you make in your workspace are stored in a clone of the project's Git repository, and are not visible to others until you share or publish them. A workspace also connects you to the development environment where you plan to host your application, which must be a separate Visual Builder (VB) instance.
 
@@ -43,16 +43,9 @@ As someone who creates a project, you'll automatically become the project's owne
 
     Click **Next**.
 
-3. On the Project Template step, select **Visual Application** and click **Next**.
+3. On the Project Template step, select **Empty Project** and click **Next**.
 
-4. On the Project Properties step:
-
-    * Leave the **Git Repository Name** as **tutorial-hr-project.git** (based on the project name).
-    * Click **Development VB Instance** to select the VB instance where you plan to deploy your application. If you have only one VB instance provisioned, it will be automatically selected as your environment's development instance.
-    * Change the **Workspace Name** from **Workspace 1** (the default) to **HR Workspace**.
-    * Change the **Working Branch Name** from **branch1** (the default) to **hrbranch**.
-
-    Click **Next**.
+4. On the Project Properties step, leave **Wiki Markup** set to **Markdown** and click **Next**.
 
 5. On the Project Team Members step, add other members of your team who will work with you on this visual application.
 
@@ -66,11 +59,54 @@ As someone who creates a project, you'll automatically become the project's owne
 
     Wait for the project to be provisioned. Once provisioning completes, you'll see the Project Home page, which serves as a window to your workspace, your environments, and repositories, as well as a recent activities feed. On the left are a series of tabs showing the available project components.
 
-    ![The Project Home page includes a Workspaces area with the newly created HR Visual Application workspace. An Environments area shows the Development instance associated with this project. If you click Reset Filters, a Recent Activities feed lists what was done in the project today. On the right, the Repositories tab is selected to show the tutorial-hr-project.git. The Statistics and Team tabs are also visible.](images/project-home.png "Project Home page")
+    ![The Project Home page includes a Workspaces area, Environments area, and a Recent Activities feed. On the right, the Repositories tab, Statistics, and Team tabs are also visible.](images/project-home.png "Project Home page")
 
     Click ![Show/Hide Labels icon](images/show-hide-labels-icon.png) to hide the labels and increase screen space.
 
-## Task 2: Explore the project environment
+    Because we created a project with no preconfigured settings or content, we need to define much of what we need, starting with an environment that connects to a Visual Builder instance.
+
+## Task 2: Create an environment with a Visual Builder instance
+
+Define an environment that points to your Visual Builder development instance, where your visual application can be deployed from within the project.
+
+1. On the Project Home page, click **Create Environment**.
+
+    ![The Environments section on the Project Home page, showing the Create Environment button.](images/env-create.png)
+
+2. Enter **Development** as the **Environment Name**; optionally, add a description. Click **Create**.
+
+3. On the Environments page, click **Add Instance** to add a Visual Builder instance to your **Development** environment.
+
+    ![The empty Development environment shown on the Environments page. An Add Instance button is shown in the Service Instances tab. The Details and Certificates tabs are also visible.](images/env-add-instance.png "Environments page")
+
+4. In the Add Service Instances dialog, with **Instance Type** set to **Visual Builder and Oracle Integration** and **Authentication Method** set to **Identity Domain** on the left, locate the Visual Builder instance you want to use. Once you find your Visual Builder instance, select it and click **Add**.
+
+    ![The Add Service Instances dialog with myVBinstance of type Visual Builder IDCS Resource selected. An Add button is also shown.](images/env-add-service-instances.png "Environments page")
+
+    Wait for the instance's Status to turn green.
+
+5. In the left navigator, click ![Project Home icon](images/vbs-project-home-icon.png) **Project Home** to see your environment defined on the Project Home page.
+
+## Task 4: Create a workspace
+
+As a final step, create a workspace for your visual application and connect it to a Git repository to store your source files.
+
+1. On the Project Home page, click **Go to Workspaces** under Workspaces to go to the Workspaces page.
+
+2. Click **New**, then select **New Visual Application** to create a workspace for your visual application.
+
+    ![The Workspaces page with New and New Visual Application options selected.](images/workspaces-new.png "Workspaces page")
+
+3. In the New Visual Application dialog:
+
+    * Enter **HR Workspace** as the **Workspace Name**.
+    * Select **Development** (where you previously added a VB instance) as the **Development Environment**.
+    * Leave **Default VBCS Application** as the **Visual Application Template**.
+    * Under **Git Repository**, click **Create new repository**, then enter **tutorial-hr-project.git** as the Repository Name and **hrbranch** as the **Working Branch Name**.
+
+    Click **Create**.
+
+## Task 4: Explore the project environment {redo required}
 
 Everything you need to start building a visual application is now created for you in this project. Let's step through some key components to better understand your project environment.
 
@@ -98,7 +134,7 @@ Everything you need to start building a visual application is now created for yo
 
     Click **Builds** in the breadcrumbs trail to return to the main Builds page.
 
-## Task 3: Add credentials to deploy the visual application
+## Task 5: Add credentials to deploy the visual application
 
 Now that your project is provisioned, let's set up the credentials that VB Studio will use to deploy your visual application to the VB development instance.
 
