@@ -40,17 +40,16 @@ Now that you are ready to publish your changes to the project's `main` branch, l
 
     ![The Publish Changes dialog box is shown, with the Merge After Review tab selected. An example commit message is shown and Clara Coder is set as a reviewer. The Publish Changes button is selected.](images/create-mr.png "")
 
-5. When prompted, add credentials that allow your visual application to be deployed to the VB development instance.
+5. When prompted, add the username and password that allows your visual application to be deployed to the VB development instance, then click **Add Credentials and Continue**.
 
     ![The Missing Deployment credentials dialog with mary.jane entered as the user name. Password is empty.](images/credentials.png "")
-
 
     Once the request to merge your changes from **hrbranch** to **main** is created, click **Close**. Both your reviewer and you will be notified that a new merge request has been created.
 
     ![The results when you click the Publish Changes button are shown, with the message '1 Merge hrbranch to master merge request has been created' at the end. The Close button is selected.](images/create-mr-result.png "")
 
-5. Return to the project home, then click ![Merge Requests icon](images/vbs-mergerequest-icon.png) **Merge Requests** in the left navigator. You'll see your merge request listed here. For a quick summary of the merge request, click ![Details icon](images/details-icon.png) **Details**.
-6. Click **1 Merge Request for branch 'hrbranch'**. All details of the merge request, including its current status and all previous commits, will be shown:
+6. Return to the project home, then click ![Merge Requests icon](images/vbs-mergerequest-icon.png) **Merge Requests** in the left navigator. You'll see your merge request listed here. For a quick summary of the merge request, click ![Details icon](images/details-icon.png) **Details**.
+7. Click **1 Merge Request for branch 'hrbranch'**. All details of the merge request, including its current status and all previous commits, will be shown:
 
     ![Details of the newly created merge request, #1 Merge Request for branch 'hrbranch', are shown. Its status is shown as OPEN, with a message that the requestor wants to commit 2+ commits to main from hrbranch in tutorial-hr-project.git. The Conversation tab shows an example commit message. The Merge and Close buttons are also visible.](images/create-mr-view.png "")
 
@@ -67,7 +66,9 @@ Assuming your merge request has been approved, let's now merge your changes to t
 
     The merge request shows as Merged. If you didn't choose to delete the branch, you can do so now if you want.
 
-    Once your changes are merged, VB Studio automatically kicks off the package and deploy jobs in your pipeline to deploy your web app to the development environment. Click ![Builds icon](images/vbs-builds-icon.png) **Builds** to view the progress of your build jobs.
+    Once your changes are merged, VB Studio automatically kicks off the default build jobs that package and deploy your visual application to the development environment. These jobs—**tutorial-hr-project-Package** and **tutorial-hr-project-Deploy**—are automatically generated when your workspace was first created. VB Studio also creates a pipeline, which, by default, runs the package job before the deploy job, so the latest application artifacts are packaged for deployment.
+
+    Click ![Builds icon](images/vbs-builds-icon.png) **Builds** to view the progress of your build jobs.
 
     ![The status of the Visual-Application-Package and Visual-Application-Deploy jobs on the Builds page is shown. Both jobs are triggered automatically when your commits are merged to the project's main branch.](images/merge-mr-result.png "")
 

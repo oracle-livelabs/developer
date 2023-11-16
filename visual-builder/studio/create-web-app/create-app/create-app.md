@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This lab shows you how to create a web app in your visual application project and populate it with business objects that store your data.
+This lab shows you how to create a web app in your visual application and populate it with business objects that store your data.
 
 Estimated Time: 15 minutes
 
