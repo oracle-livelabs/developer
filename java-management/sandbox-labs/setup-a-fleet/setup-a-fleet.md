@@ -86,8 +86,8 @@ In this lab, you will:
 
 12. After JMS is linked to the management Agent, it will collect information on your Java runtimes. The rate at which the information is updated is dependent on the scan frequency of the management Agent on the instance. This may not occur immediately. The scanning frequency can be changed from the Fleet details page.
 
-13. In the Fleet details page, click **More actions** and select **Modify agent settings**.
-   ![image of fleet details page actions](images/fleet-details-page-new.png)
+13. In the Fleet details page, click **More actions** and select **Configure agent settings**.
+      ![image of fleet details page actions](images/fleet-details-page-new.png)
 
 14. An **Agent settings** window will appear with the following settings:
 
@@ -144,4 +144,4 @@ If you encounter **Authorization failed or requested resource not found error**,
 ## Acknowledgements
 
 * **Author** - Yixin Wei, Java Management Service
-* **Last Updated By** - Chan Wei Quan, October 2023
+* **Last Updated By** - Siqi Liu, November 2023
