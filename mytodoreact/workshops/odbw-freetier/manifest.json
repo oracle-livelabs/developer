@@ -18,15 +18,19 @@
         "filename": "../../setup-dev-environment/setup-dev-environment.md"
       },
       {
-        "title": "Lab 2: Backend (Java/Helidon)",
+        "title": "Lab 2: Deploy Backend (Java/Helidon)",
         "filename": "../../backend/backend.md"
       },
       {
-        "title": "Lab 3: Frontend (React JS)",
+        "title": "Lab 3: Deploy Frontend (React/NextJS)",
         "filename": "../../frontend/frontend.md"
       },
       {
-        "title": "Lab 4: Tear down",
+        "title": "Lab 4: Deploy Ingress",
+        "filename": "../../ingress/ingress.md"
+      },
+      {
+        "title": "Lab 5: Teardown",
         "filename": "../../teardown/teardown.md"
       },
       {

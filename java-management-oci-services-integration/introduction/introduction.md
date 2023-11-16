@@ -51,8 +51,9 @@ _Estimated Time:_ 45 minutes
 * [Oracle Cloud Infrastructure APIs](https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm)
 * [Command Line Interface](https://docs.oracle.com/en-us/iaas/Content/API/Concepts/cliconcepts.htm)
 * [Software Development Kits](https://docs.oracle.com/en-us/iaas/Content/API/Concepts/sdks.htm)
+* [Oracle University](https://mylearn.oracle.com/ou/home)
 
 ## Acknowledgements
 
 * **Author** - Xin Yi Tay, Java Management Service
-* **Last Updated By/Date** - Sherlin Yeo, March 2023
+* **Last Updated By/Date** - Siqi Liu, October 2023

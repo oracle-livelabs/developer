@@ -1,31 +1,43 @@
 # Teardown workshop resources
 
 ## Introduction
-In this lab, we will tear down the resources created in your tenancy and the directory in the Oracle cloud shell
+In this lab, you will tear down the resources created in your tenancy and the directory in the Oracle Cloud shell
 
 Estimated time: 10 minutes
 
 ### Objectives
-- Delete object storage bucket created in Lab 3
-- Delete deployment created in Lab 3
+- Delete the ingress controller
 - Run destroy script
-- edit ~/.bashrc
+- Edit ~/.bashrc
+- Delete the Compartment (optional)
+
 ### Prerequisites
 - Have successfully completed the earlier labs
 
+## Task 1: Delete the Ingress Controller
 
-## **Task 1**: Delete Workshop Resources
-The resources in this task weren't created during the setup script, so we must delete them manually before running the destroy script.
+The deployment of Ingress controller creates a LoadBalancer on Oracle Cloud. You can delete the resource by deleting the controller.
 
-1. Since the mtdrworkshop bucket created in Lab 3 wasn't created by the setup script, the destroy script does not know of it and we need to delete it ourselves
+1. You can view the controller installed by running the following command
+    ```bash
+    <copy>
+    helm list -n ingress-nginx
+    </copy>
+    ```
 
-    ![Delete Buckey](images/delete-bucket.png " ")
+    The above command should display a similar output:
 
-2. We can't run the destroy script when there's a deployment in the api gateway. Navigate to Gateway, click on the deployment and click delete.
+    ![Display ingress](./images/view-ingress.png)
 
-    ![Delete deployment](images/delete-deployment.png " ")
+1. Delete the Ingress controller by running the following:
 
-## **Task 2**: Run the Destroy Script
+    ```bash
+    <copy>
+    helm delete ingress-nginx -n ingress-nginx
+    </copy>
+    ```
+
+## Task 2: Run the Destroy Script
 
 1. Run the following command to delete the resources created in your tenancy. It will delete everything except the compartment, and may take several minutes to run.
 
@@ -35,38 +47,38 @@ The resources in this task weren't created during the setup script, so we must d
     source destroy.sh
     </copy>
     ```
-## **Task 3**: Delete the Directory
+## Task 3: Delete the Directory
 
 1. Once the destroy script is completed, delete the directory in your cloud shell where you installed the workshop
 
     ```
     <copy>
-    cd $HOME
-    rm -rf <directory_name>
+    cd $MTDRWORKSHOP_STATE_HOME/../.. && rm -rf <directory_name>
     </copy>
     ```
 
-## **Task 4**: Edit ~/.bashrc
+## Task 4: Edit ~/.bashrc
 
-1. We need to remove the line we added to ~/.bashrc in Lab 1. Run the following command to remove
+1. You need to remove the line you added to ~/.bashrc in Lab 1. Run the following command to remove
+
     ```
     <copy>
     vi ~/.bashrc
     </copy>
     ```
-2. Once you're inside ~/.bashrc, delete this line 
 
-    ```echo source $(pwd)/env.sh >> ~/.bashrc```
+2. Once you're inside ~/.bashrc, find the line that ends with `/oci-react-samples/mtdrworkshop/env.sh` and delete the line (usually found at the bottom and is serving as an argument to `source`)
 
-## **Task 5**: Delete the Compartment
+## Task 5: Delete the Compartment (optional)
+
+If you let the setup provision a compartment in Lab 1, Task 5, you can choose to delete the provisioned compartment. 
 
 1. In the Oracle Cloud Console, navigate to the **compartments** screen in the **Identity** section. Select the compartment that was created for the workshop (if you didn't provide one) and delete it
-
 
 Congratulations! You have completed the workshop
 
 ## Acknowledgements
 
-* **Authors** -  Kuassi Mensah, Dir. Product Management, Java Database Access; Peter Song, Developer Advocate JDBC
+* **Authors** -  Kuassi Mensah, Dir. Product Management, Java Database Access; Norman Aberin, Developer Advocate JDBC
 * **Original Author** - Richard Exley, Consulting Member of Technical Staff, Oracle MAA and Exadata
-* **Last Updated By/Date** - Peter Song, Developer Advocate JDBC
+* **Last Updated By/Date** - Norman Aberin, August 2023

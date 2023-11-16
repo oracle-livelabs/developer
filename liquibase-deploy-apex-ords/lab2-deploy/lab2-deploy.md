@@ -140,15 +140,15 @@ Completion of:
 
  4. Next, run the `connect` command to connect to your **WKSP_LIQUIBASEDEMO** database user that your APEX workspace is contained on.
     * Under the "Available TNS Entries" section of the `show tns` command, there are 3 connections by default for Autonomous Data Warehouse (ADW) and 5 for Autonomous Transaction Processing (ATP). The names are designated by `[database name]_[connection level]`.
-    * These workshop instructions will use `apexlbworkshop_high` in the command below.
+    * These workshop instructions will use `apexlbworkshop_low` in the command below.
 
     ```na
     <copy>
-    connect wksp_liquibasedemo@apexlbworkshop_high
+    connect wksp_liquibasedemo@apexlbworkshop_low
     </copy>
     ```
 
-    * If you prefer to use a different connection, simply replace the command with that connection. 
+    * If you prefer to use a different connection, simply replace the command with that connection. If you encounter any "cannot read/modify an object after modifying it in parallel" ORA errors while using other connection types with Liquibase, switch to the low connection type where parallelism is not active.
          * apexlbworkshop_high
             * High priority application connection service for reporting and batch operations. All operations run in parallel and are subject to queuing.
          * apexlbworkshop_medium
@@ -258,43 +258,53 @@ Completion of:
 
 ## Task 5: View Your Deployments
 
- 1. Your APEX application, REST APIs, database objects, and data are now all created! Let's return to the APEX dashboard to view them.
-    * You can do this by navigating back to your App Builder tab in your web browser and refreshing the page
+ 1. Your APEX application, REST APIs, database objects, and data are now all created! Let's return to **Database Actions** and start viewing them.
+    * Navigate back to your REST dashboard tab and refresh the page.
+       * If you closed out of it, you can navigate back by selecting the **Database actions** dropdown, clicking **REST**, and making sure you are signed in to **WKSP\_LIQUIBASEDEMO**.
+
+    ![Navigate REST Tab](./images/22navigate-rest-tab.png " ")
+
+ 2. You can see that your 3 REST API modules you created are now viewable on this dashboard. You can explore the page as you please.
+
+    ![Populated REST Dashboard](./images/23populated-rest-dashboard.png " ")
+
+ 3. Next let's take a look at your new database objects. 
+    * Click the hamburger menu in the top left and select **SQL**
+
+    ![Navigate To SQL Dashboard](./images/24navigate-sql.png " ")
+
+ 4. Adjust the middle dropdown in the left hand **Navigator** menu to **All Objects** again. You can now view the database objects you created and expand the dropdown arrows for additional details.
+
+    ![Populated SQL Dashboard](./images/25populated-db-object-dashboard.png " ")
+
+ 5. Finally let's return to the APEX dashboard to view your application.
+    * You can do this by navigating back to your App Builder tab in your web browser.
         * If you closed out of this tab you can return to it by following similar steps in the setup lab: 
             * Click **APEX\_Liquibase\_Workshop** on your Autonomous Database dashboard under APEX instance
             * Select Launch APEX in the upper left area
             * Sign into your APEX workspace (make sure you are signing into your APEX workspace, not Administration Services)
 
-    ![Navigate To App Builder](./images/22navigate-to-app-builder.png " ")
+    ![Navigate To App Builder Tab](./images/26navigate-app-builder.png " ")
 
- 2. In your APEX workspace dashboard select the **SQL Workshop** dropdown menu and click **Object Browser**.
-    * You can view your database objects you created by selecting the dropdown icon next to each object type
+ 6. Refresh the page to see that your application card is now available. Hover over the imported **REST Employees** application, and press the play button to run the app.
 
-    ![View Database Objects](./images/23view-db-objects.png " ")
-
- 3. Next you can view your REST API modules by selecting the **SQL Workshop** dropdown again and this time clicking **RESTful Services**
-    * Similar to the Object Browser page, you can view the REST modules you created by expanding the dropdown menu next to **Modules**
-
-    ![View REST Modules](./images/24view-rest-modules.png " ")
-
- 4. Finally let's take a look at the application. Click **App Builder** in the top bar, hover over the **REST Employees** application card now available, and press the play button to run the app.
-
-    ![Run App](./images/25run-app.png " ")
+    ![Run App](./images/27run-app.png " ")
 
  5. Sign in to the application with your APEX workspace user password.
 
-    ![Run App](./images/26app-signin.png " ")
+    ![Run App](./images/28app-signin.png " ")
 
  6. You can now view the application! As you'll notice, even though you successfully imported the app, there isn't much to it yet. With SQLcl Liquibase, not only can you deploy applications to a new APEX workspace and Oracle Database, but you can also update existing applications.
     * In the next task you'll be deploying an update to this application that will add a page with a simple report.
 
-    ![App V1](./images/27app-v1.png " ")
+    ![App V1](./images/29app-v1.png " ")
+
 
 ## Task 6: Update Your APEX Application
 
  1. Navigate back to your Autonomous Database web browser tab where you will be returning to your Cloud Shell SQLcl session.
 
-    ![Navigate to Your Database](./images/28navigate-to-adb.png " ")
+    ![Navigate to Your Database](./images/30navigate-to-adb.png " ")
 
  2. In your Cloud Shell terminal still connected to your database through SQLcl, you'll be going to the directory containing the changelog files for the updated version of your application.
 
@@ -304,7 +314,7 @@ Completion of:
     !ls
     </copy>
     ```
-    ![Change Directory To App V2](./images/29cd-app-v2.png " ")
+    ![Change Directory To App V2](./images/31cd-app-v2.png " ")
 
  3. Run the `liquibase update` command on the APEX install changelog in this folder titled `apex_install_1.xml`.
 
@@ -314,21 +324,21 @@ Completion of:
     </copy>
     ```
 
-    ![Update App Pt 1](./images/30app-update-pt1.png " ")   
+    ![Update App Pt 1](./images/32app-update-pt1.png " ")   
     **...**
-    ![Update App Pt 2](./images/31app-update-pt2.png " ")
+    ![Update App Pt 2](./images/33app-update-pt2.png " ")
 
  4. With the changelog ran, your application is now updated. Navigate back to the REST Employees web browser tab where your application is running and refresh the page.
 
-    ![Navigate To Updated App](./images/32navigate-back-to-app.png " ")
+    ![Navigate To Updated App](./images/34navigate-back-to-app.png " ")
 
  5. Refreshing will most likely make you need to re-login to the application. Enter your workspace user password again.
 
-    ![Relogin To App](./images/33relogin-to-app.png " ")
+    ![Relogin To App](./images/35relogin-to-app.png " ")
 
  6. You will now see your APEX app is updated with a report page that you can view by clicking **Employees** in the side bar. This Employees Report utilizes the database objects, data, and REST APIs that you deployed throughout this workshop.
 
-    ![Employees Report](./images/34employees-report.png " ")
+    ![Employees Report](./images/36employees-report.png " ")
 
 Congratulations! You have now completed the workshop.
 

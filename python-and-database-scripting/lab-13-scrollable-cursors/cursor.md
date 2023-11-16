@@ -15,8 +15,10 @@ Estimated Time: 5 minutes
 
 This lab assumes you have completed the following labs:
 * Login to Oracle Cloud
-* Create Oracle Autonomous Database shared infrastructure
+* Create Oracle Autonomous Database Serverless
 * Environment Setup
+
+[Scrollable Cursors](videohub:1_tcpaoq0i)
 
 ## Task 1: Working with scrollable cursors
 

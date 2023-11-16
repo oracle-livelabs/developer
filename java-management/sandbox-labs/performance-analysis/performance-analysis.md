@@ -2,9 +2,11 @@
 
 ## Introduction
 
-This lab walks you through the steps to run Performance analysis on a Java application on your Fleet.
+This lab walks you through the steps to run Performance Analysis on a Java application on your Fleet.
 
 Estimated Time: 30 mins
+
+[Lab 6](videohub:1_hicl2gar)
 
 ### Objectives
 
@@ -36,9 +38,9 @@ In this lab, you will:
 
    ![image of start performance analysis](images/managed-instance-applications-start-perf-analysis.png)
 
-4. In the Performance analysis panel, lower the **Maximum recording duration for each detected running application** to 2 mins. Click **Start** to submit the work request.
+4. In the Performance analysis panel, keep the **Period to detect running applications** as 10 minutes. Lower the **Maximum recording duration for each detected running application** to 2 mins. Click **Start** to submit the work request.
 
-   >**Note:** The application should run longer than the duration specified.
+   >**Note:** The selected application should run longer than the duration specified in Performance analysis.
 
    ![image of performance analysis configs before starting](images/perf-analysis-config-start.png)
 
@@ -78,15 +80,15 @@ In this lab, you will:
 
 ## Task 2: (Optional) Download Performance Analysis Report
 
-6. Click on the **fleet** name at the top of the **Managed Instance** page to navigate back to the **Fleet** details page.
+1. Click on the **fleet** name at the top of the **Managed Instance** page to navigate back to the **Fleet** details page.
 
     ![image of work request](images/perf-analysis-fleet-details-breadcrumb.png)
 
-1. To access the report, navigate to the **Fleet** details page and click on the **Object storage bucket** name under **Object storage**.
+2. To access the report, navigate to the **Fleet** details page and click on the **Object storage bucket** name under **Object storage**.
 
    ![image of fleet object storage bucket link](images/object-storage-bucket-link.png)
 
-2. The raw copy of the **Performance analysis** report is stored in the file: **JMS** > **ANALYSIS** > **PERFTUNING** > **RESULTS** > **fleet-ocid** > **managed-instance-ocid** > **PerfTuningAnalysisResult-** json.
+3. The raw copy of the **Performance analysis** report is stored in the file: **JMS** > **ANALYSIS** > **PERFTUNING** > **RESULTS** > **fleet-ocid** > **managed-instance-ocid** > **PerfTuningAnalysisResult-** json.
 
    ![image of performance analysis bucket object](images/perf-analysis-result-download.png)
 
@@ -130,4 +132,4 @@ In this lab, you will:
 ## Acknowledgements
 
 * **Author** - Ivan Eng, Java Management Service
-* **Last Updated By** - Ivan Eng, June 2023
+* **Last Updated By** - Chan Wei Quan, October 2023

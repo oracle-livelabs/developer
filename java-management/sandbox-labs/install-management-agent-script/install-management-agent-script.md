@@ -6,6 +6,8 @@ This lab walks you through the steps to set up Java Management Service (JMS), in
 
 Estimated Time: 15 minutes
 
+[Lab 2](videohub:1_ohg7tob6)
+
 ### Objectives
 
 In this lab, you will:
@@ -30,16 +32,12 @@ In this lab, you will:
 3. Open the generated remote desktop URL located at the bottom of the **Reservation Information** panel.
     ![image of novnc link](images/novnc-link.png)
 
-4. The remote graphical desktop of the compute instance will be displayed on the browser. Click the title bar to show the Chrome dialog box.
-    ![image of chrome dialog box](images/novnc-chrome-dialog-box.png)
+4. The remote graphical desktop of the compute instance will be displayed on the browser. On the left side of the screen is the LiveLabs workshop. On the right side of the screen is the Oracle Cloud Infrastructure (OCI) login page.
+    > **Note:** If you encounter any issues with noVNC please refer to [Troubleshoot noVNC issues](#TroubleshootnoVNCIssues)
 
-  Click **X** to close the dialog box.
-    ![image of close dialog box](images/novnc-chrome-close-dialog-box.png)
+  ![image of location of novnc browser](images/novnc-browser-main-page.png)
 
-  On the left side of the screen is the LiveLabs workshop. On the right side of the screen is a browser.
-    ![image of location of novnc browser](images/novnc-browser-main-page.png)
-
-5. On the bookmarks bar of the browser, click on the bookmark **OCI**. This opens the Oracle Cloud Infrastructure (OCI) login page.
+5. You can also access the Oracle Cloud Infrastructure (OCI) login page by clicking on the **OCI** bookmark in the bookmarks bar. This opens the Oracle Cloud Infrastructure (OCI) login page.
    ![image of browser bookmark](images/browser-bookmark.png)
 
 6. Use the reservation info provided to login to OCI. The password should be the new password that you have set when you first logged in.
@@ -54,20 +52,20 @@ In this lab, you will:
 8. Open the navigation menu, click **Observability & Management**. Click **Fleets** under **Java Management**. Select the fleet that was created in [Lab 1](?lab=setup-a-fleet).
    ![image of console navigation to java management service](images/novnc-console-navigation-jms.png)
 
-9. On the fleet details page, click **Set up management agent**.
+9.  On the fleet details page, click **Configure managed instances**.
     ![image of novnc fleet page setup management agent](images/novnc-fleet-page-setup-management-agent.png)
 
-10. Under **Download installation script**, select the Linux version of the installation script and click to download it. The installation script will be downloaded to the Downloads folder.
+10.    Under **Download management agent software**, select **Linux-x86_64**, "RPM" package type and click to download it. Under **Install using installation script** select the Linux version of the installation script and click to download it. The management agent software and installation script will be downloaded to the Downloads folder.
 
-    ![image of page to select installation script os](images/novnc-download-installation-script-os.png)
+  ![image of page to select installation script os](images/novnc-download-installation-script-os.png)
 
-11. Click on the **Activities** button at the top left corner of the noVNC graphical remote desktop.
+11.   Click on the **Activities** button at the top left corner of the noVNC graphical remote desktop.
     ![image of novnc browser select activity](images/novnc-browser-select-activity.png)
 
-12. Click on the **Terminal** icon to open the terminal.
+12.   Click on the **Terminal** icon to open the terminal.
     ![image of novnc favourites terminal](images/novnc-terminal-favourites.png)
 
-13. Change the directory to the Downloads folder where the installation script is located.
+13.   Change the directory to the Downloads folder where the installation script is located.
 
     ```
     <copy>
@@ -75,14 +73,14 @@ In this lab, you will:
     </copy>
     ```
 
-14. Check that the installation script has been downloaded.
+14. Check that the installation script and management agent software has been downloaded.
     ```
     <copy>
     ls
     </copy>
     ```
 
-    The installation script **JMS\_your-fleet-name\_linux.sh** should be displayed.
+    The management agent software **oracle.mgmt_agent.rpm** and the installation script **JMS\_your-fleet-name\_linux.sh** should be displayed.
     ![image of novnc terminal downloads directory](images/novnc-terminal-downloads-dir.png)
 
 15. Proceed to **Task 3** to install the management agent.
@@ -99,7 +97,8 @@ In this lab, you will:
    ![image of location of Cloud Shell icon](images/oci-cloud-shell-navigate.png)
 
    OCI Cloud Shell web terminal will open.
-   ![image of Cloud Shell terminal](images/oci-cloud-shell-console.png)
+
+  ![image of Cloud Shell terminal](images/oci-cloud-shell-console.png)
 
    OCI Cloud Shell is a web browser-based terminal accessible from the Oracle Cloud Console. Cloud Shell provides access to a Linux shell, with a pre-authenticated Oracle Cloud Infrastructure CLI, a pre-authenticated Ansible installation, and other useful tools for following Oracle Cloud Infrastructure service tutorials and labs. Read more about using Cloud Shell [here](https://docs.oracle.com/en-us/iaas/Content/API/Concepts/cloudshellintro.htm).
 
@@ -129,11 +128,12 @@ In this lab, you will:
 8. Under **Instance information**, copy the **Public IP address**.
   ![image of copy instance public ip](images/copy-instance-ip.png)
 
-9. In the Cloud Shell, enter the following command to transfer the installation script to the instance. Type **yes** and **Enter** to continue.
+9. In the Cloud Shell, enter the following command to transfer the installation script and management agent software to the instance. Type **yes** and **Enter** to continue.
 
     ```
     <copy>
     scp -i <your-private-key-file> <your-installation-script-file> opc@<copied-ip-address>:~/
+    scp -i <your-private-key-file> <your-management-agent-software> opc@<copied-ip-address>:~/
     </copy>
     ```
 
@@ -150,13 +150,13 @@ In this lab, you will:
 ## Task 3: Perform Management Agent Installation using Installation Script
 
 1. You should now have a terminal / cloud shell open and connected to the instance. Ensure that you are in the directory where the installation script is located.
-    >**NOTE:** If you have downloaded the installation script in **Task 1**, ensure that the terminal is in the Downloads directory. (Step 12 of **Task 1**)
+    >**NOTE:** If you have downloaded the installation script and management agent software in **Task 1**, ensure that the terminal is in the Downloads directory. (Step 14 of **Task 1**)
 
-2. Enter the following command to run the installation script. The installation may take around 10 minutes to complete. Do not close your browser, Cloud Shell or your terminal while the installation is taking place.
+2. Enter the following command to run the installation script. Note that both the installation script and management agent software must be in the same directory. The installation may take around 10 minutes to complete. Do not close your browser, Cloud Shell or your terminal while the installation is taking place.
 
      ```
      <copy>
-     sudo bash ./JMS_<your-fleet-name>_Linux.sh
+     sudo bash <path-to-your-installation-script/your-installation-script-file.sh> --install-mgmt-agent
      </copy>
      ```
 
@@ -164,17 +164,19 @@ In this lab, you will:
 
     ```
     ...
-    Oracle Cloud Agent plugin 'Oracle Java Management Service' installation has been completed.
-    Oracle Cloud Agent plugin 'Management Agent' installation has been completed.
-    Management Agent plugin 'Java Usage Tracking' installation has been completed.
+    Management Agent installation has been completed with 'Java Usage Tracking service plugin (Service.plugin.jms)'
+      JMS basic features will be enabled on this instance.
+    Management Agent installation has been completed with 'Java Management service plugin (Service.plugin.jm)'
+      JMS advanced features can be enabled on this instance.
     Management Agent was successfully registered using key YourFleetName (ocid1.managementagentinstallkey.oc1.iad.<some ocid hash>).
-    Assigned JMS Fleet is YourFleetName (ocid1.jmsfleet.oc1.iad.<some ocid hash>).
+    Instance has been assigned to JMS Fleet is YourFleetName (ocid1.jmsfleet.oc1.iad.<some ocid hash>).
     ```
 
-4. Remove the installation script.
+4. Remove the installation script and management agent software.
       ```
      <copy>
-     rm ./JMS_<your-fleet-name>_Linux.sh
+     rm <path-to-your-installation-script/your-installation-script-file.sh>
+     rm <path-to-your-management-agent-software/your-management-agent-software.rpm>
      </copy>
      ```
 
@@ -191,19 +193,20 @@ Now that the Management Agent and JMS plug-in has been set up in your compute in
 3. Select the compartment **LLxxxxx-COMPARTMENT** indicated in your Login Info and click on the fleet that was created in [Lab 1](?lab=setup-a-fleet).
 
 4. Scroll down the Fleet details page. Under **Resources** menu, select **Managed instances**. If tagging and installation of the management agent is successful, the tagged Managed Instance will be indicated on the Fleet Main Page after **10 minutes**.
+    > **Note:** If only one Java Runtime Installation shows in the OCI console, wait another 10 minutes and it will show up.
 
   ![image of successful installation instance](images/successful-installation-instance.png)
 
-5. Under the **Resources** menu, click on **Java Runtimes**. You should see a list of Java Runtimes from Java 8 to Java 19, these Java Runtimes are preloaded in the compute instance in **Task 1**.
+5. Under the **Resources** menu, click on **Java Runtimes**. You should see a list of Java Runtimes from Java 8 to Java 20, these Java Runtimes are preloaded in the compute instance in **Task 1**.
 
   ![image of successful installation](images/successful-installation.png)
 
 6. Under the **Resources** menu, click on **Applications**. You should now see some applications.
 
-   Six of them are preloaded and running in the compute instance in **Task 1**.
+   Seven of them are preloaded and running in the compute instance in **Task 1**.
 
      - 3 applications are examples of DropWizard, SpringBoot and Micronaut respectively.
-     - 3 applications are continuously running applications, LongRunJavaProgram and GCOld and JMigrate_Application.
+     - 3 applications are continuously running applications: LongRunJavaProgram and GCOld and JMigrate_Application.
      - 1 application is running using jshell.
      - The other applications are related to the deployment of the JMS Plug-in.
 
@@ -211,6 +214,13 @@ Now that the Management Agent and JMS plug-in has been set up in your compute in
 
 You may now **proceed to the next lab.**
 
+## Troubleshoot noVNC Issues
+
+1. If you encounter **Failed to connect to server** error, check if you are currently connected to a VPN. If you are using a VPN, disconnecting from it may resolve the issue.
+
+   ![image of novnc failed connection](images/troubleshoot-novnc-failed-connection.png)
+
+2. If the noVNC browser has difficulties registering keyboard input, try refreshing the page and then reconnecting to noVNC.
 
 ## Learn More
 
@@ -224,4 +234,4 @@ You may now **proceed to the next lab.**
 ## Acknowledgements
 
 - **Author** - Yixin Wei, Java Management Service
-- **Last Updated By** - Ivan Eng, June 2023
+- **Last Updated By** - Chan Wei Quan, October 2023

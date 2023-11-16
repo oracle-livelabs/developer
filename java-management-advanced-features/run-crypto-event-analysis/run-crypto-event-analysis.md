@@ -25,15 +25,15 @@ In this lab, you will:
 ## Task 1: Submit Crypto Event Analysis Work Request
 
 1. First, open the navigation menu, click **Observability & Management**, and then click **Fleets** under **Java Management**. Select the fleet that you have configured in [Lab 1](?lab=set-up-and-enable-advanced-features-on-java-management-service).
-  
+
     ![image of console navigation to java management service](images/console-navigation-jms-fleet.png)
 
 2. Click the button labeled **Crypto event analysis**.
-  
+
     ![image of fleet details page with crypto event analysis button](images/fleet-crypto-button.png)
 
 3. Under the **Recording duration in hours**, set the recording duration to 5 minutes. Click the **Start** button.
-  
+
     ![image of crypto event run settings](images/crypto-run-duration.png)
 
     ![image of crypto event started notification](images/crypto-work-request-started-notification.png)
@@ -41,21 +41,23 @@ In this lab, you will:
 4. On the Fleet details page, scroll down to the **Resources**, menu. Select **Work requests**.
 
     You should see a list of the **Work Requests** that are currently in your Fleet. **Crypto event analysis** that was started should be at the top of the list.
-  
+
     ![image of work request](images/crypto-work-request-started.png)
 
 5. Wait for the work request to be processed. If the work request has been completed successfully, the status will change to **Completed without Errors**.
-  
+
+    > **Note:** It will take approximately 15 minutes for the request to be completed.
+
     ![image of work request completed](images/crypto-work-request-completed.png)
 
-    >**Note:** It will take approximately 15 minutes for the request to be completed.
+    
 
 6. Once the work request status shows **Completed without Errors**, scroll down to the **Resources** menu and select **Analysis reports**. 
 
     You should see a list of Crypto analysis reports that have been conducted in your Fleet. The latest **Crypto event analysis** that has been completed should be displayed at the top of the list.
 
     If there are no issues found, the **Crypto event analysis** result should say **No warnings found**. 
-  
+
     ![image of crypto event analysis report](images/crypto-result-final1.png)
 
     Otherwise it'll show **Action needed**.
@@ -162,4 +164,4 @@ You may now **proceed to the next lab.**
 ## Acknowledgements
 
 * **Author** - Somik Khan, Java Management Service
-* **Last Updated By** - Sherlin Yeo, June 2023
+* **Last Updated By** - Siqi Liu, October 2023
