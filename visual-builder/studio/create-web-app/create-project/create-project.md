@@ -48,7 +48,6 @@ As someone who creates a project, you'll automatically become the project's owne
 
     ![The New Project wizard with the Empty Project template selected.](images/empty-project.png)
 
-
 4. On the Project Properties step, leave **Wiki Markup** as **Markdown** and click **Next**.
 
 5. On the Project Team Members step, add other members of your team who will work with you on this visual application.
@@ -86,6 +85,8 @@ Define an environment that points to your Visual Builder development instance, w
 4. In the Add Service Instances dialog, with **Instance Type** set to **Visual Builder and Oracle Integration** and **Authentication Method** set to **Identity Domain** on the left, locate the Visual Builder instance in your tenancy. Once you find the instance you want to use, select it and click **Add**.
 
     ![The Add Service Instances dialog with myVBinstance of type Visual Builder IDCS Resource selected. An Add button is also shown.](images/env-add-service-instances.png "Environments page")
+
+    **Note:** If the Visual Builder instance you want to use does not show up in the list of instances, select **Visual Builder Credentials** under **Authentication Method**, then enter the URL to your Visual Builder instance's home page (for example, http://yourserver/ic/builder), the credentials of a user who can access that instance, and click **Add**.
 
     Wait for the instance's Status to turn green, from 'Unknown' to 'Available'.
 
