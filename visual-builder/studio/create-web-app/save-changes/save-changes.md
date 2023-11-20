@@ -12,13 +12,13 @@ While developing the HR web application, you might have noticed a yellow dot in 
 
 ![Your Git repo in the header, tutorial-hr-project.git/hrbranch, shows with a yellow dot next to it.](images/git-changes-badge.png "")
 
-This dot indicates changes in your local branch that haven't been saved to the remote branch. It's important to save your changes as often as you can, but first, let's review a few concepts.
+This dot indicates changes in your local branch that haven't been saved to the remote branch, but what exactly does that mean?
 
-When you first created a workspace, you created a new branch called **hrbranch**, which was a copy of the default branch (**main**) in the project’s Git repository and contained the same set of source files. Since then, all the changes you've made to the HR web app have been automatically saved to **hrbranch**, but these changes are not visible to others because this **hrbranch** is local to your workspace. To let others view your changes, you'll need to save your changes from the local branch in your workspace to a branch in a remote repository.
+When you first created a workspace with a branch called **hrbranch**, you created a _local_ repository that contains a working copy of **hrbranch**. The **hrbranch** initially had the same set of source files as the **main** branch, which is the default branch in your project's Git repo, also known as the _remote_ repository. As you worked on your visual application, all the changes you made to the HR web app were automatically saved to **hrbranch**, but these changes are not visible to others because this **hrbranch** is local to your workspace. To let others view your changes, you'll need to save your changes from the local branch in your workspace to a branch in the remote repository.
 
 Saving changes to a remote branch is a two-step process: _commit_ and _push_. The first step you'll do is "commit". A commit groups the files in your local branch that you want to save to the remote branch and provides a description of the group. Next, you'll "push" your changes. A push saves all the files in the groups that you've "committed" to the remote branch.
 
-Once you commit and push your changes, all the changes from your _local_ **hrbranch** become available to others in your project through the _remote_ **hrbranch**.
+Once you commit and push your changes, all the changes from your local **hrbranch** become available to others in your project through the remote **hrbranch**.
 
 ### Objectives
 
@@ -73,7 +73,7 @@ Now that your changes have been pushed, let's check them in the remote **hrbranc
 
 3. Click ![Git icon](images/git-icon.png) **Git** in the left navigator.
 
-   You'll see your changes added to the remote **hrbranch**, indicated by your last commit message.
+    You'll see your changes added to the remote **hrbranch**, indicated by your last commit message.
 
     ![The hrbranch in the repository is shown. With the Files tab selected, the latest commit message shows against the businessObjects / default folder at the top.](images/git-view-hrbranch.png "")
 
@@ -88,4 +88,4 @@ Now that your changes have been pushed, let's check them in the remote **hrbranc
 ## Acknowledgements
 
 * **Author** - Sheryl Manoharan, VB Studio User Assistance, November 2021
-* **Last Updated By/Date** - Sheryl Manoharan, September 2023
+* **Last Updated By/Date** - Sheryl Manoharan, November 2023

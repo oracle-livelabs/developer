@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This lab shows you how to create a web app in your visual application project and populate it with business objects that store your data.
+This lab shows you how to create a web app in your visual application and populate it with business objects that store your data.
 
 Estimated Time: 15 minutes
 
@@ -33,37 +33,15 @@ This lab assumes you have:
 
 The first thing we'll do is add a web app to the HR visual application you just created. A visual application is a container for all your web and mobile applications. In this task, you add a single web app to your visual application, but you can have more than one, even both web and mobile apps in the same visual application.
 
-1. Click![Workspaces icon](images/vbs-workspaces-icon.png)**Workspaces**, then click **HR Workspace** in the Workspaces table.
-
-    The HR application opens in the Designer on the Welcome page, which serves as a launching point for connecting to data, creating apps, or adding artifacts.
-
-    ![This image shows part of the HR Visual Application's Welcome page. The page contains tiles in three sections: Connect to Data, Create Apps, and Add Artifacts. On  the right are sections with references to documentation and other resources.](images/visual-app-welcome.png "Welcome page in the Designer")
-
-    On the far left are icons representing Mobile Applications, Web Applications, Business Objects, and so on. This vertical toolbar is the Navigator, which helps you move between the artifacts in your visual application.
-
-    Now take a look at the header:
-
-    ![Header in the HR Visual Application workspace. The workspace name HR Visual Application is on the left. Next to it, the Git repository and current branch tutorial-hr-project.git / hrbranch are visible. On the right are icons that let you perform other actions: Undo, Redo, Preview, Publish Changes, Product Feedback, Go to File, and Menu.](images/header.png "Header")
-
-    On the left is the name of your current workspace, **HR Workspace**; next to it is the project's Git repository and the branch currently associated with your workspace (**tutorial-hr-project.git/hrbranch**). Click each option to see other actions that you can perform. Clicking ![Go to Project Page icon](images/go-to-project-home-icon.png) will take you back to the Project Home page.
-
-    Elements on the right let you perform various other actions, such as undo a change or search the Git repository for a file. This workshop primarily demonstrates the options to preview your app, share it, and publish changes. If you make a mistake during this workshop, click ![Undo icon](images/undo-icon.png)  to back out of the last step you did, or the arrow next to it to undo more than one step.
-
-    Take note of the footer, which has tools that help you debug and maintain your visual app (we'll briefly look at Audits and Git History in this workshop):
-
-    ![Footer in the HR Visual Application workspace, which shows Audits, Find in Files, Git History, and Tests tabs.](images/footer.png "Footer")
-
-    Keep in mind that VB Studio saves your changes automatically as you work. A timestamp at the bottom of the page will show the time  your work was last saved. Note that changes are only saved to your local workspace repo—but more on that later.
-
-2. We want to create a web application, so under **Create Apps**, click **Responsive Apps**.
+1. Under **Create Apps** in the Welcome page, click **Responsive Apps**.
 
     ![Web Apps pane of the Navigator. There is a plus sign at the top and a + Web Application button at the bottom.](images/web-apps.png "Web Apps pane")
 
     The Web Apps pane opens in the Navigator.
 
-3. Click **\+ Web Application** (or the **+** sign at the top of the Web Apps pane).
+2. Click **\+ Web Application** (or the **+** sign at the top of the Web Apps pane).
 
-4. In the Create Web Application window, enter `hrwebapp` as the **Application Name**. (You can specify uppercase as well as lowercase characters in the application name, but the name is converted to lowercase.) Leave the **Navigation Style** set to the default, **None**, and click **Create**.
+3. In the Create Web Application window, enter `hrwebapp` as the **Application Name**. (You can specify uppercase as well as lowercase characters in the application name, but the name is converted to lowercase.) Leave the **Navigation Style** set to the default, **None**, and click **Create**.
 
     The application opens on the **main-start** page, which is your application's default home page created automatically for you. (Ignore the **This dot says that you have made some changes** dialog that appears in the header for now; we'll explore Git changes in a later lab.)
 
@@ -169,7 +147,6 @@ Let's now create the Department and Employee business objects. But instead of cr
 
     Click **OK**.
 
-
 7. For the same **Location** field, click **Required** to deselect the setting (**Department** and **Id** are the only required fields for the Department object).
 
 8. Now click the **Employee** tab and change the **Department** field to a reference. Click **#** in the **Department** field's Type column and change the Type setting as follows:
@@ -230,4 +207,4 @@ Now that you have your business objects, create a diagram that visualizes the bu
 ## Acknowledgements
 
 * **Author** - Sheryl Manoharan, VB Studio User Assistance, November 2021
-* **Last Updated By/Date** - Sheryl Manoharan, September 2023
+* **Last Updated By/Date** - Sheryl Manoharan, November 2023
