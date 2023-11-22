@@ -31,7 +31,7 @@ In this lab, you are going to deploy OCI DevOps components that include:
 
 ## Task 1: Set up Terraform configuration file
 
-1. From the **Cloud Shell**, you should be on the directory `oci-multiplayer`, run this command.
+1. From the **Cloud Shell**, you should be on the directory `save-the-wildlife`, run this command.
     
     ```bash
     <copy>npx zx scripts/tfvars.mjs devops</copy>
