@@ -25,13 +25,16 @@ In this lab, you will:
 ## Task 1: Enable and Setup Post Java Installation Actions
 
 1. Open the navigation menu, click **Observability & Management**. Under **Java Management**, select **Fleets**. 
+   
    ![image of console navigation to java management service](images/console-navigation-fleet.png)
 
 2. Select the fleet with the advanced feature, **Lifecycle management** enabled. Refer to  [Lab 1](?lab=set-up-and-enable-advanced-features-on-java-management-service).
+   
    ![image of fleet details page](images/fleet-details-page-main.png)
 
 3. Under **More actions**, select **Modify Java runtime lifecycle management setting**. The **Lifecycle management settings** window should appear.
- ![image of fleet details page lifecycle management](images/fleet-details-page-lifecycle-management.png)
+ 
+   ![image of fleet details page lifecycle management](images/fleet-details-page-lifecycle-management.png)
 
 4. In the **Lifecycle management settings**, there is a combo box containing the placeholder "Select an action". 
 
@@ -41,40 +44,29 @@ In this lab, you will:
 
    ![image of list of post java install action](images/post-java-install-action-list.png)
 
-   There are a total of 6 different security configurations to choose from.
+   There are a total of 5 different security configurations to choose from.
    | Actions                                | Options   |
    |----------------------------------------|-----------|
    | Replace JDK root certificates with default operating system certificates (only on Linux)| N/A |
-   | Disable TLS                            | TLS 1.0 , TLS 1.0 and TLS 1.1 |
    | Change minimum key length for EC       | 256 bits|
    | Change minimum key length for RSA      | 2048 bits |
    | Change minimum key length for DSA      | 2048 bits |
    | Change minimum key length for Diffie-Hellman | 2048 bits |
    {: title="Available Security Configurations"}
 
-6. This lab will simulate the setting up of 2 different installation actions as follows:
+6. This lab will simulate the setting up of 1 installation action as follows:
       * Minimum key length for RSA > 2048 bits (e.g. for signed jars)
-      * Disable TLS 1.0 and TLS 1.1
   
 7. Select the  **Change minimum key length for RSA** option from the dropdown list. Another combo box will appear to the right. This contains the new minimum key length (in bits) that will be set for RSA signed jars. Click on the combo box that appeared on the right. Select **2048**.
 
    ![image of LCM minimimum-rsa-key-length](images/lcm-minimum-rsa-key-length.png)
 
-8. Click on the **+ another action** button to add an additional post Java installation action. Another combo box with the placeholder "Select an action" should appear in the next line. 
-
-   ![image of LCM add another action](images/lcm-add-another-action.png)
-
-9. Click on the combo box and select the **Disable TLS** option. 
-
-   ![image of LCM disable tls](images/lcm-disable-tls.png)
-
-   Click on the combo box that appeared on the right. Select **TLS 1.0 and TLS 1.1**.
-
-   ![image of LCM disable tls options](images/lcm-disable-tls-options.png)
-
-10. Click on the combo box under **Network configuration**. Select **Default to System Proxy settings when they do exist**.
+8. Click on the combo box under **Network configuration**. Select **Default to System Proxy settings when they do exist**.
+    
     ![image of LCM default to system proxy action](images/lcm-system-proxy.png)
+
     There are a total of 5 different network configurations to choose from.
+
     | Actions                                | Options   |
     |----------------------------------------|-----------|
     | Default to System Proxy settings when they do exist| N/A |
@@ -84,37 +76,35 @@ In this lab, you will:
     | Set Socks Proxy                        | Host, Port (default is 80)|
     {: title="Available Network Configurations"}
 
-11. Click on the combo box under **Logging configuration**
+9.  Click on the combo box under **Logging configuration**
 
-   ![image of lcm logging configuration](images/lcm-logging-config.png)
+      ![image of lcm logging configuration](images/lcm-logging-config.png)
 
-12. Add the following actions:
+10. Add the following actions:
 
       * **Add FileHandler to Log Handler classes**.
       * **Change global logging level**, select **ALL** option.
 
-   There are a total of 2 different logging configurations to choose from.
-   | Actions                                | Options   |
-   |----------------------------------------|-----------|
-   | Add FileHandler to Log Handler classes | N/A |
-   | Change global logging level            | ALL, SEVERE, WARNING, INFO, CONFIG, FINE, FINER, FINEST (lowest value), OFF |
-   {: title="Available Logging Configurations"}
+      There are a total of 2 different logging configurations to choose from.
+      | Actions                                | Options   |
+      |----------------------------------------|-----------|
+      | Add FileHandler to Log Handler classes | N/A |
+      | Change global logging level            | ALL, SEVERE, WARNING, INFO, CONFIG, FINE, FINER, FINEST (lowest value), OFF |
+      {: title="Available Logging Configurations"}
 
-13. Click on the **Save** button below. This should save all the defined post Java installation actions.
+11. Click on the **Save** button below. This should save all the defined post Java installation actions.
 
-    ![image of LCM post install action save](images/lcm-post-install-action-save.png)
+      ![image of LCM post install action save](images/lcm-post-install-action-save.png)
 
-14. The post Java installation actions can be configured differently based on different requirements.
+12. The post Java installation actions can be configured differently based on different requirements. Return to the fleet details page, click **Lifecycle management settings**. The post Java installation actions that had been defined earlier will be shown.
 
-   Return to the fleet details page, click **Lifecycle management settings**. The post Java installation actions that had been defined earlier will be shown.
-
-   ![image of fleet page post install action view](images/fleet-page-post-install-action-view.png)
+      ![image of fleet page post install action view](images/fleet-page-post-install-action-view.png)
 
 ## Task 2: Submit Install Java Runtime Work Request
 
 1. On the fleet details page. Click **Install Java Runtime**.
 
-  ![image of install java runtime](images/install-java-runtime.png)
+   ![image of install java runtime](images/install-java-runtime.png)
 
 2. You will see an Install Java runtime window with current and archive releases of the Oracle Java Runtimes. You will also see a Summary table that lists the metadata, including **Release versions**, **Security state**, **End of service life**, **Release date** and **Release notes**. You may click the link under Release notes to open the details page in a new window.
 
@@ -156,23 +146,26 @@ In this lab, you will:
    ![image of install java runtime confirm](images/install-java-runtime-confirm.png)
 
    If your request is submitted successfully, you should receive a notification in green as seen below:
+   
    ![image of submitted install java runtime work request](images/install-java-runtime-work-request-submitted.png)
-
 
 
 ## Task 3: Verify Java Runtime Installation and Post Java Installation Action
 
 1. Return to the fleet details page. Scroll down to the **Resources** menu and select **Work Requests**. You should see the Install Java Runtime Work Request you submitted in Task 2. Click on the Work Request to view its details.
- ![image of work request summary page](images/work-request-summary-page.png)
+
+   ![image of work request summary page](images/work-request-summary-page.png)
 
 
 2. If your request has been accepted, the status will change to **In Progress**. It will take some time to complete.
-  ![image of pending work request](images/pending-work-request.png)
+
+   ![image of pending work request](images/pending-work-request.png)
 
    >**Note:** Install Java runtime work request will take around 15-30 minutes to complete
 
 3. If your request has completed successfully, the status will change to **Completed Without Errors**.
-  ![image of install completed without errors](images/install-complete-without-errors.png)
+   
+   ![image of install completed without errors](images/install-complete-without-errors.png)
 
 4. Click the **Log Message** under the **Resources** section. A series of logs will be displayed. Check that the Java runtime has been installed.
 
@@ -183,9 +176,11 @@ In this lab, you will:
    ![image of install complete logs post install action](images/install-complete-logs-post-install-action.png)
 
 5. Return to the fleet details page. Under the **Resources** menu, select **Java Runtimes**. This should display all the Java runtimes found in the fleet. The installed Java runtime should be indicated after next scanning. You can also check the installation manually on your Managed Instance.
-  ![image of verify java runtime installation](images/verify-java-runtime-installation.png)
+   
+   ![image of verify java runtime installation](images/verify-java-runtime-installation.png)
 
 ## Task 4: (Optional) Modifying/Removing Post Java Installation Action
+
 1. This task is applicable if changes are to be made to the post Java installation action.
 
 2. On the fleet details page, click **More actions** and select **Modify Java runtime lifecycle management setting**. 
@@ -193,6 +188,7 @@ In this lab, you will:
    ![image of fleet details post install action](images/fleet-details-page-lifecycle-management.png)
 
    The **Lifecycle management settings** window should appear. It should show a list of actions defined earlier in [Task 1](##task-1:-Defining-Post-Java-Installation-Actions). 
+   
    ![image of post install action window](images/post-install-action-window.png)
 
 3. To add another action, click **+ another action**. Another combo box with the placeholder "Select an action" should appear in the next line. 
@@ -230,4 +226,4 @@ In this lab, you will:
 ## Acknowledgements
 
 * **Author** - Yixin Wei, Java Management Service
-* **Last Updated By** - Ivan Eng, June 2023
+* **Last Updated By** - Chan Wei Quan, October 2023
