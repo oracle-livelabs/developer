@@ -1,0 +1,51 @@
+{
+  "workshoptitle": "Develop with Oracle and Open AI For The Greater Good",
+  "help": "livelabs-help-db_us@oracle.com",
+	"tutorials": [
+      {
+        "title": "Introduction",
+        "filename": "../../intro/intro.md"
+      },
+      {
+        "title": "Get Started",
+        "filename": "https://objectstorage.us-phoenix-1.oraclecloud.com/p/SJgQwcGUvQ4LqtQ9xGsxRcgoSN19Wip9vSdk-D_lBzi7bhDP6eG1zMBl0I21Qvaz/n/c4u02/b/common/o/labs/cloud-login/pre-register-free-tier-account.md"
+      },
+      {
+        "title": "Lab 1: Setup",
+        "filename": "../../setup/setup.md"
+      },
+      {
+        "title": "Lab 2: Getting started with JavaScript and JSON Duality features of Oracle Database and OpenAI",
+        "filename": "../../json/json.md"
+      },
+      {
+        "title": "Lab 3: OpenAI chat and OCI Vision Service: interpret health test results and recommended steps for everyday individuals",
+        "filename": "../../ocivision-openaichat/ocivision-openaichat.md"
+      },
+      {
+        "title": "Lab 4: OpenAI image generation and OCI Speech Service: create webpages and storyboards using only voice commands for individuals with impaired motor control",
+        "filename": "../../ocivision-openaidalle/ocivision-openaidalle.md"
+      },
+      {
+        "title": "Lab 5: OpenAI conversation/chat and OCI Vision Service and OCI Speech Service: detect objects in an image and write a sentence using those objects, including sentiment generation and analysis as an educational tool",
+        "filename": "../../ocivision-ocispeech-openaichat/ocivision-ocispeech-openaichat.md"
+      },
+      {
+        "title": "Lab 6: Mixed Reality and Vision AI: the names of objects in a person's surroundings are spoken out to them from the spatial location where they are located for individuals that are hearing impaired or have Alzheimer’s",
+        "filename": "../../ocivision-mixedreality/ocivision-mixedreality.md"
+      },
+      {
+        "title": "Lab 7: Alternatives to OpenAI",
+        "filename": "../../openai-alternatives/openai-alternatives.md"
+      },
+      {
+        "title": "Lab 8: Tear Down",
+        "filename": "../../teardown/teardown.md"
+      },
+      {
+        "title": "Need Help?",
+        "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+        "filename":"https://objectstorage.us-phoenix-1.oraclecloud.com/p/SJgQwcGUvQ4LqtQ9xGsxRcgoSN19Wip9vSdk-D_lBzi7bhDP6eG1zMBl0I21Qvaz/n/c4u02/b/common/o/labs/need-help/need-help-freetier.md"
+      }
+    ]
+}
