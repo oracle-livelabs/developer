@@ -1,5 +1,3 @@
-# Setup
-
 ## Introduction
 
 In this lab, we will provision and setup everything that is needed to run all of the labs in the workshop
@@ -10,65 +8,248 @@ Estimated Time: 15 minutes
 
 ### Objectives
 
-* Clone workshop code
-* Provision an Oracle Database
-* Install SQLcl client for convenient administration of database
-* Run scripts in SQLcl to setup database user, tables, and JSON duality views, as well as JavaScript
-* Configure access to Oracle Cloud services including keys and config file
-* Obtain an OpenAI account and token
-* Build the workshop code so that it is ready for later labs
+- Gather Cohere AI account API keys
+- Gather Hugging Face AI account API keys
+- Create and configure the Oracle Database
+- Create the database users with appropriate priviledges
+- Configure access to Oracle Cloud services including keys and config file
+- Provide the application with the information about the database, OCI config, and OpenAI config and build so that it is ready for later labs
 
 ### Prerequisites
 
 - This workshop assumes you have an Oracle cloud account and have signed in to the account.
 
-## Task 1: Download or clone the workshop source code
+- `sql` folder containing the lab scripts downloaded to your **local computer** from Github using the following command:
+    
+    ```
+    <copy>git clone https://github.com/ethan-shmargad/src.git</copy>
+    ```
+- Download the other source files using: `git clone https://github.com/paulparkinson/openai-and-oracle-for-good.git`. We will refer to the root directory of this repos as `[AI_WORKSHOP_SRC_ROOT]
 
-1.    Go to https://github.com/paulparkinson/openai-and-oracle-for-good and either download or `git clone https://github.com/paulparkinson/openai-and-oracle-for-good.git` the source.
-      We will refer to the root directory of this repos as `[AI_WORKSHOP_SRC_ROOT]` .
+- Docker installed on a local computer
 
+## Task 1: Gather Cohere AI account API keys
 
-## Task 2: Obtain and Start an Oracle Free 23c Database
+1. Once logged in to https://cohere.com, click on **Dashboard**, then **API Keys**.
 
-1.    There are a number of ways to go about this which can be found here: https://www.oracle.com/database/free/get-started/
+2. Create a key or use the trial keys, then copy its value for later use.
 
-      Here we will use the docker container. Simply issue the following commands, replacing `Welcome12345` with your compliant password if you like.
-      You can either use the container-registry.oracle.com container using the following command(s)...
+    ![](./images/cohere-api-key.png " ")
 
-   ```
-    <copy>docker pull gvenzl/oracle-free; docker run --add-host docker.for.mac.host.internal:host-gateway -d -p 1521:1521 -e ORACLE_PASSWORD=Welcome12345 gvenzl/oracle-free</copy>
-   ```
+3. Select the **API Reference** then select the hmburger menu icon of the left of the page to view the API Reference list. Under the `/generate` section, select `Co.Generate`.
 
-Optionally, you can add the `-v oracle-volume:/somedirectory` parameter (replacing `somedirectory` with an actual directory) to the run command to persist data across container restarts as otherwise it will be lost.
+    ![](./images/cohere-api-reference.png " ")
 
-   ```
-    <copy>docker pull gvenzl/oracle-free; docker run --add-host docker.for.mac.host.internal:host-gateway -d -p 1521:1521 -e ORACLE_PASSWORD=Welcome12345 -v oracle-volume:/somedirectory gvenzl/oracle-free</copy>
-   ```
+    This workshop will be using Cohere AI's Co.Generate model. This is a state-of-the-art large language model (LLM) that can generate text, translate languages, answer questions, and perform other tasks. It is trained on a massive dataset of text and code, and is able to generate high quality text.
 
-Should you wish to reset the sys password, you can do so by issuing docker ps -al to get the image id and then issue the `resetPassword` as shown here.
+4. Select **language** then select the **Javascript** option in order to see a sample code snippet to call the model. You will see this in later labs when using the Javascript module to call the model in database.
 
-```
-    <copy>docker ps -al | grep oracle</copy>
-```
-
-```
-    <copy>docker exec [IMAGE_ID] resetPassword yournewpassword</copy>
-```
-
-## Task 3: Download SQLcl and install
-
-1.    Download and install from this location https://www.oracle.com/database/sqldeveloper/technologies/sqlcl/download/
-      This will provide in a `[SQLcl_INSTALL_DIR]/bin/sql` executable that we will use to administer the database. For convenience you may add `[SQLcl_INSTALL_DIR]/bin` to your PATH.
-
-2.    Login  replacing `[SQLcl_INSTALL_DIR]` with the location of your SQLcl
-      and replacing `Welcome12345` with the one you provided as `ORACLE_PASSWORD` when creating the database.
-```
-    <copy>[SQLcl_INSTALL_DIR]/bin/sql  sys/Welcome12345@//localhost:1521/freepdb1 as sysdba</copy>
-```
-3.    Type `exit` to exit SQLcl. We will return to it during setup.
+    ![](./images/cohere-call-model-snippet.png " ")
 
 
-## Task 4: Configure access to Oracle Cloud services including keys and config file
+## Task 2: Gather Hugging Face AI account API keys
+
+1. Once logged in to https://huggingface.co, go to your on **profile**, then select **settings**. From there, select **Access Tokens** then **Create**, and copy its value for later use.
+
+    ![](./images/hugging-api-key.png " ")
+
+2. Navigate back to the dashboard then select **Models**. Then, select a model (one with more views/downloads) under the **Natural Language Processing** section for **Question Answering**.
+
+    ![](./images/hugging-choose-model.png " ")
+
+3. After selecting the model, notice the information in the *Model Card* on the left. After that, select the **Deploy** drop-down menu on the right and select **Inference API**. 
+
+    ![](./images/select-inference-api.png " ")
+
+4. Select the **Javascript** option in order to see a sample code snippet to call the model.
+
+    ![](./images/hugging-code-snippet.png " ")
+
+  This workshop will be using a BERT-base-uncased model. This is is a pre-trained language model (LM) that can be used for a variety of natural language processing (NLP) tasks, such as text classification, question answering, and summarization. It is trained on a massive dataset of text and code, and is able to learn complex relationships between words and phrases.
+
+## Task 3: Create and configure the Oracle Database
+
+For this lab, we will use the Oracle 23c Free version via a docker container image locally.
+
+1. Log into the terminal of your choice. Copy and paste the following command to pull the 23c docker image to your local computer.
+
+    ```
+    <copy>docker pull container-registry.oracle.com/database/free:latest</copy>
+
+    ```
+
+2. Run the container by executing one of the commands below depending on the operating system of your computer.
+
+    **Windows:**
+
+    ```
+    <copy>docker run -d -p 1521:1521 -e ORACLE_PASSWORD=Welcome12345 container-registry.oracle.com/database/free:latest</copy>
+    ```
+
+    **Mac:**
+
+    ```
+    docker run -d -p 1521:1521 --add-host docker.for.mac.host.internal:host-gateway -e ORACLE_PASSWORD=Welcome12345 container-registry.oracle.com/database/free:latest
+    ```
+
+3. Type in the following docker command to view your running containers to confirm that the 23c image is up and running.
+
+    ```
+    <copy>docker ps</copy>
+    ```
+
+4. Copy and paste the following command to give read and write access to the `sql` directory on your local machine.
+
+    ```
+    <copy>chmod -R a+rw /path/to/sql/directory`</copy>
+    ```
+
+5. Use the following command to move the `sql` folder on your local desktop to the docker container.
+
+    *Note:* path may be different/change depending on folder placement
+
+    ```
+    <copy>docker cp <FOLDER_PATH>/sql <CONTAINER_ID>:/home/oracle</copy>
+    ```
+
+6. Using either the `container_name` or `container_id`, copy and paste the following command to enter a bash instance in your container.
+
+    ```
+    <copy>docker exec -it <container_name>/<container_id> bash</copy>
+    ```
+
+7. Make sure the folder `sql` that was just copied is in the correct directory within the container using the following commands.
+
+    ```
+    <copy>cd /home/oracle/sql</copy>
+    ```
+
+    ```
+    <copy>ls</copy>
+
+    ...
+
+    coherequery.sql	create_aijs_acl.sql	huggingfacequery.sql writefile.sql coherequeryfetchonly.sql create_aijs_user.sql huggingfacequeryfetchonly.sql
+    ```
+
+8. Use the following command to return back to the home directory:
+
+    ```
+    <copy>cd</copy>
+    ```
+
+9. Login to the database as `SYS` using the command below.
+
+    ```
+    <copy>sqlplus / as sysdba</copy>
+
+    ...
+
+    SQL>
+    ```
+
+10. Copy and paste the following command to open up `SYS` to the PDB (pluggabe Database) we will be using, `freepdb1`. 
+
+    ```
+    <copy>alter user sys identified by "Welcome12345" container=all;</copy>
+
+    ...
+
+    User Altered.
+    ```
+
+11. **Exit** from the SQL session back to the terminal session of your container, then log back into another SQL session within `freepdb1` using the following command to make sure the connection works.
+
+    ```
+    <copy>sqlplus sys/Welcome12345@localhost:1521/freepdb1 as sysdba</copy>
+    ```
+
+12. **Exit** from the SQL session back to the terminal session of your container.
+
+## Task 4: Create the database users with appropriate priviledges
+
+1. Within the terminal session of your docker container, run the sql script `create_aijs_user.sql`  in `freepdb1` to create the **aijs** user. **Exit** the `SQL` session once finished.
+
+    ```
+    <copy>sqlplus sys/Welcome12345@localhost:1521/freepdb1 as sysdba < create_aijs_user.sql</copy>
+    ```
+
+    ```
+    <copy>Exit</copy>
+
+    ...
+
+    bash-$
+    ```
+
+    ![](./images/create-aijs-user.png " ")
+
+2. Navigate back into the `sql` folder.
+
+    ```
+    <copy>cd ~/sql</copy>
+    ```
+
+3. Run the `create_aijs_acl.sql` script to give access to the `aijs` user.
+
+    ```
+    <copy>sqlplus sys/Welcome12345@localhost:1521/freepdb1 as sysdba < create_aijs_acl.sql</copy>
+
+    ...
+
+    bash-$
+    ```
+
+4. Connect back to `freepdb1`.
+
+    ```
+    <copy>sqlplus sys/Welcome12345@localhost:1521/freepdb1 as sysdba</copy>
+
+    ...
+
+    SQL>
+    ```
+
+5. Use the following SQL commands to create JSON tables for the responses from Cohere AI and/or Hugging Face AI.
+
+    **Cohere AI:**
+
+    ```
+    <copy>create table coherejson (id json);</copy>
+
+    ...
+
+    Table created.
+    ```
+
+    **Hugging Face AI:**
+
+    ```
+    <copy>create table huggingfacejson (id json);</copy>
+
+    ...
+
+    Table created.
+    ```
+
+6. **Exit** out of the `SQL` session back to the bash of your container then navigate back to the home directory.
+
+    ```
+    SQL> EXIT
+
+    ...
+
+    Disconnected from Oracle Database 23c Free, Release 23.0.0.0.0 - Developer-Release
+    Version 23.2.0.0.0
+
+    bash-$
+    ```
+
+    ```
+    <copy>cd</copy>
+    ```
+
+## Task 5: Configure access to Oracle Cloud services including keys and config file
 
 1. First create a location to store the keys and config file which is generally `~/.oci`
 
@@ -92,13 +273,8 @@ Should you wish to reset the sys password, you can do so by issuing docker ps -a
 
    ![OCI Setup](images/OCIInfo.png " ")
 
-## Task 5: Obtain OpenAI account and Key
 
-1. Simply go to the https://platform.openai.com site to obtain an account and then generate and copy a key at https://platform.openai.com/account/api-keys
-
-![OpenAI Setup](images/openaisignup.png " ")
-
-## Task 6: Provide the application with the information about the database, OCI config, and OpenAI config and build so that it is ready for later labs.
+## Task 6: Provide the application with the information about the database, OCI config, and OpenAI config and build so that it is ready for later labs
 
 1. cd to the `[AI_WORKSHOP_SRC_ROOT]` directory.
 
@@ -118,7 +294,7 @@ Should you wish to reset the sys password, you can do so by issuing docker ps -a
     <copy>[SQLcl_INSTALL_DIR]/bin/sql  sys/Welcome12345@//localhost:1521/freepdb1 as sysdba</copy>
     ```
 
-4. At the SQLcl prompt execute the following scripts to create a user with appropriate privileges, switch to that user,
+4. At the SQLcl prompt execute the following scripts as the `aijs` user.
 
     ```
     <copy>@sql/create_aijs_user.sql</copy>
@@ -147,7 +323,3 @@ Should you wish to reset the sys password, you can do so by issuing docker ps -a
 
 You may now **proceed to the next lab.**..
 
-## Acknowledgements
-
-* **Author** - Paul Parkinson, Architect and Developer Evangelist
-* **Last Updated By/Date** - Paul Parkinson, 2023

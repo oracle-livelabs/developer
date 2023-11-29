@@ -1,0 +1,135 @@
+# How To Call Cohere and Hugging Face AI from within an Oracle database using JavaScript
+
+## Introduction
+
+In this lab, you will create an entirely free generative AI application utilizing a JavaScript program that runs within the official **Oracle database 23c Docker image.** The Javascript will call either/or Cohere AI and Hugging Face AI (depending on your preference) and provide a prompt for the model to answer about sustainable cities and communities. The results are then stored in the database and then retrieved using SQL. 
+
+*Note:* Although we are only using SQL to retrieve the results in this lab, it is important to note that with the Oracle Database, these results can be **accessed using SQL, JSON, Rest, or any other language.**
+
+Estimated lab time: 20-25 minutes
+
+### Objectives
+
+- Run the Cohere AI query from the JavaScript code in the database
+- Run the Hugging Face AI query from the JavaScript code in the database
+
+### Prerequisites
+
+- `sql` folder containing the lab scripts downloaded to your **local computer** from Github using the following command:
+    
+    ```
+    <copy>git clone https://github.com/ethan-shmargad/src.git</copy>
+    ```
+
+- Docker installed on a local computer
+- Cohere AI and/or Hugging Face AI accounts
+- Basic database and Java knowledge
+
+## Task 5: Run the Cohere AI query from the JavaScript code in the database
+
+1. Navigate back to the `sql` folder.
+
+    ```
+    <copy>cd /oracle/home/sql</copy>
+    ```
+
+2. Open the editor to add your Cohere API key (saved earlier) where instructed. Notice that the `prompt` field in the Javascriipt contains the prompt the model will be asked: **How might a fusion of biotechnology and artificial intelligence reshape the blueprints for sustainable urban ecosystems?**
+
+    ```
+    <copy>vi coherequery.sql</copy>
+    ```
+
+    ![](./images/cohere-paste-api-key.png " ")
+
+3. Type the letter 'I' to toggle *Insert* mode, then scroll down to where the script says `<PASTE API KEY HERE>` and add the Cohere API key. When finished, select the 'esc' key to exit out of *Insert* mode then type `:wq` to exit from the vi.
+
+4. Run `coherequery.sql` to create the model and store the prompt results in the database.
+
+    ```
+    <copy>sqlplus sys/Welcome12345@localhost:1521/freepdb1 as sysdba < coherequery.sql</copy>
+    ```
+
+    ![](./images/run-cohere-script.png " ")
+
+5. Start a new `SQL` session and query the `coherejson` table to see the output.
+
+    *Note:* Model output may be slightly different then output shown below
+
+    ```
+    <copy>sqlplus sys/Welcome12345@localhost:1521/freepdb1 as sysdba</copy>
+
+    ...
+
+    SQL>
+    ```
+
+    ```
+    <copy>SET LONG 90000;</copy>
+    ```
+
+    ```
+    <copy>SELECT * FROM coherejson;</copy>
+    ```
+
+    ![](./images/see-cohere-output.png " ")
+
+    Notice that the prompt was answered in the output and stored in the `coherejson` table: "The fusion of biotechnology and artificial intelligence (AI) has enormous potential to reshape the blueprints for sustainable urban communities."
+
+
+## Task 6: Run the Hugging Face AI query from the JavaScript code in the database
+
+1. Navigate back to the `sql` folder.
+
+    ```
+    <copy>cd /oracle/home/sql</copy>
+    ```
+
+2. Open the editor to add your Hugging Face API key (saved earlier) where instructed. Notice that the `prompt` field in the Javascriipt contains the prompt the model will be asked: **The best way to build a sustainable community is with...**
+
+    ```
+    <copy>vi huggingfacequery.sql</copy>
+    ```
+
+    ![](./images/hugging-paste-api-key.png " ")
+
+3. Type the letter 'I' to toggle *Insert* mode, then scroll down to where the script says `<PASTE API KEY HERE>` and add the Hugging Face API key. When finished, select the 'esc' key to exit out of *Insert* mode then type `:wq` to exit from the vi.
+
+4. Run `huggingfacequery.sql` to create the model and store the prompt results in the database.
+
+    ```
+    <copy>sqlplus sys/Welcome12345@localhost:1521/freepdb1 as sysdba < huggingfacequery.sql</copy>
+    ```
+
+    ![](./images/run-hugging-script.png " ")
+
+5. Start a new `SQL` session and query the `huggingfacejson` table to see the output.
+
+    *Note:* Model output may be slightly different then output shown below
+
+    ```
+    <copy>sqlplus sys/Welcome12345@localhost:1521/freepdb1 as sysdba</copy>
+
+    ...
+
+    SQL>
+    ```
+
+    ```
+    <copy>SET LONG 90000;</copy>
+    ```
+
+    ```
+    <copy>SELECT * FROM huggingfacejson;</copy>
+    ```
+
+    ![](./images/see-hugging-output.png " ")
+
+    Notice that the prompt was answered in the output and stored in the `huggingfacejson` table.
+
+You may now proceed to the next lab.
+
+## Acknowledgements
+
+- **Author** - Paul Parkinson
+- **Contributor** - Ethan Shmargad
+- **Last Updated By/Date** - Ethan Shmargad, September 2023
