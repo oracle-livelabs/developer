@@ -8,7 +8,7 @@ Estimated Time: 10 minutes
 
 ### About this Lab
 
-While developing the HR web application, you might have noticed a yellow dot in the header next to your Git repository:
+While developing the HR web application, you might have noticed a yellow dot in the header next to the Git repository menu:
 
 ![Your Git repo in the header, tutorial-hr-project.git/hrbranch, shows with a yellow dot next to it.](images/git-changes-badge.png "")
 
