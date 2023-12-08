@@ -39,12 +39,12 @@
         "filename": "../../ocivision-mixedreality/ocivision-mixedreality.md"
       },
       {
-        "title": "Lab 8: Deploy Your Own Chat GPT Model On OCI",
-        "filename": "../../deploy-model-oci/deploy-model-oci.md"
+        "title": "Lab 8: Oracle Machine Learning For Healthcare",
+        "filename": "../../oml-healthcare/oml-healthcare.md"
       },
       {
-        "title": "Lab 9: Oracle Machine Learning For Healthcare",
-        "filename": "../../oml-healthcare/oml-healthcare.md"
+        "title": "Lab 9: Deploy Your Own Chat GPT Model On OCI",
+        "filename": "../../deploy-model-oci/deploy-model-oci.md"
       },
       {
         "title": "Lab 10: Tear Down",
