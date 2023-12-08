@@ -6,13 +6,15 @@ This workshop will help you understand the technical capabilities and use cases 
  such as Vision AI, Speech AI, and Language AI 
 in conjunction with Open AI (and other, open source, AI) to better compare and understand possible use case solutions.
 
-Estimated Workshop Time: 60 minutes
+https://sdgs.un.org/goals
+
+Estimated Workshop Time: 75 minutes
 
 ###About Product/Technology
 
-Open AI (as well as other open source AI) used together with Oracle Database and AI services will be demonstrated.
+Oracle AI and Oracle Database services will be demonstrated.
 
-    ![](./images/UN-sustainabilitygoals.png "UN sustainability goals")
+![](./images/UN-sustainabilitygoals.png "UN sustainability goals")
 
 
 ###Objectives
@@ -21,8 +23,8 @@ Open AI (as well as other open source AI) used together with Oracle Database and
 
 ### Prerequisites
 
-- An Oracle Free 23c instance can be used locally though Oracle AI services require a cloud account 
-- and of course any other services such as Open AI require accounts there.
+- OCI Account
+- 
 
 ### Let's Get Started
 
