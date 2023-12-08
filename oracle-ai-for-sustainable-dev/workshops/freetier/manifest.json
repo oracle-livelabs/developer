@@ -15,35 +15,41 @@
         "filename": "../../setup/setup.md"
       },
       {
-        "title": "Lab 2: Getting started with JavaScript and JSON Duality features of Oracle Database and OpenAI",
+        "title": "Lab 2: Understanding Text Search and DBMS_SEARCH, DBMS_CLOUD AI Calls, and JavaScript in the Oracle Database",
         "filename": "../../json/json.md"
       },
+
+      <a href="/TextDetectionAndSummarization.html" class="w3-bar-item w3-button">Text Detection And Summarization</a><br>
+      <a href="/SpeechTranscriptionAndImageGeneration.html" class="w3-bar-item w3-button">Speech Transcription And Image Generation</a><br>
+      <a href="/ObjectDetectionGenAIAndSentimentAnalysis.html" class="w3-bar-item w3-button">Object Detection, Gen AI, and Sentiment Analysis</a><br>
+      <a href="/FacialRecognition.html" class="w3-bar-item w3-button">Facial Recognition</a><br>,
+
       {
-        "title": "Lab 3: OpenAI chat and OCI Vision Service: interpret health test results and recommended steps for everyday individuals",
+        "title": "Lab 3: Text Detection And Summarization For Health Report Results",
         "filename": "../../ocivision-openaichat/ocivision-openaichat.md"
       },
       {
-        "title": "Lab 4: OpenAI image generation and OCI Speech Service: create webpages and storyboards using only voice commands for individuals with impaired motor control",
+        "title": "Lab 4: Speech Transcription And Image Generation For Hands-Free Storyboarding",
         "filename": "../../ocivision-openaidalle/ocivision-openaidalle.md"
       },
       {
-        "title": "Lab 5: OpenAI conversation/chat and OCI Vision Service and OCI Speech Service: detect objects in an image and write a sentence using those objects, including sentiment generation and analysis as an educational tool",
+        "title": "Lab 5: Object Detection, Gen AI, And Sentiment Analysis For Situational Awareness And Creativity",
         "filename": "../../ocivision-ocispeech-openaichat/ocivision-ocispeech-openaichat.md"
       },
       {
-        "title": "Lab 6: Mixed Reality and Vision AI: the names of objects in a person's surroundings are spoken out to them from the spatial location where they are located for individuals that are hearing impaired or have Alzheimer’s",
+        "title": "Lab 6: Face Detection For Gaze Estimation",
         "filename": "../../ocivision-mixedreality/ocivision-mixedreality.md"
       },
       {
-        "title": "Lab 7: Alternatives to OpenAI",
-        "filename": "../../openai-alternatives/openai-alternatives.md"
+        "title": "Lab 7: Mixed Reality and Vision AI For Hearing And Vision Impaired And Alzheimer’s",
+        "filename": "../../ocivision-mixedreality/ocivision-mixedreality.md"
       },
       {
-        "title": "Lab 8: Deploy your own Chat GPT model on OCI",
+        "title": "Lab 8: Deploy Your Own Chat GPT Model On OCI",
         "filename": "../../deploy-model-oci/deploy-model-oci.md"
       },
       {
-        "title": "Lab 9: OML for Healthcare",
+        "title": "Lab 9: Oracle Machine Learning For Healthcare",
         "filename": "../../oml-healthcare/oml-healthcare.md"
       },
       {

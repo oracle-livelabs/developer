@@ -12,6 +12,9 @@ Estimated Workshop Time: 60 minutes
 
 Open AI (as well as other open source AI) used together with Oracle Database and AI services will be demonstrated.
 
+    ![](./images/UN-sustainabilitygoals.png "UN sustainability goals")
+
+
 ###Objectives
 
 - Learn about Oracle support for AI solutions demonstrated with use cases for the better good.
