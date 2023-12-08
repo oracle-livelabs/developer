@@ -18,12 +18,6 @@
         "title": "Lab 2: Understanding Text Search and DBMS_SEARCH, DBMS_CLOUD AI Calls, and JavaScript in the Oracle Database",
         "filename": "../../json/json.md"
       },
-
-      <a href="/TextDetectionAndSummarization.html" class="w3-bar-item w3-button">Text Detection And Summarization</a><br>
-      <a href="/SpeechTranscriptionAndImageGeneration.html" class="w3-bar-item w3-button">Speech Transcription And Image Generation</a><br>
-      <a href="/ObjectDetectionGenAIAndSentimentAnalysis.html" class="w3-bar-item w3-button">Object Detection, Gen AI, and Sentiment Analysis</a><br>
-      <a href="/FacialRecognition.html" class="w3-bar-item w3-button">Facial Recognition</a><br>,
-
       {
         "title": "Lab 3: Text Detection And Summarization For Health Report Results",
         "filename": "../../ocivision-openaichat/ocivision-openaichat.md"
