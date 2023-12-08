@@ -66,7 +66,7 @@ Assuming your merge request has been approved, let's now merge your changes to t
 
     The merge request shows as Merged. If you didn't choose to delete the branch, you can do so now if you want.
 
-    Once your changes are merged, VB Studio automatically kicks off the default build jobs that package and deploy your visual application to the development environment. These jobs—**tutorial-hr-project-Package** and **tutorial-hr-project-Deploy**—are automatically generated when your workspace was first created. VB Studio also creates a pipeline, which, by default, runs the package job before the deploy job, so the latest application artifacts are packaged for deployment.
+    Once your changes are merged, VB Studio automatically kicks off build jobs that package and deploy your visual application to the development environment. These jobs—**tutorial-hr-project-Package** and **tutorial-hr-project-Deploy**—are automatically generated when your workspace was first created. VB Studio also creates a pipeline, which, by default, runs the package job before the deploy job, so the latest application artifacts are packaged for deployment.
 
     Click ![Builds icon](images/vbs-builds-icon.png) **Builds** to view the progress of your build jobs.
 
@@ -87,16 +87,16 @@ After your application is successfully deployed to the development environment, 
 
 A deployed application does not automatically include its business object data, so you'll need to manually import data for the application in the development environment. You can import the data you used in your workspace or add entirely different data, as we'll do now.
 
-1. Click [this link](https://objectstorage.us-ashburn-1.oraclecloud.com/p/Ei1_2QRw4M8tQpk59Qhao2JCvEivSAX8MGB9R6PfHZlqNkpkAcnVg4V3-GyTs1_t/n/c4u04/b/livelabsfiles/o/oci-library/HR-Application.zip) and download the `HR-Application.zip` file. The zip file contains CSV files of the Location, Department, and Employee business objects with more records and data.
+1. Click [this link](https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/_z-0HAkTsB_Pxc0TgzFJQjq-Mb1vdZ2Xu2tfpZAID6mgU-qwGIZZU454WjuYVPLi/n/c4u04/b/livelabsfiles/o/developer-library/hr-application.zip) and download the `hr-application.zip` file. The zip file contains CSV files of the Location, Department, and Employee business objects with more records and data.
 2. In the Deployments tab, click **Actions** ![Actions icon](images/vbs-actions-icon.png) for the deployed tutorial-hr-project and select **Import Data**.
 
     ![The Import Data option from the Actions menu of a deployed application is shown.](images/deployed-application-import-data.png "")
 
-3. In the Import Data dialog box, click the upload box, select the `HR-Application.zip` file you previously downloaded, and click **Import Data**.
+3. In the Import Data dialog box, click the upload box, select the `hr-application.zip` file you previously downloaded, and click **Import Data**.
 
     When the import succeeds, click **Close**.
 
-    ![The Import Data dialog with the HR-Application.zip selected for import is shown. The Import Data button is selected.](images/deployed-application-import-data-1.png "")
+    ![The Import Data dialog with the hr-application.zip selected for import is shown. The Import Data button is selected.](images/deployed-application-import-data-1.png "")
 
 4. Refresh the **hrwebapp** application that you opened previously in a browser tab.
 
