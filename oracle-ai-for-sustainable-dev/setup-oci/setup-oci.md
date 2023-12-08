@@ -35,7 +35,7 @@ This lab assumes:
 
     > **Note 1:**  Policies are only required if you cannot create or use a OCI resources. If you are a tenancy administrator, you will have access to all the resources, and you can **optionally skip policy creations in this lab**. 
     > **Note 2:**  If you have an existing Oracle database, it may be reused and it is only necessary to follow the steps to create the user, tables, and functions/stored procedures and expose as ORDS Rest endpoints
-
+x 
 ## Task 1: Log into OCI 
 
 1. Login into OCI
