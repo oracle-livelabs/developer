@@ -28,7 +28,7 @@ In this lab, you are going to deploy that foundational infrastructure that inclu
 
 ## Task 1: Set up Terraform configuration file
 
-1. From the **Cloud Shell**, you should be on the directory `oci-multiplayer`, you can run this command.
+1. From the **Cloud Shell**, you should be on the directory `save-the-wildlife`, you can run this command.
     
     ```bash
     <copy>npx zx scripts/tfvars.mjs env</copy>
