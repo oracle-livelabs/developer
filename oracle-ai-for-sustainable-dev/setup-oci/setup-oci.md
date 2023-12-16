@@ -10,13 +10,13 @@ If you're just trying out Oracle Cloud Infrastructure or doing a proof-of-concep
 
 Please read more about [OCI Policies](https://docs.oracle.com/en-us/iaas/Content/Identity/Concepts/policygetstarted.htm) before creating or changing any OCI policies.
 
-Estimated time: 30 minutes
+Estimated time: 5 to 40 minutes depending on requirements
 
 ### Objectives
 
 In this lab, you will:
 
-* Clone the workshop source code
+* Clone workshop source code
 * Create OCI Bucket
 * Create a new compartment
 * Setup policies for Compartment management
@@ -34,15 +34,43 @@ This lab assumes:
 * You have an Oracle Cloud account with OCI and Tenancy administration privileges to create policies and compartments. 
 
     > **Note 1:**  Policies are only required if you cannot create or use a OCI resources. If you are a tenancy administrator, you will have access to all the resources, and you can **optionally skip policy creations in this lab**. 
-    > **Note 2:**  If you have an existing Oracle database, it may be reused and it is only necessary to follow the steps to create the user, tables, and functions/stored procedures and expose as ORDS Rest endpoints
-x 
-## Task 1: Log into OCI 
+    
+    > **Note 2:**  Set up policies based only on the OCI Services that you want to use. For example, a policy on Anomaly Detection would not be required if you want to try a lab on OCI Speech AI.
+
+    > **Note 3:**  If you have an existing Oracle database, it may be reused, and it is only necessary to follow the steps to create the user, tables, and functions/stored procedures, and expose as ORDS Rest endpoints.
+
+## Task 1: Clone workshop source code
+
+1. Clone workshop code
+
+   The majority of labs in the workshop are executed using a Java Spring Boot web app and so the endpoint (port 8080) must be accessible.
+   
+   Therefore, by default it is easiest to simply download the src to a location on your computer using the follow git clone command:
+
+     ```text
+     <copy>git clone https://github.com/oracle-devrel/oracle-ai-for-sustainable-dev.git</copy>
+     ```
+
+   or download and extract the zip code from https://github.com/oracle-devrel/oracle-ai-for-sustainable-dev/zipball/master
+
+2. Open the env.properties file in the root directory in a text editor. You will populate the values in this file as part of this lab. It will look something like this:
+   
+   `OCICONFIG_FILE=~/.oci/config
+   OCICONFIG_PROFILE=DEFAULT
+   COMPARTMENT_ID=ocid1.compartment.oc1..mycompartmentvalue
+   OBJECTSTORAGE_NAMESPACE=myobjectstorenamespacename
+   OBJECTSTORAGE_BUCKETNAME=myobjectstorebucketname
+   ORDS_ENDPOINT_URL=https://myordsendpointurl
+   ORDS_ENDPOINT_URL=https://rddainsuh6u1okc-aidatabaseworkshop.adb.us-ashburn-1.oraclecloudapps.com/ords/aiuser/_sdw/
+   OCI_VISION_SERVICE_ENDPOINT=https://vision.aiservice.myregion.oci.oraclecloud.com
+   OCI_SPEECH_SERVICE_ENDPOINT=https://speech.aiservice.myregion.oci.oraclecloud.com
+   OCI_GENAI_SERVICE_ENDPOINT=https://genai.aiservice.us-chicago-1.oci.oraclecloud.com`
+
+## Task 2: Log into OCI 
 
 1. Login into OCI
 
-    > **Note 3:**  Set up policies based only on the OCI Services that you want to use. For example, a policy on Anomaly Detection would not be required if you want to try a lab on OCI Speech AI.
-
-    To setup environment, you need OCI administrator's privileges. If you've got these privileges, login into OCI at [cloud.oracle.com](https://www.oracle.com/cloud/sign-in.html). the below image indicates SSO Login as an administrative user. If you have administrative previleges and complete access over a tenancy then you need not create any of the policies below steps.
+    To setup environment, you need OCI administrator's privileges. If you've got these privileges, login into OCI at [cloud.oracle.com](https://www.oracle.com/cloud/sign-in.html). the below image indicates SSO Login as an administrative user. If you have administrative privileges and complete access over a tenancy then you need not create any of the policies below steps.
 
     ![SSO Login](images/sso-login.png)
 
@@ -52,11 +80,42 @@ x
 
     In case you haven't got OCI administrator's privileges, you should ask your OCI administrator to perform the rest of the tasks in this lab.
 
-## Task 2: Create OCI Bucket
+
+## Task 3: Configure access to Oracle Cloud services including keys and config file
+
+If you have not already done so, configuring client access to OCI Services is an extremely convenient way to develop and test and is required by this workshop.
+
+If you have setup client/CLI access then you may skip this task.
+
+1. First create a location to store the keys and config file which is generally `~/.oci`
+
+```
+    <copy>mkdir ~/.oci</copy>
+```
+
+2. You will create a key_file and a `config` file and place them in this directory. The config file will take the following format.
+
+```
+    [DEFAULT]
+      user=ocid1.user.oc1..<unique_ID>
+      fingerprint=<your_fingerprint>
+      key_file=~/.oci/oci_api_key.pem
+      tenancy=ocid1.tenancy.oc1..<unique_ID>
+      region=us-ashburn-1
+```
+
+3. Directions for creating the key and fingerprint can be found here: https://docs.oracle.com/en-us/iaas/Content/API/Concepts/apisigningkey.htm#apisigningkey_topic_How_to_Generate_an_API_Signing_Key_Console
+   and the region, tenancy, and user OCIDs can be found in the OCI console. Simply paste them and save the `config` file.
+
+   ![OCI Setup](images/OCIInfo.png " ")
+4. If you have not used default values, modify the values for OCICONFIG_FILE and OCICONFIG_PROFILE in the env.properties file
+
+
+## Task 4: Create OCI Bucket
   
 You need to upload the audio files into Oracle object storage, to be used in the transcription job(s) in next steps.
 
-1. Create an Object Storage Bucket (This step is optional in case the bucket is already created)
+1. Create an Object Storage Bucket (This step is optional in the case where the bucket is already created)
 
     First, From the OCI Services menu, click Object Storage.
     ![Navigation menu window](./images/cloud-storage-bucket.png " ")
@@ -73,10 +132,11 @@ You need to upload the audio files into Oracle object storage, to be used in the
 
     Then click Create
     ![Click create button](./images/press-bucket-button.png " ")
+2. Provide the values for OBJECTSTORAGE_NAMESPACE and OBJECTSTORAGE_BUCKETNAME in the env.properties file
 
-## Task 3: Create a new compartment
+## Task 5: Create a new compartment
 
-You will use one compartment for all required objects in this workshop, hence you need to create one.
+You will use one compartment for all required objects in this workshop, hence you need to use an existing one or create one.
 
 1. Navigate to Compartments page
 
@@ -84,7 +144,7 @@ You will use one compartment for all required objects in this workshop, hence yo
 
     ![Navigate to Compartments](https://oracle-livelabs.github.io/common/images/console/id-compartment.png " ")
 
-2. Create a new compartment
+2. Create a new compartment if necessary
 
     The list of all active compartments is displayed. Click **Create Compartment** to start creating a new compartment.
 
@@ -92,17 +152,17 @@ You will use one compartment for all required objects in this workshop, hence yo
 
 3. Review compartment details
 
-    Make note of compartment OCID
+    Provide the value for COMPARTMENT_ID OCID in the env.properties file
 
     ![Define a new Compartment](images/details.png)
     
-## Task 4: Setup policies for Compartment management
+## Task 6: Setup policies for Compartment management
 
-You need to create a **policy** which grants manage privileges in a new compartment to the new OCI group.
+If not already present or not running with admin privileges, you need to create a **policy** which grants manage privileges in a new compartment to the new OCI group.
 
 1. Navigate to **Policies** page
 
-    Once again use **Navigator** to navigate to **Identity & Security** and now choose **Policies**.
+    Use **Navigator** to navigate to **Identity & Security** and choose **Policies**.
 
     ![Navigate to Policies](images/id-policies.png)
 
@@ -134,91 +194,7 @@ You need to create a **policy** which grants manage privileges in a new compartm
      <copy>Allow group AIDEMOGroup to manage all-resources in compartment aidemo</copy>
     ```
 
-## Task 5: Setup policies for OCI Data Labeling
-
-One of the tasks in this workshop will be data labeling. This is a process in which all images from your training image library will be assigned a single label that describe that specific image.  To be able to perform your data labeling process, you must perform the following prerequisite steps to:
-
-> **Note:** Please refer [OCI Data Labeling Policies](https://docs.oracle.com/en-us/iaas/Content/data-labeling/using/policies.htm) for more information related to this policy.
- 
-* Create one new dynamic group and
-* Set required policies for data labeling
- 
-1. To find policy details navigate to **Analytics & AI** > **Machine Learning** > **Data Labeling** Service page
-  
-    ![Navigate to Data Labeling](images/navigate-data-labeling.png " ")
-
-2. Open Datasets sub-page
-
-    Click on **Datasets** link under **Data Labeling** on the left side of the page. This will open **Dataset list** page in selected Compartment (you might need to change compartment to the one you have created for this workshop).
-
-    ![Open Datasets page](images/open-datasets-page.png " ")
-
-3. Verify data labeling prerequisites
-
-    Expand **Show more information** to display what prerequisites have to be met before you can start your data labeling exercise. If these are not met, then Data Labeling might not run properly.
-
-    ![Show more information for Data Labeling](images/show-more-for-data-labeling.png " ")
-
-    If you have already created a new OCI group creating a new OCI group is not needed. Continue with creating a new dynamic group.
-
-4. Navigate to Dynamic Groups page
-
-    From **Navigator** menu choose **Identity & Security** and then **Dynamic Groups**.
-
-    ![Navigate to Dynamic Groups](images/navigate-to-dynamic-groups.png " ")
-
-5. Create a new dynamic group
-
-    Click **Create** and define a new **Dynamic Group**.
-
-    Provide **Name**, **Description** and enter the following statement to the **Matching Rules**:
-
-    ```text
-    <copy>ALL { resource.type = 'datalabelingdataset' }</copy>
-    ```
-
-    ![Define dynamic group for data labeling](images/define-dynamic-group-for-data-labeling.png " ")
-
-6. Set policies for data labeling
-
-    From the **Navigator** menu select **Identity & Security** and then choose **Policies**.
-
-    ![Navigate to policies](https://oracle-livelabs.github.io/common/images/console/id-policies.png " ")
-
-7. Create a new policy for non-administrative users
-
-    Make sure that you've selected your *root* compartment first. Then click **Create Policy**.
-
-    The first policy is for non-administrative users. These users are members of previously created OCI Group.
-
-    OCI Group needs the following privileges (assuming OCI Group is called **AIDEMOGroup** and compartment's name is **aidemo**):
-
-    ```text
-    <copy>allow group AIDEMOGroup to read buckets in compartment aidemo
-    allow group AIDEMOGroup to manage objects in compartment aidemo
-    allow group AIDEMOGroup to read objectstorage-namespaces in compartment aidemo
-    allow group AIDEMOGroup to manage data-labeling-family in compartment aidemo</copy>
-    ```
-
-    ![Define data labeling policy for non-administrative users](images/datalabel-policies2.png " ")
- 
-8. Create a new policy for dynamic group
-
-    Repeat **Create Policy** for Dynamic Group you've created in the previous step. 
-
-    Make sure that you've selected your *root* compartment.
-
-    Enter the following statements (assuming Dynamic Group is called **AIDEMODynamicGroup** and compartment's name is **aidemo**):
-
-    ```text
-    <copy>allow dynamic-group AIDEMODynamicGroup to read buckets in compartment aidemo
-    allow dynamic-group AIDEMODynamicGroup to read objects in compartment aidemo
-    allow dynamic-group AIDEMODynamicGroup to manage objects in compartment aidemo where any {request.permission='OBJECT_CREATE'}</copy>
-    ```
- 
-    You are now ready to start using Data Labeling service.
-      
-## Task 6: Setup policies for OCI Vision service
+## Task 7: Setup policies for OCI Vision service
 
 Similarly to Data Labeling service, you will require some privileges to use OCI Vision service. 
 
@@ -251,60 +227,6 @@ Similarly to Data Labeling service, you will require some privileges to use OCI 
 
     You are now ready to start using OCI Vision service.
   
-## Task 7: Setup policies for OCI Document Understanding Service
-
-Before you start using OCI Document Understanding, OCI policies should be setup for allowing you to access OCI Document Understanding Service. Follow these steps to configure required policies.
-
-> **Note:** Please refer [OCI Document Understanding Policies](https://docs.oracle.com/en-us/iaas/document-understanding/document-understanding/using/about_document-understanding_policies.htm#about_vision_policies) for more information related to this policy.
-
-1. Navigate to **Policies** page. In the **Navigator** to navigate to **Identity & Security** and now choose **Policies**.
-
-    ![Navigate to Policies](images/id-policies.png)
-
-2. Create a new policy
-
-    In the **Policies** page click **Create Policy**.
-
-    ![Create a new policy](images/create-a-new-policy.png =30%x*)
-
-3. Create Policy to grant users Document APIs access. Add the below statement to allow all the users in your tenancy to use document understanding:
-
-    Policy statement -
-
-    ```
-    <copy>allow any-user to manage ai-service-document-family in tenancy</copy>
-    ```
-
-    ![OCI Create policy screen](./images/policycompleted.png)
-
-    If you want to limit access to a user group, create a policy with the below statement:
-
-    ```
-    <copy>allow group <group-name> to use ai-service-document-family in tenancy</copy>
-    ```
-
-4. Policy to access input document files in object storage 
-
-  If your want to analyze documents stored in your tenancy's object storage bucket, add the below statement to grant object storage access permissions to the group:
-
-    ```
-    <copy>allow group <group_in_tenancy> to use object-family in tenancy</copy>
-    ```
-        
-  If you want to restrict access to a specific compartment, you can use the following policy instead: 
-
-    ```
-    <copy>allow group <group_in_tenancy> to use object-family in compartment <compartment-ocid></copy>
-    ```
-
-6. Policy to access output location in object storage 
-
-  Document Understanding Service stores results in your tenancy's object store. Add the following policy to grant object storage access permissions to the user group who requested the analysis to documents:
-
-    ```
-    <copy>allow group <group_in_tenancy> to manage object-family in compartment <compartment-ocid></copy>
-    ```
-   
 ## Task 8: Setup policies for OCI Speech
 
 Before you start using OCI Speech, your tenancy administrator should set up the following policies by following below steps:
@@ -358,7 +280,7 @@ Before you start using OCI Speech, your tenancy administrator should set up the 
 
     ![Create policy for group information window](./images/group-name-policy.png " ") 
   
-## Task 9: Setup policies for OCI Anomaly Detection
+## Task 9: Create an Oracle Autonomous Database if necessary
 
 Policy creation steps for this service is same as all other services defined in above tasks, only the statement would change
 
@@ -372,13 +294,6 @@ Policy creation steps for this service is same as all other services defined in 
     </copy>
         ```
 
-2. Policies at a Group level and compartment level (Optional)
-
-    ```
-    <copy>
-    allow group <group-name> to manage ai-service-anomaly-detection-family in compartment <compartment-ocid> 
-    </copy>
-        ```
  
 
 This concludes this lab. You can **proceed now to the next lab**.
