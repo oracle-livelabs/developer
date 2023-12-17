@@ -282,6 +282,20 @@ Before you start using OCI Speech, your tenancy administrator should set up the 
   
 ## Task 9: Create an Oracle Autonomous Database if necessary
 
+If you have a database instance already, you may skip this task.
+
+> **Note:** Please refer [Anomaly Detection Policies](https://docs.oracle.com/en-us/iaas/Content/anomaly/using/policies.htm) for more information related to this policy.
+
+1. Before you start using Anomaly Detection service, your tenancy administrator should set up the following policies.
+
+    ```
+    <copy>
+    allow any-user to manage ai-service-anomaly-detection-family in tenancy 
+    </copy>
+        ```
+
+ ## Task 10: Create the database user, tables, functions, etc. to use for the workshop
+
 Policy creation steps for this service is same as all other services defined in above tasks, only the statement would change
 
 > **Note:** Please refer [Anomaly Detection Policies](https://docs.oracle.com/en-us/iaas/Content/anomaly/using/policies.htm) for more information related to this policy.
