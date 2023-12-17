@@ -276,7 +276,7 @@ Before you start using OCI Speech, your tenancy administrator should set up the 
         allow group <group-name> to use virtual-network-family in tenancy
         allow group <group-name> to manage function-family in tenancy
         </copy>
-        ```
+   ```
 
     ![Create policy for group information window](./images/group-name-policy.png " ") 
   
@@ -284,15 +284,17 @@ Before you start using OCI Speech, your tenancy administrator should set up the 
 
 If you have a database instance already, you may skip this task.
 
-> **Note:** Please refer [Anomaly Detection Policies](https://docs.oracle.com/en-us/iaas/Content/anomaly/using/policies.htm) for more information related to this policy.
+1. Provision the database
 
-1. Before you start using Anomaly Detection service, your tenancy administrator should set up the following policies.
-
-    ```
-    <copy>
-    allow any-user to manage ai-service-anomaly-detection-family in tenancy 
-    </copy>
-        ```
+   ![Provision database](./images/databasesetup1.png " ")
+   ![Provision database](./images/databasesetup2.png " ")
+   ![Provision database](./images/databasesetup3.png " ")
+   ![Provision database](./images/databasesetup4.png " ")
+   ![Provision database](./images/databasesetup5.png " ")
+   ![Provision database](./images/databasesetup6.png " ")
+   ![Provision database](./images/databasesetup7.png " ")
+   ![Provision database](./images/databasesetup8.png " ")
+   ![Provision database](./images/databasesetup9.png " ")
 
  ## Task 10: Create the database user, tables, functions, etc. to use for the workshop
 
@@ -300,7 +302,22 @@ Policy creation steps for this service is same as all other services defined in 
 
 > **Note:** Please refer [Anomaly Detection Policies](https://docs.oracle.com/en-us/iaas/Content/anomaly/using/policies.htm) for more information related to this policy.
 
-1. Before you start using Anomaly Detection service, your tenancy administrator should set up the following policies.
+1. If you have a database user already, you may remove the first line that creates the user
+
+
+   ![Provision database](./images/databaseinit1.png " ")
+   ![Provision database](./images/databaseinit2.png " ")
+   ![Provision database](./images/databaseinit3.png " ")
+   ![Provision database](./images/databaseinit4.png " ")
+   ![Provision database](./images/databaseinit5.png " ")
+   ![Provision database](./images/databaseinit6.png " ")
+   ![Provision database](./images/databaseinit7.png " ")
+   ![Provision database](./images/databaseinit8.png " ")
+   ![Provision database](./images/databaseinit9.png " ")
+   ![Provision database](./images/databaseinit10.png " ")
+   ![Provision database](./images/databaseinit11.png " ")
+   ![Provision database](./images/databaseinit12.png " ")
+   ![Provision database](./images/databaseinit13.png " ")
 
     ```
     <copy>
