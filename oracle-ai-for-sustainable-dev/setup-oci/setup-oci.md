@@ -34,10 +34,12 @@ This lab assumes:
 * You have an Oracle Cloud account with OCI and Tenancy administration privileges to create policies and compartments. 
 
     > **Note 1:**  Policies are only required if you cannot create or use a OCI resources. If you are a tenancy administrator, you will have access to all the resources, and you can **optionally skip policy creations in this lab**. 
-    
-    > **Note 2:**  Set up policies based only on the OCI Services that you want to use. For example, a policy on Anomaly Detection would not be required if you want to try a lab on OCI Speech AI.
+  
 
-    > **Note 3:**  If you have an existing Oracle database, it may be reused, and it is only necessary to follow the steps to create the user, tables, and functions/stored procedures, and expose as ORDS Rest endpoints.
+> **Note 2:**  Set up policies based only on the OCI Services that you want to use. For example, a policy on Anomaly Detection would not be required if you want to try a lab on OCI Speech AI.
+
+
+> **Note 3:**  If you have an existing Oracle database, it may be reused, and it is only necessary to follow the steps to create the user, tables, and functions/stored procedures, and expose as ORDS Rest endpoints.
 
 ## Task 1: Clone workshop source code
 
@@ -284,48 +286,57 @@ Before you start using OCI Speech, your tenancy administrator should set up the 
 
 If you have a database instance already, you may skip this task.
 
-1. Provision the database
-
+1. From the OCI console select `Oracle Database` and then `Autonmous Transaction Processing`.
    ![Provision database](./images/databasesetup1.png " ")
+2. Click the `Create Autonomous Database` button.
    ![Provision database](./images/databasesetup2.png " ")
-   ![Provision database](./images/databasesetup3.png " ")
+3. Select the appropriate compartment to place the database in and provide a database name (any name will suffice).
    ![Provision database](./images/databasesetup4.png " ")
+4. Provide a password for the `ADMIN` user.
    ![Provision database](./images/databasesetup5.png " ")
+5. Click the `Create Autonomous Database` button.
    ![Provision database](./images/databasesetup6.png " ")
+6. The database will begin provisioning. Notice the `Database actions` button.
    ![Provision database](./images/databasesetup7.png " ")
-   ![Provision database](./images/databasesetup8.png " ")
+7. Click the `Database actions` button and the `SQL` item from the drop-down list. After a moment the SQL Worksheet will appear.
    ![Provision database](./images/databasesetup9.png " ")
 
- ## Task 10: Create the database user, tables, functions, etc. to use for the workshop
+ 
+## Task 10: Create the database user, tables, functions, etc. to use for the workshop
 
 Policy creation steps for this service is same as all other services defined in above tasks, only the statement would change
 
-> **Note:** Please refer [Anomaly Detection Policies](https://docs.oracle.com/en-us/iaas/Content/anomaly/using/policies.htm) for more information related to this policy.
 
-1. If you have a database user already, you may remove the first line that creates the user
-
-
+1. Copy and paste the contents of the `create_aiuser.sql` file in the `sql` directory of the source you cloned/downloaded earlier and replace `[Yourpassword]` with a password for the `AIUSER`.  (If you have a database user already, you may remove the first line that creates the user and replace references to it with your user.)
    ![Provision database](./images/databaseinit1.png " ")
+2. Select the run script button to execute the SQL statements.
+   ![Provision database](./images/runscriptbutton.png " ")
+3. Click the upper left drop-down menu and select `Database Users`.
    ![Provision database](./images/databaseinit2.png " ")
+4. Find the `AIUSER` create, click the options drop-down menu (three dots) and select `Enable Rest`.
    ![Provision database](./images/databaseinit3.png " ")
-   ![Provision database](./images/databaseinit4.png " ")
+5. On the screen that pops up simply click `REST Enable User`.
    ![Provision database](./images/databaseinit5.png " ")
-   ![Provision database](./images/databaseinit6.png " ")
-   ![Provision database](./images/databaseinit7.png " ")
-   ![Provision database](./images/databaseinit8.png " ")
-   ![Provision database](./images/databaseinit9.png " ")
-   ![Provision database](./images/databaseinit10.png " ")
-   ![Provision database](./images/databaseinit11.png " ")
-   ![Provision database](./images/databaseinit12.png " ")
+6. Select the `Copy to clipboard` button at the bottom right of the panel. Paste this as the value for `ORDS_ENDPOINT_URL` in the `env.properties` file, however, remove the trailing `_sdw/` so that the value is similar to `https://yourdatabaseserviceid.adb.yourregion.oraclecloudapps.com/ords/aiuser/`
    ![Provision database](./images/databaseinit13.png " ")
+7. Select the drop-down menu in the upper right (which should currently show as `ADMIN`), and click `Sign Out`.
+   ![Provision database](./images/databaseinit6.png " ")
+8. Now log back in as the `AIUSER`.
+   ![Provision database](./images/databaseinit7.png " ")
+9. Select `SQL` from the options on the screen.
+   ![Provision database](./images/databaseinit8.png " ")
+10. Copy and paste the contents of the `aiuser-tables-indexes-functions.sql` file in the `sql` directory of the source you cloned/downloaded earlier
+   ![Provision database](./images/databaseinit9.png " ")
+11. Replace the values in the dbms_cloud.create_credential call with those in your oci config file from earlier. Note you can read the private_key in from file or paste the 
+   ![Provision database](./images/databaseinit11.png " ")
+12. Select the run script button to execute the SQL statements.
+   ![Provision database](./images/runscriptbutton.png " ")
+13. Verify the SQL statements ran correctly. We will describe what each of these tables, functions, etc. does in the 
+   ![Provision database](./images/databaseinit12.png " ")
 
-    ```
-    <copy>
-    allow any-user to manage ai-service-anomaly-detection-family in tenancy 
-    </copy>
-        ```
+Congratulations. You have now set up an elaborate and robust cloud, AI, and database infrastructure. 
 
- 
+The rest of workshop will now show off these features and architecture.
 
 This concludes this lab. You can **proceed now to the next lab**.
    

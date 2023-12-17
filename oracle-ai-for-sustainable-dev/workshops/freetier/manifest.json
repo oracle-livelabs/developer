@@ -1,5 +1,5 @@
 {
-  "workshoptitle": "Develop with Oracle Gen AI, Vision AI, Speech AI, OML, And Database Services",
+  "workshoptitle": "Develop with Oracle AI and Database Services: Gen, Vision, Speech, Language, and OML",
   "help": "livelabs-help-db_us@oracle.com",
 	"tutorials": [
       {
@@ -15,7 +15,7 @@
         "filename": "../../setup-oci/setup-oci.md"
       },
       {
-        "title": "Lab 2: Understanding DBMS_CLOUD AI Calls, JavaScript, and Java calls from the Oracle Database",
+        "title": "Lab 2: Run AI App and Understand DBMS_CLOUD, JavaScript, and Java calls from the Oracle Database",
         "filename": "../../json/json.md"
       },
       {
@@ -24,7 +24,7 @@
       },
       {
         "title": "Lab 4: Speech Transcription And Image Generation For Hands-Free Storyboarding",
-        "filename": "../../ocivision-openaidalle/ocivision-openaidalle.md"
+        "filename": "../../vision-imagegen-sentiment/vision-imagegen-sentiment.md"
       },
       {
         "title": "Lab 5: Object Detection, Gen AI, And Sentiment Analysis For Situational Awareness And Creativity",
