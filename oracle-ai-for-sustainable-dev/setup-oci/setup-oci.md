@@ -24,7 +24,7 @@ In this lab, you will:
 * Create the Oracle Database
 * Create database user, tables, and functions/stored procedures and expose as ORDS Rest endpoints
 * Configure access to Oracle Cloud services including keys and config file
-* Provide the application with the information needed to access the Oracle Database and Oracle AI Services.
+* Populate the env.properties file with values gathered during setup to provide the application with the information needed to access the Oracle Database and Oracle AI Services.
 
 
 ### Prerequisites
@@ -228,6 +228,7 @@ Similarly to Data Labeling service, you will require some privileges to use OCI 
     Click **Create**. 
 
     You are now ready to start using OCI Vision service.
+4. Set the value of `OCI_VISION_SERVICE_ENDPOINT` in the env.properties file to the appropriate value. This simply entails replacing `myregion` with your region, such as `us-ashburn-1`.
   
 ## Task 8: Setup policies for OCI Speech
 
@@ -281,7 +282,9 @@ Before you start using OCI Speech, your tenancy administrator should set up the 
    ```
 
     ![Create policy for group information window](./images/group-name-policy.png " ") 
-  
+2. Set the value of `OCI_SPEECH_SERVICE_ENDPOINT` in the env.properties file to the appropriate value. This simply entails replacing `myregion` with your region, such as `us-ashburn-1`.
+
+
 ## Task 9: Create an Oracle Autonomous Database if necessary
 
 If you have a database instance already, you may skip this task.
@@ -336,7 +339,7 @@ Policy creation steps for this service is same as all other services defined in 
 
 Congratulations. You have now set up an elaborate and robust cloud, AI, and database infrastructure. 
 
-The rest of workshop will now show off these features and architecture.
+You should also have all of the necessary values in the env.properties file and the rest of workshop will now show off these features and architecture.
 
 This concludes this lab. You can **proceed now to the next lab**.
    
