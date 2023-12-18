@@ -1,4 +1,4 @@
-# Deploy Your Own AI Model On OCI
+# Deploy Your Own ChatGPT/AI Model On OCI
 
 ## Introduction
 
@@ -26,7 +26,7 @@ This lab assumes you have:
 
 1. Click the **Navigation Menu** in the upper left, navigate to **Compute**, and select **Instances**.
 
-    ![Compute Instances](https://oracle-livelabs.github.io/common/images/console/compute-instances.png " ")
+    ![Compute Instances](images/compute-instances.png " ")
 
 2. Click **Create Instance**.
 
@@ -96,8 +96,8 @@ There are multiple ways to connect to your cloud instance.  Choose the way to co
     ![Open cloud shell.](https://oracle-livelabs.github.io/common/images/console/cloud-shell-open.png " ")
 
 2.  Enter the command below to login into your instance.
-    ````text
-    ssh -i ~/.ssh/<sshkeyname> opc@<Your Compute Instance Public IP Address>
+    ```` text
+    <copy>ssh -i ~/.ssh/<sshkeyname> opc@<Your Compute Instance Public IP Address></copy>
     ````
 
 3.  When prompted, answer **yes** to continue connecting.
@@ -106,8 +106,8 @@ There are multiple ways to connect to your cloud instance.  Choose the way to co
 
 1.  Open up a terminal (MAC) or cygwin emulator. Enter the command below to log in to your instance. Enter yes when prompted.
 
-    ```text
-    ssh -i ~/.ssh/<sshkeyname> opc@<Your Compute Instance Public IP Address>
+    ``` text
+    <copy>ssh -i ~/.ssh/<sshkeyname> opc@<Your Compute Instance Public IP Address></copy>
     ```
 
 ### Windows using Putty
@@ -154,56 +154,56 @@ After connecting to your instance, you will create a Conda environment and insta
 
 1. Create a new conda environment.
 
-  	```
-    <copy>conda create -n "example" python=3.10</copy>
+  	```<copy>
+    conda create -n "example" python=3.10
     ```
 
     ![Conda Create](images/conda_create.png " ")
 
 2. Activate the environment.
 
-  	```
-    <copy>conda activate example</copy>
+  	```<copy>
+    conda activate example</copy>
     ```
 
 3. Check which pip and python paths are being used.
 
-  	```
-    <copy>which pip</copy>
+  	```<copy>
+    which pip</copy>
     ```
 
-  	```
-    <copy>which python</copy>
+  	```<copy>
+    which python</copy>
     ```
 
     ![Conda example](images/conda_example.png " ")
 
 4. Install the dependencies.
 
-  	```
-    <copy>pip install nomic</copy>
+  	```<copy>
+    pip install nomic</copy>
     ```
 
     ![Install Nomic](images/nomic.png " ")
 
-  	```
-    <copy>pip install gpt4all</copy>
+  	```<copy>
+    pip install gpt4all</copy>
     ```
 
     ![Install gpt4all](images/gpt4all.png " ")
 
 5. Download the Groovy model
 
-  	```
-    <copy>curl -O  https://gpt4all.io/models/ggml-gpt4all-j-v1.3-groovy.bin</copy>
+  	```<copy>
+    curl -O  https://gpt4all.io/models/ggml-gpt4all-j-v1.3-groovy.bin
     ```
 
     ![download groovy](images/groovy.png " ")
 
 6. Clone the GitHub repository.
 
-  	```
-    <copy>git clone https://github.com/jasperan/oci-gpt4</copy>
+  	```<copy>
+    git clone https://github.com/jasperan/oci-gpt4
     ```
 
     ![clone repos](images/clone_repo.png " ")
@@ -234,15 +234,8 @@ After connecting to your instance, you will create a Conda environment and insta
 
     ![ask generation nomic](images/example.png " ")
 
-<!-- ## Learn More
-
-*(optional - include links to docs, white papers, blogs, etc)*
-
-* [URL text 1](http://docs.oracle.com)
-* [URL text 2](http://docs.oracle.com)  -->
-
 
 ## Acknowledgements
+* **Author** - Nacho Martínez Rincón, Data Scientist Advocate
 * **Author** - Hannah Nguyen, Solution Engineer, NACI Engineering Specialists
-<!-- * **Contributors** -  <Name, Group> -- optional -->
-* **Last Updated By/Date** - Hannah Nguyen, August 2023
+* **Last Updated By/Date** - Paul Parkinson, 2023

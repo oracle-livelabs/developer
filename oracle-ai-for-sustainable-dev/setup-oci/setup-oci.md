@@ -97,7 +97,7 @@ If you have setup client/CLI access then you may skip this task.
 
 2. You will create a key_file and a `config` file and place them in this directory. The config file will take the following format.
 
-```
+``` text
     [DEFAULT]
       user=ocid1.user.oc1..<unique_ID>
       fingerprint=<your_fingerprint>
@@ -109,7 +109,7 @@ If you have setup client/CLI access then you may skip this task.
 3. Directions for creating the key and fingerprint can be found here: https://docs.oracle.com/en-us/iaas/Content/API/Concepts/apisigningkey.htm#apisigningkey_topic_How_to_Generate_an_API_Signing_Key_Console
    and the region, tenancy, and user OCIDs can be found in the OCI console. Simply paste them and save the `config` file.
 
-   ![OCI Setup](images/OCIInfo.png " ")
+   ![OCI Setup](images/ociinfo.png " ")
 4. If you have not used default values, modify the values for OCICONFIG_FILE and OCICONFIG_PROFILE in the env.properties file
 
 
