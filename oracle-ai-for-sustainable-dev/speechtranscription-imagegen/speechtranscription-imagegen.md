@@ -7,7 +7,6 @@ The use case involves the creation webpages and storyboards using only voice com
 
 Estimated Time:  3 minutes
 
-[](youtube:sCpUT5y6aR8)
 
 ### Objectives
 

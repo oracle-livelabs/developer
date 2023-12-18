@@ -4,7 +4,6 @@
 
 This lab walks you through the steps to deploy your own Chat GPT model on OCI. First, you will create a compute instance. Next, you will create a Conda environment and install dependencies. Then, you will download the Groovy model and GitHub examples. Finally, you will run an example, which will deploy the model on your OCI compute instance.
 
-[](youtube:T-acysQOT_4:large)
 
 Estimated Time: 30 minutes
 

@@ -7,7 +7,6 @@ The use case involves detect objects in an image and write a sentence using thos
 
 Estimated Time:  3 minutes
 
-[//]: # ([]&#40;youtube:GDma-8uxMUc&#41;)
 
 ### Objectives
 

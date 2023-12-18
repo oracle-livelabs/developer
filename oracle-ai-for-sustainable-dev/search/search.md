@@ -7,7 +7,6 @@ This allows for the optimal searching of AI text results and processing.
 
 Estimated Time:  3 minutes
 
-[//]: # ([](youtube:sCpUT5y6aR8))
 
 ### Objectives
 

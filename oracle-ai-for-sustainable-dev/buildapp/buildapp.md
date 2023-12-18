@@ -6,7 +6,6 @@ This lab will show you how to use Oracle Database JSON features to story, analyz
 
 Estimated Time:  3 minutes
 
-[](youtube:JVrJx9_tnoI)
 
 ### Objectives
 
