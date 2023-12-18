@@ -85,7 +85,7 @@ Each lab will elaborate on how calls to Oracle AI Services, other OCI services, 
 
 The following diagram shows a couple different AI application architectures.  Notice the advantages in functional and efficiency of using the Oracle Database at the heart of the architecture related to security, network traffic, analysis and processing, etc.
 
-![Different AI app architectures](images/AI-db-calls-arch.png " ")
+![Different AI app architectures](images/ai-db-calls-arch.png " ")
 
 You may now **proceed to the next lab.**..
 

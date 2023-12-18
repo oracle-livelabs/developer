@@ -19,11 +19,11 @@ Estimated Time:  3 minutes
 ## Task 1: Run the application
 
 1. Open http://localhost:8080 in a browser to access the application home page and click `Database Text Search and DBMS_SEARCH`.
-   ![App home page text detection link](images/search1.png " ")
+   ![select search](images/search1.png " ")
 2. Enter a CONTAINS query clause/parameter in the text field such as the examples provided and click `Submit`.
-   ![App home page text detection link](images/search2.png " ")
+   ![enter query](images/search2.png " ")
 3. Notice the results of the query of the AI results obtained in the other labs in this workshop.
-   ![App home page text detection link](images/search3.png " ")
+   ![view results](images/search3.png " ")
 4. This should help you understand some syntax and power of Text Searches in the Oracle Database. Examine in the `sql/aiuser-tables-indexes-functions.sql` file how easy it was to create the index to enable this.
 
 ```

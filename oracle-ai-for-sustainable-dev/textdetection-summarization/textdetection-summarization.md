@@ -19,14 +19,14 @@ Estimated Time:  3 minutes
 ## Task 1: Run the application
 
 1. Open http://localhost:8080 in a browser to access the application home page and click `Text Detection And Summarization Generation`.
-![App home page text detection link](images/textdetection_genai1.png " ")
+![select text detection](images/textdetection_genai1.png " ")
 2. Select an image file with text in it such as the sample blood sugar report file provided.
-![App home page text detection link](images/textdetection_genai3.png " ")
+![select image file](images/textdetection_genai3.png " ")
 3. Select the option to process the image inline (no storage) or store the image and AI results and click `Submit`.
-![App home page text detection link](images/textdetection_genai4.png " ")
-![App home page text detection link](images/textdetection_genai2.png " ")
+![select processing option](images/textdetection_genai4.png " ")
+![click submit](images/textdetection_genai2.png " ")
 4. View the results which show a diagnosis summary in simple terms and suggestions for improvement (also stating that this is of course not a substitue for professional medical advice which should be consulted). 
-![App home page text detection link](images/textdetection_genai5.png " ")
+![view results](images/textdetection_genai5.png " ")
 5. Notice the PL/SQL function code in the `sql/aiuser-tables-indexes-functions.sql` file that is called by this application and how it calls DBMS_CLOUD, parses the JSON, and stores the results, and also REST/ORDS enable the function.
 
 ```

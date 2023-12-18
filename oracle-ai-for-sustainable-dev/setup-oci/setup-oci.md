@@ -290,19 +290,19 @@ Before you start using OCI Speech, your tenancy administrator should set up the 
 If you have a database instance already, you may skip this task.
 
 1. From the OCI console select `Oracle Database` and then `Autonmous Transaction Processing`.
-   ![Provision database](./images/databasesetup1.png " ")
+   ![select database](./images/databasesetup1.png " ")
 2. Click the `Create Autonomous Database` button.
-   ![Provision database](./images/databasesetup2.png " ")
+   ![select create button](./images/databasesetup2.png " ")
 3. Select the appropriate compartment to place the database in and provide a database name (any name will suffice).
-   ![Provision database](./images/databasesetup4.png " ")
+   ![select compartment](./images/databasesetup4.png " ")
 4. Provide a password for the `ADMIN` user.
-   ![Provision database](./images/databasesetup5.png " ")
+   ![provide password](./images/databasesetup5.png " ")
 5. Click the `Create Autonomous Database` button.
-   ![Provision database](./images/databasesetup6.png " ")
+   ![select create](./images/databasesetup6.png " ")
 6. The database will begin provisioning. Notice the `Database actions` button.
-   ![Provision database](./images/databasesetup7.png " ")
+   ![notice actions](./images/databasesetup7.png " ")
 7. Click the `Database actions` button and the `SQL` item from the drop-down list. After a moment the SQL Worksheet will appear.
-   ![Provision database](./images/databasesetup9.png " ")
+   ![click actions](./images/databasesetup9.png " ")
 
  
 ## Task 10: Create the database user, tables, functions, etc. to use for the workshop
@@ -311,31 +311,31 @@ Policy creation steps for this service is same as all other services defined in 
 
 
 1. Copy and paste the contents of the `create_aiuser.sql` file in the `sql` directory of the source you cloned/downloaded earlier and replace `[Yourpassword]` with a password for the `AIUSER`.  (If you have a database user already, you may remove the first line that creates the user and replace references to it with your user.)
-   ![Provision database](./images/databaseinit1.png " ")
+   ![paste create_aiuser.sql](./images/databaseinit1.png " ")
 2. Select the run script button to execute the SQL statements.
-   ![Provision database](./images/runscriptbutton.png " ")
+   ![select run](./images/runscriptbutton.png " ")
 3. Click the upper left drop-down menu and select `Database Users`.
-   ![Provision database](./images/databaseinit2.png " ")
+   ![select dropdown in upper left](./images/databaseinit2.png " ")
 4. Find the `AIUSER` create, click the options drop-down menu (three dots) and select `Enable Rest`.
-   ![Provision database](./images/databaseinit3.png " ")
+   ![find AIUSER](./images/databaseinit3.png " ")
 5. On the screen that pops up simply click `REST Enable User`.
-   ![Provision database](./images/databaseinit5.png " ")
+   ![click rest enable user](./images/databaseinit5.png " ")
 6. Select the `Copy to clipboard` button at the bottom right of the panel. Paste this as the value for `ORDS_ENDPOINT_URL` in the `env.properties` file, however, remove the trailing `_sdw/` so that the value is similar to `https://yourdatabaseserviceid.adb.yourregion.oraclecloudapps.com/ords/aiuser/`
-   ![Provision database](./images/databaseinit13.png " ")
+   ![copy to clipboard](./images/databaseinit13.png " ")
 7. Select the drop-down menu in the upper right (which should currently show as `ADMIN`), and click `Sign Out`.
-   ![Provision database](./images/databaseinit6.png " ")
+   ![select dropdown](./images/databaseinit6.png " ")
 8. Now log back in as the `AIUSER`.
-   ![Provision database](./images/databaseinit7.png " ")
+   ![log in as AIUSER](./images/databaseinit7.png " ")
 9. Select `SQL` from the options on the screen.
-   ![Provision database](./images/databaseinit8.png " ")
+   ![select SQL](./images/databaseinit8.png " ")
 10. Copy and paste the contents of the `aiuser-tables-indexes-functions.sql` file in the `sql` directory of the source you cloned/downloaded earlier
-   ![Provision database](./images/databaseinit9.png " ")
+   ![paste aiuser-tables-indexes-functions.sql](./images/databaseinit9.png " ")
 11. Replace the values in the dbms_cloud.create_credential call with those in your oci config file from earlier. Note you can read the private_key in from file or paste the 
-   ![Provision database](./images/databaseinit11.png " ")
+   ![provide values for dbms_cloud.create_credential](./images/databaseinit11.png " ")
 12. Select the run script button to execute the SQL statements.
-   ![Provision database](./images/runscriptbutton.png " ")
+   ![select run script](./images/runscriptbutton.png " ")
 13. Verify the SQL statements ran correctly. We will describe what each of these tables, functions, etc. does in the 
-   ![Provision database](./images/databaseinit12.png " ")
+   ![very sql ran correctly](./images/databaseinit12.png " ")
 
 Congratulations. You have now set up an elaborate and robust cloud, AI, and database infrastructure. 
 

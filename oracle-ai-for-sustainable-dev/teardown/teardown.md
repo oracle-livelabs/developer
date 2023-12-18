@@ -17,7 +17,7 @@ Estimates Time: 3 minutes
 ## Task 1: Delete Database
 
 1. Simply click the `Terminate` option in the `More actions` drop-down menu on the database page.
-   ![Lab2 App](images/terminatedatabase.jpg " ")
+   ![terminate database button](images/terminatedatabase.jpg " ")
 
 ## Task 2: Delete the src code
 

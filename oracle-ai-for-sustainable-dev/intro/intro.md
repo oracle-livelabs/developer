@@ -9,7 +9,7 @@ The use cases for demonstrating this functionality are designed around
 the 2030 Agenda for Sustainable Development, adopted by all United Nations Member States
  More information can be found at https://sdgs.un.org/goals and the 17 goals are shown here:
 
-![](./images/UN-sustainabilitygoals.png "UN sustainability goals")
+![sustainability goals](./images/un-sustainabilitygoals.png "UN sustainability goals")
 
 Estimated Workshop Time: 90 minutes
 

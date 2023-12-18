@@ -19,15 +19,15 @@ Estimated Time:  3 minutes
 ## Task 1: Run the application
 
 1. Open http://localhost:8080 in a browser to access the application home page and click `Object Detection, Text Generation, and Sentiment Analysis`.
-   ![App home page text detection link](images/objectdetection_textgen_sentiment1.png " ")
+   ![select object detection](images/objectdetection_textgen_sentiment1.png " ")
 2. Select an image file with objects in it such as the sample file provided.
-   ![App home page text detection link](images/objectdetection_textgen_sentiment2.png " ")
+   ![select an image file](images/objectdetection_textgen_sentiment2.png " ")
 3. Select an option for the theme of the story that will be generated.
-   ![App home page text detection link](images/objectdetection_textgen_sentiment3.png " ")
+   ![select story theme option](images/objectdetection_textgen_sentiment3.png " ")
 4. Select the option to process the image inline (no storage) or store the image and AI results and click `Submit`.
-   ![App home page text detection link](images/objectdetection_textgen_sentiment4.png " ")
+   ![select processing option](images/objectdetection_textgen_sentiment4.png " ")
 5. View the results which both the generated story and the sentiments found in the generated story.
-   ![App home page text detection link](images/objectdetection_textgen_sentiment5.png " ")
+   ![view results](images/objectdetection_textgen_sentiment5.png " ")
 6. Notice the PL/SQL function code in the sql/aiuser-tables-indexes-functions.sql file that is called by this application and how it calls DBMS_CLOUD, parses the JSON, and stores the results, and also REST/ORDS enable the function.
 
 ```CREATE OR REPLACE FUNCTION VISIONAI_OBJECTDETECTION (
