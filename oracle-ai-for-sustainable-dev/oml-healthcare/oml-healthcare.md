@@ -1,4 +1,4 @@
-# OML for Healthcare
+# Oracle Machine Learning For Healthcare
 
 ## Introduction
 
@@ -16,10 +16,7 @@ Estimated Time:  20 minutes
 
 ### Prerequisites
 
-- Knowledge of Oracle Database and Python
-- Download the dataset files here: 
-    * [vitals_subset_training.csv](https://objectstorage.us-ashburn-1.oraclecloud.com/p/k27ve6wh2rLQu3pyCXdsm9iOVW5siT9iqADQZLOJJpWh21bEyReB4ao7X33foOP5/n/orasenatdpltsecitom03/b/LiveLabs/o/vitals_subset_training.csv) 
-    * [vitals_synthetic.csv](https://objectstorage.us-ashburn-1.oraclecloud.com/p/k27ve6wh2rLQu3pyCXdsm9iOVW5siT9iqADQZLOJJpWh21bEyReB4ao7X33foOP5/n/orasenatdpltsecitom03/b/LiveLabs/o/vitals_synthetic.csv)
+- Completion of Setup lab
 
 ## Task 1: Create an Oracle Autonomous Database
 
@@ -67,11 +64,11 @@ Estimated Time:  20 minutes
 
 2. Sign out of the console and sign back in with your new user. Copy, paste, and select **Data Loading** and **Upload Data into New Table...**.
 
-3. Download the CSVs using this link below and upload the following CSVs into a new table using the console:
-     * [vitals_subset_training.csv](https://objectstorage.us-ashburn-1.oraclecloud.com/p/k27ve6wh2rLQu3pyCXdsm9iOVW5siT9iqADQZLOJJpWh21bEyReB4ao7X33foOP5/n/orasenatdpltsecitom03/b/LiveLabs/o/vitals_subset_training.csv) 
-     * [vitals_synthetic.csv](https://objectstorage.us-ashburn-1.oraclecloud.com/p/k27ve6wh2rLQu3pyCXdsm9iOVW5siT9iqADQZLOJJpWh21bEyReB4ao7X33foOP5/n/orasenatdpltsecitom03/b/LiveLabs/o/vitals_synthetic.csv)
-
+3. Upload the vitals_subset_training.csv and vitals_synthetic.csv files in the `datasets` directory of the source code repository you cloned/downloaded during the setup lab.
+    
     ![Load data in console](images/load-data.png " ") 
+
+    * These datasets are generated and are completely anonymous, comply with GDPR, free of licensing, etc.
 
 4. Click the **Green Button** to run the loading process and close the console after completing.
 
@@ -195,4 +192,4 @@ You may now **proceed to the next lab.**..
 ## Acknowledgements
 
 * **Author** - Nicholas Cusato, Cloud Engineer
-* **Last Updated By/Date** - Nicholas Cusato, Sepetember 2023
+* **Last Updated By/Date** - Nicholas Cusato,  2023

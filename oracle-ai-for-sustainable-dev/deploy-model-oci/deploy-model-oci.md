@@ -1,4 +1,4 @@
-# Deploy your own Chat GPT model on OCI
+# Deploy Your Own AI Model On OCI
 
 ## Introduction
 

@@ -2,7 +2,7 @@
 
 ## Introduction
 
-In this lab, we will tear down the 21c ATP PDBs your tenancy and the workshop directory in the Oracle cloud shell.
+In this lab, we will tear down the database in your tenancy and remove the src files.
 
 Estimates Time: 3 minutes
 

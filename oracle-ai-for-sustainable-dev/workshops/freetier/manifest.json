@@ -15,7 +15,7 @@
         "filename": "../../setup-oci/setup-oci.md"
       },
       {
-        "title": "Lab 2: Run AI App and Understand DBMS_CLOUD, JavaScript, and Java calls from the Oracle Database",
+        "title": "Lab 2: Run AI App and Overview of DBMS_CLOUD, JavaScript, and Java calls from the Oracle Database",
         "filename": "../../buildapp/buildapp.md"
       },
       {
@@ -32,11 +32,11 @@
       },
       {
         "title": "Lab 6: Face Detection For Gaze and Head Pose Estimation",
-        "filename": "../../ocivision-mixedreality/ocivision-mixedreality.md"
+        "filename": "../../facialrecognition/facialrecognition.md"
       },
       {
         "title": "Lab 7: Text Search and DBMS_SEARCH of AI results",
-        "filename": "../../search/search"
+        "filename": "../../search/search.md"
       },
       {
         "title": "Lab 8: Mixed Reality and Vision AI For Hearing And Vision Impaired And Alzheimer’s",
@@ -47,7 +47,7 @@
         "filename": "../../oml-healthcare/oml-healthcare.md"
       },
       {
-        "title": "Lab 10: Deploy Your Own Chat GPT Model On OCI",
+        "title": "Lab 10: Deploy Your Own AI Model On OCI",
         "filename": "../../deploy-model-oci/deploy-model-oci.md"
       },
       {
