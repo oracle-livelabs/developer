@@ -351,5 +351,6 @@ This concludes this lab. You can **proceed now to the next lab**.
 ## Acknowledgements
 
 * **Author** - Madhusudhan Rao B M, Principal Product Manager, Oracle Database
+* **Author** - Paul Parkinson, Architect and Developer Advocate, Oracle Database
 
-* **Last Updated By/Date** - 11th August, 2023.
+* **Last Updated By/Date** - 2023.
