@@ -33,14 +33,8 @@ This lab assumes:
 
 * You have an Oracle Cloud account with OCI and Tenancy administration privileges to create policies and compartments. 
 
-    > **Note 1:**  Policies are only required if you cannot create or use a OCI resources. If you are a tenancy administrator, you will have access to all the resources, and you can **optionally skip policy creations in this lab**. 
+    > **Note:**  Policies are only required if you cannot create or use a OCI resources. If you are a tenancy administrator, you will have access to all the resources, and you can **optionally skip policy creations in this lab**.
   
-
-> **Note 2:**  Set up policies based only on the OCI Services that you want to use. For example, a policy on Anomaly Detection would not be required if you want to try a lab on OCI Speech AI.
-
-
-> **Note 3:**  If you have an existing Oracle database, it may be reused, and it is only necessary to follow the steps to create the user, tables, and functions/stored procedures, and expose as ORDS Rest endpoints.
-
 ## Task 1: Clone workshop source code
 
 1. Clone workshop code
@@ -57,16 +51,18 @@ This lab assumes:
 
 2. Open the env.properties file in the root directory in a text editor. You will populate the values in this file as part of this lab. It will look something like this:
    
-   `OCICONFIG_FILE=~/.oci/config
-   OCICONFIG_PROFILE=DEFAULT
-   COMPARTMENT_ID=ocid1.compartment.oc1..mycompartmentvalue
-   OBJECTSTORAGE_NAMESPACE=myobjectstorenamespacename
-   OBJECTSTORAGE_BUCKETNAME=myobjectstorebucketname
-   ORDS_ENDPOINT_URL=https://myordsendpointurl
-   ORDS_ENDPOINT_URL=https://rddainsuh6u1okc-aidatabaseworkshop.adb.us-ashburn-1.oraclecloudapps.com/ords/aiuser/_sdw/
-   OCI_VISION_SERVICE_ENDPOINT=https://vision.aiservice.myregion.oci.oraclecloud.com
-   OCI_SPEECH_SERVICE_ENDPOINT=https://speech.aiservice.myregion.oci.oraclecloud.com
-   OCI_GENAI_SERVICE_ENDPOINT=https://genai.aiservice.us-chicago-1.oci.oraclecloud.com`
+   ```code
+      OCICONFIG_FILE=~/.oci/config
+      OCICONFIG_PROFILE=DEFAULT
+      COMPARTMENT_ID=ocid1.compartment.oc1..mycompartmentvalue
+      OBJECTSTORAGE_NAMESPACE=myobjectstorenamespacename
+      OBJECTSTORAGE_BUCKETNAME=myobjectstorebucketname
+      ORDS_ENDPOINT_URL=https://myordsendpointurl
+      ORDS_ENDPOINT_URL=https://rddainsuh6u1okc-aidatabaseworkshop.adb.us-ashburn-1.oraclecloudapps.com/ords/aiuser/_sdw/
+      OCI_VISION_SERVICE_ENDPOINT=https://vision.aiservice.myregion.oci.oraclecloud.com
+      OCI_SPEECH_SERVICE_ENDPOINT=https://speech.aiservice.myregion.oci.oraclecloud.com
+      OCI_GENAI_SERVICE_ENDPOINT=https://genai.aiservice.us-chicago-1.oci.oraclecloud.com
+      ```
 
 ## Task 2: Log into OCI 
 

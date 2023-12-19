@@ -18,29 +18,29 @@ Estimated Time:  3 minutes
 
 ## Task 1: Run the application
 
-1. Open http://localhost:8080 in a browser to access the application home page and click `Database Text Search and DBMS_SEARCH`.
+   1. Open http://localhost:8080 in a browser to access the application home page and click `Database Text Search and DBMS_SEARCH`.
    ![select search](images/search1.png " ")
-2. Enter a CONTAINS query clause/parameter in the text field such as the examples provided and click `Submit`.
+   2. Enter a CONTAINS query clause/parameter in the text field such as the examples provided and click `Submit`.
    ![enter query](images/search2.png " ")
-3. Notice the results of the query of the AI results obtained in the other labs in this workshop.
+   3. Notice the results of the query of the AI results obtained in the other labs in this workshop.
    ![view results](images/search3.png " ")
-4. This should help you understand some syntax and power of Text Searches in the Oracle Database. Examine in the `sql/aiuser-tables-indexes-functions.sql` file how easy it was to create the index to enable this.
+   4. This should help you understand some syntax and power of Text Searches in the Oracle Database. Examine in the `sql/aiuser-tables-indexes-functions.sql` file how easy it was to create the index to enable this.
+      
+      ```
+      CREATE TABLE aivision_results
+          (id RAW (16) NOT NULL,
+           date_loaded TIMESTAMP WITH TIME ZONE,
+           label varchar2(20),
+           textfromai varchar2(32767),
+           jsondata CLOB
+           CONSTRAINT ensure_aivision_results_json CHECK (jsondata IS JSON));
+      /
+      
+      create index aivisionresultsindex on aivision_results(textfromai) indextype is ctxsys.context;
+      /
+      ```
 
-```
-CREATE TABLE aivision_results
-    (id RAW (16) NOT NULL,
-     date_loaded TIMESTAMP WITH TIME ZONE,
-     label varchar2(20),
-     textfromai varchar2(32767),
-     jsondata CLOB
-     CONSTRAINT ensure_aivision_results_json CHECK (jsondata IS JSON));
-/
-
-create index aivisionresultsindex on aivision_results(textfromai) indextype is ctxsys.context;
-/
-```
-
-DBMS_SEARCH is new functionality in 23c.  It is suggested that you try the [Easy Text Search over Multiple Tables and Views with DBMS_SEARCH in 23c workshop](https://apexapps.oracle.com/pls/apex/r/dbpm/livelabs/view-workshop?wid=3721) to learn more.
+   DBMS_SEARCH is new functionality in 23c.  It is suggested that you try the [Easy Text Search over Multiple Tables and Views with DBMS_SEARCH in 23c workshop](https://apexapps.oracle.com/pls/apex/r/dbpm/livelabs/view-workshop?wid=3721) to learn more.
 
 You may now **proceed to the next lab.**..
 

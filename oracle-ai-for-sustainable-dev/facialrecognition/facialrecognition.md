@@ -17,11 +17,11 @@ Estimated Time:  3 minutes
 
 ## Task 1: Run the application
 
-1. Open http://localhost:8080 in a browser to access the application home page and click `Face Recognition`.
+   1. Open http://localhost:8080 in a browser to access the application home page and click `Face Recognition`.
    ![face recognition page](images/facialrecognition1.png " ")
-2. Select an image file with faces in it such as the sample file provided and click `Submit`.
+   2. Select an image file with faces in it such as the sample file provided and click `Submit`.
    ![select image file](images/facialrecognition2.png " ")
-3. View the results of the analysis indicated various facial features and there coordinates in the image.
+   3. View the results of the analysis indicated various facial features and there coordinates in the image.
    ![view results](images/facialrecognition3.png " ")
 
 You may now **proceed to the next lab.**..

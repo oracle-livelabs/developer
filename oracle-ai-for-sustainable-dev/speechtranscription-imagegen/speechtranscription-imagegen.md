@@ -18,13 +18,13 @@ Estimated Time:  3 minutes
 
 ## Task 1: Run the application
 
-1. Open http://localhost:8080 in a browser to access the application home page and click `SpeechTranscription And Image Generation`.
+   1. Open http://localhost:8080 in a browser to access the application home page and click `SpeechTranscription And Image Generation`.
    ![select speech transcription](images/speech_imagegen1.png " ")
-2. Select an audio file with speech in it such as the `shipwrecked` file provided.
+   2. Select an audio file with speech in it such as the `shipwrecked` file provided.
    ![select an audio file](images/speech_imagegen2.png " ")
-3. Select an option for the format of image to be generated based on the speech transcription and click `Submit`.
+   3. Select an option for the format of image to be generated based on the speech transcription and click `Submit`.
    ![select format option](images/speech_imagegen3.png " ")
-4. Notice the generated image. You can choose to add more pictures to create a story board based on the audio transcriptions (eg `paradise` and `invaded` continue a Robinson Crusoe themed storyline)
+   4. Notice the generated image. You can choose to add more pictures to create a story board based on the audio transcriptions (eg `paradise` and `invaded` continue a Robinson Crusoe themed storyline)
    ![notice generated image](images/speech_imagegen4.png " ")
 
 You may now **proceed to the next lab.**..
