@@ -128,7 +128,7 @@ If you are using an Oracle LiveLabs-provided sandbox, you don't have privileges 
 
     > **Note:** You cannot scale up/down an Always Free autonomous database.
 
-    ![Choose the remaining parameters.](./images/adb-create-screen-configure-db.png "Configuration")
+    ![Choose the remaining parameters.](images/adb-create-screen-configure-db.png "Configuration")
 
 7. Create administrator credentials:
 
@@ -140,7 +140,7 @@ If you are using an Oracle LiveLabs-provided sandbox, you don't have privileges 
     - The password must not be the same password that you set less than 24 hours ago.
     - Re-enter the password to confirm it. Make a note of this password.
 
-    ![Enter password and confirm password.](./images/adb-create-screen-password.png "Admin password")
+    ![Enter password and confirm password.](images/adb-create-screen-password.png "Admin password")
 
 8. Choose network access:
     - For this lab, accept the default, **Secure access from everywhere**.
@@ -148,7 +148,7 @@ If you are using an Oracle LiveLabs-provided sandbox, you don't have privileges 
     - If you want to restrict access to a private endpoint within an OCI VCN, select **Private endpoint access only** in the Choose network access area.
     - If the **Require mutual TLS (mTLS) authentication** option is selected, mTLS will be required to authenticate connections to your Autonomous Database. TLS connections allow you to connect to your Autonomous Database without a wallet, if you use a JDBC thin driver with JDK8 or above. See the [documentation for network options](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/support-tls-mtls-authentication.html#GUID-3F3F1FA4-DD7D-4211-A1D3-A74ED35C0AF5) for options to allow TLS, or to require only mutual TLS (mTLS) authentication.
 
-    ![Choose the network access.](./images/adb-create-screen-choose-network.png "Networking options")
+    ![Choose the network access.](images/adb-create-screen-choose-network.png "Networking options")
 
 9. Choose a license type. <if type="freetier">For this lab, choose **License Included**.</if><if type="livelabs">For this lab, choose **Bring Your Own License (BYOL)**.</if> The two license types are:
     - **Bring Your Own License (BYOL)** - Select this type when your organization has existing database licenses.
@@ -169,31 +169,31 @@ If you are using an Oracle LiveLabs-provided sandbox, you don't have privileges 
 
 12.  Your instance will begin provisioning.
 
-    ![Database Provisioning message.](./images/adb-create-provisioning-message.png "Provisioning")
+    ![Database Provisioning message.](images/adb-create-provisioning-message.png "Provisioning")
 
     In a few minutes, the state will turn from Provisioning to Available. At this point, your Autonomous Database instance is ready to use! Have a look at your instance's details - including its name, database version, OCPU count, and storage size.
 
-    ![Database complete message.](./images/adb-create-complete-message.png "Complete")
+    ![Database complete message.](images/adb-create-complete-message.png "Complete")
 
 ## Task 4: How to create an Oracle APEX Workspace
 
 1. Once the Autonomous Database has been fully provisioned, return to the *Autonomous Database* page, locate the instance's display name, and then click on it to view the ADB's details page. Click the *Tools* tab. 
 2. Click the *Copy* button to copy the URL to launch the Oracle APEX development environment. Open the link in a new browser window or tab.
-![Launch the Oracle APEX App Builder.](./images/launch-oracle-apex-app-builder.png)
+![Launch the Oracle APEX App Builder.](images/launch-oracle-apex-app-builder.png)
 3. For new Autonomous Database instances, this should launch the **Administration Services** login screen. Enter the password for the *admin* user and click the **Sign In to Administration** button.
-![Login to the Oracle APEX Administration Services.](./images/login-to-oracle-apex-administration-services.png)
+![Login to the Oracle APEX Administration Services.](images/login-to-oracle-apex-administration-services.png)
 4. Again, for new Autonomous Database instances, after a successful login, the browser will redirect to the page shown below. Click the **Create Workspace** button.
-![Click the Create Workspace button.](./images/create-a-new-workspace.png)
+![Click the Create Workspace button.](images/create-a-new-workspace.png)
 5. Click and select the **New Schema** option.
-![Select to create a workspace using a new schema.](./images/create-workspace-using-a-new-schema.png)
+![Select to create a workspace using a new schema.](images/create-workspace-using-a-new-schema.png)
 1. Enter the desired **Workspace Name** and **Workspace Username**. The will be used to create an Oracle Database user account. Also, provide a new **Workspace Password** that conforms to the same password policy. Click the **Create Workspace** button to create the workspace.
-![Provide the desired workspace name, and the administrator's username and password.](./images/provide-workspace-name-and-admin-credentials.png)
+![Provide the desired workspace name, and the administrator's username and password.](images/provide-workspace-name-and-admin-credentials.png)
 1. After the workspace has been successfully provisioned, click the button on the top-right, and then click the **Sign out** button to return to the App Builder login screen.
-![Sign out of the Administration Services.](./images/sign-out-of-administration-services.png)
+![Sign out of the Administration Services.](images/sign-out-of-administration-services.png)
 1. Enter the workspace name, username, and password set earlier when creating the workspace. Click the **Sign In** button to access the newly created workspace.
-![Login to the new workspace.](./images/login-to-new-workspace.png)
+![Login to the new workspace.](images/login-to-new-workspace.png)
 1. After successful authentication, the browser will redirect to the default App Builder landing page where workspace administrators and developers will have access to various functionalities to develop and manage APEX applications.
-![Once signed in, the workspace administrator and developers have access to the App Builder and a few other utilities.](./images/oracle-apex-development-environment-home-page.png)
+![Once signed in, the workspace administrator and developers have access to the App Builder and a few other utilities.](images/oracle-apex-development-environment-home-page.png)
 
 ## Task 5: How to run SQL queries in Oracle APEX
 
@@ -202,15 +202,15 @@ There are several ways to run SQL queries, few most frequently used techniques a
 1. You can run SQL queries in APEX Workspace under **SQL Workshop** in top navigation and select Option **SQL Commands**
 2. Copy paste SQL queries in the editor window and click on **Run** button
 
-    ![SQL Commands](./images/apex-run-sql.png)
+    ![SQL Commands](images/apex-run-sql.png)
 
 3. Some times you might need to run SQL queries within an APEX page for example displaying data from a table, such SQL queries can be written in SQL Query Editor, this query executes during the page runtime. 
 
-    ![SQL Commands](./images/apex-collection.png)
+    ![SQL Commands](images/apex-collection.png)
 
 4. Some times you might need to run SQL queries based on a button click, in that case create **Dynamic Action** under the button, and add **Execute server side code**
 
-    ![SQL Commands](./images/apex-sendmail-5.png)
+    ![SQL Commands](images/apex-sendmail-5.png)
 
 ## Task 6: How to setup Oracle APEX Web Credentials
 

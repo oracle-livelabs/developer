@@ -5,7 +5,7 @@
     "adb-goto-service-body.md": "https://raw.githubusercontent.com/oracle-livelabs/common/main/building-blocks/tasks/adb/goto-service-body.md",
     "adb-provision-body.md": "https://raw.githubusercontent.com/oracle-livelabs/common/main/building-blocks/tasks/adb/provision-body.md"
   },
-  "help": "livelabs-help-aiservices_us@oracle.com",
+  "help": "livelabs-help-devdb-us@oracle.com",
   "tutorials": [
     {
       "title": "Introduction",

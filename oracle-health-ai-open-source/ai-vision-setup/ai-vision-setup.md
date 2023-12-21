@@ -56,20 +56,20 @@ You need to upload the audio files into Oracle object storage, to be used in the
 1. Create an Object Storage Bucket (This step is optional in case the bucket is already created)
 
     First, From the OCI Services menu, click Object Storage.
-    ![Navigation menu window](./images/cloud-storage-bucket.png " ")
+    ![Navigation menu window](images/cloud-storage-bucket.png " ")
 
     Then, Select Compartment from the left dropdown menu. Choose the compartment matching your name or company name.
-    ![Choose compartment from dropdown](./images/create-compartment.png " ")
+    ![Choose compartment from dropdown](images/create-compartment.png " ")
 
     Next click Create Bucket.
-    ![Create bucket button](./images/create-bucket-button.png " ")
+    ![Create bucket button](images/create-bucket-button.png " ")
 
     Next, fill out the dialog box:
     * Bucket Name: Provide a name <br/>
     * Storage Tier: STANDARD
 
     Then click Create
-    ![Click create button](./images/press-bucket-button.png " ")
+    ![Click create button](images/press-bucket-button.png " ")
 
 ## Task 3: Create a new compartment
 
@@ -242,7 +242,7 @@ Similarly to Data Labeling service, you will require some privileges to use OCI 
     allow group AIDEMOGroup to manage object-family in tenancy</copy>
     ``` 
 
-    ![OCI Create policy](./images/policyeditor.png)
+    ![OCI Create policy](images/policyeditor.png)
 
     Click **Create**. 
 
@@ -272,7 +272,7 @@ Before you start using OCI Document Understanding, OCI policies should be setup 
     <copy>allow any-user to manage ai-service-document-family in tenancy</copy>
     ```
 
-    ![OCI Create policy screen](./images/policycompleted.png)
+    ![OCI Create policy screen](images/policycompleted.png)
 
     If you want to limit access to a user group, create a policy with the below statement:
 
@@ -323,21 +323,21 @@ Before you start using OCI Speech, your tenancy administrator should set up the 
     allow any-user to manage function-family in tenancy
     </copy>
     ```
-    ![create policy information window](./images/any-user-policy.png " ")
+    ![create policy information window](images/any-user-policy.png " ")
 
     If you want to limit access to a user group, first create a group
 
     Navigate to OCI groups:
-        ![Naviagte group menu](./images/navigate-to-groups.png " ")
+        ![Naviagte group menu](images/navigate-to-groups.png " ")
 
     Click "Create Group"
-        ![Create groups button](./images/create-group.png " ")
+        ![Create groups button](images/create-group.png " ")
 
     Add group name and description, click create
-        ![Add Group name and description window](./images/group-name-description.png " ")
+        ![Add Group name and description window](images/group-name-description.png " ")
 
     To add users click "Add User to Group" and select user from dialog
-        ![Add users to group button](./images/add-users-to-group.png " ")
+        ![Add users to group button](images/add-users-to-group.png " ")
 
     Create a new policy with the below statement, replace  group-name with your group name
 

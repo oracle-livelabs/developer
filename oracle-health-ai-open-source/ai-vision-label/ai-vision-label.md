@@ -70,7 +70,7 @@ But before you continue, you need to perform the first step, **Create Dataset** 
 
 2. Oracle provides code which can be adjusted and used in your specific case. You can find the *original code* on [Github](https://github.com/oracle-samples/oci-data-science-ai-samples/tree/master/data_labeling_examples).
 
-    ![Data labeling on Github](./images/data-labeling-examples.png " ")
+    ![Data labeling on Github](images/data-labeling-examples.png " ")
 
 3. Alternatively you can also download this python code. [data-labeling-python-code.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/b1_vZe_9llVqw_oTDq-SQyRrkDshcuABTHc6QuUDG984jfUi0mbk5x7pOZ7mPDPh/n/c4u04/b/livelabsfiles/o/partner-solutions/oas-and-vision/lab2.zip) to your computer.
 
