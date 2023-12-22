@@ -2,10 +2,11 @@
 
 ## About Java Management Service Advanced Features
 
-Java Management Service (JMS) consists of a series of advanced features that enables customers deeper observation and management of Java SE Runtimes and applications, tracking Java servers and libraries, performing JDK Flight Recorder, cryptographic analysis, Java migration analysis and performance analysis on Java applications.
+Java Management Service (JMS) consists of a series of advanced features that enables customers deeper observation and management of Java SE Runtimes and applications, applying Deployment Rule Set (DRS), tracking Java servers and libraries, performing JDK Flight Recorder, cryptographic analysis, Java migration analysis and performance analysis on Java applications.
 
 As a customer, you can:
   * View and identify Java Runtimes.
+  * Apply Deployment Rule Set.
   * Install Java Runtimes and perform java post-installation actions.
   * Remove unwanted Java Runtimes.
   * Track Java servers and libraries.
@@ -34,6 +35,7 @@ _Estimated Time:_ 260 minutes
 ### Objectives
 
 * Set up and enable Advanced Features on Java Management Service
+* Apply Deployment Rule Set.
 * Configure Post Install Actions and Install Java Runtimes
 * Remove Java Runtimes
 * Install Java Runtimes
@@ -50,12 +52,14 @@ _Estimated Time:_ 260 minutes
 
   * This workshop requires an Oracle Cloud account. You may use your **own cloud account** or you can get a **Free Trial** account as described in *Get Started*.
   * You are using an Oracle Linux image or Windows OS on your Managed Instance for this workshop.
+  * A host machine running macOS could be used, however not all JMS advanced features are supported. We recommend using a Linux or Windows based machine.
   * Have access to the cloud environment with the resources configured by following the steps in the workshop [Manage Java Runtimes, Applications and Managed Instances Inventory with Java Management Service](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=912).
 
 ## Learn More
 
 * [Java Management Service Advanced Features](https://docs.oracle.com/en-us/iaas/jms/doc/advanced-features.html)
+* [Oracle University](https://mylearn.oracle.com/ou/home)
 
 ## Acknowledgements
 * **Author** - Bhuvesh Kumar, Java Management Service
-* **Last Updated By** - Sherlin Yeo, June 2023
+* **Last Updated By** - Chan Wei Quan, October 2023

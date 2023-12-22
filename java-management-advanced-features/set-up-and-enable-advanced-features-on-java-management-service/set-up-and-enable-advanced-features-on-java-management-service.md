@@ -7,8 +7,8 @@ Before using JMS advanced features, you must ensure that your Oracle Cloud Infra
 Estimated Time: 30 minutes
 
 ### Requirements to use advanced features
-* Run applications or Java servers using **JDK 11** or higher 
-* If the applications or Java servers must be using **Java 8**, then it needs to use at least **Oracle JDK 8u361** or higher
+* Run applications or Java servers using **JDK 11** or higher.
+* If the application or Java server uses **Java SE 8**, then it needs to use at least **Oracle JDK 8u361** or higher.
 * Management Agent should use either **Oracle JDK 8u361** or higher for on-premises environment or **Oracle JDK 11** for OCI compute instances.
 * Lifecycle Management is supported only for Oracle JDKs.
 
@@ -32,6 +32,10 @@ In this lab, you will configure:
 
 1. In the Oracle Cloud Console, open the navigation menu, click **Observability & Management**, and then click **Fleets** under **Java Management**. Select the fleet that you are interested in.
    ![image of console navigation to access fleet](images/console-navigation-jms.png)
+   
+   > **Note:** You can also use the search bar to navigate around the Oracle Cloud Console.
+   
+   ![image of console navigation using search bar for fleets](images/oci-console-search-bar-fleets.png)
 
 2. Click **Edit Properties**. A separate edit fleet properties window should appear
    ![image of edit fleet properties](images/fleet-edit-properties.png)
@@ -254,7 +258,7 @@ If you are using a Managed Instance that is not on OCI and you have installed th
 
   ![image of agent detail page](images/deploy-jms-plug-in-done.png)
 
-7. To enable `Java Management Service` plug-in, click **Deploy plug-ins**, check `Java Management Service` option and click **Update**. After 5-10 minutes, you should see the `Java Management Service` plug-in enabled under `Service Plug-ins` field.
+7. To enable `Java Management Service` plug-in, click **Deploy plug-ins**, check `Java Management Service` option and click **Update**. Verification can be achieved from service plug-ins after 5-10 minutes, you should see the `Java Management Service` plug-in enabled under `Service Plug-ins` field.
 
   ![image of updating the plug-in](images/deploy-jms-plug-in.png)
 
@@ -269,4 +273,4 @@ You may now **proceed to the next lab.**
 ## Acknowledgements
 
 * **Author** - Bhuvesh Kumar, Java Management Service
-* **Last Updated By** - Sherlin Yeo, June 2023
+* **Last Updated By** - Chan Wei Quan, October 2023

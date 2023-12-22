@@ -18,7 +18,7 @@ In this lab, you will:
 * Verify Java server scanning result.
 
 ### Supported Versions of Java Servers
-* WebLogic: 14.1.1.0.0, 12.2.1.4.0
+* WebLogic: 14.1.1.0.0, 12.2.1.4.0 (The latest version is recommended)
 * JBoss: 7.0 to 7.4
 * Tomcat: 8.5 to 10
 
@@ -34,7 +34,8 @@ In this lab, you will:
 1. If you do not have WebLogic server installed and configured in your managed instance, refer to following steps.
     * [Download WebLogic Server](https://www.oracle.com/middleware/technologies/weblogic-server-installers-downloads.html)
     * [Install WebLogic Server with Sample Applications](https://docs.oracle.com/en/middleware/standalone/weblogic-server/14.1.1.0/intro/examples.html#GUID-F9F246B1-E186-46C7-846C-DA510295582F)
-
+    * [Install WebLogic Server in Silent Mode (for non-gui instances)](https://docs.oracle.com/en/middleware/fusion-middleware/12.2.1.4/ouirf/using-oracle-universal-installer-silent-mode.html#GUID-5F06D02F-6D71-45B9-BF41-5D5759D31958)
+    
 2. Avitek Medical Records (also known as **MedRec**) is a comprehensive educational sample application installed with the WebLogic Server installation (Complete with Examples). Please take note of the **absolute path to the domain directory created for MedRec Application**. This path will be required for the subsequent task.
 
   For example: **/home/opc/Oracle/Middleware/Oracle\_Home/user\_projects/domains/medrec**
@@ -47,7 +48,7 @@ In this lab, you will:
       <copy>
         chmod 400 ./<your-private-key-file>
       </copy>
-      ```
+    ```
     Connect to your instance with this SSH command
     ```
       <copy>
@@ -59,7 +60,7 @@ In this lab, you will:
       <copy>
         sudo <path-to-created-domain-for-MedRec>/startWebLogic.sh
       </copy>
-    ``` 
+    ```
     You should see a similar output message after the server has successfully started.
     ![image of Output of start WebLogic Server](images/start-weblogic-server.png)
 
@@ -68,18 +69,22 @@ In this lab, you will:
 1. Open the navigation menu, click **Observability & Management**. Under **Java Management**, select **Fleets**.
     ![image of navigation menu](images/console-navigation-fleet.png)
     Select the fleet with the advanced feature, **Lifecycle management** enabled. Refer to  [Lab 1](?lab=set-up-and-enable-advanced-features-on-java-management-service).
-    
+
 2. On the Fleet details page, click **Scan for Java servers**.
     ![image of scan java servers](images/scan-java-servers.png)
     If your request is submitted successfully, you should receive a notification in green as seen below: 
     ![image of work request created for scan java servers](images/work-request-of-servers-scan-created.png)
 
 3. Scroll down the Fleet details page, under **Resources** menu, select **Work Request**. You should see the Scan for Java servers Work Request you submitted in step 1. Wait for the work request to complete.
+
     ![image of work request for java servers scan in progress](images/work-request-of-servers-scan-in-progress.png)
 
 4. If your request is successful, you should see that the Status of the request is marked as **Completed without errors**.  
-It will take approximately 10 minutes for the request to be completed.
-    ![image of work request for java servers scan completed](images/work-request-of-servers-scan-completed.png)
+
+   > **Note:** It will take approximately 10 minutes for the request to be completed. 
+
+   ![image of work request for java servers scan completed](images/work-request-of-servers-scan-completed.png)
+
 5. In the same Fleet details page, under **Resources** menu, select **Java servers**. You should be able to see all the Java servers present in the fleet.
     ![image of detected java servers](images/java-server-detected.png)
 
@@ -108,4 +113,4 @@ You may now **proceed to the next lab.**
 ## Acknowledgements
 
 * **Author** - Youcheng Li, Java Management Service
-* **Last Updated By** - Sherlin Yeo, June 2023
+* **Last Updated By** - Siqi Liu, October 2023

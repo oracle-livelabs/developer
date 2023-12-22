@@ -132,7 +132,7 @@ In this step, we'll assign data to the variables by adding a "value" event that 
 
     ![The Country Input Text component on the Edit Employee page selected.](images/country-field.png "")
 
-2. Click the component's **Events** tab in the Properties pane, then select **+ New Event** and **On 'value'**.
+2. Click the component's **Events** tab in the Properties pane, then select **+ Event Listener** and **On 'value'**.
 
 3. When the InputTextValueChangeChain opens in the Action Chain editor, double-click the **Call REST** action in the Actions palette to add it to the canvas.
 
@@ -173,4 +173,4 @@ In this step, we'll assign data to the variables by adding a "value" event that 
 ## Acknowledgements
 
 * **Author** - Sheryl Manoharan, VB Studio User Assistance, July 2022
-* **Last Updated By/Date** - Sheryl Manoharan, September 2023
+* **Last Updated By/Date** - Sheryl Manoharan, November 2023
