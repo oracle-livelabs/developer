@@ -34,6 +34,9 @@ In this lab, you will:
 
 
 ## Task 1: Create Your Autonomous Database
+ 
+ >**Note:** If during this workshop you encounter any issues copy and pasting commands from the workshop guide code blocks to the Cloud Shell command prompt, right clicking when pasting and selecting "Paste as Plain Text" should resolve the issue.
+ 
  1. Log in to the Oracle Cloud.
 
     ![Oracle home page](./images/1cloudhomepage.png " ")
