@@ -224,5 +224,6 @@ You may now **proceed to the next lab**.
 
 ## Acknowledgements
 
+* **Author** - Paul Parkinson, Architect and Developer Advocate
 * **Author** - Madhusudhan Rao B M, Principal Product Manager, Oracle Database
-* **Last Updated By/Date** - 14th August, 2023.
+* **Last Updated By/Date** - 2023.

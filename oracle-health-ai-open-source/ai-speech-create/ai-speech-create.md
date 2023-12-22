@@ -2,7 +2,7 @@
 
 ## Introduction
 
-In this lab, we will walk you through uploading an audio file into OCI object storage, creating a Speech transcription job and reviewing the transcription output in JSON and SRT formats. This Speech to Text content becomes an input for Oracle Gen AI AI, and it responds with an AI message.
+In this lab, we will walk you through uploading an audio file into OCI object storage, creating a Speech transcription job and reviewing the transcription output in JSON and SRT formats. This Speech to Text content becomes an input for Oracle Gen AI, and it responds with an AI message.
 
 In the Healthcare world, this finds two use cases: one in Medical Transcription, where hospitals typically receive voice files dictating medical documents from healthcare providers or audio messages from patients. The voice files are converted into text files, which can be further processed by emailing concerned doctors or patients.
 

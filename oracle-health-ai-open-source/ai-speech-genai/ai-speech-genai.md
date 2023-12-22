@@ -1,4 +1,4 @@
-# OCI Speech with Oracle Gen AI AI Integration
+# OCI Speech with Oracle Gen AI Integration
 
 ## Introduction
 
@@ -467,7 +467,7 @@ This lab assumes you have:
 
     ![Oracle Gen AI Key](images/cohere-example-2.png " ")
    
-    > **Congratulations**, you have completed **OCI Speech with Oracle Gen AI AI Integration** Lab. The subsequent labs are optional, however, please proceed to the next lab to learn more about **Setup Oracle Digital Assistant**. 
+    > **Congratulations**, you have completed **OCI Speech with Oracle Gen AI Integration** Lab. The subsequent labs are optional, however, please proceed to the next lab to learn more about **Setup Oracle Digital Assistant**. 
 
 ## Learn More
   

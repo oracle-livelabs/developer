@@ -9,7 +9,6 @@
   "tutorials": [
     {
       "title": "Introduction",
-      "description": "Introduction to AI Vision Detect Breast Cancer",
       "filename": "../../introduction/introduction.md"
     },
     {
@@ -18,13 +17,12 @@
       "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/cloud-login.md"
     },
     {
-      "title": "Lab 1: Setup OCI Policies",
-      "filename": "../../ai-vision-setup/ai-vision-setup.md"
+      "title": "Lab 1: Clone Workshop Source And Provision Autonomous Database ",
+      "filename": "../../setup-oci/setup-oci.md"
     },
     {
-      "title": "Lab 2: Create an Oracle Autonomous Database",
-      "description": "Provision an Autonomous Database",
-      "filename": "../../ai-vision-provision/ai-vision-provision.md"
+      "title": "Lab 2: Setup OCI Policies",
+      "filename": "../../ai-vision-setup/ai-vision-setup.md"
     },
     {
       "title": "Lab 3: Setup OCI CLI",
@@ -60,11 +58,11 @@
     },
     {
       "title": "Lab 11: Full Stack Application for Speech Transcription",
-      "filename": "../../ai-speech-apex-ui/ai-speech-apex-ui.md"
+      "filename": "../../ai-speech-app/ai-speech-app.md"
     },
     {
       "title": "Lab 12: Oracle Speech and Oracle Gen AI Integration",
-      "filename": "../../ai-speech-cohere/ai-speech-cohere.md"
+      "filename": "../../ai-speech-genai/aai-speech-genai"
     },
     {
       "title": "Lab 13: Setup Oracle Digital Assistant",
