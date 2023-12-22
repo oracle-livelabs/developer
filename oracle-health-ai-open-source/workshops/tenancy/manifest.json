@@ -17,17 +17,17 @@
       "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/cloud-login.md"
     },
     {
-      "title": "Lab 1: Clone Workshop Source And Provision Autonomous Database ",
+      "title": "Lab 1: Clone and Build Workshop Source",
       "filename": "../../setup-oci/setup-oci.md"
     },
     {
-      "title": "Lab 2: Setup OCI Policies",
-      "filename": "../../ai-vision-setup/ai-vision-setup.md"
+      "title": "Lab 2: Provision Autonomous Database, and setup OCI",
+      "filename": "../../setup-oci/setup-oci.md"
     },
     {
-      "title": "Lab 3: Setup OCI CLI",
-      "filename": "../../ai-vision-setup-ocicli/ai-vision-setup-ocicli.md"
-    }, 
+      "title": "Lab 3: Setup OCI Policies",
+      "filename": "../../ai-vision-setup/ai-vision-setup.md"
+    },
     {
       "title": "Lab 4: Create Image Library",
       "filename": "../../ai-vision-create/ai-vision-create.md"
