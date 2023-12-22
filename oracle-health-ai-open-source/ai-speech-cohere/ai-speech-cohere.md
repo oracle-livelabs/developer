@@ -1,8 +1,8 @@
-# OCI Speech with Cohere AI Integration
+# OCI Speech with Oracle Gen AI AI Integration
 
 ## Introduction
 
-In this Lab, we will see how to integrate [OCI AI Speech](https://www.oracle.com/artificial-intelligence/speech/) Input as prompts to [Cohere](https://cohere.com/) AI Service.
+In this Lab, we will see how to integrate [OCI AI Speech](https://www.oracle.com/artificial-intelligence/speech/) Input as prompts to [Oracle Gen AI](https://cohere.com/) AI Service.
    
 You can ask Questions like 
 
@@ -10,7 +10,7 @@ Example 1
   
 *please help me with common cold curing*
 
-Cohere would respond back as
+Oracle Gen AI would respond back as
 
 *1. Get plenty of rest. 2. Drink lots of fluids, such as water, juice, and clear broth. 3. Use saline nose drops to relieve congestion. 4. Sip warm liquids such as broth, tea, or apple cider. 5. Take over-the-counter medications such as ibuprofen or acetaminophen to reduce fever and aches. 6. Use a humidifier or take a warm, steamy shower to help ease congestion. 7. Gargle with warm salt water to soothe a sore throat. 8. Avoid contact with people who have colds. 9. Avoid smoking and secondhand smoke. 10. Increase your vitamin C intake.*
 
@@ -18,24 +18,24 @@ Example 2
 
 *Hello doctor, I have pain in my neck, please help me thank you*
 
-Cohere would respond back as
+Oracle Gen AI would respond back as
 
 *There are a few things you can do to help reduce the pain in your neck. First, try to identify the cause of the pain. If it is due to a specific activity, such as typing or writing, try to take a break from that activity. Second, try to relax your neck muscles. You can do this by gently massaging them or by taking a warm bath. Third, try to ensure that your neck is properly supported when you are sitting or lying down. You can do this by using a pillow or by placing your head on a soft surface. Finally, if the pain is severe or persists for more than a few days, you should seek medical attention.*
  
 Estimated Time: 30 minutes.
 
-### [About Cohere](https://cohere.com/)
+### [About Oracle Gen AI](https://cohere.com/)
 
-Cohere is the leading AI platform for enterprise. Its world-class AI is uniquely suited to the needs of business, unlocking unprecedented ease-of-use, accessibility, and data privacy. Cohere’s platform is cloud-agnostic, accessible through API as a managed service, and can be deployed on virtual private cloud (VPC) or even on-site to meet companies where their data is, offering the highest levels of flexibility and control. Founded by Google Brain alumni and a co-author of the seminal Transformer research paper, Cohere is on a mission to transform enterprises and their products with AI that unlocks a more intuitive way to generate, search, and summarize information than ever before.
+Oracle Gen AI is the leading AI platform for enterprise. Its world-class AI is uniquely suited to the needs of business, unlocking unprecedented ease-of-use, accessibility, and data privacy. Oracle Gen AI’s platform is cloud-agnostic, accessible through API as a managed service, and can be deployed on virtual private cloud (VPC) or even on-site to meet companies where their data is, offering the highest levels of flexibility and control. Founded by Google Brain alumni and a co-author of the seminal Transformer research paper, Oracle Gen AI is on a mission to transform enterprises and their products with AI that unlocks a more intuitive way to generate, search, and summarize information than ever before.
   
 ### Objectives
 
 In this lab, you will:
 
-* Create Cohere Key
-* Understand Cohere Authentication  
-* Integrating Oracle Speech AI Output with Cohere
-* Cohere Integration with Oracle APEX without using OCI Speech AI
+* Create Oracle Gen AI Key
+* Understand Oracle Gen AI Authentication  
+* Integrating Oracle Speech AI Output with Oracle Gen AI
+* Oracle Gen AI Integration with Oracle APEX without using OCI Speech AI
 
 ### Prerequisites
 
@@ -258,15 +258,15 @@ This lab assumes you have:
         </copy>
         ```
 -->
-## Task 1: Create Cohere Key  
+## Task 1: Create Oracle Gen AI Key  
 
 1. Sign up and Sign in and [generate AI API Key](https://dashboard.cohere.ai/api-keys)  
 
-2. Generate Cohere API Key and read API key [limitations](https://docs.cohere.com/docs/going-live)
+2. Generate Oracle Gen AI API Key and read API key [limitations](https://docs.cohere.com/docs/going-live)
 
     ![Generative AI](images/cohere-key.png) 
 
-## Task 2: Getting AI Response from Cohere 
+## Task 2: Getting AI Response from Oracle Gen AI 
 
 1. Review the request JSON, Call API end point at https://api.cohere.ai/v1/generate
 
@@ -306,10 +306,10 @@ This lab assumes you have:
     </copy>
     ```
 
-3. PL/SQL Code to send request and get response back from Cohere, you can create an Oracle APEX Dynamic Region to display the results taking input from a page item after submitting the page. Construct PL/SQL Code block, Replace this code in the PL/SQL Dynamic content window, use [JSON_TABLE](https://docs.oracle.com/en/database/oracle/oracle-database/19/sqlrf/JSON_TABLE.html) to create a PL/SQL cursor 
+3. PL/SQL Code to send request and get response back from Oracle Gen AI, you can create an Oracle APEX Dynamic Region to display the results taking input from a page item after submitting the page. Construct PL/SQL Code block, Replace this code in the PL/SQL Dynamic content window, use [JSON_TABLE](https://docs.oracle.com/en/database/oracle/oracle-database/19/sqlrf/JSON_TABLE.html) to create a PL/SQL cursor 
 
 
-    ![Cohere Page](images/cohere-page.png) 
+    ![Oracle Gen AI Page](images/cohere-page.png) 
 
 1. Response Dynamic PL/SQL block code
 
@@ -365,13 +365,13 @@ This lab assumes you have:
     </copy>
     ```
 
-    ![Cohere Response](images/cohere-response.png) 
+    ![Oracle Gen AI Response](images/cohere-response.png) 
 
-## Task 3: Cohere Integration with OCI Speech AI
+## Task 3: Oracle Gen AI Integration with OCI Speech AI
  
-1. Create PL/SQL Dynamic Content, This will open Speech AI Job file, Extract the Voice to text converted content from the JSON file. feed this as Input to Cohere prompt and display results back from cohere.
+1. Create PL/SQL Dynamic Content, This will open Speech AI Job file, Extract the Voice to text converted content from the JSON file. feed this as Input to Oracle Gen AI prompt and display results back from cohere.
 
-    ![Cohere Key](images/dynamic-region.png " ")
+    ![Oracle Gen AI Key](images/dynamic-region.png " ")
  
 2. PL/SQL Code block
    
@@ -428,7 +428,7 @@ This lab assumes you have:
                     apex_web_service.g_request_headers(1).name := 'Content-Type';
                     apex_web_service.g_request_headers(1).value := 'application/json';
                     apex_web_service.g_request_headers(2).name := 'Authorization';
-                    apex_web_service.g_request_headers(2).value := 'Bearer Your-Cohere-API-Key';
+                    apex_web_service.g_request_headers(2).value := 'Bearer Your-Oracle Gen AI-API-Key';
                 
                     l_body  := '{
                         "model": "command",
@@ -461,13 +461,13 @@ This lab assumes you have:
 
 3. 1st example of AI Input
 
-    ![Cohere Key](images/cohere-example-1.png " ")
+    ![Oracle Gen AI Key](images/cohere-example-1.png " ")
 
 4. 2nd example of AI Input
 
-    ![Cohere Key](images/cohere-example-2.png " ")
+    ![Oracle Gen AI Key](images/cohere-example-2.png " ")
    
-    > **Congratulations**, you have completed **OCI Speech with Cohere AI Integration** Lab. The subsequent labs are optional, however, please proceed to the next lab to learn more about **Setup Oracle Digital Assistant**. 
+    > **Congratulations**, you have completed **OCI Speech with Oracle Gen AI AI Integration** Lab. The subsequent labs are optional, however, please proceed to the next lab to learn more about **Setup Oracle Digital Assistant**. 
 
 ## Learn More
   

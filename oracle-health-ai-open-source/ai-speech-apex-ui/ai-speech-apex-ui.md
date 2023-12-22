@@ -635,7 +635,7 @@ There are 4 main sections on this page
     </copy>
     ```
 
-    > **Congratulations**, you have completed **Creating APEX Application for Speech Transcription** Labs. The subsequent labs are optional, however, please proceed to the next lab to learn more about **OCI Speech with Cohere AI Integration**. 
+    > **Congratulations**, you have completed **Creating APEX Application for Speech Transcription** Labs. The subsequent labs are optional, however, please proceed to the next lab to learn more about **OCI Speech with Oracle Gen AI AI Integration**. 
 
 ## Learn More
 

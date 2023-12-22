@@ -63,7 +63,7 @@
       "filename": "../../ai-speech-apex-ui/ai-speech-apex-ui.md"
     },
     {
-      "title": "Lab 12: Oracle Speech and Cohere Integration",
+      "title": "Lab 12: Oracle Speech and Oracle Gen AI Integration",
       "filename": "../../ai-speech-cohere/ai-speech-cohere.md"
     },
     {
@@ -76,6 +76,10 @@
     },
     {
       "title": "Lab 15: Full Stack Maps and Spatial queries to Locate Hospitals",
+      "filename": "../../apex-map/apex-map.md"
+    },
+    {
+      "title": "Lab 16: Deploy and Run as Microservices in Kubernetes Cluster",
       "filename": "../../apex-map/apex-map.md"
     },
     {

@@ -29,15 +29,19 @@ Estimated Workshop Time: 12 hours
 This lab assumes you have the following:
 
 * An Oracle account
-* Intermediate Developer Knowledge of Oracle APEX and Oracle PL/SQL ( if you plan to build APEX Application)
+* Some developer knowledge of related programming languages (eg Flutter, Java, ...) and Oracle PL/SQL
  
-[**AI for Healthcare**](https://en.wikipedia.org/wiki/Artificial_intelligence_in_healthcare) Learn about the latest innovations in Healthcare, Detect Breast Cancer and Lung Cancer using [**OCI Vision**](https://www.oracle.com/in/artificial-intelligence/vision/) at an early stage. Detect Cardiovascular disease with Electrocardiogram (ECG) Reports and [**OCI Anomaly Detection**](https://www.oracle.com/in/artificial-intelligence/anomaly-detection/). Use the power of [**OCI Document Understanding**](https://www.oracle.com/in/artificial-intelligence/document-understanding/) to submit medical expenses, or using [**OCI Speech**](https://www.oracle.com/in/artificial-intelligence/speech/), ask a doctor about specific medical symptoms and get a response from a virtual Doctor leveraging the power of [**Cohere**](https://cohere.com/). Chat with a virtual doctor through [**Oracle Digital Assistant**](https://www.oracle.com/chatbots/), asking questions related to Breast cancer or Lung cancer or Covid and how to diagnose them. Analyze complex clinical data or genome sequences with [**Oracle Analytics Cloud**](https://www.oracle.com/in/business-analytics/analytics-platform/) or locate the nearest Hospital with [**Oracle Spatial and Maps**](https://www.oracle.com/in/database/spatial/) and contact them.[**Oracle Process Automation**](https://docs.oracle.com/en/cloud/paas/process-automation/index.html) and [**Oracle Integration Cloud**](https://www.oracle.com/in/integration/application-integration/) for Patient Admission Process. and much more. 
+[**AI for Healthcare**](https://en.wikipedia.org/wiki/Artificial_intelligence_in_healthcare) Learn about the latest innovations in Healthcare, Detect Breast Cancer and Lung Cancer using [**OCI Vision**](https://www.oracle.com/in/artificial-intelligence/vision/) at an early stage. Detect Cardiovascular disease with Electrocardiogram (ECG) Reports and [**OCI Anomaly Detection**](https://www.oracle.com/in/artificial-intelligence/anomaly-detection/). Use the power of [**OCI Document Understanding**](https://www.oracle.com/in/artificial-intelligence/document-understanding/) to submit medical expenses, or using [**OCI Speech**](https://www.oracle.com/in/artificial-intelligence/speech/), ask a doctor about specific medical symptoms and get a response from a virtual Doctor leveraging the power of [**Oracle Gen AI**](https://cohere.com/). Chat with a virtual doctor through [**Oracle Digital Assistant**](https://www.oracle.com/chatbots/), asking questions related to Breast cancer or Lung cancer or Covid and how to diagnose them. Analyze complex clinical data or genome sequences with [**Oracle Analytics Cloud**](https://www.oracle.com/in/business-analytics/analytics-platform/) or locate the nearest Hospital with [**Oracle Spatial and Maps**](https://www.oracle.com/in/database/spatial/) and contact them.[**Oracle Process Automation**](https://docs.oracle.com/en/cloud/paas/process-automation/index.html) and [**Oracle Integration Cloud**](https://www.oracle.com/in/integration/application-integration/) for Patient Admission Process. and much more. 
 
-Running on top of the world's most powerful database, [**Oracle Autonomous Database**](https://www.oracle.com/in/autonomous-database/) and Low Code development platform [**Oracle APEX**](https://apex.oracle.com/en/)
+Running on top of the world's most powerful database, [**Oracle Autonomous Database**](https://www.oracle.com/in/autonomous-database/) and cloud-native open source development.
 
-### AI for Healthcare - Technology Architecture
+### AI for Healthcare - Technology Architecture, Flutter And Spring Boot Stack
 
-![Archiecture](images/architecture-v6.png " ")
+![Archiecture](images/OracleHealthAI-FlutterSpringBootStack.png " ")
+
+### AI for Healthcare - Technology Architecture, (future) MERN (MongoDB, Express, React, NodeJS) Stack
+
+![Archiecture](images/OracleHealthAI-MERNStack.png " ")
   
 ### AI for Healthcare - Table of Contents
  
@@ -61,22 +65,11 @@ These are common labs that are required for most of the other labs under this wo
     * Setup policies for OCI Document Understanding Service
     * Setup policies for OCI Speech
     * Setup policies for OCI Anomaly Detection
-* Lab 2: Provision of an [**Oracle Autonomous Database**](https://www.oracle.com/in/autonomous-database/) and [**APEX**](https://apex.oracle.com/en/) How-to's
+* Lab 2: Provision of an [**Oracle Autonomous Database**](https://www.oracle.com/in/autonomous-database/) and clone workshop source
     * Create or select a compartment
     * Choose Autonomous Database from the OCI services menu
     * Create the Autonomous Database instance
-    * Create an Oracle APEX Workspace
-    * How to run SQL queries in Oracle APEX
-    * How to Setup Oracle APEX Web Credentials 
-    * How to login to Oracle APEX
-    * How to create Blank Oracle APEX page
-    * How to Create Low-Code Data Driven APEX page with CRUD Operations
-    * How to Create Dynamic Actions
-    * How to Create an APEX Chart
-    * How to Create a Page Process
-    * How to configuring Oracle APEX Applications to Send Email
-    * How to send mail in Plain Text format
-    * How to send mail in Text / HTML message
+    * Clone workshop source for various languages and stacks (starting with Flutter and Spring Boot)
 * Lab 3: Setup OCI [**Command Line Interface (CLI)**](https://docs.oracle.com/en-us/iaas/Content/API/Concepts/cliconcepts.htm)
     * Get the User's OCID
     * Add User's API Key
@@ -107,14 +100,11 @@ These Labs will guide you in detecting Breast Cancer using [**OCI Vision**](http
     * Create and Train OCI AI vision model
     * Analyze and evaluate your model
     * Review Request and Response JSON
-* Lab 7: [**Oracle APEX**](https://apex.oracle.com/en/) Application for Breast Cancer Detection (Optional Lab)
+* Lab 7: Full Stack Application for Breast Cancer Detection (Optional Lab)
     * Create required schema - 
         * Tables: MACHINE LEARNING CONFIGS, VISION AI DOCS, VISION AI FIELDS
         * PL/SQL Procedure IMAGE\_AI\_PK, Triggers etc.
-    * Create Oracle APEX Page
-    * Verify Oracle APEX File upload settings
-    * Display results
-    * Troubleshooting Checklist for APEX Developers
+    * Create Full Stack Application using Flutter And Spring Boot
 
 ***Part 2** - Create Medical Expenses - Lab 8 to Lab 9 (Optional labs)* 
 
@@ -154,14 +144,14 @@ These Labs will guide you in creating medical transcription and consulting virtu
     * Create Speech Transcription Job
     * Review the audio file and Transcribed text content of the Audio file.
 
-***Part 4** - Oracle Speech AI and Cohere Integration - Lab 12 (Optional labs)*
+***Part 4** - Oracle Speech AI and Oracle Gen AI Integration - Lab 12 (Optional labs)*
 
-These labs will show how to integrate [**Oracle APEX**](https://apex.oracle.com/en/) with [**Cohere**](https://cohere.com/).
+These labs will show how to integrate [**Oracle APEX**](https://apex.oracle.com/en/) with [**Oracle Gen AI**](https://cohere.com/).
 
-* Lab 12: Oracle Speech and Cohere Integration 
-    * Create Cohere Key (Optional Tasks)
-    * Getting AI Response from Cohere 
-    * Cohere Integration with OCI Speech AI (Speech AI as Input Audio and Cohere as AI responder)
+* Lab 12: Oracle Speech and Oracle Gen AI Integration 
+    * Create Oracle Gen AI Key (Optional Tasks)
+    * Getting AI Response from Oracle Gen AI 
+    * Oracle Gen AI Integration with OCI Speech AI (Speech AI as Input Audio and Oracle Gen AI as AI responder)
 
 ***Part 5** - Create Chatbot for Frequently Asked Medical Questions - Lab 13 - Lab 14 (Optional labs)*
 
