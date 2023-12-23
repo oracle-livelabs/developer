@@ -17,11 +17,11 @@
       "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/cloud-login.md"
     },
     {
-      "title": "Lab 1: Clone and Build Workshop Source",
-      "filename": "../../setup-oci/setup-oci.md"
+      "title": "Lab 1: Clone, Build, and Test Run the Workshop Source",
+      "filename": "../../clone-and-build/clone-and-build.md"
     },
     {
-      "title": "Lab 2: Provision Autonomous Database, and setup OCI",
+      "title": "Lab 2: Provision Autonomous Database, and Setup OCI",
       "filename": "../../setup-oci/setup-oci.md"
     },
     {
