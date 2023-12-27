@@ -45,39 +45,23 @@
       "filename": "../../ai-vision-flutter-ui/ai-vision-flutter-ui.md"
     },
     {
-      "title": "Lab 8: Document Understanding Features",
-      "filename": "../../ai-document-docfeature/ai-document-docfeature.md"
-    },
-    {
-      "title": "Lab 9: Full Stack Application for Medical Receipt processing",
+      "title": "Lab 8: Full Stack Application for Medical Receipt Processing",
       "filename": "../../ai-document-flutter-ui/ai-document-flutter-ui.md"
-    }, 
-    {
-      "title": "Lab 10: Create Speech Transcription Job",
-      "filename": "../../ai-speech-create/ai-speech-create.md"
     },
     {
-      "title": "Lab 11: Full Stack Application for Speech Transcription",
-      "filename": "../../ai-speech-app/ai-speech-app.md"
-    },
-    {
-      "title": "Lab 12: Oracle Speech and Oracle Gen AI Integration",
+      "title": "Lab 9: Full Stack Application for Speech Transcription and Gen AI",
       "filename": "../../ai-speech-genai/aai-speech-genai"
     },
     {
-      "title": "Lab 13: Setup Oracle Digital Assistant",
+      "title": "Lab 10: Full Stack Application with Oracle Digital Assistant",
       "filename": "../../ai-oda-create/ai-oda-create.md"
     },
     {
-      "title": "Lab 14: Full Stack Integration with ODA",
-      "filename": "../../ai-oda-apex-ui/ai-oda-apex-ui.md"
-    },
-    {
-      "title": "Lab 15: Full Stack Maps and Spatial queries to Locate Hospitals",
+      "title": "Lab 11: Full Stack Application with Maps and Spatial Queries to Locate Hospitals",
       "filename": "../../apex-map/apex-map.md"
     },
     {
-      "title": "Lab 16: Deploy and Run as Microservices in Kubernetes Cluster",
+      "title": "Lab 12: Deploy and Run as Microservices in Kubernetes Cluster",
       "filename": "../../apex-map/apex-map.md"
     },
     {

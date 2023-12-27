@@ -8,11 +8,11 @@ Estimated Time: 5 minutes.
 
 ### Objectives
 
-* Upload the image from the local file system to the OCI object storage bucket using OCI Object storage rest APIs
-* Input this image to the AI Vision model and verify it against the model by creating request JSON dynamically and leveraging OCI AI Vision rest APIs
-* Receive the response JSON and parse it to get the confidence score against the label as a key-value pair,
+* Upload the image from the local file system to the OCI object storage bucket using OCI Object storage rest APIs.
+* Input this image to the AI Vision model and verify it against the model by creating request JSON dynamically and leveraging OCI AI Vision rest APIs.
+* Receive the response JSON and parse it to get the confidence score against the label as a key-value pair.
 * Present the results in Flutter frontend.
-* Understand the backend and frontend code
+* Understand the backend and frontend code.
 
 ### Prerequisites
 
@@ -25,7 +25,7 @@ Estimated Time: 5 minutes.
       ![select image analysis button](images/imageanalysisbutton.png " ")
    2. Select the `Breast Cancer and Normal Breast Model` item from the `Model Name` drop-down list.
       ![select breast cancer model](images/model-name.png " ")
-   3. Clicke the `Pick a File` button and Select an X-Ray image file. Example files are provided
+   3. Click the `Pick a File` button and Select an X-Ray image file. Example files are provided
       ![select file](images/selectimage.png " ")
    4. You will see the model and image file you selected. Now click `Submit`
       ![image after select](images/image-after-select.png " ")
