@@ -47,7 +47,7 @@ This lab assumes:
         <copy>git clone https://github.com/oracle-devrel/oracle-health-ai-open-source.git</copy>
         ```
    
-      or download and extract the zip code from https://github.com/oracle-devrel/oracle-ai-for-sustainable-dev/zipball/master
+      or download and extract the zip code from https://github.com/oracle-devrel/oracle-health-ai-open-source/zipball/master
 
    2. Open the env.properties file in the root directory in a text editor. You will populate the values in this file as part of this lab. It will look something like this:
    
@@ -333,7 +333,9 @@ Policy creation steps for this service is same as all other services defined in 
    13. Verify the SQL statements ran correctly. We will describe what each of these tables, functions, etc. does in the 
       ![very sql ran correctly](./images/databaseinit12.png " ")
 
-Congratulations. You have now set up an elaborate and robust cloud, AI, and database infrastructure. 
+
+
+Congratulations. You have now set up an elaborate and robust cloud, AI, and database infrastructure and configured a full stack application to use it. 
 
 You should also have all of the necessary values in the env.properties file and the rest of workshop will now show off these features and architecture.
 

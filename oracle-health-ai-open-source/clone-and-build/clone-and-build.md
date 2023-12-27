@@ -77,9 +77,9 @@ Estimated Time:  10 minutes
 ![VS Code Flutter](images/vscode-flutter.png " ")
 
 
-## Task 3: Run the frontend and backend microservice and make a test call from frontend to the backend
+## Task 3: Run the microservices and make a test call from the frontend to the backend
 
-1. Depending on whether you are running using a Docker image or language native commands, you will issue either `runDocker.sh` or `run.sh` commands in the same `springboot-backend` and `flutter-frontend` directories or, as mentioned in the previous task, you can run from within the IDE.
+1. Depending on whether you are running using a Docker image or language native commands, you will issue either `runDocker.sh` or `run.sh` commands in the same `springboot-backend` and `flutter-frontend` directories or, as mentioned in the previous task, you can run from within the IDE. The service should be listening on port 8080 by default.
 2. Open your browser, if not automatically opened, and go to `http://localhost:5000`
 3. You should see a homepage such as the following.  If you see a 3D model in the main view pane then both frontend and backend are running successfully and you have connectivity between the two.
 
