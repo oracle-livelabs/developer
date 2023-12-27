@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This lab will show you how to use Oracle Database, Object Storage, Speech AI and Gen AI to detect text in medical documents and store acoordingly (for example as an expense report).
+This lab will show you how to use Oracle Database, Object Storage, and OCI Vision/Document AI to detect text in medical documents and store acoordingly (for example as an expense report).
 
 Estimated Time: 5 minutes.
 

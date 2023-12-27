@@ -50,7 +50,7 @@
     },
     {
       "title": "Lab 9: Full Stack Application for Speech Transcription and Gen AI",
-      "filename": "../../ai-speech-genai/aai-speech-genai"
+      "filename": "../../ai-speech-genai/ai-speech-genai.md"
     },
     {
       "title": "Lab 10: Full Stack Application with Oracle Digital Assistant",
@@ -58,10 +58,14 @@
     },
     {
       "title": "Lab 11: Full Stack Application with Maps and Spatial Queries to Locate Hospitals",
-      "filename": "../../apex-map/apex-map.md"
+      "filename": "../../spatial-map/spatial-map.md"
     },
     {
-      "title": "Lab 12: Deploy and Run as Microservices in Kubernetes Cluster",
+      "title": "Lab 12: Full Stack Application for Analytics",
+      "filename": "../../analytics/analytics.md"
+    },
+    {
+      "title": "Lab 13: Deploy and Run as Microservices in Kubernetes Cluster",
       "filename": "../../apex-map/apex-map.md"
     },
     {
