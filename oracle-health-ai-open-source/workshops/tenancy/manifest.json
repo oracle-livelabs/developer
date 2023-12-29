@@ -69,6 +69,10 @@
       "filename": "../../apex-map/apex-map.md"
     },
     {
+      "title": "Lab 14: Oracle Machine Learning For Healthcare",
+      "filename": "../../oml-healthcare/oml-healthcare.md"
+    },
+    {
       "title": "Need Help?",
       "description": "Solutions to Common Problems and Directions for Receiving Live Help",
       "filename": "https://oracle-livelabs.github.io/common/labs/need-help/need-help-livelabs.md"

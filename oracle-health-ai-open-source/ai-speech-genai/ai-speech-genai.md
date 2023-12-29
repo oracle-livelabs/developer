@@ -22,13 +22,12 @@ Estimated Time: 5 minutes.
 ## Task 1: Run the application
 
 1. Open the frontend via your preferred method as was done in setup and select the `Image Analysis` item from the sidebar menu.
-   ![select image analysis button](images/medicaldocumentsbutton.png " ")
-2. Click the `Pick a File` button and Select a receipt image file. Example files are provided
-   ![select file](images/selectfile.png " ")
-3. You will see the image file you selected. Now click `Submit`
-   ![image after select](images/selectedreceipt.png " ")
-4. Notice the results of the Vision AI processing and parsed fields.
-   ![notice generated image](images/medical-docs2.png " ")
+   ![select image analysis button](images/medicaltranscriptsbutton.png " ")
+2. Click the `Pick a File` button and aelect an audio file (the contents of which as a question). Example files are provided
+   ![select file](images/selectaudiofile.png " ")
+3. Now click `Submit`
+4. Notice the results of the Speech AI and Gen AI processing (reply to the question asked).
+   ![notice generated image](images/transcriptquestionanswer.png " ")
 
 
 ## Task 2: Understand the code

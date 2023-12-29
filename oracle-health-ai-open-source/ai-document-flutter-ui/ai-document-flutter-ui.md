@@ -19,7 +19,11 @@ Estimated Time: 5 minutes.
 - Completion of Setup lab
 
 
-## Task 1: Run the application
+## Task 1: Create the table that will store the results of the processed documents.
+   1. Open the SQL workshop tab for your database, copy and paste the contents of the `aiuser-aidocument_table.sql` file in the workshop source code `sql` and click the `Run Script` button.
+      ![select image analysis button](images/createtableaidocuments.png " ")
+
+## Task 2: Run the application
 
    1. Open the frontend via your preferred method as was done in setup and select the `Image Analysis` item from the sidebar menu.
       ![select image analysis button](images/medicaldocumentsbutton.png " ")
@@ -28,13 +32,17 @@ Estimated Time: 5 minutes.
    3. You will see the image file you selected. Now click `Submit`
       ![image after select](images/selectedreceipt.png " ")
    4. Notice the results of the Vision AI processing and parsed fields.
-      ![notice generated image](images/medical-docs2.png " ")
+      ![notice generated image](images/medicaldocs.png " ")
+   5. Select the `Image Analysis` item from the sidebar menu.
+      ![notice generated image](images/adminstrationbutton.png " ")
+   6. Notice the results of the query for the documents that were stored in the database after AI processing.
+      ![notice generated image](images/administrationresults.png " ")
 
 
 ## Task 2: Understand the code
 
 1. Notice the `/flutter-frontend/lib/medicaldocs.dart` source code and how it creates a request to the Spring Boot backend and parses the JSON response into a resultant fields.
-2. Notice the `/springboot-backend/src/main/java/oracleai/MedicalDocsController.java` source code and how it creates a request to the document model deployed in the OCI Vision service and passes the JSON response back to the frontend.
+2. Notice the `/springboot-backend/src/main/java/oracleai/MedicalDocsController.java` and related source code and how it creates a request to the document model deployed in the OCI Vision service and passes the JSON response back to the frontend.
 
 You may now **proceed to the next lab.**..
 
