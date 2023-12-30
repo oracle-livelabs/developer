@@ -51,7 +51,7 @@ This lab assumes:
 
    2. Open the env.properties file in the root directory in a text editor. You will populate the values in this file as part of this lab. It will look something like this:
    
-      ```code
+      ```text
          OCICONFIG_FILE=~/.oci/config
          OCICONFIG_PROFILE=DEFAULT
          COMPARTMENT_ID=ocid1.compartment.oc1..mycompartmentvalue

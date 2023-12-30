@@ -1,4 +1,4 @@
-## Clone, Build, and Test Run the Workshop Source
+# Clone, Build, and Test Run the Workshop Source
 
 ## Introduction
 
@@ -35,6 +35,7 @@ Estimated Time:  10 minutes
    2. Open the env.properties file in the root directory in a text editor. You will populate the values in this file as part of this lab. It will look something like this:
 
        ```code
+        <copy>
           OCICONFIG_FILE=~/.oci/config
           OCICONFIG_PROFILE=DEFAULT
           COMPARTMENT_ID=ocid1.compartment.oc1..mycompartmentvalue
@@ -45,7 +46,8 @@ Estimated Time:  10 minutes
           OCI_VISION_SERVICE_ENDPOINT=https://vision.aiservice.myregion.oci.oraclecloud.com
           OCI_SPEECH_SERVICE_ENDPOINT=https://speech.aiservice.myregion.oci.oraclecloud.com
           OCI_GENAI_SERVICE_ENDPOINT=https://genai.aiservice.us-chicago-1.oci.oraclecloud.com
-          ```
+        </copy>
+       ```
 
 ## Task 2: Build the microservices
 
