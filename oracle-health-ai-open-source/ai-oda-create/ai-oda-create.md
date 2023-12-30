@@ -175,8 +175,9 @@ To set up the Oracle Digital Assistant on the OCI tenancy, you will:
 3. Channel type should be **Oracle Web**, Allowed domains can be * or you can specify any particular domain which will act as host to this channel. This will generate **secret** and **channel id**
 
   ![ODA Channel](images/create-channel-2.png " ")
- 
-  > **Congratulations**, you have completed **Setup Oracle Digital Assistant** Lab. The subsequent labs are optional, however, please proceed to the next lab to learn more about **APEX Integration with Oracle Digital Assistant**.
+
+
+You may now **proceed to the next lab.**..
 
 ## Acknowledgements
 

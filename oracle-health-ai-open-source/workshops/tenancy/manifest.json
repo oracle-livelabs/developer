@@ -53,23 +53,27 @@
       "filename": "../../ai-speech-genai/ai-speech-genai.md"
     },
     {
-      "title": "Lab 10: Full Stack Application with Oracle Digital Assistant",
+      "title": "Lab 10: Setup Oracle Digital Assistant",
       "filename": "../../ai-oda-create/ai-oda-create.md"
     },
     {
-      "title": "Lab 11: Full Stack Application with Maps and Spatial Queries to Locate Hospitals",
+      "title": "Lab 11: Full Stack Application with Oracle Digital Assistant",
+      "filename": "../../ai-oda-flutter-ui/ai-oda-flutter-ui.md"
+    },
+    {
+      "title": "Lab 12: Full Stack Application with Maps and Spatial Queries to Locate Hospitals",
       "filename": "../../spatial-map/spatial-map.md"
     },
     {
-      "title": "Lab 12: Full Stack Application for Analytics",
+      "title": "Lab 13: Full Stack Application for Analytics",
       "filename": "../../analytics/analytics.md"
     },
     {
-      "title": "Lab 13: Deploy and Run as Microservices in Kubernetes Cluster",
-      "filename": "../../apex-map/apex-map.md"
+      "title": "Lab 14: Deploy and Run as Microservices in Kubernetes Cluster",
+      "filename": "../../kubernetes/kubernetes.md"
     },
     {
-      "title": "Lab 14: Oracle Machine Learning For Healthcare",
+      "title": "Lab 15: Oracle Machine Learning For Healthcare",
       "filename": "../../oml-healthcare/oml-healthcare.md"
     },
     {

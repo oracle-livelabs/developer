@@ -1,10 +1,10 @@
-# Oracle APEX Maps and Spatial queries to locate nearest Hospitals
+# OpenStreetMap and Oracle Spatial queries to locate Hospitals
 
 ## Introduction
 
 This workshop walks you through the steps of locating Hospitals based on location and patient trauma.
 
-Estimated Time: 20 minutes.  
+Estimated Time: 10 minutes.  
  
 ### Objectives
 
@@ -12,16 +12,11 @@ In this lab, you will:
  
 * Create the required schema
 * Update SDO_GEOMETRY Column
-* Create Oracle APEX Faceted Search
-* Create Oracle APEX Map and Map Layer
-* Demo of finding Hospital on Map based on Location and Trauma selected.
-* Query to locate the nearest Hospital within a given radius
+* Run the full stack applicatoin and visual the location of hospitals on a map
   
 ### Prerequisites
 
-This lab assumes you have:
-
-* Completed previous labs of this workshop: **Setup environment** and logged into **Oracle APEX workspace**
+- Completion of Setup lab
 
 ### About Spatial Geometry Objects
 
@@ -130,84 +125,25 @@ The SDO_GEOMETRY type has the following general format:
     </copy>
     ```
 
-## Task 3: Create Oracle APEX Faceted Search
+## Task 3: Run the application
 
-1. Create [**Oracle APEX Faceted**](https://docs.oracle.com/en/database/oracle/apex/22.1/htmdb/creating-a-faceted-search-manually.html) search with 2 database columns, that is Trauma and City
+1. Open the frontend via your preferred method as was done in setup and select the `Hospitals` item from the sidebar menu.
+   ![hospitals button](images/hospitals.png " ")
 
-    ![Create Table](images/apex-chart-1.png " ")
 
-## Task 4: Create Oracle APEX Map and Map Layer
+2. Notice the location of hospitals on the map.
 
-1. Create Oracle APEX Map that has datasource coming from US_HOSPITALS table, 
+   ![hospitals results](images/hospitalsresults.png " ")
 
-    ![Create Table](images/apex-chart-2.png " ")
 
-2. Create **Map Layer** that has been mapped to **LONGITUDE** and **LONGITUDE** columns under Column Mapping, Layer type should be **Point**. Enable **Advanced Formatting**, HTML Source code display Hospital details are as shown below.
+## Task 2: Understand the code
 
-    ```html
-    <copy>
-        <b>&NAME.</b><br/>
-        &TRAUMA.</br>
-        &CITY.&STATE. &COUNTY. &ZIP.<br/>  
-        {if WEBSITE/}
-        Web: &WEBSITE. <br>
-        {endif/}
-        {if TELEPHONE/}
-        Phone: &TELEPHONE.<br>
-        {endif/} 
-    </copy>
-    ```
+1. Notice the `/flutter-frontend/lib/hospitals.dart` source code and how it creates a request to the Spring Boot backend and parses the JSON response into a resultant fields.
 
-    ![Create Table](images/apex-chart-3.png " ")
 
-## Task 5: Demo of finding Hospital on Map based on Location and Trauma selected.
+2. Notice the `/springboot-backend/src/main/java/oracleai/HealthDataController.java` source code and how it creates a request to the document model deployed in the OCI Vision service and passes the JSON response back to the frontend.
 
-1. Select Location and Hospital
-
-    ![Create Table](images/apex-chart-4.png " ")
-
-2. Click on Map pin to find details about the Hospital such as Contact number, specialization, website, address and other required details
-
-    ![Create Table](images/apex-chart-5.png " ")
-
-## Task 6: Query to locate the nearest Hospital within a given radius (Optional)
-
-1. Sometimes you will have coordinates of the source location, that is, the place where a patient is currently located, and you would want to find the nearest hospital within a radius of a few kilometres from the source (patient). In that case, use the below query.
- 
-    ```sql
-    <copy>
-        select a.ID_1, b.NAME, b.TRAUMA 
-        from 
-        US_HOSPITALS A,
-        US_HOSPITALS B
-        where A.ID_1 = id_var
-        AND SDO_WITHIN_DISTANCE(
-        GET_GEOMETRY(A.LONGITUDE, A.LATITUDE),
-        A.SHAPE,
-        'distance=dist_var unit=km') = 'TRUE' 
-    </copy>
-    ```
-
-    Replace id\_var and dist\_var as per your requirement. where dist_var is the radius distance of hospital to patient location.  for example 
-
-    ```sql
-    <copy>
-    select a.ID_1, b.NAME, b.TRAUMA 
-    from 
-    US_HOSPITALS A,
-    US_HOSPITALS B
-    where A.ID_1 = 93 AND TRAUMA='GENERAL MEDICAL'
-    AND SDO_WITHIN_DISTANCE(
-    GET_GEOMETRY(A.LONGITUDE, A.LATITUDE),
-    A.SHAPE,
-    'distance=1 unit=km') = 'TRUE'
-    </copy>
-    ```
-
-    ![Create Table](images/location-search.png " ")   
- 
- 
-    > **Congratulations**, you have completed **Oracle APEX Maps and Spatial queries to Locate Hospitals** Lab. The subsequent labs are optional, however, please proceed to the next lab to learn more about **Oracle Analytics Cloud for Clinical Data Analysis**. 
+You may now **proceed to the next lab.**..
 
 ## Learn More
 
@@ -216,5 +152,7 @@ The SDO_GEOMETRY type has the following general format:
 * [Oracle Spatial Product homepage](https://www.oracle.com/database/spatial)
 
 ## Acknowledgements
+
+* **Author** - Paul Parkinson, Architect and Developer Advocate, Oracle Database
 * **Author** - Madhusudhan Rao B M, Principal Product Manager, Oracle Database
-* **Last Updated By/Date** - May 23rd, 2023.
+* **Last Updated By/Date** - 2024

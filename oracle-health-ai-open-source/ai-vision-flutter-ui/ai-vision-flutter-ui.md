@@ -23,13 +23,21 @@ Estimated Time: 5 minutes.
 
    1. Open the frontend via your preferred method as was done in setup and select the `Image Analysis` item from the sidebar menu.
       ![select image analysis button](images/imageanalysisbutton.png " ")
+
+
    2. Select the `Breast Cancer and Normal Breast Model` item from the `Model Name` drop-down list.
       ![select breast cancer model](images/model-name.png " ")
+
+
    3. Click the `Pick a File` button and Select an X-Ray image file. Example files are provided
       ![select file](images/selectimage.png " ")
+
+
    4. You will see the model and image file you selected. Now click `Submit`
       ![image after select](images/image-after-select.png " ")
-   4. Notice the results of the Vision AI processing which has given a percentage confidence as to whether the X-Ray shows symptoms of breast cancer . 
+
+
+   5. Notice the results of the Vision AI processing which has given a percentage confidence as to whether the X-Ray shows symptoms of breast cancer . 
       ![notice generated image](images/result-after-submit.png " ")
 
 
