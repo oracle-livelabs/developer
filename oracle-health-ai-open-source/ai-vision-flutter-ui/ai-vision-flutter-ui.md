@@ -38,12 +38,14 @@ Estimated Time: 5 minutes.
 
 
    5. Notice the results of the Vision AI processing which has given a percentage confidence as to whether the X-Ray shows symptoms of breast cancer . 
-      ![notice generated image](images/result-after-submit.png " ")
+      ![notice results of vision ai model](images/result-after-submit.png " ")
 
 
 ## Task 2: Understand the code
 
    1. Notice the `/flutter-frontend/lib/imageanalysis.dart` source code and how it creates a request to the Spring Boot backend and parses the JSON response into a resultant chart.
+
+
    2. Notice the `/springboot-backend/src/main/java/oracleai/ImageAnalysisController.java` source code and how it creates a request to the breast cancer model deployed in the OCI Vision service and passes the JSON response back to the frontend.
 
 You may now **proceed to the next lab.**..
@@ -51,4 +53,4 @@ You may now **proceed to the next lab.**..
 ## Acknowledgements
 
 * **Author** - Paul Parkinson, Architect and Developer Advocate, Oracle Database
-* **Last Updated By/Date** - 2024.
+* **Last Updated By/Date** - 2024

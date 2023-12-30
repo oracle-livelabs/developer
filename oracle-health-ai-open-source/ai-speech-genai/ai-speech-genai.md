@@ -21,31 +21,31 @@ Estimated Time: 5 minutes.
 
 ## Task 1: Run the application
 
-1. Open the frontend via your preferred method as was done in setup and select the `Image Analysis` item from the sidebar menu.
-   ![select image analysis button](images/medicaltranscriptsbutton.png " ")
+   1. Open the frontend via your preferred method as was done in setup and select the `Medical Transcripts` item from the sidebar menu.
+      ![select medical transcripts button](images/medicaltranscriptsbutton.png " ")
 
 
-2. Click the `Pick a File` button and select an audio file (the contents of which as a question). Example files are provided
-   ![select file](images/selectaudiofile.png " ")
+   2. Click the `Pick a File` button and select an audio file (the contents of which as a question). Example files are provided
+      ![select file](images/selectaudiofile.png " ")
 
 
-3. Now click `Submit`
+   3. Now click `Submit`
 
 
-4. Notice the results of the Speech AI and Gen AI processing (reply to the question asked).
-   ![notice generated image](images/transcriptquestionanswer.png " ")
+   4. Notice the results of the Speech AI and Gen AI processing (reply to the question asked).
+      ![notice transcript question answer](images/transcriptquestionanswer.png " ")
 
 
 ## Task 2: Understand the code
 
-1. Notice the `/flutter-frontend/lib/medicaltranscripts.dart` source code and how it creates a request to the Spring Boot backend and parses the JSON response into a resultant fields.
+   1. Notice the `/flutter-frontend/lib/medicaltranscripts.dart` source code and how it creates a request to the Spring Boot backend and parses the JSON response into a resultant fields.
 
 
-2. Notice the `/springboot-backend/src/main/java/oracleai/MedicalTranscriptsController.java` source code and how it creates a request to the document model deployed in the OCI Vision service and passes the JSON response back to the frontend.
+   2. Notice the `/springboot-backend/src/main/java/oracleai/MedicalTranscriptsController.java` source code and how it creates a request to the document model deployed in the OCI Vision service and passes the JSON response back to the frontend.
 
 You may now **proceed to the next lab.**..
 
 ## Acknowledgements
 
 * **Author** - Paul Parkinson, Architect and Developer Advocate, Oracle Database
-* **Last Updated By/Date** - 2024.
+* **Last Updated By/Date** - 2024

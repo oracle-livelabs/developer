@@ -22,10 +22,10 @@ Estimated Time: 5 minutes.
       ![causes of death](images/causesofdeath.png " ")
 
    2. Select the `Analytics (Bar)` item from the sidebar menu and notice the analytics.
-      ![select file](images/analyticsbar.png " ")
+      ![analytics bar](images/analyticsbar.png " ")
 
    3. Select the `Analytics (Graph)` item from the sidebar menu and notice the analytics.
-      ![image after select](images/analyticsgraph.png " ")
+      ![analytics graph](images/analyticsgraph.png " ")
 
 
 ## Task 2: Understand the code

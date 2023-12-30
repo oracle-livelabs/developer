@@ -1,4 +1,4 @@
-# OpenStreetMap and Oracle Spatial queries to locate Hospitals
+# Full Stack Application with OpenStreetMap and Spatial Queries to Locate Hospitals
 
 ## Introduction
 
