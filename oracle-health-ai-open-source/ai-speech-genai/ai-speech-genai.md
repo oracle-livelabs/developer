@@ -1,4 +1,4 @@
-# Oracle Full Stack for Breast Cancer Detection
+# Full Stack Application for Speech Transcription and Gen AI
 
 ## Introduction
 

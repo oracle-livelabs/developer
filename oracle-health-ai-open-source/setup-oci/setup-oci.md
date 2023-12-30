@@ -1,4 +1,4 @@
-# Setup environment
+# Provision Database, Setup OCI, and Configure Application
 
 ## Introduction
 

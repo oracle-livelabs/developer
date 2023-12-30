@@ -1,4 +1,4 @@
-# Oracle APEX Integration with ODA
+# Full Stack Application with Oracle Digital Assistant
 
 ## Introduction
 

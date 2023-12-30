@@ -1,4 +1,4 @@
-# Oracle Full Stack for Breast Cancer Detection
+# Full Stack Application for Medical Receipt Processing
 
 ## Introduction
 

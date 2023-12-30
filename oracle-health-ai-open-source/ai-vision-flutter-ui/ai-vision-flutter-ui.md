@@ -1,4 +1,4 @@
-# Oracle Full Stack Application for Breast Cancer Detection
+# Full Stack Application for Breast Cancer Detection
 
 ## Introduction
 

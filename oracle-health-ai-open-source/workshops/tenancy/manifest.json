@@ -25,8 +25,8 @@
       "filename": "../../setup-oci/setup-oci.md"
     },
     {
-      "title": "Lab 3: Setup OCI Policies",
-      "filename": "../../ai-vision-setup/ai-vision-setup.md"
+      "title": "Lab 3: Setup OCI CLI",
+      "filename": "../../setup-ociclip/setup-ocicli.md"
     },
     {
       "title": "Lab 4: Create Image Library",

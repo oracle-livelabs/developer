@@ -1,4 +1,4 @@
-## Introduction
+## Clone, Build, and Test Run the Workshop Source
 
 This lab will show you how to clone/download and build the source code for the open source AI application.
 
