@@ -20,7 +20,7 @@ In this lab, you will:
 
 * Generate dataset records using Data Labeling for Breast Cancer
 * Bulk image labeling
-* Verify Bulk Data labelled images
+* Verify Bulk Data labeled images
 
 ### Prerequisites
 
@@ -30,7 +30,7 @@ This lab assumes you have:
 
 ## Task 1: Generate dataset records using Data Labeling for Breast Cancer
 
-Basic data labeling tool is provided within OCI. With this data labeling tool, you can label one image at the time, which is useful if your image library is not too large. In case of larger libraries, manual image labeling can be very time consuming and error prone. That is why, you will use programmatic data labeling using utilities provided by Oracle. Required code and instructions will be provided in the second task.
+Basic data labeling tool is provided within OCI. With this data labeling tool, you can label one image at a time, which is useful if your image library is not too large. In case of larger libraries, manual image labeling can be very time-consuming and error-prone. That is why, you will use programmatic data labeling using utilities provided by Oracle. Required code and instructions will be provided in the second task.
 
 But before you continue, you need to perform the first step, **Create Dataset** based on your object storage based image library.
 

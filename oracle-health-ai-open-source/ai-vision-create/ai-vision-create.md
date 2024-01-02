@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This lab walks you through organising an image library in OCI Object Storage. You will load images to Object Storage directly from your laptop using OCI CLI. There are other options to upload images to object storage, such as using OCI Cloud Shell.
+This lab walks you through organizing an image library in OCI Object Storage. You will load images to Object Storage directly from your laptop using OCI CLI. There are other options to upload images to object storage, such as using OCI Cloud Shell.
 
 Estimated time: 30 minutes
 
@@ -36,7 +36,7 @@ Enrich image-based files with metadata, including objects and colors for better 
 
 **Important**
 
-This workshop provides a basic example of using OCI Vision and other AI services. This example is for illustration and demonstration purposes only and isn't intended to replace any medical imagery analysis tool or official diagnosis recommendation made by a professional. Users need to receive the proper regulated compliance and approvals before using for medical and diagnostic use.
+This workshop provides a basic example of using OCI Vision and other AI services. This example is for illustration and demonstration purposes only and isn't intended to replace any medical imagery analysis tool or official diagnosis recommendation made by a professional. Users need to receive the proper regulated compliance and approvals before using medical and diagnostic use.
 
 ## Task 1: What is a Mammogram?
 
@@ -58,7 +58,7 @@ This workshop provides a basic example of using OCI Vision and other AI services
 
    * Cysts, which are small fluid-filled sacs. Most are simple cysts, which have a thin wall and are not cancerous. If a doctor cannot classify a cyst as a simple cyst, they may do further tests to ensure that it is not cancerous.
    * Calcifications, which are deposits of calcium. Larger deposits of calcium are called macrocalcifications, and they usually occur as a result of ageing. Smaller deposits are called microcalcifications. Depending on the appearance of the microcalcifications, a doctor may test them for possible signs of cancer.
-   * Fibroadenomas are benign tumours in the breast. They are round and may feel like marble. People in their 20s and 30s are more likelyTrusted Source to have a fibroadenoma, but they can occur at any age.
+   * Fibroadenomas are benign tumours in the breast. They are round and may feel like marble. People in their 20s and 30s are more likely to have a fibroadenoma, but they can occur at any age.
    * Scar tissue, which often appears white on a mammogram. It is best to inform a doctor of any scarring on the breasts beforehand.
  
 ## Task 4: Normal Breast Mammogram

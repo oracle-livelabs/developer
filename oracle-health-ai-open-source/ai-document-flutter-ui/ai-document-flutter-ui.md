@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This lab will show you how to use Oracle Database, Object Storage, and OCI Vision/Document AI to detect text in medical documents and store accordingly (for example as an expense report).
+This lab will show you how to use Oracle Database, Object Storage, and OCI Vision/Document AI to detect text in medical documents and store them accordingly (for example as an expense report).
 
 Estimated Time: 5 minutes.
 
@@ -51,7 +51,7 @@ Estimated Time: 5 minutes.
 
 ## Task 3: Understand the code
 
-   1. Notice the `/flutter-frontend/lib/medicaldocs.dart` source code and how it creates a request to the Spring Boot backend and parses the JSON response into a resultant fields.
+   1. Notice the `/flutter-frontend/lib/medicaldocs.dart` source code and how it creates a request to the Spring Boot backend and parses the JSON response into resultant fields.
 
 
    2. Notice the `/springboot-backend/src/main/java/oracleai/MedicalDocsController.java` and related source code and how it creates a request to the document model deployed in the OCI Vision service and passes the JSON response back to the frontend.
