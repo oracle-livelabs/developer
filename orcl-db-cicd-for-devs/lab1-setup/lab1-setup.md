@@ -29,6 +29,9 @@ In this lab, you will:
 - This lab requires completion of the [Introduction](../workshops/freetier/?lab=intro) and [Get Started](../workshops/freetier/?lab=cloud-login) sections in the Contents menu on the left.
 
 ## Task 1: Choose ADW or ATP from the services menu
+
+>**Note:** If during this workshop you encounter any issues copy and pasting commands from the workshop guide code blocks to the Cloud Shell command prompt, right clicking when pasting and selecting "Paste as Plain Text" should resolve the issue.
+
 1. Log in to the Oracle Cloud.
 2. Once you log in, the cloud services dashboard shows all the services available to you. Click the navigation menu in the upper left to show top level navigation choices.
 
