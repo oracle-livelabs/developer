@@ -77,7 +77,7 @@ In the previous lab, you have labeled all images (records) in your dataset, whic
    
 ## Task 3: Analyze and Evaluate your Model
 
-   1. Test you model using few random test images from your previously downloaded X-Ray images 
+   1. Test your model using few random test images from your previously downloaded X-Ray images 
  
        Click **Local File** and upload image
 

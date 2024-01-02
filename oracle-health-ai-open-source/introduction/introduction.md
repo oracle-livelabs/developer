@@ -8,12 +8,12 @@ In this workshop, we will show how Oracle AI and Database Services help facilita
 
 *AI for Healthcare - Flutter And Spring Boot Stack*
 
-![FlutterSpringBootArchitecture](images/OracleHealthAI-FlutterSpringBootStack.png " ")
+![FlutterSpringBootArchitecture](images/oracle-healthai-flutterspringbootstack.png " ")
 
 
 *AI for Healthcare - (in future version) MERN (MongoDB, Express, React, NodeJS) Stack*
 
-![MERNArchitecture](images/OracleHealthAI-MERNStack.png " ")
+![MERNArchitecture](images/oracle-healthai-mernstack.png " ")
 
 
 *Estimated Workshop Time will vary depending upon the Labs that you choose to do*

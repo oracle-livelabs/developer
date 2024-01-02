@@ -106,7 +106,9 @@ This lab assumes:
    and the region, tenancy, and user OCIDs can be found in the OCI console. Simply paste them and save the `config` file.
 
       ![OCI Setup](images/ociinfo.png " ")
-   4. If you have not used default values, modify the values for OCICONFIG_FILE and OCICONFIG_PROFILE in the env.properties file
+
+
+   4. If you have not used default values, modify the values for OCICONFIG\_FILE and OCICONFIG\_PROFILE in the env.properties file
 
 
 ## Task 4: Create OCI Bucket
@@ -130,7 +132,9 @@ This lab assumes:
    
        Then click Create
        ![Click create button](./images/press-bucket-button.png " ")
-   2. Provide the values for OBJECTSTORAGE_NAMESPACE and OBJECTSTORAGE_BUCKETNAME in the env.properties file
+
+
+   2. Provide the values for OBJECTSTORAGE\_NAMESPACE and OBJECTSTORAGE\_BUCKETNAME in the env.properties file
 
 ## Task 5: Create a new compartment
 
@@ -326,7 +330,7 @@ Policy creation steps for this service is same as all other services defined in 
       ![select SQL](./images/databaseinit8.png " ")
    10. Copy and paste the contents of the `aiuser-tables-indexes-functions.sql` file in the `sql` directory of the source you cloned/downloaded earlier
       ![paste aiuser-tables-indexes-functions.sql](./images/databaseinit9.png " ")
-   11. Replace the values in the dbms_cloud.create_credential call with those in your oci config file from earlier. Note you can read the private_key in from file or paste the 
+   11. Replace the values in the dbms\_cloud.create_credential call with those in your oci config file from earlier. Note you can read the private_key in from file or paste the 
       ![provide values for dbms_cloud.create_credential](./images/databaseinit11.png " ")
    12. Select the run script button to execute the SQL statements.
       ![select run script](./images/runscriptbutton.png " ")
