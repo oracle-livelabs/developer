@@ -294,7 +294,7 @@ Before you start using OCI Document Understanding, OCI policies should be setup 
        <copy>allow group <group_in_tenancy> to use object-family in compartment <compartment-ocid></copy>
        ```
 
-   6. Policy to access output location in object storage 
+   5. Policy to access output location in object storage 
 
      Document Understanding Service stores results in your tenancy's object store. Add the following policy to grant object storage access permissions to the user group who requested the analysis to documents:
 
