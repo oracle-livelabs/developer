@@ -43,4 +43,9 @@ You may now **proceed to the next lab.**..
 ## Acknowledgements
 
 * **Author** - Paul Parkinson, Architect and Developer Advocate
-* **Last Updated By/Date** - Paul Parkinson, 2023
+* **Author** - Nicholas Cusato, Cloud Engineer
+* **Author** - Hannah Nguyen, Solution Engineer, NACI Engineering Specialists
+* **Author** - Miles Novotny, Cloud Engineer
+* **Author** - Ethan Shmargad, Cloud Engineer
+* **Author** - Nicholas Dangood, Health & AI Engineer
+* **Last Updated By/Date** - Paul Parkinson, 2024
