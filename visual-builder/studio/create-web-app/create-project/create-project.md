@@ -44,7 +44,7 @@ As someone who creates a project, you'll automatically become the project's owne
 
     Click **Next**.
 
-3. On the Project Template step, select **Empty Project** and click **Next**.
+3. On the Project Template step, leave the Project Template selected as **Empty Project**. Click **Next**.
 
     ![The New Project wizard with the Empty Project template selected.](images/empty-project.png)
 
@@ -72,13 +72,13 @@ As someone who creates a project, you'll automatically become the project's owne
 
 Define an environment that points to your Visual Builder development instance, where your visual application can be deployed from within the project.
 
-1. On the Project Home page, click **Create Environment** under Environments.
+1. On the Project Home page, click **+ Create Environment** under Environments.
 
     ![The Environments section on the Project Home page, showing the Create Environment button.](images/env-create.png)
 
-2. Enter **Development** as the **Environment Name**; optionally, add a description. Click **Create**.
+2. Enter **Development** as the **Environment Name**, then optionally, add a description. Click **Create**.
 
-3. On the Environments page, click **Add Instance** to add a Visual Builder instance to your **Development** environment.
+3. On the Environments page, click **+ Add Instance** to add a Visual Builder instance to your **Development** environment.
 
     ![The empty Development environment shown on the Environments page. An Add Instance button is shown in the Service Instances tab. The Details and Certificates tabs are also visible.](images/env-add-instance.png "Environments page")
 
@@ -86,7 +86,7 @@ Define an environment that points to your Visual Builder development instance, w
 
     ![The Add Service Instances dialog with myVBinstance of type Visual Builder IDCS Resource selected. An Add button is also shown.](images/env-add-service-instances.png "Environments page")
 
-    **Note:** If the Visual Builder instance you want to use does not show up in the list of instances, select **Visual Builder Credentials** under **Authentication Method**, then enter the URL to your Visual Builder instance's home page (for example, http://yourserver/ic/builder), the credentials of a user who can access that instance, and click **Add**.
+    **Note:** If the Visual Builder instance you want to use does not show up in the list of instances, select **Visual Builder Credentials** under **Authentication Method**, then enter the URL to your Visual Builder instance's home page (for example, http://yourserver/ic/builder) and the username and password of someone who can access that instance. Click **Add**.
 
     Wait for the instance's Status to turn green, from 'Unknown' to 'Available'.
 
@@ -107,7 +107,7 @@ You now need to create a workspace, a private area for you to work on your visua
     * Enter **HR Workspace** as the **Workspace Name**.
     * Select **Development** (where you previously added a Visual Builder instance) as the **Development Environment**.
     * Leave **Default VBCS Application** as the **Visual Application Template**.
-    * Click **Create new repository** under **Git Repository**, then enter **tutorial-hr-project** as the **Repository Name** and **hrbranch** as the **Working Branch Name**.
+    * Under **Git Repository**, click **Create new repository**, then enter **tutorial-hr-project** as the **Repository Name** and **hrbranch** as the **Working Branch Name**.
 
     Click **Create**.
 
@@ -121,7 +121,7 @@ You now need to create a workspace, a private area for you to work on your visua
 
     ![Header in the HR Visual Application workspace. The workspace name HR Visual Application is on the left. Next to it, the Git repository and current branch tutorial-hr-project.git / hrbranch are visible. On the right are icons that let you perform other actions: Undo, Redo, Preview, Publish Changes, Product Feedback, Go to File, and Menu.](images/header.png "Header")
 
-    On the left is the name of your current workspace, **HR Workspace**. Next to it is the project's Git repository and the branch currently associated with your workspace (**tutorial-hr-project.git/hrbranch**). A Git repository typically includes the default branch (**main**) and a branch where your changes are stored (**hrbranch**). The project repo serves as the _remote_ repository, with the default branch being the source from which your visual application is built. Your workspace contains a working copy of **hrbranch** and serves as your _local_ repository. This **hrbranch** initially has the same set of source files as the **main** branch, but as you work with your visual application, it will include the changes you make.
+    On the left is the name of your current workspace, **HR Workspace**. Next to it is the project's Git repository (**tutorial-hr-project.git**) and the branch currently associated with your workspace (**hrbranch**). The **tutorial-hr-project.git** repo stores your visual application's files and is known as your project's _remote_ repository. It includes the **main** and **hrbranch** branches, created with initial content for your visual application. The **main** branch is the default branch created when a new repo is generated and is the source from which your visual application is built. The **hrbranch** you see in your workspace is a working copy of the remote **hrbranch** and serves as your _local_ repository. It initially has the same set of source files as the remote branch, but as you work with your visual application, it will include the changes you make.
 
     Click the workspace and the Git repo/branch to see other actions that you can perform. Clicking ![Go to Project Page icon](images/go-to-project-home-icon.png) will take you back to the Project Home page.
 
