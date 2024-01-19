@@ -130,4 +130,4 @@ You may now **proceed to the next lab**.
 ## Acknowledgements
 
 * **Author** - Bao Jin Lee, Java Management Service
-* **Last Updated By** - Chan Wei Quan, October 2023
+* **Last Updated By** - Siqi Liu, November 2023

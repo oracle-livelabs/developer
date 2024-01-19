@@ -37,7 +37,7 @@ In this lab, you will:
    
       ![image of console navigation to java management service](images/console-navigation-fleet.png)
 
-3. Under **More actions**, select **Modify Java runtime lifecycle management setting**. The **Lifecycle management settings** window should appear.
+3. Under **More actions**, select **Configure Java runtime lifecycle management setting**. The **Lifecycle management settings** window should appear.
    
       ![image of modifying java runtime lcm settings](images/more-actions-modify-java-runtime-lcm-settings.png)
 
@@ -150,7 +150,7 @@ In this lab, you will:
    In the **Root Compartment**, select **JMS Policy** and ensure that the policies listed below are included in **JMS Policy**.
 
    ![image of jms policy in root compartment](images/policies-select-jms-policy.png)
-   
+
    ```
     <copy>
     ALLOW GROUP FLEET_MANAGERS TO MANAGE fleet IN COMPARTMENT ${compartmentName}
@@ -179,4 +179,4 @@ In this lab, you will:
 ## Acknowledgements
 
 * **Author** - Chan Wei Quan, Java Management Service
-* **Last Updated By** - Chan Wei Quan, October 2023
+* **Last Updated By** - Siqi Liu, November 2023
