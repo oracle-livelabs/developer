@@ -1,0 +1,51 @@
+{
+  "workshoptitle": "Develop with Oracle AI and Database Services: Gen, Vision, Speech, Language, and OML",
+  "help": "livelabs-help-devdb-us@oracle.com",
+	"tutorials": [
+      {
+        "title": "Introduction",
+        "filename": "../../intro/intro.md"
+      },
+      {
+        "title": "Get Started",
+        "filename":"https://oracle-livelabs.github.io/common/labs/cloud-login/event-register-free-tier-account.md"
+      },
+      {
+        "title": "Lab 1: Setup",
+        "filename": "../../setup/setup.md"
+      },
+      {
+        "title": "Lab 2: Create A Pipeline",
+        "filename": "../../json/json.md"
+      },
+      {
+        "title": "Lab 3: Build The Application",
+        "filename": "../../ocivision-openaichat/ocivision-openaichat.md"
+      },
+      {
+        "title": "Lab 4: Runtime Pipeline Tests",
+        "filename": "../../ocivision-openaidalle/ocivision-openaidalle.md"
+      },
+      {
+        "title": "Lab 5: Add OraOperator for Oracle Database Provisioning",
+        "filename": "../../ocivision-ocispeech-openaichat/ocivision-ocispeech-openaichat.md"
+      },
+      {
+        "title": "Lab 6: Configure Oracle Database Interconnect",
+        "filename": "../../ocivision-ocispeech-openaichat/ocivision-ocispeech-openaichat.md"
+      },
+      {
+        "title": "Lab 7: Access Oracle Cloud Database From Your Application",
+        "filename": "../../ocivision-ocispeech-openaichat/ocivision-ocispeech-openaichat.md"
+      },
+      {
+        "title": "Lab 8: Tear Down",
+        "filename": "../../teardown/teardown.md"
+      },
+      {
+        "title": "Need Help?",
+        "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+        "filename":"https://oracle-livelabs.github.io/common/labs/need-help/need-help-freetier.md"
+      }
+    ]
+}
