@@ -63,13 +63,13 @@ In this lab, you will:
  ![image of work request summary page](images/work-request-summary-page-delete.png)
 
 2. If your request has been accepted, the status will change to **In Progress**. It will take some time to complete.
-  ![image of pending work request](images/delete-pending-work-request.png)
+    ![image of pending work request](images/delete-pending-work-request.png)
 
 3. If your request has completed successfully, the status will change to **Completed without Errors**.
-  ![image of install completed without errors](images/delete-complete-without-errors.png)
+    ![image of install completed without errors](images/delete-complete-without-errors.png)
 
 4. Return to your fleet page, under **Java runtimes**, the deleted Java runtime should not be reported in the subsequent scanning.
-  ![image of verify java runtime installation](images/verify-java-runtime-deletion.png)
+    ![image of verify java runtime installation](images/verify-java-runtime-deletion.png)
 
 5. Alternatively, you may use SSH command to connect to the compute instance and enter the following command to check the deletion manually. 
 
@@ -83,10 +83,10 @@ In this lab, you will:
 ## Task 2: Setup post Java installation actions
 
 1. Open the navigation menu, click **Observability & Management**. Click **Fleets** under **Java Management**. Select the fleet that was created in [Lab 1](?lab=setup-a-fleet).
-  ![image of console navigation to java management service](images/console-navigation-jms.png)
+    ![image of console navigation to java management service](images/console-navigation-jms.png)
 
-2. On the Fleet details page, click **More actions** and select **Modify Java runtime lifecycle management settings**. This opens the **Lifecycle management settings** panel.
-  ![image of fleet details page lifecycle management](images/fleet-details-page-lifecycle-management.png)
+2. On the Fleet details page, click **More actions** and select **Configure Java runtime lifecycle management settings**. This opens the **Lifecycle management settings** panel.
+    ![image of fleet details page lifecycle management](images/fleet-details-page-lifecycle-management.png)
 
 3. In the **Lifecycle management settings**, there is a combo box containing the placeholder "Select an action".
 
@@ -169,7 +169,7 @@ In this lab, you will:
  ![image of fleet details page](images/fleet-details-page.png)
 
 3. Click **Install Java runtime**.
-  ![image of install java runtime](images/install-java-runtime.png)
+    ![image of install java runtime](images/install-java-runtime.png)
 
 4. You will see an Install Java runtime panel with current and archive releases of the Oracle Java Runtimes. You will also see a Summary table that lists the metadata, including **Release versions**, **Security state**, **End of service life**, **Release date** and **Release notes**. You may click the link under Release notes to open the details page in a new window.
 
@@ -223,10 +223,10 @@ In this lab, you will:
 
 
 2. If your request has been accepted, the status will change to **In Progress**. It will take some time to complete.
-  ![image of pending work request](images/pending-work-request.png)
+    ![image of pending work request](images/pending-work-request.png)
 
 3. If your request has completed successfully, the status will change to **Completed without Errors**.
-  ![image of install completed without errors](images/install-complete-without-errors.png)
+    ![image of install completed without errors](images/install-complete-without-errors.png)
 
 4. Click on the work request. Under the **Resources** menu, click on the **Log messages**. Verify that the post Java installation actions has been executed.
    ![image of install runtime log message](images/install-runtime-log-message.png)
@@ -250,7 +250,7 @@ In this lab, you will:
 ## Task 4: (Optional) Modifying/Removing Post Java Installation Action
 1. This task is applicable if changes are to be made to the post Java installation action.
 
-2. On the fleet details page, click on **More actions** and select **Modify Java runtime lifecycle management setting**. 
+2. On the fleet details page, click on **More actions** and select **Configure Java runtime lifecycle management setting**. 
 
    ![image of fleet details post install action](images/fleet-details-page-lifecycle-management.png)
 
@@ -293,4 +293,4 @@ You may now **proceed to the next lab**.
 ## Acknowledgements
 
 * **Author** - Yixin Wei, Java Management Service
-* **Last Updated By** - Chan Wei Quan, October 2023
+* **Last Updated By** - Siqi Liu, November 2023
