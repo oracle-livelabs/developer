@@ -37,7 +37,7 @@ To complete this lab, you will need the following (*use the <input type="checkbo
 - <input type="checkbox"/> Python 3.10 or later ([download](https://www.python.org/downloads/))
 - <input type="checkbox"/> Visual Studio Code or similar editor ([download](https://code.visualstudio.com/Download))
 
-- A Package Manager, such as:
+- A Package Manager, such as
     - <input type="checkbox"/> WinGet for Windows ([details](https://learn.microsoft.com/en-us/windows/package-manager/#understanding-package-managers))
     - <input type="checkbox"/> Homebrew ([details](https://brew.sh/))
 
