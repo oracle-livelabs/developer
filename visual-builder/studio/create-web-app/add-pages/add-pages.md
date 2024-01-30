@@ -8,7 +8,7 @@ Estimated Time: 15 minutes
 
 ### About this Lab
 
-Now that you've created the Location, Department, and Employee business objects, we'll see how to create web pages to display data from these business objects in your application. You'll create one page to display departments and another to display employees. You'll also add pages that let your users create a new department or a new employee (in other words, create a new instance of the business object in the database). We'll do all this using Quick Starts, a handy set of wizards that work behind the scenes and make it easy for you to create pages and interact with your data.
+Now that you've created the Location, Department, and Employee business objects, we'll see how to create web pages to display data from these business objects. You'll create one page to display departments and another to display employees. You'll also add pages that let your users create a new department or a new employee (in other words, create a new instance of the business object in the database). We'll do all this using Quick Starts, a handy set of wizards that work behind the scenes and make it easy for you to create pages and interact with your data.
 
 ### Objectives
 
@@ -29,19 +29,18 @@ This lab assumes you have:
 Let's create a table to display your departments on the main-start page. The Table component is useful when you want to show lots of data in columns.
 
 1. Click ![Web Applications icon](images/web-applications-icon.png) **Web Applications** in the Navigator.
-2. If necessary, expand the **hrwebapp** and **main** nodes, then click **main-start**, the page that was automatically created as the default home page for your web application. (You can also open the page by clicking the **main-start** tab just below the header.)
+
+2. Click **main-start** under **hrwebapp** and **main** to open the page that was automatically created as the default home page for your web application. (You can also open the page by clicking the **main-start** tab just below the header.)
 
     You might want to click the **Web Applications** tab to close the Navigator pane and expand your work area. You can also widen your browser window.
 
-3. Now that you're in the Page Designer, let's give the main-start page a title. Click **main** on the page canvas—notice how the title text uses the Bind Text component.
+3. Now that you're in the Page Designer, let's give the main-start page a title. Click **main** on the page canvas—notice how the title text uses the **page-header** fragment, which provides a common page-level header that can be customized for each page.
 
-    ![The Page Designer tab for the main-start page, with the 'main' text featured in the Bind Text component selected on the canvas.](images/department-heading.png "")
+    ![The Page Designer tab for the main-start page, with the 'main' text featured in the page-header fragment selected on the canvas.](images/department-heading.png "")
 
-    If you're having trouble selecting the component, you'll need to expand the canvas area to better view its elements. Make sure you select the Bind Text component, not the div element surrounding it.
+4. In the fragment's Properties pane (click **Properties** if needed), look for **Title** under Input Parameters and replace `main` with `Departments`.
 
-4. In the Bind Text component's Properties pane (click **Properties** if needed), replace `main` with `Departments` in the **Value** field.
-
-    ![Bind Text's Properties pane, with the Value field set to Departments.](images/departments.png "")
+    ![The page-header's Properties pane, with the Title field set to Departments.](images/departments.png "")
 
 5. Click **Components** on the left edge of your work area to open the Components palette. Enter `table` in the Filter field, then drag and drop **Table** from the **Collections** category onto the canvas.
 

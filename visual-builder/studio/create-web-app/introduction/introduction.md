@@ -11,7 +11,7 @@ What's more, integrated Git repositories enable a collaborative environment to s
 All this makes VB Studio a complete solution to simplify application development and accelerate time to market. Take a look at this video to learn more, or just dive right into the labs.
   [](youtube:pMmrNIypI7c)
 
-Estimated Workshop Time: 1 hour 55 minutes
+Estimated Workshop Time: 1 hour 50 minutes
 
 ### Objectives
 
