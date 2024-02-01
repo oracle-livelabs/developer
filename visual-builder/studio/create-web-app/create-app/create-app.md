@@ -31,7 +31,7 @@ This lab assumes you have:
 
 ## Task 1: Create a web app
 
-The first thing we'll do is add a web app to the HR visual application you just created. A visual application is a container for all your web and mobile applications. In this task, you add a single web app to your visual application, but you can have more than one, even both web and mobile apps in the same visual application.
+The first thing we'll do is add a web app to the HR visual application you just created. A visual application is a container for all your web applications. In this task, you add a single web app to your visual application, but you can have multiple apps in the same visual application.
 
 1. Under **Create Apps** in the Welcome page, click **Responsive Apps**.
 
@@ -73,7 +73,7 @@ The first thing we'll do is add a web app to the HR visual application you just 
 
      ![The Web Apps pane shows the hrwebapp's tree view. Under hrwebapp, main is expanded with main-start nested under. At the same level as main are the Fragments, Resources, and Root Pages nodes.](images/treeview.png "")
 
-    You'll notice the **hrwebapp** node contains the **main** node, which in turn contains the **main-start** page. The **main** node is the application's default _flow_ containing the default page that users first see when the app is run. An application can have multiple flows, each of which can be used to group related pages. This simple application contains only one flow and one page, though we'll add more pages later on. By convention, a page takes its flow name as a prefix.
+    You'll notice the **hrwebapp** node contains the **main** node, which in turn contains the **main-start** node. The **main** node is the application's default _flow_ containing the default **main-start** page that users first see when the app is run. An application can have multiple flows, each of which can be used to group related pages. This simple application has only one flow and one page, though we'll add more pages later on. By convention, a page takes its flow name as a prefix.
 
 ## Task 2: Create a Location business object and import data
 
