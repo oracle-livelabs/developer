@@ -25,7 +25,7 @@ Estimated Workshop Time: 90 minutes
 
 In this workshop, you will learn how to:
 * Setup Azure Pipelines and how to create an application that runs on Azure and connects to Oracle Cloud Database
-  Will follow https://learn.microsoft.com/en-us/azure/devops/pipelines/create-first-pipeline?view=azure-devops and additionally
+  Will follow https://learn.microsoft.com/en-us/azure/devops/pipelines/create-first-pipeline?view=azure-devops and https://azure.microsoft.com/en-ca/solutions/devops
 
 ### Prerequisites
 

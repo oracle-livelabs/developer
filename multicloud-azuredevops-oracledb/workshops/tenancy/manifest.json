@@ -20,7 +20,7 @@
       },
       {
         "title": "Lab 3: Configure Azure Vault",
-        "filename": "../../deploy-oraoperator/deploy-oraoperator.md"
+        "filename": "../../configurevault/configurevault.md"
       },
       {
         "title": "Lab 4: Deploy The Oracle Database Operator to AKE and Bind to the Oracle Database",
@@ -28,7 +28,7 @@
       },
       {
         "title": "Lab 5: Setup The Pipeline",
-        "filename": "../../setup/setup.md"
+        "filename": "../../setuppipeline/setuppipeline.md"
       },
       {
         "title": "Lab 6: Run the pipeline",
@@ -40,7 +40,7 @@
       },
       {
         "title": "Lab 8: Observability of Multi-Cloud Architecture",
-        "filename": "../../setup/setup.md"
+        "filename": "../../observability/observability.md"
       },
       {
         "title": "Lab 9: Tear Down",
