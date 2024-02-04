@@ -16,30 +16,34 @@
       },
       {
         "title": "Lab 2: Create an AKE Kubernetes Cluster",
-        "filename": "../../setup/setup.md"
+        "filename": "../../createake/createake.md"
       },
       {
         "title": "Lab 3: Configure Azure Vault",
         "filename": "../../configurevault/configurevault.md"
       },
       {
-        "title": "Lab 4: Deploy The Oracle Database Operator to AKE and Bind to the Oracle Database",
+        "title": "Lab 4: Deploy The Oracle Database Operator to AKE",
         "filename": "../../deploy-oraoperator/deploy-oraoperator.md"
       },
       {
-        "title": "Lab 5: Setup The Pipeline",
+        "title": "Lab 5: Bind to the Oracle Database",
+        "filename": "../../bind-adb/bind-adb.md"
+      },
+      {
+        "title": "Lab 6: Setup The Pipeline",
         "filename": "../../setuppipeline/setuppipeline.md"
       },
       {
-        "title": "Lab 6: Run the pipeline",
-        "filename": "../../setup/setup.md"
+        "title": "Lab 7: Run the pipeline",
+        "filename": "../../runpipeline/runpipeline.md"
       },
       {
-        "title": "Lab 7: Verify Tests",
-        "filename": "../../setup/setup.md"
+        "title": "Lab 8: Verify Tests",
+        "filename": "../../verifytests/verifytests.md"
       },
       {
-        "title": "Lab 8: Observability of Multi-Cloud Architecture",
+        "title": "Lab 9: Observability of Multi-Cloud Architecture",
         "filename": "../../observability/observability.md"
       },
       {
