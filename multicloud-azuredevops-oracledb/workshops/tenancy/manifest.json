@@ -1,5 +1,5 @@
 {
-  "workshoptitle": "Building Azure Devops CI/CD Pipelines with Oracle Database Cloud Services",
+  "workshoptitle": "Build MultiCloud Devops using Azure CI/CD Pipelines with Oracle Database Cloud Services",
   "help": "livelabs-help-devdb-us@oracle.com",
 	"tutorials": [
       {
@@ -19,11 +19,11 @@
         "filename": "../../createake/createake.md"
       },
       {
-        "title": "Lab 3: Configure Azure Vault",
+        "title": "Lab 3: Configure Azure Vault and App Config",
         "filename": "../../configurevault/configurevault.md"
       },
       {
-        "title": "Lab 4: Deploy The Oracle Database Operator to AKE",
+        "title": "Lab 4: Deploy Oracle Database Operator to AKE",
         "filename": "../../deploy-oraoperator/deploy-oraoperator.md"
       },
       {
