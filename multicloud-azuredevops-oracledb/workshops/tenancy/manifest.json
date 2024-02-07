@@ -19,16 +19,16 @@
         "filename": "../../createake/createake.md"
       },
       {
-        "title": "Lab 3: Configure Azure Vault and App Config",
-        "filename": "../../configurevault/configurevault.md"
-      },
-      {
-        "title": "Lab 4: Deploy Oracle Database Operator to AKE",
+        "title": "Lab 3: Deploy Oracle Database Operator to AKE",
         "filename": "../../deploy-oraoperator/deploy-oraoperator.md"
       },
       {
-        "title": "Lab 5: Bind to the Oracle Database",
+        "title": "Lab 4: Bind to the Oracle Database",
         "filename": "../../bind-adb/bind-adb.md"
+      },
+      {
+        "title": "Lab 5: Configure Azure Vault and App Config",
+        "filename": "../../configurevault/configurevault.md"
       },
       {
         "title": "Lab 6: Setup The Pipeline",
