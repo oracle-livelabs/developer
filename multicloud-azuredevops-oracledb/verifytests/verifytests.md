@@ -6,17 +6,12 @@ In this lab, we will verify tests.
 
 ### Objectives
 
-In this lab, you will:
-
 * Setup the pipeline
 * Test the pipeline
 
 ### Prerequisites
 
-This lab assumes:
-
-* You have an Oracle Cloud account with OCI and Tenancy administration privileges to create policies and compartments.
-
+This lab assumes you have completed previous labs.
 
 ## Task 1: asdf
 

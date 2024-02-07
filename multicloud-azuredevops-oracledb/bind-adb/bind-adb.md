@@ -14,15 +14,11 @@ In this lab, you will bind to an existing Oracle Autonomous Database (ADB) using
 
 ### Prerequisites
 
-This lab assumes you have:
-
-* [Generated a Kubeconfig File](?lab=access-cluster)
-* A [Running and Healthy OraOperator](?lab=deploy-oraoperator)
-* A provisioned Oracle ADB in OCI
+This lab assumes you have completed previous labs.
 
 ## Task 1: Retrieve the existing ADB OCID
 
-During the [Deploy Workshop Stack Lab](?lab=deploy-stack), a new Autonomous Database (ADB) was provisioned in Oracle Cloud Infrastructure for you.
+
 
 1. Retrieve the OCID for the ADB, by running the following in Cloud Shell:
 

@@ -4,20 +4,16 @@
 
 In this lab, we will set up Azure Vault and Azure Config access to it for microservices/applications.
 
-### Objectives
+*Estimated Time:* 10 minutes
 
-In this lab, you will:
+### Objectives
 
 * Create Azure Vault.  Add secrets for password and wallet to the vault.
 * Setup App Config access to the vault.
 
 ### Prerequisites
 
-This lab assumes:
-
-* You have an Oracle Cloud account with OCI and Tenancy administration privileges to create policies and compartments.
-
-  > **Note:**  Policies are only required if you cannot create or use a OCI resources. If you are a tenancy administrator, you will have access to all the resources, and you can **optionally skip policy creations in this lab**.
+This lab assumes you have completed previous labs.
 
 ## Task 1: Create Application Registration
 
@@ -97,7 +93,7 @@ This lab assumes:
    3. Do the same for the `password` 
 
 
-   4. Do the same for the `connect_descriptor` and `user` except select `Key Vault reference` when creating rather than `Key-value`
+   4. Do the same for the `connect_descriptor` and `user` except select `Key-value` when creating rather than `Key Vault reference` 
 
 
 This concludes this lab. You can **proceed now to the next lab**.

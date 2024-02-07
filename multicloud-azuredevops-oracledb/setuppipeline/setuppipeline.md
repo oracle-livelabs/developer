@@ -6,18 +6,12 @@ In this lab, we will set up the Azure pipeline.
 
 ### Objectives
 
-In this lab, you will:
-
 * Setup the pipeline
 * Test the pipeline
 
 ### Prerequisites
 
-This lab assumes:
-
-* You have an Oracle Cloud account with OCI and Tenancy administration privileges to create policies and compartments.
-
-  > **Note:**  Policies are only required if you cannot create or use a OCI resources. If you are a tenancy administrator, you will have access to all the resources, and you can **optionally skip policy creations in this lab**.
+This lab assumes you have completed previous labs.
 
 ## Task 1: Setup Repos
 
