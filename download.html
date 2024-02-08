@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Checkbox Enabled Download</title>
+    <style>
+        body {
+            background-color: #000; /* Black background */
+            color: #fff; /* White text */
+        }
+        .submit-btn:disabled {
+            color: #999;
+            background-color: #ccc;
+        }
+        .submit-btn:enabled {
+            color: #fff;
+            background-color: #007bff;
+            cursor: pointer;
+        }
+              input[type="checkbox"] {
+            accent-color: #007bff; /* Change checkbox color */
+        }
+
+        label {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<center>
+<img src="MLH.jpg"/><br>
+<br><form id="downloadForm">
+    <label>
+        <input type="checkbox" id="agreeCheckbox">
+        By checking this box and registering you agree to only use
+        <br>the data provided during the lab for the specific exercises proposed
+        <br>and shall not onward supply the Official Media Data Feed
+        <br>and/or Fixture Lists Feed save to any end users.
+    </label>
+    <br><br>
+    <button type="button" id="downloadBtn" class="submit-btn" disabled>Download File</button>
+</form>
+</center>
+<script>
+    document.getElementById('agreeCheckbox').addEventListener('change', function(e) {
+        document.getElementById('downloadBtn').disabled = !e.target.checked;
+    });
+
+    document.getElementById('downloadBtn').addEventListener('click', function() {
+        window.location.href = 'https://www.google.com/imgres?imgurl=https%3A%2F%2Frepository-images.githubusercontent.com%2F497504170%2Fd2b7bbac-3c84-4da3-9b38-a3f7ecd0ea4f&tbnid=naAQAv1MtY_EYM&vet=12ahUKEwjIruS53ZyEAxV0tIkEHQBuCv0QMygBegQIARBV..i&imgrefurl=https%3A%2F%2Fgithub.com%2Ftopics%2Fcss-form&docid=K8ndYkQBxtt1cM&w=1281&h=851&q=form%20on%20github&ved=2ahUKEwjIruS53ZyEAxV0tIkEHQBuCv0QMygBegQIARBV';
+    });
+</script>
+
+</body>
+</html>
