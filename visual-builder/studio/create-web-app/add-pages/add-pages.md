@@ -38,7 +38,7 @@ Let's create a table to display your departments on the main-start page. The Tab
 
     ![The Page Designer tab for the main-start page, with the 'main' text featured in the page-header fragment selected on the canvas.](images/department-heading.png "")
 
-4. In the fragment's Properties pane (click **Properties** if needed), look for **Title** under Input Parameters and replace `main` with `Departments`.
+4. In the fragment's Properties pane (click **Properties** if needed), look for **title** under Input Parameters and replace `main` with `Departments`.
 
     ![The page-header's Properties pane, with the Title field set to Departments.](images/departments.png "")
 
@@ -126,7 +126,7 @@ We'll now create a page to display employees, similar to the one you created to 
 
     The main-employees page opens in the Page Designer.
 
-3. Click **main-employees** on the page to select the page-header fragment, then in the **Properties** pane (click **Properties** if you need to), change `main employees` to `Employees` in the **Title** field.
+3. Click **main-employees** on the page to select the page-header fragment, then in the **Properties** pane (click **Properties** if you need to), change `main employees` to `Employees` in the **title** field.
 
 4. Because we want to show a table as well as a chart, it might help to split the page into two distinct areas using panels. A panel encapsulates content with a border and padding. To add a panel to the page, enter `panel` in the Components Filter field, then drag and drop the **Panel** component onto the page.
 

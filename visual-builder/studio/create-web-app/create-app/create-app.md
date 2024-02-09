@@ -45,7 +45,7 @@ The first thing we'll do is add a web app to the HR visual application you just 
 
     The application opens on the **main-start** page, which is your application's default home page created automatically for you. (Ignore the **This dot says that you have made some changes** dialog that appears in the header for now; we'll explore Git changes in a later lab.)
 
-    What you see under the **main-start** tab is your application's main work area. Just under main-start are several horizontal tabs: **Page Designer**, **Actions**, **Event Listeners**, and so on. Each tab provides editors to help you examine and modify artifacts used in the page. By default, the page opens in the Page Designer, which is where you'll do the bulk of your work in VB Studio.
+    What you see under the **main-start** tab is your application's main work area. Just under main-start are several horizontal tabs: **Page Designer**, **Action Chains**, **Event Listeners**, and so on. Each tab provides editors to help you examine and modify artifacts used in the page. By default, the page opens in the Page Designer, which is where you'll do the bulk of your work in VB Studio.
 
     ![Web Apps pane after the hrwebapp has been created. The app itself is open on the right, on the main-start page, showing the Components Palette. On the far right, the Properties tab shows the Page view.](images/designer.png "Web Apps pane with the hrwebapp")
 
@@ -89,7 +89,7 @@ Let's now create your first business object and add data to it by importing a CS
     ![Business object page for the Location business object, with the Fields tab open. The other tabs are Overview, Security, Business Rules, Endpoints, and Data. A table shows the current fields, with the Type, Field Name, Display Label, Required, and Description columns visible for each.](images/location-bo-fields.png "Location business object page")
 
 5. Click **\+ Field** and select **Field** to add a field specific to this business object. This is a very simple business object, so we'll only add one new field.
-6. In the pop-up box, enter `Location` as the **Label**. The **Field Name** is automatically populated as **Location** and the **Type** set to **String** ![String](images/bo-string-icon.png) by default.
+6. In the pop-up box, enter `Location` as the **Label**. The **Field Name** is automatically populated as **location** and the **Type** set to **String** ![String](images/bo-string-icon.png) by default.
 
     ![The + Field pop-up box, with Location entered in the Label field, location filled in as the Field Name value, and the String type selected. The Create Field button is selected.](images/location-bo-location-field.png "Create Field pop-up box")
 
