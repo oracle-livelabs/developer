@@ -69,9 +69,11 @@ To complete this lab, you will need the following (*use the <input type="checkbo
 
 ## Acknowledgements
 
-* **Author** - Chris Hoina, Senior Product Manager, Database Tools
-* **Contributors**
+- **Author** - Chris Hoina, Senior Product Manager, Database Tools
+
+- **Contributors**
   - Jeff Smith, Distinguished Product Manager, Database Tools
   - Justin Biard, Senior Member of Technical Staff, Database Tools
   - Zachary Talke, Senior Product Manager, Database Tools
-* **Last Updated By/Date** - Chris Hoina, January 2024
+  
+- **Last Updated By/Date** - Chris Hoina, January 2024

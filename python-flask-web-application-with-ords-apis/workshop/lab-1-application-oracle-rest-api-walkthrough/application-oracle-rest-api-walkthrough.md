@@ -346,10 +346,12 @@ While the main focus of this Workshop is not to introduce you to Flask, we will 
 - [About Leaflet.js](https://leafletjs.com/)
 
 ## Acknowledgements
-* **Author** - Chris Hoina, Senior Product Manager, Database Tools
-* **Contributors**
+
+- **Author** - Chris Hoina, Senior Product Manager, Database Tools
+
+- **Contributors**
   - Jeff Smith, Distinguished Product Manager, Database Tools
   - Justin Biard, Senior Member of Technical Staff, Database Tools
   - Zachary Talke, Senior Product Manager, Database Tools
-  - Brian Spendolini, Contributor
-* **Last Updated By/Date** - Chris Hoina, August 2023
+
+- **Last Updated By/Date** - Chris Hoina, August 2023
