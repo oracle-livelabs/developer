@@ -6,7 +6,7 @@ In this Workshop we'll explore a Python application built with the Flask micro-f
 
 Since all necessary information is provided through Oracle REST APIs, Object-Relational Mapping (ORM) tools are completely unnecessary.
 
-By the end of this Workshop, you'll have a thorough understanding of how Oracle REST APIs can accelerate the development of your web applications. You will also be provided with the Python code and Database scripts required to:
+By the end of this Workshop, you'll have a thorough understanding of how Oracle REST APIs can accelerate the development of your web applications. You will also be provided with sample Python code and Database scripts required to:
 
 - Establish your own schema in an Oracle Autonomous Database
 - Run this Flask application locally
