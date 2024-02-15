@@ -2,9 +2,21 @@
 
 ## Introduction
 
-This lab will walk you through deploying the Oracle Operator for Kubernetes (OraOperator).  
+This lab will walk you through deploying the Oracle Database Operator for Kubernetes (OraOperator).  
 
 The Oracle Database Operator for Kubernetes (a.k.a. OraOperator) helps developers, DBAs, DevOps and GitOps teams reduce the time and complexity of deploying and managing Oracle Databases. It eliminates the dependency on a human operator or administrator for the majority of database operations.
+
+The current release of the operator supports the following lifecycle operations:
+
+- ADB-S/ADB-D: Provision, Bind, Start, Stop, terminate (soft/hard), scale (up/down), Manual Backup, Manual Restore
+- ACD: provision, bind, restart, terminate (soft/hard)
+- SIDB: Provision, clone, patch (in-place/out-of-place), update database initialization parameters, update database configuration (Flashback, archiving), Oracle Enterprise Manager (EM) Express (a basic observability console), Oracle REST Data Service (ORDS) to support REST based SQL, PDB management, SQL Developer Web, and Application Express (Apex)
+- SHARDED: Provision/deploy sharded databases and the shard topology, Add a new shard, Delete an existing shard
+- Oracle Multitenant Database: Bind to a CDB, Create a  PDB, Plug a  PDB, Unplug a PDB, Delete a PDB, Clone a PDB, Open/Close a PDB
+- Oracle Base Database Cloud Service (BDBCS): provision, bind, scale shape Up/Down, Scale Storage Up, Terminate and Update License
+- Oracle Data Guard: Provision a Standby for the SIDB resource, Create a Data Guard Configuration, Perform a Switchover, Patch Primary and Standby databases in Data Guard Configuration
+
+The upcoming releases will support new configurations, operations and capabilities.
 
 
 ![Operator](images/dba_oper_dev.png "Operator")

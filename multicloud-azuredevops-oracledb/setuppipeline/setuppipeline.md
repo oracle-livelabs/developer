@@ -13,9 +13,9 @@ In this lab, we will set up the Azure pipeline.
 
 This lab assumes you have completed previous labs.
 
-## Task 1: Setup Repos
+## Task 1: Fork and Clone the Github Src Repos
 
-1. asdf
+1. Fork and clone the
 
    asdfy default it is easiest to simply download the src to a location on your computer using the follow git clone command:
 
