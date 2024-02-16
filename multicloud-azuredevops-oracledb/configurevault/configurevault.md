@@ -9,7 +9,7 @@ We will add the vault secrets and config that will be used by the microservice(s
 
 ### Objectives
 
-* Create an Application Registration and obtain values for AZURE_TENANT_ID, AZURE_CLIENT_ID, and AZURE_CLIENT_SECRET
+* Create an Application Registration and obtain values for AZURE\_TENANT\_ID, AZURE\_CLIENT\_ID, and AZURE\_CLIENT\_SECRET
 * Create and Configure Azure Vault.  
 * Add secrets for password and wallet to the vault.
 * Setup App Config access to the vault.
@@ -19,7 +19,9 @@ We will add the vault secrets and config that will be used by the microservice(s
 
 This lab assumes you have completed previous labs.
 
-## Task 1: Create Application Registration
+## Task 1: Create and Configure Application Registration and obtain values for access
+
+Azure Application Registrations are part of Azure Active Directory (Azure AD). When you register an application in Azure AD, you're creating an identity configuration for your application so that it can authenticate and communicate securely with other services that use Azure AD for authentication.
 
    1. Click `New Registration`
 
@@ -32,7 +34,27 @@ This lab assumes you have completed previous labs.
 
       ![App registration](images/appregistration.png)
 
-## Task 2: Create Azure Vault and Secrets For Wallet and Password
+   3. Obtain values for AZURE\_TENANT\_ID, AZURE\_CLIENT\_ID, and AZURE\_CLIENT\_SECRET 
+
+      ![App registration](images/appregistration.png)
+
+
+## Task 2: Configure Resource Group Access
+
+1. Make sure your user is explicitly owner of the resource group.
+
+   ![Create App Config](images/resourcegrouprole.png)
+
+2. add vault and secret roles - not actually sure if both are required
+
+   ![Create App Config](images/resourcegroupaddmembers.png)
+
+3. under "access policies" add vault get, set ,etc. to app
+
+   ![Create App Config](images/resourcegroupaddconditions.png)
+
+
+## Task 3: Create Azure Vault and Secrets For Wallet and Password
 
    1. From the home screen, click `Key Vaults` and `Create`
 
@@ -53,28 +75,6 @@ This lab assumes you have completed previous labs.
       ![Create App Config](images/walletvaultsecret.png)
 
    5. Repeat the same for `password`
-
-## Task 3: Configure Azure Vault for Access from Application Config (and thus the application)
-
-   1. Make sure your user is explicitly owner of the resource group.
-
-      ![Create App Config](images/resourcegroupaddmembers.png)
-
-   2. add vault and secret roles - not actually sure if both are required
-
-      ![Create App Config](images/resourcegroupaddmembers.png)
-
-   3. under "access policies" add vault get, set ,etc. to app
-
-      ![Create App Config](images/resourcegroupconditions.png)
-
-   4. asdf
-
-      ![Create App Config](images/createappconfig.png)
-
-   5. asdf
-      
-      ![Create App Config](images/createappconfig.png)
 
 ## Task 4: Create Application Config with Access Roles
 
