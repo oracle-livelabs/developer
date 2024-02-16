@@ -3,13 +3,16 @@
 ## Introduction
 
 In this lab, we will set up Azure Vault and Azure Config access to it for microservices/applications.
+We will add the vault secrets and config that will be used by the microservice(s) in AKE to make connections to the Oracle Database in OCI.
 
 *Estimated Time:* 10 minutes
 
 ### Objectives
 
-* Create Azure Vault.  Add secrets for password and wallet to the vault.
+* Create and Configure Azure Vault.  
+* Add secrets for password and wallet to the vault.
 * Setup App Config access to the vault.
+* Obtain values for 
 
 ### Prerequisites
 
@@ -28,7 +31,7 @@ This lab assumes you have completed previous labs.
 
       ![App registration](images/appregistration.png)
 
-## Task 2: Create Vault and Secrets For Wallet and Password
+## Task 2: Create Azure Vault and Secrets For Wallet and Password
 
    1. From the home screen, click `Key Vaults` and `Create`
 
@@ -50,7 +53,29 @@ This lab assumes you have completed previous labs.
 
    5. Repeat the same for `password`
 
-## Task 3: Create Application Config with Access Roles
+## Task 3: Configure Azure Vault for Access from Application Config (and thus the application)
+
+   1. make my user owner of the resource group (eventhough it should inherit the role)
+
+      ![Create App Config](images/createappconfig.png)
+
+   2. add vault and secret roles - not actually sure if both are required
+
+      ![Create App Config](images/createappconfig.png)
+
+   3. under "access policies" add vault get, set ,etc. to app
+
+      ![Create App Config](images/createappconfig.png)
+
+   4. asdf
+
+      ![Create App Config](images/createappconfig.png)
+
+   5. asdf
+      
+      ![Create App Config](images/createappconfig.png)
+
+## Task 4: Create Application Config with Access Roles
 
    1. Click `New Registration`
 
@@ -78,7 +103,7 @@ This lab assumes you have completed previous labs.
       ![Check access](images/checkroleassignment.png)
 
 
-## Task 4: Create App Config Secrets
+## Task 5 : Create App Config Secrets
 
    1. From the application configuration page click `Create` and then `Key Vault reference`
 
