@@ -9,10 +9,11 @@ We will add the vault secrets and config that will be used by the microservice(s
 
 ### Objectives
 
+* Create an Application Registration and obtain values for AZURE_TENANT_ID, AZURE_CLIENT_ID, and AZURE_CLIENT_SECRET
 * Create and Configure Azure Vault.  
 * Add secrets for password and wallet to the vault.
 * Setup App Config access to the vault.
-* Obtain values for 
+
 
 ### Prerequisites
 
@@ -55,17 +56,17 @@ This lab assumes you have completed previous labs.
 
 ## Task 3: Configure Azure Vault for Access from Application Config (and thus the application)
 
-   1. make my user owner of the resource group (eventhough it should inherit the role)
+   1. Make sure your user is explicitly owner of the resource group.
 
-      ![Create App Config](images/createappconfig.png)
+      ![Create App Config](images/resourcegroupaddmembers.png)
 
    2. add vault and secret roles - not actually sure if both are required
 
-      ![Create App Config](images/createappconfig.png)
+      ![Create App Config](images/resourcegroupaddmembers.png)
 
    3. under "access policies" add vault get, set ,etc. to app
 
-      ![Create App Config](images/createappconfig.png)
+      ![Create App Config](images/resourcegroupconditions.png)
 
    4. asdf
 
@@ -131,4 +132,4 @@ This concludes this lab. You can **proceed now to the next lab**.
 
 * **Author** - Paul Parkinson, Architect and Developer Advocate, Oracle Database
 
-* **Last Updated By/Date** - 2024.
+* **Last Updated By/Date** - Paul Parkinson, 2024.
