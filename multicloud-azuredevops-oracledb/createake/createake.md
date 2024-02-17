@@ -58,6 +58,14 @@ In Azure, a Resource Group is a fundamental organizational block within which re
 
 
 
+## Task 3: Create Azure Container Registry
+
+   1. Similar to creating the Kubernetes cluster, simply search on `Container registries` and create a container registry by providing a name (Eg `multicloud` or `mycontainerregistry`).
+
+      ![New App Registration](images/createcontainerregistry.png)
+
+
+
 This concludes this lab. You can **proceed now to the next lab**.
 
 ## Learn More

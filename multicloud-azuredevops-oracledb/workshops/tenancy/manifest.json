@@ -15,7 +15,7 @@
         "filename": "../../setup/setup.md"
       },
       {
-        "title": "Lab 2: Create Resource Group and AKE Kubernetes Cluster",
+        "title": "Lab 2: Create Resource Group, AKE Kubernetes Cluster, and Container Registry",
         "filename": "../../createake/createake.md"
       },
       {
@@ -31,7 +31,7 @@
         "filename": "../../bind-adb/bind-adb.md"
       },
       {
-        "title": "Lab 6: Configure Azure Vault, Application Registration, and App Config",
+        "title": "Lab 6: Application Registration, Configure Azure Vault, and App Config",
         "filename": "../../configurevault/configurevault.md"
       },
       {
@@ -39,11 +39,11 @@
         "filename": "../../setuppipeline/setuppipeline.md"
       },
       {
-        "title": "Lab 8: Run the pipeline",
+        "title": "Lab 8: Run and Test the pipeline",
         "filename": "../../runpipeline/runpipeline.md"
       },
       {
-        "title": "Lab 9: Verify Tests",
+        "title": "Lab 9: Implement Canary Deployment",
         "filename": "../../verifytests/verifytests.md"
       },
       {
