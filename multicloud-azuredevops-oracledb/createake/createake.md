@@ -15,11 +15,46 @@ In this lab, we will create an Azure Kubernetes cluster and look at a couple opt
 
 This lab assumes you have completed previous labs.
 
-## Task 1: Create Azure Kubernetes cluster
+## Task 1: Create Resource Group
 
-1. Click `New Registration`
+This task can be skipped if an existing Resource Group will be used.
 
-   ![New App Registration](images/newappregistration.png)
+In Azure, a Resource Group is a fundamental organizational block within which resources like Azure Application Registrations, Azure App Configuration, Azure Key Vault, and many other Azure services are deployed and managed. A resource group is essentially a container that holds related resources for an Azure solution. The primary purpose of a resource group is to help organize and manage resources that share a common lifecycle, permissions, and policies.
+
+   1. Click `New Registration Group`
+
+      ![New Registration Group](images/newregistrationgroup.png)
+
+   2. Provide a `Resource group` name
+
+      ![Registration Group Name](images/resourcegroupcreate.png)
+
+   3. Once, created Make sure your user is explicitly owner of the resource group by clicking `Access control (IAM)` and `Add role assignment`.  Then search on and select `Owner`.
+
+      ![Create Resource Config](images/resourcegrouprole.png)
+
+   4. Search on and add your user as member and click `next`.
+
+      ![Create App Config](images/resourcegroupaddmembers.png)
+
+   5. Select `Review + assign` on the Conditions page and complete the assignment.
+
+      ![Create App Config](images/resourcegroupaddconditions.png)
+
+
+## Task 2: Create Azure Kubernetes cluster
+
+   1. Search for and select `Kubernetes services` in Azure console.
+
+      ![New App Registration](images/kubernetessearch.png)
+
+   2. Click `Create a Kuberenetes cluster`
+
+      ![New App Registration](images/kubernetescreate.png)
+
+   3. Click `Name and create the cluster`
+
+      ![New App Registration](images/kubernetesname.png)
 
 
 

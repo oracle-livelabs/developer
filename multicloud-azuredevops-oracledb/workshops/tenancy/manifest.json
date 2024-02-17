@@ -15,7 +15,7 @@
         "filename": "../../setup/setup.md"
       },
       {
-        "title": "Lab 2: Create an AKE Kubernetes Cluster",
+        "title": "Lab 2: Create Resource Group and AKE Kubernetes Cluster",
         "filename": "../../createake/createake.md"
       },
       {

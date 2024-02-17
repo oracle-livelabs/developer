@@ -3,7 +3,7 @@
 ## Introduction
 
 In this lab, we will set up Azure Vault and Azure Config access to it for microservices/applications.
-We will add the vault secrets and config that will be used by the microservice(s) in AKE to make connections to the Oracle Database in OCI.
+We will add the vault secrets and config that will be used by the microservice(s) in AKE to make application s connections to the Oracle Database in OCI.
 
 *Estimated Time:* 10 minutes
 
@@ -21,37 +21,30 @@ This lab assumes you have completed previous labs.
 
 ## Task 1: Create and Configure Application Registration and obtain values for access
 
-Azure Application Registrations are part of Azure Active Directory (Azure AD). When you register an application in Azure AD, you're creating an identity configuration for your application so that it can authenticate and communicate securely with other services that use Azure AD for authentication.
-
+   Azure Application Registrations are part of Azure Active Directory. 
+   When you register an application in Azure AD, you're creating an identity configuration for your application so that it can authenticate and communicate securely with other services that use Azure AD for authentication.
+   Application Registrations allow your application to obtain tokens from Azure AD, enabling it to authenticate and access resources that are secured by Azure AD.
    1. Click `New Registration`
 
       ![New App Registration](images/newappregistration.png)
 
 
-   2. Create a new registration
+   2. Create a new registration (Eg `multicloud app`)
 
       ![Create a new registration](images/registerapp.png)
 
+
+   3. Note the value of the `Application (client) ID` (which will be used as the value for `AZURE_CLIENT_ID` later) and the `Directory (tenant) ID` (which will be sued as the value for `AZURE_TENANT_ID` later)
+
       ![App registration](images/appregistration.png)
 
-   3. Obtain values for AZURE\_TENANT\_ID, AZURE\_CLIENT\_ID, and AZURE\_CLIENT\_SECRET 
+   4. Create a client secret for the app registration by clicking `Certificates & Secrets` on the left sidebar menu, then `+ New client secret` 
 
-      ![App registration](images/appregistration.png)
+      ![App registration secret](images/appregistrationsecret.png)
 
+   5. Note the value (not the ID) of the client secret. 
+      This will be used as the value for `AZURE_TENANT_ID` and along with the `AZURE_CLIENT_ID` and `AZURE_TENANT_ID` values noted earlier will be used by the Kubernetes microservice(s) to access to the Application Config and Azure Vault in order obtain information to connect to the Oracle Database on OCI.
 
-## Task 2: Configure Resource Group Access
-
-1. Make sure your user is explicitly owner of the resource group.
-
-   ![Create App Config](images/resourcegrouprole.png)
-
-2. add vault and secret roles - not actually sure if both are required
-
-   ![Create App Config](images/resourcegroupaddmembers.png)
-
-3. under "access policies" add vault get, set ,etc. to app
-
-   ![Create App Config](images/resourcegroupaddconditions.png)
 
 
 ## Task 3: Create Azure Vault and Secrets For Wallet and Password
@@ -76,6 +69,26 @@ Azure Application Registrations are part of Azure Active Directory (Azure AD). W
 
    5. Repeat the same for `password`
 
+   6.  Add `Key Vault Administrator` and `Key Vault Secrets User` roles to the app registration created earlier.
+
+      ![Create App Config](images/vaultaddroleassignment.png)
+
+      ![Create App Config](images/vaultaddroleassignmentreviewandassign.png)
+
+      ![Create App Config](images/vaultaddroleassignmentreviewandassign.png)
+
+   7.  Click `Access Policies` on the sidebar menu of the Vault screen and 'Create an access policy' and select all or applicable permissions and click `Next`
+
+      ![Create App Config](images/vaultaccesspolicy.png)
+
+      Under `Principal` search for and select the app registration created earlier. Choose remaining defaults and create the access policy.
+
+      ![Create App Config](images/vaultaccesspolicyprincipal.png)
+
+      Verify the creation of the access policy.
+
+      ![Create App Config](images/vaultaccesspolicyverify.png)
+
 ## Task 4: Create Application Config with Access Roles
 
    1. Click `New Registration`
@@ -94,7 +107,7 @@ Azure Application Registrations are part of Azure Active Directory (Azure AD). W
       Search for and add App Config ownership/access roles.  Then click `Next`.
       ![Search for and add App Config roles](images/addroleassignmentaddrole.png)
       
-      Search for and add members. Then click `Next`. 
+      Search for and add your user as a member. Then click `Next`. 
       ![Search for and add members](images/addroleassignmentmembers.png)
 
       View Conditions. Then click `Next` and `Review + assign`.
