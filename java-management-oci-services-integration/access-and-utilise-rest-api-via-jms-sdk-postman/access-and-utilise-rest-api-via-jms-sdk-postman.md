@@ -34,16 +34,16 @@ In this lab, you will:
             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
             xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
         <modelVersion>4.0.0</modelVersion>
-
+    
         <groupId>org.example</groupId>
         <artifactId>GetFleetExample</artifactId>
         <version>1.0-SNAPSHOT</version>
-
+    
         <properties>
             <maven.compiler.source>8</maven.compiler.source>
             <maven.compiler.target>8</maven.compiler.target>
         </properties>
-
+    
         <dependencyManagement>
             <dependencies>
                 <dependency>
@@ -68,7 +68,7 @@ In this lab, you will:
                 <version>3.8.0</version>
             </dependency>
         </dependencies>
-
+    
     </project>
     </copy>
     ```
@@ -85,7 +85,7 @@ In this lab, you will:
     your use case (such as resource IDs, strings containing ‘EXAMPLE’ or ‘fleet_OCID’, and
     boolean, number, and enum parameters with values not fitting your use case).
     */
-
+    
     import com.oracle.bmc.ConfigFileReader;
     import com.oracle.bmc.auth.AuthenticationDetailsProvider;
     import com.oracle.bmc.auth.ConfigFileAuthenticationDetailsProvider;
@@ -97,7 +97,7 @@ In this lab, you will:
 
     public class GetFleetExample {
         public static void main(String[] args) throws Exception {
-
+    
             /**
             * Create a default authentication provider that uses the DEFAULT
             * profile in the configuration file.
@@ -105,19 +105,19 @@ In this lab, you will:
             */
             final ConfigFileReader.ConfigFile configFile = ConfigFileReader.parseDefault();
             final AuthenticationDetailsProvider provider = new ConfigFileAuthenticationDetailsProvider(configFile);
-
+    
             /* Create a service client */
             JavaManagementServiceClient.Builder builder = JavaManagementServiceClient.builder();
             JavaManagementServiceClient client = builder.build(provider);
-
+    
             /* Create a request and dependent object(s). */
             GetFleetRequest getFleetRequest = GetFleetRequest.builder()
                     .fleetId("<fleet_OCID>")
                     .build();
-
+    
             /* Send request to the Client */
             GetFleetResponse response = client.getFleet(getFleetRequest);
-
+    
             System.out.println(response.toString());
             Fleet fleet = response.getFleet();
             System.out.println(fleet.getDisplayName());
@@ -125,7 +125,7 @@ In this lab, you will:
     }
     </copy>
     ```
-
+    
     Refer to [API Reference and Endpoints](https://docs.oracle.com/en-us/iaas/api/#/en/jms/20210610/Fleet/GetFleet) for more detail related to the sample API code.
 
 4. Paste the sample API code in `GetFleetExample` Project. Add the Fleet OCID at **fleet_OCID** placeholder. Refer to [Lab 1 Task 3](?lab=access-and-utilise-rest-api-via-oci-cli#Task3:AccessRESTAPIviaOCICLI) to check how to find the fleet OCID.
@@ -276,7 +276,7 @@ The steps above can be applied for the Typescript, .NET, Ruby and GO SDKs.
 2. Input the desired GET request in the desired format with the tenancy region and fleet ocid.
     ```
     <copy>
-    https://javamanagement.<tenancy-region>.oci.oraclecloud.com/20210610/fleets/ocid1.jmsfleet.oc1.<...unique_fleet_ocid>
+    https://javamanagement.<tenancy-region>.oci.oraclecloud.com/20210610/fleets/<...unique_fleet_ocid>
     </copy>
     ```
 
@@ -299,6 +299,8 @@ You may now **proceed to the next lab.**
 
   Check if your configuration information in **OCI_Environment** is correct.
 
+  ![image of postman pre-request script error check](images/postman-pre-request-script-error-check.png)
+  
 * If you encounter a Pre-request Script error similar to the following:
 
   ![image of postman pre-request script error](images/postman-pre-request-script-error.png)
@@ -320,7 +322,7 @@ You may now **proceed to the next lab.**
     * [.NET SDK](https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/dotnetsdk.htm)
     * [Ruby SDK](https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/rubysdk.htm)
     * [GO SDK](https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/gosdk.htm)
-    * [Typescript SDK](https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/gosdk.htm)
+    * [Typescript SDK](https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/typescriptsdk.htm)
     * [JMS REST APIs](https://docs.oracle.com/en-us/iaas/api/#/en/jms/20210610/)
 
 * You may review [Getting Help and Contacting Support](https://docs.oracle.com/en-us/iaas/Content/GSG/Tasks/contactingsupport.htm) in the OCI documentation.
@@ -330,4 +332,4 @@ You may now **proceed to the next lab.**
 ## Acknowledgements
 
 * **Author** - Esther Neoh, Java Management Service
-* **Last Updated By** - Sherlin Yeo, March 2023
+* **Last Updated By** - Siqi Liu, October 2023

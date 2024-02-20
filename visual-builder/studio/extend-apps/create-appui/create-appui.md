@@ -64,7 +64,7 @@ Let's now develop our App UI by dragging and dropping components onto the main-s
 
     ![This image shows the Input Text component highlighted in the Components palette and being dragged onto the canvas under the heading. ](images/input-text.png)
 
-4. In the Input Text component's Properties pane, change the **Label Hint** to `Emp Name`. You'll see this as placeholder text in the component on the canvas.
+4. In the Input Text component's Properties pane, change the **Label Hint** to `Emp Name`. You'll see this text as a placeholder in the component on the canvas.
 
 5. Let's now create a variable that we can map the input text field to. This variable will hold the employee data that the user will be able to search. In the Input Text component's Properties pane, click the **Data** tab. Hover over the **Value** text and click the ![Select Variable icon](images/icon-selectvariable.png) icon next to **fx**.
 
@@ -73,6 +73,8 @@ Let's now develop our App UI by dragging and dropping components onto the main-s
 6. Click **Create Variable** next to **Page**.
 
 7. In the **ID** field, enter `searchString`, leave the **Type** set to `string`, and click **Create**.
+
+    The component's data is now bound to the newly created variable.
 
 ## Task 3: Connect to a data source
 
@@ -104,7 +106,7 @@ Below the input text field, we want to show a list of employees that the user ca
 
 In this task, we're going to set up a filtering mechanism for our list based on the display name of the employee. We want to compare each name to whatever the user enters as a search string, in order to find the proper match.
 
-1. Click ![App UIs icon](images/icon-appuis.png) **App UIs** in the Navigator, expand the **hcmsearch** and **main** nodes, then select **main-start**.
+1. Click ![App UIs icon](images/icon-appuis.png) **App UIs** in the Navigator, expand the **hcmsearch** and **main** nodes (if necessary), and select **main-start**.
 
 2. Select the **Data** tab in the Page Designer, then expand **Services** and **hcmRest**. Drag **publicWorkers** onto the page underneath the Input Text component:
 
@@ -151,4 +153,4 @@ You may now **proceed to the next lab**.
 
 * **Author** - Sheryl Manoharan, VB Studio User Assistance, May 2023
 * **Contributors** -  Lisa Dawson, VB Studio User Assistance
-* **Last Updated By/Date** - Sheryl Manoharan, September 2023
+* **Last Updated By/Date** - Sheryl Manoharan, November 2023

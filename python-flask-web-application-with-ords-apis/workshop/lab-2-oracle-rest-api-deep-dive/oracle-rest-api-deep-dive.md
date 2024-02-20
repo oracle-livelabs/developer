@@ -220,9 +220,10 @@ For this Lab, we'll rely on Swagger's Open Source Editor to review our ORDS Base
 
 ## Acknowledgements
 
-* **Author** - Chris Hoina, Senior Product Manager, Database Tools
+- **Author** - Chris Hoina, Senior Product Manager, Database Tools
+
 - **Contributors**
   - Jeff Smith, Distinguished Product Manager, Database Tools
   - Zachary Talke, Senior Product Manager, Database Tools
-  - Brian Spendolini, Contributor
-- **Last Updated By/Date** - Chris Hoina, March 2023
+
+- **Last Updated By/Date** - Chris Hoina/February 2024

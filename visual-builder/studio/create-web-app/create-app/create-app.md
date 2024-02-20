@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This lab shows you how to create a web app in your visual application project and populate it with business objects that store your data.
+This lab shows you how to create a web app in your visual application and populate it with business objects that store your data.
 
 Estimated Time: 15 minutes
 
@@ -33,37 +33,15 @@ This lab assumes you have:
 
 The first thing we'll do is add a web app to the HR visual application you just created. A visual application is a container for all your web and mobile applications. In this task, you add a single web app to your visual application, but you can have more than one, even both web and mobile apps in the same visual application.
 
-1. Click![Workspaces icon](images/vbs-workspaces-icon.png)**Workspaces**, then click **HR Workspace** in the Workspaces table.
-
-    The HR application opens in the Designer on the Welcome page, which serves as a launching point for connecting to data, creating apps, or adding artifacts.
-
-    ![This image shows part of the HR Visual Application's Welcome page. The page contains tiles in three sections: Connect to Data, Create Apps, and Add Artifacts. On  the right are sections with references to documentation and other resources.](images/visual-app-welcome.png "Welcome page in the Designer")
-
-    On the far left are icons representing Mobile Applications, Web Applications, Business Objects, and so on. This vertical toolbar is the Navigator, which helps you move between the artifacts in your visual application.
-
-    Now take a look at the header:
-
-    ![Header in the HR Visual Application workspace. The workspace name HR Visual Application is on the left. Next to it, the Git repository and current branch tutorial-hr-project.git / hrbranch are visible. On the right are icons that let you perform other actions: Undo, Redo, Preview, Publish Changes, Product Feedback, Go to File, and Menu.](images/header.png "Header")
-
-    On the left is the name of your current workspace, **HR Workspace**; next to it is the project's Git repository and the branch currently associated with your workspace (**tutorial-hr-project.git/hrbranch**). Click each option to see other actions that you can perform. Clicking ![Go to Project Page icon](images/go-to-project-home-icon.png) will take you back to the Project Home page.
-
-    Elements on the right let you perform various other actions, such as undo a change or search the Git repository for a file. This workshop primarily demonstrates the options to preview your app, share it, and publish changes. If you make a mistake during this workshop, click ![Undo icon](images/undo-icon.png)  to back out of the last step you did, or the arrow next to it to undo more than one step.
-
-    Take note of the footer, which has tools that help you debug and maintain your visual app (we'll briefly look at Audits and Git History in this workshop):
-
-    ![Footer in the HR Visual Application workspace, which shows Audits, Find in Files, Git History, and Tests tabs.](images/footer.png "Footer")
-
-    Keep in mind that VB Studio saves your changes automatically as you work. A timestamp at the bottom of the page will show the time  your work was last saved. Note that changes are only saved to your local workspace repo—but more on that later.
-
-2. We want to create a web application, so under **Create Apps**, click **Responsive Apps**.
+1. Under **Create Apps** in the Welcome page, click **Responsive Apps**.
 
     ![Web Apps pane of the Navigator. There is a plus sign at the top and a + Web Application button at the bottom.](images/web-apps.png "Web Apps pane")
 
     The Web Apps pane opens in the Navigator.
 
-3. Click **\+ Web Application** (or the **+** sign at the top of the Web Apps pane).
+2. Click **\+ Web Application** (or the **+** sign at the top of the Web Apps pane).
 
-4. In the Create Web Application window, enter `hrwebapp` as the **Application Name**. (You can specify uppercase as well as lowercase characters in the application name, but the name is converted to lowercase.) Leave the **Navigation Style** set to the default, **None**, and click **Create**.
+3. In the Create Web Application window, enter `hrwebapp` as the **Application Name**. (You can specify uppercase as well as lowercase characters in the application name, but the name is converted to lowercase.) Leave the **Navigation Style** set to the default, **None**, and click **Create**.
 
     The application opens on the **main-start** page, which is your application's default home page created automatically for you. (Ignore the **This dot says that you have made some changes** dialog that appears in the header for now; we'll explore Git changes in a later lab.)
 
@@ -123,7 +101,7 @@ Let's now create your first business object and add data to it by importing a CS
 
     A check mark is displayed in the Location field's Required column.
 
-8. Click [this link](https://objectstorage.us-ashburn-1.oraclecloud.com/p/LNAcA6wNFvhkvHGPcWIbKlyGkicSOVCIgWLIu6t7W2BQfwq2NSLCsXpTL9wVzjuP/n/c4u04/b/livelabsfiles/o/developer-library/Location.csv) to download the `Location.csv` file to your file system. This file contains four locations and provides the data for the Location business object.
+8. Click [this link](https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/sENgbU2RPqNTYwSFSZWOU_0tdiYo9bLUvFOlwqvNn2Jaty3CnbT0U_XsRqKSYZMj/n/c4u04/b/livelabsfiles/o/developer-library/location.csv) to download the `location.csv` file to your file system. This file contains four locations and provides the data for the Location business object.
 
 9. Click the **Data** tab, then **Import from File** ![Import from File icon](images/import_icon.png).
 
@@ -141,7 +119,7 @@ Let's now create your first business object and add data to it by importing a CS
 
 Let's now create the Department and Employee business objects. But instead of creating the business objects and fields one by one and importing data for them, you'll import a ZIP file that defines the two business objects with their fields and data all at once.
 
-1. Click [this link](https://objectstorage.us-ashburn-1.oraclecloud.com/p/Ei1_2QRw4M8tQpk59Qhao2JCvEivSAX8MGB9R6PfHZlqNkpkAcnVg4V3-GyTs1_t/n/c4u04/b/livelabsfiles/o/oci-library/Other-BOs.zip) and download the `Other-BOs.zip` file. This ZIP file contains CSV files for the Department and Employee business objects. Feel free to review the contents.
+1. Click [this link](https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/-TsxaA2U-TAw4qHOYKSqTZF-l1NQSx89LDjPeakLPJp-haKBBQgttpRmb0V-RUXc/n/c4u04/b/livelabsfiles/o/developer-library/other-bos.zip) and download the `other-bos.zip` file. This ZIP file contains CSV files for the Department and Employee business objects. Feel free to review the contents.
 
 2. In the Navigator's Business Object pane, click **Menu** ![Menu icon](images/menu-icon.png) and select **Data Manager**. The Data Manager is what you use to import data from a variety of sources.
 
@@ -151,7 +129,7 @@ Let's now create the Department and Employee business objects. But instead of cr
 
      ![Manage Application Data page, also known as the Data Manager. Import Business Objects is selected.](images/import-bos.png "Manage Application Data page")
 
-4. On the Upload File step of the Import New Business Objects wizard, click the drag and drop box, select the `Other-BOs.zip` file, and click **Upload**.
+4. On the Upload File step of the Import New Business Objects wizard, click the drag and drop box, select the `other-bos.zip` file, and click **Upload**.
 
     When the upload succeeds, you'll see a message that the import contains records for the Department and Employee business objects. Click **Next**.
 
@@ -168,7 +146,6 @@ Let's now create the Department and Employee business objects. But instead of cr
     ![Type option of the location field selected. A pop-up box shows the Type set to Reference, the Referenced Business Object set as Location, and the Default Field shown as Location.](images/import-bos-upload-fields-deptlocationfield.png "Type option of the location field")
 
     Click **OK**.
-
 
 7. For the same **Location** field, click **Required** to deselect the setting (**Department** and **Id** are the only required fields for the Department object).
 
@@ -230,4 +207,4 @@ Now that you have your business objects, create a diagram that visualizes the bu
 ## Acknowledgements
 
 * **Author** - Sheryl Manoharan, VB Studio User Assistance, November 2021
-* **Last Updated By/Date** - Sheryl Manoharan, September 2023
+* **Last Updated By/Date** - Sheryl Manoharan, November 2023

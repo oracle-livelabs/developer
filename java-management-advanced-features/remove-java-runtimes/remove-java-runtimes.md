@@ -23,10 +23,12 @@ In this lab, you will:
 ## Task 1: Submit Delete Java Runtime Work Request
 
 1. Open the navigation menu, click **Observability & Management**, and then click **Fleets** under **Java Management**. Select the fleet with the advanced feature, **Lifecycle management** enabled. Refer to  [Lab 1](?lab=set-up-and-enable-advanced-features-on-java-management-service).
- ![image of console navigation to java management service](images/console-navigation-jms.png)
+
+![image of console navigation to java management service](images/console-navigation-jms.png)
 
 2. Under the **Resources** menu, select **Java Runtimes**. You should see a list of the Java Runtimes that are currently in your Fleet.
- ![image of fleet details page](images/fleet-details-page.png)
+
+![image of fleet details page](images/fleet-details-page.png)
 
 3. Select the Runtime that you would like to remove from your fleet and click **Delete**.
 
@@ -49,13 +51,13 @@ In this lab, you will:
  ![image of work request summary page](images/work-request-summary-page.png)
 
 2. If your request has been accepted, the status will change to **In Progress**. It will take some time to complete.
-  ![image of pending work request](images/delete-pending-work-request.png)
+    ![image of pending work request](images/delete-pending-work-request.png)
 
 3. If your request has completed successfully, the status will change to **Completed without Errors**.
-  ![image of install completed without errors](images/delete-complete-without-errors.png)
+    ![image of delete completed without errors](images/delete-complete-without-errors.png)
 
 4. Return to your fleet page, under **Java Runtimes**, the deleted java runtime should not be reported after next scanning. You can also check the installation manually on your Managed Instance.
-  ![image of verify java runtime installation](images/verify-java-runtime-deletion.png)
+    ![image of verify java runtime installation](images/verify-java-runtime-deletion.png)
 
 
  You may now **proceed to the next lab.**
@@ -71,4 +73,4 @@ In this lab, you will:
 ## Acknowledgements
 
 * **Author** - Xin Yi Tay, Java Management Service
-* **Last Updated By** - Sherlin Yeo, June 2023
+* **Last Updated By** - Siqi Liu, October 2023

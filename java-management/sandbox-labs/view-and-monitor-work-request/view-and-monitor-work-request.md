@@ -37,23 +37,26 @@ In this lab, you will:
         * **Date and time** when the Work Request **started**
         * **Number of sub-tasks** completed for the Work Request
         * **Date and time** when the Work Request was **accepted**
+        * **Status** on when the Work Request was last updated
         * View in logging service option available for "Failed" work requests. Use this option to view detailed logs of this work request in the OCI logging service.
     * A list of resources from which you can view the individual metrics for the Work Requests:
-        * Associated Resources
+        * Work Items
         * Log Messages
         * Error Messages
 
    ![image of detailed view of work request page](images/work-request-detailed-view.png)
 
-4. For the list of resources which include **Associated Resources**, **Log Messages** and **Error Messages**, each list displays **50** rows at a time. You may click the header of a column to sort the list based on the title of the column, or use the text field to search the contents of the table.
+4. For the list of resources which include **Work Items**, **Log Messages** and **Error Messages**, each list displays **50** rows at a time. You may click the header of a column to sort the list based on the title of the column, or use the text field to search the contents of the table.
 
-   For the list of **Associated Resources**, you may find the following information:
-   * **Managed instance**: name of the managed instance affected by the work request
-   * **Work request item type**: the type of the advanced feature for which the work request has been initiated, such as Advanced usage tracking
-   * **Current status**: current status of the operation of the associated resource. The status can of any one of: Pending / Retrying / In progress / Canceling, Canceled, Completed with Errors, Succeeded
-   * **Last updated**: date and time when the status for this associated resource was last updated.
+   For the list of **Work Items** for **Delete Java runtime**, you may find the following information:
+   * **Managed instance**: name of the managed instance affected by the work request.
+   * **Java version**: the version of the Java runtime that is being deleted.
+   * **Path**: the file path of where the deleted Java version is located in.
+   * **Type**: the type of the advanced feature for which the work request has been initiated, such as lifecycle management.
+   * **Current status**: current status of the operation of the work item. The status can of any one of: Pending / Retrying / In progress / Canceling, Canceled, Completed with Errors, Succeeded.
+   * **Last updated**: date and time when the status for this work item was last updated.
 
-   ![image of work request associated resources view](images/work-request-associated-resources-view-monitor.png)
+   ![image of work request work item view](images/work-request-work-item-view-monitor.png)
 
 
    For the list of **Log Messages**, you may find the following information:
@@ -95,4 +98,4 @@ In this lab, you will:
 ## Acknowledgements
 
 * **Author** - Bao Jin Lee, Java Management Service
-* **Last Updated By** - Ivan Eng, June 2023
+* **Last Updated By** - Chan Wei Quan, October 2023

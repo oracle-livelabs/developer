@@ -114,9 +114,9 @@ Now that we've added options to let users manage departments, we'll do the same 
 
 6. Change the Type from **Mutate** to **Refresh**.
 
-    Now you're ready to test your pages.
-
 ## Task 6: Test your Employee pages
+
+Now test your pages.
 
 1. Click ![Preview icon](images/preview-icon.png) **Preview**.
 
@@ -169,4 +169,4 @@ Now that we have our web pages, let's change the application's home page from De
 ## Acknowledgements
 
 * **Author** - Sheryl Manoharan, VB Studio User Assistance, November 2021
-* **Last Updated By/Date** - Sheryl Manoharan, September 2023
+* **Last Updated By/Date** - Sheryl Manoharan, November 2023

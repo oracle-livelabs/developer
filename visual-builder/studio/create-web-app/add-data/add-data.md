@@ -23,14 +23,14 @@ This lab assumes you have:
 
 ## Task 1: Create an action chain to navigate from the Departments page to the Employees page
 
-1. Click![Workspaces icon](images/vbs-workspaces-icon.png)**Workspaces**, then click **HR Workspace** in the Workspaces table.
+1. Click![Workspaces icon](images/vbs-workspaces-icon.png)**Workspaces**, then click **HR Workspace** in the Workspaces table to open the workspace in the Designer.
 2. Click ![Web Applications icon](images/web-applications-icon.png) **Web Applications**, then **main-departments** under the **hrwebapp** and **main** nodes.
 3. In the Page Designer, click **Components** to open the Components palette. Enter `button` in the Filter field, then drag a **Button** onto the Toolbar, to the right of the Create Department button on the main-departments page.
 
     ![The main-departments page is shown, with a Button component being dragged from the Components palette into the toolbar, next to the Create Department button.](images/departments-button.png "")
 
 4. Click **Properties** (if necessary) and in the General tab, change the **Label** field to `Show  Employees`.
-5. Click the button's **Events** tab, then click the **\+ New Event** button. From the menu, select **On 'ojAction'**, the default action suggested for a button click.
+5. Click the button's **Events** tab, then click the **\+ Event Listener** button. From the menu, select **On 'ojAction'**, the default event suggested for a button.
 
     ![The New Event menu on a Button component's Events tab is shown. The On 'ojAction' option is selected.](images/departments-button-events.png "")
 
@@ -59,7 +59,7 @@ This lab assumes you have:
 1. In the Web Apps pane, click **main-employees** under the **hrwebapp** and **main** nodes.
 2. Locate the **Button** component in the Components palette and drag it into the Toolbar, to the right of the **Create Employee** button.
 3. In the button's Properties pane, change the **Label** field to `Show Departments`.
-4. Click the **Events** tab, then click **+ New Event** and select **On 'ojAction'**.
+4. Click the **Events** tab, then click **+ Event Listener** and select **On 'ojAction'**.
 
     Another empty action chain with the ID ButtonActionChain is created. Because this action chain is for a different page, it doesn't matter that it has the same name as the one for the main-departments page.
 
@@ -78,4 +78,4 @@ This lab assumes you have:
 ## Acknowledgements
 
 * **Author** - Sheryl Manoharan, VB Studio User Assistance, November 2021
-* **Last Updated By/Date** - Sheryl Manoharan, September 2023
+* **Last Updated By/Date** - Sheryl Manoharan, November 2023

@@ -29,6 +29,9 @@ In this lab, you will:
 - This lab requires completion of the [Introduction](../workshops/freetier/?lab=intro) and [Get Started](../workshops/freetier/?lab=cloud-login) sections in the Contents menu on the left.
 
 ## Task 1: Choose ADW or ATP from the services menu
+
+>**Note:** If during this workshop you encounter any issues copy and pasting commands from the workshop guide code blocks to the Cloud Shell command prompt, right clicking when pasting and selecting "Paste as Plain Text" should resolve the issue.
+
 1. Log in to the Oracle Cloud.
 2. Once you log in, the cloud services dashboard shows all the services available to you. Click the navigation menu in the upper left to show top level navigation choices.
 
@@ -348,8 +351,8 @@ Just as you can create and have different tables in your database (`employees`, 
 
  4. It is now time to connect to MOVIESTREAM\_MANAGER and create some database objects in this user.
     * Under the "Available TNS Entries" section of the `show tns` command, there are 3 connections by default for Autonomous Data Warehouse (ADW) and 5 for Autonomous Transaction Processing (ATP). The names are designated by `[database name]_[connection level]`.
-    * These workshop instructions will use lbworkshop\_high in the command below.
-    * If you prefer to use a different connection, simply replace the command with that connection. Enter your MOVIESTREAM\_MANAGER password at the prompt.
+    * These workshop instructions will use lbworkshop\_low in the command below.
+    * If you prefer to use a different connection, simply replace the command with that connection. If you encounter any "cannot read/modify an object after modifying it in parallel" ORA errors while using Liquibase with other connection types, switch to the low connection type where parallelism is not active. Enter your MOVIESTREAM\_MANAGER password at the prompt.
          * lbworkshop_high
             * High priority application connection service for reporting and batch operations. All operations run in parallel and are subject to queuing.
          * lbworkshop_medium
@@ -363,7 +366,7 @@ Just as you can create and have different tables in your database (`employees`, 
 
     ```na
     <copy>
-    connect moviestream_manager@lbworkshop_high
+    connect moviestream_manager@lbworkshop_low
     </copy>
     ```
     ![Connect MOVIESTREAM_MANAGER](./images/16connectmanager.png)
