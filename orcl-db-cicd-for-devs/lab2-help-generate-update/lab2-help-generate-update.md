@@ -66,7 +66,7 @@ Completion of:
       ```na
       <copy>
       set cloudconfig /home/[OCI CLI Profile Name]/Wallet_lbworkshop.zip
-      connect moviestream_manager@lbworkshop_high
+      connect moviestream_manager@lbworkshop_low
       </copy>
       ```
 
@@ -204,7 +204,7 @@ Completion of:
       ```na
       <copy>
       set cloudconfig /home/[OCI CLI Profile Name]/Wallet_lbworkshop.zip
-      connect moviestream_dev@lbworkshop_high
+      connect moviestream_dev@lbworkshop_low
       </copy>
       ```
 

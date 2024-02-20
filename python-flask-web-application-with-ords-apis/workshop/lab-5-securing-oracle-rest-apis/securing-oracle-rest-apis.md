@@ -58,6 +58,5 @@ However, best practices for applications such as our example Flask application w
 * **Contributors**
   * Jeff Smith, Distinguished Product Manager, Database Tools
   * Zachary Talke, Product Manager, Database Tools
-  * Brian Spendolini, Contributor
   
-* **Last Updated By/Date** - Chris Hoina/March 2023
+* **Last Updated By/Date** - Chris Hoina/February 2024

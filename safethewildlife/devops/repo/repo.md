@@ -23,7 +23,7 @@ During this lab, you are going to clone a GitHub repository to have your own cop
 
 ## Task 1: Fork repo
 
-1. Open a new tab in your browser and go to the [OCI DevOps OKE](https://github.com/vmleon/oci-multiplayer) repository.
+1. Open a new tab in your browser and go to the [OCI DevOps OKE](https://github.com/oracle-devrel/save-the-wildlife.git) repository.
   
   ![GitHub base repo](images/github-base-repo.png)
 
@@ -68,11 +68,11 @@ During this lab, you are going to clone a GitHub repository to have your own cop
   For the name and description you can use any name, we suggest:
 
     ```
-    <copy>oci-multiplayer-token</copy>
+    <copy>save-the-wildlife-token</copy>
     ```
   ![GitHub PAT form](images/github-pat-form.png)
 
-7. Check **Only select repositories**. And select the repository `oci-multiplayer`.
+7. Check **Only select repositories**. And select the repository `save-the-wildlife`.
   
   ![GitHub PAT form repo access](images/github-pat-form-repo-access.png)
 
@@ -117,7 +117,7 @@ During this lab, you are going to clone a GitHub repository to have your own cop
 1. Change the directory to the cloned repository.
     
     ```bash
-    <copy>cd oci-multiplayer</copy>
+    <copy>cd save-the-wildlife</copy>
     ```
 
 You may now [proceed to the next lab](#next).

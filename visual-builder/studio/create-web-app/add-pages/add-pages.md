@@ -246,8 +246,6 @@ Add a Create page that lets your users create new employees.
 
 10. Click **Structure** to view the structure of components on the main-employees page. Components that aren't currently visible on the page fade into the background to allow you to focus on parts of a page, a section at a time.
 
-11. Click **Structure** again to close the Structure view.
-
 ## Task 6: Change the name of the **main-start** page
 
 It makes sense at this point to change the name of the main-start page to main-departments, to match the name of the main-employees page.
@@ -272,4 +270,4 @@ It makes sense at this point to change the name of the main-start page to main-d
 ## Acknowledgements
 
 * **Author** - Sheryl Manoharan, VB Studio User Assistance, November 2021
-* **Last Updated By/Date** - Sheryl Manoharan, September 2023
+* **Last Updated By/Date** - Sheryl Manoharan, November 2023

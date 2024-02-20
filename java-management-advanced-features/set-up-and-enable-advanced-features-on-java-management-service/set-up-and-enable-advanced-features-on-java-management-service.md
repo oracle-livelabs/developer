@@ -7,8 +7,8 @@ Before using JMS advanced features, you must ensure that your Oracle Cloud Infra
 Estimated Time: 30 minutes
 
 ### Requirements to use advanced features
-* Run applications or Java servers using **JDK 11** or higher 
-* If the applications or Java servers must be using **Java 8**, then it needs to use at least **Oracle JDK 8u361** or higher
+* Run applications or Java servers using **JDK 11** or higher.
+* If the application or Java server uses **Java SE 8**, then it needs to use at least **Oracle JDK 8u361** or higher.
 * Management Agent should use either **Oracle JDK 8u361** or higher for on-premises environment or **Oracle JDK 11** for OCI compute instances.
 * Lifecycle Management is supported only for Oracle JDKs.
 
@@ -32,6 +32,10 @@ In this lab, you will configure:
 
 1. In the Oracle Cloud Console, open the navigation menu, click **Observability & Management**, and then click **Fleets** under **Java Management**. Select the fleet that you are interested in.
    ![image of console navigation to access fleet](images/console-navigation-jms.png)
+   
+   > **Note:** You can also use the search bar to navigate around the Oracle Cloud Console.
+   
+   ![image of console navigation using search bar for fleets](images/oci-console-search-bar-fleets.png)
 
 2. Click **Edit Properties**. A separate edit fleet properties window should appear
    ![image of edit fleet properties](images/fleet-edit-properties.png)
@@ -71,13 +75,13 @@ Follow these steps to enable Oracle Java Management plugin and verify the OCA in
        ![image of navigate from OCI console menu to compute instances](images/navigate-to-compute-instance.png)
 
      * Click the **Oracle Cloud Agent** tab. The list of plugins is displayed. Verify that the **Oracle Java Management Service** OCA plugin is enabled. If it is disabled, toggle the Oracle Java Management Service plugin switch and ensure the status is **Running**. This may take 5 to 10 minutes. This will enable the advanced features for the chosen OCI Compute Instance.
-      ![image of disabled oracle java management service oca plugin](images/oracle-jms-oca-plugin-disabled.png)
+        ![image of disabled oracle java management service oca plugin](images/oracle-jms-oca-plugin-disabled.png)
 
     **Using Cloud Shell:**
      * Alternatively, you can use Cloud Shell to verify and enable `Oracle Java Management Service` plugin. Click the Cloud Shell icon in the Console header. You can access this icon from all OCI console pages.
        ![image of location of Cloud Shell icon](images/oci-cloud-shell-navigate.png)
-     The Cloud Shell will open and may look something like this.
-      ![image of Cloud Shell terminal](images/oci-cloud-shell-console.png)
+        The Cloud Shell will open and may look something like this.
+        ![image of Cloud Shell terminal](images/oci-cloud-shell-console.png)
 
        You can use the icons in the upper right corner of the Cloud Shell window to minimize, maximize, and close your Cloud Shell session. 
        ![image of buttons on Cloud Shell](images/oci-cloud-shell-buttons.png)
@@ -87,7 +91,7 @@ Follow these steps to enable Oracle Java Management plugin and verify the OCA in
          <copy>
         oci compute instance get --instance-id <INSTANCE OCID>
          </copy>
-         ```
+        ```
 
        The response may look like this.
 
@@ -113,7 +117,7 @@ Follow these steps to enable Oracle Java Management plugin and verify the OCA in
          nano config.json  
          </copy>
          ```
-
+    
          ```
          <copy>
          {
@@ -161,21 +165,21 @@ Follow these steps to enable Oracle Java Management plugin and verify the OCA in
          }
          </copy>
          ```
-
+    
        To save the file, press **CTRL+x**. Before exiting, nano will ask you if you wish to save the file: Type **y** to save and exit, type **n** to abandon your changes and exit.
 
 
 
       * Now, in Cloud Shell add the following to update the `Oracle Java Management Service` plugin state from `DISABLED` to `ENABLED`.
-
+    
        ```
        <copy>
        oci compute instance update --instance-id <INSTANCE OCID> --agent-config file://config.json
        </copy>
        ```
-
+    
        If you see the response like this, the `Oracle Java Management Service` plugin has been enabled. Else in case of any error, refer to this link [Using CLI](https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/cliusing.htm).
-
+    
        ![image of entering a command in Cloud Shell](images/oci-cloud-shell-update-instance-command.png)
 
 
@@ -203,13 +207,13 @@ Follow these steps to enable Oracle Java Management plugin and verify the OCA in
    ![image of terminal showing how to check for available oca packages](images/oca-version-checking-console-latest.png)
 
    Else you should see output something like this:
-  ![image of terminal showing how to check for available oca packages](images/oca-version-checking-console-outdated.png)
+    ![image of terminal showing how to check for available oca packages](images/oca-version-checking-console-outdated.png)
 
 5. Update the OCA Installation Package.
     ```
     <copy>
     rpm -qa | grep oracle-cloud-agent
-
+    
     sudo yum update oracle-cloud-agent -y
     </copy>
     ```
@@ -245,7 +249,7 @@ If you are using a Managed Instance that is not on OCI and you have installed th
 3. Login to OCI Console.
 
 4. In the Oracle Cloud Console, open the navigation menu, click **Observability & Management**, and then click **Agents** under **Management Agent**.
-  ![image of console navigation to access management agent overview](images/management-agent-overview.png)
+    ![image of console navigation to access management agent overview](images/management-agent-overview.png)
 
 5. From the Agents list, select for the agent that was recently installed.
    ![image of agents main page](images/agents-main-page.png)
@@ -254,7 +258,7 @@ If you are using a Managed Instance that is not on OCI and you have installed th
 
   ![image of agent detail page](images/deploy-jms-plug-in-done.png)
 
-7. To enable `Java Management Service` plug-in, click **Deploy plug-ins**, check `Java Management Service` option and click **Update**. After 5-10 minutes, you should see the `Java Management Service` plug-in enabled under `Service Plug-ins` field.
+7. To enable `Java Management Service` plug-in, click **Deploy plug-ins**, check `Java Management Service` option and click **Update**. Verification can be achieved from service plug-ins after 5-10 minutes, you should see the `Java Management Service` plug-in enabled under `Service Plug-ins` field.
 
   ![image of updating the plug-in](images/deploy-jms-plug-in.png)
 
@@ -269,4 +273,4 @@ You may now **proceed to the next lab.**
 ## Acknowledgements
 
 * **Author** - Bhuvesh Kumar, Java Management Service
-* **Last Updated By** - Sherlin Yeo, June 2023
+* **Last Updated By** - Siqi Liu, November 2023
