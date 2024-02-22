@@ -43,15 +43,19 @@
         "filename": "../../runpipeline/runpipeline.md"
       },
       {
-        "title": "Lab 9: Implement Canary Deployment",
-        "filename": "../../verifytests/verifytests.md"
-      },
-      {
-        "title": "Lab 10: Observability of Multi-Cloud Architecture",
+        "title": "Lab 9: Observability of Multi-Cloud Architecture",
         "filename": "../../observability/observability.md"
       },
       {
-        "title": "Lab 11: Tear Down",
+        "title": "Lab 10: Implement Canary Deployment",
+        "filename": "../../verifytests/verifytests.md"
+      },
+      {
+        "title": "Lab 11: Accessing AI and Other OCI Services",
+        "filename": "../../accessociservices/accessociservices.md"
+      },
+      {
+        "title": "Lab 12: Tear Down",
         "filename": "../../teardown/teardown.md"
       },
       {
