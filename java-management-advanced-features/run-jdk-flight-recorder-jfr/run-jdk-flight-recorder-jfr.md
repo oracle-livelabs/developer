@@ -26,17 +26,17 @@ In this lab, you will:
 ## Task 1: Submit JDK Flight Recorder Work Request
 
 1. First, open the navigation menu, click **Observability & Management**, and then click **Fleets** under **Java Management**. Select the fleet that you have configured in [Lab 1](?lab=set-up-and-enable-advanced-features-on-java-management-service).
-  
-    ![image of console navigation to java management service](images/console-navigation-jms-fleet.png)
+
+    ![image of console navigation to java management service](images/console-navigation-jms.png)
 
 2. Scroll down the **Fleet** details page. Under the **Resources** menu, select **Managed instances**.
 
     You should see a list of Managed instances that are currently in your Fleet. Select the Managed instance you are interested in.
-  
+
     ![image of fleet details page with jfr button](images/fleet-managed-instances.png)
 
 3. Scroll down and under **Resources**, select **Applications**. You should see a list of Java applications running in this managed instance. Select the long running Java application you want to run with JFR.  Click on **Actions** and select **Run JDK Flight Recorder**.
-  
+
     ![image of jfr run settings](images/managed-instance-applications-run-jfr.png)
 
 4. In the **JDK Flight Recorder** (JFR) Window, select **Recording option**: **Select from default profiles**.
@@ -56,14 +56,14 @@ In this lab, you will:
     ![image of work request](images/managed-instance-to-fleet-navigation.png)
 
 6. Scroll down to the **Resources** menu and select **Work requests**. You should see a list of the Work Requests that are currently in your Fleet. **JDK Flight Recorder** that was started should be at the top of the list.
-  
+
     ![image of work request](images/jfr-work-request-started.png)
 
 7. Wait for the work request to be processed. If the work request has been completed successfully, the status will change to **Completed without Errors**.
-  
-    ![image of work request completed](images/jfr-work-request-completed.png)
 
-    >**Note:** It will take approximately 15 minutes for the request to be completed.
+    > **Note:** It will take approximately 15 minutes for the request to be completed.
+
+    ![image of work request completed](images/jfr-work-request-completed.png)
 
 8. To access the report, navigate to the **Fleet** details page and click the **Object storage bucket** name under **Object storage**.
 
@@ -88,8 +88,8 @@ You may now **proceed to the next lab.**
  * Use the [Troubleshooting](https://docs.oracle.com/en-us/iaas/jms/doc/troubleshooting.html#GUID-2D613C72-10F3-4905-A306-4F2673FB1CD3) chapter for explanations on how to diagnose and resolve common problems encountered when installing or using Java Management Service.
 
  * If the problem still persists or it is not listed, then refer to the [Getting Help and Contacting Support](https://docs.oracle.com/en-us/iaas/Content/GSG/Tasks/contactingsupport.htm) section. You can also open a support service request using the **Help** menu in the OCI console.
- 
+
 ## Acknowledgements
 
 * **Author** - Somik Khan, November 2022
-* **Last Updated By** - Sherlin Yeo, June 2023
+* **Last Updated By** - Siqi Liu, October 2023

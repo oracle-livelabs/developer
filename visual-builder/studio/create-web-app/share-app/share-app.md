@@ -59,7 +59,7 @@ Before you share your app, let's enable it to run as a Progressive Web App—or 
 
 Let's now share the application so your team can test its behavior.
 
-1. Click **Menu** ![Options menu icon](images/options-header-menu.png) in the header and select **Share**.
+1. Click ![Options menu icon](images/options-header-menu.png) **Menu** in the header and select **Share**.
 
     ![The Menu in the header is shown with the Share option selected.](images/share.png "")
 
@@ -73,7 +73,7 @@ Let's now share the application so your team can test its behavior.
 
 Now that you've shared your application, you need to get its URL so you can pass it along to your team. You do this by opening the application itself, or by copying the URL when you shared the application. Remember that your team members will need the proper credentials to view your shared application.
 
-1. Click **Menu** ![Options menu icon](images/options-header-menu.png) and select **Open Shared Applications**. If the option does not appear or is not active, it means your application is not yet fully deployed. Wait a while and try again.
+1. Click ![Options menu icon](images/options-header-menu.png) **Menu** and select **Open Shared Application**. If the option does not appear or is not active, it means your application is not yet fully deployed. Wait a while and try again.
 
     ![The Menu in the header is shown with the Open Shared Application option selected.](images/open-shared-application.png "")
 
@@ -84,7 +84,7 @@ Now that you've shared your application, you need to get its URL so you can pass
     ![The shared web application is shown in a new browser tab, with the data imported from your workspace.](images/open-shared-application-result.png "")
 
 2. Make a note of the application's URL to share with your team, then close the browser tab.
-3. To view the same shared application now deployed to your development environment, click **Go to Project page** ![Go to Project Page icon](images/go-to-project-home-icon.png) in the header, then click **Environments** ![Environments icon](images/vbs-environments-icon.png) and **Deployments**. Expand **tutorial-hr-project** to view the shared application in your list of deployments.
+3. To view the same shared application now deployed to your development environment, click ![Go to Project Page icon](images/go-to-project-home-icon.png) **Go to Project page** in the header, then click ![Environments icon](images/vbs-environments-icon.png) **Environments** and **Deployments**. Expand **tutorial-hr-project** to view the shared application in your list of deployments.
 
     ![A list of deployments in the Development environment is shown. The tutorial-hr-project is shown with the Shared status and other identifying details.](images/shared-deployment.png "")
 
@@ -97,4 +97,4 @@ Now that you've shared your application, you need to get its URL so you can pass
 ## Acknowledgements
 
 * **Author** - Sheryl Manoharan, VB Studio User Assistance, November 2021
-* **Last Updated By/Date** - Sheryl Manoharan, May 2023
+* **Last Updated By/Date** - Sheryl Manoharan, November 2023

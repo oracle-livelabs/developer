@@ -34,6 +34,9 @@ In this lab, you will:
 
 
 ## Task 1: Create Your Autonomous Database
+ 
+ >**Note:** If during this workshop you encounter any issues copy and pasting commands from the workshop guide code blocks to the Cloud Shell command prompt, right clicking when pasting and selecting "Paste as Plain Text" should resolve the issue.
+ 
  1. Log in to the Oracle Cloud.
 
     ![Oracle home page](./images/1cloudhomepage.png " ")
@@ -49,7 +52,9 @@ In this lab, you will:
 
  4. Use the __List Scope__ drop-down menu to select a compartment. Make sure your Workload Type is __All__ or __Transaction Processing__. 
 
-    * If you are completing this workshop as a part of an event and were assigned a compartment, select that one. Otherwise select a compartment of your choice. This workshop was built on an Always Free Oracle Cloud account and uses the default of the root compartment.
+    * If you are completing this workshop on a **LiveLabs Sandbox environment, select the compartment assigned to you under "View Login Info"**. 
+    * If you are completing it as part of an **event and were assigned a compartment, select that one**. 
+    * **Otherwise select a compartment of your choice**. This workshop was built on an Always Free Oracle Cloud account and uses the default of the root compartment.
     * This console shows that no databases yet exist. If there were a long list of databases, you could filter the list by the **State** of the databases (Available, Stopped, Terminated). You can also sort by __Workload Type__.
 
     ![Check the workload type on the left](images/4workloadtype.png " ")
@@ -61,6 +66,7 @@ In this lab, you will:
  6. Specify basic information for the Autonomous Database:
 
     * **Compartment** - Choose the compartment you would like to use or assigned to you. This workshop was built on an Always Free Oracle Cloud account and uses the default of the root compartment. 
+        * For workshop environments with an assigned compartment, this field must be that compartment.
     * **Display Name** - Assign as **APEX\_Liquibase\_Workshop**
     * **Database Name** - Assign as **apexlbworkshop**
     * **Workload Type** - Assign as **Transaction Processing**
@@ -70,11 +76,14 @@ In this lab, you will:
 
  7. Configure the database:
 
-    * __Always Free__ - If your Cloud Account is an Always Free account, or your Cloud Account is a paid account but you want to avoid any charges, you can select this option to create an *Always Free Autonomous Database*. An always free database comes with 1 CPU and 20 GB of storage. 
+    * __Always Free__ - If your Cloud Account is an Always Free account, you can select this option to create an *Always Free Autonomous Database*. An always free database comes with 1 CPU and 20 GB of storage. 
     * __Choose database version__ - Select a database version from the available versions.
-    * __OCPU count__ - Number of CPUs for your service. For this lab, specify __1 CPU__. If you choose an Always Free database, it comes with 1 CPU.
+    * __OCPU count__ - Number of CPUs for your service. 
+        * If you choose an **Always Free database**, it comes with 1 CPU.
+        * If using a **LiveLabs Sandbox** environment, keep 2 ECPU selected.
+        * Otherwise as a default, specify 1 CPU. 
     * __Storage (TB)__ - Select your storage capacity in terabytes. For this lab, specify __1 TB__ of storage. Or, if you choose an Always Free database, it comes with 20 GB of storage.
-    * __Compute auto scaling__ - For this lab, there is no need to enable OCPU auto scaling, which enables the system to automatically use up to three times more CPU and IO resources to meet workload demand. 
+    * __Compute auto scaling__ - For this lab, there is no need to enable compute auto scaling, which enables the system to automatically use up to three times more CPU and IO resources to meet workload demand. 
     * __Storage auto scaling__ - For this lab, there is no need to enable storage auto scaling, which would allow the system to expand up to three times the reserved storage.
 
     > **Note:** You cannot scale up/down an Always Free autonomous database.
@@ -105,7 +114,7 @@ In this lab, you will:
  13. Choose a license type. 
 
     * __Bring Your Own License (BYOL)__ - Select this type when your organization has existing database licenses.
-    * __License Included__ - Select this type when you want to subscribe to new database software licenses and the database cloud service. If using an Always Free Autonomous Database, this will be the option you will use.
+    * __License Included__ - Select this type when you want to subscribe to new database software licenses and the database cloud service. If using an Always Free Autonomous Database or a LiveLabs Sandbox environment, this will be the option you will use.
 
     ![Choose Database License](./images/10choose-license.png " ")
 

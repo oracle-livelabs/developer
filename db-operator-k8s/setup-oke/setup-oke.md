@@ -55,7 +55,7 @@ The *Quick Create* feature uses the default settings to create a *quick cluster*
 
     * **Name**: The name of the cluster. Leave the default value.
     * **Compartment**: The name of the compartment. Leave the default value.
-    * **Kubernetes version**: The version of Kubernetes. This lab was validated with *v1.23.4*,  *v1.24.1* and v1.25.4, but higher versions should also work.
+    * **Kubernetes version**: The version of Kubernetes. This lab was validated with *v1.23.4* and up to v1.28.2, but higher versions should also work.
     * **Kubernetes API Endpoint**: Are the cluster master nodes going to be routable or not. Select the *Public Endpoint* value.
     * **Node Type**: We'll be using the *Managed* version, so we'll be able to see the actual compute nodes of the cluster as virtual machines.
 
@@ -69,17 +69,15 @@ The *Quick Create* feature uses the default settings to create a *quick cluster*
 
 5. Click *Next* to review the details you entered for the new cluster.  You do not need to check the *Basic Cluster* checkbox.
 
-    
-
 6. On the *Review* page, click *Create Cluster* to create the new network resources and the new cluster.
 
     ![Review Cluster](images/reviewcluster.png)
 
-    > You see the network resources being created for you. Wait until the request to create the node pool is initiated and then click *Close*.
+    * You see the network resources being created for you. Wait until the request to create the node pool is initiated and then click *Close*.
 
     ![Network Resource](images/networkresource.png)
 
-    > Then, the new cluster is shown on the *Cluster Details* page. When the master nodes are created, the new cluster gains a status of *Active* (it takes about 7 minutes).Then, you may continue your labs.
+    * Then, the new cluster is shown on the *Cluster Details* page. When the master nodes are created, the new cluster gains a status of *Active* (it takes about 7 minutes).Then, you may continue your labs.
 
     ![cluster provision](images/clusterprovision.png)
 
@@ -89,16 +87,15 @@ The *Quick Create* feature uses the default settings to create a *quick cluster*
 
 Oracle Cloud Infrastructure (OCI) Cloud Shell is a web browser-based terminal, accessible from the Oracle Cloud Console. The Cloud Shell provides access to a Linux shell, with a pre-authenticated Oracle Cloud Infrastructure CLI and other useful tools (*Git, kubectl, helm, OCI CLI*) to complete this lab. The Cloud Shell is accessible from the Console. Your Cloud Shell will appear in the Oracle Cloud Console as a persistent frame of the Console, and will stay active as you navigate to different pages of the Console.
 
-
 We will use `kubectl` to manage the cluster remotely using the Cloud Shell. It needs a `kubeconfig` file. This will be generated using the OCI CLI which is pre-authenticated, so there’s no setup to do before you can start using it.
 
 1. Click *Access Cluster* on your cluster detail page.
 
-    > If you moved away from that page, then open the navigation menu and under *Developer Services*, select *Kubernetes Clusters (OKE)*. Select your cluster and go the detail page.
+    If you moved away from the cluster detail page, open the navigation menu and under *Developer Services*, select *Kubernetes Clusters (OKE)*. Select your cluster and go the detail page.
 
     ![Access Cluster](images/accesscluster.png)
 
-    > A dialog is displayed from which you can open the Cloud Shell and contains the customized OCI command that you need to run, to create a Kubernetes configuration file.
+    A dialog is displayed from which you can open the Cloud Shell and contains the customized OCI command that you need to run, to create a Kubernetes configuration file.
 
 2. Leave the default *Cloud Shell Access* and first select the *Copy* link to copy the `oci ce...` command to the Cloud Shell.
 
@@ -122,14 +119,14 @@ We will use `kubectl` to manage the cluster remotely using the Cloud Shell. It n
 
     ```bash
     <copy>kubectl get node</copy>
-    
+
     NAME          STATUS   ROLES   AGE   VERSION
     10.0.10.193   Ready    node    10m   v1.21.5
     10.0.10.194   Ready    node    10m   v1.21.5
     10.0.10.28    Ready    node    10m   v1.21.5
     ```
 
-    > If you see the node's information, then the configuration was successful.
+    If you see the node's information, then the configuration was successful.
 
 6. You can minimize and restore the terminal size at any time using the controls at the top right corner of the Cloud Shell.
 
@@ -140,6 +137,7 @@ We will use `kubectl` to manage the cluster remotely using the Cloud Shell. It n
 You may now **proceed to the next lab**.
 
 ## Acknowledgements
+
 * **Author** -  Ankit Pandey
 * **Contributors** - Maciej Gruszka, Peter Nagy
-* **Last Updated By/Date** - Jan Leemans, March 2023
+* **Last Updated By/Date** - Jan Leemans, January 2024

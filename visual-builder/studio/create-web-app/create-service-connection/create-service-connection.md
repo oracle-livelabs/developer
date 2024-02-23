@@ -35,7 +35,7 @@ This lab assumes you have:
 
 In this step, we'll connect the HR application to an external REST endpoint that provides information about a country.
 
-1. Click **Services** ![Web Applications icon](images/services-icon.png) in the Navigator.
+1. Click ![Web Applications icon](images/services-icon.png) **Services** in the Navigator.
 2. Click **+ Service Connection** to open the Service Connection wizard.
 
     ![The Select Source screen of the Create Service Connection is shown. Three options are visible: Select from Catalog, Define by Specification, and Define by Endpoint.](images/service-connection-wizard.png "")
@@ -47,21 +47,23 @@ In this step, we'll connect the HR application to an external REST endpoint that
 
     Click **Define by Endpoint**.
 
-3. With the **Method** field set to **GET**, enter `https://restcountries.com/v2/alpha/{code}` in the **URL** field and select **Get One** in the **Action Hint** list. Click **Next**.
+3. With the **Method** field set to **GET**, enter `https://restcountries.com/v2/alpha/{code}` in the **URL** field and select **Get One** in the **Action Hint** list. Click **Create Backend**.
 
     ![The Define by Endpoint page is shown. The Method field is set to GET, the URL is set to the base URI of a service, and Get One is selected in the Action Hint drop-down list.](images/service-connection-wizard-url.png "")
 
-4. Here you'll see several tabs where you can provide additional details for the service connection. In the Overview tab, change the **Service Name** to `Countries` and the **Title** to `Country`.
+4. Because all service connections require a backend to simplify the task of managing server attributes, you'll need to create a backend. On the Backend Specification step, enter `Countries` in the **Backend Name** field. Leave all other fields to their defaults and click **Next**.
 
-    ![With the service connection details specified in previous steps, this image shows the Overview tab, where Service Name and Title is set to v2, Version is set to 1.0.0, and Source under Transforms is set to None.](images/service-connection-tabs.png "")
+5. In the Overview tab, enter the **Service Name** as `Countries` and change the **Title** to `Country`.
 
-    > **Tip:** Step through the different tabs to see what options you can specify. For example, if your service required a user name and password, you have authentication options on the Server tab that allow your users to access the service securely.
+    ![This image shows the Overview tab, where Service Name is set to Countries, Title is set to v2, Version is set to 1.0.0, and Source under Transforms is set to None.](images/service-connection-tabs.png "")
 
-5. When you're ready, test the service connection. Click the **Test** tab, enter `CN` (for China) as the value of the `code` parameter under Path Parameters. Essentially, you're entering a country code as a path parameter to get information about that country. Click **Send Request**.
+    > **Tip:** Step through the different tabs in the Create Service Connection wizard to see what options you can specify. For example, if your service required a user name and password, you have authentication options on the Server tab that allow your users to access the service securely.
+
+6. When you're ready, test the service connection. Click the **Test** tab, enter `CN` (for China) as the value of the `code` parameter under Path Parameters. Essentially, you're entering a country code as a path parameter to get information about that country. Click **Send Request**.
 
     ![The Test tab is shown. Under Path Parameters in the Request section, the value of the code parameter is set to CN. The Send Request button is selected.](images/service-connection-wizard-sendrequest.png "")
 
-    When the request is successful, click **Save as Example Response** to save the response and create a schema. This way, you tell VB Studio that this response is the typical structure of data received from this service.
+    When the request is successful, click **Save as Example Response** in the Response Body to save the response and create a schema. This way, you tell VB Studio that this response is the typical structure of data received from this service.
 
     ![The response returned by the service is shown. The structure of the data is shown under Body in the Response section and the Save as Example Response is selected.](images/service-connection-wizard-saveresponse.png "")
 
@@ -73,7 +75,7 @@ In this step, we'll connect the HR application to an external REST endpoint that
 
 Now that we have our service connection, let's change the Edit Employee page to show information about an employee's country. This time, instead of using Quick Starts, we'll manually add fields to the page.
 
-1. Click the **Web Applications** ![Web Applications icon](images/webapp-icon.png) tab, then select the **main-edit-employee** page.
+1. Click the ![Web Applications icon](images/webapp-icon.png) **Web Applications** tab, then select the **main-edit-employee** page.
 
 2. In the Components palette, locate the **Heading** component and drag and drop it onto the canvas, just above the Toolbar component with the Cancel and Save buttons.
 
@@ -130,7 +132,7 @@ In this step, we'll assign data to the variables by adding a "value" event that 
 
     ![The Country Input Text component on the Edit Employee page selected.](images/country-field.png "")
 
-2. Click the component's **Events** tab in the Properties pane, then select **+ New Event** and **On 'value'**.
+2. Click the component's **Events** tab in the Properties pane, then select **+ Event Listener** and **On 'value'**.
 
 3. When the InputTextValueChangeChain opens in the Action Chain editor, double-click the **Call REST** action in the Actions palette to add it to the canvas.
 
@@ -148,7 +150,7 @@ In this step, we'll assign data to the variables by adding a "value" event that 
 
     Click **Save**.
 
-8. Drag and drop an **Assign Variables** action on the canvas to follow the Call REST action. In the Assign Variable action's Properties pane, hover over the **Variable** property, click ![Select Variable icon](images/variable-picker-icon.png) to open the Variable picker, and select **countryTypeVar** under **Page**. Hover over the **Value** property, open the Variable picker, expand **callRestCountriesGetAlphaCodeResult** under **Action Chain**, and select **body**.
+8. Drag and drop an **Assign Variables** action on the canvas to follow the Call REST action. In the Assign Variable action's Properties pane, select **countryTypeVar** under **Page** in the **Variable** list. Hover over the **Value** property, click ![Select Variable icon](images/variable-picker-icon.png) to open the Variable picker, expand **callRestCountriesGetAlphaCodeResult** under **Action Chain**, and select **body**.
 
     ![The Assign Variable action's properties show the Variable property set to $page.variables.countryTypeVar. The Value property shows the variable picker, with body under Action Chain and callRestCountriesGetAlphaCodeResult highlighted.](images/assignvariable-bodytocountrytypevar.png "")
 
@@ -156,7 +158,7 @@ In this step, we'll assign data to the variables by adding a "value" event that 
 
 ## Task 5: Test the employee's country details
 
-1. Click **Preview** ![Preview icon](images/run-icon.png) to run your application.
+1. Click ![Preview icon](images/run-icon.png) **Preview** to run your application.
 
 2. Select a row, then click **Edit Employee**.
 
@@ -171,4 +173,4 @@ In this step, we'll assign data to the variables by adding a "value" event that 
 ## Acknowledgements
 
 * **Author** - Sheryl Manoharan, VB Studio User Assistance, July 2022
-* **Last Updated By/Date** - Sheryl Manoharan, May 2023
+* **Last Updated By/Date** - Sheryl Manoharan, November 2023

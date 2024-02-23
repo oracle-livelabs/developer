@@ -67,10 +67,10 @@ In this optional lab, you are going to clean the resources created during the wo
 
 ## Task 2: Delete infrastructure
 
-1. From the Cloud Shell, make sure you are in `oci-multiplayer/deploy/devops/tf-devops` folder.
+1. From the Cloud Shell, make sure you are in `save-the-wildlife/deploy/devops/tf-devops` folder.
 
     ```bash
-    <copy>cd ~/oci-multiplayer/deploy/devops/tf-devops</copy>
+    <copy>cd ~/save-the-wildlife/deploy/devops/tf-devops</copy>
     ```
 
 2. Run the following command to destroy the OCI DevOps infrastructure.
