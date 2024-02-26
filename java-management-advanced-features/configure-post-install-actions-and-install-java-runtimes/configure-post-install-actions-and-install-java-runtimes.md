@@ -32,8 +32,8 @@ In this lab, you will:
    
    ![image of fleet details page](images/fleet-details-page-main.png)
 
-3. Under **More actions**, select **Modify Java runtime lifecycle management setting**. The **Lifecycle management settings** window should appear.
- 
+3. Under **More actions**, select **Configure Java runtime lifecycle management setting**. The **Lifecycle management settings** window should appear.
+
    ![image of fleet details page lifecycle management](images/fleet-details-page-lifecycle-management.png)
 
 4. In the **Lifecycle management settings**, there is a combo box containing the placeholder "Select an action". 
@@ -62,7 +62,7 @@ In this lab, you will:
    ![image of LCM minimimum-rsa-key-length](images/lcm-minimum-rsa-key-length.png)
 
 8. Click on the combo box under **Network configuration**. Select **Default to System Proxy settings when they do exist**.
-    
+   
     ![image of LCM default to system proxy action](images/lcm-system-proxy.png)
 
     There are a total of 5 different network configurations to choose from.
@@ -183,7 +183,7 @@ In this lab, you will:
 
 1. This task is applicable if changes are to be made to the post Java installation action.
 
-2. On the fleet details page, click **More actions** and select **Modify Java runtime lifecycle management setting**. 
+2. On the fleet details page, click **More actions** and select **Configure Java runtime lifecycle management setting**. 
 
    ![image of fleet details post install action](images/fleet-details-page-lifecycle-management.png)
 
@@ -226,4 +226,4 @@ In this lab, you will:
 ## Acknowledgements
 
 * **Author** - Yixin Wei, Java Management Service
-* **Last Updated By** - Chan Wei Quan, October 2023
+* **Last Updated By** - Siqi Liu, November 2023
