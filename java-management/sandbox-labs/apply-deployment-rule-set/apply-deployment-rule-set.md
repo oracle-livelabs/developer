@@ -27,7 +27,7 @@ In this lab, you will:
 
    ![image of console navigation to java management service](images/novnc-console-navigation-jms.png)
 
-2. On the Fleet details page, click **More actions** and select **Modify Java runtime lifecycle management settings**. This opens the **Lifecycle management settings** panel.
+2. On the Fleet details page, click **More actions** and select **Configure Java runtime lifecycle management settings**. This opens the **Lifecycle management settings** panel.
    ![image of novnc fleet details more actions lcm](images/novnc-fleet-details-more-actions-lcm.png)
 
 3. In the **Lifecycle management settings**, click on the **Deployment Rule Set** tab.
@@ -57,7 +57,8 @@ In this lab, you will:
       ![image of novnc upload drs jar](images/novnc-upload-drs-jar.png)
 
 9.  A work request will be submitted. If your request is submitted successfully, you should receive a notification in green as seen below. Click **save**.
-      
+    
+
 ![image of novnc upload drs jar and save](images/novnc-upload-drs-jar-and-save.png)
 
 10. To view the work request, scroll down to the **Resources** menu and select **Work requests**. You should see a list of the work requests that are currently in your Fleet. **Upload DRS file in LCM settings** should be present in the table below. If the work request has been completed successfully, the status will change to **Completed without Errors**.
@@ -79,7 +80,7 @@ In this lab, you will:
    ![image of novnc distribute drs work request processing](images/novnc-distribute-drs-work-request-processing.png)
 
 5.  Wait for the work request to be processed. When the work request has been completed successfully, the status will change to **Completed without Errors**.
-      
+    
       >**Note:** It will take approximately 15 minutes for the work request to be completed.
 
 ![image of novnc distribute drs work request complete](images/novnc-distribute-drs-work-request-complete.png)
@@ -122,7 +123,7 @@ Click **ok**.
    ![image of novnc javaws version jnlp ok](images/novnc-javaws-version-jnlp-ok.png)
 
 10. You will be able to see that the JNLP application is currently restricted due to a version mismatch specified by the **Deployment Rule Set**. Click **ok**.
-   ![image of novnc javaws version jnlp blocked](images/novnc-javaws-version-jnlp-blocked.png)
+      ![image of novnc javaws version jnlp blocked](images/novnc-javaws-version-jnlp-blocked.png)
 
 ## Task 4: (Optional) Locate the Uploaded DRS File in Object Storage
 
@@ -150,4 +151,4 @@ You may now **proceed to the next lab**.
 ## Acknowledgements
 
 * **Author** - Chan Wei Quan, Java Management Service
-* **Last Updated By** - Chan Wei Quan, October 2023
+* **Last Updated By** - Siqi Liu, November 2023

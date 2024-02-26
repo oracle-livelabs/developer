@@ -2,28 +2,28 @@
 
 ## Introduction
 
-#### Dynamic Persistence
+### Dynamic Persistence
 
 In this lab we'll use **Dynamic Persistence Provisioning**, a persistent volume that is automatically provisioned by mentioning a storage class. As we are running on Oracle OCI, we'll use the **oci-bv** storage class. This storage class facilitates dynamic provisioning of the OCI block volumes. The supported access mode for this class is `ReadWriteOnce`. For other cloud providers, you can similarly use their dynamic provisioning storage classes.
 
 We'll also specify the  `Reclaim Policy` of the dynamically provisioned volumes as `Delete`. In this case the volume is deleted when the corresponding database deployment is deleted.
 
-
 Estimated Time: 20 minutes
 
 ### Objective
+
 * Create a database running on Kubernetes, using a block volume as persistency store
 
 ### Prerequisites
+
 * You have executed Lab 2: Install the Oracle Database Kubernetes Operator
 
-
-
 ## Task 1: Store passwords in Kubernetes Secrets
+
 When creating a database we will need a few passwords:
 
-- Your Oracle Account password to pull the DB docker container from the Oracle Container Repository 
-- The Admin password of the database we'll be creating
+* Your Oracle Account password to pull the DB docker container from the Oracle Container Repository
+* The Admin password of the database we'll be creating
 
 In kubernetes we store these passwords in secrets.
 
@@ -42,12 +42,13 @@ In kubernetes we store these passwords in secrets.
 
     Please note we're assuming you are in the home directory of your cloud shell, if not please make sure to correct the path to the .docker directory accordingly.
 
-3. Let's now create a secret containing the **admin password** we'll want to specify for the new database: 
+3. Let's now create a secret containing the **admin password** we'll want to specify for the new database:
+
     ```
     <copy>kubectl create secret generic admin-secret --from-literal=oracle_pwd=Your-DB-Password</copy>
     ```
-    Replace `Your-DB-Password` with a password of your choosing, it should be 12 characters long, have letters, numbers and Capitals
 
+    Replace `Your-DB-Password` with a password of your choosing, it should be 12 characters long, have letters, numbers and Capitals
 
 ## Task 2: Create the DB Config file for the Operator
 
@@ -97,15 +98,13 @@ We'll be highlighting some of the sections of this file below, no need to do any
     replicas: 1
     ```
 
-  
-
 ## Task 3: Launch and track the DB creation
 
 Launching the creation of the database is done through a single command applying the config file on the cluster.  Next the operator will initiate the necessary operations to spin up the database, and this will take approximately 15 minutes in a fresh environment - as for example the images have to be copied over from the container repository.
 
 In this section we'll explain a number of commands that allow you to track what is happening during this creation process and how to debug issues you might encounter.
 
-1. Apply the config file to initiate the DB creation : 
+1. Apply the config file to initiate the DB creation :
 
     ```
     <copy>kubectl apply -f https://objectstorage.us-ashburn-1.oraclecloud.com/p/LNAcA6wNFvhkvHGPcWIbKlyGkicSOVCIgWLIu6t7W2BQfwq2NSLCsXpTL9wVzjuP/n/c4u04/b/livelabsfiles/o/developer-library/singleinstancedatabase-create.yaml</copy>
@@ -158,7 +157,7 @@ In this section we'll explain a number of commands that allow you to track what 
 
     We see the operator is waiting for the pod to become available.
 
-4. We can check the status of the pod where the db will be launched, and follow the different steps of the creation process:	
+4. We can check the status of the pod where the db will be launched, and follow the different steps of the creation process:
 
     ```
     <copy>kubectl get pod</copy>
@@ -174,13 +173,13 @@ In this section we'll explain a number of commands that allow you to track what 
 5. To get more details on the creation, you can issue the following command, replacing the exact name of the pod with the name in your environment:
 
     ```
-    <copy>kubectl describe pod sidb-test1-xe06x</copy>
+    <copy>kubectl describe pod sidb-test1</copy>
     ```
 
     This will allow you to see the events happening on the pod level - and any issues, like for example an incorrect password for the container registry
 
     ![describe pods](images/desc-pod-1.png)
-    
+
 ​    You can execute this command a few times to see the evolution.
 
 6. While the pod is starting up, you can check the creation of the block volume and a load balancer that were specified in the config file:
@@ -216,17 +215,17 @@ In this section we'll explain a number of commands that allow you to track what 
 
     ![describe dbinstance](images/desc-db-1.png)
 
-    And re-issuing the same command a few more times will finally show following : 
+    And re-issuing the same command a few more times will finally show following :
 
     ![describe dbinstance](images/desc-db-2.png)
 
-9. It looks like the DB is now up and running !  Let's re-issue the get command : 
+9. It looks like the DB is now up and running !  Let's re-issue the get command :
 
     ```
     <copy>kubectl get singleinstancedatabase sidb-test1</copy>
     ```
 
-    Resulting output: 
+    Resulting output:
 
     ```
     NAME         EDITION      STATUS     VERSION      CONNECT STR                 OEM EXPRESS URL
@@ -250,23 +249,19 @@ OK, it looks like our database is indeed up and running !  Let's try to connect 
 
     ![login screen](images/em-login.png)
 
-
-
 3. Enter the username `sys`, the password you specified for the database earlier, and the container db name `orclpdb1`.  You should now see the console :
 
     ![em console](images/em-open.png)
 
-
-
     Alternatively, you can use the command line to connect via sqlplus:
 
-4. Get the connect string with the below command : 
+4. Get the connect string with the below command :
 
     ```
     <copy>kubectl get singleinstancedatabase sidb-test1 -o "jsonpath={.status.pdbConnectString}" && echo -e "\n"</copy>
     ```
 
-    This should output something like : 
+    This should output something like :
 
     ```
     132.145.249.43:1521/ORCLPDB1
@@ -280,9 +275,7 @@ OK, it looks like our database is indeed up and running !  Let's try to connect 
 
 6. You can quit sqlplus with the `quit` command.
 
-  
-
-    Congratulations, your database is up and running, and you are able to connect to it through Enterprise Manager and Sqlplus !  
+    Congratulations, your database is up and running, and you are able to connect to it through Enterprise Manager and Sqlplus !
 
 7. Optional deletion of the database
     We will not use the database instance `sidb-test1` in this lab anymore.  In case you want to free up the resources taken up by this database (a pod in your Kubernetes cluster, a Block Volume and a load balancer), you can issue the following command to delete the database and automatically delete the associated resources:
@@ -294,6 +287,6 @@ OK, it looks like our database is indeed up and running !  Let's try to connect 
 You may now **proceed to the next lab**.
 
 ## Acknowledgements
+
 * **Author** - Jan Leemans, July 2022
-* **Last Updated By/Date** - Jan Leemans, March 2023
-    
+* **Last Updated By/Date** - Jan Leemans, January 2024
