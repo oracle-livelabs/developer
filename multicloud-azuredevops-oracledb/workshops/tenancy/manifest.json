@@ -12,14 +12,14 @@
       },
       {
         "title": "Lab 1: Create an Oracle Cloud Database",
-        "filename": "../../setup/setup.md"
+        "filename": "../../createdatabase/createdatabase.md"
       },
       {
         "title": "Lab 2: Create Resource Group, AKE Kubernetes Cluster, and Container Registry",
         "filename": "../../createake/createake.md"
       },
       {
-        "title": "Lab 3: Configure Interconnect between Azure and OCI",
+        "title": "Lab 3: Configure Oracle@Azure or Interconnect",
         "filename": "../../interconnect/interconnect.md"
       },
       {
@@ -47,7 +47,7 @@
         "filename": "../../observability/observability.md"
       },
       {
-        "title": "Lab 10: Add Liquibase to the pipeline for schema changes",
+        "title": "Lab 10: Add Liquibase for CI/CD of database changes",
         "filename": "../../liquibase/liquibase.md"
       },
       {

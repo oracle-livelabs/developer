@@ -111,158 +111,16 @@ If it were set to `true` then deleting the resource from Kubernetes *WOULD* dele
 
     A lot of useful information will be displayed including CPU and Storage settings, Connection Strings, and its Lifecycle State (AVAILABLE).  You will modify these fields later to manage the ADB via K8s.
 
-## Task 5: Secrets
 
-A Kubernetes *Secret* is an API object used to store sensitive information such as passwords, tokens, or keys.  It is important to note that a *Secret*, by default, is not encrypted only base64-encoded, but they are still useful.
+From here you can do a number of database administration functions as describe in the [OraOperator documentation](https://github.com/oracle/oracle-database-operator).
 
-> a Secret, by default, is not encrypted
-
-Suppose you've written a bit of code to remotely check tablespace usage.  You first test it on one database hard-coding the authentication (AuthN) credentials into the script for convenience while testing.  It works great but you'll need to remove the AuthN credentials from the code and add a function to retrieve them from an external source.  Once you've done this, you can safely share your tablespace check code with the world without exposing confidential data.
-
-![Secrets](images/secrets.png "Secrets")
-
-Kubernetes *Secrets* are that external source which decouples sensitive information from your application code.  This ensures your application is distributable and portable, without exposing confidential data.
-
-## Task 6: Create Secrets
-
-If you take a closer look at the output from **Task 4**: `kubectl describe adb adb-existing` you'll notice that the resources does not have a value for the ADMIN password or the Wallet:
-
-```yaml
-...
-spec:
-  Details:
-    Admin Password:
-      k8sSecret:
-...
-    Wallet:
-      Password:
-        k8sSecret:
-```
-
-Create two *Secrets* which will applied to those values.
-
-1. In Cloud Shell, assign the `ADB_PWD` variable a password (for Workshop purposes only).
-
-    You can choose any password so long as it complies with the [Password Complexity](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/manage-users-create.html#GUID-72DFAF2A-C4C3-4FAC-A75B-846CC6EDBA3F) rules.
-
-    ```bash
-    <copy>
-    ADB_PWD=$(echo "K8s4DBAs_$(date +%H%S%M)")
-    </copy>
-    ```
-
-2. Create a *Secret* that will hold the database ADMIN and ADB wallet password:
-
-    ```bash
-    <copy>
-    cat > adb_secrets.yaml << EOF
-    ---
-    apiVersion: v1
-    kind: Secret
-    type: Opaque
-    metadata:
-      name: adb-admin-password
-    stringData:
-      adb-admin-password: $ADB_PWD
-    ---
-    apiVersion: v1
-    kind: Secret
-    type: Opaque
-    metadata:
-      name: adb-instance-wallet-password
-    stringData:
-      adb-instance-wallet-password: $ADB_PWD
-    EOF
-    </copy>
-    ```
-
-    Take a quick look at the syntax:
-
-    You are using the "core" API, `v1` and defining two resources of `kind: Secret` of `type: Opaque`.  They are named: `adb-admin-password` and `adb-instance-wallet-password` respectively.  *Secret* `adb-admin-password` has a single key/value data: `adb-admin-password:$ADB_PWD` while `adb-instance-wallet-password` has a single key/value data: `adb-instance-wallet-password:$ADB_PWD`
-
-3. Create the *Secret* resources:
-
-    ```bash
-    <copy>
-    kubectl apply -f adb_secrets.yaml
-    </copy>
-    ```
-
-4. Query the *Secret* resources:
-
-    ```bash
-    <copy>
-    kubectl get secrets
-    </copy>
-    ```
-
-    ![ADB Secrets Output](images/secrets_output.png "ADB Secrets Output")
-
-## Task 7: Redefine the ADB - Add Secrets
-
-Now that you've defined two *Secrets* in Kubernetes, redefine the `adb-existing` resource to use them.  Keep in mind that when you redefine the `adb-existing` resource with the *Secrets*, the ADB bound to it will no longer be in the desired state.  The OraOperator controllers will update the real-world ADB to reconcile the differences.
-
-1. Update the previously created `adb_existing.yaml` file with the new *Secret* definitions:
-
-    ```bash
-    <copy>
-    cat >> adb_existing.yaml << EOF
-        adminPassword:
-          k8sSecret:
-            name: adb-admin-password
-        wallet:
-          name: adb-tns-admin
-          password:
-            k8sSecret:
-              name: adb-instance-wallet-password
-    EOF
-    </copy>
-    ```
-
-    Take a quick look at the syntax:
-
-    You are appending to the `adb_existing.yaml` manifest to **redefine** the `adb-existing` resource, setting the `spec.details.adminPassword` and `spec.details.wallet` keys.  Under the wallet section, you are specifying the name of a *Secret*, `adb-tns-admin`, that the OraOperator will define to store the wallet.
-
-2. Apply the manifest:
-
-    ```bash
-    <copy>
-    kubectl apply -f adb_existing.yaml
-    </copy>
-    ```
-
-    ![ADB Modify](images/adb_modify.png "ADB Modify")
-
-## Task 8: Review ADB Wallet Secrets
-
-1. Get the *Secrets* (`kubectl get secrets [-n <namespace>]`):
-
-    ```bash
-    <copy>
-    kubectl get secrets
-    </copy>
-    ```
-
-    ![ADB Secrets](images/adb_secrets.png "ADB Secrets")
-
-    You created the first two *Secrets* and instructed OraOperator to create the third named `adb-tns-admin`.
-
-2. Take a closer look at the **adb-tns-admin** *Secret* by describing it (`kubectl describe secrets <secret_name> [-n <namespace>]`):
-
-    ```bash
-    <copy>
-    kubectl describe secrets adb-tns-admin
-    </copy>
-    ```
-
-    ![kubectl describe secrets adb-tns-admin](images/adb_tns_admin.png "kubectl describe secrets adb-tns-admin")
-
-    You'll see what equates to a `TNS_ADMIN` directory, and in fact, this *Secret* can be used by Microservice applications for just that purpose.
+You can also create Kubernetes secrets for connecting to the database, however, we will use a more secure approach which is described in the next lab.
 
 You may now **proceed to the next lab**
 
 ## Learn More
 
+* [Oracle Database Operator (OraOperator)](https://github.com/oracle/oracle-database-operator)
 * [Oracle Autonomous Database](https://www.oracle.com/uk/autonomous-database/)
 * [Kubernetes Secrets](https://K8s.io/docs/concepts/configuration/secret/)
 

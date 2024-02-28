@@ -11,6 +11,7 @@ Estimated time: 5 minutes
 In this lab, you will:
 
 * Create the Oracle Database
+* Obtain the connection information and wallet
 * Create a user and table
 
 ### Prerequisites
@@ -19,7 +20,7 @@ This lab assumes:
 
 * You have an Oracle Cloud account.
 
-## Task 1: Create an Oracle Autonomous Database if necessary and download the connection information (wallet)
+## Task 1: Create an Oracle Autonomous Database if necessary, download the connection information (wallet), and create user and table.
 
 If you have a database instance already, you may skip this task.
 
@@ -31,10 +32,11 @@ If you have a database instance already, you may skip this task.
       ![select compartment](./images/databasesetup4.png " ")
    4. Provide a password for the `ADMIN` user.
       ![provide password](./images/databasesetup5.png " ")
-   5. Click the `Create Autonomous Database` button.
+   5. Click the `Create Autonomous Database` button. The database will begin provisioning.
       ![select create](./images/databasesetup6.png " " )
-   6. The database will begin provisioning. Notice the `Database actions` button.
-      ![notice actions](./images/databasesetup7.png " ")
+   6. Click the `Database connection` button and then `Download wallet` to save the wallet.
+      ![notice actions](./images/databaseconnectionbutton.png " ")
+      ![notice actions](./images/downloadwallet.png " ")
    7. Click the `Database actions` button and the `SQL` item from the drop-down list. After a moment the SQL Worksheet will appear.
       ![click actions](./images/databasesetup9.png " ")
    8. Copy and paste the following and replace `[Yourpassword]` with a password for the `AIUSER`.  
