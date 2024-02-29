@@ -34,7 +34,7 @@ This lab assumes you have completed previous labs.
 
 ## Task 5: Customize the pipeline, adding details for the microservice build and container push and Kubernetes deploy and service
 
-1. Modify `azure-pipelines.yml` to look like the following (replacing the `environment` value as appropriate). 
+1. Modify `azure-pipelines.yml` to look like the following (replacing the `environment` value as appropriate). This file can also be found at `azure-pipelines-example.yml` in your github repos.
 
    (Convenience tasks are also available for this, however, they simply insert templates and so knowing the format is most useful.)
 ```yaml
@@ -155,10 +155,13 @@ Note the deploy stage:
 
 Other details on customizing pipelines can be found here. https://learn.microsoft.com/en-us/azure/devops/pipelines/customize-pipeline?view=azure-devops
 
+Once modifications to the pipeline yaml are made, commit and push changes to your git repos.
 
 ## Task 5: Test the microservice
 
-1. The IP location of the microservice will be displayed at the end of the pipeline run. 
+1. The IP location of the microservice will be displayed at the end of the pipeline run.
+    ![pipeline complete show ip](./images/jobcomplete-showip.png " ")
+ 
 2. Access the test endpoint. For, example `http://[ENDPOINT_IN_PIPELINE_LOG]/data/test` and verify the reply showing the connection and some query output.
   `"got the conn :" + returnString'`
 
