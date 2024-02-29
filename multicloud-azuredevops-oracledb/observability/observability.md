@@ -21,18 +21,37 @@ Watch the video below for a quick walk through of the lab.
 ### Prerequisites
 
 - This lab presumes you have already completed the earlier labs.
- 
 
-## Task 1: Install and Configure Observability Software and Metrics with Log Exporters
+## Task 1: Access the previously created AKE/Kubernetes cluster.
 
-1. Run the following to install Prometheus and Grafana and an SSL secured LoadBalancer for Grafana
+1. Navigate to the Kubernetes service and the cluster that was created and 
+
+## Task 2: Install and Configure Prometheus and Grafana
+
+1. Run the following commands
 
     ```
-    <copy>cd $GRABDISH_HOME/observability;./install.sh</copy>
+    <copy>helm repo add prometheus-community https://prometheus-community.github.io/helm-charts</copy>
     ```
 
-   You will see some warning messages related to versions, .kube/config, etc. that may safely be ignored.
+    ```
+    <copy>helm repo add stable https://charts.helm.sh/stable</copy>
+    ```
 
+    ```
+    <copy>helm repo update</copy>
+    ```
+   
+    ```
+    <copy>helm install prometheus prometheus-community/kube-prometheus-stack</copy>
+    ```
+   
+    ```
+    <copy>kubectl port-forward deployment/prometheus-grafana 3000</copy>
+    ```
+
+   You should see the following output
+   ![Configuration](images/prometheusstackinstalloutput.png " ")
 
 2. Run the `/createMonitorsAndExporters.sh` script. This will do the following:
    - Create Prometheus ServiceMonitors to scrape the Frontend, Order, and Inventory microservices.
@@ -46,7 +65,7 @@ Watch the video below for a quick walk through of the lab.
 
    You will see some warning messages related to configmaps not existing, as this is the initial setup, that may safely be ignored.
 
-## Task 2: Configure Grafana
+## Task 3: Configure Grafana
 
 1. Identify the EXTERNAL-IP address of the `ingress-nginx-controller` service by executing the following command:
 
@@ -105,7 +124,7 @@ Watch the video below for a quick walk through of the lab.
       ![Import button](images/confirmdashimport.png " ")
 
 
-## Task 3: Open and Study the Grafana Dashboard Screen and Metrics
+## Task 4: Open and Study the Grafana Dashboard Screen and Metrics
 
 1. Select the four squares icon on the left-hand side and select 'Dashboards'
       ![Dashboard side menu](images/dashboardsidemenu.png " ")

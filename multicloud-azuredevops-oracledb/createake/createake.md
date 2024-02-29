@@ -56,7 +56,11 @@ In Azure, a Resource Group is a fundamental organizational block within which re
 
       ![New App Registration](images/kubernetesname.png)
 
+   4. Verify connectivity by navigating to the Kubernetes service and the cluster that was created and selecting one of the techniques to connect (Cloud Shell, Azure CLI, or Run Command)
 
+      ![OraOperator Install](images/searchforaks.png)
+      ![OraOperator Install](images/connectbuttonforaks.png)
+      ![OraOperator Install](images/connecttoakeoptions.png)
 
 ## Task 3: Create Azure Container Registry
 

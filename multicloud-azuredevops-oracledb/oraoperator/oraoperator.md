@@ -28,15 +28,20 @@ The upcoming releases will support new configurations, operations and capabiliti
 
 ### Objectives
 
-* Have a Running and Healthy OraOperator
+* Install OraOperator
+* Use OraOperator to bind to Oracle Database
 
 ### Prerequisites
 
 This lab assumes you have:
 
-* A Kubernetes cluster and client environment with kubectl installed.
+* A Kubernetes cluster.
 
-## Task 1: Install OraOperator
+## Task 1: Access the previously created AKE/Kubernetes cluster.
+
+1. Navigate to the Kubernetes service and the cluster that was created and select one of the techniques to connect (Cloud Shell, Azure CLI, or Run Command)
+
+## Task 2: Install OraOperator
 
 The **OraOperator** is developed and supported by Oracle, with *Custom Controllers* for provisioning, configuring, and managing the lifecycle of Oracle Databases, defined by *CRDs*, deployed within or outside Kubernetes clusters.
 
@@ -82,7 +87,7 @@ To install the OraOperator, you will first need to install a dependency, **cert-
 
     The output shows a *Deployment* named `oracle-database-operator-controller-manager`. This is the **Operator's Custom Controller** manager which will watch your Kubernetes cluster for any Oracle Database *CRDs* and ensure that they are always running in their desired state.
 
-## Task 5: OraOperator CRDs
+## Task 3: OraOperator CRDs
 
 1. Rerun the query which returned the `api-resources`, but this time filter it on the new **database.oracle.com** group:
 
@@ -97,9 +102,9 @@ To install the OraOperator, you will first need to install a dependency, **cert-
     ![kubectl api-resources --api-group=database.oracle.com](images/oraoperator_crds.png "kubectl api-resources --api-group=database.oracle.com")
 
 
-## Task 6: Retrieve the existing ADB OCID
+## Task 4: Retrieve the existing ADB OCID
 
-1. Retrieve the OCID for the ADB, by running the following in Cloud Shell:
+1. Retrieve the OCID for the ADB either by copying from the OCI console or by running the following using the OCI CLI:
 
     ```bash
     <copy>
@@ -118,7 +123,7 @@ To install the OraOperator, you will first need to install a dependency, **cert-
     </copy>
     ```
 
-## Task 7: Create a manifest to Bind
+## Task 5: Create a manifest to Bind
 
 1. Create a *manifest file* to define the resource of an existing ADB, leveraging the *AutonomousDatabase CRD* from the OraOperator:
 
@@ -204,6 +209,7 @@ You may now **proceed to the next lab**
 
 ## Acknowledgements
 
+* **Authors** - [John Lathouwers, Developer Evangelist, Oracle Database](var:authors)
 * **Authors** - [Paul Parkinson, Architect and Developer Advocate](var:authors)
 * **Contributors** - [](var:contributors)
 * **Last Updated By/Date** - Paul Parkinson, 2024
