@@ -23,31 +23,27 @@
         "filename": "../../interconnect/interconnect.md"
       },
       {
-        "title": "Lab 4: Deploy Oracle Database Operator to AKE",
-        "filename": "../../deploy-oraoperator/deploy-oraoperator.md"
+        "title": "Lab 4: Deploy Oracle Database Operator to AKE and Bind to Database",
+        "filename": "../../oraoperator/oraoperator.md"
       },
       {
-        "title": "Lab 5: Bind to the Oracle Database",
-        "filename": "../../bind-adb/bind-adb.md"
-      },
-      {
-        "title": "Lab 6: Application Registration, Configure Azure Vault, and App Config",
+        "title": "Lab 5: Application Registration, Configure Azure Vault, and App Config",
         "filename": "../../configurevault/configurevault.md"
       },
       {
-        "title": "Lab 7: Create, Run, and Verify Pipeline",
+        "title": "Lab 6: Create, Run, and Verify Pipeline",
         "filename": "../../pipeline/pipeline.md"
       },
       {
-        "title": "Lab 8: Observability of Multi-Cloud Architecture",
+        "title": "Lab 7: Observability of Multi-Cloud Architecture",
         "filename": "../../observability/observability.md"
       },
       {
-        "title": "Lab 9: Add Liquibase for CI/CD of database changes",
+        "title": "Lab 8: Add Liquibase for CI/CD of database changes",
         "filename": "../../liquibase/liquibase.md"
       },
       {
-        "title": "Lab 10: Tear Down",
+        "title": "Lab 9: Tear Down",
         "filename": "../../teardown/teardown.md"
       },
       {
