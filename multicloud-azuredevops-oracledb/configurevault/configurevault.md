@@ -34,7 +34,7 @@ This lab assumes you have completed previous labs.
       ![Create a new registration](images/registerapp.png)
 
 
-   3. Note the value of the `Application (client) ID` (which will be used as the value for `AZURE_CLIENT_ID` later) and the `Directory (tenant) ID` (which will be sued as the value for `AZURE_TENANT_ID` later)
+   3. Note the value of the `Application (client) ID` (that will be used as the value for `AZURE_CLIENT_ID` later) and the `Directory (tenant) ID` (that will be used as the value for `AZURE_TENANT_ID` later)
 
       ![App registration](images/appregistration.png)
 
@@ -43,7 +43,7 @@ This lab assumes you have completed previous labs.
       ![App registration secret](images/appregistrationsecret.png)
 
    5. Note the value (not the ID) of the client secret. 
-      This will be used as the value for `AZURE_TENANT_ID` and along with the `AZURE_CLIENT_ID` and `AZURE_TENANT_ID` values noted earlier will be used by the Kubernetes microservice(s) to access to the Application Config and Azure Vault in order obtain information to connect to the Oracle Database on OCI.
+      This will be used as the value for `AZURE_TENANT_ID` and, along with the `AZURE_CLIENT_ID` and `AZURE_TENANT_ID` values noted earlier, will be used by the Kubernetes microservice(s) to access to the Application Config and Azure Vault in order obtain information to connect to the Oracle Database on OCI.
 
 
 
@@ -62,10 +62,14 @@ This lab assumes you have completed previous labs.
       ![Create App Config](images/createkeyvaultdetail.png)
 
    4. Name the secret `wallet` and provide the base64 value of the contents of cwallet.sso in the wallet zip as the secret value.
-      You can issue the command `base64 -i /Users/pparkins/Downloads/Wallet_IndADW/cwallet.sso` to get this value.
-      (this is the equivalent of issuing the command `az keyvault secret set --name wallet --vault-name multicloudvault --value "base64walletcontents"`
+      You can issue the following command to get this value: 
+      ```copy
+         base64 -i /Users/pparkins/Downloads/Wallet_IndADW/cwallet.sso` 
+      ```
+            
+      (this is the equivalent of issuing the command `az keyvault secret set --name wallet --vault-name multicloudvault --value "[base64walletcontents]"`
 
-      ![Create App Config](images/walletvaultsecret.png)
+   ![Create App Config](images/walletvaultsecret.png)
 
    5. Repeat the same for `password`
 
