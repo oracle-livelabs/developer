@@ -26,11 +26,16 @@ This lab assumes you have completed previous labs.
 
 1. Follow the directions found here to create a pipeline, replacing the example repos given with the one you created in Task 2: https://learn.microsoft.com/en-us/azure/devops/pipelines/create-first-pipeline?view=azure-devops&tabs=java
 
-  pipeline properties https://learn.microsoft.com/en-us/azure/devops/pipelines/process/variables
-
 ## Task 4: Add pipeline variables for the (Azure Vault backed) application config created in preview lab.
 
 1. Follow the directions found here to create the following variables: https://learn.microsoft.com/en-us/azure/devops/pipelines/process/variables
+
+   Select menu to edit pipeline.
+   ![pipeline variables](images/editpipeline.png " ")
+   Select `Variables`.
+   ![pipeline variables](images/selectvariables.png " ")
+   Enter variable values for the following.
+   ![pipeline variables](images/variables.png " ")
 
 ## Task 5: Customize the pipeline, adding details for the microservice build and container push and Kubernetes deploy and service
 
