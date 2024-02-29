@@ -47,7 +47,7 @@ This lab assumes you have completed previous labs.
 
 
 
-## Task 3: Create Azure Vault and Secrets For Wallet and Password
+## Task 2: Create Azure Vault and Secrets For Wallet and Password
 
    1. From the home screen, click `Key Vaults` and `Create`
 
@@ -89,7 +89,7 @@ This lab assumes you have completed previous labs.
 
       ![Create App Config](images/vaultaccesspolicyverify.png)
 
-## Task 4: Create Application Config with Access Roles
+## Task 3: Create Application Config with Access Roles
 
    1. Click `New Registration`
 
@@ -117,7 +117,7 @@ This lab assumes you have completed previous labs.
       ![Check access](images/checkroleassignment.png)
 
 
-## Task 5 : Create App Config Secrets
+## Task 4: Create App Config Secrets
 
    1. From the application configuration page click `Create` and then `Key Vault reference`
 
