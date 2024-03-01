@@ -87,9 +87,7 @@ To install the OraOperator, you will first need to install a dependency, **cert-
 
     The output shows a *Deployment* named `oracle-database-operator-controller-manager`. This is the **Operator's Custom Controller** manager which will watch your Kubernetes cluster for any Oracle Database *CRDs* and ensure that they are always running in their desired state.
 
-## Task 3: OraOperator CRDs
-
-1. Rerun the query which returned the `api-resources`, but this time filter it on the new **database.oracle.com** group:
+5. Rerun the query which returned the `api-resources`, but this time filter it on the new **database.oracle.com** group:
 
     ```bash
     <copy>
@@ -101,6 +99,10 @@ To install the OraOperator, you will first need to install a dependency, **cert-
 
     ![kubectl api-resources --api-group=database.oracle.com](images/oraoperator_crds.png "kubectl api-resources --api-group=database.oracle.com")
 
+
+## Task 4: Configure OraOperator with OCI credentials
+
+      See https://github.com/oracle/oracle-database-operator/blob/main/docs/adb/README.md for details
 
 ## Task 4: Retrieve the existing ADB OCID
 
