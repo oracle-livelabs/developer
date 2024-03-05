@@ -15,12 +15,13 @@ This lab assumes you have completed previous labs.
 
 ## Task 1: If you have not already, Sign Up For Azure Pipeline
 
-1. Follow the directions found here to https://learn.microsoft.com/en-us/azure/devops/pipelines/get-started/pipelines-sign-up?view=azure-devops
+   1. Follow the directions found here to https://learn.microsoft.com/en-us/azure/devops/pipelines/get-started/pipelines-sign-up?view=azure-devops
 
 
 ## Task 2: Fork the `azure-devops-oracle-database` Github repos.
 
-1. Create a fork of the repos found at: https://github.com/oracle-devrel/azure-devops-oracle-database
+   1. Create a fork of the repos found at: https://github.com/oracle-devrel/azure-devops-oracle-database
+      ![fork repos](images/forkrepos.png " ")
 
 ## Task 3: Create a pipeline for the fork you just created.
 
