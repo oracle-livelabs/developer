@@ -48,7 +48,7 @@ In this lab, you will:
 
 
     To learn more about the advanced features, see [Use Java Management Service Advanced Features](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=3202).
-
+    
     ![image of selected create fleet options](images/create-fleet-advanced-feature.png)
 
 5. Click **Next**. You are prompted to review the fleet information and management agent configuration. If you want to modify your choices, click **Previous**.
@@ -63,7 +63,7 @@ In this lab, you will:
 
 8. After JMS is linked to the management agent, it will collect information on your Java runtimes. As the management agent scans the instance periodically, the information may not appear immediately. The scanning frequency can be changed here.
 
-9. Click the fleet. In the detail page, click **Modify agent settings**.
+9. Click the fleet. In the detail page, click **Configure agent settings**.
 
     ![image of fleet details page](images/fleet-details-page-new.png)
 
@@ -211,7 +211,7 @@ If you encounter any errors similar to the following, check policy statements in
 **Fleet state failed**
 
   ![image of failed fleet](images/failed-fleet.png)
-   
+
     ```
     <copy>
     ALLOW resource jms server-components TO MANAGE log-groups IN COMPARTMENT <compartment_name>
@@ -236,4 +236,4 @@ If you encounter any errors similar to the following, check policy statements in
 ## Acknowledgements
 
 * **Author** - Esther Neoh, Java Management Service
-* **Last Updated By** - Chan Wei Quan, October 2023
+* **Last Updated By** - Siqi Liu, November 2023
