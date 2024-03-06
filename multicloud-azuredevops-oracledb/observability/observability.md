@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This lab will show you how to view metrics of the Azure application and Oracle data tiers in a single Grafana dashboard.
+This lab will show you how to view metrics of the Azure application and Oracle data tiers in a single Grafana dashboard and using the CI/CD pipeline created earlier.
 
 Please see the  [Unified Observability in Grafana with converged Oracle Database Workshop](http://bit.ly/unifiedobservability)
 for an more in-depth look at this topic including details of the metrics, logs, and tracing exporters.
@@ -20,18 +20,51 @@ Estimated Time: 15 minutes
 
 ## Task 1: Access the previously created AKE/Kubernetes cluster.
 
-   1. Navigate to the Kubernetes service and the cluster that was created and access it via Cloud Shell or 
+   1. Navigate to the Kubernetes service and the cluster that was created and access it via Cloud shell or a terminal (`Run command` option will not work for the following steps).
 
-## Task 2: Install Prometheus and Grafana
+   2. Note the `[azure-devops-oracle-database_DIR]` value referred to in the following tasks refers to the directory where you cloned the fork of the https://github.com/oracle-devrel/azure-devops-oracle-database repos you used for the pipeline.
+
+## Task 2: Install Prometheus and Grafana and Create Kubernetes Service Connection (Used to deploy Prometheus service monitor later in the lab)
 
    1. Run the following command to install Prometheus And Grafana
 
       ```
-      <copy>./installPrometheusAndGrafana</copy>
+      <copy>[azure-devops-oracle-database_DIR]/observability/installPrometheusAndGrafana</copy>
       ```
 
       You should see the following output
-      ![Configuration](images/prometheusstackinstalloutput.png " ")
+      ![Prometheus Install](images/prometheusstackinstalloutput.png " ")
+ 
+      Note that AKS does provide the capability to install prometheus to the cluster as well.  This lab follows the popular install conducted using helm above.
+      ![AKS capabilities](images/aks-capabilities-prometheus.png " ")
+
+   2. We will now create a Kubernetes Service Connection to be used in the pipeline.  
+      This service connection is useful for a number of Kubernetes operations. We will be using it to deploy Prometheus service monitor later in the lab.
+       
+      First, expand the `Project Settings` menu in the bottom left-hand side of the DevOps/pipeline screen.
+      ![Project Settings](images/pipelineprojectsettings.png " ")
+      Then click `Service connections`
+      ![Service Connections](images/serviceconnectionsmenu.png " ")
+      Then click `New service connection` in the upper right corner.
+      ![New Service Conn](images/newserviceconnectionbutton.png " ")
+      Then type `Kubernetes` and click `next`.
+      ![Kubernetes](images/newconnkubernetes.png " ")
+      Then select your AKS cluster, give it a `Service connection name`, note that name, insure `Grans access permission to all pipelines` is selected, and click `Save`.
+      ![Select AKS](images/selectk8sandgivename.png " ")
+      Then type `Kubernetes` and click `next`.
+      ![Kubernetes](images/newconnkubernetes.png " ")
+
+
+   3. Add a pipeline variable to reference the Kubernetes Service connection just created.  
+
+      Click the edit menu next to the pipeline.
+      ![Edit pipeline](images/clickeditpipeline.png " ")
+      Enter a new variable named `kubernetesServiceConnection` and provide the Service connection name from the previous step.
+      ![k8s connection](images/kubernetesserviceconnectionvariable.png " ")
+      Save and verify the variable now exists for the pipeline.
+      ![save](images/verifyk8sconnvariable.png " ")
+      Then click the `Variables` button.
+      ![variables](images/variablesbutton.png " ")
 
 ## Task 3: Configure and Deploy the Oracle Database Metrics Exporter and Install Grafana Dashboard
 
@@ -82,45 +115,46 @@ Estimated Time: 15 minutes
 
       Click the `Back` button.
 
-      5. Install the  Dashboard
+   5. Install the  Dashboard
 
-         Select the `+` icon on the left-hand side and select `Import`
+      Select the `+` icon on the left-hand side and select `Import`
 
-         ![Import](images/importsidemenu.png " ")
+      ![Import](images/importmenu.png " ")
 
-          Copy the contents of `[azure-devops-oracle-database_DIR]/observability/dashboards/multicloudapp-dashboard.json`
+       Copy the contents of `[azure-devops-oracle-database_DIR]/observability/dashboards/multicloudapp-dashboard.json`
 
-         Paste the contents in the `Import via panel json` text field and click the `Load` button
-         ![Import via panel json](images/jsondashboardupload.png " ")
+       Paste the contents in the `Import via panel json` text field and click the `Load` button
+       ![Import via panel json](images/jsondashupload.png " ")
 
-         Confirm upload and click `Import` button.
-        ![Import button](images/confirmdashimport.png " ")
+       Confirm upload and click `Import` button.
+       ![Import button](images/confirmdashimported.png " ")
 
 ## Task 4: Open and Study the Grafana Dashboard Screen and Metrics
 
-   1. Select the four squares icon on the left-hand side and select 'Dashboards'
-      ![Dashboard side menu](images/dashboardsidemenu.png " ")
+   1. If not already in the dashboard, select the four squares icon on the left-hand side, select `Dashboards` and then `MultiCloud Azure DevOps Oracle Database Dashboard`
 
-   2. In the `Dashboards` panel select `MultiCloud Azure DevOps Oracle Database Dashboard`
+      ![Dashboard](images/dashboardsidemenu.png " ")
 
-      ![Dashboard list](images/dashboardlist.png " ")
+      ![Dashboard](images/multiclouddashboard.png " ")
 
    3. Notice the collapsible panels for each microservices and their content which includes
-       - Metrics about the kubernetes microservice
-       - Metrics about the PDB specific to that microservice (inventory count)
-      ![Frontend Dashboard](images/frontenddashscreen.png " ")
+       - Metrics about `Microservice Running in Kubernetes(AKS)`
+       - Metrics about `Oracle Database Used By AKS Microservice`
 
-       * Note that you may need to click the metric description(s) at the bottom of a panel in order to see them represented on the graph.
-      ![Frontend Dashboard](images/selectmetricdescr.png " ")
+      You can then add panels and click the edit menu of any panel to define the metrics, etc. that it displays.
+
+      ![Edit Grafana Panel](images/editgrafanapanel.png " ")
+
+      ![Edit Grafana Panel](images/editgrafanapanel1.png " ")
+
+      ![Edit Grafana Panel](images/editgrafanapanel2.png " ")
+
+      ![Edit Grafana Panel](images/editgrafanapanel3.png " ")
 
 
 You may now proceed to the next lab.
 
-## Learn More
-
-* Ask for help and connect with developers on the [Oracle DB Microservices Slack Channel](https://bit.ly/oracle-db-microservices-help-slack)
-
 ## Acknowledgements
-* **Author** - Paul Parkinson, Architect and Developer Advocate;
+* **Author** - Paul Parkinson, Architect and Developer Advocate
 * **Last Updated By/Date** - Paul Parkinson, 2024
 
