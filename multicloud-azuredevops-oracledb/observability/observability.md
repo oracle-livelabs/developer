@@ -4,7 +4,7 @@
 
 This lab will show you how to view metrics of the Azure application and Oracle data tiers in a single Grafana dashboard.
 
-Please see the  [Unified Observability in Grafana with converged Oracle Database Workshop](http://bit.ly/unifiedobservability) 
+Please see the  [Unified Observability in Grafana with converged Oracle Database Workshop](http://bit.ly/unifiedobservability)
 for an more in-depth look at this topic including details of the metrics, logs, and tracing exporters.
 
 Estimated Time: 15 minutes
@@ -20,26 +20,25 @@ Estimated Time: 15 minutes
 
 ## Task 1: Access the previously created AKE/Kubernetes cluster.
 
-   1. Navigate to the Kubernetes service and the cluster that was created and 
+   1. Navigate to the Kubernetes service and the cluster that was created and access it via Cloud Shell or 
 
 ## Task 2: Install Prometheus and Grafana
 
    1. Run the following command to install Prometheus And Grafana
 
-       ```
-       <copy>./installPrometheusAndGrafana</copy>
-       ```
+      ```
+      <copy>./installPrometheusAndGrafana</copy>
+      ```
 
       You should see the following output
       ![Configuration](images/prometheusstackinstalloutput.png " ")
-
 
 ## Task 3: Configure and Deploy the Oracle Database Metrics Exporter and Install Grafana Dashboard
 
    1. Copy `createWalletConfigMap.sh` to the directory of the wallet for the Oracle database (unzip the wallet zip file if downloaded from the OCI console)  :
 
       ```
-      <copy>cp [azure-devops-oracle-database_DIR]/observability/createWalletConfigMap.sh [WALLET_DIR]/ </copy>
+      <copy>cp [azure-devops-oracle-database_DIR]/observability/db-metrics-exporter/createWalletConfigMap.sh [WALLET_DIR]/ </copy>
       ```
 
       Run the createWalletConfigMap.sh file from the wallet directory to create the Kubernetes config map
@@ -51,7 +50,7 @@ Estimated Time: 15 minutes
       Run the createDBExporterResources.sh file from source repos `observability` directory.
 
       ```
-      <copy>cd [azure-devops-oracle-database_DIR]/observability ; ./createDBExporterResources.sh</copy>
+      <copy>cd [azure-devops-oracle-database_DIR]/observability/db-metrics-exporter ; ./createDBExporterResources.sh</copy>
       ```
 
    2. Run the following command to port-forward the Grafana port and then open `http://localhost:3000` in a browswer
@@ -59,77 +58,67 @@ Estimated Time: 15 minutes
       <copy>kubectl port-forward deployment/prometheus-grafana 3000</copy>
       ```
 
-   3. Login to Grafana using the default username `admin` and password `prom-operator` . Do not save the login as part of browser settings if prompted. 
+   3. Login to Grafana using the default username `admin` and password `prom-operator` . Do not save the login as part of browser settings if prompted.
 
       ![Grafana Login](images/grafana_login_screen.png " ")
 
    4. View pre-configured Prometheus data source:
 
-       Select the `Configuration` gear icon on the left-hand side and select `Data Sources`.
+      Select the `Configuration` gear icon on the left-hand side and select `Data Sources`.
 
-         ![Configuration](images/configurationdatasourcesidemenu.png " ")
+      ![Configuration](images/configurationdatasourcesidemenu.png " ")
 
-       Click the Prometheus option.
+      Click the Prometheus option.
 
-         ![Select](images/selectprometheusdatasource.png " ")
+      ![Select](images/selectprometheusdatasource.png " ")
 
-       The URL for Prometheus should be pre-populated
+      The URL for Prometheus should be pre-populated
 
-         ![Prometheus URL](images/prometheusdatasourceurl.png " ")
+      ![Prometheus URL](images/prometheusdatasourceurl.png " ")
 
-       Click `Test` button and verify success.
+      Click `Test` button and verify success.
 
-         ![Test button](images/saveandtestdatasourceisworking.png " ")
+      ![Test button](images/saveandtestdatasourceisworking.png " ")
 
-       Click the `Back` button.
+      Click the `Back` button.
 
-   5. Install the  Dashboard
+      5. Install the  Dashboard
 
-        Select the `+` icon on the left-hand side and select `Import`
+         Select the `+` icon on the left-hand side and select `Import`
 
          ![Import](images/importsidemenu.png " ")
 
-        Copy the contents of the [Dashboard JSON](https://raw.githubusercontent.com/oracle/microservices-datadriven/main/grabdish/observability/dashboards/grabdish-dashboard.json)
+          Copy the contents of `[azure-devops-oracle-database_DIR]/observability/dashboards/multicloudapp-dashboard.json`
 
-        Paste the contents in the `Import via panel json` text field and click the `Load` button
+         Paste the contents in the `Import via panel json` text field and click the `Load` button
          ![Import via panel json](images/jsondashboardupload.png " ")
 
-        Confirm upload and click `Import` button.
-         ![Import button](images/confirmdashimport.png " ")
+         Confirm upload and click `Import` button.
+        ![Import button](images/confirmdashimport.png " ")
 
 ## Task 4: Open and Study the Grafana Dashboard Screen and Metrics
 
    1. Select the four squares icon on the left-hand side and select 'Dashboards'
-         ![Dashboard side menu](images/dashboardsidemenu.png " ")
+      ![Dashboard side menu](images/dashboardsidemenu.png " ")
 
-   2. In the `Dashboards` panel select `MultiCloud Dashboard`
+   2. In the `Dashboards` panel select `MultiCloud Azure DevOps Oracle Database Dashboard`
 
-         ![Dashboard list](images/dashboardlist.png " ")
+      ![Dashboard list](images/dashboardlist.png " ")
 
    3. Notice the collapsible panels for each microservices and their content which includes
-       - Metrics about the kubernetes microservice runtime (CPU load, etc.)
-       - Metrics about the kubernetes microservice specific to that microservice (`PlaceOrder Count`, etc.)
-       - Metrics about the PDB used by the microservice (open sessions, etc.)
+       - Metrics about the kubernetes microservice
        - Metrics about the PDB specific to that microservice (inventory count)
-         ![Frontend Dashboard](images/frontenddashscreen.png " ")
-         ![Order Dashboard](images/orderdashscreen.png " ")
-         ![Inventory Dashboard](images/inventorydashscreen.png " ")
+      ![Frontend Dashboard](images/frontenddashscreen.png " ")
 
-      * Note that you may need to click the metric description(s) at the bottom of a panel in order to see them represented on the graph.
-        ![Frontend Dashboard](images/selectmetricdescr.png " ")
-   
-   4. If not already done, place an order using the curl command in `curlpod` as described in Task 1, steps 3 and 4, of the previous `Deploy and Test Data-centric Microservices Application` lab.
+       * Note that you may need to click the metric description(s) at the bottom of a panel in order to see them represented on the graph.
+      ![Frontend Dashboard](images/selectmetricdescr.png " ")
 
-   5. Select the 'Explore' option from the drop-down menu of any panel to show that metric and time-span on the Explore screen
-
-         ![Grabdish Explore](images/grabdishdashexplorebutton.png " ")
-         ![Grabdish Explore](images/dropdownexplore.png " ")
 
 You may now proceed to the next lab.
 
 ## Learn More
 
-* Ask for help and connect with developers on the [Oracle DB Microservices Slack Channel](https://bit.ly/oracle-db-microservices-help-slack)   
+* Ask for help and connect with developers on the [Oracle DB Microservices Slack Channel](https://bit.ly/oracle-db-microservices-help-slack)
 
 ## Acknowledgements
 * **Author** - Paul Parkinson, Architect and Developer Advocate;
