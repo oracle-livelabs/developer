@@ -14,7 +14,7 @@ This lab assumes you have completed previous labs.
 
 ## Task 1: Modify azure-pipelines.yml to install and run liquibase 
 
-1. Add the following 
+1. Example snippets can be found in `azure-pipelines-liquibase-snippet.yml` files in the repothe following to  `azure-pipelines.yml` under the `build` section
 
    ```yaml
    - script: |
@@ -24,7 +24,11 @@ This lab assumes you have completed previous labs.
         echo Downloading Oracle JDBC driver
         wget https://path/to/ojdbc8.jar
         displayName: 'Install Liquibase and Oracle JDBC'
+   ```
+   
+   And add the following under the `deploy` section and refer to variables that are part of the pipeline (define as needed).
 
+   ```yaml
    - script: |
      echo Setting up environment variables
      export DB_HOST=$(DB_HOST)
@@ -45,7 +49,8 @@ This lab assumes you have completed previous labs.
      DB_USERNAME: $(DB_USERNAME)
      DB_PASSWORD: $(DB_PASSWORD)
    ```
-   Commit and push the change to the git repos.
+   
+   2.  Commit and push the change to the git repos.
 
 ## Task 2: Understand the Liquibase configuration and make and test a modification
 
@@ -74,18 +79,17 @@ This lab assumes you have completed previous labs.
    Notice this is the table created earlier.
 
 
-  3. Modify the database and verify if application still works. 
+  3. Modify the database and verify if the Spring Boot application still works. 
      
-     Change log file at `db/changelog/db.changelog-master.xml` so that the cicd_test_table is modified.
+     Change log file at `db/changelog/db.changelog-master.xml` so that the `cicd_test_table` is modified.
      
      Run the application using the same endpoint that was used in the earlier lab and verify the change of results as a result of the database change.
+
+     Run liquibase commands such as `rollback` to revert changes, etc. as appropriate
 
 
 This concludes this lab. You can **proceed now to the next lab**.
 
-## Learn More
-
-* [OCI Documentation](https://docs.oracle.com/en-us/iaas/Content/home.htm)
 
 ## Acknowledgements
 
