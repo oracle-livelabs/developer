@@ -205,6 +205,5 @@ This Lab assumes you have:
   * Jeff Smith, Distinguished Product Manager, Database Tools
   * Justin Biard, Senior Member of Technical Staff, Database Tools
   * Zachary Talke, Product Manager, Database Tools
-  * Brian Spendolini, Contributor
 
-* **Last Updated By/Date** - Chris Hoina/March 2023
+* **Last Updated By/Date** - Chris Hoina/February 2024
