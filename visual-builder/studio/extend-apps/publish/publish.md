@@ -24,7 +24,7 @@ You can preview your App UI to run it in its own browser tab and see how it will
 
 1. Click ![Preview icon](images/icon-preview.png) **Preview** in the header.
 
-2. When the App UI opens displaying a list of employees, enter criteria, like the first name `David`, in the **Emp Name** field to filter the list:
+2. When the App UI opens displaying a list of employees, enter criteria, like the first name `David`, in the **Emp Name** field to filter the list and hit **Enter**:
 
     ![This image shows a preview of the App UI. The name "David" is entered in the search field and the results of the search are listed underneath.](images/preview.png)
 
@@ -38,7 +38,7 @@ After you've confirmed search is working, you are ready to deploy the extension 
 
     ![This image show the Publish button selected in the upper right corner of the workspace.](images/publish.png)
 
-2. In the Publish Changes dialog, enter a description of the changes in the **Commit Message** field, then click **Publish Changes**:
+2. In the Publish dialog, enter a description of the changes in the **Commit Message** field, then click **Publish**:
 
     ![This image shows the Publish Changes dialog with Merge Now selected and the "Search Application for HCM" entered in the Commit Message field.](images/publish-changes-dialog.png)
 
@@ -47,7 +47,7 @@ After you've confirmed search is working, you are ready to deploy the extension 
     ![This image shows the Missing Deployment Credentials dialog. The User Name field has john.dunbar entered in it and the Password field is empty.](images/deployment-creds.png)
 
 4. When the changes are published to your project's Git repository, click **Close**.
-    ![This image shows Publish CHanges dialog detailing the steps taken to deploy changes from your workspace to the project's repository in this order: Checking environments and build jobs, git commit branch1, git fetch, git merge main to branch1, git merge branch1 to main, and git push. There's also a message asking the user not to use the current branch as changes are being deployed and that a new branch johndunbar-20230517171431 has been temporarily created for the user.](images/published.png)
+    ![This image shows Publish CHanges dialog detailing the steps taken to deploy changes from your workspace to the project's repository in this order: Checking environments and build jobs, git commit branch1, git fetch, git merge main to branch1, git merge branch1 to main, and git push. There's also a message asking the user not to use the current branch as changes are being deployed and that a new branch maryjane-timestamp has been temporarily created for the user.](images/published.png)
 
     What you're seeing are the Git steps taken to push your changes from the local **branch1** to the remote **branch1**, then to merge them to the project's **main** branch.
 
@@ -75,4 +75,4 @@ Once your changes are successfully merged to your project's repo, VB Studio auto
 
 * **Author** - Sheryl Manoharan, VB Studio User Assistance, May 2023
 * **Contributors** -  Lisa Dawson, VB Studio User Assistance
-* **Last Updated By/Date** - Sheryl Manoharan, November 2023
+* **Last Updated By/Date** - Sheryl Manoharan, March 2024

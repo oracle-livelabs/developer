@@ -203,4 +203,4 @@ Now that you have your business objects, create a diagram that visualizes the bu
 ## Acknowledgements
 
 * **Author** - Sheryl Manoharan, VB Studio User Assistance, November 2021
-* **Last Updated By/Date** - Sheryl Manoharan, February 2024
+* **Last Updated By/Date** - Sheryl Manoharan, March 2024
