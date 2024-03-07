@@ -1,4 +1,4 @@
-# Deploy the Oracle Operator for Kubernetes (OraOperator)
+# Deploy Oracle Database Operator to AKE and Bind to Database
 
 ## Introduction
 
@@ -18,13 +18,9 @@ The current release of the operator supports the following lifecycle operations:
 
 The upcoming releases will support new configurations, operations and capabilities.
 
-
 ![Operator](images/dba_oper_dev.png "Operator")
 
 *Estimated Time:* 5 minutes
-
-[Lab 6](videohub:1_in973skw)
-
 
 ### Objectives
 

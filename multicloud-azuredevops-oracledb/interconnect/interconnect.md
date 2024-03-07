@@ -4,6 +4,8 @@
 
 In this lab, we will set up either Oracle@Azure or the Interconnect between Azure and OCI and Oracle Database.
 
+Estimated time: 60 minutes
+
 ### Objectives
 
 * Setup and Test Oracle@Azure or Interconnect between Azure and OCI and Oracle Database

@@ -1,8 +1,10 @@
-# Setup pipeline
+# Create, Run, and Verify Pipeline
 
 ## Introduction
 
 In this lab, we will set up the Azure pipeline.
+
+*Estimated Time:* 15 minutes
 
 ### Objectives
 

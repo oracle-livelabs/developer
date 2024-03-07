@@ -1,4 +1,4 @@
-# Unified Observability
+# OpenTelemetry Observability of Multi-Cloud Architecture
 
 ## Introduction
 

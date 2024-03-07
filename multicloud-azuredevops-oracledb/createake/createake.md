@@ -1,8 +1,9 @@
-# Setup environment
+# Create Resource Group, AKE Kubernetes Cluster, and Container Registry
 
 ## Introduction
 
-In this lab, we will create an Azure Kubernetes cluster and look at a couple options to access it.
+In this lab, we will create an Azure Kubernetes cluster and look at a few options to access it.
+We will also create an Azure Container Registry
 
 *Estimated Time:* 5 minutes
 

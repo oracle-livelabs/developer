@@ -1,8 +1,10 @@
-# Verify Tests
+# Add Liquibase for CI/CD of Database Changes
 
 ## Introduction
 
 In this lab, we will use liquibase to track database modifications
+
+Estimated Time: 15 minutes
 
 ### Objectives
 

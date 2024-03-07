@@ -19,14 +19,12 @@ The following diagram illustrates this reference architecture.
 
   ![Architecture](images/architecture.png " ")
 
-Estimated Workshop Time: 90 minutes
+Estimated Workshop Time: 120 minutes
 
 ### Objectives
 
-In this workshop, you will learn how to:
-* Setup Azure Pipelines and how to create an application that runs on Azure and connects to Oracle Cloud Database
-  Will follow https://learn.microsoft.com/en-us/azure/devops/pipelines/create-first-pipeline?view=azure-devops and https://azure.microsoft.com/en-ca/solutions/devops
-
+* Setup Azure Pipelines and create an application that runs on Azure and connects to Oracle Cloud Database
+ 
 ### Prerequisites
 
 - This workshop requires an Oracle Cloud account as well as an Azure Cloud Account.
@@ -37,17 +35,10 @@ You may now **proceed to the next lab.**..
 
 ## Want to Learn More?
 
-* [Blog On This Workshop](https://dzone.com/articles/simplify-microservice-transactions-with-oracle-dat)
 * [Related Blogs](https://dzone.com/users/4571557/paulparkinson.html)
-* [Oracle Advanced Queuing](https://docs.oracle.com/en/database/oracle/oracle-database/19/adque/aq-introduction.html)
 * [https://developer.oracle.com/](http://developer.oracle.com/microservices/)
 
 ## Acknowledgements
 
 * **Author** - Paul Parkinson, Architect and Developer Advocate
-* **Author** - Nicholas Cusato, Cloud Engineer
-* **Author** - Hannah Nguyen, Solution Engineer, NACI Engineering Specialists
-* **Author** - Miles Novotny, Cloud Engineer
-* **Author** - Ethan Shmargad, Cloud Engineer
-* **Author** - Nicholas Dangood, Health & AI Engineer
 * **Last Updated By/Date** - Paul Parkinson, 2024

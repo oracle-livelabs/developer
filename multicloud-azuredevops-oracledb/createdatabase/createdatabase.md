@@ -8,8 +8,6 @@ Estimated time: 5 minutes
 
 ### Objectives
 
-In this lab, you will:
-
 * Create the Oracle Database (if one does not exist already)
 * Obtain the connection information (and wallet if applicable)
 * Create a user and table

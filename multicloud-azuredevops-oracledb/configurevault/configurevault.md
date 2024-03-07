@@ -1,11 +1,11 @@
-# Setup environment
+# Application Registration, Configure Azure Vault, and App Config 
 
 ## Introduction
 
 In this lab, we will set up Azure Vault and Azure Config access to it for microservices/applications.
 We will add the vault secrets and config that will be used by the microservice(s) in AKE to make application s connections to the Oracle Database in OCI.
 
-*Estimated Time:* 10 minutes
+*Estimated Time:* 15 minutes
 
 ### Objectives
 
