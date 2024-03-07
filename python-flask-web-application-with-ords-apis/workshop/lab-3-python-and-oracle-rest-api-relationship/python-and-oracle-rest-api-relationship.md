@@ -380,6 +380,7 @@ This Lab assumes you have:
 ### You may now **proceed to the next Lab.**
 
 ## Learn More
+
 * [A minimal application in Flask](https://flask.palletsprojects.com/en/2.2.x/quickstart/)
 * [About the Flask "Application Object"](https://flask.palletsprojects.com/en/2.2.x/api/)
 
@@ -390,8 +391,7 @@ This Lab assumes you have:
 * **Contributors**
 
   * Jeff Smith, Distinguished Product Manager, Database Tools
-  * Justin Biard, Senior Member of Technical Staff, Database Tools 
+  * Justin Biard, Senior Member of Technical Staff, Database Tools
   * Zachary Talke,Senior Product Manager, Database Tools
-  * Brian Spendolini, Contributor
 
-* **Last Updated By/Date** - Chris Hoina/August 2023
+* **Last Updated By/Date** - Chris Hoina/February 2024
