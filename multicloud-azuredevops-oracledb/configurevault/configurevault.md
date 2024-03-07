@@ -51,17 +51,17 @@ This lab assumes you have completed previous labs.
 
    1. From the home screen, click `Key Vaults` and `Create`
 
-      ![Create App Config](images/keyvaultsfromhomepage.png)
+      ![Create Key Vault](images/keyvaultsfromhomepage.png)
 
    2. Select the correct resource group, provide a name, and create the vault. (this is the equivalent of issuing the command `az keyvault create --name multicloudvault --resource-group myapp-rg`)
 
-      ![Create App Config](images/createkeyvaultdetail.png)
+      ![Create Vault](images/createkeyvaultdetail.png)
 
    3. Select `Secrets` on the sidebar menu of the vault created in the previous step and then click `Generate/Import`
 
-      ![Create App Config](images/createkeyvaultdetail.png)
+      ![Select Secrets](images/createkeyvaultdetail.png)
 
-   4. Name the secret `wallet` and provide the base64 value of the contents of cwallet.sso in the wallet zip as the secret value.
+   4. If a wallet is not used (eg with Exadata), proceed to next step, otherwise name the secret `wallet` and provide the base64 value of the contents of cwallet.sso in the wallet zip as the secret value.
       You can issue the following command to get this value: 
       ```bash
       <copy>
@@ -71,39 +71,39 @@ This lab assumes you have completed previous labs.
             
       (this is the equivalent of issuing the command `az keyvault secret set --name wallet --vault-name multicloudvault --value "[base64walletcontents]"`
 
-      ![Create App Config](images/walletvaultsecret.png)
+      ![Create Wallet Secret](images/walletvaultsecret.png)
 
    5. Repeat the same for `password`
 
    6.  Add `Key Vault Administrator` and `Key Vault Secrets User` roles to the app registration created earlier.
 
-      ![Create App Config](images/vaultaddroleassignment.png)
+      ![Add Key Vault Admin](images/vaultaddroleassignment.png)
 
-      ![Create App Config](images/vaultaddroleassignmentreviewandassign.png)
+      ![Add Key Vault Admin](images/vaultaddroleassignmentreviewandassign.png)
 
-      ![Create App Config](images/vaultaddroleassignmentreviewandassign.png)
+      ![Add Key Vault Secrets User](images/vaultaddroleassignmentreviewandassign.png)
 
    7.  Click `Access Policies` on the sidebar menu of the Vault screen and 'Create an access policy' and select all or applicable permissions and click `Next`
 
-      ![Create App Config](images/vaultaccesspolicy.png)
+      ![Access Policies](images/vaultaccesspolicy.png)
 
       Under `Principal` search for and select the app registration created earlier. Choose remaining defaults and create the access policy.
 
-      ![Create App Config](images/vaultaccesspolicyprincipal.png)
+      ![Principal](images/vaultaccesspolicyprincipal.png)
 
       Verify the creation of the access policy.
 
-      ![Create App Config](images/vaultaccesspolicyverify.png)
+      ![Verify the creation of the access policy](images/vaultaccesspolicyverify.png)
 
 ## Task 3: Create Application Config with Access Roles
 
    1. Click `New Registration`
 
-      ![Create App Config](images/createappconfig.png)
+      ![New Registration](images/createappconfig.png)
 
-      ![Create App Config Success](images/createappconfigsuccess.png)
+      ![New Registration](images/createappconfigsuccess.png)
 
-      ![Create App Config Overview](images/createappconfigoverview.png)
+      ![New Registration](images/createappconfigoverview.png)
 
 
    2. Click `Access Control (IAM)` and click `Add role assignment`
@@ -143,9 +143,6 @@ This lab assumes you have completed previous labs.
 
 This concludes this lab. You can **proceed now to the next lab**.
 
-## Learn More
-
-* [OCI Documentation](https://docs.oracle.com/en-us/iaas/Content/home.htm)
 
 ## Acknowledgements
 
