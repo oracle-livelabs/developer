@@ -17,6 +17,7 @@ This lab assumes you have completed previous labs.
 1. Example snippets can be found in `azure-pipelines-liquibase-snippet.yml` files in the repothe following to  `azure-pipelines.yml` under the `build` section
 
    ```yaml
+   <copy>
    - script: |
         echo Installing Liquibase
         wget https://github.com/liquibase/liquibase/releases/download/v4.4.3/liquibase-4.4.3.tar.gz
@@ -24,11 +25,13 @@ This lab assumes you have completed previous labs.
         echo Downloading Oracle JDBC driver
         wget https://path/to/ojdbc8.jar
         displayName: 'Install Liquibase and Oracle JDBC'
+   </copy>
    ```
    
    And add the following under the `deploy` section and refer to variables that are part of the pipeline (define as needed).
 
    ```yaml
+   <copy>
    - script: |
      echo Setting up environment variables
      export DB_HOST=$(DB_HOST)
@@ -48,6 +51,7 @@ This lab assumes you have completed previous labs.
      DB_SERVICE_NAME: $(DB_SERVICE_NAME)
      DB_USERNAME: $(DB_USERNAME)
      DB_PASSWORD: $(DB_PASSWORD)
+   </copy>
    ```
    
    2.  Commit and push the change to the git repos.
@@ -57,17 +61,20 @@ This lab assumes you have completed previous labs.
    1. Examine the `liquibase.properties` file and the values that get set by the environment as well as the `changeLogFile` value
 
       ```properties
+      <copy>
          driver: oracle.jdbc.OracleDriver
          url: jdbc:oracle:thin:@//${DB_HOST}:${DB_PORT}/${DB_SERVICE_NAME}
          username: ${DB_USERNAME}
          password: ${DB_PASSWORD}
          changeLogFile: db/changelog/db.changelog-master.xml
          classpath: ojdbc8.jar
+      </copy>
       ```
    
    2. Examine the change log file at `db/changelog/db.changelog-master.xml` 
 
       ```xml
+      <copy>
          <databaseChangeLog>
             <changeSet id="1" author="your_name">
                <createTable tableName="cicd_test_table">
@@ -75,8 +82,9 @@ This lab assumes you have completed previous labs.
                </createTable>
             </changeSet>
          </databaseChangeLog>
+      </copy>
       ```
-   Notice this is the table created earlier.
+       Notice this is the table created earlier.
 
 
   3. Modify the database and verify if the Spring Boot application still works. 

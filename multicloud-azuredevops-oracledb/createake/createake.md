@@ -17,9 +17,9 @@ This lab assumes you have completed previous labs.
 
 ## Task 1: Create Resource Group
 
-This task can be skipped if an existing Resource Group will be used.
+   This task can be skipped if an existing Resource Group will be used.
 
-In Azure, a Resource Group is a fundamental organizational block within which resources like Azure Application Registrations, Azure App Configuration, Azure Key Vault, and many other Azure services are deployed and managed. A resource group is essentially a container that holds related resources for an Azure solution. The primary purpose of a resource group is to help organize and manage resources that share a common lifecycle, permissions, and policies.
+   In Azure, a Resource Group is a fundamental organizational block within which resources like Azure Application Registrations, Azure App Configuration, Azure Key Vault, and many other Azure services are deployed and managed. A resource group is essentially a container that holds related resources for an Azure solution. The primary purpose of a resource group is to help organize and manage resources that share a common lifecycle, permissions, and policies.
 
    1. Click `New Registration Group`
 

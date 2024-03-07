@@ -24,10 +24,10 @@ This lab assumes you have completed previous labs.
    Azure Application Registrations are part of Azure Active Directory. 
    When you register an application in Azure AD, you're creating an identity configuration for your application so that it can authenticate and communicate securely with other services that use Azure AD for authentication.
    Application Registrations allow your application to obtain tokens from Azure AD, enabling it to authenticate and access resources that are secured by Azure AD.
+
    1. Click `New Registration`
 
       ![New App Registration](images/newappregistration.png)
-
 
    2. Create a new registration (Eg `multicloud app`)
 
@@ -63,13 +63,15 @@ This lab assumes you have completed previous labs.
 
    4. Name the secret `wallet` and provide the base64 value of the contents of cwallet.sso in the wallet zip as the secret value.
       You can issue the following command to get this value: 
-      ```copy
+      ```bash
+      <copy>
          base64 -i /Users/pparkins/Downloads/Wallet_IndADW/cwallet.sso` 
+      </copy>
       ```
             
       (this is the equivalent of issuing the command `az keyvault secret set --name wallet --vault-name multicloudvault --value "[base64walletcontents]"`
 
-   ![Create App Config](images/walletvaultsecret.png)
+      ![Create App Config](images/walletvaultsecret.png)
 
    5. Repeat the same for `password`
 
