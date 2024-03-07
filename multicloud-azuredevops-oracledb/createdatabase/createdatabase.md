@@ -10,8 +10,8 @@ Estimated time: 5 minutes
 
 In this lab, you will:
 
-* Create the Oracle Database
-* Obtain the connection information and wallet
+* Create the Oracle Database (if one does not exist already)
+* Obtain the connection information (and wallet if applicable)
 * Create a user and table
 
 ### Prerequisites
@@ -20,9 +20,14 @@ This lab assumes:
 
 * You have an Oracle Cloud account.
 
-## Task 1: Create an Oracle Autonomous Database if necessary, download the connection information (wallet), and create user and table.
+## Task 1: Determine the Oracle Database Being Used
 
-If you have a database instance already, you may skip this task.
+   1. If using Oracle Autonomous Database you may follow the quick process outline in Task 2
+   2. If using Exadata the documentation can be found here: https://docs.oracle.com/en/engineered-systems/exadata-database-machine/
+
+## Task 2: Create an Oracle Autonomous Database if necessary, download the connection information, and create user and table.
+
+   If you have a database instance already, you may skip this task.
 
    1. From the OCI console select `Oracle Database` and then `Autonmous Transaction Processing`.
       ![select database](./images/databasesetup1.png " ")
@@ -37,11 +42,14 @@ If you have a database instance already, you may skip this task.
    6. Click the `Database connection` button and then `Download wallet` to save the wallet.
       ![notice actions](./images/databaseconnectionbutton.png " ")
       ![notice actions](./images/downloadwallet.png " ")
+
+## Task 3: Create user and table.
+
    7. Click the `Database actions` button and the `SQL` item from the drop-down list. After a moment the SQL Worksheet will appear.
       ![click actions](./images/databasesetup9.png " ")
    8. Copy and paste the following and replace `[Yourpassword]` with a password for the `AIUSER`.  
       You may use a user/name other than `AIUSER`. If so, be sure to use it consistently in the workshop and regardless note the password used.
-      ```sql
+      ```<copy>
       CREATE USER aiuser identified BY [Yourpassword];
       GRANT CREATE session TO aiuser;
       GRANT RESOURCE TO aiuser;
@@ -57,7 +65,7 @@ If you have a database instance already, you may skip this task.
    9. Select `SQL` from the options on the screen.
       ![select SQL](./images/databaseinit8.png " ")
    10. Copy and paste the following to create a test table you'll use in your microservice that is part of the CI/CD pipeline later.
-       ```sql
+       ```<copy>
        CREATE TABLE cicd_test_table (testvalue varchar2(64))
        ```
    11. Select the run script button to execute the SQL statements.
