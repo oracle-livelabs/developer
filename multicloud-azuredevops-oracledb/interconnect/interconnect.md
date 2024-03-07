@@ -1,4 +1,4 @@
-# Setup pipeline
+# Configure Oracle@Azure or Interconnect
 
 ## Introduction
 
