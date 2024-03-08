@@ -47,12 +47,14 @@ This lab assumes:
       ![click actions](./images/databasesetup9.png " ")
    8. Copy and paste the following and replace `[Yourpassword]` with a password for the `AIUSER`.  
       You may use a user/name other than `AIUSER`. If so, be sure to use it consistently in the workshop and regardless note the password used.
-      ```<copy>
+      ```sql
+      <copy>
       CREATE USER aiuser identified BY [Yourpassword];
       GRANT CREATE session TO aiuser;
       GRANT RESOURCE TO aiuser;
       GRANT unlimited tablespace TO aiuser;
       GRANT execute on DBMS_CLOUD to aiuser;
+      </copy>
       ```
    9. Select the run script button to execute the SQL statements.
       ![select run](./images/runscriptbutton.png " ")
@@ -63,8 +65,10 @@ This lab assumes:
    9. Select `SQL` from the options on the screen.
       ![select SQL](./images/databaseinit8.png " ")
    10. Copy and paste the following to create a test table you'll use in your microservice that is part of the CI/CD pipeline later.
-       ```<copy>
+       ```sql
+       <copy>
        CREATE TABLE cicd_test_table (testvalue varchar2(64))
+       </copy>
        ```
    11. Select the run script button to execute the SQL statements.
       ![select run script](./images/runscriptbutton.png " ")
