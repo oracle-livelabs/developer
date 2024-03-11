@@ -43,9 +43,9 @@ This lab assumes:
 
 ## Task 3: Create user and table.
 
-   7. Click the `Database actions` button and the `SQL` item from the drop-down list. After a moment the SQL Worksheet will appear.
+   1. Click the `Database actions` button and the `SQL` item from the drop-down list. After a moment the SQL Worksheet will appear.
       ![click actions](./images/databasesetup9.png " ")
-   8. Copy and paste the following and replace `[Yourpassword]` with a password for the `AIUSER`.  
+   2. Copy and paste the following and replace `[Yourpassword]` with a password for the `AIUSER`.  
       You may use a user/name other than `AIUSER`. If so, be sure to use it consistently in the workshop and regardless note the password used.
       ```sql
       <copy>
@@ -56,23 +56,23 @@ This lab assumes:
       GRANT execute on DBMS_CLOUD to aiuser;
       </copy>
       ```
-   9. Select the run script button to execute the SQL statements.
+   3. Select the run script button to execute the SQL statements.
       ![select run](./images/runscriptbutton.png " ")
-   7. Select the drop-down menu in the upper right (which should currently show as `ADMIN`), and click `Sign Out`.
+   4. Select the drop-down menu in the upper right (which should currently show as `ADMIN`), and click `Sign Out`.
       ![select dropdown](./images/databaseinit6.png " ")
-   8. Now log back in as the `AIUSER`.
+   5. Now log back in as the `AIUSER`.
       ![log in as AIUSER](./images/databaseinit7.png " ")
-   9. Select `SQL` from the options on the screen.
+   6. Select `SQL` from the options on the screen.
       ![select SQL](./images/databaseinit8.png " ")
-   10. Copy and paste the following to create a test table you'll use in your microservice that is part of the CI/CD pipeline later.
+   7. Copy and paste the following to create a test table you'll use in your microservice that is part of the CI/CD pipeline later.
        ```sql
        <copy>
        CREATE TABLE cicd_test_table (testvalue varchar2(64))
        </copy>
        ```
-   11. Select the run script button to execute the SQL statements.
+   8. Select the run script button to execute the SQL statements.
       ![select run script](./images/runscriptbutton.png " ")
-   13. Verify the SQL statements ran correctly. 
+   9. Verify the SQL statements ran correctly. 
 
 This concludes this lab. You can **proceed now to the next lab**.
    
