@@ -18,43 +18,43 @@ This lab assumes you have completed previous labs.
 
 1. Example snippets can be found in `azure-pipelines-liquibase-snippet.yml` files in the repothe following to  `azure-pipelines.yml` under the `build` section
 
-   ```yaml
-   <copy>
-   - script: |
-        echo Installing Liquibase
-        wget https://github.com/liquibase/liquibase/releases/download/v4.4.3/liquibase-4.4.3.tar.gz
-        tar -xzf liquibase-4.4.3.tar.gz
-        echo Downloading Oracle JDBC driver
-        wget https://path/to/ojdbc8.jar
-        displayName: 'Install Liquibase and Oracle JDBC'
-   </copy>
-   ```
+      ```yaml
+      <copy>
+      - script: |
+           echo Installing Liquibase
+           wget https://github.com/liquibase/liquibase/releases/download/v4.4.3/liquibase-4.4.3.tar.gz
+           tar -xzf liquibase-4.4.3.tar.gz
+           echo Downloading Oracle JDBC driver
+           wget https://path/to/ojdbc8.jar
+           displayName: 'Install Liquibase and Oracle JDBC'
+      </copy>
+      ```
    
    And add the following under the `deploy` section and refer to variables that are part of the pipeline (define as needed).
 
-   ```yaml
-   <copy>
-   - script: |
-     echo Setting up environment variables
-     export DB_HOST=$(DB_HOST)
-     export DB_PORT=$(DB_PORT)
-     export DB_SERVICE_NAME=$(DB_SERVICE_NAME)
-     export DB_USERNAME=$(DB_USERNAME)
-     export DB_PASSWORD=$(DB_PASSWORD)
+      ```yaml
+      <copy>
+      - script: |
+        echo Setting up environment variables
+        export DB_HOST=$(DB_HOST)
+        export DB_PORT=$(DB_PORT)
+        export DB_SERVICE_NAME=$(DB_SERVICE_NAME)
+        export DB_USERNAME=$(DB_USERNAME)
+        export DB_PASSWORD=$(DB_PASSWORD)
    
-     echo Running Liquibase update
-     ./liquibase --defaultsFile=liquibase.properties update
-     displayName: 'Run Liquibase Update'
-     env:
-     LIQUIBASE_HOME: $(Build.SourcesDirectory)/liquibase-4.4.3
-     CLASSPATH: $(Build.SourcesDirectory)/ojdbc8.jar
-     DB_HOST: $(DB_HOST)
-     DB_PORT: $(DB_PORT)
-     DB_SERVICE_NAME: $(DB_SERVICE_NAME)
-     DB_USERNAME: $(DB_USERNAME)
-     DB_PASSWORD: $(DB_PASSWORD)
-   </copy>
-   ```
+        echo Running Liquibase update
+        ./liquibase --defaultsFile=liquibase.properties update
+        displayName: 'Run Liquibase Update'
+        env:
+        LIQUIBASE_HOME: $(Build.SourcesDirectory)/liquibase-4.4.3
+        CLASSPATH: $(Build.SourcesDirectory)/ojdbc8.jar
+        DB_HOST: $(DB_HOST)
+        DB_PORT: $(DB_PORT)
+        DB_SERVICE_NAME: $(DB_SERVICE_NAME)
+        DB_USERNAME: $(DB_USERNAME)
+        DB_PASSWORD: $(DB_PASSWORD)
+      </copy>
+      ```
    
    2.  Commit and push the change to the git repos.
 

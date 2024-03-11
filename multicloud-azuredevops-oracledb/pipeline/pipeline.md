@@ -168,7 +168,7 @@ This lab assumes you have completed previous labs.
 
    Once modifications to the pipeline yaml are made, commit and push changes to your git repos.
 
-## Task 5: Test the microservice
+## Task 6: Test the microservice
 
    1. The IP location of the microservice will be displayed at the end of the pipeline run.
        ![pipeline complete show ip](./images/jobcomplete-showip.png " ")
