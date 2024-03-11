@@ -84,6 +84,7 @@ Now that we've added options to let users manage departments, we'll do the same 
 5. To make the fields on the main-edit-employee page display in two columns, click **Structure** and **Form Layout**, then in the **General** tab of the Properties pane, set the **Columns** value to **2**. The fields now appear in two columns.
 
 6. Let's also set up the employee's picture field to display as an image. To do this, search for an Avatar component in the Components palette, drag it into **Structure** view, and drop it above the Grid Row containing the Form Layout component.
+
     ![This image shows an Avatar component being dropped above the Form Layout component on the Edit Employee page.](images/avatar.png "")
 
 7. In the Avatar's Properties pane, select **Large** in the **Size** drop-down list to increase the component's size.
@@ -93,6 +94,7 @@ Now that we've added options to let users manage departments, we'll do the same 
   ![This combined image shows the Select Variable picker being selected in the Avatar component's Data tab. The lower half of the image shows the contents of the Variable picker, with picture under the employee object selected.](images/avatar-bind-data.png "")
 
   The employee's image now displays on the page. If you were to update the URL in the **Picture** field, the employee's image will also update.
+
   ![This image shows the updated Edit Employee page with the employee picture showing above the other form fields on the page.](images/avatar-picture-field.png "")
 
 ## Task 5: Add a page to delete an employee
@@ -105,15 +107,15 @@ Now that we've added options to let users manage departments, we'll do the same 
 
 3. Because the page features a bar chart as well, let's update the action chain created by the Quick Start to refresh the chart whenever an employee is deleted. Select the **Delete Employee** button, then select the **Events** tab in the Properties pane and click **deleteEmployeeChain** under Action Chain.
 
-    ![This image shows the Events tab selected for the button, listing the deleteEmployeeChain as the action chain triggered by the ojAction event.](images/deleteEmployeeChain.png "")
+    ![This image shows the Events tab selected for the button, listing the deleteEmployeeChain as the action chain triggered by the ojAction event.](images/deleteemployeechain.png "")
 
 4. When the deleteEmployeeChain opens in the Action Chain editor, drag and drop a new Fire Data Provider Event (used to dispatch an event on a data provider) and drop it between the other Fire Data Provider Event and Fire Notification actions.
 
-    ![This image shows the deleteEmployeeChain in diagram view. A new Fire Data Provider Event action is being dropped between the existing Fire Data Provider Event action and Fire Notification action in the If (callRestDeleteEmployeeResult.ok) action.](images/deleteEmployeeChain-actionchain.png "")
+    ![This image shows the deleteEmployeeChain in diagram view. A new Fire Data Provider Event action is being dropped between the existing Fire Data Provider Event action and Fire Notification action in the If (callRestDeleteEmployeeResult.ok) action.](images/deleteemployeechain-actionchain.png "")
 
 5. In the second Fire Data Provider Event action's Properties pane, click ![Select Variable icon](images/variable-picker-icon.png) next to **Event Target** (you'll need to hover over the field to see the icon) and select **employeeListSDP2**, which is the data provider backing the bar chart.
 
-    ![This image shows the Fire Data Provider Event action's properties. The Event Target property's variable picker is open, with employeeListSDP2 highlighted.](images/deleteEmployeeChain-actionchain-updated.png "")
+    ![This image shows the Fire Data Provider Event action's properties. The Event Target property's variable picker is open, with employeeListSDP2 highlighted.](images/deleteemployeechain-actionchain-updated.png "")
 
 6. Change the Type from **Mutate** to **Refresh**.
 
