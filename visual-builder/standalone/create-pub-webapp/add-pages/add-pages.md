@@ -107,15 +107,15 @@ Now that we've added options to let users manage departments, we'll do the same 
 
 3. Because the page features a bar chart as well, let's update the action chain created by the Quick Start to refresh the chart whenever an employee is deleted. Select the **Delete Employee** button, then select the **Events** tab in the Properties pane and click **deleteEmployeeChain** under Action Chain.
 
-    ![This image shows the Events tab selected for the button, listing the deleteEmployeeChain as the action chain triggered by the ojAction event.](images/deleteemployeechain.png "")
+    ![This image shows the Events tab selected for the button, listing the deleteEmployeeChain as the action chain triggered by the ojAction event.](images/deleteempchain.png "")
 
 4. When the deleteEmployeeChain opens in the Action Chain editor, drag and drop a new Fire Data Provider Event (used to dispatch an event on a data provider) and drop it between the other Fire Data Provider Event and Fire Notification actions.
 
-    ![This image shows the deleteEmployeeChain in diagram view. A new Fire Data Provider Event action is being dropped between the existing Fire Data Provider Event action and Fire Notification action in the If (callRestDeleteEmployeeResult.ok) action.](images/deleteemployeechain-actionchain.png "")
+    ![This image shows the deleteEmployeeChain in diagram view. A new Fire Data Provider Event action is being dropped between the existing Fire Data Provider Event action and Fire Notification action in the If (callRestDeleteEmployeeResult.ok) action.](images/deleteempchain-actionchain.png "")
 
 5. In the second Fire Data Provider Event action's Properties pane, click ![Select Variable icon](images/variable-picker-icon.png) next to **Event Target** (you'll need to hover over the field to see the icon) and select **employeeListSDP2**, which is the data provider backing the bar chart.
 
-    ![This image shows the Fire Data Provider Event action's properties. The Event Target property's variable picker is open, with employeeListSDP2 highlighted.](images/deleteemployeechain-actionchain-updated.png "")
+    ![This image shows the Fire Data Provider Event action's properties. The Event Target property's variable picker is open, with employeeListSDP2 highlighted.](images/deleteempchain-actionchain-updated.png "")
 
 6. Change the Type from **Mutate** to **Refresh**.
 
