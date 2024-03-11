@@ -47,11 +47,13 @@ In this step, we'll connect the HR application to an external REST endpoint that
 
     Click **Define by Endpoint**.
 
-3. With the **Method** field set to **GET**, enter `https://restcountries.com/v2/alpha/{code}` in the **URL** field and select **Get One** in the **Action Hint** list. Click **Create Backend**.
+3. With the **Method** field set to **GET**, enter `https://restcountries.com/v2/alpha/{code}` in the **URL** field and select **Get One** in the **Action Hint** list.
 
     ![The Define by Endpoint page is shown. The Method field is set to GET, the URL is set to the base URI of a service, and Get One is selected in the Action Hint drop-down list.](images/service-connection-wizard-url.png "")
 
-4. Because all service connections require a backend to simplify the task of managing server attributes, you'll need to create a backend. On the Backend Specification step, enter `Countries` in the **Backend Name** field. Leave all other fields to their defaults and click **Next**.
+    Because all service connections require a backend to simplify the task of managing server attributes, you'll need to create a backend. Click **Create Backend**.
+
+4. On the Backend Specification step, enter `Countries` in the **Backend Name** field. Leave all other fields to their defaults and click **Next**.
 
 5. In the Overview tab, enter the **Service Name** as `Countries` and change the **Title** to `Country`.
 
@@ -77,7 +79,7 @@ Now that we have our service connection, let's change the Edit Employee page to 
 
 1. Click the ![Web Applications icon](images/webapp-icon.png) **Web Applications** tab, then select the **main-edit-employee** page.
 
-2. In the Components palette, locate the **Heading** component and drag and drop it onto the canvas, just above the Toolbar component with the Cancel and Save buttons.
+2. In the Components palette, locate the **Heading** component and drag and drop it onto the canvas, at the very end of the page after the Form Layout's components.
 
 3. In the Heading's properties, change the **Text** field's value to `Country Info` and move the **Level** slider to H6.
 
@@ -150,9 +152,9 @@ In this step, we'll assign data to the variables by adding a "value" event that 
 
     Click **Save**.
 
-8. Drag and drop an **Assign Variables** action on the canvas to follow the Call REST action. In the Assign Variable action's Properties pane, select **countryTypeVar** under **Page** in the **Variable** list. Hover over the **Value** property, click ![Select Variable icon](images/variable-picker-icon.png) to open the Variable picker, expand **callRestCountriesGetAlphaCodeResult** under **Action Chain**, and select **body**.
+8. Drag and drop an **Assign Variables** action on the canvas to follow the Call REST action. In the Assign Variable action's Properties pane, select **countryTypeVar** under **Page** in the **Variable** list. Hover over the **Value** property, click ![Select Variable icon](images/variable-picker-icon.png) to open the Variable picker, expand **callRestCountriesGetAlphaCodeResult** under **Local**, and select **body**.
 
-    ![The Assign Variable action's properties show the Variable property set to $page.variables.countryTypeVar. The Value property shows the variable picker, with body under Action Chain and callRestCountriesGetAlphaCodeResult highlighted.](images/assignvariable-bodytocountrytypevar.png "")
+    ![The Assign Variable action's properties show the Variable property set to $page.variables.countryTypeVar. The Value property shows the variable picker, with body under Local and callRestCountriesGetAlphaCodeResult highlighted.](images/assignvariable-bodytocountrytypevar.png "")
 
     What we're doing is mapping the data returned by the getAlphaCode REST call to the variables that populate components on the page. Because the field names are identical to the REST response, VB Studio automatically knows how to map each field to its data source.
 
@@ -173,4 +175,4 @@ In this step, we'll assign data to the variables by adding a "value" event that 
 ## Acknowledgements
 
 * **Author** - Sheryl Manoharan, VB Studio User Assistance, July 2022
-* **Last Updated By/Date** - Sheryl Manoharan, November 2023
+* **Last Updated By/Date** - Sheryl Manoharan, March 2024
