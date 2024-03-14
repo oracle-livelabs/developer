@@ -435,7 +435,7 @@ You need to create a file-system directory and place a JSON document in this dir
     ````
     <copy>
     cd /home/oracle/labs/python/External
-    wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/jyHA4nclWcTaekNIdpKPq3u2gsLb00v_1mmRKDIuOEsp--D6GJWS_tMrqGmb85R2/n/c4u04/b/livelabsfiles/o/labfiles/deptJSON.zip
+    wget https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/labfiles/deptJSON.zip
     unzip deptJSON.zip
     </copy>
     ````
