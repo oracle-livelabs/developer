@@ -60,7 +60,7 @@ The first thing we'll do is create the web application itself. Later, we'll cons
     Take note of the header:
     ![This image shows the visual application's header. The application name HR Visual Application is on the left. On the right are icons that let you perform other actions: Undo, Redo, Git, Go to File, Preview, and Menu.](images/header.png "")
 
-    The `DEVELOPMENT` and `1.0` tags next to the application name on the left indicate the application status (DEVELOPMENT, STAGE, or LIVE) and version (1.0). Elements on the right let you perform various actions. For example, you can undo your recent changes or search for a file. This workshop primarily demonstrates the options to preview your app, stage, then publish it. If you make a mistake during this workshop, click ![Undo icon](images/undo-icon.png) to back out of the last step you did.
+    The `DEVELOPMENT` and `1.0` tags next to the application name on the left indicate the application status (DEVELOPMENT, STAGE, or LIVE) and version (1.0). Elements on the right let you perform various actions. For example, you can undo your recent changes or search for a file. This workshop primarily demonstrates the options to preview your app, stage, then publish it. If you make a mistake during this workshop, click ![Undo icon](images/undo-icon.png) to back out of the last step you did, or the arrow next to it to undo more than one step.
 
     Now take a look at the footer, which has tools that help you debug and maintain your visual app (we'll briefly look at Audits in this workshop):
 
@@ -80,7 +80,7 @@ The first thing we'll do is create the web application itself. Later, we'll cons
 
     The **hrwebapp** opens on the **main-start** page, which is the application's default home page created automatically for you.
 
-    What you see under the **main-start** tab is your application's work area. Just under **main-start** are several horizontal tabs: **Page Designer**, **Actions**, **Event Listeners**, and so on. Each tab provides editors to help you examine and modify artifacts used in the page. By default, the page opens in the **Page Designer**, which is where you'll do the bulk of your work.
+    What you see under the **main-start** tab is your application's work area. Just under **main-start** are several horizontal tabs: **Page Designer**, **Action Chains**, **Event Listeners**, and so on. Each tab provides editors to help you examine and modify artifacts used in the page. By default, the page opens in the **Page Designer**, which is where you'll do the bulk of your work.
 
     ![This image shows the Web Apps pane after the hrwebapp has been created. The app itself is open on the right, on the main-start page, showing the Components Palette. On the far right, the Properties tab shows the Page view.](images/designer.png "")
 
@@ -104,11 +104,11 @@ The first thing we'll do is create the web application itself. Later, we'll cons
 
     ![The main-start page tab's right-click menu, with options to 'Close Tab', 'Close Other Tabs', 'Close Tabs to the Right', 'Close All Tabs', and 'Select in Navigator'.](images/tab.png "main-start page tab right-click menu")
 
-    In the Web Apps pane, expand the **hrwebapp** and **main** nodes to get a tree view of your web application's flows and pages.
+    Look in the Web Apps pane to get a tree view of your web application:
 
     ![The Web Apps pane shows the hrwebapp's tree view. Under hrwebapp, main is expanded with main-start nested under. At the same level as main are the Fragments, Resources, and Root Pages nodes.](images/treeview.png "")
 
-    A *flow* contains pages that relate to each other. An application can have multiple flows, and each flow can contain many pages. This simple application contains only one flow, **main**, and one page, **main-start**—though we'll add more pages later on. By convention, a page takes its flow name as a prefix.
+    You'll notice the **hrwebapp** node contains the **main** node, which in turn contains the **main-start** node. The **main** node is the application's default *flow* containing the default **main-start** page that users first see when the app is run. An application can have multiple flows, each of which can be used to group related pages. This simple application has only one flow and one page, though we'll add more pages later on. By convention, a page takes its flow name as a prefix.
 
 ## Task 2: Create a Location business object and import data
 
@@ -123,22 +123,14 @@ Let's create your first business object and add data to it by importing a CSV fi
 
     ![This image shows the business object page for the Location business object, with the Fields tab open. The other tabs are Overview, Security, Business Rules, Endpoints, and Data. A table shows the current fields, with the Type, Field Name, Display Label, Required, and Description columns visible for each.](images/location-bo-fields.png "")
 
-5. Click **\+** and select **Field** to add a field specific to this business object. This is a very simple business object, so we'll add only one new field.
-6. In the pop-up box, enter:
-
-    * **Label**: `Location`
-    * **Field Name**: `location` (automatically populated)
-    * **Type**: **String** ![String](images/bo-string-icon.png) (selected by default)
+5. Click **\+ Field** and select **Field** to add a field specific to this business object. This is a very simple business object, so we'll add only one new field.
+6. In the pop-up box, enter `Location` as the **Label**. The **Field Name** is automatically populated as **location** and the **Type** set to **String** ![String](images/bo-string-icon.png) by default.
 
     ![This image shows the + Field pop-up box, with Location entered in the Label field, location filled in as the Field Name value, and the String type selected. The Create Field button is selected.](images/location-bo-location-field.png "")
 
     Click **Create Field**.
 
-7. In the **Location** field's properties, select the **Required** check box under **Constraints**.
-
-    ![This image shows part of the Properties pane for the Name field. The Field Name value is location, the Display Label is Location, the Type is String, and the Value Calculation is None. Under Constraints, the Required check box is selected.](images/location-bo-location-required.png "")
-
-    You can see that there's now a check mark in the **Required** column for the **Location** field.
+7. For the newly created **location** field, select the check box in the **Required** column.
 
 8. Click [this link](https://objectstorage.us-ashburn-1.oraclecloud.com/p/Ei1_2QRw4M8tQpk59Qhao2JCvEivSAX8MGB9R6PfHZlqNkpkAcnVg4V3-GyTs1_t/n/c4u04/b/livelabsfiles/o/oci-library/location.csv) to download the `location.csv` file. This file contains four locations and  provides the data for the Location business object.
 
@@ -176,27 +168,29 @@ Let's now create the Department and Employee business objects. But instead of cr
 
 5. On the Business Objects step, you'll see the definitions that will be used to create the Department and Employee business objects. Leave them as is and click **Next**.
 
-6. On the Fields step, you'll need to make some changes. For the Department business object (selected by default), look for the `Location` field in the second row and click **#** in the Type column. Change the type setting as follows:
+6. On the Fields step, you'll need to make some changes. For the **Department** business object (selected by default), look for the `location` field in the second row and click **#** in the Type column. Change the type setting as follows:
 
-    * **Type**: **Reference** ![Reference icon](images/reference-icon.png)
-    * **Referenced Business Object**: **Location** (the default for a **Referenced Business Object** is always the current business object (in this case, Department), so make sure you select **Location** from the drop-down list). A Reference field is like a foreign key in a database table: it's a field that refers to the key (the Id field) of another business object to link the two business objects together. So when you create a department, you'll be able to specify one of the floors as the department's location.
+    * Select the **Type** as **Reference** ![Reference icon](images/reference-icon.png). A Reference field is like a foreign key in a database table: it's a field that refers to the key (the Id field) of another business object to link the two business objects together.
+    * Select **Location** as the **Referenced Business Object**. The default for a **Referenced Business Object** is always the current business object (in this case, Department), so make sure you select **Location** from the drop-down list.  Now when you create a department, you'll be able to specify one of the floors as the department's location.
 
-    * **Display Field**: **Location** (automatically populated)
+    * Leave the **Display Field** as **Location** (automatically populated).
+
+
     ![This image shows the Type option of the location field selected. A pop-up box shows the Type set to Reference, the Referenced Business Object set as Location, and the Default Field shown as Location.](images/import-bos-upload-fields-deptlocationfield.png "")
 
     Click **OK**.
 
-7. For the same **Location** field, click **Required** to deselect the setting (**Department** and **Id** are the only required fields for the Department object).
+7. For the same **location** field, click **Required** to deselect the setting (**department** and **id** are the only required fields for the Department object).
 
-8. Now click the **Employee** tab and change the **Department** field's type to a reference. Click **#** in the **Department** field's Type column and change the Type setting as follows:
+8. Now click the **Employee** tab and change the **department** field's type to a reference. Click **#** in the **department** field's Type column and change the Type setting as follows:
 
-    * **Type**: **Reference** ![Reference icon](images/reference-icon.png)
-    * **Referenced Business Object**: **Department**
-    * **Display Field**: **Department** (automatically populated)
+    * Select the **Type** as **Reference** ![Reference icon](images/reference-icon.png).
+    * Select **Department** as the **Referenced Business Object**.
+    * Leave the **Display Field** as **Department** (automatically populated).
 
     Click **OK**.
 
-9. Remove **Required** for all Employee fields, except **Name** and **Id**.
+9. Remove **Required** for all Employee fields, except **name** and **id**.
 
     ![This image shows the Employee object's fields. The Required column is highlighted and deselected for all fields, except Name.](images/import-bos-upload-fields-employee.png "")
 
@@ -220,7 +214,7 @@ Let's now create the Department and Employee business objects. But instead of cr
 
   ![This image shows the Test tab for the getall_Employee endpoint. When you click Send Request, the Response section shows the results in the Body tab.](images/endpoint-test-result.png "")
 
-  Click ![Back to Table icon](images/backtotable-icon.png) Endpoints to return to the main Endpoints page.
+  Click **Endpoints** to return to the main Endpoints page.
 
 ## Task 4: Create a business object diagram
 
@@ -245,4 +239,4 @@ Now that we have our business objects, let's create a diagram that provides a vi
 ## Acknowledgements
 
 * **Author** - Sheryl Manoharan, Visual Builder User Assistance, August 2021
-* **Last Updated By** - August 2023
+* **Last Updated By** - February 2024
