@@ -50,13 +50,13 @@ The first thing we'll do is add a web app to the HR visual application you just 
     ![Web Apps pane after the hrwebapp has been created. The app itself is open on the right, on the main-start page, showing the Components Palette. On the far right, the Properties tab shows the Page view.](images/designer.png "Web Apps pane with the hrwebapp")
 
     Here are the main Page Designer areas you'll use throughout this workshop:
-    | # | Tab | Functionality |
-    | --- | ---- | --- |
-    | 1 | Components | UI components (sorted by categories) that you can drag and drop onto a page|
-    | 2 | Data | Data endpoints exposed when you create business objects or service connections |
-    | 3 | Structure | Hierarchical view of the page's structure  |
-    | 4 | Properties | Properties of a component selected on the page. When the entire page is selected (as it is now), you'll see the Page view where you can choose a preferred page layout.|
-    | 5 | Canvas | A design, live, or code view of your page's content |
+    | #   | Tab        | Functionality                                                                                                                                                           |
+    | --- | ---------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+    | 1   | Components | UI components (sorted by categories) that you can drag and drop onto a page                                                                                             |
+    | 2   | Data       | Data endpoints exposed when you create business objects or service connections                                                                                          |
+    | 3   | Structure  | Hierarchical view of the page's structure                                                                                                                               |
+    | 4   | Properties | Properties of a component selected on the page. When the entire page is selected (as it is now), you'll see the Page view where you can choose a preferred page layout. |
+    | 5   | Canvas     | A design, live, or code view of your page's content                                                                                                                     |
     {: title="Page Designer Work Area"}
 
     You can collapse and expand tabs to better manage your working area. For example, click **Properties** to hide the Properties pane and expand your work area. You can also move different panes to customize your work area. For example, right-click **Structure** at the bottom of your work area, then select **Move to Top Left** to move the Structure view right under **Components** and **Data**.
@@ -115,7 +115,7 @@ Let's now create your first business object and add data to it by importing a CS
 
 Let's now create the Department and Employee business objects. But instead of creating the business objects and fields one by one and importing data for them, you'll import a ZIP file that defines the two business objects with their fields and data all at once.
 
-1. Click [this link](https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/-TsxaA2U-TAw4qHOYKSqTZF-l1NQSx89LDjPeakLPJp-haKBBQgttpRmb0V-RUXc/n/c4u04/b/livelabsfiles/o/developer-library/other-bos.zip) and download the `other-bos.zip` file. This ZIP file contains CSV files for the Department and Employee business objects. Feel free to review the contents.
+1. Click [this link](https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/developer-library/other-bos.zip) and download the `other-bos.zip` file. This ZIP file contains CSV files for the Department and Employee business objects. Feel free to review the contents.
 
 2. In the Navigator's Business Object pane, click **Menu** ![Menu icon](images/menu-icon.png) and select **Data Manager**. The Data Manager is what you use to import data from a variety of sources.
 
