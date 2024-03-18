@@ -152,7 +152,7 @@ In this step, we'll assign data to the variables by adding a "value" event that 
 
     Click **Save**.
 
-8. Drag and drop an **Assign Variables** action on the canvas to follow the Call REST action. In the Assign Variable action's Properties pane, select **countryTypeVar** under **Page** in the **Variable** list. Hover over the **Value** property, click ![Select Variable icon](images/variable-picker-icon.png) to open the Variable picker, expand **callRestCountriesGetAlphaCodeResult** under **Local**, and select **body**.
+8. Drag and drop an **Assign Variable** action on the canvas to follow the Call REST action. In the Assign Variable action's Properties pane, select **countryTypeVar** under **Page** in the **Variable** list. Hover over the **Value** property, click ![Select Variable icon](images/variable-picker-icon.png) to open the Variable picker, expand **callRestCountriesGetAlphaCodeResult** under **Local**, and select **body**.
 
     ![The Assign Variable action's properties show the Variable property set to $page.variables.countryTypeVar. The Value property shows the variable picker, with body under Local and callRestCountriesGetAlphaCodeResult highlighted.](images/assignvariable-bodytocountrytypevar.png "")
 
