@@ -40,7 +40,7 @@ Watch the video below for a quick walk-through of the lab.
 
 5. We'll load some sample data into the database and create a table at the same time. Start by **downloading** this file
 
-    💾 [CSV data](https://objectstorage.us-ashburn-1.oraclecloud.com/p/LNAcA6wNFvhkvHGPcWIbKlyGkicSOVCIgWLIu6t7W2BQfwq2NSLCsXpTL9wVzjuP/n/c4u04/b/livelabsfiles/o/developer-library/csv_data.csv)
+    💾 [CSV data](https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/developer-library/csv_data.csv)
 
 6. Once on your desktop, **drag the file into the Upload Data into New Table modal**. You can also click the Select Files button and find where you downloaded it via your operating system's/Web Browser's file browser.
 

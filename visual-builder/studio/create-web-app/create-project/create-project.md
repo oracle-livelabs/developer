@@ -4,7 +4,7 @@
 
 This lab shows you how to create a project for a new visual application, the foundation to build a web application in Oracle Visual Builder Studio.
 
-Estimated Time: 15 minutes
+Estimated Time: 10 minutes
 
 ### About this Lab
 
@@ -121,7 +121,9 @@ You now need to create a workspace, a private area for you to work on your visua
 
     ![Header in the HR Visual Application workspace. The workspace name HR Visual Application is on the left. Next to it, the Git repository and current branch tutorial-hr-project.git / hrbranch are visible. On the right are icons that let you perform other actions: Undo, Redo, Preview, Publish Changes, Product Feedback, Go to File, and Menu.](images/header.png "Header")
 
-    On the left is the name of your current workspace, **HR Workspace**. Next to it is the project's Git repository (**tutorial-hr-project.git**) and the branch currently associated with your workspace (**hrbranch**). The **tutorial-hr-project.git** repo stores your visual application's files and is known as your project's _remote_ repository. It includes the **main** and **hrbranch** branches, created with initial content for your visual application. The **main** branch is the default branch created when a new repo is generated and is the source from which your visual application is built. The **hrbranch** you see in your workspace is a working copy of the remote **hrbranch** and serves as your _local_ repository. It initially has the same set of source files as the remote branch, but as you work with your visual application, it will include the changes you make.
+    On the left is the name of your current workspace, **HR Workspace**. Next to it is the project's Git repository (**tutorial-hr-project.git**) and the branch currently associated with your workspace (**hrbranch**).
+
+    The **tutorial-hr-project.git** repo stores your visual application's files and is known as your project's _remote_ repository. It includes the **main** and **hrbranch** branches, created with initial content for your visual application. The **main** branch is the default branch created when a new repo is generated and is the source from which your visual application is built. The **hrbranch** you see in your workspace is a working copy of the remote **hrbranch** and serves as your _local_ repository. It initially has the same set of source files as the remote branch, but as you work with your visual application, it will include the changes you make.
 
     Click the workspace and the Git repo/branch to see other actions that you can perform. Clicking ![Go to Project Page icon](images/go-to-project-home-icon.png) will take you back to the Project Home page.
 
@@ -138,4 +140,4 @@ You now need to create a workspace, a private area for you to work on your visua
 ## Acknowledgements
 
 * **Author** - Sheryl Manoharan, VB Studio User Assistance, November 2021
-* **Last Updated By/Date** - Sheryl Manoharan, November 2023
+* **Last Updated By/Date** - Sheryl Manoharan, March 2024
