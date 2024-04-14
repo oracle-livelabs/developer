@@ -34,10 +34,7 @@ In this task, you'll add an edit page that lets users change a department's Name
 
     ![The Quick Start menu for the Departments table, with the Add Edit Page selected, is shown.](images/departments-add-edit-quick-start.png "")
 
-3. On the Select Read Endpoint step of the Add Edit Page wizard, select **Department** under Business Objects (if necessary) and click **Next**. VB Studio will automatically select the Department object's read endpoint.
-4. On the Select Update Endpoint step, select **Department** under Business Objects again (if necessary) and click **Next**. As with the read endpoint, VB Studio will automatically select the Department object's update endpoint.
-
-5. On the Page Details step, select **location** (**department** is already selected). Click **Finish**.
+3. On the Page Details step of the Add Edit Page wizard, select **location** (**department** is already selected). Leave the other fields to their default settings and click **Finish**.
 
     An **Edit Department** button is displayed in the toolbar on the main-departments page. The button is inactive.
 
@@ -72,20 +69,18 @@ Now that we've added options to let users manage departments, we'll do the same 
 
 1. Go to the **main-employees** page, click **Page Designer**, and select the **Table** component.
 2. In the Properties pane, click **Quick Start** to display the Quick Start menu, then click **Add Edit Page**.
-3. On the Select Read Endpoint step of the Add Edit Page wizard, select **Employee** under Business Objects (if necessary) and click **Next**.
-4. On the Select Update Endpoint step, again select **Employee** under Business Objects (if necessary) and click **Next**.
-5. On the Page Details step, select **picture**, **hireDate**, **email**, **department**, **salary**, and **country** (**name** is already selected). Click **Finish**.
+3. On the Page Details step of the Add Edit Page wizard, select **picture**, **hireDate**, **email**, **department**, **salary**, and **country** (**name** is already selected). Click **Finish**.
 
     An **Edit Employee** button is displayed in the toolbar on the main-employees page. The button is inactive.
 
-6. Click **Live**, select a row, and click **Edit Employee** to open the main-edit-employee page.
-7. To make the fields on the main-edit-employee page display in two columns, click within the form on the page but outside of a component (that is, in the **Form Layout** component on the page). In the General tab of the form's properties, set the **Columns** value to **2**. The fields now appear in two columns.
-8. Let's also set up the employee's picture field to display as an image. To do this, search for an Avatar component in the Components palette, then drag and drop it onto the **div** element just above the Form Layout on the page.
-    ![An Avatar component is dropped into the div element above the Form Layout component on the Edit Employee page. ](images/avatar.png "")
+4. Click **Live**, select a row, and click **Edit Employee** to open the main-edit-employee page.
+5. To make the fields on the main-edit-employee page display in two columns, click **Structure** and select **Form Layout**, then in the General tab of the form's properties, set the **Columns** value to **2**. The fields now appear in two columns.
+6. Let's also set up the employee's picture field to display as an image. To do this, search for an Avatar component in the Components palette, drag it into **Structure** view, and drop it above the Grid Row containing the Form Layout component.
+    ![An Avatar component is dropped into Structure view above the Form Layout component nested within the Validation Group on the Edit Employee page. ](images/avatar.png "")
 
-9. In the Avatar's Properties pane, select **Large** in the **Size** drop-down list to increase the component's size.
+7. In the Avatar's Properties pane, select **Large** in the **Size** drop-down list to increase the component's size.
 
-10. Click the **Data** tab and bind the component to a data source. Components are typically bound to variables that store and display data from your data source. Quick Starts automate this for you, but in this step, we'll manually bind the Avatar component to the **picture** variable that retrieves its data from the **picture** field in the Employee business object. To do this, hover over the **Src** field in the Data tab, click ![Select Variable icon](images/variable-picker-icon.png) to open the Variable picker, then select **picture** under the **employee** object.
+8. Click the **Data** tab and bind the component to a data source. Components are typically bound to variables that store and display data from your data source. Quick Starts automate this for you, but in this step, we'll manually bind the Avatar component to the **picture** variable that retrieves its data from the **picture** field in the Employee business object. To do this, hover over the **Src** field in the Data tab, click ![Select Variable icon](images/variable-picker-icon.png) to open the Variable picker, then select **picture** under the **employee** object.
 
     ![A combined image that shows the Select Variable picker being selected in the Avatar component's Data tab. The lower half of the image shows the contents of the Variable picker, with picture under the employee object selected.](images/avatar-bind-data.png "")
 
@@ -102,21 +97,21 @@ Now that we've added options to let users manage departments, we'll do the same 
 
 3. Because the page features a bar chart as well, let's update the action chain created by the Quick Start to refresh the chart whenever an employee is deleted. Select the **Delete Employee** button, then select the **Events** tab in the Properties pane and click **deleteEmployeeChain** under Action Chain.
 
-    ![The button's Events tab shows the deleteEmployeeChain as the action chain triggered by the ojAction event.](images/deleteEmployeeChain.png "")
+    ![The button's Events tab shows the deleteEmployeeChain as the action chain triggered by the ojAction event.](images/deleteempchain.png "")
 
 4. When the deleteEmployeeChain opens in the Action Chain editor, drag a new Fire Data Provider Event (used to dispatch an event on a data provider) and drop it between the other Fire Data Provider Event and Fire Notification actions within the If action.
 
-    ![The deleteEmployeeChain shows in diagram view. On the success branch of the Call REST action, a second Fire Data Provider Event action has been added. Its properties pane show on the right: Event Target is undefined and Type is set to Mutate.](images/deleteEmployeeChain-actionchain.png "")
+    ![The deleteEmployeeChain shows in diagram view. On the success branch of the Call REST action, a second Fire Data Provider Event action has been added. Its properties pane show on the right: Event Target is undefined and Type is set to Mutate.](images/deleteempchain-actionchain.png "")
 
 5. In the second Fire Data Provider Event action's Properties pane, click ![Select Variable icon](images/variable-picker-icon.png) next to **Event Target** (you'll need to hover over the field to see the icon) and select **employeeListSDP2**, which is the data provider backing the bar chart.
 
-   ![The Fire Data Provider Event action's properties are shown. The Event Target property's variable picker is open, with employeeListSDP2 highlighted.](images/deleteEmployeeChain-actionchain-updated.png "")
+   ![The Fire Data Provider Event action's properties are shown. The Event Target property's variable picker is open, with employeeListSDP2 highlighted.](images/deleteempchain-actionchain-updated.png "")
 
 6. Change the Type from **Mutate** to **Refresh**.
 
-    Now you're ready to test your pages.
-
 ## Task 6: Test your Employee pages
+
+Now test your pages.
 
 1. Click ![Preview icon](images/preview-icon.png) **Preview**.
 
@@ -134,11 +129,11 @@ Now that we've added options to let users manage departments, we'll do the same 
 5. On the Edit Employee page, change the **Department** to `IT` and **Salary** to 6000. Click **Save**. A success message appears, and you are returned to the Employees page. Notice how the bar chart also changes to show the employee's updated salary.
 
 6. Click **Create Employee** and specify the data for a new employee, for example:
-    * **Name**: `Shayla`
-    * **Picture**: `https://www.oracle.com/webfolder/technetwork/jet/content/images/hcm/placeholder-female-16.png`
+    * **Name**: `Walter`
+    * **Picture**: `https://www.oracle.com/webfolder/technetwork/jet/content/images/hcm/placeholder-male-05.png`
     * **Hire Date**: Select today's date
-    * **Email**: `shayla@example.com`
-    * **Department**: `Marketing`
+    * **Email**: `walter@example.com`
+    * **Department**: `IT`
     * **Salary**: `4000`
     * **Country**: `NZ`
 
@@ -169,4 +164,4 @@ Now that we have our web pages, let's change the application's home page from De
 ## Acknowledgements
 
 * **Author** - Sheryl Manoharan, VB Studio User Assistance, November 2021
-* **Last Updated By/Date** - Sheryl Manoharan, September 2023
+* **Last Updated By/Date** - Sheryl Manoharan, March 2024

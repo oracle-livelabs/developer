@@ -87,14 +87,14 @@ In the Oracle Autonomous Database Summary screen, we're going to launch Cloud Sh
 
 ## Task 3: Download the Environment Setup Automation Shell Script
 
-1. Get the Shell script from [here](https://objectstorage.us-ashburn-1.oraclecloud.com/p/0lxAU69Cob5L8l_8D3fUQ6V7TWeO6HBhUkrNe_6W0xeDUveXEbfdq4sJZGrpHf8o/n/c4u04/b/livelabsfiles/o/developer-library/tutorial_script.sh):
+1. Get the Shell script from [here](https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/developer-library/tutorial_script.sh):
 
     In the Cloud Shell, run the following:
 
     ````
     <copy>
     cd
-    wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/0lxAU69Cob5L8l_8D3fUQ6V7TWeO6HBhUkrNe_6W0xeDUveXEbfdq4sJZGrpHf8o/n/c4u04/b/livelabsfiles/o/developer-library/tutorial_script.sh
+    wget https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/developer-library/tutorial_script.sh
     </copy>
     ````
 

@@ -11,22 +11,20 @@ In this lab we'll be using the database with the NFS volume persistence we set u
 - We'll reconnect to the database to validate our data is still there
 
 ### Objective
-* Demonstrate database failover
+
+Demonstrate database failover
 
 ### Prerequisites
-* You have executed Lab 4 - Deploy a SingleInstance Database using a static NFS filesystem
 
-  
+ You have executed Lab 4 - Deploy a SingleInstance Database using a static NFS filesystem
 
-Estimated Time: 10 minutes
-
-
+Estimated Time of this lab: 10 minutes
 
 ## Task 1: Insert some records in the database
-1. Login with sqlplus :
-   
 
-    - Get the connect string with the below command : 
+1. Login with sqlplus :
+
+    - Get the connect string with the below command :
 
     ```
     <copy>kubectl get singleinstancedatabase sidb-test2 -o "jsonpath={.status.pdbConnectString}" && echo -e "\n"</copy>
@@ -38,7 +36,6 @@ Estimated Time: 10 minutes
     <copy>sqlplus sys/Your_Passwd@132.145.249.43:1521/ORCLPDB1 as sysdba</copy>
     ```
 
-
 2. Create a table called **my_test** and insert some values
 
     ```
@@ -47,11 +44,9 @@ Estimated Time: 10 minutes
         select * from mytest;</copy>
     ```
 
-
-
 3. Visualize the use of the cluster nodes at this point :
 
-    - Check the IP address of the active pod : 
+    - Check the IP address of the active pod :
 
     ```
     <copy>kubectl get pods -o wide</copy>
@@ -76,15 +71,11 @@ Estimated Time: 10 minutes
     - Click on the instance that had the active pod
     - Click on the **Stop** button to stop the instance, then the **Stop Instance** button
     - In the Cloud Shell, you can enter the command `kubectl get nodes` to detect the moment the kubernetes cluster detects the stop of the node
-    - Now re-issue the command to visualize the pods `kubectl get pods -o wide` and notice another pod has become active, running on another node of the cluster 
-
-   
+    - Now re-issue the command to visualize the pods `kubectl get pods -o wide` and notice another pod has become active, running on another node of the cluster
 
 5. Validate the database is still available
     - reconnect with the database via sqlplus
     - validate the data is available using `select * from mytest;`
-
-
 
     Congratulations, you tested the failover of the database across the cluster nodes !
 
@@ -95,11 +86,9 @@ Estimated Time: 10 minutes
 
 7. The NFS volume you used has been created separately and will survive the deletion of the instance, so you should delete the File system and Mount Point manually via the OCI console.
 
-You **finished this lab**, please don't hesitate to visit the documentation  on the [Single Instance Databases with Oracle Database Operator for Kubernetes](https://github.com/oracle/oracle-database-operator/blob/main/docs/sidb/README.md) page for more options. 
-
-
-
+You **finished this lab**, please don't hesitate to visit the documentation  on the [Single Instance Databases with Oracle Database Operator for Kubernetes](https://github.com/oracle/oracle-database-operator/blob/main/docs/sidb/README.md) page for more options.
 
 ## Acknowledgements
-* **Author** - Jan Leemans, July 2022
-* **Last Updated By/Date** - Jan Leemans, March 2023
+
+- **Author** - Jan Leemans, July 2022
+- **Last Updated By/Date** - Jan Leemans, March 2023

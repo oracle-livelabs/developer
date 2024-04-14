@@ -6,7 +6,7 @@ This lab walks you through the steps to run JDK Flight Recorder on a Java applic
 
 Estimated Time: 30 minutes
 
-[Lab 7](videohub:1_3uf46xvk)
+[Lab 8](videohub:1_3uf46xvk)
 
 ### Objectives
 
@@ -36,6 +36,8 @@ In this lab, you will:
 4. In the **JDK Flight Recorder** (JFR) Window, select **Recording option: Select from default profiles**
 
     Under the **Select default profiles**, click on the drop-down menu and select **Default.jfc**
+
+    Under the **Period to detect running applications** keep it as 10 minutes.
 
     Lower the **Maximum recording duration for each detected application** to 5 mins and keep **Maximum recording size for each detected application** at 500MB. Click **Start** to begin the JFR recording.
 
@@ -80,4 +82,4 @@ You may now **proceed to the next lab**.
 ## Acknowledgements
 
 * **Author** - Bao Jin Lee, Java Management Service
-* **Last Updated By** - Ivan Eng, June 2023
+* **Last Updated By** - Chan Wei Quan, October 2023

@@ -35,7 +35,7 @@ Start by creating an App UI that takes the form of VB Studio pages and flows.
 
 4. Double-click the **main-start** tile to open the page in the Designer.
 
-    What you see under the **main-start** tab is your main work area. Just under **main-start** are several horizontal tabs: Page Designer, Actions, Event Listeners, and so on. Each tab provides editors to help you examine and modify artifacts used in the page. By default, the page opens in the Page Designer, which is where you'll do the bulk of your work in VB Studio.
+    What you see under the **main-start** tab is your main work area. Just under **main-start** are several horizontal tabs: Page Designer, Action Chains, Event Listeners, and so on. Each tab provides editors to help you examine and modify artifacts used in the page. By default, the page opens in the Page Designer, which is where you'll do the bulk of your work in VB Studio.
     ![This image shows the main-start page with several components labelled. On the left are the Components, Data, and Structure tabs, in the middle is the canvas area, and on the right is the Properties pane.](images/pagedesigner.png)
 
     Here are the main Page Designer areas you'll use throughout this workshop:
@@ -54,9 +54,9 @@ Start by creating an App UI that takes the form of VB Studio pages and flows.
 
 Let's now develop our App UI by dragging and dropping components onto the main-start page.
 
-1. In the Components palette, enter **heading** in the filter field to locate the Heading component, then drag and drop it onto the canvas.
+1. In the Components palette, enter **heading** in the Filter field to locate the Heading component, then drag and drop it onto the canvas.
 
-2. In the Heading's Properties pane, enter **Employee Search** in the Text field:
+2. In the Heading's Properties pane, change the **Text** to `Employee Search`:
 
     ![TThis image shows the Heading component highlighted in the Components palette and selected in the Page Designer, and Employee Search entered in the Text field in the Properties pane.](images/heading.png)
 
@@ -64,19 +64,21 @@ Let's now develop our App UI by dragging and dropping components onto the main-s
 
     ![This image shows the Input Text component highlighted in the Components palette and being dragged onto the canvas under the heading. ](images/input-text.png)
 
-4. In the Input Text component's Properties pane, change the **Label Hint** to `Emp Name`. You'll see this as placeholder text in the component on the canvas.
+4. In the Input Text component's Properties pane, change the **Label Hint** to `Emp Name`. You'll see this text appear as a placeholder in the component on the canvas.
 
-5. Let's now create a variable that we can map the input text field to. This variable will hold the employee data that the user will be able to search. In the Input Text component's Properties pane, click the **Data** tab. Hover over the **Value** text and click the ![Select Variable icon](images/icon-selectvariable.png) icon next to **fx**.
+5. Let's now map the input text field to a variable, which will hold the data of the employee that the user will search for. In the Input Text component's Properties pane, click the **Data** tab, hover over the **Value** text, and click ![Select Variable icon](images/icon-selectvariable.png) next to **fx**.
 
     ![This image shows the Input Text component's Properties pane, with the cursor hovering over the Select Variable icon.](images/select-var.png)
 
-6. Click **Create Variable** next to **Page**.
+6. When the variable picker opens, click **Create** next to **Page**.
 
-7. In the **ID** field, enter `searchString`, leave the **Type** set to `string`, and click **Create**.
+7. In the **ID** field, enter `searchString`, leave the **Type** set to `String`, and click **Create**.
+
+    The component's data is now bound to the newly created variable.
 
 ## Task 3: Connect to a data source
 
-Below the input text field, we want to show a list of employees that the user can choose from. To do this, we need to establish a service connection to Oracle Human Capital Management (HCM) so we can get the data we need.
+Below the input text field, we want to show a list of employees that the user can choose from. To do this, we need to connect to the Oracle Human Capital Management (HCM) service connections catalog, so we can get the data we need.
 
 1. Click ![Services icon](images/icon-services.png) **Services** in the Navigator.
 
@@ -104,7 +106,7 @@ Below the input text field, we want to show a list of employees that the user ca
 
 In this task, we're going to set up a filtering mechanism for our list based on the display name of the employee. We want to compare each name to whatever the user enters as a search string, in order to find the proper match.
 
-1. Click ![App UIs icon](images/icon-appuis.png) **App UIs** in the Navigator, expand the **hcmsearch** and **main** nodes, then select **main-start**.
+1. Switch to the main-start page. Click the **main-start** tab just below the header, or click ![App UIs icon](images/icon-appuis.png) **App UIs** in the Navigator and select **main-start** under the **hcmsearch** and **main** nodes.
 
 2. Select the **Data** tab in the Page Designer, then expand **Services** and **hcmRest**. Drag **publicWorkers** onto the page underneath the Input Text component:
 
@@ -118,7 +120,7 @@ In this task, we're going to set up a filtering mechanism for our list based on 
 
     ![This image shows the Add Data wizard Select Template screen with the default template selected.](images/add-data-wizard-selecttemplate.png)
 
-5. In the Bind Data screen, the Endpoint Structure panel shows all the fields that are available for us to choose from in the **publicWorkers** object. Drag and drop each of these fields from this panel to the **Item Template Fields** section as specified, using the search field to help you locate them:
+5. In the Bind Data screen, the **Endpoint Structure** panel shows all the fields that are available for us to choose from in the **publicWorkers** object. Drag and drop each of these fields from this panel to the **Item Template Fields** section as specified, using the Filter field to locate them:
 
     * **DisplayName**: Default slot
     * **PhoneNumber**: Secondary slot
@@ -151,4 +153,4 @@ You may now **proceed to the next lab**.
 
 * **Author** - Sheryl Manoharan, VB Studio User Assistance, May 2023
 * **Contributors** -  Lisa Dawson, VB Studio User Assistance
-* **Last Updated By/Date** - Sheryl Manoharan, September 2023
+* **Last Updated By/Date** - Sheryl Manoharan, March 2024

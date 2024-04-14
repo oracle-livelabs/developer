@@ -60,7 +60,8 @@ In this lab, you will:
      - WebLogic Server
      ![image of list of java servers](images/list-of-java-servers.png)
 
-7. Click **WebLogic Server** under Java servers. The **Deployed applications** menu displays the different applications deployed on the servers and their target type (clustered / non-clustered). There are two different applications deployed on the WebLogic server in the preloaded compute instance. 
+7. Click **WebLogic Server** under Java servers. The **Deployed applications** menu displays the different applications deployed on the servers and their target type (clustered / non-clustered). There are three different applications deployed on the WebLogic server in the preloaded compute instance. 
+     - weblogicDrs : non-clustered
      - webAppWebLogic : non-clustered
      - webAppWebLogic_Cluster : clustered
 
@@ -129,4 +130,4 @@ You may now **proceed to the next lab**.
 ## Acknowledgements
 
 * **Author** - Bao Jin Lee, Java Management Service
-* **Last Updated By** - Ivan Eng, June 2023
+* **Last Updated By** - Siqi Liu, November 2023
