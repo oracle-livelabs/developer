@@ -57,11 +57,13 @@ Once your changes are successfully merged to your project's repo, VB Studio auto
 
 1. Click ![Go to project page icon](images/icon-gotoprojectpage.png) in the header to go to the Project Home page.
 
-2. In the main navigation, click the ![Builds icon](images/icon-builds.png) **Builds** tab to check the packaging and deployments jobs. If the build job is still running, you can view its progress in the **Job Queue** tab. It might take a few minutes for the build to start if an executor isn't immediately available.
+2. In the main navigation, click the ![Builds icon](images/icon-builds.png) **Builds** tab to check the packaging and deployments jobs. 
+
+    If the build job is still running, you can view its progress in the **Job Queue** tab. It might take a few minutes for the build to start if an executor isn't immediately available.
 
     ![This image shows the Builds section Job Queue tab in VB Studio. A progress indicator shows status for the DemoHCMSearch-Package job.](images/job-queue.png)
 
-3. When the status of both jobs is green, click the ![Environments icon](images/icon-environments.png) **Environments** tab, then select **Deployments**.
+3. When the status of both jobs is green, click the ![Environments icon](images/icon-environments.png) **Environments** tab, select **Deployments**, then **Application Extensions**.
 
 4. Expand the **site_DemoHCMSearch** extension, then click ![Open icon](images/icon-openappui.png) next to the **hcmsearch** App UI to open it in a new browser tab:
 
@@ -75,4 +77,4 @@ Once your changes are successfully merged to your project's repo, VB Studio auto
 
 * **Author** - Sheryl Manoharan, VB Studio User Assistance, May 2023
 * **Contributors** -  Lisa Dawson, VB Studio User Assistance
-* **Last Updated By/Date** - Sheryl Manoharan, March 2024
+* **Last Updated By/Date** - Sheryl Manoharan, April 2024
