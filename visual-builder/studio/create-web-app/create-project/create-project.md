@@ -82,7 +82,7 @@ Define an environment that points to your Visual Builder development instance, w
 
     ![The empty Development environment shown on the Environments page. An Add Instance button is shown in the Service Instances tab. The Details and Certificates tabs are also visible.](images/env-add-instance.png "Environments page")
 
-4. In the Add Service Instances dialog, with **Instance Type** set to **Visual Builder and Oracle Integration** and **Authentication Method** set to **Identity Domain** on the left, locate the Visual Builder instance in your tenancy. Once you find the instance you want to use, select it and click **Add**.
+4. With **Instance Type** set to **Visual Builder and Oracle Integration** and **Authentication Method** set to **Identity Domain** in the Add Service Instances dialog, locate the Visual Builder instance in your tenancy. Once you find the instance you want to use, select it and click **Add**.
 
     ![The Add Service Instances dialog with myVBinstance of type Visual Builder IDCS Resource selected. An Add button is also shown.](images/env-add-service-instances.png "Environments page")
 
