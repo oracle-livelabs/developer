@@ -75,7 +75,7 @@ Now that we've added options to let users manage departments, we'll do the same 
 
 4. Click **Live**, select a row, and click **Edit Employee** to open the main-edit-employee page.
 5. To make the fields on the main-edit-employee page display in two columns, click **Structure** and select **Form Layout**, then in the General tab of the form's properties, set the **Columns** value to **2**. The fields now appear in two columns.
-6. Let's also set up the employee's picture field to display as an image. To do this, search for an Avatar component in the Components palette, drag it into **Structure** view, and drop it above the Grid Row containing the Form Layout component.
+6. Let's also set up the employee's picture field to display as an image. To do this, search for an Avatar component in the Components palette, drag it into **Structure** view, and drop it above the Grid Row containing the Form Layout component. Make sure the Avatar component is in its own Grid Row.
     ![An Avatar component is dropped into Structure view above the Form Layout component nested within the Validation Group on the Edit Employee page. ](images/avatar.png "")
 
 7. In the Avatar's Properties pane, select **Large** in the **Size** drop-down list to increase the component's size.
@@ -99,7 +99,7 @@ Now that we've added options to let users manage departments, we'll do the same 
 
     ![The button's Events tab shows the deleteEmployeeChain as the action chain triggered by the ojAction event.](images/deleteempchain.png "")
 
-4. When the deleteEmployeeChain opens in the Action Chain editor, drag a new Fire Data Provider Event (used to dispatch an event on a data provider) and drop it between the other Fire Data Provider Event and Fire Notification actions within the If action.
+4. When the deleteEmployeeChain opens in the Action Chain editor, drag a new Fire Data Provider Event (used to dispatch an event on a data provider) and drop it between the other Fire Data Provider Event and Fire Notification actions.
 
     ![The deleteEmployeeChain shows in diagram view. On the success branch of the Call REST action, a second Fire Data Provider Event action has been added. Its properties pane show on the right: Event Target is undefined and Type is set to Mutate.](images/deleteempchain-actionchain.png "")
 
@@ -164,4 +164,4 @@ Now that we have our web pages, let's change the application's home page from De
 ## Acknowledgements
 
 * **Author** - Sheryl Manoharan, VB Studio User Assistance, November 2021
-* **Last Updated By/Date** - Sheryl Manoharan, March 2024
+* **Last Updated By/Date** - Sheryl Manoharan, April 2024
