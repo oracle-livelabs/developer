@@ -377,4 +377,4 @@ Check out [Talke Tech](https://www.talke.tech/) and [thatjeffsmith](https://www.
 ## Acknowledgements
 
 - **Author** - Zachary Talke, Senior Product Manager
-- **Last Updated By/Date** - Zachary Talke, August 2023
+- **Last Updated By/Date** - Zachary Talke, May 2024
