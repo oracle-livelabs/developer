@@ -1,5 +1,5 @@
 {
-    "workshoptitle": "Develop Python Web Apps with Oracle Autonomous Database Low-code REST APIs",
+    "workshoptitle": "ORDS: Develop Python Web Apps with Oracle Autonomous Database Low-code REST APIs",
     "include": {"starter-file.sql":"../../data-load/files/starter-file.sql",
                 "sample.json":"../../data-load/files/sample.json",
                 "step2.md":"../../data-load/files/step2.md"},
@@ -55,7 +55,7 @@
         {
             "title": "Need Help?",
             "description": "Solutions to Common Problems and Directions for Receiving Live Help",
-            "filename":"https://oracle-livelabs.github.io/common//labs/need-help/need-help-freetier.md
+            "filename":"https://oracle-livelabs.github.io/common//labs/need-help/need-help-freetier.md"
         }
                 ]
 }

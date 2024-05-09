@@ -71,7 +71,7 @@ Completion of:
 
     ![Cloud Shell Upload](./images/5click-upload.png " ")
 
- 2. Download [workshop_changelogs.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/LNAcA6wNFvhkvHGPcWIbKlyGkicSOVCIgWLIu6t7W2BQfwq2NSLCsXpTL9wVzjuP/n/c4u04/b/livelabsfiles/o/developer-library/workshop_changelogs.zip) by clicking the link.
+ 2. Download [workshop_changelogs.zip](https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/developer-library/workshop_changelogs.zip) by clicking the link.
     * This contains the files you'll be using.
 
  3. Once that zip file has downloaded to your computer, select it in the "File Upload to your Home Directory" menu and click Upload.

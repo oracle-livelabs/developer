@@ -56,7 +56,7 @@ As a final step before you stage the app, enable it to run as a Progressive Web 
 
 Let's now stage the application, so other users can test its behavior.
 
-1. Click the **Menu** ![Menu icon](images/options-header-menu.png) icon in the header and select **Stage**.
+1. Click the **Menu** in the header and select **Stage**.
 
     ![This image shows the Menu options in the header. Stage is selected.](images/stage.png "")
 
@@ -66,7 +66,7 @@ Let's now stage the application, so other users can test its behavior.
 
     The application is staged, and its status in the header changes from `DEVELOPMENT` to `STAGE`.
 
-3. From the header **Menu** ![Menu icon](images/options-header-menu.png), click **Open Staged Application**.
+3. Click **Menu** and select **Open Staged Application**.
 
     ![This image shows the Menu option with a new Open Staged Application option.](images/open-staged-application.png "")
 
@@ -82,11 +82,9 @@ Let's now stage the application, so other users can test its behavior.
 
 To add more records to your data in the staging database, let's import data for the Department and Employee business objects from a zip file.
 
-1. Click [this link](https://objectstorage.us-ashburn-1.oraclecloud.com/p/Ei1_2QRw4M8tQpk59Qhao2JCvEivSAX8MGB9R6PfHZlqNkpkAcnVg4V3-GyTs1_t/n/c4u04/b/livelabsfiles/o/oci-library/hr_application_stage.zip) and save the `hr_application_stage.zip` file. The ZIP file contains CSV files of the Department and Employee business objects of the HR Application schema with a few more records.
+1. Click [this link](https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/oci-library/hr_application_stage.zip) and save the `hr_application_stage.zip` file. The ZIP file contains CSV files of the Department and Employee business objects of the HR Application schema with a few more records.
 
 2. In the Navigator, click the **Business Objects** ![Business Objects icon](images/bo-icon.png) tab, then click **Menu** ![Menu icon](images/menu-icon.png) and select **Data Manager**.
-
-    ![This image shows the Data Manager option selected from the Menu in the Business Objects pane.](images/data-mgr.png "")
 
 3. From the drop-down list in the upper right corner, select **Staging** to import the data into the staging database.
 
@@ -112,7 +110,7 @@ To add more records to your data in the staging database, let's import data for 
 
 After you have successfully tested the staged application, you can publish it and make the application live. The live application is visible to users with proper credentials.
 
-1. Click the **Menu** ![Menu icon](images/options-header-menu.png) icon in the header and select **Publish**.
+1. Click **Menu** in the header and select **Publish**.
 
 2. In the Publish Application dialog box, select the **Include data from Stage** option and click **Publish**.
 
@@ -153,4 +151,4 @@ After you have successfully tested the staged application, you can publish it an
 ## Acknowledgements
 
 * **Author** - Sheryl Manoharan, Visual Builder User Assistance, June 2021
-* **Last Updated By** - August 2023
+* **Last Updated By** - February 2024

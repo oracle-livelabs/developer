@@ -46,22 +46,31 @@ The Onboarding Wizard helps to create the necessary resources automatically. We 
 3. Select the root compartment under which the Onboarding Wizard will create a new compartment for JMS fleets.
     &nbsp;
 
-4. Click **Details** to view details of the resources that will be created by the Onboarding Wizard. The resources created are a new compartment, user group, dynamic group, policy and tag namespace.
+4. Click **Set up JMS** to view details of the resources that will be created by the Onboarding Wizard. The resources created are a new compartment, user group, dynamic group, policy and tag namespace.
 
-    > **Note:** If the **Details** button does not appear, click on the **Inspect prerequisites** button.
+    > **Note:** If the **Set up JMS** button does not appear, click on the **Inspect prerequisites** button.
 
     ![image of onboarding wizard buttons](images/fleets-setup-jms.png)
 
-
     &nbsp;
 
-5. Scroll down to the bottom of the page and click **Set up JMS** to start the Onboarding Wizard.
+5.  You will see details of JMS prerequisites. Click **Review** to see all the resource that will be created.
     ![image of onboarding wizard window](images/fleets-setup-details.png)
+    &nbsp;
+
+   Scroll down to the bottom of the page and click **Confirm** to start the Onboarding Wizard.
+
+    ![image of onboarding wizard confirm](images/fleets-setup-confirm.png)
 
 6. You will see a screen informing you that the prerequisites have been successfully set-up. Click **Done** to close the window.
     ![image of onboarding wizard success window](images/fleets-setup-success.png)
     > **Note:** If an error occurs in the creation process, you will see the error message being displayed. Resolve the error and restart the Onboarding Wizard to continue.
+    
     &nbsp;
+
+   You should receive a notification in green as seen below:
+
+   ![image of prerequisites setup successful notification](images/jms-prerequisites-setup-successful-notification.png)
 
 7. Verify creation of prerequisite resources (Optional)
 
@@ -333,4 +342,4 @@ You may now **proceed to the next lab**.
 ## Acknowledgements
 
 * **Author** - Alvin Lam, Java Management Service
-* **Last Updated By/Date** - Chan Wei Quan, October 2023
+* **Last Updated By/Date** - Yuan Chi Liu, January 2024
