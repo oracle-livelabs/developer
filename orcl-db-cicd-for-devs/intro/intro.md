@@ -140,4 +140,4 @@ The CD in CI/CD along with referring to Continuous Delivery, can additionally (a
 ## Acknowledgements
 
 - **Author** - Zachary Talke, Senior Product Manager
-- **Last Updated By/Date** - Zachary Talke, May 2023
+- **Last Updated By/Date** - Zachary Talke, May 2024
