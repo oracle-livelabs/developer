@@ -151,7 +151,7 @@ Let’s create the database users you will need for this workshop. Oracle Cloud 
     ![Click DB Actions](./images/1clickdbactions.png)
 
  2. This brings you to a page with a list of Autonomous Database features available from your Oracle Cloud user interface (UI). Select “SQL” under Development.
-    ![DB Actions Menu](./images/2dbactionsmenu.png)
+    ![DB Actions Menu](./images/2newdbactionsmenu.png)
 
  3. From the SQL Worksheet, copy and paste the following script. This will create the two database users you will need for the workshop: MOVIESTREAM\_MANAGER and MOVIESTREAM\_DEV.
     * Before running the script; place it in a text editor, remove the brackets, and add a password for each user in the `CREATE USER` lines after `IDENTIFIED BY`.
@@ -418,4 +418,4 @@ Just as you can create and have different tables in your database (`employees`, 
 ## Acknowledgements
 
 - **Author** - Zachary Talke, Senior Product Manager
-- **Last Updated By/Date** - Zachary Talke, May 2023
+- **Last Updated By/Date** - Zachary Talke, May 2024
