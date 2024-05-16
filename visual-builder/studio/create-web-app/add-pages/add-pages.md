@@ -238,7 +238,7 @@ Add a Create page that lets your users create new employees.
 
     ![The HTML code for the main-employees page is shown.](images/employees-add-create-code.png "")
 
-    Select the **title** value in line 2 and change `Employees` to `My Employees`:
+    In line 2, change the title **value** from `"Employees"` to `"My Employees"`:
 
     ![The \<oj-bind-text>\ component code is shown, with its value changed to My Employees. ](images/employees-code-view-changetitle.png "")
 
@@ -270,4 +270,4 @@ It makes sense at this point to change the name of the main-start page to main-d
 ## Acknowledgements
 
 * **Author** - Sheryl Manoharan, VB Studio User Assistance, November 2021
-* **Last Updated By/Date** - Sheryl Manoharan, March 2024
+* **Last Updated By/Date** - Sheryl Manoharan, April 2024

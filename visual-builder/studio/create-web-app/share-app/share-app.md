@@ -79,7 +79,7 @@ Now that you've shared your application, you need to get its URL so you can pass
 
     The shared application opens in a new browser tab. It includes all the changes you've made in your workspace, even those that were not pushed to the remote branch; it also displays data from your workspace.
 
-    An **Install HR App** ![Install HR App icon](images/install-app-icon.png) icon that lets you install the app as a PWA also shows up on the address bar—we'll see how this works in a later lab.
+    Notice the **Install HR App** ![Install HR App icon](images/install-app-icon.png) icon on the address bar that lets you install the app as a PWA—we'll see how this works in a later lab.
 
     ![The shared web application is shown in a new browser tab, with the data imported from your workspace.](images/open-shared-application-result.png "")
 
@@ -97,4 +97,4 @@ Now that you've shared your application, you need to get its URL so you can pass
 ## Acknowledgements
 
 * **Author** - Sheryl Manoharan, VB Studio User Assistance, November 2021
-* **Last Updated By/Date** - Sheryl Manoharan, March 2024
+* **Last Updated By/Date** - Sheryl Manoharan, April 2024
