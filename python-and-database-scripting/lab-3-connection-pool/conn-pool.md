@@ -5,7 +5,7 @@ Connection pooling is important for performance when multi-threaded applications
 
 This lab will show how to create connection pools using python-oracledb driver
 
-Estimated Lab Time: 10 minutes
+Estimated Time: 10 minutes
 
 Watch the video below for a quick walk-through of the lab.
 [Connection Pools](videohub:1_2lx58yh3)
@@ -18,7 +18,7 @@ Watch the video below for a quick walk-through of the lab.
 
 This lab assumes you have completed the following labs:
 * Login to Oracle Cloud
-* Create Oracle Autonomous Database shared infrastructure
+* Create Oracle Autonomous Database Serverless
 * Environment Setup
 
 ## Task 1: Connection pooling

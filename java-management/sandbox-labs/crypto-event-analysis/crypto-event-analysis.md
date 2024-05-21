@@ -6,6 +6,8 @@ This lab walks you through the steps to perform a Crypto event analysis on the J
 
 Estimated Time: 30 minutes
 
+[Lab 4](videohub:1_7wzu9ihb)
+
 ### Objectives
 
 In this lab, you will:
@@ -26,7 +28,7 @@ In this lab, you will:
 2. On the Fleet details page, click the button labeled **Crypto event analysis**.
    ![image of fleet details crypto event analysis](images/fleet-details-crypto-event-analysis.png)
 
-3. Under the **Maximum recording duration for each detected running application**, set the recording duration to 5 minutes. Click the Start button.
+3. Under the **Maximum recording duration for each detected running application**, keep the **Period to detect running applications** as 10 minutes and set the **Maximum recording duration for each detected running application** to 5 minutes. Click the Start button.
    ![image of start crypto event analysis](images/start-crypto-event-analysis.png)
 
    If your request is submitted successfully, you should receive a notification in green as seen below:
@@ -146,4 +148,4 @@ You may now **proceed to the next lab**.
 ## Acknowledgements
 
 * **Author** - Bao Jin Lee, Java Management Service
-* **Last Updated By** - Ivan Eng, June 2023
+* **Last Updated By** - Chan Wei Quan, October 2023

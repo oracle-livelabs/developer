@@ -6,6 +6,8 @@ This lab walks you through the steps to set up a new fleet in Java Management Se
 
 Estimated Time: 10 minutes
 
+[Lab 1](videohub:1_0xopalqx)
+
 ### Objectives
 
 In this lab, you will:
@@ -30,19 +32,15 @@ In this lab, you will:
 
     ![image of reservation info compartment](images/reservation-info-compartment.png)
 
-    >**Note:** There is an occasional issue with the compartment naming which is in the midst of being resolved. If the compartment stated in the reservation info cannot be found in the **LiveLabs** compartment or if there is a **Authorization failed or requested resource not found error** in that compartment, refer to the troubleshooting guide [here](#TroubleshootFleetsetupissues).
-
-    ![image of view compartment fleet error](images/view-compartment-fleet-error.png)
-
 3. Click **Create Fleet**.
 
      >**Note:** You **do not** need to click **Inspect Prerequisites** here as the prerequisites are already set up for you.
 
      ![image of create new fleet](images/create-fleet-create-new.png)
 
-4. In the **Fleet details** dialog box, enter a description in the **Fleet description** field.
+4. In the **Fleet details** dialog box, keep the **default fleet name** here (for example, fleet-20230615-1135).
 
-   Keep the **default fleet name** here (for example, fleet-20230615-1135).
+   Enter a description in the **Fleet description** field.
 
    Ensure that **Create operation log** is checked.
 
@@ -65,7 +63,7 @@ In this lab, you will:
     - Java migration analysis - Evaluate the effort and feasibility of migrating Java applications to newer JDK versions.
 
 
-   To learn more about the advanced features available, see [Using Java Management Service Advanced Features](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=3202).
+   To learn more about the advanced features available, see [Use Java Management Service Advanced Features](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=3202).
 
 6. Click **Next**.
     ![image of create fleet next](images/create-fleet-next.png)
@@ -77,51 +75,23 @@ In this lab, you will:
 
     >**Note:** If you wish to modify your choices, click **Previous**.
 
-9. Wait for the progress to complete. 2 errors related to the **Dynamic group** and **Policies** creation for the **Advanced features** will pop up.
+9. After the fleet is created, click **Done**.    
+     ![image of page to create fleet completed button](images/create-fleet-completed.png)
 
-   Ignore these errors as these policies and dynamic groups has already been configured.
-
-    > **Note:** For the sandbox environment, customized policies and dynamic groups have been pre-configured and sandbox users will not experience any disruptions. These error messages can be safely ignored, they arise from the policies and dynamic groups needing an administrator with necessary privileges at fleet creation, which sandbox users have not been granted.
-
-    ![image of create fleet progress error](images/create-fleet-progress-error.png)
-
-10. Scroll down and click **Download software and installation script**.
-
-   ![image of page to download installation script](images/download-installation-script.png)
-
-   Under the download installation script, select the Linux version of the installation script and click to download it.
-
-   ![image of page to select installation script os](images/download-installation-script-os.png)
-
-    Click **Close** once the download is complete. The downloaded file will be used in [Lab 2: Install Management Agent on your Managed Instances using Cloud Shell](?lab=install-management-agent-script) to install the Management Agent. You can still download the installation script after the fleet is created.
-
-    Click **Cancel**. The **Done** button is not enabled due to the errors in the policies and dynamic group creation.
-
-    ![image of page to create fleet cancel button](images/create-fleet-cancel.png)
-
-11. On the **Java Management** page, click on the fleet that was created.
+10. On the **Java Management** page, click on the fleet that was created.
     ![image of fleet-created](images/fleet-created-compartment.png)
 
-12. A **Log group inaccesible** error will be displayed at the top of the Fleet details page. This is related to the errors when creating the fleet. Click **Enable log configuration**. This will enable the logs required for the fleet.
-
-    ![image of fleet-created](images/fleet-enable-logs.png)
-
-13. Wait for the fleet to update.
-
-    Another error, **Crypto log object is deleted** should appear. Click on the **Enable crypto log**. This will enable the logs for the crypto event analysis.
-    ![image of fleet-created](images/fleet-enable-crypto-logs.png)
-
-14. Wait for the fleet to update. All the advanced features should be enabled and the required logs should be active.
+11. All the advanced features should be enabled and the required logs should be active.
     ![image of fleet details page](images/fleet-details-page-main.png)
 
-15. After JMS is linked to the management Agent, it will collect information on your Java runtimes. The rate at which the information is updated is dependent on the scan frequency of the management Agent on the instance. This may not occur immediately. The scanning frequency can be changed from the Fleet details page.
+12. After JMS is linked to the management Agent, it will collect information on your Java runtimes. The rate at which the information is updated is dependent on the scan frequency of the management Agent on the instance. This may not occur immediately. The scanning frequency can be changed from the Fleet details page.
 
-16. In the Fleet details page, click **More actions** and select **Modify agent settings**.
-   ![image of fleet details page actions](images/fleet-details-page-new.png)
+13. In the Fleet details page, click **More actions** and select **Configure agent settings**.
+      ![image of fleet details page actions](images/fleet-details-page-new.png)
 
-17. An **Agent settings** window will appear with the following settings:
+14. An **Agent settings** window will appear with the following settings:
 
-    **Java runtime usage in minutes**: specify the frequency at which the management agent must report Java usage to JMS. The values must be between 5 and 90 minutes. The default value is 5 minutes.
+    **Java runtime usage in minutes**: specify the frequency at which the management agent must report Java usage to JMS. The values must be between 5 and 90 minutes. The default value is 60 minutes.
 
     **Agent polling interval**: specify the frequency at which the management agent must check the work requests. For example, if the value specified is 10 minutes, the agent checks the work requests every 10 minutes and executes them. The values must be between 10 minutes and 12 hours. The default value is 10 minutes.
 
@@ -129,10 +99,10 @@ In this lab, you will:
 
     **Java runtime discovery**: specify frequency at which the management agents should scan their hosts for Java runtime installations. The values must be between 3 to 24 hours. The default value is 24 hours.
 
-18. For the purpose of this workshop, change **Java runtime usage in minutes** to **5 minutes**, and **Java runtime discovery** to **3 hours**.
+15. For the purpose of this workshop, change **Java runtime usage in minutes** to **5 minutes**, and **Java runtime discovery** to **3 hours**.
     ![image of modify agent settings page](images/fleet-modify-agent-settings-new.png)
 
-19. Click **Save changes** to save the new setting.
+16. Click **Save changes** to save the new setting.
     ![image of save modify changes page](images/fleet-modify-agent-settings-save.png)
 
 You may now **proceed to the next lab**.
@@ -174,4 +144,4 @@ If you encounter **Authorization failed or requested resource not found error**,
 ## Acknowledgements
 
 * **Author** - Yixin Wei, Java Management Service
-* **Last Updated By** - Ivan Eng, June 2023
+* **Last Updated By** - Siqi Liu, November 2023

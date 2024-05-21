@@ -3,7 +3,7 @@
 ## Introduction
 
 This tutorial is an introduction to using Python with Oracle Database. It contains beginner and advanced material. Follow the steps in this document. The **tutorial** directory has scripts to run and modify.
-This lab will show you how to install the **python-oracledb** driver and how to configure and test the connection to the Oracle Autonomous Database, shared infrastructure.
+This lab will show you how to install the **python-oracledb** driver and how to configure and test the connection to the Oracle Autonomous Database Serverless.
 
 Estimated Time: 15 minutes
 
@@ -27,14 +27,14 @@ In this lab, you will:
 
 * Install Python 3, if not already installed. *Note: This Livelab is using Cloud Shell, which has Python 3.8.14 preinstalled.*
 * Install python-oracledb driver
-* Connect to the Oracle Autonomous Database shared infrastructure using the python-oracledb driver
+* Connect to the Oracle Autonomous Database Serverless using the python-oracledb driver
 * Learn how to validate Python operations
 
 ### Prerequisites
 
 This lab assumes you have completed the following labs:
 * Login to Oracle Cloud
-* Create Oracle Autonomous Database, shared infrastructure [Setup Autonomous Database Instance](../Lab1-adb/adb.md)
+* Create Oracle Autonomous Database Serverless [Setup Autonomous Database Instance](../Lab1-adb/adb.md)
 * Install Python 3, if not already available. It can be obtained from your operating system package library or from [python.org](https://python.org). On Windows, use Python 3.7 or later. On macOS, use Python 3.8 or later. On Linux, use Python 3.6 or later.
 
 ## Task 1: Install Python 3
@@ -97,13 +97,13 @@ The Python packages can be obtained from the software repository of your Linux d
 
 ## Task 3: Download the sample files on Cloud Shell
 
-1. Get the sample Python scripts from [here](https://objectstorage.us-ashburn-1.oraclecloud.com/p/G1OGqC7vt8o0M_AOM_MU18yrJ3-6_1f82XIHoZYc1au3mszv_brD6trhq9CsTd6l/n/c4u04/b/livelabsfiles/o/samples.zip):
+1. Get the sample Python scripts from [here](https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/developer-library/python_samples.zip):
 
     In the Cloud Shell, run the following:
 
     ````
     <copy>
-    wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/G1OGqC7vt8o0M_AOM_MU18yrJ3-6_1f82XIHoZYc1au3mszv_brD6trhq9CsTd6l/n/c4u04/b/livelabsfiles/o/samples.zip
+    wget https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/developer-library/python_samples.zip
     </copy>
     ````
 2. In the Cloud Shell, navigate to your home directory and unzip the sample.zip file, then remove the .zip file:
@@ -157,7 +157,7 @@ Oracle Cloud Infrastructure (OCI) Code Editor provides a rich, in-console editin
 3. Let's do the necessary configurations to connect to the Oracle Autonomous Database. First, we need a few arguments used by the connection:
     - **user**:         for this exercise we'll be using the **pythondemo** user
     - **password**:     password for the **pythondemo** user
-    - **dsn**:          data source name for the Oracle Autonomous Database shared infrastructure
+    - **dsn**:          data source name for the Oracle Autonomous Database Serverless
     - **config dir**:   the location where the dsn connection string resides
     - **wallet location**: the location where the wallet was saved
     - **wallet password**: the password setup for the wallet
@@ -293,7 +293,7 @@ location directory and save
     At runtime, the module name of the python-oracledb package is oracledb:
 
 ## Task 5: Add a New Schema in your Oracle Autonomous Database
-1. In this tutorial you will create a new schema in Oracle Autonomous database shared infrastructure.
+1. In this tutorial you will create a new schema in Oracle Autonomous Database Serverless.
 Review the grants created in *samples/tutorial/sql/create\_user.sql* by opening it in Code Editor. Then open a terminal window and run create\_user.py to execute the create\_user.sql script and create the new schema. This tutorial uses the name **pythondemo** for the new schema.
 
     *Note: The password you enter for the schema must contain at least an Upper letter, should be 12 characters or more, one digit required.*
@@ -342,7 +342,7 @@ There are two ways to create a connection to Oracle Autonomous Database using py
 
 Connect to the Oracle Database and print the version of the database via Python. This confirms you are connected to an Oracle instance and returns the database version.
 
-1. in Code Editor, review the code contained in *connect.py*:
+1. In Code Editor, review the code contained in *connect.py*:
     
     ````
     <copy>
@@ -448,10 +448,10 @@ Connect to the Oracle Database and print the version of the database via Python.
             
     cur.close()
     con.close()
+    </copy>
     ````
         
     Running the script completes without error:
-        
     ````
     <copy>
     python3 query.py
@@ -502,10 +502,10 @@ In this lab, you had an opportunity to try out connecting Python to the Oracle D
 You have learned how to:
 * Install Python 3, if not already available
 * Install the python-oracledb driver
-* Setup the environment to allow connections to Oracle Autonomous Database, shared infrastructure using python-oracledb
-* Create connections to Oracle Autonomous Database, shared infrastructure using the python-oracledb driver
+* Setup the environment to allow connections to Oracle Autonomous Database Serverless using the python-oracledb driver
+* Create connections to Oracle Autonomous Database Serverless using the python-oracledb driver
 
 ## Acknowledgements
 * **Authors** - Christopher Jones, Anthony Tuininga, Sharad Chandran, Veronica Dumitriu
 * **Contributors** - Jaden McElvey, Anoosha Pilli, Troy Anthony
-* **Last Updated By/Date** - Veronica Dumitriu, Oracle Database Drivers Product Management, June 2023
+* **Last Updated By/Date** - Veronica Dumitriu, Oracle Database Drivers Product Management, Aug 2023

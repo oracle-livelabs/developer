@@ -4,7 +4,7 @@
 
 This lab will show how to use type handlers in order to alter data that is fetched from or sent to the database. You may read more about type handlers at [Changing Fetched Data Types with Output Type Handlers](https://python-oracledb.readthedocs.io/en/latest/user_guide/sql_execution.html#changing-fetched-data-types-with-output-type-handlers) and [Changing Bind Data Types using an Input Type Handler](https://python-oracledb.readthedocs.io/en/latest/user_guide/bind.html#changing-bind-data-types-using-an-input-type-handler).
 
-Estimated Lab Time: 10 minutes
+Estimated Time: 10 minutes
 
 Watch the video below for a quick walk-through of the lab.
 [Type Handlers](videohub:1_e1omeg5y)
@@ -17,7 +17,7 @@ Watch the video below for a quick walk-through of the lab.
 
 This lab assumes you have completed the following labs:
 * Login to Oracle Cloud
-* Create Oracle Autonomous Database shared infrastructure
+* Create Oracle Autonomous Database Serverless
 * Environment Setup
 
 ## Task 1: Basic output type handler

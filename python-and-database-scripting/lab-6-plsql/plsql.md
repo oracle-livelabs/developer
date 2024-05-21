@@ -5,7 +5,7 @@
 PL/SQL is Oracle's procedural language extension to SQL. PL/SQL procedures and functions are stored and run in the database. Using PL/SQL lets all database applications reuse logic, no matter how the application accesses the database. Many data-related operations can be performed in PL/SQL faster than extracting the data into a program (for example, Python) and then processing it. Documentation link for further reading: [PL/SQL Execution](https://python-oracledb.readthedocs.io/en/latest/user_guide/plsql_execution.html).
 This lab will show how to call PL/SQL code from Python
 
-Estimated Lab Time: 5 minutes
+Estimated Time: 5 minutes
 
 Watch the video below for a quick walk-through of the lab.
 [PL/SQL](videohub:1_5815o1t4)
@@ -18,7 +18,7 @@ Watch the video below for a quick walk-through of the lab.
 
 This lab assumes you have completed the following labs:
 * Login to Oracle Cloud
-* Create Oracle Autonomous Database shared infrastructure
+* Create Oracle Autonomous Database Serverless
 * Environment Setup
 
 ## Task 1: PL/SQL functions
@@ -131,7 +131,7 @@ The **myfunc** PL/SQL stored function will be used by the *plsql_func.py* file b
 
 In this lab, you had an opportunity to try out connecting Python to the Oracle Database.
 You have learned how to execute PL/SQL code in order to perform data manipulations efficiently.
-* Use python-oracledb for invoking PL/SQL procedures and functions in relation to data in Oracle Autonomous Database shared infrastructure.
+* Use python-oracledb for invoking PL/SQL procedures and functions in relation to data in Oracle Autonomous Database Serverless.
 
 ## Acknowledgements
 

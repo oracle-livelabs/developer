@@ -1,4 +1,4 @@
-# Create a Blockchain Network connecting 3 Organizations
+# Create a Blockchain Network that connects 3 Organizations
 
 ## Introduction
 
@@ -32,7 +32,7 @@ You will also need to create a new [Compartment](https://docs.oracle.com/en-us/i
 1. Now with access to your remote desktop session as shown below, fill in your tenancy/account name and click *Next*
     ![Remote Desktop Landing](images/remote-desktop-landing.png)
 
-2. Click on the down arrow next to *Oracle Cloud Infrastructure Direct Sign-in* to expand and reveal the login input fields, then provide your OCI credentials and click *Sign-in*. Make sure you select oracle identity cloud service.
+2. Click on the down arrow next to *Oracle Cloud Infrastructure Direct Sign-in* to expand and reveal the login input fields, then provide your OCI credentials and click *Sign-in*. Make sure you select oracle idenity cloud service.
     ![OCI Console Login](images/oci-console-login.png)
 
 3. In the OCI services menu, select 'Identity & Security' and click on 'Compartments' to view all compartments available in your tenancy.
@@ -52,11 +52,11 @@ You will also need to create a new [Compartment](https://docs.oracle.com/en-us/i
 
 ## Task 2: Create a Blockchain Network Founder Instance
 
-1. In the OCI services menu, select 'Developer Services' and click on 'Blockchain Platform.'
+1. In the OCI services menu, select 'Developer Services' and click on 'Blockchain Platform'
 
   ![Access OBP](images/1-obp-2-1.png)
 
-2. Ensure that the right **Compartment** is selected and click on 'Create Blockchain Platform.'
+2. Ensure that the right **Compartment** is selected and click on 'Create Blockchain Platform'
 
   ![OBP Compartment, Create](images/1-obp-2-3.png)
 
@@ -76,7 +76,7 @@ You will also need to create a new [Compartment](https://docs.oracle.com/en-us/i
     - For both instances, select 'Join an existing network' under **Platform Role**
     - This task takes 10 minutes. During this time setup, configure, generate chaincode (*Tasks 4,5,6,7,8*) using  Blockchain App Builder
 
-## Task 4: Open Blockchain App Builder in VSCode
+## Task 4: Open Blockchain App Builder in VSCode 
 
 You will be using Oracle's Blockchain App Builder extension, accessible through Visual Studio Code, for this lab. First you will need to set up environments for each of the 3 blockchain platform instances you created in previous tasks above.
 
@@ -92,15 +92,15 @@ You will be using Oracle's Blockchain App Builder extension, accessible through 
 
 The flow for developing smart contracts begins with creating a [specification file](https://docs.oracle.com/en/cloud/paas/blockchain-cloud/usingoci/input-configuration-file.html) that describes car marketplace assets being maintained on the blockchain ledger.
 
-[`Car_Marketplace.yml`](files/Car_Marketplace.yml) describes [marketplace assets](https://docs.oracle.com/en/cloud/paas/blockchain-cloud/usingoci/input-configuration-file.html): Car, Dealer, Invoice, and Purchase Order (PO). Each object has properties that characterize the assets, data types and validations. You can see sample specification files (and write your own specifications) in either YAML or JSON using the Blockchain App Builder package.
+[`Car_Marketplace.yml`](files/car_marketplace.yml?download=1) describes [marketplace assets](https://docs.oracle.com/en/cloud/paas/blockchain-cloud/usingoci/input-configuration-file.html): Car, Dealer, Invoice, and Purchase Order (PO). Each object has properties that characterize the assets, data types and validations. You can see sample specification files (and write your own specifications) in either YAML or JSON using the Blockchain App Builder package.
 
-1. Locate the sample specification, [`Car_Marketplace.yml`](files/Car_Marketplace.yml?download=1), in the **Samples** folder.
+1. Locate the sample specification, [`Car_Marketplace.yml`](files/car_marketplace.yml?download=1), in the **Samples** folder.
 
 2. In Visual Studio Code, click on the **O** icon on the left-hand menu to use the Blockchain App Builder Extension.
 
 3. Hover over the **Specifications** pane, click on the three dots, and then **Import Specification**. Alternatively, copy the path of the specification file and import manually.
 
-4. Click on the yml specification imported. You can see the specficiations defined for each object and attribute. If you want change any specification of an attribute, you can do so. For example: Change line number 102 to - format: ["PO%1%t", "recipient"]. [Specifications Help](https://docs.oracle.com/en/cloud/paas/blockchain-cloud/usingoci/input-configuration-file.html)
+4. Click on the yml specification imported. You can see the specficiations defined for each object and attribute. If you want to change any specification of an attribute, you can do so. For example: Change line number 102 to - format: ["PO%1%t", "recipient"]. [Specifications Help](https://docs.oracle.com/en/cloud/paas/blockchain-cloud/usingoci/input-configuration-file.html)
 
   Make sure the **Details** of your specification read:
 
@@ -131,18 +131,15 @@ Select '`car_marketplace_cc`.controller.go' under '`car_marketplace_cc`/src/cont
 
 1. Open the Car Marketplace specification file and scroll to the bottom. This is where your customMethods are listed.
 
-2. First, add the imports needed for the custom methods.
-
-     ```
-    <copy>
-    "encoding/json"
-    "fmt"
-    "time"
-    "example.com/car_marketplace_cc/lib/util/date"
-    </copy>
+2. First, select '`car_marketplace_cc`.controller.go' under '`car_marketplace_cc`/src/controller'. Add the imports in '`car_marketplace_cc`.controller.go' needed for the custom methods.
 
     ```
-
+    <copy>
+    "encoding/json"
+    "time"
+    "Samples/car_marketplace_cc/lib/util/date"
+    </copy>
+    ```
 
 3. We've modified existing CRUD operations and defined custom methods for the following functions:
   - 'CreateCar': Adds car to dealer's inventory. Copy and paste these custom methods in the controller file, overwriting the stubs for these methods. The function retrieves dealer from blockchain, appends the car to dealer's inventory and records car on ledger.
@@ -164,7 +161,7 @@ Select '`car_marketplace_cc`.controller.go' under '`car_marketplace_cc`/src/cont
 
 
         return t.Ctx.Model.Save(&asset)
-
+ 
 
     }
     </copy>
@@ -176,7 +173,7 @@ Select '`car_marketplace_cc`.controller.go' under '`car_marketplace_cc`/src/cont
     <copy>
     func (t *Controller) CreatePOWrapper(asset PO) (interface{}, error) {
 
-        //Verify that car exists
+       //Verify that car exists
         car, err := t.GetCarById(asset.Vin)
         if err != nil {
           return nil, fmt.Errorf("car with id: %s does not exist", asset.Vin)
@@ -185,7 +182,6 @@ Select '`car_marketplace_cc`.controller.go' under '`car_marketplace_cc`/src/cont
         //Car no longer on sale as purchase order is created
         car.ForSale = false
         t.UpdateCar(car)
-
 
         return t.Ctx.Model.Save(&asset)
 
@@ -202,72 +198,73 @@ Select '`car_marketplace_cc`.controller.go' under '`car_marketplace_cc`/src/cont
     func (t *Controller) UpdatePOWrapper(asset PO) (interface{}, error) {
 
         //Verifies purchase order exists
-        _, err := t.GetPOById(asset.PO)
+      _, err := t.GetPOById(asset.PO)
+      if err != nil {
+        return nil, fmt.Errorf("po with id: %s does not exist", asset.PO)
+      }
+
+      //If vehicle is delivered to buyer
+      if asset.OrderStatus == "Delivered" {
+
+        var invoiceObject Invoice
+
+        //Verify car exists in ledger
+        car, err := t.GetCarById(asset.Vin)
         if err != nil {
-          return nil, fmt.Errorf("po with id: %s does not exist", asset.PO)
+          return nil, fmt.Errorf("car with id: %s does not exist", asset.Vin)
         }
 
-        //If vehicle is delivered to buyer
-        if asset.OrderStatus == "Delivered" {
+        car.ForSale = true
 
-          var invoiceObject Invoice
+        t.UpdateCar(car)
 
-          //Verify car exists in ledger
-          car, err := t.GetCarById(asset.Vin)
-          if err != nil {
-            return nil, fmt.Errorf("car with id: %s does not exist", asset.Vin)
+        //Create invoice sent to buyer
+        invoiceObject.Vin = asset.Vin
+        invoiceObject.Po_number = asset.PO
+        invoiceObject.Price = car.Price
+        invoiceObject.Recipient = asset.Purchaser
+        invoiceObject.Status = false
+
+        invoiceObject.InvoiceId = asset.InvoiceId
+
+        t.CreateInvoice(invoiceObject)
+
+        currentTime := time.Now().String()
+
+        var ts_formatted string
+
+        for i, c := range currentTime {
+          fmt.Printf("Start Index: %d Value:%s\n", i, string(c))
+
+          if string(c) == " " {
+            fmt.Println(ts_formatted)
+            break
           }
-
-          car.ForSale = true
-
-          t.UpdateCar(car)
-
-          //Create invoice sent to buyer
-          invoiceObject.Vin = asset.Vin
-          invoiceObject.Po_number = asset.PO
-          invoiceObject.Price = car.Price
-          invoiceObject.Recipient = asset.Purchaser
-          invoiceObject.Status = false
-
-          invoiceObject.InvoiceId = asset.InvoiceId
-
-          t.CreateInvoice(invoiceObject)
-
-          currentTime := time.Now().String()
-
-          var ts_formatted string
-
-          for i, c := range currentTime {
-            fmt.Printf("Start Index: %d Value:%s\n", i, string(c))
-
-            if string(c) == " " {
-              fmt.Println(ts_formatted)
-              break
-            }
-            ts_formatted += string(c)
-          }
-
-          //Invoke Custom Method: Car Transfer
-          t.CarTransfer(asset.Vin, asset.Purchaser, car.OwnerId, asset.PO, car.Price, ts_formatted)
-
+          ts_formatted += string(c)
         }
 
-        //If vehicle is rejected by buyer
-        if asset.OrderStatus == "Rejected" {
+        //Invoke Custom Method: Car Transfer
+        t.CarTransfer(asset.Vin, asset.Purchaser, car.OwnerId, asset.PO, car.Price, ts_formatted)
 
-          car, err := t.GetCarById(asset.Vin)
-          if err != nil {
-            return nil, fmt.Errorf("car with id: %s does not exist", asset.Vin)
-          }
+      }
 
-          //Set car for sale back to true
-          car.ForSale = true
-          t.UpdateCar(car)
+      //If vehicle is rejected by buyer
+      if asset.OrderStatus == "Rejected" {
 
+        car, err := t.GetCarById(asset.Vin)
+        if err != nil {
+          return nil, fmt.Errorf("car with id: %s does not exist", asset.Vin)
         }
-        return t.Ctx.Model.Update(&asset)
+
+        //Set car for sale back to true
+        car.ForSale = true
+        t.UpdateCar(car)
+
+      }
+      return t.Ctx.Model.Update(&asset)
 
     }
+
     </copy>
     ```
 
@@ -344,26 +341,56 @@ Select '`car_marketplace_cc`.controller.go' under '`car_marketplace_cc`/src/cont
     }
     </copy>
     ```
+  
+  - 'UpdateTitle': Transfer vehicle ownership from one dealer to another..
 
-## Task 8: Deploy Marketplace Chaincode in local Environment
+  ```
+    <copy>
 
-Blockchain App Builder chaincode deployment starts the Hyperledger Fabric basic network, other services, and installs and instantiates the chaincode for you.
+    func (t *Controller) UpdateTitle(tokenId string, dealerno string, dealername string, dealerloc string, mileage int, newowner string, purchaseprice float64, dateString string) (interface{}, error) {
 
-1. In the **Chaincode Details** pane, select 'Deploy.'
+        var tokenAsset CarTitle
+        _, err := t.Ctx.ERC1155Token.Get(tokenId, &tokenAsset)
 
-2. In the deployment wizard:
-    - Ensure the correct chaincode is selected.
-    - Select your target environment. In this case, choose **Local Environment**.
-    - Select the channel you want to deploy to. A channel named **mychannel** is created by default with the extension's installation, and can be used for testing.
+        if err != nil {
+          return nil, fmt.Errorf("Token with id: %s does not exist", tokenId)
+        }
 
-3. Ensure that your form reads as shown and click 'Deploy.'
+        dateBytes, err := json.Marshal(dateString)
+        if err != nil {
+          return nil, fmt.Errorf("error in marshalling %s", err.Error())
+        }
 
-  ![Deploy chaincode](images/2-app-builder-4-3.png)
+        var dateValue date.Date
+        err = json.Unmarshal(dateBytes, &dateValue)
+        if err != nil {
+          return nil, fmt.Errorf("error in unmarshalling the date %s", err.Error())
+        }
 
-  If you receive an error message in the **Output** console window (located at the bottom of your Visual Studio window), open the Docker Desktop app and copy/paste the given command into your terminal to start the Docker daemon. Restart Visual Studio and repeat steps 1-3 as necessary.
+        newTitle := Title_entries{
+          Dealernumber:  dealerno,
+          Dealership:    dealername,
+          Location:      dealerloc,
+          Mileage:       mileage,
+          Newowner:      newowner,
+          Purchaseprice: purchaseprice,
+          Purchasedate:  dateValue,
+        }
 
+        tokenAsset.Title = append(tokenAsset.Title, newTitle)
 
-## Task 9: Add Participant Organizations to Network - Task4 Continuation
+        _, err = t.UpdateCarTitleToken(tokenAsset)
+        if err != nil {
+          return nil, err
+        }
+
+        msg := fmt.Sprintf("Title Updated")
+        return msg, nil
+   }
+   </copy>
+   ```
+
+## Task 8: Add Participant Organizations to Network - Task4 Continuation
 
 Blockchain instances should have been created by now (Task4).  Configure the Blockchain Instances (Step3) to join the partner organizations to your network, you need to export their settings and import them into the founder.
 
@@ -404,7 +431,7 @@ Blockchain instances should have been created by now (Task4).  Configure the Blo
   ![Topology View](images/1-obp-4-10.png)
 
 
-## Task 10: Create a Channel
+## Task 9: Create a Channel
 
 We now need to join the organizations at the channel level to allow communication between the founder and participants.
 
@@ -432,7 +459,7 @@ We now need to join the organizations at the channel level to allow communicatio
   ![Check Channel Orgs](images/1-obp-5-5.png)
 
 
-## Task 11: Join Participant Organizations - Peer Nodes to Channel
+## Task 10: Join Participant Organizations - Peer Nodes to Channel
 
 You're almost done setting up your blockchain network! Simply use the participant instances to join the channel created in the previous step.
 
@@ -447,7 +474,7 @@ You're almost done setting up your blockchain network! Simply use the participan
 4. Repeat Steps 1-3 from the 'dealer2' console.
 
 
-## Task 12: Set Anchor Peers
+## Task 11: Set Anchor Peers
 
 Each member using a channel (whether founder or participant) must designate at least one anchor peer. Anchor peers are primary network contact points, and are used to discover and communicate with other network peers on the channel.
 
@@ -470,37 +497,29 @@ Each member using a channel (whether founder or participant) must designate at l
 5. Repeat for both participant organizations, 'dealer1' and 'dealer2'.
 
 
-## Task 13: Create Dealership Accounts
+## Task 12: Create Dealership Accounts
 
-Use IDCS to create and add both 'john_\dealer1' and 'sam_\dealer2' users, and then assign them roles to control usage of their OBP instances: 'dealer1' and 'dealer2'.
+Use IDCS to create and add both 'john\_dealer1' and 'sam\_dealer2' users, and then assign them roles to control usage of their OBP instances: 'dealer1' and 'dealer2'.
 
-1. From the OCI dashboard, select the user icon in the top right-hand corner and click on **Service User Console**.
+1. Login to your OCI Tenancy and browse to **Domains**.  
 
-  ![OCI Dashboard](images/oci-dashboard.png)
+  ![OCI Dashboard](images/oci-dashboard-1.png)
 
-2. Under **My Oracle Services**, search 'identity' and select **Admin Console**.
+2. Select the required Compartment and click on the **Domain Name** _link. Note that if you have not created any Custom domains, by default, all your resources will be under 'Default' _domain.
 
-  ![Accessing IDCS Dashboard](images/access-idcs-dashboard.png)
+  ![Accessing IDCS Dashboard](images/access-idcs-domains.png)
 
-3. You will be re-directed to the IDCS Dashboard. Click on the hamburger menu in the top left-hand corner.
+3. Click on the **Default Domain** and click on **Create user**. 
 
-  ![IDCS Dashboard](images/idcs-dashboard.png)
+  ![IDCS Dashboard](images/idcs-create-user.png)
 
-4. Select **Users**.
+4. Deselect Use the email address as the user name, provide the dealership name (e.g. 'john_dealer1') for Last Name and User Name, as well as the email associated to your OCI account and select Create.
 
-  ![Select Users](images/select-users.png)
+  ![Select Users](images/idcs-user-details.png)
 
-5. Click on **Add**.
+5. 'john_dealer1' is added successfully.
 
-  ![Add User to Tenancy](images/add-user-to-tenancy.png)
-
-6. Deselect **Use the email address as the user name**, provide the dealership name (e.g. 'john\_dealer1') for **Last Name** and **User Name**, as well as the **Email** associated to your OCI account and select **Finish**
-
-  ![Provide User Details](images/provide-user-details.png)
-
-7. 'john\_dealer1' is added successfully.
-
-  ![Dealer 1 Created](images/dealer1-created.png)
+  ![Add User to Tenancy](images/idcs-user-details-1.png)
 
 8. Open your email and activate the 'john\_dealer1' account.
 
@@ -514,7 +533,7 @@ Use IDCS to create and add both 'john_\dealer1' and 'sam_\dealer2' users, and th
 
   ![Close Window](images/close-window.png)
 
-11. Open a new tab and navigate to the [OCI login page](cloud.oracle.com). Provide your tenancy account name and select **Next**. Sign-in with your admin (*not* the 'john\_dealer1') credentials.
+11. Open a new tab and navigate to the [OCI login page](https://cloud.oracle.com). Provide your tenancy account name and select **Next**. Sign-in with your admin (*not* the 'john_dealer1') credentials.
 
   ![OCI tenancy login](images/oci-tenancy-login.png)
 
@@ -544,5 +563,5 @@ You may now proceed to the next lab.
 
 ## Acknowledgements
 * **Author** - Oracle Blockchain Product Management
-* **Contributors** - Amal Tyagi, Dev Sony  Teodora Gheorghe, Adrien Lhemann, Diego Morales, Lokeswara Nushisarva, Siddesh C. Prabhu Dev Ujjni, Rene Fontcha
-* **Last Updated By/Date** - Rene Fontcha, September 2022
+* **Contributors** - Jassi Singh, Gourav Sarkar, Siddesh C. Prabhu Dev Ujjni, Rene Fontcha
+* **Last Updated By/Date** - Rene Fontcha, July 2023

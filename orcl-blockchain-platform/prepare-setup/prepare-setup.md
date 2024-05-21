@@ -16,7 +16,7 @@ This lab assumes you have:
 ## Task 1: Download Oracle Resource Manager (ORM) stack zip file
 1.  Click on the link below to download the Resource Manager zip file you need to build your environment:
 
-    - [blockchain-mkplc-freetier.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/TgN4_gY8HAQquCx_k_npzteI712Pyw-EetlIfDH_FlFXzek9eua9uUVWZSmkxJos/n/natdsecurity/b/stack/o/blockchain-mkplc-freetier.zip)
+    - [blockchain-mkplc-freetier.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/mOlpAFT8x04eF-_GU6YNsujl9_zt09p0RdW7NQ_3aKIRtxfrFkyi1p64Lu_cGk9P/n/c4u02/b/hosted_workshops/o/stacks/blockchain-mkplc-freetier.zip)
 
 
 2.  Save in your downloads folder.

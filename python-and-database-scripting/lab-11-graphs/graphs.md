@@ -4,7 +4,7 @@
 
 This lab will show how to use graphs with your data using python-oracledb driver
 
-Estimated Lab Time: 5 minutes
+Estimated Time: 5 minutes
 
 ### Objectives
 
@@ -15,7 +15,7 @@ Estimated Lab Time: 5 minutes
 This lab assumes you have completed the following labs:
 
 * Login to Oracle Cloud
-* Create Oracle Autonomous Database shared infrastructure
+* Create Oracle Autonomous Database Serverless
 * Environment Setup
 
 ## Task 1: Graph example

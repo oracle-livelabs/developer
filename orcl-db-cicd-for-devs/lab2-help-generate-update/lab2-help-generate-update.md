@@ -16,6 +16,7 @@ In this lab, you will be replicating the database schema from the MOVIESTREAM\_M
 
 *Estimated Time:* 25 Minutes
 
+[Lab 2](videohub:1_qzydao2e) 
 
 ### Objectives
 In this lab you will:
@@ -65,7 +66,7 @@ Completion of:
       ```na
       <copy>
       set cloudconfig /home/[OCI CLI Profile Name]/Wallet_lbworkshop.zip
-      connect moviestream_manager@lbworkshop_high
+      connect moviestream_manager@lbworkshop_low
       </copy>
       ```
 
@@ -203,7 +204,7 @@ Completion of:
       ```na
       <copy>
       set cloudconfig /home/[OCI CLI Profile Name]/Wallet_lbworkshop.zip
-      connect moviestream_dev@lbworkshop_high
+      connect moviestream_dev@lbworkshop_low
       </copy>
       ```
 
@@ -281,9 +282,11 @@ Completion of:
           * Product manager Jeff Smith has [A Great Article On This](https://www.thatjeffsmith.com/archive/2018/10/yes-sqlloader-is-faster-at-loading-records/)
        * Oracle Cloud
           * Database Actions for Autonomous Database has Data Load and Data Pump options along with Data Load functionality in SQL Worksheet
-          ![DB Actions Data Load](./images/15dbactionsdataload.png)
+          ![DB Actions Data Load](./images/15anewdbactionsdataload.png)
+          ![DB Actions Data Load 2](./images/15bnewdbactionsdataload.png)
+          ![DB Actions Data Load 3](./images/15cnewdbactionsdataload.png)
           * On the main Oracle Cloud menu under Developer Services -> Database Tools, the SQL Worksheet there also has Data Load functionality
-          ![SQL Worksheet Data Load](./images/16sqlworksheetdataload.png)
+          ![SQL Worksheet Data Load](./images/16newsqlworksheetdataload.png)
        * SQLcl Load Command
           * A SQLcl command that allows you to load data from a CSV file into your Oracle Database table
           * Another must read by Jeff, this time providing a [Primer To The Load Command](https://www.thatjeffsmith.com/archive/2019/09/sqlcl-and-the-load-csv-command/)
@@ -318,4 +321,4 @@ Completion of:
 ## Acknowledgements
 
 - **Author** - Zachary Talke, Senior Product Manager
-- **Last Updated By/Date** - Zachary Talke, May 2023
+- **Last Updated By/Date** - Zachary Talke, May 2024

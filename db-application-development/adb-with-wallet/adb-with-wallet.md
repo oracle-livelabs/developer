@@ -3,9 +3,7 @@
 ## Introduction
 
 Oracle Autonomous Database is the world’s first autonomous data management in the cloud to deliver automated patching, upgrades, and tuning—including performing all routine database maintenance tasks while the system is running - without human intervention. This new Autonomous Database cloud is self-managing, self-securing, and self-repairing, which helps to eliminate manual database management and human errors.
-
-The Oracle Autonomous Database is fully elastic: You simply specify the number of OCPUs and the storage capacity in TBs for the database. At any time, you may scale up or down the OCPUs or the storage capacity.
-
+  
 Autonomous Database supports four main types of workload:
 
 * Transaction processing and mixed workloads
@@ -68,54 +66,57 @@ In this lab, you will:
     - __Compartment__ - Leave the default compartment.
     - __Display Name__ - Enter a memorable name for the database for display purposes. For example, use __DEMO\_ADW__.
     - __Database Name__ - Use letters and numbers only, starting with a letter. The maximum length is 30 characters.  
-    - __Workload Type__ - For this lab, choose __Data Warehouse__ as the workload type.
-    - __Deployment Type__ - For this lab, choose __Shared Infrastructure__ as the deployment type.
-
     <if type="freetier">
-    ![Create ADW screen](./images/create-adw-screen1.png "Create ADW screen ")
+        ![Create ADW screen](./images/adb-install-00.png "Create ADW screen ") 
     </if>
-
-4. Configure the database:
-
+    - __Workload Type__ - For this lab, choose __Data Warehouse__ as the workload type.
+    - __Deployment Type__ - For this lab, choose __Serverless__ as the deployment type.
+    ![Create ADW screen](./images/adb-install-01.png "Create ADW screen ")  
     - __Always Free__ - For this lab, we will leave Always Free **unchecked**.
     - __Choose database version__ - Select a database version **19c** from the available versions.
-    - __OCPU count__ - Number of CPUs for your service. For this lab, specify __1 CPU__.  
-    - __Storage (TB)__ - Select your storage capacity in terabytes. For this lab, specify __1 TB__ of storage.  
-    - __Auto Scaling__ - Auto Scaling - For this lab, keep auto-scaling **unchecked**. If autoscaling is enabled, the system will automatically use up to three times more CPU and IO resources to meet workload demand. learn more about [auto scaling](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/autonomous-auto-scale.html)
+    - **Choose network access**: For this lab, accept the default, **Secure access from everywhere**.
+    ![Create ADW screen](./images/adb-install-04.png "Create ADW screen ")
 
-    > **Note:** This Lab can also run on an **Always Free** configuration. If you select Always Free, the Autonomous Database can utilize up to 1 core and 20 GB of storage. The CPU core count and storage cannot be adjusted.
-
-    ![Choose a workload type.](./images/create-adw-screen2.png " ")
-
-    Create administrator credentials:
-
-    - __Password and Confirm Password__ - Specify the password for the **ADMIN** user of the service instance.  
-    - Autonomous Database requires strong passwords. The password you specify must meet the [default password complexity rules](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcu/#ADBCU-GUID-0E019845-31AE-44D7-B55C-9BCBA7E1377F).
-
-5. Choose network access:
-    - For this lab, accept the default, **Secure access from everywhere**.
-
-     ![Choose a deployment type.](./images/create-adw-screen3.png " ")
-
-<if type="freetier">
-1. Choose a license type. For this lab, choose __License Included__. The two license types are:
-</if>
+    <if type="freetier">
+    Choose a license type. For this lab, choose __License Included__. The two license types are:
+    </if> 
 
     - __Bring Your Own License (BYOL)__ - Select this type when your organization has existing database licenses. [learn more](https://www.oracle.com/cloud/pricing/)
     - __License Included__ - Select this type when you want to subscribe to new database software licenses and the database cloud service.
     - __Oracle Database Edition__ - Select __Oracle Database Enterprise Edition__. This option is available only if you have selected __Bring Your Own License (BYOL)__
 
+4. Configure the database:
+ 
+    - __ECPU count__ - Number of ECPU for your service. For this lab, specify __2 ECPU__.  
+    - __Storage (TB)__ - Select your storage capacity in terabytes. For this lab, specify __1 TB__ of storage.  
+    - __Auto Scaling__ - Auto Scaling - For this lab, keep auto-scaling **unchecked**. If autoscaling is enabled, the system will automatically use up to three times more CPU and IO resources to meet workload demand. learn more about [auto scaling](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/autonomous-auto-scale.html)
+ 
+        ![Create workload type](./images/adb-install-02.png "Create ADW screen ")
+  
+        Backup retention period, default to 60 days.
+
+        Create administrator credentials:
+
+        ![Create deployment type](./images/adb-install-03.png "deployment type ")
+
+    - __Password and Confirm Password__ - Specify the password for the **ADMIN** user of the service instance.  
+    - Autonomous Database requires strong passwords.
+  
 1. The **Contact Email** field allows you to list contacts to receive operational notices and announcements as well as unplanned maintenance notifications. This is optional.
 
-    ![Do not provide a contact email address.](images/contact-email-field.png)
-
+    ![Click Create ADW Button.](images/db-actions-05.png)
+ 
     Click on __Create Autonomous Database__. button
 
-    ![Click Create ADW Button.](images/create-adw-button.png)
+    
 
 2.   Your instance will begin provisioning. In a few minutes, the State will turn from Provisioning to Available. At this point, your Autonomous Data Warehouse database is ready to use! Have a look at your instance's details here, including its name, database version, OCPU count, and storage size.
 
-    ![Database instance homepage.](./images/instance-live.png "Database instance homepage ")
+    ![Database instance homepage.](./images/adb-install-05.png "Database instance homepage ")
+
+    ![Database instance homepage.](./images/adb-install-06.png "Database instance homepage ")
+
+    > **Note:** This Lab can also run on an **Always Free** configuration. If you select Always Free, the Autonomous Database can utilize up to 1 core and 20 GB of storage. The CPU core count and storage cannot be adjusted.
 
 ## Task 3: Create a database user and tables
 
@@ -123,13 +124,14 @@ In this lab, you will:
 
     Click the **Database Actions** button.
 
-    ![database actions](images/autonomous-database-actions.png =50%x*  "database actions")
+    ![database actions](images/db-actions-01.png "database actions")
+
+    ![database actions](images/db-actions-00.png "database actions")
 
     Select the **SQL** tab to open the **SQL worksheet**.
 
-    ![database actions](images/db-actions.png =50%x*  "database actions")
-
-    ![sql worksheet](images/sql-worksheet.png =50%x*  "sql worksheet")
+    ![database actions](images/db-actions-04.png "database actions")
+ 
 
 2. Create an Autonomous Database user <db\_user\> and grant required privileges to create tables. Copy-paste the code below into the SQL worksheet.
 
@@ -157,23 +159,19 @@ In this lab, you will:
 
     Substitute <db\_user\> and <password\> with the username and password of your choice. Press the green button to run the script.
 
-    ![sql worksheet](images/app-user.png =50%x*  "sql worksheet")
+    ![sql worksheet](images/app-user.png  "sql worksheet")
 
 ## Task 4: Download the wallet for this database
 
 1. Click on the **DB Connection** button. This will open up the Database Connection dialog box.
 
-    ![Database Connection](images/database-connection.png =50%x* "Database Connection")
+    ![Database Connection](images/db-actions-02.png  "Database Connection")
 
     **Download** the Autonomous Database wallet.
 
-    ![Download wallet](images/download-wallet.png =50%x*  "Download wallet")
+    ![Download wallet](images/db-actions-03.png "Download Wallet")
 
-    Choose a new wallet password.
-
-    ![Wallet password](images/wallet-password.png =50%x*  "Wallet password")
-
-    Click on the **Download** button.
+    Choose a new wallet password. Click on the **Download** button.
 
     Extract the wallet zip file to the folder of your choice. We will be using this **wallet folder** in future labs of this workshop.
 
@@ -247,9 +245,11 @@ You may now **proceed to the next lab**.
 * [About Connecting to an Autonomous Database Instance](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/connect-introduction.html)
 * [Update Network Options to Allow TLS or Require Only Mutual TLS (mTLS) Authentication on Autonomous Database](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/support-tls-mtls-authentication.html#GUID-3F3F1FA4-DD7D-4211-A1D3-A74ED35C0AF5)
 * [Securely Connecting to Autonomous DB Without a Wallet (Using TLS)](https://blogs.oracle.com/developers/post/securely-connecting-to-autonomous-db-without-a-wallet-using-tls)
+* [Default password complexity rules](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcu/#ADBCU-GUID-0E019845-31AE-44D7-B55C-9BCBA7E1377F)
 
 ## Acknowledgements
 
 - **Author** - Madhusudhan Rao, Principal Product Manager, Database
 - **Contributors** - Kevin Lazarz, Senior Principal Product Manager and Christopher Jones, Senior Principal Product Manager
-- **Last Updated By/Date** - Madhusudhan Rao, June 2022
+- **Updates** - Database Actions and Oracle Autonomous Database creation screens updated 
+- **Last Updated By/Date** - Madhusudhan Rao, May 20th 2024

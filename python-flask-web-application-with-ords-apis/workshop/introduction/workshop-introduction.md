@@ -2,26 +2,15 @@
 
 ## About this Workshop
 
-Welcome! In this Workshop we'll explore how a Python application built atop the Flask micro-framework uses Oracle Database REST **A**pplication **P**rogramming **I**nterfaces (APIs) to serve, display, and store product information as well as customer orders for a fictitious online ticket ordering service located in Las Vegas, NV. This *Silver State*-based online storefront was designed to simplify the process of purchasing admissions to local venues and attractions.
+In this Workshop we'll explore a Python application built with the Flask micro-framework. The application relies on Oracle Database REST **A**pplication **P**rogramming **I**nterfaces (APIs) to serve, display, and store product and customer order information.
 
-Throughout these Labs you will observe how a user can access our website and purchase tickets to local attractions; ranging from museums to art installations.
+Since all necessary information is provided through Oracle REST APIs, Object-Relational Mapping (ORM) tools are completely unnecessary.
 
-You'll also learn how this Flask application can omit the tedious steps of creating, mapping, and modeling a database. Additionally, since all necessary information is provided through Oracle REST APIs, Object-Relational Mapping (ORM) tools are completely unnecessary.
-
-At the end of this Workshop, you should have a thorough understanding of how Oracle REST APIs can accelerate the development of Flask/Python web applications. You will also be provided with all Python code and Database scripts required to:
+By the end of this Workshop, you'll have a thorough understanding of how Oracle REST APIs can accelerate the development of your web applications. You will also be provided with sample Python code and Database scripts required to:
 
 - Establish your own schema in an Oracle Autonomous Database
 - Run this Flask application locally
 - Extend already existing functionality
-
-Throughout this Workshop we'll explore key concepts related to: 
-
-- Oracle REST Data Services (ORDS) APIs and characteristics
-- Resource Templates, Handlers, and Methods 
-- Popular Python libraries such as: [Flask](https://flask.palletsprojects.com/en/2.2.x/), [Folium](https://python-visualization.github.io/folium/), [Json](https://docs.python.org/3/library/json.html), [Requests](https://requests.readthedocs.io/en/latest/)
-- Bootstrap - the popular HTML and CSS framework
-- Select JavaScript functions
-- OpenAPI Specifications and the Swagger Editor
 
 Estimated Workshop Time: 90 minutes
 
@@ -31,30 +20,38 @@ In this workshop, you will:
 
 - Explore an Oracle REST API-backed Flask application
 - Explore and interact with Oracle REST APIs
-- Explore Oracle REST APIs in a Swagger Editor session
-- Review a Flask application's routes and interactions with Oracle REST APIs
+- Review the application's routes and interactions with Oracle REST APIs
 - Review elements of a Flask application's presentation layer
+
+   > **NOTE:** This Workshop assumes you have limited experience with:
+   - Web development in the Flask framework
+   - HTML, CSS
+   - JavaScript
+   - Python
+   - Python libraries
 
 ### Prerequisites
 
-This Workshop assumes you have experience with Python development. This Workshop also assumes you have some experience with the Flask framework; including the proper commands for executing a Flask application.
+To complete this lab, you will need the following (*use the <input type="checkbox"/> boxes to keep track of your progress*):
 
-While familiarity with HTML, CSS, and JavaScript is helpful, knowledge in these areas is not required as we'll review these concepts in limited scope. 
+- <input type="checkbox"/> Python 3.10 or later ([download](https://www.python.org/downloads/))
+- <input type="checkbox"/> Visual Studio Code or similar editor ([download](https://code.visualstudio.com/Download))
 
-Finally, this lab assumes you have the following developer environment: 
+- A Package Manager, such as:
+    - <input type="checkbox"/> WinGet for Windows ([details](https://learn.microsoft.com/en-us/windows/package-manager/#understanding-package-managers))
+    - <input type="checkbox"/> Homebrew ([details](https://brew.sh/))
 
-- Python 3.10 or later 
-- A text editor (such as Visual Studio Code or Sublime Text)
-- A Package Manager (we'll refer to both Homebrew and PIP in this Workshop)
-- Select Python packages:
+- The following Python libraries:
+    - <input type="checkbox"/> Requests ([install guide](https://requests.readthedocs.io/en/latest/user/install/))
+    - <input type="checkbox"/> Folium ([install guide](https://github.com/python-visualization/folium))
+    - <input type="checkbox"/> JSON ([details](https://docs.python.org/3/library/json.html))
+    - <input type="checkbox"/> Flask ([install guide](https://flask.palletsprojects.com/en/3.0.x/installation/))
 
-  - Requests 
-  - Folium
-  - Json
-  - Flask 
-  - Virtual Environment (venv) *or* the Live Server extension for VS Code 
+- A Virtual Environment utility, such as:
+    - <input type="checkbox"/> venv ([details](https://docs.python.org/3/library/venv.html#module-venv))
+    - <input type="checkbox"/> Live Server extension for VS Code ([details](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer))
 
-> 💡 *If your development environment is not set-up accordingly, you may refer to the **Learn More** section for resources on how to set-up your environment.*
+> 💡 *You may refer to the **Learn More** section for additional set-up resources.*
 
 ### You may now **proceed to the next lab.**
 
@@ -72,10 +69,11 @@ Finally, this lab assumes you have the following developer environment:
 
 ## Acknowledgements
 
-* **Author** - Chris Hoina, Senior Product Manager, Database Tools
-* **Contributors**
+- **Author** - Chris Hoina, Senior Product Manager, Database Tools
+
+- **Contributors**
   - Jeff Smith, Distinguished Product Manager, Database Tools
   - Justin Biard, Senior Member of Technical Staff, Database Tools
-  - Zachary Talke, Product Manager, Database Tools
-  - Brian Spendolini, Contributor
-* **Last Updated By/Date** - Chris Hoina, March 2023
+  - Zachary Talke, Senior Product Manager, Database Tools
+  
+- **Last Updated By/Date** - Chris Hoina, January 2024

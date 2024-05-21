@@ -40,7 +40,9 @@ Python comes preinstalled on most Linux distributions, and it is available as a 
 1.  Open up the Oracle Cloud shell (or terminal of your choice) and ssh into your compute instance as the *opc* user.
 
     ````
+    <copy>
     ssh -i ~/.ssh/<sshkeyname> opc@<Your Compute Instance Public IP Address>
+    </copy>
     ````
 
 2.  Check if python3 has been installed by running the command.
@@ -61,7 +63,7 @@ Python comes preinstalled on most Linux distributions, and it is available as a 
 
     ![install python3](./images/step1.3-installpython3.png " " )
 
-    ![install python3-tools](./images/p_installPython.jpg " ")
+    ![install python3-tools](./images/p_installpython.jpg " ")
 
 ## Task 2: The Python Interpreter
 
@@ -122,7 +124,7 @@ There are several ways to execute Python code. In this step, we start with two e
     </copy>
     ````
 
-    ![install cx_Oracle](./images/p_installcxOracle.png " " )
+    ![install cx_Oracle](./images/p_installcxoracle.png " " )
 
 3.  Test your install by launching the python console and list the available modules.
 
@@ -144,7 +146,7 @@ There are several ways to execute Python code. In this step, we start with two e
 
     This command will show you a list of installed modules that should include the cx\_Oracle module we installed in the previous step.
 
-    ![show modules](./images/p_installcxOracle-2.png " ")
+    ![show modules](./images/p_installcxoracle-2.png " ")
 
 4.  Connect to the Oracle database and print the version of the database via python. (This confirms you are connected to an Oracle instance and returns the database version.)
 
@@ -203,7 +205,7 @@ Querying Oracle database from Python leverages cursor technology and follows the
 
 Retrieving records from the Oracle database using cursors is a simple as embedding the SQL statement within the cursor().execute statement.
 
-**Note**: Closing the cursor is considered good practice. Oracle will automatically close the cursor after the execution of its parent block finishes.
+>**Note:** Closing the cursor is considered good practice. Oracle will automatically close the cursor after the execution of its parent block finishes.
 
 ## Task 5: Query a JSON table from PYTHON
 
@@ -217,7 +219,7 @@ This section provides detail on how to work with JSON data in Oracle Database 19
     </copy>
     ````
 
-    ![open interpreter](./images/p_pythQuery-1.png " " )
+    ![open interpreter](./images/p_pythquery-1.png " " )
 
     ````
     <copy>
@@ -231,11 +233,11 @@ This section provides detail on how to work with JSON data in Oracle Database 19
     </copy>
     ````
 
-    ![create table](./images/p_pythQuery-2.png " " )
+    ![create table](./images/p_pythquery-2.png " " )
 
 2.  Query the table data.
 
-    **Note**: Ensure to have three spaces in front of the *‘print row’* command. These three spaces are a code indentation that indicates a block of code in Python, you must indent each line of the block by the same amount. In this case, ‘print row’ is the block of code we execute in the loop ‘for row in cur:’. Make sure you have those spaces when you execute the command. Hit Enter to close the block of code in the loop.
+    >**Note:** Ensure to have three spaces in front of the *‘print row’* command. These three spaces are a code indentation that indicates a block of code in Python, you must indent each line of the block by the same amount. In this case, ‘print row’ is the block of code we execute in the loop ‘for row in cur:’. Make sure you have those spaces when you execute the command. Hit Enter to close the block of code in the loop.
 
     ````
     <copy>
@@ -246,7 +248,7 @@ This section provides detail on how to work with JSON data in Oracle Database 19
     </copy>
     ````
 
-    ![query data](./images/p_pythQuery-3.png " " )
+    ![query data](./images/p_pythquery-3.png " " )
 
     Python returns an empty row.
 
@@ -260,7 +262,7 @@ This section provides detail on how to work with JSON data in Oracle Database 19
     </copy>
     ````
 
-    ![insert a row](./images/p_pythQuery-4.png " " )
+    ![insert a row](./images/p_pythquery-4.png " " )
 
 4.  Query the table again.
 
@@ -273,7 +275,7 @@ This section provides detail on how to work with JSON data in Oracle Database 19
     </copy>
     ````
 
-    ![select rows](./images/p_pythQuery-5.png " " )
+    ![select rows](./images/p_pythquery-5.png " " )
 
     We retrieve the LOB pointer.
 
@@ -296,7 +298,7 @@ This section provides detail on how to work with JSON data in Oracle Database 19
     </copy>
     ````
 
-    ![print rating](./images/p_pythQuery-6.png " " )
+    ![print rating](./images/p_pythquery-6.png " " )
 
 7.  Retrieve the *comment titles*.
 
@@ -309,7 +311,7 @@ This section provides detail on how to work with JSON data in Oracle Database 19
     </copy>
     ````
 
-    ![retrieve titles](./images/p_pythQuery-7.png " " )
+    ![retrieve titles](./images/p_pythquery-7.png " " )
 
 8.  *JSON\_VALUE* and *JSON\_QUERY*.
 
@@ -328,7 +330,7 @@ This section provides detail on how to work with JSON data in Oracle Database 19
     </copy>
     ````
 
-    ![retrieve complete document](./images/p_pythQuery-8.png " " )
+    ![retrieve complete document](./images/p_pythquery-8.png " " )
 
     You will notice that no records are returned even though we know they have been populated with data. This is due to JSON\_VALUE being able to work only with scalar SQL data types (that is, not an object or collection data type). To retrieve fragments of a JSON document, JSON\_QUERY has to be used.
 
@@ -341,7 +343,7 @@ This section provides detail on how to work with JSON data in Oracle Database 19
     </copy>
     ````
 
-    ![retrieve fragments](./images/p_pythQuery-9.png " " )
+    ![retrieve fragments](./images/p_pythquery-9.png " " )
 
 9.  *Is it JSON? Or NOT?*
 
@@ -368,7 +370,7 @@ This section provides detail on how to work with JSON data in Oracle Database 19
     </copy>
     ````
 
-    ![check record](./images/p_pythQuery-10.png " " )
+    ![check record](./images/p_pythquery-10.png " " )
 
     You can filter out records that do not follow JSON format with IS JSON and IS NOT JSON SQL extensions. First, check if there are any non-JSON records in the table.
 
@@ -380,9 +382,9 @@ This section provides detail on how to work with JSON data in Oracle Database 19
     </copy>
     ````
 
-    ![filter records](./images/p_pythQuery-11.png " " )
+    ![filter records](./images/p_pythquery-11.png " " )
 
-    **Note**: The index number may be different in the query executed, in which case change the id from *2* specified in the delete statement following.
+    >**Note:** The index number may be different in the query executed, in which case change the id from *2* specified in the delete statement following.
 
     Delete the non-JSON row(s) from *test_json*.
 
@@ -416,7 +418,7 @@ In the following section, we will create a new JSON external table that points t
 
 The access driver requires that a DIRECTORY object is defined to specify the location from which to read and write files. A DIRECTORY object assigns a name to a directory name on the file system. For example, the following statement creates a directory object named downloads that is mapped to a directory located at */home/oracle/labs/python/External*. Usually, all directories are created by the SYSDBA user, DBAs, or any user with the CREATE ANY DIRECTORY privilege.
 
-**Note**: If you have already completed the HYBRID PARTITIONING lab the *SH* user has been granted the CREATE ANY DIRECTORY privilege.
+>**Note:** If you have already completed the HYBRID PARTITIONING lab the *SH* user has been granted the CREATE ANY DIRECTORY privilege.
 
 You need to create a file-system directory and place a JSON document in this directory.
 
@@ -433,7 +435,7 @@ You need to create a file-system directory and place a JSON document in this dir
     ````
     <copy>
     cd /home/oracle/labs/python/External
-    wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/jyHA4nclWcTaekNIdpKPq3u2gsLb00v_1mmRKDIuOEsp--D6GJWS_tMrqGmb85R2/n/c4u04/b/livelabsfiles/o/labfiles/deptJSON.zip
+    wget https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/labfiles/deptJSON.zip
     unzip deptJSON.zip
     </copy>
     ````
@@ -495,7 +497,7 @@ You need to create a file-system directory and place a JSON document in this dir
     </copy>
     ````
 
-    ![retrieve all documents](./images/p_pythQuery-12.png " " )
+    ![retrieve all documents](./images/p_pythquery-12.png " " )
 
 7.  The data in the file *departments.dmp* is not a single JSON document. Each row is JSON data consisting of a *Department* object which contains an array of *employees* objects. Each employees object has a Name, a Job Title, and a Hire Date. The Oracle database can manipulate JSON directly, as you have seen with the SQL/JSON operator json\_query. Other operators include json\_value, json\_table, and so on.
 
@@ -527,7 +529,7 @@ You need to create a file-system directory and place a JSON document in this dir
     </copy>
     ````
 
-    ![employees in department](./images/p_pythQuery-14.png " " )
+    ![employees in department](./images/p_pythquery-14.png " " )
 
 ## Conclusion
 

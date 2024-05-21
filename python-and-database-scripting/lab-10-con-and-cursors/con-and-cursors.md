@@ -4,7 +4,7 @@
 
 Subclassing enables application to "hook" connection and cursor creation. This can be used to alter or log connection and execution parameters, and to extend python-oracledb functionality. Documentation link for further reading: [Application Tracing](https://python-oracledb.readthedocs.io/en/latest/user_guide/tracing.html#application-tracing).
 
-Estimated Lab Time: 10 minutes
+Estimated Time: 10 minutes
 
 ### Objectives
 
@@ -14,7 +14,7 @@ Estimated Lab Time: 10 minutes
 
 This lab assumes you have completed the following labs:
 * Login to Oracle Cloud
-* Create Oracle Autonomous Database shared infrastructure
+* Create Oracle Autonomous Database Serverless
 * Environment Setup
 
 ## Task 1: Subclassing connections

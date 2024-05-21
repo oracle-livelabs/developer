@@ -107,10 +107,10 @@ VB Studio apps are event-driven, which means that an event is fired when an end 
 
 1. In Design view, select the Info button, then click **Events** in the Properties pane:
 
-	![Events tab](images/infobuttonevents.png)
+	![Events tab](images/buttonevents.png)
 
-2. Click **+ New Event**, then **On ojAction**. Note if you see an onClick event instead, it means you selected the icon instead of the button - switch to select the button in the structure panel.:
-	![New event](images/infobuttonnewevent.png)
+2. Click **+ Event Listener**, then **On ojAction**. Note if you see an onClick event instead, it means you selected the icon instead of the button - switch to select the button in the structure panel.:
+	![New event](images/buttonnewevent.png)
 
 	You're now in the Action Chain Editor.
 
@@ -124,7 +124,7 @@ VB Studio apps are event-driven, which means that an event is fired when an end 
 4. In the Properties pane, locate the page list and click **Create**:
 	![Action properties](images/clickcreateeditpage.png)
 
-5. In **Create Page** window, set the **Page Id** to **main-accounts-detail**:
+5. In **Create Page** window, set the **Page Id** to **details**:
 
 6. Select the **Horizontal Foldout Layout Page Template**:
 
@@ -155,10 +155,10 @@ Your **ButtonActionChain** should look like this:
 
 1. Switch back to the Design view in the Page Designer tab, select the Edit button, then click **Events** in the Properties pane:
 
-	![Events tab](images/eventproperties2.png)
+	![Events tab](images/buttonevents.png)
 
-2. Click **+ New Event**, then **On ojAction**. Note if you see an onClick event instead, it means you selected the icon instead of the button - switch to select the button in the structure panel.:
-	![New event](images/newevent2.png)
+2. Click **+ Event Listener**, then **On ojAction**. Note if you see an onClick event instead, it means you selected the icon instead of the button - switch to select the button in the structure panel.:
+	![New event](images/buttonnewevent.png)
 
 	You're now in the Action Chain Editor.
 
@@ -172,7 +172,7 @@ Your **ButtonActionChain** should look like this:
 4. In the Properties pane, locate the page list and click **Create**:
 	![Action properties](images/clickcreateeditpage.png)
 
-5. In **Create Page** window, set the **Page Id** to **main-edit-accounts**:
+5. In **Create Page** window, set the **Page Id** to **edit**:
 
 6. Select the **Simple Create and Edit Page Template**:
 
@@ -196,9 +196,9 @@ Your **ButtonActionChain** should look like this:
 
   ![Set input parameter](images/setobjectidrequired.png)
 
-12. Switch back to **main-start** and open the **Actions** tab:
+12. Switch back to **welcome** and open the **Actions** tab:
 
-  ![Set input parameter](images/switchmainstartactions.png)
+  ![Set input parameter](images/switchwelcomeactions.png)
 
 13. Switch to **ButtonActionChain1** then click on the **Navigate To Page** action:
 

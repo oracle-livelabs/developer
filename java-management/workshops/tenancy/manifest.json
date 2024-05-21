@@ -46,6 +46,10 @@
             "filename": "../../track-java-usage-in-a-container/track-java-usage-in-a-container.md"
         },
         {
+            "title": "Lab 9: Use Java Download",
+            "filename": "../../java-download/java-download.md"
+        },
+        {
             "title": "Need Help?",
             "description": "Solutions to Common Problems and Directions for Receiving Live Help",
             "filename": "https://oracle-livelabs.github.io/common/labs/need-help/need-help-freetier.md"

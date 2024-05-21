@@ -5,7 +5,7 @@
 
 This lab will show how to use advanced queueing with python-oracledb driver in thick mode
 
-Estimated Lab Time: 10 minutes
+Estimated Time: 10 minutes
 
 ### Objectives
 
@@ -15,7 +15,7 @@ Estimated Lab Time: 10 minutes
 
 This lab assumes you have completed the following labs:
 * Login to Oracle Cloud
-* Create Oracle Autonomous Database shared infrastructure
+* Create Oracle Autonomous Database Serverless
 * Environment Setup
 
 ## Task 1: Message passing with Oracle Advanced Queuing

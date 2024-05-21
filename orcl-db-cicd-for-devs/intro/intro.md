@@ -17,6 +17,8 @@ With SQLcl Liquibase you can integrate database change automation into your larg
 
 *Estimated Workshop Time:* 1 Hour 15 Minutes
 
+[Workshop](videohub:1_rw5whknf) 
+
 
 ### Objectives
 Learn the core functionality of SQLcl Liquibase in this hands-on workshop:
@@ -138,4 +140,4 @@ The CD in CI/CD along with referring to Continuous Delivery, can additionally (a
 ## Acknowledgements
 
 - **Author** - Zachary Talke, Senior Product Manager
-- **Last Updated By/Date** - Zachary Talke, May 2023
+- **Last Updated By/Date** - Zachary Talke, May 2024

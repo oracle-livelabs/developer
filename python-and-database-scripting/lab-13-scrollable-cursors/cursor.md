@@ -5,7 +5,7 @@ Scrollable cursors enable python-oracledb thick mode applications to move backwa
 
 This lab will show how to work with srollable cursors using python-oracledb driver
 
-Estimated Lab Time: 5 minutes
+Estimated Time: 5 minutes
 
 ### Objectives
 
@@ -15,8 +15,10 @@ Estimated Lab Time: 5 minutes
 
 This lab assumes you have completed the following labs:
 * Login to Oracle Cloud
-* Create Oracle Autonomous Database shared infrastructure
+* Create Oracle Autonomous Database Serverless
 * Environment Setup
+
+[Scrollable Cursors](videohub:1_tcpaoq0i)
 
 ## Task 1: Working with scrollable cursors
 
@@ -27,10 +29,15 @@ This lab assumes you have completed the following labs:
     import oracledb
     import db_config_thick as db_config
 
-    con = oracledb.connect(user=db_config.user,
+    con = oracledb.connect(
+                            user=db_config.user,
                             password=db_config.pw, 
                             dsn=db_config.dsn,
-                            config_dir=db_config.config_dir, wallet_location=db_config.wallet_location, wallet_password=db_config.wallet_password)
+                            config_dir=db_config.config_dir,
+                            wallet_location=db_config.wallet_location,
+                            wallet_password=db_config.wallet_password
+                        )
+
     cur = con.cursor(scrollable=True)
 
     cur.execute("select * from dept order by deptno")
