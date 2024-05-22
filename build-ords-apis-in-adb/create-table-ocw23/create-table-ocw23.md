@@ -2,7 +2,7 @@
 <!-- WMSID 4602 -->
 ## Introduction
 
-In this lab you will use Database Actions/SQL Developer Web to connect to your database, create a table, and then REST enable the table.
+In this lab you will use Database Actions to connect to your database. You will then create a table, and REST enable it.
 
 Estimated Lab Time: 20 minutes
 
@@ -17,13 +17,13 @@ Watch the video below for a quick walk-through of the lab.
 
 - The following lab requires an [Oracle Cloud account](https://www.oracle.com/cloud/free/). You may use your own cloud account, a cloud account that you obtained through a trial, or a training account whose details were given to you by an Oracle instructor.
 
-- This lab assumes you have completed all previous Labs. 
+- This lab assumes you have completed all previous Labs.
 
 ## Task 1: Create a Table in the Autonomous Database
 
-1. Start by signing in as the **admin** using [Database Actions](https://oracle-livelabs.github.io/common/labs/sqldevweb-login/sqldevweb-login.md) if not already there. Once logged in, click the **SQL tile**.
+1. Sign in to your Autonomous database as the **admin** using [Database Actions](https://oracle-livelabs.github.io/common/labs/sqldevweb-login/sqldevweb-login.md) and navigate to the SQL Worksheet. You can do this from the OCI Console. Once logged in, click the **SQL tile**.
 
-    ![Database Actions Home Page, Click SQL tile](images/click-for-sql-worksheet.png)
+    ![Database Actions Home Page, Click SQL tile](images/)
 
    💡 *If this is your first time accessing the SQL Worksheet, you will be presented with a guided tour. Complete the tour or click the X in any tour popup window to quit the tour.*
 
