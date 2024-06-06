@@ -151,7 +151,7 @@ Let’s create the database users you will need for this workshop. Oracle Cloud 
     ![Click DB Actions](./images/1clickdbactions.png)
 
  2. This brings you to a page with a list of Autonomous Database features available from your Oracle Cloud user interface (UI). Select “SQL” under Development.
-    ![DB Actions Menu](./images/2dbactionsmenu.png)
+    ![DB Actions Menu](./images/2newdbactionsmenu.png)
 
  3. From the SQL Worksheet, copy and paste the following script. This will create the two database users you will need for the workshop: MOVIESTREAM\_MANAGER and MOVIESTREAM\_DEV.
     * Before running the script; place it in a text editor, remove the brackets, and add a password for each user in the `CREATE USER` lines after `IDENTIFIED BY`.
@@ -289,7 +289,7 @@ Just as you can create and have different tables in your database (`employees`, 
  5. Before you connect to your database, let's upload some files you'll need for the workshop. Select the settings gear in the top right of the Cloud Shell interface then click “Upload”.
     ![Select Upload Cloud Shell](./images/10selectuploadcloudshell.png)
 
- 6. Download [setup_changelogs.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/VEaopGvnBQgotbj8iHpFEKSUZQhnszZJtFQpT_EOviGNRWhY21qeq0itQe3f_ykZ/n/c4u04/b/livelabsfiles/o/developer-library/setup_changelogs.zip) by clicking the link.
+ 6. Download [setup_changelogs.zip](https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/developer-library/setup_changelogs.zip) by clicking the link.
     * The files in this zip folder will be used to automatically create the database objects you will use in the workshop
 
  7. Once that zip file has downloaded to your computer, select it in the "File Upload to your Home Directory" menu and click Upload.
@@ -418,4 +418,4 @@ Just as you can create and have different tables in your database (`employees`, 
 ## Acknowledgements
 
 - **Author** - Zachary Talke, Senior Product Manager
-- **Last Updated By/Date** - Zachary Talke, May 2023
+- **Last Updated By/Date** - Zachary Talke, May 2024

@@ -21,6 +21,7 @@ Watch the video below for a quick walk-through of the lab.
 
 ## Task 1: Create a Table in the Autonomous Database
 
+
 1. Sign in to [Database Actions](https://oracle-livelabs.github.io/common/labs/sqldevweb-login/sqldevweb-login.md) as the **admin** user and navigate to the SQL Worksheet. You can also do this from within the OCI Cloud Console.
 
     ![access-sql-worksheet-from-oci-console](images/access-sql-worksheet-from-oci-console.png " ")

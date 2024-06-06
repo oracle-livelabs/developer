@@ -44,7 +44,7 @@
     
     ```
     <copy>
-    wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/LNAcA6wNFvhkvHGPcWIbKlyGkicSOVCIgWLIu6t7W2BQfwq2NSLCsXpTL9wVzjuP/n/c4u04/b/livelabsfiles/o/developer-library/jdkimage.tar.gz
+    wget https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/developer-library/jdkimage.tar.gz
     </copy>
     ```
     ```
@@ -116,7 +116,7 @@
     <!--
     ```
     <copy>
-    wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/LNAcA6wNFvhkvHGPcWIbKlyGkicSOVCIgWLIu6t7W2BQfwq2NSLCsXpTL9wVzjuP/n/c4u04/b/livelabsfiles/o/developer-library/ol7image.tar.gz
+    wget https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/developer-library/ol7image.tar.gz
     </copy>
     ```
     ```
@@ -237,7 +237,7 @@
 
     ```
     <copy>
-    wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/LNAcA6wNFvhkvHGPcWIbKlyGkicSOVCIgWLIu6t7W2BQfwq2NSLCsXpTL9wVzjuP/n/c4u04/b/livelabsfiles/o/developer-library/distroless.tar.gz
+    wget https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/developer-library/distroless.tar.gz
     </copy>
     ```
     ```
@@ -283,10 +283,10 @@
 
     以下は3種類のDockerコンテナイメージをベースに作成したコンテナの起動時間とイメージサイズの比較です。
 
-    | アプリ形式 | fat jar | native image | ほぼ静的なnaitve image |
-    | --- | --- | --- | --- |
-    | 起動時間(秒) | 1.441 | 0.022  | 0.026 |
-    | コンテナイメージサイズ(MB) | 580 | 207  | 94.1  |
+    | アプリ形式                 | fat jar | native image | ほぼ静的なnaitve image |
+    | -------------------------- | ------- | ------------ | ---------------------- |
+    | 起動時間(秒)               | 1.441   | 0.022        | 0.026                  |
+    | コンテナイメージサイズ(MB) | 580     | 207          | 94.1                   |
   
 
 ## Troubleshooting
