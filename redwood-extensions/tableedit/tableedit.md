@@ -135,7 +135,7 @@ VB Studio apps are event-driven, which means that an event is fired when an end 
 
   ![Set input parameter](images/selectrowindexvariable.png)
 
-9. Under **Action Chain** select  **key**:
+9. Under **Input Parameters** select  **key**:
 
   ![Set input parameter](images/selectkey.png)
 
@@ -209,7 +209,7 @@ If you don't see the parameter, you may need to refresh your screen.
 
   ![Set input parameter](images/selectobjectidvariable.png)
 
-15. Under **Action Chain** select  **key**:
+15. Under **Input Parameters** select  **key**:
 
   ![Set input parameter](images/selectkey.png)
 
