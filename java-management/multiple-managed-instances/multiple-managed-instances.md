@@ -43,7 +43,7 @@ In this lab, you will:
 
   ![image of Software download pan view](images/software-download-pane-view.png)
 
-3. The Software Download pane lists all the software available to download for the Management Agent and Management Gateway. Select the operating system that the Management Gateway will be installed on from the Download column. In this case, click on **Gateway for LINUX (X84_64)** link to download the Management Gateway software file.
+3. The Software Download pane lists all the software available to download for the Management Agent and Management Gateway. Select the operating system and architecture that the Management Gateway will be installed on from the Download column. In this case, click on **Gateway for LINUX (X84_64)** link to download the Management Gateway software file.
   ![image of downloading management gateway software](images/download-gateway-software.png)
 
 4. Alternatively, you can download **Management Gateway software for Linux** using OCI CLI. For details, see [Download the Gateway Software Using CLI](https://docs.oracle.com/en-us/iaas/management-agents/doc/install-management-gateway-main.html#GUID-52C54F84-020C-485D-B1A4-000AA796286B__GUID-DF8E9F65-944C-4EB3-B7CE-C74207D3099B).
@@ -134,7 +134,7 @@ In this lab, you will:
     <copy>
 
     JDK_DIR=$(find /usr/bin/java)
-    sudo JAVA_HOME="${JDK_DIR}" rpm -ivh <rpm_file_name.rpm>
+    sudo bash JAVA_HOME="${JDK_DIR}" rpm -ivh <rpm_file_name.rpm>
 
     </copy>
     ```   
@@ -434,4 +434,4 @@ You may now **proceed to the next lab.**
 ## Acknowledgements
 
 * **Author** - Bhuvesh Kumar, Java Management Service
-* **Last Updated By** - Ivan Eng, June 2023
+* **Last Updated By** - Yuan Chi Liu, October 2023

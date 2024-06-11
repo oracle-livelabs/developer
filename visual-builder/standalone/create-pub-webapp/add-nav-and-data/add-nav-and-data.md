@@ -29,7 +29,7 @@ This lab assumes you have:
     ![This image shows the main-departments page, with a Button component being dragged from the Components palette into the toolbar, next to the Create Department button.](images/departments-button.png "")
 
 3. Click **Properties** (if necessary) and in the **General** tab, change the **Label** field to `Show Employees`.
-4. Click the button's **Events** tab, then click the **\+ New Event** button. From the menu, select **On 'ojAction'**, the default action suggested for a button click.
+4. Click the button's **Events** tab, then click the **\+ Event Listener** button. From the menu, select **On 'ojAction'**, the default action suggested for a button click.
 
     ![This image shows the New Event menu on a Button component's Events tab. The On 'ojAction' option is selected.](images/departments-button-events.png "")
 
@@ -59,7 +59,7 @@ This lab assumes you have:
 
 2. Locate the **Button** component in the Components palette and drag it into the **Toolbar**, to the right of the **Create Employee** button.
 3. In the Button's Properties pane, change the **Label** field to `Show Departments`.
-4. Click the **Events** tab for the button, then click the **+ New Event** button and select **On 'ojAction'**.
+4. Click the **Events** tab for the button, then click the **+ Event Listener** button and select **On 'ojAction'**.
 
     Another empty action chain with the ID **ButtonActionChain** is created. Because this action chain is for a different page, it doesn't matter that it has the same name as the one for the main-departments page.
 
@@ -80,4 +80,4 @@ This lab assumes you have:
 ## Acknowledgements
 
 * **Author** - Sheryl Manoharan, Visual Builder User Assistance, August 2021
-* **Last Updated By** - August 2023
+* **Last Updated By** - February 2024

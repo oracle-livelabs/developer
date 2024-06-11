@@ -1,0 +1,85 @@
+{
+  "workshoptitle": "Develop with Oracle AI and Database Services: Healthcare (Open Source Version)",
+  "include": {  
+    "iam-compartment-create-body.md": "https://raw.githubusercontent.com/oracle-livelabs/common/main/building-blocks/tasks/iam/compartment-create-body.md",
+    "adb-goto-service-body.md": "https://raw.githubusercontent.com/oracle-livelabs/common/main/building-blocks/tasks/adb/goto-service-body.md",
+    "adb-provision-body.md": "https://raw.githubusercontent.com/oracle-livelabs/common/main/building-blocks/tasks/adb/provision-body.md"
+  },
+  "help": "livelabs-help-devdb-us@oracle.com",
+  "tutorials": [
+    {
+      "title": "Introduction",
+      "filename": "../../introduction/introduction.md"
+    },
+    {
+      "title": "Get Started",
+      "description": "This is the prerequisites for customers using Free Trial and Paid tenancies, and Always Free accounts (if applicable). The title of the lab and the Contents Menu title (the title above) match for Prerequisite lab. This lab is always first.",
+      "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/cloud-login.md"
+    },
+    {
+      "title": "Lab 1: Clone, Build, and Test Run the Workshop Source",
+      "filename": "../../clone-and-build/clone-and-build.md"
+    },
+    {
+      "title": "Lab 2: Provision Database, Setup OCI, and Configure Application",
+      "filename": "../../setup-oci/setup-oci.md"
+    },
+    {
+      "title": "Lab 3: Setup OCI CLI",
+      "filename": "../../setup-ocicli/setup-ocicli.md"
+    },
+    {
+      "title": "Lab 4: Create Image Library",
+      "filename": "../../ai-vision-create/ai-vision-create.md"
+    },
+    {
+      "title": "Lab 5: Label Images",
+      "filename": "../../ai-vision-label/ai-vision-label.md"
+    },
+    {
+      "title": "Lab 6: Train the model",
+      "filename": "../../ai-vision-train/ai-vision-train-model.md"
+    },
+    {
+      "title": "Lab 7: Full Stack Application for Breast Cancer Detection",
+      "filename": "../../ai-vision-flutter-ui/ai-vision-flutter-ui.md"
+    },
+    {
+      "title": "Lab 8: Full Stack Application for Medical Receipt Processing",
+      "filename": "../../ai-document-flutter-ui/ai-document-flutter-ui.md"
+    },
+    {
+      "title": "Lab 9: Full Stack Application for Speech Transcription and Gen AI",
+      "filename": "../../ai-speech-genai/ai-speech-genai.md"
+    },
+    {
+      "title": "Lab 10: Setup Oracle Digital Assistant",
+      "filename": "../../ai-oda-create/ai-oda-create.md"
+    },
+    {
+      "title": "Lab 11: Full Stack Application with Oracle Digital Assistant",
+      "filename": "../../ai-oda-flutter-ui/ai-oda-flutter-ui.md"
+    },
+    {
+      "title": "Lab 12: Full Stack Application with OpenStreetMap and Spatial Queries to Locate Hospitals",
+      "filename": "../../spatial-map/spatial-map.md"
+    },
+    {
+      "title": "Lab 13: Full Stack Application for Analytics",
+      "filename": "../../analytics/analytics.md"
+    },
+    {
+      "title": "Lab 14: Deploy and Run as Microservices in Kubernetes Cluster",
+      "filename": "../../kubernetes/kubernetes.md"
+    },
+    {
+      "title": "Lab 15: Oracle Machine Learning For Healthcare",
+      "filename": "../../oml-healthcare/oml-healthcare.md"
+    },
+    {
+      "title": "Need Help?",
+      "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+      "filename": "https://oracle-livelabs.github.io/common/labs/need-help/need-help-livelabs.md"
+    }
+  ]
+}

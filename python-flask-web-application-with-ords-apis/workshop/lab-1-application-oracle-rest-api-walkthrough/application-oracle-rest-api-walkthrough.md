@@ -38,7 +38,7 @@ This Lab assumes you have:
 
 ## Task 1: Obtain code for this workshop
 
-1. [Download the ZIP](https://objectstorage.us-ashburn-1.oraclecloud.com/p/jyHA4nclWcTaekNIdpKPq3u2gsLb00v_1mmRKDIuOEsp--D6GJWS_tMrqGmb85R2/n/c4u04/b/livelabsfiles/o/labfiles/flask-ords-lab-main.zip) file that contains our the Flask application and associated `HTML` files
+1. [Download the ZIP](https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/labfiles/flask-ords-lab-main.zip) file that contains our the Flask application and associated `HTML` files
 
 2. Once downloaded, un-compress the ZIP file and open it (examples in this Workshop will use Visual Studio Code). The contents in your directory should be configured like the image below:
 
@@ -247,12 +247,12 @@ While the main focus of this Workshop is not to introduce you to Flask, we will 
 
     2. Next, choose some **`{Key: Values}`** that adhere to the datatypes Oracle REST Data Services (ORDS) expects. *Be sure to choose something unique* so you can quickly identify it. Review this table for what our database table expects:  
 
-        |Key              |Value's Data Type |Example Value                                |
-        |---------------- | ---------------- | ------------------------------------------- |
-        |`MUSEUM_NAME`    |VARCHAR2(500 BYTE)|"Henry's Old Time Saloon Museum" <sup>a</sup>|
-        |`MUSEUM_LOCATION`|VARCHAR2(500 BYTE)|"123 Tipsy Ave." <sup>a</sup>                |
-        |`MUSEUM_LAT`     |NUMBER(8,6)       |50.000000 <sup>b<sup>                        |
-        |`MUSEUM_LONG`    |NUMBER(9,6)       |100.000000 <sup>c</sup>                      |
+        | Key               | Value's Data Type  | Example Value                                 |
+        | ----------------- | ------------------ | --------------------------------------------- |
+        | `MUSEUM_NAME`     | VARCHAR2(500 BYTE) | "Henry's Old Time Saloon Museum" <sup>a</sup> |
+        | `MUSEUM_LOCATION` | VARCHAR2(500 BYTE) | "123 Tipsy Ave." <sup>a</sup>                 |
+        | `MUSEUM_LAT`      | NUMBER(8,6)        | 50.000000 <sup>b<sup>                         |
+        | `MUSEUM_LONG`     | NUMBER(9,6)        | 100.000000 <sup>c</sup>                       |
         {: title="`{Key:Value}` Reminder Table"}
 
        <sup><sup>a</sup> Both Name and Location are strings, so they you'll need to retain the quotes in your cURL command.</sup>
@@ -346,10 +346,12 @@ While the main focus of this Workshop is not to introduce you to Flask, we will 
 - [About Leaflet.js](https://leafletjs.com/)
 
 ## Acknowledgements
-* **Author** - Chris Hoina, Senior Product Manager, Database Tools
-* **Contributors**
+
+- **Author** - Chris Hoina, Senior Product Manager, Database Tools
+
+- **Contributors**
   - Jeff Smith, Distinguished Product Manager, Database Tools
   - Justin Biard, Senior Member of Technical Staff, Database Tools
   - Zachary Talke, Senior Product Manager, Database Tools
-  - Brian Spendolini, Contributor
-* **Last Updated By/Date** - Chris Hoina, August 2023
+
+- **Last Updated By/Date** - Chris Hoina, February 2024

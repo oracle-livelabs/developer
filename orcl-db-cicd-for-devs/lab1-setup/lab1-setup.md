@@ -29,6 +29,9 @@ In this lab, you will:
 - This lab requires completion of the [Introduction](../workshops/freetier/?lab=intro) and [Get Started](../workshops/freetier/?lab=cloud-login) sections in the Contents menu on the left.
 
 ## Task 1: Choose ADW or ATP from the services menu
+
+>**Note:** If during this workshop you encounter any issues copy and pasting commands from the workshop guide code blocks to the Cloud Shell command prompt, right clicking when pasting and selecting "Paste as Plain Text" should resolve the issue.
+
 1. Log in to the Oracle Cloud.
 2. Once you log in, the cloud services dashboard shows all the services available to you. Click the navigation menu in the upper left to show top level navigation choices.
 
@@ -148,7 +151,7 @@ Let’s create the database users you will need for this workshop. Oracle Cloud 
     ![Click DB Actions](./images/1clickdbactions.png)
 
  2. This brings you to a page with a list of Autonomous Database features available from your Oracle Cloud user interface (UI). Select “SQL” under Development.
-    ![DB Actions Menu](./images/2dbactionsmenu.png)
+    ![DB Actions Menu](./images/2newdbactionsmenu.png)
 
  3. From the SQL Worksheet, copy and paste the following script. This will create the two database users you will need for the workshop: MOVIESTREAM\_MANAGER and MOVIESTREAM\_DEV.
     * Before running the script; place it in a text editor, remove the brackets, and add a password for each user in the `CREATE USER` lines after `IDENTIFIED BY`.
@@ -286,7 +289,7 @@ Just as you can create and have different tables in your database (`employees`, 
  5. Before you connect to your database, let's upload some files you'll need for the workshop. Select the settings gear in the top right of the Cloud Shell interface then click “Upload”.
     ![Select Upload Cloud Shell](./images/10selectuploadcloudshell.png)
 
- 6. Download [setup_changelogs.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/VEaopGvnBQgotbj8iHpFEKSUZQhnszZJtFQpT_EOviGNRWhY21qeq0itQe3f_ykZ/n/c4u04/b/livelabsfiles/o/developer-library/setup_changelogs.zip) by clicking the link.
+ 6. Download [setup_changelogs.zip](https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/developer-library/setup_changelogs.zip) by clicking the link.
     * The files in this zip folder will be used to automatically create the database objects you will use in the workshop
 
  7. Once that zip file has downloaded to your computer, select it in the "File Upload to your Home Directory" menu and click Upload.
@@ -348,8 +351,8 @@ Just as you can create and have different tables in your database (`employees`, 
 
  4. It is now time to connect to MOVIESTREAM\_MANAGER and create some database objects in this user.
     * Under the "Available TNS Entries" section of the `show tns` command, there are 3 connections by default for Autonomous Data Warehouse (ADW) and 5 for Autonomous Transaction Processing (ATP). The names are designated by `[database name]_[connection level]`.
-    * These workshop instructions will use lbworkshop\_high in the command below.
-    * If you prefer to use a different connection, simply replace the command with that connection. Enter your MOVIESTREAM\_MANAGER password at the prompt.
+    * These workshop instructions will use lbworkshop\_low in the command below.
+    * If you prefer to use a different connection, simply replace the command with that connection. If you encounter any "cannot read/modify an object after modifying it in parallel" ORA errors while using Liquibase with other connection types, switch to the low connection type where parallelism is not active. Enter your MOVIESTREAM\_MANAGER password at the prompt.
          * lbworkshop_high
             * High priority application connection service for reporting and batch operations. All operations run in parallel and are subject to queuing.
          * lbworkshop_medium
@@ -363,7 +366,7 @@ Just as you can create and have different tables in your database (`employees`, 
 
     ```na
     <copy>
-    connect moviestream_manager@lbworkshop_high
+    connect moviestream_manager@lbworkshop_low
     </copy>
     ```
     ![Connect MOVIESTREAM_MANAGER](./images/16connectmanager.png)
@@ -415,4 +418,4 @@ Just as you can create and have different tables in your database (`employees`, 
 ## Acknowledgements
 
 - **Author** - Zachary Talke, Senior Product Manager
-- **Last Updated By/Date** - Zachary Talke, May 2023
+- **Last Updated By/Date** - Zachary Talke, May 2024

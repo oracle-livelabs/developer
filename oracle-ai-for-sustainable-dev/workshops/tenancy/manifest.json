@@ -1,0 +1,63 @@
+{
+  "workshoptitle": "Develop with Oracle AI and Database Services: Gen, Vision, Speech, Language, and OML",
+  "help": "livelabs-help-devdb-us@oracle.com",
+	"tutorials": [
+      {
+        "title": "Introduction",
+        "filename": "../../intro/intro.md"
+      },
+      {
+        "title": "Get Started",
+        "filename":"https://oracle-livelabs.github.io/common/labs/cloud-login/event-register-free-tier-account.md"
+      },
+      {
+        "title": "Lab 1: Setup",
+        "filename": "../../setup-oci/setup-oci.md"
+      },
+      {
+        "title": "Lab 2: Run AI App and Overview of DBMS_CLOUD, JavaScript, and Java calls from the Oracle Database",
+        "filename": "../../buildapp/buildapp.md"
+      },
+      {
+        "title": "Lab 3: Text Detection And Summarization For Health Report Results",
+        "filename": "../../textdetection-summarization/textdetection-summarization.md"
+      },
+      {
+        "title": "Lab 4: Speech Transcription And Image Generation For Hands-Free Storyboarding",
+        "filename": "../../speechtranscription-imagegen/speechtranscription-imagegen.md"
+      },
+      {
+        "title": "Lab 5: Object Detection, Gen AI, And Sentiment Analysis For Situational Awareness And Creativity",
+        "filename": "../../vision-genai-sentiment/vision-genai-sentiment.md"
+      },
+      {
+        "title": "Lab 6: Face Detection For Gaze and Head Pose Estimation",
+        "filename": "../../facialrecognition/facialrecognition.md"
+      },
+      {
+        "title": "Lab 7: Text Search and DBMS_SEARCH of AI results",
+        "filename": "../../search/search.md"
+      },
+      {
+        "title": "Lab 8: Mixed Reality and Vision AI For Hearing And Vision Impaired And Alzheimer’s",
+        "filename": "../../ocivision-mixedreality/ocivision-mixedreality.md"
+      },
+      {
+        "title": "Lab 9: Oracle Machine Learning For Healthcare",
+        "filename": "../../oml-healthcare/oml-healthcare.md"
+      },
+      {
+        "title": "Lab 10: Deploy Your Own ChatGPT/AI Model On OCI",
+        "filename": "../../deploy-model-oci/deploy-model-oci.md"
+      },
+      {
+        "title": "Lab 11: Tear Down",
+        "filename": "../../teardown/teardown.md"
+      },
+      {
+        "title": "Need Help?",
+        "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+        "filename":"https://oracle-livelabs.github.io/common/labs/need-help/need-help-freetier.md"
+      }
+    ]
+}

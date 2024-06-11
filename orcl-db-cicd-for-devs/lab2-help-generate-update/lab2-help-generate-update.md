@@ -21,7 +21,7 @@ In this lab, you will be replicating the database schema from the MOVIESTREAM\_M
 ### Objectives
 In this lab you will:
 * Connect to the database user MOVIESTREAM_MANAGER.
-* Learn how to use the `liquibase help` command.
+* Learn how to use the `help liquibase` command.
 * Generate Liquibase changelog files to capture your database schema.
 * Connect to the database user MOVIESTREAM_DEV, prepare to automatically create your database objects by inspecting the SQL that will run, then create the database objects.
 
@@ -66,43 +66,34 @@ Completion of:
       ```na
       <copy>
       set cloudconfig /home/[OCI CLI Profile Name]/Wallet_lbworkshop.zip
-      connect moviestream_manager@lbworkshop_high
+      connect moviestream_manager@lbworkshop_low
       </copy>
       ```
 
       ![Moviestream_Manager Login](./images/3managerlogin.png)
 
 ## Task 2: Learn how to use the help command
-   1. The quickest way to familiarize yourself with Liquibase is with the `liquibase help` command.
+   1. The quickest way to familiarize yourself with Liquibase is with the `help liquibase` command.
       * This will give you a list of all Liquibase commands and their descriptions.
 
       ```na
       <copy>
-      liquibase help
+      help liquibase
       </copy>
       ```
 
       ![Liquibase Help](./images/4liquibasehelp.png)
 
-   2. If you want help on a specific Liquibase command, use `liquibase help [command name]` and it will give you the description of the command and all of its available parameters. Let's try this for the `liquibase generate-schema` command you are about to run (pay attention to the `-split` and `-sql` optional parameters as you are going to be using them).
+   2. If you want help on a specific Liquibase command, use `help liquibase [command name]` and it will give you the description of the command and all of its available parameters. Let's try this for the `liquibase generate-schema` command you are about to run (pay attention to the `-split` and `-sql` optional parameters as you are going to be using them).
 
       ```na
       <copy>
-      liquibase help generate-schema
+      help liquibase generate-schema
       </copy>
       ```
 
       ![Liquibase Help](./images/5liquibasehelpgenerateschema.png)
 
-   3. There are also some fun preloaded use case scenarios you can view with the `liquibase help -example` command.
-
-      ```na
-      <copy>
-      liquibase help -example
-      </copy>
-      ```
-
-      ![Help Example](./images/6liquibasehelpexample.png)
 
 ## Task 3: Generate your database schema files
 
@@ -167,14 +158,14 @@ Completion of:
       </copy>
       ```
 
-   6. Now let's save the table to a Liquibase changelog file which you will run later. Unlike with the `liquibase generate-schema` command you just ran, you will be using the `liquibase generate-object` command to capture just one singular object to one changelog file:
-      * `liquibase generate-object` saves an individual database object to a Liquibase file.
+   6. Now let's save the table to a Liquibase changelog file which you will run later. Unlike with the `liquibase generate-schema` command you just ran, you will be using the `liquibase generate-db-object` command to capture just one singular object to one changelog file:
+      * `liquibase generate-db-object` saves an individual database object to a Liquibase file.
          * `-object-type` is a mandatory parameter that specifies the type of object you are saving.
          * `-object-name` is a mandatory parameter that specifies the name of the object you are saving.
 
       ```na
       <copy>
-      liquibase generate-object -object-type table -object-name merchandise
+      liquibase generate-db-object -object-type table -object-name merchandise
       </copy>
       ```
 
@@ -204,7 +195,7 @@ Completion of:
       ```na
       <copy>
       set cloudconfig /home/[OCI CLI Profile Name]/Wallet_lbworkshop.zip
-      connect moviestream_dev@lbworkshop_high
+      connect moviestream_dev@lbworkshop_low
       </copy>
       ```
 
@@ -282,9 +273,11 @@ Completion of:
           * Product manager Jeff Smith has [A Great Article On This](https://www.thatjeffsmith.com/archive/2018/10/yes-sqlloader-is-faster-at-loading-records/)
        * Oracle Cloud
           * Database Actions for Autonomous Database has Data Load and Data Pump options along with Data Load functionality in SQL Worksheet
-          ![DB Actions Data Load](./images/15dbactionsdataload.png)
+          ![DB Actions Data Load](./images/15anewdbactionsdataload.png)
+          ![DB Actions Data Load 2](./images/15bnewdbactionsdataload.png)
+          ![DB Actions Data Load 3](./images/15cnewdbactionsdataload.png)
           * On the main Oracle Cloud menu under Developer Services -> Database Tools, the SQL Worksheet there also has Data Load functionality
-          ![SQL Worksheet Data Load](./images/16sqlworksheetdataload.png)
+          ![SQL Worksheet Data Load](./images/16newsqlworksheetdataload.png)
        * SQLcl Load Command
           * A SQLcl command that allows you to load data from a CSV file into your Oracle Database table
           * Another must read by Jeff, this time providing a [Primer To The Load Command](https://www.thatjeffsmith.com/archive/2019/09/sqlcl-and-the-load-csv-command/)
@@ -319,4 +312,4 @@ Completion of:
 ## Acknowledgements
 
 - **Author** - Zachary Talke, Senior Product Manager
-- **Last Updated By/Date** - Zachary Talke, May 2023
+- **Last Updated By/Date** - Zachary Talke, May 2024

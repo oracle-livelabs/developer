@@ -34,6 +34,9 @@ In this lab, you will:
 
 
 ## Task 1: Create Your Autonomous Database
+ 
+ >**Note:** If during this workshop you encounter any issues copy and pasting commands from the workshop guide code blocks to the Cloud Shell command prompt, right clicking when pasting and selecting "Paste as Plain Text" should resolve the issue.
+ 
  1. Log in to the Oracle Cloud.
 
     ![Oracle home page](./images/1cloudhomepage.png " ")
@@ -189,7 +192,7 @@ In this lab, you will:
 
  5. Select **Database Users** under **Administration**.
 
-    ![Select Database Users](./images/26select-db-users.png " ")
+    ![Select Database Users](./images/26newselect-db-users.png " ")
 
  6. From this dashboard you are going to quickly REST enable your **WKSP\_LIQUIBASEDEMO** database user containing your APEX Workspace. This database user was created as part of your APEX Workspace creation process.
     * REST enabling the user allows it to be accessible to Oracle Cloud's REST APIs and therefore the Database Actions menus.
@@ -207,7 +210,7 @@ In this lab, you will:
 
  9. Switch from your **ADMIN** database user to your **WKSP\_LIQUIBASEDEMO** one by clicking **ADMIN** in the upper right and selecting **Sign Out**.
  
-    ![Admin User Sign Out](./images/30admin-sign-out.png " ")
+    ![Admin User Sign Out](./images/30newadmin-sign-out.png " ")
 
  10. On the sign-in page enter **WKSP\_LIQUIBASEDEMO** as your database user and additionally enter the password you set (this is the database password for **WKSP\_LIQUIBASEDEMO** not the APEX Workspace one).
 
@@ -216,7 +219,7 @@ In this lab, you will:
  11. Let's now take a look at your database object dashboard.
     * Select the **SQL** section under **Development**.
 
-    ![Select SQL Dashboard](./images/32select-sql.png " ")
+    ![Select SQL Dashboard](./images/32newselect-sql.png " ")
 
  12. On your SQL Worksheet page, under the left hand navigator, change the middle dropdown to **All Objects**.
 
@@ -266,4 +269,4 @@ In this lab, you will:
 ## Acknowledgements
 
 - **Author** - Zachary Talke, Senior Product Manager
-- **Last Updated By/Date** - Zachary Talke, August 2023
+- **Last Updated By/Date** - Zachary Talke, May 2024

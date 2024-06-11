@@ -1,5 +1,5 @@
 {
-    "workshoptitle": "Using Java Management Service Advanced Features",
+    "workshoptitle": "Use Java Management Service Advanced Features",
     "include": {
     },
     "help": "autonomous_java-dev_us_grp@oracle.com",
@@ -18,39 +18,43 @@
             "filename": "../../set-up-and-enable-advanced-features-on-java-management-service/set-up-and-enable-advanced-features-on-java-management-service.md"
         },
         {
-            "title": "Lab 2: Configure post install actions and install Java Runtimes",
+            "title": "Lab 2: Apply Deployment Rule Set",
+            "filename": "../../apply-deployment-rule-set/apply-deployment-rule-set.md"
+        },
+        {
+            "title": "Lab 3: Configure post install actions and install Java Runtimes",
             "filename": "../../configure-post-install-actions-and-install-java-runtimes/configure-post-install-actions-and-install-java-runtimes.md"
         },
         {
-            "title": "Lab 3: Remove Java Runtimes",
+            "title": "Lab 4: Remove Java Runtimes",
             "filename": "../../remove-java-runtimes/remove-java-runtimes.md"
         },
         {
-            "title": "Lab 4: Track Java Servers",
+            "title": "Lab 5: Track Java Servers",
             "filename": "../../track-java-servers/track-java-servers.md"
         },
         {
-            "title": "Lab 5: Detect Java Libraries",
+            "title": "Lab 6: Detect Java Libraries",
             "filename": "../../detect-java-libraries/detect-java-libraries.md"
         },
         {
-            "title": "Lab 6: Run Crypto Event Analysis",
+            "title": "Lab 7: Run Crypto Event Analysis",
             "filename": "../../run-crypto-event-analysis/run-crypto-event-analysis.md"
         },
         {
-            "title": "Lab 7: Run JDK Flight Recorder",
+            "title": "Lab 8: Run JDK Flight Recorder",
             "filename": "../../run-jdk-flight-recorder-jfr/run-jdk-flight-recorder-jfr.md"
         },
         {
-            "title": "Lab 8: Run Java Migration Analysis",
+            "title": "Lab 9: Run Java Migration Analysis",
             "filename": "../../run-java-migration-analysis/run-java-migration-analysis.md"
         },
         {
-            "title": "Lab 9: Run Performance Analysis",
+            "title": "Lab 10: Run Performance Analysis",
             "filename": "../../run-performance-analysis/run-performance-analysis.md"
         },
         {
-            "title": "Lab 10: View and monitor Work Requests",
+            "title": "Lab 11: View and monitor Work Requests",
             "filename": "../../view-and-monitor-work-requests/view-and-monitor-work-requests.md"
         },
         {

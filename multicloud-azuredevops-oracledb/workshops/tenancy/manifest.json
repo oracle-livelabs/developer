@@ -1,0 +1,55 @@
+{
+  "workshoptitle": "Build MultiCloud Devops using Azure CI/CD Pipelines with Oracle Database Cloud Services",
+  "help": "livelabs-help-devdb-us@oracle.com",
+	"tutorials": [
+      {
+        "title": "Introduction",
+        "filename": "../../intro/intro.md"
+      },
+      {
+        "title": "Get Started",
+        "filename":"https://oracle-livelabs.github.io/common/labs/cloud-login/event-register-free-tier-account.md"
+      },
+      {
+        "title": "Lab 1: Create an Oracle Database",
+        "filename": "../../createdatabase/createdatabase.md"
+      },
+      {
+        "title": "Lab 2: Create Resource Group, AKE Kubernetes Cluster, and Container Registry",
+        "filename": "../../createake/createake.md"
+      },
+      {
+        "title": "Lab 3: Configure Oracle@Azure or Interconnect",
+        "filename": "../../interconnect/interconnect.md"
+      },
+      {
+        "title": "Lab 4: Deploy Oracle Database Operator to AKE and Bind to Database",
+        "filename": "../../oraoperator/oraoperator.md"
+      },
+      {
+        "title": "Lab 5: Application Registration, Configure Azure Vault, and App Config",
+        "filename": "../../configurevault/configurevault.md"
+      },
+      {
+        "title": "Lab 6: Create, Run, and Verify Pipeline",
+        "filename": "../../pipeline/pipeline.md"
+      },
+      {
+        "title": "Lab 7: OpenTelemetry Observability of Multi-Cloud Architecture",
+        "filename": "../../observability/observability.md"
+      },
+      {
+        "title": "Lab 8: Add Liquibase for CI/CD of Database Changes",
+        "filename": "../../liquibase/liquibase.md"
+      },
+      {
+        "title": "Lab 9: Tear Down",
+        "filename": "../../teardown/teardown.md"
+      },
+      {
+        "title": "Need Help?",
+        "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+        "filename":"https://oracle-livelabs.github.io/common/labs/need-help/need-help-freetier.md"
+      }
+    ]
+}

@@ -71,7 +71,7 @@ Completion of:
 
     ![Cloud Shell Upload](./images/5click-upload.png " ")
 
- 2. Download [workshop_changelogs.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/LNAcA6wNFvhkvHGPcWIbKlyGkicSOVCIgWLIu6t7W2BQfwq2NSLCsXpTL9wVzjuP/n/c4u04/b/livelabsfiles/o/developer-library/workshop_changelogs.zip) by clicking the link.
+ 2. Download [workshop_changelogs.zip](https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/developer-library/workshop_changelogs.zip) by clicking the link.
     * This contains the files you'll be using.
 
  3. Once that zip file has downloaded to your computer, select it in the "File Upload to your Home Directory" menu and click Upload.
@@ -140,15 +140,15 @@ Completion of:
 
  4. Next, run the `connect` command to connect to your **WKSP_LIQUIBASEDEMO** database user that your APEX workspace is contained on.
     * Under the "Available TNS Entries" section of the `show tns` command, there are 3 connections by default for Autonomous Data Warehouse (ADW) and 5 for Autonomous Transaction Processing (ATP). The names are designated by `[database name]_[connection level]`.
-    * These workshop instructions will use `apexlbworkshop_high` in the command below.
+    * These workshop instructions will use `apexlbworkshop_low` in the command below.
 
     ```na
     <copy>
-    connect wksp_liquibasedemo@apexlbworkshop_high
+    connect wksp_liquibasedemo@apexlbworkshop_low
     </copy>
     ```
 
-    * If you prefer to use a different connection, simply replace the command with that connection. 
+    * If you prefer to use a different connection, simply replace the command with that connection. If you encounter any "cannot read/modify an object after modifying it in parallel" ORA errors while using other connection types with Liquibase, switch to the low connection type where parallelism is not active.
          * apexlbworkshop_high
             * High priority application connection service for reporting and batch operations. All operations run in parallel and are subject to queuing.
          * apexlbworkshop_medium
@@ -377,4 +377,4 @@ Check out [Talke Tech](https://www.talke.tech/) and [thatjeffsmith](https://www.
 ## Acknowledgements
 
 - **Author** - Zachary Talke, Senior Product Manager
-- **Last Updated By/Date** - Zachary Talke, August 2023
+- **Last Updated By/Date** - Zachary Talke, May 2024
