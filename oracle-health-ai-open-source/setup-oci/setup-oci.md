@@ -43,9 +43,9 @@ This lab assumes:
       
       Therefore, by default it is easiest to simply download the src to a location on your computer using the follow git clone command:
    
-        ```text
-        <copy>git clone https://github.com/oracle-devrel/oracle-health-ai-open-source.git</copy>
-        ```
+      ```text
+      <copy>git clone https://github.com/oracle-devrel/oracle-health-ai-open-source.git</copy>
+      ```
    
       or download and extract the zip code from https://github.com/oracle-devrel/oracle-health-ai-open-source/zipball/master
 
@@ -186,9 +186,9 @@ This lab assumes:
     
        Your policy should look like this:
    
-        ```text
-        <copy>Allow group < group name > to manage all-resources in compartment < compartment name > </copy>
-        ```
+      ```text
+      <copy>Allow group < group name > to manage all-resources in compartment < compartment name > </copy>
+      ```
       
        for example, 
    
@@ -326,19 +326,20 @@ Policy creation steps for this service is same as all other services defined in 
       ![select dropdown](./images/databaseinit6.png " ")
    8. Now log back in as the `AIUSER`.
       ![log in as AIUSER](./images/databaseinit7.png " ")
-   9. Select `SQL` from the options on the screen.
-      ![select SQL](./images/databaseinit8.png " ")
+   9. Under **Database actions**, Select **SQL** from the options on the screen.
+      <!-- ![select SQL](./images/databaseinit8.png " ") Commented by Madhu -->  
+      ![select SQL](./images/databasesetup9.png " ")
+      You can view various navigation options available, select **SQL**
+      ![select SQL](./images/db-actions-00.png " ")
    10. Copy and paste the contents of the `aiuser-tables-indexes-functions.sql` file in the `sql` directory of the source you cloned/downloaded earlier
       ![paste aiuser-tables-indexes-functions.sql](./images/databaseinit9.png " ")
-   11. Replace the values in the dbms\_cloud.create_credential call with those in your oci config file from earlier. Note you can read the private_key in from file or paste the 
-      ![provide values for dbms_cloud.create_credential](./images/databaseinit11.png " ")
+   11. Replace the values in the dbms\_cloud.create\_credential call with those in your oci config file from earlier. Note you can read the private_key in from file or paste the 
+      ![provide values for dbms\_cloud.create\_credential](./images/databaseinit11.png " ")
    12. Select the run script button to execute the SQL statements.
       ![select run script](./images/runscriptbutton.png " ")
    13. Verify the SQL statements ran correctly. We will describe what each of these tables, functions, etc. does in the 
       ![very sql ran correctly](./images/databaseinit12.png " ")
-
-
-
+ 
 Congratulations. You have now set up an elaborate and robust cloud, AI, and database infrastructure and configured a full stack application to use it. 
 
 You should also have all of the necessary values in the env.properties file and the rest of workshop will now show off these features and architecture.
@@ -359,4 +360,5 @@ This concludes this lab. You can **proceed now to the next lab**.
 * **Author** - Madhusudhan Rao B M, Principal Product Manager, Oracle Database
 * **Author** - Paul Parkinson, Architect and Developer Advocate, Oracle Database
 
-* **Last Updated By/Date** - 2023.
+* **Last Updated By/Date** - June 2024.
+* **Update** - Database Actions screen

@@ -24,23 +24,17 @@ Watch the video below for a quick walk-through of the lab.
 
 Although you can connect to your autonomous database from local desktop tools, such as Oracle SQL Developer, you can conveniently access the browser-based SQL Worksheet directly from your Autonomous Database console.
 
-1. In your database's details page, click the **Database Actions** button.
+1. In your database's details page, click the **Database Actions** button. Then choose the **SQL** option.
 
     ![Click the Database Actions button](./images/click-database-actions-button.png " ")
 
-2. A sign-in page opens for Database Actions. For this lab, simply use your database instance's default administrator account, **Username - ADMIN**, and **Password** you specified when creating the database. Click **Sign in**.
+If a sign-in page opens for Database Actions, simply use your database instance's default administrator account, **Username - ADMIN**, and **Password** you specified when creating the database, then click **Sign in**.
 
-    ![Enter the user id and password](./images/db-actions-sign-in-complete.png " ")
+2. The Database Actions page opens with a SQL Worksheet window.
 
-3. The Database Actions page opens. In the **Development** box, click **SQL**.
+    ![SQL Worksheet screen](./images/sql-worksheet.png " ")
 
-    ![Click on SQL](./images/click-sql.png " ")
-
-4. The first time you open SQL Worksheet, a series of pop-up informational boxes introduce you to the main features. Click **Next** to take a tour through the informational boxes.
-
-    ![Click Next to take tour](./images/sql-worksheet-tour.png " ")
-
-    After touring through the informational boxes, keep this SQL Worksheet open and please **proceed to the next task.**
+   Please **proceed to the next task.**
 
 ## Task 2: Create a User
 Database administrators perform many tasks. One of their more common tasks is creating database users and assigning them unique usernames. After users log in to the database with their username and password, they can issue database SQL statements to create objects, query objects, and manage the database.
@@ -158,9 +152,9 @@ COMMIT;
 
 ## Want to Learn More?
 
-Click [here](https://docs.oracle.com/en/database/oracle/oracle-database/19/cncpt/introduction-to-oracle-database.html#GUID-A42A6EF0-20F8-4F4B-AFF7-09C100AE581E) for documentation introducing Oracle database fundamentals.
+Click [here](https://docs.oracle.com/en/database/oracle/oracle-database/23/cncpt/introduction-to-oracle-database.html) for documentation introducing Oracle database fundamentals.
 
 ## Acknowledgements
 
 - **Author** - Rick Green, Alex Keh
-- **Last Updated By/Date** - Alex Keh, June 2023
+- **Last Updated By/Date** - Alex Keh, May 2024

@@ -51,13 +51,14 @@ In this lab, you will:
 
     Click the **Database Actions** button.
 
-    ![database actions](images/autonomous-database-actions.png =50%x*  "database actions")
+    ![database actions](images/db-actions-01.png  "database actions")
 
     Select the **SQL** tab to open the **SQL worksheet**.
 
-    ![database actions](images/db-actions.png =50%x*  "database actions")
+    ![database actions](images/db-actions-00.png  "database actions")
 
-    ![sql worksheet](images/sql-worksheet.png =50%x*  "sql worksheet")
+    ![database actions](images/db-actions-04.png  "database actions")
+ 
 
 2. Create an Autonomous Database user <db\_user\> and grant required privileges to create tables. Copy-paste the code below into the SQL worksheet.
 
