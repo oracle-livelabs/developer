@@ -96,7 +96,7 @@ Now that we have a way to show departments, we'll use the Add Create Page Quick 
 
 5. In the Page Designer toolbar, click **Live** to make the form active. (Click **Properties** if you need to make room for the form.)
 
-    To indicate that you are in Live mode, the **Live** option now has a green background, and a green line appears around the page.
+    To indicate that you are in Live mode, the **Live** option now has a blue background, and a blue line appears around the page.
 
 6. Enter `IT` in the **Department** field, and select **Floor 4** from the **Location** list.
 
