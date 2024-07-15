@@ -24,7 +24,7 @@ In this lab, you will:
 
     ![image of console navigation to java management service](images/console-navigation-jms.png)
 
-2. Select the compartment created for JMS resources in Lab 1 (Compartment name should be **Fleet_Compartment**) and **Create fleet**.
+2. Select the compartment created for JMS resources in Lab 2 (Compartment name should be **Fleet_Compartment**) and **Create fleet**.
 
     ![image of create fleet](images/create-fleet-create-new.png)
 

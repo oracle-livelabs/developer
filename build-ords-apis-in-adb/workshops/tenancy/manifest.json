@@ -1,10 +1,10 @@
 {
-  "workshoptitle": "Modern Application Development with Oracle REST Data Services",
+  "workshoptitle": "ORDS: Build Powerful, Secure RESTful ORDS APIs for your Oracle Autonomous Database",
     "help": "livelabs-help-db_us@oracle.com",
 	"tutorials": [
         {
             "title": "Introduction",
-            "description": "Modern Application Development with Oracle REST Data Services Introduction",
+            "description": "ORDS: Build Powerful, Secure RESTful ORDS APIs for your Oracle Autonomous Database Introduction",
             "filename": "../../intro/intro.md"
         },
         {
@@ -33,7 +33,7 @@
             "filename": "../../load-data-and-biz-objs/load-data-and-biz-objs.md"
         },
         {
-            "title": "Lab 5: REST enable tables and add business logic",
+            "title": "Lab 5: REST-enable tables and add business logic",
             "description": "Modern App Dev with Oracle REST Data Services",
             "filename": "../../rest-enable-objects/rest-enable-objects.md"
         },

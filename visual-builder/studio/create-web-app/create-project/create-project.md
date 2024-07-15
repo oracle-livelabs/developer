@@ -4,7 +4,7 @@
 
 This lab shows you how to create a project for a new visual application, the foundation to build a web application in Oracle Visual Builder Studio.
 
-Estimated Time: 15 minutes
+Estimated Time: 10 minutes
 
 ### About this Lab
 
@@ -31,7 +31,7 @@ This lab assumes you have:
 
 As someone who creates a project, you'll automatically become the project's owner, responsible for project management. For the purposes of this workshop, we'll assume that you're also the developer who will create the HR web application.
 
-1. On VB Studio's Organization page, click the **Projects** tab, then click **\+ Create**.
+1. On VB Studio's Organization page, click **\+ Create** on the **Projects** tab.
 
     ![The All Projects page that appears when the Organization tab is selected on the main menu. The Projects tab is empty, with the Create button selected.](images/welcome.png "All projects screen")
 
@@ -82,7 +82,7 @@ Define an environment that points to your Visual Builder development instance, w
 
     ![The empty Development environment shown on the Environments page. An Add Instance button is shown in the Service Instances tab. The Details and Certificates tabs are also visible.](images/env-add-instance.png "Environments page")
 
-4. In the Add Service Instances dialog, with **Instance Type** set to **Visual Builder and Oracle Integration** and **Authentication Method** set to **Identity Domain** on the left, locate the Visual Builder instance in your tenancy. Once you find the instance you want to use, select it and click **Add**.
+4. With **Instance Type** set to **Visual Builder and Oracle Integration** and **Authentication Method** set to **Identity Domain** in the Add Service Instances dialog, locate the Visual Builder instance in your tenancy. Once you find the instance you want to use, select it and click **Add**.
 
     ![The Add Service Instances dialog with myVBinstance of type Visual Builder IDCS Resource selected. An Add button is also shown.](images/env-add-service-instances.png "Environments page")
 
@@ -105,13 +105,13 @@ You now need to create a workspace, a private area for you to work on your visua
 3. In the New Visual Application dialog:
 
     * Enter **HR Workspace** as the **Workspace Name**.
-    * Select **Development** (where you previously added a Visual Builder instance) as the **Development Environment**.
+    * Select **Development** (where you previously added a Visual Builder instance) as the **Development Environment**. If only one environment is available, it is automatically selected for you.
     * Leave **Default VBCS Application** as the **Visual Application Template**.
-    * Under **Git Repository**, click **Create new repository**, then enter **tutorial-hr-project** as the **Repository Name** and **hrbranch** as the **Working Branch Name**.
+    * Click **Create new repository** under **Git Repository**, enter **tutorial-hr-project** as the **Repository Name** and **hrbranch** as the **Working Branch Name**.
 
     Click **Create**.
 
-    Once your workspace is created, it opens on the Welcome page in the integrated development environment known as the Designer. The Welcome page is a launching point for connecting to data, creating apps, or adding artifacts. Before we proceed, let's take a tour of the Designer to better understand your workspace.
+    Once your workspace is created, it opens on the Welcome page in the integrated development environment known as the Designer. The Welcome page is a launching point for creating apps, connecting to data, or adding artifacts. Before we proceed, let's take a tour of the Designer to better understand your workspace.
 
     ![This image shows part of the HR Visual Application's Welcome page. The page contains tiles in three sections: Connect to Data, Create Apps, and Add Artifacts. On  the right are sections with references to documentation and other resources.](images/visual-app-welcome.png "Welcome page in the Designer")
 
@@ -121,7 +121,9 @@ You now need to create a workspace, a private area for you to work on your visua
 
     ![Header in the HR Visual Application workspace. The workspace name HR Visual Application is on the left. Next to it, the Git repository and current branch tutorial-hr-project.git / hrbranch are visible. On the right are icons that let you perform other actions: Undo, Redo, Preview, Publish Changes, Product Feedback, Go to File, and Menu.](images/header.png "Header")
 
-    On the left is the name of your current workspace, **HR Workspace**. Next to it is the project's Git repository (**tutorial-hr-project.git**) and the branch currently associated with your workspace (**hrbranch**). The **tutorial-hr-project.git** repo stores your visual application's files and is known as your project's _remote_ repository. It includes the **main** and **hrbranch** branches, created with initial content for your visual application. The **main** branch is the default branch created when a new repo is generated and is the source from which your visual application is built. The **hrbranch** you see in your workspace is a working copy of the remote **hrbranch** and serves as your _local_ repository. It initially has the same set of source files as the remote branch, but as you work with your visual application, it will include the changes you make.
+    On the left is the name of your current workspace, **HR Workspace**. Next to it is the project's Git repository (**tutorial-hr-project.git**) and the branch currently associated with your workspace (**hrbranch**).
+
+    The **tutorial-hr-project.git** repo stores your visual application's files and is known as your project's _remote_ repository. It includes the **main** and **hrbranch** branches, created with initial content for your visual application. The **main** branch is the default branch created when a new repo is generated and is the source from which your visual application is built. The **hrbranch** you see in your workspace is a working copy of the remote **hrbranch** and serves as your _local_ repository. It initially has the same set of source files as the remote branch, but as you work with your visual application, it will include the changes you make.
 
     Click the workspace and the Git repo/branch to see other actions that you can perform. Clicking ![Go to Project Page icon](images/go-to-project-home-icon.png) will take you back to the Project Home page.
 
@@ -131,11 +133,11 @@ You now need to create a workspace, a private area for you to work on your visua
 
     ![Footer in the HR Visual Application workspace, which shows Audits, Find in Files, Git History, and Tests tabs.](images/footer.png "Footer")
 
-    Keep in mind that VB Studio saves your changes automatically as you work. A timestamp at the bottom of the page will show the time  your work was last saved. Note that changes are only saved to your local workspace repo—but more on that later.
+    Keep in mind that VB Studio saves your changes automatically as you work. When you begin to make changes, a timestamp at the bottom of the page will show the time  your work was last saved. Note that changes are only saved to your local workspace repo—but more on that later.
 
     You are now ready to create a web app and may **proceed to the next lab**.
 
 ## Acknowledgements
 
 * **Author** - Sheryl Manoharan, VB Studio User Assistance, November 2021
-* **Last Updated By/Date** - Sheryl Manoharan, November 2023
+* **Last Updated By/Date** - Sheryl Manoharan, April 2024

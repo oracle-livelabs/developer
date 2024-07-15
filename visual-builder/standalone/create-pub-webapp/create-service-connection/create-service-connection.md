@@ -36,6 +36,7 @@ This lab assumes you have:
 In this step, we'll connect the HR application to an external REST endpoint that provides information about a country.
 
 1. Click the **Services** ![Web Applications icon](images/services-icon.png) tab in the Navigator.
+
 2. Click **+ Service Connection** to open the Create Service Connection wizard.
 
     ![This image shows the Select Source screen of the Create Service Connection. Three options are visible: Select from Catalog, Define by Specification, and Define by Endpoint.](images/service-connection-wizard.png "")
@@ -47,10 +48,12 @@ In this step, we'll connect the HR application to an external REST endpoint that
 
     Click **Define by Endpoint**.
 
-3. Enter `https://restcountries.com/v2/alpha/{code}` in the **URL** field and select **Get One** in the **Action Hint** list. Leave the **Method** field set to **GET**, and click **Create Backend**.
-  ![This image shows the Define by Endpoint page. The Method field is set to GET, the URL is set to the base URI of a service, and Get One is selected in the Action Hint drop-down list.](images/service-connection-wizard-url.png "")
+3. With the **Method** field set to **GET**, enter `https://restcountries.com/v2/alpha/{code}` in the **URL** field and select **Get One** in the **Action Hint** list.
+   ![This image shows the Define by Endpoint page. The Method field is set to GET, the URL is set to the base URI of a service, and Get One is selected in the Action Hint drop-down list.](images/service-connection-wizard-url.png "")
 
-4. Because all service connections require a backend to simplify the task of managing server attributes, you'll need to create a backend. On the Backend Specification step, enter `Countries` in the **Backend Name** field. Leave all other fields to their defaults and click **Next**.
+    Because all service connections require a backend to simplify the task of managing server attributes, you'll need to create a backend. Click **Create Backend**.
+
+4. On the Backend Specification step, enter `Countries` in the **Backend Name** field. Leave all other fields to their defaults and click **Next**.
 
 5. In the Overview tab, enter the **Service Name** as `Countries` and change the **Title** to `Country`.
 
@@ -76,7 +79,7 @@ Now that we have our service connection, let's change the Edit Employee page to 
 
 1. Click the **Web Applications** ![Web Applications icon](images/webapp-icon.png) tab, then select the **main-edit-employee** page.
 
-2. In the Components palette, locate the **Heading** component and drag and drop it onto the canvas, just above the Toolbar component with the Cancel and Save buttons.
+2. In the Components palette, locate the **Heading** component and drag and drop it onto the canvas, at the very end of the page after the Form Layout's components.
 
 3. In the Heading's properties, change the **Text** field's value to `Country Info` and move the **Level** slider to H6.
 
@@ -131,7 +134,7 @@ In this step, we'll use the Country field as the data source for our variables a
 
     ![This image shows the Country Input Text component on the Edit Employee page selected.](images/country-field.png "")
 
-2. Click the component's **Events** tab in the Properties pane, then select **+ New Event** and **On 'value'**.
+2. Click the component's **Events** tab in the Properties pane, then select **+ Event Listener** and **On 'value'**.
 
 3. When the InputTextValueChangeChain opens in the Action Chains editor, double-click the **Call REST** action in the Actions palette to add it to the canvas.
 
@@ -149,11 +152,11 @@ In this step, we'll use the Country field as the data source for our variables a
 
     Click **Save**.
 
-8. Drag and drop an **Assign Variables** action on the canvas to follow the Call REST action. In the Assign Variable action's Properties pane, select **countryTypeVar** under **Page** in the **Variable** list. Hover over the **Value** property, open the Variable picker, expand **callRestCountriesGetAlphaCodeResult** under Action Chain, and select **body**.
+8. Drag and drop an **Assign Variable** action on the canvas to follow the Call REST action. In the Assign Variable action's Properties pane, select **countryTypeVar** under **Page** in the **Variable** list. Hover over the **Value** property, open the Variable picker, expand **callRestCountriesGetAlphaCodeResult** under Local, and select **body**.
 
     ![This Assign Variable action's properties show the Variable property set to countryTypeVar. The Value property shows the variable picker, with body under Action Chain and callRestCountriesGetAlphaCodeResult highlighted.](images/assignvariable-bodytocountrytypevar.png "")
 
-  What we're doing is mapping the data returned by the getAlphaCode REST call to the variables that populate components on the page. Because the field names are identical to the REST response, Visual Builder automatically knows how to map each field to its data source. Click **Save**.
+  What we're doing is mapping the data returned by the getAlphaCode REST call to the variables that populate components on the page. Because the field names are identical to the REST response, Visual Builder automatically knows how to map each field to its data source.
 
 ## Task 5: Test the employee's country details
 
@@ -174,4 +177,4 @@ In this step, we'll use the Country field as the data source for our variables a
 ## Acknowledgements
 
 * **Author** - Sheryl Manoharan, Visual Builder User Assistance, August 2021
-* **Last Updated By** - August 2023
+* **Last Updated By** - February 2024

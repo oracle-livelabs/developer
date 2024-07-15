@@ -59,7 +59,7 @@ Before you share your app, let's enable it to run as a Progressive Web App—or 
 
 Let's now share the application so your team can test its behavior.
 
-1. Click ![Options menu icon](images/options-header-menu.png) **Menu** in the header and select **Share**.
+1. Click **Menu** in the header and select **Share**.
 
     ![The Menu in the header is shown with the Share option selected.](images/share.png "")
 
@@ -73,13 +73,13 @@ Let's now share the application so your team can test its behavior.
 
 Now that you've shared your application, you need to get its URL so you can pass it along to your team. You do this by opening the application itself, or by copying the URL when you shared the application. Remember that your team members will need the proper credentials to view your shared application.
 
-1. Click ![Options menu icon](images/options-header-menu.png) **Menu** and select **Open Shared Application**. If the option does not appear or is not active, it means your application is not yet fully deployed. Wait a while and try again.
+1. Click **Menu** and select **Open Shared Application**. If the option does not appear or is not active, it means your application is not yet fully deployed. Wait a while and try again.
 
     ![The Menu in the header is shown with the Open Shared Application option selected.](images/open-shared-application.png "")
 
     The shared application opens in a new browser tab. It includes all the changes you've made in your workspace, even those that were not pushed to the remote branch; it also displays data from your workspace.
 
-    An **Install HR App** ![Install HR App icon](images/install-app-icon.png) icon that lets you install the app as a PWA also shows up on the address bar—we'll see how this works in a later lab.
+    Notice the **Install HR App** ![Install HR App icon](images/install-app-icon.png) icon on the address bar that lets you install the app as a PWA—we'll see how this works in a later lab.
 
     ![The shared web application is shown in a new browser tab, with the data imported from your workspace.](images/open-shared-application-result.png "")
 
@@ -97,4 +97,4 @@ Now that you've shared your application, you need to get its URL so you can pass
 ## Acknowledgements
 
 * **Author** - Sheryl Manoharan, VB Studio User Assistance, November 2021
-* **Last Updated By/Date** - Sheryl Manoharan, November 2023
+* **Last Updated By/Date** - Sheryl Manoharan, April 2024
