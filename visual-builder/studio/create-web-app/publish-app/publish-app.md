@@ -66,7 +66,7 @@ Assuming your merge request has been approved, let's now merge your changes to t
 
     The merge request shows as Merged. If you didn't choose to delete the branch, you can do so now if you want.
 
-    Once your changes are merged, VB Studio automatically kicks off build jobs that package and deploy your visual application to the development environment. These jobs—**tutorial-hr-project-Package** and **tutorial-hr-project-Deploy**—are automatically generated when your workspace was first created. VB Studio also creates a pipeline, which, by default, runs the package job before the deploy job, so the latest application artifacts are packaged for deployment.
+    Once your changes are merged, VB Studio automatically kicks off build jobs that package and deploy your visual application to the development environment. These jobs—**tutorial-hr-project-Package** and **tutorial-hr-project-Deploy**—were automatically generated when your workspace was first created. VB Studio also creates a pipeline, which, by default, runs the package job before the deploy job, so the latest application artifacts are packaged for deployment.
 
     Click ![Builds icon](images/vbs-builds-icon.png) **Builds** to view the progress of your build jobs.
 
@@ -125,4 +125,4 @@ A deployed application does not automatically include its business object data, 
 ## Acknowledgements
 
 * **Author** - Sheryl Manoharan, VB Studio User Assistance, November 2021
-* **Last Updated By/Date** - Sheryl Manoharan, April 2024
+* **Last Updated By/Date** - Sheryl Manoharan, July 2024
