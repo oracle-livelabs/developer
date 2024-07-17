@@ -40,12 +40,7 @@ In this step, we'll connect the HR application to an external REST endpoint that
 
     ![The Select Source screen of the Create Service Connection is shown. Three options are visible: Select from Catalog, Define by Specification, and Define by Endpoint.](images/service-connection-wizard.png "")
 
-    This wizard presents various options to connect to REST endpoints:
-    * When you have access to an Oracle Cloud Applications or Oracle Integration instance, you use the **Select from Catalog** option to access endpoints exposed by these Oracle services.
-    * When you have access to a Swagger or Oracle ADF file that describes a service, you use the **Define by Specification** option.
-    * When you know the URL of an external REST endpoint, you use the **Define by Endpoint** option—which is what we'll do here.
-
-    Click **Define by Endpoint**.
+    Because we know the URL of the REST endpoint we want to connect to, click **Define by Endpoint**.
 
 3. With the **Method** field set to **GET**, enter `https://restcountries.com/v2/alpha/{code}` in the **URL** field and select **Get One** in the **Action Hint** list.
 
