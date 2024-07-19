@@ -64,7 +64,7 @@ This lab assumes you have:
 
     ![Image alt text](images/create-user.png " ")
 
-11. Click **Granted Roles**. Add **ORDS_ADMINISTRATOR_ROLE**, **ORDS_RUNTIME_ROLE** as Granted and Default.
+11. Click **Granted Roles**. Add ```ORDS_ADMINISTRATOR_ROLE```, ```ORDS_RUNTIME_ROLE``` as Granted and Default.
 
     ![Image alt text](images/granted-roles.png " ")
 
