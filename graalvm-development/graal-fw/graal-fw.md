@@ -44,7 +44,7 @@ native imageの高速起動と小さいフットプリントはJavaベースの�
     -->
 
     ```
-    <copy>wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/LNAcA6wNFvhkvHGPcWIbKlyGkicSOVCIgWLIu6t7W2BQfwq2NSLCsXpTL9wVzjuP/n/c4u04/b/livelabsfiles/o/developer-library/mndemo.zip</copy>
+    <copy>wget https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/developer-library/mndemo.zip</copy>
     ```
 
     ```
@@ -82,12 +82,12 @@ native imageの高速起動と小さいフットプリントはJavaベースの�
     </copy>
     ```
     Ctrl＋Xを押し、内容保存の確認メッセージに対し、"Y"を入力し、Enterを押下してソースファイルを保存します。
-  | ソース箇所 | 実行内容 |
-  | --- | --- |
-  | ① | @Controller アノテーションがコントローラーを定義し、/helloというリクエスト・パスに対応します。 | 
-  | ② |@Get アノテーションは下記index メソッドをすべてのHTTP Getリクエストに対応するようにマッピングします。| 
-  | ③ |デフォルトではMicronautアプリのレスポンスのContentTypeはapplicaiton/jasonです。ここではJSONオブジェクトの代わりにStringをリターンしますので、text/plain を明示的に指定します。 |
-  | ④ | "Hello World"　をリターンします。 |
+  | ソース箇所 | 実行内容                                                                                                                                                                       |
+  | ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+  | ①          | @Controller アノテーションがコントローラーを定義し、/helloというリクエスト・パスに対応します。                                                                                 |
+  | ②          | @Get アノテーションは下記index メソッドをすべてのHTTP Getリクエストに対応するようにマッピングします。                                                                          |
+  | ③          | デフォルトではMicronautアプリのレスポンスのContentTypeはapplicaiton/jasonです。ここではJSONオブジェクトの代わりにStringをリターンしますので、text/plain を明示的に指定します。 |
+  | ④          | "Hello World"　をリターンします。                                                                                                                                              |
 
 3. ソースファイルをビルドします。mndemo配下で以下のコマンドを実行します。
 
@@ -151,9 +151,9 @@ native imageの高速起動と小さいフットプリントはJavaベースの�
     ![stop micronaut](images/micronaut-stop02.png)
 
 
-  | Column | JITモード | Nativeモード |
-  | --- | --- | --- |
-  | 起動時間 | 821ms | 14ms  |
+  | Column   | JITモード | Nativeモード |
+  | -------- | --------- | ------------ |
+  | 起動時間 | 821ms     | 14ms         |
 
 
 ## Task 2: Spring Bootアプリケーションの開発
@@ -176,7 +176,7 @@ native imageの高速起動と小さいフットプリントはJavaベースの�
     -->
 
     ```
-    <copy>wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/LNAcA6wNFvhkvHGPcWIbKlyGkicSOVCIgWLIu6t7W2BQfwq2NSLCsXpTL9wVzjuP/n/c4u04/b/livelabsfiles/o/developer-library/spdemo.zip</copy>
+    <copy>wget https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/developer-library/spdemo.zip</copy>
     ```
 
     ```

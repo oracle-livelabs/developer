@@ -107,10 +107,10 @@ VB Studio apps are event-driven, which means that an event is fired when an end 
 
 1. In Design view, select the Info button, then click **Events** in the Properties pane:
 
-	![Events tab](images/infobuttonevents.png)
+	![Events tab](images/buttonevents.png)
 
-2. Click **+ New Event**, then **On ojAction**. Note if you see an onClick event instead, it means you selected the icon instead of the button - switch to select the button in the structure panel.:
-	![New event](images/infobuttonnewevent.png)
+2. Click **+ Event Listener**, then **On ojAction**. Note if you see an onClick event instead, it means you selected the icon instead of the button - switch to select the button in the structure panel.:
+	![New event](images/buttonnewevent.png)
 
 	You're now in the Action Chain Editor.
 
@@ -155,10 +155,10 @@ Your **ButtonActionChain** should look like this:
 
 1. Switch back to the Design view in the Page Designer tab, select the Edit button, then click **Events** in the Properties pane:
 
-	![Events tab](images/eventproperties2.png)
+	![Events tab](images/buttonevents.png)
 
-2. Click **+ New Event**, then **On ojAction**. Note if you see an onClick event instead, it means you selected the icon instead of the button - switch to select the button in the structure panel.:
-	![New event](images/newevent2.png)
+2. Click **+ Event Listener**, then **On ojAction**. Note if you see an onClick event instead, it means you selected the icon instead of the button - switch to select the button in the structure panel.:
+	![New event](images/buttonnewevent.png)
 
 	You're now in the Action Chain Editor.
 
