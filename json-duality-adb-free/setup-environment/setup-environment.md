@@ -36,7 +36,7 @@ This lab assumes you have:
 
     ![Image alt text](images/reservation-info.png " ")
 
-4. Use **Oracle Cloud Infrastructure Direct Sign-in** to paste the password you copied. When you log-in for the first time, it will ask you to update the password. Write down in your notes the new password.
+4. Use **Oracle Cloud Infrastructure Direct Sign-in** to paste the password you copied. When you log-in for the first time, it will ask you to update the password. Write down in your notes the new password. Also make a note of the compartment name.
 
     ![Image alt text](images/oci-sing-in.png " ")
 
@@ -44,7 +44,7 @@ This lab assumes you have:
 
     ![Image alt text](images/main-menu.png " ")
 
-6. Select your reservation **Compartment** on the left side drop-down, and click on your Autonomous Database instance name.
+6. Select your reservation **Compartment** on the left side drop-down, and click on your Autonomous Database instance name. Your compartment name is the same which was noted from the reservation information screen.
 
     ![Image alt text](images/adb-instance.png " ")
 
@@ -64,7 +64,7 @@ This lab assumes you have:
 
     ![Image alt text](images/create-user.png " ")
 
-11. Click **Granted Roles**. Add ORDS_ADMINISTRATOR_ROLE, ORDS_RUNTIME_ROLE as Granted and Default.
+11. Click **Granted Roles**. Add ```ORDS_ADMINISTRATOR_ROLE```, ```ORDS_RUNTIME_ROLE``` as Granted and Default.
 
     ![Image alt text](images/granted-roles.png " ")
 
@@ -84,11 +84,13 @@ This lab assumes you have:
 
     ![Image alt text](images/hol23ai-sign-in.png " ")
 
-16. Click **SQL** worksheet button under Development.
+16. Click **SQL** worksheet button under Development and Click **Open*.
 
     ![Image alt text](images/development-sql.png " ")
 
 17. As you go through this workshop, we will specify click the Run button or Run Script button. The Run button runs just one SQL Statement and formats the output into a data grid. The Run Script button runs many SQL statements and spools their output. We will highlight which to use.
+
+    **NOTE**: If you are using mac, then select the code and use 'cmd+enter' to run the command individually.
 
     ![Image alt text](images/run-sql-script.png " ")
  
@@ -207,6 +209,8 @@ This lab assumes you have:
 5. Create a duality view for the race table. Notice that we are using 3 different tables to create one view. We are also using the `UNNEST` command to unnest the information from the driver table into the sub-object `result` instead of it being another sub-object within that same field. 
 
     **NOTE:** Make sure to press 'enter' after copy and pasting the code block so that view is created.
+
+    **NOTE**: Worksheet might show errors in the code, but they can be ignored.
 
     ```sql
     SQL> <copy>CREATE OR REPLACE JSON RELATIONAL DUALITY VIEW race_dv AS
