@@ -32,7 +32,7 @@ The main screen has one (1) input field and one (1) button. The input field is u
 
     ![telegram-bot-gui-new-item](images/application-1.png "telegram bot new todo item")
 
-2. The Spring AI will initiate the interaction by submitting the prompt to the RAG process that will be executed by combining the data from the remote Cohere AI Command-R model and the Oracle Database 23ai, which will use the Oracle AI Vector Search functionality to retrieve the embeddings (store vector data).
+2. The Spring AI application will initiates the interaction and submits a prompt to the RAG process that will be executed with data combined from the remote Cohere AI Command-R model and the Oracle Database 23ai, which will use the Oracle AI Vector Search functionality to retrieve the embeddings (store vector data).
 
     ![telegram-bot-gui-main-buttons](images/rag-process.png "telegram main screen buttons")
 
@@ -43,7 +43,7 @@ The main screen has one (1) input field and one (1) button. The input field is u
 
 ## Task 2: Understand the Spring AI with Cohere AI and Oracle Database 23ai implementation
 
-The application is simple; it uses Spring Boot and the Spring AI frameworks to perform the interactions with both the Cohere AI Command-R model and the Oracle Database 23ai, which is accessed by using JDBC, UCP and Oracle AI Vector Search to retrieve the vector embeddings that support the RAG functionality.
+The application is simple; it uses Spring Boot and the Spring AI frameworks to perform the interactions with both the Cohere AI Command-R model and the Oracle Database 23ai, which is accessed with JDBC, UCP and Oracle AI Vector Search to retrieve the vector embeddings that support the RAG functionality.
 
 1. The central component that controls the ingestion of our domain-related data, that is a PDF file -  What’s in Oracle Database 23ai for Java Developers? - which is started along with the Spring Boot/AI application on the same main entry point class, that is, the Java class with the "@SpringBootApplication" annotation. Specifically, the Java class OracleDatabaseVectorStoreConfig.java with the "@Configuration" annotation will perform the ingestion steps.
 
@@ -57,7 +57,7 @@ The application is simple; it uses Spring Boot and the Spring AI frameworks to p
 
     ![spring-rag-controller](images/spring-rag-controller.png "spring boot rag controller ")
 
-4. Next, the Spring service class - OracleDatabaseVectorService.java - implements the RAG interaction implementation, including the methods to start the similarity search and the template for the input prompt.
+4. Next, the Spring service class - OracleDatabaseVectorService.java - implements the RAG interaction implementation, and comprises methods to start the similarity search and the template for the input prompt.
 
     ![spring-rag-service](images/rag-prompt-template-similarity.png "spring boot service")
 
@@ -75,7 +75,7 @@ The latter implements an interface provided by Spring AI that supports the inges
 
 You must configure your Spring AI application to use the Cohere Command-R model. You must provide the model URL, the chat model name, and the embeddings model name.
 
-1. Configure the Telegram Bot details. Navigate to `$MTDRWORKSHOP_LOCATION/backend/src/main/resources`, use a text editor (vi, vim, nano, etc) to open the application.properties file, then add the three entries below to configure the "Cohere Command-R model" parameters. Note that you have to provide the hostname [GPU_SERVER_IP] of your server where the model is located.
+1. Configure the Cohere AI model details. Navigate to `$MTDRWORKSHOP_LOCATION/backend/src/main/resources`, use a text editor (vi, vim, nano, etc) to open the application.properties file, then add the three entries below to configure the "Cohere Command-R model" parameters. Note that you have to provide the hostname [GPU_SERVER_IP] of your server where the model is located.
 
     ```
     <copy>
