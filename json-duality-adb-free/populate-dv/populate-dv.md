@@ -37,8 +37,16 @@ This lab assumes you have:
 
     ```
     $ <copy>mkdir json-autorest</copy>
+    ```
+    
+    ``` 
     $ <copy>cd json-autorest</copy>
+    ```
+    
+    ```
     $ <copy>wget -O json_autorest.zip https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/Tjh1Lpwt8gDG458HW4aPKL240xohfcD_j4pUNMZhQuVXdrHndzrqEeuNX2F836BS/n/oraclepartnersas/b/WS-files/o/DualityWS/json_autorest.zip</copy>
+    ```
+    ```
     $ <copy>unzip json_autorest.zip</copy>
     ```
 
