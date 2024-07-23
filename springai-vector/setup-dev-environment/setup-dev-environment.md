@@ -93,13 +93,13 @@ Watch the video below for a quick walk-through of the lab.
 
     ````
     <copy>
-    mkdir springboot-vector
+    mkdir vector
     </copy>
     ````
 
     ````
     <copy>
-    cd springboot-vector
+    cd vector
     </copy>
     ````
 ## Task 4: Clone the Workshop Code

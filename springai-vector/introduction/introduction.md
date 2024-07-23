@@ -24,7 +24,7 @@ In this 3 part workshop, you will:
 
 * Provision a Kubernetes cluster, Oracle Autonomous Database, a Container Registry, and the Cohere Command-R GenAI model
 * Understand, build, and deploy a Java tier to implement REST APIs and a GenAI use case with RAG (Retrieval-Augmented Generation), the Spring Boot framework, Docker, the OCI Container Registry, and a Kubernetes service
-* Understand, build, and deploy a Cohere Command-R model to receive REST API calls from a Spring AI application. The solution also has a React JS front that you can deploy over an OCI Object storage bucket.
+* Understand, build, and deploy a Cohere Command-R model to receive REST API calls from a Spring AI application.
 
 ### Prerequisites
 
