@@ -29,20 +29,43 @@ Estimated Time:  25 minutes
 
 ## Task 2: Build and run Python applicaiton
 
-1. Open a terminal/shell.
-2. cd to the directory where the workshop src (and thus `env.properties`) exists, ie `cd [workspace_src_directory]`.
-3. Token-based authentication: https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/clitoken.htm
+   1. Open a terminal/shell.
 
-     ```text
-     <copy>oci session authenticate ; oci iam region list --config-file /Users/YOURHOMEDIR/.oci/config --profile MYSPEECHAIPROFILE --auth security_token</copy>
-     ```
+   2. cd to the `python-realtimespeech-selectai` directory where the workshop src exists, ie `cd [workspace_src_directory]`.
 
-4. Issue the following to run the application
+   3. Token-based authentication: https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/clitoken.htm
 
-     ```text
-     <copy>./run.sh</copy>
-     ```
+       ```text
+       <copy>oci session authenticate ; oci iam region list --config-file /Users/YOURHOMEDIR/.oci/config --profile MYSPEECHAIPROFILE --auth security_token</copy>
+       ```
+      ![Create Security Token](images/createsecuritytoken.png " ")
 
+      * Note: After some period of time, if the token is nto renewed, `AUTHENTICATION_FAILURE: Could not authenticate` will be thrown and this command will need to be re-run.
+
+   4. In RealtimeClient.py, update **line 144** with your `compartmentId` and update **line 32** with your `authentication method` and `profile`
+
+   5.  Install required Python libraries
+   
+      ```bash
+      <copy>pip install -r requirements.txt</copy>
+      ```
+
+   6. Run Python File
+
+      ```bash
+        <copy>python src/RealtimeSpeechSelectAI.py</copy>
+      ```
+
+   8.  Allow access to the microphone if necessary and speech commands.
+       You will see the words you speech in the console output.
+
+   9. Say "select AI " and then remain silent and notice the return from the database for that NL2SQL/ Select AI query.
+
+   7. Make changes in RealtimeSpeechSelectAI.py to further enhance the application...
+
+        - modify the various parameters for the audio capture.
+        - modify the various parameters for the realtime service. 
+        - modify the Speech AI service endpoint if required.
 
 
 You may now **proceed to the next lab.**..
