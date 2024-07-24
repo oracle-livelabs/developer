@@ -34,7 +34,7 @@ Estimated Time:  25 minutes
 3. Token-based authentication: https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/clitoken.htm
 
      ```text
-     <copy>./build.sh</copy>
+     <copy>oci session authenticate ; oci iam region list --config-file /Users/YOURHOMEDIR/.oci/config --profile MYSPEECHAIPROFILE --auth security_token</copy>
      ```
 
 4. Issue the following to run the application
