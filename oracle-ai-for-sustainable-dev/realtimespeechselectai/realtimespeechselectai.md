@@ -25,7 +25,7 @@ Estimated Time:  25 minutes
 
    1.  Go here: https://apexapps.oracle.com/pls/apex/r/dbpm/livelabs/run-workshop?p210_wid=3831
 
-
+   2.  Download the wallet for the database created in the workshop in step 1. Note the password you use to download the wallet.
 
 ## Task 2: Build and run Python applicaiton
 
@@ -33,16 +33,26 @@ Estimated Time:  25 minutes
 
    2. cd to the `python-realtimespeech-selectai` directory where the workshop src exists, ie `cd [workspace_src_directory]`.
 
-   3. Token-based authentication: https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/clitoken.htm
+   3. Generate a security_token_file and an oci config profile entry that contains it.
+      Simply issue the following command (providing the correct values for `--config-file` and `--profile`)
+      
+      This technique bring up a browser for you to authenticate and receive and write the token file locally and update your .oci/config file with the same..
+
+      When  prompted, provide the name of the profile you would like to create:
 
        ```text
        <copy>oci session authenticate ; oci iam region list --config-file /Users/YOURHOMEDIR/.oci/config --profile MYSPEECHAIPROFILE --auth security_token</copy>
        ```
+      
       ![Create Security Token](images/createsecuritytoken.png " ")
 
-      * Note: After some period of time, if the token is nto renewed, `AUTHENTICATION_FAILURE: Could not authenticate` will be thrown and this command will need to be re-run.
+      * Note: After some period of time, if the token is not renewed, `AUTHENTICATION_FAILURE: Could not authenticate` will be thrown and this command will need to be re-run.
+      * More information can be found here: https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/clitoken.htm
 
-   4. In RealtimeClient.py, update **line 144** with your `compartmentId` and update **line 32** with your `authentication method` and `profile`
+   4. Update RealtimeSpeechSelectAI.py, to provide your values for `compartment_id` and `config = from_file[...]`
+      For example:
+      `compartment_id="ocid1.compartment.oc1..YOURCOMPARMENTID",`
+      `config = from_file("~/.oci/config", "paulspeechai")`
 
    5.  Install required Python libraries
    
@@ -50,18 +60,26 @@ Estimated Time:  25 minutes
       <copy>pip install -r requirements.txt</copy>
       ```
 
-   6. Run Python File
+   6. Run Python app
 
       ```bash
         <copy>python src/RealtimeSpeechSelectAI.py</copy>
       ```
+      
+      You will be prompted for password for the database user as well as the password for the PEM file (that is `ewallet.pem`) . This is the password you provided when you downloaded the wallet in step 2 of Task 1 above. 
 
-   8.  Allow access to the microphone if necessary and speech commands.
-       You will see the words you speech in the console output.
+      ![Enter DB and PEM passwords](images/enterdbandpempasswords.png " ")
+7. 
+      More details can be found in the doc here: https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/connecting-python-mtls.html
 
-   9. Say "select AI " and then remain silent and notice the return from the database for that NL2SQL/ Select AI query.
+   8.  Allow access to the microphone if necessary and speak commands.
+       You will see the words you speak in the console/terminal output of the application.
 
-   7. Make changes in RealtimeSpeechSelectAI.py to further enhance the application...
+   9. Say a "Select AI " command such as "select ai I am looking for the top 5 selling movies for the latest month please" and then remain silent and notice the return from the database for that NL2SQL/Select AI query.
+
+      ![Realtime Speech and Select AI App Output](images/realtimespeechselectai-appoutput.png " ")
+
+   10. Make changes in RealtimeSpeechSelectAI.py to further enhance the application...
 
         - modify the various parameters for the audio capture.
         - modify the various parameters for the realtime service. 
