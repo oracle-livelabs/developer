@@ -87,7 +87,7 @@ The application can be built and run in a couple ways:
 
    The following diagram shows a couple different AI application architectures.  Notice the advantages in functional and efficiency of using the Oracle Database at the heart of the architecture related to security, network traffic, analysis and processing, etc.
 
-   ![Different AI app architectures](images/ai-db-calls-arch.png " ")
+   ![Different AI app architectures](images/ai-db-calls-arch.jpeg " ")
 
 You may now **proceed to the next lab.**..
 
