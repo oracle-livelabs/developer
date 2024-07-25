@@ -4,7 +4,7 @@
 
 This lab walks you through the steps to work with SQL data and JSON documents at the same time in the Oracle 23ai database, looking at the true duality of the views.
 
-Regardless of which one you choose to work with, the underlying result in the database is the same, with SQL access and JSON document access to all data. Developers now get the flexibility and data access benefits of the JSON document model as well as the storage efficiency and power of the relational model.
+Regardless of which one you choose to work with, the underlying result in the database is the same: SQL access and JSON document access to all data. Developers now get the flexibility and data access benefits of the JSON document model as well as the storage efficiency and power of the relational model.
 
 Estimated Time: 10 minutes
 
@@ -23,7 +23,7 @@ This lab assumes you have:
 
 ## Task 1: Inserting into SQL tables and duality views
 
-1. We mentioned how the underlying base tables get populated when you add an entry into the JSON duality view. Here we will check the base table to ensure the record does not exist, insert into the duality view, and then check the base table. Copy the code and click **Run Script**.
+1. We mentioned how the underlying base tables get populated when you add an entry into the JSON duality view. Here we will check the base table to ensure the record does not exist, insert into the duality view, and then check the base table. Clear the worksheet, copy the code below and click **Run Script**.
 
     ```
     <copy>
@@ -42,7 +42,7 @@ This lab assumes you have:
     ```
     ![Image alt text](images/task_1_1.png " ")
 
-2. Now we will look at the opposite. Let's look at the duality view, insert into the base table and then check the duality view for the record. Copy the code and click **Run Script**.
+2. Now we will look at the opposite. Let's look at the duality view, insert into the base table and then check the duality view for the record. Clear the worksheet, copy the code below and click **Run Script**.
 
     ```
     <copy>
@@ -60,7 +60,7 @@ This lab assumes you have:
 
 ## Task 2: Update and replace a document by ID
 
-1. In the last lab, you were able to replace a document with the OBJECT\_ID through the duality view. You are able to get the same functionality with the SQL table. Copy the code and click **Run Script**.
+1. In the last lab, you were able to replace a document with the OBJECT\_ID through the duality view. You are able to get the same functionality with the SQL table. Clear the worksheet, copy the code below and click **Run Script**.
 
     ```
     <copy>
@@ -90,7 +90,7 @@ This lab assumes you have:
     ```
     ![Image alt text](images/task_2_1.png " ")
 
-2. When you update the JSON, you can check out the changes in the SQL table as well. Here we will update race 205 and change several fields including the race_date. We will also add records to the driver\_race\_map table. **Before** you run the update make sure the etag matches the record. We have provided the SQL to check the document for race id 205. If you get an error updating the JSON that is more than likely the issue. Copy the code below and click **Run Script**.
+2. When updating the JSON, you can check out the changes in the SQL table as well. Here we will update race 205 and change several fields including the race_date. We will also add records to the driver\_race\_map table. **Before** you run the update make sure the etag matches the record. We have provided the SQL to check the document for race id 205. If you get an error updating the JSON that is more than likely the issue. Clear the worksheet, copy the code below and click **Run Script**.
 
     ```
     <copy>
@@ -141,7 +141,7 @@ This lab assumes you have:
 
 ## Task 3: Delete by predicate
 
-1. We're going to delete a couple entries, but we want to see the current state of these tables first. Copy the code below and click **Run Script**.
+1. We're going to delete a couple entries, but we want to see the current state of these tables first. Clear the worksheet, copy the code below and click **Run Script**.
     ```
     <copy>
     SELECT name, race_date FROM race where race_id = 205;
@@ -155,9 +155,9 @@ This lab assumes you have:
     ```
     ![Image alt text](images/task_3_1.png " ")
 
-2. Delete the race document for race 204. The underlying rows are deleted from the race and driver\_race\_map tables. Copy the code and click **Run Script**.
+2. Delete the race document for race 204. The underlying rows are deleted from the race and driver\_race\_map tables. Clear the worksheet, copy the code below and click **Run Script**.
 
-    Note that we have to delete the rows of the race from the driver\_race\_map first, as they are child entries of the race entries in the race table. It will throw an error if you try to run the second command first.
+    Note: we have to delete the rows of the race from the driver\_race\_map first, as they are child entries of the race entries in the race table. It will throw an error if you try to run the second command first.
 
     ```
     <copy>
@@ -170,7 +170,7 @@ This lab assumes you have:
     ```
     ![Image alt text](images/task_3_2.png " ")
 
-3. Select from the tables again and you'll see they're gone from the duality view as well as the base SQL table. Copy the code and click **Run Script**.
+3. Select from the tables again and you'll see they're gone from the duality view as well as the base SQL table. Clear the worksheet, copy the code below and click **Run Script**.
 
 
     ```
@@ -183,7 +183,7 @@ This lab assumes you have:
     ```
     ![Image alt text](images/task_3_3.png " ")
 
-4. Lastly, we'll delete with JSON and view the tables again. Copy the code and click **Run Script**.
+4. Lastly, we'll delete with JSON and view the tables again. Clear the worksheet, copy the code below and click **Run Script**.
 
 
     ```
@@ -214,4 +214,4 @@ This lab assumes you have:
 ## Acknowledgements
 * **Author** - Valentin Tabacaru, Kaylien Phan, William Masdon
 * **Contributors** - David Start, Ranjan Priyadarshi
-* **Last Updated By/Date** - Valentin Tabacaru, Database Product Management, July 2024
+* **Last Updated By/Date** - Francis Regalado, Database Product Management, July 2024
