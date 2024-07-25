@@ -23,11 +23,13 @@ Estimated Time:  25 minutes
 
 - Completion of Setup lab
 
-## Task 1: Do the setup in the "Chat with Your Data in Autonomous Database Using Generative AI" workshop
+## Task 1: Do the setup in the "Chat with Your Data in Autonomous Database Using Generative AI" workshop and 
 
    1.  Go here: https://apexapps.oracle.com/pls/apex/r/dbpm/livelabs/run-workshop?p210_wid=3831
 
    2.  Download the wallet for the database created in the workshop in step 1 (click `Database Connection` on the `Autonomous Oracle Database` page of the database that was created). Note the password you use to download the wallet.  More info can be found here: https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/connect-download-wallet.html
+
+   3.  The Oracle real-time transcription services is currently in beta and will be released in August.  Setup simply involves setting speech AI policy/permissions as described in the setup lab.  More details can be found here: https://www.oracle.com/artificial-intelligence/speech/
 
 ## Task 2: Build and run Python application
 
