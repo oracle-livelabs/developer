@@ -22,12 +22,14 @@ This lab assumes you have:
 ## Task 1: Preparing your database user
 
 1. Your browser should be open at the Oracle LiveLabs My Reservations page. When your LiveLabs environment is ready, click **Launch Workshop**.
+    
+    ![Image alt text](images/launch-workshop.png " ")
 
 2. Click **View Login Info**.
 
     ![Image alt text](images/login-info.png " ")
 
-3. Click **Copy Password** and then **Launch OCI**.
+3. Click **Copy Password** and then **Launch OCI**. Verify that the password was correctly copied, if not, manually copy it.
 
     ![Image alt text](images/reservation-info.png " ")
 
@@ -39,59 +41,70 @@ This lab assumes you have:
 
     ![Image alt text](images/main-menu.png " ")
 
-6. Select your reservation **Compartment** on the left side drop-down, and click on your Autonomous Database instance name.
+6. Select your reservation **Compartment** on the left side drop-down, and click on your Autonomous Database instance name under Display name.
 
     ![Image alt text](images/adb-instance.png " ")
 
-7. Familiarize yourself with the OCI console for Autonomous Database.
+7. You will be within the Autonomous Database details. Feel free to amiliarize yourself with the OCI console for Autonomous Database and what we have to offer.
 
     ![Image alt text](images/adb-console.png " ")
 
-8. Use Database Actions menu to open **Database Users** console.
+8. Open Database actions, and select Database Users in the menu to open the **Database Users** console.
 
     ![Image alt text](images/database-actions.png " ")
 
-9. Click **Create User**.
+9. Once the landing page loads, Click **Create User**.
 
     ![Image alt text](images/database-users.png " ")
 
-10. Create a new user called **hol23ai** (case insensitive). You may use the same password from admin user you received on Reservation Information dialog at step #3. Enable **Web Access** and set **UNLIMITED** quota on tablespace DATA.
+    This will be the what will populate. 
+
+    ![Image alt text](images/create-user-0.png " ")
+
+10. Create a new user called **hol23ai** (case insensitive). You may use the same password from admin user you received on Reservation Information dialog at step #3. Next, Enable **Web Access** on the bottom on the screen. Finally, set Quota on Table **UNLIMITED** quota on tablespace DATA.
 
     ![Image alt text](images/create-user.png " ")
 
-11. Click **Granted Roles**. Add ORDS_ADMINISTRATOR_ROLE, ORDS_RUNTIME_ROLE as Granted and Default.
+11. Click **Granted Roles**. Type ords in the **Filter by role**. Add ORDS_ADMINISTRATOR_ROLE, ORDS_RUNTIME_ROLE as Granted and Default.
 
     ![Image alt text](images/granted-roles.png " ")
 
-12. Add DWROLE as Granted and Default. Click **Create User**.
-
+12. In the same **Filter by role**, search for dwrole. Add DWROLE as Granted and Default. Click **Create User**.
     ![Image alt text](images/dwrole.png " ")
 
-13. The new hol23ai user card will appear in the list. You can copy the SQL Developer URL in your notes.
+13. Verify the Granted Roles should reflect 5, once done click **Create User**.
+    ![Image alt text](images/create-user-done.png " ")
+
+
+14. The new hol23ai user card will appear in the list. You can copy the SQL Developer URL in your notes.
 
     ![Image alt text](images/hol23ai-user.png " ")
 
-14. Click the ADMIN user menu, and **Sign Out**.
+15. On the upper right hand of the console, Click the ADMIN user menu, and **Sign Out**.
 
     ![Image alt text](images/sign-out.png " ")
 
-15. Sing-in with the new user **hol23ai**.
+16. Sing-in with the new user **hol23ai**.
 
     ![Image alt text](images/hol23ai-sign-in.png " ")
 
-16. Click **SQL** worksheet button under Development.
+17. Once logged in, click SQL worksheet. This is where our work will be perfomed. Click **SQL** worksheet button under Development. If you are to sign out, you can go back to this section by clicking on **Development**.
 
     ![Image alt text](images/development-sql.png " ")
 
 
 ## Task 2: Creating your database tables and JSON duality views
 
-1. As you go through this workshop, we will specify click the Run button or Run Script button. The Run button runs just one SQL Statement and formats the output into a data grid. The Run Script button runs many SQL statements and spools their output. We will highlight which to use.
+1. Upon accessing the SQL for the first time, you'll be given a quick Tour of the console. This will explain what the different sections and icons in the console are used for. Feel free to hit Next and read the description or just hit the X to close the Tour. 
+
+    ![Image alt text](images/tour.png " ")
+
+2. As you go through this workshop, we will specify on where to use the click the Run button or Run Script button to run our statements. The Run button runs just one SQL Statement and formats the output into a data grid. The Run Script button runs many SQL statements and spools their output. We will highlight which to use.
 
     ![Image alt text](images/run-sql-script.png " ")
 
-2. You will need to create your tables. Copy the code below and run it in the worksheet by clicking the **Run Script** button.
-Note: The script uses the new 23ai syntax of if exists and if not exists. This prevents error messages if you need to rerun the script.
+3. You will need to create your tables. Copy the code below and run it in the worksheet by clicking the **Run Script** button.
+
 
 
     ```
@@ -138,9 +151,10 @@ Note: The script uses the new 23ai syntax of if exists and if not exists. This p
 
     </copy>
     ```
-    ![Image alt text](images/create_tables.png " ")
 
-3. Create a trigger on the driver\_race\_map table to populate the points fields in team and driver based on race results. You can either click the trash to clear the worksheet or delete what is there before pasting the code below. Click **Run Script**.
+    ![Image alt text](images/create-tables.png " ")
+
+4. We will now create a trigger on the driver\_race\_map table to populate the points fields in team and driver based on race results. You can either click the trash to clear the worksheet or delete what is there before pasting the code below.Once you've pasted the code into the Worksheet, Click **Run Script**.
 
     ```
     <copy>
@@ -185,9 +199,10 @@ Note: The script uses the new 23ai syntax of if exists and if not exists. This p
 
     </copy>
     ```
-    ![Image alt text](images/create_trigger.png " ")
 
-4. Now we will create the RACE\_DV duality view. Notice that we only allow update on the driver table but insert update delete on race and driver\_race\_map. You have the ability to control the interaction at the table level within your view. In the next step you will create a duality view to create and delete drivers. You can either click the trash to clear the worksheet or delete what is there before pasting the code below. Click **Run Script**.
+    ![Image alt text](images/create-trigger.png " ")
+
+5. Now we will create the RACE\_DV duality view. Notice that we only allow updates on the driver table but insert update delete onto race and driver\_race\_map. You have the ability to control the interaction at the table level within your view. In the next step you will create a duality view to create and delete drivers. You can either click the trash to clear the worksheet or delete what is there before pasting the code below. Once pasted, Click **Run Script**.
 
     ```
     <copy>
@@ -212,9 +227,9 @@ Note: The script uses the new 23ai syntax of if exists and if not exists. This p
 		</copy>
     ```
 
-	![Image alt text](images/create_race_dv.png " ")
+	![Image alt text](images/create-race-dv.png " ")
 
-5. Now we will create the DRIVER\_DV duality view. Since this is for drivers, we don't want them creating teams or races so we set those to noinsert, noupdate, nodelete. Also they can update or insert a driver's race map but not remove them. You can either click the trash to clear the worksheet or delete what is there before pasting the code below. Click **Run Script**.
+6. Now we will create the DRIVER\_DV duality view. Since this is for drivers, we don't want them creating teams or races so we shall set those to NOINSERT, NOUPDATE, NODELETE. They can also update or insert a driver's race map but not remove them. You can either click the trash to clear the worksheet or delete what is there before pasting the code below. Click **Run Script**.
 
 	```
 	<copy>
@@ -240,9 +255,9 @@ Note: The script uses the new 23ai syntax of if exists and if not exists. This p
     FROM driver d WITH INSERT UPDATE DELETE;
 	</copy>
     ```
-    ![Image alt text](images/create_driver_dv.png " ")
+    ![Image alt text](images/create-driver-dv.png " ")
 
-6. The last duality view is TEAMS\_DV. When creating or modifying a team you can insert or update a driver. You can either click the trash to clear the worksheet or delete what is there before pasting the code below. Click **Run Script**.
+7. The last duality view is TEAMS\_DV. When creating or modifying a team you can insert or update a driver. You can either click the trash to clear the worksheet or delete what is there before pasting the code below. Click **Run Script**.
 
 	```
 	<copy>  
@@ -260,10 +275,10 @@ Note: The script uses the new 23ai syntax of if exists and if not exists. This p
 
     </copy>
     ```
-	![Image alt text](images/create_team_dv.png " ")
+	![Image alt text](images/create-team-dv.png " ")
 
 ## Task 3: Populating the database
-1. We are inserting a collection of team documents into TEAM\_DV. This automatically populates the driver and team table as well as the driver collection. If you remember the team duality view joins team and driver. It also allows inserts into both tables. Copy the sql below and click **Run Script**
+1. We are now inserting a collection of team documents into TEAM\_DV. This automatically populates the driver and team table as well as the driver collection. If you remember, the team duality view joins team and driver. It also allows inserts into both tables. Copy the sql below and click **Run Script**
 
     ```
     <copy>
@@ -299,9 +314,9 @@ Note: The script uses the new 23ai syntax of if exists and if not exists. This p
     COMMIT;
 	</copy>
 	```
-	![Image alt text](images/insert_team_dv.png " ")
+	![Image alt text](images/insert-team-dv.png " ")
 
-2. Additionally, we are inserting a collection of race documents into RACE\_DV. This automatically populates the race table. Copy the sql below and click **Run Script**
+2. Additionally, we are now inserting a collection of race documents into RACE\_DV. This automatically populates the race table. You can either click the trash to clear the worksheet or delete what is there before pasting the code below. Copy the sql below and click **Run Script** 
 
 	```
     <copy>
@@ -330,9 +345,9 @@ Note: The script uses the new 23ai syntax of if exists and if not exists. This p
 
 3. Populating a duality view automatically updates data shown in related duality views, by updating their underlying tables.
 
-    For example, in the previous step documents were inserted into the team\_dv duality view. This duality view joins the team table with the driver table, so on insert into this duality view both the team table as well as the driver table are populated.
+    For example, in the previous step, documents were inserted into the team\_dv duality view. This duality view joins the team table with the driver table. Once we insert into this duality view, both the team table as well as the driver table are populated.
 
-    If you now list the contents of the driver\_dv duality view, which is based on the driver table, it has documents as well. Copy the sql below and click **Run Script**
+    If you now list the contents of the driver\_dv duality view, which is based on the driver table, it has documents as well. You can either click the trash to clear the worksheet or delete what is there before pasting the code below. Copy the sql below and click **Run Script** 
 
     ```
     <copy>
@@ -341,7 +356,7 @@ Note: The script uses the new 23ai syntax of if exists and if not exists. This p
     </copy>
     ```
 
-    ![Image alt text](images/print_driver_race.png " ")
+    ![Image alt text](images/print-driver-race.png " ")
 
     Your setup is now complete.
 
@@ -356,4 +371,4 @@ You may **proceed to the next lab.**
 ## Acknowledgements
 * **Author** - Valentin Tabacaru, Kaylien Phan, William Masdon
 * **Contributors** - David Start, Ranjan Priyadarshi
-* **Last Updated By/Date** - Valentin Tabacaru, Database Product Management, July 2024
+* **Last Updated By/Date** - Francis Regalado, Database Product Management, July 2024
