@@ -2,20 +2,22 @@
 
 ## Introduction
 
-This lab will show you how to use I other data.
+This lab will show you how to use OCI Real-time Speech Transcription in conjunction with Oracle Database NL2SQL/Select AI to `narrate`, `chat`, `showsql`, and `runsql` based on realtime voice instructions.
 
-Healthcare Communication and Management (Goal 3: Good Health and Well-being)
+![Realtime Speech and Select AI App Output](images/UNgoal3health.png " ")
 
-	•	Application: Use speech transcription and NLP to transcribe and analyze doctor-patient conversations in real-time, generating structured data for Electronic Health Records (EHRs).
-	•	Benefit: This can improve patient care by ensuring accurate and detailed medical records, enhancing diagnosis and treatment through better data analysis.
-	•	Goal: Ensure healthy lives and promote well-being for all at all ages.
+Healthcare Communication and Management (Goal 3 of the UN Sustainable Goals: Good Health and Well-being)
+
+ - Application: Use speech transcription and NLP to transcribe and analyze doctor-patient conversations in real-time, generating structured data for Electronic Health Records (EHRs).
+ - Benefit: This can improve patient care by ensuring accurate and detailed medical records, enhancing diagnosis and treatment through better data analysis.
+ - Goal: Ensure healthy lives and promote well-being for all at all ages.
 
 Estimated Time:  25 minutes
 
 
 ### Objectives
 
--   Use OCI Real-time Speech Transcription and Oracle Database NL2SQL/Select AI to analyze in real-time and generate EHRs of doctor-patient conversations.
+-   Develop a Python application that uses OCI Real-time Speech Transcription in conjunction with Oracle Database NL2SQL/Select AI to `narrate`, `chat`, `showsql`, and `runsql` based on realtime voice instructions.
 
 ### Prerequisites
 
@@ -25,7 +27,7 @@ Estimated Time:  25 minutes
 
    1.  Go here: https://apexapps.oracle.com/pls/apex/r/dbpm/livelabs/run-workshop?p210_wid=3831
 
-   2.  Download the wallet for the database created in the workshop in step 1. Note the password you use to download the wallet.
+   2.  Download the wallet for the database created in the workshop in step 1 (click `Database Connection` on the `Autonomous Oracle Database` page of the database that was created). Note the password you use to download the wallet.  More info can be found here: https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/connect-download-wallet.html
 
 ## Task 2: Build and run Python applicaiton
 
@@ -33,7 +35,7 @@ Estimated Time:  25 minutes
 
    2. cd to the `python-realtimespeech-selectai` directory where the workshop src exists, ie `cd [workspace_src_directory]`.
 
-   3. Generate a security_token_file and an oci config profile entry that contains it.
+   3. Generate a `security_token_file` and an oci config profile entry that contains it.
       Simply issue the following command (providing the correct values for `--config-file` and `--profile`)
       
       This technique bring up a browser for you to authenticate and receive and write the token file locally and update your .oci/config file with the same..
@@ -77,7 +79,7 @@ Estimated Time:  25 minutes
 
    9. Say a "Select AI " command such as "select ai I am looking for the top 5 selling movies for the latest month please" and then remain silent and notice the return from the database for that NL2SQL/Select AI query.
 
-      ![Realtime Speech and Select AI App Output](images/realtimespeechselectai-appoutput.png " ")
+      ![Realtime Speech and Select AI App Output](images/realtimespeechselectai-appoutput.png " ") 
 
    10. Make changes in RealtimeSpeechSelectAI.py to further enhance the application...
 
