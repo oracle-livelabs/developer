@@ -29,7 +29,7 @@ Estimated Time:  25 minutes
 
    2.  Download the wallet for the database created in the workshop in step 1 (click `Database Connection` on the `Autonomous Oracle Database` page of the database that was created). Note the password you use to download the wallet.  More info can be found here: https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/connect-download-wallet.html
 
-## Task 2: Build and run Python applicaiton
+## Task 2: Build and run Python application
 
    1. Open a terminal/shell.
 
