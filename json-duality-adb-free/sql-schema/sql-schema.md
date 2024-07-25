@@ -341,7 +341,7 @@ This lab assumes you have:
     </copy>
     ```
 
-	![Image alt text](images/insert_race_dv.png " ")
+	![Image alt text](images/insert-race-dv.png " ")
 
 3. Populating a duality view automatically updates data shown in related duality views, by updating their underlying tables.
 
