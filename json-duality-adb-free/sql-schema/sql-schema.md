@@ -199,7 +199,8 @@ This lab assumes you have:
 
     </copy>
     ```
-    ![Image alt text](images/create_trigger.png " ")
+
+    ![Image alt text](images/create-trigger.png " ")
 
 5. Now we will create the RACE\_DV duality view. Notice that we only allow updates on the driver table but insert update delete onto race and driver\_race\_map. You have the ability to control the interaction at the table level within your view. In the next step you will create a duality view to create and delete drivers. You can either click the trash to clear the worksheet or delete what is there before pasting the code below. Once pasted, Click **Run Script**.
 
