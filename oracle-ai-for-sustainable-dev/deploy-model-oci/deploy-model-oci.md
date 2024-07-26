@@ -238,4 +238,4 @@ After connecting to your instance, you will create a Conda environment and insta
 ## Acknowledgements
 * **Author** - Nacho Martínez Rincón, Data Scientist Advocate
 * **Author** - Hannah Nguyen, Solution Engineer, NACI Engineering Specialists
-* **Last Updated By/Date** - Paul Parkinson, 2023
+* **Last Updated By/Date** - Paul Parkinson, 2024
