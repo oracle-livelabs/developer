@@ -95,7 +95,7 @@ Let's now create your first business object and add data to it by importing a CS
 
     Click **Create Field**.
 
-7. For the newly created **location** field, select the check box in the **Required** column.
+7. For the newly created **location** field, select the checkbox in the **Required** column.
 
 8. Click [this link](https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/developer-library/location.csv) to download the `location.csv` file to your file system. This file contains four locations and provides the data for the Location business object.
 

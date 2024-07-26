@@ -60,11 +60,11 @@ Let's create a table to display your departments on the main-start page. The Tab
 
 8. On the Bind Data step, under item\[i\], select **id** and **department** (in that order). The two fields are added as Columns for your Departments table.
 
-   ![The Bind Data page of the Add Data quick start. The id and department check boxes are selected. In the Columns list, the columns are id and department.](images/department-add-data-selectfields.png "name")
+   ![The Bind Data page of the Add Data quick start. The id and department checkboxes are selected. In the Columns list, the columns are id and department.](images/department-add-data-selectfields.png "name")
 
 9. Expand the **locationObject** and **items** nodes (expand **item\[i\]** if it isn't already expanded) and select **location**. Because we created a reference-type field from the Department business object to the Location business object, the Location field is now available to us through the locationObject accessor (which lets us traverse relationships between the two objects). Click **Next**.
 
-    ![This image shows part of the Bind Data page of the Add Data quick start after the locationObject node has been expanded. The location check box is selected. In the Columns list, location appears at the bottom of the list.](images/department-add-data-selectitemfields.png "name")
+    ![This image shows part of the Bind Data page of the Add Data quick start after the locationObject node has been expanded. The location checkbox is selected. In the Columns list, location appears at the bottom of the list.](images/department-add-data-selectitemfields.png "name")
 
 10. On the Define Query step, click **Finish**.
 
@@ -82,7 +82,7 @@ Now that we have a way to show departments, we'll use the Add Create Page Quick 
 
 2. On the Page Detail step, select **location** (**department** is already selected because it's a required field). Department and Location are the only fields the user needs to specify to create a department.
 
-   ![The Page Detail page of the Add Create Page quick start. Under the request check box, the location and department check boxes are selected. The Button label field is set to Create Department. The Page title is Create Department, and the Page name is main-create-department.](images/department-add-create.png "")
+   ![The Page Detail page of the Add Create Page quick start. Under the request checkbox, the location and department checkboxes are selected. The Button label field is set to Create Department. The Page title is Create Department, and the Page name is main-create-department.](images/department-add-create.png "")
 
 3. Leave other values set to their defaults. Click **Finish**.
 
@@ -148,11 +148,11 @@ We'll now create a page to display employees, similar to the one you created to 
 
 9. On the Bind Data step of the Add Data wizard, select **picture** and **name** under item\[i\].
 
-    ![Part of the Bind Data page of the Add Data quick start is shown. The name and picture check boxes are selected. In the Columns list, the name and picture columns appear in the order in which the check boxes were selected.](images/employees-add-data-1.png "")
+    ![Part of the Bind Data page of the Add Data quick start is shown. The name and picture checkboxes are selected. In the Columns list, the name and picture columns appear in the order in which the checkboxes were selected.](images/employees-add-data-1.png "")
 
 10. Expand the **departmentObject** and **items** nodes (expand **item\[i\]** if it isn't already expanded) and select **department**.
 
-    ![Part of the Bind Data page of the Add Data quick start after the departmentObject node has been expanded is shown. The items and item\[i\] nodes are expanded, and the department check box is selected. In the Columns list, department appears at the bottom. ](images/employees-add-data-2.png "")
+    ![Part of the Bind Data page of the Add Data quick start after the departmentObject node has been expanded is shown. The items and item\[i\] nodes are expanded, and the department checkbox is selected. In the Columns list, department appears at the bottom. ](images/employees-add-data-2.png "")
 
     The columns appear in the order selected; if you want to change the order, drag a **Handle** icon ![Handle icon](images/handle-icon.png) to reorder the columns as desired.
 
@@ -186,7 +186,7 @@ Now that you've displayed some employee data in a table, let's add a chart to vi
 
 6. On the Map Fields step, select **salary** to add it to the **Values (Y Axis)** field, then **name** to add it to the **Categories (X Axis)** field. Leave the **Colors (Series)** field blank, and click **Next**.
 
-    ![The Map Fields page of the Add Data quick start is shown with the name and salary check boxes selected.](images/panel-on-page-chart-adddata-fields.png " ")
+    ![The Map Fields page of the Add Data quick start is shown with the name and salary checkboxes selected.](images/panel-on-page-chart-adddata-fields.png " ")
 
 7. On the Define Query step, click **Finish**.
 
@@ -205,7 +205,7 @@ Add a Create page that lets your users create new employees.
 1. Select the table component within the panel on the main-employees page, click the **Quick Start** tab in the Properties pane, then click **Add Create Page**.
 2. On the Page Detail step of the Add Create Page wizard, select **picture**, **hireDate**, **email**, **department**, **salary**, and **country** in that order (**name** is already selected, because it's a required field). Because our employee images are stored in a database elsewhere and we only reference their paths, change the **picture** field's type to **URL** for validation.  Change the **email** field's control type from **Input Text** to **Email**.
 
-    ![The Select Endpoint page of the Add Create Page quick start is shown. Under request, the country, department, email, hireDate, name, picture, and salary check boxes are selected, and those fields are shown under Fields. The Button label field is set to Create Employee. The Page title is Create Employee, and the Page name is main-create-employee.](images/employees-add-create.png "")
+    ![The Select Endpoint page of the Add Create Page quick start is shown. Under request, the country, department, email, hireDate, name, picture, and salary checkboxes are selected, and those fields are shown under Fields. The Button label field is set to Create Employee. The Page title is Create Employee, and the Page name is main-create-employee.](images/employees-add-create.png "")
 
 3. Leave the **Button label** field and other fields to their default values. Click **Finish**.
 

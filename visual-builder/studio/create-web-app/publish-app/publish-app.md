@@ -62,7 +62,7 @@ Assuming your merge request has been approved, let's now merge your changes to t
 1. Click **Merge** on the Merge Requests page.
 2. In the Merge dialog, enter a message, select **Delete branch** if you want to delete the branch after the merge, and click **Create a Merge Commit**.
 
-    ![The Merge dialog used to create a merge commit is shown. An example commit message is entered with the Create a Merge Commit button selected. A Delete branch check box is also shown.](images/merge-mr.png "")
+    ![The Merge dialog used to create a merge commit is shown. An example commit message is entered with the Create a Merge Commit button selected. A Delete branch checkbox is also shown.](images/merge-mr.png "")
 
     The merge request shows as Merged. If you didn't choose to delete the branch, you can do so now if you want.
 
