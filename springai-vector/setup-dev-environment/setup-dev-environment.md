@@ -94,11 +94,6 @@ Watch the video below for a quick walk-through of the lab.
     ````
     <copy>
     mkdir vector
-    </copy>
-    ````
-
-    ````
-    <copy>
     cd vector
     </copy>
     ````

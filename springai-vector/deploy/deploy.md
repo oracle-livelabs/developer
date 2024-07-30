@@ -143,3 +143,4 @@ If you make changes to the image, you need to delete the service and the pods by
 * **Author** - Juarez Barbosa, Sr. Principal Java Developer Evangelist, Java Database Access
 * **Contributors** - Kuassi Mensah, Dir. Product Management, Java Database Access
 * **Last Updated By Date** - Juarez Barbosa Junior, July 2024
+* 
