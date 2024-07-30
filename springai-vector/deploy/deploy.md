@@ -2,7 +2,7 @@
 
 ## Introduction
 
-In this lab, you will make changes and deploy the pre-built Spring Boot/AI Java backend Docker image to OKE (Oracle Cloud Infrastructure Container Engine for Kubernetes).
+In this lab, you will make changes and deploy the pre-built Spring Boot/AI Java backend Docker image to Oracle Cloud Infrastructure Container Engine for Kubernetes (OKE).
 
 Estimated time: 15 minutes
 
@@ -136,10 +136,11 @@ If you make changes to the image, you need to delete the service and the pods by
     source undeploy.sh
     </copy>
     ```
-2. Rebuild the image + Deploy + (Re)Configure the API Gateway
+2. Rebuild the image + (re)deploy it.
 
 ## Acknowledgements
 
-* **Author** - Peter Song, Developer Advocate JDBC
-* **Contributors** - Kuassi Mensah, Director Product Management and Jean de Lavarene, Sr. Director of Development, JDBC/UCP; Juarez Barbosa, Sr. Principal Java Developer Evangelist, Java Database Access
-* **Last Updated By/Date** - Juarez Barbosa, Sr. Principal Java Developer Evangelist, Java Database Access, July 2024
+* **Author** - Juarez Barbosa, Sr. Principal Java Developer Evangelist, Java Database Access
+* **Contributors** - Kuassi Mensah, Dir. Product Management, Java Database Access
+* **Last Updated By Date** - Juarez Barbosa Junior, July 2024
+* 

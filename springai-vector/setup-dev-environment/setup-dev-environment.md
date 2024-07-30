@@ -93,13 +93,8 @@ Watch the video below for a quick walk-through of the lab.
 
     ````
     <copy>
-    mkdir springboot-vector
-    </copy>
-    ````
-
-    ````
-    <copy>
-    cd springboot-vector
+    mkdir vector
+    cd vector
     </copy>
     ````
 ## Task 4: Clone the Workshop Code
@@ -208,5 +203,5 @@ You may now **proceed to the next lab**.
 ## Acknowledgements
 
 * **Author** - Juarez Barbosa, Sr. Principal Java Developer Evangelist, Java Database Access
-* **Contributors** - Kuassi Mensah, Dir. Product Management, Java Database Access; Jean de Lavarene, Sr. Director of Development, JDBC/UCP
+* **Contributors** - Kuassi Mensah, Dir. Product Management, Java Database Access
 * **Last Updated By Date** - Juarez Barbosa Junior, July 2024

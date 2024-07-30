@@ -86,10 +86,37 @@ You must configure your Spring AI application to use the Cohere Command-R model.
 
     ![spring-ai-properties-cohere](images/spring-ai-cohere-model-config.png "spring ai configuration for cohere ai command-r model")
 
+## Task 4: Create the VECTOR database table
+
+You must conect to your database instance and create a database table with a VECTOR data type colum.
+
+1. Open the Oracle Cloud Console, navigate to your Oracle Database 23ai instance, then click on it.
+
+    ![db23ai-instance](images/db23ai-instance.png "navigate to oracle database 23ai instance")
+
+2. Next, select the Database actions drop-down box, and select SQL.
+
+    ![db23ai-dbaction-sql](images/db23ai-dbaction-sql.png "db 23 ai sql action")
+
+3. The Oracle Database Actions | SQL console will open. Copy the script content below.
+
+    ```
+    CREATE USER VECTOR_USER IDENTIFIED BY <YOUR_DB_PASSWORD> QUOTA UNLIMITED ON USERS;  
+    GRANT DB_DEVELOPER_ROLE TO VECTOR_USER;  
+    GRANT CREATE SESSION TO VECTOR_USER;  
+    GRANT SELECT ANY TABLE ON SCHEMA VECTOR_USER TO VECTOR_USER;  
+    CREATE TABLE VECTOR_USER.VECTOR_STORE (ID VARCHAR2(64) PRIMARY KEY, METADATA VARCHAR(256), CONTENT CLOB, VECTOR_DATA VECTOR(8192, FLOAT64));
+    CREATE VECTOR INDEX VECTOR_STORE_INDEX ON VECTOR_USER.VECTOR_STORE (VECTOR_DATA) ORGANIZATION NEIGHBOR PARTITIONS DISTANCE COSINE WITH TARGET ACCURACY 95; 
+    COMMIT;
+    ```
+4. Paste it into the Worksheet page as shown below, then click the Run Statement button to execute the script.
+
+    ![db23ai-sql-ddl](images/db23ai-sql-ddl.png "db 23 ai sql ddl")
+ 
 You may now **proceed to the next lab**.
 
 ## Acknowledgements
 
 * **Author** - Juarez Barbosa, Sr. Principal Java Developer Evangelist, Java Database Access
-* **Contributors** - Kuassi Mensah, Dir. Product Management, Java Database Access; Jean de Lavarene, Sr. Director of Development, JDBC/UCP
+* **Contributors** - Kuassi Mensah, Dir. Product Management, Java Database Access
 * **Last Updated By Date** - Juarez Barbosa Junior, July 2024
