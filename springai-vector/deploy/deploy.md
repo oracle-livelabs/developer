@@ -37,17 +37,29 @@ As explained in Lab 2: Oracle AI Vector Search with Spring AI and Cohere, the Sp
 
 The OCI Container Registry is where your Docker images are managed. A container registry should have been created for you in Lab 1 in your compartment.
 
-1. Run `build.sh` script to build and push the SpringBoot image into the repository
+1. First, you have to switch to Java 17, then update Maven. Execute the steps below.
+
+    ```
+    <copy>    
+    cd $MTDRWORKSHOP_LOCATION/backend
+    csruntimectl java set graalvmjdk-17
+    chmod +x *.sh
+    ./maven-upgrade.sh
+    </copy>
+    ```
+
+2. Run `build.sh` script to build and push the SpringBoot image into the repository.
 
     ```
     <copy>
     cd $MTDRWORKSHOP_LOCATION/backend
+    csruntimectl java set graalvmjdk-17
     source build.sh
     </copy>
     ```
 In a couple of minutes, you should have successfully built and pushed the images into the OCI repository.
 
-2. Check your container registry in your compartment (refresh the console if the image is not shown)
+3. Check your container registry in your compartment (refresh the console if the image is not shown)
 
     * Go to the console, click the hamburger menu in the top-left corner, and open **Developer Services > Container Registry**.
 
@@ -118,9 +130,17 @@ In a couple of minutes, you should have successfully built and pushed the images
 
     then everything looks good.
 
-5. Once your pods are up and running. Go to your web browser and navigate to load balancer IP address and add the /ragpage URI to it.
-    The application's main page will appear
-    ![Landing](images/application-1.png)    
+5. Once your pods are up and running, get the load balancer public IP address with the **services** command as explained above. Then, adjust the URL below with the target IP address.
+
+    ```
+    <copy>
+    http://<LOAD_BALANCER_PUBLIC_IP_ADDRESS>/ragpage    
+    </copy>
+    ```
+
+6. Next open your web browser and access the application with the URL in the previous step. The application's main page will appear.
+
+    ![Landing](images/application-1.png)
 
     You may now submit your prompts and interact with the Cohere Command-R model!
 
