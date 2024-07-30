@@ -132,7 +132,7 @@ You must conect to your database instance and create a database table with a VEC
 3. The Oracle Database Actions | SQL console will open. Copy the script content below.
 
     ```
-    CREATE USER VECTOR_USER IDENTIFIED BY <VECTOR_USER_PASSWORD> QUOTA UNLIMITED ON USERS;  
+    CREATE USER VECTOR_USER IDENTIFIED BY <YOUR_DB_PASSWORD> QUOTA UNLIMITED ON USERS;  
     GRANT DB_DEVELOPER_ROLE TO VECTOR_USER;  
     GRANT CREATE SESSION TO VECTOR_USER;  
     GRANT SELECT ANY TABLE ON SCHEMA VECTOR_USER TO VECTOR_USER;  

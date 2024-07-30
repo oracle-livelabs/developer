@@ -3,7 +3,6 @@
 ## About this Workshop
 
 
-
 This workshop will introduce basic concepts related to GenAI to allow Java developers to use the Oracle Database, Oracle AI Vector Search, Spring AI and the Cohere Command-R model to implement a Generative AI use case. You will learn how to implement RAG (Retrieval Augmented Generation) to augment the context of an existing Large Language Model (LLM) to add business related context to your GenAI-related applications, while utilizing Oracle Cloud Infrastructure (OCI) services.
 
 Estimated Workshop Time: 60 minutes
