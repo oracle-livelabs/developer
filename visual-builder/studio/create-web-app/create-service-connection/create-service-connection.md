@@ -152,9 +152,9 @@ In this step, we'll assign data to the variables by adding a "value" event that 
 
     Click **Save**.
 
-8. Drag and drop an **Assign Variable** action on the canvas to follow the Call REST action. In the Assign Variable action's Properties pane, select **countryTypeVar** under **Page** in the **Variable** list. Hover over the **Value** property, click ![Select Variable icon](images/variable-picker-icon.png) to open the Variable picker, expand **callRestCountriesGetAlphaCodeResult** under **Local**, and select **body**.
+8. Drag and drop an **Assign Variable** action on the canvas to follow the Call REST action. In the Assign Variable action's Properties pane, select **countryTypeVar** under **Page** in the **Variable** list. Hover over the **Value** property, click ![Select Variable icon](images/variable-picker-icon.png) to open the Variable picker, expand **response** under **Local**, and select **body**.
 
-    ![The Assign Variable action's properties show the Variable property set to $page.variables.countryTypeVar. The Value property shows the variable picker, with body under Local and callRestCountriesGetAlphaCodeResult highlighted.](images/assignvariable-bodytocountrytypevar.png "")
+    ![The Assign Variable action's properties show the Variable property set to $page.variables.countryTypeVar. The Value property shows the variable picker, with body under Local and response highlighted.](images/assignvariable-bodytocountrytypevar.png "")
 
     What we're doing is mapping the data returned by the getAlphaCode REST call to the variables that populate components on the page. Because the field names are identical to the REST response, VB Studio automatically knows how to map each field to its data source.
 
@@ -175,4 +175,4 @@ In this step, we'll assign data to the variables by adding a "value" event that 
 ## Acknowledgements
 
 * **Author** - Sheryl Manoharan, VB Studio User Assistance, July 2022
-* **Last Updated By/Date** - Sheryl Manoharan, March 2024
+* **Last Updated By/Date** - Sheryl Manoharan, April 2024

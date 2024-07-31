@@ -1,0 +1,36 @@
+{
+  "workshoptitle": "Build GenAI Java Apps with Oracle AI Vector Search, Spring AI, and Cohere",
+  "help": "livelabs-help-db_us@oracle.com",
+  "tutorials": [
+    {
+      "title": "Introduction",
+      "description": "Introduction",
+      "filename": "../../introduction/introduction.md"
+    },
+    {
+      "title": "Get Started",
+      "description": "This is the prerequisites for customers using Free Trial and Paid tenancies, and Always Free accounts (if applicable). The title of the lab and the Contents Menu title (the title above) match for the Prerequisite lab. This lab is always second.",
+      "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/cloud-login.md"
+    },
+    {
+      "title": "Lab 1: Setup Development Environment",
+      "filename": "../../setup-dev-environment/setup-dev-environment.md"
+    },
+    {
+      "title": "Lab 2: Oracle AI Vector Search with Spring AI and Cohere",
+      "filename": "../../vectorsearch/vectorsearch.md"
+    },
+    {
+      "title": "Lab 3: Cohere Command-R Model",
+      "filename": "../../model/model.md"
+    },
+    {
+      "title": "Lab 4: Deploy Spring AI RAG App",
+      "filename": "../../deploy/deploy.md"
+    },
+    {
+      "title": "Lab 5: Teardown",
+      "filename": "../../teardown/teardown.md"
+    }
+  ]
+}

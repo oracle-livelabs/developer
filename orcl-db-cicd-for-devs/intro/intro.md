@@ -22,9 +22,9 @@ With SQLcl Liquibase you can integrate database change automation into your larg
 
 ### Objectives
 Learn the core functionality of SQLcl Liquibase in this hands-on workshop:
-* Learn how to use `liquibase help` for guidance on the tool
+* Learn how to use `help liquibase` for guidance on the tool
 * Capture an entire Oracle Database schema into files with `liquibase generate-schema`
-* Capture a single database object into a file with `liquibase generate-object`
+* Capture a single database object into a file with `liquibase generate-db-object`
 * Preview the SQL code for review before executing an update with `liquibase update-sql`
 * Run `liquibase update` to create database objects from Liquibase files
 * Learn how changelog files and tables work
@@ -140,4 +140,4 @@ The CD in CI/CD along with referring to Continuous Delivery, can additionally (a
 ## Acknowledgements
 
 - **Author** - Zachary Talke, Senior Product Manager
-- **Last Updated By/Date** - Zachary Talke, May 2023
+- **Last Updated By/Date** - Zachary Talke, May 2024
