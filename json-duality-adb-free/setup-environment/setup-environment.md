@@ -40,14 +40,14 @@ This lab assumes you have:
     
     ![Login with user](images/user_signin.png " ")
 
-2. Click **SQL** worksheet button under Development.
+5. Click **SQL** worksheet button under Development.
 
-    ![Image alt text](images/development-sql.png " ")
+    ![Image alt text](images/oci-sing-in.png " ")
 
-3. As you go through this workshop, we will specify click the Run button or Run Script button. The Run button runs just one SQL Statement and formats the output into a data grid. The Run Script button runs many SQL statements and spools their output. We will highlight which to use.
+6. As you go through this workshop, we will specify click the Run button or Run Script button. The Run button runs just one SQL Statement and formats the output into a data grid. The Run Script button runs many SQL statements and spools their output. We will highlight which to use.
 
     ![Run SQL Script](images/run-sql-script.png " ")
-
+    
     **NOTE**: Use the delete option to clear the previous commands before running a new command.
 
 ## Task 2: Create database tables and JSON Duality Views
