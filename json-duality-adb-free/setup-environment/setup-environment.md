@@ -92,9 +92,6 @@ This lab assumes you have:
 
     **NOTE**: Use the delete option to clear the previous commands before running a new command.
 
-    ![Image alt text](images/run-sql-script.png " ")
- 
-
 ## Task 2: Create database tables and JSON Duality Views
 
 1. Now that you have logged into the database, we can create the tables that will be the underlying data structures for our JSON Duality Vies. Before doing this, drop the views tables in case they already exist, so you can start from scratch.
@@ -203,6 +200,8 @@ This lab assumes you have:
 
 
 5. Create a duality view for the race table. Notice that we are using 3 different tables to create one view. We are also using the `UNNEST` command to unnest the information from the driver table into the sub-object `result` instead of it being another sub-object within that same field. 
+
+    **NOTE**: Worksheet might show errors in the code, but they can be ignored.
 
     **NOTE**: Worksheet might show errors in the code, but they can be ignored.
 

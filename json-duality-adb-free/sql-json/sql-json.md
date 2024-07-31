@@ -25,7 +25,7 @@ This lab assumes you have:
 
 1. To find race info by raceId, you can use JSON functions, such as json\_value and json\_exists in predicates when querying duality views.
 
-    You can also use simplified dot notation in predicates, but this will be explored later in the lab. The json\_exists function is more powerful than json\_value in terms of the conditions it can express and is used by the REST interface to translate query by examples. Copy the SQL below and click **Run Script**.
+    Another alternative is the use of  simplified dot notation in predicates, but this will be explored later in the lab. The json\_exists function is more powerful than json\_value in terms of the conditions it can express and is used by the REST interface to translate query by examples. Clear the worksheet, copy the SQL below and click **Run Script**.
 
     ```
     <copy>
@@ -38,13 +38,13 @@ This lab assumes you have:
 
 ## Task 2: Replace and fetch a document by ID
 
-1. Announce results for the Bahrain Grand Prix by updating the appropriate race entry with the details after the race.
+1. To announce the results for the Bahrain Grand Prix, we will update the appropriate race entry with the details after the race.
 
     Note that the "etag" value supplied in the content is used for "out-of-the-box" optimistic locking, to prevent the well-known "lost update" problem that can occur with concurrent operations. During the replace by ID operation, the database checks that the eTag provided in the replacement document matches the latest eTag of the target duality view document.
 
     If the eTags do not match, which can occur if another concurrent operation updated the same document, an error is thrown. In case of such an error, you can reread the updated value (including the updated eTag), and retry the replace operation again, adjusting it (if desired) based on the updated value. 
     
-    In other words, you may have to adjust the update statement so that the etag matches the etag from the select statement above. Copy the SQL below and click **Run Script**.
+    In other words, you may have to adjust the update statement so that the etag matches the etag from the select statement above. You can either click the trash to clear the worksheet or delete what is there before pasting the code below. Copy the SQL below and click **Run Script**.
 
     ```
     <copy>
@@ -84,7 +84,7 @@ This lab assumes you have:
     ```
     ![Image alt text](images/task_2_2.png " ")
     
-2. Now see the updated results for the Bahrain Grand Prix. Copy the SQL below and click **Run Script**.
+2. Now let's see the updated results for the Bahrain Grand Prix. Clear the worksheet, copy the SQL below and click **Run Script**.
 
     ```
     <copy>
@@ -113,7 +113,7 @@ This lab assumes you have:
     ```
     ![Image alt text](images/task_3_1.png " ")
 
-2. Select from the view to ensure the change is in. In this example we are also showing that you can use json_value in the where clause. Copy the SQL below and click **Run Script**.
+2. Select from the view to ensure the change is in. In this example we are also showing that you can use json_value in the where clause.  Clear the worksheet, copy the SQL below and click **Run Script**.
 
     ```
     <copy>
@@ -125,9 +125,9 @@ This lab assumes you have:
 
 ## Task 4: Re-parenting of sub-objects between two documents
 
-Switch Charles Leclerc's and George Russell's teams. This can be done by updating the Mercedes and Ferrari team_dvs. The documents can be updated by simply sending the new list of drivers for both documents in the input.
+We will switch Charles Leclerc's and George Russell's teams. This can be done by updating the Mercedes and Ferrari team_dvs. The documents can be updated by simply sending the new list of drivers for both documents in the input.
 
-1. First, show the team documents. Copy the SQL below and click **Run Script**.
+1. First, show the team documents. Clear the worksheet, copy the SQL below and click **Run Script**.
 
     ```
     <copy>
@@ -139,7 +139,7 @@ Switch Charles Leclerc's and George Russell's teams. This can be done by updatin
     ```
     ![Image alt text](images/task_4_1.png " ")
 
-2. Then perform the updates. Copy the SQL below and click **Run Script**.
+2. Then perform the updates. Clear the worksheet, copy the SQL below and click **Run Script**.
 
     ```
     <copy>
@@ -174,7 +174,7 @@ Switch Charles Leclerc's and George Russell's teams. This can be done by updatin
     ```
     ![Image alt text](images/task_4_2.png " ")
 
-3. Then show the team documents after the updates, you'll see that the former teams with Mercedes have now been swapped to Ferrari and vice versa. Copy the SQL below and click **Run Script**.
+3. Now, show the team documents after the updates. You'll see that the former teams with Mercedes have now been swapped to Ferrari and vice versa. Clear the worksheet, copy the SQL below and click **Run Script**.
 
     ```
     <copy>
@@ -187,7 +187,7 @@ Switch Charles Leclerc's and George Russell's teams. This can be done by updatin
     ```
     ![Image alt text](images/task_4_3.png " ")
 
-4. Show the driver documents after the updates as well. Copy the SQL below and click **Run Script**.
+4. Show the driver documents after the updates as well. Clear the worksheet, copy the SQL below and click **Run Script**.
     ```
     <copy>
     SELECT json_serialize(data PRETTY) FROM driver_dv dv
@@ -202,7 +202,7 @@ Switch Charles Leclerc's and George Russell's teams. This can be done by updatin
 
 ## Task 5: Update a non-updateable field
 
-1. Update team for a driver through driver\_dv. This will throw an error as we specified the JSON Duality View to not allow this field to be updatable through driver_dv. Copy the SQL below and click **Run Script**.
+1. Now we will update team for a driver through driver\_dv. This will throw an error as we specified the JSON Duality View to not allow this field to be updatable through driver_dv. Clear the worksheet, copy the SQL below and click **Run Script**.
 
     ```
     <copy>
@@ -230,9 +230,9 @@ Switch Charles Leclerc's and George Russell's teams. This can be done by updatin
 
 ## Task 6: Delete by predicate
 
-1. Delete the race document for Bahrain Grand Prix. The underlying rows are deleted from the race and driver\_race\_map tables, but not from the driver table because it is marked read-only in the view definition. Copy the SQL below and click **Run Script**.
+1. Delete the race document for Bahrain Grand Prix. The underlying rows are deleted from the race and driver\_race\_map tables, but not from the driver table because it is marked read-only in the view definition. Clear the worksheet, copy the SQL below and click **Run Script**.
 
-    **Note:** that the "where" clause can have any valid SQL expression, e.g. equality on OBJECT\_ID, some condition using simplified syntax, or JSON function, such as json\_value or json\_exists.
+    **Note:** The "where" clause can have any valid SQL expression, e.g. equality on OBJECT\_ID, some condition using simplified syntax, or JSON function, such as json\_value or json\_exists.
 
     ```
     <copy>
@@ -257,4 +257,4 @@ You may **proceed to the next lab.**
 ## Acknowledgements
 * **Author** - Valentin Tabacaru, Kaylien Phan, William Masdon
 * **Contributors** - David Start, Ranjan Priyadarshi
-* **Last Updated By/Date** - Valentin Tabacaru, Database Product Management, July 2024
+* **Last Updated By/Date** - Francis Regalado, Database Product Management, July 2024
