@@ -35,7 +35,7 @@ These tutorials include the SQL, PL/SQL, and cURL commands to work with the exam
 For the sake of simplicity, these REST APIs are unprotected. Oracle Database REST APIs offer performance AND secure access for application developers, and it is recommended you protect your endpoints with the proper web privileges and roles.
 
 
-Estimated Time: 30 minutes
+Estimated Time: 45 minutes
 
 ### Objectives
 In this lab, you will:
