@@ -6,7 +6,7 @@ Oracle Database 23ai JSON Relational Duality converges the benefits of the Relat
 
 In this workshop, we will be using a set of tables used to store data on F1 racing teams, drivers, and race results. We will then create JSON Duality Views on top of these tables to reference them as JSON documents. Then we will use AutoREST to enable our duality views to be used with REST calls. 
 
-Estimated Time: 15 minutes
+Estimated Time: 10 minutes
 
 
 ### Objectives
@@ -24,7 +24,7 @@ This lab assumes you have:
 - Oracle Autonomous Database 23ai Free Tier instance
 
 
-## Task 1: Preparing your database user
+## Task 1: Logging in your database
 
 1. Your browser should be open at the Oracle LiveLabs My Reservations page. When your LiveLabs environment is ready, click **Launch Workshop**.
 
@@ -32,63 +32,21 @@ This lab assumes you have:
 
     ![Image alt text](images/login-info.png " ")
 
-3. Click **Copy Password** and then **Launch OCI**.
+3. Scroll down to the **Terraform Values** section and copy value for username **hol23ai**. Now click the **SQL Web Developer URL** to open the SQL Developer page.
 
-    ![Image alt text](images/reservation-info.png " ")
+    ![Copy password](images/terraform_values.png " ")
 
-4. Use **Oracle Cloud Infrastructure Direct Sign-in** to paste the password you copied. When you log-in for the first time, it will ask you to update the password. Write down in your notes the new password. Also make a note of the compartment name.
+4. Click **Advanced** and enter **HOL23AI**. Sign in with new user **hol23ai** and paste the password copied earlier.
+    
+    ![Login with user](images/user_signin.png " ")
 
-    ![Image alt text](images/oci-sing-in.png " ")
-
-5. Use the main menu **≡** to navigate to Oracle Database > **Autonomous Database**.
-
-    ![Image alt text](images/main-menu.png " ")
-
-6. Select your reservation **Compartment** on the left side drop-down, and click on your Autonomous Database instance name. Your compartment name is the same which was noted from the reservation information screen.
-
-    ![Image alt text](images/adb-instance.png " ")
-
-7. Familiarize yourself with the OCI console for Autonomous Database.
-
-    ![Image alt text](images/adb-console.png " ")
-
-8. Use Database Actions menu to open **Database Users** console.
-
-    ![Image alt text](images/database-actions.png " ")
-
-9. Click **Create User**.
-
-    ![Image alt text](images/database-users.png " ")
-
-10. Create a new user called **hol23ai** (case insensitive). You may use the same password from admin user you received on Reservation Information dialog at step #3. Enable **Web Access** and set **UNLIMITED** quota on tablespace DATA.
-
-    ![Image alt text](images/create-user.png " ")
-
-11. Click **Granted Roles**. Add ```ORDS_ADMINISTRATOR_ROLE```, ```ORDS_RUNTIME_ROLE``` as Granted and Default.
-
-    ![Image alt text](images/granted-roles.png " ")
-
-12. Add DWROLE as Granted and Default. Click **Create User**.
-
-    ![Image alt text](images/dwrole.png " ")
-
-13. The new hol23ai user card will appear in the list. You can copy the SQL Developer URL in your notes.
-
-    ![Image alt text](images/hol23ai-user.png " ")
-
-14. Click the ADMIN user menu, and **Sign Out**.
-
-    ![Image alt text](images/sign-out.png " ")
-
-15. Sign-in with the new user **hol23ai**.
-
-    ![Image alt text](images/hol23ai-sign-in.png " ")
-
-16. Click **SQL** worksheet button under Development and Click **Open**.
+2. Click **SQL** worksheet button under Development.
 
     ![Image alt text](images/development-sql.png " ")
 
-17. As you go through this workshop, we will specify click the Run button or Run Script button. The Run button runs just one SQL Statement and formats the output into a data grid. The Run Script button runs many SQL statements and spools their output. We will highlight which to use.
+3. As you go through this workshop, we will specify click the Run button or Run Script button. The Run button runs just one SQL Statement and formats the output into a data grid. The Run Script button runs many SQL statements and spools their output. We will highlight which to use.
+
+    ![Run SQL Script](images/run-sql-script.png " ")
 
     **NOTE**: Use the delete option to clear the previous commands before running a new command.
 
