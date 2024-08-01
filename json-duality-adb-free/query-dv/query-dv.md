@@ -26,16 +26,12 @@ This lab assumes you have:
 - All previous labs successfully completed
 
 
-## Task 1: Use a GET call to query a duality view
-
-Throughout this lab and the ones that follow, you will see the use of ` | json_pp` at the end of some cURL commands. This is simply a tool to help you better visualize the data that is returned. In some cases, this tool isn't used so that you may see the HTTP Codes that come in response to our cURL commands. When experimenting, you can use ` | json_pp` to better visualize the data, but note that it will not work when the returned values don't adhere to JSON syntax (such as when you use the `-i` parameter in cURL). 
-
-This tool is installed by default when using the _Run on LiveLabs_ option. It is included with the Perl install. 
+## Task 1: Use a GET call to query a duality view 
 
 1. View the contents of the `driver_dv` duality view. Because we are not specifying an ID, this query will return the entire view.
 
     ```
-    $ <copy>curl -X GET $ADB_BASE_URL/ords/hol23ai/driver_dv/ | json_pp</copy>
+    $ <copy>curl -X GET $ADB_BASE_URL/ords/HOL23AI/driver_dv/</copy>
     ```
 
     ![Query the entire Drivers view](./images/get-drivers.png)
@@ -43,7 +39,7 @@ This tool is installed by default when using the _Run on LiveLabs_ option. It is
 2. Besides the cURL command, you can open your REST data service URL in your browser.
 
     ```
-    $ <copy><ADB_BASE_URL>/ords/hol23ai/driver_dv/</copy>
+    $ <copy><ADB_BASE_URL>/ords/HOL23AI/driver_dv/</copy>
     ```
 
     **NOTE:** Here you will add the ```ADB_BASE_URL``` manually since we are not using cloudshell/terminal.
@@ -62,7 +58,7 @@ This tool is installed by default when using the _Run on LiveLabs_ option. It is
 1. To view only one document from a duality view, simply append the document's ID to the end of your GET call URL. 
 
     ```
-    $ <copy>curl -X GET $ADB_BASE_URL/ords/hol23ai/driver_dv/105 | json_pp</copy>
+    $ <copy>curl -X GET $ADB_BASE_URL/ords/HOL23AI/driver_dv/105</copy>
     ```
 
     This call has hardcoded the document ID for George Russell, but you can exchange the ID with another driver to GET their information. 
@@ -84,7 +80,7 @@ Documents can be fetched by supplying a query parameter. Only documents matching
     **NOTE:** We have encoded the brackets, quotes, colons, and spaces in the query to make this a valid URL. This is required for cURL. 
 
     ```
-    $ <copy>curl -v --location -g "$ADB_BASE_URL/ords/hol23ai/race_dv/?q=%7B%22name%22%3A%7B%22%24eq%22%3A%22Bahrain%20Grand%20Prix%22%7D%7D" | json_pp</copy>
+    $ <copy>curl -v --location -g "$ADB_BASE_URL/ords/HOL23AI/race_dv/?q=%7B%22name%22%3A%7B%22%24eq%22%3A%22Bahrain%20Grand%20Prix%22%7D%7D"</copy>
     ```
 
     Notice that the podium and result fields are empty. This is again because the information for "Bahrain Grand Prix" has not been entered. In the next lab, this information will be added. 
@@ -101,7 +97,7 @@ You can continue to use this tool for the rest of the workshop, but the instruct
 1. Open a browser and navigate to this URL:  
 
     ```
-    <copy><ADB_BASE_URL>/ords/hol23ai/_sdw</copy>
+    <copy><ADB_BASE_URL>/ords/HOL23AI/_sdw</copy>
     ```
 
     Use the username and password you have setup for this workshop. In our case, our user is `hol23ai`. 

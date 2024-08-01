@@ -50,7 +50,7 @@ This lab assumes you have:
     $ <copy>unzip json_autorest.zip</copy>
     ```
 
-    ![Downlad the workshop files](./images/download_files.png)
+    ![Download the workshop files](./images/download_files.png)
 
 
 ## Task 2: Insert a single document
@@ -82,7 +82,7 @@ This lab assumes you have:
 2. Using the `teamMercedes.json` file, we will insert a document into the duality view `team_dv`. 
 
     ```
-    $ <copy>curl -i -X POST --data-binary @teamMercedes.json -H "Content-Type: application/json" $ADB_BASE_URL/ords/hol23ai/team_dv/</copy>
+    $ <copy>curl -i -X POST --data-binary @teamMercedes.json -H "Content-Type: application/json" $ADB_BASE_URL/ords/HOL23AI/team_dv/</copy>
     ```
 
     ![POST data for the Mercedes team](./images/insert_Mercedes.png)
@@ -139,7 +139,7 @@ This lab assumes you have:
     **Note:** The URL is different for this call. Instead of pathing just to `team_dv`, you refer to the `/batchload` endpoint. This will allow the payload to contain multiple documents to insert. 
 
     ```
-    $ <copy>curl -i -X POST --data-binary @team.json -H "Content-Type: application/json" $ADB_BASE_URL/ords/hol23ai/team_dv/batchload</copy>
+    $ <copy>curl -i -X POST --data-binary @team.json -H "Content-Type: application/json" $ADB_BASE_URL/ords/HOL23AI/team_dv/batchload</copy>
     ```
 
     The AutoREST Duality View API includes a POST /batchload endpoint for ‘batch loading’ multiple JSON documents as rows in the view. 
@@ -151,7 +151,7 @@ This lab assumes you have:
 3. Bulk load data into `race_dv` using the `race.json` file. 
 
     ```
-    $ <copy>curl -i -X POST --data-binary @race.json -H "Content-Type: application/json" $ADB_BASE_URL/ords/hol23ai/race_dv/batchload</copy>
+    $ <copy>curl -i -X POST --data-binary @race.json -H "Content-Type: application/json" $ADB_BASE_URL/ords/HOL23AI/race_dv/batchload</copy>
     ```
 
     ![Bulk insert races](./images/insert_race.png)

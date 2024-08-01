@@ -42,7 +42,7 @@ This lab assumes you have:
 
 5. Click **SQL** worksheet button under Development.
 
-    ![Image alt text](images/oci-sing-in.png " ")
+    ![Click SQL](images/click_sql.png " ")
 
 6. As you go through this workshop, we will specify click the Run button or Run Script button. The Run button runs just one SQL Statement and formats the output into a data grid. The Run Script button runs many SQL statements and spools their output. We will highlight which to use.
 
@@ -159,9 +159,7 @@ This lab assumes you have:
 
 5. Create a duality view for the race table. Notice that we are using 3 different tables to create one view. We are also using the `UNNEST` command to unnest the information from the driver table into the sub-object `result` instead of it being another sub-object within that same field. 
 
-    **NOTE**: Worksheet might show errors in the code, but they can be ignored.
-
-    **NOTE**: Worksheet might show errors in the code, but they can be ignored.
+    **NOTE**: Worksheet might show errors in the code, but they can be ignored. Use Run Script button to run the whole code block.
 
     ```sql
     SQL> <copy>CREATE OR REPLACE JSON RELATIONAL DUALITY VIEW race_dv AS
@@ -271,7 +269,31 @@ This lab assumes you have:
 
     ![Enable AutoREST on the Duality Views](./images/enable_autorest.png)
 
-2. Use the SQL Developer Web URL to obtain your ADB instance base URL:
+2. To run the curl commands we will be using OCI cloud shell for the remainder of the lab. Click **View Login Info** on your livelab's home page.
+
+    ![Image alt text](images/login-info.png " ")
+
+3. Click **Copy Password** and then **Launch OCI**.
+
+    ![Image alt text](images/reservation-info.png " ")
+
+4. Use **Oracle Cloud Infrastructure Direct Sign-in** to paste the password you copied. When you log-in for the first time, it will ask you to update the password. Write down in your notes the new password. Also make a note of the compartment name.
+
+    ![Image alt text](images/oci-sing-in.png " ")
+
+5. Use the main menu **≡** to navigate to Oracle Database > **Autonomous Database**.
+
+    ![Image alt text](images/main-menu.png " ")
+
+6. Select your reservation **Compartment** on the left side drop-down, and click on your Autonomous Database instance name. Your compartment name is the same which was noted from the reservation information screen.
+
+    ![Image alt text](images/adb-instance.png " ")
+
+7. Click on shell **Developer Tools** icon on the screen and select **cloud shell**. 
+
+    ![Query for data](./images/oci-cloud-shell.png)
+
+8. Use the SQL Developer Web URL to obtain your ADB instance base URL:
 
     ```
     <ADB_BASE_URL> = https://ajs6esm7pafcr84-atp94534.adb.us-ashburn-1.oraclecloudapps.com
@@ -279,42 +301,32 @@ This lab assumes you have:
 
     ![ADB base URL](./images/adb-base-url.png)
 
-3. As you go through this workshop, we will specify URLs for different REST services. Use your ADB instance base URL to build all URLs you will use with REST Data Service (ORDS) and AutoREST. Export the base url in your terminal or OCI cloud shell so that it can be reused.
+9. As you go through this workshop, we will specify URLs for different REST services. Use your ADB instance base URL to build all URLs you will use with REST Data Service (ORDS) and AutoREST. Export the base url in your terminal or OCI cloud shell so that it can be reused.
 
     ```
     <copy>
     export ADB_BASE_URL=<YOUR_UNIQUE_ADB_URL>
     </copy>
     ```
-
-    Check the value of variable ```ADB_BASE_URL```.
-
+    Check the value of variable ```ADB_BASE_URL```. It shouldn't have `/` in the end.
     ```
     <copy>
     echo $ADB_BASE_URL
     </copy>
     ```
 
-    ![Query for data](./images/oci-cloud-shell.png)
-
     ![ADB base URL](./images/export-adb.png)
 
     **NOTE:** This base url will be unique for each user, verify that you are using the correct URL.
 
-4. Make a GET request to the REST API of the driver duality view from your laptop terminal command line.
+10. Make a GET request to the REST API of the driver duality view from your laptop terminal command line.
 
     ```
-    $ <copy>curl -X GET $ADB_BASE_URL/ords/hol23ai/driver_dv/</copy>
+    $ <copy>curl -X GET $ADB_BASE_URL/ords/HOL23AI/driver_dv/</copy>
     ```
-    ![Query for data](./images/test_ords.png)
-
-5. Or you can use OCI Cloud Shell to run cURL commands.
-
-    ![Query for data](./images/oci-cloud-shell.png)
-
     ![Query for data](./images/oci-test_ords.png)
 
-6. You can use cURL in your laptop Terminal, or your web browser to open the URL when testing GET requests.
+11. You can use cURL in your laptop Terminal, or your web browser to open the URL when testing GET requests.
 
     ![Query for data](./images/test_ords_get.png)
 
@@ -340,7 +352,7 @@ This lab assumes you have:
 
     ![Run getCurl on Cloudshell](./images/run_getcurl_cloud.png)
 
-    You may continue using this tool for the rest of the workshop, but please be aware that the instructions will continue to use the Terminal and cURL commands.    
+    You may continue using this tool for the rest of the workshop, but please be aware that the instructions will continue to use the cloudshell and cURL commands.    
 
 You may **proceed to the next lab.**
 
