@@ -27,7 +27,7 @@ In this lab, you will:
 
 1. We'll need to create an OCI Compute instance (VM) and install Ollama to run a Cohere AI's Command-R model inside of it. Then, we will expose the server and allow our Spring AI application connect to the Ollama server and make the requests to the Command-R models.
 
-The following shape and images are recommended for the LLM models server: (it will require a GPU, as we'll be running an HPC load that will require lots of computing! More than the CPU can handle at this moment without quantization enabled.)
+The following shape and images are recommended for the LLM models server: (it will require a GPU, as we'll be running an HPC load that will require lots of computing! More than the CPU can handle at this moment without quantization enabled). You check more details and other options for OCI GPU shapes at [OCI - Compute Shapes](https://docs.oracle.com/en-us/iaas/Content/Compute/References/computeshapes.htm).
 
 - Shape: `VM.GPU.A10.2` (2x NVIDIA A10 Tensor Cores)
 - OCPU: 30
@@ -142,6 +142,8 @@ docker logs -f --tail 10 ollama
 
 Both the model, for embeddings/completion will run under the same server, and they will be addressed providing in the REST request for the specific model required.
 
+Last, if you face an error such as "Error: timed out waiting for llama runner to start - progress 0.00", just execute the respective target model above once again, and it will start with no issues at all.
+
 ## Task 2. Configure security for your private LLM models
 
 To handle the firewall, we need to open port `11434` on our Security List. For this, let's:
@@ -193,5 +195,5 @@ You may now **proceed to the next lab**.
 ## Acknowledgements
 
 * **Author** - Juarez Barbosa, Sr. Principal Java Developer Evangelist, Java Database Access
-* **Contributors** - Kuassi Mensah, Dir. Product Management, Java Database Access; Jean de Lavarene, Sr. Director of Development, JDBC/UCP
+* **Contributors** - Kuassi Mensah, Dir. Product Management, Java Database Access
 * **Last Updated By Date** - Juarez Barbosa Junior, July 2024

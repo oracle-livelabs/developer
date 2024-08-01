@@ -2,7 +2,7 @@
 
 ## Introduction
 
-In this lab, you will make changes and deploy the pre-built Spring Boot/AI Java backend Docker image to OKE (Oracle Cloud Infrastructure Container Engine for Kubernetes).
+In this lab, you will make changes and deploy the pre-built Spring Boot/AI Java backend Docker image to Oracle Cloud Infrastructure Container Engine for Kubernetes (OKE).
 
 Estimated time: 15 minutes
 
@@ -37,17 +37,29 @@ As explained in Lab 2: Oracle AI Vector Search with Spring AI and Cohere, the Sp
 
 The OCI Container Registry is where your Docker images are managed. A container registry should have been created for you in Lab 1 in your compartment.
 
-1. Run `build.sh` script to build and push the SpringBoot image into the repository
+1. First, you have to switch to Java 17, then update Maven. Execute the steps below.
+
+    ```
+    <copy>    
+    cd $MTDRWORKSHOP_LOCATION/backend
+    csruntimectl java set graalvmjdk-17
+    chmod +x *.sh
+    ./maven-upgrade.sh
+    </copy>
+    ```
+
+2. Run `build.sh` script to build and push the SpringBoot image into the repository.
 
     ```
     <copy>
     cd $MTDRWORKSHOP_LOCATION/backend
+    csruntimectl java set graalvmjdk-17
     source build.sh
     </copy>
     ```
 In a couple of minutes, you should have successfully built and pushed the images into the OCI repository.
 
-2. Check your container registry in your compartment (refresh the console if the image is not shown)
+3. Check your container registry in your compartment (refresh the console if the image is not shown)
 
     * Go to the console, click the hamburger menu in the top-left corner, and open **Developer Services > Container Registry**.
 
@@ -118,9 +130,17 @@ In a couple of minutes, you should have successfully built and pushed the images
 
     then everything looks good.
 
-5. Once your pods are up and running. Go to your web browser and navigate to load balancer IP address and add the /ragpage URI to it.
-    The application's main page will appear
-    ![Landing](images/application-1.png)    
+5. Once your pods are up and running, get the load balancer public IP address with the **services** command as explained above. Then, adjust the URL below with the target IP address.
+
+    ```
+    <copy>
+    http://<LOAD_BALANCER_PUBLIC_IP_ADDRESS>/ragpage    
+    </copy>
+    ```
+
+6. Next open your web browser and access the application with the URL in the previous step. The application's main page will appear.
+
+    ![Landing](images/application-1.png)
 
     You may now submit your prompts and interact with the Cohere Command-R model!
 
@@ -136,10 +156,11 @@ If you make changes to the image, you need to delete the service and the pods by
     source undeploy.sh
     </copy>
     ```
-2. Rebuild the image + Deploy + (Re)Configure the API Gateway
+2. Rebuild the image + (re)deploy it.
 
 ## Acknowledgements
 
-* **Author** - Peter Song, Developer Advocate JDBC
-* **Contributors** - Kuassi Mensah, Director Product Management and Jean de Lavarene, Sr. Director of Development, JDBC/UCP; Juarez Barbosa, Sr. Principal Java Developer Evangelist, Java Database Access
-* **Last Updated By/Date** - Juarez Barbosa, Sr. Principal Java Developer Evangelist, Java Database Access, July 2024
+* **Author** - Juarez Barbosa, Sr. Principal Java Developer Evangelist, Java Database Access
+* **Contributors** - Kuassi Mensah, Dir. Product Management, Java Database Access
+* **Last Updated By Date** - Juarez Barbosa Junior, July 2024
+* 

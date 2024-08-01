@@ -30,7 +30,7 @@ This lab assumes you have:
 1. First you must determine the ID and eTag of the document to replace. Open this URL to query on the Bahrain Grand Prix as we did in the last lab.  
 
     ```
-    $ <copy>curl -v --location -g "<ADB_BASE_URL>/ords/hol23ai/race_dv/?q=%7B%22name%22%3A%7B%22%24eq%22%3A%22Bahrain%20Grand%20Prix%22%7D%7D" | json_pp</copy>
+    $ <copy>curl -v --location -g "$ADB_BASE_URL/ords/hol23ai/race_dv/?q=%7B%22name%22%3A%7B%22%24eq%22%3A%22Bahrain%20Grand%20Prix%22%7D%7D" | json_pp</copy>
     ```
 
     ![Find the ID and eTag of the Bahrain race](./images/get_race201.png)
@@ -56,7 +56,7 @@ This lab assumes you have:
 4. Now that the eTag is accurate, replace the target document with the contents in the file `updateRace.json`. 
 
     ```
-    $ <copy>curl -i -X PUT --data-binary @updateRace.json -H "Content-Type: application/json" <ADB_BASE_URL>/ords/hol23ai/race_dv/201</copy>
+    $ <copy>curl -i -X PUT --data-binary @updateRace.json -H "Content-Type: application/json" $ADB_BASE_URL/ords/hol23ai/race_dv/201</copy>
     ```
 
     ![Update the race view with the eTag](./images/update_race.png)
@@ -68,7 +68,7 @@ This lab assumes you have:
 6. To verify that a replace using an eTag that is not the most recent fails, run the same command again. 
 
     ```
-    $ <copy>curl -i -X PUT --data-binary @updateRace.json -H "Content-Type: application/json" <ADB_BASE_URL>/ords/hol23ai/race_dv/201</copy>
+    $ <copy>curl -i -X PUT --data-binary @updateRace.json -H "Content-Type: application/json" $ADB_BASE_URL/ords/hol23ai/race_dv/201</copy>
     ```
 
     Because updateRace.json content has an "etag" field value that has been obsoleted by the preceding successful replace, the command now outputs 400 (bad request). 
@@ -89,7 +89,7 @@ In this task, you will switch Charles Leclerc's and George Russell's teams by up
 2. Query the team_dv to find the documents' IDs. Then copy them down for each document.
 
     ```
-    $ <copy>curl -v --location -g "<ADB_BASE_URL>/ords/hol23ai/team_dv/?q=%7B%22name%22%3A%7B%22%24in%22%3A%5B%22Mercedes%22%2C%22Ferrari%22%5D%7D%7D" | json_pp
+    $ <copy>curl -v --location -g "$ADB_BASE_URL/ords/hol23ai/team_dv/?q=%7B%22name%22%3A%7B%22%24in%22%3A%5B%22Mercedes%22%2C%22Ferrari%22%5D%7D%7D" | json_pp
     </copy>
     ```
 
@@ -146,7 +146,7 @@ In this task, you will switch Charles Leclerc's and George Russell's teams by up
 6. Run this command to update the Mercedes team, using the corresponding ID: 
 
     ```
-    $ <copy>curl -i -X PUT --data-binary @updateMercedes.json -H "Content-Type: application/json" <ADB_BASE_URL>/ords/hol23ai/team_dv/2</copy>
+    $ <copy>curl -i -X PUT --data-binary @updateMercedes.json -H "Content-Type: application/json" $ADB_BASE_URL/ords/hol23ai/team_dv/2</copy>
     ```
 
     ![Update Mercedes team](./images/update_mercedes.png)
@@ -154,7 +154,7 @@ In this task, you will switch Charles Leclerc's and George Russell's teams by up
 7. Now do the same for the Ferrari team: 
 
     ```
-    $ <copy>curl -i -X PUT --data-binary @updateFerrari.json -H "Content-Type: application/json" <ADB_BASE_URL>/ords/hol23ai/team_dv/302</copy>
+    $ <copy>curl -i -X PUT --data-binary @updateFerrari.json -H "Content-Type: application/json" $ADB_BASE_URL/ords/hol23ai/team_dv/302</copy>
     ```
 
     ![Update Ferrari team](./images/update_ferrari.png)
@@ -162,7 +162,7 @@ In this task, you will switch Charles Leclerc's and George Russell's teams by up
 8. To show the changes to Ferrari and Mercedes teams, query the team_dv duality view. 
 
     ```
-    $ <copy>curl -v --location -g "<ADB_BASE_URL>/ords/hol23ai/team_dv/?q=%7B%22name%22%3A%7B%22%24in%22%3A%5B%22Mercedes%22%2C%22Ferrari%22%5D%7D%7D" | json_pp
+    $ <copy>curl -v --location -g "$ADB_BASE_URL/ords/hol23ai/team_dv/?q=%7B%22name%22%3A%7B%22%24in%22%3A%5B%22Mercedes%22%2C%22Ferrari%22%5D%7D%7D" | json_pp
     </copy>
     ```
 
@@ -177,7 +177,7 @@ In this task, you will switch Charles Leclerc's and George Russell's teams by up
     To see the changes, run: 
 
     ```
-    $ <copy>curl -v --location -g  "<ADB_BASE_URL>/ords/hol23ai/driver_dv/?q=%7B%22%24or%22:%5B%7B%22name%22:%7B%22%24like%22:%22George%25%22%7D%7D%2C%7B%22name%22:%7B%22%24like%22:%22Charles%25%22%7D%7D%5D%7D" | json_pp</copy>
+    $ <copy>curl -v --location -g  "$ADB_BASE_URL/ords/hol23ai/driver_dv/?q=%7B%22%24or%22:%5B%7B%22name%22:%7B%22%24like%22:%22George%25%22%7D%7D%2C%7B%22name%22:%7B%22%24like%22:%22Charles%25%22%7D%7D%5D%7D" | json_pp</copy>
     ```
 
     ![View changes to driver view](./images/driver_afterswap.png)
@@ -190,7 +190,7 @@ From the previous command, ID of the Charles Leclerc document in the driver dual
 1. Using `updateLeclerc.json`, you will attempt to set the team of Leclerc back to Ferrari. 
 
     ```
-    $ <copy>curl -i -X PUT --data-binary @updateLeclerc.json -H "Content-Type: application/json" <ADB_BASE_URL>/ords/hol23ai/driver_dv/103</copy>
+    $ <copy>curl -i -X PUT --data-binary @updateLeclerc.json -H "Content-Type: application/json" $ADB_BASE_URL/ords/hol23ai/driver_dv/103</copy>
     ```
 
     Because the team is not updatable through the driver_dv view, the command outputs a failure with HTTP 400. 
@@ -207,7 +207,7 @@ You can delete a document with a given ID. Earlier, you replace "Bahrain Grand P
 1. Now use the ID to delete the document. 
 
     ```
-    $ <copy>curl --request DELETE --url <ADB_BASE_URL>/ords/hol23ai/race_dv/201</copy>
+    $ <copy>curl --request DELETE --url $ADB_BASE_URL/ords/hol23ai/race_dv/201</copy>
     ```
 
     ![Delete one document](./images/delete_201.png)
@@ -221,11 +221,12 @@ You can delete a document with a given ID. Earlier, you replace "Bahrain Grand P
 3. To delete the document(s) matching this query, run this command. 
 
     ```
-    $ <copy>curl -v --location -g -X DELETE "<ADB_BASE_URL>/ords/hol23ai/race_dv/?q=%7B%22_id%22%3A%7B%22%24eq%22%3A202%7D%7D" </copy>
+    $ <copy>curl -v --location -g -X DELETE "$ADB_BASE_URL/ords/hol23ai/race_dv/?q=%7B%22_id%22%3A%7B%22%24eq%22%3A202%7D%7D" </copy>
     ```
 
     ![Delete with a query filter](./images/delete_query1.png)
     ![Delete with a query filter](./images/delete_query2.png)
+    ![Delete with a query filter](./images/delete_query3.png)
 
 Congratulations! You have finished this workshop. 
 

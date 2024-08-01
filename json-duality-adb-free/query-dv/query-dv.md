@@ -35,7 +35,7 @@ This tool is installed by default when using the _Run on LiveLabs_ option. It is
 1. View the contents of the `driver_dv` duality view. Because we are not specifying an ID, this query will return the entire view.
 
     ```
-    $ <copy>curl -X GET <ADB_BASE_URL>/ords/hol23ai/driver_dv/ | json_pp</copy>
+    $ <copy>curl -X GET $ADB_BASE_URL/ords/hol23ai/driver_dv/ | json_pp</copy>
     ```
 
     ![Query the entire Drivers view](./images/get-drivers.png)
@@ -45,6 +45,8 @@ This tool is installed by default when using the _Run on LiveLabs_ option. It is
     ```
     $ <copy><ADB_BASE_URL>/ords/hol23ai/driver_dv/</copy>
     ```
+
+    **NOTE:** Here you will add the ```ADB_BASE_URL``` manually since we are not using cloudshell/terminal.
 
     Documents corresponding to six drivers now appear in the driver_dv duality view. For each document, the following fields are automatically computed and included in the result: 
     - etag - Document eTag. Used for optimistic locking. Automatically computed by the duality view.
@@ -60,7 +62,7 @@ This tool is installed by default when using the _Run on LiveLabs_ option. It is
 1. To view only one document from a duality view, simply append the document's ID to the end of your GET call URL. 
 
     ```
-    $ <copy>curl -X GET <ADB_BASE_URL>/ords/hol23ai/driver_dv/105 | json_pp</copy>
+    $ <copy>curl -X GET $ADB_BASE_URL/ords/hol23ai/driver_dv/105 | json_pp</copy>
     ```
 
     This call has hardcoded the document ID for George Russell, but you can exchange the ID with another driver to GET their information. 
@@ -82,7 +84,7 @@ Documents can be fetched by supplying a query parameter. Only documents matching
     **NOTE:** We have encoded the brackets, quotes, colons, and spaces in the query to make this a valid URL. This is required for cURL. 
 
     ```
-    $ <copy>curl -v --location -g "<ADB_BASE_URL>/ords/hol23ai/race_dv/?q=%7B%22name%22%3A%7B%22%24eq%22%3A%22Bahrain%20Grand%20Prix%22%7D%7D" | json_pp</copy>
+    $ <copy>curl -v --location -g "$ADB_BASE_URL/ords/hol23ai/race_dv/?q=%7B%22name%22%3A%7B%22%24eq%22%3A%22Bahrain%20Grand%20Prix%22%7D%7D" | json_pp</copy>
     ```
 
     Notice that the podium and result fields are empty. This is again because the information for "Bahrain Grand Prix" has not been entered. In the next lab, this information will be added. 
@@ -105,6 +107,8 @@ You can continue to use this tool for the rest of the workshop, but the instruct
     Use the username and password you have setup for this workshop. In our case, our user is `hol23ai`. 
 
     ![Login to SQL Developer Web](./images/hol23ai-sign-in.png)
+
+    **NOTE:** Here you will add the ```ADB_BASE_URL``` manually since we are not using cloudshell/terminal.
 
 2. Click on **Rest** and then **AutoREST**.
 
