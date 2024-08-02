@@ -25,7 +25,7 @@ This lab assumes you have:
 
     ![Image alt text](images/login-info.png " ")
 
-3. From here, Click **Copy Value** on the bottom of the screen to copy the User password, which in this case is **Welcome_12345**. Note: you'll want to verify that the password was correctly copied, if not, manually copy it. Next, click on the **SQL Web Developer URL**, this will take us to the login menu. 
+3. From here, Click **Copy Value** on the bottom of the screen to copy the User password. Note: you'll want to verify that the password was correctly copied, if not, manually copy it. Next, click on the **SQL Web Developer URL**, this will take us to the login menu. 
 
     ![Image alt text](images/reservation-info.png " ")
 
