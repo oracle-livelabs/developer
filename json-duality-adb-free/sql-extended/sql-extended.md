@@ -21,9 +21,9 @@ This lab assumes you have:
 * All previous labs successfully completed
 
 
-## Task 1: Inserting into SQL tables and duality views
+## Task 1: Inserting into SQL tables and Duality Views
 
-1. We mentioned how the underlying base tables get populated when you add an entry into the JSON duality view. Here we will check the base table to ensure the record does not exist, insert into the duality view, and then check the base table. Clear the worksheet, copy the code below and click **Run Script**.
+1. We mentioned how the underlying base tables get populated when you add an entry into the JSON duality view. Here we will check the base table to ensure the record does not exist, insert the following into the duality view, and then check the base table. Clear the worksheet, copy the code below and click **Run Script**.
 
     ```
     <copy>
@@ -42,7 +42,7 @@ This lab assumes you have:
     ```
     ![Image alt text](images/task_1_1.png " ")
 
-2. Now we will look at the opposite. Let's look at the duality view, insert into the base table and then check the duality view for the record. Clear the worksheet, copy the code below and click **Run Script**.
+2. Now we will check for the opposite. Let's look at the duality view, insert into the base table and then check the duality view for the record. Clear the worksheet, copy the code below and click **Run Script**.
 
     ```
     <copy>
@@ -90,7 +90,7 @@ This lab assumes you have:
     ```
     ![Image alt text](images/task_2_1.png " ")
 
-2. When updating the JSON, you can check out the changes in the SQL table as well. Here we will update race 205 and change several fields including the race_date. We will also add records to the driver\_race\_map table. **Before** you run the update make sure the etag matches the record. We have provided the SQL to check the document for race id 205. If you get an error updating the JSON that is more than likely the issue. Clear the worksheet, copy the code below and click **Run Script**.
+2. When updating the JSON, you can check out the changes in the SQL table as well. Here we will update race 205 and change several fields including the race\_date. We will also add records to the driver\_race\_map table. We have provided the SQL to check the document for race id 205. Clear the worksheet, copy the code below and click **Run Script**.
 
     ```
     <copy>
@@ -100,7 +100,7 @@ This lab assumes you have:
     ```
     ![Image alt text](images/task_2_2.png " ")
 
-3. Adjust the etag if needed and copy the code below. Click **Run Script**.
+3. Now in this step, we will update the information for race ID 205 in the race\_dv view. We will change some details, such as the race date and who finished in the top three positions. We will also add records to the driver\_race\_map table to show the results of the race. This update uses the etag value to make sure that no one else has changed the document while we are updating it. This helps keep the information accurate and consistent. Clear the worksheet, copy the code below, and click **Run Script**.
 
     ```
     <copy>
@@ -108,7 +108,12 @@ This lab assumes you have:
     SELECT race_id, driver_id, position from driver_race_map where race_id = 205;
 
     UPDATE race_dv
-    SET data = ('{"_metadata": {"etag" : "BECAB2B6E186FEFB59EBD977418BA26F"},
+    SET data = ('{
+    "_metadata": {"etag" : ' || (
+        SELECT '"' || json_value(data, '$._metadata.etag') || '"'
+        FROM race_dv
+        WHERE json_value(data, '$._id') = 205
+    ) || '},
                     "_id" : 205,
                     "name"   : "Japanese Grand Prix",
                     "laps"   : 53,
@@ -214,4 +219,4 @@ This lab assumes you have:
 ## Acknowledgements
 * **Author** - Valentin Tabacaru, Kaylien Phan, William Masdon
 * **Contributors** - David Start, Ranjan Priyadarshi
-* **Last Updated By/Date** - Francis Regalado, Database Product Management, July 2024
+* **Last Updated By/Date** - Francis Regalado, Database Product Management, August 2024
