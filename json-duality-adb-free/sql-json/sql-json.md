@@ -119,7 +119,7 @@ This lab assumes you have:
     ```
     ![Image alt text](images/task_3_1.png " ")
 
-2. Select from the view to ensure the change is in. In this example we are also showing that you can use json_value in the where clause.  Clear the worksheet, copy the SQL below and click **Run Script**.
+2. Select from the view to ensure the change is in. In this example we are also showing that you can use json\_value in the where clause.  Clear the worksheet, copy the SQL below and click **Run Script**.
 
     ```
     <copy>
@@ -131,7 +131,7 @@ This lab assumes you have:
 
 ## Task 4: Re-parenting of sub-objects between two documents
 
-We will switch Charles Leclerc's and George Russell's teams. This can be done by updating the Mercedes and Ferrari team_dvs. The documents can be updated by simply sending the new list of drivers for both documents in the input.
+We will switch Charles Leclerc's and George Russell's teams. This can be done by updating the Mercedes and Ferrari team\_dvs. The documents can be updated by simply sending the new list of drivers for both documents in the input.
 
 1. First, show the team documents. Clear the worksheet, copy the SQL below and click **Run Script**.
 
@@ -145,7 +145,7 @@ We will switch Charles Leclerc's and George Russell's teams. This can be done by
     ```
     ![Image alt text](images/task_4_1.png " ")
 
-2. Then we perform the updates. The 'UPDATE' statements for team_dv use a subquery to automatically get the latest 'etag' for each team. The subquery inside the SET data looks at the team document with the name is 'Mercedes' or 'Ferrari' and only picks the first match, thanks to us using ROWNUM = 1. This dynamically fetched etag is then included in the '_metadata' part of the JSON document. This ensures we always use the most current 'etag' when making updates, which helps avoid issues if someone else is trying to make changes at the same time, making our updates more accurate and reliable. Now, clear the worksheet, copy the SQL below and click **Run Script**.
+2. Then we perform the updates. The 'UPDATE' statements for team\_dv use a subquery to automatically get the latest 'etag' for each team. The subquery inside the SET data looks at the team document with the name is 'Mercedes' or 'Ferrari' and only picks the first match, thanks to us using ROWNUM = 1. This dynamically fetched etag is then included in the '\_metadata' part of the JSON document. This ensures we always use the most current 'etag' when making updates, which helps avoid issues if someone else is trying to make changes at the same time, making our updates more accurate and reliable. Now, clear the worksheet, copy the SQL below and click **Run Script**.
 
     ```
     <copy>
@@ -216,7 +216,7 @@ We will switch Charles Leclerc's and George Russell's teams. This can be done by
 
 ## Task 5: Update a non-updateable field
 
-1. Now we will update team for a driver through driver\_dv. This will throw an error as we specified the JSON Duality View to not allow this field to be updatable through driver_dv. Clear the worksheet, copy the SQL below and click **Run Script**.
+1. Now we will update team for a driver through driver\_dv. This will throw an error as we specified the JSON Duality View to not allow this field to be updatable through driver\_dv. Clear the worksheet, copy the SQL below and click **Run Script**.
 
     ```
     <copy>

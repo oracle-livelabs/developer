@@ -42,7 +42,7 @@ This lab assumes you have:
 
 ## Task 2: Creating your database tables and JSON duality views
 
-1. Upon accessing the SQL for the first time, you'll be given a quick Tour of the console. This will explain what the different sections and icons in the console are used for. Feel free to hit Next and read the description or just hit the X to close the tour. 
+1. Upon accessing the SQL for the first time, you'll be given a quick tour of the console. This will explain what the different sections and icons in the console are used for. Feel free to hit Next and read the description or just hit the X to close the tour. 
 
     ![Image alt text](images/tour.png " ")
 
@@ -224,7 +224,7 @@ This lab assumes you have:
 	![Image alt text](images/create-team-dv.png " ")
 
 ## Task 3: Populating the database
-1. We are now inserting a collection of team documents into TEAM\_DV. This automatically populates the driver and team table as well as the driver collection. If you remember, the team duality view joins team and driver. It also allows inserts into both tables. Copy the sql below and click **Run Script**
+1. We are now inserting a collection of team documents into TEAM\_DV. This automatically populates the driver and team table as well as the driver collection. If you remember, the team duality view joins team and driver. It also allows inserts into both tables. Copy the SQL below and click **Run Script**.
 
     ```
     <copy>
@@ -262,7 +262,7 @@ This lab assumes you have:
 	```
 	![Image alt text](images/insert-team-dv.png " ")
 
-2. Additionally, we are now inserting a collection of race documents into RACE\_DV. This automatically populates the race table. You can either click the trash to clear the worksheet or delete what is there before pasting the code below. Copy the sql below and click **Run Script** 
+2. Additionally, we are now inserting a collection of race documents into RACE\_DV. This automatically populates the race table. You can either click the trash to clear the worksheet or delete what is there before pasting the code below. Copy the SQL below and click **Run Script**.
 
 	```
     <copy>
@@ -293,7 +293,7 @@ This lab assumes you have:
 
     For example, in the previous step, documents were inserted into the team\_dv duality view. This duality view joins the team table with the driver table. Once we insert into this duality view, both the team table as well as the driver table are populated.
 
-    If you now list the contents of the driver\_dv duality view, which is based on the driver table, it has documents as well. You can either click the trash to clear the worksheet or delete what is there before pasting the code below. Copy the sql below and click **Run Script** 
+    If you now list the contents of the driver\_dv duality view, which is based on the driver table, it has documents as well. You can either click the trash to clear the worksheet or delete what is there before pasting the code below. Copy the SQL below and click **Run Script**.
 
     ```
     <copy>
