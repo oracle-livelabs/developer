@@ -21,7 +21,7 @@ This lab assumes you have:
 * All previous labs successfully completed
 
 
-## Task 1: Inserting into SQL tables and duality views
+## Task 1: Inserting into SQL tables and Duality Views
 
 1. We mentioned how the underlying base tables get populated when you add an entry into the JSON duality view. Here we will check the base table to ensure the record does not exist, insert the following into the duality view, and then check the base table. Clear the worksheet, copy the code below and click **Run Script**.
 
@@ -90,7 +90,7 @@ This lab assumes you have:
     ```
     ![Image alt text](images/task_2_1.png " ")
 
-2. When updating the JSON, you can check out the changes in the SQL table as well. Here we will update race 205 and change several fields including the race_date. We will also add records to the driver\_race\_map table. We have provided the SQL to check the document for race id 205. Clear the worksheet, copy the code below and click **Run Script**.
+2. When updating the JSON, you can check out the changes in the SQL table as well. Here we will update race 205 and change several fields including the race\_date. We will also add records to the driver\_race\_map table. We have provided the SQL to check the document for race id 205. Clear the worksheet, copy the code below and click **Run Script**.
 
     ```
     <copy>
@@ -100,7 +100,7 @@ This lab assumes you have:
     ```
     ![Image alt text](images/task_2_2.png " ")
 
-3. Now in this step, we will update the information for race ID 205 in the race_dv view. We will change some details, such as the race date and who finished in the top three positions. We will also add records to the driver_race_map table to show the results of the race. This update uses the etag value to make sure that no one else has changed the document while we are updating it. This helps keep the information accurate and consistent. Clear the worksheet, copy the code below, and click **Run Script**.
+3. Now in this step, we will update the information for race ID 205 in the race\_dv view. We will change some details, such as the race date and who finished in the top three positions. We will also add records to the driver\_race\_map table to show the results of the race. This update uses the etag value to make sure that no one else has changed the document while we are updating it. This helps keep the information accurate and consistent. Clear the worksheet, copy the code below, and click **Run Script**.
 
     ```
     <copy>
