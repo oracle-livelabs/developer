@@ -30,14 +30,14 @@ This lab assumes you have:
 1. First you must determine the ID and eTag of the document to replace. Open this URL to query on the Bahrain Grand Prix as we did in the last lab.  
 
     ```
-    $ <copy>curl -v --location -g "$ADB_BASE_URL/ords/HOL23AI/race_dv/?q=%7B%22name%22%3A%7B%22%24eq%22%3A%22Bahrain%20Grand%20Prix%22%7D%7D"</copy>
+    $ <copy>curl -v --location -g "$ADB_BASE_URL/ords/HOL23AI/race_dv/?q=%7B%22name%22%3A%7B%22%24eq%22%3A%22Bahrain%20Grand%20Prix%22%7D%7D" | jq .</copy>
     ```
 
     ![Find the ID and eTag of the Bahrain race](./images/get_race201.png)
 
     Take note of the ID (which is 201) and the eTag (which will be different for everyone). 
 
-2. Open Code Editor on your OCI cloud console (or use vim in command line to edit the files).
+2. Open Code Editor on your OCI cloud console.
 
     ![OCI Code Editor](./images/code-editor.png)
 
@@ -87,7 +87,7 @@ In this task, you will switch Charles Leclerc's and George Russell's teams by up
 2. Query the team_dv to find the documents' IDs. Then copy them down for each document.
 
     ```
-    $ <copy>curl -v --location -g "$ADB_BASE_URL/ords/HOL23AI/team_dv/?q=%7B%22name%22%3A%7B%22%24in%22%3A%5B%22Mercedes%22%2C%22Ferrari%22%5D%7D%7D"
+    $ <copy>curl -v --location -g "$ADB_BASE_URL/ords/HOL23AI/team_dv/?q=%7B%22name%22%3A%7B%22%24in%22%3A%5B%22Mercedes%22%2C%22Ferrari%22%5D%7D%7D" | jq .
     </copy>
     ```
 
@@ -96,6 +96,10 @@ In this task, you will switch Charles Leclerc's and George Russell's teams by up
     The ID for Mercedes is 2 and the ID for the Ferrari team is 302. 
 
 3. `updateMercedes.json` contains the replacement document for the Mercedes team.
+
+    ``` 
+    $ <copy> cat updateMercedes.json </copy> 
+    ```
 
     ```
     {
@@ -118,6 +122,10 @@ In this task, you will switch Charles Leclerc's and George Russell's teams by up
     ```
 
 4. `updateFerrari.json` contains the replacement document for the Ferrari team.
+
+    ``` 
+    $ <copy> cat updateFerrari.json </copy> 
+    ```
 
     ```
     {
@@ -160,7 +168,7 @@ In this task, you will switch Charles Leclerc's and George Russell's teams by up
 8. To show the changes to Ferrari and Mercedes teams, query the team_dv duality view. 
 
     ```
-    $ <copy>curl -v --location -g "$ADB_BASE_URL/ords/HOL23AI/team_dv/?q=%7B%22name%22%3A%7B%22%24in%22%3A%5B%22Mercedes%22%2C%22Ferrari%22%5D%7D%7D"
+    $ <copy>curl -v --location -g "$ADB_BASE_URL/ords/HOL23AI/team_dv/?q=%7B%22name%22%3A%7B%22%24in%22%3A%5B%22Mercedes%22%2C%22Ferrari%22%5D%7D%7D" | jq .
     </copy>
     ```
 
@@ -175,7 +183,7 @@ In this task, you will switch Charles Leclerc's and George Russell's teams by up
     To see the changes, run: 
 
     ```
-    $ <copy>curl -v --location -g  "$ADB_BASE_URL/ords/HOL23AI/driver_dv/?q=%7B%22%24or%22:%5B%7B%22name%22:%7B%22%24like%22:%22George%25%22%7D%7D%2C%7B%22name%22:%7B%22%24like%22:%22Charles%25%22%7D%7D%5D%7D"</copy>
+    $ <copy>curl -v --location -g  "$ADB_BASE_URL/ords/HOL23AI/driver_dv/?q=%7B%22%24or%22:%5B%7B%22name%22:%7B%22%24like%22:%22George%25%22%7D%7D%2C%7B%22name%22:%7B%22%24like%22:%22Charles%25%22%7D%7D%5D%7D" | jq .</copy>
     ```
 
     ![View changes to driver view](./images/driver_afterswap.png)
@@ -236,5 +244,5 @@ Congratulations! You have finished this workshop.
 ## Acknowledgements
 
 * **Author** - Valentin Tabacaru, William Masdon, Kaylien Phan, Jeff Smith
-* **Contributors** -  David Start, Ranjan Priyadarshi
-* **Last Updated By/Date** - Valentin Tabacaru, Database Product Management, July 2024
+* **Contributors** -  David Start, Ranjan Priyadarshi, Animesh Sahay
+* **Last Updated By/Date** - Animesh Sahay, Cloud Engineering, August 2024
