@@ -34,7 +34,7 @@ This lab assumes you have:
     </copy>
     ```
 
-    ![Image alt text](images/task_1_1.png " ")
+    ![Finding race info by race id](images/task-1-1.png " ")
 
 ## Task 2: Replace and fetch a document by ID
 
@@ -88,7 +88,7 @@ This lab assumes you have:
     </copy>
     ```
 
-    ![Image alt text](images/task_2_2.png " ")
+    ![Updates Bahrain Grand Prix](images/task-2-2.png " ")
     
 2. Now let's see the updated results for the Bahrain Grand Prix. Clear the worksheet, copy the SQL below and click **Run Script**.
 
@@ -98,7 +98,7 @@ This lab assumes you have:
     FROM race_dv WHERE json_value(data, '$._id') = 201;
     </copy>
     ```
-    ![Image alt text](images/task_2_3.png " ")
+    ![See results for the Bahrain Grand Prix](images/task-2-3.png " ")
 
 ## Task 3: Update specific fields in the document identified by a predicate
 
@@ -117,7 +117,7 @@ This lab assumes you have:
     COMMIT;
     </copy>
     ```
-    ![Image alt text](images/task_3_1.png " ")
+    ![Updates race with spronsor info](images/task-3-1.png " ")
 
 2. Select from the view to ensure the change is in. In this example we are also showing that you can use json\_value in the where clause.  Clear the worksheet, copy the SQL below and click **Run Script**.
 
@@ -127,7 +127,7 @@ This lab assumes you have:
     FROM race_dv WHERE json_value(data, '$.name') LIKE 'Blue Air Bahrain%';
     </copy>
     ```
-    ![Image alt text](images/task_3_2.png " ")
+    ![View the Sponsor changes](images/task-3-2.png " ")
 
 ## Task 4: Re-parenting of sub-objects between two documents
 
@@ -143,7 +143,7 @@ We will switch Charles Leclerc's and George Russell's teams. This can be done by
     WHERE dv.data.name LIKE 'Ferrari%';
     </copy>
     ```
-    ![Image alt text](images/task_4_1.png " ")
+    ![Shows current team](images/task-4-1.png " ")
 
 2. Then we perform the updates. The 'UPDATE' statements for team\_dv use a subquery to automatically get the latest 'etag' for each team. The subquery inside the SET data looks at the team document with the name is 'Mercedes' or 'Ferrari' and only picks the first match, thanks to us using ROWNUM = 1. This dynamically fetched etag is then included in the '\_metadata' part of the JSON document. This ensures we always use the most current 'etag' when making updates, which helps avoid issues if someone else is trying to make changes at the same time, making our updates more accurate and reliable. Now, clear the worksheet, copy the SQL below and click **Run Script**.
 
@@ -186,7 +186,7 @@ We will switch Charles Leclerc's and George Russell's teams. This can be done by
     COMMIT;
     </copy>
     ```
-    ![Image alt text](images/task_4_2.png " ")
+    ![Updates the team dv](images/task-4-2.png " ")
 
 3. Now, show the team documents after the updates. You'll see that the former teams with Mercedes have now been swapped to Ferrari and vice versa. Clear the worksheet, copy the SQL below and click **Run Script**.
 
@@ -199,7 +199,7 @@ We will switch Charles Leclerc's and George Russell's teams. This can be done by
     WHERE dv.data.name LIKE 'Ferrari%';
     </copy>
     ```
-    ![Image alt text](images/task_4_3.png " ")
+    ![Updated Ferrari and Mercedes](images/task-4-3.png " ")
 
 4. Show the driver documents after the updates as well. Clear the worksheet, copy the SQL below and click **Run Script**.
     ```
@@ -211,7 +211,7 @@ We will switch Charles Leclerc's and George Russell's teams. This can be done by
     WHERE dv.data.name LIKE 'George Russell%';
     </copy>
     ```
-    ![Image alt text](images/task_4_4.png " ")
+    ![Updated drivers](images/task-4-4.png " ")
 
 
 ## Task 5: Update a non-updateable field
@@ -245,7 +245,7 @@ We will switch Charles Leclerc's and George Russell's teams. This can be done by
     WHERE dv.data."_id" = 103;
     </copy>
     ```
-    ![Image alt text](images/task_5_1.png " ")
+    ![Reflects error](images/task-5-1.png " ")
 
 ## Task 6: Delete by predicate
 
@@ -263,7 +263,7 @@ We will switch Charles Leclerc's and George Russell's teams. This can be done by
     COMMIT;
     </copy>
     ```
-    ![Image alt text](images/task_6_1.png " ")
+    ![Race deleted](images/task-6-1.png " ")
 
 You may **proceed to the next lab.** 
 
@@ -275,5 +275,5 @@ You may **proceed to the next lab.**
 
 ## Acknowledgements
 * **Author** - Valentin Tabacaru, Kaylien Phan, William Masdon
-* **Contributors** - David Start, Ranjan Priyadarshi
+* **Contributors** - David Start, Ranjan Priyadarshi, Francis Regalado
 * **Last Updated By/Date** - Francis Regalado, Database Product Management, August 2024
