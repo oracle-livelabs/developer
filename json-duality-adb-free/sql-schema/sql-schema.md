@@ -23,32 +23,32 @@ This lab assumes you have:
 
 1. Upon launching your workshop, on your upper left hand side, you'll see **View Login Info**. Click this to begin.
 
-    ![Image alt text](images/login-info.png " ")
+    ![Login info ](images/login-info.png " ")
 
 3. From here, Click **Copy Value** on the bottom of the screen to copy the User password. Note: you'll want to verify that the password was correctly copied, if not, manually copy it. Next, click on the **SQL Web Developer URL**, this will take us to the login menu. 
 
-    ![Image alt text](images/reservation-info.png " ")
+    ![Areas to select](images/reservation-info.png " ")
 
-    ![Image alt text](images/hol23ai-advanced.png " ")
+    ![Landing page for Sign-in](images/hol23ai-advanced.png " ")
 
 4. Once at the login menu, click **Advanced** , under PATH write **HOL23AI** (case sensitive). Now for username, write **hol23ai**. Paste the password you had copied from step 3. Once all 3 values have been entered, click **Sign in**.
 
-    ![Image alt text](images/hol23ai-sign-in.png " ")
+    ![All sing-in info](images/hol23ai-sign-in.png " ")
 
 5. Once signed in, click SQL worksheet. This is where our work will be perfomed. Click **SQL** worksheet button under Development. If you are to signed out, you can go back to this section by clicking on **Development**.
 
-    ![Image alt text](images/development-sql.png " ")
+    ![Select SQL under Development](images/development-sql.png " ")
 
 
 ## Task 2: Creating your database tables and JSON duality views
 
 1. Upon accessing the SQL for the first time, you'll be given a quick tour of the console. This will explain what the different sections and icons in the console are used for. Feel free to hit Next and read the description or just hit the X to close the tour. 
 
-    ![Image alt text](images/tour.png " ")
+    ![The tour walkthrough](images/tour.png " ")
 
 2. As you go through this workshop, we will specify on where to use the click the Run button or Run Script button to run our statements. The Run button runs just one SQL Statement and formats the output into a data grid. The Run Script button runs many SQL statements and spools their output. We will highlight which to use.
 
-    ![Image alt text](images/run-sql-script.png " ")
+    ![Selecting Run or Run Script](images/run-sql-script.png " ")
 
 3. You will need to create your tables. Copy the code below and run it in the worksheet by clicking the **Run Script** button.
 
@@ -98,7 +98,7 @@ This lab assumes you have:
     </copy>
     ```
 
-    ![Image alt text](images/create-tables.png " ")
+    ![Creates the drive id](images/create-tables.png " ")
 
 4. We will now create a trigger on the driver\_race\_map table to populate the points fields in team and driver based on race results. You can either click the trash to clear the worksheet or delete what is there before pasting the code below. Once you've pasted the code into the worksheet, Click **Run Script**.
 
@@ -146,7 +146,7 @@ This lab assumes you have:
     </copy>
     ```
 
-    ![Image alt text](images/create-trigger.png " ")
+    ![Creates team id and output](images/create-trigger.png " ")
 
 5. Now we will create the RACE\_DV duality view. Notice that we only allow updates on the driver table but insert update delete onto race and driver\_race\_map. You have the ability to control the interaction at the table level within your view. In the next step you will create a duality view to create and delete drivers. You can either click the trash to clear the worksheet or delete what is there before pasting the code below. Once pasted, Click **Run Script**.
 
@@ -173,7 +173,7 @@ This lab assumes you have:
 		</copy>
     ```
 
-	![Image alt text](images/create-race-dv.png " ")
+	![Creates the race id](images/create-race-dv.png " ")
 
 6. Now we will create the DRIVER\_DV duality view. Since this is for drivers, we don't want them creating teams or races so we shall set those to NOINSERT, NOUPDATE, NODELETE. They can also update or insert a driver's race map but not remove them. You can either click the trash to clear the worksheet or delete what is there before pasting the code below. Click **Run Script**.
 
@@ -201,7 +201,7 @@ This lab assumes you have:
     FROM driver d WITH INSERT UPDATE DELETE;
 	</copy>
     ```
-    ![Image alt text](images/create-driver-dv.png " ")
+    ![Creates the driver dv](images/create-driver-dv.png " ")
 
 7. The last duality view is TEAMS\_DV. When creating or modifying a team you can insert or update a driver. You can either click the trash to clear the worksheet or delete what is there before pasting the code below. Click **Run Script**.
 
@@ -221,7 +221,7 @@ This lab assumes you have:
 
     </copy>
     ```
-	![Image alt text](images/create-team-dv.png " ")
+	![Creates the team dv](images/create-team-dv.png " ")
 
 ## Task 3: Populating the database
 1. We are now inserting a collection of team documents into TEAM\_DV. This automatically populates the driver and team table as well as the driver collection. If you remember, the team duality view joins team and driver. It also allows inserts into both tables. Copy the SQL below and click **Run Script**.
@@ -260,7 +260,7 @@ This lab assumes you have:
     COMMIT;
 	</copy>
 	```
-	![Image alt text](images/insert-team-dv.png " ")
+	![Inserts teams dv](images/insert-team-dv.png " ")
 
 2. Additionally, we are now inserting a collection of race documents into RACE\_DV. This automatically populates the race table. You can either click the trash to clear the worksheet or delete what is there before pasting the code below. Copy the SQL below and click **Run Script**.
 
@@ -287,7 +287,7 @@ This lab assumes you have:
     </copy>
     ```
 
-	![Image alt text](images/insert-race-dv.png " ")
+	![Inserting the race dv](images/insert-race-dv.png " ")
 
 3. Populating a duality view automatically updates data shown in related duality views, by updating their underlying tables.
 
@@ -302,7 +302,7 @@ This lab assumes you have:
     </copy>
     ```
 
-    ![Image alt text](images/print-driver-race.png " ")
+    ![Prints out the driver and race dv](images/print-driver-race.png " ")
 
     Your setup is now complete.
 
