@@ -40,7 +40,7 @@ This lab assumes you have:
     SELECT name FROM race where race_id = 204;
     </copy>
     ```
-    ![Image alt text](images/task_1_1.png " ")
+    ![Image alt text](images/task-1-1.png " ")
 
 2. Now we will check for the opposite. Let's look at the duality view, insert into the base table and then check the duality view for the record. Clear the worksheet, copy the code below and click **Run Script**.
 
@@ -56,7 +56,7 @@ This lab assumes you have:
     FROM race_dv WHERE json_value(data, '$._id') = 205;
     </copy>
     ```
-    ![Image alt text](images/task_1_2.png " ")
+    ![Image alt text](images/task-1-2.png " ")
 
 ## Task 2: Update and replace a document by ID
 
@@ -88,7 +88,7 @@ This lab assumes you have:
 
     </copy>
     ```
-    ![Image alt text](images/task_2_1.png " ")
+    ![Image alt text](images/task-2-1.png " ")
 
 2. When updating the JSON, you can check out the changes in the SQL table as well. Here we will update race 205 and change several fields including the race\_date. We will also add records to the driver\_race\_map table. We have provided the SQL to check the document for race id 205. Clear the worksheet, copy the code below and click **Run Script**.
 
@@ -98,7 +98,7 @@ This lab assumes you have:
     FROM race_dv WHERE json_value(data, '$._id') = 205;
     </copy>
     ```
-    ![Image alt text](images/task_2_2.png " ")
+    ![Image alt text](images/task-2-2.png " ")
 
 3. Now in this step, we will update the information for race ID 205 in the race\_dv view. We will change some details, such as the race date and who finished in the top three positions. We will also add records to the driver\_race\_map table to show the results of the race. This update uses the etag value to make sure that no one else has changed the document while we are updating it. This helps keep the information accurate and consistent. Clear the worksheet, copy the code below, and click **Run Script**.
 
@@ -142,7 +142,7 @@ This lab assumes you have:
     COMMIT;
     </copy>
     ```
-    ![Image alt text](images/task_2_3.png " ")
+    ![Image alt text](images/task-2-3.png " ")
 
 ## Task 3: Delete by predicate
 
@@ -158,7 +158,7 @@ This lab assumes you have:
     SELECT * FROM race where race_id = 204;
     </copy>
     ```
-    ![Image alt text](images/task_3_1.png " ")
+    ![Image alt text](images/task-3-1.png " ")
 
 2. Delete the race document for race 204. The underlying rows are deleted from the race and driver\_race\_map tables. Clear the worksheet, copy the code below and click **Run Script**.
 
@@ -173,7 +173,7 @@ This lab assumes you have:
     COMMIT;
     </copy>
     ```
-    ![Image alt text](images/task_3_2.png " ")
+    ![Image alt text](images/task-3-2.png " ")
 
 3. Select from the tables again and you'll see they're gone from the duality view as well as the base SQL table. Clear the worksheet, copy the code below and click **Run Script**.
 
@@ -186,7 +186,7 @@ This lab assumes you have:
     SELECT * FROM race where race_id = 204;
     </copy>
     ```
-    ![Image alt text](images/task_3_3.png " ")
+    ![Image alt text](images/task-3-3.png " ")
 
 4. Lastly, we'll delete with JSON and view the tables again. Clear the worksheet, copy the code below and click **Run Script**.
 
@@ -208,7 +208,7 @@ This lab assumes you have:
 
     </copy>
     ```
-    ![Image alt text](images/task_3_4.png " ")
+    ![Image alt text](images/task-3-4.png " ")
 
 ## Learn More
 
@@ -218,5 +218,5 @@ This lab assumes you have:
 
 ## Acknowledgements
 * **Author** - Valentin Tabacaru, Kaylien Phan, William Masdon
-* **Contributors** - David Start, Ranjan Priyadarshi
+* **Contributors** - David Start, Ranjan Priyadarshi, Francis Regalado
 * **Last Updated By/Date** - Francis Regalado, Database Product Management, August 2024
