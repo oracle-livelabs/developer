@@ -25,7 +25,7 @@ This lab assumes you have:
 
     ![Login info ](images/login-info.png " ")
 
-3. From here, Click **Copy Value** on the bottom of the screen to copy the User password. Note: you'll want to verify that the password was correctly copied, if not, manually copy it. Next, click on the **SQL Web Developer URL**, this will take us to the login menu. 
+3. From here, click **Copy Value** on the bottom of the screen to copy the User password. Note: you'll want to verify that the password was correctly copied, if not, manually copy it. Next, click on the **SQL Web Developer URL**, this will take us to the login menu. 
 
     ![Areas to select](images/reservation-info.png " ")
 
@@ -35,7 +35,7 @@ This lab assumes you have:
 
     ![All sing-in info](images/hol23ai-sign-in.png " ")
 
-5. Once signed in, click SQL worksheet. This is where our work will be perfomed. Click **SQL** worksheet button under Development. If you are to signed out, you can go back to this section by clicking on **Development**.
+5. Once signed in, click SQL worksheet. This is where our work will be prefomed. Click **SQL** worksheet button under Development. If you are to signed out, you can go back to this section by clicking on **Development**.
 
     ![Select SQL under Development](images/development-sql.png " ")
 
@@ -100,7 +100,7 @@ This lab assumes you have:
 
     ![Creates the drive id](images/create-tables.png " ")
 
-4. We will now create a trigger on the driver\_race\_map table to populate the points fields in team and driver based on race results. You can either click the trash to clear the worksheet or delete what is there before pasting the code below. Once you've pasted the code into the worksheet, Click **Run Script**.
+4. We will now create a trigger on the driver\_race\_map table to populate the points fields in team and driver based on race results. You can either click the trash to clear the worksheet or delete what is there before pasting the code below. Once you've pasted the code into the worksheet, click **Run Script**.
 
     ```
     <copy>
@@ -148,7 +148,7 @@ This lab assumes you have:
 
     ![Creates team id and output](images/create-trigger.png " ")
 
-5. Now we will create the RACE\_DV duality view. Notice that we only allow updates on the driver table but insert update delete onto race and driver\_race\_map. You have the ability to control the interaction at the table level within your view. In the next step you will create a duality view to create and delete drivers. You can either click the trash to clear the worksheet or delete what is there before pasting the code below. Once pasted, Click **Run Script**.
+5. Now we will create the RACE\_DV duality view. Notice that we only allow updates on the driver table but insert update delete onto race and driver\_race\_map. You have the ability to control the interaction at the table level within your view. In the next step you will create a duality view to create and delete drivers. You can either click the trash to clear the worksheet or delete what is there before pasting the code below. Once pasted, click **Run Script**.
 
     ```
     <copy>
@@ -203,7 +203,7 @@ This lab assumes you have:
     ```
     ![Creates the driver dv](images/create-driver-dv.png " ")
 
-7. The last duality view is TEAMS\_DV. When creating or modifying a team you can insert or update a driver. You can either click the trash to clear the worksheet or delete what is there before pasting the code below. Click **Run Script**.
+7. The last duality view is TEAMS\_DV. When creating or modifying a team, you can insert or update a driver. You can either click the trash to clear the worksheet or delete what is there before pasting the code below. Click **Run Script**.
 
 	```
 	<copy>  
