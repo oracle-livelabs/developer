@@ -80,8 +80,8 @@ Documents can be fetched by supplying a query parameter. Only documents matching
 
     ![Query with a filter](./images/get_bahrain.png)
 
-
-## (Optional) Task 4: Use OpenAPI to run REST Calls in an IDE
+<!-- ## (Optional) Task 4: Use OpenAPI to run REST Calls in an IDE
+=======
 
 The ORDS install comes with SQL Developer Web, an online tool for managing your database. In this tool, we can use OpenAPI to query our REST enabled views with a GUI. Follow these steps to use the IDE. 
 
@@ -125,7 +125,7 @@ You can continue to use this tool for the rest of the workshop, but the instruct
 
     You may continue using this tool for the rest of the workshop, but please be aware that the instructions will continue to use the Terminal and cURL commands. 
 
-    ![Examine the results](./images/race_result.png)
+    ![Examine the results](./images/race_result.png) -->
 
 You may **proceed to the next lab.**
 
