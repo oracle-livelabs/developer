@@ -105,7 +105,7 @@ Now that we've added options to let users manage departments, we'll do the same 
 
     A **Delete Employee** button is displayed in the toolbar on the main-employees page. The button is inactive.
 
-3. Because the page features a bar chart as well, let's update the action chain created by the Quick Start to refresh the chart whenever an employee is deleted. Select the **Delete Employee** button, then select the **Events** tab in the Properties pane and click **deleteEmployeeChain** under Action Chain.
+3. Because the page features a bar chart as well, let's update the action chain created by the Quick Start to refresh the chart whenever an employee is deleted. Select the **Delete Employee** button, then select **Events** in the button's Properties pane and click **deleteEmployeeChain** under Action Chain.
 
     ![This image shows the Events tab selected for the button, listing the deleteEmployeeChain as the action chain triggered by the ojAction event.](images/deleteempchain.png "")
 
@@ -135,7 +135,7 @@ Now that we've added options to let users manage departments, we'll do the same 
 
     ![This image shows the Employees page in Preview, with a table row selected and the Edit Employee button selected. The bar chart on the right also shows. ](images/employees-edit.png "")
 
-4. Click the **Edit Employee** button.
+4. Click **Edit Employee**.
 
 5. On the Edit Employee page, change the **Department** to `IT` and **Salary** to 6000. Click **Save**. A success message appears, and you are returned to the Employees page. Notice how the bar chart also changes to show the employee's updated salary.
 
@@ -158,9 +158,9 @@ Now that we've added options to let users manage departments, we'll do the same 
 
 Now that we have our web pages, let's change the application's home page from Departments to Employees—after all, an HR app is about employees.
 
-1. In the Web Apps pane, click the **main** node, then click **Settings**.
+1. In the Web Apps pane, click **main**, then **Settings**.
 
-2. In the **General** tab, set **main-employees** as the **Default Page**.
+2. From the **Default Page** list, select **main-employees**.
 
    ![This image shows the General tab of the Settings editor. Under Flow Settings, the Default Page field lists the pages available for selection. The main-employees page is selected.](images/default-page-change.png "")
 
@@ -175,4 +175,4 @@ Now that we have our web pages, let's change the application's home page from De
 ## Acknowledgements
 
 * **Author** - Sheryl Manoharan, Visual Builder User Assistance, August 2021
-* **Last Updated By** - February 2024
+* **Last Updated By** - August 2024
