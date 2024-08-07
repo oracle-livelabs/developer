@@ -2,7 +2,7 @@
 
 ## About this workshop
 
-This workshop shows you how to develop a web application in Oracle Visual Builder that lets users view, add, and edit employee data. You'll see how easy it is to create a web app and design pages with modern UI components to display your data. You'll also create business objects to store your app's data as well as connect to a third-party REST service to access its data.
+This workshop shows you how to develop a web application in Oracle Visual Builder that lets users view, add, and edit employee data. You'll see how easy it is to create a web app and design pages with modern UI components. You'll also create business objects to store your app's data as well as connect to a third-party REST service to access its data.
 
 Estimated Time: 115 minutes
 
@@ -33,4 +33,4 @@ In this workshop, you will:
 ## Acknowledgements
 
 - **Author** Sheryl Manoharan, Visual Builder User Assistance, August 2021
-- **Last Updated By** - January 2023
+- **Last Updated By** - August 2024
