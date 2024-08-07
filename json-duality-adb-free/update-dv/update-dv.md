@@ -103,19 +103,19 @@ In this task, you will switch Charles Leclerc's and George Russell's teams by up
 
     ```
     {
-        "teamId": 2,
+        "_id": 2,
         "name": "Mercedes",
-        "points": 0,
+        "points": 40,
         "driver": [
-        {
-            "driverId": 105,
-            "name": "George Russell",
-            "points": 0
-        },
         {
             "driverId": 106,
             "name": "Lewis Hamilton",
-            "points": 0
+            "points": 15
+        },
+        {
+            "driverId": 103,
+            "name": "Charles Leclerc",
+            "points": 25
         }
         ]
     }
