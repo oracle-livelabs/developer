@@ -12,7 +12,6 @@ In this lab, you will:
 
 - Install a Management Agent on a Linux or Windows Managed Instance
 - Verify Management Agent and Plug-ins
-- Tag Management Agent and Compute Instance
 - Monitor the Java runtime(s) and Java application(s) in JMS
 
 ### Prerequisites
@@ -356,36 +355,7 @@ There are two ways to install the agent:
 
   ![image of plug-in detail page](images/windows-plugin.png)
 
-## Task 5: Check that management agent is tagged with the Fleet OCID
-
-1. In the Oracle Cloud Console, open the navigation menu, click **Observability & Management**, and then click **Fleets** under **Java Management**.
-
-  ![image of console navigation to java management service](images/console-navigation-jms.png)
-
-2. Select the Fleet created in [Lab 3](?lab=setup-a-fleet).
-
-
-3. Take note of the fleet ocid.
-
-  ![image of fleet ocid](images/check-fleet-ocid.png)
-
-4. In the Oracle Cloud Console, open the navigation menu and click **Observability & Management**, and then click **Agents**.
-
- ![image of console navigation to management agents](images/console-navigation-agents.png)
-
-5. Select the compartment that the management agent is contained in.
-
-  ![image of agents main page](images/agents-main-page-new.png)
-
-6. Select the management agent to view more details
-
-7. Under **Tags**, the `jms` tag will be indicated to show that the management agent is linked to that fleet. The fleet ocid under the jms tag should be the same fleet ocid noted in Step 3.
-
-  ![image of agents details page](images/tagged-mgmt-agent.png)
-
-8. The management agent has been associated to your fleet in JMS. It will now collect information on your Java runtimes and Java Usage based on the scanning frequency defined in [Lab 3: Set Up a Fleet](?lab=setup-a-fleet).
-
-## Task 6: Verify detection of Java applications and runtimes
+## Task 5: Verify detection of Java applications and runtimes
 
 For application logging to be visible, re-run Java application after Management Agent installation. The Management Agent can detect new Java applications that are executed in your compute instance. You can observe this in the Oracle Cloud Console.
 
@@ -437,7 +407,7 @@ We shall demonstrate the detection of the Java compiler and HelloWorld applicati
 
 3. Select the compartment that the fleet is in and click the fleet.
 
-4. Click **Java Runtimes** under **Resources**. If tagging and installation of management agents is successful, Java Runtimes will be indicated on the Fleet Main Page after 5 minutes.
+4. Click **Java Runtimes** under **Resources**. If installation of management agents is successful, Java Runtimes will be indicated on the Fleet Main Page after 5 minutes.
 
   **For Non-OCI Hosts:**
   You should see only one Java Runtime. This corresponds to the Java 8 installation from [Lab 4](?lab=create-a-java-application).
