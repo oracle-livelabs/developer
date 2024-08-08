@@ -52,10 +52,10 @@ In this lab, you will:
 8. Open the navigation menu, click **Observability & Management**. Click **Fleets** under **Java Management**. Select the fleet that was created in [Lab 1](?lab=setup-a-fleet).
    ![image of console navigation to java management service](images/novnc-console-navigation-jms.png)
 
-9.  On the fleet details page, click **Configure managed instances**.
+9.  On the fleet details page, click **Download agent installer**.
     ![image of novnc fleet page setup management agent](images/novnc-fleet-page-setup-management-agent.png)
 
-10.    Under **Download management agent software**, select **Linux-x86_64**, "RPM" package type and click to download it. Under **Install using installation script** select the Linux version of the installation script and click to download it. The management agent software and installation script will be downloaded to the Downloads folder.
+10.    Under **Download the Oracle Management Agent Software Installer with requisite software**, select **Linux-x86_64**, "RHEL distros (OL, RHEL, CentOS) and SUSE" package type and click to download it. A compressed folder `jms_setup_v*.*.**_****-**_**.tar.gz` and a configuration file `JMS_agent_configuration.rsp` will be downloaded.
 
   ![image of page to select installation script os](images/novnc-download-installation-script-os.png)
 
@@ -80,8 +80,10 @@ In this lab, you will:
     </copy>
     ```
 
-    The management agent software **oracle.mgmt_agent.rpm** and the installation script **JMS\_your-fleet-name\_linux.sh** should be displayed.
-    ![image of novnc terminal downloads directory](images/novnc-terminal-downloads-dir.png)
+    The management agent installer file and the installation script **JMS\_agent\_configuration.rsp** should be displayed.
+    ```
+    JMS_agent_configuration.rsp  jms_setup_v9.0.59_linux_rhel-x86_64.tar.gz
+    ```
 
 15. Proceed to **Task 3** to install the management agent.
 
@@ -132,8 +134,8 @@ In this lab, you will:
 
     ```
     <copy>
-    scp -i <your-private-key-file> <your-installation-script-file> opc@<copied-ip-address>:~/
-    scp -i <your-private-key-file> <your-management-agent-software> opc@<copied-ip-address>:~/
+    scp -i <your-private-key-file> <your-rsp-file> opc@<copied-ip-address>:~/
+    scp -i <your-private-key-file> <your-management-agent-installer> opc@<copied-ip-address>:~/
     </copy>
     ```
 
@@ -150,33 +152,44 @@ In this lab, you will:
 ## Task 3: Perform Management Agent Installation using Installation Script
 
 1. You should now have a terminal / cloud shell open and connected to the instance. Ensure that you are in the directory where the installation script is located.
-    >**NOTE:** If you have downloaded the installation script and management agent software in **Task 1**, ensure that the terminal is in the Downloads directory. (Step 14 of **Task 1**)
+    >**NOTE:** If you have downloaded the rsp file and management agent installer in **Task 1**, ensure that the terminal is in the Downloads directory. (Step 14 of **Task 1**)
 
-2. Enter the following command to run the installation script. Note that both the installation script and management agent software must be in the same directory. The installation may take around 10 minutes to complete. Do not close your browser, Cloud Shell or your terminal while the installation is taking place.
+2. Update rsp file with `jms.install-mgmt-agent = true` flag.
+    ```
+    <copy>
+    echo 'jms.install-mgmt-agent = true' >> JMS_agent_configuration.rsp
+    </copy>
+    ```
+
+3. Enter the following command to unzip the installer and run the installation script. Note that both the installation script and management agent software must be in the same directory. The installation may take around 10 minutes to complete. Do not close your browser, Cloud Shell or your terminal while the installation is taking place.
 
      ```
      <copy>
-     sudo bash <path-to-your-installation-script/your-installation-script-file.sh> --install-mgmt-agent
+     mkdir jms_setup_v9.0.59_linux_rhel-x86_64
+     tar -xvzf jms_setup_v9.0.59_linux_rhel-x86_64.tar.gz -C jms_setup_v9.0.59_linux_rhel-x86_64
+     cd jms_setup_v9.0.59_linux_rhel-x86_64
+     sudo ./installJMSAgent.sh
      </copy>
      ```
 
-3. If installation is successful, you'll see a message similar to the following:
+4. If installation is successful, you'll see a message similar to the following:
 
     ```
-    ...
-    Management Agent installation has been completed with 'Java Usage Tracking service plugin (Service.plugin.jms)'
-      JMS basic features will be enabled on this instance.
-    Management Agent installation has been completed with 'Java Management service plugin (Service.plugin.jm)'
-      JMS advanced features can be enabled on this instance.
-    Management Agent was successfully registered using key YourFleetName (ocid1.managementagentinstallkey.oc1.iad.<some ocid hash>).
-    Instance has been assigned to JMS Fleet is YourFleetName (ocid1.jmsfleet.oc1.iad.<some ocid hash>).
+    Agent was successfully registered using key name-of-fleet-******-**** (ocid1.managementagentinstallkey.oc1.**********************).
+    Instance has been assigned to JMS fleet name-of-fleet-******-**** (ocid1.jmsfleet.oc1.iad.******************).
+    A copy of this installation log can be found at /var/log/oracle/JMSInstallScript/JMSInstallScriptLogs-**************.log
+    Removing the temporary files.
+    The JMS installer and configuration file can be removed from the machine.
+    /var/log/oracle/JMSInstallScript/JMSInstallerLogs-*******.log contains the install log.
+    Agent is successfully installed and is running.
     ```
 
-4. Remove the installation script and management agent software.
+5. Remove the installation script and management agent software.
       ```
      <copy>
-     rm <path-to-your-installation-script/your-installation-script-file.sh>
-     rm <path-to-your-management-agent-software/your-management-agent-software.rpm>
+     rm <path-to-your-rsp-file/your-rsp-file.sh>
+     rm <path-to-your-management-agent-installer/your-management-agent-installer.rpm>
+     rm -r <path-to-your-installer-unzipped-folder>
      </copy>
      ```
 
