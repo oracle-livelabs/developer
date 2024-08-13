@@ -1,8 +1,5 @@
 {
     "workshoptitle": "Integrating ORDS APIs into your applications",
-    "include": {"starter-file.sql":"../../files/starter-file.sql",
-                "sample.json":"../../files/sample.json",
-                "injected-step.md":"../../files/injected-step.md"},
       "help": "livelabs-help-db_us@oracle.com",
       "tutorials": [
         {
