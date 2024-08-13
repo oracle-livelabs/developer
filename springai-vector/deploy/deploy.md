@@ -113,12 +113,6 @@ In a couple of minutes, you should have successfully built and pushed the images
     </copy>
     ```
 
-    ```
-    <copy>
-    $ kubectl logs -f
-    </copy>
-    ```
-
     <br>
     Example: `kubectl -n mtdrworkshop logs -f todolistapp-springboot-deployment-54c967665-6482r`
 

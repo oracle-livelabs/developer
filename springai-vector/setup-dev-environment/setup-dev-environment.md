@@ -13,11 +13,11 @@ Watch the video below for a quick walk-through of the lab.
 
 * Create a group and give the appropriate permissions to run the setup
 * Clone the GitHub repository and execute the setup script to create the following resources:
-  * 1 Autonomous database
-  * 1 Object Storage bucket
-  * 1 OKE cluster
-  * 1 OCI Registry
-  * 1 Virtual Cloud Network
+  * 1 Oracle Autonomous Database instance (ADB ATP)
+  * 1 OCI Container Engine for Kubernetes (OKE) cluster
+  * 1 OCI Container Registry repository
+  * 1 OCI Virtual Cloud Network (VCN)
+  * 1 OCI Virtual Machine (VM)
 
 ### Prerequisites
 
@@ -29,39 +29,46 @@ Watch the video below for a quick walk-through of the lab.
 
 **If you are not the tenancy administrator, there may be additional policies you must have in your group to perform some of the steps for this lab. If you cannot create a group and add specific policies, please ask your tenancy administrator for the correct policies to follow.**
 
-1. Click the navigation menu in the top left, and click on identity and security. Select Groups.
+1. Click the navigation menu in the top left, and click on Identity & Security, select Domains.
 
-    ![Groups list](images/groups.png "groups")
+    ![Identity Security Domains](images/identity-security-domains.png "identity security domains")
 
-2. Click on Create Group
+2. Click on Default under Domains.
+
+    ![Domains Default](images/domains-default.png "domains default")
+
+3. Under Identity domain, click Groups.
+    ![Identity Domain Groups](images/identity-domain-groups.png "identity domain groups")
+
+4. Click the Create group button.
     For this workshop, you need to create your own group.
-    ![Create group](images/create-group.png "create-group")
+    ![Create group](images/create-group.png "create group")
 
-3. Enter the details for the group name and description. Be mindful of the restrictions for the group's name (no spaces, etc.)
+5. Enter the details for the group name and description. Be mindful of the restrictions for the group's name (no spaces, etc.)
 
     ![Group details](images/group-details.png "group-details")
 
-    Once you have filled in these details, click *Create*. Your group should show up under Groups
+    Once you have filled in these details, click the *Create* button. Your group should show up under Groups
 
     ![New group showing up](images/group-created.png "group-created")
 
-4. Add your user to the group that you have just created by selecting the name of the group you have made and select "add user to group"
+6. Add your user to the group that you have just created by selecting the name of the group you have made and select "add user to group"
 
     ![Adding user to group](images/add-user-group.png "add-user-group")
 
-5. Navigate to *Policies* under Identities and click *Create Policy*
+7. Click the navigation menu in the top left again, select Identity & Security, then click *Policies*. 
 
     ![Policy navigation](images/policy-navigation.png "policy-navigation")
 
-6. Select a pre-assigned compartment or create a new one. The policies will be associated with that compartment.
+8. Click the *Create Policy* button.
 
-    ![Policy creation](images/create-policy.png "create-policy")
+    ![Create Policy](images/create-policy.png "create policy")
 
-7. You should see a page like this. This is where you will create the policy that will give the group permission to execute the setup for this workshop. (note: replace oracleonpremjava(root) with the root of your tenancy)
+9. Select your target compartment or create a new one, as the policy will be associated with that compartment. You should see a page like this. This is where you will create the policy that will give the group permission to execute the setup for this workshop.
 
     ![Policy details](images/policy-details.png "policy-details")
 
-    Select **Show manual editor** and copy and paste the policies in the box below.
+    Select **Show manual editor** and copy and paste the policies in the box below, then click the *Create* button.
 
     ```
     <copy>
@@ -73,10 +80,6 @@ Watch the video below for a quick walk-through of the lab.
     </copy>
     ```
 
-8. Click "Create".
-
-    ![Create policy](images/policy-create.png "create")
-
 ## Task 2: Launch the Cloud Shell
 
 1. Launch Cloud Shell
@@ -85,7 +88,15 @@ Watch the video below for a quick walk-through of the lab.
 
     Click the Cloud Shell icon in the top-right corner of the Console.
 
-    ![Cloud Shell icon](images/open-cloud-shell.png "cloud-shell")
+    ![Cloud Shell Icon](images/open-cloud-shell.png "cloud shell icon")
+
+2. Make sure you're using X86_64 as your target architecture. Click Actions, then click Architecture.
+
+    ![Cloud Shell Architecture](images/cloud-shell-architecture.png "cloud shell architecture")
+
+3. Select the *X86_64* radio button, then click the *Confirm* button if it was not already selected as the default architecture.
+
+    ![Cloud Shell Confirmation](images/cloud-shell-confirmation.png "cloud shell confirmation")
 
 ## Task 3: Create a Folder for the Workshop Code
 
@@ -143,9 +154,9 @@ The setup script uses Terraform, Bash scripts, and SQL to automate the creation 
 
     ![User OCID](images/terminal-user-ocid.png "terminal-user-ocid")
 
-    To find your user's OCID navigate to the upper right within the OCI console and click on your username.
+    To find your user's OCID navigate to the upper right within the OCI console and click on Profile, then select My Profile.
 
-    ![User OCID navigation](images/navigate-user-ocid.png "navigate-user-ocid")
+    ![Profile My Profile](images/profile-myprofile.png "profile my profile")
 
     Copy your user's OCID by clicking copy
 
@@ -157,24 +168,40 @@ The setup script uses Terraform, Bash scripts, and SQL to automate the creation 
 
     To use an existing compartment, you must enter its OCID, yourself. To find the OCID of an existing compartment, click on the Navigation Menu of the cloud console, navigate to **Identity & Security** and click on **Compartments**
 
-    ![Navigate to compartment](images/compartment-navgate.png "navigate-to-compartment")
-    Click the appropriate compartment and copy the OCID 
+    ![Navigate to compartment](images/compartment-navigate.png "navigate-to-compartment")
+    Click the target compartment and copy its OCID
 
     ![Copy compartment OCID](images/compartment-ocid.png "compartment-ocid")
 
-6. In the next step, the setup will create an authentication token for your tenancy so that Docker can log in to the Oracle Cloud Infrastructure Registry. If there is no room for a new Auth Token, the setup will ask you to remove an existing one and then hit enter when you are ready.
+6. In the next step, the setup will create an authentication token for your tenancy so that Docker can log in to the Oracle Cloud Infrastructure Registry. Select Profile, My Profile once again.
 
-    ![Navigate to User OCID](images/navigate-user-ocid.png "navigate-user-ocid")
+    ![Profile My Profile](images/profile-myprofile.png "profile my profile")
 
     Select Auth Tokens under resources
 
     ![Authentication token](images/auth-token.png "auth-token")
 
-    Delete one Auth Token if you have too many
+7. Click the *Generate token* button
+
+    ![Authentication Token New](images/auth-token-new.png "auth-token-new")
+
+8. Provide a short description for your token, and click the *Generate token* button
+
+    ![Authentication Token Generate](images/auth-token-generate.png "auth-token-generate")
+
+9. You must copy and save it as there will be no ways to retrieve its OCID after confirming its creation. Click the *Close* button
+
+    ![Authentication Token Copy Save](images/auth-token-copy-save.png "auth-token-copy-save")
+
+    Note that if there is no room for a new Auth Token, the setup will ask you to remove an existing one and then hit enter when you are ready. Delete one Auth Token if you have too many
 
     ![Delete authentication token](images/delete-auth-token.png "delete-auth-token")
 
-7. The setup will ask you to enter the admin password for the database. Database passwords must be 12 to 30 characters and contain at least one uppercase letter, one lowercase letter, and one number. The password cannot have the double quote (") character or the word "admin".
+10. The setup will ask to to provide the auth token value
+
+    ![Delete authentication value](images/auth-token-prompt.png "delete-auth-value")
+
+11. Next, the setup will ask you to enter the admin password for the database. Database passwords must be 12 to 30 characters and contain at least one uppercase letter, one lowercase letter, and one number. The password cannot have the double quote (") character or the word "admin".
     ![Database Admin Password](images/db-password-prompt.png "db-password-prompt")
 
 
