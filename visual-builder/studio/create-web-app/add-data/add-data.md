@@ -57,7 +57,7 @@ This lab assumes you have:
 ## Task 2: Create an action chain to navigate from the Employees page to the Departments page
 
 1. In the Web Apps pane, click **main-employees** under the **hrwebapp** and **main** nodes.
-2. Locate the **Button** component in the Components palette and drag it into the Toolbar, to the right of the **Create Employee** button.
+2. Locate the **Button** component in the Components palette and drag it into the Toolbar, to the right of the Create Employee button.
 3. In the button's Properties pane, change the **Label** field to `Show Departments`.
 4. Click the **Events** tab, then click **+ Event Listener** and select **On 'ojAction'**.
 
@@ -78,4 +78,4 @@ This lab assumes you have:
 ## Acknowledgements
 
 * **Author** - Sheryl Manoharan, VB Studio User Assistance, November 2021
-* **Last Updated By/Date** - Sheryl Manoharan, April 2024
+* **Last Updated By/Date** - Sheryl Manoharan, July 2024
