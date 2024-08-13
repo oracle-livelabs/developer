@@ -140,12 +140,12 @@ You must conect to your database instance and create a database table with a VEC
     -- As VECTOR_USER
     CREATE TABLE VECTOR_USER.VECTOR_STORE (ID VARCHAR2(64) PRIMARY KEY, METADATA VARCHAR(256), CONTENT CLOB, VECTOR_DATA VECTOR(8192, FLOAT64));
     CREATE VECTOR INDEX VECTOR_STORE_INDEX ON VECTOR_USER.VECTOR_STORE (VECTOR_DATA) ORGANIZATION NEIGHBOR PARTITIONS DISTANCE COSINE WITH TARGET ACCURACY 95; 
-    COMMIT; 
+    COMMIT;
     ```
 4. Paste it into the Worksheet page as shown below, then click the Run Statement button to execute the script.
 
-    ![db23ai-sql-ddl](images/db23ai-sql-ddl.png "db 23 ai sql ddl")
- 
+    ![db23ai-sql-ddl](images/db23ai-sql-ddl.png "db 23 ai sql ddl") 
+
 5. Provided that everything goes well, you can run a describe command to check the table details as shown below.
 
    ![database-table](images/database-table.png "describe database table")
