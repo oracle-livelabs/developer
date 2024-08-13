@@ -19,8 +19,6 @@ In this lab, you will:
 
 * Set up Oracle Cloud Infrastructure for new Java Management Service users by configuring the prerequisite OCI resources to get started including:
     * Create a compartment for your JMS resources.
-    * Create a new tag namespace.
-    * Create a new tag key.
     * Create a user group for your JMS users.
     * Create one or more user accounts for your JMS users.
     * Create a dynamic group of all agents.
@@ -46,7 +44,7 @@ The Onboarding Wizard helps to create the necessary resources automatically. We 
 3. Select the root compartment under which the Onboarding Wizard will create a new compartment for JMS fleets.
     &nbsp;
 
-4. Click **Set up JMS** to view details of the resources that will be created by the Onboarding Wizard. The resources created are a new compartment, user group, dynamic group, policy and tag namespace.
+4. Click **Set up JMS** to view details of the resources that will be created by the Onboarding Wizard. The resources created are a new compartment, user group, dynamic group, and policy.
 
     > **Note:** If the **Set up JMS** button does not appear, click on the **Inspect prerequisites** button.
 
@@ -81,12 +79,6 @@ The Onboarding Wizard helps to create the necessary resources automatically. We 
         &nbsp;
     * Confirm the creation of new compartment labeled `Fleet_Compartment`.
         ![image of new compartment](images/new-compartment.png)
-        &nbsp;
-    * In the Oracle Cloud Console, open the navigation menu and click **Governance & Administration**. Under **Tenancy Management**, click **Tag Namespaces**.
-        ![image of console navigation to tag namespaces](images/console-navigation-tag-namespaces.png)
-        &nbsp;
-    * Confirm the creation of new tag namespace and tag key.
-        ![image of new tag namespace and tag key](images/new-tag-namespace.png)
         &nbsp;
     * In the Oracle Cloud Console, open the navigation menu and click **Identity & Security**. Under **Identity**, click **Domains**.
 
@@ -155,45 +147,7 @@ Sign in to the Oracle Cloud Console as an administrator using the credentials pr
         For more information, see [Setting Up Your Tenancy](https://docs.oracle.com/en-us/iaas/Content/GSG/Concepts/settinguptenancy.htm) and [Managing Compartments](https://docs.oracle.com/en-us/iaas/Content/Identity/compartments/managingcompartments.htm).
         &nbsp;
 
-2. Create a new tag namespace.
-
-    ![image of tag namespace in jms topology](images/jms-topology-tag-namespace.png =40%x*)
-
-    * In the Oracle Cloud Console, open the navigation menu and click **Governance & Administration**. Under **Tenancy Management**, click **Tag Namespaces**.
-        ![image of console navigation to tag namespaces](images/console-navigation-tag-namespaces.png)
-        &nbsp;
-    * Click **Create Tag Namespace**.
-        ![image of tag namespaces main page](images/tag-namespaces-main-page.png)
-        &nbsp;
-    * In the Create Tag Namespace Definition dialog box select the root compartment for your tenancy from the drop-down list.
-        &nbsp;
-    * In the Namespace Definition Name field, enter `jms`.
-        &nbsp;
-    * In the Description field, enter `For OCI Java Management use only`.
-        ![image of tag namespaces create page](images/tag-namespaces-create-example.png)
-        &nbsp;
-    * Click **Create Tag Namespace**.
-        &nbsp;
-
-        For more information, see [Managing Tags and Tag Namespaces](https://docs.oracle.com/en-us/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm).
-        &nbsp;
-
-3. Create a new tag key definition in the new tag namespace.
-
-    * In the Oracle Cloud Console, open the navigation menu and click **Governance & Administration**. Under **Tenancy Management**, click **Tag Namespaces**.
-        &nbsp;
-    * From the list of namespaces, click **jms**.
-        ![image of tag namespaces main page after creation](images/tag-namespaces-main-page-after-creating.png)
-        &nbsp;
-    * Click **Create Tag Key Definition**.
-        &nbsp;
-    * In the Create Tag Key Definition dialog box, enter the name for the new tag key: `fleet_ocid` and its description: `Use to tag a management agent with JMS fleet membership`.
-        ![image of tag key create page](images/tag-namespaces-jms-tag-key-definition.png)
-        &nbsp;
-    * Click **Create Tag Key Definition**.
-        &nbsp;
-
-4. Create a user group.
+2. Create a user group.
 
     ![image of user group in jms topology](images/jms-topology-user-group.png =40%x*)
 
@@ -221,12 +175,12 @@ Sign in to the Oracle Cloud Console as an administrator using the credentials pr
         For more information, see [Managing Groups](https://docs.oracle.com/en-us/iaas/Content/Identity/groups/managinggroups.htm).
         &nbsp;
 
-5. Create user accounts for each of your users by following these instructions: [Adding Users](https://docs.oracle.com/en-us/iaas/Content/GSG/Tasks/addingusers.htm).
+3. Create user accounts for each of your users by following these instructions: [Adding Users](https://docs.oracle.com/en-us/iaas/Content/GSG/Tasks/addingusers.htm).
     For more information, see [Managing Users](https://docs.oracle.com/en-us/iaas/Content/Identity/users/about-managing-users.htm).
     &nbsp;
 
 
-6. Create Dynamic Group.
+4. Create Dynamic Group.
 
     ![image of dynamic group in jms topology](images/jms-topology-dynamic-group.png =40%x*)
 
@@ -255,7 +209,7 @@ Sign in to the Oracle Cloud Console as an administrator using the credentials pr
         Then click on `Additional Rule` button and add **Rule 2**
         ```
         <copy>
-        ANY {instance.compartment.id = '<fleet_compartment_ocid>'}
+        ANY {instance.compartment.id = '<instance_compartment_ocid>'}
         </copy>
         ```
 
@@ -269,7 +223,7 @@ Sign in to the Oracle Cloud Console as an administrator using the credentials pr
         &nbsp;
 
 
-7. Create Policies.
+5. Create Policies.
 
     ![image of jms topology](images/jms-topology-policy.png =40%x*)
 
@@ -278,7 +232,7 @@ Sign in to the Oracle Cloud Console as an administrator using the credentials pr
     [Learn more about the policy verbs (Inspect, Read, Use, Manage).](https://docs.oracle.com/en-us/iaas/Content/Identity/policyreference/policyreference_topic-Verbs.htm)<br>
     [Understand the permissions associated with each policy verb.](https://docs.oracle.com/en-us/iaas/Content/Identity/Concepts/policyadvancedfeatures.htm#Permissi)
 
-    Create policies for the user group to access and manage JMS fleets, management agents, agent install keys, metrics, tag namespaces, logging and LCM operations.
+    Create policies for the user group to access and manage JMS fleets, management agents, agent install keys, metrics, logging and LCM operations.
     &nbsp;
     * In the Oracle Cloud Console, open the navigation menu and click **Identity & Security**. Under **Identity**, click **Policies**.
     ![image of console navigation to policies](images/console-navigation-policies.png)
@@ -297,25 +251,27 @@ Sign in to the Oracle Cloud Console as an administrator using the credentials pr
     <copy>
     ALLOW GROUP FLEET_MANAGERS TO MANAGE fleet IN COMPARTMENT Fleet_Compartment
     ALLOW GROUP FLEET_MANAGERS TO MANAGE management-agents IN COMPARTMENT Fleet_Compartment
+    ALLOW GROUP FLEET_MANAGERS TO READ METRICS IN COMPARTMENT Fleet_Compartment
+    ALLOW GROUP FLEET_MANAGERS TO MANAGE instance-family IN COMPARTMENT <instance_compartment>
+    ALLOW GROUP FLEET_MANAGERS TO READ instance-agent-plugins IN COMPARTMENT <instance_compartment>
     ALLOW GROUP FLEET_MANAGERS TO MANAGE management-agent-install-keys IN COMPARTMENT Fleet_Compartment
-    ALLOW GROUP FLEET_MANAGERS TO MANAGE tag-namespaces IN TENANCY
-    ALLOW GROUP FLEET_MANAGERS TO MANAGE instance-family IN COMPARTMENT Fleet_Compartment
-    ALLOW GROUP FLEET_MANAGERS TO READ instance-agent-plugins IN COMPARTMENT Fleet_Compartment
     ALLOW GROUP FLEET_MANAGERS TO MANAGE log-groups IN COMPARTMENT Fleet_Compartment
     ALLOW GROUP FLEET_MANAGERS TO MANAGE log-content IN COMPARTMENT Fleet_Compartment
-    ALLOW GROUP FLEET_MANAGERS TO READ METRICS IN COMPARTMENT Fleet_Compartment
-    
-    ALLOW DYNAMIC-GROUP JMS_DYNAMIC_GROUP TO MANAGE management-agents IN COMPARTMENT Fleet_Compartment
-    ALLOW DYNAMIC-GROUP JMS_DYNAMIC_GROUP TO USE tag-namespaces IN TENANCY
+    ALLOW GROUP FLEET_MANAGERS TO MANAGE jms-plugins IN COMPARTMENT Fleet_Compartment
+
     ALLOW DYNAMIC-GROUP JMS_DYNAMIC_GROUP TO USE METRICS IN COMPARTMENT Fleet_Compartment
+    ALLOW DYNAMIC-GROUP JMS_DYNAMIC_GROUP TO MANAGE management-agents IN COMPARTMENT Fleet_Compartment 
     ALLOW DYNAMIC-GROUP JMS_DYNAMIC_GROUP TO MANAGE log-content IN COMPARTMENT Fleet_Compartment
-    
-    ALLOW resource jms server-components TO MANAGE log-groups IN COMPARTMENT Fleet_Compartment
-    ALLOW resource jms server-components TO MANAGE log-content IN COMPARTMENT Fleet_Compartment
-    ALLOW resource jms server-components TO USE management-agent-install-keys IN COMPARTMENT Fleet_Compartment
-    ALLOW resource jms server-components TO MANAGE metrics IN COMPARTMENT Fleet_Compartment WHERE target.metrics.namespace='java_management_service'
-    ALLOW resource jms server-components TO READ instances IN tenancy
-    ALLOW resource jms server-components TO INSPECT instance-agent-plugins IN tenancy
+    ALLOW DYNAMIC-GROUP JMS_DYNAMIC_GROUP TO MANAGE instances IN COMPARTMENT <instance_compartment>
+    ALLOW DYNAMIC-GROUP JMS_DYNAMIC_GROUP TO MANAGE metrics IN COMPARTMENT Fleet_Compartment WHERE target.metrics.namespace='java_management_service'
+    ALLOW DYNAMIC-GROUP JMS_DYNAMIC_GROUP TO MANAGE jms-plugins IN COMPARTMENT Fleet_Compartment
+
+    ALLOW resource jms SERVER-COMPONENTS TO MANAGE metrics IN COMPARTMENT Fleet_Compartment WHERE target.metrics.namespace='java_management_service' 
+    ALLOW resource jms SERVER-COMPONENTS TO USE management-agent-install-keys IN COMPARTMENT Fleet_Compartment
+    ALLOW resource jms SERVER-COMPONENTS TO MANAGE log-groups IN COMPARTMENT Fleet_Compartment
+    ALLOW resource jms SERVER-COMPONENTS TO MANAGE log-content IN COMPARTMENT Fleet_Compartment
+    ALLOW resource jms SERVER-COMPONENTS TO READ instances IN COMPARTMENT <instance_compartment>
+    ALLOW resource jms SERVER-COMPONENTS TO INSPECT instance-agent-plugins IN COMPARTMENT <instance_compartment>
     </copy>
     ```
     ![image of policies create page](images/policies-create-example.png)
@@ -342,4 +298,4 @@ You may now **proceed to the next lab**.
 ## Acknowledgements
 
 * **Author** - Alvin Lam, Java Management Service
-* **Last Updated By/Date** - Yuan Chi Liu, January 2024
+* **Last Updated By/Date** - Son Truong, August 2024

@@ -195,16 +195,15 @@ If you encounter any errors similar to the following, check policy statements in
 
     ```
     <copy>
-    ALLOW GROUP <user_group> TO MANAGE fleet IN COMPARTMENT <compartment_name>
-    ALLOW GROUP <user_group> TO MANAGE tag-namespaces IN TENANCY
-    ALLOW GROUP <user_group> TO MANAGE log-groups IN COMPARTMENT <compartment_name>
-    ALLOW GROUP <user_group> TO MANAGE log-content IN COMPARTMENT <compartment_name>
-    ALLOW GROUP <user_group> TO MANAGE management-agents IN COMPARTMENT <compartment_name>
-    ALLOW GROUP <user_group> TO MANAGE management-agent-install-keys IN COMPARTMENT <compartment_name>
-    ALLOW GROUP <user_group> TO MANAGE dynamic-groups IN TENANCY
-    ALLOW GROUP <user_group> TO MANAGE policies IN COMPARTMENT <compartment_name>
-    ALLOW GROUP <user_group> TO READ metrics IN COMPARTMENT <compartment_name>
-    ALLOW GROUP <user_group> TO READ instance-agent-plugins IN COMPARTMENT <compartment_name>
+    ALLOW GROUP <user_group> TO MANAGE fleet IN COMPARTMENT Fleet_Compartment
+    ALLOW GROUP <user_group> TO MANAGE management-agents IN COMPARTMENT Fleet_Compartment
+    ALLOW GROUP <user_group> TO READ METRICS IN COMPARTMENT Fleet_Compartment
+    ALLOW GROUP <user_group> TO MANAGE instance-family IN COMPARTMENT <instance_compartment>
+    ALLOW GROUP <user_group> TO READ instance-agent-plugins IN COMPARTMENT <instance_compartment>
+    ALLOW GROUP <user_group> TO MANAGE management-agent-install-keys IN COMPARTMENT Fleet_Compartment
+    ALLOW GROUP <user_group> TO MANAGE log-groups IN COMPARTMENT Fleet_Compartment
+    ALLOW GROUP <user_group> TO MANAGE log-content IN COMPARTMENT Fleet_Compartment
+    ALLOW GROUP <user_group> TO MANAGE jms-plugins IN COMPARTMENT Fleet_Compartment
     </copy>
     ```
 
