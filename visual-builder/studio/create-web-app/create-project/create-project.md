@@ -54,9 +54,11 @@ As someone who creates a project, you'll automatically become the project's owne
 
     As the project owner, you can control what others can do in this project by granting them membership as a Developer Full Access, Developer Limited Access, Contributor, or even as another Project Owner. For demonstration purposes, we'll add Clara Coder with the Developer Limited Access role, which lets her access most project components.
 
-    * Enter the username of a teammate in the **Add Members** list.
-    * Select a membership role.
-    * Click **Add**. An email containing project details is sent to Clara Coder. To receive email notifications, the teammate's email address must be verified and notifications set properly in Preferences.
+    * Enter the username of a teammate in the **Add Members** field, then select the user from the results.
+    * Select a membership role for the user.
+    * Click **Add**.
+
+        An email containing project details will be sent to Clara Coder. To receive email notifications, the teammate's email address must be verified and notifications set properly in Preferences.
 
     Now click **Finish**.
 
@@ -140,4 +142,4 @@ You now need to create a workspace, a private area for you to work on your visua
 ## Acknowledgements
 
 * **Author** - Sheryl Manoharan, VB Studio User Assistance, November 2021
-* **Last Updated By/Date** - Sheryl Manoharan, April 2024
+* **Last Updated By/Date** - Sheryl Manoharan, July 2024
