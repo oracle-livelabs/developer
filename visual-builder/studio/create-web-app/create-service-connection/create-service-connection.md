@@ -40,12 +40,7 @@ In this step, we'll connect the HR application to an external REST endpoint that
 
     ![The Select Source screen of the Create Service Connection is shown. Three options are visible: Select from Catalog, Define by Specification, and Define by Endpoint.](images/service-connection-wizard.png "")
 
-    This wizard presents various options to connect to REST endpoints:
-    * When you have access to an Oracle Cloud Applications or Oracle Integration instance, you use the **Select from Catalog** option to access endpoints exposed by these Oracle services.
-    * When you have access to a Swagger or Oracle ADF file that describes a service, you use the **Define by Specification** option.
-    * When you know the URL of an external REST endpoint, you use the **Define by Endpoint** option—which is what we'll do here.
-
-    Click **Define by Endpoint**.
+    Because we know the URL of the REST endpoint we want to connect to, click **Define by Endpoint**.
 
 3. With the **Method** field set to **GET**, enter `https://restcountries.com/v2/alpha/{code}` in the **URL** field and select **Get One** in the **Action Hint** list.
 
@@ -79,7 +74,7 @@ Now that we have our service connection, let's change the Edit Employee page to 
 
 1. Click the ![Web Applications icon](images/webapp-icon.png) **Web Applications** tab, then select the **main-edit-employee** page.
 
-2. In the Components palette, locate the **Heading** component and drag and drop it onto the canvas, at the very end of the page after the Form Layout's components.
+2. Switch to the **Components** palette, then locate the **Heading** component and drag and drop it onto the canvas, at the very end of the page after the Form Layout's components.
 
 3. In the Heading's properties, change the **Text** field's value to `Country Info` and move the **Level** slider to H6.
 
@@ -114,7 +109,7 @@ To pass values to the fields under Country Info in the main-edit-employee page, 
 
     Click **Finish**. A new **countryType** is created on the Types page.
 
-4. Right-click the newly created countryType type and select **Create Variable**. A new countryTypeVar is created for you. If you look at the variable's properties, you'll see that it is based on the custom type structure we defined.
+4. Right-click the newly created countryType type and select **Create Variable**. A new countryTypeVar is created for you on the Variables tab. If you look at the variable's properties, you'll see that it is based on the custom type structure we defined.
 
     ![A countryTypeVar is created on the Variables tab. The flag, region, and timezones attributes show under the countryTypeVar object. In the properties on the right, the Type field, set to countryType, is highlighted.](images/type-from-endpoint-var.png "")
 
@@ -175,4 +170,4 @@ In this step, we'll assign data to the variables by adding a "value" event that 
 ## Acknowledgements
 
 * **Author** - Sheryl Manoharan, VB Studio User Assistance, July 2022
-* **Last Updated By/Date** - Sheryl Manoharan, April 2024
+* **Last Updated By/Date** - Sheryl Manoharan, July 2024
