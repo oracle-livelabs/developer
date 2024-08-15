@@ -33,9 +33,11 @@ This lab assumes you have:
 
    ```sh
    <copy>
-   http://84.235.169.232:8181/ords/movie/mymovies/movie-all?genre=Comedy&runtime=210
+   [Your Workshop's URL]/ords/movie/mymovies/movie-all?genre=Comedy&runtime=210
    </copy>
-   ```
+   ```  
+
+   ![Retrieving the correct URI.](images/workshop-presentation-one-two.png)
 
    > Your URI may appear different. Regardless, ensure you use valid query parameters.
 
@@ -81,51 +83,51 @@ This lab assumes you have:
 
 6. Returning to the JSON payload, you'll notice on the first page of results the `hasMore: true` condition.
 
-   ![The hasmore condition.](images/workshop-presentation-eleven.png " ")
+   ![The hasmore condition.](images/workshop-presentation-eleven.png " ")  
 
-   This informs the user, client, or application that more data is available. When this condition is true, a `next` link will be made available. You'll notice this `next` link already includes the appropriate `offset`. These details make pagination simple with ORDS APIs.
+      This informs the user, client, or application that more data is available. When this condition is true, a `next` link will be made available. You'll notice this `next` link already includes the appropriate `offset`. These details make pagination simple with ORDS APIs.
 
     ![The next link with offset.](images/workshop-presentation-twelve.png " ")
 
-7. Click the `next` link. The next page of results will be displayed. After reviewing, scroll to the `links` property. Notice anything new or different?
+7. Click the `next` link. The next page of results will be displayed. After reviewing, scroll to the `links` property. Notice anything new or different?  
 
-    ![Now with previous link](images/workshop-presentation-thirteen.png " ")
+    ![Now with previous link](images/workshop-presentation-thirteen.png " ")  
 
-   You should see the `hasMore: true` condition, but you'll also notice a `previous` link, in addition to the `first` and `next` links. These links make adding pagination to your application much simpler.
+      You should see the `hasMore: true` condition, but you'll also notice a `previous` link, in addition to the `first` and `next` links. These links make adding pagination to your application much simpler.
 
 8. If you were to continue clicking the `next` link, eventually you would observe the last page available. It would look like this:
 
-    ![Image alt text](images/workshop-presentation-fourteen.png  " ")
+   ![Image alt text](images/workshop-presentation-fourteen.png  " ")  
 
-   You'd notice the `hasMore: false` property. This signifies to the user, client, or application, that no more results exist. You'd also notice the absence of a `next` link.
+      You'd notice the `hasMore: false` property. This signifies to the user, client, or application, that no more results exist. You'd also notice the absence of a `next` link.
 
-9. Next we'll take a look at how this application uses this information.
+9. Next we'll take a look at how this application uses the information from an ORDS endpoint.
 
 ## Task 2: Reviewing the application
 
-1. Navigate to the `hello.py` file. Locate the `@app.route('/next_page', methods=['GET', 'POST'])` line.
+1. Navigate to the `ordsflask.py` file. Locate the `@app.route('/next_page', methods=['GET', 'POST'])` line of code.
 
     ![Navigate to the py file.](images/workshop-presentation-fifteen.png " ")
 
-2. This code is nearly identical to that found in the `@app.route('/handle_data')`. However, instead of expecting an initial selection (where a user selects a genre and movie runtime), this route expects a `next` URI. There is an identical route for the `previous` links too.
+2. This code is nearly identical to that found in the `@app.route('/handle_data')`. However, instead of expecting an initial selection (where a user selects a genre and movie runtime), this route expects a `next` URI. There is an identical route for the `previous` link too.
 
-   ![Reviewing python code function.](images/workshop-presentation-sixteen.png " ")
+   ![Reviewing python code function.](images/workshop-presentation-sixteen.png " ")  
+      ![Reviewing the previous jinja in html.](images/workshop-presentation-seventeen.png " ")
 
-3. After this `next_page` function assembles the necessary information, a new `movieresults.html` page is rendered and delivered to  the UI. All `next` and `previous` links are updated, allowing the user to navigate forward or backward.
+3. After this `next_page` function assembles the necessary information, a new `movieresults.html` page is rendered and delivered to  the UI. All `next` and `previous` links are updated with the `links` found in the ORDS response. This allows the user to navigate forward or backward.
 
-    ![Reviewing the href portion of the code.](images/workshop-presentation-seventeen.png " ")
+    ![Reviewing the href portion of the code.](images/workshop-presentation-eighteen.png " ")
+        ![Reviewing the href portion of the code.](images/workshop-presentation-nineteen.png " ")
 
-4. When viewing from the application, should a user reach the end or beginning of a results set, the html has been coded for two conditions.
+4. When viewing from the application, should a user reach the end or beginning of a results set (the results of the PLSQL or SQL query), the html has been coded for two conditions.
 
    When a `previous` link is unavailable, then the <button style="pointer-events: none;">Previous</button> button is disabled by default.
 
-   ![Reviewing the previous jinja in html.](images/workshop-presentation-eighteen.png " ")
-   ![Previous disabled in app.](images/workshop-presentation-nineteen.png " ")
+   ![Previous disabled in app.](images/workshop-presentation-twenty.png " ")
 
    And when a `next` link is not detected, then the <button style="pointer-events: none;">Next</button> button will be disabled too.
 
-   ![Reviewing the next jinja in html.](images/workshop-presentation-twenty.png " ")
-   ![Next disabled in app.](images/workshop-presentation-twentyone.png " ")
+   ![Next disabled in app.](images/workshop-presentation-twenty-one.png " ")
 
 5. Congratulations. You've made it to the end of this LiveLab. By now you should have a basic understanding of the following ORDS concepts:
 

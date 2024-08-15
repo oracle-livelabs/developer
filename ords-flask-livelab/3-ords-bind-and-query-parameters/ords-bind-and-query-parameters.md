@@ -58,7 +58,7 @@ This lab assumes you have:
 
     ![Reviewing the table data; JSON data types.](images/workshop-presentation-six.png " ")
 
-3. Click the <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-play-circle-fill" viewBox="0 0 16 16"><path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M6.79 5.093A.5.5 0 0 0 6 5.5v5a.5.5 0 0 0 .79.407l3.5-2.5a.5.5 0 0 0 0-.814z" focusable="false"/></svg> Start icon, to test this Resource Handler source code. When the Bind Variables dialog appears, enter `Comedy` in the `genre` field and `210` in the `runtime` field.
+3. Click the Start icon, to test this Resource Handler source code. When the Bind Variables dialog appears, enter `Comedy` in the `genre` field and `210` in the `runtime` field.
 
     ![Inputting bind variables.](images/workshop-presentation-seven.png " ")
 
@@ -66,9 +66,15 @@ This lab assumes you have:
 
     ![A results set example.](images/workshop-presentation-eight.png " ")
 
-   You've just simulated what a user might select in this sample application.
+   You've just simulated what a user might select in this sample application.  
 
-      ![Comparing the simulation to the user's selection.](images/workshop-presentation-nine.png " ")
+      In the REST Workshop:  
+
+      ![Results when selecting in the REST Workshop.](images/workshop-presentation-eight-one.png " ")
+
+      In the application:
+
+      ![Results when selecting in the app.](images/workshop-presentation-eight-two.png " ")
 
 ## Task 3: Using Query Parameters in and ORDS URI
 
@@ -93,7 +99,11 @@ This lab assumes you have:
 
 1. In this sample application, two lists are created for the subsequent movie table results (also referred to as `movieresults.html`). One list created for table headers, another for the table row data. ORDS supplies these `For` loops with the necessary data. The following image identifies these two sections in the Python code.
 
-   ![Reviewing the python table head and row lists.](images/workshop-presentation-eleven.png " ")
+   ![Reviewing the python table head and row lists.](images/workshop-presentation-eleven.png " ")  
+
+   > Note: You can review files directly from the Jupyter Lab by right-clicking an object. Choose `Open With` followed by `Editor`.  
+
+      ![Right-clicking to open an Editor window.](images/workshop-presentation-eleven-two.png)
 
 2. Once the `movieresults.html` page loads, you'll notice two additional features. Each row in the table contains a `More` modal, click it to reveal additional movie details.
 
@@ -101,9 +111,11 @@ This lab assumes you have:
 
    Near the end of the `movieresults.html` page you'll find `Previous` and `Next` links. In a later lab we'll explore how ORDS can simplify result pagination.
 
-   ![Modal example and pagination.](images/workshop-presentatio-thirteen.png " ")
+   ![Modal example and pagination.](images/workshop-presentation-thirteen.png " ")
 
 3. In the next lab, you'll explore another ORDS endpoint; this one responsible for feeding the modals information related to its target table row.
+
+You may now [proceed to the next lab](#next).  
 
 ## Learn More
 
