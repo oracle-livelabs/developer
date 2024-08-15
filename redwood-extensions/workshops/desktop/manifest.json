@@ -15,7 +15,7 @@
       "title": "Lab 1: Create a new extension",
 
       "description": "Use Workspaces to create new Application Extension in your project",
-      "filename": "../../workspace/workspace.md"
+      "filename": "../../createnewextension/createnewextension.md"
     },
     {
       "title": "Lab 2: Welcome page",
@@ -23,19 +23,19 @@
     },
     {
       "title": "Lab 3: Connect to Oracle Fusion Cloud Apps data",
-      "filename": "../../saasservice/saasservice.md"
+      "filename": "../../connecttofusion/connecttofusion.md"
     },
     {
       "title": "Lab 4: Add buttons and action chains",
-      "filename": "../../tableedit/tableedit.md"
+      "filename": "../../addbuttonsandactions/addbuttonsandactions.md"
     },
     {
       "title": "Lab 5: Account Details page",
-      "filename": "../../detailspage/detailspage.md"
+      "filename": "../../addountdetails/addountdetails.md"
     },
     {
       "title": "Lab 6: Edit account page",
-      "filename": "../../editpage/editpage.md"
+      "filename": "../../editaccount/editaccount.md"
     },
     {
       "title": "Need Help?",

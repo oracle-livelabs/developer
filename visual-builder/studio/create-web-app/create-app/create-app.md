@@ -81,10 +81,10 @@ Let's now create your first business object and add data to it by importing a CS
 
 1. Click ![Business Objects icon](images/bo-icon.png) **Business Objects** in the Navigator.
 2. Click **\+ Business Object**.
-3. In the New Business Object dialog box, enter `Location` in the **Name** field. **Location** is also filled in automatically as the **Display Label**. Click **Create**.
+3. In the Create Business Object dialog, enter `Location` in the **Name** field. **Location** is also filled in automatically as the **Display Label**. Click **Create**.
 4. Click **Fields** for the newly created Location business object.
 
-    Every business object you create has six default fields: an id, plus fields that provide information on who created and updated the object and when.
+    Every business object you create has six default fields: an id, a version number, plus fields that provide information on who created and updated the object and when.
 
     ![Business object page for the Location business object, with the Fields tab open. The other tabs are Overview, Security, Business Rules, Endpoints, and Data. A table shows the current fields, with the Type, Field Name, Display Label, Required, and Description columns visible for each.](images/location-bo-fields.png "Location business object page")
 
@@ -95,7 +95,7 @@ Let's now create your first business object and add data to it by importing a CS
 
     Click **Create Field**.
 
-7. For the newly created **location** field, select the check box in the **Required** column.
+7. For the newly created **location** field, select the checkbox in the **Required** column.
 
 8. Click [this link](https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/developer-library/location.csv) to download the `location.csv` file to your file system. This file contains four locations and provides the data for the Location business object.
 
@@ -136,7 +136,7 @@ Let's now create the Department and Employee business objects. But instead of cr
 6. On the Fields step, you'll need to make some changes. For the **department** business object (selected by default), look for the `location` field in the second row and click **#** in the Type column. Change the type setting as follows:
 
       * Select the **Type** as **Reference** ![Reference icon](images/reference-icon.png). A Reference field is like a foreign key in a database table: it's a field that refers to the key (the Id field) of another business object to link the two business objects together.
-      * Select **Location** as the **Referenced Business Object**. The default for a **Referenced Business Object** is always the current business object (in this case, Department), so make sure you select **Location** from the drop-down list. Now when you create a department, you'll be able to specify one of the floors as the department's location.
+      * Select **Location** as the **Referenced Business Object**. This way, when you create a department, you'll be able to specify one of the floors as the department's location.
       * Leave the **Display Field** as **Location** (automatically populated).
 
     ![Type option of the location field selected. A pop-up box shows the Type set to Reference, the Referenced Business Object set as Location, and the Default Field shown as Location.](images/import-bos-upload-fields-deptlocationfield.png "Type option of the location field")
@@ -203,4 +203,4 @@ Now that you have your business objects, create a diagram that visualizes the bu
 ## Acknowledgements
 
 * **Author** - Sheryl Manoharan, VB Studio User Assistance, November 2021
-* **Last Updated By/Date** - Sheryl Manoharan, April 2024
+* **Last Updated By/Date** - Sheryl Manoharan, July 2024

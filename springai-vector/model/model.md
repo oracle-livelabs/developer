@@ -25,9 +25,9 @@ In this lab, you will:
 
 ## Task 1. Using Cohere AI's Command-R model to support chat and embeddings with private LLMs
 
-1. We'll need to create an OCI Compute instance (VM) and install Ollama to run a Cohere AI's Command-R model inside of it. Then, we will expose the server and allow our Spring AI application connect to the Ollama server and make the requests to the Command-R models.
+Cohere Command-R is a family of LLMs optimized for conversational interaction and long context tasks. Command R delivers high precision on retrieval augmented generation (RAG) with low latency and high throughput. You can get more details about the Command-R models at the [Command-R product page](https://cohere.com/command), and the full technical details are available at the [Model Details](https://docs.cohere.com/docs/command-r) section of its technical documentation.
 
-The following shape and images are recommended for the LLM models server: (it will require a GPU, as we'll be running an HPC load that will require lots of computing! More than the CPU can handle at this moment without quantization enabled). You check more details and other options for OCI GPU shapes at [OCI - Compute Shapes](https://docs.oracle.com/en-us/iaas/Content/Compute/References/computeshapes.htm).
+1. We'll need to create an OCI Compute instance (VM) and install Ollama to run a Cohere AI's Command-R model inside of it. Then, we will expose the server and allow our Spring AI application connect to the Ollama server and make the requests to the Command-R models. The following shape and images are recommended for the LLM models server: (it will require a GPU, as we'll be running an HPC load that will require lots of computing! More than the CPU can handle at this moment without quantization enabled). You check more details and other options for OCI GPU shapes at [OCI - Compute Shapes](https://docs.oracle.com/en-us/iaas/Content/Compute/References/computeshapes.htm).
 
 - Shape: `VM.GPU.A10.2` (2x NVIDIA A10 Tensor Cores)
 - OCPU: 30
