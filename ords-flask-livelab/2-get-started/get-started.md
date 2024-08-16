@@ -35,7 +35,9 @@ This lab assumes you have:
 
 ## Task 1: Retrieve the project from OCI Cloud Storage
 
-1. You have been provided three URLs. One for accessing Database Actions, one for accessing a Jupyter lab, and another for retrieving the sample application project file from OCI Cloud Storage. [Click here](https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/labfiles/ocw24flask.zip) to download a copy of the application's project files.  
+1. You have been provided three URLs. One for accessing Database Actions, one for accessing a Jupyter lab, and another for retrieving this workshop's sample application project file from OCI Cloud Storage:  
+
+   [Click here](https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/labfiles/ocw24flask.zip) to download a copy of the application's project files.  
 
    If you are unable to click the hyperlink, copy the direct link below, and navigate to it in a new browser tab:  
 
@@ -53,16 +55,20 @@ This lab assumes you have:
 
 ## Task 2: Database Actions, Part I
 
-1. You have been provided two additional URLs. One for accessing Database Actions, and another one for accessing a Jupyter lab. First, navigate to Database Actions using the provided URL.
+1. You have been provided two additional URLs. One for accessing Database Actions, and another one for accessing a Jupyter lab. First, navigate to Database Actions (SQL Developer Web) using the provided URL.  
 
-2. A new `MOVIE` user has been created for you. Its schema has already been REST-enabled, meaning you will be able to Sign in to Database Actions. To Sign in, click the <button type="button" style="pointer-events: none;">Go</button> button under the SQL Developer Web card.
+   ![Login information for green button lab.](images/workshop-presentation-one-minus.png)
+
+2. Several users have been created for you, including a new `MOVIE` user. Its schema has already been REST-enabled, meaning you will be able to Sign in to Database Actions.  
+
+   To Sign in, click the <button type="button" style="pointer-events: none;">Go</button> button under the SQL Developer Web card.
 
    ![Navigating to SQL Developer Web.](images/workshop-presentation-one.png " ")
 
    Once the Sign-in screen appears, enter the following credentials, and click the <button type="button" style="pointer-events: none;">Sign-in</button> button:
 
    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Username: `MOVIE`  
-   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Password: `LiveLabs.Rocks_99`
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Password: `[See Task 1 of the previous lab]`
   
 3. The Database Actions Launchpad will appear. Navigate to the `Development` category, then click `SQL`. A blank SQL Worksheet will appear.
 
@@ -96,13 +102,21 @@ This lab assumes you have:
 
 ## Task 3: Jupyter lab, Part I
 
-1. Using the second URL you were provided, log in to your Jupyter lab. The password is the same: `LiveLabs.Rocks_99`
+1. Using the second URL you were provided, log in to your Jupyter lab.  
+
+   ![Using the password from previous task.](images/workshop-presentation-five-minus.png)
+
+   Use the same password from the previous tasks.
 
    ![Login to Jupyter lab.](images/workshop-presentation-five.png " ")
   
 2. Once logged in, you may see several directories. You will need to upload the `ocw24flask` directory to the Jupyter lab. To do this you can simply drag the `.zip` file from your Downloads folder (or from where you saved it to in the earlier Task) into the Jupyter Lab (as seen in the image).  
 
-   ![Drag the zip into the Jupyter lab.](images/workshop-presentation-five-two.png " ")
+   ![Drag the zip into the Jupyter lab.](images/workshop-presentation-five-two.png " ")  
+
+   > Ensure the directory has been compressed into a `.zip` format, prior to uploading into the Jupyter Lab.  
+
+      ![Compressing project folder.](images/workshop-presentation-five-two-one.png)
 
 3. Accept any `Large file size` warnings to upload the file.
 
@@ -174,9 +188,15 @@ This lab assumes you have:
 
 ## Task 6: Start the Flask application
 
-1. From the Jupyter Launcher, open a new Terminal. If you are not in the `ords24flask` folder, then `cd` to it. Issue the `ls` command to verify the `ordsflask.py` file exists.
+1. From the Jupyter Launcher, open a new Terminal.  
 
-   Issue the following command:
+   ![Launching a new terminal.](images/workshop-presentation-fourteen-one.png)  
+
+2. If you are not in the `ords24flask` folder, then `cd` to it. Issue the `ls` command to verify the `ordsflask.py` file exists.
+
+   ![Verify in the correct folder.](images/workshop-presentation-fourteen-two.png)
+
+3. Next, issue the following command:
 
       ```sh
       <copy>
@@ -184,17 +204,27 @@ This lab assumes you have:
       </copy>
       ```  
 
-   The Flask development server will start up.
+   The Flask development server will start up.  
 
-   ![Executing terminal commands to start the Flask server.](images/workshop-presentation-fifteen.png " ")
+      ![Executing terminal commands to start the Flask server.](images/workshop-presentation-fourteen-three.png " ")
 
-2. Your application will be available on port 5000. However, you will need to open the application in a new tab and modify the URL you were given for the Jupyter lab and Database Actions. This can be seen in the following image and your lab's terminal.
+4. Your application will be available on port 5000. However, you will need to open the application in a new tab. Modify the URL, so you are using the one provided to you for this lab *plus* port `5000`.  
 
-   Navigate to the new tab and combine the lab's URI with port 5000. Accept any warnings and your application will load.
+   ![Workshop lab IP address.](images/workshop-presentation-fourteen-four.png)  
 
-   ![Navigating to your application.](images/workshop-presentation-sixteen.png)
+   ![Navigating to the correct address plus port 5000.](images/workshop-presentation-fourteen-five.png)
 
-3. With the application running, we'll next explore the ORDS APIs and how they feed data to your application.
+5. Navigate to the new tab and combine the lab's URI with port 5000. Accept any warnings and your application will load.
+
+   ![Navigating to your application.](images/workshop-presentation-fourteen-six.png)
+
+6. The ORDS application will load.  
+
+   ![ORDS application up and running.](images/workshop-presentation-fourteen-seven.png)
+
+7. With the application running, we'll next explore the ORDS APIs and how they feed data to your application.
+
+8. You may now [proceed to the next lab](#next).  
 
 ## Learn More
 
