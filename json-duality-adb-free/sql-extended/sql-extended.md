@@ -23,7 +23,7 @@ This lab assumes you have:
 
 ## Task 1: Inserting into SQL tables and Duality Views
 
-1. We mentioned how the underlying base tables get populated when you add an entry into the JSON duality view. Here we will check the base table to ensure the record does not exist, insert the following into the duality view, and then check the base table. Clear the worksheet, copy the code below and click **Run Script**.
+1. We mentioned how the underlying base table `race` gets populated when you add an entry into the `race_dv` JSON duality view. Here we will check the base table to ensure the record does not exist, insert the following into the duality view, and then check the base table. Clear the worksheet, copy the code below and click **Run Script**.
 
     ```
     <copy>
@@ -42,7 +42,7 @@ This lab assumes you have:
     ```
     ![Checks the Miami Grand Prix](images/task-1-1.png " ")
 
-2. Now we will check for the opposite. Let's look at the duality view, insert into the base table and then check the duality view for the record. Clear the worksheet, copy the code below and click **Run Script**.
+2. Now we will check for the opposite. We will verify that inserting a record directly into the base table `race` is reflected in the `race_dv` JSON duality view. Let's look at the duality view, insert into the base table and then check the duality view for the record. Clear the worksheet, copy the code below and click **Run Script**.
 
     ```
     <copy>
@@ -100,7 +100,7 @@ This lab assumes you have:
     ```
     ![Prints out Japanese Grand Prix ](images/task-2-2.png " ")
 
-3. Now in this step, we will update the information for race ID 205 in the race\_dv view. We will change some details, such as the race date and who finished in the top three positions. We will also add records to the driver\_race\_map table to show the results of the race. This update uses the etag value to make sure that no one else has changed the document while we are updating it. This helps keep the information accurate and consistent. Clear the worksheet, copy the code below, and click **Run Script**.
+3. Now in this step, we will update the information for race ID 205 in the `race_dv` view. We will change some details, such as the race date and who finished in the top three positions. We will also add records to the `driver_race_map` table to show the results of the race. This update uses the etag value to make sure that no one else has changed the document while we are updating it. Through this approach, you'll get to update the tables much easier than the method we displayed above. Clear the worksheet, copy the code below, and click **Run Script**.
 
     ```
     <copy>
@@ -146,7 +146,7 @@ This lab assumes you have:
 
 ## Task 3: Delete by predicate
 
-1. We're going to delete a couple entries, but we want to see the current state of these tables first. Clear the worksheet, copy the code below and click **Run Script**.
+1. We're going to delete a couple entries, but we want to see the current state of these tables first. We'll review the `race` and `driver` data in both the base tables and duality views. Clear the worksheet, copy the code below and click **Run Script**.
     ```
     <copy>
     SELECT name, race_date FROM race where race_id = 205;
@@ -160,9 +160,7 @@ This lab assumes you have:
     ```
     ![Seeing current state of table](images/task-3-1.png " ")
 
-2. Delete the race document for race 204. The underlying rows are deleted from the race and driver\_race\_map tables. Clear the worksheet, copy the code below and click **Run Script**.
-
-    Note: we have to delete the rows of the race from the driver\_race\_map first, as they are child entries of the race entries in the race table. It will throw an error if you try to run the second command first.
+2. Delete the race document for race 204. The underlying rows are first deleted from the `driver_race_map` table as they're child entries of the `race` entries in the `race` table and then we delete the race entries themselves from the `race` table. If you try to run the second command first, it'll throw an error. Clear the worksheet, copy the code below and click **Run Script**.
 
     ```
     <copy>

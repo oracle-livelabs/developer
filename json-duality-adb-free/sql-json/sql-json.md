@@ -23,9 +23,9 @@ This lab assumes you have:
 
 ## Task 1: Find documents matching a filter (aka predicate)
 
-1. To find race info by raceId, you can use JSON functions, such as json\_value and json\_exists in predicates when querying duality views.
+1. In this step, we will use JSON functions to find race information from the `race_dv` duality view. We'll use the `json_value` function to extract and filter data based on a specific raceId.
 
-    Another alternative is the use of simplified dot notation in predicates, but this will be explored later in the lab. The json\_exists function is more powerful than json\_value in terms of the conditions it can express and is used by the REST interface to translate query by examples. Clear the worksheet, copy the SQL below and click **Run Script**.
+    Another option is to use simplified dot notation in predicates, which we'll cover later on in the lab. The `json_exists` function is more versatile than the `json_value` function for expressing conditions and is used by the REST interface for query translation by examples. Clear the worksheet, copy the SQL below and click **Run Script**.
 
     ```
     <copy>
@@ -40,11 +40,11 @@ This lab assumes you have:
 
 1. To announce the results for the Bahrain Grand Prix, we will update the appropriate race entry with the details after the race.
 
-    The 'etag' value supplied in the content is used for "out-of-the-box" optimistic locking to prevent the "lost update" problem that can happen when multiple people try to update the same information at the same time. When you replace a document by its ID operation, the database checks that the 'etag' provided in the new document matches the latest 'etag' in the database.
+    The 'etag' value supplied in the content is used to prevent issues when multiple people try to update the same document at the same time. When you update a document by its ID, the database checks that the 'etag' provided in the new document matches the latest 'etag' in the database. 
 
-    If the etags do not match, which can happen if someone else has updated the document in the meantime, an error is thrown. When this happens, you need to fetch the latest version of the document(including the updated 'etag'), and try the replace operation again, adjusting your changes if necessary based on the updated document. 
+    If the `etag` do not match, which can happen if someone else has updated the document, an error is thrown. When this happens, you need to get the latest version of the document(including the updated 'etag'), and try to make the update again, making any necessary changes.
     
-    To automate the process of fetching the current 'etag', we use a subquery within the 'SET data' clause. This subquery dynamically retrieces the latest 'etag' for the specific field, ensuring that the updated operation always uses the correct 'etag'. This approach ensures that the correct 'etag' is used every time without manual intervention, preventing concurrency issues and maintaining data integrity. Now, copy the SQL below and click **Run Script**.
+    To automate the process of fetching the current 'etag', a subquery is used within the 'SET data' clause. This subquery automatically fetches the latest `etag` for the specified field. This ensures the correct `etag` is used every time without any manual intervention, avoiding conflicts and keeping our data accurate. Now, copy the SQL below and click **Run Script**. 
 
     ```
     <copy>
@@ -119,7 +119,7 @@ This lab assumes you have:
     ```
     ![Updates race with spronsor info](images/task-3-1.png " ")
 
-2. Select from the view to ensure the change is in. In this example we are also showing that you can use json\_value in the where clause.  Clear the worksheet, copy the SQL below and click **Run Script**.
+2. Select from the view to ensure the change is in. In this example we are also showing that you can use json\_value in the where clause. Clear the worksheet, copy the SQL below and click **Run Script**.
 
     ```
     <copy>
@@ -131,7 +131,7 @@ This lab assumes you have:
 
 ## Task 4: Re-parenting of sub-objects between two documents
 
-We will switch Charles Leclerc's and George Russell's teams. This can be done by updating the Mercedes and Ferrari team\_dvs. The documents can be updated by simply sending the new list of drivers for both documents in the input.
+We will switch Charles Leclerc's and George Russell's teams. This can be done by updating the Mercedes and Ferrari `team_dv`. The documents can be updated by simply sending the new list of drivers for both documents in the input.
 
 1. First, show the team documents. Clear the worksheet, copy the SQL below and click **Run Script**.
 
@@ -145,7 +145,7 @@ We will switch Charles Leclerc's and George Russell's teams. This can be done by
     ```
     ![Shows current team](images/task-4-1.png " ")
 
-2. Then we perform the updates. The 'UPDATE' statements for team\_dv use a subquery to automatically get the latest 'etag' for each team. The subquery inside the SET data looks at the team document with the name is 'Mercedes' or 'Ferrari' and only picks the first match, thanks to us using ROWNUM = 1. This dynamically fetched etag is then included in the '\_metadata' part of the JSON document. This ensures we always use the most current 'etag' when making updates, which helps avoid issues if someone else is trying to make changes at the same time, making our updates more accurate and reliable. Now, clear the worksheet, copy the SQL below and click **Run Script**.
+2. Then we perform the updates. The 'UPDATE' statements for team\_dv use a subquery to automatically get the latest 'etag' for each team. The subquery inside the SET data looks at the team document with the name is 'Mercedes' or 'Ferrari' and only picks the first match, thanks to us using ROWNUM = 1. The script will update the `points` in "Mercedes" to 40, and also assigns Lewis 15 points and Charles 25 points. On the "Ferrari" side, they will get 30 points. George will receive 12 points and Carlos will receive 18 points. The updates are applied to the rows where the team name are "Mercedes" and "Ferrari". Now, clear the worksheet, copy the SQL below and click **Run Script**.
 
     ```
     <copy>
@@ -249,7 +249,7 @@ We will switch Charles Leclerc's and George Russell's teams. This can be done by
 
 ## Task 6: Delete by predicate
 
-1. Delete the race document for Bahrain Grand Prix. The underlying rows are deleted from the race and driver\_race\_map tables, but not from the driver table because it is marked read-only in the view definition. Clear the worksheet, copy the SQL below and click **Run Script**.
+1. Delete the race document for Bahrain Grand Prix. The underlying rows are deleted from the `race` and `driver_race_map tables`, but leaves their `driver` table untouched, because it is marked read-only in the view definition. Clear the worksheet, copy the SQL below and click **Run Script**.
 
     **Note:** The "where" clause can have any valid SQL expression, e.g. equality on OBJECT\_ID, some condition using simplified syntax, or JSON function, such as json\_value or json\_exists.
 
