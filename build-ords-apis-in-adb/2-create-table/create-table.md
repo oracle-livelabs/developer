@@ -32,7 +32,7 @@ Watch the video below for a quick walk-through of the lab.
 
      ![first-time-logging-in-to-sql-worksheet-as-admin-user](images/first-time-logging-in-to-sql-worksheet-as-admin-user.png " ")
 
-2. Save the following [CSV file](https://objectstorage.us-ashburn-1.oraclecloud.com/p/LNAcA6wNFvhkvHGPcWIbKlyGkicSOVCIgWLIu6t7W2BQfwq2NSLCsXpTL9wVzjuP/n/c4u04/b/livelabsfiles/o/developer-library/csv_data.csv), locally.
+2. Save the following [CSV file](https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/developer-library/csv_data.csv), locally.
 
 3. Next, click the **Data Load** button in the SQL Worksheet to load the CSV data into a new table.
 
