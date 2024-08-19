@@ -53,6 +53,8 @@ This lab assumes you have:
 * An Oracle account
 * All previous labs successfully completed
 
+You may now [proceed to the next lab](#next).  
+
 ## Learn More
 
 * [ORDS home](https://www.oracle.com/database/technologies/appdev/rest.html)

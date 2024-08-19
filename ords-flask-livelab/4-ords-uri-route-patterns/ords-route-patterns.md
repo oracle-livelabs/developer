@@ -91,6 +91,8 @@ This lab assumes you have:
 
     ![Image alt text](images/workshop-presentation-twelve.png " ")
 
+You may now [proceed to the next lab](#next).  
+
 ## Learn More
 
 * [Using route patterns in ORDS](https://docs.oracle.com/en/database/oracle/oracle-rest-data-services/24.2/orddg/developing-REST-applications.html#GUID-50E24524-32BB-470D-8015-6C25C9B47A44)
@@ -101,4 +103,4 @@ This lab assumes you have:
 
 * **Author** - Chris Hoina, Senior Product Manager, Database Tools
 * **Contributors** - Jeff Smith, Distinguished Product Manager, Database Tools
-* **Last Updated By/Date** - Chris Hoina, Database Tools, July 2024
+* **Last Updated By/Date** - Chris Hoina, Database Tools, August 2024
