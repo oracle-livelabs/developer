@@ -8,9 +8,9 @@ Estimated Time:  15 minutes
 
 ### About this lab
 
-Visual Builder, as the name suggests, is a *visual* development tool for web and mobile applications. It provides an easy-to-use graphical interface that lets you design and develop applications simply by dragging and dropping *components* on a page. You can use these components—all based on the open-source Oracle JavaScript Extension Toolkit (JET)—to create rich UIs that span multiple devices.
+Visual Builder, as the name suggests, is a *visual* tool for web app development. It provides an easy-to-use graphical interface that lets you design and develop applications simply by dragging and dropping *components* on a page. You can use these components—all based on the open-source Oracle JavaScript Extension Toolkit (JET)—to create rich UIs that span multiple devices.
 
-Each UI component depends on a *business object* for its data. A business object is a resource—like a purchase order or invoice—that has fields to hold your application's data. It is similar to a database table, as it provides the structure for your data; in fact, business objects are stored in a database. Your application accesses the data in these business objects through  REST endpoints that Visual Builder automatically generates for you.
+Each UI component depends on a *business object* for its data. A business object is a resource—like a purchase order or invoice—that has fields to hold your application's data. It is similar to a database table, as it provides the structure for your data; in fact, business objects are stored in a database. Your application accesses the data in these business objects through REST endpoints that Visual Builder automatically generates for you.
 
 In this lab, you'll create the Employee, Department, and Location business objects to build a simple Human Resources application. You'll use data from these business objects to build the HR web app in which every employee belongs to a department, and every department has a location. Your goal is to allow your users to add employee names and their departments to the database, and to change that data when necessary.
 
@@ -42,27 +42,24 @@ The first thing we'll do is create the web application itself. Later, we'll cons
 
         ![This image shows the top part of the Visual Applications page of Oracle Visual Builder. The New button is selected.](images/homepage-new.png "")
 
-2. In the Create Application dialog box, enter:
+2. In the Create Application dialog box, enter `HR Application` as the **Application Display Name** and `Tutorial application` as the **Description**.
 
-    * **Application Name**: `HR Application`
-    * **Description**: `Tutorial application`
-
-    The **Application ID** text field is automatically populated as you type, based on the Application Name. The **Application Template** field is set to Empty Application.
-
-3. Click **Finish**.
+    The **Application Name** is automatically populated based on the Application Display Name you enter. The **Application Template** field is set to Empty Application. Click **Finish**.
 
     The newly created visual application opens on the Welcome page.
 
-    ![This image shows a new application's Welcome page. It contains tiles in three sections. The Connect to Data contains the Service Connections and Business Objects tiles. The Create Apps section contains the Mobile Apps and Web Apps tiles. The Add Artifacts section contains the Components and Process tiles. On the right are Learn and Help sections with references to documentation and other resources.](images/visual-app-welcome.png "")
+    ![This image shows a new application's Welcome page. It contains tiles in three sections. The Connect to Data contains the Service Connections and Business Objects tiles. The Create Apps section contains the Mobile Apps and Web Apps tiles. The Add Artifacts section contains the Components tile. On the right are Learn and Help sections with references to documentation and other resources.](images/visual-app-welcome.png "")
 
-    The Welcome page contains a set of tiles in three groups: **Create Apps**, **Connect to Data**, and **Add Artifacts**. On the far left are icons representing Web Applications, Services, Business Objects, Layouts, Components, Processes, and Source. This vertical toolbar is the Navigator.
+    The Welcome page contains a set of tiles in three groups: **Create Apps**, **Connect to Data**, and **Add Artifacts**. On the far left is a vertical toolbar with  icons representing Web Applications, Services, Business Objects, and so on. This toolbar is the Navigator, which helps you move between the artifacts in your visual application.
 
-    Take note of the header:
+    Now take a look at the header:
     ![This image shows the visual application's header. The application name HR Visual Application is on the left. On the right are icons that let you perform other actions: Undo, Redo, Git, Go to File, Preview, and Menu.](images/header.png "")
 
-    The `DEVELOPMENT` and `1.0` tags next to the application name on the left indicate the application status (DEVELOPMENT, STAGE, or LIVE) and version (1.0). Elements on the right let you perform various actions. For example, you can undo your recent changes or search for a file. This workshop primarily demonstrates the options to preview your app, stage, then publish it. If you make a mistake during this workshop, click ![Undo icon](images/undo-icon.png) to back out of the last step you did, or the arrow next to it to undo more than one step.
+    The `DEVELOPMENT` and `1.0` tags next to the visual application name on the left indicate the application's status and version. Elements on the right let you perform various actions. For example, you can undo your recent changes or search for a file. This workshop primarily demonstrates the options to preview your app, stage, then publish it.
 
-    Now take a look at the footer, which has tools that help you debug and maintain your visual app (we'll briefly look at Audits in this workshop):
+    If you make a mistake during this workshop, click ![Undo icon](images/undo-icon.png) to back out of the last step you did, or the arrow next to it to undo more than one step.
+
+    Take note of the footer, which has tools that help you debug and maintain your visual app (we'll briefly look at Audits in this workshop):
 
     ![Footer in the HR Visual Application, which shows Audits, Find in Files, Logs, Tests, and Trace tabs.](images/footer.png "Footer")
 
@@ -76,7 +73,7 @@ The first thing we'll do is create the web application itself. Later, we'll cons
 
     ![This image shows the Web Apps pane of the Navigator. There is a plus sign at the top and a + Web Application button at the bottom.](images/web-apps.png "")
 
-6. In the Create Web Application dialog box, enter `hrwebapp` in the **Application Name** field under General Information. (You can specify uppercase as well as lowercase characters in the application name, but the name is converted to lowercase.) Leave the **Navigation Style** set to the default, **None**, and click **Create**.
+6. In the Create Web Application dialog box, enter `hrwebapp` as the **Application Name**. (You can specify uppercase as well as lowercase characters in the application name, but the name is converted to lowercase.) Leave the **Navigation Style** set to the default, **None**, and click **Create**.
 
     The **hrwebapp** opens on the **main-start** page, which is the application's default home page created automatically for you.
 
@@ -108,18 +105,18 @@ The first thing we'll do is create the web application itself. Later, we'll cons
 
     ![The Web Apps pane shows the hrwebapp's tree view. Under hrwebapp, main is expanded with main-start nested under. At the same level as main are the Fragments, Resources, and Root Pages nodes.](images/treeview.png "")
 
-    You'll notice the **hrwebapp** node contains the **main** node, which in turn contains the **main-start** node. The **main** node is the application's default *flow* containing the default **main-start** page that users first see when the app is run. An application can have multiple flows, each of which can be used to group related pages. This simple application has only one flow and one page, though we'll add more pages later on. By convention, a page takes its flow name as a prefix.
+    You'll notice the **hrwebapp** node contains the **main** node, which in turn contains the **main-start** node. The **main** node is the application's default *flow* containing the default page, **main-start**, which users first see when the app is run. An application can have multiple flows, each of which can be used to group related pages. This simple application has only one flow and one page, though we'll add more pages later on. By convention, a page takes its flow name as a prefix.
 
 ## Task 2: Create a Location business object and import data
 
 Let's create your first business object and add data to it by importing a CSV file. Every business object needs data associated with it, and there are many ways to do that, as you'll see.
 
-1. Click the **Business Objects** ![Business Objects icon](images/bo-icon.png) tab in the Navigator.
-2. Click the **\+ Business Object** button.
-3. In the New Business Object dialog box, enter `Location` in the **Name** field. `Location` is also filled in automatically as the **Display Label** field. Click **Create**.
-4. Click the **Fields** tab for the newly created Location object.
+1. Click **Business Objects** ![Business Objects icon](images/bo-icon.png) in the Navigator.
+2. Click **\+ Business Object**.
+3. In the New Business Object dialog box, enter `Location` as the **Name**. `Location` is filled in automatically as the **Display Label**. Click **Create**.
+4. For the newly created Location object, click **Fields**.
 
-    Every business object you create has six default fields: an id, plus fields that provide information on who created and updated the object and when.
+    Every business object you create has six default fields: an id, a version number, plus fields that provide information on who created and updated the object and when.
 
     ![This image shows the business object page for the Location business object, with the Fields tab open. The other tabs are Overview, Security, Business Rules, Endpoints, and Data. A table shows the current fields, with the Type, Field Name, Display Label, Required, and Description columns visible for each.](images/location-bo-fields.png "")
 
@@ -134,7 +131,7 @@ Let's create your first business object and add data to it by importing a CSV fi
 
 8. Click [this link](https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/oci-library/location.csv) to download the `location.csv` file. This file contains four locations and  provides the data for the Location business object.
 
-9. Click the **Data** tab, then **Import from File** ![Import from File icon](images/import_icon.png).
+9. Now click **Data**, then **Import from File** ![Import from File icon](images/import_icon.png).
 
     ![This image shows the Data tab of the Location business objects. No data is displayed.](images/location-data.png "")
 
@@ -148,7 +145,7 @@ Let's create your first business object and add data to it by importing a CSV fi
 
 ## Task 3: Create the Department and Employee business objects
 
-Let's now create the Department and Employee business objects. But instead of creating the business objects and fields one by one and importing data for them, you'll import a ZIP file that defines two business objects, their fields, and data all at once.
+Let's now create the Department and Employee business objects. But instead of creating the business objects and fields one by one and importing data for them, you'll import a ZIP file that defines the two business objects with their fields and data all at once.
 
 1. Click [this link](https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/oci-library/department-employee-bo.zip) and download the `department-employee-bo.zip` file. This ZIP file contains CSV files for the Department and Employee business objects. Feel free to review the contents.
 
@@ -171,7 +168,7 @@ Let's now create the Department and Employee business objects. But instead of cr
 6. On the Fields step, you'll need to make some changes. For the **Department** business object (selected by default), look for the `location` field in the second row and click **#** in the Type column. Change the type setting as follows:
 
     * Select the **Type** as **Reference** ![Reference icon](images/reference-icon.png). A Reference field is like a foreign key in a database table: it's a field that refers to the key (the Id field) of another business object to link the two business objects together.
-    * Select **Location** as the **Referenced Business Object**. The default for a **Referenced Business Object** is always the current business object (in this case, Department), so make sure you select **Location** from the drop-down list.  Now when you create a department, you'll be able to specify one of the floors as the department's location.
+    * Select **Location** as the **Referenced Business Object**. This way, when you create a department, you'll be able to specify one of the floors as the department's location.
 
     * Leave the **Display Field** as **Location** (automatically populated).
 
@@ -220,11 +217,11 @@ Let's now create the Department and Employee business objects. But instead of cr
 
 Now that we have our business objects, let's create a diagram that provides a visual representation of the business objects and their relationships.
 
-1. In the Business Objects pane of the Navigator, click the **Diagrams** tab, then click the **\+ Business Object Diagram** button.
+1. In the Navigator's Business Objects pane, click **Diagrams**, then click **\+ Business Object Diagram**.
 
     ![This image shows the Diagrams tab of the Business Objects pane. The + Business Object Diagram button is selected.](images/bo-diagram.png "")
 
-2. In the Create Business Object Diagram dialog box, enter `HRDiagram` in the **Diagram name** field and click **Create**.
+2. In the Create Business Object Diagram dialog box, enter `HRDiagram` as the **Diagram name** and click **Create**.
 
 3. In the Properties pane, click **Select All** next to Business Objects.
 
@@ -239,4 +236,4 @@ Now that we have our business objects, let's create a diagram that provides a vi
 ## Acknowledgements
 
 * **Author** - Sheryl Manoharan, Visual Builder User Assistance, August 2021
-* **Last Updated By** - July 2024
+* **Last Updated By** - August 2024
