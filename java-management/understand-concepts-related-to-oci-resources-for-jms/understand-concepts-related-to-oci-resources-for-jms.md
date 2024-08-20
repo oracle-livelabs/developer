@@ -30,12 +30,12 @@ This diagram illustrates the purpose of OCI resources and services in JMS with d
 
     - See [Managing Dynamic Groups](https://docs.oracle.com/en-us/iaas/Content/Identity/dynamicgroups/managingdynamicgroups.htm) for its definition and details.
     - The creation of a dynamic group is important as it allows for policies to be applied to a group of compute instances and management agents. This grants your managed instances (comprising of compute instances and management agents) the appropriate permissions to interact with the fleet through OCI service endpoints.
-    
+
         Example: Dynamic group "JMS\_DYNAMIC\_GROUP":
         ```
         <copy>
         ALL {resource.type='managementagent', resource.compartment.id='<fleet_compartment_ocid>'}
-        ANY {instance.compartment.id = '<fleet_compartment_ocid>'}
+        ANY {instance.compartment.id = '<instance_compartment_ocid>'}
         </copy>
         ```
 
@@ -69,7 +69,7 @@ This diagram illustrates the purpose of OCI resources and services in JMS with d
         ```
         <copy>
         ALLOW DYNAMIC-GROUP JMS_DYNAMIC_GROUP TO USE METRICS IN COMPARTMENT Fleet_Compartment
-        ALLOW DYNAMIC-GROUP JMS_DYNAMIC_GROUP TO MANAGE management-agents IN COMPARTMENT Fleet_Compartment 
+        ALLOW DYNAMIC-GROUP JMS_DYNAMIC_GROUP TO MANAGE management-agents IN COMPARTMENT Fleet_Compartment
         ALLOW DYNAMIC-GROUP JMS_DYNAMIC_GROUP TO MANAGE log-content IN COMPARTMENT Fleet_Compartment
         ALLOW DYNAMIC-GROUP JMS_DYNAMIC_GROUP TO MANAGE instances IN COMPARTMENT <instance_compartment>
         ALLOW DYNAMIC-GROUP JMS_DYNAMIC_GROUP TO MANAGE metrics IN COMPARTMENT Fleet_Compartment WHERE target.metrics.namespace='java_management_service'
@@ -83,7 +83,7 @@ This diagram illustrates the purpose of OCI resources and services in JMS with d
 
         ```
         <copy>
-        ALLOW resource jms SERVER-COMPONENTS TO MANAGE metrics IN COMPARTMENT Fleet_Compartment WHERE target.metrics.namespace='java_management_service' 
+        ALLOW resource jms SERVER-COMPONENTS TO MANAGE metrics IN COMPARTMENT Fleet_Compartment WHERE target.metrics.namespace='java_management_service'
         ALLOW resource jms SERVER-COMPONENTS TO USE management-agent-install-keys IN COMPARTMENT Fleet_Compartment
         ALLOW resource jms SERVER-COMPONENTS TO MANAGE log-groups IN COMPARTMENT Fleet_Compartment
         ALLOW resource jms SERVER-COMPONENTS TO MANAGE log-content IN COMPARTMENT Fleet_Compartment
@@ -107,9 +107,9 @@ This diagram illustrates the purpose of OCI resources and services in JMS with d
 
     - It is created in a compartment and contain information about the Managed Instances such as logs, object storage and metrics.
 
-6. Logging service to generate logs
-7. Object storage service to generate object storage information
-8. Monitoring service to view fleet metrics
+6. Monitoring service to view fleet metrics
+7. Logging service to generate logs
+8. Object storage service to generate object storage information
 
 You will learn about these services in Lab 3 Task 3 after you setup the fleet.
 
@@ -122,4 +122,4 @@ You may now **proceed to the next lab.**
 ## Acknowledgements
 
 - **Author** - Sherlin Yeo, Java Management Service
-- **Last Updated By** - Ivan Eng, June 2023
+- **Last Updated By** - Teck Kian Choo, Aug 2024
