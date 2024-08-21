@@ -119,7 +119,18 @@ Watch the video below for a quick walk-through of the lab.
 
 3. The **Create OAuth Client** slider will appear.
 
-    ![Create OAuth Client slider](./images/create-oauth-client-slider.png " ")
+    ![Create OAuth Client slider](./images/create-oauth-client-slider.png " ")  
+
+    <details><summary>*About the Grant types*</summary>
+
+    ORDS Supports many Grant Types.  
+
+    ![Various ORDS grant types.](images/about-grant-types.png)
+
+    You can refer to Two-legged and Three-legged OAuth code flows (Grant types) [here](https://docs.oracle.com/en/database/oracle/oracle-rest-data-services/24.2/orddg/developing-REST-applications.html#GUID-5B39A5A6-C55D-452D-AE53-F49431A4DE97).
+
+    ORDS also supports JSON Web Tokens (JWTs) for Authentication and Authorization. Details can be found [here](https://docs.oracle.com/en/database/oracle/oracle-rest-data-services/24.2/orddg/developing-REST-applications.html#GUID-02B6DC5B-347A-417A-855F-C4A3F4B77538).
+    </details>
 
 4. Enter `oauthclient` into the **Name** field.
 
@@ -161,31 +172,47 @@ Watch the video below for a quick walk-through of the lab.
 
 9. Move the `oracle.livelabs.role.admin` role to the right column.
 
-    ![Use the shuttle to move the oracle.livelabs.role.admin role to the right side](./images/oauth-shuttle.png " ")
+    ![Moving role to the Selected Column.](./images/move-to-selected-roles-column.png " ")
 
-10. Once complete, click the **Create** button.
+10. Next, navigate to the Protected Modules tab. Move the `com.oracle.livelab.api` module from the Available Modules column to the Selected Modules column.
+
+    ![module-from-available-to-selected](images/module-from-available-to-selected.png)
+
+11. Once complete, click the **Create** button.
 
     ![left click the create button](./images/oauth-create-button-action.png " ")
 
-11. The newly created **OAuth Client** tile will appear on the OAuth Clients page.
+12. The newly created **OAuth Client** tile will appear on the OAuth Clients page.
 
     ![OAuth Client tile on the OAuth Clients page](./images/oauth-clients-page.png " ")
 
+13. You may navigate to your `com.oracle.livelab.api` Resource Module, to review the effect of your changes.
+
+    ![see-changes-to-api-from-oauth-client](images/click-kebab-then-edit-to-see-changes-to-api-from-oauth-client.png)
+
+    ![reviewing-the-new-privilege-from-oauth-changes](images/reviewing-the-new-privilege-from-oauth-changes-in-module-slider.png)
+
 ## Task 4: Obtain a Bearer Token for accessing a secure REST Endpoint
 
-1. Before accessing an OAuth-protected REST endpoint, you must first obtain a token to pass to the secured REST service for authentication. To obtain this token, we can click the kebab menu icon ![pop out menu icon](./images/three-dot-pop.png " ") on our OAuth tile and select **Get Bearer Token**.
+1. Before accessing an OAuth-protected REST endpoint, you must first obtain a token to pass to the secured REST service for authentication. To obtain this token, we can click the kebab menu icon on our OAuth tile and select **Get Bearer Token**.  
 
-    ![click the pop out menu icon on our OAuth tile and select Get Bearer Token](./images/get-bearer-token-for-oauth-client.png " ")
+   ![pop out menu icon](images/clicking-kebab-to-access-option-for-bearer-token-curl.png " ")
 
-2. The OAuth Token modal will provide the token text in the **Current Token** field. You can use the copy icon ![copy icon](./images/copy-copy.png) to copy this token text. Save this to a text document or notes application. The modal will also provide us with a cURL command to obtain a token should we need to include it in our applications.
+   ![click the pop out menu icon on our OAuth tile and select Get Bearer Token](./images/get-bearer-token-for-oauth-client.png " ")
 
-    ![Click the copy icon to save the Token Text](./images/click-copy-icon-to-copy-token-text.png " ")
+2. The OAuth Token modal will provide the token text in the **Current Token** field. You can use the copy icon to copy this token text. Save this to a text document or notes application. The modal will also provide us with a cURL command to obtain a token should we need to include it in our applications.
 
-    Click **OK** when you havve copied the cURL command.
+    ![Click the copy icon to save the Token Text](./images/click-copy-icon-to-copy-access-token-curl-command.png " ")
+
+    Click **OK** when you have copied the cURL command.
 
     ![Left click the OK button](./images/click-ok-when-finished-in-oauth-slider.png " ")
 
 3. Next, we'll test the secure REST service . Recall in the previous Lab lab, where we created a REST API for our `bizlogic`? Attempt to access this REST endpoint with the following cURL command (**your URL hostname will be different than the below command**):
+
+   ![Return to bizlogic to copy curl command.](images/click-copy-icon-for-get-curl-command-no-token.png)
+
+   ![Bizlogic curl command, no Access Token.](images/clipboard-bizlogic-curl-no-token.png)
 
     ```sh
     <copy>curl --location --request POST \
@@ -197,83 +224,27 @@ Watch the video below for a quick walk-through of the lab.
     }'</copy>
     ```
 
-4. Since the endpoint is now secure, you should see the following response:
+4. Attempt to run this `cURL` command in the Cloud Shell. Since the endpoint is now secure, you should see the following response:
 
-    ```sh
-    <copy>
-    >{
-        "code": "Unauthorized",
-        "message": "Unauthorized",
-        "type": "tag:oracle.com,2020:error/Unauthorized",
-        "instance": "tag:oracle.com,2020:ecid/8576f44b797d6adfbe7b21e3718bf3b6"
-    }%</copy>
-    ```
+   ![attempting-to-run-curl-command-in-cloud-shell-unauthorized](images/attempting-to-run-curl-command-in-cloud-shell-unauthorized.png)
 
-5. In order to access this REST API, you must include a `--header 'Authorization: Bearer [The Access Token value]'` header to the cURL command. The `Access Token value` is the same Access Token you saved in Step 2( **your URL hostname will be different than the below command**). Your updated cURL command should resemble the following:
+5. In order to access this REST API, you must include a `--header 'Authorization: Bearer [The Access Token value]'` header to the cURL command. The `Access Token value` is the same Access Token you saved in Step 2 (**your URL hostname will be different than the below command**). Your updated cURL command should resemble the following:
 
-    ```sh
-    <copy>curl -X POST --header 'Authorization: Bearer tW-AM_cDQu0l8oAsh707vw' \
-    'https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/admin/api/bizlogic' \
-    --header 'Content-Type: application/json' \
-    --data-binary '{
-    "id": "a1",
-    "output": "" 
-    }'</copy>
-    ```
+   ![creating-curl-command-with-access-token](images/creating-curl-command-with-access-token.png)
 
 6. Using the Cloud Shell, or local environment, execute *your* version of the cURL command (**your URL hostname and Bearer Token will differ from the one below**)
 
-    ```sh
-    <copy>curl -X POST --header 'Authorization: Bearer tW-AM_cDQu0l8oAsh707vw' \
-    'https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/admin/api/bizlogic' \
-    --header 'Content-Type: application/json' \
-    --data-binary '{
-    "id": "a1",
-    "output": ""
-    }'</copy>
-    ```
+   ![complete-curl-command-with-access-token-in-cloud-shell](images/the-complete-curl-command-with-access-token-in-cloud-shell.png)
 
-    You should see a similar value, returned from the REST API is returned.
+   You should see a similar value, returned from the REST API.
 
-    ```sh
-    <copy>
-    {"output":8204}%</copy>
-    ```
+   ![success-output-shown-in-cloud-shell](images/success-output-shown-in-cloud-shell.png)
 
-7. We can also apply this Access Token to the other API we created in the previous Lab (**your URL hostname will differ from the one below**)
+7. You have just simulated what an application might do when requesting access to a secure Resource. You've requested an Access Token, using your Client ID and Client Secret. Your credentials were verified; you were then issued an Access Token.
 
-8. With an endpoint similar to the one below, issuing an unauthenticated cURL request will result in an `Unauthorized` response.
+   And finally, you used the Access Token to perform a POST request on a target resource (i.e., the `bizlogic` resource).
 
-    ```sh
-    <copy>https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/admin/api/sqlreport/<VALUE></copy>
-    ```
-
-9. This time, execute a cURL request (**using your URL hostname**) with the Access Token from the previous test (i.e., `--header 'Authorization: Bearer [VALUE]`).
-
-    ```sh
-    <copy>curl -X GET --header 'Authorization: Bearer tW-AM_cDQu0l8oAsh707vw' 'https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/admin/api/sqlreport/a1'</copy>
-    ```
-
-10. Your response should appear, much like the one below:
-
-    ```sh
-    <copy>
-    {"items":[{"col1":"798812df","col2":"a1","col3":"4166997"},{"col1":"59fd433c","col2":"a1","col3":"32470891"},{"col1":"6c1298ef","col2":"a1",
-    "col3":"506747"},{"col1":"243f5660","col2":"a1","col3":"87300261"},{"col1":"f62af3d4","col2":"a1","col3":"31094545"},{"col1":"af2fc686","col2":"a1",
-    "col3":"48206518"},{"col1":"9d4f725e","col2":"a1","col3":"36224185"},{"col1":"041d6b03","col2":"a1","col3":"23890702"},{"col1":"f8c87baa","col2":"a1",
-    "col3":"852530"},{"col1":"d98f3e5b","col2":"a1","col3":"9864895"},{"col1":"5cbb6ddc","col2":"a1","col3":"60428923"},{"col1":"474c024a","col2":"a1",
-    "col3":"85183686"},{"col1":"a0707a73","col2":"a1","col3":"167176502"},{"col1":"3447e214","col2":"a1","col3":"110333373"},{"col1":"69face01",
-    "col2":"a1","col3":"18449519"},{"col1":"9198731a","col2":"a1","col3":"150740437"},{"col1":"55789f0a","col2":"a1","col3":"119272860"},
-    {"col1":"03801afd","col2":"a1","col3":"75179648"},{"col1":"dbdf5867","col2":"a1","col3":"91475805"},{"col1":"93adc64d","col2":"a1","col3":"39287205"},
-    {"col1":"2b130ef8","col2":"a1","col3":"206753925"},{"col1":"1f6bec10","col2":"a1","col3":"17745238"},{"col1":"81f46a8d","col2":"a1","col3":"54692392"}
-    ,{"col1":"2ebd5ecb","col2":"a1","col3":"94437756"},{"col1":"4d514c12","col2":"a1","col3":"145885382"}],"hasMore":true,"limit":25,"offset":0,
-    "count":25,"links":[{"rel":"self","href":"https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/admin/api/sqlreport/a1"},
-    {"rel":"describedby","href":"https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/admin/metadata-catalog/api/sqlreport/item"},
-    {"rel":"first","href":"https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/admin/api/sqlreport/a1"},{"rel":"next",
-    "href":"https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/admin/api/sqlreport/a1?offset=25"}]}%</copy>
-    ```
-
-11. In this lab, you secured your custom REST APIs with OAuth2 authentication.
+8. Congratulations. You've successfully completed this Workshop. And in this lab, you secured your custom REST APIs with OAuth2.0 authentication.
 
 You may now [proceed to the next lab](#next).
 
@@ -286,4 +257,4 @@ You may now [proceed to the next lab](#next).
 
 ## Last Updated By/Date
 
-- Chris Hoina, May 2024
+- Chris Hoina, August 2024

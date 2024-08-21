@@ -48,7 +48,7 @@ Watch the video below for a quick walk-through of the lab.
     <details>
     <summary>*About Resource Modules*</summary>
 
-    💡 A module is an organizational unit used to group related resource templates. Templates will have handlers, which are responsible for providing the logic required to service a specific HTTP method (e.g., GET, POST, PUT, DELETE, UPDATE, etc.).
+    A module is an organizational unit used to group related resource templates. Templates will have handlers, which are responsible for providing the logic required to service a specific HTTP method (e.g., GET, POST, PUT, DELETE, UPDATE, etc.).
 
     </details>
 
@@ -70,7 +70,8 @@ Watch the video below for a quick walk-through of the lab.
 
     ![Create Modules slider](./images/create-module-submit.png " ")
 
-    > 💡 **INFO:** Here you can toggle "Show Code" to review what module creation might look like if it were performed manually.
+    > **INFO:** Here you can toggle "Show Code" to review what module creation might look like if it were performed manually.
+    >
     > ![Toggle Show Code to review what is happening under the covers](./images/toggle-show-code-option.png " ")
 
 9. Next we'll create a **Template** for our newly created module. Begin by clicking the **+ Create Template** button on the right side of the page.
@@ -82,9 +83,17 @@ Watch the video below for a quick walk-through of the lab.
     ```sh
     <copy>sqlreport/:id
     </copy>
-    ```
+    ```  
 
-    ![URI Template field](./images/enter-uri-template-field.png " ")
+    <details>
+    <summary>*What does the **`/:id`** in **`sqlreport/:id`** mean?*</summary>
+
+    This is called a "Route Pattern." You can use route patterns for required parameters in the URI to specify parameters for REST requests such as the GET method (which does not have a body) and in other special cases.
+
+    **Want to learn more?** Read the full specification for ORDS Route Pattern syntax [here](https://docs.oracle.com/en/database/oracle/oracle-rest-data-services/24.2/ordjv/doc-files/route-patterns.html).
+    </details>
+
+    ![URI Template field](./images/enter-uri-template-field.png " ")  
 
 11. When complete (**your URL hostname will be different than the below image**), click the **Create** button.
 

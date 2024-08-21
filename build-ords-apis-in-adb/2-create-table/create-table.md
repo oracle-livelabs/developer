@@ -2,7 +2,11 @@
 <!-- WMSID 4602 -->
 ## Introduction
 
-In this lab you will use Database Actions/SQL Developer Web to connect to your database, create a table, and then REST enable the table.
+In this lab you will use Database Actions/SQL Developer Web to:
+
+- Connect to your database
+- Create a table
+- REST-enable the table
 
 Estimated Lab Time: 20 minutes
 
@@ -11,7 +15,8 @@ Watch the video below for a quick walk-through of the lab.
 
 ### Objectives
 
-- Create and Auto-REST enable a table
+- Create a table
+- Auto-REST enable a table
 
 ### Prerequisites
 
@@ -21,12 +26,11 @@ Watch the video below for a quick walk-through of the lab.
 
 ## Task 1: Create a Table in the Autonomous Database
 
-
-1. Sign in to [Database Actions](https://oracle-livelabs.github.io/common/labs/sqldevweb-login/sqldevweb-login.md) as the **admin** user and navigate to the SQL Worksheet. You can also do this from within the OCI Cloud Console.
+1. Sign in to [Database Actions](https://oracle-livelabs.github.io/common/labs/sqldevweb-login/sqldevweb-login.md) as the **ADMIN** user and navigate to the SQL Worksheet. You can also do this from within the OCI Cloud Console.
 
     ![access-sql-worksheet-from-oci-console](images/access-sql-worksheet-from-oci-console.png " ")
 
-    > 💡 **NOTE:** If this is your first time accessing the SQL Worksheet, you will be
+    > **NOTE:** If this is your first time accessing the SQL Worksheet, you will be
     > presented with a guided tour. Complete the tour or click the X in any
     > tour popup window to quit the tour.
 
@@ -60,15 +64,17 @@ Watch the video below for a quick walk-through of the lab.
 
     ![uploaded-success-screen-in-data-load-slider](./images/uploaded-success-screen-in-data-load-slider.png " ")
 
-9. We can take a look at our newly created table and the data in it **by using the navigator on the left of the SQL Worksheet**. Just **right click the table name CSV_DATA** and **select Open** from the pop up menu.
+## Task 2: Review using the User Interface
+
+1. We can take a look at our newly created table as well as the data in it by using the navigator on the left of the SQL Worksheet. Right-click the table name `CSV_DATA` and select `Open` from the pop up menu.
 
     ![Using the navigator on the left of the SQL Worksheet, we can see out new table](./images/navigating-reviewing-new-table.png)
 
-    In the slider that extends from the right of the page, we can review the data definition, triggers, constraints and even the data itself.
+    A slider will appear from the right side of the page. You can review the data definition (DDL), triggers, constraints and even the data itself.
 
     ![Click the Data option to view the table data](./images/table-options-slider.png)
 
-## Task 2: Auto-REST Enable a Table
+## Task 3: Auto-REST Enable a Table
 
 1. Next, you'll Auto-REST enable the `CSV_DATA` table. From the Navigator tab, locate the `CSV_DATA` table.
 
@@ -86,16 +92,27 @@ Watch the video below for a quick walk-through of the lab.
 
     ![Right click the table name in the navigator, select REST, then cURL Command](./images/retrieve-curl-command-for-object.png)
 
-    > 💡 **NOTE:** Notice the available cURL commands, and options for various shell
+    > **NOTE:** Notice the available cURL commands, and options for various shell
     > environments: Command Prompt, PowerShell, and Bash.
 
       ![The Command Prompt cURL for the table CSV_DATA side out panel](./images/command-prompt-curl-command.png)
+      *Command Prompt*
 
       ![The PowerShell cURL for the table CSV_DATA side out panel](./images/powershell-curl-command.png)
+      *PowerShell*
 
       ![The Bash cURL for the table CSV_DATA side out panel](./images/bash-curl-command.png)
+      *Bash or Zsh*
 
-5. The next lab you will learn about using a **BATCH LOAD** endpoint.
+5. You can also view this ORDS-enabled table from your browser. Copy the URL portion of the `GET` cURL command. And, place this URL in a new browser window or tab.
+
+   ![URL portion of cURL command in a new browser window.](images/curl-in-new-browser-tab-or-window.png)
+
+6. You may also review the JSON representation using the Developer Tools of your browser. This should give you a good idea of the way the data is structured, and how it will be presented to a user, a "client", or an application.
+
+   ![Viewing results from a table in new browser with developer tools.](images/viewing-results-from-table-in-browser-and-dev-tools.png)
+
+7. The next lab you will learn about using a **BATCH LOAD** endpoint.
 
 You may now [proceed to the next lab](#next).
 
@@ -108,4 +125,4 @@ You may now [proceed to the next lab](#next).
 
 ### Last Updated By/Date
 
-- Chris Hoina, May 2024
+- Chris Hoina, August 2024

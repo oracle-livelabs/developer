@@ -30,7 +30,7 @@
         {
             "title": "Lab 4: Load data and create business logic",
             "description": "Modern App Dev with Oracle REST Data Services",
-            "filename": "../../3-load-data-and-biz-objs/load-data-and-biz-objs.md"
+            "filename": "../../3-batch-load-data-and-biz-objs/batch-load-data-and-biz-objs.md"
         },
         {
             "title": "Lab 5: REST-enable tables and add business logic",
