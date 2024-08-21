@@ -107,7 +107,7 @@ Watch the video below for a quick walk-through of the lab.
 
     ![Create Handler slider](./images/create-handler-slider.png " ")
 
-14. Enter **select * from csv_data where col2 = :id** in the **Source** section of the **Create Handler** slider:
+14. Enter `Select * from csv_data where col2 = :id` in the **Source** section of the **Create Handler** slider:
 
     ```sh
     <copy>select * from csv_data where col2 = :id</copy>
@@ -123,7 +123,7 @@ Watch the video below for a quick walk-through of the lab.
 
     ![Execute button in source section of the page](./images/execute-button-in-source.png " ")
 
-17. After clicking the **execute** button a **Bind Variables** modal will appear. Enter **a1** for the value in **id field** and then click **OK**.
+17. After clicking the **execute** button a **Bind Variables** modal will appear. Enter **a1** for the value in the **id** field and then click **OK**.
 
     ![Bind Variables modal](./images/bind-variable-modal.png " ")
 
@@ -131,7 +131,7 @@ Watch the video below for a quick walk-through of the lab.
 
     ![Source query results](./images/source-query-results.png " ")
 
-19. We can also test this endpoint in a browser. Click the pop-out button.
+19. We can also test this endpoint in a browser. Click the **Open in New Browser Tab** button.
 
     ![pop out icon in the Template region on the top of the page](./images/pop-out-icon-template-region.png " ")
 
@@ -195,7 +195,7 @@ Watch the video below for a quick walk-through of the lab.
 
 10. Next we'll create an output parameter so we can return a result.
 
-    > **NOTE:** We should expect the count or rows where the passed-in value is equal to the values in col2 in our table.*
+    > **NOTE:** We should expect the count or rows where the passed-in value is equal to the values in col2 in our table.
 
 11. Under the **Source** area, locate the **+ Create Parameter** button. Click the **+ Create Parameter** button.
 

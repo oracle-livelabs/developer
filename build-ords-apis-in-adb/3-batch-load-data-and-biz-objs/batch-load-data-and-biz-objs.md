@@ -114,8 +114,8 @@ Watch the video below for a quick walk-through of the lab.
 
    The following `RETURN_COUNT` procedure returns a count of all the rows that match the input (<i>aka</i> `P_INPUT`) provided to `COL2` (<i>Column 2</i>) in the `CSV_DATA` table:
 
-   ```sql
-   <copy>CREATE OR REPLACE PROCEDURE RETURN_COUNT (
+    ```sql
+    <copy>CREATE OR REPLACE PROCEDURE RETURN_COUNT (
         P_INPUT  IN VARCHAR2,
         P_OUTPUT OUT NUMBER
     ) IS
