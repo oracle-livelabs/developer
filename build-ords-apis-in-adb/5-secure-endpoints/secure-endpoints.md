@@ -2,7 +2,7 @@
 
 ## Introduction
 
-In this lab you secure the REST endpoints created in the previous lab.
+In this lab, you secure the REST endpoints created in the previous lab.
 
 Estimated Lab Time: 10 minutes
 
@@ -17,7 +17,7 @@ Watch the video below for a quick walk-through of the lab.
 
 ### Prerequisites
 
-- The following lab requires an [Oracle Cloud account](https://www.oracle.com/cloud/free/). You may use your own cloud account, a cloud account that you obtained through a trial, or a training account whose details were given to you by an Oracle instructor.
+- The following lab requires an [Oracle Cloud account](https://www.oracle.com/cloud/free/). You may use your own cloud account, a cloud account obtained through a trial, or a training account whose details were given to you by an Oracle instructor.
 
 - This lab assumes you have completed all previous Labs.
 
@@ -95,7 +95,7 @@ Watch the video below for a quick walk-through of the lab.
 
     ![Roles shuttle](./images/roles-shuttle-window.png " ")
 
-    > 💡 **NOTE:** Privileges and roles were automatically created (oracle.dbtools.role.autorest.ADMIN.CSV_DATA) when the table is auto-REST enabled.
+    > **NOTE:** Privileges and roles were automatically created (oracle.dbtools.role.autorest.ADMIN.CSV_DATA) when the table is auto-REST enabled.
 
 8. Once the role has been moved, click the **Protected Modules** tab near the top of the **Create Privilege** slider.
 
@@ -107,7 +107,7 @@ Watch the video below for a quick walk-through of the lab.
 
     ![click the Create button on the Create Privilege slider](./images/click-create-for-privilege.png " ")
 
-## Task 3: Create an OAuth Client for secure REST Endpoint
+## Task 3: Create an OAuth Client for a secure REST Endpoint
 
 1. Select **OAuth Clients** from the **Security Tab**.
 
@@ -164,7 +164,7 @@ Watch the video below for a quick walk-through of the lab.
 
     ![Support Email Field](./images/support-email-field.png " ")
 
-8. Once complete, left click the **Roles Tab** on the top of the Create OAuth Client slider.
+8. Once completed, left-click the **Roles Tab** at the top of the Create OAuth Client slider.
 
     ![Completed OAuth Slider](./images/completed-oauth-slider.png " ")
 
@@ -186,7 +186,7 @@ Watch the video below for a quick walk-through of the lab.
 
     ![OAuth Client tile on the OAuth Clients page](./images/oauth-clients-page.png " ")
 
-13. You may navigate to your `com.oracle.livelab.api` Resource Module, to review the effect of your changes.
+13. You may navigate to your `com.oracle.livelab.api` Resource Module to review the effect of your changes.
 
     ![see-changes-to-api-from-oauth-client](images/click-kebab-then-edit-to-see-changes-to-api-from-oauth-client.png)
 
@@ -194,13 +194,13 @@ Watch the video below for a quick walk-through of the lab.
 
 ## Task 4: Obtain a Bearer Token for accessing a secure REST Endpoint
 
-1. Before accessing an OAuth-protected REST endpoint, you must first obtain a token to pass to the secured REST service for authentication. To obtain this token, we can click the kebab menu icon on our OAuth tile and select **Get Bearer Token**.  
+1. Before accessing an OAuth-protected REST endpoint, you must obtain a token to pass to the secured REST service for authentication. We can click the kebab menu icon on our OAuth tile to obtain this token and select **Get Bearer Token**.  
 
    ![pop out menu icon](images/clicking-kebab-to-access-option-for-bearer-token-curl.png " ")
 
    ![click the pop out menu icon on our OAuth tile and select Get Bearer Token](./images/get-bearer-token-for-oauth-client.png " ")
 
-2. The OAuth Token modal will provide the token text in the **Current Token** field. You can use the copy icon to copy this token text. Save this to a text document or notes application. The modal will also provide us with a cURL command to obtain a token should we need to include it in our applications.
+2. The OAuth Token modal will provide the token text in the **Current Token** field. You can use the copy icon to copy this token text, save it to a text document, or use a notes application. The modal will also provide us with a cURL command to obtain a token should we need to include it in our applications.
 
     ![Click the copy icon to save the Token Text](./images/click-copy-icon-to-copy-access-token-curl-command.png " ")
 
@@ -208,7 +208,7 @@ Watch the video below for a quick walk-through of the lab.
 
     ![Left click the OK button](./images/click-ok-when-finished-in-oauth-slider.png " ")
 
-3. Next, we'll test the secure REST service . Recall in the previous Lab lab, where we created a REST API for our `bizlogic`? Attempt to access this REST endpoint with the following cURL command (**your URL hostname will be different than the below command**):
+3. Next, we'll test the secure REST service. Recall in the previous Lab lab, where we created a REST API for our `bizlogic`? Attempt to access this REST endpoint with the following cURL command (**your URL hostname will be different than the below command**):
 
    ![Return to bizlogic to copy curl command.](images/click-copy-icon-for-get-curl-command-no-token.png)
 
@@ -216,7 +216,7 @@ Watch the video below for a quick walk-through of the lab.
 
     ```sh
     <copy>curl --location --request POST \
-    'https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/admin/api/bizlogic' \
+    'https://livelab.adb.eu-frankfurt-1.oraclecloudapps.com/ords/admin/api/bizlogic' \
     --header 'Content-Type: application/json' \
     --data-binary '{
     "id": "a1",
@@ -228,23 +228,23 @@ Watch the video below for a quick walk-through of the lab.
 
    ![attempting-to-run-curl-command-in-cloud-shell-unauthorized](images/attempting-to-run-curl-command-in-cloud-shell-unauthorized.png)
 
-5. In order to access this REST API, you must include a `--header 'Authorization: Bearer [The Access Token value]'` header to the cURL command. The `Access Token value` is the same Access Token you saved in Step 2 (**your URL hostname will be different than the below command**). Your updated cURL command should resemble the following:
+5. To access this REST API, you must include a `--header 'Authorization: Bearer [The Access Token value]'` header to the cURL command. The `Access Token value` is the same as the Access Token you saved in Step 2 (**your URL hostname will be different than the command below**). Your updated cURL command should resemble the following:
 
    ![creating-curl-command-with-access-token](images/creating-curl-command-with-access-token.png)
 
-6. Using the Cloud Shell, or local environment, execute *your* version of the cURL command (**your URL hostname and Bearer Token will differ from the one below**)
+6. Using the Cloud Shell or local environment, execute *your* version of the cURL command (**your URL hostname and Bearer Token will differ from the one below**)
 
    ![complete-curl-command-with-access-token-in-cloud-shell](images/the-complete-curl-command-with-access-token-in-cloud-shell.png)
 
-   You should see a similar value, returned from the REST API.
+   You should see a similar value returned from the REST API.
 
    ![success-output-shown-in-cloud-shell](images/success-output-shown-in-cloud-shell.png)
 
-7. You have just simulated what an application might do when requesting access to a secure Resource. You've requested an Access Token, using your Client ID and Client Secret. Your credentials were verified; you were then issued an Access Token.
+7. You have just simulated what an application might do when requesting access to a secure Resource. You've requested an Access Token using your Client ID and Client Secret. Your credentials were verified, and you were then issued an Access Token.
 
-   And finally, you used the Access Token to perform a POST request on a target resource (i.e., the `bizlogic` resource).
+   Finally, you used the Access Token to perform a POST request on a target resource (i.e., the `bizlogic` resource).
 
-8. Congratulations. You've successfully completed this Workshop. And in this lab, you secured your custom REST APIs with OAuth2.0 authentication.
+8. Congratulations. You've completed this Workshop. In this lab, you secured your custom REST APIs with OAuth2.0 authentication.
 
 You may now [proceed to the next lab](#next).
 
