@@ -64,7 +64,7 @@ This lab assumes you have:
 
 4. In the Query results section, you'll notice ORDS has executed the SQL, only returning the movies who have "Comedy" included in the genres column, as well as a runtime of 210 minutes or less.
 
-    ![A results set example.](images/workshop-presentation-eight.png " ")
+  ![A results set example.](images/workshop-presentation-eight.png " ")
 
    You've just simulated what a user might select in this sample application.  
 
