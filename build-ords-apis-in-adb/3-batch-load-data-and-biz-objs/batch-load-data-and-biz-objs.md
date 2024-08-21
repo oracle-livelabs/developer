@@ -98,9 +98,9 @@ Watch the video below for a quick walk-through of the lab.
 
     ![running the command in cloud shell](./images/execute-curl-command-cloud-shell.png " ")
 
-   > **NOTE:** Before executing this cURL command, ensure you `cd` to the directory that contains the '2M.csv` file.  
+    > **NOTE:** Before executing this cURL command, ensure you `cd` to the directory that contains the '2M.csv` file.  
 
-      ![CD to the correct directory.](images/cd-to-correct-directory.png)
+    ![CD to the correct directory.](images/cd-to-correct-directory.png)
 
 9. When the **command is finished**, you should see that all over **2 millions rows** were inserted into the table.  
 
