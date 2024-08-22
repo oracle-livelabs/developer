@@ -31,15 +31,15 @@ This lab assumes you have:
 
 2. These buttons are enabled or disabled based on the existence or absence of ORDS properties in a `GET` request's JSON response payload. To explore an example of payload, use your web browser to navigate to the following URI:
 
-   ```sh
-   <copy>
-   [Your Workshop's URL]/ords/movie/mymovies/movie-all?genre=Comedy&runtime=210
-   </copy>
-   ```  
+      ```sh
+      <copy>
+      https://[Your Workshop IP Address:Port]/ords/movie/mymovies/movie-all?genre=Comedy&runtime=210
+      </copy>
+      ```  
 
    ![Retrieving the correct URI.](images/workshop-presentation-one-two.png)
 
-   > Your URI may appear different. Regardless, ensure you use valid query parameters.
+     > **NOTE:** Your URI may appear different. Regardless, ensure you use valid query parameters.
 
 3. You should see the results of the `GET` request on your page. They will look similar to the following:
 
@@ -49,29 +49,23 @@ This lab assumes you have:
 
 4. The typical ORDS payload consists of the following properties:
 
-   * `items`
-
      ![The items property.](images/workshop-presentation-three.png " ")
-
-   * `hasMore`
+     *`items`*
 
      ![The hasMore property](images/workshop-presentation-four.png " ")
+     *`hasMore`*
   
-   * `limit`
-
      ![The limit property](images/workshop-presentation-five.png " ")
-
-   * `offset`
+     *`limit`*
 
      ![The offset property](images/workshop-presentation-six.png " ")
-
-   * `count`
+     *`offset`*
 
      ![The count property](images/workshop-presentation-seven.png " ")
-
-   * `links`
+     *`count`*
 
      ![The links property](images/workshop-presentation-eight.png " ")
+     *`links`*
 
 5. The `limit`, `offset`, and `count` properties are interrelated. For instance, if you were to select `25` as the page size, ORDS would only return results in increments of `25`. How does ORDS know to do this? It was set for you automatically, when you created your Resource Module.
 
@@ -111,7 +105,7 @@ This lab assumes you have:
 
 2. This code is nearly identical to that found in the `@app.route('/handle_data')`. However, instead of expecting an initial selection (where a user selects a genre and movie runtime), this route expects a `next` URI. There is an identical route for the `previous` link too.
 
-   ![Reviewing python code function.](images/workshop-presentation-sixteen.png " ")  
+    ![Reviewing python code function.](images/workshop-presentation-sixteen.png " ")  
       ![Reviewing the previous jinja in html.](images/workshop-presentation-seventeen.png " ")
 
 3. After this `next_page` function assembles the necessary information, a new `movieresults.html` page is rendered and delivered to  the UI. All `next` and `previous` links are updated with the `links` found in the ORDS response. This allows the user to navigate forward or backward.
@@ -130,7 +124,6 @@ This lab assumes you have:
    ![Next disabled in app.](images/workshop-presentation-twenty-one.png " ")
 
 5. Congratulations. You've made it to the end of this LiveLab. By now you should have a basic understanding of the following ORDS concepts:
-
    * REST-enabled users and their REST-enabled schemas
    * Resource Modules, Templates, and Handlers
    * Route Templates
@@ -138,8 +131,9 @@ This lab assumes you have:
    * How bind parameters can be used to elevate your existing procedures
    * URL Query parameters and how ORDS expects them
 
-6. You may now log out of your lab. If you enjoyed working with ORDS in your own development environment such as this, download the latest version or ORDS *or* try out one of our Docker/Podman containers:
+## Task 3: Wrap-up
 
+1. You may now log out of your lab. If you enjoyed working with ORDS in your own development environment such as this, download the latest version or ORDS *or* try out one of our Docker/Podman containers:
    * [Download latest ORDS version](https://www.oracle.com/database/sqldeveloper/technologies/db-actions/download/)
    * [ORDS standard container](https://container-registry.oracle.com/ords/ocr/ba/database/ords)
    * [ORDS Developer container](https://container-registry.oracle.com/ords/ocr/ba/database/ords-developer)
