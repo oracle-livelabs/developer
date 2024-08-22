@@ -131,9 +131,9 @@ This lab assumes you have:
 
 ## Task 4: Re-parenting of sub-objects between two documents
 
-We will switch Charles Leclerc's and George Russell's teams. This can be done by updating the Mercedes and Ferrari `team_dv`. The documents can be updated by simply sending the new list of drivers for both documents in the input.
+1. We will switch Charles Leclerc's and George Russell's teams. This can be done by updating the Mercedes and Ferrari `team_dv`. The documents can be updated by simply sending the new list of drivers for both documents in the input.
 
-1. First, show the team documents. Clear the worksheet, copy the SQL below and click **Run Script**.
+    First, show the team documents. Clear the worksheet, copy the SQL below and click **Run Script**.
 
     ```
     <copy>

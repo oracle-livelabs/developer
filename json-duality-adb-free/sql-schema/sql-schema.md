@@ -30,9 +30,9 @@ This lab assumes you have:
     ![Areas to select](images/reservation-info.png " ")
 
 3. At the login menu, click **Advanced** and enter the following: 
-- PATH: **HOL23AI** (case sensitive). 
-- Username: **hol23ai**. 
-- Password: Paste value from step 2.
+    - PATH: **HOL23AI** (case sensitive). 
+    - Username: **hol23ai**. 
+    - Password: Paste value from step 2.
 
    Once all 3 values have been entered, click **Sign in**.
    ![All sing-in info](images/hol23ai-sign-in.png " ")
@@ -53,10 +53,10 @@ This lab assumes you have:
    ![Selecting Run or Run Script](images/run-sql-script.png " ")
 
 3. We will create a set of tables that model a Formula 1 racing scenario. The tables are: 
-- Teams table: table for the teams, consist of `team_id`, `name` and `points`.
-- Drivers table: Individual drivers. Consists of `driver_id`, `name`, and `points`. Also references the team they belong to, `team_id`.
-- Race table: Table for individual races. Consists of `race_id`, `name`, `laps`, `race_date` and a JSON object to store the podium finishers `podium`.
-- Driver-Race Mapping: Captures the drivers performance for the races.Connects drivers to races. Consists of `drvier_race_map_id`, `position` to record where a driver finishes in each race. Uses foreign keys `race_id` and `driver_id`.
+    - Teams table: table for the teams, consist of `team_id`, `name` and `points`.
+    - Drivers table: Individual drivers. Consists of `driver_id`, `name`, and `points`. Also references the team they belong to, `team_id`.
+    - Race table: Table for individual races. Consists of `race_id`, `name`, `laps`, `race_date` and a JSON object to store the podium finishers `podium`.
+    - Driver-Race Mapping: Captures the drivers performance for the races.Connects drivers to races. Consists of `drvier_race_map_id`, `position` to record where a driver finishes in each race. Uses foreign keys `race_id` and `driver_id`.
 
     
     Copy the code below and run it in the worksheet by clicking the **Run Script** button.
@@ -233,7 +233,7 @@ This lab assumes you have:
 	![Creates the team dv](images/create-team-dv.png " ")
 
 ## Task 3: Populating the database
-1. We are now inserting a collection of team documents into the `team_dv` duality view. Since `team_dv` is structured to manage teams and their associated drivers, we can insert data directly into both `team` and `driver` tables simultaneously. It also allows inserts into both tables. Copy the SQL below and click **Run Script**.
+1. We are now inserting a collection of team documents into the `team_dv` duality view. Since `team_dv` is structured to manage teams and their associated drivers, we can insert data directly into both `team` and `driver` tables simultaneously. It also allows inserts into both tables. Click the trash to clear the worksheet, copy the code below and click **Run Script**.
 
     ```
     <copy>
@@ -302,7 +302,7 @@ This lab assumes you have:
 
     For example, in the previous step, documents were inserted into the team\_dv duality view. This duality view joins the team table with the driver table. Once we insert into this duality view, both the team table as well as the driver table are populated.
 
-    If you now list the contents of the driver\_dv duality view, which is based on the driver table, it has documents as well. You can either click the trash to clear the worksheet or delete what is there before pasting the code below. Copy the SQL below and click **Run Script**.
+    If you now list the contents of the driver\_dv duality view, which is based on the driver table, it has documents as well. Click the trash to clear the worksheet, copy the code below and click **Run Script**.
 
     ```
     <copy>
