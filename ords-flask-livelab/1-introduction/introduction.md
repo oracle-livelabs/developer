@@ -66,4 +66,4 @@ You may now [proceed to the next lab](#next).
 
 * **Author** - Chris Hoina, Senior Product Manager, Database Tools
 * **Contributors** -  Jeff Smith, Distinguished Product Manager, Database Tools
-* **Last Updated By/Date** - Chris Hoina, Senior Product Manager, Database Tools
+* **Last Updated By/Date** - Chris Hoina, Database Tools, August 2024
