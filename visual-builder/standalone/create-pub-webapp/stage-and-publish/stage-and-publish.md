@@ -10,9 +10,9 @@ Estimated Time:  10 minutes
 
 At this point, your work designing the app is more or less complete. You can now stage your app to allow team members to test it thoroughly. After testing is complete, you can publish the application and make it available to users.
 
-Visual Builder provides different databases for the development, staging, and live phases of an application. You can use an empty database for the staging or live phase, you can transfer data from one to another, or you can import specific data for each.
+Visual Builder provides different databases for the development, staging, and live phases of an application. For the staging and live phases, you can choose to use an empty database, transfer data from one database to another, or import specific data for each.
 
-This lab shows you how to stage, publish, and access those apps within the Designer. You can also perform these operations from the application's Options menu on the Visual Applications page.
+This lab shows you how to stage and publish your app from within the Designer, but you can also do this from an application's context menu on the Visual Applications home page. We'll also see how you can enable your web app as a Progressive Web App—or PWA. PWAs are designed to be capable, reliable, and provide a platform-specific look and feel. A PWA-enabled web app can be installed directly from a browser on a user's device, including Android and iOS mobile devices.
 
 ### Objectives
 
@@ -31,9 +31,9 @@ This lab assumes you have:
 
 ## Task 1: Enable the web app as a PWA
 
-As a final step before you stage the app, enable it to run as a Progressive Web App—or PWA for short. PWAs are designed to be capable, reliable, and provide a platform-specific look and feel. When you enable a web app as a PWA, it can be installed directly from a browser on a user's device, including Android and iOS mobile devices.
+As a final step before you stage the app, enable it to run as a PWA. 
 
-1. In the Web Apps pane, click the **hrwebapp** node.
+1. In the Web Apps pane, click **hrwebapp**.
 
 2. Click **Settings** and **PWA**, then toggle **Enable Progressive Web App (PWA)**.
 
@@ -50,7 +50,7 @@ As a final step before you stage the app, enable it to run as a Progressive Web 
 
     ![This image shows an offlinePage.html created under the Offline Fallback Page option in the Resources section.](images/offlinepage.png " ")
 
-  A default `offlinePage.html` is created for you. You can click this page to customize its code, if you want. For demonstration purposes, we'll accept the default settings.
+  A default offlinePage.html is created for you. You can click this page to customize its code, if you want. For demonstration purposes, we'll accept the default settings.
 
 ## Task 2: Stage the application
 
@@ -60,7 +60,7 @@ Let's now stage the application, so other users can test its behavior.
 
     ![This image shows the Menu options in the header. Stage is selected.](images/stage.png "")
 
-2. In the Stage Application dialog box, select the **Populate Stage with Development data** option and click **Stage**.
+2. In the Stage Application dialog box, select **Populate Stage with Development data** and click **Stage**.
 
     ![This image shows the Stage application dialog. The Populate Stage with Development data option and the Stage button is selected.](images/stage-application.png "")
 
@@ -84,7 +84,7 @@ To add more records to your data in the staging database, let's import data for 
 
 1. Click [this link](https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/oci-library/hr_application_stage.zip) and save the `hr_application_stage.zip` file. The ZIP file contains CSV files of the Department and Employee business objects of the HR Application schema with a few more records.
 
-2. In the Navigator, click the **Business Objects** ![Business Objects icon](images/bo-icon.png) tab, then click **Menu** ![Menu icon](images/menu-icon.png) and select **Data Manager**.
+2. Click **Business Objects** ![Business Objects icon](images/bo-icon.png) in the Navigator, then click **Menu** ![Menu icon](images/menu-icon.png) and select **Data Manager**.
 
 3. From the drop-down list in the upper right corner, select **Staging** to import the data into the staging database.
 
@@ -112,11 +112,13 @@ After you have successfully tested the staged application, you can publish it an
 
 1. Click **Menu** in the header and select **Publish**.
 
-2. In the Publish Application dialog box, select the **Include data from Stage** option and click **Publish**.
+2. In the Publish Application dialog box, select **Include data from Stage** and click **Publish**.
 
     ![This image shows the Publish Application dialog. The Include data from Stage option and the Publish button are selected.](images/publish-application.png "")
 
     The application is now live. Notice the status change in the header next to the application name.
+
+    (You'll also see a banner that this version of the application is live and cannot be changed.)
 
 3. Click **ORACLE Visual Builder** in the header to go to the Visual Applications page.
 
@@ -144,9 +146,9 @@ After you have successfully tested the staged application, you can publish it an
 
     When you are done, click **X** to close the app. You can always click ![PWA desktop icon](images/pwa-desktop-icon.png) on your device's home screen or laptop to open the app again. Remember also to close the staged app's browser tab.
 
-    Now that the HR app is published, you won't be able to make changes to it. To do that, you'll need to create a new version from the application's Options menu on the Visual Applications page. This creates a development version of the app for you to work on while the published version stays live. Once you are ready to go live with your updates, you'll need to re-stage and re-publish the new version.
+    Now that the HR app is published, you won't be able to make changes to it. To do that, you'll need to click **New Version** from the application's context menu on the Visual Applications home page (or in the banner within the Designer). This creates a development version of the app for you to work on while the published version stays live. Once you are ready to go live with your updates, you'll need to re-stage and re-publish the new version.
 
-    And that's it for this workshop!
+    And that's it, your work is finished! Thanks for completing this workshop!
 
 ## Acknowledgements
 
