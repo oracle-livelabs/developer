@@ -53,6 +53,8 @@ This lab assumes you have:
 * An Oracle account
 * All previous labs successfully completed
 
+You may now [proceed to the next lab](#next).  
+
 ## Learn More
 
 * [ORDS home](https://www.oracle.com/database/technologies/appdev/rest.html)
@@ -64,4 +66,4 @@ This lab assumes you have:
 
 * **Author** - Chris Hoina, Senior Product Manager, Database Tools
 * **Contributors** -  Jeff Smith, Distinguished Product Manager, Database Tools
-* **Last Updated By/Date** - Chris Hoina, Senior Product Manager, Database Tools
+* **Last Updated By/Date** - Chris Hoina, Database Tools, August 2024
