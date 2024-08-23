@@ -104,7 +104,7 @@ The Onboarding Wizard helps to create the necessary resources automatically. We 
     * In the Oracle Cloud Console, open the navigation menu and click **Identity & Security**. Under **Identity**, click **Policies**.
         ![image of console navigation to policies](images/console-navigation-policies.png)
         &nbsp;
-    * Confirm the creation of new policy labeled `JMS_Policy`.
+    * Confirm the creation of new policy labeled `JMS_Policy_Fleet_Compartment`.
         ![image of new jms policy](images/new-jms-policy.png)
 
 You may now **proceed to the next lab**.
@@ -240,7 +240,7 @@ Sign in to the Oracle Cloud Console as an administrator using the credentials pr
     * Click **Create Policy**.
     ![image of policies main page](images/policies-main-page.png)
     &nbsp;
-    * In the Create Policy dialog box, enter a name for the policy (for example, `JMS_Policy`), and a description.
+    * In the Create Policy dialog box, enter a name for the policy (for example, `JMS_Policy_Fleet_Compartment`), and a description.
     &nbsp;
     * Select the root compartment for your tenancy from the drop-down list.
     &nbsp;
@@ -260,13 +260,13 @@ Sign in to the Oracle Cloud Console as an administrator using the credentials pr
     ALLOW GROUP FLEET_MANAGERS TO MANAGE jms-plugins IN COMPARTMENT Fleet_Compartment
 
     ALLOW DYNAMIC-GROUP JMS_DYNAMIC_GROUP TO USE METRICS IN COMPARTMENT Fleet_Compartment
-    ALLOW DYNAMIC-GROUP JMS_DYNAMIC_GROUP TO MANAGE management-agents IN COMPARTMENT Fleet_Compartment 
+    ALLOW DYNAMIC-GROUP JMS_DYNAMIC_GROUP TO MANAGE management-agents IN COMPARTMENT Fleet_Compartment
     ALLOW DYNAMIC-GROUP JMS_DYNAMIC_GROUP TO MANAGE log-content IN COMPARTMENT Fleet_Compartment
     ALLOW DYNAMIC-GROUP JMS_DYNAMIC_GROUP TO MANAGE instances IN COMPARTMENT <instance_compartment>
     ALLOW DYNAMIC-GROUP JMS_DYNAMIC_GROUP TO MANAGE metrics IN COMPARTMENT Fleet_Compartment WHERE target.metrics.namespace='java_management_service'
     ALLOW DYNAMIC-GROUP JMS_DYNAMIC_GROUP TO MANAGE jms-plugins IN COMPARTMENT Fleet_Compartment
 
-    ALLOW resource jms SERVER-COMPONENTS TO MANAGE metrics IN COMPARTMENT Fleet_Compartment WHERE target.metrics.namespace='java_management_service' 
+    ALLOW resource jms SERVER-COMPONENTS TO MANAGE metrics IN COMPARTMENT Fleet_Compartment WHERE target.metrics.namespace='java_management_service'
     ALLOW resource jms SERVER-COMPONENTS TO USE management-agent-install-keys IN COMPARTMENT Fleet_Compartment
     ALLOW resource jms SERVER-COMPONENTS TO MANAGE log-groups IN COMPARTMENT Fleet_Compartment
     ALLOW resource jms SERVER-COMPONENTS TO MANAGE log-content IN COMPARTMENT Fleet_Compartment
@@ -298,4 +298,4 @@ You may now **proceed to the next lab**.
 ## Acknowledgements
 
 * **Author** - Alvin Lam, Java Management Service
-* **Last Updated By/Date** - Son Truong, August 2024
+* **Last Updated By/Date** - Teck Kian Choo, August 2024
