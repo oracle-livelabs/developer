@@ -109,9 +109,29 @@ Notice the template includes a button to take you back to the parent page.  You 
 5. Your app should now look something like this.
 	  ![label property](images/finishdetails.png)
 
-6. Switch to **Live** mode and use the **Parent page** button to switch back to the **welcome** page, then click **Preview** in the header to see your app live.
+6. Switch to **Live** mode and use the **Parent page** button to switch back to the **welcome** page, then click **Preview** in the header to see your app live. (If your **Parent page** button is not working, see the **Known Bug** section below.)
 
 You may now close the preview browser tab and **proceed to the next lab**.
+
+## Known Bug
+The recent version of the **Horizontal Foldout Layout Page Template** has a bug where the action id is misnamed in the JSON file.
+
+1. At the bottom of the screen you should see some errors.  Click on the errors indicator.
+	  ![label property](images/actionchainerrors.png)
+
+2. If you see an error that says **Action chain goToParentChain does not exist** proceed with the following steps.
+	  ![label property](images/actionchainerrortext.png)
+
+3. At the top of the screen open the JSON tab.
+	  ![label property](images/actionchainjsontab.png)
+
+4. Use Ctrl+F to open a search and click the **>** symbol to toggle the replace function.
+	  ![label property](images/actionchaintogglereplace.png)
+
+5. Enter **chainId** in the search field and **chain** in the replace field.  You should see 1 of 5 found.  Click on the **Replace All** button.
+	  ![label property](images/actionchaintogglereplaceall.png)
+
+6. Switch back to the **Page Designer** tab.  Your **Parent Page** button should now be working.  Return to the step you were on when you encountered this bug.
 
 ## Learn More
 
