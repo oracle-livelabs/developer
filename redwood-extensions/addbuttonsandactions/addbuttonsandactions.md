@@ -162,14 +162,19 @@ Your **ButtonActionChain** should look like this:
 
 	You're now in the Action Chain Editor.
 
+  It's a good idea to set the ID for you action chain to something a little more informative.
+
+3. In the properties panel on the right, change the ID to **InfoButtonActionChain**
+	![Dragging actions](images/setinfobuttonactionchainid.png)
+
 	On the left side, you can see all the actions you can define, including calling REST endpoints, invoking JavaScript functions, and many more.
 
-3. From the list of actions on the left, drag **Navigate To Page**
+4. From the list of actions on the left, drag **Navigate To Page**
 	![Dragging actions](images/actiondrag.png)
   and drop it onto the canvas:
 	![Dropping actions](images/actiondrop.png)
 
-4. In the Properties pane, locate the page list and click **Create**:
+5. In the Properties pane, locate the page list and click **Create**:
 	![Action properties](images/clickcreateeditpage.png)
 
 5. In **Create Page** window, set the **Page Id** to **edit**:
