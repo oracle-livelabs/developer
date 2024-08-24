@@ -12,6 +12,8 @@ Please read more about [OCI Policies](https://docs.oracle.com/en-us/iaas/Content
 
 Estimated time: 5 to 40 minutes depending on requirements
 
+[Caption](videohub:1_2ciumah8)
+
 ### Objectives
 
 In this lab, you will:
