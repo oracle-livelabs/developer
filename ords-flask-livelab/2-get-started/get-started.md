@@ -47,7 +47,7 @@ This lab assumes you have:
       > | Linux | `CTRL + SHIFT + C` | `CTRL + SHIFT + V` |
       > | Windows | `CTRL + C` | `CTRL + V` |
 
-   ![Database Actions URI in Lab.](images/workshop-presentation-one-minus.png " ")
+   ![Database Actions URI in Lab.](images/sql-developer-web-uri-first-time.png " ")
 
 2. Several users have been created for you, including a new `MOVIE` user. Its schema has already been REST-enabled, meaning you will be able to Sign in to Database Actions.  
 
@@ -100,7 +100,7 @@ This lab assumes you have:
 
 1. Using the URL you were provided, log in to your Jupyter lab. *It is recommended you open the Juptyer Lab in a new tab or window.*
 
-   ![Using the password from previous task.](images/workshop-presentation-five-minus.png " ")
+   ![Using the password from previous task.](images/retrieve-jupyter-lab-uri-first-time.png " ")
 
    Use the same password from the previous task.
 
@@ -208,7 +208,7 @@ This lab assumes you have:
    > **NOTE:** If a new Launcher window is not present, you can click the Blue Box (the box with the `+` inside) to open a new Launcher. Then you may 
    > open a new Terminal.
 
-   ![Launching a new terminal.](images/workshop-presentation-fourteen-one.png)  
+   ![Launching a new terminal.](images/workshop-presentation-fourteen-one.png " ")  
 
 2. Verify you are in the correct directory by:  
 
@@ -222,23 +222,23 @@ This lab assumes you have:
       <copy>python ordsflask.py</copy>
       ```
 
-    ![Verify in the correct folder.](images/workshop-presentation-fourteen-two.png)
+    ![Verify in the correct folder.](images/workshop-presentation-fourteen-two.png " ")
     *The Flask development server will start up.*
 
 4. Your application will be available on port `5000`. However, you will need to open the application in a new tab. Modify the URL, so you are using the one provided to you for this lab *plus* port `5000`.  
 
-   ![Workshop lab IP address.](images/workshop-presentation-fourteen-four.png)  
+   ![Workshop lab IP address.](images/copy-correct-portion-of-url-for-sample-app.png " ")  
 
-   ![Navigating to the correct address plus port 5000.](images/workshop-presentation-fourteen-five.png)
+   ![Navigating to the correct address plus port 5000.](images/workshop-presentation-fourteen-five.png " ")
    *Open in a new tab or window.*
 
 5. Navigate to the new tab and combine the lab's URI with port `5000`. Accept any warnings and your application will load.
 
-   ![Navigating to your application.](images/workshop-presentation-fourteen-six.png)
+   ![Navigating to your application.](images/workshop-presentation-fourteen-six.png " ")
 
 6. The ORDS application will load.  
 
-   ![ORDS application up and running.](images/workshop-presentation-fourteen-seven.png)
+   ![ORDS application up and running.](images/workshop-presentation-fourteen-seven.png " ")
 
 7. With the application running, we'll next explore the ORDS APIs and how they feed data to your application.
 
