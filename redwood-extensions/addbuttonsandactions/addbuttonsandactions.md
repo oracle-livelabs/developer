@@ -106,7 +106,6 @@ We now have nice-looking icon-based buttons for each row, but so far they don't 
 VB Studio apps are event-driven, which means that an event is fired when an end user performs an operation in the user interface. As a developer, you can create an *action chain* that kicks off a series of actions in response to an event. Let's see how to create an action chain visually using the Action Chains editor.
 
 1. In Design view, select the Info button, then click **Events** in the Properties pane:
-
 	![Events tab](images/buttonevents.png)
 
 2. Click **+ Event Listener**, then **On ojAction**. Note if you see an onClick event instead, it means you selected the icon instead of the button - switch to select the button in the structure panel.:
@@ -114,40 +113,45 @@ VB Studio apps are event-driven, which means that an event is fired when an end 
 
 	You're now in the Action Chain Editor.
 
+  It's a good idea to set the ID for you action chain to something a little more informative.
+
+3. In the properties panel on the right, change the ID to **InfoButtonActionChain**
+	![Dragging actions](images/setinfobuttonactionchainid.png)
+
 	On the left side, you can see all the actions you can define, including calling REST endpoints, invoking JavaScript functions, and many more.
 
-3. From the list of actions on the left, drag **Navigate To Page**
+4. From the list of actions on the left, drag **Navigate To Page**
 	![Dragging actions](images/actiondrag.png)
   and drop it onto the canvas:
 	![Dropping actions](images/actiondrop.png)
 
-4. In the Properties pane, locate the page list and click **Create**:
+5. In the Properties pane, locate the page list and click **Create**:
 	![Action properties](images/clickcreateeditpage.png)
 
-5. In **Create Page** window, set the **Page Id** to **details**:
+6. In **Create Page** window, set the **Page Id** to **details**:
 
-6. Select the **Horizontal Foldout Layout Page Template**:
+7. Select the **Horizontal Foldout Layout Page Template**:
 
-7. Click **Create**:
+8. Click **Create**:
 	![Action properties](images/createdetailspage.png)
 
-8. In the properties panel, locate the **rowIndex** parameter and click **Select Variable**:
+9. In the properties panel, locate the **rowIndex** parameter and click **Select Variable**:
 
   ![Set input parameter](images/selectrowindexvariable.png)
 
-9. Under **Input Parameters** select  **key**:
+10. Under **Input Parameters** select  **key**:
 
   ![Set input parameter](images/selectkey.png)
 
-10. In the properties panel, locate the **parentPage** parameter and click **Select Variable**:
+11. In the properties panel, locate the **parentPage** parameter and click **Select Variable**:
 
   ![Set input parameter](images/selectparrentpagevariable.png)
 
-11. Under **Flow / System** select  **currentPage**:
+12. Under **Flow / System** select  **currentPage**:
 
   ![Set input parameter](images/navdetailssetparentpage.png)
 
-Your **ButtonActionChain** should look like this:
+Your **InfoButtonActionChain** should look like this:
 
   ![Set input parameter](images/buttonactionchain.png)
 
@@ -162,54 +166,59 @@ Your **ButtonActionChain** should look like this:
 
 	You're now in the Action Chain Editor.
 
+  It's a good idea to set the ID for you action chain to something a little more informative.
+
+3. In the properties panel on the right, change the ID to **EditButtonActionChain**
+	![Dragging actions](images/seteditbuttonactionchainid.png)
+
 	On the left side, you can see all the actions you can define, including calling REST endpoints, invoking JavaScript functions, and many more.
 
-3. From the list of actions on the left, drag **Navigate To Page**
+4. From the list of actions on the left, drag **Navigate To Page**
 	![Dragging actions](images/actiondrag.png)
   and drop it onto the canvas:
 	![Dropping actions](images/actiondrop.png)
 
-4. In the Properties pane, locate the page list and click **Create**:
+5. In the Properties pane, locate the page list and click **Create**:
 	![Action properties](images/clickcreateeditpage.png)
 
-5. In **Create Page** window, set the **Page Id** to **edit**:
+6. In **Create Page** window, set the **Page Id** to **edit**:
 
-6. Select the **Simple Create and Edit Page Template**:
+7. Select the **Simple Create and Edit Page Template**:
 
-7. Click **Create**:
+8. Click **Create**:
 	![Action properties](images/createeditpage.png)
 
  Let's take a step back.  We set things up so that when the Edit button is clicked, we will navigate to a new edit page created with the Redwood **Simple Create and Edit Page Template**. However, since we intend to use this as an **Edit** page, we need to enable an input parameter that we can use to link the record on the welcome page to the record being edited in the new page.
 
-8. Click the **Go to Page** link to open the new page:
+9. Click the **Go to Page** link to open the new page:
 	![Input parameter](images/gotopage.png)
 
-9. Switch to the **variables** tab:
+10. Switch to the **variables** tab:
 
   ![Variables tab](images/variablestab.png)
 
-10. In the list of variables, click on **objectId**:
+11. In the list of variables, click on **objectId**:
 
   ![Select objectId](images/selectobjectid.png)
 
-11. In the properties on the right set **Input Parameter** to **Required**:
+12. In the properties on the right set **Input Parameter** to **Required**:
 
   ![Set input parameter](images/setobjectidrequired.png)
 
-12. Switch back to **welcome** and open the **Actions** tab:
+13. Switch back to **welcome** and open the **Actions Chains** tab:
 
   ![Set input parameter](images/switchwelcomeactions.png)
 
-13. Switch to **ButtonActionChain1** then click on the **Navigate To Page** action:
+14. Switch to **EditButtonActionChain** then click on the **Navigate To Page** action:
 
   ![Set input parameter](images/switchbuttonactionchain1.png)
 
-14. In the properties panel, locate the **objectId** parameter and click **Select Variable**:
+15. In the properties panel, locate the **objectId** parameter and click **Select Variable**:
 If you don't see the parameter, you may need to refresh your screen.
 
   ![Set input parameter](images/selectobjectidvariable.png)
 
-15. Under **Input Parameters** select  **key**:
+16. Under **Input Parameters** select  **key**:
 
   ![Set input parameter](images/selectkey.png)
 
