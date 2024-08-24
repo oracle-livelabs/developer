@@ -23,9 +23,9 @@ This lab assumes you have:
 
 ## Task 1: Find documents matching a filter (aka predicate)
 
-1. To find race info by raceId, you can use JSON functions, such as json\_value and json\_exists in predicates when querying duality views.
+1. In this step, we will use JSON functions to find race information from the `race_dv` duality view. We'll use the `json_value` function to extract and filter data based on a specific raceId.
 
-    Another alternative is the use of  simplified dot notation in predicates, but this will be explored later in the lab. The json\_exists function is more powerful than json\_value in terms of the conditions it can express and is used by the REST interface to translate query by examples. Clear the worksheet, copy the SQL below and click **Run Script**.
+    Another option is to use simplified dot notation in predicates, which we'll cover later on in the lab. The `json_exists` function is more versatile than the `json_value` function for expressing conditions and is used by the REST interface for query translation by examples. Clear the worksheet, copy the SQL below and click **Run Script**.
 
     ```
     <copy>
@@ -34,22 +34,27 @@ This lab assumes you have:
     </copy>
     ```
 
-    ![Image alt text](images/task_1_1.png " ")
+    ![Finding race info by race id](images/task-1-1.png " ")
 
 ## Task 2: Replace and fetch a document by ID
 
 1. To announce the results for the Bahrain Grand Prix, we will update the appropriate race entry with the details after the race.
 
-    Note that the "etag" value supplied in the content is used for "out-of-the-box" optimistic locking, to prevent the well-known "lost update" problem that can occur with concurrent operations. During the replace by ID operation, the database checks that the eTag provided in the replacement document matches the latest eTag of the target duality view document.
+    The 'etag' value supplied in the content is used to prevent issues when multiple people try to update the same document at the same time. When you update a document by its ID, the database checks that the 'etag' provided in the new document matches the latest 'etag' in the database. 
 
-    If the eTags do not match, which can occur if another concurrent operation updated the same document, an error is thrown. In case of such an error, you can reread the updated value (including the updated eTag), and retry the replace operation again, adjusting it (if desired) based on the updated value. 
+    If the `etag` do not match, which can happen if someone else has updated the document, an error is thrown. When this happens, you need to get the latest version of the document(including the updated 'etag'), and try to make the update again, making any necessary changes.
     
-    In other words, you may have to adjust the update statement so that the etag matches the etag from the select statement above. You can either click the trash to clear the worksheet or delete what is there before pasting the code below. Copy the SQL below and click **Run Script**.
+    To automate the process of fetching the current 'etag', a subquery is used within the 'SET data' clause. This subquery automatically fetches the latest `etag` for the specified field. This ensures the correct `etag` is used every time without any manual intervention, avoiding conflicts and keeping our data accurate. Now, copy the SQL below and click **Run Script**. 
 
     ```
     <copy>
     UPDATE race_dv
-    SET data = ('{"_metadata": {"etag" : "2E8DC09543DD25DC7D588FB9734D962B"},
+    SET data = ('{
+        "_metadata": {"etag" : ' || (
+            SELECT '"' || json_value(data, '$._metadata.etag') || '"'
+            FROM race_dv
+            WHERE json_value(data, '$._id') = 201
+        ) || '},
                     "_id" : 201,
                     "name"   : "Bahrain Grand Prix",
                     "laps"   : 57,
@@ -82,7 +87,8 @@ This lab assumes you have:
     COMMIT;
     </copy>
     ```
-    ![Image alt text](images/task_2_2.png " ")
+
+    ![Updates Bahrain Grand Prix](images/task-2-2.png " ")
     
 2. Now let's see the updated results for the Bahrain Grand Prix. Clear the worksheet, copy the SQL below and click **Run Script**.
 
@@ -92,7 +98,7 @@ This lab assumes you have:
     FROM race_dv WHERE json_value(data, '$._id') = 201;
     </copy>
     ```
-    ![Image alt text](images/task_2_3.png " ")
+    ![See results for the Bahrain Grand Prix](images/task-2-3.png " ")
 
 ## Task 3: Update specific fields in the document identified by a predicate
 
@@ -111,9 +117,9 @@ This lab assumes you have:
     COMMIT;
     </copy>
     ```
-    ![Image alt text](images/task_3_1.png " ")
+    ![Updates race with spronsor info](images/task-3-1.png " ")
 
-2. Select from the view to ensure the change is in. In this example we are also showing that you can use json_value in the where clause.  Clear the worksheet, copy the SQL below and click **Run Script**.
+2. Select from the view to ensure the change is in. In this example we are also showing that you can use json\_value in the where clause. Clear the worksheet, copy the SQL below and click **Run Script**.
 
     ```
     <copy>
@@ -121,13 +127,13 @@ This lab assumes you have:
     FROM race_dv WHERE json_value(data, '$.name') LIKE 'Blue Air Bahrain%';
     </copy>
     ```
-    ![Image alt text](images/task_3_2.png " ")
+    ![View the Sponsor changes](images/task-3-2.png " ")
 
 ## Task 4: Re-parenting of sub-objects between two documents
 
-We will switch Charles Leclerc's and George Russell's teams. This can be done by updating the Mercedes and Ferrari team_dvs. The documents can be updated by simply sending the new list of drivers for both documents in the input.
+1. We will switch Charles Leclerc's and George Russell's teams. This can be done by updating the Mercedes and Ferrari `team_dv`. The documents can be updated by simply sending the new list of drivers for both documents in the input.
 
-1. First, show the team documents. Clear the worksheet, copy the SQL below and click **Run Script**.
+    First, show the team documents. Clear the worksheet, copy the SQL below and click **Run Script**.
 
     ```
     <copy>
@@ -137,14 +143,18 @@ We will switch Charles Leclerc's and George Russell's teams. This can be done by
     WHERE dv.data.name LIKE 'Ferrari%';
     </copy>
     ```
-    ![Image alt text](images/task_4_1.png " ")
+    ![Shows current team](images/task-4-1.png " ")
 
-2. Then perform the updates. Clear the worksheet, copy the SQL below and click **Run Script**.
+2. Then we perform the updates. The 'UPDATE' statements for team\_dv use a subquery to automatically get the latest 'etag' for each team. The subquery inside the SET data looks at the team document with the name is 'Mercedes' or 'Ferrari' and only picks the first match, thanks to us using ROWNUM = 1. The script will update the `points` in "Mercedes" to 40, and also assigns Lewis 15 points and Charles 25 points. On the "Ferrari" side, they will get 30 points. George will receive 12 points and Carlos will receive 18 points. The updates are applied to the rows where the team name are "Mercedes" and "Ferrari". Now, clear the worksheet, copy the SQL below and click **Run Script**.
 
     ```
     <copy>
     UPDATE team_dv dv
-    SET data = ('{_metadata : {"etag" : "855840B905C8CAFA99FB9CBF813992E5"},
+    SET data = ('{
+        "_metadata": {"etag" : ' || (
+            SELECT '"' || json_value(data, '$._metadata.etag') || '"'
+            FROM (SELECT data FROM team_dv WHERE json_value(data, '$.name') = 'Mercedes' AND ROWNUM = 1)
+        ) || '},
                     "_id" : 2,
                     "name"   : "Mercedes",
                     "points" : 40,
@@ -154,10 +164,14 @@ We will switch Charles Leclerc's and George Russell's teams. This can be done by
                                 {"driverId" : 103,
                                 "name"     : "Charles Leclerc",
                                 "points"   : 25} ]}')
-        WHERE dv.data.name LIKE 'Mercedes%';
+        WHERE dv.data.name = 'Mercedes';
 
     UPDATE team_dv dv
-    SET data = ('{_metadata : {"etag" : "DA69DD103E8BAE95A0C09811B7EC9628"},
+    SET data = ('{
+        "_metadata": {"etag" : ' || (
+            SELECT '"' || json_value(data, '$._metadata.etag') || '"'
+            FROM (SELECT data FROM team_dv WHERE json_value(data, '$.name') = 'Ferrari' AND ROWNUM = 1)
+        ) || '},
                     "_id" : 302,
                     "name"   : "Ferrari",
                     "points" : 30,
@@ -167,12 +181,12 @@ We will switch Charles Leclerc's and George Russell's teams. This can be done by
                                 {"driverId" : 104,
                                 "name"     : "Carlos Sainz Jr",
                                 "points"   : 18} ]}')
-        WHERE dv.data.name LIKE 'Ferrari%';
+        WHERE dv.data.name = 'Ferrari';
 
     COMMIT;
     </copy>
     ```
-    ![Image alt text](images/task_4_2.png " ")
+    ![Updates the team dv](images/task-4-2.png " ")
 
 3. Now, show the team documents after the updates. You'll see that the former teams with Mercedes have now been swapped to Ferrari and vice versa. Clear the worksheet, copy the SQL below and click **Run Script**.
 
@@ -185,7 +199,7 @@ We will switch Charles Leclerc's and George Russell's teams. This can be done by
     WHERE dv.data.name LIKE 'Ferrari%';
     </copy>
     ```
-    ![Image alt text](images/task_4_3.png " ")
+    ![Updated Ferrari and Mercedes](images/task-4-3.png " ")
 
 4. Show the driver documents after the updates as well. Clear the worksheet, copy the SQL below and click **Run Script**.
     ```
@@ -197,17 +211,22 @@ We will switch Charles Leclerc's and George Russell's teams. This can be done by
     WHERE dv.data.name LIKE 'George Russell%';
     </copy>
     ```
-    ![Image alt text](images/task_4_4.png " ")
+    ![Updated drivers](images/task-4-4.png " ")
 
 
 ## Task 5: Update a non-updateable field
 
-1. Now we will update team for a driver through driver\_dv. This will throw an error as we specified the JSON Duality View to not allow this field to be updatable through driver_dv. Clear the worksheet, copy the SQL below and click **Run Script**.
+1. Now we will update team for a driver through driver\_dv. This will throw an error as we specified the JSON Duality View to not allow this field to be updatable through driver\_dv. Clear the worksheet, copy the SQL below and click **Run Script**.
 
     ```
     <copy>
     UPDATE driver_dv dv
-    SET DATA = ('{_metadata : {"etag" : "FCD4CEC63897F60DEA1EC2F64D3CE53A"},
+    SET data = ('{
+    "_metadata": {"etag" : ' || (
+        SELECT '"' || json_value(data, '$._metadata.etag') || '"'
+        FROM driver_dv
+        WHERE json_value(data, '$._id') = 103
+    ) || '},
                     "_id" : 103,
                     "name" : "Charles Leclerc",
                     "points" : 25,
@@ -226,11 +245,11 @@ We will switch Charles Leclerc's and George Russell's teams. This can be done by
     WHERE dv.data."_id" = 103;
     </copy>
     ```
-    ![Image alt text](images/task_5_1.png " ")
+    ![Reflects error](images/task-5-1.png " ")
 
 ## Task 6: Delete by predicate
 
-1. Delete the race document for Bahrain Grand Prix. The underlying rows are deleted from the race and driver\_race\_map tables, but not from the driver table because it is marked read-only in the view definition. Clear the worksheet, copy the SQL below and click **Run Script**.
+1. Delete the race document for Bahrain Grand Prix. The underlying rows are deleted from the `race` and `driver_race_map tables`, but leaves their `driver` table untouched, because it is marked read-only in the view definition. Clear the worksheet, copy the SQL below and click **Run Script**.
 
     **Note:** The "where" clause can have any valid SQL expression, e.g. equality on OBJECT\_ID, some condition using simplified syntax, or JSON function, such as json\_value or json\_exists.
 
@@ -244,7 +263,7 @@ We will switch Charles Leclerc's and George Russell's teams. This can be done by
     COMMIT;
     </copy>
     ```
-    ![Image alt text](images/task_6_1.png " ")
+    ![Race deleted](images/task-6-1.png " ")
 
 You may **proceed to the next lab.** 
 
@@ -256,5 +275,5 @@ You may **proceed to the next lab.**
 
 ## Acknowledgements
 * **Author** - Valentin Tabacaru, Kaylien Phan, William Masdon
-* **Contributors** - David Start, Ranjan Priyadarshi
-* **Last Updated By/Date** - Francis Regalado, Database Product Management, July 2024
+* **Contributors** - David Start, Ranjan Priyadarshi, Francis Regalado
+* **Last Updated By/Date** - Francis Regalado, Database Product Management, August 2024

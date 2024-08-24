@@ -15,34 +15,32 @@
       "title": "Lab 1: Create a new extension",
 
       "description": "Use Workspaces to create new Application Extension in your project",
-      "filename": "../../workspace/workspace.md"
+      "filename": "../../createnewextension/createnewextension.md"
     },
     {
-      "title": "Lab 2: Create your first page",
-      "description": "Labs that follow the introduction are numbered, starting with Lab 1",
+      "title": "Lab 2: Welcome page",
       "filename": "../../welcome/welcome.md"
     },
     {
       "title": "Lab 3: Connect to Oracle Fusion Cloud Apps data",
-      "filename": "../../saasservice/saasservice.md"
+      "filename": "../../connecttofusion/connecttofusion.md"
     },
     {
-      "title": "Lab 4: Add edit and details pages",
-      "filename": "../../editpage/editpage.md"
+      "title": "Lab 4: Add buttons and action chains",
+      "filename": "../../addbuttonsandactions/addbuttonsandactions.md"
     },
     {
-      "title": "Lab 5: Add buttons and action chains",
-      "filename": "../../tableedit/tableedit.md"
+      "title": "Lab 5: Account Details page",
+      "filename": "../../addountdetails/addountdetails.md"
     },
     {
-        "title": "Lab 6: Apply Redwood page templates",
-
-        "filename": "../../rweditpage/rweditpage.md"
+      "title": "Lab 6: Edit account page",
+      "filename": "../../editaccount/editaccount.md"
     },
     {
-      "title": "Oracle CloudWorld 2022 - Get Help",
+      "title": "Need Help?",
       "description": "Solutions to Common Problems and Directions for Receiving Live Help",
-        "filename":"https://oracle-livelabs.github.io/common/support/ocwsupportlab/ocwsupportlab.md"
+      "filename": "https://oracle-livelabs.github.io/common/labs/need-help/need-help-livelabs.md"
     }
   ]
 }

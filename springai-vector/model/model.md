@@ -16,18 +16,18 @@ Mac:
 
 In this lab, you will:
 
-- Look at deploying Cohere AI Command-R models with Ollama and Oracle Cloud Infrastructure (OCI).
+- Deploy Cohere AI Command-R models with Ollama and Oracle Cloud Infrastructure (OCI).
 - Look at the basic test of your model's endpoint for Command-R. 
 
 ### Prerequisites
 
 * This lab requires the completion of the **Setup Dev Environment** tutorial.
 
-## Task 1. Using Cohere AI's Command-R model to support chat and embeddings with private LLMs
+## Task 1. Use Cohere AI's Command-R model to support chat and embeddings with private LLMs
 
-1. We'll need to create an OCI Compute instance (VM) and install Ollama to run a Cohere AI's Command-R model inside of it. Then, we will expose the server and allow our Spring AI application connect to the Ollama server and make the requests to the Command-R models.
+Cohere Command-R is a family of LLMs optimized for conversational interaction and long context tasks. Command R delivers high precision on retrieval augmented generation (RAG) with low latency and high throughput. You can get more details about the Command-R models at the [Command-R product page](https://cohere.com/command), and the full technical details are available at the [Model Details](https://docs.cohere.com/docs/command-r) section of its technical documentation.
 
-The following shape and images are recommended for the LLM models server: (it will require a GPU, as we'll be running an HPC load that will require lots of computing! More than the CPU can handle at this moment without quantization enabled.)
+1. We'll need to create an OCI Compute instance (VM) and install Ollama to run a Cohere AI's Command-R model inside of it. Then, we will expose the server and allow our Spring AI application connect to the Ollama server and make the requests to the Command-R models. The following shape and images are recommended for the LLM models server: (it will require a GPU, as we'll be running an HPC load that will require lots of computing! More than the CPU can handle at this moment without quantization enabled). You check more details and other options for OCI GPU shapes at [OCI - Compute Shapes](https://docs.oracle.com/en-us/iaas/Content/Compute/References/computeshapes.htm).
 
 - Shape: `VM.GPU.A10.2` (2x NVIDIA A10 Tensor Cores)
 - OCPU: 30
@@ -62,12 +62,15 @@ The following shape and images are recommended for the LLM models server: (it wi
 7. At the end of creation process, obtain the **Public IPv4 address**, and with your private key (the one you generated or uploaded during creation), connect to:
 
 ```
+ <copy>
     ssh -i ./<your_private>.key opc@[GPU_SERVER_IP]
+</copy>
 ```
 
 8. Install and configure docker to use GPUs:
 
 ```
+<copy>
     sudo /usr/libexec/oci-growfs
     curl -s -L https://nvidia.github.io/libnvidia-container/stable/rpm/nvidia-container-toolkit.repo |   sudo tee /etc/yum.repos.d/nvidia-container-toolkit.repo
     sudo dnf install -y dnf-utils zip unzip
@@ -75,58 +78,73 @@ The following shape and images are recommended for the LLM models server: (it wi
     sudo dnf remove -y runc
     sudo dnf install -y docker-ce --nobest
     sudo useradd docker_user
+</copy>
 ```
 
 9. We need to make sure that your Operating System user has permissions to run Docker containers. To do this, we can run the following command:
 
 ```
+<copy>
 sudo visudo
+</copy>
 ```
 
 And add this line at the end:
 
 ```
+<copy>
 docker_user  ALL=(ALL)  NOPASSWD: /usr/bin/docker
+</copy>
 ```
 
 10. For convenience, we need to switch to our new user. For this, run:
 
 ```
+<copy>
 sudo su - docker_user
+</copy>
 ```
 
 11. Finally, let's add an alias to execute Docker with admin privileges every time we type `docker` in our shell. For this, we need to modify a file, depending on your OS (in `.bash_profile` (MacOS) / `.bashrc` (Linux)). Insert, at the end of the file, this command:
 
 ```
+<copy>
 alias docker="sudo /usr/bin/docker"
 exit
+</copy>
 ```
 
 12. We finalize our installation by executing:
 
 ```
+<copy>
 sudo yum install -y nvidia-container-toolkit
 sudo nvidia-ctk runtime configure --runtime=docker
 sudo systemctl restart docker
 nvidia-ctk runtime configure --runtime=docker --config=$HOME/.config/docker/daemon.json
+</copy>
 ```
 
 13. If you're on Ubuntu instead, run:
 
 ```
+<copy>
 sudo apt-get install nvidia-container-toolkit=1.14.3-1 \
         nvidia-container-toolkit-base=1.14.3-1 \
         libnvidia-container-tools=1.14.3-1 \
         libnvidia-container1=1.14.3-1
 sudo apt-get install -y nvidia-docker2
+</copy>
 ```
 
 13. Let's reboot and re-connect to the VM, and run again:
 
 ```
+<copy>
 sudo reboot now
 # after restart, run:
 sudo su - docker_user
+</copy>
 ```
 
 14. Run `docker` to check if everything it's ok.
@@ -134,13 +152,17 @@ sudo su - docker_user
 15. Let's run a Docker container with the `ollama/llama2` model for embeddings/completion:
 
 ```
+<copy>
 docker run -d --gpus=all -v ollama:/root/.ollama -p 11434:11434 --name ollama ollama/ollama serve
 docker exec -it ollama ollama pull command-r
 docker exec -it ollama ollama pull llama3
 docker logs -f --tail 10 ollama
+</copy>
 ```
 
 Both the model, for embeddings/completion will run under the same server, and they will be addressed providing in the REST request for the specific model required.
+
+Last, if you face an error such as "Error: timed out waiting for llama runner to start - progress 0.00", just execute the respective target model above once again, and it will start with no issues at all.
 
 ## Task 2. Configure security for your private LLM models
 
@@ -171,19 +193,23 @@ Your configured ingress rule:
 6. Configure the environment variables below directly, or update the `env.sh` file and run `source ./env.sh`:
 
 ```
+<copy>
 export OLLAMA_URL=http://[GPU_SERVER_IP]:11434
 export OLLAMA_EMBEDDINGS=command-r
 export OLLAMA_MODEL=command-r
+</copy>
 ```
 
 
 7. Test with a shell running:
 
 ```
+<copy>
 curl ${OLLAMA_URL}/api/generate -d '{
         "model": "command-r",
         "prompt":"Who is Ayrton Senna?"
 }'
+</copy>
 ```
 
 You'll receive the response in continuous sequential responses, facilitating the delivery of the content chunk by chunk, instead of forcing API users to wait for the whole response to be generated before it's displayed to users.
@@ -193,5 +219,5 @@ You may now **proceed to the next lab**.
 ## Acknowledgements
 
 * **Author** - Juarez Barbosa, Sr. Principal Java Developer Evangelist, Java Database Access
-* **Contributors** - Kuassi Mensah, Dir. Product Management, Java Database Access; Jean de Lavarene, Sr. Director of Development, JDBC/UCP
+* **Contributors** - Kuassi Mensah, Dir. Product Management, Java Database Access
 * **Last Updated By Date** - Juarez Barbosa Junior, July 2024

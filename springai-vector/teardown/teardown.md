@@ -59,6 +59,7 @@ Estimated time: 5 minutes
 
 ## Acknowledgements
 
-* **Authors** - Kuassi Mensah, Dir. Product Management, Java Database Access; Peter Song, Developer Advocate JDBC
-* **Original Author** - Richard Exley, Consulting Member of Technical Staff, Oracle MAA and Exadata
-* **Last Updated By/Date** - Juarez Barbosa, Sr. Principal Java Developer Evangelist, Java Database Access, July 2024
+* **Author** - Juarez Barbosa, Sr. Principal Java Developer Evangelist, Java Database Access
+* **Contributors** - Kuassi Mensah, Dir. Product Management, Java Database Access
+* **Last Updated By Date** - Juarez Barbosa Junior, July 2024
+* 
