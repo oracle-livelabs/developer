@@ -229,16 +229,16 @@ This lab assumes you have:
 
    ![Workshop lab IP address.](images/copy-correct-portion-of-url-for-sample-app.png " ")  
 
-   ![Navigating to the correct address plus port 5000.](images/workshop-presentation-fourteen-five.png " ")
+   ![Navigating to the correct address plus port 5000.](images/your-virtual-labs-uri-for-app.png " ")
    *Open in a new tab or window.*
 
 5. Navigate to the new tab and combine the lab's URI with port `5000`. Accept any warnings and your application will load.
 
-   ![Navigating to your application.](images/workshop-presentation-fourteen-six.png " ")
+   ![Navigating to your application.](images/secure-site-not-available-warning.png " ")
 
 6. The ORDS application will load.  
 
-   ![ORDS application up and running.](images/workshop-presentation-fourteen-seven.png " ")
+   ![ORDS application up and running.](images/application-up-and-running.png " ")
 
 7. With the application running, we'll next explore the ORDS APIs and how they feed data to your application.
 
