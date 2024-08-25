@@ -35,7 +35,7 @@ Estimated Time:  25 minutes
 
    1. Open a terminal/shell.
 
-   2. cd to the `python-realtimespeech-selectai` directory where the workshop src exists, ie `cd [workspace_src_directory]`.
+   2. cd to the `python-realtimespeech-selectai` directory where the workshop src exists, ie `cd [workspace_src_directory]/python-realtimespeech-selectai`.
 
    3. Generate a `security_token_file` and an oci config profile entry that contains it.
       Simply issue the following command (providing the correct values for `--config-file` and `--profile`)
