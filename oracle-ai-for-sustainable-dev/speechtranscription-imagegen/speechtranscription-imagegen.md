@@ -7,6 +7,7 @@ The use case involves the creation webpages and storyboards using only voice com
 
 Estimated Time:  3 minutes
 
+[Lab 4](videohub:1_0yfzkzy3)
 
 ### Objectives
 

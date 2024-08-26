@@ -55,7 +55,11 @@
         "filename": "../../deploy-model-oci/deploy-model-oci.md"
       },
       {
-        "title": "Lab 12: Tear Down",
+        "title": "Lab 12: Chatbot Using RAG and OCI Generative AI with LangChain",
+        "filename": "../../rag-chatbot/rag-chatbot.md"
+      },
+      {
+        "title": "Lab 13: Tear Down",
         "filename": "../../teardown/teardown.md"
       },
       {

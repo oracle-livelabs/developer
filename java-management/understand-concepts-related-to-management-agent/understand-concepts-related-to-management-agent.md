@@ -25,9 +25,9 @@ Before the set up of the Oracle Management Agent, it is important to understand 
 
 - **Java Management Service (JMS)**: A reporting and management infrastructure integrated with Oracle Cloud Infrastructure Platform services to observe and manage your use of Java SE (on-premises or in the Cloud) in your enterprise.
 
-- **Oracle Management Agent**: Oracle Management Agent is installed on a host. It allows the JMS plug-ins to monitor and collect data from the sources that reside on hosts or virtual hosts. OMA is typically provided for non-OCI hosts.
+- **Oracle Management Agent (OMA)**: Oracle Management Agent is installed on a host. It allows the JMS plug-ins to monitor and collect data from the sources that reside on hosts or virtual hosts. OMA is typically provided for non-OCI hosts.
 
-- **Oracle Cloud Agent**: An Oracle Cloud Agent is a lightweight process that manages plug-ins running on a compute instance. Its plug-ins collect performance metrics, install OS updates, and perform other instance management tasks. An example plug-in is a JMS Plug-in. OCA is usually provided for OCI hosts.
+- **Oracle Cloud Agent (OCA)**: An Oracle Cloud Agent is a lightweight process that manages plug-ins running on a compute instance. Its plug-ins collect performance metrics, install OS updates, and perform other instance management tasks. An example plug-in is a JMS Plug-in. OCA is usually provided for OCI hosts.
 
 - **JMS Plug-In**: Java Management Service (JMS) plug-in allows JMS to interact with hosts and send the data back to the cloud service. JMS plug-ins are provided by Oracle Management Agent and Oracle Cloud Agent for OCI Compute Instances.
 Deploy JMS plug-ins on:
@@ -42,35 +42,29 @@ Deploy JMS plug-ins on:
 
 - **Java Usage Tracker**: JMS relies on Java Usage Tracker to report Java usage. Using the Java Usage Tracker, you can monitor Oracle Java Runtime Environment usage and capture information such as the JRE version, vendor, applications running, and other details.
 
-- **Installation Script**: JMS provides an installation script that you can use to set up management agents using a single command. The script has been automatically generated for you in [Lab 3](?lab=setup-a-fleet).
-
-  The script does the following functions:
-    - Install the Management Agent software.
-    - Configure the agent with the specific key for the fleet.
-    - Install JMS plugins for Java runtime discovery and usage reporting and Lifecycle management operations.
-    - Configure the usage tracker.
-
-  Download in the fleet details page:
-
-  ![image of download installation script](images/fleet-details-download-script.png)
-
-  ![image of download installation script detail](images/fleet-details-download-script-detail.png)
-
 ## Task 2: OCI Compute Console For OCI Hosts
 
-For OCI hosts, JMS is deployed by OCA. Upon successful deployment, the settings in the OCI console should appear as illustrated in the following image.
+For Oracle Linux OCI hosts, JMS is deployed by Oracle Cloud Agent. Upon successful deployment (to be covered in Lab 6 Task 1), you should see **Oracle Java Management Service** being toggled on under the the Oracle Cloud Agent tab in your compute instance detail page.
+
+> Note: While Oracle Cloud Agent(OCA) is available for other OSes on OCI, JMS deployment via OCA is only available for Oracle Linux at this juncture.
 
 ![image of JMS plugin on OCI Managed Instances](images/jms-plugin-oci.png)
 
-The management agent settings would appear as illustrated in the following image.
+## Task 3: Management Agent Console For non-OCI Hosts
 
-![image of java usage tracking service plugin](images/java-usage-tracking-service-plugin.png)
+For non-OCI hosts, JMS is deployed by Oracle Management Agent. Upon successful deployment (to be covered in Lab 6 Task 2), your Agent should show up under the Management Agent Service Page.
 
-## Task 3: MACS Console For non-OCI Hosts
+- To access Management Agent service, open the navigation menu and click Observability & Management. Under Management Agent, click Agents
 
-For non-OCI hosts, JMS is deployed by OMA. Upon successful deployment, the agent settings in the OCI console should appear as illustrated in the following image.
+![image of navigation to Management Agent service](images/console-nav-oma.png)
 
-![image of JMS plugin on non-OCI Managed Instances](images/jms-plugin-non-oci.png)
+- You should see your agents showing up under the Agents and Gateways page.
+
+![image of list of Management Agents](images/oma-agent-page.png)
+
+- Click into your Agent, then click on the **Deploy plug-ins** button. You should see that **Java Management Service** plugin has been checked and greyed out
+
+![image of JMS plugin on non-OCI Managed Instances](images/jms-plugin-non-oci-jms9.png)
 
 You may now **proceed to the next lab.**
 

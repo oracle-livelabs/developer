@@ -58,42 +58,54 @@ This lab assumes you have:
 
     ![Reviewing the table data; JSON data types.](images/workshop-presentation-six.png " ")
 
-3. Click the <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-play-circle-fill" viewBox="0 0 16 16"><path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M6.79 5.093A.5.5 0 0 0 6 5.5v5a.5.5 0 0 0 .79.407l3.5-2.5a.5.5 0 0 0 0-.814z" focusable="false"/></svg> Start icon, to test this Resource Handler source code. When the Bind Variables dialog appears, enter `Comedy` in the `genre` field and `210` in the `runtime` field.
+3. Click the Start icon, to test this Resource Handler source code. When the Bind Variables dialog appears, enter `Comedy` in the `genre` field and `210` in the `runtime` field.
 
     ![Inputting bind variables.](images/workshop-presentation-seven.png " ")
 
 4. In the Query results section, you'll notice ORDS has executed the SQL, only returning the movies who have "Comedy" included in the genres column, as well as a runtime of 210 minutes or less.
 
-    ![A results set example.](images/workshop-presentation-eight.png " ")
+  ![A results set example.](images/a-results-set-example.png " ")
 
-   You've just simulated what a user might select in this sample application.
+   You've just simulated what a user might select in this sample application.  
 
-      ![Comparing the simulation to the user's selection.](images/workshop-presentation-nine.png " ")
+   In the REST Workshop:  
+
+   ![Results when selecting in the REST Workshop.](images/workshop-presentation-eight-one.png " ")  
+
+   In the application:  
+
+   ![Results when selecting in the app.](images/workshop-presentation-eight-two.png " ")
 
 ## Task 3: Using Query Parameters in and ORDS URI
 
 1. The application code might look something like the following image. In this case, the Python `Results` library is used to perform a `GET` request on this ORDS endpoint.
 
-    ![Side-by-side comparison of python code and JSON in browser.](images/workshop-presentation-ten.png " ")
+    ![Side-by-side comparison of python code and JSON in browser.](images/right-click-file-for-editor-to-view-python-file.png " ")
+
+    ![Side-by-side comparison of python code and JSON in browser.](images/params-equals-data-1-python-code-image.png " ")
 
 2. These user selections are passed as Query Parameters - that is, appended to the end of the ORDS URI with the following format:
 
-   ![Reviewing query parameters.](images/workshop-presentation-ten-two.png " ")
+   ![Reviewing query parameters.](images/image-showing-query-parameters.png " ")
 
-   ```html
-   <copy>https://gf641ea24ecc468-moviestream23ai.adb.us-ashburn-1.oraclecloudapps.com/ords/admin/mymovies/movie-all?genre=Comedy&runtime=210
-    </copy>
-   ```
+    ```html
+    <copy>http://[Your ORDS URI]:[Your Labs' Port Number]/ords/movie/mymovies/movie-all?genre=Comedy&runtime=210</copy>
+    ```
 
-3. Use the above URI as a reference. Navigate to your web browser (changing the details specific to your environment) to review the `JSON` representation of this data.
+3. Use the above URI as a reference. Navigate to your web browser (changing the details specific to your environment) to review the `JSON` representation of this data.  
 
-   ![Reviewing the JSON response in browser.](images/workshop-presentation-ten-three.png " ")
+   > **NOTE:** You must use the PORT number that is used for the ORDS URIs in your Database Actions REST Workshop. Navigate to Database Actions then the REST Workshop to verify you are capturing the correct URI. **DO NOT** use port `5000`, as that is reserved for your Flask application.
+
+   ![Reviewing the JSON response in browser.](images/reviewing-the-json-response-in-browser.png " ")
 
 ## Task 4: Putting it all together
 
 1. In this sample application, two lists are created for the subsequent movie table results (also referred to as `movieresults.html`). One list created for table headers, another for the table row data. ORDS supplies these `For` loops with the necessary data. The following image identifies these two sections in the Python code.
 
-   ![Reviewing the python table head and row lists.](images/workshop-presentation-eleven.png " ")
+     > **Note:** You can review files directly from the Jupyter Lab by right-clicking an object. Choose `Open With` followed by `Editor`.
+     > ![Right-clicking to open an Editor window.](images/workshop-presentation-eleven-two.png)
+
+   ![Reviewing the python table head and row lists.](images/workshop-presentation-eleven.png " ")  
 
 2. Once the `movieresults.html` page loads, you'll notice two additional features. Each row in the table contains a `More` modal, click it to reveal additional movie details.
 
@@ -101,9 +113,11 @@ This lab assumes you have:
 
    Near the end of the `movieresults.html` page you'll find `Previous` and `Next` links. In a later lab we'll explore how ORDS can simplify result pagination.
 
-   ![Modal example and pagination.](images/workshop-presentatio-thirteen.png " ")
+   ![Modal example and pagination.](images/workshop-presentation-thirteen.png " ")
 
 3. In the next lab, you'll explore another ORDS endpoint; this one responsible for feeding the modals information related to its target table row.
+
+You may now [proceed to the next lab](#next).  
 
 ## Learn More
 
