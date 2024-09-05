@@ -7,6 +7,7 @@ The use case involves detect objects in an image and write a sentence using thos
 
 Estimated Time:  3 minutes
 
+[Lab 6](videohub:1_14zkji84)
 
 ### Objectives
 
