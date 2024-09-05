@@ -49,7 +49,7 @@ In this lab, you will:
      * Java migration analysis - Assists in migrating applications from older JDK versions to newer JDK version by providing a detailed analysis that helps to assess the potential efforts and risks of migration.
 
 
-    To learn more about the advanced features, see [Use Java Management Service Advanced Features](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=3202).
+    To learn more about the advanced features, see [Use Java Management Service Advanced Features](https://livelabs.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=3202).
 
     ![image of selected create fleet options](images/create-fleet-advanced-feature.png)
 
@@ -145,7 +145,7 @@ JMS uses the following OCI services to generate logs, object storage information
 
 2. Object Storage Service
 
-    - This is required for some of the advanced features of JMS and will be explained in the next workshop: [Use Java Management Service Advanced Features](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=3202)
+    - This is required for some of the advanced features of JMS and will be explained in the next workshop: [Use Java Management Service Advanced Features](https://livelabs.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=3202)
 
 3. Monitoring Service
 

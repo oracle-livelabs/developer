@@ -53,7 +53,7 @@ _Estimated Time:_ 260 minutes
   * This workshop requires an Oracle Cloud account. You may use your **own cloud account** or you can get a **Free Trial** account as described in *Get Started*.
   * You are using an Oracle Linux image or Windows OS on your Managed Instance for this workshop.
   * A host machine running macOS could be used, however not all JMS advanced features are supported. We recommend using a Linux or Windows based machine.
-  * Have access to the cloud environment with the resources configured by following the steps in the workshop [Manage Java Runtimes, Applications and Managed Instances Inventory with Java Management Service](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=912).
+  * Have access to the cloud environment with the resources configured by following the steps in the workshop [Manage Java Runtimes, Applications and Managed Instances Inventory with Java Management Service](https://livelabs.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=912).
 
 ## Learn More
 
