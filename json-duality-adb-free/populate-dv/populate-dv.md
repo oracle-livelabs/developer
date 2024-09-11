@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This lab focuses on populating the duality views -- and therefore the underlying tables -- with POST calls. You will use REST calls to upload data into your database with the json documents you downloaded in the previous lab. 
+This lab focuses on populating the duality views -- and therefore the underlying tables -- with POST calls. You will use REST calls to upload data into your database with the JSON documents you downloaded in the previous lab. 
 
 Note that while you are POST directly to a duality view, nothing is actually stored within the view. All of the inserted data will be stored on the tables that make up the view. 
 
@@ -27,27 +27,28 @@ This lab assumes you have:
 
 ## Task 1: Download files for this workshop
 
-1. Open Cloud Shell on your OCI console.
-
-    ![OCI Cloud Shell](./images/oci-cloud-shell.png)
-
-    **Note:** You can use also your laptop Terminal to run the command line steps, but Cloud Shell is probably the best option.
-
-2. You need to download the json payload files we will later use to insert and update the duality views. Make a directory and download files to be used in this workshop.
+1. Switch back to the OCI Cloud Shell. You need to download the JSON payload files we will later use to insert and update the duality views. Make a directory and download files to be used in this workshop.
 
     ```
-    $ <copy>mkdir json-autorest</copy>
-    $ <copy>cd json-autorest</copy>
-    $ <copy>wget -O json_autorest.zip https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/Tjh1Lpwt8gDG458HW4aPKL240xohfcD_j4pUNMZhQuVXdrHndzrqEeuNX2F836BS/n/oraclepartnersas/b/WS-files/o/DualityWS/json_autorest.zip</copy>
-    $ <copy>unzip json_autorest.zip</copy>
+    $ <copy>
+    mkdir json-autorest
+    cd json-autorest
+    wget -O json_autorest.zip https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/Tjh1Lpwt8gDG458HW4aPKL240xohfcD_j4pUNMZhQuVXdrHndzrqEeuNX2F836BS/n/oraclepartnersas/b/WS-files/o/DualityWS/json_autorest.zip
+    unzip json_autorest.zip
+    </copy>
     ```
 
-    ![Downlad the workshop files](./images/download_files.png)
+    ![Download the workshop files](./images/download_files.png)
 
+    **Note:** Hit **Enter** or **Return** key to execute the last line.
 
 ## Task 2: Insert a single document
 
 1. View the `teamMercedes.json` file to see the document we will be inserting. 
+
+    ```
+    $ <copy> cat teamMercedes.json </copy>
+    ```
 
     ```
     {
@@ -74,7 +75,7 @@ This lab assumes you have:
 2. Using the `teamMercedes.json` file, we will insert a document into the duality view `team_dv`. 
 
     ```
-    $ <copy>curl -i -X POST --data-binary @teamMercedes.json -H "Content-Type: application/json" <ADB_BASE_URL>/ords/hol23ai/team_dv/</copy>
+    $ <copy>curl -i -X POST --data-binary @teamMercedes.json -H "Content-Type: application/json" $ADB_BASE_URL/ords/HOL23AI/team_dv/</copy>
     ```
 
     ![POST data for the Mercedes team](./images/insert_Mercedes.png)
@@ -131,7 +132,7 @@ This lab assumes you have:
     **Note:** The URL is different for this call. Instead of pathing just to `team_dv`, you refer to the `/batchload` endpoint. This will allow the payload to contain multiple documents to insert. 
 
     ```
-    $ <copy>curl -i -X POST --data-binary @team.json -H "Content-Type: application/json" <ADB_BASE_URL>/ords/hol23ai/team_dv/batchload</copy>
+    $ <copy>curl -i -X POST --data-binary @team.json -H "Content-Type: application/json" $ADB_BASE_URL/ords/HOL23AI/team_dv/batchload</copy>
     ```
 
     The AutoREST Duality View API includes a POST /batchload endpoint for ‘batch loading’ multiple JSON documents as rows in the view. 
@@ -143,7 +144,7 @@ This lab assumes you have:
 3. Bulk load data into `race_dv` using the `race.json` file. 
 
     ```
-    $ <copy>curl -i -X POST --data-binary @race.json -H "Content-Type: application/json" <ADB_BASE_URL>/ords/hol23ai/race_dv/batchload</copy>
+    $ <copy>curl -i -X POST --data-binary @race.json -H "Content-Type: application/json" $ADB_BASE_URL/ords/HOL23AI/race_dv/batchload</copy>
     ```
 
     ![Bulk insert races](./images/insert_race.png)
@@ -160,5 +161,5 @@ You may **proceed to the next lab.**
 ## Acknowledgements
 
 * **Author** - Valentin Tabacaru, William Masdon, Kaylien Phan, Jeff Smith
-* **Contributors** -  David Start, Ranjan Priyadarshi
-* **Last Updated By/Date** - Valentin Tabacaru, Database Product Management, July 2024
+* **Contributors** -  David Start, Ranjan Priyadarshi, Animesh Sahay
+* **Last Updated By/Date** - Animesh Sahay, Cloud Engineering, August 2024

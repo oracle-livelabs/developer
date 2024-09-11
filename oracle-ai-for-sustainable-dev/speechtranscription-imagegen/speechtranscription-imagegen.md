@@ -7,6 +7,7 @@ The use case involves the creation webpages and storyboards using only voice com
 
 Estimated Time:  3 minutes
 
+[Lab 4](videohub:1_0yfzkzy3)
 
 ### Objectives
 
@@ -32,4 +33,4 @@ You may now **proceed to the next lab.**..
 ## Acknowledgements
 
 * **Author** - Paul Parkinson, Architect and Developer Advocate
-* **Last Updated By/Date** - Paul Parkinson, 2023
+* **Last Updated By/Date** - Paul Parkinson, 2024
