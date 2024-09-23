@@ -16,7 +16,7 @@ This lab assumes you have an Azure account and in the case of Interconnect, an O
 
 ## Task 1: Choose between Oracle@Azure or the Interconnect between Azure and OCI and Oracle Database 
 
-1. If you choose to use the Interconnect, please refer to the Workshop found here for setup steps: https://apexapps.oracle.com/pls/apex/r/dbpm/livelabs/view-workshop?wid=3759
+1. If you choose to use the Interconnect, please refer to the Workshop found here for setup steps: https://livelabs.oracle.com/pls/apex/r/dbpm/livelabs/view-workshop?wid=3759
 
 2. If you choose to use Oracle@Azure, please refer to https://www.oracle.com/cloud/azure/oracle-database-at-azure/ to connect with an Oracle Database@Azure specialist and view OnBoarding Documentation.
 
