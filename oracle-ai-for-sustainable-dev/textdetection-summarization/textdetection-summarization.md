@@ -7,6 +7,7 @@ The use case involves the interpretation health test results and recommended ste
 
 Estimated Time:  3 minutes
 
+[Lab 3](videohub:1_l60ku02z)
 
 ### Objectives
 

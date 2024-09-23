@@ -89,11 +89,12 @@ This lab assumes you have:
    ![Reviewing query parameters.](images/image-showing-query-parameters.png " ")
 
     ```html
-    <copy>https://livelab.adb.us-ashburn-1.oraclecloudapps.com/ords/admin/mymovies/movie-all?genre=Comedy&runtime=210
-        </copy>
+    <copy>http://[Your ORDS URI]:[Your Labs' Port Number]/ords/movie/mymovies/movie-all?genre=Comedy&runtime=210</copy>
     ```
 
-3. Use the above URI as a reference. Navigate to your web browser (changing the details specific to your environment) to review the `JSON` representation of this data.
+3. Use the above URI as a reference. Navigate to your web browser (changing the details specific to your environment) to review the `JSON` representation of this data.  
+
+   > **NOTE:** You must use the PORT number that is used for the ORDS URIs in your Database Actions REST Workshop. Navigate to Database Actions then the REST Workshop to verify you are capturing the correct URI. **DO NOT** use port `5000`, as that is reserved for your Flask application.
 
    ![Reviewing the JSON response in browser.](images/reviewing-the-json-response-in-browser.png " ")
 
