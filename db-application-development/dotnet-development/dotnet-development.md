@@ -21,6 +21,7 @@ This lab assumes you have:
 ## Task 1: Download and Install Visual Studio Code
 
 1. Download and install [VS Code](https://code.visualstudio.com/download).
+2. Important: Please check the latest version of updated [Developing .NET Applications for Oracle Autonomous Database](https://www.oracle.com/database/technologies/appdev/dotnet/adbdotnetquickstarts.html#second-option-tab)
 
 ## Task 2: Install the .NET SDK and Visual Studio Code extensions
 
