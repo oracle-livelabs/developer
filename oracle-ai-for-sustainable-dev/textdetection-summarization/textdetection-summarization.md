@@ -7,6 +7,7 @@ The use case involves the interpretation health test results and recommended ste
 
 Estimated Time:  3 minutes
 
+[Lab 3](videohub:1_l60ku02z)
 
 ### Objectives
 
@@ -99,4 +100,4 @@ You may now **proceed to the next lab.**..
 ## Acknowledgements
 
 * **Author** - Paul Parkinson, Architect and Developer Advocate
-* **Last Updated By/Date** - Paul Parkinson, 2023
+* **Last Updated By/Date** - Paul Parkinson, 2024

@@ -33,7 +33,7 @@ Start by creating an App UI that takes the form of VB Studio pages and flows.
     The App UI opens on the Diagram view, which shows the App UI's flows and pages. A flow is just a way to keep related pages together. An application can contain multiple flows, and a flow can contain many pages. In this case, we have one flow, **main**, and one page, **main-start**:
     ![This image shows a new hcmsearch App UI open on the canvas in the Designer tab. On the left is a Components palette; on the right is the  main tile indicating a flow with the main-search tile indicating a page nested within.](images/newappui.png)
 
-4. Double-click the **main-start** tile to open the page in the Designer.
+4. Double-click the **main-start** tile to open the page in the Page Designer.
 
     What you see under the **main-start** tab is your main work area. Just under **main-start** are several horizontal tabs: Page Designer, Action Chains, Event Listeners, and so on. Each tab provides editors to help you examine and modify artifacts used in the page. By default, the page opens in the Page Designer, which is where you'll do the bulk of your work in VB Studio.
     ![This image shows the main-start page with several components labelled. On the left are the Components, Data, and Structure tabs, in the middle is the canvas area, and on the right is the Properties pane.](images/pagedesigner.png)
@@ -116,7 +116,7 @@ In this task, we're going to set up a filtering mechanism for our list based on 
 
     ![This image shows a "Render as" list of options displayed below the Input Text component. The second "List" item is selected.](images/render-as-list-selection.png)
 
-4. In the Add Data wizard, accept the default template in the **Select Template** screen and click **Next**:
+4. In the Add Data wizard, accept the List Item Layout selected by default in the **Select Template** screen and click **Next**:
 
     ![This image shows the Add Data wizard Select Template screen with the default template selected.](images/add-data-wizard-selecttemplate.png)
 
@@ -153,4 +153,4 @@ You may now **proceed to the next lab**.
 
 * **Author** - Sheryl Manoharan, VB Studio User Assistance, May 2023
 * **Contributors** -  Lisa Dawson, VB Studio User Assistance
-* **Last Updated By/Date** - Sheryl Manoharan, April 2024
+* **Last Updated By/Date** - Sheryl Manoharan, July 2024
