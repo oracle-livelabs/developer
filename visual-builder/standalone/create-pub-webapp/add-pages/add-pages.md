@@ -31,7 +31,7 @@ In this task, you'll add an edit page that lets users change a department's Name
 
 1. Select the **main-departments** page in the **Web Apps** pane. Click the **Page Designer** tab, then select the **Table** component on the page.
 
-2. In the Table's Properties pane, click the **Quick Start** tab to display the Quick Start menu, then click **Add Edit Page**.
+2. In the Table's Properties pane, click **Quick Start** to display the Quick Start menu, then click **Add Edit Page**.
 
     ![This image shows the Quick Start menu for the Departments table, with Add Edit Page selected.](images/departments-add-edit-quick-start.png "")
 
@@ -43,7 +43,7 @@ In this task, you'll add an edit page that lets users change a department's Name
 
 Add a delete button to remove a department, so users can delete a department if they wanted.
 
-1. With the table on the **main-departments** page selected, click the **Quick Start** tab if necessary, and click **Add Delete Action**.
+1. With the table on the **main-departments** page selected, click **Quick Start** in the Properties pane if necessary, and click **Add Delete Action**.
 
 2. On the Select Endpoint step (the only step of the Quick Start), select **Department** under Business Objects (if necessary) and click **Finish**.
 
@@ -59,7 +59,7 @@ Add a delete button to remove a department, so users can delete a department if 
 
     ![This image shows the Departments page in Preview, with a table row selected and with the Edit Department button selected.](images/departments-edit.png "")
 
-4. On the Edit Department page, change the **Location** field to `Floor 4` and click **Save**. A success message appears briefly, and you are returned to the Departments page.
+4. On the Edit Department page, change **Location** to `Floor 4` and click **Save**. A success message appears briefly, and you are returned to the Departments page.
 
 5. Click **Create Department** and specify the name and location of a new department, then click **Save**. A success message appears. The new department is displayed in the table.
 
@@ -71,7 +71,7 @@ Add a delete button to remove a department, so users can delete a department if 
 
 Now that we've added options to let users manage departments, we'll do the same for employees. In this task, you'll add an Edit page to update details of your employees.
 
-1. Go to the **main-employees** page, click the **Page Designer** tab and select the **Table** component.
+1. Go to the **main-employees** page, switch to the **Page Designer** and select the **Table** component.
 
 2. In the Properties pane, click **Quick Start** to display the Quick Start menu, then click **Add Edit Page**.
 
@@ -81,7 +81,7 @@ Now that we've added options to let users manage departments, we'll do the same 
 
 4. Click **Live**, select a row, and click the **Edit Employee** button to open the main-edit-employee page.
 
-5. To make the fields on the main-edit-employee page display in two columns, click **Structure** and **Form Layout**, then in the **General** tab of the Properties pane, set the **Columns** value to **2**. The fields now appear in two columns.
+5. To make the fields on the main-edit-employee page display in two columns, click **Structure** and **Form Layout**, then in the Properties pane's General tab, set the **Columns** value to **2**. The fields now appear in two columns.
 
 6. Let's also set up the employee's picture field to display as an image. To do this, search for an Avatar component in the Components palette, drag it into **Structure** view, and drop it above the Grid Row containing the Form Layout component.
 
@@ -89,7 +89,7 @@ Now that we've added options to let users manage departments, we'll do the same 
 
 7. In the Avatar's Properties pane, select **Large** in the **Size** drop-down list to increase the component's size.
 
-8. Click the **Data** tab and bind the component to a data source. Components are typically bound to variables that store and display data from your data source. Quick Starts automate this for you, but in this step, we'll manually bind the Avatar component to the **picture** variable that retrieves its data from the **picture** field in the Employee business object. To do this, hover over the **Src** field in the Data tab, click ![Select Variable icon](images/variable-picker-icon.png) to open the Variable picker, then select **picture** under the **employee** object.
+8. Click the Avatar's **Data** tab and bind the component to a data source. Components are typically bound to variables that store and display data from your data source. Quick Starts automate this for you, but in this step, we'll manually bind the Avatar component to the **picture** variable that retrieves its data from the **picture** field in the Employee business object. To do this, hover over the **Src** field in the Data tab, click ![Select Variable icon](images/variable-picker-icon.png) to open the Variable picker, then select **picture** under the **employee** object.
 
   ![This combined image shows the Select Variable picker being selected in the Avatar component's Data tab. The lower half of the image shows the contents of the Variable picker, with picture under the employee object selected.](images/avatar-bind-data.png "")
 
@@ -105,7 +105,7 @@ Now that we've added options to let users manage departments, we'll do the same 
 
     A **Delete Employee** button is displayed in the toolbar on the main-employees page. The button is inactive.
 
-3. Because the page features a bar chart as well, let's update the action chain created by the Quick Start to refresh the chart whenever an employee is deleted. Select the **Delete Employee** button, then select the **Events** tab in the Properties pane and click **deleteEmployeeChain** under Action Chain.
+3. Because the page features a bar chart as well, let's update the action chain created by the Quick Start to refresh the chart whenever an employee is deleted. Select the **Delete Employee** button, then select **Events** in the button's Properties pane and click **deleteEmployeeChain** under Action Chain.
 
     ![This image shows the Events tab selected for the button, listing the deleteEmployeeChain as the action chain triggered by the ojAction event.](images/deleteempchain.png "")
 
@@ -135,7 +135,7 @@ Now that we've added options to let users manage departments, we'll do the same 
 
     ![This image shows the Employees page in Preview, with a table row selected and the Edit Employee button selected. The bar chart on the right also shows. ](images/employees-edit.png "")
 
-4. Click the **Edit Employee** button.
+4. Click **Edit Employee**.
 
 5. On the Edit Employee page, change the **Department** to `IT` and **Salary** to 6000. Click **Save**. A success message appears, and you are returned to the Employees page. Notice how the bar chart also changes to show the employee's updated salary.
 
@@ -158,9 +158,9 @@ Now that we've added options to let users manage departments, we'll do the same 
 
 Now that we have our web pages, let's change the application's home page from Departments to Employees—after all, an HR app is about employees.
 
-1. In the Web Apps pane, click the **main** node, then click **Settings**.
+1. In the Web Apps pane, click **main**, then **Settings**.
 
-2. In the **General** tab, set **main-employees** as the **Default Page**.
+2. From the **Default Page** list, select **main-employees**.
 
    ![This image shows the General tab of the Settings editor. Under Flow Settings, the Default Page field lists the pages available for selection. The main-employees page is selected.](images/default-page-change.png "")
 
@@ -175,4 +175,4 @@ Now that we have our web pages, let's change the application's home page from De
 ## Acknowledgements
 
 * **Author** - Sheryl Manoharan, Visual Builder User Assistance, August 2021
-* **Last Updated By** - February 2024
+* **Last Updated By** - August 2024

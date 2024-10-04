@@ -99,7 +99,7 @@ Now that we've added options to let users manage departments, we'll do the same 
 
     ![The button's Events tab shows the deleteEmployeeChain as the action chain triggered by the ojAction event.](images/deleteempchain.png "")
 
-4. When the deleteEmployeeChain opens in the Action Chain editor, drag a new Fire Data Provider Event (used to dispatch an event on a data provider) and drop it between the other Fire Data Provider Event and Fire Notification actions.
+4. When the deleteEmployeeChain opens in the Action Chain editor, drag a Fire Data Provider Event (used to dispatch an event on a data provider) and drop it on the canvas between the Fire Data Provider Event and Fire Notification actions.
 
     ![The deleteEmployeeChain shows in diagram view. On the success branch of the Call REST action, a second Fire Data Provider Event action has been added. Its properties pane show on the right: Event Target is undefined and Type is set to Mutate.](images/deleteempchain-actionchain.png "")
 
@@ -164,4 +164,4 @@ Now that we have our web pages, let's change the application's home page from De
 ## Acknowledgements
 
 * **Author** - Sheryl Manoharan, VB Studio User Assistance, November 2021
-* **Last Updated By/Date** - Sheryl Manoharan, April 2024
+* **Last Updated By/Date** - Sheryl Manoharan, July 2024

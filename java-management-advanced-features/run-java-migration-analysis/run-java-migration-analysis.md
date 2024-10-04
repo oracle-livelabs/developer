@@ -51,7 +51,9 @@ In this lab, you will:
 
 5. In the **Java migration analysis** panel, the source JDK is auto-populated to JDK 8, which is used for compiling and running this java application. 
 
-   Under the **Target JDK for migration analysis**, click the dropdown menu and select **JDK 11**. Click **Analyze** to start the Java migration analysis.
+   Under the **Target JDK for migration analysis**, click the dropdown menu and select **JDK 11**. Leave package prefixes to filter as black for now.
+   
+   Click **Analyze** to start the Java migration analysis.
 
     ![image of java migration configs before starting](images/java-migration-analysis-config-start.png)
 

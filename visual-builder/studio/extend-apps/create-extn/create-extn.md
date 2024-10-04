@@ -76,9 +76,13 @@ When your workspace first opens in the Designer, your screen might look somethin
 
 ![This image shows the designer view that opens right after a workspace is created. The Navigator is on the left side of the page and the welcome message is on the right side.](images/welcome.png)
 
-* On the left edge is a vertical toolbar with icons representing App UIs, Services, Dependencies, and so on. This toolbar is the Navigator, which helps you move between the artifacts in your extension.
+On the left edge is a vertical toolbar with icons representing App UIs, Services, Dependencies, and so on. This toolbar is the Navigator, which helps you move between the artifacts in your extension.
 
-* The App UIs pane is where you'd get started with App UIs (entire pages and flows) or fragments (reusable pieces of UI). You'll also see a section called **From Dependencies** with the **Unified Application** listed under. The Unified App provides global services and a common user interface shell to all App UIs. You won't need to worry about this underpinning, but suffice to say it is considered a dependency for everything in the Oracle Cloud Applications ecosystem.
+The App UIs pane is where you'd get started with App UIs (entire pages and flows) or fragments (reusable pieces of UI). You'll also see sections called **Other** and **Unified Application**,  both of which relate to *dependencies*.
+
+* **Other** is a list of extensions whose resources your App UI can potentially reference as a dependency and is typically something you see when you create an empty extension (as we did in the previous task). If your App UI actually uses a resource as a dependency, you'll see the extension listed by pillar, for example, **Human Capital Management**, instead of **Other** (though we won't get into that in this tutorial).
+
+* **Unified Application** provides global services and a common user interface shell to all App UIs in your extension. You won't need to worry about this underpinning, but suffice to say it is considered a dependency for everything in the Oracle Cloud Applications ecosystem.
 
 Now take a look at the header:
 
@@ -98,4 +102,4 @@ You may now **proceed to the next lab**.
 
 * **Author** - Sheryl Manoharan, VB Studio User Assistance, May 2023
 * **Contributors** -  Lisa Dawson, VB Studio User Assistance
-* **Last Updated By/Date** - Sheryl Manoharan, April 2024
+* **Last Updated By/Date** - Sheryl Manoharan, July 2024

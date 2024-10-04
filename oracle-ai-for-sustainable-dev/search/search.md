@@ -40,11 +40,11 @@ Estimated Time:  3 minutes
       /
       ```
 
-   DBMS\_SEARCH is new functionality in 23ai.  It is suggested that you try the [Easy Text Search over Multiple Tables and Views with DBMS_SEARCH in 23ai workshop](https://apexapps.oracle.com/pls/apex/r/dbpm/livelabs/view-workshop?wid=3721) to learn more.
+   DBMS\_SEARCH is new functionality in 23ai.  It is suggested that you try the [Easy Text Search over Multiple Tables and Views with DBMS_SEARCH in 23ai workshop](https://livelabs.oracle.com/pls/apex/r/dbpm/livelabs/view-workshop?wid=3721) to learn more.
 
 You may now **proceed to the next lab.**..
 
 ## Acknowledgements
 
 * **Author** - Paul Parkinson, Architect and Developer Advocate
-* **Last Updated By/Date** - Paul Parkinson, 2023
+* **Last Updated By/Date** - Paul Parkinson, 2024
