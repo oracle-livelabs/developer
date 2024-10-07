@@ -26,9 +26,8 @@ Estimated Time: 20 minutes
 
 In this lab, you will:
 
-* Write Python code to access Oracle Database using python-oracledb with an Autonomous Database wallet.
-
-<!-- * Run Python code without an Autonomous Database wallet (wallet-less) using a One-way TLS connection string copied from Lab 1 -->
+* Write Python code to access Oracle Database using python-oracledb with an Autonomous Database wallet. 
+* Run Python code without an Autonomous Database wallet (wallet-less) using a One-way TLS connection string copied from Lab 1  
   
 ### Prerequisites
 
