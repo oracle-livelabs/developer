@@ -31,17 +31,16 @@ In this lab, you will:
 ## Task 1: Choose Autonomous Database from the services menu
 
 1. Log in to the Oracle Cloud.
-2. Once you log in, the cloud services dashboard shows all the services available to you. Click the **navigation menu** in the upper left to show top-level navigation choices.
+2. Once you log in, the cloud services dashboard shows all the services available to you. Click the **navigation menu** in the upper left to show top-level navigation choices. From the top left navigation select Oracle Database and Oracle Autonomous Data Warehouse.
 
-3. Select the allocated compartment and the region. The compartment name and the region will be available under LiveLabs My Reservations.
+    ![Open Navigation](images/open-adb-nav.png " ")
 
-    ![select compartment](images/select-ll-compartment.png " ")
+3. Select the allocated compartment and the region. The compartment name and the region will be available under LiveLabs **My Reservations** and **View Login info**.
 
+    ![Change compartment](images/compartment-change.png " ")
+  
     You will then be able to view the pre-provisioned Autonomous Database instance.
-
-    ![selected compartment](images/selected-compartment-2.png " ")
-
-
+ 
 4. Make sure your Workload Type is __Data Warehouse__ or __All__ to see your Autonomous Data Warehouse instances. Use the __List Scope__ drop-down menu to select a compartment. 
 5. Click on Display Name Polyglot_Dev to view detailed information about the Autonomous Database provisioned.
 6. Make note of Database version (Oracle Database 23ai), Database Name, Region
