@@ -202,4 +202,4 @@ You may now **proceed to the next lab**.
 
 - **Author** - Madhusudhan Rao, Principal Product Manager, Database
 - **Contributors** - Kevin Lazarz, Senior Principal Product Manager and Christopher Jones, Senior Principal Product Manager
-- **Last Updated By/Date** - Madhusudhan Rao, Aug 2022
+- **Last Updated By/Date** - Madhusudhan Rao, 4th Oct 2024

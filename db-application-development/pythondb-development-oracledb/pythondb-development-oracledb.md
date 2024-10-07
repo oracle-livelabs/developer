@@ -27,6 +27,7 @@ Estimated Time: 20 minutes
 In this lab, you will:
 
 * Write Python code to access Oracle Database using python-oracledb with an Autonomous Database wallet.
+
 <!-- * Run Python code without an Autonomous Database wallet (wallet-less) using a One-way TLS connection string copied from Lab 1 -->
   
 ### Prerequisites
@@ -35,6 +36,8 @@ This lab assumes:
 
 * An Autonomous Database has been created.
 * A wallet has been downloaded. 
+* One-way TLS connection has been configured.
+* Please Note: On few Beta versions of Mac OS, the wallet less code might not work
 <!-- * One-way TLS connection has been configured. -->
 
 ## Task 1: Install python
@@ -81,8 +84,10 @@ Use Python 3.6 to 3.10. Install [Python 3](https://yum.oracle.com/oracle-linux-p
             python3 -m pip install oracledb --upgrade --user
       </copy>
       ```  
+
+      ![Install oracledb](images/install-oracledb.png)
   
-## Task 3: Develop a Python application using a wallet
+## Task 3: Develop a Python Application using a wallet
 
 1. In this Task, we will develop a Python application using an Autonomous Database wallet. For python-oracledb in Thin mode, only two files from the wallet zip file are required.
 
@@ -154,13 +159,14 @@ Use Python 3.6 to 3.10. Install [Python 3](https://yum.oracle.com/oracle-linux-p
 
       ![Python Code](images/python-code.png)
    
-<!-- ## Task 4: Python Application Development with One-way TLS wallet-less connection 
+## Task 4: [Optional] Python Application Development with One-way TLS wallet-less connection 
  
 1. To make a wallet-less connection with Autonomous Database, Task 5 (One-way TLS connection to Oracle Autonomous Database for wallet-less connections) in Lab 1 of this workshop has to be completed.
+2. Copy connection string from where we had downloaded our Autonomous Database Wallet
+   ![Python Code](images/copy-connection.png)
 
-2. Create *customers360.py* to view data in the customers360 table.  
+3. Create *customers360.py* to view data in the customers360 table.  
  
-
       ```
       <copy> 
       import oracledb 
@@ -169,14 +175,8 @@ Use Python 3.6 to 3.10. Install [Python 3](https://yum.oracle.com/oracle-linux-p
       username = "<db_user>"
       user_pwd = "<password>"
 
-      # connection string copied from Lab 1, Task 5. 
-      tlsconnstr = """(description= (retry_count=20)(retry_delay=3)
-      (address=(protocol=tcps)(port=1521)
-      (host=adb.<region identifier>.oraclecloud.com))
-      (connect_data=(service_name=<service_prefix>_<instance_name>_high.adb.oraclecloud.com))
-      (security=(ssl_server_dn_match=yes)
-      (ssl_server_cert_dn="CN=adwc.uscom-east-1.oraclecloud.com, OU=Oracle BMCS US, O=Oracle Corporation,
-      L=Redwood City, ST=California, C=US")))"""
+      # connection string copied from Lab 1, Task 5. or copy paste connection string from above step.
+      tlsconnstr = """(description= (retry_count=20)(retry_delay=3)(address=(protocol=tcps)(port=1522)(host=adb.your-region.oraclecloud.com))(connect_data=(service_name=hmugvxxxxxbym_adbdw12121_high.adb.oraclecloud.com))(security=(ssl_server_dn_match=yes)))"""
 
       connection = oracledb.connect(user=username, password=user_pwd, dsn=tlsconnstr)
 
@@ -188,7 +188,9 @@ Use Python 3.6 to 3.10. Install [Python 3](https://yum.oracle.com/oracle-linux-p
       </copy>
       ``` 
 
-      Substitute <db\_user\>, <password\>, <service\_name\>, <service\_prefix\>, <instance\_name\> based on your configurations in Lab 1 
+      ![Python Code Walletless](images/sample-walletless-code.png)
+
+      Substitute tls connection string
 
 3. Run the python code using
 
@@ -198,9 +200,11 @@ Use Python 3.6 to 3.10. Install [Python 3](https://yum.oracle.com/oracle-linux-p
       </copy>
       ``` 
 
-      You will now be able to view customer data from customers360 table. -->
+      You will now be able to view customer data from customers360 table.  
+
+      ![Run Python Code Walletless](images/run-python-code.png) 
  
-   You successfully made it to the end this of this. You may now  **proceed to the next lab**.
+      You successfully made it to the end this of this. You may now  **proceed to the next lab**.
 
 ## Learn More
     
@@ -214,5 +218,5 @@ Use Python 3.6 to 3.10. Install [Python 3](https://yum.oracle.com/oracle-linux-p
 ## Acknowledgements
 
 * **Author** - Madhusudhan Rao, Principal Product Manager, Database 
-* **Contributors** - Kevin Lazarz, Senior Principal Product Manager and Christopher Jones, Senior Principal Product Manager
+* **Contributors** - Kevin Lazarz, Senior Principal Product Manager and Christopher Jones, Senior Principal Product Manager, Sharad Chandran R, Principal Product Manager
 * **Last Updated By/Date** -  Madhusudhan Rao, 4th Oct 2024.

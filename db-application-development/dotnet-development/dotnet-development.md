@@ -39,13 +39,23 @@ This lab assumes you have:
 
       ![c hash extension](images/c-hash.png =50%x* "c hash extension")   
 
-6.  Install the .NET Core SDK.
+6.  Install the .NET Core SDK
 
       [Download and install .NET Core SDK](https://dotnet.microsoft.com/download) 3.1 or higher. Click the Install button to install the extension.
 
-      ![Dotnet SDK Installation](images/dotnet-sdk.png =50%x* "Dotnet SDK Installation")  
+      ![Dotnet SDK Installation](images/dot-net-sdk.png =30%x* "Dotnet SDK Installation")  
 
       When the installation is complete, restart Visual Studio Code.
+
+      VSCode might prompt you to install C# SDK, 
+
+      ![chash sdk](images/chash-sdk.png)
+
+      Click on Install
+
+      ![chash kit](images/chash-kit.png)
+
+
 
 ## Task 3: Develop .NET Applications for Oracle Autonomous Database with ODP.NET Core and Visual Studio Code
 
@@ -75,7 +85,19 @@ In this Task we will be using an Autonomous Database wallet to establish a conne
 
       ![c hash extension](images/dotnet-obj.png "managed access core")
 
-3. Open the **Program.cs** and copy the sample code contents below and save the file.
+3. Download and extract Oracle Autonomous Database wallet in any folder 
+
+    ![Wallet folder](images/wallet-folder.png)
+
+    Get the wallet folder path
+
+    ![Wallet folder](images/folder-path.png)
+
+4. Make note of TNS name (Referred as DNS name in the below code) from Oracle Autonomous Database console
+
+    ![Wallet folder](images/tns-name.png)
+
+5. Open the **Program.cs** and copy the sample code contents below and save the file.
 
       ```
       <copy>
@@ -125,11 +147,15 @@ In this Task we will be using an Autonomous Database wallet to establish a conne
       </copy>
       ```
 
+      Sample code for reference.
+
+      ![Sample Code](images/dotnet-sample-code.png)
+
       - Substitute <db\_user\> <password\> and <service\_name\> depending upon the configurations in Lab 1  
       - OracleConfiguration.TnsAdmin (i.e. directory Autonomous Database credentials were unzipped to)
       - OracleConfiguration.WalletLocation (i.e. directory Autonomous Database credentials were unzipped to)
 
-4. Run  **dotnet add package Oracle.ManagedDataAccess.Core**  from the command line to add ODP.NET Core to the project.
+6. Run  **dotnet add package Oracle.ManagedDataAccess.Core**  from the command line to add ODP.NET Core to the project.
 
       ```
       <copy>
@@ -137,9 +163,9 @@ In this Task we will be using an Autonomous Database wallet to establish a conne
       </copy>
       ```
 
-      ![managed access core](images/managed-access-core.png "managed access core")
+      ![managed access core](images/add-core.png)
 
-5. Execute the app by running **dotnet run** from the command line. You should see the customers sample data
+7. Execute the app by running **dotnet run** from the command line. You should see the customers sample data
 
       ```
       <copy>
@@ -147,12 +173,13 @@ In this Task we will be using an Autonomous Database wallet to establish a conne
       </copy>
       ```
 
-      ![customer-list](images/customer-list.png =75%x*  "customer-list")
+      ![Sample Code run](images/dotnet-results.png)
 
-6. The entire project folder should now look as below  
-      ![customer-list](images/proj-folder.png "customer-list")   
+8. The entire project folder should now look as below  
+   
+      ![customer-list](images/code-folder.png )   
 
-## Task 4: Develop .NET Applications for Oracle Autonomous Database with ODP.NET Core and Visual Studio Code (Wallet-less Connection)
+## Task 4: [Optional] Develop .NET Applications for Oracle Autonomous Database with ODP.NET Core and Visual Studio Code (Wallet-less Connection)
 
 In this task, we will establish a wallet-less connection with Autonomous Database. Please follow the below instructions to run the sample code in VS Code.
 
@@ -177,7 +204,7 @@ In this task, we will establish a wallet-less connection with Autonomous Databas
 
 3. Access the Autonomous Database Information page, click on **DB Connection**, under Connection String, select **TLS** Option, and copy the connection string into a text file or clipboard, which we will be using in the next step.   
 
-   ![tls](images/tls.png "tls")
+   ![tls](images/tls-copy.png "tls")
 
 4. Open the **Program.cs** and copy the code contents below and save the file.
 
@@ -229,13 +256,17 @@ In this task, we will establish a wallet-less connection with Autonomous Databas
       </copy>
       ```
 
+      Sample code for reference 
+
+      ![Walletless](images/dotnet-walletless.png)
+
       Substitute <db\_user\> , <password\> and <copied\_connection\_string\> depending upon the string that we copied in previous step.
 
       > **Note:** Your Data Source connection string in the above code might look like this below. Add the \ escape sequence in front of the quotes.  
 
       ```
       <copy>
-      "Data Source =(description= (retry_count=20)(retry_delay=3)(address=(protocol=tcps)(port=1521)(host=adb.<region_id>.oraclecloud.com))(connect_data=(service_name=<servicename_prefix>_<instance_name>_high.adb.oraclecloud.com))(security=(ssl_server_dn_match=yes)(ssl_server_cert_dn=\"CN=adwc.<region_id>.oraclecloud.com, OU=Oracle BMCS US, O=Oracle Corporation,L=Redwood City, ST=California, C=US\"))) ";
+      "(description= (retry_count=20)(retry_delay=3)(address=(protocol=tcps)(port=1521)(host=adb.ap-sydney-1.oraclecloud.com))(connect_data=(service_name=gc454c29a9ca831_adbdw110890_high.adb.oraclecloud.com))(security=(ssl_server_dn_match=yes)))";
       </copy>
       ```
 
@@ -259,11 +290,11 @@ In this task, we will establish a wallet-less connection with Autonomous Databas
       </copy>
       ```
 
-      ![customer-list](images/customer-list.png =75%x*  "customer-list")
+      ![Sample Code run](images/dotnet-results.png)
 
       The output will be the same as Task 3 but with only difference being this time we are establishing wallet-less connection.
 
-## Task 5: Utilize the Oracle Developer Tools For VS Code extension to explore database schema and run SQL scripts  
+<!-- ## Task 5: [Optional] Utilize the Oracle Developer Tools For VS Code extension to explore database schema and run SQL scripts  
 
 This Lab task shows how to use Oracle Developer Tools for VS Code, Connect to Autonomous Database Instance, and Run SQL Queries.
 
@@ -302,7 +333,7 @@ This Lab task shows how to use Oracle Developer Tools for VS Code, Connect to Au
 
 5. View the result of the SQL query and expand Tables under Autonomous Database connection to view the list of tables.
 
-      ![view-result](images/view-results-2.png "view-result")
+      ![view-result](images/view-results-2.png "view-result") -->
 
 
 ## Learn More
@@ -317,4 +348,4 @@ This Lab task shows how to use Oracle Developer Tools for VS Code, Connect to Au
 
 - **Author** - Madhusudhan Rao, Principal Product Manager, Database
 * **Contributors** - Kevin Lazarz, Senior Principal Product Manager, Database. Alex Keh, Senior Principal Product Manager and Christian Shay, Senior Principal Product Manager
-* **Last Updated By/Date** -  Madhusudhan Rao, June 28th 2022
+* **Last Updated By/Date** -  Madhusudhan Rao, Oct 6th, 2024
