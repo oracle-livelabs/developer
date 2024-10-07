@@ -44,6 +44,9 @@ In this lab, you will:
 
 4. Make sure your Workload Type is __Data Warehouse__ or __All__ to see your Autonomous Data Warehouse instances. Use the __List Scope__ drop-down menu to select a compartment. 
 5. Click on Display Name Polyglot_Dev to view detailed information about the Autonomous Database provisioned.
+6. Make note of Database version (Oracle Database 23ai), Database Name, Region
+
+    ![database actions](images/tenancy-details.png  "database actions")
  
 ## Task 2: Create a database user and tables
 
@@ -84,9 +87,11 @@ In this lab, you will:
     </copy>
     ```
 
-    Substitute <db\_user\> and <password\> with the username and password of your choice. Press the green button to run the script.
+    Substitute <db\_user\> and <password\> with the username and password of your choice. Press the second green button to run the script.
 
-    ![sql worksheet](images/app-user.png =50%x*  "sql worksheet")
+    ![sql worksheet](images/create-appuser.png)
+
+    The above example creates database user **appuser** with password **Welcome1234#**, you can use different username and password. 
 
 ## Task 3: Download the wallet for this database
 
@@ -106,9 +111,29 @@ In this lab, you will:
 
     Extract the wallet zip file to the folder of your choice. We will be using this **wallet folder** in future labs of this workshop.
 
-## Task 4: One-way TLS connection to Oracle Autonomous Database for wallet-less connections  
+## Task 4: Make note of TNS Name or DNS Name
 
-> **Note:**  This Task is required if you plan to use a wallet-less connection with Autonomous Database using Python or . NET. Otherwise, you can still connect to Autonomous Database using the wallet downloaded in the previous Task.
+1. Click on **Database Connection** tab, make note of TNS Names (at some places referred as DNS Name), for example DNS Name here **adbdw110890\_high** or adbdw110890\_low or adbdw110890\_medium
+
+    ![Wallet files](images/dns-name.png)
+
+    ![Wallet files](images/wallet-files.png)
+
+2. Alternatively you can download the ADB wallet and after extracting the zip file, you can check the tnsnames.ora file
+
+    ![TNS Names](images/tns-names.png)
+
+3. The connection string while using connections with Database wallet would look like this example shown below
+
+    ```
+    <copy>
+        adbdw1212121_high = (description= (retry_count=20)(retry_delay=3)(address=(protocol=tcps)(port=1522)(host=adb.ap-sydney-1.oraclecloud.com))(connect_data=(service_name=gc454cxxxx31_adbdw1212121_high.adb.oraclecloud.com))(security=(ssl_server_dn_match=yes)))
+    </copy>
+    ```  
+
+## Task 5: [Optional] One-way TLS connection to Oracle Autonomous Database for wallet-less connections  
+
+> **Please Note:**  This Task is required if you plan to use a wallet-less connection with Autonomous Database using Python or . NET. Otherwise, you can still connect to Autonomous Database using the wallet downloaded in the previous Task.
 
 1. One-way TLS connection to Oracle Autonomous Database
 
@@ -153,11 +178,7 @@ In this lab, you will:
 
     ```
     <copy>
-        (description= (retry_count=20)(retry_delay=3)(address=(protocol=tcps)(port=1521)
-        (host=adb.<region_identifier>.oraclecloud.com))
-        (connect_data=(service_name=<service_prefix>.adb.oraclecloud.com))
-        (security=(ssl_server_dn_match=yes)
-        (ssl_server_cert_dn="CN=<cn name>, OU=Oracle BMCS US, O=Oracle Corporation, L=Redwood City, ST=California, C=US")))
+        adbdw110890_high = (description= (retry_count=20)(retry_delay=3)(address=(protocol=tcps)(port=1522)(host=adb.ap-sydney-1.oraclecloud.com))(connect_data=(service_name=gc454cxxxx31_adbdw110890_high.adb.oraclecloud.com))(security=(ssl_server_dn_match=yes)))
     </copy>
     ```  
 

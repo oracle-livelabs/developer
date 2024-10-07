@@ -118,14 +118,17 @@ Use Python 3.6 to 3.10. Install [Python 3](https://yum.oracle.com/oracle-linux-p
       wall_pwd = "<wallet_password>"
   
       # connection string name for example demoadw_high
-      dsn_name = "<connectionname>"
+      # please check tnsnames.ora file in your database wallet to get tns_name 
+      # or refer Lab 1 for more details
+
+      tns_name = "<connectionname>"
 
       # for example
-      # dsn_name = "adbdw110612_high"
+      # tns_name = "adbdw110612_high"
 
       connection = oracledb.connect(user=username, 
                                     password=user_pwd,
-                                    dsn=dsn_name,
+                                    dsn=tns_name,
                                     config_dir=wall_config_dir,
                                     wallet_location=wall_config_dir,
                                     wallet_password=wall_pwd)
@@ -201,10 +204,12 @@ Use Python 3.6 to 3.10. Install [Python 3](https://yum.oracle.com/oracle-linux-p
 
 ## Learn More
     
+* [Quick Start: Developing Python Applications for Oracle Autonomous Database](https://www.oracle.com/database/technologies/appdev/python/quickstartpython.html)
 * [python-oracledb documentation](https://python-oracledb.readthedocs.io/en/latest/index.html)  
 * [Easy wallet-less connections to Oracle Autonomous Databases in Python](https://blogs.oracle.com/opal/post/easy-way-to-connect-python-applications-to-oracle-autonomous-databases)
 * [Code Examples: python-oracledb](https://github.com/oracle/python-oracledb) 
 * [Installing python-oracledb](https://python-oracledb.readthedocs.io/en/latest/user_guide/installation.html)
+* [Getting Started with Python and Oracle Database](https://apexapps.oracle.com/pls/apex/r/dbpm/livelabs/view-workshop?wid=3482)
   
 ## Acknowledgements
 
