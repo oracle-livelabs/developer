@@ -33,7 +33,7 @@ In this lab, you will:
 1. Log in to the Oracle Cloud.
 2. Once you log in, the cloud services dashboard shows all the services available to you. Click the **navigation menu** in the upper left to show top-level navigation choices. From the top left navigation select Oracle Database and Oracle Autonomous Data Warehouse.
 
-    ![Open Navigation](images/open-adb-nav.png " ")
+    ![Open Navigation](images/open-adb-nav.png "Open Navigation")
 
 3. Select the allocated compartment and the region. The compartment name and the region will be available under LiveLabs **My Reservations** and **View Login info**.
 
