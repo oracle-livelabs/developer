@@ -73,7 +73,7 @@ In this lab, you will:
     - __Deployment Type__ - For this lab, choose __Serverless__ as the deployment type.
     ![Create ADW screen](./images/adb-install-01.png "Create ADW screen ")  
     - __Always Free__ - For this lab, we will leave Always Free **unchecked**.
-    - __Choose database version__ - Select a database version **19c** from the available versions.
+    - __Choose database version__ - Select a database version **19c** from the available versions. You can also select **23ai** if it is available in your tenancy and region.
     - **Choose network access**: For this lab, accept the default, **Secure access from everywhere**.
     ![Create ADW screen](./images/adb-install-04.png "Create ADW screen ")
 
@@ -90,6 +90,7 @@ In this lab, you will:
     - __ECPU count__ - Number of ECPU for your service. For this lab, specify __2 ECPU__.  
     - __Storage (TB)__ - Select your storage capacity in terabytes. For this lab, specify __1 TB__ of storage.  
     - __Auto Scaling__ - Auto Scaling - For this lab, keep auto-scaling **unchecked**. If autoscaling is enabled, the system will automatically use up to three times more CPU and IO resources to meet workload demand. learn more about [auto scaling](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/autonomous-auto-scale.html)
+    - You can also select **23ai** if it is available in your tenancy and region.
  
         ![Create workload type](./images/adb-install-02.png "Create ADW screen ")
   
@@ -101,6 +102,7 @@ In this lab, you will:
 
     - __Password and Confirm Password__ - Specify the password for the **ADMIN** user of the service instance.  
     - Autonomous Database requires strong passwords.
+    
   
 1. The **Contact Email** field allows you to list contacts to receive operational notices and announcements as well as unplanned maintenance notifications. This is optional.
 
@@ -252,4 +254,4 @@ You may now **proceed to the next lab**.
 - **Author** - Madhusudhan Rao, Principal Product Manager, Database
 - **Contributors** - Kevin Lazarz, Senior Principal Product Manager and Christopher Jones, Senior Principal Product Manager
 - **Updates** - Database Actions and Oracle Autonomous Database creation screens updated 
-- **Last Updated By/Date** - Madhusudhan Rao, May 20th 2024
+- **Last Updated By/Date** - Madhusudhan Rao, 4th Oct 2024
