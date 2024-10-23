@@ -63,9 +63,9 @@ Once your changes are successfully merged to your project's repo, VB Studio auto
 
     ![This image shows the Builds section Job Queue tab in VB Studio. A progress indicator shows status for the DemoHCMSearch-Package job.](images/job-queue.png)
 
-3. When the status of both jobs is green, click the ![Environments icon](images/icon-environments.png) **Environments** tab, select **Deployments**, then **Application Extensions**.
+3. When the status of both jobs in the Jobs tab is green, click the ![Environments icon](images/icon-environments.png) **Environments** tab, select your environment (if necessary), then click **Deployments**.
 
-4. Expand the **site_DemoHCMSearch** extension, then click ![Open icon](images/icon-openappui.png) next to the **hcmsearch** App UI to open it in a new browser tab:
+4. Under **Application Extensions**, expand the **site_DemoHCMSearch** extension, then click ![Open icon](images/icon-openappui.png) next to the **hcmsearch** App UI to open it in a new browser tab:
 
     ![This image shows the Environments tab. The Development environment is selected and the Deployments tab is shown. In the Applications Extensions section, DemoHCMSearch is highlighted and expanded and hcmsearch is highlighted in the App UIs column.](images/deployment.png)
 
@@ -76,5 +76,4 @@ Once your changes are successfully merged to your project's repo, VB Studio auto
 ## Acknowledgements
 
 * **Author** - Sheryl Manoharan, VB Studio User Assistance, May 2023
-* **Contributors** -  Lisa Dawson, VB Studio User Assistance
-* **Last Updated By/Date** - Sheryl Manoharan, July 2024
+* **Last Updated By/Date** - Sheryl Manoharan, October 2024
