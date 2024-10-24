@@ -84,11 +84,13 @@ Define an environment that points to your Visual Builder development instance, w
 
     ![The empty Development environment shown on the Environments page. An Add Instance button is shown in the Service Instances tab. The Details and Certificates tabs are also visible.](images/env-add-instance.png "Environments page")
 
-4. With **Instance Type** set to **Visual Builder and Oracle Integration** and **Authentication Method** set to **Identity Domain** in the Add Service Instances dialog, locate the Visual Builder instance in your tenancy. Once you find the instance you want to use, select it and click **Add**.
+4. With Instance Type set to **Visual Builder and Oracle Integration** and Add Instance Using set to **Instance List** in the Add Service Instance dialog, locate a Visual Builder instance connected to your OCI account. (If the instance you want does not show in the list, you're likely missing a policy statement for the OCI compartment used by your VB Studio instance and should add it in.) Once you have the instance you want, select it and click **Add**.
 
     ![The Add Service Instances dialog with myVBinstance of type Visual Builder IDCS Resource selected. An Add button is also shown.](images/env-add-service-instances.png "Environments page")
 
-    **Note:** If the Visual Builder instance you want to use does not show up in the list of instances, select **Visual Builder Credentials** under **Authentication Method**, then enter the URL to your Visual Builder instance's home page (for example, http://yourserver/ic/builder) and the username and password of someone who can access that instance. Click **Add**.
+    **Note:** To add an instance that's doesn't show in the Instance list because it's connected to a different OCI account, select **Visual Builder Credentials** under Add Instance Using, enter the URL to your Visual Builder instance's home page (for example, http://yourserver/ic/builder), the username and password of someone who can access that instance, and click **Add**.
+
+    If you're prompted to authorize IDCS to enable OAuth access to your Visual Builder instance, click **Authorize**, then enter credentials to connect to your Visual Builder instance.
 
     Wait for the instance's Status to turn green, from 'Unknown' to 'Available'.
 
@@ -106,10 +108,10 @@ You now need to create a workspace, a private area for you to work on your visua
 
 3. In the New Visual Application dialog:
 
-    * Enter **HR Workspace** as the **Workspace Name**.
-    * Select **Development** (where you previously added a Visual Builder instance) as the **Development Environment**. If only one environment is available, it is automatically selected for you.
-    * Leave **Default VBCS Application** as the **Visual Application Template**.
-    * Click **Create new repository** under **Git Repository**, enter **tutorial-hr-project** as the **Repository Name** and **hrbranch** as the **Working Branch Name**.
+    * Enter **HR Workspace** as the Workspace Name.
+    * Select **Development** (where you previously added a Visual Builder instance) as the Development Environment. If only one environment is available, it is automatically selected for you.
+    * Leave **Default VB Application** as the Visual Application Template.
+    * Click **Create new repository** under Git Repository, enter **tutorial-hr-project** as the Repository Name and **hrbranch** as the Working Branch Name.
 
     Click **Create**.
 
@@ -142,4 +144,4 @@ You now need to create a workspace, a private area for you to work on your visua
 ## Acknowledgements
 
 * **Author** - Sheryl Manoharan, VB Studio User Assistance, November 2021
-* **Last Updated By/Date** - Sheryl Manoharan, July 2024
+* **Last Updated By/Date** - Sheryl Manoharan, October 2024
