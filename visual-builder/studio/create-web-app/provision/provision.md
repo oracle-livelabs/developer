@@ -26,7 +26,7 @@ This lab assumes you have:
 
 ## Task 1: Create a Visual Builder instance
 
-Before you provision a VB Studio instance, create a Visual Builder instance to host the web app you'll create in VB Studio. Visual Builder is a managed service that provides everything your apps need to run successfully, including a web server and a built-in database. You must provision the Visual Builder instance first, so you have it available for selection as a deployment target when you create a project in VB Studio.
+Before you provision a VB Studio instance, create a Visual Builder instance to host the web app you'll create in VB Studio. Visual Builder is a managed service that provides everything your apps need to run successfully, including a web server and a built-in database.
 
 1. Create a compartment to host OCI resources for your Visual Builder instance. You can use the root compartment and the tenancy user that was created when the OCI account was created, but a dedicated compartment is the recommended approach.
 
@@ -104,7 +104,24 @@ Provision a VB Studio instance to develop and deploy a web app. You can create o
 
    When your instance is created, its details show in the Instance Info tab. You'll also receive an email with the subject **Verify your Oracle Visual Builder Studio email**. Make sure you click the URL link in the email body to verify your email. This is required to receive email notifications from VB Studio.
 
-6. Now click **Service Console** to open Visual Builder Studio.
+6. With your VB Studio instance now created, make sure it is authorized to access Visual Builder instances connected to your OCI account. This step is mostly required if your VB Studio instance was provisioned with a built-in OCI account, but there may be several other scenarios where this authorization is missing. Therefore, it's recommended that you always check your VB Studio instance's details to make sure the policy statement that enables this access is correctly defined.
+
+   a. Return to the Oracle Cloud Get Started page and click the menu in the upper left corner.
+
+   b. Select **Identity & Security**, then under Identity, select **Policies**.
+
+   c. From the Compartment list on the left side of the Policies page, select the root compartment.
+
+   d. Check if a VB Studio policy has been defined with all of these statements:
+
+     ```
+   Allow any-user to inspect all-resources in tenancy where request.principal.id in ('<VBS_instance_OCID>')
+   Allow any-user to read visualbuilder-instance in tenancy where request.principal.id in ('<VBS_instance_OCID>')
+   Allow any-user to read integration-instance in tenancy where request.principal.id in ('<VBS_instance_OCID>')
+     ```
+   If a policy does not exist, create one. If a policy exists but is missing one of these statements, update it.
+
+7. Now click the navigation menu, select **Developer Services** and **Visual Builder Studio**, then select your VB Studio instance and click **Service Console**.
 
    ![This image shows the Instance Details page of the newly provisioned VB Studio instance, named vbstudio-devinstance. Under the instance name the Service Console button is highlighted.](images/vbs-instance-created.png "")
 
