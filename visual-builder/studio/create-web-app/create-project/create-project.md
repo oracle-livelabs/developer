@@ -25,7 +25,8 @@ In this lab, you will:
 This lab assumes you have:
 
 * A Chrome browser
-* A VB Studio instance and a separate Visual Builder instance
+* A VB Studio instance and a separate Visual Builder instance, with your [VB Studio instance authorized to access the Visual Builder instance](?lab=provision#Task3:AuthorizeVBStudiotoaccessVisualBuilder)
+
 
 ## Task 1: Create a project for a visual application
 
@@ -84,7 +85,7 @@ Define an environment that points to your Visual Builder development instance, w
 
     ![The empty Development environment shown on the Environments page. An Add Instance button is shown in the Service Instances tab. The Details and Certificates tabs are also visible.](images/env-add-instance.png "Environments page")
 
-4. With Instance Type set to **Visual Builder and Oracle Integration** and Add Instance Using set to **Instance List** in the Add Service Instance dialog, locate a Visual Builder instance connected to your OCI account. (If the instance you want does not show in the list, you're likely missing a policy statement for the OCI compartment used by your VB Studio instance and should add it in.) Once you have the instance you want, select it and click **Add**.
+4. With Instance Type set to **Visual Builder and Oracle Integration** and Add Instance Using set to **Instance List** in the Add Service Instance dialog, locate a Visual Builder instance connected to your OCI account. (If the instance you want does not show in the list, you're likely missing a policy statement for the OCI compartment used by your VB Studio instance and should [add it in](?lab=provision#Task3:AuthorizeVBStudiotoaccessVisualBuilder).) Once you have the instance you want, select it and click **Add**.
 
     ![The Add Service Instances dialog with myVBinstance of type Visual Builder IDCS Resource selected. An Add button is also shown.](images/env-add-service-instances.png "Environments page")
 
