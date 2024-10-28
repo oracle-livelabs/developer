@@ -31,21 +31,19 @@ Before you provision a VB Studio instance, create a Visual Builder instance to h
 
 1. Create a compartment to host OCI resources for your Visual Builder instance. You can use the root compartment and the tenancy user that was created when the OCI account was created, but a dedicated compartment is the recommended approach.
 
-   a. On the Oracle Cloud console, click the navigation menu ![Menu icon](images/hamburger.png) in the upper left corner.
-
-   b. Select **Identity & Security**, then **Compartments**.
+   a. On the Oracle Cloud console, click the navigation menu ![Menu icon](images/hamburger.png) in the upper left corner, then select **Identity & Security** and  **Compartments**.
 
    ![This image shows navigation to Identity & Security, then Compartments under Identity.](https://oracle-livelabs.github.io/common/images/console/id-compartment.png "")
 
-   c. Click **Create Compartment**.
+   b. Click **Create Compartment**.
 
    ![This image shows a list of existing compartments on the Compartments page. The Create Compartment button is highlighted.](images/oci-compartments-create.png "")
 
-   d. Enter `VBCompartment` as the name, add a description (for example, `VBCompartment for workshop`), and leave the Parent Compartment set to the default root compartment. Click **Create Compartment**.
+   c. Enter `VBCompartment` as the name, add a description (for example, `VBCompartment for workshop`), and leave the Parent Compartment set to the default root compartment. Click **Create Compartment**.
 
    ![This image shows the Create Compartment dialog with fields filled in.](images/oci-compartments-vb-create-details.png "")
 
-2. Click the navigation menu in the upper left corner, then select **Developer Services**, then **Visual Builder**.
+2. From the navigation menu, select **Developer Services**, then **Visual Builder**.
 
     ![Navigation to Visual Builder under Developer Services is shown.](images/platform.png "")
 
