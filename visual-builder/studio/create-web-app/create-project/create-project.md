@@ -91,7 +91,7 @@ Define an environment that points to your Visual Builder development instance, w
 
     **Note:** To add an instance that's doesn't show in the Instance list because it's connected to a different OCI account, select **Visual Builder Credentials** under Add Instance Using, enter the URL to your Visual Builder instance's home page (for example, http://yourserver/ic/builder), the username and password of someone who can access that instance, and click **Add**.
 
-    If you're prompted to authorize IDCS to enable OAuth access to your Visual Builder instance, click **Authorize**, then enter credentials to connect to your Visual Builder instance.
+    If you're prompted for authorization enabling OAuth access to your Visual Builder instance, click **Authorize**, then enter credentials to connect to your Visual Builder instance.
 
     Wait for the instance's Status to turn green, from 'Unknown' to 'Available'.
 
