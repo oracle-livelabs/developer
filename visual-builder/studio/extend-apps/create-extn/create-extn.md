@@ -57,7 +57,6 @@ Once you have your project, create a workspace where you can develop your extens
   | Extension Id | site_YourName-HCMSearch | Automatically filled in, but you can change it if you like |
   | Workspace Name | YourName-HCMSearch | Automatically filled in, but you can change it if you like |
   | Development Environment | Development | Mapped to your current identity domain's Oracle Cloud Applications instance |
-  | Base Oracle Cloud Application | None | Not needed in this scenario |
   | Sandbox | No sandbox selected | Not needed in this scenario |
   | Git Repository | Create new repository | Creates a Git repository and branch where your extension's files will be stored |
   | Repository Name | YourName-HCMSearch | Name of the extension's Git repository |
@@ -78,11 +77,7 @@ When your workspace first opens in the Designer, your screen might look somethin
 
 On the left edge is a vertical toolbar with icons representing App UIs, Services, Dependencies, and so on. This toolbar is the Navigator, which helps you move between the artifacts in your extension.
 
-The App UIs pane is where you'd get started with App UIs (entire pages and flows) or fragments (reusable pieces of UI). You'll also see sections called **Other** and **Unified Application**,  both of which relate to *dependencies*.
-
-* **Other** is a list of extensions whose resources your App UI can potentially reference as a dependency and is typically something you see when you create an empty extension (as we did in the previous task). If your App UI actually uses a resource as a dependency, you'll see the extension listed by pillar, for example, **Human Capital Management**, instead of **Other** (though we won't get into that in this tutorial).
-
-* **Unified Application** provides global services and a common user interface shell to all App UIs in your extension. You won't need to worry about this underpinning, but suffice to say it is considered a dependency for everything in the Oracle Cloud Applications ecosystem.
+The App UIs pane is where you'd get started with App UIs (entire pages and flows) or fragments (reusable pieces of UI). You'll also see a section called **Unified Application**, which provides global services and a common user interface shell for all App UIs in your extension. You won't need to worry about this underpinning, but suffice to say it is considered a dependency for everything in the Oracle Cloud Applications ecosystem.
 
 Now take a look at the header:
 
@@ -101,5 +96,4 @@ You may now **proceed to the next lab**.
 ## Acknowledgements
 
 * **Author** - Sheryl Manoharan, VB Studio User Assistance, May 2023
-* **Contributors** -  Lisa Dawson, VB Studio User Assistance
-* **Last Updated By/Date** - Sheryl Manoharan, July 2024
+* **Last Updated By/Date** - Sheryl Manoharan, October 2024

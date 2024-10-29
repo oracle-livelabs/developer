@@ -33,4 +33,4 @@ In this workshop, you will:
 ## Acknowledgements
 
 - **Author** Sheryl Manoharan, Visual Builder User Assistance, August 2021
-- **Last Updated By** - August 2024
+- **Last Updated By/Date** - Sheryl Manoharan, August 2024
