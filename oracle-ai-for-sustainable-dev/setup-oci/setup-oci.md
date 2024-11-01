@@ -45,9 +45,9 @@ This lab assumes:
       
       Therefore, by default it is easiest to simply download the src to a location on your computer using the follow git clone command:
    
-        ```text
-        <copy>git clone https://github.com/oracle-devrel/oracle-ai-for-sustainable-dev.git</copy>
-        ```
+       ```text
+       <copy>git clone https://github.com/oracle-devrel/oracle-ai-for-sustainable-dev.git</copy>
+       ```
    
       or download and extract the zip code from https://github.com/oracle-devrel/oracle-ai-for-sustainable-dev/zipball/master
 

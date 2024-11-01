@@ -47,7 +47,7 @@ The application can be built and run in a couple ways:
 ## Task 2: Build and run as a Java application directly using Maven
 
    1. Open a terminal/shell.
-   2. cd to the directory where the workshop src (and thus `env.properties`) exists, ie `cd [workspace_src_directory]`.
+   2. cd to the directory where the workshop `java-ai` src (and thus `env.properties`) exists, ie `cd [workspace_src_directory/java-ai]`.
    3. Issue the following to build the application
    
         ```text
