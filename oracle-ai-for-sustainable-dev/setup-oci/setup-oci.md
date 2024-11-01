@@ -48,9 +48,6 @@ This lab assumes:
       The majority of labs in the workshop are executed using a Java Spring Boot web app and so the endpoint (port 8080) must be accessible.
       
       Therefore, by default it is easiest to simply download the src to a location on your computer using the follow git clone command:
-       ```text
-       <copy>oci session authenticate ; oci iam region list --config-file /Users/YOURHOMEDIR/.oci/config --profile MYSPEECHAIPROFILE --auth security_token</copy>
-       ```
          
        ```text
        <copy>git clone https://github.com/oracle-devrel/oracle-ai-for-sustainable-dev.git</copy>
