@@ -50,15 +50,15 @@ The application can be built and run in a couple ways:
    2. cd to the directory where the workshop `java-ai` src (and thus `env.properties`) exists, ie `cd [workspace_src_directory/java-ai]`.
    3. Issue the following to build the application
    
-        ```text
-        <copy>./build.sh</copy>
-        ```
+     ```text
+     <copy>./build.sh</copy>
+     ```
 
    4. Issue the following to run the application
 
-        ```text
-        <copy>./run.sh</copy>
-        ```
+     ```text
+     <copy>./run.sh</copy>
+     ```
 
 
 ## Task 3: Build and run as a Docker image

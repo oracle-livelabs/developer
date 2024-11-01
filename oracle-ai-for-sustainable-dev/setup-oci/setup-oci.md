@@ -188,9 +188,9 @@ This lab assumes:
     
        Your policy should look like this:
    
-        ```text
+       ```text
         <copy>Allow group < group name > to manage all-resources in compartment < compartment name > </copy>
-        ```
+       ```
       
        for example, 
    
