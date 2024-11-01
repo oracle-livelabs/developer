@@ -8,6 +8,8 @@ In this lab, we will set up the required policies to run through the workshop as
 
 If you're just trying out Oracle Cloud Infrastructure or doing a proof-of-concept project with infrastructure resources, you may not need more than a few administrators with full access to everything. In that case, you can simply create any new users you need and add them to the Administrators group. The users will be able to do anything with any kind of resource. And you can create all your resources directly in the tenancy (the root compartment). You don't need to create any compartments yet, or any other policies beyond the Tenant Admin Policy, which automatically comes with your tenancy and can't be changed.
 
+> **Note:**  If you are using OCI Generative AI service (used in two of the workshops labs), you will need to set `region = us-chicago-1` in your ~/.oci/config file.
+
 Please read more about [OCI Policies](https://docs.oracle.com/en-us/iaas/Content/Identity/Concepts/policygetstarted.htm) before creating or changing any OCI policies.
 
 Estimated time: 5 to 40 minutes depending on requirements
@@ -36,6 +38,8 @@ This lab assumes:
 * You have an Oracle Cloud account with OCI and Tenancy administration privileges to create policies and compartments. 
 
     > **Note:**  Policies are only required if you cannot create or use a OCI resources. If you are a tenancy administrator, you will have access to all the resources, and you can **optionally skip policy creations in this lab**.
+
+    > **Note:**  If you are using OCI Generative AI service (used in two of the workshops labs), you will need to set `region = us-chicago-1` in your ~/.oci/config file.
   
 ## Task 1: Clone workshop source code
 
@@ -44,7 +48,10 @@ This lab assumes:
       The majority of labs in the workshop are executed using a Java Spring Boot web app and so the endpoint (port 8080) must be accessible.
       
       Therefore, by default it is easiest to simply download the src to a location on your computer using the follow git clone command:
-   
+       ```text
+       <copy>oci session authenticate ; oci iam region list --config-file /Users/YOURHOMEDIR/.oci/config --profile MYSPEECHAIPROFILE --auth security_token</copy>
+       ```
+         
        ```text
        <copy>git clone https://github.com/oracle-devrel/oracle-ai-for-sustainable-dev.git</copy>
        ```
