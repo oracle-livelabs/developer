@@ -56,12 +56,12 @@ Estimated Time:  20 minutes
 
    5. Navigate to SQL Development Console and enter the following command:
 
-          ```
+      ```text
           <copy>
           GRANT CREATE TABLE, CREATE SEQUENCE TO HCDEMOUSER;
           ALTER USER HCDEMOUSER QUOTA UNLIMITED ON HCDEMOUSER;
           </copy>
-          ```
+      ```
 
    6. Sign out of the console and sign back in with your new user. Copy, paste, and select **Data Loading** and **Upload Data into New Table...**.
 
