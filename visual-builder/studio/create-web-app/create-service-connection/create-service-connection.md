@@ -72,9 +72,9 @@ In this step, we'll connect the HR application to an external REST endpoint that
 
 Now that we have our service connection, let's change the Edit Employee page to show information about an employee's country. This time, instead of using Quick Starts, we'll manually add fields to the page.
 
-1. Click the ![Web Applications icon](images/webapp-icon.png) **Web Applications** tab, then select the **main-edit-employee** page.
+1. Click ![Web Applications icon](images/webapp-icon.png) **Web Applications**, then select the **main-edit-employee** page.
 
-2. Switch to the **Components** palette, then locate the **Heading** component and drag and drop it onto the canvas, at the very end of the page after the Form Layout's components.
+2. Switch to the **Components** palette, then locate the **Heading** component and drag and drop it onto the canvas, at the very end of the page after the Form Layout component.
 
 3. In the Heading's properties, change the **Text** field's value to `Country Info` and move the **Level** slider to H6.
 
@@ -113,11 +113,11 @@ To pass values to the fields under Country Info in the main-edit-employee page, 
 
     ![A countryTypeVar is created on the Variables tab. The flag, region, and timezones attributes show under the countryTypeVar object. In the properties on the right, the Type field, set to countryType, is highlighted.](images/type-from-endpoint-var.png "")
 
-5. Now return to the Page Designer tab for the main-edit-employee page and bind each country field to its corresponding variable. To do this:
+5. Now return to the main-edit-employee page's **Page Designer** and bind each country field to its corresponding variable. To do this:
 
-    * Select the Avatar component and click its Data tab in the Properties pane. Hover over the **Src** field, click ![Select Variable icon](images/variable-picker-icon.png) to open the Variable picker. Expand the **countryTypeVar** object and select **flag**.
-    * Select the Time Zone Input Text component, then in its Data tab, click ![Select Variable icon](images/variable-picker-icon.png) next to Value. Under **countryTypeVar**, expand **timezones** and select **item[0]**.
-    * Select the Region Input Number component, then in its Data tab, click ![Select Variable icon](images/variable-picker-icon.png) next to Value and select **region** under **countryTypeVar**.
+    * Select the **Avatar** component and click its **Data** tab in the Properties pane. Hover over the **Src** field, click ![Select Variable icon](images/variable-picker-icon.png) to open the Variable picker. Expand the **countryTypeVar** object and select **flag**.
+    * Select the **Time Zone** Input Text component, then in its **Data** tab, click ![Select Variable icon](images/variable-picker-icon.png) next to Value. Under **countryTypeVar**, expand **timezones** and select **item[0]**.
+    * Select the **Region** Input Number component, then in its **Data** tab, click ![Select Variable icon](images/variable-picker-icon.png) next to Value and select **region** under **countryTypeVar**.
 
     Each of the components are now bound to the corresponding variable, but no values show because the variables don't have any data yet.
 
@@ -170,4 +170,4 @@ In this step, we'll assign data to the variables by adding a "value" event that 
 ## Acknowledgements
 
 * **Author** - Sheryl Manoharan, VB Studio User Assistance, July 2022
-* **Last Updated By/Date** - Sheryl Manoharan, July 2024
+* **Last Updated By/Date** - Sheryl Manoharan, October 2024

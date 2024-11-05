@@ -113,6 +113,10 @@ sudo cp Wallet_*.zip /usr/lib/oracle/21/client64/lib/network/admin/
 sudo sh -c 'cd /usr/lib/oracle/21/client64/lib/network/admin/ && unzip -B Wallet_*.zip'
 </copy>
 ``` 
+
+### Instant client folder structure
+
+![Wallet folder](images/instant-client-folder.png)
  
 ## Task 3: Install Node.js
 
@@ -136,13 +140,20 @@ sudo yum install oracle-nodejs-release-el8
 sudo yum install nodejs
 </copy>
 ``` 
-   
 For generic installation steps, see [Node.js Downloads](https://nodejs.org/en/download/).
-
+```
+<copy> 
+npm --version
+10.7.0
+node --version
+v22.2.0
+</copy>
+```
+ 
 ## Task 4: Install node-oracledb
  
 
-1. Using your favourite editor, create a new file *package.json* in a directory of your choice. It should contain:
+1. Using your favourite editor, create a new file *package.json* in a directory of your choice. It should contain the following:
  
       ```
       <copy>
@@ -155,7 +166,7 @@ For generic installation steps, see [Node.js Downloads](https://nodejs.org/en/do
                   "myapp"
             ],
             "dependencies": {
-                  "oracledb": "^5.4.0"
+                  "oracledb": "^6.6.0"
             },
             "author": "You",
             "license": "MIT"
@@ -163,11 +174,11 @@ For generic installation steps, see [Node.js Downloads](https://nodejs.org/en/do
       </copy>
       ``` 
 
-      Run npm installation command.
+      Please replace "oracledb": "< to any latest version >" if required
 
       ```
       <copy>
-            npm install
+      npm install 
       </copy>
       ```  
  
@@ -178,6 +189,7 @@ For generic installation steps, see [Node.js Downloads](https://nodejs.org/en/do
       ```
       <copy>
       const oracledb = require("oracledb");
+      const fs = require("fs");
 
       // On Windows and macOS, you can specify the directory containing the Oracle
       // Client Libraries at runtime, or before Node.js starts.  On other platforms
@@ -185,21 +197,27 @@ For generic installation steps, see [Node.js Downloads](https://nodejs.org/en/do
       // See the node-oracledb installation documentation.
       // If the search path is not correct, you will get a DPI-1047 error.
 
-      let libPath;
+      // let libPath; 
+      // for example you can use environment variable as shown below 
+      // if (process.platform === "win32") {
+      //    Windows
+      //      libPath = "C:\\oracle\\instantclient_19_8";
+      //} else if (process.platform === "darwin") {
+      //       macOS
+      //      libPath = process.env.HOME + "/Downloads/instantclient_19_8";
+      //} 
+       
+      // or directly provide the libpath
+      // replace with your instant client path, please use latest version of instant client  
+      // libPath =  "/Users/username/Workarea/Polyglot/instantclient_19_8"; 
+      //if (libPath && fs.existsSync(libPath)) {
+      //oracledb.initOracleClient({
+      //      libDir: libPath
+      //});
+      //}
 
-      if (process.platform === "win32") {
-            // Windows
-            libPath = "C:\\oracle\\instantclient_19_8";
-      } else if (process.platform === "darwin") {
-            // macOS
-            libPath = process.env.HOME + "/Downloads/instantclient_19_8";
-      }
-
-      if (libPath && fs.existsSync(libPath)) {
-      oracledb.initOracleClient({
-            libDir: libPath
-      });
-      }
+      // Example connectionString for _high connection
+      // "(description= (retry_count=20)(retry_delay=3)(address=(protocol=tcps)(port=1522)(host=adb.sa-saopaulo-1.oraclecloud.com))(connect_data=(service_name=hmugvwhgda3dbym_adbdw110612_high.adb.oraclecloud.com))(security=(ssl_server_dn_match=yes)))"
 
       async function run() {
             let connection;
@@ -260,6 +278,9 @@ For generic installation steps, see [Node.js Downloads](https://nodejs.org/en/do
       ```   
 
 3.  View the customer data from customers360 table
+   
+      ![Node output](images/node-output.png)
+
       
       This completes the lab. At this point, you know how to create a Node.js application that connects to Oracle Autonomous Database. You may now **proceed to the next lab**.
 
@@ -274,4 +295,4 @@ For generic installation steps, see [Node.js Downloads](https://nodejs.org/en/do
 
 * **Author** - Madhusudhan Rao, Principal Product Manager, Database 
 * **Contributors** - Kevin Lazarz, Senior Principal Product Manager, Database and Christopher Jones, Senior Principal Product Manager
-* **Last Updated By/Date** -  Madhusudhan Rao, 24th June 2022
+* **Last Updated By/Date** -  Madhusudhan Rao, 4th Oct 2024.
