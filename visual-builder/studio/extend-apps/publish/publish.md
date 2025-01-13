@@ -42,12 +42,16 @@ After you've confirmed search is working, you are ready to deploy the extension 
 
     ![This image shows the Publish Changes dialog with Merge Now selected and the "Search Application for HCM" entered in the Commit Message field.](images/publish-changes-dialog.png)
 
-3. If prompted, provide your user name and password for your development instance. These **must** be Oracle Cloud Application credentials, as opposed to Visual Builder Studio or SSO credentials:
+3. If you're prompted to authorize your environment, click **OK** in the Authorization Required dialog. Then, complete these steps:
 
-    ![This image shows the Missing Deployment Credentials dialog. The User Name field has john.dunbar entered in it and the Password field is empty.](images/deployment-creds.png)
+    a. Click **Authorize** in the Authorize Jobs page.
+
+    b. If prompted to set up OAuth, enter the credentials of a user who can access your Oracle Cloud Applications instance and click **Authorize**.
+
+    c. Once authorized, return to your workspace and click **Publish** again.
 
 4. When the changes are published to your project's Git repository, click **Close**.
-    ![This image shows Publish CHanges dialog detailing the steps taken to deploy changes from your workspace to the project's repository in this order: Checking environments and build jobs, git commit branch1, git fetch, git merge main to branch1, git merge branch1 to main, and git push. There's also a message asking the user not to use the current branch as changes are being deployed and that a new branch maryjane-timestamp has been temporarily created for the user.](images/published.png)
+    ![This image shows Publish Changes dialog detailing the steps taken to deploy changes from your workspace to the project's repository in this order: Checking environments and build jobs, git commit branch1, git fetch, git merge main to branch1, git merge branch1 to main, and git push. There's also a message asking the user not to use the current branch as changes are being deployed and that a new branch maryjane-timestamp has been temporarily created for the user.](images/published.png)
 
     What you're seeing are the Git steps taken to push your changes from the local **branch1** to the remote **branch1**, then to merge them to the project's **main** branch.
 
@@ -76,4 +80,4 @@ Once your changes are successfully merged to your project's repo, VB Studio auto
 ## Acknowledgements
 
 * **Author** - Sheryl Manoharan, VB Studio User Assistance, May 2023
-* **Last Updated By/Date** - Sheryl Manoharan, October 2024
+* **Last Updated By/Date** - Sheryl Manoharan, January 2025

@@ -25,7 +25,7 @@ This lab assumes you have:
 
 * Access to Oracle Cloud Applications (specifically, the HCM modules)
 * Access to the VB Studio instance that was provisioned with your Oracle Cloud Applications instance
-* A VB Studio project that is set up for extensions (if you don't have one, [create it](https://docs.oracle.com/en/cloud/paas/visual-builder/visualbuilder-administration/set-vb-studio-extend-oracle-cloud-applications.html#GUID-E1303FFC-767A-4D87-B914-DE7B520AE799))
+* A VB Studio project that is set up for extensions (if you don't have one, [create it](https://docs.oracle.com/en/cloud/paas/visual-builder/visualbuilder-administration/manually-create-project-extensions.html#GUID-E1303FFC-767A-4D87-B914-DE7B520AE799))
 * Latest version of the Chrome browser running on Mac OS X or Windows
 
 ## Learn More
@@ -35,4 +35,4 @@ This lab assumes you have:
 ## Acknowledgements
 
 * **Author** - Sheryl Manoharan, VB Studio User Assistance, May 2023
-* **Last Updated By/Date** - Sheryl Manoharan, August 2024
+* **Last Updated By/Date** - Sheryl Manoharan, January 2025

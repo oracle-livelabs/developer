@@ -38,7 +38,7 @@ Users with [the right roles](https://docs.oracle.com/en/cloud/paas/visual-builde
 
 3. When VB Studio opens on the Organization page, select the project you want to use to develop extensions for your Oracle Cloud Application.
 
-  If you don't have a project, [follow these instructions](https://docs.oracle.com/en/cloud/paas/visual-builder/visualbuilder-administration/set-vb-studio-extend-oracle-cloud-applications.html#GUID-E1303FFC-767A-4D87-B914-DE7B520AE799) to create one.
+  If you don't have a project, [follow these instructions](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/visual-builder&id=GUID-E1303FFC-767A-4D87-B914-DE7B520AE799) to create one.
 
 ## Task 2: Create a workspace for your extension
 
@@ -53,9 +53,10 @@ Once you have your project, create a workspace where you can develop your extens
 
   | Field | Value | Explanation |
   | --- | --- | --- |
-  | Extension Name | YourName-HCMSearch | To keep the names distinct, use your first name and the initial of your last name, as in `JohnD-HCMSearch` |
+  | Extension Name | YourName-HCMSearch | To keep the names distinct, use your first name and the initial of your last name, as in `MaryJ-HCMSearch` |
   | Extension Id | site_YourName-HCMSearch | Automatically filled in, but you can change it if you like |
   | Workspace Name | YourName-HCMSearch | Automatically filled in, but you can change it if you like |
+  | Root Folder | extension1 | Default folder under which your extension in created in the project's Git repository |
   | Development Environment | Development | Mapped to your current identity domain's Oracle Cloud Applications instance |
   | Sandbox | No sandbox selected | Not needed in this scenario |
   | Git Repository | Create new repository | Creates a Git repository and branch where your extension's files will be stored |
@@ -96,4 +97,4 @@ You may now **proceed to the next lab**.
 ## Acknowledgements
 
 * **Author** - Sheryl Manoharan, VB Studio User Assistance, May 2023
-* **Last Updated By/Date** - Sheryl Manoharan, October 2024
+* **Last Updated By/Date** - Sheryl Manoharan, January 2025

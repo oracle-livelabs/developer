@@ -33,7 +33,7 @@ Start by creating an App UI that takes the form of VB Studio pages and flows.
     The App UI opens on the Diagram view, which shows the App UI's flows and pages. A flow is just a way to keep related pages together. An application can contain multiple flows, and a flow can contain many pages. In this case, we have one flow, **main**, and one page, **main-start**:
     ![This image shows a new hcmsearch App UI open on the canvas in the Designer tab. On the left is a Components palette; on the right is the  main tile indicating a flow with the main-search tile indicating a page nested within.](images/newappui.png)
 
-4. Double-click the **main-start** tile to open the page in the Page Designer.
+4. Double-click the **main-start** tile in the canvas area to open the page in the Page Designer.
 
     What you see under the **main-start** tab is your main work area. Just under **main-start** are several horizontal tabs: Page Designer, Action Chains, Event Listeners, and so on. Each tab provides editors to help you examine and modify artifacts used in the page. By default, the page opens in the Page Designer, which is where you'll do the bulk of your work in VB Studio.
     ![This image shows the main-start page with several components labelled. On the left are the Components, Data, and Structure tabs, in the middle is the canvas area, and on the right is the Properties pane.](images/pagedesigner.png)
@@ -56,7 +56,7 @@ Let's now develop our App UI by dragging and dropping components onto the main-s
 
 1. In the Components palette, enter **heading** in the Filter field to locate the Heading component, then drag and drop it onto the canvas.
 
-2. In the Heading's Properties pane, change the **Text** to `Employee Search`:
+2. Click **Properties** to view the Heading's properties pane, then change the **Text** from `Heading` to `Employee Search`:
 
     ![TThis image shows the Heading component highlighted in the Components palette and selected in the Page Designer, and Employee Search entered in the Text field in the Properties pane.](images/heading.png)
 
@@ -152,4 +152,4 @@ You may now **proceed to the next lab**.
 ## Acknowledgements
 
 * **Author** - Sheryl Manoharan, VB Studio User Assistance, May 2023
-* **Last Updated By/Date** - Sheryl Manoharan, October 2024
+* **Last Updated By/Date** - Sheryl Manoharan, January 2025
