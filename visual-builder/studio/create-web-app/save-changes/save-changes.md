@@ -46,7 +46,7 @@ Let's group the changes you've made so far in your local branch for a commit. Id
 
     ![The Commit dialog is shown with an example commit message. The Commit button is selected.](images/commit.png "")
 
-    A successful message appears on the page, in the lower right corner. Click ![Close message icon](images/x-icon.png) to close the message.
+    A successful message appears on the page, in the bottom right corner.
 
 ## Task 2: Push changes to a remote branch
 
@@ -57,7 +57,7 @@ Push your commits from the local branch in your workspace to the remote branch.
 
     ![The Push dialog, which identifies 1 commit ready to be pushed from the local hrbranch to the remote hrbranch, is shown. The Push Changes button is selected.](images/push-changes.png "")
 
-    When the successful message appears, click ![Close message icon](images/x-icon.png).
+    A successful message appears.
 
 ## Task 3: View changes in the remote branch
 
@@ -88,4 +88,4 @@ Now that your changes have been pushed, let's check them in the remote **hrbranc
 ## Acknowledgements
 
 * **Author** - Sheryl Manoharan, VB Studio User Assistance, November 2021
-* **Last Updated By/Date** - Sheryl Manoharan, October 2024
+* **Last Updated By/Date** - Sheryl Manoharan, January 2025
