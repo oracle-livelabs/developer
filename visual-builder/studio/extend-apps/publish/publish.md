@@ -65,9 +65,13 @@ Once your changes are successfully merged to your project's repo, VB Studio auto
 
 3. When the status of both jobs in the Jobs tab is green, click the ![Environments icon](images/icon-environments.png) **Environments** tab to open your project's Environments page and click **Extension Lifecycle**.
 
-4. Expand the environment to which the **DemoHCMSearch** extension was deployed, click ![View Details icon](images/manageextensionlifecycle-details-icon.png) to view details, then ![Open icon](images/icon-openappui.png) next to the **hcmsearch** App UI to open it in a new browser tab:
+4. Expand the environment to which the DemoHCMSearch extension was deployed, then click ![Extension Details icon](images/manageextensionlifecycle-details-icon.png) to view extension details.
 
     ![This image shows the Environments tab. The Development environment is selected and the Deployments tab is shown. In the Applications Extensions section, DemoHCMSearch is highlighted and expanded and hcmsearch is highlighted in the App UIs column.](images/deployment.png)
+
+5. Click ![Open icon](images/icon-openappui.png) next to **hcmsearch** to open the App UI in a new browser tab:
+
+    ![This image shows the Extension Details pane with details such as extension name, ID, version, App UIs, Dependencies, and Version History. The hcmsearch App UI is highlighted.](images/deployment-appui.png)
 
     You can now view the App UI deployed to your environment's Oracle Cloud Applications instance.
 
