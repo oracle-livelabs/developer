@@ -46,7 +46,7 @@ Let's group the changes you've made so far in your local branch for a commit. Id
 
     ![The Commit dialog is shown with an example commit message. The Commit button is selected.](images/commit.png "")
 
-    A successful message appears on the page, in the bottom right corner.
+    A **Git commit successful** message appears in the bottom right corner.
 
 ## Task 2: Push changes to a remote branch
 
@@ -57,7 +57,7 @@ Push your commits from the local branch in your workspace to the remote branch.
 
     ![The Push dialog, which identifies 1 commit ready to be pushed from the local hrbranch to the remote hrbranch, is shown. The Push Changes button is selected.](images/push-changes.png "")
 
-    A successful message appears.
+    A **Git push successful** message appears.
 
 ## Task 3: View changes in the remote branch
 
