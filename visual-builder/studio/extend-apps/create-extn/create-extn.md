@@ -8,7 +8,7 @@ Estimated Time: 5 minutes
 
 ### About this lab
 
-To extend Oracle Cloud Applications in VB Studio, you must belong to a *project*. Every project in VB Studio is devoted to a discrete software effort, and the project you use in this lab is exclusive to your Oracle Cloud Application. The project brings together all the tools you need to create your App UI: a Git repository to store your source code, a pipeline to provide continuous integration and delivery, and more.
+To extend Oracle Cloud Applications in VB Studio, you must belong to a *project*. Every project in VB Studio is devoted to a discrete software effort, and the project you use in this lab is exclusive to your Oracle Cloud Application. The project brings together all the tools you need to create your App UI: a Git repository to store your source code, an Oracle Cloud Applications environment to deploy your application, a pipeline to provide continuous integration and delivery, and more.
 
 Within your project, you'll create a *workspace*, a completely private area for you to work on your application. The changes you make in your workspace are stored in a clone of the project's Git repository, and are not visible to others until you share or publish them.
 
@@ -36,15 +36,65 @@ Users with [the right roles](https://docs.oracle.com/en/cloud/paas/visual-builde
 2. Click the menu ![Hamburger menu icon](images/icon-menu.png) in the upper left corner, navigate to **Configuration**, then select **Visual Builder** (synonymous with VB Studio):
   ![This image shows the left navigator menu in an Oracle Cloud Applications instance. The Configuration submenu item is expanded and the Visual Builder menu item is highlighted.](images/configuration-vb.png)
 
-3. When VB Studio opens on the Organization page, select the project you want to use to develop extensions for your Oracle Cloud Application.
+3. When VB Studio opens on the Organization page, select the project you want to use to develop extensions for your Oracle Cloud Application. If you don't have a project, create one as described in the next task.
 
-  If you don't have a project, [follow these instructions](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/visual-builder&id=GUID-E1303FFC-767A-4D87-B914-DE7B520AE799) to create one.
+## Task 2: Create a project
 
-## Task 2: Create a workspace for your extension
+Create a project to manage the tools and processes you need to develop an extension in VB Studio. If you already have a project, skip this step.
 
-Once you have your project, create a workspace where you can develop your extension. A workspace is your ticket into the Designer, a visual environment that lets you design and develop your user interface by dragging and dropping components on a page.
+1. On VB Studio's Organization page, click **\+ Create** on the **Projects** tab.
 
-1. In the VB Studio navigation menu, click ![Workspaces icon](images/icon-workspaces.png) **Workspaces**.
+    ![The All Projects page that appears when the Organization tab is selected on the main menu. The Projects tab is empty, with the Create button selected.](images/org-home.png "All projects screen")
+
+2. On the Project Details step of the New Project wizard:
+
+    * Enter **Demo Project** as the **Name**. You may want to add your name to the project name if you're in a large organization.
+    * Enter **Demo project** as the **Description**.
+    * Leave the **Security** settings as **Private** and **Discoverable** (the default).
+    * Leave the **Preferred Language** as **English** (the default).
+
+    Click **Next**.
+
+3. On the Project Template step, leave the Project Template selected as **Empty Project**. Click **Next**.
+
+    ![The New Project wizard with the Empty Project template selected.](images/empty-project.png)
+
+4. On the Project Properties step, leave **Wiki Markup** (the syntax for the project's wiki) as **Markdown** and click **Next**.
+
+5. On the Project Team Members step, accept the default setting assigning you as the project owner. Click **Finish**.
+
+    Wait for the project to be provisioned. Once provisioning completes, you'll see the Project Home page, which serves as a window to your workspaces, environments, and repositories, as well as a recent activities feed. On the left are a series of tabs showing the available project components.
+
+    ![The Project Home page includes a Workspaces area, Environments area, and a Recent Activities feed. On the right, the Repositories tab, Statistics, and Team tabs are also visible.](images/project-home.png "Project Home page")
+
+    Because we created a project with no preconfigured settings or content, we need to create what we need, by defining an environment that connects to an Oracle Cloud Applications instance, then creating a workspace with a Git repository.
+
+## Task 3: Define an environment
+
+Define an environment that points to your Oracle Cloud Applications development instance, to which your extension can be deployed from within the project. If your project already defines this environment, skip this step.
+
+1. On the Project Home page, click **+ Create Environment** under Environments.
+
+    ![The Environments section on the Project Home page, showing the Create Environment button.](images/env-create.png)
+
+2. Enter **DEV** as the **Environment Name**, then optionally, add a description. Click **Create**.
+
+3. On the Environments page, click **+ Add Instance** to add an Oracle Cloud Applications instance to your **DEV** environment.
+
+4. Click **Oracle Cloud Applications** under Instance Type to look up Oracle Cloud App instances in your tenancy. Select the instance you want and click **Add**.
+
+    ![The Add Service Instances dialog with Fusion Applications Cloud Service of type Oracle Cloud Application IDCS Resource selected. An Add button is also shown.](images/env-add-service-instances.png "Environments page")
+
+   Wait for the instance's Status to turn green, from 'Unknown' to 'Available'.
+
+5. Click ![Project Home icon](images/vbs-project-home-icon.png) **Project Home** in the navigation menu to see your DEV environment now defined.
+
+
+## Task 4: Create a workspace
+
+Once you have a project with an Oracle Cloud Apps environment, create a workspace to develop your extension. A workspace is your ticket into the Designer, a visual environment that lets you design and develop your user interface by dragging and dropping components on a page.
+
+1. Click ![Workspaces icon](images/icon-workspaces.png) **Workspaces** in the navigation menu.
 
 2. Click **New** and select **New Application Extension**:
   ![This image shows the Workspaces tab for the project with the New menu expanded. The New Application Extension option is selected in the menu.](images/create-extension.png)
@@ -70,7 +120,7 @@ Once you have your project, create a workspace where you can develop your extens
 
   VB Studio opens your workspace in the Designer, where you can get started with developing your App UI.
 
-## Task 3: Explore your extension
+## Task 5: Explore your extension
 
 When your workspace first opens in the Designer, your screen might look something like this:
 
