@@ -40,11 +40,11 @@ After you've confirmed search is working, you are ready to deploy the extension 
 
 2. In the Publish dialog, enter a description of the changes in the **Commit Message** field, then click **Publish**:
 
-    ![This image shows the Publish Changes dialog with Merge Now selected and the "Search Application for HCM" entered in the Commit Message field.](images/publish-changes-dialog.png)
+    ![This image shows the Publish Changes dialog with Merge Now selected and the "Employee Search Application" entered in the Commit Message field.](images/publish-changes-dialog.png)
 
-3. If you're prompted to authorize your environment, click **OK** in the Authorization Required dialog, then, click **Authorize** in the Authorize Jobs page. If additionally prompted to set up OAuth, enter the credentials of a user who can access your Oracle Cloud Applications instance and click **Authorize**.
+3. If you're prompted to authorize your environment, click **OK** in the Authorization Required dialog, then click **Authorize** in the Authorize Jobs page. If additionally prompted to set up OAuth, enter the credentials of a user who can access your Oracle Cloud Applications instance and click **Authorize**.
 
-    Once you've provided authorization, click **Publish** in your workspace to restart the publishing process.
+    Once you've provided authorization, return to your workspace and click **Publish** again to restart the publishing process.
 
 4. When the changes are published to your project's Git repository, click **Close**.
     ![This image shows Publish Changes dialog detailing the steps taken to deploy changes from your workspace to the project's repository in this order: Checking environments and build jobs, git commit branch1, git fetch, git merge main to branch1, git merge branch1 to main, and git push. There's also a message asking the user not to use the current branch as changes are being deployed and that a new branch maryjane-timestamp has been temporarily created for the user.](images/published.png)
@@ -61,17 +61,17 @@ Once your changes are successfully merged to your project's repo, VB Studio auto
 
     If the build job is still running, you can view its progress in the **Job Queue** tab. It might take a few minutes for the build to start if an executor isn't immediately available.
 
-    ![This image shows the Builds section Job Queue tab in VB Studio. A progress indicator shows status for the DemoHCMSearch-Package job.](images/job-queue.png)
+    ![This image shows the Builds section Job Queue tab in VB Studio. A progress indicator shows status for the DemoEmpSearch-Package job.](images/job-queue.png)
 
 3. When the status of both jobs in the Jobs tab is green, click the ![Environments icon](images/icon-environments.png) **Environments** tab to open your project's Environments page and click **Extension Lifecycle**.
 
-4. Expand the environment to which the DemoHCMSearch extension was deployed, then click ![Extension Details icon](images/manageextensionlifecycle-details-icon.png) to view extension details.
+4. Expand the environment to which the DemoEmpSearch extension was deployed, then click ![Extension Details icon](images/manageextensionlifecycle-details-icon.png) to view extension details.
 
-    ![This image shows the Environments tab. The Development environment is selected and the Deployments tab is shown. In the Applications Extensions section, DemoHCMSearch is highlighted and expanded and hcmsearch is highlighted in the App UIs column.](images/deployment.png)
+    ![This image shows the Environments tab. The Development environment is selected and the Deployments tab is shown. In the Applications Extensions section, DemoEmpSearch is highlighted and expanded and empsearch is highlighted in the App UIs column.](images/deployment.png)
 
-5. Click ![Open icon](images/icon-openappui.png) next to **hcmsearch** to open the App UI in a new browser tab:
+5. Click ![Open icon](images/icon-openappui.png) next to **empsearch** to open the App UI in a new browser tab:
 
-    ![This image shows the Extension Details pane with details such as extension name, ID, version, App UIs, Dependencies, and Version History. The hcmsearch App UI is highlighted.](images/deployment-appui.png)
+    ![This image shows the Extension Details pane with details such as extension name, ID, version, App UIs, Dependencies, and Version History. The empsearch App UI is highlighted.](images/deployment-appui.png)
 
     You can now view the App UI deployed to your environment's Oracle Cloud Applications instance.
 

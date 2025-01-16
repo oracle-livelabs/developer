@@ -16,7 +16,8 @@ In this workshop, you will learn how to:
 
 * Access VB Studio in your Oracle Cloud Applications environment
 * Create an extension for your Oracle Cloud App
-* Create a new App UI in your extension and connect it to Oracle Cloud Apps data
+* Create a new App UI in your extension
+* Connect your extension to Oracle Cloud Apps data
 * Test and deploy the extension
 
 ### Prerequisites
@@ -25,7 +26,6 @@ This lab assumes you have:
 
 * Access to Oracle Cloud Applications (specifically, the HCM modules)
 * Access to the VB Studio instance that was provisioned with your Oracle Cloud Applications instance
-* A VB Studio project that is set up for extensions (if you don't have one, [create it](https://docs.oracle.com/en/cloud/paas/visual-builder/visualbuilder-administration/manually-create-project-extensions.html#GUID-E1303FFC-767A-4D87-B914-DE7B520AE799))
 * Latest version of the Chrome browser running on Mac OS X or Windows
 
 ## Learn More

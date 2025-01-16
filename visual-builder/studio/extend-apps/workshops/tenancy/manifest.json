@@ -21,7 +21,11 @@
             "filename": "../../create-appui/create-appui.md"
         },
         {
-            "title": "Lab 3: Test and publish the extension",
+            "title": "Lab 3: Connect to data",
+            "filename": "../../connect-to-data/connect-data.md"
+        },
+        {
+            "title": "Lab 4: Test and publish the extension",
             "filename": "../../publish/publish.md"
         },
         {

@@ -71,7 +71,7 @@ Create a project to manage the tools and processes you need to develop an extens
 
 ## Task 3: Define an environment
 
-Define an environment that points to your Oracle Cloud Applications development instance, to which your extension can be deployed from within the project. If your project already defines this environment, skip this step.
+Define an environment that points to your Oracle Cloud Applications development instance, where your extension can be deployed from within the project. If your project already defines this environment, skip this step.
 
 1. On the Project Home page, click **+ Create Environment** under Environments.
 
@@ -103,19 +103,19 @@ Once you have a project with an Oracle Cloud Apps environment, create a workspac
 
   | Field | Value | Explanation |
   | --- | --- | --- |
-  | Extension Name | YourName-HCMSearch | To keep the names distinct, use your first name and the initial of your last name, as in `MaryJ-HCMSearch` |
-  | Extension Id | site_YourName-HCMSearch | Automatically filled in, but you can change it if you like |
-  | Workspace Name | YourName-HCMSearch | Automatically filled in, but you can change it if you like |
+  | Extension Name | YourName-EmpSearch | To keep the names distinct, use your first name and the initial of your last name, as in `MaryJ-EmpSearch` |
+  | Extension Id | site_YourName-EmpSearch | Automatically filled in, but you can change it if you like |
+  | Workspace Name | YourName-EmpSearch | Automatically filled in, but you can change it if you like |
   | Root Folder | extension1 | Default folder under which your extension in created in the project's Git repository |
   | Development Environment | Development | Mapped to your current identity domain's Oracle Cloud Applications instance |
   | Sandbox | No sandbox selected | Not needed in this scenario |
   | Git Repository | Create new repository | Creates a Git repository and branch where your extension's files will be stored |
-  | Repository Name | YourName-HCMSearch | Name of the extension's Git repository |
+  | Repository Name | YourName-EmpSearch | Name of the extension's Git repository |
   | Working Branch Name | branch1 | Working copy of your Git repository's default branch |
   {: title="New App Extension Fields"}
 
   Here are the values used for demo purposes in this workshop:
-  ![This image shows the New Application Extension dialog, with fields filled as follows: Extension Name: DemoHCMSearch; Extension Id: site_DemoHCMSearch; Workspace Name: DemoHCMSearch; Development Environment: Development; Base Oracle Application: None; Sandbox: No sandbox selected. The Create new repository option is selected. DemoHCMSearch is entered in the Repository Name field and branch1 is entered into the Working Branch field.](images/create-workspace.png)
+  ![This image shows the New Application Extension dialog, with fields filled as follows: Extension Name: DemoEmpSearch; Extension Id: site_DemoEmpSearch; Workspace Name: DemoEmpSearch; Development Environment: DEV; Sandbox: No sandbox selected. The Create new repository option is selected. DemoEmpSearch is entered in the Repository Name field and branch1 is entered into the Working Branch field.](images/create-workspace.png)
 4. Click **Create**.
 
   VB Studio opens your workspace in the Designer, where you can get started with developing your App UI.
@@ -134,9 +134,9 @@ Now take a look at the header:
 
 ![This image shows the workspace header, with the workspace name, Git repository, and current branch on the left. Other elements on the right are Preview, Publish, and an Options menu.](images/header.png)
 
-* On the left is the name of your current workspace, **DemoHCMSearch**; next to it is the project's Git repository (**DemoHCMSearch.git**) and the branch currently associated with your workspace (**branch1**).
+* On the left is the name of your current workspace, **DemoEmpSearch**; next to it is the project's Git repository (**DemoEmpSearch.git**) and the branch currently associated with your workspace (**branch1**).
 
-  The **DemoHCMSearch.git** repo stores your extension's files and is known as your project's *remote* repository. It includes the **main** and **branch1** branches, created with initial content for your extension. The **main** branch is the default branch created when a new repo is generated and is the project's source of truth. The **branch1** you see in your workspace is a working copy of your remote **branch1** and serves as your *local* repository. It initially has the same set of source files as the remote branch, but will include the changes you make as you develop the extension.
+  The **DemoEmpSearch.git** repo stores your extension's files and is known as your project's *remote* repository. It includes the **main** and **branch1** branches, created with initial content for your extension. The **main** branch is the default branch created when a new repo is generated and is the project's source of truth. The **branch1** you see in your workspace is a working copy of your remote **branch1** and serves as your *local* repository. It initially has the same set of source files as the remote branch, but will include the changes you make as you develop the extension.
 
 * Elements on the right let you perform various other actions, such as undo your recent changes or search the Git repository for a file. This workshop primarily demonstrates the options to preview your App UI and publish changes. If you make a mistake during this workshop, click ![Undo icon](images/icon-undo.png) to back out of the last step you did, or the arrow next to it to undo more than one step.
 
