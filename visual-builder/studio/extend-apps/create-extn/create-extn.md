@@ -65,7 +65,7 @@ Create a project to manage the tools and processes you need to develop an extens
 
     Wait for the project to be provisioned. Once provisioning completes, you'll see the Project Home page, which serves as a window to your workspaces, environments, and repositories, as well as a recent activities feed. On the left are a series of tabs showing the available project components.
 
-    ![The Project Home page includes a Workspaces area, Environments area, and a Recent Activities feed. On the right, the Repositories tab, Statistics, and Team tabs are also visible.](images/project-home.png "Project Home page")
+    ![The Project Home page includes a Workspaces area, Environments area, and a Recent Activities feed. On the left, the Organization, Project Home, Workspaces, Git, Merge Requests, Builds, Environments, and other project components show.](images/project-home.png "Project Home page")
 
     Because we created a project with no preconfigured settings or content, we need to create what we need, by defining an environment that connects to an Oracle Cloud Applications instance, then creating a workspace with a Git repository.
 
@@ -83,7 +83,7 @@ Define an environment that points to your Oracle Cloud Applications development 
 
 4. Click **Oracle Cloud Applications** under Instance Type to look up Oracle Cloud App instances in your tenancy. Select the instance you want and click **Add**.
 
-    ![The Add Service Instances dialog with Fusion Applications Cloud Service of type Oracle Cloud Application IDCS Resource selected. An Add button is also shown.](images/env-add-service-instances.png "Environments page")
+    ![The Add Service Instance dialog with Instance Type set to Oracle Cloud Applications and Add Instance Using set to Identity Domain. With these options, a Fusion Applications Cloud Service of type Oracle Cloud Application IDCS Resource is shown. This instance is selected. An Add button is also shown.](images/env-add-service-instances.png "Environments page")
 
    Wait for the instance's Status to turn green, from 'Unknown' to 'Available'.
 
@@ -115,7 +115,7 @@ Once you have a project with an Oracle Cloud Apps environment, create a workspac
   {: title="New App Extension Fields"}
 
   Here are the values used for demo purposes in this workshop:
-  ![This image shows the New Application Extension dialog, with fields filled as follows: Extension Name: DemoEmpSearch; Extension Id: site_DemoEmpSearch; Workspace Name: DemoEmpSearch; Development Environment: DEV; Sandbox: No sandbox selected. The Create new repository option is selected. DemoEmpSearch is entered in the Repository Name field and branch1 is entered into the Working Branch field.](images/create-workspace.png)
+  ![This image shows the New Application Extension dialog, with fields filled as follows: Extension Name: DemoEmpSearch; Extension Id: site_DemoEmpSearch; Workspace Name: DemoEmpSearch; Root folder: extesion1; Development Environment: DEV; Sandbox: No sandbox selected. The Create new repository option is selected. DemoEmpSearch is entered in the Repository Name field and branch1 is entered into the Working Branch field.](images/create-workspace.png)
 4. Click **Create**.
 
   VB Studio opens your workspace in the Designer, where you can get started with developing your App UI.
@@ -124,7 +124,7 @@ Once you have a project with an Oracle Cloud Apps environment, create a workspac
 
 When your workspace first opens in the Designer, your screen might look something like this:
 
-![This image shows the designer view that opens right after a workspace is created. The Navigator is on the left side of the page and the welcome message is on the right side.](images/welcome.png)
+![This image shows the designer view that opens right after a workspace is created. The Navigator is on the left side of the page and the welcome page is on the right.](images/welcome.png)
 
 On the left edge is a vertical toolbar with icons representing App UIs, Services, Dependencies, and so on. This toolbar is the Navigator, which helps you move between the artifacts in your extension.
 
@@ -132,7 +132,7 @@ The App UIs pane is where you'd get started with App UIs (entire pages and flows
 
 Now take a look at the header:
 
-![This image shows the workspace header, with the workspace name, Git repository, and current branch on the left. Other elements on the right are Preview, Publish, and an Options menu.](images/header.png)
+![This image shows the workspace header, with the workspace name, Git repository, and current branch on the left. Other elements on the right include Preview, Notifications, Publish, and a menu.](images/header.png)
 
 * On the left is the name of your current workspace, **DemoEmpSearch**; next to it is the project's Git repository (**DemoEmpSearch.git**) and the branch currently associated with your workspace (**branch1**).
 
