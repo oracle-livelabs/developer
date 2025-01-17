@@ -2,20 +2,21 @@
 
 ## Introduction
 
-Now that we've created the UI (frontend) for our App UI, it's time to work with the backend and connect your extension to data that lives in Oracle Cloud Applications.
+Now that we've created the UI for our App UI, it's time to connect the extension to data that lives in Oracle Cloud Applications.
 
 Estimated Time: 5 minutes
 
 ### About this lab
 
-Oracle Cloud Applications provides REST-based access to its data. In this lab, we'll use the service catalog in VB Studio to browse the available REST services, pick one, then display data from it on the page.
+Oracle Cloud Applications provides REST-based access to its data. In this lab, we'll use the service catalog in VB Studio to browse available REST services, pick one, then display data from it on the page. You'll also test the App UI to make sure it's working correctly.
 
 ### Objectives
 
 In this lab, you will:
 
-* Connect your extension to Oracle Cloud App data
-* Set up the App UI to filter and display data
+* Create a service connection to access Oracle Cloud App data
+* Display data in the App UI's page and set up filtering
+* Test the App UI
 
 ### Prerequisites
 
@@ -47,7 +48,7 @@ Create a connection to the Oracle Human Capital Management (HCM) services catalo
 
     Now we can use this service connection to create the list of employees we want.
 
-## Task 2: Add data to the page and set up filtering
+## Task 2: Display data and set up filtering
 
 Display a list of employees based on data we get from HCM, then set up a mechanism to filter the list based on the employee's display name. We want to compare each name to whatever the user enters as a search string, in order to find the proper match.
 
@@ -61,11 +62,11 @@ Display a list of employees based on data we get from HCM, then set up a mechani
 
     ![This image shows the publicWorkers service being dropped onto the Welcome Page Template in the Structure view. The Select a Slot pop-up shows the Default slot as available, with the Search slot shown as full.](images/welcome-page-template-default-slot.png)
 
-4. When shown options to display the data, select **Table** (not the first Table Dynamic option).
+4. When shown options to display the data, select **Table** (not Table Dynamic, the first option).
 
     ![This image shows a "Render as" pop-up below the Welcome Page Template component. The second "Table" item is selected. Other options include Table Dynamic, List Dynamic, Details Dynamic, and List](images/render-as-list-selection.png)
 
-5. In the Add Data wizard, the **Endpoint Structure** panel shows all the fields that are available for us to choose from in the **publicWorkers** object. Use the Filter field and select **DisplayName**, **PhoneNumber** and **LocationTownOrCity**. Click **Next**.
+5. In the Add Data wizard, the **Endpoint Structure** panel shows all the fields that are available for us to choose from in the **publicWorkers** object. Use the Filter and select the **DisplayName**, **PhoneNumber** and **LocationTownOrCity** fields to show as table columns. Click **Next**.
 
     ![This image shows the Add Data page with the word "LocationTownOrCity" in the Endpoint Structure search field. In the Columns Fields, DisplayName, PhoneNumber, and LocationTownOrCity are shown.](images/add-data-wizard-binddata.png)
 
@@ -85,6 +86,18 @@ Display a list of employees based on data we get from HCM, then set up a mechani
 
     The main-start page should filter and display a list of employees in a table:
     ![This image shows a list of employees displayed in a table under the Emp Name search  field.](images/empdisplay.png)
+
+## Task 3: Test the App UI
+
+Test your App UI to make sure it's working as expected.
+
+1. Click ![Preview icon](images/icon-preview.png) **Preview** in the header.
+
+2. When the App UI opens in a new browser tab displaying a list of employees, enter criteria, like the first name `David`, in the **Emp Name** field to filter the list and hit **Enter**:
+
+    ![This image shows a preview of the App UI. The name "David" is entered in the search field and the results of the search are listed underneath.](images/preview.png)
+
+3. Close the browser tab.
 
 You may now **proceed to the next lab**.
 

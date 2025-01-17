@@ -17,6 +17,7 @@ Within your project, you'll create a *workspace*, a completely private area for 
 In this lab, you will:
 
 * Access VB Studio from your Oracle Cloud Application environment
+* (Optional) Create a project with an Oracle Cloud Apps environment
 * Create an extension (also considered a workspace) for your Oracle Cloud App
 
 ### Prerequisites
@@ -33,7 +34,7 @@ Users with [the right roles](https://docs.oracle.com/en/cloud/paas/visual-builde
 1. Log in to your Oracle Cloud Applications instance.
   ![The Oracle Cloud Applications sign-in page is shown. The User ID field shows john.dunbar, the Password field is empty.](images/login.png)
 
-2. Click the menu ![Hamburger menu icon](images/icon-menu.png) in the upper left corner, navigate to **Configuration**, then select **Visual Builder** (synonymous with VB Studio):
+2. Click the menu ![Hamburger menu icon](images/icon-menu.png) in the upper left corner, navigate to **Configuration**, then select **Visual Builder** (synonymous with VB Studio).
   ![This image shows the left navigator menu in an Oracle Cloud Applications instance. The Configuration submenu item is expanded and the Visual Builder menu item is highlighted.](images/configuration-vb.png)
 
 3. When VB Studio opens on the Organization page, select the project you want to use to develop extensions for your Oracle Cloud Application. If you don't have a project, create one as described in the next task.
@@ -96,7 +97,7 @@ Once you have a project with an Oracle Cloud Apps environment, create a workspac
 
 1. Click ![Workspaces icon](images/icon-workspaces.png) **Workspaces** in the navigation menu.
 
-2. Click **New** and select **New Application Extension**:
+2. Click **New** and select **New Application Extension**.
   ![This image shows the Workspaces tab for the project with the New menu expanded. The New Application Extension option is selected in the menu.](images/create-extension.png)
 
 3. In the **New Application Extension** dialog, populate the fields with these values:

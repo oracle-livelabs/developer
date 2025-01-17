@@ -1,16 +1,19 @@
-# Test and publish the extension
+# Publish the extension
 
 ## Introduction
 
-Now that we've set up the App UI in our extension, we'll test it to make sure it's working correctly. We'll then publish the extension and view the App UI deployed to your Oracle Cloud Applications instance.
+Now that we've tested the App UI in our extension, we're ready to publish the extension and view the App UI deployed to your Oracle Cloud Applications instance.
 
 Estimated Time: 5 minutes
+
+### About this lab
+
+Publishing saves your application's code from the local branch in your workspace to the remote branch in the project's Git repository, then to the project's default (main) branch. While it's possible to complete each of these Git operations separately, it's simplest to do all of this at the click of a single Publish button—as we'll do in this lab.
 
 ### Objectives
 
 In this lab, you will:
 
-* Test your App UI's pages
 * Deploy your App UI's extension to your Oracle Cloud Application instance
 * Access the deployed extension
 
@@ -18,19 +21,7 @@ In this lab, you will:
 
 This lab assumes you have all previous labs successfully completed.
 
-## Task 1: Test the App UI
-
-You can preview your App UI to run it in its own browser tab and see how it will appear to a user.
-
-1. Click ![Preview icon](images/icon-preview.png) **Preview** in the header.
-
-2. When the App UI opens displaying a list of employees, enter criteria, like the first name `David`, in the **Emp Name** field to filter the list and hit **Enter**:
-
-    ![This image shows a preview of the App UI. The name "David" is entered in the search field and the results of the search are listed underneath.](images/preview.png)
-
-3. Close the browser tab.
-
-## Task 2: Publish the extension
+## Task 1: Publish the extension
 
 After you've confirmed search is working, you are ready to deploy the extension with its App UI to your Oracle Cloud Applications instance.
 
@@ -51,7 +42,7 @@ After you've confirmed search is working, you are ready to deploy the extension 
 
     What you're seeing are the Git steps taken to push your changes from the local **branch1** to the remote **branch1**, then to merge them to the project's **main** branch.
 
-## Task 3: View the deployed extension
+## Task 2: View the deployed extension
 
 Once your changes are successfully merged to your project's repo, VB Studio automatically kicks off the default build jobs that deploy the extension to your environment's Oracle Cloud Applications instance. Notifications to that effect appear in the bottom right corner.
 

@@ -8,7 +8,7 @@ Estimated Time: 5 minutes
 
 ### About this lab
 
-An App UI is simply an application that takes the form of VB Studio flows and pages. Pages within the App UI take shape within the Designer, a rich graphical user interface that lets you design and develop your app by dragging and dropping components on a page. These components—all based on the open-source Oracle JavaScript Extension Toolkit (JET)—enable you to create rich UIs that span multiple devices.
+An App UI is an application that takes the form of VB Studio flows and pages. Pages within the App UI take shape within the Designer, a rich graphical user interface that lets you design and develop your app by dragging and dropping components on a page. These components—all based on the open-source Oracle JavaScript Extension Toolkit (JET)—enable you to create rich UIs that span multiple devices.
 
 You also have access to page templates based on Redwood, the Oracle standard for user experience. Redwood page templates include a rich set of user interface elements and provide a consistent look and feel across your app's pages. They also provide a responsive user experience, which means your app will adjust to the device accessing it.
 
@@ -26,9 +26,9 @@ This lab assumes you have all previous labs successfully completed.
 
 ## Task 1: Create an App UI
 
-Start by creating an App UI that takes the form of VB Studio flows and pages.
+Start by creating an App UI.
 
-1. In the **App UIs** pane, click **+ App UI**:
+1. In the **App UIs** pane, click **+ App UI**.
 
     ![This image shows the App UIs tab, with the + App UI button selected.](images/create-app.png)
 
@@ -62,11 +62,11 @@ Start by creating an App UI that takes the form of VB Studio flows and pages.
 
 Change the main-start page to use a Redwood Welcome Page Template, allowing you to quickly create a search page using predefined components.
 
-1. With the main-start page open in the Page Designer, click **Properties** to open the page's Properties pane, then click **Select Page Template**.
+1. In the Page Designer, click **Properties** to open the main-start page's Properties pane, then click **Select Page Template**.
 
    ![This image shows the main-start page's Properties pane. It includes Title, Description, Select Page Template, and Preferred Layout options.](images/select-page-template.png)
 
-2. When the Page Templates dialog opens, scroll down and select **Welcome Page Template**. (If you don't see this template, go back to the first lab and make sure you set up all the components.) Click **Select**.
+2. When the Page Templates dialog opens, scroll down and select **Welcome Page Template**. (If you don't see this template, go back to the first lab and make sure you set up all the project components.) Click **Select**.
 
    ![This image shows the Page Templates dialog. A **No Page Content** shows on top. Under that, a **Page Content** section shows several templates such as Advanced Create and Edit Template, Smart Search Page Template, and Welcome Page Template. The Cancel and Select buttons are also shown.](images/page-templates.png)
 
@@ -100,7 +100,7 @@ Let's now add an Input Search component that allows users to enter some search t
 
 3. In the Input Search component's Properties pane, enter  `Emp Name` as the **Placeholder**. You'll see this text appear as a placeholder in the component on the canvas.
 
-4. Let's now map the input search field to a variable, which will hold the employee detail that the user will search for. In the Input Search component's Properties pane, click the **Data** tab, then hover over the **Value** text, and click ![Select Variable icon](images/icon-selectvariable.png) next to **fx**.
+4. Let's now map the input search field to a variable, which will hold the employee detail that the user will search for. Click the **Data** tab in the Properties pane, then hover over the **Value** text, and click ![Select Variable icon](images/icon-selectvariable.png) next to **fx**.
 
     ![This image shows the Input Search component's Properties pane, with the cursor hovering over the Select Variable icon.](images/component-properties-data.png)
 
