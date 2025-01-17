@@ -72,6 +72,9 @@ Display a list of employees based on data we get from HCM, then set up a mechani
 
 6. In the **Define Query** screen, select **filterCriterion** in the **Target** panel.
 
+    ![This image shows the Define Query page with { } filterCriterion highlighted in the Target pane.](images/add-data-wizard-definequery-filtercriterion.png)
+
+
 7. At the bottom of the page, click **Click to add condition**.
 
 8. Set up the condition as follows:
@@ -80,7 +83,7 @@ Display a list of employees based on data we get from HCM, then set up a mechani
     * **Operator**: contains ($co)
     * **Value**: $variables.searchString
 
-    ![This image shows the Define Query page with { } filterCriterion selected in the Target pane. At the bottom of the page, the Builder tab is selected and DisplayName is entered in the IF field, contains ($co) is chosen in the operator field, and $variables.searchString is in the variable field.](images/add-data-wizard-definequery.png)
+    ![This image shows the filterCriterion builder at the bottom of the Define Query page. DisplayName is entered in the IF field, contains ($co) is chosen in the operator field, and $variables.searchString is in the variable field.](images/add-data-wizard-definequery.png)
 
 9. Click **Done**, then **Finish**.
 
