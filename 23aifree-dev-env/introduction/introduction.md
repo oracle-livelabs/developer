@@ -2,11 +2,11 @@
 
 ## About this Workshop
 
-Welcome to the **Become a Data Engineer—Build your own 23ai free container** workshop!
+Welcome to the **Become a Data Engineer—Build your own Oracle Datavase 23ai test lab** workshop!
 
-In this workshop you learn to build your own Oracle Database 23ai free environment on your own laptop.
+In this workshop you learn to build your own Oracle Database 23ai free environment using Docker/Podman container on your own laptop.
 
-As a data engineer, you play a critical role in developing, implementing, and maintaining systems and processes that transform raw data into high-quality, consistent information to support key use cases like analytics and machine learning. Your work sits at the intersection of security, data management, DataOps, data architecture, orchestration, and software engineering, requiring a deep understanding of diverse tools and methodologies. Managing the data engineering lifecycle—from extracting data from source systems to delivering it for analysis or machine learning—is at the core of your responsibilities.
+**As a Data Engineer,** you play a critical role in developing, implementing, and maintaining systems and processes that transform raw data into high-quality, consistent information to support key use cases like analytics and machine learning. Your work sits at the intersection of security, data management, DataOps, data architecture, orchestration, and software engineering, requiring a deep understanding of diverse tools and methodologies. Managing the data engineering lifecycle—from extracting data from source systems to delivering it for analysis or machine learning—is at the core of your responsibilities.
 
 ### What makes this workshop essential for becoming a Data Engineer?
 Having access to a local database environment is crucial for you as a data engineer. 
@@ -18,7 +18,7 @@ Having access to a local database environment is crucial for you as a data engin
 - **Robust Solutions**: Empowers you to build efficient, reliable solutions tailored to analytics and machine learning demands.
 
 ### The role of the Database
-A database system is a crucial tool for a Data Engineer. Data engineering primarily revolves around SQL, with relational databases serving as the main storage for data. Data processing tasks are typically performed using SQL or languages derived from it. In some cases, ETL tools are utilized for these processing activities.
+**A database system is a crucial tool for a Data Engineer**. Data engineering primarily revolves around SQL, with relational databases serving as the main storage for data. Data processing tasks are typically performed using SQL or languages derived from it. In some cases, ETL tools are utilized for these processing activities.
 As a Data Engineer, having immediate access to an Oracle Database to test and analyze data is an important step of the data engineering lifecycle.
 
 Estimated duration: **90 minutes**
