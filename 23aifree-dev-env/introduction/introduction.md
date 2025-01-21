@@ -17,6 +17,10 @@ Having access to a local database environment is crucial for you as a data engin
 - **Reliability Assurance**: Ensures data quality and system dependability before production deployment.
 - **Robust Solutions**: Empowers you to build efficient, reliable solutions tailored to analytics and machine learning demands.
 
+### The role of the Database
+A database system is a crucial tool for a Data Engineer. Data engineering primarily revolves around SQL, with relational databases serving as the main storage for data. Data processing tasks are typically performed using SQL or languages derived from it. In some cases, ETL tools are utilized for these processing activities.
+As a Data Engineer, having immediate access to an Oracle Database to test and analyze data is an important step of the data engineering lifecycle.
+
 Estimated duration: **90 minutes**
 
 ### Objectives
