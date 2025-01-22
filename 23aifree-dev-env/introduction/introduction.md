@@ -2,7 +2,7 @@
 
 ## About this Workshop
 
-Welcome to the **Become a Data Engineer—Build your own Oracle Datavase 23ai test lab** workshop!
+Welcome to the **Become a Data Engineer—Build your own Oracle Database 23ai test lab** workshop!
 
 In this workshop you learn to build your own Oracle Database 23ai free environment using Docker/Podman container on your own laptop.
 
