@@ -36,6 +36,10 @@
             "filename": "../../container-options/container-options.md"
         },
         {
+            "title": "Lab 7: Build a 23ai development container",
+            "filename": "../../build-a-test-env/build-a-test-env.md"
+        },
+        {
             "title": "Need Help?",
             "description": "Solutions to Common Problems and Directions for Receiving Live Help",
             "filename": "https://oracle-livelabs.github.io/common/labs/need-help/need-help-freetier.md"

@@ -8,7 +8,7 @@ Unlike Linux systems, Windows and macOS do not natively support the container ru
 The Podman machine acts as a lightweight virtual machine, providing the necessary Linux kernel and runtime environment to manage and execute containers seamlessly.
 This ensures compatibility with containerized workloads, enabling you to run, test, and develop containerized applications effectively on non-Linux operating systems.
 
->**Note:** We are only providing instructions using Podman Desktop in this workshop. You can create a Podman machine also using the command line. If you are using Docker/Docker Desktop you need to create Docker Desktop VM or Docker virtual machine. The concept is the same, however the steps may slightly differ. Please refer to the official Docker documentation for more details.
+>**Note:** In this workshop, we will provide instructions exclusively using Podman Desktop. If you prefer, you can also create a Podman machine using the command line. For users of Docker/Docker Desktop, you will also need to create a Docker Desktop VM or Docker virtual machine. While the underlying concept is similar, the steps may differ slightly. To ensure accuracy, we recommend consulting the official Docker documentation for detailed guidance.
 
 Estimated Time: 10 minutes
 
@@ -56,6 +56,56 @@ Create a Podman machine
 ## Task 4 (optional): Experiment
 
 1. Feel free to configure a Podman Machine that suits your requirements of performance. 
+
+## Appendix - Create Podman Machine using the command line
+
+1. Open a terminal. And run the following command to list all available virtual machines.
+
+    ```bash
+    $ <copy>
+    podman machine ls
+    </copy>
+    ```
+
+    ![list podman machines](./images/list-vms.png)
+
+
+2. Stop any running running machines:
+
+    ```bash
+    $ <copy>
+    podman machine stop &lt;NAME&gt;
+    </copy>
+    ```
+
+3. Create a new Podman Machine using the following command:
+
+    ```bash
+    $ <copy>
+    podman machine init --cpus 2 --memory 4096 --disk-size 20 23ai-machine
+    </copy>
+    ```
+
+    This command will create a new virtual machine with 2 CPUs, 4 GB RAM with a disk size of 20 GB. The name is *23ai-machine*.
+
+    ![init machine](./images/init-machine.png)    
+
+4. Start your new Podman Machine (in case it is not automatically started):
+
+    ```bash
+    $ <copy>
+    podman machine start 23ai-machine
+    </copy>
+    ```
+
+5. Check the list of your Podman Machines:
+   
+    ```bash
+    $ <copy>
+    podman machine ls
+    </copy>
+    ```
+    ![list podman machines](./images/list-vms2.png)
 
 ## Congratulations!
 Let's continue with the next lab.

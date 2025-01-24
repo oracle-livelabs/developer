@@ -14,15 +14,15 @@ In general, containers can be in one of the following states:
 
 In the following section, we will learn more about the **running** and **stopped/exited** state.
 
-> **Note:** The instructions use podman. In case you are using Docker, you can replace podman with the docker command.
+> **Note:** The instructions use Podman. In case you are using Docker, you can replace Podman with the Docker command.
 
 Estimated Time: 15 minutes
 
 ### Objectives
 
-- Understand container options for running a 23ai free container
+- Explore the container life cycle
 
-## Prerequisites:
+## Prerequisites
 
 - Successfully completed task 3 of the previous lab
 - There are now containers running and any stopped containers a removed from the system
@@ -67,7 +67,7 @@ Each image can be identified by it's image ID. This is important, for example, w
 1. Run the following command to create new 23ai free container. As a source, we are using the locally stored image.
 
     > **Note:** Did you realize how fast the creation was? You can access a new 23ai free database in under **10 seconds**!
-    
+
     ```bash
     $ <copy>
     podman run --name 23ai -e ORACLE_PWD=Hello23ai -p 1521:1521 container-registry.oracle.com/database/free:latest
@@ -177,17 +177,17 @@ Each image can be identified by it's image ID. This is important, for example, w
 
 ## Summary & overview of Podman commands used so far
 
-In the previous section, we learned how to use various commands in conjunction with our database container. Here’s a summary of the most important commands we can utilize once we have create a container using `podman &lt;run&gt;` command:
+In the previous section, we learned how to use various commands in conjunction with our database container. Here’s a summary of the most important commands we can utilize once we have create a container using `podman run` command:
 
-| Podman command                          | Notes                                                                     |
-| --------------------------------------- | ------------------------------------------------------------------------- |
-| `podman start &lt;container name&gt;`   | Starts a stopped container                                                |
-| `podman stop &lt;container name&gt;`    | Stops a running container                                                 |
-| `podman ps`                             | Show all currently running container                                      |
-| `podman ps -a`                          | Shows all container including stopped container                           |
-| `podman rm &lt;container name&gt;`      | Removes/deletes container. This only works when the container is stopped. |
-| `podman pause &lt;container name&gt;`   | Pauses a container                                                        |
-| `podman restart &lt;container name&gt;` | Restarts a running/stopped container                                      |
+| Podman command                    | Notes                                                                     |
+| --------------------------------- | ------------------------------------------------------------------------- |
+| `podman start <container name>`   | Starts a stopped container                                                |
+| `podman stop <container name>`    | Stops a running container                                                 |
+| `podman ps`                       | Show all currently running container                                      |
+| `podman ps -a`                    | Shows all container including stopped container                           |
+| `podman rm <container name>`      | Removes/deletes container. This only works when the container is stopped. |
+| `podman pause <container name>`   | Pauses a container                                                        |
+| `podman restart <container name>` | Restarts a running/stopped container                                      |
 
 
 

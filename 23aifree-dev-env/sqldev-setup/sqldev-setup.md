@@ -1,4 +1,4 @@
-# Install Podman Desktop
+# Install Oracle SQL Developer Extension for VS Code
 
 ## Introduction
 
@@ -22,6 +22,10 @@ Estimated Time: 5 minutes
 
 - Add Oracle SQL Developer Extension for VS Code
 
+## Prerequisites
+
+- VS Code is installed
+
 ## Task 1: Add Oracle SQL Developer Extension for VS Code
 
 1. Open Visual Studio Code.
@@ -36,7 +40,7 @@ Estimated Time: 5 minutes
 
 >**Note:** Please do not install the deprecated extension "Oracle Developer Tools for VS Code"
 
-## Conclusion: 
+## Conclusion 
 Congratulation! Now let's start playing with containers and 23ai free!
 
 
