@@ -180,6 +180,11 @@ We need to include the mapping -v ./data:/opt/oracle/scripts/startup in our `pod
     ![logs](./images/logs.png)
 
 
+## Task 7: Connect as ora23ai to the database
+
+
+
+
 ## Conclusion
 You successfully installed 23ai free in a container and you successfully connected to the database using VS Code and ran your first query. Congratulations!
 
