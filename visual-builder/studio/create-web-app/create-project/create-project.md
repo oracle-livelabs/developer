@@ -85,9 +85,9 @@ Define an environment that points to your Visual Builder development instance, w
 
     ![The empty Development environment shown on the Environments page. An Add Instance button is shown in the Service Instances tab. The Details and Certificates tabs are also visible.](images/env-add-instance.png "Environments page")
 
-4. With Instance Type set to **Visual Builder and Oracle Integration** and Add Instance Using set to **Instance List** in the Add Service Instance dialog, locate a Visual Builder instance connected to your OCI account. (If the instance you want does not show in the list, you're likely missing a policy statement for the OCI compartment used by your VB Studio instance and should [add it in](?lab=provision#Task3:AuthorizeVBStudiotoaccessVisualBuilder).) Once you have the instance you want, select it and click **Add**.
+4. With Instance Type set to **Visual Builder and Oracle Integration** and Add Instance Using set to **Instance List** in the Add Service Instance dialog, click ![Edit icon](images/edit-icon.png) next to OCI Details and choose the region and compartment where your Visual Builder is, then select an instance from the list. (If the instance you want does not show, you're likely missing a policy statement for the OCI compartment used by your VB Studio instance and should [add it in](?lab=provision#Task3:AuthorizeVBStudiotoaccessVisualBuilder).) Once you have the instance you want, select it and click **Add**.
 
-    ![The Add Service Instances dialog with myVBinstance of type Visual Builder IDCS Resource selected. An Add button is also shown.](images/env-add-service-instances.png "Environments page")
+    ![The Add Service Instances dialog with myVBinstance of type Visual Builder selected. An Add button is also shown.](images/env-add-service-instances.png "Environments page")
 
     **Note:** To add an instance that's doesn't show in the Instance list because it's connected to a different OCI account, select **Visual Builder Credentials** under Add Instance Using, enter the URL to your Visual Builder instance's home page (for example, http://yourserver/ic/builder), the username and password of someone who can access that instance, and click **Add**.
 
@@ -95,7 +95,7 @@ Define an environment that points to your Visual Builder development instance, w
 
     Wait for the instance's Status to turn green, from 'Unknown' to 'Available'.
 
-5. Click ![Project Home icon](images/vbs-project-home-icon.png) **Project Home** in the left navigator to see your environment now defined.
+5. Click ![Project Home icon](images/vbs-project-home-icon.png) **Project Home** in the left navigator to see your Development environment now defined.
 
 ## Task 3: Create a workspace for a visual application
 
@@ -145,4 +145,4 @@ You now need to create a workspace, a private area for you to work on your visua
 ## Acknowledgements
 
 * **Author** - Sheryl Manoharan, VB Studio User Assistance, November 2021
-* **Last Updated By/Date** - Sheryl Manoharan, October 2024
+* **Last Updated By/Date** - Sheryl Manoharan, January 2025
