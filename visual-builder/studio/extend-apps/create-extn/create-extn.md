@@ -29,7 +29,7 @@ This lab assumes you have:
 
 ## Task 1: Access VB Studio from Oracle Cloud Applications
 
-Users with [the right roles](https://docs.oracle.com/en/cloud/paas/visual-builder/visualbuilder-administration/set-vb-studio-extend-oracle-cloud-applications.html#GUID-4B6EF26F-46C6-40E5-A837-6188013B3C98) can access VB Studio from their Oracle Cloud Applications' TEST instance.
+Users with [the right roles](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/visual-builder/visualbuilder-administration&id=GUID-3C9A957B-24A5-4CEF-84FF-B7D9D6F1C3CA) can access VB Studio from their Oracle Cloud Applications' TEST instance.
 
 1. Log in to your Oracle Cloud Applications instance.
   ![The Oracle Cloud Applications sign-in page is shown. The User ID field shows john.dunbar, the Password field is empty.](images/login.png)
