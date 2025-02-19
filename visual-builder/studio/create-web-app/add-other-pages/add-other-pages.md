@@ -87,9 +87,9 @@ Now that we've added options to let users manage departments, we'll do the same 
 
     ![The deleteEmployeeChain shows in diagram view. On the success branch of the Call REST action, a second Fire Data Provider Event action has been added. Its properties pane show on the right: Event Target is undefined and Type is set to Mutate.](images/deleteempchain-actionchain.png "")
 
-5. In the second Fire Data Provider Event action's Properties pane, click ![Select Variable icon](images/variable-picker-icon.png) next to **Event Target** (you'll need to hover over the field to see the icon) and select **employeeListSDP2**, which is the data provider backing the bar chart.
+5. In the second Fire Data Provider Event action's Properties pane, click the **Event Target** drop-down list and select **employeeListSDP2** (which is the data provider backing the bar chart) under Page and Variables.
 
-   ![The Fire Data Provider Event action's properties are shown. The Event Target property's variable picker is open, with employeeListSDP2 highlighted.](images/deleteempchain-actionchain-updated.png "")
+   ![The Fire Data Provider Event action's properties are shown. The Event Target drop-down list is shown, with employeeListSDP2 highlighted.](images/deleteempchain-actionchain-updated.png "")
 
 6. Change the Type from **Mutate** to **Refresh**.
 
@@ -158,4 +158,4 @@ Now that we have our web pages, let's change the application's home page from De
 ## Acknowledgements
 
 * **Author** - Sheryl Manoharan, VB Studio User Assistance, November 2021
-* **Last Updated By/Date** - Sheryl Manoharan, October 2024
+* **Last Updated By/Date** - Sheryl Manoharan, January 2025
