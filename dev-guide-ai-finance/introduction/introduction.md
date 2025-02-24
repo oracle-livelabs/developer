@@ -15,15 +15,15 @@ This workshop demonstrates how developers and business executives alike can harn
 
 ### Objectives
 
-The primary goal of this workshop is to demonstrate Oracle Database 23ai’s capabilities in automating and enhancing the mortgage underwriting process. By leveraging AI Vector Search, Graph, and JSON/JSON DUALITY VIEWS, this project will help participants understand how to: 
+The primary goal of this workshop is to demonstrate Oracle Database 23ai’s capabilities in automating and enhancing the mortgage underwriting process. By leveraging AI Vector Search, Graph, and JSON/JSON DUALITY VIEWS, this project will help participants understand how to:
 
-* Upload mortgage application data in PDF format. 
-* Use AI Vector Search to ask questions about the applicant’s financial data. 
-* Analyze applicant data using a Wealth Management Graph. 
-* Track the loan approval status and update loan applications. 
-* Generate PDF reports on loan decisions. 
-* Send AI-generated emails to applicants notifying them of their approval status. 
-* Through hands-on demonstrations and technical deep-dives, the workshop will guide attendees through the process of integrating these AI-driven features into a custom web application designed for mortgage loan underwriting. 
+* Upload mortgage application data in PDF format.
+* Use AI Vector Search to ask questions about the applicant’s financial data.
+* Analyze applicant data using a Wealth Management Graph.
+* Track the loan approval status and update loan applications.
+* Generate PDF reports on loan decisions.
+* Send AI-generated emails to applicants notifying them of their approval status.
+* Through hands-on demonstrations and technical deep-dives, the workshop will guide attendees through the process of integrating these AI-driven features into a custom web application designed for mortgage loan underwriting.
 
 <!-- *List objectives for the workshop* -->
 
