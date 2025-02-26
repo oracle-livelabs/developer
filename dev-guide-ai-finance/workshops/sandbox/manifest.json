@@ -13,26 +13,18 @@
             "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/cloud-login.md"
         },
         {
-            "title": "Lab 1: Loading and Exploring Financial Data",
+            "title": "Lab 1: Create Demo Environment",
             "description": "This is a step-by-step guide showcasing how the demo instance is navigated",
-            "filename": "../../demo-lab/demo-lab.md"
+            "filename": "../../create-demo/create-demo.md"
         },
         {
-            "title": "Lab 2: Implementing AI Vector Search for Investment Recommendations",
+            "title": "Lab 2: Run Demo",
             "description": "Labs that follow the introduction are numbered, starting with Lab 1",
-            "filename": "../../ai-vector/ai-vector.md"
+            "filename": "../../run-demo/run-demo.md"
         },
         {
-            "title": "Lab 3: Querying Customer Financial Relationships using Graph Analytics",
-            "filename": "../../graph/graph.md"
-        },
-        {
-            "title": "Lab 4: Implementing AI-Powered Portfolio Optimization",
-            "filename": "../../ai/ai.md"
-        },
-        {
-            "title": "Lab 5:  Real-time Insights & Next Steps",
-            "filename": "../../insights/insights.md"
+            "title": "Lab 3: Environment Clean up",
+            "filename": "../../clean-up/clean-up.md"
         },
         {
             "title": "Need Help?",
