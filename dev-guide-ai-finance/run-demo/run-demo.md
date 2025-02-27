@@ -14,9 +14,7 @@ Enter background information here about the technology/feature or product used i
 *List objectives for this lab using the format below*
 
 In this lab, you will:
-* Objective 1
-* Objective 2
-* Objective 3
+* Begin the loan application use case
 
 ### Prerequisites (Optional)
 

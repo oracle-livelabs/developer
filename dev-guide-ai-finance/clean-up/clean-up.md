@@ -14,9 +14,9 @@ Enter background information here about the technology/feature or product used i
 *List objectives for this lab using the format below*
 
 In this lab, you will:
-* Objective 1
-* Objective 2
-* Objective 3
+* Stop application
+* Stop database
+* Drop compute
 
 ### Prerequisites (Optional)
 
