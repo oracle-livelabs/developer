@@ -18,12 +18,17 @@
             "filename": "../../create-demo/create-demo.md"
         },
         {
-            "title": "Lab 2: Run Demo",
+            "title": "Lab 2: Build Demo",
             "description": "Labs that follow the introduction are numbered, starting with Lab 1",
-            "filename": "../../run-demo/run-demo.md"
+            "filename": "../../build-demo/build-demo.md"
         },
         {
-            "title": "Lab 3: Environment Clean up",
+            "title": "Lab 3: Demo User Story",
+            "description": "Labs that follow the introduction are numbered, starting with Lab 1",
+            "filename": "../../demo-story/demo-story.md"
+        },
+        {
+            "title": "Lab 4: Environment Clean up",
             "filename": "../../clean-up/clean-up.md"
         },
         {

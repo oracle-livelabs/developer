@@ -14,7 +14,10 @@ Enter background information here about the technology/feature or product used i
 *List objectives for this lab using the format below*
 
 In this lab, you will:
-* Begin the loan application use case
+* Build the Introduction Page
+* Build the Dashboard Page
+* Build the Customers Page
+* Build the Loan Decision Page
 
 ### Prerequisites (Optional)
 
@@ -24,59 +27,29 @@ This lab assumes you have:
 * An Oracle Cloud account
 * All previous labs successfully completed
 
+-- **Quick overview of the general flow** 
 
-*This is the "fold" - below items are collapsed by default*
 
-## Task 1: Concise Task Description
+## Task 1: Build the Introduction Page
 
-(optional) Task 1 opening paragraph.
+1. 
 
-1. Step 1
+## Task 2: Build the Dashboard Page
 
-	![Image alt text](images/sample1.png)
+1. 
+  
+## Task 3: Build the Customers Page
 
-2. Step 2
+1. 
 
-  ![Image alt text](images/sample1.png)
+## Task 4: Build the Loan Decision Page
 
-4. Example with inline navigation icon ![Image alt text](images/sample2.png) click **Navigation**.
+1. 
 
-5. Example with bold **text**.
+## Task 5: Launch the Application
 
-   If you add another paragraph, add 3 spaces before the line.
-
-## Task 2: Concise Task Description
-
-1. Step 1 - tables sample
-
-  Use tables sparingly:
-
-  | Column 1 | Column 2 | Column 3 |
-  | --- | --- | --- |
-  | 1 | Some text or a link | More text  |
-  | 2 |Some text or a link | More text |
-  | 3 | Some text or a link | More text |
-
-2. You can also include bulleted lists - make sure to indent 4 spaces:
-
-    - List item 1
-    - List item 2
-
-3. Code examples
-
-    ```
-    Adding code examples
-  	Indentation is important for the code example to appear inside the step
-    Multiple lines of code
-  	<copy>Enclose the text you want to copy in <copy></copy>.</copy>
-    ```
-
-4. Code examples that include variables
-
-	```
-  <copy>ssh -i <ssh-key-file></copy>
-  ```
-
+1. 
+  
 ## Learn More
 
 *(optional - include links to docs, white papers, blogs, etc)*
