@@ -13,23 +13,14 @@
             "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/cloud-login.md"
         },
         {
-            "title": "Lab 1: Create Demo Environment",
+            "title": "Lab 1: Create Hands-on Environment",
             "description": "This is a step-by-step guide showcasing how the demo instance is navigated",
-            "filename": "../../create-demo/create-demo.md"
+            "filename": "../../create-hands-on-demo/create-hands-on-demo.md"
         },
         {
-            "title": "Lab 2: Build Demo",
-            "description": "Labs that follow the introduction are numbered, starting with Lab 1",
-            "filename": "../../build-demo/build-demo.md"
-        },
-        {
-            "title": "Lab 3: Demo User Story",
+            "title": "Lab 2: Demo User Story",
             "description": "Labs that follow the introduction are numbered, starting with Lab 1",
             "filename": "../../demo-story/demo-story.md"
-        },
-        {
-            "title": "Lab 4: Environment Clean up",
-            "filename": "../../clean-up/clean-up.md"
         },
         {
             "title": "Need Help?",
