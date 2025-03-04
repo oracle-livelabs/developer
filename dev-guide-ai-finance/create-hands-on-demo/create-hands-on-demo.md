@@ -35,7 +35,6 @@ press i to insert
 paste the python script
 
 2. vi run.sh
---------------------
 press i to insert
 paste
 

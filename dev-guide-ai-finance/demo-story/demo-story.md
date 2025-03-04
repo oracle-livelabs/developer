@@ -79,10 +79,6 @@ What would be the top 0% down payment loans?
 
 3. This will display the customers loan application details. In approximately 15 seconds, the AI generated recommendations will be displayed.
 
-4. Copy the following prompt into the AI chatbot:
--- add copy tags
-What would be the top 0% down payment loans?
-
 5. Press the **Generate Finalized Decision PDF** button to save the AI responses and proceed to the final loan disposition. 
 
 6. Select **Set Final Decision** in the left navigation menu.
@@ -133,7 +129,7 @@ Show me the lowest monthly payment?
 
 12. Display the message the customer would see by opening the downloaded PDF. 
 
-## Task 4: Edit Customer Details
+## Task 5: Edit Customer Details
 
 1. Select **Dashboard** in the left navigation menu.
 
