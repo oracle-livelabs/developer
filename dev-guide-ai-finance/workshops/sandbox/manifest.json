@@ -18,9 +18,9 @@
             "filename": "../../demo-story/demo-story.md"
         },
         {
-            "title": "Lab 2: Create Hands-on Environment",
+            "title": "Lab 2: Build Hands-on Environment",
             "description": "This is a step-by-step guide showcasing how the demo instance is navigated",
-            "filename": "../../create-hands-on-demo/create-hands-on-demo.md"
+            "filename": "../../build-hands-on-demo/build-hands-on-demo.md"
         },
         {
             "title": "Need Help?",
