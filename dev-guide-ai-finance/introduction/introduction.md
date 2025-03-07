@@ -5,7 +5,13 @@
 This workshop will demonstrate how both developers and business executives can leverage the cutting-edge capabilities of **Oracle Database 23ai** to create a powerful, intelligent mortgage loan underwriting system. Using real-world mortgage loan scenarios, you’ll explore how to integrate AI-driven tools such as **AI Vector Search**, **Graph Analytics**, and **JSON/JSON Duality Views** to make smarter, faster decisions in modern banking and finance.
 
 
+
   [](videohub:1_mg30brw3)
+
+<!-- *You may add an option video, using this format: [](youtube:YouTube video id)*
+
+  [](youtube:zNKxJjkq0Pw) -->
+
 
 ### Objectives
 
@@ -34,7 +40,13 @@ This lab assumes you have:
 * [URL text 2](http://docs.oracle.com)
 
 ## Acknowledgements
+
 * **Authors** - Linda Foinding, Francis Regalado
-* **Contributors** - Kamryn Vinson, Otis Barr, Eddie Ambler, Ramona Magadan
+* **Contributors** - Kamryn Vinson, Otis Barr, Eddie Ambler, Ramona Magadan, Matt Kowalik
 
 * **Last Updated By/Date** - Kamryn Vinson, March 2025
+
+* **Author** - <Name, Title, Group>
+* **Contributors** -  <Name, Group>
+* **Last Updated By/Date** - <Name, Month Year>
+
