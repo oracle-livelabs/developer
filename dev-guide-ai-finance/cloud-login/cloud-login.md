@@ -33,6 +33,7 @@ Estimated Time: 5 minutes
 
     ![Demo Environment](./images/demo-env.png " ")
 
+4. 
 
 ## Task 2: Find your LiveLabs Sandbox reservations
 
