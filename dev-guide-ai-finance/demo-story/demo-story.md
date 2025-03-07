@@ -130,6 +130,7 @@ In this first example, we'll navigate through this application to show you the f
 10. Navigate back to the **Dashboard** and expand **View Denied Customers**. We can see that James Woods has been removed from the Pending Review Loan Requests list and added to the Denied Loan Requests list.
 
     ![James Woods Denied List](./images/james-woods-denied-list.png " ")
+  
    
 ## Task 3: Opportunity Zone User with low income Good Credit 
 
