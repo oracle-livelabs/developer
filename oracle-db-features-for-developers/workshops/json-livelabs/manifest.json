@@ -30,6 +30,12 @@
             "filename": "../../json/json.md"
         },
         {
+            "title": "Lab 4: JSON in the Oracle DB",
+            "description": "JSON Documents",
+            "publisheddate": "4/05/2020",
+            "filename": "../../json/json.md"
+        },
+        {
             "title": "Lab 5: JSON in the Oracle DB - Advanced Topics",
             "description": "JSON Documents",
             "publisheddate": "4/05/2020",

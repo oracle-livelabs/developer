@@ -1,0 +1,31 @@
+{
+    "workshoptitle": "Build a GenAI-Powered Financial Services Loan Approval Application with Oracle 23ai",
+    "help": "livelabs-help-database_us@oracle.com",
+    "tutorials": [
+        {
+            "title": "Introduction",
+            "description": "The Introduction is always first. The title and contents menu title match for the Introduction.",
+            "filename": "../../introduction/introduction.md"
+        },
+        {
+            "title": "Get Started",
+            "description": "Prerequisites for LiveLabs (Oracle-owned tenancies). The title of the lab and the Contents Menu title (the title above) match for Prerequisite lab. This lab is always first.",
+            "filename": "../../cloud-login/cloud-login.md"
+          },
+        {
+            "title": "Lab 1: Demo User Story",
+            "description": "Labs that follow the introduction are numbered, starting with Lab 1",
+            "filename": "../../demo-story/demo-story.md"
+        },
+        {
+            "title": "Lab 2: Build Hands-on Environment",
+            "description": "This is a step-by-step guide showcasing how the demo instance is navigated",
+            "filename": "../../build-hands-on-demo/build-hands-on-demo.md"
+        },
+        {
+            "title": "Need Help?",
+            "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+            "filename":"https://oracle-livelabs.github.io/common/labs/need-help/need-help-freetier.md"
+        }
+    ]
+}
