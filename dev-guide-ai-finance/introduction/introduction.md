@@ -2,54 +2,39 @@
 
 ## About this Workshop
 
-<!--  This introduction covers the complete "parent" workshop. Use this text to set up the story for the workshop. Be engaging - what will the learner get from spending their time on this workshop?
-
-Estimated Workshop Time: -- hours -- minutes (This estimate is for the entire workshop - it is the sum of the estimates provided for each of the labs included in the workshop.) -->
-
-This workshop demonstrates how developers and business executives alike can harness Oracle Database 23ai’s AI Vector Search, Graph Analytics, and JSON/JSON Duality Views to create a highly intelligent mortgage loan underwriting system. By presenting a real-world mortgage loan scenario, we’ll guide participants through every step of the process, showcasing how these advanced tools can be applied to modern banking and finance. 
+This workshop will demonstrate how both developers and business executives can leverage the cutting-edge capabilities of **Oracle Database 23ai** to create a powerful, intelligent mortgage loan underwriting system. Using real-world mortgage loan scenarios, you’ll explore how to integrate AI-driven tools such as **AI Vector Search**, **Graph Analytics**, and **JSON/JSON Duality Views** to make smarter, faster decisions in modern banking and finance.
 
 
-*You may add an option video, using this format: [](youtube:YouTube video id)*
+  [](videohub:1_mg30brw3)
 
-  [](youtube:zNKxJjkq0Pw)
 
 ### Objectives
 
-The primary goal of this workshop is to demonstrate Oracle Database 23ai’s capabilities in automating and enhancing the mortgage underwriting process. By leveraging AI Vector Search, Graph, and JSON/JSON DUALITY VIEWS, this project will help participants understand how to:
+The primary goal of this workshop is to demonstrate **Oracle Database 23ai’s** capabilities in automating and enhancing the mortgage underwriting process. Through hands-on demonstrations and technical deep-dives, the workshop will guide attendees through the process of integrating Oracle 23ai features into a custom web application designed for mortgage loan underwriting.  
+By leveraging **AI Vector Search**, **Graph**, and **JSON/JSON DUALITY VIEWS**, this project will help participants understand how to: 
 
-* Upload mortgage application data in PDF format.
-* Use AI Vector Search to ask questions about the applicant’s financial data.
-* Analyze applicant data using a Wealth Management Graph.
-* Track the loan approval status and update loan applications.
-* Generate PDF reports on loan decisions.
-* Send AI-generated emails to applicants notifying them of their approval status.
-* Through hands-on demonstrations and technical deep-dives, the workshop will guide attendees through the process of integrating these AI-driven features into a custom web application designed for mortgage loan underwriting.
+ 
+* Use AI Vector Search to ask questions about the applicant’s financial data. 
 
-<!-- *List objectives for the workshop* -->
+* Track the loan approval status and update loan applications. 
 
-### Prerequisites (Optional)
+* Generate PDF reports on loan decisions. 
 
-*List the prerequisites for this lab using the format below. Fill in whatever knowledge, accounts, etc. is needed to complete the lab. **Do NOT list** each previous lab as a prerequisite.*
+* Analyze applicant data using a Wealth Management Graph. 
+
+* Send AI-generated emails to applicants notifying them of their approval status. 
+
+### Prerequisites
 
 This lab assumes you have:
 * An Oracle account
-* All previous labs successfully completed
-
-*This is the "fold" - below items are collapsed by default*
-
-In general, the Introduction does not have Steps.
 
 ## Learn More
 
-*(optional - include links to docs, white papers, blogs, etc)*
-
-* [URL text 1](http://docs.oracle.com)
+* [Oracle Database 23ai Documentation](https://docs.oracle.com/en/database/oracle/oracle-database/23/)
 * [URL text 2](http://docs.oracle.com)
 
 ## Acknowledgements
-* **Author** - <Name, Title, Group>
-* **Contributors** -  <Name, Group> -- optional
-* **Last Updated By/Date** - <Name, Month Year>
-
-
-<!-- This is a comment and won't be displayed in the rendered Markdown -->
+* **Authors** - Linda Foinding, Francis Regalado
+* **Contributors** - Kamryn Vinson, Otis Barr, Eddie Ambler, Ramona Magadan
+* **Last Updated By/Date** - Kamryn Vinson, March 2025
