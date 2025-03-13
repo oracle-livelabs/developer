@@ -2,12 +2,9 @@
 
 ## Introduction
 
-*Describe the lab in one or two sentences, for example:* This lab walks you through the steps to ...
+This lab guides you through spinning up and navigating a GenAI-powered loan approval application, designed to streamline the loan processing workflow and significantly reduce the time-consuming paperwork that currently takes months for Loan Officers to handle.
 
 Estimated Lab Time: 30 minutes
-
-### About <Product/Technology> (Optional)
-Enter background information here about the technology/feature or product used in this lab - no need to repeat what you covered in the introduction. Keep this section fairly concise. If you find yourself needing more than two sections/paragraphs, please utilize the "Learn More" section.
 
 ### Objectives
 
