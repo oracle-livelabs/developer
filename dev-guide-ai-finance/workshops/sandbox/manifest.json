@@ -1,5 +1,5 @@
 {
-    "workshoptitle": "Developer's Guide to AI Engineering for Finance using Oracle Database 23ai",
+    "workshoptitle": "Build a GenAI-Powered Financial Services Loan Approval Application with Oracle 23ai",
     "help": "livelabs-help-database_us@oracle.com",
     "tutorials": [
         {
@@ -9,18 +9,18 @@
         },
         {
             "title": "Get Started",
-            "description": "This is the prerequisites for customers using Free Trial and Paid tenancies, and Always Free accounts (if applicable). The title of the lab and the Contents Menu title (the title above) match for Prerequisite lab. This lab is always first.",
-            "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/cloud-login.md"
-        },
+            "description": "Prerequisites for LiveLabs (Oracle-owned tenancies). The title of the lab and the Contents Menu title (the title above) match for Prerequisite lab. This lab is always first.",
+            "filename": "../../cloud-login/cloud-login.md"
+          },
         {
             "title": "Lab 1: Demo User Story",
             "description": "Labs that follow the introduction are numbered, starting with Lab 1",
             "filename": "../../demo-story/demo-story.md"
         },
         {
-            "title": "Lab 2: Create Hands-on Environment",
+            "title": "Lab 2: Build Hands-on Environment",
             "description": "This is a step-by-step guide showcasing how the demo instance is navigated",
-            "filename": "../../create-hands-on-demo/create-hands-on-demo.md"
+            "filename": "../../build-hands-on-demo/build-hands-on-demo.md"
         },
         {
             "title": "Need Help?",

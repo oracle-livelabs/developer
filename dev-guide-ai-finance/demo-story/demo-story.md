@@ -1,17 +1,12 @@
-# Title of the Lab
+# Demo User Story
 
 ## Introduction
 
-*Describe the lab in one or two sentences, for example:* This lab walks you through the steps to ...
+This lab guides you through spinning up and navigating a GenAI-powered loan approval application, designed to streamline the loan processing workflow and significantly reduce the time-consuming paperwork that currently takes months for Loan Officers to handle.
 
-Estimated Lab Time: -- minutes
-
-### About <Product/Technology> (Optional)
-Enter background information here about the technology/feature or product used in this lab - no need to repeat what you covered in the introduction. Keep this section fairly concise. If you find yourself needing more than two sections/paragraphs, please utilize the "Learn More" section.
+Estimated Lab Time: 30 minutes
 
 ### Objectives
-
-*List objectives for this lab using the format below*
 
 In this lab, you will:
 * Begin the demo process of the hands_on loan officer approval use cases
@@ -19,146 +14,282 @@ In this lab, you will:
 ### Prerequisites
 
 This lab assumes you have:
-* The demo workshop has been successfully launched
+* Completed the Get Started lab
+* Successfully launched the demo environment
 
-## Task 1: Demo VA User Good Credit
+## Task 1: Demo User with Good Credit
+
+In this first example, we'll navigate through this application to show you the first user being approved with good credit.
 
 1. Select **Dashboard** in the left navigation menu.
 
-2. On the Dashboard page, from the pending review list, select **James Smith**.
+    ![Select Dashboard](./images/select-dashboard.png " ")
+
+2. On the Dashboard page, from the pending review list, select the Customer ID for **James Smith**.
+
+    ![Select James Smith](./images/james-smith.png " ")
 
 3. This will display the customers loan application details. In approximately 15 seconds, the AI generated recommendations will be displayed.
 
-4. Copy the following prompt into the AI chatbot:
--- add copy tags
-What would be the top 0% down payment loans?
+    ![James Smith AI generated recommendations](./images/james-smith-ai.png " ")
+
+4. Copy the following prompt into the AI chatbot and press Enter.
+
+    ```
+    <copy>
+    What would be the top 0% down payment loans?
+    </copy>
+    ```
+    ![James Smith chatbot](./images/james-smith-chatbot.png " ")
 
 5. Press the **Generate Finalized Decision PDF** button to save the AI responses and proceed to the final loan disposition. 
 
-6. Select **Set Final Decision** in the left navigation menu.
+    ![James Smith PDF](./images/james-smith-pdf.png " ")
 
-7. Press the **Review additional loan options** button. This is where the loan officer could choose to request additional information in order to provide a slightly better loan. For this scenario we will continue with selecting one of the suggested loans
+6. Select **Decision** in the left navigation menu.
 
-8. Select the AI suggested loan with the lowest time to close. Since our customer wanted the lowest time to close, we would select loan number 2.
+    ![James Smith Decision](./images/james-smith-decision.png " ")
+
+7. In the **Select Final Approved Loan Option** section, the graph options using Oracle 23ai Property Graph are displayed. This is where the loan officer could choose to request additional information in order to provide a slightly better loan. For this scenario, we will continue with selecting one of the suggested loans.
+
+    ![James Smith Select Final Approved Loan](./images/james-smith-select-final-loan.png " ")
+
+8. Select the AI suggested loan with the lowest time to close. Since our customer wanted the lowest time to close, we would select loan number 3.
+
+    ![James Smith Select Loan 3](./images/james-smith-select-loan.png " ")
 
 9. Set the final loan status to **Approved**.
 
-10. Click the **Save Final Decision Loan Status** button. 
+    ![James Smith Approved](./images/james-smith-approve.png " ")
 
-11. Click the **Download Decision as PDF** button. 
+10. Click the **Save Final Approval & Loan Status** button. 
 
--- Pending 12. Click **Download PDF**
+    The loan status has been updated to 'Approved' and saved to the customer profile.
 
-12. Display the message the customer would see by opening the downloaded PDF. 
+    ![James Smith Save Loan Status](./images/james-smith-save.png " ")
 
-## Task 2: Demo VA User Bad Credit
+11. Click the **Download Recommendation as PDF** button. 
 
-1. Select **Dashboard** in the left navigation menu.
+    ![James Smith Download Recommendation](./images/james-smith-download.png " ")
 
-2. On the Dashboard page, from the pending review list, select **James Woods**.
+12. Click **Download PDF**
+
+    ![James Smith Download PDF](./images/james-smith-download-pdf.png " ")
+
+13. Display the message the customer would see by opening the downloaded PDF. 
+
+    ![Open James Smith PDF](./images/open-james-smith-pdf.png " ")
+
+14. Navigate back to the **Dashboard** and expand **View Approved Customers**. We can see that James Smith has been removed from the Pending Review Loan Requests list and has been added to the Approved Loan Requests list.
+
+    ![James Smith Approved List](./images/james-smith-approved-list.png " ")
+
+## Task 2: Demo User with Bad Credit
+
+1. Select **Dashboard** in the left navigation menu if you are not on the Dashboard page already.
+
+    ![Select Dashboard](./images/select-dashboard.png " ")
+
+2. On the Dashboard page, from the pending review list, select the Customer ID for **James Woods**.
+
+    ![Select James Woods](./images/james-woods.png " ")
 
 3. This will display the customers loan application details. In approximately 15 seconds, the AI generated recommendations will be displayed.
+
+    ![James Woods AI generated recommendations](./images/james-woods-ai.png " ")
 
 4. Press the **Generate Finalized Decision PDF** button to save the AI responses and proceed to the final loan disposition. 
 
-5. Select **Set Final Decision** in the left navigation menu.
+    ![James Woods PDF](./images/james-woods-pdf.png " ")
 
-6. Click the **Save Final Decision Loan Status** button. 
+5. Select **Decision** in the left navigation menu.
 
-7. Click the **Download Decision as PDF** button. 
+    ![James Woods Decision](./images/james-woods-decision.png " ")
 
--- Pending 8. Click **Download PDF**
+6. Click the **Save Final Approval & Loan Status** button. 
 
-8. Display the message the customer would see by opening the downloaded PDF. 
+    The loan status has been updated to 'Denied' and saved to the customer profile.
+
+    ![James Woods Save Loan Status](./images/james-woods-save.png " ")
+
+7. Click the **Download Recommendation as PDF** button. 
+
+    ![James Woods Download Recommendation](./images/james-woods-download.png " ")
+
+8. Click **Download PDF**
+
+    ![James Woods Download PDF](./images/james-woods-download-pdf.png " ")
+
+9. Display the message the customer would see by opening the downloaded PDF. 
+
+    ![Opem James Woods PDF](./images/open-james-woods-pdf.png " ")
+
+10. Navigate back to the **Dashboard** and expand **View Denied Customers**. We can see that James Woods has been removed from the Pending Review Loan Requests list and added to the Denied Loan Requests list.
+
+    ![James Woods Denied List](./images/james-woods-denied-list.png " ")
   
-## Task 3: Opp-Zone User low income Good Credit 
+   
+## Task 3: Opportunity Zone User with Low Income Good Credit 
 
-1. Select **Dashboard** in the left navigation menu.
+1. Select **Dashboard** in the left navigation menu if you are not on the Dashboard page already.
 
-2. On the Dashboard page, from the pending review list, select **Evan Burton**.
+    ![Select Dashboard](./images/select-dashboard.png " ")
+
+2. On the Dashboard page, from the pending review list, select the Customer ID for **Evan Burton**.
+
+    ![Select Evan Burton](./images/evan-burton.png " ")
 
 3. This will display the customers loan application details. In approximately 15 seconds, the AI generated recommendations will be displayed.
 
-5. Press the **Generate Finalized Decision PDF** button to save the AI responses and proceed to the final loan disposition. 
+    ![Evan Burton AI generated recommendations](./images/evan-burton-ai.png " ")
 
-6. Select **Set Final Decision** in the left navigation menu.
+4. Press the **Generate Finalized Decision PDF** button to save the AI responses and proceed to the final loan disposition. 
 
-7. Press the **Review additional loan options** button. This is where the loan officer could choose to request additional information in order to provide a slightly better loan. 
+    ![Evan Burton PDF](./images/evan-burton-pdf.png " ")
 
-8. Select the AI suggested opportunity zone loan with the lowest monthly payment. Since our customer wanted the lowest monthly payments, we would select loan number --*Put in loan number*--.
+5. Select **Decision** in the left navigation menu.
 
-9. Set the final loan status to **Approved**.
+    ![Evan Burton Decision](./images/evan-burton-decision.png " ")
 
-10. Click the **Save Final Decision Loan Status** button. 
+6. In the **Select Final Approved Loan Option** section, the graph options using Oracle 23ai Property Graph are displayed. This is where the loan officer could choose to request additional information in order to provide a slightly better loan. For this scenario, we will continue with selecting one of the suggested loans.
 
-11. Click the **Download Decision as PDF** button. 
+    ![Evan Burton Select Final Approved Loan](./images/evan-burton-select-final-loan.png " ")
 
--- Pending 12. Click **Download PDF**
+
+7. Select the AI suggested opportunity zone loan with the lowest time to close. In our case, we would select loan number 1.
+
+    ![Evan Burton Select Loan 1](./images/evan-burton-select-loan.png " ")
+
+8. Set the final loan status to **Approved**.
+
+    ![Evan Burton Approved](./images/evan-burton-approve.png " ")
+
+9. Click the **Save Final Approval & Loan Status** button. 
+
+    The loan status has been updated to 'Approved' and saved to the customer profile.
+
+    ![Evan Burton Save Loan Status](./images/evan-burton-save.png " ")
+
+10. Click the **Download Recommendation as PDF** button. 
+
+    ![Evan Burton Download Recommendation](./images/evan-burton-download.png " ")
+
+11. Click **Download PDF**
+
+    ![Evan Burton Download PDF](./images/evan-burton-download-pdf.png " ")
 
 12. Display the message the customer would see by opening the downloaded PDF. 
 
+    ![Open Evan Burton PDF](./images/open-evan-burton-pdf.png " ")
+
+13. Navigate back to the **Dashboard** and expand **View Approved Customers**. We can see that Evan Burton has been removed from the Pending Review Loan Requests list and has been added to the Approved Loan Requests list.
+
+    ![Evan Burton Approved List](./images/evan-burton-approved-list.png " ")
 
 ## Task 4: First Time Home Buyer Good Credit
 
-1. Select **Dashboard** in the left navigation menu.
+1. Select **Dashboard** in the left navigation menu if you are not on the Dashboard page already.
 
-2. On the Dashboard page, from the pending review list, select **James Woods**.
+    ![Select Dashboard](./images/select-dashboard.png " ")
+
+2. On the Dashboard page, from the pending review list, select the Customer ID for **Michael Ramos**.
+
+    ![Select Michael Ramos](./images/michael-ramos.png " ")
 
 3. This will display the customers loan application details. In approximately 15 seconds, the AI generated recommendations will be displayed.
 
-4. Copy the following prompt into the AI chatbot:
--- add copy tags
-Show me the lowest down payment?
-Show me the lowest monthly payment?
+    ![Michael Ramos AI generated recommendations](./images/michael-ramos-ai.png " ")
+
+4. Copy the following prompt into the AI chatbot to see the lowest down payment. Press Enter.
+
+    ```
+    <copy>
+    Show me the lowest down payment.
+    </copy>
+    ```
+    ![Michael Ramos chatbot](./images/michael-ramos-chatbot1.png " ")
+
+    Copy the following prompt into the AI chatbot to see the lowest monthly payment. Press Enter.
+    ```
+    <copy>
+    Show me the lowest monthly payment.
+    </copy>
+    ```
+    ![Michael Ramos chatbot](./images/michael-ramos-chatbot2.png " ")
 
 5. Press the **Generate Finalized Decision PDF** button to save the AI responses and proceed to the final loan disposition. 
 
-6. Select **Set Final Decision** in the left navigation menu.
+    ![Michael Ramos PDF](./images/michael-ramos-pdf.png " ")
 
-7. Press the **Review additional loan options** button. This is where the loan officer could choose to request additional information in order to provide a slightly better loan. For this scenario we will 
+6. Select **Decision** in the left navigation menu.
 
-8. Select the AI suggested opportunity zone loan with the lowest monthly payment. Since our customer wanted the lowest monthly payments, we would select loan number --*Put in loan number*--.
+    ![Michael Ramos Decision](./images/michael-ramos-decision.png " ")
+
+6. In the **Select Final Approved Loan Option** section, the graph options using Oracle 23ai Property Graph are displayed. This is where the loan officer could choose to request additional information in order to provide a slightly better loan. For this scenario, we will continue with selecting one of the suggested loans.
+
+    ![Michael Ramon Select Final Approved Loan](./images/michael-ramos-select-final-loan.png " ")
+
+8. Since the AI suggested the first time home owner loan with the lowest monthly payment, we would select loan number 1. This loan is the most suitable option for Michael given his financial profile and loan eligibility.
+
+    ![Michael Ramos Select Loan 1](./images/michael-ramos-select-loan.png " ")
 
 9. Set the final loan status to **Approved**.
 
-10. Click the **Save Final Decision Loan Status** button. 
+    ![Michael Ramos Approved](./images/michael-ramos-approve.png " ")
 
-11. Click the **Download Decision as PDF** button. 
+9. Click the **Save Final Approval & Loan Status** button. 
 
--- Pending 12. Click **Download PDF**
+    The loan status has been updated to 'Approved' and saved to the customer profile.
+
+    ![Michael Ramos Save Loan Status](./images/michael-ramos-save.png " ")
+
+10. Click the **Download Recommendation as PDF** button. 
+
+    ![Michael Ramos Download Recommendation](./images/evan-burton-download.png " ")
+
+11. Click **Download PDF**
+
+    ![Michael Ramos Download PDF](./images/evan-burton-download-pdf.png " ")
 
 12. Display the message the customer would see by opening the downloaded PDF. 
+
+    ![Open Michael Ramos PDF](./images/open-michael-ramos-pdf.png " ")
+
+13. Navigate back to the **Dashboard** and expand **View Approved Customers**. We can see that Michael Ramos has been removed from the Pending Review Loan Requests list and has been added to the Approved Loan Requests list.
+
+    ![Michael Ramos Approved List](./images/michael-ramos-approved-list.png " ")
 
 ## Task 5: Edit Customer Details
+For this task, we will edit a customers details.
 
-1. Select **Dashboard** in the left navigation menu.
+1. Select **Dashboard** in the left navigation menu if you are not on the Dashboard page already.
 
-2. On the Dashboard page, from the pending review list, select **James Woods**.
+    ![Select Dashboard](./images/select-dashboard.png " ")
 
-3. This will display the customers loan application details. In approximately 15 seconds, the AI generated recommendations will be displayed.
+2. On the Dashboard page, expand **View Denied Customers**. From the Denied Loan Requests list, select the customer ID for **James Woods**.
 
-4. Copy the following prompt into the AI chatbot:
--- add copy tags
-Show me the lowest down payment?
-Show me the lowest monthly payment?
+    ![Select James Woods](./images/select-james-woods-denied.png " ")
 
-5. Press the **Generate Finalized Decision PDF** button to save the AI responses and proceed to the final loan disposition. 
+3. On the Customer Details page, expand **Customer Details**.
 
-6. Select **Set Final Decision** in the left navigation menu.
+    ![Expand Customer Details](./images/customer-details.png " ")
 
-7. Press the **Review additional loan options** button. This is where the loan officer could choose to request additional information in order to provide a slightly better loan. 
+5. Let's change James' loan status from Denied back to **Pending Review**.
 
-8. Select the AI suggested opportunity zone loan with the lowest monthly payment. Since our customer wanted the lowest monthly payments, we would select loan number --*Put in loan number*--.
+    ![Edit Customer Details](./images/pending-review.png " ")
 
-9. Set the final loan status to **Approved**.
+6. Click **Save Customer Details**.
 
-10. Click the **Save Final Decision Loan Status** button. 
+    ![Save Customer Details](./images/save-details.png " ")
 
-11. Click the **Download Decision as PDF** button. 
+7. Navigate back to the Dashboard.
 
--- Pending 12. Click **Download PDF**
+    ![Click Dashboard](./images/click-dashboard.png " ")
 
-12. Display the message the customer would see by opening the downloaded PDF. 
+8. We can see that James Woods has been removed from the Denied Loan Requests list and has been added back to the Pending Review Loan Requests list.
+
+    ![James Woods Pending Review List](./images/james-woods-pending-review-list.png " ")
+
 
 ## Learn More
 
@@ -168,6 +299,6 @@ Show me the lowest monthly payment?
 * [URL text 2](http://docs.oracle.com)
 
 ## Acknowledgements
-* **Author** - <Name, Title, Group>
-* **Contributors** -  <Name, Group> -- optional
-* **Last Updated By/Date** - <Name, Month Year>
+* **Authors** - Francis Regalado, Eddie Ambler
+* **Contributors** -  Kamryn Vinson, Linda Foinding, Otis Barr
+* **Last Updated By/Date** - Kamryn Vinson, March 2025
