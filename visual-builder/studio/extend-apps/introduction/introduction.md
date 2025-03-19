@@ -6,7 +6,7 @@ This workshop shows how you can extend Oracle Cloud Applications using Oracle Vi
 
 *Extensions* are what you use to deliver new capabilities into Oracle Cloud Applications. Those capabilities may take the form of customizations you make to the App's user interface, or things like App UIs that deliver new pages or resources to your Oracle Cloud Applications instance. An App UI is simply an application that includes a user interface component in the form of VB Studio pages and flows.
 
-In this workshop, you'll navigate to VB Studio from an Oracle Cloud Applications page and access a project where you develop your extension. You'll create an App UI that presents employee data from an Oracle SaaS service connection, then allow users to search for a specific employee. You'll also deploy the extension to your Oracle Cloud Applications instance.
+In this workshop, you'll navigate to VB Studio from an Oracle Cloud Applications page and access a project where you develop your extension. You'll create an App UI that presents employee data from an Oracle SaaS service connection, then allow users to search for an employee. You'll also deploy the extension to your Oracle Cloud Applications instance.
 
 Estimated Workshop Time: 20 minutes
 
@@ -16,7 +16,8 @@ In this workshop, you will learn how to:
 
 * Access VB Studio in your Oracle Cloud Applications environment
 * Create an extension for your Oracle Cloud App
-* Create a new App UI in your extension and connect it to Oracle Cloud Apps data
+* Create a new App UI in your extension
+* Connect your extension to Oracle Cloud Apps data
 * Test and deploy the extension
 
 ### Prerequisites
@@ -25,7 +26,6 @@ This lab assumes you have:
 
 * Access to Oracle Cloud Applications (specifically, the HCM modules)
 * Access to the VB Studio instance that was provisioned with your Oracle Cloud Applications instance
-* A VB Studio project that is set up for extensions (if you don't have one, [create it](https://docs.oracle.com/en/cloud/paas/visual-builder/visualbuilder-administration/set-vb-studio-extend-oracle-cloud-applications.html#GUID-E1303FFC-767A-4D87-B914-DE7B520AE799))
 * Latest version of the Chrome browser running on Mac OS X or Windows
 
 ## Learn More
@@ -35,4 +35,4 @@ This lab assumes you have:
 ## Acknowledgements
 
 * **Author** - Sheryl Manoharan, VB Studio User Assistance, May 2023
-* **Last Updated By/Date** - Sheryl Manoharan, August 2024
+* **Last Updated By/Date** - Sheryl Manoharan, January 2025
