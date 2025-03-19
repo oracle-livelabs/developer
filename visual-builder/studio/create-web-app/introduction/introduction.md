@@ -2,7 +2,7 @@
 
 ## About this Workshop
 
-This workshop shows how you can use Oracle Visual Builder Studio to create a web app in a collaborative team environment. You'll see how easy it is to design a web app, manage its changes as part of a Git repository, and seamlessly deploy it for users—all within a short time.
+This workshop shows you how to use Oracle Visual Builder Studio to create a web app in a collaborative team environment. You'll see how easy it is to design a web app, manage its changes as part of a Git repository, and seamlessly deploy it for users—all within a short time.
 
 Visual Builder Studio—VB Studio for short—is a visual development platform that helps your team plan and manage your application's lifecycle, right from design and develop through test and deploy. It provides a rich set of UI components that you can drag and drop in a visual designer to rapidly build engaging and responsive web apps. This intuitive approach lends itself to low-code developers, but experienced programmers can just as easily access the underlying source code and customize it for their requirements.
 
@@ -11,7 +11,7 @@ What's more, integrated Git repositories enable a collaborative environment to s
 All this makes VB Studio a complete solution to simplify application development and accelerate time to market. Take a look at this video to learn more, or just dive right into the labs.
   [](youtube:pMmrNIypI7c)
 
-Estimated Workshop Time: 1 hour 55 minutes
+Estimated Workshop Time: 1 hour 50 minutes
 
 ### Objectives
 
@@ -38,4 +38,4 @@ This workshop requires:
 ## Acknowledgements
 
 * **Created By/Date** - Sheryl Manoharan, VB Studio User Assistance, November 2021
-* **Last Updated By/Date** - Sheryl Manoharan, November 2022
+* **Last Updated By/Date** - Sheryl Manoharan, July 2024

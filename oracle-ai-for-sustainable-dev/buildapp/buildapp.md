@@ -6,6 +6,7 @@ This lab will show you how to use Oracle Database JSON features to story, analyz
 
 Estimated Time:  3 minutes
 
+[Lab 2](videohub:1_tqxa75gn)
 
 ### Objectives
 
@@ -46,18 +47,18 @@ The application can be built and run in a couple ways:
 ## Task 2: Build and run as a Java application directly using Maven
 
    1. Open a terminal/shell.
-   2. cd to the directory where the workshop src (and thus `env.properties`) exists, ie `cd [workspace_src_directory]`.
+   2. cd to the directory where the workshop `java-ai` src (and thus `env.properties`) exists, ie `cd [workspace_src_directory/java-ai]`.
    3. Issue the following to build the application
    
-        ```text
-        <copy>./build.sh</copy>
-        ```
+     ```text
+     <copy>./build.sh</copy>
+     ```
 
    4. Issue the following to run the application
 
-        ```text
-        <copy>./run.sh</copy>
-        ```
+     ```text
+     <copy>./run.sh</copy>
+     ```
 
 
 ## Task 3: Build and run as a Docker image
@@ -82,16 +83,16 @@ The application can be built and run in a couple ways:
    Each lab will elaborate on how calls to Oracle AI Services, other OCI services, and external services can be made from within database forming a powerful architectural. We will just touch on a few points here.
  
    * It is possible to make calls using Java from inside the database and more information can be found here: https://docs.oracle.com/en/database/oracle/oracle-database/21/jjdev/Java-introduction.html
-   * It is possible to make calls using JavaScript from inside the database and extra conveniences (eg fetch API) have been added to do this in 23c of the database. An example that calls AI services be found here: https://blogs.oracle.com/developers/post/how-to-call-hugging-face-ai-from-within-an-oracle-database-using-javascript-store-and-access-results-using-sql-json-and-rest
+   * It is possible to make calls using JavaScript from inside the database and extra conveniences (eg fetch API) have been added to do this in 23ai of the database. An example that calls AI services be found here: https://blogs.oracle.com/developers/post/how-to-call-hugging-face-ai-from-within-an-oracle-database-using-javascript-store-and-access-results-using-sql-json-and-rest
    * DBMS_CLOUD is a convenience package in the Oracle Database to make calls to any Oracle Cloud Services (AI or otherwise) and examples of it are used in this workshop.  Examples of it's usage can be seen in the related labs that follow. 
 
    The following diagram shows a couple different AI application architectures.  Notice the advantages in functional and efficiency of using the Oracle Database at the heart of the architecture related to security, network traffic, analysis and processing, etc.
 
-   ![Different AI app architectures](images/ai-db-calls-arch.png " ")
+   ![Different AI app architectures](images/ai-db-calls-arch.jpeg " ")
 
 You may now **proceed to the next lab.**..
 
 ## Acknowledgements
 
 * **Author** - Paul Parkinson, Architect and Developer Advocate
-* **Last Updated By/Date** - Paul Parkinson, 2023
+* **Last Updated By/Date** - Paul Parkinson, 2024

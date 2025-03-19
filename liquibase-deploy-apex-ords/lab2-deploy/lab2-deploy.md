@@ -71,7 +71,7 @@ Completion of:
 
     ![Cloud Shell Upload](./images/5click-upload.png " ")
 
- 2. Download [workshop_changelogs.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/LNAcA6wNFvhkvHGPcWIbKlyGkicSOVCIgWLIu6t7W2BQfwq2NSLCsXpTL9wVzjuP/n/c4u04/b/livelabsfiles/o/developer-library/workshop_changelogs.zip) by clicking the link.
+ 2. Download [workshop_changelogs.zip](https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/developer-library/workshop_changelogs.zip) by clicking the link.
     * This contains the files you'll be using.
 
  3. Once that zip file has downloaded to your computer, select it in the "File Upload to your Home Directory" menu and click Upload.
@@ -356,7 +356,7 @@ Check out [Talke Tech](https://www.talke.tech/) and [thatjeffsmith](https://www.
 
 ## Learn more
 
-* [SQLcl Liquibase 101 LiveLabs Workshop](https://apexapps.oracle.com/pls/apex/f?p=133:180:1722441206322::::wid:3692)
+* [SQLcl Liquibase 101 LiveLabs Workshop](https://livelabs.oracle.com/pls/apex/f?p=133:180:1722441206322::::wid:3692)
 * [Download (SQLcl)](https://www.oracle.com/database/sqldeveloper/technologies/sqlcl/download/)
 * [Product Page (SQLcl)](https://www.oracle.com/database/sqldeveloper/technologies/sqlcl/)
 * [Documentation (SQLcl & SQLcl Liquibase)](https://docs.oracle.com/en/database/oracle/sql-developer-command-line/)
@@ -377,4 +377,4 @@ Check out [Talke Tech](https://www.talke.tech/) and [thatjeffsmith](https://www.
 ## Acknowledgements
 
 - **Author** - Zachary Talke, Senior Product Manager
-- **Last Updated By/Date** - Zachary Talke, August 2023
+- **Last Updated By/Date** - Zachary Talke, May 2024

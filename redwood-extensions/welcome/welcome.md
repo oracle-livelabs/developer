@@ -120,7 +120,7 @@ In the next lab, we'll add some more useful components to the page.
 
 3. While the input search is selected in the canvas, click the **Data** tab in the Properties pane.
 
-4. Click the little arrow at the top right of the **Value** field to display a list of variables. (you might need to hover your mouse on the field first)
+4. Click the (x) at the top right of the **Value** field to display a list of variables. (you might need to hover your mouse on the field first)
 
   ![Variable creation](images/valuefield.png)
 

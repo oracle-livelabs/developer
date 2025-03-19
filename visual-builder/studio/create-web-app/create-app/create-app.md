@@ -8,7 +8,7 @@ Estimated Time: 15 minutes
 
 ### About this Lab
 
-Web and mobile applications in VB Studio take shape within the _Designer_, a rich graphical user interface that lets you design and develop your application by dragging and dropping components on a page. You use these components—all based on the open-source Oracle JavaScript Extension Toolkit (JET)—to create rich UIs that span multiple devices.
+Web applications in VB Studio take shape within the _Designer_, a rich graphical user interface that lets you design and develop your application by dragging and dropping components on a page. You use these components—all based on the open-source Oracle JavaScript Extension Toolkit (JET)—to create rich UIs that span multiple devices.
 
 Each component depends on a _business object_ for its data. A business object is just a resource—like a purchase order or invoice—that has fields to hold your application's data. It is similar to a database table, as it provides the structure for your data; in fact, business objects are stored in a database. Your application accesses the data in these business objects through REST endpoints that VB Studio generates for you.
 
@@ -31,7 +31,7 @@ This lab assumes you have:
 
 ## Task 1: Create a web app
 
-The first thing we'll do is add a web app to the HR visual application you just created. A visual application is a container for all your web and mobile applications. In this task, you add a single web app to your visual application, but you can have more than one, even both web and mobile apps in the same visual application.
+The first thing we'll do is add a web app to the HR visual application you just created. A visual application is a container for all your web applications. In this task, you add a single web app to your visual application, but you can have multiple apps in the same visual application.
 
 1. Under **Create Apps** in the Welcome page, click **Responsive Apps**.
 
@@ -45,18 +45,18 @@ The first thing we'll do is add a web app to the HR visual application you just 
 
     The application opens on the **main-start** page, which is your application's default home page created automatically for you. (Ignore the **This dot says that you have made some changes** dialog that appears in the header for now; we'll explore Git changes in a later lab.)
 
-    What you see under the **main-start** tab is your application's main work area. Just under main-start are several horizontal tabs: **Page Designer**, **Actions**, **Event Listeners**, and so on. Each tab provides editors to help you examine and modify artifacts used in the page. By default, the page opens in the Page Designer, which is where you'll do the bulk of your work in VB Studio.
+    What you see under the **main-start** tab is your application's main work area. Just under main-start are several horizontal tabs: **Page Designer**, **Action Chains**, **Event Listeners**, and so on. Each tab provides editors to help you examine and modify artifacts used in the page. By default, the page opens in the Page Designer, which is where you'll do the bulk of your work in VB Studio.
 
     ![Web Apps pane after the hrwebapp has been created. The app itself is open on the right, on the main-start page, showing the Components Palette. On the far right, the Properties tab shows the Page view.](images/designer.png "Web Apps pane with the hrwebapp")
 
     Here are the main Page Designer areas you'll use throughout this workshop:
-    | # | Tab | Functionality |
-    | --- | ---- | --- |
-    | 1 | Components | UI components (sorted by categories) that you can drag and drop onto a page|
-    | 2 | Data | Data endpoints exposed when you create business objects or service connections |
-    | 3 | Structure | Hierarchical view of the page's structure  |
-    | 4 | Properties | Properties of a component selected on the page. When the entire page is selected (as it is now), you'll see the Page view where you can choose a preferred page layout.|
-    | 5 | Canvas | A design, live, or code view of your page's content |
+    | #   | Tab        | Functionality                                                                                                                                                           |
+    | --- | ---------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+    | 1   | Components | UI components (sorted by categories) that you can drag and drop onto a page                                                                                             |
+    | 2   | Data       | Data endpoints exposed when you create business objects or service connections                                                                                          |
+    | 3   | Structure  | Hierarchical view of the page's structure                                                                                                                               |
+    | 4   | Properties | Properties of a component selected on the page. When the entire page is selected (as it is now), you'll see the Page view where you can choose a preferred page layout. |
+    | 5   | Canvas     | A design, live, or code view of your page's content                                                                                                                     |
     {: title="Page Designer Work Area"}
 
     You can collapse and expand tabs to better manage your working area. For example, click **Properties** to hide the Properties pane and expand your work area. You can also move different panes to customize your work area. For example, right-click **Structure** at the bottom of your work area, then select **Move to Top Left** to move the Structure view right under **Components** and **Data**.
@@ -69,11 +69,11 @@ The first thing we'll do is add a web app to the HR visual application you just 
 
      ![The main-start page tab's right-click menu, with options to 'Close Tab', 'Close Other Tabs', 'Close Tabs to the Right', 'Close All Tabs', and 'Select in Navigator'.](images/tab.png "main-start page tab right-click menu")
 
-    In the Web Apps pane, expand the **hrwebapp** and **main** nodes to get a tree view of your web application's flows and pages.
+    Look in the Web Apps pane to get a tree view of your web application:
 
      ![The Web Apps pane shows the hrwebapp's tree view. Under hrwebapp, main is expanded with main-start nested under. At the same level as main are the Fragments, Resources, and Root Pages nodes.](images/treeview.png "")
 
-    A _flow_ contains pages that relate to each other. An application can have multiple flows, and each flow can contain many pages. This application contains only one flow, **main**, and one page, **main-start**—though we'll add more pages later on. By convention, a page takes its flow name as a prefix.
+    You'll notice the **hrwebapp** node contains the **main** node, which in turn contains the **main-start** node. The **main** node is the application's default _flow_ containing the default **main-start** page that users first see when the app is run. An application can have multiple flows, each of which can be used to group related pages. This simple application has only one flow and one page, though we'll add more pages later on. By convention, a page takes its flow name as a prefix.
 
 ## Task 2: Create a Location business object and import data
 
@@ -81,33 +81,29 @@ Let's now create your first business object and add data to it by importing a CS
 
 1. Click ![Business Objects icon](images/bo-icon.png) **Business Objects** in the Navigator.
 2. Click **\+ Business Object**.
-3. In the New Business Object dialog box, enter `Location` in the **Name** field. **Location** is also filled in automatically as the **Display Label**. Click **Create**.
+3. In the Create Business Object dialog, enter `Location` in the **Name** field. **Location** is also filled in automatically as the **Display Label**. Click **Create**.
 4. Click **Fields** for the newly created Location business object.
 
-    Every business object you create has six default fields: an id, plus fields that provide information on who created and updated the object and when.
+    Every business object you create has six default fields: an id, a version number, plus fields that provide information on who created and updated the object and when.
 
     ![Business object page for the Location business object, with the Fields tab open. The other tabs are Overview, Security, Business Rules, Endpoints, and Data. A table shows the current fields, with the Type, Field Name, Display Label, Required, and Description columns visible for each.](images/location-bo-fields.png "Location business object page")
 
-5. Click **\+** and select **Field** to add a field specific to this business object. This is a very simple business object, so we'll only add one new field.
-6. In the pop-up box, enter `Location` as the **Label**. The **Field Name** is automatically populated as **Location** and the **Type** set to **String** ![String](images/bo-string-icon.png) by default.
+5. Click **\+ Field** and select **Field** to add a field specific to this business object. This is a very simple business object, so we'll only add one new field.
+6. In the pop-up box, enter `Location` as the **Label**. The **Field Name** is automatically populated as **location** and the **Type** set to **String** ![String](images/bo-string-icon.png) by default.
 
     ![The + Field pop-up box, with Location entered in the Label field, location filled in as the Field Name value, and the String type selected. The Create Field button is selected.](images/location-bo-location-field.png "Create Field pop-up box")
 
     Click **Create Field**.
 
-7. In the **Location** field's properties, select **Required** under Constraints.
+7. For the newly created **location** field, select the checkbox in the **Required** column.
 
-    ![Part of the Properties pane for the Location field. The Field Name value is location, the Display Label is Location, the Type is String, and the Value Calculation is None. Under Constraints, the Required check box is selected.](images/location-bo-location-required.png "Location field's Properties pane")
-
-    A check mark is displayed in the Location field's Required column.
-
-8. Click [this link](https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/sENgbU2RPqNTYwSFSZWOU_0tdiYo9bLUvFOlwqvNn2Jaty3CnbT0U_XsRqKSYZMj/n/c4u04/b/livelabsfiles/o/developer-library/location.csv) to download the `location.csv` file to your file system. This file contains four locations and provides the data for the Location business object.
+8. Click [this link](https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/developer-library/location.csv) to download the `location.csv` file to your file system. This file contains four locations and provides the data for the Location business object.
 
 9. Click the **Data** tab, then **Import from File** ![Import from File icon](images/import_icon.png).
 
     ![Data tab of the Location business objects. No data is displayed.](images/location-data.png "Data tab of the Location business object")
 
-10. In the Import Data dialog box,  click the drag and drop box, browse to select the `Location.csv` file, and click **Import**.
+10. In the Import Data dialog box,  click the drag and drop box, browse to select the `location.csv` file, and click **Import**.
 
     ![Import from File dialog box after the Location.csv file has been imported. The Close button is selected.](images/location-data-import.png "Import from File dialog box")
 
@@ -119,7 +115,7 @@ Let's now create your first business object and add data to it by importing a CS
 
 Let's now create the Department and Employee business objects. But instead of creating the business objects and fields one by one and importing data for them, you'll import a ZIP file that defines the two business objects with their fields and data all at once.
 
-1. Click [this link](https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/-TsxaA2U-TAw4qHOYKSqTZF-l1NQSx89LDjPeakLPJp-haKBBQgttpRmb0V-RUXc/n/c4u04/b/livelabsfiles/o/developer-library/other-bos.zip) and download the `other-bos.zip` file. This ZIP file contains CSV files for the Department and Employee business objects. Feel free to review the contents.
+1. Click [this link](https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/developer-library/other-bos.zip) and download the `other-bos.zip` file. This ZIP file contains CSV files for the Department and Employee business objects. Feel free to review the contents.
 
 2. In the Navigator's Business Object pane, click **Menu** ![Menu icon](images/menu-icon.png) and select **Data Manager**. The Data Manager is what you use to import data from a variety of sources.
 
@@ -135,21 +131,21 @@ Let's now create the Department and Employee business objects. But instead of cr
 
     ![Import New Business Objects wizard on the Upload File screen. A zip file has been uploaded and the results show at the bottom.](images/import-bos-upload-result.png "Upload File Screen in the Import New Business Objects wizard")
 
-5. On the Business Objects step, you'll see the definitions that will be used to create the Department and Employee business objects. Leave them as is and click **Next**.
+5. On the Business Objects step, you'll see the definitions that will be used to create the **department** and **employee** business objects. Leave them as is and click **Next**.
 
-6. On the Fields step, you'll need to make some changes. For the Department business object (selected by default), look for the `Location` field in the second row and click **#** in the Type column. Change the type setting as follows:
+6. On the Fields step, you'll need to make some changes. For the **department** business object (selected by default), look for the `location` field in the second row and click **#** in the Type column. Change the type setting as follows:
 
       * Select the **Type** as **Reference** ![Reference icon](images/reference-icon.png). A Reference field is like a foreign key in a database table: it's a field that refers to the key (the Id field) of another business object to link the two business objects together.
-      * Select **Location** as the **Referenced Business Object**. The default for a **Referenced Business Object** is always the current business object (in this case, Department), so make sure you select **Location** from the drop-down list. Now when you create a department, you'll be able to specify one of the floors as the department's location.
+      * Select **Location** as the **Referenced Business Object**. This way, when you create a department, you'll be able to specify one of the floors as the department's location.
       * Leave the **Display Field** as **Location** (automatically populated).
 
     ![Type option of the location field selected. A pop-up box shows the Type set to Reference, the Referenced Business Object set as Location, and the Default Field shown as Location.](images/import-bos-upload-fields-deptlocationfield.png "Type option of the location field")
 
     Click **OK**.
 
-7. For the same **Location** field, click **Required** to deselect the setting (**Department** and **Id** are the only required fields for the Department object).
+7. For the same **location** field, click **Required** to deselect the setting (**department** and **id** are the only required fields for the **department** object).
 
-8. Now click the **Employee** tab and change the **Department** field to a reference. Click **#** in the **Department** field's Type column and change the Type setting as follows:
+8. Now click the **employee** tab and change the **department** field to a reference. Click **#** in the **department** field's Type column and change the Type setting as follows:
 
     * Select the **Type** as **Reference** ![Reference icon](images/reference-icon.png).
     * Select **Department** as the **Referenced Business Object**.
@@ -157,7 +153,7 @@ Let's now create the Department and Employee business objects. But instead of cr
 
     Click **OK**.
 
-9. Remove **Required** for all Employee fields, except **Name** and **Id**.
+9. Remove **Required** for all Employee fields, except **name** and **id**.
 
     ![Employee object's fields. The Required column is highlighted and deselected for all fields, except Name.](images/import-bos-upload-fields-employee.png "Employee object's fields")
 
@@ -181,7 +177,7 @@ Let's now create the Department and Employee business objects. But instead of cr
 
     ![Test tab for the getall_Employee endpoint. When you click Send Request, the Response section shows the results in the Body tab.](images/employee-bo-endpoints-getall.png "Test tab for the getall_Employee endpoint")
 
-    Click ![Back to Table icon](images/backtotable-icon.png) Endpoints to return to the main Endpoints page.
+    Click **Endpoints** to return to the main Endpoints page.
 
 ## Task 4: Create a business object diagram
 
@@ -207,4 +203,4 @@ Now that you have your business objects, create a diagram that visualizes the bu
 ## Acknowledgements
 
 * **Author** - Sheryl Manoharan, VB Studio User Assistance, November 2021
-* **Last Updated By/Date** - Sheryl Manoharan, November 2023
+* **Last Updated By/Date** - Sheryl Manoharan, October 2024

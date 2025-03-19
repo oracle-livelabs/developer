@@ -37,4 +37,5 @@ The objective of this workshop is:
     - Kuassi MENSAH, Director of Product Management.  
     - Alex Keh, Senior Principal Product Manager.
     - Christian Shay, Senior Principal Product Manager.
-* **Last Updated By/Date** -  Madhusudhan Rao, June 28th 2022
+    - Sharad Chandran R, Principal Product Manager
+* **Last Updated By/Date** -  Madhusudhan Rao, Oct 7th 2024

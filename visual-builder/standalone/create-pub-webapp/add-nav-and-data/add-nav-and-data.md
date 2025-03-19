@@ -23,13 +23,13 @@ This lab assumes you have:
 
 ## Task 1: Create an action chain to navigate from the Departments page to the Employees page
 
-1. Click the **Web Applications** ![Web Applications icon](images/web-applications-icon.png) tab in the Navigator, and click **main-departments** under the **hrwebapp** and **main** nodes.
+1. Click **Web Applications** ![Web Applications icon](images/web-applications-icon.png) in the Navigator, and select **main-departments** under **hrwebapp** and **main**.
 2. In the Page Designer, click **Components** to open the Components palette. Enter `button` in the Filter field, then drag a Button onto the Toolbar, to the right of the **Create Department** button on the main-departments page.
 
     ![This image shows the main-departments page, with a Button component being dragged from the Components palette into the toolbar, next to the Create Department button.](images/departments-button.png "")
 
 3. Click **Properties** (if necessary) and in the **General** tab, change the **Label** field to `Show Employees`.
-4. Click the button's **Events** tab, then click the **\+ New Event** button. From the menu, select **On 'ojAction'**, the default action suggested for a button click.
+4. Click the button's **Events** tab, then click **\+ Event Listener**. From the menu, select **On 'ojAction'**, the default action suggested for a button click.
 
     ![This image shows the New Event menu on a Button component's Events tab. The On 'ojAction' option is selected.](images/departments-button-events.png "")
 
@@ -55,11 +55,11 @@ This lab assumes you have:
 
 ## Task 2: Create an action chain to navigate from the Employees page to the Departments page
 
-1. In the Web Apps pane, click **main-employees** under the **hrwebapp** and **main** nodes.
+1. In the Web Apps pane, click **main-employees** under **hrwebapp** and **main**.
 
 2. Locate the **Button** component in the Components palette and drag it into the **Toolbar**, to the right of the **Create Employee** button.
 3. In the Button's Properties pane, change the **Label** field to `Show Departments`.
-4. Click the **Events** tab for the button, then click the **+ New Event** button and select **On 'ojAction'**.
+4. Click the **Events** tab for the button, then click **+ Event Listener** and select **On 'ojAction'**.
 
     Another empty action chain with the ID **ButtonActionChain** is created. Because this action chain is for a different page, it doesn't matter that it has the same name as the one for the main-departments page.
 
@@ -80,4 +80,4 @@ This lab assumes you have:
 ## Acknowledgements
 
 * **Author** - Sheryl Manoharan, Visual Builder User Assistance, August 2021
-* **Last Updated By** - August 2023
+* **Last Updated By** - August 2024

@@ -2,7 +2,7 @@
 
 ## About this Workshop
 
-This workshop shows how you can extend Oracle Cloud Applications using Oracle Visual Builder Studio. Visual Builder Studio (or VB Studio, for short) gives you the power to customize Oracle Cloud Applications to suit your business needs. In fact, you'll have the exact same tools that Oracle developers use to create Oracle Cloud Applications in the first place—VB Studio and Oracle Javascript Extension Toolkit (JET)—giving you an unprecedented level of power and control over your Oracle Cloud Apps ecosystem.
+This workshop shows how you can extend Oracle Cloud Applications using Oracle Visual Builder Studio. Visual Builder Studio (or VB Studio, for short) gives you the power to customize Oracle Cloud Applications to suit your business needs. In fact, you'll have the exact same tools—VB Studio and Oracle Javascript Extension Toolkit (JET)—that Oracle developers use to create Oracle Cloud Applications in the first place, giving you an unprecedented level of power and control over your Oracle Cloud Apps ecosystem.
 
 *Extensions* are what you use to deliver new capabilities into Oracle Cloud Applications. Those capabilities may take the form of customizations you make to the App's user interface, or things like App UIs that deliver new pages or resources to your Oracle Cloud Applications instance. An App UI is simply an application that includes a user interface component in the form of VB Studio pages and flows.
 
@@ -35,5 +35,4 @@ This lab assumes you have:
 ## Acknowledgements
 
 * **Author** - Sheryl Manoharan, VB Studio User Assistance, May 2023
-* **Contributors** -  Lisa Dawson, VB Studio User Assistance
-* **Last Updated By/Date** - Sheryl Manoharan, May 2023
+* **Last Updated By/Date** - Sheryl Manoharan, August 2024

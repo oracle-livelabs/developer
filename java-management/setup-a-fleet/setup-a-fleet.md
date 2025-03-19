@@ -24,7 +24,7 @@ In this lab, you will:
 
     ![image of console navigation to java management service](images/console-navigation-jms.png)
 
-2. Select the compartment created for JMS resources in Lab 1 (Compartment name should be **Fleet_Compartment**) and **Create fleet**.
+2. Select the compartment created for JMS resources in Lab 2 (Compartment name should be **Fleet_Compartment**) and **Create fleet**.
 
     ![image of create fleet](images/create-fleet-create-new.png)
 
@@ -34,9 +34,11 @@ In this lab, you will:
 
     ![image of create fleet options page](images/create-fleet.png)
 
-   Click **Agree**. This is to enable all the advanced features. You can still edit it after the fleet is created.
+    A side panel with acknowledgement should appear. Click the checkbox if you agree to the terms and a subsequent section regarding advanced features resources should appear below. You can leave this checkbox unchecked to let JMS create the resources for you.
 
-   ![image of agree advanced features](images/select-advanced-agree.png)
+    Once done, click **Continue**
+
+   ![image of advanced features acknowledgement](images/select-advanced-agree.png)
 
     There are 6 different advanced features available:
      * Lifecycle management (LCM) - Manage the lifecycle of Java runtimes in your fleet by installing or removing reported Java runtime.
@@ -47,8 +49,8 @@ In this lab, you will:
      * Java migration analysis - Assists in migrating applications from older JDK versions to newer JDK version by providing a detailed analysis that helps to assess the potential efforts and risks of migration.
 
 
-    To learn more about the advanced features, see [Use Java Management Service Advanced Features](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=3202).
-    
+    To learn more about the advanced features, see [Use Java Management Service Advanced Features](https://livelabs.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=3202).
+
     ![image of selected create fleet options](images/create-fleet-advanced-feature.png)
 
 5. Click **Next**. You are prompted to review the fleet information and management agent configuration. If you want to modify your choices, click **Previous**.
@@ -57,7 +59,7 @@ In this lab, you will:
 
     ![image of create fleet confirm creation](images/create-fleet-create.png)
 
-7. Click **Done** once the fleet is set up. 
+7. Click **Done** once the fleet is set up.
 
     ![image of page to download installation script done](images/create-fleet-success.png)
 
@@ -77,7 +79,7 @@ In this lab, you will:
 
     **Java runtime discovery**: specify frequency at which the management agents should scan their hosts for Java runtime installations. The values must be between 3 to 24 hours. The default value is 24 hours.
 
-    For this example, change **Java Runtime Discovery** to **3 hours**, and **Java Runtime Usage** to **5 minutes**.
+    For this example, change **Java Runtime Usage** to **5 minutes**, and **Java Runtime Discovery** to **3 hours**
 
     ![image of modify agent settings page](images/fleet-modify-agent-settings-new.png)
 
@@ -85,55 +87,31 @@ In this lab, you will:
 
     ![image of modify agent settings page](images/fleet-modify-agent-settings-save.png)
 
+## Task 2: Verifying policies required for advanced features
 
-## Task 2: Verifying policies and Dynamic Groups required for advanced features
-1. This task will verify the creation of the policies and Dynamic Groups required for the advanced features when advanced features was enabled during the fleet creation.
+1. This task will verify the creation of the policies required for the advanced features when advanced features was enabled during the fleet creation.
 
-2. Navigate to the Dynamic Groups page.
+2. Navigate to the policies page.
+    * In the Oracle Cloud Console, open the navigation menu and click **Identity & Security**. Under **Identity**, click **Policies**.
+        ![image of console navigation to policies](images/console-navigation-policies.png)
 
-    * In the Oracle Cloud Console, open the navigation menu and click **Identity & Security**. Under **Identity**, click **Domains**.
-        ![image of console navigation to groups](images/console-navigation-domains.png)
-
-    * In the Domains page, click **Default**.
-        ![image of domains navigation to default domain](images/domains-navigation-default.png)
-
-    * In the Overview page, click **Dynamic groups**.
-        ![image of domain overview navigation to groups](images/domain-overview-dynamic-groups.png)
-
-
-3. There will be one additional dynamic group created. 
-   * **JMS\_Advanced\_Features\_Dynamic\_Group** with 2 Matching Rules
-
-     ![image of dynamic groups page](images/dynamic-groups-page.png)
-
-     ![image of advanced features dynamic group](images/advanced-features-dynamic-group.png)
-
-4. Click on **Identity** to navigate to the Identity page.
-
-    ![image of advanced features dynamic group rules navigate to identity](images/advanced-features-dynamic-group-navigate-identity.png)
-
-5. On the Identity page, click on **Policies** from the Identity menu on the left.
-
-    ![image of identity page policies select](images/identity-page-policies-select.png)
-
-6. Select the compartment where the fleet was created in Task 1 (Compartment name should be **Fleet_Compartment**). You should see the policy name **JMS-Advanced-Features**. Click on the policy name **JMS-Advanced-Features**.
+3. Select the compartment where the fleet was created in Task 1 (Compartment name should be **Fleet_Compartment**). You should see the policy name **JMS-Advanced-Features**. Click on the policy name **JMS-Advanced-Features**.
 
     ![image of policies page](images/policies-page.png)
 
-7. The **JMS-Advanced-Features** policy contains 5 policy statements.
+4. The **JMS-Advanced-Features** policy contains 5 policy statements.
 
     ```
     <copy>
-    ALLOW dynamic-group JMS_Advanced_Features_Dynamic_Group to MANAGE object-family in compartment Fleet_Compartment
+    ALLOW dynamic-group JMS_DYNAMIC_GROUP to MANAGE object-family in compartment Fleet_Compartment
     ALLOW resource jms SERVER-COMPONENTS to MANAGE object-family in compartment Fleet_Compartment
     ALLOW group FLEET_MANAGERS to MANAGE object-family in compartment Fleet_Compartment
     ALLOW resource jms SERVER-COMPONENTS TO READ instances in compartment Fleet_Compartment
-    ALLOW resource jms SERVER-COMPONENTS TO INSPECT instance-agent-plugins in compartment Fleet_Compartment    
+    ALLOW resource jms SERVER-COMPONENTS TO INSPECT instance-agent-plugins in compartment Fleet_Compartment
     </copy>
     ```
 
     ![image of policy details page](images/policy-details-page.png)
-
 
 ## Task 3: Understanding the Oracle Cloud Infrastructure Services which Java Management Service leverages on
 
@@ -167,7 +145,7 @@ JMS uses the following OCI services to generate logs, object storage information
 
 2. Object Storage Service
 
-    - This is required for some of the advanced features of JMS and will be explained in the next workshop: [Use Java Management Service Advanced Features](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=3202)
+    - This is required for some of the advanced features of JMS and will be explained in the next workshop: [Use Java Management Service Advanced Features](https://livelabs.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=3202)
 
 3. Monitoring Service
 
@@ -195,16 +173,15 @@ If you encounter any errors similar to the following, check policy statements in
 
     ```
     <copy>
-    ALLOW GROUP <user_group> TO MANAGE fleet IN COMPARTMENT <compartment_name>
-    ALLOW GROUP <user_group> TO MANAGE tag-namespaces IN TENANCY
-    ALLOW GROUP <user_group> TO MANAGE log-groups IN COMPARTMENT <compartment_name>
-    ALLOW GROUP <user_group> TO MANAGE log-content IN COMPARTMENT <compartment_name>
-    ALLOW GROUP <user_group> TO MANAGE management-agents IN COMPARTMENT <compartment_name>
-    ALLOW GROUP <user_group> TO MANAGE management-agent-install-keys IN COMPARTMENT <compartment_name>
-    ALLOW GROUP <user_group> TO MANAGE dynamic-groups IN TENANCY
-    ALLOW GROUP <user_group> TO MANAGE policies IN COMPARTMENT <compartment_name>
-    ALLOW GROUP <user_group> TO READ metrics IN COMPARTMENT <compartment_name>
-    ALLOW GROUP <user_group> TO READ instance-agent-plugins IN COMPARTMENT <compartment_name>
+    ALLOW GROUP <user_group> TO MANAGE fleet IN COMPARTMENT Fleet_Compartment
+    ALLOW GROUP <user_group> TO MANAGE management-agents IN COMPARTMENT Fleet_Compartment
+    ALLOW GROUP <user_group> TO READ METRICS IN COMPARTMENT Fleet_Compartment
+    ALLOW GROUP <user_group> TO MANAGE instance-family IN COMPARTMENT <instance_compartment>
+    ALLOW GROUP <user_group> TO READ instance-agent-plugins IN COMPARTMENT <instance_compartment>
+    ALLOW GROUP <user_group> TO MANAGE management-agent-install-keys IN COMPARTMENT Fleet_Compartment
+    ALLOW GROUP <user_group> TO MANAGE log-groups IN COMPARTMENT Fleet_Compartment
+    ALLOW GROUP <user_group> TO MANAGE log-content IN COMPARTMENT Fleet_Compartment
+    ALLOW GROUP <user_group> TO MANAGE jms-plugins IN COMPARTMENT Fleet_Compartment
     </copy>
     ```
 
@@ -236,4 +213,4 @@ If you encounter any errors similar to the following, check policy statements in
 ## Acknowledgements
 
 * **Author** - Esther Neoh, Java Management Service
-* **Last Updated By** - Siqi Liu, November 2023
+* **Last Updated By** - Teck Kian Choo, August 2024

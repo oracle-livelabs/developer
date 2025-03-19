@@ -5,7 +5,7 @@
 In this lab, we will create an Azure Kubernetes cluster and look at a few options to access it.
 We will also create an Azure Container Registry
 
-*Estimated Time:* 5 minutes
+Estimated Time: 5 minutes
 
 ### Objectives
 

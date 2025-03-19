@@ -35,7 +35,7 @@ In this lab, you will:
 ### Prerequisites
 
 * You have signed up for a paid account with Oracle Cloud Infrastructure and have received your sign-in credentials.
-* Access to the cloud environment and resources configured in the [Manage Java Runtimes, Applications and Managed Instances Inventory with Java Management Service Workshop](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=912).
+* Access to the cloud environment and resources configured in the [Manage Java Runtimes, Applications and Managed Instances Inventory with Java Management Service Workshop](https://livelabs.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=912).
 
  > **Note:** This lab requires paid OCI account as Service Gateway is not available in Free tier.
 
@@ -693,7 +693,7 @@ if [[ "$FLAG" == "FALSE" ]]; then
 ## Task 8: Setup Management Gateway and Management Agent
 Once you have finishing setting up Site-to-Site VPN, you can install and configure Management Gateway on same host as Libreswan and Management Agent on other on-premises host (in the same network) to demonstrate the working of Site-to-Site VPN setup along with JMS.
 
-* Follow [Manage Java Runtimes, Applications and Managed Instances Inventory with Java Management Service Workshop, Lab 6](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=912) to install, configure and verify Management Gateway and Management Agent.
+* Follow [Manage Java Runtimes, Applications and Managed Instances Inventory with Java Management Service Workshop, Lab 6](https://livelabs.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=912) to install, configure and verify Management Gateway and Management Agent.
 
 
 ## Task 9: Verify the Site-to-Site VPN set up

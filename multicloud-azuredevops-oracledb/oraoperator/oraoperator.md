@@ -96,7 +96,7 @@ This lab assumes you have:
        ![kubectl api-resources --api-group=database.oracle.com](images/oraoperator_crds.png "kubectl api-resources --api-group=database.oracle.com")
 
 
-## Task 4: Configure OraOperator with OCI credentials
+## Task 3: Configure OraOperator with OCI credentials
 
    See https://github.com/oracle/oracle-database-operator/blob/main/docs/adb/README.md for details
 

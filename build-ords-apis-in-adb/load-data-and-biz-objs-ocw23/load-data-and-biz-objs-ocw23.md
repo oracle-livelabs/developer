@@ -39,7 +39,7 @@ Watch the video below for a quick walk-through of the lab.
 3. Using the below `curl` command, download the CSV file to a directory in your OCI Cloud Shell, or your local computer.
 
     ````curl
-    <copy>curl -o 2M.csv https://objectstorage.us-ashburn-1.oraclecloud.com/p/LNAcA6wNFvhkvHGPcWIbKlyGkicSOVCIgWLIu6t7W2BQfwq2NSLCsXpTL9wVzjuP/n/c4u04/b/livelabsfiles/o/developer-library/2M.csv</copy>
+    <copy>curl -o 2M.csv https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/developer-library/2M.csv</copy>
     ````
 
 4. Now that you have the file locally, you can batch load it to your `CSV_DATA` table. To do this you will need to retrieve the `BATCHLOAD` ORDS endpoint, from your `REST`-enabled table.
