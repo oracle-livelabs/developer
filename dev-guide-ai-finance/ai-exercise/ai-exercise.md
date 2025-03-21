@@ -2,17 +2,10 @@
 
 ## Introduction
 
-This Lab walks you through the steps to build your own GenAI Powered loan approval application using Oracle Database 23ai and start coding in your personalized environment.
-
-Estimated Time: -- minutes
+In this lab, you will complete an AI developer coding exercise.
 
 ### Objectives
-
-In this lab, you will:
-* Load Hands_on Schema Tables and Views
-* Configure existing middle tier for launching hands on demo
-* Build Application Workflow Pages
-* Launch the Application
+* Perform the coding required to achieve the enhancement request outlined in the instructions.
 
 ### Prerequisites
 
@@ -30,7 +23,7 @@ The company has requested an enhancement to the current loan recommendation syst
 
 1. Update the Customers.py and Decision.py files to make the necessary changes in the code so that the AI prompt returns the top 5 loans instead of the current 3.
 
-2. Ensure the output displays the top 5 loans like the image below: 
+2. Ensure the output displays the top 5 loans as shown in the image below: 
 
     ![AI Developer Coding Exercise](./images/ai-exercise.png " ")
 

@@ -17,7 +17,7 @@ This lab assumes you have:
 * Completed the Get Started lab
 * Successfully launched the demo environment
 
-## Task 1: Demo User with Good Credit
+## Task 1: Demo User Approved
 
 In this first example, we'll navigate through this application to show you the first user being approved with good credit.
 
@@ -84,7 +84,7 @@ In this first example, we'll navigate through this application to show you the f
 
     ![James Smith Approved List](./images/james-smith-approved-list.png " ")
 
-## Task 2: Demo User with Bad Credit
+## Task 2: Demo User Denied
 
 1. Select **Dashboard** in the left navigation menu if you are not on the Dashboard page already.
 
@@ -129,7 +129,7 @@ In this first example, we'll navigate through this application to show you the f
     ![James Woods Denied List](./images/james-woods-denied-list.png " ")
   
    
-## Task 3: Opportunity Zone User with Low Income Good Credit 
+## Task 3: Demo Opportunity Zone User
 
 1. Select **Dashboard** in the left navigation menu if you are not on the Dashboard page already.
 
@@ -186,7 +186,7 @@ In this first example, we'll navigate through this application to show you the f
 
     ![Evan Burton Approved List](./images/evan-burton-approved-list.png " ")
 
-## Task 4: First Time Home Buyer Good Credit
+## Task 4: Demo First Time Home Buyer
 
 1. Select **Dashboard** in the left navigation menu if you are not on the Dashboard page already.
 
