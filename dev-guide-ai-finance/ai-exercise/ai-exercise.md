@@ -1,11 +1,14 @@
 # AI Developer Coding Exercise
 
 ## Introduction
-
 In this lab, you will complete an AI developer coding exercise.
+
+Estimated Time: -- minutes
+
 
 ### Objectives
 * Perform the coding required to achieve the enhancement request outlined in the instructions.
+
 
 ### Prerequisites
 
