@@ -2,14 +2,11 @@
 
 ## Introduction
 
-This Lab walks you through the steps to build your own GenAI Powered loan approval application using Oracle Database 23ai and start coding in your personalized environment.
-
-Estimated Time: -- minutes
+In this lab, you will complete an Graph developer coding exercise.
 
 ### Objectives
+* Perform the coding required to achieve the enhancement request outlined in the instructions.
 
-In this lab, you will:
-* 
 
 ### Prerequisites
 
@@ -21,7 +18,7 @@ This lab assumes you have:
 
 **Task**:
 
-The loan officer needs to visualize additional data points in the decision-making process. Specifically, they want to display an additional graph that shows two key metrics: required credit score on one axis and debt-to-income ratio on the other.
+The loan officer is requesting an additional graph to be added to the decision page to visualize additional loan options based on credit score and debt-to-income ratio. Specifically, they want to display an additional graph that shows loan options based on two key metrics: required credit score on one axis and debt-to-income ratio on the other.
 
 **Instructions**:
 

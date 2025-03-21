@@ -2,17 +2,12 @@
 
 ## Introduction
 
-This Lab walks you through the steps to build your own GenAI Powered loan approval application using Oracle Database 23ai and start coding in your personalized environment.
+In this lab, you will complete a JSON Duality developer coding exercise.
 
-Estimated Time: -- minutes
 
 ### Objectives
+* Perform the coding required to achieve the enhancement request outlined in the instructions.
 
-In this lab, you will:
-* Load Hands_on Schema Tables and Views
-* Configure existing middle tier for launching hands on demo
-* Build Application Workflow Pages
-* Launch the Application
 
 ### Prerequisites
 
