@@ -24,24 +24,34 @@
         }, 
 
         {
-            "title": "Lab 3: Code RAG using AI Vector Search",
+            "title": "Lab 3: Code RAG using AI Vector Search Hackathon Challenge",
             "description": "Labs that follow the introduction are numbered, starting with Lab 1",
             "filename": "../../ai-exercise/ai-exercise.md"
-        },
+        }, 
         {
-            "title": "Lab 4: Code Property Graph using Graph Query",
+            "title": "Lab 4: Code RAG using AI Vector Search",
+            "description": "Labs that follow the introduction are numbered, starting with Lab 1",
+            "filename": "../../ai-answers/ai-answers.md"
+        },      
+        {
+            "title": "Lab 5: Code Property Graph using Graph Query Hackathon Challenge",
             "description": "This is a step-by-step guide showcasing how the demo instance is navigated",
             "filename": "../../graph-exercise/graph-exercise.md"
         },
         {
-            "title": "Lab 5: JSON Duality View Developer Coding Challenge",
+            "title": "Lab 6: Code Property Graph using Graph Query",
+            "description": "This is a step-by-step guide showcasing how the demo instance is navigated",
+            "filename": "../../graph-answers/graph-answers.md"
+        },
+        {
+            "title": "Lab 7: JSON Duality View Developer Hackathon Challenge",
             "description": "This is a step-by-step guide showcasing how the demo instance is navigated",
             "filename": "../../json-exercise/json-exercise.md"
         },   
         {
-            "title": "Lab 6: Developer Coding Exercise Answers",
+            "title": "Lab 8: JSON Duality View Developer",
             "description": "This is a step-by-step guide showcasing how the demo instance is navigated",
-            "filename": "../../exercise-key/exercise-key.md"
+            "filename": "../../json-answers/json-answers.md"
         }, 
         {
             "title": "Need Help?",
