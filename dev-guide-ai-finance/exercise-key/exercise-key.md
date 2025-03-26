@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This Lab walks you through the steps to build your own GenAI Powered loan approval application using Oracle Database 23ai and start coding in your personalized environment.
+This lab walks you through the steps to...
 
 Estimated Time: 60 minutes
 

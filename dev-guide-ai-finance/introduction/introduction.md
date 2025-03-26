@@ -2,9 +2,9 @@
 
 ## About this Workshop
 
-In this workshop, we will explore how to build a cutting-edge GenAI-powered loan approval application leveraging Oracle Autonomous Database and the latest Oracle 23ai Database features.  
+In this workshop, we will explore how to build a cutting-edge GenAI powered loan approval application leveraging Oracle Autonomous Database and the latest Oracle Database 23ai features.  
 
-The workshop includes developer coding exercises that will allow you to gain hands on experience building a live application that incorporates the use of **Generative AI**, **AI Chatbots**, **AI Vector Search**, **RAG**, **JSON Duality views**, & **Property Graphs** to help a loan officer to be able to quickly analyze loan application requests & determine the best alignment of loan products to customer qualifications and needs. 
+The workshop includes developer coding challenges that will allow advanced developers to gain hands on experience enhancing a live application that incorporates the use of **Generative AI**, **AI Chatbots**, **AI Vector Search**, **RAG**, **JSON Duality views**, & **Property Graphs** to help a loan officer quickly analyze loan application requests & determine the best loan products for the customer. 
 
 The lab solution you will build will generate data-driven insights by integrating data that is structured in various formats, from internal & external sources. By harnessing the robust capabilities of the Oracle AI Data Platform, the loan officers can streamline document processing, accelerate loan approvals, and leverage in-line generative AI to fine tune loan options in real-time, while ensuring compliance with company and regulatory compliance policies. 
 
@@ -13,7 +13,7 @@ The lab solution you will build will generate data-driven insights by integratin
 
 ### Objectives
 
-The primary goal of this workshop is to demonstrate **Oracle Database 23ai’s** capabilities in automating and enhancing the mortgage underwriting process. Through hands-on demonstrations and technical deep-dives, the workshop will guide attendees through the process of integrating Oracle 23ai features into a custom web application designed for mortgage loan underwriting.  
+The primary goal of this workshop is to demonstrate **Oracle Database 23ai’s** capabilities in automating and enhancing the loan approval process. Through hands-on demonstrations and technical deep-dives, the workshop will guide attendees through the process of integrating Oracle 23ai features into a custom web application.  
 By leveraging **AI Vector Search**, **Graph**, and **JSON/JSON DUALITY VIEWS**, this project will help participants understand how to: 
 
  
@@ -23,7 +23,7 @@ By leveraging **AI Vector Search**, **Graph**, and **JSON/JSON DUALITY VIEWS**, 
 
 * Generate PDF reports on loan decisions. 
 
-* Analyze applicant data using a Wealth Management Graph. 
+* Analyze applicant data using a Graph. 
 
 * Send AI-generated emails to applicants notifying them of their approval status. 
 

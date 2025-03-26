@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This Lab walks you through the steps to build your own GenAI Powered loan approval application using Oracle Database 23ai and start coding in your personalized environment.
+This lab walks you through the steps to build a GenAI powered loan approval application using Oracle Database 23ai. Start coding in your personalized environment in the cloud and help SeerEquities save time on their loan approval process.
 
 Estimated Time: 20 minutes
 

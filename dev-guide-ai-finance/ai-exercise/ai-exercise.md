@@ -1,7 +1,9 @@
-# AI Developer Coding Challenge
+# Code RAG using AI Vector Search
 
 ## Introduction
-In this lab, you will complete an AI developer coding challenge.
+In this lab, you will complete a series of developer coding challenges using various Oracle Database 23ai features. You will be challenged to enhance the current application features to implement various updates. Are you up for the challenge? 
+
+If you are up for the challenge, use the (tab name) tab on the right. If you would like a step-by-step guide on how to complete the challenges, use the (tab name) tab on the left.
 
 Estimated Time: 30 minutes
 
