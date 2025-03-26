@@ -4,6 +4,7 @@
 
 In this lab, you will complete a JSON Duality developer coding exercise.
 
+Estimated Time: 30 minutes
 
 ### Objectives
 * Perform the coding required to achieve the enhancement request outlined in the instructions.

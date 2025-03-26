@@ -4,7 +4,7 @@
 
 This Lab walks you through the steps to build your own GenAI Powered loan approval application using Oracle Database 23ai and start coding in your personalized environment.
 
-Estimated Time: -- minutes
+Estimated Time: 60 minutes
 
 ### Objectives
 
@@ -30,47 +30,56 @@ The company has requested an enhancement to the current loan recommendation syst
     ![AI Developer Coding Exercise](./images/ai-exercise.png " ")
 
 **Answer**:
-1. Click **Pages**.
+
+1. To navigate to the development environment, click **View Login Info**. Copy the Development IDE Login Password. Click the Start Development IDE link.
+
+    ![Open Development Environment](./images/dev-env.png " ")
+
+2. Paste in the Development IDE Login Password that you copied in the previous step. Click **Login**.
+
+    ![Login](./images/jupyter-login.png " ")
+
+3. Click **Pages**.
 
     ![Click Pages](./images/click-pages.png " ")
 
-2. Select **Customers.py**.
+4. Select the **Customers.py** file.
 
     ![Click Customers.py](./images/customers-py.png " ")
 
-3. On lines 454 and 455, change the value 3 to **5**, as we need to display the top 5 loan recommendations instead of 3.
+5. On lines 454 and 455, change the value 3 to **5**, as we need to display the top 5 loan recommendations instead of 3.
 
     ![Change 3 to 5](./images/3-to-5-1.png " ")
 
-4. Save the Customers.py file.
+6. Save the Customers.py file.
 
     ![Save Customers.py](./images/save-customers-py.png " ")
 
-5. Select **Decision.py**.
+7. Select the **Decision.py** file.
 
     ![Click Decision.py](./images/decision-py.png " ")
 
-6. On line 456, change the value 3 to **5**.
+8. On line 456, change the value 3 to **5**.
 
     ![Change 3 to 5](./images/3-to-5-2.png " ")
 
-7. On line 470, change the value 3 to **5**.
+9. On line 470, change the value 3 to **5**.
 
     ![Change 3 to 5](./images/3-to-5-3.png " ")
 
-8. On line 485, change the value 3 to **5**.
+10. On line 485, change the value 3 to **5**.
 
     ![Change 3 to 5](./images/3-to-5-4.png " ")
 
-10. Save the Decision.py file.
+11. Save the Decision.py file.
 
     ![Save Decision.py](./images/save-decision-py.png " ")
 
-11. Open the terminal. 
+12. Select the **Launcher** tab and open the **terminal**
 
     ![Open Terminal](./images/open-terminal.png " ")
 
-12. Copy the ./run.sh command and paste it into the terminal.
+13. Copy the ./run.sh command and paste it into the terminal.
 
     ````
     <copy>
@@ -78,19 +87,19 @@ The company has requested an enhancement to the current loan recommendation syst
     </copy>
     ````
 
-13. Click the URL displayed in the terminal to launch the SeerEquities Loan Management application.
+14. Click the URL displayed in the terminal to launch the SeerEquities Loan Management application.
 
     ![Click the URL](./images/click-url.png " ")
 
-14. Enter in a username and click **Login**.
+15. Enter in a username and click **Login**.
 
     ![Login](./images/login.png " ")
 
-15. On the Dashboard page, from the pending review list, select the Customer ID for **James Smith**.
+16. On the Dashboard page, from the pending review list, select the Customer ID for **James Smith**.
 
     ![Select James Smith](./images/james-smith.png " ")
 
-16. This will display the customers loan application details. In approximately 15 seconds, the 5 AI generated loan recommendations will be displayed.
+17. This will display the customers loan application details. In approximately 15 seconds, the 5 AI generated loan recommendations will be displayed.
 
     ![James Smith AI generated recommendations](./images/james-smith-5-ai.png " ")
 
@@ -114,15 +123,23 @@ The loan officer needs to visualize additional data points in the decision-makin
 
 **Answer**:
 
-1. Click **Pages**.
+1. To navigate to the development environment, click **View Login Info**. Copy the Development IDE Login Password. Click the Start Development IDE link.
+
+    ![Open Development Environment](./images/dev-env.png " ")
+
+2. Paste in the Development IDE Login Password that you copied in the previous step. Click **Login**.
+
+    ![Login](./images/jupyter-login.png " ")
+
+3. Click **Pages**.
 
     ![Click Pages](./images/click-pages.png " ")
 
-2. Select **Decision.py**.
+4. Select **Decision.py**.
 
     ![Click Decision.py](./images/decision-py.png " ")
 
-3. Copy the following code block and paste it at line 272 in the Decision.py file.
+5. Copy the following code block and paste it at line 272 in the Decision.py file.
 
     ````
     <copy>
@@ -251,7 +268,7 @@ with st.expander("🔍 View Dot Plot: Credit Score vs. Debt-to-Income Ratio", ex
     ````
  ![Paste Code at 272](./images/272-code.png " ")
 
-4. Copy the graph query below. Paste the graph query in at line 285.
+6. Copy the graph query below. Paste the graph query in at line 285.
     ````
     <copy>
             # Define the SQL query to fetch data from the LOANS_GRAPH property graph
@@ -281,7 +298,7 @@ with st.expander("🔍 View Dot Plot: Credit Score vs. Debt-to-Income Ratio", ex
 
 Edit the part of the script that edits the scatter plot. Change the X and Y axis of the graph to reflect the "DEBT\_TO\_INCOME\_RATIO" and "REQUIRED\_CREDIT\_SCRORE" requested by the loan officer
 
-5. Paste 'DEBT\_TO\_INCOME_RATIO' in the empty bracket at line 353 and 'REQUIRED\_CREDIT\_SCORE' in the empty bracket at line 354.
+7. Paste 'DEBT\_TO\_INCOME_RATIO' in the empty bracket at line 353 and 'REQUIRED\_CREDIT\_SCORE' in the empty bracket at line 354.
 
     ````
     <copy>
@@ -296,7 +313,7 @@ Edit the part of the script that edits the scatter plot. Change the X and Y axis
     ````
  ![Paste Code at 353 and 354](./images/353-code.png " ")
 
-6. Paste 'Debt-to-Income Ratio (%)' in the empty parentheses at line 362.
+8. Paste 'Debt-to-Income Ratio (%)' in the empty parentheses at line 362.
 
     ````
     <copy>
@@ -304,7 +321,7 @@ Edit the part of the script that edits the scatter plot. Change the X and Y axis
     </copy>
     ````
 
-7. Paste 'Required Credit Score' in the empty parentheses at line 364.
+9. Paste 'Required Credit Score' in the empty parentheses at line 364.
 
     ````
     <copy>
@@ -312,7 +329,7 @@ Edit the part of the script that edits the scatter plot. Change the X and Y axis
     </copy>
     ````
 
-8. Paste f'Loans Just Out of Reach for Customer ID {customer_id}' in the empty parentheses at line 366.
+10. Paste f'Loans Just Out of Reach for Customer ID {customer_id}' in the empty parentheses at line 366.
 
     ````
     <copy>
@@ -322,7 +339,7 @@ Edit the part of the script that edits the scatter plot. Change the X and Y axis
 
  ![Paste Code at 362, 364, and 366](./images/362-code.png " ")
 
- 9. Paste 'DEBT\_TO\_INCOME\_RATIO' in the empty brackets at lines 370 and 372.
+ 11. Paste 'DEBT\_TO\_INCOME\_RATIO' in the empty brackets at lines 370 and 372.
 
      ````
     <copy>
@@ -332,7 +349,7 @@ Edit the part of the script that edits the scatter plot. Change the X and Y axis
 
  ![Paste Code at 370 and 372](./images/370-code.png " ")
 
-10. Paste 'REQUIRED\_CREDIT\_SCORE' in the empty brackets at lines 378 and 380.
+12. Paste 'REQUIRED\_CREDIT\_SCORE' in the empty brackets at lines 378 and 380.
 
     ````
     <copy>
@@ -342,7 +359,7 @@ Edit the part of the script that edits the scatter plot. Change the X and Y axis
 
  ![Paste Code at 378 and 380](./images/378-code.png " ")
 
-11. Paste 'REQUIRED\_CREDIT\_SCORE' in the empty brackets at line 395.
+13. Paste 'REQUIRED\_CREDIT\_SCORE' in the empty brackets at line 395.
 
     ````
     <copy>
@@ -394,11 +411,11 @@ Edit the part of the script that edits the scatter plot. Change the X and Y axis
 
     ![Select James Woods](./images/james-woods.png " ")
 
-16. This will display the customers loan application details. In approximately 15 seconds, the AI generated loan recommendations will be displayed. Click the **Navigate To Decisions** button.
+21. This will display the customers loan application details. In approximately 15 seconds, the AI generated loan recommendations will be displayed. Click the **Navigate To Decisions** button.
 
     ![James Smith AI generated recommendations](./images/james-woods-ai.png " ")
 
-17. Expand the drop down to view the newly added graph.
+22. Expand the drop down to view the newly added graph.
 
     ![James Smith graph](./images/james-woods-graph.png " ")
 

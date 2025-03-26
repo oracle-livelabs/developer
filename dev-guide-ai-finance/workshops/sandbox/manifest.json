@@ -18,7 +18,7 @@
             "filename": "../../workshop-details/workshop-details.md"
         },
         {
-            "title": "Lab 2: See GenAI Powered Loan Application in Action & Review Key Code Highlights",
+            "title": "Lab 2: Seer Equities AI App in Action",
             "description": "Labs that follow the introduction are numbered, starting with Lab 1",
             "filename": "../../user-story/user-story.md"
         },          
@@ -41,11 +41,6 @@
             "title": "Lab 6: Developer Coding Exercise Answers",
             "description": "This is a step-by-step guide showcasing how the demo instance is navigated",
             "filename": "../../exercise-key/exercise-key.md"
-        }, 
-        {
-            "title": "Lab 7: Hands On How-To’s",
-            "description": "This is a step-by-step guide showcasing how the demo instance is navigated",
-            "filename": "../../how-to/how-to.md"
         }, 
         {
             "title": "Need Help?",
