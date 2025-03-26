@@ -1,15 +1,16 @@
-# Seer Equities AI App in Action
+# SeerEquities AI App in Action
 
 ## Introduction
 
-This lab guides you through spinning up and navigating a GenAI-powered loan approval application, designed to streamline the loan processing workflow and significantly reduce the time-consuming paperwork that currently takes months for Loan Officers to handle.
+This lab guides you through spinning up and navigating a GenAI powered loan approval application, designed to streamline the loan processing workflow and significantly reduce the time-consuming paperwork that currently takes months for loan officers to handle.
 
 Estimated Lab Time: 45 minutes
 
 ### Objectives
 
 In this lab, you will:
-* Begin the demo process of the hands_on loan officer approval use cases
+* Walk through a demo of the SeerEquities Loan Approval application as a loan officer persona
+* Explore the challenges associated with loan approval processing time and learn how the SeerEquities Loan Management app reduces processing and approval time by over 80%!
 
 ### Prerequisites
 

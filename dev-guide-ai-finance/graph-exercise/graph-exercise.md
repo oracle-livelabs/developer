@@ -1,4 +1,4 @@
-# Graph Developer Coding Challenge
+# Code Property Graph using Graph Query Hackathon Challenge
 
 ## Introduction
 
