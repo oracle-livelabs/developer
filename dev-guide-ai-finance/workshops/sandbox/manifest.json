@@ -13,7 +13,7 @@
             "filename": "../../cloud-login/cloud-login.md"
         },
         {
-            "title": "Lab 1: Review Workshop Details and Required Prerequisites",
+            "title": "Lab 1: Workshop Details and Prerequisites",
             "description": "Labs that follow the introduction are numbered, starting with Lab 1",
             "filename": "../../workshop-details/workshop-details.md"
         },
@@ -21,19 +21,20 @@
             "title": "Lab 2: Seer Equities AI App in Action",
             "description": "Labs that follow the introduction are numbered, starting with Lab 1",
             "filename": "../../user-story/user-story.md"
-        },          
+        }, 
+
         {
-            "title": "Lab 3: AI Developer Coding Exercise",
+            "title": "Lab 3: AI Developer Coding Challenge",
             "description": "Labs that follow the introduction are numbered, starting with Lab 1",
             "filename": "../../ai-exercise/ai-exercise.md"
         },
         {
-            "title": "Lab 4: Graph Developer Coding Exercise",
+            "title": "Lab 4: Graph Developer Coding Challenge",
             "description": "This is a step-by-step guide showcasing how the demo instance is navigated",
             "filename": "../../graph-exercise/graph-exercise.md"
         },
         {
-            "title": "Lab 5: JSON Duality View Developer Coding Exercise",
+            "title": "Lab 5: JSON Duality View Developer Coding Challenge",
             "description": "This is a step-by-step guide showcasing how the demo instance is navigated",
             "filename": "../../json-exercise/json-exercise.md"
         },   

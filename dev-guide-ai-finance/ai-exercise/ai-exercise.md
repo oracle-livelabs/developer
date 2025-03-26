@@ -1,7 +1,7 @@
-# AI Developer Coding Exercise
+# AI Developer Coding Challenge
 
 ## Introduction
-In this lab, you will complete an AI developer coding exercise.
+In this lab, you will complete an AI developer coding challenge.
 
 Estimated Time: 30 minutes
 
@@ -16,7 +16,7 @@ This lab assumes you have:
 * An Oracle Cloud account
    
 
-## Task 1: AI Developer Coding Exercise
+## Task 1: AI Developer Coding Challenge
 
 **Task**:
 

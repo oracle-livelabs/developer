@@ -1,4 +1,4 @@
-# Review Workshop Details and Required Prerequisites
+# Workshop Details and Prerequisites
 
 ## Introduction
 
