@@ -1,4 +1,4 @@
-# JSON Duality View Developer Coding Challenge
+# JSON Duality View Developer Hackathon Challenge
 
 ## Introduction
 

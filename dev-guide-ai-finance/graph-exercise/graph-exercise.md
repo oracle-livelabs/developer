@@ -1,4 +1,4 @@
-# Code Property Graph using Graph Query
+# Code Property Graph using Graph Query Hackathon Challenge
 
 ## Introduction
 

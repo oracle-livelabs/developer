@@ -1,4 +1,4 @@
-# Developer Coding Exercise Answers
+# JSON Duality View Developer
 
 ## Introduction
 
