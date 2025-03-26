@@ -1,9 +1,10 @@
-# JSON Duality View Developer Coding Exercise
+# JSON Duality View Developer Coding Challenge
 
 ## Introduction
 
-In this lab, you will complete a JSON Duality developer coding exercise.
+In this lab, you will complete a JSON Duality developer coding challenge.
 
+Estimated Time: 30 minutes
 
 ### Objectives
 * Perform the coding required to achieve the enhancement request outlined in the instructions.
@@ -15,9 +16,7 @@ This lab assumes you have:
 * An Oracle Cloud account
 
 
-## Task 1: JSON Duality View Developer Coding Exercise
-
-Loan to Value Field Exercise
+## Task 1: JSON Duality View Developer Coding Challenge
 
 1. The loan officer wants another risk assessment. Complete his request by adding the loan to value field to the Customer & Loan Details table. Give it the following three conditions: 
     * If the loan is VA set it to 100%

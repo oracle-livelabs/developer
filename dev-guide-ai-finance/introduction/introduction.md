@@ -2,8 +2,11 @@
 
 ## About this Workshop
 
-This workshop will demonstrate how both developers and business executives can leverage the cutting-edge capabilities of **Oracle Database 23ai** to create a powerful, intelligent mortgage loan underwriting system. Using real-world mortgage loan scenarios, you’ll explore how to integrate AI-driven tools such as **AI Vector Search**, **Graph Analytics**, and **JSON/JSON Duality Views** to make smarter, faster decisions in modern banking and finance.
+In this workshop, we will explore how to build a cutting-edge GenAI-powered loan approval application leveraging Oracle Autonomous Database and the latest Oracle 23ai Database features.  
 
+The workshop includes developer coding exercises that will allow you to gain hands on experience building a live application that incorporates the use of **Generative AI**, **AI Chatbots**, **AI Vector Search**, **RAG**, **JSON Duality views**, & **Property Graphs** to help a loan officer to be able to quickly analyze loan application requests & determine the best alignment of loan products to customer qualifications and needs. 
+
+The lab solution you will build will generate data-driven insights by integrating data that is structured in various formats, from internal & external sources. By harnessing the robust capabilities of the Oracle AI Data Platform, the loan officers can streamline document processing, accelerate loan approvals, and leverage in-line generative AI to fine tune loan options in real-time, while ensuring compliance with company and regulatory compliance policies. 
 
   [](videohub:1_mg30brw3)
 
