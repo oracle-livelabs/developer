@@ -1,4 +1,4 @@
-# JSON Duality View Developer
+# JSON Duality View Developer Hackathon Challenge Answers
 
 ## Introduction
 

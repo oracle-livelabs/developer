@@ -2,19 +2,29 @@
 
 ## Introduction
 
-In this lab, you will complete an Graph developer coding challenge.
+**Welcome to the Code Property Graph using Graph Query Hackathon Challenge!**
+
+In this lab, you will tackle an exciting developer coding challenge focused on **Graph**. Your goal is to enhance the existing application by implementing an update that will elevate its functionality. This is your opportunity to sharpen your skills and explore the power of Graph.
+
+**Are you up for the challenge?**
+
+If you're ready to dive in, proceed with this lab and start coding. If you prefer a more guided approach with a detailed walkthrough, you can continue to Lab 5b Step-by-step: Code Property Graph using Graph Query Hackathon Challenge for step-by-step instructions.
+
+Good luck, and enjoy the process!
 
 Estimated Time: 30 minutes
 
 ### Objectives
-* Perform the coding required to achieve the enhancement request outlined in the instructions.
+* Enhance your understanding of Graph by applying it to a real-world developer coding challenge.
+* Gain hands-on experience with Graph and refining application features to meet specific development requirements.
 
 
 ### Prerequisites
 
 This lab assumes you have:
 * An Oracle Cloud account
-   
+* Successfully completed Lab 1: Workshop Details and Prerequisites
+* Successfully completed Lab 2: SeerEquities AI App in Action
 
 ## Task 1: Graph Developer Coding Challenge
 
