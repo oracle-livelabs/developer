@@ -22,34 +22,38 @@
             "description": "Labs that follow the introduction are numbered, starting with Lab 1",
             "filename": "../../user-story/user-story.md"
         }, 
-
         {
-            "title": "Lab 3: Code RAG using AI Vector Search Hackathon Challenge",
+            "title": "Lab 3: Build the Application",
+            "description": "This is a step-by-step guide showcasing how the demo instance is navigated",
+            "filename": "../../build/build.md"
+        }, 
+        {
+            "title": "Lab 4a DIY: Code RAG using AI Vector Search Hackathon Challenge",
             "description": "Labs that follow the introduction are numbered, starting with Lab 1",
             "filename": "../../ai-exercise/ai-exercise.md"
         }, 
         {
-            "title": "Lab 4: Code RAG using AI Vector Search",
+            "title": "Lab 4b Step-by-step: Code RAG using AI Vector Search Hackathon Challenge",
             "description": "Labs that follow the introduction are numbered, starting with Lab 1",
             "filename": "../../ai-answers/ai-answers.md"
         },      
         {
-            "title": "Lab 5: Code Property Graph using Graph Query Hackathon Challenge",
+            "title": "Lab 5a DIY: Code Property Graph using Graph Query Hackathon Challenge",
             "description": "This is a step-by-step guide showcasing how the demo instance is navigated",
             "filename": "../../graph-exercise/graph-exercise.md"
         },
         {
-            "title": "Lab 6: Code Property Graph using Graph Query",
+            "title": "Lab 5b Step-by-step: Code Property Graph using Graph Query Hackathon Challenge",
             "description": "This is a step-by-step guide showcasing how the demo instance is navigated",
             "filename": "../../graph-answers/graph-answers.md"
         },
         {
-            "title": "Lab 7: JSON Duality View Developer Hackathon Challenge",
+            "title": "Lab 6a DIY: JSON Duality View Developer Hackathon Challenge",
             "description": "This is a step-by-step guide showcasing how the demo instance is navigated",
             "filename": "../../json-exercise/json-exercise.md"
         },   
         {
-            "title": "Lab 8: JSON Duality View Developer",
+            "title": "Lab 6b Step-by-step: JSON Duality View Developer Hackathon Challenge",
             "description": "This is a step-by-step guide showcasing how the demo instance is navigated",
             "filename": "../../json-answers/json-answers.md"
         }, 

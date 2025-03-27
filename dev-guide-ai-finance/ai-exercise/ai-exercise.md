@@ -1,21 +1,32 @@
 # Code RAG using AI Vector Search Hackathon Challenge
 
 ## Introduction
-In this lab, you will complete a series of developer coding challenges using various Oracle Database 23ai features. You will be challenged to enhance the current application features to implement various updates. Are you up for the challenge? 
 
-If you are up for the challenge, continue with this lab. If you would like a step-by-step guide on how to complete the challenge, continue to the Code RAG using AI Vector Search lab.
+**Welcome to the Code RAG using AI Vector Search Hackathon Challenge!**
+
+In this lab, you will tackle an exciting developer coding challenge focused on **AI Vector Search**. Your goal is to enhance the existing application by implementing an update that will elevate its functionality. This is your opportunity to sharpen your skills and explore the power of AI-driven search.
+
+**Are you up for the challenge?**
+
+If you're ready to dive in, proceed with this lab and start coding. If you prefer a more guided approach with a detailed walkthrough, you can continue to Lab 4b Step-by-step: Code RAG using AI Vector Search Hackathon Challengee for step-by-step instructions.
+
+Good luck, and enjoy the process!
 
 Estimated Time: 30 minutes
 
 
 ### Objectives
-* Perform the coding required to achieve the enhancement request outlined in the instructions.
+In this lab, you will:
+* Enhance your understanding of AI Vector Search by applying it to a real-world developer coding challenge.
+* Gain hands-on experience with integrating AI Vector Search and refining application features to meet specific development requirements.
 
 
 ### Prerequisites
 
 This lab assumes you have:
 * An Oracle Cloud account
+* Successfully completed Lab 1: Workshop Details and Prerequisites
+* Successfully completed Lab 2: SeerEquities AI App in Action
    
 
 ## Task 1: AI Developer Coding Challenge
