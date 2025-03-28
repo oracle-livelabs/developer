@@ -1,31 +1,118 @@
-# JSON Duality View Developer Hackathon Challenge Answers
+# JSON Duality Views Coding Challenge step-by-step
 
 ## Introduction
 
-This lab walks you through the steps to...
+In this lab, we’ll provide a step-by-step guide to help you successfully complete the coding challenge from the previous lab. This step-by-step guide will walk you through the necessary updates, providing solutions and insights to help you fully understand how to utilize JSON duality views in a practical scenario. Whether you're refining your existing work or tackling the challenge for the first time, this guide will ensure you gain the skills and confidence needed to implement these powerful features.
 
-Estimated Time: 60 minutes
+Let’s dive in and unlock the full potential of JSON in your application!
+
+Estimated Time: 15 minutes
 
 ### Objectives
 
 In this lab, you will:
-* 
+
+* Enhance your understanding of JSON duality views by applying it to a real-world developer coding challenge.
+
+* Gain hands-on experience with JSON duality views and refining application features to meet specific development requirements.
+
 ### Prerequisites
 
 This lab assumes you have:
+
 * An Oracle Cloud account
 
+* Successfully completed Lab 1: Workshop Details and Prerequisites
+
+* Successfully completed Lab 2: SeerEquities AI App in Action
 
 
-## Task 3: JSON Duality View Developer Coding Exercise Answer
+## Task 1: JSON Duality Views Coding Exercise 
 
 
-1. The loan officer wants another risk assessment. Complete his request by adding the loan to value field to the Customer & Loan Details table. Give it the following three conditions: 
-    * If the loan is VA set it to 100%
-    * If they are a first time home buyer set it to 97%
-    * Set everything else to 95% 
+The company has requested an enhancement to the current customer data and would now like to see the parameter for **age** to be reflected. 
+
+1. In the Decision.py file, find the clients_dv transform statement
+2. Update the clients_dv transform statement to include a parameter for Age.
 
 
+## Task 2: Login to Jupiter Notebook
+
+1. To navigate to the development environment, click **View Login Info**. Copy the Development IDE Login Password. Click the Start Development IDE link.
+
+    ![Open Development Environment](./images/dev-env.png " ")
+
+2. Paste in the Development IDE Login Password that you copied in the previous step. Click **Login**.
+
+    ![Login](./images/jupyter-login.png " ")
+
+## Task 3: Modify the Decision.py File
+
+1. Click **Pages**.
+
+    ![Click Pages](./images/click-pages.png " ")
+
+2. Select **Decision.py**.
+
+    ![Click Decision.py](./images/decision-py.png " ")
+
+**Coding with JSON TRANSFORM**
+
+The code below section dynamically updates customer data in our **clients dv** (dv - stands for duality views) table by building a flexible  **JSON TRANSFORM** query based on a list of transformation statements. It constructs the query by joining those statements—like setting new field values—then applies them to the JSON data for a specific customer, identified by their ID, as long as a loan application exists."
+
+3. Copy the following code block and paste it at line 251 in the Decision.py file.
+
+````python
+<copy>
+        if transform_statements:
+                    transform_query = ", ".join(transform_statements)
+                try:
+                update_query = f"""
+                    UPDATE clients_dv
+                    SET data = JSON_TRANSFORM(data, {transform_query})
+                    WHERE JSON_VALUE(data, '$._id') = :customer_id
+                    AND JSON_EXISTS(data, '$.loanApplications[0]')
+                """
+                </copy>
+````
+
+## Task 4: Launch the Application
+
+1. Open the terminal. 
+
+    ![Open Terminal](./images/open-terminal.png " ")
+
+2. Copy the ./run.sh command and paste it into the terminal.
+
+````bash
+ $<copy>
+    ./run.sh
+    </copy>
+````
+
+3. Click the URL displayed in the terminal to launch the SeerEquities Loan Management application.
+
+    ![Click the URL](./images/click-url.png " ")
+
+4. Enter in a username and click **Login**.
+
+    ![Login](./images/login.png " ")
+
+## Task 5: View the Results
+
+1. On the Dashboard page, from the pending review list, select the Customer ID for **James Woods**.
+
+    ![Select James Woods](./images/james-woods.png " ")
+
+2. This will display the customers loan application details. In approximately 15 seconds, the AI generated loan recommendations will be displayed. Click the **Navigate To Decisions** button.
+
+    ![James Smith AI generated recommendations](./images/james-woods-ai.png " ")
+
+3. Expand the XYZ to view the XYZ
+
+    
+
+**Congratulations, you have successfully completed the JSON Duality View Coding Exercise!**
 
 ## Learn More
 
