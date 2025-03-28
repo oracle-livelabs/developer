@@ -1,51 +1,48 @@
-# Get started - Login to the LiveLabs Sandbox Environment
+# Get started - Login to the LiveLabs Sandbox Environment and Workshop Application
 
 ## Introduction
 
-Welcome to LiveLabs.
-You have successfully created a LiveLabs Sandbox environment.
-
-In this lab, we will show you where you can find the login information and how to log in to the LiveLabs Sandbox.
+In this lab, we will show you where you can find the login information and how to log in to the LiveLabs Sandbox as well as the **SeerEquities Loan Management application**.
 
 Estimated Time: 5 minutes
 
 ### Objectives
 
 - Login to LiveLabs Sandbox
-- Find your LiveLabs Sandbox reservations
+- Log-in to the application
+- Locate your LiveLabs Sandbox reservations
 
 ## Task 1: View Login Information and login to your LiveLabs Sandbox
 
-1. Right above the workshop instructions you can find two information:
+Right above the workshop instructions you can find two information:
 
-    a. **View Login Info:** You can find credentials and other information to access the LiveLabs Sandbox
+a. **View Login Info:** You can find credentials and other information to access the LiveLabs Sandbox
 
-    b. **Time Remaining:** This shows you the remaining time before your access to the LiveLabs Sandbox expires. Please note: You may be able to extend the reservation time.
+b. **Time Remaining:** This shows you the remaining time before your access to the LiveLabs Sandbox expires. Please note: You may be able to extend the reservation time.
 
-      ![View Login Info](./images/view-login-info.png " ")
+![View Login Info](./images/view-login-info.png " ")
 
-2. Click **View Login Info** to see detailed reservation information. Click the **Start the Demo** link.
+## Task 2: Workshop Application Setup
 
-    ![Launch Demo](./images/start-demo.png " ")
+1. To access the demo environment, click **View Login Info** in the top left corner of the page. Click the Start the Demo link.
 
+    ![Click the Start Demo Link](./images/start-demo.png " ")
 
-3. Congratulations! You are now connected to the demo environment. You can now execute the different tasks and steps for the selected LiveLabs workshop.
+2. Welcome to the SeerEquities Loan Management application! Congratulations, you are now connected to the demo environment. You can now execute the different tasks and steps for the selected LiveLabs workshop.
 
-    ![Demo Environment](./images/demo-env.png " ")
-
-4. 
-
-## Task 2: Find your LiveLabs Sandbox reservations
-
-1. If you close your browser, and you want to launch your workshop again, open [livelabs.oracle.com](https://livelabs.oracle.com), login using your Oracle account, and click on **My Reservations**. You can find here a complete history of all LiveLabs workshops you signed up for. Click on **Launch Workshop** to start a workshop with an existing LiveLabs Sandbox environment.
+    ![Homepage](./images/app-home.png " ")
 
 
-    ![View My Reservations](./images/ll-reservations.png " ")
+## Task 3: Find your LiveLabs Sandbox reservations
+
+If you close your browser, and you want to launch your workshop again, open [livelabs.oracle.com](https://livelabs.oracle.com), login using your Oracle account, and click on **My Reservations**. You can find here a complete history of all LiveLabs workshops you signed up for. Click on **Launch Workshop** to start a workshop with an existing LiveLabs Sandbox environment.
+
+![View My Reservations](./images/ll-reservations.png " ")
 
 You may now **proceed to the next lab**.
 
 ## Acknowledgements
 
-- **Created By/Date** - Kamryn Vinson, Database Product Management, March 2020
-- **Contributor** - Rene Fontcha
+- **Created By/Date** - Kamryn Vinson Database
+- **Contributor** - Linda Foinding
 - **Last Updated By/Date** - Kamryn Vinson, March 2025
