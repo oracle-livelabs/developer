@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This lab guides you through spinning up and navigating a GenAI powered loan approval application, designed to streamline the loan processing workflow and significantly reduce the time-consuming paperwork that currently takes months for loan officers to handle.
+In this lab, you will step into the role of a loan officer using a next-generation loan approval application powered by Oracle Database 23ai. You will work with real loan applications and see how Generative AI, Vector Search, and Graph analytics replace manual review with faster, AI-driven decision-making.
 
 Estimated Lab Time: 45 minutes
 
@@ -36,11 +36,12 @@ In this first example, we'll navigate through this application to show you the f
 
 4. Copy the following prompt into the AI chatbot and press Enter.
 
-    ```
+    ```text
     <copy>
     What would be the top 0% down payment loans?
     </copy>
     ```
+    
     ![James Smith chatbot](./images/james-smith-chatbot.png " ")
 
 5. Press the **Generate Finalized Decision PDF** button to save the AI responses and proceed to the final loan disposition. 
@@ -203,7 +204,7 @@ In this first example, we'll navigate through this application to show you the f
 
 4. Copy the following prompt into the AI chatbot to see the lowest down payment. Press Enter.
 
-    ```
+    ```text
     <copy>
     Show me the lowest down payment.
     </copy>
@@ -211,7 +212,8 @@ In this first example, we'll navigate through this application to show you the f
     ![Michael Ramos chatbot](./images/michael-ramos-chatbot1.png " ")
 
     Copy the following prompt into the AI chatbot to see the lowest monthly payment. Press Enter.
-    ```
+
+    ```text
     <copy>
     Show me the lowest monthly payment.
     </copy>
@@ -293,12 +295,9 @@ For this task, we will edit a customers details.
 
 ## Learn More
 
-*(optional - include links to docs, white papers, blogs, etc)*
-
-* [URL text 1](http://docs.oracle.com)
-* [URL text 2](http://docs.oracle.com)
+* [Oracle Database 23ai Documentation](https://docs.oracle.com/en/database/oracle/oracle-database/23/)
 
 ## Acknowledgements
-* **Authors** - Francis Regalado, Eddie Ambler
-* **Contributors** -  Kamryn Vinson, Linda Foinding, Otis Barr
+* **Authors** - Linda Foinding, Francis Regalado
+* **Contributors** - Kamryn Vinson, Otis Barr, Eddie Ambler
 * **Last Updated By/Date** - Kamryn Vinson, March 2025

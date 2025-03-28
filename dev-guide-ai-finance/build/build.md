@@ -1,8 +1,8 @@
-# Build the Application
+# Code Snippets and Highlights for Building the Application
 
 ## Introduction
 
-This lab will guide you through the process of building a Retrieval Augmented Generation (RAG) application using Oracle AI Vector Search and a Generative AI model using Oracle Database 23ai. This application will act as a flexible template that can be adapted to a wide range of use cases. Oracle Database 23AI will function as the vector data, where you'll store important context for the model to use when generating responses. This approach allows you to create a robust system that retrieves relevant data and combines it with the power of generative AI to deliver accurate, up-to-date answers based on your specific business needs.
+This lab will guide you through the process of building a Retrieval Augmented Generation (RAG) application using Oracle AI Vector Search and a Generative AI model using Oracle Database 23ai. This application will act as a flexible template that can be adapted to a wide range of use cases. Oracle Database 23Ai will function as the vector data, where you'll store important context for the model to use when generating responses. This approach allows you to create a robust system that retrieves relevant data and combines it with the power of generative AI to deliver accurate, up-to-date answers based on your specific business needs.
 
 Estimated Time: 20 minutes
 
@@ -21,7 +21,7 @@ Throughout this section we will be leveraging a Jupyter Notebook to review the c
 This lab assumes you have:
 * An Oracle Cloud account
 
-## Task 1: Login to Juptyer
+## Task 1: Login to Jupyter
 
 This task will have you login to the Jupyter environment and run specific notebooks for this lab.
 
@@ -34,13 +34,27 @@ This task will have you login to the Jupyter environment and run specific notebo
 4. After a successfull login, you will see the Jupyter Notebook's landing page.
 
 
-## Task 2: Start the Application
+## Task 2: Launch the Application
 
-1. In the launcher panel, open the (terminal)
+1. Select the **Launcher** tab and open the **terminal**
 
-2. navigate to the right directory cd streamlit
+    ![Open Terminal](./images/open-terminal.png " ")
 
-3. execute ./run.sh
+2. Copy the ./run.sh command and paste it into the terminal.
+
+    ````bash
+        $<copy>
+        ./run.sh
+        </copy>
+        ````
+
+3. Click the URL displayed in the terminal to launch the SeerEquities Loan Management application.
+
+    ![Click the URL](./images/click-url.png " ")
+
+4. Enter in a username and click **Login**.
+
+    ![Login](./images/login.png " ")
 
 ## Task 3: How to Connect to the Database
 
@@ -70,6 +84,10 @@ Oracle AI Vector Search is a feature of Oracle Database 23ai that enables effici
 
 **Code Highlight: Communicating with GenAI**
 
+**About Generative artificial intelligence (AI)** 
+
+Generative AI excels at creating text responses based on large language models (LLMs) where the AI is trained on a massive number of data points. The generated text is often easy to read and provides detailed responses that are broadly applicable to the questions asked of the software, often called prompts.
+
 3. Now, this is how we communicate with OCI’s Generative AI service by pulling in configuration details like the compartment ID and endpoint from environment variables and a config file. The code sets up the structure for a chat request, embedding our prompt into a user message, enabling AI loan recommendations within the app.
 
     ![Code Highlight: Communicating with GenAI](./images/code-highlight-4.png " ")
@@ -81,6 +99,12 @@ Oracle AI Vector Search is a feature of Oracle Database 23ai that enables effici
     ![Code Highlight: Embed the Question and Vector Search](./images/code-highlight-5.png " ")
 
 ## Task 5 How to incorporate Property Graph into the application
+
+**About Property Graph**
+
+In Oracle Database 23ai we can create property graphs inside the database. These property graphs allow us to map the vertices and edges to new or existing tables, external tables, materialized views or synonyms to these objects inside the database. The property graphs are stored as metadata inside the database meaning they don't store the actual data. Rather, the data is still stored in the underlying objects and we use the SQL/PQG syntax to interact with the property graphs.
+
+Property graphs make the process of working with interconnected data, like identifying influencers in a social network, predicting trends and customer behavior, discovering relationships based on pattern matching and more by providing a more natural and efficient way to model and query them.
 
 **Code Highlight: Graph Query**
 
@@ -96,6 +120,12 @@ Oracle AI Vector Search is a feature of Oracle Database 23ai that enables effici
 
 ## Task 6 How to incorporate JSON Transform into the application
 
+**About JSON Duality View**
+
+JSON Relational Duality is a landmark capability in Oracle Database 23ai, providing game-changing flexibility and simplicity for Oracle Database developers. This feature overcomes the historical challenges developers have faced when building applications using the relational or document models.
+
+JSON Relational Duality helps to converge the benefits of both document and relational worlds. Developers now get the flexibility and data access benefits of the JSON document model, plus the storage efficiency and power of the relational model. The new feature enabling this functionality is JSON Relational Duality View
+
 **Code Highlight: JSON Transform**
 
 This section dynamically updates customer data in our clients\_dv table by building a flexible JSON\_TRANSFORM query based on a list of transformation statements. It constructs the query by joining those statements—like setting new field values—then applies them to the JSON data for a specific customer, identified by their ID, as long as a loan application exists."
@@ -110,6 +140,7 @@ This section dynamically updates customer data in our clients\_dv table by build
 
 
 ## Acknowledgements
-* **Author** - <Name, Title, Group>
-* **Contributors** -  <Name, Group> -- optional
-* **Last Updated By/Date** - <Name, Month Year>
+* **Authors** - Linda Foinding, Francis Regalado
+* **Contributors** - Kamryn Vinson, Otis Barr, Eddie Ambler
+* **Last Updated By/Date** - Linda Foinding, April 2025
+ 
