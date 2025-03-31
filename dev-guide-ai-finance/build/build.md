@@ -48,6 +48,10 @@ This task will have you login to the Jupyter environment and run specific notebo
         </copy>
         ````
 
+**Jupyter Notebook** The following section includes a hands-on excersise for building parts of the application using a Jupyter notebook.
+You will also be able to review important parts of the python code below. 
+
+
 3. Click the URL displayed in the terminal to launch the SeerEquities Loan Management application.
 
     ![Click the URL](./images/click-url.png " ")
