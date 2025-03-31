@@ -99,7 +99,7 @@ From here you can navigate to all your project's components, including environme
 | --- | --- | --- |
 | Extension Name | YourName-Accounts | To keep the names distinct, use your first name plus the first initial of your last name, as in *MaryC-Accounts* |
 | Development Environment |Choose the option available | Mapped to your SaaS instance|
-| Base Oracle Cloud Application | None | Not needed in this scenario |
+| Root Folder | extension1 | Do not change |
 | Sandbox | No sandbox selected | Not needed in this scenario |
 | Use scratch repository | Check | For now, you can just work in a private Git repository |
 {: title="New App Extension Properties"}
