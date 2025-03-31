@@ -33,8 +33,6 @@ Estimated Time:  3 minutes
        <copy>oci session authenticate ; oci iam region list --config-file /Users/YOURHOMEDIR/.oci/config --profile MYSPEECHAIPROFILE --auth security_token</copy>
        ```
 
-      ![Create Security Token](images/createsecuritytoken.png " ")
-
       * Note: After some period of time, if the token is not renewed, `AUTHENTICATION_FAILURE: Could not authenticate` will be thrown and this command will need to be re-run.
       * More information can be found here: https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/clitoken.htm
 

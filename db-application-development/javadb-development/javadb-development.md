@@ -29,6 +29,7 @@ Download [JDK8](https://www.oracle.com/java/technologies/javase/javase-jdk8-down
    
 > **Note:** ojdbc8-full.tar.gz and ojdbc10-full.tar.gz contain oraclepki.jar, osdt\_core.jar, and osdt\_cert.jar required for connecting with an Autonomous Database.  
 
+* For Oracle Autonomous Database 23ai JDBC drivers please check this [download link](https://www.oracle.com/database/technologies/appdev/jdbc-downloads.html)
 * Download either 19c or 18c JDBC driver from the following download page. [ojdbc10-full.tar.gz or ojdbc8-full.tar.gz and ucp.jar](https://www.oracle.com/database/technologies/appdev/jdbc-downloads.html)
 * 21c is an Innovation Release. 21c has premier support until April 2024. Refer to [Lifetime Support Policy](https://www.oracle.com/us/support/library/lifetime-support-technology-069183.pdf) for more details.
 * 19c is a Long Term Release. 19c has premier support until April 2024 and extended support until April 2027.
@@ -104,8 +105,10 @@ unzip Wallet_DEMOADW.zip -d $HOME/< path to wallet folder>
 
       The complete code will be as shown below.
 
+      [Download latest Source code from Oracle samples](https://github.com/oracle-samples/oracle-db-examples/blob/main/java/jdbc/ConnectionSamples/DataSourceSample.java)
+
       ```
-      <copy>
+      <copy> 
       import java.io.IOException;
       import java.io.InputStream;
       import java.sql.Connection;
@@ -118,58 +121,71 @@ unzip Wallet_DEMOADW.zip -d $HOME/< path to wallet folder>
       import oracle.jdbc.OracleConnection;
       import java.sql.DatabaseMetaData;
 
-      public class sales360 {  
-      // For ATP and ADW - use the TNS Alias name along with the TNS_ADMIN 
-      final static String DB_URL="jdbc:oracle:thin:@<instance name>_high?TNS_ADMIN=/< path to wallet folder >";
-      // In case of windows, use the following URL
-      //final static String DB_URL="jdbc:oracle:thin:@wallet_dbname?TNS_ADMIN=C:/Users/test/Wallet_DEMOADW";
-      //final static String DB_URL="jdbc:oracle:thin:@oci_adw_high";
-      final static String DB_USER = "<db_user>";
-      final static String DB_PASSWORD = "<password>";
+      public class DataSourceSample {  
+            // The recommended format of a connection URL is the long format with the
+            // connection descriptor.
+            //final static String DB_URL= "jdbc:oracle:thin:@myhost:1521/myorcldbservicename";
+            // For ATP and ADW - use the TNS Alias name along with the TNS_ADMIN when using 18.3 JDBC driver
+            // Please refer Lab 1 on how to get TNS Names
+            final static String DB_URL="jdbc:oracle:thin:@a<db-name>_high?TNS_ADMIN=/<wallet-folder>";
+            // final static String DB_URL="jdbc:oracle:thin:@adbdw110612_high?TNS_ADMIN=/Users/username/Workarea/Polyglot/wallet/Wallet_ADBDW110612";
+            // In case of windows, use the following URL 
+            // final static String DB_URL="jdbc:oracle:thin:@wallet_dbname?TNS_ADMIN=C:/Users/test/wallet_dbname";
+            final static String DB_USER = "<db-username>";
+            final static String DB_PASSWORD = "<db-password>";
 
-      public static void main(String args[]) throws SQLException {
-      Properties info = new Properties();
-      info.put(OracleConnection.CONNECTION_PROPERTY_USER_NAME, DB_USER);
-      info.put(OracleConnection.CONNECTION_PROPERTY_PASSWORD, DB_PASSWORD);
-      info.put(OracleConnection.CONNECTION_PROPERTY_DEFAULT_ROW_PREFETCH, "20");
+            /*
+            * The method gets a database connection using 
+            * oracle.jdbc.pool.OracleDataSource. It also sets some connection 
+            * level properties, such as,
+            * OracleConnection.CONNECTION_PROPERTY_DEFAULT_ROW_PREFETCH,
+            * OracleConnection.CONNECTION_PROPERTY_THIN_NET_CHECKSUM_TYPES, etc.,
+            * There are many other connection related properties. Refer to 
+            * the OracleConnection interface to find more. 
+            */
+            public static void main(String args[]) throws SQLException {
+                  Properties info = new Properties();     
+                  info.put(OracleConnection.CONNECTION_PROPERTY_USER_NAME, DB_USER);
+                  info.put(OracleConnection.CONNECTION_PROPERTY_PASSWORD, DB_PASSWORD);          
+                  info.put(OracleConnection.CONNECTION_PROPERTY_DEFAULT_ROW_PREFETCH, "20");    
+            
 
-      OracleDataSource ods = new OracleDataSource();
-      ods.setURL(DB_URL);
-      ods.setConnectionProperties(info);
+                  OracleDataSource ods = new OracleDataSource();
+                  ods.setURL(DB_URL);    
+                  ods.setConnectionProperties(info);
 
-      // With AutoCloseable, the connection is closed automatically.
-      try (OracleConnection connection = (OracleConnection) ods.getConnection()) {
-            // Get the JDBC driver name and version
-            DatabaseMetaData dbmd = connection.getMetaData();
-            System.out.println("Driver Name: " + dbmd.getDriverName());
-            System.out.println("Driver Version: " + dbmd.getDriverVersion());
-            // Print some connection properties
-            System.out.println("Default Row Prefetch Value is: " +
-            connection.getDefaultRowPrefetch());
-            System.out.println("Database Username is: " + connection.getUserName());
-            System.out.println("Database Connection URL is: " + DB_URL);
-            System.out.println();
-            // Perform a database operation
-            printSalesData(connection);
+                  // With AutoCloseable, the connection is closed automatically.
+                  try (OracleConnection connection = (OracleConnection) ods.getConnection()) {
+                        // Get the JDBC driver name and version 
+                        DatabaseMetaData dbmd = connection.getMetaData();       
+                        System.out.println("Driver Name: " + dbmd.getDriverName());
+                        System.out.println("Driver Version: " + dbmd.getDriverVersion());
+                        // Print some connection properties
+                        System.out.println("Default Row Prefetch Value is: " + 
+                        connection.getDefaultRowPrefetch());
+                        System.out.println("Database Username is: " + connection.getUserName());
+                        System.out.println();
+                        // Perform a database operation 
+                        printEmployees(connection);
+                  }   
             }
-      }
-
-      public static void printSalesData(Connection connection) throws SQLException {
-      // Statement and ResultSet are AutoCloseable and closed automatically.
-      try (Statement statement = connection.createStatement()) {
-            try (ResultSet resultSet = statement
-            .executeQuery("select * from ADMIN.SALES360 where rownum < 10")) {
-            System.out.println("prod_id" + "  " + "cust_id"+ "  " + "quantity_sold"+ "  " + "channel_id"+ "  " + "amount_sold");
-            System.out.println("---------------------");
-            while (resultSet.next())
-            System.out.println(resultSet.getString("prod_id") + " "
-                  + resultSet.getString("cust_id") + " "+ resultSet.getString("quantity_sold") + " "
-                  + resultSet.getString("channel_id") + " "+ resultSet.getString("amount_sold") + " ");
+            /*
+            * Displays first_name and last_name from the employees table.
+            */
+            public static void printEmployees(Connection connection) throws SQLException {
+                  // Statement and ResultSet are AutoCloseable and closed automatically. 
+                  try (Statement statement = connection.createStatement()) {      
+                        try (ResultSet resultSet = statement
+                        .executeQuery("select * from sales360 where rownum < 10")) {
+                        System.out.println("cust_id" + "  " + "channel_id");
+                        System.out.println("---------------------");
+                        while (resultSet.next())
+                        System.out.println(resultSet.getString(1) + " "
+                              + resultSet.getString(2) + " ");       
                         }
-                  }
-            }
-      }
-       
+                  }   
+            } 
+      }  
       </copy>
       ``` 
 
@@ -193,28 +209,8 @@ unzip Wallet_DEMOADW.zip -d $HOME/< path to wallet folder>
 
       View output
 
-       ```
-      <copy>
-      Driver Name: Oracle JDBC driver
-      Driver Version: 19.14.0.0.0
-      Default Row Prefetch Value is: 20
-      Database Username is: appuser
-      Database Connection URL is: jdbc:oracle:thin:@demoadw_high?TNS_ADMIN=/<path to wallet folder>
-
-      prod_id  cust_id  quantity_sold  channel_id  amount_sold
-      ---------------------
-      13 524 1 2 1205.99 
-      13 2128 1 2 1250.25 
-      13 3212 1 2 1250.25 
-      13 3375 1 2 1250.25 
-      13 5204 1 2 1250.25 
-      13 7082 1 2 1250.25 
-      13 9316 1 2 1250.25 
-      13 12782 1 2 1250.25 
-      13 13869 1 2 1250.25  
-      </copy>
-      ```  
- 
+      ![Node output](images/java-output.png)
+  
    You successfully made it to the end this lab. You may now  **proceed to the next lab** .  
 
 ## Learn More
@@ -223,9 +219,10 @@ unzip Wallet_DEMOADW.zip -d $HOME/< path to wallet folder>
 * [Oracle Database JDBC driver and Companion Jars Downloads](https://www.oracle.com/database/technologies/appdev/jdbc-downloads.html)
 * [JDBC Trouble Shooting Tips for Oracle Autonomous Database](https://www.oracle.com/database/technologies/application-development/jdbc-eecloud-troubleshooting-tips.html)
 * [Code Examples: oracle-db-examples](https://github.com/oracle-samples/oracle-db-examples/tree/main/java)
+* [Oracle Samples](https://github.com/oracle-samples/)
  
 ## Acknowledgements
 
 * **Author** - Madhusudhan Rao, Principal Product Manager, Database 
 * **Contributors** - Kevin Lazarz, Senior Principal Product Manager and Kuassi MENSAH, Director of Product Management 
-* **Last Updated By/Date** -  Madhusudhan Rao, 24th June 2022
+* **Last Updated By/Date** -  Madhusudhan Rao, 7th Oct 2024.
