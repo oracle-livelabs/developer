@@ -36,11 +36,10 @@ This lab assumes you have:
 ## Task 1: JSON Duality Views Coding Exercise 
 
 
-The company has requested an enhancement to the current customer data and would now like to see the customer's age to be reflected. 
+The company has requested an enhancement to the current customer data and would now like to see the parameter for **age** to be reflected. 
 
-1. In the Decision.py file, find the clients_dv transform statement
-2. Update the clients_dv transform statement to include a parameter for **age** 
-
+1. In the Customer.py file, find the # 🔍 Customer Details Section at line 222
+2. Update the section to include a new parameter for **age**.
 
 ## Task 2: Login to Jupiter Notebook
 
@@ -81,6 +80,23 @@ The code below section dynamically updates customer data in our **clients dv** (
                 """
                 </copy>
 ````
+
+4. Copy the following code block and paste it in the Customer.py file.
+
+    ````python
+    <copy>
+        age = st.number_input("age", value=int(customer_data.get("age", 32)), step=1)
+                    </copy>
+    ````
+
+
+5. Copy the following code block and paste it in the Customer.py file.
+
+    ````python
+    <copy>
+        if age != int(customer_data.get("age", 32)): transform_statements.append("SET '$.age' = :age"); bind_vars['age'] = age                
+        </copy>
+    ````
 
 ## Task 4: Launch the Application
 

@@ -32,8 +32,8 @@ This lab assumes you have:
 
 The company has requested an enhancement to the current customer data and would now like to see the parameter for **age** to be reflected. 
 
-1. In the Decision.py file, find the clients_dv transform statement
-2. Update the clients_dv transform statement to include a parameter for Age.
+1. In the Customer.py file, find the 🔍 Customer Details Section at line 222
+2. Update the section to include a new parameter for **age**.
 
 
 ## Task 2: Login to Jupiter Notebook
@@ -60,22 +60,22 @@ The company has requested an enhancement to the current customer data and would 
 
 The code below section dynamically updates customer data in our **clients dv** (dv - stands for duality views) table by building a flexible  **JSON TRANSFORM** query based on a list of transformation statements. It constructs the query by joining those statements—like setting new field values—then applies them to the JSON data for a specific customer, identified by their ID, as long as a loan application exists."
 
-3. Copy the following code block and paste it at line 251 in the Decision.py file.
+3. Copy the following code block and paste it at line 236 in the Customer.py file.
 
-````python
-<copy>
-        if transform_statements:
-                    transform_query = ", ".join(transform_statements)
-                try:
-                update_query = f"""
-                    UPDATE clients_dv
-                    SET data = JSON_TRANSFORM(data, {transform_query})
-                    WHERE JSON_VALUE(data, '$._id') = :customer_id
-                    AND JSON_EXISTS(data, '$.loanApplications[0]')
-                """
-                </copy>
-````
+    ````python
+    <copy>
+        age = st.number_input("age", value=int(customer_data.get("age", 32)), step=1)
+                    </copy>
+    ````
 
+
+4. Copy the following code block and paste it at line 251 in the Customer.py file.
+
+    ````python
+    <copy>
+        if age != int(customer_data.get("age", 32)): transform_statements.append("SET '$.age' = :age"); bind_vars['age'] = age                
+        </copy>
+    ````
 ## Task 4: Launch the Application
 
 1. Open the terminal. 
@@ -84,11 +84,11 @@ The code below section dynamically updates customer data in our **clients dv** (
 
 2. Copy the ./run.sh command and paste it into the terminal.
 
-````bash
- $<copy>
-    ./run.sh
-    </copy>
-````
+    ````bash
+    $<copy>
+        ./run.sh
+        </copy>
+    ````
 
 3. Click the URL displayed in the terminal to launch the SeerEquities Loan Management application.
 
@@ -100,17 +100,16 @@ The code below section dynamically updates customer data in our **clients dv** (
 
 ## Task 5: View the Results
 
-1. On the Dashboard page, from the pending review list, select the Customer ID for **James Woods**.
+1. On the Dashboard page, from the pending review list, select the Customer ID for **James Woods**. 
 
     ![Select James Woods](./images/james-woods.png " ")
 
-2. This will display the customers loan application details. In approximately 15 seconds, the AI generated loan recommendations will be displayed. Click the **Navigate To Decisions** button.
+2. This will display the customers loan application details. Select the **Customer Details** drop down menu and view the new age parameter at the bottom.
 
     ![James Smith AI generated recommendations](./images/james-woods-ai.png " ")
 
-3. Expand the XYZ to view the XYZ
+3. Note: the customer details tab has been updated to reflect the **age** parameter now for all customers. 
 
-    
 
 **Congratulations, you have successfully completed the JSON Duality View Coding Exercise!**
 
