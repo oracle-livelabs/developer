@@ -8,7 +8,7 @@ In this lab, you will tackle an exciting developer coding challenge focused on *
 
 **Are you up for the challenge?**
 
-If you're ready to dive in, proceed with this lab and start coding. If you prefer a more guided approach with a detailed walkthrough, you can continue to Lab 4b Step-by-step: Code RAG using AI Vector Search Hackathon Challengee for step-by-step instructions.
+If you're ready to dive in, proceed with this lab and start coding. If you prefer a more guided approach with a detailed walkthrough, you can continue to Lab 4b Step-by-step: Code RAG using AI Vector Search Hackathon Challenge for step-by-step instructions.
 
 Good luck, and enjoy the process!
 
