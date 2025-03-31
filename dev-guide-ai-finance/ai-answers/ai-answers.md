@@ -1,27 +1,28 @@
-# Code RAG using AI Vector Search
+# Code RAG using AI Vector Search Hackathon Challenge Answers
 
 ## Introduction
 
-This lab walks you through the steps to...
+In this lab, we’ll provide a step-by-step guide to help you successfully complete the coding challenge from the previous lab. This step-by-step guide will walk you through the necessary updates, providing solutions and insights to help you fully understand how to utilize AI Vector Search in a practical scenario. Whether you're refining your existing work or tackling the challenge for the first time, this guide will ensure you gain the skills and confidence needed to implement these powerful features.
 
-Estimated Time: 60 minutes
+Let’s dive in and unlock the full potential of AI Vector Search in your application!
+
+Estimated Time: 30 minutes
 
 ### Objectives
 
 In this lab, you will:
-* 
+* Enhance your understanding of AI Vector Search by applying it to a real-world developer coding challenge.
+* Gain hands-on experience with integrating AI Vector Search and refining application features to meet specific development requirements.
+
 ### Prerequisites
 
 This lab assumes you have:
 * An Oracle Cloud account
+* Successfully completed Lab 1: Workshop Details and Prerequisites
+* Successfully completed Lab 2: SeerEquities AI App in Action
 
-## Task 1: AI Developer Coding Exercise Answer
-
-**Task**:
-
+## Task 1: Hackathon Challenge
 The company has requested an enhancement to the current loan recommendation system. The loan officer has indicated that the existing 3 loan options are insufficient, and they'd like to see the top 5 loan options instead.
-
-**Instructions**:
 
 1. Update the Customers.py and Decision.py files to make the necessary changes in the code so that the AI prompt returns the top 5 loans instead of the current 3.
 
@@ -29,7 +30,7 @@ The company has requested an enhancement to the current loan recommendation syst
 
     ![AI Developer Coding Exercise](./images/ai-exercise.png " ")
 
-**Answer**:
+## Task 2: Login to Jupiter Notebook
 
 1. To navigate to the development environment, click **View Login Info**. Copy the Development IDE Login Password. Click the Start Development IDE link.
 
@@ -39,47 +40,53 @@ The company has requested an enhancement to the current loan recommendation syst
 
     ![Login](./images/jupyter-login.png " ")
 
-3. Click **Pages**.
+## Task 3: Modify the Cutomers.py File
+
+1. Click **Pages**.
 
     ![Click Pages](./images/click-pages.png " ")
 
-4. Select the **Customers.py** file.
+2. Select the **Customers.py** file.
 
     ![Click Customers.py](./images/customers-py.png " ")
 
-5. On lines 454 and 455, change the value 3 to **5**, as we need to display the top 5 loan recommendations instead of 3.
+3. On lines 454 and 455, change the value 3 to **5**, as we need to display the top 5 loan recommendations instead of 3.
 
     ![Change 3 to 5](./images/3-to-5-1.png " ")
 
-6. Save the Customers.py file.
+4. Save the Customers.py file.
 
     ![Save Customers.py](./images/save-customers-py.png " ")
 
-7. Select the **Decision.py** file.
+## Task 4: Modify the Decision.py File
+
+1. Select the **Decision.py** file.
 
     ![Click Decision.py](./images/decision-py.png " ")
 
-8. On line 456, change the value 3 to **5**.
+2. On line 456, change the value 3 to **5**.
 
     ![Change 3 to 5](./images/3-to-5-2.png " ")
 
-9. On line 470, change the value 3 to **5**.
+3. On line 470, change the value 3 to **5**.
 
     ![Change 3 to 5](./images/3-to-5-3.png " ")
 
-10. On line 485, change the value 3 to **5**.
+4. On line 485, change the value 3 to **5**.
 
     ![Change 3 to 5](./images/3-to-5-4.png " ")
 
-11. Save the Decision.py file.
+5. Save the Decision.py file.
 
     ![Save Decision.py](./images/save-decision-py.png " ")
 
-12. Select the **Launcher** tab and open the **terminal**
+## Task 5: Launch the Application
+
+1. Select the **Launcher** tab and open the **terminal**
 
     ![Open Terminal](./images/open-terminal.png " ")
 
-13. Copy the ./run.sh command and paste it into the terminal.
+2. Copy the ./run.sh command and paste it into the terminal.
 
     ````
     <copy>
@@ -87,19 +94,21 @@ The company has requested an enhancement to the current loan recommendation syst
     </copy>
     ````
 
-14. Click the URL displayed in the terminal to launch the SeerEquities Loan Management application.
+3. Click the URL displayed in the terminal to launch the SeerEquities Loan Management application.
 
     ![Click the URL](./images/click-url.png " ")
 
-15. Enter in a username and click **Login**.
+4. Enter in a username and click **Login**.
 
     ![Login](./images/login.png " ")
 
-16. On the Dashboard page, from the pending review list, select the Customer ID for **James Smith**.
+## Task 6: View the Results
+
+1. On the Dashboard page, from the pending review list, select the Customer ID for **James Smith**.
 
     ![Select James Smith](./images/james-smith.png " ")
 
-17. This will display the customers loan application details. In approximately 15 seconds, the 5 AI generated loan recommendations will be displayed.
+2. This will display the customers loan application details. In approximately 15 seconds, the 5 AI generated loan recommendations will be displayed.
 
     ![James Smith AI generated recommendations](./images/james-smith-5-ai.png " ")
 

@@ -1,28 +1,30 @@
-# Code Property Graph using Graph Query
+# Code Property Graph using Graph Query Hackathon Challenge Answers
 
 ## Introduction
 
-This lab walks you through the steps to...
+In this lab, we’ll provide a step-by-step guide to help you successfully complete the coding challenge from the previous lab. This step-by-step guide will walk you through the necessary updates, providing solutions and insights to help you fully understand how to utilize Graph in a practical scenario. Whether you're refining your existing work or tackling the challenge for the first time, this guide will ensure you gain the skills and confidence needed to implement these powerful features.
+
+Let’s dive in and unlock the full potential of Graph in your application!
 
 Estimated Time: 60 minutes
 
 ### Objectives
 
 In this lab, you will:
-* 
+* Enhance your understanding of Graph by applying it to a real-world developer coding challenge.
+* Gain hands-on experience with Graph and refining application features to meet specific development requirements.
+
 ### Prerequisites
 
 This lab assumes you have:
 * An Oracle Cloud account
+* Successfully completed Lab 1: Workshop Details and Prerequisites
+* Successfully completed Lab 2: SeerEquities AI App in Action
 
 
-## Task 1: Graph Developer Coding Exercise Answer
-
-**Task**:
+## Task 1: Hackathon Challenge
 
 The loan officer needs to visualize additional data points in the decision-making process. Specifically, they want to display an additional graph that shows two key metrics: required credit score on one axis and debt-to-income ratio on the other.
-
-**Instructions**:
 
 1. Update the Decision.py file to add functionality for an additional graph that displays the following metrics: Required Credit Score and Debt-to-Income Ratio (%). The graph should display scatter plots similar to the example provided below, Required Credit Score and Debt-to-Income Ratio (%) are plotted:
 
@@ -32,7 +34,7 @@ The loan officer needs to visualize additional data points in the decision-makin
 
     ![Graph Coding Exercise](./images/graph-dropdown.png " ")
 
-**Answer**:
+## Task 2: Login to Jupiter Notebook
 
 1. To navigate to the development environment, click **View Login Info**. Copy the Development IDE Login Password. Click the Start Development IDE link.
 
@@ -42,15 +44,17 @@ The loan officer needs to visualize additional data points in the decision-makin
 
     ![Login](./images/jupyter-login.png " ")
 
-3. Click **Pages**.
+## Task 3: Modify the Decision.py File
+
+1. Click **Pages**.
 
     ![Click Pages](./images/click-pages.png " ")
 
-4. Select **Decision.py**.
+2. Select **Decision.py**.
 
     ![Click Decision.py](./images/decision-py.png " ")
 
-5. Copy the following code block and paste it at line 272 in the Decision.py file.
+3. Copy the following code block and paste it at line 272 in the Decision.py file.
 
     ````
     <copy>
@@ -179,7 +183,7 @@ with st.expander("🔍 View Dot Plot: Credit Score vs. Debt-to-Income Ratio", ex
     ````
  ![Paste Code at 272](./images/272-code.png " ")
 
-6. Copy the graph query below. Paste the graph query in at line 285.
+4. Copy the graph query below. Paste the graph query in at line 285.
     ````
     <copy>
             # Define the SQL query to fetch data from the LOANS_GRAPH property graph
@@ -209,7 +213,7 @@ with st.expander("🔍 View Dot Plot: Credit Score vs. Debt-to-Income Ratio", ex
 
 Edit the part of the script that edits the scatter plot. Change the X and Y axis of the graph to reflect the "DEBT\_TO\_INCOME\_RATIO" and "REQUIRED\_CREDIT\_SCRORE" requested by the loan officer
 
-7. Paste 'DEBT\_TO\_INCOME_RATIO' in the empty bracket at line 353 and 'REQUIRED\_CREDIT\_SCORE' in the empty bracket at line 354.
+5. Paste 'DEBT\_TO\_INCOME_RATIO' in the empty bracket at line 353 and 'REQUIRED\_CREDIT\_SCORE' in the empty bracket at line 354.
 
     ````
     <copy>
@@ -224,7 +228,7 @@ Edit the part of the script that edits the scatter plot. Change the X and Y axis
     ````
  ![Paste Code at 353 and 354](./images/353-code.png " ")
 
-8. Paste 'Debt-to-Income Ratio (%)' in the empty parentheses at line 362.
+6. Paste 'Debt-to-Income Ratio (%)' in the empty parentheses at line 362.
 
     ````
     <copy>
@@ -232,7 +236,7 @@ Edit the part of the script that edits the scatter plot. Change the X and Y axis
     </copy>
     ````
 
-9. Paste 'Required Credit Score' in the empty parentheses at line 364.
+7. Paste 'Required Credit Score' in the empty parentheses at line 364.
 
     ````
     <copy>
@@ -240,7 +244,7 @@ Edit the part of the script that edits the scatter plot. Change the X and Y axis
     </copy>
     ````
 
-10. Paste f'Loans Just Out of Reach for Customer ID {customer_id}' in the empty parentheses at line 366.
+8. Paste f'Loans Just Out of Reach for Customer ID {customer_id}' in the empty parentheses at line 366.
 
     ````
     <copy>
@@ -250,7 +254,7 @@ Edit the part of the script that edits the scatter plot. Change the X and Y axis
 
  ![Paste Code at 362, 364, and 366](./images/362-code.png " ")
 
- 11. Paste 'DEBT\_TO\_INCOME\_RATIO' in the empty brackets at lines 370 and 372.
+ 9. Paste 'DEBT\_TO\_INCOME\_RATIO' in the empty brackets at lines 370 and 372.
 
      ````
     <copy>
@@ -260,7 +264,7 @@ Edit the part of the script that edits the scatter plot. Change the X and Y axis
 
  ![Paste Code at 370 and 372](./images/370-code.png " ")
 
-12. Paste 'REQUIRED\_CREDIT\_SCORE' in the empty brackets at lines 378 and 380.
+10. Paste 'REQUIRED\_CREDIT\_SCORE' in the empty brackets at lines 378 and 380.
 
     ````
     <copy>
@@ -270,7 +274,7 @@ Edit the part of the script that edits the scatter plot. Change the X and Y axis
 
  ![Paste Code at 378 and 380](./images/378-code.png " ")
 
-13. Paste 'REQUIRED\_CREDIT\_SCORE' in the empty brackets at line 395.
+11. Paste 'REQUIRED\_CREDIT\_SCORE' in the empty brackets at line 395.
 
     ````
     <copy>
@@ -280,7 +284,7 @@ Edit the part of the script that edits the scatter plot. Change the X and Y axis
 
     ![Paste Code at 395](./images/395-code.png " ")
 
-14. Paste 'DEBT\_TO\_INCOME\_RATIO' and 'REQUIRED\_CREDIT\_SCORE' in the empty brackets at lines 406 and 407.
+12. Paste 'DEBT\_TO\_INCOME\_RATIO' and 'REQUIRED\_CREDIT\_SCORE' in the empty brackets at lines 406 and 407.
 
     ````
     <copy>
@@ -294,15 +298,17 @@ Edit the part of the script that edits the scatter plot. Change the X and Y axis
     ````   
     ![Paste Code at 406](./images/406-code.png " ")
 
-15. Save the Decision.py file.
+13. Save the Decision.py file.
 
     ![Save Decision.py](./images/save-decision-py.png " ")
 
-16. Open the terminal. 
+## Task 4: Launch the Application
+
+1. Open the terminal. 
 
     ![Open Terminal](./images/open-terminal.png " ")
 
-17. Copy the ./run.sh command and paste it into the terminal.
+2. Copy the ./run.sh command and paste it into the terminal.
 
     ````
     <copy>
@@ -310,23 +316,25 @@ Edit the part of the script that edits the scatter plot. Change the X and Y axis
     </copy>
     ````
 
-18. Click the URL displayed in the terminal to launch the SeerEquities Loan Management application.
+3. Click the URL displayed in the terminal to launch the SeerEquities Loan Management application.
 
     ![Click the URL](./images/click-url.png " ")
 
-19. Enter in a username and click **Login**.
+4. Enter in a username and click **Login**.
 
     ![Login](./images/login.png " ")
 
-20. On the Dashboard page, from the pending review list, select the Customer ID for **James Woods**.
+## Task 5: View the Results
+
+1. On the Dashboard page, from the pending review list, select the Customer ID for **James Woods**.
 
     ![Select James Woods](./images/james-woods.png " ")
 
-21. This will display the customers loan application details. In approximately 15 seconds, the AI generated loan recommendations will be displayed. Click the **Navigate To Decisions** button.
+2. This will display the customers loan application details. In approximately 15 seconds, the AI generated loan recommendations will be displayed. Click the **Navigate To Decisions** button.
 
     ![James Smith AI generated recommendations](./images/james-woods-ai.png " ")
 
-22. Expand the drop down to view the newly added graph.
+3. Expand the drop down to view the newly added graph.
 
     ![James Smith graph](./images/james-woods-graph.png " ")
 
