@@ -19,7 +19,7 @@ In this lab, you will:
 
 ## Task 1: Access Visual Builder Studio and Create a Project
 
-Users with [the right roles](https://docs.oracle.com/en/cloud/paas/visual-builder/visualbuilder-administration/set-vb-studio-extend-oracle-cloud-applications.html#GUID-DF0D4F76-D26A-46B5-B8E5-68D7FDD1E475) can access VB Studio from their Oracle Fusion Cloud Applications' TEST instance.
+Users with [the right roles](https://docs.oracle.com/en/cloud/paas/visual-builder/visualbuilder-administration/configure-oracle-cloud-applications-custom-roles.html) can access VB Studio from their Oracle Fusion Cloud Applications' TEST instance.
 
 1. Log in to Oracle Fusion Cloud Applications:
 
