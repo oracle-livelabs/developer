@@ -1,4 +1,4 @@
-**Build a generative AI-powered loan recommendation system using Oracle Database and OCI Generative AI**
+# Build a generative AI-powered loan recommendation system using Oracle Database and OCI Generative AI
 
 ## Introduction
 
