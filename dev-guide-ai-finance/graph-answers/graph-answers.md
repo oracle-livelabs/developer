@@ -1,4 +1,4 @@
-# Code Property Graph using Graph Query Hackathon Challenge Answers
+# Code Property Graph using Graph Query Hackathon Challenge step-by-step
 
 ## Introduction
 
@@ -34,7 +34,7 @@ The loan officer needs to visualize additional data points in the decision-makin
 
     ![Graph Coding Exercise](./images/graph-dropdown.png " ")
 
-## Task 2: Login to Jupiter Notebook
+## Task 2: Login to Jupyter Notebook
 
 1. To navigate to the development environment, click **View Login Info**. Copy the Development IDE Login Password. Click the Start Development IDE link.
 
@@ -54,7 +54,7 @@ The loan officer needs to visualize additional data points in the decision-makin
 
     ![Click Decision.py](./images/decision-py.png " ")
 
-3. Copy the following code block and paste it at line 272 in the Decision.py file.
+3. Copy the following code block and paste it at line 259 in the Decision.py file.
 
     ````
     <copy>
@@ -63,7 +63,7 @@ The loan officer needs to visualize additional data points in the decision-makin
 with st.expander("🔍 View Dot Plot: Credit Score vs. Debt-to-Income Ratio", expanded=False):
     # Start a try block to catch any errors that might occur during graph creation
     try:
-        # **Set up the Graph 
+        # **Set up the Graph
         # Call the function to connect to the Oracle database
         conn = get_db_connection()
         # Check if the database connection was successful
@@ -115,7 +115,7 @@ with st.expander("🔍 View Dot Plot: Credit Score vs. Debt-to-Income Ratio", ex
                     else:
                         colors.append('gray')
 
-                # Scatter plot 
+                # Scatter plot
                 # Create a scatter plot with DTI on the x-axis and required credit score on the y-axis
                 plt.scatter(
                     result_df[],  # X-axis data: debt-to-income ratio from the DataFrame
@@ -181,9 +181,9 @@ with st.expander("🔍 View Dot Plot: Credit Score vs. Debt-to-Income Ratio", ex
                     )
     </copy>
     ````
- ![Paste Code at 272](./images/272-code.png " ")
+ ![Paste Code at 259](./images/259-code.png " ")
 
-4. Copy the graph query below. Paste the graph query in at line 285.
+4. Copy the graph query below. Paste the graph query in at line 272.
     ````
     <copy>
             # Define the SQL query to fetch data from the LOANS_GRAPH property graph
@@ -210,10 +210,11 @@ with st.expander("🔍 View Dot Plot: Credit Score vs. Debt-to-Income Ratio", ex
             """
     </copy>
     ````
+ ![Paste Code at 272](./images/272-code.png " ")
 
 Edit the part of the script that edits the scatter plot. Change the X and Y axis of the graph to reflect the "DEBT\_TO\_INCOME\_RATIO" and "REQUIRED\_CREDIT\_SCRORE" requested by the loan officer
 
-5. Paste 'DEBT\_TO\_INCOME_RATIO' in the empty bracket at line 353 and 'REQUIRED\_CREDIT\_SCORE' in the empty bracket at line 354.
+5. Paste 'DEBT\_TO\_INCOME_RATIO' in the empty bracket at line 340 and 'REQUIRED\_CREDIT\_SCORE' in the empty bracket at line 341.
 
     ````
     <copy>
@@ -226,9 +227,9 @@ Edit the part of the script that edits the scatter plot. Change the X and Y axis
     'REQUIRED_CREDIT_SCORE'
     </copy>
     ````
- ![Paste Code at 353 and 354](./images/353-code.png " ")
+ ![Paste Code at 340 and 341](./images/340-code.png " ")
 
-6. Paste 'Debt-to-Income Ratio (%)' in the empty parentheses at line 362.
+6. Paste 'Debt-to-Income Ratio (%)' in the empty parentheses at line 349.
 
     ````
     <copy>
@@ -236,7 +237,7 @@ Edit the part of the script that edits the scatter plot. Change the X and Y axis
     </copy>
     ````
 
-7. Paste 'Required Credit Score' in the empty parentheses at line 364.
+7. Paste 'Required Credit Score' in the empty parentheses at line 351.
 
     ````
     <copy>
@@ -244,7 +245,7 @@ Edit the part of the script that edits the scatter plot. Change the X and Y axis
     </copy>
     ````
 
-8. Paste f'Loans Just Out of Reach for Customer ID {customer_id}' in the empty parentheses at line 366.
+8. Paste f'Loans Just Out of Reach for Customer ID {customer_id}' in the empty parentheses at line 353.
 
     ````
     <copy>
@@ -252,9 +253,9 @@ Edit the part of the script that edits the scatter plot. Change the X and Y axis
     </copy>
     ````
 
- ![Paste Code at 362, 364, and 366](./images/362-code.png " ")
+ ![Paste Code at 349, 351, and 353](./images/349-code.png " ")
 
- 9. Paste 'DEBT\_TO\_INCOME\_RATIO' in the empty brackets at lines 370 and 372.
+ 9. Paste 'DEBT\_TO\_INCOME\_RATIO' in the empty brackets at lines 357 and 359.
 
      ````
     <copy>
@@ -262,9 +263,9 @@ Edit the part of the script that edits the scatter plot. Change the X and Y axis
     </copy>
     ````
 
- ![Paste Code at 370 and 372](./images/370-code.png " ")
+ ![Paste Code at 357 and 359](./images/357-code.png " ")
 
-10. Paste 'REQUIRED\_CREDIT\_SCORE' in the empty brackets at lines 378 and 380.
+10. Paste 'REQUIRED\_CREDIT\_SCORE' in the empty brackets at lines 365 and 367.
 
     ````
     <copy>
@@ -272,9 +273,9 @@ Edit the part of the script that edits the scatter plot. Change the X and Y axis
     </copy>
     ````
 
- ![Paste Code at 378 and 380](./images/378-code.png " ")
+ ![Paste Code at 365 and 367](./images/365-code.png " ")
 
-11. Paste 'REQUIRED\_CREDIT\_SCORE' in the empty brackets at line 395.
+11. Paste 'REQUIRED\_CREDIT\_SCORE' in the empty brackets at line 382.
 
     ````
     <copy>
@@ -282,9 +283,9 @@ Edit the part of the script that edits the scatter plot. Change the X and Y axis
     </copy>
     ````   
 
-    ![Paste Code at 395](./images/395-code.png " ")
+    ![Paste Code at 382](./images/382-code.png " ")
 
-12. Paste 'DEBT\_TO\_INCOME\_RATIO' and 'REQUIRED\_CREDIT\_SCORE' in the empty brackets at lines 406 and 407.
+12. Paste 'DEBT\_TO\_INCOME\_RATIO' and 'REQUIRED\_CREDIT\_SCORE' in the empty brackets at lines 393 and 394.
 
     ````
     <copy>
@@ -296,7 +297,7 @@ Edit the part of the script that edits the scatter plot. Change the X and Y axis
     'REQUIRED_CREDIT_SCORE'
     </copy>
     ````   
-    ![Paste Code at 406](./images/406-code.png " ")
+    ![Paste Code at 393 and 394](./images/393-code.png " ")
 
 13. Save the Decision.py file.
 
@@ -304,16 +305,16 @@ Edit the part of the script that edits the scatter plot. Change the X and Y axis
 
 ## Task 4: Launch the Application
 
-1. Open the terminal. 
+1. Open the terminal.
 
     ![Open Terminal](./images/open-terminal.png " ")
 
 2. Copy the ./run.sh command and paste it into the terminal.
 
-    ````
-    <copy>
-    ./run.sh
-    </copy>
+    ````bash
+        <copy>
+        ./run.sh
+        </copy>
     ````
 
 3. Click the URL displayed in the terminal to launch the SeerEquities Loan Management application.
@@ -332,7 +333,7 @@ Edit the part of the script that edits the scatter plot. Change the X and Y axis
 
 2. This will display the customers loan application details. In approximately 15 seconds, the AI generated loan recommendations will be displayed. Click the **Navigate To Decisions** button.
 
-    ![James Smith AI generated recommendations](./images/james-woods-ai.png " ")
+    ![James Smith AI generated recommendations](./images/james-woods-decision.png " ")
 
 3. Expand the drop down to view the newly added graph.
 
@@ -344,12 +345,9 @@ Edit the part of the script that edits the scatter plot. Change the X and Y axis
 
 ## Learn More
 
-*(optional - include links to docs, white papers, blogs, etc)*
-
-* [URL text 1](http://docs.oracle.com)
-* [URL text 2](http://docs.oracle.com)
+* [Oracle Database 23ai Documentation](https://docs.oracle.com/en/database/oracle/oracle-database/23/)
 
 ## Acknowledgements
-* **Author** - <Name, Title, Group>
-* **Contributors** -  <Name, Group> -- optional
-* **Last Updated By/Date** - <Name, Month Year>
+* **Author** - Kamryn Vinson
+* **Contributors** -  Linda Foinding, Francis Regalado, Eddie Ambler, Kevin Lazarz
+* **Last Updated By/Date** - Kamryn Vinson, April 2025

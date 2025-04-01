@@ -28,7 +28,11 @@ b. **Time Remaining:** This shows you the remaining time before your access to t
 
     ![Click the Start Demo Link](./images/start-demo.png " ")
 
-2. Welcome to the SeerEquities Loan Management application! Congratulations, you are now connected to the demo environment. You can now execute the different tasks and steps for the selected LiveLabs workshop.
+2. Enter in a username, select the **Loan Officer** role, and click **Login**.
+
+    ![Login](./images/login.png " ")
+
+3. Welcome to the SeerEquities Loan Management application! Congratulations, you are now connected to the demo environment. You can now execute the different tasks and steps for the LiveLabs workshop.
 
     ![Homepage](./images/app-home.png " ")
 
@@ -43,6 +47,6 @@ You may now **proceed to the next lab**.
 
 ## Acknowledgements
 
-- **Created By/Date** - Kamryn Vinson Database
+- **Created By/Date** - Kamryn Vinson
 - **Contributor** - Linda Foinding
-- **Last Updated By/Date** - Kamryn Vinson, March 2025
+- **Last Updated By/Date** - Linda Foinding, April 2025

@@ -1,4 +1,4 @@
-# Application architecture 
+# Application architecture
 
 ## Introduction
 
@@ -11,16 +11,16 @@ Estimated Time: 5 minutes
 * Review the loan approval application physical architecture​
 * Review the loan approval application logical architecture
 
-## Task 1: Review Physical Architecture 
+## Task 1: Review Physical Architecture
 
 ![Login](./images/physical.png " ")
 
-## Task 2: Review Logical Architecture 
+## Task 2: Review Logical Architecture
 
 ![Login](./images/logical.png " ")
 
 
 ## Acknowledgements
-* **Authors** - Linda Foinding, Eddie Ambler
-* **Contributors** - Kamryn Vinson, Francis Regalado
+* **Authors** - Linda Foinding, Francis Regalado
+* **Contributors** - Kamryn Vinson, Eddie Ambler, Kevin Lazarz
 * **Last Updated By/Date** - Linda Foinding, April 2025
