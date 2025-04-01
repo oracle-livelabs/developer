@@ -16,22 +16,22 @@
             "title": "Lab 1: SeerEquities AI App in Action",
             "description": "Labs that follow the introduction are numbered, starting with Lab 1",
             "filename": "../../user-story/user-story.md"
-        }, 
+        },
         {
             "title": "Lab 2: Build the Application",
             "description": "This is a step-by-step guide showcasing how the demo instance is navigated",
             "filename": "../../build/build.md"
-        }, 
+        },
         {
             "title": "Lab 3a DIY: Code RAG using AI Vector Search Hackathon Challenge",
             "description": "Labs that follow the introduction are numbered, starting with Lab 1",
             "filename": "../../ai-exercise/ai-exercise.md"
-        }, 
+        },
         {
             "title": "Lab 3b Step-by-step: Code RAG using AI Vector Search Hackathon Challenge",
             "description": "Labs that follow the introduction are numbered, starting with Lab 1",
             "filename": "../../ai-answers/ai-answers.md"
-        },      
+        },
         {
             "title": "Lab 4a DIY: Code Property Graph using Graph Query Hackathon Challenge",
             "description": "This is a step-by-step guide showcasing how the demo instance is navigated",
@@ -46,17 +46,17 @@
             "title": "Lab 5a DIY: JSON Duality View Developer Hackathon Challenge",
             "description": "This is a step-by-step guide showcasing how the demo instance is navigated",
             "filename": "../../json-exercise/json-exercise.md"
-        },   
+        },
         {
             "title": "Lab 5b Step-by-step: JSON Duality View Developer Hackathon Challenge",
             "description": "This is a step-by-step guide showcasing how the demo instance is navigated",
             "filename": "../../json-answers/json-answers.md"
-        }, 
+        },
         {
             "title": "Application Architecture",
             "description": "Review the physical and logical architecture behind the application",
             "filename": "../../app-architecture/app-architecture.md"
-        }, 
+        },
         {
 
             "title": "Need Help?",

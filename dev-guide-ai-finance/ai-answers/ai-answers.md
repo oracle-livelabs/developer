@@ -26,11 +26,11 @@ The company has requested an enhancement to the current loan recommendation syst
 
 1. Update the Customers.py and Decision.py files to make the necessary changes in the code so that the AI prompt returns the top 5 loans instead of the current 3.
 
-2. Ensure the output displays the top 5 loans like the image below: 
+2. Ensure the output displays the top 5 loans like the image below:
 
     ![AI Developer Coding Exercise](./images/ai-exercise.png " ")
 
-## Task 2: Login to Jupiter Notebook
+## Task 2: Login to Jupyter Notebook
 
 1. To navigate to the development environment, click **View Login Info**. Copy the Development IDE Login Password. Click the Start Development IDE link.
 
