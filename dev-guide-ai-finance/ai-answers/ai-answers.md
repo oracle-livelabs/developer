@@ -1,4 +1,4 @@
-# Code RAG using AI Vector Search Hackathon Challenge Answers
+# Code RAG using AI Vector Search Hackathon Challenge step-by-step
 
 ## Introduction
 

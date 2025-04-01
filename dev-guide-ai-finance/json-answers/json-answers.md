@@ -1,4 +1,4 @@
-# JSON Duality Views Coding Challenge step-by-step
+# JSON Duality Views Coding Hackathon Challenge step-by-step
 
 ## Introduction
 

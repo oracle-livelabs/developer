@@ -1,8 +1,8 @@
-# JSON Duality Views Coding challenge
+# JSON Duality View Developer Hackathon Challenge
 
 ## Introduction
 
-**Welcome to the JSON Duality Views Coding Challenge!**
+**Welcome to the JSON Duality View Developer Hackathon Challenge!**
 
 In this lab, you will tackle an exciting coding challenge focused on **JSON**. Your goal is to enhance the existing application by implementing an update that will elevate its functionality. This is your opportunity to sharpen your skills and explore the power of JSON.
 
