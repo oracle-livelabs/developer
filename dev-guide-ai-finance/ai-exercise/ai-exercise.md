@@ -8,7 +8,7 @@ In this lab, you will tackle an exciting developer coding challenge focused on *
 
 **Are you up for the challenge?**
 
-If you're ready to dive in, proceed with this lab and start coding. If you prefer a more guided approach with a detailed walkthrough, you can continue to Lab 4b Step-by-step: Code RAG using AI Vector Search Hackathon Challengee for step-by-step instructions.
+If you're ready to dive in, proceed with this lab and start coding. If you prefer a more guided approach with a detailed walkthrough, you can continue to Lab 4b Step-by-step: Code RAG using AI Vector Search Hackathon Challenge for step-by-step instructions.
 
 Good luck, and enjoy the process!
 
@@ -27,7 +27,7 @@ This lab assumes you have:
 * An Oracle Cloud account
 * Successfully completed Lab 1: Workshop Details and Prerequisites
 * Successfully completed Lab 2: SeerEquities AI App in Action
-   
+
 
 ## Task 1: Hackathon Challenge
 
@@ -35,11 +35,11 @@ The company has requested an enhancement to the current loan recommendation syst
 
 1. Update the Customers.py and Decision.py files to make the necessary changes in the code so that the AI prompt returns the top 5 loans instead of the current 3.
 
-2. Ensure the output displays the top 5 loans as shown in the image below: 
+2. Ensure the output displays the top 5 loans as shown in the image below:
 
     ![AI Developer Coding Exercise](./images/ai-exercise.png " ")
 
-## Task 2: Login to Jupiter Notebook
+## Task 2: Login to Jupyter Notebook
 
 1. To navigate to the development environment, click **View Login Info**. Copy the Development IDE Login Password. Click the Start Development IDE link.
 
@@ -51,7 +51,7 @@ The company has requested an enhancement to the current loan recommendation syst
 
 ## Task 3: Modify the Required Files
 
-In this task, we will show you how to access the files needed to complete the challenge. 
+In this task, we will show you how to access the files needed to complete the challenge.
 
 1. Click **Pages**.
 
@@ -77,16 +77,16 @@ In this task, we will show you how to access the files needed to complete the ch
 
 In this task, we will show you how to launch the application.
 
-1. Select the **Launcher** tab and open the **terminal**. 
+1. Select the **Launcher** tab and open the **terminal**.
 
     ![Open Terminal](./images/open-terminal.png " ")
 
 2. Copy the ./run.sh command and paste it into the terminal.
 
-    ````
-    <copy>
-    ./run.sh
-    </copy>
+    ````bash
+        $<copy>
+        ./run.sh
+        </copy>
     ````
 
 3. Click the URL displayed in the terminal to launch the SeerEquities Loan Management application.
@@ -107,16 +107,13 @@ In this task, we will show you how to view the changes you made in the applicati
 
 2. This will display the customers loan application details. In approximately 15 seconds, the 5 AI generated loan recommendations will be displayed.
 
-    ![James Smith AI generated recommendations](./images/james-smith-5-ai.png " ")
+    ![James Smith AI generated recommendations](./images/ai-exercise.png " ")
 
 ## Learn More
 
-*(optional - include links to docs, white papers, blogs, etc)*
-
-* [URL text 1](http://docs.oracle.com)
-* [URL text 2](http://docs.oracle.com)
+* [Oracle Database 23ai Documentation](https://docs.oracle.com/en/database/oracle/oracle-database/23/)
 
 ## Acknowledgements
-* **Author** - <Name, Title, Group>
-* **Contributors** -  <Name, Group> -- optional
-* **Last Updated By/Date** - <Name, Month Year>
+* **Authors** - Linda Foinding, Francis Regalado
+* **Contributors** - Kamryn Vinson, Eddie Ambler, Kevin Lazarz
+* **Last Updated By/Date** - Linda Foinding, April 2025

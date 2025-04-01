@@ -26,11 +26,11 @@ The company has requested an enhancement to the current loan recommendation syst
 
 1. Update the Customers.py and Decision.py files to make the necessary changes in the code so that the AI prompt returns the top 5 loans instead of the current 3.
 
-2. Ensure the output displays the top 5 loans like the image below: 
+2. Ensure the output displays the top 5 loans like the image below:
 
     ![AI Developer Coding Exercise](./images/ai-exercise.png " ")
 
-## Task 2: Login to Jupiter Notebook
+## Task 2: Login to Jupyter Notebook
 
 1. To navigate to the development environment, click **View Login Info**. Copy the Development IDE Login Password. Click the Start Development IDE link.
 
@@ -50,9 +50,9 @@ The company has requested an enhancement to the current loan recommendation syst
 
     ![Click Customers.py](./images/customers-py.png " ")
 
-3. On lines 454 and 455, change the value 3 to **5**, as we need to display the top 5 loan recommendations instead of 3.
+3. On lines 477 and 478, change the value 3 to **5**, as we need to display the top 5 loan recommendations instead of 3.
 
-    ![Change 3 to 5](./images/3-to-5-1.png " ")
+    ![Change 3 to 5](./images/3to5-1.png " ")
 
 4. Save the Customers.py file.
 
@@ -64,17 +64,17 @@ The company has requested an enhancement to the current loan recommendation syst
 
     ![Click Decision.py](./images/decision-py.png " ")
 
-2. On line 456, change the value 3 to **5**.
+2. On line 283, change the value 3 to **5**.
 
-    ![Change 3 to 5](./images/3-to-5-2.png " ")
+    ![Change 3 to 5](./images/3to5-2.png " ")
 
-3. On line 470, change the value 3 to **5**.
+3. On line 297, change the value 3 to **5**.
 
-    ![Change 3 to 5](./images/3-to-5-3.png " ")
+    ![Change 3 to 5](./images/3to5-3.png " ")
 
-4. On line 485, change the value 3 to **5**.
+4. On line 312, change the value 3 to **5**.
 
-    ![Change 3 to 5](./images/3-to-5-4.png " ")
+    ![Change 3 to 5](./images/3to5-4.png " ")
 
 5. Save the Decision.py file.
 
@@ -88,10 +88,10 @@ The company has requested an enhancement to the current loan recommendation syst
 
 2. Copy the ./run.sh command and paste it into the terminal.
 
-    ````
-    <copy>
-    ./run.sh
-    </copy>
+    ````bash
+        $<copy>
+        ./run.sh
+        </copy>
     ````
 
 3. Click the URL displayed in the terminal to launch the SeerEquities Loan Management application.
@@ -110,19 +110,16 @@ The company has requested an enhancement to the current loan recommendation syst
 
 2. This will display the customers loan application details. In approximately 15 seconds, the 5 AI generated loan recommendations will be displayed.
 
-    ![James Smith AI generated recommendations](./images/james-smith-5-ai.png " ")
+    ![James Smith AI generated recommendations](./images/ai-exercise.png " ")
 
 **Congratulations, you have successfully completed the AI Developer Coding Exercise!**
 
 
 ## Learn More
 
-*(optional - include links to docs, white papers, blogs, etc)*
-
-* [URL text 1](http://docs.oracle.com)
-* [URL text 2](http://docs.oracle.com)
+* [Oracle Database 23ai Documentation](https://docs.oracle.com/en/database/oracle/oracle-database/23/)
 
 ## Acknowledgements
-* **Author** - <Name, Title, Group>
-* **Contributors** -  <Name, Group> -- optional
-* **Last Updated By/Date** - <Name, Month Year>
+* **Authors** - Linda Foinding, Francis Regalado
+* **Contributors** - Kamryn Vinson, Eddie Ambler, Kevin Lazarz
+* **Last Updated By/Date** - Linda Foinding, April 2025
