@@ -43,6 +43,6 @@ You may now **proceed to the next lab**.
 
 ## Acknowledgements
 
-- **Created By/Date** - Kamryn Vinson Database
+- **Created By/Date** - Kamryn Vinson
 - **Contributor** - Linda Foinding
-- **Last Updated By/Date** - Kamryn Vinson, March 2025
+- **Last Updated By/Date** - Linda Foinding, April 2025

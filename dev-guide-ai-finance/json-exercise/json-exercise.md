@@ -38,7 +38,7 @@ This lab assumes you have:
 
 The company has requested an enhancement to the current customer data and would now like to see the parameter for **age** to be reflected. 
 
-1. In the Customer.py file, find the # 🔍 Customer Details Section at line 222
+1. In the Customer.py file, find the # 🔍 Customer Details Section at line 219
 2. Update the section to include a new parameter for **age**.
 
 ## Task 2: Login to Jupiter Notebook
@@ -51,41 +51,39 @@ The company has requested an enhancement to the current customer data and would 
 
     ![Login](./images/jupyter-login.png " ")
 
-## Task 3: Modify the Decision.py File
+## Task 3: Modify the Customers.py File
 
 1. Click **Pages**.
 
     ![Click Pages](./images/click-pages.png " ")
 
-2. Select **Decision.py**.
+2. Select **Customers.py**.
 
-    ![Click Decision.py](./images/decision-py.png " ")
+    ![Click Customers.py](./images/customers-py.png " ")
 
 **Coding with JSON TRANSFORM**
 
 The code below section dynamically updates customer data in our **clients dv** (dv - stands for duality views) table by building a flexible  **JSON TRANSFORM** query based on a list of transformation statements. It constructs the query by joining those statements—like setting new field values—then applies them to the JSON data for a specific customer, identified by their ID, as long as a loan application exists."
 
-3. Find the following code block in the Decision.py file and age the parameter for age
+3. **HINT** Find the following code block in the Customer.py file and add the parameter for age.    
 
-````python
-<copy>
-        if transform_statements:
-                    transform_query = ", ".join(transform_statements)
-                try:
-                update_query = f"""
-                    UPDATE clients_dv
-                    SET data = JSON_TRANSFORM(data, {transform_query})
-                    WHERE JSON_VALUE(data, '$._id') = :customer_id
-                    AND JSON_EXISTS(data, '$.loanApplications[0]')
-                """
+    ````python
+         <copy>
+         # 🔍 Customer Details Section
+         with st.expander("🔍 Customer Details", expanded=False):
+         st.write("Edit the customer's financial and loan-related information below:")
+         loan_status = st.selectbox("Loan Status", ["Approved", "Pending Review", "Denied", "In Progress"], 
+                               index=["Approved", "Pending Review", "Denied", "In Progress"].index(loan_app.get("loanStatus", "Pending Review")), key="loan_status_select", help="Select the current loan status")
+        requested_loan_amount = st.number_input("Requested Loan Amount ($)", value=float(loan_app.get("requestedLoanAmount", 0)), step=1000.0)
+        age = st.number_input("age", value=int(customer_data.get("age", 0)), step=1)
                 </copy>
-````
+    ````
 
 4. Copy the following code block and paste it in the Customer.py file.
 
     ````python
     <copy>
-        age = st.number_input("age", value=int(customer_data.get("age", 32)), step=1)
+        age = st.number_input("age", value=int(customer_data.get("age", 0)), step=1)
                     </copy>
     ````
 
@@ -94,7 +92,7 @@ The code below section dynamically updates customer data in our **clients dv** (
 
     ````python
     <copy>
-        if age != int(customer_data.get("age", 32)): transform_statements.append("SET '$.age' = :age"); bind_vars['age'] = age                
+        if age != int(customer_data.get("age", 0)): transform_statements.append("SET '$.age' = :age"); bind_vars['age'] = age                
         </copy>
     ````
 
@@ -106,11 +104,11 @@ The code below section dynamically updates customer data in our **clients dv** (
 
 2. Copy the ./run.sh command and paste it into the terminal.
 
-````bash
- $<copy>
-    ./run.sh
-    </copy>
-````
+    ````bash
+         $<copy>
+         ./run.sh
+         </copy>
+    ````
 
 3. Click the URL displayed in the terminal to launch the SeerEquities Loan Management application.
 
@@ -122,14 +120,13 @@ The code below section dynamically updates customer data in our **clients dv** (
 
 ## Task 5: View the Results
 
+**Congratulations, you have successfully completed the JSON Duality View Coding Exercise!**
+
 ## Learn More
 
-*(optional - include links to docs, white papers, blogs, etc)*
-
-* [URL text 1](http://docs.oracle.com)
-* [URL text 2](http://docs.oracle.com)
+* [Oracle Database 23ai Documentation](https://docs.oracle.com/en/database/oracle/oracle-database/23/)
 
 ## Acknowledgements
-* **Author** - <Name, Title, Group>
-* **Contributors** -  <Name, Group> -- optional
-* **Last Updated By/Date** - <Name, Month Year>
+* **Authors** - Linda Foinding, Francis Regalado
+* **Contributors** - Kamryn Vinson, Otis Barr, Ramona Magadan, Eddie Ambler, Kevin Lazarz
+* **Last Updated By/Date** - Linda Foinding, April 2025

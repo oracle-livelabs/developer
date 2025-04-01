@@ -21,6 +21,6 @@ Estimated Time: 5 minutes
 
 
 ## Acknowledgements
-* **Authors** - Linda Foinding, Eddie Ambler
-* **Contributors** - Kamryn Vinson, Francis Regalado
+* **Authors** - Linda Foinding, Francis Regalado
+* **Contributors** - Kamryn Vinson, Eddie Ambler, Kevin Lazarz
 * **Last Updated By/Date** - Linda Foinding, April 2025

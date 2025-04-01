@@ -299,5 +299,5 @@ For this task, we will edit a customers details.
 
 ## Acknowledgements
 * **Authors** - Linda Foinding, Francis Regalado
-* **Contributors** - Kamryn Vinson, Otis Barr, Eddie Ambler
-* **Last Updated By/Date** - Kamryn Vinson, March 2025
+* **Contributors** - Kamryn Vinson, Eddie Ambler, Kevin Lazarz
+* **Last Updated By/Date** - Linda Foinding, April 2025
