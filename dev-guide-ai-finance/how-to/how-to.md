@@ -299,6 +299,6 @@ For this task, we will edit a customers details.
 * [URL text 2](http://docs.oracle.com)
 
 ## Acknowledgements
-* **Authors** - Francis Regalado, Eddie Ambler
-* **Contributors** -  Kamryn Vinson, Linda Foinding, Otis Barr
-* **Last Updated By/Date** - Kamryn Vinson, March 2025
+* **Authors** - Linda Foinding, Francis Regalado
+* **Contributors** - Kamryn Vinson, Eddie Ambler, Kevin Lazarz
+* **Last Updated By/Date** - Linda Foinding, April 2025
