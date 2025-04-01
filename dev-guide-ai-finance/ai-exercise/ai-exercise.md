@@ -83,10 +83,10 @@ In this task, we will show you how to launch the application.
 
 2. Copy the ./run.sh command and paste it into the terminal.
 
-    ````
-    <copy>
-    ./run.sh
-    </copy>
+    ````bash
+        $<copy>
+        ./run.sh
+        </copy>
     ````
 
 3. Click the URL displayed in the terminal to launch the SeerEquities Loan Management application.
@@ -107,16 +107,13 @@ In this task, we will show you how to view the changes you made in the applicati
 
 2. This will display the customers loan application details. In approximately 15 seconds, the 5 AI generated loan recommendations will be displayed.
 
-    ![James Smith AI generated recommendations](./images/james-smith-5-ai.png " ")
+    ![James Smith AI generated recommendations](./images/ai-exercise.png " ")
 
 ## Learn More
 
-*(optional - include links to docs, white papers, blogs, etc)*
-
-* [URL text 1](http://docs.oracle.com)
-* [URL text 2](http://docs.oracle.com)
+* [Oracle Database 23ai Documentation](https://docs.oracle.com/en/database/oracle/oracle-database/23/)
 
 ## Acknowledgements
-* **Author** - <Name, Title, Group>
-* **Contributors** -  <Name, Group> -- optional
-* **Last Updated By/Date** - <Name, Month Year>
+* **Authors** - Linda Foinding, Francis Regalado
+* **Contributors** - Kamryn Vinson, Eddie Ambler, Kevin Lazarz
+* **Last Updated By/Date** - Linda Foinding, April 2025
