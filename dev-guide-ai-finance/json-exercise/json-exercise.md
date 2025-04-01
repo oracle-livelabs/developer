@@ -8,7 +8,7 @@ In this lab, you will tackle an exciting coding challenge focused on **JSON**. Y
 
 **Are you up for the challenge?**
 
-If you're ready to dive in, proceed with this lab and start coding. If you prefer a more guided approach with a detailed walkthrough, you can continue to Lab 6b Step-by-step: JSON Duality Views Coding excersise for step-by-step instructions.
+If you're ready to dive in, proceed with this lab and start coding. If you prefer a more guided approach with a detailed walkthrough, you can continue to Lab 6b Step-by-step: JSON Duality Views Coding exercise for step-by-step instructions.
 
 Good luck, and enjoy the process!
 
@@ -33,10 +33,10 @@ This lab assumes you have:
 * Successfully completed Lab 2: SeerEquities AI App in Action
 
 
-## Task 1: JSON Duality Views Coding Exercise 
+## Task 1: JSON Duality Views Coding Exercise
 
 
-The company has requested an enhancement to the current customer data and would now like to see the parameter for **age** to be reflected. 
+The company has requested an enhancement to the current customer data and would now like to see the parameter for **age** to be reflected.
 
 1. In the Customer.py file, find the # 🔍 Customer Details Section at line 219
 2. Update the section to include a new parameter for **age**.
@@ -65,7 +65,7 @@ The company has requested an enhancement to the current customer data and would 
 
 The code below section dynamically updates customer data in our **clients dv** (dv - stands for duality views) table by building a flexible  **JSON TRANSFORM** query based on a list of transformation statements. It constructs the query by joining those statements—like setting new field values—then applies them to the JSON data for a specific customer, identified by their ID, as long as a loan application exists."
 
-3. **HINT** Find the following code block in the Customer.py file and add the parameter for age.    
+3. **HINT** Find the following code block in the Customer.py file and add the parameter for age.
 
     ````python
          <copy>
@@ -98,7 +98,7 @@ The code below section dynamically updates customer data in our **clients dv** (
 
 ## Task 4: Launch the Application
 
-1. Open the terminal. 
+1. Open the terminal.
 
     ![Open Terminal](./images/open-terminal.png " ")
 

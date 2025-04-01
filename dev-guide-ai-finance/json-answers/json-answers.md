@@ -27,10 +27,10 @@ This lab assumes you have:
 * Successfully completed Lab 2: SeerEquities AI App in Action
 
 
-## Task 1: JSON Duality Views Coding Exercise 
+## Task 1: JSON Duality Views Coding Exercise
 
 
-The company has requested an enhancement to the current customer data and would now like to see the parameter for **age** to be reflected. 
+The company has requested an enhancement to the current customer data and would now like to see the parameter for **age** to be reflected.
 
 1. In the Customer.py file, find the 🔍 Customer Details Section at line 219
 2. Update the section to include a new parameter for **age**.
@@ -82,7 +82,7 @@ The code below section dynamically updates customer data in our **clients dv** (
     ````
 ## Task 4: Launch the Application
 
-1. Open the terminal. 
+1. Open the terminal.
 
     ![Open Terminal](./images/open-terminal.png " ")
 
@@ -104,7 +104,7 @@ The code below section dynamically updates customer data in our **clients dv** (
 
 ## Task 5: View the Results
 
-1. On the Dashboard page, from the pending review list, select the Customer ID for **James Woods**. 
+1. On the Dashboard page, from the pending review list, select the Customer ID for **James Woods**.
 
     ![Select James Woods](./images/james-woods.png " ")
 
@@ -112,7 +112,7 @@ The code below section dynamically updates customer data in our **clients dv** (
 
     ![James Wood AI generated recommendations](./images/james-woods-ai.png " ")
 
-3. Note: the customer details tab has been updated to reflect the **age** parameter now for all customers. 
+3. Note: the customer details tab has been updated to reflect the **age** parameter now for all customers.
 
 
 **Congratulations, you have successfully completed the JSON Duality View Coding Exercise!**

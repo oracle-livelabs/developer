@@ -38,7 +38,7 @@ The loan officer is requesting an additional graph to be added to the decision p
 
     ![Graph Coding Exercise](./images/graph-dropdown.png " ")
 
-## Task 2: Login to Jupiter Notebook
+## Task 2: Login to Jupyter Notebook
 
 1. To navigate to the development environment, click **View Login Info**. Copy the Development IDE Login Password. Click the Start Development IDE link.
 
@@ -50,7 +50,7 @@ The loan officer is requesting an additional graph to be added to the decision p
 
 ## Task 3: Modify the Required File
 
-In this task, we will show you how to access the file needed to complete the challenge. 
+In this task, we will show you how to access the file needed to complete the challenge.
 
 1. Click **Pages**.
 
@@ -68,7 +68,7 @@ In this task, we will show you how to access the file needed to complete the cha
 
 In this task, we will show you how to launch the application.
 
-1. Select the **Launcher** tab and open the **terminal**. 
+1. Select the **Launcher** tab and open the **terminal**.
 
     ![Open Terminal](./images/open-terminal.png " ")
 
@@ -98,7 +98,7 @@ In this task, we will show you how to view the changes you made in the applicati
 
 2. This will display the customers loan application details. In approximately 15 seconds, the AI generated loan recommendations will be displayed. Click the **Navigate To Decisions** button.
 
-    ![James Smith AI generated recommendations](./images/james-woods-ai.png " ")
+    ![James Woods Decision](./images/james-woods-decision.png " ")
 
 3. Expand the drop down to view the newly added graph.
 
@@ -109,7 +109,6 @@ In this task, we will show you how to view the changes you made in the applicati
 * [Oracle Database 23ai Documentation](https://docs.oracle.com/en/database/oracle/oracle-database/23/)
 
 ## Acknowledgements
-* **Authors** - Linda Foinding, Francis Regalado
-* **Contributors** - Kamryn Vinson, Eddie Ambler, Kevin Lazarz
-* **Last Updated By/Date** - Linda Foinding, April 2025
-
+* **Author** - Kamryn Vinson
+* **Contributors** -  Linda Foinding, Francis Regalado, Eddie Ambler, Kevin Lazarz
+* **Last Updated By/Date** - Kamryn Vinson, April 2025
