@@ -25,8 +25,8 @@ In this lab, you will:
 
 This lab assumes you have:
 * An Oracle Cloud account
-* Successfully completed Lab 1: Workshop Details and Prerequisites
-* Successfully completed Lab 2: SeerEquities AI App in Action
+* Successfully completed Lab 1: Run the Demo
+* Successfully completed Lab 3: Connect to Development Environment
 
 
 ## Task 1: Hackathon Challenge
@@ -39,17 +39,7 @@ The company has requested an enhancement to the current loan recommendation syst
 
     ![AI Developer Coding Exercise](./images/ai-exercise.png " ")
 
-## Task 2: Login to Jupyter Notebook
-
-1. To navigate to the development environment, click **View Login Info**. Copy the Development IDE Login Password. Click the Start Development IDE link.
-
-    ![Open Development Environment](./images/dev-env.png " ")
-
-2. Paste in the Development IDE Login Password that you copied in the previous step. Click **Login**.
-
-    ![Login](./images/jupyter-login.png " ")
-
-## Task 3: Modify the Required Files
+## Task 2: Modify the Required Files
 
 In this task, we will show you how to access the files needed to complete the challenge.
 
@@ -73,7 +63,7 @@ In this task, we will show you how to access the files needed to complete the ch
 
     ![Save Decision.py](./images/save-decision-py.png " ")
 
-## Task 4: Launch the Application
+## Task 3: Launch the Application
 
 In this task, we will show you how to launch the application.
 
@@ -97,7 +87,7 @@ In this task, we will show you how to launch the application.
 
     ![Login](./images/login.png " ")
 
-## Task 5: View the Results
+## Task 4: View the Results
 
 In this task, we will show you how to view the changes you made in the application.
 

@@ -11,7 +11,7 @@ In the hands-on portion, we give you coding challenges and you will enhance the 
 You will also integrate data from internal and external sources to generate insights, automate document processing, and accelerate loan approvals. The solution uses real-time Generative AI to refine loan options while maintaining compliance with company and regulatory policies.
 
 
-  [](videohub:1_mg30brw3)
+  [](videohub:1_mg30brw3:large)
 
 **About Oracle AI Vector Search**
 
