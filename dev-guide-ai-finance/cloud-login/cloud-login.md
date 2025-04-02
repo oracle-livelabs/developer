@@ -1,18 +1,17 @@
-# Get started - Login to the LiveLabs Sandbox Environment and Workshop Application
+# Get started
 
 ## Introduction
 
-In this lab, we will show you where you can find the login information and how to log in to the LiveLabs Sandbox as well as the **SeerEquities Loan Management application**.
+In this lab, we will show you where you can find the login information and how to log in to the **SeerEquities Loan Management application**.
 
 Estimated Time: 5 minutes
 
 ### Objectives
 
-- Login to LiveLabs Sandbox
 - Log-in to the application
 - Locate your LiveLabs Sandbox reservations
 
-## Task 1: View Login Information and login to your LiveLabs Sandbox
+## Task 1: View Login Information
 
 Right above the workshop instructions you can find two information:
 
@@ -22,9 +21,9 @@ b. **Time Remaining:** This shows you the remaining time before your access to t
 
 ![View Login Info](./images/view-login-info.png " ")
 
-## Task 2: Workshop Application Setup
+## Task 2: Login to the Demo
 
-1. To access the demo environment, click **View Login Info** in the top left corner of the page. Click the Start the Demo link.
+1. To access the demo environment, click **View Login Info** in the top left corner of the page. Click the **Start the Demo** link.
 
     ![Click the Start Demo Link](./images/start-demo.png " ")
 

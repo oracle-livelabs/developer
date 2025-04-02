@@ -18,8 +18,8 @@ In this lab, you will:
 
 This lab assumes you have:
 * An Oracle Cloud account
-* Successfully completed Lab 1: Workshop Details and Prerequisites
-* Successfully completed Lab 2: SeerEquities AI App in Action
+* Successfully completed Lab 1: Run the Demo
+* Successfully completed Lab 3: Connect to Development Environment
 
 
 ## Task 1: Hackathon Challenge
@@ -34,17 +34,7 @@ The loan officer needs to visualize additional data points in the decision-makin
 
     ![Graph Coding Exercise](./images/graph-dropdown.png " ")
 
-## Task 2: Login to Jupyter Notebook
-
-1. To navigate to the development environment, click **View Login Info**. Copy the Development IDE Login Password. Click the Start Development IDE link.
-
-    ![Open Development Environment](./images/dev-env.png " ")
-
-2. Paste in the Development IDE Login Password that you copied in the previous step. Click **Login**.
-
-    ![Login](./images/jupyter-login.png " ")
-
-## Task 3: Modify the Decision.py File
+## Task 2: Modify the Decision.py File
 
 1. Click **Pages**.
 
@@ -303,7 +293,7 @@ Edit the part of the script that edits the scatter plot. Change the X and Y axis
 
     ![Save Decision.py](./images/save-decision-py.png " ")
 
-## Task 4: Launch the Application
+## Task 3: Launch the Application
 
 1. Open the terminal.
 
@@ -325,7 +315,7 @@ Edit the part of the script that edits the scatter plot. Change the X and Y axis
 
     ![Login](./images/login.png " ")
 
-## Task 5: View the Results
+## Task 4: View the Results
 
 1. On the Dashboard page, from the pending review list, select the Customer ID for **James Woods**.
 
@@ -340,8 +330,6 @@ Edit the part of the script that edits the scatter plot. Change the X and Y axis
     ![James Smith graph](./images/james-woods-graph.png " ")
 
 **Congratulations, you have successfully completed the Graph Developer Coding Exercise!**
-
-
 
 ## Learn More
 
