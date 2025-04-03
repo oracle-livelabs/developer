@@ -25,33 +25,19 @@ In this lab, you will:
 ### Prerequisites
 
 This lab assumes you have:
-
 * An Oracle Cloud account
-
-* Successfully completed Lab 1: Workshop Details and Prerequisites
-
-* Successfully completed Lab 2: SeerEquities AI App in Action
+* Successfully completed Lab 1: Run the Demo
+* Successfully completed Lab 3: Connect to Development Environment
 
 
 ## Task 1: JSON Duality Views Coding Exercise
-
 
 The company has requested an enhancement to the current customer data and would now like to see the parameter for **age** to be reflected.
 
 1. In the Customer.py file, find the # 🔍 Customer Details Section at line 219
 2. Update the section to include a new parameter for **age**.
 
-## Task 2: Login to Jupiter Notebook
-
-1. To navigate to the development environment, click **View Login Info**. Copy the Development IDE Login Password. Click the Start Development IDE link.
-
-    ![Open Development Environment](./images/dev-env.png " ")
-
-2. Paste in the Development IDE Login Password that you copied in the previous step. Click **Login**.
-
-    ![Login](./images/jupyter-login.png " ")
-
-## Task 3: Modify the Customers.py File
+## Task 2: Modify the Customers.py File
 
 1. Click **Pages**.
 
@@ -96,7 +82,7 @@ The code below section dynamically updates customer data in our **clients dv** (
         </copy>
     ````
 
-## Task 4: Launch the Application
+## Task 3: Launch the Application
 
 1. Open the terminal.
 
@@ -118,7 +104,7 @@ The code below section dynamically updates customer data in our **clients dv** (
 
     ![Login](./images/login.png " ")
 
-## Task 5: View the Results
+## Task 4: View the Results
 
 **Congratulations, you have successfully completed the JSON Duality View Coding Exercise!**
 
