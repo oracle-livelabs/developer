@@ -1,14 +1,14 @@
-# JSON Duality View Developer Hackathon Challenge
+# Code with JSON Duality Views
 
 ## Introduction
 
-**Welcome to the JSON Duality View Developer Hackathon Challenge!**
+**Welcome to the JSON Duality Views Challenge!**
 
 In this lab, you will tackle an exciting coding challenge focused on **JSON**. Your goal is to enhance the existing application by implementing an update that will elevate its functionality. This is your opportunity to sharpen your skills and explore the power of JSON.
 
 **Are you up for the challenge?**
 
-If you're ready to dive in, proceed with this lab and start coding. If you prefer a more guided approach with a detailed walkthrough, you can continue to Lab 6b Step-by-step: JSON Duality Views Coding exercise for step-by-step instructions.
+If you're ready to dive in, proceed with this lab and start coding. If you prefer a more guided approach with a detailed walkthrough, you can continue to Lab 6b Step-by-step: JSON Duality Views for step-by-step instructions.
 
 Good luck, and enjoy the process!
 
@@ -30,7 +30,7 @@ This lab assumes you have:
 * Successfully completed Lab 3: Connect to Development Environment
 
 
-## Task 1: JSON Duality Views Coding Exercise
+## Task 1: Challenge Requirements 
 
 The company has requested an enhancement to the current customer data and would now like to see the parameter for **age** to be reflected.
 
@@ -49,7 +49,7 @@ The company has requested an enhancement to the current customer data and would 
 
 **Coding with JSON TRANSFORM**
 
-The code below section dynamically updates customer data in our **clients dv** (dv - stands for duality views) table by building a flexible  **JSON TRANSFORM** query based on a list of transformation statements. It constructs the query by joining those statements—like setting new field values—then applies them to the JSON data for a specific customer, identified by their ID, as long as a loan application exists."
+The code below dynamically updates customer data in our **clients dv** (dv - stands for duality views) table by building a flexible  **JSON TRANSFORM** query based on a list of transformation statements. It constructs the query by joining those statements—like setting new field values—then applies them to the JSON data for a specific customer, identified by their ID, as long as a loan application exists."
 
 3. **HINT** Find the following code block in the Customer.py file and add the parameter for age.
 

@@ -12,11 +12,11 @@ By the end of this hands-on session, you will have established a connection to a
 
 Throughout this section we will be leveraging a Jupyter Notebook to explore building parts of the application. If you are unfamiliar with notebooks here are a few tips to get started:
 
-• Instructions and code will be mixed together, each having their own blocks. You can use the run button on the code to see it execute. If you accidentally hit run on any instructions it will just move to the next block so don't worry.
+* Instructions and code will be mixed together, each having their own blocks. You can use the run button on the code to see it execute. If you accidentally hit run on any instructions it will just move to the next block so don't worry.
 
-• When running a code block it will switch from either a [ ] or a [1] (a number inside) to a [*]. When you see the one with a * that means its running. Wait till it switches to a number before moving on.
+* When running a code block it will switch from either a [ ] or a [1] (a number inside) to a [*]. When you see the one with a * that means its running. Wait till it switches to a number before moving on.
 
-• If you see any warnings, don't worry, they are probably just letting you know that things are changing, depreciating and you should look at updating to the latest standards. You don't need to do anything.
+* If you see any warnings, don't worry, they are probably just letting you know that things are changing, depreciating and you should look at updating to the latest standards. You don't need to do anything.
 
 
 ### Prerequisites

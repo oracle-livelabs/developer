@@ -1,4 +1,4 @@
-# Code RAG using AI Vector Search Hackathon Challenge step-by-step
+# Code with Generative AI step-by-step
 
 ## Introduction
 
@@ -21,7 +21,7 @@ This lab assumes you have:
 * Successfully completed Lab 1: Run the Demo
 * Successfully completed Lab 3: Connect to Development Environment
 
-## Task 1: Hackathon Challenge
+## Task 1: Challenge Requirements 
 The company has requested an enhancement to the current loan recommendation system. The loan officer has indicated that the existing 3 loan options are insufficient, and they'd like to see the top 5 loan options instead.
 
 1. Update the Customers.py and Decision.py files to make the necessary changes in the code so that the AI prompt returns the top 5 loans instead of the current 3.
@@ -102,7 +102,7 @@ The company has requested an enhancement to the current loan recommendation syst
 
     ![James Smith AI generated recommendations](./images/ai-exercise.png " ")
 
-**Congratulations, you have successfully completed the AI Developer Coding Exercise!**
+**Congratulations, you have successfully completed the Generative AI Challenge!** You have updated the files to make the necessary changes in the code so that the AI prompt returns the top 5 loans instead of the current 3. The company can now see more loans options and provide better service to their customer.
 
 
 ## Learn More
@@ -112,4 +112,4 @@ The company has requested an enhancement to the current loan recommendation syst
 ## Acknowledgements
 * **Authors** - Linda Foinding, Francis Regalado
 * **Contributors** - Kamryn Vinson, Eddie Ambler, Kevin Lazarz
-* **Last Updated By/Date** - Linda Foinding, April 2025
+* **Last Updated By/Date** - Kamryn Vinson, April 2025

@@ -1,4 +1,4 @@
-# Code Property Graph using Graph Query Hackathon Challenge step-by-step
+# Code with Property Graph step-by-step
 
 ## Introduction
 
@@ -329,7 +329,7 @@ Edit the part of the script that edits the scatter plot. Change the X and Y axis
 
     ![James Smith graph](./images/james-woods-graph.png " ")
 
-**Congratulations, you have successfully completed the Graph Developer Coding Exercise!**
+**Congratulations, you have successfully completed the Property Graph Challenge!** You have updated the Decision.py file to add functionality for an additional graph that displays the following metrics: Required Credit Score and Debt-to-Income Ratio (%).
 
 ## Learn More
 
