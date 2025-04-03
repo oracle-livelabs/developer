@@ -11,18 +11,59 @@
             "title": "Get Started",
             "description": "Prerequisites for LiveLabs (Oracle-owned tenancies). The title of the lab and the Contents Menu title (the title above) match for Prerequisite lab. This lab is always first.",
             "filename": "../../cloud-login/cloud-login.md"
-          },
+        },
         {
-            "title": "Lab 1: Demo User Story",
+            "title": "Lab 1: Run the Demo",
             "description": "Labs that follow the introduction are numbered, starting with Lab 1",
-            "filename": "../../demo-story/demo-story.md"
+            "filename": "../../user-story/user-story.md"
         },
         {
-            "title": "Lab 2: Build Hands-on Environment",
+            "title": "Lab 2: Build the Application",
             "description": "This is a step-by-step guide showcasing how the demo instance is navigated",
-            "filename": "../../build-hands-on-demo/build-hands-on-demo.md"
+            "filename": "../../build/build.md"
         },
         {
+            "title": "Lab 3: Connect to Development Environment",
+            "description": "This is a step-by-step guide showcasing how the demo instance is navigated",
+            "filename": "../../connect-to-env/connect-to-env.md"
+        },
+        {
+            "title": "Lab 4a Challenge Yourself: Code RAG using AI Vector Search Hackathon Challenge",
+            "description": "Labs that follow the introduction are numbered, starting with Lab 1",
+            "filename": "../../ai-exercise/ai-exercise.md"
+        },
+        {
+            "title": "Lab 4b Step-by-step: Code RAG using AI Vector Search Hackathon Challenge",
+            "description": "Labs that follow the introduction are numbered, starting with Lab 1",
+            "filename": "../../ai-answers/ai-answers.md"
+        },
+        {
+            "title": "Lab 5a Challenge Yourself: Code Property Graph using Graph Query Hackathon Challenge",
+            "description": "This is a step-by-step guide showcasing how the demo instance is navigated",
+            "filename": "../../graph-exercise/graph-exercise.md"
+        },
+        {
+            "title": "Lab 5b Step-by-step: Code Property Graph using Graph Query Hackathon Challenge",
+            "description": "This is a step-by-step guide showcasing how the demo instance is navigated",
+            "filename": "../../graph-answers/graph-answers.md"
+        },
+        {
+            "title": "Lab 6a Challenge Yourself: JSON Duality View Developer Hackathon Challenge",
+            "description": "This is a step-by-step guide showcasing how the demo instance is navigated",
+            "filename": "../../json-exercise/json-exercise.md"
+        },
+        {
+            "title": "Lab 6b Step-by-step: JSON Duality View Developer Hackathon Challenge",
+            "description": "This is a step-by-step guide showcasing how the demo instance is navigated",
+            "filename": "../../json-answers/json-answers.md"
+        },
+        {
+            "title": "Application Architecture",
+            "description": "Review the physical and logical architecture behind the application",
+            "filename": "../../app-architecture/app-architecture.md"
+        },
+        {
+
             "title": "Need Help?",
             "description": "Solutions to Common Problems and Directions for Receiving Live Help",
             "filename":"https://oracle-livelabs.github.io/common/labs/need-help/need-help-freetier.md"
