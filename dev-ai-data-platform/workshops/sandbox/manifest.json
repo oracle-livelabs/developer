@@ -22,10 +22,10 @@
             "description": "Labs that follow the introduction are numbered, starting with Lab 1",
             "filename": "../../tools/tools.md"
         }, 
-        {    
-            "title": "Lab 3: Discover & View your Data Lake Assets from your Data Catalog",
+        {
+            "title": "Lab 3: Discover and View your Data Lake Assets from your Data Catalog",
             "description": "Labs that follow the introduction are numbered, starting with Lab 1",
-            "filename": "../../discover-and-catalog-data/discover-and-catalog-data.md"
+            "filename": "../../discover-and-catalog/discover-and-catalog.md"
         }, 
         {
             "title": "Lab 4: Load Object Storage Data into Autonomous Database from Data Catalog",
