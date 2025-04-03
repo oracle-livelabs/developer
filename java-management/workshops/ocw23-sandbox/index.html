@@ -14,7 +14,14 @@
 
     <link rel="stylesheet" href="https://objectstorage.us-phoenix-1.oraclecloud.com/p/SJgQwcGUvQ4LqtQ9xGsxRcgoSN19Wip9vSdk-D_lBzi7bhDP6eG1zMBl0I21Qvaz/n/c4u02/b/common/o/redwood-hol/css/style.min.css" />
     <link rel="shortcut icon" href="https://objectstorage.us-phoenix-1.oraclecloud.com/p/SJgQwcGUvQ4LqtQ9xGsxRcgoSN19Wip9vSdk-D_lBzi7bhDP6eG1zMBl0I21Qvaz/n/c4u02/b/common/o/redwood-hol/img/favicon.ico" />
-    <script src="https://www.oracle.com/us/assets/metrics/ora_apex.js"></script>
+    <script>
+        if (!window.location.hostname.includes("github.io")) {
+            var script = document.createElement("script");
+            script.src = "https://www.oracle.com/us/assets/metrics/ora_apex.js";
+            script.async = true;
+            document.head.appendChild(script);
+        }
+    </script>
 </head>
 
 <body>
