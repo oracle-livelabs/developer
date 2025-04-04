@@ -1,14 +1,14 @@
-# Code Property Graph using Graph Query Hackathon Challenge
+# Code with Property Graph
 
 ## Introduction
 
-**Welcome to the Code Property Graph using Graph Query Hackathon Challenge!**
+**Welcome to the Code Property Graph Challenge!**
 
 In this lab, you will tackle an exciting developer coding challenge focused on **Graph**. Your goal is to enhance the existing application by implementing an update that will elevate its functionality. This is your opportunity to sharpen your skills and explore the power of Graph.
 
 **Are you up for the challenge?**
 
-If you're ready to dive in, proceed with this lab and start coding. If you prefer a more guided approach with a detailed walkthrough, you can continue to Lab 5b Step-by-step: Code Property Graph using Graph Query Hackathon Challenge for step-by-step instructions.
+If you're ready to dive in, proceed with this lab and start coding. If you prefer a more guided approach with a detailed walkthrough, you can continue to Lab 5b Step-by-step: Code Property Graph for step-by-step instructions.
 
 Good luck, and enjoy the process!
 
@@ -26,7 +26,7 @@ This lab assumes you have:
 * Successfully completed Lab 1: Run the Demo
 * Successfully completed Lab 3: Connect to Development Environment
 
-## Task 1: Hackathon Challenge
+## Task 1: Challenge Requirements 
 
 The loan officer is requesting an additional graph to be added to the decision page to visualize additional loan options based on credit score and debt-to-income ratio. Specifically, they want to display an additional graph that shows loan options based on two key metrics: required credit score on one axis and debt-to-income ratio on the other.
 

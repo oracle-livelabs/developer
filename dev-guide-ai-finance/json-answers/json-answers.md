@@ -1,4 +1,4 @@
-# JSON Duality Views Coding Hackathon Challenge step-by-step
+# Code with JSON Duality Views step-by-step
 
 ## Introduction
 
@@ -23,7 +23,7 @@ This lab assumes you have:
 * Successfully completed Lab 1: Run the Demo
 * Successfully completed Lab 3: Connect to Development Environment
 
-## Task 1: JSON Duality Views Coding Exercise
+## Task 1: Challenge Requirements 
 
 The company has requested an enhancement to the current customer data and would now like to see the parameter for **age** to be reflected.
 
@@ -42,7 +42,7 @@ The company has requested an enhancement to the current customer data and would 
 
 **Coding with JSON TRANSFORM**
 
-The code below section dynamically updates customer data in our **clients dv** (dv - stands for duality views) table by building a flexible  **JSON TRANSFORM** query based on a list of transformation statements. It constructs the query by joining those statements—like setting new field values—then applies them to the JSON data for a specific customer, identified by their ID, as long as a loan application exists."
+The code below dynamically updates customer data in our **clients dv** (dv - stands for duality views) table by building a flexible  **JSON TRANSFORM** query based on a list of transformation statements. It constructs the query by joining those statements—like setting new field values—then applies them to the JSON data for a specific customer, identified by their ID, as long as a loan application exists."
 
 3. Edit the Customer Details Section
 

@@ -157,7 +157,7 @@ In this example, we'll navigate through this application to show you a user bein
 
 Congratulations, you have just denied your first customer loan! Proceed to the next task.
 
-## Task 4: Demo Opportunity Zone User
+## Task 4: Demo Affordable Housing Zone User
 
 1. On the Dashboard page, from the pending review list, select the Customer ID for **Evan Burton**.
 
@@ -177,7 +177,7 @@ Congratulations, you have just denied your first customer loan! Proceed to the n
     ![Evan Burton Select Final Approved Loan](./images/evan-burton-select-final-loan.png " ")
 
 
-5. Select the AI suggested opportunity zone loan with the lowest time to close. In our case, we would select loan number 49.
+5. Select the AI suggested affordable housing zone loan with the lowest time to close. In our case, we would select loan number 49.
 
     ![Evan Burton Select Loan 1](./images/evan-burton-select-loan.png " ")
 
@@ -211,102 +211,33 @@ Congratulations, you have just denied your first customer loan! Proceed to the n
 
     ![Evan Burton Approved List](./images/evan-burton-approved-list.png " ")
 
-## Task 5: Demo First Time Home Buyer
+## Task 5: Edit Customer Details
+Lastly, let's explore how the system handles profile updates. For this task, we will edit a customers details. In this example, a customer was asked to provide additional documentation — specifically an updated proof of income. 
 
-1. On the Dashboard page, from the pending review list, select the Customer ID for **Alex Anderson**.
+1. On the Dashboard page, expand **View Denied Customers**. From the Denied Loan Requests list, select the customer ID for **Alex Anderson**.
 
-    ![Select Alex Anderson](./images/alex-anderson.png " ")
+    ![Select Alex Anderson](./images/select-alex-anderson.png " ")
 
-2. This will display the customers loan application details. In approximately 15 seconds, the AI generated recommendations will be displayed.
+Before we upload the document, note that the customers income currently reflects $25,000. any updates are saved instantly using **JSON Transform**, powered by **JSON Duality Views**. This ensures that data remains accurate without altering unrelated details.
 
-    ![Alex Anderson AI generated recommendations](./images/alex-anderson-ai.png " ")
-
-3. Copy the following prompt into the AI chatbot to see the lowest down payment. Press Enter.
-
-    ```text
-    <copy>
-    Show me the lowest down payment.
-    </copy>
-    ```
-    ![Alex Anderson chatbot](./images/alex-anderson-chatbot1.png " ")
-
-    Copy the following prompt into the AI chatbot to see the lowest monthly payment. Press Enter.
-
-    ```text
-    <copy>
-    Show me the lowest monthly payment.
-    </copy>
-    ```
-    ![Alex Anderson chatbot](./images/alex-anderson-chatbot2.png " ")
-
-4. Select the **Navigate to Decisions** button.
-
-    ![Alex Anderson Decision](./images/alex-anderson-decision.png " ")
-
-5. In the **Select Final Approved Loan Option** section, the loan options are displayed. This is where the loan officer could choose to request additional information in order to provide a slightly better loan. For this scenario, we will continue with selecting one of the suggested loans.
-
-    ![Michael Ramon Select Final Approved Loan](./images/alex-anderson-select-final-loan.png " ")
-
-6. Since the AI suggested the first time home owner loan with the lowest monthly payment, we would select loan number 27. This loan is the most suitable option for Michael given his financial profile and loan eligibility.
-
-    ![Alex Anderson Select Loan 1](./images/alex-anderson-select-loan.png " ")
-
-7. Set the final loan status to **Approved**.
-
-    ![Alex Anderson Approved](./images/alex-anderson-approve.png " ")
-
-8. Click the **Save Final Approval & Loan Status** button.
-
-    The loan status has been updated to 'Approved' and saved to the customer profile.
-
-    ![Alex Anderson Save Loan Status](./images/alex-anderson-save.png " ")
-
-9. Click the **Generate Decision as PDF** button.
-
-    ![Alex Anderson Download Recommendation](./images/alex-anderson-download.png " ")
-
-10. Click **Download PDF**
-
-    ![Alex Anderson Download PDF](./images/alex-anderson-download-pdf.png " ")
-
-11. Display the message the customer would see by opening the downloaded PDF.
-
-    ![Open Alex Anderson PDF](./images/open-alex-anderson-pdf.png " ")
-
-12. Click the **Return to Dashboard** button to navigate back to the Dashboard.
-
-    ![Return to Dashboard](./images/alex-anderson-dashboard.png " ")
-
-13. Expand **View Approved Customers**. We can see that Alex Anderson has been removed from the Pending Review Loan Requests list and has been added to the Approved Loan Requests list.
-
-    ![Alex Anderson Approved List](./images/alex-anderson-approved-list.png " ")
-
-## Task 6: Edit Customer Details
-Lastly, let's explore how the system handles profile updates. For this task, we will edit a customers details. Loan officers can edit this information directly within the interface, and any updates are saved instantly using **JSON Transform**, powered by **JSON Duality Views**. This ensures that data remains accurate without altering unrelated details.
-
-1. On the Dashboard page, expand **View Denied Customers**. From the Denied Loan Requests list, select the customer ID for **James Woods**.
-
-    ![Select James Woods](./images/select-james-woods-denied.png " ")
-
-2. On the Customer Details page, expand **Customer Details**.
+2. On the Customer Details page, click the **Upload Document** button.
 
     ![Expand Customer Details](./images/customer-details.png " ")
 
-3. Let's change James' loan status from Denied back to **Pending Review**.
-
-    ![Edit Customer Details](./images/pending-review.png " ")
-
-4. Click **Save Customer Details**.
-
-    ![Save Customer Details](./images/save-details.png " ")
 
 5. Scroll down to the bottom of the page and click the **Return to Dashboard** button.
 
     ![Click Dashboard](./images/click-dashboard.png " ")
 
-6. We can see that James Woods has been removed from the Denied Loan Requests list and has been added back to the Pending Review Loan Requests list.
+Once the document is uploaded: 
 
-    ![James Woods Pending Review List](./images/james-woods-pending-review-list.png " ")
+✅ The system automatically detects the new income data. 
+
+✅ Then their profile will be updated from $25,000 to $65,000. 
+
+✅ And thanks to JSON Transform and JSON Duality Views, only the relevant field is modified — leaving the rest of the profile UNTOUCHED. 
+
+With this updated profile, our AI reevaluates the customers eligibility and identifies three approved loan options. Now we can make our final decision, and generate a PDF. The dashboard updates immediately, marking the customer's status as Approved.
 
 ## Conclusion
 
