@@ -1,0 +1,100 @@
+# Introduction
+
+## About this Workshop 
+
+In this workshop, you will explore the use of Oracle’s AI Data Platform to enable companies to simplify data access, data management, data sharing, and build AI powered applications that help them to gain competitive market advantage by optimizing time consuming tasks.  
+
+The Oracle 23ai Autonomous Database as a query engine for your data platform, in this workshop. The query engine is central to a data platform’s performance, scalability, and flexibility. It abstracts the complexity of how and where the data is stored, enabling users to focus on what they want to retrieve, not how to get it. 
+
+You will build an end-to-end solution using Oracle Data Platform tools to ingest external data from various sources, transform it, and produce curated data products for internal and external use.   
+
+You will create data products from an internal application database and the data platform catalog to support a GenAI-powered loan approval application. The workshop will also cover how to curate and share a loan portfolio data product with the risk management team on a set schedule, enabling them to integrate it with their own systems and datasets for risk analysis. 
+
+You will learn how an Oracle Data Platform differentiates itself from other providers. 
+
+The labs in this workshop walk you through all the steps to access the Data Lake using Autonomous Database (ADB) and Oracle Cloud Infrastructure (OCI) Data Catalog. You will learn how to Synchronize ADB and Data Catalog so that you can query Oracle Object Storage buckets from ADB. 
+
+The Oracle Data Catalog is a fully managed, self-service data discovery and governance solution for your enterprise data. It provides a single collaborative environment to manage technical, business and operational metadata. 
+
+The workshop tasks are based on the business tasks commonly performed in a loan funding company.  You will use the tools included in the Oracle Data Catalog to collect, organize, find, access, understand, enrich and activate metadata. 
+
+The demos and Tasks included in the workshop, were designed to demonstrate the benefits of using the Oracle Data Catalog while executing tasks similar to those commonly performed in a loan funding company.  
+
+## Key Terms 
+
+### Oracle Autonomous Database (ADB)  
+
+Oracle Autonomous Database is a converged database that allows users to work with structured and unstructured data, and external data within in a single unified platform, which simplifies data management and reduces the need for multiple specialized databases. 
+
+All kinds of data types, workload and perform any kind of analytics against it.  Both internal and external, all in a single united platform.  This unification and the ability to work with structured and unstructured data simplifies the data architecture and reduces the need for multiple specialized databases 
+
+### Data Warehouse 
+
+A data warehouse stores structured, cleaned, and preprocessed data for business intelligence and analytics. Primarily used for business intelligence (BI) and reporting, providing historical data analysis for trends and insights 
+
+### Data Lake 
+
+A data lake is a substantial repository designed to store a wide variety of data, such as text, images, and videos, in their original and unstructured formats. Rather than categorizing or formatting the data up front, everything is gathered into one “pool.” This flexible approach allows analysts and researchers to determine how best to structure and interpret the data later on. However, maintaining clear governance and organization is crucial to prevent the data lake from becoming a disorganized “data swamp.” 
+
+### Data Lakehouse 
+
+Combines the flexibility of a data lake with the data management and querying capabilities of a data warehouse. This hybrid approach allows users to determine how best to structure and interpret the data, while still benefiting from higher reliability and query efficiency.  It is aimed at facilitating machine learning, business intelligence, and predictive analytics. 
+
+### AI Data Platform  
+
+A data platform is a technology solution that enables the collection, storage, cleaning, transformation, analysis and governance of data. Data platforms can include both hardware and software components. They make it easier for organizations to use their data to improve decision making and operations. Data platforms are increasingly more popular with the need for a centralized solution to meet today’s AI needs.  AI applications and solutions need access to data in real time to enable better solutions and greater innovation. 
+
+![Oracle AI Platform](./images/oracle-ai-data-platform.png)
+
+
+![Discovery Time](./images/discovery-time.png)
+
+### Data Product 
+
+A data product is a reusable, curated data asset designed to solve a specific business problem or provide actionable insights. Data products aim to transform raw data into valuable, usable information for decision-making, whether internally within an organization or externally as a service. They are designed to be used across multiple applications and use cases and includes metadata, data lineage, and other mechanisms to ensure data quality and provenance. 
+
+### Affordable Housing Zone  
+
+Affordable Housing Zones are an economic development tool that allows people to invest in distressed areas in the United States. Their purpose is to spur economic growth and job creation in low-income communities while providing tax benefits to investors.  
+
+### Data Catalog 
+
+OCI Data Catalog is a fully managed, self-service data discovery and governance solution for your enterprise data. With Data Catalog, you get a single collaborative environment to manage technical, business, and operational metadata. You can collect, organize, find, access, understand, enrich, and activate this metadata. 
+
+## Workshop Setup 
+
+This workshop is configured into 2 sections: 
+
+1) A Demo section, which enables you to start a Loan Management Application and gain hands on experience using the application to approve loans, evaluate loan portfolio risks, and find marketing opportunities by going through the provided user interaction stories for the Loan Officer, and showing how the Risk Management Officer, and Marketing Officer personas interact with data that is share with them to deliver data-driven feedback to the business. 
+
+2) A Hands-On section, where you will be given data access and data management tasks to perform. For the data engineering development tasks, you will be provided with requirements that reflect a set of requested application enhancement requests for which you will need to conduct the required data discovery, data transformation, & data sharing to accomplish the enhancement requests to support the requested front-end changes. 
+
+### Database Tier 
+
+The workshop has a single Autonomous Database that is pre-created with 2 schemas. 
+
+The first schema is used to run the Loan Management Application Demo Lab. Spinning up the workshop includes creating the demo schema, creating and loading the application objects, and loading the ONNX Model to be used by the application.  
+
+The second schema is used to run the Hands-On Developer Coding Tasks. Here the developer will need to create and load the application objects and also load the ONNX Model to be used by the application into the Autonomous Database.  
+
+### Application Tier 
+
+The workshop includes a set of docker images hosted on an OCI VM for the middle tier each with connectivity to its respective schema on the Autonomous Database to support the Demo Application and the Hands-On application that you will build & run. 
+
+### Physical Architecture 
+
+![Physical Architecture](./images/physical-architecture.png)
+
+### Logical Architecture 
+
+![Logical Architecture](./images/logical-architecture.png)
+
+## Learn More
+
+* [Oracle Database 23ai Documentation](https://docs.oracle.com/en/database/oracle/oracle-database/23/)
+* [URL text 2](http://docs.oracle.com)
+
+## Acknowledgements
+* **Authors** - Linda Foinding, Francis Regalado
+* **Contributors** - Kamryn Vinson, Otis Barr, Eddie Ambler, Ramona Magadan
+* **Last Updated By/Date** - Kamryn Vinson, March 2025

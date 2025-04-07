@@ -1,14 +1,14 @@
-# Code RAG using AI Vector Search Hackathon Challenge
+# Code with Generative AI
 
 ## Introduction
 
-**Welcome to the Code RAG using AI Vector Search Hackathon Challenge!**
+**Welcome to the Code with Generative AI Challenge!**
 
 In this lab, you will tackle an exciting developer coding challenge focused on **AI Vector Search**. Your goal is to enhance the existing application by implementing an update that will elevate its functionality. This is your opportunity to sharpen your skills and explore the power of AI-driven search.
 
 **Are you up for the challenge?**
 
-If you're ready to dive in, proceed with this lab and start coding. If you prefer a more guided approach with a detailed walkthrough, you can continue to Lab 4b Step-by-step: Code RAG using AI Vector Search Hackathon Challenge for step-by-step instructions.
+If you're ready to dive in, proceed with this lab and start coding. If you prefer a more guided approach with a detailed walkthrough, you can continue to Lab 4b Step-by-step: Code with Generative AI for step-by-step instructions.
 
 Good luck, and enjoy the process!
 
@@ -17,19 +17,19 @@ Estimated Time: 30 minutes
 
 ### Objectives
 In this lab, you will:
-* Enhance your understanding of AI Vector Search by applying it to a real-world developer coding challenge.
-* Gain hands-on experience with integrating AI Vector Search and refining application features to meet specific development requirements.
+* Enhance your understanding of Generative AI by applying it to a real-world developer coding challenge.
+* Gain hands-on experience with fine-tuning and refining application features to meet specific development requirements.
 
 
 ### Prerequisites
 
 This lab assumes you have:
 * An Oracle Cloud account
-* Successfully completed Lab 1: Workshop Details and Prerequisites
-* Successfully completed Lab 2: SeerEquities AI App in Action
+* Successfully completed Lab 1: Run the Demo
+* Successfully completed Lab 3: Connect to Development Environment
 
 
-## Task 1: Hackathon Challenge
+## Task 1: Challenge Requirements 
 
 The company has requested an enhancement to the current loan recommendation system. The loan officer has indicated that the existing 3 loan options are insufficient, and they'd like to see the top 5 loan options instead.
 
@@ -39,17 +39,7 @@ The company has requested an enhancement to the current loan recommendation syst
 
     ![AI Developer Coding Exercise](./images/ai-exercise.png " ")
 
-## Task 2: Login to Jupyter Notebook
-
-1. To navigate to the development environment, click **View Login Info**. Copy the Development IDE Login Password. Click the Start Development IDE link.
-
-    ![Open Development Environment](./images/dev-env.png " ")
-
-2. Paste in the Development IDE Login Password that you copied in the previous step. Click **Login**.
-
-    ![Login](./images/jupyter-login.png " ")
-
-## Task 3: Modify the Required Files
+## Task 2: Modify the Required Files
 
 In this task, we will show you how to access the files needed to complete the challenge.
 
@@ -73,7 +63,7 @@ In this task, we will show you how to access the files needed to complete the ch
 
     ![Save Decision.py](./images/save-decision-py.png " ")
 
-## Task 4: Launch the Application
+## Task 3: Launch the Application
 
 In this task, we will show you how to launch the application.
 
@@ -97,7 +87,7 @@ In this task, we will show you how to launch the application.
 
     ![Login](./images/login.png " ")
 
-## Task 5: View the Results
+## Task 4: View the Results
 
 In this task, we will show you how to view the changes you made in the application.
 
@@ -109,6 +99,8 @@ In this task, we will show you how to view the changes you made in the applicati
 
     ![James Smith AI generated recommendations](./images/ai-exercise.png " ")
 
+**Congratulations, you have successfully completed the Generative AI Challenge!** You have updated the files to make the necessary changes in the code so that the AI prompt returns the top 5 loans instead of the current 3. The company can now see more loans options and provide better service to their customer.
+
 ## Learn More
 
 * [Oracle Database 23ai Documentation](https://docs.oracle.com/en/database/oracle/oracle-database/23/)
@@ -116,4 +108,4 @@ In this task, we will show you how to view the changes you made in the applicati
 ## Acknowledgements
 * **Authors** - Linda Foinding, Francis Regalado
 * **Contributors** - Kamryn Vinson, Eddie Ambler, Kevin Lazarz
-* **Last Updated By/Date** - Linda Foinding, April 2025
+* **Last Updated By/Date** - Kamryn Vinson, April 2025
