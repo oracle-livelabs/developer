@@ -27,6 +27,14 @@ This lab assumes you have:
 
 ## Task 1: Challenge Requirements 
 
+**About Jason Duality Views**:
+
+JSON Relational Duality is a landmark capability in Oracle Database 23ai, providing game-changing flexibility and simplicity for Oracle Database developers. This feature overcomes the historical challenges developers have faced when building applications using the relational or document models.
+
+JSON Relational Duality helps to converge the benefits of both document and relational worlds. Developers now get the flexibility and data access benefits of the JSON document model, plus the storage efficiency and power of the relational model. The new feature enabling this functionality is JSON Relational Duality View
+
+**Coding Requirements**:
+
 This challenge consists of **three steps**: 
 
 * First, update the frontend of the loan application to enable loan officers to view and modify customer ages. 
