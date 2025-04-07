@@ -1,14 +1,14 @@
-# JSON Duality Views Coding challenge
+# Code with JSON Duality Views
 
 ## Introduction
 
-**Welcome to the JSON Duality Views Coding Challenge!**
+**Welcome to the JSON Duality Views Challenge!**
 
 In this lab, you will tackle an exciting coding challenge focused on **JSON**. Your goal is to enhance the existing application by implementing an update that will elevate its functionality. This is your opportunity to sharpen your skills and explore the power of JSON.
 
 **Are you up for the challenge?**
 
-If you're ready to dive in, proceed with this lab and start coding. If you prefer a more guided approach with a detailed walkthrough, you can continue to Lab 6b Step-by-step: JSON Duality Views Coding excersise for step-by-step instructions.
+If you're ready to dive in, proceed with this lab and start coding. If you prefer a more guided approach with a detailed walkthrough, you can continue to Lab 6b Step-by-step: JSON Duality Views for step-by-step instructions.
 
 Good luck, and enjoy the process!
 
@@ -25,33 +25,21 @@ In this lab, you will:
 ### Prerequisites
 
 This lab assumes you have:
-
 * An Oracle Cloud account
-
-* Successfully completed Lab 1: Workshop Details and Prerequisites
-
-* Successfully completed Lab 2: SeerEquities AI App in Action
+* Successfully completed Lab 1: Run the Demo
+* Successfully completed Lab 3: Connect to Development Environment
 
 
-## Task 1: JSON Duality Views Coding Exercise 
+## Task 1: Challenge Requirements 
 
+The company has requested an enhancement to the current customer data and would now like to see the parameter for **age** to be reflected.
 
 The company has requested an enhancement to the current customer data and would now like to see the parameter for **age** to be reflected. 
 
 1. In the Customer.py file, find the # 🔍 Customer Details Section at line 219
 2. Update the section to include a new parameter for **age**.
 
-## Task 2: Login to Jupiter Notebook
-
-1. To navigate to the development environment, click **View Login Info**. Copy the Development IDE Login Password. Click the Start Development IDE link.
-
-    ![Open Development Environment](./images/dev-env.png " ")
-
-2. Paste in the Development IDE Login Password that you copied in the previous step. Click **Login**.
-
-    ![Login](./images/jupyter-login.png " ")
-
-## Task 3: Modify the Customers.py File
+## Task 2: Modify the Customers.py File
 
 1. Click **Pages**.
 
@@ -63,9 +51,9 @@ The company has requested an enhancement to the current customer data and would 
 
 **Coding with JSON TRANSFORM**
 
-The code below section dynamically updates customer data in our **clients dv** (dv - stands for duality views) table by building a flexible  **JSON TRANSFORM** query based on a list of transformation statements. It constructs the query by joining those statements—like setting new field values—then applies them to the JSON data for a specific customer, identified by their ID, as long as a loan application exists."
+The code below dynamically updates customer data in our **clients dv** (dv - stands for duality views) table by building a flexible  **JSON TRANSFORM** query based on a list of transformation statements. It constructs the query by joining those statements—like setting new field values—then applies them to the JSON data for a specific customer, identified by their ID, as long as a loan application exists."
 
-3. **HINT** Find the following code block in the Customer.py file and add the parameter for age.    
+3. **HINT** Find the following code block in the Customer.py file and add the parameter for age.
 
     ````python
          <copy>
@@ -96,9 +84,9 @@ The code below section dynamically updates customer data in our **clients dv** (
         </copy>
     ````
 
-## Task 4: Launch the Application
+## Task 3: Launch the Application
 
-1. Open the terminal. 
+1. Open the terminal.
 
     ![Open Terminal](./images/open-terminal.png " ")
 
@@ -118,7 +106,9 @@ The code below section dynamically updates customer data in our **clients dv** (
 
     ![Login](./images/login.png " ")
 
-## Task 5: View the Results
+## Task 4: View the Results
+
+**Congratulations, you have successfully completed the JSON Duality View Coding Exercise!**
 
 **Congratulations, you have successfully completed the JSON Duality View Coding Exercise!**
 

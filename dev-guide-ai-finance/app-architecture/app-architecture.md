@@ -1,4 +1,4 @@
-# Application architecture 
+# Application architecture
 
 ## Introduction
 
@@ -11,11 +11,11 @@ Estimated Time: 5 minutes
 * Review the loan approval application physical architecture​
 * Review the loan approval application logical architecture
 
-## Task 1: Review Physical Architecture 
+## Task 1: Review Physical Architecture
 
 ![Login](./images/physical.png " ")
 
-## Task 2: Review Logical Architecture 
+## Task 2: Review Logical Architecture
 
 ![Login](./images/logical.png " ")
 

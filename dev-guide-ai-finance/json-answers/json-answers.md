@@ -1,4 +1,4 @@
-# JSON Duality Views Coding Challenge step-by-step
+# Code with JSON Duality Views step-by-step
 
 ## Introduction
 
@@ -19,12 +19,13 @@ In this lab, you will:
 ### Prerequisites
 
 This lab assumes you have:
-
 * An Oracle Cloud account
+* Successfully completed Lab 1: Run the Demo
+* Successfully completed Lab 3: Connect to Development Environment
 
-* Successfully completed Lab 1: Workshop Details and Prerequisites
+## Task 1: Challenge Requirements 
 
-* Successfully completed Lab 2: SeerEquities AI App in Action
+The company has requested an enhancement to the current customer data and would now like to see the parameter for **age** to be reflected.
 
 
 ## Task 1: JSON Duality Views Coding Exercise 
@@ -36,17 +37,7 @@ The company has requested an enhancement to the current customer data and would 
 2. Update the section to include a new parameter for **age**.
 
 
-## Task 2: Login to Jupiter Notebook
-
-1. To navigate to the development environment, click **View Login Info**. Copy the Development IDE Login Password. Click the Start Development IDE link.
-
-    ![Open Development Environment](./images/dev-env.png " ")
-
-2. Paste in the Development IDE Login Password that you copied in the previous step. Click **Login**.
-
-    ![Login](./images/jupyter-login.png " ")
-
-## Task 3: Modify the Customers.py File
+## Task 2: Modify the Customers.py File
 
 1. Click **Pages**.
 
@@ -58,7 +49,7 @@ The company has requested an enhancement to the current customer data and would 
 
 **Coding with JSON TRANSFORM**
 
-The code below section dynamically updates customer data in our **clients dv** (dv - stands for duality views) table by building a flexible  **JSON TRANSFORM** query based on a list of transformation statements. It constructs the query by joining those statements—like setting new field values—then applies them to the JSON data for a specific customer, identified by their ID, as long as a loan application exists."
+The code below dynamically updates customer data in our **clients dv** (dv - stands for duality views) table by building a flexible  **JSON TRANSFORM** query based on a list of transformation statements. It constructs the query by joining those statements—like setting new field values—then applies them to the JSON data for a specific customer, identified by their ID, as long as a loan application exists."
 
 3. Edit the Customer Details Section
 
@@ -80,9 +71,9 @@ The code below section dynamically updates customer data in our **clients dv** (
         if age != int(customer_data.get("age", 0)): transform_statements.append("SET '$.age' = :age"); bind_vars['age'] = age                
         </copy>
     ````
-## Task 4: Launch the Application
+## Task 3: Launch the Application
 
-1. Open the terminal. 
+1. Open the terminal.
 
     ![Open Terminal](./images/open-terminal.png " ")
 
@@ -102,9 +93,9 @@ The code below section dynamically updates customer data in our **clients dv** (
 
     ![Login](./images/login.png " ")
 
-## Task 5: View the Results
+## Task 4: View the Results
 
-1. On the Dashboard page, from the pending review list, select the Customer ID for **James Woods**. 
+1. On the Dashboard page, from the pending review list, select the Customer ID for **James Woods**.
 
     ![Select James Woods](./images/james-woods.png " ")
 
@@ -112,7 +103,7 @@ The code below section dynamically updates customer data in our **clients dv** (
 
     ![James Wood AI generated recommendations](./images/james-woods-ai.png " ")
 
-3. Note: the customer details tab has been updated to reflect the **age** parameter now for all customers. 
+3. Note: the customer details tab has been updated to reflect the **age** parameter now for all customers.
 
 
 **Congratulations, you have successfully completed the JSON Duality View Coding Exercise!**

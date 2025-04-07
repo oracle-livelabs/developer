@@ -12,7 +12,7 @@ By the end of this hands-on session, you will have established a connection to a
 
 Throughout this section we will be leveraging a Jupyter Notebook to explore building parts of the application. If you are unfamiliar with notebooks here are a few tips to get started:
 
-• Instructions and code will be mixed together, each having their own blocks. You can use the run button on the code to see it execute. If you accidently hit run on any instructions it will just move to the next block so don't worry.
+• Instructions and code will be mixed together, each having their own blocks. You can use the run button on the code to see it execute. If you accidentally hit run on any instructions it will just move to the next block so don't worry.
 • When running a code block it will switch from either a [ ] or a [1] (a number inside) to a [*]. When you see the one with a * that means its running. Wait till it switches to a number before moving on.
 • If you see any warnings, don't worry, they are probably just letting you know that things are changing, depreciating and you should look at updating to the latest standards. You don't need to do anything.
 
@@ -32,7 +32,7 @@ This task will have you login to the Jupyter environment and run specific notebo
 
 3. Paste the Jupyter Notebook password you copied in the previous step into the password field.
 
-4. After a successfull login, you will see the Jupyter Notebook's landing page.
+4. After a successful login, you will see the Jupyter Notebook's landing page.
 
 
 ## Task 2: Launch the Application
@@ -49,8 +49,8 @@ This task will have you login to the Jupyter environment and run specific notebo
         </copy>
         ````
 
-The following section includes a hands-on excersise for building parts of the application using a Jupyter notebook.
-You will also be able to review important parts of the python code below. 
+The following section includes a hands-on exercise for building parts of the application using a Jupyter notebook.
+You will also be able to review important parts of the python code below.
 
 
 3. Click the URL displayed in the terminal to launch the SeerEquities Loan Management application.
@@ -65,7 +65,7 @@ You will also be able to review important parts of the python code below.
 
 **Code Highlight: Connect to the Database**
 
-This section sets up a secure connection to an Oracle database by importing necessary libraries and loading environment variables from a .env file. The get\_db\_connection function retrieves the database username, password, and connection string, then uses the oracledb library to establish a connection. 
+This section sets up a secure connection to an Oracle database by importing necessary libraries and loading environment variables from a .env file. The get\_db\_connection function retrieves the database username, password, and connection string, then uses the oracledb library to establish a connection.
 
   ![Code Highlight: Connect to the Database](./images/code-highlight-1.png " ")
 
@@ -89,7 +89,7 @@ Oracle AI Vector Search is a feature of Oracle Database 23ai that enables effici
 
 **Code Highlight: Communicating with GenAI**
 
-**About Generative artificial intelligence (AI)** 
+**About Generative artificial intelligence (AI)**
 
 Generative AI excels at creating text responses based on large language models (LLMs) where the AI is trained on a massive number of data points. The generated text is often easy to read and provides detailed responses that are broadly applicable to the questions asked of the software, often called prompts.
 
@@ -144,5 +144,5 @@ This section dynamically updates customer data in our clients\_dv table by build
 
 ## Acknowledgements
 * **Authors** - Linda Foinding, Francis Regalado
-* **Contributors** - Kamryn Vinson, Otis Barr, Ramona Magadan, Eddie Ambler, Kevin Lazarz
+* **Contributors** - Kamryn Vinson, Otis Barr, Eddie Ambler, Kevin Lazarz
 * **Last Updated By/Date** - Linda Foinding, April 2025

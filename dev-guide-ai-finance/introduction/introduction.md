@@ -9,15 +9,15 @@ In the demo, you will act as a loan officer using a modern loan approval app tha
 In the hands-on portion, we give you coding challenges and you will enhance the application by implementing features such as **AI Chatbots, AI Vector Search, Retrieval-Augmented Generation (RAG), JSON Duality Views**, and **Property Graphs**. These tools will help automate loan analysis, tailor recommendations, and surface relevant insights.
 
 You will also integrate data from internal and external sources to generate insights, automate document processing, and accelerate loan approvals. The solution uses real-time Generative AI to refine loan options while maintaining compliance with company and regulatory policies.
- 
 
-  [](videohub:1_mg30brw3)
+
+  [](videohub:1_mg30brw3:large)
 
 **About Oracle AI Vector Search**
 
 Oracle AI Vector Search is a feature of Oracle Database 23ai that enables efficient searching of AI-generated vectors stored in the database. It supports fast search using various indexing strategies and can handle massive amounts of vector data. This makes it possible for Large Language Models (LLMs) to query private business data using a natural language interface, helping them provide more accurate and relevant results. Additionally, AI Vector Search allows developers to easily add semantic search capabilities to both new and existing applications.
 
-**About Generative artificial intelligence (AI)** 
+**About Generative artificial intelligence (AI)**
 
 Generative AI excels at creating text responses based on large language models (LLMs) where the AI is trained on a massive number of data points. The generated text is often easy to read and provides detailed responses that are broadly applicable to the questions asked of the software, often called prompts.
 
@@ -25,7 +25,7 @@ The following diagram shows a VERY high-level overview of how you would create a
 
 ![Vector Diagram](./images/vectors-diagram.png " ")
 
-**About Retrieval-augmented generation (RAG)** 
+**About Retrieval-augmented generation (RAG)**
 
 RAG provides a way to optimize the output of an LLM with targeted information without modifying the underlying model itself; that targeted information can be more up-to-date than the LLM as well as specific to a particular organization and industry. That means the generative AI system can provide more contextually appropriate answers to prompts as well as base those answers on extremely current data.
 
@@ -55,7 +55,7 @@ You will work with features such as AI Vector Search, Property Graph, and JSON D
 *	Generate PDF reports summarizing loan decisions
 
 *	Analyze relationships and trends in applicant data using Graph
- 
+
 
 By building these capabilities yourself, you will learn how to combine AI-driven insights with Oracle’s data tools to streamline real-world financial workflows.
 
