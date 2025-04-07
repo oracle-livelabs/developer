@@ -52,87 +52,139 @@ In this Lab, you will:
 
 As a share provider, create a data product share and add a table to it. 
 
-### Begin at the Database Actions Launchpad
+1. Begin on the Database Actions Launchpad window while logged on as the ADMIN user.
 
    ![Create Data Product Share](./images/create-data-product-share-1.png "Create Data Product Share")
 
-1.  Make sure you are signed on as the ADMIN user.
-1.  Select Data Studio from the menu bar
-1.  Choose Data Share from the Navigation Tree. 
+   * Select Data Studio from the menu bar
+   * Choose Data Share from the Navigation Tree. 
 
-### On the Provider and Consumer screen.
+1. On the Provider and Consumer page, click the Enable Sharing icon.
 
    ![Create Data Product Share](./images/create-data-product-share-2.png "Create Data Product Share")
 
-1.  Click Enable Sharing and the following popup screen will appear.
+1. Select the user schemas that will be included in the data product share, in the Enable Sharing popup window.
 
    ![Create Data Product Share](./images/create-data-product-share-3.png "Create Data Product Share")
 
-    Move the desired user schemas from the Available column to the Selected column, on this popup screen.  
-    
-    Click Save, to exit.
+   * Select user schema listed in the Available Schemas column. 
+   * Click ">" button to place it in the Selected Schemas column.
+   * Click Save.
 
-### At the Database Actions Launchpad
+1. On the Database Actions Launchpad window, click the user icon in the top right corner.
 
    ![Create Data Product Share](./images/create-data-product-share-1.png "Create Data Product Share")
 
-1.  Log out as the ADMIN user.
+   Log out as the ADMIN user.
 
-## Task 2: Define a New Recipient of the Data Product Share
+## Task 2: Define a New Recipient for the Data Product Share
 
-Define a new recipient that will have access to this data share. 
+1. On the Database Actions Launchpad window, click the user icon in the top right corner to sign-on as the LOAN user.
 
-### Begin at the Database Actions Launchpad
+   ![Define a Data Product Recipient](./images/define-data-product-share-recipient-2.png "Define a Data Product Recipient")
+
+   * Enter LOAN user credentials into Sign-In page.  
+   * Press Sign-In button.
 
    ![Define a Data Product Recipient](./images/define-data-product-share-recipient-1.png "Define a Data Product Recipient")
 
-1.  Sign on as the LOAN user.
+1. Select Data Studio from the menu bar.  Then, choose Data Share from the Navigation Tree.
 
-    ![Define a Data Product Recipient](./images/define-data-product-share-recipient-2.png "Define a Data Product Recipient")
+   ![Define a Data Product Recipient](./images/define-data-product-share-recipient-2.png "Define a Data Product Recipient")
 
-1.  Select Data Studio from the menu bar
-1.  Choose Data Share from the Navigation Tree.
-
-### On the Provider and Consumer screen.
+1. Click Provider Share on the Provider and Consumer page.
 
    ![Define a Data Product Recipient](./images/define-data-product-share-recipient-3.png "Define a Data Product Recipient")
 
-1.  Click Provider Share.
-
-### On the Set Provider Identification screen.
+1.  Click Provider Identification on the Provide Share page.
 
    ![Define a Data Product Recipient](./images/define-data-product-share-recipient-4.png "Define a Data Product Recipient")
 
-1.  Click Provider Identification and the following panel will appear.
+1.  Provide details for the provider in the Provider Identification popup window.
 
    ![Define a Data Product Recipient](./images/define-data-product-share-recipient-5.png "Define a Data Product Recipient")
 
-1.  Enter details to identify the provider.
-* Name: Enter the name of the provider: LoanApp_Share_Provider
-* Email: Enter the email address for the provider: MyEmail@MyCompany.com.
-* Description: Enter a meaningful description of the provider (required).
-1. Click Save. 
+   * Enter the following:
+      * Name: LoanApp_Share_Provider
+      * Email: MyEmail@MyCompany.com
+      * Description: a meaningful description is required
+   * Click Save.
+   
+1. Click Share on the Provide Share page, to begin entering details for the new share.
 
+   ![Define a Data Product Recipient](./images/define-data-product-share-recipient-6.png "Define a Data Product Recipient")
 
-## Task 3: Publish the Data Product Share
+1. The General page of the Create Share wizard will appear.
 
-Finally, you will publish the data share 
+   ![Define a Data Product Recipient](./images/define-data-product-share-recipient-7.png "Define a Data Product Recipient")
 
-## Task 4: Notify the Data Product Share Recipient
+   * Enter the following:
+      *  Name: LoanApp_Share2Marketing 
+      *  Description: a description (optional)
+   * Click Next.
 
-send the recipient the activation link needed to access the data share.
+1. Specify where the share will be published on the Publish Details page.
 
+   ![Define a Data Product Recipient](./images/define-data-product-share-recipient-8.png "Define a Data Product Recipient")
 
-* You will create a data share ’ll build a custom view (like a special lens) for the Risk Department. 
+   * Select DemoSharesBucket from the drop-down list. 
+   * Click Next.
 
-* It will include only the loan details and fields the Risk team needs to analyze, helping them make smarter decisions about potential risks. 
+1. Choose a table that will be made available for the Risk Department (via the Share) on the Select Tables page.
 
-## Task 2: Share Data Product to Marketplace for Risk Officer Consumption
+   ![Define a Data Product Recipient](./images/define-data-product-share-recipient-9.png "Define a Data Product Recipient")
 
-* You’ll take the output of the Client_Loans_Risk_Dept_View you created and publish it to the Data Marketplace. 
+   * Select the Clients_To_Loan table in the Available Tables column.
+   * Click the ">" button to list it to the Shared Tables column
+   * Click Next
+ 
+1. There are no recipients are available, click New Recipent to create a new one on the Recipients page.
 
-* This makes it easier for the Risk Officer to find, select, and use the data without having to ask for manual reports. 
+   ![Define a Data Product Recipient](./images/define-data-product-share-recipient-10.png "Define a Data Product Recipient")
 
+1. Define the recipient in the Create Share Recipient popup window.
+
+   ![Define a Data Product Recipient](./images/define-data-product-share-recipient-11.png "Define a Data Product Recipient")
+
+   * Enter the following:
+      *  Name: Marketing_Dept_Lead
+      *  Description: a description (optional)
+      *  Email: a description (optional)
+   * Click Create.
+
+1. Click the copy icon to capture the profile activation link, sending it to the clipboard for the recipient.
+
+   ![Define a Data Product Recipient](./images/define-data-product-share-recipient-12.png "Define a Data Product Recipient")
+
+   Clipboard Value for profile activation link:
+ 
+   https://gf5dxiqoqwkdgv0-loanappdb.adb.ap-sydney-1.oraclecloudapps.com/ords/loan/_adpshr/delta-sharing/download?key=3654C8F50EE0C3882852E56FF701575933406D3649FD0C9194E23F9CECD8FF34EB5A56D594AB210F34CAB37F889AA93AFD5BTE9BTg==
+
+   Click Cancel.
+
+## Task 3: Manage the Data Product Share
+
+1. On the Provide Share page, click the action icon to manage the data product share.
+
+   ![Define a Data Product Recipient](./images/manage-data-product-share-1.png "Define a Data Product Recipient")
+
+1. Select Recipients and Profiles from the dropdown menu.
+
+   ![Define a Data Product Recipient](./images/manage-data-product-share-2.png "Define a Data Product Recipient")
+
+1. Add or remove recipients from the Recipients and Profiles page.
+
+   ![Define a Data Product Recipient](./images/manage-data-product-share-3.png "Define a Data Product Recipient")
+
+   Click Cancel.
+
+1. From the Provide Share page, click Recipients to display the recipients for the data share.
+
+   ![Define a Data Product Recipient](./images/manage-data-product-share-4.png "Define a Data Product Recipient")
+
+Congratulations you have shared your data from ADB to the Marketing Dept Lead.
+   
+#
 ## Acknowledgements
 * **Author** - <Name, Title, Group>
 * **Contributors** -  <Name, Group> -- optional
