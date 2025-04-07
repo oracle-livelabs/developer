@@ -26,7 +26,15 @@ This lab assumes you have:
 * Successfully completed Lab 3: Connect to Development Environment
 
 
-## Task 1: Hackathon Challenge
+## Task 1: Challenge Requirements 
+
+**About Property Graph**
+
+In Oracle Database 23ai we can create property graphs inside the database. These property graphs allow us to map the vertices and edges to new or existing tables, external tables, materialized views or synonyms to these objects inside the database. The property graphs are stored as metadata inside the database meaning they don't store the actual data. Rather, the data is still stored in the underlying objects and we use the SQL/PQG syntax to interact with the property graphs.
+
+Property graphs make the process of working with interconnected data, like identifying influencers in a social network, predicting trends and customer behavior, discovering relationships based on pattern matching and more by providing a more natural and efficient way to model and query them.
+
+**Coding Requirements**
 
 The loan officer needs to visualize additional data points in the decision-making process. Specifically, they want to display an additional graph that shows two key metrics: required credit score on one axis and debt-to-income ratio on the other.
 
