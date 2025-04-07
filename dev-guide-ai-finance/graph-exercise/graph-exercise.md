@@ -4,7 +4,13 @@
 
 **Welcome to the Code Property Graph Challenge!**
 
-In this lab, you will tackle an exciting developer coding challenge focused on **Graph**. Your goal is to enhance the existing application by implementing an update that will elevate its functionality. This is your opportunity to sharpen your skills and explore the power of Graph.
+In this lab, you will tackle an exciting coding challenge focused on **Graph**. Your goal is to enhance the existing application by implementing an update that will elevate its functionality. 
+
+At SeerEquites, the loan officers are always looking for ways to improve their decision-making process. As the company grows, they rely on data to guide their loan approvals, but the current decision page doesn’t provide enough visual context to make sense of key metrics like credit score and debt-to-income ratio (DTI).
+
+The loan officers request a new graph to be added to the decision page. Specifically, they want to visualize loan options based on two crucial metrics: the required credit score on one axis and the debt-to-income ratio (DTI) on the other. This will help them quickly see how these two factors affect loan eligibility, giving them a clearer picture of the best loan options for their clients.
+
+This is your opportunity to sharpen your skills and explore the power of Graph. 
 
 **Are you up for the challenge?**
 
@@ -15,7 +21,7 @@ Good luck, and enjoy the process!
 Estimated Time: 30 minutes
 
 ### Objectives
-* Enhance your understanding of Graph by applying it to a real-world developer coding challenge.
+* Enhance your understanding of Graph by applying it to a coding challenge.
 * Gain hands-on experience with Graph and refining application features to meet specific development requirements.
 
 

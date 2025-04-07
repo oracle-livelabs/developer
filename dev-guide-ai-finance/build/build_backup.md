@@ -144,5 +144,5 @@ This section dynamically updates customer data in our clients\_dv table by build
 
 ## Acknowledgements
 * **Authors** - Linda Foinding, Francis Regalado
-* **Contributors** - Kamryn Vinson, Otis Barr, Ramona Magadan, Eddie Ambler, Kevin Lazarz
+* **Contributors** - Kamryn Vinson, Otis Barr, Eddie Ambler, Kevin Lazarz
 * **Last Updated By/Date** - Linda Foinding, April 2025

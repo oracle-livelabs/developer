@@ -2,7 +2,11 @@
 
 ## Introduction
 
-In this lab, we’ll provide a step-by-step guide to help you successfully complete the coding challenge from the previous lab. This step-by-step guide will walk you through the necessary updates, providing solutions and insights to help you fully understand how to utilize Graph in a practical scenario. Whether you're refining your existing work or tackling the challenge for the first time, this guide will ensure you gain the skills and confidence needed to implement these powerful features.
+In this lab, we will walk you through the necessary updates, providing solutions and insights to help you fully understand how to utilize **Graph** in a practical scenario. 
+
+At SeerEquites, the loan officers are always looking for ways to improve their decision-making process. As the company grows, they rely on data to guide their loan approvals, but the current decision page doesn’t provide enough visual context to make sense of key metrics like credit score and debt-to-income ratio (DTI).
+
+The loan officers request a new graph to be added to the decision page. Specifically, they want to visualize loan options based on two crucial metrics: the required credit score on one axis and the debt-to-income ratio (DTI) on the other. This will help them quickly see how these two factors affect loan eligibility, giving them a clearer picture of the best loan options for their clients.
 
 Let’s dive in and unlock the full potential of Graph in your application!
 

@@ -4,7 +4,11 @@
 
 **Welcome to the JSON Duality Views Challenge!**
 
-In this lab, you will tackle an exciting coding challenge focused on **JSON**. Your goal is to enhance the existing application by implementing an update that will elevate its functionality. This is your opportunity to sharpen your skills and explore the power of JSON.
+In this lab, you will tackle an exciting coding challenge focused on **JSON**. Your goal is to enhance the existing application by implementing an update that will elevate its functionality. 
+
+At SeerEquites, the analytics department has flagged an issue with incorrect customer age data, affecting their reports and insights. To resolve this, loan officers are tasked with manually updating customer ages in the loan application, but currently, they cannot edit the age field. Fortunately, the system was designed with age fields already in the database, so the solution is to update the frontend of the loan application to allow officers to modify the age. Once this is implemented, the analytics department can benefit by using JSON Duality Views to run SQL queries on the updated data, even though it's stored as documents. This will allow the team to access accurate, up-to-date customer ages, improving their reporting and decision-making, while loan officers can ensure the data is correct.
+
+This is your opportunity to sharpen your skills and explore the power of JSON.
 
 **Are you up for the challenge?**
 
@@ -18,7 +22,7 @@ Estimated Time: 30 minutes
 
 In this lab, you will:
 
-* Enhance your understanding of JSON duality views by applying it to a real-world developer coding challenge.
+* Enhance your understanding of JSON duality views by applying it to a coding challenge.
 
 * Gain hands-on experience with JSON duality views and refining application features to meet specific development requirements.
 
@@ -33,6 +37,8 @@ This lab assumes you have:
 ## Task 1: Challenge Requirements 
 
 The company has requested an enhancement to the current customer data and would now like to see the parameter for **age** to be reflected.
+
+The company has requested an enhancement to the current customer data and would now like to see the parameter for **age** to be reflected. 
 
 1. In the Customer.py file, find the # 🔍 Customer Details Section at line 219
 2. Update the section to include a new parameter for **age**.
@@ -105,6 +111,8 @@ The code below dynamically updates customer data in our **clients dv** (dv - sta
     ![Login](./images/login.png " ")
 
 ## Task 4: View the Results
+
+**Congratulations, you have successfully completed the JSON Duality View Coding Exercise!**
 
 **Congratulations, you have successfully completed the JSON Duality View Coding Exercise!**
 
