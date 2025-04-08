@@ -2,43 +2,18 @@
 
 ## About this Workshop 
 
-In this workshop, you will explore the use of Oracle’s AI Data Platform to enable companies to simplify data access, data management, data sharing, and build AI powered applications that help them to gain competitive market advantage by optimizing time consuming tasks.  
+In this workshop, you will explore the comprehensive suite of tools, services and applications available in Oracle’s Data Platform, and how they help businesses efficiently manage and analyze enterprise data by simplifying the end-to-end data lifecycle.
 
-The Oracle 23ai Autonomous Database as a query engine for your data platform, in this workshop. The query engine is central to a data platform’s performance, scalability, and flexibility. It abstracts the complexity of how and where the data is stored, enabling users to focus on what they want to retrieve, not how to get it. 
+The labs in this workshop are based on tasks performed in a typical loan funding company and they are designed to highlight the centralized data management, streamlined data workflows and empowered data analytics available using Oracle's Data Platform.  
 
-You will build an end-to-end solution using Oracle Data Platform tools to ingest external data from various sources, transform it, and produce curated data products for internal and external use.   
+You will:
+*   build an end-to-end solution to easily ingest and consolidating disparate data from various sources, creating a unified view and preventing data silos.
+*   walk through the steps to create consumable data products for informed risk analysis; maximizing the full value of the data and enabling timely decision-making.
+*   share loan portfolio data for future marketing campaigns, facilitating collaboration across departments while protecting sensitive data. 
 
-You will create data products from an internal application database and the data platform catalog to support a GenAI-powered loan approval application. The workshop will also cover how to curate and share a loan portfolio data product with the risk management team on a set schedule, enabling them to integrate it with their own systems and datasets for risk analysis. 
-
-You will learn how an Oracle Data Platform differentiates itself from other providers. 
-
-The labs in this workshop walk you through all the steps to access the Data Lake using Autonomous Database (ADB) and Oracle Cloud Infrastructure (OCI) Data Catalog. You will learn how to Synchronize ADB and Data Catalog so that you can query Oracle Object Storage buckets from ADB. 
-
-The Oracle Data Catalog is a fully managed, self-service data discovery and governance solution for your enterprise data. It provides a single collaborative environment to manage technical, business and operational metadata. 
-
-The workshop tasks are based on the business tasks commonly performed in a loan funding company.  You will use the tools included in the Oracle Data Catalog to collect, organize, find, access, understand, enrich and activate metadata. 
-
-The demos and Tasks included in the workshop, were designed to demonstrate the benefits of using the Oracle Data Catalog while executing tasks similar to those commonly performed in a loan funding company.  
-
+By completing this workshop, you will gain insight on how Oracle’s Data Platform can serve as a scalable foundation for modern organizations looking to stay competitive and future-proof their business success.
+ 
 ## Key Terms 
-
-### Oracle Autonomous Database (ADB)  
-
-Oracle Autonomous Database is a converged database that allows users to work with structured and unstructured data, and external data within in a single unified platform, which simplifies data management and reduces the need for multiple specialized databases. 
-
-All kinds of data types, workload and perform any kind of analytics against it.  Both internal and external, all in a single united platform.  This unification and the ability to work with structured and unstructured data simplifies the data architecture and reduces the need for multiple specialized databases 
-
-### Data Warehouse 
-
-A data warehouse stores structured, cleaned, and preprocessed data for business intelligence and analytics. Primarily used for business intelligence (BI) and reporting, providing historical data analysis for trends and insights 
-
-### Data Lake 
-
-A data lake is a substantial repository designed to store a wide variety of data, such as text, images, and videos, in their original and unstructured formats. Rather than categorizing or formatting the data up front, everything is gathered into one “pool.” This flexible approach allows analysts and researchers to determine how best to structure and interpret the data later on. However, maintaining clear governance and organization is crucial to prevent the data lake from becoming a disorganized “data swamp.” 
-
-### Data Lakehouse 
-
-Combines the flexibility of a data lake with the data management and querying capabilities of a data warehouse. This hybrid approach allows users to determine how best to structure and interpret the data, while still benefiting from higher reliability and query efficiency.  It is aimed at facilitating machine learning, business intelligence, and predictive analytics. 
 
 ### AI Data Platform  
 
@@ -49,17 +24,31 @@ A data platform is a technology solution that enables the collection, storage, c
 
 ![Discovery Time](./images/discovery-time.png)
 
+### Data Lake 
+
+A data lake is a substantial repository designed to store a wide variety of data, such as text, images, and videos, in their original and unstructured formats. Rather than categorizing or formatting the data up front, everything is gathered into one “pool.” This flexible approach allows analysts and researchers to determine how best to structure and interpret the data later on. However, maintaining clear governance and organization is crucial to prevent the data lake from becoming a disorganized “data swamp.” 
+
+### Data Lakehouse 
+
+Combines the flexibility of a data lake with the data management and querying capabilities of a data warehouse. This hybrid approach allows users to determine how best to structure and interpret the data, while still benefiting from higher reliability and query efficiency.  It is aimed at facilitating machine learning, business intelligence, and predictive analytics. 
+
 ### Data Product 
 
 A data product is a reusable, curated data asset designed to solve a specific business problem or provide actionable insights. Data products aim to transform raw data into valuable, usable information for decision-making, whether internally within an organization or externally as a service. They are designed to be used across multiple applications and use cases and includes metadata, data lineage, and other mechanisms to ensure data quality and provenance. 
 
-### Affordable Housing Zone  
+### Data Warehouse 
 
-Affordable Housing Zones are an economic development tool that allows people to invest in distressed areas in the United States. Their purpose is to spur economic growth and job creation in low-income communities while providing tax benefits to investors.  
+A data warehouse stores structured, cleaned, and preprocessed data for business intelligence and analytics. Primarily used for business intelligence (BI) and reporting, providing historical data analysis for trends and insights 
 
-### Data Catalog 
+### Oracle Autonomous Database (ADB)  
 
-OCI Data Catalog is a fully managed, self-service data discovery and governance solution for your enterprise data. With Data Catalog, you get a single collaborative environment to manage technical, business, and operational metadata. You can collect, organize, find, access, understand, enrich, and activate this metadata. 
+Oracle Autonomous Database is a converged database that allows users to work with structured and unstructured data, and external data within in a single unified platform, which simplifies data management and reduces the need for multiple specialized databases. 
+
+All kinds of data types, workload and perform any kind of analytics against it.  Both internal and external, all in a single united platform.  This unification and the ability to work with structured and unstructured data simplifies the data architecture and reduces the need for multiple specialized databases 
+
+### Oracle Cloud Infrastructure (OCI) Data Catalog 
+
+Oracle Cloud Infrastructure (OCI) Data Catalog is a fully managed, self-service metadata discovery and governance solution for your enterprise data. With Data Catalog, you get a single collaborative environment to manage technical, business, and operational metadata. You can collect, organize, find, access, understand, enrich, and activate this metadata. 
 
 ## Workshop Setup 
 

@@ -1,8 +1,12 @@
-# Code Property Graph using Graph Query Hackathon Challenge step-by-step
+# Code with Property Graph step-by-step
 
 ## Introduction
 
-In this lab, we’ll provide a step-by-step guide to help you successfully complete the coding challenge from the previous lab. This step-by-step guide will walk you through the necessary updates, providing solutions and insights to help you fully understand how to utilize Graph in a practical scenario. Whether you're refining your existing work or tackling the challenge for the first time, this guide will ensure you gain the skills and confidence needed to implement these powerful features.
+In this lab, we will walk you through the necessary updates, providing solutions and insights to help you fully understand how to utilize **Graph** in a practical scenario. 
+
+At SeerEquites, the loan officers are always looking for ways to improve their decision-making process. As the company grows, they rely on data to guide their loan approvals, but the current decision page doesn’t provide enough visual context to make sense of key metrics like credit score and debt-to-income ratio (DTI).
+
+The loan officers request a new graph to be added to the decision page. Specifically, they want to visualize loan options based on two crucial metrics: the required credit score on one axis and the debt-to-income ratio (DTI) on the other. This will help them quickly see how these two factors affect loan eligibility, giving them a clearer picture of the best loan options for their clients.
 
 Let’s dive in and unlock the full potential of Graph in your application!
 
@@ -22,7 +26,15 @@ This lab assumes you have:
 * Successfully completed Lab 3: Connect to Development Environment
 
 
-## Task 1: Hackathon Challenge
+## Task 1: Challenge Requirements 
+
+**About Property Graph**
+
+In Oracle Database 23ai we can create property graphs inside the database. These property graphs allow us to map the vertices and edges to new or existing tables, external tables, materialized views or synonyms to these objects inside the database. The property graphs are stored as metadata inside the database meaning they don't store the actual data. Rather, the data is still stored in the underlying objects and we use the SQL/PQG syntax to interact with the property graphs.
+
+Property graphs make the process of working with interconnected data, like identifying influencers in a social network, predicting trends and customer behavior, discovering relationships based on pattern matching and more by providing a more natural and efficient way to model and query them.
+
+**Coding Requirements**
 
 The loan officer needs to visualize additional data points in the decision-making process. Specifically, they want to display an additional graph that shows two key metrics: required credit score on one axis and debt-to-income ratio on the other.
 
@@ -329,7 +341,7 @@ Edit the part of the script that edits the scatter plot. Change the X and Y axis
 
     ![James Smith graph](./images/james-woods-graph.png " ")
 
-**Congratulations, you have successfully completed the Graph Developer Coding Exercise!**
+**Congratulations, you have successfully completed the Property Graph Challenge!** You have updated the Decision.py file to add functionality for an additional graph that displays the following metrics: Required Credit Score and Debt-to-Income Ratio (%).
 
 ## Learn More
 
