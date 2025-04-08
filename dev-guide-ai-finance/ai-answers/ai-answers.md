@@ -4,23 +4,23 @@
 
 In this coding challenge, you’ll focus on **AI Vector Search**. Your mission is to implement a key update to change the way similarities are calculated, improving the accuracy of predictions.
 
-At SeerEquites, the data science team has been using Cosine similarity to assess similarities between borrower profiles and predict loan risks. While effective in some contexts, the team recently realized that Cosine similarity wasn’t capturing the full picture of their borrowers' financial profiles.
+At SeerEquites, the data science team has been using Cosine similarity to assess similarities between customer profiles and predict loan risks. While effective in some contexts, the team recently realized that Cosine similarity wasn’t capturing the full picture of their customers financial profiles.
 
 **Why switch to Euclidean distance?**
 
 Cosine similarity is great when you care about the pattern or direction of someone’s data — not how big or small the numbers are. But in finance, the actual size of the numbers often matters a lot.
 
-Let’s say you’re comparing two borrowers based on their debt, income, and credit usage. These numbers matter significantly, and big differences can indicate very different levels of risk.
+Let’s say you’re comparing two customers based on their debt, income, and credit usage. These numbers matter significantly, and big differences can indicate very different levels of risk.
 
 Here’s an example:
 
-* Both borrowers have the same debt-to-income ratio of 2:1.
+* Both customers have the same debt-to-income ratio of 2:1.
 
 * But one earns $20,000 a year, while the other earns $200,000.
 
-Cosine similarity would say these borrowers are quite similar, because their ratios follow the same pattern. But that’s misleading — the person earning $20,000 is much riskier.
+Cosine similarity would say these customers are quite similar, because their ratios follow the same pattern. But that’s misleading — the person earning $20,000 is much riskier.
 
-That’s where Euclidean distance comes in. Unlike Cosine similarity, Euclidean distance looks at the actual difference in the numbers. In this case, it would correctly flag that these borrowers are not similar in a meaningful way, since the scale of their incomes is vastly different.
+That’s where Euclidean distance comes in. Unlike Cosine similarity, Euclidean distance looks at the actual difference in the numbers. In this case, it would correctly flag that these customers are not similar in a meaningful way, since the scale of their incomes is vastly different.
 
 In finance, where decisions are often made based on key figures like income, debt, and credit usage, Euclidean distance is often a better tool. It takes the size of the numbers into account, which is crucial for making accurate risk predictions.
 
