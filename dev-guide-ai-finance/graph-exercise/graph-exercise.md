@@ -4,7 +4,13 @@
 
 **Welcome to the Code Property Graph Challenge!**
 
-In this lab, you will tackle an exciting developer coding challenge focused on **Graph**. Your goal is to enhance the existing application by implementing an update that will elevate its functionality. This is your opportunity to sharpen your skills and explore the power of Graph.
+In this lab, you will tackle an exciting coding challenge focused on **Graph**. Your goal is to enhance the existing application by implementing an update that will elevate its functionality. 
+
+At SeerEquites, the loan officers are always looking for ways to improve their decision-making process. As the company grows, they rely on data to guide their loan approvals, but the current decision page doesn’t provide enough visual context to make sense of key metrics like credit score and debt-to-income ratio (DTI).
+
+The loan officers request a new graph to be added to the decision page. Specifically, they want to visualize loan options based on two crucial metrics: the required credit score on one axis and the debt-to-income ratio (DTI) on the other. This will help them quickly see how these two factors affect loan eligibility, giving them a clearer picture of the best loan options for their clients.
+
+This is your opportunity to sharpen your skills and explore the power of Graph. 
 
 **Are you up for the challenge?**
 
@@ -15,7 +21,7 @@ Good luck, and enjoy the process!
 Estimated Time: 30 minutes
 
 ### Objectives
-* Enhance your understanding of Graph by applying it to a real-world developer coding challenge.
+* Enhance your understanding of Graph by applying it to a coding challenge.
 * Gain hands-on experience with Graph and refining application features to meet specific development requirements.
 
 
@@ -27,6 +33,14 @@ This lab assumes you have:
 * Successfully completed Lab 3: Connect to Development Environment
 
 ## Task 1: Challenge Requirements 
+
+**About Property Graph**
+
+In Oracle Database 23ai we can create property graphs inside the database. These property graphs allow us to map the vertices and edges to new or existing tables, external tables, materialized views or synonyms to these objects inside the database. The property graphs are stored as metadata inside the database meaning they don't store the actual data. Rather, the data is still stored in the underlying objects and we use the SQL/PQG syntax to interact with the property graphs.
+
+Property graphs make the process of working with interconnected data, like identifying influencers in a social network, predicting trends and customer behavior, discovering relationships based on pattern matching and more by providing a more natural and efficient way to model and query them.
+
+**Coding Requirement**
 
 The loan officer is requesting an additional graph to be added to the decision page to visualize additional loan options based on credit score and debt-to-income ratio. Specifically, they want to display an additional graph that shows loan options based on two key metrics: required credit score on one axis and debt-to-income ratio on the other.
 

@@ -2,7 +2,9 @@
 
 ## Introduction
 
-In this lab, we’ll provide a step-by-step guide to help you successfully complete the coding challenge from the previous lab. This step-by-step guide will walk you through the necessary updates, providing solutions and insights to help you fully understand how to utilize JSON duality views in a practical scenario. Whether you're refining your existing work or tackling the challenge for the first time, this guide will ensure you gain the skills and confidence needed to implement these powerful features.
+This step-by-step guide will walk you through the necessary updates, providing solutions and insights to help you fully understand how to utilize JSON duality views in a practical scenario. 
+
+At SeerEquites, the analytics department has flagged an issue with incorrect customer age data, affecting their reports and insights. To resolve this, loan officers are tasked with manually updating customer ages in the loan application, but currently, they cannot edit the age field. Fortunately, the system was designed with age fields already in the database, so the solution is to update the frontend of the loan application to allow officers to modify the age. Once this is implemented, the analytics department can benefit by using JSON Duality Views to run SQL queries on the updated data, even though it's stored as documents. This will allow the team to access accurate, up-to-date customer ages, improving their reporting and decision-making, while loan officers can ensure the data is correct.
 
 Let’s dive in and unlock the full potential of JSON in your application!
 
@@ -12,7 +14,7 @@ Estimated Time: 15 minutes
 
 In this lab, you will:
 
-* Enhance your understanding of JSON duality views by applying it to a real-world developer coding challenge.
+* Enhance your understanding of JSON duality views by applying it to a coding challenge.
 
 * Gain hands-on experience with JSON duality views and refining application features to meet specific development requirements.
 
@@ -25,10 +27,27 @@ This lab assumes you have:
 
 ## Task 1: Challenge Requirements 
 
-The company has requested an enhancement to the current customer data and would now like to see the parameter for **age** to be reflected.
+**About Jason Duality Views**:
+
+JSON Relational Duality is a landmark capability in Oracle Database 23ai, providing game-changing flexibility and simplicity for Oracle Database developers. This feature overcomes the historical challenges developers have faced when building applications using the relational or document models.
+
+JSON Relational Duality helps to converge the benefits of both document and relational worlds. Developers now get the flexibility and data access benefits of the JSON document model, plus the storage efficiency and power of the relational model. The new feature enabling this functionality is JSON Relational Duality View
+
+**Coding Requirements**:
+
+This challenge consists of **three steps**: 
+
+* First, update the frontend of the loan application to enable loan officers to view and modify customer ages. 
+* Second, calculate the average age across the client base using the corrected information.
+* Third, use JSON Duality Views to run SQL queries on the updated data.
+
+## Task 2: Update application frontend 
+
+* The company has requested an enhancement to the current customer data and would now like to see the parameter for **age** to be reflected. 
 
 1. In the Customer.py file, find the 🔍 Customer Details Section at line 219
 2. Update the section to include a new parameter for **age**.
+
 
 ## Task 2: Modify the Customers.py File
 
