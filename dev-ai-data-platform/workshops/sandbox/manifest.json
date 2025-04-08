@@ -28,37 +28,32 @@
             "filename": "../../discover-and-catalog/discover-and-catalog.md"
         }, 
         {
-            "title": "Lab 4: Load Object Storage Data into Autonomous Database from Data Catalog",
+            "title": "Lab 4: Load Object Storage Data into Autonomous Database",
             "description": "Labs that follow the introduction are numbered, starting with Lab 1",
             "filename": "../../sync-adb/sync-adb.md"
         },  
         {
-            "title": "Lab 5: Link Object Storage Data to Autonomous Database from Data Catalog",
+            "title": "Lab 5: Link Object Storage Data to Autonomous Database",
             "description": "Labs that follow the introduction are numbered, starting with Lab 1",
             "filename": "../../link-data/link-data.md"
-        },
+        },         
         {
-            "title": "Lab 6: Query Data across Autonomous Database and Data Lake",
-            "description": "Labs that follow the introduction are numbered, starting with Lab 1",
-            "filename": "../../harvest-data/harvest-data.md"
-        },          
-        {
-            "title": "Lab 7: Create Data Products & Share to Marketplace",
+            "title": "Lab 6: Create & Share Data Products",
             "description": "This is a step-by-step guide showcasing how the demo instance is navigated",
             "filename": "../../data-products/data-products.md"
         },
         {
-            "title": "Lab 8: Subscribe to Data Product from Marketplace",
+            "title": "Lab 7: Subscribe to Data Product",
             "description": "This is a step-by-step guide showcasing how the demo instance is navigated",
             "filename": "../../mktplace-subscribe/mktplace-subscribe.md"
         },   
         {
-            "title": "Lab 9: Build Your Data Pipeline: Load & Transform Data",
+            "title": "Lab 8: Build Your Data Pipeline: Load & Transform Data",
             "description": "Labs that follow the introduction are numbered, starting with Lab 1",
             "filename": "../../load-transform/load-transform.md"
         }, 
         {
-            "title": "Lab 10: Hackathon Challenge",
+            "title": "Lab 9: Hackathon Challenge",
             "description": "This is a step-by-step guide showcasing how the demo instance is navigated",
             "filename": "../../hack-answers/hack-answers.md"
         }, 
