@@ -234,7 +234,7 @@ You may now **proceed to the next lab**.
 
 ## Learn More
 
-* [Action Chains](https://docs.oracle.com/en/cloud/paas/visual-builder/visualbuilder-building-appui/work-action-chains.html)
+* [Action Chains](https://docs.oracle.com/en/cloud/paas/visual-builder/visualbuilder-building-appui/jsac-work-javascript-action-chains.html)
 
 ## Acknowledgements
 * **Author** - Shay Shmeltzer, Oracle Cloud Development Tools, September 2022

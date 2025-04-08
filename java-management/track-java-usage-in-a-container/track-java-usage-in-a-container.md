@@ -226,7 +226,7 @@ This section will provide guidance on creating a Docker image running a Oracle J
 
     ```
     <copy>
-    cp docker-images/OracleJava/17/Dockerfile ~/OddNumbers
+    cp docker-images/OracleJava/21/Dockerfile.ol8 ~/OddNumbers
     </copy>
     ```
 
@@ -251,7 +251,7 @@ This section will provide guidance on creating a Docker image running a Oracle J
 
     ```
     <copy>
-    sudo nano Dockerfile
+    sudo nano Dockerfile.ol8
     </copy>
     ```
 * The inbuilt Nano text editor is now open. Scroll down to near the end of the Dockerfile and insert the following lines.

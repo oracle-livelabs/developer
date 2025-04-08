@@ -194,6 +194,12 @@ dnf update -y oracle-cloud-agent
     sudo dnf -y install jdk-17
     </copy>
     ```
+    Or you can use yum
+     ```
+     <copy>
+     sudo yum -y install jdk-17
+     </copy>
+     ```
 
     To check the installed Java version, you can check using `-version`.
     ```
