@@ -38,7 +38,7 @@ In this first example, we'll navigate through this application to show you the f
 
     ![Select James Smith](./images/james-smith.png " ")
 
-2. This will display the customers loan application details. In approximately 15 seconds, the AI generated recommendations will be displayed.  Opening James' profile reveals a detailed view of his information — including his name, location, requested loan amount, debt, and credit score. 
+2. This will display the customers loan application details. In less than a minute, the AI generated recommendations will be displayed.  Opening James' profile reveals a detailed view of his information — including his name, location, requested loan amount, debt, and credit score. 
 
     ![James Smith AI generated recommendations](./images/james-smith-ai.png " ")
 
@@ -94,6 +94,8 @@ In this first example, we'll navigate through this application to show you the f
 
     ![James Smith Approved List](./images/james-smith-approved-list.png " ")
 
+**Conclusion**
+
 Once you select and save one of the 3 loans recommended by the AI: 
 
 ✅ The customer's loan status is updated.
@@ -111,7 +113,7 @@ In this example, we'll navigate through this application to show you a user bein
 
     ![Select James Woods](./images/james-woods.png " ")
 
-2. This will display the customers loan application details. In approximately 15 seconds, the AI generated recommendations will be displayed. Now, let's examine a scenario — one where the customer has a less favorable profile.
+2. This will display the customers loan application details. In less than a minute, the AI generated recommendations will be displayed. Now, let's examine a scenario — one where the customer has a less favorable profile. 
 
     This next customer has:
 
@@ -127,33 +129,37 @@ In this example, we'll navigate through this application to show you a user bein
 
     ![James Woods Decision](./images/james-woods-decision.png " ")
 
-    On the decision page, our loan officer can look at graph data using **Operational Property Graph**, created using Graph Query to find just out of reach loans. With this feature, we can visually map out loans that are just out of reach for the customer and identify exactly what changes are needed to improve their eligibility. The loan officer can use the graph to reveal how increasing their income by a certain amount or reducing their debt could improve their chances of approval.
+4. Expand **View Dot Plot: Client-Loan Relationships** to view the graph.
+
+    ![James Woods Graph](./images/expand-graph.png " ")
+
+    On the decision page, our loan officer can look at graph data using **Operational Property Graph**, created using Graph Query to find just out of reach loans. With this feature, we can visually map out loans that are just out of reach for the customer and identify exactly what changes are needed to improve their eligibility. The loan officer can use the graph to reveal how increasing their income by a certain amount or reducing their debt could improve their chances of approval. 
 
     ![James Woods Graph](./images/james-woods-graph2.png " ")
 
-4. The loan status is set to **Denied**. Click the **Save Final Approval & Loan Status** button.
+5. The loan status is set to **Denied**. Click the **Save Final Approval & Loan Status** button.
 
     The loan status has been updated to 'Denied' and saved to the customer profile.
 
     ![James Woods Save Loan Status](./images/james-woods-save.png " ")
 
-5. Press the **Generate Decision as PDF** button to save the AI responses and proceed to the final loan disposition.
+6. Press the **Generate Decision as PDF** button to save the AI responses and proceed to the final loan disposition.
 
     ![James Woods PDF](./images/james-woods-pdf.png " ")
 
-6. Click the **Download PDF** button.
+7. Click the **Download PDF** button.
 
     ![James Woods Download Recommendation](./images/james-woods-download.png " ")
 
-7. Display the message the customer would see by opening the downloaded PDF.
+8. Display the message the customer would see by opening the downloaded PDF.
 
     ![Open James Woods PDF](./images/open-james-woods-pdf.png " ")
 
-8. Click the **Return to Dashboard** button to navigate back to the Dashboard.
+9. Click the **Return to Dashboard** button to navigate back to the Dashboard.
 
     ![Return to Dashboard](./images/woods-return-dashboard.png " ")
 
-9. Expand **View Denied Customers**. We can see that James Woods has been removed from the Pending Review Loan Requests list and added to the Denied Loan Requests list.
+10. Expand **View Denied Customers**. We can see that James Woods has been removed from the Pending Review Loan Requests list and added to the Denied Loan Requests list.
 
     ![James Woods Denied List](./images/james-woods-denied-list.png " ")
 
@@ -165,7 +171,7 @@ Congratulations, you have just denied your first customer loan! Proceed to the n
 
     ![Select Evan Burton](./images/evan-burton.png " ")
 
-2. This will display the customers loan application details. In approximately 15 seconds, the AI generated recommendations will be displayed.
+2. This will display the customers loan application details. In less than a minute, the AI generated recommendations will be displayed.
 
     ![Evan Burton AI generated recommendations](./images/evan-burton-ai.png " ")
 
@@ -231,6 +237,8 @@ Before we upload the document, note that the customers income currently reflects
 
     ![Click Dashboard](./images/click-dashboard.png " ")
 
+**Conclusion**
+
 Once the document is uploaded: 
 
 ✅ The system automatically detects the new income data. 
@@ -260,6 +268,6 @@ By combining these advanced tools, the application helps YOU make faster, smarte
 * [Oracle Database 23ai Documentation](https://docs.oracle.com/en/database/oracle/oracle-database/23/)
 
 ## Acknowledgements
-* **Authors** - Linda Foinding, Francis Regalado
-* **Contributors** - Kamryn Vinson, Eddie Ambler, Kevin Lazarz
-* **Last Updated By/Date** - Linda Foinding, April 2025
+* **Authors** - Kamryn Vinson, Linda Foinding, Francis Regalado
+* **Contributors** - Eddie Ambler, Kevin Lazarz
+* **Last Updated By/Date** - Kamryn Vinson, April 2025

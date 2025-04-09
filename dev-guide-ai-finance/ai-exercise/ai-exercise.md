@@ -2,16 +2,33 @@
 
 ## Introduction
 
-**Welcome to the Code with Generative AI Challenge!**
+**Welcome to the Code with AI Vector Search Challenge!**
 
-In this lab, you will tackle an exciting developer coding challenge focused on **AI Vector Search**. Your goal is to enhance the existing application by implementing an update that will change its functionality. This is your opportunity to sharpen your skills and explore the power of AI-driven search. 
+In this coding challenge, you’ll focus on **AI Vector Search**. Your mission is to implement a key update to change the way similarities are calculated, improving the accuracy of predictions.
 
-You will be tasked with updating various parts of the code due to business requirement changes. 
+At SeerEquites, the data science team has been using Cosine similarity to assess similarities between customer profiles and predict loan risks. While effective in some contexts, the team recently realized that Cosine similarity wasn’t capturing the full picture of their customers financial profiles.
 
-At SeerEquites, the data science team had been using Cosine similarity to assess similarities between borrower profiles and predict loan risks. While this worked well for high-dimensional data, the company was increasingly handling low-dimensional datasets—borrower profiles with fewer features that carried more specific, meaningful information.
+**Why switch to Euclidean distance?**
 
-The team discovered that Euclidean distance was a more accurate measure for these low-dimensional datasets, as it accounts for both magnitude and direction, giving more precise results when comparing borrower profiles. This improvement would enhance loan risk assessments, fraud detection, and borrower segmentation.
-After evaluating the benefits, the business decided to switch to Euclidean distance to improve model accuracy and better serve their clients.
+Cosine similarity is great when you care about the pattern or direction of someone’s data — not how big or small the numbers are. But in finance, the actual size of the numbers often matters a lot.
+
+Let’s say you’re comparing two customers based on their debt, income, and credit usage. These numbers matter significantly, and big differences can indicate very different levels of risk.
+
+Here’s an example:
+
+* Both customers have the same debt-to-income ratio of 2:1.
+
+* But one earns $20,000 a year, while the other earns $200,000.
+
+Cosine similarity would say these customers are quite similar, because their ratios follow the same pattern. But that’s misleading — the person earning $20,000 is much riskier.
+
+That’s where Euclidean distance comes in. Unlike Cosine similarity, Euclidean distance looks at the actual difference in the numbers. In this case, it would correctly flag that these customers are not similar in a meaningful way, since the scale of their incomes is vastly different.
+
+In finance, where decisions are often made based on key figures like income, debt, and credit usage, Euclidean distance is often a better tool. It takes the size of the numbers into account, which is crucial for making accurate risk predictions.
+
+In this lab, you’ll update the code to switch the similarity measure from Cosine to Euclidean. This change will improve the system’s ability to assess loan risks more accurately, providing more reliable insights for decision-making.
+
+This is your opportunity to sharpen your skills, explore the power of AI-driven search, and make a meaningful impact on a application. Let’s get started!
 
 **Are you up for the challenge?**
 
@@ -24,9 +41,8 @@ Estimated Time: 30 minutes
 
 ### Objectives
 In this lab, you will:
-* Enhance your understanding of Generative AI by applying it to a developer coding challenge.
+* Enhance your understanding of AI Vector Search by applying it to a developer coding challenge.
 * Gain hands-on experience with fine-tuning and refining application features to meet specific development requirements.
-
 
 ### Prerequisites
 
@@ -35,18 +51,9 @@ This lab assumes you have:
 * Successfully completed Lab 1: Run the Demo
 * Successfully completed Lab 3: Connect to Development Environment
 
-
 ## Task 1: Challenge Requirements 
 
-**About AI Vector Search**
-
-Oracle AI Vector Search is a feature of Oracle Database 23ai that enables efficient searching of AI-generated vectors stored in the database. It supports fast search using various indexing strategies and can handle massive amounts of vector data. This makes it possible for Large Language Models (LLMs) to query private business data using a natural language interface, helping them provide more accurate and relevant results. Additionally, AI Vector Search allows developers to easily add semantic search capabilities to both new and existing applications.
-
-![AI Vector Search](./images/ai-vector-diagram.png " ")    
-
-**Challenge Requirements** 
-
-Due to the data sciencists evaluation, the company has requested that we start using Eucledian distance instead of Cosine similarity variables as it offers more precise results when dealing with Low-dimensional data. 
+Based on the data scientists' evaluation, the company has decided to switch from using Cosine similarity to Euclidean distance. This change aims to enhance the system’s ability to assess loan risks more accurately, ultimately providing more reliable insights to support better decision-making.
 
 Follow the prompts below to update the code based on the new company standard. 
 
