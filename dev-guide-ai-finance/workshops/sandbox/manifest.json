@@ -1,5 +1,5 @@
 {
-    "workshoptitle": "Build a GenAI-Powered Financial Services Loan Approval Application with Oracle 23ai",
+    "workshoptitle": "Build a GenAI-Powered Financial Services Loan Approval Application with Oracle Database 23ai",
     "help": "livelabs-help-database_us@oracle.com",
     "tutorials": [
         {
@@ -13,14 +13,14 @@
             "filename": "../../cloud-login/cloud-login.md"
         },
         {
-            "title": "Lab 1: Run the Demo",
+            "title": "Lab 1: Demo Guide",
             "description": "Labs that follow the introduction are numbered, starting with Lab 1",
             "filename": "../../user-story/user-story.md"
         },
         {
-            "title": "Lab 2: Build the Application",
-            "description": "This is a step-by-step guide showcasing how the demo instance is navigated",
-            "filename": "../../build/build.md"
+            "title": "Lab 2: Start coding with Oracle Database 23ai",
+            "description": "Some coding examples",
+            "filename": "../../codingbasics/codingbasics.md"
         },
         {
             "title": "Lab 3: Connect to Development Environment",
@@ -28,32 +28,37 @@
             "filename": "../../connect-to-env/connect-to-env.md"
         },
         {
-            "title": "Lab 4a Challenge Yourself: Code with AI Vector Search",
+            "title": "Lab 4: Step by Step - Implement RAG with Oracle Database 23ai",
+            "description": "This is a step-by-step guide showcasing how the demo instance is navigated",
+            "filename": "../../build/build.md"
+        },
+        {
+            "title": "Lab 5a Challenge Yourself: Code with AI Vector Search",
             "description": "Labs that follow the introduction are numbered, starting with Lab 1",
             "filename": "../../ai-exercise/ai-exercise.md"
         },
         {
-            "title": "Lab 4b Step-by-step: Code with AI Vector Search",
+            "title": "Lab 5b Step-by-step: Code with AI Vector Search",
             "description": "Labs that follow the introduction are numbered, starting with Lab 1",
             "filename": "../../ai-answers/ai-answers.md"
         },
         {
-            "title": "Lab 5a Challenge Yourself: Code with Property Graph",
+            "title": "Lab 6a Challenge Yourself: Code with Property Graph",
             "description": "This is a step-by-step guide showcasing how the demo instance is navigated",
             "filename": "../../graph-exercise/graph-exercise.md"
         },
         {
-            "title": "Lab 5b Step-by-step: Code with Property Graph",
+            "title": "Lab 6b Step-by-step: Code with Property Graph",
             "description": "This is a step-by-step guide showcasing how the demo instance is navigated",
             "filename": "../../graph-answers/graph-answers.md"
         },
         {
-            "title": "Lab 6a Challenge Yourself: Code with JSON Duality Views",
+            "title": "Lab 7a Challenge Yourself: Code with JSON Duality Views",
             "description": "This is a step-by-step guide showcasing how the demo instance is navigated",
             "filename": "../../json-exercise/json-exercise.md"
         },
         {
-            "title": "Lab 6b Step-by-step: Code with JSON Duality Views",
+            "title": "Lab 7b Step-by-step: Code with JSON Duality Views",
             "description": "This is a step-by-step guide showcasing how the demo instance is navigated",
             "filename": "../../json-answers/json-answers.md"
         },
@@ -63,10 +68,9 @@
             "filename": "../../app-architecture/app-architecture.md"
         },
         {
-
             "title": "Need Help?",
             "description": "Solutions to Common Problems and Directions for Receiving Live Help",
-            "filename":"https://oracle-livelabs.github.io/common/labs/need-help/need-help-freetier.md"
+            "filename": "https://oracle-livelabs.github.io/common/labs/need-help/need-help-freetier.md"
         }
     ]
 }
