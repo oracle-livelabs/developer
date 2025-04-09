@@ -18,14 +18,14 @@
             "filename": "../../user-story/user-story.md"
         },
         {
-            "title": "Lab 2: Start coding with Oracle Database 23ai",
-            "description": "Some coding examples",
-            "filename": "../../codingbasics/codingbasics.md"
-        },
-        {
-            "title": "Lab 3: Connect to Development Environment",
+            "title": "Lab 2: Connect to Development Environment",
             "description": "This is a step-by-step guide showcasing how the demo instance is navigated",
             "filename": "../../connect-to-env/connect-to-env.md"
+        },
+        {
+            "title": "Lab 3: Start coding with Oracle Database 23ai",
+            "description": "Some coding examples",
+            "filename": "../../codingbasics/codingbasics.md"
         },
         {
             "title": "Lab 4: Step by Step - Implement RAG with Oracle Database 23ai",
