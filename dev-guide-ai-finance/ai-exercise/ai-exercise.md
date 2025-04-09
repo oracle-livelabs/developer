@@ -32,7 +32,7 @@ This is your opportunity to sharpen your skills, explore the power of AI-driven 
 
 **Are you up for the challenge?**
 
-If you're ready to dive in, proceed with this lab and start coding. If you prefer a more guided approach with a detailed walkthrough, you can continue to Lab 4b Step-by-step: Code with AI Vector Search for step-by-step instructions.
+If you're ready to dive in, proceed with this lab and start coding. If you prefer a more guided approach with a detailed walkthrough, you can continue to Lab 5b Step-by-step: Code with AI Vector Search for step-by-step instructions.
 
 Good luck, and enjoy the process!
 
