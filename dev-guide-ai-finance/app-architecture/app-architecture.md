@@ -43,10 +43,44 @@ The Application Subnet connects to the Oracle Services Network via the Service G
 
 ## Task 2: Review Logical Architecture
 
+This diagram represents the logical architecture of the **SeerEquities Loan Management Application**, showcasing the integration of modern data and AI technologies for efficient loan processing and management.
+
+* **Application VM (Docker Container)**:
+At the heart of the application is a containerized environment hosting a Streamlit application built with Python, connecting to OracleDB for data operations. This setup allows for rapid UI development and seamless data integration.
+
+* **End Users**:
+
+    * **Loan Applicants** interact with the application to submit and manage loan requests.
+
+    * **Application Developers** work within the containerized environment to maintain and enhance the application.
+
+* **Core Data Platform – Oracle 23ai**:
+The backend is powered by **Oracle 23ai**, supporting a wide variety of data types and features:
+
+    * **Data Types**: Structured, Semi-structured, and Unstructured Data.
+
+    * **Advanced Capabilities**: JSON Duality Views, Functions, Property Graph, and External Table Support (Iceberg/Delta Lake).
+
+    * **AI Integrations**: Supports **AI ONNX Models**, embedded **AI Features**, and seamless access to **Private Data** and **Shared Data Products**.
+
+* **AI Features Module**:
+Enriches the application with cutting-edge capabilities including:
+
+    * **Vector Search**
+
+    * **Retrieval-Augmented Generation (RAG)**
+
+    * **GenAI via Oracle Cloud Infrastructure (OCI)**
+
+    * And additional AI services.
+
+* **Cloud Integration**:
+Utilizes **Cloud LLMs** and **Object Storage** to enhance scalability, enable generative capabilities, and store large datasets.
+
 ![Login](./images/logical.png " ")
 
 
 ## Acknowledgements
-* **Authors** - Linda Foinding, Francis Regalado
-* **Contributors** - Kamryn Vinson, Eddie Ambler, Kevin Lazarz
-* **Last Updated By/Date** - Linda Foinding, April 2025
+* **Authors** - Kamryn Vinson, Linda Foinding, Francis Regalado
+* **Contributors** - Eddie Ambler, Kevin Lazarz
+* **Last Updated By/Date** - Kamryn Vinson, April 2025
