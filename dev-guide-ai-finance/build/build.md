@@ -1,10 +1,12 @@
-# Step by step: Implement RAG with Oracle Database 23ai
+# Step by step: Implement RAG with Oracle Database 23ai 
 
 ## Introduction
 
 In this lab, you will build a loan recommendation system powered by Oracle Database 23ai and OCI Generative AI.  
 You will connect to a Oracle Database 23ai, explore customer data, extract relevant insights, and use a Large Language Model (LLM) to generate personalized loan suggestions. The system combines AI with OCI Generative AI to provide personalized loan recommendations.  
 This system integrates AI capabilities with Oracle's robust database technology to deliver targeted financial recommendations.
+
+This lab uses some of the basic coding samples you created in lab 3, such as cursor.execute and more.
 
 Estimated Time: 30 minutes
 
@@ -18,6 +20,7 @@ Estimated Time: 30 minutes
 ### Prerequisites
 
 This lab assumes you have:
+
 * An Oracle Cloud account
 * Completed lab 1: Run the demo
 * Completed lab 2: Connect to the development environment
@@ -31,21 +34,9 @@ This lab assumes you have:
     ![Open Jupyter Notebook](./images/open-new-notebook.png " ")
 
 
-## Task 2: Get familiar with Jupyter Notebooks
+## Task 2: Connect to the Database using oracledb Python driver
 
-You will use a Jupyter Notebook in JupyterLab to build and test the loan recommendation system. If you are new to notebooks, the following tips will help you get started and work smoothly.
-
-1. **Executing Code Blocks**: You can run code in two simple ways: press **Shift+Enter** to execute and move to the next cell, or click the **Play/Execute** button in the menu bar at the top of this tab. Both methods work interchangeably.
-
-2. **Block Types**: Instructions and code are separated into **their own blocks**. Instructions are in markdown (like this cell), while code is in executable Python blocks. If you accidentally run an instruction block, it’ll just skip to the next cell—no harm done!
-
-3. **Running Indicators**: When you run a code block, its label changes from `[ ]` (empty) or `[1]` (a number) to `[*]`. The asterisk (`*`) means it’s processing. Wait until it switches back to a number (e.g., `[2]`) before moving on, ensuring the operation is complete.
-
-4. **Warnings**: If you see warnings in the output, don’t panic! They’re typically informational, noting deprecated features or updates. Unless an error stops execution, you can proceed without changes.
-
-## Task 3: Connect to the Database using oracledb Python driver
-
-1. Copy the following code block into an empty cell in your notebook. This code block imports the oracledb Python driver and other libraries. 
+1. Copy the following code block into an empty cell in your notebook. This code block imports the `oracledb` Python driver and other libraries. 
 
     ```python
     <copy>
@@ -80,7 +71,7 @@ You will use a Jupyter Notebook in JupyterLab to build and test the loan recomme
     ![Connect to Database](./images/connect-to-db.png " ")
 
 
-## Task 4: Create tables in the database
+## Task 3: Create tables in the database
 
 1. Copy the following code block into the next empty cell in your notebook. This will create all tables in the database. 
 
@@ -94,7 +85,7 @@ You will use a Jupyter Notebook in JupyterLab to build and test the loan recomme
     ![Create Tables](./images/create-tables.png " ") 
 
 
-## Task 5: Create a function to retrieve data from the database
+## Task 4: Create a function to retrieve data from the database
 
 With the database ready, you will query customer data from the clients_dv JSON duality view. This view merges data from `CLIENTS`, `LOAN_APPLICATIONS`, and `CLIENT_DEBT` into a single JSON object, streamlining access to related records for AI-driven analysis.
 
@@ -148,7 +139,7 @@ With the database ready, you will query customer data from the clients_dv JSON d
 
 
 
-## Task 6: Create a function to generate recommendations for the customer
+## Task 5: Create a function to generate recommendations for the customer
 
 With customer profiles in place, you will use OCI Generative AI to generate personalized loan recommendations. This step combines customer data with available loan options, allowing the LLM to suggest loans that match the customer’s credit score, income, and debt profile.
 
@@ -197,10 +188,10 @@ Here’s what we’ll do:
 
 >Note: Your result may be different. This is because of generative AI and the model's ability to generate new content based on your input. The output may contain different recommendations or suggestions.
 
-    ![Loan](./images/loan-recommendation.png " ")
+![loan](./images/loan-recommendation.png " ")
 
 
-## Task 7: Create a function to create embeddings - Use Oracle Database 23ai's to create vector data 
+## Task 6: Create a function to create embeddings - Use Oracle Database 23ai's to create vector data 
 
 To handle follow-up questions, you will enhance the system with an AI Loan Guru powered by Oracle 23ai’s Vector Search and Retrieval-Augmented Generation (RAG). The AI Loan Guru will be able to answer questions about the loan application and provide recommendations based on the data.
 
@@ -250,9 +241,13 @@ Before answering questions, we need to prepare the data by vectorizing the loan 
 
     ![vector](./images/create-vector.png " ")
 
-## Task 8: Implement RAG with Oracle Database 23ai's Vector Search
+## Task 7: Implement RAG with Oracle Database 23ai's Vector Search
 
-Now that the recommendations are vectorized, we can process a user’s question: `What’s the best loan for a first-time home buyer?`. This step:
+Now that the recommendations are vectorized, we can process a user’s question:
+
+ ```What’s the best loan for a first-time home buyer?``` 
+ 
+ This step:
 
    - **Vectorizes the question**: Embeds the question using `DEMO_MODEL` via `dbms_vector_chain.utl_to_embedding`.
    - **Performs AI Vector Search**: Finds the most relevant using similarity search.
@@ -341,7 +336,7 @@ Now that the recommendations are vectorized, we can process a user’s question:
 
             [INST]
             Loan Officer's Question: "{question}"
-            
+
             ====
 
             # Provided Context:
