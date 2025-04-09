@@ -44,7 +44,7 @@ In this first task, you will connect to an Oracle Database 23ai instance using O
 1. In the newly created Jupyter Notebook, copy and paste the following code block into an empty cell. This code block imports the `oracledb` Python driver and other libraries that help us to securely read credentials from the environment variables.
 
     ```python
-    <code>
+    <copy>
     import os
     from dotenv import load_dotenv
     import oracledb
@@ -62,7 +62,7 @@ In this first task, you will connect to an Oracle Database 23ai instance using O
         print(f"Connection failed: {e}")
 
     cursor = connection.cursor()
-    </code>
+    </copy>
     ```
 2. Execute the cell by entering **shift + enter** or clicking on the play button.
 
