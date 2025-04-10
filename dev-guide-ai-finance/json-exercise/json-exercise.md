@@ -12,7 +12,7 @@ This is your opportunity to sharpen your skills and explore the power of JSON.
 
 **Are you up for the challenge?**
 
-If you're ready to dive in, proceed with this lab and start coding. If you prefer a more guided approach with a detailed walkthrough, you can continue to Lab 6b Step-by-step: JSON Duality Views for step-by-step instructions.
+If you're ready to dive in, proceed with this lab and start coding. If you prefer a more guided approach with a detailed walkthrough, you can continue to Lab 7b Step-by-step: JSON Duality Views for step-by-step instructions.
 
 Good luck, and enjoy the process!
 
@@ -42,12 +42,25 @@ This challenge consists of **three steps**:
 * Second, calculate the average age across the client base using the corrected information.
 * Third, use JSON Duality Views to run SQL queries on the updated data.
 
-## Task 2: Update application frontend
+## Task 2: Update Application Frontend
 
 The company has requested an enhancement to the current customer data and would now like to see the parameter for **age** to be reflected.
 
-1. In the Customer.py file, find the # 🔍 Customer Details Section at line 219
-2. Update the section to include a new parameter for **age**.
+1. Click **Pages**.
+
+    ![Click Pages](./images/click-pages.png " ")
+
+2. Select the **Customers.py** file.
+
+    ![Click Customers.py](./images/customers-py.png " ")
+
+3. In the Customer.py file, find the # 🔍 Customer Details Section at line 219
+
+4. Update the section to include a new parameter for **age**.
+
+5. Save the Customers.py file.
+
+    ![Save Customers.py](./images/save-customers-py.png " ")
 
 ## Task 3: Analyzing the Complete Client Data 
 
