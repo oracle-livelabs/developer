@@ -48,7 +48,7 @@ In this first task, you will connect to an Oracle Database 23ai instance using O
     import os
     from dotenv import load_dotenv
     import oracledb
-    
+
     load_dotenv()
 
     username = os.getenv("USERNAME")
