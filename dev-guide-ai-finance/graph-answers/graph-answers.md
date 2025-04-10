@@ -1,10 +1,18 @@
-# Code Property Graph using Graph Query Hackathon Challenge step-by-step
+# Code with Property Graph step-by-step
 
 ## Introduction
 
-In this lab, we’ll provide a step-by-step guide to help you successfully complete the coding challenge from the previous lab. This step-by-step guide will walk you through the necessary updates, providing solutions and insights to help you fully understand how to utilize Graph in a practical scenario. Whether you're refining your existing work or tackling the challenge for the first time, this guide will ensure you gain the skills and confidence needed to implement these powerful features.
+In this lab, you’ll dive into a coding challenge focused on Graph to enhance the SeerEquites Loan Management application.
 
-Let’s dive in and unlock the full potential of Graph in your application!
+At SeerEquities, loan officers are always looking for ways to improve their decision-making processes.
+
+A loan officer has been tasked with evaluating a client’s eligibility for a mortgage. She needs to consider a number of factors, including the client’s credit score and their debt-to-income ratio. However, she often finds herself manually cross-referencing multiple charts and data tables to understand how these two factors interact, which is both time-consuming and prone to error.
+
+Her manager suggests that adding a graph to the decision page would make the process far more efficient. The graph would map loan options based on credit score on one axis and debt-to-income ratio on the other, allowing the loan officer to quickly see which loans are available for the client at a glance. This addition would save time, reduce complexity, and make it easier to identify the best loan options based on the client’s unique financial situation.
+
+The loan officers at SeerEquities believe that this new graph will not only speed up their decision-making but also improve accuracy and clarity when presenting loan options to clients.
+
+This is your opportunity to sharpen your skills with Oracle Graph and help create a solution that truly improves the way loan officers make decisions.
 
 Estimated Time: 60 minutes
 
@@ -22,7 +30,7 @@ This lab assumes you have:
 * Successfully completed Lab 3: Connect to Development Environment
 
 
-## Task 1: Hackathon Challenge
+## Task 1: Challenge Requirements 
 
 The loan officer needs to visualize additional data points in the decision-making process. Specifically, they want to display an additional graph that shows two key metrics: required credit score on one axis and debt-to-income ratio on the other.
 
@@ -329,7 +337,7 @@ Edit the part of the script that edits the scatter plot. Change the X and Y axis
 
     ![James Smith graph](./images/james-woods-graph.png " ")
 
-**Congratulations, you have successfully completed the Graph Developer Coding Exercise!**
+**Congratulations, you have successfully completed the Property Graph Challenge!** You have updated the Decision.py file to add functionality for an additional graph that displays the following metrics: Required Credit Score and Debt-to-Income Ratio (%).
 
 ## Learn More
 

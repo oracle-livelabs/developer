@@ -1,43 +1,43 @@
 # Create Data Product Share & Publish to Data Share
 
-## Lab Summary 
+## Lab Summary
 
 In this Lab, you will:
  *  Utilize a data share provider account (**LOAN user**) that logs in and manages the data shares for the recipients of the data share (**RISK and MARKETING users**)
  *  Leverage an Object Storage bucket to store the shared data - **MySharedBucket**
  *  Create and publish data shares - **LoanApp_Share2Marketing & LoanApp_Share2Risk**
  *  Create and authorize a data share recipient
- 
-## Prerequisites 
+
+## Prerequisites
 
 *	**An Oracle account**
 
 *  **Prerequisites for Share Providers** to use the share tool:
       * For a versioned share, you must have read and write access to a bucket to store or cache your shares.
-      * The schema you wish to use to create and publish shares must be enabled by an ADMIN user. 
+      * The schema you wish to use to create and publish shares must be enabled by an ADMIN user.
 
 *  **Prerequisites for Share Recipients**
       * The share recipient must have a valid email address a provider can use to register the recipient to use the share tool. Oracle Data Share allows you to share the recipient's activation link by email.
 
 ## Terminology
 
-### Architecture: 
+### Architecture:
 
    ![Share Architecture](./images/share-architecture.png "Share Architecture")
 
    The Autonomous Database Serverless includes the ability to share database objects across the databases, tools and APIs that are accessible to an organization.  The ability to share incorporates features to make it scalable and secure.
-    
+
    ***Data Share:***
-   
+
    A  Data Share is a named entity in the provider’s instance.
-   It can be a group of datasets shared as a single entity. 
+   It can be a group of datasets shared as a single entity.
 
    **Example:** A SALES table that needs to be shared within an organization.
 
    ***Provider:***
 
-   The Autonomous Database Serverless enables the provider to share existing objects. 
-   **The share can contain a single table, a set of related tables, or a set of tables with some logical grouping.** 
+   The Autonomous Database Serverless enables the provider to share existing objects.
+   **The share can contain a single table, a set of related tables, or a set of tables with some logical grouping.**
 
    A provider could be a person, an institution, or a software system that shares one or a set of related tables.
 
@@ -45,14 +45,14 @@ In this Lab, you will:
 
    ***Recipient:***
 
-   A **Share recipient** is an entity that associates an individual, an institution or a software system that receives a share from a provider. A recipient can have access to multiple shares. If you remove a recipient, that recipient loses access to all shares it could previously access. 
+   A **Share recipient** is an entity that associates an individual, an institution or a software system that receives a share from a provider. A recipient can have access to multiple shares. If you remove a recipient, that recipient loses access to all shares it could previously access.
 
    **Example:** An external system, such as Microsoft Power BI, that supports the Delta Sharing REST API.
-   
+
 ## Overview
 
-In this lab, as a share provider, you will create a data share and add a table to it. 
-Next, you will create a new recipient that will have access to this data share. 
+In this lab, as a share provider, you will create a data share and add a table to it.
+Next, you will create a new recipient that will have access to this data share.
 
 Finally, you will publish the data share and send the recipient the activation link needed to access the data share.
 
@@ -63,7 +63,7 @@ Finally, you will publish the data share and send the recipient the activation l
    ![Create Data Product Share](./images/create-data-product-share-1.png "Create Data Product Share")
 
    * Select **Data Studio** from the menu bar
-   * Choose **Data Share** from the navigation tree. 
+   * Choose **Data Share** from the navigation tree.
 
 1. From the **Provider and Consumer** page, click the **Enable Sharing** icon.
 
@@ -73,13 +73,13 @@ Finally, you will publish the data share and send the recipient the activation l
 
    ![Create Data Product Share](./images/create-data-product-share-3.png "Create Data Product Share")
 
-   * Select user schema listed in the Available Schemas column. 
+   * Select user schema listed in the Available Schemas column.
    * Click ">" button to place it in the Selected Schemas column.
    * Click Save.
 
 1. On the **Database Actions Launchpad**, click the user icon in the top right corner.
 
-   ![Create Data Product Share](./images/create-data-product-share-1.png "Create Data Product Share")
+   ![Create Data Product Share](./images/create-data-product-share-1a.png "Create Data Product Share")
 
    Log out as the ADMIN user.
 
@@ -89,12 +89,12 @@ Finally, you will publish the data share and send the recipient the activation l
 
    ![Define a Data Product Recipient](./images/define-data-product-share-recipient-1.png "Define a Data Product Recipient")
 
-   * Enter LOAN user credentials into **Sign-In** page.  
+   * Enter LOAN user credentials into **Sign-In** page.
    * Press **Sign-In** button.
 
 1. Select **Data Studio** from the menu bar.  Then, choose **Data Share** from the navigation tree.
 
-   ![Define a Data Product Recipient](./images/define-data-product-share-recipient-x.png "Define a Data Product Recipient")
+   ![Define a Data Product Recipient](./images/define-data-product-share-recipient-2.png "Define a Data Product Recipient")
 
 1. Click **Provider Share** on the **Provider and Consumer** page.
 
@@ -103,7 +103,6 @@ Finally, you will publish the data share and send the recipient the activation l
 1. Click **Provider Identification** on the **Provide Share** page.
 
    ![Define a Data Product Recipient](./images/define-data-product-share-recipient-4.png "Define a Data Product Recipient")
-   
 1. Provide details for the provider in the **Provider Identification** popup window.
 
    ![Define a Data Product Recipient](./images/define-data-product-share-recipient-5.png "Define a Data Product Recipient")
@@ -113,7 +112,6 @@ Finally, you will publish the data share and send the recipient the activation l
       * **Email:** MyEmail@MyCompany.com
       * **Description:** a meaningful description is required
    * Click **Save**.
-   
 1. Click **Share** on the **Provide Share** page, to begin entering details for the new share.
 
    ![Define a Data Product Recipient](./images/define-data-product-share-recipient-6.png "Define a Data Product Recipient")
@@ -123,7 +121,7 @@ Finally, you will publish the data share and send the recipient the activation l
    ![Define a Data Product Recipient](./images/define-data-product-share-recipient-7.png "Define a Data Product Recipient")
 
    * Enter the following:
-      *  **Name:** LoanApp_Share2Marketing 
+      *  **Name:** LoanApp_Share2Marketing
       *  **Description:** a description (optional)
    * Click **Next**.
 
@@ -131,7 +129,7 @@ Finally, you will publish the data share and send the recipient the activation l
 
    ![Define a Data Product Recipient](./images/define-data-product-share-recipient-8.png "Define a Data Product Recipient")
 
-   * Select **DemoSharesBucket** from the drop-down list. 
+   * Select **DemoSharesBucket** from the drop-down list.
    * Click **Next**.
 
 1. Choose table that will be made available for the Risk Department (via the Share) on the **Select Tables** page.
@@ -141,7 +139,6 @@ Finally, you will publish the data share and send the recipient the activation l
    * Select the **Clients_To_Loan** table in the Available Tables column.
    * Click the ">" button to list it to the Shared Tables column
    * Click **Next**.
- 
 1. There are no recipients are available, click **New Recipent** to create a new one on the **Recipients** page.
 
    ![Define a Data Product Recipient](./images/define-data-product-share-recipient-10.png "Define a Data Product Recipient")
@@ -159,10 +156,6 @@ Finally, you will publish the data share and send the recipient the activation l
 1. Click the **copy** icon to capture the profile activation link, sending it to the clipboard for the recipient.
 
    ![Define a Data Product Recipient](./images/define-data-product-share-recipient-12.png "Define a Data Product Recipient")
-
-   Clipboard Value for profile activation link:
- 
-   https://gf5dxiqoqwkdgv0-loanappdb.adb.ap-sydney-1.oraclecloudapps.com/ords/loan/_adpshr/delta-sharing/download?key=3654C8F50EE0C3882852E56FF701575933406D3649FD0C9194E23F9CECD8FF34EB5A56D594AB210F34CAB37F889AA93AFD5BTE9BTg==
 
    Click **Cancel**.
 
@@ -187,7 +180,6 @@ Finally, you will publish the data share and send the recipient the activation l
    ![Define a Data Product Recipient](./images/manage-data-product-share-4.png "Define a Data Product Recipient")
 
 **Congratulations you have shared your data from ADB to the Marketing Dept Lead.**
-   
 #
 ## Acknowledgements
 * **Author** - <Name, Title, Group>
