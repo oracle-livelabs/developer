@@ -2,73 +2,69 @@
 
 ## About this Workshop
 
-In this workshop, you will build a GenAI-powered loan approval application using Oracle Autonomous Database and Oracle Database 23ai. The session includes both a live demo and hands-on coding challenges.
+In this workshop, you will build a GenAI-powered loan approval app using Oracle Autonomous Database and Oracle Database 23ai.
 
-In the demo, you will act as a loan officer using a modern loan approval app that combines **Generative AI**, **Vector Search**, and **Graph analytics**. You will process real loan applications and see how Oracle Database 23ai streamlines decision-making—replacing slow, manual reviews with AI-assisted analysis.
+#### ➡️ **Start with the demo!**
 
-In the hands-on portion, we give you coding challenges and you will enhance the application by implementing features such as **AI Chatbots, AI Vector Search, Retrieval-Augmented Generation (RAG), JSON Duality Views**, and **Property Graphs**. These tools will help automate loan analysis, tailor recommendations, and surface relevant insights.
+The demo shows how a loan officer uses Generative AI, Vector Search, and Graph analytics to evaluate real applications and streamline decisions.  
+The best part? **No setup required**—just start with Lab 1 and follow the guide.  
+You can explore guided use cases or experiment on your own using the demo application.
 
-You will also integrate data from internal and external sources to generate insights, automate document processing, and accelerate loan approvals. The solution uses real-time Generative AI to refine loan options while maintaining compliance with company and regulatory policies.
+#### ➡️ **Start coding!**
 
+If you want to get hands-on and start interacting with the database using Python, then Lab 3 and Lab 4 are for you.  
+Lab 2 describes how to get access to our browser-based development environment.  
+Make sure to check it out before continuing to Lab 3, where you will learn how to use Python with Oracle Database 23ai:
 
-  [](videohub:1_mg30brw3:large)
+✅ Connect to the database using Python
 
-**About Oracle AI Vector Search**
+✅ Run SQL queries with Python
 
-Oracle AI Vector Search is a feature of Oracle Database 23ai that enables efficient searching of AI-generated vectors stored in the database. It supports fast search using various indexing strategies and can handle massive amounts of vector data. This makes it possible for Large Language Models (LLMs) to query private business data using a natural language interface, helping them provide more accurate and relevant results. Additionally, AI Vector Search allows developers to easily add semantic search capabilities to both new and existing applications.
+✅ Create JSON Duality Views
 
-**About Generative artificial intelligence (AI)**
+✅ Connect to the database using a Mongo API driver
 
-Generative AI excels at creating text responses based on large language models (LLMs) where the AI is trained on a massive number of data points. The generated text is often easy to read and provides detailed responses that are broadly applicable to the questions asked of the software, often called prompts.
+✅ Use the Mongo API to query and update data
 
-The following diagram shows a VERY high-level overview of how you would create a chatbot application that can use an LLM in combination with private company data to answer questions specific to YOUR data. This process is called Retrieval Augmented Generation, or RAG.
+✅ Implement AI Vector Search
 
-![Vector Diagram](./images/vectors-diagram.png " ")
+In lab 3, you will learn how to **implement a working example of retrieval-augmented generation (RAG) using Oracle Database 23ai.**
 
-**About Retrieval-augmented generation (RAG)**
+#### ➡️ **Start experimenting!**
 
-RAG provides a way to optimize the output of an LLM with targeted information without modifying the underlying model itself; that targeted information can be more up-to-date than the LLM as well as specific to a particular organization and industry. That means the generative AI system can provide more contextually appropriate answers to prompts as well as base those answers on extremely current data.
+You can also experiment with the code in your own environment. The workshop environment is flexible and allows you try out different things:  
+Start building your own version of the loan approval application!
 
-**About Property Graph**
+To get things started we invite you to watch the introduction video to see the demo in action:
 
-In Oracle Database 23ai we can create property graphs inside the database. These property graphs allow us to map the vertices and edges to new or existing tables, external tables, materialized views or synonyms to these objects inside the database. The property graphs are stored as metadata inside the database meaning they don't store the actual data. Rather, the data is still stored in the underlying objects and we use the SQL/PQG syntax to interact with the property graphs.
-
-Property graphs make the process of working with interconnected data, like identifying influencers in a social network, predicting trends and customer behavior, discovering relationships based on pattern matching and more by providing a more natural and efficient way to model and query them.
-
-**About JSON Duality View**
-
-JSON Relational Duality is a landmark capability in Oracle Database 23ai, providing game-changing flexibility and simplicity for Oracle Database developers. This feature overcomes the historical challenges developers have faced when building applications using the relational or document models.
-
-JSON Relational Duality helps to converge the benefits of both document and relational worlds. Developers now get the flexibility and data access benefits of the JSON document model, plus the storage efficiency and power of the relational model. The new feature enabling this functionality is JSON Relational Duality View
-
-
+  [](videohub:1_mg30brw3:medium)
 
 ### Objectives
 
-This demo/workshop will show you how to automate and enhance the loan approval process using Oracle Database 23ai. Through hands-on labs and technical walkthroughs, you will embed 23ai capabilities into a custom web application.
-You will work with features such as AI Vector Search, Property Graph, and JSON Duality Views to:
+* Learn how Oracle Database 23ai capabilities can be used to automate and enhance the loan approval process
 
-* Ask natural language questions about an applicant’s financial history
+* Start coding with Python and Oracle's Python driver `oracledb`
 
-*	Track loan approval status and update application records
+* Learn how to implement and interact with Oracle Database 23ai's new features using Python
 
-*	Generate PDF reports summarizing loan decisions
-
-*	Analyze relationships and trends in applicant data using Graph
-
-
-By building these capabilities yourself, you will learn how to combine AI-driven insights with Oracle’s data tools to streamline real-world financial workflows.
+* Implement a working example of retrieval-augmented generation (RAG) using Oracle Database 23ai
 
 ### Prerequisites
 
 This lab assumes you have:
-* An Oracle account
+
+* An Oracle account to submit your a LiveLabs Sandbox reservation.
+
+* Basic knowledge of Python.
+
+* Basic knowledge of Oracle Database, i.e., how to run queries.
 
 ## Learn More
 
 * [Oracle Database 23ai Documentation](https://docs.oracle.com/en/database/oracle/oracle-database/23/)
 
 ## Acknowledgements
+
 * **Authors** - Linda Foinding, Francis Regalado
 * **Contributors** - Kamryn Vinson, Otis Barr, Ramona Magadan, Eddie Ambler, Kevin Lazarz
 * **Last Updated By/Date** - Linda Foinding, April 2025
