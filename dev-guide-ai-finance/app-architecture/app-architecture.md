@@ -19,7 +19,7 @@ A Virtual Machine (VM) in the Public Subnet runs two Docker containers:
 
 1. Streamlit for the Loan Approval Demo.
 
-2. Jupyter Notebook for developers to explore Oracle 23ai Database features & OCI services.
+2. Jupyter Notebook for developers to explore Oracle Database 23ai features & OCI services.
 
 The Application Subnet connects to the Oracle Services Network via the Service Gateway, allowing access to Autonomous Database Serverless, OCI Generative AI Services, OCI Object Storage, and other Oracle Cloud Services. This architecture ensures seamless, scalable, and secure operation of the application with high availability and access to Oracle’s cloud-native features.
 
@@ -54,8 +54,8 @@ At the heart of the application is a containerized environment hosting a Streaml
 
     * **Application Developers** work within the containerized environment to maintain and enhance the application.
 
-* **Core Data Platform – Oracle 23ai**:
-The backend is powered by **Oracle 23ai**, supporting a wide variety of data types and features:
+* **Core Data Platform – Oracle Database 23ai**:
+The backend is powered by **Oracle Database 23ai**, supporting a wide variety of data types and features:
 
     * **Data Types**: Structured, Semi-structured, and Unstructured Data.
 
@@ -77,7 +77,7 @@ Enriches the application with cutting-edge capabilities including:
 * **Cloud Integration**:
 Utilizes **Cloud LLMs** and **Object Storage** to enhance scalability, enable generative capabilities, and store large datasets.
 
-![Login](./images/logical.png " ")
+    ![Login](./images/logical.png " ")
 
 
 ## Acknowledgements

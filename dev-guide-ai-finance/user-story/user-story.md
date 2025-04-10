@@ -34,15 +34,13 @@ This lab assumes you have:
 
     ![Login](./images/login.png =50%x*)
 
-3. Welcome to the SeerEquities Loan Management application!  
-   Congratulations, you are now connected to the demo environment. You can now execute the different tasks for this Lab.
+3. Welcome to the SeerEquities Loan Management application! Congratulations, you are now connected to the demo environment. You can now execute the different tasks for this Lab.
 
     ![Homepage](./images/app-home.png =50%x*)
 
 ## Task 2: Demo - Customer with strong credit score
 
-In this first example, you will use the application to approve a customer with strong credit score.  
-The first user on your to-do list is James Smith.
+In this first example, you will use the application to approve a customer with strong credit score. The first user on your to-do list is James Smith.
 
 1. On the Dashboard page, from the pending review list, select the Customer ID for **James Smith**.
 
@@ -188,19 +186,25 @@ Congratulations, you have finished reviewing a customer with high financial risk
 
 Lastly, let’s explore how the system handles profile updates. In this task, you will edit a customer’s details. In this example, the customer was asked to submit updated proof of income.
 
-1. On the Dashboard page, expand **View Denied Customers**. From the **Denied Loan Requests** list, select the customer ID for **Alex Anderson**.
+1. On the Dashboard page, from the **Pending Review Loan Requests** list, select the customer ID for **Alex Anderson**.
 
     ![Select Alex Anderson](./images/select-alex-anderson.png =50%x*)
 
-    Before uploading the document, note that the customer’s income is currently listed as $25,000.
+2. We will upload a document to update Alex's income. Before uploading the document, note that the customer’s income is currently listed as $25,000. On the Customer Details page, click the **Upload Document** button.
 
-2. On the Customer Details page, click the **Upload Document** button.
+    ![Upload Document](./images/upload-document.png =50%x*)
 
-    ![Expand Customer Details](./images/customer-details.png =50%x*)
+3. The PDF file has been loaded. Click the **Process Selected PDF** button.
 
-3. Scroll down to the bottom of the page and click the **Return to Dashboard** button.
+    ![Click Process Selected PDF](./images/process-selected-pdf.png =50%x*)
 
-    ![Click Dashboard](./images/click-dashboard.png =50%x*)
+4. The customer profile has been updated.
+
+    ![Customer Profile Updated](./images/profile-updated.png)
+
+5. Refresh the page and note that the income has been updated to $65,000. Thanks to JSON Transform and JSON Duality Views, only the relevant field is modified — leaving the rest of the profile UNTOUCHED.
+
+    ![Customer Profile Updated](./images/income-updated.png)
 
 **Conclusion**
 
@@ -210,7 +214,7 @@ Once the document is uploaded:
 
 ✅ Then their profile will be updated from $25,000 to $65,000.
 
-With this updated profile, our AI reevaluates the customers eligibility and identifies three approved loan options. Now we can make our final decision, and generate a PDF. The dashboard updates immediately, marking the customer's status as Approved.
+✅ And thanks to JSON Transform and JSON Duality Views, only the relevant field is modified — leaving the rest of the profile UNTOUCHED.
 
 ## Summary
 
@@ -225,8 +229,8 @@ In conclusion our Loan Management App was able to leverages Oracle database 23ai
 ✅ And empower loan officers with actionable insights through Operational Property Graphs 
 
 By combining these advanced tools, the application enables faster, smarter decisions and delivers clear guidance on how customers can improve their eligibility.
-
-**Next:** How about learning how to the application was implemented in Python? Continue with the next labs and start developing!
+ 
+**Next:** How about learning how the application was implemented in Python? Continue with the next labs and start developing!
 
 ## Learn More
 
