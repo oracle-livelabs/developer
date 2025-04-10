@@ -11,7 +11,7 @@ Estimated Time: 5 minutes
 * Review the loan approval application physical architecture​
 * Review the loan approval application logical architecture
 
-## Task 1: Review Physical Architecture
+## Task 1: Review physical architecture
 
 The SeerEquities loan application is deployed in an Oracle Cloud Infrastructure (OCI) Region, with its application layer in a Public Subnet within a Virtual Cloud Network (VCN). The Application Tier VCN includes an Internet Gateway for outbound access and a Service Gateway for connectivity to Oracle Cloud Services.
 
@@ -41,7 +41,7 @@ The Application Subnet connects to the Oracle Services Network via the Service G
 
 * **OCI Object Storage**: OCI Object Storage is a service that allows you to store large amounts of unstructured data, such as images, videos, backups, or application logs. It is scalable, durable, and accessible from anywhere, and is often used to store files that need to be accessed by applications and services within OCI.
 
-## Task 2: Review Logical Architecture
+## Task 2: Review logical architecture
 
 This diagram represents the logical architecture of the **SeerEquities Loan Management Application**, showcasing the integration of modern data and AI technologies for efficient loan processing and management.
 
