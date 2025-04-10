@@ -103,7 +103,6 @@ Finally, you will publish the data share and send the recipient the activation l
 1. Click **Provider Identification** on the **Provide Share** page.
 
    ![Define a Data Product Recipient](./images/define-data-product-share-recipient-4.png "Define a Data Product Recipient")
-
 1. Provide details for the provider in the **Provider Identification** popup window.
 
    ![Define a Data Product Recipient](./images/define-data-product-share-recipient-5.png "Define a Data Product Recipient")
@@ -113,7 +112,6 @@ Finally, you will publish the data share and send the recipient the activation l
       * **Email:** MyEmail@MyCompany.com
       * **Description:** a meaningful description is required
    * Click **Save**.
-
 1. Click **Share** on the **Provide Share** page, to begin entering details for the new share.
 
    ![Define a Data Product Recipient](./images/define-data-product-share-recipient-6.png "Define a Data Product Recipient")
@@ -141,7 +139,6 @@ Finally, you will publish the data share and send the recipient the activation l
    * Select the **Clients_To_Loan** table in the Available Tables column.
    * Click the ">" button to list it to the Shared Tables column
    * Click **Next**.
-
 1. There are no recipients are available, click **New Recipent** to create a new one on the **Recipients** page.
 
    ![Define a Data Product Recipient](./images/define-data-product-share-recipient-10.png "Define a Data Product Recipient")
@@ -183,7 +180,6 @@ Finally, you will publish the data share and send the recipient the activation l
    ![Define a Data Product Recipient](./images/manage-data-product-share-4.png "Define a Data Product Recipient")
 
 **Congratulations you have shared your data from ADB to the Marketing Dept Lead.**
-
 #
 ## Acknowledgements
 * **Author** - <Name, Title, Group>
