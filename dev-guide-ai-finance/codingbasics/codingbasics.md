@@ -38,7 +38,7 @@ All of the coding examples will be executed in a new Jupyter Notebook.
 
 1. Change to the **ai-app-dev** directory
 
-2. Open a new **Jupyter Notebook** by clicking on **Pyhton(ipykernel)** notebook.
+2. Open a new **Jupyter Notebook** by clicking on **Python(ipykernel)** notebook.
 
     ![Open Jupyter Notebook](./images/open-new-notebook.png " ")
 
@@ -296,7 +296,7 @@ Copy the following code into a new cell and run it.
 
     ![dv](./images/query-dv.png " ")
 
-    You notice that our code has some significatant changes.  
+    You notice that our code has some significant changes.  
     We are now passing a parameter into our query, and we are also formatting the output of our query. Let's have a closer look:
 
     🔴 **`import json`** - This is a Python module that allows us to work with JSON. Remember: JSON Duality Views present data in document format, i.e., JSON.
@@ -400,26 +400,26 @@ Let's write a function that will help us do this.
 3. What if we want to do something more complex, for example updating a nested field? For example, let's say we want to change TotalValue field.  
    Copy the following code into a new cell and run it.
 
-   ```python
-   <copy>
-   def update_mongo_order():
-        col = mongo_connect().CUSTOMERS_DV
-        col.update_one(
-        {
-            "FirstName": "Dom",
-            "orders.OrderID": 1.0
-        },
-        {
-            "$set": {
-                "orders.$.TotalValue": 100
+    ```python
+    <copy>
+    def update_mongo_order():
+            col = mongo_connect().CUSTOMERS_DV
+            col.update_one(
+            {
+                "FirstName": "Dom",
+                "orders.OrderID": 1.0
+            },
+            {
+                "$set": {
+                    "orders.$.TotalValue": 100
+                }
             }
-        }
-    )
-        return
+        )
+            return
 
-    update_mongo_order()
-    </copy>
-    ```
+        update_mongo_order()
+        </copy>
+        ```
 
 4. Let's check what happened by running a query on the JSON Duality view.  
     Copy the following code into a new cell and run it.
