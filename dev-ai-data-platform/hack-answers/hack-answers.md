@@ -1,8 +1,23 @@
-# Hackathon Challenge
+# 🧠 Hackathon Challenge
 
-## Lab Summary 
+## Introduction
 
-In this next lab, you’ll ....... 
+Put your skills to the test! In this final challenge, you’ll apply everything you’ve learned throughout the workshop to solve a **real-world data problem**.
+
+In this lab, you’ll step into the role of a **data engineer and analyst**, building and managing **data products** that empower different departments to make **informed decisions**.
+
+You’ll learn how to:
+
+- **Create**, **share**, and **subscribe** to curated data products, enabling **seamless collaboration** across teams.
+- Build **data pipelines** to streamline data processing.
+- Publish **data products** to a **Marketplace** for easy access by relevant teams.
+- Leverage **insights using AI-powered applications** to drive smarter decision-making.
+
+By the end of this lab, you’ll have hands-on experience with:
+- Building and managing data pipelines
+- Publishing and accessing curated data products
+- Using AI tools to gain actionable insights
+
 
 ## Task 1: Create Data Product view for Marketing Dept:  
 
