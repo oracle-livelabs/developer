@@ -38,7 +38,7 @@ All of the coding examples will be executed in a new Jupyter Notebook.
 
 1. Change to the **ai-app-dev** directory
 
-2. Open a new **Jupyter Notebook** by clicking on **Pyhton(ipykernel)** notebook.
+2. Open a new **Jupyter Notebook** by clicking on **Python(ipykernel)** notebook.
 
     ![Open Jupyter Notebook](./images/open-new-notebook.png " ")
 
@@ -296,7 +296,7 @@ Copy the following code into a new cell and run it.
 
     ![dv](./images/query-dv.png " ")
 
-    You notice that our code has some significatant changes.  
+    You notice that our code has some significant changes.  
     We are now passing a parameter into our query, and we are also formatting the output of our query. Let's have a closer look:
 
     🔴 **`import json`** - This is a Python module that allows us to work with JSON. Remember: JSON Duality Views present data in document format, i.e., JSON.
