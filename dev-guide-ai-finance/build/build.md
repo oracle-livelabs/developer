@@ -34,7 +34,7 @@ This lab assumes you have:
     ![Open Jupyter Notebook](./images/open-new-notebook.png " ")
 
 
-## Task 2: Connect to the Database using oracledb Python driver
+## Task 2: Connect to the database using oracledb Python driver
 
 1. Copy the following code block into an empty cell in your notebook. This code block imports the `oracledb` Python driver and other libraries. 
 

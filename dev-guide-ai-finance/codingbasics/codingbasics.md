@@ -400,26 +400,26 @@ Let's write a function that will help us do this.
 3. What if we want to do something more complex, for example updating a nested field? For example, let's say we want to change TotalValue field.  
    Copy the following code into a new cell and run it.
 
-   ```python
-   <copy>
-   def update_mongo_order():
-        col = mongo_connect().CUSTOMERS_DV
-        col.update_one(
-        {
-            "FirstName": "Dom",
-            "orders.OrderID": 1.0
-        },
-        {
-            "$set": {
-                "orders.$.TotalValue": 100
+    ```python
+    <copy>
+    def update_mongo_order():
+            col = mongo_connect().CUSTOMERS_DV
+            col.update_one(
+            {
+                "FirstName": "Dom",
+                "orders.OrderID": 1.0
+            },
+            {
+                "$set": {
+                    "orders.$.TotalValue": 100
+                }
             }
-        }
-    )
-        return
+        )
+            return
 
-    update_mongo_order()
-    </copy>
-    ```
+        update_mongo_order()
+        </copy>
+        ```
 
 4. Let's check what happened by running a query on the JSON Duality view.  
     Copy the following code into a new cell and run it.
