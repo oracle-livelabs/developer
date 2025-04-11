@@ -38,7 +38,7 @@ This workshop is divided into two key sections, each designed to provide a uniqu
 
 ---
 
-#### 1️⃣ Demo Experience: Real-World Application Simulation
+### 1️⃣ **Demo Experience: Real-World Application Simulation**
 
 Gain practical insight into how **data products** are used within a **Loan Management Application**.
 
@@ -49,7 +49,7 @@ In this section, you will:
 
 ---
 
-#### 2️⃣ Hands-On Data Engineering & Management Tasks
+### 2️⃣ **Hands-On Data Engineering & Management Tasks**
 
 Apply your skills through guided development tasks that simulate real-world data requests.
 
