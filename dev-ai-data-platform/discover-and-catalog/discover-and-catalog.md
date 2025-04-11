@@ -14,20 +14,6 @@ Enjoy exploring! 🚀
 <!-- Comments -->
 <!-- Comments -->
 
-### Objectives
-
-In this lab, you will:
-
-* Connect to Autonomous Database
-* Connect to local Data Catalog
-* Discover and Create object storage connections
-* View database object in Object Storage Files from Catalog
-* Preview Object Storage file data from Catalog
-
-### Prerequisites
-
-* This lab assumes that you have successfully completed all of the preceding labs in the **Contents** menu.
-
 ## Task 1: Access Local Data Catalog
 
 First, you’ll log into your Autonomous Database and connect to your local Data Catalog, so you can discover and manage all the data you have access to all from one location.
