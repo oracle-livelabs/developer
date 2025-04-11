@@ -1,18 +1,18 @@
-# Load Object Storage Data into Autonomous Database
+# Load, Link, and Query Object Storage Data from Autonomous Database
 
 ## Introduction
 
-In this lab, you'll learn how to load data that is stored in Object Storage into tables in your ADB instance. This approach is useful for making data locally available for performance, cost or persistence reasons.
+IThis lab focuses on loading, linking, and querying object storage data directly from your Autonomous Database instance. You'll learn how to make object storage data locally available for performance optimization or cost reduction while maintaining flexibility for real-time analytics. Using Oracle Data Catalog, you'll link object storage data to your database and create external tables that allow direct querying without time-consuming transfers. Finally, you'll run cross-source queries that combine structured database tables with object storage data to deliver a unified view of financial insights.
 
 By the end of this lab, you will:
 
-## Prerequisites
+   * ***Load Data:*** Understand how to move object storage data into tables in your Autonomous Database for improved performance and persistence.
 
-* An Oracle account
-* Prerequisites for Share Recipients
-   * The share recipient must have a valid email address a provider can use to register the recipient to use the share tool. Oracle Data Share allows you to share the recipient's activation link by email.
+   * ***Link Data:*** Use Oracle Data Catalog to connect object storage assets to your database.
 
-## Task 1: Query Data from Object Storage Directly from Autonomous Database
+   * ***Query Data:*** Create external tables to query object storage data directly and combine it with database tables for unified analytics.
+
+## Task 1: Load Object Storage Data into Autonomous Database using Data Catalog
 
    1. Navigate to your Assigned ADB Instance
 
@@ -36,11 +36,11 @@ By the end of this lab, you will:
 
    1. Select **Data Studio** from the tab menu, then select **Catalog** from the navigation tree.
 
-   1. The **Catalog** page is displayed with the **/Tables and Views** tab highlighted.
+   1. The **Catalog** page is displayed with the **Tables and Views** tab highlighted.
 
    ![Create Data Product Share](./images/task1-scrn-7.png "Create Data Product Share")
 
-   1. Click on the **Data Objects** tab at the top of the **Catalog** page.
+   1. Click on the **Data Objects** tab at the top of the **Catalog** page,  to view the contents of the object storage buckets.
 
    ![Create Data Product Share](./images/task1-scrn-8.png "Create Data Product Share")
 
