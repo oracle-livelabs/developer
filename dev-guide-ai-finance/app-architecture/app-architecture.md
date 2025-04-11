@@ -7,7 +7,7 @@ We also have a closer look at all the features of the Oracle Database 23ai that 
 
 Estimated Lab Time: 15 minutes
 
-## **Physical Architecture**
+## Physical Architecture
 
 The SeerEquities loan application runs in an **Oracle Cloud Infrastructure (OCI)** Region, with its application layer in a public subnet inside a **Virtual Cloud Network (VCN)**.
 
@@ -37,7 +37,7 @@ The SeerEquities loan application runs in an **Oracle Cloud Infrastructure (OCI)
 
 This architecture provides strong connectivity, scalability, and integration with Oracle cloud-native services to support efficient loan processing and approval.
 
-## Task 2: Oracle Database 23ai features used in the demo app and in this workshop
+## Oracle Database 23ai features used in the demo app and in this workshop
 
 
 
