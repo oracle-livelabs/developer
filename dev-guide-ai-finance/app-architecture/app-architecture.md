@@ -1,83 +1,71 @@
-# Application architecture
+# Architecture & Workshop Features
 
 ## Introduction
 
-This section gives you a background of the logical and physical architecture behind the Seer Equities Loan Management Application
+In this lab, you will explore the architecture behind the workshop that supports the tasks you will perform.
+We also have a closer look at all the features of the Oracle Database 23ai that were used to build the workshop and the demo application.
 
-Estimated Time: 5 minutes
+Estimated Lab Time: 15 minutes
 
-### Objectives
+## **Physical Architecture**
 
-* Review the loan approval application physical architecture​
-* Review the loan approval application logical architecture
+The SeerEquities loan application runs in an **Oracle Cloud Infrastructure (OCI)** Region, with its application layer in a public subnet inside a **Virtual Cloud Network (VCN)**.
 
-## Task 1: Review physical architecture
+![Physical Architecture](./images/physical-architecture.png)
 
-The SeerEquities loan application is deployed in an Oracle Cloud Infrastructure (OCI) Region, with its application layer in a Public Subnet within a Virtual Cloud Network (VCN). The Application Tier VCN includes an Internet Gateway for outbound access and a Service Gateway for connectivity to Oracle Cloud Services.
+### Architecture Breakdown
 
-A Virtual Machine (VM) in the Public Subnet runs two Docker containers:
+- The Application Tier VCN includes:
 
-1. Streamlit for the Loan Approval Demo.
+    - An Internet Gateway for outbound traffic
 
-2. Jupyter Notebook for developers to explore Oracle Database 23ai features & OCI services.
+    - A Service Gateway for access to Oracle Cloud services
 
-The Application Subnet connects to the Oracle Services Network via the Service Gateway, allowing access to Autonomous Database Serverless, OCI Generative AI Services, OCI Object Storage, and other Oracle Cloud Services. This architecture ensures seamless, scalable, and secure operation of the application with high availability and access to Oracle’s cloud-native features.
+    - A Dynamic Routing Gateway (DRG) to connect to the Oracle Services Network
 
-![Login](./images/physical.png " ")
+    - A VM in the public subnet runs two containers, including:
 
-* **Public Subnet**: A Public Subnet is a segment of a Virtual Cloud Network (VCN) in Oracle Cloud Infrastructure (OCI) where resources, like virtual machines (VMs), are placed and can directly communicate with the internet. Resources in a public subnet are assigned public IP addresses, allowing them to be accessible from outside the VCN.
+        - Open-source Python library for the Loan Approval Demo
 
-* **Virtual Cloud Network (VCN**): A VCN is a private network in Oracle Cloud that you create to host your cloud resources. It acts as the backbone of your infrastructure, providing isolation and control over the flow of traffic between resources, both within OCI and to the outside world.
+        - JupterLab as a browser-based development environment
 
-* **Internet Gateway**: The Internet Gateway is a component of a VCN that provides a path for outbound and inbound traffic between the VCN and the internet. In your setup, the Internet Gateway allows the application layer to have outbound access to the internet.
+- The Application Subnet connects to the Oracle Services Network via the Service Gateway, enabling access to:
 
-* **Service Gateway**: A Service Gateway enables private connectivity between your VCN and Oracle Cloud Services like Autonomous Database, Oracle AI services, and Object Storage, without going through the public internet. This ensures secure, fast, and reliable communication between the VCN and Oracle’s cloud-native services.
+    - Autonomous Database Serverless
 
-* **Virtual Machine (VM)**: A Virtual Machine is an emulation of a physical computer within Oracle Cloud. It runs an operating system and applications, just like a physical server. In your setup, the VM runs two Docker containers that host specific applications—Streamlit and Jupyter Notebook.
+    - OCI Generative AI Services
 
-* **Autonomous Database Serverless**: Autonomous Database Serverless is a fully managed, scalable, and self-driving database service provided by Oracle. It automatically handles performance tuning, patching, and scaling. This service is typically used for applications that need robust, scalable, and self-managed database capabilities without manual intervention.
+This architecture provides strong connectivity, scalability, and integration with Oracle cloud-native services to support efficient loan processing and approval.
 
-* **OCI Generative AI Services**: OCI Generative AI Services provide cloud-based tools and services powered by artificial intelligence models to generate new content, such as images, text, or insights. These services are integrated with other OCI resources to enable smart applications, like generating loan approvals or analyzing data.
+## Task 2: Oracle Database 23ai features used in the demo app and in this workshop
 
-* **OCI Object Storage**: OCI Object Storage is a service that allows you to store large amounts of unstructured data, such as images, videos, backups, or application logs. It is scalable, durable, and accessible from anywhere, and is often used to store files that need to be accessed by applications and services within OCI.
 
-## Task 2: Review logical architecture
 
-This diagram represents the logical architecture of the **SeerEquities Loan Management Application**, showcasing the integration of modern data and AI technologies for efficient loan processing and management.
 
-* **Application VM (Docker Container)**:
-At the heart of the application is a containerized environment hosting a Streamlit application built with Python, connecting to OracleDB for data operations. This setup allows for rapid UI development and seamless data integration.
+### **JSON Duality View**
 
-* **End Users**:
+JSON Relational Duality in Oracle Database 23ai bridges the gap between relational and document data models. It gives developers the flexibility of JSON with the efficiency and power of relational storage. This eliminates the trade-offs of choosing one model over the other.
 
-    * **Loan Applicants** interact with the application to submit and manage loan requests.
+At the core of this capability is the JSON Relational Duality View, which lets applications read and write JSON while the data remains stored in relational tables.
 
-    * **Application Developers** work within the containerized environment to maintain and enhance the application.
+A key feature that should be highlighted is the ability to connect the database using Mongo DB syntaxt. This allows developers to interact with collections and documents using a familiar syntax. 
 
-* **Core Data Platform – Oracle Database 23ai**:
-The backend is powered by **Oracle Database 23ai**, supporting a wide variety of data types and features:
+**Where is it used**: We implemented JSON Duality View in the demo app and in this workshop. All data you can view in the dashboard of the demo app is query from JSON Duality Views.
+In Lab 3, you learn how to interact with JSON Duality View using Oracle's Python driver. But you also learn how to use Oracle's Mongo API to query JSON Duality Views using Mongo DB syntax.
 
-    * **Data Types**: Structured, Semi-structured, and Unstructured Data.
+### **AI Vector Search**
 
-    * **Advanced Capabilities**: JSON Duality Views, Functions, Property Graph, and External Table Support (Iceberg/Delta Lake).
+Oracle AI Vector Search, a feature of Oracle Database 23ai, enables fast, efficient searches over AI-generated vectors stored in the database. It supports multiple indexing strategies and scales to large datasets. With it, Large Language Models (LLMs) can query private business data using natural language, returning more accurate, context-aware results. Developers can also add semantic search to new or existing applications with minimal effort. A **unique feature** of Oracle Database 23ai is its capability to host ONNX models and deploy them as a database function. This feature allows you to host ONNX models and deploy them as a database function, enabling seamless integration with Oracle Database 23ai.
 
-    * **AI Integrations**: Supports **AI ONNX Models**, embedded **AI Features**, and seamless access to **Private Data** and **Shared Data Products**.
+**Where is it used**: AI Vector Search is a key feature of the demo app and is also a topic in Lab 4 and Lab 5. In Lab 4, you use AI Vector Search to implement a RAG process, while in Lab 5, you specifically implement similarity search.
 
-* **AI Features Module**:
-Enriches the application with cutting-edge capabilities including:
+### **Property Graph**
 
-    * **Vector Search**
+Oracle Database 23ai supports property graphs, which model relationships using vertices and edges mapped to existing tables, external tables, materialized views, or synonyms. These graphs store metadata—not the actual data—which remains in the underlying objects. You use SQL/PGQ to query and interact with them.
 
-    * **Retrieval-Augmented Generation (RAG)**
+Property graphs simplify working with connected data, such as identifying influencers, predicting trends, or discovering relationships through pattern matching, by offering a more intuitive and efficient way to model and query complex networks.
 
-    * **GenAI via Oracle Cloud Infrastructure (OCI)**
-
-    * And additional AI services.
-
-* **Cloud Integration**:
-Utilizes **Cloud LLMs** and **Object Storage** to enhance scalability, enable generative capabilities, and store large datasets.
-
-    ![Login](./images/logical.png " ")
+**Where is it used**: We implemented property graphs in the demo part of this workshop. Loan approval officers can use it to identify potential alternative loans for their customers.
 
 
 ## Acknowledgements

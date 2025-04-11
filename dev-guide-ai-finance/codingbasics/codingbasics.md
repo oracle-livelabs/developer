@@ -1,4 +1,4 @@
-# Start coding with Oracle Database 23ai
+# Learn to code with Oracle Database 23ai — JSON DV & Mongo API
 
 ## Introduction
 
@@ -122,9 +122,9 @@ Now, that we have established a connection, we can start creating our tables and
     ```python
     <copy>
     def query_orders():
-    with connection.cursor() as cursor:
-        cursor.execute("select * from orders")
-        rows = cursor.fetchall()
+        with connection.cursor() as cursor:
+            cursor.execute("select * from orders")
+            rows = cursor.fetchall()
         for row in rows:
             print(row)
 
@@ -167,7 +167,7 @@ Now, that we have established a connection, we can start creating our tables and
                 (78993, 'Sue', 'Gray', 'sue_gray@testmail.com', '2345 main street', '34454')
                 """)
             connection.commit()
-            print("Success!.")
+            print("Success!")
     except oracledb.DatabaseError as e:
             print(f"Error: {e}")
     </copy>
@@ -272,25 +272,25 @@ Copy the following code into a new cell and run it.
 
     ```python
     <copy>
-        import json
+    import json
 
-        def query_dv(first_name):
-            with connection.cursor() as cursor:
-                query = """
-                    SELECT * FROM customers_dv c
-                    WHERE JSON_EXISTS(c.data, '$[*]?(@.FirstName == $first_name)' PASSING :first_name AS "first_name")
-                """
-                cursor.execute(query, {"first_name": first_name})
-                rows = cursor.fetchall()
-                for row in rows:
-                    raw_json = row[0]
-                    try:
-                        print(json.dumps(raw_json, default=str, indent=4))
-                    except Exception as e:
-                        print(f"Error formatting JSON: {e}")
-                        print(raw_json)
+    def query_dv(first_name):
+        with connection.cursor() as cursor:
+            query = """
+                SELECT * FROM customers_dv c
+                WHERE JSON_EXISTS(c.data, '$[*]?(@.FirstName == $first_name)' PASSING :first_name AS "first_name")
+            """
+            cursor.execute(query, {"first_name": first_name})
+            rows = cursor.fetchall()
+            for row in rows:
+                raw_json = row[0]
+                try:
+                    print(json.dumps(raw_json, default=str, indent=4))
+                except Exception as e:
+                    print(f"Error formatting JSON: {e}")
+                    print(raw_json)
 
-        query_dv("Dom")
+    query_dv("Dom")
     </copy>
     ```
 
