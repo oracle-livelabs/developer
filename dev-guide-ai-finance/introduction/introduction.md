@@ -28,7 +28,7 @@ Make sure to check it out before continuing to Lab 3, where you will learn how t
 
 ✅ Implement AI Vector Search
 
-In lab 3, you will learn how to **implement a working example of retrieval-augmented generation (RAG) using Oracle Database 23ai.**
+In lab 4, you will learn how to **implement a working example of retrieval-augmented generation (RAG) using Oracle Database 23ai.**
 
 #### ➡️ **Start experimenting!**
 

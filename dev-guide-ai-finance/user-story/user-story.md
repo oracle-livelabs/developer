@@ -24,7 +24,7 @@ This lab assumes you have:
 
 * An Oracle account to submit your a LiveLabs Sandbox reservation.
 
-## Task 1: Launch the Application
+## Task 1: Launch the application
 
 1. To access the demo environment, click **View Login Info** in the top left corner of the page. Click the **Start the Demo** link.
 
@@ -34,15 +34,13 @@ This lab assumes you have:
 
     ![Login](./images/login.png =50%x*)
 
-3. Welcome to the SeerEquities Loan Management application!  
-   Congratulations, you are now connected to the demo environment. You can now execute the different tasks for this Lab.
+3. Welcome to the SeerEquities Loan Management application! Congratulations, you are now connected to the demo environment. You can now execute the different tasks for this Lab.
 
     ![Homepage](./images/app-home.png =50%x*)
 
-## Task 2: Demo - Customer with strong Credit Score
+## Task 2: Demo - Customer with strong credit score
 
-In this first example, you will use the application to approve a customer with strong credit score.  
-The first user on your to-do list is James Smith.
+In this first example, you will use the application to approve a customer with strong credit score. The first user on your to-do list is James Smith.
 
 1. On the Dashboard page, from the pending review list, select the Customer ID for **James Smith**.
 
@@ -184,79 +182,29 @@ In this example, you will navigate the application to review a customer who is d
 
 Congratulations, you have finished reviewing a customer with high financial risk! Proceed to the next task.
 
-## Task 4: Demo - Customer with applying for a loan for an affordable Housing Zone
-
-1. On the **Dashboard** page, from the **Pending Review Loan Requests** list, select the Customer ID for **Evan Burton**.
-
-    ![Select Evan Burton](./images/evan-burton.png =50%x*)
-
-2. This step displays the customer’s loan application details. Within seconds, the AI generates tailored recommendations based on the profile.
-
-    ![Evan Burton AI generated recommendations](./images/evan-burton-ai.png =50%x*)
-
-3. Select the **Navigate To Decisions** button.
-
-    ![Evan Burton Decision](./images/evan-burton-decision.png =50%x*)
-
-4. In the **Select Final Approved Loan Option** section, the loan options are displayed. This is where the loan officer could choose to request additional information in order to provide a slightly better loan. For this scenario, we will continue with selecting one of the suggested loans.
-
-    ![Evan Burton Select Final Approved Loan](./images/evan-burton-select-final-loan.png =50%x*)
-
-5. Select the AI suggested affordable housing zone loan with the lowest time to close. In our case, we would select loan number 49.
-
-    ![Evan Burton Select Loan 1](./images/evan-burton-select-loan.png =50%x*)
-
-6. Set the final loan status to **Approved**.
-
-    ![Evan Burton Approved](./images/evan-burton-approve.png =50%x*)
-
-7. Click the **Save Final Approval & Loan Status** button.
-
-    The loan status has been updated to 'Approved' and saved to the customer profile.
-
-    ![Evan Burton Save Loan Status](./images/evan-burton-save.png =50%x*)
-
-8. Click the **Generate Decision as PDF** button.
-
-    ![Evan Burton Download Recommendation](./images/evan-burton-download.png =50%x*)
-
-9. Click **Download PDF**
-
-    ![Evan Burton Download PDF](./images/evan-burton-download-pdf.png =50%x*)
-
-10. Display the message the customer would see by opening the downloaded PDF.
-
-    ![Open Evan Burton PDF](./images/open-evan-burton-pdf.png =50%x*)
-
-11. Click the **Return to Dashboard** button to navigate back to the Dashboard.
-
-    ![Return to Dashboard](./images/evan-return-dashboard.png =50%x*)
-
-12. Expand **View Approved Customers**. We can see that Evan Burton has been removed from the Pending Review Loan Requests list and has been added to the Approved Loan Requests list.
-
-    ![Evan Burton Approved List](./images/evan-burton-approved-list.png =50%x*)
-
-**Conclusion**
-
-Congratulations! You have successfully completed this task and approved another loan application.
-
-## Task 5: Demo - Update Customer Details
+## Task 4: Demo - Update customer details
 
 Lastly, let’s explore how the system handles profile updates. In this task, you will edit a customer’s details. In this example, the customer was asked to submit updated proof of income.
 
-1. On the Dashboard page, expand **View Denied Customers**. From the **Denied Loan Requests** list, select the customer ID for **Alex Anderson**.
+1. On the Dashboard page, from the **Pending Review Loan Requests** list, select the customer ID for **Alex Anderson**.
 
     ![Select Alex Anderson](./images/select-alex-anderson.png =50%x*)
 
-    Before uploading the document, note that the customer’s income is currently listed as $25,000.
+2. We will upload a document to update Alex's income. Before uploading the document, note that the customer’s income is currently listed as $25,000. On the Customer Details page, click the **Upload Document** button.
 
-2. On the Customer Details page, click the **Upload Document** button.
+    ![Upload Document](./images/upload-document.png =50%x*)
 
-    ![Expand Customer Details](./images/customer-details.png =50%x*)
+3. The PDF file has been loaded. Click the **Process Selected PDF** button.
 
-3. Scroll down to the bottom of the page and click the **Return to Dashboard** button.
+    ![Click Process Selected PDF](./images/process-selected-pdf.png =50%x*)
 
-    ![Click Dashboard](./images/click-dashboard.png =50%x*)
+4. The customer profile has been updated.
+
+    ![Customer Profile Updated](./images/profile-updated.png)
+
+5. Refresh the page and note that the income has been updated to $65,000. Thanks to JSON Transform and JSON Duality Views, only the relevant field is modified — leaving the rest of the profile UNTOUCHED.
+
+    ![Customer Profile Updated](./images/income-updated.png)
 
 **Conclusion**
 
@@ -266,7 +214,7 @@ Once the document is uploaded:
 
 ✅ Then their profile will be updated from $25,000 to $65,000.
 
-With this updated profile, our AI reevaluates the customers eligibility and identifies three approved loan options. Now we can make our final decision, and generate a PDF. The dashboard updates immediately, marking the customer's status as Approved.
+✅ And thanks to JSON Transform and JSON Duality Views, only the relevant field is modified — leaving the rest of the profile UNTOUCHED.
 
 ## Summary
 
@@ -281,8 +229,8 @@ In conclusion our Loan Management App was able to leverages Oracle database 23ai
 ✅ And empower loan officers with actionable insights through Operational Property Graphs 
 
 By combining these advanced tools, the application enables faster, smarter decisions and delivers clear guidance on how customers can improve their eligibility.
-
-**Next:** How about learning how to the application was implemented in Python? Continue with the next labs and start developing!
+ 
+**Next:** How about learning how the application was implemented in Python? Continue with the next labs and start developing!
 
 ## Learn More
 

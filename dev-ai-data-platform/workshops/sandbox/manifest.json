@@ -13,20 +13,20 @@
             "filename": "../../cloud-login/cloud-login.md"
         },
         {
-            "title": "Lab 1: Explore using Curated and Shared Data Products with GenAI Powered Apps",
-            "description": "Labs that follow the introduction are numbered, starting with Lab 1",
+            "title": "Lab 1: Explore Shared Data Products with GenAI Powered App",
+            "description": "Lab 1: Explore Shared Data Products with GenAI Powered App",
             "filename": "../../user-story/user-story.md"
         },
         {
-            "title": "Lab 2: Simplify Data Access, Transformation, Analytics, Visualization, and Sharing with Integrated Tools",
-            "description": "Labs that follow the introduction are numbered, starting with Lab 1",
+            "title": "Lab 2: Simplify Data Access and Data Sharing  with Integrated Tools",
+            "description": "Lab 2: Simplify Data Access and Data Sharing  with Integrated Tools",
             "filename": "../../tools/tools.md"
-        }, 
+        },
         {
             "title": "Lab 3: Discover and View your Data Lake Assets from your Data Catalog",
-            "description": "Labs that follow the introduction are numbered, starting with Lab 1",
+            "description": "Lab 3: Discover and View your Data Lake Assets from your Data Catalog",
             "filename": "../../discover-and-catalog/discover-and-catalog.md"
-        }, 
+        },
         {
             "title": "Lab 4: Load Object Storage Data into Autonomous Database",
             "description": "Labs that follow the introduction are numbered, starting with Lab 1",
@@ -41,17 +41,21 @@
             "title": "Lab 6: Subscribe to Data Product",
             "description": "This is a step-by-step guide showcasing how the demo instance is navigated",
             "filename": "../../mktplace-subscribe/mktplace-subscribe.md"
-        },   
+        },
         {
             "title": "Lab 7: Build Your Data Pipeline: Load & Transform Data",
             "description": "Labs that follow the introduction are numbered, starting with Lab 1",
             "filename": "../../load-transform/load-transform.md"
-        }, 
+        },
         {
             "title": "Lab 8: Hackathon Challenge",
             "description": "This is a step-by-step guide showcasing how the demo instance is navigated",
             "filename": "../../hack-answers/hack-answers.md"
-        }, 
+        },
+        {   "title": "Architecture",
+            "description": "Architecture of the Oracle AI Data Platform",
+            "filename": "../../architecture/architecture.md"
+        },
         {
             "title": "Need Help?",
             "description": "Solutions to Common Problems and Directions for Receiving Live Help",

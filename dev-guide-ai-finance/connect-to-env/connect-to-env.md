@@ -22,7 +22,7 @@ Estimated Time: 5 minutes
 
     ![Login](./images/jupyter-login.png " ")
 
-## Task 2: Get familiar with the Development Environment
+## Task 2: Get familiar with the development environment
 
 1. Review the different elements in JupyterLab:
 

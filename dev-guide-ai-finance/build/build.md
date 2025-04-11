@@ -34,7 +34,7 @@ This lab assumes you have:
     ![Open Jupyter Notebook](./images/open-new-notebook.png " ")
 
 
-## Task 2: Connect to the Database using oracledb Python driver
+## Task 2: Connect to the database using oracledb Python driver
 
 1. Copy the following code block into an empty cell in your notebook. This code block imports the `oracledb` Python driver and other libraries. 
 
@@ -195,7 +195,7 @@ Here’s what we’ll do:
 
 To handle follow-up questions, you will enhance the system with an AI Loan Guru powered by Oracle 23ai’s Vector Search and Retrieval-Augmented Generation (RAG). The AI Loan Guru will be able to answer questions about the loan application and provide recommendations based on the data.
 
-Before answering questions, we need to prepare the data by vectorizing the loan recommendations. This step:
+Before answering questions, we need to prepare the data by vectoring the loan recommendations. This step:
 
    - **Stores Recommendations**: Inserts the full recommendation text (from previous cell) as a single chunk if not already present.
 
@@ -393,7 +393,7 @@ Now that the recommendations are vectorized, we can process a user’s question:
 
 3. Review the result.
 
-    >*Ntoe:* Your result may be different due to non-deterministic character of generative AI.
+    >*Note:* Your result may be different due to non-deterministic character of generative AI.
 
     ![rag](./images/rag.png " ")
 
