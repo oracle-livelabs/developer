@@ -10,11 +10,11 @@ In this lab, you’ll practice importing data from Oracle Object Storage and pre
 
 ## Task 1: Load CSV Data from Object Storage (Approved Affordable Home Zones)
 
-In this task, you’ll work with a CSV file stored in your Oracle Object Storage bucket. A CSV file is a simple, tabular format similar to a spreadsheet, making it ideal for structured data like affordable home zone information.  
+In this task, you’ll work with a CSV file stored in your Oracle Object Storage bucket. A CSV file is a simple, tabular format similar to a spreadsheet, making it ideal for structured data like affordable home zone information.
 
 Here’s what you’ll do:
 
-#### 📥 Access the Object Storage Bucket
+### 📥 **Access the Object Storage Bucket**
 
 Locate the CSV file containing **"Approved Affordable Homes Zones"** data in your **Object Storage bucket**.
 
@@ -22,7 +22,7 @@ Understand the structure of the file by reviewing its **columns and data types**
 
 ---
 
-#### 🛠️ Load the CSV File into Oracle Autonomous Database
+### 🛠️ **Load the CSV File into Oracle Autonomous Database**
 
 Use Oracle tools (such as **SQL Developer Web** or **Data Pump**) to import the CSV file into your database.
 
@@ -31,7 +31,7 @@ Use Oracle tools (such as **SQL Developer Web** or **Data Pump**) to import the 
 
 ---
 
-#### ✅ Validate the Imported Data
+### ✅ **Validate the Imported Data**
 
 Run simple **SQL queries** to verify that all **rows and columns** were imported correctly.
 
@@ -39,7 +39,7 @@ Run simple **SQL queries** to verify that all **rows and columns** were imported
 
 ---
 
-#### 📊 Analyze Home Zone Data
+### 📊 **Analyze Home Zone Data**
 
 Use **SQL queries** to analyze the imported data directly in **Oracle Autonomous Database**. For example:
 
@@ -54,7 +54,7 @@ By the end of this task, you’ll have successfully **imported and validated CSV
 
 In this task, you’ll work with JSON files stored in your Object Storage bucket. JSON (JavaScript Object Notation) is a structured text format used for representing data as key-value pairs, often used for more complex datasets like loan offers. You’ll perform an ELT (Extract, Load, Transform) process to clean and reformat the data for analysis.
 
-#### 📂 Access the JSON File
+### 📂 **Access the JSON File**
 
 Locate the JSON file containing **"Loan Offers"** data in your **Object Storage bucket**.
 
@@ -62,7 +62,7 @@ Review its structure to understand the **key-value pairs** (e.g., loan ID, inter
 
 ---
 
-#### 📥 Load JSON Data into Oracle Autonomous Database
+### 📥 **Load JSON Data into Oracle Autonomous Database**
 
 Use Oracle’s **JSON support features** to load the file into a **dedicated table designed for JSON storage**.
 
@@ -70,7 +70,7 @@ Leverage tools like **SQL Developer Web** or **REST APIs** to streamline the loa
 
 ---
 
-#### 🔄 Transform JSON Data Using ELT
+### 🔄 **Transform JSON Data Using ELT**
 
 Extract meaningful information from **nested JSON structures** using SQL/JSON functions like `JSON_TABLE` or `JSON_VALUE`.
 
@@ -82,7 +82,7 @@ Clean and reformat the data as needed:
 
 ---
 
-#### 🔗 Join Loan Offers with Other Data
+### 🔗 **Join Loan Offers with Other Data**
 
 Combine loan offer data with other tables in your database using **SQL joins**.
 
@@ -95,7 +95,7 @@ For example:
 
 ---
 
-#### ✅ Validate and Test Queries
+### ✅ **Validate and Test Queries**
 
 Verify that transformations were applied correctly by running **test queries** on the transformed data.
 
@@ -122,7 +122,9 @@ By completing this task, you’ll understand how to handle complex JSON files, t
 
 ---
 
-### Affordable Housing Zone
+## Key Terms
+
+### **Affordable Housing Zone**
 
 Affordable Housing Zones are an economic development tool that allows people to invest in distressed areas in the United States. Their purpose is to spur economic growth and job creation in low-income communities while providing tax benefits to investors.
 
