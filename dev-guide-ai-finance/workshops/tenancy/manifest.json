@@ -35,12 +35,12 @@
         {
             "title": "Lab 5a Challenge Yourself: Code with AI Vector Search",
             "description": "Labs that follow the introduction are numbered, starting with Lab 1",
-            "filename": "../../ai-exercise/ai-exercise.md"
+            "filename": "../../ai-exercise/ai-vector-search-challenge.md"
         },
         {
             "title": "Lab 5b Step-by-step: Code with AI Vector Search",
             "description": "Labs that follow the introduction are numbered, starting with Lab 1",
-            "filename": "../../ai-answers/ai-answers.md"
+            "filename": "../../ai-exercise/ai-vector-search-challenge-answers.md"
         },
         {
             "title": "Lab 6a Challenge Yourself: Code with Property Graph",
