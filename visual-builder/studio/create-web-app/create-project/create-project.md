@@ -27,7 +27,6 @@ This lab assumes you have:
 * A Chrome browser
 * A VB Studio instance and a separate Visual Builder instance, with your [VB Studio instance authorized to access the Visual Builder instance](?lab=provision#Task3:AuthorizeVBStudiotoaccessVisualBuilder)
 
-
 ## Task 1: Create a project for a visual application
 
 As someone who creates a project, you'll automatically become the project's owner, responsible for project management. For the purposes of this workshop, we'll assume that you're also the developer who will create the HR web application.
@@ -53,19 +52,23 @@ As someone who creates a project, you'll automatically become the project's owne
 
 5. On the Project Team Members step, add other members of your team who will work with you on this visual application.
 
-    As the project owner, you can control what others can do in this project by granting them membership as a Developer Full Access, Developer Limited Access, Contributor, or even as another Project Owner. For demonstration purposes, we'll add Clara Coder with the Developer Limited Access role, which lets her access most project components.
+    As the project owner, you can control what others can do in this project by granting them membership as a Developer Full Access, Developer Limited Access, Contributor, or even as another Project Owner:
 
-    * Enter the username of a teammate in the **Add Members** field, then select the user from the results.
-    * Select a membership role for the user.
-    * Click **Add**.
+    a. Enter the username of a teammate in the **Add Members** field (for example, Clara Coder), then select the user from the results.
 
-        An email containing project details will be sent to Clara Coder. To receive email notifications, the teammate's email address must be verified and notifications set properly in Preferences.
+    b. Select a membership role for the user. For demonstration purposes, let's assign Clara Coder the Developer Limited Access role, which lets her access most project components.
+
+    c. Click **Add**.
+
+    An email containing project details will be sent to Clara Coder. To receive email notifications, the teammate's email address must be verified and notifications set properly in Preferences.
 
     Now click **Finish**.
 
     Wait for the project to be provisioned. Once provisioning completes, you'll see the Project Home page, which serves as a window to your workspaces, environments, and repositories, as well as a recent activities feed. On the left are a series of tabs showing the available project components.
 
     ![The Project Home page includes a Workspaces area, Environments area, and a Recent Activities feed. On the right, the Repositories tab, Statistics, and Team tabs are also visible.](images/project-home.png "Project Home page")
+
+    **Tip:** If you want to keep the left navigation menu clutter-free, showing only frequently used items, click ![Edit icon](images/icon-edit.png), select the items under User, and click **Save**. This tutorial commonly uses Workspaces, Git, Merge Requests, Builds, and Environments.
 
     Click ![Show/Hide Labels icon](images/show-hide-labels-icon.png) to hide the labels and increase screen space.
 
@@ -85,7 +88,7 @@ Define an environment that points to your Visual Builder development instance, w
 
     ![The empty Development environment shown on the Environments page. An Add Instance button is shown in the Service Instances tab. The Details and Certificates tabs are also visible.](images/env-add-instance.png "Environments page")
 
-4. With Instance Type set to **Visual Builder and Oracle Integration** and Add Instance Using set to **Instance List** in the Add Service Instance dialog, click ![Edit icon](images/edit-icon.png) next to OCI Details and choose the region and compartment where your Visual Builder is, then select an instance from the list. (If the instance you want does not show, you're likely missing a policy statement for the OCI compartment used by your VB Studio instance and should [add it in](?lab=provision#Task3:AuthorizeVBStudiotoaccessVisualBuilder).) Once you have the instance you want, select it and click **Add**.
+4. Select **Visual Builder** under Instance Type in the Add Service Instance dialog. With Add Instance Using set to **Instance List**, click ![Edit icon](images/edit-icon.png) next to OCI Details and choose the region and compartment where your Visual Builder is, then select an instance from the list. (If the instance you want does not show, you're likely missing a policy statement for the OCI compartment used by your VB Studio instance and should [add it in](?lab=provision#Task3:AuthorizeVBStudiotoaccessVisualBuilder).) Once you have the instance you want, select it and click **Add**.
 
     ![The Add Service Instances dialog with myVBinstance of type Visual Builder selected. An Add button is also shown.](images/env-add-service-instances.png "Environments page")
 
@@ -128,7 +131,7 @@ You now need to create a workspace, a private area for you to work on your visua
 
     On the left is the name of your current workspace, **HR Workspace**. Next to it is the project's Git repository (**tutorial-hr-project.git**) and the branch currently associated with your workspace (**hrbranch**).
 
-    The **tutorial-hr-project.git** repo stores your visual application's files and is known as your project's _remote_ repository. It includes the **main** and **hrbranch** branches, created with initial content for your visual application. The **main** branch is the default branch created when a new repo is generated and is the source from which your visual application is built. The **hrbranch** you see in your workspace is a working copy of the remote **hrbranch** and serves as your _local_ repository. It initially has the same set of source files as the remote branch, but as you work with your visual application, it will include the changes you make.
+    The **tutorial-hr-project.git** repo stores your visual application's files and is known as your project's _remote_ repository. If you were to look at your Git repo, you'll see it includes the **main** and **hrbranch** branches, created with initial content for your visual application. The **main** branch is the default branch created when a new repo is generated and is the source from which your visual application is built. The **hrbranch** you see in your workspace is a working copy of the remote **hrbranch** and serves as your _local_ repository. It initially has the same set of source files as the remote branch, but as you work with your visual application, it will include the changes you make.
 
     Click the workspace and the Git repo/branch to see other actions that you can perform. Clicking ![Go to Project Page icon](images/go-to-project-home-icon.png) will take you back to the Project Home page.
 
@@ -145,4 +148,4 @@ You now need to create a workspace, a private area for you to work on your visua
 ## Acknowledgements
 
 * **Author** - Sheryl Manoharan, VB Studio User Assistance, November 2021
-* **Last Updated By/Date** - Sheryl Manoharan, January 2025
+* **Last Updated By/Date** - Sheryl Manoharan, April 2025
