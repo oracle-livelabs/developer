@@ -1,64 +1,32 @@
-# Create Data Product Share & Publish to Data Share
+# 🛠️ Create and Share Data Products
 
-## Lab Summary
+## Introduction
 
-In this Lab, you will:
- *  Utilize a data share provider account (**LOAN user**) that logs in and manages the data shares for the recipients of the data share (**RISK and MARKETING users**)
- *  Leverage an Object Storage bucket to store the shared data - **MySharedBucket**
- *  Create and publish data shares - **LoanApp_Share2Marketing & LoanApp_Share2Risk**
- *  Create and authorize a data share recipient
-
-## Prerequisites
-
-*	**An Oracle account**
-
-*  **Prerequisites for Share Providers** to use the share tool:
-      * For a versioned share, you must have read and write access to a bucket to store or cache your shares.
-      * The schema you wish to use to create and publish shares must be enabled by an ADMIN user.
-
-*  **Prerequisites for Share Recipients**
-      * The share recipient must have a valid email address a provider can use to register the recipient to use the share tool. Oracle Data Share allows you to share the recipient's activation link by email.
-
-## Terminology
-
-### Architecture:
-
-   ![Share Architecture](./images/share-architecture.png "Share Architecture")
-
-   The Autonomous Database Serverless includes the ability to share database objects across the databases, tools and APIs that are accessible to an organization.  The ability to share incorporates features to make it scalable and secure.
-
-   ***Data Share:***
-
-   A  Data Share is a named entity in the provider’s instance.
-   It can be a group of datasets shared as a single entity.
-
-   **Example:** A SALES table that needs to be shared within an organization.
-
-   ***Provider:***
-
-   The Autonomous Database Serverless enables the provider to share existing objects.
-   **The share can contain a single table, a set of related tables, or a set of tables with some logical grouping.**
-
-   A provider could be a person, an institution, or a software system that shares one or a set of related tables.
-
-   Example: An institution, such as NASA, that makes a data set available via data.gov.
-
-   ***Recipient:***
-
-   A **Share recipient** is an entity that associates an individual, an institution or a software system that receives a share from a provider. A recipient can have access to multiple shares. If you remove a recipient, that recipient loses access to all shares it could previously access.
-
-   **Example:** An external system, such as Microsoft Power BI, that supports the Delta Sharing REST API.
-
-## Overview
-
-In this lab, as a share provider, you will create a data share and add a table to it.
-Next, you will create a new recipient that will have access to this data share.
+In this lab, as a share provider, you will create a data share and add a table to it. Next, you will create a new recipient that will have access to this data share.
 
 Finally, you will publish the data share and send the recipient the activation link needed to access the data share.
 
+In this Lab, you will:
+
+* Utilize a data share provider account (**LOAN user**) that logs in and manages the data shares for the recipients of the data share (**RISK and MARKETING users**)
+* Leverage an Object Storage bucket to store the shared data - **MySharedBucket**
+* Create and publish data shares - **LoanAppShare2Marketing** & **LoanAppShare2Risk**
+* Create and authorize a data share recipient
+
+### Prerequisites
+
+* An Oracle account
+
+* **Prerequisites for Share Providers to use the share tool:**
+      * For a versioned share, you must have **read and write access to a bucket** to store or cache your shares.
+      * The schema you wish to use to create and publish shares must be **enabled by an ADMIN user**.
+
+* **Prerequisites for Share Recipients**
+      * The share recipient must have a **valid email address** a provider can use to register the recipient to use the share tool. Oracle Data Share allows you to share the recipient's activation link by email.
+
 ## Task 1: Create Data Product Share
 
-1. Begin on the **Database Actions Launchpad** while logged on as the ADMIN user.
+1. Begin on the **Database Actions Launchpad** while logged on as the **ADMIN** user.
 
    ![Create Data Product Share](./images/create-data-product-share-1.png "Create Data Product Share")
 
@@ -75,13 +43,13 @@ Finally, you will publish the data share and send the recipient the activation l
 
    * Select user schema listed in the Available Schemas column.
    * Click ">" button to place it in the Selected Schemas column.
-   * Click Save.
+   * Click **Save**.
 
 1. On the **Database Actions Launchpad**, click the user icon in the top right corner.
 
    ![Create Data Product Share](./images/create-data-product-share-1a.png "Create Data Product Share")
 
-   Log out as the ADMIN user.
+   Log out as the **ADMIN** user.
 
 ## Task 2: Define a New Recipient for the Data Product Share
 
@@ -103,7 +71,6 @@ Finally, you will publish the data share and send the recipient the activation l
 1. Click **Provider Identification** on the **Provide Share** page.
 
    ![Define a Data Product Recipient](./images/define-data-product-share-recipient-4.png "Define a Data Product Recipient")
-
 1. Provide details for the provider in the **Provider Identification** popup window.
 
    ![Define a Data Product Recipient](./images/define-data-product-share-recipient-5.png "Define a Data Product Recipient")
@@ -113,7 +80,6 @@ Finally, you will publish the data share and send the recipient the activation l
       * **Email:** MyEmail@MyCompany.com
       * **Description:** a meaningful description is required
    * Click **Save**.
-
 1. Click **Share** on the **Provide Share** page, to begin entering details for the new share.
 
    ![Define a Data Product Recipient](./images/define-data-product-share-recipient-6.png "Define a Data Product Recipient")
@@ -141,7 +107,6 @@ Finally, you will publish the data share and send the recipient the activation l
    * Select the **Clients_To_Loan** table in the Available Tables column.
    * Click the ">" button to list it to the Shared Tables column
    * Click **Next**.
-
 1. There are no recipients are available, click **New Recipent** to create a new one on the **Recipients** page.
 
    ![Define a Data Product Recipient](./images/define-data-product-share-recipient-10.png "Define a Data Product Recipient")
@@ -184,8 +149,99 @@ Finally, you will publish the data share and send the recipient the activation l
 
 **Congratulations you have shared your data from ADB to the Marketing Dept Lead.**
 
-#
+---
+
+## Key Terms
+
+---
+
+### **About Data Share**
+
+***Share:***
+
+A  Data Share is a named entity in the provider’s instance.
+It can be a group of datasets shared as a single entity.
+
+**Example:** A SALES table that needs to be shared within an organization.
+
+***Provider:***
+
+The Provider is the entity (person, institution, or system) that shares data objects using Oracle Autonomous Database Serverless. The provider can share individual tables, related tables, or logically grouped tables.
+
+   **Example**: An institution like NASA sharing datasets via data.gov.
+
+***Recipient:***
+
+A Recipient is the entity (individual, institution, or system) that receives access to a share from the provider. Recipients can have access to multiple shares. If a recipient is removed, they lose access to all associated shares.
+
+   **Example**: An external system like Microsoft Power BI that supports the Delta Sharing REST API.
+
+***Overview of Providers and Recipients:***
+
+A Data Share is a logical container holding objects (e.g., tables) that recipients can access. It simplifies authorization by implementing security mechanisms at a high object level for grouped objects.
+
+* The Provider creates and publishes a share of a versioned type.
+
+* The Recipient is granted access to the share and its contents.
+
+* Providers can modify both data and metadata in shares even after they are published.
+
+***Use Case for Data Sharing***
+
+A marketing agency can share sales information with multiple interested parties using the Data Share tool.
+
+***How the Data Share Tool Works***
+
+Data sharing is facilitated by Oracle Autonomous Database, allowing providers to make data accessible to recipients in two formats:
+
+* Versioned Shares: Data is shared in parquet format at query time using the open Delta Sharing standard protocol with a REST-based API.
+
+* Live Shares: Data is shared in near real-time using cloud links and can only be consumed within Oracle databases.
+
+***Key Points for Providers***
+
+Providers can only share data they have access to within their Autonomous Database instance.
+
+The provider creates a share and selects entities (recipients) to share it with.
+
+For general recipients, data sharing follows the Delta Sharing standard protocol.
+
+For near real-time sharing, Live Shares are accessed via the recipient’s Autonomous Database Serverless (ADB-S) instance.
+
+***Protocols for Data Sharing***
+
+**Autonomous Database Serverless Versioned Sharing Protocol**
+
+1. The provider creates and publishes a share that can be accessed by one or more recipients.
+2. Each recipient receives a personal activation link to download their JSON profile containing necessary access information.
+3. The recipient registers with the share server using:
+   * URL of the endpoint
+   * Client ID
+   * Secret key
+   * Bearer token
+4. The recipient retrieves data by:
+   * Calling the /shares/../tables/../query endpoint to obtain URLs.
+   * Sending GET requests to these URLs to download parquet files.
+
+**Autonomous Database Serverless Live Sharing Protocol**
+
+1. For Live Shares, recipients copy the sharing ID from the consumer page.
+2. The provider publishes the share for specific recipients or broader scopes such as:
+   * ALL_REGIONS
+   * ALL_TENANCY
+   * ALL_COMPARTMENTS
+
+
+### **Architecture**
+
+   ![Share Architecture](./images/share-architecture.png "Share Architecture")
+
+   The Autonomous Database Serverless includes the ability to share database objects across the databases, tools and APIs that are accessible to an organization.  The ability to share incorporates features to make it scalable and secure.
+
+
 ## Acknowledgements
-* **Author** - <Name, Title, Group>
-* **Contributors** -  <Name, Group> -- optional
-* **Last Updated By/Date** - <Name, Month Year>
+* **Authors** - Matt Kowalik, Otis Barr
+* **Contributors** - Eddie Ambler, Ramona Magadan
+* **Last Updated By/Date** - TBC
+
+Copyright (C) Oracle Corporation.
