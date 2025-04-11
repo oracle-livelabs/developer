@@ -4,6 +4,8 @@
 
 In this workshop, you will build a GenAI-powered loan approval app using Oracle Autonomous Database and Oracle Database 23ai.
 
+Estimated time: 2-3 hours
+
 #### ➡️ **Start with the demo!**
 
 The demo shows how a loan officer uses Generative AI, Vector Search, and Graph analytics to evaluate real applications and streamline decisions.  
@@ -48,6 +50,8 @@ To get things started we invite you to watch the introduction video to see the d
 * Learn how to implement and interact with Oracle Database 23ai's new features using Python
 
 * Implement a working example of retrieval-augmented generation (RAG) using Oracle Database 23ai
+
+* Try a coding challenge and implement a solution using AI Vector Search
 
 ### Prerequisites
 
