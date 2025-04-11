@@ -14,7 +14,6 @@ At SeerEquites, the data science team has been utilizing different techniques wi
 
 Traditional keyword searches can miss the mark when it comes to understanding context. For example, "Affordable Housing Loan" and "Low-Income Home Loan" may be similar in meaning, but use different words. AI Vector Search solves this by converting text into numerical vectors(embeddings) that capture meaning, allowing the database to find loans that are conceptually similar, not just textually identical. Using Oracle database 23ai's vector capabilities, you'll use similarity search to find the related data based on it's semantic meaning.
 
-
 If you're ready to dive in, proceed with this lab and start coding. If you prefer a more guided approach with a detailed walkthrough, you can continue to Lab 5b Step-by-step: Code with AI Vector Search for step-by-step instructions.
 
 Good luck, and enjoy the process. Let’s get coding!
