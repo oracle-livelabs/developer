@@ -29,22 +29,26 @@ After you've confirmed search is working, you are ready to deploy the extension 
 
     ![This image show the Publish button selected in the upper right corner of the workspace.](images/publish.png)
 
-2. In the Publish dialog, enter a description of the changes in the **Commit Message** field, then click **Publish**:
+2. In the Publish dialog, enter a description of your changes in the **Commit Message** field.
 
-    ![This image shows the Publish Changes dialog with Merge Now selected and the "Employee Search Application" entered in the Commit Message field.](images/publish-changes-dialog.png)
+    ![This image shows the Publish Changes dialog with "Employee Search Application" entered in the Commit Message field. The Target Branch is set to "main", Merge Now is selected, and the New Working Branch Name is set to the default suggested name.](images/publish-changes-dialog.png)
 
-3. If you're prompted to authorize your environment, click **OK** in the Authorization Required dialog, then click **Authorize** in the Authorize Jobs page. If additionally prompted to set up OAuth, enter the credentials of a user who can access your Oracle Cloud Applications instance and click **Authorize**.
+3. Note the **New Working Branch Name**. Once you publish a branch, you can no longer use it, so VB Studio automatically creates a new working branch and switches your workspace to it for any future changes. It's recommended that you provide a more meaningful name for your new working branch.
+
+4. Click **Publish**.
+
+5. If you're prompted to authorize your environment, click **OK** in the Authorization Required dialog, then click **Authorize** in the Authorize Jobs page. If additionally prompted to set up OAuth, enter the credentials of a user who can access your Oracle Cloud Applications instance and click **Authorize**.
 
     Once you've provided authorization, return to your workspace and click **Publish** again to restart the publishing process.
 
-4. When the changes are published to your project's Git repository, click **Close**.
+6. When the changes are published to your project's Git repository, click **Close**.
     ![This image shows Publish Changes dialog detailing the steps taken to deploy changes from your workspace to the project's repository in this order: Checking environments and build jobs, git commit branch1, git fetch, git merge main to branch1, git merge branch1 to main, and git push. There's also a message asking the user not to use the current branch as changes are being deployed and that a new branch maryjane-timestamp has been temporarily created for the user.](images/published.png)
 
     What you're seeing are the Git steps taken to push your changes from the local **branch1** to the remote **branch1**, then to merge them to the project's **main** branch.
 
 ## Task 2: View the deployed extension
 
-Once your changes are successfully merged to your project's repo, VB Studio automatically kicks off the default build jobs that deploy the extension to your environment's Oracle Cloud Applications instance. Notifications to that effect appear in the bottom right corner.
+Once your changes are successfully merged to your project's repo, VB Studio automatically kicks off the default build jobs that deploy the extension to your environment's Oracle Cloud Applications instance. Notifications to that effect appear in the bottom right corner. You can also click ![Notifications icon](images/icon-notifications.png) in the header to view each job's progress.
 
 1. Click ![Go to project page icon](images/icon-gotoprojectpage.png) in the header to go to the Project Home page.
 
@@ -71,4 +75,4 @@ Once your changes are successfully merged to your project's repo, VB Studio auto
 ## Acknowledgements
 
 * **Author** - Sheryl Manoharan, VB Studio User Assistance, May 2023
-* **Last Updated By/Date** - Sheryl Manoharan, January 2025
+* **Last Updated By/Date** - Sheryl Manoharan, April 2025
