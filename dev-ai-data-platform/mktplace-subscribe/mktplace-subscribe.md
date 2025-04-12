@@ -68,13 +68,16 @@ By the end of this lab, you’ll understand how the **Data Marketplace** enables
       * **Delta Share Profile JSON:** Click this box. In the Open dialog box, navigate to the location where you downloaded the data share profile, select it, and then click Open.
       *  **Provider Name:** Enter Demo-LoanApp-Data-Share
 
-1. On the **Add Shares** screen will appear.
+1. This will cause the **Add Shares** screen to appear.
 
    ![Create Data Product Share](./images/subscribe-to-data-share-11.png "Create Data Product Share")
 
    * Select the **LoanApp_Share2Risk** share in the Available Shares column.
-   * Click the ">" button to reloate the share in the Shared Shares column
-   * Click **Next**.
+   * Click the ">" button to reloate the share in the Shared Shares column.
+
+   The LoanApp Share2Risk share is displayed in the **Selected Shares** column.
+
+   * Click **Subscribe**.
 
     The LoanApp_Share2Risk share is displayed in the **Selected Shares** section.  Click **Subscribe**.
 
@@ -110,7 +113,7 @@ Click **Close** when you're done.
 
 A Start Link From Cloud Store message box is displayed.
 
-Click **Run**.
+On the popup box that appears, click **Run**.
 
    ![Create Data Product Share](./images/subscribe-to-data-share-17.png "Create Data Product Share")
 
@@ -126,7 +129,9 @@ Click **Close** when done.
 
    ![Create Data Product Share](./images/subscribe-to-data-share-19.png "Create Data Product Share")
 
-1.  In the Table and View Loads section, Click the external table link named **Shared_Loan_Data_Risk_VW** to preview its data.
+1.  In the Table and View Loads section, 
+
+   * Click the external table link named **Shared_Loan_Data_Risk_VW** to preview its data.
 
 Remember, that the source data for this external table is from the **Shared_Loan_Data_Risk_VW** data share.
 
