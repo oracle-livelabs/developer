@@ -27,7 +27,9 @@ This lab assumes you have:
 
 ## Task 1: Build the application in Jupyter Notebook
 
-1. Change to the **ai-app-dev** directory
+1. Select the **streamlit** folder.
+
+    ![Click Streamlit](./images/click-streamlit.png " ")
    
 2. Open a new **Jupyter Notebook** by clicking on **Pyhton(ipykernel)** notebook.
 
