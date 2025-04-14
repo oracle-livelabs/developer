@@ -2,9 +2,10 @@
 
 ## Introduction
 
-In this lab, we will show you how to connect to the development environment.  
-We are using JupyterLab as our development environment, which is a web-based application that allows you to write and run code on your browser.  
-You can use this environment to create notebooks, edit files, and run Python scripts.
+In this lab, we will show you how to connect to the development environment.
+
+- We are using JupyterLab as our development environment, which is a web-based application that allows you to write and run code on your browser.
+- You can use this environment to create notebooks, edit files, and run Python scripts.
 
 Estimated Time: 5 minutes
 
