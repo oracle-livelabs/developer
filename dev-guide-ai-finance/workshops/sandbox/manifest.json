@@ -8,7 +8,7 @@
             "filename": "../../introduction/introduction.md"
         },
         {
-            "title": "Lab 1: Demo Guide",
+            "title": "Lab 1: Run the Demo",
             "description": "Labs that follow the introduction are numbered, starting with Lab 1",
             "filename": "../../user-story/user-story.md"
         },
@@ -18,7 +18,7 @@
             "filename": "../../connect-to-env/connect-to-env.md"
         },
         {
-            "title": "Lab 3: Learn to code with Oracle Database 23ai — JSON DV & Mongo API",
+            "title": "Lab 3: Coding Basics on 23ai",
             "description": "Some coding examples",
             "filename": "../../codingbasics/codingbasics.md"
         },
