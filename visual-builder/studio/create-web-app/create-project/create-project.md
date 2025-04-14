@@ -68,9 +68,10 @@ As someone who creates a project, you'll automatically become the project's owne
 
     ![The Project Home page includes a Workspaces area, Environments area, and a Recent Activities feed. On the right, the Repositories tab, Statistics, and Team tabs are also visible.](images/project-home.png "Project Home page")
 
-    **Tip:** If you want to keep the left navigation menu clutter-free, showing only frequently used items, click ![Edit icon](images/icon-edit.png), select the items under User, and click **Save**. This tutorial commonly uses Workspaces, Git, Merge Requests, Builds, and Environments.
+    Try these tips to optimize your work area:
+    * To keep the left navigation menu clutter-free, showing only frequently used items, click ![Edit icon](images/icon-edit.png), select the items under User, and click **Save**. This tutorial commonly uses Workspaces, Git, Merge Requests, Builds, and Environments.
 
-    Click ![Show/Hide Labels icon](images/show-hide-labels-icon.png) to hide the labels and increase screen space.
+    * To hide the labels and increase screen space, click ![Show/Hide Labels icon](images/show-hide-labels-icon.png).
 
     Because we created a project with no preconfigured settings or content, we need to create what we need, by defining an environment that connects to a Visual Builder instance, then creating a workspace with a Git repository.
 
