@@ -46,7 +46,7 @@ This lab assumes you have:
 
     The action now has the label **Navigate To Page main-employees**.
 
-8. Click ![Preview icon](images/preview-icon.png) **Preview** in the header to run the page in its own browser tab and see how it will appear to a user. (You can use the Live mode to test your app if you prefer, though the Preview form factor is a bit more pleasing.)
+8. Click ![Preview icon](images/preview-icon.png) **Preview** in the header to run the page in its own browser tab and see how it will appear to a user.
 
 9. In the new browser tab, click **Show Employees**.
 
@@ -78,4 +78,4 @@ This lab assumes you have:
 ## Acknowledgements
 
 * **Author** - Sheryl Manoharan, VB Studio User Assistance, November 2021
-* **Last Updated By/Date** - Sheryl Manoharan, January 2025
+* **Last Updated By/Date** - Sheryl Manoharan, April 2025
