@@ -30,7 +30,7 @@ By the end of this lab, you’ll understand how the **Data Marketplace** enables
 
    ![Create Data Product Share](./images/subscribe-to-data-share-2.png "Create Data Product Share")
 
-1. Select **Database Actions**., then **View All Database Actions**
+1. Select **Database Actions**, then **View All Database Actions**
 
    ![Create Data Product Share](./images/subscribe-to-data-share-3.png "Create Data Product Share")
 
@@ -54,7 +54,7 @@ By the end of this lab, you’ll understand how the **Data Marketplace** enables
 
    ![Create Data Product Share](./images/subscribe-to-data-share-8.png "Create Data Product Share")
 
-1. Select **Subscribe to Delta Share Provicer** from the drop-down list on page, click on **Consumer Share** page.
+1. Select **Subscribe to Delta Share Provider** from the drop-down list on page, click on **Consumer Share** page.
 
    ![Create Data Product Share](./images/subscribe-to-data-share-9.png "Create Data Product Share")
 
@@ -90,7 +90,7 @@ By the end of this lab, you’ll understand how the **Data Marketplace** enables
 
 1. Expand the drill down tab for **Demo-LoanApp-Data-Share**  to display the available data.
 
-1. Now Let's create an external table based on the **LOAN.Shared_Loan_Data_Risk_VW** file.
+1. Now Let's create an external table based on the **LOAN.Shared\_Loan\_Data\_Risk\_VW** file.
 Drag and drop this file onto the data linking job section.
 
    ![Create Data Product Share](./images/subscribe-to-data-share-14.png "Create Data Product Share")
@@ -126,14 +126,14 @@ Click **Close** when done.
 
    ![Create Data Product Share](./images/subscribe-to-data-share-19.png "Create Data Product Share")
 
-1.  In the Table and View Loads section, Click the external table link named **Shared_Loan_Data_Risk_VW** to preview its data.
+1.  In the Table and View Loads section, Click the external table link named **Shared\_Loan\_Data\_Risk\_VW** to preview its data.
 
-Remember, that the source data for this external table is from the **Shared_Loan_Data_Risk_VW** data share.
+Remember, that the source data for this external table is from the **Shared\_Loan\_Data\_Risk\_VW** data share.
 
 
    ![Create Data Product Share](./images/subscribe-to-data-share-20.png "Create Data Product Share")
 
-The **Clients_To_Loan** panel is displayed with the **Preview** tab selected by default that displays the external table's data.
+The **Clients\_To\_Loan** panel is displayed with the **Preview** tab selected by default that displays the external table's data.
 
    ![Create Data Product Share](./images/subscribe-to-data-share-21.png "Create Data Product Share")
 
