@@ -27,13 +27,13 @@ By the end of this lab, you’ll have hands-on experience with:
 
 ## Task 2: Share Data Product to Marketplace for Marketing Officer Consumption 
 
-* Publish your Client_Loans_Marketing_Dept_View data to the Marketplace, so that the Marketing team can quickly grab data whenever they need insights. 
+* Publish your Client\_Loans\_Marketing\_Dept\_View data to the Marketplace, so that the Marketing team can quickly grab data whenever they need insights. 
 
 * This helps Marketing Officers run campaigns, target the right customers, and customize offers in a snap—no extra steps required. 
 
 ## Task 3: Subscribe to Data Product for Marketing Officer 
 
-* Subscribe to published  Client_Loans_Marketing_Dept_View data to ensure the Marketing team’s custom loan data is at your fingertips. 
+* Subscribe to published  Client\_Loans\_Marketing\_Dept\_View data to ensure the Marketing team’s custom loan data is at your fingertips. 
 
 * Subscribing gives you an instant connection to that data, so you can analyze it or integrate it into other reports without any extra hassle. 
 
