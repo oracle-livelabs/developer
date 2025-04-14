@@ -76,7 +76,7 @@ In this Lab, you will:
    ![Define a Data Product Recipient](./images/define-data-product-share-recipient-5.png "Define a Data Product Recipient")
 
    * Enter the following:
-      * **Name:** LoanApp_Share_Provider
+      * **Name:** LoanApp\_Share\_Provider
       * **Email:** MyEmail@MyCompany.com
       * **Description:** a meaningful description is required
    * Click **Save**.
@@ -89,7 +89,7 @@ In this Lab, you will:
    ![Define a Data Product Recipient](./images/define-data-product-share-recipient-7.png "Define a Data Product Recipient")
 
    * Enter the following:
-      *  **Name:** LoanApp_Share2Marketing
+      *  **Name:** LoanApp\_Share2Marketing
       *  **Description:** a description (optional)
    * Click **Next**.
 

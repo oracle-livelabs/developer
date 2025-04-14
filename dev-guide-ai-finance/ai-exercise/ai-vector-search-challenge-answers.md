@@ -54,7 +54,9 @@ The data science team at SeerEquites has provided a Jupyter Notebook called `ai_
 
 All of the coding examples will be executed in a new Jupyter Notebook.
 
-1. Change to the **ai-app-dev** directory
+1. Select the **streamlit** folder.
+
+    ![Click Streamlit](./images/click-streamlit.png " ")
 
 2. Open a new **Jupyter Notebook** by clicking on **Python(ipykernel)** notebook.
 
