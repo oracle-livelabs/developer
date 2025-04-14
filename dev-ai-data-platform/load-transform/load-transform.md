@@ -6,47 +6,37 @@
 
 In this lab, you’ll practice importing data from Oracle Object Storage and preparing it for analysis in various formats. You’ll learn how to load both CSV and JSON files into Oracle Autonomous Database and transform them for easier use. By the end of this lab, you’ll understand how to efficiently move data from Object Storage—regardless of its format—and apply transformations to make it searchable, shareable, and ready for analysis.
 
-
-
 ## Task 1: Load CSV Data from Object Storage (Approved Affordable Home Zones)
 
 In this task, you’ll work with a CSV file stored in your Oracle Object Storage bucket. A CSV file is a simple, tabular format similar to a spreadsheet, making it ideal for structured data like affordable home zone information.
 
 Here’s what you’ll do:
 
-### 📥 **Access the Object Storage Bucket**
+📥 **Access the Object Storage Bucket**
 
-Locate the CSV file containing **"Approved Affordable Homes Zones"** data in your **Object Storage bucket**.
+* Locate the CSV file containing **"Approved Affordable Homes Zones"** data in your **Object Storage bucket**.
 
-Understand the structure of the file by reviewing its **columns and data types** (e.g., zone names, approval dates, or geographic coordinates).
+* Understand the structure of the file by reviewing its **columns and data types** (e.g., zone names, approval dates, or geographic coordinates).
 
----
-
-### 🛠️ **Load the CSV File into Oracle Autonomous Database**
+🛠️ **Load the CSV File into Oracle Autonomous Database**
 
 Use Oracle tools (such as **SQL Developer Web** or **Data Pump**) to import the CSV file into your database.
 
 - Create a **new table** or use an **existing one** to store the data.
 - Ensure **column mappings are accurate** to preserve data integrity.
 
----
-
-### ✅ **Validate the Imported Data**
+✅ **Validate the Imported Data**
 
 Run simple **SQL queries** to verify that all **rows and columns** were imported correctly.
 
 - Check for any **missing or corrupted data** and troubleshoot if necessary.
 
----
-
-### 📊 **Analyze Home Zone Data**
+📊 **Analyze Home Zone Data**
 
 Use **SQL queries** to analyze the imported data directly in **Oracle Autonomous Database**. For example:
 
 - Identify **zones with the highest approvals**.
 - Filter zones by specific criteria, such as **location** or **approval status**.
-
----
 
 By the end of this task, you’ll have successfully **imported and validated CSV data**, making it **ready for analysis** within Oracle.
 
@@ -54,25 +44,21 @@ By the end of this task, you’ll have successfully **imported and validated CSV
 
 In this task, you’ll work with JSON files stored in your Object Storage bucket. JSON (JavaScript Object Notation) is a structured text format used for representing data as key-value pairs, often used for more complex datasets like loan offers. You’ll perform an ELT (Extract, Load, Transform) process to clean and reformat the data for analysis.
 
-### 📂 **Access the JSON File**
+📂 **Access the JSON File**
 
-Locate the JSON file containing **"Loan Offers"** data in your **Object Storage bucket**.
+* Locate the JSON file containing **"Loan Offers"** data in your **Object Storage bucket**.
 
-Review its structure to understand the **key-value pairs** (e.g., loan ID, interest rate, applicant details).
+* Review its structure to understand the **key-value pairs** (e.g., loan ID, interest rate, applicant details).
 
----
+📥 **Load JSON Data into Oracle Autonomous Database**
 
-### 📥 **Load JSON Data into Oracle Autonomous Database**
+* Use Oracle’s **JSON support features** to load the file into a **dedicated table designed for JSON storage**.
 
-Use Oracle’s **JSON support features** to load the file into a **dedicated table designed for JSON storage**.
+* Leverage tools like **SQL Developer Web** or **REST APIs** to streamline the loading process.
 
-Leverage tools like **SQL Developer Web** or **REST APIs** to streamline the loading process.
+🔄 **Transform JSON Data Using ELT**
 
----
-
-### 🔄 **Transform JSON Data Using ELT**
-
-Extract meaningful information from **nested JSON structures** using SQL/JSON functions like `JSON_TABLE` or `JSON_VALUE`.
+* Extract meaningful information from **nested JSON structures** using SQL/JSON functions like `JSON_TABLE` or `JSON_VALUE`.
 
 Clean and reformat the data as needed:
 
@@ -80,11 +66,9 @@ Clean and reformat the data as needed:
 - **Convert inconsistent formats** (e.g., dates or currency) into standard formats.
 - Store **transformed data** in a new table optimized for querying.
 
----
+🔗 **Join Loan Offers with Other Data**
 
-### 🔗 **Join Loan Offers with Other Data**
-
-Combine loan offer data with other tables in your database using **SQL joins**.
+* Combine loan offer data with other tables in your database using **SQL joins**.
 
 For example:
 
@@ -93,19 +77,13 @@ For example:
   - Identify **trends in loan offers** by region or applicant type.
   - Analyze **loan approval rates** based on interest rates or terms.
 
----
+✅ **Validate and Test Queries**
 
-### ✅ **Validate and Test Queries**
+* Verify that transformations were applied correctly by running **test queries** on the transformed data.
 
-Verify that transformations were applied correctly by running **test queries** on the transformed data.
-
-Ensure that all **key fields are accessible** and properly formatted for analysis.
-
----
+* Ensure that all **key fields are accessible** and properly formatted for analysis.
 
 By completing this task, you’ll understand how to handle complex JSON files, transform them using ELT processes, and integrate them with other datasets for deeper insights.
-
----
 
 > **Note:** `<SCREENSHOTS!>`
 
