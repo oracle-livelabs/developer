@@ -2,21 +2,17 @@
 
 ## About this Workshop
 
-In this workshop, you will build a GenAI-powered loan approval app using Oracle Autonomous Database and Oracle Database 23ai.
+In this workshop, you will build a GenAI app on Oracle Database 23ai.
 
 Estimated time: 2-3 hours
 
 #### ➡️ **Start with the demo!**
 
-The demo shows how a loan officer uses Generative AI, Vector Search, and Graph analytics to evaluate real applications and streamline decisions.  
-The best part? **No setup required**—just start with Lab 1 and follow the guide.  
-You can explore guided use cases or experiment on your own using the demo application.
+Check out the demo to see how Generative AI and Vector Search in the database, can operate against multiple types of data—empowering you to build real applications and make faster, smarter decisions. The best part? **No setup required**—just start with Lab 1 and follow the guide. You can explore guided use cases or experiment on your own using the demo application.
 
 #### ➡️ **Start coding!**
 
-If you want to get hands-on and start interacting with the database using Python, then Lab 3 and Lab 4 are for you.  
-Lab 2 describes how to get access to our browser-based development environment.  
-Make sure to check it out before continuing to Lab 3, where you will learn how to use Python with Oracle Database 23ai:
+Lab 2 describes how to get access to our browser-based development environment. Make sure to check it out before continuing to Lab 3 and 4, where you will get hands-on and start interacting with Python with Oracle Database 23ai:
 
 ✅ Connect to the database using Python
 

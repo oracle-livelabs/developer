@@ -139,6 +139,7 @@ With the database ready, you will query customer data from the clients_dv JSON d
 
     ![Fetch customer](./images/fetch-customer.png " ")
 
+If you completed Lab 1: Run the Demo earlier, this is what gets printed out when the Loan Officer clicks on CUST 1000. You just built it, well done!
 
 
 ## Task 5: Create a function to generate recommendations for the customer
@@ -184,9 +185,9 @@ Here’s what we’ll do:
     print(recommendations)
     </copy>
     ```
-2. Click the "Run" button to execute the code.
+2. Click the "Run" button to execute the code. Note that this will take time to run. Be patient, you will get loan recommendations from the LLM shortly.
 
-3. Review the output.
+3. Review the output. In the demo, this is where you selected the "Navigate to Decisions" button as the Loan Officer. You just used AI to get recommendations for the loan officer which would have taken her hours to do, congratulations!
 
 >Note: Your result may be different. This is because of generative AI and the model's ability to generate new content based on your input. The output may contain different recommendations or suggestions.
 
@@ -402,6 +403,7 @@ Now that the recommendations are vectorized, we can process a user’s question:
 ## Summary
 
 Congratulations! You implemented a RAG process in Oracle Database 23ai using Python.
+
 To summarize:
 
 * You created a function to connect to Oracle Database 23ai using the Oracle Python driver `oracledb`.
@@ -411,11 +413,12 @@ To summarize:
 * And finally, you implemented a RAG process in Oracle Database 23ai using Python.
 
 Congratulations, you completed the lab!
+
 You may now proceed to the next lab.
 
 ## Learn More
 
-* [Oracle Database 23ai Documentation](https://docs.oracle.com/en/database/oracle/oracle-database/23/)
+* [Code with Python](https://www.oracle.com/developer/python-developers/)
 
 ## Acknowledgements
 * **Authors** - Linda Foinding, Francis Regalado
