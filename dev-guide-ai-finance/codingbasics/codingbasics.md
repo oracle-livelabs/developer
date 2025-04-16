@@ -159,7 +159,7 @@ Now, that we have established a connection, we can start creating our tables and
             cursor.execute("""
                 insert into customers (id, first_name, last_name, email, address, phone_number)
                 values
-                (100001, 'Dom', 'Giles', 'dg7889@gmail.com', '10 smith street', '34454-1667'),
+                (100001, 'Dom', 'Thompson', 'dg7889@gmail.com', '10 smith street', '34454-1667'),
                 (223223, 'John', 'Smith', 'jsmith@hotmail.com', 'the grove', '28902'),
                 (238121, 'Janet', 'White', 'jw123@gmail.com', 'apartment 256, 120 east street', '18092-7980'),
                 (78993, 'Sue', 'Gray', 'sue_gray@testmail.com', '2345 main street', '34454')
@@ -491,6 +491,6 @@ In the next labs, you will see several of the coding principles learned and even
 You are now ready to implement you a RAG process using Oracle Database 23ai's new features!
 
 ## Acknowledgements
-* **Author** - Kamryn Vinson
-* **Contributors** -  Linda Foinding, Francis Regalado, Kevin Lazarz
+* **Author** - Kevin Lazarz, Linda Foinding
+* **Contributors** -  Kamryn Vinson, Francis Regalado
 * **Last Updated By/Date** - Kamryn Vinson, April 2025
