@@ -419,6 +419,6 @@ You may now proceed to the next lab.
 * [Code with Python](https://www.oracle.com/developer/python-developers/)
 
 ## Acknowledgements
-* **Authors** - Linda Foinding, Francis Regalado
-* **Contributors** - Kamryn Vinson, Eddie Ambler, Kevin Lazarz
+* **Authors** - Linda Foinding Database Product Manager
+* **Contributors** - Francis Regalado, Kamryn Vinson, Kevin Lazarz
 * **Last Updated By/Date** - Linda Foinding, April 2025
