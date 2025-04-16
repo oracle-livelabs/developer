@@ -4,14 +4,11 @@
 
 **Welcome to the Code with AI Vector Search Challenge!**
 
-In this lab, you will use Oracle Database 23ai to build a loan matching feature for a financial application.  
-By implementing similarity search, you will match user queries to loan descriptions based on meaning—**not just keywords**.
+In this lab, you will use Oracle Database 23ai to build a loan matching feature for a financial application. By implementing similarity search, you will match user queries to loan descriptions based on meaning—**not just keywords**.
 
 ![Similarity Search](./images/similarity-search.png " ")
 
-At SeerEquites, the data science team is building a loan recommendation system that goes beyond keyword matching.  
-They are using AI Vector Search to understand meaning in loan descriptions—for example, linking "Affordable Housing Loan" to "Low-Income Home Loan."  
-In this lab, you will complete their Similarity Search feature using Oracle Database 23ai, which converts text into embeddings and uses cosine similarity to find conceptually similar loans.
+At SeerEquites, the data science team is building a loan recommendation system that goes beyond keyword matching. They are using AI Vector Search to understand meaning in loan descriptions—for example, linking "Affordable Housing Loan" to "Low-Income Home Loan." In this lab, you will complete their Similarity Search feature using Oracle Database 23ai, which converts text into embeddings and uses cosine similarity to find conceptually similar loans.
 
 **Why AI Vector Search?**
 
