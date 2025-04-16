@@ -446,8 +446,7 @@ The final step in our basic coding tour with Python and the Oracle Database 23ai
 
     You can see that also in the relational `orders` table, the total value has been updated.
 
-3. Finally, let's create a new function that allows us to see both tables at once, i.e., we want to join `customers` and `orders` tables together. The function should also allow us to filter by the first name of the customer. Furthermore, the result should be nicely formatted in a table including column headers.  
-    We need to create a new cell with the following code:
+3. Finally, let's create a new function that allows us to see both tables at once, i.e., we want to join `customers` and `orders` tables together. The function should also allow us to filter by the first name of the customer. Furthermore, the result should be nicely formatted in a table including column headers. We need to create a new cell with the following code:
 
     ```python
     <copy>
