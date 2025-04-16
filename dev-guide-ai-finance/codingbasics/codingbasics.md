@@ -185,7 +185,7 @@ Now, that we have established a connection, we can start creating our tables and
     </copy>
     ```
 
-    ![query customers](./images/query-customers.png " ")
+    ![query customers](./images/task3.png " ")
 
 ### **Task Summary**
 
@@ -287,7 +287,7 @@ Next, we want to explore how we can use a **JSON Duality View** to query our new
     </copy>
     ```
 
-    ![dv](./images/query-dv.png " ")
+    ![dv](./images/task4-1.png " ")
 
     You notice that our code has some significant changes. We are now passing a parameter into our query, and we are also formatting the output of our query. Let's have a closer look:
 
@@ -348,7 +348,7 @@ Now, that we have established a connection to Oracle Database 23ai via Mongo API
     </copy>
     ```
 
-    ![dv](./images/mongo-query.png " ")    
+    ![dv](./images/task6.png " ")    
 
     As you can see, the result matches that of the SQL query (`query_dv()`), though the MongoDB syntax requires significantly less code.
 
@@ -356,7 +356,7 @@ Now, that we have established a connection to Oracle Database 23ai via Mongo API
 
 Next, let's update some data in our database using MongoDB syntax. Let's write a function that will help us do this.
 
-1. Wen want to change the email address of our customer "Dan" to "dant@aol.com". Copy & paste the following code into a **new cell** and run it.
+1. We want to change the email address of our customer "Dan" to "dant@aol.com". Copy & paste the following code into a **new cell** and run it.
 
     ```python
     <copy>
@@ -380,7 +380,7 @@ Next, let's update some data in our database using MongoDB syntax. Let's write a
     And indeed, we can see that the email address has been updated.
 
 
-    ![dv](./images/mongo-update.png " ")
+    ![dv](./images/task7-1.png " ")
 
 
 3. What if we want to do something more complex, for example updating a nested field? For example, let's say we want to change TotalValue field. Copy the following code into a new cell and run it.
@@ -388,21 +388,18 @@ Next, let's update some data in our database using MongoDB syntax. Let's write a
     ```python
     <copy>
     def update_mongo_order():
-            col = mongo_connect().CUSTOMERS_DV
-            col.update_one(
-            {
-                "FirstName": "Dan",
-                "orders.OrderID": 1.0
-            },
-            {
-                "$set": {
-                    "orders.$.TotalValue": 100
-                }
-            }
-        )
-            return
-
-        update_mongo_order()
+    col = mongo_connect().CUSTOMERS_DV
+    col.update_one(
+        {
+            "FirstName": "Dan",
+            "orders.OrderID": 1.0
+        },
+        {
+            "$set":{"orders.$.TotalValue": 100}
+        }
+    )
+    return
+update_mongo_order()
         </copy>
         ```
 
@@ -414,7 +411,7 @@ Next, let's update some data in our database using MongoDB syntax. Let's write a
     </copy>
     ```
 
-    ![mongo query total value](./images/mongo-query2.png " ")
+    ![mongo query total value](./images/task7-3.png " ")
 
     You should see that the TotalValue field has been updated from 10.23 to 100.0.
     
@@ -430,7 +427,7 @@ The final step in our basic coding tour with Python and the Oracle Database 23ai
     </copy>
     ```
 
-    ![customer table after update](./images/query-cust-update.png " ")
+    ![customer table after update](./images/task8.png " ")
 
     You can see that also in the relational `customers` table, the email address has been updated.
 
@@ -442,7 +439,7 @@ The final step in our basic coding tour with Python and the Oracle Database 23ai
     </copy>
     ```
 
-    ![orders table after update](./images/query-orders-update.png " ")
+    ![orders table after update](./images/task8.2.png " ")
 
     You can see that also in the relational `orders` table, the total value has been updated.
 
@@ -471,7 +468,7 @@ The final step in our basic coding tour with Python and the Oracle Database 23ai
     </copy>
     ```
 
-    ![join tables](./images/join.png " ")
+    ![join tables](./images/task8-last.png " ")
 
     As you can see we included some new features in our function. Let's have a closer look:
 
