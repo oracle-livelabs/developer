@@ -64,6 +64,6 @@ This lab assumes you have:
 
 ## Acknowledgements
 
-* **Authors** - Linda Foinding, Francis Regalado
-* **Contributors** - Kamryn Vinson, Otis Barr, Ramona Magadan, Eddie Ambler, Kevin Lazarz
+* **Authors** - Francis Regalado, Linda Foinding, Kamryn Vinson
+* **Contributors** - Kevin Lazarz, Eddie Ambler, Otis Barr, Ramona Magadan
 * **Last Updated By/Date** - Linda Foinding, April 2025

@@ -237,5 +237,5 @@ By combining these advanced tools, the application enables faster, smarter decis
 
 ## Acknowledgements
 * **Authors** - Kamryn Vinson, Linda Foinding, Francis Regalado
-* **Contributors** - Eddie Ambler, Kevin Lazarz
+* **Contributors** - Kevin Lazarz, Eddie Ambler
 * **Last Updated By/Date** - Kamryn Vinson, April 2025
