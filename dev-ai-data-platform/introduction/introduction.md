@@ -26,11 +26,7 @@ By the end of this workshop, you'll understand how **Oracle’s Data Platform** 
 
 * ✅ Drive business success through data
 
-To get things started we invite you to watch the introduction video to see the demo in action:
-
-  [](videohub:1_mg30brw3:medium)
-
-> ⚠️ **Note:** `<THIS VIDEO IS THE AI APP DEV VIDEO--DATA PLATFORM IS WIP>`
+  [Video hosted on Oracle Video Hub](videohub:1_nnznmwsc:medium)
 
 ### **Objectives**
 
