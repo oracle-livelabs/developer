@@ -1,8 +1,8 @@
-# Configure Oracle@Azure or Interconnect
+# Configure Oracle Database@Azure or Interconnect
 
 ## Introduction
 
-In this lab, we will set up either Oracle@Azure or the Interconnect between Azure and OCI and Oracle Database.
+In this lab, we will set up either Oracle Database@Azure or the Interconnect between Azure and OCI and Oracle Database.
 
 Estimated time: 60 minutes
 
@@ -14,11 +14,11 @@ Estimated time: 60 minutes
 
 This lab assumes you have an Azure account and in the case of Interconnect, an OCI account.
 
-## Task 1: Choose between Oracle@Azure or the Interconnect between Azure and OCI and Oracle Database 
+## Task 1: Choose between Oracle Database@Azure or the Interconnect between Azure and OCI and Oracle Database 
 
-1. If you choose to use the Interconnect, please refer to the Workshop found here for setup steps: https://livelabs.oracle.com/pls/apex/r/dbpm/livelabs/view-workshop?wid=3759
+1. If you choose to use Oracle Database@Azure, please refer to https://www.oracle.com/cloud/azure/oracle-database-at-azure/ to connect with an Oracle Database@Azure specialist and view OnBoarding Documentation.
+2. If you choose to use the Interconnect, please refer to the Workshop found here for setup steps: https://livelabs.oracle.com/pls/apex/r/dbpm/livelabs/view-workshop?wid=3759
 
-2. If you choose to use Oracle@Azure, please refer to https://www.oracle.com/cloud/azure/oracle-database-at-azure/ to connect with an Oracle Database@Azure specialist and view OnBoarding Documentation.
 
 This concludes this lab. You can **proceed now to the next lab**.
 
@@ -30,4 +30,4 @@ This concludes this lab. You can **proceed now to the next lab**.
 
 * **Author** - Paul Parkinson, Architect and Developer Advocate, Oracle Database
 
-* **Last Updated By/Date** - 2024.
+* **Last Updated By/Date** - Leo Alvarado, Product Management, April 2025

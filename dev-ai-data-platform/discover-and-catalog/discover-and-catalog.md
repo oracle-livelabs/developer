@@ -101,32 +101,32 @@ With our Connections in place, we will explore how to search the catalog for the
 **Note:** You can combine multiple filters for more refined results. 🔍
 
 ---
-The catalog quick filters include:
+### **The catalog quick filters include**
 
- ***Tables and Views***
+
+**Tables and Views**
 
   This filter searches for database tables (both internal and external) and views, including both standard database views and analytic views.
 
- ***Data Objects***
+**Data Objects**
 
   This filter searches for data objects in the database and on connected cloud storage.
+> **Note:** This is a superset of the Tables and Views and Files filters.
 
-  **Note:** This is a superset of the Tables and Views and Files filters.
-
- ***Files***
+**Files**
 
   This filter searches for files in connected cloud storage only.
 
- ***OCI***
+**OCI**
 
   This filter searches for other Oracle Cloud Infrastructure objects, such as Autonomous Databases, OCI cloud storage buckets, or registered OCI Data Catalogs.
   This option is available if you have an OCI credential, which can be created from the **Data Studio Settings** icon.
 
- ***Connections***
+**Connections**
 
   This filter searches for connections registered in Data Studio, such as those to external Data Catalogs or databases.
 
- ***All***
+**All**
 
   This filter searches for all objects in the catalog. Since there can be thousands of objects, this scope may result in slower performance.
 
@@ -134,7 +134,7 @@ The catalog quick filters include:
 
 * Select **Connections** quick filter. This displays available connections in the Catalog accessible to the LOAN schema. From here we can validate that our catalog sees the defined connections we made.
 
-  **Note** that our **MyDemoBucket** is displayed.
+> **Note** that our **MyDemoBucket** is displayed.
 
   ![Search Items in Catalog](./images/search-items-in-catalog-2.png "Search Items in Catalog")
 
