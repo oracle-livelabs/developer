@@ -30,8 +30,7 @@ In lab 4, you will learn how to **implement a working example of retrieval-augme
 
 #### ➡️ **Start experimenting!**
 
-You can also experiment with the code in your own environment. The workshop environment is flexible and allows you try out different things:  
-Start building your own version of the loan approval application!
+You can also experiment with the code in your own environment. The workshop environment is flexible and allows you try out different things: Start building your own version of the loan approval application!
 
 To get things started we invite you to watch the introduction video to see the demo in action:
 
@@ -64,7 +63,6 @@ This lab assumes you have:
 * [Oracle Database 23ai Documentation](https://docs.oracle.com/en/database/oracle/oracle-database/23/)
 
 ## Acknowledgements
-
-* **Authors** - Linda Foinding, Francis Regalado
-* **Contributors** - Kamryn Vinson, Otis Barr, Ramona Magadan, Eddie Ambler, Kevin Lazarz
+* **Authors** - Francis Regalado, Linda Foinding, Kamryn Vinson
+* **Contributors** - Kevin Lazarz, Eddie Ambler, Otis Barr, Ramona Magadan
 * **Last Updated By/Date** - Linda Foinding, April 2025

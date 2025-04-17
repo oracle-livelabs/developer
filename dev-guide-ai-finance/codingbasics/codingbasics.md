@@ -159,7 +159,7 @@ Now, that we have established a connection, we can start creating our tables and
             cursor.execute("""
                 insert into customers (id, first_name, last_name, email, address, phone_number)
                 values
-                (100001, 'Dom', 'Giles', 'dg7889@gmail.com', '10 smith street', '34454-1667'),
+                (100001, 'Dan', 'Thompson', 'dt7889@gmail.com', '10 smith street', '34454-1667'),
                 (223223, 'John', 'Smith', 'jsmith@hotmail.com', 'the grove', '28902'),
                 (238121, 'Janet', 'White', 'jw123@gmail.com', 'apartment 256, 120 east street', '18092-7980'),
                 (78993, 'Sue', 'Gray', 'sue_gray@testmail.com', '2345 main street', '34454')
@@ -283,7 +283,7 @@ Next, we want to explore how we can use a **JSON Duality View** to query our new
                     print(f"Error formatting JSON: {e}")
                     print(raw_json)
 
-    query_dv("Dom")
+    query_dv("Dan")
     </copy>
     ```
 
@@ -299,7 +299,7 @@ Next, we want to explore how we can use a **JSON Duality View** to query our new
 
     🔴 **`json.dumps(raw_json, default=str, indent=4)`** - This is a Python function that formats our output. We are passing in the `raw_json` variable as an argument and formatting it with the `default=str` parameter.
 
-    🔴 **`query_dv("Dom")`** - Here we are calling our query function again, but this time passing in the string `"Dom"` as a parameter. This will return all rows where `first_name` is equal to `"Dom"`. The result is displayed in JSON format. 
+    🔴 **`query_dv("Dan")`** - Here we are calling our query function again, but this time passing in the string `"Dan"` as a parameter. This will return all rows where `first_name` is equal to `"Dan"`. The result is displayed in JSON format. 
 
 >**Note:** Notice that our output is a nicely formatted document that now not only includes our customer data but also all orders for that customer.
 
@@ -344,7 +344,7 @@ Now, that we have established a connection to Oracle Database 23ai via Mongo API
         mongo_data = col.find_one({"FirstName": first_name})
         return mongo_data
 
-    get_mongo("Dom")
+    get_mongo("Dan")
     </copy>
     ```
 
@@ -356,13 +356,13 @@ Now, that we have established a connection to Oracle Database 23ai via Mongo API
 
 Next, let's update some data in our database using MongoDB syntax. Let's write a function that will help us do this.
 
-1. Wen want to change the email address of our customer "Dom" to "dom@aol.com". Copy & paste the following code into a **new cell** and run it.
+1. Wen want to change the email address of our customer "Dan" to "dant@aol.com". Copy & paste the following code into a **new cell** and run it.
 
     ```python
     <copy>
     def update_mongo():
         col = mongo_connect().CUSTOMERS_DV
-        col.update_one({"FirstName": "Dom"}, {"$set": {"Email": "dom@aol.com"}})
+        col.update_one({"FirstName": "Dan"}, {"$set": {"Email": "dant@aol.com"}})
         return
 
     update_mongo()
@@ -373,7 +373,7 @@ Next, let's update some data in our database using MongoDB syntax. Let's write a
 
     ```python
     <copy>
-    get_mongo("Dom")
+    get_mongo("Dan")
     </copy>
     ```
 
@@ -391,7 +391,7 @@ Next, let's update some data in our database using MongoDB syntax. Let's write a
             col = mongo_connect().CUSTOMERS_DV
             col.update_one(
             {
-                "FirstName": "Dom",
+                "FirstName": "Dan",
                 "orders.OrderID": 1.0
             },
             {
@@ -410,7 +410,7 @@ Next, let's update some data in our database using MongoDB syntax. Let's write a
 
     ```python
     <copy>
-    get_mongo("Dom")
+    get_mongo("Dan")
     </copy>
     ```
 
@@ -446,8 +446,7 @@ The final step in our basic coding tour with Python and the Oracle Database 23ai
 
     You can see that also in the relational `orders` table, the total value has been updated.
 
-3. Finally, let's create a new function that allows us to see both tables at once, i.e., we want to join `customers` and `orders` tables together. The function should also allow us to filter by the first name of the customer. Furthermore, the result should be nicely formatted in a table including column headers.  
-    We need to create a new cell with the following code:
+3. Finally, let's create a new function that allows us to see both tables at once, i.e., we want to join `customers` and `orders` tables together. The function should also allow us to filter by the first name of the customer. Furthermore, the result should be nicely formatted in a table including column headers. We need to create a new cell with the following code:
 
     ```python
     <copy>
@@ -467,7 +466,7 @@ The final step in our basic coding tour with Python and the Oracle Database 23ai
                 df = pd.DataFrame(rows, columns=column_names)
                 return df
 
-        df = query_customers_with_orders("Dom")
+        df = query_customers_with_orders("Dan")
         df.head() 
     </copy>
     ```
@@ -491,6 +490,6 @@ In the next labs, you will see several of the coding principles learned and even
 You are now ready to implement you a RAG process using Oracle Database 23ai's new features!
 
 ## Acknowledgements
-* **Author** - Kamryn Vinson
-* **Contributors** -  Linda Foinding, Francis Regalado, Kevin Lazarz
+* **Authors** - Linda Foinding, Kevin Lazarz
+* **Contributors** - Francis Regalado, Kamryn Vinson
 * **Last Updated By/Date** - Kamryn Vinson, April 2025
