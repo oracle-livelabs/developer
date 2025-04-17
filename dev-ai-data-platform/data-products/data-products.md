@@ -33,113 +33,115 @@ In this Lab, you will:
    * Select **Data Studio** from the menu bar
    * Choose **Data Share** from the navigation tree.
 
-1. On the **Database Actions Launchpad**, click the user icon in the top right corner.
+2. On the **Database Actions Launchpad**, click the user icon in the top right corner.
 
    ![Create Data Product Share](./images/create-data-product-share-1a.png "Create Data Product Share")
 
    Log out as the **ADMIN** user.
 
-1. From the **Database Actions Launchpad**, click the user icon in the top right corner to sign-on as the LOAN user.
+3. From the **Database Actions Launchpad**, click the user icon in the top right corner to sign-on as the LOAN user.
 
    ![Define a Data Product Recipient](./images/define-data-product-share-recipient-1.png "Define a Data Product Recipient")
 
-   * Enter LOAN user credentials into **Sign-In** page.
-   * Press **Sign-In** button.
+      * Enter LOAN user credentials into **Sign-In** page.
+      * Press **Sign-In** button.
 
-1. Select **Data Studio** from the menu bar.  Then, choose **Data Share** from the navigation tree.
+4. Select **Data Studio** from the menu bar.  Then, choose **Data Share** from the navigation tree.
 
    ![Define a Data Product Recipient](./images/define-data-product-share-recipient-2.png "Define a Data Product Recipient")
 
-1. Click **Provider Share** on the **Provider and Consumer** page.
+   Click **Provide Share** on the **Provider and Consumer** page.
 
-   ![Define a Data Product Recipient](./images/define-data-product-share-recipient-3.png "Define a Data Product Recipient")
+5. Click **Provide Share** on the **Provider and Consumer** page.
 
-1. Click **Provider Identification** on the **Provide Share** page.
+    ![Define a Data Product Recipient](./images/define-data-product-share-recipient-3.png "Define a Data Product Recipient")
+
+6. Click **Provider Identification** on the **Provide Share** page.
 
    ![Define a Data Product Recipient](./images/define-data-product-share-recipient-4.png "Define a Data Product Recipient")
 
-1. Provide details for the provider in the **Provider Identification** popup window.
+7. Provide details for the provider in the **Provider Identification** popup window.
 
    ![Define a Data Product Recipient](./images/define-data-product-share-recipient-5.png "Define a Data Product Recipient")
 
-   * Enter the following:
-      * **Name:** LoanApp_Share_Provider
-      * **Email:** MyEmail@MyCompany.com
-      * **Description:** a meaningful description is required
-   * Click **Save**.
+      * Enter the following:
+         * **Name:** LoanApp_Share_Provider
+         * **Email:** MyEmail@MyCompany.com
+         * **Description:** a meaningful description is required
+      * Click **Save**.
 
-1. Click **Shares** on the **Provide Share** page, to begin entering details for the new share.
+8. Click **Shares** on the **Provide Share** page, to begin entering details for the new share.
 
-   ![Define a Data Product Recipient](./images/define-data-product-share-recipient-6.png "Define a Data Product Recipient")
+    ![Define a Data Product Recipient](./images/define-data-product-share-recipient-6.png "Define a Data Product Recipient")
 
-1. The **General** page of the **Create Share** wizard will appear.
+9. The **General** page of the **Create Share** wizard will appear.
 
-   ![Define a Data Product Recipient](./images/create-share-general-risk.png "Define a Data Product Recipient")
+    ![Define a Data Product Recipient](./images/create-share-general-risk.png "Define a Data Product Recipient")
 
-   * Enter the following:
-      *  **Name:** LoanApp_Share2Risk
-      *  **Description:** a description (optional)
-   * Click **Next**.
+      * Enter the following:
+         *  **Name:** LoanApp_Share2Risk
+         *  **Description:** a description (optional)
+      * Click **Next**.
 
-1. Specify where the share will be published on the **Publish Details** page.
+10. Specify where the share will be published on the **Publish Details** page.
 
    ![Define a Data Product Recipient](./images/define-data-product-share-recipient-8.png "Define a Data Product Recipient")
 
-   * Select **DemoSharesBucket** from the drop-down list.
-   * Click **Next**.
+      * Select **DemoSharesBucket** from the drop-down list.
+      * Click **Next**.
 
-1. Choose the table (or view) that will be made available for the Risk Department (via the Share) on the **Select Tables** page.
+11. Choose the table (or view) that will be made available for the Risk Department (via the Share) on the **Select Tables** page.
 
-   ![Define a Data Product Recipient](./images/create-share-select-table-risk.png "Define a Data Product Recipient")
+    ![Define a Data Product Recipient](./images/create-share-select-table-risk.png "Define a Data Product Recipient")
 
-   * Select the **Share_Loan_Data_Risk_VW** table in the Available Tables column.
-   * Click the ">" button to list it to the Shared Tables column
-   * Click **Next**.
+      * Select the **Share_Loan_Data_Risk_VW** table in the Available Tables column.
+      *  Click the ">" button to list it to the Shared Tables column
+      * Click **Next**.
 
-1. There are no recipients are available, click **New Recipent** to create a new one on the **Recipients** page.
+12. There are no recipients are available, click **New Recipent** to create a new one on the **Recipients** page.
 
    ![Define a Data Product Recipient](./images/define-data-product-share-recipient-10.png "Define a Data Product Recipient")
 
-1. Define the recipient in the **Create Share Recipient** popup window.
+13. Define the recipient in the **Create Share Recipient** popup window.
 
    ![Define a Data Product Recipient](./images/create-share-recipient-risk.png "Define a Data Product Recipient")
 
-   * Enter the following:
-      *  **Name:** Marketing_Dept_Lead
-      *  **Description:** a description (optional)
-      *  **Email:** a description (optional)
-   * Click **Create**.
+      * Enter the following:
+         *  **Name:** Marketing_Dept_Lead
+         *  **Description:** a description (optional)
+         *  **Email:** a description (optional)
+      * Click **Create**.
 
-1. Click the **copy** icon to capture the profile activation link, sending it to the clipboard for the recipient.
+14. Click the **copy** icon to capture the profile activation link, sending it to the clipboard for the recipient.
 
    ![Define a Data Product Recipient](./images/define-data-product-share-recipient-12.png "Define a Data Product Recipient")
 
    Click **Cancel**.
 
-1. Paste activation link URL in browser window.
+15. Paste activation link URL in browser window.
 
    ![Define a Data Product Recipient](./images/paste-activation-link-in-window.png "Define a Data Product Recipient")
 
    * Click on Get Profile Information to envoke download.
    * Rename file to Risk_Delta_Share_Profile.json.
 
-## Task 3: Manage the Data Product Share
+## Task 2: Manage the Data Product Share
 
 1. On the **Provide Share** page, click **action** icon to manage the data product share.
 
    ![Define a Data Product Recipient](./images/manage-data-product-share-risk-1.png "Define a Data Product Recipient")
 
-1. Select **Recipients and Profiles** from the dropdown menu.
+2. Select **Recipients and Profiles** from the dropdown menu.
 
    ![Define a Data Product Recipient](./images/manage-data-product-share-risk-2.png "Define a Data Product Recipient")
 
-1. From here, you can add or remove recipients from the **Recipients and Profiles** page.
+3. From here, you can add or remove recipients from the **Recipients and Profiles** page.
 
    ![Define a Data Product Recipient](./images/manage-data-product-share-risk-3.png "Define a Data Product Recipient")
 
    Click **Cancel**.
 
-1. From the **Provide Share** page, click **Recipients** to display the recipients for the data share.
+4. From the **Provide Share** page, click **Recipients** to display the recipients for the data share.
 
    ![Define a Data Product Recipient](./images/manage-data-product-share-4.png "Define a Data Product Recipient")
 
