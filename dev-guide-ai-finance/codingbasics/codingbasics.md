@@ -303,7 +303,7 @@ Next, we want to explore how we can use a **JSON Duality View** to query our new
 
 >**Note:** Notice that our output is a nicely formatted document that now not only includes our customer data but also all orders for that customer.
 
-## Task 5: Connect to the database using `pymongo`
+## Task 5: Connect to the database using pymongo
 
 Next, we will connect to our database and query the data using a the Python driver `pymongo`. That way we can interact with Oracle Database 23ai using Mongo API which allows us to use the same syntax as MongoDB. We will also learn how to update our database using `pymongo` in a following task.
 
