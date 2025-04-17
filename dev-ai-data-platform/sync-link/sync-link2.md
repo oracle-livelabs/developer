@@ -34,7 +34,7 @@ By the end of this lab, you will:
 
    ![Create Data Product Share](./images/task1-scrn-5.png "Create Data Product Share")
 
-   1. Select **Data Studio** from the tab menu, then select **Catalog** from the left rail.
+   1. Select **Data Studio** from the tab menu, then select **Catalog** from the navigation tree.
 
    1. The **Catalog** page is displayed with the **Tables and Views** tab highlighted.
 
@@ -82,7 +82,7 @@ By the end of this lab, you will:
 
    ![Create Data Product Share](./images/task1-scrn-17.png "Create Data Product Share")
 
-   1. Select **Catalog** from the left rail and the **Customer_Extension** table now appears in the Catalog.
+   1. Select **Catalog** from the navigation tree and the **Customer_Extension** table now appears in the Catalog.
 
    ![Create Data Product Share](./images/task1-scrn-18.png "Create Data Product Share")
 
@@ -90,11 +90,21 @@ By the end of this lab, you will:
 
 ## Task 2: Link Object Storage Data from Data Catalog to ADB.
 
-   1. From the **Data Catalog** page with **Data Objects** selected.
+   1. Select **Data Studio** from the tab menu, then select **Catalog** from the navigation tree.
 
-      * Select the **Link to Table** button and the the **Load Data** page will appear.  
-      
-      * Click the **Edit (pencil)** icon, in the lower right corner.
+   1. The **Catalog** page is displayed with the **Tables and Views** tab highlighted.
+
+   ![Create Data Product Share](./images/task1-scrn-7.png "Create Data Product Share")
+
+   1. Click on the **Data Objects** tab at the top of the **Catalog** page.
+
+   ![Create Data Product Share](./images/task2-scrn-8.png "Create Data Product Share")
+
+   1. Select **LoanAppCustomer-segments.csv** from the list, to display **Cloud Object Entity" page.
+
+   ![Create Data Product Share](./images/task2-scrn-9.png "Create Data Product Share")
+
+   1. Select the **Link to Table** button and the **Load Data** page will appear.  Click **Edit (pencil)** icon, in the lower right corner.
 
    ![Create Data Product Share](./images/task2-scrn-10.png "Create Data Product Share")
 
