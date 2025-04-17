@@ -2,21 +2,17 @@
 
 ## About this Workshop
 
-In this workshop, you will build a GenAI-powered loan approval app using Oracle Autonomous Database and Oracle Database 23ai.
+In this workshop, you will build a GenAI app on Oracle Database 23ai.
 
 Estimated time: 2-3 hours
 
 #### ➡️ **Start with the demo!**
 
-The demo shows how a loan officer uses Generative AI, Vector Search, and Graph analytics to evaluate real applications and streamline decisions.  
-The best part? **No setup required**—just start with Lab 1 and follow the guide.  
-You can explore guided use cases or experiment on your own using the demo application.
+Check out the demo to see how Generative AI and Vector Search in the database, can operate against multiple types of data—empowering you to build real applications and make faster, smarter decisions. The best part? **No setup required**—just start with Lab 1 and follow the guide. You can explore guided use cases or experiment on your own using the demo application.
 
 #### ➡️ **Start coding!**
 
-If you want to get hands-on and start interacting with the database using Python, then Lab 3 and Lab 4 are for you.  
-Lab 2 describes how to get access to our browser-based development environment.  
-Make sure to check it out before continuing to Lab 3, where you will learn how to use Python with Oracle Database 23ai:
+Lab 2 describes how to get access to our browser-based development environment. Make sure to check it out before continuing to Lab 3 and 4, where you will get hands-on and start interacting with Python with Oracle Database 23ai:
 
 ✅ Connect to the database using Python
 
@@ -34,8 +30,7 @@ In lab 4, you will learn how to **implement a working example of retrieval-augme
 
 #### ➡️ **Start experimenting!**
 
-You can also experiment with the code in your own environment. The workshop environment is flexible and allows you try out different things:  
-Start building your own version of the loan approval application!
+You can also experiment with the code in your own environment. The workshop environment is flexible and allows you try out different things: Start building your own version of the loan approval application!
 
 To get things started we invite you to watch the introduction video to see the demo in action:
 
@@ -68,7 +63,6 @@ This lab assumes you have:
 * [Oracle Database 23ai Documentation](https://docs.oracle.com/en/database/oracle/oracle-database/23/)
 
 ## Acknowledgements
-
-* **Authors** - Linda Foinding, Francis Regalado
-* **Contributors** - Kamryn Vinson, Otis Barr, Ramona Magadan, Eddie Ambler, Kevin Lazarz
+* **Authors** - Francis Regalado, Linda Foinding, Kamryn Vinson
+* **Contributors** - Kevin Lazarz, Eddie Ambler, Otis Barr, Ramona Magadan
 * **Last Updated By/Date** - Linda Foinding, April 2025
