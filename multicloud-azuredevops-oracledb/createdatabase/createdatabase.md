@@ -21,7 +21,8 @@ This lab assumes:
 ## Task 1: Determine the Oracle Database Being Used
 
    1. If using Oracle Autonomous Database you may follow the quick process outline in Task 2
-   2. If using Exadata the documentation can be found here: https://docs.oracle.com/en/engineered-systems/exadata-database-machine/
+   2. If using Exadata Database Service on Dedicated Infrastructure on Oracle Database@Azure please refer to the Workshop found here for setup steps: https://apexapps.oracle.com/pls/apex/f?p=133:180:111974277500753::::wid:4010
+   3. If using Exadata Database Service on Exascale Infrastructure on Oracle Database@Azure, please refer to the Workshop found here for setup steps: https://apexapps.oracle.com/pls/apex/f?p=133:180:13724477313165::::wid:4159
 
 ## Task 2: Create an Oracle Autonomous Database if necessary, download the connection information, and create user and table.
 
@@ -84,4 +85,4 @@ This concludes this lab. You can **proceed now to the next lab**.
 
 * **Author** - Paul Parkinson, Architect and Developer Advocate, Oracle Database
 
-* **Last Updated By/Date** - 2024.
+* **Last Updated By/Date** - Leo Alvarado, Product Management, April 2025

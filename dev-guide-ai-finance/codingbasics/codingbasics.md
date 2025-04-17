@@ -490,6 +490,6 @@ In the next labs, you will see several of the coding principles learned and even
 You are now ready to implement you a RAG process using Oracle Database 23ai's new features!
 
 ## Acknowledgements
-* **Author** - Kevin Lazarz, Linda Foinding
-* **Contributors** -  Kamryn Vinson, Francis Regalado
+* **Authors** - Linda Foinding, Kevin Lazarz
+* **Contributors** - Francis Regalado, Kamryn Vinson
 * **Last Updated By/Date** - Kamryn Vinson, April 2025
