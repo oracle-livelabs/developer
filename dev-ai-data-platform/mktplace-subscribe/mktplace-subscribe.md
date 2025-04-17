@@ -26,56 +26,56 @@ By the end of this lab, you’ll understand how the **Data Marketplace** enables
 
    ![Create Data Product Share](./images/subscribe-to-data-share-1.png "Create Data Product Share")
 
-1. Select name of desired database.
+2. Select name of desired database.
 
    ![Create Data Product Share](./images/subscribe-to-data-share-2.png "Create Data Product Share")
 
-1. Select **Database Actions**, then **View All Database Actions**
+3. Select **Database Actions**, then **View All Database Actions**
 
    ![Create Data Product Share](./images/subscribe-to-data-share-3.png "Create Data Product Share")
 
-1. Sign-out of **Database Actions Launchpad** as ADMIN user.
+4. Sign-out of **Database Actions Launchpad** as ADMIN user.
 
    ![Create Data Product Share](./images/subscribe-to-data-share-4.png "Create Data Product Share")
 
-1. Sign-on to **Data Studio** as RISK user.
+5. Sign-on to **Data Studio** as RISK user.
 
    ![Create Data Product Share](./images/subscribe-to-data-share-5.png "Create Data Product Share")
 
-1. At the **Database Actions Launchpad**, click **Data Studio**.
+6. At the **Database Actions Launchpad**, click **Data Studio**.
 
    ![Create Data Product Share](./images/subscribe-to-data-share-6.png "Create Data Product Share")
 
-1. At the **Data Share** on the navigation tree.
+7. At the **Data Share** on the navigation tree.
 
     ![Create Data Product Share](./images/subscribe-to-data-share-7.png "Create Data Product Share")
 
-1. Click on **Consumer Share** on the **Provider and Consumer** page.
+8. Click on **Consumer Share** on the **Provider and Consumer** page.
 
    ![Create Data Product Share](./images/subscribe-to-data-share-8.png "Create Data Product Share")
 
-1. Select **Subscribe to Delta Share Provider** from the drop-down list on page, click on **Consumer Share** page.
+9. Select **Subscribe to Delta Share Provider** from the drop-down list on page, click on **Consumer Share** page.
 
    ![Create Data Product Share](./images/subscribe-to-data-share-9.png "Create Data Product Share")
 
-1. The **Subscribe to Share Provider** wizard will be displayed.
+10. The **Subscribe to Share Provider** wizard will be displayed.
 
    ![Create Data Product Share](./images/subscribe-to-data-share-10.png "Create Data Product Share")
 
-   * Enter the following:
-      * **Share Source:** Accept the default selection, Delta Share Provider JSON.
-      * **Share Provider JSON:** Accept the default selection, From File.
-      * **Delta Share Profile JSON:** Click this box. In the Open dialog box, navigate to the location where you downloaded the data share profile, select it, and then click Open.
-      *  **Provider Name:** Enter Demo-LoanApp-Data-Share
+* Enter the following:
+    * **Share Source:** Accept the default selection, Delta Share Provider JSON.
+    * **Share Provider JSON:** Accept the default selection, From File.
+    * **Delta Share Profile JSON:** Click this box. In the Open dialog box, navigate to the location where you downloaded the data share profile, select it, and then click Open.
+    * **Provider Name:** Enter Demo-LoanApp-Data-Share
 
-1. This will cause the **Add Shares** screen to appear.
+* This will cause the **Add Shares** screen to appear.
 
    ![Create Data Product Share](./images/subscribe-to-data-share-11.png "Create Data Product Share")
 
-   * Select the **LoanApp_Share2Risk** share in the Available Shares column.
+   * Select the **LoanApp\_Share2Risk** share in the Available Shares column.
    * Click the ">" button to reloate the share in the Shared Shares column.
 
-   The LoanApp Share2Risk share is displayed in the **Selected Shares** column.
+   The LoanApp\_Share2Risk share is displayed in the **Selected Shares** column.
 
    * Click **Subscribe**.
 
@@ -83,7 +83,7 @@ By the end of this lab, you’ll understand how the **Data Marketplace** enables
 
    ![Create Data Product Share](./images/subscribe-to-data-share-12.png "Create Data Product Share")
 
-## Task 2: Link Data: Create External Tables to Data Share.
+## Task 2: Link Data: Create External Tables to Data Share
 
 1. On the Link Data page, click the Select Cloud Store Location or enter a public URL drop-down list.
 
