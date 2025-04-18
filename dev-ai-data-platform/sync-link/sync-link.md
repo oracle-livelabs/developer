@@ -124,7 +124,48 @@ By the end of this lab, you will:
 
 ***Congratulations you have now Linked your Object Storage discovered in your catalog and queried it with existing data into your ADB.***
 
+## Task 3: Query Data in Object Storage and ADB Database.
+
+   1. Click **Database Actions | Data Load** in the banner to display the Launchpad page. Click the **Development** tab, and then click the **SQL** tab to display the SQL Worksheet
+
+  ![Query Data in Object Storage]](./images/task3-scrn-1.png "Query Data in Object Storage")
+
+   2.	Let's query the CUSTOMER_EXTENSION table. Copy and paste the following code into your SQL Worksheet, and then click the Run Statement icon in the Worksheet toolbar.
+
+</copy>
+   select * from CUSTOMER EXTENSION e;
+</copy>
+
+   The output shows information about customers.
+
+  ![Query Data in Object Storage](./images/task3-scrn-2.png "Query Data in Object Storage")
+
+   3.	Let's query the CUSTOMER_SEGMENTS external table. In the SQL Worksheet, copy and paste the following code into your SQL Worksheet to query the data, and then click the Run Statement icon in the Worksheet toolbar.
+
+</copy>
+     select * from CUSTOMER SEGMENT s;
+</copy>
+
+      The output shows defined customer segments.
+
+  ![Query Data in Object Storage](./images/task3-scrn-3.png "Query Data in Object Storage")
+
+   4.	Create a join combining data from the CUSTOMER_EXTENSION table with data a then click the Run Statement icon in the Worksheet toolbar.
+
+<copy>
+        select cust_id, first_name, last_name, s.name
+    from loan.customer_extension e,
+         loan.customer_segment   s
+   where e.segment_id = s.segment_id;
+</copy>
+
+   The output shows combined customer information.
+
+  ![Query Data in Object Storage](./images/task3-scrn-4.png "Query Data in Object Storage")
+
+   ***Congratulations you have now combined data stored in Object Storage with data stored in the ADB database.***
+
 ## Acknowledgements
-* **Author** - <Name, Title, Group>
-* **Contributors** -  <Name, Group> -- optional
-* **Last Updated By/Date** - <Name, Month Year>
+* **Authors** - Eddie Ambler, Otis Barr, Matt Kowalik
+* **Contributors** - Francis Regalado, Ramona Magadan
+* **Last Updated By/Date** - TBC
