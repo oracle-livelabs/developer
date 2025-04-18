@@ -18,9 +18,9 @@
             "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/cloud-login.md"
         },
         {
-            "title": "Lab 1: Provision an Instance",
+            "title": "Lab 1: Explore the Environment",
             "description": "Labs that follow the introduction are numbered, starting with Lab 1",
-            "filename": "../../provision/provision.md"
+            "filename": "../../provision/explore.md"
         },
         {
             "title": "Lab 2: Setup the Environment",
