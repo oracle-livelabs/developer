@@ -34,7 +34,7 @@ This lab assumes you have:
 - Basic knowledge of Python and SQL.
 - Completed Lab 1: Run the Demo.
 - Completed Lab 2: Connect to Development Environment.
-- Completed Lab 3: Coding Basics on 23ai.
+- Completed Lab 3: Coding Basics on Oracle Database 23ai.
 - Completed Lab 4: Step by step: Implement RAG with Oracle Database 23ai.
 
 ## Task 1: Challenge requirements
