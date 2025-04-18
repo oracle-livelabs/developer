@@ -65,7 +65,7 @@ In this Lab, you will:
    ![Define a Data Product Recipient](./images/define-data-product-share-recipient-5.png "Define a Data Product Recipient")
 
       * Enter the following:
-         * **Name:** LoanApp_Share_Provider
+         * **Name:** LoanApp\_Share\_Provider
          * **Email:** MyEmail@MyCompany.com
          * **Description:** a meaningful description is required
       * Click **Save**.
@@ -79,7 +79,7 @@ In this Lab, you will:
     ![Define a Data Product Recipient](./images/create-share-general-risk.png "Define a Data Product Recipient")
 
       * Enter the following:
-         *  **Name:** LoanApp_Share2Risk
+         *  **Name:** LoanApp\_ShareToRisk
          *  **Description:** a description (optional)
       * Click **Next**.
 
@@ -94,7 +94,7 @@ In this Lab, you will:
 
     ![Define a Data Product Recipient](./images/create-share-select-table-risk.png "Define a Data Product Recipient")
 
-      * Select the **Share_Loan_Data_Risk_VW** table in the Available Tables column.
+      * Select the **Share\_Loan\_Data\_Risk\_VW** table in the Available Tables column.
       *  Click the ">" button to list it to the Shared Tables column
       * Click **Next**.
 
@@ -107,7 +107,7 @@ In this Lab, you will:
    ![Define a Data Product Recipient](./images/create-share-recipient-risk.png "Define a Data Product Recipient")
 
       * Enter the following:
-         *  **Name:** Marketing_Dept_Lead
+         *  **Name:** Marketing\_Dept\_Lead
          *  **Description:** a description (optional)
          *  **Email:** a description (optional)
       * Click **Create**.
@@ -123,7 +123,7 @@ In this Lab, you will:
    ![Define a Data Product Recipient](./images/paste-activation-link-in-window.png "Define a Data Product Recipient")
 
    * Click on Get Profile Information to envoke download.
-   * Rename file to Risk_Delta_Share_Profile.json.
+   * Rename file to Risk\_Delta\_Share\_Profile.json.
 
 ## Task 2: Manage the Data Product Share
 
@@ -148,8 +148,7 @@ In this Lab, you will:
 **Congratulations you have shared your data from ADB to the Marketing Dept Lead.**
 #
 ## Acknowledgements
-* **Authors** - Matt Kowalik, Otis Barr
-* **Contributors** - Eddie Ambler, Ramona Magadan
+* **Authors** - Eddie Ambler, Otis Barr, Matt Kowalik
+* **Contributors** - Francis Regalado, Ramona Magadan
 * **Last Updated By/Date** - TBC
-
 Copyright (C) Oracle Corporation.
