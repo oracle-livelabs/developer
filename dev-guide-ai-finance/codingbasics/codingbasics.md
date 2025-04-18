@@ -1,4 +1,4 @@
-# Coding Basics on 23ai
+# Coding Basics on Oracle Database 23ai
 
 ## Introduction
 
