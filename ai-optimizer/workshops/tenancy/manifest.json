@@ -1,8 +1,8 @@
 {
     "workshoptitle": "The Title of the Workshop is Defined in the Manifest File",
-    "include": {"starter-file.sql":"../../data-load/files/starter-file.sql",
-                "sample.json":"../../data-load/files/sample.json",
-                "step2.md":"../../data-load/files/step2.md"},
+    "include": {"starter-file.sql":"../../rag/files/starter-file.sql",
+                "sample.json":"../../rag/files/sample.json",
+                "step2.md":"../../rag/files/step2.md"},
     "variables": ["../../variables/variables.json",
                  "../../variables/variables-in-another-file.json"],
     "help": "livelabs-help-**enterarea**_us@oracle.com",
@@ -28,7 +28,7 @@
         },
         {
             "title": "Lab 3: Using Retrieval Augmented Generation",
-            "filename": "../../RAG/RAG.md"
+            "filename": "../../rag/rag.md"
         },
         {
             "title": "Lab 4: Experimenting with Models, Parameters and Techniques",
@@ -39,8 +39,8 @@
             "filename": "../../evaluating/evaluating.md"
         },
         {
-            "title": "(Optional) Lab 6: Generating Microservice Code",
-            "filename": "../../microservice/microservice.md"
+            "title": "Lab 6: Variables in LiveLabs",
+            "filename": "../../variables/variables.md"
         },
         {
             "title": "(Optional) Lab 7: Using the API Server",
