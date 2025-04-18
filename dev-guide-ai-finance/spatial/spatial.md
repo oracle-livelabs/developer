@@ -12,7 +12,7 @@ https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD
 ```
 and save it as floodzones.json.
 
-There are 3 rows and each row contains 
+There are 3 rows and each row contains:
 
 * FID - a unique identifier
 

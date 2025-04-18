@@ -148,8 +148,7 @@ In this Lab, you will:
 **Congratulations you have shared your data from ADB to the Marketing Dept Lead.**
 #
 ## Acknowledgements
-* **Authors** - Matt Kowalik, Otis Barr
-* **Contributors** - Eddie Ambler, Ramona Magadan
+* **Authors** - Eddie Ambler, Otis Barr, Matt Kowalik
+* **Contributors** - Francis Regalado, Ramona Magadan
 * **Last Updated By/Date** - TBC
-
 Copyright (C) Oracle Corporation.
