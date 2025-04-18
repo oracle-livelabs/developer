@@ -1,4 +1,4 @@
-# Title of the Lab
+# Explore The Environment
 
 ## Introduction
 
