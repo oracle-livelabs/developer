@@ -1,4 +1,4 @@
-# Title of the Lab
+# Prepare the Vector Store
 
 ## Introduction
 

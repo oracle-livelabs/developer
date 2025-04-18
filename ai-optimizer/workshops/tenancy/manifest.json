@@ -20,27 +20,31 @@
         {
             "title": "Lab 1: Explore the Environment",
             "description": "Labs that follow the introduction are numbered, starting with Lab 1",
-            "filename": "../../provision/explore.md"
+            "filename": "../../explore/explore.md"
         },
         {
-            "title": "Lab 2: Setup the Environment",
-            "filename": "../../setup/setup.md"
+            "title": "Lab 2: Prepare the Vector Store",
+            "filename": "../../prepare/prepare.md"
         },
         {
-            "title": "Lab 3: Load Data into an Instance",
-            "filename": "../../data-load/data-load.md"
+            "title": "Lab 3: Using Retrieval Augmented Generation",
+            "filename": "../../RAG/RAG.md"
         },
         {
-            "title": "Lab 4: Query Data",
-            "filename": "../../query/query.md"
+            "title": "Lab 4: Experimenting with Models, Parameters and Techniques",
+            "filename": "../../experimenting/experimenting.md"
         },
         {
-            "title": "Lab 5: Tables in LiveLabs",
-            "filename": "../../tables/tables.md"
+            "title": "Lab 5: Evaluating Performance",
+            "filename": "../../evaluating/evaluating.md"
         },
         {
-            "title": "Lab 6: Variables in LiveLabs",
-            "filename": "../../variables/variables.md"
+            "title": "(Optional) Lab 6: Generating Microservice Code",
+            "filename": "../../microservice/microservice.md"
+        },
+        {
+            "title": "(Optional) Lab 7: Using the API Server",
+            "filename": "../../server/server.md"
         },
         {
             "title": "Need Help?",
