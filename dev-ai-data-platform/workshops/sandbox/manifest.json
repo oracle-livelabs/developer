@@ -28,8 +28,8 @@
             "filename": "../../discover-and-catalog/discover-and-catalog.md"
         },
         {
-            "title": "Lab 4: Load, Link, and Query Object Storage Data into Autonomous Database",
-            "description": "Labs that follow the introduction are numbered, starting with Lab 1",
+            "title": "Lab 4: Load, Link and Query Object Storage Data from Autonomous Database",
+            "description": "Lab 4: Load, Link and Query Object Storage Data from Autonomous Database",
             "filename": "../../sync-link/sync-link.md"
         },
         {
