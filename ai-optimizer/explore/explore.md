@@ -2,7 +2,7 @@
 
 ## Introduction
 
-*Describe the lab in one or two sentences, for example:* This lab walks you through the steps to ...
+In this lab, you will explore the environment that was created in the *Get Started* module. You will set up the database connection, configure the OCI credentials, add new LLMs and Embedding models and test out the *Chat* feature for the first time.
 
 Estimated Time: -- minutes
 
@@ -29,15 +29,14 @@ This lab assumes you have:
 
 *This is the "fold" - below items are collapsed by default*
 
-## Task 1: Concise Task Description
+## Task 1: Check the DB connection
 
-(optional) Task 1 opening paragraph.
+Let's check if the DB is correctly connected.
 
-1. Step 1
+1. Navigate to the *Databases* tab on the left side pane:
 
-	![Image alt text](images/sample1.png)
+	![Navigate to the Databases tab](images/database-navigation.jpg)
 
-	> **Note:** Use this format for notes, hints, and tips. Only use one "Note" at a time in a step.
 
 2. Step 2
 
@@ -49,37 +48,27 @@ This lab assumes you have:
 
    If you add another paragraph, add 3 spaces before the line.
 
-## Task 2: Concise Task Description
+## Task 2: Set OCI Credentials
 
-1. Step 1 - tables sample
+In the *OCI* configuration tab, you can add your **Oracle Cloud Infrastructure** (OCI) credentials to authenticate with your OCI tenancy. This will enable access to objects and documents stored in your cloud compartments.
 
-  Use tables sparingly:
+1. Navigate to the *OCI* tab on the left side pane:
 
-  | Column 1 | Column 2 | Column 3 |
-  | --- | --- | --- |
-  | 1 | Some text or a link | More text  |
-  | 2 |Some text or a link | More text |
-  | 3 | Some text or a link | More text |
+   ![Navigate to the Databases tab](images/oci-navigation.jpg)
 
-2. You can also include bulleted lists - make sure to indent 4 spaces:
+2. Insert your OCI credentials. Detailed information on how to the required credentials is available in the [Oracle Cloud Infrastructure Documentation](https://docs.oracle.com/en-us/iaas/Content/API/Concepts/apisigningkey.htm#Required_Keys_and_OCIDs).
 
-    - List item 1
-    - List item 2
+   If you have previously created a `.oci/config` file, the framework will automatically read this file at startup and load the credentials from the Default profile for authentication. To create one, follow the instructions available in the [Quickstart Documentation](https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/cliinstall.htm#Quickstart).
 
-3. Code examples
+   After entering your credentials, click the Save button. If the credentials are correct, a green confirmation pop-up will appear, indicating successful authentication to your tenancy.
 
-    ```
-    Adding code examples
-  	Indentation is important for the code example to appear inside the step
-    Multiple lines of code
-  	<copy>Enclose the text you want to copy in <copy></copy>.</copy>
-    ```
+   ![OCI credentials success](images/oci-credentials-success.png)
 
-4. Code examples that include variables
 
-	```
-  <copy>ssh -i <ssh-key-file></copy>
-  ```
+
+## Task 3: Configure LLMs
+
+## Task 4: Test the *Chat* feature
 
 ## Learn More
 
