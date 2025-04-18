@@ -1,8 +1,8 @@
 {
   "workshoptitle": "The Title of the Workshop is defined in the manifest",
   "help": "livelabs-help-**enterarea**_us@oracle.com",
-  "variables": ["../../variables/variables.json",
-    "../../variables/variables-in-another-file.json"],
+  "variables": ["../../microservice/variables.json",
+    "../../variables/microservice-in-another-file.json"],
   "tutorials": [
         {
             "title": "Introduction",

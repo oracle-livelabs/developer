@@ -3,8 +3,8 @@
     "include": {"starter-file.sql":"../../rag/files/starter-file.sql",
                 "sample.json":"../../rag/files/sample.json",
                 "step2.md":"../../rag/files/step2.md"},
-    "variables": ["../../variables/variables.json",
-                 "../../variables/variables-in-another-file.json"],
+    "variables": ["../../microservice/variables.json",
+                 "../../microservice/variables-in-another-file.json"],
     "help": "livelabs-help-**enterarea**_us@oracle.com",
     "tutorials": [
         {
