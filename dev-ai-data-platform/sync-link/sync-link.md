@@ -128,13 +128,15 @@ By the end of this lab, you will:
 
    1. Click **Database Actions | Data Load** in the banner to display the Launchpad page. Click the **Development** tab, and then click the **SQL** tab to display the SQL Worksheet
 
-  ![Query Data in Object Storage]](./images/task3-scrn-1.png "Query Data in Object Storage")
+  ![Query Data in Object Storage](./images/task3-scrn-1.png "Query Data in Object Storage")
 
    2.	Let's query the CUSTOMER_EXTENSION table. Copy and paste the following code into your SQL Worksheet, and then click the Run Statement icon in the Worksheet toolbar.
 
-</copy>
-   select * from CUSTOMER EXTENSION e;
-</copy>
+      ```
+      <copy>
+      select * from CUSTOMER EXTENSION e;
+      </copy>
+      ```
 
    The output shows information about customers.
 
@@ -142,26 +144,30 @@ By the end of this lab, you will:
 
    3.	Let's query the CUSTOMER_SEGMENTS external table. In the SQL Worksheet, copy and paste the following code into your SQL Worksheet to query the data, and then click the Run Statement icon in the Worksheet toolbar.
 
-</copy>
-     select * from CUSTOMER SEGMENT s;
-</copy>
+      ```
+      <copy>
+     select * from CUSTOMER SEGMENT;
+      </copy>
+      ```
 
-      The output shows defined customer segments.
+   The output shows defined customer segments.
 
   ![Query Data in Object Storage](./images/task3-scrn-3.png "Query Data in Object Storage")
 
    4.	Create a join combining data from the CUSTOMER_EXTENSION table with data a then click the Run Statement icon in the Worksheet toolbar.
 
-<copy>
+      ```
+      <copy>
         select cust_id, first_name, last_name, s.name
-    from loan.customer_extension e,
-         loan.customer_segment   s
-   where e.segment_id = s.segment_id;
-</copy>
+         from loan.customer_extension e,
+               loan.customer_segment   s
+         where e.segment_id = s.segment_id;
+      </copy>
+      ```
 
    The output shows combined customer information.
 
-  ![Query Data in Object Storage](./images/task3-scrn-4.png "Query Data in Object Storage")
+  ![Query Data in Object Storage](./images/task3-scrn-4a.png "Query Data in Object Storage")
 
    ***Congratulations you have now combined data stored in Object Storage with data stored in the ADB database.***
 
