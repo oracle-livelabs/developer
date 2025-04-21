@@ -15,43 +15,47 @@ Here’s what you’ll do:
 📥 **Access the Object Storage Bucket**
 
   1.	Access the Object Storage Bucket 
-  Select **Catalog** on the left rail,  to locate the file containing loan funding data in your Object Storage bucket.
+
+  On the left rail, select Catalog  to locate the file containing loan funding data in your Object Storage bucket.
  
   ![Access the Object Storage Bucket](./images/task1-scrn-1.png "Cccess the Object Storage Bucket")
 
-  2.  Select **Data Objects** from top menu, to display the available database objects in our object storage
+  2.  Select Data Objects to display the available database objects and the listing of the files available in our object storage
  
   ![Access the Object Storage Bucket](./images/task1-scrn-2.png "Cccess the Object Storage Bucket")
 
-  3.	Hover over the desired file and click the **Preview** icon that appears at the far right. 
+  3.	Hover over file name to see data preview option and Click the Preview Icon on the far right, to display data preview. 
  
   ![Access the Object Storage Bucket](./images/task1-scrn-3.png "Cccess the Object Storage Bucket")
 
-  4.	This contents of the desired object will appear without needing to first load it into the database.   
+  4.	This displays the contents of the file being previewed without needing to first load it into the database.   
 
   ![Access the Object Storage Bucket](./images/task1-scrn-4.png "Cccess the Object Storage Bucket")
 
-  Click **Close** button to return to Data Catalog listings. 
+  Click on Close button to return to Data Catalog listings. 
  
 ## Task 2: Load Data from Object Storage.
 
-   1.	Hover over the desired file and click the **View Details** icon that appears at the far right.
+  1.	Hover over file name to see data preview option and Click the View Details icon  on the far right, to display file details. 
 
   ![ALoad Data from Object Storage](./images/task2-scrn-1.png "Load Data from Object Storage")
 
-  2.	Select the **Load to Table** button and the **Load Data** page will appear 
+  2.	Select the Load to Table button and the Load Data page will appear 
 
   ![ALoad Data from Object Storage](./images/task2-scrn-2.png "Load Data from Object Storage")
 
-  3.	Select the **Start** button to submit data load job.
+  3.	Select the Start button and the Load Data page will appear.  
 
   ![Load Data from Object Storage](./images/task2-scrn-3.png "Load Data from Object Storage")
 
-  4.	Select the **Run** button on the **Data Load** popup window that appears.
+  4.	Select the Start button to submit data load job.  
 
   ![Load Data from Object Storage](./images/task2-scrn-4.png "Load Data from Object Storage")
 
+  5.	Select the Start button to submit data load job.  
+
   At the end of this task, you’ll have successfully imported and validated JSON data, making it available for use within the Oracle Autonomous Database.
+
 
 ## Task 3: Combine Data from Object Storage
 

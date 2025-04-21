@@ -1,4 +1,4 @@
-# Coding Basics on 23ai
+# Coding Basics on Oracle Database 23ai
 
 ## Introduction
 
@@ -34,11 +34,7 @@ This lab assumes you have:
 
 All of the coding examples will be executed in a new Jupyter Notebook.
 
-1. Select the **streamlit** folder.
-
-    ![Click Streamlit](./images/click-streamlit.png " ")
-
-2. Open a new **Jupyter Notebook** by clicking on **Python(ipykernel)** notebook.
+1. Open a new **Jupyter Notebook** by clicking on **Python(ipykernel)** notebook.
 
     ![Open Jupyter Notebook](./images/open-new-notebook.png " ")
 

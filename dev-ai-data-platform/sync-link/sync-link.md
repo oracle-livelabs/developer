@@ -128,6 +128,7 @@ By the end of this lab, you will:
 
    1. Click **Database Actions | Data Load** in the banner to display the Launchpad page. Click the **Development** tab, and then click the **SQL** tab to display the SQL Worksheet
 
+
   ![Query Data in Object Storage](./images/task3-scrn-1.png "Query Data in Object Storage")
 
    2.	Let's query the CUSTOMER_EXTENSION table. Copy and paste the following code into your SQL Worksheet, and then click the Run Statement icon in the Worksheet toolbar.
@@ -138,11 +139,13 @@ By the end of this lab, you will:
       </copy>
       ```
 
+
    The output shows information about customers.
 
   ![Query Data in Object Storage](./images/task3-scrn-2.png "Query Data in Object Storage")
 
    3.	Let's query the CUSTOMER_SEGMENTS external table. In the SQL Worksheet, copy and paste the following code into your SQL Worksheet to query the data, and then click the Run Statement icon in the Worksheet toolbar.
+
 
       ```
       <copy>
@@ -152,9 +155,11 @@ By the end of this lab, you will:
 
    The output shows defined customer segments.
 
+
   ![Query Data in Object Storage](./images/task3-scrn-3.png "Query Data in Object Storage")
 
    4.	Create a join combining data from the CUSTOMER_EXTENSION table with data a then click the Run Statement icon in the Worksheet toolbar.
+
 
       ```
       <copy>
@@ -168,6 +173,7 @@ By the end of this lab, you will:
    The output shows combined customer information.
 
   ![Query Data in Object Storage](./images/task3-scrn-4a.png "Query Data in Object Storage")
+
 
    ***Congratulations you have now combined data stored in Object Storage with data stored in the ADB database.***
 
