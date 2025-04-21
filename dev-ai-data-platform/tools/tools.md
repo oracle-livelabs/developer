@@ -21,7 +21,11 @@ This lab assumes you have:
 
 1. Navigate to your assigned ADB Instance.
 
-![Navigate to Autonomous Database in OCI](./images/oci-adb.png " ")
+    * Open Navigation Menu 
+    * Select Oracle Database 
+    * Select Autonomous Database 
+
+![Navigate to Autonomous Database in OCI](./images/navigate-to-adb.png " ")
 
 2. Select the name of your assigned database.
 
@@ -31,11 +35,12 @@ This lab assumes you have:
 
 **Database Actions** is a web-based interface that provides development, data, administration, and monitoring tools for Oracle Autonomous Database. It allows users to run SQL queries, manage database objects, and develop REST APIs directly from their browser without requiring additional software installation.
 
-1. From your database instance home page, select "**Database Actions**"
+1. From your database instance home page, select **Database Actions**
+2. Then select **View all database actions** from the dropdown list
 
 ![Navigate to Autonomous Database Actions](./images/oci-adb-database-actions.png " ")
 
-2. Then select "**View all database actions**" from the dropdown list
+This will cause the **Database Actions Launchpad** to be displayed 
 
 ![Autonomous Database Actions Landing Page](./images/oci-adb-database-actions-landing-page.png " ")
 
@@ -75,8 +80,8 @@ In this lab, you explored the **integrated tools** within **Oracle Autonomous Da
 
 ## Acknowledgements
 
-* **Authors** - Matt Kowalik, Otis Barr
-* **Contributors** - Eddie Ambler, Ramona Magadan
-* **Last Updated By/Date** - TBC
+**Authors** - Eddie Ambler, Otis Barr
+* **Contributors** - 
+* **Last Updated By/Date** - 04/21/2025
 
 Copyright (C) Oracle Corporation.
