@@ -12,9 +12,9 @@ Through a series of guided labs modeled on real-world tasks from a loan funding 
 
 ### You will:
 
-* **Ingest and consolidate** data from multiple sources to build a unified view, breaking down data silos and enabling comprehensive analysis.
+* **Gain Access to Data** from multiple sources to build a unified view, breaking down data silos and enabling comprehensive analysis.
 
-* **Create and publish data products** for actionable insights, empowering risk officers with timely, data-driven decision-making.
+* **Create and publish data products** for actionable insights, empowering other departments to be able to provide timely, data-driven decision-making feedback.
 
 * **Securely share selected datasets** across departments, such as marketing, to support campaign planning while maintaining data governance and privacy.
 
@@ -24,7 +24,7 @@ By the end of this workshop, you'll understand how **Oracle’s Data Platform** 
 
 * ✅ Enhance collaboration
 
-* ✅ Drive business success through data
+* ✅ Drive business success through data driven decision making
 
   [Video hosted on Oracle Video Hub](videohub:1_nnznmwsc:medium)
 
@@ -38,8 +38,8 @@ Gain practical insight into how **data products** are used within a **Loan Manag
 
 In this section, you will:
 *	Interact with the application from the perspective of different user personas — **Loan Officer** and, **Risk Management Officer**.
-*	Follow user stories to explore how **curated and shared data products** drive **data-informed decisions**.
-*	Understand how each role consumes and contributes to data to support **operational efficiency**, **risk assessment**, and **targeted marketing efforts**.
+* Follow user stories that demonstrate how having near real-time access to enterprise-wide data truly drives data-driven decisions for a competitive edge.
+*	Understand how each role consumes data products and provides feedback that enhances **operational efficiency**, **risk assessment**, and **the efficiency of marketing campaigns**.
 
 ### 2️⃣ **Hands-On Data Engineering & Management Tasks**
 
@@ -105,6 +105,6 @@ With Data Catalog, you can collect, organize, search, access, enrich, and activa
 * [Autonomous Database](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html)
 
 ## Acknowledgements
-* **Authors** - Matt Kowalik, Otis Barr
-* **Contributors** - Eddie Ambler, Ramona Magadan
-* **Last Updated By/Date** - TBC
+* **Authors** - Eddie Ambler, Otis Barr, Matt Kowalik, Ramona Magadan
+* **Contributors** - Francis Regalado
+* **Last Updated By/Date** - 04/21/2025

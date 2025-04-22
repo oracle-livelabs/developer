@@ -2,9 +2,25 @@
 
 ## Introduction
 
-You are asked to quickly prototype an app that is able to project ocean rise and it’s potential impact on property flood insurance. You have been provided data that predicts the ocean rise in the Boston area in 2040, 2060 and 2080.  In the following Lab, you will load the data and quickly develop Rest APIs for your front end development team.
+In this lab you are asked to quickly prototype an app that is able to project ocean rise and it’s potential impact on property flood insurance. You have been provided data that predicts the ocean rise in the Boston area in 2040, 2060 and 2080.  
 
-## Import Data
+Estimated Time: 30 minutes
+### Objectives
+
+In this lab, you will:
+* Use Data Load to populate a table with GeoJSON data.
+* Quickly create 2 REST APIs using Oracle Rest Services.
+* Learn about Oracle's GEO Spatial features
+
+### Prerequisites
+
+This lab assumes you have:
+* Successfully completed Lab 1: Run the Demo
+
+
+## Task 1: Import Data
+
+In this task, load the floodzones data into a new floodzones table.
 
 The data is located in an OCI Bucket.  Download the file from
 ```
@@ -63,13 +79,12 @@ Key Reasons for Using SDO_GEOMETRY
 
     The SDO_SRID attribute allows geometries to be associated with specific coordinate systems (spatial reference systems). This ensures consistency and accuracy in geospatial calculations
 
-## Create API
+## Task 2: Create Rest APIs using Rest Services
 
 Use Rest Services to create 2 APIs
 
 1. floodzone2040 - return GeoJSON coordinates of the predicted ocean rise in Boston in 2040
 2. isFlooded2040 - determine if the lon/lat coordinates will fall in a floodone in 2040
-3. isFlooded2080 - determine if the lon/lat coordinates will fall in a floodone in 2040
 
 Use Rest Services from Database Actions 
 
@@ -208,6 +223,15 @@ Bind the variables to the coordinates above and see how Tenean Beach fares in 20
 Successful call and good news for Tenean Beach. The relationship is Disjoint
 The relationship between the point and the polygon is DISJOINT. The result of DISJOINT simply means that no spatial overlap exists between your input point and any geometry in the dataset.
 
-## Exercise
+## Spatial Challenge
 
-Create Rest API isFlooded2080.  See if Tenean Beach is still above water
+Create Rest API isFlooded2080. Determine Tenean Beach flood status in 2080.
+
+## Learn More
+
+* [Oracle Database 23ai Documentation](https://docs.oracle.com/en/database/oracle/oracle-database/23/)
+
+## Acknowledgements
+* **Authors** - Doug Drechsel
+* **Contributors** - Mark Nelson, Kevin Lazarz
+* **Last Updated By/Date** - Doug Drechsel, April 2025
