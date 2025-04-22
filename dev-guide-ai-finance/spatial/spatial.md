@@ -17,6 +17,30 @@ In this lab, you will:
 This lab assumes you have:
 * Successfully completed Lab 1: Run the Demo
 
+## Setup
+
+Log into the Database Actions Console
+
+On the Reservation Information page
+
+![Reservation Information](images/reservationInformation.png)
+
+Copy the DB ADMIN Password and click the SQL Worksheet link
+
+Login with
+
+Username: Spatial
+
+Password: DB ADMIN Password
+
+The first page is the Database Actions LandingPage
+The image below shows the Development Options. In this Lab, Rest Services will be used to create Rest Endpoints
+
+![Database Actions Landing Page](images/landingPage.png)
+
+In the next task, Data Load will be used to import the floodzones GeoJSON data
+
+![Load Data Landing Page](images/dataLoad.png)
 
 ## Task 1: Import Data
 
