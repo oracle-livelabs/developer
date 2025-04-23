@@ -22,13 +22,17 @@ By the end of this lab, you’ll understand how the **Data Marketplace** enables
 
 ## Task 1: Subscribe to Data Product Share as RISK user.
 
-1. Navigate to your Assigned ADB Instance
+1. Navigate to your assigned ADB Instance.
 
-   ![Create Data Product Share](./images/subscribe-to-data-share-1.png "Create Data Product Share")
+    * Open Navigation Menu 
+    * Select Oracle Database 
+    * Select Autonomous Database 
 
-2. Select name of desired database.
+   ![Navigate to Autonomous Database in OCI](./images/navigate-to-adb.png " ")
 
-   ![Create Data Product Share](./images/subscribe-to-data-share-2.png "Create Data Product Share")
+2. Select the name of your assigned database.
+
+   ![Navigate to Autonomous Database in OCI](./images/oci-adb-select.png " ")
 
 3. Select **Database Actions**, then **View All Database Actions**
 

@@ -15,6 +15,7 @@ Here’s what you’ll do:
 📥 **Access the Object Storage Bucket**
 
   1.	Access the Object Storage Bucket 
+
   On the left rail, select Catalog  to locate the file containing loan funding data in your Object Storage bucket.
  
   ![Access the Object Storage Bucket](./images/task1-scrn-1.png "Cccess the Object Storage Bucket")
@@ -99,14 +100,6 @@ By completing this task, you’ll understand how to handle complex JSON files, t
 * You’ll run an ETL (Extract, Transform, Load) process to clean or reformat that JSON data and get it ready for queries.
 
 * Once it’s loaded, you can join it with other information in your database to see loan offers in a whole new light. -->
-
----
-
-## Key Terms
-
-### **Affordable Housing Zone**
-
-Affordable Housing Zones are an economic development tool that allows people to invest in distressed areas in the United States. Their purpose is to spur economic growth and job creation in low-income communities while providing tax benefits to investors.
 
 ---
 
