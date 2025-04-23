@@ -91,7 +91,7 @@ okafka:
 Now that you've updated the service, we'll restart it to test the new functionality. From the financial-services/earnest-payment-service directory, start the earnest payments service using Maven:
 
 ```bash
-mvn spring-boot:run
+mvn spring-boot:run -Dmaven.repo.local=/financial-services/repo
 ```
 
 You should see output similar to the following:
