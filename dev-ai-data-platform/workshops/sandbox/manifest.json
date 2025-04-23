@@ -13,8 +13,8 @@
             "filename": "../../cloud-login/cloud-login.md"
         },
         {
-            "title": "Lab 1: Explore Shared Data Products with GenAI Powered App",
-            "description": "Lab 1: Explore Shared Data Products with GenAI Powered App",
+            "title": "Lab 1: Demo GenAI Powered App on Oracle Data Platform",
+            "description": "Lab 1: Demo GenAI Powered App on Oracle Data Platform",
             "filename": "../../user-story/user-story.md"
         },
         {
@@ -34,22 +34,22 @@
         },
         {
             "title": "Lab 5: Create & Share Data Products",
-            "description": "Lab 5: Create & Share Data Products",
+            "description": "This is a step-by-step guide showcasing how the demo instance is navigated",
             "filename": "../../data-products/data-products.md"
         },
         {
             "title": "Lab 6: Subscribe to Data Product",
-            "description": "Subscribe to Data Product",
+            "description": "This is a step-by-step guide showcasing how the demo instance is navigated",
             "filename": "../../mktplace-subscribe/mktplace-subscribe.md"
         },
         {
             "title": "Lab 7: Build Your Data Pipeline: Load & Transform Data",
-            "description": "Build Your Data Pipeline: Load & Transform Data",
+            "description": "Labs that follow the introduction are numbered, starting with Lab 1",
             "filename": "../../load-transform/load-transform.md"
         },
         {
             "title": "Lab 8: Hackathon Challenge",
-            "description": "Hackathon challenge to build a GenAI powered app using the Oracle AI Data Platform",
+            "description": "This is a step-by-step guide showcasing how the demo instance is navigated",
             "filename": "../../hack-answers/hack-answers.md"
         },
         {   "title": "Architecture",

@@ -2,12 +2,11 @@
 
 ## Introduction
 
-In this lab, you will explore the architecture behind the workshop that supports the tasks you will perform.
-We also have a closer look at all the features of the Oracle Database 23ai that were used to build the workshop and the demo application.
+In this lab, you will explore the architecture behind the workshop that supports the tasks you will perform. We also have a closer look at all the features of the Oracle Database 23ai that were used to build the workshop and the demo application.
 
 Estimated Lab Time: 15 minutes
 
-## **Physical Architecture**
+## Physical Architecture
 
 The SeerEquities loan application runs in an **Oracle Cloud Infrastructure (OCI)** Region, with its application layer in a public subnet inside a **Virtual Cloud Network (VCN)**.
 
@@ -37,7 +36,7 @@ The SeerEquities loan application runs in an **Oracle Cloud Infrastructure (OCI)
 
 This architecture provides strong connectivity, scalability, and integration with Oracle cloud-native services to support efficient loan processing and approval.
 
-## Task 2: Oracle Database 23ai features used in the demo app and in this workshop
+## Oracle Database 23ai features used in the demo app and in this workshop
 
 
 
@@ -48,10 +47,9 @@ JSON Relational Duality in Oracle Database 23ai bridges the gap between relation
 
 At the core of this capability is the JSON Relational Duality View, which lets applications read and write JSON while the data remains stored in relational tables.
 
-A key feature that should be highlighted is the ability to connect the database using Mongo DB syntaxt. This allows developers to interact with collections and documents using a familiar syntax. 
+A key feature that should be highlighted is the ability to connect the database using Mongo DB syntax. This allows developers to interact with collections and documents using a familiar syntax. 
 
-**Where is it used**: We implemented JSON Duality View in the demo app and in this workshop. All data you can view in the dashboard of the demo app is query from JSON Duality Views.
-In Lab 3, you learn how to interact with JSON Duality View using Oracle's Python driver. But you also learn how to use Oracle's Mongo API to query JSON Duality Views using Mongo DB syntax.
+**Where is it used**: We implemented JSON Duality View in the demo app and in this workshop. All data you can view in the dashboard of the demo app is query from JSON Duality Views. In Lab 3, you learn how to interact with JSON Duality View using Oracle's Python driver. But you also learn how to use Oracle's Mongo API to query JSON Duality Views using Mongo DB syntax.
 
 ### **AI Vector Search**
 

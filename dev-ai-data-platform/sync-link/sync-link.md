@@ -1,18 +1,18 @@
-# Load Object Storage Data into Autonomous Database
+# Load, Link, and Query Object Storage Data from Autonomous Database
 
 ## Introduction
 
-In this lab, you'll learn how to load data that is stored in Object Storage into tables in your ADB instance. This approach is useful for making data locally available for performance, cost or persistence reasons.
+IThis lab focuses on loading, linking, and querying object storage data directly from your Autonomous Database instance. You'll learn how to make object storage data locally available for performance optimization or cost reduction while maintaining flexibility for real-time analytics. Using Oracle Data Catalog, you'll link object storage data to your database and create external tables that allow direct querying without time-consuming transfers. Finally, you'll run cross-source queries that combine structured database tables with object storage data to deliver a unified view of financial insights.
 
 By the end of this lab, you will:
 
-## Prerequisites
+   * ***Load Data:*** Understand how to move object storage data into tables in your Autonomous Database for improved performance and persistence.
 
-* An Oracle account
-* Prerequisites for Share Recipients
-   * The share recipient must have a valid email address a provider can use to register the recipient to use the share tool. Oracle Data Share allows you to share the recipient's activation link by email.
+   * ***Link Data:*** Use Oracle Data Catalog to connect object storage assets to your database.
 
-## Task 1: Query Data from Object Storage Directly from Autonomous Database
+   * ***Query Data:*** Create external tables to query object storage data directly and combine it with database tables for unified analytics.
+
+## Task 1: Load Object Storage Data into Autonomous Database using Data Catalog
 
    1. Navigate to your Assigned ADB Instance
 
@@ -34,13 +34,13 @@ By the end of this lab, you will:
 
    ![Create Data Product Share](./images/task1-scrn-5.png "Create Data Product Share")
 
-   1. Select **Data Studio** from the tab menu, then select **Catalog** from the navigation tree.
+   1. Select **Data Studio** from the tab menu, then select **Catalog** from the left rail.
 
-   1. The **Catalog** page is displayed with the **/Tables and Views** tab highlighted.
+   1. The **Catalog** page is displayed with the **Tables and Views** tab highlighted.
 
    ![Create Data Product Share](./images/task1-scrn-7.png "Create Data Product Share")
 
-   1. Click on the **Data Objects** tab at the top of the **Catalog** page.
+   1. Click on the **Data Objects** tab at the top of the **Catalog** page,  to view the contents of the object storage buckets.
 
    ![Create Data Product Share](./images/task1-scrn-8.png "Create Data Product Share")
 
@@ -82,7 +82,7 @@ By the end of this lab, you will:
 
    ![Create Data Product Share](./images/task1-scrn-17.png "Create Data Product Share")
 
-   1. Select **Catalog** from the navigation tree and the **Customer_Extension** table now appears in the Catalog.
+   1. Select **Catalog** from the left rail and the **Customer_Extension** table now appears in the Catalog.
 
    ![Create Data Product Share](./images/task1-scrn-18.png "Create Data Product Share")
 
@@ -90,21 +90,11 @@ By the end of this lab, you will:
 
 ## Task 2: Link Object Storage Data from Data Catalog to ADB.
 
-   1. Select **Data Studio** from the tab menu, then select **Catalog** from the navigation tree.
+   1. From the **Data Catalog** page with **Data Objects** selected.
 
-   1. The **Catalog** page is displayed with the **Tables and Views** tab highlighted.
-
-   ![Create Data Product Share](./images/task1-scrn-7.png "Create Data Product Share")
-
-   1. Click on the **Data Objects** tab at the top of the **Catalog** page.
-
-   ![Create Data Product Share](./images/task2-scrn-8.png "Create Data Product Share")
-
-   1. Select **LoanAppCustomer-segments.csv** from the list, to display **Cloud Object Entity" page.
-
-   ![Create Data Product Share](./images/task2-scrn-9.png "Create Data Product Share")
-
-   1. Select the **Link to Table** button and the **Load Data** page will appear.  Click **Edit (pencil)** icon, in the lower right corner.
+      * Select the **Link to Table** button and the the **Load Data** page will appear.  
+      
+      * Click the **Edit (pencil)** icon, in the lower right corner.
 
    ![Create Data Product Share](./images/task2-scrn-10.png "Create Data Product Share")
 
@@ -134,7 +124,60 @@ By the end of this lab, you will:
 
 ***Congratulations you have now Linked your Object Storage discovered in your catalog and queried it with existing data into your ADB.***
 
+## Task 3: Query Data in Object Storage and ADB Database.
+
+   1. Click **Database Actions | Data Load** in the banner to display the Launchpad page. Click the **Development** tab, and then click the **SQL** tab to display the SQL Worksheet
+
+
+  ![Query Data in Object Storage](./images/task3-scrn-1.png "Query Data in Object Storage")
+
+   2.	Let's query the CUSTOMER_EXTENSION table. Copy and paste the following code into your SQL Worksheet, and then click the Run Statement icon in the Worksheet toolbar.
+
+      ```
+      <copy>
+      select * from CUSTOMER EXTENSION e;
+      </copy>
+      ```
+
+
+   The output shows information about customers.
+
+  ![Query Data in Object Storage](./images/task3-scrn-2.png "Query Data in Object Storage")
+
+   3.	Let's query the CUSTOMER_SEGMENTS external table. In the SQL Worksheet, copy and paste the following code into your SQL Worksheet to query the data, and then click the Run Statement icon in the Worksheet toolbar.
+
+
+      ```
+      <copy>
+     select * from CUSTOMER SEGMENT;
+      </copy>
+      ```
+
+   The output shows defined customer segments.
+
+
+  ![Query Data in Object Storage](./images/task3-scrn-3.png "Query Data in Object Storage")
+
+   4.	Create a join combining data from the CUSTOMER_EXTENSION table with data a then click the Run Statement icon in the Worksheet toolbar.
+
+
+      ```
+      <copy>
+        select cust_id, first_name, last_name, s.name
+         from loan.customer_extension e,
+               loan.customer_segment   s
+         where e.segment_id = s.segment_id;
+      </copy>
+      ```
+
+   The output shows combined customer information.
+
+  ![Query Data in Object Storage](./images/task3-scrn-4a.png "Query Data in Object Storage")
+
+
+   ***Congratulations you have now combined data stored in Object Storage with data stored in the ADB database.***
+
 ## Acknowledgements
-* **Author** - <Name, Title, Group>
-* **Contributors** -  <Name, Group> -- optional
-* **Last Updated By/Date** - <Name, Month Year>
+* **Authors** - Eddie Ambler, Otis Barr, Matt Kowalik
+* **Contributors** - Francis Regalado, Ramona Magadan
+* **Last Updated By/Date** - TBC

@@ -4,22 +4,15 @@
 
 **Welcome to the Code with AI Vector Search Challenge!**
 
-This lab guides you through building a loan matching feature for a financial app using Similarity Search in Oracle Database 23ai.  
-You will fix and complete a Jupyter Notebook to implement AI Vector Search, enabling the app to find loan offers that closely match user profiles based on vector similarity.
+This lab guides you through building a loan matching feature for a financial app using Similarity Search in Oracle Database 23ai. You will fix and complete a Jupyter Notebook to implement AI Vector Search, enabling the app to find loan offers that closely match user profiles based on vector similarity.
 
 ![Similarity Search](./images/similarity-search.png " ")
 
-At SeerEquites, the data science team is building a smarter loan recommendation system using vector similarity.  
-They started implementing a feature that vectorizes loan descriptions and matches them to user queries—**but the code is incomplete**.  
-❗Key sections are marked (**"CHANGES GO HERE"**) and it is up to you to finish the job and make the feature work.❗
+At SeerEquites, the data science team is building a smarter loan recommendation system using vector similarity. They started implementing a feature that vectorizes loan descriptions and matches them to user queries—**but the code is incomplete**. ❗Key sections are marked (**"CHANGES GO HERE"**) and it is up to you to finish the job and make the feature work.❗
 
 **Why AI Vector Search?**
 
-Keyword searches often miss context. For example, "Affordable Housing Loan" and "Low-Income Home Loan" mean similar things but use different terms.  
-AI Vector Search solves this by converting text into vectors (embeddings) that capture meaning.  
-With Oracle Database 23ai, you will use similarity search to match user queries to loan descriptions based on semantics, not just keywords.  
-If you're ready to dive in, proceed with this lab and start coding.  
-If you prefer a more guided approach with a detailed walkthrough, you can continue to Lab 5b Step-by-step: Code with AI Vector Search for step-by-step instructions.
+Keyword searches often miss context. For example, "Affordable Housing Loan" and "Low-Income Home Loan" mean similar things but use different terms. AI Vector Search solves this by converting text into vectors (embeddings) that capture meaning. With Oracle Database 23ai, you will use similarity search to match user queries to loan descriptions based on semantics, not just keywords. If you're ready to dive in, proceed with this lab and start coding. If you prefer a more guided approach with a detailed walkthrough, you can continue to Lab 5b Step-by-step: Code with AI Vector Search for step-by-step instructions.
 
 Good luck, and enjoy the process. Let’s get coding!
 
@@ -41,7 +34,7 @@ This lab assumes you have:
 - Basic knowledge of Python and SQL.
 - Completed Lab 1: Run the Demo.
 - Completed Lab 2: Connect to Development Environment.
-- Completed Lab 3: Start coding with Oracle Database 23ai.
+- Completed Lab 3: Coding Basics on Oracle Database 23ai.
 - Completed Lab 4: Step by step: Implement RAG with Oracle Database 23ai.
 
 ## Task 1: Challenge requirements
@@ -58,9 +51,7 @@ The data science team at SeerEquites has provided a Jupyter notebook called `ai_
 
 All of the coding examples will be executed in a new Jupyter Notebook.
 
-1. Change to the **ai-app-dev** directory
-
-2. Open a new **Jupyter Notebook** by clicking on **Python(ipykernel)** notebook.
+1. Open a new **Jupyter Notebook** by clicking on **Python(ipykernel)** notebook.
 
     ![Open Jupyter Notebook](./images/open-new-notebook.png " ")
 
@@ -161,8 +152,7 @@ However, the SQL `INSERT` statement has missing code where the vector is generat
 
 ## Task 5: Verify the vectorized data
 
-The third function verifies vectorization by querying the `LOAN_CHUNK` table for the first three entries (`CHUNK_ID >= 1000`). It should return `CUSTOMER_ID`, `CHUNK_ID`, and `CHUNK_TEXT`(the loan type).
-❗The SQL query is incomplete and contains several **"CHANGES GO HERE"** placeholders that you need to fix.❗
+The third function verifies vectorization by querying the `LOAN_CHUNK` table for the first three entries (`CHUNK_ID >= 1000`). It should return `CUSTOMER_ID`, `CHUNK_ID`, and `CHUNK_TEXT`(the loan type). ❗The SQL query is incomplete and contains several **"CHANGES GO HERE"** placeholders that you need to fix.❗
 
 1. Create a new cell and paste the following code into it:
 
@@ -363,6 +353,6 @@ Fixing the code allowed SeerEquites to recommend loans based on meaning, not key
 
 ## Acknowledgements
 
-- **Authors** - Francis Regalado Database Product Manager
-- **Contributors** - Kamryn Vinson, Linda Foinding, Eddie Ambler, Kevin Lazarz
+- **Authors** - Francis Regalado, Database Product Manager
+- **Contributors** - Linda Foinding, Kamryn Vinson, Kevin Lazarz
 - **Last Updated By/Date** - Francis Regalado, April 2025
