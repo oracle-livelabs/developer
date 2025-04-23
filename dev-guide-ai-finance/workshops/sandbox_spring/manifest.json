@@ -28,6 +28,16 @@
             "filename": "../../spatial/spatial.md"
         },
         {
+            "title": "Lab 5a Challenge Yourself: Code with Transactional Event Queues",
+            "description": "This is a step-by-step guide showcasing how the demo instance is navigated",
+            "filename": "../../messaging-exercise/messaging-exercise.md"
+        },
+        {
+            "title": "Lab 5b Step-by-step: Code with Transactional Event Queues",
+            "description": "This is a step-by-step guide showcasing how the demo instance is navigated",
+            "filename": "../../messaging-answers/messaging-answers.md"
+        },
+        {
             "title": "Architecture & Workshop Features",
             "description": "Review the physical and logical architecture behind the application",
             "filename": "../../app-architecture/app-architecture.md"

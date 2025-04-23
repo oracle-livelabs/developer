@@ -28,106 +28,78 @@ In this lab, you will:
 
 * Download and unpack the stub code.
 * Configure the application to use Spring Cloud Oracle Database Starter for Universal Connection Pooling (UCP).
-* Use the OCI console Code Editor to write code (JPA, DTO, REST endpoint and more).
+* Use Jupyter to finish the application code (JPA, DTO, REST endpoint and more).
 * Test the application at various stages
 
 ### Prerequisites
 
 This lab assumes you have:
 
-* An Oracle Cloud account
-* Successfully completed Lab 1: Run the Demo
-* Successfully completed Lab 3: Connect to Development Environment
-* A good understanding of Java
+* An Oracle Cloud account.
+* Successfully completed Lab 1: Run the Demo.
+* Successfully completed Lab 3: Connect to Development Environment.
+* A good understanding of Java.
+* Google Chrome or Firefox is the preferred browser.
 
-## Task 1: Open the Code Editor
+## Task 1: Familiarize yourself with the stub code
 
-Open the Code Editor by clicking on the little computer icon and select *Code Editor* (it will take a minute or two for the Code Editor to start)
-
-![Code Editor](./images/open-code-editor.png " ")
-
-When the Code Editor has started your screen will look something like this:
-
-![Code Editor](./images/code-editor.png " ")
-
-## Task 2: Get the stub application and open in Code Editor
-
-In the Code Editor open a terminal by clicking *Terminal -> New Terminal*.
-
-![Terminal](./images/terminal.png " ")
-
-In the terminal window execute the following command to download the stub code.
-
-```bash
-wget https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/labfiles%2Fcreditreport.zip
-```
-
-![Get stub code](./images/wget-terminal.png " ")
-
-When the download is complete execute the following command to unzip the file
-
-```bash
-unzip labfiles%2Fcreditreport.zip; cd creditreport
-```
-
-From the File menu select *Open*. Select the creditreport folder.
-
-![Open Workspace](./images/open-workspace.png " ")
-
-You may get questions about Accepting a Red Hat extension and A trust questions. Select *accept* and *Yes*
-
-Click the *Explorer* button (looks like 2 documents in the top left corner) and expand the folders.
-
-![Open Workspace](./images/explorer.png " ")
-
-Feel free to look around in the stub code.
+In the Jupyter environment expand the root level `creditreport` folder and to look around in the stub code.
 
 * The `controller` package contains the Spring REST controller. You will be modifying this file by creating a REST endpoint.
-* The `dto` package contains the DTOs (Data Transfer Objects). Ypu will use the DTOs when creating the creditreport service.
-* The `model` package contains the JPA entities (Clients and ClientDebt). They reflect the Oracle autonomous database 23ai tables that the service is using.
-* The `repository` package contains the JpaRepositories. It contains API for basic CRUD operations and also API for pagination and sorting. You will be modifying the ClientsRepository. You will enhance the CLients JPA repository.
+* The `dto` package contains the DTOs (Data Transfer Objects). You will use the DTOs when creating the creditreport service.
+* The `model` package contains the JPA entities (Clients and ClientDebt). They reflect the Oracle Autonomous Database 23ai tables that the service is using.
+* The `repository` package contains the JPA Repositories. The API is for CRUD operations and also API for pagination and sorting. You will be modifying the ClientsRepository. You will enhance the Clients JPA repository.
 * The `service` package contains the logic that creates the creditreport DTO. You will create this logic.
 
-## Task 3: Set Java runtime to Java 17
+![familiarize](./images/familiarize.png " ")
 
-Open a terminal (or use the one already opened) and execute the following commandL
+## Task 2: Run the application and add Spring Cloud Oracle Database starter for UCP
 
-```bash
-csruntimectl java set graalvmeejdk-17
-```
-
-## Task 4: Run the application and add Spring Cloud Oracle Database starter for UCP
-
-In a terminal window execute the following command. This will download all the dependencies needed for the application. However the application will not start, if you look at the logfile you will see that the application is failing to start the Universal Connection Pool (UCP).
+Open a terminal window and execute the following command. If you look at the output you will see that fails to start.
 
 ```bash
-cd $HOME/creditreport; mvn spring-boot:run
+cd $HOME/creditreport; mvn -o spring-boot:run -DskipTests -Dmaven.repo.local=/financial-services/repo
 ```
 
-![First Run](./images/first-run.png " ")
+The output will looks like this:
 
 ```log
-2025-04-10T20:56:00.408Z ERROR 10194 --- [creditreport] [           main] o.h.engine.jdbc.spi.SqlExceptionHelper   : UCP-0: Unable to start the Universal Connection Pool 
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Failed to bind properties under 'spring.datasource.type' to java.lang.Class<javax.sql.DataSource>:
+
+    Property: spring.datasource.type
+    Value: "oracle.ucp.jdbc.PoolDataSource"
+    Origin: class path resource [application.yaml] - 18:11
+    Reason: failed to convert java.lang.String to java.lang.Class<javax.sql.DataSource> (caused by java.lang.ClassNotFoundException: oracle.ucp.jdbc.PoolDataSource)
+
+Action:
+
+Update your application's configuration
 ```
 
-To resolve the problem we need to add Spring Cloud Oracle Database starter for UCP dependency to the application. Open the `pom.xml` file and add the following dependency
+The reason is that the application want to use Oracle Universal Connection Pooling (UCP) and the right dependency hasn't been added to the application `pom.xml`. To resolve the problem we need to add Spring Cloud Oracle Database starter for UCP dependency to the application. Open the `pom.xml` file and add the following dependency. The pom file is in the `root` directory of the `creditscore` application:
 
 ```xml
-<dependency>
-    <groupId>com.oracle.database.spring</groupId>
-    <artifactId>oracle-spring-boot-starter-ucp</artifactId>
-    <version>25.1.0</version>
-</dependency>
+  <dependency>
+      <groupId>com.oracle.database.spring</groupId>
+      <artifactId>oracle-spring-boot-starter-ucp</artifactId>
+      <version>25.1.0</version>
+  </dependency>
 ```
 
 Make sure you put the dependency in the right location (e.g. inside the `<dependencies>` tag). Save the file.
 
-![First Run](./images/ucp-dep.png " ")
+![UCP Dependency](./images/ucp-dep.png " ")
 
-In a terminal window run tha application again.
+In a terminal window run the application again.
 
 ```bash
-cd $HOME/creditreport; mvn spring-boot:run
+source $HOME/.env; cd $HOME/creditreport; mvn -o spring-boot:run -DskipTests -Dmaven.repo.local=/financial-services/repo
 ```
 
 The console log will look something like this:
@@ -136,7 +108,7 @@ The console log will look something like this:
 2025-04-10T21:07:41.900Z  INFO 13325 --- [creditreport] [           main] c.e.c.CreditreportApplication            : Started CreditreportApplication in 9.992 seconds (process running for 10.318)
 ```
 
-In a new terminal window (keep the application running) execute the following command:
+In a different terminal window (keep the application running) execute the following command:
 
 ```bash
 curl -v  http://localhost:8080/creport/CUST_1000
@@ -145,7 +117,7 @@ curl -v  http://localhost:8080/creport/CUST_1000
 The output will look like this:
 
 ```log
-<username>@codeeditor:creditreport (us-sanjose-1)$ curl -v  http://localhost:8080/creport/CUST_1000
+opc@livelabs ~]$ curl -v  http://localhost:8080/creport/CUST_1000
 *   Trying ::1...
 * TCP_NODELAY set
 * Connected to localhost (::1) port 8080 (#0)
@@ -161,13 +133,15 @@ The output will look like this:
 * Connection #0 to host localhost left intact
 ```
 
-The command will not return any data, this is the GET REST endpoint you now will build.
+The command will not return any data but a HTTP 200 code that means that a request has succeeded, indicating that the server has successfully processed the request and returned the requested resource.
+
+This is the GET REST endpoint you will build going forward in the exercise.
 
 Stop the application by typing `Ctrl-C` in the terminal window where the application is running.
 
 ## Task 5: Add JPA Repository findByCustomerID method
 
-Open the JPA repository class `ClientsRepository.java` and add the following method and save the file.
+Open the JPA repository class `ClientsRepository.java` (lives in the `creditreport/src/main/java/com/example/creditreport/repository`) and add the following method and save the file.
 
 ```java
 Clients findByCustomerId(String customerId);
@@ -175,7 +149,7 @@ Clients findByCustomerId(String customerId);
 
 ![Add JPA Method](./images/add-jpa-method.png " ")
 
-This method returns a Client object for a specific `customerId` from th`CLIENTS` table in the Autonomous Database 23ai that the application is using.
+This method returns a Client object for a specific `customerId` from the `CLIENTS` table in the Autonomous Database 23ai that the application is using.
 
 ## Task 6: Create the service that creates the creditreport
 
@@ -221,7 +195,7 @@ Open the Service class `CreditReportService.java` and add the following code to 
 Click *File -> Save All*. In a terminal window run the following command to make sure that the application compiles and runs properly:
 
 ```bash
-cd $HOME/creditreport; mvn spring-boot:run
+source $HOME/.env; cd $HOME/creditreport; mvn -o spring-boot:run -DskipTests -Dmaven.repo.local=/financial-services/repo
 ```
 
 The application should start and you will get a log message that looks like this:
@@ -231,17 +205,17 @@ The application should start and you will get a log message that looks like this
 2025-04-16T12:29:17.451-05:00  INFO 23912 --- [creditreport] [           main] c.e.c.CreditreportApplication            : Started CreditreportApplication in 15.625 seconds (process running for 15.872)
 ```
 
-Stop the application by pressing `Ctrl-c`.
+Stop the application by pressing `Ctrl-C`.
 
 ## Task 7: Create the GET REST Endpoint
 
-Open the `RestController` class called CreditReportController.java and add the following code to the `getReport` method. Make sure that you delete the already existing `return null` statement.
+Open the `RestController` class called `CreditReportController.java` and add the following code to the `getReport` method. Make sure that you delete the already existing `return null` statement.
 
 ```java
-    log.info("*** Getting creditreport for customer ID: " + customerId);
+log.info("*** Getting creditreport for customer ID: " + customerId);
 
-    CreditreportDTO creditreportDTO = creditReportService.getClientWithDepts(customerId);
-    return creditreportDTO != null ? ResponseEntity.ok(creditreportDTO) : ResponseEntity.notFound().build();
+CreditreportDTO creditreportDTO = creditReportService.getClientWithDepts(customerId);
+return creditreportDTO != null ? ResponseEntity.ok(creditreportDTO) : ResponseEntity.notFound().build();
 ```
 
 ![getReport method](./images/get-report-method.png " ")
@@ -249,7 +223,7 @@ Open the `RestController` class called CreditReportController.java and add the f
 Click *File -> Save All*. In a terminal window run the following command to make sure that the application compiles and runs properly:
 
 ```bash
-cd $HOME/creditreport; mvn spring-boot:run
+source $HOME/.env; cd $HOME/creditreport; mvn -o spring-boot:run -DskipTests -Dmaven.repo.local=/financial-services/repo
 ```
 
 The application should start and the log output will look similar to this:
@@ -263,7 +237,7 @@ Keep the application running, you will test the endpoint in the next task.
 
 ## Task 8: Test the REST endpoint
 
-Open a terminal window (or use an existing one) and execute the following command:
+Open a new terminal window (or use an existing one) and execute the following command:
 
 ```bash
 curl -s  http://localhost:8080/creport/CUST_3000 | jq
@@ -303,7 +277,7 @@ Hibernate: select c1_0.customer_id,c1_0.age,c1_0.city,c1_0.first_name,c1_0.incom
 Hibernate: select cd1_0.customer_id,cd1_0.id,cd1_0.application_id,cd1_0.debt_amount,cd1_0.debt_type from client_debt cd1_0 where cd1_0.customer_id=?
 ```
 
-**Congratulations, you have successfully completed Create a Creditreport Microservice Coding Exercise!**
+**Congratulations, you have successfully completed Create a Creditreport Microservice Coding Exercise!** You can close all the opened terminal windows and files.
 
 ## Learn More
 
@@ -314,5 +288,5 @@ Hibernate: select cd1_0.customer_id,cd1_0.id,cd1_0.application_id,cd1_0.debt_amo
 ## Acknowledgements
 
 * **Authors** - Andy Tael
-* **Contributors** -
+* **Contributors** - Mark Nelson
 * **Last Updated By/Date** - Andy Tael, April 2025
