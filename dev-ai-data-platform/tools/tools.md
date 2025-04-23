@@ -19,7 +19,7 @@ This lab assumes you have:
 
 ## Task 1: Navigate to your assigned ADB instance
 
-1. Navigate to your assigned ADB Instance.
+1. **Navigate** to your assigned ADB Instance.
 
     * Open Navigation Menu 
     * Select Oracle Database 

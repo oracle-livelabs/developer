@@ -24,19 +24,32 @@ First, you’ll log into your Autonomous Database and connect to your local Data
 
   ![Navigate to ADB Instance](./images/oci-adb-select.png "Navigate to ADB Instance")
 
-* Select View all Database Actions
+
+1. Navigate to your assigned ADB Instance.
+
+    * Open Navigation Menu 
+    * Select Oracle Database 
+    * Select Autonomous Database 
+
+![Navigate to Autonomous Database in OCI](./images/navigate-to-adb.png " ")
+
+2. Select the name of your assigned database.
+
+![Navigate to Autonomous Database in OCI](./images/oci-adb-select.png " ")
+
+3. Select View all Database Actions
 
   ![Select Database Actions](./images/oci-adb-database-actions.png "Select Database Actions")
 
-* **On the Database Actions page, In Upper right under dropdown next to ADMIN, select "Sign out"**
+4. **On the Database Actions page, In Upper right under dropdown next to ADMIN, select "Sign out"**
 
   ![Access Local Data Catalog](./images/access-local-data-catalog-1.png "Access Local Data Catalog")
 
-* **Login to Database Actions as LOAN User** using credential shown on View Lab Info Page
+5. **Login to Database Actions as LOAN User** using credential shown on View Lab Info Page
 
   ![Access Local Data Catalog](./images/access-local-data-catalog-2.png "Access Local Data Catalog")
 
-* Click on **Data Studio**
+6. Click on **Data Studio**
 
   ![Access Local Data Catalog](./images/access-local-data-catalog-3.png "Access Local Data Catalog")
 
@@ -69,16 +82,11 @@ Now Let’s add our **own connection** for an Object Storage bucket named **MyDe
 
 * For **Name**, enter: **MyDemoBucket**
 * For **Description**, enter: **My Demo Object Storage Bucket**
-* For **Credential**, select **LOAN2OBJStorage**
-* For **Bucket URI** enter the following:
+* For **Credential**, select **OCI\_API\_KEY_CRED**
+* Choose **Select Bucket** radio button
+* From DropDown List choose **Bucket Named:** ***MyDemoBucket***
 
-```
-  <copy>
-  https://objectstorage.ap-sydney-1.oraclecloud.com/p/upHzsvrDbRv3twpp4l_UCiuflwoigAa7ItQFcFVSxsHrK2T-_cxF2bCseOM4tszj/n/oradbclouducm/b/MyDemoBucket/o/
-  </copy>
-```
-
-  ![Add Connections to Catalog](./images/add-connections-to-catalog-4.png "Add Connections to Catalog")
+  ![Add Connections to Catalog](./images/add-connections-to-catalog-4-w-select-bucket.png "Add Connections to Catalog")
 
 * Click on **Create** button to proceed
 
