@@ -42,6 +42,6 @@ You may now **proceed to the next lab**.
 
 ## Acknowledgements
 
-- **Created By/Date** - 
-- **Contributor** - 
+- **Created By/Date** -
+- **Contributor** -
 - **Last Updated By/Date** - 04/21/2025
