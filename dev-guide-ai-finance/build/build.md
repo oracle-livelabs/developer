@@ -358,7 +358,7 @@ Now that the recommendations are vectorized, we can process a user’s question:
 
             print("Generating AI response...")
 
-            genai_client = oci.generative_ai_inference.GenerativeAiInferenceClient(config=oci.config.from_file(os.getenv("OCI_CONFIG_PATH", "~/workshop/.setup/config")), service_endpoint=os.getenv("ENDPOINT"))
+            genai_client = oci.generative_ai_inference.GenerativeAiInferenceClient(config=oci.config.from_file(os.getenv("OCI_CONFIG_PATH", "~/.oci/config")), service_endpoint=os.getenv("ENDPOINT"))
             chat_detail = oci.generative_ai_inference.models.ChatDetails(
                 compartment_id=os.getenv("COMPARTMENT_OCID"),
                 chat_request=oci.generative_ai_inference.models.GenericChatRequest(
