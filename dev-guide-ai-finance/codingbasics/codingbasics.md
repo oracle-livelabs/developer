@@ -1,4 +1,4 @@
-# Coding Basics on 23ai
+# Coding Basics on Oracle Database 23ai
 
 ## Introduction
 
@@ -34,11 +34,7 @@ This lab assumes you have:
 
 All of the coding examples will be executed in a new Jupyter Notebook.
 
-1. Select the **streamlit** folder.
-
-    ![Click Streamlit](./images/click-streamlit.png " ")
-
-2. Open a new **Jupyter Notebook** by clicking on **Python(ipykernel)** notebook.
+1. Open a new **Jupyter Notebook** by clicking on **Python(ipykernel)** notebook.
 
     ![Open Jupyter Notebook](./images/open-new-notebook.png " ")
 
@@ -388,18 +384,18 @@ Next, let's update some data in our database using MongoDB syntax. Let's write a
     ```python
     <copy>
     def update_mongo_order():
-    col = mongo_connect().CUSTOMERS_DV
-    col.update_one(
-        {
-            "FirstName": "Dan",
-            "orders.OrderID": 1.0
-        },
-        {
-            "$set":{"orders.$.TotalValue": 100}
-        }
-    )
-    return
-update_mongo_order()
+        col = mongo_connect().CUSTOMERS_DV
+        col.update_one(
+            {
+                "FirstName": "Dan",
+                "orders.OrderID": 1.0
+            },
+            {
+                "$set":{"orders.$.TotalValue": 100}
+            }
+        )
+        return
+    update_mongo_order()
         </copy>
         ```
 
@@ -449,22 +445,22 @@ The final step in our basic coding tour with Python and the Oracle Database 23ai
     <copy>
     import pandas as pd
 
-        def query_customers_with_orders(first_name):
-            with connection.cursor() as cursor:
-                query = """
-                    SELECT *
-                    FROM customers c
-                    JOIN orders o ON c.id = o.customer_id
-                    WHERE c.first_name = :first_name
-                """
-                cursor.execute(query, {"first_name": first_name})
-                rows = cursor.fetchall()
-                column_names = [desc[0] for desc in cursor.description]
-                df = pd.DataFrame(rows, columns=column_names)
-                return df
+    def query_customers_with_orders(first_name):
+        with connection.cursor() as cursor:
+            query = """
+                SELECT *
+                FROM customers c
+                JOIN orders o ON c.id = o.customer_id
+                WHERE c.first_name = :first_name
+            """
+            cursor.execute(query, {"first_name": first_name})
+            rows = cursor.fetchall()
+            column_names = [desc[0] for desc in cursor.description]
+            df = pd.DataFrame(rows, columns=column_names)
+            return df
 
-        df = query_customers_with_orders("Dan")
-        df.head() 
+    df = query_customers_with_orders("Dan")
+    df.head() 
     </copy>
     ```
 

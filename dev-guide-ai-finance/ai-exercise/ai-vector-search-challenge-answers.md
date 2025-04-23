@@ -35,7 +35,7 @@ This lab assumes you have:
 - Basic knowledge of Python and SQL.
 - Completed Lab 1: Run the Demo.
 - Completed Lab 2: Connect to Development Environment.
-- Completed Lab 3: Coding Basics on 23ai. 
+- Completed Lab 3: Coding Basics on Oracle Database 23ai. 
 - Completed Lab 4: Step by step: Implement RAG with Oracle Database 23ai.
 
 ## Task 1: Challenge requirements 
@@ -51,11 +51,7 @@ The data science team at SeerEquites has provided a Jupyter Notebook called `ai_
 
 All of the coding examples will be executed in a new Jupyter Notebook.
 
-1. Select the **streamlit** folder.
-
-    ![Click Streamlit](./images/click-streamlit.png " ")
-
-2. Open a new **Jupyter Notebook** by clicking on **Python(ipykernel)** notebook.
+1. Open a new **Jupyter Notebook** by clicking on **Python(ipykernel)** notebook.
 
     ![Open Jupyter Notebook](./images/open-new-notebook.png " ")
 

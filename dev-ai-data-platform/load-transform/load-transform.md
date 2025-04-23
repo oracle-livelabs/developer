@@ -4,57 +4,60 @@
 
 ## Introduction
 
-In this lab, you’ll practice importing data from Oracle Object Storage and preparing it for analysis in various formats. You’ll learn how to load both CSV and JSON files into Oracle Autonomous Database and transform them for easier use. By the end of this lab, you’ll understand how to efficiently move data from Object Storage—regardless of its format—and apply transformations to make it searchable, shareable, and ready for analysis.
+In this lab, you’ll practice importing data from Oracle Object Storage and preparing it for analysis in various formats. You’ll learn how to load JSON data into the Oracle Autonomous Database and prepare it for use.
 
-## Task 1: Load CSV Data from Object Storage (Approved Affordable Home Zones)
+## Task 1: Extract Data from Object Storage.
 
-In this task, you’ll work with a CSV file stored in your Oracle Object Storage bucket. A CSV file is a simple, tabular format similar to a spreadsheet, making it ideal for structured data like affordable home zone information.
+In this task, you’ll work with a JSON-formatted file stored in your Oracle Object Storage bucket. 
 
 Here’s what you’ll do:
 
 📥 **Access the Object Storage Bucket**
 
-* Locate the CSV file containing **"Approved Affordable Homes Zones"** data in your **Object Storage bucket**.
+  1.	Access the Object Storage Bucket 
 
-* Understand the structure of the file by reviewing its **columns and data types** (e.g., zone names, approval dates, or geographic coordinates).
+  On the left rail, select Catalog  to locate the file containing loan funding data in your Object Storage bucket.
+ 
+  ![Access the Object Storage Bucket](./images/task1-scrn-1.png "Cccess the Object Storage Bucket")
 
-🛠️ **Load the CSV File into Oracle Autonomous Database**
+  2.  Select Data Objects to display the available database objects and the listing of the files available in our object storage
+ 
+  ![Access the Object Storage Bucket](./images/task1-scrn-2.png "Cccess the Object Storage Bucket")
 
-Use Oracle tools (such as **SQL Developer Web** or **Data Pump**) to import the CSV file into your database.
+  3.	Hover over file name to see data preview option and Click the Preview Icon on the far right, to display data preview. 
+ 
+  ![Access the Object Storage Bucket](./images/task1-scrn-3.png "Cccess the Object Storage Bucket")
 
-- Create a **new table** or use an **existing one** to store the data.
-- Ensure **column mappings are accurate** to preserve data integrity.
+  4.	This displays the contents of the file being previewed without needing to first load it into the database.   
 
-✅ **Validate the Imported Data**
+  ![Access the Object Storage Bucket](./images/task1-scrn-4.png "Cccess the Object Storage Bucket")
 
-Run simple **SQL queries** to verify that all **rows and columns** were imported correctly.
+  Click on Close button to return to Data Catalog listings. 
+ 
+## Task 2: Load Data from Object Storage.
 
-- Check for any **missing or corrupted data** and troubleshoot if necessary.
+  1.	Hover over file name to see data preview option and Click the View Details icon  on the far right, to display file details. 
 
-📊 **Analyze Home Zone Data**
+  ![ALoad Data from Object Storage](./images/task2-scrn-1.png "Load Data from Object Storage")
 
-Use **SQL queries** to analyze the imported data directly in **Oracle Autonomous Database**. For example:
+  2.	Select the Load to Table button and the Load Data page will appear 
 
-- Identify **zones with the highest approvals**.
-- Filter zones by specific criteria, such as **location** or **approval status**.
+  ![ALoad Data from Object Storage](./images/task2-scrn-2.png "Load Data from Object Storage")
 
-By the end of this task, you’ll have successfully **imported and validated CSV data**, making it **ready for analysis** within Oracle.
+  3.	Select the Start button and the Load Data page will appear.  
 
-## Task 2: Load JSON Data from Object Storage & Transform via ETL (Loan Offers)
+  ![Load Data from Object Storage](./images/task2-scrn-3.png "Load Data from Object Storage")
 
-In this task, you’ll work with JSON files stored in your Object Storage bucket. JSON (JavaScript Object Notation) is a structured text format used for representing data as key-value pairs, often used for more complex datasets like loan offers. You’ll perform an ELT (Extract, Load, Transform) process to clean and reformat the data for analysis.
+  4.	Select the Start button to submit data load job.  
 
-📂 **Access the JSON File**
+  ![Load Data from Object Storage](./images/task2-scrn-4.png "Load Data from Object Storage")
 
-* Locate the JSON file containing **"Loan Offers"** data in your **Object Storage bucket**.
+  5.	Select the Start button to submit data load job.  
 
-* Review its structure to understand the **key-value pairs** (e.g., loan ID, interest rate, applicant details).
+  At the end of this task, you’ll have successfully imported and validated JSON data, making it available for use within the Oracle Autonomous Database.
 
-📥 **Load JSON Data into Oracle Autonomous Database**
 
-* Use Oracle’s **JSON support features** to load the file into a **dedicated table designed for JSON storage**.
-
-* Leverage tools like **SQL Developer Web** or **REST APIs** to streamline the loading process.
+## Task 3: Combine Data from Object Storage
 
 🔄 **Transform JSON Data Using ELT**
 
@@ -100,14 +103,6 @@ By completing this task, you’ll understand how to handle complex JSON files, t
 
 ---
 
-## Key Terms
-
-### **Affordable Housing Zone**
-
-Affordable Housing Zones are an economic development tool that allows people to invest in distressed areas in the United States. Their purpose is to spur economic growth and job creation in low-income communities while providing tax benefits to investors.
-
----
-
 ## Learn More
 
 * [The Catalog Tool](https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/catalog-entities.html)
@@ -115,8 +110,8 @@ Affordable Housing Zones are an economic development tool that allows people to 
 
 ## Acknowledgements
 
-* **Authors** - Matt Kowalik, Otis Barr
-* **Contributors** - Eddie Ambler, Ramona Magadan
+* **Authors** - Eddie Ambler, Otis Barr, Matt Kowalik
+* **Contributors** - Francis Regalado, Ramona Magadan
 * **Last Updated By/Date** - TBC
 
 Copyright (C) Oracle Corporation.
