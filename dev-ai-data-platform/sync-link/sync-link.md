@@ -14,6 +14,8 @@ By the end of this lab, you will:
 
 ## Task 1: Load Object Storage Data into Autonomous Database using Data Catalog
 
+Note: If continuing from lab 3, skip to step 8.
+
    1. Navigate to your assigned ADB Instance.
 
     * Open Navigation Menu 
@@ -72,9 +74,11 @@ By the end of this lab, you will:
 
    15. The table will appear on the **Table and View Loads** page, once the job is completes.
 
-   ![Create Data Product Share](./images/task1-scrn-14.png "Create Data Product Share")
+   * To generate a report and review the SQL used for the job, click on the Report Button 
 
-   16. To generate a report and review the SQL used for the job, click on the table name **Customer_Extension**.   Click the **Close** button when finished.
+   ![Create Data Product Share](./images/task1-scrn-14.png "Create Data Product Share")
+ 
+   16. Click the **Close** button when finished.
 
    ![Create Data Product Share](./images/task1-scrn-15.png "Create Data Product Share")
 
@@ -96,8 +100,8 @@ By the end of this lab, you will:
 
    1. From the **Data Catalog** page with **Data Objects** selected.
 
-      * Select the **Link to Table** button and the the **Load Data** page will appear.  
-      
+      * Select the **Link to Table** button and the the **Load Data** page will appear. 
+
       * Click the **Edit (pencil)** icon, in the lower right corner.
 
    ![Create Data Product Share](./images/task2-scrn-10.png "Create Data Product Share")
@@ -150,7 +154,6 @@ By the end of this lab, you will:
 
    3.	Let's query the CUSTOMER_SEGMENTS external table. In the SQL Worksheet, copy and paste the following code into your SQL Worksheet to query the data, and then click the Run Statement icon in the Worksheet toolbar.
 
-
       ```
       <copy>
      select * from CUSTOMER SEGMENT;
@@ -163,7 +166,6 @@ By the end of this lab, you will:
   ![Query Data in Object Storage](./images/task3-scrn-3.png "Query Data in Object Storage")
 
    4.	Create a join combining data from the CUSTOMER_EXTENSION table with data a then click the Run Statement icon in the Worksheet toolbar.
-
 
       ```
       <copy>

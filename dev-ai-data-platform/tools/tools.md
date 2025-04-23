@@ -17,7 +17,7 @@ This lab assumes you have:
 * Completed the Get Started lab
 * Successfully launched the hands-on lab environment
 
-## Task 1: Navigate to your assigned ADB instance
+## Task 1: **Navigate** to your assigned ADB instance
 
 1. **Navigate** to your assigned ADB Instance.
 
@@ -50,12 +50,35 @@ This will cause the **Database Actions Launchpad** to be displayed
 
 ![Autonomous Database Studio](./images/adb-data-studio.png " ")
 
-
 ## Task 4: Intro to Data Catalog
 
 **Data Catalog** centralizes metadata management and data discovery within Oracle Autonomous Database. It allows users to search, organize, and understand data assets across connected systems, making it easier to manage dependencies and ensure compliance.
 
 ![Autonomous Database Catalog](./images/adb-data-catalog.png " ")
+
+**Note:** In the picture above, the catalog includes quick filters in the top menu for search simplification.  You can combine multiple filters for more refined search results.
+
+### **The catalog quick filters are:** ###
+
+**Tables and Views**
+  This filter searches for database tables (both internal and external) and views, including both standard database views and analytic views.
+
+**Data Objects**
+  This filter searches for data objects in the database and on connected cloud storage.
+> **Note:** This is a superset of the Tables and Views and Files filters.
+
+**Files**
+  This filter searches for files in connected cloud storage only.
+
+**OCI**
+  This filter searches for other Oracle Cloud Infrastructure objects, such as Autonomous Databases, OCI cloud storage buckets, or registered OCI Data Catalogs.
+  This option is available if you have an OCI credential, which can be created from the **Data Studio Settings** icon.
+
+**Connections**
+  This filter searches for connections registered in Data Studio, such as those to external Data Catalogs or databases.
+
+**All**
+  This filter searches for all objects in the catalog. Since there can be thousands of objects, this scope may result in slower performance.
 
 ## Task 5: Intro to Data Load
 
