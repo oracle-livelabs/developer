@@ -22,11 +22,11 @@ By the end of this lab, you’ll understand how the **Data Marketplace** enables
 
 ## Task 1: Subscribe to Data Product Share as RISK user.
 
-1. **Navigate** to your assigned ADB Instance.
+1. Navigate to your assigned ADB Instance.
 
-    * Open Navigation Menu
-    * Select Oracle Database
-    * Select Autonomous Database
+    * Open Navigation Menu 
+    * Select Oracle Database 
+    * Select Autonomous Database 
 
    ![Navigate to Autonomous Database in OCI](./images/navigate-to-adb.png " ")
 

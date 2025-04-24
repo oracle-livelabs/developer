@@ -14,9 +14,7 @@ By the end of this lab, you will:
 
 ## Task 1: Load Object Storage Data into Autonomous Database using Data Catalog
 
-Note: If continuing from lab 3, skip to step 8.
-
-   1. Navigate to your assigned ADB Instance.
+   1. Navigate to your Assigned ADB Instance
 
     * Open Navigation Menu 
     * Select Oracle Database 
@@ -72,13 +70,11 @@ Note: If continuing from lab 3, skip to step 8.
 
    ![Create Data Product Share](./images/task1-scrn-13.png "Create Data Product Share")
 
-   15. The table will appear on the **Table and View Loads** page, once the job is completes.
-
-   * To generate a report and review the SQL used for the job, click on the Report Button 
+   1. The table will appear on the **Table and View Loads** page, once the job is completes.
 
    ![Create Data Product Share](./images/task1-scrn-14.png "Create Data Product Share")
- 
-   16. Click the **Close** button when finished.
+
+   1. To generate a report and review the SQL used for the job, click on the table name **Customer_Extension**.   Click the **Close** button when finished.
 
    ![Create Data Product Share](./images/task1-scrn-15.png "Create Data Product Share")
 

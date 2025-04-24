@@ -17,6 +17,30 @@ In this lab, you will:
 This lab assumes you have:
 * Successfully completed Lab 1: Run the Demo
 
+## Setup
+
+Log into the Database Actions Console
+
+On the Reservation Information page
+
+![Reservation Information](images/reservationinformation.png)
+
+Copy the DB ADMIN Password and click the SQL Worksheet link
+
+Login with
+
+Username: Spatial
+
+Password: DB ADMIN Password
+
+The first page is the Database Actions LandingPage
+The image below shows the Development Options. In this Lab, Rest Services will be used to create Rest Endpoints
+
+![Database Actions Landing Page](images/landingpage.png)
+
+In the next task, Data Load will be used to import the floodzones GeoJSON data
+
+![Load Data Landing Page](images/dataload.png)
 
 ## Task 1: Import Data
 
@@ -40,23 +64,23 @@ There are 3 rows and each row contains:
 
 Use DataLoad from Database Actions to create a floodzones table from the local file floodzones.json
 
-![DataLoadLandingPage](images/dataLoadLanding.png)
+![DataLoadLandingPage](images/dataloadlanding.png)
 
 Select Load Data and select Local File, floodzones.json
 
-![Load Data](images/loadData.png)
+![Load Data](images/loaddata.png)
 
 Load the Data as a Table
 
-![Load Table](images/loadTable.png)
+![Load Table](images/loadtable.png)
 
 Run the data load job.  This is what success looks like
 
-![Success](images/successfulCompletion.png)
+![Success](images/successfulcompletion.png)
 
 Check the table in the SQL Console
 
-![Success](images/floodzonesTable.png)
+![Success](images/floodzonestable.png)
 
 Note that Geometry in the database is now type SDO_Geometry
 
@@ -88,7 +112,7 @@ Use Rest Services to create 2 APIs
 
 Use Rest Services from Database Actions 
 
-![Rest Services](images/restServicesLanding.png)
+![Rest Services](images/restserviceslanding.png)
 
 When creating REST APIs, they are in the form of module/template/handler
 
@@ -106,7 +130,7 @@ Create the module by clicking MODULES in the upper left and click **Create Modul
 
 ![Modules](images/modules.png)
 
-![Create Module Flood Zone](images/createModuleFloodZone.png)
+![Create Module Flood Zone](images/createmodulefloodzone.png)
 
 * Module Name is floodzone2040
 * Base Path is floodzone2040
@@ -115,15 +139,15 @@ Create the module by clicking MODULES in the upper left and click **Create Modul
 
 Create the Template by clicking **Create Template**
 
-![Click Create Template](images/clickCreateTemplate.png)
-![Create Template](images/createTemplate.png)
+![Click Create Template](images/clickcreatetemplate.png)
+![Create Template](images/createtemplate.png)
 
 URI Template - will take an id that correlates to fid in the database table
 
 Create the Handler by clicking **Create Handler**
 
-![Click Create Template](images/clickCreateHandler.png)
-![Click Create Template](images/createHandler.png)
+![Click Create Template](images/clickcreatehandler.png)
+![Click Create Template](images/createhandler.png)
 
 * Method is a GET
 * Pagination is set to 25
@@ -152,7 +176,7 @@ WHERE fid = :id
 
 Create the Handler
 
-![Create Handler Success](images/createHandlerSuccess.png)
+![Create Handler Success](images/createhandlersuccess.png)
 
 Test the query by clicking the Green Play button
 Bind id to 1 which is the key for 2040 floodzone data
@@ -161,15 +185,15 @@ Bind id to 1 which is the key for 2040 floodzone data
 
 Success
 
-![FloodZone query success](images/fzquerySuccess.png)
+![FloodZone query success](images/fzquerysuccess.png)
 
 Test the public Rest Endpoint by clicking Open in New Tab button to the left of URI
 
-![Test Public endpoint](images/testfzURI.png)
+![Test Public endpoint](images/testfzuri.png)
 
 To check that what was returned is valid GeoJSON, copy the geojson_output and paste into [GeoJSON Tools](https://geojson.tools/)
 
-![Check GeoJson](images/geojsonTools.png)
+![Check GeoJson](images/geojsontools.png)
 
 There was alot of information but that was fairly straighforward.  The next API is going to take [longitude,latitude] coordinates and check if the location falls within the 2040 flood zone. 
 
@@ -177,7 +201,7 @@ There was alot of information but that was fairly straighforward.  The next API 
 
 Create the Module for isFlooded2040
 
-![Create Module isFlooded2040](images/isFlooded2040Module.png)
+![Create Module isFlooded2040](images/isflooded2040module.png)
 
 * Module Name is isFlooded2040
 * Base Path is isFlooded2040
@@ -186,13 +210,13 @@ Create the Module for isFlooded2040
 
 Create the Template. It will take longitude and latitude 
 
-![Create Template isFlooded2040](images/isFlooded2040Template.png)
+![Create Template isFlooded2040](images/isflooded2040template.png)
 
 URI Template - will take coordinates, longitude then latitude
 
 Create the Handler
 
-![Create Handler isFlooded2040](images/isFlooded2040Handler.png)
+![Create Handler isFlooded2040](images/isflooded2040handler.png)
 
 * Method is a GET
 * Pagination is set to 25
@@ -213,12 +237,12 @@ To Test, use the following coordinates
 [-71.042972,42.272597]
 This is the location of Tenean Beach Boston
 
-![Tenean Beach](images/teneanBeach.png)
+![Tenean Beach](images/teneanbeach.png)
 
 Test the public Rest Endpoint by clicking Open in New Tab button to the left of URI
 Bind the variables to the coordinates above and see how Tenean Beach fares in 2040
 
-![Test isFlooded2040 endpoint](images/testisFlooded2040.png)
+![Test isFlooded2040 endpoint](images/testisflooded2040.png)
 
 Successful call and good news for Tenean Beach. The relationship is Disjoint
 The relationship between the point and the polygon is DISJOINT. The result of DISJOINT simply means that no spatial overlap exists between your input point and any geometry in the dataset.
