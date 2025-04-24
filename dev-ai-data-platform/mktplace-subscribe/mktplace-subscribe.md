@@ -50,15 +50,15 @@ By the end of this lab, you’ll understand how the **Data Marketplace** enables
 
    ![Create Data Product Share](./images/subscribe-to-data-share-6.png "Create Data Product Share")
 
-7. At the **Data Share** on the navigation tree.
+7. On the **Data Share** age, click on the left rail.
 
     ![Create Data Product Share](./images/subscribe-to-data-share-7.png "Create Data Product Share")
 
-8. Click on **Consumer Share** on the **Provider and Consumer** page.
+8. Click on **Consume Share** on the **Provider and Consumer** page.
 
    ![Create Data Product Share](./images/subscribe-to-data-share-8.png "Create Data Product Share")
 
-9. Select **Subscribe to Delta Share Provider** from the drop-down list on page, click on **Consumer Share** page.
+9. Select **Subscribe to Delta Share Provider** from the drop-down list on page, click on **Consume Share** page.
 
    ![Create Data Product Share](./images/subscribe-to-data-share-9.png "Create Data Product Share")
 
@@ -71,6 +71,8 @@ By the end of this lab, you’ll understand how the **Data Marketplace** enables
     * **Share Provider JSON:** Accept the default selection, From File.
     * **Delta Share Profile JSON:** Click this box. In the Open dialog box, navigate to the location where you downloaded the data share profile, select it, and then click Open.
     * **Provider Name:** Enter Demo-LoanApp-Data-Share
+
+11.  Click on Next to proceed
 
 * This will cause the **Add Shares** screen to appear.
 
@@ -133,7 +135,7 @@ Click **Close** when done.
 
    ![Create Data Product Share](./images/subscribe-to-data-share-19.png "Create Data Product Share")
 
-1.  In the Table and View Loads section, 
+1.  In the Table and View Loads section,
 
    * Click the external table link named **Shared_Loan_Data_Risk_VW** to preview its data.
 

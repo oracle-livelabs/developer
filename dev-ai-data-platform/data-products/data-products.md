@@ -50,8 +50,6 @@ In this Lab, you will:
 
    ![Define a Data Product Recipient](./images/define-data-product-share-recipient-2.png "Define a Data Product Recipient")
 
-   Click **Provide Share** on the **Provider and Consumer** page.
-
 5. Click **Provide Share** on the **Provider and Consumer** page.
 
     ![Define a Data Product Recipient](./images/define-data-product-share-recipient-3.png "Define a Data Product Recipient")
