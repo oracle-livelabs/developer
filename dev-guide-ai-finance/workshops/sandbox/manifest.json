@@ -1,5 +1,5 @@
 {
-    "workshoptitle": "Build a GenAI-Powered Financial Services Loan Approval Application with Oracle 23ai",
+    "workshoptitle": "Build a GenAI-Powered Financial Services Loan Approval Application with Oracle Database 23ai",
     "help": "livelabs-help-database_us@oracle.com",
     "tutorials": [
         {
@@ -8,65 +8,44 @@
             "filename": "../../introduction/introduction.md"
         },
         {
-            "title": "Get Started",
-            "description": "Prerequisites for LiveLabs (Oracle-owned tenancies). The title of the lab and the Contents Menu title (the title above) match for Prerequisite lab. This lab is always first.",
-            "filename": "../../cloud-login/cloud-login.md"
-        },
-        {
             "title": "Lab 1: Run the Demo",
             "description": "Labs that follow the introduction are numbered, starting with Lab 1",
             "filename": "../../user-story/user-story.md"
         },
         {
-            "title": "Lab 2: Build the Application",
-            "description": "This is a step-by-step guide showcasing how the demo instance is navigated",
-            "filename": "../../build/build.md"
-        },
-        {
-            "title": "Lab 3: Connect to Development Environment",
+            "title": "Lab 2: Connect to the Development Environment",
             "description": "This is a step-by-step guide showcasing how the demo instance is navigated",
             "filename": "../../connect-to-env/connect-to-env.md"
         },
         {
-            "title": "Lab 4a Challenge Yourself: Code RAG using AI Vector Search Hackathon Challenge",
-            "description": "Labs that follow the introduction are numbered, starting with Lab 1",
-            "filename": "../../ai-exercise/ai-exercise.md"
+            "title": "Lab 3: Coding Basics on Oracle Database 23ai",
+            "description": "Some coding examples",
+            "filename": "../../codingbasics/codingbasics.md"
         },
         {
-            "title": "Lab 4b Step-by-step: Code RAG using AI Vector Search Hackathon Challenge",
-            "description": "Labs that follow the introduction are numbered, starting with Lab 1",
-            "filename": "../../ai-answers/ai-answers.md"
-        },
-        {
-            "title": "Lab 5a Challenge Yourself: Code Property Graph using Graph Query Hackathon Challenge",
+            "title": "Lab 4: Step by Step - Implement RAG with Oracle Database 23ai",
             "description": "This is a step-by-step guide showcasing how the demo instance is navigated",
-            "filename": "../../graph-exercise/graph-exercise.md"
+            "filename": "../../build/build.md"
         },
         {
-            "title": "Lab 5b Step-by-step: Code Property Graph using Graph Query Hackathon Challenge",
+            "title": "Lab 5a: Coding Challenge - AI Vector Search",
             "description": "This is a step-by-step guide showcasing how the demo instance is navigated",
-            "filename": "../../graph-answers/graph-answers.md"
+            "filename": "../../ai-exercise/ai-vector-search-challenge.md"
         },
         {
-            "title": "Lab 6a Challenge Yourself: JSON Duality View Developer Hackathon Challenge",
+            "title": "Lab 5b: Coding Challenge - AI Vector Search - Guided",
             "description": "This is a step-by-step guide showcasing how the demo instance is navigated",
-            "filename": "../../json-exercise/json-exercise.md"
+            "filename": "../../ai-exercise/ai-vector-search-challenge-answers.md"
         },
         {
-            "title": "Lab 6b Step-by-step: JSON Duality View Developer Hackathon Challenge",
-            "description": "This is a step-by-step guide showcasing how the demo instance is navigated",
-            "filename": "../../json-answers/json-answers.md"
-        },
-        {
-            "title": "Application Architecture",
+            "title": "Architecture & Workshop Features",
             "description": "Review the physical and logical architecture behind the application",
             "filename": "../../app-architecture/app-architecture.md"
         },
         {
-
             "title": "Need Help?",
             "description": "Solutions to Common Problems and Directions for Receiving Live Help",
-            "filename":"https://oracle-livelabs.github.io/common/labs/need-help/need-help-freetier.md"
+            "filename": "https://oracle-livelabs.github.io/common/labs/need-help/need-help-freetier.md"
         }
     ]
 }
