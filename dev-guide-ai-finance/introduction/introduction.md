@@ -4,8 +4,6 @@
 
 In this workshop, you will build a GenAI app on Oracle Database 23ai.
 
-Estimated time: 2-3 hours
-
 #### ➡️ **Start with the demo!**
 
 Check out the demo to see how Generative AI and Vector Search in the database, can operate against multiple types of data—empowering you to build real applications and make faster, smarter decisions. The best part? **No setup required**—just start with Lab 1 and follow the guide. You can explore guided use cases or experiment on your own using the demo application.
