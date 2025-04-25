@@ -77,12 +77,21 @@ public void processOverdraft(Connection conn, OverdraftException oe) throws SQLE
 
 **HINT** Use the provided `insertOverdraft` query with a JDBC `PreparedStatement`. Parameters for the overdraft log are provided in the `OverdraftException` object.
 
+In the application.yaml file (financial-services/earnest-payment-service/src/main/resources/application.yaml), find the # 🔍 consumerGroup property at line 9. Update this value to `earnest_payment_consumer_test`:
+
+```yaml
+okafka:
+  consumerGroup: earnest_payment_consumer_test
+```
+
+> Changing the consumer group configures our updated earnest payments service to process records separately from the old service. 
+
 ## Task 4: Start the updated earnest payments service
 
 Now that you've updated the service, we'll restart it to test the new functionality. From the financial-services/earnest-payment-service directory, start the earnest payments service using Maven:
 
 ```bash
-mvn spring-boot:run
+mvn -o spring-boot:run -Dmaven.repo.local=/financial-services/repo
 ```
 
 You should see output similar to the following:
@@ -113,7 +122,7 @@ You should see output similar to the following:
 ```bash
 curl -X POST -u "$USERNAME:$DBPASSWORD" \
     -H 'Content-Type: application/json' \
-    "${ORDS_URL}admin/_/db-api/stable/database/txeventq/topics/earnest_payment" -d '{
+    "${ORDSURL}admin/_/db-api/stable/database/txeventq/topics/earnest_payment" -d '{
     "records": [
       { "key": "xyz", "value": "{\"sourceCustomer\": \"CUST0001\", \"destinationCustomer\": \"CUST0002\", \"amount\": 10000 }" }
     ]
