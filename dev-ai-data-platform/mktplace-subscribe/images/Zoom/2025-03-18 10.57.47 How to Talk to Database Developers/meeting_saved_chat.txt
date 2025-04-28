@@ -1,0 +1,40 @@
+10:57:47 From Gagan Singh | Oracle DB Tools to Host and panelists:
+	Hi - could someone please share the Slack channel
+10:59:43 From Ramona Magadan to Everyone:
+	Welcome to today’s session on How to Talk to Database Developers. We are excited to have you join us. Please note that this meeting is being recorded. If you have any questions, the PM team is available and ready to assist. Post your questions in the Q&A section.
+11:00:33 From Ramona Magadan to Everyone:
+	Welcome to today’s session on How to Talk to Database Developers. We are excited to have you with us. Please note that this meeting is being recorded. To access the assets being presented, visit http://bit.ly/db-collective-assets.
+11:01:30 From Chris Hoina to Host and panelists:
+	Is this soundtrack available on spotify?
+11:01:57 From Ramona Magadan to Everyone:
+	Welcome to today’s session on How to Talk to Database Developers. We are excited to have you join us. Please note that this meeting is being recorded. If you have any questions, the PM team is available and ready to assist. Post your questions in the Q&A section.
+11:02:08 From Ramona Magadan to Everyone:
+	You can find all assets and previous recordings at http://database.us.oracle.com  Click on Events and Programs at the top, then The Collective, or go directly to the page: http://bit.ly/db-collective-assets
+11:33:22 From Ramona Magadan to Everyone:
+	If you have any questions, the PM team is available and ready to assist. Just post your questions in the Q&A section.
+11:33:59 From Kris Rice to Everyone:
+	The Oracle JAVA extension for VScode just passed 2.6m installs
+11:40:37 From Eugenio Galiano to Host and panelists:
+	DOWNLOAD VSCODE here: https://code.visualstudio.com/download
+11:41:14 From Eugenio Galiano to Everyone:
+	DOWNLOAD VSCODE here: https://code.visualstudio.com/download
+11:50:25 From Ramona Magadan to Everyone:
+	You can find all assets and previous recordings at http://database.us.oracle.com  Click on Events and Programs at the top, then The Collective, or go directly to the page: http://bit.ly/db-collective-assets
+12:17:08 From Kris Rice to Everyone:
+	“AI coding assistant refuses to write code, tells user to learn programming instead”  https://arstechnica.com/ai/2025/03/ai-coding-assistant-refuses-to-write-code-tells-user-to-learn-programming-instead/
+12:19:36 From Chris Hoina to Everyone:
+	No DB models or ORMs 🥹
+12:28:09 From Jeff Smith to Everyone:
+	Say. Hello, via rest
+12:28:11 From Jeff Smith to Everyone:
+	curl --location --request POST \
+	'https://pvqhdhmzqnn1hi4-tjsatp.adb.us-ashburn-1.oraclecloudapps.com/ords/build_stuff/_/par/yp2qqQwRUoSEgUyXbm4BFUTaUToAGrVc1A6VCcBK7LZJkwwWIHFYWbXf4hgxFrVI6uRrFdhAqOdyRZkLSyrbZtFefHhJ7Ubsrw5joYZUMDShzlnjHRVWgb3viUsPVZ/thatjeffsmith/i-see-you' \
+	--header 'Content-Type: application/json' \
+	--data-binary '{
+	  "name": "TJS",
+	  "message": "hi, its me" 
+	}'
+12:28:26 From Jeff Smith to Everyone:
+	That’s a pre-authenticated request (PAR) to MY database in OCI...
+12:28:59 From Ramona Magadan to Everyone:
+	Thank you for attending! Reminder: You can find all assets and previous recordings at http://database.us.oracle.com. Click on Events and Programs at the top, then The Collective, or go directly to the page at http://bit.ly/db-collective-assets. Today’s recording will be posted within 24 hours.
