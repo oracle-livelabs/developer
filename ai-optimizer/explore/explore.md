@@ -68,7 +68,33 @@ In the *OCI* configuration tab, you can add your **Oracle Cloud Infrastructure**
 
 ## Task 3: Configure LLMs
 
+Let's check the models available for use. You'll need to navigate to the *Models* tab:
+
+![models menu](images/models.jpg)
+
+   * The default LLMs for chat completions are:
+
+  ![llms](images/llms.png)
+
+  * The default LLMs for embeddings are:
+
+  ![embeddings](images/emb.png)
+   Let's add another LLM to the Ollama models and enable it. Open a terminal a window and follow these steps:
+
+  * Pull the llama3.2 LLM:
+
+  ```bash
+    ollama pull llama3.2
+  ```
+  * Now, you will need to enable in the model list. Go back to the *Models* tab, under the *Language Models* section and press the *Add* button. Now fill in the form that just appeared with the values shown in the following snapshot:
+
+  ![new_llama32](images/addllama32.png)
+
+  Now you are all set for using the *Chat* feature with the LLMs you just configured!
+
 ## Task 4: Test the *Chat* feature
+
+
 
 ## Learn More
 
