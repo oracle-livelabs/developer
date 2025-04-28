@@ -94,11 +94,31 @@ Let's check the models available for use. You'll need to navigate to the *Models
 
 ## Task 4: Test the *Chat* feature
 
+The two LLMs availble could be tested right away, in order to understand their behavior with generic questions. Before accessing the chat GUI
 
+![chat](images/chat.jpg)
+
+scroll down the left side menu to find the **Chat model** menu:
+
+![chat models](images/chatmodel.png)
+
+and, with the **Enable RAG?** check-box unselected, choose the **gpt-4o-mini** and ask generic questions like:
+```
+Which kind of database you can use to run the Java Web example application?
+```
+```
+Can I use any kind of development environment to run the example?
+```
+
+NOTICE: *if you see a **Database has no Vector Stores. Disabling RAG.** message above, don't panic! That's because you haven't created a vector store yet and thus you can't use the RAG functionality*.
+
+As you can see, even if the questions mean to refer to a specific example, the LLM tends to answer in a generic way. 
 
 ## Learn More
 
-*(optional - include links to docs, white papers, blogs, etc)*
+* (optional) Now click the **Clear** button under the **History and Context** section, and choose the other available LLM, **llama3.1**. Then, ask the same questions and compare the results. Note that the History is enabled by default. The **Clear** button resets the *context window* and starts a fresh interaction with a model.
+
+* (optional) Play with the **Temperature** parameter (and also the other parameters if you wish to!) and compare the quality of the answers, for each LLM that's available. Clear the history by pressing the **Clear** button after each cycle.
 
 * [URL text 1](http://docs.oracle.com)
 * [URL text 2](http://docs.oracle.com)
