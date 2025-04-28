@@ -4,14 +4,11 @@
 
 **Welcome to the Code with AI Vector Search Challenge!**
 
-In this lab, you will use Oracle Database 23ai to build a loan matching feature for a financial application.  
-By implementing similarity search, you will match user queries to loan descriptions based on meaning—**not just keywords**.
+In this lab, you will use Oracle Database 23ai to build a loan matching feature for a financial application. By implementing similarity search, you will match user queries to loan descriptions based on meaning—**not just keywords**.
 
 ![Similarity Search](./images/similarity-search.png " ")
 
-At SeerEquites, the data science team is building a loan recommendation system that goes beyond keyword matching.  
-They are using AI Vector Search to understand meaning in loan descriptions—for example, linking "Affordable Housing Loan" to "Low-Income Home Loan."  
-In this lab, you will complete their Similarity Search feature using Oracle Database 23ai, which converts text into embeddings and uses cosine similarity to find conceptually similar loans.
+At SeerEquites, the data science team is building a loan recommendation system that goes beyond keyword matching. They are using AI Vector Search to understand meaning in loan descriptions—for example, linking "Affordable Housing Loan" to "Low-Income Home Loan." In this lab, you will complete their Similarity Search feature using Oracle Database 23ai, which converts text into embeddings and uses cosine similarity to find conceptually similar loans.
 
 **Why AI Vector Search?**
 
@@ -38,7 +35,7 @@ This lab assumes you have:
 - Basic knowledge of Python and SQL.
 - Completed Lab 1: Run the Demo.
 - Completed Lab 2: Connect to Development Environment.
-- Completed Lab 3: Start coding with Oracle Database 23ai.
+- Completed Lab 3: Coding Basics on Oracle Database 23ai. 
 - Completed Lab 4: Step by step: Implement RAG with Oracle Database 23ai.
 
 ## Task 1: Challenge requirements 
@@ -54,11 +51,7 @@ The data science team at SeerEquites has provided a Jupyter Notebook called `ai_
 
 All of the coding examples will be executed in a new Jupyter Notebook.
 
-1. Select the **streamlit** folder.
-
-    ![Click Streamlit](./images/click-streamlit.png " ")
-
-2. Open a new **Jupyter Notebook** by clicking on **Python(ipykernel)** notebook.
+1. Open a new **Jupyter Notebook** by clicking on **Python(ipykernel)** notebook.
 
     ![Open Jupyter Notebook](./images/open-new-notebook.png " ")
 
@@ -345,8 +338,8 @@ By completing this challenge, you’ve seen how Oracle 23ai AI Vector Search tra
 
 
 ## Acknowledgements
-* **Authors** - Francis Regalado Database Product Manager
-* **Contributors** - Kamryn Vinson, Linda Foinding, Eddie Ambler, Kevin Lazarz
+* **Authors** - Francis Regalado, Database Product Manager
+* **Contributors** - Kamryn Vinson, Linda Foinding, Kevin Lazarz
 * **Last Updated By/Date** - Francis Regalado, April 2025
 
 

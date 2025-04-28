@@ -10,33 +10,27 @@ In this hands-on workshop, you'll explore the full breadth of tools, services, a
 
 Through a series of guided labs modeled on real-world tasks from a loan funding company, you'll experience how centralized data management, streamlined workflows, and intelligent analytics come together to unlock the value of enterprise data.
 
-### **You will:**
+### You will:
 
-🔄 **Ingest and consolidate** data from multiple sources to build a unified view, breaking down data silos and enabling comprehensive analysis.
+* **Gain Access to Data** from multiple sources to build a unified view, breaking down data silos and enabling comprehensive analysis.
 
-📈 **Create and publish data products** for actionable insights, empowering risk officers with timely, data-driven decision-making.
+* **Create and publish data products** for actionable insights, empowering other departments to be able to provide timely, data-driven decision-making feedback.
 
-🔗 **Securely share selected datasets** across departments, such as marketing, to support campaign planning while maintaining data governance and privacy.
+* **Securely share selected datasets** across departments, such as marketing, to support campaign planning while maintaining data governance and privacy.
 
 By the end of this workshop, you'll understand how **Oracle’s Data Platform** provides a **scalable, future-ready foundation** for financial organizations seeking to:
 
-✅ Increase agility
+* ✅ Increase agility
 
-✅ Enhance collaboration
+* ✅ Enhance collaboration
 
-✅ Drive business success through data
+* ✅ Drive business success through data driven decision making
 
-To get things started we invite you to watch the introduction video to see the demo in action:
-
-  [](videohub:1_mg30brw3:medium)
-
-> ⚠️ **Note:** `<THIS VIDEO IS THE AI APP DEV VIDEO--DATA PLATFORM IS WIP>`
+  [Video hosted on Oracle Video Hub](videohub:1_nnznmwsc:medium)
 
 ### **Objectives**
 
 This workshop is divided into two key sections, each designed to provide a unique, hands-on experience with **Oracle’s Data Platform**:
-
----
 
 ### 1️⃣ **Demo Experience: Real-World Application Simulation**
 
@@ -44,10 +38,8 @@ Gain practical insight into how **data products** are used within a **Loan Manag
 
 In this section, you will:
 *	Interact with the application from the perspective of different user personas — **Loan Officer** and, **Risk Management Officer**.
-*	Follow user stories to explore how **curated and shared data products** drive **data-informed decisions**.
-*	Understand how each role consumes and contributes to data to support **operational efficiency**, **risk assessment**, and **targeted marketing efforts**.
-
----
+* Follow user stories that demonstrate how having near real-time access to enterprise-wide data truly drives data-driven decisions for a competitive edge.
+*	Understand how each role consumes data products and provides feedback that enhances **operational efficiency**, **risk assessment**, and **the efficiency of marketing campaigns**.
 
 ### 2️⃣ **Hands-On Data Engineering & Management Tasks**
 
@@ -57,8 +49,6 @@ In this section, you will:
 *	Receive a set of **enhancement requests** designed to support new requests for data access.
 *	Perform **data discovery**, **data transformation**, and **data sharing** tasks to fulfil those requests.
 *	Use **integrated data platform tools** to **manage data access**, **improve data quality**, and deliver **fit-for-purpose data products**.
-
----
 
 ### **Prerequisites**
 
@@ -94,10 +84,10 @@ Combines the flexibility of a data lake with the data management and querying ca
 
 A data platform is a technology solution that enables the collection, storage, cleaning, transformation, analysis and governance of data. Data platforms can include both hardware and software components. They make it easier for organizations to use their data to improve decision making and operations. Data platforms are increasingly more popular with the need for a centralized solution to meet today’s AI needs.  AI applications and solutions need access to data in real time to enable better solutions and greater innovation.
 
-![Oracle AI Platform](./images/oracle-ai-data-platform.png)
+![Oracle Data Platform](./images/oracle-data-platform.png)
 
 
-![Discovery Time](./images/discovery-time.png)
+![Discovery Time](./images/oracle-stategy-managing-data.png)
 
 ### **About Data Product**
 
@@ -115,6 +105,6 @@ With Data Catalog, you can collect, organize, search, access, enrich, and activa
 * [Autonomous Database](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html)
 
 ## Acknowledgements
-* **Authors** - Matt Kowalik, Otis Barr
-* **Contributors** - Eddie Ambler, Ramona Magadan
-* **Last Updated By/Date** - TBC
+* **Authors** - Eddie Ambler, Otis Barr, Matt Kowalik, Ramona Magadan
+* **Contributors** - Francis Regalado
+* **Last Updated By/Date** - 04/21/2025

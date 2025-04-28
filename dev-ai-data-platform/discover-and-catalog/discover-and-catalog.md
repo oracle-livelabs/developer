@@ -24,19 +24,32 @@ First, you’ll log into your Autonomous Database and connect to your local Data
 
   ![Navigate to ADB Instance](./images/oci-adb-select.png "Navigate to ADB Instance")
 
-* Select View all Database Actions
+
+1. Navigate to your assigned ADB Instance.
+
+    * Open Navigation Menu 
+    * Select Oracle Database 
+    * Select Autonomous Database 
+
+![Navigate to Autonomous Database in OCI](./images/navigate-to-adb.png " ")
+
+2. Select the name of your assigned database.
+
+![Navigate to Autonomous Database in OCI](./images/oci-adb-select.png " ")
+
+3. Select View all Database Actions
 
   ![Select Database Actions](./images/oci-adb-database-actions.png "Select Database Actions")
 
-* **On the Database Actions page, In Upper right under dropdown next to ADMIN, select "Sign out"**
+4. **On the Database Actions page, In Upper right under dropdown next to ADMIN, select "Sign out"**
 
   ![Access Local Data Catalog](./images/access-local-data-catalog-1.png "Access Local Data Catalog")
 
-* **Login to Database Actions as LOAN User** using credential shown on View Lab Info Page
+5. **Login to Database Actions as LOAN User** using credential shown on View Lab Info Page
 
   ![Access Local Data Catalog](./images/access-local-data-catalog-2.png "Access Local Data Catalog")
 
-* Click on **Data Studio**
+6. Click on **Data Studio**
 
   ![Access Local Data Catalog](./images/access-local-data-catalog-3.png "Access Local Data Catalog")
 
@@ -69,16 +82,11 @@ Now Let’s add our **own connection** for an Object Storage bucket named **MyDe
 
 * For **Name**, enter: **MyDemoBucket**
 * For **Description**, enter: **My Demo Object Storage Bucket**
-* For **Credential**, select **LOAN2OBJStorage**
-* For **Bucket URI** enter the following:
+* For **Credential**, select **OCI\_API\_KEY_CRED**
+* Choose **Select Bucket** radio button
+* From DropDown List choose **Bucket Named:** ***MyDemoBucket***
 
-```
-  <copy>
-  https://objectstorage.ap-sydney-1.oraclecloud.com/p/upHzsvrDbRv3twpp4l_UCiuflwoigAa7ItQFcFVSxsHrK2T-_cxF2bCseOM4tszj/n/oradbclouducm/b/MyDemoBucket/o/
-  </copy>
-```
-
-  ![Add Connections to Catalog](./images/add-connections-to-catalog-4.png "Add Connections to Catalog")
+  ![Add Connections to Catalog](./images/add-connections-to-catalog-4-w-select-bucket.png "Add Connections to Catalog")
 
 * Click on **Create** button to proceed
 
@@ -94,51 +102,22 @@ With our Connections in place, we will explore how to search the catalog for the
 
   ![Search Items in Catalog](./images/search-items-in-catalog-1.png "Search Items in Catalog")
 
-* On the landing page, you will note that the Catalog has quick filters to help you display the output of your tailored searches in the display area.
+* On the landing page, you will note that the Catalog has quick filters to help display the results of your customized searches in the main area.
+If no quick filter is selected, the Tables and Views filter is applied by default.
 
 * If you do not select a quick filter, the Tables and Views filter is selected by default.
 
-**Note:** You can combine multiple filters for more refined results. 🔍
+**Note:** the output of the object shown can be limited to all or a selected schema.
 
----
-The catalog quick filters include:
+2. Select **Connections** quick filter. This displays available connections in the Catalog accessible to the LOAN schema. From here we can validate that our catalog sees the defined connections we made.
 
- ***Tables and Views***
-
-  This filter searches for database tables (both internal and external) and views, including both standard database views and analytic views.
-
- ***Data Objects***
-
-  This filter searches for data objects in the database and on connected cloud storage.
-
-  **Note:** This is a superset of the Tables and Views and Files filters.
-
- ***Files***
-
-  This filter searches for files in connected cloud storage only.
-
- ***OCI***
-
-  This filter searches for other Oracle Cloud Infrastructure objects, such as Autonomous Databases, OCI cloud storage buckets, or registered OCI Data Catalogs.
-  This option is available if you have an OCI credential, which can be created from the **Data Studio Settings** icon.
-
- ***Connections***
-
-  This filter searches for connections registered in Data Studio, such as those to external Data Catalogs or databases.
-
- ***All***
-
-  This filter searches for all objects in the catalog. Since there can be thousands of objects, this scope may result in slower performance.
-
----
-
-* Select **Connections** quick filter. This displays available connections in the Catalog accessible to the LOAN schema. From here we can validate that our catalog sees the defined connections we made.
-
-  **Note** that our **MyDemoBucket** is displayed.
+> **Note** that our **MyDemoBucket** is displayed.
 
   ![Search Items in Catalog](./images/search-items-in-catalog-2.png "Search Items in Catalog")
 
 * Select **Data Objects** quick filter to display available items in the Catalog visible to the LOAN schema. Notice that this view shows us the available database objects and the listing of the files available in our object storage.
+
+**Note:** that this view shows us the available database objects and the listing of the files available in our object storage.  These files will be used in upcoming exercises.
 
   ![Data Catalog Data Objects](./images/data-catalog-data-objects.png "Data Catalog Data Objects")
 
@@ -146,7 +125,7 @@ The catalog quick filters include:
 
 Check out the list of discovered data inside the Catalog. From this view we can see the available files that reside in the Object storage buckets.
 
-* Hover over file name to see data preview option and click preview Icon to display data preview
+* Hover over file named **LoanAppCustomer-Extensions.csv**.
 
   ![Data Catalog Data Objects](./images/data-catalog-data-objects.png "Data Catalog Data Objects")
 
