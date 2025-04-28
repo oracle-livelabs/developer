@@ -4,8 +4,6 @@
 
 In this workshop, you will build a GenAI app on Oracle Database 23ai.
 
-Estimated time: 2-3 hours
-
 #### ➡️ **Start with the demo!**
 
 Check out the demo to see how Generative AI and Vector Search in the database, can operate against multiple types of data—empowering you to build real applications and make faster, smarter decisions. The best part? **No setup required**—just start with Lab 1 and follow the guide. You can explore guided use cases or experiment on your own using the demo application.
@@ -63,6 +61,6 @@ This lab assumes you have:
 * [Oracle Database 23ai Documentation](https://docs.oracle.com/en/database/oracle/oracle-database/23/)
 
 ## Acknowledgements
-* **Authors** - Francis Regalado, Linda Foinding, Kamryn Vinson
-* **Contributors** - Kevin Lazarz, Eddie Ambler, Otis Barr, Ramona Magadan
+* **Authors** - Linda Foinding, Francis Regalado, Kamryn Vinson
+* **Contributors** - Kevin Lazarz, Eddie Ambler, Ramona Magadan, Mark Nelson, Andy Tael, Anders Swanson, Rahul Tasker
 * **Last Updated By/Date** - Linda Foinding, April 2025
