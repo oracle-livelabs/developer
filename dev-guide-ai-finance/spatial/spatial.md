@@ -223,14 +223,17 @@ Create the Handler
 * Source Type is Collection Query
 * Source is the query to run
 
-This query computes the spatial relationship between a point (with longitude :lon and latitude :lat) and the geometry of the feature in the FLOODZONES table where fid = 1. It uses the SDO_RElate function with the 'determine' mask to return the type of spatial relationship (e.g., contains, overlaps) between the point and the specified flood zone geometry. The result is returned as relationship.
+This query computes the spatial relationship between a point (with longitude :lon and latitude :lat) and the geometry of the feature in the FLOODZONES table where fid = 1. It uses the SDO_GEOM.RELATE function with the 'determine' mask to return the type of spatial relationship (e.g., contains, overlaps) between the point and the specified flood zone geometry. The result is returned as relationship.
 
 ```
-select sdo_relate(sdo_geometry(2001,4326,sdo_point_type(:lon,:lat, null), null,null),
-geometry,
-'determine') as relationship
-from FLOODZONES
-WHERE fid = 1
+SELECT SDO_GEOM.RELATE(
+         sdo_geometry(2001, 4326, sdo_point_type(:lon, :lat, NULL), NULL, NULL), -- geom1 (the point)
+         'determine',                                                            -- mask
+         geometry,                                                               -- geom2 (the table's geometry)
+         0.005                                                                   -- tol (example tolerance, adjust as needed)
+       ) AS relationship
+FROM FLOODZONES
+WHERE fid = 1;
 ```
 
 To Test, use the following coordinates
