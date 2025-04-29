@@ -149,8 +149,8 @@ Check out the list of discovered data inside the Catalog. From this view we can 
 
 ## Acknowledgements
 
-* **Author:** Otis Barr
-* **Contributor:** Matt Kowalik
-* **Last Updated By/Date:** TBD
+* **Author:** Eddie Ambler, Otis Barr
+* **Contributor:** Mike Matthews, Marty Gubar, Matt Kowalik
+* **Last Updated By/Date:** 04-28-2025
 
 Copyright (C) Oracle Corporation.

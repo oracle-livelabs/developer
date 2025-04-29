@@ -1,0 +1,22 @@
+10:59:36 From Ramona Magadan to Host and panelists:
+	Welcome to today’s session on High Availability/Disaster Recovery and Maximum Availability Architecture for The Collective. We are excited to have you join us. Please note that this meeting is being recorded. If you have any questions, the PM team is available and ready to assist. Post your questions in the Q&A section.
+11:00:05 From Ramona Magadan to Everyone:
+	Welcome to today’s session on High Availability/Disaster Recovery and Maximum Availability Architecture for The Collective. We are excited to have you join us. Please note that this meeting is being recorded. If you have any questions, the PM team is available and ready to assist. Post your questions in the Q&A section.
+11:01:33 From Ramona Magadan to Everyone:
+	Welcome to today’s session on High Availability/Disaster Recovery and Maximum Availability Architecture for The Collective. We are excited to have you join us. Please note that this meeting is being recorded. If you have any questions, the PM team is available and ready to assist. Post your questions in the Q&A section.
+11:01:47 From Ramona Magadan to Everyone:
+	You can find all assets and previous recordings at http://database.us.oracle.com  Click on Events and Programs at the top, then The Collective, or go directly to the page: http://bit.ly/db-collective-assets
+11:04:07 From Ramona Magadan to Everyone:
+	http://bit.ly/db-collective-assets
+11:04:11 From Kamryn Vinson to Everyone:
+	Welcome to today’s session on High Availability/Disaster Recovery and Maximum Availability Architecture for The Collective. We are excited to have you with us. Please note that this meeting is being recorded. To access the assets being presented, visit http://bit.ly/db-collective-assets.
+11:06:32 From Kamryn Vinson to Everyone:
+	If you have any questions, the PM team is available and ready to assist. Just post your questions in the Q&A section.
+11:43:12 From Ramona Magadan to Everyone:
+	You can find all assets and previous recordings at http://database.us.oracle.com  Click on Events and Programs at the top, then The Collective, or go directly to the page: http://bit.ly/db-collective-assets
+12:11:05 From Kamryn Vinson to Everyone:
+	If you haven’t done so already, please sign up for the series to receive notifications about future sessions at: https://apexadb.oracle.com/ords/r/tech/catalog/redirect-to-series-page-auth?p21_series_id=38429670623999403897276604551002765789&p21_page=5
+12:17:11 From Kamryn Vinson to Everyone:
+	https://livelabs.oracle.com/create-event
+12:17:59 From Kamryn Vinson to Everyone:
+	Thank you for attending! Reminder: You can find all assets and previous recordings at http://database.us.oracle.com. Click on Events and Programs at the top, then The Collective, or go directly to the page at http://bit.ly/db-collective-assets. Today’s recording will be posted within 24 hours.
