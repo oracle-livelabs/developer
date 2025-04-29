@@ -4,13 +4,15 @@ We are confident that changing some parameters the quality and accuracy of the a
 
 In this lab you will discover the *Testbed* feature. The Testbed helps you to test your chatbot massively, by generating a Q&A test dataset and automatically try against your current configuration. 
 
+
 ## Task 1: Navigate to the Testbed tab
 
-  Access the *Testbed* from the left side menu:
+Access the *Testbed* from the left side menu:
 
-  ![testbed](./images/testbed.png)
+![testbed](./images/testbed.png)
 
-  As a first step, you can either upload a pre-existing Q&A test set (either from a local file or from a stored collection inside the database) or generate a new one from a local PDF file.
+As a first step, you can either upload a pre-existing Q&A test set (either from a local file or from a stored collection inside the database) or generate a new one from a local PDF file.
+
 
 ## Task 2: Generate a Q&A Test dataset
 
