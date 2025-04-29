@@ -48,7 +48,9 @@ In this task, load the floodzones data into a new floodzones table.
 
 The data is located in an OCI Bucket.  Download the file from
 ```
+<copy>
 https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/labfiles%2Ffloodzonecdd_converted_geojson.json
+</copy>
 ```
 and save it as floodzones.json.
 
@@ -84,24 +86,24 @@ Check the table in the SQL Console
 
 Note that Geometry in the database is now type SDO_Geometry
 
-Oracle [Spatial](https://www.oracle.com/database/spatial-database/) uses the [SDO_GEOMETRY](https://docs.oracle.com/en/database/oracle/oracle-database/23/spatl/sdo_geometry-object-type.html) type because it offers a powerful and flexible framework for storing and analyzing spatial data directly within the database. This approach enables efficient querying, integration with GIS tools, and support for complex geospatial applications across industries like urban planning, transportation, environmental management, and more.
-Key Reasons for Using SDO_GEOMETRY
+Oracle [Spatial](https://www.oracle.com/database/spatial-database/) uses the [`SDO_GEOMETRY`](https://docs.oracle.com/en/database/oracle/oracle-database/23/spatl/sdo_geometry-object-type.html) type because it offers a powerful and flexible framework for storing and analyzing spatial data directly within the database. This approach enables efficient querying, integration with GIS tools, and support for complex geospatial applications across industries like urban planning, transportation, environmental management, and more.
+Key Reasons for Using `SDO_GEOMETRY`
 
 1. **Unified Storage Model**:
 
-    Oracle Spatial uses the object-relational model to represent geometries, allowing an entire geometry to be stored in a single column of type SDO_GEOMETRY within a table. This simplifies the management of spatial data
+    Oracle Spatial uses the object-relational model to represent geometries, allowing an entire geometry to be stored in a single column of type `SDO_GEOMETRY` within a table. This simplifies the management of spatial data
 
 2. **Support for Complex Geometries**: 
 
-    The SDO_GEOMETRY type can represent a wide range of spatial objects, including points, lines, polygons, and multi-part geometries. It supports both simple and complex geometric shapes.
+    The `SDO_GEOMETRY` type can represent a wide range of spatial objects, including points, lines, polygons, and multi-part geometries. It supports both simple and complex geometric shapes.
 
 3. **Efficient Querying with Spatial Indexes**:
 
-    Oracle Spatial provides specialized spatial indexing (e.g., R-tree indexes) that enables efficient querying of spatial data based on location or geometry relationships (e.g., containment, intersection). Functions like SDO_FILTER and SDO_RELATE are optimized for spatial queries.
+    Oracle Spatial provides specialized spatial indexing (e.g., R-tree indexes) that enables efficient querying of spatial data based on location or geometry relationships (e.g., containment, intersection). Functions like `SDO_FILTER` and `SDO_RELATE` are optimized for spatial queries.
 
 4. **Integration with Coordinate Systems**:
 
-    The SDO_SRID attribute allows geometries to be associated with specific coordinate systems (spatial reference systems). This ensures consistency and accuracy in geospatial calculations
+    The `SDO_SRID` attribute allows geometries to be associated with specific coordinate systems (spatial reference systems). This ensures consistency and accuracy in geospatial calculations
 
 ## Task 2: Create Rest APIs using Rest Services
 
@@ -166,12 +168,14 @@ Conceptually, the **source type** in Oracle REST Data Services (ORDS) refers to 
 | `PL/SQL`                   | Executes a PL/SQL block and returns a result or custom response             | JSON/custom       | POST, PUT, DELETE |
 
 
-This query retrieves the spatial geometry from the FLOODZONES table for a specific feature identified by fid = :id, converts that geometry into GeoJSON format using SDO_UTIL.TO_GEOJSON, and returns the resulting GeoJSON as geojson_output
+This query retrieves the spatial geometry from the FLOODZONES table for a specific feature identified by `fid = :id`, converts that geometry into GeoJSON format using `SDO_UTIL.TO_GEOJSON`, and returns the resulting GeoJSON as `geojson_output`.
 
 ```
+<copy>
 SELECT SDO_UTIL.TO_GEOJSON(GEOMETRY) AS geojson_output
 FROM FLOODZONES
 WHERE fid = :id
+</copy>
 ```
 
 Create the Handler
@@ -223,9 +227,10 @@ Create the Handler
 * Source Type is Collection Query
 * Source is the query to run
 
-This query computes the spatial relationship between a point (with longitude :lon and latitude :lat) and the geometry of the feature in the FLOODZONES table where fid = 1. It uses the SDO_GEOM.RELATE function with the 'determine' mask to return the type of spatial relationship (e.g., contains, overlaps) between the point and the specified flood zone geometry. The result is returned as relationship.
+This query computes the spatial relationship between a point (with longitude :lon and latitude :lat) and the geometry of the feature in the FLOODZONES table where fid = 1. It uses the [`SDO_GEOM.RELATE`](https://docs.oracle.com/en/database/oracle/oracle-database/23/spatl/sdo_geom-relate.html) function with the 'determine' mask to return the type of spatial relationship (e.g., contains, overlaps) between the point and the specified flood zone geometry. The result is returned as relationship.
 
 ```
+<copy>
 SELECT SDO_GEOM.RELATE(
          sdo_geometry(2001, 4326, sdo_point_type(:lon, :lat, NULL), NULL, NULL), -- geom1 (the point)
          'determine',                                                            -- mask
@@ -234,6 +239,7 @@ SELECT SDO_GEOM.RELATE(
        ) AS relationship
 FROM FLOODZONES
 WHERE fid = 1;
+</copy>
 ```
 
 To Test, use the following coordinates
