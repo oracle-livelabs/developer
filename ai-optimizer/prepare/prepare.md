@@ -2,7 +2,7 @@
 
 ## Introduction
 
-*Describe the lab in one or two sentences, for example:* This lab walks you through the steps to ...
+In this lab, you will explore the environment that was created in the *Get Started* module. You will set up the database connection, configure the OCI credentials, add new LLMs and Embedding models and test out the *Chat* feature for the first time.
 
 Estimated Lab Time: -- minutes
 
@@ -29,62 +29,75 @@ This lab assumes you have:
 
 *This is the "fold" - below items are collapsed by default*
 
-## Task 1: Concise Task Description
+## Task 1: Split/Embed Documents
 
-(optional) Task 1 opening paragraph.
+In the *Split/Embed* tab, the framework allows you to upload various types of documents and transform their content into vector embeddings in a format that is interpretable by LLMs.
 
-1. Step 1
+1. Navigate to the *Split/Embed* tab
 
-	![Image alt text](images/sample1.png)
+	![split-embed-interface](./images/split-embed.jpg)
 
-2. Step 2
+2. Choose the embedding model and its parameters
 
-  ![Image alt text](images/sample1.png)
+    Here, you can choose from the embedding models you selected during the configuration phase we had in Lab 1 using a drop-down menu.
+    For this example, choose **mxbai-embed-large**. The chunk size defines the length of each segment into which the document will be split, while the chunk overlap represents the percentage of overlap between consecutive chunks relative to the chunk size.
 
-4. Example with inline navigation icon ![Image alt text](images/sample2.png) click **Navigation**.
+    Additionally, you can select different distance metrics and index types to experiment with various vector representations of the same document, allowing you to identify the configuration that best meets your needs.
 
-5. Example with bold **text**.
+3. Select your document source
 
-   If you add another paragraph, add 3 spaces before the line.
+    Once the embedding model has been selected, scroll down to the *Load and Split Documents* section to upload the document you wish to store in your **Oracle Database 23ai**.
 
-## Task 2: Concise Task Description
+    ![populate-vector-store](images/populate-vector-store.png)
 
-1. Step 1 - tables sample
+    You can choose from three different file sources:
 
-  Use tables sparingly:
+    * **OCI**: Navigate through your tenancy to select documents from the Object Storage. Ensure that your OCI credentials are properly configured in advance.
+    * **Local**: Upload a document directly from your local environment.
+    * **Web**: Import a document from a publicly accessible web URL.
 
-  | Column 1 | Column 2 | Column 3 |
-  | --- | --- | --- |
-  | 1 | Some text or a link | More text  |
-  | 2 |Some text or a link | More text |
-  | 3 | Some text or a link | More text |
+    In this example, we will embed a document from the web, available at [this link](https://docs.oracle.com/en/database/oracle/oracle-database/23/tdpjd/get-started-java-development.pdf). We will give the alias ***TEST1*** to this vector store.
 
-2. You can also include bulleted lists - make sure to indent 4 spaces:
+4. Populate the Vector Store.
 
-    - List item 1
-    - List item 2
+   After selecting your document source, you can click on the **Populate Vector Store** button and start the embedding process.
 
-3. Code examples
+    Once the process is complete, a green confirmation prompt will appear, indicating the number of chunks that have been generated and successfully stored in the database.
 
-    ```
-    Adding code examples
-  	Indentation is important for the code example to appear inside the step
-    Multiple lines of code
-  	<copy>Enclose the text you want to copy in <copy></copy>.</copy>
-    ```
+    ![vector-store-populated](images/vector-store-populated.png)
 
-4. Code examples that include variables
+    This means that 224 vectors representations of the information from the input document have been created and stored.
 
-	```
-  <copy>ssh -i <ssh-key-file></copy>
-  ```
+## Task 2: Inspect the Vector DB
+
+Now that you've embedded your document, you can query the content of the Vector Store. In this example we will be using the SQL Developer plugin for VS Code, in order to connect to Oracle Database 23ai.    
+
+In your VS Code IDE, click on the SQL Developer plugin icon to use it. Then, open a new SQL script and execute this sql command:
+
+```sql 
+select * from VECTOR.TEST1_MXBAI_EMBED_LARGE_512_103_COSINE_HNSW;
+```
+You will then retrieve the rows from the newly created table.
+
+  ![query-vector-db](images/query-vector-db.png)
+
+What you see in the image above are chunks of text from the input document, which have been transformed into vector format and stored in the Oracle database. Essentially, you’ve replicated the knowledge contained in the document within your database!
 
 ## Learn More
 
-*(optional - include links to docs, white papers, blogs, etc)*
+* (optional) Create a different vector store:
 
-* [URL text 1](http://docs.oracle.com)
-* [URL text 2](http://docs.oracle.com)
+    By following the sames steps from Task 1, you can create another vector store using the same document but with a different embedding model, **text-embedding-3-small** from the OpenAI models. Give the alias ***TEST2*** to this vector store. 
+    
+    In this case, you will get a smaller number of chunks, since the model supports a chunk size of 8191 instead of the 512 given by *mxbai-embed-large*:
+
+    ![text-embedding-3-small](images/text-embedding-3-small.png)
+
+* (optional) See the list of vector stores:
+    
+    You can navigate to the *Database* tab in the navigation menu to see the list of all the vector stores that have been created. If needed, you can easily delete them with a single click.
+
+    ![database-vector-store-list](images/database-vector-store-list.png)
 
 ## Acknowledgements
 * **Author** - <Name, Title, Group>
