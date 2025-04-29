@@ -11,12 +11,11 @@ Enter background information here about the technology/feature or product used i
 
 ### Objectives
 
-*List objectives for this lab using the format below*
-
 In this lab, you will:
-* Objective 1
-* Objective 2
-* Objective 3
+* Check the connection to your Oracle DB23ai
+* Set your Oracle Cloud Infrastructure credentials for OCI connectivity
+* Configure the LLMs and embedding models you will use in the following labs
+* Test the *Chat* feature for the first time
 
 ### Prerequisites (Optional)
 

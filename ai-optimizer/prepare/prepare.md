@@ -11,12 +11,9 @@ Enter background information here about the technology/feature or product used i
 
 ### Objectives
 
-*List objectives for this lab using the format below*
-
 In this lab, you will:
-* Objective 1
-* Objective 2
-* Objective 3
+* Split/Embed Documents and create a vector store
+* Inspect the Vector Database content
 
 ### Prerequisites (Optional)
 
@@ -25,7 +22,6 @@ In this lab, you will:
 This lab assumes you have:
 * An Oracle Cloud account
 * All previous labs successfully completed
-
 
 *This is the "fold" - below items are collapsed by default*
 

@@ -13,12 +13,10 @@ Enter background information here about the technology/feature or product used i
 
 ### Objectives
 
-*List objectives for this lab using the format below*
-
 In this lab, you will:
-* Objective 1
-* Objective 2
-* Objective 3
+* Explore the *Testbed* tab
+* Generate a Q&A Test dataset
+* Perform an evaluation on the Q&A Testset
 
 ### Prerequisites (Optional)
 
