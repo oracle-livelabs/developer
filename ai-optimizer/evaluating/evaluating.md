@@ -59,54 +59,68 @@ The Optimizer allows to generate as many questions and answer you desire, based 
 
 ## Task 3: Evaluate the Q&A Testset
 
-* On the left pane menu:
+Now you are ready to perform an evaluation on the Q&As you generated in the previous step.
 
-  * Under **Language Model Parameters**, select in the **Chat model** dropdown list **gpt-4o-mini**
-  * **Enable RAG?** if for any reason hasn't been selected
-  * Choose in the **Select Alias** dropdown list the **TEST2** value.
-  * Leave unchanged the default parameters on the left pane.
+1. On the left pane menu:
 
-* Leaving the default one model to judge, **gpt-4o-mini**, click on **Start Evaluation** button and wait a few seconds. All the questions will be submitted to the chatbot as configured in the left pane:
+    * Under **Language Model Parameters**, select **gpt-4o-mini** from the **Chat model** dropdown list.
 
-  ![start_eval](./images/start_eval.png)
+    * **Enable RAG?**, if, for any reason, it wasn't already selected
 
-* Let's examine the result report, starting from the first part:
+    * In the **Select Alias** dropdown list, choose the **TEST2** value.
 
-  ![result](./images/result_topic.png)
+    * Leave the default parameters on the left pane unchanged.
 
-It shows:
-  * The chatbot's **Evaluation Settings** as it has been configured in the left side playground, before start the massive test
-  * The **RAG Settings** for the Database and the relative Vector Store selected, with the name of the embedding **model** used and all the parameters set, from **chunk_size**, to the **top_k**.
-  * The **Overall Correctness Score** that represents the percentage between the total number of questions submitted and the answers considered correct by the LLM used to judge the response compared the reference answer.
-  * The **Correctness By Topic**: each question in the test dataset comes with a tag that represents the topic it belongs to. The list of topics it's extracted automatically at the creation step of the Q&A synthetic dataset. 
+2. Leaving the default model for evaluation, **gpt-4o-mini**, click the **Start Evaluation** button and wait a few seconds. All questions will be submitted to the chatbot using the configuration defined in the left pane:
 
-The second part of the report provides details about each single questions submitted, with a focus on the collection by **Failures** and the **Full Report** list. To show all the fields, scrool from the right to left to see all info. In the following picture the second frame has been scrolled:
+    ![start_eval](./images/start_eval.png)
 
-  ![result](./images/result_question.png)
+3. Let's examine the result report, starting with the first section:
 
-  * **question**: question submitted
-  * **reference_asnwer**: represents the anwers that is considered correct an we aspect quite similar to the answer will be provided by the agent
-  * **reference_context**: the section of document extracted and used to create the Q&A
-  * **agent_answer**: the answer provided by the chatbot with the current configuration and knowledge base as vectorstore
-  * **correctness_reason**: it reports eventually why has been judged not correct. If the answer 
-  has been considered right you'll see **None** as value.
+    ![result](./images/result_topic.png)
 
-* You can get a copy of the results as an HTML page reporting the *Overall Correctness Score* and *Correctness By Topic* only, cliccking on the **Download Report** button. Click it to view how is the report. 
+    It shows:
 
-* You can also dowload the **Full Report** and **Failures** list as a *.csv* file selecting each frame as shown in the following snapshot:
+      * The chatbot's **Evaluation Settings**, as configured in the left-side playground before starting the massive test.
 
-  ![csv](./images/download_csv.png)
+      * The **RAG Settings** for the Database and the associated Vector Store, including the name of the embedding **model** used and all the parameters set (from **chunk size** to **top k**).
 
-* Now let's test through an external saved test datset, that you can download [here](https://raw.githubusercontent.com/oracle-samples/ai-explorer/refs/heads/cdb/docs/hol/artifacts/getting_started-30_testset.json) with 30 questions already generated. If you want to drop some Q&A that are not meaningful in your opinion, update it, save and reload as local file, following the steps shown in this snapshot:
+      * The **Overall Correctness Score**, which represents the percentage of questions for which the LLM judged the chatbot’s answer as correct compared to the reference answer.
+
+      * The **Correctness By Topic**: each question in the test dataset is tagged with a topic. The list of topics is generated automatically during the creation of the synthetic Q&A dataset.
+
+    The second section of the report provides details about each individual question submitted, focusing on the **Failures** collectio and the **Full Report** list. To display all the fields, scroll horizontally from right to left. In the following image, the second frame has been scrolled:
+
+      ![result](./images/result_question.png)
+
+    The main fields displayed are:
+
+      * **question**: the question submitted
+      * **reference_asnwer**: the answer considered correct, to which the agent’s answer is compared.
+      * **reference_context**: the document section extracted and used to create the Q&A pair.
+      * **agent_answer**: the answer provided by the chatbot based on the current configuration and vector store.
+      * **correctness_reason**: an explanation, if any, of why the answer was judged incorrect. If the answer was considered correct, the value will be **None**.
+
+      * You can get a copy of the results as an HTML page reporting the *Overall Correctness Score* and *Correctness By Topic* only, cliccking on the **Download Report** button. Click it to view how is the report. 
+ 
+      * You can also download the **Full Report** and **Failures** list as a *.csv* file selecting each frame as shown in the following snapshot:
+
+        ![csv](./images/download_csv.png)
+
+## Task 4 (optional): Try a different Q&A Testset 
+
+Now let's perform a test using an external saved test dataset, which you can download [here](https://raw.githubusercontent.com/oracle-samples/ai-optimizer/refs/heads/cdb/docs/hol/artifacts/getting_started-30_testset.json). It contains 30 pre-generated questions.
+
+If you want to remove any Q&A pairs that you consider not meaningful, you can edit the file, save it, and reload it as a local file, following the steps shown in this snapshot:
 
   ![load_tests](./images/load_tests.png)
 
-* Now redo the test to get the **Overall Correctness Score** with much more Q&A pairs.
+Let's change the Chat model parameters by setting the Model **Temperature** to **0** in the left pane, under th **Language Model Parameters** section. 
+Why? Q&As are usually generated with a low level of creativity to reduce randomness and focus on expressing the core concepts clearly, avoiding unnecessary "frills". 
+Now, repeat the test to check if there are any improvements in the Overall Correctness Score. **Overall Correctness Score**. 
 
-* Let's change the Chat model parameters, setting to **0** the Model **Temperature** in the left pane, section **Language Model Parameters**. Why? The Q&As generated are usually done with a low level of creativity to be less random in the content and express the core concepts avoiding "frills". So, repeat the test to check if there are any improvements in the **Overall Correctness Score**. 
-
-* To compare with previous results, click on dropdown list unde **Previous Evaluations for...** and click on **View** button to show the overall report.
+* To compare with previous results, click on the dropdown list under **Previous Evaluations for...** and click on the **View** button to display the overall report.
 
   ![previous](./images/previous.png)
 
-* Repeat the tests as many time you desire changing: **Vector Store**, **Search Type** and **Top K** to execute the same kind of tuning you have done at the previous steps with just a few interactive questions, now on a massive test on curated and comparable assets.
+* Repeat the tests as many times as you like, changing the **Vector Store**, **Search Type** and **Top K** parameters to perform the same kind of tuning you previously applied with just a few interactive questions — now executed on a massive test with curated and comparable assets.
