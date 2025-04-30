@@ -12,41 +12,41 @@ In this lab, you’ll practice setting up the live feed capabilities,that can be
 
   1.	Open the OCI Console at cloud.oracle.com, click the hamburger icon in the upper left corner to display the **Navigation Menu**.
 
-  ![Access the Object Storage Bucket](./images/task-1-scrn-1.png "Cccess the Object Storage Bucket")
+  ![Access the Object Storage Bucket](./images/task-1-scrn-1.png)
 
   2. Select **Developer Services** from the Navigation Menu
 
-  ![Access the Object Storage Bucket](./images/task-1-scrn-2.png "Cccess the Object Storage Bucket")
+  ![Access the Object Storage Bucket](./images/task-1-scrn-2.png)
 
   3. Click **Notifications** under the **Application Integration** heading.
 
-  ![Access the Object Storage Bucket](./images/task-1-scrn-3.png "Cccess the Object Storage Bucket")
+  ![Access the Object Storage Bucket](./images/task-1-scrn-3.png)
 
   4. Click **Create Topic**
 
-  ![Access the Object Storage Bucket](./images/task-1-scrn-4.png "Cccess the Object Storage Bucket")
+  ![Access the Object Storage Bucket](./images/task-1-scrn-4.png)
 
   5. Enter Topic Details, then click **Create**.
 
-  ![Access the Object Storage Bucket](./images/task-1-scrn-5.png "Cccess the Object Storage Bucket")
+  ![Access the Object Storage Bucket](./images/task-1-scrn-5.png)
 
 ## Task 2: Create a Events Service Rule.
 
 1. Open the OCI Console at cloud.oracle.com, click the hamburger icon in the upper left corner to display the **Navigation Menu**.
 
-![Access the Object Storage Bucket](./images/task-1-scrn-1.png "Cccess the Object Storage Bucket")
+![Access the Object Storage Bucket](./images/task-1-scrn-1.png)
 
 2. Select **Observations & Management** from the Navigation Menu
 
-![Access the Object Storage Bucket](./images/task-1-scrn-2.png "Cccess the Object Storage Bucket")
+![Access the Object Storage Bucket](./images/task-1-scrn-2.png)
 
 3. Click **Rules** under the **Events Services** heading.
 
-  ![Load Data from Object Storage](./images/task-2-scrn-3.png "Load Data from Object Storage")
+  ![Load Data from Object Storage](./images/task-2-scrn-3.png)
 
 4. Click **Create Rule** and enter details.
 
-  ![Load Data from Object Storage](./images/task-2-scrn-4.png "Load Data from Object Storage")
+  ![Load Data from Object Storage](./images/task-2-scrn-4.png)
 
 * Enter the following Details under **Rule Conditions**:
     * **Condition:** Event Type
@@ -59,43 +59,43 @@ In this lab, you’ll practice setting up the live feed capabilities,that can be
 
 * Click **Create Rule**.
 
-5. **Review** the Rule details  
+    5. **Review** the Rule details
 
-  ![Load Data from Object Storage](./images/task-2-scrn-5.png "Load Data from Object Storage")
+  ![Load Data from Object Storage](./images/task-2-scrn-5.png)
 
 ## Task 3: Create a Live Table Feed and Copy the notification URL
 
   1. Open the OCI Console at cloud.oracle.com, and select the **Clone-of-LoanAppDB** ADB Instance.
 
-  ![Load Data from Object Storage](./images/task-3-scrn-1.png "Load Data from Object Storage")
+  ![Load Data from Object Storage](./images/task-3-scrn-1.png)
 
   2. Select **Data Load** from DropDown Menu.
 
-  ![Load Data from Object Storage](./images/task-3-scrn-2.png "Load Data from Object Storage")
+  ![Load Data from Object Storage](./images/task-3-scrn-2.png)
 
   3. Select **Feed Data** from the options listed at top of page.
 
-  ![Load Data from Object Storage](./images/task-3-scrn-3.png "Load Data from Object Storage")
+  ![Load Data from Object Storage](./images/task-3-scrn-3.png)
 
   4. Click the **Create Live Table Feed** button to enter the **Create Live Feed** wizard.
 
-  ![Load Data from Object Storage](./images/task-3-scrn-4.png "Load Data from Object Storage")
+  ![Load Data from Object Storage](./images/task-3-scrn-4.png)
 
   5. Select desired Cloud Store location, then click **Next**.
 
-  ![Load Data from Object Storage](./images/task-3-scrn-5.png "Load Data from Object Storage")
+  ![Load Data from Object Storage](./images/task-3-scrn-5.png)
 
   6. Enter desired Table Settings, then click **Next**.
 
-  ![Load Data from Object Storage](./images/task-3-scrn-6.png "Load Data from Object Storage")
+  ![Load Data from Object Storage](./images/task-3-scrn-6.png)
 
   7. Verify that the expected results are shown on the Preview page, then click **Next**.
 
-  ![Load Data from Object Storage](./images/task-3-scrn-7.png "Load Data from Object Storage")
+  ![Load Data from Object Storage](./images/task-3-scrn-7.png)
 
   8. Enter details on the page below...
 
-  ![Load Data from Object Storage](./images/task-3-scrn-8.png "Load Data from Object Storage")
+  ![Load Data from Object Storage](./images/task-3-scrn-8.png)
 
     **Live Table Feed Name:**
     **Enable for Notification check box:** check
@@ -105,45 +105,45 @@ In this lab, you’ll practice setting up the live feed capabilities,that can be
 
   9. When the popup box appears, select **Yes** to run the Live Feed.
 
-  ![Load Data from Object Storage](./images/task-3-scrn-9.png "Load Data from Object Storage")
+  ![Load Data from Object Storage](./images/task-3-scrn-9.png)
 
   10. **Review** the details for the newly created Live Feed.  Then click the hamburger button in the upper left corner.
 
-  ![Load Data from Object Storage](./images/task-3-scrn-10.png "Load Data from Object Storage")
+  ![Load Data from Object Storage](./images/task-3-scrn-10.png)
 
   11. Select **Show Notification URL** from the dropdown list.
 
-  ![Load Data from Object Storage](./images/task-3-scrn-11.png "Load Data from Object Storage")
+  ![Load Data from Object Storage](./images/task-3-scrn-11.png)
 
   12. Copy the notification URL for the live table feed.  Show Notification URL from the dropdown list.
 
-  ![Load Data from Object Storage](./images/task-3-scrn-12.png "Load Data from Object Storage")
+  ![Load Data from Object Storage](./images/task-3-scrn-12.png)
 
 ## Task 4: Create a Notifications Service Subscription
 
  1.	Open the OCI Console at cloud.oracle.com, click the hamburger icon in the upper left corner to display the **Navigation Menu**.
 
-  ![Access the Object Storage Bucket](./images/task-1-scrn-1.png "Cccess the Object Storage Bucket")
+  ![Access the Object Storage Bucket](./images/task-1-scrn-1.png)
 
   2. Select **Developer Services** from the Navigation Menu
 
-  ![Access the Object Storage Bucket](./images/task-1-scrn-2.png "Cccess the Object Storage Bucket")
+  ![Access the Object Storage Bucket](./images/task-1-scrn-2.png)
 
   3. Click **Notifications** under the **Application Integration** heading.
 
-  ![Access the Object Storage Bucket](./images/task-1-scrn-3.png "Cccess the Object Storage Bucket")
+  ![Access the Object Storage Bucket](./images/task-1-scrn-3.png)
 
   4. Select **Subscriptions** (on the left side of the page, just below Topics).  The status will be **Active**.
 
-  ![Access the Object Storage Bucket](./images/task-4-scrn-4.png "Cccess the Object Storage Bucket")
+  ![Access the Object Storage Bucket](./images/task-4-scrn-4.png)
 
   5. Click **Create Subscription**.
 
-  ![Access the Object Storage Bucket](./images/task-4-scrn-5.png "Cccess the Object Storage Bucket")
+  ![Access the Object Storage Bucket](./images/task-4-scrn-5.png)
 
   6. Enter the Subscription details.
 
-  ![Access the Object Storage Bucket](./images/task-4-scrn-6.png "Cccess the Object Storage Bucket")
+  ![Access the Object Storage Bucket](./images/task-4-scrn-6.png)
 
     * Provide the following:
     * **Subscription topic:** Select the subscription topic you created in Step 2
@@ -154,25 +154,25 @@ In this lab, you’ll practice setting up the live feed capabilities,that can be
 
   7. **Review** the Subscription details
 
-  ![Access the Object Storage Bucket](./images/task-4-scrn-7.png "Cccess the Object Storage Bucket")
+  ![Access the Object Storage Bucket](./images/task-4-scrn-7.png)
 
 ## Task 5: Confirm that Endpoint Can Receive Notifications
 
   1. Open the OCI Console at cloud.oracle.com, and select the **Clone-of-LoanAppDB** ADB Instance.
 
-  ![Load Data from Object Storage](./images/task-3-scrn-1.png "Load Data from Object Storage")
+  ![Load Data from Object Storage](./images/task-3-scrn-1.png)
 
   2. Select **Data Load** from DropDown Menu.
 
-  ![Load Data from Object Storage](./images/task-3-scrn-2.png "Load Data from Object Storage")
+  ![Load Data from Object Storage](./images/task-3-scrn-2.png)
 
   3. Select **Feed Data** from the options listed at top of page.
 
-  ![Load Data from Object Storage](./images/task-5-scrn-3.png "Load Data from Object Storage")
+  ![Load Data from Object Storage](./images/task-5-scrn-3.png)
 
   4.	**Review** the card for the live table feed you are configuring for a notification-based feed.  It should reflect an **Active** status..
 
-  ![Load Data from Object Storage](./images/task-5-scrn-4.png "Load Data from Object Storage")
+  ![Load Data from Object Storage](./images/task-5-scrn-4.png)
 
   * You will receive email notifications when specific live feed events occur and any new files uploaded to the bucket will automatically be loaded into the live feed table.
 

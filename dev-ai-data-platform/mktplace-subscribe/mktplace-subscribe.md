@@ -30,56 +30,56 @@ By the end of this lab, you’ll understand how the **Data Share** tool enables 
 
 3. Select **Database Actions**, then **View All Database Actions**
 
-   ![Create Data Product Share](./images/subscribe-to-data-share-3.png "Create Data Product Share")
+   ![Create Data Product Share](./images/subscribe-to-data-share-3.png )
 
 4. Sign-out of **Database Actions Launchpad** as ADMIN user.
 
-   ![Create Data Product Share](./images/subscribe-to-data-share-4.png "Create Data Product Share")
+   ![Create Data Product Share](./images/subscribe-to-data-share-4.png )
 
 5. Sign-on to **Data Studio** as RISK user.***(See View Login Info Page for Password)***
 
-   ![Create Data Product Share](./images/subscribe-to-data-share-5.png "Create Data Product Share")
+   ![Create Data Product Share](./images/subscribe-to-data-share-5.png )
 
 6. At the **Database Actions Launchpad**, click **Data Studio**.
 
-   ![Create Data Product Share](./images/subscribe-to-data-share-6.png "Create Data Product Share")
+   ![Create Data Product Share](./images/subscribe-to-data-share-6.png )
 
 7. On the **Data Share** age, click on the left rail.
 
-   ![Create Data Product Share](./images/subscribe-to-data-share-7.png "Create Data Product Share")
+   ![Create Data Product Share](./images/subscribe-to-data-share-7.png )
 
 8. Click on **Consume Share** on the **Provider and Consumer** page.
 
-   ![Create Data Product Share](./images/subscribe-to-data-share-8.png "Create Data Product Share")
+   ![Create Data Product Share](./images/subscribe-to-data-share-8.png )
 
 9. On the Consume Share Page
 
-* Click on **Subscribe to Share Provider** drop-down button.
-* Select **Subscribe to Delta Share Provider** from the drop-down list
+   * Click on **Subscribe to Share Provider** drop-down button.
+   * Select **Subscribe to Delta Share Provider** from the drop-down list
 
-![Create Data Product Share](./images/subscribe-to-delta-share-provider.png "Create Data Product Share")
+   ![Create Data Product Share](./images/subscribe-to-delta-share-provider.png)
 
 10. This will cause the **Subscribe to Share Provider** wizard will be displayed.
 
-<u>**On the page, do the following:**</u>
+   <u>**On the page, do the following:**</u>
 
-* **Share Source:** Accept the default selection: **Delta Share Provider JSON.** 
-* **Share Provider JSON:** Accept the default selection: **From File.** 
-* **Delta Share Profile JSON:** Click this box. In the Open dialog box, navigate to the location where you downloaded the data share profile named **RISK\_Delta\_Share\_Profile.json**, select it, and then click Open. 
-* **Provider Name:** enter **LoanApp\_Share\_Provider** 
-* **Description:** enter **Subscribing to data share of closed mortgage loan details for risk analysis**
+   * **Share Source:** Accept the default selection: **Delta Share Provider JSON.** 
+   * **Share Provider JSON:** Accept the default selection: **From File.** 
+   * **Delta Share Profile JSON:** Click this box. In the Open dialog box, navigate to the location where you downloaded the data share profile named **RISK\_Delta\_Share\_Profile.json**, select it, and then click Open. 
+   * **Provider Name:** enter **LoanApp\_Share\_Provider** 
+   * **Description:** enter **Subscribing to data share of closed mortgage loan details for risk analysis**
 
 * Click on Next to proceed
 
-    11. This will cause the **Add Shares** screen to appear.
+11. This will cause the **Add Shares** screen to appear.
 
 * Select the LoanApp\_ShareToRisk share in the Available Shares column.
 
-![Create Data Product Share](./images/subscribe-to-share-provider.png "Create Data Product Share")
+   ![Create Data Product Share](./images/subscribe-to-share-provider.png )
 
 12. Click ">" button to move the share into the Selected Shares column.
 
-![Create Data Product Share](./images/subscribe-to-share-provider-2.png "Create Data Product Share")
+   ![Create Data Product Share](./images/subscribe-to-share-provider-2.png )
 
 * Click on Subscribe to proceed.
 
@@ -88,33 +88,33 @@ By the end of this lab, you’ll understand how the **Data Share** tool enables 
    1.	On the Link Data page **select drop-down list**for Select Cloud Store Location or enter a public URL.
    2.	Select the **LoanApp\_Share\_Provider.**
 
-  ![Create Data Product Share](./images/select-shared-data.png "Create Data Product Share")
+   ![Create Data Product Share](./images/select-shared-data.png )
 
    3.	Expand the drill down tab for the share named **LoanApp\_Share\_Provider** to display the available data.
    4.	Now Let's create an external table based on the **LOAN.Shared\_Loan\_Data\_Risk\_VW** file by dragging and dropping this file onto the data linking job section.
 
-    ![Create Data Product Share](./images/select-shared-data-2.png "Create Data Product Share")
+    ![Create Data Product Share](./images/select-shared-data-2.png )
 
     * This causes the external table to be created is displayed in the data linking job section.
 
-    ![Create Data Product Share](./images/select-shared-data-3.png "Create Data Product Share")
+    ![Create Data Product Share](./images/select-shared-data-3.png )
 
    5.	Click on the **Settings** (pencil Icon) to display the Link Data from Cloud Store Location panel. You can use the various tabs listed on the left rail to perform actions like change the name of the external table name to be created, view the table's properties, view the table's data, view the SQL code used to create the table and more.
 
    * Edit Table Name to be **Shared\_Loan\_Data\_Risk**
 
-  ![Create Data Product Share](./images/select-shared-data-4.png "Create Data Product Share")
+   ![Create Data Product Share](./images/select-shared-data-4.png )
 
     * Click **Close** to proceed
 
-    6.	Click **Start**
-    7.	On the popup box that appears click **Run**
+   6.	Click **Start**
+   7.	On the popup box that appears click **Run**
 
-  ![Create Data Product Share](./images/select-shared-data-5.png "Create Data Product Share")
+   ![Create Data Product Share](./images/select-shared-data-5.png )
 
    8. After the link job is completed, make sure that the data link card has the link icon next to it.
 
-   ![Create Data Product Share](./images/select-shared-data-6.png "Create Data Product Share")
+   ![Create Data Product Share](./images/select-shared-data-6.png )
 
 ## Task 3: Validate ADB Access to Object Storage Data
 
@@ -122,7 +122,7 @@ By the end of this lab, you’ll understand how the **Data Share** tool enables 
 
    * Click **Close** when done.
 
-  ![Create Data Product Share](./images/select-shared-data-1a.png "Create Data Product Share")
+  ![Create Data Product Share](./images/select-shared-data-1a.png )
 
    2. In the **Table and View Loads** section:
 
@@ -130,18 +130,18 @@ By the end of this lab, you’ll understand how the **Data Share** tool enables 
 
    Remember, that the source data for this external table is from the **Shared\_Loan\_Data\_Risk\_VW** data share.
 
-   ![Create Data Product Share](./images/select-shared-data-2a.png "Create Data Product Share")
+   ![Create Data Product Share](./images/select-shared-data-2a.png )
 
    The **Shared\_Loan\_Data\_Risk\_VW** panel is displayed with the **Preview** tab selected by default that displays the external table's data.
 
-  ![Create Data Product Share](./images/select-shared-data-3a.png "Create Data Product Share")
+  ![Create Data Product Share](./images/select-shared-data-3a.png )
 
    2.	Click **Close** to exit the panel and to return to the Data Share Dashboard.
    3.	Click on **Query** button to run a query from ADB against the Linked Shared Data
 
-  ![Create Data Product Share](./images/select-shared-data-4a.png "Create Data Product Share")
+  ![Create Data Product Share](./images/select-shared-data-4a.png )
 
-  ![Create Data Product Share](./images/select-shared-data-5a.png "Create Data Product Share")
+  ![Create Data Product Share](./images/select-shared-data-5a.png )
 
 ***Congratulations you have now subscribed to the data shared with you from ADB via Data Share and confirmed you can query the data.***
 
