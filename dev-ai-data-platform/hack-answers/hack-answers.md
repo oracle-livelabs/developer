@@ -91,6 +91,6 @@ Used to determine if shift in loan approvals is required to avoid selling too ma
 
 
 ## Acknowledgements
-* **Author** - <Name, Title, Group>
-* **Contributors** -  <Name, Group> -- optional
-* **Last Updated By/Date** - <Name, Month Year>
+* **Author** - <Name, Eddie Ambler, Otis Barr
+* **Contributors** -  Mike Matthews, Marty Gubar, Francis Regalado, Linda Foinding
+* **Last Updated By/Date** - 04-28-2025

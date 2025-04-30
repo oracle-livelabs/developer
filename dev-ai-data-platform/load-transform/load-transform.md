@@ -111,7 +111,7 @@ By completing this task, you’ll understand how to handle complex JSON files, t
 ## Acknowledgements
 
 * **Authors** - Eddie Ambler, Otis Barr, Matt Kowalik
-* **Contributors** - Francis Regalado, Ramona Magadan
-* **Last Updated By/Date** - TBC
+* **Contributors** - Mike Matthews, Marty Gubar, Francis Regalado, Ramona Magadan
+* **Last Updated By/Date** - 04-28-2025
 
 Copyright (C) Oracle Corporation.

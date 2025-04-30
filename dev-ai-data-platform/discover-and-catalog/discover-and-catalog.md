@@ -102,45 +102,14 @@ With our Connections in place, we will explore how to search the catalog for the
 
   ![Search Items in Catalog](./images/search-items-in-catalog-1.png "Search Items in Catalog")
 
-* On the landing page, you will note that the Catalog has quick filters to help you display the output of your tailored searches in the display area.
+* On the landing page, you will note that the Catalog has quick filters to help display the results of your customized searches in the main area.
+If no quick filter is selected, the Tables and Views filter is applied by default.
 
 * If you do not select a quick filter, the Tables and Views filter is selected by default.
 
-**Note:** You can combine multiple filters for more refined results. 🔍
+**Note:** the output of the object shown can be limited to all or a selected schema.
 
----
-### **The catalog quick filters include**
-
-
-**Tables and Views**
-
-  This filter searches for database tables (both internal and external) and views, including both standard database views and analytic views.
-
-**Data Objects**
-
-  This filter searches for data objects in the database and on connected cloud storage.
-> **Note:** This is a superset of the Tables and Views and Files filters.
-
-**Files**
-
-  This filter searches for files in connected cloud storage only.
-
-**OCI**
-
-  This filter searches for other Oracle Cloud Infrastructure objects, such as Autonomous Databases, OCI cloud storage buckets, or registered OCI Data Catalogs.
-  This option is available if you have an OCI credential, which can be created from the **Data Studio Settings** icon.
-
-**Connections**
-
-  This filter searches for connections registered in Data Studio, such as those to external Data Catalogs or databases.
-
-**All**
-
-  This filter searches for all objects in the catalog. Since there can be thousands of objects, this scope may result in slower performance.
-
----
-
-* Select **Connections** quick filter. This displays available connections in the Catalog accessible to the LOAN schema. From here we can validate that our catalog sees the defined connections we made.
+2. Select **Connections** quick filter. This displays available connections in the Catalog accessible to the LOAN schema. From here we can validate that our catalog sees the defined connections we made.
 
 > **Note** that our **MyDemoBucket** is displayed.
 
@@ -148,13 +117,15 @@ With our Connections in place, we will explore how to search the catalog for the
 
 * Select **Data Objects** quick filter to display available items in the Catalog visible to the LOAN schema. Notice that this view shows us the available database objects and the listing of the files available in our object storage.
 
+**Note:** that this view shows us the available database objects and the listing of the files available in our object storage.  These files will be used in upcoming exercises.
+
   ![Data Catalog Data Objects](./images/data-catalog-data-objects.png "Data Catalog Data Objects")
 
 ## Task 4: Preview Data in Catalog
 
 Check out the list of discovered data inside the Catalog. From this view we can see the available files that reside in the Object storage buckets.
 
-* Hover over file name to see data preview option and click preview Icon to display data preview
+* Hover over file named **LoanAppCustomer-Extensions.csv**.
 
   ![Data Catalog Data Objects](./images/data-catalog-data-objects.png "Data Catalog Data Objects")
 
@@ -178,8 +149,8 @@ Check out the list of discovered data inside the Catalog. From this view we can 
 
 ## Acknowledgements
 
-* **Author:** Otis Barr
-* **Contributor:** Matt Kowalik
-* **Last Updated By/Date:** TBD
+* **Author:** Eddie Ambler, Otis Barr
+* **Contributor:** Mike Matthews, Marty Gubar, Matt Kowalik
+* **Last Updated By/Date:** 04-28-2025
 
 Copyright (C) Oracle Corporation.

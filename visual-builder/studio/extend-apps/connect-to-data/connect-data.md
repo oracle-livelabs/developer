@@ -62,7 +62,7 @@ Display a list of employees based on data we get from HCM, then set up a mechani
 
     ![This image shows the publicWorkers service being dropped onto the Welcome Page Template in the Structure view. The Select a Slot pop-up shows the Default slot as available, with the Search slot shown as full.](images/welcome-page-template-default-slot.png)
 
-4. When shown options to display the data, select **Table** (not Table Dynamic, the first option).
+4. When shown options to display the data, select **Table** (not Table Dynamic).
 
     ![This image shows a "Render as" pop-up below the Welcome Page Template component. The second "Table" item is selected. Other options include Table Dynamic, List Dynamic, Details Dynamic, and List](images/render-as-list-selection.png)
 
@@ -107,4 +107,4 @@ You may now **proceed to the next lab**.
 ## Acknowledgements
 
 * **Author** - Sheryl Manoharan, VB Studio User Assistance, May 2023
-* **Last Updated By/Date** - Sheryl Manoharan, January 2025
+* **Last Updated By/Date** - Sheryl Manoharan, April 2025
