@@ -40,11 +40,11 @@ Now, the loan officer logs into the Loan Management Application. With role-based
 
     ![Homepage](./images/select-money-mike.png " ")
 
-4. This displays the **Customer Details**() page 
+4. This displays the **Customer Details** page
+
+    * On this page, you can expand the Customer Details view which uses JSON Duality to be able to update various fields in the underlying tables of the loan application.
 
     ![Homepage](./images/money-mike-customer-details.png " ")
-
-        * On this page, you can expand the **Customer Details** view which uses JSON Duality to be able to update various fields in the customer application
 
     * After a few seconds the AI Response is displayed on this page, for you to analyze the GenAI powered Recommendations & Profile Analysis of your user's application
 
@@ -119,11 +119,11 @@ With this real-time access, the risk officers can proactively identify patterns 
 
 **Loans by loan type and zip/state:** Identify regions with excessive exposure.
 
-![Graph Zip for Risk Officer](./images/graph-zip-risk-officer.png " "
+🚧 ![Under Construction: Graph Zip for Risk Officer](./images/graph-zip-risk-officer.png " "
 
 **Loans by loan type and credit score**: Detect trends in high-risk lending.
 
-![Graph Credit for Risk Officer](./images/graph-credit-risk-officer.png " "
+🚧 ![Under Construction: Graph Credit for Risk Officer](./images/graph-credit-risk-officer.png " "
 
 By completing this task, you’ve seen how Risk Officers can use shared data products and insights to make proactive decisions that safeguard financial stability. 💼📊 
 
@@ -144,7 +144,7 @@ This lab demonstrated how **Oracle’s Data Platform** empowers both Loan Office
 ## Acknowledgements
 
 * **Authors** - Eddie Ambler, Otis Barr, Matt Kowalik
-* **Contributors** - Francis Regalado, Linda Foinding
+* **Contributors** - Mike Matthews, Marty Gubar, Francis Regalado, Linda Foinding
 * **Last Updated By/Date** - 04/21/2025
 
 Copyright (C) Oracle Corporation.
