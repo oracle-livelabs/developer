@@ -1,5 +1,5 @@
 {
-    "workshoptitle": "The Title of the Workshop is Defined in the Manifest File",
+    "workshoptitle": "Build a Better ChatBot",
     "include": {"starter-file.sql":"../../rag/files/starter-file.sql",
                 "sample.json":"../../rag/files/sample.json",
                 "step2.md":"../../rag/files/step2.md"},
