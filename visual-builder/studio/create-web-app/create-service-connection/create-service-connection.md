@@ -131,7 +131,7 @@ In this step, we'll assign data to the variables by adding a "value" event that 
 
 2. Click the component's **Events** tab in the Properties pane, then select **+ Event Listener** and **On 'value'**.
 
-3. When the InputTextValueChangeChain opens in the Action Chain editor, double-click the **Call REST** action in the Actions palette to add it to the canvas.
+3. When the InputTextValueChangeChain opens in the Action Chain editor, drag the **Call REST** action from the Actions palette and drop it on the canvas.
 
 4. In the action's Properties pane, click **Select** next to Endpoint to open the Select Endpoint wizard.
 
@@ -147,7 +147,7 @@ In this step, we'll assign data to the variables by adding a "value" event that 
 
     Click **Save**.
 
-8. Drag and drop an **Assign Variable** action on the canvas to follow the Call REST action. In the Assign Variable action's Properties pane, select **countryTypeVar** under **Page** in the **Variable** list. Hover over the **Value** property, click ![Select Variable icon](images/variable-picker-icon.png) to open the Variable picker, expand **response** under **Local**, and select **body**.
+8. Double-click the **Assign Variable** action in the Actions palette to add it to the canvas after the Call REST action. In the Assign Variable action's Properties pane, select **countryTypeVar** under **Page** in the **Variable** list. Hover over the **Value** property, click ![Select Variable icon](images/variable-picker-icon.png) to open the Variable picker, expand **response** under **Local**, and select **body**.
 
     ![The Assign Variable action's properties show the Variable property set to $page.variables.countryTypeVar. The Value property shows the variable picker, with body under Local and response highlighted.](images/assignvariable-bodytocountrytypevar.png "")
 
@@ -170,4 +170,4 @@ In this step, we'll assign data to the variables by adding a "value" event that 
 ## Acknowledgements
 
 * **Author** - Sheryl Manoharan, VB Studio User Assistance, July 2022
-* **Last Updated By/Date** - Sheryl Manoharan, January 2025
+* **Last Updated By/Date** - Sheryl Manoharan, April 2025

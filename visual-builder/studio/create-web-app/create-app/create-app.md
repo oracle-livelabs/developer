@@ -50,6 +50,7 @@ The first thing we'll do is add a web app to the HR visual application you just 
     ![Web Apps pane after the hrwebapp has been created. The app itself is open on the right, on the main-start page, showing the Components Palette. On the far right, the Properties tab shows the Page view.](images/designer.png "Web Apps pane with the hrwebapp")
 
     Here are the main Page Designer areas you'll use throughout this workshop:
+
     | #   | Tab        | Functionality                                                                                                                                                           |
     | --- | ---------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
     | 1   | Components | UI components (sorted by categories) that you can drag and drop onto a page                                                                                             |
@@ -203,4 +204,4 @@ Now that you have your business objects, create a diagram that visualizes the bu
 ## Acknowledgements
 
 * **Author** - Sheryl Manoharan, VB Studio User Assistance, November 2021
-* **Last Updated By/Date** - Sheryl Manoharan, January 2025
+* **Last Updated By/Date** - Sheryl Manoharan, April 2025
