@@ -36,20 +36,20 @@ Now that you are ready to publish your changes to the project's `main` branch, l
 1. Click![Workspaces icon](images/vbs-workspaces-icon.png)**Workspaces**, then **HR Workspace** in the Workspaces table.
 2. When your workspace opens, click **Publish** in the header.
 3. In the Publish Changes dialog box, click **Merge After Review**.
-4. Enter a commit message for your commit, enter a description of all your changes (not just this commit) for the merge request, select another project member as a reviewer, and click **Publish**.
+4. Enter a commit message for your commit, leave the target branch set to the `main` branch, enter a description of all your changes (not just this commit) for the merge request, select another project member as a reviewer, and click **Publish**.
 
     ![The Publish Changes dialog box is shown, with the Merge After Review tab selected. An example commit message is shown and Clara Coder is set as a reviewer. The Publish Changes button is selected.](images/create-mr.png "")
 
-5. When prompted, add the username and password that allows your visual application to be deployed to the VB development instance, then click **Add Credentials and Continue**.
+5. If you're prompted to authorize your environment, click **OK** in the Authorization Required dialog, then click **Authorize** in the Authorize Jobs page. If additionally prompted to set up OAuth, click **Authorize**. You may need to enable popups in your browser.
 
-    ![The Missing Deployment credentials dialog with mary.jane entered as the user name. Password is empty.](images/credentials.png "")
+    Once you've provided authorization, click **Publish** again in your workspace to restart the publishing process. Make sure the dialog still has all the details you added in the previous step.
 
-    Once the request to merge your changes from **hrbranch** to **main** is created, click **Close**. Both your reviewer and you will be notified that a new merge request has been created.
+6. When the request to merge your changes from **hrbranch** to **main** is created, click **Close**. Both your reviewer and you will be notified that a new merge request has been created.
 
     ![The results when you click the Publish Changes button are shown, with the message '1 Merge hrbranch to master merge request has been created' at the end. The Close button is selected.](images/create-mr-result.png "")
 
-6. Return to the project home, then click ![Merge Requests icon](images/vbs-mergerequest-icon.png) **Merge Requests** in the left navigator. You'll see your merge request listed here. For a quick summary of the merge request, click ![Details icon](images/details-icon.png) **Details**.
-7. Click **1 Merge Request for branch 'hrbranch'**. All details of the merge request, including its current status and all previous commits, will be shown:
+7. Return to the project home, then click ![Merge Requests icon](images/vbs-mergerequest-icon.png) **Merge Requests** in the left navigator. You'll see your merge request listed here. For a quick summary of the merge request, click ![Details icon](images/details-icon.png) **Details**.
+8. Click **1 Merge Request for branch 'hrbranch'**. All details of the merge request, including its current status and all previous commits, will be shown:
 
     ![Details of the newly created merge request, #1 Merge Request for branch 'hrbranch', are shown. Its status is shown as OPEN, with a message that the requestor wants to commit 2+ commits to main from hrbranch in tutorial-hr-project.git. The Conversation tab shows an example commit message. The Merge and Close buttons are also visible.](images/create-mr-view.png "")
 
@@ -68,7 +68,7 @@ Assuming your merge request has been approved, let's now merge your changes to t
 
     Once your changes are merged, VB Studio automatically kicks off build jobs that package and deploy your visual application to the development environment. These jobs—**tutorial-hr-project-Package** and **tutorial-hr-project-Deploy**—were automatically generated when your workspace was first created. VB Studio also creates a pipeline, which, by default, runs the package job before the deploy job, so the latest application artifacts are packaged for deployment.
 
-    Now click ![Builds icon](images/vbs-builds-icon.png) **Builds** to view the progress of your build jobs.
+    Click ![Builds icon](images/vbs-builds-icon.png) **Builds** to view the progress of your build jobs.
 
     ![The status of the Visual-Application-Package and Visual-Application-Deploy jobs on the Builds page is shown. Both jobs are triggered automatically when your commits are merged to the project's main branch.](images/merge-mr-result.png "")
 
@@ -76,7 +76,7 @@ Assuming your merge request has been approved, let's now merge your changes to t
 
 After your application is successfully deployed to the development environment, you can view it from your environment's list of deployments.
 
-1. In the left Navigator, click ![Environments icon](images/vbs-environments-icon.png) **Environments**, then **Deployments**.
+1. In the left Navigator, click ![Environments icon](images/vbs-environments-icon.png) **Environments**, then **Deployments** for the Development environment.
 2. Expand the **tutorial-hr-project** that shows the **Deployed** status, then click the **hrwebapp** application.
 
     ![The applications deployed to your Development environment are shown. The Deployed version of the hrwebapp application is shown with identifying details.](images/deployed-application.png "")
@@ -131,4 +131,4 @@ You're now ready to install the HR app as a PWA.
 ## Acknowledgements
 
 * **Author** - Sheryl Manoharan, VB Studio User Assistance, November 2021
-* **Last Updated By/Date** - Sheryl Manoharan, January 2025
+* **Last Updated By/Date** - Sheryl Manoharan, April 2025
