@@ -49,8 +49,9 @@ Which kind of database you can use to run the Java Web example application?
 ```
 Which Java environment should be used to run this example?
 ```
-Using the TEST1 vector store, you will experiment with the main parameters set as shown below to observe how the quality of the answers changes.
-**IMPORTANT**: Clear the history by pressing the **Clear** button after each question — even if you're repeating the same question with different parameters.
+Using the TEST1 vector store, you will experiment with the main parameters set as shown below to observe how the quality of the answers changes. We will set the *Temperature* parameter to 0 in order to minimize the variabilty of the answers.
+
+**IMPORTANT**: Clear the history by pressing the **Clear** button after each question — even if you're repeating the same question with different parameters. We will start by testing the first question.
 
   * LLM:llama3.1
   * TopK: 4
@@ -83,14 +84,54 @@ Please note that I've assumed your question was about the specific Java environm
 
 **COMMENT**: As you can see, with more chunks provided, the bot also mentions other technologies such as Oracle JDBC, the JVM, and Oracle Database.
 
+Now let's move onto the second question and see the results:
 
+  * LLM: llama3.1
+  * TopK: 4
+  * Search Type: Similarity
+  * Temperature: 0
+
+```
+Q: Which kind of database you can use to run the Java Web example application?
+
+A: You can use an Oracle Database to run the Java Web example application. The provided text mentions that "Oracle Database is a relational database that you can use to store, modify and use data" and also includes the components required for development such as Oracle Database, J2SE or JDK, Apache Maven, IntelliJ, and Apache Tomcat. More specifically, it notes that "To develop the Java web application, you need a working installation of Oracle Database along with the HR schema." Therefore, based on this information, an Oracle Database is suitable for running the HR Web application example mentioned in the text.
+```
+  * LLM: gpt-4o-mini
+  * TopK: 10
+  * Search Type: Similarity
+  * Temperature: 0
+
+```
+Q: Which kind of database you can use to run the Java Web example application?
+
+A: According to the provided text, you can use an "Oracle Autonomous Database" or the "Oracle Database Cloud Services" which offers access to Oracle Cloud Free Tier that provides two autonomous databases for unlimited time. 
+
+More specifically:
+
+Option 1: Oracle Autonomous Database
+Option 2: Oracle Database Cloud Services (Cloud Free Tier) with two Autonomous Databases.
+
+You can use either of these options to run the Java Web example application.
+```
+**COMMENT**: In the second answer, the Oracle Cloud Free Tier is mentioned.
+
+By conducting these few tests, we have discovered how shifting a single parameter can lead to very different answers. More specifically to this case, we can assume that using 10 chunks as the TopK value for similar vectors provides more specific results than the default value of 4.
+
+## Task 3 (optional): Repeat Task 2 using OpenAI models
+
+As an additional learning exercise, you can repeat the tests performed in Task 2 of this lab using OpenAI LLMs and vector stores:
+
+* Select `TEST2` as the vector store to run the questions against
+* Choose **gpt-4o-mini** from the **Chat model** dropdown menu to have the same LLM provider.
+
+afterwards, compare the results to what you get while using *llama3.1*!
 
 ## Learn More
 
-*(optional - include links to docs, white papers, blogs, etc)*
+You can learn more about RAG by playing with more parameters and prompt techniques:
 
-* [URL text 1](http://docs.oracle.com)
-* [URL text 2](http://docs.oracle.com)
+* Play with the *Temperature* parameter to discover how much the answers provided get enriched.
+* Follow up a question with another one asking for “more” to see that the chat history is taken into account when generating a new response.
 
 ## Acknowledgements
 * **Author** - <Name, Title, Group>
