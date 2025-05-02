@@ -38,6 +38,8 @@ This lab assumes you have:
 - Completed Lab 3: Coding Basics on Oracle Database 23ai. 
 - Completed Lab 4: Step by step: Implement RAG with Oracle Database 23ai.
 
+>💡 **Note:** You can download the code and run this lab on your own time here: [AI Vector Search Code](https://objectstorage.us-ashburn-1.oraclecloud.com/p/yiZgIeQQptaFaDMHUQ_623UuChmv1jf_9dCj10wwgjmsQitUMb5QP7mPv1Z1med8/n/c4u04/b/gen-ai/o/ai_vector_search_code)
+
 ## Task 1: Challenge requirements 
 
 The data science team at SeerEquites has provided a Jupyter Notebook called `ai_vector_search_challenge.ipynb` with four key code cells. The notebook will:
