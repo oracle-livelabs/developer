@@ -1,5 +1,5 @@
 {
-  "workshoptitle": "The Title of the Workshop is defined in the manifest",
+  "workshoptitle": "Build a Better ChatBot",
   "help": "livelabs-help-**enterarea**_us@oracle.com",
   "variables": ["../../microservice/variables.json",
     "../../variables/microservice-in-another-file.json"],

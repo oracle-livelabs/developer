@@ -2,92 +2,88 @@
 
 ## Introduction
 
-*Describe the lab in one or two sentences, for example:* This lab walks you through the steps to ...
+Now that you’ve created the vector stores, you can begin testing the knowledge base built in Lab 2. In this Lab, you will test the knowledge stored in the `TEST1` vector store, which serves as an example of an augmented LLM based on publicly available sources.
 
 Estimated Time: -- minutes
 
-### About <Product/Technology> (Optional)
-Enter background information here about the technology/feature or product used in this lab - no need to repeat what you covered in the introduction. Keep this section fairly concise. If you find yourself needing more than two sections/paragraphs, please utilize the "Learn More" section.
-
 ### Objectives
 
-*List objectives for this lab using the format below*
-
 In this lab, you will:
-* Objective 1
-* Objective 2
-* Objective 3
+* Enable the RAG functionality in the *Chat* window
+* Ask questions and receive answers enhanced by relevant context stored in the vector database
+* Compare results across different configurations
 
-### Prerequisites (Optional)
-
-*List the prerequisites for this lab using the format below. Fill in whatever knowledge, accounts, etc. is needed to complete the lab. Do NOT list each previous lab as a prerequisite.*
+### Prerequisites
 
 This lab assumes you have:
 * An Oracle Cloud account
 * All previous labs successfully completed
 
+## Task 1: Enable RAG
 
-*Below, is the "fold"--where items are collapsed by default.*
+To enable the *RAG* functionality, follow these steps:
 
-## Task 1: Concise Task Description
+1. Navigate to the *Chat* tab from the left-side menu
 
-(optional) Task 1 opening paragraph.
+2. Clear the history by pressing the **Clear** button, and select the **llama3.1** model for the initial test.
+    
+    ![clear-model](./images/clear-model.png)
 
-1. Step 1
+3. Scroll down the left-side pane and check the **Enable RAG?** box. 
 
-	![Image alt text](images/sample1.png)
+    ![enable-rag](./images/enable-rag.png)
 
-  To create a link to local file you want the reader to download, use the following formats. _The filename must be in lowercase letters and CANNOT include any spaces._
+4. In the **Select Alias** dropdown, choose the `TEST1` vector store table. The remaining fields in the **Vector Store** will be automatically populated, as each one represents a search parameter used to configure the selected vector store. 
 
-	Download the [starter file](files/starter-file.sql) SQL code.
+    ![select-vector-store](./images/select-vector-store.png)
 
-	When the file type is recognized by the browser, it will attempt to render it. So you can use the following format to force the download dialog box.
+    In this case, selecting the alias is sufficient to retrieve the correct store. However, you also get visibility into the parameters that were used to create the chunks and their corresponding embedding vectors.
 
-	Download the [sample JSON code](files/sample.json?download=1).
+## Task 2: Ask questions with RAG enabled
 
-  > Note: do not include zip files, CSV, PDF, PSD, JAR, WAR, EAR, bin, or exe files - you must have those objects stored somewhere else. We highly recommend using Oracle Cloud Object Store and creating a PAR URL instead. See [Using Pre-Authenticated Requests](https://docs.cloud.oracle.com/en-us/iaas/Content/Object/Tasks/usingpreauthenticatedrequests.htm)
+Now that RAG is enabled, we can test it by asking the same questions submitted in *Lab 1*. Previously, the LLM provided generic answers, as the content was either not part of its training data or not sufficiently addressed in the questions:
 
-2. Step 2
+```
+Which kind of database you can use to run the Java Web example application?
+```
+```
+Which Java environment should be used to run this example?
+```
+Using the TEST1 vector store, you will experiment with the main parameters set as shown below to observe how the quality of the answers changes.
+**IMPORTANT**: Clear the history by pressing the **Clear** button after each question — even if you're repeating the same question with different parameters.
 
-  ![Image alt text](images/sample1.png)
+  * LLM:llama3.1
+  * TopK: 4
+  * Search Type: Similarity
+  * Temperature: 0
 
-4. Example with inline navigation icon ![Image alt text](images/sample2.png) click **Navigation**.
+```
+Q: Which Java environment should be used to run this example?
 
-5. Example with bold **text**.
+A: The best Java environment for running this example is an Integrated Development Environment (IDE) like IntelliJ IDEA, which supports Java development and includes tools for debugging, testing, and deploying code. However, if you do not have access to a specific IDE, or need another option, a standard Java Development Kit (JDK) with its associated tools will work. But, specifically for this example, it's recommended to use Oracle JDK, as the guide uses Oracle-specific components such as JdbcBeanImpl and relies on Oracle JDBC drivers. Here is why the correct answer cannot be directly retrieved from the documents, but still inferred: The title of the section "Web Server" implies that this guide assumes a standard web server setup. Later in the guide it mentions Maven Central to download the necessary JDBC drivers, which also supports standardizing on Oracle JDK and other commonly used Java distributions.
+No specific information regarding version support or alternatives for running this sample are mentioned within the provided text. So our inference would be based off common practices of selecting a Java environment that works well with many libraries and frameworks like Maven Central, suggesting Oracle JDK as the likely Java environment to use in order to run and test the HR application correctly.
+```
 
-   If you add another paragraph, add 3 spaces before the line.
+  * LLM: gpt-4o-mini
+  * TopK: 10
+  * Search Type: Similarity
+  * Temperature: 0
 
-## Task 2: Concise Task Description
+```
+Q: Which Java environment should be used to run this example?
 
-1. Step 1 - tables sample
+A: Based on the text provided, it appears that you are asking about using a specific Java environment to run an example. However, I will provide a concise answer as per your SystemMessage. The Oracle JDBC Thin driver requires a JDK (Java Development Kit) or JRE (Java Runtime Environment) version 8 or later to work. Therefore, to run the HR Web application example provided in this guide, you should use:
 
-  Use tables sparingly:
+Oracle JDK 8 or later
 
-  | Column 1 | Column 2 | Column 3 |
-  | --- | --- | --- |
-  | 1 | Some text or a link | More text  |
-  | 2 |Some text or a link | More text |
-  | 3 | Some text or a link | More text |
+This is because the ojdbc8-production pulls all the required JDBC jars from the Maven Central Repository, which is compatible with Java 8 and later versions.
 
-2. You can also include bulleted lists - make sure to indent 4 spaces:
+Please note that I've assumed your question was about the specific Java environment needed to run the example. If my interpretation is incorrect, please provide more context or clarify your question, and I'll do my best to assist you.
+```
 
-    - List item 1
-    - List item 2
+**COMMENT**: As you can see, with more chunks provided, the bot also mentions other technologies such as Oracle JDBC, the JVM, and Oracle Database.
 
-3. Code examples
 
-    ```
-    Adding code examples
-  	Indentation is important for the code example to appear inside the step
-    Multiple lines of code
-  	<copy>Enclose the text you want to copy in <copy></copy>.</copy>
-    ```
-
-4. Code examples that include variables
-
-	```
-  <copy>ssh -i <ssh-key-file></copy>
-  ```
 
 ## Learn More
 
