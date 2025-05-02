@@ -53,7 +53,7 @@ Using the TEST1 vector store, you will experiment with the main parameters set a
 
 **IMPORTANT**: Clear the history by pressing the **Clear** button after each question — even if you're repeating the same question with different parameters. We will start by testing the first question.
 
-  * LLM:llama3.1
+  * LLM: llama3.1
   * TopK: 4
   * Search Type: Similarity
   * Temperature: 0
@@ -65,7 +65,7 @@ A: The best Java environment for running this example is an Integrated Developme
 No specific information regarding version support or alternatives for running this sample are mentioned within the provided text. So our inference would be based off common practices of selecting a Java environment that works well with many libraries and frameworks like Maven Central, suggesting Oracle JDK as the likely Java environment to use in order to run and test the HR application correctly.
 ```
 
-  * LLM: gpt-4o-mini
+  * LLM: llama3.1
   * TopK: 10
   * Search Type: Similarity
   * Temperature: 0
@@ -96,7 +96,7 @@ Q: Which kind of database you can use to run the Java Web example application?
 
 A: You can use an Oracle Database to run the Java Web example application. The provided text mentions that "Oracle Database is a relational database that you can use to store, modify and use data" and also includes the components required for development such as Oracle Database, J2SE or JDK, Apache Maven, IntelliJ, and Apache Tomcat. More specifically, it notes that "To develop the Java web application, you need a working installation of Oracle Database along with the HR schema." Therefore, based on this information, an Oracle Database is suitable for running the HR Web application example mentioned in the text.
 ```
-  * LLM: gpt-4o-mini
+  * LLM: llama3.1
   * TopK: 10
   * Search Type: Similarity
   * Temperature: 0
