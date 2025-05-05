@@ -9,18 +9,16 @@ Estimated Time: -- minutes
 ### Objectives
 
 In this lab, you will:
-* Check the connection to your Oracle DB23ai
+* Set the connection to your Oracle DB23ai
 * Set your Oracle Cloud Infrastructure credentials for OCI connectivity
 * Configure the LLMs and embedding models you will use in the following labs
 * Test the *Chat* feature for the first time
 
-### Prerequisites (Optional)
-
-*List the prerequisites for this lab using the format below. Fill in whatever knowledge, accounts, etc. is needed to complete the lab. Do NOT list each previous lab as a prerequisite.*
+### Prerequisites
 
 This lab assumes you have:
-* An Oracle Cloud account
-* All previous labs successfully completed
+* An Oracle Database 23ai up and running
+* Completed the *Get Started* Lab
 
 ## Task 1: Check the DB connection
 
@@ -30,16 +28,15 @@ Let's check if the DB is correctly connected.
 
 	![Navigate to the Databases tab](images/database-navigation.jpg)
 
+2. To configure the Oracle Database 23ai Free, you will need to enter the credentials:
 
-2. Step 2
+   * Enter the Database Username: `WALKTHROUGH`
+   * Enter the Database Password for the database user: `OrA_41_OpTIMIZER`
+   * Enter the Database Connection String: `//localhost:1521/FREEPDB1`
+   * Save
+   
+   ![Database configuration](images/database-config.png)
 
-  ![Image alt text](images/sample1.png)
-
-4. Example with inline navigation icon ![Image alt text](images/sample2.png) click **Navigation**.
-
-5. Example with bold **text**.
-
-   If you add another paragraph, add 3 spaces before the line.
 
 ## Task 2: Set OCI Credentials
 
@@ -112,9 +109,6 @@ As you can see, even if the questions mean to refer to a specific example, the L
 * (optional) Now click the **Clear** button under the **History and Context** section, and choose the other available LLM, **llama3.1**. Then, ask the same questions and compare the results. Note that the History is enabled by default. The **Clear** button resets the *context window* and starts a fresh interaction with a model.
 
 * (optional) Play with the **Temperature** parameter (and also the other parameters if you wish to!) and compare the quality of the answers, for each LLM that's available. Clear the history by pressing the **Clear** button after each cycle.
-
-* [URL text 1](http://docs.oracle.com)
-* [URL text 2](http://docs.oracle.com)
 
 ## Acknowledgements
 * **Author** - <Name, Title, Group>

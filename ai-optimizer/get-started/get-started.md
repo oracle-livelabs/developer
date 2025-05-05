@@ -67,7 +67,7 @@ To enable the _ChatBot_ functionality, access to a **LLM** is required. The walk
    Unfortunately, if the above `curl` does not respond within 5-10 minutes, the rest of the walkthrough will be unbearable.
    If this is the case, please consider using different hardware.
 
-### Task 2: Embedding - mxbai-embed-large
+## Task 2: Embedding - mxbai-embed-large
 
 To enable the **RAG** functionality, access to an embedding model is required. The walkthrough will use [Ollama](https://ollama.com/) to run the _mxbai-embed-large_ embedding model.
 
@@ -77,7 +77,7 @@ To enable the **RAG** functionality, access to an embedding model is required. T
    podman exec -it ollama ollama pull mxbai-embed-large
    ```
 
-### Task 3: The AI Optimizer
+## Task 3: The AI Optimizer
 
 The **AI Optimizer** provides an easy to use front-end for experimenting with **LLM** parameters and **RAG**.
 
@@ -89,14 +89,14 @@ The **AI Optimizer** provides an easy to use front-end for experimenting with **
    tar zxf ai-optimizer.tar.gz --strip-components=1 -C ai-optimizer
    ```
 
-1. Build the Container Image
+2. Build the Container Image
 
    ```bash
    cd ai-optimizer-client/src
    podman build --arch amd64 -t localhost/ai-optimizer-aio:latest .
    ```
 
-1. Start the AI Optimizer:
+3. Start the AI Optimizer:
 
    ```bash
    podman run -d --name ai-optimizer-aio --network=host localhost/ai-optimizer-aio:latest
@@ -115,7 +115,7 @@ The **AI Optimizer** provides an easy to use front-end for experimenting with **
    ```bash
    podman machine ssh -- -N -L 8501:localhost:8501
    ```
-### Task 4: Vector Storage - Oracle Database 23ai Free
+## Task 4: Vector Storage - Oracle Database 23ai Free
 
 AI Vector Search in Oracle Database 23ai provides the ability to store and query private business data using a natural language interface. The AI Optimizer uses these capabilities to provide more accurate and relevant **LLM** responses via Retrieval-Augmented Generation (**RAG**). [Oracle Database 23ai Free](https://www.oracle.com/uk/database/free/get-started/) provides an ideal, no-cost vector store for this walkthrough.
 
@@ -127,7 +127,7 @@ To start Oracle Database 23ai Free:
    podman run -d --name ai-optimizer-db -p 1521:1521 container-registry.oracle.com/database/free:latest
    ```
 
-1. Alter the `vector_memory_size` parameter and create a [new database user](../client/configuration/db_config#database-user):
+2. Alter the `vector_memory_size` parameter and create a [new database user](../client/configuration/db_config#database-user):
 
    ```bash
    podman exec -it ai-optimizer-db sqlplus '/ as sysdba'
@@ -147,11 +147,18 @@ To start Oracle Database 23ai Free:
    EXIT;
    ```
 
-1. Bounce the database for the `vector_memory_size` to take effect:
+3. Bounce the database for the `vector_memory_size` to take effect:
 
    ```bash
    podman container restart ai-optimizer-db
    ```
+Now you are all set! With the "Infrastructure" in-place, you're ready to configure the AI Optimizer. 
+
+In a web browser, navigate to `http://localhost:8501`:
+
+![Chatbot](images/chatbot-no-models.png)
+
+Notice that there are no language models configured to use. We will deal with the configuration in the next Lab.
 
 ## Acknowledgements
 - **Created By/Date** - Kay Malcolm, Database Product Management, March 2020

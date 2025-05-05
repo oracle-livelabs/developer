@@ -32,13 +32,6 @@ This lab assumes you have:
   * API Keys for Third-Party Models (OpenAI API Keys)
   * On-Premises Models
 
-## Learn More
-
-*(optional - include links to docs, white papers, blogs, etc)*
-
-* [URL text 1](http://docs.oracle.com)
-* [URL text 2](http://docs.oracle.com)
-
 ## Acknowledgements
 * **Author** - <Name, Title, Group>
 * **Contributors** -  <Name, Group> -- optional
