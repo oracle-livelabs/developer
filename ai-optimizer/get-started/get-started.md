@@ -6,6 +6,13 @@ The AI Optimizer is available to install in your own environment, which may be a
 
 This walkthrough will guide you through a basic installation of the Oracle AI Optimizer and Toolkit (the AI Optimizer). It will allow you to experiment with GenAI, using Retrieval-Augmented Generation (RAG) with Oracle Database 23ai at the core.
 
+You will run four container images to establish the “Infrastructure”:
+
+* On-Premises LLM - llama3.1
+* On-Premises Embedding Model - mxbai-embed-large
+* Vector Storage - Oracle Database 23ai Free
+* The AI Optimizer
+
 Estimated Time: 5 minutes
 
 ### Objectives
@@ -24,46 +31,65 @@ This lab assumes you have:
 * 12G of usable memory.
 * Sufficient GPU/CPU resources to run the LLM, embedding model, and database
 
-## Task 1:  Log in to Oracle Cloud
+## Task 1:  LLM - llama3.1
 
-{{% notice style="code" title="Same... but Different" icon="circle-info" %}}
-The walkthrough will reference `podman` commands. If applicable to your environment, `podman` can be substituted with `docker`.
-If you are using `docker`, make the walkthrough easier by aliasing the `podman` command:
+o enable the _ChatBot_ functionality, access to a **LLM** is required. The walkthrough will use [Ollama](https://ollama.com/) to run the _llama3.1_ **LLM**.
 
-`alias podman=docker`.
-{{% /notice %}}
+1. Start the *Ollama* container:
 
+   The Container Runtime is native:
 
-If you've signed out of the Oracle Cloud, use these steps to sign back in.
+   ```bash
+   podman run -d --gpus=all -v ollama:$HOME/.ollama -p 11434:11434 --name ollama docker.io/ollama/ollama
+   ```
+   {{% /tab %}}
+   {{% tab title="MacOS (Silicon)" %}}
+   The Container Runtime is backed by a virtual machine.  The VM should be started with **12G memory** and **100G disk space** allocated.
 
-1. Go to [cloud.oracle.com](https://cloud.oracle.com) and enter your Cloud Account Name and click **Next**. This is the name you chose while creating your account in the previous section. It's NOT your email address. If you've forgotten the name, see the confirmation email.
+   ```bash
+   podman run -d -e OLLAMA_NUM_PARALLEL=1 -v ollama:$HOME/.ollama -p 11434:11434 --name ollama docker.io/ollama/ollama
+   ```
 
-    ![Cloud Account Name](./images/cloud-oracle.png " ")
+   **Note:**
+   AI Runners like Ollama, LM Studio, etc. will not utilize Apple Silicon's "Metal" GPU when running in a container. This may change as the landscape evolves.
 
-2. Choose **Identity Domain**
+   You can install and run Ollama natively outside a container and it will take advantage of the "Metal" GPU.  Later in the Walkthrough, when configuring the models, the API URL for the Ollama model will be your hosts IP address.
 
-    ![Click Continue Single Sign-In](./images/cloud-login-default.png " ")
+   {{% /tab %}}
+   {{% tab title="Windows" %}}
+   The Container Runtime is backed by a virtual machine.  The VM should be started with **12G memory** and **100G disk space** allocated.
 
+   ```bash
+   podman run -d --gpus=all -v ollama:$HOME/.ollama -p 11434:11434 --name ollama docker.io/ollama/ollama
+   ```
 
-    ![Click Continue Single Sign-In](./images/cloud-login-oracle-identity.png " ")
+   **Note:**
+   AI Runners like Ollama, LM Studio, etc. will not utilize non-NVIDIA GPUs when running in a container. This may change as the landscape evolves.
 
-    Click **Next** to reveal the login input fields.
+   You can install and run Ollama natively outside a container and it will take advantage of non-NVIDIA GPU.  Later in the Walkthrough, when configuring the models, the API URL for the Ollama model will be your hosts IP address.
+   {{% /tab %}}
+   {{< /tabs >}}
 
-3. Enter your Cloud Account credentials and click **Sign In**. Your username is your email address. The password is what you chose when you signed up for an account.
+2. Pull the **LLM** into the container:
 
-    ![Sign in](./images/oci-signin.png " ")
+   ```bash
+   podman exec -it ollama ollama pull llama3.1
+   ```
 
-4. Based on the Multi-factor authentication setup for your account, provide authentication to sign into the account. For example, click **Allow** on the app or enter your **authentication code** and click **Verify** based on the authentication setup. For more details, refer the [Managing Multifactor Authentication documentation](https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/usingmfa.htm)
+3. Test the **LLM**:
 
-    ![Click Allow in the app](./images/sso-multi-factor-authentication.png " ")
+   {{% notice style="code" title="Performance: Fail Fast..." icon="circle-info" %}}
+   Unfortunately, if the below `curl` does not respond within 5-10 minutes, the rest of the walkthrough will be unbearable.
+   If this is the case, please consider using different hardware.
+   {{% /notice %}}
 
-    ![Enter authentication code and click Verify](./images/sso2-multi-factor-authentication.png " ")
-
-5. After verification, you will be signed in to Oracle Cloud!
-
-    ![OCI Console Home Page](https://oracle-livelabs.github.io/common/images/console/home-page.png " ")
-
-You may now **proceed to the next lab**.
+   ```bash
+   curl http://127.0.0.1:11434/api/generate -d '{
+   "model": "llama3.1",
+   "prompt": "Why is the sky blue?",
+   "stream": false
+   }'
+   ```
 
 ## Acknowledgements
 - **Created By/Date** - Kay Malcolm, Database Product Management, March 2020
