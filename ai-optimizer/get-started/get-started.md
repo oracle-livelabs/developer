@@ -33,7 +33,7 @@ This lab assumes you have:
 
 ## Task 1:  LLM - llama3.1
 
-o enable the _ChatBot_ functionality, access to a **LLM** is required. The walkthrough will use [Ollama](https://ollama.com/) to run the _llama3.1_ **LLM**.
+To enable the _ChatBot_ functionality, access to a **LLM** is required. The walkthrough will use [Ollama](https://ollama.com/) to run the _llama3.1_ **LLM**.
 
 1. Start the *Ollama* container:
 
@@ -42,33 +42,11 @@ o enable the _ChatBot_ functionality, access to a **LLM** is required. The walkt
    ```bash
    podman run -d --gpus=all -v ollama:$HOME/.ollama -p 11434:11434 --name ollama docker.io/ollama/ollama
    ```
-   {{% /tab %}}
-   {{% tab title="MacOS (Silicon)" %}}
-   The Container Runtime is backed by a virtual machine.  The VM should be started with **12G memory** and **100G disk space** allocated.
-
-   ```bash
-   podman run -d -e OLLAMA_NUM_PARALLEL=1 -v ollama:$HOME/.ollama -p 11434:11434 --name ollama docker.io/ollama/ollama
-   ```
 
    **Note:**
    AI Runners like Ollama, LM Studio, etc. will not utilize Apple Silicon's "Metal" GPU when running in a container. This may change as the landscape evolves.
 
    You can install and run Ollama natively outside a container and it will take advantage of the "Metal" GPU.  Later in the Walkthrough, when configuring the models, the API URL for the Ollama model will be your hosts IP address.
-
-   {{% /tab %}}
-   {{% tab title="Windows" %}}
-   The Container Runtime is backed by a virtual machine.  The VM should be started with **12G memory** and **100G disk space** allocated.
-
-   ```bash
-   podman run -d --gpus=all -v ollama:$HOME/.ollama -p 11434:11434 --name ollama docker.io/ollama/ollama
-   ```
-
-   **Note:**
-   AI Runners like Ollama, LM Studio, etc. will not utilize non-NVIDIA GPUs when running in a container. This may change as the landscape evolves.
-
-   You can install and run Ollama natively outside a container and it will take advantage of non-NVIDIA GPU.  Later in the Walkthrough, when configuring the models, the API URL for the Ollama model will be your hosts IP address.
-   {{% /tab %}}
-   {{< /tabs >}}
 
 2. Pull the **LLM** into the container:
 
@@ -78,17 +56,101 @@ o enable the _ChatBot_ functionality, access to a **LLM** is required. The walkt
 
 3. Test the **LLM**:
 
-   {{% notice style="code" title="Performance: Fail Fast..." icon="circle-info" %}}
-   Unfortunately, if the below `curl` does not respond within 5-10 minutes, the rest of the walkthrough will be unbearable.
-   If this is the case, please consider using different hardware.
-   {{% /notice %}}
-
    ```bash
    curl http://127.0.0.1:11434/api/generate -d '{
    "model": "llama3.1",
    "prompt": "Why is the sky blue?",
    "stream": false
    }'
+   ```
+
+   Unfortunately, if the above `curl` does not respond within 5-10 minutes, the rest of the walkthrough will be unbearable.
+   If this is the case, please consider using different hardware.
+
+### Task 2: Embedding - mxbai-embed-large
+
+To enable the **RAG** functionality, access to an embedding model is required. The walkthrough will use [Ollama](https://ollama.com/) to run the _mxbai-embed-large_ embedding model.
+
+1. Pull the embedding model into the container:
+
+   ```bash
+   podman exec -it ollama ollama pull mxbai-embed-large
+   ```
+
+### Task 3: The AI Optimizer
+
+The **AI Optimizer** provides an easy to use front-end for experimenting with **LLM** parameters and **RAG**.
+
+1. Download and Unzip the latest version of the **AI Optimizer**:
+
+   ```bash
+   curl -L -o ai-optimizer.tar.gz https://github.com/oracle-samples/ai-optimizer/archive/refs/heads/main.tar.gz
+   mkdir ai-optimizer
+   tar zxf ai-optimizer.tar.gz --strip-components=1 -C ai-optimizer
+   ```
+
+1. Build the Container Image
+
+   ```bash
+   cd ai-optimizer-client/src
+   podman build --arch amd64 -t localhost/ai-optimizer-aio:latest .
+   ```
+
+1. Start the AI Optimizer:
+
+   ```bash
+   podman run -d --name ai-optimizer-aio --network=host localhost/ai-optimizer-aio:latest
+   ```
+
+   If you are running on a remote host, you may need to allow access to the `8501` port.
+
+   For example, in Oracle Linux 8/9 with `firewalld`:
+
+   ```bash
+   firewall-cmd --zone=public --add-port=8501/tcp
+   ```
+
+   If you are running it on your machine, as the container is running in a VM, a port-forward is required from the localhost to the Podman VM:
+
+   ```bash
+   podman machine ssh -- -N -L 8501:localhost:8501
+   ```
+### Task 4: Vector Storage - Oracle Database 23ai Free
+
+AI Vector Search in Oracle Database 23ai provides the ability to store and query private business data using a natural language interface. The AI Optimizer uses these capabilities to provide more accurate and relevant **LLM** responses via Retrieval-Augmented Generation (**RAG**). [Oracle Database 23ai Free](https://www.oracle.com/uk/database/free/get-started/) provides an ideal, no-cost vector store for this walkthrough.
+
+To start Oracle Database 23ai Free:
+
+1. Start the container:
+
+   ```bash
+   podman run -d --name ai-optimizer-db -p 1521:1521 container-registry.oracle.com/database/free:latest
+   ```
+
+1. Alter the `vector_memory_size` parameter and create a [new database user](../client/configuration/db_config#database-user):
+
+   ```bash
+   podman exec -it ai-optimizer-db sqlplus '/ as sysdba'
+   ```
+
+   ```sql
+   alter system set vector_memory_size=512M scope=spfile;
+
+   alter session set container=FREEPDB1;
+
+   CREATE USER "WALKTHROUGH" IDENTIFIED BY OrA_41_OpTIMIZER
+       DEFAULT TABLESPACE "USERS"
+       TEMPORARY TABLESPACE "TEMP";
+   GRANT "DB_DEVELOPER_ROLE" TO "WALKTHROUGH";
+   ALTER USER "WALKTHROUGH" DEFAULT ROLE ALL;
+   ALTER USER "WALKTHROUGH" QUOTA UNLIMITED ON USERS;
+   EXIT;
+   ```
+
+1. Bounce the database for the `vector_memory_size` to take effect:
+
+   ```bash
+   podman container restart ai-optimizer-db
    ```
 
 ## Acknowledgements
