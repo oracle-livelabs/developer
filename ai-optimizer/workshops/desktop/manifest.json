@@ -12,7 +12,7 @@
         {
             "title": "Get Started",
             "description": "This is the prerequisites for customers using Free Trial and Paid tenancies, and Always Free accounts (if applicable). The title of the lab and the Contents Menu title (the title above) match for Prerequisite lab. This lab is always first.",
-            "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/cloud-login.md"
+            "filename": "../../get-started/get-started.md"
         },
         {
             "title": "Lab 1: Explore the Environment",
@@ -36,8 +36,8 @@
             "filename": "../../evaluating/evaluating.md"
         },
         {
-            "title": "Lab 6: Variables in LiveLabs",
-            "filename": "../../variables/variables.md"
+            "title": "(Optional) Lab 6: Generating Microservice Code",
+            "filename": "../../microservice/microservice.md"
         },
         {
             "title": "(Optional) Lab 7: Using the API Server",

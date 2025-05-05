@@ -39,8 +39,8 @@
             "filename": "../../evaluating/evaluating.md"
         },
         {
-            "title": "Lab 6: Variables in LiveLabs",
-            "filename": "../../variables/variables.md"
+            "title": "(Optional) Lab 6: Generating Microservice Code",
+            "filename": "../../microservice/microservice.md"
         },
         {
             "title": "(Optional) Lab 7: Using the API Server",
