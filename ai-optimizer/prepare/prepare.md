@@ -12,7 +12,7 @@ In this lab, you will:
 * Split/Embed Documents and create a vector store
 * Inspect the Vector Database content
 
-### Prerequisites (Optional)
+### Prerequisites
 
 This lab assumes you have:
 * All previous labs successfully completed

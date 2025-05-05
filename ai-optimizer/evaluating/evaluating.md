@@ -15,12 +15,8 @@ In this lab, you will:
 * Generate a Q&A Test dataset
 * Perform an evaluation on the Q&A Testset
 
-### Prerequisites (Optional)
+### Prerequisites
 
-*List the prerequisites for this lab using the format below. Fill in whatever knowledge, accounts, etc. is needed to complete the lab. Do NOT list each previous lab as a prerequisite.*
-
-This lab assumes you have:
-* An Oracle Cloud account
 * All previous labs successfully completed
 
 ## Task 1: Navigate to the Testbed tab

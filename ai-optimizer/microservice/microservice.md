@@ -13,7 +13,7 @@ In this lab, you will:
 * Start the Springboot microservice
 * Test the RAG-based microservice
 
-### Prerequisites 
+### Prerequisites
 
 To run the microservice exported you need:
   * JDK 21.x 

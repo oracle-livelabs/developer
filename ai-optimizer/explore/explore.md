@@ -20,7 +20,7 @@ This lab assumes you have:
 * An Oracle Database 23ai up and running
 * Completed the *Get Started* Lab
 
-## Task 1: Check the DB connection
+## Task 1: Set the DB connection
 
 Let's check if the DB is correctly connected.
 
