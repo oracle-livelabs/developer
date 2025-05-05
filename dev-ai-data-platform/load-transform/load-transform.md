@@ -10,7 +10,7 @@ In this lab, you’ll practice setting up the live feed capabilities,that can be
 
 ## Task 1: Create a Notifications Service Subscription Topic.##
 
-  1.	Open the OCI Console at cloud.oracle.com, click on the **Navigation Menu** (hamburger) icon in the upper left corner.
+  1. Open the OCI Console at cloud.oracle.com, then click the icon in the upper left corner to open the **Navigation Menu**.
 
   ![Click Navigation Menu](./images/task-1-scrn-1.png)
 
@@ -32,9 +32,13 @@ In this lab, you’ll practice setting up the live feed capabilities,that can be
 
 ## Task 2: Create a Events Service Rule.
 
-  1. Click on the **Navigation Menu**, then select **Observations & Management**.
+  1.	Open the **Navigation Menu** Click the icon in the upper left corner to 
 
-  ![Select O&M](./images/task-1-scrn-2.png)
+  ![Click Navigation Menu](./images/task-2-scrn-1.png)
+
+  2. Select **Observations & Management** from the Navigation Menu
+
+  ![Select O&M](./images/task-2-scrn-2.png)
 
   2. Click **Rules** under the **Events Services** heading.
 
@@ -43,6 +47,10 @@ In this lab, you’ll practice setting up the live feed capabilities,that can be
   3. Click **Create Rule** and enter details.
 
   ![Create Rule](./images/task-2-scrn-4.png)
+
+  4. Enter Rule details.
+
+  ![Create Rule](./images/task-2-scrn-5.png)
 
     * Enter the following Details under **Rule Conditions**:
          * **Condition:** Event Type
@@ -57,48 +65,62 @@ In this lab, you’ll practice setting up the live feed capabilities,that can be
 
 ## Task 3: Create a Live Table Feed and Copy the notification URL
 
-  1. Click on the **Navigation Menu**, then select **Oracle Database**.
+ 1.	Click the icon in the upper left corner to open the **Navigation Menu**.
+
+  ![Click Navigation Menu](./images/task-2-scrn-1.png)
+
+  2. Select **Oracle Database** from the Navigation Menu
 
   ![Select O&M](./images/task-3-scrn-1.png)
 
-  2. Select **Autonomous Database**
+  3. Select **Autonomous Database**
 
   ![Select Rules](./images/task-3-scrn-2.png)
 
-  3. Navigate to assigned Autonomous Database
+  4. Navigate to the assigned Autonomous Database.
 
-    * Click on the **Compartment** icon and indicate the location of Autonomous Database.
-    * Select the **Autonomous Database**.
+    * Confirm the assigned **Tenancy** is being used.  If not, use the drop-down provided to select the assigned one.
+    * Confirm the assigned **Compartment** is being used.  If not, click on the icon and navigate to the assigned one.
 
-  ![Select Assigned ADB](./images/navigate-to-assigned-adb.png)
+    * Select the assigned **Autonomous Database** from list displayed.
 
-  4. Click on **Database Actions** and Select **Data Load** from DropDown Menu.
+    ![Select Assigned ADB](./images/navigate-to-assigned-adb.png)
+
+  4. Open the **Database Actions** menu from the Autonomous Database General Information page, and select **Data Load**.
 
       ![Click Database Actions - Data Load](./images/db-actions-data-load.png)
 
-    **Note:** This step opens a new Oracle Database Actions tab. We will alternate between the previous Oracle Cloud Infrastructure Console tab and this one.
+    >**Note:** This will open a new tab, giving us two tabs that we will alternate between for the rest of the workshop.
 
-  5. Select **Feed Data** from the options listed at top of page.
+  5. Click the user icon in the upper right corner of the **Database Actions** landing page, to sign-off as the ADMIN user.
+
+      ![Create Data Product Share](./images/task1-scrn-4.png "Create Data Product Share")
+
+  6. Sign-in at **Database Actions Launchpad** as LOAN user.
+
+      ![Create Data Product Share](./images/task1-scrn-5.png "Create Data Product Share")
+
+  7. Select **Feed Data** from the options listed at top of page.
 
       ![Select Feed Data](./images/task-3-scrn-3.png)
 
-  6. Click the **Create Live Table Feed** button to enter the **Create Live Feed** wizard.
+  8. Click the **Create Live Table Feed** button to enter the **Create Live Feed** wizard.
 
       ![Create Live Feed](./images/task-3-scrn-4.png)
 
-  7. Select desired Cloud Store location, then click **Next**.
+  9. Select desired Cloud Store location, then click **Next**.
 
       ![SElect Cloud Store Location](./images/task-3-scrn-5.png)
 
-  8. Enter desired Table Settings, then click **Next**.
+  10. Enter desired Table Settings, then click **Next**.
 
       ![Load Data from Object Storage](./images/task-3-scrn-6.png)
 
-  9. Verify that the expected results are shown on the Preview page, then click **Next**.
+  11. Verify that the expected results are shown on the Preview page, then click **Next**.
 
       ![Load Data from Object Storage](./images/task-3-scrn-7.png)
 
-  10. Enter details on the page below...
+  12. Enter details on the page below...
 
     * **Live Table Feed Name:**
     * **Enable for Notification check box:** check
@@ -108,19 +130,19 @@ In this lab, you’ll practice setting up the live feed capabilities,that can be
 
     * Click **Create**
 
-  11. When the popup box appears, select **Yes** to run the Live Feed.
+  13. When the popup box appears, select **Yes** to run the Live Feed.
 
       ![Load Data from Object Storage](./images/task-3-scrn-9.png)
 
-  12. **Review** the details for the newly created Live Feed.  Then click the hamburger button in the upper left corner.
+  14. **Review** the details for the newly created Live Feed.  Then click the hamburger button in the upper left corner.
 
       ![Load Data from Object Storage](./images/task-3-scrn-10.png)
 
-  13. Select **Show Notification URL** from the dropdown list.
+  15. Select **Show Notification URL** from the dropdown list.
 
       ![Load Data from Object Storage](./images/task-3-scrn-11.png)
 
-  14. Copy the notification URL for the live table feed and click OK to proceed to next task.
+  16. Copy the notification URL for the live table feed and click OK to proceed to next task.
 
       ![Load Data from Object Storage](./images/task-3-scrn-12.png)
 
