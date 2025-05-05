@@ -8,7 +8,7 @@ In this lab, you’ll practice setting up the live feed capabilities,that can be
 
 **Note:** To complete this lab, you will alternate between Oracle Cloud Infrastructure Console pages and Oracle Database Actions pages.  Selecting Database Actions will open a new tab.
 
-## Task 1: Create a Notifications Service Subscription Topic.##
+## Task 1: Create a Notifications Service Subscription Topic.
 
   1. Open the OCI Console at cloud.oracle.com, then click the icon in the upper left corner to open the **Navigation Menu**.
 
@@ -58,8 +58,8 @@ In this lab, you’ll practice setting up the live feed capabilities,that can be
          * **Event Type:** Object – Create
     * Enter the following Details under Actions
          * **Action Type:** Notifictions
-         * **Notifications Component:** Select the compartment to use for the notifications
-         * **Topic:** Select the name of the topic you created in Task 2.
+         * **Notifications Compartment:** Select the compartment to use for the notifications
+         * **Topic:** Select the name of the topic you created earlier.
 
     * Click **Create Rule**.
 
@@ -86,41 +86,41 @@ In this lab, you’ll practice setting up the live feed capabilities,that can be
 
     ![Select Assigned ADB](./images/navigate-to-assigned-adb.png)
 
-  4. Open the **Database Actions** menu from the Autonomous Database General Information page, and select **Data Load**.
+  5. Open the **Database Actions** menu from the Autonomous Database General Information page, and select **Data Load**.
 
       ![Click Database Actions - Data Load](./images/db-actions-data-load.png)
 
     >**Note:** This will open a new tab, giving us two tabs that we will alternate between for the rest of the workshop.
 
-  5. Click the user icon in the upper right corner of the **Database Actions** landing page, to sign-off as the ADMIN user.
+  6. Click the user icon in the upper right corner of the **Database Actions** landing page, to sign-off as the ADMIN user.
 
-      ![Create Data Product Share](./images/task1-scrn-4.png "Create Data Product Share")
+      ![Create Data Product Share](./images/admin-user-sign-out.png "Create Data Product Share")
 
-  6. Sign-in at **Database Actions Launchpad** as LOAN user.
+  7. Sign-in at **Database Actions Launchpad** as LOAN user.
 
-      ![Create Data Product Share](./images/task1-scrn-5.png "Create Data Product Share")
+      ![Create Data Product Share](./images/loan-user-sign-on.png "Create Data Product Share")
 
-  7. Select **Feed Data** from the options listed at top of page.
+  8. Select **Feed Data** from the options listed at top of page.
 
       ![Select Feed Data](./images/task-3-scrn-3.png)
 
-  8. Click the **Create Live Table Feed** button to enter the **Create Live Feed** wizard.
+  9. Click the **Create Live Table Feed** button to enter the **Create Live Feed** wizard.
 
       ![Create Live Feed](./images/task-3-scrn-4.png)
 
-  9. Select desired Cloud Store location, then click **Next**.
+  10. Select desired Cloud Store location, then click **Next**.
 
       ![SElect Cloud Store Location](./images/task-3-scrn-5.png)
 
-  10. Enter desired Table Settings, then click **Next**.
+  11. Enter desired Table Settings, then click **Next**.
 
       ![Load Data from Object Storage](./images/task-3-scrn-6.png)
 
-  11. Verify that the expected results are shown on the Preview page, then click **Next**.
+  12. Verify that the expected results are shown on the Preview page, then click **Next**.
 
       ![Load Data from Object Storage](./images/task-3-scrn-7.png)
 
-  12. Enter details on the page below...
+  13. Enter details on the page below...
 
     * **Live Table Feed Name:**
     * **Enable for Notification check box:** check
@@ -130,19 +130,19 @@ In this lab, you’ll practice setting up the live feed capabilities,that can be
 
     * Click **Create**
 
-  13. When the popup box appears, select **Yes** to run the Live Feed.
+  14. When the popup box appears, select **Yes** to run the Live Feed.
 
       ![Load Data from Object Storage](./images/task-3-scrn-9.png)
 
-  14. **Review** the details for the newly created Live Feed.  Then click the hamburger button in the upper left corner.
+  15. **Review** the details for the newly created Live Feed.  Then click the hamburger button in the upper left corner.
 
       ![Load Data from Object Storage](./images/task-3-scrn-10.png)
 
-  15. Select **Show Notification URL** from the dropdown list.
+  16. Select **Show Notification URL** from the dropdown list.
 
       ![Load Data from Object Storage](./images/task-3-scrn-11.png)
 
-  16. Copy the notification URL for the live table feed and click OK to proceed to next task.
+  17. Copy the notification URL for the live table feed and click OK to proceed to next task.
 
       ![Load Data from Object Storage](./images/task-3-scrn-12.png)
 
@@ -162,7 +162,7 @@ In this lab, you’ll practice setting up the live feed capabilities,that can be
 
   5. Click **Create Subscription**.
 
-  ![Access the Object Storage Bucket](./images/task-4-scrn-5.png)
+  ![Access the Object Storage Bucket](./images/task-4-scrn-4.png)
 
   6. Enter the Subscription details.
 
@@ -175,17 +175,11 @@ In this lab, you’ll practice setting up the live feed capabilities,that can be
 
     * Click **Create**
 
-  7. **Review** the Subscription details
-
-  ![Access the Object Storage Bucket](./images/task-4-scrn-7.png)
-
-  8. Switch to the Database Actions tab to review the card for the live table feed you are configuring for a notification-based feed.  It should reflect an **Active** notification status..
+  7. Switch to the Database Actions tab to review the card for the live table feed you are configuring for a notification-based feed.  It should reflect an **Active** notification status..
 
   ![Load Data from Object Storage](./images/task-5-scrn-4.png)
 
   * You will receive email notifications when specific live feed events occur and any new files uploaded to the bucket will automatically be loaded into the live feed table.
-
-  ![Receive email notification](./images/confirm-email-notification.png)
 
 ## Learn More
 
