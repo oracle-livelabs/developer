@@ -2,15 +2,15 @@
 
 ## Introduction
 
-The AI Optimizer is available to install in your own environment, which may be a developer’s desktop, on-premises data center environment, or a cloud provider. It can be run either on bare-metal, within a container, or in a Kubernetes Cluster.
+The **AI Optimizer** is available to install in your own environment, which may be a developer’s desktop, on-premises data center environment, or a cloud provider. It can be run either on bare-metal, within a container, or in a Kubernetes Cluster.
 
-This walkthrough will guide you through a basic installation of the Oracle AI Optimizer and Toolkit (the AI Optimizer). It will allow you to experiment with GenAI, using Retrieval-Augmented Generation (RAG) with Oracle Database 23ai at the core.
+This walkthrough will guide you through a basic installation of the **Oracle AI Optimizer and Toolkit** (the **AI Optimizer**). It will allow you to experiment with GenAI, using Retrieval-Augmented Generation (RAG) with Oracle Database 23ai at the core.
 
 You will run four container images to establish the “Infrastructure”:
 
-* On-Premises LLM - llama3.1
-* On-Premises Embedding Model - mxbai-embed-large
-* Vector Storage - Oracle Database 23ai Free
+* On-Premises LLM - **llama3.1**
+* On-Premises Embedding Model - **mxbai-embed-large**
+* Vector Storage - **Oracle Database 23ai Free**
 * The AI Optimizer
 
 Estimated Time: 5 minutes
@@ -23,17 +23,17 @@ Estimated Time: 5 minutes
 
 This lab assumes you have:
 
-* An Integrated Development Editor (like Visual Studio Code)
-* Python 3.11 (for running Bare-Metal)
+* An Integrated Development Editor (like **Visual Studio Code**)
+* Python 3.11
 * Container Runtime e.g. docker/podman (for running in a Container)
 * Internet Access (docker.io and container-registry.oracle.com)
-* 100G of free disk space.
-* 12G of usable memory.
+* **100G** of free disk space.
+* **12G** of usable memory.
 * Sufficient GPU/CPU resources to run the LLM, embedding model, and database
 
 ## Task 1:  LLM - llama3.1
 
-To enable the _ChatBot_ functionality, access to a **LLM** is required. The walkthrough will use [Ollama](https://ollama.com/) to run the _llama3.1_ **LLM**.
+To enable the _ChatBot_ functionality, access to a **LLM** is required. This workshop will use [Ollama](https://ollama.com/) to run the _llama3.1_ **LLM**.
 
 1. Start the *Ollama* container:
 
@@ -46,7 +46,7 @@ To enable the _ChatBot_ functionality, access to a **LLM** is required. The walk
    **Note:**
    AI Runners like Ollama, LM Studio, etc. will not utilize Apple Silicon's "Metal" GPU when running in a container. This may change as the landscape evolves.
 
-   You can install and run Ollama natively outside a container and it will take advantage of the "Metal" GPU.  Later in the Walkthrough, when configuring the models, the API URL for the Ollama model will be your hosts IP address.
+   You can install and run Ollama natively outside a container and it will take advantage of the "Metal" GPU.  Later in the Workshop, when configuring the models, the API URL for the Ollama model will be your hosts IP address.
 
 2. Pull the **LLM** into the container:
 
@@ -64,12 +64,12 @@ To enable the _ChatBot_ functionality, access to a **LLM** is required. The walk
    }'
    ```
 
-   Unfortunately, if the above `curl` does not respond within 5-10 minutes, the rest of the walkthrough will be unbearable.
+   Unfortunately, if the above `curl` does not respond within 5-10 minutes, the rest of the workshop will be unbearable.
    If this is the case, please consider using different hardware.
 
 ## Task 2: Embedding - mxbai-embed-large
 
-To enable the **RAG** functionality, access to an embedding model is required. The walkthrough will use [Ollama](https://ollama.com/) to run the _mxbai-embed-large_ embedding model.
+To enable the **RAG** functionality, access to an embedding model is required. In this workshop you will use [Ollama](https://ollama.com/) to run the _mxbai-embed-large_ embedding model.
 
 1. Pull the embedding model into the container:
 
@@ -117,42 +117,42 @@ The **AI Optimizer** provides an easy to use front-end for experimenting with **
    ```
 ## Task 4: Vector Storage - Oracle Database 23ai Free
 
-AI Vector Search in Oracle Database 23ai provides the ability to store and query private business data using a natural language interface. The AI Optimizer uses these capabilities to provide more accurate and relevant **LLM** responses via Retrieval-Augmented Generation (**RAG**). [Oracle Database 23ai Free](https://www.oracle.com/uk/database/free/get-started/) provides an ideal, no-cost vector store for this walkthrough.
+AI Vector Search in Oracle Database 23ai provides the ability to store and query private business data using a natural language interface. The AI Optimizer uses these capabilities to provide more accurate and relevant **LLM** responses via Retrieval-Augmented Generation (**RAG**). [Oracle Database 23ai Free](https://www.oracle.com/uk/database/free/get-started/) provides an ideal, no-cost vector store for this workshop.
 
 To start Oracle Database 23ai Free:
 
 1. Start the container:
 
-   ```bash
-   podman run -d --name ai-optimizer-db -p 1521:1521 container-registry.oracle.com/database/free:latest
-   ```
+      ```bash
+      podman run -d --name ai-optimizer-db -p 1521:1521 container-registry.oracle.com/database/free:latest
+      ```
 
 2. Alter the `vector_memory_size` parameter and create a [new database user](../client/configuration/db_config#database-user):
 
-   ```bash
-   podman exec -it ai-optimizer-db sqlplus '/ as sysdba'
-   ```
+      ```bash
+      podman exec -it ai-optimizer-db sqlplus '/ as sysdba'
+      ```
 
-   ```sql
-   alter system set vector_memory_size=512M scope=spfile;
+      ```sql
+      alter system set vector_memory_size=512M scope=spfile;
 
-   alter session set container=FREEPDB1;
+      alter session set container=FREEPDB1;
 
-   CREATE USER "WALKTHROUGH" IDENTIFIED BY OrA_41_OpTIMIZER
-       DEFAULT TABLESPACE "USERS"
-       TEMPORARY TABLESPACE "TEMP";
-   GRANT "DB_DEVELOPER_ROLE" TO "WALKTHROUGH";
-   ALTER USER "WALKTHROUGH" DEFAULT ROLE ALL;
-   ALTER USER "WALKTHROUGH" QUOTA UNLIMITED ON USERS;
-   EXIT;
-   ```
+      CREATE USER "WALKTHROUGH" IDENTIFIED BY OrA_41_OpTIMIZER
+         DEFAULT TABLESPACE "USERS"
+         TEMPORARY TABLESPACE "TEMP";
+      GRANT "DB_DEVELOPER_ROLE" TO "WALKTHROUGH";
+      ALTER USER "WALKTHROUGH" DEFAULT ROLE ALL;
+      ALTER USER "WALKTHROUGH" QUOTA UNLIMITED ON USERS;
+      EXIT;
+      ```
 
 3. Bounce the database for the `vector_memory_size` to take effect:
 
-   ```bash
-   podman container restart ai-optimizer-db
-   ```
-Now you are all set! With the "Infrastructure" in-place, you're ready to configure the AI Optimizer. 
+      ```bash
+      podman container restart ai-optimizer-db
+      ```
+Now you are all set! With the "Infrastructure" in-place, you are ready to configure the AI Optimizer. 
 
 In a web browser, navigate to `http://localhost:8501`:
 

@@ -2,14 +2,14 @@
 
 ## Introduction
 
-In this lab, you will explore the environment that was created in the *Get Started* module. You will set up the database connection, configure the OCI credentials, add new LLMs and Embedding models and test out the *Chat* feature for the first time.
+In this lab, you will explore the environment that was created in the *Get Started* lab. You will set up the database connection, configure the OCI credentials, add new LLMs and Embedding models and test out the *Chat* feature for the first time.
 
 Estimated Time: -- minutes
 
 ### Objectives
 
 In this lab, you will:
-* Set the connection to your Oracle DB23ai
+* Set the connection to your Oracle Database 23ai
 * Set your Oracle Cloud Infrastructure credentials for OCI connectivity
 * Configure the LLMs and embedding models you will use in the following labs
 * Test the *Chat* feature for the first time
@@ -42,15 +42,15 @@ Let's check if the DB is correctly connected.
 
 In the *OCI* configuration tab, you can add your **Oracle Cloud Infrastructure** (OCI) credentials to authenticate with your OCI tenancy. This will enable access to objects and documents stored in your cloud compartments.
 
-1. Navigate to the *OCI* tab on the left side pane:
+1. Navigate to the *OCI* tab on the left-hand pane:
 
    ![Navigate to the Databases tab](images/oci-navigation.jpg)
 
-2. Insert your OCI credentials. Detailed information on how to the required credentials is available in the [Oracle Cloud Infrastructure Documentation](https://docs.oracle.com/en-us/iaas/Content/API/Concepts/apisigningkey.htm#Required_Keys_and_OCIDs).
+2. Insert your OCI credentials. Detailed information on how to get the required credentials is available in the [Oracle Cloud Infrastructure Documentation](https://docs.oracle.com/en-us/iaas/Content/API/Concepts/apisigningkey.htm#Required_Keys_and_OCIDs).
 
    If you have previously created a `.oci/config` file, the framework will automatically read this file at startup and load the credentials from the Default profile for authentication. To create one, follow the instructions available in the [Quickstart Documentation](https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/cliinstall.htm#Quickstart).
 
-   After entering your credentials, click the Save button. If the credentials are correct, a green confirmation pop-up will appear, indicating successful authentication to your tenancy.
+   After entering your credentials, click the `Save` button. If the credentials are correct, a green confirmation pop-up will appear, indicating successful authentication to your tenancy.
 
    ![OCI credentials success](images/oci-credentials-success.png)
 
@@ -64,27 +64,28 @@ Let's check the models available for use. You'll need to navigate to the *Models
 
    * The default LLMs for chat completions are:
 
-  ![llms](images/llms.png)
+     ![llms](images/llms.png)
 
   * The default LLMs for embeddings are:
 
-  ![embeddings](images/emb.png)
+     ![embeddings](images/emb.png)
+
    Let's add another LLM to the Ollama models and enable it. Open a terminal a window and follow these steps:
 
   * Pull the llama3.2 LLM:
 
-  ```bash
-    ollama pull llama3.2
-  ```
+      ```bash
+         ollama pull llama3.2
+      ```
   * Now, you will need to enable in the model list. Go back to the *Models* tab, under the *Language Models* section and press the *Add* button. Now fill in the form that just appeared with the values shown in the following snapshot:
 
-  ![new_llama32](images/addllama32.png)
+      ![new_llama32](images/addllama32.png)
 
   Now you are all set for using the *Chat* feature with the LLMs you just configured!
 
 ## Task 4: Test the *Chat* feature
 
-The two LLMs availble could be tested right away, in order to understand their behavior with generic questions. Before accessing the chat GUI
+The two LLMs availble could be tested right away, in order to understand their behavior with generic questions. First of all, navigate to the chat GUI
 
 ![chat](images/chat.jpg)
 
