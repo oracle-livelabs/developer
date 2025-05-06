@@ -93,11 +93,11 @@ By the end of this lab, you’ll understand how the **Data Share** tool enables 
    3.	Expand the drill down tab for the share named **LoanApp\_Share\_Provider** to display the available data.
    4.	Now Let's create an external table based on the **LOAN.Shared\_Loan\_Data\_Risk\_VW** file by dragging and dropping this file onto the data linking job section.
 
-    ![Create Data Product Share](./images/select-shared-data-2.png )
+   ![Create Data Product Share](./images/select-shared-data-2.png)
 
     * This causes the external table to be created is displayed in the data linking job section.
 
-    ![Create Data Product Share](./images/select-shared-data-3.png )
+   ![Create Data Product Share](./images/select-shared-data-3.png)
 
    5.	Click on the **Settings** (pencil Icon) to display the Link Data from Cloud Store Location panel. You can use the various tabs listed on the left rail to perform actions like change the name of the external table name to be created, view the table's properties, view the table's data, view the SQL code used to create the table and more.
 
