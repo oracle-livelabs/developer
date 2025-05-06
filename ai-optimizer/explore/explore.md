@@ -94,7 +94,6 @@ scroll down the left-side menu to find the **Chat model** menu:
 ![chat models](images/chatmodel.png)
 
 and, with the **Enable RAG?** check-box unselected, choose the **gpt-4o-mini** and ask generic questions like:
-
 ```
 Which kind of database can you use to run the Java Web example application?
 ```
