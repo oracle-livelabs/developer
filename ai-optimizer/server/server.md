@@ -2,7 +2,7 @@
 
 ## Introduction
 
-In this lab, you will test the API Server functionality. The AI Optimizer is powered by an API Server to allow for any client to access its features. The API Server can be run as part of the provided AI Optimizer GUI client or as a separate, independent process.
+In this lab, you will test the functionality of the API Server. The AI Optimizer uses an API Server to make its features accessible to external clients. You can run the API Server either as part of the AI Optimizer GUI client or as a standalone process.
 
 Estimated Time: -- minutes
 
@@ -10,41 +10,43 @@ Estimated Time: -- minutes
 
 In this lab, you will:
 * Start the AI Optimizer as an API Server
-* Inspect the configuration parameters
-* Perform an API call to the server
+* Review the configuration parameters
+* Make an API call to the server
 
 ### Prerequisites
 
 This lab assumes you have:
 * All previous labs successfully completed
 
-## Task 1: Start the API Server {#task-1}
+## Task 1: Start the API Server
 
-Navigate to the *API Server* tab from the left side pane:
+Navigate to the *API Server* tab from the left-hand pane:
 
 ![Server Configuration](images/api-server-config.png)
 
-You will see a `Restart Server` button (the one in red). This is because an API server starts automatically with the AI Optimizer. Now, just perform these steps to edit your API Server and restart it:
+You’ll see a `Restart Server` button (in red). This is because the API Server starts automatically with the AI Optimizer. Follow the steps below to edit the server configuration and restart it:
 
-* Modify the API Server Port to be 8001
-* Edit the API Server Key (you can use something like `abcd` or whatever you like)
-* Click on the *Restart Server* button to restart the API Server with these new parameters you just set
+* Change the API Server Port to 8001
+* Update the API Server Key (e.g., abcd, or any value you prefer)
+* Click the Restart Server button to apply the new parameters
 
-## Task 2: Inspect Server Configuration {#task-2}
+## Task 2: Inspect Server Configuration
 
-During the startup of the API Server, a `server` client is created and populated with minimal settings.  The `server` client is the default when calling the API Server outside of the AI Optimizer GUI client.  To copy your AI Optimizer GUI client settings to the `server` client for use with external application clients, click the "Copy AI Optimizer Settings".  
+When the API Server starts, it creates a default `server` client with minimal settings. This client is used when calling the API Server externally, outside of the AI Optimizer GUI.
+
+To copy your current GUI client settings to the server client for external use, click the Copy AI Optimizer Settings button.
 
 ![Server Settings](images/api-server-settings.png)
 
-You can review how the `server` client is configured by expanding the `{...}` brackets.
+You can inspect the configuration of the `server` client by expanding the `{...}` brackets.
 
 ## Task 3: Perform an API call to the server {#task-3}
 
-Now that the API server is up and running, you are able to perform API calls against it. 
+Now that the API Server is running, you can perform API calls against it.
 
-* Open a terminal window in your chosen IDE
+* Open a terminal window in your preferred IDE
 
-* Copy and execute this `curl` command inside your terminal window:
+* Copy and run the following curl command in the terminal:
 
     ```bash
     curl -X POST "http://localhost:8001/v1/chat/completions" \
@@ -62,20 +64,21 @@ Now that the API server is up and running, you are able to perform API calls aga
      }' | jq .
     ```
 
-    Here, we are basically asking the same question we have been asking in *Lab 3*. We have passed the the API Server Key we set in [Task 1](#task-1-start-the-api-server-task-1) and the question content as parameters. You should get a response that is structured like the screenshot below:
+    Here, you're essentially repeating the same type of request as in *Lab 3*. You’ve passed the API Server Key you configured in Task 1 along with the question content as parameters. You should receive a response similar to the screenshot below:
 
     ![curl-response](images/curl-response.png)
 
-    You can see how the API Server answered to the question with a generic answer, since RAG was not enabled. But you can enable RAG as we did in the previous labs and the API server will be enhanced as well!
+   As you can see, the API Server responded with a generic answer—this is expected because RAG was not enabled. You can enable RAG just like you did in the previous labs, and the API Server will provide more context-aware responses.
 
 ## Learn More
 
-* Enable Rag from the *Chatbot* tab and perform [Task 3](#task-3) again. See how the answer given by the API Server changes accordingly!
+* Enable RAG from the Chatbot tab, then repeat Task 3. Observe how the API Server's response changes with RAG enabled.
 
-* You can visit the Oracle AI Optimizer and Toolkit api documentaion by visiting this link:
+* To explore the Oracle AI Optimizer and Toolkit API documentation, visit:
 
     ```
     http://localhost:8001/v1/docs#
     ```
 
-    *The localhost port (in this case 8001) in the url must correspond to the API Server Port you choose in Task 1 of this lab*
+    **Note**: The port number in the URL (in this case 8001) must match the API Server Port you configured in Task 1 of this lab.
+
