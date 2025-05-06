@@ -40,7 +40,7 @@ To copy your current GUI client settings to the server client for external use, 
 
 You can inspect the configuration of the `server` client by expanding the `{...}` brackets.
 
-## Task 3: Perform an API call to the server {#task-3}
+## Task 3: Perform an API call to the server
 
 Now that the API Server is running, you can perform API calls against it.
 
