@@ -81,7 +81,13 @@ Let's check the models available for use. You'll need to navigate to the *Models
 
       ![new_llama32](images/addllama32.png)
 
+  * (optional) If you are willing to use models by OpenAI, you will need to configure your **OPENAI API KEY**. To configure one, click the *Edit* button beside the model you would like to use (e.g., **gpt-4o-mini) and add your own API key in the corresponding box:
+
+      ![openai-ket](images/openai-api.png)   
+
   Now you are all set for using the *Chat* feature with the LLMs you just configured!
+
+
 
 ## Task 4: Test the *Chat* feature
 
