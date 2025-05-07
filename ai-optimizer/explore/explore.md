@@ -114,7 +114,7 @@ As you can see, even if the questions mean to refer to a specific example, the L
 
 ## Learn More
 
-* (optional) Now click the **Clear** button under the **History and Context** section, and choose the other available LLM, **llama3.1**. Then, ask the same questions and compare the results. Note that the History is enabled by default. The **Clear** button resets the *context window* and starts a fresh interaction with a model.
+* (optional) Now click the **Clear** button under the **History and Context** section, and choose the other available LLM, **gpt-4o-mini**. Then, ask the same questions and compare the results. Note that the History is enabled by default. The **Clear** button resets the *context window* and starts a fresh interaction with a model.
 
 * (optional) Play with the **Temperature** parameter (and also the other parameters if you wish to!) and compare the quality of the answers, for each LLM that's available. Clear the history by pressing the **Clear** button after each cycle.
 

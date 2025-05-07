@@ -29,7 +29,7 @@ This lab assumes you have:
 * Python 3.11 (for running Bare-Metal)
 * Container Runtime e.g. docker/podman (for running in a Container)
 * Access to an Embedding and Chat Model:
-  * (optional) API Keys for Third-Party Models (e.g., OpenAI API Keys that you can get [here](https://platform.openai.com/settings/organization/api-keys))
+  * API Keys for Third-Party Models (e.g., OpenAI API Keys that you can get [here](https://platform.openai.com/settings/organization/api-keys))
   * On-Premises Models
 
 ## Acknowledgements

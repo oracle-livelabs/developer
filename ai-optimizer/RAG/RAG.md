@@ -43,7 +43,7 @@ To enable the *RAG* functionality, follow these steps:
 Now that RAG is enabled, we can test it by asking the same questions submitted in *Lab 1*. Previously, the LLM provided generic answers, as the content was either not part of its training data or not sufficiently addressed in the questions:
 
 ```
-Which kind of database you can use to run the Java Web example application?
+Which kind of database can you use to run the Java Web example application?
 ```
 ```
 Which Java environment should be used to run this example?
@@ -60,7 +60,7 @@ Using the TEST1 vector store, you will experiment with the main parameters set a
 ```
 Q: Which Java environment should be used to run this example?
 
-A: The best Java environment for running this example is an Integrated Development Environment (IDE) like IntelliJ IDEA, which supports Java development and includes tools for debugging, testing, and deploying code. However, if you do not have access to a specific IDE, or need another option, a standard Java Development Kit (JDK) with its associated tools will work. But, specifically for this example, it's recommended to use Oracle JDK, as the guide uses Oracle-specific components such as JdbcBeanImpl and relies on Oracle JDBC drivers. Here is why the correct answer cannot be directly retrieved from the documents, but still inferred: The title of the section "Web Server" implies that this guide assumes a standard web server setup. Later in the guide it mentions Maven Central to download the necessary JDBC drivers, which also supports standardizing on Oracle JDK and other commonly used Java distributions.
+A: The best Java environment for running this example is an Integrated Development Environment (IDE) like IntelliJ IDEA, which supports Java development and includes tools for debugging, testing, and deploying code. However, if you do not have access to a specific IDE, or need another option, a standard Java Development Kit (JDK) with its associated tools will work. But, specifically for this example, it is recommended to use Oracle JDK, as the guide uses Oracle-specific components such as JdbcBeanImpl and relies on Oracle JDBC drivers. Here is why the correct answer cannot be directly retrieved from the documents, but still inferred: The title of the section "Web Server" implies that this guide assumes a standard web server setup. Later in the guide it mentions Maven Central to download the necessary JDBC drivers, which also supports standardizing on Oracle JDK and other commonly used Java distributions.
 No specific information regarding version support or alternatives for running this sample are mentioned within the provided text. So our inference would be based off common practices of selecting a Java environment that works well with many libraries and frameworks like Maven Central, suggesting Oracle JDK as the likely Java environment to use in order to run and test the HR application correctly.
 ```
 
@@ -78,7 +78,7 @@ Oracle JDK 8 or later
 
 This is because the ojdbc8-production pulls all the required JDBC jars from the Maven Central Repository, which is compatible with Java 8 and later versions.
 
-Please note that I've assumed your question was about the specific Java environment needed to run the example. If my interpretation is incorrect, please provide more context or clarify your question, and I'll do my best to assist you.
+Please note that I have assumed your question was about the specific Java environment needed to run the example. If my interpretation is incorrect, please provide more context or clarify your question, and I'll do my best to assist you.
 ```
 
 **COMMENT**: As you can see, with more chunks provided, the bot also mentions other technologies such as Oracle JDBC, the JVM, and Oracle Database.
