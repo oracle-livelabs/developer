@@ -97,6 +97,7 @@ and, with the **Enable RAG?** check-box unselected, choose the **gpt-4o-mini** a
 ```
 Which kind of database can you use to run the Java Web example application?
 ```
+
 ```
 Can I use any kind of development environment to run the example?
 ```
