@@ -71,15 +71,15 @@ You will then retrieve the rows from the newly created table.
 
 What you see in the image above are chunks of text from the input document, which have been transformed into vector format and stored in the Oracle database. Essentially, you’ve replicated the knowledge contained in the document within your database!
 
-## Learn More
+## Task 3: Create a different Vector Store
 
-* (optional) Create a different vector store:
-
-    By following the sames steps from Task 1, you can create another vector store using the same document but with a different embedding model, **text-embedding-3-small** from the OpenAI models. Give the alias ***TEST2*** to this vector store. 
+By following the sames steps from Task 1, you can create another vector store using the same document but with a different embedding model, **text-embedding-3-small** from the OpenAI models. Give the alias ***TEST2*** to this vector store. 
     
-    In this case, you will get a smaller number of chunks, since the model supports a chunk size of 8191 instead of the 512 given by *mxbai-embed-large*:
+In this case, you will get a smaller number of chunks, since the model supports a chunk size of 8191 instead of the 512 given by *mxbai-embed-large*:
 
-    ![text-embedding-3-small](images/text-embedding-3-small.png)
+![text-embedding-3-small](images/text-embedding-3-small.png)
+
+## Learn More
 
 * (optional) See the list of vector stores:
     
