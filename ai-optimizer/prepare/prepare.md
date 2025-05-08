@@ -2,7 +2,7 @@
 
 ## Introduction
 
-In this lab, you will explore the environment that was created in the *Get Started* module. You will set up the database connection, configure the OCI credentials, add new LLMs and Embedding models and test out the *Chat* feature for the first time.
+In this lab, you will explore the environment that was created in the [*Get Started*](https://markxnelson.github.io/developer/ai-optimizer/workshops/desktop/index.html?lab=get-started) module. You will set up the database connection, configure the OCI credentials, add new LLMs and Embedding models and test out the *Chat* feature for the first time.
 
 Estimated Lab Time: -- minutes
 
