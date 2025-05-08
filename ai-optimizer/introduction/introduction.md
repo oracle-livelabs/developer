@@ -24,7 +24,7 @@ In this workshop, you will learn how to:
 
 This lab assumes you have:
 
-* An **Oracle Database 23ai** up and running (see ["Get Started"](../get-started/get-started.md) to get one) 
+* An **Oracle Database 23ai** up and running (see ["Get Started"](https://markxnelson.github.io/developer/ai-optimizer/workshops/desktop/index.html?lab=get-started) to get one) 
 * An Integrated Development Editor (like Visual Studio Code)
 * Python 3.11 (for running Bare-Metal)
 * Container Runtime e.g. docker/podman (for running in a Container)
