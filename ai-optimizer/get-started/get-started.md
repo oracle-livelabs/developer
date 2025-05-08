@@ -13,7 +13,7 @@ You will run four container images to establish the “Infrastructure”:
 * Vector Storage - **Oracle Database 23ai Free**
 * The AI Optimizer
 
-Estimated Time: 5 minutes
+Estimated Time: 60 minutes
 
 ### Objectives
 
