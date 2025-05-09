@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This lab shows you how to create web pages to display the business objects you created in the previous lab.
+This lab shows you how to create web pages to display data from the business objects you created in the previous lab.
 
 Estimated Time: 15 minutes
 
@@ -233,7 +233,7 @@ Add a Create page that lets your users create new employees.
 
     ![The page flow for the application's main flow is shown. The main-employees page points to the main-create-employee page, and  the main-start page points to the main-create-department page.](images/employees-add-create-mainflow.png "")
 
-7. Return to the main-employees page. (You can double-click the page tile, in addition to using other navigation mechanisms.) If necessary, click **Reload Design Preview** ![Reload Design Preview icon](images/reload-icon.png) to display the new employee, both in the table and the bar chart.
+7. Return to the main-employees page. (You can double-click the page tile, in addition to using other navigation mechanisms.) Click **Reload Design Preview** ![Reload Design Preview icon](images/reload-icon.png) to display the new employee, both in the table and the bar chart.
 8. Now click **Code** (next to **Design** in the Page Designer toolbar) to view the HTML code for the main-employees page. You can see the code for the title, the table, and the chart within `div` elements.  The components and classes all begin with `oj-`, indicating that they are Oracle JavaScript Extension Toolkit (JET) components.
 
     ![The HTML code for the main-employees page is shown.](images/employees-add-create-code.png "")
@@ -270,4 +270,4 @@ It makes sense at this point to change the name of the main-start page to main-d
 ## Acknowledgements
 
 * **Author** - Sheryl Manoharan, VB Studio User Assistance, November 2021
-* **Last Updated By/Date** - Sheryl Manoharan, January 2025
+* **Last Updated By/Date** - Sheryl Manoharan, April 2025
