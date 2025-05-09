@@ -141,3 +141,8 @@ Now, repeat the test to see whether there are improvements in the **Overall Corr
   ![previous](./images/previous.png)
 
 * You can repeat the tests as many times as needed, changing the **Vector Store**, **Search Type**, and **Top K** parameters to apply the same tuning strategies you've used previously with individual questions—now extended to a full test using curated and reproducible data.
+
+## Acknowledgements
+* **Author** - Lorenzo De Marchis, Developer Evangelist, May 2025
+* **Contributors** - Mark Nelson, John Lathouwers, Corrado De Bari, Jorge Ortiz Fuentes
+* **Last Updated By** - Lorenzo De Marchis, May 2025

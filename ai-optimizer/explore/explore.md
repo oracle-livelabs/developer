@@ -119,6 +119,6 @@ As you can see, even if the questions mean to refer to a specific example, the L
 * (optional) Play with the **Temperature** parameter (and also the other parameters if you wish to!) and compare the quality of the answers, for each LLM that is available. Clear the history by pressing the **Clear** button after each cycle.
 
 ## Acknowledgements
-* **Author** - <Name, Title, Group>
-* **Contributors** -  <Name, Group> -- optional
-* **Last Updated By/Date** - <Name, Month Year>
+* **Author** - Lorenzo De Marchis, Developer Evangelist, May 2025
+* **Contributors** - Mark Nelson, John Lathouwers, Corrado De Bari, Jorge Ortiz Fuentes
+* **Last Updated By** - Lorenzo De Marchis, May 2025

@@ -133,6 +133,6 @@ You can learn more about RAG by playing with more parameters and prompt techniqu
 * Follow up a question with another one asking for “more” to see that the chat history is taken into account when generating a new response.
 
 ## Acknowledgements
-* **Author** - <Name, Title, Group>
-* **Contributors** -  <Name, Group> -- optional
-* **Last Updated By/Date** - <Name, Month Year>
+* **Author** - Lorenzo De Marchis, Developer Evangelist, May 2025
+* **Contributors** - Mark Nelson, John Lathouwers, Corrado De Bari, Jorge Ortiz Fuentes
+* **Last Updated By** - Lorenzo De Marchis, May 2025

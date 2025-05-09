@@ -33,6 +33,6 @@ This lab assumes you have:
   * On-Premises Models
 
 ## Acknowledgements
-* **Author** - <Name, Title, Group>
-* **Contributors** -  <Name, Group> -- optional
-* **Last Updated By/Date** - <Name, Month Year>
+* **Author** - Lorenzo De Marchis, Developer Evangelist, May 2025
+* **Contributors** - Mark Nelson, John Lathouwers, Corrado De Bari, Jorge Ortiz Fuentes
+* **Last Updated By** - Lorenzo De Marchis, May 2025
