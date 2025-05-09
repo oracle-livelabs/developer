@@ -106,7 +106,7 @@ In Oracle Database 23ai, how do I determine the accuracy of my vector indexes?
 ```
 
 ```
-In Oracle Database 23ai, How do I convert string text to embedding using PL/SQL?
+In Oracle Database 23ai, how do I convert string text to embedding using PL/SQL?
 ```
 
 NOTICE: *if you see a **Database has no Vector Stores. Disabling RAG.** message above, don't panic! That's because you haven't created a vector store yet and thus you can't use the RAG functionality*.

@@ -52,7 +52,13 @@ In Oracle Database 23ai, how do I determine the accuracy of my vector indexes?
 
 ![rag-query](images/rag-query.png)
 
-You can see how the answer differs from the one we received earlier. The response should be different and include references to DBMS_VECTOR and links to the embedded documentation where this information can be found. It might even include an apology!
+```
+In Oracle Database 23ai, how do I convert string text to embeddings using PL/SQL?
+```
+
+![rag-query-2](images/rag-query-2.png)
+
+You can see how the answers differ from the ones we received earlier. The responses should be different and include references to DBMS_VECTOR and links to the embedded documentation where this information can be found. It might even include an apology!
 
 ## Task 3 (optional): Repeat Task 2 using OpenAI models
 
