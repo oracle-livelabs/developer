@@ -4,7 +4,7 @@
 
 In this lab, you will test the functionality of the API Server. The AI Optimizer uses an API Server to make its features accessible to external clients. You can run the API Server either as part of the AI Optimizer GUI client or as a standalone process.
 
-Estimated Time: -- minutes
+Estimated Time: 10 minutes
 
 ### Objectives
 
