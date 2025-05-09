@@ -54,7 +54,7 @@ In the *Split/Embed* tab, the framework allows you to upload various types of do
 
     ![vector-store-populated](images/vector-store-populated.png)
 
-    This means that 224 vectors representations of the information from the input document have been created and stored.
+    This means that 3016 vectors representations of the information from the input document have been created and stored.
 
 ## Task 2: Inspect the Vector DB
 

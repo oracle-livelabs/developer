@@ -58,7 +58,7 @@ Now that the API Server is running, you can perform API calls against it.
        "messages": [
          {
            "role": "user",
-           "content": "Can I use any kind of development environment to run the example?"
+           "content": "In Oracle Database 23ai, how do I determine the accuracy of my vector indexes?"
          }
        ]
      }' | jq .

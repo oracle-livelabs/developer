@@ -64,46 +64,44 @@ Now you are all set for testing the microservice!
 
 The microservice you just started exposes a web service that accepts HTTP GET requests at:
 
-  * `http://localhost:8080/v1/chat/completions` — to use RAG via the OpenAI-compatible REST API.
-  * `http://localhost:8080/v1/service/llm` — to chat directly with the underlying LLM.
-  * `http://localhost:8080/v1/service/search/`— to search for documents similar to the message provided.
+  * `http://localhost:9090/v1/chat/completions` — to use RAG via the OpenAI-compatible REST API.
+  * `http://localhost:9090/v1/service/llm` — to chat directly with the underlying LLM.
+  * `http://localhost:9090/v1/service/search/`— to search for documents similar to the message provided.
 
 To test it, run a curl command like this in a new terminal:
 
   ```
-  curl -X POST "localhost:8080/v1/chat/completions" \
-     -H "Content-Type: application/json" \
-     -H "Authorization: Bearer your_api_key" \
-     -d '{"message": "Can I use any kind of development environment to run the example?"}'  
+  curl -N http://localhost:9090/v1/chat/completions \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer your_api_key" \
+  -d '{
+    "model": "server",
+    "messages": [{"role": "user", "content": "In Oracle Database 23ai, how do I determine the accuracy of my vector indexes?"}],
+    "stream": false
+  }'
   ```
 
 The response using RAG with the TEST1 vector store will look like this:
 
   ``` 
-  {
-    "choices": [
-      {
-        "message": {
-          "content": "Yes, you can use any kind of development environment to run the example, but for ease of development, the guide specifically mentions using an integrated development environment (IDE). It uses IntelliJ IDEA Community version as an example for creating and updating the files for the application (see Document 96EECD7484D3B56C). However, you are not limited to this IDE and can choose any development environment that suits your needs."
-        }
-      }
-    ]
-  }
+  {"id":"chatcmpl-iHfRbDEYySEuGLESa8faQKZbcpVQ","object":"chat.completion","created":"1746805121","model":"llama3.1",
+  
+  "choices":[{"message":{"role":"assistant","content":"According to the documentation, you can determine the accuracy of your vector indexes using the following methods:\n\n1. Use the `DBMS_VECTOR.INDEX_ACCURACY_QUERY` function to verify the accuracy of a vector index for a given query vector, top-K, and target accuracy.\n2. Use the `DBMS_VECTOR.INDEX_ACCURACY_REPORT` function to capture from your past workloads, accuracy values achieved by approximate searches using a particular vector index for a certain period of time.\n\nAdditionally, you can use the `GET_INDEX_STATUS` procedure to get information about the current status of a vector index, such as its stage and percentage completion."},
+  
+  "index":0,"finish_reason":null}]}
   ```
 You can see how the microservice retrieves relevant context from the vector store, producing an answer similar to the one previously obtained using the RAG functionality within the AI Optimizer.
 
 You can also send a curl request without leveraging RAG:
 
-```
-  curl --get --data-urlencode 'message=Can I use any kind of development environment to run the example?' localhost:8080/v1/service/llm 
+  ```
+  curl --get --data-urlencode 'message=In Oracle Database 23ai, how do I determine the accuracy of my vector indexes?' localhost:9090/v1/service/llm 
   ```
 
-     and it will produce an ungrounded answer like this:
+   and it will produce an ungrounded answer like this:
 
   ```
-  {
-    "completion": "Yes, you can use various development environments to run examples, depending on the programming language and the specific example you are working with. Here are some common options:\n\n1. **Integrated Development Environments (IDEs)**:\n   - **Visual Studio Code**: A versatile code editor that supports many languages through extensions.\n   - **PyCharm**: Great for Python development.\n   - **Eclipse**: Commonly used for Java development.\n   - **IntelliJ IDEA**: Another popular choice for Java and other languages.\n   - **Xcode**: For macOS and iOS development (Swift, Objective-C).\n\n2. **Text Editors**:\n   - **Sublime Text**: A lightweight text editor with support for many languages.\n   - **Atom**: A hackable text editor for the 21st century.\n   - **Notepad++**: A free source code editor for Windows.\n\n3. **Command Line Interfaces**:\n   - You can run"
-  }
+  {"completion":"There is no such thing as \"Oracle Database 23ai\". The current version of Oracle Database is Oracle Database 21c and Oracle Database 22c.\n\nHowever, if you're using a recent version of Oracle Database (18c or later), you can use the `DBMS_VECTOR_INDEX_STATS` package to gather statistics about your vector indexes. This package provides functions to retrieve information about the accuracy of the vector index, such as:\n\n* `GET_BUCKETS_ACCURACY`: Returns the number of buckets that have an accuracy greater than or equal to a specified threshold.\n* `GET_INVERTED_LIST_ACCURACY`: Returns the accuracy of the inverted list for each bucket.\n\nTo use these functions, you'll need to create a vector index on your table and gather statistics about it using the following steps:\n\n1. Create a vector index on your table:\n```sql\nCREATE INDEX my_vector_index ON my_table (my_column) VECTORIZED;\n```\n2. Gather statistics about the vector index:\n```sql\nBEGIN\n  DBMS_VECTOR_INDEX_STATS.GATHER_TABLE_STATS('MY_SCHEMA', 'MY_TABLE');\nEND;\n```\n3. Use the `DBMS_VECTOR_INDEX_STATS` package to retrieve information about the accuracy of the vector index:\n```sql\nSELECT GET_BUCKETS_ACCURACY(my_vector_index, 0.5) FROM DUAL; \n-- Returns the number of buckets with an accuracy greater than or equal to 0.5\n```\nPlease note that this is a simplified example and you may need to adjust the syntax depending on your specific use case.\n\nAlso, keep in mind that vector indexes are a feature introduced in Oracle Database 18c, so if you're using an earlier version of Oracle, you won't have access to these features."}
   ```
 You can see that the answer is very generic compared to the RAG-enhanced one.
 
