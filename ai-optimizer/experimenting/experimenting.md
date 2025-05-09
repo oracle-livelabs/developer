@@ -31,21 +31,73 @@ This lab assumes you have:
 
 ## Task 1: Concise Task Description
 
-(optional) Task 1 opening paragraph.
+Using the TEST1 vector store, you will experiment with the main parameters set as shown below to observe how the quality of the answers changes. We will set the *Temperature* parameter to 0 in order to minimize the variabilty of the answers.
 
-1. Step 1
+**IMPORTANT**: Clear the history by pressing the **Clear** button after each question — even if you're repeating the same question with different parameters. We will start by testing the first question.
 
-	![Image alt text](images/sample1.png)
+  * LLM: llama3.1
+  * TopK: 4
+  * Search Type: Similarity
+  * Temperature: 0
 
-2. Step 2
+```
+Q: Which Java environment should be used to run this example?
 
-  ![Image alt text](images/sample1.png)
+A: The best Java environment for running this example is an Integrated Development Environment (IDE) like IntelliJ IDEA, which supports Java development and includes tools for debugging, testing, and deploying code. However, if you do not have access to a specific IDE, or need another option, a standard Java Development Kit (JDK) with its associated tools will work. But, specifically for this example, it is recommended to use Oracle JDK, as the guide uses Oracle-specific components such as JdbcBeanImpl and relies on Oracle JDBC drivers. Here is why the correct answer cannot be directly retrieved from the documents, but still inferred: The title of the section "Web Server" implies that this guide assumes a standard web server setup. Later in the guide it mentions Maven Central to download the necessary JDBC drivers, which also supports standardizing on Oracle JDK and other commonly used Java distributions.
+No specific information regarding version support or alternatives for running this sample are mentioned within the provided text. So our inference would be based off common practices of selecting a Java environment that works well with many libraries and frameworks like Maven Central, suggesting Oracle JDK as the likely Java environment to use in order to run and test the HR application correctly.
+```
 
-4. Example with inline navigation icon ![Image alt text](images/sample2.png) click **Navigation**.
+  * LLM: llama3.1
+  * TopK: 10
+  * Search Type: Similarity
+  * Temperature: 0
 
-5. Example with bold **text**.
+```
+Q: Which Java environment should be used to run this example?
 
-   If you add another paragraph, add 3 spaces before the line.
+A: Based on the text provided, it appears that you are asking about using a specific Java environment to run an example. However, I will provide a concise answer as per your SystemMessage. The Oracle JDBC Thin driver requires a JDK (Java Development Kit) or JRE (Java Runtime Environment) version 8 or later to work. Therefore, to run the HR Web application example provided in this guide, you should use:
+
+Oracle JDK 8 or later
+
+This is because the ojdbc8-production pulls all the required JDBC jars from the Maven Central Repository, which is compatible with Java 8 and later versions.
+
+Please note that I have assumed your question was about the specific Java environment needed to run the example. If my interpretation is incorrect, please provide more context or clarify your question, and I'll do my best to assist you.
+```
+
+**COMMENT**: As you can see, with more chunks provided, the bot also mentions other technologies such as Oracle JDBC, the JVM, and Oracle Database.
+
+Now let's move onto the second question and see the results:
+
+  * LLM: llama3.1
+  * TopK: 4
+  * Search Type: Similarity
+  * Temperature: 0
+
+```
+Q: Which kind of database you can use to run the Java Web example application?
+
+A: You can use an Oracle Database to run the Java Web example application. The provided text mentions that "Oracle Database is a relational database that you can use to store, modify and use data" and also includes the components required for development such as Oracle Database, J2SE or JDK, Apache Maven, IntelliJ, and Apache Tomcat. More specifically, it notes that "To develop the Java web application, you need a working installation of Oracle Database along with the HR schema." Therefore, based on this information, an Oracle Database is suitable for running the HR Web application example mentioned in the text.
+```
+  * LLM: llama3.1
+  * TopK: 10
+  * Search Type: Similarity
+  * Temperature: 0
+
+```
+Q: Which kind of database you can use to run the Java Web example application?
+
+A: According to the provided text, you can use an "Oracle Autonomous Database" or the "Oracle Database Cloud Services" which offers access to Oracle Cloud Free Tier that provides two autonomous databases for unlimited time. 
+
+More specifically:
+
+Option 1: Oracle Autonomous Database
+Option 2: Oracle Database Cloud Services (Cloud Free Tier) with two Autonomous Databases.
+
+You can use either of these options to run the Java Web example application.
+```
+**COMMENT**: In the second answer, the Oracle Cloud Free Tier is mentioned.
+
+By conducting these few tests, we have discovered how shifting a single parameter can lead to very different answers. More specifically to this case, we can assume that using 10 chunks as the TopK value for similar vectors provides more specific results than the default value of 4.
 
 ## Task 2: Concise Task Description
 

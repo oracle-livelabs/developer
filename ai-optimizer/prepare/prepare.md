@@ -44,7 +44,7 @@ In the *Split/Embed* tab, the framework allows you to upload various types of do
     * **Local**: Upload a document directly from your local environment.
     * **Web**: Import a document from a publicly accessible web URL.
 
-    In this example, we will embed a document from the web, available at [this link](https://docs.oracle.com/en/database/oracle/oracle-database/23/tdpjd/get-started-java-development.pdf). We will give the alias ***TEST1*** to this vector store.
+    In this example, we will embed a document from the web, available at [this link](https://docs.oracle.com/en/database/oracle/oracle-database/23/vecse/ai-vector-search-users-guide.pdf). We will give the alias ***TEST1*** to this vector store.
 
 4. Populate the Vector Store.
 

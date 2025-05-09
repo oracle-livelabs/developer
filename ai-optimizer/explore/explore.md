@@ -100,17 +100,20 @@ scroll down the left-side menu to find the **Chat model** menu:
 ![chat models](images/chatmodel.png)
 
 and, with the **Enable RAG?** check-box unselected, choose the **gpt-4o-mini** and ask generic questions like:
+
 ```
-Which kind of database can you use to run the Java Web example application?
+In Oracle Database 23ai, how do I determine the accuracy of my vector indexes?
 ```
 
 ```
-Can I use any kind of development environment to run the example?
+In Oracle Database 23ai, How do I convert string text to embedding using PL/SQL?
 ```
 
 NOTICE: *if you see a **Database has no Vector Stores. Disabling RAG.** message above, don't panic! That's because you haven't created a vector store yet and thus you can't use the RAG functionality*.
 
-As you can see, even if the questions mean to refer to a specific example, the LLM tends to answer in a generic way. 
+As you can see, even if the questions refer to Oracle Database 23ai, the LLM mentions Oracle Database 23c. This is known as **Knowledge Cutoff**, meaning that probably the LLM was trained before Oracle Database 23c was renamed as 23ai. 
+
+Moreover, the LLM tends to answer in a generic way, with no specific mention to the actual script needed to perform the operations requested. In Lab 3, we will compare these results with the one obtained using Retrieval-Augmented Generation (RAG), where more context is given to the LLMs.
 
 ## Learn More
 
