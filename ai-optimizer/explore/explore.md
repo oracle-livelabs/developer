@@ -101,11 +101,11 @@ scroll down the left-side menu to find the **Chat model** menu:
 
 and, with the **Enable RAG?** check-box unselected, choose the **gpt-4o-mini** and ask generic questions like:
 
-```
+```text
 In Oracle Database 23ai, how do I determine the accuracy of my vector indexes?
 ```
 
-```
+```text
 In Oracle Database 23ai, how do I convert string text to embedding using PL/SQL?
 ```
 

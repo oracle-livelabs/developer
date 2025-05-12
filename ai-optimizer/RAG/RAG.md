@@ -46,13 +46,13 @@ For this guided experiment, perform the following:
 
 1. Ask the ChatBot:
 
-```
+```text
 In Oracle Database 23ai, how do I determine the accuracy of my vector indexes?
 ```
 
 ![rag-query](images/rag-query.png)
 
-```
+```text
 In Oracle Database 23ai, how do I convert string text to embeddings using PL/SQL?
 ```
 
