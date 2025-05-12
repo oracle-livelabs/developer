@@ -25,7 +25,7 @@ This lab assumes you have:
 
 ## Task 1: Create a compartment
 
-Visual Builder instances use Oracle Cloud Infrastructure (OCI) as underlying infrastructure. To connect your Visual Builder instance to OCI resources, you need a dedicated compartment. While you can use the `root` compartment for your Visual Builder, it's recommended that you create a dedicated compartment to better organize and isolate your Visual Builder resources.
+Visual Builder instances use Oracle Cloud Infrastructure (OCI) as underlying infrastructure. To connect your Visual Builder instance to OCI resources, you need a dedicated compartment. While you can use the `root` compartment for your Visual Builder instance, it's recommended that you create a dedicated compartment to better organize and isolate your Visual Builder resources.
 
 1. On the Oracle Cloud Get Started page, click the menu ![Menu icon](images/hamburger.png) in the upper left corner.
 
@@ -50,23 +50,24 @@ Visual Builder instances use Oracle Cloud Infrastructure (OCI) as underlying inf
 
     ![This image shows navigation to Visual Builder under Developer Services](images/platform.png "")
 
-2. In the **Compartment** field on the Visual Builder instances page, select the `VBCompartment` you created to host the Visual Builder instance, then click **Create Instance**.
+2. On the Instances page, click the **Compartment** filter next to Applied filters, select the `VBCompartment` you created to host the Visual Builder instance, and click **Apply filter**.
+    ![This image shows the Instances screen, with the Compartment filter next to Applied filters set to VBCompartment. The Create Instance button is also shown.](images/create-instance.png "")
 
-    ![This image shows the Visual Builder Instances screen, with the Compartment drop-down on the left and the Create Instance button on the right.](images/create-instance.png "")
+3. Click **Create Instance**.
 
-3. On the Create Instance screen, give your instance a unique name, one that is unlikely to be chosen by another user.  Click **Create Visual Builder Instance**.
+4. On the Create instance screen, give your instance a unique name, one that is unlikely to be chosen by another user. Leave all other fields as is for the purposes of this tutorial. Click **Create Visual Builder instance**.
 
-    ![This image shows details of the Create Instance page, with the Name, Compartment, and Nodes fields. The Create Visual Builder instance button is also shown.](images/detail.png "")
+    ![This image shows details of the Create instance page, with the Name set to myVisualBuilder, Consumption model set to Metered (Universal Credit), Compartment set to VBCompartment, and Nodes set to 1. The Choose network access section is partially shown. The right bottom corner shows the Create Visual Builder instance button.](images/detail.png "")
 
-   When instance creation completes successfully, the instance shows as **Active** in the **Status** column. If you don't see the status change, try refreshing your browser.
+   When instance creation completes successfully, the instance shows as **Active** in the Status column. If you don't see the status change, try refreshing your browser.
 
-    ![The newly provisioned Visual Builder instance is shown. Its state in the Status column is set to Active.](images/vb-instance-created.png " ")
+    ![The newly provisioned myVisualBuilder instance is listed under the Name column, with its state in the Status column set to Active.](images/vb-instance-created.png " ")
 
-4. At the far right, click ![Task menu icon](images/task_menu.png) and select **Service Homepage** to open Visual Builder in a new browser tab.
+5. At the far right, click ![Actions icon](images/actions.png) and select **View service home page** to open Visual Builder in a new browser tab.
 
   You're now in the Visual Builder console and can **proceed to the next lab**.
 
 ## Acknowledgements
 
 * **Author** - Sheryl Manoharan, Visual Builder User Assistance, August 2021
-* **Last Updated** - February 2023
+* **Last Updated** - May 2025

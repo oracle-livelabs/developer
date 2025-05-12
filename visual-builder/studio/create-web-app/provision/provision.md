@@ -47,17 +47,18 @@ Before you provision a VB Studio instance, create a Visual Builder instance to h
 
     ![Navigation to Visual Builder under Developer Services is shown.](images/platform.png "")
 
-3. In the **Compartment** field on the Visual Builder instances page, select the `VBCompartment` you created to host the Visual Builder instance, then click **Create Instance**.
+3. On the Instances page, click the **Compartment** filter next to Applied filters, select the `VBCompartment` you created to host the Visual Builder instance, and click **Apply filter**.
+        ![This image shows the Instances screen, with the Compartment filter next to Applied filters set to VBCompartment. The Create Instance button is also shown.](images/create-instance.png "")
 
-    ![The Visual Builder Instances screen is shown, with the Compartment drop-down on the left and the Create Instance button on the right.](images/create-instance.png " ")
+4. Click **Create Instance**.
 
-4. On the Create Instance screen, give your instance a unique name, one that is unlikely to be chosen by another user. Click **Create Visual Builder Instance**.
+5. On the Create instance screen, give your instance a unique name, one that is unlikely to be chosen by another user. Leave all other fields as is for the purposes of this tutorial. Click **Create Visual Builder instance**.
 
-    ![Details of the Create Instance page is shown, with the Name, Compartment, and Nodes fields. The Create Visual Builder instance button is also shown.](images/detail.png "")
+    ![This image shows details of the Create instance page, with the Name set to myVisualBuilder, Consumption model set to Metered (Universal Credit), Compartment set to VBCompartment, and Nodes set to 1. The Choose network access section is partially shown. The right bottom corner shows the Create Visual Builder instance button.](images/detail.png "")
 
-     When instance creation completes successfully, the instance shows as **Active** in the **Status** column. If you don't see the status change, try refreshing your browser.
+   When instance creation completes successfully, the instance shows as **Active** in the Status column. If you don't see the status change, try refreshing your browser.
 
-    ![The newly provisioned Visual Builder instance is shown. Its state in the Status column is set to Active.](images/vb-instance-created.png " ")
+    ![The newly provisioned myVisualBuilder instance is listed under the Name column, with its state in the Status column set to Active.](images/vb-instance-created.png " ")
 
 ## Task 2: Create a VB Studio instance
 
