@@ -26,7 +26,7 @@ In this lab, you’ll practice setting up the live feed capabilities,that can be
 
   ![Click Create Topic](./images/task-1-scrn-4.png)
 
-  5. Enter Topic Details, then click **Create**.
+  5. Enter details, then click the **Create** button.
 
   ![Create Topic](./images/task-1-scrn-5.png)
 
