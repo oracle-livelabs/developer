@@ -62,9 +62,9 @@ Before you provision a VB Studio instance, create a Visual Builder instance to h
 
 ## Task 2: Create a VB Studio instance
 
-Provision a VB Studio instance to develop and deploy a web app. You can create only one VB Studio instance in an Oracle Cloud account. Before you attempt to create an instance, make sure your account has no other VB Studio instance provisioned.
+Provision a VB Studio instance to develop and deploy a web app. You can create only one VB Studio instance for an Oracle Cloud account, and it must be created in the `root` compartment. Before you attempt to create an instance, make sure your account has no other VB Studio instance provisioned.
 
-1. Your VB Studio instance requires OCI resources such as VMs for builds and storage buckets for project data. It's recommended that you create a dedicated compartment to host these resources, so they aren't mixed with your other resources. To create a dedicated compartment for VB Studio resources:
+1. Your VB Studio instance requires OCI resources such as VMs for CI/CD builds and storage buckets for project data. It's recommended that you create a dedicated compartment to host these resources, so they aren't mixed with your other resources. To create a dedicated compartment for VB Studio resources:
 
    a. Click the navigation menu ![Menu icon](images/hamburger.png), select **Identity & Security**, then **Compartments**..
 
@@ -84,15 +84,17 @@ Provision a VB Studio instance to develop and deploy a web app. You can create o
 
 3. On the Visual Builder Studio instances page, click **Create Visual Builder Studio**.
 
-    ![The Visual Builder Studio Instances page is shown, with the Create Visual Builder Studio  button highlighted.](images/create-instance-vbs.png "")
+   If the option isn't enabled, you're likely not in the `root` compartment: Click the **Compartment** filter next to Applied filters, select `cloudAccountName` **(root)**, and click **Apply filter**.
 
-4. On the Instance Name screen, give your instance a unique name and make sure your root compartment is selected. Click **Next**.
+    ![The Visual Builder Studio instances page is shown, with the Create Visual Builder Studio button highlighted.](images/create-instance-vbs.png "")
+
+4. On the Instance name step of the Create Visual Builder Studio instance wizard, give your instance a unique name and make sure your root compartment is selected. Click **Next**.
 
    ![This image shows the Instance Name screen. The Instance Name is entered as vbstudio-devinstance and the Compartment field is set to root.](images/detail-vbs.png "")
 
-5. On the CI/CD Setup screen, select the `VBStudioCompartment` you created previously and make sure you select **Yes, I authorize this** to allow Oracle to create instances on your behalf.
+5. On the CI/CD setup step, select **Yes, I authorize this** to allow Oracle to create compute and storage instances on your behalf and select the `VBStudioCompartment` you created previously.
 
-   ![This image shows the CI/CD Setup screen, with the root compartment selected.](images/confirm-vbs.png "")
+   ![This image shows the CI/CD setup screen, with the root compartment selected.](images/confirm-vbs.png "")
 
    *Note: If you don't provide authorization, your instance is provisioned with a built-in OCI account that provides access to a minimal set of resources (one free VM build executor with fixed software in the default build executor template). You'll also need to manually authorize this VB Studio instance to access your Visual Builder instance.*
 
@@ -104,13 +106,15 @@ Provision a VB Studio instance to develop and deploy a web app. You can create o
 
 Your VB Studio instance must be authorized to access Visual Builder instances connected to your OCI account. This step is mostly required if your VB Studio instance was provisioned with a built-in OCI account, but there may be other scenarios where this authorization is missing. Therefore, it's recommended that you always check your VB Studio instance's details to make sure the policy statement that enables this access is correctly defined.
 
-1. Click the navigation menu ![Menu icon](images/hamburger.png), select **Identity & Security**, then **Policies**.
+1. If required, select **Developer Services** and **Visual Builder Studio** from the navigation menu.
 
-   ![This image shows navigation to Identity & Security, then Compartments under Identity.](https://oracle-livelabs.github.io/common/images/console/id-policies.png "")
+2. Select the newly created VB Studio instance to view its details on the Instance Info tab.
 
-2. From the Compartment list on the left side of the Policies page, select the root compartment.
+3. Under CI/CD setup, click **View policies**.
 
-3. Make sure a VB Studio policy that contains *all* of these statements is defined:
+4. On the Policies page, look for the policy that starts with **VBStudio-Policy-**, followed by the instance and compartment name, for example, **VBStudio-Policy-vbstudio-devinstance-vbstudiocompartment**.
+
+5. Click the policy and make sure its definition contains *all* of these statements:
 
     ```text
     <copy>
@@ -146,7 +150,7 @@ Your VB Studio instance must be authorized to access Visual Builder instances co
 
 ## Task 4: Access VB Studio
 
-1. From the navigation menu, select **Developer Services** and **Visual Builder Studio**.
+1. If required, select **Developer Services** and **Visual Builder Studio** from the navigation menu.
 
 2. Select your VB Studio instance's name, then click **Service Console**.
 
@@ -189,4 +193,4 @@ If you did *not* authorize Oracle to create instances on your behalf when provis
 ## Acknowledgements
 
 * **Author** - Sheryl Manoharan, VB Studio User Assistance, November 2021
-* **Last Updated By/Date** - Sheryl Manoharan, October 2024
+* **Last Updated By/Date** - Sheryl Manoharan, May 2025
