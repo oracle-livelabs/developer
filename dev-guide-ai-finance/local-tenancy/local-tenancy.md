@@ -213,22 +213,19 @@ Note: Replace all placeholders with your actual OCI credentials and key file pat
 
 3. Enable Access to GenAI Resources 
 
-Make sure the user or group associated with your credentials has policies to access the GenAI services. A sample policy: 
+    Make sure the user or group associated with your credentials has policies to access the GenAI services. A sample policy: 
 
-allow group GenAIUsers to use generative-ai-family in tenancy 
+    allow group GenAIUsers to use generative-ai-family in tenancy 
 
-Name: PublicGenAI 
+    Name: PublicGenAI 
 
-Description: Public Gen AI Policy 
+    Description: Public Gen AI Policy 
 
-Compartment: select your own compartment 
+    Compartment: select your own compartment 
 
-Policy: allow any-user to manage generative-ai-family in compartment LiveLabsDemo 
+    Policy: allow any-user to manage generative-ai-family in compartment LiveLabsDemo 
 
- 
-
-You can define this policy in Identity > Policies in the OCI Console. 
-
+    You can define this policy in Identity > Policies in the OCI Console. 
 
 ## Task 6: Run the Application
 
