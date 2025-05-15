@@ -47,18 +47,17 @@ Before you provision a VB Studio instance, create a Visual Builder instance to h
 
     ![Navigation to Visual Builder under Developer Services is shown.](images/platform.png "")
 
-3. On the Instances page, click the **Compartment** filter next to Applied filters, select the `VBCompartment` you created to host the Visual Builder instance, and click **Apply filter**.
-        ![This image shows the Instances screen, with the Compartment filter next to Applied filters set to VBCompartment. The Create Instance button is also shown.](images/create-instance.png "")
+3. In the **Compartment** field on the Visual Builder instances page, select the `VBCompartment` you created to host the Visual Builder instance, then click **Create Instance**.
 
-4. Click **Create Instance**.
+   ![The Visual Builder Instances screen is shown, with the Compartment drop-down on the left and the Create Instance button on the right.](images/create-instance.png " ")
 
-5. On the Create instance screen, give your instance a unique name, one that is unlikely to be chosen by another user. Leave all other fields as is for the purposes of this tutorial. Click **Create Visual Builder instance**.
+4. On the Create Instance screen, give your instance a unique name, one that is unlikely to be chosen by another user. Click **Create Visual Builder Instance**.
 
-    ![This image shows details of the Create instance page, with the Name set to myVisualBuilder, Consumption model set to Metered (Universal Credit), Compartment set to VBCompartment, and Nodes set to 1. The Choose network access section is partially shown. The right bottom corner shows the Create Visual Builder instance button.](images/detail.png "")
+  ![Details of the Create Instance page is shown, with the Name, Compartment, and Nodes fields. The Create Visual Builder instance button is also shown.](images/detail.png "")
 
-   When instance creation completes successfully, the instance shows as **Active** in the Status column. If you don't see the status change, try refreshing your browser.
+   When instance creation completes successfully, the instance shows as **Active** in the **Status** column. If you don't see the status change, try refreshing your browser.
 
-    ![The newly provisioned myVisualBuilder instance is listed under the Name column, with its state in the Status column set to Active.](images/vb-instance-created.png " ")
+   ![The newly provisioned Visual Builder instance is shown. Its state in the Status column is set to Active.](images/vb-instance-created.png " ")
 
 ## Task 2: Create a VB Studio instance
 
@@ -66,7 +65,7 @@ Provision a VB Studio instance to develop and deploy a web app. You can create o
 
 1. Your VB Studio instance requires OCI resources such as VMs for CI/CD builds and storage buckets for project data. It's recommended that you create a dedicated compartment to host these resources, so they aren't mixed with your other resources. To create a dedicated compartment for VB Studio resources:
 
-   a. Click the navigation menu ![Menu icon](images/hamburger.png), select **Identity & Security**, then **Compartments**..
+   a. From the navigation menu, select **Identity & Security**, then **Compartments**..
 
      ![This image shows navigation to Identity & Security, then Compartments under Identity.](https://oracle-livelabs.github.io/common/images/console/id-compartment.png "")
 
@@ -74,7 +73,7 @@ Provision a VB Studio instance to develop and deploy a web app. You can create o
 
       ![This image shows a list of existing compartments on the Compartments page. The Create Compartment button is highlighted.](images/oci-compartments-create-vbs.png "")
 
-   c. Enter `VBStudioCompartment` as the Name, add a description (for example, `VBStudioCompartment for workshop`), and leave the Parent Compartment set to the default root compartment. Click **Create Compartment**.
+   c. Enter a name for the compartment (for example, `VBStudioCompartment`), add a description (for example, `VBStudioCompartment for workshop`), and leave the Parent Compartment set to the default root compartment. Click **Create Compartment**.
 
       ![This image shows the Create Compartment dialog with fields filled in.](images/oci-compartments-create-details.png "")
 
@@ -82,77 +81,63 @@ Provision a VB Studio instance to develop and deploy a web app. You can create o
 
    ![Navigation to Visual Builder Studio under Developer Services is shown.](images/oci-service-navigation-vbs.png "")
 
-3. On the Visual Builder Studio instances page, click **Create Visual Builder Studio**.
-
-   If the option isn't enabled, you're likely not in the `root` compartment: Click the **Compartment** filter next to Applied filters, select `cloudAccountName` **(root)**, and click **Apply filter**.
+3. On the Visual Builder Studio Instances page, click **Create Visual Builder Studio**.
 
     ![The Visual Builder Studio instances page is shown, with the Create Visual Builder Studio button highlighted.](images/create-instance-vbs.png "")
 
-4. On the Instance name step of the Create Visual Builder Studio instance wizard, give your instance a unique name and make sure your root compartment is selected. Click **Next**.
+   If the option isn't enabled, you're likely not in the default root compartment: Click the **Compartment** filter next to Applied filters, select `tenancyName` **(root)**, and click **Apply filter** to switch to the root compartment.
+
+4. On the Instance Name step of the Create Visual Builder Studio Instance wizard, give your instance a unique name and make sure your root compartment is selected. Click **Next**.
 
    ![This image shows the Instance Name screen. The Instance Name is entered as vbstudio-devinstance and the Compartment field is set to root.](images/detail-vbs.png "")
 
-5. On the CI/CD setup step, select **Yes, I authorize this** to allow Oracle to create compute and storage instances on your behalf and select the `VBStudioCompartment` you created previously.
+5. On the CI/CD Setup step, select **Yes, I authorize this** to allow Oracle to create compute instances and storage buckets on your behalf and select the `VBStudioCompartment` you created previously.
 
    ![This image shows the CI/CD setup screen, with the root compartment selected.](images/confirm-vbs.png "")
 
-   *Note: If you don't provide authorization, your instance is provisioned with a built-in OCI account that provides access to a minimal set of resources (one free VM build executor with fixed software in the default build executor template). You'll also need to manually authorize this VB Studio instance to access your Visual Builder instance.*
+   *Note: If you don't provide authorization, your instance is provisioned with a built-in free account that provides access to a minimal set of resources (one free VM build executor with fixed software in the default build executor template). You'll also need to manually authorize this VB Studio instance to access your Visual Builder instance.*
 
    Click **Create Visual Builder Studio**.
 
-   When your instance is created, its details show in the Instance Info tab. You'll also receive an email with the subject **Verify your Oracle Visual Builder Studio email**. Make sure you click the URL link in the email body to verify your email. This is required to receive email notifications from VB Studio.
+   After the instance is created, its Status shows as **Active** on the Visual Builder Studio Instances page. Click the instance's name to view its details on the Instance Info tab.
 
 ## Task 3: Authorize VB Studio to access Visual Builder
 
-Your VB Studio instance must be authorized to access Visual Builder instances connected to your OCI account. This step is mostly required if your VB Studio instance was provisioned with a built-in OCI account, but there may be other scenarios where this authorization is missing. Therefore, it's recommended that you always check your VB Studio instance's details to make sure the policy statement that enables this access is correctly defined.
+Your VB Studio instance must be authorized to access Visual Builder instances connected to your OCI account. This step is mostly required if your VB Studio instance was provisioned with the built-in free account, but there may be other scenarios where this authorization is missing. Therefore, it's recommended that you always check your VB Studio instance's details to make sure the policy statement that enables this access is correctly defined.
 
-1. If required, select **Developer Services** and **Visual Builder Studio** from the navigation menu.
+1. From the navigation menu, select **Identity & Security**, then **Policies**.
 
-2. Select the newly created VB Studio instance to view its details on the Instance Info tab.
+   ![This image shows navigation to Identity & Security, then Policies under Identity.](https://oracle-livelabs.github.io/common/images/console/id-policies.png "")
 
-3. Under CI/CD setup, click **View policies**.
+2. On the Policies page, make sure the root compartment is selected.
 
-4. On the Policies page, look for the policy that starts with **VBStudio-Policy-**, followed by the instance and compartment name, for example, **VBStudio-Policy-vbstudio-devinstance-vbstudiocompartment**.
-
-5. Click the policy and make sure its definition contains *all* of these statements:
+3. [Create a policy](https://docs.oracle.com/en-us/iaas/Content/Identity/policymgmt/managingpolicies_topic-To_create_a_policy.htm) that applies to the root compartment (for example, `VBStudio-Policy-<instance name>-<compartment name>`) with *all* of these statements:
 
     ```text
     <copy>
-    Allow any-user to inspect all-resources in tenancy where request.principal.id in ('<VBS_instance_OCID>')
-    Allow any-user to read visualbuilder-instance in tenancy where request.principal.id in ('<VBS_instance_OCID>')
-    Allow any-user to read integration-instance in tenancy where request.principal.id in ('<VBS_instance_OCID>')
+    Allow any-user to inspect all-resources in tenancy where request.principal.id = ('<VBS_instance_OCID>')
+    Allow any-user to read visualbuilder-instance in tenancy where request.principal.id = ('<VBS_instance_OCID>')
+    Allow any-user to read integration-instance in tenancy where request.principal.id = ('<VBS_instance_OCID>')
     </copy>
     ```
 
-   where `<VBS_instance_OCID>` is the OCID of this VB Studio instance, shown on the instance's Instance Info tab.
+   `<VBS_instance_OCID>` is the OCID of the VB Studio instance, as shown on the instance's Instance Info tab.
 
-   * If a policy doesn't exist:
+   If a policy exists for your VB Studio instance, select the policy and make sure it includes all the preceding statements. If it's missing a statement:
 
-      a. Click **Create Policy**.
+      a. Click **Edit Policy Statements**.
 
-      b. Give the policy a name (`VBStudioPolicy`, for example) and a description (`Policy for VB Studio`, for example).
+      b. Select **Advanced** under Policy Builder, then add the missing policy statement in the text area.
 
-      c. Make sure the root compartment is selected.
-
-      d. Click **Show Manual Editor** next to Policy Builder, then paste the preceding policy statement in the text area.
-
-      e. Click **Create**.
-
-   * If a policy exists but is missing one of the preceding statements:
-
-      a. Select the existing policy.
-
-      b. Click **Edit Policy Statements**.
-
-      c. Select **Advanced** under Policy Builder, then add the missing policy statement in the text area.
-
-      d. Click **Save Changes**.
+      c. Click **Save Changes**.
 
 ## Task 4: Access VB Studio
 
-1. If required, select **Developer Services** and **Visual Builder Studio** from the navigation menu.
+Access the VB Studio console to get started with your web application. When you first access VB Studio, you'll receive an email with the subject **Verify your Oracle Visual Builder Studio email**. Make sure you click the URL link in the email body to verify your email. This is required to receive email notifications from VB Studio.
 
-2. Select your VB Studio instance's name, then click **Service Console**.
+1. From the navigation menu, select **Developer Services** and **Visual Builder Studio**.
+
+2. Click your VB Studio instance's name on the Visual Builder Studio Instances page, then click **Service Console**.
 
    ![This image shows the Instance Details page of the newly provisioned VB Studio instance, named vbstudio-devinstance. Under the instance name the Service Console button is highlighted.](images/vbs-instance-created.png "")
 
@@ -165,15 +150,17 @@ Your VB Studio instance must be authorized to access Visual Builder instances co
 
    ![This image shows the options available when the User icon is clicked. Preferences is selected.](images/preferences.png "")
 
-   You are now ready to create a project, but before you do that, check if your instance is connected to the built-in free account. Click the **OCI Account** tab. If you see your OCI account connected (as shown here), you can [jump to the next lab](#next) and get started with creating a project:
+   You are now ready to create a project, but before you do that, check if your instance is connected to the built-in free account. Click the **OCI Account** tab. 
 
-   ![This image shows the OCI Account tab when the tenancy's OCI account is connected, with details of Tenancy OCID, Compartment OCID, Home Region, and Storage Namespace listed.](images/oci-account-connected.png "")
+      * If you see your OCI account connected (as shown here), you can [jump to the next lab](#next) and get started with creating a project:
 
-   If you see something similar to this image, it means your instance is connected to the built-in free account. This is likely if you did *not* authorize Oracle to create instances to run builds:
+        ![This image shows the OCI Account tab when the tenancy's OCI account is connected, with details of Tenancy OCID, Compartment OCID, Home Region, and Storage Namespace listed.](images/oci-account-connected.png "")
 
-   ![This image shows the OCI Account tab when a free Built-in account is connected to the tenancy. A Built-in Free section on the left shows the instance connected using this free account. On the right, a Connect Your Own section provides an option to connect your own OCI Account to the instance.](images/oci-free-account.png "")
+      * If you see something similar to this image, it means your instance is connected to the built-in free account. This is likely if you did *not* authorize Oracle to create instances to run builds:
 
-   In this case, you will need to create your VM build executor as described in the next task before you proceed with the rest of the workshop.
+        ![This image shows the OCI Account tab when a free Built-in account is connected to the tenancy. A Built-in Free section on the left shows the instance connected using this free account. On the right, a Connect Your Own section provides an option to connect your own OCI Account to the instance.](images/oci-free-account.png "")
+
+        In this case, you will need to create your VM build executor as described in the next task before you proceed with the rest of the workshop.
 
 ## Task 3: Create the Free VM Build Executor
 
