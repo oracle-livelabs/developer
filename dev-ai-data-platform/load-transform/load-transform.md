@@ -4,15 +4,15 @@
 
 ## Introduction
 
-In this lab, you’ll practice setting up the live feed capabilities,that can be used to load data that is continuously collected into cloud object storage.  When a load job is enabled for live feed, it is connected to the OCI event notification and subscription mechanism, so that every time a new object is created in the object store bucket, it triggers the live feed, loading the contents to the database
+In this lab, you’ll practice setting up the live feed capabilities, that can be used to load data that is continuously collected into cloud object storage.  When a load job is enabled for live feed, it is connected to the OCI event notification and subscription mechanism, so that every time a new object is created in the object store bucket, it triggers the live feed, loading the contents to the database
 
-**Note:** To complete this lab, you will alternate between Oracle Cloud Infrastructure Console pages and Oracle Database Actions pages.  Selecting Database Actions will open a new tab.
+<**Note:** To complete this lab, you will alternate between Oracle Cloud Infrastructure Console pages and Oracle Database Actions pages.  Selecting Database Actions will open a new tab.
 
 ## Task 1: Create a Notifications Service Subscription Topic.
 
   1. Open the OCI Console at cloud.oracle.com, then click the icon in the upper left corner to open the **Navigation Menu**.
 
-  ![Click Navigation Menu](./images/task-1-scrn-1.png)
+  ![Click Navigation Menu](./images/task-1-scrn-0.png)
 
   2. Select **Developer Services** from the Navigation Menu
 
@@ -56,10 +56,7 @@ In this lab, you’ll practice setting up the live feed capabilities,that can be
          * **Condition:** Event Type
          * **Service Name:** Object Storage
          * **Event Type:** Object – Create
-    * Enter the following Details under Actions
-         * **Action Type:** Notifictions
-         * **Notifications Compartment:** Select the compartment to use for the notifications
-         * **Topic:** Select the name of the topic you created earlier.
+         * **Action Type:** Notifications
 
     * Click **Create Rule**.
 
@@ -79,10 +76,9 @@ In this lab, you’ll practice setting up the live feed capabilities,that can be
 
   4. Navigate to the assigned Autonomous Database.
 
-    * Confirm the assigned **Tenancy** is being used.  If not, use the drop-down provided to select the assigned one.
-    * Confirm the assigned **Compartment** is being used.  If not, click on the icon and navigate to the assigned one.
+      * Confirm the assigned **Compartment** is being used.  If not, click on the icon and navigate to the assigned one.
 
-    * Select the assigned **Autonomous Database** from list displayed.
+      * Select the assigned **Autonomous Database** from list displayed.
 
     ![Select Assigned ADB](./images/navigate-to-assigned-adb.png)
 
@@ -114,27 +110,27 @@ In this lab, you’ll practice setting up the live feed capabilities,that can be
 
   11. Enter desired Table Settings, then click **Next**.
 
-      ![Load Data from Object Storage](./images/task-3-scrn-6.png)
+      ![Load Data from Object Storage](./images/task-3-scrn-6a.png)
 
-  12. Verify that the expected results are shown on the Preview page, then click **Next**.
+  12. Review the information shown on the Preview page, then click **Next**.
 
       ![Load Data from Object Storage](./images/task-3-scrn-7.png)
 
-  13. Enter details on the page below...
+  13. Complete the creation of the Live Table Feed 
+  
+      * Take the following actions \...
+        * Enter the **Live Table Feed Name:**
+        * Check box to **Enable for Notification**
+        * Uncheck box to **Enable for Scheduling**
+      * Click **Create**
 
-    * **Live Table Feed Name:**
-    * **Enable for Notification check box:** check
-    * **Enable for Scheduling check box:** uncheck
-
-    ![Load Data from Object Storage](./images/task-3-scrn-8.png)
-
-    * Click **Create**
+      ![Load Data from Object Storage](./images/task-3-scrn-8.png)
 
   14. When the popup box appears, select **Yes** to run the Live Feed.
 
       ![Load Data from Object Storage](./images/task-3-scrn-9.png)
 
-  15. **Review** the details for the newly created Live Feed.  Then click the hamburger button in the upper left corner.
+  15. **Review** the details for the newly created Live Feed.  Then click the hamburger button in the upper right corner of the panel.
 
       ![Load Data from Object Storage](./images/task-3-scrn-10.png)
 
@@ -145,6 +141,8 @@ In this lab, you’ll practice setting up the live feed capabilities,that can be
   17. Copy the notification URL for the live table feed and click OK to proceed to next task.
 
       ![Load Data from Object Storage](./images/task-3-scrn-12.png)
+
+  >**Note:** The notification URL will be used later in Task #4.
 
 ## Task 4: Create a Notifications Service Subscription
 
