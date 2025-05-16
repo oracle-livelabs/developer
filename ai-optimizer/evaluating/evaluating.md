@@ -6,6 +6,8 @@ We are confident that adjusting certain parameters can improve the quality and a
 
 In this lab, you will explore the *Testbed* feature. The Testbed allows you to evaluate your chatbot at scale by generating a Q&A test dataset and automatically running it against your current configuration.
 
+**Note**: The example shown in this lab relies on gpt-4o-mini. Feel free to use your local LLMs (e.g. llama3.1) if you choose to or can't use OpenAI LLMs. 
+
 Estimated Time: -- minutes
 
 ### Objectives
@@ -29,7 +31,7 @@ As a first step, you can either upload an existing Q&A test set—either from a 
 
 ## Task 2: Generate a Q&A Test dataset
 
-The AI Optimizer allows you to generate as many questions and answers as you need, based on a single document from your knowledge base. These documents are stored as a vector store with their own embeddings. To enable test dataset generation, simply select the corresponding radio button:
+The AI Optimizer allows you to generate as many questions and answers as you need, based on a single document from your knowledge base. To enable test dataset generation, simply select the corresponding radio button:
 
 ![generate](./images/generatenew.png)
 
@@ -111,7 +113,7 @@ Now you are ready to perform an evaluation on the Q&As you generated in the prev
     The main fields displayed are:
 
       * **question**: the submitted question
-      * **reference_asnwer**: the expected answer used as a benchmark
+      * **reference_answer**: the expected answer used as a benchmark
       * **reference_context**: the source document section used to generate the Q&A pair
       * **agent_answer**: the response provided by the chatbot based on the current configuration and vector store
       * **correctness_reason**: an explanation (if any) of why the response was considered incorrect. If correct, this field will display **None**.

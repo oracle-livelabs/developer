@@ -4,6 +4,8 @@
 
 In this lab, we will experiment with different configurations, adjusting parameters and using various LLMs to observe how the answers vary.
 
+**NOTE**: The answers received by any LLM are based on probabilistic models. Therefore, the answer received in your own testing might differ from the ones shown in this documentation.
+
 Estimated Lab Time: -- minutes
 
 ### Objectives
@@ -20,7 +22,7 @@ This lab assumes you have:
 
 ## Task 1: Play with the Parameters
 
-Using the **TEST1** vector store, you will experiment with the main parameters configured as shown below to observe how answer quality changes. We will begin by adjusting the **Temperature** parameter. For the first test, set the Temperature to 0 to minimize variability in the responses. Then, repeat the same question with a different Temperature value to observe how the answers change.
+Using the **TEST1** vector store, you will experiment with the main parameters configured as shown below to observe how answer quality changes. We will begin by adjusting the **Temperature** parameter. For the first test, set the Temperature to 0 to minimize creativity in the responses. Then, repeat the same question with a different Temperature value to observe how the answers change.
 
 **IMPORTANT**: After each question—regardless of whether you're repeating the same one with different settings—be sure to clear the history by clicking the **Clear** button. We will start by testing the first question.
 
@@ -73,7 +75,11 @@ Additionally, you can use the DBMS_VECTOR.INDEX_ACCURACY_REPORT function to capt
 
 **COMMENT**: As you can see, setting the Temperature to 1 increases the variability of the output, often resulting in an answer that differs significantly from the previous one.
 
-Now let's move onto the second question and see the results:
+We will now experiment with the **TopK** parameter, while keeping Temperature fixed at 0 to minimize output variability.
+
+**IMPORTANT**: After each question—regardless of whether you're repeating the same one with different settings—be sure to clear the history by clicking the **Clear** button.
+
+Let's move onto a different question and see the results:
 
   * LLM: llama3.1
   * TopK: 4
@@ -92,86 +98,7 @@ For example, if you have a table with a column named 'text' where each row conta
 SELECT UTL_TO_EMBEDDING(text) FROM YOUR_TABLE;
 Make sure that your database setup includes the access details required for whatever vector embedding model is being referenced. Without knowing more about how UTL_TO_EMBEDDING function expects setup on such models within Oracle databases, it's not possible to offer more specifics than this.
 ```
-  * LLM: llama3.1
-  * TopK: 4
-  * Search Type: Similarity
-  * Temperature: 1
-  * Vector Store: TEST1
 
-```text
-Q: In Oracle Database 23ai, how do I convert string text to embeddings using PL/SQL?
-
-A: To convert string text to embeddings in Oracle Database 23c (note: not 23ai) using PL/SQL, you can use the UTL_TO_EMBEDDING function.
-Here's a sample code snippet that should help:
-SET SERVEROUTPUT ON;
-
--- sample input text
-DECLARE 
-   input_text VARCHAR2(200);
-BEGIN
-   -- define your input string
-   input_text := 'Input String for Embedding';
-
-   -- generate vector embedding using UTL_TO_EMBEDDING function
-   DECLARE 
-      embedding DBMS_VECTOR.CHUNK;
-   BEGIN
-      embedding := UTL_TO_EMBEDDING(input_text, schema_name => 'SCHEMA_NAME', model_type => 'TEXT');
-
-      -- process the embedding chunk
-      FOR i IN 1..DBMS_VECTOR.SIZE(embedding,
-                                  type => VECTOR_ELEMENT_DOUBLE) LOOP
-         DBMS_OUTPUT.PUT_LINE('Embedding Element ' || TO_CHAR(i, 'FM0'));
-         DBMS_OUTPUT.PUT_LINE(DBMS_VECTOR.GET_ELEMENT(embedding,
-                                                    i));
-      END LOOP;
-   END;
-
-END;
-/
-Note that you need to replace 'SCHEMA_NAME' with the actual name of your schema where the vector embedding model is stored.
-The code above demonstrates how to convert a text string into embeddings using Oracle Database's built-in UTL_TO_EMBEDDING function. It first sets up an example input string, then generates an embedding chunk from it, and finally prints out each element of that embedding chunk in loop.
-Be sure to run this within the context of your database schema that contains the vector embedding model you're using.
-To obtain more specific information or advice about implementation details including data types of variables declared for use with UTL_TO_EMBEDDING function according to your exact scenario, I recommend referring directly to official Oracle documentation.
-```
-**COMMENT**: As in the previous example, increasing the Temperature results in more varied responses from the LLM.
-
-We will now experiment with the **TopK** parameter, while keeping Temperature fixed at 0 to minimize output variability.
-
-**IMPORTANT**: After each question—regardless of whether you're repeating the same one with different settings—be sure to clear the history by clicking the **Clear** button.
-
-  * LLM: llama3.1
-  * TopK: 10
-  * Search Type: Similarity
-  * Temperature: 0
-  * Vector Store: TEST1
-
-```text
-Q: In Oracle Database 23ai, how do I determine the accuracy of my vector indexes?
-
-A: To determine the accuracy of your vector indexes in Oracle Database 23c, you can use the DBMS_VECTOR.INDEX_ACCURACY_QUERY procedure.
-The syntax for this procedure is as follows: DBMS VECTOR . INDEX ACCURACY QUERY ( OWNER_NAME IN VARCHAR2, INDEX_NAME IN VARCHAR2, QV IN VECTOR, TOP_K IN NUMBER, TARGET_ACCURACY IN NUMBER ) return VARCHAR2;
-Here's an example usage of this procedure:
-BEGIN 
-    q_v := to_vector('[0,1,1,0,0]');
-    report := dbms_vector.index_accuracy_query(
-        OWNER_NAME => 'COSMOS', 
-        INDEX_NAME => 'GALAXIES_HNSW_IDX',
-        qv => q_v,
-        top_K => 10, 
-        target_accuracy => 90 );
-    dbms_output.put_line(report); 
-END; 
-/
-You can also use the DBMS_VECTOR.INDEX_ACCURACY_REPORT function to capture accuracy values achieved by approximate searches using a particular vector index for a certain period of time.
-report := DBMS_VECTOR.INDEX_ACCURACY_REPORT (
-    OWNER_NAME => 'COSMOS', 
-    INDEX_NAME => 'GALAXIES_HNSW_IDX',
-    START_TIME => sysdate - interval '1' day, 
-    END_TIME => sysdate );
-Additionally, the GET_INDEX_STATUS procedure can be used to retrieve the status of a vector index. For example:
-exec DBMS_VECTOR.GET_INDEX_STATUS('VECTOR_USER','VIDX_HNSW');
-```
 
   * LLM: llama3.1
   * TopK: 10
@@ -244,7 +171,9 @@ I hope this helps!
 ```
 
   * LLM: llama3.1
+  * Top K: 4
   * Fetch K: 20
+  * Degree of Diversity: 0.5
   * Search Type: Maximal Marginal Relevance
   * Temperature: 0
   * Vector Store: TEST1
@@ -271,7 +200,7 @@ This will provide an accuracy report for the specified query vector and target a
 Alternatively, you can use the TOVECTOR function to insert vector data into your application.
 ```
 
-**COMMENT**: Even though the two answers convey similar overall content, they differ in syntax and structure—solely as a result of using a different distance metric.
+**COMMENT**: In this case, even though the MMR retrieves 20 chunks and removes results that differ by less than 50% in diversity, ultimately providing 4 top-K results that should offer more varied information, the results are better than with a plain similarity search using top-K = 4. This approach can, for example, increase efficiency in production, as it directly provides the 4 top-K chunks, rather than adding an extra step in the execution process that involves computing and fetching the 4 most diverse chunks from the 20 top-K results retrieved.
 
 ## Task 3: Compare two different vector stores
 

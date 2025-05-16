@@ -117,7 +117,7 @@ The **AI Optimizer** provides an easy to use front-end for experimenting with **
    ```
 ## Task 4: Vector Storage - Oracle Database 23ai Free
 
-AI Vector Search in Oracle Database 23ai provides the ability to store and query private business data using a natural language interface. The AI Optimizer uses these capabilities to provide more accurate and relevant **LLM** responses via Retrieval-Augmented Generation (**RAG**). [Oracle Database 23ai Free](https://www.oracle.com/uk/database/free/get-started/) provides an ideal, no-cost vector store for this workshop.
+AI Vector Search in Oracle Database 23ai provides the ability to store and query  by similarity text and multimedia data. The AI Optimizer uses these capabilities to provide more accurate and relevant **LLM** responses via Retrieval-Augmented Generation (**RAG**). [Oracle Database 23ai Free](https://www.oracle.com/uk/database/free/get-started/) provides an ideal, no-cost vector store for this workshop.
 
 To start Oracle Database 23ai Free:
 

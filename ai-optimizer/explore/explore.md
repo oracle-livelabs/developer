@@ -75,7 +75,7 @@ Let's check the models available for use. You'll need to navigate to the *Models
   * Pull the llama3.2 LLM:
 
       ```bash
-         ollama pull llama3.2
+         podman exec -it ollama ollama pull llama3.1
       ```
   * Now, you will need to enable it in the model list. Go back to the *Models* tab, under the *Language Models* section and press the *Add* button. Now fill in the form that just appeared with the values shown in the following snapshot:
 
@@ -111,7 +111,7 @@ In Oracle Database 23ai, how do I convert string text to embedding using PL/SQL?
 
 NOTICE: *if you see a **Database has no Vector Stores. Disabling RAG.** message above, don't panic! That's because you haven't created a vector store yet and thus you can't use the RAG functionality*.
 
-As you can see, even if the questions refer to Oracle Database 23ai, the LLM mentions Oracle Database 23c. This is known as **Knowledge Cutoff**, meaning that probably the LLM was trained before Oracle Database 23c was renamed as 23ai. 
+As you will probably be able to notice, even if the questions refer to Oracle Database 23ai, the LLM will mention Oracle Database 23c. This is known as **Knowledge Cutoff**, meaning that probably the LLM was trained before Oracle Database 23c was even renamed as 23ai. 
 
 Moreover, the LLM tends to answer in a generic way, with no specific mention to the actual script needed to perform the operations requested. In Lab 3, we will compare these results with the one obtained using Retrieval-Augmented Generation (RAG), where more context is given to the LLMs.
 

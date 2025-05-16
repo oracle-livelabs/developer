@@ -2,7 +2,7 @@
 
 ## Introduction
 
-In this lab, you will explore the environment that was created in the [*Get Started*](https://markxnelson.github.io/developer/ai-optimizer/workshops/desktop/index.html?lab=get-started) module. You will set up the database connection, configure the OCI credentials, add new LLMs and Embedding models and test out the *Chat* feature for the first time.
+In this lab, we will perform a first vector store ingestion to test that it works. We will split&embed one document and store its vector embeddings inside the Oracle 23ai Database set up earlier. We will then be able to inspect the content of the tables that will be created.
 
 Estimated Lab Time: -- minutes
 
@@ -28,7 +28,9 @@ In the *Split/Embed* tab, the framework allows you to upload various types of do
 2. Choose the embedding model and its parameters
 
     Here, you can choose from the embedding models you selected during the configuration phase we had in Lab 1 using a drop-down menu.
-    For this example, choose **mxbai-embed-large**. The chunk size defines the length of each segment into which the document will be split, while the chunk overlap represents the percentage of overlap between consecutive chunks relative to the chunk size.
+    For this example, choose **mxbai-embed-large**. 
+    
+    The **chunk size** defines the length of each segment into which the document will be split, while the **chunk overlap** represents the percentage of overlap between consecutive chunks relative to the chunk size.
 
     Additionally, you can select different distance metrics and index types to experiment with various vector representations of the same document, allowing you to identify the configuration that best meets your needs.
 

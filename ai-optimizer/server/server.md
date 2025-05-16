@@ -49,9 +49,10 @@ Now that the API Server is running, you can perform API calls against it.
 * Copy and run the following curl command in the terminal:
 
     ```bash
+    #Bearer Key to be set accordingly to task 1.
     curl -X POST "http://localhost:8001/v1/chat/completions" \
      -H "Content-Type: application/json" \
-     -H "Authorization: Bearer abcd" \
+     -H "Authorization: Bearer abcd" \ 
      -H "client: server" \
      -d '{
        "model": "llama3.1",

@@ -58,7 +58,11 @@ In Oracle Database 23ai, how do I convert string text to embeddings using PL/SQL
 
 ![rag-query-2](images/rag-query-2.png)
 
-You can see how the answers differ from the ones we received earlier. The responses should be different and include references to DBMS_VECTOR and links to the embedded documentation where this information can be found. It might even include an apology!
+You can see how the answers differ from the ones we received earlier. The responses should be different and include references to DBMS_VECTOR and links to the embedded documentation where this information can be found. 
+
+You can also click on one of the *Reference* buttons, to see where the information was retrieved from in the file:
+
+![reference](images/reference.png)
 
 ## Task 3 (optional): Repeat Task 2 using OpenAI models
 
