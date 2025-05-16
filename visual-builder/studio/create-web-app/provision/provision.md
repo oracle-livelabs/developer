@@ -39,9 +39,9 @@ Before you provision a VB Studio instance, create a Visual Builder instance to h
 
    ![This image shows a list of existing compartments on the Compartments page. The Create Compartment button is highlighted.](images/oci-compartments-create.png "")
 
-   c. Enter `VBCompartment` as the name, add a description (for example, `VBCompartment for workshop`), and leave the Parent Compartment set to the default root compartment. Click **Create Compartment**.
+   c. Enter a name for the compartment (for example, `VBCompartment`), add a description (for example, `VBCompartment for workshop`), and leave the Parent Compartment set to the default root compartment. Click **Create Compartment**.
 
-   ![This image shows the Create Compartment dialog with fields filled in.](images/oci-compartments-vb-create-details.png "")
+   ![This image shows the Create Compartment dialog, with Name set to VBCompartment, Description set to VBCompartment for workshop, and Parent Compartment set to <tenancyName> (root).](images/oci-compartments-vb-create-details.png "")
 
 2. From the navigation menu, select **Developer Services**, then **Visual Builder**.
 
@@ -75,17 +75,15 @@ Provision a VB Studio instance to develop and deploy a web app. You can create o
 
    c. Enter a name for the compartment (for example, `VBStudioCompartment`), add a description (for example, `VBStudioCompartment for workshop`), and leave the Parent Compartment set to the default root compartment. Click **Create Compartment**.
 
-      ![This image shows the Create Compartment dialog with fields filled in.](images/oci-compartments-create-details.png "")
+      ![This image shows the Create Compartment dialog, with Name set to VBStudioCompartment, Description set to VBStudioCompartment for workshop, and Parent Compartment set to <tenancyName> (root).](images/oci-compartments-create-details.png "")
 
 2. From the navigation menu, select **Developer Services**, then **Visual Builder Studio**.
 
    ![Navigation to Visual Builder Studio under Developer Services is shown.](images/oci-service-navigation-vbs.png "")
 
-3. On the Visual Builder Studio Instances page, click **Create Visual Builder Studio**.
+3. On the Visual Builder Studio Instances page, make sure you're in the default root compartment. If required, click the **Compartment** filter next to Applied filters, select `tenancyName` **(root)**, and click **Apply filter** to switch to the root compartment. Click **Create Visual Builder Studio**.
 
     ![The Visual Builder Studio instances page is shown, with the Create Visual Builder Studio button highlighted.](images/create-instance-vbs.png "")
-
-   If the option isn't enabled, you're likely not in the default root compartment: Click the **Compartment** filter next to Applied filters, select `tenancyName` **(root)**, and click **Apply filter** to switch to the root compartment.
 
 4. On the Instance Name step of the Create Visual Builder Studio Instance wizard, give your instance a unique name and make sure your root compartment is selected. Click **Next**.
 
@@ -95,7 +93,7 @@ Provision a VB Studio instance to develop and deploy a web app. You can create o
 
    ![This image shows the CI/CD setup screen, with the root compartment selected.](images/confirm-vbs.png "")
 
-   *Note: If you don't provide authorization, your instance is provisioned with a built-in free account that provides access to a minimal set of resources (one free VM build executor with fixed software in the default build executor template). You'll also need to manually authorize this VB Studio instance to access your Visual Builder instance.*
+   *Note: If you don't provide authorization, your instance is provisioned with a minimal set of resources (one built-in free VM with fixed software in the default build executor template). You'll also need to manually authorize this VB Studio instance to access your Visual Builder instance.*
 
    Click **Create Visual Builder Studio**.
 
@@ -103,7 +101,7 @@ Provision a VB Studio instance to develop and deploy a web app. You can create o
 
 ## Task 3: Authorize VB Studio to access Visual Builder
 
-Your VB Studio instance must be authorized to access Visual Builder instances connected to your OCI account. This step is mostly required if your VB Studio instance was provisioned with the built-in free account, but there may be other scenarios where this authorization is missing. Therefore, it's recommended that you always check your VB Studio instance's details to make sure the policy statement that enables this access is correctly defined.
+Your VB Studio instance must be authorized to access Visual Builder instances connected to your OCI account. This step is mostly required if your VB Studio instance was provisioned with the built-in free VM, but there may be other scenarios where this authorization is missing. Therefore, it's recommended that you always check your VB Studio instance's details to make sure the policy statement that enables this access is correctly defined.
 
 1. From the navigation menu, select **Identity & Security**, then **Policies**.
 
@@ -111,7 +109,7 @@ Your VB Studio instance must be authorized to access Visual Builder instances co
 
 2. On the Policies page, make sure the root compartment is selected.
 
-3. [Create a policy](https://docs.oracle.com/en-us/iaas/Content/Identity/policymgmt/managingpolicies_topic-To_create_a_policy.htm) that applies to the root compartment (for example, `VBStudio-Policy-<instance name>-<compartment name>`) with *all* of these statements:
+3. [Create a policy](https://docs.oracle.com/en-us/iaas/Content/Identity/policymgmt/managingpolicies_topic-To_create_a_policy.htm) that applies to the root compartment (for example, `VBStudio-Policy-<instanceName>-<compartmentName>`) with *all* of these statements:
 
     ```text
     <copy>
@@ -123,13 +121,17 @@ Your VB Studio instance must be authorized to access Visual Builder instances co
 
    `<VBS_instance_OCID>` is the OCID of the VB Studio instance, as shown on the instance's Instance Info tab.
 
-   If a policy exists for your VB Studio instance, select the policy and make sure it includes all the preceding statements. If it's missing a statement:
+   If a policy exists for your VB Studio instance:
 
-      a. Click **Edit Policy Statements**.
+      a. Select the policy on the Policies page and click the **Statements** tab.
 
-      b. Select **Advanced** under Policy Builder, then add the missing policy statement in the text area.
+      b. Make sure the policy definition includes all the preceding statements.
 
-      c. Click **Save Changes**.
+      c. If a statement is missing, click **Edit Policy Statements**.
+
+      d. Select **Advanced** under Policy Builder, then add the missing policy statement in the text area.
+
+      e. Click **Save Changes**.
 
 ## Task 4: Access VB Studio
 
