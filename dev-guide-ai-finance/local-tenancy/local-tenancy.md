@@ -254,7 +254,7 @@ To run the application, Python version 3.9 or higher is required. Follow the
         https://inference.generativeai.us-chicago-1.oci.oraclecloud.com
         </copy
     ````
-13. Navigate back to you Autonomous Database to copy your ADB OCID. Click **Oracle Database** -> **Autonomous Database**.
+13. Navigate back to your Autonomous Database to copy your ADB OCID. Click **Oracle Database** -> **Autonomous Database**.
 
    ![Select Autonomous Database from menu](./images/select-atp.png" ")
 
@@ -392,30 +392,34 @@ OCI Generative AI is a fully managed service available via API to seamlessly int
 ## Troubleshooting
 If you encounter any issues during the setup, here are a few common troubleshooting tips: 
 
-Missing Keys or Permissions: Double-check your .oci/config for typos and ensure the key file path is correct and readable. 
+* **Missing Keys or Permissions**: Double-check your .oci/config for typos and ensure the key file path is correct and readable. 
 
-OCI SDK Errors: Ensure the required OCI Python SDK is installed: 
+* **OCI SDK Errors**: Ensure the required OCI Python SDK is installed: 
 
-pip install oci  
+    ````
+        <copy>
+        pip install oci
+        </copy
+    ````  
 
-GenAI Access Issues: Verify your user/group has the correct IAM policy applied. 
+* **GenAI Access Issues**: Verify your user/group has the correct IAM policy applied. 
 
-Virtual Environment Not Activating: Ensure that you're using the correct command for your operating system. If the issue persists, try recreating the virtual environment. 
+* **Virtual Environment Not Activating**: Ensure that you're using the correct command for your operating system. If the issue persists, try recreating the virtual environment. 
 
-Dependencies Installation Issues: Double-check the requirements.txt file to ensure it contains the correct package names. If a specific package fails, you can try installing it manually with pip install <package-name>. 
+* **Dependencies Installation Issues**: Double-check the requirements.txt file to ensure it contains the correct package names. If a specific package fails, you can try installing it manually with pip install <package-name>. 
 
-Database Connection Errors: Ensure that the database credentials in the .env file are correct and that you have access to the Autonomous Database. 
+* **Database Connection Errors**: Ensure that the database credentials in the .env file are correct and that you have access to the Autonomous Database. 
 
 ## Additional Notes
-Your .oci/config and .environment files contain sensitive credentials. Do not commit them to version control. 
+* Your .oci/config and .environment files contain sensitive credentials. Do not commit them to version control. 
 
-Keep your oci_api_key.pem secure and never share it. 
+* Keep your oci\_api\_key.pem secure and never share it. 
 
-If you use multiple OCI profiles, you can add them to ~/.oci/config and reference them explicitly in your code. 
+* If you use multiple OCI profiles, you can add them to ~/.oci/config and reference them explicitly in your code. 
 
-This setup is intended for development and local testing purposes. If you're looking to deploy the application in production, additional configurations may be required. 
+* This setup is intended for development and local testing purposes. If you're looking to deploy the application in production, additional configurations may be required. 
 
-Ensure that your system's Python version is compatible (3.9 or higher) and that the virtual environment is activated whenever you work on the application. 
+* Ensure that your system's Python version is compatible (3.9 or higher) and that the virtual environment is activated whenever you work on the application. 
 
 ## Conclusion
 By following the steps outlined above, you should be able to set up and run the application locally. If you face any issues, refer to the troubleshooting section or contact the support team for assistance. 
