@@ -4,7 +4,7 @@
 
 In this lab, we will perform a first vector store ingestion to test that it works. We will split&embed one document and store its vector embeddings inside the Oracle 23ai Database set up earlier. We will then be able to inspect the content of the tables that will be created.
 
-Estimated Lab Time: -- minutes
+Estimated Lab Time: 15 minutes
 
 ### Objectives
 
@@ -65,7 +65,7 @@ Now that you've embedded your document, you can query the content of the Vector 
 In your VS Code IDE, click on the SQL Developer plugin icon to use it. Then, open a new SQL script and execute this sql command:
 
 ```sql 
-select * from VECTOR.TEST1_MXBAI_EMBED_LARGE_512_103_COSINE_HNSW;
+select * from WALKTHROUGH.TEST1_MXBAI_EMBED_LARGE_512_103_COSINE_HNSW;
 ```
 You will then retrieve the rows from the newly created table.
 

@@ -4,7 +4,7 @@
 
 In this lab, you will explore the environment that was created in the *Get Started* lab. You will set up the database connection, configure the OCI credentials, add new LLMs and Embedding models and test out the *Chat* feature for the first time.
 
-Estimated Time: -- minutes
+Estimated Time: 15 minutes
 
 ### Objectives
 
@@ -99,7 +99,7 @@ scroll down the left-side menu to find the **Chat model** menu:
 
 ![chat models](images/chatmodel.png)
 
-and, with the **Enable RAG?** check-box unselected, choose the **gpt-4o-mini** and ask generic questions like:
+and, with the **Enable RAG?** check-box unselected, choose the **llama3.1** model and ask generic questions like:
 
 ```text
 In Oracle Database 23ai, how do I determine the accuracy of my vector indexes?
