@@ -6,7 +6,7 @@ In this lab, we will experiment with different configurations, adjusting paramet
 
 **NOTE**: The answers received by any LLM are based on probabilistic models. Therefore, the answer received in your own testing might differ from the ones shown in this documentation.
 
-Estimated Lab Time: -- minutes
+Estimated Lab Time: 15 minutes
 
 ### Objectives
 
@@ -61,13 +61,19 @@ A: To determine the accuracy of your vector indexes in Oracle Database 23c AI, y
 According to the provided documentation, this procedure provides an accuracy report for a top-K index search for a specific query vector and a specific target accuracy
 Here's how you can do it:
 Declare the necessary variables:
+
 declare
     q_v VECTOR; 
     report varchar2(128);
+
 Initialize the query vector q_v with the desired vector (in this case, [0,1,1,0,0]):
+
 q_v := to_vector('[0,1,1,0,0]');
+
 Execute the DBMS_VECTOR.INDEX_ACCURACY_QUERY procedure:
+
 exec DBMS_VECTOR.INDEX_ACCURACY_QUERY('OWNER_NAME', 'INDEX_NAME', q_v, TOP_K, target_accuracy);
+
 Replace 'OWNER_NAME', 'INDEX_NAME', TOP_K, and target_accuracy with your actual values.
 This will provide you with an accuracy report for the specified vector index.
 Additionally, you can use the DBMS_VECTOR.INDEX_ACCURACY_REPORT function to capture accuracy values achieved by approximate searches using a particular vector index for a certain period of time.
@@ -95,7 +101,9 @@ To convert a text string to an embedding using this function, follow these steps
 The database needs to have access to an external vector embedding model stored either internally in the database or accessed through a third-party BINARY vector embedding.
 Construct your query such that it makes a call on UTL_TO_EMBEDDING. This function likely requires at least one parameter which would be the text string to convert into embeddings.
 For example, if you have a table with a column named 'text' where each row contains the string for conversion:
+
 SELECT UTL_TO_EMBEDDING(text) FROM YOUR_TABLE;
+
 Make sure that your database setup includes the access details required for whatever vector embedding model is being referenced. Without knowing more about how UTL_TO_EMBEDDING function expects setup on such models within Oracle databases, it's not possible to offer more specifics than this.
 ```
 
@@ -111,9 +119,11 @@ Q: In Oracle Database 23ai, how do I convert string text to embeddings using PL/
 
 A: To convert a string text to an embedding using PL/SQL in Oracle Database 23c (not 23ai, as there is no such version), you can use the DBMS_VECTOR package.
 Here's a simple example:
+
 DECLARE 
   input  CLOB;
   v      VECTOR;
+
 BEGIN
   input := 'Your string here';
   SELECT dbms_vector.utl_to_embedding(input, json('{"provider":"database", "model":"doc_model"}')) INTO v FROM dual;
@@ -151,9 +161,11 @@ According to the documentation provided, you have two options:
 DBMS_VECTOR.INDEX_ACCURACY_QUERY: This function allows you to verify the accuracy of a vector index for a given query vector, top-K, and target accuracy. You can call this function by passing in the OWNER_NAME, INDEX_NAME, QV (query vector), TOP_K (top K results), and TARGET_ACCURACY as parameters.
 DBMS_VECTOR.INDEX_ACCURACY_REPORT: This function captures the accuracy values achieved by approximate searches using a particular vector index for a certain period of time.
 Here's an example code snippet that demonstrates how to use DBMS_VECTOR.INDEX_ACCURACY_QUERY:
+
 DECLARE 
     q_v VECTOR; 
     report CLOB;
+
 BEGIN
     q_v := TO_VECTOR('[0,1,1,0,0]');
 
@@ -166,6 +178,7 @@ BEGIN
 
     DBMS_OUTPUT.PUT_LINE(report);
 END;
+
 Make sure to replace the placeholder values with your actual OWNER_NAME, INDEX_NAME, and vector values.
 I hope this helps!
 ```
@@ -186,9 +199,11 @@ According to the provided documentation and example usage, you need to:
 Declare a query vector (q_v) using the TO_VECTOR function.
 Call the INDEX_ACCURACY_QUERY procedure with q_v as a parameter, along with other optional parameters as needed (e.g., target accuracy).
 Here's an adapted code snippet from the example usage:
+
 DECLARE
     q_v            VECTOR;
     report        VARCHAR2(128);
+
 BEGIN
     q_v := to_vector('[0,1,1,0,0]');
 
@@ -218,16 +233,20 @@ We can also explore how different combinations of **LLMs** and vector stores can
 Q: In Oracle Database 23ai, how do I create a vector column?
 
 A: To create a vector column in Oracle Database 23c1, you can use the VECTOR data type. The syntax to declare a vector column is as follows:
+
 CREATE TABLE table_name (
     id NUMBER,
     embedding VECTOR
 );
+
 You don't need to specify the number of dimensions or their format initially. This allows you to enter vectors of different dimensions with various formats. You can use the TO_VECTOR function with specific dimensions and format if needed, as shown in a note in your passage.
 Here is an example SQL statement that creates a vector column without specifying dimensions and format (simplified):
+
 CREATE TABLE my_vectors (
     id NUMBER,
     embedding VECTOR
 );
+
 You can then insert data into the embedding column using either a string representation of the vector or the explicit use of the TO_VECTOR function with specific number of dimensions, format, or storage format.
 ```
 
@@ -241,9 +260,13 @@ You can then insert data into the embedding column using either a string represe
 Q: In Oracle Database 23ai, how do I create a vector column?
 
 A: To create a vector column in Oracle Database 23ai, you can declare a table with a column of the VECTOR data type. Here is a simple example:
+
 CREATE TABLE my_vectors (id NUMBER, embedding VECTOR);
+
 In this example, the embedding column is defined as a VECTOR type. You do not need to specify the number of dimensions or their format if you want flexibility. If you want to impose constraints, you can specify them like this:
+
 CREATE TABLE my_vectors (id NUMBER, embedding VECTOR(768, INT8));
+
 In this case, each vector must have 768 dimensions formatted as INT8. For more detailed information, see the section on creating tables using the VECTOR data type in the documentation.
 ```
 

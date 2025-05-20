@@ -4,7 +4,7 @@
 
 Now that you’ve created the vector stores, you can begin testing the knowledge base built in *Lab 2*. In this Lab, you will test the knowledge stored in the `TEST1` vector store, which serves as an example of an augmented LLM based on publicly available sources.
 
-Estimated Time: -- minutes
+Estimated Time: 5 minutes
 
 ### Objectives
 

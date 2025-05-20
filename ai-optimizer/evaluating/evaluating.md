@@ -8,7 +8,7 @@ In this lab, you will explore the *Testbed* feature. The Testbed allows you to e
 
 **Note**: The example shown in this lab relies on gpt-4o-mini. Feel free to use your local LLMs (e.g. llama3.1) if you choose to or can't use OpenAI LLMs. 
 
-Estimated Time: -- minutes
+Estimated Time: 15 minutes
 
 ### Objectives
 
@@ -37,7 +37,7 @@ The AI Optimizer allows you to generate as many questions and answers as you nee
 
 1. Upload a document 
     
-    Upload the same document that was used to create the vector store. You can easily download it from [this link](https://docs.oracle.com/en/database/oracle/oracle-database/23/tdpjd/get-started-java-development.pdf).
+    Upload the same document that was used to create the vector store. You can easily download it from [this link](https://docs.oracle.com/en/database/oracle/oracle-database/23/vecse/ai-vector-search-users-guide.pdf).
 
 2. Increase the number of questions to be generated to 10 or more 
     

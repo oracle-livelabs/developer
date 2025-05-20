@@ -6,10 +6,12 @@ The AI Optimizer allows you to export the configured chatbot as a ready-to-run m
 
 In the current release, only fully self-contained Ollama configurations (embedding + chat model) or OpenAI-based configurations are supported.
 
+Estimated Time: 10 minutes
+
 ### Objectives
 
 In this lab, you will:
-* Export a RAG configuration as *SpringAI* microservice
+* Export a RAG configuration as a *SpringAI* microservice
 * Start the Springboot microservice
 * Test the RAG-based microservice
 
