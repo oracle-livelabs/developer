@@ -29,7 +29,7 @@ Visual Builder instances use Oracle Cloud Infrastructure (OCI) as underlying inf
 
 1. On the Oracle Cloud Get Started page, click the menu ![Menu icon](images/hamburger.png) in the upper left corner.
 
-2. Select **Identity & Security**, then **Compartments**.
+2. Select **Identity & Security**, then **Compartments** under Identity.
 
     ![This image shows navigation to Identity & Security, then Compartments under Identity.](https://oracle-livelabs.github.io/common/images/console/id-compartment.png "")
 
@@ -39,34 +39,35 @@ Visual Builder instances use Oracle Cloud Infrastructure (OCI) as underlying inf
 
 4. Enter a name (for example, `VBCompartment`) and add a description (`VBCompartment for workshop`). Leave the Parent Compartment set to the default and click **Create Compartment**.
 
-  ![This image shows the Create Compartment dialog with fields filled in.](./images/oci-compartments-create-details.png "")
+  ![This image shows the Create Compartment dialog, with Name set to VBCompartment, Description set to VBCompartment for workshop, and Parent Compartment set to <tenancyName> (root).](./images/oci-compartments-create-details.png "")
 
    A new **VBCompartment** appears in the Compartments table.
 
-
 ## Task 2: Create an instance
 
-1. From the menu in the upper left corner, click **Developer Services**, then select **Visual Builder**.
+1. From the navigation menu, click **Developer Services**, then select **Visual Builder**.
 
     ![This image shows navigation to Visual Builder under Developer Services](images/platform.png "")
 
-2. In the **Compartment** field on the Visual Builder instances page, select the `VBCompartment` you created to host the Visual Builder instance, then click **Create Instance**.
+2. Switch to the compartment you created for Visual Builder resources: Click the **Compartment** filter next to Applied filters, select **VBCompartment**, and click **Apply filter**. Click **Create Visual Builder instance**.
 
-    ![This image shows the Visual Builder Instances screen, with the Compartment drop-down on the left and the Create Instance button on the right.](images/create-instance.png "")
+   ![The Instances screen is shown, with the Compartment filter set to VBCompartment and the Create Visual Builder instance button under it.](images/create-instance.png " ")
 
-3. On the Create Instance screen, give your instance a unique name, one that is unlikely to be chosen by another user.  Click **Create Visual Builder Instance**.
+3. On the Create instance screen, give your instance a unique name, one that is unlikely to be chosen by another user. Leave all other fields as is for the purposes of this tutorial. Click **Create Visual Builder instance**.
 
-    ![This image shows details of the Create Instance page, with the Name, Compartment, and Nodes fields. The Create Visual Builder instance button is also shown.](images/detail.png "")
+   ![This image shows details of the Create instance page, with the Name set to myVisualBuilder, Consumption model set to Metered (Universal Credit), Compartment set to VBCompartment, and Nodes set to 1. The right bottom corner shows the Create Visual Builder instance button.](images/detail.png "")
 
-   When instance creation completes successfully, the instance shows as **Active** in the **Status** column. If you don't see the status change, try refreshing your browser.
+    When instance creation completes successfully, the instance shows as **Active** in the Status column. If you don't see the status change, try refreshing your browser.
 
-    ![The newly provisioned Visual Builder instance is shown. Its state in the Status column is set to Active.](images/vb-instance-created.png " ")
+   ![The newly provisioned Visual Builder instance is listed on the Instances page, with its status set to Active.](images/vb-instance-created.png " ")
 
-4. At the far right, click ![Task menu icon](images/task_menu.png) and select **Service Homepage** to open Visual Builder in a new browser tab.
+4. Click the instance's name on the list of instances to view its details, then click **View Service Home Page** to open Visual Builder in a new browser tab.
+
+   ![This image shows the details page of the newly provisioned Visual Builder instance, named myVisualBuilder, which shows information such as Created, Last Edit Date, OCID, Nodes, and Compartment. A View Service Home Page on the top right is highlighted.](images/view-vb.png "")
 
   You're now in the Visual Builder console and can **proceed to the next lab**.
 
 ## Acknowledgements
 
 * **Author** - Sheryl Manoharan, Visual Builder User Assistance, August 2021
-* **Last Updated** - February 2023
+* **Last Updated By/Date** - Sheryl Manoharan, May 2025
