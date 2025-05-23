@@ -52,7 +52,7 @@ To enable the _ChatBot_ functionality, access to a **LLM** is required. This wor
    If you don't have access to a GPU, you will have to omit the '--gpus=all' parameter:
 
    ```bash
-   podman run -d --gpus=all -v ollama:$HOME/.ollama -p 11434:11434 --name ollama docker.io/ollama/ollama
+   podman run -d -v ollama:$HOME/.ollama -p 11434:11434 --name ollama docker.io/ollama/ollama
    ```
 
    **Note:**
