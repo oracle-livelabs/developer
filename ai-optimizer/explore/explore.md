@@ -75,7 +75,7 @@ Let's check the models available for use. You'll need to navigate to the *Models
   * Pull the llama3.2 LLM:
 
       ```bash
-         podman exec -it ollama ollama pull llama3.1
+         podman exec -it ollama ollama pull llama3.2
       ```
   * Now, you will need to enable it in the model list. Go back to the *Models* tab, under the *Language Models* section and press the *Add* button. Now fill in the form that just appeared with the values shown in the following snapshot:
 
@@ -83,11 +83,9 @@ Let's check the models available for use. You'll need to navigate to the *Models
 
   * (optional) If you are willing to use models by OpenAI, you will need to configure your **OPENAI API KEY**. To configure one, click the *Edit* button beside the model you would like to use (e.g., **gpt-4o-mini**) and add your own API key in the corresponding box:
 
-      ![openai-ket](images/openai-api.png)   
+      ![openai-key](images/openai-api.png)   
 
   Now you are all set for using the *Chat* feature with the LLMs you just configured!
-
-
 
 ## Task 4: Test the *Chat* feature
 

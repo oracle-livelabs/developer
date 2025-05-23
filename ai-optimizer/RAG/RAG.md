@@ -4,6 +4,8 @@
 
 Now that you’ve created the vector stores, you can begin testing the knowledge base built in *Lab 2*. In this Lab, you will test the knowledge stored in the `TEST1` vector store, which serves as an example of an augmented LLM based on publicly available sources.
 
+**NOTE**: The answers received by any LLM are based on probabilistic models. Therefore, the answer received in your own testing might differ from the ones shown in this documentation.
+
 Estimated Time: 5 minutes
 
 ### Objectives
@@ -22,7 +24,7 @@ This lab assumes you have:
 
 To enable the *RAG* functionality, follow these steps:
 
-1. Navigate to the *Chat* tab from the left-side menu
+1. Navigate to the *ChatBot* tab from the left-side menu
 
 2. Clear the history by pressing the **Clear** button, and select the **llama3.1** model for the initial test.
     
@@ -64,7 +66,9 @@ You can also click on one of the *Reference* buttons, to see where the informati
 
 ![reference](images/reference.png)
 
-## Task 3 (optional): Repeat Task 2 using OpenAI models
+## (Optional) Task 3: Repeat Task 2 using OpenAI models
+
+**NOTE**: You can perform this task only if you have access to [OpenAI APIs](https://platform.openai.com/settings/organization/api-keys).
 
 As an additional learning exercise, you can repeat the tests performed in Task 2 of this lab using OpenAI LLMs and vector stores:
 

@@ -43,6 +43,12 @@ To enable the _ChatBot_ functionality, access to a **LLM** is required. This wor
    podman run -d --gpus=all -v ollama:$HOME/.ollama -p 11434:11434 --name ollama docker.io/ollama/ollama
    ```
 
+   If you don't have access to a GPU, you will have to omit the '--gpus=all' parameter:
+
+   ```bash
+   podman run -d --gpus=all -v ollama:$HOME/.ollama -p 11434:11434 --name ollama docker.io/ollama/ollama
+   ```
+
    **Note:**
    AI Runners like Ollama, LM Studio, etc. will not utilize Apple Silicon's "Metal" GPU when running in a container. This may change as the landscape evolves.
 
@@ -92,7 +98,7 @@ The **AI Optimizer** provides an easy to use front-end for experimenting with **
 2. Build the Container Image
 
    ```bash
-   cd ai-optimizer-client/src
+   cd ai-optimizer/src
    podman build --arch amd64 -t localhost/ai-optimizer-aio:latest .
    ```
 
@@ -154,7 +160,7 @@ To start Oracle Database 23ai Free:
       ```
 Now you are all set! With the "Infrastructure" in-place, you are ready to configure the AI Optimizer. 
 
-In a web browser, navigate to `http://localhost:8501`:
+In a web browser, navigate to `http://localhost:8501` :
 
 ![Chatbot](images/chatbot-no-models.png)
 
