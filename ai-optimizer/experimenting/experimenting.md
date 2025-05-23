@@ -217,7 +217,9 @@ Alternatively, you can use the TOVECTOR function to insert vector data into your
 
 **COMMENT**: In this case, even though the MMR retrieves 20 chunks and removes results that differ by less than 50% in diversity, ultimately providing 4 top-K results that should offer more varied information, the results are better than with a plain similarity search using top-K = 4. This approach can, for example, increase efficiency in production, as it directly provides the 4 top-K chunks, rather than adding an extra step in the execution process that involves computing and fetching the 4 most diverse chunks from the 20 top-K results retrieved.
 
-## Task 3: Compare two different vector stores
+## (Optional) Task 3: Compare two different vector stores
+
+**NOTE**: You can perform this task only if you have access to [OpenAI APIs](https://platform.openai.com/settings/organization/api-keys).
 
 We can also explore how different combinations of **LLMs** and vector stores can produce markedly different answers. To test this, we’ll experiment with various pairings—and introduce a completely new question, purely for exploration purposes.
 

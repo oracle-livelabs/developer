@@ -13,6 +13,12 @@ You will run four container images to establish the “Infrastructure”:
 * Vector Storage - **Oracle Database 23ai Free**
 * The AI Optimizer
 
+**NOTE**: The walkthrough will reference podman commands. If applicable to your environment, podman can be substituted with docker. If you are using docker, make the walkthrough easier by aliasing the podman command:
+
+```bash
+   alias podman=docker
+```
+
 Estimated Time: 60 minutes
 
 ### Objectives
