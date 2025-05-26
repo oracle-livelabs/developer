@@ -21,9 +21,10 @@ This lab assumes you have:
 
 * An Oracle Cloud account
 * Completed lab 1: Run the demo
-* Completed lab 2: Connect to the development environment
+* Completed lab 2: Connect to the Development Environment
 
 ## Task 1: Build the application in Jupyter Notebook
+>💡**Note**: Review Lab 2: Connect to the Development Environment for instructions on accessing JupyterLab.
 
 1. Open a new **Jupyter Notebook** by clicking on **Pyhton(ipykernel)** notebook.
 
