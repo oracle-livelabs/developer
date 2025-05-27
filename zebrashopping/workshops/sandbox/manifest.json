@@ -1,0 +1,30 @@
+{
+    "workshoptitle": "Smart Shopping with Oracle Database 23ai: Discover What You Really Want",
+    "help": "livelabs-help-db_us@oracle.com",
+    "tutorials": [
+        {
+            "title": "Get Started",
+            "description": "Prerequisites for LiveLabs (Oracle-owned tenancies). The title of the lab and the Contents Menu title (the title above) match for Prerequisite lab. This lab is always first.",
+            "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/cloud-login-livelabs2.md"
+        },
+        {
+            "title": "Introduction",
+            "description": "The Introduction is always second for LiveLabs. The title and contents menu title match for the Introduction.",
+            "filename": "../../introduction/introduction.md"
+        },
+        {
+            "title": "Lab 1: Run the demo!",
+            "description": "Labs that follow the introduction are numbered, starting with Lab 1",
+            "filename": "../../demo/demo.md"
+        },
+        {
+            "title": "Lab 2: Explore the code!",
+            "filename": "../../code/code.md"
+        },
+        {
+            "title": "Need Help?",
+            "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+            "filename": "https://oracle-livelabs.github.io/common/labs/need-help/need-help-livelabs.md"
+        }
+    ]
+}
