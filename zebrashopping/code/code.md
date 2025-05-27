@@ -217,7 +217,7 @@ def get_connection():
 Next, return to the terminal and press CTRL+C (PC) or CMD+C (MacOS) to terminate the running app.
 
 
-## Task 54: Improve the application code — Change the end-user experience 
+## Task 5: Improve the application code — Change the end-user experience 
 
 Now, we want to change the end-user experience. We need to increase the number of displayed products to eight and widen the similarity threshold to include more distant matches.
 
