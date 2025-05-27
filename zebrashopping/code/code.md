@@ -20,8 +20,18 @@ This lab assumes you have:
 * An Oracle Cloud account
 * All previous labs successfully completed
 
+## Task 1: Login to JupyterLab
 
-## Task 1: Open the application project
+1. To navigate to the development environment, click **View Login Info**. Copy the Development IDE Login Password. Click the Start Development IDE link.
+
+    ![Open Development Environment](./images/dev-env.png =50%x*)
+
+2. Paste in the Development IDE Login Password that you copied in the previous step. Click **Login**.
+
+    ![Login](./images/jupyter-login.png " ")
+
+
+## Task 2: Open the application project
 
 This task helps you to understand the structure of the Python application project. You will also learn how to use the JupyterLab interface.
 
@@ -39,7 +49,7 @@ This task helps you to understand the structure of the Python application projec
     *  **templates/** : The folder contains the HTML templates used by the application.
 
 
-## Task 2: Explore the application code
+## Task 3: Explore the application code
 
 This task helps you to understand how the code behind the demo works.
 
@@ -140,7 +150,7 @@ This task helps you to understand how the code behind the demo works.
     ```
 
 
-## Task 3: Improve the application code — Enable connection pooling
+## Task 4: Improve the application code — Enable connection pooling
 
 Now, let's do some modifications to improve performance, security, and the end-user experience.
 
@@ -207,7 +217,7 @@ def get_connection():
 Next, return to the terminal and press CTRL+C (PC) or CMD+C (MacOS) to terminate the running app.
 
 
-## Task 4: Improve the application code — Change the end-user experience 
+## Task 54: Improve the application code — Change the end-user experience 
 
 Now, we want to change the end-user experience. We need to increase the number of displayed products to eight and widen the similarity threshold to include more distant matches.
 

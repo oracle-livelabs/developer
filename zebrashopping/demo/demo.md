@@ -18,8 +18,14 @@ This lab assumes you have:
 * An Oracle Cloud account.
 * You have access to the demo via the **View Login Details** information.
 
+## Task 1: Launch the demo!
 
-## Task 1: Run the demo!
+1. To access the demo environment, click **View Login Info** in the top left corner of the page. Click the **Start the Demo** link.
+
+    ![Click the Start Demo Link](./images/start-demo.png =50%x*)
+
+
+## Task 2: Run the demo!
 
 ![Zebra Sporting Good portal](images/zebra-search.png)
 
@@ -48,7 +54,7 @@ The Zebra Sporting Goods demo app has been set up for you in Oracle Cloud Infras
 
 Are you curious how it is done? Check out the hands-on lab which allows you to analyze the code and see how it works. In the hands-on lab, you will also see how the search results are restricted and how to control the number of results returned.
 
-## Task 2: Continue to explore the shopping portal
+## Task 3: Continue to explore the shopping portal
 
 1. Try searching for different keywords and observe the results. Do the returned products share clear similarities with your search term, even if the keyword isn’t explicitly mentioned in the descriptions?
 
