@@ -101,17 +101,25 @@ The **AI Optimizer** provides an easy to use front-end for experimenting with **
    tar zxf ai-optimizer.tar.gz --strip-components=1 -C ai-optimizer
    ```
 
-2. Build the Container Image
+2. Create and activate a Python Virtual Environment:
 
    ```bash
    cd ai-optimizer/src
-   podman build --arch amd64 -t localhost/ai-optimizer-aio:latest .
+   python3.11 -m venv .venv --copies
+   source .venv/bin/activate
+   pip3.11 install --upgrade pip wheel setuptools
    ```
 
-3. Start the AI Optimizer:
+3. Install the Python modules:
+   
+   ```bash
+   pip3.11 install -e ".[all]"
+   source .venv/bin/activate
+   ```
+4. Start the AI Optimizer:
 
    ```bash
-   podman run -d --name ai-optimizer-aio --network=host localhost/ai-optimizer-aio:latest
+   streamlit run launch_client.py --server.port 8501
    ```
 
    If you are running on a remote host, you may need to allow access to the `8501` port.
@@ -122,11 +130,6 @@ The **AI Optimizer** provides an easy to use front-end for experimenting with **
    firewall-cmd --zone=public --add-port=8501/tcp
    ```
 
-   If you are running it on your machine, as the container is running in a VM, a port-forward is required from the localhost to the Podman VM:
-
-   ```bash
-   podman machine ssh -- -N -L 8501:localhost:8501
-   ```
 ## Task 4: Vector Storage - Oracle Database 23ai Free
 
 AI Vector Search in Oracle Database 23ai provides the ability to store and query  by similarity text and multimedia data. The AI Optimizer uses these capabilities to provide more accurate and relevant **LLM** responses via Retrieval-Augmented Generation (**RAG**). [Oracle Database 23ai Free](https://www.oracle.com/uk/database/free/get-started/) provides an ideal, no-cost vector store for this workshop.
@@ -166,7 +169,7 @@ To start Oracle Database 23ai Free:
       ```
 Now you are all set! With the "Infrastructure" in-place, you are ready to configure the AI Optimizer. 
 
-In a web browser, navigate to `http://localhost:8501` :
+In a web browser, navigate to `http://localhost:8501` .
 
 ![Chatbot](images/chatbot-no-models.png)
 

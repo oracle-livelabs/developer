@@ -37,26 +37,7 @@ Let's check if the DB is correctly connected.
    
    ![Database configuration](images/database-config.png)
 
-
-## Task 2: Set OCI Credentials
-
-In the *OCI* configuration tab, you can add your **Oracle Cloud Infrastructure** (OCI) credentials to authenticate with your OCI tenancy. This will enable access to objects and documents stored in your cloud compartments.
-
-1. Navigate to the *OCI* tab on the left-hand pane:
-
-   ![Navigate to the Databases tab](images/oci-navigation.jpg)
-
-2. Insert your OCI credentials. Detailed information on how to get the required credentials is available in the [Oracle Cloud Infrastructure Documentation](https://docs.oracle.com/en-us/iaas/Content/API/Concepts/apisigningkey.htm#Required_Keys_and_OCIDs).
-
-   If you have previously created a `.oci/config` file, the framework will automatically read this file at startup and load the credentials from the Default profile for authentication. To create one, follow the instructions available in the [Quickstart Documentation](https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/cliinstall.htm#Quickstart).
-
-   After entering your credentials, click the `Save` button. If the credentials are correct, a green confirmation pop-up will appear, indicating successful authentication to your tenancy.
-
-   ![OCI credentials success](images/oci-credentials-success.png)
-
-
-
-## Task 3: Configure LLMs
+## Task 2: Configure LLMs
 
 Let's check the models available for use. You'll need to navigate to the *Models* tab:
 
@@ -87,7 +68,7 @@ Let's check the models available for use. You'll need to navigate to the *Models
 
   Now you are all set for using the *Chat* feature with the LLMs you just configured!
 
-## Task 4: Test the *Chat* feature
+## Task 3: Test the *Chat* feature
 
 The two LLMs availble could be tested right away, in order to understand their behavior with generic questions. First of all, navigate to the chat GUI
 
@@ -112,6 +93,22 @@ NOTICE: *if you see a **Database has no Vector Stores. Disabling RAG.** message 
 As you will probably be able to notice, even if the questions refer to Oracle Database 23ai, the LLM will mention Oracle Database 23c. This is known as **Knowledge Cutoff**, meaning that probably the LLM was trained before Oracle Database 23c was even renamed as 23ai. 
 
 Moreover, the LLM tends to answer in a generic way, with no specific mention to the actual script needed to perform the operations requested. In Lab 3, we will compare these results with the one obtained using Retrieval-Augmented Generation (RAG), where more context is given to the LLMs.
+
+## (Optional) Task 4: Set OCI Credentials
+
+The Optimizer lets you configure the connection to your OCI tenant for retrieving objects from the *Object Storage* and accessing LLMs from the OCI GenAI service. In the *OCI* configuration tab, you can add your **Oracle Cloud Infrastructure** (OCI) credentials to authenticate to your OCI tenancy. This will enable access to objects and documents stored in your cloud compartments.
+
+1. Navigate to the *OCI* tab on the left-hand pane:
+
+   ![Navigate to the Databases tab](images/oci-navigation.jpg)
+
+2. Insert your OCI credentials. Detailed information on how to get the required credentials is available in the [Oracle Cloud Infrastructure Documentation](https://docs.oracle.com/en-us/iaas/Content/API/Concepts/apisigningkey.htm#Required_Keys_and_OCIDs).
+
+   If you have previously created a `.oci/config` file, the framework will automatically read this file at startup and load the credentials from the Default profile for authentication. To create one, follow the instructions available in the [Quickstart Documentation](https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/cliinstall.htm#Quickstart).
+
+   After entering your credentials, click the `Save` button. If the credentials are correct, a green confirmation pop-up will appear, indicating successful authentication to your tenancy.
+
+   ![OCI credentials success](images/oci-credentials-success.png)
 
 ## Learn More
 
