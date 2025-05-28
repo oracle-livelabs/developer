@@ -21,6 +21,12 @@ You will run four container images to establish the “Infrastructure”:
 </copy>
 ```
 
+````
+<copy>
+alias podman=docker
+</copy>
+````
+
 Estimated Time: 60 minutes
 
 ### Objectives
