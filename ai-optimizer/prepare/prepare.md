@@ -75,7 +75,7 @@ What you see in the image above are chunks of text from the input document, whic
 
 ## (Optional) Task 3: Create a different Vector Store
 
-**NOTE**: You can perform this task only if you have access to [OpenAI APIs](https://platform.openai.com/settings/organization/api-keys).
+> **NOTE**: You can perform this task only if you have access to [OpenAI APIs](https://platform.openai.com/settings/organization/api-keys).
 
 By following the sames steps from Task 1, you can create another vector store using the same document but with a different embedding model, **text-embedding-3-small** from the OpenAI models. Give the alias ***TEST2*** to this vector store. 
     

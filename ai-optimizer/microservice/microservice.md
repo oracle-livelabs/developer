@@ -115,7 +115,7 @@ You can see that the answer is very generic compared to the RAG-enhanced one.
 
 ## Task 4 (Optional): Execute the OpenAI variant
 
-**NOTE**: You can perform this task only if you have access to [OpenAI APIs](https://platform.openai.com/settings/organization/api-keys).
+> **NOTE**: You can perform this task only if you have access to [OpenAI APIs](https://platform.openai.com/settings/organization/api-keys).
 
 Proceed as in the previous step, selecting **TEST2** as the vector store alias and **gpt-4o-mini** as the **Chat model**. In the terminal where you run the Spring Boot microservice, make sure that your **OPENAI API KEY** is correctly set as environment variable. 
 

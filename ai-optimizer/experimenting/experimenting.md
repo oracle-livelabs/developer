@@ -4,7 +4,7 @@
 
 In this lab, we will experiment with different configurations, adjusting parameters and using various LLMs to observe how the answers vary.
 
-**NOTE**: The answers received by any LLM are based on probabilistic models. Therefore, the answer received in your own testing might differ from the ones shown in this documentation.
+> **NOTE**: The answers received by any LLM are based on probabilistic models. Therefore, the answer received in your own testing might differ from the ones shown in this documentation.
 
 Estimated Lab Time: 15 minutes
 
@@ -219,7 +219,7 @@ Alternatively, you can use the TOVECTOR function to insert vector data into your
 
 ## (Optional) Task 3: Compare two different vector stores
 
-**NOTE**: You can perform this task only if you have access to [OpenAI APIs](https://platform.openai.com/settings/organization/api-keys).
+> **NOTE**: You can perform this task only if you have access to [OpenAI APIs](https://platform.openai.com/settings/organization/api-keys).
 
 We can also explore how different combinations of **LLMs** and vector stores can produce markedly different answers. To test this, we’ll experiment with various pairings—and introduce a completely new question, purely for exploration purposes.
 

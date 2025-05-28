@@ -49,6 +49,7 @@ Now that the API Server is running, you can perform API calls against it.
 * Copy and run the following curl command in the terminal:
 
     ```bash
+    <copy>
     #Bearer Key to be set accordingly to task 1.
     curl -X POST "http://localhost:8001/v1/chat/completions" \
      -H "Content-Type: application/json" \
@@ -63,6 +64,7 @@ Now that the API Server is running, you can perform API calls against it.
          }
        ]
      }' | jq .
+     </copy>
     ```
 
     Here, you're essentially repeating the same type of request as in *Lab 3*. You’ve passed the API Server Key you configured in Task 1 along with the question content as parameters. You should receive a response similar to the screenshot below:
@@ -78,10 +80,12 @@ Now that the API Server is running, you can perform API calls against it.
 * To explore the Oracle AI Optimizer and Toolkit API documentation, visit:
 
     ```
+    <copy>
     http://localhost:8001/v1/docs#
+    </copy>
     ```
 
-    **Note**: The port number in the URL (in this case 8001) must match the API Server Port you configured in Task 1 of this lab.
+    > **Note**: The port number in the URL (in this case 8001) must match the API Server Port you configured in Task 1 of this lab.
 
 ## Acknowledgements
 * **Author** - Lorenzo De Marchis, Developer Evangelist, May 2025

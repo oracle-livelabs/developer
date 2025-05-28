@@ -13,7 +13,7 @@ You will run four container images to establish the “Infrastructure”:
 * Vector Storage - **Oracle Database 23ai Free**
 * The AI Optimizer
 
-**NOTE**: The walkthrough will reference podman commands. If applicable to your environment, podman can be substituted with docker. If you are using docker, make the walkthrough easier by aliasing the podman command:
+> **NOTE**: The walkthrough will reference podman commands. If applicable to your environment, podman can be substituted with docker. If you are using docker, make the walkthrough easier by aliasing the podman command:
 
 ````bash
 <copy>
@@ -61,10 +61,8 @@ To enable the _ChatBot_ functionality, access to a **LLM** is required. This wor
    </copy>
    ```
 
-   **Note:**
-   AI Runners like Ollama, LM Studio, etc. will not utilize Apple Silicon's "Metal" GPU when running in a container. This may change as the landscape evolves.
-
-   You can install and run Ollama natively outside a container and it will take advantage of the "Metal" GPU.  Later in the Workshop, when configuring the models, the API URL for the Ollama model will be your hosts IP address.
+   > **Note:**
+   AI Runners like Ollama, LM Studio, etc. will not utilize Apple Silicon's "Metal" GPU when running in a container. This may change as the landscape evolves. You can install and run Ollama natively outside a container and it will take advantage of the "Metal" GPU.  Later in the Workshop, when configuring the models, the API URL for the Ollama model will be your hosts IP address.
 
 2. Pull the **LLM** into the container:
 
