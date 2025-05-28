@@ -15,14 +15,8 @@ You will run four container images to establish the “Infrastructure”:
 
 **NOTE**: The walkthrough will reference podman commands. If applicable to your environment, podman can be substituted with docker. If you are using docker, make the walkthrough easier by aliasing the podman command:
 
-```bash
-<copy>
-    alias podman=docker
-</copy>
-```
-
 ````
-<copy>
+<copy>bash
 alias podman=docker
 </copy>
 ````
@@ -53,7 +47,7 @@ To enable the _ChatBot_ functionality, access to a **LLM** is required. This wor
 
    The Container Runtime is native:
 
-   ```
+   ```bash
    <copy>
       podman run -d --gpus=all -v ollama:$HOME/.ollama -p 11434:11434 --name ollama docker.io/ollama/ollama
    </copy>
@@ -62,7 +56,9 @@ To enable the _ChatBot_ functionality, access to a **LLM** is required. This wor
    If you don't have access to a GPU, you will have to omit the '--gpus=all' parameter:
 
    ```bash
+   <copy>
    podman run -d -v ollama:$HOME/.ollama -p 11434:11434 --name ollama docker.io/ollama/ollama
+   </copy>
    ```
 
    **Note:**
@@ -73,17 +69,21 @@ To enable the _ChatBot_ functionality, access to a **LLM** is required. This wor
 2. Pull the **LLM** into the container:
 
    ```bash
+   <copy>
    podman exec -it ollama ollama pull llama3.1
+   </copy>
    ```
 
 3. Test the **LLM**:
 
    ```bash
+   <copy>
    curl http://127.0.0.1:11434/api/generate -d '{
    "model": "llama3.1",
    "prompt": "Why is the sky blue?",
    "stream": false
    }'
+   </copy>
    ```
 
    Unfortunately, if the above `curl` does not respond within 5-10 minutes, the rest of the workshop will be unbearable.
@@ -96,7 +96,9 @@ To enable the **RAG** functionality, access to an embedding model is required. I
 1. Pull the embedding model into the container:
 
    ```bash
+   <copy>
    podman exec -it ollama ollama pull mxbai-embed-large
+   </copy>
    ```
 
 ## Task 3: The AI Optimizer
@@ -106,30 +108,38 @@ The **AI Optimizer** provides an easy to use front-end for experimenting with **
 1. Download and Unzip the latest version of the **AI Optimizer**:
 
    ```bash
+   <copy>
    curl -L -o ai-optimizer.tar.gz https://github.com/oracle-samples/ai-optimizer/archive/refs/heads/main.tar.gz
    mkdir ai-optimizer
    tar zxf ai-optimizer.tar.gz --strip-components=1 -C ai-optimizer
+   </copy>
    ```
 
 2. Create and activate a Python Virtual Environment:
 
    ```bash
+   <copy>
    cd ai-optimizer/src
    python3.11 -m venv .venv --copies
    source .venv/bin/activate
    pip3.11 install --upgrade pip wheel setuptools
+   </copy>
    ```
 
 3. Install the Python modules:
    
    ```bash
+   <copy>
    pip3.11 install -e ".[all]"
    source .venv/bin/activate
+   </copy>
    ```
 4. Start the AI Optimizer:
 
    ```bash
+   <copy>
    streamlit run launch_client.py --server.port 8501
+   </copy>
    ```
 
    If you are running on a remote host, you may need to allow access to the `8501` port.
@@ -137,7 +147,9 @@ The **AI Optimizer** provides an easy to use front-end for experimenting with **
    For example, in Oracle Linux 8/9 with `firewalld`:
 
    ```bash
+   <copy>
    firewall-cmd --zone=public --add-port=8501/tcp
+   </copy>
    ```
 
 ## Task 4: Vector Storage - Oracle Database 23ai Free
@@ -149,13 +161,17 @@ To start Oracle Database 23ai Free:
 1. Start the container:
 
       ```bash
+      <copy>
       podman run -d --name ai-optimizer-db -p 1521:1521 container-registry.oracle.com/database/free:latest
+      </copy>
       ```
 
 2. Alter the `vector_memory_size` parameter and create a [new database user](../client/configuration/db_config#database-user):
 
       ```bash
+      <copy>
       podman exec -it ai-optimizer-db sqlplus '/ as sysdba'
+      </copy>
       ```
 
       ```sql
@@ -175,7 +191,9 @@ To start Oracle Database 23ai Free:
 3. Bounce the database for the `vector_memory_size` to take effect:
 
       ```bash
+      <copy>
       podman container restart ai-optimizer-db
+      </copy>
       ```
 Now you are all set! With the "Infrastructure" in-place, you are ready to configure the AI Optimizer. 
 
