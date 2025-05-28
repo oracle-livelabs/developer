@@ -56,7 +56,9 @@ Let's check the models available for use. You'll need to navigate to the *Models
   * Pull the llama3.2 LLM:
 
       ```bash
+      <copy>
          podman exec -it ollama ollama pull llama3.2
+      </copy>
       ```
   * Now, you will need to enable it in the model list. Go back to the *Models* tab, under the *Language Models* section and press the *Add* button. Now fill in the form that just appeared with the values shown in the following snapshot:
 
@@ -81,11 +83,15 @@ scroll down the left-side menu to find the **Chat model** menu:
 and, with the **Enable RAG?** check-box unselected, choose the **llama3.1** model and ask generic questions like:
 
 ```text
+<copy>
 In Oracle Database 23ai, how do I determine the accuracy of my vector indexes?
+</copy>
 ```
 
 ```text
+<copy>
 In Oracle Database 23ai, how do I convert string text to embedding using PL/SQL?
+</copy>
 ```
 
 NOTICE: *if you see a **Database has no Vector Stores. Disabling RAG.** message above, don't panic! That's because you haven't created a vector store yet and thus you can't use the RAG functionality*.

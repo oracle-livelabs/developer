@@ -53,8 +53,10 @@ If you have completed *Task 1* from this lab, you should have downloaded a *spri
 
 * Now start the microservice with:
 
-   ```
+   ```bash
+   <copy>
    ./start.sh
+   </copy>
    ```
    If the Spring Boot application starts successfully, you should see something like this in your terminal logs
 
@@ -73,6 +75,7 @@ The microservice you just started exposes a web service that accepts HTTP GET re
 To test it, run a curl command like this in a new terminal:
 
   ```
+  <copy>
   curl -N http://localhost:9090/v1/chat/completions \
   -H "Content-Type: application/json" \
   -H "Authorization: Bearer your_api_key" \
@@ -81,6 +84,7 @@ To test it, run a curl command like this in a new terminal:
     "messages": [{"role": "user", "content": "In Oracle Database 23ai, how do I determine the accuracy of my vector indexes?"}],
     "stream": false
   }'
+  </copy>
   ```
 
 The response using RAG with the TEST1 vector store will look like this:
@@ -97,7 +101,9 @@ You can see how the microservice retrieves relevant context from the vector stor
 You can also send a curl request without leveraging RAG:
 
   ```
+  <copy>
   curl --get --data-urlencode 'message=In Oracle Database 23ai, how do I determine the accuracy of my vector indexes?' localhost:9090/v1/service/llm 
+  </copy>
   ```
 
    and it will produce an ungrounded answer like this:

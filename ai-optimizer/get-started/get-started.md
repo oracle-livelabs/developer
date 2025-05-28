@@ -15,8 +15,8 @@ You will run four container images to establish the “Infrastructure”:
 
 **NOTE**: The walkthrough will reference podman commands. If applicable to your environment, podman can be substituted with docker. If you are using docker, make the walkthrough easier by aliasing the podman command:
 
-````
-<copy>bash
+````bash
+<copy>
 alias podman=docker
 </copy>
 ````
