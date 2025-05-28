@@ -16,7 +16,9 @@ You will run four container images to establish the “Infrastructure”:
 **NOTE**: The walkthrough will reference podman commands. If applicable to your environment, podman can be substituted with docker. If you are using docker, make the walkthrough easier by aliasing the podman command:
 
 ```bash
-   alias podman=docker
+<copy>
+    alias podman=docker
+</copy>
 ```
 
 Estimated Time: 60 minutes
@@ -45,8 +47,10 @@ To enable the _ChatBot_ functionality, access to a **LLM** is required. This wor
 
    The Container Runtime is native:
 
-   ```bash
-   podman run -d --gpus=all -v ollama:$HOME/.ollama -p 11434:11434 --name ollama docker.io/ollama/ollama
+   ```
+   <copy>
+      podman run -d --gpus=all -v ollama:$HOME/.ollama -p 11434:11434 --name ollama docker.io/ollama/ollama
+   </copy>
    ```
 
    If you don't have access to a GPU, you will have to omit the '--gpus=all' parameter:
