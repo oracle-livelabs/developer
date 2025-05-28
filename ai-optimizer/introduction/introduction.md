@@ -8,6 +8,8 @@ The **Oracle AI Optimizer and Toolkit** (the **AI Optimizer**) provides a stream
 * **RAG**: Enhances LLMs by retrieving relevant, real-time information allowing models to provide up-to-date and accurate responses.
 * **Vector Database**: A database, including Oracle Database 23ai, that can natively store and manage vector embeddings and handle the unstructured data they describe, such as documents, images, video, or audio.
 
+Estimated Time: 120 minutes
+
 ### Objectives
 
 In this workshop, you will learn how to:
