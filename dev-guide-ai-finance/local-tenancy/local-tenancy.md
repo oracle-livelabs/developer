@@ -37,12 +37,68 @@ Before you can run the application, you need to provision an **Autonomous Data
 
 * **Database Connection String (DB Connection)** 
 
-1. 
+1. Click the navigation menu in the upper left to show top level navigation choices.
 
+   ![Begin navigation in OCI menu](./images/begin-oci-menu.png" ")
 
+3. Click **Oracle Database** -> **Autonomous Database**.
 
+   ![Select Autonomous Database from menu](./images/select-atp.png" ")
 
-Ensure you have the necessary credentials and access to the database before proceeding. 
+4. Click **Create Autonomous Database** to start the instance creation process.
+
+   ![Create Autonomous Database](./images/create-adb.png " ")
+
+5. This brings up the **Create Autonomous Database** screen where you will specify the configuration of the instance. Provide basic information for the autonomous database:
+
+   **Display Name** - Enter a memorable name for the database for display purposes. For this lab, we used **SeerEquites**.<br><br>
+   **Database Name** - Use letters and numbers only, starting with a letter. Maximum length is 14 characters. (Underscores not initially supported.) For this lab, we used **SeerEquites**.<br><br>
+   **Compartment** - Select a compartment for the database from the drop-down list. In the example below, **LiveLabs-Demo** was created ahead of time and chosen.<br><br>
+
+   ![Specify database instance configuration](./images/compartment-name.png " ")
+
+6. Choose a workload type. Select the workload type for your database. For this lab, we chose **Transaction Processing** as the workload type.<br><br>
+
+   ![Chose a workload type](./images/adb-workload-type.png " ")
+
+7. Configure the database:
+
+   **Choose database version** - Select a database version from the available versions.<br><br>
+   **Compute auto scaling** - Enable this option.
+
+   ![Configure the database](./images/configure-db.png " ")
+8. Create administrator credentials. **We will need the DB Username and Password for our .env file later. Take note of these credentials.** 
+
+   **Password** and **Confirm Password** - Specify the password for ADMIN user of the service instance. The password must meet the following requirements:<br><br>
+   1) The password must be between 12 and 30 characters long and must include at least one uppercase letter, one lowercase letter, and one numeric character.<br><br>
+   2) The password cannot contain the username.<br><br>
+   3) The password cannot contain the double quote (") character.<br><br>
+   4) The password must be different from the last 4 passwords used.<br><br>
+   5) The password must not be the same password that is set less than 24 hours ago.<br><br>
+   6) Re-enter the password to confirm it. Make a note of this password.
+
+   ![Set administrator credentials](./images/create-admin.png " ")
+
+9. Choose network access:
+
+   For this lab, accept the default, **Secure access from everywhere**.<br><br>
+   If you want to allow traffic only from the IP addresses and VCNs you specify where access to the database from all public IPs or VCNs is blocked, select **Secure access from allowed IPs and VCNs only**.<br><br>
+   If you want to restrict access to a private endpoint within an OCI VCN, select **Private endpoint access only**.<br><br>
+   If the **Require mutual TLS (mTLS) authentication** option is selected, mTLS will be required to authenticate connections to your Autonomous Database. TLS connections allows Oracle Data Provider for .NET to connect to your Autonomous Database without a wallet. See the [documentation for network options](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/support-tls-mtls-authentication.html#GUID-3F3F1FA4-DD7D-4211-A1D3-A74ED35C0AF5) for options to allow TLS, or to require only mutual TLS (mTLS) authentication.
+
+   ![Choose the network access type](./images/network-access.png " ")
+
+10. Click **Create**.
+
+    ![Click Create Autonomous Database button](./images/create-adb-button.png " ")
+
+11. Your instance will begin provisioning. In a few minutes the state will turn from Provisioning to Available. At this point, your Autonomous Transaction Processing database is ready to use! Have a look at your instance's details here including its name, database version, CPU count and storage size.
+
+    ![Provisioning an Autonomous Database instance](./images/adb-provisioning.png " ")
+    Provisioning an Autonomous Database instance.
+
+    ![Autonomous Database instance successfully provisioned](./images/adb-provisioned.png " ")
+    Autonomous Database instance successfully provisioned.
 
 ## Task 2: Unzip the Code
 
@@ -150,120 +206,220 @@ To run the application, Python version 3.9 or higher is required. Follow the
         </copy
     ````
 
-5. Insert the variables below into the file: 
+5. Open the file using the command below.
+    ````
+        <copy>
+        vi .env
+        </copy
+    ````
 
-    DB\_USERNAME=<Your_DB_Username> 
+6. Insert the variables below into the file. Replace the values with the actual values you obtained during the provisioning of the Autonomous Database. You should have captured your database username and password in task 1 of this lab. 
 
-    DB\_PASSWORD=<Your_DB_Password> 
+    DB\_USERNAME=Your\_DB\_Username 
 
-    DB\_CONNECTION\_STRING=<Your_DB_Connection_String> 
+    DB\_PASSWORD=Your\_DB\_Password 
 
-    COMPARTMENT\_OCID=<Your_DB_Compartment_ID> 
+    DB\_CONNECTION\_STRING=Your\_DB\_Connection\_String
 
-    ENDPOINT=<Your-endpoint_url> 
+    COMPARTMENT\_OCID=Your\_DB\_Compartment\_ID
 
-    ADB\_OCID=<Your_DB_OCI_ID> 
+    ENDPOINT=Your\_endpoint\_url 
 
+    ADB\_OCID=Your\_DB\_OCI\_ID 
 
-    Replace <Your_DB_Username>, <Your_DB_Password>, and <Your_DB_Connection_String> with the actual values you obtained during the provisioning of the Autonomous Database. 
+7. Find your database connection string by selecting **Database Connection**.
 
+    ![Select Database Connection](./images/db-connection.png " ")
+
+8. Copy the low connection string. This is the connection string you will place into the .env file.
+
+    ![Copy Connection String](./images/connection-string.png " ")
+
+9. To locate your compartment OCID, navigate to **Identity & Security** -> **Compartments**.
+
+    ![Click Compartments](./images/compartments.png " ")
+
+10. Select your compartment.
+
+    ![Select your Compartment](./images/select-compartment.png " ")
+
+11. Copy your compartment OCID. Place the compartment OCID into your .env file.
+
+    ![Select your Compartment](./images/copy-ocid.png " ")
+
+12. Paste this in as your endpoint url in the .env file:
+
+    ````
+        <copy>
+        https://inference.generativeai.us-chicago-1.oci.oraclecloud.com
+        </copy
+    ````
+13. Navigate back to your Autonomous Database to copy your ADB OCID. Click **Oracle Database** -> **Autonomous Database**.
+
+   ![Select Autonomous Database from menu](./images/select-atp.png" ")
+
+14. Select your Autonomous Database.
+
+    ![Select your Autonomous Database](./images/select-your-adb.png " ")
+
+15. Copy your Autonomous Database OCID. Paste it into your .env file.
+
+    ![Copy your Autonomous Database OCID](./images/adb-ocid.png " ")
+
+    You should now have all of the credentials for your .env file filled in.
+
+    ![.env credentials](./images/env-credentials.png " ")
 
 ## Task 5: Setting Up OCI Generative AI Service
 
-To enable the application to interact with OCI Generative AI APIs, follow these steps: 
+1. Click **User Settings** -> **Tokens and Keys**. 
 
-1. Create an OCI API Key 
+    ![Click Tokens and Keys](./images/tokens-keys.png " ")
 
-Log in to the OCI Console. 
+2. Click **Add API Key**. 
 
-Navigate to User Settings > API Keys. 
+    ![Click Add API Key](./images/click-add-api-key.png " ")
 
-Click Add API Key. 
+3. Choose **Generate API Key Pair**. Click **Download private key**. 
 
-Choose Generate API Key Pair: 
+    ![Download Private Key](./images/private-key.png " ")
 
-Save the private key (oci_api_key.pem) securely. 
+4. After downloading the private key. Click **Add**. 
 
-Note the Fingerprint, Tenancy OCID, and User OCID from the page. 
+    ![Add Private Key](./images/add-key.png " ")
 
-Create a config directory: 
+5. Note the Fingerprint, Tenancy OCID, and User OCID from the page. 
 
-mkdir -p ~/.oci 
+    ![Preview Private Key](./images/key-preview.png " ")
 
-2. Set Up the .oci/config File 
+6. Navigate back to your terminal and paste the following command in to create a config directory. 
 
-Create or edit the config file at ~/.oci/config with the following format: 
+    ````
+        <copy>
+        mkdir -p ~/.oci
+        </copy
+    ```` 
 
-touch config 
+7.  Create or edit the config file at ~/.oci/config with the following command: 
 
- 
+    ````
+        <copy>
+        touch config
+        </copy
+    ````
 
-insert variables below: 
+8.  Open the config file.
 
- 
-user=<ocid1.user.oc1..exampleuniqueID> 
-fingerprint=<xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx> 
-key_file= <key_file=~/.oci/oci_api_key.pem> 
-tenancy=<ocid1.tenancy.oc1..exampleuniqueID> 
-region= us-chicago-1  
+    ````
+        <copy>
+        vi config
+        </copy
+    ```` 
 
- 
+9. Insert the variables below: 
 
-Note: Replace all placeholders with your actual OCI credentials and key file path except region, which must be us-chicago. 
+    > 💡Note: Replace all placeholders with your actual OCI credentials and key file path except region, which must be us-chicago.
 
-3. Enable Access to GenAI Resources 
+    ````
+        <copy>
+        [DEFAULT] 
+        user=[ocid1.user.oc1..exampleuniqueID]
+        fingerprint=[xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx] 
+        key_file= [key_file=~/.oci/oci_api_key.pem] 
+        tenancy=[ocid1.tenancy.oc1..exampleuniqueID] 
+        region= us-chicago-1  
+        </copy
+    ````
 
-    Make sure the user or group associated with your credentials has policies to access the GenAI services. A sample policy: 
+Create a policy that will allow you to use OCI Generative AI within your previously defined compartment. **Make sure your policy uses the compartment where your Autonomous Database is deployed.** The policy will be necessary for Autonomous Database to interact with OCI Generative AI.
 
-    allow group GenAIUsers to use generative-ai-family in tenancy 
+10. From the Console, open the Navigation menu and click **Identity & Security**. Under Identity, click **Policies**.
 
-    Name: PublicGenAI 
+    ![Click Policies](./images/policies.png " ")
 
-    Description: Public Gen AI Policy 
+11. Click **Create policy** and paste the following into the appropriate fields:
 
-    Compartment: select your own compartment 
+    **Name:** PublicGenAI 
 
-    Policy: allow any-user to manage generative-ai-family in compartment LiveLabsDemo 
+    **Description:** Public Gen AI Policy 
 
-    You can define this policy in Identity > Policies in the OCI Console. 
+    **Compartment:** select your own compartment 
+
+    ![Enter Policy Info](./images/policy-info.png " ")
+
+12. Click **Show Manual Editor**. 
+
+    ![Show Manual Editor](./images/show-editor.png " ")
+
+12. Copy the policy below and paste it into the field.
+
+    ````
+        <copy>
+        allow any-user to manage generative-ai-family in compartment [compartment_name]
+        </copy
+    ````
+    > Replace [compartment\_name] with the name of your compartment.
+
+    ![Paste Policy](./images/policy.png " ")
+
+14. Click **Create**.
+
+    ![Create Policy](./images/create-policy.png " ")
+
+OCI Generative AI is a fully managed service available via API to seamlessly integrate language models into a wide range of use cases, including writing assistance, summarization, analysis, and chat. You can quickly integrate OCI Generative AI with Autonomous Database to apply AI models to your data.
+
+15. Make sure you are in the US Midwest(Chicago) region:
+
+    ![Midwest Chicago Region](./images/chicago-region.png " ")
+
+16. From the Console, open the Navigation menu and click **Analytics & AI**. Click **Generative AI**.
+
+    ![Click Generative AI](./images/click-generative-ai.png " ")
 
 ## Task 6: Run the Application
 
-Now that everything is set up, you can start the application by running the following command: 
+1. Now that everything is set up, you can start the application by running the following command: 
 
-streamlit run 1-introduction.py 
+    ````
+        <copy>
+        streamlit run 1-introduction.py
+        </copy
+    ````
 
-
-This will start the application locally, using both your Autonomous Database and OCI GenAI services. 
+    This will start the application locally, using both your Autonomous Database and OCI GenAI services. 
 
 
 ## Troubleshooting
 If you encounter any issues during the setup, here are a few common troubleshooting tips: 
 
-Missing Keys or Permissions: Double-check your .oci/config for typos and ensure the key file path is correct and readable. 
+* **Missing Keys or Permissions**: Double-check your .oci/config for typos and ensure the key file path is correct and readable. 
 
-OCI SDK Errors: Ensure the required OCI Python SDK is installed: 
+* **OCI SDK Errors**: Ensure the required OCI Python SDK is installed: 
 
-pip install oci  
+    ````
+        <copy>
+        pip install oci
+        </copy
+    ````  
 
-GenAI Access Issues: Verify your user/group has the correct IAM policy applied. 
+* **GenAI Access Issues**: Verify your user/group has the correct IAM policy applied. 
 
-Virtual Environment Not Activating: Ensure that you're using the correct command for your operating system. If the issue persists, try recreating the virtual environment. 
+* **Virtual Environment Not Activating**: Ensure that you're using the correct command for your operating system. If the issue persists, try recreating the virtual environment. 
 
-Dependencies Installation Issues: Double-check the requirements.txt file to ensure it contains the correct package names. If a specific package fails, you can try installing it manually with pip install <package-name>. 
+* **Dependencies Installation Issues**: Double-check the requirements.txt file to ensure it contains the correct package names. If a specific package fails, you can try installing it manually with pip install <package-name>. 
 
-Database Connection Errors: Ensure that the database credentials in the .env file are correct and that you have access to the Autonomous Database. 
+* **Database Connection Errors**: Ensure that the database credentials in the .env file are correct and that you have access to the Autonomous Database. 
 
 ## Additional Notes
-Your .oci/config and .environment files contain sensitive credentials. Do not commit them to version control. 
+* Your .oci/config and .environment files contain sensitive credentials. Do not commit them to version control. 
 
-Keep your oci_api_key.pem secure and never share it. 
+* Keep your oci\_api\_key.pem secure and never share it. 
 
-If you use multiple OCI profiles, you can add them to ~/.oci/config and reference them explicitly in your code. 
+* If you use multiple OCI profiles, you can add them to ~/.oci/config and reference them explicitly in your code. 
 
-This setup is intended for development and local testing purposes. If you're looking to deploy the application in production, additional configurations may be required. 
+* This setup is intended for development and local testing purposes. If you're looking to deploy the application in production, additional configurations may be required. 
 
-Ensure that your system's Python version is compatible (3.9 or higher) and that the virtual environment is activated whenever you work on the application. 
+* Ensure that your system's Python version is compatible (3.9 or higher) and that the virtual environment is activated whenever you work on the application. 
 
 ## Conclusion
 By following the steps outlined above, you should be able to set up and run the application locally. If you face any issues, refer to the troubleshooting section or contact the support team for assistance. 
@@ -272,6 +428,6 @@ You may now **proceed to the next lab**.
 
 ## Acknowledgements
 
-- **Created By/Date** - Kamryn Vinson
-- **Contributor** - Linda Foinding
-- **Last Updated By/Date** - Linda Foinding, April 2025
+- **Created By/Date** - Linda Foinding, Kevin Lazarz
+- **Contributor** - Kamryn Vinson
+- **Last Updated By/Date** - Kamryn Vinson, May 2025
