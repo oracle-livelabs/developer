@@ -1,0 +1,18 @@
+11:00:05 From Marion Smith to Everyone:
+	Welcome to today’s session about Microservices with Oracle Database. We are excited to have you join us. Please note that this meeting is being recorded.
+11:02:00 From Marion Smith to Everyone:
+	Welcome to today’s session about Microservices with Oracle Database. We are excited to have you join us. Please note that this meeting is being recorded.
+11:02:23 From Marion Smith to Everyone:
+	To access the materials being presented, visit http://bit.ly/db-collective-assets. Most assets will be available within 24 hours.
+11:02:44 From Marion Smith to Everyone:
+	If you have any questions, the Microservices PM team is available and ready to assist—just drop your questions in the Q&A section.
+11:06:12 From Marion Smith to Everyone:
+	You can find all assets and previous recordings at http://database.us.oracle.com  Click on Events and Programs at the top, then The Collective or to go directly to the page: http://bit.ly/db-collective-assets
+11:08:40 From Marion Smith to Everyone:
+	If you have any questions, the Microservices PM team is available and ready to assist—just drop your questions in the Q&A section.
+11:54:45 From Anders Swanson to Everyone:
+	Blog series on Eventing with Oracle Database, including Kafka APIs: https://medium.com/@anders.swanson.93/list/oracle-database-transactional-event-queues-400869f35b7b
+12:07:06 From Marion Smith to Everyone:
+	Reminder: You can find all assets and previous recordings at http://database.us.oracle.com  Click on Events and Programs at the top, then The Collective or to go directly to the page: http://bit.ly/db-collective-assets
+12:27:51 From Marion Smith to Everyone:
+	Thank you for attending! Reminder: You can find all assets and previous recordings at http://database.us.oracle.com  Click on Events and Programs at the top, then The Collective or to go directly to the page: http://bit.ly/db-collective-assets. Today’s recording will be posted within 24 hours.

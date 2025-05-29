@@ -32,11 +32,11 @@ Start by creating an App UI.
 
     ![This image shows the App UIs tab, with the + App UI button selected.](images/create-app.png)
 
-2. In **App UI Name**, enter a name, perhaps something like `EmpSearch`. The App UI ID is automatically filled in, but you can change it if you like.
+2. In **App UI Name**, enter a name, perhaps something like `EmpSearch`. The App UI ID is automatically filled in, but you can change it if you like. Take care to retain the `x-` prefix, which is used to distinguish customer App UIs from those created by Oracle in case they have the same name.
 
 3. Click **Create**.
 
-    The App UI opens on the Diagram view, which shows the App UI's flows and pages. A flow is just a way to keep related pages together. An application can contain many flows, and each flow can contain many pages. In this case, we have one flow, **main**, and one page, **main-start**:
+    The App UI opens on the Diagram view, which provides a visual representation of the App UI's flows and pages. A flow is just a way to keep related pages together. An application can contain many flows, and each flow can contain many pages. In this case, we have one flow, **main**, and one page, **main-start**:
     ![This image shows a new **empsearch** App UI open on the canvas in the Diagram tab. On the left is a Components palette; on the right is the  **main** tile indicating a flow, with the **main-start** tile nested within indicating a page within the flow.](images/newappui.png)
 
 4. Double-click the **main-start** tile on the canvas to open the page in the Page Designer.
@@ -45,6 +45,7 @@ Start by creating an App UI.
     ![This image shows the main-start page with several components labelled. On the left are the Components, Data, and Structure tabs, in the middle is the canvas area, and on the right is the Properties pane.](images/pagedesigner.png)
 
     Here are the main Page Designer areas you'll use throughout this workshop:
+
     | # | Tab | Functionality |
     | --- | ---- | --- |
     | 1 | Components | UI components (sorted by categories) that you can drag and drop onto a page|
@@ -98,7 +99,7 @@ Let's now add an Input Search component that allows users to enter some search t
 
    ![This image shows the Input Search component being dropped onto the banner to bring up the Slots pop-up with the options: **Default** and **Search slot**. **Search slot** is selected.](images/search-slot.png)
 
-3. In the Input Search component's Properties pane, enter  `Emp Name` as the **Placeholder**. You'll see this text appear as a placeholder in the component on the canvas.
+3. In the Input Search component's General tab in the Properties pane, enter  `Emp Name` as the **Placeholder**. You'll see this text appear as a placeholder in the component on the canvas.
 
 4. Let's now map the input search field to a variable, which will hold the employee detail that the user will search for. Click the **Data** tab in the Properties pane, then hover over the **Value** text, and click ![Select Variable icon](images/icon-selectvariable.png) next to **fx**.
 
@@ -117,4 +118,4 @@ You may now **proceed to the next lab**.
 ## Acknowledgements
 
 * **Author** - Sheryl Manoharan, VB Studio User Assistance, May 2023
-* **Last Updated By/Date** - Sheryl Manoharan, January 2025
+* **Last Updated By/Date** - Sheryl Manoharan, April 2025
