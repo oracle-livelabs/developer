@@ -171,7 +171,7 @@ Now you'll do the same for the Edit button.
 
 	You're now in the Action Chain Editor.
 
-  It's a good idea to set the ID for you action chain to something a little more informative.
+  It's a good idea to set the ID for your action chain to something a little more informative.
 
 3. In the properties panel on the right, change the ID to **EditButtonActionChain**
 	![Dragging actions](images/seteditbuttonactionchainid.png)
