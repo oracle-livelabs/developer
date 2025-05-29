@@ -83,7 +83,9 @@ Notice the template includes a button to take you back to the parent page.  You 
 
 5. Click **Next**
 
-6.  Drag **rowIndex** onto **accounts_id**.  You already configured rowIndex when you mapped the parameters in the navigate action chain.
+  The page will use the **Target** REST API to load the data and it will need the accounts_id to get the correct record.  You passed the key to **rowIndex** in a previous step so you just need to map the values.
+
+6.  Drag **rowIndex** onto **accounts_id**.
 
   ![Resulting page](images/mapaccountsid.png)
 

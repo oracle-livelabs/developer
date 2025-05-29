@@ -1,8 +1,10 @@
-# JSON Duality Views Coding Challenge step-by-step
+# Code with JSON Duality Views step-by-step
 
 ## Introduction
 
-In this lab, we’ll provide a step-by-step guide to help you successfully complete the coding challenge from the previous lab. This step-by-step guide will walk you through the necessary updates, providing solutions and insights to help you fully understand how to utilize JSON duality views in a practical scenario. Whether you're refining your existing work or tackling the challenge for the first time, this guide will ensure you gain the skills and confidence needed to implement these powerful features.
+This step-by-step guide will walk you through the necessary updates, providing solutions and insights to help you fully understand how to utilize JSON duality views in a practical scenario. 
+
+At SeerEquites, the analytics department has flagged an issue with incorrect customer age data, affecting their reports and insights. To resolve this, loan officers are tasked with manually updating customer ages in the loan application, but currently, they cannot edit the age field. Fortunately, the system was designed with age fields already in the database, so the solution is to update the frontend of the loan application to allow officers to modify the age. Once this is implemented, the analytics department can benefit by using JSON Duality Views to run SQL queries on the updated data, even though it's stored as documents. This will allow the team to access accurate, up-to-date customer ages, improving their reporting and decision-making, while loan officers can ensure the data is correct.
 
 Let’s dive in and unlock the full potential of JSON in your application!
 
@@ -12,115 +14,133 @@ Estimated Time: 15 minutes
 
 In this lab, you will:
 
-* Enhance your understanding of JSON duality views by applying it to a real-world developer coding challenge.
+* Enhance your understanding of JSON duality views by applying it to a coding challenge.
 
 * Gain hands-on experience with JSON duality views and refining application features to meet specific development requirements.
 
 ### Prerequisites
 
 This lab assumes you have:
-
 * An Oracle Cloud account
+* Successfully completed Lab 1: Run the Demo
+* Successfully completed Lab 3: Connect to Development Environment
 
-* Successfully completed Lab 1: Workshop Details and Prerequisites
+## Task 1: Challenge Requirements 
 
-* Successfully completed Lab 2: SeerEquities AI App in Action
+**About Jason Duality Views**:
 
+JSON Relational Duality is a landmark capability in Oracle Database 23ai, providing game-changing flexibility and simplicity for Oracle Database developers. This feature overcomes the historical challenges developers have faced when building applications using the relational or document models.
 
-## Task 1: JSON Duality Views Coding Exercise 
+JSON Relational Duality helps to converge the benefits of both document and relational worlds. Developers now get the flexibility and data access benefits of the JSON document model, plus the storage efficiency and power of the relational model. The new feature enabling this functionality is JSON Relational Duality View
 
+**Coding Requirements**:
 
-The company has requested an enhancement to the current customer data and would now like to see the parameter for **age** to be reflected. 
+This challenge consists of **three steps**: 
 
-1. In the Customer.py file, find the 🔍 Customer Details Section at line 222
-2. Update the section to include a new parameter for **age**.
+* First, update the frontend of the loan application to enable loan officers to view and modify customer ages. 
+* Second, calculate the average age across the client base using the corrected information.
+* Third, use JSON Duality Views to run SQL queries on the updated data.
 
+## Task 2: Update Application Frontend
 
-## Task 2: Login to Jupiter Notebook
-
-1. To navigate to the development environment, click **View Login Info**. Copy the Development IDE Login Password. Click the Start Development IDE link.
-
-    ![Open Development Environment](./images/dev-env.png " ")
-
-2. Paste in the Development IDE Login Password that you copied in the previous step. Click **Login**.
-
-    ![Login](./images/jupyter-login.png " ")
-
-## Task 3: Modify the Decision.py File
+The company has requested an enhancement to the current customer data and would now like to see the parameter for **age** to be reflected.
 
 1. Click **Pages**.
 
     ![Click Pages](./images/click-pages.png " ")
 
-2. Select **Decision.py**.
+2. Select the **Customers.py** file.
 
-    ![Click Decision.py](./images/decision-py.png " ")
+    ![Click Customers.py](./images/customers-py.png " ")
 
-**Coding with JSON TRANSFORM**
+3. In the Customer.py file, find the # 🔍 Customer Details Section at line 219
 
-The code below section dynamically updates customer data in our **clients dv** (dv - stands for duality views) table by building a flexible  **JSON TRANSFORM** query based on a list of transformation statements. It constructs the query by joining those statements—like setting new field values—then applies them to the JSON data for a specific customer, identified by their ID, as long as a loan application exists."
+4. Update the section to include a new parameter for **age**.
 
-3. Copy the following code block and paste it at line 236 in the Customer.py file.
+5. Save the Customers.py file.
 
-    ````python
+    ![Save Customers.py](./images/save-customers-py.png " ")
+
+## Task 3: Analyzing the Complete Client Data 
+
+The analytics team needs to access the full dataset of client information (e.g., age, income, credit score, loan history) to perform a comprehensive analysis. This command returns the entire data field in JSON format, which could contain detailed client records.
+
+````sql
     <copy>
-        age = st.number_input("age", value=int(customer_data.get("age", 32)), step=1)
-                    </copy>
-    ````
+    SELECT json_serialize(data PRETTY) FROM clients_dv;
+    </copy>
+````
 
+By examining this data, the analytics team can:
 
-4. Copy the following code block and paste it at line 251 in the Customer.py file.
+* Identify key patterns in client demographics (e.g., a high proportion of clients in a particular age group applying for certain types of loans).
 
-    ````python
+* Recognize which attributes (such as age, income level, or credit score) are most strongly correlated with loan approval rates or defaults.
+
+* Provide insights that the loan officers can use to suggest customized loan options to clients based on their age and financial background.
+
+    ![SQLcl](./images/all-customers.png " ")
+
+## Task 4: Analyzing Clients of a Specific Age
+
+A common scenario for a loan officer is to deal with clients who fall into a specific age group. For example, there may be a market trend where people around the age of 34 are showing an increased interest in home loans or refinancing options.
+
+````sql
     <copy>
-        if age != int(customer_data.get("age", 32)): transform_statements.append("SET '$.age' = :age"); bind_vars['age'] = age                
-        </copy>
-    ````
-## Task 4: Launch the Application
+    SELECT json_serialize(data PRETTY)
+    FROM clients_dv WHERE json_value(data, '$.age') = '34';
+    </copy>
+````
 
-1. Open the terminal. 
+The analytics team can use this query to extract all client data for those who are 34 years old. The output helps identify:
 
-    ![Open Terminal](./images/open-terminal.png " ")
+* Whether this demographic is asking for specific types of loans (e.g., home loans vs. personal loans).
 
-2. Copy the ./run.sh command and paste it into the terminal.
+* If age 34 clients are more likely to get approved or face any challenges in their loan applications.
 
-    ````bash
-    $<copy>
-        ./run.sh
-        </copy>
-    ````
+* Demographic details like income, credit score, and previous loan history that could influence loan recommendations for 34-year-olds.
 
-3. Click the URL displayed in the terminal to launch the SeerEquities Loan Management application.
+Loan officers can then use these insights to:
 
-    ![Click the URL](./images/click-url.png " ")
+* Tailor loan offers to meet the needs of 34-year-old clients. 
 
-4. Enter in a username and click **Login**.
+* Customize interest rates or repayment terms based on the behavior and loan eligibility trends of this age group.
 
-    ![Login](./images/login.png " ")
+    ![SQLcl](./images/specific-age.png " ")
 
-## Task 5: View the Results
+## Task 5: Calculating the Average Age of Clients
 
-1. On the Dashboard page, from the pending review list, select the Customer ID for **James Woods**. 
+The analytics team can calculate the average age of all clients in the database. This helps understand the overall age distribution of clients seeking loans. For example, if the average age of clients is 28, it might suggest that younger customers are more likely to apply for loans or require financial products that cater to their specific needs (e.g., first-time homebuyers or education loans).
 
-    ![Select James Woods](./images/james-woods.png " ")
+````sql
+    <copy>
+    SELECT AVG(CAST(json_value(data, '$.age') AS INT)) AS average_age
+    FROM clients_dv;
+    </copy>
+````
 
-2. This will display the customers loan application details. Select the **Customer Details** drop down menu and view the new age parameter at the bottom.
+Loan officers can use this data to:
 
-    ![James Smith AI generated recommendations](./images/james-woods-ai.png " ")
+* Adjust their loan offerings to target the most common age group.
 
-3. Note: the customer details tab has been updated to reflect the **age** parameter now for all customers. 
+* Customize their approach for different age groups by suggesting loan products suited for younger vs. older clients.
 
+* Understand the risk and behavior patterns associated with different age groups—helpful for tailoring loan terms or interest rates.
+
+For instance, if the average age is low, there might be an opportunity to introduce loans tailored for young professionals, like lower-interest student loan consolidation or startup loans. If the average age is high, home equity loans or retirement planning options may be more relevant.
+
+![SQLcl](./images/average-age.png " ")
 
 **Congratulations, you have successfully completed the JSON Duality View Coding Exercise!**
 
+## Conclusion
+The analytics team can leverage these SQL queries to deliver powerful insights into the client base's age distribution and preferences, enabling loan officers like yourself to offer more personalized, relevant, and profitable loan recommendations. By using the data in a structured way, the loan process becomes more customer-centric, improving satisfaction and potentially increasing the volume and quality of loan products offered.
+
 ## Learn More
 
-*(optional - include links to docs, white papers, blogs, etc)*
-
-* [URL text 1](http://docs.oracle.com)
-* [URL text 2](http://docs.oracle.com)
+* [Oracle Database 23ai Documentation](https://docs.oracle.com/en/database/oracle/oracle-database/23/)
 
 ## Acknowledgements
-* **Author** - <Name, Title, Group>
-* **Contributors** -  <Name, Group> -- optional
-* **Last Updated By/Date** - <Name, Month Year>
+* **Authors** - Linda Foinding, Francis Regalado
+* **Contributors** - Kamryn Vinson, Otis Barr, Ramona Magadan, Eddie Ambler, Kevin Lazarz
+* **Last Updated By/Date** - Linda Foinding, April 2025
