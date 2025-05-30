@@ -113,7 +113,7 @@ VB Studio apps are event-driven, which means that an event is fired when an end 
 
 	You're now in the Action Chain Editor.
 
-  It's a good idea to set the ID for you action chain to something a little more informative.
+  It's a good idea to set the ID for your action chain to something a little more informative.
 
 3. In the properties panel on the right, change the ID to **InfoButtonActionChain**
 	![Dragging actions](images/setinfobuttonactionchainid.png)
@@ -124,6 +124,7 @@ VB Studio apps are event-driven, which means that an event is fired when an end 
 	![Dragging actions](images/actiondrag.png)
   and drop it onto the canvas:
 	![Dropping actions](images/actiondrop.png)
+  Currently there is no page to navigate to, so you'll need to create one.
 
 5. In the Properties pane, locate the page list and click **Create**:
 	![Action properties](images/clickcreateeditpage.png)
@@ -134,6 +135,7 @@ VB Studio apps are event-driven, which means that an event is fired when an end 
 
 8. Click **Create**:
 	![Action properties](images/createdetailspage.png)
+  This new page will be used to display the details for a specific record. It will need to know which record to display, so you need to pass the key for the selected row to an input parameter on the new page.
 
 9. In the properties panel, locate the **rowIndex** parameter and click **Select Variable**:
 
@@ -143,7 +145,9 @@ VB Studio apps are event-driven, which means that an event is fired when an end 
 
   ![Set input parameter](images/selectkey.png)
 
-11. In the properties panel, locate the **parentPage** parameter and click **Select Variable**:
+11. The **Horizontal Foldout Layout Page Template** has built in functionality to navigate back to the parent page.  You can to pass it the page to navigate to.
+
+In the properties panel, locate the **parentPage** parameter and click **Select Variable**:
 
   ![Set input parameter](images/selectparrentpagevariable.png)
 
@@ -156,6 +160,7 @@ Your **InfoButtonActionChain** should look like this:
   ![Set input parameter](images/buttonactionchain.png)
 
 ## Task 4: Edit button Action Chain
+Now you'll do the same for the Edit button.
 
 1. Switch back to the Design view in the Page Designer tab, select the Edit button, then click **Events** in the Properties pane:
 
@@ -166,7 +171,7 @@ Your **InfoButtonActionChain** should look like this:
 
 	You're now in the Action Chain Editor.
 
-  It's a good idea to set the ID for you action chain to something a little more informative.
+  It's a good idea to set the ID for your action chain to something a little more informative.
 
 3. In the properties panel on the right, change the ID to **EditButtonActionChain**
 	![Dragging actions](images/seteditbuttonactionchainid.png)
@@ -222,11 +227,11 @@ If you don't see the parameter, you may need to refresh your screen.
 
   ![Set input parameter](images/selectkey.png)
 
-Your **ButtonActionChain1** should look like this:
+Your **EditButtonActionChain** should look like this:
 
   ![Set input parameter](images/buttonactionchain1.png)
 
-You have created two new pages for your application and setup buttons to navigate to them.
+You have created two new pages for your application and set up buttons to navigate to them.
 
 Let's move on to the next lab, where we'll learn how to configure the Account Details page.
 
