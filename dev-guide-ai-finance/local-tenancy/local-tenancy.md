@@ -26,8 +26,81 @@ By the end of this section, you will be able to:
 
 Let’s get started!
 
+## Task 1: Create a Virtual Cloud Network
 
-## Task 1: Provision an Autonomous Database
+Follow these steps to create a Virtual Cloud Network (VCN). If you already have a VCN created, you may proceed to Task #2. 
+
+1. From the Oracle Cloud homepage, click the navigation menu in the top left corner. Select **Networking** -> **Virtual Cloud Networks**.
+
+   ![Click Virtual Cloud Networks](./images/click-vcn.png " ")
+
+2. Select the **Create VCN** button.
+
+   ![Click Create VCN](./images/create-vcn.png " ")
+
+3. Enter a name for your VCN. For example, we named ours **SeerEquites**. Next, choose the compartment where you'd like to create the VCN. 
+
+   ![Create VCN](./images/vcn-name.png " ")
+
+4. In the IPv4 CIDR Blocks field, enter 10.0.0.0/16 and click **Add to List**.
+
+   ![Create VCN](./images/vcn-blocks.png " ")
+
+5. **Use DNS Hostnames in this VCN:** Leave this option checked. 
+
+6. You can specify a **DNS Label** for the VCN, or you can let the Console generate one for you.
+
+   ![Create VCN](./images/vcn-dns.png " ")
+
+7. Click **Create VCN**.
+
+   ![Click Create VCN](./images/vcn-create.png " ")
+
+8. The VCN is available. Select your VCN name.
+
+   ![VCN is Available](./images/vcn-available.png " ")
+
+9. Click the **Subnets** tab and click **Create Subnet**.
+
+   ![Create Subnet](./images/create-subnet.png " ")
+
+10. Enter a name for your Subnet. For example, we named ours **SeerEquites**.
+
+   ![Create Subnet](./images/subnet-name.png " ")
+
+11. For **Subnet Type**, select **Regional**.
+
+   ![Create Subnet](./images/subnet-type.png " ")
+
+12. In the IPv4 CIDR Blocks field, enter 10.0.0.0/16.
+
+13. **Subnet Access:** Select **Public Subnet**
+
+   ![Create Subnet](./images/subnet-blocks.png " ")
+
+14. **Use DNS Hostnames in this Subnet:** Leave this option checked. 
+
+15. You can specify a **DNS Label** for the Subnet, or you can let the Console generate one for you.
+
+   ![Create VCN](./images/subnet-dns.png " ")
+
+16. Click **Create Subnet**.
+
+   ![Click Create VCN](./images/subnet-create.png " ")
+
+17. The subnet has been created. Select your subnet.
+
+    ![Click Subnet](./images/click-subnet.png " ")
+
+18. Click the **Security** tab and click on your security list.
+
+    ![Click Security List](./images/click-security-list.png " ")
+
+19. Click **Security rules** -> **Add Ingress Rules**.
+
+    ![Click Add Ingress Rules](./images/click-add-ingress-rules.png " ")
+
+## Task 2: Provision an Autonomous Database
 
 Before you can run the application, you need to provision an **Autonomous Database** and obtain the following connection details: 
 
@@ -39,11 +112,11 @@ Before you can run the application, you need to provision an **Autonomous Data
 
 1. Click the navigation menu in the upper left to show top level navigation choices.
 
-   ![Begin navigation in OCI menu](./images/begin-oci-menu.png" ")
+   ![Begin navigation in OCI menu](./images/begin-oci-menu.png " ")
 
 3. Click **Oracle Database** -> **Autonomous Database**.
 
-   ![Select Autonomous Database from menu](./images/select-atp.png" ")
+   ![Select Autonomous Database from menu](./images/select-atp.png " ")
 
 4. Click **Create Autonomous Database** to start the instance creation process.
 
@@ -100,7 +173,7 @@ Before you can run the application, you need to provision an **Autonomous Data
     ![Autonomous Database instance successfully provisioned](./images/adb-provisioned.png " ")
     Autonomous Database instance successfully provisioned.
 
-## Task 2: Unzip the Code
+## Task 3: Unzip the Code
 
 1. Unzip the application code to a directory of your choice on your local machine: 
 
@@ -114,9 +187,9 @@ Before you can run the application, you need to provision an **Autonomous Data
     ![Navigate to folder](./images/folder.png " ")
 
 
-## Task 3: Install Python 3.9 or Higher 
+## Task 4: Install Python 3.11 
 
-To run the application, Python version 3.9 or higher is required. Follow the steps below to ensure Python is installed on your machine. 
+To run the application, Python version 3.11 or higher is required. Follow the steps below to ensure Python is installed on your machine. 
 
 1. Run the following command to check which version of Python is installed.
 
@@ -127,11 +200,17 @@ To run the application, Python version 3.9 or higher is required. Follow the
     ````
     ![Check Python Version](./images/python-version.png " ")
 
-2. If Python 3.9+ is not installed, download and install Python 3.9 or higher from the [**official website**](https://www.python.org/downloads/).
+2. If Python 3.11 is not installed, download and install Python 3.11 from the [**official website**](https://www.python.org/downloads/). You can also run the following command.
+
+    ````
+        <copy>
+        sudo dnf install python3.11
+        </copy>
+    ````
 
     ![Check Python Version is Installed](./images/python-version-installed.png " ")
 
-## Task 4: Setting Up the Local Environment 
+## Task 5: Setting Up the Local Environment 
 
 1. Create a Virtual Environment. It is recommended to create a virtual environment to isolate the dependencies. In your terminal, run the following command to create a virtual environment: 
 
@@ -198,22 +277,15 @@ To run the application, Python version 3.9 or higher is required. Follow the
 
     ![Required Libraries](./images/requirements.png " ")
 
-4. Create a .env File. You need to create a .env file in the root directory of the project to configure the database connection details. Create the .env file with the following format:
- 
-    ````
-        <copy>
-        touch .env
-        </copy
-    ````
+4. Create a .env File. You need to create a .env file in the root directory of the project to configure the database connection details. 
 
-5. Open the file using the command below.
     ````
         <copy>
         vi .env
         </copy
     ````
 
-6. Insert the variables below into the file. Replace the values with the actual values you obtained during the provisioning of the Autonomous Database. You should have captured your database username and password in task 1 of this lab. 
+5. Insert the variables below into the file. Replace the values with the actual values you obtained during the provisioning of the Autonomous Database. You should have captured your database username and password in task 1 of this lab. 
 
     DB\_USERNAME=Your\_DB\_Username 
 
@@ -227,42 +299,42 @@ To run the application, Python version 3.9 or higher is required. Follow the
 
     ADB\_OCID=Your\_DB\_OCI\_ID 
 
-7. Find your database connection string by selecting **Database Connection**.
+6. Find your database connection string by selecting **Database Connection**.
 
     ![Select Database Connection](./images/db-connection.png " ")
 
-8. Copy the low connection string. This is the connection string you will place into the .env file.
+7. Copy the low connection string. This is the connection string you will place into the .env file.
 
     ![Copy Connection String](./images/connection-string.png " ")
 
-9. To locate your compartment OCID, navigate to **Identity & Security** -> **Compartments**.
+8. To locate your compartment OCID, navigate to **Identity & Security** -> **Compartments**.
 
     ![Click Compartments](./images/compartments.png " ")
 
-10. Select your compartment.
+9. Select your compartment.
 
     ![Select your Compartment](./images/select-compartment.png " ")
 
-11. Copy your compartment OCID. Place the compartment OCID into your .env file.
+10. Copy your compartment OCID. Place the compartment OCID into your .env file.
 
     ![Select your Compartment](./images/copy-ocid.png " ")
 
-12. Paste this in as your endpoint url in the .env file:
+11. Paste this in as your endpoint url in the .env file:
 
     ````
         <copy>
         https://inference.generativeai.us-chicago-1.oci.oraclecloud.com
         </copy
     ````
-13. Navigate back to your Autonomous Database to copy your ADB OCID. Click **Oracle Database** -> **Autonomous Database**.
+12. Navigate back to your Autonomous Database to copy your ADB OCID. Click **Oracle Database** -> **Autonomous Database**.
 
    ![Select Autonomous Database from menu](./images/select-atp.png" ")
 
-14. Select your Autonomous Database.
+13. Select your Autonomous Database.
 
     ![Select your Autonomous Database](./images/select-your-adb.png " ")
 
-15. Copy your Autonomous Database OCID. Paste it into your .env file.
+14. Copy your Autonomous Database OCID. Paste it into your .env file.
 
     ![Copy your Autonomous Database OCID](./images/adb-ocid.png " ")
 
@@ -270,7 +342,7 @@ To run the application, Python version 3.9 or higher is required. Follow the
 
     ![.env credentials](./images/env-credentials.png " ")
 
-## Task 5: Setting Up OCI Generative AI Service
+## Task 6: Setting Up OCI Generative AI Service
 
 1. Click **User Settings** -> **Tokens and Keys**. 
 
@@ -300,15 +372,7 @@ To run the application, Python version 3.9 or higher is required. Follow the
         </copy
     ```` 
 
-7.  Create or edit the config file at ~/.oci/config with the following command: 
-
-    ````
-        <copy>
-        touch config
-        </copy
-    ````
-
-8.  Open the config file.
+7.  Create the config file at ~/.oci/config with the following command: 
 
     ````
         <copy>
@@ -316,7 +380,7 @@ To run the application, Python version 3.9 or higher is required. Follow the
         </copy
     ```` 
 
-9. Insert the variables below: 
+8. Insert the variables below: 
 
     > 💡Note: Replace all placeholders with your actual OCI credentials and key file path except region, which must be us-chicago.
 
@@ -333,11 +397,11 @@ To run the application, Python version 3.9 or higher is required. Follow the
 
 Create a policy that will allow you to use OCI Generative AI within your previously defined compartment. **Make sure your policy uses the compartment where your Autonomous Database is deployed.** The policy will be necessary for Autonomous Database to interact with OCI Generative AI.
 
-10. From the Console, open the Navigation menu and click **Identity & Security**. Under Identity, click **Policies**.
+9. From the Console, open the Navigation menu and click **Identity & Security**. Under Identity, click **Policies**.
 
     ![Click Policies](./images/policies.png " ")
 
-11. Click **Create policy** and paste the following into the appropriate fields:
+10. Click **Create policy** and paste the following into the appropriate fields:
 
     **Name:** PublicGenAI 
 
@@ -347,7 +411,7 @@ Create a policy that will allow you to use OCI Generative AI within your previou
 
     ![Enter Policy Info](./images/policy-info.png " ")
 
-12. Click **Show Manual Editor**. 
+11. Click **Show Manual Editor**. 
 
     ![Show Manual Editor](./images/show-editor.png " ")
 
@@ -362,21 +426,21 @@ Create a policy that will allow you to use OCI Generative AI within your previou
 
     ![Paste Policy](./images/policy.png " ")
 
-14. Click **Create**.
+13. Click **Create**.
 
     ![Create Policy](./images/create-policy.png " ")
 
 OCI Generative AI is a fully managed service available via API to seamlessly integrate language models into a wide range of use cases, including writing assistance, summarization, analysis, and chat. You can quickly integrate OCI Generative AI with Autonomous Database to apply AI models to your data.
 
-15. Make sure you are in the US Midwest(Chicago) region:
+14. Make sure you are in the US Midwest(Chicago) region:
 
     ![Midwest Chicago Region](./images/chicago-region.png " ")
 
-16. From the Console, open the Navigation menu and click **Analytics & AI**. Click **Generative AI**.
+15. From the Console, open the Navigation menu and click **Analytics & AI**. Click **Generative AI**.
 
     ![Click Generative AI](./images/click-generative-ai.png " ")
 
-## Task 6: Run the Application
+## Task 7: Run the Application
 
 1. Now that everything is set up, you can start the application by running the following command: 
 
@@ -426,8 +490,11 @@ By following the steps outlined above, you should be able to set up and run the 
 
 You may now **proceed to the next lab**.
 
+## Learn More
+
+- [Generative AI Documentation](https://docs.oracle.com/en-us/iaas/Content/generative-ai/home.htm)
+
 ## Acknowledgements
 
-- **Created By/Date** - Linda Foinding, Kevin Lazarz
-- **Contributor** - Kamryn Vinson
+- **Created By/Date** - Kamryn Vinson, Linda Foinding, Kevin Lazarz
 - **Last Updated By/Date** - Kamryn Vinson, May 2025
