@@ -123,13 +123,13 @@ By the end of this lab, you’ll understand how the **Data Share** tool enables 
 
    1.	Click the Report button for this link job to view a report of the total rows processed successfully and failed for the selected table and the SQL used.
 
-   * Click **Close** when done.
+      * Click **Close** when done.
 
   ![Create Data Product Share](./images/select-shared-data-1a.png )
 
    2. In the **Table and View Loads** section:
 
-   * Click the external table link named **Shared\_Loan\_Data\_Risk** to preview its data.
+      * Click the external table link named **Shared\_Loan\_Data\_Risk** to preview its data.
 
    Remember, that the source data for this external table is from the **Shared\_Loan\_Data\_Risk\_VW** data share.
 
