@@ -2,7 +2,7 @@
 
 ## Introduction
 
-In this lab, as a share provider, you will create a data share and add a table to it. Next, you will create a new recipient that will have access to this data share.
+In this lab, we will create and share data products that includes information on recently closed loans.  You will also create a new data share recipient that will have access to this data share.
 
 Finally, you will publish the data share and send the recipient the activation link needed to access the data share.
 
@@ -18,14 +18,14 @@ In this Lab, you will:
 * **Prerequisites for Share Providers to use the share tool:**
       * For a versioned share, you must have **read and write access to a bucket** to store or cache your shares.
       * The schema you wish to use to create and publish shares must be **enabled for Data Sharing by an ADMIN user.**
-      * Creation of Cloud Location to Publish Share (Lab 3 task 2)
+      * You should have completed the creation a Cloud Location to Publish Share (Lab 3 task 2)
 
 * **Prerequisites for Share Recipients**
       * The share recipient must have a **valid email address** a provider can use to register the recipient to use the share tool. Oracle Data Share allows you to share the recipient's activation link by email.
 
 ## Task 1: Create Data Product Share
 
-   * Note: If continuing from lab 4, click on Database Actions link and skip to step 6.
+   >**Note:** If continuing from lab 4, click on **Database Actions** link and skip to step 6.
 
    1. Navigate to your Assigned ADB Instance
 
@@ -66,7 +66,7 @@ In this Lab, you will:
 
       ![Define a Data Product Recipient](./images/set-provider-id.png "Define a Data Product Recipient")
 
-   9. Provide details for the provider in the **Provider Identification** popup window.
+   9.	Enter the details below for the provider, in the **Provider Identification** popup window.
 
       ![Define a Data Product Recipient](./images/define-data-product-share-recipient-5.png "Define a Data Product Recipient")
 
@@ -77,15 +77,15 @@ In this Lab, you will:
 
       * Click **Save**.
 
-   10. Click **Shares** on the **Provide Share** page, to begin entering details for the new share.
+   10. Click **Shares** on the **Provide Share** page, to begin entering details for the new share.  Then, click the Create Share button to launch the Create Share wizard screen.
 
       ![Define a Data Product Recipient](./images/define-data-product-share-recipient-6.png "Define a Data Product Recipient")
 
-   11. The **General** page of the **Create Share** wizard will appear.
+   11.	On the first page of the **Create Share** wizard, enter the following:
 
       * Enter the following:
          *  **Name:** LoanApp\_ShareToRisk
-         *  **Description:** a description (optional)
+         *  **Description:** a meaningful description
 
       ![Define a Data Product Recipient](./images/create-share-general-risk.png "Define a Data Product Recipient")
 
@@ -103,12 +103,12 @@ In this Lab, you will:
 
       ![Define a Data Product Recipient](./images/create-share-select-table-risk.png "Define a Data Product Recipient")
 
-      * Select the **Share\_Loan\_Data\_Risk\_VW** table in the Available Tables column.
-      *  Click the ">" button to list it to the Shared Tables column
+      a. Select the **Share\_Loan\_Data\_Risk\_VW** table in the Available Tables column.
+      b. Click the **move (>)** button to list it to the Shared Tables column
 
       ![Define a Data Product Recipient](./images/select-items-for-share.png "Define a Data Product Recipient")
 
-      * Click **Next**.
+      c. Click **Next**.
 
    14. In Recipients section of wizard, Click on **New Recipients** button.
 
@@ -116,10 +116,10 @@ In this Lab, you will:
 
    15. In the **Create Share Recipient** window that is displayed, enter the recipient details.
 
-      <u>** * Enter the following:** </u>
-         *  **Name:** Risk\_Dept\_Lead
-         *  **Description:** Risk Department Data Engineering Lead (optional) **
-         *  **Email:** a description (optional)
+      <u>** * Enter the following:** </u>  
+         *  **Name:** Risk\_Dept\_Lead  
+         *  **Description:** Risk Department Data Engineering Lead (optional)  
+         *  **Email:** a description (optional)  
 
       ![Define a Data Product Recipient](./images/create-share-recipient-risk.png "Define a Data Product Recipient")
 
@@ -135,9 +135,9 @@ In this Lab, you will:
 
       ![Define a Data Product Recipient](./images/paste-activation-link-in-window.png "Define a Data Product Recipient")
 
-   18. Click on Get Profile Information to envoke download.
+   18. Click on **Get Profile Information** to invoke download.
 
-   19. Rename file to Risk\_Delta\_Share\_Profile.json.
+   19. Rename file to **Risk\_Delta\_Share\_Profile.json**.
 
 ## Task 2: Manage the Data Product Share
 
@@ -153,16 +153,16 @@ In this Lab, you will:
 
       ![Define a Data Product Recipient](./images/manage-data-product-share-risk-3.png "Define a Data Product Recipient")
 
-      Click **Cancel**.
+      Click **Cancel** to proceed to next lab steps.
 
    4. From the **Provide Share** page, click **Recipients** to display the recipients for the data share.
 
       ![Define a Data Product Recipient](./images/create-risk-dept-recipient.png "Define a Data Product Recipient")
 
-   ***Congratulations you have shared your data from ADB to the Risk Dept Lead.***
-#
+   ***Congratulations you have shared your data from ADB to the Risk Dept Lead.***  
+
 ## Acknowledgements
-* **Authors** - Eddie Ambler, Otis Barr, Matt Kowalik
-* **Contributors** - Mike Matthews, Marty Gubar, Francis Regalado, Ramona Magadan
+* **Authors** - Eddie Ambler, Otis Barr
+* **Contributors** - Mike Matthews, Marty Gubar, Francis Regalado
 * **Last Updated By/Date** - 04-28-2025
 Copyright (C) Oracle Corporation.
