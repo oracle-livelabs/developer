@@ -698,19 +698,104 @@ OCI Generative AI is a fully managed service available via API to seamlessly int
 
 1. Now, we are going to create the introduction page. Run the following command:
 
-2. Run the following command:
-
     ````
         <copy>
         nano 1-Introduction.py
         </copy>
     ````
 
-3. Copy the following into your 1-Introduction.py file:
+2. Copy the following into your 1-Introduction.py file:
 
     ````
         <copy>
-        INSERT CONTENT
+        import streamlit as st
+import requests
+
+# Disables the sidebar navigation by default
+st.set_page_config(
+    page_title="🏠 SeerEquities App", layout="wide", initial_sidebar_state="collapsed"
+)
+
+# if "db_setup_ran" not in st.session_state:
+#     exec(open("db_setup.py").read())
+#     st.session_state.db_setup_ran = True
+
+
+# Temporary inline CSS to fix selectbox width and centering
+st.markdown(
+    """
+    <style>
+        /* Target the selectbox container and its inner div */
+        div.stSelectbox > div[data-baseweb="select"] > div {
+            width: 200px !important;
+            max-width: 200px !important;
+            margin: 0 auto !important;
+        }
+        /* Ensure the selectbox widget itself is constrained and centered */
+        div.stSelectbox {
+            width: 200px !important;
+            max-width: 200px !important;
+            margin: 0 auto !important;
+            display: flex;
+            justify-content: center;
+        }
+    </style>
+""",
+    unsafe_allow_html=True,
+)
+
+
+# Function to load CSS
+def load_css(file_path):
+    if file_path.startswith("http"):
+        try:
+            response = requests.get(file_path)
+            if response.status_code == 200:
+                st.markdown(f"<style>{response.text}</style>", unsafe_allow_html=True)
+            else:
+                st.error(
+                    f"Failed to load CSS from URL: {file_path} (Status: {response.status_code})"
+                )
+        except Exception as e:
+            st.error(f"Error loading CSS from URL: {e}")
+    else:
+        try:
+            with open(file_path, "r") as f:
+                st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
+        except FileNotFoundError:
+            st.error(f"CSS file not found: {file_path}")
+        except Exception as e:
+            st.error(f"Error loading CSS file: {e}")
+
+
+load_css(
+    "https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/labfiles/loan_css_test/style.min.css"
+)
+
+# Title and description (personalized after login)
+if "user_name" in st.session_state:
+    st.title(
+        f"Welcome to SeerEquities Loan Management, {st.session_state['user_name']}!"
+    )
+else:
+    st.title("Welcome to SeerEquities Loan Management")
+
+st.image(
+    "https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/labfiles/loan_css_test/seer-equities-logo-v1.png"
+)
+
+# Input field for the user's name
+user_name = st.text_input("", key="username-input", placeholder="Username").strip()
+
+# Login button
+if st.button("Login", key="login-button"):
+    if not user_name:
+        st.error("Please enter your name to proceed.")
+    else:
+        # Store the user's name in session state to pass it to the Dashboard
+        st.session_state["user_name"] = user_name
+        st.success(f"Welcome, {user_name}! Redirecting to your Dashboard...")
+        st.switch_page("pages/2-Dashboard.py")
         </copy>
     ````
 
@@ -903,14 +988,14 @@ OCI Generative AI is a fully managed service available via API to seamlessly int
         </copy>
     ````
 
-17. Create the 5_Marketing_Home.py file:
+19. Create the 3-Customers.py file:
 
     ````
         <copy>
-        nano 5_Marketing_Home.py
+        nano 3-Customers.py
         </copy>
     ````
-18. Copy the following into your 5_Marketing_Home.py file:
+20. Copy the following into your 3-Customers.py file:
 
     ````
         <copy>
@@ -918,7 +1003,37 @@ OCI Generative AI is a fully managed service available via API to seamlessly int
         </copy>
     ````
 
-19. Navigate back to the Streamlit folder:
+21. Create the 4-Decision.py file:
+
+    ````
+        <copy>
+        nano 4-Decision.py
+        </copy>
+    ````
+22. Copy the following into your 4-Decision.py file:
+
+    ````
+        <copy>
+        INSERT CONTENT
+        </copy>
+    ````
+
+23. Create the 5\_Marketing\_Home.py file:
+
+    ````
+        <copy>
+        nano 5_Marketing_Home.py
+        </copy>
+    ````
+24. Copy the following into your 5\_Marketing\_Home.py file:
+
+    ````
+        <copy>
+        INSERT CONTENT
+        </copy>
+    ````
+
+25. Navigate back to the Streamlit folder:
 
     ````
         <copy>
@@ -926,7 +1041,7 @@ OCI Generative AI is a fully managed service available via API to seamlessly int
         </copy>
     ````
 
-20. Start Streamlit:
+26. Start Streamlit:
 
     ````
         <copy>
@@ -934,7 +1049,7 @@ OCI Generative AI is a fully managed service available via API to seamlessly int
         </copy>
     ````
 
-21. Load the tables:
+27. Load the tables:
 
     ````
         <copy>
