@@ -6,7 +6,7 @@
 
 In this lab, you’ll practice setting up the live feed capabilities, that can be used to load data that is continuously collected into cloud object storage.  When a load job is enabled for live feed, it is connected to the OCI event notification and subscription mechanism, so that every time a new object is created in the object store bucket, it triggers the live feed, loading the contents to the database
 
-<**Note:** To complete this lab, you will alternate between Oracle Cloud Infrastructure Console pages and Oracle Database Actions pages.  Selecting Database Actions will open a new tab.
+<**NOTE:** To complete this lab, you will alternate between Oracle Cloud Infrastructure Console pages and Oracle Database Actions pages.  Selecting Database Actions will open a new tab.
 
 ## Task 1: Create a Notifications Service Subscription Topic.
 
@@ -80,13 +80,13 @@ In this lab, you’ll practice setting up the live feed capabilities, that can b
 
       * Select the assigned **Autonomous Database** from list displayed.
 
-    ![Select Assigned ADB](./images/navigate-to-assigned-adb.png)
+  ![Select Assigned ADB](./images/navigate-to-assigned-adb.png)
 
   5. Open the **Database Actions** menu from the Autonomous Database General Information page, and select **Data Load**.
 
       ![Click Database Actions - Data Load](./images/db-actions-data-load.png)
 
-    >**Note:** This will open a new tab, giving us two tabs that we will alternate between for the rest of the workshop.
+    >**NOTE:** This will open a new tab, giving us two tabs that we will alternate between for the rest of the workshop.
 
   6. Click the user icon in the upper right corner of the **Database Actions** landing page, to sign-off as the ADMIN user.
 
@@ -142,7 +142,7 @@ In this lab, you’ll practice setting up the live feed capabilities, that can b
 
       ![Load Data from Object Storage](./images/task-3-scrn-12.png)
 
-  >**Note:** The notification URL will be used later in Task #4.
+  >**NOTE:** The notification URL will be used later in Task #4.
 
 ## Task 4: Create a Notifications Service Subscription
 
@@ -150,19 +150,17 @@ In this lab, you’ll practice setting up the live feed capabilities, that can b
 
   ![Access the Object Storage Bucket](./images/task-1-scrn-2.png)
 
-  3. Click **Notifications** under the **Application Integration** heading.
+  2. Click **Notifications** under the **Application Integration** heading.
 
   ![Access the Object Storage Bucket](./images/task-1-scrn-3.png)
 
-  4. Select **Subscriptions** (on the left side of the page, just below Topics).  The status will be **Active**.
+  3. Select **Subscriptions** (on the left side of the page, just below Topics).  The status will be **Active**.
 
   ![Access the Object Storage Bucket](./images/task-4-scrn-4.png)
 
-  5. Click **Create Subscription**.
+  4. Click **Create Subscription**.
 
-  ![Access the Object Storage Bucket](./images/task-4-scrn-4.png)
-
-  6. Enter the Subscription details.
+  5. Enter the Subscription details.
 
   ![Access the Object Storage Bucket](./images/task-4-scrn-6.png)
 
@@ -173,7 +171,7 @@ In this lab, you’ll practice setting up the live feed capabilities, that can b
 
     * Click **Create**
 
-  7. Switch to the Database Actions tab to review the card for the live table feed you are configuring for a notification-based feed.  It should reflect an **Active** notification status..
+  6. Switch to the Database Actions tab to review the card for the live table feed you are configuring for a notification-based feed.  It should reflect an **Active** notification status..
 
   ![Load Data from Object Storage](./images/task-5-scrn-4.png)
 

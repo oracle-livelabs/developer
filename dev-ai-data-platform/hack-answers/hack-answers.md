@@ -1,96 +1,161 @@
-# 🧠 Hackathon Challenge
+# 🧠 Hackathon Challenge  
 
-## Introduction
+## Introduction  
 
-Put your skills to the test! In this final challenge, you’ll apply everything you’ve learned throughout the workshop to solve a **real-world data problem**.
+**Welcome to the Hackathon Challenge!**  
 
-In this lab, you’ll step into the role of a **data engineer and analyst**, building and managing **data products** that empower different departments to make **informed decisions**.
+The data science team at SeerEquities is focused on building a data-driven approval system.  Currently, the objective is to share loan information with the Marketing team.  
 
-You’ll learn how to:
+This lab guides you through creating and sharing data products using Oracle Data Platform tools.  
 
-- **Create**, **share**, and **subscribe** to curated data products, enabling **seamless collaboration** across teams.
-- Build **data pipelines** to streamline data processing.
-- Publish **data products** to a **Marketplace** for easy access by relevant teams.
-- Leverage **insights using AI-powered applications** to drive smarter decision-making.
+As a share provider, you will create a data share and add a table to it.  Next, you will setup a recipient that will have access to that data share.  
 
-By the end of this lab, you’ll have hands-on experience with:
-- Building and managing data pipelines
-- Publishing and accessing curated data products
-- Using AI tools to gain actionable insights
+Finally, you will publish the data share and send the recipient an activation link needed to access the data share.  
 
+In this lab, you will:  
+*  Utilize a data share provider account (**LOAN user**) that logs in and manages the data shares for the recipients of the data share (**MARKETING user**)  
+*  Leverage an Object Storage bucket to store the shared data - **MyDemoBucket**  
+*  Create and publish data share - **LoanApp\_SharetoMarket**  
+*  Create and authorize a data share recipient  
 
-## Task 1: Create Data Product view for Marketing Dept:
+## Task 1: Create Data Product  
 
-* Create a view of the closed loan data for the Marketing Department avoiding any PII data.
+1. **Navigate to your assigned ADB Instance.**  
 
-* This view focuses on the kind of loan or customer information that helps Marketing tailor offers and campaigns to the right audience.
+   a. Open Navigation Menu  
+   b. Select Oracle Database  
+   c. Select Autonomous Database  
+   d. Select name of assigned database.  
 
-## Task 2: Share Data Product to Marketplace for Marketing Officer Consumption
+2. Select the name of your assigned database.  
 
-* Publish your Client\_Loans\_Marketing\_Dept\_View data to the Marketplace, so that the Marketing team can quickly grab data whenever they need insights.
+3. Select **Database Actions**, then view all database actions.  
 
-* This helps Marketing Officers run campaigns, target the right customers, and customize offers in a snap—no extra steps required.
+4. Sign out of **Database Actions** page as ADMIN user.  
 
-## Task 3: Subscribe to Data Product for Marketing Officer
+5. From **Database Actions Launchpad**, click the user icon in the top right corner to sign-on as the LOAN user.  
 
-* Subscribe to published  Client\_Loans\_Marketing\_Dept\_View data to ensure the Marketing team’s custom loan data is at your fingertips.
+   a. Enter LOAN user credentials.  
+   b. Press Sign-In button.  
 
-* Subscribing gives you an instant connection to that data, so you can analyze it or integrate it into other reports without any extra hassle.
+6. **Create a Data Product**  
 
-## Task 4: Explore using Curated and Shared Data Products with GenAI Powered Apps
+   a. Select **Data Studio** from the menu bar, then choose **Data Share** from left rail.  
+   b.  Click **Provide Share** on the **Provider and Consumer** page.  
+   c. Click **Provider Identification** on the **Provide Share** page.  
+   d. Provide details for the provider in the **Provider Identification** popup window.  
 
-* Validate access to subscribed data and new insights enabled by using property graph against it, by running the marketing officer Application Demo
+      Name: **LoanApp\_Share\_Provider**             
+      Email: **MyEmail@MyCompany.com**                
+      Description: **meaningful description**  
+   
+   e. Click **Save**.  
 
-* Show use of shared data accessed from marketplace via Graph display
+7. **Create New Data Share**  
 
-     * **Show Loans by Type --> Affordable Housing Z, Standard**
+   a. Click **Shares** on the **Provide Share** page.  
+   b. Provide details on the **General** page of the **Create Share** wizard.  
 
-     * **Show loans by Profit Margin --> Origination fee + Interest Markup + 10% for Affordable Housing zone loans**
+      Name: **LoanApp\_ShareToMarketing**  
+      Description: meaningful description (optional)  
 
-## Task 5: Build your Data Pipeline (Optional Lab)
+   c. Click **Next** 📄  
+   d. Specify the cloud location where the share will be published on the **Publish Details** page.  
+   
+      Select **MyDemoBucket** from the drop-down list.  
 
-* Load new Affordable Housing Data into Object Storage
-* Discover New Data into Catalog
-* Validate you can query from your database
+   e. Click **Next** 📄  
+   f. Choose the table that will be made available for the Marketing Team, on the **Select Tables** page.  
 
-## Create Loan Offerings Data Product
+      Select **Share\_Loan_Data\_Marketing\_VW** table in the **Available Tables** column.  
+      Click the **move (>)** button to copy it to the **Shared Tables** column  
+   
+   g. Click **Next** 📄  
+   h. Click **New Recipients**, on the following page.  
+   i. Enter details about the recipient in the **Create Share Recipient** page.  
 
-Funding Providers
+      Name: **Marketing\_Dept\_Lead**  
+      Description: **Marketing Department Data Engineering Lead (optional)**  
+      Email: **a meaningful description (optional)**  
 
-Funding Provider sends weekly commitment of new loan funds to bank in JSON format to the designated staging area on object Storage
+   j. Click **Create.** 📄  
+   k. In the **Create Share** page, Click on the **copy** icon to capture the recipient’s profile activation link to the clipboard.  
+   l. Click **Create.**  
 
-The JSON file will Include the committed funding amount, funding cost, estimated time to process requests & deliver funds, and time frame funding offer is good for
+5. **Publish the New Share**  
 
-Lender
+   a. Paste the activation link URL in browser window.  
+   b. Click **Get Profile Information** to envoke download.  
+   c. Rename file to **Marketing\_Delta\_Share\_Profile.json.**  
 
-* ingests new funding and creates Loan Offerings
+## Task 2 - Share the Data Product  
 
-   * **Automated notification will be introduced to inform Lender of new funding files and invoke the lenders load, transform, and enrich process to convert funding into loan offerings**
+1. **Manage the New Share**  
 
-* Establish Loan Origination fees
-* Establish Interest rate markups for profit margin
-* Establish loan closing time for customer
-* Establish LTV_PCT (Loan to Value %) for Loan Offering
+   a. Publish your **Client\_Loans\_Marketing\_Dept\_View** data, so that the Marketing team can quickly grab data whenever they need insights.  
+   b. On **Provide Share** page, click action icon to manage the data product share.  
+   c. Select **Recipients and Profiles** from the dropdown menu.  
+   d. From here, you can add or remove recipients from **Recipients and Profiles** page.  
+   e. Click **Cancel.**   
+   f. From **Provide Share** page, click **Recipients** to display the recipients for the data share.  
 
-Load Affordable Housing Zone Data (From Approved Marketing List)
+   ***Congratulations you have shared your data from ADB to the Risk Dept Lead.***
 
-1. Load data stored in Iceberg format visible to data catalog
-1. Yearly task to load the updated list of Opportunity Zones
-1. Used by Loan approval systems to deliver lower cost funding due to government incentives to funding providers
+## Task 3 – Subscribe to Data Product  
 
-<!-- Leverage CRM data shared via Data Catalog connection
+1. **Sign-on as MARKETING User.**  
 
-1. Provide access to application to Lenders Customer List
-1. Provide feedback loop into full scale CRM systems for actions like adding new customers, tracking return customer engagements, Multi-product loyalty, Loan servicing support, and more – Ties Loan App into CRM eco system -->
+   a. Select **Database Actions**, then view all database actions.  
+   b. Sign-out of **Database Actions** page as the current user.  
+   c. Sign-on as **MARKETING** user.  
 
-Create Loan Portfolio Data Product for the Risk Department
+2. **Create a Subscription**  
 
-Curate view of active loans w/o PII and share on a weekly schedule to Risk department via Marketplace
+   a. Subscribe to published **Client\_Loans\_Marketing\_Dept\_View** data to ensure the Marketing team’s custom loan data is at your fingertips.  
+   b. At **Database Actions** page, click **Data Studio**.  
+   c. On the **Data Share** page, click on the left rail.  
+   d. Click **Consume Share** on **Provider and Consumer** page.  
+   e. On **Consume Share** page, click **Subscribe to Share   Provider** drop-down button.  
+   f. Select **Subscribe to Delta Share Provider** from the drop-down list.  Then enter the following details, once **Subscribe to Share Provider** wizard is displayed:  
 
-Used to determine if shift in loan approvals is required to avoid selling too may loans in a single location, avoid selling too many high risk loans.
+      Share Source: **Delta Share Provider JSON (the default selection)**  
+      Share Provider JSON: **From File (the default selection)**  
+      Delta Share Profile JSON: **Click** the box and navigate to location where you downloaded the data share profile.  Select **MARKETING\_Delta\_Share\_Profile.json** and click **Open**.  
+      Provider Name: **LoanApp\_Share\_Provider**  
+      Description: **Subscribing to data share of closed mortgage loan details for marketing analysis**  
+
+   h. Click **Next** to proceed  
+
+3.	**Subscribe to Data Product**  
+
+   a. Select **LoanApp\_ShareToMarketing** share in **Available Shares** column, on the **Add Shares** screen. 
+   b. Click **move (>)** button to transfer the share to **Selected Shares** column.  
+   c. Click **Subscribe** to proceed.  
+
+4. **Link External Table to Data Product**  
+
+   a. On **Link Data** page, select drop-down list for **Select Cloud Store Location** or enter a public URL.  
+   b. Select **LoanApp\_Share\_Provider.**  
+   c. Expand the drill down tab for the share named **LoanApp\_Share\_Provider** to display the available data.  
+   d. Now, let's create an external table based on the **LOAN.Shared\_Loan\_Data\_Marketing\_VW** file, by dragging and dropping the file onto the data linking job section.  
+   e. Click **Settings (pencil)** icon to display the Link Data from Cloud Store Location panel.  
+   f. Edit Table Name to be **Shared\_Loan\_Data\_Marketing**  
+   g. Click **Close** to proceed  
+   h. Click **Start** and then **Run** on the popup box that appears.  
+   i. Make sure the data link card has the link icon next to it, once the link job is complete.  
+
+## Task 4 – Demonstrate Use of Data Share  
+
+1. Click the Report button for this link job to view a report of the total rows processed successfully and failed for the selected table and the SQL used.  
+   a. Click Close when done.  
+2. In the Table and View Loads section:  
+   a. Click the external table link named **Shared\_Loan\_Data\_Marketing** to preview its data.  
+3. The **Shared\_Loan\_Data\_Marketing\_VW** panel is displayed with the Preview tab selected by default that displays the external table's data.  
+4. Click **Close** to exit the panel and to return to the **Data Share Dashboard.**  
+5. Click **Query** button to run a query from ADB against the Linked Shared Data  
 
 
 ## Acknowledgements
-* **Author** - <Name, Eddie Ambler, Otis Barr
+* **Author** - Eddie Ambler, Otis Barr
 * **Contributors** -  Mike Matthews, Marty Gubar, Francis Regalado, Linda Foinding
-* **Last Updated By/Date** - 04-28-2025
+* **Last Updated By/Date** - 05-29-2025
