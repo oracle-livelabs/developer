@@ -26,8 +26,292 @@ By the end of this section, you will be able to:
 
 Let’s get started!
 
+## Task 1: Create a Virtual Cloud Network
 
-## Task 1: Provision an Autonomous Database
+Follow these steps to create a Virtual Cloud Network (VCN).
+
+1. From the Oracle Cloud homepage, click the navigation menu in the top left corner. Select **Networking** -> **Virtual Cloud Networks**.
+
+   ![Click Virtual Cloud Networks](./images/click-vcn.png " ")
+
+2. Select the **Create VCN** button.
+
+   ![Click Create VCN](./images/create-vcn.png " ")
+
+3. Enter a name for your VCN. For example, we named ours **SeerEquites**. Next, choose the compartment where you'd like to create the VCN. 
+
+   ![Create VCN](./images/vcn-name.png " ")
+
+4. In the IPv4 CIDR Blocks field, enter 10.0.0.0/16 and click **Add to List**.
+
+   ![Create VCN](./images/vcn-blocks.png " ")
+
+5. **Use DNS Hostnames in this VCN:** Leave this option checked. 
+
+6. You can specify a **DNS Label** for the VCN, or you can let the Console generate one for you.
+
+   ![Create VCN](./images/vcn-dns.png " ")
+
+7. Click **Create VCN**.
+
+   ![Click Create VCN](./images/vcn-create.png " ")
+
+8. The VCN is available. Select your VCN name.
+
+   ![VCN is Available](./images/vcn-available.png " ")
+
+9. Click the **Subnets** tab and click **Create Subnet**.
+
+   ![Create Subnet](./images/create-subnet.png " ")
+
+10. Enter a name for your Subnet. For example, we named ours **SeerEquites**.
+
+   ![Create Subnet](./images/subnet-name.png " ")
+
+11. For **Subnet Type**, select **Regional**.
+
+   ![Create Subnet](./images/subnet-type.png " ")
+
+12. In the IPv4 CIDR Blocks field, enter 10.0.0.0/16.
+
+13. **Subnet Access:** Select **Public Subnet**
+
+   ![Create Subnet](./images/subnet-blocks.png " ")
+
+14. **Use DNS Hostnames in this Subnet:** Leave this option checked. 
+
+15. You can specify a **DNS Label** for the Subnet, or you can let the Console generate one for you.
+
+   ![Create VCN](./images/subnet-dns.png " ")
+
+16. Click **Create Subnet**.
+
+   ![Click Create VCN](./images/subnet-create.png " ")
+
+17. The subnet has been created. Select your subnet.
+
+    ![Click Subnet](./images/click-subnet.png " ")
+
+18. Click the **Security** tab and click on your security list.
+
+    ![Click Security List](./images/click-security-list.png " ")
+
+19. Now we are going to create Ingress rules to control which ports can send traffic to a specific resource within a Virtual Cloud Network. Click **Security rules** -> **Add Ingress Rules**.
+
+    ![Click Add Ingress Rules](./images/click-add-ingress-rules.png " ")
+
+20. In the **Source CIDR** field, enter **0.0.0.0/0**
+
+21. In the **Destination Port Range** field, enter **22**. Click **+ Another Ingress Rule**.
+
+    ![Add Ingress Rules](./images/ingress-rule-1.png " ")
+
+22. For Ingress Rule 2, in the **Source CIDR** field, enter **0.0.0.0/0**
+
+23. In the **Destination Port Range** field, enter **80**. Click **+ Another Ingress Rule**.
+
+    ![Add Ingress Rules](./images/ingress-rule-2.png " ")
+
+24. For Ingress Rule 3, in the **Source CIDR** field, enter **0.0.0.0/0**
+
+25. In the **Destination Port Range** field, enter **1521**. Click **+ Another Ingress Rule**.
+
+    ![Add Ingress Rules](./images/ingress-rule-3.png " ")
+
+26. For Ingress Rule 4, in the **Source CIDR** field, enter **0.0.0.0/0**
+
+27. In the **Destination Port Range** field, enter **1522**. Click **+ Another Ingress Rule**.
+
+    ![Add Ingress Rules](./images/ingress-rule-4.png " ")
+
+28. For Ingress Rule 5, in the **Source CIDR** field, enter **0.0.0.0/0**
+
+29. In the **Destination Port Range** field, enter **8501**. Click **+ Another Ingress Rule**.
+
+    ![Add Ingress Rules](./images/ingress-rule-5.png " ")
+
+30. For Ingress Rule 6, in the **Source CIDR** field, enter **0.0.0.0/0**
+
+31. In the **Destination Port Range** field, enter **8502**. Click **+ Another Ingress Rule**.
+
+    ![Add Ingress Rules](./images/ingress-rule-6.png " ")
+
+32. Click **Add Ingress Rules**.
+
+    ![Click Add Ingress Rules](./images/add-ingress-rules.png " ")
+
+## Task 2: Create a Compute Instance
+
+1. Click the button in the top left corner to open the navigation menu. Select **Compute** -> **Instances**.
+
+    ![Compute Instance](./images/select-compute.png " ")
+
+2. Click **Create Instance**.
+
+    ![Compute Instance](./images/click-create-instance.png " ")
+
+3. Give your instance a name. 
+
+4. Select an Availability domain.
+
+    ![Compute Instance](./images/create-instance.png " ")
+
+5. Accept all defaults and click **Next**. 
+
+    ![Compute Instance](./images/create-instance-2.png " ")
+
+6. Click **Next**.
+
+    ![Compute Instance](./images/create-instance-3.png " ")
+
+7. Give your VNIC a name. Select your existing virtual cloud network. Select your existing subnet.
+
+    ![Compute Instance](./images/create-instance-4.png " ")
+
+8. Continue the instance configuration:
+    - **Automatically assign private IPv4 address**: Check this option.
+    - **Generate a key pair for me**: Check this option.
+    - Select the buttons to download your public and private keys.
+    - Click **Next**.
+
+    ![Compute Instance](./images/create-instance-5.png " ")
+
+9. Click **Next**.
+
+    ![Compute Instance](./images/create-instance-6.png " ")
+
+10. Review the information and click **Create**. 
+
+    ![Compute Instance](./images/create-instance-7.png " ")
+
+11. The instance has been provisioned. Click **Instances**. 
+
+    ![Compute Instance](./images/create-instance-8.png " ")
+
+12. Copy your **Public IP**. You will need this in the next task.
+
+    ![Copy Public IP](./images/copy-ip.png " ")
+
+
+## Task 3: Install Packages
+
+1. Open your terminal and navigate to the folder where your ssh keys are stored.
+
+    ![Open Terminal](./images/open-terminal.png " ")
+
+2. Run the command below. Replace ssh\_key\_name with the name of your private key. Replace public\_ip with the public IP you copied earlier.
+
+    ````
+        <copy>
+        ssh -i ssh_key_name opc@public_ip
+        </copy>
+    ````
+
+3. Run the command below to update the VM. It will take a few minutes.
+
+    ````
+        <copy>
+        sudo yum update -y
+        </copy>
+    ````
+
+4. Now that the update for the VM is complete, we can install the rest of the packages. Run the commands below:
+
+    To run the application, Python version 3.11 is required.
+    ````
+        <copy>
+        sudo yum install python3.11
+        </copy>
+    ````
+
+    ````
+        <copy>
+        sudo yum install python3-pip -y
+        </copy>
+    ````
+
+    ````
+        <copy>
+        sudo yum install python3.11-pip -y
+        </copy>
+    ````    
+
+    ````
+        <copy>
+        pip3.11 install --upgrade pip
+        </copy>
+    ````
+
+5. Install Streamlit with the command below:
+
+    ````
+        <copy>
+        pip install streamlit
+        </copy>
+    ````
+
+6. Run the install commands below:
+
+    ````
+        <copy>
+        pip install oracledb
+        </copy>
+    ````
+
+    ````
+        <copy>
+        pip install oci
+        </copy>
+    ````
+
+    ````
+        <copy>
+        pip install python-dotenv
+        </copy>
+    ````
+
+    ````
+        <copy>
+        pip install PyPDF2
+        </copy>
+    ````
+
+    ````
+        <copy>
+        pip install pandas
+        </copy>
+    ````
+
+    ````
+        <copy>
+        pip install network
+        </copy>
+    ````
+
+    ````
+        <copy>
+        pip install matplotlib
+        </copy>
+    ````
+
+    ````
+        <copy>
+        pip install scipy
+        </copy>
+    ````
+
+    ````
+        <copy>
+        pip install fpdf
+        </copy>
+    ````
+
+    ````
+        <copy>
+        sudo dnf install java-17-openjdk-devel -y
+        </copy>
+    ````
+## Task 4: Provision an Autonomous Database
 
 Before you can run the application, you need to provision an **Autonomous Database** and obtain the following connection details: 
 
@@ -39,11 +323,11 @@ Before you can run the application, you need to provision an **Autonomous Data
 
 1. Click the navigation menu in the upper left to show top level navigation choices.
 
-   ![Begin navigation in OCI menu](./images/begin-oci-menu.png" ")
+   ![Begin navigation in OCI menu](./images/begin-oci-menu.png " ")
 
 3. Click **Oracle Database** -> **Autonomous Database**.
 
-   ![Select Autonomous Database from menu](./images/select-atp.png" ")
+   ![Select Autonomous Database from menu](./images/select-atp.png " ")
 
 4. Click **Create Autonomous Database** to start the instance creation process.
 
@@ -100,176 +384,6 @@ Before you can run the application, you need to provision an **Autonomous Data
     ![Autonomous Database instance successfully provisioned](./images/adb-provisioned.png " ")
     Autonomous Database instance successfully provisioned.
 
-## Task 2: Unzip the Code
-
-1. Unzip the application code to a directory of your choice on your local machine: 
-
-    
-    [**Application Code**] (https://objectstorage.us-ashburn-1.oraclecloud.com/p/fiiLFGXKlmgrZKSwKQkD2Wc7mf5b8OsPUmIsw4rNUPcbBO31Za8T1NNoGAf0l4_S/n/c4u04/b/livelabsfiles/o/developer-library/pages.zip)   
-
-
-2. Navigate to the folder where the code is located. 
-
-    cd /path/to/your/unzipped/code 
-    ![Navigate to folder](./images/folder.png " ")
-
-
-## Task 3: Install Python 3.9 or Higher 
-
-To run the application, Python version 3.9 or higher is required. Follow the steps below to ensure Python is installed on your machine. 
-
-1. Run the following command to check which version of Python is installed.
-
-    ````
-        <copy>
-        python3 --version
-        </copy>
-    ````
-    ![Check Python Version](./images/python-version.png " ")
-
-2. If Python 3.9+ is not installed, download and install Python 3.9 or higher from the [**official website**](https://www.python.org/downloads/).
-
-    ![Check Python Version is Installed](./images/python-version-installed.png " ")
-
-## Task 4: Setting Up the Local Environment 
-
-1. Create a Virtual Environment. It is recommended to create a virtual environment to isolate the dependencies. In your terminal, run the following command to create a virtual environment: 
-
-
-    ````
-        <copy>
-        python3 -m venv venv
-        </copy>
-    ````
-
-    This will create a directory called venv that contains your virtual environment. 
-
-
-2. Enable the Virtual Environment. Once the virtual environment is created, activate it using the following commands based on your operating system: 
-
-    On macOS/Linux: 
-
-    ````
-        <copy>
-        source venv/bin/activate
-        </copy>
-    ```` 
-
-    On Windows: 
-
-    ````
-        <copy>
-        .\\venv\\Scripts\\activate 
-        </copy>
-    ```` 
-
-    After activation, your terminal should show (venv) at the beginning of the line, indicating that the virtual environment is active. 
-        ![Virtual Environment](./images/virtual-environment.png " ")
-
-3. Install Streamlit and Dependencies. The application has a set of required dependencies that need to be installed. You can install them using the requirements.txt file. 
-
-    Run the following commands to install all dependencies: 
-
-    ````
-        <copy>
-        pip install oci 
-        </copy>
-    ```` 
-
-    ````
-        <copy>
-        pip install streamlit 
-        </copy>
-    ```` 
-
-    ````
-        <copy>
-        pip freeze > requirements.txt 
-        </copy
-    ```` 
-
-    ````
-        <copy>
-        pip install -r requirements.txt
-        </copy
-    ```` 
-
-    This will ensure that all required libraries are installed within your virtual environment. 
-
-    ![Required Libraries](./images/requirements.png " ")
-
-4. Create a .env File. You need to create a .env file in the root directory of the project to configure the database connection details. Create the .env file with the following format:
- 
-    ````
-        <copy>
-        touch .env
-        </copy
-    ````
-
-5. Open the file using the command below.
-    ````
-        <copy>
-        vi .env
-        </copy
-    ````
-
-6. Insert the variables below into the file. Replace the values with the actual values you obtained during the provisioning of the Autonomous Database. You should have captured your database username and password in task 1 of this lab. 
-
-    DB\_USERNAME=Your\_DB\_Username 
-
-    DB\_PASSWORD=Your\_DB\_Password 
-
-    DB\_CONNECTION\_STRING=Your\_DB\_Connection\_String
-
-    COMPARTMENT\_OCID=Your\_DB\_Compartment\_ID
-
-    ENDPOINT=Your\_endpoint\_url 
-
-    ADB\_OCID=Your\_DB\_OCI\_ID 
-
-7. Find your database connection string by selecting **Database Connection**.
-
-    ![Select Database Connection](./images/db-connection.png " ")
-
-8. Copy the low connection string. This is the connection string you will place into the .env file.
-
-    ![Copy Connection String](./images/connection-string.png " ")
-
-9. To locate your compartment OCID, navigate to **Identity & Security** -> **Compartments**.
-
-    ![Click Compartments](./images/compartments.png " ")
-
-10. Select your compartment.
-
-    ![Select your Compartment](./images/select-compartment.png " ")
-
-11. Copy your compartment OCID. Place the compartment OCID into your .env file.
-
-    ![Select your Compartment](./images/copy-ocid.png " ")
-
-12. Paste this in as your endpoint url in the .env file:
-
-    ````
-        <copy>
-        https://inference.generativeai.us-chicago-1.oci.oraclecloud.com
-        </copy
-    ````
-13. Navigate back to your Autonomous Database to copy your ADB OCID. Click **Oracle Database** -> **Autonomous Database**.
-
-   ![Select Autonomous Database from menu](./images/select-atp.png" ")
-
-14. Select your Autonomous Database.
-
-    ![Select your Autonomous Database](./images/select-your-adb.png " ")
-
-15. Copy your Autonomous Database OCID. Paste it into your .env file.
-
-    ![Copy your Autonomous Database OCID](./images/adb-ocid.png " ")
-
-    You should now have all of the credentials for your .env file filled in.
-
-    ![.env credentials](./images/env-credentials.png " ")
-
 ## Task 5: Setting Up OCI Generative AI Service
 
 1. Click **User Settings** -> **Tokens and Keys**. 
@@ -288,56 +402,18 @@ To run the application, Python version 3.9 or higher is required. Follow the
 
     ![Add Private Key](./images/add-key.png " ")
 
-5. Note the Fingerprint, Tenancy OCID, and User OCID from the page. 
+5. Note the Fingerprint, Tenancy OCID, and User OCID from the page. Copy these values. You will need them for task 6.
 
     ![Preview Private Key](./images/key-preview.png " ")
 
-6. Navigate back to your terminal and paste the following command in to create a config directory. 
-
-    ````
-        <copy>
-        mkdir -p ~/.oci
-        </copy
-    ```` 
-
-7.  Create or edit the config file at ~/.oci/config with the following command: 
-
-    ````
-        <copy>
-        touch config
-        </copy
-    ````
-
-8.  Open the config file.
-
-    ````
-        <copy>
-        vi config
-        </copy
-    ```` 
-
-9. Insert the variables below: 
-
-    > 💡Note: Replace all placeholders with your actual OCI credentials and key file path except region, which must be us-chicago.
-
-    ````
-        <copy>
-        [DEFAULT] 
-        user=[ocid1.user.oc1..exampleuniqueID]
-        fingerprint=[xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx] 
-        key_file= [key_file=~/.oci/oci_api_key.pem] 
-        tenancy=[ocid1.tenancy.oc1..exampleuniqueID] 
-        region= us-chicago-1  
-        </copy
-    ````
 
 Create a policy that will allow you to use OCI Generative AI within your previously defined compartment. **Make sure your policy uses the compartment where your Autonomous Database is deployed.** The policy will be necessary for Autonomous Database to interact with OCI Generative AI.
 
-10. From the Console, open the Navigation menu and click **Identity & Security**. Under Identity, click **Policies**.
+9. From the Console, open the Navigation menu and click **Identity & Security**. Under Identity, click **Policies**.
 
     ![Click Policies](./images/policies.png " ")
 
-11. Click **Create policy** and paste the following into the appropriate fields:
+10. Click **Create policy** and paste the following into the appropriate fields:
 
     **Name:** PublicGenAI 
 
@@ -347,7 +423,7 @@ Create a policy that will allow you to use OCI Generative AI within your previou
 
     ![Enter Policy Info](./images/policy-info.png " ")
 
-12. Click **Show Manual Editor**. 
+11. Click **Show Manual Editor**. 
 
     ![Show Manual Editor](./images/show-editor.png " ")
 
@@ -356,37 +432,648 @@ Create a policy that will allow you to use OCI Generative AI within your previou
     ````
         <copy>
         allow any-user to manage generative-ai-family in compartment [compartment_name]
-        </copy
+        </copy>
     ````
     > Replace [compartment\_name] with the name of your compartment.
 
     ![Paste Policy](./images/policy.png " ")
 
-14. Click **Create**.
+13. Click **Create**.
 
     ![Create Policy](./images/create-policy.png " ")
 
 OCI Generative AI is a fully managed service available via API to seamlessly integrate language models into a wide range of use cases, including writing assistance, summarization, analysis, and chat. You can quickly integrate OCI Generative AI with Autonomous Database to apply AI models to your data.
 
-15. Make sure you are in the US Midwest(Chicago) region:
+## Task 6: Setting up the Local Environment
 
-    ![Midwest Chicago Region](./images/chicago-region.png " ")
-
-16. From the Console, open the Navigation menu and click **Analytics & AI**. Click **Generative AI**.
-
-    ![Click Generative AI](./images/click-generative-ai.png " ")
-
-## Task 6: Run the Application
-
-1. Now that everything is set up, you can start the application by running the following command: 
+1. Now that that's done, we are going to create the virtual environment of directories. 
 
     ````
         <copy>
-        streamlit run 1-introduction.py
-        </copy
+        mkdir -p ~/loan
+        </copy>
     ````
 
-    This will start the application locally, using both your Autonomous Database and OCI GenAI services. 
+2. Navigate to the loan directory:
+
+    ````
+        <copy>
+        cd ~/loan
+        </copy>
+    ````
+
+3. Once in the loan directory, create the next directory with the command below:
+
+    ````
+        <copy>
+        mkdir -p ~/loan/streamlit/pages
+        </copy>
+    ````
+
+    ````
+        <copy>
+        mkdir .setup/
+        </copy>
+    ````
+
+4. Navigate to the .setup directory with the command below:
+
+    ````
+        <copy>
+        cd .setup
+        </copy>
+    ````
+
+5. Now we are going to paste our OCI API key. Run the command below:
+
+    ````
+        <copy>
+        nano oci_api_key.pem
+        </copy>
+    ````
+
+6. Open the key you downloaded. Copy the contents of the key and paste it into the terminal.
+
+7. Create the Config file:
+
+    ````
+        <copy>
+        nano config
+        </copy>
+    ````
+
+8. Insert the variables below into the config file: 
+
+    > 💡Note: Replace all placeholders with your actual OCI credentials and key file path you obtained in task 5.
+
+    ````
+        <copy>
+        [DEFAULT] 
+        user=[ocid1.user.oc1..exampleuniqueID]
+        fingerprint=[xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx] 
+        key_file= [key_file=~/.oci/oci_api_key.pem] 
+        tenancy=[ocid1.tenancy.oc1..exampleuniqueID] 
+        region= us-chicago-1  
+        </copy>
+    ````
+
+    If you did not copy these values, navigate to **User Settings** -> **API keys**. Click the three dots on the right and click **View configuration file**. Copy that and paste it into the config file in the terminal. Save the file and exit.
+
+9. Run the pwd command:
+
+    ````
+        <copy>
+        pwd
+        </copy>
+    ```` 
+10. Copy your directory
+
+11. Open the config file:
+
+    ````
+        <copy>
+        nano config
+        </copy>
+    ````
+
+12. On the key_file line, delete the contents after the =. Paste in the directory you copied after the =. Add a / at the end. Save and exit the file.
+
+13. Run the ls command:
+
+    ````
+        <copy>
+        ls
+        </copy>
+    ````
+
+14. Copy the name of the oci pem key.
+
+15. Open the config file:
+
+    ````
+        <copy>
+        nano config
+        </copy>
+    ````
+
+16. Add the name of the oci pem key on the key_file line after the /. Save and exit the file.
+
+17. Run the following command:
+
+    ````
+        <copy>
+        cd ..
+        </copy>
+    ````
+
+18. Navigate to the pages directory:
+
+    ````
+        <copy>
+        cd streamlit/pages/
+        </copy>
+    ````
+
+19. Create the .env file. You need to create a .env file to configure the database connection details.
+
+    ````
+        <copy>
+        nano .env
+        </copy>
+    ````
+
+20. Insert the variables below into the file. Replace the values with the actual values you obtained during the provisioning of the Autonomous Database. You should have captured your database username and password in task 4 of this lab. 
+
+    ````
+        <copy>
+        DB_USERNAME=Your_DB_Username 
+
+        DB_PASSWORD=Your_DB_Password 
+
+        DB_CONNECTION_STRING=Your_DB_Connection_String
+
+        COMPARTMENT_OCID=Your_DB_Compartment_ID
+
+        ENDPOINT=Your_Endpoint_url 
+
+
+        TENANCY_OCID=Your_Tenancy_OCID
+
+        ADB_NAME=Your_ADB_Name
+
+        ADB_OCID=Your_DB_OCI_ID 
+
+        GRAPH_ENDPOINT=Your_Graph_Endpoint_url
+        </copy>
+    ````
+
+21. Find your database connection string by selecting **Database Connection**.
+
+    ![Select Database Connection](./images/db-connection.png " ")
+
+22. Copy the low connection string. This is the connection string you will place into the .env file.
+
+    ![Copy Connection String](./images/connection-string.png " ")
+
+23. To locate your compartment OCID, navigate to **Identity & Security** -> **Compartments**.
+
+    ![Click Compartments](./images/compartments.png " ")
+
+24. Select your compartment.
+
+    ![Select your Compartment](./images/select-compartment.png " ")
+
+25. Copy your compartment OCID. Place the compartment OCID into your .env file.
+
+    ![Select your Compartment](./images/copy-ocid.png " ")
+
+26. Paste this in as your endpoint url in the .env file:
+
+    ````
+        <copy>
+        https://inference.generativeai.us-chicago-1.oci.oraclecloud.com
+        </copy>
+    ````
+
+27. Now we are going to locate the tenancy OCID. Click the profile button in the top right of the console. Click **Tenancy**.
+
+    ![Select your Tenancy](./images/click-tenancy.png " ")
+
+28. Copy the tenancy OCID. Paste it into the .env file.
+
+    ![Copy your Tenancy OCID](./images/copy-tenancy-ocid.png " ")
+
+29. Navigate back to your Autonomous Database. Click **Oracle Database** -> **Autonomous Database**.
+
+   ![Select Autonomous Database from menu](./images/select-atp.png" ")
+
+30. Select your Autonomous Database.
+
+    ![Select your Autonomous Database](./images/select-your-adb.png " ")
+
+31. Copy your Autonomous Database Name and OCID. Paste these variables into your .env file.
+
+    ![Copy your Autonomous Database OCID](./images/adb-ocid.png " ")
+
+32. To locate your graph endpoint, click the **Tool Configuration** tab. Copy the Graph Studio Public access URL and paste it into the .env file.
+
+    ![Copy your Graph Endpoint](./images/graph-endpoint.png " ")
+
+    You should now have all of the credentials for your .env file filled in.
+
+    ![.env credentials](./images/env-credentials.png " ")
+
+33. Save and close the .env file.
+
+34. Run the cat command.
+
+    ````
+        <copy>
+        cat .env
+        </copy>
+    ````
+
+35. Copy the contents of the .env file.
+
+36. Run the following command:
+
+    ````
+        <copy>
+        cd ..
+        </copy>
+    ````
+
+37. Create the .env file in the streamlit folder.
+
+    ````
+        <copy>
+        nano .env
+        </copy>
+    ````
+
+38. Paste the copied contents into the .env file. Save and close the file.
+
+
+## Task 7: Create the Application Pages
+
+1. Now, we are going to create the introduction page. Run the following command:
+
+    ````
+        <copy>
+        nano 1-Introduction.py
+        </copy>
+    ````
+
+2. Copy the following into your 1-Introduction.py file:
+
+    ````
+        <copy>
+        import streamlit as st
+import requests
+
+# Disables the sidebar navigation by default
+st.set_page_config(
+    page_title="🏠 SeerEquities App", layout="wide", initial_sidebar_state="collapsed"
+)
+
+# if "db_setup_ran" not in st.session_state:
+#     exec(open("db_setup.py").read())
+#     st.session_state.db_setup_ran = True
+
+
+# Temporary inline CSS to fix selectbox width and centering
+st.markdown(
+    """
+    <style>
+        /* Target the selectbox container and its inner div */
+        div.stSelectbox > div[data-baseweb="select"] > div {
+            width: 200px !important;
+            max-width: 200px !important;
+            margin: 0 auto !important;
+        }
+        /* Ensure the selectbox widget itself is constrained and centered */
+        div.stSelectbox {
+            width: 200px !important;
+            max-width: 200px !important;
+            margin: 0 auto !important;
+            display: flex;
+            justify-content: center;
+        }
+    </style>
+""",
+    unsafe_allow_html=True,
+)
+
+
+# Function to load CSS
+def load_css(file_path):
+    if file_path.startswith("http"):
+        try:
+            response = requests.get(file_path)
+            if response.status_code == 200:
+                st.markdown(f"<style>{response.text}</style>", unsafe_allow_html=True)
+            else:
+                st.error(
+                    f"Failed to load CSS from URL: {file_path} (Status: {response.status_code})"
+                )
+        except Exception as e:
+            st.error(f"Error loading CSS from URL: {e}")
+    else:
+        try:
+            with open(file_path, "r") as f:
+                st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
+        except FileNotFoundError:
+            st.error(f"CSS file not found: {file_path}")
+        except Exception as e:
+            st.error(f"Error loading CSS file: {e}")
+
+
+load_css(
+    "https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/labfiles/loan_css_test/style.min.css"
+)
+
+# Title and description (personalized after login)
+if "user_name" in st.session_state:
+    st.title(
+        f"Welcome to SeerEquities Loan Management, {st.session_state['user_name']}!"
+    )
+else:
+    st.title("Welcome to SeerEquities Loan Management")
+
+st.image(
+    "https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/labfiles/loan_css_test/seer-equities-logo-v1.png"
+)
+
+# Input field for the user's name
+user_name = st.text_input("", key="username-input", placeholder="Username").strip()
+
+# Login button
+if st.button("Login", key="login-button"):
+    if not user_name:
+        st.error("Please enter your name to proceed.")
+    else:
+        # Store the user's name in session state to pass it to the Dashboard
+        st.session_state["user_name"] = user_name
+        st.success(f"Welcome, {user_name}! Redirecting to your Dashboard...")
+        st.switch_page("pages/2-Dashboard.py")
+        </copy>
+    ````
+
+4. Save and close the file.
+
+5. Navigate to the pages folder.
+
+    ````
+        <copy>
+        cd pages/
+        </copy>
+    ````
+
+6. Create a Virtual Environment. It is recommended to create a virtual environment to isolate the dependencies. In your terminal, run the following command to create a virtual environment: 
+
+
+    ````
+        <copy>
+        python3.11 -m venv loan_env
+        </copy>
+    ````
+
+    This will create a directory called loan_env that contains your virtual environment.
+
+7. So now, let's enable the firewall for our ports. Run the following commands:
+
+    ````
+        <copy>
+        sudo firewall-cmd --zone=public --add-port=8501/tcp --permanent
+        </copy>
+    ````
+
+    ````
+        <copy>
+        sudo firewall-cmd --reload
+        </copy>
+    ````
+
+    ````
+        <copy>
+        nohup streamlit run introduction.py --server.port 8501 --server.address 0.0.0.0 > streamlit.log 2>&1 &
+        </copy>
+    ````
+
+8. Open the file using the command below:
+
+    ````
+        <copy>
+        sudo nano /etc/systemd/system/streamlit.service
+        </copy>
+    ````
+9. Paste the following into the file:
+
+    ````
+        <copy>
+        INSERT CONTENT
+        </copy>
+    ````
+
+10. Activate the virtual environment with the following command:
+
+    ````
+        <copy>
+        source loan_env/bin/activate
+        </copy>
+    ````
+
+11. Install everything that's needed in the virtual environment:
+
+    ````
+        <copy>
+        pip install streamlit
+        </copy>
+    ````
+
+    ````
+        <copy>
+        pip install --upgrade pip
+        </copy>
+    ````
+
+    ````
+        <copy>
+        pip install oracledb
+        </copy>
+    ````
+
+    ````
+        <copy>
+        pip install oci
+        </copy>
+    ````
+
+    ````
+        <copy>
+        pip install python-dotenv
+        </copy>
+    ````
+
+    ````
+        <copy>
+        pip install PyPDF2
+        </copy>
+    ````
+
+    ````
+        <copy>
+        pip install pandas network matplotlib scipy fpdf
+        </copy>
+    ````
+
+    ````
+        <copy>
+        sudo dnf install java-17-openjdk-devel -y
+        </copy>
+    ````
+
+    ````
+        <copy>
+        sudo systemctl daemon-reload
+        </copy>
+    ````
+
+    ````
+        <copy>
+        sudo systemctl enable streamlit
+        </copy>
+    ````
+
+    ````
+        <copy>
+        sudo systemctl start streamlit
+        </copy>
+    ````
+
+    ````
+        <copy>
+        sudo systemctl status streamlit
+        </copy>
+    ````
+
+    Streamlit is up and running. Click Control + C on your keyboard to escape.
+
+12. Navigate back to the Streamlit folder:
+
+    ````
+        <copy>
+        cd ..
+        </copy>
+    ````
+
+13. Create the db_setup.py file:
+
+    ````
+        <copy>
+        nano db_setup.py
+        </copy>
+    ````
+
+14. Copy the following into your db_setup.py file:
+
+    ````
+        <copy>
+        INSERT CONTENT
+        </copy>
+    ````
+
+15. Save and close the file.
+
+16. Navigate to the pages folder:
+
+    ````
+        <copy>
+        cd pages/
+        </copy>
+    ````
+
+17. Create the 2-Dashboard.py file:
+
+    ````
+        <copy>
+        nano 2-Dashboard.py
+        </copy>
+    ````
+18. Copy the following into your 2-Dashboard.py file:
+
+    ````
+        <copy>
+        INSERT CONTENT
+        </copy>
+    ````
+
+19. Create the 3-Customers.py file:
+
+    ````
+        <copy>
+        nano 3-Customers.py
+        </copy>
+    ````
+20. Copy the following into your 3-Customers.py file:
+
+    ````
+        <copy>
+        INSERT CONTENT
+        </copy>
+    ````
+
+21. Create the 4-Decision.py file:
+
+    ````
+        <copy>
+        nano 4-Decision.py
+        </copy>
+    ````
+22. Copy the following into your 4-Decision.py file:
+
+    ````
+        <copy>
+        INSERT CONTENT
+        </copy>
+    ````
+
+23. Create the 5\_Marketing\_Home.py file:
+
+    ````
+        <copy>
+        nano 5_Marketing_Home.py
+        </copy>
+    ````
+24. Copy the following into your 5\_Marketing\_Home.py file:
+
+    ````
+        <copy>
+        INSERT CONTENT
+        </copy>
+    ````
+
+25. Navigate back to the Streamlit folder:
+
+    ````
+        <copy>
+        cd ..
+        </copy>
+    ````
+
+26. Start Streamlit:
+
+    ````
+        <copy>
+        sudo systemctl start streamlit
+        </copy>
+    ````
+
+27. Load the tables:
+
+    ````
+        <copy>
+        python3.11 db_setup.py
+        </copy>
+    ````
+## Task 8: Launch the Application
+
+1. Open an incognito window in your browser. 
+
+2. Type your IP address from Task #2, followed by :8501 into the incognito window.
+
+## Task 3: Unzip the Code
+
+1. Unzip the application code to a directory of your choice on your local machine: 
+
+    
+    [**Application Code**] (https://objectstorage.us-ashburn-1.oraclecloud.com/p/fiiLFGXKlmgrZKSwKQkD2Wc7mf5b8OsPUmIsw4rNUPcbBO31Za8T1NNoGAf0l4_S/n/c4u04/b/livelabsfiles/o/developer-library/pages.zip)   
+
+
+2. Navigate to the folder where the code is located. 
+
+    cd /path/to/your/unzipped/code 
+    ![Navigate to folder](./images/folder.png " ") 
 
 
 ## Troubleshooting
@@ -426,8 +1113,11 @@ By following the steps outlined above, you should be able to set up and run the 
 
 You may now **proceed to the next lab**.
 
+## Learn More
+
+- [Generative AI Documentation](https://docs.oracle.com/en-us/iaas/Content/generative-ai/home.htm)
+
 ## Acknowledgements
 
-- **Created By/Date** - Linda Foinding, Kevin Lazarz
-- **Contributor** - Kamryn Vinson
+- **Created By/Date** - Kamryn Vinson, Linda Foinding, Kevin Lazarz
 - **Last Updated By/Date** - Kamryn Vinson, May 2025
