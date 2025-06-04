@@ -201,7 +201,11 @@ In a web browser, navigate to `http://localhost:8501` .
 
 Notice that there are no language models configured to use. We will deal with the configuration in the next Lab.
 
+> **NOTE**: In the next steps of this lab, you will need to check the items inside your database 23ai. This lab uses the VS Code **SQL Developer** plugin, but feel free to use the tool you prefer:
+
+![sql-developer-plugin](images/sql-developer-plugin.png)
+
 ## Acknowledgements
 * **Author** - Lorenzo De Marchis, Developer Evangelist, May 2025
 * **Contributors** - Mark Nelson, John Lathouwers, Corrado De Bari, Jorge Ortiz Fuentes
-* **Last Updated By** - Lorenzo De Marchis, May 2025
+* **Last Updated By** - Lorenzo De Marchis, June 2025
