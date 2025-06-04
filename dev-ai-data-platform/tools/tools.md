@@ -56,7 +56,7 @@ This will cause the **Database Actions Launchpad** to be displayed
 
 ![Autonomous Database Catalog](./images/adb-data-catalog.png " ")
 
-> **Note:** In the picture above, the catalog includes quick filters in the top menu for search simplification.  You can combine multiple filters for more refined search results.
+> **NOTE:** In the picture above, the catalog includes quick filters in the top menu for search simplification.  You can combine multiple filters for more refined search results.
 
 <u> **The catalog quick filters are:** </u>
 
@@ -66,7 +66,7 @@ This will cause the **Database Actions Launchpad** to be displayed
 ***Data Objects***
   This filter searches for data objects in the database and on connected cloud storage.
 
-> **Note:** This is a superset of the Tables and Views and Files filters.
+> **NOTE:** This is a superset of the Tables and Views and Files filters.
 
 ***Files***
   This filter searches for files in connected cloud storage only.

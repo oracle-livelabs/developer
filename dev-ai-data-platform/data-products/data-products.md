@@ -25,7 +25,7 @@ In this Lab, you will:
 
 ## Task 1: Create Data Product Share
 
-   >**Note:** If continuing from lab 4, click on **Database Actions** link and skip to step 6.
+   >**NOTE:** If continuing from lab 4, click on **Database Actions** link and skip to step 6.
 
    1. Navigate to your Assigned ADB Instance
 
@@ -68,7 +68,7 @@ In this Lab, you will:
 
    9.	Enter the details below for the provider, in the **Provider Identification** popup window.
 
-      ![Define a Data Product Recipient](./images/define-data-product-share-recipient-5.png "Define a Data Product Recipient")
+   ! [Define a Data Product Recipient](./images/define-data-product-share-recipient-5.png "Define a Data Product Recipient")
 
       * **Enter the following:**
          * **Name:** LoanApp\_Share\_Provider
@@ -79,7 +79,7 @@ In this Lab, you will:
 
    10. Click **Shares** on the **Provide Share** page, to begin entering details for the new share.  Then, click the Create Share button to launch the Create Share wizard screen.
 
-      ![Define a Data Product Recipient](./images/define-data-product-share-recipient-6.png "Define a Data Product Recipient")
+   ![Define a Data Product Recipient](./images/define-data-product-share-recipient-6.png "Define a Data Product Recipient")
 
    11.	On the first page of the **Create Share** wizard, enter the following:
 
@@ -87,7 +87,7 @@ In this Lab, you will:
          *  **Name:** LoanApp\_ShareToRisk
          *  **Description:** a meaningful description
 
-      ![Define a Data Product Recipient](./images/create-share-general-risk.png "Define a Data Product Recipient")
+   ![Define a Data Product Recipient](./images/create-share-general-risk.png "Define a Data Product Recipient")
 
       * Click **Next**.
 
@@ -95,24 +95,24 @@ In this Lab, you will:
 
       * Select **MyDemoBucket** from the drop-down list.
 
-      ![Create Share](./images/create-share-bucket.png "Define a Data Product Recipient")
+   ![Create Share](./images/create-share-bucket.png "Define a Data Product Recipient")
 
       * Click **Next**.
 
    13. Choose the table (or view) that will be made available for the Risk Department (via the Share) on the **Select Tables** page.
 
-      ![Define a Data Product Recipient](./images/create-share-select-table-risk.png "Define a Data Product Recipient")
+   ![Define a Data Product Recipient](./images/create-share-select-table-risk.png "Define a Data Product Recipient")
 
-      a. Select the **Share\_Loan\_Data\_Risk\_VW** table in the Available Tables column.
-      b. Click the **move (>)** button to list it to the Shared Tables column
+      *  Select the **Share\_Loan\_Data\_Risk\_VW** table in the Available Tables column.
+      *  Click the **move (>)** button to list it to the Shared Tables column
 
-      ![Define a Data Product Recipient](./images/select-items-for-share.png "Define a Data Product Recipient")
+   ![Define a Data Product Recipient](./images/select-items-for-share.png "Define a Data Product Recipient")
 
-      c. Click **Next**.
+      *  Click **Next**.
 
    14. In Recipients section of wizard, Click on **New Recipients** button.
 
-      ![Define a Data Product Recipient](./images/define-data-product-share-recipient-10.png "Define a Data Product Recipient")
+   ![Define a Data Product Recipient](./images/define-data-product-share-recipient-10.png "Define a Data Product Recipient")
 
    15. In the **Create Share Recipient** window that is displayed, enter the recipient details.
 
@@ -121,19 +121,19 @@ In this Lab, you will:
          *  **Description:** Risk Department Data Engineering Lead (optional)  
          *  **Email:** a description (optional)  
 
-      ![Define a Data Product Recipient](./images/create-share-recipient-risk.png "Define a Data Product Recipient")
+   ![Define a Data Product Recipient](./images/create-share-recipient-risk.png "Define a Data Product Recipient")
 
       * Click **Create**.
 
    16. On the **Create Share** page, Click on the **copy** icon to capture the recipient’s profile activation link to the clipboard. 
 
-      ![Define a Data Product Recipient](./images/create-risk-recipient.png "Define a Data Product Recipient")
+   ![Define a Data Product Recipient](./images/create-risk-recipient.png "Define a Data Product Recipient")
 
       * Click **Create**.
 
    17. Paste activation link URL in browser window.
 
-      ![Define a Data Product Recipient](./images/paste-activation-link-in-window.png "Define a Data Product Recipient")
+   ![Define a Data Product Recipient](./images/paste-activation-link-in-window.png "Define a Data Product Recipient")
 
    18. Click on **Get Profile Information** to invoke download.
 

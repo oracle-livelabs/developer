@@ -14,7 +14,7 @@ By the end of this lab, you’ll understand how the **Data Share** tool enables 
 
 ## Task 1: Subscribe to Data Product Share as RISK user.
 
-> **Note:** If continuing from lab 5, click on Data Share in bread crumb link and skip to step 4.
+> **NOTE:** If continuing from lab 5, click on Data Share in bread crumb link and skip to step 4.
 
 1. Navigate to your assigned ADB Instance.
 
