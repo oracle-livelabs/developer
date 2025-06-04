@@ -16,6 +16,10 @@ Enjoy exploring! 🚀
 
 ## Task 1: Access Local Data Catalog
 
+> **Note** If you are continuing from lab 2, skip to step 4.
+
+      If you need to login to your Autonomous database again, start with step 1.
+
 First, you’ll log into your Autonomous Database and connect to your local Data Catalog, so you can discover and manage all the data you have access to all from one location.
 
 * Navigate to your ADB instance
@@ -40,6 +44,8 @@ First, you’ll log into your Autonomous Database and connect to your local Data
 3. Select View all Database Actions
 
   ![Select Database Actions](./images/oci-adb-database-actions.png "Select Database Actions")
+
+> **Note**: We will be transitioning to the LOAN user for the remaining exercises.
 
 4. **On the Database Actions page, In Upper right under dropdown next to ADMIN, select "Sign out"**
 
@@ -107,7 +113,7 @@ If no quick filter is selected, the Tables and Views filter is applied by defaul
 
 * If you do not select a quick filter, the Tables and Views filter is selected by default.
 
-**Note:** the output of the object shown can be limited to all or a selected schema.
+> **Note** the output of the object shown can be limited to all or a selected schema.
 
 2. Select **Connections** quick filter. This displays available connections in the Catalog accessible to the LOAN schema. From here we can validate that our catalog sees the defined connections we made.
 
@@ -117,7 +123,7 @@ If no quick filter is selected, the Tables and Views filter is applied by defaul
 
 * Select **Data Objects** quick filter to display available items in the Catalog visible to the LOAN schema. Notice that this view shows us the available database objects and the listing of the files available in our object storage.
 
-**Note:** that this view shows us the available database objects and the listing of the files available in our object storage.  These files will be used in upcoming exercises.
+> **Note:** that this view shows us the available database objects and the listing of the files available in our object storage.  These files will be used in upcoming exercises.
 
   ![Data Catalog Data Objects](./images/data-catalog-data-objects.png "Data Catalog Data Objects")
 

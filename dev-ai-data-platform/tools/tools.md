@@ -93,7 +93,7 @@ This will cause the **Database Actions Launchpad** to be displayed
 
 ![Autonomous Data Share](./images/adb-data-share.png " ")
 
-In this lab, you explored the **integrated tools** within **Oracle Autonomous Database** that simplify **data access**, **transformation**, **analytics**, and **sharing**. These tools empower users to work efficiently across various data workflows without requiring specialized technical expertise. 💡📊
+In summary, you have explored the **integrated tools** within **Oracle Autonomous Database** that simplify **data access**, **transformation**, **analytics**, and **sharing**. These tools empower users to work efficiently across various data workflows without requiring specialized technical expertise. 💡📊
 
 **Continue to the next lab to dive deeper into how these tools work!** 🚀
 
