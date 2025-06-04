@@ -85,7 +85,7 @@ Provision a VB Studio instance to develop and deploy a web app. You can create o
 
     ![The Visual Builder Studio instances page is shown, with the Create Visual Builder Studio button under the <tenancyName> root compartment.](images/create-instance-vbs.png "")
 
-4. On the Instance name step of the Create Visual Builder Studio instance wizard, give your instance a unique name and make sure your root compartment is selected. Click **Next**.
+4. On the Instance name step of the Create Visual Builder Studio instance wizard, give your instance (to be created in the root compartment) a unique name. Click **Next**.
 
    ![This image shows the Instance name screen. The Instance Name is entered as vbstudio-devinstance and Compartment is set to <tenancyName> (root).](images/detail-vbs.png "")
 
@@ -101,7 +101,7 @@ Provision a VB Studio instance to develop and deploy a web app. You can create o
 
 ## Task 3: Authorize VB Studio to access Visual Builder
 
-Your VB Studio instance must be authorized to access Visual Builder instances connected to your OCI account. This step is mostly required if your VB Studio instance was provisioned with the built-in free VM, but there may be other scenarios where this authorization is missing. Therefore, it's recommended that you always check your VB Studio instance's details to make sure the policy statement that enables this access is correctly defined.
+Your VB Studio instance must be authorized to access Visual Builder instances connected to your OCI account. This step is required if your VB Studio instance was provisioned with the built-in free VM, in which case you must create a new policy as described here. If a policy already exists for your VB Studio instance, see [Updating a Policy's Statements](https://docs.oracle.com/en-us/iaas/Content/Identity/policymgmt/managingpolicies_topic-To_update_the_statements_in_an_existing_policy.htm) to check the policy and add any missing statements. In either case, make sure the policy statement that enables this access is correctly defined.
 
 1. From the navigation menu, select **Identity & Security**, then **Policies** under Identity.
 
@@ -125,7 +125,7 @@ Your VB Studio instance must be authorized to access Visual Builder instances co
 
    Click **Create**.
 
-If a policy already exists for your VB Studio instance but is missing one or more of the preceding statements, [update the policy](https://docs.oracle.com/en-us/iaas/Content/Identity/policymgmt/managingpolicies_topic-To_update_the_statements_in_an_existing_policy.htm) to add the missing statements.
+
 
 ## Task 4: Access VB Studio
 
