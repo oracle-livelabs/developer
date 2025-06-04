@@ -56,7 +56,7 @@ This will cause the **Database Actions Launchpad** to be displayed
 
 ![Autonomous Database Catalog](./images/adb-data-catalog.png " ")
 
-> **Note:** In the picture above, the catalog includes quick filters in the top menu for search simplification.  You can combine multiple filters for more refined search results.
+> **NOTE:** In the picture above, the catalog includes quick filters in the top menu for search simplification.  You can combine multiple filters for more refined search results.
 
 <u> **The catalog quick filters are:** </u>
 
@@ -66,7 +66,7 @@ This will cause the **Database Actions Launchpad** to be displayed
 ***Data Objects***
   This filter searches for data objects in the database and on connected cloud storage.
 
-> **Note:** This is a superset of the Tables and Views and Files filters.
+> **NOTE:** This is a superset of the Tables and Views and Files filters.
 
 ***Files***
   This filter searches for files in connected cloud storage only.
@@ -93,7 +93,7 @@ This will cause the **Database Actions Launchpad** to be displayed
 
 ![Autonomous Data Share](./images/adb-data-share.png " ")
 
-In this lab, you explored the **integrated tools** within **Oracle Autonomous Database** that simplify **data access**, **transformation**, **analytics**, and **sharing**. These tools empower users to work efficiently across various data workflows without requiring specialized technical expertise. 💡📊
+In summary, you have explored the **integrated tools** within **Oracle Autonomous Database** that simplify **data access**, **transformation**, **analytics**, and **sharing**. These tools empower users to work efficiently across various data workflows without requiring specialized technical expertise. 💡📊
 
 **Continue to the next lab to dive deeper into how these tools work!** 🚀
 

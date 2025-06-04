@@ -6,6 +6,10 @@ In this lab, we will show you how to connect to the development environment. We 
 
 Estimated Time: 5 minutes
 
+To get things started we invite you to watch this video and see the lab in action:
+
+  [](videohub:1_t121gz5o:medium)
+
 ### Objective
 
 * Login to JupyterLab
