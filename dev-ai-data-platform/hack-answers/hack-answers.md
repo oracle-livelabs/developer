@@ -2,7 +2,7 @@
 
 ## Introduction  
 
-## Welcome to the Hackathon Challenge!  
+**Welcome to the Hackathon Challenge!**  
 
 The data science team at SeerEquities is focused on building a data-driven approval system.  Currently, the objective is to share loan information with the Marketing team.  
 
