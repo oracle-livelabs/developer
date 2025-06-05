@@ -47,7 +47,10 @@ In this Lab, you will:
 
    ![Create Data Product Share](./images/task1-scrn-4.png "Create Data Product Share")
 
-   5. From the **Database Actions Launchpad**, click the user icon in the top right corner to sign-on as the LOAN user.
+   5.	On the **Database Actions Launchpad**, click the user icon in the top right
+   Corner.  Select **Sign Off** from the drop-down options. Enter credentials in the popup window shown below, to login as the LOAN user.
+   
+   >**NOTE:** Use the same **ADMIN** password as shown on View Lab Info page
 
       ![Create Data Product Share](./images/task1-scrn-5.png "Create Data Product Share")
 

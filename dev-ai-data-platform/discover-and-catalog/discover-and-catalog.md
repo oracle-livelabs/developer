@@ -4,6 +4,10 @@ Estimated Lab Time: 45 minutes
 
 ## Introduction
 
+This lab is designed to give the Data Engineer/Architect experience utilizing the **Data Catalog** and **Data Load Connections** tools, to simply access of data that resides inside the database and on cloud object storage. 
+
+To create the loan products iused by the Loan Officer in the demo, the Data Engineer first needed to access external funding data and combine it with Bank business rules to create the end loan products that were sold to customers. 
+
 In this lab, you’ll learn how to find, connect, and use data from **Object Storage** via **Oracle’s Data Catalog** and **Autonomous Database (ADB)**. Follow these steps to set up everything you need for seamless, real-time data access—without jumping through complicated hoops. After these steps, you’ll have a smooth setup that lets you **discover**, **connect**, and **query** data no matter where it lives—in Oracle Database or in Object Storage—giving you a powerful, unified view of all your information. 🌐📊
 
 Enjoy exploring! 🚀
@@ -71,17 +75,17 @@ First, you’ll log into your Autonomous Database and connect to your local Data
 
 4.  Now Let’s add our **own connection** for an Object Storage bucket named **MyDemoBucket**
 
-  * On the **Connections Page** --> Click **Create** --> Then select **New Cloud Store Location**
+    * On the **Connections Page** --> Click **Create** --> Then select **New Cloud Store Location**
 
   ![Add Connections to Catalog](./images/add-connections-to-catalog-3.png "Add Connections to Catalog")
 
 5.  On the Add Cloud Store Location page displayed
 
-* For **Name**, enter: **MyDemoBucket**
-* For **Description**, enter: **My Demo Object Storage Bucket**
-* For **Credential**, select **OCI\_API\_KEY_CRED**
-* Choose **Select Bucket** radio button
-* From DropDown List choose **Bucket Named:** ***MyDemoBucket***
+    * For **Name**, enter: **MyDemoBucket**
+    * For **Description**, enter: **My Demo Object Storage Bucket**
+    * For **Credential**, select **OCI\_API\_KEY_CRED**
+    * Choose **Select Bucket** radio button
+    * From DropDown List choose **Bucket Named:** ***MyDemoBucket***
 
   ![Add Connections to Catalog](./images/add-connections-to-catalog-4-w-select-bucket.png "Add Connections to Catalog")
 

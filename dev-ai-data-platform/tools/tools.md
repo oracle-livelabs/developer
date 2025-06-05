@@ -4,7 +4,9 @@
 
 ## Introduction
 
-In this lab, you’ll discover the key **data platform tools** used with **Autonomous Database (ADB)** to query, manage, transform, explore, and share your data. By the end, you’ll see how these tools work together to help you easily **load data**, **organize it**, **query it**, and **share it**—without needing a deep technical background.
+This lab is designed to give the Data Engineer/Architect expose to the key **Autonomous Database** tools, that we will use in upcoming labs to show you how to gain access to both internal and external data that is required to create and share loan products.
+
+In this lab, you’ll discover the key **data platform tools** used with **Autonomous Database** to query, manage, transform, explore, and share your data. By the end, you’ll see how these tools work together to help you easily **load data**, **organize it**, **query it**, and **share it**—without needing a deep technical background.
 
 By leveraging the integrated data platform tools with ADB, you’ll see how easy it is to go from **accessing raw data** all the way to **collaborating with other departments** to ensure everyone has the data they need, **exactly** when they need it. 📊🤝
 
