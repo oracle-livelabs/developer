@@ -33,8 +33,8 @@ In this lab, you will:
 
 3. On the Fleet details page, click **Scan for Java libraries**.
      ![image of Fleet details page](images/scan-java-libraries.png)
-       If your request is submitted successfully, you should receive a notification in green as seen below: 
-       ![image of created work request for java libraries](images/work-request-of-libraries-scan-created.png)
+    Select the **Scan** button to send a work request.
+     ![image of confirmation page to create java libraries scan request](images/scan-java-libraries-submit.png)
 
 4. Scroll down the Fleet details page, under **Resources** menu, select **Work Request**. You should see the Scan for Java libraries Work Request you submitted in step 2. Wait for the work request to complete.
      ![image of work request for java libraries in progress](images/work-request-of-libraries-scan-in-progress.png)
@@ -82,7 +82,7 @@ In this lab, you will:
 	sudo java -jar <path-to-sample-app>/<filename.jar>
 	</copy>
 	```
-> **Note:** Please make sure the sample Java SE application is continuously running without interruption during **Library Scanning** in the subsequent task.
+> **Note:** Please make sure the sample Java SE application is **continuously running** without interruption during **Library Scanning** in the subsequent task.
 
 ## Task 3: Detect Java libraries for Java SE Application
 
@@ -93,8 +93,6 @@ In this lab, you will:
 
 2. On the Fleet details page, click **Scan for Java libraries**.
     ![image of scan for java libraries](images/scan-java-libraries.png)
-    If your request is submitted successfully, you should receive a notification in green as seen below: 
-    ![image of created work request for java libraries](images/work-request-of-libraries-scan-created.png)
 
 3. Scroll down the Fleet details page, under **Resources** menu, select **Work Request**. You should see the Scan for Java libraries Work Request you submitted in step 2. Wait for the work request to complete.  ![image of work request for java libraries in progress](images/work-request-of-libraries-scan-in-progress.png)
 
