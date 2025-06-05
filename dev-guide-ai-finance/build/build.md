@@ -8,6 +8,11 @@ This lab uses some of the basic coding samples you created in lab 3, such as cur
 
 Estimated Time: 30 minutes
 
+To get things started we invite you to watch this video and see the lab in action:
+
+  [](videohub:1_joogeiaj:medium)
+
+
 ### Objectives
 
 * Build the complete loan approval application as seen in lab 1
