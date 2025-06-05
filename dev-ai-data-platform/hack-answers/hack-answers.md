@@ -31,14 +31,18 @@ In this lab, you will:
 
 3. Select **Database Actions**, then view all database actions.  
 
-4. Sign out of **Database Actions** page as ADMIN user.  
+4. Logon as the **LOAN** user.
 
-5. From **Database Actions Launchpad**, click the user icon in the top right corner to sign-on as the LOAN user.  
+   *  On the **Database Actions Launchpad**, click the user icon in the top right
+   Corner.  Select **Sign Off** from the drop-down options.  
+   
+   *  Enter credentials in the popup window to login as the LOAN user.
+   
+   >**NOTE:** Use the same **ADMIN** password as shown on View Lab Info page
 
-   a. Enter LOAN user credentials.  
-   b. Press Sign-In button.  
+   Click **Sign in** button.
 
-6. **Create a Data Product**  
+5. **Create a Data Product**  
 
    a. Select **Data Studio** from the menu bar, then choose **Data Share** from left rail.  
    b.  Click **Provide Share** on the **Provider and Consumer** page.  
@@ -51,7 +55,7 @@ In this lab, you will:
    
    e. Click **Save**.  
 
-7. **Create New Data Share**  
+6. **Create New Data Share**  
 
    a. Click **Shares** on the **Provide Share** page.  
    b. Provide details on the **General** page of the **Create Share** wizard.  
