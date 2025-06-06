@@ -26,7 +26,7 @@ In this lab, you will:
 
 1. First, open the navigation menu, click **Observability & Management**, and then click **Fleets** under **Java Management**. Select the fleet that you have configured in [Lab 1](?lab=set-up-and-enable-advanced-features-on-java-management-service).
 
-    ![image of console navigation to java management service](images/console-navigation-jms-fleet.png)
+    ![image of console navigation to java management service](images/console-navigation-jms.png)
 
 2. Click the button labeled **Crypto event analysis**.
 
@@ -36,9 +36,7 @@ In this lab, you will:
 
     ![image of crypto event run settings](images/crypto-run-duration.png)
 
-    ![image of crypto event started notification](images/crypto-work-request-started-notification.png)
-
-4. On the Fleet details page, scroll down to the **Resources**, menu. Select **Work requests**.
+4. On the Fleet details page, select **Work requests** tab.
 
     You should see a list of the **Work Requests** that are currently in your Fleet. **Crypto event analysis** that was started should be at the top of the list.
 
@@ -56,13 +54,10 @@ In this lab, you will:
 
     You should see a list of Crypto analysis reports that have been conducted in your Fleet. The latest **Crypto event analysis** that has been completed should be displayed at the top of the list.
 
-    If there are no issues found, the **Crypto event analysis** result should say **No warnings found**. 
+    If there are no issues found, the **Crypto event analysis** result should say **No warnings found**. Otherwise it'll show **Action needed**.
 
     ![image of crypto event analysis report](images/crypto-result-final1.png)
 
-    Otherwise it'll show **Action needed**.
-
-    ![image of crypto event analysis report](images/crypto-result-final2.png)
 
 7. You can click the **Name** of the **Analysis report** and scroll down to get more details about the issue.
 
@@ -164,4 +159,4 @@ You may now **proceed to the next lab.**
 ## Acknowledgements
 
 * **Author** - Somik Khan, Java Management Service
-* **Last Updated By** - Siqi Liu, October 2023
+* **Last Updated By** - Hannah Wong, May 2025
