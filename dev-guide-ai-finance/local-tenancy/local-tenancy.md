@@ -760,9 +760,22 @@ OCI Generative AI is a fully managed service available via API to seamlessly int
 
     ````
         <copy>
-        INSERT CONTENT
+        [Unit]
+        Description=Streamlit Loan Approval App
+        After=network.target
+
+        [Service]
+        User=opc
+        WorkingDirectory=/home/opc/loan/streamlit/
+        ExecStart=/bin/bash -c 'source /home/opc/loan/streamlit/pages/loan_env/bin/activate && streamlit run 1-Introduction.py --server.port 5500 --server.address 0.0.0.0'
+        Restart=always
+
+        [Install]
+        WantedBy=multi-user.target  
         </copy>
     ````
+
+9. Change user to the user you have been using. Change the working directory to your directory. Change the port to 8501.
 
 9. Activate the virtual environment with the following command:
 
@@ -920,22 +933,8 @@ OCI Generative AI is a fully managed service available via API to seamlessly int
 
 24. Open the downloaded file. Copy the entire contents in the file. Paste this into your terminal. Save and close the file.
 
-25. Create the 5\_Marketing\_Home.py file:
 
-    ````
-        <copy>
-        nano 5_Marketing_Home.py
-        </copy>
-    ````
-26. Copy the following into your 5\_Marketing\_Home.py file:
-
-    ````
-        <copy>
-        INSERT CONTENT
-        </copy>
-    ````
-
-27. Navigate back to the Streamlit folder:
+25. Navigate back to the Streamlit folder:
 
     ````
         <copy>
