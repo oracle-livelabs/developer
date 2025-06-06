@@ -2,7 +2,7 @@
 
 ## About this Workshop
 
-**Data is more than an asset—it’s the engine behind every smart decision, risk calculation and growth strategy. From real-time decision-making to risk management and innovation, success hinges on how well you harness it.**
+**Data is more than an asset—it’s the engine behind every smart decision, risk calculation, and growth strategy. From real-time decision-making to risk management and innovation, success hinges on how well you harness it.**
 
 Generative AI and Oracle Database 23ai makes it possible to unlock deeper insights, faster—directly within your database.
 

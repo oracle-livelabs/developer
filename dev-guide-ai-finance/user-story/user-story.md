@@ -122,7 +122,7 @@ In this example, you will navigate the application to review a customer and deny
 
     ![Select James Woods](./images/james-woods.png =50%x*)
 
-2. Opening James Woods’s profile displays his loan application details. Within a few seconds, the AI generates automatically recommendations. In this case, the system evaluates a less favorable profile and identifies key risk factors.
+2. Opening James Woods’s profile displays his loan application details. Within a few seconds, the AI automatically generates recommendations. In this case, the system evaluates a less favorable profile and identifies key risk factors.
 
     This customer has:
 
@@ -219,7 +219,7 @@ Once the document is uploaded:
 
 ## Summary
 
-In conclusion our Loan Management App was able to leverage Oracle database 23ai technologies such as **AI Vector Search, Property Graph and JSON Duality Views** to:
+In conclusion our Loan Management App was able to leverage Oracle database 23ai technologies such as **AI Vector Search, Property Graph, and JSON Duality Views** to:
 
 ✅ Automate profile evaluations
 
@@ -227,7 +227,7 @@ In conclusion our Loan Management App was able to leverage Oracle database 23ai 
 
 ✅ Enable seamless profile updates with JSON Duality Views
 
-✅ And empower loan officers with actionable insights through Operational Property Graphs 
+✅ Empower loan officers with actionable insights through Operational Property Graphs 
 
 By combining these advanced tools, the application enables faster, smarter decisions and delivers clear guidance on how customers can improve their eligibility.
  
