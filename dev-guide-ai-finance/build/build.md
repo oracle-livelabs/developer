@@ -194,7 +194,7 @@ Here’s what we’ll do:
 ![loan](./images/loan-recommendation.png " ")
 
 
-## Task 6: Create a function to create embeddings - Use Oracle Database 23ai's to create vector data 
+## Task 6: Create a function to create embeddings - Use Oracle Database 23ai to create vector data 
 
 To handle follow-up questions, you will enhance the system with an AI Loan Guru powered by Oracle 23ai’s Vector Search and Retrieval-Augmented Generation (RAG). The AI Loan Guru will be able to answer questions about the loan application and provide recommendations based on the data.
 
