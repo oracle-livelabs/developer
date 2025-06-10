@@ -2,11 +2,15 @@
 
 ## About this Workshop
 
-**Data is more than an asset—it’s the engine behind every smart decision, risk calculation and growth strategy. From real-time decision-making to risk management and innovation, success hinges on how well you harness it.**
+**Data is more than an asset—it’s the engine behind every smart decision, risk calculation, and growth strategy. From real-time decision-making to risk management and innovation, success hinges on how well you harness it.**
 
 Generative AI and Oracle Database 23ai makes it possible to unlock deeper insights, faster—directly within your database.
 
 In this hands-on workshop, you’ll build a finance-focused GenAI solution using Oracle Database 23ai. 
+
+To get things started we invite you to watch the introduction video to see the demo in action:
+
+[](videohub:1_mg30brw3:medium)
 
 You will:
   *	Use **native Vector Search** to query and analyze structured data, documents, and images—without moving data across platforms.
@@ -28,10 +32,6 @@ By the end of this workshop, you’ll understand how Oracle Database 23ai helps 
 
 **Your next breakthrough is just a lab away!**
 
-
-To get things started we invite you to watch the introduction video to see the demo in action:
-
-  [](videohub:1_mg30brw3:medium)
 
 #### ➡️ **Start with the demo!**
 

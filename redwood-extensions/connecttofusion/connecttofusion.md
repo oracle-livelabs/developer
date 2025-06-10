@@ -89,7 +89,7 @@ Up until now we've worked on the UI (front end) of your application, but now it'
 			  ![search criteria](images/search.png)
 
 
-12. Click **Done**.  Your screen should look like this: 			
+12. Click **Done**.  Your screen should look like this:
 					  ![Final result](images/condition.png)
 
 	The filter we just built now essentially says: If the organization name contains the user's search string (that is, the variable name), then filter the data in the table to show that row.
@@ -98,7 +98,7 @@ Up until now we've worked on the UI (front end) of your application, but now it'
 
 In a moment we'll see that a table with the selected fields has been added to your page. The data for this table will be fetched live from Oracle SaaS using the service connection we defined in this lab.
 
-To leverage the service's pagination capabilities (as opposed to fetching all the records available on start up), let's add a scroll policy to the table. While we can do this by setting the property directly in the property inspector, we'll show you that you can also directly modify your application at the code level.
+To leverage the service's pagination capabilities (as opposed to fetching all the records available on start up), let's add a scroll policy to the table. While we can do this by setting the property directly in the Properties pane, we'll show you that you can also directly modify your application at the code level.
 
 14. Switch to Code view by clicking **Code** button at the top of the preview:
 					  ![Code view](images/codeview.png)
@@ -120,11 +120,11 @@ To leverage the service's pagination capabilities (as opposed to fetching all th
 
 
 
-P.S. If setting this in code didn't work, go to the property inspector for the table, locate the scroll policy options property and drill down to the sub properties by clicking the right arrow. Then set the scroller to html over there.
+P.S. If setting this in code didn't work, go to the Properties pane for the table, locate the scroll policy options property and drill down to the sub properties by clicking the right arrow. Then set the scroller to html over there.
 					  ![scroller property](images/scroller.png)
 
 
-18. Click **Design** so we can see the resulting table with data fetched into it. We can take an even closer look at the app by using the Preview feature.  
+18. Click **Design** so we can see the resulting table with data fetched into it. We can take an even closer look at the app by using the Preview feature.
 
 19. In the Designer's header, click **Preview** in the top right:
 											  ![Preview button](images/preview.png)

@@ -8,6 +8,11 @@ This lab uses some of the basic coding samples you created in lab 3, such as cur
 
 Estimated Time: 30 minutes
 
+To get things started we invite you to watch this video and see the lab in action:
+
+  [](videohub:1_joogeiaj:medium)
+
+
 ### Objectives
 
 * Build the complete loan approval application as seen in lab 1
@@ -21,9 +26,10 @@ This lab assumes you have:
 
 * An Oracle Cloud account
 * Completed lab 1: Run the demo
-* Completed lab 2: Connect to the development environment
+* Completed lab 2: Connect to the Development Environment
 
 ## Task 1: Build the application in Jupyter Notebook
+>💡**Note**: Review Lab 2: Connect to the Development Environment for instructions on accessing JupyterLab.
 
 1. Open a new **Jupyter Notebook** by clicking on **Pyhton(ipykernel)** notebook.
 
@@ -413,8 +419,9 @@ You may now proceed to the next lab.
 ## Learn More
 
 * [Code with Python](https://www.oracle.com/developer/python-developers/)
+* [Oracle Database 23ai Documentation](https://docs.oracle.com/en/database/oracle/oracle-database/23/)
 
 ## Acknowledgements
-* **Authors** - Kevin Lazarz
-* **Contributors** - Francis Regalado, Linda Foinding, Kamryn Vinson
-* **Last Updated By/Date** - Linda Foinding, April 2025
+* **Authors** - Francis Regalado Database Product Manager
+* **Contributors** - Kevin Lazarz, Linda Foinding, Kamryn Vinson
+* **Last Updated By/Date** - Francis Regalado, May 2025
