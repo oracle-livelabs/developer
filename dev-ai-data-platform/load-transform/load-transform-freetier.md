@@ -1,13 +1,12 @@
 # 🏗️ Build your Data Pipeline: Load & Transform Data (optional lab)
 
+Estimated Lab Time: 45 minutes
+
 ## Introduction
 
 In this lab, you’ll practice setting up the live feed capabilities, that can be used to load data that is continuously collected into cloud object storage.  When a load job is enabled for live feed, it is connected to the OCI event notification and subscription mechanism, so that every time a new object is created in the object store bucket, it triggers the live feed, loading the contents to the database
 
-Estimated Time: 45 minutes
-
-
-> **NOTE:** To complete this lab, you will alternate between **Oracle Cloud Infrastructure Console** pages and **Oracle Database Actions** pages. Selecting **Database Actions** will open a new tab.
+<**NOTE:** To complete this lab, you will alternate between **Oracle Cloud Infrastructure Console** pages and **Oracle Database Actions** pages.  Selecting **Database Actions** will open a new tab.
 
 ## Task 1: Create a Notifications Service Subscription Topic  
 
@@ -63,9 +62,27 @@ Estimated Time: 45 minutes
 
 ## Task 3: Create a Live Table Feed and Copy the notification URL
 
-1. Click **View Login Info**. Click the **SQL Worksheet** link.
+   >**NOTE:** If continuing from lab 4, click on **Database Actions** link and skip to step 6.
 
-    ![Access Data Catalog](./images/sql-worksheet.png "Access Local Data Catalog")   
+1. Navigate to your Assigned ADB Instance
+
+    \* Open Navigation Menu  
+    \* Select Oracle Database  
+    \* Select Autonomous Database  
+
+    ![Navigate to Autonomous Database in OCI](./images/navigate-to-adb.png)
+
+2. Select the name of your assigned database.
+
+   ![Navigate to Autonomous Database in OCI](./images/oci-adb-select.png)
+
+3. Select **Database Actions** then View all database actions.
+
+    ![Create Data Product Share](./images/task1-scrn-3.png "Create Data Product Share")
+
+4. On the **Database Actions Launchpad**, click the user icon in the top right corner.  
+
+    \* Select **Sign Off** from the drop-down options. Enter credentials in the popup window shown below, to login as the LOAN user.  
 
     >**NOTE:** Use the same **ADMIN** password as shown on View Lab Info page
 

@@ -1,7 +1,5 @@
 # Get started - Login to the LiveLabs Sandbox Environment
 
-#### Estimated Lab Time: 5 minutes
-
 ## **Introduction**
 
 Welcome to LiveLabs.
@@ -9,7 +7,9 @@ You have successfully created a LiveLabs Sandbox environment.
 
 In this lab, we will show you where you can find the login information and how to log in to the LiveLabs Sandbox.
 
-### **Objectives**
+Estimated Time: 5 minutes
+
+### Objectives
 
 - Login to LiveLabs Sandbox
 - Find your LiveLabs Sandbox reservations
@@ -30,7 +30,7 @@ In this lab, we will show you where you can find the login information and how t
 
 3. Congratulations! You are now connected to the demo environment. You can now execute the different tasks and steps for the selected LiveLabs workshop.
 
-    ![Demo Environment](./images/demo-env.png " ")
+    ![Demo Environment](./images/app-home.png " ")
 
 ## Task 2: Find your LiveLabs Sandbox reservations
 
@@ -42,6 +42,5 @@ You may now **proceed to the next lab**.
 
 ## Acknowledgements
 
-- **Created By/Date** -
-- **Contributor** -
-- **Last Updated By/Date** - 04/21/2025
+- **Created By/Date** - Kamryn Vinson
+- **Last Updated By/Date** - Kamryn Vinson, June 2025

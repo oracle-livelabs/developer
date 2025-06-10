@@ -28,19 +28,6 @@ By the end of this workshop, you'll understand how **Oracle’s Data Platform** 
 
 ### **Objectives**
 
-This workshop is divided into two key sections, each designed to provide a unique, hands-on experience with **Oracle’s Data Platform**:
-
-### 1️⃣ **Demo Experience: Real-World Application Simulation**
-
-  Gain practical insight into how **data products** are used within a **Loan Management Application**.
-
-  In this section, you will:
-  *	Interact with the application from the perspective of different user personas — **Loan Officer** and, **Risk Management Officer**.
-  * Follow user stories that demonstrate how having near real-time access to enterprise-wide data truly drives data-driven decisions for a competitive edge.
-  *	Understand how each role consumes data products and provides feedback that enhances **operational efficiency**, **risk assessment**, and **the efficiency of marketing campaigns**.
-
-### 2️⃣ **Hands-On Data Engineering & Management Tasks**
-
   Apply your skills through guided development tasks that simulate real-world data requests.
 
   In this section, you will:
@@ -55,9 +42,7 @@ This lab assumes you have:
 * An Oracle account to submit your a LiveLabs Sandbox reservation.
 * Basic knowledge of Oracle Database.
 
-___
-
-### **Key Terms**
+## Key Terms
 
 ___
 
@@ -105,4 +90,4 @@ With Data Catalog, you can collect, organize, search, access, enrich, and activa
 ## Acknowledgements
 * **Authors** - Eddie Ambler, Otis Barr, Matt Kowalik, Ramona Magadan
 * **Contributors** - Francis Regalado
-* **Last Updated By/Date** - 04/21/2025
+* **Last Updated By/Date** - Kamryn Vinson, June 2025
