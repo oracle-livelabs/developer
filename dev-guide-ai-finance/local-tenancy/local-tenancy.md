@@ -6,7 +6,7 @@ In this section, you will learn how to run the Seer Equities Loan Approval appli
 
 The document is structured to help you meet all prerequisites, configure both the Autonomous Database and the OCI Generative AI Service, and troubleshoot any issues that may arise during setup. Whether you're new to Oracle Cloud Infrastructure or simply deploying locally for development and testing, this step-by-step guide will ensure a smooth setup experience.
 
-Estimated Time: 20 minutes
+Estimated Time: 60 minutes
 
 ### Objectives
 
@@ -704,104 +704,13 @@ OCI Generative AI is a fully managed service available via API to seamlessly int
         </copy>
     ````
 
-2. Copy the following into your 1-Introduction.py file:
+2. Click the link below to download the 1-Introduction.py file:
 
-    ````
-        <copy>
-        import streamlit as st
-import requests
+    [**1-Introduction.py**](https://objectstorage.us-ashburn-1.oraclecloud.com/p/rOAMCUypdo4N2cz8lDG1RKGKqvobYX4_zkXCZrVZPLMy0xgbgkKX4QgnOjJYOxyZ/n/c4u04/b/livelabsfiles/o/developer-library/1-Introduction.py)
 
-# Disables the sidebar navigation by default
-st.set_page_config(
-    page_title="🏠 SeerEquities App", layout="wide", initial_sidebar_state="collapsed"
-)
+3. Open the downloaded file. Copy the entire contents in the file. Paste this into your terminal. Save and close the file.
 
-# if "db_setup_ran" not in st.session_state:
-#     exec(open("db_setup.py").read())
-#     st.session_state.db_setup_ran = True
-
-
-# Temporary inline CSS to fix selectbox width and centering
-st.markdown(
-    """
-    <style>
-        /* Target the selectbox container and its inner div */
-        div.stSelectbox > div[data-baseweb="select"] > div {
-            width: 200px !important;
-            max-width: 200px !important;
-            margin: 0 auto !important;
-        }
-        /* Ensure the selectbox widget itself is constrained and centered */
-        div.stSelectbox {
-            width: 200px !important;
-            max-width: 200px !important;
-            margin: 0 auto !important;
-            display: flex;
-            justify-content: center;
-        }
-    </style>
-""",
-    unsafe_allow_html=True,
-)
-
-
-# Function to load CSS
-def load_css(file_path):
-    if file_path.startswith("http"):
-        try:
-            response = requests.get(file_path)
-            if response.status_code == 200:
-                st.markdown(f"<style>{response.text}</style>", unsafe_allow_html=True)
-            else:
-                st.error(
-                    f"Failed to load CSS from URL: {file_path} (Status: {response.status_code})"
-                )
-        except Exception as e:
-            st.error(f"Error loading CSS from URL: {e}")
-    else:
-        try:
-            with open(file_path, "r") as f:
-                st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
-        except FileNotFoundError:
-            st.error(f"CSS file not found: {file_path}")
-        except Exception as e:
-            st.error(f"Error loading CSS file: {e}")
-
-
-load_css(
-    "https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/labfiles/loan_css_test/style.min.css"
-)
-
-# Title and description (personalized after login)
-if "user_name" in st.session_state:
-    st.title(
-        f"Welcome to SeerEquities Loan Management, {st.session_state['user_name']}!"
-    )
-else:
-    st.title("Welcome to SeerEquities Loan Management")
-
-st.image(
-    "https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/labfiles/loan_css_test/seer-equities-logo-v1.png"
-)
-
-# Input field for the user's name
-user_name = st.text_input("", key="username-input", placeholder="Username").strip()
-
-# Login button
-if st.button("Login", key="login-button"):
-    if not user_name:
-        st.error("Please enter your name to proceed.")
-    else:
-        # Store the user's name in session state to pass it to the Dashboard
-        st.session_state["user_name"] = user_name
-        st.success(f"Welcome, {user_name}! Redirecting to your Dashboard...")
-        st.switch_page("pages/2-Dashboard.py")
-        </copy>
-    ````
-
-4. Save and close the file.
-
-5. Navigate to the pages folder.
+4. Navigate to the pages folder.
 
     ````
         <copy>
@@ -809,7 +718,7 @@ if st.button("Login", key="login-button"):
         </copy>
     ````
 
-6. Create a Virtual Environment. It is recommended to create a virtual environment to isolate the dependencies. In your terminal, run the following command to create a virtual environment: 
+5. Create a Virtual Environment. It is recommended to create a virtual environment to isolate the dependencies. In your terminal, run the following command to create a virtual environment: 
 
 
     ````
@@ -820,7 +729,7 @@ if st.button("Login", key="login-button"):
 
     This will create a directory called loan_env that contains your virtual environment.
 
-7. So now, let's enable the firewall for our ports. Run the following commands:
+6. So now, let's enable the firewall for our ports. Run the following commands:
 
     ````
         <copy>
@@ -840,22 +749,35 @@ if st.button("Login", key="login-button"):
         </copy>
     ````
 
-8. Open the file using the command below:
+7. Open the file using the command below:
 
     ````
         <copy>
         sudo nano /etc/systemd/system/streamlit.service
         </copy>
     ````
-9. Paste the following into the file:
+8. Paste the following into the file:
 
     ````
         <copy>
-        INSERT CONTENT
+        [Unit]
+        Description=Streamlit Loan Approval App
+        After=network.target
+
+        [Service]
+        User=opc
+        WorkingDirectory=/home/opc/loan/streamlit/
+        ExecStart=/bin/bash -c 'source /home/opc/loan/streamlit/pages/loan_env/bin/activate && streamlit run 1-Introduction.py --server.port 5500 --server.address 0.0.0.0'
+        Restart=always
+
+        [Install]
+        WantedBy=multi-user.target  
         </copy>
     ````
 
-10. Activate the virtual environment with the following command:
+9. Change user to the user you have been using. Change the working directory to your directory. Change the port to 8501.
+
+9. Activate the virtual environment with the following command:
 
     ````
         <copy>
@@ -863,7 +785,7 @@ if st.button("Login", key="login-button"):
         </copy>
     ````
 
-11. Install everything that's needed in the virtual environment:
+10. Install everything that's needed in the virtual environment:
 
     ````
         <copy>
@@ -939,7 +861,7 @@ if st.button("Login", key="login-button"):
 
     Streamlit is up and running. Click Control + C on your keyboard to escape.
 
-12. Navigate back to the Streamlit folder:
+11. Navigate back to the Streamlit folder:
 
     ````
         <copy>
@@ -947,7 +869,7 @@ if st.button("Login", key="login-button"):
         </copy>
     ````
 
-13. Create the db_setup.py file:
+12. Create the db_setup.py file:
 
     ````
         <copy>
@@ -955,17 +877,14 @@ if st.button("Login", key="login-button"):
         </copy>
     ````
 
-14. Copy the following into your db_setup.py file:
+13. Click the link below to download the db_setup.py file:
 
-    ````
-        <copy>
-        INSERT CONTENT
-        </copy>
-    ````
+    [**db_setup.py**](https://objectstorage.us-ashburn-1.oraclecloud.com/p/-MZXZF8LlBdq2B8eq-UvPg9-zX40Y5xV5gaE9176nVkSYef4P14YpPr7gtvdEfqA/n/c4u04/b/livelabsfiles/o/developer-library/db_setup.py)
 
-15. Save and close the file.
+14. Open the downloaded file. Copy the entire contents in the file. Paste this into your terminal. Save and close the file.
 
-16. Navigate to the pages folder:
+
+15. Navigate to the pages folder:
 
     ````
         <copy>
@@ -973,20 +892,19 @@ if st.button("Login", key="login-button"):
         </copy>
     ````
 
-17. Create the 2-Dashboard.py file:
+16. Create the 2-Dashboard.py file:
 
     ````
         <copy>
         nano 2-Dashboard.py
         </copy>
     ````
-18. Copy the following into your 2-Dashboard.py file:
 
-    ````
-        <copy>
-        INSERT CONTENT
-        </copy>
-    ````
+17. Click the link below to download the 2-Dashboard.py file:
+
+    [**2-Dashboard.py**](https://objectstorage.us-ashburn-1.oraclecloud.com/p/_d4KzEhL1znyVepLf-HSVlEbhRyFJ1CO1sC_A7GncJKVrfiGXjrl_8K-pUv2Q17p/n/c4u04/b/livelabsfiles/o/developer-library/2-Dashboard.py)
+
+18. Open the downloaded file. Copy the entire contents in the file. Paste this into your terminal. Save and close the file.
 
 19. Create the 3-Customers.py file:
 
@@ -995,43 +913,26 @@ if st.button("Login", key="login-button"):
         nano 3-Customers.py
         </copy>
     ````
-20. Copy the following into your 3-Customers.py file:
 
-    ````
-        <copy>
-        INSERT CONTENT
-        </copy>
-    ````
+20. Click the link below to download the 3-Customers.py file:
 
-21. Create the 4-Decision.py file:
+    [**3-Customers.py**](https://objectstorage.us-ashburn-1.oraclecloud.com/p/Z9SCnYXf0ndxHFK-YN5qoJRt5J9NsaQCyTgyzA4D3yDLOr9Uiozh9wke7XIxpVF7/n/c4u04/b/livelabsfiles/o/developer-library/3-Customers.py)
+
+21. Open the downloaded file. Copy the entire contents in the file. Paste this into your terminal. Save and close the file.
+
+22. Create the 4-Decision.py file:
 
     ````
         <copy>
         nano 4-Decision.py
         </copy>
     ````
-22. Copy the following into your 4-Decision.py file:
+23. Click the link below to download the 4-Decision.py file:
 
-    ````
-        <copy>
-        INSERT CONTENT
-        </copy>
-    ````
+    [**4-Decision.py**](https://objectstorage.us-ashburn-1.oraclecloud.com/p/984KmB9sb2CyNKmovcvj8yDRzjPI1pTNgemWt4IuJOuIAUTvabetm_jdLIoy8IO3/n/c4u04/b/livelabsfiles/o/developer-library/4-Decision.py)
 
-23. Create the 5\_Marketing\_Home.py file:
+24. Open the downloaded file. Copy the entire contents in the file. Paste this into your terminal. Save and close the file.
 
-    ````
-        <copy>
-        nano 5_Marketing_Home.py
-        </copy>
-    ````
-24. Copy the following into your 5\_Marketing\_Home.py file:
-
-    ````
-        <copy>
-        INSERT CONTENT
-        </copy>
-    ````
 
 25. Navigate back to the Streamlit folder:
 
@@ -1041,7 +942,9 @@ if st.button("Login", key="login-button"):
         </copy>
     ````
 
-26. Start Streamlit:
+## Task 8: Launch the Application
+
+1. Start Streamlit:
 
     ````
         <copy>
@@ -1049,32 +952,17 @@ if st.button("Login", key="login-button"):
         </copy>
     ````
 
-27. Load the tables:
+2. Load the tables:
 
     ````
         <copy>
         python3.11 db_setup.py
         </copy>
     ````
-## Task 8: Launch the Application
 
-1. Open an incognito window in your browser. 
+3. Open an incognito window in your browser. 
 
-2. Type your IP address from Task #2, followed by :8501 into the incognito window.
-
-## Task 3: Unzip the Code
-
-1. Unzip the application code to a directory of your choice on your local machine: 
-
-    
-    [**Application Code**] (https://objectstorage.us-ashburn-1.oraclecloud.com/p/fiiLFGXKlmgrZKSwKQkD2Wc7mf5b8OsPUmIsw4rNUPcbBO31Za8T1NNoGAf0l4_S/n/c4u04/b/livelabsfiles/o/developer-library/pages.zip)   
-
-
-2. Navigate to the folder where the code is located. 
-
-    cd /path/to/your/unzipped/code 
-    ![Navigate to folder](./images/folder.png " ") 
-
+4. Type your IP address from Task #2, followed by :8501 into the incognito window.
 
 ## Troubleshooting
 If you encounter any issues during the setup, here are a few common troubleshooting tips: 
