@@ -32,9 +32,18 @@ In this lab, you will:
 ## Task 1: Ensure WebLogic Server is installed and configured
 
 1. If you do not have WebLogic server installed and configured in your managed instance, refer to following steps.
-    * [Download WebLogic Server](https://www.oracle.com/middleware/technologies/weblogic-server-installers-downloads.html)
+  
+  Useful Links
+    * [Download WebLogic Server](https://www.oracle.com/middleware/technologies/weblogic-server-downloads.html)
     * [Install WebLogic Server with Sample Applications](https://docs.oracle.com/en/middleware/standalone/weblogic-server/14.1.1.0/intro/examples.html#GUID-F9F246B1-E186-46C7-846C-DA510295582F)
     * [Install WebLogic Server in Silent Mode (for non-gui instances)](https://docs.oracle.com/en/middleware/fusion-middleware/12.2.1.4/ouirf/using-oracle-universal-installer-silent-mode.html#GUID-5F06D02F-6D71-45B9-BF41-5D5759D31958)
+
+  Download and Installation steps
+    * Download Weblogic generic installer from link above
+      ![image of Weblogic Server Installers](images/oracle-wl-installers.png)
+    * Accept terms and conditions, select appropriate download version and then proceed to download
+      ![image of Weblogic Server installer download page](images/oracle-wl-installer-download.png)
+    * Unzip and launch installer 
     
 2. Avitek Medical Records (also known as **MedRec**) is a comprehensive educational sample application installed with the WebLogic Server installation (Complete with Examples). Please take note of the **absolute path to the domain directory created for MedRec Application**. This path will be required for the subsequent task.
 
@@ -67,13 +76,13 @@ In this lab, you will:
 ## Task 3: Initialize a Java server scan
 
 1. Open the navigation menu, click **Observability & Management**. Under **Java Management**, select **Fleets**.
-    ![image of navigation menu](images/console-navigation-fleet.png)
+    ![image of navigation menu](images/console-navigation-jms.png)
     Select the fleet with the advanced feature, **Lifecycle management** enabled. Refer to  [Lab 1](?lab=set-up-and-enable-advanced-features-on-java-management-service).
 
 2. On the Fleet details page, click **Scan for Java servers**.
     ![image of scan java servers](images/scan-java-servers.png)
-    If your request is submitted successfully, you should receive a notification in green as seen below: 
-    ![image of work request created for scan java servers](images/work-request-of-servers-scan-created.png)
+    Select the **Scan** button to send a work request.
+    ![image of confirmation page to create java server scan request](images/scan-java-servers-submit.png)
 
 3. Scroll down the Fleet details page, under **Resources** menu, select **Work Request**. You should see the Scan for Java servers Work Request you submitted in step 1. Wait for the work request to complete.
 
@@ -85,7 +94,7 @@ In this lab, you will:
 
    ![image of work request for java servers scan completed](images/work-request-of-servers-scan-completed.png)
 
-5. In the same Fleet details page, under **Resources** menu, select **Java servers**. You should be able to see all the Java servers present in the fleet.
+5. In the same Fleet details page, select **Java servers** tab. You should be able to see all the Java servers present in the fleet.
     ![image of detected java servers](images/java-server-detected.png)
 
 6. Click **WebLogic Server** under **Java servers**, you should be able to see a series of applications deployed for **MedRec** and their target types (clustered / non-clustered) under **Deployed applications**.
@@ -113,4 +122,4 @@ You may now **proceed to the next lab.**
 ## Acknowledgements
 
 * **Author** - Youcheng Li, Java Management Service
-* **Last Updated By** - Siqi Liu, October 2023
+* **Last Updated By** - Hannah Wong, May 2025
