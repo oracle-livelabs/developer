@@ -37,7 +37,7 @@ In this lab, you will:
    
       ![image of console navigation to java management service](images/console-navigation-fleet.png)
 
-3. Under **More actions**, select **Configure Java runtime lifecycle management setting**. The **Lifecycle management settings** window should appear.
+3. Under **Actions**, select **Configure Java runtime lifecycle management setting**. The **Lifecycle management settings** window should appear.
    
       ![image of modifying java runtime lcm settings](images/more-actions-modify-java-runtime-lcm-settings.png)
 
@@ -51,7 +51,6 @@ In this lab, you will:
 
 6. A **Work Request** will be submitted.
    
-      ![image of upload jar file work request](images/drs-upload-submit-work-request.png)
 
 7. After the **Work Request** you will be able to see that the DRS file is uploaded successfully. Click save.
    
@@ -93,7 +92,7 @@ In this lab, you will:
    
       ![image of console navigation to java management service](images/console-navigation-fleet.png)
 
-2. In the fleet details, under **Resources** part click on **Managed instances** and select the instance you want to manage DRS on.
+2. In the fleet details, click on **Managed instances** tab and select the instance you want to manage DRS on.
    
       ![image of fleet details managed instances](images/fleet-details-managed-instances.png)
 
@@ -108,7 +107,7 @@ In this lab, you will:
 
 5. You will be able to see the work request that is submitted. Note that this might take up to **15 mins**. While waiting for it to complete, you might want to consider progressing to the next task and revisiting the work request status at a later time.
    
-      ![image of distribute drs work request progress](images/distribute-drs-work-request-progress.png)
+      ![image of distribute drs work request progress](images/distribute-drs-work-request-progress-instance.png)
 
 6. After the work request has completed all the settings have been applied to your managed instance in the fleet.
    
@@ -127,7 +126,7 @@ In this lab, you will:
 
 3. Under **Manage Deployment Rule Set**, you can choose to **Distribute DRS** or **Remove DRS** for the selected instances. In this example we will be demonstrating **Distribute DRS**. After selecting **Distribute DRS** click **Submit** and a work request will be submitted.
    
-      ![image of fleet details managed instances](images/multiple-instances-distribute-drs.png)
+      ![image of fleet details managed instances](images/manage-drs-submit.png)
 
 4. You will be able to see the work request that is submitted. Note that this might take up to **15 mins**. While waiting for it to complete, you might want to consider progressing to the next task and revisiting the work request status at a later time.
    
@@ -147,7 +146,7 @@ In this lab, you will:
 
    ![image of policies in console navigation](images/console-navigation-policies.png)
 
-   In the **Root Compartment**, select **JMS Policy** and ensure that the policies listed below are included in **JMS Policy**.
+   In the **Root Compartment**, select **JMS Policy** and ensure that the policies listed below are included in **JMS Policy Statements**.
 
    ![image of jms policy in root compartment](images/policies-select-jms-policy.png)
 
@@ -157,7 +156,7 @@ In this lab, you will:
     </copy>
    ```
 
-   In your fleet compartment, select **JMS-Advanced-Features** and ensure that the policies listed below are included in **JMS-Advanced-Features**.
+   In your fleet compartment, select **JMS-Advanced-Features** and ensure that the policies listed below are included in **JMS-Advanced-Features Statements**.
 
    ![image of jms adv features in fleet compartment](images/policies-select-jms-adv-features.png)
 
@@ -179,4 +178,4 @@ In this lab, you will:
 ## Acknowledgements
 
 * **Author** - Chan Wei Quan, Java Management Service
-* **Last Updated By** - Siqi Liu, November 2023
+* **Last Updated By** - Hannah Wong, May 2025
