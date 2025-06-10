@@ -1,6 +1,6 @@
 # 🏗️ Build your Data Pipeline: Load & Transform Data (optional lab)
 
-#### Estimated Lab Time: 45 minutes
+Estimated Lab Time: 45 minutes
 
 ## Introduction
 
@@ -8,13 +8,13 @@ In this lab, you’ll practice setting up the live feed capabilities, that can b
 
 <**NOTE:** To complete this lab, you will alternate between **Oracle Cloud Infrastructure Console** pages and **Oracle Database Actions** pages.  Selecting **Database Actions** will open a new tab.
 
-## Task 1: Create a Notifications Service Subscription Topic.
+## Task 1: Create a Notifications Service Subscription Topic  
 
   1. Open the OCI Console at cloud.oracle.com, then click the icon in the upper left corner to open the **Navigation Menu**.
 
   ![Click Navigation Menu](./images/task-1-scrn-0.png)
 
-  2. Select **Developer Services** from the Navigation Menu
+  2. Select **Developer Services** from the Navigation Menu  
 
   ![Click Developer Service](./images/task-1-scrn-2.png)
 
@@ -32,7 +32,7 @@ In this lab, you’ll practice setting up the live feed capabilities, that can b
 
 ## Task 2: Create a Events Service Rule.
 
-1.	Open the **Navigation Menu** Click the icon in the upper left corner to 
+1. Open the **Navigation Menu** Click the icon in the upper left corner to 
 
   ![Click Navigation Menu](./images/task-2-scrn-1.png)
 
@@ -40,15 +40,15 @@ In this lab, you’ll practice setting up the live feed capabilities, that can b
 
   ![Select O&M](./images/task-2-scrn-2.png)
 
-2. Click **Rules** under the **Events Services** heading.
+3. Click **Rules** under the **Events Services** heading.
 
   ![Select Rules](./images/task-2-scrn-3.png)
 
-3. Click **Create Rule** and enter details.
+4. Click **Create Rule** and enter details.
 
-  ![Create Rule](./images/task-2-scrn-4.png)
+  ![Create Rule](./images/lab7-task2-step4.png)
 
-4. Enter Rule details.
+5. Enter Rule details.
 
   ![Create Rule](./images/task-2-scrn-5.png)
 
@@ -62,91 +62,80 @@ In this lab, you’ll practice setting up the live feed capabilities, that can b
 
 ## Task 3: Create a Live Table Feed and Copy the notification URL
 
-1.	Click the icon in the upper left corner to open the **Navigation Menu**.
+   >**NOTE:** If continuing from lab 4, click on **Database Actions** link and skip to step 6.
 
-  ![Click Navigation Menu](./images/task-2-scrn-1.png)
+1. Navigate to your Assigned ADB Instance
 
-2. Select **Oracle Database** from the Navigation Menu
+    \* Open Navigation Menu  
+    \* Select Oracle Database  
+    \* Select Autonomous Database  
 
-  ![Select O&M](./images/task-3-scrn-1.png)
+    ![Navigate to Autonomous Database in OCI](./images/navigate-to-adb.png)
 
-3. Select **Autonomous Database**
+2. Select the name of your assigned database.
 
-  ![Select Rules](./images/task-3-scrn-2.png)
+   ![Navigate to Autonomous Database in OCI](./images/oci-adb-select.png)
 
-4. Navigate to the assigned Autonomous Database.
+3. Select **Database Actions** then View all database actions.
 
-    * Confirm the assigned **Compartment** is being used.  If not, click on the icon and navigate to the assigned one.
+    ![Create Data Product Share](./images/task1-scrn-3.png "Create Data Product Share")
 
-    * Select the assigned **Autonomous Database** from list displayed.
+4. On the **Database Actions Launchpad**, click the user icon in the top right corner.  
 
-    ![Select Assigned ADB](./images/navigate-to-assigned-adb.png)
+    \* Select **Sign Off** from the drop-down options. Enter credentials in the popup window shown below, to login as the LOAN user.  
 
-5. Open the **Database Actions** menu from the Autonomous Database General Information page, and select **Data Load**.
+    >**NOTE:** Use the same **ADMIN** password as shown on View Lab Info page
 
-    ![Click Database Actions - Data Load](./images/db-actions-data-load.png)
+    ![Create Data Product Share](./images/task1-scrn-5.png "Create Data Product Share")
 
-    >**NOTE:** This will open a new tab, giving us two tabs that we will alternate between for the rest of the workshop.
+    \* Enter LOAN user credentials.  
+    \* Press Sign-In button.  
 
-6.  Logon as the **LOAN** user.
-  
-    *   Open the **Database Actions** menu from the Autonomous Database General Information page, and select Data Load.
+5. Select **Feed Data** from the options listed at top of page.
 
-        ![Create Data Product Share](./images/admin-user-sign-out.png "Create Data Product Share")
+  ![Select Feed Data](./images/task-3-scrn-3.png)
 
-    *   Enter credentials in the popup window show below, to login as the LOAN user.
+6. Click the **Create Live Table Feed** button to enter the **Create Live Feed** wizard.
 
-    >**NOTE:** Use the same ADMIN password as shown on View Lab Info page
+  ![Create Live Feed](./images/task-3-scrn-4.png)
 
-      ![Create Data Product Share](./images/loan-user-sign-on.png "Create Data Product Share")
-
-    * Click Sign in button.
-
-  8. Select **Feed Data** from the options listed at top of page.
-
-      ![Select Feed Data](./images/task-3-scrn-3.png)
-
-  9. Click the **Create Live Table Feed** button to enter the **Create Live Feed** wizard.
-
-      ![Create Live Feed](./images/task-3-scrn-4.png)
-
-  10. Select desired Cloud Store location, then click **Next**.
+7. Select desired Cloud Store location, then click **Next**.
 
       ![SElect Cloud Store Location](./images/task-3-scrn-5.png)
 
-  11. Enter desired Table Settings, then click **Next**.
+8. Enter desired Table Settings, then click **Next**.
 
-      ![Load Data from Object Storage](./images/task-3-scrn-6a.png)
+  ![Load Data from Object Storage](./images/task-3-scrn-6a.png)
 
-  12. Review the information shown on the Preview page, then click **Next**.
+9. Review the information shown on the Preview page, then click **Next**.
 
-      ![Load Data from Object Storage](./images/task-3-scrn-7.png)
+  ![Load Data from Object Storage](./images/task-3-scrn-7.png)
 
-  13. Complete the creation of the Live Table Feed 
+10. Complete the creation of the Live Table Feed 
   
-      * Take the following actions \...
-        * Enter the **Live Table Feed Name:**
-        * Check box to **Enable for Notification**
-        * Uncheck box to **Enable for Scheduling**
-      * Click **Create**
+  \* Take the following actions \...
+    \* Enter the **Live Table Feed Name:**
+    \* Check box to **Enable for Notification**
+    \* Uncheck box to **Enable for Scheduling**
+  \* Click **Create**
 
-      ![Load Data from Object Storage](./images/task-3-scrn-8.png)
+  ![Load Data from Object Storage](./images/task-3-scrn-8.png)
 
-  14. When the popup box appears, select **Yes** to run the Live Feed.
+11. When the popup box appears, select **Yes** to run the Live Feed.
 
-      ![Load Data from Object Storage](./images/task-3-scrn-9.png)
+  ![Load Data from Object Storage](./images/task-3-scrn-9.png)
 
-  15. **Review** the details for the newly created Live Feed.  Then click the hamburger button in the upper right corner of the panel.
+12. **Review** the details for the newly created Live Feed.  Then click the hamburger button in the upper right corner of the panel.
 
-      ![Load Data from Object Storage](./images/task-3-scrn-10.png)
+  ![Load Data from Object Storage](./images/task-3-scrn-10.png)
 
-  16. Select **Show Notification URL** from the dropdown list.
+13. Select **Show Notification URL** from the dropdown list.
 
-      ![Load Data from Object Storage](./images/task-3-scrn-11.png)
+  ![Load Data from Object Storage](./images/task-3-scrn-11.png)
 
-  17. Copy the notification URL for the live table feed and click OK to proceed to next task.
+14. Copy the notification URL for the live table feed and click OK to proceed to next task.
 
-      ![Load Data from Object Storage](./images/task-3-scrn-12.png)
+  ![Load Data from Object Storage](./images/task-3-scrn-12.png)
 
   >**NOTE:** The notification URL will be used later in Task #4.
 
@@ -162,13 +151,13 @@ In this lab, you’ll practice setting up the live feed capabilities, that can b
 
   3. Select **Subscriptions** (on the left side of the page, just below Topics).  The status will be **Active**.
 
-  ![Access the Object Storage Bucket](./images/task-4-scrn-4.png)
+  ![Access the Object Storage Bucket](./images/lab7-task4-step3.png)
 
   4. Click **Create Subscription**.
 
   5. Enter the Subscription details.
 
-  ![Access the Object Storage Bucket](./images/task-4-scrn-6.png)
+  ![Access the Object Storage Bucket](./images/lab7-task4-step5.png)
 
     * Provide the following:
     * **Subscription topic:** Select the subscription topic you created in Task 2

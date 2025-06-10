@@ -11,7 +11,7 @@ In this lab, you’ll dive deep into the **architecture** that underpins the ent
 
 By the end of this lab, you'll have a clear understanding of how all components of the system come together to support the tasks you’ll perform throughout the workshop.
 
-## 🏗️ **Physical Architecture**
+## **Physical Architecture**
 
 The **SeerEquities loan application** is deployed in an **Oracle Cloud Infrastructure (OCI) Region**, with its **application layer** residing in a **Public Subnet** within a **Virtual Cloud Network (VCN)**.
 
@@ -35,7 +35,7 @@ The **SeerEquities loan application** is deployed in an **Oracle Cloud Infrastru
 
 This architecture ensures the application has robust connectivity, scalability, and integration with Oracle’s cloud-native services, enabling efficient loan processing and approval.
 
-## 🧩 **Logical Architecture**
+## **Logical Architecture**
 
 The **logical architecture** of the SeerEquities loan application focuses on how data and services interact within the Oracle Cloud environment.
 
