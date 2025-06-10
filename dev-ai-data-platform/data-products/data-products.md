@@ -8,9 +8,9 @@ Finally, you will publish the data share and send the recipient the activation l
 
 In this Lab, you will:
 
-* Utilize a data share provider account (**LOAN user**) that logs in and manages the data shares for the recipients of the data share (**RISK and MARKETING users**)
+* Utilize a data share provider account (**LOAN user**) that logs in and manages the data shares for the recipients of the data share (**RISK users**)
 * Leverage an Object Storage bucket to store the shared data - **MyDemoBucket**
-* Create and publish data shares - **LoanApp\_ShareToMarketing & LoanApp\_ShareToRisk**
+* Create and publish data shares - **LoanApp\_ShareToRisk**
 * Create and authorize a data share recipient
 
 ### Prerequisites
@@ -52,7 +52,7 @@ In this Lab, you will:
    
    >**NOTE:** Use the same **ADMIN** password as shown on View Lab Info page
 
-      ![Create Data Product Share](./images/task1-scrn-5.png "Create Data Product Share")
+   ![Create Data Product Share](./images/task1-scrn-5.png "Create Data Product Share")
 
       * Enter LOAN user credentials. 
       * Press Sign-In button. 
