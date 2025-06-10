@@ -111,4 +111,4 @@ In this lab, you will:
 ## Acknowledgements
 
  * **Author** - Xin Yi Tay, Java Management Service
- * **Last Updated By** - Yuan Chi Liu, October 2023
+ * **Last Updated By** - Hannah Wong, May 2025
