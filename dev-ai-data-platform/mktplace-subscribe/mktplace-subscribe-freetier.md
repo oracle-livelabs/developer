@@ -1,14 +1,12 @@
 # 🛒 Subscribe to Data Products via Data Share Tool
 
+## Estimated Lab Time: 30 minutes
+
 ## Introduction
 
-In this lab, you’ll learn how to subscribe to data products published by the LOAN officer via the Data Share tool. Subscribing works like “following” a channel, ensuring you receive the latest updates as new information becomes available.
+In this lab, you’ll learn how to **subscribe** to data products published by the **LOAN** officer via the **Data Share tool**. Subscribing works like **“following”** a channel, ensuring you receive the **latest updates** as new information becomes available.
 
-
-### Objectives
-By the end of this lab, you’ll understand how the Data Share tool enables the RISK team to easily access customized data products, keeping everyone aligned and ready to act on up-to-date information.
-
-Estimated Time: 30 minutes
+By the end of this lab, you’ll understand how the **Data Share** tool enables the **RISK** team to easily **access customized data products**, keeping everyone aligned and ready to act on **up-to-date information.**
 
 ### Prerequisites
 
@@ -16,9 +14,23 @@ Estimated Time: 30 minutes
 
 ## Task 1: Subscribe to Data Product Share as RISK user
 
-1. Click **View Login Info**. Click the **SQL Worksheet** link.
+> **NOTE:** If continuing from lab 5, click on Data Share in bread crumb link and skip to step 4.
 
-    ![Access Data Catalog](./images/sql-worksheet.png "Access Local Data Catalog")  
+1. Navigate to your assigned ADB Instance.
+
+   🔘 Open Navigation Menu  
+   🔘 Select Oracle Database  
+   🔘 Select Autonomous Database  
+
+   ![Navigate to Autonomous Database in OCI](./images/navigate-to-adb.png " ")
+
+1. Select the name of your assigned database.
+
+      ![Navigate to Autonomous Database in OCI](./images/oci-adb-select.png " ")
+
+1. Select **Database Actions**, then **View All Database Actions**
+
+      ![Create Data Product Share](./images/subscribe-to-data-share-3.png )
 
 1. Logon as the **RISK** user.
 

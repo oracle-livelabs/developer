@@ -1,7 +1,5 @@
 # 🔗 Simplify Data Access and Data Sharing  with Integrated Tools
 
-#### Estimated Lab Time: 20 minutes
-
 ## Introduction
 
 This lab is designed to give the Data Engineer/Architect expose to the key **Autonomous Database** tools, that we will use in upcoming labs to show you how to gain access to both internal and external data that is required to create and share loan products.
@@ -12,6 +10,8 @@ By leveraging the integrated data platform tools with ADB, you’ll see how easy
 
 Enjoy the journey and get ready to unlock the full potential of the **Oracle Data Platform** and your **Oracle Autonomous Database**! 🚀
 
+Estimated Time: 20 minutes
+
 ### Prerequisites
 
 This lab assumes you have:
@@ -19,9 +19,9 @@ This lab assumes you have:
 * Completed the Get Started lab
 * Successfully launched the hands-on lab environment
 
-## Task 1: **Navigate** to your assigned ADB instance
+## Task 1: Navigate to your assigned ADB instance
 
-1. **Navigate** to your assigned ADB Instance.
+1. Navigate to your assigned ADB Instance.
 
     * Open Navigation Menu 
     * Select Oracle Database 
