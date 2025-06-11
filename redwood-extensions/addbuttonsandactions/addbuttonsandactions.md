@@ -20,7 +20,7 @@ In this lab, you will:
 
 ## Task 1: Add Empty Columns To the Table
 
-Earlier, you created pages for displaying and editing the accounts data.  You will configure those later.  Now you will add buttons in each row of the table that will be used to navigate to those pages. Let's see how we can make that happen.
+Now that you have a Welcome page to display the data, you will add buttons in each row of the table that will be used to navigate to new pages. Let's see how we can make that happen.
 
 First we'll add two columns to the table, to hold each of the buttons.
 
@@ -210,7 +210,7 @@ Now you'll do the same for the Edit button.
 
   ![Set input parameter](images/setobjectidrequired.png)
 
-13. Switch back to **welcome** and open the **Actions Chains** tab:
+13. Switch back to the **Welcome** page and open the **Actions Chains** tab:
 
   ![Set input parameter](images/switchwelcomeactions.png)
 

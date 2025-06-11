@@ -1,7 +1,5 @@
 # 🏛️ Understanding the Architecture of the Workshop
 
-#### Estimated Lab Time: 15 minutes
-
 ## Introduction
 
 In this lab, you’ll dive deep into the **architecture** that underpins the entire workshop. You'll explore both the **physical** and **logical architectures** that enable seamless data management and collaboration across various teams.

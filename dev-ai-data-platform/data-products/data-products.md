@@ -6,11 +6,13 @@ In this lab, we will create and share data products that includes information on
 
 Finally, you will publish the data share and send the recipient the activation link needed to access the data share.
 
+### Objectives
+
 In this Lab, you will:
 
-* Utilize a data share provider account (**LOAN user**) that logs in and manages the data shares for the recipients of the data share (**RISK and MARKETING users**)
+* Utilize a data share provider account (**LOAN user**) that logs in and manages the data shares for the recipients of the data share (**RISK users**)
 * Leverage an Object Storage bucket to store the shared data - **MyDemoBucket**
-* Create and publish data shares - **LoanApp\_ShareToMarketing & LoanApp\_ShareToRisk**
+* Create and publish data shares - **LoanApp\_ShareToRisk**
 * Create and authorize a data share recipient
 
 ### Prerequisites
@@ -25,34 +27,13 @@ In this Lab, you will:
 
 ## Task 1: Create Data Product Share
 
-   >**NOTE:** If continuing from lab 4, click on **Database Actions** link and skip to step 6.
+1. Click **View Login Info**. Click the **SQL Worksheet** link.
 
-   1. Navigate to your Assigned ADB Instance
-
-      * Open Navigation Menu
-      * Select Oracle Database
-      * Select Autonomous Database
-
-   ![Navigate to Autonomous Database in OCI](./images/navigate-to-adb.png)
-
-   2. Select the name of your assigned database.
-
-   ![Navigate to Autonomous Database in OCI](./images/oci-adb-select.png)
-
-   3. Select **Database Actions** then View all database actions.
-
-   ![Create Data Product Share](./images/task1-scrn-3.png "Create Data Product Share")
-
-   4. Sign-out of **Database Actions Launchpad** as ADMIN user.
-
-   ![Create Data Product Share](./images/task1-scrn-4.png "Create Data Product Share")
-
-   5.	On the **Database Actions Launchpad**, click the user icon in the top right
-   Corner.  Select **Sign Off** from the drop-down options. Enter credentials in the popup window shown below, to login as the LOAN user.
+    ![Access Data Catalog](./images/sql-worksheet.png "Access Local Data Catalog")  
    
    >**NOTE:** Use the same **ADMIN** password as shown on View Lab Info page
 
-      ![Create Data Product Share](./images/task1-scrn-5.png "Create Data Product Share")
+   ![Create Data Product Share](./images/task1-scrn-5.png "Create Data Product Share")
 
       * Enter LOAN user credentials. 
       * Press Sign-In button. 
