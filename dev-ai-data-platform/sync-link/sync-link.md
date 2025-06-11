@@ -1,6 +1,5 @@
 # Load, Link, and Query Object Storage Data from Autonomous Database
 
-
 ## Introduction
 
 This lab is designed to give the Data Engineer/Architect experience utilizing the **Data Load** tools, to gain access to data that resides inside the database on cloud object storage.  
@@ -31,7 +30,7 @@ By the end of this lab, you will:
 
     ![Access Data Catalog](./images/sql-worksheet.png "Access Local Data Catalog")  
 
-      🔘 Enter credentials in the popup window below to login as the **LOAN** user   
+      *  Enter credentials in the popup window below to login as the **LOAN** user.
 
       >**NOTE:** Use the same **ADMIN** password as shown on View Lab Info page
 
