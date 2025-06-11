@@ -26,39 +26,34 @@ By the end of this lab, you will:
 
 ## Task 1: Load Object Storage Data into Autonomous Database using Data Catalog
 
-1. Click **View Login Info**. Click the **SQL Worksheet** link.
+1. Click **View Login Info**. Copy your DB ADMIN Password and click the **SQL Worksheet** link.
 
     ![Access Data Catalog](./images/sql-worksheet.png "Access Local Data Catalog")  
 
-      *  Enter credentials in the popup window below to login as the **LOAN** user.
+2. For your Username enter **LOAN**. Paste in the password you copied in the previous step.
 
-      >**NOTE:** Use the same **ADMIN** password as shown on View Lab Info page
+    ![Access Local Data Catalog](./images/sql-sign-in.png "Access Local Data Catalog")  
 
-      ![Create Data Product Share](./images/task1-scrn-5.png "Create Data Product Share")
-
-      🔘 Click **Sign in** button.
-
-   1. Select **Data Studio** from the tab menu, then select **Catalog** from the left rail.
-
-      🔘 The **Catalog** page is displayed with the **Tables and Views** tab highlighted.
+3. Select **Data Studio** from the tab menu, then select **Catalog** from the left rail. 
 
       ![Create Data Product Share](./images/task1-scrn-7.png "Create Data Product Share")
 
-   1. Click on the **Data Objects** tab at the top of the **Catalog** page,  to view the contents of the object storage buckets.
-
-      🔘 Select **LoanApp Customer-extention.csv** from the list, this will take you to the **Cloud Object Entity** page.
+4.  Click on the **Data Objects** tab at the top of the Catalog page to view the contents of the object storage buckets.
 
       ![Create Data Product Share](./images/task1-scrn-8.png "Create Data Product Share")
 
-   1. Select the **Load to Table** button and the **Load Data** page will appear. 
+5. Select **LoanApp Customer-extention.csv** from the list, this will take you to the **Cloud Object Entity** page.
+
+
+5. Select the **Load to Table** button and the **Load Data** page will appear. 
 
       ![Create Data Product Share](./images/task1-scrn-9.png "Create Data Product Share")  
 
-   1. Click **Edit (pencil)** icon, in the lower right corner.  
+6. Click **Edit (pencil)** icon, in the lower right corner.  
 
       ![Create Data Product Share](./images/task1-scrn-10.png "Create Data Product Share")  
 
-   1. Enter details on the following screen for the data load.  
+7. Enter details on the following screen for the data load.  
    
       🔘 In the table section, select **Create Table** from the list of options displayed.  
 
@@ -70,31 +65,31 @@ By the end of this lab, you will:
 
       🔘 Click **Close** button.  
 
-   1. Click the **Start** button on the **Data Load** page.  
+8. Click the **Start** button on the **Data Load** page.  
 
       ![Create Data Product Share](./images/task1-scrn-13.png "Create Data Product Share")  
 
-   1. Click the **Run** button in the popup window, to start a job that loads data from the Cloud Store.  
+9. Click the **Run** button in the popup window, to start a job that loads data from the Cloud Store.  
 
-   1. The table will appear on the **Table and View Loads** page, once the job is completes.  
+10. The table will appear on the **Table and View Loads** page, once the job is completes.  
  
       🔘 To generate a report and review the SQL used for the job, click on the **Report** button.  
 
       ![Create Data Product Share](./images/task1-scrn-14.png "Create Data Product Share")  
 
-   1. Click the **Close** button when finished.  
+11. Click the **Close** button when finished.  
 
       ![Create Data Product Share](./images/task1-scrn-15.png "Create Data Product Share")  
 
-   1. To review details about the data in the table using SQL Worksheet, click on the **Query** button.  
+12. To review details about the data in the table using SQL Worksheet, click on the **Query** button.  
 
       ![Create Data Product Share](./images/task1-scrn-16.png "Create Data Product Share")  
 
-   1. The **SQL Worksheet** will appear with the query pre-loaded, the query results available and an analysis of the data set.  
+13. The **SQL Worksheet** will appear with the query pre-loaded, the query results available and an analysis of the data set.  
 
       ![Create Data Product Share](./images/task1-scrn-17.png "Create Data Product Share")  
 
-   1. Select **Catalog** from the left rail rail and take note that the **Customer_Extension** table now appears in the Catalog.
+14. Select **Catalog** from the left rail rail and take note that the **Customer_Extension** table now appears in the Catalog.
 
       ![Create Data Product Share](./images/task1-scrn-18.png "Create Data Product Share")
 
