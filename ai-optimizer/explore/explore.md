@@ -37,6 +37,10 @@ Let's check if the DB is correctly connected.
    
    ![Database configuration](images/database-config.png)
 
+3. If you are using an Autonomous Database and have any SelectAI profile active, you'll find the list of Select AI profiles to activate:
+
+   ![Select AI Profiles](images/selectai-profiles.png)
+
 ## Task 2: Configure LLMs
 
 Let's check the models available for use. You'll need to navigate to the *Models* tab:
