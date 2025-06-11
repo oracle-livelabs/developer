@@ -10,14 +10,6 @@ In this hands-on workshop, you'll explore the full breadth of tools, services, a
 
 Through a series of guided labs modeled on real-world tasks from a loan funding company, you'll experience how centralized data management, streamlined workflows, and intelligent analytics come together to unlock the value of enterprise data.  
 
-### You will:  
-
-* **Gain Access to Data** from multiple sources to build a unified view, breaking down data silos and enabling comprehensive analysis.  
-
-* **Create and publish data products** for actionable insights, empowering other departments to be able to provide timely, data-driven decision-making feedback.  
-
-* **Securely share selected datasets** across departments, such as marketing, to support campaign planning while maintaining data governance and privacy.  
-
 By the end of this workshop, you'll understand how **Oracle’s Data Platform** provides a **scalable, future-ready foundation** for financial organizations seeking to:  
 
 * ✅ Increase agility  
