@@ -1,5 +1,7 @@
 # Load, Link, and Query Object Storage Data from Autonomous Database
 
+Estimated Lab Time: 45 minutes
+
 ## Introduction
 
 This lab is designed to give the Data Engineer/Architect experience utilizing the **Data Load** tools, to gain access to data that resides inside the database on cloud object storage.  
@@ -10,15 +12,15 @@ You'll learn how to make object storage data locally available for performance o
 
 Using **Oracle Data Catalog**, you'll link object storage data to your database and create external tables that allow direct querying without time-consuming transfers.  
 
-Finally, you'll run cross-source queries that combine structured database tables with object storage data to deliver a unified view of financial insights.
+Finally, you'll run cross-source queries that combine structured database tables with object storage data to deliver a unified view of financial insights.  
 
 By the end of this lab, you will:
 
-   * ***Load Data:*** Understand how to move object storage data into tables in your Autonomous Database when required for improved performance, persistence, or cost savings.
+   🔘 ***Load Data:*** Understand how to move object storage data into tables in your Autonomous Database when required for improved performance, persistence, or cost savings.  
 
-   * ***Link Data:*** Use Oracle Data Catalog to connect object storage assets to your database.
+   🔘 ***Link Data:*** Use Oracle Data Catalog to connect object storage assets to your database.  
 
-   * ***Query Database & Object Storage Data:*** Query object storage data directly and combine it with data in database tables for unified analytics.
+   🔘 ***Query Database & Object Storage Data:*** Query object storage data directly and combine it with data in database tables for unified analytics.  
 
 ## Task 1: Load Object Storage Data into Autonomous Database using Data Catalog
 
@@ -26,27 +28,27 @@ By the end of this lab, you will:
 
    1. Navigate to your Assigned ADB Instance
 
-    * Open Navigation Menu
-    * Select Oracle Database
-    * Select Autonomous Database
+      🔘 Open Navigation Menu  
+      🔘 Select Oracle Database  
+      🔘 Select Autonomous Database  
 
-   ![Navigate to Autonomous Database in OCI](./images/navigate-to-adb.png " ")
+      ![Navigate to Autonomous Database in OCI](./images/navigate-to-adb.png " ")  
 
-   2. Select the name of your assigned database.
+   1. Select the name of your assigned database.  
 
-   ![Navigate to Autonomous Database in OCI](./images/oci-adb-select.png " ")
+      ![Navigate to Autonomous Database in OCI](./images/oci-adb-select.png " ")  
 
-   3. Select **Database Actions** then View all database actions.
+   1. Select **Database Actions** then View all database actions.  
 
-   ![Create Data Product Share](./images/task1-scrn-3.png "Create Data Product Share")
+      ![Create Data Product Share](./images/task1-scrn-3.png "Create Data Product Share")  
 
-   4. Logon as the **LOAN** user.
+   1. Logon as the **LOAN** user.  
    
-      * On the **Database Actions Launchpad**, click the user icon in the top right corner.  Select **Sign Off** from the drop-down options.  
+      🔘 On the **Database Actions Launchpad**, click the user icon in the top right corner.  Select **Sign Off** from the drop-down options.  
 
-      ![Create Data Product Share](./images/task1-scrn-4.png "Create Data Product Share")
+      ![Create Data Product Share](./images/task1-scrn-4.png "Create Data Product Share")  
 
-      *  Enter credentials in the popup window below to login as the **LOAN** user.
+      🔘 Enter credentials in the popup window below to login as the **LOAN** user   
 
       >**NOTE:** Use the same **ADMIN** password as shown on View Lab Info page
 

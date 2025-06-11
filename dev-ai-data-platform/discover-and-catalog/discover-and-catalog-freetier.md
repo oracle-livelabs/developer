@@ -1,16 +1,16 @@
 # 🔍 Discover and View your Database and Data Lake Assets from your Data Catalog
 
+Estimated Lab Time: 45 minutes
+
 ## Introduction
 
 This lab is designed to give the Data Engineer/Architect experience utilizing the **Data Catalog** and **Data Load Connections** tools, to simply access of data that resides inside the database and on cloud object storage.  
 
-To create the loan products iused by the Loan Officer in the demo, the Data Engineer first needed to access external funding data and combine it with Bank business rules to create the end loan products that were sold to customers. 
+To create the loan products iused by the Loan Officer in the demo, the Data Engineer first needed to access external funding data and combine it with Bank business rules to create the end loan products that were sold to customers.  
 
 In this lab, you’ll learn how to find, connect, and use data from **Object Storage** via **Oracle’s Data Catalog** and **Autonomous Database (ADB)**. Follow these steps to set up everything you need for seamless, real-time data access—without jumping through complicated hoops. After these steps, you’ll have a smooth setup that lets you **discover**, **connect**, and **query** data no matter where it lives—in Oracle Database or in Object Storage—giving you a powerful, unified view of all your information. 🌐📊  
 
 Enjoy exploring! 🚀
-
-Estimated Time: 45 minutes
 
 <!-- Comments -->
 <!-- liveLabs section starts on line 466 (big monitor) -->
@@ -26,35 +26,35 @@ First, you’ll log into your Autonomous Database and connect to your local Data
 
 1. Navigate to your assigned ADB Instance.
 
-    * Open Navigation Menu 
-    * Select Oracle Database 
-    * Select Autonomous Database 
+  🔘 Open Navigation Menu  
+  🔘 Select Oracle Database  
+  🔘 Select Autonomous Database  
 
-  ![Navigate to Autonomous Database in OCI](./images/navigate-to-adb.png " ")
+    ![Navigate to Autonomous Database in OCI](./images/navigate-to-adb.png " ")  
 
-2. Select the name of your assigned database.
+1. Select the name of your assigned database.  
 
-  ![Navigate to Autonomous Database in OCI](./images/oci-adb-select.png " ")
+    ![Navigate to Autonomous Database in OCI](./images/oci-adb-select.png " ")
 
-3. Select View all Database Actions
+1. Select View all Database Actions  
 
-  ![Select Database Actions](./images/oci-adb-database-actions.png "Select Database Actions")
+    ![Select Database Actions](./images/oci-adb-database-actions.png "Select Database Actions")
 
->**NOTE**: We will be transitioning to the LOAN user for the remaining exercises.
+    >**NOTE**: We will be transitioning to the LOAN user for the remaining exercises.
 
-4. **On the Database Actions page, In Upper right under dropdown next to ADMIN, select "Sign out"**
+1. On the **Database Actions** page, In Upper right under dropdown next to ADMIN, select **"Sign out"**
 
-  ![Access Local Data Catalog](./images/access-local-data-catalog-1.png "Access Local Data Catalog")
+    ![Access Local Data Catalog](./images/access-local-data-catalog-1.png "Access Local Data Catalog")  
 
-5. **Login to Database Actions as LOAN User** using credential shown on View Lab Info Page
+1. Login to **Database Actions** as **LOAN** User using credential shown on **View Lab** Info Page  
 
     ![Access Local Data Catalog](./images/access-local-data-catalog-2.png "Access Local Data Catalog")  
 
-6. Click on **Data Studio**
+1. Click on **Data Studio**  
 
     ![Access Local Data Catalog](./images/access-local-data-catalog-3.png "Access Local Data Catalog")  
 
-7. **Click Catalog** on left rail for the **ADB Catalog** to be displayed
+1. Click on **Catalog** on left rail for the **ADB Catalog** to be displayed  
 
     ![Access Local Data Catalog](./images/access-local-data-catalog-4.png "Access Local Data Catalog")  
 

@@ -55,9 +55,8 @@ This lab assumes you have:
 * An Oracle account to submit your a LiveLabs Sandbox reservation.
 * Basic knowledge of Oracle Database.
 
-___
 
-### **Key Terms**
+## Key Terms
 
 ___
 

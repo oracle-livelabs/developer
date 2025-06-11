@@ -20,14 +20,6 @@ By the end of this workshop, you'll understand how **Oracle’s Data Platform** 
 
 ### **Objectives**
 
-You will:  
-
-  * **Gain Access to Data** from multiple sources to build a unified view, breaking down data silos and enabling comprehensive analysis.  
-  * **Create and publish data products** for actionable insights, empowering other departments to be able to provide timely, data-driven decision-making feedback.  
-  * **Securely share selected datasets** across departments, such as marketing, to support campaign planning while maintaining data governance and privacy.  
-
-  **Hands-On Data Engineering & Management Tasks**
-
   Apply your skills through guided development tasks that simulate real-world data requests.
 
   In this section, you will:
@@ -41,8 +33,9 @@ This lab assumes you have:
 
 * An Oracle account to submit your a LiveLabs Sandbox reservation.
 * Basic knowledge of Oracle Database.
-___
-### **Key Terms**
+
+## Key Terms
+
 ___
 
 ### **About Oracle Autonomous Database (ADB)**
@@ -89,6 +82,4 @@ With Data Catalog, you can collect, organize, search, access, enrich, and activa
 ## Acknowledgements
 * **Authors** - Eddie Ambler, Otis Barr, Matt Kowalik, Ramona Magadan
 * **Contributors** - Francis Regalado
-* **Last Updated By/Date** - 04/21/2025
-
-Copyright (C) Oracle Corporation.
+* **Last Updated By/Date** - Kamryn Vinson, June 2025
