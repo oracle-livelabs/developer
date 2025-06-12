@@ -22,7 +22,7 @@ This lab assumes you have:
 
 ## Task 1: Login to JupyterLab
 
-1. To navigate to the development environment, click **View Login Info**. Copy the Development IDE Login Password. Click the Start Development IDE link.
+1. To navigate to the development environment, click **View Login Info**. Copy the **JupyterLab Password**. Click the **JupyterLab** link.
 
     ![Open Development Environment](./images/dev-env.png =50%x*)
 

@@ -10,35 +10,35 @@
         {
             "title": "Get Started",
             "description": "Prerequisites for LiveLabs (Oracle-owned tenancies). The title of the lab and the Contents Menu title (the title above) match for Prerequisite lab. This lab is always first.",
-            "filename": "../../cloud-login/cloud-login-mvp.md"
+            "filename": "../../cloud-login/cloud-login.md"
         },
         {
             "title": "Lab 1: Discover and View your Data Lake Assets from your Data Catalog",
             "description": "Lab 3: Discover and View your Data Lake Assets from your Data Catalog",
-            "filename": "../../discover-and-catalog/discover-and-catalog-mvp.md"
+            "filename": "../../discover-and-catalog/discover-and-catalog.md"
         },
         {
             "title": "Lab 2: Load, Link and Query Object Storage Data from Autonomous Database",
             "description": "Lab 4: Load, Link and Query Object Storage Data from Autonomous Database",
-            "filename": "../../sync-link/sync-link-mvp.md"
+            "filename": "../../sync-link/sync-link.md"
         },
         {
             "title": "Lab 3: Create & Share Data Products",
             "description": "This is a step-by-step guide showcasing how the demo instance is navigated",
-            "filename": "../../data-products/data-products-mvp.md"
+            "filename": "../../data-products/data-products.md"
         },
         {
             "title": "Lab 4: Subscribe to Data Product",
             "description": "This is a step-by-step guide showcasing how the demo instance is navigated",
-            "filename": "../../mktplace-subscribe/mktplace-subscribe-mvp.md"
+            "filename": "../../mktplace-subscribe/mktplace-subscribe.md"
         },
         {
             "title": "Lab 5: Build Your Data Pipeline: Load & Transform Data",
-            "filename": "../../load-transform/load-transform-mvp.md"
+            "filename": "../../load-transform/load-transform.md"
         },
         {
-            "title": "Appendix: Explore Data Access and Data Sharing with Integrated Tools",
-            "filename": "../../tools/tools-mvp.md"
+            "title": "Appendix: Explore Data Access and Data Sharing Tools in Autonomous Database",
+            "filename": "../../tools/tools.md"
         },
         {
             "title": "Need Help?",
