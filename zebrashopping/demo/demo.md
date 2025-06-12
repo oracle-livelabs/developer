@@ -20,7 +20,7 @@ This lab assumes you have:
 
 ## Task 1: Launch the demo!
 
-1. To access the demo environment, click **View Login Info** in the top left corner of the page. Click the **Start the Demo** link.
+1. To access the demo environment, click **View Login Info** in the top left corner of the page. Click the **Demo URL** link.
 
     ![Click the Start Demo Link](./images/start-demo.png =50%x*)
 
