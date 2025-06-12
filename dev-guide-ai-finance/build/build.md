@@ -31,7 +31,12 @@ This lab assumes you have:
 ## Task 1: Build the application in Jupyter Notebook
 >💡**Note**: Review Lab 2: Connect to the Development Environment for instructions on accessing JupyterLab.
 
-1. Open a new **Jupyter Notebook** by clicking on **Pyhton(ipykernel)** notebook.
+1. Click the blue "+". This will open the Launcher. 
+
+    ![Open Launcher](./images/launcher.png " ")
+
+
+2. Open a new **Jupyter Notebook** by clicking on **Python(ipykernel)** notebook.
 
     ![Open Jupyter Notebook](./images/open-new-notebook.png " ")
 
@@ -424,4 +429,4 @@ You may now proceed to the next lab.
 ## Acknowledgements
 * **Authors** - Francis Regalado Database Product Manager
 * **Contributors** - Kevin Lazarz, Linda Foinding, Kamryn Vinson
-* **Last Updated By/Date** - Francis Regalado, May 2025
+* **Last Updated By/Date** - Francis Regalado, June 2025
