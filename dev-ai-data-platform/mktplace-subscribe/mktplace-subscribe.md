@@ -120,17 +120,15 @@ You created an external table from a shared dataset—linking live loan data dir
 
 1. Click the Report button for this link job to view a report of the total rows processed successfully and failed for the selected table and the SQL used.
 
-   🔘 Click **Close** when done.
-
    ![Create Data Product Share](./images/select-shared-data-1a.png )
 
-1. In the **Table and View Loads** section:
+1. Click **Close** when done.
 
-   🔘 Click the external table link named **Shared\_Loan\_Data\_Risk** to preview its data.  Remember, that the source data for this external table is from the **Shared\_Loan\_Data\_Risk\_VW** data share.
-
+1. In the **Table and View Loads** section, click the external table link named **Shared\_Loan\_Data\_Risk** to preview the data.  Remember, the source for this data is the **Shared\_Loan\_Data\_Risk\_VW** data share.
+   
    ![Create Data Product Share](./images/select-shared-data-2a.png )
 
-   The **Shared\_Loan\_Data\_Risk\_VW** panel is displayed with the **Preview** tab selected by default that displays the external table's data.
+1. The **Shared\_Loan\_Data\_Risk\_VW** panel is displayed with the **Preview** tab selected by default that displays the external table's data.
 
    ![Create Data Product Share](./images/select-shared-data-3a.png )
 
