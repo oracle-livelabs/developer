@@ -2,34 +2,86 @@
 
 ## Introduction
 
-In this lab, you’ll practice setting up the live feed capabilities, that can be used to load data that is continuously collected into cloud object storage.  When a load job is enabled for live feed, it is connected to the OCI event notification and subscription mechanism, so that every time a new object is created in the object store bucket, it triggers the live feed, loading the contents to the database
+As SeerEquities scales its lending operations, speed is becoming a competitive edge. Executives want delinquency alerts as they happen, risk teams want real-time updates on loan applications, and data analysts want to eliminate the delays caused by batch pipelines.
+
+But SeerEquities’ current approach—periodic data loads and manual triggers—can’t keep up. Delays in data ingestion mean missed insights and late decisions.
+
+**That’s where live feeds come in**. In this lab, you’ll bring SeerEquities one step closer to a real-time data ecosystem by enabling continuous data ingestion using Oracle’s event-driven architecture. As new data lands in cloud object storage, it will flow automatically into the Autonomous Database—no waiting, no manual refreshes.
+
+By implementing this live feed, you're not just optimizing a pipeline—you’re unlocking faster reporting, proactive fraud detection, and just-in-time decision making. It’s a vital step in transforming SeerEquities’ data platform from reactive to real-time.
 
 Estimated Time: 45 minutes
+
+### Objectives
+
+* Set up a Notifications Service Topic to receive event messages from Object Storage
+
+* Create an Event Service Rule that monitors new object uploads
+
+* Configure a Live Feed-enabled load job that triggers on new data
+
+* Automate ingestion of new files from cloud object storage into the database
+
+* Enable continuous, real-time data availability for downstream analytics and reporting
 
 
 > **NOTE:** To complete this lab, you will alternate between **Oracle Cloud Infrastructure Console** pages and **Oracle Database Actions** pages. Selecting **Database Actions** will open a new tab.
 
-## Task 1: Create a Notifications Service Subscription Topic  
 
-  1. Open the OCI Console at cloud.oracle.com, then click the icon in the upper left corner to open the **Navigation Menu**.
+## Task 1: Create a Notifications Service Subscription Topic
 
-  ![Click Navigation Menu](./images/task-1-scrn-0.png)
+  1. First we will have to access OCI. Right above the workshop instruction you will find **View Login Info**.  
 
-  2. Select **Developer Services** from the Navigation Menu  
+  ![Click View Login Info](./images/view-login-info.png)
+
+  2. Click **View Login Info** to see detailed reservation information such as user and password. Click **Launch OCI**  
+
+  ![Click On OCI](./images/launch-oci.png)
+
+  3. Follow the instructions provided to log in to your Oracle Cloud account, change your password, if prompted, and complete your login to Oracle Cloud.  
+
+   a. Check the tenancy. If it is different, click on change tenancy.
+
+  ![Check Tenancy](./images/check-tenancy2.png)
+
+   b. Add the user name and the password from the reservation information.
+
+  ![CheckUserPassword](./images/user-password.png)
+
+   c. Change the password, then click on Reset Password.
+
+  ![Password](./images/change-password.png)
+
+  4. Congratulations! You are now connected to an Oracle Cloud Infrastructure tenancy. You can now execute the different tasks and steps in this LiveLabs workshop.
+
+  ![RedwoodOCIConsole](./images/redwood-oci-console.png)
+
+  5. Now, let's navigate to **Developer Services**. Click on the **hamburger menu** on the top left.
+
+  ![HamburgerMenuOCI](./images/hamburger-menu-oci-console.png)
+
+  6. Select **Developer Services** from the Navigation Menu  
 
   ![Click Developer Service](./images/task-1-scrn-2.png)
 
-  3. Click **Notifications** under the **Application Integration** heading.
+  7. Click **Notifications** under the **Application Integration** heading.
 
   ![Click Notifications](./images/task-1-scrn-3.png)
 
-  4. Click **Create Topic**
+  8. Click **Create Topic**
 
   ![Click Create Topic](./images/task-1-scrn-4.png)
 
-  5. Enter details, then click the **Create** button.
+  9. You can use the values below, or plug in your own. Just make sure to remember what you choose—you’ll need it again later in the lab!
+  
+  * **Name**: Live\_Feed\_for_Funding  
+  * **Description**: This is to demo LiveFeed for Funding as a topic.  
+  
+  Click the **Create** button.
 
-  ![Create Topic](./images/task-1-scrn-5.png)
+  ![Create Topic](./images/topic-livefeed.png)
+
+You’ve now successfully created a Notification Service topic—laying the foundation for event-driven data pipelines. Next, you’ll define the Events Service rule to detect when new data arrives and trigger the live feed automatically.
 
 ## Task 2: Create a Events Service Rule.
 
@@ -161,9 +213,7 @@ Estimated Time: 45 minutes
 * [Autonomous Database](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html)
 
 ## Acknowledgements
-
-* **Authors** - Eddie Ambler, Otis Barr, Matt Kowalik
-* **Contributors** - Mike Matthews, Marty Gubar, Francis Regalado, Ramona Magadan
-* **Last Updated By/Date** - 04-28-2025
+* **Authors** - Eddie Ambler, Otis Barr
+* **Last Updated By/Date** - June 2025, Otis Barr
 
 Copyright (C) Oracle Corporation.

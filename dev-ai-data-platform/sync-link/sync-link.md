@@ -2,15 +2,15 @@
 
 ## Introduction
 
-This lab is designed to give the Data Engineer/Architect experience utilizing the **Data Load** tools, to gain access to data that resides inside the database on cloud object storage.  
+At SeersEquities, staying ahead means answering complex questions fast:
 
-This lab will give you the skills to load, link, and query object storage data directly from your **Autonomous Database** instance.  
+* *What’s the current funding mix for active loans?*
 
-You'll learn how to make object storage data locally available for performance optimization or cost reduction while maintaining flexibility for real-time analytics.  
+* *How do external market shifts affect our pricing models?*
 
-Using **Oracle Data Catalog**, you'll link object storage data to your database and create external tables that allow direct querying without time-consuming transfers.  
+To answer those questions, the data team must not only find the right data—they must **use it efficiently across systems, without bottlenecks or delays**.
 
-Finally, you'll run cross-source queries that combine structured database tables with object storage data to deliver a unified view of financial insights. 
+In this lab, you’ll take the next step: using Oracle’s tools to **load, link, and query** data stored in cloud object storage—directly from Autonomous Database. You’ll make external data locally available when needed, or link to it in place to save time and cost.
 
 Estimated Time: 45 minutes
 
@@ -18,27 +18,30 @@ Estimated Time: 45 minutes
 
 By the end of this lab, you will:
 
-- **Load Data:** Understand how to move object storage data into tables in your Autonomous Database when required for improved performance, persistence, or cost savings.  
+* **Load high-value data** into database tables for fast performance or persistence
 
-- **Link Data:** Use Oracle Data Catalog to connect object storage assets to your database.  
+* **Link data in place** using Oracle Data Catalog to avoid duplication
 
-- **Query Database & Object Storage Data:** Query object storage data directly and combine it with data in database tables for unified analytics.  
+* **Query across sources**—combining structured and unstructured data for real-time financial insights
 
-## Task 1: Load Object Storage Data into Autonomous Database using Data Catalog
+By the end, you’ll have the skills to turn raw, external data into a seamless part of SeersEquities’ analytics workflow—ready to power better loan decisions and smarter risk management.
 
-1. Click **View Login Info**. Copy your DB ADMIN Password and click the **SQL Worksheet** link.
 
-    ![Access Data Catalog](./images/sql-worksheet.png "Access Local Data Catalog")  
+## Task 1: Load Object Storage Data into Autonomous Database using the Catalog Tool
+
+1. Click **View Login Info**. Copy your **DB ADMIN Password**, and click the **SQL Worksheet** link.
+
+    ![Access Data Catalog](./images/start-demo.png "Access Local Data Catalog")  
 
 2. For your Username enter **LOAN**. Paste in the password you copied in the previous step.
 
     ![Access Local Data Catalog](./images/sql-sign-in.png "Access Local Data Catalog")  
 
-3. Select **Data Studio** from the tab menu, then select **Catalog** from the left rail. 
+3. Select **Data Studio** from the tab menu, then select **Catalog** from the left rail.
 
       ![Create Data Product Share](./images/task1-scrn-7.png "Create Data Product Share")
 
-4.  Click on the **Data Objects** tab at the top of the Catalog page to view the contents of the object storage buckets.
+4.  Click the **Data Objects** tab at the top of the catalog page to view the contents from your object storage buckets.
 
       ![Create Data Product Share](./images/task1-scrn-8.png "Create Data Product Share")
 
@@ -92,7 +95,7 @@ By the end of this lab, you will:
 
    **Congratulations you have now loaded your Object Storage discovered in your catalog data into your ADB.**
 
-## Task 2: Link Object Storage Data from Data Catalog to ADB.
+You’ve just loaded external object storage data directly into your Autonomous Database—turning a static file into a query-ready table. This move helps optimize performance and makes your data ready for analytics, joins, and future products.
 
    1. From the Data Catalog page with Data Objects selected, make sure the Cloud Object filter is selected, then select **LoanAppCustomer_segment.csv** from the list for the Cloud Object Entity page.
 
@@ -106,19 +109,19 @@ By the end of this lab, you will:
 
    ![Create Data Product Share](./images/task2-scrn-10b.png "Create Data Product Share")
 
-   4. In the table section, select **Create External Table** from the list of options.
+   4. In the table section, choose **Create External Table** from the options.
 
    ![Create Data Product Share](./images/task2-scrn-11.png "Create Data Product Share")
 
-   5. Enter the name **CUSTOMER_SEGMENT** for the table.  Click the **Close** button.
+   5. Let's change the default name to something more meaningful for our use case. Change the default table name to **CUSTOMER_SEGMENT**. Click **Close**.
 
    ![Create Data Product Share](./images/task2-scrn-12.png "Create Data Product Share")
 
-   6. Click the **Start** button on the Link Data page.
+   6. Click **Start** on the **Link Data** page.
 
    ![Create Data Product Share](./images/task2-scrn-12a.png "Create Data Product Share")
 
-   7. Click the **Run** button in the popup window, to start a job that loads data from the Cloud Store.
+   7. In the popup, click **Run** to start the link job from cloud store.
 
    ![Create Data Product Share](./images/task2-scrn-13.png "Create Data Product Share")
 
@@ -128,15 +131,16 @@ By the end of this lab, you will:
 
    ![Create Data Product Share](./images/task2-scrn-17.png "Create Data Product Share")
 
-   **Congratulations you have now Linked your Object Storage discovered in your catalog and can query it from your ADB.**
+
+You’ve just linked **external object storage data** to your database—**no loading required**. With this external table in place, you can **run queries instantly while avoiding data duplication** and keeping your analytics agile and efficient.
 
 ## Task 3: Query Data in Object Storage and ADB Database.
 
-   1.	Click the Database Actions in the banner to display the Launchpad page. Click the **Development** tab, and then click **SQL** to display the SQL Worksheet
+   1.	Click **Database Actions** in the top banner to open the **Launchpad** page. Select the **Development** tab, then click **SQL** to open the SQL Worksheet.
 
   ![Query Data in Object Storage](./images/task3-scrn-1.png "Query Data in Object Storage")
 
-   2.	Let's query the CUSTOMER_EXTENSION table. Copy and paste the following code into your SQL Worksheet, and then click the Run Statement icon in the Worksheet toolbar.
+   2.	Query the **CUSTOMER_EXTENSION** table. Copy and paste the following SQL into the Worksheet, then click the **Run Statement** icon:
 
       ```
       <copy>
@@ -148,7 +152,7 @@ By the end of this lab, you will:
 
   ![Query Data in Object Storage](./images/task3-scrn-2.png "Query Data in Object Storage")
 
-   3.	Let's query the CUSTOMER_SEGMENTS external table. In the SQL Worksheet, copy and paste the following code into your SQL Worksheet to query the data, and then click the Run Statement icon in the Worksheet toolbar.
+   3.	Now query the **CUSTOMER_SEGMENT** external table. Paste the SQL below into the Worksheet, then click **Run**:
 
       ```
       <copy>
@@ -160,7 +164,7 @@ By the end of this lab, you will:
 
   ![Query Data in Object Storage](./images/task3-scrn-3.png "Query Data in Object Storage")
 
-   4.	Create a join combining data from the CUSTOMER_EXTENSION table with data a then click the Run Statement icon in the Worksheet toolbar.
+   4.	Combine data from both tables using a **join**. Paste the query below, then click **Run**:
 
       ```
       <copy>
@@ -171,14 +175,21 @@ By the end of this lab, you will:
       </copy>
       ```
 
-   The output shows combined customer information.
+   The results show enriched customer profiles with segment labels.
 
   ![Query Data in Object Storage](./images/task3-scrn-4a.png "Query Data in Object Storage")
 
 
-   **Congratulations you have now combined data stored in Object Storage with data stored in the ADB database.**
+You’ve now combined external object storage data with internal database data—all from a single query. This unlocks richer analytics, enabling SeersEquities to connect customer attributes with segmentation strategies in real time.
+
+## Conclusion
+
+In this lab, you’ve learned how to **load, link, and query data** from cloud object storage using Oracle Autonomous Database. Each task brought you closer to a unified data environment—one where internal and external sources work together seamlessly.
+
+By turning static files into live tables or external links, you’ve made **data instantly queryable**. And by joining that data across sources, you've created a **richer, real-time foundation for analytics**.
+
+For SeersEquities, this means **faster decisions, smarter loan products, and more agile data workflows**. For you, it means mastering the tools that make all of that possible.
 
 ## Acknowledgements
 * **Authors** - Eddie Ambler, Otis Barr
-* **Contributors** - Mike Matthews, Marty Gubar, Kamryn Vinson
 * **Last Updated By/Date** - Kamryn Vinson, June 2025
