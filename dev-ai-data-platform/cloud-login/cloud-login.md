@@ -24,13 +24,13 @@ Estimated Time: 5 minutes
 
       ![View Login Info](./images/view-login-info.png " ")
 
-2. Click **View Login Info** to see detailed reservation information. Click the **Start the Demo** link.
+2. Click **View Login Info** to view reservation details. In this workshop, you'll use the **Oracle Database Actions** web app in Autonomous Database. Click on **copy value** to copy the password and then click on the link next to **SQL Worksheet**. Your username is **ADMIN**
 
     ![Launch Demo](./images/start-demo.png " ")
 
-3. Congratulations! You are now connected to the demo environment. You can now execute the different tasks and steps for the selected LiveLabs workshop.
+3. Congratulations! You are now connected to the **Oracle Database Actions** as the **ADMIN** user. In this workshop, you will login to Oracle Database Actions using different usernames. Each lab will provide you with the login names. **Note**: The password is always the password listed in the View Login Info section!
 
-    ![Demo Environment](./images/app-home.png " ")
+    ![Demo Environment](./images/dbaction.png " ")
 
 ## Task 2: Find your LiveLabs Sandbox reservations
 
