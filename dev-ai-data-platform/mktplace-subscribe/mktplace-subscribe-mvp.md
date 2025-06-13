@@ -8,37 +8,44 @@ In this lab, you’ll learn how to **subscribe** to data products published 
 
 By the end of this lab, you’ll understand how the **Data Share** tool enables the **RISK** team to easily **access customized data products**, keeping everyone aligned and ready to act on **up-to-date information.**
 
-### Prerequisites
+## Objectives
+  * Login to LiveLabs Sandbox
+  * Find your LiveLabs Sandbox reservations
 
-* Requires Completion of Lab 5
+## Prerequisites
+  This lab assumes you have:
+  * Completed the Get Started lab
+  * Successfully launched the hands-on lab environment
 
-## Task 1: Access Local Data Catalog
+## Task 1: Navigate to Autonomous Database
 
-> **NOTE:** If continuing from lab 5, click on Data Share in bread crumb link and skip to step 4.
+To begin, we will log onto the assigned Autonomous Database and launch Database Actions (as the LOAN user), so you can discover and manage all the data you have access to all from one location.
 
-First, you’ll log into your Autonomous Database and connect to your local Data Catalog, so you can discover and manage all the data you have access to all from one location.
+1. Log onto Oracle Cloud account at cloud.oracle.com
 
-1. Navigate to your assigned ADB Instance.
+    ![Log onto Oracle Cloud account](./images/logon-oracle-cloud.png " ")  
 
-    a. Open Navigation Menu  
-    b. Select Oracle Database  
-c   . Select Autonomous Database  
+    Click the menu icon (three horizontal lines) in top left corner to open the Navigation Menu  
 
-    ![Navigate to Autonomous Database in OCI](./images/navigate-to-adb.png " ")  
+1. Select Oracle Database from the Navigation Menu.  
 
-1. Select the name of your assigned database.  
+    ![Select DB from Navigation Menu](./images/select-db-from-nav-menu.png " ")
 
-    ![Navigate to Autonomous Database in OCI](./images/oci-adb-select.png " ")
+1. Choose the database type  
 
-1. Click on Database Actions, then select Data Load from the drop-down list  
+    ![Select DB from Navigation Menu](./images/select-db-type.png " ")
+    Click on Autonomous Database.
 
-    ![ADB Details | DB Actions](./images/adb-details--dbactions.png " ")  
+1. Select the desired database  
 
-1. Click on **Catalog** on left rail for the **ADB Catalog** to be displayed  
+    ![Select DB from Navigation Menu](./images/select-adb-from-list.png " ")
+    Click the name of the Autonomous Database you want to use  
 
-    ![Access Local Data Catalog](./images/access-local-data-catalog-4.png "Access Local Data Catalog")  
+1. Launch Database Actions  
 
-    **Congratulations you can now see your data objects from your Catalog!**  
+    ![ADB Details | DB Actions](./images/adb-detail-2-data-load.png " ")  
+
+    Click Database Actions, then select Data Load from the dropdown list   
 
 ## Task 2: Subscribe to Data Product Share as RISK user
 

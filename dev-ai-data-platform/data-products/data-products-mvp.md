@@ -29,33 +29,35 @@ In this Lab, you will:
    * **Prerequisites for Share Recipients**
       * The share recipient must have a **valid email address** a provider can use to register the recipient to use the share tool. Oracle Data Share allows you to share the recipient's activation link by email.
 
-## Task 1: Access Local Data Catalog
+## Task 1: Navigate to Autonomous Database
 
->**NOTE:** If continuing from lab 4, click on **Database Actions** link and skip to step 6.
+To begin, we will log onto the assigned Autonomous Database and launch Database Actions (as the LOAN user), so you can discover and manage all the data you have access to all from one location.
 
-First, you’ll log into your Autonomous Database and connect to your local Data Catalog, so you can discover and manage all the data you have access to all from one location.
+1. Log onto Oracle Cloud account at cloud.oracle.com
 
-1. Navigate to your assigned ADB Instance.
+    ![Log onto Oracle Cloud account](./images/logon-oracle-cloud.png " ")  
 
-    a. Open Navigation Menu  
-    b. Select Oracle Database  
-c   . Select Autonomous Database  
+    Click the menu icon (three horizontal lines) in top left corner to open the Navigation Menu  
 
-    ![Navigate to Autonomous Database in OCI](./images/navigate-to-adb.png " ")  
+1. Select Oracle Database from the Navigation Menu.  
 
-1. Select the name of your assigned database.  
+    ![Select DB from Navigation Menu](./images/select-db-from-nav-menu.png " ")
 
-    ![Navigate to Autonomous Database in OCI](./images/oci-adb-select.png " ")
+1. Choose the database type  
 
-1. Click on Database Actions, then select Data Load from the drop-down list  
+    ![Select DB from Navigation Menu](./images/select-db-type.png " ")
+    Click on Autonomous Database.
 
-    ![ADB Details | DB Actions](./images/adb-details--dbactions.png " ")  
+1. Select the desired database  
 
-1. Click on **Catalog** on left rail for the **ADB Catalog** to be displayed  
+    ![Select DB from Navigation Menu](./images/select-adb-from-list.png " ")
+    Click the name of the Autonomous Database you want to use  
 
-    ![Access Local Data Catalog](./images/access-local-data-catalog-4.png "Access Local Data Catalog")  
+1. Launch Database Actions  
 
-    **Congratulations you can now see your data objects from your Catalog!**  
+    ![ADB Details | DB Actions](./images/adb-detail-2-data-load.png " ")  
+
+    Click Database Actions, then select Data Load from the dropdown list   
 
 ## Task 2: Create Data Product Share
 

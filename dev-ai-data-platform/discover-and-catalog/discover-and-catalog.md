@@ -45,6 +45,11 @@ First, you’ll log into your Autonomous Database and connect to your local Data
   ![Access Local Data Catalog](./images/access-local-data-catalog-1.png "Access Local Data Catalog")
 
 5. **Login to Database Actions as LOAN User** using credential shown on View Lab Info Page
+1. Click **View Login Info**. Copy your DB ADMIN Password and click the **SQL Worksheet** link.
+
+    ![Access Data Catalog](./images/sql-worksheet.png "Access Local Data Catalog")  
+
+2. For your Username enter **LOAN**. Paste in the password you copied in the previous step.
 
     ![Access Local Data Catalog](./images/sql-sign-in.png "Access Local Data Catalog")  
 

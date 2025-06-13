@@ -2,13 +2,9 @@
 
 ## Introduction
 
-This lab is designed to give the Data Engineer/Architect experience utilizing the **Data Catalog** and **Data Load Connections** tools, to simply access of data that resides inside the database and on cloud object storage.  
+This lab is designed to demonstrate how tools in Oracle’s Data Platform can be used to discover and provide access data in cloud object storage.   
 
-To create the loan products iused by the Loan Officer in the demo, the Data Engineer first needed to access external funding data and combine it with Bank business rules to create the end loan products that were sold to customers.  
-
-In this lab, you’ll learn how to find, connect, and use data from **Object Storage** via **Oracle’s Data Catalog** and **Autonomous Database (ADB)**. Follow these steps to set up everything you need for seamless, real-time data access—without jumping through complicated hoops. After these steps, you’ll have a smooth setup that lets you **discover**, **connect**, and **query** data no matter where it lives—in Oracle Database or in Object Storage—giving you a powerful, unified view of all your information. 🌐📊  
-
-Enjoy exploring! 🚀
+Having this access is crucial for someone,such as the loan approval officer in our demo, because it directly impacts their ability to efficiently, securely, and compliantly perform their duties.  
 
 Estimated Lab Time: 45 minutes
 
@@ -18,103 +14,105 @@ Estimated Lab Time: 45 minutes
 <!-- Comments -->
 <!-- Comments -->
 
-## Objectives
-    * Login to LiveLabs Sandbox
-    * Find your LiveLabs Sandbox reservations
+### Objectives
 
-## Prerequisites
-    * TDB
+In this lab, you will:
+
+* Find your LiveLabs Sandbox reservations
+
+### Prerequisites
+
+This lab assumes you have:
+
+* An Oracle account to submit your a LiveLabs Sandbox reservation.
 
 ## Task 1: Navigate to Autonomous Database
 
->**NOTE** If you are continuing from lab 2, skip to step 4.
+To begin, we will log onto the assigned Autonomous Database and launch Database Actions (as the LOAN user), so you can discover and manage all the data you have access to all from one location.
 
-First, you’ll log into your Autonomous Database and connect to your local Data Catalog, so you can discover and manage all the data you have access to all from one location.
+1. Log onto Oracle Cloud account at cloud.oracle.com
 
-1. Navigate to your assigned ADB Instance.
+    ![Log onto Oracle Cloud account](./images/logon-oracle-cloud.png " ")  
 
-    a. Open Navigation Menu  
-    b. Select Oracle Database  
-    c. Select Autonomous Database  
-    
-    ![Navigate to Autonomous Database in OCI](./images/navigate-to-adb.png " ")  
+    Click the menu icon (three horizontal lines) in top left corner to open the Navigation Menu  
 
-1. Select the name of your assigned database.  
+1. Select Oracle Database from the Navigation Menu.  
 
-    ![Navigate to Autonomous Database in OCI](./images/oci-adb-select.png " ")
+    ![Select DB from Navigation Menu](./images/select-db-from-nav-menu.png " ")
 
-1. Open the Database Actions drop-down list, then select Data Load  
+1. Choose the database type  
+
+    ![Select DB from Navigation Menu](./images/select-db-type.png " ")
+    Click on Autonomous Database.
+
+1. Select the desired database  
+
+    ![Select DB from Navigation Menu](./images/select-adb-from-list.png " ")
+    Click the name of the Autonomous Database you want to use  
+
+1. Launch Database Actions  
 
     ![ADB Details | DB Actions](./images/adb-detail-2-data-load.png " ")  
 
+    Click Database Actions, then select Data Load from the dropdown list   
 
-## Task 2: Add Connections to Catalog for Object Storage Buckets & Data Shares  
+## Task 2: Setup Connection to Object Storage
 
-🚀 Let’s continue our data discovery journey by visiting how to set up a connection between the Data Catalog and your specific buckets of data and available data shares.  
+Starting where we ended Task 1, let’s set up a connection between the Data Catalog and your specific buckets of data and available data shares.  
 
-1. Expand **Data Load** options on the left rail, then select **Connections** Tile  
+1. Navigate to Connections  
 
-    ![Add Connections to Catalog](./images/add-connections-to-catalog-1.png "Add Connections to Catalog")  
+    ![Add Connections to Catalog](./images/expand-data-load-options.png "Add Connections to Catalog")  
+    Expand the Data Load options on the left rail, then select Connections 
 
-1. On the connections page you will note that this lab already has 4 bucket connections established.  
+1. Review Existing Connections  
 
     ![Add Connections to Catalog](./images/add-connections-to-catalog-2.png "Add Connections to Catalog")  
+    On the connections page you will note that this lab already has 4 bucket connections established.
 
-1. Now let’s add our **own connection** for an Object Storage bucket named **MyDemoBucket**  
-
-    🔘 On the **Connections Page** --> Click **Create** --> Then select **New Cloud Store Location**  
+1. Create New Connection  
 
     ![Add Connections to Catalog](./images/add-connections-to-catalog-3.png "Add Connections to Catalog")  
+    Click **Create**, then select **New Cloud Store Location**  
 
-1. Enter details about the cloud storage location as shown below
+1. Enter Connection Details
 
     ![Add Connections to Catalog](./images/add-connections-to-catalog-4-w-select-bucket.png "Add Connections to Catalog")  
+    Enter details about the cloud store location as shown, then click Create button
 
-1. Click on **Create** button to proceed  
+1. Confirm Connection Creation
 
     ![Add Connections to Catalog](./images/add-connections-to-catalog-5.png "Add Connections to Catalog")  
+    Review available connections in the Data Catalog, that are accessible to the LOAN schema. 
 
     **Congratulations you have successfully added your own object storage connection to the Catalog!**  
 
-## Task 3: Search for items discovered by your Catalog  
+## Task 3: Explore the Data Catalog
 
 With our Connections in place, we will explore how to search the catalog for the items you want to see, by selecting what schemas, and what entity types to display  
 
-1. On the left rail, select **Catalog**  
+1. Launch Catalog Landing Page  
 
     ![Search Items in Catalog](./images/search-items-in-catalog-1.png "Search Items in Catalog")  
+    Select Catalog from the left rail to proceed to the landing page.  
 
-1. On the landing page, you will note that the Catalog has quick filters to help display the results of your customized searches in the main area.  
-
-    >**NOTE** If you do not select a quick filter, the Tables and Views filter is selected by default.  The output of the object shown can be limited to all or a selected schema.  
-
-1. Select **Connections** quick filter. This displays available connections in the Catalog accessible to the LOAN schema. From here we can validate that our catalog sees the defined connections we made.  Take notice that our **MyDemoBucket** is displayed.  
+1. Identify Data Objects in the Catalog
 
     ![Search Items in Catalog](./images/search-items-in-catalog-2.png "Search Items in Catalog")  
+    To help customize search results, you will find “quick filters” on the landing page, to limit output to all or a selected schema
 
-1. Select **Data Objects** quick filter to display available items in the Catalog visible to the LOAN schema. Notice that this view shows us the available database objects and the listing of the files available in our object storage.  
-
-    >**NOTE:** that this view shows us the available database objects and the listing of the files available in our object storage.  These files will be used in upcoming exercises.  
-
-    ![Data Catalog Data Objects](./images/data-catalog-data-objects.png "Data Catalog Data Objects")  
-
-## Task 4: Preview Data in Catalog  
-
-Check out the list of discovered data inside the Catalog. From this view we can see the available files that reside in the Object storage buckets.  
-
-1. Hover over file named **LoanAppCustomer-Extensions.csv**.  
-
-    ![Data Catalog Data Objects](./images/data-catalog-data-objects.png "Data Catalog Data Objects")  
-
-1. This displays the contents of the file being previewed without needing to first load it into the database.  
+1. Preview Data in the Catalog
 
     ![Data Catalog CSV preview](./images/data-catalog-csv-preview.png "Data Catalog CSV Preview")  
 
-1. Click on **Close** button to return to Data Catalog listings  
+    Locate the file named LoanAppCustomer-Extensions.csv.  Hover over it to display the file's contents 
+    
+    
+    >**NOTE:**Notice we are able to preview the contents of a file without having to load it into the database.  
+
+    Click on **Close**
 
     **Congratulations you have successfully previewed the contents of your Object Storage Data!**  
-
-    **You may now proceed to the next lab.**  
 
 ## Learn More
 
