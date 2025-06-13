@@ -42,68 +42,63 @@ By the end of this lab, you will:
 
       ![Create Data Product Share](./images/task1-scrn-8.png "Create Data Product Share")
 
-5. Select **LoanApp Customer-extention.csv** from the list, this will take you to the **Cloud Object Entity** page.
+5. Select **LoanApp Customer-extention.csv** from the list, this will take you to the Cloud Object Entity page.
 
+      ![Create Data Product Share](./images/click-csv.png "Create Data Product Share")
 
-5. Select the **Load to Table** button and the **Load Data** page will appear. 
+5. Select the **Load to Table** button and the Load Data page will appear. 
 
       ![Create Data Product Share](./images/task1-scrn-9.png "Create Data Product Share")  
 
-6. Click **Edit (pencil)** icon, in the lower right corner.  
+6. Click the **Edit (pencil)** icon, in the lower right corner.  
 
       ![Create Data Product Share](./images/task1-scrn-10.png "Create Data Product Share")  
 
-7. Enter details on the following screen for the data load.  
-   
-      🔘 In the table section, select **Create Table** from the list of options displayed.  
+7. In the table section, select **Create Table** from the list of options displayed.  
 
       ![Create Data Product Share](./images/task1-scrn-11.png "Create Data Product Share")  
 
-      🔘 Enter **Customer_Extention** for the name of the table.  
+8. Enter **CUSTOMER_EXTENTION** for the name of the table. Click the **Close** button. 
 
       ![Create Data Product Share](./images/task1-scrn-12.png "Create Data Product Share")  
-
-      🔘 Click **Close** button.  
-
-8. Click the **Start** button on the **Data Load** page.  
+ 
+9. Click the **Start** button on the Data Load page.  
 
       ![Create Data Product Share](./images/task1-scrn-13.png "Create Data Product Share")  
 
-9. Click the **Run** button in the popup window, to start a job that loads data from the Cloud Store.  
+10. Click the **Run** button in the popup window, to start a job that loads data from the Cloud Store.  
 
-10. The table will appear on the **Table and View Loads** page, once the job is completes.  
- 
-      🔘 To generate a report and review the SQL used for the job, click on the **Report** button.  
+      ![Create Data Product Share](./images/run-load.png "Create Data Product Share") 
+
+11. The table will appear on the Table and View Loads page, once the job is completed. To generate a report and review the SQL used for the job, click on the **Report** button.  
 
       ![Create Data Product Share](./images/task1-scrn-14.png "Create Data Product Share")  
 
-11. Click the **Close** button when finished.  
+12. Click the **Close** button when finished.  
 
       ![Create Data Product Share](./images/task1-scrn-15.png "Create Data Product Share")  
 
-12. To review details about the data in the table using SQL Worksheet, click on the **Query** button.  
+13. To review details about the data in the table using SQL Worksheet, click on the **Query** button.  
 
       ![Create Data Product Share](./images/task1-scrn-16.png "Create Data Product Share")  
 
-13. The **SQL Worksheet** will appear with the query pre-loaded, the query results available and an analysis of the data set.  
+14. The SQL Worksheet will appear with the query pre-loaded, the query results available, and an analysis of the data set.  
 
       ![Create Data Product Share](./images/task1-scrn-17.png "Create Data Product Share")  
 
-14. Select **Catalog** from the left rail rail and take note that the **Customer_Extension** table now appears in the Catalog.
+15. Select **Catalog** from the left rail and take note that the **Customer_Extension** table now appears in the Catalog.
 
       ![Create Data Product Share](./images/task1-scrn-18.png "Create Data Product Share")
 
-   ***Congratulations you have now loaded your Object Storage discovered in your catalog data into your ADB.***
+   **Congratulations you have now loaded your Object Storage discovered in your catalog data into your ADB.**
 
 ## Task 2: Link Object Storage Data from Data Catalog to ADB.
 
-   1. From the Data Catalog page with Data Objects selected.
-
-      🔘 Make sure the Cloud Object filter is selected, then select **LoanAppCustomer-segments.csv** from the list for the Cloud Object Entity page.
+   1. From the Data Catalog page with Data Objects selected, make sure the Cloud Object filter is selected, then select **LoanAppCustomer_segment.csv** from the list for the Cloud Object Entity page.
 
       ![Create Data Product Share](./images/task2-scrn-1a.png "Create Data Product Share")
 
-   2. Select the Link to Table button and the Load Data page will appear.
+   2. Select the **Load to Table** button and the Load Data page will appear.
 
    ![Create Data Product Share](./images/task2-scrn-10a.png "Create Data Product Share")
 
@@ -115,11 +110,11 @@ By the end of this lab, you will:
 
    ![Create Data Product Share](./images/task2-scrn-11.png "Create Data Product Share")
 
-   5. Enter the name **Customer_Segment** for the table.  Click **Close** button.
+   5. Enter the name **CUSTOMER_SEGMENT** for the table.  Click the **Close** button.
 
    ![Create Data Product Share](./images/task2-scrn-12.png "Create Data Product Share")
 
-   6. Click the **Start** button on the **Link Data** page.
+   6. Click the **Start** button on the Link Data page.
 
    ![Create Data Product Share](./images/task2-scrn-12a.png "Create Data Product Share")
 
@@ -127,19 +122,17 @@ By the end of this lab, you will:
 
    ![Create Data Product Share](./images/task2-scrn-13.png "Create Data Product Share")
 
-   8. The table will appear on the **Table and View Loads** page, once the job is completes.
+   8. The table will appear on the Table and View Loads page once the job is completed. To review details about the data in the table using SQL Worksheet, click on the **Query** button.
 
    ![Create Data Product Share](./images/task2-scrn-14.png "Create Data Product Share")
 
-   9.	To review details about the data in the table using SQL Worksheet, click on the **Query** button.
-
    ![Create Data Product Share](./images/task2-scrn-17.png "Create Data Product Share")
 
-   ***Congratulations you have now Linked your Object Storage discovered in your catalog and can query it from your ADB..***
+   **Congratulations you have now Linked your Object Storage discovered in your catalog and can query it from your ADB.**
 
 ## Task 3: Query Data in Object Storage and ADB Database.
 
-   1.	Click Database Actions in the banner to display the Launchpad page. Click the **Development** tab, and then click the **SQL** tab to display the SQL Worksheet
+   1.	Click the Database Actions in the banner to display the Launchpad page. Click the **Development** tab, and then click **SQL** to display the SQL Worksheet
 
   ![Query Data in Object Storage](./images/task3-scrn-1.png "Query Data in Object Storage")
 
@@ -183,9 +176,9 @@ By the end of this lab, you will:
   ![Query Data in Object Storage](./images/task3-scrn-4a.png "Query Data in Object Storage")
 
 
-   ***Congratulations you have now combined data stored in Object Storage with data stored in the ADB database.***
+   **Congratulations you have now combined data stored in Object Storage with data stored in the ADB database.**
 
 ## Acknowledgements
 * **Authors** - Eddie Ambler, Otis Barr
-* **Contributors** - Mike Matthews, Marty Gubar
-* **Last Updated By/Date** - 04-28-2025
+* **Contributors** - Mike Matthews, Marty Gubar, Kamryn Vinson
+* **Last Updated By/Date** - Kamryn Vinson, June 2025
