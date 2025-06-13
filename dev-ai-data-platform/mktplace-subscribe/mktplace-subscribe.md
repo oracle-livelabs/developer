@@ -96,11 +96,9 @@ You successfully subscribed to a share provider, which is now linked to your Aut
 
       ![Create Data Product Share](./images/editshare.png )
 
-      * Rename the external table to: **SHARED\_LOAN\_DATA\_RISK**
+      * Rename the external table to: **SHARED\_LOAN\_DATA\_RISK**. Click **Close** to proceed
 
       ![Create Data Product Share](./images/select-shared-data-4.png )
-
-      * Click **Close** to proceed
 
 5. Click **Start** to create shared link.
 
@@ -118,15 +116,11 @@ You created an external table from a shared dataset—linking live loan data dir
 
 ## Task 3: Validate ADB Access to Object Storage Data
 
-1. Click the Report button for this link job to view a report of the total rows processed successfully and failed for the selected table and the SQL used.
-
-   🔘 Click **Close** when done.
+1. Click the Report button for this link job to view a report of the total rows processed successfully and failed for the selected table and the SQL used. Click **Close** when done.
 
    ![Create Data Product Share](./images/select-shared-data-1a.png )
 
-1. In the **Table and View Loads** section:
-
-   🔘 Click the external table link named **Shared\_Loan\_Data\_Risk** to preview its data.  Remember, that the source data for this external table is from the **Shared\_Loan\_Data\_Risk\_VW** data share.
+2. In the **Table and View Loads** section, click the external table link named **Shared\_Loan\_Data\_Risk** to preview its data.  Remember, that the source data for this external table is from the **Shared\_Loan\_Data\_Risk\_VW** data share.
 
    ![Create Data Product Share](./images/select-shared-data-2a.png )
 
@@ -134,13 +128,13 @@ You created an external table from a shared dataset—linking live loan data dir
 
    ![Create Data Product Share](./images/select-shared-data-3a.png )
 
-1. Click **Close** to exit the panel and to return to the Data Share Dashboard.
+3. Click **Close** to exit the panel and to return to the Data Share Dashboard.
 
-1. Click on **Query** button to run a query from ADB against the Linked Shared Data
+4. Click on **Query** button to run a query from ADB against the Linked Shared Data
 
    ![Create Data Product Share](./images/select-shared-data-4a.png )
 
-***Congratulations you have now subscribed to the data shared with you from ADB via Data Share and confirmed you can query the data.***
+**Congratulations you have now subscribed to the data shared with you from ADB via Data Share and confirmed you can query the data.**
 
 ## Learn More
 
@@ -152,6 +146,4 @@ You created an external table from a shared dataset—linking live loan data dir
 
 ## Acknowledgements
 * **Authors** - Eddie Ambler, Otis Barr
-* **Last Updated By/Date** - June 2025, Otis Barr
-
-Copyright (C) Oracle Corporation.
+* **Last Updated By/Date** - Otis Barr, June 2025
