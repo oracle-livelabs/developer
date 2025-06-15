@@ -4,7 +4,7 @@
 
 **Data isn't just an asset—it's the lifeblood of modern enterprises.**
 
-Imagine a mid-sized lender, SeerEquities, racing to keep pace in a world where every loan, market shift, or rule change needs reliable, real-time data. For SeerEquities, data isn’t just stored; it fuels critical decisions, regulatory reports, and customer-facing innovations.
+Imagine a mid-sized lender, SeerEquities, racing to keep pace in a world where every loan, market shift, or rule change needs reliable, and real-time data. For SeerEquities, data isn’t just stored; it fuels critical decisions, regulatory reports, and customer-facing innovations.
 
 But as the business ran faster, its data strategy lagged. Transformed data lived in silos. ETL pipelines stalled. Teams scrambled to answer simple questions: “How many loans closed last week?”, “Which customer segment is showing early signs of default?” Time slipped away in discovery, rework, and reconciliation.
 
@@ -24,9 +24,9 @@ By unifying SeerEquities’ data, you’ll see how Oracle’s platform enables d
 
 ✅ Turn reactive requests into proactive insights  
 ✅ Accelerate delivery of high‑quality, consumable data products  
-✅ Effectively support multi‑team collaboration within a secure environment
+✅ Support effective multi‑team collaboration within a secure environment
 
-Estimated Workshop Time: 3 hours 30 minutes 
+Estimated Workshop Time: 3 hours 30 minutes
 
 ### **Objectives**
 
