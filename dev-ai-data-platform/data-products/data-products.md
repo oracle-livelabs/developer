@@ -30,7 +30,7 @@ In this Lab, you will:
 
     * The schema you'll use to publish the share has been enabled for Data Sharing by an ADMIN user.
 
-    * You’ve already created a Cloud Location to Publish the Share (covered in Lab 3, Task 2).
+    * You’ve already created a **Cloud Location** to **Publish the Share** (covered in **Discover and View your Database and Data Lake Assets from your Data Catalog**, Task 2).
 
 * **For Share Recipients**
 
@@ -132,7 +132,8 @@ In this Lab, you will:
 
 17. Paste the activation link you copied earlier into your browser and click **Get Profile Information** to download the recipient profile file.
 
-   ![Define a Data Product Recipient](./images/paste-activation-link-in-window.png "Define a Data Product Recipient")
+   ![Data Product Recipient](./images/paste-activation-link-in-window.png "")
+
 
 You’ve just **created and published a data product share**—making curated loan data securely available to the Risk team. By defining the share, selecting the right data, and authorizing a recipient, you’ve set up a **governed, reusable pipeline for cross-team collaboration**.
 

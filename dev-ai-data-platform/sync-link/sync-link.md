@@ -29,7 +29,7 @@ By the end, you’ll have the skills to turn raw, external data into a seamless 
 
 ## Task 1: Load Object Storage Data into Autonomous Database using the Catalog Tool
 
-1. Click **View Login Info**. Copy your **DB ADMIN Password**, and click the **SQL Worksheet** link.
+1. If you are not yet logged in to **Database Actions**, click **View Login Info**. Copy your **DB ADMIN Password**, and click the **SQL Worksheet** link.
 
     ![Access Data Catalog](./images/start-demo.png "Access Local Data Catalog")  
 
@@ -161,9 +161,9 @@ You’ve just linked **external object storage data** to your database—**no lo
       </copy>
       ```
 
-   The output shows defined customer segments.
+      The output shows defined customer segments.
 
-  ![Query Data in Object Storage](./images/task3-scrn-3.png "Query Data in Object Storage")
+      ![Query Data in Object Storage](./images/task3-scrn-3.png "Query Data in Object Storage")
 
    4.	Combine data from both tables using a **join**. Paste the query below, then click **Run**:
 
