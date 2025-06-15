@@ -32,11 +32,11 @@ Estimated Workshop Time: 3 hours 30 minutes
 
 In this session, you’ll:
 
-* Receive real-world enhancement requests that mimic evolving business demands
+* Receive real-world **enhancement requests** that mimic evolving business demands
 
-* Perform data discovery, transformation, and sharing using Autonomous Database tools
+* Perform **data discovery, transformation**, and **data sharing** using Autonomous Database tools
 
-* Apply data governance and quality best practices as you build trusted data products
+* Apply **data governance** and quality best practices as you build trusted data products
 
 By the end, you won’t just understand Oracle’s Data Platform—you’ll have experienced how it transforms data chaos into business-ready intelligence, helping finance organizations like SeerEquities thrive through data-driven decision-making.
 
@@ -44,7 +44,7 @@ By the end, you won’t just understand Oracle’s Data Platform—you’ll have
 
 This lab assumes you have:
 
-* An Oracle account to submit your a LiveLabs Sandbox reservation.
+* An Oracle account to submit your LiveLabs Sandbox reservation.
 
 * Basic knowledge of Oracle Database.
 

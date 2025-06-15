@@ -2,20 +2,19 @@
 
 ## Introduction
 
-To build better loan products, SeersEquities’ data team must pull insights from everywhere—internal systems and external sources alike. But before they can transform that data, they need to find it.
+To build better loan products, SeersEquities’ data team must pull insights from everywhere—internal systems and external sources alike. But before they can transform that data, they need to find it. In this lab, you’ll step into that role. 
 
-In this lab, you’ll step into that role. You’ll use Oracle Autonomous Database's Catalog Tool to discover, connect to, and query data stored in cloud object storage and databases. By the end, you’ll have a single view across your data landscape—so you can spend less time hunting for data and more time using it to power smarter decisions.
+You’ll use Oracle Autonomous Database's Catalog Tool to **discover, connect to, and query data** stored in cloud object storage and databases. By the end, you’ll have a single view across your data landscape—so you can spend less time hunting for data and more time using it to power smarter decisions.
 
 Estimated Time: 30 minutes
 
 ### Objectives
 
-* Discover and browse data assets across Autonomous Database and cloud object storage using the Catalog Tool
+* **Discover and browse data assets** across Autonomous Database and cloud object storage using the Catalog Tool
 
-* Set up secure connections to access and unify data from multiple sources
+* Set up **secure connections** to access and unify data from multiple sources
 
-* Query and explore data from a centralized catalog to support faster, insight-driven decisions
-
+* Query and explore data from a unified catalog to support faster, insight-driven decisions
 
 ## Task 1: Access Local Data Catalog
 

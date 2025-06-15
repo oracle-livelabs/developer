@@ -114,39 +114,38 @@ You successfully subscribed to a share provider, which is now linked to your Aut
 
 You created an external table from a shared dataset—linking live loan data directly into your environment without copying it. This step gives the Risk team immediate, governed access to trusted data, ready for queries and analysis.
 
-
-
 ## Task 3: Validate ADB Access to Object Storage Data
 
-1. Click the Report button for this link job to view a report of the total rows processed successfully and failed for the selected table and the SQL used.
+1. Click the **Report** button for this link job to view details on rows processed and the SQL used.
 
-   🔘 Click **Close** when done.
+   Click **Close** when finished.
 
    ![Create Data Product Share](./images/select-shared-data-1a.png )
 
-1. In the **Table and View Loads** section:
-
-   🔘 Click the external table link named **Shared\_Loan\_Data\_Risk** to preview its data.  Remember, that the source data for this external table is from the **Shared\_Loan\_Data\_Risk\_VW** data share.
+2. In the Table and View Loads section, click the external table link **Shared\_Loan\_Data\_Risk** to preview the data. The source for this external table is the **Shared\_Loan\_Data\_Risk\_VW** data share.
 
    ![Create Data Product Share](./images/select-shared-data-2a.png )
 
-   The **Shared\_Loan\_Data\_Risk\_VW** panel is displayed with the **Preview** tab selected by default that displays the external table's data.
+   The preview panel opens by default, showing the external table’s data.
 
    ![Create Data Product Share](./images/select-shared-data-3a.png )
 
-1. Click **Close** to exit the panel and to return to the Data Share Dashboard.
+3. Click **Close** to return to the **Data Share Dashboard**.
 
-1. Click on **Query** button to run a query from ADB against the Linked Shared Data
+4. Click **Query** to run a query against the linked shared data from Autonomous Database.
 
    ![Create Data Product Share](./images/select-shared-data-4a.png )
 
-***Congratulations you have now subscribed to the data shared with you from ADB via Data Share and confirmed you can query the data.***
+You’ve now subscribed to a shared data product and validated that you can query it directly from Autonomous Database. This ensures the Risk team at SeersEquities can work with live, trusted data—ready for real-time analysis without unnecessary data movement.
+
+## Conclusion
+
+In this lab, you subscribed to a shared data product, linked it as an external table, and successfully queried live data from Autonomous Database. You’ve seen how Oracle’s Data Share tool helps teams like SeersEquities’ Risk Department securely access the latest loan data—without duplication, delays, or manual handoffs.
+
+This workflow ensures faster risk analysis, smarter decisions, and tighter collaboration across the business—all powered by governed, trusted data.
 
 ## Learn More
 
-* [Get Started with Data Catalog](https://docs.oracle.com/en-us/iaas/data-catalog/using/index.htm)
-* [Data Catalog Overview](https://docs.oracle.com/en-us/iaas/data-catalog/using/overview.htm)
-* [Oracle Cloud Infrastructure Documentation](https://docs.cloud.oracle.com/en-us/iaas/Content/GSG/Concepts/baremetalintro.htm)
 * [What Is a Data Catalog and Why Do You Need One?](https://www.oracle.com/big-data/what-is-a-data-catalog/)
 * [Harvesting Object Storage Files as Logical Data Entities](https://docs.oracle.com/en-us/iaas/data-catalog/using/logical-entities.htm)
 
@@ -154,4 +153,3 @@ You created an external table from a shared dataset—linking live loan data dir
 * **Authors** - Eddie Ambler, Otis Barr
 * **Last Updated By/Date** - June 2025, Otis Barr
 
-Copyright (C) Oracle Corporation.
