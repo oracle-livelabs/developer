@@ -151,9 +151,7 @@ You created an external table from a shared dataset—linking live loan data dir
 * [Harvesting Object Storage Files as Logical Data Entities](https://docs.oracle.com/en-us/iaas/data-catalog/using/logical-entities.htm)
 
 ## Acknowledgements
-
-* **Authors** -  Eddie Ambler, Otis Barr
-* **Contributors** - Mike Matthews, Marty Gubar, Matt Kowalik, Ramona Magadan
-* **Last Updated By/Date** - 04-28-2025
+* **Authors** - Eddie Ambler, Otis Barr
+* **Last Updated By/Date** - June 2025, Otis Barr
 
 Copyright (C) Oracle Corporation.

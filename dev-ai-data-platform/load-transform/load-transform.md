@@ -213,9 +213,7 @@ You’ve now successfully created a Notification Service topic—laying the foun
 * [Autonomous Database](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html)
 
 ## Acknowledgements
-
-* **Authors** - Eddie Ambler, Otis Barr, Matt Kowalik
-* **Contributors** - Mike Matthews, Marty Gubar, Francis Regalado, Ramona Magadan
-* **Last Updated By/Date** - 04-28-2025
+* **Authors** - Eddie Ambler, Otis Barr
+* **Last Updated By/Date** - June 2025, Otis Barr
 
 Copyright (C) Oracle Corporation.
