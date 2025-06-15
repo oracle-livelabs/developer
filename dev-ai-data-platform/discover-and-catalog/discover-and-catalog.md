@@ -88,7 +88,7 @@ With your connections in place, it’s time to search the catalog. You’ll choo
 
     ![Search Items in Catalog](./images/search-items-in-catalog-2.png "Search Items in Catalog")  
 
-3. Select the **Data Objects** quick filter to view items in the catalog visible to the **LOAN** schema. This view shows both database objects and files available in your object storage.
+3. Select the **Data Objects** quick filter to view items in the catalog visible to the **LOAN** schema. Also, select **Cloud Objects** in the filter section.
 
     >**Note**: This view shows the database objects and object storage files available to you. You’ll use these files in the next exercises.
 
@@ -113,7 +113,9 @@ Preview the data discovered in the catalog. From this view, you’ll see the fil
 
 ## Conclusion
 
-**Well done!** By previewing your object storage data, you've completed a key step in building trusted data products. You've learned how to **discover, connect to, and examine data** across systems—all **from a single catalog**. This foundation ensures that as new data arrives, you’re ready to evaluate it quickly, integrate it seamlessly, and put it to work across your analytics and applications.
+Well done! In this lab, you discovered how to connect, browse, and preview data across your database and object storage—all from a single, unified catalog. You’ve built the foundation SeersEquities needs to turn scattered data into trusted data products.
+
+With these skills, you can now help the team evaluate new data faster, integrate it seamlessly, and drive smarter, real-time decisions that power better loan products and risk strategies.
 
 ## Learn More
 
