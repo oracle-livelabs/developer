@@ -132,7 +132,7 @@ In this Lab, you will:
 
 17. Paste the activation link you copied earlier into your browser and click **Get Profile Information** to download the recipient profile file.
 
-   ![Data Product](./images/paste-activation-link-in-window.png "")
+   ![Data Product](./images/Paste-activation-link-in-window.png "")
 
 You’ve just **created and published a data product share**—making curated loan data securely available to the Risk team. By defining the share, selecting the right data, and authorizing a recipient, you’ve set up a **governed, reusable pipeline for cross-team collaboration**.
 
