@@ -29,10 +29,6 @@
             "filename": "../../mktplace-subscribe/mktplace-subscribe.md"
         },
         {
-            "title": "Lab 5: Build Your Data Pipeline: Load & Transform Data",
-            "filename": "../../load-transform/load-transform.md"
-        },
-        {
             "title": "Appendix: Explore Data Access and Data Sharing Tools in Autonomous Database",
             "filename": "../../tools/tools.md"
         },
