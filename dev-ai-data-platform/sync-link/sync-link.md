@@ -45,63 +45,64 @@ By the end, you’ll have the skills to turn raw, external data into a seamless 
 
       ![Create Data Product Share](./images/task1-scrn-8.png "Create Data Product Share")
 
-5. Select **LoanApp Customer-extention.csv** from the list, this will take you to the Cloud Object Entity page.
+5. From the list, select **LoanAppcustomer_extension.csv** to open the **Cloud Object Entity** page.
 
       ![Create Data Product Share](./images/click-csv.png "Create Data Product Share")
 
-5. Select the **Load to Table** button and the Load Data page will appear. 
+6. Click **Load to Table**. The **Load Data** page will appear. 
 
       ![Create Data Product Share](./images/task1-scrn-9.png "Create Data Product Share")  
 
-6. Click the **Edit (pencil)** icon, in the lower right corner.  
+7. Click the **Edit (pencil)** icon, in the lower right corner.  
 
       ![Create Data Product Share](./images/task1-scrn-10.png "Create Data Product Share")  
 
-7. In the table section, select **Create Table** from the list of options displayed.  
+8. In the table section, select **Create Table** from the list of options.
 
       ![Create Data Product Share](./images/task1-scrn-11.png "Create Data Product Share")  
 
-8. Enter **CUSTOMER_EXTENTION** for the name of the table. Click the **Close** button. 
+9. Let's change the default name to something more meaningful for our use case. Enter **CUSTOMER_EXTENSION** as the name of the table, then click the **Close**. 
 
       ![Create Data Product Share](./images/task1-scrn-12.png "Create Data Product Share")  
  
-9. Click the **Start** button on the Data Load page.  
+10. Click **Start** on the **Data Load** page.  
 
       ![Create Data Product Share](./images/task1-scrn-13.png "Create Data Product Share")  
 
-10. Click the **Run** button in the popup window, to start a job that loads data from the Cloud Store.  
+11. In the popup window, click **Run** to start the data load job from object storage.
 
       ![Create Data Product Share](./images/run-load.png "Create Data Product Share") 
 
-11. The table will appear on the Table and View Loads page, once the job is completed. To generate a report and review the SQL used for the job, click on the **Report** button.  
+12. Once the job completes, the table appears on the **Table and View Loads** page. Click **Report** to review job details and the SQL used.
 
       ![Create Data Product Share](./images/task1-scrn-14.png "Create Data Product Share")  
 
-12. Click the **Close** button when finished.  
+13. Click **Close** when finished.  
 
       ![Create Data Product Share](./images/task1-scrn-15.png "Create Data Product Share")  
 
-13. To review details about the data in the table using SQL Worksheet, click on the **Query** button.  
+14. To inspect the data in SQL Worksheet, click **Query**.
 
       ![Create Data Product Share](./images/task1-scrn-16.png "Create Data Product Share")  
 
-14. The SQL Worksheet will appear with the query pre-loaded, the query results available, and an analysis of the data set.  
+15. The SQL Worksheet opens with the query pre-loaded, results displayed, and an analysis of the dataset. 
 
       ![Create Data Product Share](./images/task1-scrn-17.png "Create Data Product Share")  
 
-15. Select **Catalog** from the left rail and take note that the **Customer_Extension** table now appears in the Catalog.
+16. Return to **Catalog** in the left rail. You’ll see the **CUSTOMER_EXTENSION** table now listed in the catalog.
 
       ![Create Data Product Share](./images/task1-scrn-18.png "Create Data Product Share")
 
-   **Congratulations you have now loaded your Object Storage discovered in your catalog data into your ADB.**
 
 You’ve just loaded external object storage data directly into your Autonomous Database—turning a static file into a query-ready table. This move helps optimize performance and makes your data ready for analytics, joins, and future products.
 
-   1. From the Data Catalog page with Data Objects selected, make sure the Cloud Object filter is selected, then select **LoanAppCustomer_segment.csv** from the list for the Cloud Object Entity page.
+## Task 2: Link Object Storage Data from Data Catalog to ADB.
+
+   1. From the **Catalog** page, make sure **Data Objects** is selected and the **Cloud Object** filter is active. Then select **LoanAppcustomer_segment.csv** to open the **Cloud Object Entity** page.
 
       ![Create Data Product Share](./images/task2-scrn-1a.png "Create Data Product Share")
 
-   2. Select the **Load to Table** button and the Load Data page will appear.
+   2. Click the **Load to Table** button to open the **Load Data** page.
 
    ![Create Data Product Share](./images/task2-scrn-10a.png "Create Data Product Share")
 
@@ -125,7 +126,7 @@ You’ve just loaded external object storage data directly into your Autonomous 
 
    ![Create Data Product Share](./images/task2-scrn-13.png "Create Data Product Share")
 
-   8. The table will appear on the Table and View Loads page once the job is completed. To review details about the data in the table using SQL Worksheet, click on the **Query** button.
+   8. Once the job completes, the table appears on the **Table and View Loads** page. Click **Query** to review the data using SQL Worksheet.
 
    ![Create Data Product Share](./images/task2-scrn-14.png "Create Data Product Share")
 
