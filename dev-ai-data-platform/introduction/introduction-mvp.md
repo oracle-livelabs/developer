@@ -26,7 +26,10 @@ By unifying SeerEquities’ data, you’ll see how Oracle’s platform enables d
 ✅ Accelerate delivery of high‑quality, consumable data products  
 ✅ Support effective multi‑team collaboration within a secure environment
 
+[](videohub:1_dfmz797x:medium)
+
 Estimated Workshop Time: 3 hours 30 minutes
+
 
 ### **Objectives**
 
