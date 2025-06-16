@@ -96,11 +96,9 @@ You successfully subscribed to a share provider, which is now linked to your Aut
 
       ![Create Data Product Share](./images/editshare.png )
 
-      * Rename the external table to: **SHARED\_LOAN\_DATA\_RISK**
+      * Rename the external table to: **SHARED\_LOAN\_DATA\_RISK**. Click **Close** to proceed
 
       ![Create Data Product Share](./images/select-shared-data-4.png )
-
-      * Click **Close** to proceed
 
 5. Click **Start** to create shared link.
 
@@ -116,13 +114,11 @@ You created an external table from a shared dataset—linking live loan data dir
 
 ## Task 3: Validate ADB Access to Object Storage Data
 
-1. Click the **Report** button for this link job to view details on rows processed and the SQL used.
-
-   Click **Close** when finished.
+1. Click the Report button for this link job to view a report of the total rows processed successfully and failed for the selected table and the SQL used. Click **Close** when done.
 
    ![Create Data Product Share](./images/select-shared-data-1a.png )
 
-2. In the Table and View Loads section, click the external table link **Shared\_Loan\_Data\_Risk** to preview the data. The source for this external table is the **Shared\_Loan\_Data\_Risk\_VW** data share.
+2. In the **Table and View Loads** section, click the external table link named **Shared\_Loan\_Data\_Risk** to preview its data.  Remember, that the source data for this external table is from the **Shared\_Loan\_Data\_Risk\_VW** data share.
 
    ![Create Data Product Share](./images/select-shared-data-2a.png )
 
@@ -151,5 +147,4 @@ This workflow ensures faster risk analysis, smarter decisions, and tighter colla
 
 ## Acknowledgements
 * **Authors** - Eddie Ambler, Otis Barr
-* **Last Updated By/Date** - June 2025, Otis Barr
-
+* **Last Updated By/Date** - Otis Barr, June 2025
