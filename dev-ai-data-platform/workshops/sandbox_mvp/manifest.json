@@ -29,10 +29,6 @@
             "filename": "../../mktplace-subscribe/mktplace-subscribe.md"
         },
         {
-            "title": "Appendix: Explore Data Access and Data Sharing Tools in Autonomous Database",
-            "filename": "../../tools/tools.md"
-        },
-        {
             "title": "Need Help?",
             "description": "Solutions to Common Problems and Directions for Receiving Live Help",
             "filename":"https://oracle-livelabs.github.io/common/labs/need-help/need-help-freetier.md"
