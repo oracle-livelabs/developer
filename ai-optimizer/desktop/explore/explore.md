@@ -80,11 +80,15 @@ The two LLMs availble could be tested right away, in order to understand their b
 
 ![chat](images/chat.jpg)
 
-scroll down the left-side menu to find the **Chat model** menu:
+scroll down the left-side menu to find the **Toolkit** menu:
+
+![toolkit menu](images/toolkit-menu.png)
+
+and then choose the **llama3.1** model: 
 
 ![chat models](images/chatmodel.png)
 
-and, with the **Enable RAG?** check-box unselected, choose the **llama3.1** model and ask generic questions like:
+and ask generic questions like:
 
 ```text
 <copy>
