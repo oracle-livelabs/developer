@@ -102,7 +102,9 @@ In Oracle Database 23ai, how do I convert string text to embedding using PL/SQL?
 </copy>
 ```
 
-> **NOTE**: *if you see a **Database has no Vector Stores. Disabling RAG.** message above, don't panic! That's because you haven't created a vector store yet and thus you can't use the RAG functionality*.
+> **NOTE**: *if you see a **Database has no Vector Stores. Disabling Vector Search.** message above, don't panic! That's because you haven't created a vector store yet and thus you can't use the RAG functionality*.
+
+> **NOTE**: *if you see a **Database not SelectAI Compatible. Disabling SelectAI.** message above, don't panic! That's because you are using a Database that's not compatible with SelectAI*.
 
 As you will probably be able to notice, even if the questions refer to Oracle Database 23ai, the LLM will mention Oracle Database 23c. This is known as **Knowledge Cutoff**, meaning that probably the LLM was trained before Oracle Database 23c was even renamed as 23ai. 
 
@@ -133,4 +135,4 @@ The Optimizer lets you configure the connection to your OCI tenant for retrievin
 ## Acknowledgements
 * **Author** - Lorenzo De Marchis, Developer Evangelist, May 2025
 * **Contributors** - Mark Nelson, John Lathouwers, Corrado De Bari, Jorge Ortiz Fuentes
-* **Last Updated By** - Lorenzo De Marchis, May 2025
+* **Last Updated By** - Lorenzo De Marchis, June 2025
