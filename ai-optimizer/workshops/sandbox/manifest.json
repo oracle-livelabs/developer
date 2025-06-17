@@ -7,7 +7,7 @@
         {
             "title": "Introduction",
             "description": "The Introduction is always first. The title and contents menu title match for the Introduction.",
-            "filename": "../../introduction/introduction.md"
+            "filename": "../sandbox/introduction/introduction.md"
         },
         {
             "title": "Get Started",
@@ -17,31 +17,31 @@
         {
             "title": "Lab 1: Explore the Environment",
             "description": "Lab where you explore the environment and setup the credentials",
-            "filename": "../../explore/explore.md"
+            "filename": "../sandbox/explore/explore.md"
         },
         {
             "title": "Lab 2: Prepare the Vector Store",
-            "filename": "../../prepare/prepare.md"
+            "filename": "../sandbox/prepare/prepare.md"
         },
         {
             "title": "Lab 3: Using Retrieval Augmented Generation",
-            "filename": "../../RAG/RAG.md"
+            "filename": "../sandbox/RAG/RAG.md"
         },
         {
             "title": "Lab 4: Experimenting with Models, Parameters and Techniques",
-            "filename": "../../experimenting/experimenting.md"
+            "filename": "../sandbox/experimenting/experimenting.md"
         },
         {
             "title": "Lab 5: Evaluating Performance",
-            "filename": "../../evaluating/evaluating.md"
+            "filename": "../sandbox/evaluating/evaluating.md"
         },
         {
             "title": "(Optional) Lab 6: Generating Microservice Code",
-            "filename": "../../microservice/microservice.md"
+            "filename": "../sandbox/microservice/microservice.md"
         },
         {
             "title": "(Optional) Lab 7: Using the API Server",
-            "filename": "../../server/server.md"
+            "filename": "../sandbox/server/server.md"
         },
         {
             "title": "Need Help?",
