@@ -26,15 +26,11 @@ To enable the *RAG* functionality, follow these steps:
 
 1. Navigate to the *ChatBot* tab from the left-side menu
 
-2. Clear the history by pressing the **Clear** button, and select the **llama3.1** model for the initial test.
+2. Select the **Vector Search** option from the **Toolkit** section and then select **llama3.1** as the chat model.
     
-    ![clear-model](./images/clear-model.png)
+    ![enable-vector-search](./images/enable-vector-search.png)
 
-3. Scroll down the left-side pane and check the **Enable RAG?** box. 
-
-    ![enable-rag](./images/enable-rag.png)
-
-4. In the **Select Alias** dropdown, choose the `TEST1` vector store table. The remaining fields in the **Vector Store** will be automatically populated, as each one represents a search parameter used to configure the selected vector store. 
+3. In the **Select Alias** dropdown, choose the `TEST1` vector store table. The remaining fields in the **Vector Store** will be automatically populated, as each one represents a search parameter used to configure the selected vector store. 
 
     ![select-vector-store](./images/select-vector-store.png)
 
@@ -91,4 +87,4 @@ You can learn more about RAG by playing with more parameters and prompt techniqu
 ## Acknowledgements
 * **Author** - Lorenzo De Marchis, Developer Evangelist, May 2025
 * **Contributors** - Mark Nelson, John Lathouwers, Corrado De Bari, Jorge Ortiz Fuentes
-* **Last Updated By** - Lorenzo De Marchis, May 2025
+* **Last Updated By** - Lorenzo De Marchis, June 2025
