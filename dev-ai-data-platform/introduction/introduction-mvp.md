@@ -28,7 +28,7 @@ By unifying SeerEquities’ data, you’ll see how Oracle’s platform enables d
 
 [](videohub:1_dfmz797x:medium)
 
-Estimated Workshop Time: 3 hours 30 minutes
+Estimated Workshop Time: 2 hours 30 minutes
 
 
 ### **Objectives**
