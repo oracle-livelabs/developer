@@ -21,27 +21,27 @@
         },
         {
             "title": "Lab 2: Prepare the Vector Store",
-            "filename": "../desktop/prepare/prepare.md"
+            "filename": "../../desktop/prepare/prepare.md"
         },
         {
             "title": "Lab 3: Using Retrieval Augmented Generation",
-            "filename": "../desktop/RAG/RAG.md"
+            "filename": "../../desktop/RAG/RAG.md"
         },
         {
             "title": "Lab 4: Experimenting with Models, Parameters and Techniques",
-            "filename": "../desktop/experimenting/experimenting.md"
+            "filename": "../../desktop/experimenting/experimenting.md"
         },
         {
             "title": "Lab 5: Evaluating Performance",
-            "filename": "../desktop/evaluating/evaluating.md"
+            "filename": "../../desktop/evaluating/evaluating.md"
         },
         {
             "title": "(Optional) Lab 6: Generating Microservice Code",
-            "filename": "../desktop/microservice/microservice.md"
+            "filename": "../../desktop/microservice/microservice.md"
         },
         {
             "title": "(Optional) Lab 7: Using the API Server",
-            "filename": "../desktop/server/server.md"
+            "filename": "../../desktop/server/server.md"
         },
         {
             "title": "Need Help?",
