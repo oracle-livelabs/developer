@@ -84,7 +84,7 @@ scroll down the left-side menu to find the **Toolkit** menu:
 
 ![toolkit menu](images/toolkit-menu.png)
 
-and then choose the **llama3.1** model: 
+select the **LLM Only** option and then choose the **llama3.1** model: 
 
 ![chat models](images/chatmodel.png)
 

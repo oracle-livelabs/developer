@@ -94,4 +94,4 @@ In this case, you will get a smaller number of chunks, since the model supports 
 ## Acknowledgements
 * **Author** - Lorenzo De Marchis, Developer Evangelist, May 2025
 * **Contributors** - Mark Nelson, John Lathouwers, Corrado De Bari, Jorge Ortiz Fuentes
-* **Last Updated By** - Lorenzo De Marchis, May 2025
+* **Last Updated By** - Lorenzo De Marchis, June 2025
