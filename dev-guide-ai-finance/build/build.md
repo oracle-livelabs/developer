@@ -31,7 +31,12 @@ This lab assumes you have:
 ## Task 1: Build the application in Jupyter Notebook
 >💡**Note**: Review Lab 2: Connect to the Development Environment for instructions on accessing JupyterLab.
 
-1. Open a new **Jupyter Notebook** by clicking on **Pyhton(ipykernel)** notebook.
+1. Click the blue "+". This will open the Launcher. 
+
+    ![Open Launcher](./images/launcher.png " ")
+
+
+2. Open a new **Jupyter Notebook** by clicking on **Python(ipykernel)** notebook.
 
     ![Open Jupyter Notebook](./images/open-new-notebook.png " ")
 
@@ -194,7 +199,7 @@ Here’s what we’ll do:
 ![loan](./images/loan-recommendation.png " ")
 
 
-## Task 6: Create a function to create embeddings - Use Oracle Database 23ai's to create vector data 
+## Task 6: Create a function to create embeddings - Use Oracle Database 23ai to create vector data 
 
 To handle follow-up questions, you will enhance the system with an AI Loan Guru powered by Oracle 23ai’s Vector Search and Retrieval-Augmented Generation (RAG). The AI Loan Guru will be able to answer questions about the loan application and provide recommendations based on the data.
 
@@ -424,4 +429,4 @@ You may now proceed to the next lab.
 ## Acknowledgements
 * **Authors** - Francis Regalado Database Product Manager
 * **Contributors** - Kevin Lazarz, Linda Foinding, Kamryn Vinson
-* **Last Updated By/Date** - Francis Regalado, May 2025
+* **Last Updated By/Date** - Francis Regalado, June 2025

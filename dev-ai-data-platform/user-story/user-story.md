@@ -1,7 +1,5 @@
 # 🤖 Demo GenAI Powered App on Oracle Data Platform
 
-#### Estimated Lab Time: 45 minutes
-
 ## **Introduction**
 
 At SeerEquities, loan approvals and risk evaluations need to happen quickly and accurately. But until recently, loan officers spent more time hunting for data than actually using it, while risk teams had to rely on outdated reports from IT to do their job.
@@ -14,11 +12,17 @@ Loan officers and risk analysts can now have access to real-time data products t
 * “Which loan products are experiencing loan defaults?”
 * “Which loan products are generating the most revenue?”
 
-In this lab, you'll explore how the use of data products simplify tasks, speed up decision-making, and allows users to make smarter, data-driven choices. You’ll also get hands-on experience with a GenAI enabled Loan Management Application powered by Oracle Autonomous Database that will allow you to see how a unified data platform boosts productivity across all of the roles in the organization.
+Estimated Time: 45 minutes
+
+### Objectives
+
+In this lab you will:
+- Explore how the use of data products simplify tasks, speed up decision-making, and allows users to make smarter, data-driven choices. 
+- You’ll also get hands-on experience with a GenAI enabled Loan Management Application powered by Oracle Autonomous Database that will allow you to see how a unified data platform boosts productivity across all of the roles in the organization.
 
 ## Task 1: Demo Loan Officer Interaction with Approval Application
 
-A **loan officer** at **SeerEquities** begins their day by reviewing **pending loan applications** to determine which ones are ready for approval. Previously, this process involved manually gathering data from multiple systems—credit scores, transaction histories, and application details—leading to inefficiencies and delays.
+A loan officer at SeerEquities begins their day by reviewing pending loan applications to determine which ones are ready for approval. Previously, this process involved manually gathering data from multiple systems—credit scores, transaction histories, and application details—leading to inefficiencies and delays.
 
 Now, the loan officer logs into the Loan Management Application. With role-based access tailored to their needs, they can instantly view all relevant data in one place. The application uses AI-driven insights to process loan applications and provide approval recommendations that save time and improve approval accuracy.
 
@@ -26,31 +30,23 @@ Now, the loan officer logs into the Loan Management Application. With role-based
 
     ![Click the Start Demo Link](./images/start-demo.png " ")
 
-2.  **Login** to the Loan Management Application as a Loan Officer.
-
-    * Select Role of **Loan Officer**
-    * Enter **Username**
-    * Click on **Login** Button
+2.  Select the **Financial Services** industry. Select the **Approval Officer** role. Enter in a **Username**. Click the **Login** Button.
 
     ![Login](./images/login-loan-officer.png " ")
 
-3. Welcome to the **SeerEquities** Loan Processing dashboard
+3. Welcome to the **SeerEquities** Loan Processing dashboard. Click on **Cust_8001** to process the loan request for Billy Bob.
 
-    * **Click** on **Cust_8001** to process the loan request for Money Mike.
+    ![Homepage](./images/select-billy-bob.png " ")
 
-    ![Homepage](./images/select-money-mike.png " ")
+4. This displays the **Customer Details** page. On this page, you can expand the Customer Details view which uses JSON Duality to be able to update various fields in the underlying tables of the loan application.
 
-4. This displays the **Customer Details** page
+    ![Homepage](./images/billy-bob-customer-details.png " ")
 
-    * On this page, you can expand the Customer Details view which uses JSON Duality to be able to update various fields in the underlying tables of the loan application.
+    After a few seconds the AI Response is displayed on this page, for you to analyze the GenAI powered Recommendations & Profile Analysis of your user's application
 
-    ![Homepage](./images/money-mike-customer-details.png " ")
+    ![Homepage](./images/billy-bob-analysis.png " ")
 
-    * After a few seconds the AI Response is displayed on this page, for you to analyze the GenAI powered Recommendations & Profile Analysis of your user's application
-
-    ![Homepage](./images/money-mike-analysis.png " ")
-
-Profile Analysis Summary
+**Profile Analysis Summary**
 
 Under the Profile Analysis section, the Loan Officer is presented with an AI-generated evaluation that brings together key insights from the applicant's financial profile. The system highlights the top 3 loan recommendations tailored to the applicant’s needs and creditworthiness, each supported by a clear explanation of why it was selected—whether it's based on income stability, repayment history, or risk profile.
 
@@ -58,23 +54,14 @@ The AI also provides a comprehensive analysis, summarizing strengths and potenti
 
 On this page, the AI Chat Bot can be used to ask questions of the data, using natural language. For example, a Loan Officer could ask to see recommendations that delivered the lowest monthly payment with the least amount of money down.
 
-5. Click on the Navigate to Decision button to proceed to the decision-making screen
+5. Click on the **Navigate to Decisions** button to proceed to the decision-making screen.
 
-![Homepage](./images/money-mike-analysis.png " ")
+    ![Homepage](./images/billy-bob-analysis2.png " ")
 
-6. On the decision-making screen, Select the loan that you want to approve from the Loan Recommendations list
 
-![Homepage](./images/money-mike-decision.png " ")
+6. On the decision-making page, select the loan that you want to approve from the Loan Recommendations list. Click the **Save Final Approval & Loan Status** Button. 
 
-![Homepage](./images/money-mike-decision-graph.png " ")
-
-7. Back on the decision-making screen: 
-
-    * Select the loan that you want to approve from the Loan Recommendations list 
-
-    * **Click** on **Save Final Approval & Loan Status** Button 
-
-![Homepage](./images/money-mike-decision.png " ")
+    ![Homepage](./images/billy-bob-decision.png " ")
 
 As the Loan Officer, you have now successfully completed the loan application analysis and approval task and now understand how to leverage real-time data access and AI recommendations to make faster, more informed decisions about the best loan data products to approve for your customers.
 
@@ -103,27 +90,23 @@ Previously, risk officers relied on static reports generated by IT teams—a pro
 
 With this real-time access, the risk officers can proactively identify patterns and mitigate risks before they escalate.
 
-1. To access the demo environment, click View Login Info in the top left corner of the page. Click the Start the Demo link.
+1. To access the demo environment, click **View Login Info** in the top left corner of the page. Click the Start the Demo link.
 
-![Click the Start Demo Link](./images/start-demo.png " ")
+    ![Click the Start Demo Link](./images/start-demo.png " ")
 
-2. Login to the Loan Management Application as a Risk Officer.
+2. Select the **Financial Services** industry. Select the **Risk Officer** role. Enter in a **Username**. Click the **Login** Button.
 
-* Select Role of **Risk Officer**
-* Enter **Username**
-* **Click** on **Login** Button
-
-![Login as Risk Officer](./images/login-risk-officer.png " ")
+    ![Login as Risk Officer](./images/login-risk-officer.png " ")
 
 **<u>On the Risk Officer Landing Page, use the graph display feature to analyze:</u>**
 
 **Loans by loan type and zip/state:** Identify regions with excessive exposure.
 
-🚧 ![Under Construction: Graph Zip for Risk Officer](./images/graph-zip-risk-officer.png " "
+🚧 ![Under Construction: Graph Zip for Risk Officer](./images/graph-zip-risk-officer.png " ")
 
 **Loans by loan type and credit score**: Detect trends in high-risk lending.
 
-🚧 ![Under Construction: Graph Credit for Risk Officer](./images/graph-credit-risk-officer.png " "
+🚧 ![Under Construction: Graph Credit for Risk Officer](./images/graph-credit-risk-officer.png " ")
 
 By completing this task, you’ve seen how Risk Officers can use shared data products and insights to make proactive decisions that safeguard financial stability. 💼📊 
 
@@ -144,7 +127,7 @@ This lab demonstrated how **Oracle’s Data Platform** empowers both Loan Office
 ## Acknowledgements
 
 * **Authors** - Eddie Ambler, Otis Barr, Matt Kowalik
-* **Contributors** - Mike Matthews, Marty Gubar, Francis Regalado, Linda Foinding
-* **Last Updated By/Date** - 04/21/2025
+* **Contributors** - Mike Matthews, Marty Gubar, Francis Regalado, Linda Foinding, Kamryn Vinson
+* **Last Updated By/Date** - Kamryn Vinson, June 2025
 
 Copyright (C) Oracle Corporation.

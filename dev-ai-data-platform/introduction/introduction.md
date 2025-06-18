@@ -24,6 +24,8 @@ By the end of this workshop, you'll understand how **Oracle’s Data Platform** 
 * ✅ Enhance collaboration  
 * ✅ Drive business success through data driven decision making  
 
+[](youtu.be/xC0MTbdfR-I?si=kL9NrUw6QAL2edMv)
+
 ### **Objectives**
 
 This workshop is divided into two key sections, each designed to provide a unique, hands-on experience with **Oracle’s Data Platform**:
@@ -53,9 +55,8 @@ This lab assumes you have:
 * An Oracle account to submit your a LiveLabs Sandbox reservation.
 * Basic knowledge of Oracle Database.
 
-___
 
-### **Key Terms**
+## Key Terms
 
 ___
 
