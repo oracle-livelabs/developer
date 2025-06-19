@@ -28,7 +28,7 @@ Let's check if the DB is correctly connected.
 
 	![Navigate to the Databases tab](images/database-navigation.jpg)
 
-1. To configure the Oracle Database 23ai Free, you will need to enter the credentials:
+2. To configure the Oracle Database 23ai Free, you will need to enter the credentials:
 
    * Enter the Database Username
    * Enter the Database Connection String
@@ -39,10 +39,10 @@ Let's check if the DB is correctly connected.
 
    ![Database configuration](images/database-config.png)
 
-1. Since you are using an Autonomous Database, you can activate the SelectAI functionality. You will need to create a [Select AI](https://www.oracle.com/it/autonomous-database/select-ai/) profile and eventually you'll find the list of active profiles within the sandbox:
+3. Since you are using an Autonomous Database, you can activate the SelectAI functionality. You will need to create a [Select AI](https://www.oracle.com/it/autonomous-database/select-ai/) profile and eventually you'll find the list of active profiles within the sandbox:
 
    ![Select AI Profiles](images/selectai-profiles.png)
-
+   
 ## Task 2: Configure LLMs
 
 Let's check the models available for use. You'll need to navigate to the *Models* tab:
