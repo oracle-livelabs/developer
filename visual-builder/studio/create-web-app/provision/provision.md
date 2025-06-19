@@ -71,7 +71,7 @@ Provision a VB Studio instance to develop and deploy a web app. You can create o
 
    b. Click **Create Compartment**.
 
-      ![This image shows a list of existing compartments on the Compartments page. The Create Compartment button is highlighted.](images/oci-compartments-create-vbs.png "")
+      ![This image shows a list of existing compartments on the Compartments page. The Create Compartment button is highlighted.](images/oci-compartments-create.png "")
 
    c. Enter a name for the compartment (for example, `VBStudioCompartment`), add a description (for example, `VBStudioCompartment for workshop`), and leave the Parent Compartment set to the default root compartment. Click **Create Compartment**.
 
