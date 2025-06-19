@@ -20,7 +20,7 @@ This lab assumes you have:
 * An Oracle Database 23ai up and running
 * Completed the *Get Started* Lab
 
-## Task 1: Set the DB connection
+## Task 1: Check the DB connection
 
 Let's check if the DB is correctly connected.
 
@@ -30,11 +30,13 @@ Let's check if the DB is correctly connected.
 
 2. To configure the Oracle Database 23ai Free, you will need to enter the credentials:
 
-   * Enter the Database Username: `WALKTHROUGH`
-   * Enter the Database Password for the database user: `OrA_41_OpTIMIZER`
-   * Enter the Database Connection String: `//localhost:1521/FREEPDB1`
+   * Enter the Database Username
+   * Enter the Database Password for the database user
+   * Enter the Database Connection String
    * Save
    
+   Since you are following the Sandbox version of this LiveLab, you should find everyting set-up already:
+
    ![Database configuration](images/database-config.png)
 
 3. If you are using an Autonomous Database and have any SelectAI profile active, you'll find the list of Select AI profiles to activate:
@@ -55,18 +57,6 @@ Let's check the models available for use. You'll need to navigate to the *Models
 
      ![embeddings](images/emb.png)
 
-   Let's add another LLM to the Ollama models and enable it. Open a terminal a window and follow these steps:
-
-  * Pull the llama3.2 LLM:
-
-      ```bash
-      <copy>
-         podman exec -it ollama ollama pull llama3.2
-      </copy>
-      ```
-  * Now, you will need to enable it in the model list. Go back to the *Models* tab, under the *Language Models* section and press the *Add* button. Now fill in the form that just appeared with the values shown in the following snapshot:
-
-      ![new_llama32](images/addllama32.png)
 
   * (optional) If you are willing to use models by OpenAI, you will need to configure your **OPENAI API KEY**. To configure one, click the *Edit* button beside the model you would like to use (e.g., **gpt-4o-mini**) and add your own API key in the corresponding box:
 
