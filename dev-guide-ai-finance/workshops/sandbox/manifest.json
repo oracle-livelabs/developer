@@ -38,11 +38,6 @@
             "filename": "../../ai-exercise/ai-vector-search-challenge-answers.md"
         },
         {
-            "title": "How-to Run Application Locally",
-            "description": "This is a step-by-step guide showcasing how the demo instance is navigated",
-            "filename": "../../local-tenancy/local-tenancy.md"
-        },
-        {
             "title": "Architecture & Workshop Features",
             "description": "Review the physical and logical architecture behind the application",
             "filename": "../../app-architecture/app-architecture.md"
