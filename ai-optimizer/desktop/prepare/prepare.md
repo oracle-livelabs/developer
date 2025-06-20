@@ -23,7 +23,7 @@ In the *Split/Embed* tab, the framework allows you to upload various types of do
 
 1. Navigate to the *Split/Embed* tab
 
-	![split-embed-interface](./images/split-embed.jpg)
+    ![split-embed-interface](./images/split-embed.jpg)
 
 2. Choose the embedding model and its parameters
 
@@ -94,4 +94,4 @@ In this case, you will get a smaller number of chunks, since the model supports 
 ## Acknowledgements
 * **Author** - Lorenzo De Marchis, Developer Evangelist, May 2025
 * **Contributors** - Mark Nelson, John Lathouwers, Corrado De Bari, Jorge Ortiz Fuentes
-* **Last Updated By** - Lorenzo De Marchis, June 2025
+* **Last Updated By** - Lorenzo De Marchis, May 2025

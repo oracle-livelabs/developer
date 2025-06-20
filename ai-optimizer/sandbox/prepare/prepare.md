@@ -23,7 +23,7 @@ In the *Split/Embed* tab, the framework allows you to upload various types of do
 
 1. Navigate to the *Split/Embed* tab
 
-	![split-embed-interface](./images/split-embed.jpg)
+    ![split-embed-interface](./images/split-embed.jpg)
 
 2. Choose the embedding model and its parameters
 
@@ -60,14 +60,20 @@ In the *Split/Embed* tab, the framework allows you to upload various types of do
 
 ## Task 2: Inspect the Vector DB
 
-Now that you've embedded your document, you can query the content of the Vector Store. In this example we will be using the SQL Developer plugin for VS Code, in order to connect to Oracle Database 23ai.    
+Now that you've embedded your document, you can query the content of the Vector Store. In the Cloud tenancy that has been created, open the hamburger menu on the upper left side and navigate to *Oracle Database*:
 
-In your VS Code IDE, click on the SQL Developer plugin icon to use it. Then, open a new SQL script and execute this sql command:
+![cloud-navigation](images/cloud-navigation.png)
+
+Click on *Autonomous Database* and you will get prompted with the Autonomous Database that you are using within the Optimizer. Click on it and you will get redirected to the Admin page of the Autonomous Database.
+
+![adb](images/adb.png)
+
+Click on the *Database Action* dropdown menu and press the *SQL* button. A new window will be opened and you be redirected to the SQL playground. Run this query:
 
 ```sql 
-select * from WALKTHROUGH.TEST1_MXBAI_EMBED_LARGE_512_103_COSINE_HNSW;
+select * from ADMIN.TEST1_MXBAI_EMBED_LARGE_512_103_COSINE_HNSW;
 ```
-You will then retrieve the rows from the newly created table.
+And you will then retrieve the rows from the newly created table.
 
   ![query-vector-db](images/query-vector-db.png)
 
@@ -94,4 +100,5 @@ In this case, you will get a smaller number of chunks, since the model supports 
 ## Acknowledgements
 * **Author** - Lorenzo De Marchis, Developer Evangelist, May 2025
 * **Contributors** - Mark Nelson, John Lathouwers, Corrado De Bari, Jorge Ortiz Fuentes
-* **Last Updated By** - Lorenzo De Marchis, May 2025
+* **Last Updated By** - Lorenzo De Marchis, June 2025
+

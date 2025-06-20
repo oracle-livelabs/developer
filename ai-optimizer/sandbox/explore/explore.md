@@ -42,7 +42,7 @@ Let's check if the DB is correctly connected.
 3. Since you are using an Autonomous Database, you can activate the SelectAI functionality. You will need to create a [Select AI](https://www.oracle.com/it/autonomous-database/select-ai/) profile and eventually you'll find the list of active profiles within the sandbox:
 
    ![Select AI Profiles](images/selectai-profiles.png)
-   
+
 ## Task 2: Configure LLMs
 
 Let's check the models available for use. You'll need to navigate to the *Models* tab:
@@ -108,7 +108,7 @@ The Optimizer lets you configure the connection to your OCI tenant for retrievin
 
 2. Insert your OCI credentials. Detailed information on how to get the required credentials is available in the [Oracle Cloud Infrastructure Documentation](https://docs.oracle.com/en-us/iaas/Content/API/Concepts/apisigningkey.htm#Required_Keys_and_OCIDs).
 
-   If you have previously created a `.oci/config` file, the framework will automatically read this file at startup and load the credentials from the Default profile for authentication. To create one, follow the instructions available in the [Quickstart Documentation](https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/cliinstall.htm#Quickstart).
+   In this livelab, you will have the credentials fields automatically filled to connect to the tenancy that has been deployed at startup, but you can also connect to any other OCI tenancy you have access to.
 
    After entering your credentials, click the `Save` button. If the credentials are correct, a green confirmation pop-up will appear, indicating successful authentication to your tenancy.
 
