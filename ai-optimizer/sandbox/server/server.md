@@ -26,7 +26,6 @@ Navigate to the *API Server* tab from the left-hand pane:
 
 You’ll see a `Restart Server` button (in red). This is because the API Server starts automatically with the AI Optimizer. Follow the steps below to edit the server configuration and restart it:
 
-* Change the API Server Port to 8001
 * Update the API Server Key (e.g., abcd, or any value you prefer)
 * Click the Restart Server button to apply the new parameters
 
@@ -42,7 +41,7 @@ You can inspect the configuration of the `server` client by expanding the `{...}
 
 ## Task 3: Perform an API call to the server
 
-Now that the API Server is running, you can perform API calls against it.
+Now that the API Server is running, you can perform API calls against it. (You might have to wait a couple minutes after the `Restart Server` performed in task 1)
 
 * Open a terminal window in your preferred IDE
 
@@ -50,8 +49,8 @@ Now that the API Server is running, you can perform API calls against it.
 
     ```bash
     <copy>
-    #Bearer Key to be set accordingly to task 1.
-    curl -X POST "http://localhost:8001/v1/chat/completions" \
+    #VM ip address and Bearer Key to be set accordingly.
+    curl -X POST "http://your_VM_ip_address:8000/v1/chat/completions" \
      -H "Content-Type: application/json" \
      -H "Authorization: Bearer abcd" \ 
      -H "client: server" \

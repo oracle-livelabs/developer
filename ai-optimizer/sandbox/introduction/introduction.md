@@ -13,7 +13,6 @@ Estimated Time: 120 minutes
 ### Objectives
 
 In this workshop, you will learn how to:
-* Install the **Oracle AI Optimizer and Toolkit** (the **AI Optimizer**)
 * Explore the AI Optimizer environment
 * Embed documents in a vector format within **Oracle Database 23ai**
 * Use Retrieval Augmented Generation (**RAG**) techniques
@@ -26,15 +25,10 @@ In this workshop, you will learn how to:
 
 This lab assumes you have:
 
-* An **Oracle Database 23ai** up and running (see ["Get Started"](https://markxnelson.github.io/developer/ai-optimizer/workshops/desktop/index.html?lab=get-started) to get one) 
-* An Integrated Development Editor (like Visual Studio Code)
-* Python 3.11 (for running Bare-Metal)
-* Container Runtime e.g. docker/podman (for running in a Container)
-* Access to an Embedding and Chat Model:
-  * On-Premises Models
-  * (optional) API Keys for Third-Party Models (e.g., OpenAI API Keys that you can get [here](https://platform.openai.com/settings/organization/api-keys))
+* An Integrated Development Editor (like Visual Studio Code) or a regular CLI
+* (optional) API Keys for Third-Party Models (e.g., OpenAI API Keys that you can get [here](https://platform.openai.com/settings/organization/api-keys))
 
 ## Acknowledgements
 * **Author** - Lorenzo De Marchis, Developer Evangelist, May 2025
 * **Contributors** - Mark Nelson, John Lathouwers, Corrado De Bari, Jorge Ortiz Fuentes
-* **Last Updated By** - Lorenzo De Marchis, May 2025
+* **Last Updated By** - Lorenzo De Marchis, June 2025
