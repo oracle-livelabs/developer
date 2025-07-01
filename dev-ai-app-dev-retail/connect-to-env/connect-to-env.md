@@ -2,7 +2,7 @@
 
 ## Introduction
 
-In this lab, we will show you how to connect to the development environment. We are using JupyterLab as our development environment, which is a web-based application that allows you to write and run code on your browser. You can use this environment to create notebooks, edit files, and run Python scripts.
+In this lab, you'll learn how to access the web-based Jupyter Lab development environment, where you can write and run Python code directly in your browser. You'll log in, create notebooks, and get ready to start coding in a hands-on environment.
 
 Estimated Time: 5 minutes
 
@@ -36,7 +36,7 @@ To get things started we invite you to watch this video and see the lab in actio
 
 ## Task 3: Get familiar with Jupyter Notebooks
 
-You will use a Jupyter Notebook in JupyterLab to build and test the loan recommendation system. If you are new to notebooks, the following tips will help you get started and work smoothly.
+You will use a Jupyter Notebook in JupyterLab to build and test the return authorization system. If you are new to notebooks, the following tips will help you get started and work smoothly.
 
 1. **Executing Code Blocks**: You can run code in two simple ways: press **Shift+Enter** to execute and move to the next cell, or click the **Play/Execute** button in the menu bar at the top of this tab. Both methods work interchangeably.
 
@@ -48,6 +48,9 @@ You will use a Jupyter Notebook in JupyterLab to build and test the loan recomme
 
     ![JupyterLab blocks](./images/block.png " ")
 
+## Conclusion
+
+In this lab you logged into the **IDE Development Environment** for Jupyter Labs. You reviewed different elements from the environment like **File Browser** and **Launcher**. Lastly, you were introduced to concepts to allow you to get started running code smoothly like **executing code blocks** and **outputs and warnings**. 
 
 
 ## Acknowledgements

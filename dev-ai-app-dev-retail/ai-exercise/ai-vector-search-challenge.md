@@ -4,15 +4,15 @@
 
 **Welcome to the Code with AI Vector Search Challenge!**
 
-This lab guides you through building a loan matching feature for a financial app using Similarity Search in Oracle Database 23ai. You will fix and complete a Jupyter Notebook to implement AI Vector Search, enabling the app to find loan offers that closely match user profiles based on vector similarity.
+In this lab, you upgrade a retail returns portal by adding a similar return search powered by AI Vector Search in Oracle Database 23ai. Working in a Jupyter Notebook, you’ll finish partially written Python that vectorizes product images, damage descriptions, and order notes so a new request can be matched to semantically similar past returns. The exercise shows how vector search spots fraud patterns and fast track approvals far better than basic keyword filters.
 
 ![Similarity Search](./images/similarity-search.png " ")
 
-At SeerEquites, the data science team is building a smarter loan recommendation system using vector similarity. They started implementing a feature that vectorizes loan descriptions and matches them to user queries—**but the code is incomplete**. ❗Key sections are marked (**"CHANGES GO HERE"**) and it is up to you to finish the job and make the feature work.❗
+At Seer Retail, the data science team is building a smarter return recommendation system using vector similarity. They started implementing a feature that vectorizes return packages and matches them to user queries—**but the code is incomplete**. ❗Key sections are marked (**"CHANGES GO HERE"**) and it is up to you to finish the job and make the feature work.❗
 
 **Why AI Vector Search?**
 
-Keyword searches often miss context. For example, "Affordable Housing Loan" and "Low-Income Home Loan" mean similar things but use different terms. AI Vector Search solves this by converting text into vectors (embeddings) that capture meaning. With Oracle Database 23ai, you will use similarity search to match user queries to loan descriptions based on semantics, not just keywords. If you're ready to dive in, proceed with this lab and start coding. If you prefer a more guided approach with a detailed walkthrough, you can continue to Lab 5b Step-by-step: Code with AI Vector Search for step-by-step instructions.
+Keyword searches often miss context. For example, "Damaged Return" and "Missing Returns" mean similar things but use different terms. AI Vector Search solves this by converting text into vectors (embeddings) that capture meaning. With Oracle Database 23ai, you will use similarity search to match user queries to loan descriptions based on semantics, not just keywords. If you're ready to dive in, proceed with this lab and start coding. If you prefer a more guided approach with a detailed walkthrough, you can continue to Lab 5b Step-by-step: Code with AI Vector Search for step-by-step instructions.
 
 Good luck, and enjoy the process. Let’s get coding!
 
@@ -28,7 +28,7 @@ In this lab, you will:
 
 - Vectorize loan data from the `MOCK_LOAN_DATA` table into `LOAN_CHUNK` table.
 - Verify the data was vectorized.
-- Implement a similarity search to find the top 5 matching loans based on a user’s query.
+- Implement a similarity search to find the top 5 matching returns based on a user’s query.
 
 ### Prerequisites:
 
@@ -45,7 +45,7 @@ This lab assumes you have:
 
 ## Task 1: Challenge requirements
 
-The data science team at SeerEquites has provided a Jupyter notebook called `ai_vector_search_challenge.ipynb` with four key code cells. The first cell sets up the environment, but the next three cells which are responsible for vectorizing data, verifiying it and performing similarity search contain errors marked as ❗**"CHANGES GO HERE"**❗. Your job is to fix these cells in order to make the feature work. The notebook will:
+The data science team at Seer Retail has provided a Jupyter notebook called `ai_vector_search_challenge.ipynb` with four key code cells. The first cell sets up the environment, but the next three cells which are responsible for vectorizing data, verifiying it and performing similarity search contain errors marked as ❗**"CHANGES GO HERE"**❗. Your job is to fix these cells in order to make the feature work. The notebook will:
 
 - **Connect to the database and import the necessary libraries and drivers.**
 - **Vectorize the `loan_type` column from the `MOCK_LOAN_DATA` table into the `LOAN_CHUNK` table.**
@@ -140,7 +140,7 @@ However, the SQL `INSERT` statement has missing code where the vector is generat
     </copy>
     ```
 
-2. ❗Look for the lines with **(CHANGES GO HERE)** inside the `INSERT statement:❗
+2. ❗Look for the lines with **(CHANGES GO HERE)** inside the INSERT statement:❗
 
     ![Second code cell](./images/vectorize-loan-data.png " ") 
 
@@ -209,7 +209,7 @@ The third function verifies vectorization by querying the `LOAN_CHUNK` table for
 
 ## Task 6: Implement similarity search
 
-The fourth code block is the core of the challenge: letting users enter a loan description and retrieve the top 5 most similar loans. The function looking\_for_similar\_loans(query) should:
+The fourth code block is the core of the challenge: letting users enter a return description and retrieve the top 5 most similar returns. The function looking\_for_similar\_loans(query) should:
 
 - Convert the user’s input into a vector.
 
@@ -339,16 +339,18 @@ The fourth code block is the core of the challenge: letting users enter a loan d
     (**Note:** Results may vary.)
 
 
+## Conclusion
+
 **Congratulations, you have successfully completed the AI Vector Search Challenge!** 
 
 You have successfully:
 
 - Connected to Oracle Database 23ai.
-- Vectorized loan descriptions into embeddings.
+- Vectorized return descriptions into embeddings.
 - Verified the stored data.
-- Built a Similarity Search to match user queries to loans.
+- Built a Similarity Search to match user queries to returns.
 
-Fixing the code allowed SeerEquites to recommend loans based on meaning, not keywords, using AI Vector Search in Oracle Database 23ai. You learned to generate embeddings, query vectors, and integrate AI with SQL—skills you can apply to other projects.
+Fixing the code allowed Seer Retail to recommend return based on meaning, not keywords, using AI Vector Search in Oracle Database 23ai. You learned to generate embeddings, query vectors, and integrate AI with SQL—skills you can apply to other projects.
 
 ## Learn More
 
