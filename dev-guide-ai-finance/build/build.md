@@ -31,7 +31,12 @@ This lab assumes you have:
 ## Task 1: Build the application in Jupyter Notebook
 >💡**Note**: Review Lab 2: Connect to the Development Environment for instructions on accessing JupyterLab.
 
-1. Open a new **Jupyter Notebook** by clicking on **Pyhton(ipykernel)** notebook.
+1. Click the blue "+". This will open the Launcher. 
+
+    ![Open Launcher](./images/launcher.png " ")
+
+
+2. Open a new **Jupyter Notebook** by clicking on **Python(ipykernel)** notebook.
 
     ![Open Jupyter Notebook](./images/open-new-notebook.png " ")
 
@@ -170,6 +175,9 @@ Here’s what we’ll do:
         prompt = f"""<s>[INST] <<SYS>>You are a Loan Approver AI. Use only the provided context to evaluate the applicant’s profile and recommend loans. Format results as plain text with numbered sections (1. Comprehensive Evaluation, 2. Top 3 Loan Recommendations, 3. Recommendations Explanations, 4. Final Suggestion). Use newlines between sections.</SYS>> [/INST]
         [INST]Available Loan Options:\n{available_loans_text}\nApplicant's Full Profile:\n{customer_profile_text}\nTasks:\n1. Comprehensive Evaluation\n2. Top 3 Loan Recommendations\n3. Recommendations Explanations\n4. Final Suggestion</INST>"""
 
+        print("Generating AI response...")
+        print(" ")
+        
         genai_client = oci.generative_ai_inference.GenerativeAiInferenceClient(config=oci.config.from_file(os.getenv("OCI_CONFIG_PATH", "~/.oci/config")), service_endpoint=os.getenv("ENDPOINT"))
         chat_detail = oci.generative_ai_inference.models.ChatDetails(
             compartment_id=os.getenv("COMPARTMENT_OCID"),
@@ -194,7 +202,7 @@ Here’s what we’ll do:
 ![loan](./images/loan-recommendation.png " ")
 
 
-## Task 6: Create a function to create embeddings - Use Oracle Database 23ai's to create vector data 
+## Task 6: Create a function to create embeddings - Use Oracle Database 23ai to create vector data 
 
 To handle follow-up questions, you will enhance the system with an AI Loan Guru powered by Oracle 23ai’s Vector Search and Retrieval-Augmented Generation (RAG). The AI Loan Guru will be able to answer questions about the loan application and provide recommendations based on the data.
 
@@ -424,4 +432,4 @@ You may now proceed to the next lab.
 ## Acknowledgements
 * **Authors** - Francis Regalado Database Product Manager
 * **Contributors** - Kevin Lazarz, Linda Foinding, Kamryn Vinson
-* **Last Updated By/Date** - Francis Regalado, May 2025
+* **Last Updated By/Date** - Francis Regalado, June 2025
