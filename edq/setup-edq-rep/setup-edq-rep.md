@@ -160,7 +160,7 @@ Now that we have created a project, the next step is creating a Data Store. A Da
     ```
     Database host: localhost
     Port: 1521
-    Database name: orcl
+    Database name: orclpdb
     Name type: Service
     User name: EDQ_SRC
     Password: oraedq
