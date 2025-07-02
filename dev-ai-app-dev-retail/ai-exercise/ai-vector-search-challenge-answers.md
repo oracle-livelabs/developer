@@ -4,15 +4,15 @@
 
 **Welcome to the Code with AI Vector Search Challenge!**
 
-In this lab, you will use Oracle Database 23ai to build a loan matching feature for a financial application. By implementing similarity search, you will match user queries to loan descriptions based on meaning—**not just keywords**.
+In this lab, you upgrade a retail returns portal by adding a similar return search powered by AI Vector Search in Oracle Database 23ai. Working in a Jupyter Notebook, you’ll finish partially written Python that vectorizes product images, damage descriptions, and order notes so a new request can be matched to semantically similar past returns. The exercise shows how vector search spots fraud patterns and fast track approvals far better than basic keyword filters.
 
 ![Similarity Search](./images/similarity-search.png " ")
 
-At SeerEquites, the data science team is building a loan recommendation system that goes beyond keyword matching. They are using AI Vector Search to understand meaning in loan descriptions—for example, linking "Affordable Housing Loan" to "Low-Income Home Loan." In this lab, you will complete their Similarity Search feature using Oracle Database 23ai, which converts text into embeddings and uses cosine similarity to find conceptually similar loans.
+At Seer Retail, the data science team is building a return recommendation system that goes beyond keyword matching. They are using AI Vector Search to understand meaning in return descriptions—for example, linking "Damaged Return" to "Missing Return." In this lab, you will complete their Similarity Search feature using Oracle Database 23ai, which converts text into embeddings and uses cosine similarity to find conceptually similar returns.
 
 **Why AI Vector Search?**
 
-Unlike keyword search, AI Vector Search captures meaning. For example, 'Military Veteran Loan' and 'Veteran Home Loan' use different words but express similar ideas. Oracle Database 23ai converts loan descriptions into vectors, compares their meanings, and ranks results by similarity for more accurate recommendations.
+Unlike keyword search, AI Vector Search captures meaning. For example, 'Tampered Item' and 'Damaged Item' use different words but express similar ideas. Oracle Database 23ai converts return descriptions into vectors, compares their meanings, and ranks results by similarity for more accurate recommendations.
 
 Good luck, and enjoy the process. Let’s get coding!
 
@@ -29,7 +29,7 @@ In this lab, you will:
 - Connect to Oracle Database 23ai and set up the environment.
 - Vectorize loan data from the `MOCK_LOAN_DATA` table into `LOAN_CHUNK`.
 - Verify the data was vectorized.
-- Run a similarity search to find the top 5 loans matching a user’s query.
+- Run a similarity search to find the top 5 returns matching a user’s query.
 
 ### Prerequisites:
 
@@ -51,7 +51,7 @@ The data science team at SeerEquites has provided a Jupyter Notebook called `ai_
 - **Connect to the database and import the necessary libraries and drivers.**
 - **Vectorize the `loan_type` column from the `MOCK_LOAN_DATA` table into the `LOAN_CHUNK` table.**
 - **Verify the vectorized data by displaying an output.**
-- **Implement a Similarity Search to match a user's query to loans.**
+- **Implement a Similarity Search to match a user's query to returns.**
 
 ## Task 2: Create a new Jupyter Notebook
 
@@ -160,12 +160,12 @@ The second cell vectorizes loan descriptions from the `MOCK_LOAN_DATA` table, st
     ```
     Vectorized 'loan_data' from 'MOCK_LOAN_DATA' and stored in 'LOAN_CHUNK'.
     ```
-    - **This means the loan descriptions are now vectors, ready for similarity search.**
+    - **This means the return descriptions are now vectors, ready for similarity search.**
 
 
 ## Task 4: Verify the vectorized data
 
-The third code block checks that the vectorization worked by querying the first three entries in LOAN_CHUNK. This lets you see the stored loan data, ensuring it’s ready for the next step.
+The third code block checks that the vectorization worked by querying the first three entries in LOAN_CHUNK. This lets you see the stored return data, ensuring it’s ready for the next step.
 
 1. Create a new cell and copy and paste the following code into it:
 
@@ -280,7 +280,7 @@ The fourth code block ties it all together. It lets users enter a loan descripti
         - Joins **`LOAN_CHUNK`** and **`MOCK_LOAN_DATA`** to get loan details.
         - Filters for non-null vectors and CHUNK_ID >= 1000.
         - Orders the results by **`VECTOR_DISTANCE`** using cosine similarity to find the closest matches.
-        - Limits the results to display the top 5 loans.
+        - Limits the results to display the top 5 returns.
 
             ![Section of code that vectorizes the query](./images/fourth-cell-sql.png " ")
 
@@ -320,12 +320,13 @@ The fourth code block ties it all together. It lets users enter a loan descripti
 
     (**Note**: Results may vary.)
 
-    - This shows the top 5 loans that are most similar in meaning to your query, even if the exact words differ.
+    - This shows the top 5 returns that are most similar in meaning to your query, even if the exact words differ.
 
 4. Want to keep exploring? Try:
     - Entering different queries, like "Veteran Loan" or "Low-Income Housing," to see how results change.
     - Change Cosine to Euclidean, Dot, Manhattan or any of the other vector similarities and see how the results vary.
 
+## Conclusion
 **Congratulations, you have successfully completed the AI Vector Search Challenge!** 
 
 You have successfully:
@@ -333,7 +334,7 @@ You have successfully:
 - Connected to Oracle Database 23ai.
 - Vectorized loan descriptions into embeddings.
 - Verified the stored data.
-- Built a Similarity Search to match user queries to loans.
+- Built a Similarity Search to match user queries to returns.
 
 By completing this challenge, you’ve seen how Oracle 23ai AI Vector Search transforms text into vectors and finds meaningful matches.
 
