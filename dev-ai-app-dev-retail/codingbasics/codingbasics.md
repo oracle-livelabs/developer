@@ -2,7 +2,7 @@
 
 ## Introduction
 
-In this hands-on lab, you will learn the basics of working with Oracle Database 23ai using Python. You will connect to the database with both `oracledb` and `pymongo`, create and query tables, and build JSON Duality Views. You will also explore Oracle’s Mongo API to query and update data using a familiar document model. For organizations already using MongoDB-like applications, the Oracle MongoDB API enables a smoother transition and integration with existing code, tools, or drivers—while consolidating everything in Oracle’s converged platform.
+In this hands-on lab, you'll use Python to interact with Oracle Database 23ai - connecting with both `oracledb` and `pymongo`, creating tables, querying data, and building JSON Duality Views. You'll also explore Oracle’s Mongo API to query and update data using a document-based approach, making it easy to integrate with existing MongoDB-style apps. This lab is ideal for those with basic Python and Oracle knowledge and builds on the setup from Lab 2.
 
 Estimated Time: 30 minutes
 
@@ -419,7 +419,7 @@ Next, let's update some data in our database using MongoDB syntax. Let's write a
 
 The final step in our basic coding tour with Python and the Oracle Database 23ai is to query the two relational tables we created earlier. We just updated the JSON Duality view, so let's run a query on it to see if the changes were reflected. Remember that we created two functions in the beginning of this lab: `query_customers()` and `query_orders()`. Let's use these functions to get our data from MongoDB and update it with the new email address.
 
-1. First, run the ``query_customers()` function in a new cell
+1. First, run the `query_customers()` function in a new cell
 
     ```python
     <copy>
@@ -478,7 +478,7 @@ The final step in our basic coding tour with Python and the Oracle Database 23ai
 
     🔴 **`df.head()`** - This is a method that returns that returns the result of the query including the column names. 
 
-## Summary
+## Conclusion
 
 In this lab, we learned how to use Python and Oracle's Python driver `oracledb` to interact with Oracle Database 23ai's new features. You learned how to user the `cursor` object to execute SQL queries. Using the `cursor` object, you created a **JSON Duality View** and you even used some JSON functions to query documents using SQL syntax. Then, you also learned how to connect to the database using `pymongo` and retrieve data from a table in the database using **MongoDB syntax**. You created functions to update the **JSON Duality View** and you learned how these updates are also reflected in the underlying relational database tables.
 

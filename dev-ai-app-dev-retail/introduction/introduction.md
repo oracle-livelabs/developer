@@ -6,7 +6,7 @@
 
 Generative AI and Oracle Database 23ai makes it possible to unlock deeper insights, faster—directly within your database.
 
-In this hands-on workshop, you’ll build a finance-focused GenAI solution using Oracle Database 23ai. 
+In this hands-on workshop, you’ll build a retail-focused GenAI solution using Oracle Database 23ai. 
 
 To get things started we invite you to watch the introduction video to see the demo in action:
 
@@ -17,7 +17,7 @@ You will:
 
   *	Combine your **enterprise data with large language models (LLMs)** using Retrieval-Augmented Generation (RAG) to answer natural language questions with context-aware accuracy.
 
-  * Automate real-world financial workflows, like loan approvals, by **embedding and querying unstructured data** in real time.
+  * Automate real-world retail workflows, like return authorizations, by **embedding and querying unstructured data** in real time.
 
 By the end of this workshop, you’ll understand how Oracle Database 23ai helps financial organizations:
 
@@ -57,11 +57,11 @@ In lab 4, you will learn how to **implement a working example of retrieval-augme
 
 #### ➡️ **Start experimenting!**
 
-You can also experiment with the code in your own environment. The workshop environment is flexible and allows you try out different things: Start building your own version of the loan approval application!
+You can also experiment with the code in your own environment. The workshop environment is flexible and allows you try out different things: Start building your own version of the return authorization application!
 
 ### Objectives
 
-* Learn how Oracle Database 23ai capabilities can be used to automate and enhance the loan approval process
+* Learn how Oracle Database 23ai capabilities can be used to automate and enhance the return authorization process
 
 * Start coding with Python and Oracle's Python driver `oracledb`
 

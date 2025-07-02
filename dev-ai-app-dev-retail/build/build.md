@@ -2,7 +2,7 @@
 
 ## Introduction
 
-In this lab, you will build a loan recommendation system powered by Oracle Database 23ai and OCI Generative AI. You will connect to a Oracle Database 23ai, explore customer data, extract relevant insights, and use a Large Language Model (LLM) to generate personalized loan suggestions. The system combines AI with OCI Generative AI to provide personalized loan recommendations. This system integrates AI capabilities with Oracle's robust database technology to deliver targeted financial recommendations.
+In this lab, you build a complete return recommendation engine with Oracle Database 23ai and OCI Generative AI. Connect to the database, explore order and image data, and invoke a large language model to generate personalized return decisions and policy explanations. Building on earlier exercises, you’ll apply Python to deliver a fully integrated, AI-powered retail returns application.
 
 This lab uses some of the basic coding samples you created in lab 3, such as cursor.execute and more.
 
@@ -15,8 +15,8 @@ To get things started we invite you to watch this video and see the lab in actio
 
 ### Objectives
 
-* Build the complete loan approval application as seen in lab 1
-* Use OCI Generative AI to generate personalized loan recommendations
+* Build the complete return authorization application as seen in lab 1
+* Use OCI Generative AI to generate personalized risk score and return recommendations
 * Use Python to connect to an Oracle Database 23ai instance and run queries
 * Explore customer data and extract relevant information
 
@@ -139,25 +139,25 @@ With the database ready, you will query customer data from the clients_dv JSON d
 
     ![Fetch customer](./images/fetch-customer.png " ")
 
-If you completed Lab 1: Run the Demo earlier, this is what gets printed out when the Loan Officer clicks on CUST 1000. You just built it, well done!
+If you completed Lab 1: Run the Demo earlier, this is what gets printed out when the Return Analyst clicks on CUST 1000. You just built it, well done!
 
 
 ## Task 5: Create a function to generate recommendations for the customer
 
-With customer profiles in place, you will use OCI Generative AI to generate personalized loan recommendations. This step combines customer data with available loan options, allowing the LLM to suggest loans that match the customer’s credit score, income, and debt profile.
+With customer profiles in place, you will use OCI Generative AI to generate personalized return recommendations. This step combines historical return records with customer data, allowing the LLM to suggest return recommendations that match the customer’s return frequency, past behavior, and lifetime value.
 
 Here’s what we’ll do:
-- **Fetch Loan Options**: Retrieve all loans from `MOCK_LOAN_DATA`, including details like interest rates, credit score requirements, and loan types.
+- **Fetch Return Options**: Retrieve all returns from `MOCK_LOAN_DATA`, including details like product category, price tier, and damage descriptors.
 - **Build a Prompt**: Construct a structured prompt that combines the customer’s profile with available loans, instructing the LLM to evaluate and recommend based solely on this data.
 - **Use OCI Generative AI**: Send the prompt to the `meta.llama-3.2-90b-vision-instruct` model via OCI’s inference client, which will process the input and generate a response.
 - **Format the Output**: Display the recommendations in HTML with styled headers and lists, covering evaluation, top picks, and explanations—making it easy to read and understand.
 
 
-1. Review and review the code in a new cell:
+1. Run and review the code in a new cell:
 
     ```python
     <copy>
-    # Fetch Mock Loan Data
+    # Fetch Mock Return Data
     cursor.execute("SELECT loan_id, loan_provider_name, loan_type, interest_rate, origination_fee, time_to_close, credit_score, debt_to_income_ratio, income, down_payment_percent, is_first_time_home_buyer FROM MOCK_LOAN_DATA")
     df_mock_loans = pd.DataFrame(cursor.fetchall(), columns=["LOAN_ID", "LOAN_PROVIDER_NAME", "LOAN_TYPE", "INTEREST_RATE", "ORIGINATION_FEE", "TIME_TO_CLOSE", "CREDIT_SCORE", "DEBT_TO_INCOME_RATIO", "INCOME", "DOWN_PAYMENT_PERCENT", "IS_FIRST_TIME_HOME_BUYER"])
 
@@ -185,7 +185,7 @@ Here’s what we’ll do:
     print(recommendations)
     </copy>
     ```
-2. Click the "Run" button to execute the code. Note that this will take time to run. Be patient, you will get loan recommendations from the LLM shortly.
+2. Click the "Run" button to execute the code. Note that this will take time to run. Be patient, you will get return recommendations from the LLM shortly.
 
 3. Review the output. In the demo, this is where you selected the "Navigate to Decisions" button as the Loan Officer. You just used AI to get recommendations for the loan officer which would have taken her hours to do, congratulations!
 
@@ -196,9 +196,9 @@ Here’s what we’ll do:
 
 ## Task 6: Create a function to create embeddings - Use Oracle Database 23ai's to create vector data 
 
-To handle follow-up questions, you will enhance the system with an AI Loan Guru powered by Oracle 23ai’s Vector Search and Retrieval-Augmented Generation (RAG). The AI Loan Guru will be able to answer questions about the loan application and provide recommendations based on the data.
+To handle follow-up questions, you will enhance the system with a virtual return officer assistant, Riley, powered by Oracle 23ai’s Vector Search and Retrieval-Augmented Generation (RAG). Riley will be able to answer questions about the return authorization and provide recommendations based on the data.
 
-Before answering questions, we need to prepare the data by vectoring the loan recommendations. This step:
+Before answering questions, we need to prepare the data by vectoring the return recommendations. This step:
 
    - **Stores Recommendations**: Inserts the full recommendation text (from previous cell) as a single chunk if not already present.
 
@@ -248,7 +248,7 @@ Before answering questions, we need to prepare the data by vectoring the loan re
 
 Now that the recommendations are vectorized, we can process a user’s question:
 
- ```What’s the best loan for a first-time home buyer?``` 
+ ```What is the risk score for this buyer?``` 
  
  This step:
 
@@ -400,7 +400,7 @@ Now that the recommendations are vectorized, we can process a user’s question:
 
     ![rag](./images/rag.png " ")
 
-## Summary
+## Conclusion
 
 Congratulations! You implemented a RAG process in Oracle Database 23ai using Python.
 
