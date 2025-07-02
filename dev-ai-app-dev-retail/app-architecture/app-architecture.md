@@ -8,7 +8,7 @@ Estimated Lab Time: 15 minutes
 
 ## Physical Architecture
 
-The SeerEquities loan application runs in an **Oracle Cloud Infrastructure (OCI)** Region, with its application layer in a public subnet inside a **Virtual Cloud Network (VCN)**.
+The Seer Retail return authorization application runs in an **Oracle Cloud Infrastructure (OCI)** Region, with its application layer in a public subnet inside a **Virtual Cloud Network (VCN)**.
 
 ![Physical Architecture](./images/physical-architecture.png)
 
@@ -63,7 +63,7 @@ Oracle Database 23ai supports property graphs, which model relationships using v
 
 Property graphs simplify working with connected data, such as identifying influencers, predicting trends, or discovering relationships through pattern matching, by offering a more intuitive and efficient way to model and query complex networks.
 
-**Where is it used**: We implemented property graphs in the demo part of this workshop. Loan approval officers can use it to identify potential alternative loans for their customers.
+**Where is it used**: We implemented property graphs in the demo part of this workshop. Return Authorization Specialists can use it to identify potential return recommendations for their customers.
 
 
 ## Acknowledgements
