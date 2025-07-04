@@ -33,6 +33,12 @@
             "filename": "../../ai-exercise/ai-vector-search-challenge-answers.md"
 
         },
+          {
+            "title": "Lab 5: Run the app in your own environment",
+            "description": "This is a step-by-step guide showcasing how the demo instance is navigated",
+            "filename": "../../local-tenancy/local-tenancy.md"
+
+        },
         {
             "title": "Need Help?",
             "description": "Solutions to Common Problems and Directions for Receiving Live Help",
