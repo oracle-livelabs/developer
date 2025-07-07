@@ -138,7 +138,7 @@ In this example, you will navigate the application to review a customer and deny
 
     ![James Woods Decision](./images/james-woods-decision.png =50%x*)
 
->⁉️ **What are two reasons that the AI decided to deny this applicant?** ⁉️
+>⁉️ **What is the reason that the AI decided to deny this applicant?** ⁉️
 
 
 4. Expand **View Dot Plot: Client-Loan Relationships** to view the graph.
