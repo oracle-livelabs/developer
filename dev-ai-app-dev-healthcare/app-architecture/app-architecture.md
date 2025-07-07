@@ -24,7 +24,7 @@ The SeerEquities loan application runs in an **Oracle Cloud Infrastructure (OCI)
 
     - A VM in the public subnet runs two containers, including:
 
-        - Open-source Python library for the Loan Approval Demo
+        - Open-source Python library for the Healthcare Claim Approval Demo
 
         - JupterLab as a browser-based development environment
 
@@ -63,7 +63,7 @@ Oracle Database 23ai supports property graphs, which model relationships using v
 
 Property graphs simplify working with connected data, such as identifying influencers, predicting trends, or discovering relationships through pattern matching, by offering a more intuitive and efficient way to model and query complex networks.
 
-**Where is it used**: We implemented property graphs in the demo part of this workshop. Loan approval officers can use it to identify potential alternative loans for their customers.
+**Where is it used**: We implemented property graphs in the demo part of this workshop. Healthcare Claim Analysts can use it to identify potential alternative treatments for their patients.
 
 
 ## Acknowledgements
