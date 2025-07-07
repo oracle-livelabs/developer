@@ -73,6 +73,7 @@ Add 5 rules using the below information.
 | 3  | 0.0.0.0/0  | 1522    |
 | 4  | 0.0.0.0/0  | 8501    |
 | 5  | 0.0.0.0/0  | 8502    |
+{: title="Ingress rules"}
 
 When you've added all 5 ingress rules, click the **Add Ingress Rules** button at the bottom right of the page.
 
@@ -94,6 +95,8 @@ Your default security list should look like the below screenshot.
 
 3. Name the instance **SeerVM**, verify you're in the correct compartment, and accept all the defaults. Click the **Next** button.
 
+    > **Note**: While all operating systems are supported, we recommend using Oracle Linux 9 as the operating system. The application runs on any available shape, including shapes available in the OCI Always Free tier.
+
     ![Create Compute Instance](./images/create-instance-2.png " ")
 
 4. Click **Next** on the Security screen.
@@ -102,13 +105,13 @@ Your default security list should look like the below screenshot.
 
     ![Select VNIC](./images/name-vnic-confirm.png " ")
 
-In the **Add SSH Keys** section, you can generate a new SSH key pair or use your favorite existing keys.
+    In the **Add SSH Keys** section, you can generate a new SSH key pair or use your favorite existing keys.
 
 6. To generate a new key pair, click the radio button next to **Generate a key pair for me**. Then click the **Download private key** button to save the file to your local downloads directory. Click the button to **Download public key** to your local computer so you have both keys for safe-keeping.
 
     ![Generate public SSH keys](./images/generate-public-keys.png " ")
 
-In Task 3, you'll need the SSH keys to gain access to the compute instance where you'll configure and run the software for this lab. Feel free to move the SSH keys to the .ssh directory of your terminal application. This will vary depending on which terminal emulator you're using on your system.
+    In Task 3, you'll need the SSH keys to gain access to the compute instance where you'll configure and run the software for this lab. Feel free to move the SSH keys to the .ssh directory of your terminal application. This will vary depending on which terminal emulator you're using on your system.
 
 7. You can also utilize an existing key pair if you already have one. Choose the radio button for **Upload public key file (.pub)** and drop the file on the box or click it to locate the file and upload it to the VM.
 
@@ -258,29 +261,29 @@ The application requires an Autonomous Database. Follow the steps to provision a
 3. Use the information in the table below to fill out the **Create Autonomous Database Serverless** form. Proceed to the next step for instructions on setting up **Network Access**.
 
 
-| Field Name | Input |
-| ------------- | ------------ |
-| Display Name  | SeerATP   |
-| Database Name | SeerATP    |
-| Compartment | Verify correct compartment    |
-| Workload Type | ATP    |
-| Database Version | 23ai |
-| ECPU Count | 2   |
-| Password | Password1234!    |
+    | Field Name | Input |
+    | ------------- | ------------ |
+    | Display Name  | SeerATP   |
+    | Database Name | SeerATP    |
+    | Compartment | Verify correct compartment    |
+    | Workload Type | ATP    |
+    | Database Version | 23ai |
+    | ECPU Count | 2   |
+    | Password | Password1234!    |
+    {: title="ADB configuration details overview"}
 
--------------------------------------------------------
 
    ![Create Autonomous Database form](./images/create-adb-form.png " ")
 
-4. In the **Network access** section, choose **Secure access from allowed IPs and VCNs only**. In the **IP notation type** drop-down, choose **CIDR block**. For values, enter **0.0.0.0/0**. Verify that **Require mutual TLS (mTLS) authentication** is disabled. Click the **Create** button.
+1. In the **Network access** section, choose **Secure access from allowed IPs and VCNs only**. In the **IP notation type** drop-down, choose **CIDR block**. For values, enter **0.0.0.0/0**. Verify that **Require mutual TLS (mTLS) authentication** is disabled. Click the **Create** button.
 
    ![Create Autonomous Database form](./images/atp-security-mtls.png " ")
 
-5. The ATP Database will enter the provisioning state. In a few minutes the state will turn from Provisioning to Available.
+2. The ATP Database will enter the provisioning state. In a few minutes the state will turn from Provisioning to Available.
 
     ![Provisioning an Autonomous Database instance](./images/provisioning-atp.png " ")
 
-6. Once the state changes to **Available**, the Autonomous Transaction Processing database is ready to use! Review the database details.
+3. Once the state changes to **Available**, the Autonomous Transaction Processing database is ready to use! Review the database details.
 
     ![Provisioning an Autonomous Database instance](./images/atp-detail-review.png " ")
 
@@ -308,11 +311,11 @@ OCI Generative AI is a fully managed service available via API to seamlessly int
 
     ![Preview Private Key](./images/key-preview.png " ")
 
-6. If you misplace the copied information, you can retrieve the configuration file data anytime by locating the key, then clicking on the elipsis at the end of the record, then choose **View configuration file**.
+6. If you misplace the copied information, you can retrieve the configuration file data anytime by locating the key, then clicking on the ellipsis at the end of the record, then choose **View configuration file**.
 
     ![Find the configuration file later](./images/find-configuration-file.png " ")
 
-Next you will need to create a policy to allow you to use OCI Generative AI within your compartment. *It's important that your policy references the compartment where your Autonomous Database is deployed.* The policy will be necessary for Autonomous Database to interact with OCI Generative AI.
+    Next you will need to create a policy to allow you to use OCI Generative AI within your compartment. *It's important that your policy references the compartment where your Autonomous Database is deployed.* The policy will be necessary for Autonomous Database to interact with OCI Generative AI.
 
 7. Open the Navigation menu and click **Identity & Security**. Under Identity, click **Policies**.
 
@@ -320,11 +323,12 @@ Next you will need to create a policy to allow you to use OCI Generative AI with
 
 8. Verify the applied filter is set to the correct compartment and click **Create policy**. Paste the following into the appropriate fields:
 
-| Field | Information |
-| ----- | ----------- |
-| Name | PublicGenAI |
-| Description | Public GenAI Policy |
-| Compartment | Select your compartment |
+    | Field       | Information             |
+    | ----------- | ----------------------- |
+    | Name        | PublicGenAI             |
+    | Description | Public GenAI Policy     |
+    | Compartment | Select your compartment |
+    {: title="OCI Gen AI details"}
 
    ![Enter Policy Info](./images/policy-info.png " ")
 
@@ -342,7 +346,7 @@ Next you will need to create a policy to allow you to use OCI Generative AI with
 
     ![Paste Policy](./images/policy.png " ")
 
-You've added a policy to allow users to manage the GenAI service in your compartment.
+    You've added a policy to allow users to manage the GenAI service in your compartment.
 
    ![Paste Policy](./images/added-policy.png " ")
 
@@ -380,7 +384,7 @@ You've added a policy to allow users to manage the GenAI service in your compart
         </copy>
     ````
 
-6. In the .setup directory, you will create a copy of your OCI API key. Open an editor using the filename 'oci_api_key.pem' Use vi, nano or your favorite editor.
+6. In the `.setup` directory, you will create a copy of your OCI API key. Create a new file named `oci\_api_key.pem`. Use vi, nano or your favorite editor.
 
     ````
         <copy>
@@ -388,7 +392,7 @@ You've added a policy to allow users to manage the GenAI service in your compart
         </copy>
     ````
 
-6. Locate the API Key you downloaded in Task 5, Step 4. Open it in a text editor and copy the contents of the key and paste it into the oci_api_key.pem file you have open in the editor. Save the file.
+7. Locate the API Key you downloaded in Task 5, Step 4. Open it in a text editor and copy the contents of the key and paste it into the oci_api_key.pem file you have open in the editor. Save the file.
 
     ![Copy the API key](./images/copy-api-key.png " ")
 
