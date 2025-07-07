@@ -2,7 +2,20 @@
 
 ## Introduction
 
-In this hands-on lab, you will learn the basics of working with Oracle Database 23ai using Python. You will connect to the database with both `oracledb` and `pymongo`, create and query tables, and build JSON Duality Views. You will also explore Oracle’s Mongo API to query and update data using a familiar document model. For organizations already using MongoDB-like applications, the Oracle MongoDB API enables a smoother transition and integration with existing code, tools, or drivers—while consolidating everything in Oracle’s converged platform.
+
+At SeerEquities, developers are building a next-generation loan approval system that needs to combine enterprise-grade data governance with modern AI capabilities. But before GenAI or vector search can be applied, one thing must be true:
+
+👉 The data must be in the right shape — accessible, trustworthy, and programmable.
+
+In this lab, you’ll act as a developer on the SeerEquities data team. Your job is to build the foundational logic that powers the application’s intelligence layer. That means:
+
+- Creating and querying relational tables that represent real loan and customer data using Python
+- Converting that data into **JSON documents** using **JSON Duality Views**
+- Using **MongoDB-style syntax** via Oracle’s Mongo API to interact with the same data — without needing to duplicate or move it
+
+These capabilities make Oracle Database 23ai a **developer-friendly**, **multi-model platform**. You’ll write less glue code, eliminate data movement, and stay focused on the real task: powering intelligent loan workflows.
+
+> 💡 Everything you implement here becomes the data foundation for Retrieval-Augmented Generation (RAG) and AI Vector Search in upcoming labs.
 
 Estimated Time: 30 minutes
 
@@ -12,33 +25,26 @@ To get things started we invite you to watch this video and see the lab in actio
 
 ### Objectives
 
-* Learn basic Python coding concepts with Oracle Database 23ai
-  * Connect to Oracle Database 23ai
-  * Create tables
-  * Insert & query data
-  * Create a JSON Duality View using Python
-  * Connect to database using `pymongo` and start using Oracle's Mongo API
-  * Query data using Oracle's Mongo API
-  * Update data using Oracle's Mongo API
+- Connect to Oracle Database 23ai using Python  
+- Create and query relational data  
+- Use JSON Duality Views to work with relational tables as JSON  
+- Query and update the same data using MongoDB-style syntax
 
 ### Prerequisites
 
 This lab assumes you have:
 
-* An Oracle account to submit a LiveLabs Sandbox reservation.
-
-* Completed Lab 2: Connect to the development environment
-
-* Basic knowledge of Python.
-
-* Basic knowledge of Oracle Database, i.e., how to run queries.
+- An Oracle account with LiveLabs access  
+- Completion of **Lab 1: Connect to the Development Environment**  
+- Basic familiarity with Python and SQL
 
 
 ## Task 1: Create a new Jupyter Notebook
 
 All of the coding examples will be executed in a new Jupyter Notebook.
 
-1. Open a new **Jupyter Notebook** by clicking on **Python(ipykernel)** notebook.
+1. In **JupyterLab**, click the blue **+** to open the Launcher  
+2. Start a new **Python (ipykernel)** notebook
 
     ![Open Jupyter Notebook](./images/open-new-notebook.png " ")
 
@@ -69,14 +75,14 @@ In this first task, you will connect to an Oracle Database 23ai instance using O
     cursor = connection.cursor()
     </copy>
     ```
+
 2. Execute the cell by entering **shift + enter** or clicking on the play button.
 
 3. You should see a message that says "Connection successful!" in your notebook. If you do not, check the credentials and try again. 
 
     ![connect](./images/connect.png " ")
 
->**Note:** The last line, `cursor = connection.cursor()`, creates a cursor object from the established Oracle database connection. A cursor acts as a control structure that enables the execution of SQL queries and retrieval of results from the database. It is essential for sending SQL commands, fetching data, and iterating through query results. We will be using the cursor object in later steps of this lab. The object persists in the notebook session, so you can use it in subsequent cells without re-establishing the connection. 
-
+>**Note:** The last line, `cursor = connection.cursor()`, creates a cursor object from the established Oracle database connection. A cursor acts as a control structure that enables the execution of SQL queries and retrieval of results from the database. It is essential for sending SQL commands, fetching data, and iterating through query results. We will be using the cursor object in later steps of this lab. The object persists in the notebook session, so you can use it in subsequent cells without re-establishing the connection.
 
 ## Task 3: Create tables and insert data
 
@@ -478,13 +484,13 @@ The final step in our basic coding tour with Python and the Oracle Database 23ai
 
     🔴 **`df.head()`** - This is a method that returns that returns the result of the query including the column names. 
 
-## Summary
+## Conclusion
 
-In this lab, we learned how to use Python and Oracle's Python driver `oracledb` to interact with Oracle Database 23ai's new features. You learned how to user the `cursor` object to execute SQL queries. Using the `cursor` object, you created a **JSON Duality View** and you even used some JSON functions to query documents using SQL syntax. Then, you also learned how to connect to the database using `pymongo` and retrieve data from a table in the database using **MongoDB syntax**. You created functions to update the **JSON Duality View** and you learned how these updates are also reflected in the underlying relational database tables.
+As a developer at SeerEquities, you've just built the foundation for a GenAI-powered loan approval system. We learned how to use Python and Oracle's Python driver `oracledb` to interact with Oracle Database 23ai's new features. You learned how to user the `cursor` object to execute SQL queries. Using the `cursor` object, you created a **JSON Duality View** and you even used some JSON functions to query documents using SQL syntax. Then, you also learned how to connect to the database using `pymongo` and retrieve data from a table in the database using **MongoDB syntax**. You created functions to update the **JSON Duality View** and you learned how these updates are also reflected in the underlying relational database tables.
 
-In the next labs, you will see several of the coding principles learned and even more.  
+This architecture eliminates the need for duplicating data across platforms and simplifies how developers build AI-ready applications. Whether you're calling SQL, working with JSON, or speaking Mongo, you're always working with a single source of truth inside the Oracle Database.
 
-You are now ready to implement you a RAG process using Oracle Database 23ai's new features!
+In the next lab, you'll build on this foundation to implement Retrieval-Augmented Generation (RAG), create vector embeddings, and generate personalized loan recommendations with Oracle 23ai and OCI Generative AI.
 
 ## Acknowledgements
 * **Authors** - Linda Foinding, Kevin Lazarz
