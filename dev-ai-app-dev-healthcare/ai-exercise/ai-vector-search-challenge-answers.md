@@ -4,15 +4,15 @@
 
 **Welcome to the Code with AI Vector Search Challenge!**
 
-In this lab, you will use Oracle Database 23ai to build a loan matching feature for a financial application. By implementing similarity search, you will match user queries to loan descriptions based on meaning—**not just keywords**.
+Enhance your app with an intent-matching feature using AI Vector Search. Work in a Jupyter Notebook to enable similarity search on patient history, doctor notes, and past approvals. Match cases semantically—not just by keywords—and return relevant prior examples to support real-time decisions.
 
 ![Similarity Search](./images/similarity-search.png " ")
 
-At SeerEquites, the data science team is building a loan recommendation system that goes beyond keyword matching. They are using AI Vector Search to understand meaning in loan descriptions—for example, linking "Affordable Housing Loan" to "Low-Income Home Loan." In this lab, you will complete their Similarity Search feature using Oracle Database 23ai, which converts text into embeddings and uses cosine similarity to find conceptually similar loans.
+At Seer Healthcare, the data science team is building a claim recommendation system that goes beyond keyword matching. They are using AI Vector Search to understand meaning in treatment descriptions—for example, linking "Patient History" to "Prior Claims." In this lab, you will complete their Similarity Search feature using Oracle Database 23ai, which converts text into embeddings and uses cosine similarity to find conceptually similar claims.
 
 **Why AI Vector Search?**
 
-Unlike keyword search, AI Vector Search captures meaning. For example, 'Military Veteran Loan' and 'Veteran Home Loan' use different words but express similar ideas. Oracle Database 23ai converts loan descriptions into vectors, compares their meanings, and ranks results by similarity for more accurate recommendations.
+Unlike keyword search, AI Vector Search captures meaning. For example, '[placeholder]]' and '[placeholder]' use different words but express similar ideas. Oracle Database 23ai converts claim descriptions into vectors, compares their meanings, and ranks results by similarity for more accurate recommendations.
 
 Good luck, and enjoy the process. Let’s get coding!
 
@@ -331,9 +331,9 @@ The fourth code block ties it all together. It lets users enter a loan descripti
 You have successfully:
 
 - Connected to Oracle Database 23ai.
-- Vectorized loan descriptions into embeddings.
+- Vectorized treatment descriptions into embeddings.
 - Verified the stored data.
-- Built a Similarity Search to match user queries to loans.
+- Built a Similarity Search to match user queries to treatments.
 
 By completing this challenge, you’ve seen how Oracle 23ai AI Vector Search transforms text into vectors and finds meaningful matches.
 
