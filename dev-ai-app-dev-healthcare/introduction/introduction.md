@@ -6,7 +6,7 @@
 
 Generative AI and Oracle Database 23ai makes it possible to unlock deeper insights, faster—directly within your database.
 
-In this hands-on workshop, you’ll build a finance-focused GenAI solution using Oracle Database 23ai. 
+This hands-on lab introduces you to Generative AI and Vector Search in Oracle Database 23ai, allowing you to build real applications using multiple types of data - no setup required. You'll connect to the database using Python and the Mongo API, run queries, create JSON Duality Views, and implement AI Vector Search and retrieval-augmented generation (RAG). Explore guided healthcare use cases or experiment freely in a browser-based development environment designed to bring Oracle 23ai’s capabilities to life in a healthcare context.
 
 To get things started we invite you to watch the introduction video to see the demo in action:
 
@@ -33,11 +33,17 @@ By the end of this workshop, you’ll understand how Oracle Database 23ai helps 
 **Your next breakthrough is just a lab away!**
 
 
-#### ➡️ **Start with the demo!**
+#### ➡️ **Start with the demo! (Lab 1)**
 
-Check out the demo to see how Generative AI and Vector Search in the database, can operate against multiple types of data—empowering you to build real applications and make faster, smarter decisions. The best part? **No setup required**—just start with Lab 1 and follow the guide. You can explore guided use cases or experiment on your own using the demo application.
+Check out the demo to see how Generative AI and Vector Search in the database, can operate against multiple types of data—empowering you to build real applications and make faster, smarter decisions. The best part? **No setup required**—just start with Lab 1 and follow the guide. You can explore guided use cases or experiment on your own using the demo application:
 
-#### ➡️ **Start coding!**
+  * ✅ Login as a Healthcare Claims Analyst
+
+  * ✅ Review patients that have been recommended by the system to be approved or denied for a claim
+
+  * ✅ Upload information to a patient's profile
+
+#### ➡️ **Start coding! (Labs 2-4)**
 
 Lab 2 describes how to get access to our browser-based development environment. Make sure to check it out before continuing to Lab 3 and 4, where you will get hands-on and start interacting with Python with Oracle Database 23ai:
 
@@ -53,15 +59,21 @@ Lab 2 describes how to get access to our browser-based development environment. 
 
   * ✅ Implement AI Vector Search
 
-In lab 4, you will learn how to **implement a working example of retrieval-augmented generation (RAG) using Oracle Database 23ai.**
+  * ✅ Implement retrieval-augmented generation (RAG) using Oracle Database 23ai
 
-#### ➡️ **Start experimenting!**
+#### ➡️ **Start experimenting! (Lab 5)**
 
-You can also experiment with the code in your own environment. The workshop environment is flexible and allows you try out different things: Start building your own version of the loan approval application!
+You can also experiment with the code in your own environment. The workshop environment is flexible and allows you try out different things: Start building your own version of the prior authorization application!
+
+  * ✅ Vectorize patient data from one table into another
+
+  * ✅ Verify the data was vectorized
+
+  * ✅ Implement a similarity search
 
 ### Objectives
 
-* Learn how Oracle Database 23ai capabilities can be used to automate and enhance the loan approval process
+* Learn how Oracle Database 23ai capabilities can be used to automate and enhance the prior authorization process, justifying medical-necessity decisions
 
 * Start coding with Python and Oracle's Python driver `oracledb`
 
