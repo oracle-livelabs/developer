@@ -130,7 +130,7 @@ You created an external table from a shared dataset—linking live loan data dir
 
 1. The **Shared\_Loan\_Data\_Risk\_VW** panel is displayed with the **Preview** tab selected by default that displays the external table's data.
 
-   ![Create Data Product Share](./images/select-shared-data-3a.png )
+   ![Create Data Product Share](./images/select-shared-data-3a.png )  
 
 1. Click **Close** to exit the panel and to return to the Data Share Dashboard.
 

@@ -10,7 +10,7 @@
         {
             "title": "Get Started",
             "description": "Prerequisites for LiveLabs (Oracle-owned tenancies). The title of the lab and the Contents Menu title (the title above) match for Prerequisite lab. This lab is always first.",
-            "filename": "../../cloud-login/cloud-login-mvp.md"
+            "filename": "../../cloud-login/cloud-login.md"
         },
         {
             "title": "Lab 1: Discover and View your Data Assets from your Data Catalog",
@@ -30,11 +30,7 @@
         },
         {
             "title": "Lab 5: Build Your Data Pipeline: Load & Transform Data",
-            "filename": "../../load-transform/load-transform-mvp.md"
-        },
-        {
-            "title": "Appendix: Explore Data Access and Data Sharing Tools in Autonomous Database",
-            "filename": "../../tools/tools.md"
+            "filename": "../../load-transform/load-transform.md"
         },
         {
             "title": "Need Help?",
