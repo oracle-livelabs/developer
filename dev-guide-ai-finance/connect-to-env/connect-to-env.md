@@ -2,7 +2,12 @@
 
 ## Introduction
 
-In this lab, we will show you how to connect to the development environment. We are using JupyterLab as our development environment, which is a web-based application that allows you to write and run code on your browser. You can use this environment to create notebooks, edit files, and run Python scripts.
+In this short lab, you’ll launch the JupyterLab-based development environment used throughout the workshop. JupyterLab runs entirely in your browser and allows you to write and test Python code that interacts directly with Oracle Database 23ai.
+
+This is the same environment used by the SeerEquities data team to build the AI loan assistant.
+
+> 💡 You only need to complete this once. In the next labs, you'll jump straight into hands-on coding. Remember to come back to this lab in case you need you closed the browser window and need to access JupyterLab again.
+
 
 Estimated Time: 5 minutes
 
@@ -12,43 +17,62 @@ To get things started we invite you to watch this video and see the lab in actio
 
 ### Objective
 
-* Login to JupyterLab
+- Access the JupyterLab environment
+- Log in using provided credentials
+- Get familiar with basic Jupyter features
 
 ## Task 1: Login to JupyterLab
 
-1. To navigate to the development environment, click **View Login Info**. Copy the Development IDE Login Password. Click the Start Development IDE link.
-
+1. In the top left of your lab page, click **View Login Info**.  
+2. Copy the **Development IDE Login Password**.
+3. Click the **Start Development IDE** link.
+   
     ![Open Development Environment](./images/dev-env.png =50%x*)
 
-2. Paste in the Development IDE Login Password that you copied in the previous step. Click **Login**.
+4. Paste in the password and click **Login**.
 
     ![Login](./images/jupyter-login.png " ")
 
-## Task 2: Get familiar with the development environment
+You’re now in the development environment.
 
-1. Review the different elements in JupyterLab:
+## Task 2: Explore JupyterLab
 
-    **File browser:** The file browser organizes and manages files within the JupyterLab workspace. It supports drag-and-drop file uploads, file creation, renaming, and deletion. Users can open notebooks, terminals, and text editors directly from the browser. Navigation is fast and intuitive, with breadcrumbs and context menus that surface relevant actions. Users can right-click files to access options like duplicate, shutdown kernel, or open with a specific editor.
+JupyterLab is where you’ll write, run, and test Python code that connects to Oracle Database 23ai. Here are the key parts:
 
-    **Launcher:** The launcher offers a streamlined entry point for starting new activities. Users can create Jupyter Notebooks for interactive coding with live code execution, visualizations, and rich markdown. The terminal provides direct shell access, enabling command-line operations within the JupyterLab environment. These two tools form the core of most workflows, supporting both interactive analysis and system-level tasks from a single interface.
-
-    ![JupyterLab Launcher](./images/jupyter.png " ")
-
-## Task 3: Get familiar with Jupyter Notebooks
-
-You will use a Jupyter Notebook in JupyterLab to build and test the loan recommendation system. If you are new to notebooks, the following tips will help you get started and work smoothly.
-
-1. **Executing Code Blocks**: You can run code in two simple ways: press **Shift+Enter** to execute and move to the next cell, or click the **Play/Execute** button in the menu bar at the top of this tab. Both methods work interchangeably.
-
-2. **Block Types**: Instructions and code are separated into **their own blocks**. Instructions are in markdown (like this cell), while code is in executable Python blocks. If you accidentally run an instruction block, it’ll just skip to the next cell—no harm done!
-
-3. **Running Indicators**: When you run a code block, its label changes from `[ ]` (empty) or `[1]` (a number) to `[*]`. The asterisk (`*`) means it’s processing. Wait until it switches back to a number (e.g., `[2]`) before moving on, ensuring the operation is complete.
-
-4. **Output & Warnings**: Below each code cell, output appears after execution. This can include results, visualizations, or messages. Warnings may show up—these are usually informational, such as notices about deprecated features. Unless an error halts execution, users can continue without making changes. If you see a error, review the code for any issues and make changes accordingly and try executing the cell again.
-
-    ![JupyterLab blocks](./images/block.png " ")
+**File browser (1):** Use this panel to open notebooks, scripts, and other files. Right-click for actions like rename or delete.
 
 
+**Launcher:** From here, you can start:
+- **Python notebooks (2)** for running code
+- **Terminals (3)** ** for command-line tasks
+
+![JupyterLab Launcher](./images/jupyter.png " ")
+
+## Task 3: Working with Jupyter Notebooks
+
+You’ll use notebooks for every lab in this workshop. Each notebook is made up of **cells**:
+
+- **Markdown cells** hold instructions and explanations
+- **Code cells** contain executable Python
+
+To run a code cell:
+- Press **Shift + Enter**
+- Or click the **Run** button in the toolbar
+
+While a cell is running, you’ll see `[*]`. When it finishes, it changes to a number like `[3]`.
+
+![JupyterLab blocks](./images/block.png " ")
+
+> 🛠 If a cell throws an error, double-check the code or rerun the previous steps.
+
+
+## Conclusion
+
+You’ve now logged into the cloud-based development environment where all coding will take place.
+
+✅ You can access JupyterLab in your browser  
+✅ You understand how to open and run notebooks  
+✅ You’re ready to start interacting with Oracle Database 23ai  
 
 ## Acknowledgements
 * **Author** - Kamryn Vinson

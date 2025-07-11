@@ -2,9 +2,13 @@
 
 ## Introduction
 
-In this lab, you will build a loan recommendation system powered by Oracle Database 23ai and OCI Generative AI. You will connect to a Oracle Database 23ai, explore customer data, extract relevant insights, and use a Large Language Model (LLM) to generate personalized loan suggestions. The system combines AI with OCI Generative AI to provide personalized loan recommendations. This system integrates AI capabilities with Oracle's robust database technology to deliver targeted financial recommendations.
+At SeerEquities, the data team is building a GenAI-powered loan assistant to support faster, more accurate loan approvals. The goal: reduce manual effort by using **retrieval-augmented generation (RAG)** and **LLMs** directly inside a governed Oracle Database 23ai environment.
 
-This lab uses some of the basic coding samples you created in lab 3, such as cursor.execute and more.
+In this lab, you'll build that assistant from the ground up.
+
+You’ll connect to Oracle Database 23ai, explore customer data, use Oracle’s built-in embedding tools to vectorize content, and query it using AI Vector Search. Finally, you’ll feed results into a **Generative AI model from OCI** to generate contextual recommendations.
+
+> 💡 Everything runs securely inside the database—no need to move data to external tools or vector stores. Only the enriched context is provided securely to OCI Generative AI services.
 
 Estimated Time: 30 minutes
 
@@ -15,33 +19,37 @@ To get things started we invite you to watch this video and see the lab in actio
 
 ### Objectives
 
-* Build the complete loan approval application as seen in lab 1
-* Use OCI Generative AI to generate personalized loan recommendations
-* Use Python to connect to an Oracle Database 23ai instance and run queries
-* Explore customer data and extract relevant information
+- Build a complete RAG workflow using Python and Oracle Database 23ai  
+- Connect to the database, prepare customer and loan data  
+- Use `dbms_vector_chain` to create embeddings  
+- Perform similarity search using `VECTOR_DISTANCE()`  
+- Generate contextual loan recommendations using OCI Generative AI  
 
 ### Prerequisites
 
 This lab assumes you have:
 
-* An Oracle Cloud account
-* Completed lab 1: Run the demo
-* Completed lab 2: Connect to the Development Environment
+- Oracle Cloud account  
+- Completed:
+  - Connect to the Development Environment: Environment Setup  
+  - Coding Basics on Oracle Database 23ai: Coding Basics
 
-## Task 1: Build the application in Jupyter Notebook
->💡**Note**: Review Lab 2: Connect to the Development Environment for instructions on accessing JupyterLab.
 
-1. Click the blue "+". This will open the Launcher. 
+## Task 1: Launch a Jupyter Notebook
+
+>💡**Note**: Review **Connect to the Development Environment** for instructions on accessing JupyterLab.
+
+1. Click the blue **+** to open the Launcher  
 
     ![Open Launcher](./images/launcher.png " ")
 
 
-2. Open a new **Jupyter Notebook** by clicking on **Python(ipykernel)** notebook.
+2. Select **Python (ipykernel)** to open a new notebook
 
     ![Open Jupyter Notebook](./images/open-new-notebook.png " ")
 
 
-## Task 2: Connect to the database using oracledb Python driver
+## Task 2: Connect to Oracle Database 23ai
 
 1. Copy the following code block into an empty cell in your notebook. This code block imports the `oracledb` Python driver and other libraries. 
 
@@ -78,21 +86,20 @@ This lab assumes you have:
     ![Connect to Database](./images/connect-to-db.png " ")
 
 
-## Task 3: Create tables in the database
+## Task 3: Create database tables
 
-1. Copy the following code block into the next empty cell in your notebook. This will create all tables in the database. 
+1. Run the following cell to create your tables and populate them with sample data: 
 
     ```python
     <copy>
     exec(open("db_setup.py").read())
     </copy>
     ```
-2. Run the code block to create all tables in the database. 
 
     ![Create Tables](./images/create-tables.png " ") 
 
 
-## Task 4: Create a function to retrieve data from the database
+## Task 4: Fetch and display a customer profile
 
 With the database ready, you will query customer data from the clients_dv JSON duality view. This view merges data from `CLIENTS`, `LOAN_APPLICATIONS`, and `CLIENT_DEBT` into a single JSON object, streamlining access to related records for AI-driven analysis.
 
@@ -175,6 +182,9 @@ Here’s what we’ll do:
         prompt = f"""<s>[INST] <<SYS>>You are a Loan Approver AI. Use only the provided context to evaluate the applicant’s profile and recommend loans. Format results as plain text with numbered sections (1. Comprehensive Evaluation, 2. Top 3 Loan Recommendations, 3. Recommendations Explanations, 4. Final Suggestion). Use newlines between sections.</SYS>> [/INST]
         [INST]Available Loan Options:\n{available_loans_text}\nApplicant's Full Profile:\n{customer_profile_text}\nTasks:\n1. Comprehensive Evaluation\n2. Top 3 Loan Recommendations\n3. Recommendations Explanations\n4. Final Suggestion</INST>"""
 
+        print("Generating AI response...")
+        print(" ")
+        
         genai_client = oci.generative_ai_inference.GenerativeAiInferenceClient(config=oci.config.from_file(os.getenv("OCI_CONFIG_PATH", "~/.oci/config")), service_endpoint=os.getenv("ENDPOINT"))
         chat_detail = oci.generative_ai_inference.models.ChatDetails(
             compartment_id=os.getenv("COMPARTMENT_OCID"),
@@ -405,19 +415,20 @@ Now that the recommendations are vectorized, we can process a user’s question:
 
     ![rag](./images/rag.png " ")
 
-## Summary
+## Conclusion
 
 Congratulations! You implemented a RAG process in Oracle Database 23ai using Python.
 
 To summarize:
 
-* You created a function to connect to Oracle Database 23ai using the Oracle Python driver `oracledb`.
-* You created a function to retrieve customer data.
-* You created a function to connect to OCI Generative AI and create a first recommendation.
-* You created a function to create embeddings of the customer data using Oracle Database 23ai.
-* And finally, you implemented a RAG process in Oracle Database 23ai using Python.
+In this lab, you built the foundation of the SeerEquities GenAI Loan Assistant:
 
-Congratulations, you completed the lab!
+✅ Pulled customer data from JSON Duality Views
+✅ Used Oracle Database 23ai to create and search vector embeddings
+✅ Queried embedded chunks using AI Vector Search
+✅ Generated and refined answers using OCI Generative AI
+
+This RAG workflow now powers contextual conversations between loan officers and the system—with no external vector store or duplicated pipeline.
 
 You may now proceed to the next lab.
 
