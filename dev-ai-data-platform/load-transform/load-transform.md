@@ -4,13 +4,13 @@
 
 In this lab, you’ll practice setting up the live feed capabilities, that can be used to load data that is continuously collected into cloud object storage.  When a load job is enabled for live feed, it can be  connected to the OCI event notification and subscription mechanism, so that every time a new object is created in the object store bucket, it triggers the live feed, loading the contents to the database.
 
-## Estimated Lab Time: 45 minutes
+Estimated Lab Time: 45 minutes
 
-## Objectives
+### Objectives
   * Login to LiveLabs Sandbox
   * Find your LiveLabs Sandbox reservations
 
-## Prerequisites
+### Prerequisites
   This lab assumes you have:
   * Completed the Get Started lab
   * Successfully launched the hands-on lab environment
@@ -35,7 +35,7 @@ In this lab, you’ll practice setting up the live feed capabilities, that can b
 
       ![Click Data Load Button](./images/select-feed-data.png "") 
 
-## Task 2: Create a Events Service Rule
+## Task 2: Create and Run Live Table Feed
 
   1.  Click the **Create Live Table Feed** button to enter the Create Live Feed wizard  
 
