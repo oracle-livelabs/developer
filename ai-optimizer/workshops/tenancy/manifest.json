@@ -15,32 +15,37 @@
             "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/cloud-login.md"
         },
         {
-            "title": "Lab 1: Explore the Environment",
+            "title": "Lab 1: Deploy the Oracle AI Optimizer and Toolkit",
+            "description": "Lab where you will deploy the Oracle AI Optimizer and Toolkit using OCI Resource Manager",
+            "filename": "../../tenancy/deploy/deploy.md"
+        },
+        {
+            "title": "Lab 2: Explore the Environment",
             "description": "Lab where you explore the environment and setup the credentials",
             "filename": "../../tenancy/explore/explore.md"
         },
         {
-            "title": "Lab 2: Prepare the Vector Store",
+            "title": "Lab 3: Prepare the Vector Store",
             "filename": "../../tenancy/prepare/prepare.md"
         },
         {
-            "title": "Lab 3: Using Retrieval Augmented Generation",
+            "title": "Lab 4: Using Retrieval Augmented Generation",
             "filename": "../../tenancy/rag/rag.md"
         },
         {
-            "title": "Lab 4: Experimenting with Models, Parameters and Techniques",
+            "title": "Lab 5: Experimenting with Models, Parameters and Techniques",
             "filename": "../../tenancy/experimenting/experimenting.md"
         },
         {
-            "title": "Lab 5: Evaluating Performance",
+            "title": "Lab 6: Evaluating Performance",
             "filename": "../../tenancy/evaluating/evaluating.md"
         },
         {
-            "title": "(Optional) Lab 6: Generating Microservice Code",
+            "title": "(Optional) Lab 7: Generating Microservice Code",
             "filename": "../../tenancy/microservice/microservice.md"
         },
         {
-            "title": "(Optional) Lab 7: Using the API Server",
+            "title": "(Optional) Lab 8: Using the API Server",
             "filename": "../../tenancy/server/server.md"
         },
         {
