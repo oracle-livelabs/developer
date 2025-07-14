@@ -7,7 +7,7 @@
         {
             "title": "Introduction",
             "description": "The Introduction is always first. The title and contents menu title match for the Introduction.",
-            "filename": "../../sandbox/introduction/introduction.md"
+            "filename": "../../tenancy/introduction/introduction.md"
         },
         {
             "title": "Get Started",
@@ -17,31 +17,31 @@
         {
             "title": "Lab 1: Explore the Environment",
             "description": "Lab where you explore the environment and setup the credentials",
-            "filename": "../../sandbox/explore/explore.md"
+            "filename": "../../tenancy/explore/explore.md"
         },
         {
             "title": "Lab 2: Prepare the Vector Store",
-            "filename": "../../sandbox/prepare/prepare.md"
+            "filename": "../../tenancy/prepare/prepare.md"
         },
         {
             "title": "Lab 3: Using Retrieval Augmented Generation",
-            "filename": "../../sandbox/rag/rag.md"
+            "filename": "../../tenancy/rag/rag.md"
         },
         {
             "title": "Lab 4: Experimenting with Models, Parameters and Techniques",
-            "filename": "../../sandbox/experimenting/experimenting.md"
+            "filename": "../../tenancy/experimenting/experimenting.md"
         },
         {
             "title": "Lab 5: Evaluating Performance",
-            "filename": "../../sandbox/evaluating/evaluating.md"
+            "filename": "../../tenancy/evaluating/evaluating.md"
         },
         {
             "title": "(Optional) Lab 6: Generating Microservice Code",
-            "filename": "../../sandbox/microservice/microservice.md"
+            "filename": "../../tenancy/microservice/microservice.md"
         },
         {
             "title": "(Optional) Lab 7: Using the API Server",
-            "filename": "../../sandbox/server/server.md"
+            "filename": "../../tenancy/server/server.md"
         },
         {
             "title": "Need Help?",
