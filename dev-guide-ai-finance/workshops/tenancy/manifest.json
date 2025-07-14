@@ -63,6 +63,26 @@
             "filename": "../../json-answers/json-answers.md"
         },
         {
+            "title": "Lab 8 Challenge Yourself: Create a Creditreport Microservice",
+            "description": "This is a step-by-step guide showcasing how the demo instance is navigated",
+            "filename": "../../microservice-creport/creditreport-exercise.md.md"
+        },
+        {
+            "title": "Lab 9 Challenge Yourself: Spatial Development with Oracle Database 23ai",
+            "description": "This is a step-by-step guide showcasing how the demo instance is navigated",
+            "filename": "../../spatial/spatial.md"
+        },
+        {
+            "title": "Lab 10a Challenge Yourself: Code with Transactional Event Queues",
+            "description": "This is a step-by-step guide showcasing how the demo instance is navigated",
+            "filename": "../../messaging-exercise/messaging-exercise.md"
+        },
+        {
+            "title": "Lab 10b Step-by-step: Code with Transactional Event Queues",
+            "description": "This is a step-by-step guide showcasing how the demo instance is navigated",
+            "filename": "../../messaging-answers/messaging-answers.md"
+        },
+        {
             "title": "Application Architecture",
             "description": "Review the physical and logical architecture behind the application",
             "filename": "../../app-architecture/app-architecture.md"

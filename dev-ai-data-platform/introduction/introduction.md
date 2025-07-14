@@ -1,32 +1,30 @@
-# Introduction
+# Introduction  
 
-## About this Workshop
+## About this Workshop  
 
-**Data isn't just an asset—it's the lifeblood of modern enterprises**.
+**Data isn't just an asset—it's the lifeblood of modern enterprises**.  
 
-Investing in the right platform isn't optional; it's the foundation for staying competitive and future-proofing business success.
+Investing in the right platform isn't optional; it's the foundation for staying competitive and future-proofing business success.  
 
-In this hands-on workshop, you'll explore the full breadth of tools, services, and applications offered by **Oracle’s Data Platform**, and discover how they help organizations simplify the end-to-end data lifecycle — from ingestion and transformation to analysis and secure sharing.
+In this hands-on workshop, you'll explore the full breadth of tools, services, and applications offered by **Oracle's Data Platform**, and discover how they help organizations simplify the end-to-end data lifecycle — from ingestion and transformation to analysis and secure sharing.  
 
-Through a series of guided labs modeled on real-world tasks from a loan funding company, you'll experience how centralized data management, streamlined workflows, and intelligent analytics come together to unlock the value of enterprise data.
+Through a series of guided labs modeled on real-world tasks from a loan funding company, you'll experience how centralized data management, streamlined workflows, and intelligent analytics come together to unlock the value of enterprise data.  
 
-### You will:
+### You will:  
 
-* **Ingest and consolidate** data from multiple sources to build a unified view, breaking down data silos and enabling comprehensive analysis.
+* **Gain Access to Data** from multiple sources to build a unified view, breaking down data silos and enabling comprehensive analysis.  
 
-* **Create and publish data products** for actionable insights, empowering risk officers with timely, data-driven decision-making.
+* **Create and publish data products** for actionable insights, empowering other departments to be able to provide timely, data-driven decision-making feedback.  
 
-* **Securely share selected datasets** across departments, such as marketing, to support campaign planning while maintaining data governance and privacy.
+* **Securely share selected datasets** across departments, such as marketing, to support campaign planning while maintaining data governance and privacy.  
 
-By the end of this workshop, you'll understand how **Oracle’s Data Platform** provides a **scalable, future-ready foundation** for financial organizations seeking to:
+By the end of this workshop, you'll understand how **Oracle’s Data Platform** provides a **scalable, future-ready foundation** for financial organizations seeking to:  
 
-* ✅ Increase agility
+* ✅ Increase agility  
+* ✅ Enhance collaboration  
+* ✅ Drive business success through data driven decision making  
 
-* ✅ Enhance collaboration
-
-* ✅ Drive business success through data
-
-  [Video hosted on Oracle Video Hub](videohub:1_nnznmwsc:medium)
+[](youtu.be/xC0MTbdfR-I?si=kL9NrUw6QAL2edMv)
 
 ### **Objectives**
 
@@ -34,21 +32,21 @@ This workshop is divided into two key sections, each designed to provide a uniqu
 
 ### 1️⃣ **Demo Experience: Real-World Application Simulation**
 
-Gain practical insight into how **data products** are used within a **Loan Management Application**.
+  Gain practical insight into how **data products** are used within a **Loan Management Application**.
 
-In this section, you will:
-*	Interact with the application from the perspective of different user personas — **Loan Officer** and, **Risk Management Officer**.
-*	Follow user stories to explore how **curated and shared data products** drive **data-informed decisions**.
-*	Understand how each role consumes and contributes to data to support **operational efficiency**, **risk assessment**, and **targeted marketing efforts**.
+  In this section, you will:
+  *	Interact with the application from the perspective of different user personas — **Loan Officer** and, **Risk Management Officer**.
+  * Follow user stories that demonstrate how having near real-time access to enterprise-wide data truly drives data-driven decisions for a competitive edge.
+  *	Understand how each role consumes data products and provides feedback that enhances **operational efficiency**, **risk assessment**, and **the efficiency of marketing campaigns**.
 
 ### 2️⃣ **Hands-On Data Engineering & Management Tasks**
 
-Apply your skills through guided development tasks that simulate real-world data requests.
+  Apply your skills through guided development tasks that simulate real-world data requests.
 
-In this section, you will:
-*	Receive a set of **enhancement requests** designed to support new requests for data access.
-*	Perform **data discovery**, **data transformation**, and **data sharing** tasks to fulfil those requests.
-*	Use **integrated data platform tools** to **manage data access**, **improve data quality**, and deliver **fit-for-purpose data products**.
+  In this section, you will:
+  *	Receive a set of **enhancement requests** designed to support new requests for data access.
+  *	Perform **data discovery**, **data transformation**, and **data sharing** tasks to fulfil those requests.
+  *	Use **integrated data platform tools** to **manage data access**, **improve data quality**, and deliver **fit-for-purpose data products**.
 
 ### **Prerequisites**
 
@@ -57,9 +55,8 @@ This lab assumes you have:
 * An Oracle account to submit your a LiveLabs Sandbox reservation.
 * Basic knowledge of Oracle Database.
 
-___
 
-### **Key Terms**
+## Key Terms
 
 ___
 
@@ -91,7 +88,7 @@ A data platform is a technology solution that enables the collection, storage, c
 
 ### **About Data Product**
 
-A data product is a curated, reusable data asset designed to address a specific business need or deliver actionable insights. It transforms raw data into trusted, consumable information that can be easily accessed and used across various applications, teams, and use cases — both internally and externally.
+A data product is a reusable data asset designed to address a specific business need or deliver actionable insights. It transforms raw data into trusted, consumable information that can be easily accessed and used across various applications, teams, and use cases — both internally and externally.
 Data products are built with quality, context, and usability in mind. They include essential elements such as metadata, data lineage, and governance policies to ensure trust, transparency, and consistency. By treating data as a product, organizations can scale data sharing, accelerate innovation, and enable data-driven decision-making across the enterprise.
 
 ### **About Data Catalog**
@@ -105,6 +102,6 @@ With Data Catalog, you can collect, organize, search, access, enrich, and activa
 * [Autonomous Database](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html)
 
 ## Acknowledgements
-* **Authors** - Matt Kowalik, Otis Barr
-* **Contributors** - Eddie Ambler, Ramona Magadan
-* **Last Updated By/Date** - TBC
+* **Authors** - Eddie Ambler, Otis Barr, Matt Kowalik, Ramona Magadan
+* **Contributors** - Francis Regalado
+* **Last Updated By/Date** - 04/21/2025

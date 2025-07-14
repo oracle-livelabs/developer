@@ -18,6 +18,10 @@ Good luck, and enjoy the process. Let’s get coding!
 
 Estimated Time: 30 minutes
 
+To get things started we invite you to watch this video and see the lab in action:
+
+  [](videohub:1_iu6875ja:medium)
+  
 ### Objective:
 
 In this lab, you will:
@@ -35,8 +39,10 @@ This lab assumes you have:
 - Basic knowledge of Python and SQL.
 - Completed Lab 1: Run the Demo.
 - Completed Lab 2: Connect to Development Environment.
-- Completed Lab 3: Coding Basics on 23ai. 
+- Completed Lab 3: Coding Basics on Oracle Database 23ai. 
 - Completed Lab 4: Step by step: Implement RAG with Oracle Database 23ai.
+
+>💡 **Note:** You can download the code and run this lab on your own time here: [AI Vector Search Code](https://objectstorage.us-ashburn-1.oraclecloud.com/p/yiZgIeQQptaFaDMHUQ_623UuChmv1jf_9dCj10wwgjmsQitUMb5QP7mPv1Z1med8/n/c4u04/b/gen-ai/o/ai_vector_search_code)
 
 ## Task 1: Challenge requirements 
 
@@ -51,11 +57,7 @@ The data science team at SeerEquites has provided a Jupyter Notebook called `ai_
 
 All of the coding examples will be executed in a new Jupyter Notebook.
 
-1. Select the **streamlit** folder.
-
-    ![Click Streamlit](./images/click-streamlit.png " ")
-
-2. Open a new **Jupyter Notebook** by clicking on **Python(ipykernel)** notebook.
+1. Open a new **Jupyter Notebook** by clicking on **Python(ipykernel)** notebook.
 
     ![Open Jupyter Notebook](./images/open-new-notebook.png " ")
 

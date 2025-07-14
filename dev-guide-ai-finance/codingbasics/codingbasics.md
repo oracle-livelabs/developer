@@ -1,44 +1,50 @@
-# Coding Basics on 23ai
+# Coding Basics on Oracle Database 23ai
 
 ## Introduction
 
-In this hands-on lab, you will learn the basics of working with Oracle Database 23ai using Python. You will connect to the database with both `oracledb` and `pymongo`, create and query tables, and build JSON Duality Views. You will also explore Oracle’s Mongo API to query and update data using a familiar document model. For organizations already using MongoDB-like applications, the Oracle MongoDB API enables a smoother transition and integration with existing code, tools, or drivers—while consolidating everything in Oracle’s converged platform.
+
+At SeerEquities, developers are building a next-generation loan approval system that needs to combine enterprise-grade data governance with modern AI capabilities. But before GenAI or vector search can be applied, one thing must be true:
+
+👉 The data must be in the right shape — accessible, trustworthy, and programmable.
+
+In this lab, you’ll act as a developer on the SeerEquities data team. Your job is to build the foundational logic that powers the application’s intelligence layer. That means:
+
+- Creating and querying relational tables that represent real loan and customer data using Python
+- Converting that data into **JSON documents** using **JSON Duality Views**
+- Using **MongoDB-style syntax** via Oracle’s Mongo API to interact with the same data — without needing to duplicate or move it
+
+These capabilities make Oracle Database 23ai a **developer-friendly**, **multi-model platform**. You’ll write less glue code, eliminate data movement, and stay focused on the real task: powering intelligent loan workflows.
+
+> 💡 Everything you implement here becomes the data foundation for Retrieval-Augmented Generation (RAG) and AI Vector Search in upcoming labs.
 
 Estimated Time: 30 minutes
 
+To get things started we invite you to watch this video and see the lab in action:
+
+  [](videohub:1_v685fi7r:medium)
+
 ### Objectives
 
-* Learn basic Python coding concepts with Oracle Database 23ai
-  * Connect to Oracle Database 23ai
-  * Create tables
-  * Insert & query data
-  * Create a JSON Duality View using Python
-  * Connect to database using `pymongo` and start using Oracle's Mongo API
-  * Query data using Oracle's Mongo API
-  * Update data using Oracle's Mongo API
+- Connect to Oracle Database 23ai using Python  
+- Create and query relational data  
+- Use JSON Duality Views to work with relational tables as JSON  
+- Query and update the same data using MongoDB-style syntax
 
 ### Prerequisites
 
 This lab assumes you have:
 
-* An Oracle account to submit a LiveLabs Sandbox reservation.
-
-* Completed Lab 2: Connect to the development environment
-
-* Basic knowledge of Python.
-
-* Basic knowledge of Oracle Database, i.e., how to run queries.
+- An Oracle account with LiveLabs access  
+- Completion of **Lab 1: Connect to the Development Environment**  
+- Basic familiarity with Python and SQL
 
 
 ## Task 1: Create a new Jupyter Notebook
 
 All of the coding examples will be executed in a new Jupyter Notebook.
 
-1. Select the **streamlit** folder.
-
-    ![Click Streamlit](./images/click-streamlit.png " ")
-
-2. Open a new **Jupyter Notebook** by clicking on **Python(ipykernel)** notebook.
+1. In **JupyterLab**, click the blue **+** to open the Launcher  
+2. Start a new **Python (ipykernel)** notebook
 
     ![Open Jupyter Notebook](./images/open-new-notebook.png " ")
 
@@ -69,14 +75,14 @@ In this first task, you will connect to an Oracle Database 23ai instance using O
     cursor = connection.cursor()
     </copy>
     ```
+
 2. Execute the cell by entering **shift + enter** or clicking on the play button.
 
 3. You should see a message that says "Connection successful!" in your notebook. If you do not, check the credentials and try again. 
 
     ![connect](./images/connect.png " ")
 
->**Note:** The last line, `cursor = connection.cursor()`, creates a cursor object from the established Oracle database connection. A cursor acts as a control structure that enables the execution of SQL queries and retrieval of results from the database. It is essential for sending SQL commands, fetching data, and iterating through query results. We will be using the cursor object in later steps of this lab. The object persists in the notebook session, so you can use it in subsequent cells without re-establishing the connection. 
-
+>**Note:** The last line, `cursor = connection.cursor()`, creates a cursor object from the established Oracle database connection. A cursor acts as a control structure that enables the execution of SQL queries and retrieval of results from the database. It is essential for sending SQL commands, fetching data, and iterating through query results. We will be using the cursor object in later steps of this lab. The object persists in the notebook session, so you can use it in subsequent cells without re-establishing the connection.
 
 ## Task 3: Create tables and insert data
 
@@ -185,7 +191,7 @@ Now, that we have established a connection, we can start creating our tables and
     </copy>
     ```
 
-    ![query customers](./images/query-customers.png " ")
+    ![query customers](./images/task3.png " ")
 
 ### **Task Summary**
 
@@ -287,7 +293,7 @@ Next, we want to explore how we can use a **JSON Duality View** to query our new
     </copy>
     ```
 
-    ![dv](./images/query-dv.png " ")
+    ![dv](./images/task4-1.png " ")
 
     You notice that our code has some significant changes. We are now passing a parameter into our query, and we are also formatting the output of our query. Let's have a closer look:
 
@@ -348,7 +354,7 @@ Now, that we have established a connection to Oracle Database 23ai via Mongo API
     </copy>
     ```
 
-    ![dv](./images/mongo-query.png " ")    
+    ![dv](./images/task6.png " ")    
 
     As you can see, the result matches that of the SQL query (`query_dv()`), though the MongoDB syntax requires significantly less code.
 
@@ -356,7 +362,7 @@ Now, that we have established a connection to Oracle Database 23ai via Mongo API
 
 Next, let's update some data in our database using MongoDB syntax. Let's write a function that will help us do this.
 
-1. Wen want to change the email address of our customer "Dan" to "dant@aol.com". Copy & paste the following code into a **new cell** and run it.
+1. We want to change the email address of our customer "Dan" to "dant@aol.com". Copy & paste the following code into a **new cell** and run it.
 
     ```python
     <copy>
@@ -380,7 +386,7 @@ Next, let's update some data in our database using MongoDB syntax. Let's write a
     And indeed, we can see that the email address has been updated.
 
 
-    ![dv](./images/mongo-update.png " ")
+    ![dv](./images/task7-1.png " ")
 
 
 3. What if we want to do something more complex, for example updating a nested field? For example, let's say we want to change TotalValue field. Copy the following code into a new cell and run it.
@@ -388,21 +394,18 @@ Next, let's update some data in our database using MongoDB syntax. Let's write a
     ```python
     <copy>
     def update_mongo_order():
-            col = mongo_connect().CUSTOMERS_DV
-            col.update_one(
+        col = mongo_connect().CUSTOMERS_DV
+        col.update_one(
             {
                 "FirstName": "Dan",
                 "orders.OrderID": 1.0
             },
             {
-                "$set": {
-                    "orders.$.TotalValue": 100
-                }
+                "$set":{"orders.$.TotalValue": 100}
             }
         )
-            return
-
-        update_mongo_order()
+        return
+    update_mongo_order()
         </copy>
         ```
 
@@ -414,7 +417,7 @@ Next, let's update some data in our database using MongoDB syntax. Let's write a
     </copy>
     ```
 
-    ![mongo query total value](./images/mongo-query2.png " ")
+    ![mongo query total value](./images/task7-3.png " ")
 
     You should see that the TotalValue field has been updated from 10.23 to 100.0.
     
@@ -430,7 +433,7 @@ The final step in our basic coding tour with Python and the Oracle Database 23ai
     </copy>
     ```
 
-    ![customer table after update](./images/query-cust-update.png " ")
+    ![customer table after update](./images/task8.png " ")
 
     You can see that also in the relational `customers` table, the email address has been updated.
 
@@ -442,7 +445,7 @@ The final step in our basic coding tour with Python and the Oracle Database 23ai
     </copy>
     ```
 
-    ![orders table after update](./images/query-orders-update.png " ")
+    ![orders table after update](./images/task8.2.png " ")
 
     You can see that also in the relational `orders` table, the total value has been updated.
 
@@ -452,26 +455,26 @@ The final step in our basic coding tour with Python and the Oracle Database 23ai
     <copy>
     import pandas as pd
 
-        def query_customers_with_orders(first_name):
-            with connection.cursor() as cursor:
-                query = """
-                    SELECT *
-                    FROM customers c
-                    JOIN orders o ON c.id = o.customer_id
-                    WHERE c.first_name = :first_name
-                """
-                cursor.execute(query, {"first_name": first_name})
-                rows = cursor.fetchall()
-                column_names = [desc[0] for desc in cursor.description]
-                df = pd.DataFrame(rows, columns=column_names)
-                return df
+    def query_customers_with_orders(first_name):
+        with connection.cursor() as cursor:
+            query = """
+                SELECT *
+                FROM customers c
+                JOIN orders o ON c.id = o.customer_id
+                WHERE c.first_name = :first_name
+            """
+            cursor.execute(query, {"first_name": first_name})
+            rows = cursor.fetchall()
+            column_names = [desc[0] for desc in cursor.description]
+            df = pd.DataFrame(rows, columns=column_names)
+            return df
 
-        df = query_customers_with_orders("Dan")
-        df.head() 
+    df = query_customers_with_orders("Dan")
+    df.head() 
     </copy>
     ```
 
-    ![join tables](./images/join.png " ")
+    ![join tables](./images/task8-last.png " ")
 
     As you can see we included some new features in our function. Let's have a closer look:
 
@@ -481,13 +484,13 @@ The final step in our basic coding tour with Python and the Oracle Database 23ai
 
     🔴 **`df.head()`** - This is a method that returns that returns the result of the query including the column names. 
 
-## Summary
+## Conclusion
 
-In this lab, we learned how to use Python and Oracle's Python driver `oracledb` to interact with Oracle Database 23ai's new features. You learned how to user the `cursor` object to execute SQL queries. Using the `cursor` object, you created a **JSON Duality View** and you even used some JSON functions to query documents using SQL syntax. Then, you also learned how to connect to the database using `pymongo` and retrieve data from a table in the database using **MongoDB syntax**. You created functions to update the **JSON Duality View** and you learned how these updates are also reflected in the underlying relational database tables.
+As a developer at SeerEquities, you've just built the foundation for a GenAI-powered loan approval system. We learned how to use Python and Oracle's Python driver `oracledb` to interact with Oracle Database 23ai's new features. You learned how to user the `cursor` object to execute SQL queries. Using the `cursor` object, you created a **JSON Duality View** and you even used some JSON functions to query documents using SQL syntax. Then, you also learned how to connect to the database using `pymongo` and retrieve data from a table in the database using **MongoDB syntax**. You created functions to update the **JSON Duality View** and you learned how these updates are also reflected in the underlying relational database tables.
 
-In the next labs, you will see several of the coding principles learned and even more.  
+This architecture eliminates the need for duplicating data across platforms and simplifies how developers build AI-ready applications. Whether you're calling SQL, working with JSON, or speaking Mongo, you're always working with a single source of truth inside the Oracle Database.
 
-You are now ready to implement you a RAG process using Oracle Database 23ai's new features!
+In the next lab, you'll build on this foundation to implement Retrieval-Augmented Generation (RAG), create vector embeddings, and generate personalized loan recommendations with Oracle 23ai and OCI Generative AI.
 
 ## Acknowledgements
 * **Authors** - Linda Foinding, Kevin Lazarz

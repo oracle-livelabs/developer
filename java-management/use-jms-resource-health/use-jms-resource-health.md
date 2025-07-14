@@ -5,31 +5,21 @@ This appendix walks you through the steps to use Java Management Service (JMS) R
 JMS Resource Health provides a comprehensive list of issues affecting JMS Fleets and a JMS plug-in. It identifies and reports the following types of issues:
 
 For JMS Fleets:
-
-```
-Fleets that don't have any managed instances.
-```
-```
-JMS plug-in registered to a fleet that encounter errors while attempting to push inventory data to the fleet inventory or operational logs, likely due to missing policies.
-```
+- Fleets that don't have any managed instances.
+- JMS plug-in registered to a fleet that encounter errors while attempting to push inventory data to the fleet inventory or operational logs, likely due to missing policies.
 
 For a JMS Plug-in:
-```
-JMS plug-in in instances that cannot register with JMS Fleets due to a missing policy.
-```
-```
-JMS plug-in in instances that encounter errors while attempting to push inventory data to the fleet inventory or operational logs, likely due to missing policies.
-```
-```
-JMS plug-in in instances not associated with any fleet, which may occur if the JMS plug-in is enabled under OCA but registration hasn't been completed.
-```
+- JMS plug-in in instances that cannot register with JMS Fleets due to a missing policy.
+- JMS plug-in in instances that encounter errors while attempting to push inventory data to the fleet inventory or operational logs, likely due to missing policies.
+- JMS plug-in in instances not associated with any fleet, which may occur if the JMS plug-in is enabled under OCA but registration hasn't been completed.
+
 Estimated Time: 5 minutes
 
 ### Objectives
 In this lab, you will:
 - Access the JMS Resource Health dashboard
-- Troubleshoot common JMS Fleet Health Issues
-- Troubleshoot common JMS Plug-in Health Issues
+- Troubleshoot JMS Fleet Health Issues
+- Troubleshoot JMS Plug-in Health Issues
 
 
 ## Task 1: View Resource Health
@@ -57,7 +47,7 @@ In this lab, you will:
 
         ![image of the first option to resolve the issue](images/review-fleet-issue-1.png)
 
-    * Register instances with installed agents and the deployed JMS plug-in that aren't currently registered to any JMS fleet.
+    * Register OCI instances with installed agents and the deployed JMS plug-in that aren't currently registered to any JMS fleet.
 
         ![image of the second option to resolve the issue](images/review-fleet-issue-2.png)
 
@@ -91,6 +81,8 @@ In this lab, you will:
 ## Learn More
 
 * Refer to the [JMS Resource Health](https://docs.oracle.com/en-us/iaas/jms/doc/resource-health.html) section of the JMS documentation for more details.
+
+* Refer to the [JMS Fleets Policy Statements](https://docs.oracle.com/en-us/iaas/jms/doc/policy-statements.html) for more details.
 
 * If the problem still persists or it is not listed, then refer to the [Getting Help and Contacting Support](https://docs.oracle.com/en-us/iaas/Content/GSG/Tasks/contactingsupport.htm) section. You can also open a support service request using the **Help** menu in the OCI console.
 

@@ -1,7 +1,5 @@
 # Get started - Login to the LiveLabs Sandbox Environment
 
-#### Estimated Lab Time: 5 minutes
-
 ## **Introduction**
 
 Welcome to LiveLabs.
@@ -9,7 +7,9 @@ You have successfully created a LiveLabs Sandbox environment.
 
 In this lab, we will show you where you can find the login information and how to log in to the LiveLabs Sandbox.
 
-### **Objectives**
+Estimated Time: 5 minutes
+
+### Objectives
 
 - Login to LiveLabs Sandbox
 - Find your LiveLabs Sandbox reservations
@@ -24,13 +24,13 @@ In this lab, we will show you where you can find the login information and how t
 
       ![View Login Info](./images/view-login-info.png " ")
 
-2. Click **View Login Info** to see detailed reservation information. Click the **Start the Demo** link.
+2. Click **View Login Info** to view reservation details. In this workshop, you'll use the **Oracle Database Actions** web app in Autonomous Database. Click on **copy value** to copy the password and then click on the link next to **SQL Worksheet**. Your username is **ADMIN**
 
     ![Launch Demo](./images/start-demo.png " ")
 
-3. Congratulations! You are now connected to the demo environment. You can now execute the different tasks and steps for the selected LiveLabs workshop.
+3. Congratulations! You are now connected to the **Oracle Database Actions** as the **ADMIN** user. In this workshop, you will login to Oracle Database Actions using different usernames. Each lab will provide you with the login names. **Note**: The password is always the password listed in the View Login Info section!
 
-    ![Demo Environment](./images/demo-env.png " ")
+    ![Demo Environment](./images/dbaction.png " ")
 
 ## Task 2: Find your LiveLabs Sandbox reservations
 
@@ -42,6 +42,5 @@ You may now **proceed to the next lab**.
 
 ## Acknowledgements
 
-- **Created By/Date** - Matt Kowalik
-- **Contributor** - Otis Barr
-- **Last Updated By/Date** - TBC
+- **Created By/Date** - Kamryn Vinson
+- **Last Updated By/Date** - Kamryn Vinson, June 2025
