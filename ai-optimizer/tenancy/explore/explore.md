@@ -19,8 +19,7 @@ In this lab, you will:
 
 This lab assumes you have:
 
-* An Oracle Database 23ai up and running
-* Completed the *Get Started* Lab
+* Completed the *Deploy the Oracle AI Optimizer and Toolkit* Lab
 
 ## Task 1: Check the DB connection
 

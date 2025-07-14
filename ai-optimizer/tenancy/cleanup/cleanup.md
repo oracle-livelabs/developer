@@ -2,7 +2,7 @@
 
 ## Introduction
 
-In the lab you cleanup the deployed Oracle AI Optimizer and Toolkit environment by using Oracle CLoud OCI Resource Manager.
+In the lab you cleanup the deployed Oracle AI Optimizer and Toolkit environment by using Oracle Cloud OCI Resource Manager.
 
 Estimated Time: 10 minutes
 

@@ -9,6 +9,7 @@ Estimated Time: 10 minutes
 ### Objectives
 
 In this lab, you will:
+
 * Start the AI Optimizer as an API Server
 * Review the configuration parameters
 * Make an API call to the server
@@ -16,6 +17,7 @@ In this lab, you will:
 ### Prerequisites
 
 This lab assumes you have:
+
 * All previous labs successfully completed
 
 ## Task 1: Start the API Server
@@ -51,26 +53,26 @@ Now that the API Server is running, you can perform API calls against it. (You m
     <copy>
     #VM ip address and Bearer Key to be set accordingly.
     curl -X POST "http://your_VM_ip_address:8000/v1/chat/completions" \
-     -H "Content-Type: application/json" \
-     -H "Authorization: Bearer abcd" \ 
-     -H "client: server" \
-     -d '{
-       "model": "llama3.1",
-       "messages": [
-         {
-           "role": "user",
-           "content": "In Oracle Database 23ai, how do I determine the accuracy of my vector indexes?"
-         }
-       ]
-     }' | jq .
-     </copy>
+      -H "Content-Type: application/json" \
+      -H "Authorization: Bearer abcd" \ 
+      -H "client: server" \
+      -d '{
+        "model": "llama3.1",
+        "messages": [
+          {
+            "role": "user",
+            "content": "In Oracle Database 23ai, how do I determine the accuracy of my vector indexes?"
+          }
+        ]
+      }' | jq .
+      </copy>
     ```
 
-    Here, you're essentially repeating the same type of request as in *Lab 3*. You’ve passed the API Server Key you configured in Task 1 along with the question content as parameters. You should receive a response similar to the screenshot below:
+  Here, you're essentially repeating the same type of request as in *Lab 3*. You’ve passed the API Server Key you configured in Task 1 along with the question content as parameters. You should receive a response similar to the screenshot below:
 
-    ![curl-response](images/curl-response.png)
+  ![curl-response](images/curl-response.png)
 
-   As you can see, the API Server responded with a generic answer—this is expected because RAG was not enabled. You can enable RAG just like you did in the previous labs, and the API Server will provide more context-aware responses.
+  As you can see, the API Server responded with a generic answer—this is expected because RAG was not enabled. You can enable RAG just like you did in the previous labs, and the API Server will provide more context-aware responses.
 
 ## Learn More
 
@@ -78,7 +80,7 @@ Now that the API Server is running, you can perform API calls against it. (You m
 
 * To explore the Oracle AI Optimizer and Toolkit API documentation, visit:
 
-    ```
+    ```text
     <copy>
     http://localhost:8001/v1/docs#
     </copy>
@@ -87,6 +89,7 @@ Now that the API Server is running, you can perform API calls against it. (You m
     > **Note**: The port number in the URL (in this case 8001) must match the API Server Port you configured in Task 1 of this lab.
 
 ## Acknowledgements
+
 * **Author** - Lorenzo De Marchis, Developer Evangelist, May 2025
-* **Contributors** - Mark Nelson, John Lathouwers, Corrado De Bari, Jorge Ortiz Fuentes
-* **Last Updated By** - Lorenzo De Marchis, May 2025
+* **Contributors** - Mark Nelson, John Lathouwers, Corrado De Bari, Jorge Ortiz Fuentes, Andy Tael
+* **Last Updated By** - Andy Tael, July 2025

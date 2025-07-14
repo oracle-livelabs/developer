@@ -11,6 +11,7 @@ Estimated Lab Time: 15 minutes
 ### Objectives
 
 In this lab, you will:
+
 * Test different parameter configurations and compare the resulting answers
 * Apply various distance metrics to the same set of questions and evaluate how the answers differ
 * Experiment with different vector stores and compare the answers
@@ -18,6 +19,7 @@ In this lab, you will:
 ### Prerequisites
 
 This lab assumes you have:
+
 * All previous labs successfully completed
 
 ## Task 1: Play with the Parameters
@@ -26,16 +28,17 @@ Using the **TEST1** vector store, you will experiment with the main parameters c
 
 **IMPORTANT**: After each question—regardless of whether you're repeating the same one with different settings—be sure to clear the history by clicking the **Clear** button. We will start by testing the first question.
 
-  * LLM: llama3.1
-  * TopK: 4
-  * Search Type: Similarity
-  * Temperature: 0
-  * Vector Store: TEST1
+* LLM: llama3.1
+* TopK: 4
+* Search Type: Similarity
+* Temperature: 0
+* Vector Store: TEST1
 
 ```text
 Q: In Oracle Database 23ai, how do I determine the accuracy of my vector indexes?
 
 A: The user wants to determine the accuracy of their vector indexes in Oracle Database 23c. According to the provided documentation, there are several ways to achieve this:
+
 1. Use the DBMS_VECTOR.INDEX_ACCURACY_QUERY procedure: This procedure provides an accuracy report for a top-K index search for a specific query vector and a specific target accuracy.
 2. Use the DBMS_VECTOR.INDEX_ACCURACY_REPORT function: This function captures accuracy values achieved by approximate searches using a particular vector index for a certain period of time.
 3. Use the INDEX_VECTOR_MEMORY_ADVISOR procedure to determine the vector memory size.
@@ -48,11 +51,11 @@ Document references:
 * INDEX_VECTOR_MEMORY_ADVISOR procedure in the provided text
 ```
 
-  * LLM: llama3.1
-  * TopK: 4
-  * Search Type: Similarity
-  * Temperature: 1
-  * Vector Store: TEST1
+* LLM: llama3.1
+* TopK: 4
+* Search Type: Similarity
+* Temperature: 1
+* Vector Store: TEST1
 
 ```text
 Q: In Oracle Database 23ai, how do I determine the accuracy of my vector indexes?
@@ -87,11 +90,11 @@ We will now experiment with the **TopK** parameter, while keeping Temperature fi
 
 Let's move onto a different question and see the results:
 
-  * LLM: llama3.1
-  * TopK: 4
-  * Search Type: Similarity
-  * Temperature: 0
-  * Vector Store: TEST1
+* LLM: llama3.1
+* TopK: 4
+* Search Type: Similarity
+* Temperature: 0
+* Vector Store: TEST1
 
 ```text
 Q: In Oracle Database 23ai, how do I convert string text to embeddings using PL/SQL?
@@ -107,12 +110,11 @@ SELECT UTL_TO_EMBEDDING(text) FROM YOUR_TABLE;
 Make sure that your database setup includes the access details required for whatever vector embedding model is being referenced. Without knowing more about how UTL_TO_EMBEDDING function expects setup on such models within Oracle databases, it's not possible to offer more specifics than this.
 ```
 
-
-  * LLM: llama3.1
-  * TopK: 10
-  * Search Type: Similarity
-  * Temperature: 0
-  * Vector Store: TEST1
+* LLM: llama3.1
+* TopK: 10
+* Search Type: Similarity
+* Temperature: 0
+* Vector Store: TEST1
 
 ```text
 Q: In Oracle Database 23ai, how do I convert string text to embeddings using PL/SQL?
@@ -147,11 +149,11 @@ We will now observe how using a different distance metric can lead to a differen
 
 **IMPORTANT**: After each question—regardless of whether you're repeating the same one with different settings—be sure to clear the history by clicking the **Clear** button.
 
-  * LLM: llama3.1
-  * TopK: 4
-  * Search Type: Similarity
-  * Temperature: 0
-  * Vector Store: TEST1
+* LLM: llama3.1
+* TopK: 4
+* Search Type: Similarity
+* Temperature: 0
+* Vector Store: TEST1
 
 ```text
 Q: In Oracle Database 23ai, how do I determine the accuracy of my vector indexes?
@@ -183,13 +185,13 @@ Make sure to replace the placeholder values with your actual OWNER_NAME, INDEX_N
 I hope this helps!
 ```
 
-  * LLM: llama3.1
-  * Top K: 4
-  * Fetch K: 20
-  * Degree of Diversity: 0.5
-  * Search Type: Maximal Marginal Relevance
-  * Temperature: 0
-  * Vector Store: TEST1
+* LLM: llama3.1
+* Top K: 4
+* Fetch K: 20
+* Degree of Diversity: 0.5
+* Search Type: Maximal Marginal Relevance
+* Temperature: 0
+* Vector Store: TEST1
 
 ```text
 Q: In Oracle Database 23ai, how do I determine the accuracy of my vector indexes?
@@ -225,11 +227,11 @@ We can also explore how different combinations of **LLMs** and vector stores can
 
 **IMPORTANT**: After each question—regardless of whether you're repeating the same one with different settings—be sure to clear the history by clicking the **Clear** button.
 
-  * LLM: llama3.1
-  * TopK: 4
-  * Search Type: Similarity
-  * Temperature: 0
-  * Vector Store: TEST1
+* LLM: llama3.1
+* TopK: 4
+* Search Type: Similarity
+* Temperature: 0
+* Vector Store: TEST1
 
 ```text
 Q: In Oracle Database 23ai, how do I create a vector column?
@@ -252,11 +254,11 @@ CREATE TABLE my_vectors (
 You can then insert data into the embedding column using either a string representation of the vector or the explicit use of the TO_VECTOR function with specific number of dimensions, format, or storage format.
 ```
 
-  * LLM: gpt-4o-mini
-  * TopK: 4
-  * Search Type: Similarity
-  * Temperature: 0
-  * Vector Store: TEST2
+* LLM: gpt-4o-mini
+* TopK: 4
+* Search Type: Similarity
+* Temperature: 0
+* Vector Store: TEST2
 
 ```text
 Q: In Oracle Database 23ai, how do I create a vector column?
@@ -283,6 +285,7 @@ These few examples offer just a glimpse of the cross-testing possibilities avail
 * Experiment with other available parameters across different questions to explore the full range of behavior.
 
 ## Acknowledgements
+
 * **Author** - Lorenzo De Marchis, Developer Evangelist, May 2025
-* **Contributors** - Mark Nelson, John Lathouwers, Corrado De Bari, Jorge Ortiz Fuentes
-* **Last Updated By** - Lorenzo De Marchis, May 2025
+* **Contributors** - Mark Nelson, John Lathouwers, Corrado De Bari, Jorge Ortiz Fuentes, Andy Tael
+* **Last Updated By** - Andy Tael, July 2025

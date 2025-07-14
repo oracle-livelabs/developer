@@ -13,6 +13,7 @@ Estimated Time: 120 minutes
 ### Objectives
 
 In this workshop, you will learn how to:
+
 * Explore the AI Optimizer environment
 * Embed documents in a vector format within **Oracle Database 23ai**
 * Use Retrieval Augmented Generation (**RAG**) techniques
@@ -29,6 +30,7 @@ This lab assumes you have:
 * (optional) API Keys for Third-Party Models (e.g., OpenAI API Keys that you can get [here](https://platform.openai.com/settings/organization/api-keys))
 
 ## Acknowledgements
+
 * **Author** - Lorenzo De Marchis, Developer Evangelist, May 2025
-* **Contributors** - Mark Nelson, John Lathouwers, Corrado De Bari, Jorge Ortiz Fuentes
-* **Last Updated By** - Lorenzo De Marchis, June 2025
+* **Contributors** - Mark Nelson, John Lathouwers, Corrado De Bari, Jorge Ortiz Fuentes, Andy Tael
+* **Last Updated By** - Andy Tael, 2025

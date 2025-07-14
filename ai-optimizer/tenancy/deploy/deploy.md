@@ -62,11 +62,11 @@ This lab assumes you have:
 
   ![Access Information](images/appinfo.png)
 
-**NOTE:** Although the infrastructure is deployed, the AI Optimizer may still be initializing, which can result in a 502 Bad Gateway error when accessing the URLs. Please allow up to 10 minutes for the configuration to complete.
-
 1. When accessing the Web GUI using URL provided it should look like this:
 
   ![Home page](images/homepage.png)
+
+> **NOTE**: Although the infrastructure is deployed, the AI Optimizer may still be initializing, which can result in a 502 Bad Gateway error when accessing the URLs. Please allow up to 10 minutes for the configuration to complete.
 
 ## Acknowledgements
 
