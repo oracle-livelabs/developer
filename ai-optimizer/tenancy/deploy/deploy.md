@@ -4,6 +4,8 @@
 
 In the lab you will deploy the Oracle AI Optimizer and Toolkit by using infrastructure as code and OCI Resource Manager.
 
+Estimated Time: 20 minutes
+
 ### Objectives
 
 * Go to the GitHub page where Oracle AI Optimizer and Toolkit is maintained
@@ -69,4 +71,4 @@ This lab assumes you have:
 ## Acknowledgements
 
 * **Author** - Andy Tael, July 2025
-* **Last Updated By** - Andy Tael, July 202
+* **Last Updated By** - Andy Tael, July 2025

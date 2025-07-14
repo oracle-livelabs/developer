@@ -49,6 +49,11 @@
             "filename": "../../tenancy/server/server.md"
         },
         {
+            "title": "Lab 9: Cleanup the environment",
+            "description": "Lab where cleanup the deployed environment",
+            "filename": "../../tenancy/cleanup/cleanup.md"
+        },
+        {
             "title": "Need Help?",
             "description": "Solutions to Common Problems and Directions for Receiving Live Help",
             "filename":"../../help/help.md"
