@@ -1,5 +1,5 @@
 {
-    "workshoptitle": "Data Engineering: Build a Data Platform with Autonomous Database",
+    "workshoptitle": "Oracle Data Platform — Finance Edition",
     "help": "livelabs-help-database_us@oracle.com",
     "tutorials": [
         {
@@ -27,6 +27,10 @@
         {
             "title": "Lab 4: Subscribe to Data Product",
             "filename": "../../mktplace-subscribe/mktplace-subscribe.md"
+        },
+        {
+            "title": "Lab 5: Build Your Data Pipeline: Load & Transform Data",
+            "filename": "../../load-transform/load-transform.md"
         },
         {
             "title": "Need Help?",
