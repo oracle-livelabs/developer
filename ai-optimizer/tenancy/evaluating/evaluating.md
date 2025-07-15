@@ -40,20 +40,20 @@ The AI Optimizer allows you to generate as many questions and answers as you nee
 
   Upload the same document that was used to create the vector store. You can easily download it from [this link](https://docs.oracle.com/en/database/oracle/oracle-database/23/vecse/ai-vector-search-users-guide.pdf).
 
-2. Increase the number of questions to be generated to 10 or more
+1. Increase the number of questions to be generated to 10 or more
 
   Keep in mind that the process can take a significant amount of time, especially if you are using a local LLM without sufficient hardware resources. If you choose to use a remote OpenAI model instead, the generation time will be less affected by the number of Q&A pairs to create.
 
-3. Leave the default option for:
+1. Leave the default option for:
 
 * Q&A Language Model: **gpt-4o-mini**
 * Q&A Embedding Model: **text-embedding-3-small**
 
-4. Click on **Generate Q&A** button and wait until the process is over:
+1. Click on **Generate Q&A** button and wait until the process is over:
 
   ![patience](./images/patience.png)
 
-5. Browse the questions and answers generated:
+1. Browse the questions and answers generated:
 
   ![qa-browse](./images/qa-browse.png)
 
@@ -65,7 +65,7 @@ The AI Optimizer allows you to generate as many questions and answers as you nee
 
   ![qa-json](./images/qa-json.png)
 
-6. Update the **Test Set Name**
+1. Update the **Test Set Name**
 
   Replace the automatically generated default name to make it easier to identify the test dataset later, especially when running repeated tests with different chatbot configurations. For example, change it from:
 
