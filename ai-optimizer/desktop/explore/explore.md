@@ -37,9 +37,13 @@ Let's check if the DB is correctly connected.
    
    ![Database configuration](images/database-config.png)
 
-3. If you are using an Autonomous Database and have any SelectAI profile active, you'll find the list of Select AI profiles to activate:
+3. If you are using a compatible database and have any SelectAI profile active, you'll find the list of Select AI profiles to activate. If you haven't created one yet, you will need to create a [Select AI](https://www.oracle.com/it/autonomous-database/select-ai/) profile and you'll find the list of active profiles within the tenancy eventually
 
    ![Select AI Profiles](images/selectai-profiles.png)
+
+   The Select AI feature is currently available and fully supported in:
+   * Oracle Autonomous Database 23ai
+   * Oracle Database 23.7+
 
 ## Task 2: Configure LLMs
 
@@ -104,7 +108,7 @@ In Oracle Database 23ai, how do I convert string text to embedding using PL/SQL?
 
 > **NOTE**: *if you see a **Database has no Vector Stores. Disabling Vector Search.** message above, don't panic! That's because you haven't created a vector store yet and thus you can't use the RAG functionality*.
 
-> **NOTE**: *if you see a **Database not SelectAI Compatible. Disabling SelectAI.** message above, don't panic! That's because you are using a Database that's not compatible with SelectAI*.
+> **NOTE**: *if you see a **Database not SelectAI Compatible. Disabling SelectAI.** message above, don't panic! That's because you are using a Database that's not compatible with SelectAI or doesn't have a valid Select AI profile yet*.
 
 As you will probably be able to notice, even if the questions refer to Oracle Database 23ai, the LLM will mention Oracle Database 23c. This is known as **Knowledge Cutoff**, meaning that probably the LLM was trained before Oracle Database 23c was even renamed as 23ai. 
 
