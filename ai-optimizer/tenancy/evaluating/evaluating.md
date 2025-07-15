@@ -122,7 +122,7 @@ Now you are ready to perform an evaluation on the Q&As you generated in the prev
 
 ## Task 4 (optional): Try a different Q&A Testset
 
-Now let's perform a test using an external saved test dataset, which you can download [here](https://raw.githubusercontent.com/markxnelson/developer/refs/heads/main/ai-optimizer/getting_started-30_testset.json). This file contains 30 pre-generated questions.
+Now let's perform a test using an external saved test dataset, [which you can download here](https://raw.githubusercontent.com/markxnelson/developer/refs/heads/main/ai-optimizer/getting_started-30_testset.json). This file contains 30 pre-generated questions.
 
 If you wish to remove any Q&A pairs that you consider irrelevant or unhelpful, you can edit the file, save it, and then reload it as a local file—following the steps shown in the screenshot below:
 
