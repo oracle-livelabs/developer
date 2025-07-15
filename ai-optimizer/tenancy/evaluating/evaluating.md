@@ -86,11 +86,11 @@ Now you are ready to perform an evaluation on the Q&As you generated in the prev
 * In the **Select Alias** dropdown list, choose the **TEST2** value.
 * Leave all other parameters unchanged
 
-2. With **gpt-4o-mini** selected as the evaluation model, click the **Start Evaluation** button and wait a few seconds. All questions from your dataset will be submitted to the chatbot using the configuration defined in the left pane:
+1. With **gpt-4o-mini** selected as the evaluation model, click the **Start Evaluation** button and wait a few seconds. All questions from your dataset will be submitted to the chatbot using the configuration defined in the left pane:
 
   ![start-eval](./images/start-eval.png)
 
-3. Let's examine the result report, starting with the first section:
+1. Let's examine the result report, starting with the first section:
 
   ![result](./images/result-topic.png)
 
