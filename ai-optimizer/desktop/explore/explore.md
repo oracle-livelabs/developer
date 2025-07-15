@@ -9,6 +9,7 @@ Estimated Time: 15 minutes
 ### Objectives
 
 In this lab, you will:
+
 * Set the connection to your Oracle Database 23ai
 * Set your Oracle Cloud Infrastructure credentials for OCI connectivity
 * Configure the LLMs and embedding models you will use in the following labs
@@ -17,6 +18,7 @@ In this lab, you will:
 ### Prerequisites
 
 This lab assumes you have:
+
 * An Oracle Database 23ai up and running
 * Completed the *Get Started* Lab
 
@@ -26,7 +28,7 @@ Let's check if the DB is correctly connected.
 
 1. Navigate to the *Databases* tab on the left side pane:
 
-	![Navigate to the Databases tab](images/database-navigation.jpg)
+  ![Navigate to the Databases tab](images/database-navigation.jpg)
 
 2. To configure the Oracle Database 23ai Free, you will need to enter the credentials:
 
@@ -34,7 +36,7 @@ Let's check if the DB is correctly connected.
    * Enter the Database Password for the database user: `OrA_41_OpTIMIZER`
    * Enter the Database Connection String: `//localhost:1521/FREEPDB1`
    * Save
-   
+
    ![Database configuration](images/database-config.png)
 
 3. If you are using a compatible database and have any SelectAI profile active, you'll find the list of Select AI profiles to activate. If you haven't created one yet, you will need to create a [Select AI](https://www.oracle.com/it/autonomous-database/select-ai/) profile and you'll find the list of active profiles within the tenancy eventually
@@ -51,17 +53,17 @@ Let's check the models available for use. You'll need to navigate to the *Models
 
 ![models menu](images/models.jpg)
 
-   * The default LLMs for chat completions are:
+* The default LLMs for chat completions are:
 
      ![llms](images/llms.png)
 
-  * The default LLMs for embeddings are:
+* The default LLMs for embeddings are:
 
      ![embeddings](images/emb.png)
 
    Let's add another LLM to the Ollama models and enable it. Open a terminal a window and follow these steps:
 
-  * Pull the llama3.2 LLM:
+* Pull the llama3.2 LLM:
 
       ```bash
       <copy>
@@ -74,7 +76,7 @@ Let's check the models available for use. You'll need to navigate to the *Models
 
   * (optional) If you are willing to use models by OpenAI, you will need to configure your **OPENAI API KEY**. To configure one, click the *Edit* button beside the model you would like to use (e.g., **gpt-4o-mini**) and add your own API key in the corresponding box:
 
-      ![openai-key](images/openai-api.png)   
+      ![openai-key](images/openai-api.png)
 
   Now you are all set for using the *Chat* feature with the LLMs you just configured!
 
@@ -88,7 +90,7 @@ scroll down the left-side menu to find the **Toolkit** menu:
 
 ![toolkit menu](images/toolkit-menu.png)
 
-select the **LLM Only** option and then choose the **llama3.1** model: 
+select the **LLM Only** option and then choose the **llama3.1** model:
 
 ![chat models](images/chatmodel.png)
 
@@ -106,11 +108,9 @@ In Oracle Database 23ai, how do I convert string text to embedding using PL/SQL?
 </copy>
 ```
 
-> **NOTE**: *if you see a **Database has no Vector Stores. Disabling Vector Search.** message above, don't panic! That's because you haven't created a vector store yet and thus you can't use the RAG functionality*.
+> **NOTE**: *if you see a **Database has no Vector Stores. Disabling Vector Search.** message above, don't panic! That's because you haven't created a vector store yet and thus you can't use the RAG functionality* or *if you see a **Database not SelectAI Compatible. Disabling SelectAI.** message above, don't panic! That's because you are using a Database that's not compatible with SelectAI or doesn't have a valid Select AI profile yet*.
 
-> **NOTE**: *if you see a **Database not SelectAI Compatible. Disabling SelectAI.** message above, don't panic! That's because you are using a Database that's not compatible with SelectAI or doesn't have a valid Select AI profile yet*.
-
-As you will probably be able to notice, even if the questions refer to Oracle Database 23ai, the LLM will mention Oracle Database 23c. This is known as **Knowledge Cutoff**, meaning that probably the LLM was trained before Oracle Database 23c was even renamed as 23ai. 
+As you will probably be able to notice, even if the questions refer to Oracle Database 23ai, the LLM will mention Oracle Database 23c. This is known as **Knowledge Cutoff**, meaning that probably the LLM was trained before Oracle Database 23c was even renamed as 23ai.
 
 Moreover, the LLM tends to answer in a generic way, with no specific mention to the actual script needed to perform the operations requested. In Lab 3, we will compare these results with the one obtained using Retrieval-Augmented Generation (RAG), where more context is given to the LLMs.
 
@@ -137,6 +137,7 @@ The Optimizer lets you configure the connection to your OCI tenant for retrievin
 * (optional) Play with the **Temperature** parameter (and also the other parameters if you wish to!) and compare the quality of the answers, for each LLM that is available. Clear the history by pressing the **Clear** button after each cycle.
 
 ## Acknowledgements
+
 * **Author** - Lorenzo De Marchis, Developer Evangelist, May 2025
-* **Contributors** - Mark Nelson, John Lathouwers, Corrado De Bari, Jorge Ortiz Fuentes
+* **Contributors** - Mark Nelson, John Lathouwers, Corrado De Bari, Jorge Ortiz Fuentes, Andy Tael
 * **Last Updated By** - Lorenzo De Marchis, June 2025

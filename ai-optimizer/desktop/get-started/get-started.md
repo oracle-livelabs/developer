@@ -39,11 +39,11 @@ This lab assumes you have:
 * **12G** of usable memory.
 * Sufficient GPU/CPU resources to run the LLM, embedding model, and database
 
-## Task 1:  LLM - llama3.1
+## Task 1: LLM - llama3.1
 
 To enable the _ChatBot_ functionality, access to a **LLM** is required. This workshop will use [Ollama](https://ollama.com/) to run the _llama3.1_ **LLM**.
 
-1. Start the *Ollama* container:
+1. Start the _Ollama_ container:
 
    The Container Runtime is native:
 
@@ -133,13 +133,14 @@ The **AI Optimizer** provides an easy to use front-end for experimenting with **
    ```
 
 3. Install the Python modules:
-   
+
    ```bash
    <copy>
    pip3.11 install -e ".[all]"
    source .venv/bin/activate
    </copy>
    ```
+
 4. Start the AI Optimizer:
 
    ```bash
@@ -201,7 +202,8 @@ To start Oracle Database 23ai Free:
       podman container restart ai-optimizer-db
       </copy>
       ```
-Now you are all set! With the "Infrastructure" in-place, you are ready to configure the AI Optimizer. 
+
+Now you are all set! With the "Infrastructure" in-place, you are ready to configure the AI Optimizer.
 
 In a web browser, navigate to `http://localhost:8501` .
 
@@ -214,6 +216,7 @@ Notice that there are no language models configured to use. We will deal with th
 ![sql-developer-plugin](images/sql-developer-plugin.png)
 
 ## Acknowledgements
+
 * **Author** - Lorenzo De Marchis, Developer Evangelist, May 2025
-* **Contributors** - Mark Nelson, John Lathouwers, Corrado De Bari, Jorge Ortiz Fuentes
+* **Contributors** - Mark Nelson, John Lathouwers, Corrado De Bari, Jorge Ortiz Fuentes, Andy Tael
 * **Last Updated By** - Lorenzo De Marchis, June 2025

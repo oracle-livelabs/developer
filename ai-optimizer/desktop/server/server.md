@@ -9,6 +9,7 @@ Estimated Time: 10 minutes
 ### Objectives
 
 In this lab, you will:
+
 * Start the AI Optimizer as an API Server
 * Review the configuration parameters
 * Make an API call to the server
@@ -16,6 +17,7 @@ In this lab, you will:
 ### Prerequisites
 
 This lab assumes you have:
+
 * All previous labs successfully completed
 
 ## Task 1: Start the API Server
@@ -79,7 +81,7 @@ Now that the API Server is running, you can perform API calls against it.
 
 * To explore the Oracle AI Optimizer and Toolkit API documentation, visit:
 
-    ```
+    ```bash
     <copy>
     http://localhost:8001/v1/docs#
     </copy>
@@ -88,6 +90,7 @@ Now that the API Server is running, you can perform API calls against it.
     > **Note**: The port number in the URL (in this case 8001) must match the API Server Port you configured in Task 1 of this lab.
 
 ## Acknowledgements
+
 * **Author** - Lorenzo De Marchis, Developer Evangelist, May 2025
-* **Contributors** - Mark Nelson, John Lathouwers, Corrado De Bari, Jorge Ortiz Fuentes
+* **Contributors** - Mark Nelson, John Lathouwers, Corrado De Bari, Jorge Ortiz Fuentes, Andy Tael
 * **Last Updated By** - Lorenzo De Marchis, May 2025

@@ -9,12 +9,14 @@ Estimated Lab Time: 15 minutes
 ### Objectives
 
 In this lab, you will:
+
 * Split/Embed Documents and create a vector store
 * Inspect the Vector Database content
 
 ### Prerequisites
 
 This lab assumes you have:
+
 * All previous labs successfully completed
 
 ## Task 1: Split/Embed Documents

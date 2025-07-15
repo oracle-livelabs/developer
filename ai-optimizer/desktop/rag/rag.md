@@ -11,6 +11,7 @@ Estimated Time: 5 minutes
 ### Objectives
 
 In this lab, you will:
+
 * Enable the RAG functionality in the *Chat* window
 * Ask questions and receive answers enhanced by relevant context stored in the vector database
 * Compare results across different configurations
@@ -18,6 +19,7 @@ In this lab, you will:
 ### Prerequisites
 
 This lab assumes you have:
+
 * All previous labs successfully completed
 
 ## Task 1: Enable RAG
@@ -27,10 +29,10 @@ To enable the *RAG* functionality, follow these steps:
 1. Navigate to the *ChatBot* tab from the left-side menu
 
 2. Select the **Vector Search** option from the **Toolkit** section and then select **llama3.1** as the chat model.
-    
+
     ![enable-vector-search](./images/enable-vector-search.png)
 
-3. In the **Select Alias** dropdown, choose the `TEST1` vector store table. The remaining fields in the **Vector Store** will be automatically populated, as each one represents a search parameter used to configure the selected vector store. 
+3. In the **Select Alias** dropdown, choose the `TEST1` vector store table. The remaining fields in the **Vector Store** will be automatically populated, as each one represents a search parameter used to configure the selected vector store.
 
     ![select-vector-store](./images/select-vector-store.png)
 
@@ -60,7 +62,7 @@ In Oracle Database 23ai, how do I convert string text to embeddings using PL/SQL
 
 ![rag-query-2](images/rag-query-2.png)
 
-You can see how the answers differ from the ones we received earlier. The responses should be different and include references to DBMS_VECTOR and links to the embedded documentation where this information can be found. 
+You can see how the answers differ from the ones we received earlier. The responses should be different and include references to DBMS_VECTOR and links to the embedded documentation where this information can be found.
 
 You can also click on one of the *Reference* buttons, to see where the information was retrieved from in the file:
 
@@ -85,6 +87,7 @@ You can learn more about RAG by playing with more parameters and prompt techniqu
 * Follow up a question with another one asking for “more” to see that the chat history is taken into account when generating a new response.
 
 ## Acknowledgements
+
 * **Author** - Lorenzo De Marchis, Developer Evangelist, May 2025
-* **Contributors** - Mark Nelson, John Lathouwers, Corrado De Bari, Jorge Ortiz Fuentes
+* **Contributors** - Mark Nelson, John Lathouwers, Corrado De Bari, Jorge Ortiz Fuentes, Andy Tael
 * **Last Updated By** - Lorenzo De Marchis, June 2025
