@@ -2,7 +2,7 @@
 
 ## Introduction
 
-In this lab, you will explore the environment that was created in the *Get Started* lab. You will set up the database connection, configure the OCI credentials, add new LLMs and Embedding models and test out the *Chat* feature for the first time.
+In this lab, you will explore the environment that was created in the *Deploy the Oracle AI Optimizer and Toolkit* lab. You will set up the database connection, configure the OCI credentials, add new LLMs and Embedding models and test out the *Chat* feature for the first time.
 
 Estimated Time: 15 minutes
 
