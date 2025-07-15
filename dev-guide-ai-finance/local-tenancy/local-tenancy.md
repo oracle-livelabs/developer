@@ -54,7 +54,7 @@ Let’s get started!
 
     ![Generate public SSH keys](./images/generate-public-keys.png " ")
 
-    In Task 3, you'll need the SSH keys to gain access to the compute instance where you'll configure and run the software for this lab. Feel free to move the SSH keys to the .ssh directory of your terminal application. This will vary depending on which terminal emulator you're using on your system.
+    In a future task you'll need the SSH keys to gain access to the compute instance where you'll configure and run the software for this lab. Feel free to move the SSH keys to the .ssh directory of your terminal application. This will vary depending on which terminal emulator you're using on your system.
 
 7. You can also utilize an existing key pair if you already have one. Choose the radio button for **Upload public key file (.pub)** and drop the file on the box or click it to locate the file and upload it to the VM.
 
@@ -96,8 +96,6 @@ In the next step, you'll add 5 ingress rules to allow traffic on specific ports 
 
 Add 5 rules using the below information. 
 
-**Ingress Rules:**
-
 | Ingress Rule #  | Source CIDR | Port # |
 | ------------- | ------------- | ------------ |
 | 1  | 0.0.0.0/0  | 80    |
@@ -105,6 +103,8 @@ Add 5 rules using the below information.
 | 3  | 0.0.0.0/0  | 1522    |
 | 4  | 0.0.0.0/0  | 8501    |
 | 5  | 0.0.0.0/0  | 8502    |
+    {: title="Ingress rules"}
+
 
 When you've added all 5 ingress rules, click the **Add Ingress Rules** button at the bottom right of the page.
 
@@ -114,7 +114,7 @@ Your default security list should look like the below screenshot.
 
  ![Complete default security list](./images/default-security-list-final.png " ")
 
-## Task 3: Access and update the VM
+## Task 2: Access and update the VM
 
 1. Click on the **Navigation Menu** select **Compute** then **Instances**
 
@@ -234,7 +234,7 @@ Your default security list should look like the below screenshot.
 -->
 
 
-## Task 4: Provision an Autonomous Database
+## Task 3: Provision an Autonomous Database
 
 The application is built for Autonomous Database. Follow the steps to provision an Oracle Autonomous Transaction Database.
 
@@ -248,8 +248,6 @@ The application is built for Autonomous Database. Follow the steps to provision 
 
 3. Use the information in the table below to fill out the **Create Autonomous Database Serverless** form. Proceed to the next step for instructions on setting up **Network Access**.
 
-**ADB configuration details overview**
-
     | Field Name | Input |
     | ------------- | ------------ |
     | Display Name  | SeerATP   |
@@ -259,6 +257,7 @@ The application is built for Autonomous Database. Follow the steps to provision 
     | Database Version | 23ai |
     | ECPU Count | 2   |
     | Password | Password1234!    |
+    {: title="ADB configuration details overview"}
 
    ![Create Autonomous Database form](./images/create-adb-form.png " ")
 
@@ -282,7 +281,7 @@ The application environment has been created and zipped up for you in a download
 
 ```
     <copy>
-    wget https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/database/ai-app-build.zip
+    wget https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/database/ai-app-build-local.zip
     </copy>
 ```
 
@@ -294,7 +293,7 @@ The application environment has been created and zipped up for you in a download
     </copy>
 ```
 
-Next we're going to generate an oci configuration. In order to prepare for this step you'll need to gather the user OCID, the tenancy OCID, and the tenancy region and store these in a text file.
+Next we're going to generate an oci configuration file that will contain user credentials and other settings needed for interacting with Oracle Cloud. In order to prepare for this step you'll need to gather the user OCID, the tenancy OCID, and the tenancy region and store these in a text file.
 
 3. User OCID:  Click the profile icon in the upper right corner of the OCI console and choose **User settings**.
 
@@ -308,7 +307,7 @@ Next we're going to generate an oci configuration. In order to prepare for this 
 
    ![User OCID](./images/your-tenancy-name.png " ")
 
-6. Locate the tenancy OCID adn click the **Copy** button to copy the OCID. Paste it into your text file.
+6. Locate the tenancy OCID and click the **Copy** button to copy the OCID. Paste it into your text file.
 
    ![User OCID](./images/your-tenancy-name-2.png " ")
 
@@ -337,7 +336,17 @@ Next we're going to generate an oci configuration. In order to prepare for this 
 
 Next you'll create an environment file for the application.
 
-15. Make sure you're in the opc home directory and use your favorite editor to create a file named '.env'. The .env file will contain the database connection details.
+15. An environment file template has been included in the zip file and is available to make editing easier. The file is named '.env.template' Any file with a dot as the first character is hidden from normal view in Linux. Issue the following command to create a copy and begin editing the file.
+
+````
+    <copy>
+    cp .env.template .env
+    </copy>
+````
+
+   ![Copy and edit the env file](./images/env-file-copy.png " ")
+
+16. Use your favorite editor to open and edit the file.
 
     ````
         <copy>
@@ -345,10 +354,8 @@ Next you'll create an environment file for the application.
         </copy>
     ````
 
-16. The following information needs to be collected and inserted into the .env file. Copy the below template information into your .env file, then follow the steps to gather the required information and place it in the file. Instructions for gathering this information follows below in steps 21-33.
+17. The following information needs to be collected and inserted into the .env file. Follow the steps to gather the required information and place it in the file.
 
-    ````
-        <copy>
         USERNAME=
 
         DBPASSWORD=
@@ -366,42 +373,41 @@ Next you'll create an environment file for the application.
         TENANCY_OCID=
 
         ENDPOINT=https://inference.generativeai.us-chicago-1.oci.oraclecloud.com
-        </copy>
-    ````
 
-17. The database username should be 'admin'. Use the password that you assigned to the admin user. (Password1234!)
 
-18. Find your database connection string by selecting navigating to **Oracle Database**, choose **Autonomous Database**, then choose the ATP you created earlier in the lab, **SeerATP**. At the top of the screen, click the button labeled **Database Connection**.
+18. The database username should be 'admin'. Use the password that you assigned to the admin user. (Password1234!)
+
+19. Find your database connection string by selecting navigating to **Oracle Database**, choose **Autonomous Database**, then choose the ATP you created earlier in the lab, **SeerATP**. At the top of the screen, click the button labeled **Database Connection**.
 
     ![Select Database Connection](./images/db-connection.png " ")
 
-19. Locate the connection labeled *seeratp_low*. Click the ellipsis at the far right and choose *Copy*. Paste the result into your configuration file. Click **Cancel** to close the screen when you're done.
+20. Locate the connection labeled *seeratp_low*. Click the ellipsis at the far right and choose *Copy*. Paste the result into your configuration file. **Note:** Make sure to enclose the connection string in single quotes.  Click **Cancel** to close the screen when you're done.
 
     ![Copy Connection String](./images/copy-connection-string.png " ")
 
-20. Copy your Autonomous Database Name and OCID and paste them into your .env file.
+21. Copy your Autonomous Database Name and OCID and paste them into your .env file.
 
     ![Copy your Autonomous Database OCID](./images/adb-ocid.png " ")
 
-21. While still in the ATP details screen, click the **Tool Configuration** tab. Copy the Graph Studio Public access URL and paste it into the .env file.
+22. While still in the ATP details screen, click the **Tool Configuration** tab. Copy the Graph Studio Public access URL and paste it into the .env file.
 
     ![Copy your Graph Endpoint](./images/graph-endpoint.png " ")
 
-22. To find the compartment OCID, navigate to **Identity & Security**, select **Compartments**, then click on the link of the compartment you're using for this lab.
+23. To find the compartment OCID, navigate to **Identity & Security**, select **Compartments**, then click on the link of the compartment you're using for this lab.
 
-23. Locate the compartment OCID and click the *Copy* link. Paste the compartment OCID into your .env file.
+24. Locate the compartment OCID and click the *Copy* link. Paste the compartment OCID into your .env file.
 
     ![Copy compartment OCID](./images/copy-compartment-ocid.png " ")
 
-24. Locate the tenancy OCID. From the OCI Console home screen, click the tenancy name link under the **Home** title.
+25. Locate the tenancy OCID. From the OCI Console home screen, click the tenancy name link under the **Home** title.
 
     ![Select your Tenancy](./images/click-tenancy.png " ")
 
-25. Copy the tenancy OCID and paste it into the .env file.
+26. Copy the tenancy OCID and paste it into the .env file.
 
     ![Copy your Tenancy OCID](./images/copy-tenancy-ocid.png " ")
 
-26. You'll use a Generative AI endpoint that's already created for you. It's already included in the file template above but here it is again for reference.
+27. Copy the below url and paste it into your file as the endpoint.
 
     ````
         <copy>
@@ -409,13 +415,13 @@ Next you'll create an environment file for the application.
         </copy>
     ````
 
-27. Your .env file should look similar to the screenshot below.
+28. Your .env file should look similar to the screenshot below. (*Don't forget the sinqle quotes around the connection string!*)
 
     ![.env credentials](./images/env-file.png " ")
 
-28. Save and close the .env file.
+29. Save and close the .env file.
 
-## Task 6: Create the application environment
+## Task 4: Create the application environment
 
 1. Create a Virtual Environment. It is recommended to create a virtual environment to isolate application dependencies. In your terminal, run the following command to create a virtual environment.
 
@@ -458,7 +464,7 @@ Next you'll create an environment file for the application.
     ````
 
 
-4. Paste the following information into the file. Verify the user is 'opc', the working directory is where you installed streamlit and the port is set to 8501.
+4. Copy and paste the following information into the file. Verify the user is 'opc' and the port is set to 8501.
 
     ````
         <copy>
@@ -550,7 +556,14 @@ fpdf
         </copy>
     ````
 
-9. Reload the daemons and enable streamlit
+9. Install sqlcl
+
+    ````
+        <copy>
+        sudo yum install sqlcl -y
+        </copy>
+    ````
+10. Reload the daemons and enable streamlit
 
     ````
         <copy>
@@ -579,21 +592,21 @@ fpdf
 Streamlit is up and running. Press Control + C on your keyboard to escape.
 
 
-## Task 7: Launch the Application
+## Task 5: Launch the Application
 
-1. Start Streamlit:
+1. Navigate to the *dbinit* subdirectory.
 
     ````
         <copy>
-        sudo systemctl start streamlit
+        cd ~/dbinit
         </copy>
     ````
 
-2. Load the tables:
+2. Run the following command.
 
     ````
         <copy>
-        python3.11 db_setup.py
+        sh shell_script.sh
         </copy>
     ````
 
@@ -605,7 +618,7 @@ Streamlit is up and running. Press Control + C on your keyboard to escape.
 
     ![Application start screen](./images/application-start-screen.png " ")
 
-6. Login with any username and run through the demo.
+6. Type in a user name (TestUser) and run through the demo.
 
     ![Application dashboard](./images/application-dashboard.png " ")
 
