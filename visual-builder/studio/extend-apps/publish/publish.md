@@ -57,7 +57,13 @@ Access your environment's Oracle Cloud Applications instance to view your change
 
     You can now view your App UI deployed to the environment's Oracle Cloud Applications instance.
 
-3. To manage the deployed extension, click ![Go to project page icon](images/icon-gotoprojectpage.png) in the header, select ![Environments icon](images/icon-environments.png) **Environments**, then click **Extension Lifecycle**. Expand the **DEV** environment, then click ![Extension Details icon](images/manageextensionlifecycle-details-icon.png) to view extension details and access your App UI.
+## Task 3: Manage your deployed extension
+
+Once your extension is deployed, you can manage its lifecycle, say to deploy it to other environments or to delete it.
+
+1. Switch to your VB Studio instance, click ![Menu icon](images/icon-designer-menu.png) in the Designer's upper right corner, and select **Extension Lifecycle**.
+
+2. On the Manage Extension Lifecycle page, expand the **DEV** environment and click ![Extension Details icon](images/manageextensionlifecycle-details-icon.png) to view extension details and access your App UI.
 
     ![This image shows the Environments tab. The DEV environment is selected and the Deployments tab is shown. In the Applications Extensions section, DemoEmpSearch is highlighted and expanded and empsearch is highlighted in the App UIs column.](images/deployment.png)
 
@@ -67,7 +73,7 @@ Access your environment's Oracle Cloud Applications instance to view your change
 
     ![This image shows the Extension Details pane with details such as extension name, ID, version, App UIs, Dependencies, and Version History. The empsearch App UI is highlighted.](images/deployment-appui.png) -->
 
-<!-- You may now **proceed to the next lab**. -->
+    <!-- You may now **proceed to the next lab**. -->
 
 ## Acknowledgements
 
