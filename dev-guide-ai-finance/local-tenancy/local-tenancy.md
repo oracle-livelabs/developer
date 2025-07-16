@@ -354,26 +354,21 @@ Next you'll create an environment file for the application.
         </copy>
     ````
 
-17. The following information needs to be collected and inserted into the .env file. Follow the steps to gather the required information and place it in the file.
+17. The following information needs to be collected and inserted into the .env file. Copy the 9 lines below and paste them in the .evn file. Follow the steps below to gather the required information and place it in the file.
 
-        USERNAME=
-
-        DBPASSWORD=
-
-        DBCONNECTION=
-
-        ADB_NAME=
-
-        ADB_OCID=
-
-        GRAPH_ENDPOINT=
-
-        COMPARTMENT_OCID=
-
-        TENANCY_OCID=
-
+    ```
+        <copy>
+        USERNAME=""
+        DBPASSWORD=""
+        DBCONNECTION=""
+        ADB_NAME=""
+        ADB_OCID=""
+        GRAPH_ENDPOINT=""
+        COMPARTMENT_OCID=""
+        TENANCY_OCID=""
         ENDPOINT=https://inference.generativeai.us-chicago-1.oci.oraclecloud.com
-
+        </copy>
+    ```
 
 18. The database username should be 'admin'. Use the password that you assigned to the admin user. (Password1234!)
 
@@ -602,25 +597,29 @@ Streamlit is up and running. Press Control + C on your keyboard to escape.
         </copy>
     ````
 
-2. Run the following command.
+2. Change the permissions on the shell_script.sh file to executable.
+
+    ```
+        <copy>
+        chmod +x shell_script.sh
+        </copy>
+    ```
+
+3. Run shell script file to populate the database and configure the application. Run the following command.
 
     ````
         <copy>
-        sh shell_script.sh
+        ./shell_script.sh
         </copy>
     ````
 
-3. Open an a web browser.
+4. Open a web browser.
 
-4. Type in the IP address of the VM followed by :8501 into the incognito window.. You can obtain it from the OCI Console - VM details screen.
+5. Type in the IP address of the VM followed by :8501 into the incognito window.. You can obtain it from the OCI Console - VM details screen.
 
-5. Success! You should see the application start screen.
+6. Success! You should see the application start screen.
 
     ![Application start screen](./images/application-start-screen.png " ")
-
-6. Type in a user name (TestUser) and run through the demo.
-
-    ![Application dashboard](./images/application-dashboard.png " ")
 
 Congratulations, you have built and configured the Loan Management application using Oracle Cloud Insfrastructure, Oracle Autonomous Database, and Oracle GenAI!
 
