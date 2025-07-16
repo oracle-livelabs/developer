@@ -68,6 +68,8 @@ This lab assumes you have:
 
 > **NOTE**: Although the infrastructure is deployed, the AI Optimizer may still be initializing, which can result in a 502 Bad Gateway error when accessing the URLs. Please allow up to 10 minutes for the configuration to complete.
 
+You may now **proceed to the next lab**.
+
 ## Acknowledgements
 
 * **Author** - Andy Tael, July 2025

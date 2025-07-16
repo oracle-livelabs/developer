@@ -120,6 +120,8 @@ After entering your credentials, click the `Save` button. If the credentials are
 
 * (optional) Play with the **Temperature** parameter (and also the other parameters if you wish to!) and compare the quality of the answers, for each LLM that is available. Clear the history by pressing the **Clear** button after each cycle.
 
+You may now **proceed to the next lab**.
+
 ## Acknowledgements
 
 * **Author** - Lorenzo De Marchis, Developer Evangelist, May 2025

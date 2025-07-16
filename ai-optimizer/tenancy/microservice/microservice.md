@@ -123,6 +123,8 @@ You can see that the answer is very generic compared to the RAG-enhanced one.
 
 Proceed as in the previous step, selecting **TEST2** as the vector store alias and **gpt-4o-mini** as the **Chat model**. In the terminal where you run the Spring Boot microservice, make sure that your **OPENAI API KEY** is correctly set as environment variable.
 
+You may now **proceed to the next lab**.
+
 ## Acknowledgements
 
 * **Author** - Lorenzo De Marchis, Developer Evangelist, May 2025

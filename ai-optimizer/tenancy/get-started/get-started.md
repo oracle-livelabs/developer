@@ -193,6 +193,7 @@ To start Oracle Database 23ai Free:
       podman container restart ai-optimizer-db
       </copy>
       ```
+      
 Now you are all set! With the "Infrastructure" in-place, you are ready to configure the AI Optimizer. 
 
 In a web browser, navigate to `http://localhost:8501` .
@@ -205,7 +206,10 @@ Notice that there are no language models configured to use. We will deal with th
 
 ![sql-developer-plugin](images/sql-developer-plugin.png)
 
+You may now **proceed to the next lab**.
+
 ## Acknowledgements
+
 * **Author** - Lorenzo De Marchis, Developer Evangelist, May 2025
 * **Contributors** - Mark Nelson, John Lathouwers, Corrado De Bari, Jorge Ortiz Fuentes
 * **Last Updated By** - Lorenzo De Marchis, June 2025

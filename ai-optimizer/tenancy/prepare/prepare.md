@@ -100,6 +100,8 @@ In this case, you will get a smaller number of chunks, since the model supports 
 
   ![database-vector-store-list](images/database-vector-store-list.png)
 
+You may now **proceed to the next lab**.
+
 ## Acknowledgements
 
 * **Author** - Lorenzo De Marchis, Developer Evangelist, May 2025

@@ -284,6 +284,8 @@ These few examples offer just a glimpse of the cross-testing possibilities avail
 * Try setting the Temperature parameter to its maximum value—you’ll see how creative an LLM can become!
 * Experiment with other available parameters across different questions to explore the full range of behavior.
 
+You may now **proceed to the next lab**.
+
 ## Acknowledgements
 
 * **Author** - Lorenzo De Marchis, Developer Evangelist, May 2025

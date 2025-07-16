@@ -86,6 +86,8 @@ You can learn more about RAG by playing with more parameters and prompt techniqu
 * Play with the *Temperature* parameter to discover how much the answers provided get enriched.
 * Follow up a question with another one asking for “more” to see that the chat history is taken into account when generating a new response.
 
+You may now **proceed to the next lab**.
+
 ## Acknowledgements
 
 * **Author** - Lorenzo De Marchis, Developer Evangelist, May 2025

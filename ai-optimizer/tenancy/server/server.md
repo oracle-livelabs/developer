@@ -88,6 +88,8 @@ Now that the API Server is running, you can perform API calls against it. (You m
 
     > **Note**: The port number in the URL (in this case 8001) must match the API Server Port you configured in Task 1 of this lab.
 
+You may now **proceed to the next lab**.
+
 ## Acknowledgements
 
 * **Author** - Lorenzo De Marchis, Developer Evangelist, May 2025
