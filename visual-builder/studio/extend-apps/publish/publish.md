@@ -57,6 +57,16 @@ Access your environment's Oracle Cloud Applications instance to view your change
 
     You can now view your App UI deployed to the environment's Oracle Cloud Applications instance.
 
+3. To manage the deployed extension, click ![Go to project page icon](images/icon-gotoprojectpage.png) in the header, select ![Environments icon](images/icon-environments.png) **Environments**, then click **Extension Lifecycle**. Expand the **DEV** environment, then click ![Extension Details icon](images/manageextensionlifecycle-details-icon.png) to view extension details and access your App UI.
+
+    ![This image shows the Environments tab. The DEV environment is selected and the Deployments tab is shown. In the Applications Extensions section, DemoEmpSearch is highlighted and expanded and empsearch is highlighted in the App UIs column.](images/deployment.png)
+
+    You can also deploy your extension to other environments or delete the extension.
+
+    <!-- Now click ![Open icon](images/icon-openappui.png) next to **empsearch** to open your App UI in a new browser tab.
+
+    ![This image shows the Extension Details pane with details such as extension name, ID, version, App UIs, Dependencies, and Version History. The empsearch App UI is highlighted.](images/deployment-appui.png) -->
+
 <!-- You may now **proceed to the next lab**. -->
 
 ## Acknowledgements
