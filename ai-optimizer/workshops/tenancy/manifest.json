@@ -1,6 +1,6 @@
 {
     "workshoptitle": "Build a Better ChatBot",
-    "help": "livelabs-help-**enterarea**_us@oracle.com",
+    "help": "livelabs-help-database_us@oracle.com",
     "variables": ["../../microservice/variables.json",
         "../../microservice/variables-in-another-file.json"],
     "tutorials": [
