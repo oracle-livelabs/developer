@@ -8,10 +8,9 @@ Estimated Time: 5 minutes
 
 ### About this lab
 
-Publishing saves your application's code from the local branch in your workspace to the remote branch in the project's Git repository, then to the project's default (main) branch before deploying them to your environment's Oracle Cloud Applications instance. While it's possible to complete each of these Git operations separately, it's simplest to do all of this at the click of a single Publish button—as we'll do in this lab.
+Publishing saves your application's code from the local branch in your workspace to the remote branch in the project's Git repository, then to the project's default branch (main), before deploying it to your environment's Oracle Cloud Applications instance. While it's possible to complete each of these steps separately, it's simplest to do all of this at the click of a button—as we'll do in this lab.
 
-Note that your changes are by default deployed *directly* to your Oracle Cloud Applications instance. This is the simplest, most straightforward approach to quickly see your changes. But if you want others to review your changes as part of a merge request or you'd like to automate some lifecycle operations, you'll want to use CI/CD pipelines. See [Use CI/CD Pipelines for Deployment](https://docs.oracle.com/en/cloud/paas/visual-builder/visualbuilder-administration/set-ci-cd-pipelines-deployment.html) for more information.
-
+Note that your changes are deployed *directly* to your Oracle Cloud Applications instance by default. This is the simplest, most straightforward approach to quickly see your changes. If you want others to review your changes as part of a merge request or you'd like to automate some lifecycle operations, you'll want to use CI/CD pipelines. See [Use CI/CD Pipelines for Deployment](https://docs.oracle.com/en/cloud/paas/visual-builder/visualbuilder-administration/set-ci-cd-pipelines-deployment.html) for details. For simplicity, this workshop only showcases direct deployment.
 
 ### Objectives
 
@@ -19,6 +18,7 @@ In this lab, you will:
 
 * Deploy your App UI's extension to your Oracle Cloud Application instance
 * Access the deployed extension
+* (Optional) Manage the deployed extension
 
 ### Prerequisites
 
@@ -45,17 +45,17 @@ After you've confirmed search is working, you are ready to deploy the extension 
 
     **Note:** Make sure you copy and paste the deployment URL to your clipboard before you click **Close**. You won't have access to the URL after the Publish dialog is closed.
 
-## Task 2: View your deployed changes
+## Task 2: View your deployed extension
 
-Access your environment's Oracle Cloud Applications instance to view your changes deployed to it.
+Access your environment's Oracle Cloud Applications instance to view your deployed extension.
 
 1. When your Oracle Cloud Applications instance opens in a new browser tab, click the navigation menu ![Hamburger menu icon](images/icon-menu.png) in the upper left corner.
 
-2. Scroll down to the bottom and expand **Others**, then select **empsearch**.
+2. Scroll down to the bottom and expand **Others**, then select **empsearch** (the App UI name).
 
     ![This image shows the Others section in the navigation menu expanded, with the empsearch App UI highlighted.](images/deployment-others-empsearch.png)
 
-    You can now view your App UI deployed to the environment's Oracle Cloud Applications instance.
+    You can now view and experiment with the App UI on your Oracle Cloud Applications instance.
 
 ## Task 3: Manage your deployed extension
 
@@ -67,13 +67,17 @@ Once your extension is deployed, you can manage its lifecycle, say to deploy it 
 
     ![This image shows the Environments tab. The DEV environment is selected and the Deployments tab is shown. In the Applications Extensions section, DemoEmpSearch is highlighted and expanded and empsearch is highlighted in the App UIs column.](images/deployment.png)
 
-    You can also deploy your extension to other environments or delete the extension.
+3. Use other available options as needed:
+    * Click ![Deploy to Environment icon](images/manageextensionlifecycle-deploy-icon.png) to deploy your extension to other environments (you will first need to add another environment with an Oracle Cloud Applications instance).
+    * Click ![Delete Extension icon](images/manageextensionlifecycle-delete-icon.png) to delete the extension if it's no longer required.
+
+    For details, see [Manage Your Published Extensions](https://docs.oracle.com/en/cloud/paas/visual-builder/visualbuilder-building-appui/manage-your-published-extensions.html).
 
     <!-- Now click ![Open icon](images/icon-openappui.png) next to **empsearch** to open your App UI in a new browser tab.
 
     ![This image shows the Extension Details pane with details such as extension name, ID, version, App UIs, Dependencies, and Version History. The empsearch App UI is highlighted.](images/deployment-appui.png) -->
 
-    <!-- You may now **proceed to the next lab**. -->
+Your work is now finished! Thank you for completing this workshop.
 
 ## Acknowledgements
 
