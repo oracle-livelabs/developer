@@ -95,7 +95,7 @@ This lab assumes you have:
 
 ## Task 2: Create New Project in EDQ
 
-1.	On the desktop, double click on *Director* icon.
+1.	On the desktop, click on Activites and double click on *Director* icon.
 
     ![EDQ desktop launch](./images/edq-desktop-launch.png " ")
 
