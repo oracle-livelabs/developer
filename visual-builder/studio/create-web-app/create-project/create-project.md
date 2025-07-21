@@ -60,7 +60,7 @@ As someone who creates a project, you'll automatically become the project's owne
 
     An email containing project details will be sent to Clara Coder. To receive email notifications, the teammate's email address must be verified and notifications set properly in Preferences.
 
-    Now click **Finish**.
+6. Click **Finish**.
 
     Wait for the project to be provisioned. Once provisioning completes, you'll see the Project Home page, which serves as a window to your workspaces, environments, and repositories, as well as a recent activities feed. On the left are a series of tabs showing the available project components.
 
@@ -93,7 +93,7 @@ Define an environment that points to your Visual Builder development instance, w
 
     **Note:** To add an instance that's doesn't show in the Instance list because it's connected to a different OCI account, select **Visual Builder Credentials** under Add Instance Using, enter the URL to your Visual Builder instance's home page (for example, http://yourserver/ic/builder), the username and password of someone who can access that instance, and click **Add**.
 
-    If you're prompted for authorization enabling OAuth access to your Visual Builder instance, click **Authorize**, then enter credentials to connect to your Visual Builder instance.
+    If you're prompted for authorization enabling OAuth access to your Visual Builder instance (typically because your Visual Builder and VB Studio instances use different identity domains), click **Authorize**, then enter credentials to connect to your Visual Builder instance.
 
     Wait for the instance's Status to turn green, from 'Unknown' to 'Available'.
 
@@ -112,7 +112,7 @@ You now need to create a workspace, a private area for you to work on your visua
 3. In the New Visual Application dialog:
 
     * Enter **HR Workspace** as the Workspace Name.
-    * Select **Development** (where you previously added a Visual Builder instance) as the Development Environment. If only one environment is available, it is automatically selected for you.
+    * Leave **Development** (where you previously added a Visual Builder instance) as your Development Environment. If only one environment is available, it is automatically selected for you.
     * Leave **Default VB Application** as the Visual Application Template.
     * Click **Create new repository** under Git Repository, enter **tutorial-hr-project** as the Repository Name and **hrbranch** as the Working Branch Name.
 
@@ -128,13 +128,13 @@ You now need to create a workspace, a private area for you to work on your visua
 
     ![Header in the HR Visual Application workspace. The workspace name HR Visual Application is on the left. Next to it, the Git repository and current branch tutorial-hr-project.git / hrbranch are visible. On the right are icons that let you perform other actions: Undo, Redo, Preview, Publish Changes, Product Feedback, Go to File, and Menu.](images/header.png "Header")
 
-    On the left is the name of your current workspace, **HR Workspace**. Next to it is the project's Git repository (**tutorial-hr-project.git**) and the branch currently associated with your workspace (**hrbranch**).
+    * On the left is the name of your current workspace, **HR Workspace**. Next to it is the project's Git repository (**tutorial-hr-project.git**) and the branch currently associated with your workspace (**hrbranch**).
 
-    The **tutorial-hr-project.git** repo stores your visual application's files and is known as your project's _remote_ repository. If you were to look at your Git repo, you'll see it includes the **main** and **hrbranch** branches, created with initial content for your visual application. The **main** branch is the default branch created when a new repo is generated and is the source from which your visual application is built. The **hrbranch** you see in your workspace is a working copy of the remote **hrbranch** and serves as your _local_ repository. It initially has the same set of source files as the remote branch, but it will include the changes you make as you work with your visual application.
+        The **tutorial-hr-project.git** repo stores your visual application's files and is known as your project's _remote_ repository. If you were to look at your Git repo, you'll see it includes the **main** and **hrbranch** branches, created with initial content for your visual application. The **main** branch is the default branch created when a new repo is generated and is the source from which your visual application is built. The **hrbranch** you see in your workspace is a working copy of the remote **hrbranch** and serves as your _local_ repository. It initially has the same set of source files as the remote branch, but will include the changes you make as you develop your visual application.
 
-    Click the workspace and the Git repo/branch to see other actions that you can perform. Clicking ![Go to Project Page icon](images/go-to-project-home-icon.png) will take you back to the Project Home page.
+        Clicking ![Go to Project Page icon](images/go-to-project-home-icon.png) will take you back to the Project Home page.
 
-    Elements on the right let you perform various other actions, such as undo changes or search the Git repository for a file. This workshop primarily demonstrates the options to preview your app, share it, and publish changes. If you make a mistake during this workshop, click ![Undo icon](images/undo-icon.png)  to back out of the last step you did, or the arrow next to it to undo more than one step.
+    * Elements on the right let you perform various other actions, such as undo changes or search the Git repository for a file. This workshop primarily demonstrates the options to preview your app, share it, and publish changes. If you make a mistake during this workshop, click ![Undo icon](images/undo-icon.png)  to back out of the last step you did, or the arrow next to it to undo more than one step.
 
     Take note of the footer, which has tools that help you debug and maintain your visual app (we'll briefly look at Audits and Git History in this workshop):
 

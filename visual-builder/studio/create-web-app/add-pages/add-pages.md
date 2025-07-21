@@ -184,19 +184,23 @@ Now that you've displayed some employee data in a table, let's add a chart to vi
 
 5. On the Locate Data step of the Quick Start, select **Employee** under Business Objects and click **Next**.
 
-6. On the Map Fields step, select **salary** to add it to the **Values (Y Axis)** field, then **name** to add it to the **Categories (X Axis)** field. Leave the **Colors (Series)** field blank, and click **Next**.
+6. On the Map Fields step, select **salary** to add it to the **Values (Y Axis)** field, then **name** to add it to the **Categories (X Axis)** field.
 
     ![The Map Fields page of the Add Data quick start is shown with the name and salary checkboxes selected.](images/panel-on-page-chart-adddata-fields.png " ")
 
-7. On the Define Query step, click **Finish**.
+7. Expand the **departmentObject** and **items** nodes (expand **item[i]** if it isn't already expanded) and select **department** to add it to the **Colors (Series)** field blank, and click **Next**.
 
-    The chart displays the salary for each employee.
+8. On the Define Query step, click **Finish**.
+
+    The chart shows each employee's salary, using different colors to represent their departments (identified in the legend).
 
     ![The Bar Chart is populated with employee data, with name as the X Axis and salary as the Y Axis.](images/panel-on-page-chart-data.png "")
 
-8. Click the chart's **General** tab in the Properties pane. In the **X Axis, Title** field, change **name** to **Employee Name**. In the **Y Axis, Title** field, change **salary** to **Salary**. Change the Orientation from **Vertical** to **Horizontal**.
+9. Click the chart's **General** tab in the Properties pane. In the **X Axis, Title** field, change **name** to **Employee Name**. In the **Y Axis, Title** field, change **salary** to **Salary**. Change the Orientation from **Vertical** to **Horizontal**.
 
     ![The Bar Chart's properties is shown. X Axis Title is set to Employee Name, Y Axis Title is set to Salary, Orientation is set to Horizontal.](images/panel-on-page-chart-properties.png "")
+
+10. Click ![Legend icon](images/icon-legend.png) next to Legend, then change the **Legend, Title** to `Department` (with a capital D). Click ![Back icon](images/back-icon.png) **Bar Chart** to return to the main General tab.
 
 ## Task 5: Add a page to create employees
 

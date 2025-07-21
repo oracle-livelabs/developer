@@ -83,12 +83,12 @@ Let's now create your first business object and add data to it by importing a CS
 1. Click ![Business Objects icon](images/bo-icon.png) **Business Objects** in the Navigator.
 2. Click **\+ Business Object**.
 3. In the Create Business Object dialog, enter `Location` in the **Name** field. **Location** is also filled in automatically as the **Display Label**. Click **Create**.
-4. View the newly created Location business object's fields. Every business object has six default fields: an id, a version number, plus fields that provide information on who created and updated the object and when.
+4. View the newly created Location object's fields. Every business object has six default fields: an id, a version number, plus fields that provide information on who created and updated the object and when.
 
     ![Business object page for the Location business object, with the Fields tab open. The other tabs are Overview, Security, Business Rules, Endpoints, and Data. A table shows the current fields, with the Type, Field Name, Display Label, Required, and Description columns visible for each.](images/location-bo-fields.png "Location business object page")
 
 5. Now click **\+ Field** and select **Field** to add a field specific to this business object. This is a very simple business object, so we'll only add one new field.
-6. In the pop-up dialog, enter `Location` as the **Label**. The **Field Name** is automatically populated as **location** and the **Type** set to **String** ![String](images/bo-string-icon.png) by default.
+6. In the dialog box, enter `Location` as the **Label**. The **Field Name** is automatically populated as **location** and the **Type** set to **String** ![String](images/bo-string-icon.png) by default.
 
     ![The + Field pop-up box, with Location entered in the Label field, location filled in as the Field Name value, and the String type selected. The Create Field button is selected.](images/location-bo-location-field.png "Create Field pop-up box")
 
@@ -98,7 +98,7 @@ Let's now create your first business object and add data to it by importing a CS
 
 8. Click [this link](https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/developer-library/location.csv) to download the `location.csv` file to your file system. This file contains four locations and provides the data for the Location business object.
 
-9. Click the **Data** tab, then **Import from File** ![Import from File icon](images/import_icon.png).
+9. Click the object's **Data** tab, then **Import from File** ![Import from File icon](images/import_icon.png).
 
     ![Data tab of the Location business objects. No data is displayed.](images/location-data.png "Data tab of the Location business object")
 
@@ -202,4 +202,4 @@ Now that you have your business objects, create a diagram that visualizes the bu
 ## Acknowledgements
 
 * **Author** - Sheryl Manoharan, VB Studio User Assistance, November 2021
-* **Last Updated By/Date** - Sheryl Manoharan, April 2025
+* **Last Updated By/Date** - Sheryl Manoharan, July 2025
