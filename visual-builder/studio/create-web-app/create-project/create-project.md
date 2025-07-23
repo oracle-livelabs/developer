@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This lab shows you how to create a project for a new visual application, the foundation to build a web application in Oracle Visual Builder Studio.
+This lab shows you how to create a project for a new visual application—the first step to building a web application in Oracle Visual Builder Studio.
 
 Estimated Time: 10 minutes
 
@@ -52,9 +52,9 @@ As someone who creates a project, you'll automatically become the project's owne
 
 5. On the Project Team Members step, add other members of your team who will work with you on this visual application. As the project owner, you can control what others can do in this project by granting them membership as a Developer Full Access, Developer Limited Access, Contributor, or even as another Project Owner:
 
-    a. Enter the username of a teammate in the **Add Members** field (for example, Clara Coder), then select the user from the results.
+    a. In the **Add Members** field, enter the username of a teammate (for example, Clara Coder), then select the user from the results.
 
-    b. Select a membership role for the user. For demonstration purposes, select **Developer Limited Access**, a role that lets Clara access most project components.
+    b. Select a membership role for the user. For demo purposes, let's select **Developer Limited Access**, a role that lets Clara access most project components.
 
     c. Click **Add**.
 
@@ -71,7 +71,7 @@ As someone who creates a project, you'll automatically become the project's owne
 
     * To hide the labels and increase screen space, click ![Show/Hide Labels icon](images/show-hide-labels-icon.png).
 
-    Because we created a project with no preconfigured settings or content, we need to create what we need: an environment that connects to a Visual Builder instance and a workspace with a Git repository.
+    Because we created a project with no preconfigured settings or content, we now need to create what we need: an environment that connects to a Visual Builder instance and a workspace with a Git repository.
 
 ## Task 2: Create an environment with a Visual Builder instance
 

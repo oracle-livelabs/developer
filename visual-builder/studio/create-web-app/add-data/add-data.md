@@ -46,7 +46,7 @@ This lab assumes you have:
 
     The action now has the label **Navigate To Page main-employees**.
 
-8. Click ![Preview icon](images/preview-icon.png) **Preview** in the header to run the page in its own browser tab and test navigation. Typically, you use Preview to see how your app will appear to a user when published.
+8. Click ![Preview icon](images/preview-icon.png) **Preview** in the header to run the page in its own browser tab and test navigation. Typically, you use Preview to see how your app will behave when published.
 
 9. In the new browser tab, click **Show Employees**.
 

@@ -8,9 +8,9 @@ Estimated Time: 5 minutes
 
 ### About this lab
 
-Publishing saves your application's code from the local branch in your workspace to the remote branch in the project's Git repository, then to the project's default branch (main), before deploying it to your environment's Oracle Cloud Applications instance. While it's possible to complete each of these steps separately, it's simplest to do all of this at the click of a button—as we'll do in this lab.
+Publishing saves your application's code from the local branch in your workspace to the remote branch in the project's Git repository, then to the project's default branch (main). While it's possible to complete each of these Git operations separately, it's simplest to do all of this at the click of a single **Publish** button—as we'll do in this lab.
 
-Note that your changes are deployed *directly* to your Oracle Cloud Applications instance by default. This is the simplest, most straightforward approach to quickly see your changes. If you want others to review your changes as part of a merge request or you'd like to automate some lifecycle operations, you'll want to use CI/CD pipelines. See [Use CI/CD Pipelines for Deployment](https://docs.oracle.com/en/cloud/paas/visual-builder/visualbuilder-administration/set-ci-cd-pipelines-deployment.html) for details. For simplicity, this workshop only showcases direct deployment.
+Once your changes are successfully merged, VB Studio automatically deploys them to your environment's Oracle Cloud Applications instance. Note that your changes are deployed *directly* to your Oracle Cloud Applications instance by default. This is the simplest, most straightforward approach to quickly see your changes. If you want others to review your changes as part of a merge request or you'd like to automate some lifecycle operations, you'll want to use CI/CD pipelines. See [Use CI/CD Pipelines for Deployment](https://docs.oracle.com/en/cloud/paas/visual-builder/visualbuilder-administration/set-ci-cd-pipelines-deployment.html) for details. For simplicity, this workshop only showcases direct deployment.
 
 ### Objectives
 

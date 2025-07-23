@@ -14,12 +14,11 @@ Once your changes are successfully merged, VB Studio automatically deploys the w
 
 <!--No matter how you decide to save your changes, it's a good idea to always get your code reviewed and approved before you merge it to the project's **main** branch. Because this code base is meant to be stable, it is usually protected, requiring code to be reviewed through a merge request. If your project was set up to protect the **main** branch, merging your changes will require approval. In this lab, you'll create a merge request to review your changes, but for demonstration purposes, you'll merge the code to the **main** branch without approval.-->
 
-
 ### Objectives
 
 In this lab, you will:
 
-* Publish the HR web app's visual application
+* Publish the HR web app
 * View the deployed application
 * Import data to the deployed application
 * (Optional) Install the application as a PWA
@@ -31,9 +30,9 @@ This lab assumes you have:
 * A Chrome browser
 * All previous labs successfully completed
 
-## Task 1: Publish the visual application
+## Task 1: Publish the application
 
-After your web app has been thoroughly tested, you are ready to publish the app's visual application to your development environment.
+After your web app has been thoroughly tested, you are ready to publish it to your development environment.
 
 1. Click![Workspaces icon](images/vbs-workspaces-icon.png)**Workspaces**, then **HR Workspace** in the Workspaces table.
 2. When your workspace opens, click **Publish** in the header.
