@@ -2,18 +2,13 @@
 
 ## Introduction
 
-This lab walks you through the steps to deploy your own Chat GPT model on OCI. First, you will create a compute instance. Next, you will create a Conda environment and install dependencies. Then, you will download the Groovy model and GitHub examples. Finally, you will run an example, which will deploy the model on your OCI compute instance.
-
-
+This lab walks you through the steps to deploy your own LLM (such as Chat GPT) on OCI. 
 Estimated Time: 30 minutes
 
 ### Objectives
 
 In this lab, you will:
-- Create a compute instance on OCI
-- Connect your SSH client to your compute instance
-- Create a Conda environment, download the Groovy model, and download the GitHub repository
-- Run the example
+- Deploy a Large Language Models using NVIDIA OCI Bare Metal Compute Instances (NVIDIA A10 Tensor Core GPUs), with an inference server called vLLM.
 
 ### Prerequisites
 
@@ -21,221 +16,139 @@ This lab assumes you have:
 - An Oracle Cloud account
 - SSH Keys
 
-<!-- IMAGES NEED TO BE PULLED FROM SETUP COMPUTE -->
-## Task 1: Setup Compute Instance on OCI
+[![Deploying LLMs with NVIDIA GPUs on OCI Compute Bare Metal](https://github.com/oracle-devrel/oci-terraform-genai-llm-on-gpuvms/blob/main/img/a10_Custom_Inference.jpg?raw=true)](https://www.youtube.com/watch?v=ol5-SQhnKx)
+
+
+## Task 1: Deploy Infrastructure
+
+   1. Clone the repository:
+
+      git clone https://github.com/oracle-devrel/oci-terraform-genai-llm-on-gpuvms
+
+   2. Create/edit a terraform.tfvars file with the following 9 variables (compartment, tenancy, region, user OCIDs, and key location fingerprint model_path huggingface_access_token and ssh_public_key):
+
+   3. `cd oci-terraform-genai-llm-on-gpuvms` and vi terraform.tfvars to include the following
 
-   1. Click the **Navigation Menu** in the upper left, navigate to **Compute**, and select **Instances**.
+       ```
+       <copy>
+      # Authentication
+      tenancy_ocid         = "OCID of OCI Tenancy"
+      user_ocid            = "OCID of OCI User "
+      fingerprint          = "OCI User fingerprint"
+      private_key_path     = "OCI User private key path"
+      # Region
+      region = "OCI Region"
+      # Compartment
+      compartment_ocid = "OCID of OCI Compartment"
+      #LLM Information
+      model_path = "PATH of your LLM - example meta-llama/Meta-Llama-3-8B"
+      huggingface_access_token = "READ access token from Hugging face"
+      ssh_public_key="SSH Public key to access the BM"
+       </copy>
+       ```
+     
+      The private key and fingerprint need to be added to your OCI user within your tenancy, in Identity >> Domains >> OracleIdentityCloudService >> Users. You can use the section on "API Keys" to create a key pair and obtain the tenancy and user OCIDs.
+
+      If you don't have one already, you can create a public-private keypair by running `ssh-keygen`
+
+   4. Depending on the compute shape you want to use, modify `variables.tf` (instance_shape variable) and setup.sh (parallel_gpu_count). If you have a cluster of n GPUs, the GPU count should also be n.
+
+   5. Execute the Terraform plan & apply:
+       ```
+       <copy>
+        terraform init
+        terraform plan
+        terraform apply
+       </copy>
+       ```
+      
+   6. (Optional) After you're done with development and want to delete the stack, run the following command:
+       ```
+       <copy>
+        terraform destroy
+       </copy>
+       ```
+      Note: this action is irreversible!
+
+## Task 2: Execution Workflow
+   
+   1. These are the created OCI resources with the Terraform stack:
+
+      - OCI VM based on a GPU Image
+      - OCI API Gateway and Deployment, which exposes the calls to the LLM through an API hosted on OCI
+
+   2. `setup.sh` is executed inside the Terraform script (you don't need to run it).
+
+      With your own HF access token, to be able to pull the Large Language Model.
+
+      This script will install all necessary software libraries, modules, and load the LLM.
+
+      It will start and provide an inference endpoint, so we can later call the model through an API if we want to.
+
+## Task 3: Use the LLM
+   
+   - By default, the startup script exposes LLM inference with an OpenAI-compatible route. This framework basically allows us to Plug and play models easily, as well as bringing exposed API endpoints to a common framework, even with models that are very different from standard GPT models. It also enables new supported features like streaming / Chat completion/embeddings/detokenization...
+   - Some of the possible routes (OpenAI compatible) using the vLLM are:
+      - /v1/models
+     - /v1/completion
+     - /v1/chat/completion
+
+   After Terraform has completed, refer the execution outcome to fetch the URL and API key:
+   ```
+   <copy>
+   terraform output LLM_URL
+   "https://XXXX.<OCIREGION>/path/name"
+   terraform output API_KEY
+   "AlphaNumeric..."
+   </copy>
+   ```
+
+We can run the currently enabled models in our LLM server.
+
+Make sure to set the variables url and token with the information from the previous step.
+
+   1. Asking for available models using curl:
+
+export URL="<LLM_URL value>"
+export TOKEN="<API_KEY value>"
+curl -k $URL/v1/models  -H "Authorization: Bearer $TOKEN"
+
+   2. Asking for available models using Python:
+
+python scripts/api_gw_llm.py
+
+   3. Chat completion using Python OpenAI library in this file:
+   ```
+   <copy>
+   python scripts/completions_llm.py
+   </copy>
+   ```
+
+   Basic Troubleshooting
+
+   1. LLM inference is not ready or getting 504 error code when trying the URL:
+
+      - Login to the VM where you've deployed the solution using the SSH private-key you created in chapter 1.
+      - Check the startup logs - Default path /home/opc/llm-init/init.log.
+      - For any failures, refer to setup.sh to know about which exact steps to run manually
+      - Check the vLLM service is up and running:
+   ```
+   <copy>
+   sudo systemctl status vllm-inference-openai.service
+   </copy>
+   ```
+ 
+   2. Details about LLM usage or response. We are capturing inference logs under path /home/opc/vllm-master with in file vllm_log_file.log. Incase wish to push the logs to a specific path,update file bash.sh and bash_openai.sh with in the same path and restart the service.
+   ```
+   <copy>
+   #Update below line with in file bash.sh or bash_openai.sh
+   export vllm_log_file=<new absolute path to the logs>
+   sudo systemctl restart  vllm-inference-openai.service
+   </copy>
+   ```
 
-        ![Compute Instances](images/compute-instances.png " ")
-
-   2. Click **Create Instance**.
-
-   3. Enter a **name** for the instance. For this lab, use **compute\_generative_ai**.
-
-      ![Compute Name](images/name_compute.png " ")
-
-   4. Select the **compartment** and **availability domain** to create the instance in.
-
-   5. In the **Image and shape section**, click **Change image**.
-
-      ![Compute Shape](images/change_image.png " ")
-
-   6. Select **Marketplace** as the image source and then select either of the data science images below:
-
-      - **AI 'all-in-one' Data Science Image Intel/AMD**
-      - **AI 'all-in-one' Data Science Image for GPU**
-
-   Alternatively, you may select Ubuntu as the image source and use either of the images below:
-
-    - Canonical Ubuntu 20.04
-    - Canonical Ubuntu 22.04
-
-   Click **Select image**.
-
-![Select Image](images/select_image.png " ")
-
-   7. In the **Image and shape section**, click **Change shape**.
-
-       ![Change Shape](images/change_shape.png " ")
-
-   8. For the data science images, select **Virtual machine** as the **Instance type**, **AMD** or **Intel** processors as the **shape series**, and **VM.Standard3.Flex** as the **shape name**. The number of OCPUs and amount of memory may be left as the defaults.
-
-      Click **Select shape**.
-
-       ![Select Shape](images/select_shape.png " ")
-
-   9. In the Networking section, select **Create new virtual cloud network**. The other options may be left as the default.
-
-       ![Create VCN](images/vcn.png " ")
-
-   10. In the Add SSH keys, select **Paste Public Keys** and paste your public ssh key.
-
-       ![Paste Public Keys](images/ssh.png " ")
-
-   11. In the Boot volume section, configure the size and encryption options for the instance's boot volume. Select the **Specify a custom boot volume size** check box. Then, enter **128** as the **boot volume size (GB)**.
-
-       ![Specify Boot Size](images/boot.png " ")
-
-   12. Click **Create**.
-
-## Task 2: Connect to Your Instance
-
-   There are multiple ways to connect to your cloud instance.  Choose the way to connect to your cloud instance that matches the SSH Key you generated.  *(i.e If you created your SSH Keys in cloud shell, choose cloud shell)*
-
-   - Oracle Cloud Shell
-   - MAC or Windows CYCGWIN Emulator
-   - Windows Using Putty
-   - Windows Using MobaXterm
-
-### Oracle Cloud Shell
-
-   1. To re-start the Oracle Cloud shell, go to your Cloud console and click **Cloud Shell** at the top right of the page.
-    >**Note:** Make sure you are in the region you were assigned
-
-       ![Click cloud shell icon.](https://oracle-livelabs.github.io/common/images/console/cloud-shell.png " ")
-       ![Open cloud shell.](https://oracle-livelabs.github.io/common/images/console/cloud-shell-open.png " ")
-
-   2.  Enter the command below to login into your instance.
-       ```` text
-       <copy>ssh -i ~/.ssh/<sshkeyname> opc@<Your Compute Instance Public IP Address></copy>
-       ````
-
-   3.  When prompted, answer **yes** to continue connecting.
-
-### MAC or Windows CYGWIN Emulator
-
-   1.  Open up a terminal (MAC) or cygwin emulator. Enter the command below to log in to your instance. Enter yes when prompted.
-    
-        ``` text
-        <copy>ssh -i ~/.ssh/<sshkeyname> opc@<Your Compute Instance Public IP Address></copy>
-        ```
-
-### Windows using Putty
-
-   1.  Open up putty and create a new connection.
-
-   2.  Enter a name for the session and click **Save**.
-
-   3. Click **Connection** > **Data** in the left navigation pane and set the Auto-login username to **root**.
-
-   4. Click **Connection** > **SSH** > **Auth** in the left navigation pane and configure the SSH private key to use by clicking **Browse** under the Private key file for authentication.
-
-   5. Navigate to the location where you saved your SSH private key file, select the file, and click **Open**.
-
-   6. The file path for the SSH private key file now displays in the Private key file for the authentication field.
-
-   7. Click **Session** in the left navigation pane, then click **Save** in the Load.
-
-   8. Click **Open** to begin your session with the instance.
-
-### Windows using MobaXterm
-
-   1. In MobaXterm, we need to create a new SSH session to our newly-created OCI Compute Instance:
-
-       ![New Session](https://ajeuwbhvhr.cloudimg.io/colony-recorder.s3.amazonaws.com/files/2023-05-09/8c5220b6-8835-4220-b7ea-d4e30b79cd9a/screenshot.jpeg?tl_px=0,162&br_px=746,582&sharp=0.8&width=560&wat_scale=50&wat=1&wat_opacity=1&wat_gravity=northwest&wat_url=https://colony-recorder.s3.amazonaws.com/images/watermarks/0EA5E9_standard.png&wat_pad=116,139 " ")
-
-   2. We fill this menu with our data: our `IP` address, username `opc` and an additional `advanced` SSH option to use public-private key cryptography as the authentication mechanism when connecting into the machine.**
-
-       ![Fill Menu](https://colony-recorder.s3.amazonaws.com/files/2023-05-09/8213a2df-0bc0-41d0-ba82-d4918f53d255/stack_animation.webp " ")
-
-   3. Now, we select the ssh key that we downloaded while creating the OCI Compute Instance as the private key to use in our SSH connection:
-
-       ![Select SSH Key](https://colony-recorder.s3.amazonaws.com/files/2023-05-09/9a4cc6dd-32f7-4264-8faa-528708b9cf95/stack_animation.webp " ")
-
-   4. Now that our SSH connection is configured, let's **access** our Compute Instance:
-
-       ![Access Instance](https://ajeuwbhvhr.cloudimg.io/colony-recorder.s3.amazonaws.com/files/2023-05-09/abb99180-696a-4128-a7c5-4162a9d2acbd/screenshot.jpeg?tl_px=1208,596&br_px=1954,1016&sharp=0.8&width=560&wat_scale=50&wat=1&wat_opacity=1&wat_gravity=northwest&wat_url=https://colony-recorder.s3.amazonaws.com/images/watermarks/0EA5E9_standard.png&wat_pad=262,139 " ")
-
-   Congratulations!  You now have a fully functional Linux instance running on Oracle Cloud Compute.
-
-## Task 3: Create a Conda environment, download the Groovy model, and download the GitHub repository
-
-After connecting to your instance, you will create a Conda environment and install python dependencies, which are going to be used in projects to install and use the GPT models. Then, you will download the Groovy model and the repository from GitHub with the examples to use.
-
-   1. Create a new conda environment.
-
-        ```<copy>
-        conda create -n "example" python=3.10
-        ```
-
-       ![Conda Create](images/conda_create.png " ")
-
-   2. Activate the environment.
-
-        ```<copy>
-        conda activate example</copy>
-        ```
-
-   3. Check which pip and python paths are being used.
-    
-        ```<copy>
-        which pip</copy>
-        ```
-    
-        ```<copy>
-        which python</copy>
-        ```
-    
-        ![Conda example](images/conda_example.png " ")
-
-   4. Install the dependencies.
-
-        ```<copy>
-        pip install nomic</copy>
-        ```
-    
-        ![Install Nomic](images/nomic.png " ")
-    
-        ```<copy>
-        pip install gpt4all</copy>
-        ```
-    
-        ![Install gpt4all](images/gpt4all.png " ")
-
-   5. Download the Groovy model
-
-        ```<copy>
-        curl -O  https://gpt4all.io/models/ggml-gpt4all-j-v1.3-groovy.bin
-        ```
-    
-        ![download groovy](images/groovy.png " ")
-
-   6. Clone the GitHub repository.
-
-        ```<copy>
-        git clone https://github.com/jasperan/oci-gpt4
-        ```
-    
-        ![clone repos](images/clone_repo.png " ")
-
-   You now have an environment with everything installed to run your models.
-
-## Task 4: Run the example
-
-   1. Navigate to the oci-gpt4 directory.
-
-        ```
-        <copy>cd oci-gpt4/</copy>
-        ```
-
-   2. Navigate to the examples directory.
-
-        ```
-        <copy>cd examples/</copy>
-        ```
-
-        ![cd examples](images/example_mod.png " ")
-
-   3. Run the ask\_generations_nomic.py file. This file will load the model and start making predictions on some questions.
-
-        ```
-        <copy>python ask_generations_nomic.py</copy>
-        ```
-    
-        ![ask generation nomic](images/example.png " ")
-    
 
 ## Acknowledgements
 * **Author** - Nacho Martínez Rincón, Data Scientist Advocate
-* **Author** - Hannah Nguyen, Solution Engineer, NACI Engineering Specialists
+* **Author** - Paul Parkinson, Architect and Developer Advocate
 * **Last Updated By/Date** - Paul Parkinson, 2024

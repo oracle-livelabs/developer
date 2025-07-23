@@ -35,7 +35,7 @@ In this lab, you will:
 ### Prerequisites
 
 * You have signed up for a paid account with Oracle Cloud Infrastructure and have received your sign-in credentials.
-* Access to the cloud environment and resources configured in the [Manage Java Runtimes, Applications and Managed Instances Inventory with Java Management Service Workshop](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=912).
+* Access to the cloud environment and resources configured in the [Manage Java Runtimes, Applications and Managed Instances Inventory with Java Management Service Workshop](https://livelabs.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=912).
 
  > **Note:** This lab requires paid OCI account as Service Gateway is not available in Free tier.
 
@@ -138,9 +138,7 @@ Take note of these details. These details will be used in upcoming tasks. You ca
     * Click the name of the DRG you created in previous step.
     ![image of newly created DRG](images/newly-created-drg.png)
 
-    * Under **Resources**, click **Virtual Cloud Networks Attachments**.
-
-    * Click **Create Virtual Cloud Network Attachment**.
+    * Under **Attachments**, click **Create Virtual Cloud Network Attachment**.
     ![image of creating new VCN attachment](images/create-vcn-attachment.png)
 
     * Select the VCN that you created in step 1. 
@@ -161,7 +159,7 @@ SGW provides a path for private network traffic between your VCN and supported s
     ![image of navigating to Virtual Cloud Networks section](images/navigate-to-vcn.png)
 
     * Select the VCN you have created in step 1.
-    * Under **Resources**, click **Service Gateway**.
+    * Under **Gateways**, navigate to **Service Gateway**.
     * Click **Create Service Gateway**.
     ![image of save new Service Gateway](images/create-new-service-gateway.png)
 
@@ -185,8 +183,7 @@ SGW provides a path for private network traffic between your VCN and supported s
     ![image of navigating to Virtual Cloud Networks section](images/navigate-to-vcn.png)
 
     * Select the VCN you have created in step 1.
-    * Under **Resources**, click **Route Tables**.
-    * Click **Create Route Table**.
+    * Under **Routing**, click **Create Route Table**.
     ![image of creating new Route Table](images/create-new-route-table.png)
     
     * Enter the following values:
@@ -232,20 +229,13 @@ SGW provides a path for private network traffic between your VCN and supported s
     ![image of navigating to Virtual Cloud Networks section](images/navigate-to-vcn.png)
 
     * Select the VCN you have created in step 1.
-    * Under **Resources**, click **Dynamic Routing Gateways Attachments**.
-    * Click the Attachment that you have created.
+    * Under **Gateways**, click the Attachment that you have created.
     ![image of dynamic routing gateway page](images/dynamic-routing-gateways-attachments-page.png)
 
     * Click **Edit**.
      ![image of editing DRG](images/edit-drg-attachment.png)
 
-    * Click **Show Advanced Options**.
-    ![image of configuring  DRG](images/show-advanced-options-drg-att.png)
-
-    * Toggle to **VCN route table** tab.
-    ![image of configuring DRG](images/toggle-to-vcn-route-table.png)
-
-    * Select **Select Existing** radio button and then select the Route rule for DRG from drop down list, that you have created.
+    * Under **VCN route table** select **Select Existing** radio button and then select the Route rule for DRG from drop down list, that you have created.
     ![image of configuring DRG](images/select-route-rule.png)
 
     * Click **Save Changes**.
@@ -257,7 +247,7 @@ SGW provides a path for private network traffic between your VCN and supported s
     ![image of navigating to Virtual Cloud Networks section](images/navigate-to-vcn.png)
 
     * Select the VCN you have created in step 1.
-    * Under **Resources**, click **Service Gateway**.
+    * Under **Gateway**, navigate to **Service Gateway**.
     ![image of service gateway page](images/select-service-gateway.png)
 
     * Click on more options button and select **Associate Different Route Table**.
@@ -347,7 +337,7 @@ In this task, you will create the CPE object and IPSec tunnels and configure the
         * To view the tunnel's shared secret, click the tunnel to view its details, and then click Show next to Shared Secret.
 
     * Use **CPE Configuration Helper** to create **Configuration Output** .
-        * Click on **Open CPE Configuration Helper**.
+        * Click on the newly created IPSec connection, click on **Open CPE Configuration Helper**.
         ![image of Open CPE Configuration Helper](images/ipsec-config-helper-page.png)
 
         * Click **Create Content**.
@@ -693,7 +683,7 @@ if [[ "$FLAG" == "FALSE" ]]; then
 ## Task 8: Setup Management Gateway and Management Agent
 Once you have finishing setting up Site-to-Site VPN, you can install and configure Management Gateway on same host as Libreswan and Management Agent on other on-premises host (in the same network) to demonstrate the working of Site-to-Site VPN setup along with JMS.
 
-* Follow [Manage Java Runtimes, Applications and Managed Instances Inventory with Java Management Service Workshop, Lab 6](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=912) to install, configure and verify Management Gateway and Management Agent.
+* Follow [Manage Java Runtimes, Applications and Managed Instances Inventory with Java Management Service Workshop, Lab 6](https://livelabs.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=912) to install, configure and verify Management Gateway and Management Agent.
 
 
 ## Task 9: Verify the Site-to-Site VPN set up
@@ -724,7 +714,7 @@ Once you have finishing setting up Site-to-Site VPN, you can install and configu
 
     * Select the compartment that the fleet is in and click the fleet.
 
-    * Click **Managed Instance** under **Resources**. If tagging, installation of management agents and communication between Management Gateway and Management Agent is successful, Managed Instance will be indicated on the Fleet Main Page.
+    * Click **Managed Instance**. If installation of management agents and communication between Management Gateway and Management Agent is successful, Managed Instance will be indicated on the Fleet Main Page.
 
     * You should be able to see new Managed Instance with latest time stamp.
     ![image of managed instance after successful installation](images/successful-installation.png)
@@ -737,7 +727,7 @@ Once you have finishing setting up Site-to-Site VPN, you can install and configu
     ![image of navigating to Virtual Cloud Networks section](images/navigate-to-vcn.png)
 
     * Select the VCN you have created.
-    * Under **Resources**, click **Service Gateway**.
+    * Under **Gateways**, naviagte to **Service Gateway**.
     * Select the Service Gateway that you created and click more options (three dots).
     ![image of more options for SGW](images/service-gateway-block-traffic.png)
 
@@ -766,4 +756,4 @@ Once you have finishing setting up Site-to-Site VPN, you can install and configu
 ## Acknowledgements
 
 * **Author** - Bhuvesh Kumar, Java Management Service
-* **Last Updated By** - Sherlin Yeo, March 2023
+* **Last Updated By** - Shuoqi Yang, May 2025

@@ -36,20 +36,20 @@ Now that you are ready to publish your changes to the project's `main` branch, l
 1. Click![Workspaces icon](images/vbs-workspaces-icon.png)**Workspaces**, then **HR Workspace** in the Workspaces table.
 2. When your workspace opens, click **Publish** in the header.
 3. In the Publish Changes dialog box, click **Merge After Review**.
-4. Enter a message for your commit, select another project member as a reviewer, and click **Publish Changes**.
+4. Enter a commit message for your commit, leave the target branch set to the `main` branch, enter a description of all your changes (not just this commit) for the merge request, select another project member as a reviewer, and click **Publish**.
 
     ![The Publish Changes dialog box is shown, with the Merge After Review tab selected. An example commit message is shown and Clara Coder is set as a reviewer. The Publish Changes button is selected.](images/create-mr.png "")
 
-5. When prompted, add the username and password that allows your visual application to be deployed to the VB development instance, then click **Add Credentials and Continue**.
+5. If you're prompted to authorize your environment, click **OK** in the Authorization Required dialog, then click **Authorize** in the Authorize Jobs page. If additionally prompted to set up OAuth, click **Authorize**. You may need to enable popups in your browser.
 
-    ![The Missing Deployment credentials dialog with mary.jane entered as the user name. Password is empty.](images/credentials.png "")
+    Once you've provided authorization, click **Publish** again in your workspace to restart the publishing process. Make sure the dialog still has all the details you added in the previous step.
 
-    Once the request to merge your changes from **hrbranch** to **main** is created, click **Close**. Both your reviewer and you will be notified that a new merge request has been created.
+6. When the request to merge your changes from **hrbranch** to **main** is created, click **Close**. Both your reviewer and you will be notified that a new merge request has been created.
 
     ![The results when you click the Publish Changes button are shown, with the message '1 Merge hrbranch to master merge request has been created' at the end. The Close button is selected.](images/create-mr-result.png "")
 
-6. Return to the project home, then click ![Merge Requests icon](images/vbs-mergerequest-icon.png) **Merge Requests** in the left navigator. You'll see your merge request listed here. For a quick summary of the merge request, click ![Details icon](images/details-icon.png) **Details**.
-7. Click **1 Merge Request for branch 'hrbranch'**. All details of the merge request, including its current status and all previous commits, will be shown:
+7. Return to the project home, then click ![Merge Requests icon](images/vbs-mergerequest-icon.png) **Merge Requests** in the left navigator. You'll see your merge request listed here. For a quick summary of the merge request, click ![Details icon](images/details-icon.png) **Details**.
+8. Click **1 Merge Request for branch 'hrbranch'**. All details of the merge request, including its current status and all previous commits, will be shown:
 
     ![Details of the newly created merge request, #1 Merge Request for branch 'hrbranch', are shown. Its status is shown as OPEN, with a message that the requestor wants to commit 2+ commits to main from hrbranch in tutorial-hr-project.git. The Conversation tab shows an example commit message. The Merge and Close buttons are also visible.](images/create-mr-view.png "")
 
@@ -76,7 +76,7 @@ Assuming your merge request has been approved, let's now merge your changes to t
 
 After your application is successfully deployed to the development environment, you can view it from your environment's list of deployments.
 
-1. In the left Navigator, click ![Environments icon](images/vbs-environments-icon.png) **Environments**, then **Deployments**.
+1. In the left Navigator, click ![Environments icon](images/vbs-environments-icon.png) **Environments**, then **Deployments** for the Development environment.
 2. Expand the **tutorial-hr-project** that shows the **Deployed** status, then click the **hrwebapp** application.
 
     ![The applications deployed to your Development environment are shown. The Deployed version of the hrwebapp application is shown with identifying details.](images/deployed-application.png "")
@@ -86,6 +86,8 @@ After your application is successfully deployed to the development environment, 
 ## Task 4: Import data to the deployed application
 
 A deployed application does not automatically include its business object data, so you'll need to manually import data for the application in the development environment. You can import the data you used in your workspace or add entirely different data, as we'll do now.
+
+**Note:** These steps apply only when your environment's Visual Builder instance is in the same identity domain as your VB Studio instance. When it is in a different domain, you won't see deployment actions such as export, import, or undeploy (as shown here). Instead, you must add an **Import Data** step to a build job (either as part of your current deployment job or as a brand new import job) to do this action for you. See [Configure a Build Job to Manage Deployed Visual Apps](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/visual-builder&id=VBBVA-GUID-B466AE27-9924-4A44-954F-5178213ECF65). Optionally, skip this step and complete the workshop  without importing data to the application.
 
 1. Click [this link](https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/developer-library/hr-application.zip) and download the `hr-application.zip` file. The zip file contains CSV files of the Location, Department, and Employee business objects with more records and data.
 2. In the Deployments tab, click **Actions** ![Actions icon](images/vbs-actions-icon.png) for the deployed tutorial-hr-project and select **Import Data**.
@@ -106,13 +108,17 @@ A deployed application does not automatically include its business object data, 
 
     You can now make a note of this URL to share with public users.
 
-5. To install the app as a PWA, click the **Install HR App** ![Install HR App icon](images/install-app-icon.png) icon in the address bar, then **Install** when prompted.
+## Task 5: Install your application as a PWA
+
+You're now ready to install the HR app as a PWA.
+
+1. Click the **Install HR App** ![Install HR App icon](images/install-app-icon.png) icon in the address bar, then **Install** when prompted.
 
     ![The Install app? prompt that appears when a user clicks the Install HR Application icon in the address bar is shown. Install is selected.](images/install-as-pwa.png "")
 
     If you access this app on a mobile device, you'll be prompted to add the app to your phone's home screen as well.
 
-6. When the app opens on your device as a standalone app, try it out and test its functionality.
+2. When the app opens on your device as a standalone app, try it out and test its functionality.
 
    ![The HR Application is shown when installed as a PWA on a device.](images/pwa-installed.png "")
 
@@ -125,4 +131,4 @@ A deployed application does not automatically include its business object data, 
 ## Acknowledgements
 
 * **Author** - Sheryl Manoharan, VB Studio User Assistance, November 2021
-* **Last Updated By/Date** - Sheryl Manoharan, July 2024
+* **Last Updated By/Date** - Sheryl Manoharan, April 2025

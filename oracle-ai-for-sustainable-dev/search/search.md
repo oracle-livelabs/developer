@@ -26,7 +26,8 @@ Estimated Time:  3 minutes
    ![view results](images/search3.png " ")
    4. This should help you understand some syntax and power of Text Searches in the Oracle Database. Examine in the `sql/aiuser-tables-indexes-functions.sql` file how easy it was to create the index to enable this.
       
-      ```
+      ```text
+      <copy>
       CREATE TABLE aivision_results
           (id RAW (16) NOT NULL,
            date_loaded TIMESTAMP WITH TIME ZONE,
@@ -38,9 +39,10 @@ Estimated Time:  3 minutes
       
       create index aivisionresultsindex on aivision_results(textfromai) indextype is ctxsys.context;
       /
+      </copy>
       ```
 
-   DBMS\_SEARCH is new functionality in 23ai.  It is suggested that you try the [Easy Text Search over Multiple Tables and Views with DBMS_SEARCH in 23ai workshop](https://apexapps.oracle.com/pls/apex/r/dbpm/livelabs/view-workshop?wid=3721) to learn more.
+   DBMS\_SEARCH is new functionality in 23ai.  It is suggested that you try the [Easy Text Search over Multiple Tables and Views with DBMS_SEARCH in 23ai workshop](https://livelabs.oracle.com/pls/apex/r/dbpm/livelabs/view-workshop?wid=3721) to learn more.
 
 You may now **proceed to the next lab.**..
 

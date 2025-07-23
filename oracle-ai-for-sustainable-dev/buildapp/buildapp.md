@@ -6,6 +6,7 @@ This lab will show you how to use Oracle Database JSON features to story, analyz
 
 Estimated Time:  3 minutes
 
+[Lab 2](videohub:1_tqxa75gn)
 
 ### Objectives
 
@@ -46,18 +47,18 @@ The application can be built and run in a couple ways:
 ## Task 2: Build and run as a Java application directly using Maven
 
    1. Open a terminal/shell.
-   2. cd to the directory where the workshop src (and thus `env.properties`) exists, ie `cd [workspace_src_directory]`.
+   2. cd to the directory where the workshop `java-ai` src (and thus `env.properties`) exists, ie `cd [workspace_src_directory/java-ai]`.
    3. Issue the following to build the application
    
-        ```text
-        <copy>./build.sh</copy>
-        ```
+     ```text
+     <copy>./build.sh</copy>
+     ```
 
    4. Issue the following to run the application
 
-        ```text
-        <copy>./run.sh</copy>
-        ```
+     ```text
+     <copy>./run.sh</copy>
+     ```
 
 
 ## Task 3: Build and run as a Docker image
