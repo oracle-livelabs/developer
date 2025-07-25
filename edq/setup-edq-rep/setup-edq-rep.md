@@ -95,7 +95,7 @@ This lab assumes you have:
 
 ## Task 2: Create New Project in EDQ
 
-1.	On the desktop, double click on *Director* icon.
+1.	On the desktop, click on Activites and double click on *Director* icon.
 
     ![EDQ desktop launch](./images/edq-desktop-launch.png " ")
 
@@ -160,7 +160,7 @@ Now that we have created a project, the next step is creating a Data Store. A Da
     ```
     Database host: localhost
     Port: 1521
-    Database name: orcl
+    Database name: orclpdb
     Name type: Service
     User name: EDQ_SRC
     Password: oraedq

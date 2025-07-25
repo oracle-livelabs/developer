@@ -12,14 +12,14 @@ Estimated Time: 10 minutes
 
 In this workshop, you will:
 
-* Create a Compute Instance
+* Create a Oracle Linux Compute Instance on OCI
 * Install Java on Compute Instance
 * Create a simple Java application
 
 ### Prerequisites
 
 * You have signed up for an account with Oracle Cloud Infrastructure and have received your sign-in credentials.
-* You are using an Oracle Linux image on your Managed Instance for this workshop.
+* You are using an Oracle Linux image for your Managed Instance for this workshop.
 * Access to the cloud environment and resources configured in the previous workshop
 
 ## Task 1: Create a Compute Instance
@@ -76,20 +76,18 @@ In this workshop, you will:
     * **Memory (GB)**: 1
     * **Network bandwidth (Gbps)**: 0.48
 
-    > **Note:** Usage of Ampere shapes is not recommended for Java Management Service as they are not supported.
-
       ![image of image and shape for the Compute Instance](images/instance-image-and-shape.png)
 
-    Click **Edit** to review the **Networking** settings. 
+    Click **Edit** to review the **Networking** settings.
 
-    Review the **Networking** settings by clicking **Edit** at the **Primary VNIC information**. 
+    Review the **Networking** settings by clicking **Edit** at the **Primary VNIC information**.
 
     ![image of networking setting](images/instance-networking.png)
 
     If there are no VCNs available, click **Create new virtual cloud network**.
 
     ![image of networking settings with no vcns available](images/instance-vcn-create.png)
-    
+
     Take the default values provided by the wizard.
 
     **Virtual cloud network**: vcn-'date'-'time'
@@ -123,7 +121,7 @@ In this workshop, you will:
 
 5. You have successfully created an Oracle Linux instance.
 
-## Task 2: Access Instance via SSH
+## Task 2: Access and setup your Instance via SSH
 
 1. Open the navigation menu and click **Compute**. Under **Compute**, click **Instances**.
 
@@ -155,17 +153,53 @@ ssh -i <path-to-private-key/your-private-key-file> opc@<x.x.x.x>
 
 6. You should be able to login to your instance now.
 
-## Task 3: Install Java 8 and create a simple Java application
+> **NOTE:** The following steps are required if you have created an Always Free-eligible compute with 1 OCPU and 1 GB memory
 
-### For **Linux**
+7. The memory allocated for Always Free-eligible computes is insufficient for this workshop. The next few steps increases the swapsize to handle this limitation.
 
-1. Install Oracle JDK 8 (64-bit) using `yum`.
+8. Switch to the root user.
+
+```
+<copy>
+sudo su
+</copy>
+```
+
+9. Execute the following command as sudo to increase the default swapsize.
+
+```
+<copy>
+swapoff -a && rm -f /.swapfile && fallocate -l 4G /.swapfile && mkswap /.swapfile && chmod 600 /.swapfile && swapon -a
+</copy>
+```
+
+10. You should see the following output.
+
+  ![image of swapsize being updated](images/instance-changeswapfile.png)
+
+11. It is also highly recommended to update your oracle cloud agent for your OCI compute instance.
+
+```
+<copy>
+dnf update -y oracle-cloud-agent
+</copy>
+```
+
+## Task 3: Install Java and create a simple Java application on your Compute Instance
+
+1. Install Oracle JDK 17 using dnf
+
     ```
     <copy>
-    sudo yum -y install jdk-1.8-headful.x86_64
+    sudo dnf -y install jdk-17
     </copy>
     ```
-    > **Note:** Management Agents require JDK 8 and superuser privileges for installation.
+    Or you can use yum
+     ```
+     <copy>
+     sudo yum -y install jdk-17
+     </copy>
+     ```
 
     To check the installed Java version, you can check using `-version`.
     ```
@@ -177,7 +211,7 @@ ssh -i <path-to-private-key/your-private-key-file> opc@<x.x.x.x>
 2. Build your Java application.
 
     In the **Terminal** window, create a Java file by entering this command:
-    
+
       ```
       <copy>
       nano HelloWorld.java
@@ -191,16 +225,16 @@ ssh -i <path-to-private-key/your-private-key-file> opc@<x.x.x.x>
       public class HelloWorld {
         public static void main(String[] args) throws InterruptedException{
           System.out.println("This is my first program in java");
-          int number=15;  
-          System.out.println("List of even numbers from 1 to "+number+": ");  
-          for (int i=1; i<=number; i++) {  
-            //logic to check if the number is even or not  
-            //if i%2 is equal to zero, the number is even  
+          int number=15;
+          System.out.println("List of even numbers from 1 to "+number+": ");
+          for (int i=1; i<=number; i++) {
+            //logic to check if the number is even or not
+            //if i%2 is equal to zero, the number is even
             if (i%2==0) {
               System.out.println(i);
               Thread.sleep(2000);
             }
-          }  
+          }
         }//End of main
       }//End of HelloWorld Class
       </copy>
@@ -208,74 +242,7 @@ ssh -i <path-to-private-key/your-private-key-file> opc@<x.x.x.x>
 
 3. To save the file, type **CTRL+x**. Before exiting, nano will ask you if you want to save the file: Type **y** and **Enter** to save and exit.
 
-### For **Windows**
-
-1. Install Oracle JDK 8 in your instance. Download the x64 installer `jdk-8u<VERSION>-windows-x64.exe` from the [Java download](https://www.oracle.com/java/technologies/downloads/#java8-windows) page. Please note that you need an **Oracle Account** in order to download the software.
-
-    Run the downloaded file and follow the instruction of installer. Leave default options, take note of the jdk installation path.
-
-    Set environment variables on your system: Right-click on **My Computer** -> **Properties** -> **Advanced system settings** (on the top-left) -> **Environment Variables…** button on the bottom -> double-click on **Path** of **System variables** part of form. -> **New**-> paste paths for jdk and jre **bin** folder (for example: C:\Program Files\Java\jdk1.8.0\_161\bin; C:\Program Files\Java\jre1.8.0\_161\bin).
-
-    Set the **JAVA\_HOME** environment variable. To set it, go to **System variables** form -> click **New** -> enter **JAVA\_HOME** for **Variable name:** and **path/to/jdk** for **Variable value:** (for example: C:\Program Files\Java\jdk1.8.0_161).
-
-    To check if Java has been installed, in **Command Prompt** window, enter the following command. Make sure to open a new Command Prompt as the recent changes in environment variables may not be reflected in previous Command Prompt winodws.
-    ```
-    <copy>
-    javac -help
-    </copy>
-    ```
-    There should be a list of options. Now, enter the following:
-
-    ```
-    <copy>
-    java -version
-    </copy>
-    ```
-
-2. Build your Java application.
-
-    In the **Command Prompt** window, create a java file by entering this command:
-      ```
-      <copy>
-      notepad HelloWorld.java
-      </copy>
-      ```
-    In the file, paste the following text:
-      ```
-      <copy>
-      public class HelloWorld {
-        public static void main(String[] args) throws InterruptedException{
-          System.out.println("This is my first program in java");
-          int number=15;  
-          System.out.println("List of even numbers from 1 to "+number+": ");  
-          for (int i=1; i<=number; i++) {  
-            //logic to check if the number is even or not  
-            //if i%2 is equal to zero, the number is even  
-            if (i%2==0) {
-              System.out.println(i);
-              Thread.sleep(2000);
-            }
-          }  
-        }//End of main
-      }//End of HelloWorld Class
-      </copy>
-      ```
-
-3. Go to the File option and click the Save button to save the file. Close the notepad window. Move to the command prompt window again.
-
-    > **Note:** To conserve resources and reduce charges, remember to stop your compute instance after completing the task.
-
 You may now **proceed to the next lab.**
-
-## Troubleshoot Java application creation issues
-
-**For Task 3**
-
-* If you encounter an error similar to the following:
-    ```
-    No match for argument: jdk1.8.x86_64
-    ```
-  Use a new instance with AMD or Intel shape instead of Ampere.
 
 ## Learn More
 
@@ -287,4 +254,4 @@ You may now **proceed to the next lab.**
 ## Acknowledgements
 
 * **Author** - Esther Neoh, Java Management Service
-* **Last Updated By** - Chan Wei Quan, October 2023
+* **Last Updated By** - Teck Kian Choo, August 2024

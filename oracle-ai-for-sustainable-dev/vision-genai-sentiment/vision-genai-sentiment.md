@@ -7,6 +7,7 @@ The use case involves detect objects in an image and write a sentence using thos
 
 Estimated Time:  3 minutes
 
+[Lab 6](videohub:1_14zkji84)
 
 ### Objectives
 
@@ -30,7 +31,8 @@ Estimated Time:  3 minutes
    ![view results](images/objectdetection_textgen_sentiment5.png " ")
    6. Notice the PL/SQL function code in the sql/aiuser-tables-indexes-functions.sql file that is called by this application and how it calls DBMS_CLOUD, parses the JSON, and stores the results, and also REST/ORDS enable the function.
    
-      ``` <copy>
+      ```text 
+      <copy>
       CREATE OR REPLACE FUNCTION VISIONAI_OBJECTDETECTION (
           p_endpoint VARCHAR2,
           p_compartment_ocid VARCHAR2,
@@ -91,7 +93,8 @@ Estimated Time:  3 minutes
           );
           COMMIT;
       END;
-      /
+      / 
+      </copy>
       ```
 
 You may now **proceed to the next lab.**..
@@ -99,4 +102,4 @@ You may now **proceed to the next lab.**..
 ## Acknowledgements
 
 * **Author** - Paul Parkinson, Architect and Developer Advocate
-* **Last Updated By/Date** - Paul Parkinson, 2023
+* **Last Updated By/Date** - Paul Parkinson, 2024

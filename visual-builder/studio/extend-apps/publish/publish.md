@@ -1,16 +1,19 @@
-# Test and publish the extension
+# Publish the extension
 
 ## Introduction
 
-Now that we've set up the App UI in our extension, we'll test it to make sure it's working correctly. We'll then publish the extension and view the App UI deployed to your Oracle Cloud Applications instance.
+Now that we've tested the App UI in our extension, we're ready to publish the extension and view the App UI deployed to your Oracle Cloud Applications instance.
 
 Estimated Time: 5 minutes
+
+### About this lab
+
+Publishing saves your application's code from the local branch in your workspace to the remote branch in the project's Git repository, then to the project's default (main) branch. While it's possible to complete each of these Git operations separately, it's simplest to do all of this at the click of a single Publish button—as we'll do in this lab.
 
 ### Objectives
 
 In this lab, you will:
 
-* Test your App UI's pages
 * Deploy your App UI's extension to your Oracle Cloud Application instance
 * Access the deployed extension
 
@@ -18,19 +21,7 @@ In this lab, you will:
 
 This lab assumes you have all previous labs successfully completed.
 
-## Task 1: Test the App UI
-
-You can preview your App UI to run it in its own browser tab and see how it will appear to a user.
-
-1. Click ![Preview icon](images/icon-preview.png) **Preview** in the header.
-
-2. When the App UI opens displaying a list of employees, enter criteria, like the first name `David`, in the **Emp Name** field to filter the list and hit **Enter**:
-
-    ![This image shows a preview of the App UI. The name "David" is entered in the search field and the results of the search are listed underneath.](images/preview.png)
-
-3. Close the browser tab.
-
-## Task 2: Publish the extension
+## Task 1: Publish the extension
 
 After you've confirmed search is working, you are ready to deploy the extension with its App UI to your Oracle Cloud Applications instance.
 
@@ -38,36 +29,44 @@ After you've confirmed search is working, you are ready to deploy the extension 
 
     ![This image show the Publish button selected in the upper right corner of the workspace.](images/publish.png)
 
-2. In the Publish dialog, enter a description of the changes in the **Commit Message** field, then click **Publish**:
+2. In the Publish dialog, enter a description of your changes in the **Commit Message** field.
 
-    ![This image shows the Publish Changes dialog with Merge Now selected and the "Search Application for HCM" entered in the Commit Message field.](images/publish-changes-dialog.png)
+    ![This image shows the Publish Changes dialog with "Employee Search Application" entered in the Commit Message field. The Target Branch is set to "main", Merge Now is selected, and the New Working Branch Name is set to the default suggested name.](images/publish-changes-dialog.png)
 
-3. If prompted, provide your user name and password for your development instance. These **must** be Oracle Cloud Application credentials, as opposed to Visual Builder Studio or SSO credentials:
+3. Note the **New Working Branch Name**. Once you publish a branch, you can no longer use it, so VB Studio automatically creates a new working branch and switches your workspace to it for any future changes. It's recommended that you provide a more meaningful name for your new working branch.
 
-    ![This image shows the Missing Deployment Credentials dialog. The User Name field has john.dunbar entered in it and the Password field is empty.](images/deployment-creds.png)
+4. Click **Publish**.
 
-4. When the changes are published to your project's Git repository, click **Close**.
-    ![This image shows Publish CHanges dialog detailing the steps taken to deploy changes from your workspace to the project's repository in this order: Checking environments and build jobs, git commit branch1, git fetch, git merge main to branch1, git merge branch1 to main, and git push. There's also a message asking the user not to use the current branch as changes are being deployed and that a new branch maryjane-timestamp has been temporarily created for the user.](images/published.png)
+5. If you're prompted to authorize your environment, click **OK** in the Authorization Required dialog, then click **Authorize** in the Authorize Jobs page. If additionally prompted to set up OAuth, enter the credentials of a user who can access your Oracle Cloud Applications instance and click **Authorize**.
+
+    Once you've provided authorization, return to your workspace and click **Publish** again to restart the publishing process.
+
+6. When the changes are published to your project's Git repository, click **Close**.
+    ![This image shows Publish Changes dialog detailing the steps taken to deploy changes from your workspace to the project's repository in this order: Checking environments and build jobs, git commit branch1, git fetch, git merge main to branch1, git merge branch1 to main, and git push. There's also a message asking the user not to use the current branch as changes are being deployed and that a new branch maryjane-timestamp has been temporarily created for the user.](images/published.png)
 
     What you're seeing are the Git steps taken to push your changes from the local **branch1** to the remote **branch1**, then to merge them to the project's **main** branch.
 
-## Task 3: View the deployed extension
+## Task 2: View the deployed extension
 
-Once your changes are successfully merged to your project's repo, VB Studio automatically kicks off the default build jobs that deploy the extension to your environment's Oracle Cloud Applications instance.
+Once your changes are successfully merged to your project's repo, VB Studio automatically kicks off the default build jobs that deploy the extension to your environment's Oracle Cloud Applications instance. Notifications to that effect appear in the bottom right corner. You can also click ![Notifications icon](images/icon-notifications.png) in the header to view each job's progress.
 
 1. Click ![Go to project page icon](images/icon-gotoprojectpage.png) in the header to go to the Project Home page.
 
-2. In the main navigation, click the ![Builds icon](images/icon-builds.png) **Builds** tab to check the packaging and deployments jobs. 
+2. In the main navigation, click the ![Builds icon](images/icon-builds.png) **Builds** tab to check the packaging and deployments jobs.
 
     If the build job is still running, you can view its progress in the **Job Queue** tab. It might take a few minutes for the build to start if an executor isn't immediately available.
 
-    ![This image shows the Builds section Job Queue tab in VB Studio. A progress indicator shows status for the DemoHCMSearch-Package job.](images/job-queue.png)
+    ![This image shows the Builds section Job Queue tab in VB Studio. A progress indicator shows status for the DemoEmpSearch-Package job.](images/job-queue.png)
 
-3. When the status of both jobs is green, click the ![Environments icon](images/icon-environments.png) **Environments** tab, select **Deployments**, then **Application Extensions**.
+3. When the status of both jobs in the Jobs tab is green, click the ![Environments icon](images/icon-environments.png) **Environments** tab to open your project's Environments page and click **Extension Lifecycle**.
 
-4. Expand the **site_DemoHCMSearch** extension, then click ![Open icon](images/icon-openappui.png) next to the **hcmsearch** App UI to open it in a new browser tab:
+4. Expand the environment to which the DemoEmpSearch extension was deployed, then click ![Extension Details icon](images/manageextensionlifecycle-details-icon.png) to view extension details.
 
-    ![This image shows the Environments tab. The Development environment is selected and the Deployments tab is shown. In the Applications Extensions section, DemoHCMSearch is highlighted and expanded and hcmsearch is highlighted in the App UIs column.](images/deployment.png)
+    ![This image shows the Environments tab. The Development environment is selected and the Deployments tab is shown. In the Applications Extensions section, DemoEmpSearch is highlighted and expanded and empsearch is highlighted in the App UIs column.](images/deployment.png)
+
+5. Click ![Open icon](images/icon-openappui.png) next to **empsearch** to open the App UI in a new browser tab:
+
+    ![This image shows the Extension Details pane with details such as extension name, ID, version, App UIs, Dependencies, and Version History. The empsearch App UI is highlighted.](images/deployment-appui.png)
 
     You can now view the App UI deployed to your environment's Oracle Cloud Applications instance.
 
@@ -76,5 +75,4 @@ Once your changes are successfully merged to your project's repo, VB Studio auto
 ## Acknowledgements
 
 * **Author** - Sheryl Manoharan, VB Studio User Assistance, May 2023
-* **Contributors** -  Lisa Dawson, VB Studio User Assistance
-* **Last Updated By/Date** - Sheryl Manoharan, April 2024
+* **Last Updated By/Date** - Sheryl Manoharan, April 2025

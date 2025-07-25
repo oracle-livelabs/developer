@@ -94,14 +94,14 @@ In the **Page Templates** window you will see a page named **Welcome Page Templa
 
   ![IDE](images/ide.png)
 
-2. Click the **All** tab in the Properties pane and modify these properties:
+2. Click the **General** tab in the Properties pane and modify these properties:
 
 | # | Property | Value |
 | --- | --- | --- |
 | 1 | Page Title | **Accounts** |
 | 2 | Overline | **Customer Management** |
 | 3 | Description| **Search and edit accounts** |
-| 4 | Background Color | Choose your preferred color (dark-ocean, dark-pine, dark-lilac, dark-teal, dark-rose, dark-pebble, dark-slate, dark-plum, dark-sienna, auto)  |
+| 4 | Background Color | Choose your preferred color (dark-ocean, dark-pine, dark-lilac, dark-teal, dark-rose, dark-pebble, dark-slate, dark-plum, dark-sienna, auto) **Hint:** If you delete the value in the text box and click out of the field, buttons will be displayed for you to choose from. |
 | 5 | Illustration foreground source URL | https://static.oracle.com/cdn/fnd/gallery/2107.1.0/images/illust-welcome-banner-fg-03.png |
 {: title="Template Properties"}
 
@@ -120,7 +120,7 @@ In the next lab, we'll add some more useful components to the page.
 
 3. While the input search is selected in the canvas, click the **Data** tab in the Properties pane.
 
-4. Click the little arrow at the top right of the **Value** field to display a list of variables. (you might need to hover your mouse on the field first)
+4. Click the (x) at the top right of the **Value** field to display a list of variables. (you might need to hover your mouse on the field first)
 
   ![Variable creation](images/valuefield.png)
 

@@ -1,18 +1,24 @@
-# Create an App UI and connect to data
+# Create an App UI
 
 ## Introduction
 
-We're now ready to build a simple App UI that allows users to search for an employee, based on data that we'll get from Human Capital Management (HCM).
+We're now ready to build a simple App UI that allows users to search for an employee.
 
-Estimated Time: 10 minutes
+Estimated Time: 5 minutes
+
+### About this lab
+
+An App UI is an application that takes the form of VB Studio flows and pages. Pages within the App UI take shape within the Designer, a rich graphical user interface that lets you design and develop your app by dragging and dropping components on a page. These components—all based on the open-source Oracle JavaScript Extension Toolkit (JET)—enable you to create rich UIs that span multiple devices.
+
+You also have access to page templates based on Redwood, the Oracle standard for user experience. Redwood page templates include a rich set of user interface elements and provide a consistent look and feel across your app's pages. They also provide a responsive user experience, which means your app will adjust to the device accessing it.
 
 ### Objectives
 
 In this lab, you will:
 
 * Create an App UI
-* Connect your extension to Oracle Cloud App data
-* Set up the App UI to filter and display data
+* Change the App UI's page to use a Redwood template
+* Add components to the App UI page
 
 ### Prerequisites
 
@@ -20,25 +26,26 @@ This lab assumes you have all previous labs successfully completed.
 
 ## Task 1: Create an App UI
 
-Start by creating an App UI that takes the form of VB Studio pages and flows.
+Start by creating an App UI.
 
-1. In the **App UIs** pane, click **+ App UI**:
+1. In the **App UIs** pane, click **+ App UI**.
 
     ![This image shows the App UIs tab, with the + App UI button selected.](images/create-app.png)
 
-2. In **App UI Name**, enter a name, perhaps something like `HCMSearch`. The App UI ID is automatically filled in, but you can change it if you like.
+2. In **App UI Name**, enter a name, perhaps something like `EmpSearch`. The App UI ID is automatically filled in, but you can change it if you like. Take care to retain the `x-` prefix, which is used to distinguish customer App UIs from those created by Oracle in case they have the same name.
 
 3. Click **Create**.
 
-    The App UI opens on the Diagram view, which shows the App UI's flows and pages. A flow is just a way to keep related pages together. An application can contain multiple flows, and a flow can contain many pages. In this case, we have one flow, **main**, and one page, **main-start**:
-    ![This image shows a new hcmsearch App UI open on the canvas in the Designer tab. On the left is a Components palette; on the right is the  main tile indicating a flow with the main-search tile indicating a page nested within.](images/newappui.png)
+    The App UI opens on the Diagram view, which provides a visual representation of the App UI's flows and pages. A flow is just a way to keep related pages together. An application can contain many flows, and each flow can contain many pages. In this case, we have one flow, **main**, and one page, **main-start**:
+    ![This image shows a new **empsearch** App UI open on the canvas in the Diagram tab. On the left is a Components palette; on the right is the  **main** tile indicating a flow, with the **main-start** tile nested within indicating a page within the flow.](images/newappui.png)
 
-4. Double-click the **main-start** tile to open the page in the Designer.
+4. Double-click the **main-start** tile on the canvas to open the page in the Page Designer.
 
     What you see under the **main-start** tab is your main work area. Just under **main-start** are several horizontal tabs: Page Designer, Action Chains, Event Listeners, and so on. Each tab provides editors to help you examine and modify artifacts used in the page. By default, the page opens in the Page Designer, which is where you'll do the bulk of your work in VB Studio.
     ![This image shows the main-start page with several components labelled. On the left are the Components, Data, and Structure tabs, in the middle is the canvas area, and on the right is the Properties pane.](images/pagedesigner.png)
 
     Here are the main Page Designer areas you'll use throughout this workshop:
+
     | # | Tab | Functionality |
     | --- | ---- | --- |
     | 1 | Components | UI components (sorted by categories) that you can drag and drop onto a page|
@@ -50,107 +57,65 @@ Start by creating an App UI that takes the form of VB Studio pages and flows.
 
     You can collapse and expand tabs to better manage your working area. For example, click **Properties** to hide the Properties pane and expand your work area. You can also move different panes to customize your work area. For example, right-click **Structure** at the bottom of your work area, then select **Move to Top Left** to move the Structure view right under Components and Data. Right-click the tab again and select **Reset All Panels to Default** to revert your change.
 
-## Task 2: Add components to a page
+    Let's now configure the main-start page to leverage templates based on Redwood, the Oracle standard for user experience.
 
-Let's now develop our App UI by dragging and dropping components onto the main-start page.
+## Task 2: Change the Page Template
 
-1. In the Components palette, enter **heading** in the Filter field to locate the Heading component, then drag and drop it onto the canvas.
+Change the main-start page to use a Redwood Welcome Page Template, allowing you to quickly create a search page using predefined components.
 
-2. In the Heading's Properties pane, change the **Text** to `Employee Search`:
+1. In the Page Designer, click **Properties** to open the main-start page's Properties pane, then click **Select Page Template**.
 
-    ![TThis image shows the Heading component highlighted in the Components palette and selected in the Page Designer, and Employee Search entered in the Text field in the Properties pane.](images/heading.png)
+   ![This image shows the main-start page's Properties pane. It includes Title, Description, Select Page Template, and Preferred Layout options.](images/select-page-template.png)
 
-3. In the Components palette, filter to find the **Input Text** component, then drag and drop it under the header on the canvas. Make sure you see the plus sign (+) before you drop the component, so you know you're working in a valid area:
+2. When the Page Templates dialog opens, scroll down and select **Welcome Page Template**. (If you don't see this template, go back to the first lab and make sure you set up all the project components.) Click **Select**.
 
-    ![This image shows the Input Text component highlighted in the Components palette and being dragged onto the canvas under the heading. ](images/input-text.png)
+   ![This image shows the Page Templates dialog. A **No Page Content** shows on top. Under that, a **Page Content** section shows several templates such as Advanced Create and Edit Template, Smart Search Page Template, and Welcome Page Template. The Cancel and Select buttons are also shown.](images/page-templates.png)
 
-4. In the Input Text component's Properties pane, change the **Label Hint** to `Emp Name`. You'll see this text appear as a placeholder in the component on the canvas.
+3. In Structure view, click **Welcome Page Template** to view the template's properties.
 
-5. Let's now map the input text field to a variable, which will hold the data of the employee that the user will search for. In the Input Text component's Properties pane, click the **Data** tab, hover over the **Value** text, and click ![Select Variable icon](images/icon-selectvariable.png) next to **fx**.
+   ![This image shows the main-start page with the Welcome Page Template selected in Structure view. The template displayed in the canvas area  shows a blue banner with Overline Text, Page Title, and Description Text. A Default Slot placeholder is also shown under the banner.](images/welcome-page-template.png)
 
-    ![This image shows the Input Text component's Properties pane, with the cursor hovering over the Select Variable icon.](images/select-var.png)
+4. In the template's Properties pane, click the **All** tab and modify these property values:
 
-6. When the variable picker opens, click **Create** next to **Page**.
+    | # | Property | Value |
+    | --- | ---- | --- |
+    | 1 | Page Title | **Employees**|
+    | 2 | Description | **Search a list of employees** |
+    | 3 | Background Color | Remove **[[ $page.variables.backgroundColor ]]** and select a color: dark-ocean, dark-pine, dark-lilac, dark-teal, dark-rose, dark-pebble, dark-slate, dark-plum, dark-sienna, auto  |
+    | 4 | Illustration foreground source URL | https://static.oracle.com/cdn/fnd/gallery/2504.0.0/images/illust-welcome-banner-fg-03.png |
+    {: title="Welcome Page Template Properties"}
 
-7. In the **ID** field, enter `searchString`, leave the **Type** set to `String`, and click **Create**.
+    Your screen may look something like this:
+
+   ![This image shows the main-start page, with a banner in Dark Rose.  **Employees** is shown as the title and a **Search a list of employee** is shown as the description. The template's Properties show the values of several properties. ](images/welcome-page-template-customized.png)
+
+## Task 3: Add a Search component
+
+Let's now add an Input Search component that allows users to enter some search text on the main-start page.
+
+1. In the Components palette, enter **search** in the Filter field to locate the Input Search component.
+
+2. Drag and drop the component on the banner in the canvas area (you can also drop it onto the Welcome Page Template in Structure view). When prompted to pick a slot, select **Search slot**.
+
+   ![This image shows the Input Search component being dropped onto the banner to bring up the Slots pop-up with the options: **Default** and **Search slot**. **Search slot** is selected.](images/search-slot.png)
+
+3. In the Input Search component's General tab in the Properties pane, enter  `Emp Name` as the **Placeholder**. You'll see this text appear as a placeholder in the component on the canvas.
+
+4. Let's now map the input search field to a variable, which will hold the employee detail that the user will search for. Click the **Data** tab in the Properties pane, then hover over the **Value** text, and click ![Select Variable icon](images/icon-selectvariable.png) next to **fx**.
+
+    ![This image shows the Input Search component's Properties pane, with the cursor hovering over the Select Variable icon.](images/component-properties-data.png)
+
+5. When the variable picker opens, click **Create** next to **Page**.
+
+    ![This image shows the Variables picker, with **Create** next to Page highlighted.](images/select-var.png)
+
+6. In the **ID** field, enter `searchString`, leave the **Type** set to `String`, and click **Create**.
 
     The component's data is now bound to the newly created variable.
-
-## Task 3: Connect to a data source
-
-Below the input text field, we want to show a list of employees that the user can choose from. To do this, we need to connect to the Oracle Human Capital Management (HCM) service connections catalog, so we can get the data we need.
-
-1. Click ![Services icon](images/icon-services.png) **Services** in the Navigator.
-
-2. In the Services pane, click **+ Service Connection**:
-
-    ![This image shows the Services selected in the Navigator. In the Service Connections tab, the + Service Connection button is selected.](images/services-create-service-connection.png)
-
-3. In the **Select Source** screen of the Service Connection wizard, click **Select from Catalog**.
-
-4. Click the **Human Capital Management** tile:
-
-    ![This image shows the Create Service Connection wizard Service Catalog screen with the Human Capital Management tile selected.](images/hcm-tile.png)
-
-5. In the **Create Service Connection** screen, enter `hcmRest` as the Service Name.
-
-6. In the **Filter Objects/Endpoints** text box, enter `work`, then select **publicWorkers** from the search results:
-
-    ![This image shows the Create Service Connection page with the word "work" entered in the search field and the publicWorkers object selected.](images/publicworkers.png)
-
-7. Click **Create**.
-
-    Now we can use this service connection to create the list of employees we want.
-
-## Task 4: Set up filtering
-
-In this task, we're going to set up a filtering mechanism for our list based on the display name of the employee. We want to compare each name to whatever the user enters as a search string, in order to find the proper match.
-
-1. Switch to the main-start page. Click the **main-start** tab just below the header, or click ![App UIs icon](images/icon-appuis.png) **App UIs** in the Navigator and select **main-start** under the **hcmsearch** and **main** nodes.
-
-2. Select the **Data** tab in the Page Designer, then expand **Services** and **hcmRest**. Drag **publicWorkers** onto the page underneath the Input Text component:
-
-    ![This image shows the Data tab in the Page Designer with Services and hcmRest nodes expanded. The publicWorkers is being dragged and dropped on the canvas.](images/publicworkers-datatab.png)
-
-3. When prompted with a list of options for presenting the data, choose the second **List** item:
-
-    ![This image shows a "Render as" list of options displayed below the Input Text component. The second "List" item is selected.](images/render-as-list-selection.png)
-
-4. In the Add Data wizard, accept the default template in the **Select Template** screen and click **Next**:
-
-    ![This image shows the Add Data wizard Select Template screen with the default template selected.](images/add-data-wizard-selecttemplate.png)
-
-5. In the Bind Data screen, the **Endpoint Structure** panel shows all the fields that are available for us to choose from in the **publicWorkers** object. Drag and drop each of these fields from this panel to the **Item Template Fields** section as specified, using the Filter field to locate them:
-
-    * **DisplayName**: Default slot
-    * **PhoneNumber**: Secondary slot
-    * **LocationTownOrCity**: Tertiary slot
-
-    ![This image shows the Add Data page with the word "LocationTownOrCity" in the Endpoint Structure search field. In the Item Template Fields, DisplayName is in the Default slot, PhoneNumber is in the Secondary slot, and LocationTownOrCity is in the Tertiary slot.](images/add-data-wizard-binddata.png)
-
-6. Click **Next**.
-
-7. In the **Define Query** screen, select **filterCriterion** in the **Target** panel.
-
-8. At the bottom of the page, click **Click to add condition**.
-
-9. Set up the condition as follows:
-
-    * **Attribute**: DisplayName (Select the **DisplayName** attribute that's not part of the assignments list.)
-    * **Operator**: contains ($co)
-    * **Value**: $variables.searchString
-
-    ![This image shows the Add Data page with { } filterCriterion selected in the Target pane. At the bottom of the page, the Builder tab is selected and DisplayName is entered in the IF field, contains ($co) is chosen in the operator field, and $variables.searchString is in the variable field.](images/add-data-wizard-definequery.png)
-
-10. Click **Done**, then **Finish**.
-
-    The main-start page should filter and display a list of employees in a List View component:
-    ![This image shows a list of employees under the Emp Name input text field.](images/empdisplay.png)
 
 You may now **proceed to the next lab**.
 
 ## Acknowledgements
 
 * **Author** - Sheryl Manoharan, VB Studio User Assistance, May 2023
-* **Contributors** -  Lisa Dawson, VB Studio User Assistance
-* **Last Updated By/Date** - Sheryl Manoharan, April 2024
+* **Last Updated By/Date** - Sheryl Manoharan, April 2025

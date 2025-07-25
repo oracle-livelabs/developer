@@ -33,7 +33,7 @@ In this lab, you will:
     
     ![image of user settings](images/user-settings.png)
 
-3. Click **API Keys**.
+3. Click **Tokens and Keys**.
 
   ![image of create api key](images/api-key.png)
 
@@ -276,4 +276,4 @@ You may now **proceed to the next lab.**
 ## Acknowledgements
 
 * **Author** - Esther Neoh, Java Management Service
-* **Last Updated By** - Siqi Liu, October 2023
+* **Last Updated By** - Shuoqi Yang, May 2025

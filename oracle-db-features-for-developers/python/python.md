@@ -63,7 +63,7 @@ Python comes preinstalled on most Linux distributions, and it is available as a 
 
     ![install python3](./images/step1.3-installpython3.png " " )
 
-    ![install python3-tools](./images/p_installpython.jpg " ")
+    ![install python3-tools](./images/p_installpython.png " " )
 
 ## Task 2: The Python Interpreter
 
