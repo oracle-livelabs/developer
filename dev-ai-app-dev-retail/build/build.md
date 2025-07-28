@@ -196,7 +196,7 @@ Here’s what we’ll do:
 
 ## Task 6: Create a function to create embeddings - Use Oracle Database 23ai's to create vector data 
 
-To handle follow-up questions, you will enhance the system with a virtual return officer assistant, Riley, powered by Oracle 23ai’s Vector Search and Retrieval-Augmented Generation (RAG). Riley will be able to answer questions about the return authorization and provide recommendations based on the data.
+To handle follow-up questions, you will enhance the system with a virtual return officer assistant, powered by Oracle 23ai’s Vector Search and Retrieval-Augmented Generation (RAG). The **AI Return Specialist Virtual Assistant** will be able to answer questions about the return authorization and provide recommendations based on the data.
 
 Before answering questions, we need to prepare the data by vectoring the return recommendations. This step:
 
