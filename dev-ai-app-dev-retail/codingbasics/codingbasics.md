@@ -187,7 +187,7 @@ Now, that we have established a connection, we can start creating our tables and
 
     ![query customers](./images/task3.png " ")
 
-### **Task Summary**
+**Task Summary**
 
 Congratulations! You successfully created two new tables with sample data using Python and Oracle Database.  
 
@@ -197,7 +197,9 @@ You also created a function that allows you to query your new table which we wil
 
 Next, we want to explore how we can use a **JSON Duality View** to query our new table. A JSON Duality View allows us to interact with data as JSON objects, i.e., data is stored as documents. Unlike a regular view, we can also update data in a JSON Duality View. Any updates will be reflected in our original relational tables. We will create a JSON Duality View using our newly created tables `customers` and `orders`.
 
-1. Before we create the **JSON Duality View**, we need to add some **constraints** to our new tables. Copy & paste the following code into a **new cell** and run it.
+1. Before we create the **JSON Duality View**, we need to add some **constraints** to our new tables. Constraints define specific rules and conditions that the data in a table must follow. Their main function is to maintain data integrity and ensure the accuracy and reliability of the stored information.
+
+    Copy & paste the following code into a **new cell** and run it.
 
     ```python
     <copy>
@@ -480,7 +482,7 @@ The final step in our basic coding tour with Python and the Oracle Database 23ai
 
 ## Conclusion
 
-In this lab, we learned how to use Python and Oracle's Python driver `oracledb` to interact with Oracle Database 23ai's new features. You learned how to user the `cursor` object to execute SQL queries. Using the `cursor` object, you created a **JSON Duality View** and you even used some JSON functions to query documents using SQL syntax. Then, you also learned how to connect to the database using `pymongo` and retrieve data from a table in the database using **MongoDB syntax**. You created functions to update the **JSON Duality View** and you learned how these updates are also reflected in the underlying relational database tables.
+In this lab, we learned how to use Python and Oracle's Python driver `oracledb` to interact with Oracle Database 23ai's new features. You learned how to use the `cursor` object to execute SQL queries. Using the `cursor` object, you created a **JSON Duality View** and you even used some JSON functions to query documents using SQL syntax. Then, you also learned how to connect to the database using `pymongo` and retrieve data from a table in the database using **MongoDB syntax**. You created functions to update the **JSON Duality View** and you learned how these updates are also reflected in the underlying relational database tables.
 
 In the next labs, you will see several of the coding principles learned and even more.  
 
