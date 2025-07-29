@@ -2,91 +2,89 @@
 
 ## Introduction
 
-In this lab, you’ll learn how to subscribe to data products published by the LOAN officer via the Data Share tool. Subscribing works like “following” a channel, ensuring you receive the latest updates as new information becomes available.
+At SeersEquities, speed and precision are everything—especially for the Risk team. They need access to the latest loan data the moment it's available, without hunting it down or requesting manual updates.
 
+In this lab, you’ll step into the role of a data share recipient and learn how to subscribe to live data products published by the Loan team using Oracle’s Data Share tool. Subscribing is like following a trusted data source: you always get the latest updates, automatically and securely.
 
-### Objectives
-By the end of this lab, you’ll understand how the Data Share tool enables the RISK team to easily access customized data products, keeping everyone aligned and ready to act on up-to-date information.
+By the end of this lab, you’ll understand how subscriptions help the Risk team stay aligned with the business—so they can evaluate changes quickly, adjust risk models, and support smarter decisions in real time.
 
 Estimated Time: 30 minutes
 
+### Objectives
+
+In this lab, you will:
+
+* **Subscribe** to a published data product using the Data Share tool
+
+* **Access shared datasets** published by the LOAN team
+
+* **Ensure timely, secure updates** to drive real-time analytics
+
 ### Prerequisites
 
-* Requires Completion of Lab 5
+* You must complete the lab **Create & Share Trusted Data Products**.
 
 ## Task 1: Subscribe to Data Product Share as RISK user
 
-1. Click **View Login Info**. Click the **SQL Worksheet** link.
+1. Click **View Login Info**. Copy your **DB ADMIN Password**, and click the **SQL Worksheet** link.
 
-    ![Access Data Catalog](./images/sql-worksheet.png "Access Local Data Catalog")  
+    ![Access Data Catalog](./images/start-demo.png "Access Local Data Catalog")  
 
-1. Logon as the **RISK** user.
+2. For your Username enter **RISK**. Paste in the password you copied in the previous step.
 
-   🔘 On the **Database Actions Launchpad**, click the user icon in the top right corner.  Select **Sign Off** from the drop-down options.  
+   ![Create Data Product Share](./images/subscribe-to-data-share-5.png )
 
-      ![Create Data Product Share](./images/subscribe-to-data-share-4.png )
+   Click **Sign in** button.
 
-   🔘 Enter credentials in the popup window that appears below, to login as the **RISK** user.
+3. From the Launchpad, click **Data Studio**, then **Data Share**.
 
-      >**NOTE:** Use the same **ADMIN** password as shown on View Lab Info page
+   ![share](./images/gotoshare.png )
 
-      ![Create Data Product Share](./images/subscribe-to-data-share-5.png )
-
-   🔘 Click **Sign in** button.
-
-1. At the **Database Actions Launchpad**, click **Data Studio**.
-
-      ![Create Data Product Share](./images/subscribe-to-data-share-6.png )
-
-1. On the left rail, click on the **Data Share** option.
-
-      ![Create Data Product Share](./images/subscribe-to-data-share-7.png )
-
-1. On the **Provider and Consumer** page, click on **Consume Share**.
+4. On the **Provider and Consumer** page, click on **Consume Share**.
 
       ![Create Data Product Share](./images/subscribe-to-data-share-8.png )
 
-1. On the **Consume Share** Page
+5. On the **Consume Share** Page
 
-   🔘 Click on **Subscribe to Share Provider** drop-down button.  
-   🔘 Select **Subscribe to Delta Share Provider** from the drop-down list  
+      * Click on **Subscribe to Share Provider** drop-down button.  
+      * Select **Subscribe to Delta Share Provider** from the drop-down list  
 
       ![Create Data Product Share](./images/subscribe-to-delta-share-provider.png)
 
-1. The opening page of the **Subscribe to Share Provider** wizard will be displayed.  
+6. In the **Subscribe to Share Provider** wizard enter the following details:
 
-   🔘 Enter the following details:
+      * Select **Create Share Provider** as share source
+      * Select **From File** as **Share Provider JSON**, 
+        * Select the file you downloaded in the lab  **Create & Share Trusted Data Products**
+      * Provider Name: **Demo-Data-Share**  
+      * Description: **Demo-Data-Share**
 
-   For **Share Source**, select the **Delta Share Provider JSON** radio button  
-   For **Share Provider JSON**, select the **From File** radio button  
-   Click the open dialog box, navigate to the location where the data share resides, select the JSON file and click **Open**
-   Enter **LoanApp\_Share\_Provider** for the **Provider Name:**  
-   Enter **Subscribing to data share of closed mortgage loan details for risk analysis** for the **Description:** of the Share Provider  
-
-   ![Create Data Product Share](./images/subscribe-to-share-provider.png )
+      ![Create Data Product Share](./images/subscribe-to-share-provider.png )
 
    Click on **Next** to proceed
 
-1. On the **Add Shares** screen, execute the following action:  
+7. On the **Add Shares** screen:
 
-   🔘 Select the **LoanApp\_ShareToRisk** share in the **Available Shares** column  
-   🔘 Click the **move (>)** button to transfer the share to the **Selected Shares** column  
+   Select the **LoanApp\_ShareToRisk** share in the **Available Shares** column  
+   Click the **move (>)** button to transfer the share to the **Selected Shares** column  
 
    ![Create Data Product Share](./images/subscribe-to-share-provider-2.png )
 
-   🔘 Click on **Subscribe** to proceed.
+   Click on **Subscribe** to proceed.
+
+You successfully subscribed to a share provider, which is now linked to your Autonomous Database.
 
 ## Task 2: Link Data: Create External Tables to Data Share
 
-1. On the Link Data page **select drop-down list**for Select Cloud Store Location or enter a public URL.  
+1. On the Link Data page **select drop-down list** select the **Demo-Data-Share.**
 
-1. Select the **LoanApp\_Share\_Provider.**
+   ![Create Data Product Share](./images/selectshareprovider.png )
 
-   ![Create Data Product Share](./images/select-shared-data.png )
+2. Expand the drill down tab for the share named **LoanApp\_Share\_Provider** to display the available data.
 
-1. Expand the drill down tab for the share named **LoanApp\_Share\_Provider** to display the available data.
+   ![Create Data Product Share](./images/available.png )
 
-1. Now Let's create an external table based on the **LOAN.Shared\_Loan\_Data\_Risk\_VW** file by dragging and dropping the file onto the data linking job section.  
+3. Drag and drop the file **LOAN.Shared\_Loan\_Data\_Risk\_VW** into the data linking job area.
 
    ![Create Data Product Share](./images/select-shared-data-2.png)
 
@@ -94,62 +92,64 @@ Estimated Time: 30 minutes
 
    ![Create Data Product Share](./images/select-shared-data-3.png)
 
-1. Click on the **Settings** (pencil Icon) to display the Link Data from Cloud Store Location panel. You can use the various tabs listed on the left rail to perform actions like change the name of the external table name to be created, view the table's properties, view the table's data, view the SQL code used to create the table and more.
+4. Click the **Settings** icon (pencil) to open the configuration panel. Use the tabs on the left to:
 
-   🔘 Edit Table Name to be **Shared\_Loan\_Data\_Risk**
+      ![Create Data Product Share](./images/editshare.png )
 
-   ![Create Data Product Share](./images/select-shared-data-4.png )
+      * Rename the external table to: **SHARED\_LOAN\_DATA\_RISK**
 
-   🔘 Click **Close** to proceed
+      ![Create Data Product Share](./images/select-shared-data-4.png )
 
-1. Click **Start** to create shared link.
+      * Click **Close** to proceed
 
-1. On the popup box that appears click **Run**
+5. Click **Start** to create shared link.
+
+6. Click **Run** in the pop window.
 
       ![Create Data Product Share](./images/select-shared-data-5.png )
 
-1. After the link job is completed, make sure that the data link card has the link icon next to it.
+7. Once the job is complete, check for the link icon next to the data link card to confirm success.
 
       ![Create Data Product Share](./images/select-shared-data-6.png )
 
+You created an external table from a shared dataset—linking live loan data directly into your environment without copying it. This step gives the Risk team immediate, governed access to trusted data, ready for queries and analysis.
+
 ## Task 3: Validate ADB Access to Object Storage Data
 
-1. Click the Report button for this link job to view a report of the total rows processed successfully and failed for the selected table and the SQL used.
+1. Click the **Report** button for this link job to view details on rows processed and the SQL used.
 
-   🔘 Click **Close** when done.
+   Click **Close** when finished.
 
    ![Create Data Product Share](./images/select-shared-data-1a.png )
 
-1. In the **Table and View Loads** section:
-
-   🔘 Click the external table link named **Shared\_Loan\_Data\_Risk** to preview its data.  Remember, that the source data for this external table is from the **Shared\_Loan\_Data\_Risk\_VW** data share.
+2. In the Table and View Loads section, click the external table link **Shared\_Loan\_Data\_Risk** to preview the data. The source for this external table is the **Shared\_Loan\_Data\_Risk\_VW** data share.
 
    ![Create Data Product Share](./images/select-shared-data-2a.png )
 
-   The **Shared\_Loan\_Data\_Risk\_VW** panel is displayed with the **Preview** tab selected by default that displays the external table's data.
+   The preview panel opens by default, showing the external table’s data.
 
    ![Create Data Product Share](./images/select-shared-data-3a.png )
 
-1. Click **Close** to exit the panel and to return to the Data Share Dashboard.
+3. Click **Close** to return to the **Data Share Dashboard**.
 
-1. Click on **Query** button to run a query from ADB against the Linked Shared Data
+4. Click **Query** to run a query against the linked shared data from Autonomous Database.
 
    ![Create Data Product Share](./images/select-shared-data-4a.png )
 
-***Congratulations you have now subscribed to the data shared with you from ADB via Data Share and confirmed you can query the data.***
+You’ve now subscribed to a shared data product and validated that you can query it directly from Autonomous Database. This ensures the Risk team at SeersEquities can work with live, trusted data—ready for real-time analysis without unnecessary data movement.
+
+## Conclusion
+
+In this lab, you subscribed to a shared data product, linked it as an external table, and successfully queried live data from Autonomous Database. You’ve seen how Oracle’s Data Share tool helps teams like SeersEquities’ Risk Department securely access the latest loan data—without duplication, delays, or manual handoffs.
+
+This workflow ensures faster risk analysis, smarter decisions, and tighter collaboration across the business—all powered by governed, trusted data.
 
 ## Learn More
 
-* [Get Started with Data Catalog](https://docs.oracle.com/en-us/iaas/data-catalog/using/index.htm)
-* [Data Catalog Overview](https://docs.oracle.com/en-us/iaas/data-catalog/using/overview.htm)
-* [Oracle Cloud Infrastructure Documentation](https://docs.cloud.oracle.com/en-us/iaas/Content/GSG/Concepts/baremetalintro.htm)
 * [What Is a Data Catalog and Why Do You Need One?](https://www.oracle.com/big-data/what-is-a-data-catalog/)
 * [Harvesting Object Storage Files as Logical Data Entities](https://docs.oracle.com/en-us/iaas/data-catalog/using/logical-entities.htm)
 
 ## Acknowledgements
+* **Authors** - Eddie Ambler, Otis Barr
+* **Last Updated By/Date** - June 2025, Otis Barr
 
-* **Authors** -  Eddie Ambler, Otis Barr
-* **Contributors** - Mike Matthews, Marty Gubar, Matt Kowalik, Ramona Magadan
-* **Last Updated By/Date** - 04-28-2025
-
-Copyright (C) Oracle Corporation.

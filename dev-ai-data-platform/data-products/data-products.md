@@ -1,81 +1,87 @@
-# 🛠️ Create and Share Data Products
+# 🛠️ Create and Share Trusted Data Products
 
 ## Introduction
 
-In this lab, we will create and share data products that includes information on recently closed loans.  You will also create a new data share recipient that will have access to this data share.
+At SeersEquities, making smart credit decisions doesn't stop at creating great data—it depends on getting that data into the right hands, fast. The loan team may close deals, but it’s the risk team that needs to evaluate those deals in near real time.
 
-Finally, you will publish the data share and send the recipient the activation link needed to access the data share.
+In this lab, you’ll act as a data provider, creating and sharing a data product that includes recently closed loans. You’ll publish this share and authorize a recipient account (used by the risk team) to access it securely.
+
+By the end of this lab, you’ll know how to build, share, and govern data products using Autonomous Database and Object Storage—so SeersEquities can collaborate across teams without duplicating data or compromising security.
+
+Estimated Time: 30 minutes
 
 ### Objectives
 
 In this Lab, you will:
 
-* Utilize a data share provider account (**LOAN user**) that logs in and manages the data shares for the recipients of the data share (**RISK users**)
-* Leverage an Object Storage bucket to store the shared data - **MyDemoBucket**
-* Create and publish data shares - **LoanApp\_ShareToRisk**
-* Create and authorize a data share recipient
+* Use a **data provider** account to manage data shares for a **recipient** 
+
+* **Store shared data** in an Object Storage bucket
+
+* **Create and publish** a data share
+
+* **Create and authorize** a data share recipient
 
 ### Prerequisites
 
-* **Prerequisites for Share Providers to use the share tool:**
-      * For a versioned share, you must have **read and write access to a bucket** to store or cache your shares.
-      * The schema you wish to use to create and publish shares must be **enabled for Data Sharing by an ADMIN user.**
-      * You should have completed the creation a Cloud Location to Publish Share (Lab 3 task 2)
+* **For Share Providers**
 
-* **Prerequisites for Share Recipients**
-      * The share recipient must have a **valid email address** a provider can use to register the recipient to use the share tool. Oracle Data Share allows you to share the recipient's activation link by email.
+    * You have read and write access to an Object Storage bucket for storing or caching shared data (required for versioned shares).
+
+    * The schema you'll use to publish the share has been enabled for Data Sharing by an ADMIN user.
+
+    * You’ve already created a **Cloud Location** to **Publish the Share** (covered in **Discover and View your Database and Data Lake Assets from your Data Catalog**, Task 2).
+
+* **For Share Recipients**
+
+    * The recipient must have a valid email address that the provider can use to register them. Oracle Data Share sends the activation link to this address.
 
 ## Task 1: Create Data Product Share
 
-1. Click **View Login Info**. Click the **SQL Worksheet** link.
+1. Click **View Login Info**. Copy your **DB ADMIN Password**, and click the **SQL Worksheet** link.
 
-    ![Access Data Catalog](./images/sql-worksheet.png "Access Local Data Catalog")  
-   
-   >**NOTE:** Use the same **ADMIN** password as shown on View Lab Info page
+   ![Access Data Catalog](./images/start-demo.png "Access Local Data Catalog")  
 
-   ![Create Data Product Share](./images/task1-scrn-5.png "Create Data Product Share")
+2. For your Username enter **LOAN**. Paste in the password you copied in the previous step.
 
-      * Enter LOAN user credentials. 
-      * Press Sign-In button. 
+   ![Access Local Data Catalog](./images/sql-sign-in.png "Access Local Data Catalog")  
 
-   6. Select Data Studio from the menu bar. Then, choose Data Share from the left rail.
+3. From the top menu, select **Data Studio**, then click **Data Share** from the left rail.
 
-      ![Create Data Product Share](./images/select-data-share.png "Create Data Product Share")
+   ![Create Data Product Share](./images/select-data-share.png "Create Data Product Share")
 
-   7. Click Provide Share on the Provider and Consumer page. 
+4. On the **Provider and Consumer** page, click **Provide Share**.
 
-      ![Create Data Product Share](./images/select-provider-share.png "Create Data Product Share")
+   ![Create Data Product Share](./images/select-provider-share.png "Create Data Product Share")
 
-   8. Click **Provider Identification** on the **Provide Share** page.
+5. Click **Provider Identification**.
 
-      ![Define a Data Product Recipient](./images/set-provider-id.png "Define a Data Product Recipient")
+   ![Define a Data Product Recipient](./images/set-provider-id.png "Define a Data Product Recipient")
 
-   9.	Enter the details below for the provider, in the **Provider Identification** popup window.
+6.	In the **Provider Identification** popup, enter the following:
 
-   ! [Define a Data Product Recipient](./images/define-data-product-share-recipient-5.png "Define a Data Product Recipient")
-
-      * **Enter the following:**
-         * **Name:** LoanApp\_Share\_Provider
-         * **Email:** MyEmail@MyCompany.com
-         * **Description:** a meaningful description is required
+      * **Name:** LoanApp\_Share\_Provider
+      * **Email:** myemail@mycompany.com
+      * **Description:** Provide a meaningful description
 
       * Click **Save**.
 
-   10. Click **Shares** on the **Provide Share** page, to begin entering details for the new share.  Then, click the Create Share button to launch the Create Share wizard screen.
+      ![Define a Data Product Recipient](./images/define-data-product-share-recipient-5.png "Define a Data Product Recipient")
+
+7. Back on the **Provide Share** page, click **Shares**, then click **Create Share** to launch the **Create Share wizard**.
 
    ![Define a Data Product Recipient](./images/define-data-product-share-recipient-6.png "Define a Data Product Recipient")
 
-   11.	On the first page of the **Create Share** wizard, enter the following:
+8. On the first page of the wizard, enter:
 
-      * Enter the following:
-         *  **Name:** LoanApp\_ShareToRisk
-         *  **Description:** a meaningful description
+      *  **Name:** LoanApp\_ShareToRisk
+      *  **Description:** Provide a meaningful description
 
    ![Define a Data Product Recipient](./images/create-share-general-risk.png "Define a Data Product Recipient")
 
       * Click **Next**.
 
-   12. In the **Publish Details section of the wizard,** specify the cloud location where the share will be published.
+9. In the **Publish Details** section, select the cloud location for publishing:
 
       * Select **MyDemoBucket** from the drop-down list.
 
@@ -83,70 +89,80 @@ In this Lab, you will:
 
       * Click **Next**.
 
-   13. Choose the table (or view) that will be made available for the Risk Department (via the Share) on the **Select Tables** page.
+10. On the **Select Tables** page, choose the table to share with the **Risk Department**:
 
-   ![Define a Data Product Recipient](./images/create-share-select-table-risk.png "Define a Data Product Recipient")
+      *  Select the **Share\_Loan\_Data\_Risk\_VW** table in the **Available Tables** column.
+      *  Click the **move (>)** button to add it to the **Shared Tables** column
 
-      *  Select the **Share\_Loan\_Data\_Risk\_VW** table in the Available Tables column.
-      *  Click the **move (>)** button to list it to the Shared Tables column
-
-   ![Define a Data Product Recipient](./images/select-items-for-share.png "Define a Data Product Recipient")
+      ![Define a Data Product Recipient](./images/select-items-for-share.png "Define a Data Product Recipient")
 
       *  Click **Next**.
 
-   14. In Recipients section of wizard, Click on **New Recipients** button.
+11. In the **Recipients** section, click **New Recipients**.
 
    ![Define a Data Product Recipient](./images/define-data-product-share-recipient-10.png "Define a Data Product Recipient")
 
-   15. In the **Create Share Recipient** window that is displayed, enter the recipient details.
+12. In the **Create Share Recipient** window, enter the following:
 
-      <u>** * Enter the following:** </u>  
-         *  **Name:** Risk\_Dept\_Lead  
-         *  **Description:** Risk Department Data Engineering Lead (optional)  
-         *  **Email:** a description (optional)  
+    *  **Name:** Risk\_Dept\_Lead  
+    *  **Description:** Risk Department Data Engineering Lead
+    *  **Email:** risk@mycompany.com
 
    ![Define a Data Product Recipient](./images/create-share-recipient-risk.png "Define a Data Product Recipient")
 
-      * Click **Create**.
+    * Click **Create**.
 
-   16. On the **Create Share** page, Click on the **copy** icon to capture the recipient’s profile activation link to the clipboard. 
+13. Back on the **Create Share** page, select the newly created recipient from the list of recipients.
+
+   ![Define a Data Product Recipient](./images/selectrecipientdrop.png "Define")
+
+14. Click the **Copy** icon to copy the recipient's activation link to your clipboard.
 
    ![Define a Data Product Recipient](./images/create-risk-recipient.png "Define a Data Product Recipient")
 
       * Click **Create**.
+  
+15. Now, publish your share by clicking the **Publish** button from the options menu.
 
-   17. Paste activation link URL in browser window.
+   ![publish Data Product ](./images/publishshare.png "")
 
-   ![Define a Data Product Recipient](./images/paste-activation-link-in-window.png "Define a Data Product Recipient")
+16. It's published!
 
-   18. Click on **Get Profile Information** to invoke download.
+   ![created Data Product ](./images/sharecreated.png "")
 
-   19. Rename file to **Risk\_Delta\_Share\_Profile.json**.
+17. Paste the activation link you copied earlier into your browser and click **Get Profile Information** to download the recipient profile file (The default name is `delta_share_profile.json`).
+
+   ![Data Product activation link](./images/Paste-activation-link-in-window.png "")
+
+You’ve just **created and published a data product share**—making curated loan data securely available to the Risk team. By defining the share, selecting the right data, and authorizing a recipient, you’ve set up a **governed, reusable pipeline for cross-team collaboration**.
+
+This step is critical for SeersEquities: it ensures the **right data reaches the right teams** at the right time—without duplication, delays, or manual handoffs.
 
 ## Task 2: Manage the Data Product Share
 
-   1. On the **Provide Share** page, click **action** icon to manage the data product share.
+1. On the **Provide Share** page, click the **Actions** icon next to your data product share. Select **Recipients and Profiles**.
 
-      ![Define a Data Product Recipient](./images/manage-data-product-share-risk-1.png "Define a Data Product Recipient")
+   ![created Data Product ](./images/manageshare.png "")
 
-   2. Select **Recipients and Profiles** from the dropdown menu.
-
-      ![Define a Data Product Recipient](./images/manage-data-product-share-risk-2.png "Define a Data Product Recipient")
-
-   3. From here, you can add or remove recipients from the **Recipients and Profiles** page.
+2. From here, you can add or remove recipients from the **Recipients and Profiles** page.
 
       ![Define a Data Product Recipient](./images/manage-data-product-share-risk-3.png "Define a Data Product Recipient")
 
       Click **Cancel** to proceed to next lab steps.
 
-   4. From the **Provide Share** page, click **Recipients** to display the recipients for the data share.
+3. From the **Provide Share** page, click **Recipients** to display the recipients for the data share.
 
       ![Define a Data Product Recipient](./images/create-risk-dept-recipient.png "Define a Data Product Recipient")
 
-   ***Congratulations you have shared your data from ADB to the Risk Dept Lead.***  
+You’ve now successfully shared a governed, ready-to-query dataset from Autonomous Database with the Risk Department Lead—empowering them with the data they need to make informed decisions.
+
+## Conclusion
+
+In this lab, you **created and shared a live, query-ready data product**—giving the Risk team secure, timely access to critical loan insights. You defined the data provider, configured the share, added a recipient, and managed access—all without moving or duplicating data.
+
+At SeersEquities, this means **smoother handoffs, faster risk evaluation, and better cross-team alignment**. For you, it means **mastering a modern data-sharing workflow that’s secure, scalable, and built for collaboration**.
 
 ## Acknowledgements
 * **Authors** - Eddie Ambler, Otis Barr
-* **Contributors** - Mike Matthews, Marty Gubar, Francis Regalado
-* **Last Updated By/Date** - 04-28-2025
-Copyright (C) Oracle Corporation.
+* **Last Updated By/Date** - June 2025, Otis Barr
+
