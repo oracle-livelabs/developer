@@ -38,7 +38,7 @@ This lab assumes you have:
 
 In this first example, you will use the application to authorize a return for a customer with a medium risk score. Select the third user on your to-do list David Williams.
 
-1. On the Dashboard page, from the pending review list, select the Customer ID for **David Williams**.
+1. On the Dashboard page, from the pending review list, select the review button for **David Williams**.
 
     ![Select David Williams](./images/david-williams.png =50%x*)
 
@@ -68,7 +68,7 @@ In this first example, you will use the application to authorize a return for a 
 
 5. In the **Select Your Desired Option Option** section, the approval probability and decision are displayed. Once a decision is made, the analyst finalizes the return. A professionally formatted PDF letter is automatically generated, summarizing the outcome and rationale. The customer receives an email moments later, clearly stating whether their return was approved, denied, or needs more information—along with an explanation grounded in policy and precedent.
 
-    ![David Williams Decisions Page](./images/david-williams-decisons.png =50%x*)
+    ![David Williams Decisions Page](./images/david-williams-decisions.png =50%x*)
 
 6. Select the AI-recommended return decision. In this example, that is **Request More Info**. 
 
@@ -76,13 +76,13 @@ In this first example, you will use the application to authorize a return for a 
 
     ![David Williams Select Request More Info](./images/david-williams-select.png =50%x*)
 
-7. Set the final return status to **Request Additional Info**, then click **Save Final Approval & Status** to complete the process.
+7. Set the final return status to **Request Info**, then click **Confirm Decision** to complete the process.
 
-    The return status has been updated to 'Request Additional Info' and saved to the customer profile.
+    The return status has been updated to 'Request Info' and saved to the customer profile.
 
     ![David Williams Save Return Status](./images/david-williams-save.png =50%x*)
 
-8.  Click the **Generate Decision as PDF** button.
+8.  Click the **Download Decision as PDF** button.
 
     ![David Williams Generate PDF](./images/david-williams-generate-pdf.png =50%x*)
 
@@ -92,15 +92,15 @@ In this first example, you will use the application to authorize a return for a 
 
 10. Display the message the customer would see by opening the downloaded PDF.
 
-    ![Open James Smith PDF](./images/open-james-smith-pdf.png =50%x*)
+    ![Open David Williams PDF](./images/open-david-williams-pdf.png =50%x*)
 
 11. Click the **Return to Dashboard** button to navigate back to the Dashboard.
 
     ![Return to Dashboard](./images/david-return-dashboard.png =50%x*)
 
-12. Expand **View Approved Customers**. We can see that David Williams has been removed from the **Pending Customers** list and has been added to the **Approved Customers**.
+12. Expand **View In Progress Customers**. We can see that David Williams has been removed from the **Pending Customers** list and has been added to the **In Progress Customers**.
 
-    ![James Smith Approved List](./images/james-smith-approved-list.png =50%x*)
+    ![David Williams In Progress List](./images/james-smith-approved-list.png =50%x*)
 
 **Task Summary**
 
@@ -110,14 +110,14 @@ Once you select and save one of the 3 return options recommended by the AI:
 
 ✅ A finalized PDF decision document is generated.  
 
-✅ The dashboard reflects the change in real-time — marking David as Approved.
+✅ The dashboard reflects the change in real-time — marking David as In Progress.
 
 Congratulations, you have just approved your first customer return! Proceed to the next task.
 
 ## Task 3: Demo - Denying a Customer with high risk
 In this example, you will navigate the application to review a customer and deny them as part of the exercise. The first user on your to-do list is Alice Smith.
 
-1. On the Dashboard page, from the pending review list, select the Customer ID for **Alice Smith**.
+1. On the Dashboard page, from the pending review list, select the Review Button for **Alice Smith**.
 
     ![Select Alice Smith](./images/alice-smith.png =50%x*)
 
@@ -147,15 +147,17 @@ In this example, you will navigate the application to review a customer and deny
 
     ![Alice Smith Graph](./images/alice-smith-graph.png =50%x*)
 
+    ![Alice Smith Dot Plot](./images/alice-smith-dotplot.png =50%x*)
+
 >💡 In Oracle Database 23ai, **Property Graph** allows you to treat your data like a network of connected points, where each point (called a node) and each link (called an edge) has its own details or properties. This setup helps you run graph analytics, to find important connections or patterns, directly within the database.
 
-5. The return status is set to **Denied**. Click the **Save Final Approval & Return Status** button.
+5. The return status is set to **Denied**. Click the **Confirm Decision** button.
 
     The return status has been updated to 'Denied' and saved to the customer profile.
 
     ![Alice Smith Return Status](./images/alice-smith-deny.png =50%x*)
 
-6. Press the **Generate Decision as PDF** button to save the AI responses and proceed to the final return authorization.
+6. Press the **Download Decision as PDF** button to save the AI responses and proceed to the final return authorization.
 
     ![Alice-Smith PDF](./images/alice-smith-pdf.png =50%x*)
 
@@ -165,7 +167,7 @@ In this example, you will navigate the application to review a customer and deny
 
 8. Display the message the customer would see by opening the downloaded PDF.
 
-    ![Open James Woods PDF](./images/open-james-woods-pdf.png =50%x*)
+    ![Open Alice Smith PDF](./images/open-alice-smith-pdf.png =50%x*)
 
 9. Click the **Return to Dashboard** button to navigate back to the Dashboard.
 
@@ -183,15 +185,15 @@ Congratulations, you have finished reviewing a customer with high fraud risk! Pr
 
 Lastly, let’s explore how the system uses JSON Duality Views to handle profile updates. In this task, you will edit a customer’s details. In this example, the customer was asked to submit updated proof of carrier tracking.
 
-1. On the Dashboard page, from the **Pending Customers** list, select the customer ID for **Isla Wilson**.
+1. On the Dashboard page, from the **Pending Customers** list, select the review button for **Isla Wilson**.
 
-    ![Select jason-moore](./images/isla-wilson.png =50%x*)
+    ![Select Isla Wilson](./images/isla-wilson.png =50%x*)
 
 2. We will upload a document to update the item's condition. Before uploading the document, note that the item's condition is currently listed as "none". On the Customer Details page, click the **Upload Document** button.
 
     ![Upload Document](./images/upload-document.png =50%x*)
 
-3. The PDF file has been loaded. Click the **Process Selected PDF** button.
+3. The PDF file has been loaded. Click the **Process PDF** button.
 
     ![Click Process Selected PDF](./images/process-selected-pdf.png =50%x*)
 
@@ -236,6 +238,6 @@ By combining these advanced tools, the application enables faster, smarter decis
 * [Oracle Database 23ai Documentation](https://docs.oracle.com/en/database/oracle/oracle-database/23/)
 
 ## Acknowledgements
-* **Authors** - Kamryn Vinson, Linda Foinding, Francis Regalado
-* **Contributors** - Kevin Lazarz, Eddie Ambler, Ramona Magadan, Mark Nelson, Andy Tael, Anders Swanson, Rahul Tasker
-* **Last Updated By/Date** - Linda Foinding, June 2025
+* **Authors** - Linda Foinding, Francis Regalado, Kamryn Vinson
+* **Contributors** - Kevin Lazarz, Hanna Rakhsha, Ley Sylvester, Uma Kumar
+* **Last Updated By/Date** - Uma Kumar, July 2025
