@@ -36,7 +36,7 @@ In the *Split/Embed* tab, the framework allows you to upload various types of do
 
   Additionally, you can select different distance metrics and index types to experiment with various vector representations of the same document, allowing you to identify the configuration that best meets your needs.
 
-3. Select your document source
+1. Select your document source
 
   Once the embedding model has been selected, scroll down to the *Load and Split Documents* section to upload the document you wish to store in your **Oracle Database 23ai**.
 

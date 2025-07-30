@@ -46,8 +46,8 @@ The AI Optimizer allows you to generate as many questions and answers as you nee
 
 1. Leave the default option for:
 
-* Q&A Language Model: **gpt-4o-mini**
-* Q&A Embedding Model: **text-embedding-3-small**
+  * Q&A Language Model: **gpt-4o-mini**
+  * Q&A Embedding Model: **text-embedding-3-small**
 
 1. Click on **Generate Q&A** button and wait until the process is over:
 
