@@ -46,7 +46,7 @@ This lab assumes you have:
 
 ## Task 1: Challenge requirements 
 
-The data science team at SeerEquites has provided a Jupyter Notebook called `ai_vector_search_challenge.ipynb` with four key code cells. The notebook will:
+The data science team at Seer Healthcare has provided a Jupyter Notebook called `ai_vector_search_challenge.ipynb` with four key code cells. The notebook will:
 
 - **Connect to the database and import the necessary libraries and drivers.**
 - **Vectorize the `loan_type` column from the `MOCK_LOAN_DATA` table into the `LOAN_CHUNK` table.**

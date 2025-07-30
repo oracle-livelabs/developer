@@ -196,7 +196,7 @@ Here’s what we’ll do:
 
 ## Task 6: Create a function to create embeddings - Use Oracle Database 23ai's to create vector data 
 
-To handle follow-up questions, you will enhance the system with an AI Loan Guru powered by Oracle 23ai’s Vector Search and Retrieval-Augmented Generation (RAG). The AI Loan Guru will be able to answer questions about the loan application and provide recommendations based on the data.
+To handle follow-up questions, you will enhance the system with an AI Healthcare Guru powered by Oracle 23ai’s Vector Search and Retrieval-Augmented Generation (RAG). The AI Healthcare Guru will be able to answer questions about the return application and provide recommendations based on the data.
 
 Before answering questions, we need to prepare the data by vectoring the loan recommendations. This step:
 
