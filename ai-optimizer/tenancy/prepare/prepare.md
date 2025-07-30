@@ -44,9 +44,9 @@ In the *Split/Embed* tab, the framework allows you to upload various types of do
 
   You can choose from three different file sources:
 
-* **OCI**: Navigate through your tenancy to select documents from the Object Storage. Ensure that your OCI credentials are properly configured in advance.
-* **Local**: Upload a document directly from your local environment.
-* **Web**: Import a document from a publicly accessible web URL.
+    * **OCI**: Navigate through your tenancy to select documents from the Object Storage. Ensure that your OCI credentials are properly configured in advance.
+    * **Local**: Upload a document directly from your local environment.
+    * **Web**: Import a document from a publicly accessible web URL.
 
   In this example, we will embed a document from the web, available at [this link](https://docs.oracle.com/en/database/oracle/oracle-database/23/vecse/ai-vector-search-users-guide.pdf). We will give the alias ***TEST1*** to this vector store.
 

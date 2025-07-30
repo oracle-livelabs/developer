@@ -81,10 +81,10 @@ Now you are ready to perform an evaluation on the Q&As you generated in the prev
 
 1. In the left-hand menu:
 
-* Under **Language Model Parameters**, select **gpt-4o-mini** from the **Chat model** dropdown list.
-* Ensure **Enable RAG?** is selected (if it wasn't already)
-* In the **Select Alias** dropdown list, choose the **TEST2** value.
-* Leave all other parameters unchanged
+    * Under **Language Model Parameters**, select **gpt-4o-mini** from the **Chat model** dropdown list.
+    * Ensure **Enable RAG?** is selected (if it wasn't already)
+    * In the **Select Alias** dropdown list, choose the **TEST2** value.
+    * Leave all other parameters unchanged
 
 1. With **gpt-4o-mini** selected as the evaluation model, click the **Start Evaluation** button and wait a few seconds. All questions from your dataset will be submitted to the chatbot using the configuration defined in the left pane:
 
@@ -96,10 +96,10 @@ Now you are ready to perform an evaluation on the Q&As you generated in the prev
 
   This section displays:
 
-* The chatbot's **Evaluation Settings**, as configured in the left-hand pane before launching the massive test.
-* The **RAG Settings** including the database and vector store used, the name of the embedding **model** used, and all associated parameters (e.g., **chunk size**, **top-k**).
-* The **Overall Correctness Score**, representing the percentage of questions for which the LLM judged the chatbot's response as correct compared to the reference answer
-* The **Correctness By Topic**, which breaks down the results based on the automatically generated topics assigned to each Q&A pair in the dataset.
+  * The chatbot's **Evaluation Settings**, as configured in the left-hand pane before launching the massive test.
+  * The **RAG Settings** including the database and vector store used, the name of the embedding **model** used, and all associated parameters (e.g., **chunk size**, **top-k**).
+  * The **Overall Correctness Score**, representing the percentage of questions for which the LLM judged the chatbot's response as correct compared to the reference answer
+  * The **Correctness By Topic**, which breaks down the results based on the automatically generated topics assigned to each Q&A pair in the dataset.
 
   The second section of the report contains details on each question submitted, with a focus on the **Failures** collection and the **Full Report** list. To view all fields, scroll horizontally. In the image below, the second frame has been scrolled to the right:
 
