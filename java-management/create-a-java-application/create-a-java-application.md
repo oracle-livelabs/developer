@@ -49,7 +49,7 @@ In this workshop, you will:
 
       ![image of selecting correct compartment for the Compute Instance](images/instance-name-and-compartment.png)
 
-    Enter a value in the **Name** field; else retain the default value.
+    Enter a value in the **Name** field, or leave the default value unchanged.
 
     Review the Placement settings. Take the default values provided by the wizard. The following sample data and images is shown. The actual values change over time or differ in a different data center.
 
@@ -60,27 +60,28 @@ In this workshop, you will:
 
       ![image of placement for the Compute Instance](images/instance-placement.png)
 
-    Review the **Security** settings. Take the default values provided by the wizard.
-
-    * **Shielded instance**: Disabled
-
-      ![image of security for the Compute Instance](images/instance-security.png)
 
     Review the **Image and shape** settings. Take the default values provided by the wizard.
 
     **Image**
-    * **Image**: Oracle Linux 8
+    * **Image**: Oracle Linux 9
     * **Image build**: Default image build
     * **Shape**: Any AMD or Intel shape (For Free Tier, use **Always Free Eligible** option)
     * **OCPU count**: 1
     * **Memory (GB)**: 1
-    * **Network bandwidth (Gbps)**: 0.48
+    * **Network bandwidth (Gbps)**: 1
 
       ![image of image and shape for the Compute Instance](images/instance-image-and-shape.png)
 
-    Click **Edit** to review the **Networking** settings.
+    Review the **Security** settings. Take the default values provided by the wizard.
 
-    Review the **Networking** settings by clicking **Edit** at the **Primary VNIC information**.
+    * **Shielded instance**: Disabled
+    * **Confidential computing**: Disabled
+
+      ![image of security for the Compute Instance](images/instance-security.png)
+
+
+    Click **Next** to review the **Networking** settings.
 
     ![image of networking setting](images/instance-networking.png)
 
@@ -254,4 +255,4 @@ You may now **proceed to the next lab.**
 ## Acknowledgements
 
 * **Author** - Esther Neoh, Java Management Service
-* **Last Updated By** - Teck Kian Choo, August 2024
+* **Last Updated By** - El Maalmi Ayoub , Jul 2025
