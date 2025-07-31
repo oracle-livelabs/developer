@@ -389,14 +389,11 @@ The bottom of the emd.properties file should look like this:
 
 2. Select the compartment that the fleet is in and click the fleet.
 
-3. Click **Managed Instance** under **Resources**. If tagging, installation of management agents and communication between Management Gateway and Management Agent is successful, Managed Instance will be indicated on the Fleet Main Page.
+3. Click **Managed Instance** in the navigation menu. If tagging, installation of management agents, and communication between the Management Gateway and Management Agent are successful, the Managed Instance will be displayed on the Fleet Main Page.
 
-  You should be able to see new Managed Instance with latest time stamp.
+    You should be able to see the new Managed Instance with the latest timestamp.
 
-  ![image of managed instance after successful installation](images/successful-installation.png)
-
-
-
+    ![Managed instance after successful installation](images/successful-installation.png)
 You may now **proceed to the next lab.**
 
 ## Troubleshoot Management Gateway issues
@@ -434,4 +431,4 @@ You may now **proceed to the next lab.**
 ## Acknowledgements
 
 * **Author** - Bhuvesh Kumar, Java Management Service
-* **Last Updated By** - Yuan Chi Liu, October 2023
+* **Last Updated By** - El Maalmi Ayoub , Jul 2025

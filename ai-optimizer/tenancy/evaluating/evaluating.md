@@ -101,6 +101,7 @@ Now you are ready to perform an evaluation on the Q&As you generated in the prev
   * The **Overall Correctness Score**, representing the percentage of questions for which the LLM judged the chatbot's response as correct compared to the reference answer
   * The **Correctness By Topic**, which breaks down the results based on the automatically generated topics assigned to each Q&A pair in the dataset.
 
+
   The second section of the report contains details on each question submitted, with a focus on the **Failures** collection and the **Full Report** list. To view all fields, scroll horizontally. In the image below, the second frame has been scrolled to the right:
 
   ![result](./images/result-question.png)
