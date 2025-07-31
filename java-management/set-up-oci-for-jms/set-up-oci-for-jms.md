@@ -40,35 +40,30 @@ The Onboarding Wizard helps to create the necessary resources automatically. We 
     > **Note:** You can also use the search bar to navigate around the Oracle Cloud Console.
     
     ![image of console navigation using search bar for fleets](images/oci-console-search-bar-fleets.png)
-
 3. Select the root compartment under which the Onboarding Wizard will create a new compartment for JMS fleets.
-    &nbsp;
 
 4. Click **Set up JMS** to view details of the resources that will be created by the Onboarding Wizard. The resources created are a new compartment, user group, dynamic group, and policy.
 
-    > **Note:** If the **Set up JMS** button does not appear, click on the **Inspect prerequisites** button.
+    > **Note:** If the **Set up JMS** button does not appear, click on the **Actions (Inspect prerequisites)** button.
 
-    ![image of onboarding wizard buttons](images/fleets-setup-jms.png)
+    ![Onboarding wizard buttons](images/fleets-setup-jms.png)
 
-    &nbsp;
+5. You will see the first step. Keep all options as default and click **Next** to proceed with the setup.
 
-5.  You will see details of JMS prerequisites. Click **Review** to see all the resource that will be created.
-    ![image of onboarding wizard window](images/fleets-setup-details.png)
-    &nbsp;
+    ![Onboarding wizard window](images/fleets-setup-details.png)
 
-   Scroll down to the bottom of the page and click **Confirm** to start the Onboarding Wizard.
+    You will see information about the compartment, user group, and policy statements that will be applied. Review the details and click **Next** to start the Onboarding Wizard.
 
-    ![image of onboarding wizard confirm](images/fleets-setup-confirm.png)
+    ![Onboarding wizard confirm](images/fleets-setup-confirm.png)
 
-6. You will see a screen informing you that the prerequisites have been successfully set-up. Click **Done** to close the window.
-    ![image of onboarding wizard success window](images/fleets-setup-success.png)
+6. You will see a screen informing you that the prerequisites have been successfully set up. Click **Close** to close the window.
+
+    ![Onboarding wizard success window](images/fleets-setup-success.png)
     > **Note:** If an error occurs in the creation process, you will see the error message being displayed. Resolve the error and restart the Onboarding Wizard to continue.
-    
-    &nbsp;
 
-   You should receive a notification in green as seen below:
+    You should receive a notification in green as seen below:
 
-   ![image of prerequisites setup successful notification](images/jms-prerequisites-setup-successful-notification.png)
+    ![Prerequisites setup successful notification](images/jms-prerequisites-setup-successful-notification.png)
 
 7. Verify creation of prerequisite resources (Optional)
 
@@ -86,12 +81,8 @@ The Onboarding Wizard helps to create the necessary resources automatically. We 
 
         ![image of console navigation to groups](images/console-navigation-domains.png)
     &nbsp;
-    * In the Domains page, click **Default**.
-        ![image of domains navigation to default domain](images/domains-navigation-default.png)
-        &nbsp;
-    * In the Overview page, click **Groups**.
-        ![image of domain overview navigation to groups](images/domain-overview-groups.png)
-        &nbsp;
+    * On the **Domains** page, click **Default**, then go to the **User Management** section and scroll down to the **Groups** section. 
+    ![Domains navigation to default domain](images/domains-navigation-default.png)
     * You can see the new user group labeled `FLEET_MANAGERS`.
         ![image of new group](images/new-group.png)
         &nbsp;
@@ -160,16 +151,14 @@ Sign in to the Oracle Cloud Console as an administrator using the credentials pr
     * In the Domains page, click **Default**.
         ![image of domains navigation to default domain](images/domains-navigation-default.png)
         &nbsp;
-    * In the Overview page, click **Groups**.
+    * On the **Overview** page, click **User Management**, scroll down to **Groups**, then click **Create group**.
         ![image of domain overview navigation to groups](images/domain-overview-groups.png)
         &nbsp;
-    * Click **Create group**.
-        ![image of groups main page](images/groups-main-page.png)
-        &nbsp;
+   
     * In the Create group dialog box, enter a name for the group (for example, `FLEET_MANAGERS`), and a description.
         ![image of groups create page](images/groups-create-example.png)
         &nbsp;
-    * Click **Create**.
+    * Click **Create**
         &nbsp;
 
         For more information, see [Managing Groups](https://docs.oracle.com/en-us/iaas/Content/Identity/groups/managinggroups.htm).
@@ -298,4 +287,4 @@ You may now **proceed to the next lab**.
 ## Acknowledgements
 
 * **Author** - Alvin Lam, Java Management Service
-* **Last Updated By/Date** - Teck Kian Choo, August 2024
+* **Last Updated By** - El Maalmi Ayoub , Jul 2025
