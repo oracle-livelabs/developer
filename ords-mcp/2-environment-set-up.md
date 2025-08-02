@@ -45,6 +45,7 @@ This lab assumes you have:
   - Service Name
   - Username
   - Password
+  <br>
 
     ![2-copying-your-free-sql-credentials.png](./images/lab-2/2-copying-your-free-sql-credentials.png " ")
 
