@@ -88,13 +88,14 @@ This lab assumes you have:
 
    ![11-navigating-to-sql-developer-connections-for-connecting-to-freesql-schema](./images/lab-2/11-navigating-to-sql-developer-connections-for-connecting-to-freesql-schema.png " ")
 
-   This will:
+   Clicking the connnection name will do two things:[^2]
 
    1. Establish a connection to the FreeSQL database
    2. Reveal the various database objects, links, directories, and other categories
 
       ![12-expanding-connection-to-reveal-database-objects.png](./images/lab-2/12-expanding-connection-to-reveal-database-objects.png " ")
 
+[^2]: You can also right-click on a connection name to reveal the context menu. You can connect, disconnect, and edit connections as well as perform other common actions.<details><Summary>Click for image</summary>![13-footnote-right-clicking-connection-name-for-context-menu](./images/lab-2/13-footnote-right-clicking-connection-name-for-context-menu.png " ")</details>
 8. Continue to the next task to install the Cline VS Code extension and configure your SQLcl MCP server. 
 
 ## Task 3: Set up the MCP Server
