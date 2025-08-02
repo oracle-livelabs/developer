@@ -75,7 +75,13 @@ This lab assumes you have:
 
    ![6-creating-your-first-sql-developer-web-extension-connection](./images/lab-2/6-creating-your-first-sql-developer-web-extension-connection.png " ")
 
-4. Click the <button name="button">Create Connection</button>
+4. Click the <kbd>Create Connection</kbd> button, begin entering in your FreeSQL connection details.
+
+   ![7-entering-your-free-sql-credentials-for-new-connection](./images/lab-2/7-entering-your-free-sql-credentials-for-new-connection.png " ")
+
+>[!IMPORTANT]
+> Make sure you click the checkbox to "Save Password." The MCP server requires this saved password to establish a SQLcl connection on your behalf.
+
 5. <mark>Test the connection, and if successful, select <kbd>Connect</kbd>.</mark>
 
 ## Task 3: Set up the MCP Server
