@@ -46,8 +46,8 @@ This lab assumes you have:
   - Username
   - Password
 
-    [!NOTE]
-    You must click the <kbd>Regenerate</kbd> button to create a new password. Please save this password, as it will only be displayed once. It is not saved in the session.
+> [!NOTE]
+> You must click the <kbd>Regenerate</kbd> button to create a new password. Please save this password, as it will only be displayed once. It is not saved in the session.
 
    ![2-copying-your-free-sql-credentials.png](./images/lab-2/2-copying-your-free-sql-credentials.png " ")
 
