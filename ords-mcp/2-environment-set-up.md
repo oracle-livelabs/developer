@@ -40,13 +40,13 @@ This lab assumes you have:
 
 4. Take note of your FreeSQL credentials. You will need the following: 
 
-  - Hostname
-  - Port
-  - Service Name
-  - Username
-  - Password
+   - Hostname
+   - Port
+   - Service Name
+   - Username
+   - Password
 
-    ![2-copying-your-free-sql-credentials.png](./images/lab-2/2-copying-your-free-sql-credentials.png " ")
+     ![2-copying-your-free-sql-credentials.png](./images/lab-2/2-copying-your-free-sql-credentials.png " ")
 
 > [!NOTE]
 > You must click the <kbd>Regenerate</kbd> button to create a new password. Please save this password, as it will only be displayed once. It will not be saved or displayed across sessions.
@@ -58,11 +58,11 @@ This lab assumes you have:
    - [Install](https://marketplace.visualstudio.com/items?itemName=Oracle.sql-developer) the latest Oracle SQL Developer for VS Code Extension.[^1]
    - From within VS Code, navigate to **Extensions**, search for "Oracle" and choose <kbd>Install</kbd>
 
-    ![3-vs-code-extensions-first-visit](./images/lab-2/3-vs-code-extensions-first-visit.png " ")
+     ![3-vs-code-extensions-first-visit](./images/lab-2/3-vs-code-extensions-first-visit.png " ")
 
-    ![4-search-for-sql-developer-web-vscode-extension](./images/lab-2/4-search-for-sql-developer-web-vscode-extension.png " ")
+     ![4-search-for-sql-developer-web-vscode-extension](./images/lab-2/4-search-for-sql-developer-web-vscode-extension.png " ")
 
-    ![5-post-installation-sql-developer-web-extension](./images/lab-2/5-post-installation-sql-developer-web-extension.png " ")
+     ![5-post-installation-sql-developer-web-extension](./images/lab-2/5-post-installation-sql-developer-web-extension.png " ")
 
 [^1]: Visit the [Setting up Visual Studio Code](https://code.visualstudio.com/docs/setup/setup-overview) reference page for available configuration options and features of VS Code.  
 
