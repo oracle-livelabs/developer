@@ -55,8 +55,8 @@ This lab assumes you have:
 
 1. Install Oracle the SQL Develeoper for VS Code extension. There are two installation options:
 
-   - [Install](https://marketplace.visualstudio.com/items?itemName=Oracle.sql-developer) the latest Oracle SQL Developer for VS Code Extension.[^1]
-   - From within VS Code, navigate to **Extensions**, search for "Oracle" and choose <kbd>Install</kbd>
+   1. [Install](https://marketplace.visualstudio.com/items?itemName=Oracle.sql-developer) the latest Oracle SQL Developer for VS Code Extension.[^1]
+   2. From within VS Code, navigate to **Extensions**, search for "Oracle" and choose <kbd>Install</kbd>
 
      ![3-vs-code-extensions-first-visit](./images/lab-2/3-vs-code-extensions-first-visit.png " ")
 
@@ -78,7 +78,24 @@ This lab assumes you have:
 >[!IMPORTANT]
 > Make sure you click the checkbox to "Save Password." The MCP server requires this saved password to establish a SQLcl connection on your behalf.
 
-5. <mark>Test the connection, and if successful, select <kbd>Connect</kbd>.</mark>
+5. Choose **Basic** as the Connection Type, enter in your details. 
+
+6. Click the <kbd>Test</kbd> button to test your connection. When the test succeeds, click the <kdb>Save</kbd> button. This will save your connection, but not connect.
+
+   ![8-entering-your-free-sql-connection-type-information](./images/lab-2/8-entering-your-free-sql-connection-type-information.png " ")
+
+7. Your new connection will appear in the Primary Side Bar. Click the connection name. 
+
+   ![11-navigating-to-sql-developer-connections-for-connecting-to-freesql-schema](./images/lab-2/11-navigating-to-sql-developer-connections-for-connecting-to-freesql-schema.png " ")
+
+   This will:
+
+   1. Establish a connection to the FreeSQL database
+   2. Reveal the various database objects, links, directories, and other categories
+
+      ![12-expanding-connection-to-reveal-database-objects.png](./images/lab-2/12-expanding-connection-to-reveal-database-objects.png " ")
+
+8. Continue to the next task to install the Cline VS Code extension and configure your SQLcl MCP server. 
 
 ## Task 3: Set up the MCP Server
 
