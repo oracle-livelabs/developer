@@ -34,7 +34,24 @@ This lab assumes you have:
 
 1. In a separate tab, navigate to [freesql.com](https://www.freesql.com).
 2. Sign in with your existing Oracle account, or create a new account. 
-3. Once your account has been created, complete your profile and log in to [freesql.com](https://www.freesql.com).
+3. Log in to [freesql.com](https://www.freesql.com) and click the <kbd>Connect with [rotating language option]</kbd> button.
+
+   ![1-clicking-connect-with-button.png](./images/lab-2/1-clicking-connect-with-button.png " ")
+
+4. Take note of your FreeSQL credentials. You will need the following: 
+
+  - Hostname
+  - Port
+  - Service Name
+  - Username
+  - Password
+
+    > [!NOTE]
+    > You must click the <kbd>Regenerate</kbd> button to create a new password. Please save this password, as it will only be displayed once. It is not saved in the session.
+
+   ![2-copying-your-free-sql-credentials.png](./images/lab-2/2-copying-your-free-sql-credentials.png " ")
+
+
 4. <mark>Credentials from FreeSQL to use for VS Code Extension </mark>
 
 ## Task 2: Oracle SQL Developer for VS Code
