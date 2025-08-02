@@ -75,7 +75,7 @@ This lab assumes you have:
 
    ![6-creating-your-first-sql-developer-web-extension-connection](./images/lab-2/6-creating-your-first-sql-developer-web-extension-connection.png " ")
 
-4. Click the <btn>Create Connection</btn>
+4. Click the <button>Create Connection</button>
 5. <mark>Test the connection, and if successful, select <kbd>Connect</kbd>.</mark>
 
 ## Task 3: Set up the MCP Server
