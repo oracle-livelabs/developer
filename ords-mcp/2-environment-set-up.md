@@ -55,8 +55,8 @@ This lab assumes you have:
 
 1. Install Oracle the SQL Develeoper for VS Code extension. There are two installation options:
 
-  - [Install](https://marketplace.visualstudio.com/items?itemName=Oracle.sql-developer) the latest Oracle SQL Developer for VS Code Extension.[^1]
-  - From within VS Code, navigate to **Extensions**, search for "Oracle" and choose <kbd>Install</kbd>
+   - [Install](https://marketplace.visualstudio.com/items?itemName=Oracle.sql-developer) the latest Oracle SQL Developer for VS Code Extension.[^1]
+   - From within VS Code, navigate to **Extensions**, search for "Oracle" and choose <kbd>Install</kbd>
 
     ![3-vs-code-extensions-first-visit](./images/lab-2/3-vs-code-extensions-first-visit.png " ")
 
