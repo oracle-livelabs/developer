@@ -44,7 +44,8 @@ This lab assumes you have:
   - Port
   - Service Name
   - Username
-  - Password<br>
+  - Password
+<br>
 
     ![2-copying-your-free-sql-credentials.png](./images/lab-2/2-copying-your-free-sql-credentials.png " ")
 
