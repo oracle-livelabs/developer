@@ -49,21 +49,33 @@ This lab assumes you have:
 <br>
 
 > [!NOTE]
-> You must click the <kbd>Regenerate</kbd> button to create a new password. Please save this password, as it will only be displayed once. It is not saved in the session.
+> You must click the <kbd>Regenerate</kbd> button to create a new password. Please save this password, as it will only be displayed once. It will not be saved or displayed across sessions.
 
 <br>
 
    ![2-copying-your-free-sql-credentials.png](./images/lab-2/2-copying-your-free-sql-credentials.png " ")
 
-
-4. <mark>Credentials from FreeSQL to use for VS Code Extension </mark>
-
 ## Task 2: Oracle SQL Developer for VS Code
 
-1. [Install](https://marketplace.visualstudio.com/items?itemName=Oracle.sql-developer) the latest Oracle SQL Developer for VS Code Extension.
+1. Install Oracle the SQL Develeoper for VS Code extension. There are two installation options:
+
+  - [Install](https://marketplace.visualstudio.com/items?itemName=Oracle.sql-developer) the latest Oracle SQL Developer for VS Code Extension.[^1]
+  - From within VS Code, navigate to **Extensions**, search for "Oracle" and choose <kbd>Install</kbd>
+
+    ![3-vs-code-extensions-first-visit](./images/lab-2/3-vs-code-extensions-first-visit.png " ")
+
+    ![4-search-for-sql-developer-web-vscode-extension](./images/lab-2/4-search-for-sql-developer-web-vscode-extension.png " ")
+
+    ![5-post-installation-sql-developer-web-extension](./images/lab-2/5-post-installation-sql-developer-web-extension.png " ")
+
+[^1]: Visit the [Setting up Visual Studio Code](https://code.visualstudio.com/docs/setup/setup-overview) reference page for available configuration options and features of VS Code.  
+
 2. Restart your VS Code session
 3. Navigate to the Oracle SQL Developer for VS Code extension (located in your Activity Bar)
-4. <mark>Using the credentials provided to you by FreeSQL, create a new connection.</mark>
+
+   ![6-creating-your-first-sql-developer-web-extension-connection](./images/lab-2/6-creating-your-first-sql-developer-web-extension-connection.png " ")
+
+4. Click the <btn>Create Connection</btn>
 5. <mark>Test the connection, and if successful, select <kbd>Connect</kbd>.</mark>
 
 ## Task 3: Set up the MCP Server
