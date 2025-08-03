@@ -95,12 +95,18 @@ This lab assumes you have:
 
       ![12-expanding-connection-to-reveal-database-objects.png](./images/lab-2/12-expanding-connection-to-reveal-database-objects.png " ")
 
-[^2]: <details><summary>Click for image</summary>  
-![13-footnote-right-clicking-connection-name-for-context-menu](./images/lab-2/13-footnote-right-clicking-connection-name-for-context-menu.png " ") </details>
+[^2]: You can also right-click on a connection name to reveal the context menu. You can connect, disconnect, and edit connections as well as perform other common actions.
 
 8. Continue to the next task to install the Cline VS Code extension and configure your SQLcl MCP server. 
 
-## Task 3: Set up the MCP Server
+## Task 4: Set up the SQLcl MCP Server
+
+1. Download and install SQLcl. Two possible options include: 
+
+    1. With a package manager such as Homebrew (Mac)
+    2. Directly from the [SQLcl download page](https://www.oracle.com/database/sqldeveloper/technologies/sqlcl/download/)
+  
+2. Whether downloading from a package manager, or via a manual download, you must set the 
 
 <mark>Cline or VS Chat?</mark>
 
