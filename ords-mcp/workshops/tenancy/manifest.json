@@ -6,17 +6,17 @@
       "help": "livelabs-help-db_us@oracle.com",
       "tutorials": [
         {
-            "title": " ",
+            "title": "Title",
             "description": "This is the complete template for LiveLabs content developers",
-            "filename": "../../livelabs-template.md"
+            "filename": "../../1-introduction.md"
         },
         {
-          "title": " ",
+          "title": "Title",
           "description": "Template to link to Need Help lab at the end of workshop. Change 'CHANGE-ME' in link below to need-help-livelabs.md or need-help-freetier.md",
-          "filename":"https://oracle-livelabs.github.io/common/labs/need-help/need-help-freetier.md"
+          "filename":"../../2-environment-set-up.md"
         },
          {
-            "title": " ",
+            "title": "Title",
             "description": "This is the complete template for LiveLabs content developers",
             "filename": "../../livelabs-template.md"
         },
