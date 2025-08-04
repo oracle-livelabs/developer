@@ -49,8 +49,10 @@ This lab assumes you have:
 > [!NOTE]
 
 > [!TIP]
+> Tip
 
 > [!IMPORTANT]
+> Info
 
  > ![NOTE]
  > You must click the Regenerate button to create a new password. Please save this password, as it will only be displayed once. It will not be saved or displayed across sessions.
