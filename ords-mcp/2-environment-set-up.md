@@ -1,4 +1,4 @@
-# Title of the Lab
+# Setting up your SQLcl MCP Server
 
 ## Introduction
 
@@ -48,10 +48,7 @@ This lab assumes you have:
 
         ![2-copying-your-free-sql-credentials.png](./images/lab-2/2-copying-your-free-sql-credentials.png " ")
 
-:memo: 
-
-> ![NOTE]
-> You must click the Regenerate button to create a new password. Please save this password, as it will only be displayed once. It will not be saved or displayed across sessions.
+:memo: **Note:** You must click the Regenerate button to create a new password. Please save this password, as it will only be displayed once. It will not be saved or displayed across sessions.
 
 ## Task 2: Oracle SQL Developer for VS Code
 
@@ -77,8 +74,7 @@ This lab assumes you have:
 
    ![7-entering-your-free-sql-credentials-for-new-connection](./images/lab-2/7-entering-your-free-sql-credentials-for-new-connection.png " ")
 
->[!IMPORTANT]
->Make sure you click the checkbox to "Save Password." The MCP server requires this saved password to establish a SQLcl connection on your behalf.
+:warning: **Important:** Make sure you click the checkbox to "Save Password." The MCP server requires this saved password to establish a SQLcl connection on your behalf.
 
 5. Choose **Basic** as the Connection Type, enter in your details. 
 
@@ -145,8 +141,7 @@ This lab assumes you have:
     8. Click OK. 
     9. Close all remaining windows by clicking OK.
 
-> [!NOTE]
-> Take note of this path, as you will need it for a later step.
+:memo: **Note:** Take note of this path, as you will need it for a later step.
 
 3. Close out any shell sessions, to pick up your changes. 
 
