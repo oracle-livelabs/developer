@@ -46,29 +46,11 @@ This lab assumes you have:
    - Username
    - Password
 
-> [!NOTE]
-
-> [!TIP]
-> Tip
-
-> [!IMPORTANT]
-> Info
-
-> [!NOTE]
-> Note
+        ![2-copying-your-free-sql-credentials.png](./images/lab-2/2-copying-your-free-sql-credentials.png " ")
 
 
- > ![NOTE]
- > You must click the Regenerate button to create a new password.
- > Please save this password, as it will only be displayed once. 
- > It will not be saved or displayed across sessions.
-
-
-     ![2-copying-your-free-sql-credentials.png](./images/lab-2/2-copying-your-free-sql-credentials.png " ")
-
-
- > ![NOTE]
- > You must click the Regenerate button to create a new password. Please save this password, as it will only be displayed once. It will not be saved or displayed across sessions.
+> ![NOTE]
+> You must click the Regenerate button to create a new password. Please save this password, as it will only be displayed once. It will not be saved or displayed across sessions.
 
 ## Task 2: Oracle SQL Developer for VS Code
 
@@ -138,14 +120,6 @@ This lab assumes you have:
      EOF
     ```
 
-```mermaid
-graph TD;
-    A-->B;
-    A-->C;
-    B-->D;
-    C-->D;
-```
-
   *Manual installation*
 
     ```sh
@@ -181,7 +155,7 @@ graph TD;
 
    ![13-searching-for-cline-vs-code-extension](./images/lab-2/13-searching-for-cline-vs-code-extension.png " ")
 
-2.  After selecting, Install the extension. Once installed, navigate to the Cline extension (found in the Activity bar)
+2.  Install the extension. Once installed, navigate to the Cline extension (found in the Activity bar)
 
 3. Click the "Scale" icon to select an API provider. 
 
@@ -197,10 +171,71 @@ graph TD;
 
       ![17-successful-authentication-detail-of-the-default-model-used](./images/lab-2/17-successful-authentication-detail-of-the-default-model-used.png " ")
 
+5. Next, you'll configure the SQLcl MCP Server. 
 
+## Task 6: Configuring the SQLcl MCP server
 
-<mark>Cline or VS Chat?</mark>
+1. Click the MCP Servers icon, then on the Installed tab.
 
+   <!-- Needs edit, to highlight both icons. -->
+  
+   ![18-successful-authentication-detail-of-the-default-model-used](./images/lab-2/18-successful-authentication-detail-of-the-default-model-used.png " ")
+
+   ![19-navigating-to-installed-mcp-servers-tab](./images/lab-2/19-navigating-to-installed-mcp-servers-tab.png " ")
+
+2. Click the <button style="color: Gainsboro; background-color: DimGray;">Configure MCP Servers</button> botton. The `cline_mcp_settings.json` MCP Server configuration file will appear.
+
+   ![20-empty-cline-mcp-servers-json-file](./images/lab-2/20-empty-cline-mcp-servers-json-file.png " ")
+
+3. You will replace the empty JSON object with that of your SQLcl `/bin/sql` directory
+
+In this example, we have chosen to install SQLcl via Homebrew. Thus our SQLcl's `/bin` directory is located at:  
+  
+  ```sh
+  opt/homebrew/Caskroom/sqlcl/25.2.2.199.0918/sqlcl/bin/sql
+  ```
+
+4. Update your `cline_mcp_settings.json` so it points to the correct location. Use the following `JSON` as template: 
+
+    ```JSON
+    <copy>
+    {
+      "mcpServers": {
+        "sqlcl": {
+          "command": "[path to your SQLcl installation]/bin/sql",
+          "args": ["-mcp"],
+          "disabled": false
+        }
+        
+      }
+    }
+    </copy>
+    ```
+
+5. Save your configuration settings. In doing so, you may notice an "Updating MCP Servers..." message following by a "MCP Servers updated..." message.  
+
+   ![21-updating-the-installed-cline-mcp-servers](./images/lab-2/21-updating-the-installed-cline-mcp-servers.png " ")
+    
+      
+   You should now see `sqlcl` listed under the Installed MCP Servers tab.
+
+   ![22-focus-on-sqlcl-tools-radio-button](./images/lab-2/22-focus-on-sqlcl-tools-radio-button.png " ")
+
+6. Click the anywhere in the SQLcl bar to expand it. You'll see a list of SQLcl MCP Sever "Tools", their parameters, and definitions.
+
+   ![23-expanding-the-installed-mcp-server-to-reveal-tools](./images/lab-2/23-expanding-the-installed-mcp-server-to-reveal-tools.png " ")
+
+   Available tools summary: 
+
+   |Tool | Parameters | Definition |
+   | --- | ---------- | ---------- | 
+   | `list-connections` | <ul><li>`filter`</li><li>`mcp_client`</li><li>`model`</li></ul> | <ul><li>This is the filter that will be used to refine the list of connections</li><li>Specify the name and version of the MCP client implementation being used (e.g. Copilot, Claude, Cline...)</li><li>The name (and version) of the language model being used by the MCP client to process requests (e.g. gpt-4.1, claude-sonnet-4, llama4...</li></ul>|
+   | `connect` | <ul><li>`connection_name`</li><li>`mcp_client`</li><li>`model`</li></ul> | <ul><li>Specify the name and version of the MCP client implementation being used (e.g. Copilot, Claude, Cline...)</li><li>The name (and version) of the language model being used by the MCP client to process requests (e.g. gpt-4.1, claude-sonnet-4, llama4...</li></ul>|
+   | `disconnect` | <ul><li>`mcp_client`</li><li>`model`</li></ul> | <ul><li>The name of the saved connection you want to connect to</li><li>The name (and version) of the language model being used by the MCP client to process requests (e.g. gpt-4.1, claude-sonnet-4, llama4...</li></ul>|
+   | `run-sqlcl` | <ul><li>`sqlcl`</li><li>`mcp_client`</li><li>`model`</li></ul> | <ul><li>The SQLcl command to execute</li><li>Specify the name and version of the MCP client implementation being used (e.g. Copilot, Claude, Cline...)</li><li>The name (and version) of the language model being used by the MCP client to process requests (e.g. gpt-4.1, claude-sonnet-4, llama4...</li></ul>|
+   | `sql` | <ul><li>`sql`</li><li>`mcp_client`</li><li>`model`</li></ul> | <ul><li>The SQL query to execute</li><li>Specify the name and version of the MCP client implementation being used (e.g. Copilot, Claude, Cline...)</li><li>The name (and version) of the language model being used by the MCP client to process requests (e.g. gpt-4.1, claude-sonnet-4, llama4...</li></ul>|
+
+7. With your SQLcl MCP Server configured, you may now proceed to the next lab.
 
 
 <!-- (optional) Step 1 opening paragraph.
