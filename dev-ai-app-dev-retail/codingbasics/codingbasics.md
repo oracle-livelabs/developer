@@ -2,40 +2,49 @@
 
 ## Introduction
 
-In this hands-on lab, you'll use Python to interact with Oracle Database 23ai - connecting with both `oracledb` and `pymongo`, creating tables, querying data, and building JSON Duality Views. You'll also explore Oracle’s Mongo API to query and update data using a document-based approach, making it easy to integrate with existing MongoDB-style apps. This lab is ideal for those with basic Python and Oracle knowledge and builds on the setup from Lab 2.
+
+At Seer Holdings, developers are building a next-generation loan approval system that needs to combine enterprise-grade data governance with modern AI capabilities. But before GenAI or vector search can be applied, one thing must be true:
+
+👉 The data must be in the right shape — accessible, trustworthy, and programmable.
+
+In this lab, you’ll act as a developer on the Seer Holdings data team. Your job is to build the foundational logic that powers the application’s intelligence layer. That means:
+
+- Creating and querying relational tables that represent real loan and customer data using Python
+- Converting that data into **JSON documents** using **JSON Duality Views**
+- Using **MongoDB-style syntax** via Oracle’s Mongo API to interact with the same data — without needing to duplicate or move it
+
+These capabilities make Oracle Database 23ai a **developer-friendly**, **multi-model platform**. You’ll write less glue code, eliminate data movement, and stay focused on the real task: powering intelligent loan workflows.
+
+> 💡 Everything you implement here becomes the data foundation for Retrieval-Augmented Generation (RAG) and AI Vector Search in upcoming labs.
 
 Estimated Time: 30 minutes
 
+To get things started we invite you to watch this video and see the lab in action:
+
+  [](videohub:1_v685fi7r:medium)
 
 ### Objectives
 
-* Learn basic Python coding concepts with Oracle Database 23ai
-  * Connect to Oracle Database 23ai
-  * Create tables
-  * Insert & query data
-  * Create a JSON Duality View using Python
-  * Connect to database using `pymongo` and start using Oracle's Mongo API
-  * Query data using Oracle's Mongo API
-  * Update data using Oracle's Mongo API
+- Connect to Oracle Database 23ai using Python  
+- Create and query relational data  
+- Use JSON Duality Views to work with relational tables as JSON  
+- Query and update the same data using MongoDB-style syntax
 
 ### Prerequisites
 
 This lab assumes you have:
 
-* An Oracle account to submit a LiveLabs Sandbox reservation.
-
-* Completed Lab 2: Connect to the development environment
-
-* Basic knowledge of Python.
-
-* Basic knowledge of Oracle Database, i.e., how to run queries.
+- An Oracle account with LiveLabs access  
+- Completion of **Lab 1: Connect to the Development Environment**  
+- Basic familiarity with Python and SQL
 
 
 ## Task 1: Create a new Jupyter Notebook
 
 All of the coding examples will be executed in a new Jupyter Notebook.
 
-1. Open a new **Jupyter Notebook** by clicking on **Python(ipykernel)** notebook.
+1. In **JupyterLab**, click the blue **+** to open the Launcher  
+2. Start a new **Python (ipykernel)** notebook
 
     ![Open Jupyter Notebook](./images/open-new-notebook.png " ")
 
@@ -66,20 +75,20 @@ In this first task, you will connect to an Oracle Database 23ai instance using O
     cursor = connection.cursor()
     </copy>
     ```
+
 2. Execute the cell by entering **shift + enter** or clicking on the play button.
 
 3. You should see a message that says "Connection successful!" in your notebook. If you do not, check the credentials and try again. 
 
     ![connect](./images/connect.png " ")
 
->**Note:** The last line, `cursor = connection.cursor()`, creates a cursor object from the established Oracle database connection. A cursor acts as a control structure that enables the execution of SQL queries and retrieval of results from the database. It is essential for sending SQL commands, fetching data, and iterating through query results. We will be using the cursor object in later steps of this lab. The object persists in the notebook session, so you can use it in subsequent cells without re-establishing the connection. 
-
+>**Note:** The last line, `cursor = connection.cursor()`, creates a cursor object from the established Oracle database connection. A cursor acts as a control structure that enables the execution of SQL queries and retrieval of results from the database. It is essential for sending SQL commands, fetching data, and iterating through query results. We will be using the cursor object in later steps of this lab. The object persists in the notebook session, so you can use it in subsequent cells without re-establishing the connection.
 
 ## Task 3: Create tables and insert data
 
 Now, that we have established a connection, we can start creating our tables and inserting some sample data. We will create two sample tables (`orders` and `customers`) in our database. We will also insert some sample data into these tables.
 
-1. In a new cell, enter the following code to create the `orders` table and insert some sample data:
+1. In a new cell, enter the following code to create the `orders_demo` table and insert some sample data:
 
     ```python
     <copy>
@@ -87,10 +96,10 @@ Now, that we have established a connection, we can start creating our tables and
     try:
         with connection.cursor() as cursor:
             cursor.execute("""
-                drop table if exists orders
+                drop table if exists orders_demo
                 """)
             cursor.execute("""
-                create table if not exists orders
+                create table if not exists orders_demo
                     (id number generated by default on null as identity,
                     product_id number,
                     order_date timestamp,
@@ -99,7 +108,7 @@ Now, that we have established a connection, we can start creating our tables and
                     order_shipped boolean,
                     warranty interval year to month)""")
             cursor.execute("""
-                insert into orders (product_id, order_date, customer_id, total_value, order_shipped, warranty)
+                insert into orders_demo (product_id, order_date, customer_id, total_value, order_shipped, warranty)
                 values
                 (12, systimestamp, 100001, 10.23, true, interval '2-0' year to month),
                 (234, systimestamp, 223223, 1200.00, false, interval '1-6' year to month),
@@ -109,7 +118,7 @@ Now, that we have established a connection, we can start creating our tables and
             connection.commit()
             print("Success!")
     except oracledb.DatabaseError as e:
-            print(f"Error: {e}")
+        print(f"Error: {e}")
         </copy>
     ```
 
@@ -119,7 +128,7 @@ Now, that we have established a connection, we can start creating our tables and
     <copy>
     def query_orders():
         with connection.cursor() as cursor:
-            cursor.execute("select * from orders")
+            cursor.execute("select * from orders_demo")
             rows = cursor.fetchall()
         for row in rows:
             print(row)
@@ -134,7 +143,7 @@ Now, that we have established a connection, we can start creating our tables and
 
     ![query orders](./images/query-orders.png " ")
 
-4. Next, let's add another table `customers` with some sample data. Copy & paste the following code in a **new cell** and run it.
+4. Next, let's add another table `customers_demo` with some sample data. Copy & paste the following code in a **new cell** and run it.
 
     ```python
     <copy>
@@ -142,10 +151,10 @@ Now, that we have established a connection, we can start creating our tables and
     try:
         with connection.cursor() as cursor:
             cursor.execute("""
-                drop table if exists customers
+                drop table if exists customers_demo
                 """)
             cursor.execute("""
-                create table if not exists customers (
+                create table if not exists customers_demo (
                     id             NUMBER GENERATED BY DEFAULT ON NULL AS IDENTITY,
                     first_name     VARCHAR2(100),
                     last_name      VARCHAR2(100),
@@ -154,7 +163,7 @@ Now, that we have established a connection, we can start creating our tables and
                     phone_number   VARCHAR2(20))
                 """)
             cursor.execute("""
-                insert into customers (id, first_name, last_name, email, address, phone_number)
+                insert into customers_demo (id, first_name, last_name, email, address, phone_number)
                 values
                 (100001, 'Dan', 'Thompson', 'dt7889@gmail.com', '10 smith street', '34454-1667'),
                 (223223, 'John', 'Smith', 'jsmith@hotmail.com', 'the grove', '28902'),
@@ -164,7 +173,7 @@ Now, that we have established a connection, we can start creating our tables and
             connection.commit()
             print("Success!")
     except oracledb.DatabaseError as e:
-            print(f"Error: {e}")
+        print(f"Error: {e}")
     </copy>
     ```
 
@@ -174,7 +183,7 @@ Now, that we have established a connection, we can start creating our tables and
     <copy>
     def query_customers():
         with connection.cursor() as cursor:
-            cursor.execute("select * from customers")
+            cursor.execute("select * from customers_demo")
             rows = cursor.fetchall()
             for row in rows:
                 print(row)
@@ -184,7 +193,7 @@ Now, that we have established a connection, we can start creating our tables and
 
     ![query customers](./images/task3.png " ")
 
-**Task Summary**
+### **Task Summary**
 
 Congratulations! You successfully created two new tables with sample data using Python and Oracle Database.  
 
@@ -192,11 +201,9 @@ You also created a function that allows you to query your new table which we wil
 
 ## Task 4: Create a JSON Duality View 
 
-Next, we want to explore how we can use a **JSON Duality View** to query our new table. A JSON Duality View allows us to interact with data as JSON objects, i.e., data is stored as documents. Unlike a regular view, we can also update data in a JSON Duality View. Any updates will be reflected in our original relational tables. We will create a JSON Duality View using our newly created tables `customers` and `orders`.
+Next, we want to explore how we can use a **JSON Duality View** to query our new table. A JSON Duality View allows us to interact with data as JSON objects, i.e., data is stored as documents. Unlike a regular view, we can also update data in a JSON Duality View. Any updates will be reflected in our original relational tables. We will create a JSON Duality View using our newly created tables `customers_demo` and `orders_demo`.
 
-1. Before we create the **JSON Duality View**, we need to add some **constraints** to our new tables. Constraints define specific rules and conditions that the data in a table must follow. Their main function is to maintain data integrity and ensure the accuracy and reliability of the stored information.
-
-    Copy & paste the following code into a **new cell** and run it.
+1. Before we create the **JSON Duality View**, we need to add some **constraints** to our new tables. Copy & paste the following code into a **new cell** and run it.
 
     ```python
     <copy>
@@ -204,13 +211,13 @@ Next, we want to explore how we can use a **JSON Duality View** to query our new
     try:
         with connection.cursor() as cursor:
             cursor.execute("""
-                alter table customers add (constraint customers_pk primary key (id))
+                alter table customers_demo add (constraint customers_pk primary key (id))
                 """)
             cursor.execute("""
-            alter table orders add (constraint orders_pk primary key (id))
+            alter table orders_demo add (constraint orders_pk primary key (id))
                 """)
             cursor.execute("""
-            alter table orders add (constraint orders_fk FOREIGN KEY (customer_id) REFERENCES customers (id))
+            alter table orders_demo add (constraint orders_fk FOREIGN KEY (customer_id) REFERENCES customers_demo (id))
                 """)
             connection.commit()
             print("All constraints created.")
@@ -233,14 +240,14 @@ Next, we want to explore how we can use a **JSON Duality View** to query our new
             """)
             cursor.execute("""
                 CREATE or REPLACE JSON RELATIONAL DUALITY VIEW customers_dv AS
-                    customers @insert @update @delete
+                    customers_demo @insert @update @delete
                     {_id      : id
                     FirstName       : first_name
                     LastName        : last_name
                     Email           : email
                     Address         : address
                     Phone    : phone_number
-                    orders : orders @insert @update @delete
+                    orders : orders_demo @insert @update @delete
                     [ {OrderID             : id
                         ProductID           : product_id
                         OrderDate           : order_date
@@ -418,7 +425,7 @@ Next, let's update some data in our database using MongoDB syntax. Let's write a
 
 The final step in our basic coding tour with Python and the Oracle Database 23ai is to query the two relational tables we created earlier. We just updated the JSON Duality view, so let's run a query on it to see if the changes were reflected. Remember that we created two functions in the beginning of this lab: `query_customers()` and `query_orders()`. Let's use these functions to get our data from MongoDB and update it with the new email address.
 
-1. First, run the `query_customers()` function in a new cell
+1. First, run the ``query_customers()` function in a new cell
 
     ```python
     <copy>
@@ -428,7 +435,7 @@ The final step in our basic coding tour with Python and the Oracle Database 23ai
 
     ![customer table after update](./images/task8.png " ")
 
-    You can see that also in the relational `customers` table, the email address has been updated.
+    You can see that also in the relational `customers_demo` table, the email address has been updated.
 
 2. Next, run the `query_orders()` function in a new cell.
 
@@ -440,7 +447,7 @@ The final step in our basic coding tour with Python and the Oracle Database 23ai
 
     ![orders table after update](./images/task8.2.png " ")
 
-    You can see that also in the relational `orders` table, the total value has been updated.
+    You can see that also in the relational `orders_demo` table, the total value has been updated.
 
 3. Finally, let's create a new function that allows us to see both tables at once, i.e., we want to join `customers` and `orders` tables together. The function should also allow us to filter by the first name of the customer. Furthermore, the result should be nicely formatted in a table including column headers. We need to create a new cell with the following code:
 
@@ -452,8 +459,8 @@ The final step in our basic coding tour with Python and the Oracle Database 23ai
         with connection.cursor() as cursor:
             query = """
                 SELECT *
-                FROM customers c
-                JOIN orders o ON c.id = o.customer_id
+                FROM customers_demo c
+                JOIN orders_demo o ON c.id = o.customer_id
                 WHERE c.first_name = :first_name
             """
             cursor.execute(query, {"first_name": first_name})
@@ -479,11 +486,11 @@ The final step in our basic coding tour with Python and the Oracle Database 23ai
 
 ## Conclusion
 
-In this lab, we learned how to use Python and Oracle's Python driver `oracledb` to interact with Oracle Database 23ai's new features. You learned how to use the `cursor` object to execute SQL queries. Using the `cursor` object, you created a **JSON Duality View** and you even used some JSON functions to query documents using SQL syntax. Then, you also learned how to connect to the database using `pymongo` and retrieve data from a table in the database using **MongoDB syntax**. You created functions to update the **JSON Duality View** and you learned how these updates are also reflected in the underlying relational database tables.
+As a developer at Seer Holdings, you've just built the foundation for a GenAI-powered loan approval system. We learned how to use Python and Oracle's Python driver `oracledb` to interact with Oracle Database 23ai's new features. You learned how to user the `cursor` object to execute SQL queries. Using the `cursor` object, you created a **JSON Duality View** and you even used some JSON functions to query documents using SQL syntax. Then, you also learned how to connect to the database using `pymongo` and retrieve data from a table in the database using **MongoDB syntax**. You created functions to update the **JSON Duality View** and you learned how these updates are also reflected in the underlying relational database tables.
 
-In the next labs, you will see several of the coding principles learned and even more.  
+This architecture eliminates the need for duplicating data across platforms and simplifies how developers build AI-ready applications. Whether you're calling SQL, working with JSON, or speaking Mongo, you're always working with a single source of truth inside the Oracle Database.
 
-You are now ready to implement you a RAG process using Oracle Database 23ai's new features!
+In the next lab, you'll build on this foundation to implement Retrieval-Augmented Generation (RAG), create vector embeddings, and generate personalized loan recommendations with Oracle 23ai and OCI Generative AI.
 
 ## Acknowledgements
 * **Authors** - Linda Foinding, Kevin Lazarz
