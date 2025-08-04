@@ -34,7 +34,7 @@ This lab assumes you have:
 
 1. In a separate tab, navigate to [freesql.com](https://www.freesql.com).
 2. Sign in with your existing Oracle account, or create a new account. 
-3. Log in to [freesql.com](https://www.freesql.com) and click the <button style="color: White; background-color: Black;">Connect with rotating language option</button> button.
+3. Log in to [freesql.com](https://www.freesql.com) and click the <button>Connect with [rotating language option]</button>
 
    ![1-clicking-connect-with-button.png](./images/lab-2/1-clicking-connect-with-button.png " ")
 
@@ -48,6 +48,7 @@ This lab assumes you have:
 
         ![2-copying-your-free-sql-credentials.png](./images/lab-2/2-copying-your-free-sql-credentials.png " ")
 
+:memo: 
 
 > ![NOTE]
 > You must click the Regenerate button to create a new password. Please save this password, as it will only be displayed once. It will not be saved or displayed across sessions.
