@@ -163,9 +163,9 @@ This lab assumes you have:
 
    ![16-example-showing-logging-in-to-oracle-code-assist-api-provider](./images/lab-2/16-example-showing-logging-in-to-oracle-code-assist-api-provider.png " ")
 
-   You can also click the API name at the bottom of the Cline "Tasks" view, to review your API settings. 
-
-      ![17-successful-authentication-detail-of-the-default-model-used](./images/lab-2/17-successful-authentication-detail-of-the-default-model-used.png " ")
+   You can also click the API name at the bottom of the Cline "Tasks" view, to review your API settings.  
+   
+   ![17-successful-authentication-detail-of-the-default-model-used](./images/lab-2/17-clicking-on-mcp-servers-two-icon-navigation-options.png " ")
 
 5. Next, you'll configure the SQLcl MCP Server. 
 
