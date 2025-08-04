@@ -6,11 +6,11 @@
 
 Generative AI and Oracle Database 23ai makes it possible to unlock deeper insights, faster—directly within your database.
 
-This hands-on lab introduces you to Generative AI and Vector Search in Oracle Database 23ai, allowing you to build real applications using multiple types of data - no setup required. You'll connect to the database using Python and the Mongo API, run queries, create JSON Duality Views, and implement AI Vector Search and retrieval-augmented generation (RAG). Explore guided use cases or experiment freely in a browser-based development environment. 
+In this hands-on workshop, you’ll build a Retail-focused GenAI solution using Oracle Database 23ai.
 
 To get things started we invite you to watch the introduction video to see the demo in action:
 
-[](videohub:1_mg30brw3:medium)
+[](videohub:1_uz44mxvt:medium)
 
 You will:
   *	Use **native Vector Search** to query and analyze structured data, documents, and images—without moving data across platforms.
@@ -98,5 +98,5 @@ This lab assumes you have:
 
 ## Acknowledgements
 * **Authors** - Linda Foinding, Francis Regalado, Kamryn Vinson
-* **Contributors** - Kevin Lazarz, Eddie Ambler, Ramona Magadan, Mark Nelson, Andy Tael, Anders Swanson, Rahul Tasker
-* **Last Updated By/Date** - Linda Foinding, April 2025
+* **Contributors** - Kevin Lazarz, Hanna Rakhsha, Ley Sylvester, Uma Kumar
+* **Last Updated By/Date** - Uma Kumar, July 2025

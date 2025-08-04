@@ -18,10 +18,6 @@ Good luck, and enjoy the process. Let’s get coding!
 
 Estimated Time: 45 minutes
 
-To get things started we invite you to watch this video and see the lab in action:
-
-  [](videohub:1_iu6875ja:medium)
-
 ### Objective:
 
 In this lab, you will:
