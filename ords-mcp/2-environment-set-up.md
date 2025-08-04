@@ -48,8 +48,9 @@ This lab assumes you have:
 
      ![2-copying-your-free-sql-credentials.png](./images/lab-2/2-copying-your-free-sql-credentials.png " ")
 
- > [!NOTE]
- > You must click the <kbd>Regenerate</kbd> button to create a new password. Please save this password, as it will only be displayed once. It will not be saved or displayed across sessions.
+> ![NOTE]
+> You must click the <kbd>Regenerate</kbd> button to create a new password. Please save this password, as it will only be displayed once. It will not be saved or displayed across sessions.
+
 
 ## Task 2: Oracle SQL Developer for VS Code
 
@@ -97,16 +98,88 @@ This lab assumes you have:
 
 [^2]: You can also right-click on a connection name to reveal the context menu. You can connect, disconnect, and edit connections as well as perform other common actions.
 
-8. Continue to the next task to install the Cline VS Code extension and configure your SQLcl MCP server. 
+8. Continue to the next task to install SQLcl. 
 
-## Task 4: Set up the SQLcl MCP Server
+## Task 4: Installing SQLcl
 
 1. Download and install SQLcl. Two possible options include: 
 
     1. With a package manager such as Homebrew (Mac)
     2. Directly from the [SQLcl download page](https://www.oracle.com/database/sqldeveloper/technologies/sqlcl/download/)
   
-2. Whether downloading from a package manager, or via a manual download, you must set the 
+2. Whether downloading from a package manager, or via a manual download, you must set the SQLcl `/bin` directory to your `$PATH`.
+
+  **macOS**
+
+  *Homebrew installation*
+
+    ```sh
+     cat << EOF >> ~/.zprofile
+     # Add SQLcl via Homebrew
+     export PATH="$PATH:/opt/homebrew/Caskroom/sqlcl/[your SQLcl version]/sqlcl/bin"
+     EOF
+    ```
+
+```mermaid
+graph TD;
+    A-->B;
+    A-->C;
+    B-->D;
+    C-->D;
+```
+
+  *Manual installation*
+
+    ```sh
+    cat << EOF >> ~/.zprofile
+    # Add SQLcl via manual installation
+    export PATH="$PATH:/complete_file_path_to_your_sqlcldirectory/bin"
+    EOF
+    ```
+
+  **Windows**
+
+    1. In Search, search for and then select: System (Control Panel)
+    2. Click the Advanced system settings link.
+    3. Click Environment Variables.
+    4. In the section System Variables find the PATH environment variable and select it.
+    5. Click Edit.
+    6. If the PATH environment variable does not exist, click New.
+    7. In the Edit System Variable (or New System Variable) window, specify the value of the PATH environment variable.
+    
+        - *Example:* `/complete_file_path_to_your_sqlcl_directory/bin`
+
+    8. Click OK. 
+    9. Close all remaining windows by clicking OK.
+
+> [!NOTE]
+> Take note of this path, as you will need it for a later step.
+
+3. Close out any shell sessions, to pick up your changes. 
+
+## Task 5: Installing the Cline for VS Code Extension
+
+1. Return to the Extensions tab. And search for the Cline extension.
+
+   ![13-searching-for-cline-vs-code-extension](./images/lab-2/13-searching-for-cline-vs-code-extension.png " ")
+
+2.  After selecting, Install the extension. Once installed, navigate to the Cline extension (found in the Activity bar)
+
+3. Click the "Scale" icon to select an API provider. 
+
+   ![14-clicking-the-api-provider-icon-for-choosing-api-provider](./images/lab-2/14-clicking-the-api-provider-icon-for-choosing-api-provider.png " ")
+
+   ![15-available-api-providers-from-the-drop-down-menu](./images/lab-2/15-available-api-providers-from-the-drop-down-menu.png " ")
+
+4. Follow the prompts to enter in a valid API key. In this example Oracle Code Assist is used. A user authenticates with a valid Oracle SSO instead of an API key. 
+
+   ![16-example-showing-logging-in-to-oracle-code-assist-api-provider](./images/lab-2/16-example-showing-logging-in-to-oracle-code-assist-api-provider.png " ")
+
+   You can also click the API name at the bottom of the Cline "Tasks" view, to review your API settings. 
+
+      ![17-successful-authentication-detail-of-the-default-model-used](./images/lab-2/17-successful-authentication-detail-of-the-default-model-used.png " ")
+
+
 
 <mark>Cline or VS Chat?</mark>
 
