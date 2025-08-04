@@ -48,8 +48,8 @@ This lab assumes you have:
 
      ![2-copying-your-free-sql-credentials.png](./images/lab-2/2-copying-your-free-sql-credentials.png " ")
 
->![NOTE]
->You must click the <kbd>Regenerate</kbd> button to create a new password. Please save this password, as it will only be displayed once. It will not be saved or displayed across sessions.
+ > ![NOTE]
+ > You must click the <kbd>Regenerate</kbd> button to create a new password. Please save this password, as it will only be displayed once. It will not be saved or displayed across sessions.
 
 ## Task 2: Oracle SQL Developer for VS Code
 
