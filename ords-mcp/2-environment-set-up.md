@@ -34,7 +34,7 @@ This lab assumes you have:
 
 1. In a separate tab, navigate to [freesql.com](https://www.freesql.com).
 2. Sign in with your existing Oracle account, or create a new account. 
-3. Log in to [freesql.com](https://www.freesql.com) and click the <button style="color: white; background-color: black;">Connect with \[rotating language option\]</button> button.
+3. Log in to [freesql.com](https://www.freesql.com) and click the <button style="color: White; background-color: Black;">Connect with \[rotating language option\]</button> button.
 
    ![1-clicking-connect-with-button.png](./images/lab-2/1-clicking-connect-with-button.png " ")
 
