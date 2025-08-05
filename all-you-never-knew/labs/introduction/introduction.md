@@ -2,41 +2,36 @@
 
 ## About this Workshop
 
-The **Oracle AI Optimizer and Toolkit** (the **AI Optimizer**) provides a streamlined environment where developers and data scientists can explore the potential of Generative Artificial Intelligence (**GenAI**) combined with Retrieval-Augmented Generation (**RAG**) capabilities. By integrating Oracle Database AI Vector Search, the AI Optimizer enables users to enhance existing Large Language Models (**LLMs**) through RAG. This method significantly improves the performance and accuracy of AI models, helping to avoid common issues such as knowledge cutoff and hallucinations.
-
-* **GenAI**: Powers the generation of text, images, or other data based on prompts using pre-trained LLMs.
-* **RAG**: Enhances LLMs by retrieving relevant, real-time information allowing models to provide up-to-date and accurate responses.
-* **Vector Database**: A database, including Oracle Database 23ai, that can natively store and manage vector embeddings and handle the unstructured data they describe, such as documents, images, video, or audio.
+This workshop is a companion for the "Everything You Never Knew About Oracle" developer showcase at Oracle Cloud World 2025.  If you enjoyed the live demo, and you'd like to try it for yourself, or share it with your colleagues, this workshop will allow you to do that! 
 
 Estimated Time: 120 minutes
 
 ### Objectives
 
-In this workshop, you will learn how to:
+In this workshop, you will be provided with a Customer Service application that you will extend while you learn how to:
 
-* Install the **Oracle AI Optimizer and Toolkit** (the **AI Optimizer**)
-* Explore the AI Optimizer environment
-* Embed documents in a vector format within **Oracle Database 23ai**
-* Use Retrieval Augmented Generation (**RAG**) techniques
-* Experiment with different models, parameters and techniques
-* Evaluate model performances with the *Testbed* functionality
-* Export a RAG-based *Springboot* Microservice
-* Use the AI Optimizer as an API Server
+* Build microservices using **Spring Boot** and **Oracle Database**
+* Use **Oracle Universal Connection Pool** to improve availability
+* Use **Oracle Autonomous Database** in the OCI Free Tier, and **Oracle Database for Developers**, low-cost options for cloud database development
+* Build REST APIs using Spring Boot
+* Handle events with **Oracle Transactional Event Queues** to implement event-based capabilities
+* Use OKafka to XXX
+* Use **Oracle AI Vector Search** and **OCI Generative AI** service to implement AI summarization and recommendations
+* Use **JSON Relational Duality Views** to reduce round trips and improve performance
+* Create REST APIs using **Oracle REST Data Services**
+
 
 ### Prerequisites
 
 This lab assumes you have:
 
-* An **Oracle Database 23ai** up and running (see ["Get Started"](https://markxnelson.github.io/developer/ai-optimizer/workshops/desktop/index.html?lab=get-started) to get one) 
+* An **Oracle Database 23ai** running in OCI (see ["Get Started"](/developer/all-you-never-knew/workshops/tenancy/index.html?lab=get-started) to get one) 
 * An Integrated Development Editor (like Visual Studio Code)
-* Python 3.11 (for running Bare-Metal)
-* Container Runtime e.g. docker/podman (for running in a Container)
-* Access to an Embedding and Chat Model:
-  * On-Premises Models
-  * (optional) API Keys for Third-Party Models (e.g., OpenAI API Keys that you can get [here](https://platform.openai.com/settings/organization/api-keys))
+* The necessary tools and runtimes to build Spring Boot applications, including Maven and a Java Developer Kit (JDK 21 recommended)
+
 
 ## Acknowledgements
 
-* **Author** - Lorenzo De Marchis, Developer Evangelist, May 2025
-* **Contributors** - Mark Nelson, John Lathouwers, Corrado De Bari, Jorge Ortiz Fuentes, Andy Tael
-* **Last Updated By** - Lorenzo De Marchis, May 2025
+* **Author** - Mark Nelson, Developer Evangelist, August 2025
+* **Contributors** - Mark Nelson, Anders Swanson
+* **Last Updated By** - Mark Nelson, August 2025
