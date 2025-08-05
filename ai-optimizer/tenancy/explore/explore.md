@@ -31,14 +31,14 @@ Let's check if the DB is correctly connected.
 
 1. To configure the Oracle Database 23ai Free, you will need to enter the credentials:
 
-   * Enter the Database Username
-   * Enter the Database Connection String
-   * Enter the Database Password for the database user
-   * Save
+    * Enter the Database Username
+    * Enter the Database Connection String
+    * Enter the Database Password for the database user
+    * Save
 
-   Since you are following the Tenancy version of this LiveLab, you should find everything set-up already:
-
-   ![Database configuration](images/database-config.png)
+  Since you are following the Tenancy version of this LiveLab, you should find everything set-up already:
+  
+  ![Database configuration](images/database-config.png)
 
 1. Since you are using an Autonomous Database, you can activate the SelectAI functionality. You will need to create a [Select AI](https://www.oracle.com/it/autonomous-database/select-ai/) profile and eventually you'll find the list of active profiles within the tenancy:
 
