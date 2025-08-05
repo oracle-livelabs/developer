@@ -20,6 +20,10 @@ Estimated Time: 5 minutes
 
     ![Login](./images/jupyter-login.png " ")
 
+1. Click the blue "+". This will open the Launcher. 
+
+    ![Open Launcher](./images/launcher.png " ")
+
 ## Task 2: Get familiar with the development environment
 
 1. Review the different elements in JupyterLab:

@@ -122,7 +122,7 @@ In this example, you will navigate the application to review a customer and deny
 
     ![Select James Woods](./images/james-woods.png =50%x*)
 
-2. Opening James Woods’s profile displays his patient history details. Within a few seconds, the AI generates automatically recommendations. In this case, the system evaluates a less favorable profile and identifies key risk factors.
+2. Opening James Woods’s profile displays his patient history details. Within a few seconds, the AI automatically generates recommendations. In this case, the system evaluates a less favorable profile and identifies key risk factors.
 
     This customer has: [Placeholder]
 
