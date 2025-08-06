@@ -96,7 +96,7 @@ Now that we have a way to show departments, we'll use the Add Create Page Quick 
 
 5. In the Page Designer toolbar, click **Live** to make the form active. (Click **Properties** if you need to make room for the form.)
 
-    To indicate that you are in Live mode, the **Live** option now has a blue background, and a blue line appears around the page.
+    To indicate you are in Live view, the **Live** option now has a blue background, and a blue line appears around the page. Live view is used to quickly check how a page behaves as you're making changes to it.
 
 6. Enter `IT` in the **Department** field, and select **Floor 4** from the **Location** list.
 
@@ -168,7 +168,7 @@ We'll now create a page to display employees, similar to the one you created to 
 
 ## Task 4: Add a chart to display employees
 
-Now that you've displayed some employee data in a table, let's add a chart to visually display employee salary. The table and chart both use the Employee business object as their data source, they only display the data differently.
+Now that you've displayed employee data in a table, let's add a chart to visually represent employee salaries. The table and chart both use the Employee business object as their data source, they only display the data differently.
 
 1. Click **Components**, then drag another Panel component onto the page, next to the existing table.
 
@@ -184,19 +184,23 @@ Now that you've displayed some employee data in a table, let's add a chart to vi
 
 5. On the Locate Data step of the Quick Start, select **Employee** under Business Objects and click **Next**.
 
-6. On the Map Fields step, select **salary** to add it to the **Values (Y Axis)** field, then **name** to add it to the **Categories (X Axis)** field. Leave the **Colors (Series)** field blank, and click **Next**.
+6. On the Map Fields step, select **salary** to add it to the **Values (Y Axis)** field, then **name** to add it to the **Categories (X Axis)** field.
 
     ![The Map Fields page of the Add Data quick start is shown with the name and salary checkboxes selected.](images/panel-on-page-chart-adddata-fields.png " ")
 
-7. On the Define Query step, click **Finish**.
+7. Expand the **departmentObject** and **items** nodes (expand **item[i]** if it isn't already expanded) and select **department** to add it to the **Colors (Series)** field, and click **Next**.
 
-    The chart displays the salary for each employee.
+8. On the Define Query step, click **Finish**.
+
+    The chart shows each employee's salary, using colors to represent the different departments (as identified in the legend).
 
     ![The Bar Chart is populated with employee data, with name as the X Axis and salary as the Y Axis.](images/panel-on-page-chart-data.png "")
 
-8. Click the chart's **General** tab in the Properties pane. In the **X Axis, Title** field, change **name** to **Employee Name**. In the **Y Axis, Title** field, change **salary** to **Salary**. Change the Orientation from **Vertical** to **Horizontal**.
+9. Click the chart's **General** tab in the Properties pane. In the **X Axis, Title** field, change **name** to **Employee Name**. In the **Y Axis, Title** field, change **salary** to **Salary**. Change the Orientation from **Vertical** to **Horizontal**.
 
     ![The Bar Chart's properties is shown. X Axis Title is set to Employee Name, Y Axis Title is set to Salary, Orientation is set to Horizontal.](images/panel-on-page-chart-properties.png "")
+
+10. Click ![Legend icon](images/icon-legend.png) next to Legend, then change the **Legend, Title** to `Department` (with a capital D). Click ![Back icon](images/back-icon.png) **Bar Chart** to return to the main General tab.
 
 ## Task 5: Add a page to create employees
 
@@ -244,7 +248,7 @@ Add a Create page that lets your users create new employees.
 
      Now click **Design** to see your changes reflected in the page's visual editor. Whichever mode you choose to work in (visual or source code), your changes are synced to keep both views consistent.
 
-     Look also at the **Structure** view to see the hierarchy of components on the main-employees page. Components that aren't currently visible on the page fade into the background to allow you to focus on parts of a page, a section at a time.
+     Look also at the **Structure** view to see the hierarchy of components on the main-employees page. Any components that are not currently visible on the page fade into the background to allow you to focus on parts of a page, a section at a time.
 
 ## Task 6: Change the name of the **main-start** page
 
@@ -270,4 +274,4 @@ It makes sense at this point to change the name of the main-start page to main-d
 ## Acknowledgements
 
 * **Author** - Sheryl Manoharan, VB Studio User Assistance, November 2021
-* **Last Updated By/Date** - Sheryl Manoharan, April 2025
+* **Last Updated By/Date** - Sheryl Manoharan, July 2025
