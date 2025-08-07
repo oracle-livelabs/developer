@@ -28,16 +28,6 @@
             "filename": "../../build/build.md"
         },
         {
-            "title": "Lab 5a: Coding Challenge - AI Vector Search",
-            "description": "This is a step-by-step guide showcasing how the demo instance is navigated",
-            "filename": "../../ai-exercise/ai-vector-search-challenge.md"
-        },
-        {
-            "title": "Lab 5b: Coding Challenge - AI Vector Search - Guided",
-            "description": "This is a step-by-step guide showcasing how the demo instance is navigated",
-            "filename": "../../ai-exercise/ai-vector-search-challenge-answers.md"
-        },
-        {
             "title": "Architecture & Workshop Features",
             "description": "Review the physical and logical architecture behind the application",
             "filename": "../../app-architecture/app-architecture.md"

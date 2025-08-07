@@ -19,9 +19,6 @@ These capabilities make Oracle Database 23ai a **developer-friendly**, **multi-m
 
 Estimated Time: 30 minutes
 
-To get things started we invite you to watch this video and see the lab in action:
-
-  [](videohub:1_v685fi7r:medium)
 
 ### Objectives
 
