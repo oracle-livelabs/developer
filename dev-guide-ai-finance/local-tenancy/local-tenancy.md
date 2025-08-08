@@ -289,13 +289,13 @@ The application environment has been created and zipped up for you in a download
 
 ```
     <copy>
-    unzip ai-app-build.zip
+    unzip ai-app-build-local.zip
     </copy>
 ```
 
 Next we're going to generate an oci configuration file that will contain user credentials and other settings needed for interacting with Oracle Cloud. In order to prepare for this step you'll need to gather the user OCID, the tenancy OCID, and the tenancy region and store these in a text file.
 
-3. User OCID:  Click the profile icon in the upper right corner of the OCI console and choose **User settings**.
+3. Find the user OCID:  Click the profile icon in the upper right corner of the OCI console and choose **User settings**.
 
     ![User settings](./images/click-user-settings.png " ")
 
@@ -336,15 +336,13 @@ Next we're going to generate an oci configuration file that will contain user cr
 
 Next you'll create an environment file for the application.
 
-15. An environment file template has been included in the zip file and is available to make editing easier. The file is named '.env.template' Any file with a dot as the first character is hidden from normal view in Linux. Issue the following command to create a copy and begin editing the file.
+15. Create the .env file that will hold connection information for your application.
 
 ````
     <copy>
-    cp .env.template .env
+    touch .env
     </copy>
 ````
-
-   ![Copy and edit the env file](./images/env-file-copy.png " ")
 
 16. Use your favorite editor to open and edit the file.
 
@@ -354,23 +352,23 @@ Next you'll create an environment file for the application.
         </copy>
     ````
 
-17. The following information needs to be collected and inserted into the .env file. Copy the 9 lines below and paste them in the .evn file. Follow the steps below to gather the required information and place it in the file.
+17. The following information needs to be collected and inserted into the .env file. Copy the 9 lines below and paste them in the .env file. Follow the steps below to gather the required information and place it in the file.
 
     ```
-        <copy>
-        USERNAME=""
-        DBPASSWORD=""
-        DBCONNECTION=""
-        ADB_NAME=""
-        ADB_OCID=""
-        GRAPH_ENDPOINT=""
-        COMPARTMENT_OCID=""
-        TENANCY_OCID=""
-        ENDPOINT=https://inference.generativeai.us-chicago-1.oci.oraclecloud.com
-        </copy>
+    <copy>
+    USERNAME=""
+    DBPASSWORD=""
+    DBCONNECTION=""
+    ADB_NAME=""
+    ADB_OCID=""
+    GRAPH_ENDPOINT=""
+    COMPARTMENT_OCID=""
+    TENANCY_OCID=""
+    ENDPOINT=https://inference.generativeai.us-chicago-1.oci.oraclecloud.com
+    </copy>
     ```
 
-18. The database username should be 'admin'. Use the password that you assigned to the admin user. (Password1234!)
+18. The database username should be 'admin'. Use the password that you assigned to the admin user. (Password1234!). Make sure all the information you enter into the file stays between the quotes.
 
 19. Find your database connection string by selecting navigating to **Oracle Database**, choose **Autonomous Database**, then choose the ATP you created earlier in the lab, **SeerATP**. At the top of the screen, click the button labeled **Database Connection**.
 
