@@ -17,7 +17,7 @@ You will:
 
   *	Combine your **enterprise data with large language models (LLMs)** using Retrieval-Augmented Generation (RAG) to answer natural language questions with context-aware accuracy.
 
-  * Automate real-world financial workflows, like loan approvals, by **embedding and querying unstructured data** in real time.
+  * Automate real-world healthcare workflows, like loan approvals, by **embedding and querying unstructured data** in real time.
 
 By the end of this workshop, you’ll understand how Oracle Database 23ai helps financial organizations:
 

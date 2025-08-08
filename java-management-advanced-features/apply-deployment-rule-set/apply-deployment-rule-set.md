@@ -4,26 +4,201 @@
 
 This lab will guide you through the process of applying Deployment Rule Set (DRS) on your managed Java 8 instances. It's important to note that DRS functionality is only supported up to JDK 8.
 
-Estimated Time: 20 minutes
+Estimated Time:  35 minutes
 
 ### Objectives
 
 In this lab, you will:
 
-   * Upload a signed DRS JAR file to manage rules across all the managed instances in a fleet
-   * Manage the DRS for selected instances
-   * Verify DRS actions has been applied on the managed instances
+* Create and sign a DRS JAR file for deployment
+* Upload a signed DRS JAR file to manage rules across all the managed instances in a fleet
+* Manage the DRS for selected instances
+* Verify DRS actions has been applied on the managed instances
 
 ### Prerequisites
 
-   * You have signed up for an account with Oracle Cloud Infrastructure and have received your sign-in credentials.
-   * You are using an Oracle Linux image or Windows OS on your Managed Instance for this workshop
-   * Access to the cloud environment and resources configured in Lab 1.
-   * Have a signed DRS JAR file ready for use in this lab.
-   * Your managed instances should have JDK 8 to see the effects of DRS on them.
-   * For more in-depth information about DRS, you can explore the official Oracle documentation: [Deployment Rule Set](https://docs.oracle.com/javase/8/docs/technotes/guides/deploy/deployment_rules.html)
+* You have signed up for an account with Oracle Cloud Infrastructure and have received your sign-in credentials.
+* You are using an Oracle Linux image or Windows OS on your Managed Instance for this workshop
+* Access to the cloud environment and resources configured in Lab 1.
+* Java Development Kit (JDK) installed with command line access
+* Your managed instances should have JDK 8 to see the effects of DRS on them.
+* For more in-depth information about DRS, you can explore the official Oracle documentation: [Deployment Rule Set](https://docs.oracle.com/javase/8/docs/technotes/guides/deploy/deployment_rules.html)
 
-## Task 1: Upload and Manage DRS for All Host Machines in Fleet
+## Task 1: Create and Sign a Deployment Rule Set File
+
+### ***Step 1:***  Create the ruleset.xml File
+
+1. Open your preferred text editor (Notepad++, VS Code, or any plain text editor).
+
+2. Create a new file and save it as `ruleset.xml`.
+
+3. Define the rules for your organization using the elements and attributes specified in the Java Deployment Rule Set DTD.
+
+   > **Note**: For detailed information on different rules that can be added to the ruleset, refer to the [Oracle Java Deployment Rule Set documentation](https://docs.oracle.com/javase/10/deploy/deployment-rule-set.htm).
+
+4. Copy and paste the following example ruleset content:
+
+      ```xml
+      <copy>
+      <?xml version="1.0" encoding="UTF-8"?>
+      <!DOCTYPE ruleset SYSTEM "deployment_ruleset.dtd">
+      <ruleset version="1.3+">
+      <rule>
+            <id location="https://host.example.com" />
+            <action permission="run" />
+      </rule>
+      <rule>
+            <id />
+            <action permission="block">
+            <message>Blocked by corporate. Contact J. Smith, smith@host.example.com, if you need to run this app.</message>
+            </action>
+      </rule>
+      </ruleset>
+      </copy>
+      ```
+
+5. Customize the rules according to your organization's requirements and save the file.
+![Screenshot of text editor showing the complete ruleset.xml file with XML syntax highlighting, displaying the ruleset structure with rule elements](images/ruleset-xml-content.png)
+
+&nbsp;
+
+### ***Step 2:*** Create a Keystore and Generate a Key Pair
+
+1. Open a command prompt or terminal.
+
+2. Navigate to the directory where you want to store your keystore file.
+
+3. Run the following command to create a new keystore and generate a key pair:
+
+      ```bash
+      <copy>
+      keytool -genkeypair -alias myalias -keyalg RSA -keysize 2048 -validity 365 -keystore mykeystore.jks
+      </copy>
+      ```
+
+4. You will be prompted to:
+![Terminal screenshot showing the keytool -genkeypair command being executed with the full command line visible](images/keytool-genkeypair-command.png)
+
+   - Enter a password for the keystore (remember this password)
+   - Provide your organization's information (name, organizational unit, organization, city, state, country code)
+   - Confirm the information is correct
+
+&nbsp;
+
+### ***Step 3:*** Create a Certificate Signing Request (CSR)
+
+1. In the same command prompt/terminal, run the following command to create a CSR:
+
+      ```
+      <copy>
+       keytool -certreq -alias myalias -keystore mykeystore.jks -file mycsr.csr
+      </copy>
+      ```
+
+2. Enter the keystore password when prompted.
+
+3. The CSR file `mycsr.csr` will be created in your current directory.
+
+      ![Terminal screenshot showing the keytool -certreq command execution for creating a certificate signing request](images/csr-generation-command.png)
+
+&nbsp;
+
+### ***Step 4:***  Obtain a Certificate
+
+You have two options to obtain a certificate:
+
+#### Option 1: Submit the CSR to a Trusted CA 
+
+1. Submit the CSR (`mycsr.csr`) to a trusted Certificate Authority (e.g., VeriSign, GlobalSign, Let's Encrypt).
+
+2. Follow the CA's process to obtain a certificate.
+
+3. Save the issued certificate to a file (e.g., `mycert.cer`).
+
+#### Option 2: Generate a Self-Signed Certificate 
+
+1. Run the following command to generate a self-signed certificate:
+
+      ```
+      <copy>
+      keytool -selfcert -alias myalias -keystore mykeystore.jks -validity 365
+      </copy>
+      ```
+
+2. Enter the keystore password when prompted.
+
+      ![Terminal screenshot showing the keytool -selfcert command execution with password prompt for generating a self-signed certificate](images/self-signed-cert-generation.png)
+
+&nbsp;
+
+### ***Step 5:***  Import the Certificate into the Keystore
+
+> **Note**: This step is only required if you chose Option 1 (CA-issued certificate) in Step 4.
+
+1. Run the following command to import the certificate into the keystore:
+
+      ```
+      <copy>
+      keytool -importcert -alias myalias -keystore mykeystore.jks -file mycert.cer
+      </copy>
+      ```
+
+2. Enter the keystore password when prompted.
+
+3. Review the certificate details and type `yes` to confirm the import.
+
+&nbsp;
+
+### ***Step 6:*** Sign the ruleset.xml File
+
+1. Create a JAR file containing the `ruleset.xml` file:
+
+      ```
+      <copy>
+      jar -cvf DeploymentRuleSet.jar ruleset.xml
+      </copy>
+      ```
+
+      ![ Terminal screenshot showing the jar -cvf command execution with output displaying the addition of ruleset.xml to DeploymentRuleSet.jar](images/jar-creation-command.png)
+      
+2. Sign the JAR file using the keystore and alias:
+
+      ```
+      <copy>
+      jarsigner -verbose -sigalg SHA256withRSA -digestalg SHA-256 -keystore mykeystore.jks DeploymentRuleSet.jar myalias
+      </copy>
+      ```
+
+3. Enter the keystore password when prompted.
+
+4. The command will display verbose output showing the signing process.
+![Terminal screenshot showing detailed verbose output from jarsigner including file processing, signature generation, and completion status](images/jar-signing-verbose-output.png)
+  
+&nbsp;
+
+### ***Step 7:***  Verify the Signature
+
+1. Run the following command to verify the signature:
+
+      ```
+      <copy>
+      jarsigner -verify -verbose -certs DeploymentRuleSet.jar
+      </copy>
+      ```
+
+2. This command should display:
+   - Certificate information
+   - Confirmation that the JAR file is properly signed
+   - Status showing "jar verified"
+
+3. If successful, you should see output similar to:
+      ![Terminal screenshot showing successful verification output with certificate details and "jar verified" confirmation message](images/jar-verification-output.png)
+
+The resulting `DeploymentRuleSet.jar` file is now created and signed, ready for deployment in the following tasks.
+
+&nbsp;
+
+## Task 2: Upload and Manage DRS for All Host Machines in Fleet
 
 1. Prior to starting this lab, ensure that lifecycle management is enabled. Open the navigation menu, navigate to **Observability & Management**, Under **Java Management**, select **Fleets**.
    
@@ -72,7 +247,7 @@ In this lab, you will:
    
       ![image of distribute drs work request progress](images/distribute-drs-work-request-success.png)
 
-## Task 2: View the Uploaded DRS file in Object Storage
+## Task 3: View the Uploaded DRS file in Object Storage
 
 1. Open the navigation menu, click **Observability & Management**. Under **Java Management**, select **Fleets**.
    
@@ -86,7 +261,7 @@ In this lab, you will:
    
       ![image of fleet details object storage bucket](images/object-storage-drs-jar.png)
 
-## Task 3: (Optional) Managing DRS for a Single Managed Instance in a Fleet
+## Task 4: (Optional) Managing DRS for a Single Managed Instance in a Fleet
 
 1. Open the navigation menu, click **Observability & Management**. Under **Java Management**, select **Fleets**.
    
@@ -113,7 +288,7 @@ In this lab, you will:
    
       ![image of distribute drs work request progress](images/distribute-drs-work-request-success.png)
 
-## Task 4: (Optional) Managing DRS for Selected Instances in a Fleet
+## Task 5: (Optional) Managing DRS for Selected Instances in a Fleet
 
 1. Open the navigation menu, click **Observability & Management**. Under **Java Management**, select **Fleets**.
    
@@ -178,4 +353,4 @@ In this lab, you will:
 ## Acknowledgements
 
 * **Author** - Chan Wei Quan, Java Management Service
-* **Last Updated By** - Hannah Wong, May 2025
+* **Last Updated By** - Hannah Wong, Ayoub El Maalmi  , Jul 2025
