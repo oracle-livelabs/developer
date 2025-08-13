@@ -6,10 +6,6 @@ In this lab, you'll learn how to access the web-based Jupyter Lab development en
 
 Estimated Time: 5 minutes
 
-To get things started we invite you to watch this video and see the lab in action:
-
-  [](videohub:1_t121gz5o:medium)
-
 ### Objective
 
 * Login to JupyterLab
@@ -24,13 +20,17 @@ To get things started we invite you to watch this video and see the lab in actio
 
     ![Login](./images/jupyter-login.png " ")
 
+1. Click the blue "+". This will open the Launcher. 
+
+    ![Open Launcher](./images/launcher.png " ")
+
 ## Task 2: Get familiar with the development environment
 
 1. Review the different elements in JupyterLab:
 
-    **File browser:** The file browser organizes and manages files within the JupyterLab workspace. It supports drag-and-drop file uploads, file creation, renaming, and deletion. Users can open notebooks, terminals, and text editors directly from the browser. Navigation is fast and intuitive, with breadcrumbs and context menus that surface relevant actions. Users can right-click files to access options like duplicate, shutdown kernel, or open with a specific editor.
+    **File browser (1):** The file browser organizes and manages files within the JupyterLab workspace. It supports drag-and-drop file uploads, file creation, renaming, and deletion. Users can open notebooks, terminals, and text editors directly from the browser. Navigation is fast and intuitive, with breadcrumbs and context menus that surface relevant actions. Users can right-click files to access options like duplicate, shutdown kernel, or open with a specific editor.
 
-    **Launcher:** The launcher offers a streamlined entry point for starting new activities. Users can create Jupyter Notebooks for interactive coding with live code execution, visualizations, and rich markdown. The terminal provides direct shell access, enabling command-line operations within the JupyterLab environment. These two tools form the core of most workflows, supporting both interactive analysis and system-level tasks from a single interface.
+    **Launcher (2 and 3):** The launcher offers a streamlined entry point for starting new activities. Users can create Jupyter Notebooks for interactive coding with live code execution, visualizations, and rich markdown. The terminal provides direct shell access, enabling command-line operations within the JupyterLab environment. These two tools form the core of most workflows, supporting both interactive analysis and system-level tasks from a single interface.
 
     ![JupyterLab Launcher](./images/jupyter.png " ")
 

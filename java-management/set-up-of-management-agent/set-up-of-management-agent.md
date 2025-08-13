@@ -33,11 +33,11 @@ If you are installing the agent on other environments (e.g. on-premises, other c
 
 Select the correct compartment where your instance is located. If you have followed the instruction in [Lab 4](?lab=create-a-java-application), this should be **Fleet_Compartment**. Click on your instance to load the compute instance detail page.
 
-![image of compute console](images/console-navigation-compute-list.png)
+![Image of Compute Console](images/console-navigation-compute-list.png)
 
-2. Once the instance detail page has loaded, click on the **Oracle Cloud Agent** tab, then toggle on **Oracle Java Management Service** plugin.
+2. Once the instance detail page has loaded, click on the **Oracle Cloud Agent** tab. Then click on the **...** menu and enable the **Oracle Java Management Service** plugin.
 
-![image of oracle cloud agent tab](images/oca-toggle-jms.png)
+![Image of Oracle Cloud Agent tab](images/oca-toggle-jms.png)
 
 3. When you first toggle on **Oracle Java Management Service** plugin, the status for the plugin will show as **Stopped**. Wait for a few minutes, the status should change to **Running**.
 
@@ -49,7 +49,7 @@ Select the correct compartment where your instance is located. If you have follo
 - Click on the **Managed instances** under Resources on the left hand side.
 - Click on the **Add managed instance(s)** button. A side panel of all the unregistered managed instances should show up.
 - Select the compartment where the unregistered managed instances is located. If you have followed the instruction in [Lab 4](?lab=create-a-java-application), this should be **Fleet_Compartment**.
-- Your managed instance from Step 3 should show up. Check the box next to your instance, then click **Add** to register this instance to your fleet.
+- Your managed instance from Step 3 should appear. Check the box next to your instance, or manually add an OCI instance, , then click **Add** to register this instance to your fleet.
 
 ![image of registering managed instance in fleet](images/register-managed-instance.png)
 
@@ -220,7 +220,7 @@ This task is for the installation of Management Agent in a non-OCI host(e.g. on-
 
   ![image of navigation to instance](images/nav-compute-instance.png)
 
-2. Select your instance, click the **Oracle Cloud Agent** tab.
+2. Select your instance, click the **Management** tab , then scroll down to the **Oracle Cloud Agent section**.
 
   ![image of instance details](images/instance-detail.png)
 
@@ -290,23 +290,33 @@ We shall demonstrate the detection of the Java compiler and HelloWorld applicati
 
 3. Select the compartment that the fleet is in and click the fleet.
 
-4. Click **Java Runtimes** under **Resources**. You should now see Java runtimes belonging to your Managed Instances showing up in the Java runtimes table.
+4. Click **Java Runtimes** in the navigation.
 
   ![image of runtimes after successful installation on oci host](images/successful-installation-oci.png)
 
-5. Click **Applications** under **Resources**. You should now see two new applications. The first is from the HelloWorld application and the second is from the javac compiler command.
+   You should now see Java runtimes belonging to your Managed Instances showing up in the Java runtimes table.
+    ![image of runtimes after successful installation on oci host](images/runtimes-oci.png)
+5. Click **Applications** in the navigation.
 
   ![image of applications after successful installation](images/successful-installation-applications.png)
 
-6. Click on the HelloWorld application to view the details of HelloWorld application. Click on **Application installations** under **Resources** and the two paths that HelloWorld application is installed in would be shown under **Application installation path**.
+  You should now see two new applications. The first is from the HelloWorld application and the second is from the javac compiler command.
+
+  ![image of applications after successful installation](images/successful-installation-applications-views.png)
+
+6. Click on the HelloWorld application to view its details. Click on **Application installations** to see the two paths where the HelloWorld application is installed, which will be displayed under **Application installation path**.
 
   ![image of application installation path](images/application-installation-path.png)
 
-7. The application installation path can also be viewed under Fleet management → Resources (Managed Instances) → Select an instance to click on → Resources (Applications).
+7. The application installation path can also be viewed under Fleet management by clicking **Managed Instances** in the navigation menu.
 
-  ![image of managed instance applications page](images/managed-instance-applications.png)
+    ![Managed instance applications page](images/managed-instance-applications.png)
 
-You may now **proceed to the next lab.**
+    Select your instance and then click on **Applications**.
+
+    ![Managed instance applications view](images/managed-instance-applications-views.png)
+
+    You may now **proceed to the next lab.**
 
 ## Learn More
 
@@ -320,4 +330,4 @@ You may now **proceed to the next lab.**
 ## Acknowledgements
 
 - **Author** - Esther Neoh, Java Management Service
-- **Last Updated By** - Siqi Liu, October 2023
+* **Last Updated By** - El Maalmi Ayoub , Jul 2025

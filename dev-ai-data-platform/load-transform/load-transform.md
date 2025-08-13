@@ -84,6 +84,7 @@ Estimated Lab Time: 45 minutes
 
 ## Task 2: Create and Run Live Table Feed
 
+
   1.  Click the **Create Live Table Feed** button to enter the Create Live Feed wizard  
 
       ![Live Feed Wizard - step 1](./images/live-feed-wizard-step1.png "")  

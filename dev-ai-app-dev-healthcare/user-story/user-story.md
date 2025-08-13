@@ -103,7 +103,7 @@ In this first example, you will use the application to approve a patient with a 
 
     ![James Smith Approved List](./images/james-smith-approved-list.png =50%x*)
 
-**Conclusion**
+**Task Summary**
 
 Once you select and save one of the 3 authorization options recommended by the AI: 
 
@@ -122,7 +122,7 @@ In this example, you will navigate the application to review a customer and deny
 
     ![Select James Woods](./images/james-woods.png =50%x*)
 
-2. Opening James Woods’s profile displays his patient history details. Within a few seconds, the AI generates automatically recommendations. In this case, the system evaluates a less favorable profile and identifies key risk factors.
+2. Opening James Woods’s profile displays his patient history details. Within a few seconds, the AI automatically generates recommendations. In this case, the system evaluates a less favorable profile and identifies key risk factors.
 
     This customer has: [Placeholder]
 
@@ -177,7 +177,7 @@ In this example, you will navigate the application to review a customer and deny
 
     ![James Woods Denied List](./images/james-woods-denied-list.png =50%x*)
 
-**Conclusion**
+**Task Summary**
 
 Congratulations, you have finished reviewing a patient with high fraudulent risk! Proceed to the next task.
 
@@ -207,7 +207,7 @@ Lastly, let’s explore how the system uses JSON Duality Views to handle profile
 
     ![Customer Profile Updated](./images/income-updated.png)
 
-**Conclusion**
+**Task Summary**
 
 Once the document is uploaded:
 
@@ -217,7 +217,7 @@ Once the document is uploaded:
 
 ✅ And thanks to JSON Transform and JSON Duality Views, only the relevant field is modified — leaving the rest of the profile UNTOUCHED.
 
-## Summary
+## Conlusion
 
 In conclusion our Prior Authorizations Management App was able to leverage Oracle database 23ai technologies such as **AI Vector Search, Property Graph and JSON Duality Views** to:
 
