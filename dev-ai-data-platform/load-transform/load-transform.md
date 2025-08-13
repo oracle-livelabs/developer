@@ -53,11 +53,15 @@ Estimated Lab Time: 45 minutes
       ```
 
   5. Right-click on your browser tab and select Duplicate from the context menu to open another browser tab.  Click Database Actions in the top banner of the new tab.
+<<<<<<< Updated upstream
 
 <<<<<<< Updated upstream
 
   1.  Click the **Create Live Table Feed** button to enter the Create Live Feed wizard  
 =======
+=======
+
+>>>>>>> Stashed changes
       ![Click Data Load Button](./images/open-another-browser-tab.png "") 
 
   6. Click Data Studio from the Launchpad page.
@@ -129,6 +133,9 @@ Estimated Lab Time: 45 minutes
 
 
   2.  Click the **Create Live Table Feed** button to enter the Create Live Feed wizard  
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 
       ![Live Feed Wizard - step 1](./images/live-feed-wizard-step1.png "")  
