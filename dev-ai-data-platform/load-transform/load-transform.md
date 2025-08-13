@@ -39,6 +39,9 @@ Estimated Lab Time: 45 minutes
           DECLARE
 <<<<<<< Updated upstream
             object_name     VARCHAR2(200) := 'funding_commitments1.json';
+=======
+            object_name     VARCHAR2(200) :=    'funding_commitments1.json';
+>>>>>>> Stashed changes
             credential_name VARCHAR2(200) := 'OCI_API_KEY_CRED';
             folder_name     VARCHAR2(200) := ‘FUNDING/’;
             source_uri      VARCHAR2(200);
