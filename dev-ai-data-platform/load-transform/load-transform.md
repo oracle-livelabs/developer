@@ -37,11 +37,7 @@ Estimated Lab Time: 45 minutes
       ```
       <copy>
           DECLARE
-<<<<<<< Updated upstream
             object_name     VARCHAR2(200) := 'funding_commitments1.json';
-=======
-            object_name     VARCHAR2(200) :=    'funding_commitments1.json';
->>>>>>> Stashed changes
             credential_name VARCHAR2(200) := 'OCI_API_KEY_CRED';
             folder_name     VARCHAR2(200) := ‘FUNDING/’;
             source_uri      VARCHAR2(200);
@@ -129,6 +125,7 @@ Estimated Lab Time: 45 minutes
 
 
   2.  Click the **Create Live Table Feed** button to enter the Create Live Feed wizard  
+<<<<<<< Updated upstream
 
       ![Click Data Load Button](./images/open-another-browser-tab.png "") 
 
@@ -196,14 +193,16 @@ Estimated Lab Time: 45 minutes
 
   2.  Click the **Create Live Table Feed** button to enter the Create Live Feed wizard  
 
-      ![Live Feed Wizard - step 1](./images/live-feed-wizard-step1.png "")  
-
   3.  Select desired **Cloud Store location**, then click **Next**  
 
       ![Live Feed Wizard - step 2](./images/select-cloud-storage-location.png "")  
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   4. Select details for the Live Table Feed Preview.  
+=======
+  3. Select details for the Live Table Feed Preview.  
+>>>>>>> Stashed changes
 =======
   3. Select details for the Live Table Feed Preview.  
 >>>>>>> Stashed changes
@@ -217,6 +216,7 @@ Estimated Lab Time: 45 minutes
    Click the **Create** button to proceed.
       ![Live Feed Wizard - step 2](./images/live-feed-wizard-step2.png "") 
 
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
   5. Enter  the name of the target table -- FUNDING_PROVIDER_OFFER_STG.  Then modify mapping details exactly as shown below:  
 
@@ -242,6 +242,19 @@ Estimated Lab Time: 45 minutes
 
 5. Enter remaining details for the **Live Table Feed**
 >>>>>>> Stashed changes
+=======
+  4. Enter  the name of the target table -- FUNDING_PROVIDER_OFFER_STG.  Then modify mapping details exactly as shown below:  
+
+      ![Live Feed Wizard - step 3](./images/live-feed-wizard-step3.png "") 
+
+  5. Review the information shown on the Preview page.  
+
+      ![Live Feed Wizard - step 3](./images/live-feed-preview.png "") 
+
+  Click **Next** to proceed.  
+
+5. Enter remaining details for the **Live Table Feed**
+>>>>>>> Stashed changes
 
       a. Enter live feed name **LoanApp_Funding_Feed**  
       b. Check box to **Enable for Scheduling**.  
@@ -251,6 +264,7 @@ Estimated Lab Time: 45 minutes
 
       Click **Create**  
 
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
   8. When the popup box appears, select **No** to run the Live Feed.
 
@@ -264,12 +278,18 @@ Estimated Lab Time: 45 minutes
 
 8.	Manually execute the Live Table Feed. Click the Action icon and select xxx from the context menu.
 >>>>>>> Stashed changes
+=======
+  6. When the popup box appears, select **No** to run the Live Feed.
+
+      ![Run Live Table Feed](./images/dont-run-live-feed.png)
+
+8.	Manually execute the Live Table Feed. Click the Action icon and select xxx from the context menu.
+>>>>>>> Stashed changes
 
       ![Run Live Table Feed](./images/manual-live-feed-run.png)
 
 ## Task 3: Perform Live Table Feed
 
-<<<<<<< Updated upstream
 1.	Return to the SQL | Oracle Database Actions.browser tab.  Change the object_name definition in the SQL Worksheet, as shown below:
 
       ```
@@ -277,11 +297,6 @@ Estimated Lab Time: 45 minutes
       ```
   
 2.	Click the **Run Script** button.  A message indicating the PL/SQL code completed successfully will appear near the bottom of the screen.
-=======
-1.	Return to the SQL | Oracle Database Actions.browser tab.  Modify the object_name definition in the SQL Worksheet, as shown below:
-
-2.	Click the Run Script button.  A message indicating the PL/SQL code completed successfully will appear near the bottom of the screen.
->>>>>>> Stashed changes
 
   ![Load Data from Object Storage](./images/move-data-file2.png)
 
@@ -289,7 +304,6 @@ Estimated Lab Time: 45 minutes
 
   ![Load Data from Object Storage](./images/verify-move-data-file2.png)
 
-<<<<<<< Updated upstream
 ## Task 4: Populate Production Table with Data from the Pipeline.
 
  1.	Return to SQL | Oracle Database Actions browser tab and execute the following code to populate production tables with loan products derived from the data pipeline.
@@ -316,6 +330,8 @@ Estimated Lab Time: 45 minutes
     ```
   
 =======
+=======
+>>>>>>> Stashed changes
 4.	Return to SQL | Oracle Database Actions browser tab and query the target table --- FUNDING_PROVIDER_OFFER_STG to verify that 7 rows were loaded. 
 
     Before:
@@ -348,6 +364,9 @@ Estimated Lab Time: 45 minutes
            
       </copy>
       ```
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 
 ## Conclusion
