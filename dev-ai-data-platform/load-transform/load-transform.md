@@ -197,66 +197,17 @@ Estimated Lab Time: 45 minutes
 
       ![Live Feed Wizard - step 2](./images/select-cloud-storage-location.png "")  
 
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-  4. Select details for the Live Table Feed Preview.  
-=======
-  3. Select details for the Live Table Feed Preview.  
->>>>>>> Stashed changes
-=======
-  3. Select details for the Live Table Feed Preview.  
->>>>>>> Stashed changes
-  
+  3.  Accept the default Table Settings, then click **Next**  
 
-    - For Cloud Store Location: **MyDemoBucket**
-    - For Check box:    **Advanced**
-    - For Folders:      **FUNDING**
-    - From Extensions:  **\*.json**
-    
-   Click the **Create** button to proceed.
       ![Live Feed Wizard - step 2](./images/live-feed-wizard-step2.png "") 
 
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-  5. Enter  the name of the target table -- FUNDING_PROVIDER_OFFER_STG.  Then modify mapping details exactly as shown below:  
-
-      ![Live Feed Wizard - step 3](./images/live-feed-wizard-step3.png "") 
-
-  6. Review the information shown on the Preview page.  
-
-      ![Live Feed Wizard - step 3](./images/live-feed-preview.png "") 
-
-    Click **Next** to proceed.  
-
-  7. Enter remaining details for the **Live Table Feed**
-=======
-  4. Enter  the name of the target table -- FUNDING_PROVIDER_OFFER_STG.  Then modify mapping details exactly as shown below:  
+  4.  Review the information shown on the Preview page, then click **Next**  
 
       ![Live Feed Wizard - step 3](./images/live-feed-wizard-step3.png "") 
 
   5. Review the information shown on the Preview page.  
 
-      ![Live Feed Wizard - step 3](./images/live-feed-preview.png "") 
-
-  Click **Next** to proceed.  
-
-5. Enter remaining details for the **Live Table Feed**
->>>>>>> Stashed changes
-=======
-  4. Enter  the name of the target table -- FUNDING_PROVIDER_OFFER_STG.  Then modify mapping details exactly as shown below:  
-
-      ![Live Feed Wizard - step 3](./images/live-feed-wizard-step3.png "") 
-
-  5. Review the information shown on the Preview page.  
-
-      ![Live Feed Wizard - step 3](./images/live-feed-preview.png "") 
-
-  Click **Next** to proceed.  
-
-5. Enter remaining details for the **Live Table Feed**
->>>>>>> Stashed changes
-
-      a. Enter live feed name **LoanApp_Funding_Feed**  
+      a. Enter the **Live Table Feed Name**  
       b. Check box to **Enable for Scheduling**.  
       c. Select every **2 minutes** for the polling time interval  
 
@@ -264,116 +215,13 @@ Estimated Lab Time: 45 minutes
 
       Click **Create**  
 
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-  8. When the popup box appears, select **No** to run the Live Feed.
+  6. When the popup box appears, select **Yes** to run the Live Feed.
 
-      ![Run Live Table Feed](./images/dont-run-live-feed.png)
+      ![Run Live Table Feed](./images/run-live-table-feed.png)
 
-  8.	Manually execute the Live Table Feed. Click the Action icon and select xxx from the context menu.
-=======
-  6. When the popup box appears, select **No** to run the Live Feed.
+  7. **Review** the details for the newly created Live Feed.  
 
-      ![Run Live Table Feed](./images/dont-run-live-feed.png)
-
-8.	Manually execute the Live Table Feed. Click the Action icon and select xxx from the context menu.
->>>>>>> Stashed changes
-=======
-  6. When the popup box appears, select **No** to run the Live Feed.
-
-      ![Run Live Table Feed](./images/dont-run-live-feed.png)
-
-8.	Manually execute the Live Table Feed. Click the Action icon and select xxx from the context menu.
->>>>>>> Stashed changes
-
-      ![Run Live Table Feed](./images/manual-live-feed-run.png)
-
-## Task 3: Perform Live Table Feed
-
-1.	Return to the SQL | Oracle Database Actions.browser tab.  Change the object_name definition in the SQL Worksheet, as shown below:
-
-      ```
-      object_name      VARCHAR2(200) := 'funding_commitments2.json';
-      ```
-  
-2.	Click the **Run Script** button.  A message indicating the PL/SQL code completed successfully will appear near the bottom of the screen.
-
-  ![Load Data from Object Storage](./images/move-data-file2.png)
-
-3. Navigate to the Data Load | Oracle Database browser tab.  Review the details for the Live Table Feed. 
-
-  ![Load Data from Object Storage](./images/verify-move-data-file2.png)
-
-## Task 4: Populate Production Table with Data from the Pipeline.
-
- 1.	Return to SQL | Oracle Database Actions browser tab and execute the following code to populate production tables with loan products derived from the data pipeline.
-
-    ```
-    <copy>
-          DECLARE
-            new_add  NUMBER;
-            new_bal  NUMBER;
-            when      VARCHAR2(100);
-          BEGIN
-            select to_char(sysdate,'mm-dd-yyyy hh:mi') into when;
-            select count(*) into new_add from funding_provider_offer_stg;
-            
-            CONVERT_FUNDING_TO_LOAN_PRODUCT;
-            
-            select count(*) into new_bal from mock_loan_data;
-           
-            DBMS_OUTPUT.put_line('There are '||new_bal||' loan productions in production');
-            DBMS_OUTPUT.put_line(new_add || ' were added on '||when);
-          END;
-          /  
-    </copy>
-    ```
-  
-=======
-=======
->>>>>>> Stashed changes
-4.	Return to SQL | Oracle Database Actions browser tab and query the target table --- FUNDING_PROVIDER_OFFER_STG to verify that 7 rows were loaded. 
-
-    Before:
-    target_uri  VARCHAR2(100);
-
-    After:
-    target_uri   VARCHAR2(100) := ‘< the MYDEMOBUCKET uri you copied >';
-
-## Task 4: Populate Production with Pipeline Data
-
-1.	Execute the following code to populate production tables with loan products derived from the data pipeline.
-
-
-      ```
-      <copy>
-           DECLARE
-              new_add  NUMBER;
-              new_bal  NUMBER;
-              wow      VARCHAR2(100);
-           BEGIN
-              select to_char(sysdate,'mm-dd-yyyy hh:mi') into wow;
-              select count(*) into new_add from funding_provider_offer_stg;
-              CONVERT_FUNDING_TO_LOAN_PRODUCT;
-              select count(*) into new_bal from mock_loan_data;
-           
-              dbms_output.put_line('There are '||new_bal||' loan productions in production');
-              dbms_output.put_line(new_add || ' were added on '||wow);
-           END;
-           /
-           
-      </copy>
-      ```
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-
-## Conclusion
-In this lab, you built a data pipeline using Oracle Live Table Feed and successfully queried live data from Autonomous Database. You’ve seen how Oracle’s Data Share tool helps teams like SeersEquities’ Risk Department securely access the latest loan data—without duplication, delays, or manual handoffs.
-This workflow ensures faster risk analysis, smarter decisions, and tighter collaboration across the business—all powered by governed, trusted data.
-
-
+  ![Load Data from Object Storage](./images/task-3-scrn-10.png)
 
 ## Learn More
 
