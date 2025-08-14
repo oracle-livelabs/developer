@@ -36,11 +36,12 @@ This lab assumes you have:
     ```bash
     <copy>
     cd dbinit
+    </copy>
     ```
 
     ![Navigate to Directory](./images/dbinit.png " ")
 
-3. Run the following command to create tables in the database. There will be a lot of output. You should see the following output once complete.
+3. Copy and run the following command to create tables in the database. There will be a lot of output. You should see the following output once complete.
 
     ```bash
     <copy>
