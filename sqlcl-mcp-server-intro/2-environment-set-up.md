@@ -2,9 +2,6 @@
 
 ## Introduction
 
-*Describe the lab in one or two sentences, for example:* This lab walks you through the steps to ...
-
-Estimated Time: n minutes
 
 ### About Product/Technology (Optional)
 Enter background information here about the technology/feature or product used in this lab - no need to repeat what you covered in the introduction.
@@ -14,9 +11,11 @@ Enter background information here about the technology/feature or product used i
 *List objectives for this lab*
 
 In this lab, you will:
-* Objective 1
-* Objective 2
-* Objective 3
+* Create a FreeSQL account (or login if you have an already existing account)
+* Install, or modify a current VS Code IDE
+* Install and configure the Oracle SQL Developer for VS Code extension
+* Install the Cline for VS Code extension
+* Install and configure SQlcl
 
 ### Prerequisites (Optional)
 
@@ -232,6 +231,15 @@ In this example, we have chosen to install SQLcl via Homebrew. Thus our SQLcl's 
    | `sql` | <ul><li>`sql`</li><li>`mcp_client`</li><li>`model`</li></ul> | <ul><li>The SQL query to execute</li><li>Specify the name and version of the MCP client implementation being used (e.g. Copilot, Claude, Cline...)</li><li>The name (and version) of the language model being used by the MCP client to process requests (e.g. gpt-4.1, claude-sonnet-4, llama4...</li></ul>|
 
 7. With your SQLcl MCP Server configured, you may now proceed to the next lab.
+
+## Troubleshooting 
+
+•	MCP server not visible: Check JSON registration path/quotes; confirm sql --mcp runs locally.
+•	No connections found: Define named connections in VS Code/SQLcl; verify wallet path/tnsnames.
+•	Agent keeps choosing the wrong tool: Rename tools for clarity; remove overlapping servers; provide stronger tool prompts.
+•	LLM hallucinating SQL: Prefer structured tools (schema explorer, awr); add examples in resources; enforce read only.
+•	Long running queries: Add timeouts, row limits, and place agent sessions into a restricted consumer group.
+
 
 ## Learn More
 

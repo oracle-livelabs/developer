@@ -2,6 +2,8 @@
 
 ## About this Workshop
 
+![1-sqlcl-mcp-interaction-graphic-overview](./images/lab-1/1-sqlcl-mcp-interaction-graphic-overview.png " ")
+
 ```mermaid
 sequenceDiagram
     participant U as User
@@ -19,6 +21,15 @@ sequenceDiagram
     L -->> A: Send processed response
     A -->> U: Present final answer
 ```
+
+What Happens at Each Hop
+1.	User: Asks a task in natural language (e.g., “Find the top 10 most expensive queries from last week and recommend an index.”).
+2.	Agent: Builds/Shows a plan (some agents render a step list), selects MCP tools.
+3.	LLM: Generates the SQL or chooses a prebuilt tool (e.g., “AWR analysis”).
+4.	MCP Server (SQLcl): Executes safely via JDBC using stored credentials (LLM never sees passwords).
+5.	Oracle Database: Enforces all your standard security and returns results.
+6.	Back to LLM: Summarizes, validates, proposes next steps (“Create the index?”).
+7.	User: Reviews/approves each step (stay in the loop; you’re the pilot).
 
 This introduction covers the complete "parent" workshop. Use this text to set up the story for the workshop. Be engaging - what will the learner get from spending their time on this workshop?
 
@@ -112,7 +123,7 @@ What tools do you have at your disposal? The practical scenarios in this lab wil
    | `run-sqlcl` | <ul><li>`sqlcl`</li><li>`mcp_client`</li><li>`model`</li></ul> | <ul><li>The SQLcl command to execute</li><li>Specify the name and version of the MCP client implementation being used (e.g. Copilot, Claude, Cline...)</li><li>The name (and version) of the language model being used by the MCP client to process requests (e.g. gpt-4.1, claude-sonnet-4, llama4...</li></ul>|
    | `sql` | <ul><li>`sql`</li><li>`mcp_client`</li><li>`model`</li></ul> | <ul><li>The SQL query to execute</li><li>Specify the name and version of the MCP client implementation being used (e.g. Copilot, Claude, Cline...)</li><li>The name (and version) of the language model being used by the MCP client to process requests (e.g. gpt-4.1, claude-sonnet-4, llama4...</li></ul>|
 
-##### Security
+##### Security Considerations
 
 Least Privilege: Use read only accounts for analytic/reporting tasks.
 Segregation of Duties: Separate querying from DDL/DML (use different connections).
@@ -131,12 +142,29 @@ Row level security for least data exposure.
 Credentials never shown to the LLM/agent; managed in Oracle Wallet.
 Honors DB roles/privileges and features (VPD/Row Level Security, Data Vault, SQL Firewall, Resource Manager).
 
-
-###### Compatability
+##### Compatability
 
 Compatibility note (from the workshop): JDBC often works against older DBs (even 11g), though only 19c+ is “current/fully supported.” Test as needed.
 
+#### MCP Best Practices
 
+Do
+•	Use read only connections by default.
+•	Keep MCP servers focused (no overlapping “run SQL” from multiple servers).
+•	Make tools explain themselves (clear descriptions).
+•	Log everything the agent runs (transparency).
+Don’t
+•	Don’t blanket approve session actions.
+•	Don’t expose credentials to the LLM.
+•	Don’t deploy agents into production without DB controls (Firewall, Vault, RLS, Resource Manager).
+•	Don’t assume the LLM is always right—review SQL and results.
+
+#### Summary 
+
+•	What: Use MCP to let AI agents safely plan and execute multi step work against Oracle Database.
+•	How: Ship a SQLcl based MCP server exposing clear tools (connect, run sql, awr, etc.), with wallet based credentials and Oracle’s security features intact.
+•	Why: Massive productivity gains (DB exploration, reporting, performance triage) while keeping humans in control and security uncompromised.
+•	Next: Pilot in VS Code with read only data; add logging; iterate; scale to HTTP MCP and OCI Control Plane.
 
 ## Learn More
 
