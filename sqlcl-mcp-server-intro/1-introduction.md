@@ -2,6 +2,7 @@
 
 ## About this Workshop
 
+```mermaid
 sequenceDiagram
     participant U as User
     participant A as Agent (Copilot / Claude / etc.)
@@ -17,7 +18,9 @@ sequenceDiagram
     M -->> L: Return data
     L -->> A: Send processed response
     A -->> U: Present final answer
+```
 
+```mermaid
 flowchart LR
     U[User] --> A[Agent<br/>(Copilot / Claude / etc.)]
     A --> L[LLM<br/>(Plan & Reason)]
@@ -27,6 +30,7 @@ flowchart LR
     M --> L
     L --> A
     A --> U
+```
 
 
 This introduction covers the complete "parent" workshop. Use this text to set up the story for the workshop. Be engaging - what will the learner get from spending their time on this workshop?
