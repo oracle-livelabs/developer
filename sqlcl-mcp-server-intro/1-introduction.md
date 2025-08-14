@@ -2,22 +2,23 @@
 
 ## About this Workshop
 
-
-
-
-
 ```mermaid
-flowchart LR
-    U[User] --> A[Agent<br/>(Copilot / Claude / etc.)]
-    A --> L[LLM<br/>(Plan & Reason)]
-    L --> M[MCP Server<br/>(SQLcl)]
-    M --> O[Oracle Database]
-    O --> M
-    M --> L
-    L --> A
-    A --> U
-```
+sequenceDiagram
+    participant U as User
+    participant A as Agent (Copilot / Claude / etc.)
+    participant L as LLM (Plan & Reason)
+    participant M as MCP Server (SQLcl)
+    participant O as Oracle Database
 
+    U ->> A: Request/Prompt
+    A ->> L: Send input for planning & reasoning
+    L ->> M: Generate SQL and send to MCP Server
+    M ->> O: Execute SQL query
+    O -->> M: Return query results
+    M -->> L: Return data
+    L -->> A: Send processed response
+    A -->> U: Present final answer
+```
 
 This introduction covers the complete "parent" workshop. Use this text to set up the story for the workshop. Be engaging - what will the learner get from spending their time on this workshop?
 
