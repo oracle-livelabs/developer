@@ -32,13 +32,18 @@ In this lab, you will:
 
     ![image of jms resource health dashboard](images/jms-resource-health.png)
 
-3. You can filter the displayed information based on resource type.
-
-    ![image of jms resource type](images/jms-resource-types.png)
+33. You can **filter** the displayed information by clicking the **search bar**, which displays **2 options**: **by name** and **by JMS resource types**.
+    ![Search bar interface showing filter options for name and resource type](images/search-bar-health.png)
+    
+    You can choose **by name** and select the **corresponding name**:
+    ![Search bar filtered by name option with dropdown selection for specific resource names](images/search-bar-by-name-health.png)
+    
+    Or choose the **resource type option** and **filter results** based on **resource type**:
+    ![Resource type filter dropdown showing available Java Management Service resource types for filtering](images/jms-resource-types.png)
 
 ## Task 2: Troubleshoot JMS Fleet Health Issue
 
-1. Click the action menu and select **Review health** issue option to resolve the issue related to the selected fleet.
+1. Click the action menu and select **Review health issue** option to resolve the issue related to the selected fleet.
 
     ![image of jms resource health menu](images/jms-resource-health-menu.png)
 
@@ -61,7 +66,7 @@ In this lab, you will:
 
 ## Task 3: Troubleshoot JMS Plug-in Health Issue
 
-1. Click the action menu and select **Review health** issue option to resolve the issue related to the selected plug-in.
+1. Click the action menu and select **Review health issue** option to resolve the issue related to the selected plug-in.
 
     ![image of jms plug-in health menu](images/jms-plugin-health-menu.png)
 
@@ -91,4 +96,4 @@ In this lab, you will:
 ## Acknowledgements
 
 * **Author** - El Khaider Amine, Java Management Service
-* **Last Updated By** - El Khaider Amine, March 2025
+* **Last Updated By** - El Maalmi Ayoub, Jul 2025

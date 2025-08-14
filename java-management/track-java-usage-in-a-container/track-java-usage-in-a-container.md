@@ -333,7 +333,7 @@ You should now have a compute instance with Docker installed and a Docker image 
   > **Note:** You should only use this configuration with trusted containers or where you do not require isolation between the host and the container, or between containers.
 
 2. You may now check your Fleet in OCI console to see if your Docker container was detected. You should be able to see the OddNumbers.jar under **Applications**.
-  ![image of fleet details page showing jar file in container](images/fleets-details-docker.png)
+  ![image of fleet details page showing jar file in container](images/fleets-details-dockerfleet.png)
 
 ## Troubleshoot Docker issues
 
@@ -355,4 +355,4 @@ You should now have a compute instance with Docker installed and a Docker image 
 ## Acknowledgements
 
 * **Author** - Alvin Lam, Java Management Service
-* **Last Updated By/Date** - Ivan Eng, June 2023
+* **Last Updated By** - El Maalmi Ayoub, Jul 2025

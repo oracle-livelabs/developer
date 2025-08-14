@@ -2,7 +2,7 @@
 
 ## Introduction
 
-In this lab, you will build a loan recommendation system powered by Oracle Database 23ai and OCI Generative AI. You will connect to a Oracle Database 23ai, explore customer data, extract relevant insights, and use a Large Language Model (LLM) to generate personalized loan suggestions. The system combines AI with OCI Generative AI to provide personalized loan recommendations. This system integrates AI capabilities with Oracle's robust database technology to deliver targeted financial recommendations.
+Here you’ll create an end‑to‑end prior‑authorization system using Oracle Database 23ai and OCI Generative AI. After connecting to clinical datasets, you’ll analyze patient records and leverage an LLM to recommend approval, pend, or denial - complete with evidence citations. By applying Python skills from prior labs, you’ll assemble a fully integrated, AI‑driven healthcare review portal.
 
 This lab uses some of the basic coding samples you created in lab 3, such as cursor.execute and more.
 
@@ -15,10 +15,10 @@ To get things started we invite you to watch this video and see the lab in actio
 
 ### Objectives
 
-* Build the complete loan approval application as seen in lab 1
-* Use OCI Generative AI to generate personalized loan recommendations
+* Build the complete healthcare claim approval application as seen in lab 1
+* Use OCI Generative AI to generate personalized claim recommendations
 * Use Python to connect to an Oracle Database 23ai instance and run queries
-* Explore customer data and extract relevant information
+* Explore patient data and extract relevant information
 
 ### Prerequisites
 
@@ -196,7 +196,7 @@ Here’s what we’ll do:
 
 ## Task 6: Create a function to create embeddings - Use Oracle Database 23ai's to create vector data 
 
-To handle follow-up questions, you will enhance the system with an AI Loan Guru powered by Oracle 23ai’s Vector Search and Retrieval-Augmented Generation (RAG). The AI Loan Guru will be able to answer questions about the loan application and provide recommendations based on the data.
+To handle follow-up questions, you will enhance the system with an AI Healthcare Guru powered by Oracle 23ai’s Vector Search and Retrieval-Augmented Generation (RAG). The AI Healthcare Guru will be able to answer questions about the return application and provide recommendations based on the data.
 
 Before answering questions, we need to prepare the data by vectoring the loan recommendations. This step:
 

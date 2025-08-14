@@ -80,5 +80,5 @@ You may now **proceed to the next lab.**
 
 ## Acknowledgements
 
-- **Author** - Xin Yi Tay, Java Management Service
-- **Last Updated By** - Yuan Chi Liu, October 2023
+* **Author** - Xin Yi Tay, Java Management Service
+* **Last Updated By** - El Maalmi Ayoub, Jul 2025

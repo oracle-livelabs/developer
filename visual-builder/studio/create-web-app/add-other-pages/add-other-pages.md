@@ -64,7 +64,7 @@ Now that we've added options to let users manage departments, we'll do the same 
 
 7. In the Avatar's Properties pane, select **Large** in the **Size** drop-down list to increase the component's size.
 
-8. Click the **Data** tab and bind the component to a data source. Components are typically bound to variables that store and display data from your data source. Quick Starts automate this for you, but in this step, we'll manually bind the Avatar component to the **picture** variable that retrieves its data from the **picture** field in the Employee business object. To do this, hover over the **Src** field in the Data tab, click ![Select Variable icon](images/variable-picker-icon.png) to open the Variable picker, then select **picture** under the **employee** object.
+8. Click the **Data** tab and bind the component to a data source. Components are typically bound to variables that store and display data from your data source. Quick Starts automate this for you, but in this step, we'll manually bind the Avatar component to the **picture** variable that retrieves its data from the **picture** field in the Employee business object. To do this, hover over the **Src** field in the Data tab, click ![Select Variable icon](images/variable-picker-icon.png) to open the Variable picker, expand the **employee** object under Page and Variables, then select **picture**.
 
     ![A combined image that shows the Select Variable picker being selected in the Avatar component's Data tab. The lower half of the image shows the contents of the Variable picker, with picture under the employee object selected.](images/avatar-bind-data.png "")
 
@@ -83,7 +83,7 @@ Now that we've added options to let users manage departments, we'll do the same 
 
     ![The button's Events tab shows the deleteEmployeeChain as the action chain triggered by the ojAction event.](images/deleteempchain.png "")
 
-4. When the deleteEmployeeChain opens in the Action Chain editor, drag a Fire Data Provider Event (used to dispatch an event on a data provider) and drop it on the canvas between the existing Fire Data Provider Event and Fire Notification actions.
+4. When the deleteEmployeeChain opens in the Action Chain editor, drag a Fire Data Provider Event and drop it on the canvas between the existing Fire Data Provider Event and Fire Notification actions. The Fire Data Provider Event action is used to dispatch an event on a data provider.
 
     ![The deleteEmployeeChain shows in diagram view. On the success branch of the Call REST action, a second Fire Data Provider Event action has been added. Its properties pane show on the right: Event Target is undefined and Type is set to Mutate.](images/deleteempchain-actionchain.png "")
 
@@ -120,7 +120,7 @@ Now test the newly created Department and Employee pages.
 
 9. Click **Edit Employee**.
 
-10. On the Edit Employee page, change the **Department** to `IT` and **Salary** to 6000. Click **Save**. A success message appears, and you are returned to the Employees page. Notice how the bar chart also changes to show the employee's updated salary.
+10. On the Edit Employee page, change the **Department** to `IT` and **Salary** to 6000. Click **Save**. A success message appears, and you are returned to the Employees page. Notice how the bar chart also changes to show the employee's updated salary and department.
 
 11. Click **Create Employee** and specify the data for a new employee, for example:
     * **Name**: `Walter`
@@ -158,4 +158,4 @@ Now that we have our web pages, let's change the application's home page from De
 ## Acknowledgements
 
 * **Author** - Sheryl Manoharan, VB Studio User Assistance, November 2021
-* **Last Updated By/Date** - Sheryl Manoharan, April 2025
+* **Last Updated By/Date** - Sheryl Manoharan, July 2025
