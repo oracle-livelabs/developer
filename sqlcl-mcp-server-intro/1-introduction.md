@@ -2,6 +2,33 @@
 
 ## About this Workshop
 
+sequenceDiagram
+    participant U as User
+    participant A as Agent (Copilot / Claude / etc.)
+    participant L as LLM (Plan & Reason)
+    participant M as MCP Server (SQLcl)
+    participant O as Oracle Database
+
+    U ->> A: Request/Prompt
+    A ->> L: Send input for planning & reasoning
+    L ->> M: Generate SQL and send to MCP Server
+    M ->> O: Execute SQL query
+    O -->> M: Return query results
+    M -->> L: Return data
+    L -->> A: Send processed response
+    A -->> U: Present final answer
+
+flowchart LR
+    U[User] --> A[Agent<br/>(Copilot / Claude / etc.)]
+    A --> L[LLM<br/>(Plan & Reason)]
+    L --> M[MCP Server<br/>(SQLcl)]
+    M --> O[Oracle Database]
+    O --> M
+    M --> L
+    L --> A
+    A --> U
+
+
 This introduction covers the complete "parent" workshop. Use this text to set up the story for the workshop. Be engaging - what will the learner get from spending their time on this workshop?
 
 Estimated Time: -- hours -- minutes (This estimate is for the entire workshop - it is the sum of the estimates provided for each of the labs included in the workshop.)
@@ -45,7 +72,7 @@ MCP solves this specific problem:
 
 > *How can I securely use LLMs in and around my Oracle Database, while also keeping SQLcl as my "base of operations."*
 
-##### The Protocol
+##### Protocols
 
 When you interact with your MCP server, the natural language question you ask is translated in a way that the MCP server can understand while also considering how it might use your MCP's available Tools to achieve your goals.
 
@@ -56,7 +83,7 @@ Much happens under the covers for MCP to work, but you should know that MCP can 
 
 The SQLcl MCP server utilizes the fast, no overhead Stdio communcation mechanism. To you, the end user, *this* is what makes up the **Protocol** in Model Context Protocol (MCP). 
 
-##### MCP capabilities
+##### Capabilities
 
 We mentioned Capabilities earlier. Technically speaking an MCP will have a set of Primitives. They can be any one of the following: 
 
@@ -76,7 +103,7 @@ For many users, and scripting tools, SQLcl is the preferred way to interact with
 
 But as an end-user, you probably want to know what you can do with this SQLcl MCP Server. Read on to learn more. 
 
-##### SQLcl MCP tools
+##### Tools
 
 The SQLcl MCP server, like other MCP servers provides you with contextual "Tools." In the case of SQLcl, your MCP server "comes alive" after you've configured your database credentials, Connect String, and/or Cloud Wallet. 
 
@@ -93,6 +120,32 @@ What tools do you have at your disposal? The practical scenarios in this lab wil
    | `disconnect` | <ul><li>`mcp_client`</li><li>`model`</li></ul> | <ul><li>The name of the saved connection you want to connect to</li><li>The name (and version) of the language model being used by the MCP client to process requests (e.g. gpt-4.1, claude-sonnet-4, llama4...</li></ul>|
    | `run-sqlcl` | <ul><li>`sqlcl`</li><li>`mcp_client`</li><li>`model`</li></ul> | <ul><li>The SQLcl command to execute</li><li>Specify the name and version of the MCP client implementation being used (e.g. Copilot, Claude, Cline...)</li><li>The name (and version) of the language model being used by the MCP client to process requests (e.g. gpt-4.1, claude-sonnet-4, llama4...</li></ul>|
    | `sql` | <ul><li>`sql`</li><li>`mcp_client`</li><li>`model`</li></ul> | <ul><li>The SQL query to execute</li><li>Specify the name and version of the MCP client implementation being used (e.g. Copilot, Claude, Cline...)</li><li>The name (and version) of the language model being used by the MCP client to process requests (e.g. gpt-4.1, claude-sonnet-4, llama4...</li></ul>|
+
+##### Security
+
+Least Privilege: Use read only accounts for analytic/reporting tasks.
+Segregation of Duties: Separate querying from DDL/DML (use different connections).
+Policies: Apply existing AI data use policies; add agent specific rules (e.g., “no PII extraction,” “no mass updates”).
+Avoid Tool Overlap: Do not ship multiple MCP servers that claim the same capability (e.g., multiple “run SQL” tools) — agents will get confused.
+Approval Workflow: Require per step approval for anything that changes data, schema, security, or performance posture.
+Monitoring:
+Tag queries (model + agent) via SQL comments.
+Store agent actions (who/what/when/db/plan) in an audit table.
+Defense in Depth:
+SQL Firewall patterns to block risky statements.
+Data Vault for privileged access management.
+Resource Manager for runaway queries.
+Row level security for least data exposure.
+
+Credentials never shown to the LLM/agent; managed in Oracle Wallet.
+Honors DB roles/privileges and features (VPD/Row Level Security, Data Vault, SQL Firewall, Resource Manager).
+
+
+###### Compatability
+
+Compatibility note (from the workshop): JDBC often works against older DBs (even 11g), though only 19c+ is “current/fully supported.” Test as needed.
+
+
 
 ## Learn More
 
