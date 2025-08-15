@@ -27,7 +27,32 @@ Estimated Lab Time: 45 minutes
 
       Click **Sign-in** button  
 
-  3.  Click **Data Load** button  
+  3. Select the Development tab, then click SQL to open the SQL Worksheet.
+
+      ![Click Data Load Button](./images/open-sql-development.png "") 
+
+   4. Copy the following PL/SQL code to your clipboard, then paste it in the SQL Worksheet.  We will be using it to copy objects from one storage bucket to another. 
+  
+
+      ```
+      <copy>
+          DECLARE
+            object_name     VARCHAR2(200) :=    'funding_commitments1.json';
+            credential_name VARCHAR2(200) := 'OCI_API_KEY_CRED';
+            folder_name     VARCHAR2(200) := ‘FUNDING/’;
+            source_uri      VARCHAR2(200);
+            target_uri      VARCHAR2(200);;
+           BEGIN
+            source_uri := source_uri||object_name;
+            target_uri := target_url||folder_name ||object_name;
+      
+            DBMS_CLOUD.COPY_OBJECT (credential_name, source_uri, target_uri);
+           END;
+           /
+      </copy>
+      ```
+
+  5. Right-click on your browser tab and select Duplicate from the context menu to open another browser tab.  Click Database Actions in the top banner of the new tab.
 
       ![Click Data Load Button](./images/open-another-browser-tab.png "") 
 
@@ -80,18 +105,36 @@ Estimated Lab Time: 45 minutes
 
 15.	Click the Run Script button.  A message indicating the PL/SQL code completed successfully will appear near the bottom of the screen.
 
-      ![Click Data Load Button](./images/select-feed-data.png "") 
+      ![Click Data Load Button](./images/run-move-script.png "")  
 
-## Task 2: Create and Run Live Table Feed
+16.	Return to Data Load | Oracle Database browser tab.  Click the Actions icon in the MyDemoBucket panel and select Objects from the context menu.
+
+    ![Click Data Load Button](./images/move-data-file1.png "") 
+
+17.	Click the folder icon to confirm that the funding_commitments1.json file in the LOANAPP_FUNDING bucket has been successfully copied here.  
+
+    ![Click Data Load Button](./images/confirm-move-data-file1.png "") 
+
+  Click **Close** to exit.  
+
+## Task 2: Build Initial Table Feed
+
+  1. Navigate to the Data Load | Oracle Database tab.  Select Feed Data.
+
+      ![Click Data Load Button](./images/navigate-to-data-load.png "") 
 
 
-  1.  Click the **Create Live Table Feed** button to enter the Create Live Feed wizard  
+  2.  Click the **Create Live Table Feed** button to enter the Create Live Feed wizard  
 
       ![Live Feed Wizard - step 1](./images/live-feed-wizard-step1.png "")  
 
-  2.  Select desired **Cloud Store location**, then click **Next**  
+  3. Enter details for the Live Table Feed Preview.  
+  
+     Cloud Store Location: **MyDemoBucket**  
+     Check box:            **Advanced**  
+     Object Filter:        **FUNDING\\*.json**  
 
-      ![Live Feed Wizard - step 2](./images/select-cloud-storage-location.png "")  
+      ![Live Feed Wizard - step 1](./images/live-feed-wizard-step1a.png "")  
 
   3. Select details for the Live Table Feed Preview.  
   
