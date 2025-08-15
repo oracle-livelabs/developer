@@ -44,6 +44,9 @@ This lab assumes you have:
 All of the coding examples will be executed in a new Jupyter Notebook.
 
 1. In **JupyterLab**, click the blue **+** to open the Launcher  
+
+    ![Open Launcher](./images/launcher.png " ")
+
 2. Start a new **Python (ipykernel)** notebook
 
     ![Open Jupyter Notebook](./images/open-new-notebook.png " ")
