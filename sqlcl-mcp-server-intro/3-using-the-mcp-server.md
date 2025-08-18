@@ -64,7 +64,8 @@ When you are done, you will inspect the MCP logging table in your schema to see 
 
    ![image](./images/lab-3/cline-2.png " ")
 
-   > :note: Note the tool name, followed by the arguments. In this case, Cline wants to "see" what database connections are available.
+   > [!NOTE] 
+   > Note the tool name, followed by the arguments. In this case, Cline wants to "see" what database connections are available.
 
 5. Select the <kbd>Approve</kbd> button to allow the Agent to continue its plan. 
 
@@ -94,110 +95,60 @@ When you are done, you will inspect the MCP logging table in your schema to see 
      Now let me run a test query to verify everything is working properly. I'll start with a simple query to check the current database time:
      ```
 
-> [!NOTE] 
-> LLM training data can vary widely among versions and vendors. Thus, an LLM may generate one of several different types of queries to satisfy our request to 'test' the connection and system. 
+   > [!NOTE] 
+   > LLM training data can vary widely among versions and vendors. Thus, an LLM may generate one of several different types of queries to satisfy our request to 'test' the connection and system. 
 
-> [!WARNING]
-> It is very important that you review the following SQL, or update your prompt to include the exact SQL you want the Agent to use.
+   > [!WARNING]
+   > It is very important that you review the following SQL, or update your prompt to include the exact SQL you want the Agent to use.<p>
 
+9. Scroll through the "sql" attribute to review the SQL statement. 
 
-![image](cline-3.png)
+   ![image](./images/lab-3/cline-3.png " ")
 
-If we scroll through the "sql" attribute, we can review the entire statement. 
+   In the above example the complete SQL statement will resemble the following:
 
-For example, the LLM has generate this SQL:
-
+    ```sql
     SELECT /* LLM in use is claude-3-5-sonnet-20241022 */
-           SYSDATE as current_time,
-           USER as connected_user
-      FROM DUAL
-
-After confirming the generate SQL is appropriate, we can can again, APPROVE the task request, and let the Agent continue with its plan.
-
-The *run-sql* tool returns query results as CSV, and in the Cline panel, you can see the 'Plain Text' response, followed by the Agent's interpretation of those results. 
-
-The username should be your FreeSQL database username, or whatever you used to define your connection.
-
-As a best practice, you should prompt Cline to close your database connection when you are done with it. It will prompt you for permission to use the *disconnect* tool, which you can approve.
-
-The agent will finish the task with a Summary of what it has done to accomplish your original task. 
-
-*Note: the agent may wish to continue running more queries, in order to get you more information about your database. It is up to YOU to decide to allow it to continue, or to DENY it's follow-up requests, or let it know with an additional prompt that it's ok to stop.*
-
-Before we finish this section of our lab, let's inpsect the information that was recorded in our database.
-
-In the SQL Developer panel, connect to your database, and open the Tables tab. Find the *DBTOOLS$MCP_LOG* table, and open it. Browse the Data tab to find the interactions from our previous Cline project.
-
-![image](cline-5.png)
-
-That's it, you are now ready to start exploring the power of your Agent, it's LLMs, and your Oracle Database via our MCP Server!
-
-
-## Task 1: MCP introspects schema
-
-(optional) Step 1 opening paragraph.
-
-1. Allow the MCP server to gather insights from your schema 
-
-2. 
-
-		<!-- ![Image alt text](images/sample1.png)
-
-  To create a link to local file you want the reader to download, use the following format.
-
-	> **Note:** _The filename must be in lowercase letters and CANNOT include any spaces._
-
-  Download the [starter file](files/starter-file.sql) SQL code.
-
-	When the file type is recognized by the browser, it will attempt to render it. So you can use the following format to force the download dialog box.
-
-	> **Note:** _The filename must be in lowercase letters and CANNOT include any spaces._
-
-	Download the [sample JSON code](files/sample.json?download=1).
-
-  *IMPORTANT: do not include zip files, CSV, PDF, PSD, JAR, WAR, EAR, bin or exe files - you must have those objects stored somewhere else. We highly recommend using Oracle Cloud Object Store and creating a PAR URL instead. See [Using Pre-Authenticated Requests](https://docs.cloud.oracle.com/en-us/iaas/Content/Object/Tasks/usingpreauthenticatedrequests.htm)*
-
-2. Sub step 2
-
-    ![Image alt text](images/sample1.png)
-
-4. Example with inline navigation icon ![Image alt text](images/sample2.png) click **Navigation**.
-
-5. Example with bold **text**.
-
-  If you add another paragraph, add 3 spaces before the line.
-
-## Task 2: <what is the action in this step>
-
-1. Sub step 1 - tables sample
-
-  Use tables sparingly:
-
-  | Column 1 | Column 2 | Column 3 |
-  | --- | --- | --- |
-  | 1 | Some text or a link | More text  |
-  | 2 |Some text or a link | More text |
-  | 3 | Some text or a link | More text |
-
-2. You can also include bulleted lists - make sure to indent 4 spaces:
-
-    - List item 1
-    - List item 2
-
-3. Code examples
-
-    ```
-    Adding code examples
-  	Indentation is important for the code example to appear inside the step
-    Multiple lines of code
-  	<copy>Enclose the text you want to copy in <copy></copy>.</copy>
+          SYSDATE as current_time,
+          USER as connected_user
+    FROM DUAL
     ```
 
-4. Code examples that include variables
+10. After confirming the generated SQL is correct, we can can again, <kbd>Approve</kbd> the task request. The agent will continue with it's plan.
 
-	```
-  <copy>ssh -i <ssh-key-file></copy>
-  ```
+      <!-- The *run-sql* tool returns query results as CSV, and in the Cline panel, you can see the 'Plain Text' response, followed by the Agent's interpretation of those results.  --> 
+
+      <!-- Think we should omit this ^^, unless we want to show an example flow. -->
+
+      ![image](./images/lab-3/cline-4.png " ")
+
+    > [!NOTE] 
+    > The username should be the one you established in the previous lab, one of: your Tenancy, workshop-provided, or FreeSQL credentials. 
+
+## Task 2: Closing the connection
+
+1. As a best practice, you should prompt Cline to close your database connection when you are finished. Cline will prompt you for permission to use the `disconnect` tool; which you should approve.
+
+2. The Cline agent will finish its task and provide you with a summary steps used to achieve your original task or prompts.
+
+    > [!NOTE]
+    > The agent may wish to continue running more queries, in an attempt to provide you with more information about your database. It is up to **YOU** to:
+    >
+    > - allow it to continue
+    > - deny any follow-up requests, or 
+    > - provide it with a follow-up prompt to cease operations
+
+3. Before completing this lab, you can inspect the information that was recorded in our database. Locate the Oracle SQL Developer extension in the Activity Panel.
+
+4. Click the connection you used with the SQLcl MCP server to connect to the database.
+
+5. Click the `Tables` object to expand it. Locate the `DBTOOLS$MCP_LOG` table, and click it to open up a new panel. 
+
+6. Click the Data tab to review the interactions from our previous Cline project. These logs will capture the SQL, PLSQL, and SQL scripts that were executed on your behalf (via Cline), by the SQLcl MCP Server.
+
+   ![image](./images/lab-3/cline-5.png " ")
+
+7. That's it! You are now ready to start exploring the power of your Agent, it's LLMs, and your Oracle Database via the SQLcl MCP Server!
 
 ## Learn More
 
