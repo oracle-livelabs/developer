@@ -64,8 +64,8 @@ When you are done, you will inspect the MCP logging table in your schema to see 
 
    ![image](./images/lab-3/cline-2.png " ")
 
-   > [!NOTE] 
-   > Note the tool name, followed by the arguments. In this case, Cline wants to "see" what database connections are available.
+> [!NOTE] 
+> Note the tool name, followed by the arguments. In this case, Cline wants to "see" what database connections are available.
 
 5. Select the <kbd>Approve</kbd> button to allow the Agent to continue its plan. 
 
@@ -95,11 +95,11 @@ When you are done, you will inspect the MCP logging table in your schema to see 
      Now let me run a test query to verify everything is working properly. I'll start with a simple query to check the current database time:
      ```
 
-   > [!NOTE] 
-   > LLM training data can vary widely among versions and vendors. Thus, an LLM may generate one of several different types of queries to satisfy our request to 'test' the connection and system. 
+> [!NOTE] 
+> LLM training data can vary widely among versions and vendors. Thus, an LLM may generate one of several different types of queries to satisfy our request to 'test' the connection and system. 
 
-   > [!WARNING]
-   > It is very important that you review the following SQL, or update your prompt to include the exact SQL you want the Agent to use.<p>
+> [!WARNING]
+> It is very important that you review the following SQL, or update your prompt to include the exact SQL you want the Agent to use.<p>
 
 9. Scroll through the "sql" attribute to review the SQL statement. 
 
@@ -122,8 +122,8 @@ When you are done, you will inspect the MCP logging table in your schema to see 
 
       ![image](./images/lab-3/cline-4.png " ")
 
-    > [!NOTE] 
-    > The username should be the one you established in the previous lab, one of: your Tenancy, workshop-provided, or FreeSQL credentials. 
+> [!NOTE] 
+> The username should be the one you established in the previous lab, one of: your Tenancy, workshop-provided, or FreeSQL credentials. 
 
 ## Task 2: Closing the connection
 
@@ -131,12 +131,12 @@ When you are done, you will inspect the MCP logging table in your schema to see 
 
 2. The Cline agent will finish its task and provide you with a summary steps used to achieve your original task or prompts.
 
-    > [!NOTE]
-    > The agent may wish to continue running more queries, in an attempt to provide you with more information about your database. It is up to **YOU** to:
-    >
-    > - allow it to continue
-    > - deny any follow-up requests, or 
-    > - provide it with a follow-up prompt to cease operations
+> [!NOTE]
+> The agent may wish to continue running more queries, in an attempt to provide you with more information about your database. It is up to **YOU** to:
+>
+> - allow it to continue
+> - deny any follow-up requests, or 
+> - provide it with a follow-up prompt to cease operations
 
 3. Before completing this lab, you can inspect the information that was recorded in our database. Locate the Oracle SQL Developer extension in the Activity Panel.
 
