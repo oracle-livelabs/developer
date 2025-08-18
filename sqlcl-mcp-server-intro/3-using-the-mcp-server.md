@@ -53,7 +53,7 @@ The results will be analyzed by the LLM and summarized.
 When you are done, you will inspect the MCP logging table in your schema to see what has happened in the database, via our MCP Server. -->
 
   
-3. Enable "Plan Mode", by clicking the work "Plan." Then, in the Task input area of Cline, enter the following prompt:
+3. Enable "Plan Mode", by clicking the word "Plan." Then, in the Task input area of Cline, enter the following prompt:
 
     ```txt
     connect to my database and run a test query to make sure everything is working as expected
