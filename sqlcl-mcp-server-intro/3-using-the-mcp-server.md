@@ -2,7 +2,7 @@
 
 ## Introduction
 
-In this lab you will become acquainted with Cline, an open-source AI coding agent, and the SQLcl MCP server. Throughout this labs presented here, Cline will act as an interpreter to your plain language requests and prompts. These requests and prompts are then sent to the SQLcl MCP server. 
+In this lab you will become acquainted with Cline, an open-source AI coding agent, and the SQLcl MCP server. Throughout the labs presented here, Cline will act as an interpreter to your plain language requests and prompts. These requests and prompts are then sent to the SQLcl MCP server. 
 
 The SQLcl MCP server will act upon your requests and intents, communicating with the database on your behalf. This new way of working with your Oracle database allows for a more natural/plain language, conversation-based interaction.
 
