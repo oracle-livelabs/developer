@@ -2,9 +2,14 @@
 
 ## Introduction
 
+In this Lab, you will configure your local workstation to connect with the SQLcl MCP Server. You will install and configure VS Code and related extensions, SQLcl, and the SQLcl MCP server.
+
+This lab will 
+
+*Describe the lab in one or two sentences, for example:* This lab walks you through the Steps to ...
 
 ### About Product/Technology (Optional)
-Enter background information here about the technology/feature or product used in this lab - no need to repeat what you covered in the introduction.
+Enter background information here about the technology/feature or product used in this lab - no need to repeat what you covered in the introduction. Keep this section fairly concise. If you find yourself needing more than to sections/paragraphs, please utilize the "Learn More" section.
 
 ### Objectives
 
@@ -17,17 +22,11 @@ In this lab, you will:
 * Install the Cline for VS Code extension
 * Install and configure SQlcl
 
-### Prerequisites (Optional)
-
-*List the prerequisites for this lab using the format below. Fill in whatever knowledge, accounts, etc. is needed to complete the lab. **Do NOT list** each previous lab as a prerequisite.*
-
+### Prerequisites
+<!-- Something about copilot (if existing customer) -->
 This lab assumes you have:
-* An Oracle account
+* A personal computer or access to a workshop-provided workstation
 * All previous labs successfully completed
-
-*This is the "fold" - below items are collapsed by default*
-
-<mark>Highlighting indicates To-Do/Pending</mark>
 
 ## Task 1: Create a FreeSQL account
 
