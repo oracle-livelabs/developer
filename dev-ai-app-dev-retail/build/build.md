@@ -337,7 +337,7 @@ Here’s what we’ll do:
 
     ![Run Task 5](./images/run-task5.png " ")
 
-3. Review the output. In the demo, this is where you selected the "Navigate to Decisions" button as the Approval Officer. You just used AI to get recommendations for the approval officer which would have taken them hours to do, congratulations!
+3. Review the output. In the demo, this is where you selected the "Navigate to Decisions" button as the Approval Specialist. You just used AI to get recommendations for the approval officer which would have taken them hours to do, congratulations!
 
     >*Note:* Your result may be different due to non-deterministic character of generative AI.
 
