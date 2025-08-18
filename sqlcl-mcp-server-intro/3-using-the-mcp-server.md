@@ -36,7 +36,7 @@ This lab assumes you have:
 
 1. Is the MCP Server working?
 
-You will need to confirm that the SQLcl MCP Server is working *before* you can begin interacting with it. 
+   You will need to confirm that the SQLcl MCP Server is working *before* you can begin interacting with it. 
 
 2. Locate the Cline extension. Ensure you see the Agent prompt. Notice the Plan and Act modes; you will toggle between these modes depending on your intent and prompts used. For adhering to security best practices, ensure the "Auto-Approve" option is disabled.
 
