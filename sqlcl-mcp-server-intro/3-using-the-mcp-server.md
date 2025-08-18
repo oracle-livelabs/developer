@@ -95,7 +95,7 @@ When you are done, you will inspect the MCP logging table in your schema to see 
      ```
      </p>
 
-> :NOTE: LLM training data can vary widely among versions and vendors. Thus, an LLM may generate one of several different types of queries to satisfy our request to 'test' the connection and system. 
+> [!NOTE] LLM training data can vary widely among versions and vendors. Thus, an LLM may generate one of several different types of queries to satisfy our request to 'test' the connection and system. 
 
 > :warning: It is very important that you review the following SQL, or update your prompt to include the exact SQL you want the Agent to use.
 
