@@ -31,7 +31,6 @@ This lab assumes you have:
 * Configured an Oracle Database connection using the Oracle SQL Developer for VS Code extension</p>
   * > Note: If participating in a workshop, you may optionally use your FREESQL credentials.
 * Installed the Cline for VS Code Extension
-* 
 
 ## Task 1: Testing your configuration and getting started
 
