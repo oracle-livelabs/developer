@@ -66,9 +66,9 @@ First, log into your Autonomous Database and connect to the Catalog Tool to disc
     - Choose the **Select Bucket** radio button
     - From the dropdown list choose the Bucket Named: **MyDemoBucket**
 
-   Click the **Create** button to proceed.
-
     ![Add Connections to Catalog](./images/add-connections-to-catalog-5.png "Add Connections to Catalog")  
+
+  Click the **Create** button to proceed.
 
 6. You’ve just added your own object storage connection to the Catalog—now you can easily discover, track, and query external data alongside your database assets. This step lays the foundation for building richer data products and speeding up access to the insights that matter.
 
@@ -108,7 +108,7 @@ Preview the data discovered in the catalog. From this view, you’ll see the fil
 
     ![Data Catalog CSV preview](./images/data-catalog-csv-preview.png "Data Catalog CSV Preview")  
 
-3. Click **Close** to return to Data Catalog listings  
+   Click **Close** to return to Data Catalog listings  
 
 
 ## Conclusion
