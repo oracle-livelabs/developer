@@ -12,7 +12,7 @@ Estimated Lab Time: 30 minutes
 
 In this lab, you will:
 
-* Review how the Seer Healthcare prior authorization app incorporates the use of  JSON Duality Views, Graph analytics, and other converged database features, all without requiring complex data movement or separate systems.
+* Review how the Seer Healthcare prior authorization app incorporates the use of JSON Duality Views, Graph analytics, and other converged database features, all without requiring complex data movement or separate systems.
 
 ### Prerequisites
 
@@ -26,7 +26,7 @@ This lab assumes you have:
 
     ![Click the Start Demo Link](./images/start-demo.png =50%x*)
 
-2. Enter in a username and click **Login**.
+2. Select **Healthcare** under Industry and **Approval Officer** under Role. Enter in a username and click **Login**.
 
     ![Login](./images/login.png =50%x*)
 
@@ -34,74 +34,74 @@ This lab assumes you have:
 
     ![Homepage](./images/app-home.png =50%x*)
 
-## Task 2: Demo - Patient with low authorization risk score
+## Task 2: Demo - Approving a patient with low authorization risk score
 
-In this first example, you will use the application to approve a patient with a low authorization risk score. The first user on your to-do list is James Smith.
+In this first example, you will use the application to approve a patient with a low authorization risk score. The fourth user on your to-do list is Amelie Shepherd.
 
-1. On the Dashboard page, from the pending review list, select the Patient ID for **James Smith**.
+1. On the Dashboard page, from the pending review list, select the Patient ID for **Amelie Shepherd**.
 
-    ![Select James Smith](./images/james-smith.png =50%x*)
+    ![Select Amelie Shepherd](./images/amelie-shepherd.png =50%x*)
 
-2. Opening James Smith’s profile reveals his prior authorization request details—name, physcian, physician's notes, and patient condition.  
+2. Opening Amelie Shepherd’s profile reveals her prior authorization request details—name, email, request ID, and authorization status.  
 
-    ![James Smith AI generated recommendations](./images/james-smith-ai.png =50%x*)
+    ![Amelie Shepherd AI generated recommendations](./images/amelie-shepherd-ai.png =50%x*)
 
-3. At the bottom of James Smith’s profile, you will find the **AI Healthcare Guru**—a chatbot built on Oracle Database 23ai and Vector search. When prompted, the system uses **RAG** to generate a response. It converts the question and healthcare data into embeddings, performs a similarity search, and then uses the **GenAI service** to turn the enriched context into a clear, natural language answer. If the customer calls with a question, you can quickly enter it into the AI Healthcare Guru to generate a relevant response. 
+3. At the bottom of Amelie Shepherd’s profile, you will find the **AI Guru**—a chatbot built on Oracle Database 23ai and Vector search. When prompted, the system uses **RAG** to generate a response. It converts the question and healthcare data into embeddings, performs a similarity search, and then uses the **GenAI service** to turn the enriched context into a clear, natural language answer. If the customer calls with a question, you can quickly enter it into the AI Healthcare Guru to generate a relevant response. 
  
 
-    **Copy** the question below into the AI chatbot and press **Enter**. What does the AI Healthcare Guru respond?
+    **Copy** the question below into the AI chatbot and press **Enter**. What does the AI Guru respond?
 
     ```text
     <copy>
-    Why was this request denied?
+    Why was this request approved?
     </copy>
     ```
 
-    ![James Smith chatbot](./images/james-smith-chatbot.png =50%x*)
+    ![Amelie Shepherd chatbot](./images/amelie-shepherd-chatbot.png =50%x*)
 
 >💡 In Oracle Database 23ai, **AI Vector Search** allows you to combine your business data with a Large Language Model (LLM) to reduce hallucinations and get accurate answers from your data.
 
 4. Select the **Navigate To Decisions** button.
 
-    ![James Smith Decision](./images/james-smith-decision.png =50%x*)
+    ![Amelie Shepherd Decision](./images/amelie-shepherd-decision.png =50%x*)
 
     After navigating to the decisions page, the AI evaluation runs in the background. Clinical documents (e.g., EHR notes, radiology reports, lab results) are stored in Oracle Database 23ai and modeled with JSON Duality Views. These documents are vectorized and searched using AI Vector Search to identify semantically relevant prior cases and policy criteria. The results are passed to OCI Generative AI, which uses retrieval-augmented generation (RAG) to generate a natural-language explanation, formatted for both internal review and external (regulatory or provider) communication. 
 
 5. In the **Select Final Prior Authorization Option** section, the available options are displayed. If more data is needed, the reviewer can upload documents, add missing codes, and trigger a re-evaluation. The system dynamically updates the risk graph, adjusts the recommendation, and generates a decision letter sent directly to the provider
 
-    ![James Smith Select Final Approved Loan](./images/james-smith-select-final-loan.png =50%x*)
+    ![Amelie Shepherd Recommendation](./images/amelie-shepherd-recommendation.png =50%x*)
 
 6. Select the AI-recommended authorization decision. In this example, that is **Approved**. 
 
     >Please note that your results may vary. The information provided is generated by OCI Generative AI services, and your outcomes may differ from those presented.
 
-    ![James Smith Select Loan 3](./images/james-smith-select-loan.png =50%x*)
+    ![Amelie Select Option](./images/amelie-select-option.png =50%x*)
 
-7. Set the final authorization status to **Approved**, then click **Save Final Approval & Authorization Status** to complete the process.
+7. Set the final authorization status to **Approved**, then click **Confirm Decision** to complete the process.
 
     The authorization status has been updated to 'Approved' and saved to the patient profile.
 
-    ![James Smith Save Loan Status](./images/james-smith-save.png =50%x*)
+    ![Amelie Shepherd Save Status](./images/amelie-save-status.png =50%x*)
 
-8.  Click the **Generate Decision as PDF** button.
+8.  Click the **Download Decision as PDF** button.
 
-    ![James Smith Download Recommendation](./images/james-smith-download.png =50%x*)
+    ![Amelie Shepherd Download Recommendation](./images/amelie-shepherd-download.png =50%x*)
 
 9.  Click **Download PDF**
 
-    ![James Smith Download PDF](./images/james-smith-download-pdf.png =50%x*)
+    ![Amelie Shepherd Download PDF](./images/amelie-download-pdf.png =50%x*)
 
 10. Display the message the patient would see by opening the downloaded PDF.
 
-    ![Open James Smith PDF](./images/open-james-smith-pdf.png =50%x*)
+    ![Open Amelie Shepherd PDF](./images/open-amelie-pdf.png =50%x*)
 
 11. Click the **Return to Dashboard** button to navigate back to the Dashboard.
 
-    ![Return to Dashboard](./images/james-return-dashboard.png =50%x*)
+    ![Return to Dashboard](./images/amelie-return-dashboard.png =50%x*)
 
 12. Expand **View Approved Patients**. We can see that James Smith has been removed from the Pending Prior Authorization Requests list and has been added to the Approved Authorization Requests list.
 
-    ![James Smith Approved List](./images/james-smith-approved-list.png =50%x*)
+    ![Amelie Shepherd Approved List](./images/amelie-approved-list.png =50%x*)
 
 **Task Summary**
 
@@ -111,39 +111,39 @@ Once you select and save one of the 3 authorization options recommended by the A
 
 ✅ A finalized PDF decision document is generated.  
 
-✅ The dashboard reflects the change in real-time — marking James as Approved.
+✅ The dashboard reflects the change in real-time — marking Amelie as Approved.
 
 Congratulations, you have just approved your first patient authorization! Proceed to the next task.
 
-## Task 3: Demo - Denying a patient with high risk
-In this example, you will navigate the application to review a customer and deny them as part of the exercise. The second user on your to-do list is James Woods.
+## Task 3: Demo - Requesting more info for a patient with medium risk
+In this example, you will navigate the application to review a customer and request more info them as part of the exercise. The second user on your to-do list is Izzie Stevens.
 
-1. On the Dashboard page, from the pending review list, select the Patient ID for **James Woods**.
+1. On the Dashboard page, from the pending review list, select the Patient ID for **Izzie Stevens**.
 
-    ![Select James Woods](./images/james-woods.png =50%x*)
+    ![Select Izzie Stevens](./images/izzie-stevens.png =50%x*)
 
-2. Opening James Woods’s profile displays his patient history details. Within a few seconds, the AI automatically generates recommendations. In this case, the system evaluates a less favorable profile and identifies key risk factors.
+2. Opening Izzie Stevens’s profile displays her patient history details. Within a few seconds, the AI automatically generates recommendations. In this case, the system evaluates a profile with medium and identifies key risk factors.
 
-    This customer has: [Placeholder]
+    This customer has: 
 
-    * **several case similarities**
-    * A **minimal policy**
-    * And is requesting a **high lab threshold**
+    * **Diagnosis of Hypertension**
+    * A **vague physician's note**
+    * And is requesting  **pre-authorization for treatment**
 
-    The AI evaluates the profile and suggests next steps. In this case, it recommends a denial—but also provides clear, actionable guidance to help the patient improve their chances of approval in the future.
+    The AI evaluates the profile and suggests next steps. In this case, it recommends a requesting more info and also provides clear, actionable guidance to help the patient improve their chances of approval in the future.
 
-    ![James Woods AI generated recommendations](./images/james-woods-ai.png =50%x*)
+    ![Izzie Stevens AI generated recommendations](./images/izzie-stevens-ai.png =50%x*)
 
 3. Select the **Navigate to Decisions** button.
 
-    ![James Woods Decision](./images/james-woods-decision.png =50%x*)
+    ![Izzie-Stevens Decision](./images/izzie-stevens-decision.png =50%x*)
 
->⁉️ **What are two reasons that the AI decided to deny this applicant?** ⁉️
+>⁉️ **What are two reasons that the AI needs more information from this applicant?** ⁉️
 
 
 4. Expand **View Dot Plot: Diagnosis-Policy Relationships** to view the graph.
 
-    ![James Woods Graph](./images/expand-graph.png =50%x*)
+    ![Izzie Stevens Graph](./images/expand-graph.png =50%x*)
 
     On the decision page, the healthcare claim reviewer can use **Operational Property Graph** to explore near-approval authorization scenarios. Built with **Oracle Graph**, this feature visually maps authorizations just out of reach and highlights what adjustments—like adding missing codes or re-evaluation could improve eligibility.
 
@@ -151,51 +151,47 @@ In this example, you will navigate the application to review a customer and deny
 
 >💡 In Oracle Database 23ai, **Property Graph** allows you to treat your data like a network of connected points, where each point (called a node) and each link (called an edge) has its own details or properties. This setup helps you run graph analytics, like to find important connections or patterns, directly within the database.
 
-5. The authorization status is set to **Denied**. Click the **Save Final Approval & Authorization Status** button.
+5. The authorization status is set to **Request Info**. Click the **Confirm Decision** button.
 
-    The authorization status has been updated to 'Denied' and saved to the patient profile.
+    The authorization status has been updated to 'Request Info' and saved to the patient profile.
 
-    ![James Woods Save Loan Status](./images/james-woods-save.png =50%x*)
+    ![Izzie Stevens Save Status](./images/izzie-stevens-save.png =50%x*)
 
-6. Press the **Generate Decision as PDF** button to save the AI responses and proceed to the final authorization disposition.
+6. Press the **Download Decision as PDF** button to save the AI responses and proceed to the final authorization disposition.
 
-    ![James Woods PDF](./images/james-woods-pdf.png =50%x*)
+    ![Izzie Stevens PDF](./images/izzie-stevens-pdf.png =50%x*)
 
 7. Click the **Download PDF** button.
 
-    ![James Woods Download Recommendation](./images/james-woods-download.png =50%x*)
+    ![Izzie Stevens Download Recommendation](./images/izzie-download.png =50%x*)
 
 8. Display the message the patient would see by opening the downloaded PDF.
 
-    ![Open James Woods PDF](./images/open-james-woods-pdf.png =50%x*)
+    ![Open Izzie Stevens PDF](./images/open-izzie-pdf.png =50%x*)
 
 9. Click the **Return to Dashboard** button to navigate back to the Dashboard.
 
-    ![Return to Dashboard](./images/woods-return-dashboard.png =50%x*)
+    ![Return to Dashboard](./images/izzie-return-dashboard.png =50%x*)
 
-10. Expand **View Denied Patients**. You will see that James Woods has been moved from the **Pending Prior Authorization Requests** list to the **Denied Authorization Requests** list.
+10. Expand **View In Progress Patients**. You will see that Izzie Stevens has been moved from the **Pending Patients** list to the **In Progress** list.
 
-    ![James Woods Denied List](./images/james-woods-denied-list.png =50%x*)
+    ![Izzie Steven In Progress List](./images/izzie-inprogress-list.png =50%x*)
 
 **Task Summary**
 
-Congratulations, you have finished reviewing a patient with high fraudulent risk! Proceed to the next task.
+Congratulations, you have finished reviewing a patient with medium authorization risk! Proceed to the next task.
 
 ## Task 4: Demo - Update patient details
 
 Lastly, let’s explore how the system uses JSON Duality Views to handle profile updates. In this task, you will edit a patient's details. In this example, the patient was asked to submit updated lab results.
 
-1. On the Dashboard page, from the **Pending Prior Authorization Requests** list, select the patient ID for **Alex Anderson**.
+1. On the Dashboard page, from the **Pending Patients** list, select the patient ID for **Andrew Deluca**.
 
-    ![Select Alex Anderson](./images/select-alex-anderson.png =50%x*)
+    ![Select Andrew Deluca](./images/andrew-deluca.png =50%x*)
 
-2. We will upload a document to update Alex's lab results. Before uploading the document, note that the patient's labs is currently listed as **none**. On the Patient Details page, click the **Upload Document** button.
+2. We will upload a document to update Andrew's physician's note. On the Patient Details page, click the **Upload Document** button. The PDF file has been loaded. Then click the **Process Selected PDF** button
 
     ![Upload Document](./images/upload-document.png =50%x*)
-
-3. The PDF file has been loaded. Click the **Process Selected PDF** button.
-
-    ![Click Process Selected PDF](./images/process-selected-pdf.png =50%x*)
 
 >💡 **JSON Duality Views** in 23ai let's you update unstructured data in an easy, high-level format while automatically handling the technical details behind the scenes. This makes it faster and simpler to work with messy data and connect it to structured systems.
 
@@ -203,21 +199,17 @@ Lastly, let’s explore how the system uses JSON Duality Views to handle profile
 
     ![Customer Profile Updated](./images/profile-updated.png)
 
-5. Refresh the page and note that the labs has been updated to [placeholder]. Thanks to JSON Transform and JSON Duality Views, only the relevant field is modified — leaving the rest of the profile UNTOUCHED.
-
-    ![Customer Profile Updated](./images/income-updated.png)
-
 **Task Summary**
 
 Once the document is uploaded:
 
 ✅ The system automatically detects the new lab data.
 
-✅ Then their profile will be updated from **none** to [placeholder].
+✅ Then their profile will be updated with a physician's note.
 
 ✅ And thanks to JSON Transform and JSON Duality Views, only the relevant field is modified — leaving the rest of the profile UNTOUCHED.
 
-## Conlusion
+## Conclusion
 
 In conclusion our Prior Authorizations Management App was able to leverage Oracle database 23ai technologies such as **AI Vector Search, Property Graph and JSON Duality Views** to:
 
@@ -240,4 +232,4 @@ By combining these advanced tools, the application enables faster, smarter decis
 ## Acknowledgements
 * **Authors** - Kamryn Vinson, Linda Foinding, Francis Regalado
 * **Contributors** - Kevin Lazarz, Eddie Ambler, Ramona Magadan, Mark Nelson, Andy Tael, Anders Swanson, Rahul Tasker
-* **Last Updated By/Date** - Linda Foinding, June 2025
+* **Last Updated By/Date** - Uma Kumar, August 2025
