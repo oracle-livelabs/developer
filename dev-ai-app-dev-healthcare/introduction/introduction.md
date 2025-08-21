@@ -8,18 +8,15 @@ Generative AI and Oracle Database 23ai makes it possible to unlock deeper insigh
 
 This hands-on lab introduces you to Generative AI and Vector Search in Oracle Database 23ai, allowing you to build real applications using multiple types of data - no setup required. You'll connect to the database using Python and the Mongo API, run queries, create JSON Duality Views, and implement AI Vector Search and retrieval-augmented generation (RAG). Explore guided healthcare use cases or experiment freely in a browser-based development environment designed to bring Oracle 23ai’s capabilities to life in a healthcare context.
 
-To get things started we invite you to watch the introduction video to see the demo in action:
-
-[](videohub:1_mg30brw3:medium)
 
 You will:
   *	Use **native Vector Search** to query and analyze structured data, documents, and images—without moving data across platforms.
 
   *	Combine your **enterprise data with large language models (LLMs)** using Retrieval-Augmented Generation (RAG) to answer natural language questions with context-aware accuracy.
 
-  * Automate real-world healthcare workflows, like loan approvals, by **embedding and querying unstructured data** in real time.
+  * Automate real-world healthcare workflows, like prior authorization approvals, by **embedding and querying unstructured data** in real time.
 
-By the end of this workshop, you’ll understand how Oracle Database 23ai helps financial organizations:
+By the end of this workshop, you’ll understand how Oracle Database 23ai helps healthcare organizations:
 
   * ✅ Accelerate time-to-insight with centralized, AI-ready data
 
@@ -81,8 +78,6 @@ You can also experiment with the code in your own environment. The workshop envi
 
 * Implement a working example of retrieval-augmented generation (RAG) using Oracle Database 23ai
 
-* Try a coding challenge and implement a solution using AI Vector Search
-
 ### Prerequisites
 
 This lab assumes you have:
@@ -100,4 +95,4 @@ This lab assumes you have:
 ## Acknowledgements
 * **Authors** - Linda Foinding, Francis Regalado, Kamryn Vinson
 * **Contributors** - Kevin Lazarz, Eddie Ambler, Ramona Magadan, Mark Nelson, Andy Tael, Anders Swanson, Rahul Tasker
-* **Last Updated By/Date** - Linda Foinding, April 2025
+* **Last Updated By/Date** - Uma Kumar, August 2025
