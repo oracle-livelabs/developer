@@ -49,47 +49,43 @@ By the end, you’ll have the skills to turn raw, external data into a seamless 
 
       ![Create Data Product Share](./images/click-csv.png "Create Data Product Share")
 
-6. Click **Load to Table**. The **Load Data** page will appear. 
+6. Click **Load to Table**.  
 
       ![Create Data Product Share](./images/task1-scrn-9.png "Create Data Product Share")  
 
-7. Click the **Edit (pencil)** icon, in the lower right corner.  
+7. Select **Create Table** in the table section, then change the table name to something more meanful -- like, **CUSTOMER EXTENSION**.
 
-      ![Create Data Product Share](./images/task1-scrn-10.png "Create Data Product Share")  
+      ![Create Data Product Share](./images/define-load-data-table.png "Create Data Product Share")  
 
-8. In the table section, select **Create Table** from the list of options.
+      Click **Load Data**.  
 
-      ![Create Data Product Share](./images/task1-scrn-11.png "Create Data Product Share")  
+8. In the popup window, click **Go to Data Load** to continue.
 
-9. Let's change the default name to something more meaningful for our use case. Enter **CUSTOMER_EXTENSION** as the name of the table, then click the **Close**. 
+      ![Create Data Product Share](./images/go-to-data-load.png "Create Data Product Share") 
 
-      ![Create Data Product Share](./images/task1-scrn-12.png "Create Data Product Share")  
- 
-10. Click **Start** on the **Data Load** page.  
-
-      ![Create Data Product Share](./images/task1-scrn-13.png "Create Data Product Share")  
-
-11. In the popup window, click **Run** to start the data load job from object storage.
-
-      ![Create Data Product Share](./images/run-load.png "Create Data Product Share") 
-
-12. Once the job completes, the table appears on the **Table and View Loads** page. Click **Report** to review job details and the SQL used.
+9. Once the job completes, the table appears under **Table and View Loads** on the page. Click **Report** to review job details.
 
       ![Create Data Product Share](./images/task1-scrn-14.png "Create Data Product Share")  
 
-13. Click **Close** when finished.  
+10. Review the job details.  Click **SQL** to review the code used.  
+
+      ![Create Data Product Share](./images/review-data-load-job.png "Create Data Product Share")  
+
+13. The SQL code is displayed.  
 
       ![Create Data Product Share](./images/task1-scrn-15.png "Create Data Product Share")  
+      
+      Click **Close**.  
 
-14. To inspect the data in SQL Worksheet, click **Query**.
+14. To analyze the data load, click **Query**.
 
       ![Create Data Product Share](./images/task1-scrn-16.png "Create Data Product Share")  
 
-15. The SQL Worksheet opens with the query pre-loaded, results displayed, and an analysis of the dataset. 
+15. The SQL Worksheet opens with the query pre-loaded, the results displayed, and an analysis of the dataset. 
 
       ![Create Data Product Share](./images/task1-scrn-17.png "Create Data Product Share")  
 
-16. Return to **Catalog** in the left rail. You’ll see the **CUSTOMER_EXTENSION** table now listed in the catalog.
+16. Click **Catalog** in the left rail and you’ll see the **CUSTOMER_EXTENSION** table now listed in the catalog.
 
       ![Create Data Product Share](./images/task1-scrn-18.png "Create Data Product Share")
 
@@ -102,36 +98,41 @@ You’ve just loaded external object storage data directly into your Autonomous 
 
       ![Create Data Product Share](./images/task2-scrn-1a.png "Create Data Product Share")
 
-   2. Click the **Load to Table** button to open the **Load Data** page.
+   2. Click the **Link to Table** button to open the **Link Data** page.
 
-   ![Create Data Product Share](./images/task2-scrn-10a.png "Create Data Product Share")
+      ![Create Data Product Share](./images/task2-scrn-10a.png "Create Data Product Share")
 
-   3. Click the **Edit (pencil)** icon, in the lower right corner.
+   3. Select **Create External Table** in the table section, then change the table name to something more meaningful --- **CUSTOMER_SEGMENT**.
 
-   ![Create Data Product Share](./images/task2-scrn-10b.png "Create Data Product Share")
+      ![Create Data Product Share](./images/task2-scrn-12.png "Create Data Product Share")
 
-   4. In the table section, choose **Create External Table** from the options.
+      Click **Link Data**. 
 
-   ![Create Data Product Share](./images/task2-scrn-11.png "Create Data Product Share")
+   7. In the popup, click **Go To Data Link** to continue.
 
-   5. Let's change the default name to something more meaningful for our use case. Change the default table name to **CUSTOMER_SEGMENT**. Click **Close**.
+      ![Create Data Product Share](./images/go-to-data-load.png "Create Data Product Share")
 
-   ![Create Data Product Share](./images/task2-scrn-12.png "Create Data Product Share")
+   8. Once the job completes, the external table appears under **Table and View Loads** on the page.  Click **Report** to review job details.
 
-   6. Click **Start** on the **Link Data** page.
+      ![Create Data Product Share](./images/task2-scrn-14.png "Create Data Product Share")
 
-   ![Create Data Product Share](./images/task2-scrn-12a.png "Create Data Product Share")
+   9. Review the job details.  Click **SQL** to review the code used.
 
-   7. In the popup, click **Run** to start the link job from cloud store.
+      ![Create Data Product Share](./images/review-data-link-job.png "Create Data Product Share")  
 
-   ![Create Data Product Share](./images/task2-scrn-13.png "Create Data Product Share")
+10. The SQL code is displayed.
 
-   8. Once the job completes, the table appears on the **Table and View Loads** page. Click **Query** to review the data using SQL Worksheet.
+      ![Create Data Product Share](./images/review-data-link-sql.png "Create Data Product Share")  
+      
+       Click **Close**.  
 
-   ![Create Data Product Share](./images/task2-scrn-14.png "Create Data Product Share")
+11. To analyze the data link, click Query.
+
+      ![Create Data Product Share](./images/analyze-data-link.png "Create Data Product Share")  
+
+   12. The SQL Worksheet opens with the query pre-loaded, the results displayed, and an analysis of the dataset.
 
    ![Create Data Product Share](./images/task2-scrn-17.png "Create Data Product Share")
-
 
 You’ve just linked **external object storage data** to your database—**no loading required**. With this external table in place, you can **run queries instantly while avoiding data duplication** and keeping your analytics agile and efficient.
 

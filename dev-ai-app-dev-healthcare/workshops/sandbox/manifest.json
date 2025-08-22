@@ -20,7 +20,7 @@
         {
             "title": "Lab 3: Coding Basics on Oracle Database 23ai",
             "description": "Some coding examples",
-            "filename": "https://oracle-livelabs.github.io/developer/dev-guide-ai-finance/codingbasics/codingbasics.md"
+            "filename": "../../codingbasics/codingbasics.md"
         },
         {
             "title": "Lab 4: Step by Step - Implement RAG with Oracle Database 23ai",

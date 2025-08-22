@@ -8,11 +8,6 @@ This lab uses some of the basic coding samples you created in lab 3, such as cur
 
 Estimated Time: 30 minutes
 
-To get things started we invite you to watch this video and see the lab in action:
-
-  [](videohub:1_joogeiaj:medium)
-
-
 ### Objectives
 
 * Build the complete healthcare claim approval application as seen in lab 1
@@ -31,7 +26,11 @@ This lab assumes you have:
 ## Task 1: Build the application in Jupyter Notebook
 >💡**Note**: Review Lab 2: Connect to the Development Environment for instructions on accessing JupyterLab.
 
-1. Open a new **Jupyter Notebook** by clicking on **Pyhton(ipykernel)** notebook.
+1. Open Launcher by clicking **+** button.
+
+    ![Open Launcher](./images/launcher.png " ")
+
+2. Open a new **Jupyter Notebook** by clicking on **Pyhton(ipykernel)** notebook.
 
     ![Open Jupyter Notebook](./images/open-new-notebook.png " ")
 
@@ -400,7 +399,7 @@ Now that the recommendations are vectorized, we can process a user’s question:
 
     ![rag](./images/rag.png " ")
 
-## Summary
+## Conclusion
 
 Congratulations! You implemented a RAG process in Oracle Database 23ai using Python.
 
@@ -409,7 +408,7 @@ To summarize:
 * You created a function to connect to Oracle Database 23ai using the Oracle Python driver `oracledb`.
 * You created a function to retrieve customer data.
 * You created a function to connect to OCI Generative AI and create a first recommendation.
-* You created a function to create embeddings of the customer data using Oracle Database 23ai.
+* You created a function to create embeddings of the patient data using Oracle Database 23ai.
 * And finally, you implemented a RAG process in Oracle Database 23ai using Python.
 
 Congratulations, you completed the lab!
@@ -424,4 +423,4 @@ You may now proceed to the next lab.
 ## Acknowledgements
 * **Authors** - Francis Regalado Database Product Manager
 * **Contributors** - Kevin Lazarz, Linda Foinding, Kamryn Vinson
-* **Last Updated By/Date** - Francis Regalado, May 2025
+* **Last Updated By/Date** - Uma Kumar, August 2025
