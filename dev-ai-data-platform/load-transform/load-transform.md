@@ -1,4 +1,4 @@
-# 🏗️ Build your Data Pipeline: Load & Transform Data (optional lab)
+# 🏗️ Build your Data Pipeline: Load & Transform Data
 
 ## Introduction
 
