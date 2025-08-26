@@ -1,4 +1,4 @@
-# Title of the Lab
+# Creating tables, data, and views
 
 ## Introduction
 
