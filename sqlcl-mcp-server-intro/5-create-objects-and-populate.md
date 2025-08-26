@@ -60,7 +60,7 @@ This lab assumes you have:
 
    ![2-approve-proposed-plan](./images/lab-5/2-approve-proposed-plan.png " ")
 
-## Database tasks
+## Task 2: Database tasks
 
 1. Your agent will establish a collection using the `connect` tool of the SQLcl MCP server. You may also see a plan resembling that in the image. If all appears corect, you may proceed. 
 
@@ -93,7 +93,7 @@ This lab assumes you have:
 
    ![10-inserting-values-several-at-a-time](./images/lab-5/10-inserting-values-several-at-a-time.png " ")
 
-## Reviewing the new objects
+## Task 3: Reviewing the new objects
 
 1. With the new objects created and populated, your prompt includes a next step of Fetching the first five rows of each of your tables. Your tables might return information similar to those in the images below. 
 
@@ -108,7 +108,7 @@ This lab assumes you have:
 > [!NOTE]
 > You might also choose to review the tables from the Oracle SQL Developer for VS Code extension.
 
-## Creating new views
+## Task 4: Creating new views
 
 1. Your prompt contains a section for creating views for these new tables. The prompts of this section are designed to emulate prompts you might use independently. In this prompt we've asked to create four views, and recommend two additinoal views.
 
@@ -141,7 +141,7 @@ This lab assumes you have:
 
 4. If you agree with the proposed views, you may click the **Approve** button. Otherwise, suggest some modifications, and the click Approve.
 
-## Disconnecting
+## Task 5: Disconnecting
 
 1. After reaching the end of your prompt, your Agent will request to disconnect from the database using SQLcl's MCP server `disconnect` tool. 
 
@@ -152,7 +152,7 @@ This lab assumes you have:
    ![22-summary-of-actions-performed](./images/lab-5/22-summary-of-actions-performed.png " ")
 
 
-## Wrap-up
+## Task 6: Wrap-up
 
 1. Like the previous labs, you will notice that we rely upon a pre-defined script, or prompt to guide the AI agent. While not mandatory, it is a good practice as it allows you to refine your prompts and achieve more predictable outcomes. 
 
