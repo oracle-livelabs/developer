@@ -85,7 +85,7 @@ A data warehouse stores structured, cleaned, and preprocessed data for business 
 
 ### **Data Lake**
 
-A data warehouse stores structured, cleaned data to support business intelligence. It powers reports and historical analysis, helping teams spot trends and draw insights.
+A data lake stores a wide variety of data, such as text, images, and videos, in their original and unstructured formats. This flexible approach allows analysts and researchers to determine how best to structure and interpret the data later on.
 
 ### **Data Lakehouse**
 
