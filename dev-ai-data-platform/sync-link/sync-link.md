@@ -27,122 +27,122 @@ By the end of this lab, you will:
 By the end, you’ll have the skills to turn raw, external data into a seamless part of SeersEquities’ analytics workflow—ready to power better loan decisions and smarter risk management.
 
 
-## Task 1: Load Object Storage Data into Autonomous Database using the Catalog Tool
+## Task 1: Load Object Storage Data into Autonomous Database using the Catalog Tool. 
 
-1. If you are not yet logged in to **Database Actions**, click **View Login Info**. Copy your **DB ADMIN Password**, and click the **SQL Worksheet** link.
+1. If you are not yet logged in to **Database Actions**, click **View Login Info**. Copy your **DB ADMIN Password**, and click the **SQL Worksheet** link.  
 
-    ![Access Data Catalog](./images/start-demo.png "Access Local Data Catalog")  
+    ![Copy ADMIN pswd & click SQL Wksht Link](./images/start-demo.png "")  
 
-2. For your Username enter **LOAN**. Paste in the password you copied in the previous step.
+2. For your Username enter **LOAN**. Paste in the password you copied in the previous step.  
 
-    ![Access Local Data Catalog](./images/sql-sign-in.png "Access Local Data Catalog")  
+    ![Login with LOAN credentials](./images/sql-sign-in.png "")  
 
-3. Select **Data Studio** from the tab menu, then select **Catalog** from the left rail.
+3. Select **Data Studio** from the tab menu, then select **Catalog** from the left rail.  
 
-      ![Create Data Product Share](./images/task1-scrn-7.png "Create Data Product Share")
+      ![Select CATALOG from Navigation Menu](./images/task1-scrn-7.png "")  
 
-4.  Click the **Data Objects** tab at the top of the catalog page to view the contents from your object storage buckets.
+4.  Click the **Data Objects** tab at the top of the catalog page to view the contents from your object storage buckets.  
 
-      ![Create Data Product Share](./images/task1-scrn-8.png "Create Data Product Share")
+      ![Click Data Objects](./images/task1-scrn-8.png "")  
 
-5. From the list, select **LoanAppcustomer_extension.csv** to open the **Cloud Object Entity** page.
+5. From the list, select **LoanAppcustomer_extension.csv** to open the **Cloud Object Entity** page.  
 
-      ![Create Data Product Share](./images/click-csv.png "Create Data Product Share")
+      ![Select Customer_Extention.csv file](./images/click-csv.png "")  
 
 6. Click **Load to Table**.  
 
-      ![Create Data Product Share](./images/task1-scrn-9.png "Create Data Product Share")  
+      ![Select Load to Table](./images/task1-scrn-9.png "")  
 
-7. Select **Create Table** in the table section, then change the table name to something more meanful -- like, **CUSTOMER EXTENSION**.
+7. Select **Create Table** in the table section, then change the table name to something more meanful -- like, **CUSTOMER EXTENSION**.  
 
-      ![Create Data Product Share](./images/define-load-data-table.png "Create Data Product Share")  
+      ![Select Create Table & provide name](./images/define-load-data-table.png "")  
 
       Click **Load Data**.  
 
-8. In the popup window, click **Go to Data Load** to continue.
+8. In the popup window, click **Go to Data Load** to continue.  
 
-      ![Create Data Product Share](./images/go-to-data-load.png "Create Data Product Share") 
+      ![Click Go To Data Load](./images/go-to-data-load.png "") 
 
-9. Once the job completes, the table appears under **Table and View Loads** on the page. Click **Report** to review job details.
+9. Once the job completes, the table appears under **Table and View Loads** on the page. Click **Report** to review job details.  
 
-      ![Create Data Product Share](./images/task1-scrn-14.png "Create Data Product Share")  
+      ![Click Report to review load job](./images/task1-scrn-14.png "")  
 
 10. Review the job details.  Click **SQL** to review the code used.  
 
-      ![Create Data Product Share](./images/review-data-load-job.png "Create Data Product Share")  
+      ![Click SQL to review load code](./images/review-data-load-job.png "")  
 
 13. The SQL code is displayed.  
 
-      ![Create Data Product Share](./images/task1-scrn-15.png "Create Data Product Share")  
-      
+      ![Examine load SQL code](./images/task1-scrn-15.png "")  
+
       Click **Close**.  
 
-14. To analyze the data load, click **Query**.
+14. To analyze the data load, click **Query**.  
 
-      ![Create Data Product Share](./images/task1-scrn-16.png "Create Data Product Share")  
+      ![Analyze data load](./images/task1-scrn-16.png "")  
 
-15. The SQL Worksheet opens with the query pre-loaded, the results displayed, and an analysis of the dataset. 
+15. The SQL Worksheet opens with the query pre-loaded, the results displayed, and an analysis of the dataset.  
 
-      ![Create Data Product Share](./images/task1-scrn-17.png "Create Data Product Share")  
+      ![Load Data set analysis](./images/task1-scrn-17.png "")  
 
-16. Click **Catalog** in the left rail and you’ll see the **CUSTOMER_EXTENSION** table now listed in the catalog.
+16. Click **Catalog** in the left rail and you’ll see the **CUSTOMER_EXTENSION** table now listed in the catalog.  
 
-      ![Create Data Product Share](./images/task1-scrn-18.png "Create Data Product Share")
+      ![Review CUSTOMER_EXTENSION table in Catalog](./images/task1-scrn-18.png "")  
 
 
-You’ve just loaded external object storage data directly into your Autonomous Database—turning a static file into a query-ready table. This move helps optimize performance and makes your data ready for analytics, joins, and future products.
+You’ve just loaded external object storage data directly into your Autonomous Database—turning a static file into a query-ready table. This move helps optimize performance and makes your data ready for analytics, joins, and future products.  
 
-## Task 2: Link Object Storage Data from Data Catalog to ADB.
+## Task 2: Link Object Storage Data from Data Catalog to ADB.  
 
-   1. From the **Catalog** page, make sure **Data Objects** is selected and the **Cloud Object** filter is active. Then select **LoanAppcustomer_segment.csv** to open the **Cloud Object Entity** page.
+   1. From the **Catalog** page, make sure **Data Objects** is selected and the **Cloud Object** filter is active. Then select **LoanAppcustomer_segment.csv** to open the **Cloud Object Entity** page.  
 
-      ![Create Data Product Share](./images/task2-scrn-1a.png "Create Data Product Share")
+      ![Select Customer_Segment.csv file](./images/task2-scrn-1a.png "")  
 
-   2. Click the **Link to Table** button to open the **Link Data** page.
+   2. Click the **Link to Table** button to open the **Link Data** page.  
 
-      ![Create Data Product Share](./images/task2-scrn-10a.png "Create Data Product Share")
+      ![Select Link to Table](./images/task2-scrn-10a.png "")  
 
-   3. Select **Create External Table** in the table section, then change the table name to something more meaningful --- **CUSTOMER_SEGMENT**.
+   3. Select **Create External Table** in the table section, then change the table name to something more meaningful --- **CUSTOMER_SEGMENT**.  
 
-      ![Create Data Product Share](./images/task2-scrn-12.png "Create Data Product Share")
+      ![Select Create External Table & provide name](./images/task2-scrn-12.png "")  
 
-      Click **Link Data**. 
+      Click **Link Data**.  
 
-   7. In the popup, click **Go To Data Link** to continue.
+   7. In the popup, click **Go To Data Link** to continue.  
 
-      ![Create Data Product Share](./images/go-to-data-load.png "Create Data Product Share")
+      ![Click Go To Data Link](./images/go-to-data-load.png "")  
 
-   8. Once the job completes, the external table appears under **Table and View Loads** on the page.  Click **Report** to review job details.
+   8. Once the job completes, the external table appears under **Table and View Loads** on the page.  Click **Report** to review job details.  
 
-      ![Create Data Product Share](./images/task2-scrn-14.png "Create Data Product Share")
+      ![Click Report to review link job](./images/task2-scrn-14.png "")  
 
-   9. Review the job details.  Click **SQL** to review the code used.
+   9. Review the job details.  Click **SQL** to review the code used.  
 
-      ![Create Data Product Share](./images/review-data-link-job.png "Create Data Product Share")  
+      ![Click SQL to review link code](./images/review-data-link-job.png "")  
 
-10. The SQL code is displayed.
+   10. The SQL code is displayed.
 
-      ![Create Data Product Share](./images/review-data-link-sql.png "Create Data Product Share")  
-      
+      ![Examine link SQL code](./images/review-data-link-sql.png "")  
+
        Click **Close**.  
 
-11. To analyze the data link, click Query.
+   11. To analyze the data link, click Query.  
 
-      ![Create Data Product Share](./images/analyze-data-link.png "Create Data Product Share")  
+      ![Analyze data link](./images/analyze-data-link.png "")  
 
-   12. The SQL Worksheet opens with the query pre-loaded, the results displayed, and an analysis of the dataset.
+   12. The SQL Worksheet opens with the query pre-loaded, the results displayed, and an analysis of the dataset.  
 
-   ![Create Data Product Share](./images/task2-scrn-17.png "Create Data Product Share")
+   ![Link Data set analysis](./images/task2-scrn-17.png "")  
 
-You’ve just linked **external object storage data** to your database—**no loading required**. With this external table in place, you can **run queries instantly while avoiding data duplication** and keeping your analytics agile and efficient.
+You’ve just linked **external object storage data** to your database—**no loading required**. With this external table in place, you can **run queries instantly while avoiding data duplication** and keeping your analytics agile and efficient.  
 
 ## Task 3: Query Data in Object Storage and ADB Database.
 
-   1.	Click **Database Actions** in the top banner to open the **Launchpad** page. Select the **Development** tab, then click **SQL** to open the SQL Worksheet.
+   1.	Click **Database Actions** in the top banner to open the **Launchpad** page. Select the **Development** tab, then click **SQL** to open the SQL Worksheet.   
 
-  ![Query Data in Object Storage](./images/task3-scrn-1.png "Query Data in Object Storage")
+  ![Query Data in Object Storage](./images/task3-scrn-1.png "")  
 
-   2.	Query the **CUSTOMER_EXTENSION** table. Copy and paste the following SQL into the Worksheet, then click the **Run Statement** icon:
+   2.	Query the **CUSTOMER_EXTENSION** table. Copy and paste the following SQL into the Worksheet, then click the **Run Statement** icon:  
 
       ```
       <copy>
@@ -150,11 +150,11 @@ You’ve just linked **external object storage data** to your database—**no lo
       </copy>
       ```
 
-   The output shows information about customers.
+   The output shows information about customers.  
 
-  ![Query Data in Object Storage](./images/task3-scrn-2.png "Query Data in Object Storage")
+  ![Query Data in Object Storage](./images/task3-scrn-2.png "")  
 
-   3.	Now query the **CUSTOMER_SEGMENT** external table. Paste the SQL below into the Worksheet, then click **Run**:
+   3.	Now query the **CUSTOMER_SEGMENT** external table. Paste the SQL below into the Worksheet, then click **Run**:  
 
       ```
       <copy>
@@ -162,11 +162,11 @@ You’ve just linked **external object storage data** to your database—**no lo
       </copy>
       ```
 
-      The output shows defined customer segments.
+      The output shows defined customer segments.  
 
-      ![Query Data in Object Storage](./images/task3-scrn-3.png "Query Data in Object Storage")
+      ![Query Data in Object Storage](./images/task3-scrn-3.png "Query Data in Object Storage")  
 
-   4.	Combine data from both tables using a **join**. Paste the query below, then click **Run**:
+   4.	Combine data from both tables using a **join**. Paste the query below, then click **Run**:  
 
       ```
       <copy>
@@ -177,14 +177,13 @@ You’ve just linked **external object storage data** to your database—**no lo
       </copy>
       ```
 
-   The results show enriched customer profiles with segment labels.
+   The results show enriched customer profiles with segment labels.  
 
-  ![Query Data in Object Storage](./images/task3-scrn-4a.png "Query Data in Object Storage")
+  ![Query Data in Object Storage](./images/task3-scrn-4a.png "")  
 
+You’ve now combined external object storage data with internal database data—all from a single query. This unlocks richer analytics, enabling SeersEquities to connect customer attributes with segmentation strategies in real time.  
 
-You’ve now combined external object storage data with internal database data—all from a single query. This unlocks richer analytics, enabling SeersEquities to connect customer attributes with segmentation strategies in real time.
-
-## Conclusion
+## Conclusion  
 
 In this lab, you’ve learned how to **load, link, and query data** from cloud object storage using Oracle Autonomous Database. Each task brought you closer to a unified data environment—one where internal and external sources work together seamlessly.
 
