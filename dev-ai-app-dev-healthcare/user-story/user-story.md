@@ -99,7 +99,7 @@ In this first example, you will use the application to approve a patient with a 
 
     ![Return to Dashboard](./images/amelie-return-dashboard.png =50%x*)
 
-12. Expand **View Approved Patients**. We can see that James Smith has been removed from the Pending Prior Authorization Requests list and has been added to the Approved Authorization Requests list.
+12. Expand **View Approved Patients**. We can see that Amelie Shepherd has been removed from the Pending Patients list and has been added to the Approved Patients list.
 
     ![Amelie Shepherd Approved List](./images/amelie-approved-list.png =50%x*)
 
@@ -222,7 +222,7 @@ In conclusion our Prior Authorizations Management App was able to leverage Oracl
 ✅ And empower healthcare claim reviewers  with actionable insights through Operational Property Graphs 
 
 By combining these advanced tools, the application enables faster, smarter decisions and delivers clear guidance on how patients can improve their eligibility.
- 
+
 **Next:** How about learning how the application was implemented in Python? Continue with the next labs and start developing!
 
 ## Learn More
