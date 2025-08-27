@@ -7,10 +7,12 @@ In this lab, you’ll practice setting up the live feed capabilities, that can b
 Estimated Lab Time: 45 minutes
 
 ### Objectives
+
   * Login to LiveLabs Sandbox
   * Find your LiveLabs Sandbox reservations
 
 ### Prerequisites
+
   This lab assumes you have:
   * Completed the Get Started lab
   * Successfully launched the hands-on lab environment
@@ -27,13 +29,13 @@ Estimated Lab Time: 45 minutes
 
       Click **Sign-in** button  
 
-  3. Select the **Development** tab, then click **SQL** to open the **SQL Worksheet**.
+  3. Select the **Development** tab, then click **SQL** to open the **SQL Worksheet**.  
 
       ![Select Development & Click SQL](./images/open-sql-development.png "")  
 
-   4. Copy the following PL/SQL code to your clipboard, then paste it in the **SQL Worksheet**.  We will be using it to copy objects from one storage bucket to another.  
+  4. Copy the following PL/SQL code to your clipboard, then paste it in the **SQL Worksheet**.  We will be using it to copy objects from one storage bucket to another.  
 
-      ```
+      ```text
       <copy>
           DECLARE
             object_name     VARCHAR2(200) := 'funding_commitments1.json';
@@ -49,7 +51,8 @@ Estimated Lab Time: 45 minutes
            END;
            /
       </copy>
-      ```
+      ```  
+
   5. Right-click on your browser tab and select **Duplicate** from the context menu to open another tab.  Click **Database Actions** in the top banner of the new tab.
 
       ![Open DB Actions in Duplicate Tab](./images/open-another-browser-tab.png "")  
@@ -70,33 +73,33 @@ Estimated Lab Time: 45 minutes
 
       ![Select LOANAPP_FUNDING Connection](./images/loanapp-funding-panel.png "")  
 
-10.	Copy the source URI for **LOANAPP\_FUNDING** cloud storage to your clipboard
+  10. Copy the source URI for **LOANAPP\_FUNDING** cloud storage to your clipboard
 
       ![Copy LOANAPP_FUNDING URI](./images/loanapp-funding-uri.png "")  
 
-11.	Return to **SQL | Oracle Database Actions** tab.  Modify the source\_uri definition in the **SQL Worksheet**, as shown below:  
+  11. Return to **SQL | Oracle Database Actions** tab.  Modify the source\_uri definition in the **SQL Worksheet**, as shown below:  
 
-      ```
+      ```text
       source_uri    VARCHAR2(100) := ‘< the LOANAPP_FUNDING uri you copied >';
-      ```
+      ```  
 
-12.	Return to the **Data Load | Oracle Database** tab.  Select the **MyDemoBucket** panel.  
+  12. Return to the **Data Load | Oracle Database** tab.  Select the **MyDemoBucket** panel.  
 
       ![Switch Tab & Select MYDEMOBUCKET Connection](./images/mydemobucket-panel.png "")  
 
-13.	Copy the URI for **MYDEMOBUCKET** cloud storage to your clipboard.  
+  13. Copy the URI for **MYDEMOBUCKET** cloud storage to your clipboard.  
 
       ![Copy MYDEMOBUCKET URI](./images/mydemobucket-uri.png "")  
 
   Click **Close** to exit.  
 
-14.	Return to **SQL | Oracle Database Actions** tab.  Modify the target\_uri definition in the **SQL Worksheet**, as shown below:  
+  14. Return to **SQL | Oracle Database Actions** tab.  Modify the target\_uri definition in the **SQL Worksheet**, as shown below:  
 
-      ```
+      ```text
       target_uri    VARCHAR2(100) := ‘< the MYDEMOBUCKET uri you copied >';
-      ```
+      ```  
 
-15.	Click the **Run Script** button.  A message indicating the PL/SQL code completed successfully will appear near the bottom of the screen.
+  15. Click the **Run Script** button.  A message indicating the PL/SQL code completed successfully will appear near the bottom of the screen.  
 
       ![Run PL/SQL script to move file 1](./images/run-move-script.png "")  
 
@@ -157,25 +160,25 @@ Estimated Lab Time: 45 minutes
 
       ![Run Initial Live Table Feed](./images/do-run-live-feed.png)
 
-## Task 3: Perform Live Table Feed and Populate Production
+## Task 3: Perform Live Table Feed and Populate Production  
 
-1.	Return to the **SQL | Oracle Database Actions** tab.  Modify the object\_name definition in the SQL Worksheet, as shown below:
+1. Return to the **SQL | Oracle Database Actions** tab.  Modify the object\_name definition in the SQL Worksheet, as shown below:  
 
-      ```
+      ```text  
       object_name     VARCHAR2(200) := 'funding_commitments2.json';
-      ```
+      ```  
 
-2.	Click the **Run Script** button.  A message indicating the PL/SQL code completed successfully will appear near the bottom of the screen.
+2. Click the **Run Script** button.  A message indicating the PL/SQL code completed successfully will appear near the bottom of the screen.  
 
-  ![Run PL/SQL script to move file 2](./images/move-data-file2.png)
+  ![Run PL/SQL script to move file 2](./images/move-data-file2.png)  
 
 3. Navigate to the **Data Load | Oracle Database** tab.  Review the details for the Live Table Feed.  
 
   ![Review Live Feed Execution](./images/verify-move-data-file2.png)
 
-4.	Return to the **SQL | Oracle Database Actions** tab.  Execute the following code to populate production with new loan products.
+4. Return to the **SQL | Oracle Database Actions** tab.  Execute the following code to populate production with new loan products.
 
-      ```
+      ```text  
       <copy>
            DECLARE
               new_add  NUMBER;
