@@ -356,8 +356,7 @@ The parameters we'll use:
 
 1. Copy the following code and run:
 
-```python
-    <copy>
+    ```python
     # Grab the request_id from the same customer bundle we used for recommendations
     ret_req = (customer_json.get("returnRequests") or [{}])[0]
     request_id = ret_req.get("requestId")
@@ -393,8 +392,15 @@ The parameters we'll use:
 
     connection.commit()
     print(f"✅ Task 6 complete: recommendation chunked and stored for request {request_id} (sizes: {chunk_sizes}).")
-    </copy>
-```
+    ```
+
+2. Click the "Run" button to execute the code.
+
+    ![Create Chunks](./images/create-chunks.png " ")
+
+3. Review the output.
+
+    ![chunks](./images/chunks-created.png " ")
 
 
 ## Task 6: Create a function to create embeddings - Use Oracle Database 23ai to create vector data 
@@ -407,7 +413,7 @@ Before answering questions, we need to prepare the data by vectoring the recomme
 
    - **Stores Embeddings**: Inserts the generated embedding vector into a table called `RETURN_CHUNKS`.
 
-1. Run and review the code in a new cell:
+1. Run and review the code in a new cell to chunk and store recommendations:
 
     ```python
     <copy>
@@ -423,19 +429,18 @@ Before answering questions, we need to prepare the data by vectoring the recomme
 
     connection.commit()
     print("✅ Embedded vectors for recommendation chunks (retail).")
-
     </copy>
     ```
 
 2. Click the "Run" button to execute the code.
 
-    ![generate embeddings](./images/generate-embeddings.png " ")
+    ![Create Vector Embedding](./images/generate-embeddings.png " ")
 
 3. Review the output.
 
-    ![vector](./images/create-vector.png " ")
+    ![chunks](./images/create-vector.png " ")
 
-## Task 6: Implement RAG with Oracle Database 23ai's Vector Search
+## Task 7: Implement RAG with Oracle Database 23ai's Vector Search
 
 Now that the recommendations are vectorized, we can process a user’s question:
 
