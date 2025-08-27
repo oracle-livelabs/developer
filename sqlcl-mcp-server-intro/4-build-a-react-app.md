@@ -1,4 +1,4 @@
-# Build a schema
+# Build a React app
 
 ## Introduction
 
