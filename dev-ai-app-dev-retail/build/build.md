@@ -413,6 +413,7 @@ Before answering questions, we need to prepare the data by vectoring the recomme
     <copy>
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     # Embed all chunks we just inserted for this request
     cursor.execute("""
         UPDATE RETURN_CHUNKS
@@ -436,6 +437,17 @@ Before answering questions, we need to prepare the data by vectoring the recomme
     # Clean any prior chunks for this request
     cursor.execute("DELETE FROM RETURN_CHUNKS WHERE REQUEST_ID = :rid", {'rid': request_id})
     connection.commit()
+=======
+    # Grab the request_id from the same customer bundle we used for recommendations
+    ret_req = (customer_json.get("returnRequests") or [{}])[0]
+    request_id = ret_req.get("requestId")
+    if request_id is None:
+        raise ValueError("No requestId found from the selected customer context.")
+
+    # Clean any prior chunks for this request
+    cursor.execute("DELETE FROM RETURN_CHUNKS WHERE REQUEST_ID = :rid", {'rid': request_id})
+    connection.commit()
+>>>>>>> Stashed changes
 =======
     # Grab the request_id from the same customer bundle we used for recommendations
     ret_req = (customer_json.get("returnRequests") or [{}])[0]
@@ -474,6 +486,9 @@ Before answering questions, we need to prepare the data by vectoring the recomme
     connection.commit()
     print(f"✅ Task 6 complete: recommendation chunked and stored for request {request_id} (sizes: {chunk_sizes}).")
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -488,7 +503,36 @@ Before answering questions, we need to prepare the data by vectoring the recomme
 
     ![vector](./images/chunks-created.png " ")
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+
+4. Now create the vector embedding by running the following code in a new cell.
+
+     ```python
+    <copy>
+    # Embed all chunks we just inserted for this request
+    cursor.execute("""
+        UPDATE RETURN_CHUNKS
+        SET CHUNK_VECTOR = dbms_vector_chain.utl_to_embedding(
+            CHUNK_TEXT,
+            JSON('{"provider":"database","model":"DEMO_MODEL","dimensions":384}')
+        )
+        WHERE REQUEST_ID = :rid
+    """, {'rid': request_id})
+
+    connection.commit()
+    print("✅ Embedded vectors for recommendation chunks (retail).")
+    </copy>
+    ```
+2. Click the "Run" button to execute the code.
+
+    ![Create Vector Embedding](./images/generate-embeddings.png " ")
+
+3. Review the output.
+
+    ![vector](./images/vector-embedding.png " ")
+>>>>>>> Stashed changes
 
 4. Now create the vector embedding by running the following code in a new cell.
 
@@ -677,6 +721,10 @@ This step:
         print(f"RAG flow error: {e}")
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
 =======
 
 >>>>>>> Stashed changes
