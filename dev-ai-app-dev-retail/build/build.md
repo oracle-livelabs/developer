@@ -356,8 +356,7 @@ The parameters we'll use:
 
 1. Copy the following code and run:
 
-```python
-    <copy>
+    ```python
     # Grab the request_id from the same customer bundle we used for recommendations
     ret_req = (customer_json.get("returnRequests") or [{}])[0]
     request_id = ret_req.get("requestId")
@@ -393,8 +392,15 @@ The parameters we'll use:
 
     connection.commit()
     print(f"✅ Task 6 complete: recommendation chunked and stored for request {request_id} (sizes: {chunk_sizes}).")
-    </copy>
-```
+    ```
+
+2. Click the "Run" button to execute the code.
+
+    ![Create Chunks](./images/create-chunks.png " ")
+
+3. Review the output.
+
+    ![chunks](./images/chunks-created.png " ")
 
 
 ## Task 6: Create a function to create embeddings - Use Oracle Database 23ai to create vector data 
@@ -411,106 +417,6 @@ Before answering questions, we need to prepare the data by vectoring the recomme
 
     ```python
     <copy>
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-    # Embed all chunks we just inserted for this request
-    cursor.execute("""
-        UPDATE RETURN_CHUNKS
-        SET CHUNK_VECTOR = dbms_vector_chain.utl_to_embedding(
-            CHUNK_TEXT,
-            JSON('{"provider":"database","model":"DEMO_MODEL","dimensions":384}')
-        )
-        WHERE REQUEST_ID = :rid
-    """, {'rid': request_id})
-
-    connection.commit()
-    print("✅ Embedded vectors for recommendation chunks (retail).")
-
-=======
-    # Grab the request_id from the same customer bundle we used for recommendations
-    ret_req = (customer_json.get("returnRequests") or [{}])[0]
-    request_id = ret_req.get("requestId")
-    if request_id is None:
-        raise ValueError("No requestId found from the selected customer context.")
-
-    # Clean any prior chunks for this request
-    cursor.execute("DELETE FROM RETURN_CHUNKS WHERE REQUEST_ID = :rid", {'rid': request_id})
-    connection.commit()
-=======
-    # Grab the request_id from the same customer bundle we used for recommendations
-    ret_req = (customer_json.get("returnRequests") or [{}])[0]
-    request_id = ret_req.get("requestId")
-    if request_id is None:
-        raise ValueError("No requestId found from the selected customer context.")
-
-    # Clean any prior chunks for this request
-    cursor.execute("DELETE FROM RETURN_CHUNKS WHERE REQUEST_ID = :rid", {'rid': request_id})
-    connection.commit()
->>>>>>> Stashed changes
-=======
-    # Grab the request_id from the same customer bundle we used for recommendations
-    ret_req = (customer_json.get("returnRequests") or [{}])[0]
-    request_id = ret_req.get("requestId")
-    if request_id is None:
-        raise ValueError("No requestId found from the selected customer context.")
-
-    # Clean any prior chunks for this request
-    cursor.execute("DELETE FROM RETURN_CHUNKS WHERE REQUEST_ID = :rid", {'rid': request_id})
-    connection.commit()
->>>>>>> Stashed changes
-
-    # We'll chunk the recommendation text at multiple sizes.
-    # Tip: add more sizes like [50, 200, 500] as you wish.
-    chunk_sizes = [50]
-
-    # Insert chunks using VECTOR_CHUNKS, without needing an intermediate table.
-    # We make CHUNK_ID unique by composing (size * 1,000,000 + chunk_offset).
-    for size in chunk_sizes:
-        insert_sql = f"""
-            INSERT INTO RETURN_CHUNKS (CHUNK_ID, REQUEST_ID, CHUNK_TEXT)
-            SELECT (:chunk_size * 1000000) + vc.chunk_offset, :req_id, vc.chunk_text
-            FROM (SELECT :rec_text AS txt FROM dual) s,
-                VECTOR_CHUNKS(
-                    dbms_vector_chain.utl_to_text(s.txt)
-                    BY words
-                    MAX {size}
-                    OVERLAP 0
-                    SPLIT BY sentence
-                    LANGUAGE american
-                    NORMALIZE all
-                ) vc
-        """
-        cursor.execute(insert_sql, {'chunk_size': size, 'req_id': request_id, 'rec_text': recommendations})
-
-    connection.commit()
-    print(f"✅ Task 6 complete: recommendation chunked and stored for request {request_id} (sizes: {chunk_sizes}).")
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-    </copy>
-    ```
-
-2. Click the "Run" button to execute the code.
-
-    ![Create Chunks](./images/create-chunks.png " ")
-
-3. Review the output.
-
-    ![vector](./images/chunks-created.png " ")
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-=======
-=======
-
-4. Now create the vector embedding by running the following code in a new cell.
-
-     ```python
-    <copy>
     # Embed all chunks we just inserted for this request
     cursor.execute("""
         UPDATE RETURN_CHUNKS
@@ -525,69 +431,16 @@ Before answering questions, we need to prepare the data by vectoring the recomme
     print("✅ Embedded vectors for recommendation chunks (retail).")
     </copy>
     ```
+
 2. Click the "Run" button to execute the code.
 
     ![Create Vector Embedding](./images/generate-embeddings.png " ")
 
 3. Review the output.
 
-    ![vector](./images/vector-embedding.png " ")
->>>>>>> Stashed changes
+    ![chunks](./images/create-vector.png " ")
 
-4. Now create the vector embedding by running the following code in a new cell.
-
-     ```python
-    <copy>
-    # Embed all chunks we just inserted for this request
-    cursor.execute("""
-        UPDATE RETURN_CHUNKS
-        SET CHUNK_VECTOR = dbms_vector_chain.utl_to_embedding(
-            CHUNK_TEXT,
-            JSON('{"provider":"database","model":"DEMO_MODEL","dimensions":384}')
-        )
-        WHERE REQUEST_ID = :rid
-    """, {'rid': request_id})
-
-    connection.commit()
-    print("✅ Embedded vectors for recommendation chunks (retail).")
-    </copy>
-    ```
-2. Click the "Run" button to execute the code.
-
-    ![Create Vector Embedding](./images/generate-embeddings.png " ")
-
-3. Review the output.
-
-    ![vector](./images/vector-embedding.png " ")
->>>>>>> Stashed changes
-
-4. Now create the vector embedding by running the following code in a new cell.
-
-     ```python
-    <copy>
-    # Embed all chunks we just inserted for this request
-    cursor.execute("""
-        UPDATE RETURN_CHUNKS
-        SET CHUNK_VECTOR = dbms_vector_chain.utl_to_embedding(
-            CHUNK_TEXT,
-            JSON('{"provider":"database","model":"DEMO_MODEL","dimensions":384}')
-        )
-        WHERE REQUEST_ID = :rid
-    """, {'rid': request_id})
-
-    connection.commit()
-    print("✅ Embedded vectors for recommendation chunks (retail).")
-    </copy>
-    ```
-2. Click the "Run" button to execute the code.
-
-    ![Create Vector Embedding](./images/generate-embeddings.png " ")
-
-3. Review the output.
-
-    ![vector](./images/vector-embedding.png " ")
-
-## Task 6: Implement RAG with Oracle Database 23ai's Vector Search
+## Task 7: Implement RAG with Oracle Database 23ai's Vector Search
 
 Now that the recommendations are vectorized, we can process a user’s question:
 
@@ -719,18 +572,6 @@ This step:
 
     except Exception as e:
         print(f"RAG flow error: {e}")
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-=======
-
->>>>>>> Stashed changes
-=======
-
->>>>>>> Stashed changes
-=======
-
->>>>>>> Stashed changes
     </copy>
     ```
 
