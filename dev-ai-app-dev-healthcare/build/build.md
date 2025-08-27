@@ -4,7 +4,7 @@
 
 Here you’ll create an end‑to‑end prior‑authorization system using Oracle Database 23ai and OCI Generative AI. After connecting to clinical datasets, you’ll analyze patient records and leverage an LLM to recommend approval, pend, or denial - complete with evidence citations. By applying Python skills from prior labs, you’ll assemble a fully integrated, AI‑driven healthcare review portal.
 
-This lab uses some of the basic coding samples you created in lab 3, such as cursor.execute and more.
+This lab uses some of the basic coding samples you created in lab 3, such as `cursor.execute` and more.
 
 Estimated Time: 30 minutes
 
@@ -26,18 +26,44 @@ This lab assumes you have:
 ## Task 1: Build the application in Jupyter Notebook
 >💡**Note**: Review Lab 2: Connect to the Development Environment for instructions on accessing JupyterLab.
 
-1. Open Launcher by clicking **+** button.
+1. You should see a terminal pop up once you are logged in. 
 
-    ![Open Launcher](./images/launcher.png " ")
-
-2. Open a new **Jupyter Notebook** by clicking on **Pyhton(ipykernel)** notebook.
-
-    ![Open Jupyter Notebook](./images/open-new-notebook.png " ")
+    ![Open Terminal](./images/terminal.png " ")
 
 
-## Task 2: Connect to the database using oracledb Python driver
+2. Navigate to the `dbinit` directory by running the following command.
 
-1. Copy the following code block into an empty cell in your notebook. This code block imports the `oracledb` Python driver and other libraries. 
+    ```bash
+    <copy>
+    cd dbinit
+    </copy>
+    ```
+
+    ![Navigate to Directory](./images/dbinit.png " ")
+
+3. Copy and run the following command to create tables in the database. There will be a lot of output. You should see the following output once complete.
+
+    ```bash
+    <copy>
+    ./shell_script.sh
+    </copy>
+    ```
+
+    ![Run Shell Script](./images/run-script.png " ")
+
+    ![Output Shell Script](./images/shell-script.png " ")
+
+## Task 2: Connect to Database
+
+2. Click the **+** sign on the top left to open the Launcher.
+
+    ![Open Launcher](./images/open-launcher.png " ")
+
+3. Open a new notebook.
+
+    ![Open Notebook](./images/open-notebook.png " ")
+
+1. Copy the following code block into an empty cell in your notebook. This code block imports the `oracledb` Python driver and other libraries.
 
     ```python
     <copy>
@@ -71,173 +97,333 @@ This lab assumes you have:
 
     ![Connect to Database](./images/connect-to-db.png " ")
 
+## Task 3: Create a function to retrieve data from the database
 
-## Task 3: Create tables in the database
+You will query customer data from the `patient_dv` JSON duality view, which combines data from PATIENTS and related tables. This task will:
 
-1. Copy the following code block into the next empty cell in your notebook. This will create all tables in the database. 
+- **Define a Function**: Create a reusable function `a` to query the database by customer ID, extracting the JSON data for a specific customer.
 
-    ```python
-    <copy>
-    exec(open("db_setup.py").read())
-    </copy>
-    ```
-2. Run the code block to create all tables in the database. 
+- **Use an Example**: Fetch data for customer `2001` (Alex Karev) to demonstrate the process.
 
-    ![Create Tables](./images/create-tables.png " ") 
+- **Display the Results**: Format the retrieved data into a pandas DataFrame for a clear, tabular presentation, showing key details like name, physician, Latest Condition, and Diagnosis Code.
 
-
-## Task 4: Create a function to retrieve data from the database
-
-With the database ready, you will query customer data from the clients_dv JSON duality view. This view merges data from `CLIENTS`, `LOAN_APPLICATIONS`, and `CLIENT_DEBT` into a single JSON object, streamlining access to related records for AI-driven analysis.
-
-- **Define a Function**: Create a reusable function `fetch_customer_data` to query the database by customer ID, extracting the JSON data for a specific customer.
-- **Use an Example**: Fetch data for customer `CUST_1000` (James Smith) to demonstrate the process.
-- **Display the Results**: Format the retrieved data into a pandas DataFrame for a clear, tabular presentation, showing key details like name, income, credit score, and total debt.
-
-1. Run the code below to see James Smith’s profile. The output will include a brief summary (name and loan status) followed by a detailed table. If no data is found for the specified ID, a message will indicate this, helping you debug potential issues like an incorrect ID or empty database.
+1. Copy and paste the code below into the new notebook:
 
     ```python
     <copy>
-    def fetch_customer_data(customer_id):
-        cursor.execute("SELECT data FROM clients_dv WHERE JSON_VALUE(data, '$._id') = :customer_id", {'customer_id': customer_id})
-        result = cursor.fetchone()
-        return json.loads(result[0]) if result and isinstance(result[0], str) else result[0] if result else None
+    def fetch_patient_data(patient_id):
+        print(f"Executing query for patient_id: {patient_id}")
+        cursor.execute(
+            "SELECT data FROM patients_dv WHERE JSON_VALUE(data, '$._id') = :pid",
+            {'pid': str(patient_id)}
+        )
+        row = cursor.fetchone()
+        if not row:
+            print(f"No data found for patient {patient_id}")
+            return None
 
-    selected_customer_id = "CUST_1000"
-    customer_json = fetch_customer_data(selected_customer_id)
+        data = row[0]
+        if isinstance(data, (bytes, bytearray)):
+            data = data.decode('utf-8')
+        if isinstance(data, str):
+            data = json.loads(data)
+        elif not isinstance(data, dict):
+            print(f"Unexpected type: {type(data)}")
+            return None
+        return data
 
-    if customer_json:
-        loan_app = customer_json.get("loanApplications", [{}])[0]
-        print(f"Customer: {customer_json['firstName']} {customer_json['lastName']}")
-        print(f"Loan Status: {loan_app['loanStatus']}")
+    # Example: pick a known patient from the sample data
+    selected_patient_id = 2001  # Alex Karev
+    patient_json = fetch_patient_data(selected_patient_id)
 
-        desired_fields = [
-            ("Customer ID", selected_customer_id),
-            ("Application ID", loan_app.get("applicationId", "")),
-            ("First Name", customer_json.get("firstName", "")),
-            ("Last Name", customer_json.get("lastName", "")),
-            ("City", customer_json.get("city", "")),
-            ("State", customer_json.get("state", "")),
-            ("Zip code", customer_json.get("zipCode", "")),
-            ("Age", customer_json.get("age", 0)),
-            ("Income", customer_json.get("income", 0)),
-            ("Credit score", loan_app.get("creditScore", 600)),
-            ("Requested loan amount", loan_app.get("requestedLoanAmount", 0)),
-            ("Total Debt", loan_app.get("totalDebt", 0)),
-            ("Loan status", loan_app.get("loanStatus", "Pending Review"))
-        ]
-        df_customer_details = pd.DataFrame({field_name: [field_value] for field_name, field_value in desired_fields})
-        display(df_customer_details)
-    else:
-        print("No data found for customer ID:", selected_customer_id)
+    if patient_json:
+        # Flatten selected summary fields for display
+        physician = patient_json.get("physician", {}) or {}
+        first_note = (patient_json.get("notes") or [{}])[0]
+        first_conditions = first_note.get("conditions") or []
+        first_cond = first_conditions[0] if first_conditions else {}
+
+        summary = {
+            "Patient ID": selected_patient_id,
+            "First Name": patient_json.get("firstName", ""),
+            "Last Name":  patient_json.get("lastName", ""),
+            "Gender":     patient_json.get("GENDER", ""),
+            "DOB":        patient_json.get("DOB", ""),
+            "Physician":  f"{physician.get('firstName','')} {physician.get('lastName','')}",
+            "Latest Condition": first_cond.get("conditionName", ""),
+            "Diagnosis Code":   first_cond.get("diagnosisCode", "")
+        }
+        display(pd.DataFrame([summary]))
     </copy>
     ```
+
 2. Click the "Run" button to execute the code.
+
+    ![Fetch patient data](./images/fetch-patient-data.png " ")
 
 3. The output will display a DataFrame containing the customer details for the selected customer ID.
 
-    ![Fetch customer](./images/fetch-customer.png " ")
+    ![Fetch patient](./images/patient-data.png " ")
 
-If you completed Lab 1: Run the Demo earlier, this is what gets printed out when the Loan Officer clicks on CUST 1000. You just built it, well done!
+## Task 4: Create a function to generate recommendations for the customer
 
+In a new cell, define a function `generate_recommendations` to fetch policy rules from `POLICY_TEXT` and combine them with patient data. Construct a prompt the OCI Generative AI model(meta.llama-3.2-90b-vision-instruct) to recommend a claims decision(APPROVE, REQUEST INFO, DENY) based on patient profile, medical necessity, and policy alignment.
 
-## Task 5: Create a function to generate recommendations for the customer
-
-With customer profiles in place, you will use OCI Generative AI to generate personalized loan recommendations. This step combines customer data with available loan options, allowing the LLM to suggest loans that match the customer’s credit score, income, and debt profile.
+With patient profiles in place, you will use OCI Generative AI to generate personalized claim decision recommendations. 
 
 Here’s what we’ll do:
-- **Fetch Loan Options**: Retrieve all loans from `MOCK_LOAN_DATA`, including details like interest rates, credit score requirements, and loan types.
-- **Build a Prompt**: Construct a structured prompt that combines the customer’s profile with available loans, instructing the LLM to evaluate and recommend based solely on this data.
-- **Use OCI Generative AI**: Send the prompt to the `meta.llama-3.2-90b-vision-instruct` model via OCI’s inference client, which will process the input and generate a response.
-- **Format the Output**: Display the recommendations in HTML with styled headers and lists, covering evaluation, top picks, and explanations—making it easy to read and understand.
 
-
-1. Review and review the code in a new cell:
+1. Copy and paste the code in a new cell:
 
     ```python
-    <copy>
-    # Fetch Mock Loan Data
-    cursor.execute("SELECT loan_id, loan_provider_name, loan_type, interest_rate, origination_fee, time_to_close, credit_score, debt_to_income_ratio, income, down_payment_percent, is_first_time_home_buyer FROM MOCK_LOAN_DATA")
-    df_mock_loans = pd.DataFrame(cursor.fetchall(), columns=["LOAN_ID", "LOAN_PROVIDER_NAME", "LOAN_TYPE", "INTEREST_RATE", "ORIGINATION_FEE", "TIME_TO_CLOSE", "CREDIT_SCORE", "DEBT_TO_INCOME_RATIO", "INCOME", "DOWN_PAYMENT_PERCENT", "IS_FIRST_TIME_HOME_BUYER"])
+        <copy>
+        def load_policy_texts():
+            cursor.execute("SELECT policy_id, title, source, full_text FROM POLICY_TEXT")
+            cols = ["POLICY_ID","TITLE","SOURCE","FULL_TEXT"]
+            return pd.DataFrame(cursor.fetchall(), columns=cols)
 
-    # Generate Recommendations
-    def generate_recommendations(customer_id, customer_json, df_mock_loans):
-        loan_app = customer_json.get("loanApplications", [{}])[0]
-        available_loans_text = "\n".join([f"{loan['LOAN_ID']}: {loan['LOAN_TYPE']} | {loan['INTEREST_RATE']}% interest | Credit Score: {loan['CREDIT_SCORE']} | DTI: {loan['DEBT_TO_INCOME_RATIO']}" for loan in df_mock_loans.to_dict(orient='records')])
-        customer_profile_text = "\n".join([f"- {key.replace('_', ' ').title()}: {value}" for key, value in {**customer_json, **loan_app}.items() if key not in ["embedding_vector", "ai_response_vector", "chunk_vector"]])
+        def extract_first_auth_context(p_json):
+            """Pull one condition and its first authorization request bundle for prompting."""
+            notes = p_json.get("notes") or []
+            if not notes: return {}, {}, {}
+            conditions = notes[0].get("conditions") or []
+            if not conditions: return {}, {}, {}
+            cond = conditions[0]
+            auths = cond.get("authorizationRequests") or []
+            auth = auths[0] if auths else {}
+            rec  = auth.get("RECOMMENDATION", {}) or {}
+            return cond, auth, rec
 
-        prompt = f"""<s>[INST] <<SYS>>You are a Loan Approver AI. Use only the provided context to evaluate the applicant’s profile and recommend loans. Format results as plain text with numbered sections (1. Comprehensive Evaluation, 2. Top 3 Loan Recommendations, 3. Recommendations Explanations, 4. Final Suggestion). Use newlines between sections.</SYS>> [/INST]
-        [INST]Available Loan Options:\n{available_loans_text}\nApplicant's Full Profile:\n{customer_profile_text}\nTasks:\n1. Comprehensive Evaluation\n2. Top 3 Loan Recommendations\n3. Recommendations Explanations\n4. Final Suggestion</INST>"""
+        df_policy = load_policy_texts()
 
-        genai_client = oci.generative_ai_inference.GenerativeAiInferenceClient(config=oci.config.from_file(os.getenv("OCI_CONFIG_PATH", "~/.oci/config")), service_endpoint=os.getenv("ENDPOINT"))
-        chat_detail = oci.generative_ai_inference.models.ChatDetails(
-            compartment_id=os.getenv("COMPARTMENT_OCID"),
-            chat_request=oci.generative_ai_inference.models.GenericChatRequest(messages=[oci.generative_ai_inference.models.UserMessage(content=[oci.generative_ai_inference.models.TextContent(text=prompt)])], temperature=0.0, top_p=1.00),
-            serving_mode=oci.generative_ai_inference.models.OnDemandServingMode(model_id="meta.llama-3.2-90b-vision-instruct")
-        )
-        chat_response = genai_client.chat(chat_detail)
-        recommendations = chat_response.data.chat_response.choices[0].message.content[0].text
+        # Build prompt
+        condition, auth_req, rec_block = extract_first_auth_context(patient_json)
 
-        return recommendations
+        available_policies_text = "\n".join([
+            f"{row.POLICY_ID}: {row.TITLE} | Source: {row.SOURCE}\n{row.FULL_TEXT}"
+            for _, row in df_policy.iterrows()
+        ])
 
-    recommendations = generate_recommendations(selected_customer_id, customer_json, df_mock_loans)
-    print(recommendations)
-    </copy>
+        patient_profile_text = "\n".join([
+            f"- {k}: {v}" for k, v in patient_json.items()
+            if k not in ["notes","_metadata"]
+        ])
+
+        # Flatten (one condition/auth for clarity)
+        cond_text = "\n".join([f"- {k}: {v}" for k, v in condition.items() if k != "authorizationRequests"])
+        auth_text = "\n".join([f"- {k}: {v}" for k, v in auth_req.items() if k != "RECOMMENDATION"])
+        rec_text  = "\n".join([f"- {k}: {v}" for k, v in rec_block.items()])
+
+        prompt = f"""<s>[INST] <<SYS>>You are a Healthcare Prior Authorization AI.
+        Use ONLY the provided context to recommend a prior-authorization decision:
+        (Approved, In Progress, Pending Review, Denied).
+        Do not mention sources outside of the provided context.
+        Base it on medical necessity, diagnosis, and policy alignment.
+        Keep total output under 600 words; be concise and structured.</SYS>>
+
+        Available Policies:
+        {available_policies_text}
+
+        Patient Profile:
+        {patient_profile_text}
+
+        Condition:
+        {cond_text}
+
+        Authorization Request:
+        {auth_text}
+
+        Existing System Recommendation (if any):
+        {rec_text}
+
+        Tasks:
+        1) Suggested Action: "Suggested Action: Approved/In Progress/Pending Review/Denied"
+        2) Risk (1-10) + label (Very Low/Low/Medium/High).
+        3) 2-4 bullet rationale referencing policy titles and relevant clinical details.
+        4) If action is not Approved, list up to 3 actionable next steps (e.g., provide imaging, labs, or prior therapy documentation).
+
+        Response format: short header + bullets. Numerical values clearly formatted.</INST>"""
+
+        print("Generating AI response...")
+
+        try:
+            genai_client = oci.generative_ai_inference.GenerativeAiInferenceClient(
+                config=oci.config.from_file(os.getenv("OCI_CONFIG_PATH","~/.oci/config")),
+                service_endpoint=os.getenv("ENDPOINT")
+            )
+
+            chat_detail = oci.generative_ai_inference.models.ChatDetails(
+                compartment_id=os.getenv("COMPARTMENT_OCID"),
+                chat_request=oci.generative_ai_inference.models.GenericChatRequest(
+                    messages=[oci.generative_ai_inference.models.UserMessage(
+                        content=[oci.generative_ai_inference.models.TextContent(text=prompt)]
+                    )],
+                    temperature=0.0,
+                    top_p=1.0
+                ),
+                serving_mode=oci.generative_ai_inference.models.OnDemandServingMode(
+                    model_id="meta.llama-3.2-90b-vision-instruct"
+                )
+            )
+
+            chat_response = genai_client.chat(chat_detail)
+            recommendation_text = chat_response.data.chat_response.choices[0].message.content[0].text
+            print(recommendation_text)
+        except Exception as e:
+            print(f"Error generating recommendation: {e}")
+            recommendation_text = "No AI output (fallback)."
+        </copy>
     ```
-2. Click the "Run" button to execute the code. Note that this will take time to run. Be patient, you will get loan recommendations from the LLM shortly.
 
-3. Review the output. In the demo, this is where you selected the "Navigate to Decisions" button as the Loan Officer. You just used AI to get recommendations for the loan officer which would have taken her hours to do, congratulations!
+2. Click the "Run" button to execute the code. Note that this will take time to run.
+
+    ![healthcare recommendation](./images/generate-recommendation.png " ")
+
+3. Review the output. In the demo, this is where you selected the "Navigate to Decisions" button as the Healthcare Claims Analyst. You just used AI to get recommendations for the claims analyst which would have taken her hours to do, congratulations!
+
+    ![healthcare recommendation](./images/ai-recommendation.png " ")
 
 >Note: Your result may be different. This is because of generative AI and the model's ability to generate new content based on your input. The output may contain different recommendations or suggestions.
 
-![loan](./images/loan-recommendation.png " ")
+## Task 5: Chunk & Store Recommendations
 
+To handle follow-up questions, you will enhance the system with an AI Guru powered by Oracle 23ai’s Vector Search and Retrieval-Augmented Generation (RAG). The AI Guru will be able to answer questions about the return application and provide recommendations based on the data.
 
-## Task 6: Create a function to create embeddings - Use Oracle Database 23ai's to create vector data 
-
-To handle follow-up questions, you will enhance the system with an AI Healthcare Guru powered by Oracle 23ai’s Vector Search and Retrieval-Augmented Generation (RAG). The AI Healthcare Guru will be able to answer questions about the return application and provide recommendations based on the data.
-
-Before answering questions, we need to prepare the data by vectoring the loan recommendations. This step:
+Before answering questions, we need to prepare the data by vectoring the claims recommendations. This step:
 
    - **Stores Recommendations**: Inserts the full recommendation text (from previous cell) as a single chunk if not already present.
 
-   - **Generates Embeddings**: This is a new feature in Oracle Database 23ai that allows you to create embeddings directly within the database, eliminating the need for external tools or APIs. The `dbms_vector_chain.utl_to_embedding` function takes the recommendation text as input and returns an embedding vector.
+Now we'll chunk the AI recommendations by words and store in the MEDICAL_CHUNK table.
 
-   - **Stores Embeddings**: Inserts the generated embedding vector into a table called `LOAN_CHUNK`.
+The parameters we'll use:
+* By words(vs characters)
+* MAX 50 words per chunk (adjust as needed)
+* OVERLAP 0 (independent chunks)
+* SPLIT BY sentence (avoid mid-setence cuts)
+* LANGUAGE american, NORMALIZE all
 
-1. Run and review the code in a new cell:
+1. Copy the following code and run:
 
     ```python
-    <copy>
-    # Vectorize the full AI recommendations
-    try:
-        with connection.cursor() as cursor:
-            # Clear existing entries for this customer
-            cursor.execute("DELETE FROM LOAN_CHUNK WHERE CUSTOMER_ID = :customer_id", {'customer_id': selected_customer_id})
-            # Store full AI recommendations from Cell 10
-            cursor.execute("""
-                INSERT INTO LOAN_CHUNK (CUSTOMER_ID, CHUNK_ID, CHUNK_TEXT) 
-                VALUES (:customer_id, 0, :chunk_text)
-            """, {
-                'customer_id': selected_customer_id,
-                'chunk_text': recommendations  # Using 'recommendations' from Cell 10
-            })
-            # Vectorize using dbms_vector_chain
-            cursor.execute("""
-                UPDATE LOAN_CHUNK
-                SET CHUNK_VECTOR = dbms_vector_chain.utl_to_embedding(
-                    :chunk_text,
-                    JSON('{"provider": "database", "model": "DEMO_MODEL", "dimensions": 384}')
-                )
-                WHERE CUSTOMER_ID = :customer_id AND CHUNK_ID = 0
-            """, {'customer_id': selected_customer_id, 'chunk_text': recommendations})
-            connection.commit()
-            print("Vector embeddings generated for AI recommendations.")
-    except oracledb.DatabaseError as e:
-        print(f"Failed to generate vector embeddings for AI recommendations: {e}")
-    </copy>
+        <copy>
+        authorization_id = auth_req.get("authorizationId")
+        if authorization_id is None:
+            raise ValueError("No authorization_id found from the selected patient context.")
+
+        # Upsert the raw recommendation text as the source for chunking
+        cursor.execute("DELETE FROM RECOMMENDATION_SRC WHERE AUTHORIZATION_ID = :aid", {'aid': authorization_id})
+        cursor.execute("""
+            INSERT INTO RECOMMENDATION_SRC (AUTHORIZATION_ID, TEXT_CLOB)
+            VALUES (:aid, :txt)
+        """, {'aid': authorization_id, 'txt': recommendation_text})
+        connection.commit()
+
+        # Remove any prior chunks for this authorization_id (only our multi-size ones)
+        cursor.execute("""
+            DELETE FROM MEDICAL_CHUNK
+            WHERE AUTHORIZATION_ID = :aid
+            AND (SOURCE_TYPE LIKE 'REC_CHUNK_W%' OR SOURCE_TYPE = 'AI_RECOMMENDATION')
+        """, {'aid': authorization_id})
+        connection.commit()
+
+        # Chunk at multiple sizes — adjust as you like
+        chunk_sizes = [50]
+
+        for size in chunk_sizes:
+            insert_sql = f"""
+                INSERT INTO MEDICAL_CHUNK (AUTHORIZATION_ID, SOURCE_TYPE, CHUNK_ID, CHUNK_TEXT)
+                SELECT :aid,
+                    :src_type,
+                    c.chunk_offset,
+                    c.chunk_text
+                FROM RECOMMENDATION_SRC s,
+                    VECTOR_CHUNKS(
+                        dbms_vector_chain.utl_to_text(s.text_clob)
+                        BY words
+                        MAX {size}
+                        OVERLAP 0
+                        SPLIT BY sentence
+                        LANGUAGE american
+                        NORMALIZE all
+                    ) c
+                WHERE s.authorization_id = :aid
+            """
+            cursor.execute(insert_sql, {'aid': authorization_id, 'src_type': f'REC_CHUNK_W{size}'})
+
+        connection.commit()
+        print("✅ Task 5 complete: recommendation chunked and stored (W50).")
+        </copy>
     ```
+
 2. Click the "Run" button to execute the code.
+
+    ![create chunks](./images/create-chunks.png " ")
+
+3. Review the output.
+
+    ![chunks](./images/chunks-created.png " ")
+
+## Task 6: Create Embeddings
+
+Now we must generate and store vector embeddings. This allows us to use Vector Search and RAG to enhance AI Guru's answers. 
+
+In this step:
+
+   - **Generates Embeddings**: This is a new feature in Oracle Database 23ai that allows you to create embeddings directly within the database, eliminating the need for external tools or APIs. The `dbms_vector_chain.utl_to_embedding` function takes the recommendation text as input and returns an embedding vector.
+
+   - **Stores Embeddings**: Inserts the generated embedding vector into a table called `MEDICAL_CHUNK`.
+
+1. We embed the recommendation chunks and our policy text for retrieval. Copy the following code into a new cell block:
+
+    ```python
+        <copy>
+        # 6a) Embed the newly inserted recommendation chunks
+        cursor.execute("""
+            UPDATE MEDICAL_CHUNK
+            SET CHUNK_VECTOR = dbms_vector_chain.utl_to_embedding(
+                CHUNK_TEXT,
+                JSON('{"provider":"database","model":"DEMO_MODEL","dimensions":384}')
+            )
+            WHERE AUTHORIZATION_ID = :aid
+            AND SOURCE_TYPE LIKE 'REC_CHUNK_W%'
+        """, {'aid': authorization_id})
+        connection.commit()
+        print("✅ Embedded vectors for recommendation chunks.")
+
+        # 6b) (Re)chunk + embed policy text corpus (simple fixed-size char chunking)
+        def simple_chunk(text, max_chars=1200):
+            text = str(text or "")
+            return [text[i:i+max_chars] for i in range(0, len(text), max_chars)] or [""]
+
+        # Clean slate for POLICY_VECTOR_CHUNK
+        cursor.execute("DELETE FROM POLICY_VECTOR_CHUNK")
+        connection.commit()
+
+        for _, row in df_policy.iterrows():
+            chunks = simple_chunk(row.FULL_TEXT, max_chars=1200)
+            for idx, ch in enumerate(chunks):
+                cursor.execute("""
+                    INSERT INTO POLICY_VECTOR_CHUNK (POLICY_ID, CHUNK_ID, CHUNK_TEXT)
+                    VALUES (:pid, :cid, :ctxt)
+                """, {'pid': int(row.POLICY_ID), 'cid': idx, 'ctxt': ch})
+
+                cursor.execute("""
+                    UPDATE POLICY_VECTOR_CHUNK
+                    SET CHUNK_VECTOR = dbms_vector_chain.utl_to_embedding(
+                        :text,
+                        JSON('{"provider":"database","model":"DEMO_MODEL","dimensions":384}')
+                    )
+                    WHERE POLICY_ID = :pid AND CHUNK_ID = :cid
+                """, {'text': ch, 'pid': int(row.POLICY_ID), 'cid': idx})
+
+        connection.commit()
+        print("✅ Policy text chunked and embedded.")
+        </copy>
+    ```
+
+2. Click the "Run" button to execute the code.
+
+    ![embeddings](./images/generate-embeddings.png " ")
 
 3. Review the output.
 
@@ -247,151 +433,135 @@ Before answering questions, we need to prepare the data by vectoring the loan re
 
 Now that the recommendations are vectorized, we can process a user’s question:
 
- ```What’s the best loan for a first-time home buyer?``` 
+ ```What documentation is needed to approve an MRI prior authorization?``` 
  
  This step:
 
    - **Vectorizes the question**: Embeds the question using `DEMO_MODEL` via `dbms_vector_chain.utl_to_embedding`.
    - **Performs AI Vector Search**: Finds the most relevant using similarity search.
    - **Use RAG**: Combines the customer profile, loan options, and relevant chunk into a prompt for OCI Generative AI, producing a concise answer. Here you implement the RAG process.
+   - **Retrieves**: The top policy chunks and top recommendation chunks
+   - **Builds a prompt**: To ask the LLM to answer using only the retrieved context
+   - **Prints**: The chunk IDs to be used for traceability
 
-1. Review and run the following code in a new cell.
+1. Copy the code and run:
 
     ```python
-    <copy>
-    question = "What 4th loan would James qualify for?"
+        <copy>
+        question = "What documentation is needed to approve an MRI prior authorization?"
 
-    if question:
-        print("Processing your question using AI Vector Search across all available data...")
+        def vectorize_question(q):
+            cursor.execute("""
+                SELECT dbms_vector_chain.utl_to_embedding(
+                    :q,
+                    JSON('{"provider":"database","model":"DEMO_MODEL","dimensions":384}')
+                ) FROM DUAL
+            """, {'q': q})
+            return cursor.fetchone()[0]
 
-        relevant_chunks = []
+        print("Processing question using AI Vector Search...")
 
         try:
-            # Generate embedding for user question using dbms_vector_chain
-            with connection.cursor() as cursor:
-                cursor.execute("""
-                    SELECT dbms_vector_chain.utl_to_embedding(
-                        :question,
-                        JSON('{"provider": "database", "model": "DEMO_MODEL", "dimensions": 384}')
-                    ) FROM DUAL
-                """, {'question': question})
-                question_embedding = cursor.fetchone()[0]
+            q_vec = vectorize_question(question)
 
-                # Perform AI Vector Search for the most relevant chunk
-                cursor.execute("""
-                    SELECT CHUNK_TEXT
-                    FROM LOAN_CHUNK
-                    WHERE CUSTOMER_ID = :customer_id AND CHUNK_ID = 0 
-                    AND CHUNK_VECTOR IS NOT NULL
-                    ORDER BY VECTOR_DISTANCE(CHUNK_VECTOR, :embedding, COSINE)
-                    FETCH FIRST 1 ROW ONLY
-                """, {'customer_id': selected_customer_id, 'embedding': question_embedding})
-                results = cursor.fetchall()
-                # Convert LOB to string using read()
-                relevant_chunks = [row[0].read() if isinstance(row[0], oracledb.LOB) else row[0] for row in results]
+            # Top policy chunks (broad domain guidance)
+            cursor.execute("""
+                SELECT CHUNK_ID, CHUNK_TEXT
+                FROM POLICY_VECTOR_CHUNK
+                WHERE CHUNK_VECTOR IS NOT NULL
+                ORDER BY VECTOR_DISTANCE(CHUNK_VECTOR, :qv, COSINE)
+                FETCH FIRST 3 ROWS ONLY
+            """, {'qv': q_vec})
+            policy_hits = [
+                (r[0], r[1].read() if isinstance(r[1], oracledb.LOB) else r[1])
+                for r in cursor.fetchall()
+            ]
 
-                if not relevant_chunks:
-                    print("No relevant chunks found via vector search. Using existing recommendations instead.")
-                    relevant_chunks = [recommendations]  # Fallback to full recommendations
+            # Top recommendation chunks (case specifics, across sizes)
+            cursor.execute("""
+                SELECT CHUNK_ID, CHUNK_TEXT
+                FROM MEDICAL_CHUNK
+                WHERE AUTHORIZATION_ID = :aid
+                AND SOURCE_TYPE LIKE 'REC_CHUNK_W%'
+                AND CHUNK_VECTOR IS NOT NULL
+                ORDER BY VECTOR_DISTANCE(CHUNK_VECTOR, :qv, COSINE)
+                FETCH FIRST 3 ROWS ONLY
+            """, {'aid': authorization_id, 'qv': q_vec})
+            rec_hits = [
+                (r[0], r[1].read() if isinstance(r[1], oracledb.LOB) else r[1])
+                for r in cursor.fetchall()
+            ]
 
-        except oracledb.DatabaseError as e:
-            print(f"Vector search failed: {e}")
-            relevant_chunks = [recommendations]  # Fallback
+            # Combine and format with Chunk IDs
+            retrieved = policy_hits + rec_hits
+            if not retrieved:
+                retrieved = [(0, recommendation_text)]  # fallback to full rec text
 
-        # Combine available chunks with AI recommendations
-        all_relevant_chunks = relevant_chunks
+            # Clean text for prompting
+            cleaned = [re.sub(r'[^\w\s\d.,\-\'"]', ' ', t).strip() for _, t in retrieved]
+            docs_as_one_string = "\n=========\n".join(cleaned) + "\n=========\n"
 
-        if not all_relevant_chunks:
-            print("No relevant information found for the provided question.")
-        else:
-            # Clean and format text for readability
-            cleaned_chunks = []
-            for chunk in all_relevant_chunks:
-                cleaned_chunk = re.sub(r'[^\w\s\d.,\-\'"]', ' ', chunk)  # Remove special characters
-                cleaned_chunk = re.sub(r'\s+', ' ', cleaned_chunk).strip()  # Normalize whitespace
-                cleaned_chunks.append(cleaned_chunk)
-            docs_as_one_string = "\n=========\n".join(cleaned_chunks)
+            # Compact RAG prompt
+            available_policies_titles = ", ".join(df_policy["TITLE"].tolist())
+            patient_header = f"{patient_json.get('firstName','')} {patient_json.get('lastName','')} | Condition: {condition.get('conditionName','')} ({condition.get('diagnosisCode','')})"
 
-            # Retrieve available loan options from Mock Loan Data
-            available_loans_text = "\n".join(
-                [f"{loan['LOAN_ID']}: {loan['LOAN_TYPE']} | {loan['INTEREST_RATE']}% interest | "
-                f"Credit Score: {loan['CREDIT_SCORE']} | DTI: {loan['DEBT_TO_INCOME_RATIO']} | "
-                f"Origination Fee: ${loan['ORIGINATION_FEE']} | Time to Close: {loan['TIME_TO_CLOSE']} days"
-                for loan in df_mock_loans.to_dict(orient="records")]
-            )
-
-            # Fetch fresh customer profile from customer_json
-            loan_app = customer_json.get("loanApplications", [{}])[0]
-            customer_profile_text = "\n".join(
-                [f"- {key.replace('_', ' ').title()}: {value}" for key, value in {**customer_json, **loan_app}.items() 
-                if key not in ["embedding_vector", "ai_response_vector", "chunk_vector"]]
-            )
-
-            prompt = f"""\
-            <s>[INST] <<SYS>>
-            You are AI Loan Guru, a specialized AI assistant at a brokerage firm. Use only the provided context to answer the question. 
-            Your role is to evaluate an applicant’s full financial and personal profile, provide precise answers, 
-            and offer insights while considering the firm's overall risk and best interests.
-            ALWAYS respond as if you have the knowledge yourself. Ensure all numerical values (e.g., income, interest rates) are formatted clearly with commas and proper spacing (e.g., 85,393, not 85,393whichisbelow).
-            Keep the response under 300 words and format as plain text.
-            <</SYS>> [/INST]
-
+            rag_prompt = f"""<s>[INST] <<SYS>>You are a Healthcare RAG Assistant. 
+            Answer using only the provided context. Do not mention sources outside of the provided context. 
+            Do NOT provide warnings, disclaimers, or exceed the specified response length.
+            Keep under 300 words. Be specific and actionable. Have the ability to respond in Spanish, French, Italian, German, and Portuguese if asked. </SYS>> [/INST]
             [INST]
-            Loan Officer's Question: "{question}"
+            Question: "{question}"
+            Patient: {patient_header}
+            Available Policies: {available_policies_titles}
 
-            ====
-
-            # Provided Context:
+            Context:
             {docs_as_one_string}
 
-            # Available Loan Options:
-            {available_loans_text}
-
-            # Applicant's Full Profile:
-            {customer_profile_text}
-
-            ====
-
-            # Your Tasks:
-            1. Provide a direct answer to the question asked, using the context and data.
-            2. Maintain business rules: Avoid First Time Home Owner loans if debt type is 'Mortgage'; prioritize Opportunity Zone loans (1% interest, max income $100k) if eligible (income < $100k, zip_code 48201); only recommend Military Veteran loans if veteran = 'Yes'.
-            3. Explain how the answer aligns with the applicant’s profile and eligibility.
-
-            Answer (Maximum 300 words, concise and professional):
-            [/INST]
-            """
+            Tasks:
+            1) Provide a direct answer listing the typical documentation required.
+            2) Tie each item to policy rationale where possible (title-level reference is fine).
+            3) If requirements may vary, note what additional info determines the path (e.g., prior therapy, imaging results).
+            [/INST]"""
 
             print("Generating AI response...")
 
-            genai_client = oci.generative_ai_inference.GenerativeAiInferenceClient(config=oci.config.from_file(os.getenv("OCI_CONFIG_PATH", "~/.oci/config")), service_endpoint=os.getenv("ENDPOINT"))
+            genai_client = oci.generative_ai_inference.GenerativeAiInferenceClient(
+                config=oci.config.from_file(os.getenv("OCI_CONFIG_PATH","~/.oci/config")),
+                service_endpoint=os.getenv("ENDPOINT")
+            )
             chat_detail = oci.generative_ai_inference.models.ChatDetails(
                 compartment_id=os.getenv("COMPARTMENT_OCID"),
                 chat_request=oci.generative_ai_inference.models.GenericChatRequest(
-                    messages=[oci.generative_ai_inference.models.UserMessage(content=[oci.generative_ai_inference.models.TextContent(text=prompt)])],
+                    messages=[oci.generative_ai_inference.models.UserMessage(
+                        content=[oci.generative_ai_inference.models.TextContent(text=rag_prompt)]
+                    )],
                     temperature=0.0,
-                    top_p=0.90
+                    top_p=0.9
                 ),
-                serving_mode=oci.generative_ai_inference.models.OnDemandServingMode(model_id="meta.llama-3.2-90b-vision-instruct")
+                serving_mode=oci.generative_ai_inference.models.OnDemandServingMode(
+                    model_id="meta.llama-3.2-90b-vision-instruct"
+                )
             )
 
-            try:
-                chat_response = genai_client.chat(chat_detail)
-                ai_response = chat_response.data.chat_response.choices[0].message.content[0].text
+            chat_response = genai_client.chat(chat_detail)
+            rag_answer = chat_response.data.chat_response.choices[0].message.content[0].text
+            rag_answer = re.sub(r'[^\w\s\d.,\-\'"]', ' ', rag_answer)
+            print("\n🤖 AI Healthcare RAG Response:")
+            print(rag_answer)
 
-                # Post-process AI response to ensure no garbled text
-                ai_response = re.sub(r'[^\w\s\d.,\-\'"]', ' ', ai_response)  # Remove special characters
-                ai_response = re.sub(r'(\d+)([a-zA-Z])', r'\1 \2', ai_response)  # Separate numbers from letters
-                ai_response = re.sub(r'\b(\d{3,})\b(?!\s*[,.\-])', r'\1,', ai_response)  # Ensure large numbers have commas
-                ai_response = re.sub(r',(?=\d{3}\b)', '', ai_response)  # Remove extra commas
+            print("\n📑 Retrieved Chunks Used in Response:")
+            for cid, text in retrieved:
+                preview = text[:120].replace("\n", " ") + ("..." if len(text) > 120 else "")
+                print(f"[Chunk {cid}] : {preview}")
 
-                print("\n🤖 AI Loan Guru Response:")
-                print(ai_response)
-            except Exception as e:
-                print(f"Error connecting to OCI Gen AI: {e}")
-    </copy>
+        except Exception as e:
+            print(f"RAG flow error: {e}")
+        </copy>
     ```
 
 2. Click the "Run" button to execute the code.
+
+    ![question](./images/ask-questions.png " ")
 
 3. Review the result.
 
@@ -400,16 +570,20 @@ Now that the recommendations are vectorized, we can process a user’s question:
     ![rag](./images/rag.png " ")
 
 ## Conclusion
-
 Congratulations! You implemented a RAG process in Oracle Database 23ai using Python.
 
-To summarize:
+to summarize:
 
-* You created a function to connect to Oracle Database 23ai using the Oracle Python driver `oracledb`.
-* You created a function to retrieve customer data.
-* You created a function to connect to OCI Generative AI and create a first recommendation.
-* You created a function to create embeddings of the patient data using Oracle Database 23ai.
-* And finally, you implemented a RAG process in Oracle Database 23ai using Python.
+* Connected with oracledb
+* Retrieved a patient profile via a JSON duality view
+* Generated a prior-authorization recommendation using OCI GenAI
+* Chunked and embedded both recommendations and policy text
+* Performed vector search and produced a RAG answer grounded in retrieved chunks (with chunk IDs printed for traceability)
+
+You can now experiment with:
+
+* Different chunk sizes (chunk_sizes = [200, 500, 800])
+* Changing the question or switching to other conditions/patients
 
 Congratulations, you completed the lab!
 
