@@ -103,8 +103,6 @@ This lab assumes you have:
     <copy>Review the steps in the included markdown file. Detail the steps you intend to take to achieve the desired outcome. And await for my approval before proceeding.</copy>
     ```
 
-		![Image alt text](images/sample1.png)
-
   To create a link to local file you want the reader to download, use the following format.
 
 	> **Note:** _The filename must be in lowercase letters and CANNOT include any spaces._
