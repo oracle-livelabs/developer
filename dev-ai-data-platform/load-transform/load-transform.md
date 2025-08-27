@@ -1,4 +1,4 @@
-# 🏗️ Build your Data Pipeline: Load & Transform Data (optional lab)
+# 🏗️ Build your Data Pipeline: Load & Transform Data
 
 ## Introduction
 
@@ -17,19 +17,19 @@ Estimated Lab Time: 45 minutes
 
 ## Task 1: Prepare to Build a Data Pipeline
 
-  1. Click **View Login Info**. Copy your **DB ADMIN Password**, and click the **SQL Worksheet** link.
-  
-      ![Access Data Catalog](./images/start-demo-2.png "Access Local Data Catalog")  
-  
+  1. Click **View Login Info**. Copy your **DB ADMIN Password**, and click the **SQL Worksheet** link.  
+
+      ![Copy DB ADMIN pswd & Click SQL Wksht Link](./images/start-demo-2.png "")  
+
   2. For your Username enter **LOAN**. Paste in the password you copied in the previous step  
-  
-      ![Create Data Product Share](./images/task1-scrn-5.png "Create Data Product Share") 
+
+      ![Login using LOAN credentials](./images/task1-scrn-5.png "Create Data Product Share")  
 
       Click **Sign-in** button  
 
   3. Select the **Development** tab, then click **SQL** to open the **SQL Worksheet**.
 
-      ![Click Data Load Button](./images/open-sql-development.png "") 
+      ![Select Development & Click SQL](./images/open-sql-development.png "")  
 
    4. Copy the following PL/SQL code to your clipboard, then paste it in the **SQL Worksheet**.  We will be using it to copy objects from one storage bucket to another.  
 
@@ -44,7 +44,7 @@ Estimated Lab Time: 45 minutes
            BEGIN
             source_uri := source_uri||object_name;
             target_uri := target_url||folder_name ||object_name;
-      
+
             DBMS_CLOUD.COPY_OBJECT (credential_name, source_uri, target_uri);
            END;
            /
@@ -52,45 +52,45 @@ Estimated Lab Time: 45 minutes
       ```
   5. Right-click on your browser tab and select **Duplicate** from the context menu to open another tab.  Click **Database Actions** in the top banner of the new tab.
 
-      ![Click Data Load Button](./images/open-another-browser-tab.png "") 
+      ![Open DB Actions in Duplicate Tab](./images/open-another-browser-tab.png "")  
 
   6. Click **Data Studio** from the Launchpad page.
 
-      ![Click Data Load Button](./images/open-data-studio.png "") 
+      ![Click Data Studio](./images/open-data-studio.png "")  
 
   7. Select **Data Load** from the Launchpad page.
 
-      ![Click Data Load Button](./images/select-data-load.png "") 
+      ![Click Data Load](./images/select-data-load.png "")  
 
   8. Then select the **Connections** tile.
 
-      ![Click Data Load Button](./images/select-connections-tile.png "") 
+      ![Click Connections](./images/select-connections-tile.png "")  
 
   9. Select the **LOANAPP\_FUNDING** panel, on the **Connections** page.
 
-      ![Click Data Load Button](./images/loanapp-funding-panel.png "") 
+      ![Select LOANAPP_FUNDING Connection](./images/loanapp-funding-panel.png "")  
 
 10.	Copy the source URI for **LOANAPP\_FUNDING** cloud storage to your clipboard
 
-      ![Click Data Load Button](./images/loanapp-funding-uri.png "") 
+      ![Copy LOANAPP_FUNDING URI](./images/loanapp-funding-uri.png "")  
 
-11.	Return to **SQL | Oracle Database Actions** tab.  Modify the source\_uri definition in the **SQL Worksheet**, as shown below:
+11.	Return to **SQL | Oracle Database Actions** tab.  Modify the source\_uri definition in the **SQL Worksheet**, as shown below:  
 
       ```
       source_uri    VARCHAR2(100) := ‘< the LOANAPP_FUNDING uri you copied >';
       ```
 
-12.	Return to the **Data Load | Oracle Database** tab.  Select the MyDemoBucket panel.
+12.	Return to the **Data Load | Oracle Database** tab.  Select the **MyDemoBucket** panel.  
 
-      ![Click Data Load Button](./images/mydemobucket-panel.png "")  
+      ![Switch Tab & Select MYDEMOBUCKET Connection](./images/mydemobucket-panel.png "")  
 
 13.	Copy the URI for **MYDEMOBUCKET** cloud storage to your clipboard.  
 
-      ![Click Data Load Button](./images/mydemobucket-uri.png "")  
+      ![Copy MYDEMOBUCKET URI](./images/mydemobucket-uri.png "")  
 
   Click **Close** to exit.  
 
-14.	Return to **SQL | Oracle Database Actions** tab.  Modify the target\_uri definition in the **SQL Worksheet**, as shown below:
+14.	Return to **SQL | Oracle Database Actions** tab.  Modify the target\_uri definition in the **SQL Worksheet**, as shown below:  
 
       ```
       target_uri    VARCHAR2(100) := ‘< the MYDEMOBUCKET uri you copied >';
@@ -98,15 +98,15 @@ Estimated Lab Time: 45 minutes
 
 15.	Click the **Run Script** button.  A message indicating the PL/SQL code completed successfully will appear near the bottom of the screen.
 
-      ![Click Data Load Button](./images/run-move-script.png "")  
+      ![Run PL/SQL script to move file 1](./images/run-move-script.png "")  
 
 16.	Return to **Data Load | Oracle Database** tab.  Click the **Actions** icon in the **MyDemoBucket** panel and select Objects from the context menu.
 
-    ![Click Data Load Button](./images/move-data-file1.png "") 
+    ![Switch Tab & Select LOANAPP_FUNDING Connection](./images/move-data-file1.png "") 
 
 17.	Click the folder icon to confirm that the **funding\_commitments1.json** file in the **LOANAPP\_FUNDING** bucket has been successfully copied here.  
 
-    ![Click Data Load Button](./images/confirm-move-data-file1.png "") 
+    ![Confirm File 1 Copy](./images/confirm-move-data-file1.png "") 
 
   Click **Close** to exit.  
 
@@ -114,12 +114,12 @@ Estimated Lab Time: 45 minutes
 
   1. Navigate to the **Data Load | Oracle Database** tab.  Select **Feed Data**.
 
-      ![Click Data Load Button](./images/navigate-to-data-load.png "") 
+      ![Data Load Tab & Select Feed Data](./images/navigate-to-data-load.png "") 
 
 
   2.  Click the **Create Live Table Feed** button to enter the Create Live Feed wizard  
 
-      ![Live Feed Wizard - step 1](./images/live-feed-wizard-step1.png "")  
+      ![Create Live Feed Wizard](./images/live-feed-wizard-step1.png "")  
 
   3. Enter details for the Live Table Feed Preview.  
   
@@ -127,19 +127,19 @@ Estimated Lab Time: 45 minutes
      Check box:            **Advanced**  
      Object Filter:        **FUNDING\\*.json**  
 
-      ![Live Feed Wizard - step 1](./images/live-feed-wizard-step1a.png "")  
+      ![Create Live Feed Wizard - step 1](./images/live-feed-wizard-step1a.png "")  
 
      Click the **Next** button to proceed.
 
   4. Enter  the name of the target table -- **FUNDING\_PROVIDER\_OFFER\_STG**.  Then modify **Mapping** details exactly as shown below:  
 
-      ![Live Feed Wizard - step 2](./images/live-feed-wizard-step2.png "") 
+      ![Create Live Feed Wizard - step 2](./images/live-feed-wizard-step2.png "") 
 
      Click the **Next** button to proceed.
 
   5. Review the information shown on the Preview page.  
 
-      ![Live Feed Wizard - step 3](./images/live-feed-preview.png "") 
+      ![Create Live Feed Wizard - step 3](./images/live-feed-preview.png "") 
 
     Click **Next** to proceed.  
 
@@ -149,13 +149,13 @@ Estimated Lab Time: 45 minutes
       b. Check box to **Enable for Scheduling**.  
       c. Select every **2 minutes** for the polling time interval  
 
-      ![Live Feed Wizard - step 4](./images/live-feed-wizard-step4.png "")  
+      ![Create Live Feed Wizard - step 4](./images/live-feed-wizard-step4.png "")  
 
       Click **Create**  
 
   6. When the popup box appears, select **Yes** to run the Live Feed.
 
-      ![Run Live Table Feed](./images/do-run-live-feed.png)
+      ![Run Initial Live Table Feed](./images/do-run-live-feed.png)
 
 ## Task 3: Perform Live Table Feed and Populate Production
 
@@ -167,11 +167,11 @@ Estimated Lab Time: 45 minutes
 
 2.	Click the **Run Script** button.  A message indicating the PL/SQL code completed successfully will appear near the bottom of the screen.
 
-  ![Load Data from Object Storage](./images/move-data-file2.png)
+  ![Run PL/SQL script to move file 2](./images/move-data-file2.png)
 
 3. Navigate to the **Data Load | Oracle Database** tab.  Review the details for the Live Table Feed.  
 
-  ![Load Data from Object Storage](./images/verify-move-data-file2.png)
+  ![Review Live Feed Execution](./images/verify-move-data-file2.png)
 
 4.	Return to the **SQL | Oracle Database Actions** tab.  Execute the following code to populate production with new loan products.
 
@@ -183,16 +183,16 @@ Estimated Lab Time: 45 minutes
               add_dte  VARCHAR2(100);
            BEGIN
               SELECT TO_CHAR(SYSDATE,'mm-dd-yyyy hh:mi') INTO add_dte FROM dual;
-              SELECT count(*) INTO new_add FROM funding_provider_offer_stg;
-              
+              SELECT count(*) INTO new_add FROM funding_provider_offer_stg;  
+
               CONVERT_FUNDING_TO_LOAN_PRODUCT;
 
-              SELECT count(*) INTO new_bal FROM mock_loan_data;
-           
+              SELECT count(*) INTO new_bal FROM mock_loan_data;  
+
               DBMS_OUTPUT.put_line('On '||add_dte||', '||new_add||' rows of data were added to production for a total of '||new_bal||' loan products.')
            END;
-           /
-           
+           /.  
+
       </copy>
       ```
 

@@ -97,7 +97,7 @@ This lab assumes you have:
 
     ![Connect to Database](./images/connect-to-db.png " ")
 
-## Task 4: Create a Function to retrieve data from the database.
+## Task 3: Create a Function to retrieve data from the database.
 
 You will query customer data from the `customer_returns_dv` JSON duality view, which combines data from CUSTOMERS, RETURN_REQUESTS, and related tables. This task will:
 
@@ -105,7 +105,7 @@ You will query customer data from the `customer_returns_dv` JSON duality view, w
 
 - **Use an Example**: Fetch data for customer `1000` (Alice Smith) to demonstrate the process.
 
-- **Display the Results**: Format the retrieved data into a pandas DataFrame for a clear, tabular presentation, showing key details like name, income, credit score, and total debt.
+- **Display the Results**: Format the retrieved data into a pandas DataFrame for a clear, tabular presentation, showing key details like name, LifeTime Spend, Return Amount , and Loyalty Tier.
 
 1. Copy and paste the code below into the new notebook.
 
@@ -183,7 +183,7 @@ You will query customer data from the `customer_returns_dv` JSON duality view, w
 
 If you completed Lab 1: Run the Demo earlier, this is what gets printed out when the Return officer clicks on the customer 1000. You just built it, well done!
 
-## Task 5: Create a function to generate recommendations for the customer
+## Task 4: Create a function to generate recommendations for the customer
 
 In a new cell, define a function `generate_recommendations` to fetch policy rules from `RETURN_POLICY_RULES` and combine them with customer data. Construct a prompt the OCI Generative AI model(meta.llama-3.2-90b-vision-instruct) to recommend a return decision(APPROVE, REQUEST INFO, DENY) based on customer profile, return requests, and policy rules.
 
@@ -342,14 +342,66 @@ Here’s what we’ll do:
     >*Note:* Your result may be different due to non-deterministic character of generative AI.
 
     ![ai recommendation](./images/return-recommendation.png " ")
+    
+## Task 5: Chunk & Store the Recommendations
+
+Now we'll chunk the Ai recommendations by words and store in the `RETURN_CHUNKS`table.
+
+The parameters we'll use:
+* By words(vs characters)
+* MAX 50 words per chunk (adjust as needed)
+* OVERLAP 0 (independent chunks)
+* SPLIT BY sentence (avoid mid-setence cuts)
+* LANGUAGE american, NORMALIZE all
+
+1. Copy the following code and run:
+
+```python
+    <copy>
+    # Grab the request_id from the same customer bundle we used for recommendations
+    ret_req = (customer_json.get("returnRequests") or [{}])[0]
+    request_id = ret_req.get("requestId")
+    if request_id is None:
+        raise ValueError("No requestId found from the selected customer context.")
+
+    # Clean any prior chunks for this request
+    cursor.execute("DELETE FROM RETURN_CHUNKS WHERE REQUEST_ID = :rid", {'rid': request_id})
+    connection.commit()
+
+    # We'll chunk the recommendation text at multiple sizes.
+    # Tip: add more sizes like [50, 200, 500] as you wish.
+    chunk_sizes = [50]
+
+    # Insert chunks using VECTOR_CHUNKS, without needing an intermediate table.
+    # We make CHUNK_ID unique by composing (size * 1,000,000 + chunk_offset).
+    for size in chunk_sizes:
+        insert_sql = f"""
+            INSERT INTO RETURN_CHUNKS (CHUNK_ID, REQUEST_ID, CHUNK_TEXT)
+            SELECT (:chunk_size * 1000000) + vc.chunk_offset, :req_id, vc.chunk_text
+            FROM (SELECT :rec_text AS txt FROM dual) s,
+                VECTOR_CHUNKS(
+                    dbms_vector_chain.utl_to_text(s.txt)
+                    BY words
+                    MAX {size}
+                    OVERLAP 0
+                    SPLIT BY sentence
+                    LANGUAGE american
+                    NORMALIZE all
+                ) vc
+        """
+        cursor.execute(insert_sql, {'chunk_size': size, 'req_id': request_id, 'rec_text': recommendations})
+
+    connection.commit()
+    print(f"✅ Task 6 complete: recommendation chunked and stored for request {request_id} (sizes: {chunk_sizes}).")
+    </copy>
+```
+
 
 ## Task 6: Create a function to create embeddings - Use Oracle Database 23ai to create vector data 
 
 To handle follow-up questions, you will enhance the system with an AI Guru powered by Oracle 23ai’s Vector Search and Retrieval-Augmented Generation (RAG). The AI Guru will be able to answer questions about the return application and provide recommendations based on the data.
 
-Before answering questions, we need to prepare the data by vectoring the recommendations. This step:
-
-   - **Stores Recommendations**: Inserts the full recommendation text (from previous cell) as a single chunk if not already present.
+Before answering questions, we need to prepare the data by vectoring the recommendations chunks. This step:
 
    - **Generates Embeddings**: This is a new feature in Oracle Database 23ai that allows you to create embeddings directly within the database, eliminating the need for external tools or APIs. The `dbms_vector_chain.utl_to_embedding` function takes the recommendation text as input and returns an embedding vector.
 
@@ -359,27 +411,19 @@ Before answering questions, we need to prepare the data by vectoring the recomme
 
     ```python
     <copy>
-    cursor.execute("DELETE FROM RETURN_CHUNKS WHERE REQUEST_ID = :request_id", {'request_id': customer_json.get('returnRequests', [{}])[0].get('requestId')})
-    cursor.execute("""
-        INSERT INTO RETURN_CHUNKS (REQUEST_ID, CHUNK_ID, CHUNK_TEXT) 
-        VALUES (:request_id, 0, :chunk_text)
-    """, {
-        'request_id': customer_json.get('returnRequests', [{}])[0].get('requestId'),
-        'chunk_text': recommendations
-    })
+    # Embed all chunks we just inserted for this request
     cursor.execute("""
         UPDATE RETURN_CHUNKS
         SET CHUNK_VECTOR = dbms_vector_chain.utl_to_embedding(
-            :chunk_text,
-            JSON('{"provider": "database", "model": "DEMO_MODEL", "dimensions": 384}')
+            CHUNK_TEXT,
+            JSON('{"provider":"database","model":"DEMO_MODEL","dimensions":384}')
         )
-        WHERE REQUEST_ID = :request_id AND CHUNK_ID = 0
-    """, {
-        'request_id': customer_json.get('returnRequests', [{}])[0].get('requestId'),
-        'chunk_text': recommendations
-    })
+        WHERE REQUEST_ID = :rid
+    """, {'rid': request_id})
+
     connection.commit()
-    print("Vector embeddings generated for AI recommendations.")
+    print("✅ Embedded vectors for recommendation chunks (retail).")
+
     </copy>
     ```
 
@@ -391,7 +435,7 @@ Before answering questions, we need to prepare the data by vectoring the recomme
 
     ![vector](./images/create-vector.png " ")
 
-## Task 7: Implement RAG with Oracle Database 23ai's Vector Search
+## Task 6: Implement RAG with Oracle Database 23ai's Vector Search
 
 Now that the recommendations are vectorized, we can process a user’s question:
 
@@ -409,75 +453,120 @@ This step:
     <copy>
     question = "What’s the best action for a high-risk return request?"
 
-    if question:
-        print("Processing question using AI Vector Search...")
-        relevant_chunks = []
+    def vectorize_question(q):
+        cursor.execute("""
+            SELECT dbms_vector_chain.utl_to_embedding(
+                :q,
+                JSON('{"provider":"database","model":"DEMO_MODEL","dimensions":384}')
+            ) FROM DUAL
+        """, {'q': q})
+        return cursor.fetchone()[0]
 
-        try:
-            with connection.cursor() as cursor:
-                cursor.execute("""
-                    SELECT dbms_vector_chain.utl_to_embedding(
-                        :question,
-                        JSON('{"provider": "database", "model": "DEMO_MODEL", "dimensions": 384}')
-                    ) FROM DUAL
-                """, {'question': question})
-                question_embedding = cursor.fetchone()[0]
+    print("Processing question using AI Vector Search...")
 
-                cursor.execute("""
-                    SELECT CHUNK_TEXT
-                    FROM RETURN_CHUNKS
-                    WHERE REQUEST_ID = :request_id AND CHUNK_ID = 0 
-                    AND CHUNK_VECTOR IS NOT NULL
-                    ORDER BY VECTOR_DISTANCE(CHUNK_VECTOR, :embedding, COSINE)
-                    FETCH FIRST 1 ROW ONLY
-                """, {
-                    'request_id': customer_json.get('returnRequests', [{}])[0].get('requestId'),
-                    'embedding': question_embedding
-                })
-                results = cursor.fetchall()
-                relevant_chunks = [row[0].read() if isinstance(row[0], oracledb.LOB) else row[0] for row in results]
+    try:
+        q_vec = vectorize_question(question)
 
-                if not relevant_chunks:
-                    print("No relevant chunks found. Using existing recommendations.")
-                    relevant_chunks = [recommendations]
+        # Retrieve the top recommendation chunks for THIS request (both sizes mixed),
+        # ranked by vector similarity to the question.
+        cursor.execute("""
+            SELECT CHUNK_ID, CHUNK_TEXT
+            FROM RETURN_CHUNKS
+            WHERE REQUEST_ID = :rid
+            AND CHUNK_VECTOR IS NOT NULL
+            ORDER BY VECTOR_DISTANCE(CHUNK_VECTOR, :qv, COSINE)
+            FETCH FIRST 5 ROWS ONLY
+        """, {'rid': request_id, 'qv': q_vec})
+        rec_hits = [
+            (r[0], r[1].read() if isinstance(r[1], oracledb.LOB) else r[1])
+            for r in cursor.fetchall()
+        ]
 
-        except oracledb.DatabaseError as e:
-            print(f"Vector search failed: {e}")
-            relevant_chunks = [recommendations]
+        # If for some reason we didn't find chunks, fall back to the full recommendation text
+        if not rec_hits:
+            rec_hits = [(0, recommendations)]
 
-        cleaned_chunks = [re.sub(r'[^\w\s\d.,\-\'"]', ' ', chunk).strip() for chunk in relevant_chunks]
-        docs_as_one_string = "\n=========\n".join(cleaned_chunks)
+        # Clean text for prompting
+        cleaned = [re.sub(r'[^\w\s\d.,\-\'"]', ' ', t).strip() for _, t in rec_hits]
+        docs_as_one_string = "\n=========\n".join(cleaned) + "\n=========\n"
 
-        available_rules_text = "\n".join([f"{rule['RULE_ID']}: {rule['RULE_CODE']} | {rule['RULE_DESCRIPTION']} | Applies To: {rule['APPLIES_TO']}" for rule in df_policy_rules.to_dict(orient='records')])
-        customer_profile_text = "\n".join([f"- {key.replace('_', ' ').title()}: {value}" for key, value in customer_json.items() if key not in ["returnRequests"]])
-        return_request_text = "\n".join([f"- {key.replace('_', ' ').title()}: {value}" for key, value in customer_json.get('returnRequests', [{}])[0].items() if key not in ["recommendation"]])
+        # Prepare compact RAG prompt (re-using the policy rules already loaded earlier)
+        available_rules_text = "\n".join([
+            f"{row['RULE_ID']}: {row['RULE_CODE']} | {row['RULE_DESCRIPTION']} | Applies To: {row['APPLIES_TO']}"
+            for _, row in df_policy_rules.iterrows()
+        ])
+        customer_profile_text = "\n".join([
+            f"- {k.replace('_',' ').title()}: {v}"
+            for k, v in customer_json.items() if k not in ["returnRequests", "_metadata"]
+        ])
+        return_request_text = "\n".join([
+            f"- {k.replace('_',' ').title()}: {v}"
+            for k, v in ret_req.items() if k != "recommendation"
+        ])
 
-        prompt = f"""<s>[INST] <<SYS>>You are a Retail Decision AI. Use only the provided context to answer the question. No garbled text. Keep output under 300 words.</SYS>> [/INST]
-        [INST]Question: "{question}"\nAvailable Data:\n{available_rules_text}\nCustomer Profile:\n{customer_profile_text}\nReturn Request:\n{return_request_text}\nContext:\n{docs_as_one_string}\nTasks:\n1. Provide a direct answer to the question.\n2. Explain alignment with customer profile and policy rules.</INST>"""
+        rag_prompt = f"""<s>[INST] <<SYS>>You are a Retail Decision AI.
+    Use only the provided context (below). No outside sources. Keep output under 300 words.
+    Be specific and actionable.</SYS>> [/INST]
+    [INST]
+    Question: "{question}"
+
+    Available Policy Rules:
+    {available_rules_text}
+
+    Customer Profile:
+    {customer_profile_text}
+
+    Return Request:
+    {return_request_text}
+
+    Context:
+    {docs_as_one_string}
+
+    Tasks:
+    1) Provide a direct answer (APPROVE / REQUEST INFO / DENY + short rationale).
+    2) Tie reasoning to the most relevant policy rule(s) or customer/request signals.
+    3) Note any evidence gaps and what to collect (if applicable).
+    [/INST]"""
 
         print("Generating AI response...")
 
-        genai_client = oci.generative_ai_inference.GenerativeAiInferenceClient(config=oci.config.from_file(os.getenv("OCI_CONFIG_PATH", "~/.oci/config")), service_endpoint=os.getenv("ENDPOINT"))
+        genai_client = oci.generative_ai_inference.GenerativeAiInferenceClient(
+            config=oci.config.from_file(os.getenv("OCI_CONFIG_PATH","~/.oci/config")),
+            service_endpoint=os.getenv("ENDPOINT")
+        )
         chat_detail = oci.generative_ai_inference.models.ChatDetails(
             compartment_id=os.getenv("COMPARTMENT_OCID"),
             chat_request=oci.generative_ai_inference.models.GenericChatRequest(
-                messages=[oci.generative_ai_inference.models.UserMessage(content=[oci.generative_ai_inference.models.TextContent(text=prompt)])],
+                messages=[oci.generative_ai_inference.models.UserMessage(
+                    content=[oci.generative_ai_inference.models.TextContent(text=rag_prompt)]
+                )],
                 temperature=0.0,
-                top_p=0.90
+                top_p=0.9
             ),
-            serving_mode=oci.generative_ai_inference.models.OnDemandServingMode(model_id="meta.llama-3.2-90b-vision-instruct")
+            serving_mode=oci.generative_ai_inference.models.OnDemandServingMode(
+                model_id="meta.llama-3.2-90b-vision-instruct"
+            )
         )
 
-        try:
-            chat_response = genai_client.chat(chat_detail)
-            ai_response = chat_response.data.chat_response.choices[0].message.content[0].text
-            ai_response = re.sub(r'[^\w\s\d.,\-\'"]', ' ', ai_response)
-            ai_response = re.sub(r'(\d+)([a-zA-Z])', r'\1 \2', ai_response)
-            ai_response = re.sub(r'\b(\d{3,})\b(?!\s*[,.\-])', r'\1,', ai_response)
-            print("\n🤖 AI Retail Decision Response:")
-            print(ai_response)
-        except Exception as e:
-            print(f"Error connecting to OCI Gen AI: {e}")
+        chat_response = genai_client.chat(chat_detail)
+        rag_answer = chat_response.data.chat_response.choices[0].message.content[0].text
+        rag_answer = re.sub(r'[^\w\s\d.,\-\'"]', ' ', rag_answer)
+
+        print("\n🤖 AI Retail RAG Response:")
+        print(rag_answer)
+
+        # Traceability: print which chunks were retrieved
+        print("\n📑 Retrieved Chunks Used in Response:")
+        for cid, text in rec_hits:
+            # decode our synthetic CHUNK_ID so you can see the source size & offset
+            # CHUNK_ID = size * 1,000,000 + offset
+            size = cid // 1000000
+            offset = cid % 1000000
+            preview = text[:120].replace("\n", " ") + ("..." if len(text) > 120 else "")
+            print(f"[Chunk {cid} | size={size}w | offset={offset}] : {preview}")
+
+    except Exception as e:
+        print(f"RAG flow error: {e}")
     </copy>
     ```
 
@@ -513,6 +602,6 @@ You may now proceed to the next lab.
 * [Oracle Database 23ai Documentation](https://docs.oracle.com/en/database/oracle/oracle-database/23/)
 
 ## Acknowledgements
-* **Authors** - Francis Regalado Uma Kumar
+* **Authors** - Francis Regalado, Uma Kumar
 * **Contributors** - Kevin Lazarz
 * **Last Updated By/Date** - Francis Regalado, August 2025
