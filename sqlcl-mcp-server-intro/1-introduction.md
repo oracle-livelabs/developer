@@ -33,13 +33,11 @@ What Happens at Each Hop
 
 This introduction covers the complete "parent" workshop. Use this text to set up the story for the workshop. Be engaging - what will the learner get from spending their time on this workshop?
 
-Estimated Time: -- hours -- minutes (This estimate is for the entire workshop - it is the sum of the estimates provided for each of the labs included in the workshop.)
-
-*You may add an option video, using this format: [](youtube:YouTube video id)*
-
-  [](youtube:zNKxJjkq0Pw)
+Estimated Time: 1 hours 10 minutes 
 
 ### Objectives
+
+<mark>Pending review of the existing draft prompts</mark>
 
 *List concise objectives for the workshop*
 

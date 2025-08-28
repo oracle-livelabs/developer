@@ -35,6 +35,7 @@ This lab assumes you have:
 
 > NOTE: The `## Your task list` section can be looked at as the "action" steps in the prompt. All the tasks there are what populate your SQL Notebook file (as you'll see later on).
 
+<details><summary>Expand to reveal the full prompt</summary>
     ~~~
     # Create a SQL Notebook
 
@@ -218,7 +219,10 @@ This lab assumes you have:
 
     11. After you have verified that everything is correct, then confirm with me and stop.
     ~~~
-   
+  </details>
+
+<p>
+
 > NOTE: As SQL Notebooks become more popular, and as more context becomes publically availale, user-provided context such as what is in the included prompt may be unecessary!
 
 ## Task 2: Execute the prompt
