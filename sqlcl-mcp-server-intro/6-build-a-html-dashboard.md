@@ -63,7 +63,7 @@ In this Lab, you'll trade out a pre-made prompt-as-markdown-file, for a short su
 
     <!-- ![3-results-of-the-agent-query-on-hr-schema](./images/lab-6/3-results-of-the-agent-query-on-hr-schema.png " ") -->
 
-    ![4-asking-to-transition-to-act-with-a-reminder](./images/lab-6/4-asking-to-transition-to-act-with-a-reminder.png " ")
+    <!-- ![4-asking-to-transition-to-act-with-a-reminder](./images/lab-6/4-asking-to-transition-to-act-with-a-reminder.png " ") -->
 
 6. Your scenario may differ slightly, depending on the LLM used, but you should continue to see the Agent's intent and summary of intended actions.
 
@@ -77,7 +77,7 @@ In this Lab, you'll trade out a pre-made prompt-as-markdown-file, for a short su
 
     <!-- ![7-agent-creates-a-new-html-file](./images/lab-6/7-agent-creates-a-new-html-file.png " ") -->
 
-    ![8-agent-creates-a-new-js-file](./images/lab-6/8-agent-creates-a-new-js-file.png " ")
+    <!-- ![8-agent-creates-a-new-js-file](./images/lab-6/8-agent-creates-a-new-js-file.png " ") -->
 
 2. The agent may request your approval to use the **connect** and **run-sql** tools of the SQLcl MCP server. You should approve, and watch as the dashboard is populated with real data from your target schema. 
 
