@@ -144,7 +144,7 @@ You’ve just linked **external object storage data** to your database—**no lo
 
    2.	Query the **CUSTOMER_EXTENSION** table. Copy and paste the following SQL into the Worksheet, then click the **Run Statement** icon:  
 
-      ```
+      ```text
       <copy>
       select * from CUSTOMER_EXTENSION e;
       </copy>
@@ -156,7 +156,7 @@ You’ve just linked **external object storage data** to your database—**no lo
 
    3.	Now query the **CUSTOMER_SEGMENT** external table. Paste the SQL below into the Worksheet, then click **Run**:  
 
-      ```
+      ```text
       <copy>
      select * from CUSTOMER_SEGMENT s;
       </copy>
@@ -168,7 +168,7 @@ You’ve just linked **external object storage data** to your database—**no lo
 
    4.	Combine data from both tables using a **join**. Paste the query below, then click **Run**:  
 
-      ```
+      ```text
       <copy>
         select cust_id, first_name, last_name, s.name segment
          from loan.customer_extension e,
