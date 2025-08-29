@@ -2,34 +2,9 @@
 
 ## About this Workshop
 
+This introduction will provide you with a brief overview of the Model Context Protocol (MCP) and where they fit among AI Agents. You'll also learn how MCP Servers, like the SQLcl MCP Server, can safely and securely combine the power of AI/Large-Language Models (LLMs) and SQLcl's SQL, PL/SQL, and SQL scripting tools to: connect inspect, interrogate, uncover insights, create complex database objects, and develop new database SQL and PL/SQL code using plain old, natural-language.
+
 ![1-sqlcl-mcp-interaction-graphic-overview](./images/lab-1/1-sqlcl-mcp-interaction-graphic-overview.png " ")
-
-```mermaid
-sequenceDiagram
-    participant U as User
-    participant A as Agent (Copilot / Claude / etc.)
-    participant L as LLM (Plan & Reason)
-    participant M as MCP Server (SQLcl)
-    participant O as Oracle Database
-
-    U ->> A: Request/Prompt
-    A ->> L: Send input for planning & reasoning
-    L ->> M: Generate SQL and send to MCP Server
-    M ->> O: Execute SQL query
-    O -->> M: Return query results
-    M -->> L: Return data
-    L -->> A: Send processed response
-    A -->> U: Present final answer
-```
-
-What Happens at Each Hop
-1.	User: Asks a task in natural language (e.g., “Find the top 10 most expensive queries from last week and recommend an index.”).
-2.	Agent: Builds/Shows a plan (some agents render a step list), selects MCP tools.
-3.	LLM: Generates the SQL or chooses a prebuilt tool (e.g., “AWR analysis”).
-4.	MCP Server (SQLcl): Executes safely via JDBC using stored credentials (LLM never sees passwords).
-5.	Oracle Database: Enforces all your standard security and returns results.
-6.	Back to LLM: Summarizes, validates, proposes next steps (“Create the index?”).
-7.	User: Reviews/approves each step (stay in the loop; you’re the pilot).
 
 Estimated Time: 1 hours 10 minutes 
 
@@ -59,7 +34,7 @@ This lab assumes you have:
     
 ### About
 
-This introduction will provide you with a brief overview of the Model Context Protocol (MCP) and where they fit among AI Agents. You'll also learn how MCP Servers, like the SQLcl MCP Server, can safely and securely combine the power of AI/Large-Language Models (LLMs) and SQLcl's SQL, PL/SQL, and SQL scripting tools to: connect inspect, interrogate, uncover insights, create complex database objects, and develop new database SQL and PL/SQL code using plain old, natural-language.
+<!-- This introduction will provide you with a brief overview of the Model Context Protocol (MCP) and where they fit among AI Agents. You'll also learn how MCP Servers, like the SQLcl MCP Server, can safely and securely combine the power of AI/Large-Language Models (LLMs) and SQLcl's SQL, PL/SQL, and SQL scripting tools to: connect inspect, interrogate, uncover insights, create complex database objects, and develop new database SQL and PL/SQL code using plain old, natural-language. -->
 
 #### MCP
 
