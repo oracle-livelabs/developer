@@ -141,23 +141,17 @@ Compatibility note (from the workshop): JDBC often works against older DBs (even
 
 #### MCP Best Practices
 | | |
-| -- | -- |
-|Do|<ul>Use read only connections by default.
-•	Keep MCP servers focused (no overlapping “run SQL” from multiple servers).
-•	Make tools explain themselves (clear descriptions).
-•	Log everything the agent runs (transparency).</ul>|
-Don’t
-•	Don’t blanket approve session actions.
-•	Don’t expose credentials to the LLM.
-•	Don’t deploy agents into production without DB controls (Firewall, Vault, RLS, Resource Manager).
-•	Don’t assume the LLM is always right—review SQL and results.
+| :--: | -- |
+|***Do...***|<ul><li>use read only connections by default.</li><li>keep MCP servers "focused" (no overlapping “run SQL” from multiple servers).</li><li>ensure tools explain themselves (clear descriptions).</li><li>log everything the agent runs (transparency).</li>
+|**Do *not...*** | <ul><li>blanket approve session actions.</li><li>expose credentials to the LLM.</li><li>deploy agents into production without strict database controls (Firewall, Vault, RLS, Resource Manager).</li><li>assume the LLM is always correct—review SQL, PL/SQL, plans, and results.</li></ul>|
 
 #### Summary 
 
-•	What: Use MCP to let AI agents safely plan and execute multi step work against Oracle Database.
-•	How: Ship a SQLcl based MCP server exposing clear tools (connect, run sql, awr, etc.), with wallet based credentials and Oracle’s security features intact.
-•	Why: Massive productivity gains (DB exploration, reporting, performance triage) while keeping humans in control and security uncompromised.
-•	Next: Pilot in VS Code with read only data; add logging; iterate; scale to HTTP MCP and OCI Control Plane.
+| | | 
+| -- | -- | 
+| **What** | MCP Servers aide AI agents in creating plans and executing workflows and tasks on the Oracle Database. |
+| **How** | The SQLcl MCP server exposes tools (connect, run sql, awr, etc.) to your preferred AI agent, using wallet-based credentials and Oracle’s enterprise-grade security features. |
+| **Why** | Huge productivity gains (database exploration, reporting, performance triage, etc.) while users remain in control. All while respecting security controls. |
 
 ## Learn More
 
