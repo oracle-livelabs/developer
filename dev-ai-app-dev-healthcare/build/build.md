@@ -97,77 +97,82 @@ This lab assumes you have:
 
     ![Connect to Database](./images/connect-to-db.png " ")
 
-## Task 3: Create a function to retrieve data from the database
+## Task 3: Pull patient data from the database
 
 You will query customer data from the `patient_dv` JSON duality view, which combines data from PATIENTS and related tables. This task will:
 
 - **Define a Function**: Create a reusable function `a` to query the database by customer ID, extracting the JSON data for a specific customer.
 
-- **Use an Example**: Fetch data for customer `2001` (Alex Karev) to demonstrate the process.
+- **Use an Example**: Fetch data for patient `6002` (Jo Wilson) to demonstrate the process.
 
-- **Display the Results**: Format the retrieved data into a pandas DataFrame for a clear, tabular presentation, showing key details like name, physician, Latest Condition, and Diagnosis Code.
+- **Display the Results**: Format the retrieved data into a pandas DataFrame for a clear, tabular presentation, showing key details like name, policy, source, and description.
 
 1. Copy and paste the code below into the new notebook:
 
     ```python
     <copy>
-    def fetch_patient_data(patient_id):
-        print(f"Executing query for patient_id: {patient_id}")
+    # Task 3: Fetch patient JSON from patients_dv + shared helpers
+    #Pull single patient JSON documents from DV
+    def fetch_patient(patient_id: int):
         cursor.execute(
-            "SELECT data FROM patients_dv WHERE JSON_VALUE(data, '$._id') = :pid",
+            "SELECT data FROM patients_dv WHERE JSON_VALUE(data,'$._id') = :pid",
             {'pid': str(patient_id)}
         )
         row = cursor.fetchone()
-        if not row:
-            print(f"No data found for patient {patient_id}")
+        if not row: 
             return None
+        return json.loads(row[0]) if isinstance(row[0], str) else row[0]
 
-        data = row[0]
-        if isinstance(data, (bytes, bytearray)):
-            data = data.decode('utf-8')
-        if isinstance(data, str):
-            data = json.loads(data)
-        elif not isinstance(data, dict):
-            print(f"Unexpected type: {type(data)}")
-            return None
-        return data
+    # Load policy rows into a Df
+    def load_policy_texts():
+        cursor.execute("SELECT policy_id, title, source, full_text FROM POLICY_TEXT")
+        rows = cursor.fetchall()
+        cols = ["POLICY_ID","TITLE","SOURCE","FULL_TEXT"]
+        return pd.DataFrame(rows, columns=cols) if rows else pd.DataFrame(columns=cols)
 
-    # Example: pick a known patient from the sample data
-    selected_patient_id = 2001  # Alex Karev
-    patient_json = fetch_patient_data(selected_patient_id)
+    # pull first note/condition/auth bundle
+    def extract_first_authorization_bundle(p_json):
+        p = p_json or {}
+        notes = p.get("notes") or []
+        note0 = notes[0] if notes else {}
+        conds = note0.get("conditions") or []
+        cond0 = conds[0] if conds else {}
+        auths = cond0.get("authorizationRequests") or []
+        auth0 = auths[0] if auths else {}
+        rec0  = auth0.get("RECOMMENDATION", {}) or {}
+        return note0, cond0, auth0, rec0
 
+    # --- Let's select a customer  ---
+    selected_patient_id = 2002
+    patient_json = fetch_patient(selected_patient_id)
+    df_policy    = load_policy_texts()
+
+    # Print summary of current case
     if patient_json:
-        # Flatten selected summary fields for display
-        physician = patient_json.get("physician", {}) or {}
-        first_note = (patient_json.get("notes") or [{}])[0]
-        first_conditions = first_note.get("conditions") or []
-        first_cond = first_conditions[0] if first_conditions else {}
+        note0, cond0, auth0, _ = extract_first_authorization_bundle(patient_json)
+        print(f"Patient: {patient_json.get('firstName')} {patient_json.get('lastName')} {patient_json.get('GENDER')}")
+        print(f"Latest Condition: {cond0.get('conditionName')}")
+        print(f"Condition Code: {cond0.get('diagnosisCode')}")
+        print(f"Request: {auth0.get('requestType')} | Authorization ID: {auth0.get('authorizationId')}")
+    else:
+        print("No patient found.")
 
-        summary = {
-            "Patient ID": selected_patient_id,
-            "First Name": patient_json.get("firstName", ""),
-            "Last Name":  patient_json.get("lastName", ""),
-            "Gender":     patient_json.get("GENDER", ""),
-            "DOB":        patient_json.get("DOB", ""),
-            "Physician":  f"{physician.get('firstName','')} {physician.get('lastName','')}",
-            "Latest Condition": first_cond.get("conditionName", ""),
-            "Diagnosis Code":   first_cond.get("diagnosisCode", "")
-        }
-        display(pd.DataFrame([summary]))
+    # Display available policy texts
+    display(df_policy)
     </copy>
     ```
 
 2. Click the "Run" button to execute the code.
 
-    ![Fetch patient data](./images/fetch-patient-data.png " ")
+    ![Create User Profile](./images/create-user-profile.png " ")
 
 3. The output will display a DataFrame containing the customer details for the selected customer ID.
 
-    ![Fetch patient](./images/patient-data.png " ")
+    ![Profile Created](./images/user-profile-created.png " ")
 
-## Task 4: Create a function to generate recommendations for the customer
+## Task 4: Generate Recommendations for the Patients
 
-In a new cell, define a function `generate_recommendations` to fetch policy rules from `POLICY_TEXT` and combine them with patient data. Construct a prompt the OCI Generative AI model(meta.llama-3.2-90b-vision-instruct) to recommend a claims decision(APPROVE, REQUEST INFO, DENY) based on patient profile, medical necessity, and policy alignment.
+In a new cell, we will build a prompt from patient data, policies, notes, conditions, and authorization context. We will get a decision from the recommendation : **Approve, Deny, Request Info**. Calling OCI Generative AI as our provider, using model meta.llama-3.2-90b-vision-instruct to recommend a claims decision, update the tables, and display the results. 
 
 With patient profiles in place, you will use OCI Generative AI to generate personalized claim decision recommendations. 
 
@@ -176,108 +181,159 @@ Here’s what we’ll do:
 1. Copy and paste the code in a new cell:
 
     ```python
-        <copy>
-        def load_policy_texts():
-            cursor.execute("SELECT policy_id, title, source, full_text FROM POLICY_TEXT")
-            cols = ["POLICY_ID","TITLE","SOURCE","FULL_TEXT"]
-            return pd.DataFrame(cursor.fetchall(), columns=cols)
-
-        def extract_first_auth_context(p_json):
-            """Pull one condition and its first authorization request bundle for prompting."""
-            notes = p_json.get("notes") or []
-            if not notes: return {}, {}, {}
-            conditions = notes[0].get("conditions") or []
-            if not conditions: return {}, {}, {}
-            cond = conditions[0]
-            auths = cond.get("authorizationRequests") or []
-            auth = auths[0] if auths else {}
-            rec  = auth.get("RECOMMENDATION", {}) or {}
-            return cond, auth, rec
-
-        df_policy = load_policy_texts()
-
-        # Build prompt
-        condition, auth_req, rec_block = extract_first_auth_context(patient_json)
-
-        available_policies_text = "\n".join([
-            f"{row.POLICY_ID}: {row.TITLE} | Source: {row.SOURCE}\n{row.FULL_TEXT}"
-            for _, row in df_policy.iterrows()
-        ])
-
-        patient_profile_text = "\n".join([
-            f"- {k}: {v}" for k, v in patient_json.items()
-            if k not in ["notes","_metadata"]
-        ])
-
-        # Flatten (one condition/auth for clarity)
-        cond_text = "\n".join([f"- {k}: {v}" for k, v in condition.items() if k != "authorizationRequests"])
-        auth_text = "\n".join([f"- {k}: {v}" for k, v in auth_req.items() if k != "RECOMMENDATION"])
-        rec_text  = "\n".join([f"- {k}: {v}" for k, v in rec_block.items()])
-
-        prompt = f"""<s>[INST] <<SYS>>You are a Healthcare Prior Authorization AI.
-        Use ONLY the provided context to recommend a prior-authorization decision:
-        (Approved, In Progress, Pending Review, Denied).
-        Do not mention sources outside of the provided context.
-        Base it on medical necessity, diagnosis, and policy alignment.
-        Keep total output under 600 words; be concise and structured.</SYS>>
-
-        Available Policies:
-        {available_policies_text}
-
-        Patient Profile:
-        {patient_profile_text}
-
-        Condition:
-        {cond_text}
-
-        Authorization Request:
-        {auth_text}
-
-        Existing System Recommendation (if any):
-        {rec_text}
-
-        Tasks:
-        1) Suggested Action: "Suggested Action: Approved/In Progress/Pending Review/Denied"
-        2) Risk (1-10) + label (Very Low/Low/Medium/High).
-        3) 2-4 bullet rationale referencing policy titles and relevant clinical details.
-        4) If action is not Approved, list up to 3 actionable next steps (e.g., provide imaging, labs, or prior therapy documentation).
-
-        Response format: short header + bullets. Numerical values clearly formatted.</INST>"""
-
-        print("Generating AI response...")
-
+    <copy>
+    # Task 4: Simple prior-auth recommendation using helpers from Task 3
+    # Map Numeric Score
+    def _risk_bucket(n):
         try:
-            genai_client = oci.generative_ai_inference.GenerativeAiInferenceClient(
-                config=oci.config.from_file(os.getenv("OCI_CONFIG_PATH","~/.oci/config")),
-                service_endpoint=os.getenv("ENDPOINT")
-            )
+            n = int(n)
+        except:
+            return "Medium"
+        if n <= 3: return "High"
+        if n <= 6: return "Medium"
+        if n <= 8: return "Low"
+        return "Very Low"
 
-            chat_detail = oci.generative_ai_inference.models.ChatDetails(
-                compartment_id=os.getenv("COMPARTMENT_OCID"),
-                chat_request=oci.generative_ai_inference.models.GenericChatRequest(
-                    messages=[oci.generative_ai_inference.models.UserMessage(
-                        content=[oci.generative_ai_inference.models.TextContent(text=prompt)]
-                    )],
-                    temperature=0.0,
-                    top_p=1.0
-                ),
-                serving_mode=oci.generative_ai_inference.models.OnDemandServingMode(
-                    model_id="meta.llama-3.2-90b-vision-instruct"
-                )
-            )
+    # Reuse outputs from Task 3
+    note0, condition, auth_req, rec_block = extract_first_authorization_bundle(patient_json or {})
 
-            chat_response = genai_client.chat(chat_detail)
-            recommendation_text = chat_response.data.chat_response.choices[0].message.content[0].text
-            print(recommendation_text)
-        except Exception as e:
-            print(f"Error generating recommendation: {e}")
-            recommendation_text = "No AI output (fallback)."
-        </copy>
+    # ID's we will persist back into db
+    authorization_id = (auth_req or {}).get("authorizationId") 
+    condition_id = (condition or {}).get("conditionId")
+
+    # Build content blocks for our LLM
+    # Policies list to help the model
+    policies_block = "\n".join([f"- {r.TITLE}: {r.FULL_TEXT}" for _, r in df_policy.iterrows()]) or "None"
+    # Patient demographics
+    patient_block = "\n".join([f"- {k}: {v}" for k, v in (patient_json or {}).items() if k not in ["notes","_metadata"]]) or "None"
+    # Clinician notes
+    note_block = f"- noteText: {note0.get('noteText')}\n- createdOn: {note0.get('createdOn')}" if note0 else "None"
+    # Condition details 
+    cond_block = "\n".join([f"- {k}: {v}" for k, v in (condition or {}).items() if k != "authorizationRequests"]) or "None"
+    # Authorizations requests basics
+    auth_block = "\n".join([f"- {k}: {v}" for k, v in (auth_req or {}).items() if k != "RECOMMENDATION"]) or "None"
+
+    prompt = f"""
+    You are a Healthcare Prior-Authorization assistant. Use ONLY this context.
+    Decide APPROVE / DENY / REQUEST INFO. Prefer APPROVE or DENY; use REQUEST INFO only if neither can be justified.
+
+    Policies:
+    {policies_block}
+
+    Patient:
+    {patient_block}
+
+    ClinicianNote:
+    {note_block}
+
+    Condition:
+    {cond_block}
+
+    Authorization:
+    {auth_block}
+
+    Decision rules:
+    - APPROVE if: plausible policy match to diagnosis/service AND clinician note supports necessity AND risk ≥ 7.
+    - DENY if: no plausible policy match OR evidence contradicts necessity OR clearly non-covered OR risk ≤ 3.
+    - REQUEST INFO only if key evidence is missing/ambiguous.
+    - If no policy plausibly matches, prefer DENY over REQUEST INFO.
+
+    Return EXACTLY this layout (no extra text):
+    SuggestedAction: APPROVE|DENY|REQUEST INFO
+    Risk: N (Very Low|Low|Medium|High)
+    Rationale:
+    - one reason
+    - second reason
+    - third reason
+    NextSteps:
+    - step 1 (empty if Approved)
+    - step 2
+    - step 3
+    """
+
+    print("Generating AI recommendations …")
+    try:
+        # OCI GenAi clients config
+        genai_client = oci.generative_ai_inference.GenerativeAiInferenceClient(
+            config=oci.config.from_file(os.path.expanduser(os.getenv("OCI_CONFIG_PATH","~/.oci/config")), "DEFAULT"),
+            service_endpoint=os.getenv("ENDPOINT")
+        )
+        chat_detail = oci.generative_ai_inference.models.ChatDetails(
+            compartment_id=os.getenv("COMPARTMENT_OCID"),
+            chat_request=oci.generative_ai_inference.models.GenericChatRequest(
+                messages=[oci.generative_ai_inference.models.UserMessage(
+                    content=[oci.generative_ai_inference.models.TextContent(text=prompt)]
+                )],
+                temperature=0.0, top_p=1.0
+            ),
+            serving_mode=oci.generative_ai_inference.models.OnDemandServingMode(
+                model_id="meta.llama-3.2-90b-vision-instruct" # Our selected Model
+            )
+        )
+        chat_resp = genai_client.chat(chat_detail)
+        recommendation_text = chat_resp.data.chat_response.choices[0].message.content[0].text
+    except Exception as e:
+        print(f"OCI GenAI error: {e}")
+
+    print("\n--- AI Recommendation ---\n", recommendation_text[:1000])
+
+    # Parse the simple block
+    act = re.search(r"SuggestedAction:\s*(APPROVE|DENY|REQUEST INFO)\b", recommendation_text, re.I)
+    risk_num = re.search(r"Risk:\s*([0-9]+)", recommendation_text, re.I)
+    risk_lbl = re.search(r"Risk:\s*[0-9N]+\s*\((Very Low|Low|Medium|High)\)", recommendation_text, re.I)
+
+    action_norm = (act.group(1).upper() if act else "REQUEST INFO")
+    risk_n = risk_num.group(1) if risk_num else ("7" if action_norm == "APPROVE" else "5")
+    risk_l = (risk_lbl.group(1).title() if risk_lbl else _risk_bucket(risk_n))
+
+    # Map to dashboard vocab
+    table_status = "Approved" if action_norm == "APPROVE" else ("Denied" if action_norm == "DENY" else "In Progress")
+
+    # update new values into the DB
+    try:
+        # Insert / Update Auth_recommendation
+        cursor.execute("""
+            MERGE INTO AUTH_RECOMMENDATION t
+            USING (SELECT :rid AS RECOMMEND_ID FROM dual) s
+            ON (t.RECOMMEND_ID = s.RECOMMEND_ID)
+            WHEN MATCHED THEN UPDATE SET
+                t.CONDITION_ID   = :cond_id,
+                t.RECOMMENDATION = :rec,
+                t.EXPLANATION    = :exp,
+                t.RISK_LEVEL     = :risk,
+                t.GENERATED_DATE = SYSDATE
+            WHEN NOT MATCHED THEN INSERT
+                (RECOMMEND_ID, CONDITION_ID, RECOMMENDATION, EXPLANATION, RISK_LEVEL, GENERATED_DATE)
+                VALUES (:rid, :cond_id, :rec, :exp, :risk, SYSDATE)
+        """, {
+            'rid': 90001, # build stable ID as match key
+            'cond_id': condition_id, # from task 3
+            'rec': table_status, # Approved / Denied / in progress
+            'exp': recommendation_text, # Recommendation text
+            'risk': risk_l # Risk level
+        })
+
+        # Link the authorization to this recommendation and set FINAL_DECISION for dashboards
+        cursor.execute("""
+            UPDATE AUTHORIZATION_REQ
+            SET RECOMMEND_ID = :rid,
+                FINAL_DECISION = :final_dec
+            WHERE AUTHORIZATION_ID = :aid
+        """, {'rid': 90001, 'final_dec': table_status, 'aid': authorization_id})
+
+        connection.commit()
+
+        
+        print(f"Stored recommendation -> {table_status} (risk={risk_l}); linked to AUTHORIZATION_REQ {authorization_id}.")
+    except Exception as e:
+        connection.rollback()
+        print("Failed to store recommendation:", e)
+     </copy>
     ```
 
 2. Click the "Run" button to execute the code. Note that this will take time to run.
 
-    ![healthcare recommendation](./images/generate-recommendation.png " ")
+    ![healthcare recommendation](./images/generate-recommendations.png " ")
 
 3. Review the output. In the demo, this is where you selected the "Navigate to Decisions" button as the Healthcare Claims Analyst. You just used AI to get recommendations for the claims analyst which would have taken her hours to do, congratulations!
 
@@ -291,67 +347,86 @@ To handle follow-up questions, you will enhance the system with an AI Guru power
 
 Before answering questions, we need to prepare the data by vectoring the claims recommendations. This step:
 
-   - **Stores Recommendations**: Inserts the full recommendation text (from previous cell) as a single chunk if not already present.
+   - Stores Recommendations: Inserts the full recommendation text (from previous cell) as a single chunk if not already present.
+   - We delete prior chunks for this authorization.
+   - We use `VECTOR_CHUNKS` to split the recommendation text.
+   - The chunks will be inserted into `MEDICAL_CHUNK` with `CHUNK_ID= chunk_offset`.
+   - We display a data frame summary to show the chunks.
 
-Now we'll chunk the AI recommendations by words and store in the MEDICAL_CHUNK table.
-
-The parameters we'll use:
-* By words(vs characters)
-* MAX 50 words per chunk (adjust as needed)
-* OVERLAP 0 (independent chunks)
-* SPLIT BY sentence (avoid mid-setence cuts)
-* LANGUAGE american, NORMALIZE all
 
 1. Copy the following code and run:
 
     ```python
         <copy>
-        authorization_id = auth_req.get("authorizationId")
-        if authorization_id is None:
-            raise ValueError("No authorization_id found from the selected patient context.")
+        # Task 5: Chunk & store AI recommendation, then SHOW the chunks
+        auth_id = authorization_id
+        text_to_chunk = (recommendation_text or "").strip() # text we will chunk
+        if not text_to_chunk:
+            text_to_chunk = f"SuggestedAction: {table_status}\nRationale: (empty model output)."
 
-        # Upsert the raw recommendation text as the source for chunking
-        cursor.execute("DELETE FROM RECOMMENDATION_SRC WHERE AUTHORIZATION_ID = :aid", {'aid': authorization_id})
-        cursor.execute("""
-            INSERT INTO RECOMMENDATION_SRC (AUTHORIZATION_ID, TEXT_CLOB)
-            VALUES (:aid, :txt)
-        """, {'aid': authorization_id, 'txt': recommendation_text})
+        # 1) Clear old chunks
+        cursor.execute("DELETE FROM MEDICAL_CHUNK WHERE AUTHORIZATION_ID = :aid", {'aid': auth_id})
         connection.commit()
 
-        # Remove any prior chunks for this authorization_id (only our multi-size ones)
+        # 2) Chunk via VECTOR_CHUNKS
+        chunk_size = 25  # words
+        overlap    = 0    # words
+
+        insert_chunks_sql = f"""
+            INSERT INTO MEDICAL_CHUNK (AUTHORIZATION_ID, SOURCE_TYPE, CHUNK_ID, CHUNK_TEXT)
+            SELECT :aid, 'AI_REC', c.chunk_offset, c.chunk_text
+            FROM (SELECT :txt AS c FROM dual) s,
+                VECTOR_CHUNKS(
+                    dbms_vector_chain.utl_to_text(s.c)
+                    BY words
+                    MAX {int(chunk_size)}
+                    OVERLAP {int(overlap)}
+                    SPLIT BY sentence
+                    LANGUAGE american
+                    NORMALIZE all
+                ) c
+        """
+
+        try:
+            cursor.execute(insert_chunks_sql, {'aid': auth_id, 'txt': text_to_chunk})
+            inserted = cursor.rowcount or 0
+            connection.commit()
+        except oracledb.DatabaseError as e:
+            # Small Python fallback if VECTOR_CHUNKS isn't available
+            print(f"VECTOR_CHUNKS error, {e}")
+            
+        print(f"Stored {inserted} chunk(s) for AUTHORIZATION_ID={auth_id}.")
+
+        # 3) Fetch & SHOW the chunks
         cursor.execute("""
-            DELETE FROM MEDICAL_CHUNK
+            SELECT CHUNK_ID, CHUNK_TEXT
+            FROM MEDICAL_CHUNK
             WHERE AUTHORIZATION_ID = :aid
-            AND (SOURCE_TYPE LIKE 'REC_CHUNK_W%' OR SOURCE_TYPE = 'AI_RECOMMENDATION')
-        """, {'aid': authorization_id})
-        connection.commit()
+        ORDER BY CHUNK_ID
+        """, {'aid': auth_id})
+        rows = cursor.fetchall()
 
-        # Chunk at multiple sizes — adjust as you like
-        chunk_sizes = [50]
+        # Build a summary DataFrame with preview
+        def _lob_to_str(v):
+            return v.read() if isinstance(v, oracledb.LOB) else v
 
-        for size in chunk_sizes:
-            insert_sql = f"""
-                INSERT INTO MEDICAL_CHUNK (AUTHORIZATION_ID, SOURCE_TYPE, CHUNK_ID, CHUNK_TEXT)
-                SELECT :aid,
-                    :src_type,
-                    c.chunk_offset,
-                    c.chunk_text
-                FROM RECOMMENDATION_SRC s,
-                    VECTOR_CHUNKS(
-                        dbms_vector_chain.utl_to_text(s.text_clob)
-                        BY words
-                        MAX {size}
-                        OVERLAP 0
-                        SPLIT BY sentence
-                        LANGUAGE american
-                        NORMALIZE all
-                    ) c
-                WHERE s.authorization_id = :aid
-            """
-            cursor.execute(insert_sql, {'aid': authorization_id, 'src_type': f'REC_CHUNK_W{size}'})
+        # Summarize chunks in a compact table
+        items = []
+        for cid, ctext in rows:
+            txt = _lob_to_str(ctext) or ""
+            items.append({
+                "CHUNK_ID": cid,
+                "Chars": len(txt),
+                "Words": len(txt.split()),
+                "Preview": (txt[:160] + "…") if len(txt) > 160 else txt
+            })
 
-        connection.commit()
-        print("✅ Task 5 complete: recommendation chunked and stored (W50).")
+        df_chunks = pd.DataFrame(items).sort_values("CHUNK_ID")
+
+        # Display the table of the chunks
+        display(df_chunks)  # In Jupyter, shows a nice table
+
+        print(f"\nStored {inserted} chunk(s) for AUTHORIZATION_ID={auth_id}.")
         </copy>
     ```
 
@@ -371,53 +446,51 @@ In this step:
 
    - **Generates Embeddings**: This is a new feature in Oracle Database 23ai that allows you to create embeddings directly within the database, eliminating the need for external tools or APIs. The `dbms_vector_chain.utl_to_embedding` function takes the recommendation text as input and returns an embedding vector.
 
-   - **Stores Embeddings**: Inserts the generated embedding vector into a table called `MEDICAL_CHUNK`.
+   - **Stores Embeddings**: We update `MEDICAL_CHUNK.CHUNK_VECTOR` by embedding each `CHUNK_TEXT` using `dbms_vector_chain.utl_to_embedding` with `DEMO_MODEL`. A short verification output is printed.
 
 1. We embed the recommendation chunks and our policy text for retrieval. Copy the following code into a new cell block:
 
     ```python
         <copy>
-        # 6a) Embed the newly inserted recommendation chunks
-        cursor.execute("""
-            UPDATE MEDICAL_CHUNK
-            SET CHUNK_VECTOR = dbms_vector_chain.utl_to_embedding(
-                CHUNK_TEXT,
-                JSON('{"provider":"database","model":"DEMO_MODEL","dimensions":384}')
+        # Task 6: Create embeddings for MEDICAL_CHUNK rows
+        auth_id = authorization_id  # from Task 4/5
+        vp = json.dumps({"provider": "database", "model": "DEMO_MODEL", "dimensions": 384})
+
+        # 1) Embed all chunks for this authorization
+        try:
+            cursor.execute(
+                """
+                UPDATE MEDICAL_CHUNK
+                SET CHUNK_VECTOR = dbms_vector_chain.utl_to_embedding(CHUNK_TEXT, JSON(:vp))
+                WHERE AUTHORIZATION_ID = :aid
+                """,
+                {"vp": vp, "aid": auth_id}
             )
+            updated = cursor.rowcount or 0
+            connection.commit()
+            print(f"Embedded vectors for {updated} chunk(s) (AUTHORIZATION_ID={auth_id}).")
+        except oracledb.DatabaseError as e:
+            connection.rollback()
+            print("Embedding failed. Make sure DEMO_MODEL is loaded in Task 2.")
+            raise
+
+        # 2) Quick sanity check: how many rows have vectors now?
+        cursor.execute("""
+            SELECT COUNT(*) 
+            FROM MEDICAL_CHUNK 
+            WHERE AUTHORIZATION_ID = :aid 
+            AND CHUNK_VECTOR IS NOT NULL
+        """, {"aid": auth_id})
+        have_vec = cursor.fetchone()[0]
+
+        cursor.execute("""
+            SELECT COUNT(*) 
+            FROM MEDICAL_CHUNK 
             WHERE AUTHORIZATION_ID = :aid
-            AND SOURCE_TYPE LIKE 'REC_CHUNK_W%'
-        """, {'aid': authorization_id})
-        connection.commit()
-        print("✅ Embedded vectors for recommendation chunks.")
+        """, {"aid": auth_id})
+        total_rows = cursor.fetchone()[0]
 
-        # 6b) (Re)chunk + embed policy text corpus (simple fixed-size char chunking)
-        def simple_chunk(text, max_chars=1200):
-            text = str(text or "")
-            return [text[i:i+max_chars] for i in range(0, len(text), max_chars)] or [""]
-
-        # Clean slate for POLICY_VECTOR_CHUNK
-        cursor.execute("DELETE FROM POLICY_VECTOR_CHUNK")
-        connection.commit()
-
-        for _, row in df_policy.iterrows():
-            chunks = simple_chunk(row.FULL_TEXT, max_chars=1200)
-            for idx, ch in enumerate(chunks):
-                cursor.execute("""
-                    INSERT INTO POLICY_VECTOR_CHUNK (POLICY_ID, CHUNK_ID, CHUNK_TEXT)
-                    VALUES (:pid, :cid, :ctxt)
-                """, {'pid': int(row.POLICY_ID), 'cid': idx, 'ctxt': ch})
-
-                cursor.execute("""
-                    UPDATE POLICY_VECTOR_CHUNK
-                    SET CHUNK_VECTOR = dbms_vector_chain.utl_to_embedding(
-                        :text,
-                        JSON('{"provider":"database","model":"DEMO_MODEL","dimensions":384}')
-                    )
-                    WHERE POLICY_ID = :pid AND CHUNK_ID = :cid
-                """, {'text': ch, 'pid': int(row.POLICY_ID), 'cid': idx})
-
-        connection.commit()
-        print("✅ Policy text chunked and embedded.")
+        print(f"Vectors present: {have_vec}/{total_rows}")
         </copy>
     ```
 
@@ -433,129 +506,122 @@ In this step:
 
 Now that the recommendations are vectorized, we can process a user’s question:
 
- ```What documentation is needed to approve an MRI prior authorization?``` 
+ ```Why was this approved?``` 
  
  This step:
 
    - **Vectorizes the question**: Embeds the question using `DEMO_MODEL` via `dbms_vector_chain.utl_to_embedding`.
    - **Performs AI Vector Search**: Finds the most relevant using similarity search.
-   - **Use RAG**: Combines the customer profile, loan options, and relevant chunk into a prompt for OCI Generative AI, producing a concise answer. Here you implement the RAG process.
    - **Retrieves**: The top policy chunks and top recommendation chunks
    - **Builds a prompt**: To ask the LLM to answer using only the retrieved context
+   - **Use RAG**: Combines the customer profile, loan options, and relevant chunk into a prompt for OCI Generative AI, producing a concise answer. Here you implement the RAG process.
    - **Prints**: The chunk IDs to be used for traceability
 
 1. Copy the code and run:
 
     ```python
         <copy>
-        question = "What documentation is needed to approve an MRI prior authorization?"
+        # Task 7: RAG — retrieve most relevant chunk(s) and answer a question
+        # 0) Question (edit as desired)
+        question = "Why was this approved?"
+        print("Running vector search…")
 
-        def vectorize_question(q):
-            cursor.execute("""
-                SELECT dbms_vector_chain.utl_to_embedding(
-                    :q,
-                    JSON('{"provider":"database","model":"DEMO_MODEL","dimensions":384}')
-                ) FROM DUAL
-            """, {'q': q})
-            return cursor.fetchone()[0]
+        # 1) Embed the question with the same model used in Task 6
+        vp = json.dumps({"provider": "database", "model": "DEMO_MODEL", "dimensions": 384})
+        cursor.execute(
+            "SELECT dbms_vector_chain.utl_to_embedding(:q, JSON(:vp)) FROM dual",
+            {"q": question, "vp": vp}
+        )
+        qvec = cursor.fetchone()[0]
 
-        print("Processing question using AI Vector Search...")
+        # 2) Retrieve chunks from MEDICAL_CHUNK for this authorization
+        cursor.execute(f"""
+            SELECT CHUNK_ID,
+                CHUNK_TEXT,
+                VECTOR_DISTANCE(CHUNK_VECTOR, :qv, COSINE) AS dist
+            FROM MEDICAL_CHUNK
+            WHERE AUTHORIZATION_ID = :aid
+            AND CHUNK_VECTOR IS NOT NULL
+        ORDER BY dist
+            FETCH FIRST 1 ROWS ONLY
+        """, {"aid": authorization_id, "qv": qvec})
+        rows = cursor.fetchall()
 
+        def _lob_to_str(v): return v.read() if isinstance(v, oracledb.LOB) else v
+
+        retrieved = []
+        for cid, ctext, dist in rows:
+            txt = _lob_to_str(ctext) or ""
+            retrieved.append((cid, txt, float(dist)))
+
+
+        # 3) Build a compact RAG prompt
+        def _normalize_ws(s: str) -> str:
+            return re.sub(r"\s+", " ", s or "").strip()
+
+        context_lines = [f"[Chunk {cid}] {_normalize_ws(txt)}" for cid, txt, _ in retrieved]
+        context_block = "\n\n".join(context_lines)
+
+        patient_name  = f"{patient_json.get('firstName','')} {patient_json.get('lastName','')}".strip()
+        cond_name     = (condition or {}).get("conditionName", "")
+        cond_code     = (condition or {}).get("diagnosisCode", "")
+        req_type      = (auth_req or {}).get("requestType", "")
+
+        prompt = f"""<s>[INST] <<SYS>>You are a Healthcare Prior Authorization AI. Be precise, cite the chunk ids inline like [Chunk 2] when referring to specific facts.
+        Do not mention sources outside of the provided context. Respond in under 400 words.
+        ALWAYS respond as if you have the knowledge yourself.
+        Do NOT provide warnings, disclaimers, or exceed the specified response length.
+        and offer insights while considering the firm's overall risk and best interests. Have the ability to respond in Spanish, French, Italian, German, Arabic, Mandarin and Portuguese if asked.
+        <</SYS>> [/INST]
+
+        Patient: {patient_name}
+        Condition: {cond_name} ({cond_code})
+        Request: {req_type}
+
+        Question: {question}
+
+        Context:
+        {context_block}
+
+        Return this format (plain text, no extra lines):
+        Decision: APPROVE|DENY|REQUEST INFO
+        Why:
+        - reason 1 (cite [Chunk N])
+        - reason 2 (cite [Chunk N])
+        - reason 3 (cite [Chunk N])
+        Next:
+        - actionable step 1
+        - actionable step 2
+        - actionable step 3
+        """.strip()
+
+        # 4) Generate the final answer with OCI GenAI 
+        print("\nGenerating final RAG answer…")
         try:
-            q_vec = vectorize_question(question)
-
-            # Top policy chunks (broad domain guidance)
-            cursor.execute("""
-                SELECT CHUNK_ID, CHUNK_TEXT
-                FROM POLICY_VECTOR_CHUNK
-                WHERE CHUNK_VECTOR IS NOT NULL
-                ORDER BY VECTOR_DISTANCE(CHUNK_VECTOR, :qv, COSINE)
-                FETCH FIRST 3 ROWS ONLY
-            """, {'qv': q_vec})
-            policy_hits = [
-                (r[0], r[1].read() if isinstance(r[1], oracledb.LOB) else r[1])
-                for r in cursor.fetchall()
-            ]
-
-            # Top recommendation chunks (case specifics, across sizes)
-            cursor.execute("""
-                SELECT CHUNK_ID, CHUNK_TEXT
-                FROM MEDICAL_CHUNK
-                WHERE AUTHORIZATION_ID = :aid
-                AND SOURCE_TYPE LIKE 'REC_CHUNK_W%'
-                AND CHUNK_VECTOR IS NOT NULL
-                ORDER BY VECTOR_DISTANCE(CHUNK_VECTOR, :qv, COSINE)
-                FETCH FIRST 3 ROWS ONLY
-            """, {'aid': authorization_id, 'qv': q_vec})
-            rec_hits = [
-                (r[0], r[1].read() if isinstance(r[1], oracledb.LOB) else r[1])
-                for r in cursor.fetchall()
-            ]
-
-            # Combine and format with Chunk IDs
-            retrieved = policy_hits + rec_hits
-            if not retrieved:
-                retrieved = [(0, recommendation_text)]  # fallback to full rec text
-
-            # Clean text for prompting
-            cleaned = [re.sub(r'[^\w\s\d.,\-\'"]', ' ', t).strip() for _, t in retrieved]
-            docs_as_one_string = "\n=========\n".join(cleaned) + "\n=========\n"
-
-            # Compact RAG prompt
-            available_policies_titles = ", ".join(df_policy["TITLE"].tolist())
-            patient_header = f"{patient_json.get('firstName','')} {patient_json.get('lastName','')} | Condition: {condition.get('conditionName','')} ({condition.get('diagnosisCode','')})"
-
-            rag_prompt = f"""<s>[INST] <<SYS>>You are a Healthcare RAG Assistant. 
-            Answer using only the provided context. Do not mention sources outside of the provided context. 
-            Do NOT provide warnings, disclaimers, or exceed the specified response length.
-            Keep under 300 words. Be specific and actionable. Have the ability to respond in Spanish, French, Italian, German, and Portuguese if asked. </SYS>> [/INST]
-            [INST]
-            Question: "{question}"
-            Patient: {patient_header}
-            Available Policies: {available_policies_titles}
-
-            Context:
-            {docs_as_one_string}
-
-            Tasks:
-            1) Provide a direct answer listing the typical documentation required.
-            2) Tie each item to policy rationale where possible (title-level reference is fine).
-            3) If requirements may vary, note what additional info determines the path (e.g., prior therapy, imaging results).
-            [/INST]"""
-
-            print("Generating AI response...")
-
             genai_client = oci.generative_ai_inference.GenerativeAiInferenceClient(
-                config=oci.config.from_file(os.getenv("OCI_CONFIG_PATH","~/.oci/config")),
+                config=oci.config.from_file(os.path.expanduser(os.getenv("OCI_CONFIG_PATH","~/.oci/config")), "DEFAULT"),
                 service_endpoint=os.getenv("ENDPOINT")
             )
             chat_detail = oci.generative_ai_inference.models.ChatDetails(
                 compartment_id=os.getenv("COMPARTMENT_OCID"),
                 chat_request=oci.generative_ai_inference.models.GenericChatRequest(
                     messages=[oci.generative_ai_inference.models.UserMessage(
-                        content=[oci.generative_ai_inference.models.TextContent(text=rag_prompt)]
+                        content=[oci.generative_ai_inference.models.TextContent(text=prompt)]
                     )],
-                    temperature=0.0,
-                    top_p=0.9
+                    temperature=0.0, 
+                    top_p=1.0
                 ),
                 serving_mode=oci.generative_ai_inference.models.OnDemandServingMode(
                     model_id="meta.llama-3.2-90b-vision-instruct"
                 )
             )
-
-            chat_response = genai_client.chat(chat_detail)
-            rag_answer = chat_response.data.chat_response.choices[0].message.content[0].text
-            rag_answer = re.sub(r'[^\w\s\d.,\-\'"]', ' ', rag_answer)
-            print("\n🤖 AI Healthcare RAG Response:")
-            print(rag_answer)
-
-            print("\n📑 Retrieved Chunks Used in Response:")
-            for cid, text in retrieved:
-                preview = text[:120].replace("\n", " ") + ("..." if len(text) > 120 else "")
-                print(f"[Chunk {cid}] : {preview}")
-
+            chat_resp = genai_client.chat(chat_detail)
+            rag_answer = chat_resp.data.chat_response.choices[0].message.content[0].text
         except Exception as e:
-            print(f"RAG flow error: {e}")
+            # Simple fallback guided by earlier outcome
+            print("Something is off...")   
+
+        print("\n🤖 RAG Answer:\n", rag_answer)
         </copy>
     ```
 
