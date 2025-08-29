@@ -156,7 +156,7 @@ This lab assumes you have:
 
 8. The agent should provide you with its plan and request your consent to proceed. If the plan is acceptable you can click the `Approve` button.
 
-   ![1-initial-plan](./images/lab-5/1-initial-plan.png " ")
+   <!-- ![1-initial-plan](./images/lab-5/1-initial-plan.png " ") -->
 
    ![2-approve-proposed-plan](./images/lab-5/2-approve-proposed-plan.png " ")
 
@@ -164,7 +164,7 @@ This lab assumes you have:
 
 1. Your agent will establish a collection using the `connect` tool of the SQLcl MCP server. You may also see a plan resembling that in the image. If all appears corect, you may proceed. 
 
-   ![3-plan-when-in-the-database](./images/lab-5/3-plan-when-in-the-database.png " ")
+   <!-- ![3-plan-when-in-the-database](./images/lab-5/3-plan-when-in-the-database.png " ") -->
 
 2. You will see the first step of the Agent--using the `run-sql` Tool to create four new tables in your schema: 
 
@@ -174,9 +174,9 @@ This lab assumes you have:
 
 4. Once the tables have been created for you, the Agent will suggest "fictitious, but plausible data" for populating your tables. You can review the data suggested, and once satisifed, `Approve` the proposed `INSERT` statements. 
 
-   ![5-inserting-data-into-manufacturing-table](./images/lab-5/5-inserting-data-into-manufacturing-table.png " ")
+   <!-- ![5-inserting-data-into-manufacturing-table](./images/lab-5/5-inserting-data-into-manufacturing-table.png " ") -->
 
-   ![6-inserting-into-vehicle-tables](./images/lab-5/6-inserting-into-vehicle-tables.png " ")
+   <!-- ![6-inserting-into-vehicle-tables](./images/lab-5/6-inserting-into-vehicle-tables.png " ") -->
 
 5. At times, your Agent may exhibit unexpected behavior. As in this example, where it asks to enable **Act** mode to complete a task. 
 

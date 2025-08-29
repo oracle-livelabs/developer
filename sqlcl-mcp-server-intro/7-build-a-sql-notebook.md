@@ -1,3 +1,5 @@
+<mark>**NOT A CANDIDATE FOR THE FINAL LIVE LAB.**</mark>
+
 # Build a SQL Notebook
 
 ## Introduction
