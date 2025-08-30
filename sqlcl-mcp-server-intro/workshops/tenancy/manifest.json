@@ -13,12 +13,7 @@
         {
           "title": "Title",
           "description": "Template to link to Need Help lab at the end of workshop. Change 'CHANGE-ME' in link below to need-help-livelabs.md or need-help-freetier.md",
-          "filename":"../../2-environment-set-up.md",
-          "type": {
-            "macOS": "macOS",
-            "windows" : "Windows",
-            "linux" : "Lunux"
-          }
+          "filename":"../../2-environment-set-up.md"
         },
          {
             "title": "Title",
