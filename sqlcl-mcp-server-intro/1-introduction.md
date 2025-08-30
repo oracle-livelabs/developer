@@ -133,11 +133,9 @@ And here are some things to consider when working with *any* AI Agent and MCP Se
   - Resource Manager for runaway queries.
   - Row level security for least data exposure.
 
-> REMEMBER: When an AI Agent uses the SQLcl MCP Server, credentials are never shown to the LLM/agent--its all managed in an Oracle Wallet. Therefore the agent *must* honor database Roles, Privileges, and security safeguards (VPD/Row Level Security, Data Vault, SQL Firewall, Resource Manager).
+<p></p>
 
-<!-- ##### Compatability
-
-Compatibility note (from the workshop): JDBC often works against older DBs (even 11g), though only 19c+ is “current/fully supported.” -->
+> &#9888; **REMEMBER:** When an AI Agent uses the SQLcl MCP Server, credentials are never shown to the LLM/agent--its all managed in an Oracle Wallet. Therefore the agent *must* honor database Roles, Privileges, and security safeguards (VPD/Row Level Security, Data Vault, SQL Firewall, Resource Manager).
 
 #### MCP Best Practices
 | | |
@@ -145,7 +143,7 @@ Compatibility note (from the workshop): JDBC often works against older DBs (even
 |***Do...***|<ul><li>use read only connections by default.</li><li>keep MCP servers "focused" (no overlapping “run SQL” from multiple servers).</li><li>ensure tools explain themselves (clear descriptions).</li><li>log everything the agent runs (transparency).</li>
 |**Do *not...*** | <ul><li>blanket approve session actions.</li><li>expose credentials to the LLM.</li><li>deploy agents into production without strict database controls (Firewall, Vault, RLS, Resource Manager).</li><li>assume the LLM is always correct—review SQL, PL/SQL, plans, and results.</li></ul>|
 
-#### Summary 
+### Summary 
 
 | | | 
 | -- | -- | 
