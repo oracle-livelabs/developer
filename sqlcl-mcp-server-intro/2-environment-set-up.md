@@ -2,57 +2,59 @@
 
 ## Introduction
 
-In this Lab, you will configure your local workstation to connect with the SQLcl MCP Server. You will install and configure VS Code and related extensions, SQLcl, and the SQLcl MCP server.
-
-This lab will 
-
-*Describe the lab in one or two sentences, for example:* This lab walks you through the Steps to ...
-
-### About Product/Technology (Optional)
-Enter background information here about the technology/feature or product used in this lab - no need to repeat what you covered in the introduction. Keep this section fairly concise. If you find yourself needing more than to sections/paragraphs, please utilize the "Learn More" section.
+In this Lab, you will install and configure Visual Studio Code and related extensions, SQLcl, and the SQLcl MCP server. You will then use an AI Agent to connect to the SQLcl MCP server and learn the basics when working with an MCP Server.
 
 ### Objectives
 
-*List objectives for this lab*
-
 In this lab, you will:
-* Create a FreeSQL account (or login if you have an already existing account)
-* Install, or modify a current VS Code IDE
+* Create a LiveSQL, FreeSQL, or OCI account (or login if you have an existing account or if you were provided temporary single-use credentials)
+* Install or update your current VS Code IDE settings
 * Install and configure the Oracle SQL Developer for VS Code extension
 * Install the Cline for VS Code extension
 * Install and configure SQlcl
+* Configure the SQLcl MCP server
 
-### Prerequisites
-<!-- Something about copilot (if existing customer) -->
+### Prerequisites 
+
 This lab assumes you have:
 * A personal computer or access to a workshop-provided workstation
-* All previous labs successfully completed
+* Reviewed the Introduction lab of this LiveLab
 
 ## Task 1: Create a FreeSQL account
 
-1. In a separate tab, navigate to [freesql.com](https://www.freesql.com).
+1. From a new browser window/tab, navigate to [freesql.com](https://www.freesql.com).
 2. Sign in with your existing Oracle account, or create a new account. 
-3. Log in to [freesql.com](https://www.freesql.com) and click the <button>Connect with [rotating language option]</button>
+3. Log in to [freesql.com](https://www.freesql.com) and click the <btn>Connect with [rotating language option]</>
 
    ![1-clicking-connect-with-button.png](./images/lab-2/1-clicking-connect-with-button.png " ")
 
-4. Take note of your FreeSQL credentials. You will need the following: 
+4. Take note of your FreeSQL credentials. You will need the following values:
 
-   - Hostname
+      | | | | | |
+      | --- | ---| ---| --- | --- |
+      | Hostname| Port| Service Name| Username|Password|
+
+   <!-- - Hostname
    - Port
    - Service Name
    - Username
-   - Password
+   - Password -->
 
-        ![2-copying-your-free-sql-credentials.png](./images/lab-2/2-copying-your-free-sql-credentials.png " ")
+    <p></p>
+ 
+   ![2-copying-your-free-sql-credentials.png](./images/lab-2/2-copying-your-free-sql-credentials.png " ")
+        
+<p></p>
 
-:memo: **Note:** You must click the Regenerate button to create a new password. Please save this password, as it will only be displayed once. It will not be saved or displayed across sessions.
+> **NOTE:** You must click the Regenerate button to create a new password. Please save this password, as it will only be displayed once. 
+> 
+> *Your password will **NOT** be saved or displayed across sessions!*
 
-## Task 2: Oracle SQL Developer for VS Code
+## Task 2: Install Oracle SQL Developer for VS Code
 
-1. Install Oracle the SQL Develeoper for VS Code extension. There are two installation options:
+1. Install Oracle the SQL Develeoper for VS Code extension; there are two installation options:
 
-   1. [Install](https://marketplace.visualstudio.com/items?itemName=Oracle.sql-developer) the latest Oracle SQL Developer for VS Code Extension.[^1]
+   1. [Install](https://marketplace.visualstudio.com/items?itemName=Oracle.sql-developer) the latest Oracle SQL Developer for VS Code Extension.<sup id="sup-1">1</sup>
    2. From within VS Code, navigate to **Extensions**, search for "Oracle" and choose <kbd>Install</kbd>
 
      ![3-vs-code-extensions-first-visit](./images/lab-2/3-vs-code-extensions-first-visit.png " ")
@@ -61,7 +63,7 @@ This lab assumes you have:
 
      ![5-post-installation-sql-developer-web-extension](./images/lab-2/5-post-installation-sql-developer-web-extension.png " ")
 
-[^1]: Visit the [Setting up Visual Studio Code](https://code.visualstudio.com/docs/setup/setup-overview) reference page for available configuration options and features of VS Code.  
+<sup a="sup-1">1</sup>: Visit the [Setting up Visual Studio Code](https://code.visualstudio.com/docs/setup/setup-overview) reference page for available configuration options and features of VS Code.  
 
 2. Restart your VS Code session
 3. Navigate to the Oracle SQL Developer for VS Code extension (located in your Activity Bar)
