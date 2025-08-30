@@ -63,7 +63,7 @@ This lab assumes you have:
 
      ![5-post-installation-sql-developer-web-extension](./images/lab-2/5-post-installation-sql-developer-web-extension.png " ")
 
-<sup a href="#sup-1">1</sup>: Visit the [Setting up Visual Studio Code](https://code.visualstudio.com/docs/setup/setup-overview) reference page for available configuration options and features of VS Code.  
+<sup a href="#sup-1" class="skip-link">1</sup>Visit the [Setting up Visual Studio Code](https://code.visualstudio.com/docs/setup/setup-overview) reference page for available configuration options and features of VS Code.  
 
 2. Restart your VS Code session
 3. Navigate to the Oracle SQL Developer for VS Code extension (located in your Activity Bar)
