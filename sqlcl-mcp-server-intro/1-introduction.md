@@ -155,12 +155,11 @@ Compatibility note (from the workshop): JDBC often works against older DBs (even
 
 ## Learn More
 
-*(optional - include links to docs, white papers, blogs, etc)*
-
-* [URL text 1](http://docs.oracle.com)
-* [URL text 2](http://docs.oracle.com)
+* [MCP Server Introduction](https://blogs.oracle.com/database/post/introducing-mcp-server-for-oracle-database) 
+* [Oracle official MCP Server repository](https://github.com/oracle/mcp/tree/main)
+* [SQLcl MCP Server Docs](https://docs.oracle.com/en/database/oracle/sql-developer-command-line/25.2/sqcug/using-oracle-sqlcl-mcp-server.html)
 
 ## Acknowledgements
-* **Author** - <Name, Title, Group>
-* **Contributors** -  <Name, Group> -- optional
-* **Last Updated By/Date** - <Name,  Month Year>
+* **Author**<ul><li>Chris Hoina, Senior Product Manager, Database Tools</li></ul>
+* **Contributors**<ul><li>Jeff Smith, Distinguished Product Manager, Database Tools</li><li>Linda Foindling</li></ul>
+* **Last Updated By/Date**<ul><li>Chris Hoina, August 2025</li></ul>
