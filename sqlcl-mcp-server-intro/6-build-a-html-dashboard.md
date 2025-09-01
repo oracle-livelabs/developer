@@ -29,41 +29,27 @@ This lab assumes you have:
 
 ## Task 1: Review the sample prompt
 
-In this Lab, you'll trade out a pre-made prompt-as-markdown-file, for a short summary of what you want to achieve. Read on to learn more.
+1. A sample prompt has been provided for you. Download [here](link_LiveLabs_Object_storage). This prompt can be used as-is with your agent while in "Plan" mode. Alternatively you may use it as a reference, while creating your own app. 
 
-1. Review the following sample prompt. In a test, we asked our Agent for the following: 
+> &#9872; **NOTE:** This Lab is designed to be open-ended, accordingly, your individual results will vary. Feel free to "go off-script" &#9786; !
 
-    ```txt
-    1. You will be creating a dynamic and visually stunning html-based dashboard for me. I want to be able to view this dashboard quickly and close it when I'm finished. It doesn't need to "run" all the time.
+2. Save the prompt locally to a file named something like: `create_data_and_views_prompt.md`. 
 
-    2. Connect as the SQL_FREESQL_01 user and describe the HR schema tables and views
-
-    3. Familiarize yourself with their relationships.
-
-    4. I want you to add tool tips to my charts: https://www.chartjs.org/docs/latest/samples/tooltip/content.html
-
-    5. I want you to use table data from the HR schema to create a radar chart https://www.chartjs.org/docs/latest/samples/other-charts/radar.html. I want to be able to select two different employees from two drop down lists, so that I can compare their attributes.
-
-    6. I want a bubble chart to display the count of countries employees reside in. The bubble size should be relative to the number of employees in that country. I want you to create something like in this example: https://www.chartjs.org/docs/latest/samples/other-charts/bubble.html
-
-    7. I want you to show me a breakdown of the employees by their Job ID, on a doughnut chart like this: https://www.chartjs.org/docs/latest/samples/other-charts/doughnut.html
-    ```
-
-2. You can choose to use this prompt, or something like it. You decide. Make sure to start in **Plan** mode, in order to have better control and oversight over the entire process. Let the Agent summarize its intent. 
+3. You can use this prompt as-is, or use it as a reference; you decide. Make sure to start in **Plan** mode, in order to have better control and oversight over the entire process. Let the Agent summarize its intent. 
 
    ![1-entering-a-prompt-in-one-go](./images/lab-6/1-entering-a-prompt-in-one-go.png " ")
 
-3. In other labs, you may have approved actions in stages, but here the Agent reviews the tasks all at once, and executes with minimal intervention. You can of course add suggestions or changes to the proposed plan. When you are satisfied, allow the Agent to continue.
+3. In other labs, you mmight approve actions in stages. But if you decide to share with the Agent the *entire* prompt, the agent will review the tasks all at once, and execute its plan with minimal intervention. You can of course add suggestions or changes to the proposed plan. And when you are satisfied, allow the Agent to continue.
 
     <!-- ![2-approving-the-agent-to-view-all-tables-in-hr](./images/lab-6/2-approving-the-agent-to-view-all-tables-in-hr.png " ") -->
 
-4. There are other schemas that have granted access to `PUBLIC` (i.e., all other users); you do not need to query the **HR** schema. You have access to other schemas too: **CO** and **SH**. You might improvise and create a dashboard with these schemas. 
+4. There are other schemas that have granted access to `PUBLIC` (i.e., all other users); so, you do not need to be connected as the `HR` user. You have access to other schemas too: **CO** and **SH**. You might improvise and create a dashboard using these schemas instead.
 
 5. Whatever you decide, observe what SQLcl MCP **Tools** are used, and the SQL or PL/SQL that is executed. In some cases, the agent may need additonal direction. And the Agent may request switching the mode to **Act**. 
 
     <!-- ![3-results-of-the-agent-query-on-hr-schema](./images/lab-6/3-results-of-the-agent-query-on-hr-schema.png " ") -->
 
-    <!-- ![4-asking-to-transition-to-act-with-a-reminder](./images/lab-6/4-asking-to-transition-to-act-with-a-reminder.png " ") -->
+    ![4-asking-to-transition-to-act-with-a-reminder](./images/lab-6/4-asking-to-transition-to-act-with-a-reminder.png " ")
 
 6. Your scenario may differ slightly, depending on the LLM used, but you should continue to see the Agent's intent and summary of intended actions.
 
@@ -71,7 +57,7 @@ In this Lab, you'll trade out a pre-made prompt-as-markdown-file, for a short su
 
 ## Task 2: Creating the dashboard files
 
-1. Over the course of this scenario, the agent will create a new project folder, and begin scaffolding the `HTML` and `JavaScript` components. Pay close attention, and guide the agent should it deviate from this plan. 
+1. Over the course of this scenario, the agent will create a new project folder, and begin scaffolding `HTML` and `JavaScript` components. Pay close attention, and guide the agent should it deviate from this plan. 
 
     <!-- ![6-agent-creates-a-new-directory](./images/lab-6/6-agent-creates-a-new-directory.png " ") -->
 
@@ -87,7 +73,7 @@ In this Lab, you'll trade out a pre-made prompt-as-markdown-file, for a short su
 
    ![11-troubleshooting-replace-markers](./images/lab-6/11-troubleshooting-replace-markers.png " ")
 
-4. If you are able to, review your project files before continuing on. Does everything look correct? 
+4. If you are able, review your project files before proceeding. Does everything look correct? 
 
 ## Task 3: Review the HTML dashboard
 
