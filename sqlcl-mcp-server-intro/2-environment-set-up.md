@@ -42,7 +42,7 @@ This lab assumes you have:
 
 <p></p>
 
-> &#9834; **NOTE:** You must click the <strong>&circlearrowleft; Regenerate</strong> button to create a new password. Please save this password, as it will only be displayed once. 
+> &#9872; **NOTE:** You must click the <strong>&circlearrowleft; Regenerate</strong> button to create a new password. Please save this password, as it will only be displayed once. 
 > 
 > *Your password will **NOT** be saved or displayed across sessions!*
 
@@ -152,7 +152,7 @@ This lab assumes you have:
    9. Close all remaining windows by clicking OK.
    ```
 
-> &#9834; **NOTE:** Take note of this path, as you will need it for a later step.
+> &#9872; **NOTE:** Take note of this path, as you will need it for a later step.
 
 3. Close out any shell/terminal sessions to pick up these environment changes. 
 
@@ -198,11 +198,11 @@ This lab assumes you have:
 
 3. You will replace the empty JSON object with that of your SQLcl `/bin/sql` directory
 
-In this example, we have chosen to install SQLcl via Homebrew. Thus our SQLcl's `/bin` directory is located at (yours may differ, only use this as a reference):  
+   In this example, we have chosen to install SQLcl via Homebrew. Thus our SQLcl's `/bin` directory is located at (yours may differ, only use this as a reference):  
   
-  ```sh
-  opt/homebrew/Caskroom/sqlcl/25.2.2.199.0918/sqlcl/bin/sql
-  ```
+   ```sh
+   opt/homebrew/Caskroom/sqlcl/25.2.2.199.0918/sqlcl/bin/sql
+   ```
 
 4. Update your `cline_mcp_settings.json` so it points to the correct location. Use the following `JSON` as template: 
 
@@ -247,6 +247,7 @@ In this example, we have chosen to install SQLcl via Homebrew. Thus our SQLcl's 
 7. With your SQLcl MCP Server configured, you may now proceed to the next lab.
 
 <br></br>
+
 **Footnotes**
 <ol>
   <li id="fn-3">

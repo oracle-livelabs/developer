@@ -2,16 +2,13 @@
 
 ## Introduction
 
-In this lab you will become acquainted with Cline, an open-source AI coding agent, and the SQLcl MCP server. Throughout the labs presented here, Cline will act as an interpreter to your plain language requests and prompts. These requests and prompts are then sent to the SQLcl MCP server. 
+In this lab you will become acquainted with Cline, an open-source AI coding agent, and the SQLcl MCP server. 
 
-The SQLcl MCP server will act upon your requests and intents, communicating with the database on your behalf. This new way of working with your Oracle database allows for a more natural/plain language, conversation-based interaction.
+The scenarios in this LiveLab consider Cline be the interpreter to your plain language requests and prompts. Those requests and any prompts are then "translated" and sent to the SQLcl MCP server. 
+
+The SQLcl MCP server recieves its directives from the AI agent, acting upon your requests and intents, communicating with the database on your behalf. This new way of working with your Oracle database allows for a more natural/plain language, conversation-based interaction.
 
 Estimated Time: 10 minutes
-
-<!-- ### About Product/Technology (Optional)
-Enter background information here about the technology/feature or product used in this lab - no need to repeat what you covered in the introduction. -->
-
-<!-- Don't think we need the Product/Technology. We've already covered this in the intro lab, as well as in the intro above. -->
 
 ### Objectives
 
@@ -28,20 +25,27 @@ In this lab, you will:
 
 This lab assumes you have:
 * VS Code installed
-* Configured an Oracle Database connection using the Oracle SQL Developer for VS Code extension</p>
-  * > Note: If participating in a workshop, you may optionally use your FREESQL credentials.
 * Installed the Cline for VS Code Extension
+* Configured an Oracle Database connection using the Oracle SQL Developer for VS Code extension</p>
 
-## Task 1: Testing your configuration and getting started
+> &#9872; **NOTE:** If participating in a workshop, you may optionally use your the credentials provided to you.
+
+## Task 1: Testing your configuration
 
 1. Is the MCP Server working?
 
    You will need to confirm that the SQLcl MCP Server is working *before* you can begin interacting with it. 
 
-2. Locate the Cline extension. Ensure you see the Agent prompt. Notice the Plan and Act modes; you will toggle between these modes depending on your intent and prompts used. For adhering to security best practices, ensure the "Auto-Approve" option is disabled.
+2. Locate the Cline extension. Ensure you see the Agent prompt. Notice the **Plan** and **Act** modes. You will toggle between these two modes depending on your intent or the prompts used. 
 
    ![image](./images/lab-3/cline-1.png " " )
 
+<p></p>
+
+> &#9888; **IMPORTANT:** For adhering to security best practices, ensure the "Auto-Approve" option is disabled.
+
+<p></p>
+ 
 <!-- You will ask (via a prompt) the Agent (Cline)  to complete a task. The agent will see that it needs to use one or more tools from our MCP Server to accomplish said task.
 
 It will prompt you for permission to use the tool. You will review the request, and approve (or deny!) it as appropriate. 
@@ -51,22 +55,20 @@ The agent via the configured LLM, will generate SQL as necessary, and prompt you
 The results will be analyzed by the LLM and summarized.
 
 When you are done, you will inspect the MCP logging table in your schema to see what has happened in the database, via our MCP Server. -->
-
   
-3. Enable "Plan Mode", by clicking the word "Plan." Then, in the Task input area of Cline, enter the following prompt:
+3. Enable **Plan** mode. Then, in the Task input area of Cline, enter the following prompt:
 
     ```txt
     connect to my database and run a test query to make sure everything is working as expected
     ```
 
-4. Cline will create a plan and respond by asking permission to use the SQLcl MCP Server via the `list-connections` tool. You should see something like this:
+4. Cline will create a plan and respond by asking permission to use your SQLcl MCP Server via the `list-connections` tool. You should see something like this:
 
    ![image](./images/lab-3/cline-2.png " ")
 
-> [!NOTE] 
-> Note the tool name, followed by the arguments. In this case, Cline wants to "see" what database connections are available.
+> &#9872; **NOTE:** Note the tool name, followed by the arguments. In this case, Cline wants to "see" what database connections are available.
 
-5. Select the <kbd>Approve</kbd> button to allow the Agent to continue its plan. 
+5. Select the **Approve** button to allow the Agent to continue its plan. 
 
    The Agent will use your Oracle Database connection, and ask to connect to it, via the `connect` tool. 
 
@@ -83,8 +85,9 @@ When you are done, you will inspect the MCP logging table in your schema to see 
 7. Approve the request to advance the Agent's plan to the next step.
 
 8. If the connection is successful, you will see two things:
+
    - the raw feedback from the `connect` tool
-   - An LLM-generated summary
+   - an LLM-generated summary
 
    *Example:*
 
@@ -94,17 +97,15 @@ When you are done, you will inspect the MCP logging table in your schema to see 
      Now let me run a test query to verify everything is working properly. I'll start with a simple query to check the current database time:
      ```
 
-> [!NOTE] 
-> LLM training data can vary widely among versions and vendors. Thus, an LLM may generate one of several different types of queries to satisfy our request to 'test' the connection and system. 
+> &#9872; **NOTE:** LLM training data can vary widely among versions and vendors. Thus, an LLM may generate one of several different types of queries to satisfy our request to 'test' the connection and system. 
 
-> [!WARNING]
-> It is very important that you review the following SQL, or update your prompt to include the exact SQL you want the Agent to use.<p>
+&#9888; **Warning:** It is very important that you review the SQL, or update your prompt to include the exact SQL you want the Agent to use.<p>
 
 9. Scroll through the "sql" attribute to review the SQL statement. 
 
    ![image](./images/lab-3/cline-3.png " ")
 
-   In the above example the complete SQL statement will resemble the following:
+   In the example the complete SQL statement will resemble the following:
 
     ```sql
     SELECT /* LLM in use is claude-3-5-sonnet-20241022 */
@@ -113,7 +114,7 @@ When you are done, you will inspect the MCP logging table in your schema to see 
     FROM DUAL
     ```
 
-10. After confirming the generated SQL is correct, we can can again, <kbd>Approve</kbd> the task request. The agent will continue with it's plan.
+10. Once you've confirmed that the generated SQL is correct, click **Approve** to execute the next task request. The agent will continue with it's plan.
 
       <!-- The *run-sql* tool returns query results as CSV, and in the Cline panel, you can see the 'Plain Text' response, followed by the Agent's interpretation of those results.  --> 
 
@@ -121,42 +122,41 @@ When you are done, you will inspect the MCP logging table in your schema to see 
 
       ![image](./images/lab-3/cline-4.png " ")
 
-> [!NOTE] 
-> The username should be the one you established in the previous lab, one of: your Tenancy, workshop-provided, or FreeSQL credentials. 
+> &#9872; **NOTE:** "Connected_User" will be the username you provided in the previous lab. 
 
 ## Task 2: Closing the connection
 
-1. As a best practice, you should prompt Cline to close your database connection when you are finished. Cline will prompt you for permission to use the `disconnect` tool; which you should approve.
+1. As a best practice, you should prompt Cline to close your database connection when you are finished. Cline will prompt you for permission to use the `disconnect` tool. Click **Approve**.
 
 2. The Cline agent will finish its task and provide you with a summary steps used to achieve your original task or prompts.
 
-> [!NOTE]
-> The agent may wish to continue running more queries, in an attempt to provide you with more information about your database. It is up to **YOU** to:
->
+> &#9872; **NOTE:** The agent may wish to continue running more queries, in an attempt to provide you with more information about your database. It is up to **YOU** to decide. *What do you do?*
 > - allow it to continue
 > - deny any follow-up requests, or 
 > - provide it with a follow-up prompt to cease operations
 
-3. Before completing this lab, you can inspect the information that was recorded in our database. Locate the Oracle SQL Developer extension in the Activity Panel.
+<p></p>
 
-4. Click the connection you used with the SQLcl MCP server to connect to the database.
+3. Before you finish this lab, you can review a log of the queries performed by the SQLcl MCP Server on behalf of the AI Agent. Locate the Oracle SQL Developer extension in the Activity Panel.
+
+4. Click the connection that the SQLcl MCP Server used to connect to your database.
 
 5. Click the `Tables` object to expand it. Locate the `DBTOOLS$MCP_LOG` table, and click it to open up a new panel. 
 
-6. Click the Data tab to review the interactions from our previous Cline project. These logs will capture the SQL, PLSQL, and SQL scripts that were executed on your behalf (via Cline), by the SQLcl MCP Server.
+6. Click the Data tab to review the interactions from your previous Cline tasks. These logs will capture the SQL, PLSQL, and SQL scripts that were executed on your behalf (via Cline), by the SQLcl MCP Server.
 
    ![image](./images/lab-3/cline-5.png " ")
 
-7. That's it! You are now ready to start exploring the power of your Agent, it's LLMs, and your Oracle Database via the SQLcl MCP Server!
+7. That's it! You are now ready to start exploring the power of your AI Agent, it's LLMs, and your Oracle Database via the SQLcl MCP Server!
 
 ## Learn More
 
-*(optional - include links to docs, white papers, blogs, etc)*
-
-* [URL text 1](http://docs.oracle.com)
-* [URL text 2](http://docs.oracle.com)
+* [MCP Server Introduction](https://blogs.oracle.com/database/post/introducing-mcp-server-for-oracle-database) 
+* [Oracle official MCP Server repository](https://github.com/oracle/mcp/tree/main)
+* [SQLcl MCP Server Docs](https://docs.oracle.com/en/database/oracle/sql-developer-command-line/25.2/sqcug/using-oracle-sqlcl-mcp-server.html)
 
 ## Acknowledgements
-* **Author** - <Name, Title, Group>
-* **Contributors** -  <Name, Group> -- optional
-* **Last Updated By/Date** - <Name, Group, Month Year> -->
+* **Author**<ul><li>Chris Hoina, Senior Product Manager, Database Tools</li></ul>
+* **Contributors**<ul><li>Jeff Smith, Distinguished Product Manager, Database Tools</li></ul>
+* **Last Updated By/Date**<ul><li>Chris Hoina, September 2025</li></ul>
+

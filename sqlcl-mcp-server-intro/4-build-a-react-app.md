@@ -2,7 +2,7 @@
 
 ## Introduction
 
-In this Lab you will use your LLM agent and the SQLcl MCP server to create a starter web application. The sample web application in this lab uses the React library.
+In this Lab you will use Cline and the SQLcl MCP Server to create a starter web application. The example in this Lab generates a React-based sample web application. However, should you decide, you an opt for a framework/library of your choosing.
 
 Estimated Time: 12 minutes
 
@@ -14,67 +14,75 @@ In this lab, you will:
   * to guide you through the creation process, *or*
   * as a reference guide while you improvise your own app
 
-### Prerequisites (Optional)
-
-<mark>Pending</mark>
-
-*List the prerequisites for this lab using the format below. Fill in whatever knowledge, accounts, etc. is needed to complete the lab. **Do NOT list** each previous lab as a prerequisite.*
+### Prerequisites 
 
 This lab assumes you have:
-* An Oracle account
 * All previous labs successfully completed
+* VS Code installed
+* Installed the Cline for VS Code Extension
+* Configured an Oracle Database connection using the Oracle SQL Developer for VS Code extension
+
+<p></p>
+
+> &#9872; **NOTE:** If participating in a workshop, you may optionally use your the credentials provided to you.
 
 ## Task 1: Review the prompt
 
-1. This Lab includes a sample prompt for your reference. It can be used as-is with your agent while in "Plan" mode. Alternatively you may use it as a reference, while creating your own app. Before you begin, review the sections of the prompt: 
+1. This Lab includes a sample prompt for your reference. It can be used as-is with your agent while in "Plan" mode. Alternatively you may use it as a reference, while creating your own app. 
 
-    - Overview
-    - CO Schema exploration
-    - Create the web application
-    - Provide helpful insight
-    - Disconnect from the database
-    - Launch the web application
+> &#9872; **NOTE:** This Lab is designed to be open-ended, accordingly, your individual results will vary. Feel free to "go off-script" &#9786; !
+
+Before you begin, review the sections of the prompt: 
+
+   - Overview
+   - CO Schema exploration
+   - Create the web application
+   - Provide helpful insight
+   - Disconnect from the database
+   - Launch the web application
 
    **Sample prompt**
 
-    ```markdown
-    # Single Web Page Application example
+   ```markdown
+   <copy>
+   # Single Web Page Application example
 
-    ## Overview
+   ## Overview
 
-    1. You will create a sample single page React application using available information in the SQL_FREESQL_01 schema.
-    2. You have access to view the table data in the CO schema. The sample application will use data from these CO tables. 
-    3. You will make provisions for dynamically fetching data from the database, but the version 1 of this application will use hard-coded values from the CO table data.
-    4. You will follow the instructions in the following steps
+   1. You will create a sample single page React application using available information in the SQL_FREESQL_01 schema.
+   2. You have access to view the table data in the CO schema. The sample application will use data from these CO tables. 
+   3. You will make provisions for dynamically fetching data from the database, but the version 1 of this application will use hard-coded values from the CO table data.
+   4. You will follow the instructions in the following steps
 
-    ## CO schema exploration
+   ## CO schema exploration
 
-    1. Connect as the SQL_FREESQL_01 user and explore the CO tables
-    2. Provide me with a summary of insights on the CO tables
-    3. Recommend to me some potential statistics/metrics in this CO schema that would be interesting for the single page web application. 
-    4. Allow me to choose one of these statistics/metrics to use for the single page web application.
+   1. Connect as the SQL_FREESQL_01 user and explore the CO tables
+   2. Provide me with a summary of insights on the CO tables
+   3. Recommend to me some potential statistics/metrics in this CO schema that would be interesting for the single page web application. 
+   4. Allow me to choose one of these statistics/metrics to use for the single page web application.
 
-    ## Creating the web application
+   ## Creating the web application
 
-    1. Create a project directory before scaffolding a project.
-    2. Once the directory is created, scaffold the single page React application. 
-    3. Using what you learned about the CO schema, and the selection I made in the CO schema exploration section, reconnect as the SQL_FREESQL_01 user and query the values you need to populate the React application.
-    4. The React application should include a graph or chart to visualize the data. And there should be a table underneath, or next to the visualization that shows the values. 
-    5. Share with me what you intend to display on the React page before altering the app source files.
+   1. Create a project directory before scaffolding a project.
+   2. Once the directory is created, scaffold the single page React application. 
+   3. Using what you learned about the CO schema, and the selection I made in the CO schema exploration section, reconnect as the SQL_FREESQL_01 user and query the values you need to populate the React application.
+   4. The React application should include a graph or chart to visualize the data. And there should be a table underneath, or next to the visualization that shows the values. 
+   5. Share with me what you intend to display on the React page before altering the app source files.
 
-    ## Provide some helpful inight 
-    1. Once complete, provide me with a list of next steps, or recommended actions for making this more dynamic.
-    2. Answer the following questions: 
-      - What options do I have for establishing an Oracle database connection so my app can update in real time? 
-      - What options do I have if a user wants to update one of these underlying tables? 
-      - What other functions do you recommend this app should have? 
-      - What other Oracle database technologies could I use in/with this React application? 
+   ## Provide some helpful inight 
+   1. Once complete, provide me with a list of next steps, or recommended actions for making this more dynamic.
+   2. Answer the following questions: 
+   - What options do I have for establishing an Oracle database connection so my app can update in real time? 
+   - What options do I have if a user wants to update one of these underlying tables? 
+   - What other functions do you recommend this app should have? 
+   - What other Oracle database technologies could I use in/with this React application? 
 
-    ## Launch the web application
+   ## Launch the web application
 
-    1. Launch the web application and review it for accuracy and expected outcome
-    2. If the data and visualization are not visible on screen, please debug as needed. 
-    ```
+   1. Launch the web application and review it for accuracy and expected outcome
+   2. If the data and visualization are not visible on screen, please debug as needed.
+   </copy>
+   ```
 
 2. As you may have seen in other scenarios in this LiveLab, you may save this prompt as a markdown file and execute it in your agent's "Plan" mode. 
 
