@@ -29,8 +29,8 @@ Key reasons why companies choose Oracle Enterprise Data Quality for their data q
 - [Oracle Enterprise Data Quality](https://docs.oracle.com/en/middleware/fusion-middleware/enterprise-data-quality/index.html)
 
 ## Acknowledgements
-* **Author** - Ravi Lingam, Sri Vishnu Gullapalli, Data Integration Team, Oracle, August 2020
-* **Contributors** - Meghana Banka, Rene Fontcha, Narayanan Ramakrishnan
-* **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, January 2021
+* **Author** - Ravi Lingam, Sri Vishnu Gullapalli, Data Integration Team, Oracle, September 2025
+* **Contributors** - Rene Fontcha
+* **Last Updated By/Date** - Sri Vishnu Gullapalli, Principal Cloud Architect, NA Technology, September 2025
 
 
