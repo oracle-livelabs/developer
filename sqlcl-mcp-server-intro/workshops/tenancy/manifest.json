@@ -1,0 +1,49 @@
+{
+    "workshoptitle": "The Title of the Workshop is defined in the manifest",
+    "include": {"starter-file.sql":"../../files/starter-file.sql",
+                "sample.json":"../../files/sample.json",
+                "injected-step.md":"../../files/injected-step.md"},
+      "help": "livelabs-help-db_us@oracle.com",
+      "tutorials": [
+        {
+            "title": "Title",
+            "description": "This is the complete template for LiveLabs content developers",
+            "filename": "../../1-introduction.md"
+        },
+        {
+          "title": "Title",
+          "description": "Template to link to Need Help lab at the end of workshop. Change 'CHANGE-ME' in link below to need-help-livelabs.md or need-help-freetier.md",
+          "filename":"../../2-environment-set-up.md",
+          "type": {
+            "macOS": "macOS",
+            "windows" : "Windows",
+            "linux" : "Lunux"
+          }
+        },
+         {
+            "title": "Title",
+            "description": "This is the complete template for LiveLabs content developers",
+            "filename": "../../livelabs-template.md"
+        },
+        {
+          "title": " ",
+          "description": "Template to link to Need Help lab at the end of workshop. Change 'CHANGE-ME' in link below to need-help-livelabs.md or need-help-freetier.md",
+          "filename":"https://oracle-livelabs.github.io/common/labs/need-help/need-help-freetier.md"
+        },
+        {
+          "title": " ",
+          "description": "Template to link to Need Help lab at the end of workshop. Change 'CHANGE-ME' in link below to need-help-livelabs.md or need-help-freetier.md",
+          "filename":"https://oracle-livelabs.github.io/common/labs/need-help/need-help-freetier.md"
+        },
+         {
+            "title": " ",
+            "description": "This is the complete template for LiveLabs content developers",
+            "filename": "../../livelabs-template.md"
+        },
+        {
+          "title": "Need Help?",
+          "description": "Template to link to Need Help lab at the end of workshop. Change 'CHANGE-ME' in link below to need-help-livelabs.md or need-help-freetier.md",
+          "filename":"https://oracle-livelabs.github.io/common/labs/need-help/need-help-freetier.md"
+        }
+    ]
+}

@@ -1,0 +1,51 @@
+{
+    "workshoptitle": "Integrate Spring Boot Microservices into a Financial Services Loan Approval Application with Oracle Database 23ai",
+    "help": "livelabs-help-database_us@oracle.com",
+    "tutorials": [
+        {
+            "title": "Introduction",
+            "description": "The Introduction is always first. The title and contents menu title match for the Introduction.",
+            "filename": "../../introduction_spring/introduction.md"
+        },
+        {
+            "title": "Lab 1: Run the Demo",
+            "description": "Labs that follow the introduction are numbered, starting with Lab 1",
+            "filename": "../../user-story/user-story.md"
+        },
+        {
+            "title": "Lab 2: Connect to the Development Environment",
+            "description": "This is a step-by-step guide showcasing how the demo instance is navigated",
+            "filename": "../../connect-to-env/connect-to-env.md"
+        },
+        {
+            "title": "Lab 3:  Create a Creditreport Microservice",
+            "description": "This is a step-by-step guide showcasing how the demo instance is navigated",
+            "filename": "../../microservice-creport/creditreport-exercise.md"
+        },
+        {
+            "title": "Lab 4:  Rapid Spatial Development with Oracle Database 23ai",
+            "description": "This is a step-by-step guide showcasing how the demo instance is navigated",
+            "filename": "../../spatial/spatial.md"
+        },
+        {
+            "title": "Lab 5a Challenge Yourself: Code with Transactional Event Queues",
+            "description": "This is a step-by-step guide showcasing how the demo instance is navigated",
+            "filename": "../../messaging-exercise/messaging-exercise.md"
+        },
+        {
+            "title": "Lab 5b Step-by-step: Code with Transactional Event Queues",
+            "description": "This is a step-by-step guide showcasing how the demo instance is navigated",
+            "filename": "../../messaging-answers/messaging-answers.md"
+        },
+        {
+            "title": "Architecture & Workshop Features",
+            "description": "Review the physical and logical architecture behind the application",
+            "filename": "../../app-architecture/app-architecture.md"
+        },
+        {
+            "title": "Need Help?",
+            "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+            "filename": "https://oracle-livelabs.github.io/common/labs/need-help/need-help-freetier.md"
+        }
+    ]
+}

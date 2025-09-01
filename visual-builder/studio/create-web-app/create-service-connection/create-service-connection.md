@@ -36,7 +36,7 @@ This lab assumes you have:
 In this step, we'll connect the HR application to an external REST endpoint that provides information about a country.
 
 1. Click ![Web Applications icon](images/services-icon.png) **Services** in the Navigator.
-2. Click **+ Service Connection** to open the Service Connection wizard.
+2. Click **+ Service Connection** to open the Create Service Connection wizard.
 
     ![The Select Source screen of the Create Service Connection is shown. Three options are visible: Select from Catalog, Define by Specification, and Define by Endpoint.](images/service-connection-wizard.png "")
 
@@ -50,7 +50,7 @@ In this step, we'll connect the HR application to an external REST endpoint that
 
 4. On the Backend Specification step, enter `Countries` in the **Backend Name** field. Leave all other fields to their defaults and click **Next**.
 
-5. In the Overview tab, enter the **Service Name** as `Countries` and change the **Title** to `Country`.
+5. In the Settings tab, enter the **Service Name** as `Countries` and change the **Title** to `Country`.
 
     ![This image shows the Overview tab, where Service Name is set to Countries, Title is set to v2, Version is set to 1.0.0, and Source under Transforms is set to None.](images/service-connection-tabs.png "")
 
@@ -83,11 +83,11 @@ Now that we have our service connection, let's change the Edit Employee page to 
 5. Let's now add a bunch of other components to this form layout to display country information:
 
     * Drag and drag an **Avatar** component into the empty form Layout. Change the avatar's **Size** to **Large** in the Properties pane.
-    * Drag an **Input Text** component and drop it onto the page under Avatar, then change its **Label Hint** in the Properties pane to `Time Zone`.
-    * Drag another **Input Text** onto the page and change its **Label Hint** to `Region`.
+    * Drag an **Input Text** component and drop it onto the page under Avatar, then change its **Label Hint** in the Properties pane to `Region`.
+    * Drag another **Input Text** onto the page and change its **Label Hint** to `Time Zone`.
 
     When you're done, your form layout may look something like this:
-    ![The Country Info section is added to the Edit Employee page. There's a Country Info heading, an Avatar, and two Input Text components for Time Zone and Region.](images/country-form-layout.png "")
+    ![The Country Info section is added to the Edit Employee page. There's a Country Info heading, an Avatar, and two Input Text components for Region and Time Zone.](images/country-form-layout.png "")
 
 ## Task 3: Create a type and variable from the REST endpoint
 
@@ -97,7 +97,7 @@ To pass values to the fields under Country Info in the main-edit-employee page, 
 
     ![The Types tab is shown. The + Type button is selected and the From Endpoint option is selected.](images/type-from-endpoint.png "")
 
-2. In the Create Type From Endpoint wizard, expand **Services** and **Countries**, then select the **GET /alpha/{code}** endpoint.
+2. In the Create Type From Endpoint wizard, expand **Countries** under Services, then select the **GET /alpha/{code}** endpoint.
 
     ![The Create Type From Endpoint screen is shown. The GET /alpha/{code} endpoint under Services and Countries is selected.](images/type-from-endpoint-get.png "")
 
@@ -115,9 +115,9 @@ To pass values to the fields under Country Info in the main-edit-employee page, 
 
 5. Now return to the main-edit-employee page's **Page Designer** and bind each country field to its corresponding variable. To do this:
 
-    * Select the **Avatar** component and click its **Data** tab in the Properties pane. Hover over the **Src** field, click ![Select Variable icon](images/variable-picker-icon.png) to open the Variable picker. Expand the **countryTypeVar** object and select **flag**.
-    * Select the **Time Zone** Input Text component, then in its **Data** tab, click ![Select Variable icon](images/variable-picker-icon.png) next to Value. Under **countryTypeVar**, expand **timezones** and select **item[0]**.
+    * Select the **Avatar** component and click its **Data** tab in the Properties pane. Hover over the **Src** field, click ![Select Variable icon](images/variable-picker-icon.png) to open the Variable picker. Expand the **countryTypeVar** object under Page and Variables and select **flag**.
     * Select the **Region** Input Number component, then in its **Data** tab, click ![Select Variable icon](images/variable-picker-icon.png) next to Value and select **region** under **countryTypeVar**.
+    * Select the **Time Zone** Input Text component, then in its **Data** tab, click ![Select Variable icon](images/variable-picker-icon.png) next to Value. Under **countryTypeVar**, expand **timezones** and select **item[0]**.
 
     Each of the components are now bound to the corresponding variable, but no values show because the variables don't have any data yet.
 
@@ -131,23 +131,23 @@ In this step, we'll assign data to the variables by adding a "value" event that 
 
 2. Click the component's **Events** tab in the Properties pane, then select **+ Event Listener** and **On 'value'**.
 
-3. When the InputTextValueChangeChain opens in the Action Chain editor, double-click the **Call REST** action in the Actions palette to add it to the canvas.
+3. When the InputTextValueChangeChain opens in the Action Chain editor, drag the **Call REST** action from the Actions palette and drop it on the canvas.
 
 4. In the action's Properties pane, click **Select** next to Endpoint to open the Select Endpoint wizard.
 
-5. Expand **Services** and **Countries**, then select **GET /alpha/{code}**. Click **Select**.
+5. Expand **Countries** under Services and select **GET /alpha/{code}**. Click **Select**.
 
 6. Because the endpoint requires a country code as a parameter, click **Assign** next to Input Parameters.
 
     ![The Call REST action's properties are shown. Endpoint is set to Countries/getAlphaCode. Under Input Parameters, code is shown as Not Mapped; the Assign link next to Input Parameters is selected.](images/callrest-assign-parameter.png "")
 
-7. On the Sources side, expand **employee** under **Page** and **Variables**, then drag **country** to **code** under **Parameters** on the Target side. This mapping tells VB Studio to use the value of the Country field as the input for the code parameter.
+7. On the Sources side, expand **employee** under Page and Variables, then drag **country** to **code** under **Parameters** on the Target side. This mapping tells VB Studio to use the value of the Country field as the input for the code parameter.
 
     ![The country variable under the page-level employee object on the Sources side is mapped to the code parameter on the Target side.](images/callrest-assign-parameter-valuetocode.png "")
 
     Click **Save**.
 
-8. Drag and drop an **Assign Variable** action on the canvas to follow the Call REST action. In the Assign Variable action's Properties pane, select **countryTypeVar** under **Page** in the **Variable** list. Hover over the **Value** property, click ![Select Variable icon](images/variable-picker-icon.png) to open the Variable picker, expand **response** under **Local**, and select **body**.
+8. Double-click the **Assign Variable** action in the Actions palette to add it to the canvas after the Call REST action. In the Assign Variable action's Properties pane, select **countryTypeVar** under Page in the Variable list. Hover over the **Value** property, click ![Select Variable icon](images/variable-picker-icon.png) to open the Variable picker, expand **response** under Local, and select **body**.
 
     ![The Assign Variable action's properties show the Variable property set to $page.variables.countryTypeVar. The Value property shows the variable picker, with body under Local and response highlighted.](images/assignvariable-bodytocountrytypevar.png "")
 
@@ -170,4 +170,4 @@ In this step, we'll assign data to the variables by adding a "value" event that 
 ## Acknowledgements
 
 * **Author** - Sheryl Manoharan, VB Studio User Assistance, July 2022
-* **Last Updated By/Date** - Sheryl Manoharan, October 2024
+* **Last Updated By/Date** - Sheryl Manoharan, July 2025
