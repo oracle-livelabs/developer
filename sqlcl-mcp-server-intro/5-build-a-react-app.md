@@ -35,7 +35,7 @@ This lab assumes you have:
 > &#9872; **NOTE:** This Lab is designed to be open-ended, accordingly, your individual results will vary. Feel free to "go off-script" &#9786; !
 
 
-2. Save the prompt locally to a file named something like: `react_app_prompt.md`. 
+2. Save the prompt locally to a file named something like: `create_a_react_app_prompt.md`. 
 
 3. Before you begin, review the sections of the prompt: 
 
@@ -76,11 +76,11 @@ This lab assumes you have:
 
 6. Continue building out your application and review Task 3 once you have successfully launched your application.
 
-    | | | 
+    <!-- | | | 
     | -- | -- | 
     | ![](./images/lab-5/2-agent-summary-plan-for-overview.png " ") | ![](./images/lab-5/3-agent-response-for-exploring-co-schema.png " ")|
     | ![](./images/lab-5/4-example-of-agent-exploring-co-schema.png " ") | ![](./images/lab-5/5-approve-make-directory-for-react-app.png " ")|
-    |![](./images/lab-5/6-approve-to-create-app-jsx-file.png " ")|![](./images/lab-5/6-approve-to-create-app-jsx-file.png " ")|
+    |![](./images/lab-5/6-approve-to-create-app-jsx-file.png " ")|![](./images/lab-5/6-approve-to-create-app-jsx-file.png " ")| -->
 
 ## Task 3: Comparing notes
 
