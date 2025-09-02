@@ -27,12 +27,14 @@ Estimated Time:  10 minutes
     Download the src to a location on your computer using the follow git clone command:
 
     ```
-    <copy>git clone https://github.com/oracle-devrel/oracle-health-ai-open-source.git</copy>
+    <copy>git clone https://github.com/paulparkinson/oracle-ai-for-sustainable-dev.git</copy>
     ```
 
-    or download and extract the zip code from https://github.com/oracle-devrel/oracle-health-ai-open-source/zipball/master
+    The code you will work with throughout the workshop is in the `health` directory of the source you cloned/downloaded.
 
-   2. Open the env.properties file in the root directory in a text editor. You will populate the values in this file as part of this lab. It will look something like this:
+    BE SURE TO NOTE THE LOCATION OF THIS `health` FOLDER AS YOU WILL NEED IT IN THE NEXT STEPS.  WE WILL REFER TO THIS LOCATION AS `[WORKSHOP_SRC_DIR]` IN THE REMAINDER OF THIS LAB.
+
+   2. Create an .env file in the `health` directory in a text editor. You will populate the values in this file as part of this lab. It will look something like this (also see the .env.examples file):
 
     ```code
     <copy>
@@ -42,7 +44,7 @@ Estimated Time:  10 minutes
       OBJECTSTORAGE_NAMESPACE=myobjectstorenamespacename
       OBJECTSTORAGE_BUCKETNAME=myobjectstorebucketname
       ORDS_ENDPOINT_URL=https://myordsendpointurl
-      ORDS_ENDPOINT_URL=https://rddainsuh6u1okc-aidatabaseworkshop.adb.us-ashburn-1.oraclecloudapps.com/ords/aiuser/_sdw/
+      ORDS_ENDPOINT_URL=https://my-aidatabaseworkshop.adb.us-ashburn-1.oraclecloudapps.com/ords/aiuser/_sdw/
       OCI_VISION_SERVICE_ENDPOINT=https://vision.aiservice.myregion.oci.oraclecloud.com
       OCI_SPEECH_SERVICE_ENDPOINT=https://speech.aiservice.myregion.oci.oraclecloud.com
       OCI_GENAI_SERVICE_ENDPOINT=https://genai.aiservice.us-chicago-1.oci.oraclecloud.com
