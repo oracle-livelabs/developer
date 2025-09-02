@@ -6,7 +6,7 @@ This lab will show you how to access your EDQ instance and create a new project.
 *Estimated Lab Time*: 30 minutes
 
 ### Objectives
-* Access an EDQ Instance through Apache Guacamole
+* Access an EDQ Instance through NoVNC
 * Start EDQ Director
 * Create New Project
 * Create a Data Store and a Snapshot in EDQ
@@ -25,89 +25,30 @@ This lab assumes you have:
     - Database Server Instances
     - EDQ Services
 
-    ![EDQ novnc guide](./images/edq-novnc-guide.png " ")
+    ![EDQ novnc guide](./images/edq14c-novnc-guide.png " ")
 
-2. On the web browser window on the right preloaded with *Weblogic Server Administration Console* login page, click on the *Username* field and provide the credentials below to login.
+EDQ Launchpad link is given below.
 
-    - Username
+```
+    http://localhost:8001/edq    
+```
 
-    ```
-    <copy>weblogic</copy>
-    ```
-
-    - Password
-
-    ```
-    <copy>oraedq123</copy>
-    ```
-
-    ![Weblogic login](images/ws-edq-login.png " ")
-
-3. Confirm successful login. Please note that it takes about 10 minutes after instance provisioning for all processes to fully start.
-
-    - Weblogic Server Administration Console.
-    
-    In the landing home page, click on *servers* and Confirm that EDQ server and Admin server are running.
-
-    ![WebLogic home page](images/ws-edq-landing-1.png " ")
-    ![WebLogic - Summary of Servers](images/ws-edq-landing-2.png " ")
-
-    If successful, the page above is displayed and as a result your environment is now ready.  
-
-4. If you are still unable to login or the login page is not functioning after reloading , open a terminal session and proceed as indicated below to validate the services.
-
-    - Database and Listener
-    ```
-    <copy>
-    sudo systemctl status oracle-database
-    </copy>
-    ```
-
-    ![EDQ DB status - 1](images/edq-db-status.png " ")
-    ![EDQ DB status - 2](images/edq-db-status2.png " ")
-
-    - WLS Admin Server, EDQ Service
-    ```
-    <copy>
-    sudo systemctl status edq.services
-    </copy>
-    ```
-
-    ![EDQ status](images/edq-status.png " ")
-
-5. If you see questionable output(s), failure or down component(s), restart the corresponding service(s) accordingly
-
-    - Database and Listener
-
-    ```
-    <copy>
-    sudo systemctl restart oracle-database
-    </copy>
-    ```
-
-    - WLS Admin Server, EDQ service
-
-    ```
-    <copy>
-    sudo systemctl restart edq
-    </copy>
-    ```
 
 ## Task 2: Create New Project in EDQ
 
-1.	On the desktop, click on Activites and double click on *Director* icon.
+1.	On the webpage, click on *Director* link.
 
-    ![EDQ desktop launch](./images/edq-desktop-launch.png " ")
+    ![EDQ desktop launch](./images/edq-launchpad.png " ")
 
-2.	Select "Later" if prompted for the java update option.
+2.	EDQ director client application will be downloaded.
 
-    ![Java update message](./images/java_update.png " ")
+    ![Chrome download](./images/edq14c-launch-dowload.png " ")
 
-3.	Wait a few minutes, you will receive a new message, click on *“Run”*.
+3.	Double click on the downloaded client and EDQ director will be displayed on the screen.
 
-    ![Confirm EDQ launch](./images/image1200_7.png " ")
+    ![Confirm EDQ launch](./images/edq-director.png " ")
 
-4.	EDQ director will appear on your screen. Provide the Director login credentials.
+4.	Provide the Director login credentials.
 
     ```
     Username: <copy>weblogic</copy>
@@ -115,6 +56,10 @@ This lab assumes you have:
     ```
     Password: <copy>oraedq123</copy>
     ```
+
+    Maximize the director screen by double clicking on director.
+
+    ![Maximize Director](./images/maximize-edq-director.png " ")
 
 5. Take a moment to familiarize yourself with the Terminology of each of the four different areas of the Director application.
 
@@ -327,7 +272,7 @@ You may now proceed to the next lab.
 - [Oracle Enterprise Data Quality](https://docs.oracle.com/en/middleware/fusion-middleware/enterprise-data-quality/index.html)
 
 ## Acknowledgements
-* **Author** - Ravi Lingam, Sri Vishnu Gullapalli, Data Integration Team, Oracle, August 2020
-* **Contributors** - Meghana Banka, Narayanan Ramakrishnan, Rene Fontcha
-* **Last Updated By/Date** - Sri Vishnu Gullapalli, Senior solution engineer, NA Technology, March 2023
+* **Author** - Ravi Lingam, Sri Vishnu Gullapalli, Data Integration Team, Oracle, September 2025
+* **Contributors** - Rene Fontcha
+* **Last Updated By/Date** - Sri Vishnu Gullapalli, Principal Cloud Architect, NA Technology, September 2025
 
