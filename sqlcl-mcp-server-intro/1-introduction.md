@@ -2,61 +2,71 @@
 
 ## About this Workshop
 
-This introduction will provide you with a brief overview of the Model Context Protocol (MCP) and where they fit among AI Agents. You'll also learn how MCP Servers, like the SQLcl MCP Server, can safely and securely combine the power of AI/Large-Language Models (LLMs) and SQLcl's SQL, PL/SQL, and SQL scripting tools to: connect inspect, interrogate, uncover insights, create complex database objects, and develop new database SQL and PL/SQL code using plain old, natural-language.
-
-![1-sqlcl-mcp-interaction-graphic-overview](./images/lab-1/1-sqlcl-mcp-interaction-graphic-overview.png " ")
+This introduction will provide you with a brief overview of the Model Context Protocol (MCP) and where they fit among AI Agents. You'll also learn how MCP Servers, like the SQLcl MCP Server, can safely and securely be paired with AI/Large-Language Models (LLMs) to create the next generation of GenAI: Agentic Workflows.
 
 Estimated Time: 1 hours 10 minutes 
 
 ### Objectives
 
-<mark>Pending review of the existing draft prompts</mark>
-
-*List concise objectives for the workshop*
-
 In this workshop, you will:
 * Learn about the Model Context Protocol (MCP), MCP Servers, the SQLcl MCP Server and its capabilities
-* Configure an AI agent, and the SQLcl MCP Server in VS Code
+* Configure an AI agent
+* Register the SQLcl MCP Server 
 * Gain a basic understanding of the SQLcl MCP Server's "Tools"
 * Explore the provided sample prompts to accelerate your usage of the SQLcp MCP server
 
-### Prerequisites (Optional)
+### Prerequisites
 
 This lab assumes you have:
 * An Oracle cloud, LiveSQL, or FreeSQL account
-* Access to a 23ai Autonomous database (or LiveSQL/FreeSQL account if participating in an instructor-led workshop)
+* Access to a currently supported Oracle database (or LiveSQL/FreeSQL account if participating in an instructor-led workshop)
 * Organizational Roles/Privileges to install the following software on your employer-provided work station:
 
   * MS Visual Studio Code 
     * The Oracle SQL Developer for VS Code extension
     * The Cline for VS Code extension
   * Oracle SQLcl 
-    
+
 ### About
 
-<!-- This introduction will provide you with a brief overview of the Model Context Protocol (MCP) and where they fit among AI Agents. You'll also learn how MCP Servers, like the SQLcl MCP Server, can safely and securely combine the power of AI/Large-Language Models (LLMs) and SQLcl's SQL, PL/SQL, and SQL scripting tools to: connect inspect, interrogate, uncover insights, create complex database objects, and develop new database SQL and PL/SQL code using plain old, natural-language. -->
+![1-sqlcl-mcp-interaction-graphic-overview](./images/lab-1/1-sqlcl-mcp-interaction-graphic-overview.png " ")
 
 #### MCP
 
 The Model Context Protocol (MCP) is a proposed standard for communicating with and interaction between you and your information, applications, and data (like an Oracle Database 23ai), through an intermediary called an MCP Server. 
 
-When designed properly, an MCP Server allows you to take your core tech, like SQLcl, and "connect" it to an AI Agent. Once the agent is "aware" of an MCP Server, it can then use whatever MCP Server "Tools" are available to it. 
+An MCP Server allows you to take your core tech, like SQLcl, and "connect" it to an AI Agent. Once the agent is "aware" of an MCP Server, it can then use whatever MCP Server "Tools" are available to it to create highly-developed workflows.
 
-**What does this mean for you?** Well, you can ask the agentto perform certain functions on or about your data while simultaneously being "connected" to the Large-language Model (LLM) of your choice. So you get to keep using your natural, plain-language and have what feels like a conversation with your Agent; just like you see here:
+**What does this mean for you?** Well, you can ask the agent to perform certain functions in and around your database, its objects, or data while simultaneously being "connected" to the Large-language Model (LLM) of your choice. So you get to keep using your natural, plain-language and have what feels like a conversation with your Agent as opposed to a "single-shot" request.
 
-  ![1-sqlcl-mcp-interaction-graphic-overview](./images/lab-1/1-sqlcl-mcp-interaction-graphic-overview.png " ")
+**Single-shot GenAI vs Agentic Workflows**
 
-   **What is happening?** Well, lets discuss the sample use case involving the Oracle database and SQLcl:
+  ![1-sqlcl-mcp-interaction-graphic-overview](./images/lab-1/3-single-shot-vs.agentic-ai.jpeg " ")
+
+
+  |    |   | 
+  | -- | -- | 
+  | **Single-Shot GenAI** | Issue a request/prompt &#8594; LLM performs task &#8594; Done | 
+  | **Agentic Workflow** | User issues prompt &#8594; Agent builds a plan &#8594; User approves/declines/amends plan &#8594; Agent uses available tools to achieve goals &#8594; Agent delivers results &#8594; User iterates on existing/new plan|
+
+Single-Shot AIs rely on constant user intervention; very manual. Whereas Agentic Workflows enable an Agent to orchestrate a complete workflow. But the user is still in control. These workflows are not only fully-fleshed out plans, but they are persistent, observable, and safe.
+
+
+**And example Agentic Workflow:**
+
+Here is a sample use case involving the Oracle database, an AI Agent, and the SQLcl MCP Sever (similar to other scenarios included in this LiveLab):
+
+![1-sqlcl-mcp-interaction-graphic-overview](./images/lab-1/1-sqlcl-mcp-interaction-graphic-overview.png " ")
 
    1. A user sets a task in natural language. Something like, "Find the top 10 most expensive queries from last week and recommend an index.”
-   2.	The agent responds. Building or showing a plan, and selecting the best MCP Server Tools to achieve the goal. 
+   2.	The agent responds; building or showing a plan, and selecting the best MCP Server Tools to achieve the goal. 
    3.	The LLM (that underpins an AI Agent) might generate SQL or perhaps choose a prebuilt Tool from an available MCP Server. In this case it might call upon SQLcl to aid in performing a task.
    4.	One of the SQLcl MCP Server's Tools is `connect`. An agent would know of this ahead of time, and use the `connect` Tool to connect to your Oracle database via JDBC using your stored credentials (an LLM never sees your passwords).
    5.	Once connected, all of your standard security and returns results will be enforced since your Agent is actually relying on the SQLcl MCP Server to interact with the Oracle database.
    6.	Once SQLcl has delivered results to the agent, the underlying LLM would summarize, validate, and propose next steps. 
    7.	The user might then approve, decline, or modify the revised action plan, at each step.
    
-And that's it! When done correctly, an MCP Server will have been developed to have certain capabilities. These capabilites (technically known as Primitives) can be used or called upon by the AI Agent in the *Context* you are currently in. The "context" in the above example involved connecting to and interacting with an Oracle database via the SQLcl command line interface. 
+And that's it! An MCP Server will have been developed to have certain capabilities. These capabilites (technically known as Primitives) can be used or called upon by the AI Agent in the *Context* you are currently in. The "context" in the above example involved connecting to and interacting with an Oracle database via the SQLcl command line interface. 
 
 > **The SQLcl MCP Server helps to solve the following problem:**
 > 
@@ -64,14 +74,14 @@ And that's it! When done correctly, an MCP Server will have been developed to ha
 
 ##### Protocols
 
-Typically you'll interact with your MCP server through an AI Agent, using natural language queries. You can explicity name the which "Tools" to use from an MCP Server or your Agent might suggest/use them without prompting (depending on the Agent, and what "guardrails" you have in place). This communication between You,the AI agent, and MCP Servers is "the Protocol." 
+Typically you'll interact with your MCP server through an AI Agent, using natural language queries. You can explicity name which of the "Tools" to use from an MCP Server or your Agent might suggest/use them without prompting (depending on the Agent, and what "guardrails" you have in place). This communication between you, the AI agent, and MCP Servers is "the Protocol." 
 
-A lot happens under the covers for MCP to work, but you should know that MCP can support the following communication mechanisms: 
+<!-- A lot happens under the covers for MCP to work, but you should know that MCP can support the following communication mechanisms: 
 
 - Stdio
 - HTTP (in the form of `POST` requests)
 
-The SQLcl MCP server utilizes the fast, no overhead Stdio communcation mechanism. And to you, the end user, *this* is what makes up the **Protocol** in Model Context Protocol (MCP). 
+The SQLcl MCP server utilizes the fast, no overhead Stdio communcation mechanism. And to you, the end user, *this* is what makes up the **Protocol** in Model Context Protocol (MCP).  -->
 
 ##### Capabilities
 
@@ -97,7 +107,7 @@ But as an end-user, you probably want to know what you can do with this SQLcl MC
 
 The SQLcl MCP server, like other MCP Servers provides you with contextual "Tools." In the case of SQLcl, your MCP server "comes alive" after you've configured your database credentials (Connect String, and/or Cloud Wallet). 
 
-And once saved connections have been configured you can securely explore your Oracle database using natural language with an AI Agent (via SQLcl). If you are just beginning your database journey this means your queries become more of a conversation. The AI Agent, with the right MCP Server, makes ends up becomming more of a soundboard to bounce your ideas and intents off of. 
+And once saved connections have been configured you can securely explore your Oracle database using natural language with an AI Agent (relying on the SQLcl MCP Sever Tools). If you are just beginning your database journey this means your queries become more of a conversation. The AI Agent, with the right MCP Server, ends up becomming more of a soundboard to bounce your ideas and intents off of. 
 
 And if you are an experienced user, you can use a combination of natural language, *and* Oracle SQL and PL/SQL to achieve your goals with ease and even more speed.
 
@@ -148,7 +158,7 @@ And here are some things to consider when working with *any* AI Agent and MCP Se
 | | | 
 | -- | -- | 
 | **What** | MCP Servers aide AI agents in creating plans and executing workflows and tasks on the Oracle Database. |
-| **How** | The SQLcl MCP server exposes tools (connect, run sql, awr, etc.) to your preferred AI agent, using wallet-based credentials and Oracle’s enterprise-grade security features. |
+| **How** | The SQLcl MCP server provides tools (connect, run sql, awr, etc.) to your preferred AI agent, using wallet-based credentials and Oracle’s enterprise-grade security features. |
 | **Why** | Huge productivity gains (database exploration, reporting, performance triage, etc.) while users remain in control. All while respecting security controls. |
 
 ## Learn More
