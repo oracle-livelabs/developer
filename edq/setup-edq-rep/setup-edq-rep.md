@@ -29,9 +29,9 @@ This lab assumes you have:
 
 EDQ Launchpad link is given below.
 
-    ```
-    http://localhost:8001/edq
-    ```
+```
+    http://localhost:8001/edq    
+```
 
 
 ## Task 2: Create New Project in EDQ
