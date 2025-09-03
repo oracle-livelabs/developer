@@ -27,17 +27,30 @@ This lab assumes you have:
 
 ## Task 1: Locate the create data and views prompt
 
-<mark>We need to add this sample prompt to LL object storage. The files are currently located in the /files folder in this project.</mark>
-
 1. A sample prompt has been provided for you. Download [here](link_LiveLabs_Object_storage). This prompt can be used as-is with your agent while in "Plan" mode. Alternatively you may use it as a reference, while creating your own app. 
 
-> &#9872; **NOTE:** This Lab is designed to be open-ended, accordingly, your individual results will vary. Feel free to "go off-script" &#9786; !
+   <mark>Embedding the actual markdown prompt, within markdown has been unsuccessful. Temporary option is the open/download option.</mark>
+
+    <details>
+    <summary><strong>Sample prompt</strong></summary>
+    <p></p>
+    <ul>
+    <li>
+     <a href="./files/create_data_and_views_prompt.md" target="_blank">Open</a>
+    </li>
+    <li>
+     <a href="./files/create_data_and_views_prompt.md" target="_self" download="create_data_and_views_prompt.md">Download</a>
+    </li>
+    </ul>
+    </details>
+
+> &#9872; **NOTE:** This Lab is designed to be open-ended, accordingly, your individual results will vary. Feel free to "go off-script" &#9786;!
 
 2. Save the prompt locally to a file named something like: `create_data_and_views_prompt.md`. 
 
 3. Open the file in your IDE or review it here. You will notice a single heading and several sub-headings. Each sub-heading will serve as a phase or step for this scenario: 
 
-   ```md
+   ```md 
    # Creating mock Schema data, and relevant views
    ## Connecting and creating database objects
    ## Inserting data
@@ -113,7 +126,7 @@ This lab assumes you have:
 
 2. If your objects are created and populated as expected (everything checks the "reasonable test"), then let the Agent continue. 
 
-> &#9872; **NOTE:** You might also choose to review the tables from the Oracle SQL Developer for VS Code extension.
+> &#9872; **NOTE:** You might also choose to review the tables from the SQL Developer Extension for VS Code .
 
 ## Task 4: Creating new views
 
@@ -180,6 +193,7 @@ This lab assumes you have:
 * [SQLcl MCP Server Docs](https://docs.oracle.com/en/database/oracle/sql-developer-command-line/25.2/sqcug/using-oracle-sqlcl-mcp-server.html)
 
 ## Acknowledgements
+
 * **Author**<ul><li>Chris Hoina, Senior Product Manager, Database Tools</li></ul>
 * **Contributors**<ul><li>Jeff Smith, Distinguished Product Manager, Database Tools</li></ul>
 * **Last Updated By/Date**<ul><li>Chris Hoina, September 2025</li></ul>

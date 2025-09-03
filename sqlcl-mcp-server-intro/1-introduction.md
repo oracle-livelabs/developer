@@ -21,11 +21,7 @@ This lab assumes you have:
 * An Oracle cloud, LiveSQL, or FreeSQL account
 * Access to a currently supported Oracle database (or LiveSQL/FreeSQL account if participating in an instructor-led workshop)
 * Organizational Roles/Privileges to install the following software on your employer-provided work station:
-
-  * MS Visual Studio Code 
-    * The Oracle SQL Developer for VS Code extension
-    * The Cline for VS Code extension
-  * Oracle SQLcl 
+* MS Visual Studio Code 
 
 ### About
 
@@ -73,6 +69,7 @@ And that's it! An MCP Server will have been developed to have certain capabiliti
 > *How can I securely use LLMs in and around my Oracle Database, without having to manually "switch" to using SQLcl?*
 
 ##### Protocols
+
 
 Typically you'll interact with your MCP server through an AI Agent, using natural language queries. You can explicity name which of the "Tools" to use from an MCP Server or your Agent might suggest/use them without prompting (depending on the Agent, and what "guardrails" you have in place). This communication between you, the AI agent, and MCP Servers is "the Protocol." 
 
@@ -168,6 +165,7 @@ And here are some things to consider when working with *any* AI Agent and MCP Se
 * [SQLcl MCP Server Docs](https://docs.oracle.com/en/database/oracle/sql-developer-command-line/25.2/sqcug/using-oracle-sqlcl-mcp-server.html)
 
 ## Acknowledgements
+
 * **Author**<ul><li>Chris Hoina, Senior Product Manager, Database Tools</li></ul>
 * **Contributors**<ul><li>Jeff Smith, Distinguished Product Manager, Database Tools</li><li>Linda Foindling</li></ul>
 * **Last Updated By/Date**<ul><li>Chris Hoina, August 2025</li></ul>

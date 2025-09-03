@@ -23,7 +23,7 @@
         {
           "title": "Create database objects",
           "description": "Creating database objects in a new.",
-          "filename":"../../4-build-a-schema.md"
+          "filename":"../../4-build-database-objects.md"
         },
         {
           "title": "Build a React app",

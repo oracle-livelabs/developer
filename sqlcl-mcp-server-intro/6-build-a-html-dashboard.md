@@ -17,23 +17,40 @@ In this lab, you will:
 
 ### Prerequisites
 
-<mark>Pending</mark>
-
-*List the prerequisites for this lab using the format below. Fill in whatever knowledge, accounts, etc. is needed to complete the lab. **Do NOT list** each previous lab as a prerequisite.*
-
 This lab assumes you have:
-* An Oracle account
 * All previous labs successfully completed
+* VS Code installed
+* Installed the Cline for VS Code Extension
+* Configured an Oracle Database connection using the Oracle SQL Developer for VS Code extension
 
-*This is the "fold" - below items are collapsed by default*
+<p></p>
+
+> &#9872; **NOTE:** In this lab you must allow your AI Agent to create a new project folder, scaffold a sample application, and if required install dependencies (e.g., npm, Node, Express, React, etc. ).
+
+<p></p>
 
 ## Task 1: Review the sample prompt
 
-1. A sample prompt has been provided for you. Download [here](link_LiveLabs_Object_storage). This prompt can be used as-is with your agent while in "Plan" mode. Alternatively you may use it as a reference, while creating your own app. 
+1. A sample prompt has been provided for you. 
+
+    <details>
+    <summary><strong>Sample prompt</strong></summary>
+    <p></p>
+    <ul>
+    <li>
+     <a href="./files/create_an_html_dashboard_prompt.md" target="_blank">Open</a>
+    </li>
+    <li>
+     <a href="./files/create_an_html_dashboard_prompt.md" target="_self" download="create_an_html_dashboard_prompt.md">Download</a>
+    </li>
+    </ul>
+    </details>
+
+This prompt can be used as-is with your agent while in "Plan" mode. Alternatively you may use it as a reference, while creating your own app. 
 
 > &#9872; **NOTE:** This Lab is designed to be open-ended, accordingly, your individual results will vary. Feel free to "go off-script" &#9786; !
 
-2. Save the prompt locally to a file named something like: `create_data_and_views_prompt.md`. 
+2. Save the prompt locally to a file named something like: `create_an_html_dashboard.md`. 
 
 3. You can use this prompt as-is, or use it as a reference; you decide. Make sure to start in **Plan** mode, in order to have better control and oversight over the entire process. Let the Agent summarize its intent. 
 
@@ -94,15 +111,11 @@ This lab assumes you have:
 
 <mark>Pending</mark>
 
-*(optional - include links to docs, white papers, blogs, etc)*
-
 * [URL text 1](http://docs.oracle.com)
 * [URL text 2](http://docs.oracle.com)
 
 ## Acknowledgements
 
-<mark>Pending</mark>
-
-* **Author** - <Name, Title, Group>
-* **Contributors** -  <Name, Group> -- optional
-* **Last Updated By/Date** - <Name, Group, Month Year>
+* **Author**<ul><li>Chris Hoina, Senior Product Manager, Database Tools</li></ul>
+* **Contributors**<ul><li>Jeff Smith, Distinguished Product Manager, Database Tools</li></ul>
+* **Last Updated By/Date**<ul><li>Chris Hoina, September 2025</li></ul>

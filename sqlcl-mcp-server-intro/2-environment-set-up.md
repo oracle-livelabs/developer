@@ -2,23 +2,27 @@
 
 ## Introduction
 
-In this Lab, you will install and configure Visual Studio Code and related extensions, SQLcl, and the SQLcl MCP server. You will then use an AI Agent to connect to the SQLcl MCP server and learn the basics when working with an MCP Server.
+In this Lab, you will install SQL Developer Extension for VS Code and SQLcl. You will also install Cline for VS Code. 
+
+<!-- and configure Visual Studio Code and related extensions, SQLcl, and the SQLcl MCP server. You will then use an AI Agent to connect to the SQLcl MCP server and learn the basics when working with an MCP Server. -->
 
 ### Objectives
 
 In this lab, you will:
-* Create a LiveSQL, FreeSQL, or OCI account (or login if you have an existing account or if you were provided temporary single-use credentials)
-* Install or update your current VS Code IDE settings
-* Install and configure the Oracle SQL Developer for VS Code extension
+<!-- * Create a LiveSQL, FreeSQL, or OCI account (or login if you have an existing account or if you were provided temporary single-use credentials) -->
+* Install SQL Developer Extension for VS Code 
+* Install SQlcl
 * Install the Cline for VS Code extension
-* Install and configure SQlcl
 * Configure the SQLcl MCP server
 
 ### Prerequisites 
 
 This lab assumes you have:
+* Oracle Java 17 or 21 (*recommended*) installed
 * A personal computer or access to a workshop-provided workstation
+* Oracle SSO credentials (existing or workshop provided)
 * Reviewed the Introduction lab of this LiveLab
+
 
 ## Task 1: Create a FreeSQL account
 
@@ -46,11 +50,11 @@ This lab assumes you have:
 > 
 > *Your password will **NOT** be saved or displayed across sessions!*
 
-## Task 2: Install Oracle SQL Developer for VS Code
+## Task 2: Install SQL Developer Extension for VS Code
 
-1. Install the Oracle SQL Develeoper for VS Code extension; there are two installation options:
+1. Install SQL Developer Extension for VS Code; there are two installation options:
 
-   1. [Install](https://marketplace.visualstudio.com/items?itemName=Oracle.sql-developer) the latest Oracle SQL Developer for VS Code Extension.<sup id="ref-1"><a href="#fn-1">1</a></sup>
+   1. [Install](https://marketplace.visualstudio.com/items?itemName=Oracle.sql-developer) the latest SQL Developer Extension for VS Code.<sup id="ref-1"><a href="#fn-1">1</a></sup>
    2. From within VS Code, navigate to **Extensions**, search for "Oracle" and choose <strong>Install</strong>
 
      ![3-vs-code-extensions-first-visit](./images/lab-2/3-vs-code-extensions-first-visit.png " ")
@@ -59,12 +63,13 @@ This lab assumes you have:
 
      ![5-post-installation-sql-developer-web-extension](./images/lab-2/5-post-installation-sql-developer-web-extension.png " ")
 
-2. Restart your VS Code session
-3. Navigate to the Oracle SQL Developer for VS Code extension (located in your Activity Bar)
+<!-- 2. Restart your VS Code session -->
+
+2. Navigate to SQL Developer Extension for VS Code(located in your Activity Bar)
 
    ![6-creating-your-first-sql-developer-web-extension-connection](./images/lab-2/6-creating-your-first-sql-developer-web-extension-connection.png " ")
 
-4. Click the <strong>Create Connection</strong> button. Enter your database connection details.
+3. Click the <strong>Create Connection</strong> button. Enter your database connection details.
 
    ![7-entering-your-free-sql-credentials-for-new-connection](./images/lab-2/7-entering-your-free-sql-credentials-for-new-connection.png " ")
 
@@ -72,13 +77,13 @@ This lab assumes you have:
 
 > &#9888; **Important:** Make sure you click the checkbox to "Save Password." The MCP server requires this saved password to establish a SQLcl connection on your behalf.
 
-5. Choose **Basic** as the Connection Type. Enter in your details. 
+4. Choose **Basic** as the Connection Type. Enter in your details. 
 
-6. Click the **Test** button to test your connection. When the test succeeds, click the **Save** button. This will save your connection, but not connect.
+5. Click the **Test** button to test your connection. When the test succeeds, click the **Save** button. This will save your connection, but not connect.
 
    ![8-entering-your-free-sql-connection-type-information](./images/lab-2/8-entering-your-free-sql-connection-type-information.png " ")
 
-7. Your new connection will appear in the Primary Side Bar. Click the connection name. 
+6. Your new connection will appear in the Primary Side Bar. Click the connection name. 
 
    ![11-navigating-to-sql-developer-connections-for-connecting-to-freesql-schema](./images/lab-2/11-navigating-to-sql-developer-connections-for-connecting-to-freesql-schema.png " ")
 
@@ -89,7 +94,7 @@ This lab assumes you have:
 
       ![12-expanding-connection-to-reveal-database-objects.png](./images/lab-2/12-expanding-connection-to-reveal-database-objects.png " ")
 
-8. Continue to the next task to install SQLcl. 
+7. Continue to the next task to install SQLcl. 
 
 <br></br>
 **Footnotes**
@@ -110,10 +115,15 @@ This lab assumes you have:
 
 1. Download and install SQLcl. Download two ways: 
 
-    1. With a package manager such as Homebrew (Mac)
+    1. With a package manager such as Homebrew (Mac):
+
+         **Homebrew command:** `brew install --cask sqlcl`
+
     2. Directly from the [SQLcl download page](https://www.oracle.com/database/sqldeveloper/technologies/sqlcl/download/)
-  
-2. Whether downloading from a package manager, or via a manual download, you must set the SQLcl `/bin` directory to your `$PATH`. Here are some examples, however this is a non-exhaustive list:
+
+> &#9872; **NOTE:** You must install SQLcl version 25.2 *or later* in order to use the SQLcl MCP Server.
+
+2. Whether downloading from a package manager, or via a manual download, you should set the SQLcl `/bin` directory to your `$PATH`. Here are some examples, however this is a non-exhaustive list:
 
   **macOS**
 
@@ -269,11 +279,13 @@ Some helpful tips if you run into trouble;
 
 ## Learn More
 
+* [Introducing the Model Context Protocol](https://www.anthropic.com/news/model-context-protocol)
 * [MCP Server Introduction](https://blogs.oracle.com/database/post/introducing-mcp-server-for-oracle-database) 
 * [Oracle official MCP Server repository](https://github.com/oracle/mcp/tree/main)
 * [SQLcl MCP Server Docs](https://docs.oracle.com/en/database/oracle/sql-developer-command-line/25.2/sqcug/using-oracle-sqlcl-mcp-server.html)
 
 ## Acknowledgements
+
 * **Author**<ul><li>Chris Hoina, Senior Product Manager, Database Tools</li></ul>
 * **Contributors**<ul><li>Jeff Smith, Distinguished Product Manager, Database Tools</li></ul>
 * **Last Updated By/Date**<ul><li>Chris Hoina, August 2025</li></ul>

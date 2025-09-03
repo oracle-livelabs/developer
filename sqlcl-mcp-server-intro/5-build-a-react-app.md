@@ -24,13 +24,34 @@ This lab assumes you have:
 
 <p></p>
 
+> &#9872; **NOTE:** In this lab you must allow your AI Agent to create a new project folder, scaffold a sample application, and if required install dependencies (e.g., npm, Node, Express, React, etc. ).
+
+<p></p>
+
 > &#9872; **NOTE:** If participating in a workshop, you may optionally use your the credentials provided to you.
+
+<p></p>
 
 ## Task 1: Review the prompt
 
-<mark>We need to add this sample prompt to LL object storage. The files are currently located in the /files folder in this project.</mark>
+1. A sample prompt has been provided for you.
 
-1. A sample prompt has been provided for you. Download [here](link_LiveLabs_Object_storage). This prompt can be used as-is with your agent while in "Plan" mode. Alternatively you may use it as a reference, while creating your own app. 
+   <mark>Embedding the actual markdown prompt, within markdown has been unsuccessful. Temporary option is the open/download option.</mark>
+
+    <details>
+    <summary><strong>Sample prompt</strong></summary>
+    <p></p>
+    <ul>
+    <li>
+      <a href="./files/create_a_react_app_prompt.md" target="_blank">Open</a>
+    </li>
+    <li>
+      <a href="./files/create_a_react_app_prompt.md" target="_self" download="create_a_react_app_prompt.md">Download</a>
+    </li>
+    </ul>
+    </details>
+
+<p></p>
 
 > &#9872; **NOTE:** This Lab is designed to be open-ended, accordingly, your individual results will vary. Feel free to "go off-script" &#9786; !
 
@@ -123,6 +144,7 @@ This lab assumes you have:
 * [SQLcl MCP Server Docs](https://docs.oracle.com/en/database/oracle/sql-developer-command-line/25.2/sqcug/using-oracle-sqlcl-mcp-server.html)
 
 ## Acknowledgements
+
 * **Author**<ul><li>Chris Hoina, Senior Product Manager, Database Tools</li></ul>
 * **Contributors**<ul><li>Jeff Smith, Distinguished Product Manager, Database Tools</li></ul>
 * **Last Updated By/Date**<ul><li>Chris Hoina, September 2025</li></ul>

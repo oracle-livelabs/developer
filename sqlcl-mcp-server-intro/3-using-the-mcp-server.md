@@ -26,7 +26,9 @@ In this lab, you will:
 This lab assumes you have:
 * VS Code installed
 * Installed the Cline for VS Code Extension
-* Configured an Oracle Database connection using the Oracle SQL Developer for VS Code extension</p>
+* Configured an Oracle Database connection using the SQL Developer Extension for VS Code 
+
+<p></p>
 
 > &#9872; **NOTE:** If participating in a workshop, you may optionally use your the credentials provided to you.
 
@@ -137,7 +139,7 @@ When you are done, you will inspect the MCP logging table in your schema to see 
 
 <p></p>
 
-3. Before you finish this lab, you can review a log of the queries performed by the SQLcl MCP Server on behalf of the AI Agent. Locate the Oracle SQL Developer extension in the Activity Panel.
+3. Before you finish this lab, you can review a log of the queries performed by the SQLcl MCP Server on behalf of the AI Agent. Locate SQL Developer Extension for VS Code in the Activity Panel.
 
 4. Click the connection that the SQLcl MCP Server used to connect to your database.
 
@@ -156,6 +158,7 @@ When you are done, you will inspect the MCP logging table in your schema to see 
 * [SQLcl MCP Server Docs](https://docs.oracle.com/en/database/oracle/sql-developer-command-line/25.2/sqcug/using-oracle-sqlcl-mcp-server.html)
 
 ## Acknowledgements
+
 * **Author**<ul><li>Chris Hoina, Senior Product Manager, Database Tools</li></ul>
 * **Contributors**<ul><li>Jeff Smith, Distinguished Product Manager, Database Tools</li></ul>
 * **Last Updated By/Date**<ul><li>Chris Hoina, September 2025</li></ul>
