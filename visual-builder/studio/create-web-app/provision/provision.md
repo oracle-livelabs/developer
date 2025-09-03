@@ -97,7 +97,7 @@ Provision a VB Studio instance to develop and deploy a web app. You can create o
 
    Click **Create Visual Builder Studio**.
 
-   After the instance is created, its Status shows as **Active** on the Visual Builder Studio instances page. Click the instance's name to view its details on the Instance Info tab.
+   After the instance is created, its Status shows as **Active** on the Visual Builder Studio instances page. Click the instance's name to view its details, including its unique Oracle Cloud Identifier (OCID), on the Instance Info tab.
 
 ## Task 3: Authorize VB Studio to access Visual Builder
 

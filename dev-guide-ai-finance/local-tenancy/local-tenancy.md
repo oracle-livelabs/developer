@@ -289,13 +289,13 @@ The application environment has been created and zipped up for you in a download
 
 ```
     <copy>
-    unzip ai-app-build.zip
+    unzip ai-app-build-local.zip
     </copy>
 ```
 
 Next we're going to generate an oci configuration file that will contain user credentials and other settings needed for interacting with Oracle Cloud. In order to prepare for this step you'll need to gather the user OCID, the tenancy OCID, and the tenancy region and store these in a text file.
 
-3. User OCID:  Click the profile icon in the upper right corner of the OCI console and choose **User settings**.
+3. Find the user OCID:  Click the profile icon in the upper right corner of the OCI console and choose **User settings**.
 
     ![User settings](./images/click-user-settings.png " ")
 
@@ -334,19 +334,47 @@ Next we're going to generate an oci configuration file that will contain user cr
 
 14. Enter *N/A* twice to eliminate the need for a passphrase. (Your output won't show up in the terminal screen.)
 
+Add the API key to the OCI Console.
+
+15. Enter the following command to display the contents of the public API key you just created.
+
+```
+    <copy>
+    cat ~/.oci/oci_api_key_public.pem
+    </copy>
+```
+
+   ![Display the API Key](./images/display-the-api-key.png " ")
+
+16. Select the key contents beginning with the first dash on the BEGIN PUBLIC KEY line to the last dash after the END PUBLIC KEY----- line. Right-click and choose **Copy** or use CTRL(CMD)-V to copy the selected text.
+
+    ![Select the API Key](./images/select-the-api-key.png " ")
+
+17. Open the OCI web console and click on the profile icon on the top right hand side of the screen. Click **User settings** from the menu.
+
+   ![Profile icon](./images/user-settings2.png " ")
+
+18. Click the **Tokens and keys** tab, then click **Add API key**.
+
+   ![Click Add API Key](./images/click-tokens-and-keys.png " ")
+
+19. Click on the radio button for **Paste a public key**, paste the contents of your key, then click the **Add** button.
+
+   ![Paste the API Key](./images/paste-api-key.png " ")
+
+20. Review the **Configuration file preview**. You can double check this information with the config file located in your .oci directory. Click the **Close** button.
+
 Next you'll create an environment file for the application.
 
-15. An environment file template has been included in the zip file and is available to make editing easier. The file is named '.env.template' Any file with a dot as the first character is hidden from normal view in Linux. Issue the following command to create a copy and begin editing the file.
+21. Create the .env file that will hold connection information for your application.
 
 ````
     <copy>
-    cp .env.template .env
+    touch .env
     </copy>
 ````
 
-   ![Copy and edit the env file](./images/env-file-copy.png " ")
-
-16. Use your favorite editor to open and edit the file.
+22. Use your favorite editor to open and edit the file.
 
     ````
         <copy>
@@ -354,55 +382,55 @@ Next you'll create an environment file for the application.
         </copy>
     ````
 
-17. The following information needs to be collected and inserted into the .env file. Copy the 9 lines below and paste them in the .evn file. Follow the steps below to gather the required information and place it in the file.
+23. The following information needs to be collected and inserted into the .env file. Copy the 9 lines below and paste them in the .env file. Follow the steps below to gather the required information and place it in the file.
 
     ```
-        <copy>
-        USERNAME=""
-        DBPASSWORD=""
-        DBCONNECTION=""
-        ADB_NAME=""
-        ADB_OCID=""
-        GRAPH_ENDPOINT=""
-        COMPARTMENT_OCID=""
-        TENANCY_OCID=""
-        ENDPOINT=https://inference.generativeai.us-chicago-1.oci.oraclecloud.com
-        </copy>
+    <copy>
+    USERNAME=""
+    DBPASSWORD=""
+    DBCONNECTION=""
+    ADB_NAME=""
+    ADB_OCID=""
+    GRAPH_ENDPOINT=""
+    COMPARTMENT_OCID=""
+    TENANCY_OCID=""
+    OCI_ENDPOINT=https://inference.generativeai.us-chicago-1.oci.oraclecloud.com
+    </copy>
     ```
 
-18. The database username should be 'admin'. Use the password that you assigned to the admin user. (Password1234!)
+24. The database username should be 'ADMIN'. Use the password that you assigned to the admin user. (Password1234!). Make sure all the information you enter into the file stays between the quotes.
 
-19. Find your database connection string by selecting navigating to **Oracle Database**, choose **Autonomous Database**, then choose the ATP you created earlier in the lab, **SeerATP**. At the top of the screen, click the button labeled **Database Connection**.
+25. Find your database connection string by selecting navigating to **Oracle Database**, choose **Autonomous Database**, then choose the ATP you created earlier in the lab, **SeerATP**. At the top of the screen, click the button labeled **Database Connection**.
 
     ![Select Database Connection](./images/db-connection.png " ")
 
-20. Locate the connection labeled *seeratp_low*. Click the ellipsis at the far right and choose *Copy*. Paste the result into your configuration file. **Note:** Make sure to enclose the connection string in single quotes.  Click **Cancel** to close the screen when you're done.
+26. Locate the connection labeled *seeratp_low*. Click the ellipsis at the far right and choose *Copy*. Paste the result into your configuration file. **Note:** Make sure to enclose the connection string in single quotes.  Click **Cancel** to close the screen when you're done.
 
     ![Copy Connection String](./images/copy-connection-string.png " ")
 
-21. Copy your Autonomous Database Name and OCID and paste them into your .env file.
+27. Copy your Autonomous Database Name and OCID and paste them into your .env file.
 
     ![Copy your Autonomous Database OCID](./images/adb-ocid.png " ")
 
-22. While still in the ATP details screen, click the **Tool Configuration** tab. Copy the Graph Studio Public access URL and paste it into the .env file.
+28. While still in the ATP details screen, click the **Tool Configuration** tab. Copy the Graph Studio Public access URL and paste it into the .env file.
 
     ![Copy your Graph Endpoint](./images/graph-endpoint.png " ")
 
-23. To find the compartment OCID, navigate to **Identity & Security**, select **Compartments**, then click on the link of the compartment you're using for this lab.
+29. To find the compartment OCID, navigate to **Identity & Security**, select **Compartments**, then click on the link of the compartment you're using for this lab.
 
-24. Locate the compartment OCID and click the *Copy* link. Paste the compartment OCID into your .env file.
+30. Locate the compartment OCID and click the *Copy* link. Paste the compartment OCID into your .env file.
 
     ![Copy compartment OCID](./images/copy-compartment-ocid.png " ")
 
-25. Locate the tenancy OCID. From the OCI Console home screen, click the tenancy name link under the **Home** title.
+31. Locate the tenancy OCID. From the OCI Console home screen, click the tenancy name link under the **Home** title.
 
     ![Select your Tenancy](./images/click-tenancy.png " ")
 
-26. Copy the tenancy OCID and paste it into the .env file.
+32. Copy the tenancy OCID and paste it into the .env file.
 
     ![Copy your Tenancy OCID](./images/copy-tenancy-ocid.png " ")
 
-27. Copy the below url and paste it into your file as the endpoint.
+33. The generative AI endpoint has already been included in the .env file template.
 
     ````
         <copy>
@@ -410,11 +438,11 @@ Next you'll create an environment file for the application.
         </copy>
     ````
 
-28. Your .env file should look similar to the screenshot below. (*Don't forget the sinqle quotes around the connection string!*)
+34. Your .env file should look similar to the screenshot below. (*Don't forget the sinqle quotes around the connection string!*)
 
     ![.env credentials](./images/env-file.png " ")
 
-29. Save and close the .env file.
+35. Save and close the .env file.
 
 ## Task 4: Create the application environment
 
@@ -477,32 +505,6 @@ Next you'll create an environment file for the application.
         WantedBy=multi-user.target
         </copy>
     ````
-
-
-<!--  Commenting out for directory location changes that I'm not sure will work.
-
-8. Paste the following information into the file. Verify the user is 'opc', the working directory is where you installed streamlit and the port is set to 8501.
-
-    ````
-        <copy>
-        [Unit]
-        Description=Streamlit Loan Approval App
-        After=network.target
-
-        [Service]
-        User=opc
-        WorkingDirectory=/home/opc/loan/streamlit/
-        ExecStart=/bin/bash -c 'source /home/opc/loan/streamlit/pages/loan_env/bin/activate && streamlit run 1-Introduction.py --server.port 8501 --server.address 0.0.0.0'
-        Restart=always
-
-        [Install]
-        WantedBy=multi-user.target
-        </copy>
-    ````
-
-    ![Create the streamlit.service file](./images/streamlit-service-file.png " ")
-
-    -->
 
 5. Activate the virtual environment. Enter the following command.
 

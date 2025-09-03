@@ -100,7 +100,7 @@ In this first example, you will use the application to authorize a return for a 
 
 12. Expand **View In Progress Customers**. We can see that David Williams has been removed from the **Pending Customers** list and has been added to the **In Progress Customers**.
 
-    ![David Williams In Progress List](./images/james-smith-approved-list.png =50%x*)
+    ![David Williams In Progress List](./images/david-in-progress.png =50%x*)
 
 **Task Summary**
 
@@ -121,7 +121,7 @@ In this example, you will navigate the application to review a customer and deny
 
     ![Select Alice Smith](./images/alice-smith.png =50%x*)
 
-2. Opening Alice Smith’s profile displays her return package details. Within a few seconds, the AI generates automatically recommendations. In this case, the system evaluates a less favorable profile and identifies key risk factors.
+2. Opening Alice Smith’s profile displays her return package details. Within a few seconds, the AI automatically generates recommendations. In this case, the system evaluates a less favorable profile and identifies key risk factors.
 
     This customer has:
 
@@ -189,7 +189,7 @@ Lastly, let’s explore how the system uses JSON Duality Views to handle profile
 
     ![Select Isla Wilson](./images/isla-wilson.png =50%x*)
 
-2. We will upload a document to update the item's condition. Before uploading the document, note that the item's condition is currently listed as "none". On the Customer Details page, click the **Upload Document** button.
+2. We will upload a document to update the item's return condition. On the Customer Details page, click the **Upload Document** button.
 
     ![Upload Document](./images/upload-document.png =50%x*)
 
@@ -203,9 +203,9 @@ Lastly, let’s explore how the system uses JSON Duality Views to handle profile
 
     ![Customer Profile Updated](./images/profile-updated.png)
 
-5. Refresh the page and note that the item condition has been updated to "Damaged". Thanks to JSON Transform and JSON Duality Views, only the relevant field is modified — leaving the rest of the profile UNTOUCHED.
+5. Navigate to the customer decisions page and notice that the information has been updated. Thanks to JSON Transform and JSON Duality Views, only the relevant field is modified — leaving the rest of the profile UNTOUCHED.
 
-    ![Customer Profile Updated](./images/income-updated.png)
+    ![Customer Profile Updated](./images/return-description-updated.png)
 
 **Task Summary**
 
@@ -213,7 +213,7 @@ Once the document is uploaded:
 
 ✅ The system automatically detects the new item condition data.
 
-✅ Then their profile will be updated from "none" to "Damaged".
+✅ Then their profile will be updated for the return description.
 
 ✅ And thanks to JSON Transform and JSON Duality Views, only the relevant field is modified — leaving the rest of the profile UNTOUCHED.
 
