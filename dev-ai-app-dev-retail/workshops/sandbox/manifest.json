@@ -28,9 +28,9 @@
             "filename": "../../build/build.md"
         },
         {
-            "title": "Architecture & Workshop Features",
-            "description": "Review the physical and logical architecture behind the application",
-            "filename": "../../app-architecture/app-architecture.md"
+            "title": "Lab 5: Interact with Oracle Database 23ai through an MCP Server",
+            "description": "This is a step-by-step guide showcasing how the demo instance is navigated",
+            "filename": "../../mcp/mcp.md"
         },
         {
             "title": "Need Help?",
