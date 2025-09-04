@@ -31,24 +31,47 @@ This lab assumes you have:
 
 ## Task 1: Review the sample prompt
 
-1. A sample prompt has been provided for you. 
+1. A sample prompt has been provided for you. It can be used as-is in **Plan** mode with your agent. Or, can use the prompt as a reference while you create your own dashboard. 
 
-    <details>
-    <summary><strong>Sample prompt</strong></summary>
-    <p></p>
-    <ul>
-    <li>
-     <a href="./files/create_an_html_dashboard_prompt.md" target="_blank">Open</a>
-    </li>
-    <li>
-     <a href="./files/create_an_html_dashboard_prompt.md" target="_self" download="create_an_html_dashboard_prompt.md">Download</a>
-    </li>
-    </ul>
+   <details>
+      <summary style="color: #0000FF";><kbd style="font-size: 10px;">(click) </kbd><strong>Sample prompt</strong></summary>
+      <p></p>
+      <button>
+      <a href="files/create_an_html_dashboard_prompt.md" target="_blank">Open in new tab</a>
+      </button> 
+      <button>
+      <a href="files/create_an_html_dashboard_prompt.md" target="_self" download="create_an_html_dashboard_prompt.md">Download .md file</a>
+      </button>
+      <p></p>
+       
+      ```txt
+      Title: Build a dashboard
+
+      Overview
+
+      1. You will be creating a dynamic and visually stunning html-based dashboard for me. I want to be able to view this dashboard quickly and close it when I'm finished. It doesn't need to "run" all the time.
+
+      Task 1: Connect, familiarize
+
+      1. Connect as the SQL_FREESQL_01 user and describe the HR schema tables and views
+
+      2. Familiarize yourself with their relationships.
+
+      Task 2: Build the dashboard, my requests
+
+      1. I want you to add tool tips to my charts: https://www.chartjs.org/docs/latest/samples/tooltip/content.html
+
+      2. I want you to use table data from the HR schema to create a radar chart https://www.chartjs.org/docs/latest/samples/other-charts/radar.html. I want to be able to select two different employees from two drop down lists, so that I can compare their attributes.
+
+      3. I want a bubble chart to display the count of countries employees reside in. The bubble size should be relative to the number of employees in that country. I want you to create something like in this example: https://www.chartjs.org/docs/latest/samples/other-charts/bubble.html
+
+      4. I want you to show me a breakdown of the employees by their Job ID, on a doughnut chart like this: https://www.chartjs.org/docs/latest/samples/other-charts/doughnut.html
+      ```
+       
     </details>
+    <p></p>
 
-This prompt can be used as-is with your agent while in "Plan" mode. Alternatively you may use it as a reference, while creating your own app. 
-
-> &#9872; **NOTE:** This Lab is designed to be open-ended, accordingly, your individual results will vary. Feel free to "go off-script" &#9786; !
+    > &#9872; **NOTE:** This Lab is designed to be open-ended, accordingly, your individual results will vary. Feel free to "go off-script" &#9786; !
 
 2. Save the prompt locally to a file named something like: `create_an_html_dashboard.md`. 
 
