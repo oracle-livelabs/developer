@@ -1,5 +1,10 @@
 {
   "workshoptitle": "Develop with Oracle AI and Database Services: Gen, Vision, Speech, Language, and OML",
+  "include": {
+    "iam-compartment-create-body.md": "https://raw.githubusercontent.com/oracle-livelabs/common/main/building-blocks/tasks/iam/compartment-create-body.md",
+    "adb-goto-service-body.md": "https://raw.githubusercontent.com/oracle-livelabs/common/main/building-blocks/tasks/adb/goto-service-body.md",
+    "adb-provision-body.md": "https://raw.githubusercontent.com/oracle-livelabs/common/main/building-blocks/tasks/adb/provision-body.md"
+  },
   "help": "livelabs-help-devdb-us@oracle.com",
 	"tutorials": [
       {

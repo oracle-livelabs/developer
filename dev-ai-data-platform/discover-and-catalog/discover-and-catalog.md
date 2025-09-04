@@ -66,9 +66,9 @@ First, log into your Autonomous Database and connect to the Catalog Tool to disc
     - Choose the **Select Bucket** radio button
     - From the dropdown list choose the Bucket Named: **MyDemoBucket**
 
-   Click the **Create** button to proceed.
-
     ![Add Connections to Catalog](./images/add-connections-to-catalog-5.png "Add Connections to Catalog")  
+
+  Click the **Create** button to proceed.
 
 6. You’ve just added your own object storage connection to the Catalog—now you can easily discover, track, and query external data alongside your database assets. This step lays the foundation for building richer data products and speeding up access to the insights that matter.
 
@@ -94,7 +94,7 @@ With your connections in place, it’s time to search the catalog. You’ll choo
 
     ![Data Catalog Data Objects](./images/data-catalog-data-objects.png "Data Catalog Data Objects")
 
-By searching the Catalog with filters and schema selections, you’ve learned how to quickly surface the data that matters. This step helps you cut through clutter and find the right assets faster—so you can spend less time searching and more time building with trusted data.
+By searching the Catalog with filters and schema selections, you’ve learned how to quickly surface the data that matters. This step helps you cut through clutter and find the right assets faster—so you can spend less time searching and more time building with data.
 
 ## Task 4: Preview Data in Catalog  
 
@@ -108,12 +108,12 @@ Preview the data discovered in the catalog. From this view, you’ll see the fil
 
     ![Data Catalog CSV preview](./images/data-catalog-csv-preview.png "Data Catalog CSV Preview")  
 
-3. Click **Close** to return to Data Catalog listings  
+   Click **Close** to return to Data Catalog listings  
 
 
 ## Conclusion
 
-Well done! In this lab, you discovered how to connect, browse, and preview data across your database and object storage—all from a single, unified catalog. You’ve built the foundation SeersEquities needs to turn scattered data into trusted data products.
+Well done! In this lab, you discovered how to connect, browse, and preview data across your database and object storage—all from a single, unified catalog. You’ve built the foundation SeersEquities needs to turn scattered data into data products.
 
 With these skills, you can now help the team evaluate new data faster, integrate it seamlessly, and drive smarter, real-time decisions that power better loan products and risk strategies.
 
@@ -124,4 +124,4 @@ With these skills, you can now help the team evaluate new data faster, integrate
 ## Acknowledgements
 
 * **Author:** Eddie Ambler, Otis Barr
-* **Last Updated By/Date:** Kamryn Vinson, June 2025
+* **Last Updated By/Date:** Otis Barr, August 2025

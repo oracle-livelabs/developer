@@ -100,7 +100,7 @@ In this first example, you will use the application to authorize a return for a 
 
 12. Expand **View In Progress Customers**. We can see that David Williams has been removed from the **Pending Customers** list and has been added to the **In Progress Customers**.
 
-    ![David Williams In Progress List](./images/james-smith-approved-list.png =50%x*)
+    ![David Williams In Progress List](./images/david-in-progress.png =50%x*)
 
 **Task Summary**
 
@@ -203,9 +203,9 @@ Lastly, let’s explore how the system uses JSON Duality Views to handle profile
 
     ![Customer Profile Updated](./images/profile-updated.png)
 
-5. Refresh the page and note that the item condition has been updated to "Damaged". Thanks to JSON Transform and JSON Duality Views, only the relevant field is modified — leaving the rest of the profile UNTOUCHED.
+5. Navigate to the customer decisions page and notice that the information has been updated. Thanks to JSON Transform and JSON Duality Views, only the relevant field is modified — leaving the rest of the profile UNTOUCHED.
 
-    ![Customer Profile Updated](./images/income-updated.png)
+    ![Customer Profile Updated](./images/return-description-updated.png)
 
 **Task Summary**
 
