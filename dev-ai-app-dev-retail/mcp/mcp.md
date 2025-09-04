@@ -100,6 +100,7 @@ Internally uses helpers like \_clean\_llm_sql, read-only guards, and a row cap f
     <copy>
     import server
     import mcphelper
+    import importlib
     </copy>
     ```
 
