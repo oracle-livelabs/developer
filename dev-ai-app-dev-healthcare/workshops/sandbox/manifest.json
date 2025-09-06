@@ -28,6 +28,11 @@
             "filename": "../../build/build.md"
         },
         {
+            "title": "Lab 5: Interact with Oracle Database 23ai through an MCP Server",
+            "description": "This is a step-by-step guide showcasing how the demo instance is navigated",
+            "filename": "https://oracle-livelabs.github.io/developer/dev-ai-app-dev-retail/mcp/mcp.md"
+        },
+        {
             "title": "Need Help?",
             "description": "Solutions to Common Problems and Directions for Receiving Live Help",
             "filename": "https://oracle-livelabs.github.io/common/labs/need-help/need-help-freetier.md"
