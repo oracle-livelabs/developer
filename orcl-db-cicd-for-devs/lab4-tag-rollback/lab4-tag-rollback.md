@@ -140,4 +140,4 @@ Stay tuned for future content where we cover how to use SQLcl Liquibase to autom
 ## Acknowledgements
 
 - **Author** - Zachary Talke, Senior Product Manager
-- **Last Updated By/Date** - Zachary Talke, May 2023
+- **Last Updated By/Date** - Zachary Talke, May 2024
