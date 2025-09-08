@@ -127,4 +127,4 @@ In this lab, you will:
 ## Acknowledgements
 
 * **Author** - Ivan Eng, Java Management Service
-* **Last Updated By** - Hannah Wong, May 2025
+* **Last Updated By** - Eugene Kazlou, September 2025

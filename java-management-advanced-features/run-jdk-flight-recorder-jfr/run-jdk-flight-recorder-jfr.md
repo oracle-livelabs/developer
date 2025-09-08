@@ -92,4 +92,4 @@ You may now **proceed to the next lab.**
 ## Acknowledgements
 
 * **Author** - Somik Khan, November 2022
-* **Last Updated By** - Hannah Wong, May 2025
+* **Last Updated By** - Eugene Kazlou, September 2025
