@@ -54,8 +54,8 @@ This lab assumes you have:
 
 1. Install SQL Developer Extension for VS Code; there are two installation options:
 
-   1. [Install](https://marketplace.visualstudio.com/items?itemName=Oracle.sql-developer) the latest SQL Developer Extension for VS Code.<sup id="ref-1"><a href="#fn-1">1</a></sup>
-   2. From within VS Code, navigate to **Extensions**, search for "Oracle" and choose <strong>Install</strong>
+    1. VS Code [Marketplace](https://marketplace.visualstudio.com/items?itemName=Oracle.sql-developer)<sup id="ref-1"><a href="#fn-1">1</a></sup>
+    2. From within VS Code, navigate to **Extensions**, search for "Oracle" and choose <strong>Install</strong>
 
      ![3-vs-code-extensions-first-visit](./images/lab-2/3-vs-code-extensions-first-visit.png " ")
 
@@ -65,7 +65,7 @@ This lab assumes you have:
 
 <!-- 2. Restart your VS Code session -->
 
-2. Navigate to SQL Developer Extension for VS Code(located in your Activity Bar)
+2. Once installed, navigate to SQL Developer Extension for VS Code(located in your Activity Bar)
 
    ![6-creating-your-first-sql-developer-web-extension-connection](./images/lab-2/6-creating-your-first-sql-developer-web-extension-connection.png " ")
 
@@ -75,7 +75,7 @@ This lab assumes you have:
 
 <p></p>
 
-> &#9888; **Important:** Make sure you click the checkbox to "Save Password." The MCP server requires this saved password to establish a SQLcl connection on your behalf.
+> &#9888; **Important:** Make sure you click the checkbox (&check; Save Password) to save your password. Your SQLcl MCP Server relies on this securly saved password to establish a database connection.
 
 4. Choose **Basic** as the Connection Type. Enter in your details. 
 
@@ -89,8 +89,8 @@ This lab assumes you have:
 
    Clicking a connnection name does two things:<sup id="ref-2"><a href="#fn-2">2</a></sup>
 
-   1. Establishes a connection to the the target database
-   2. Reveals the various database objects, links, directories, and other categories in a schema
+    1. Establishes a connection to the the target database
+    2. Reveals the various database objects, links, directories, and other categories in a schema
 
       ![12-expanding-connection-to-reveal-database-objects.png](./images/lab-2/12-expanding-connection-to-reveal-database-objects.png " ")
 
@@ -123,44 +123,45 @@ This lab assumes you have:
 
 > &#9872; **NOTE:** You must install SQLcl version 25.2 *or later* in order to use the SQLcl MCP Server.
 
-2. Whether downloading from a package manager, or via a manual download, you should set the SQLcl `/bin` directory to your `$PATH`. Here are some examples, however this is a non-exhaustive list:
+2. Whether downloading from a package manager, or via a manual download, a good practice is to set the SQLcl `/bin` directory to your `$PATH`. Here are some examples of how to achieve this: 
 
   **macOS**
 
   *Homebrew installation*
 
-   ```sh
-   cat << EOF >> ~/.zprofile
-   # Add SQLcl via Homebrew
-   export PATH="$PATH:/opt/homebrew/Caskroom/sqlcl/[your SQLcl version]/sqlcl/bin"
-   EOF
-   ```
+      ```sh
+      cat << EOF >> ~/.zprofile
+      # Add SQLcl via Homebrew
+      export PATH="$PATH:/opt/homebrew/Caskroom/sqlcl/[your SQLcl version]/sqlcl/bin"
+      EOF
+      ```
 
   *Manual installation*
 
-   ```sh
-   cat << EOF >> ~/.zprofile
-   # Add SQLcl via manual installation
-   export PATH="$PATH:/complete_file_path_to_your_sqlcldirectory/bin"
-   EOF
-   ```
+      ```sh
+      cat << EOF >> ~/.zprofile
+      # Add SQLcl via manual installation
+      export PATH="$PATH:/complete_file_path_to_your_sqlcldirectory/bin"
+      EOF
+      ```
 
   **Windows**
 
-  ```txt
-   1. In Search, search for and then select: System (Control Panel)
-   2. Click the Advanced system settings link.
-   3. Click Environment Variables.
-   4. In the section System Variables find the PATH environment variable and select it.
-   5. Click Edit.
-   6. If the PATH environment variable does not exist, click New.
-   7. In the Edit System Variable (or New System Variable) window, specify the value of the PATH environment variable.
-   
-      - *Example:* `/complete_file_path_to_your_sqlcl_directory/bin`
+      ```txt
+         1. In Search, search for and then select: System (Control Panel)
+         2. Click the Advanced system settings link.
+         3. Click Environment Variables.
+         4. In the section System Variables find the PATH environment variable and select it.
+         5. Click Edit.
+         6. If the PATH environment variable does not exist, click New.
+         7. In the Edit System Variable (or New System Variable) window, specify the value of the PATH environment variable.
+         
+            - *Example:* `/complete_file_path_to_your_sqlcl_directory/bin`
 
-   8. Click OK. 
-   9. Close all remaining windows by clicking OK.
-   ```
+         8. Click OK. 
+         9. Close all remaining windows by clicking OK.
+         ```
+<p></p>
 
 > &#9872; **NOTE:** Take note of this path, as you will need it for a later step.
 

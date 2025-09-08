@@ -21,8 +21,8 @@
             "filename": "../../3-using-the-mcp-server.md"
         },
         {
-          "title": "Create database objects",
-          "description": "Creating database objects in a new.",
+          "title": "Build database objects",
+          "description": "Using Agents and the SQLcl MCP Server to create new database objects.",
           "filename":"../../4-build-database-objects.md"
         },
         {
