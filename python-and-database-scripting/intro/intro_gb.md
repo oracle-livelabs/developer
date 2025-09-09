@@ -26,4 +26,4 @@ In this workshop, you will:
 
 - **Authors** - Christopher Jones, Anthony Tuininga, Sharad Chandran, Veronica Dumitriu
 - **Contributors** - Jaden McElvey, Technical Lead, Oracle LiveLabs Interns
-- **Last Updated By/Date** - Veronica Dumitriu, DB Product Management, July 2022
+- **Last Updated By/Date** - Veronica Dumitriu, DB Product Management, Sep 2025

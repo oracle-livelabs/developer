@@ -30,55 +30,52 @@ This lab assumes you have:
 1.  Login to your Oracle Cloud Account
 2.  Click the **Navigation** Menu in the upper left, navigate to **Oracle Database** and select **Autonomous Database**
 
-    ![Create ADB](./images/create_adb.png " ")
+    ![Create ADB](./images/create_adb25.png " ")
 
-3. Create a new Autonomous Database Instance as following:
+3. Create a new Autonomous Database Serverless as following:
+    - Display name: python_adb
+    - Database name: pythonadb
     - Compartment: (default compartment (root))
-    - Display Name: python_adb
-    - Choose a workload type: Transaction Processing
-    - Choose a deployment type: Serverless
+    - Workload type: Transaction Processing
 
-    ![Basic Info](./images/adb_basic.png" ")
+4. Database Configuration
 
-4. Configure the Database
-
-    In the **Configure the Database** section, proceed with the following selections: 
+    In the **Database Configuration** section, proceed with the following selections: 
     - Toggle: Always Free
-    - DB Version: 19c
+    - DB Version: 23ai
 
-5. In the **Create Administrator Credentials** section, enter the password for the Admin user and make note of it, as this as this will be required in the subsequent labs.
+    ![Basic Info](./images/adb_basic25.png " ")
 
-    ![Free Tier](./images/adb_free.png " ")
+5. In the **Administrator Credentials creation** section, enter the password for the Admin user and make note of it, as this as this will be required in the subsequent labs.
 
-6. In the **Choose Network Access** section, select 'Secure Access from Everywhere'
+6. In the **Choose Network Access** section, select 'Secure access from everywhere'
 
-    In the **Choose License and Oracle Database Edition** section, select 'License Included'
+    ![Free Tier](./images/adb_free25.png " ")
 
-    Hit **Create Autonomous Database** button
-    ![ADB Network](./images/adb_network_conf.png " ")
-
+7. Hit **Create** button
+    
     This process might take few minutes. You can check the status of the creation of the Autonomous Database Serverless, by using the Console.
 
     Once Autonomous Database Serverless is provisioned, it is automatically started and you should see the following summary:
 
-    ![Summary ADB](./images/adb_summary.png " ")
+    ![Summary ADB](./images/adb_summary25.png " ")
 
 
 ## Task 2: Download Oracle Autonomous Database Wallet
 
 To connect to the Oracle Autonomous Database, you need the wallet file.
 
-1.  In the Autonomous Database Summary screen, select **Database Connection** tab and in the popup **Database Connection** window, in the **Download Client Credentials (Wallet)** section,
+1.  In the Autonomous Database Summary screen, select **Database Connection** section and in the **Database Connection** window, in the **Download client credentials (Wallet)** section,
     -  select Wallet Type: Instance Wallet
     - hit **Download Wallet** button
 
- ![Wallet](./images/wallet.png " ")
+    ![Wallet](./images/wallet25.png " ")
 
 2. Specify a password for the Wallet
 
     Hit **Download** button and save the wallet as a zip file to a location on your local laptop, then click Close to close the popup window. We will upload this file on Console Shell in the next task, so please make a note of the location where the .zip wallet is saved.
 
-    ![Wallet password](./images/wallet_password.png " ")
+    ![Wallet password](./images/wallet_password25.png " ")
 
     Make a note of the password as this will be used for the database connection and it is required in the subsequent labs.
 
@@ -90,41 +87,44 @@ In the Oracle Autonomous Database Summary screen, we're going to launch Cloud Sh
 
 1. To launch the Cloud Shell, sign in to your Oracle Cloud Infrastructure tenancy and click the command prompt icon in Console header, then select Cloud Shell from the drop down:
 
-    ![Cloud Shell](./images/cloud_shell.png " ")
+    ![Cloud Shell](./images/cloud_shell25.png " ")
 
 2. When connected, the following should display:
-    ![Cloud Shell terminal](./images/cloud_shell_term.png " ")
+
+    ![Cloud Shell terminal](./images/cloud_shell_term25.png " ")
 
 3. Drag and drop the Wallet archive from the location where it was saved, to the Console Shell
-    ![Cloud shell wallet](./images/cloud_shell_wallet.png " ")
+
+    ![Cloud shell wallet](./images/cloud_shell_wallet25.png " ")
 
 4. Unzip the wallet
-    In your home folder, create directory _Wallets_ and move the wallet archive to Wallets folder. We are going to unzip the file in this directory
-    ````
-    <copy>
+In your home folder, create directory _Wallets_ and move the wallet archive to Wallets folder. We are going to unzip the file in this directory
+
+    ```<copy>
     $ mkdir Wallets
     $ mv Wallet_python_adb.zip ./Wallets
     $ cd Wallets
     $ unzip Wallet_python_adb.zip
     </copy>
-    ````
-    ![unzip](./images/shell_unzip.png " ")
+    ```
+    
+![unzip](./images/shell_unzip25.png " ")
 .
 
 ## Task 4: Copy Oracle Autonomous Database DSN string
 
 One of the arguments used in to connect to the Oracle Autonomous Database is the DSN (data source name).  
 
-1.  In the ADB Summary screen, select **Database Connection** tab and in the popup **Database Connection** window, in the **TNS Name** section, **Copy** the TNS name and the connection string for the high service level TNS name
+1.  In the ADB Summary screen, select **Database Connection** section and in the popup **Database Connection** window, in the **Connection Strings** section, **Copy** the TNS name and the connection string for the high service level TNS name
 
-    ![connection string](./images/conn-string.png " ")
+    ![connection string](./images/conn_string25.png " ")
 
-2. Click 'Close' to close the popup window.
+2. Click 'Cancel' to close the popup window.
 
 3. Paste the clipboard content to a file called DSN_ADB.txt and then save your changes.
     ````
     <copy>
-    vi DSN_ADB.txt
+        vi DSN_ADB.txt
     </copy>
     ````
 
@@ -135,4 +135,4 @@ In this lab, you had an opportunity to create an Oracle Autonomous Database Serv
 ## Acknowledgements
 - **Authors** - Veronica Dumitriu
 - **Contributors** - Chris Jones
-- **Last Updated By/Date** - Veronica Dumitriu, Oracle Database Drivers Product Management, Aug 2023
+- **Last Updated By/Date** - Veronica Dumitriu, Oracle Database Drivers Product Management, Sep 2025

@@ -19,10 +19,10 @@ Watch the video below for a quick walk-through of the lab.
 
 **python-oracledb** driver is a Python extension module that enables access to Oracle Database. This latest, renamed release of the widely used cx_Oracle driver introduces a new ‘Thin’ mode for direct connection to the database and it conforms to the Python database API 2.0 specification with a considerable number of additions and a couple of exclusions.
 
-python-oracledb driver is compatible with Python versions 3.6 through 3.11. Prebuilt packages are available on Windows for Python 3.7 or later, on macOS for Python 3.7 or later, and on Linux for Python 3.6 or later.
+python-oracledb driver is compatible with Python versions 3.9 through 3.14. Prebuilt packages are available on Windows, macOS and Linux for Python 3.9 or later.
 
-python-oracledb 1.3.2 is available. It has a default **Thin** mode for direct connection to Oracle Database and Oracle client libraries are optional.
-In **Thick** mode, some advanced Oracle Database functionality is currently only available when optional Oracle Client libraries are loaded by python-oracledb. Libraries are available in the free Oracle Instant Client packages. Python-oracledb can use Oracle Client libraries 11.2 through 21c.
+python-oracledb 3.3.0 is available. It has a default **Thin** mode for direct connection to Oracle Database and Oracle client libraries are optional.
+In **Thick** mode, some advanced Oracle Database functionality is currently only available when optional Oracle Client libraries are loaded by python-oracledb. Libraries are available in the free Oracle Instant Client packages. Python-oracledb can use Oracle Client libraries 11.2 through 23ai.
 
 Python is open-source, cross-platform, and free of cost. There's no excuse not to give Python a try!
 
@@ -30,7 +30,7 @@ Python is open-source, cross-platform, and free of cost. There's no excuse not t
 
 In this lab, you will run a Shell script that will automatically install the python-oracledb driver
 
-*Note: This Livelab is using Cloud Shell, which has Python 3.8.14 preinstalled.*
+*Note: This Livelab is using Cloud Shell, which has Python 3.9.20 preinstalled.*
 
 * Connect to the Oracle Autonomous Database Serverless using the python-oracledb driver
 * Learn how to validate Python operations
@@ -40,9 +40,11 @@ In this lab, you will run a Shell script that will automatically install the pyt
 This lab assumes you have completed the following steps:
 * Login to the Oracle Sandbox
 * Have an Oracle Autonomous Database Serverless already created
-* have Python 3 installed. NOTE: In your own instance, Python 3 can be obtained from your operating system package library or from [python.org](https://python.org). On Windows, use Python 3.7 or later. On macOS, use Python 3.8 or later. On Linux, use Python 3.6 or later.
+* have Python 3 installed. NOTE: In your own instance, Python 3 can be obtained from your operating system package library or from [python.org](https://python.org). On Windows, macOS or Linux, use Python 3.9 or later.
 
 ## Task 1: Download Oracle Autonomous Database Wallet
+
+To connect to the Oracle Autonomous Database, you need the wallet file.
 
 1.  Login to Oracle Cloud Account (Launch OCI in the Reservation Information Page)
 2.  Click the **Navigation** Menu in the upper left, navigate to **Oracle Database** and select **Autonomous Database**
@@ -119,7 +121,7 @@ In the Oracle Autonomous Database Summary screen, we're going to launch Cloud Sh
 
 ### Install Python 3
 
-Python comes preinstalled on most Linux distributions, and for this LiveLab, the Cloud Shell already has Python 3.8.14 preinstalled, so you don't have to run this step. In case you wanted to install Python in your own environment, outside of Oracle Sandbox, the steps for installing it are provided below.
+Python comes preinstalled on most Linux distributions, and for this LiveLab, the Cloud Shell already has Python 3.9.20 preinstalled, so you don't have to run this step. In case you wanted to install Python in your own environment, outside of Oracle Sandbox, the steps for installing it are provided below.
 The Python packages can be obtained from the software repository of your Linux distribution using the package manager.
 
 1. Open up the Oracle Cloud Shell and check if python3 has been installed, by running the command:
@@ -130,7 +132,7 @@ The Python packages can be obtained from the software repository of your Linux d
     </copy>
     ````
 
-    For this tutorial, Python version 3.6 (or later) is preferred. python-oracledb version 1.0 (or later) is needed.
+    For this tutorial, Python version 3.6 (or later) is preferred. python-oracledb version 3.1 (or later) is needed.
 
     You must have an Oracle Autonomous Database already created, in order to connect to it using the python-oracledb driver.
 
@@ -141,8 +143,6 @@ The Python packages can be obtained from the software repository of your Linux d
     sudo yum -y install python3 python3-tools
     </copy>
     ````
-
-    ![install python](./images/p_installPython.jpg " ")
 
 ### Install python-oracledb driver
 
