@@ -50,6 +50,10 @@
             "filename": "../../java-download/java-download.md"
         },
         {
+            "title": "Appendix: Use JMS Resource Health",
+            "filename": "../../use-jms-resource-health/use-jms-resource-health.md"
+        },
+        {
             "title": "Need Help?",
             "description": "Solutions to Common Problems and Directions for Receiving Live Help",
             "filename": "https://oracle-livelabs.github.io/common/labs/need-help/need-help-freetier.md"

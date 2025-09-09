@@ -1,0 +1,29 @@
+{
+    "workshoptitle": "Smart Shopping with Oracle Database 23ai: Discover What You Really Want",
+    "help": "livelabs-help-db_us@oracle.com",
+    "tutorials": [
+        {
+            "title": "Introduction",
+            "description": "The Introduction is always second for LiveLabs. The title and contents menu title match for the Introduction.",
+            "filename": "../../introduction/introduction.md"
+        },
+        {
+            "title": "Lab 1: Run the demo!",
+            "description": "Labs that follow the introduction are numbered, starting with Lab 1",
+            "filename": "../../demo/demo.md"
+        },
+        {
+            "title": "Lab 2: Explore & improve the code!",
+            "filename": "../../code/code.md"
+        },
+        {
+            "title": "Lab 3: Implement a Semantic Cache",
+            "filename": "../../cache/cache.md"
+        },
+        {
+            "title": "Need Help?",
+            "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+            "filename": "https://oracle-livelabs.github.io/common/labs/need-help/need-help-livelabs.md"
+        }
+    ]
+}

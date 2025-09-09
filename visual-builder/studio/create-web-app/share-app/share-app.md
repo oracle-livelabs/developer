@@ -84,7 +84,7 @@ Now that you've shared your application, you need to get its URL so you can pass
     ![The shared web application is shown in a new browser tab, with the data imported from your workspace.](images/open-shared-application-result.png "")
 
 2. Make a note of the application's URL to share with your team, then close the browser tab.
-3. To view the same shared application now deployed to your development environment, click ![Go to Project Page icon](images/go-to-project-home-icon.png) **Go to Project page** in the header, then click ![Environments icon](images/vbs-environments-icon.png) **Environments** and **Deployments**. Expand **tutorial-hr-project** to view the shared application in your list of deployments.
+3. To view the same shared application now deployed to your development environment, click ![Go to Project Page icon](images/go-to-project-home-icon.png) **Go to Project page** in the header, select ![Environments icon](images/vbs-environments-icon.png) **Environments**, then click **Deployments** for the Development environment. Expand **tutorial-hr-project** to view the shared application in your list of deployments.
 
     ![A list of deployments in the Development environment is shown. The tutorial-hr-project is shown with the Shared status and other identifying details.](images/shared-deployment.png "")
 
@@ -97,4 +97,4 @@ Now that you've shared your application, you need to get its URL so you can pass
 ## Acknowledgements
 
 * **Author** - Sheryl Manoharan, VB Studio User Assistance, November 2021
-* **Last Updated By/Date** - Sheryl Manoharan, April 2024
+* **Last Updated By/Date** - Sheryl Manoharan, July 2025

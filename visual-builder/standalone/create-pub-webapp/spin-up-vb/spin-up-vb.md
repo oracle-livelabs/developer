@@ -25,9 +25,9 @@ This lab assumes you have:
 
 ## Task 1: Create a compartment
 
-Visual Builder instances use Oracle Cloud Infrastructure (OCI) as underlying infrastructure. To connect your Visual Builder instance to OCI resources, you need a dedicated compartment. While you can use the `root` compartment for your Visual Builder, it's recommended that you create a dedicated compartment to better organize and isolate your Visual Builder resources.
+Visual Builder instances use Oracle Cloud Infrastructure (OCI) as underlying infrastructure. To connect your Visual Builder instance to OCI resources, you need a dedicated compartment. While you can use the `root` compartment for your Visual Builder instance, it's recommended that you create a dedicated compartment to better organize and isolate your Visual Builder resources.
 
-1. On the Oracle Cloud Get Started page, click the menu ![Menu icon](images/hamburger.png) in the upper left corner.
+1. On the Oracle Cloud Get Started page, click the navigation menu ![Menu icon](images/hamburger.png) in the upper left corner.
 
 2. Select **Identity & Security**, then **Compartments**.
 
@@ -69,4 +69,4 @@ Visual Builder instances use Oracle Cloud Infrastructure (OCI) as underlying inf
 ## Acknowledgements
 
 * **Author** - Sheryl Manoharan, Visual Builder User Assistance, August 2021
-* **Last Updated** - February 2023
+* **Last Updated** - May 2025

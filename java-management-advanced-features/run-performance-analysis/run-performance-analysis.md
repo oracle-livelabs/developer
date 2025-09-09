@@ -25,7 +25,7 @@ In this lab, you will:
 
 1. Open the navigation menu, click **Observability & Management**. Click **Fleets** under **Java Management**. Select the fleet that you have configured in [Lab 1](?lab=set-up-and-enable-advanced-features-on-java-management-service).
 
-   ![image of console navigation to java management service](images/console-navigation-jms-fleet.png)
+   ![image of console navigation to java management service](images/console-navigation-jms.png)
 
 2. Scroll down the **Fleet** details page. Under the **Resources** menu, select **Managed instances**.
 
@@ -127,4 +127,4 @@ In this lab, you will:
 ## Acknowledgements
 
 * **Author** - Ivan Eng, Java Management Service
-* **Last Updated By** - Yuan Chi Liu, October 2023
+* **Last Updated By** - Hannah Wong, May 2025

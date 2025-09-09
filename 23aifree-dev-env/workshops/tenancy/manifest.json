@@ -1,0 +1,48 @@
+{
+    "workshoptitle": "Become a Data Engineer—Build an Oracle Database 23ai Test Lab on your Laptop",
+    "help": "livelabs-help-db_us@oracle.com",
+    "tutorials": [
+        {
+            "title": "Introduction",
+            "description": "The Introduction is always first. The title and contents menu title match for the Introduction.",
+            "filename": "../../introduction/introduction.md"
+        },
+        {
+            "title": "Lab 1: Install Podman Desktop",
+            "description": "Preparing podman ",
+            "filename": "../../podman-setup/podman-setup.md"
+        },
+        {
+            "title": "Lab 2: Create a Podman Machine",
+            "description": "Preparing podman ",
+            "filename": "../../podman-machine/podman-machine.md"
+        },
+        {
+            "title": "Lab 3: Install Visual Studio Code",
+            "description": "Preparing vs code",
+            "filename": "../../vscode-setup/vscode-setup.md"
+        },
+        {
+            "title": "Lab 4: Add Oracle SQL Developer extension to VS Code",
+            "description": "extend vs code",
+            "filename": "../../sqldev-setup/sqldev-setup.md"
+        },
+        {
+            "title": "Lab 5: Fast start! Build your first Oracle Database 23ai free container!",
+            "filename": "../../23aifree/23aifree.md"
+        },
+        {
+            "title": "Lab 6: Container Lifecycle & Fundamentals",
+            "filename": "../../container-options/container-options.md"
+        },
+        {
+            "title": "Lab 7: Build a 23ai development container",
+            "filename": "../../build-a-test-env/build-a-test-env.md"
+        },
+        {
+            "title": "Need Help?",
+            "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+            "filename": "https://oracle-livelabs.github.io/common/labs/need-help/need-help-freetier.md"
+        }
+    ]
+}
