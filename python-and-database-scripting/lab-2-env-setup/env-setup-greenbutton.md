@@ -122,20 +122,23 @@ The Python packages can be obtained from the software repository of your Linux d
 The **samples/tutorial** directory has scripts to run and modify. The **samples/tutorial/sql** directory has all the SQL scripts used by the Python files to create database tables and other objects.
 ## Task 4: Download Oracle Autonomous Database Wallet
 
+To connect to the Oracle Autonomous Database, you need the wallet file.
+
 1.  Login to your Oracle Cloud Account
 2.  Click the **Navigation** Menu in the upper left, navigate to **Oracle Database** and select **Autonomous Database**
-3.  In the Autonomous Database Summary screen, select **Database Connection** tab and in the popup **Database Connection** window, in the **Download Client Credentials (Wallet)** section,
+3.  In the Autonomous Database Summary screen, select **Database Connection** section and in the **Database Connection** window, in the **Download client credentials (Wallet)** section,
     -  select Wallet Type: Instance Wallet
     - hit **Download Wallet** button
-![Wallet](./images/wallet.png " ")
 
-2. Specify password for the Wallet
+    ![Wallet](./images/wallet25.png " ")
 
-Hit **Download** button and save the wallet as a zip file to a location on your local laptop, then click Close to close the popup window. We will upload this file on Console Shell in the next task, so please make a note of the location where the .zip wallet is saved.
+4. Specify a password for the Wallet
 
- ![Wallet password](./images/wallet_password.png " ")
+    Hit **Download** button and save the wallet as a zip file to a location on your local laptop, then click Close to close the popup window. We will upload this file on Console Shell in the next task, so please make a note of the location where the .zip wallet is saved.
 
-Make a note of the password as this will be used for the database connection and it is required in the subsequent labs.
+    ![Wallet password](./images/wallet_password25.png " ")
+
+    Make a note of the password as this will be used for the database connection and it is required in the subsequent labs.
 
 ## Task 5: Upload Wallet to the Cloud Shell
 
@@ -145,13 +148,13 @@ In the Oracle Autonomous Database Summary screen, we're going to launch Cloud Sh
 
 1. To launch the Cloud Shell, sign in to your Oracle Cloud Infrastructure tenancy and click the command prompt icon in Console header, then select Cloud Shell from the drop down:
 
- ![Cloud Shell](./images/cloud_shell.png " ")
+ ![Cloud Shell](./images/cloud_shell25.png " ")
 
 2. When connected, the following should display:
- ![Cloud Shell terminal](./images/cloud_shell_term.png " ")
+ ![Cloud Shell terminal](./images/cloud_shell_term25.png " ")
 
 3. Drag and drop the Wallet archive from the location where it was saved, to the Console Shell
- ![Cloud shell wallet](./images/cloud_shell_wallet.png " ")
+ ![Cloud shell wallet](./images/cloud_shell_wallet25.png " ")
 
 4. Unzip the wallet
 In your home folder, create directory _Wallets_ and move the wallet archive to the Wallets folder. We are going to unzip the file in this directory
@@ -161,7 +164,7 @@ In your home folder, create directory _Wallets_ and move the wallet archive to t
     $ cd Wallets
     $ unzip Wallet_python_adb.zip
     ````
-    ![unzip](./images/shell_unzip.png " ")
+    ![unzip](./images/shell_unzip25.png " ")
 .
 
 ## Task 6: Environment setup
@@ -170,21 +173,27 @@ We are going to use the [Code Editor](https://docs.oracle.com/en-us/iaas/Content
 Oracle Cloud Infrastructure (OCI) Code Editor provides a rich, in-console editing environment that enables you to edit code and update service workflows and scripts without having to switch between the Console and your local development environment.
 
 To access Code Editor, once logged in to your Oracle Cloud Account, select your tenancy and press command prompt icon in Console header, then select Code Editor as in the image below:
-![Code Editor](./images/code-editor.png " ")
+![Code Editor](./images/cloud_shell25.png " ")
 
 During this lab you will be reviewing and editing the sample tutorial files provided, so you need to open them in Code Editor:
 
 - From the Menu, select File > Open...
+
     ![Code Editor Open](./images/code-editor-open.png " ")
 - Select the location of the samples/tutorial directory and click **Open**
+
     ![Code Editor Open Dir](./images/code-editor-open-dir.png " ")
+
 - On the left side Pane > Files you should see all the files and subdirectories in the /tutorial directory. To review or modify a file, select the desired file and this opens in the file editor.
+
     ![Code Editor Files](./images/code-editor-files.png " ")
+
 - Set Autosave option under File > Autosave menu, to avoid loosing changes you make to the files.
 
 To access the local development environment from Code Editor, you may launch Terminal.
 
 ![Launch Terminal](./images/terminal.png " ")
+
 Alternatively, you may want to keep Cloud Shell open side by side.
 
 Let's do the necessary configurations to connect to the Oracle Autonomous Database. First, we need a few arguments used by the connection:
@@ -496,4 +505,4 @@ You have learned how to:
 ## Acknowledgements
 * **Authors** - Christopher Jones, Anthony Tuininga, Sharad Chandran, Veronica Dumitriu
 * **Contributors** - Jaden McElvey, Anoosha Pilli, Troy Anthony
-* **Last Updated By/Date** - Veronica Dumitriu, Oracle Database Drivers Product Management, Aug 2023
+* **Last Updated By/Date** - Veronica Dumitriu, Oracle Database Drivers Product Management, Sep 2025
