@@ -357,6 +357,7 @@ The parameters we'll use:
 1. Copy the following code and run:
 
     ```python
+    <copy>
     # Grab the request_id from the same customer bundle we used for recommendations
     ret_req = (customer_json.get("returnRequests") or [{}])[0]
     request_id = ret_req.get("requestId")
@@ -392,6 +393,7 @@ The parameters we'll use:
 
     connection.commit()
     print(f"✅ Task 6 complete: recommendation chunked and stored for request {request_id} (sizes: {chunk_sizes}).")
+    </copy>
     ```
 
 2. Click the "Run" button to execute the code.
@@ -609,4 +611,4 @@ You may now proceed to the next lab.
 ## Acknowledgements
 * **Authors** - Francis Regalado, Uma Kumar
 * **Contributors** - Kevin Lazarz
-* **Last Updated By/Date** - Francis Regalado, August 2025
+* **Last Updated By/Date** - Richard Piantini Cid, September 2025
