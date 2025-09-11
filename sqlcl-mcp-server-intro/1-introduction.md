@@ -10,18 +10,18 @@ Estimated Time: 1 hours 10 minutes
 
 In this workshop, you will:
 * Learn about the Model Context Protocol (MCP) and the SQLcl MCP Server
-* Configure an AI agent
+* Configure an AI Agent
 * Register a SQLcl MCP Server 
 * Explore SQLcl MCP Server "Tools"
 * Rely on sample prompts to accelerate your understanding of the SQLcp MC Server's capabilities
 
-### Prerequisites
+### Prerequisites 
 
 This lab assumes you have:
 * An Oracle Cloud, LiveSQL, or FreeSQL account
 * Access to a currently supported Oracle database (or LiveSQL/FreeSQL account if participating in an instructor-led workshop)
 * Organizational Roles/Privileges to install the following software on your employer-provided work station:
-* MS Visual Studio Code 
+    * MS Visual Studio Code 
 
 ### About
 
@@ -29,15 +29,15 @@ This lab assumes you have:
 
 The Model Context Protocol (MCP) is a proposed standard for how AI Agents might communicating with you and your information, applications, and data, through an intermediary called an MCP Server.
 
-An MCP Server allows you to take your core tech, like SQLcl, and "connect" it to an AI Agent. Once the agent is "aware" of an MCP Server, it can then use whatever MCP Server "Tools" are available to it to create highly-developed workflows. This workflows would focus on the context you are in, like in this workshop: database object creation, simple web applictions driven by your data, simple monitoring dashboards, and more.
+An MCP Server allows you to take your core tech, like SQLcl, and "connect" it to an AI Agent. Once the Agent is "aware" of an MCP Server, it can then use whatever MCP Server "Tools" are available to it to create highly-developed workflows. This workflows would focus on the context you are in, like in this workshop: database object creation, simple web applictions driven by your data, simple monitoring dashboards, and more.
 
-**What does this mean for you?** You can ask the agent to perform certain functions in and around your database, its objects, or data while simultaneously being "connected" to the Large-language Model (LLM) of your choice. Communicate using natural, plain-language; in what feels more like a collaboration with you and an AI Agent. This makes working with AI agents less question-and-answer (Single-shot), and more continuous and iterative (Agentic Workflow).
+**What does this mean for you?** You can ask the Agent to perform certain functions in and around your database, its objects, or data while simultaneously being "connected" to the Large-language Model (LLM) of your choice. Communicate using natural, plain-language; in what feels more like a collaboration with you and an AI Agent. This makes working with AI Agents less question-and-answer (Single-shot), and more continuous and iterative (Agentic Workflow).
 
 **Single-shot GenAI vs Agentic Workflows**
 
 Single-Shot AIs rely on constant user intervention; very manual. Whereas Agentic Workflows enable an Agent to orchestrate a complete workflow. But the user is still in control. These workflows are not only fully-fleshed out plans, but they are persistent, observable, and safe.
 
-  ![1-sqlcl-mcp-interaction-graphic-overview](./images/lab-1/3-single-shot-vs.agentic-ai.jpeg " ")
+  ![1-sqlcl-mcp-interaction-graphic-overview](./images/lab-1/3-single-shot-vs-agentic-ai.jpeg " ")
 
   <p></p>
 
@@ -56,16 +56,16 @@ Here is a sample use case involving the Oracle database, an AI Agent, and the SQ
 <p></p>
 
    1. A user sets a task in natural language. Something like, "Find the top 10 most expensive queries from last week and recommend an index.”
-   2.	The agent responds; building or showing a plan, and selecting the best MCP Server Tools to achieve the goal. 
+   2.	The Agent responds; building or showing a plan, and selecting the best MCP Server Tools to achieve the goal. 
    3.	The LLM (that underpins an AI Agent) might generate SQL or perhaps choose a prebuilt Tool from available MCP Servers. In this case it might call upon SQLcl to aid in performing a task.
-   4.	One of the SQLcl MCP Server's Tools is `connect`<sup id="ref-1"><a href="#fn-1">1</a></sup>. An agent would know of this ahead of time, and use the `connect` Tool to connect to your Oracle database via JDBC using your stored credentials (an LLM never sees your passwords).
+   4.	One of the SQLcl MCP Server's Tools is `connect`<sup id="ref-1"><a href="#fn-1">1</a></sup>. An Agent would know of this ahead of time, and use the `connect` Tool to connect to your Oracle database via JDBC using your stored credentials (an LLM never sees your passwords).
    5.	Once connected, all of your standard security settings and rules will be enforced since your Agent is actually relying on the SQLcl MCP Server to interact with the Oracle database.
-   6.	Once SQLcl has delivered results to the agent, the underlying LLM would summarize, validate, and propose next steps. 
+   6.	Once SQLcl has delivered results to the Agent, the underlying LLM would summarize, validate, and propose next steps. 
    7.	The user might then approve, decline, or modify the revised action plan, at each step.
 
 #### Protocols
 
-Typically you'll interact with your MCP server through an AI Agent, using natural language queries. You can indicate which "Tools" to use from an MCP Server. Or, your Agent might suggest using them with zero prompting (depending on the Agent, and what "guardrails" you have in place). This communication between you, the AI agent, and MCP Servers is "the Protocol." 
+Typically you'll interact with your MCP server through an AI Agent, using natural language queries. You can indicate which "Tools" to use from an MCP Server. Or, your Agent might suggest using them with zero prompting (depending on the Agent, and what "guardrails" you have in place). This communication between you, the AI Agent, and MCP Servers is "the Protocol." 
 
 <!-- A lot happens under the covers for MCP to work, but you should know that MCP can support the following communication mechanisms: 
 
@@ -128,12 +128,12 @@ Some things to consider when working with *any* AI Agent and/or MCP Server:
 
 - **Least Privileges:** Use read-only accounts for analytic/reporting tasks.
 - **Segregation of Duties:** Separate querying from DDL/DML (use different connections).
-- **Policies:** Apply existing AI data use policies; add agent specific rules (e.g., “no PII extraction,” “no mass updates”).
-- **Avoid Tool Overlap:** Do not ship multiple MCP servers that claim the same capability (e.g., multiple “run SQL” tools) — agents will get confused.
+- **Policies:** Apply existing AI data use policies; add Agent specific rules (e.g., “no PII extraction,” “no mass updates”).
+- **Avoid Tool Overlap:** Do not ship multiple MCP servers that claim the same capability (e.g., multiple “run SQL” tools) — Agents will get confused.
 - **Approval Workflow:** Require per step approval for anything that changes data, schema, security, or performance posture.
 - **Monitoring:** 
-    - Tag queries (model + agent) via SQL comments or logs (SQLcl MCP Server does this by default). 
-    - Store agent actions (who/what/when/db/plan) in an audit table.
+    - Tag queries (model + Agent) via SQL comments or logs (SQLcl MCP Server does this by default). 
+    - Store Agent actions (who/what/when/db/plan) in an audit table.
 - **Defense in Depth:** Consider using:
     - SQL Firewall patterns to block risky statements.
     - Data Vault for privileged access management.
@@ -142,21 +142,21 @@ Some things to consider when working with *any* AI Agent and/or MCP Server:
 
 <p></p>
 
-> &#9888; **REMEMBER:** When an AI Agent uses the SQLcl MCP Server, credentials are never shown to the LLM/agent--its all managed in an Oracle Wallet. Therefore the agent *must* honor database Roles, Privileges, and security safeguards (VPD/Row Level Security, Data Vault, SQL Firewall, Resource Manager).
+> &#9888; **REMEMBER:** When an AI Agent uses the SQLcl MCP Server, credentials are never shown to the LLM/Agent--its all managed in an Oracle Wallet. Therefore the Agent *must* honor database Roles, Privileges, and security safeguards (VPD/Row Level Security, Data Vault, SQL Firewall, Resource Manager).
 
 #### MCP Best Practices
 | | |
 | :--: | -- |
-|***Do...***|<ul><li>use read only connections by default.</li><li>keep MCP servers "focused" (no overlapping “run SQL” from multiple servers).</li><li>ensure tools explain themselves (clear descriptions).</li><li>log everything the agent runs (transparency).</li>
-|**Do *not...*** | <ul><li>blanket approve session actions.</li><li>expose credentials to the LLM.</li><li>deploy agents into production without strict database controls (Firewall, Vault, RLS, Resource Manager).</li><li>assume the LLM is always correct—review SQL, PL/SQL, plans, and results.</li></ul>|
+|***Do...***|<ul><li>use read only connections by default.</li><li>keep MCP servers "focused" (no overlapping “run SQL” from multiple servers).</li><li>ensure tools explain themselves (clear descriptions).</li><li>log everything the Agent runs (transparency).</li>
+|**Do *not...*** | <ul><li>blanket approve session actions.</li><li>expose credentials to the LLM.</li><li>deploy Agents into production without strict database controls (Firewall, Vault, RLS, Resource Manager).</li><li>assume the LLM is always correct—review SQL, PL/SQL, plans, and results.</li></ul>|
 {: title="MCP Server Best Practices"}
 
 ### Summary 
 
 | | | 
 | -- | -- | 
-| **What** | MCP Servers aide AI agents in creating plans and executing workflows and tasks on the Oracle Database. |
-| **How** | The SQLcl MCP server provides tools (connect, run sql, awr, etc.) to your preferred AI agent, using wallet-based credentials and Oracle’s enterprise-grade security features. |
+| **What** | MCP Servers aide AI Agents in creating plans and executing workflows and tasks on the Oracle Database. |
+| **How** | The SQLcl MCP server provides tools (connect, run sql, awr, etc.) to your preferred AI Agent, using wallet-based credentials and Oracle’s enterprise-grade security features. |
 | **Why** | Huge productivity gains (database exploration, reporting, performance triage, etc.) while users remain in control. All while respecting security controls. |
 {: title="MCP Server Wrap-up"}
  

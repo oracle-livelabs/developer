@@ -2,7 +2,7 @@
 
 ## Introduction
 
-In this Lab you will use Cline and the SQLcl MCP Server to create a starter web application. The example in this Lab generates a React-based sample web application. However, should you decide, you an opt for a framework/library of your choosing.
+In this Lab you will use Cline and the SQLcl MCP Server to create a starter web application. This lab's prompt will generate a React-based application. However, should you decide, you can opt to use the framework/library of your choosing.
 
 Estimated Time: 12 minutes
 
@@ -24,20 +24,17 @@ This lab assumes you have:
 
 <p></p>
 
-> &#9872; **NOTE:** In this lab you must allow your AI Agent to create a new project folder, scaffold a sample application, and if required install dependencies (e.g., npm, Node, Express, React, etc. ).
+> &#9872; **NOTE:** In this lab you must allow your AI Agent to create a new project folder, scaffold a sample React application, and if required, install project dependencies (e.g., npm, Node, Express, React, etc. ).
 
 <p></p>
 
-> &#9872; **NOTE:** If participating in a workshop, you may optionally use your the credentials provided to you.
+> &#9872; **NOTE:** If participating in a workshop, you may optionally use your the credentials and workstation provided to you.
 
 <p></p>
 
 ## Task 1: Review the prompt
 
-1. A sample prompt has been provided for you.
-
-   <mark>Embedding the actual markdown prompt, within markdown has been unsuccessful. Temporary option is the open/download option.</mark>
-
+1. A sample prompt has been provided for you. You may review it here, open the `.md` file in a new tab, or download the file locally.
 
    <details>
       <summary style="color: #0000FF";><kbd style="font-size: 10px;">(click) </kbd><strong>Sample prompt</strong></summary>
@@ -51,6 +48,7 @@ This lab assumes you have:
       <p></p>
        
       ```txt
+      <copy>
       Title: Single Web Page Application example
 
       Task 1: Overview
@@ -87,37 +85,33 @@ This lab assumes you have:
 
       1. Launch the web application and review it for accuracy and expected outcome
       2. If the data and visualization are not visible on screen, please debug as needed. 
-
+      </copy>
       ```
          
    </details>
    <p></p>
 
-      > &#9872; **NOTE:** This Lab is designed to be open-ended, accordingly, your individual results will vary. Feel free to "go off-script" &#9786; !
+> &#9872; **NOTE:** This Lab is designed to be open-ended, accordingly, your individual results will vary. Feel free to improvise &#9786; !
 
 
-      2. Save the prompt locally to a file named something like: `create_a_react_app_prompt.md`. 
+2. After reviewing the prompt, you may wish to save it locally. But, before you begin, review the various sections of the prompt: 
 
-      3. Before you begin, review the sections of the prompt: 
+    - Overview
+    - CO Schema exploration
+    - Create the web application
+    - Provide helpful insight
+    - Disconnect from the database
+    - Launch the web application
 
-         - Overview
-         - CO Schema exploration
-         - Create the web application
-         - Provide helpful insight
-         - Disconnect from the database
-         - Launch the web application
-
-      4. As you may have seen in other scenarios in this LiveLab, you may save this prompt as a markdown file and execute it in your agent's "Plan" mode. 
-
-      5. If you decide to improvise, and use the prompt as a reference, your results may differ from the Lab's expected output. If you get stuck, start over with the provided prompt and let the LLM and the MCP server do the work for you.
+3. If you decide to improvise, may use the prompt as a reference. Know that your results may differ from the lab's expected output. If you get stuck, start over with the provided prompt and let the LLM and the SQLcl MCP server do much of the work for you.
 
 ## Task 2: Observing the prompt execution
 
-1. The prompt that you have been provided is the result of iterative testing. It is designed to teach you how to prompt your LLM to best utilize the SQLcl MCP Server. Following along with the prompt should result in a repeatable and predictable outcome. 
+1. The prompt that you have been provided is the result of iterative testing. The prompt is provided to teach you how to guide your LLM to best utilize the SQLcl MCP Server. Following along with the prompt should result in a repeatable and predictable outcome. 
 
-> Note: You should expect to complete this Lab with a version unique to you; and one that closesly resembles the examples and images in this Lab.
+> &#9872; **NOTE:** You should expect to complete this lab with a version of the application that is unique to you; but that still closesly resembles any examples and images in this Lab.
 
-2. Navigate to your Cline extension. Toggle the agent to **Plan** mode. 
+2. When ready, navigate to your Cline extension. Toggle the Agent to **Plan** mode. 
 
 3. Click the `+` icon to add files and images to the task. Select the file name you chose for the prompt. 
 
@@ -127,45 +121,39 @@ This lab assumes you have:
     <copy>Review the steps in the included markdown file. Detail the steps you intend to take to achieve the desired outcome. And await for my approval before proceeding.</copy>
     ```
 
-5. Carefully follow along with the agent's actions, providing feedback and coaching as needed. 
+5. Carefully follow along with the Agent's actions, providing feedback and coaching as needed. 
 
     ![1-review-plan-in-overview-section](./images/lab-5/1-review-plan-in-overview-section.png " ")
 
-   Should the agent request to transition to **Act** mode, proceed carefully. Only approve actions you know to be safe, and reject those actions which you deem unecessary or risky.
+6. Should the Agent request to transition to **Act** mode, proceed carefully. Only approve actions you know to be safe, and reject those actions which you deem unecessary or risky.
 
-      ![7-opening-up-front-end-of-application](./images/lab-5/7-opening-up-front-end-of-application.png " ")
+    ![7-opening-up-front-end-of-application](./images/lab-5/7-opening-up-front-end-of-application.png " ")
 
-6. Continue building out your application and review Task 3 once you have successfully launched your application.
-
-    <!-- | | | 
-    | -- | -- | 
-    | ![](./images/lab-5/2-agent-summary-plan-for-overview.png " ") | ![](./images/lab-5/3-agent-response-for-exploring-co-schema.png " ")|
-    | ![](./images/lab-5/4-example-of-agent-exploring-co-schema.png " ") | ![](./images/lab-5/5-approve-make-directory-for-react-app.png " ")|
-    |![](./images/lab-5/6-approve-to-create-app-jsx-file.png " ")|![](./images/lab-5/6-approve-to-create-app-jsx-file.png " ")| -->
+7. Continue building out your application and review the next task once you have successfully launched your application.
 
 ## Task 3: Comparing notes
 
-1. By now you should have a sample React application. While your values are hard-coded, you might ask the agent to build the app out further.
-
-2. Compare the sample application to your own:
+1. Compare the sample application to your own:
 
    ![8-reviewing-the-sample-ui-with-hard-coded-values-above-fold](./images/lab-5/8-reviewing-the-sample-ui-with-hard-coded-values-above-fold.png " ")
 
    ![9-reviewing-the-sample-ui-with-hard-coded-values-below-fold](./images/lab-5/9-reviewing-the-sample-ui-with-hard-coded-values-below-fold.png " ")
 
+2. By now you should have a sample React application. While your values are hard-coded, you might ask the Agent to build the app out further.
+
 ## Task 4: Troubleshooting
 
-1. Did you run into any issues? Review these common issues we've encountered, and attempt to resolve the problem.
+1. Issues? Review these following steps and attempt to resolve the problem.
 
-2. Merge conflict markers. LLMs can sometimes have issues with advanced file creation, preparation, and updating. One common issue is their inability to remove Merge convlict markers, you may need to manually remove and save a file every now and again. 
+2. Merge conflict markers (e.g. `>>>>>>> REPLACE`)? LLMs can sometimes have issues with advanced file creation, preparation, and updating. One common issue is their inability to remove merge conflict markers, you may need to manually remove and save a file every now and again. 
 
    ![12-troubleshooting-merge-conflict-marker-errors](./images/lab-5/12-troubleshooting-merge-conflict-marker-errors.png " ")
 
-3. The agent may forget, or narrow its focus too much. You may need to prompt it every now and again. For instance, in this example, we reiterated the request to connect as a specific user: 
+3. The Agent may forget, or narrow its focus too much. The Agent may require periodic prompting. For instance, in this example, we reiterated the request to connect as a specific user: 
 
    ![13-possible-intervention-of-prompting-to-connect-as-user.](./images/lab-5/13-possible-intervention-of-prompting-to-connect-as-user.png " ")
 
-4. An agent might *convincingly* tell you a task has been accomlished, when in fact it has not. In cases such as these, you may need to provide the agent with quality feedback markers, or actual errors from your application's console log. 
+4. An Agent might *convincingly* tell you a task has been accomlished, when in fact it has not. In cases such as these, you may need to provide the Agent with quality feedback markers, or actual errors from your application's console log. 
 
    ![14-troubleshooting-application-networking-issues](./images/lab-5/14-troubleshooting-application-networking-issues.png " ")
 
@@ -173,7 +161,7 @@ This lab assumes you have:
 
 1. By now you should have a starter React web application. 
 
-2. If you attempted to create one on your own, try this Lab again, but use the provided prompt verbatim. Compare the results; what worked, what didn't work? 
+2. If you attempted to create one on your own, try this Lab again but use the provided prompt verbatim. Compare the results; what worked, what didn't work? 
 
 3. Need more help? Review the **Learn More** section of this Lab for helpful blog posts and tutorials. 
 
