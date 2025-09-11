@@ -25,8 +25,7 @@ Python is open-source, cross-platform, and free of cost. There's no excuse not t
 
 In this lab, you will:
 
-*Note: This Livelab is using Cloud Shell, which has Python 3.9.20 preinstalled.*
-
+* Install Python 3, if not already installed. *Note: This Livelab is using Cloud Shell, which has Python 3.9.20 preinstalled.*
 * Connect to the Oracle Autonomous Database Serverless using the python-oracledb driver
 * Learn how to validate Python operations
 
@@ -55,11 +54,11 @@ The Python packages can be obtained from the software repository of your Linux d
 
 2.  Upgrade Python if you do not have Python 3 installed. There is no harm in running this command multiple times, the system will either install packages or let you know they are already installed.
 
-````
-<copy>
-    sudo yum -y install python3 python3-tools
-</copy>
-````
+    ````
+    <copy>
+        sudo yum -y install python3 python3-tools
+    </copy>
+    ````
 
 ## Task 2: Install python-oracledb driver
 
@@ -69,13 +68,13 @@ The Python packages can be obtained from the software repository of your Linux d
 
     ````
     <copy>
-        pip show oracledb
-        python3 -m pip install oracledb cryptography --user
+    pip show oracledb
+    python3 -m pip install oracledb cryptography --user
     </copy>
     ````
- ![install driver](./images/install-driver.png " ")
+    ![install driver](./images/install-driver.png " ")
 
-*Note:* At runtime, the module name of the python-oracledb package is **oracledb**
+    *Note:* At runtime, the module name of the python-oracledb package is **oracledb**
 
 2.  Test your install by launching the python console and list the available modules.
 
@@ -116,10 +115,8 @@ The Python packages can be obtained from the software repository of your Linux d
     </copy>
     ````
 
-
-    ![Sample Files Git Clone](./images/git-clone.png " ")
-
 The **samples/tutorial** directory has scripts to run and modify. The **samples/tutorial/sql** directory has all the SQL scripts used by the Python files to create database tables and other objects.
+
 ## Task 4: Download Oracle Autonomous Database Wallet
 
 To connect to the Oracle Autonomous Database, you need the wallet file.
@@ -180,9 +177,10 @@ During this lab you will be reviewing and editing the sample tutorial files prov
 - From the Menu, select File > Open...
 
     ![Code Editor Open](./images/code-editor-open.png " ")
-- Select the location of the samples/tutorial directory and click **Open**
 
-    ![Code Editor Open Dir](./images/code-editor-open-dir.png " ")
+- Select the location of the _samples/tutorial directory_ and click **Open**
+
+    ![Code Editor Open Dir](./images/code-editor-open-dir25.png " ")
 
 - On the left side Pane > Files you should see all the files and subdirectories in the /tutorial directory. To review or modify a file, select the desired file and this opens in the file editor.
 
