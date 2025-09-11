@@ -34,7 +34,7 @@ Users with [the right roles](https://docs.oracle.com/pls/topic/lookup?ctx=en/clo
 1. Log in to your Oracle Cloud Applications instance.
   ![The Oracle Cloud Applications sign-in page is shown. The User ID field shows john.dunbar, the Password field is empty.](images/login.png)
 
-2. Click the menu ![Hamburger menu icon](images/icon-menu.png) in the upper left corner, navigate to **Configuration**, then select **Visual Builder** (synonymous with VB Studio).
+2. Click the navigation menu ![Hamburger menu icon](images/icon-menu.png) in the upper left corner, navigate to **Configuration**, then select **Visual Builder** (synonymous with VB Studio).
   ![This image shows the left navigator menu in an Oracle Cloud Applications instance. The Configuration submenu item is expanded and the Visual Builder menu item is highlighted.](images/configuration-vb.png)
 
 3. When VB Studio opens on the Organization page, select the project you want to use to develop extensions for your Oracle Cloud Application. If you don't have a project, create one as described in the next task.
@@ -68,9 +68,9 @@ Create a project to manage the tools and processes you need to develop an extens
 
     ![The Project Home page includes a Workspaces area, Environments area, and a Recent Activities feed. On the left, the Organization, Project Home, Workspaces, Git, Merge Requests, Builds, Environments, and other project components show.](images/project-home.png "Project Home page")
 
-      **Tip:** If you want to keep the left navigation menu clutter-free, showing only frequently used items, click ![Edit icon](images/icon-edit.png), select the items under User, and click **Save**. This tutorial commonly uses Workspaces, Git, Merge Requests, Builds, and Environments.
+      **Tip:** If you want to keep the left navigation menu clutter-free, showing only frequently used items, click ![Edit icon](images/icon-edit.png), select the items you want under User, and click **Save**. This tutorial commonly uses Workspaces, Git, Merge Requests, Builds, and Environments.
 
-    Because we created a project with no preconfigured settings or content, we need to create what we need, by defining an environment that connects to an Oracle Cloud Applications instance, then creating a workspace with a Git repository.
+    Because we created a project with no preconfigured settings or content, we need to create what we need: an environment that connects to an Oracle Cloud Applications instance and a workspace with a Git repository.
 
 ## Task 3: Define an environment
 
@@ -149,4 +149,4 @@ You may now **proceed to the next lab**.
 ## Acknowledgements
 
 * **Author** - Sheryl Manoharan, VB Studio User Assistance, May 2023
-* **Last Updated By/Date** - Sheryl Manoharan, April 2025
+* **Last Updated By/Date** - Sheryl Manoharan, July 2025

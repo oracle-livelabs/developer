@@ -23,9 +23,9 @@ This lab assumes you have:
 
 In the *Split/Embed* tab, the framework allows you to upload various types of documents and transform their content into vector embeddings in a format that is interpretable by LLMs.
 
-1. Navigate to the *Split/Embed* tab
+1. Navigate to the *Tools* tab and then click on the *Split/Embed* tab
 
-  ![split-embed-interface](./images/split-embed.jpg)
+  ![split-embed-interface](./images/split-embed.png)
 
 1. Choose the embedding model and its parameters
 
@@ -36,7 +36,7 @@ In the *Split/Embed* tab, the framework allows you to upload various types of do
 
   Additionally, you can select different distance metrics and index types to experiment with various vector representations of the same document, allowing you to identify the configuration that best meets your needs.
 
-3. Select your document source
+1. Select your document source
 
   Once the embedding model has been selected, scroll down to the *Load and Split Documents* section to upload the document you wish to store in your **Oracle Database 23ai**.
 
@@ -44,9 +44,9 @@ In the *Split/Embed* tab, the framework allows you to upload various types of do
 
   You can choose from three different file sources:
 
-* **OCI**: Navigate through your tenancy to select documents from the Object Storage. Ensure that your OCI credentials are properly configured in advance.
-* **Local**: Upload a document directly from your local environment.
-* **Web**: Import a document from a publicly accessible web URL.
+    * **OCI**: Navigate through your tenancy to select documents from the Object Storage. Ensure that your OCI credentials are properly configured in advance.
+    * **Local**: Upload a document directly from your local environment.
+    * **Web**: Import a document from a publicly accessible web URL.
 
   In this example, we will embed a document from the web, available at [this link](https://docs.oracle.com/en/database/oracle/oracle-database/23/vecse/ai-vector-search-users-guide.pdf). We will give the alias ***TEST1*** to this vector store.
 
