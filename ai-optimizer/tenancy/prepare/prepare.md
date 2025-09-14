@@ -23,9 +23,9 @@ This lab assumes you have:
 
 In the *Split/Embed* tab, the framework allows you to upload various types of documents and transform their content into vector embeddings in a format that is interpretable by LLMs.
 
-1. Navigate to the *Split/Embed* tab
+1. Navigate to the *Tools* tab and then click on the *Split/Embed* tab
 
-  ![split-embed-interface](./images/split-embed.jpg)
+  ![split-embed-interface](./images/split-embed.png)
 
 1. Choose the embedding model and its parameters
 

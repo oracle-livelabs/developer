@@ -19,6 +19,9 @@ These capabilities make Oracle Database 23ai a **developer-friendly**, **multi-m
 
 Estimated Time: 30 minutes
 
+To get things started we invite you to watch this video and see the lab in action:
+
+  [](videohub:1_v685fi7r:medium)
 
 ### Objectives
 
@@ -41,6 +44,9 @@ This lab assumes you have:
 All of the coding examples will be executed in a new Jupyter Notebook.
 
 1. In **JupyterLab**, click the blue **+** to open the Launcher  
+
+    ![Open Launcher](./images/launcher.png " ")
+
 2. Start a new **Python (ipykernel)** notebook
 
     ![Open Jupyter Notebook](./images/open-new-notebook.png " ")
