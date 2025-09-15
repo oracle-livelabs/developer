@@ -97,7 +97,18 @@ This lab assumes you have:
 
 4. Run the code block to connect to the database. 
 
-    ![Connect to Database](./images/connect-to-db.png " ")
+    ![Connect to Database](./images/lab4task1.png " ")
+
+5. Create the tables and load the data.
+
+* We begin by dropping any old objects.
+* Then we create all tables.
+* We build a JSON duality view called `clients_dv`.
+* We load the ONNX model we will later use for embedding.
+
+    ![Connect to Database](./images/tas2.png " ")
+
+    ![Connect to Database](./images/task2result.png " ")
 
 ## Task 3: Create a Function to retrieve data from the database.
 
@@ -211,7 +222,7 @@ print(recommendations)
 
     >*Note:* Your result may be different due to non-deterministic character of generative AI.
 
-    ![ai recommendation](./images/return-task4recommendations.png " ")
+    ![ai recommendation](./images/task4recommendations.png " ")
 
 ## Task 5: Chunk & Store the Recommendations 
 
@@ -488,5 +499,5 @@ You may now proceed to the next lab.
 
 ## Acknowledgements
 * **Authors** - Francis Regalado
-* **Contributors** - Kevin Lazarz
+* **Contributors** - Kevin Lazarz, Linda Foinding
 * **Last Updated By/Date** - Linda Foinding, September 2025
