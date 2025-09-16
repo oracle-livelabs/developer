@@ -156,6 +156,6 @@ This workflow ensures faster risk analysis, smarter decisions, and tighter colla
 * [Harvesting Object Storage Files as Logical Data Entities](https://docs.oracle.com/en-us/iaas/data-catalog/using/logical-entities.htm)
 
 ## Acknowledgements
-* **Authors** - Eddie Ambler, Otis Barr
-* **Last Updated By/Date** - June 2025, Otis Barr
+* **Authors** - Eddie Ambler
+* **Last Updated By/Date** - September 2025, Eddie Ambler
 

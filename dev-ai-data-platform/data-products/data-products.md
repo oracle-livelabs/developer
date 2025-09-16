@@ -2,7 +2,8 @@
 
 ## Introduction
 
-At SeersEquities, making smart credit decisions doesn't stop at creating great data—it depends on getting that data into the right hands, fast. The loan team may close deals, but it’s the risk team that needs to evaluate those deals in near real time.
+At SeersEquities, making smart credit decisions doesn't stop at creating great data—it depends on getting that data into the right hands, fast. <br>
+The loan team may close deals, but it’s the risk team that needs to evaluate those deals in near real time.
 
 In this lab, you’ll act as a data provider, creating and sharing a data product that includes recently closed loans. You’ll publish this share and authorize a recipient account (used by the risk team) to access it securely.
 
@@ -160,7 +161,8 @@ Paste the activation link you copied earlier into a separate browser tab and cli
 
       ![Define a Data Product Recipient](./images/create-risk-dept-recipient.png "Define a Data Product Recipient")
 
-You’ve now successfully shared a governed, ready-to-query dataset from Autonomous Database with the Risk Department Lead—empowering them with the data they need to make informed decisions.
+
+***Congratulations!*** You’ve now successfully shared a governed, ready-to-query dataset from Autonomous Database with the Risk Department Lead—empowering them with the data they need to make informed decisions.
 
 ## Conclusion
 
@@ -169,6 +171,6 @@ In this lab, you **created and shared a live, query-ready data product**—givin
 At SeersEquities, this means **smoother handoffs, faster risk evaluation, and better cross-team alignment**. For you, it means **mastering a modern data-sharing workflow that’s secure, scalable, and built for collaboration**.
 
 ## Acknowledgements
-* **Authors** - Eddie Ambler, Otis Barr
-* **Last Updated By/Date** - June 2025, Otis Barr
+* **Authors** - Eddie Ambler
+* **Last Updated By/Date** - September 2025, Eddie Ambler
 
