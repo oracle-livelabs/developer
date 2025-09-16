@@ -22,7 +22,7 @@ This lab assumes you have:
 
 ## Task 1: Start the Oracle Resource Manager job
 
-1. Got to the [Oracle AI Optimizer and Toolkit GitHub](https://github.com/oracle-samples/ai-optimizer).
+1. Go to the [Oracle AI Optimizer and Toolkit GitHub](https://github.com/oracle-samples/ai-optimizer).
 
 1. Click on the **Deploy to Oracle Cloud** Button. This will take you to the **Create Stack** page in Oracle Cloud.
 

@@ -1,4 +1,4 @@
-# 🛠️ Create and Share Trusted Data Products
+# 🛠️ Create and Share Data Products
 
 ## Introduction
 
@@ -64,9 +64,9 @@ In this Lab, you will:
       * **Email:** myemail@mycompany.com
       * **Description:** Provide a meaningful description
 
-      * Click **Save**.
-
       ![Define a Data Product Recipient](./images/define-data-product-share-recipient-5.png "Define a Data Product Recipient")
+
+      * Click **Save**.
 
 7. Back on the **Provide Share** page, click **Shares**, then click **Create Share** to launch the **Create Share wizard**.
 

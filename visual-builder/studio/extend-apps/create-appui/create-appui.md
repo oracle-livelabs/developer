@@ -50,7 +50,7 @@ Start by creating an App UI.
     | --- | ---- | --- |
     | 1 | Components | UI components (sorted by categories) that you can drag and drop onto a page|
     | 2 | Data | Endpoints you can work with, based on service connections you create to data objects |
-    | 3 | Structure | Hierarchical view of the page's structure  |
+    | 3 | Structure | Hierarchical view of components on the page  |
     | 4 | Properties | Properties of a component selected on the page |
     | 5 | Canvas | A design, live, or code view of your page's content |
     {: title="Page Designer Work Area"}
@@ -118,4 +118,4 @@ You may now **proceed to the next lab**.
 ## Acknowledgements
 
 * **Author** - Sheryl Manoharan, VB Studio User Assistance, May 2023
-* **Last Updated By/Date** - Sheryl Manoharan, April 2025
+* **Last Updated By/Date** - Sheryl Manoharan, July 2025

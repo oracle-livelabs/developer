@@ -26,7 +26,7 @@ This lab assumes you have:
 
     ![Click the Start Demo Link](./images/start-demo.png =50%x*)
 
-2. Enter in a username and click **Login**.
+2. Welcome to Seer Holdings! Select **Retail** as Industry and **Approval Officer** as role. Enter in a username and click **Login**.
 
     ![Login](./images/login.png =50%x*)
 
@@ -34,21 +34,21 @@ This lab assumes you have:
 
     ![Homepage](./images/app-home.png =50%x*)
 
-## Task 2: Demo - Customer with low risk score
+## Task 2: Demo - Customer with medium risk score
 
-In this first example, you will use the application to authorize a return for a customer with a low risk score. The first user on your to-do list is James Smith.
+In this first example, you will use the application to authorize a return for a customer with a medium risk score. Select the third user on your to-do list David Williams.
 
-1. On the Dashboard page, from the pending review list, select the Customer ID for **James Smith**.
+1. On the Dashboard page, from the pending review list, select the review button for **David Williams**.
 
-    ![Select James Smith](./images/james-smith.png =50%x*)
+    ![Select David Williams](./images/david-williams.png =50%x*)
 
-2. Opening James Smith’s profile reveals his return authorization details—name, location, requested amount, debt, and credit score.  
+2. Opening David William's profile reveals his return authorization details—name, email, request status, loyalty tier, and risk level.  
 
-    ![James Smith AI generated recommendations](./images/james-smith-ai.png =50%x*)
+    ![David Williams Details Page](./images/david-williams-details.png =50%x*)
 
-3. At the bottom of James Smith’s profile, you will find **AI Return Specialist**—a virtual Return‑Authorization Specialist who guides attendees through every step of the AI‑driven returns portal. Riley shows how to upload photos and order data, highlights how AI Vector Search compares each request to millions of past returns, and translates risk scores into plain language. Her friendly tips humanize concepts like graph‑based customer‑lifetime‑value analysis and RAG‑generated policy explanations, so users of any technical level can confidently approve, pend, or deny a return
+3. At the bottom of David William’s profile, you will find **AI Guru**—a virtual Return‑Authorization Specialist who guides attendees through every step of the AI‑driven returns portal. AI Guru shows how to upload photos and order data, highlights how AI Vector Search compares each request to millions of past returns, and translates risk scores into plain language. It's friendly tips humanize concepts like graph‑based customer‑lifetime‑value analysis and RAG‑generated policy explanations, so users of any technical level can confidently approve, pend, or deny a return.
 
-    **Copy** the question below into the AI chatbot and press **Enter**. What does AI Return Specialist say?
+    **Copy** the question below into the AI chatbot and press **Enter**. What does AI Guru say?
 
     ```text
     <copy>
@@ -56,53 +56,53 @@ In this first example, you will use the application to authorize a return for a 
     </copy>
     ```
 
-    ![James Smith chatbot](./images/james-smith-chatbot.png =50%x*)
+    ![David Williams chatbot](./images/david-williams-chatbot.png =50%x*)
 
->💡 In Oracle Database 23ai, **AI Vector Search** allows you to combine your business data with the Large Language Model (LLM) to reduce hallucinations and get accurate answers from your data.
+>💡 In Oracle Database 23ai, **AI Vector Search** allows you to combine your business data with a Large Language Model (LLM) to reduce hallucinations and get accurate answers from your data.
 
 4. Select the **Navigate To Decisions** button.
 
-    ![James Smith Decision](./images/james-smith-decision.png =50%x*)
+    ![David Williams Decision](./images/david-williams-decision.png =50%x*)
 
-    After navigating to the decisions page, the AI evaluation runs in the background. Using AI Vector Search, it semantically matches the content against thousands of historical return records—identifying patterns that suggest either legitimate claims or potential abuse. At the same time, Graph Analytics examines the customer’s prior behavior, highlighting unusual return frequency or links to high-risk product categories. For each case, the system assigns a risk score ranging from Low to Very High and generates a clear recommendation—such as “Approved – consistent with customer profile” or “Request More Info – insufficient documentation.”
+    After navigating to the decisions page, the AI evaluation runs in the background. Using AI Vector Search, it semantically compares the content against thousands of historical return records—identifying patterns that suggest either legitimate claims or potential abuse. At the same time, Graph Analytics examines the customer’s prior behavior, highlighting unusual return frequency or links to high-risk product categories. For each case, the system assigns a risk score ranging from Low to Very High and generates a clear recommendation—such as “Approved – consistent with customer profile” or “Request More Info – insufficient documentation.”
 
-5. In the **Select Final Approved Return Option** section, the risk score and decision are displayed. Once a decision is made, the analyst finalizes the return. A professionally formatted PDF letter is automatically generated, summarizing the outcome and rationale. The customer receives an email moments later, clearly stating whether their return was approved, denied, or needs more information—along with an explanation grounded in policy and precedent.
+5. In the **Select Your Desired Option Option** section, the approval probability and decision are displayed. Once a decision is made, the analyst finalizes the return. A professionally formatted PDF letter is automatically generated, summarizing the outcome and rationale. The customer receives an email moments later, clearly stating whether their return was approved, denied, or needs more information—along with an explanation grounded in policy and precedent.
 
-    ![James Smith Select Final Approved Loan](./images/james-smith-select-final-loan.png =50%x*)
+    ![David Williams Decisions Page](./images/david-williams-decisions.png =50%x*)
 
-6. Select the AI-recommended return decision. In this example, that is **Approved**. 
+6. Select the AI-recommended return decision. In this example, that is **Request More Info**. 
 
     >Please note that your results may vary. The information provided is generated by OCI Generative AI services, and your outcomes may differ from those presented.
 
-    ![James Smith Select Loan 3](./images/james-smith-select-loan.png =50%x*)
+    ![David Williams Select Request More Info](./images/david-williams-select.png =50%x*)
 
-7. Set the final return status to **Approved**, then click **Save Final Approval & Return Status** to complete the process.
+7. Set the final return status to **Request Info**, then click **Confirm Decision** to complete the process.
 
-    The return status has been updated to 'Approved' and saved to the customer profile.
+    The return status has been updated to 'Request Info' and saved to the customer profile.
 
-    ![James Smith Save Loan Status](./images/james-smith-save.png =50%x*)
+    ![David Williams Save Return Status](./images/david-williams-save.png =50%x*)
 
-8.  Click the **Generate Decision as PDF** button.
+8.  Click the **Download Decision as PDF** button.
 
-    ![James Smith Download Recommendation](./images/james-smith-download.png =50%x*)
+    ![David Williams Generate PDF](./images/david-williams-generate-pdf.png =50%x*)
 
 9.  Click **Download PDF**
 
-    ![James Smith Download PDF](./images/james-smith-download-pdf.png =50%x*)
+    ![David Williams Download PDF](./images/david-williams-download.png =50%x*)
 
 10. Display the message the customer would see by opening the downloaded PDF.
 
-    ![Open James Smith PDF](./images/open-james-smith-pdf.png =50%x*)
+    ![Open David Williams PDF](./images/open-david-williams-pdf.png =50%x*)
 
 11. Click the **Return to Dashboard** button to navigate back to the Dashboard.
 
-    ![Return to Dashboard](./images/james-return-dashboard.png =50%x*)
+    ![Return to Dashboard](./images/david-return-dashboard.png =50%x*)
 
-12. Expand **View Approved Customers**. We can see that James Smith has been removed from the Pending Review Return Requests list and has been added to the Approved Return Requests list.
+12. Expand **View In Progress Customers**. We can see that David Williams has been removed from the **Pending Customers** list and has been added to the **In Progress Customers**.
 
-    ![James Smith Approved List](./images/james-smith-approved-list.png =50%x*)
+    ![David Williams In Progress List](./images/david-in-progress.png =50%x*)
 
-**Conclusion**
+**Task Summary**
 
 Once you select and save one of the 3 return options recommended by the AI: 
 
@@ -110,71 +110,72 @@ Once you select and save one of the 3 return options recommended by the AI:
 
 ✅ A finalized PDF decision document is generated.  
 
-✅ The dashboard reflects the change in real-time — marking James as Approved.
+✅ The dashboard reflects the change in real-time — marking David as In Progress.
 
 Congratulations, you have just approved your first customer return! Proceed to the next task.
 
-## Task 3: Demo - Denying a customer with high risk
-In this example, you will navigate the application to review a customer and deny them as part of the exercise. The second user on your to-do list is James Woods.
+## Task 3: Demo - Denying a Customer with high risk
+In this example, you will navigate the application to review a customer and deny them as part of the exercise. The first user on your to-do list is Alice Smith.
 
-1. On the Dashboard page, from the pending review list, select the Customer ID for **James Woods**.
+1. On the Dashboard page, from the pending review list, select the Review Button for **Alice Smith**.
 
-    ![Select James Woods](./images/james-woods.png =50%x*)
+    ![Select Alice Smith](./images/alice-smith.png =50%x*)
 
-2. Opening James Woods’s profile displays his return package details. Within a few seconds, the AI generates automatically recommendations. In this case, the system evaluates a less favorable profile and identifies key risk factors.
+2. Opening Alice Smith’s profile displays her return package details. Within a few seconds, the AI automatically generates recommendations. In this case, the system evaluates a less favorable profile and identifies key risk factors.
 
-    This return has: [placeholder]
+    This customer has:
 
-    * **Identifiable Damage**
-    * An **unusual return frequency**
-    * And has links to **high risk product categories**
+    * A lifetime spend of **$3301.29**
+    * A transaction detail indicating **damaged item for order 5001**
+    * A return frequency of **2**
 
-    Despite the risk factors, the AI evaluates the profile and suggests next steps. In this case, it recommends a denial—but also provides clear, actionable guidance to help the customer improve their chances of approval in the future.
+    The AI evaluates the profile and suggests next steps. In this case, it recommends requesting more info—but also provides clear, explanations as to why the customer was put into a high risk category.
 
-    ![James Woods AI generated recommendations](./images/james-woods-ai.png =50%x*)
+    ![Alice Smith AI generated recommendations](./images/alice-smith-ai.png =50%x*)
 
 3. Select the **Navigate to Decisions** button.
 
-    ![James Woods Decision](./images/james-woods-decision.png =50%x*)
+    ![Alice Smith Decision](./images/alice-smith-decision.png =50%x*)
 
 >⁉️ **What are two reasons that the AI decided to deny this return?** ⁉️
 
+4. Expand **View Dot Plot: Retail Return Insights** to view the graph.
 
-4. Expand **View Dot Plot: Customer-Return Relationships** to view the graph.
+    ![Alice Smith Graph](./images/expand-graph.png =50%x*)
 
-    ![James Woods Graph](./images/expand-graph.png =50%x*)
+    On the decision page, the return specialist can use **Operational Property Graph** to explore near-approval return scenarios. Built with **Oracle Graph**, this feature visually maps return amounts and decisions/ recommendations for the customer. It highlights return decisions vs customer risk and can tell us how they can  improve return eligibility by reducing risk.
 
-    On the decision page, the return specialist can use **Operational Property Graph** to explore near-approval return scenarios. Built with **Oracle Graph**, this feature visually maps loans just out of reach and highlights what adjustments—like increasing loyalty tier or reducing refund frequency—could improve eligibility.
+    ![Alice Smith Graph](./images/alice-smith-graph.png =50%x*)
 
-    ![James Woods Graph](./images/james-woods-graph2.png =50%x*)
+    ![Alice Smith Dot Plot](./images/alice-smith-dotplot.png =50%x*)
 
->💡 In Oracle Database 23ai, **Property Graph** allows you to treat your data like a network of connected points, where each point (called a node) and each link (called an edge) has its own details or properties. This setup helps you run graph analytics, like finding important connections or patterns, directly within the database.
+>💡 In Oracle Database 23ai, **Property Graph** allows you to treat your data like a network of connected points, where each point (called a node) and each link (called an edge) has its own details or properties. This setup helps you run graph analytics, to find important connections or patterns, directly within the database.
 
-5. The return status is set to **Denied**. Click the **Save Final Approval & Return Status** button.
+5. The return status is set to **Denied**. Click the **Confirm Decision** button.
 
     The return status has been updated to 'Denied' and saved to the customer profile.
 
-    ![James Woods Save Loan Status](./images/james-woods-save.png =50%x*)
+    ![Alice Smith Return Status](./images/alice-smith-deny.png =50%x*)
 
-6. Press the **Generate Decision as PDF** button to save the AI responses and proceed to the final return authorization.
+6. Press the **Download Decision as PDF** button to save the AI responses and proceed to the final return authorization.
 
-    ![James Woods PDF](./images/james-woods-pdf.png =50%x*)
+    ![Alice-Smith PDF](./images/alice-smith-pdf.png =50%x*)
 
 7. Click the **Download PDF** button.
 
-    ![James Woods Download Recommendation](./images/james-woods-download.png =50%x*)
+    ![Alice Smith Download Recommendation](./images/alice-smith-download.png =50%x*)
 
 8. Display the message the customer would see by opening the downloaded PDF.
 
-    ![Open James Woods PDF](./images/open-james-woods-pdf.png =50%x*)
+    ![Open Alice Smith PDF](./images/open-alice-smith-pdf.png =50%x*)
 
 9. Click the **Return to Dashboard** button to navigate back to the Dashboard.
 
-    ![Return to Dashboard](./images/woods-return-dashboard.png =50%x*)
+    ![Return to Dashboard](./images/smith-return-dashboard.png =50%x*)
 
-10. Expand **View Denied Customers**. You will see that James Woods has been moved from the **Pending Review Return Requests** list to the **Denied Return Requests** list.
+10. Expand **View Denied Customers**. You will see that Alice Smith has been moved from the **Pending Customer** list to the **Denied Customers** list.
 
-    ![James Woods Denied List](./images/james-woods-denied-list.png =50%x*)
+    ![Alice Smith Denied List](./images/smith-denied-list.png =50%x*)
 
 **Conclusion**
 
@@ -184,15 +185,15 @@ Congratulations, you have finished reviewing a customer with high fraud risk! Pr
 
 Lastly, let’s explore how the system uses JSON Duality Views to handle profile updates. In this task, you will edit a customer’s details. In this example, the customer was asked to submit updated proof of carrier tracking.
 
-1. On the Dashboard page, from the **Pending Review Return Requests** list, select the customer ID for **Alex Anderson**.
+1. On the Dashboard page, from the **Pending Customers** list, select the review button for **Isla Wilson**.
 
-    ![Select Alex Anderson](./images/select-alex-anderson.png =50%x*)
+    ![Select Isla Wilson](./images/isla-wilson.png =50%x*)
 
-2. We will upload a document to update the item's condition. Before uploading the document, note that the item's condition is currently listed as "none". On the Customer Details page, click the **Upload Document** button.
+2. We will upload a document to update the item's return condition. On the Customer Details page, click the **Upload Document** button.
 
     ![Upload Document](./images/upload-document.png =50%x*)
 
-3. The PDF file has been loaded. Click the **Process Selected PDF** button.
+3. The PDF file has been loaded. Click the **Process PDF** button.
 
     ![Click Process Selected PDF](./images/process-selected-pdf.png =50%x*)
 
@@ -202,17 +203,17 @@ Lastly, let’s explore how the system uses JSON Duality Views to handle profile
 
     ![Customer Profile Updated](./images/profile-updated.png)
 
-5. Refresh the page and note that the item condition has been updated to "Damaged". Thanks to JSON Transform and JSON Duality Views, only the relevant field is modified — leaving the rest of the profile UNTOUCHED.
+5. Navigate to the customer decisions page and notice that the information has been updated. Thanks to JSON Transform and JSON Duality Views, only the relevant field is modified — leaving the rest of the profile UNTOUCHED.
 
-    ![Customer Profile Updated](./images/income-updated.png)
+    ![Customer Profile Updated](./images/return-description-updated.png)
 
-**Conclusion**
+**Task Summary**
 
 Once the document is uploaded:
 
 ✅ The system automatically detects the new item condition data.
 
-✅ Then their profile will be updated from "none" to "Damaged".
+✅ Then their profile will be updated for the return description.
 
 ✅ And thanks to JSON Transform and JSON Duality Views, only the relevant field is modified — leaving the rest of the profile UNTOUCHED.
 
@@ -237,6 +238,6 @@ By combining these advanced tools, the application enables faster, smarter decis
 * [Oracle Database 23ai Documentation](https://docs.oracle.com/en/database/oracle/oracle-database/23/)
 
 ## Acknowledgements
-* **Authors** - Kamryn Vinson, Linda Foinding, Francis Regalado
-* **Contributors** - Kevin Lazarz, Eddie Ambler, Ramona Magadan, Mark Nelson, Andy Tael, Anders Swanson, Rahul Tasker
-* **Last Updated By/Date** - Linda Foinding, June 2025
+* **Authors** - Linda Foinding, Francis Regalado, Kamryn Vinson
+* **Contributors** - Kevin Lazarz, Hanna Rakhsha, Ley Sylvester, Uma Kumar
+* **Last Updated By/Date** - Uma Kumar, July 2025

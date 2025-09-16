@@ -39,7 +39,7 @@ In this session, you’ll:
 
 * Perform **data discovery, transformation**, and **data sharing** using Autonomous Database tools
 
-* Apply **data governance** and quality best practices as you build trusted data products
+* Apply **data governance** and quality best practices as you build data products
 
 By the end, you won’t just understand Oracle’s Data Platform—you’ll have experienced how it transforms data chaos into business-ready intelligence, helping finance organizations like SeerEquities thrive through data-driven decision-making.
 
@@ -65,7 +65,7 @@ A data platform collects, stores, cleans, transforms, analyzes, and governs your
 
 ### **Data Product**
 
-A data product is a reusable data asset built to solve a business problem or deliver insights. It turns raw data into trusted, ready-to-use information that teams can access across tools, apps, and departments—even with external partners.
+A data product is a reusable data asset built to solve a business problem or deliver insights. It turns raw data into ready-to-use information that teams can access across tools, apps, and departments—even with external partners.
 
 Each data product comes with context: metadata, lineage, and governance policies. That’s what builds trust and consistency. By treating data like a product, organizations scale sharing, speed up innovation, and make smarter decisions, faster.
 
@@ -85,7 +85,7 @@ A data warehouse stores structured, cleaned, and preprocessed data for business 
 
 ### **Data Lake**
 
-A data warehouse stores structured, cleaned data to support business intelligence. It powers reports and historical analysis, helping teams spot trends and draw insights.
+A data lake stores a wide variety of data, such as text, images, and videos, in their original and unstructured formats. This flexible approach allows analysts and researchers to determine how best to structure and interpret the data later on.
 
 ### **Data Lakehouse**
 
@@ -98,4 +98,4 @@ A lakehouse combines the flexibility of a data lake with the reliability and spe
 
 ## Acknowledgements
 * **Authors** - Eddie Ambler, Otis Barr
-* **Last Updated By/Date** - Otis Barr, June 2025
+* **Last Updated By/Date** - Otis Barr, August 2025
