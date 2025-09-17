@@ -26,13 +26,13 @@ This lab assumes you have:
 
     ![Click the Start Demo Link](./images/start-demo.png =50%x*)
 
-2. Enter in a username and click **Login**.
+2. Welcome to Seer Holdings! Select **Finance** as Industry and **Approval Officer** as role. Enter in a username and click **Login**.
 
-    ![Login](./images/login.png =50%x*)
+    ![Login](./images/lab101.png =50%x*)
 
 3. Welcome to the SeerEquities Loan Management application! Congratulations, you are now connected to the demo environment. You can now execute the different tasks for this Lab.
 
-    ![Homepage](./images/app-home.png =50%x*)
+    ![Homepage](./images/lab102.png =50%x*)
 
 ## Task 2: Demo - Customer with strong credit score
 
@@ -40,11 +40,11 @@ In this first example, you will use the application to approve a customer with s
 
 1. On the Dashboard page, from the pending review list, select the Customer ID for **James Smith**.
 
-    ![Select James Smith](./images/james-smith.png =50%x*)
+    ![Select James Smith](./images/lab103.png =50%x*)
 
 2. Opening James Smith’s profile reveals his loan application details—name, location, requested amount, debt, and credit score.  
 
-    ![James Smith AI generated recommendations](./images/james-smith-ai.png =50%x*)
+    ![James Smith AI generated recommendations](./images/lab104.png =50%x*)
 
 3. At the bottom of James Smith’s profile, you will find the **AI Loan Guru**—a chatbot built on Oracle Database 23ai and Vector search. When prompted, the system uses **RAG** to generate a response. It converts the question and loan data into embeddings, performs a similarity search, and then uses the **GenAI service** to turn the enriched context into a clear, natural language answer. If the customer calls with a question, you can quickly enter it into the AI Loan Guru to generate a relevant response. 
  
@@ -57,13 +57,13 @@ In this first example, you will use the application to approve a customer with s
     </copy>
     ```
 
-    ![James Smith chatbot](./images/james-smith-chatbot.png =50%x*)
+    ![James Smith chatbot](./images/lab105.png =50%x*)
 
 >💡 In Oracle Database 23ai, **AI Vector Search** allows you to combine your business data with the Large Language Model (LLM) to reduce hallucinations and get accurate answers from your data.
 
 4. Select the **Navigate To Decisions** button.
 
-    ![James Smith Decision](./images/james-smith-decision.png =50%x*)
+    ![James Smith Decision](./images/lab106.png =50%x*)
 
     After navigating to the decisions page, the AI evaluation runs in the background. It analyzes James’s profile and matches it against available loan options in the database. A custom AI prompt ensures the system uses only internal data—never the internet. In this case, the AI returns three loan options, each with a clear explanation. All options are displayed alongside the AI’s final recommendation: approval.
 
@@ -120,7 +120,7 @@ In this example, you will navigate the application to review a customer and deny
 
 1. On the Dashboard page, from the pending review list, select the Customer ID for **James Woods**.
 
-    ![Select James Woods](./images/james-woods.png =50%x*)
+    ![Select James Woods](./images/lab131.png =50%x*)
 
 2. Opening James Woods’s profile displays his loan application details. Within a few seconds, the AI automatically generates recommendations. In this case, the system evaluates a less favorable profile and identifies key risk factors.
 
@@ -132,11 +132,11 @@ In this example, you will navigate the application to review a customer and deny
 
     Despite the risk factors, the AI evaluates the profile and suggests next steps. In this case, it recommends a denial—but also provides clear, actionable guidance to help the customer improve their chances of approval in the future.
 
-    ![James Woods AI generated recommendations](./images/james-woods-ai.png =50%x*)
+    ![James Woods AI generated recommendations](./images/lab132.png =50%x*)
 
 3. Select the **Navigate to Decisions** button.
 
-    ![James Woods Decision](./images/james-woods-decision.png =50%x*)
+    ![James Woods Decision](./images/lab133.png =50%x*)
 
 >⁉️ **What is the reason that the AI decided to deny this applicant?** ⁉️
 
@@ -238,6 +238,6 @@ By combining these advanced tools, the application enables faster, smarter decis
 * [Oracle Database 23ai Documentation](https://docs.oracle.com/en/database/oracle/oracle-database/23/)
 
 ## Acknowledgements
-* **Authors** - Kamryn Vinson, Linda Foinding, Francis Regalado
+* **Authors** - Linda Foinding, Francis Regalado
 * **Contributors** - Kevin Lazarz, Eddie Ambler, Ramona Magadan, Mark Nelson, Andy Tael, Anders Swanson, Rahul Tasker
-* **Last Updated By/Date** - Linda Foinding, June 2025
+* **Last Updated By/Date** - Linda Foinding, September 2025
