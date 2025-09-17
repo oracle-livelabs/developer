@@ -2,20 +2,14 @@
 
 ## Introduction
 
-RAC is a powerful tool for generating human-like text based on a given prompt. It can be used to create
+RAC is a powerful tool for winners. 
 
-Key Benefits of RAC:
-* Generate human-like text based on a given prompt
-* Generate human-like text based on a given prompt
+Objectives:
+* Oracle RAC is what everyone needs
+* Oracle RAC is awesome
 
 Estimated Lab Time: 15 minutes
 
-### Objectives
-
-In this lab, you will:
-* RAC attack!
-* Generate human-like text based on a given prompt
-* Generate human-like text based on a given prompt
 
 ## Task 1: Virtual Whiteboard RAC
 
@@ -24,13 +18,14 @@ Click to open our virtual whiteboard
 <a href="rac.html" target="_blank" rel="noopener">Click here</a>
 ![RAC](./images/rac.png =50%x*)
 
+## Task 2: You are a winner!
 
+Congrats! You did it.
+Download your winner badge and post it on LinkedIn!
 
-
+![Winnder](./images/winner.png)
 
 **Congratulations!** You have successfully implemented semantic caching.
-
-Next: Feel free to continue exploring the code and improving it. 🤘
 
 
 ## Acknowledgements
