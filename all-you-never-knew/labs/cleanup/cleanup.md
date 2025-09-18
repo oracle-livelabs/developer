@@ -1,4 +1,4 @@
-# Experimenting with Models, Parameters and Techniques
+# Cleanup
 
 ## Introduction
 

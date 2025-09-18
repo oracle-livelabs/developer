@@ -1,4 +1,4 @@
-# Experimenting with Models, Parameters and Techniques
+# Spring Boot REST Capabilities
 
 ## Introduction
 

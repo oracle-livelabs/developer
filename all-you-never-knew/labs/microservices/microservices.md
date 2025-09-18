@@ -1,17 +1,16 @@
-# Experimenting with Models, Parameters and Techniques
+# Get started - Customer Support Microservice
 
 ## Introduction
 
-In this lab, we will  
+In this lab, you'll set up your local environment to run the customer support application.
 
-Estimated Lab Time: 15 minutes
+This lab forms the basis for the rest of the workshop, as we progressively enhance the base application with advanced Oracle Database features.
+
+Estimated Time: 15 minutes
 
 ### Objectives
 
-In this lab, you will:
-
-* x
-* y
+* Download the lab code and set up the environment
 
 ### Prerequisites
 
@@ -19,15 +18,45 @@ This lab assumes you have:
 
 * All previous labs successfully completed
 
-## Task 1: Xyz
+## Task 1: Download the lab code
 
-Xyz
+Download the lab code from [TODO]().
 
+Change directory into the lab.
 
-## Learn More
+```bash
+<copy>
+cd hol19
+</copy>
+```
 
-* x
-* y
+## Task 2: Run database setup scripts
+
+In a SQL Worksheet for your database, run the following setup scripts:
+
+1. `user.sql`: configures a user for the customer support application
+2. `init.sql`: creates database objects in the customer support application.
+
+## Task 3: Set environment variables for the application
+
+You will need your database wallet, TNS alias, and OCI compartment OCID to complete this section.
+
+```bash
+export JDBC_URL=jdbc:oracle:thin:@<my TNS alias>?TNS_ADMIN=/path/to/wallet;
+export OCI_COMPARTMENT_ID=<embedding model compartment id>;
+export TNS_ALIAS=<tns alias>;
+export WALLET_DIR=</path/to/wallet>
+```
+
+## Task 4: Start the customer support application
+
+From the root of the downloaded lab code, run the following Maven command to start the application:
+
+```bash
+<copy>
+mvn spring-boot:run
+</copy>
+```
 
 ## Acknowledgements
 
