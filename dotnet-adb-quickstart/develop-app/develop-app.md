@@ -4,12 +4,7 @@
 
 In this lab, you will create a simple ASP.NET Core app, connnect to Oracle Autonomous Database using Oracle Data Provider for .NET (ODP.NET), and retrieve data to the web page on the OCI VM you previously set up. You will then publish the web app so that it can be accessed from a browser.
 
-Note: This lab has been validated with ASP.NET Core 6. Some variations in the ASP.NET Core code may be necessary if you are using another version.
-
 Estimated lab time: 15 minutes
-
-Watch the video below for a quick walk-through of the lab.
-[Develop and deploy the .NET web application](videohub:1_rkt0mw3p)
 
 ### Objectives
 -   Create a new ASP.NET Core web app
@@ -23,11 +18,11 @@ Watch the video below for a quick walk-through of the lab.
 
 ## Task 1: Create ASP.NET Core Web App
 
-We will connect to Cloud Shell again to begin developing the ASP.NET Core part of the To Do List application. The project will incorporate ODP.NET Core for data access between the app and Oracle Autonomous Database.
+We will connect to Cloud Shell again to begin developing the ASP.NET Core part of the To Do List application. The project will incorporate ODP.NET Core for data access between the web app and Oracle Autonomous Database.
 
 1. Open Cloud Shell by clicking the Developer Tools icon on the top right of the menu bar, then click **Cloud Shell**.
 
-    ![Open Cloud Shell](./images/cloud-shell-icon.png)
+    ![Open Cloud Shell](../web-server/images/cloud-shell-icon.png)
 
 2. If you have been logged out of the last SSH session, SSH into the web server machine once again:
 
@@ -271,4 +266,4 @@ Click [here](https://www.oracle.com/database/technologies/appdev/dotnet.html) to
 ## Acknowledgements
 
 - **Author** - Alex Keh
-- **Last Updated By/Date** - Alex Keh, June 2023
+- **Last Updated By/Date** - Alex Keh, September 2025
