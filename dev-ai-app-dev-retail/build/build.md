@@ -179,7 +179,7 @@ You will query customer data from the `customer_returns_dv` JSON duality view, w
 
 3. The output will display a DataFrame containing the customer details for the selected customer ID.
 
-    ![Fetch customer](./images/fetch_customer.png " ")
+    ![Fetch customer](./images/fetch-customer.png " ")
 
 If you completed Lab 1: Run the Demo earlier, this is what gets printed out when the Return officer clicks on the customer 1000. You just built it, well done!
 
@@ -459,7 +459,7 @@ This step:
 
     ```python
     <copy>
-    question = "What’s the best action for a high-risk return request?"
+        question = "What’s the best action for a high-risk return request?"
 
     def vectorize_question(q):
         cursor.execute("""

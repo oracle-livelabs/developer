@@ -42,7 +42,7 @@ In this first example, you will use the application to approve a supplier with a
 
     ![Select Aisha Morgan](./images/aisha-morgan.png =50%x*)
 
-2. Opening Aisha Morgan’s profile reveals her grid interconnection request details—name, email, request ID, host capacity, gridfit rating, and energy status. You will also be able to see detailed AI analysis on the supplier consisting of a comprehensive evaluation, and top 3 recommendations with explanations. 
+2. Opening Aisha Morgan’s profile reveals her grid interconnection request details—name, email, request ID, host capacity, gridfit rating, and energy status. You will also be able to see detailed AI analysis on the supplier consisting of a comprehensive evaluation, and top 3 requests with approval probability. 
 
     ![Aisha Morgan AI generated recommendations](./images/aisha-morgan-ai.png =50%x*)
 
@@ -57,7 +57,7 @@ In this first example, you will use the application to approve a supplier with a
     </copy>
     ```
 
-    ![Amelia Shepherd chatbot](./images/amelie-shepherd-chatbot.png =50%x*)
+    ![Aisha Morgan chatbot](./images/aisha-morgan-chatbot.png =50%x*)
 
 >💡 In Oracle Database 23ai, **AI Vector Search** allows you to combine your business data with a Large Language Model (LLM) to reduce hallucinations and get accurate answers from your data.
 
@@ -122,7 +122,7 @@ In this example, you will navigate the application to review a customer and deny
 
     ![Select Nina Wright](./images/nina-wright.png =50%x*)
 
-2. Opening Nina Wright’s profile displays her patient history details. Within a few seconds, the AI automatically generates recommendations. In this case, the system evaluates the profile and assigns it to “high risk” with explanations outlining key risk factors.
+2. Opening Nina Wright’s profile displays her patient history details. Within a few seconds, the AI automatically generates a suggested action. In this case, the system evaluates the profile and assigns it to “high risk” with explanations outlining key risk factors.
 
     This supplier has: 
 
@@ -140,33 +140,44 @@ In this example, you will navigate the application to review a customer and deny
 
 >⁉️ **What are two reasons that the AI denied this request?** ⁉️
 
-4. On the decisions page you can view the AI recommendation for Nina Wright. It shows the suggested action, comprehensive evaluation, and recommendations explanations. 
+4. Expand **View Dot Plot: Retail Return Insights** to view the graph.
+
+    ![Nina Wright Graph](./images/expand-graph.png =50%x*)
+
+    On the decision page, the return specialist can use **Interactive Graph: Customer Return & Risk** to explore relationships in return authorization scenarios. Built with **Oracle Graph**, this feature visually maps decisions and highlights important features of the request like the feeder analysis and compliance rules.
+
+    ![Nina Wright Graph](./images/nina-wright-graph.png =50%x*)
+
+>💡 In Oracle Database 23ai, **Property Graph** allows you to treat your data like a network of connected points, where each point (called a node) and each link (called an edge) has its own details or properties. This setup helps you run graph analytics, to find important connections or patterns, directly within the database.
+
+
+5. On the decisions page you can view the AI recommendation for Nina Wright. It shows the suggested action, comprehensive evaluation, and recommendations explanations. 
 
     ![Nina Wright recommendations](./images/nina-wright-save.png =50%x*)
 
-5. The authorization status is set to **Deny**. Click the **Confirm Decision** button.
+6. The authorization status is set to **Deny**. Click the **Confirm Decision** button.
 
     The authorization status has been updated to 'Deny' and saved to the patient profile.
 
     ![Nina Wright Save Status](./images/nina-wright-confirm.png =50%x*)
 
-6. Press the **Download Decision PDF** button to save the AI responses and proceed to the final authorization disposition.
+7. Press the **Download Decision PDF** button to save the AI responses and proceed to the final authorization disposition.
 
     ![Nina Wright PDF](./images/nina-wright-pdf.png =50%x*)
 
-7. Click the **Download PDF** button.
+8. Click the **Download PDF** button.
 
     ![Nina Download Recommendation](./images/nina-download.png =50%x*)
 
-8. Display the message the patient would see by opening the downloaded PDF.
+9. Display the message the patient would see by opening the downloaded PDF.
 
     ![Open Nina PDF](./images/open-nina-pdf.png =50%x*)
 
-9. Click the **Return to Dashboard** button to navigate back to the Dashboard.
+10. Click the **Return to Dashboard** button to navigate back to the Dashboard.
 
     ![Return to Dashboard](./images/nina-return-dashboard.png =50%x*)
 
-10. Expand **View In Progress Supplier**. You will see that Nina Wright has been moved from the **Pending Suppliers** list to the **Denied Suppliers** list.
+11. Expand **View In Progress Supplier**. You will see that Nina Wright has been moved from the **Pending Suppliers** list to the **Denied Suppliers** list.
 
     ![Nina Denied List](./images/nina-denied-list.png =50%x*)
 
