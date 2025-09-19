@@ -20,13 +20,13 @@ This lab assumes you have:
 
 ## Task 1: Download the lab code
 
-Download the lab code from [TODO]().
+Download the lab code from the [microservices-datadriven](https://github.com/oracle/microservices-datadriven/) repository.
 
 Change directory into the lab.
 
 ```bash
 <copy>
-cd hol19
+cd microservices-datadriven/customer-support-lab
 </copy>
 ```
 
