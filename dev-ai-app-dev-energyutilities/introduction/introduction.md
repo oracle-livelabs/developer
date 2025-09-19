@@ -16,7 +16,7 @@ You will:
 
   * Automate real-world energy and utility workflows, like interconnection approvals, by **embedding and querying unstructured data** in real time.
 
-By the end of this workshop, you’ll understand how Oracle Database 23ai helps healthcare organizations:
+By the end of this workshop, you’ll understand how Oracle Database 23ai helps energy and utility organizations:
 
   * ✅ Accelerate time-to-insight with centralized, AI-ready data
 
