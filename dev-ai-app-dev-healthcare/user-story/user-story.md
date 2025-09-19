@@ -38,15 +38,15 @@ This lab assumes you have:
 
 In this first example, you will use the application to approve a patient with a low authorization risk score. The fourth user on your to-do list is Amelie Shepherd.
 
-1. On the Dashboard page, from the pending review list, select the Patient ID for **Amelie Shepherd**.
+1. On the Dashboard page, from the pending review list, select the review button for **Amelia Shepherd**.
 
-    ![Select Amelie Shepherd](./images/amelie-shepherd.png =50%x*)
+    ![Select Amelia Shepherd](./images/amelie-shepherd.png =50%x*)
 
-2. Opening Amelie Shepherd’s profile reveals her prior authorization request details—name, email, request ID, and authorization status.  
+2. Opening Amelia Shepherd’s profile reveals her prior authorization request details—name, email, request ID, and authorization status. You will also be able to see detailed AI analysis on the patient consisting of a comprehensive evaluation, top 3 recommendations with explanations, and fairness and transparency section. 
 
-    ![Amelie Shepherd AI generated recommendations](./images/amelie-shepherd-ai.png =50%x*)
+    ![Amelia Shepherd AI generated recommendations](./images/amelie-shepherd-ai.png =50%x*)
 
-3. At the bottom of Amelie Shepherd’s profile, you will find the **AI Guru**—a chatbot built on Oracle Database 23ai and Vector search. When prompted, the system uses **RAG** to generate a response. It converts the question and healthcare data into embeddings, performs a similarity search, and then uses the **GenAI service** to turn the enriched context into a clear, natural language answer. If the customer calls with a question, you can quickly enter it into the AI Healthcare Guru to generate a relevant response. 
+3. At the bottom of Amelia Shepherd’s profile, you will find the **AI Guru**—a chatbot built on Oracle Database 23ai and Vector search. When prompted, the system uses **RAG** to generate a response. It converts the question and healthcare data into embeddings, performs a similarity search, and then uses the **GenAI service** to turn the enriched context into a clear, natural language answer. If the customer calls with a question, you can quickly enter it into the AI Healthcare Guru to generate a relevant response. 
  
 
     **Copy** the question below into the AI chatbot and press **Enter**. What does the AI Guru respond?
@@ -57,19 +57,19 @@ In this first example, you will use the application to approve a patient with a 
     </copy>
     ```
 
-    ![Amelie Shepherd chatbot](./images/amelie-shepherd-chatbot.png =50%x*)
+    ![Amelia Shepherd chatbot](./images/amelie-shepherd-chatbot.png =50%x*)
 
 >💡 In Oracle Database 23ai, **AI Vector Search** allows you to combine your business data with a Large Language Model (LLM) to reduce hallucinations and get accurate answers from your data.
 
-4. Select the **Navigate To Decisions** button.
+4. Select the **Navigate To Patient Decisions** button.
 
-    ![Amelie Shepherd Decision](./images/amelie-shepherd-decision.png =50%x*)
+    ![Amelia Shepherd Decision](./images/amelie-shepherd-decision.png =50%x*)
 
     After navigating to the decisions page, the AI evaluation runs in the background. Clinical documents (e.g., EHR notes, radiology reports, lab results) are stored in Oracle Database 23ai and modeled with JSON Duality Views. These documents are vectorized and searched using AI Vector Search to identify semantically relevant prior cases and policy criteria. The results are passed to OCI Generative AI, which uses retrieval-augmented generation (RAG) to generate a natural-language explanation, formatted for both internal review and external (regulatory or provider) communication. 
 
-5. In the **Select Final Prior Authorization Option** section, the available options are displayed. If more data is needed, the reviewer can upload documents, add missing codes, and trigger a re-evaluation. The system dynamically updates the risk graph, adjusts the recommendation, and generates a decision letter sent directly to the provider
+5. In the **Select Final Prior Authorization Option** section, the available options are displayed. If more data is needed, the reviewer can upload documents, add missing codes, and trigger a re-evaluation. The system dynamically updates the risk graph, adjusts the recommendation, and generates a decision letter sent directly to the provider.
 
-    ![Amelie Shepherd Recommendation](./images/amelie-shepherd-recommendation.png =50%x*)
+    ![Amelia Shepherd Recommendation](./images/amelie-shepherd-recommendation.png =50%x*)
 
 6. Select the AI-recommended authorization decision. In this example, that is **Approved**. 
 
@@ -115,14 +115,14 @@ Once you select and save one of the 3 authorization options recommended by the A
 
 Congratulations, you have just approved your first patient authorization! Proceed to the next task.
 
-## Task 3: Demo - Requesting more info for a patient with medium risk
+## Task 3: Demo - Requesting more info for a patient
 In this example, you will navigate the application to review a customer and request more info them as part of the exercise. The second user on your to-do list is Izzie Stevens.
 
-1. On the Dashboard page, from the pending review list, select the Patient ID for **Izzie Stevens**.
+1. On the Dashboard page, from the pending review list, select the review button for **Izzie Stevens**.
 
     ![Select Izzie Stevens](./images/izzie-stevens.png =50%x*)
 
-2. Opening Izzie Stevens’s profile displays her patient history details. Within a few seconds, the AI automatically generates recommendations. In this case, the system evaluates a profile with medium and identifies key risk factors.
+2. Opening Izzie Stevens’s profile displays her patient history details. Within a few seconds, the AI automatically generates recommendations. In this case, the system evaluates the profile and assigns it to “medium risk” with explanations outlining key risk factors.
 
     This customer has: 
 
@@ -130,11 +130,11 @@ In this example, you will navigate the application to review a customer and requ
     * A **vague physician's note**
     * And is requesting  **pre-authorization for treatment**
 
-    The AI evaluates the profile and suggests next steps. In this case, it recommends a requesting more info and also provides clear, actionable guidance to help the patient improve their chances of approval in the future.
+    The AI evaluates the profile and suggests next steps. In this case, it recommends requesting more info and also provides clear, actionable guidance to help the patient improve their chances of approval in the future.
 
     ![Izzie Stevens AI generated recommendations](./images/izzie-stevens-ai.png =50%x*)
 
-3. Select the **Navigate to Decisions** button.
+3. Select the **Navigate to Patient Decisions** button.
 
     ![Izzie-Stevens Decision](./images/izzie-stevens-decision.png =50%x*)
 
@@ -162,7 +162,7 @@ In this example, you will navigate the application to review a customer and requ
 
     ![Return to Dashboard](./images/izzie-return-dashboard.png =50%x*)
 
-10. Expand **View In Progress Patients**. You will see that Izzie Stevens has been moved from the **Pending Patients** list to the **In Progress** list.
+10. Expand **View In Progress Patients**. You will see that Izzie Stevens has been moved from the **Pending Patients** list to the **In Progress Patients** list.
 
     ![Izzie Steven In Progress List](./images/izzie-inprogress-list.png =50%x*)
 
@@ -174,11 +174,11 @@ Congratulations, you have finished reviewing a patient with medium authorization
 
 Lastly, let’s explore how the system uses JSON Duality Views to handle profile updates. In this task, you will edit a patient's details. In this example, the patient was asked to submit updated lab results.
 
-1. On the Dashboard page, from the **Pending Patients** list, select the patient ID for **Andrew Deluca**.
+1. On the Dashboard page, from the **Pending Patients** list, select the review button for **Andrew Deluca**.
 
     ![Select Andrew Deluca](./images/andrew-deluca.png =50%x*)
 
-2. We will upload a document to update Andrew's physician's note. On the Patient Details page, click the **Upload Document** button. The PDF file has been loaded. Then click the **Process Selected PDF** button
+2. We will upload a document to update Andrew's physician's note. On the Patient Details page, click the **Upload Document** button. The PDF file has been loaded. Then click the **Process PDF** button
 
     ![Upload Document](./images/upload-document.png =50%x*)
 
@@ -194,9 +194,9 @@ Once the document is uploaded:
 
 ✅ The system automatically detects the new lab data.
 
-✅ Then their profile will be updated with a physician's note.
+✅ The profile will be updated with a physician's note.
 
-✅ And thanks to JSON Transform and JSON Duality Views, only the relevant field is modified — leaving the rest of the profile UNTOUCHED.
+✅ Thanks to JSON Transform and JSON Duality Views, only the relevant field is modified — leaving the rest of the profile UNTOUCHED.
 
 ## Conclusion
 
@@ -204,7 +204,7 @@ In conclusion our Prior Authorizations Management App was able to leverage Oracl
 
 ✅ Automate profile evaluations
 
-✅ Provide AI-driven authorization recommendations by using an RAG model powered by a Oracle Database 23ai's AI Vector Search and OCI Generative AI service
+✅ Provide AI-driven authorization recommendations by using a RAG model powered by a Oracle Database 23ai's AI Vector Search and OCI Generative AI service
 
 ✅ Enable seamless profile updates with JSON Duality Views
 
@@ -219,6 +219,6 @@ By combining these advanced tools, the application enables faster, smarter decis
 * [Oracle Database 23ai Documentation](https://docs.oracle.com/en/database/oracle/oracle-database/23/)
 
 ## Acknowledgements
-* **Authors** - Kamryn Vinson, Linda Foinding, Francis Regalado
+* **Authors** - Uma Kumar, Linda Foinding, Francis Regalado
 * **Contributors** - Kevin Lazarz, Eddie Ambler, Ramona Magadan, Mark Nelson, Andy Tael, Anders Swanson, Rahul Tasker
 * **Last Updated By/Date** - Uma Kumar, August 2025

@@ -4,6 +4,7 @@
 
 In this lab, we will use Oracle Rest Data Services (ORDS) to automatically create HTTP routes for the TICKET_DV JSON Relational Dualtiy View - exposing generated GET, PUT, POST, and DELETE HTTP methods using simple SQL commands.
 
+
 Estimated Lab Time: 15 minutes
 
 ### Objectives

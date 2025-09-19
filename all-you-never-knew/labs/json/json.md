@@ -4,6 +4,7 @@
 
 In this lab, we will enable JSON support for the customer service app using [JSON Relational Duality Views](https://docs.oracle.com/en/database/oracle/oracle-database/23/jsnvu/overview-json-relational-duality-views.html).
 
+
 Estimated Lab Time: 15 minutes
 
 ### Objectives

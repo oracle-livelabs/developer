@@ -12,9 +12,6 @@ Be sure to review [Best Practices for Your Compute Instance](https://docs.cloud.
 
 Estimated lab time: 20 minutes
 
-Watch the video below for a quick walk-through of the lab.
-[Provision and set up the web server](videohub:1_yg1f33ir)
-
 ### Objectives
 In this lab, you will:
 - Create a compute instance
@@ -39,64 +36,88 @@ An Oracle Cloud Infrastructure VM compute instance runs on the same hardware as 
 
 	![Navigate to compute instance section](./images/compute-instances.png " ")
 
-2. On the **Compartment** drop-down menu on the left side of the web page, select the compartment that you wish to create the VM instance (e.g. MyCompartment). Then, click the **Create Instance** button. This will launch a VM instance for this lab.
+2. Click the **Create Instance** button. This will launch a VM instance for this lab.
 
-    ![Create compute instance](./images/create-instance.png)
+    ![Start compute instance creation](./images/create-instance.png)
 
 3. The Create Compute Instance wizard will launch.
-    Enter **Web-Server** as the name of the server. Click **Edit** on the right side of the **Image and Shape** area of the page. 
+    Enter **Web-Server** as the name of the server. Click **Change image** in the **Image and shape** section. 
 
     ![Enter a server name and begin editing the compute's image and shape](./images/name-instance.png " ")
    
-4. The **Image and Shape** section expands. Click the **Change image** button to select an operating system image to install on the compute instance.
+4. The **Image and shape** section expands. Oracle Linux is the default selection. We will use Oracle Linux for the web server operating system.
 
-    ![Click Change image button to choose operating system image](./images/change-image.png)
+    ![Choose Oracle Linux as the operating system](./images/choose-oracle-linux-os.png)
 
-5. Select **Oracle Linux Cloud Developer 8** image check box and accept the default values. This image includes Oracle Linux, .NET (Core) Software Development Kit, Visual Studio Code, and PowerShell. Review the *Oracle Linux Cloud Developer Image Terms of Use*. Select the check box if you accept the terms. Click the **Select image** button.
+5. Scroll down. Select **Oracle Linux Cloud Developer 8** image radio button. This image includes .NET Software Development Kit.
 
     ![Select Oracle Linux Cloud Developer image](./images/choose-cloud-developer-image.png)
 
-6. Move to the next section on networking. Click **Edit** on the **Networking** area of the page. 
+6. Once **Oracle Linux Cloud Developer 8** is selected, a pop up to review and accept the *Oracle Linux Cloud Developer Image Terms of Use* appears. Click the **Confirm** button to continue.
 
-    ![Edit the compute's networking settings](./images/select-networking.png " ")
+    ![Review and accept the image terms](./images/accept-os-image-terms.png)
 
-7. Scroll down and select the **Assign a public IPv4 address** option if it's not already been selected.
+7. Click the **Select image** button.
 
-    ![Select public IPv4 address](./images/assign-ip.png " ")
+    ![Click Select image button](./images/select-image-button.png)
 
-    **Note:** You need a public IP address to be able to SSH into the running instance later in this lab.
+8. Now that the operating image has been selected, the compute instance's basic information is complete for this lab. Click the **Next** button at the bottom to proceed to the security section. 
 
-8. Scroll down to the **Add SSH keys** area of the page. Select **Generate a key pair for me**. Click on the **Save Private Key** and **Save Public Key** links that appear to save the two files: **ssh-key-&lt;date&gt;.key** (private key) and **ssh-key-&lt;date&gt;.key.pub** (public key). Keep the private key safe and don't share its content with anyone. The public key will be needed for use with Oracle Cloud Shell to secure cloud communications.
+    ![Click Next button after compute instance basic information has been entered](./images/basic-info-complete.png " ")
+
+9. Leave the security setting at its default value. Click the **Next** button at the bottom to proceed to the networking section. 
+
+    ![Click Next button after the security section is complete](./images/security-section-complete.png " ")
+
+10. Enter the VNIC name, **OCI\_HOL\_VNIC**. Most of the remaining networking entries should be auto-populated. Review the screen shot below to verify the default entries match with the networking entries you have. 
+
+    ![Enter VNIC name and review networking settings](./images/review-networking.png " ")
+
+    **Note:** You need a public IP address to SSH into the running instance later in this lab. The default setting includes a public IP.
+
+11. Scroll down to the **Add SSH keys** section. The **Generate a key pair for me** radio button should already be selected. <br><br>
+    Click on the **Download private key** and **Download public key** buttons to save two files: **ssh-key-&lt;date&gt;.key** (private key) and **ssh-key-&lt;date&gt;.key.pub** (public key). <br><br>
+    Keep the private key safe and don't share its content with anyone. The public key will be needed for Oracle Cloud Shell to secure cloud communications.
 
     ![Add and save SSH keys](./images/add-ssh-keys.png)
 
-9. Press the **Create** button at the bottom of the page to create your instance. 
+12. Click the **Next** button at the bottom to proceed to the storage section.  
+
+    ![Click Next button after the networking section is complete](./images/networking-section-complete.png " ")
+
+13. Leave the storage settings at their default values. Click the **Next** button at the bottom to proceed. 
+
+    ![Click Next button after the storage section is complete](./images/storage-section-complete.png " ")
+
+14. You may review the compute instance's settings. Once done, press the **Create** button at the bottom of the page to begin instance creation. 
 
     ![Click Create button to begin compute instance creation](./images/create-instance-button.png)
 
-    Launching an instance is simple and intuitive with few options to select. The provisioning of the compute instance will complete in less than a minute, and the instance state will change from *PROVISIONING* to *RUNNING*.
-
-10. Once the instance state changes to *RUNNING*, you can SSH to the Public IP address of the instance. The Public IP address is noted under *Instance Access*. Record this IP address for use when you SSH and set up one-way TLS without wallets later on.
-
-    ![Running compute instance with public IP address](./images/public-ip.png " ")
+15. Launching an instance is simple and intuitive with few options to select. The compute instance provisioning will complete in less than a minute. The instance state will change from *PROVISIONING* to *RUNNING*. You now have a running Linux virtual machine compute instance.
+ 
+     ![Complete compute instance creation](./images/completed-compute-instance.png)
 
 ## Task 2: Connect to the Instance via SSH
 
->**Note**: You may need to log in as the *admin* user to use Cloud Shell.
+1. With a running compute instance, you can SSH to the public IP address of the instance. The public IP address is available under the **Details** tab in the *Instance Access* section. Record this IP address for use when you SSH and set up one-way TLS without wallets later on.
 
-1. To connect to the instance, open Cloud Shell by clicking the Developer Tools icon on the top right of the menu bar, then click **Cloud Shell**.
+    ![Running compute instance with public IP address](./images/public-ip.png " ")
+
+2. This lab uses Cloud Shell to connect to the compute instance. Open Cloud Shell by clicking the Developer Tools icon on the top right of the menu bar, then click **Cloud Shell**.
 
     ![Click Cloud Shell icon](./images/cloud-shell-icon.png)
 
-2. Cloud Shell will open. Open the Cloud Shell menu in the upper right of Cloud Shell. Click **Upload** to begin uploading the private key to the compute instance.
+>**Note**: You may need to log in as the *admin* user for Cloud Shell.
+
+3. Cloud Shell will open. Open the Cloud Shell menu in the upper right of Cloud Shell. Click **Upload** to begin uploading the private key to the compute instance.
 
     ![Click Upload from menu](./images/cloud-shell-choose-upload.png)
 
-3. Upload the private key through Cloud Shell that you auto-generated in the last task. Its default name is in the format, **ssh-key-&lt;date&gt;.key**. Either drop the file into the window or navigate to its location on your local machine. When completed, click the **Upload** button.
+4. Upload the private key through Cloud Shell that you auto-generated in the last task. Its default name is in the format, **ssh-key-&lt;date&gt;.key**. Either drop the file into the window or navigate to its location on your local machine. When completed, click the **Upload** button.
 
     ![Upload the private key](./images/cloud-shell-key-upload.png)
 
-4. We will use SSH to securely connect to the compute instance. In Cloud Shell, move the private key to the **.ssh** directory and change into that directory. If the **.ssh** directory is not available, you can skip this step.
+5. We will use SSH to securely connect to the compute instance. In Cloud Shell, move the private key to the **.ssh** directory and change into that directory. If the **.ssh** directory is not available, you can skip this step.
 
     ```
     <copy>mv <private_ssh_key> .ssh</copy>
@@ -105,32 +126,32 @@ An Oracle Cloud Infrastructure VM compute instance runs on the same hardware as 
     <copy>cd .ssh</copy>
      ```
 
-5. Since this is a private key, assign permissions to protect the key from other users. Enter the following into Cloud Shell:
+6. Since this is a private key, assign permissions to protect the key from other users. Enter the following into Cloud Shell:
 
     ```
     <copy>chmod 600 <private_ssh_key></copy>
     ```
 
-6. SSH into the compute instance. In Oracle Cloud Linux VMs, the default username is **opc**. The compute instance's public IP address is available from the cloud console. Run the following command from Cloud Shell:
+7. SSH into the compute instance. In Oracle Cloud Linux VMs, the default username is **opc**. The compute instance's public IP address is available from the cloud console. Run the following command from Cloud Shell:
 
     ```
     <copy>ssh -i <private_ssh_key> opc@<public_ip_address></copy>
     ```
 
-7. If the host authenticity can't be established, you will be asked: "Are you sure you want to continue connecting (yes/no)?" To continue, answer yes.
+8. If the host authenticity can't be established, you will be asked: "Are you sure you want to continue connecting (yes/no)?" To continue, answer yes.
 
     ```
     <copy>yes</copy>
     ```
 
-8. After the completion of these command line steps, you will be connected to the compute instance.
+9. After the completion of these command line steps, you will be connected to the compute instance.
 
     ![SSH into compute instance from Cloud Shell](./images/ssh.png)
 
 
 ## Task 3: Install and Configure NGINX Web Server and Setup VCN
    
-For this lab, we are going to install an NGINX web server and connect to it over the public Internet. *Make sure you have completed the prior tasks so that you are SSH'ed into the Linux instance*.
+For this lab, we are going to install an NGINX web server and connect to it over the public Internet. *Make sure you have completed the prior tasks so that you can SSH into the Linux instance*.
 
 NGINX web server is a popular, free, and open-source web server. The NGINX server hosts web content, and responds to requests for this content from web browsers.
 
@@ -188,21 +209,27 @@ NGINX web server is a popular, free, and open-source web server. The NGINX serve
         <copy>sudo systemctl status nginx</copy>
         ```
 
-2. Let's now open port 81 in the VCN security list. Click the **Navigation Menu** in the upper left. Navigate to **Networking**, and select **Virtual Cloud Networks**. 
+2. Let's now open port 81 in the VCN security list. Click the **Navigation Menu** in the upper left. Navigate to **Networking**, and select **Virtual cloud networks**. 
 
-     ![Navigate to configure the VCN](./images/networking-vcn.png " ")
+     ![Navigate to configure the VCN](../networking/images/setup-vcn.png " ")
 
-3. Click on the VCN you created earlier (i.e. OCI\_HOL\_VCN) under the **Virtual Cloud Networks** page area.
+3. Click on the VCN you created earlier (i.e., OCI\_HOL\_VCN) under the **Virtual Cloud Networks** page area.
 
-4. Now click **Security Lists** on the left navigation bar for the VCN.
+     ![Click on earlier created VCN](./images/click-vcn.png " ")
+
+4. Now click **Security** tab on the navigation bar for the VCN.
  
-     ![Click on Security Lists](./images/security-list.png " ")
+     ![Click on Security tab](./images/security-tab.png " ")
 
 5. The compartment's security lists will appear. Click on the **Default Security List**.
 
      ![Click on default security list](./images/default-security-list.png " ")
 
-6. Open port 81 by clicking **Add Ingress Rules** and add the following values as shown below:
+6. Click the **Security rules** tab.
+
+     ![Click on security rules tab](./images/security-rules.png " ")
+
+7. Open port 81 by clicking **Add Ingress Rules** and add the following values as shown below:
 
     - **Source Type:** CIDR
     - **Source CIDR**: 0.0.0.0/0
@@ -214,7 +241,7 @@ NGINX web server is a popular, free, and open-source web server. The NGINX serve
 
     ![Add ingress rule](./images/ingress-rule.png " ")
 
-7. In your browser, navigate to *http://&lt;public_ip_address&gt;:81*. Use the Linux VM's IP address with the port to use appended since we're using a non-standard HTTP port. You should see the text you added to the web server's index page.
+8. In your browser, navigate to *http://&lt;public_ip_address&gt;:81*. Use the Linux VM's IP address with the port to use appended since we're using a non-standard HTTP port. You should see the text you added to the web server's index page.
 
     ![Open you browser to the public IP address](./images/browser.png " ")
 
@@ -241,4 +268,4 @@ You have completed this lab. You may now **proceed to the next lab.**
 ## Acknowledgements
 
 - **Author** - Rajeshwari Rai, Prasenjit Sarkar, Alex Keh
-- **Last Updated By/Date** - Alex Keh, June 2023
+- **Last Updated By/Date** - Alex Keh, September 2025

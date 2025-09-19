@@ -4,6 +4,7 @@
 
 In this lab, we will explore the Spring Boot customer service application using the basic `rest` profile.
 
+
 Estimated Lab Time: 15 minutes
 
 ### Objectives

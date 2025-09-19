@@ -100,6 +100,7 @@ select * from related_ticket;
 
 You should see a relationship between the IDs of both tickets created in Task 2.
 
+
 ## Acknowledgements
 
 * **Author** - Mark Nelson, Developer Evangelist, August 2025
