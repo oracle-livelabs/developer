@@ -90,6 +90,8 @@ curl -X POST -H 'Content-Type: application/json' \
 
 On the application side, the `JSONTicketStore` bean uses the ticket store duality view to create and save ticket data in a single round trip, using a relational JSON document!
 
+You may now proceed to the next lab.
+
 ## Learn More
 
 * [JSON Relational Duality Views](https://docs.oracle.com/en/database/oracle/oracle-database/23/jsnvu/overview-json-relational-duality-views.html).

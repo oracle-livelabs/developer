@@ -34,8 +34,8 @@ cd microservices-datadriven/customer-support-lab
 
 In a SQL Worksheet for your database, run the following setup scripts:
 
-1. `user.sql`: configures a user for the customer support application
-2. `init.sql`: creates database objects in the customer support application.
+1. [`user.sql`](https://github.com/oracle/microservices-datadriven/blob/main/customer-support-lab/src/test/resources/user.sql): configures a user for the customer support application
+2. [`init.sql`](https://github.com/oracle/microservices-datadriven/blob/main/customer-support-lab/src/test/resources/init.sql): creates database objects in the customer support application.
 
 ## Task 3: Set environment variables for the application
 
@@ -57,6 +57,8 @@ From the root of the downloaded lab code, run the following Maven command to sta
 mvn spring-boot:run
 </copy>
 ```
+
+You may now proceed to the next lab.
 
 ## Acknowledgements
 

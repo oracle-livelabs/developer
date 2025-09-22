@@ -94,6 +94,8 @@ curl -X GET "$ORDS_URL/support/ticket/?title=xyz" -u "$DATABASE_USERNAME:$DATABA
 
 HTTP methods for PUT, POST, and DELETE are also automatically implemented by ORDS, simplifying your deployment. For examples using PUT, POST, and DELETE, see the [ORDS Develoeper Guide]([Oracle REST Data Services](https://docs.oracle.com/en/database/oracle/oracle-rest-data-services/index.html))
 
+You may now proceed to the next lab.
+
 ## Learn More
 
 * [Oracle REST Data Services](https://docs.oracle.com/en/database/oracle/oracle-rest-data-services/index.html)
