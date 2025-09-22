@@ -28,7 +28,7 @@ This lab assumes you have:
 
 2. Welcome to Seer Holdings! Select **Finance** as Industry and **Approval Officer** as role. Enter in a username and click **Login**.
 
-    ![Login](./images/lab101.png =50%x*)
+    ![Login](./images/finance-login.png =50%x*)
 
 3. Welcome to the SeerEquities Loan Management application! Congratulations, you are now connected to the demo environment. You can now execute the different tasks for this Lab.
 
@@ -69,7 +69,7 @@ In this first example, you will use the application to approve a customer with s
 
 5. In the **Select Final Approved Loan Option** section, the available loan options are displayed. The loan officer can choose to request more information to refine the offer, but for this scenario, we will proceed by selecting one of the suggested loans.
 
-    ![James Smith Select Final Approved Loan](./images/james-smith-select-final-loan.png =50%x*)
+    ![James Smith Select Final Approved Loan](./images/james-s-decision-page.png =50%x*)
 
 6. Select the AI-recommended loan labeled as the military veteran loan with the shortest time to close. In this example, that is Loan 26—the only military veteran option shown. 
 
@@ -93,7 +93,7 @@ In this first example, you will use the application to approve a customer with s
 
 10. Display the message the customer would see by opening the downloaded PDF.
 
-    ![Open James Smith PDF](./images/open-james-smith-pdf.png =50%x*)
+    ![Open James Smith PDF](./images/pdf-james-smith.png =50%x*)
 
 11. Click the **Return to Dashboard** button to navigate back to the Dashboard.
 
@@ -101,7 +101,7 @@ In this first example, you will use the application to approve a customer with s
 
 12. Expand **View Approved Customers**. We can see that James Smith has been removed from the Pending Review Loan Requests list and has been added to the Approved Loan Requests list.
 
-    ![James Smith Approved List](./images/james-smith-approved-list.png =50%x*)
+    ![James Smith Approved List](./images/james-smith-final.png =50%x*)
 
 **Conclusion**
 
@@ -120,7 +120,7 @@ In this example, you will navigate the application to review a customer and deny
 
 1. On the Dashboard page, from the pending review list, select the Customer ID for **James Woods**.
 
-    ![Select James Woods](./images/lab131.png =50%x*)
+    ![Select James Woods](./images/james-woods-intro.png =50%x*)
 
 2. Opening James Woods’s profile displays his loan application details. Within a few seconds, the AI automatically generates recommendations. In this case, the system evaluates a less favorable profile and identifies key risk factors.
 
@@ -143,11 +143,11 @@ In this example, you will navigate the application to review a customer and deny
 
 4. Expand **View Dot Plot: Client-Loan Relationships** to view the graph.
 
-    ![James Woods Graph](./images/expand-graph.png =50%x*)
+    ![James Woods Graph](./images/james-woods-graph.png =50%x*)
 
     On the decision page, the loan officer can use **Operational Property Graph** to explore near-approval loan scenarios. Built with **Oracle Graph**, this feature visually maps loans just out of reach and highlights what adjustments—like increasing income or reducing debt—could improve eligibility.
 
-    ![James Woods Graph](./images/james-woods-graph2.png =50%x*)
+    ![James Woods Graph](./images/james-woods-graph3.png =50%x*)
 
 >💡 In Oracle Database 23ai, **Property Graph** allows you to treat your data like a network of connected points, where each point (called a node) and each link (called an edge) has its own details or properties. This setup helps you run graph analytics, like finding important connections or patterns, directly within the database.
 
@@ -187,25 +187,25 @@ Lastly, let’s explore how the system uses JSON Duality Views to handle profile
 
 1. On the Dashboard page, from the **Pending Review Loan Requests** list, select the customer ID for **Alex Anderson**.
 
-    ![Select Alex Anderson](./images/select-alex-anderson.png =50%x*)
+    ![Select Alex Anderson](./images/alex-anderson-intro.png =50%x*)
 
 2. We will upload a document to update Alex's income. Before uploading the document, note that the customer’s income is currently listed as $25,000. On the Customer Details page, click the **Upload Document** button.
 
-    ![Upload Document](./images/upload-document.png =50%x*)
+    ![Upload Document](./images/anderson-25k.png =50%x*)
 
 3. The PDF file has been loaded. Click the **Process Selected PDF** button.
 
-    ![Click Process Selected PDF](./images/process-selected-pdf.png =50%x*)
+    ![Click Process Selected PDF](./images/upload-anderson.png =50%x*)
 
 >💡 **JSON Duality Views** in 23ai let's you update unstructured data in an easy, high-level format while automatically handling the technical details behind the scenes. This makes it faster and simpler to work with messy data and connect it to structured systems.
 
 4. The customer profile has been updated.
 
-    ![Customer Profile Updated](./images/profile-updated.png)
+    ![Customer Profile Updated](./images/upload-anderson2.png)
 
 5. Refresh the page and note that the income has been updated to $65,000. Thanks to JSON Transform and JSON Duality Views, only the relevant field is modified — leaving the rest of the profile UNTOUCHED.
 
-    ![Customer Profile Updated](./images/income-updated.png)
+    ![Customer Profile Updated](./images/anderson-65k.png)
 
 **Conclusion**
 
