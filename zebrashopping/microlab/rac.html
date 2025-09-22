@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Oracle RAC — Services, VIPs, Load Balancing & Failover (Micro Demo)</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+  <style>
+    /* ===== Look & Feel aligned to Select AI demo ===== */
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background:linear-gradient(135deg,#14429e 0%,#1d252c 100%); min-height:100vh; overflow-x:hidden; }
+    .container { max-width:1200px; margin:0 auto; padding:20px; }
+    .header { text-align:center; margin-bottom:40px; animation:fadeInDown 1s ease-out; }
+    .oracle-logo { font-size:2.5rem; color:#eb5046; font-weight:bold; margin-bottom:10px; }
+    .title { font-size:2rem; color:#fff; margin-bottom:10px; }
+    .subtitle { font-size:1.1rem; color:rgba(255,255,255,.85); }
+
+    .demo-container { background:rgba(255,255,255,.97); border-radius:20px; padding:30px; box-shadow:0 20px 60px rgba(0,0,0,.25); animation:fadeInUp 1s ease-out .25s both; }
+
+    .section-title { font-size:1.4rem; color:#1d252c; margin-bottom:15px; display:flex; align-items:center; gap:10px; }
+    .rac-badge { background:linear-gradient(45deg,#14429e,#008060); color:white; padding:4px 12px; border-radius:15px; font-size:.8rem; animation:pulse 2s infinite; }
+
+    /* Controls */
+    .controls { display:grid; gap:10px; margin-bottom:20px; }
+    .row { display:flex; gap:10px; align-items:center; flex-wrap:wrap; }
+    .toggle { display:flex; align-items:center; gap:8px; }
+    .toggle input { accent-color:#14429e; }
+
+    .btn { background:linear-gradient(45deg,#14429e,#008060); color:white; border:none; padding:12px 18px; border-radius:10px; font-size:1rem; cursor:pointer; transition:all .25s; position:relative; overflow:hidden; }
+    .btn:hover { transform:translateY(-2px); box-shadow:0 10px 25px rgba(20,66,158,.35); }
+    .btn.warn { background:linear-gradient(45deg,#b65226,#eb5046); }
+    .btn.ghost { background:rgba(20,66,158,.1); color:#14429e; border:1px solid #14429e; }
+
+    /* Two-column layout */
+    .grid-two { display:grid; grid-template-columns:360px 1fr; gap:20px; }
+
+    /* Left rail */
+    .panel { background:white; border-radius:14px; padding:16px; box-shadow:0 10px 25px rgba(0,0,0,.08); border:1px solid #e6e7e8; }
+    .sql { background:#1d252c; color:#f5f6f7; border-radius:10px; padding:12px; font-family:'Courier New',monospace; font-size:.95rem; }
+    .log { background:#1d252c; color:#e8eef7; border-radius:10px; height:180px; overflow:auto; padding:12px; font-family:'Courier New',monospace; font-size:.9rem; border:1px solid #0f203a; }
+    .ok{ color:#00cfc9 } .err{ color:#eb5046 } .warn{ color:#ffb020 }
+
+    /* Topology */
+    .topology { position:relative; }
+    .overlay { position:absolute; inset:0; pointer-events:none; z-index:10; }
+    .nodes { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; }
+    .node { position:relative; background:white; border-radius:14px; padding:14px; border:1px solid #e6e7e8; box-shadow:0 10px 20px rgba(0,0,0,.06); cursor:pointer; }
+    .node h4 { margin:0 0 6px; font-size:1rem; color:#1d252c; }
+    .meta { color:#5d6a76; font-size:.85rem; }
+    .vip { font-family:'Courier New',monospace; color:#14429e; font-weight:600; }
+    .status { position:absolute; top:10px; right:10px; font-size:.8rem; padding:3px 8px; border-radius:12px; border:1px solid; }
+    .up { color:#008060; border-color:#008060; background:rgba(0,128,96,.08); }
+    .down { color:#eb5046; border-color:#eb5046; background:rgba(235,80,70,.08); }
+    .bar { height:8px; background:#eef1f4; border-radius:6px; overflow:hidden; margin-top:8px; }
+    .bar > span { display:block; height:100%; width:0%; background:linear-gradient(90deg,#14429e,#00cfc9); transition:width .4s ease; }
+
+    .clients { display:flex; gap:8px; flex-wrap:wrap; max-height:140px; overflow:auto; padding-right:6px; }
+    .client { border:1px solid #e6e7e8; border-radius:10px; padding:6px 10px; font-size:.85rem; background:white }
+
+    /* Packet animation */
+    .packet { position:absolute; padding:4px 8px; border-radius:999px; font:11px 'Courier New',monospace; color:white; opacity:.95; border:1px solid transparent; }
+    .read { background:#008060; border-color:#008060; }
+    .write { background:#eb5046; border-color:#eb5046; }
+    .lock { background:#ffb020; border-color:#ffb020; color:#1d252c }
+
+    /* Charts: keep compact height and prevent page growth */
+    .chart-card { background:white; border-radius:14px; padding:16px; box-shadow:0 10px 25px rgba(0,0,0,.08); border:1px solid #e6e7e8; height:240px; display:flex; flex-direction:column; }
+    #loadChart { height:180px !important; }
+
+    table { width:100%; border-collapse:collapse; }
+    th,td { padding:10px 12px; border-top:1px solid #e6e7e8; text-align:left; }
+    th { background:linear-gradient(45deg,#14429e,#008060); color:white; }
+
+    /* DB Explorer: compact with internal scroll to avoid page sprawl */
+    .db-scroll { max-height:320px; overflow:auto; padding-right:6px; }
+
+    /* Animations */
+    @keyframes fadeInDown { from{opacity:0; transform:translateY(-30px)} to{opacity:1; transform:translateY(0)} }
+    @keyframes fadeInUp { from{opacity:0; transform:translateY(30px)} to{opacity:1; transform:translateY(0)} }
+    @keyframes pulse { 0%,100{transform:scale(1)} 50%{transform:scale(1.05)} }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="oracle-logo">ORACLE</div>
+      <div class="title">Real Application Clusters (RAC)</div>
+      <div class="subtitle">Services • VIPs • Runtime Load Balancing • Fast Connection Failover</div>
+    </div>
+
+    <div class="demo-container">
+      <div class="section-title">Interactive Micro Demo <span class="rac-badge">RAC</span></div>
+
+      <div class="grid-two">
+        <!-- Left Rail: Controls + Schema + Logs -->
+        <div class="panel">
+          <h3 style="margin-bottom:10px; color:#1d252c">Controls</h3>
+          <div class="controls">
+            <div class="row">
+              <label class="toggle"><input id="useAdvisory" type="checkbox" checked> Load Balancing Advisory</label>
+              <label class="toggle"><input id="fastFailover" type="checkbox" checked> Fast Connection Failover</label>
+              <label class="toggle"><input id="showPackets" type="checkbox" checked> Show Packets</label>
+            </div>
+            <div class="row" role="radiogroup" aria-label="LB mode">
+              <input type="radio" name="lbmode" id="lbServer" value="server" checked><label for="lbServer">Server‑managed</label>
+              <input type="radio" name="lbmode" id="lbClient" value="client"><label for="lbClient">Client‑side</label>
+            </div>
+            <div class="row">
+              <label>Workload:</label>
+              <select id="workload">
+                <option value="oltp" selected>OLTP (RW)</option>
+                <option value="ro">Read‑only</option>
+                <option value="mix">Mixed</option>
+              </select>
+              <label class="toggle"><input id="roPin" type="checkbox"> Pin RO to nodes 2 & 3</label>
+            </div>
+            <div class="row">
+              <label>Rate:</label>
+              <input id="rate" type="range" min="0" max="50" value="0"><span id="rateVal" class="meta">0 req/s</span>
+            </div>
+            <div class="row">
+              <button id="connectBtn" class="btn">Open 10 connections</button>
+              <button id="burstBtn" class="btn ghost">Burst 50 ops</button>
+              <button id="autoBtn" class="btn">Start Autopilot</button>
+              <button id="stopBtn" class="btn warn">Stop</button>
+            </div>
+            <div class="row">
+              <button data-node="1" class="btn warn">Fail/Recover Node 1</button>
+              <button data-node="2" class="btn warn">Fail/Recover Node 2</button>
+              <button data-node="3" class="btn warn">Fail/Recover Node 3</button>
+            </div>
+          </div>
+
+          <h3 style="margin:16px 0 8px; color:#1d252c">Schema (Demo Objects)</h3>
+          <pre class="sql">CREATE TABLE customers (
+  customer_id NUMBER PRIMARY KEY,
+  name        VARCHAR2(100)
+);
+CREATE TABLE inventory (
+  sku   VARCHAR2(20) PRIMARY KEY,
+  stock NUMBER
+);
+CREATE TABLE orders (
+  order_id    NUMBER PRIMARY KEY,
+  customer_id NUMBER REFERENCES customers(customer_id),
+  sku         VARCHAR2(20) REFERENCES inventory(sku),
+  qty         NUMBER,
+  created_at  TIMESTAMP DEFAULT SYSTIMESTAMP
+);
+CREATE SEQUENCE orders_seq START WITH 1;</pre>
+
+          <div class="row" style="margin:8px 0 12px">
+            <button class="btn" id="btnSeed">Seed Data</button>
+            <button class="btn ghost" id="btnSelect">SELECT Top Customers</button>
+            <button class="btn ghost" id="btnInsert">INSERT Order</button>
+            <button class="btn ghost" id="btnUpdate">UPDATE Inventory</button>
+            <button class="btn warn" id="btnResetDB">Reset DB</button>
+          </div>
+
+          <h3 style="margin:8px 0;color:#1d252c">Event Log</h3>
+          <div id="log" class="log"></div>
+        </div>
+
+        <!-- Right: Topology + Clients + Charts + DB Explorer -->
+        <div>
+          <div class="topology panel">
+            <div class="overlay" id="overlay"></div>
+            <div class="nodes" id="nodes"></div>
+          </div>
+
+          <div style="margin:12px 0 0" class="panel">
+            <div class="row" style="justify-content:space-between">
+              <div style="font-weight:600">Service: <code>crm_rw.prod.mycorp</code> — <span id="policyTxt">server‑managed • LBA • FCF</span></div>
+              <div>Workload: <b id="workTxt">OLTP</b></div>
+            </div>
+          </div>
+
+          <div class="panel" style="margin-top:12px">
+            <h3 style="margin:0 0 8px;color:#1d252c">Connected Clients</h3>
+            <div class="clients" id="clients"></div>
+          </div>
+
+          <div class="chart-card" style="margin-top:12px">
+            <h3 style="margin:0 0 8px;color:#1d252c">Instance Session Load</h3>
+            <canvas id="loadChart"></canvas>
+          </div>
+
+          <div class="panel" style="margin-top:12px">
+            <h3 style="margin:0 8px 8px 0;color:#1d252c">Database Explorer</h3>
+            <div id="dbViews" class="db-scroll"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    /* ===== State ===== */
+    const nodes = [
+      { id:1, name:'Node 1', host:'rac1', vip:'10.0.0.101', up:true, sessions:0, clients:[] },
+      { id:2, name:'Node 2', host:'rac2', vip:'10.0.0.102', up:true, sessions:0, clients:[] },
+      { id:3, name:'Node 3', host:'rac3', vip:'10.0.0.103', up:true, sessions:0, clients:[] },
+    ];
+    let nextClientId = 1; let autopilot=null; let loadChart=null;
+
+    const toggles = {
+      advisory: document.getElementById('useAdvisory'),
+      fcf: document.getElementById('fastFailover'),
+      packets: document.getElementById('showPackets')
+    };
+    const mode = { server: document.getElementById('lbServer'), client: document.getElementById('lbClient'), get value(){return this.server.checked?'server':'client'} };
+    const workloadSel = document.getElementById('workload');
+    const roPin = document.getElementById('roPin');
+
+    /* ===== Demo DB ===== */
+    const db = { customers:[], inventory:[], orders:[], seq:{orders_seq:1} };
+    function seedDB(){
+      db.customers = Array.from({length:5},(_,i)=>({customer_id:1001+i, name:`Customer ${i+1}`}));
+      db.inventory = [{sku:'SKU-1',stock:50},{sku:'SKU-2',stock:30},{sku:'SKU-3',stock:80}];
+      db.orders = []; db.seq.orders_seq = 1; renderDB(); log('Seeded demo tables','ok');
+    }
+
+    /* ===== DOM refs ===== */
+    const nodesEl = document.getElementById('nodes');
+    const overlay = document.getElementById('overlay');
+    const clientsEl = document.getElementById('clients');
+    const policyTxt = document.getElementById('policyTxt');
+    const workTxt = document.getElementById('workTxt');
+    const dbViews = document.getElementById('dbViews');
+    const logEl = document.getElementById('log');
+
+    /* ===== Utils ===== */
+    const rnd=(a,b)=>Math.floor(Math.random()*(b-a+1))+a;
+    const log=(m,c='')=>{ const p=document.createElement('p'); p.textContent=`${new Date().toLocaleTimeString()}  ${m}`; if(c) p.classList.add(c); logEl.appendChild(p); logEl.scrollTop=logEl.scrollHeight; };
+
+    /* ===== Render ===== */
+    function render(){
+      // nodes
+      nodesEl.innerHTML='';
+      nodes.forEach(n=>{
+        const card=document.createElement('div'); card.className='node'; card.dataset.id=n.id;
+        card.innerHTML=`<div class="status ${n.up?'up':'down'}">${n.up?'UP':'DOWN'}</div>
+          <h4>${n.name}</h4>
+          <div class="meta">Host: <code>${n.host}</code> · VIP: <span class="vip">${n.vip}</span></div>
+          <div class="meta">Sessions: <b>${n.sessions}</b></div>
+          <div class="bar"><span style="width:${Math.min(100,n.sessions*10)}%"></span></div>`;
+        card.onclick=()=>showNode(n);
+        nodesEl.appendChild(card);
+      });
+
+      // clients (internally scrollable, avoids page sprawl)
+      clientsEl.innerHTML='';
+      nodes.forEach(n=>n.clients.forEach(cid=>{ const el=document.createElement('div'); el.className='client'; el.textContent=`Client ${cid}`; clientsEl.appendChild(el);}));
+
+      // policy text
+      const flags=[]; if(toggles.advisory.checked) flags.push('LBA'); if(toggles.fcf.checked) flags.push('FCF');
+      policyTxt.textContent = `${mode.value==='server'?'server‑managed':'client‑side'} • ${flags.join(' • ')||'basic'}`;
+      workTxt.textContent = workloadSel.value.toUpperCase();
+
+      // chart
+      updateChart();
+    }
+
+    function updateChart(){
+      const ctx = document.getElementById('loadChart').getContext('2d');
+      const data = nodes.map(n=>n.sessions);
+      const labels = nodes.map(n=>n.name);
+      if(loadChart){ loadChart.data.labels=labels; loadChart.data.datasets[0].data=data; loadChart.update('none'); return; }
+      loadChart = new Chart(ctx,{ type:'bar', data:{ labels, datasets:[{ label:'Sessions', data, backgroundColor:['#14429e','#008060','#00cfc9'] }] }, options:{ responsive:true, maintainAspectRatio:false, animation:false, plugins:{ legend:{display:false} }, scales:{ y:{ beginAtZero:true, ticks:{ precision:0 } } } } });
+    }
+
+    /* ===== DB Explorer ===== */
+    const tbl=(name,rows,cols)=>{ const head=`<tr>${cols.map(c=>`<th>${c}</th>`).join('')}</tr>`; const body=rows.length? rows.map(r=>`<tr>${cols.map(c=>`<td>${r[c]}</td>`).join('')}</tr>`).join('') : `<tr><td colspan="${cols.length}">(empty)</td></tr>`; return `<h4 style="margin:6px 0">${name} <span class="meta">(${rows.length} rows)</span></h4><table>${head}${body}</table>` };
+    function renderDB(){ dbViews.innerHTML = tbl('CUSTOMERS',db.customers,['customer_id','name'])+tbl('INVENTORY',db.inventory,['sku','stock'])+tbl('ORDERS',db.orders,['order_id','customer_id','sku','qty','created_at']); }
+
+    /* ===== Packets ===== */
+    function spawnPacket(fromEl,toEl,label,kind){ if(!toggles.packets.checked) return; const ov=overlay.getBoundingClientRect(); const a=fromEl.getBoundingClientRect(); const b=toEl.getBoundingClientRect(); const start=[a.left+a.width/2-ov.left, a.top+a.height/2-ov.top]; const end=[b.left+b.width/2-ov.left, b.top+24-ov.top]; const pkt=document.createElement('div'); pkt.className=`packet ${kind}`; pkt.textContent=label; overlay.appendChild(pkt); pkt.style.left=`${start[0]}px`; pkt.style.top=`${start[1]}px`; const steps=22; let t=0; const dx=(end[0]-start[0])/steps, dy=(end[1]-start[1])/steps; const id=setInterval(()=>{ t++; pkt.style.left=`${start[0]+dx*t}px`; pkt.style.top=`${start[1]+dy*t}px`; if(t>=steps){ clearInterval(id); pkt.remove(); } },16); }
+
+    /* ===== Routing ===== */
+    function eligible(){ let ups=nodes.filter(n=>n.up); if(workloadSel.value==='ro' && roPin.checked) ups=ups.filter(n=>n.id!==1); return ups; }
+    function pickTarget(){ const ups=eligible(); if(!ups.length) return null; if(mode.value==='server'){ if(toggles.advisory.checked){ return ups.sort((a,b)=>a.sessions-b.sessions)[0]; } return ups[rnd(0,ups.length-1)]; } else { if(toggles.advisory.checked){ return ups.sort((a,b)=>a.sessions-b.sessions)[0]; } return ups[rnd(0,ups.length-1)]; } }
+
+    /* ===== Ops ===== */
+    function attachClient(){ const id=nextClientId++; const t=pickTarget(); if(!t){ log(`Client ${id} → no instance`, 'err'); return; } t.clients.push(id); t.sessions++; spawnPacket(clientsEl, nodeCard(t), 'CONNECT','read'); log(`Client ${id} connected to ${t.name} (VIP ${t.vip})`,'ok'); render(); }
+    function perform(op){ if(db.customers.length===0) seedDB(); const t=pickTarget(); if(!t){ log(`${op.type} → no instance`, 'err'); return; } spawnPacket(clientsEl,nodeCard(t), op.label,op.kind); t.sessions++; render(); setTimeout(()=>{ if(!t.up){ log(`${op.type} on ${t.name} failed (DOWN)`, 'err'); if(toggles.fcf.checked){ log(`FCF: retrying ${op.type}…`,'warn'); t.sessions=Math.max(0,t.sessions-1); perform(op); return; } } else { if(op.type==='INSERT'){ const id=db.seq.orders_seq++; const cust=db.customers[rnd(0,db.customers.length-1)].customer_id; const item=db.inventory[rnd(0,db.inventory.length-1)].sku; const qty=rnd(1,3); db.orders.push({order_id:id,customer_id:cust,sku:item,qty,created_at:new Date().toISOString()}); log(`INSERT orders VALUES (${id},${cust},'${item}',${qty}) @ ${t.name}`,'ok'); } if(op.type==='UPDATE'){ if(db.inventory.length){ const i=rnd(0,db.inventory.length-1); db.inventory[i].stock=Math.max(0,db.inventory[i].stock-1); log(`UPDATE inventory SET stock=stock-1 WHERE sku='${db.inventory[i].sku}' @ ${t.name}`,'ok'); } } if(op.type==='SELECT'){ const top=db.customers.slice(0,3).map(c=>c.name).join(', '); log(`SELECT top customers → [${top}] @ ${t.name}`,'ok'); } renderDB(); } t.sessions=Math.max(0,t.sessions-1); render(); }, rnd(220,700)); }
+
+    /* ===== Node helpers ===== */
+    function nodeCard(n){ return [...nodesEl.children].find(e=>+e.dataset.id===n.id); }
+    function failRecover(id){ const n=nodes.find(x=>x.id===id); n.up=!n.up; if(!n.up){ const lost=n.sessions; n.sessions=0; n.clients=[]; log(`${n.name} FAILED — VIP ${n.vip} relocates`,'warn'); if(toggles.fcf.checked && lost>0){ for(let i=0;i<lost;i++) attachClient(); } } else { log(`${n.name} RECOVERED — VIP ${n.vip} returns`,'ok'); } render(); }
+
+    /* ===== Wire up ===== */
+    document.getElementById('connectBtn').onclick=()=>{ for(let i=0;i<10;i++) attachClient(); };
+    document.getElementById('burstBtn').onclick=()=>{ for(let i=0;i<50;i++) perform({type: workloadSel.value==='ro'?'SELECT':'INSERT', label: workloadSel.value==='ro'?'SELECT':'INSERT', kind: workloadSel.value==='ro'?'read':'write'}); };
+    document.getElementById('autoBtn').onclick=()=>{ if(autopilot) return; autopilot=setInterval(()=>{ const r=+document.getElementById('rate').value; if(r>0){ const op=chooseOp(); for(let i=0;i<r;i++) perform(op); } },1000); log('Autopilot started'); };
+    document.getElementById('stopBtn').onclick=()=>{ if(autopilot){ clearInterval(autopilot); autopilot=null; log('Autopilot stopped','warn'); } };
+    document.querySelectorAll('button[data-node]').forEach(b=> b.onclick=()=>failRecover(parseInt(b.dataset.node)));
+    document.getElementById('btnSeed').onclick=seedDB;
+    document.getElementById('btnResetDB').onclick=()=>{ db.customers=[]; db.inventory=[]; db.orders=[]; db.seq.orders_seq=1; renderDB(); log('DB reset','warn'); };
+    document.getElementById('btnSelect').onclick=()=>perform({type:'SELECT',label:'SELECT',kind:'read'});
+    document.getElementById('btnInsert').onclick=()=>perform({type:'INSERT',label:'INSERT',kind:'write'});
+    document.getElementById('btnUpdate').onclick=()=>perform({type:'UPDATE',label:'UPDATE',kind:'lock'});
+
+    document.getElementById('rate').oninput=()=>{ document.getElementById('rateVal').textContent=`${document.getElementById('rate').value} req/s`; };
+    workloadSel.onchange=render; roPin.onchange=render;
+    [toggles.advisory, toggles.fcf, toggles.packets, mode.server, mode.client].forEach(el=> el.addEventListener('change', render));
+
+    function chooseOp(){ if(workloadSel.value==='oltp') return Math.random()<0.7?{type:'INSERT',label:'INSERT',kind:'write'}:{type:'SELECT',label:'SELECT',kind:'read'}; if(workloadSel.value==='ro') return {type:'SELECT',label:'SELECT',kind:'read'}; return Math.random()<0.5?{type:'INSERT',label:'INSERT',kind:'write'}:(Math.random()<0.5?{type:'SELECT',label:'SELECT',kind:'read'}:{type:'UPDATE',label:'UPDATE',kind:'lock'}); }
+
+    // init
+    seedDB(); renderDB(); render();
+  </script>
+</body>
+</html>
