@@ -15,9 +15,9 @@ In this workshop, you will be provided with a Customer Service application that 
 * Use **Oracle Autonomous Database** in the OCI Free Tier, and **Oracle Database for Developers**, low-cost options for cloud database development
 * Build REST APIs using Spring Boot
 * Handle events with **Oracle Transactional Event Queues** to implement event-based capabilities
-* Use OKafka to XXX
+* Use OKafka to implement atomic, transactional messaging
 * Use **Oracle AI Vector Search** and **OCI Generative AI** service to implement AI summarization and recommendations
-* Use **JSON Relational Duality Views** to reduce round trips and improve performance
+* Use **JSON Relational Duality Views** to reduce round trips and improve application performance
 * Create REST APIs using **Oracle REST Data Services**
 
 
