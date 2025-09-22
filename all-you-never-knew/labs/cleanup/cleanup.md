@@ -20,7 +20,7 @@ This lab assumes you have:
 
 ## Task 1: Clean up application data
 
-Run the following SQL script to remove all application data from your database:
+Run the following [SQL script](https://github.com/oracle/microservices-datadriven/blob/main/customer-support-lab/src/test/resources/cleanup.sql) to remove all application data from your database:
 
 ```sql
 drop view ticket_dv;

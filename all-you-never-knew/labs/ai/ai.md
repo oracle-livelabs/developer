@@ -100,6 +100,7 @@ select * from related_ticket;
 
 You should see a relationship between the IDs of both tickets created in Task 2.
 
+You may now proceed to the next lab.
 
 ## Acknowledgements
 
