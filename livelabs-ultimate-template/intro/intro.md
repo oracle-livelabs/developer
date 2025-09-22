@@ -153,7 +153,7 @@ This task shows how to escape markdown characters.
 2. the file is always located in a folder called 'workshops' located in the root folder of a particular workshop.
 3. An example is provided at ../workshops/sandbox/manifest.json'
 4. Different labs are specified in the manifest.json
-5. each lab file is located in its own folder. the name of the lab file should be short, all lowercase, and refer to the content. For example, json.md. the folder name is the name of the file without the file extension, for exmaple json/
+5. each lab file is located in its own folder. the name of the lab file should be short, all lowercase, and refer to the content. For example, json.md. the folder name is the name of the file without the file extension, for example json/
 6. the folder that contains the manifest.json file always contains an index.html ./workshops/sandbox/index.html which must be available. It must not be changed.
     
 
