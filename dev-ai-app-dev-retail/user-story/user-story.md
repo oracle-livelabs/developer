@@ -143,11 +143,9 @@ In this example, you will navigate the application to review a customer and deny
 
     ![Alice Smith Graph](./images/expand-graph.png =50%x*)
 
-    On the decision page, the return specialist can use **Operational Property Graph** to explore near-approval return scenarios. Built with **Oracle Graph**, this feature visually maps return amounts and decisions/ recommendations for the customer. It highlights return decisions vs customer risk and can tell us how they can  improve return eligibility by reducing risk.
+    On the decision page, the return specialist can use **Interactive Graph: Customer Return & Risk** to explore relationships in return authorization scenarios. Built with **Oracle Graph**, this feature visually maps decisions and highlights important features of the request like the customer loyalty status and return reason.
 
     ![Alice Smith Graph](./images/alice-smith-graph.png =50%x*)
-
-    ![Alice Smith Dot Plot](./images/alice-smith-dotplot.png =50%x*)
 
 >💡 In Oracle Database 23ai, **Property Graph** allows you to treat your data like a network of connected points, where each point (called a node) and each link (called an edge) has its own details or properties. This setup helps you run graph analytics, to find important connections or patterns, directly within the database.
 
