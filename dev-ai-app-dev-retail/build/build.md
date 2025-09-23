@@ -179,7 +179,7 @@ You will query customer data from the `customer_returns_dv` JSON duality view, w
 
 3. The output will display a DataFrame containing the customer details for the selected customer ID.
 
-    ![Fetch customer](./images/fetch_customer.png " ")
+    ![Fetch customer](./images/fetch-customer.png " ")
 
 If you completed Lab 1: Run the Demo earlier, this is what gets printed out when the Return officer clicks on the customer 1000. You just built it, well done!
 
@@ -345,14 +345,15 @@ Here’s what we’ll do:
     
 ## Task 5: Chunk & Store the Recommendations
 
-Now we'll chunk the Ai recommendations by words and store in the `RETURN_CHUNKS`table.
+To handle follow-up questions, you will enhance the system with an AI Guru powered by Oracle 23ai’s Vector Search and Retrieval-Augmented Generation (RAG). The AI Guru will be able to answer questions about the return application and provide recommendations based on the data.
 
-The parameters we'll use:
-* By words(vs characters)
-* MAX 50 words per chunk (adjust as needed)
-* OVERLAP 0 (independent chunks)
-* SPLIT BY sentence (avoid mid-setence cuts)
-* LANGUAGE american, NORMALIZE all
+Before answering questions, we need to prepare the data by vectoring the claims recommendations. This step:
+
+   - Stores Recommendations: Inserts the full recommendation text (from previous cell) as a single chunk if not already present.
+   - We delete prior chunks for this authorization.
+   - We use `VECTOR_CHUNKS` to split the recommendation text.
+   - The chunks will be inserted into `RETURN_CHUNK` with `CHUNK_ID= chunk_offset`.
+   - We display a data frame summary to show the chunks.
 
 1. Copy the following code and run:
 
@@ -392,7 +393,7 @@ The parameters we'll use:
         cursor.execute(insert_sql, {'chunk_size': size, 'req_id': request_id, 'rec_text': recommendations})
 
     connection.commit()
-    print(f"✅ Task 6 complete: recommendation chunked and stored for request {request_id} (sizes: {chunk_sizes}).")
+    print(f"✅ Task 5 complete: recommendation chunked and stored for request {request_id} (sizes: {chunk_sizes}).")
     </copy>
     ```
 
@@ -458,7 +459,7 @@ This step:
 
     ```python
     <copy>
-    question = "What’s the best action for a high-risk return request?"
+        question = "What’s the best action for a high-risk return request?"
 
     def vectorize_question(q):
         cursor.execute("""

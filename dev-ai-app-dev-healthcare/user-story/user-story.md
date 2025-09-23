@@ -140,6 +140,16 @@ In this example, you will navigate the application to review a customer and requ
 
 >⁉️ **What are two reasons that the AI needs more information from this applicant?** ⁉️
 
+4. Expand **View Dot Plot: Diagnosis-Policy Relationships** to view the graph.
+
+    ![Izzie Stevens Graph](./images/expand-graph.png =50%x*)
+        
+    On the decision page, the healthcare claim reviewer can use **Interactive Graph: Patient Prior-Auth & Risk** to explore relationships in near-approval authorization scenarios. Built with **Oracle Graph**, this feature visually maps decisions and highlights important features of the request like the patient condition and medical treatment.
+
+    ![Izzie Stevens Graph](./images/izzie-stevens-graph.png =50%x*)
+
+>💡 In Oracle Database 23ai, **Property Graph** allows you to treat your data like a network of connected points, where each point (called a node) and each link (called an edge) has its own details or properties. This setup helps you run graph analytics, like to find important connections or patterns, directly within the database.
+
 5. The authorization status is set to **Request Info**. Click the **Confirm Decision** button.
 
     The authorization status has been updated to 'Request Info' and saved to the patient profile.
