@@ -145,21 +145,21 @@ In this example, you will navigate the application to review a customer and deny
 
     ![James Woods Graph](./images/james-woods-graph.png =50%x*)
 
-    On the decision page, the loan officer can use **Operational Property Graph** to explore near-approval loan scenarios. Built with **Oracle Graph**, this feature visually maps loans just out of reach and highlights what adjustments—like increasing income or reducing debt—could improve eligibility.
+    On the decision page, the loan officer can use **Operational Property Graph** to explore near-approval loan scenarios. 
 
     ![James Woods Graph](./images/james-woods-graph3.png =50%x*)
 
 >💡 In Oracle Database 23ai, **Property Graph** allows you to treat your data like a network of connected points, where each point (called a node) and each link (called an edge) has its own details or properties. This setup helps you run graph analytics, like finding important connections or patterns, directly within the database.
 
-5. The loan status is set to **Denied**. Click the **Save Final Approval & Loan Status** button.
+5. The loan status is set to **Denied**. Click the **Confirm decision** button.
 
     The loan status has been updated to 'Denied' and saved to the customer profile.
 
-    ![James Woods Save Loan Status](./images/james-woods-save.png =50%x*)
+    ![James Woods Save Loan Status](./images/woods-decision1.png =50%x*)
 
 6. Press the **Generate Decision as PDF** button to save the AI responses and proceed to the final loan disposition.
 
-    ![James Woods PDF](./images/james-woods-pdf.png =50%x*)
+    ![James Woods PDF](./images/woods-decision2.png =50%x*)
 
 7. Click the **Download PDF** button.
 
@@ -171,11 +171,11 @@ In this example, you will navigate the application to review a customer and deny
 
 9. Click the **Return to Dashboard** button to navigate back to the Dashboard.
 
-    ![Return to Dashboard](./images/woods-return-dashboard.png =50%x*)
+    ![Return to Dashboard](./images/woods-decision2.png =50%x*)
 
 10. Expand **View Denied Customers**. You will see that James Woods has been moved from the **Pending Review Loan Requests** list to the **Denied Loan Requests** list.
 
-    ![James Woods Denied List](./images/james-woods-denied-list.png =50%x*)
+    ![James Woods Denied List](./images/woods-decision3.png =50%x*)
 
 **Conclusion**
 
