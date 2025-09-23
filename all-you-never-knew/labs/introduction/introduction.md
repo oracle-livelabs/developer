@@ -29,6 +29,7 @@ This lab assumes you have:
 * An Integrated Development Editor (like Visual Studio Code)
 * The necessary tools and runtimes to build Spring Boot applications, including Maven and a Java Developer Kit (JDK 21 recommended)
 
+You may now proceed to the next lab.
 
 ## Acknowledgements
 

@@ -73,7 +73,7 @@ Because events are published and consumed using database transactions, the custo
 
 When we produce or consume an event, we begin a database transaction. During this transaction, we can insert, update, or otherwise run database queries atomically.
 
-![Transactional Messaging](./transactional-messaging.png)
+![An image displaying transactional messaging using Oracle Database](./transactional-messaging.png)
 
 Transactional Messaging provides a simple implementation of the popular [Transactional Outbox Pattern](https://microservices.io/patterns/data/transactional-outbox.html) utilized in microservices architecture - ensuring and simplifying data consistency.
 
@@ -82,6 +82,8 @@ Transactional Messaging provides a simple implementation of the popular [Transac
 OSON is Oracle Database's optimized JSON storage format. The customer service application uses OSON as the serialization layer for Java objects transmitted to TxEventQ topics.
 
 Not only is OSON an efficient JSON serialization format, it also enables the use of Oracle Database JSON features without requiring application changes. We'll see this in action in the JSON lab.
+
+You may now proceed to the next lab.
 
 ## Learn More
 
