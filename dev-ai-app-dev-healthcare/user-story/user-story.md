@@ -140,13 +140,15 @@ In this example, you will navigate the application to review a customer and requ
 
 >⁉️ **What are two reasons that the AI needs more information from this applicant?** ⁉️
 
-4. Expand **View Dot Plot: Diagnosis-Policy Relationships** to view the graph.
+4. Expand **Interactive Graph: Patient Prior-Auth & Risk** to view the graph.
 
     ![Izzie Stevens Graph](./images/expand-graph.png =50%x*)
         
     On the decision page, the healthcare claim reviewer can use **Interactive Graph: Patient Prior-Auth & Risk** to explore relationships in near-approval authorization scenarios. Built with **Oracle Graph**, this feature visually maps decisions and highlights important features of the request like the patient condition and medical treatment.
 
     ![Izzie Stevens Graph](./images/izzie-stevens-graph.png =50%x*)
+
+    This graph traces Izzie Stevens’s pre-authorization request, linking her condition (hypertension) to a treatment recommendation and final approval decision. Instead of scattered records, the Operational Property Graph makes the full decision chain—patient, condition, request, and outcome—clear in one view. Clinicians and reviewers can instantly see why a treatment was approved and ensure compliance with medical policy.
 
 >💡 In Oracle Database 23ai, **Property Graph** allows you to treat your data like a network of connected points, where each point (called a node) and each link (called an edge) has its own details or properties. This setup helps you run graph analytics, like to find important connections or patterns, directly within the database.
 

@@ -4,79 +4,58 @@
 
 **Data is more than an asset—it’s the engine behind every smart decision, risk calculation and growth strategy. From real-time decision-making to risk management and innovation, success hinges on how well you harness it.**
 
-Generative AI and Oracle Database 23ai makes it possible to unlock deeper insights, faster—directly within your database.
+SeerGroup is a global conglomerate with multiple divisions. Each division buried in transactions, documents, and customer data. Their challenge is always the same: **decisions take too long** because data is scattered across silos and systems.
 
-This hands-on lab introduces you to Generative AI and Vector Search in Oracle Database 23ai, allowing you to build real applications using multiple types of data - no setup required. You'll connect to the database using Python and the Mongo API, run queries, create JSON Duality Views, and implement AI Vector Search and retrieval-augmented generation (RAG). Explore guided use cases or experiment freely in a browser-based development environment.
+This workshop shows how SeerGroup tackles that problem with Oracle Database 23ai + OCI Generative AI. By **keeping data in one place**, they cut out fragile integrations and give analysts, engineers, and managers a **single platform** for smarter approvals, faster investigations, and clearer customer answers.
 
-
-You will:
-  *	Use **native Vector Search** to query and analyze structured data, documents, and images—without moving data across platforms.
-
-  *	Combine your **enterprise data with large language models (LLMs)** using Retrieval-Augmented Generation (RAG) to answer natural language questions with context-aware accuracy.
-
-  * Automate real-world energy and utility workflows, like interconnection approvals, by **embedding and querying unstructured data** in real time.
-
-By the end of this workshop, you’ll understand how Oracle Database 23ai helps energy and utility organizations:
-
-  * ✅ Accelerate time-to-insight with centralized, AI-ready data
-
-  * ✅ Build intelligent apps without specialized AI infrastructure
-
-  * ✅ Drive data-driven decisions with consistent, governed access
+You’ll see how SeerGroup’s teams can move from manual, fragmented workflows to AI-powered applications—and you’ll build the same capabilities yourself in the labs that follow.
 
 
-**Start building where your data already lives—with Oracle Database 23ai.** 
+✅ **Start with the demo! (Lab 1)**
 
-**Your next breakthrough is just a lab away!**
+Step into SeerGroup’s Energy & Utilities division as a Grid Interconnection Engineer. You’ll use an AI-powered DER (Distributed Energy Resources) approval app built on Oracle Database 23ai to:
 
+* Review supplier interconnection requests with AI Vector Search, Graph analytics, and RAG
 
-#### ➡️ **Start with the demo! (Lab 1)**
+* See how Generative AI analyzes feeder capacity, inverter specs, and compliance rules—turning month-long studies into instant recommendations
 
-Check out the demo to see how Generative AI and Vector Search in the database, can operate against multiple types of data—empowering you to build real applications and make faster, smarter decisions. The best part? **No setup required**—just start with Lab 1 and follow the guide. You can explore guided use cases or experiment on your own using the demo application:
+* Approve, deny, or pend requests with AI-generated risk scores, clear explanations, and auto-generated decision letters
 
-  * ✅ Login as an Interconnection Engineer
+* Update supplier profiles using JSON Duality Views, keeping compliance data accurate and consistent
 
-  * ✅ Review customers that have been recommended by the system to be approved or denied for a grid interconnection
+This story shows how SeerEnergy uses Oracle Database 23ai and OCI Generative AI to accelerate renewable integration, improve compliance, and cut approval backlogs—all without moving data across siloed systems.
 
-  * ✅ Upload information to a customer's profile
+✅ **What’s next (Labs 2–5)**
 
-#### ➡️ **Start coding! (Labs 2-4)**
+After the demo, you’ll switch roles to developer. In the next labs you’ll connect to Oracle Database 23ai, shape data into JSON Duality Views, build a retrieval-augmented application, and extend it with reusable MCP tools. By the end, you’ll see how SeerGroup industries can move from siloed processes to intelligent, AI-driven applications—all on one platform.
 
-Lab 2 describes how to get access to our browser-based development environment. Make sure to check it out before continuing to Lab 3 and 4, where you will get hands-on and start interacting with Python with Oracle Database 23ai:
+* **Lab 2 – Connect to your environment**
+Log in to the JupyterLab IDE where you’ll write Python and run your code.
 
-  * ✅ Connect to the database using Python
+* **Lab 3 – Build the data foundation**
+Use Python with Oracle Database 23ai to create tables, shape them into JSON Duality Views, and interact with them using both SQL and MongoDB-style syntax—laying the groundwork for AI workflows across SeerGroup.
 
-  * ✅ Run SQL queries with Python
+* **Lab 4 – Implement RAG**
+Construct a working AI application. Pull customer and grid data, generate recommendations with OCI Generative AI, chunk and vectorize the results, and answer follow-up questions using Vector Search + RAG.
 
-  * ✅ Create JSON Duality Views
+* **Lab 5 – Extend with MCP tools**
+Wire Oracle Database 23ai and OCI Generative AI into reusable MCP tools. Call them from notebooks, chain them together into workflows, and even register your own tool for SeerGroup’s finance, retail, healthcare, or energy teams.
 
-  * ✅ Connect to the database using a Mongo API driver
-
-  * ✅ Use the Mongo API to query and update data
-
-  * ✅ Implement AI Vector Search
-
-  * ✅ Implement retrieval-augmented generation (RAG) using Oracle Database 23ai
-
-#### ➡️ **Start experimenting! (Lab 5)**
-
-You can also experiment with the code in your own environment. The workshop environment is flexible and allows you try out different things: Start building your own version of the grid interconnection application!
-
-  * ✅ Vectorize DER (distributed energy resource) data from one table into another
-
-  * ✅ Verify the data was vectorized
-
-  * ✅ Implement a similarity search
+By the end, you’ll have a complete toolkit—from clean data to live AI apps to composable tools—that shows how SeerGroup industries can turn their data into intelligent applications.
 
 ### Objectives
 
-* Learn how Oracle Database 23ai capabilities can be used to automate and enhance the grid interconnection approval process
+Objectives
 
-* Start coding with Python and Oracle's Python driver `oracledb`
+* Build and query data with Python + Oracle Database 23ai
 
-* Learn how to implement and interact with Oracle Database 23ai's new features using Python
+* Shape relational data into documents using JSON Duality Views
 
-* Implement a working example of retrieval-augmented generation (RAG) using Oracle Database 23ai
+* Run Vector Search, Graph analytics, and RAG directly in the database
+
+* Extend apps with OCI Generative AI and MCP tools
+
+* Deliver industry-grade solutions for SeerGroup’s divisions
 
 ### Prerequisites
 

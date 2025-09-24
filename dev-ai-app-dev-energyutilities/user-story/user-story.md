@@ -140,13 +140,15 @@ In this example, you will navigate the application to review a customer and deny
 
 >⁉️ **What are two reasons that the AI denied this request?** ⁉️
 
-4. Expand **View Dot Plot: Retail Return Insights** to view the graph.
+4. Expand **Interactive Graph: DER Request, Risk & Decision** to view the graph.
 
     ![Nina Wright Graph](./images/expand-graph.png =50%x*)
 
-    On the decision page, the return specialist can use **Interactive Graph: Customer Return & Risk** to explore relationships in return authorization scenarios. Built with **Oracle Graph**, this feature visually maps decisions and highlights important features of the request like the feeder analysis and compliance rules.
+    On the decision page, the return specialist can use **Interactive Graph: DER Request, Risk & Decision** to explore relationships in return authorization scenarios. Built with **Oracle Graph**, this feature visually maps decisions and highlights important features of the request like the feeder analysis and compliance rules.
 
     ![Nina Wright Graph](./images/nina-wright-graph.png =50%x*)
+
+    This graph shows how Nina Wright’s request connects to Feeder-A, flagged as High Risk and out of compliance with IEEE 1547. Instead of hidden studies, the Operational Property Graph makes the reasoning visual by linking customer, feeder, risk, and compliance in one view. Engineers and regulators can see instantly why the request was denied and build trust in the decision.
 
 >💡 In Oracle Database 23ai, **Property Graph** allows you to treat your data like a network of connected points, where each point (called a node) and each link (called an edge) has its own details or properties. This setup helps you run graph analytics, to find important connections or patterns, directly within the database.
 

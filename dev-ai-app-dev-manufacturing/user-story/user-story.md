@@ -78,9 +78,9 @@ In this first example, you will use the application to approve a purchase order 
 
     ![501 Option](./images/501-select-option.png =50%x*)
 
-7. Set the final authorization status to **Approved**, then click **Confirm Decision** to complete the process.
+7. Set the final decision status to **Approved**, then click **Confirm Decision** to complete the process.
 
-    The authorization status has been updated to 'Approved' and saved to the patient profile.
+    The decision status has been updated to 'Approved' and saved to the patient profile.
 
     ![501 Save Status](./images/501-save-status.png =50%x*)
 
@@ -108,38 +108,38 @@ In this first example, you will use the application to approve a purchase order 
 
 Once you select and save one of the 3 desired options recommended by the AI: 
 
-✅ The supplier's interconnection request is updated.
+✅ The purchase order request is updated.
 
 ✅ A finalized PDF decision document is generated.  
 
-✅ The dashboard reflects the change in real-time — marking Aisha as Approved.
+✅ The dashboard reflects the change in real-time — marking 501 as Approved.
 
-Congratulations, you have just approved your first supplier interconnection! Proceed to the next task.
+Congratulations, you have just approved your first purchase order! Proceed to the next task.
 
-## Task 3: Demo - Deny a supplier request
-In this example, you will navigate the application to review a customer and deny them as part of the exercise. The next user on your to-do list is Nina Wright.
+## Task 3: Demo - Request more info from a purchase order
+In this example, you will navigate the application to review a customer and deny them as part of the exercise. The last PO on your to-do list is Hugo Pratt.
 
-1. On the Dashboard page, from the pending review list, select the review button for **Nina Wright**.
+1. On the Dashboard page, from the pending review list, select the review button for **508**.
 
-    ![Select Nina Wright](./images/nina-wright.png =50%x*)
+    ![Select Hugo Pratt](./images/508.png =50%x*)
 
-2. Opening Nina Wright’s profile displays her patient history details. Within a few seconds, the AI automatically generates a suggested action. In this case, the system evaluates the profile and assigns it to “high risk” with explanations outlining key risk factors.
+2. Opening 508's profile displays purchase order details. Within a few seconds, the AI automatically generates a suggested action. In this case, the system evaluates the profile and suggests "request info" with explanations outlining key risk factors.
 
-    This supplier has: 
+    This purchase order has: 
 
-    * A feeder with a **hosting capacity of 300, Voltage level of 12kV, and high fault margin**
-    * A requested distributed energy resource with a **requested capacity of 350**
-    * And is a GridFit Rating of  **8 (high risk)**
+    * No **contract price** available
+    * No **historical median delta**
+    * And a risk level of **5(medium)**
 
-    The AI evaluates the profile and suggests next steps. In this case, it recommends denying the request and also provides clear explanations on why the recommendation is to deny the request.
+    The AI evaluates the profile and suggests next steps. In this case, it recommends requesting more info and also provides clear explanations on why the recommendation is to request more info
 
-    ![Nina Wright AI generated recommendations](./images/nina-wright-ai.png =50%x*)
+    ![AI generated recommendations](./images/508-ai.png =50%x*)
 
-3. Select the **Navigate to Supplier Decisions** button.
+3. Select the **Navigate to Purchase Order Decisions** button.
 
-    ![Nina Wright Decision](./images/nina-wright-decision.png =50%x*)
+    ![508 Decision](./images/508-decision.png =50%x*)
 
->⁉️ **What are two reasons that the AI denied this request?** ⁉️
+>⁉️ **What are two reasons that the AI requests more info?** ⁉️
 
 4. Expand **View Dot Plot: Retail Return Insights** to view the graph.
 
@@ -152,19 +152,19 @@ In this example, you will navigate the application to review a customer and deny
 >💡 In Oracle Database 23ai, **Property Graph** allows you to treat your data like a network of connected points, where each point (called a node) and each link (called an edge) has its own details or properties. This setup helps you run graph analytics, to find important connections or patterns, directly within the database.
 
 
-5. On the decisions page you can view the AI recommendation for Nina Wright. It shows the suggested action, comprehensive evaluation, and recommendations explanations. 
+5. On the decisions page you can view the AI recommendation for PO 508. It shows the suggested action, comprehensive evaluation, and recommendations explanations. 
 
-    ![Nina Wright recommendations](./images/nina-wright-save.png =50%x*)
+    ![508 recommendations](./images/508-save.png =50%x*)
 
-6. The authorization status is set to **Deny**. Click the **Confirm Decision** button.
+6. Choose an option for mounting bracking under **Select Your Desired Option**. The decision status is set to **Request Info**. Click the **Confirm Decision** button.
 
     The authorization status has been updated to 'Deny' and saved to the patient profile.
 
-    ![Nina Wright Save Status](./images/nina-wright-confirm.png =50%x*)
+    ![508 Save Status](./images/508-confirm.png =50%x*)
 
 7. Press the **Download Decision PDF** button to save the AI responses and proceed to the final authorization disposition.
 
-    ![Nina Wright PDF](./images/nina-wright-pdf.png =50%x*)
+    ![508 PDF](./images/nina-wright-pdf.png =50%x*)
 
 8. Click the **Download PDF** button.
 
@@ -188,13 +188,13 @@ Congratulations, you have finished reviewing a supplier that requires study! Pro
 
 ## Task 4: Demo - Update supplier details
 
-Lastly, let’s explore how the system uses JSON Duality Views to handle profile updates. In this task, you will edit a supplier's details. In this example, the supplier was asked to submit updated lab results.
+Lastly, let’s explore how the system uses JSON Duality Views to handle profile updates. In this task, you will edit a purchase order's details. In this example, the approval manager was asked to submit updated lab results.
 
 1. On the Dashboard page, from the **Pending Suppliers** list, select the review button for **Isabelle Carson**.
 
-    ![Select Isabelle](./images/isabelle-carson.png =50%x*)
+    ![Select 503](./images/503.png =50%x*)
 
-2. We will upload a document to update 's physician's note. On the Patient Details page, click the **Upload Document** button. The PDF file has been loaded. Then click the **Process PDF** button
+2. We will upload a document to update the PO. On the PO Details page, click the **Upload Document** button. The PDF file has been loaded. Then click the **Process PDF** button
 
     ![Upload Document](./images/upload-document.png =50%x*)
 
@@ -208,9 +208,9 @@ Lastly, let’s explore how the system uses JSON Duality Views to handle profile
 
 Once the document is uploaded:
 
-✅ The system automatically detects the new compliance data.
+✅ The system automatically detects the new data.
 
-✅ The profile will be updated with compliance documentation.
+✅ The profile will be updated with PO documentation.
 
 ✅ Thanks to JSON Transform and JSON Duality Views, only the relevant field is modified — leaving the rest of the profile UNTOUCHED.
 
@@ -224,7 +224,7 @@ In conclusion our Grid Interconnection Approval App was able to leverage Oracle 
 
 ✅ Enable seamless profile updates with JSON Duality Views
 
-✅ And empower grid interconnection engineers with actionable insights through Operational Property Graphs 
+✅ And empower PO Approval Managers with actionable insights through Operational Property Graphs 
 
 By combining these advanced tools, the application enables faster, smarter decisions and delivers clear guidance on how suppliers can improve their eligibility.
 
