@@ -140,11 +140,11 @@ In this example, you will navigate the application to review a customer and deny
 
 >⁉️ **What are two reasons that the AI denied this request?** ⁉️
 
-4. Expand **View Dot Plot: Retail Return Insights** to view the graph.
+4. Expand **Interactive Graph: DER Request, Risk & Decision** to view the graph.
 
     ![Nina Wright Graph](./images/expand-graph.png =50%x*)
 
-    On the decision page, the return specialist can use **Interactive Graph: Customer Return & Risk** to explore relationships in return authorization scenarios. Built with **Oracle Graph**, this feature visually maps decisions and highlights important features of the request like the feeder analysis and compliance rules.
+    On the decision page, the return specialist can use **Interactive Graph: DER Request, Risk & Decision** to explore relationships in return authorization scenarios. Built with **Oracle Graph**, this feature visually maps decisions and highlights important features of the request like the feeder analysis and compliance rules.
 
     ![Nina Wright Graph](./images/nina-wright-graph.png =50%x*)
 

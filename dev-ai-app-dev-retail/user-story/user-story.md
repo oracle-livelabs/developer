@@ -133,13 +133,13 @@ In this example, you will navigate the application to review a customer and deny
 
     ![Alice Smith AI generated recommendations](./images/alice-smith-ai.png =50%x*)
 
-3. Select the **Navigate to Decisions** button.
+3. Select the **Navigate to Customer Decisions** button.
 
     ![Alice Smith Decision](./images/alice-smith-decision.png =50%x*)
 
 >⁉️ **What are two reasons that the AI decided to deny this return?** ⁉️
 
-4. Expand **View Dot Plot: Retail Return Insights** to view the graph.
+4. Expand **Interactive Graph: Customer Return & Risk*** to view the graph.
 
     ![Alice Smith Graph](./images/expand-graph.png =50%x*)
 

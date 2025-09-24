@@ -140,7 +140,7 @@ In this example, you will navigate the application to review a customer and esca
 
 >⁉️ **What are two reasons that the AI escalated this request?** ⁉️
 
-4. Expand **View Dot Plot: Retail Return Insights** to view the graph.
+4. Expand **Interactive Graph: Support Requests & Decisions** to view the graph.
 
     ![Fiona Zhang Graph](./images/expand-graph.png =50%x*)
 
