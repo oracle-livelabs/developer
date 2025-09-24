@@ -140,7 +140,7 @@ In this example, you will navigate the application to review a customer and requ
 
 >⁉️ **What are two reasons that the AI needs more information from this applicant?** ⁉️
 
-4. Expand **View Dot Plot: Diagnosis-Policy Relationships** to view the graph.
+4. Expand **Interactive Graph: Patient Prior-Auth & Risk** to view the graph.
 
     ![Izzie Stevens Graph](./images/expand-graph.png =50%x*)
         

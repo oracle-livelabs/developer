@@ -1,5 +1,3 @@
-# Step by step: Implement RAG with Oracle Database 23ai 
-
 ## Introduction
 
 In this lab, you’ll build a purchase order approval engine on Oracle Database 23ai plus OCI Generative AI. You’ll connect to procurement data, investigate supplier and pricing patterns, and employ an LLM to suggest approving, escalating, or requoting. Using Python, you’ll deliver a fully integrated AI solution that streamlines manufacturing purchasing workflows. 
