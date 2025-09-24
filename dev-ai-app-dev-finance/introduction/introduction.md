@@ -10,20 +10,21 @@ This workshop shows how SeerGroup tackles that problem with Oracle Database 23ai
 
 You’ll see how SeerGroup’s teams can move from manual, fragmented workflows to AI-powered applications—and you’ll build the same capabilities yourself in the labs that follow.
 
+[](videohub:1_mg30brw3:medium)
 
 ✅ **Start with the demo! (Lab 1)**
 
-Step into SeerGroup’s Manufacturing division as a Purchase Order Approval Manager. You’ll use an AI-powered procurement dashboard built on Oracle Database 23ai to:
+Step into SeerGroup’s Finance division as a Loan Officer. You’ll use an AI-powered loan approval app built on Oracle Database 23ai to:
 
-* Review purchase orders with AI Vector Search, Graph analytics, and RAG
+* Review loan applications with AI Vector Search, Graph analytics, and RAG
 
-* See how Generative AI checks price variances, budget impacts, and supplier risk scores instantly
+* See how Generative AI evaluates credit profiles, compares against policy and past cases, and recommends tailored loan options
 
-* Approve, deny, or request changes with AI-generated recommendations and decision letters
+* Approve, deny, or request more information with AI-generated guidance, risk factors, and decision letters
 
-* Update supplier or PO details using JSON Duality Views, ensuring procurement data stays consistent
+* Update applicant profiles using JSON Duality Views, ensuring income and credit data remain consistent
 
-This story shows how Seer Manufacturing uses Oracle Database 23ai and OCI Generative AI to streamline procurement, reduce supplier risk, and keep spending under control—all on a single data platform.
+This story shows how SeerEquities uses Oracle Database 23ai and OCI Generative AI to accelerate loan processing, reduce risk, and improve customer experience—all without moving data across fragile systems.
 
 ✅ **What’s next (Labs 2–5)**
 
