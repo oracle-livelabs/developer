@@ -1,6 +1,6 @@
 # Next Steps
 
-## Recommended LiveLabs Workshops
+## Go deeper
 
 awesrdtfyguh
 
