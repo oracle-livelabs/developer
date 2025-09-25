@@ -2,21 +2,8 @@
 
 Ready to go deeper? These workshops let you move from demo to hands-on practice.
 
-### 🚀 Beginner Workshop: Build an AI-Enabled Shop
 
-What you’ll do:
-
-- See how Oracle Database 23ai stores vector data and runs similarity search.
-
-- Use ONNX models for secure, accurate embeddings inside the database.
-
-- Try the live demo, then edit the source code in an online IDE.
-
-- Run the app yourself with Oracle Database 23ai Free.
-
-👉 [Start the Beginner Workshop](https://livelabs.oracle.com/pls/apex/f?p=133:180:114411124527080::::wid:4184)
-
-### 🧠 Advanced Workshop: Master Vector Search in Oracle Database
+## Try our Signature Workshop
 
 What you’ll do:
 

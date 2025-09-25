@@ -1,12 +1,12 @@
 {"help": "livelabs-help-db_us@oracle.com",
-  "workshoptitle": "Microlab Workshop",
+  "workshoptitle": "LiveLabs QuickStart - AI Vector Search",
     "tutorials": [
         {
             "title": "Introduction",
             "filename": "../../intro/intro.md"
         },
         {
-            "title": "Demo",
+            "title": "QuickStart Demo",
             "filename": "../../demo/demo.md"
         },
         {
