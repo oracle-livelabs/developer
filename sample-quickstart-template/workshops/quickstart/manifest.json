@@ -1,0 +1,17 @@
+{"help": "livelabs-help-db_us@oracle.com",
+  "workshoptitle": "Microlab Workshop",
+    "tutorials": [
+        {
+            "title": "Introduction",
+            "filename": "../../intro/intro.md"
+        },
+        {
+            "title": "Demo",
+            "filename": "../../demo/demo.md"
+        },
+        {
+            "title": "Next Steps",
+            "filename": "../../next-steps/next-steps.md"
+        }
+    ]
+}
