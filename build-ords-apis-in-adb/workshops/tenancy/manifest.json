@@ -23,7 +23,7 @@
             "filename": "../../1-create-user-and-database-objects/create-user-and-database-objects.md"
         },
         {
-            "title": "Lab 2: Building ORDS APIs",
+            "title": "Lab 2: Build ORDS APIs",
             "description": "Modern App Dev with Oracle REST Data Services",
             "filename": "../../2-build-ords-apis/build-ords-apis.md"
         },

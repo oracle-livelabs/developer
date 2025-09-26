@@ -284,3 +284,16 @@ Estimated Lab Time: 25 minutes
     ![Querying the latest insert in sql worksheet](./images-new/47-querying-latest-post-in-sql-worksheet.png " ")
 
 12. And that's it, you've just successfully created your first two custom ORDS APIs. But you've probably noticed, no security? Continue to the next lab to learn more about securing your ORDS APIs.
+
+You may now [proceed to the next lab](#next).
+
+## Acknowledgements
+
+### Author
+
+- Jeff "el jefe" Smith, Distinguished Product Manager
+- Chris Hoina, Senior Product Manager
+
+### Last Updated By/Date
+
+- Chris Hoina, September 2025

@@ -14,10 +14,6 @@ In this lab, you will:
 - Connect to your Autonomous Database 23ai and create new database objects
 - Explore automatic and customizable ORDS REST APIs
 
-<!-- [Video overview explaining the many features of ORDS](youtube:rvxTbTuUm5k) -->
-
-<!-- <if type="odbw">If you would like to watch us demo the workshop, click [here](https://youtu.be/t0MkIxMKhDo).</if> -->
-
 Estimated Workshop Time: 90 minutes
 
 ## Objectives

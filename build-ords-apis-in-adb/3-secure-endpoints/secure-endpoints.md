@@ -99,7 +99,7 @@ Estimated Lab Time: 10 minutes
 
 ## Task 4: Testing the OAuth2.0 client
 
-1. After clicking **Create**, a Client Secret modal will appear. Copy this value to your clipboard or a text editor. 
+1. After clicking **Create**, a Client Secret modal will appear. Copy the Secrect Client value to your clipboard or a text editor. 
 
      > **NOTE:** If you click OK prior to copying, you can also Rotate in a new Client Secret value.
 
@@ -107,155 +107,47 @@ Estimated Lab Time: 10 minutes
 
      ![Rotate in new secret](./images-new/15-mistake-rotate-secret.png " ")
 
-2. You will next need to copy your Client ID.
+2. You will also next need to copy your Client ID.
 
     ![Client ID value](./images-new/16-copy-client-id-value.png " ")
 
-3. You will first request an Access token from the ORDS OAuth2.0 `/token` endpoint. It is located at the following URL, where `server.com` is the location of your database server. This example assumes your schema is also `ords101`:
+3. You will first request an Access token from the ORDS OAuth2.0 `/token` endpoint. The Token endpoint is located at the following URL, where `server.com` is the location of your database server (this example assumes your schema is also `ords101`):
 
-  ```http
-  <copy>https://[MY ADB's OCI]-[My ADB Name].adb.[My-Region].oraclecloudapps.com/ords/ords101/oauth/token</copy>
-  ```
-
-3. The **Create OAuth Client** slider will emerge from the right of the page. 
-
-    ![Create OAuth Client slider](./images/create-oauth-client-slider.png)
-
-4. In this form we first need to name our OAuth Client. Enter **oauthclient** into the **Name** field. 
-
-    ````na
-    <copy>oauthclient</copy>
-    ````
-
-    ![Name Field](./images/oauth-client-name-field.png)
-
-5. Next we can provide a description. We'll use **Security on my REST Service** as a value in the **Description Field**.
-
-    ````na
-    <copy>Security on my REST Service</copy>
-    ````
-
-    ![Description Field](./images/oauth-client-description-field.png)
-
-
-## Task 4: Obtain a Bearer Token for accessing a secure REST Endpoint
-
-1. Before we secure the REST endpoint, we need to obtain a token to pass to the secured REST service once its enabled. To obtain this token, we can click the pop out menu icon ![pop out menu icon](./images/three-dot-pop.png) on our OAuth tile and select **Get Bearer Token**.
-
-    ![click the pop out menu icon on our OAuth tile and select Get Bearer Token](./images/get-bearer-token-for-oauth-client.png)
-
-2. The OAuth Token modal will provide the token text in the **Current Token** field. You can use the copy icon ![copy icon](./images/copy-copy.png) to copy this token text. Save it to a text document or notes application as you'll need it when calling the secured REST service. The modal will also provide us with a cURL command to obtain a token should we need to include it in our applications.
-
-    ![Click the copy icon to save the Token Text](./images/click-copy-icon-to-copy-token-text.png)
-
-    Left click the **OK** button when you are done getting and saving the token text.
-
-    ![Left click the OK button](./images/click-ok-when-finished-in-oauth-slider.png)
-
-3. Next, we'll secure the REST service. It is in fact *already* secure. When we created the OAuth client with the role, the modules we protected were secured. Test this by running a previously unsecure REST API. (**NOTE: your URL hostname will be different than the below command**)
-
-    Remember in the last lab, we created a REST API for our bizlogic? Let's take that cURL command again...
-
-    ```sh
-    <copy>curl --location --request POST \
-    'https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/admin/api/bizlogic' \
-    --header 'Content-Type: application/json' \
-    --data-binary '{
-    "id": "a1",
-    "output": "" 
-    }'</copy>
+    ```http
+    <copy>https://[MY ADB's OCI]-[My ADB Name].adb.[My-Region].oraclecloudapps.com/ords/ords101/oauth/token</copy>
     ```
 
-   ...and after running this command again, using the Oracle Cloud Infrastructure Cloud Shell, the following response will be returned:
+    Your cURL command for retrieving an Access Token should resemble the following (where the `--user` value is your `Client_ID`:`Client_Secret`):
 
-    ``` json
-    <copy>
-    >{
-        "code": "Unauthorized",
-        "message": "Unauthorized",
-        "type": "tag:oracle.com,2020:error/Unauthorized",
-        "instance": "tag:oracle.com,2020:ecid/8576f44b797d6adfbe7b21e3718bf3b6"
-    }%  
-    </copy>
+    ```shell
+    <copy>curl \
+    --user AbcDef3456XYz..:a45AbcdeF8675309abcd.. \
+    --data 'grant_type=client_credentials' \
+    'https://abcdefgh12345-ords101db.adb.us-ashburn-1.oraclecloudapps.com/ords/ords101/oauth/token'</copy>
     ```
 
-    We are not authorized to use this REST endpoint any longer.
+    ![Obtaining-the-bearer-token-part-one](./images-new/17-obtaining-the-bearer-token-part-one.png " ")
 
-4. To get this REST API working again, we need to add **--header 'Authorization: Bearer VALUE'** to our cURL command. The **VALUE** will be taken from the token text we saved from earlier. (**NOTE: your URL hostname will be different than the below command**)
+4. Execute your cURL command; you will recieve a valid Access Token. In this example, you can use the `GET` endpoint that you created in **Lab 2, Task 3: Building an ORDS GET API** as your target endpoint.
 
-    We can add this to our cURL command as follows:
+    ![Obtaining-the-bearer-token-part-two](./images-new/18-obtaining-the-bearer-token-part-two.png " ")
 
-    ```sh
-    <copy>curl -X POST --header 'Authorization: Bearer tW-AM_cDQu0l8oAsh707vw' \
-    'https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/admin/api/bizlogic' \
-    --header 'Content-Type: application/json' \
-    --data-binary '{
-    "id": "a1",
-    "output": "" 
-    }'</copy>
+5. Before proceeding, attempt a GET request on your GET Handler, it will fail as you have not provided a valid Access Token (Unauthorized).
+
+    ![An unauthorized get request](./images-new/19-unauthorized-request.png " ")
+
+6. Finally, with a valid Access Token, perform a GET request on your target endpoint, using the following cURL command as an example: 
+
+    ```shell
+    <copy>curl --location \
+    --header 'Authorization: Bearer [Your valid Access Token]' \
+    'https://abcdefgh12345-ords101db.adb.us-ashburn-1.oraclecloudapps.com/ords/ords101/v1/dept_active/10/true'</copy>
     ```
 
-5. Now using the Oracle Cloud Infrastructure Cloud Shell and your new cURL command with the **--header 'Authorization: Bearer VALUE'** section added with your token text, run the new cURL command. (**NOTE: your URL hostname will be different than the below command**)
+    ![An authorized get request](./images-new/20-authorized-request.png " ")
 
-    ```sn
-    <copy>curl -X POST --header 'Authorization: Bearer tW-AM_cDQu0l8oAsh707vw' \
-    'https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/admin/api/bizlogic' \
-    --header 'Content-Type: application/json' \
-    --data-binary '{
-    "id": "a1",
-    "output": ""
-    }'</copy>
-    ```
-
-    We now see a value from the REST API is returned.
-
-    ```sh
-    <copy>
-    {"output":8204}% 
-    </copy>
-    ```
-
-6. We can also use this on our other REST API that takes in a value and returns a report. (**NOTE: your URL hostname will be different than the below command**)
-
-    The endpoint for that REST API was:
-
-    ```html
-    <copy>https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/admin/api/sqlreport/<VALUE></copy>
-    ```
-
-    So we can try out the following (**NOTE: your URL hostname will be different than the below command**):
-
-    ```sh
-    <copy>curl -X GET  'https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/admin/api/sqlreport/a1'</copy>
-    ```
-
-    and as expected, we get **Unauthorized**.
-
-7. Now lets add the token (**--header 'Authorization: Bearer VALUE'**) to this command. (**NOTE: your URL hostname will be different than the below command**)
-
-    ```sh
-    <copy>curl -X GET --header 'Authorization: Bearer tW-AM_cDQu0l8oAsh707vw' 'https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/admin/api/sqlreport/a1'</copy>
-    ```
-
-    and we see the our expected results
-
-    ```sh
-    <copy>
-    {"items":[{"col1":"798812df","col2":"a1","col3":"4166997"},{"col1":"59fd433c","col2":"a1","col3":"32470891"},{"col1":"6c1298ef","col2":"a1",
-    "col3":"506747"},{"col1":"243f5660","col2":"a1","col3":"87300261"},{"col1":"f62af3d4","col2":"a1","col3":"31094545"},{"col1":"af2fc686","col2":"a1",
-    "col3":"48206518"},{"col1":"9d4f725e","col2":"a1","col3":"36224185"},{"col1":"041d6b03","col2":"a1","col3":"23890702"},{"col1":"f8c87baa","col2":"a1",
-    "col3":"852530"},{"col1":"d98f3e5b","col2":"a1","col3":"9864895"},{"col1":"5cbb6ddc","col2":"a1","col3":"60428923"},{"col1":"474c024a","col2":"a1",
-    "col3":"85183686"},{"col1":"a0707a73","col2":"a1","col3":"167176502"},{"col1":"3447e214","col2":"a1","col3":"110333373"},{"col1":"69face01",
-    "col2":"a1","col3":"18449519"},{"col1":"9198731a","col2":"a1","col3":"150740437"},{"col1":"55789f0a","col2":"a1","col3":"119272860"},
-    {"col1":"03801afd","col2":"a1","col3":"75179648"},{"col1":"dbdf5867","col2":"a1","col3":"91475805"},{"col1":"93adc64d","col2":"a1","col3":"39287205"},
-    {"col1":"2b130ef8","col2":"a1","col3":"206753925"},{"col1":"1f6bec10","col2":"a1","col3":"17745238"},{"col1":"81f46a8d","col2":"a1","col3":"54692392"}
-    ,{"col1":"2ebd5ecb","col2":"a1","col3":"94437756"},{"col1":"4d514c12","col2":"a1","col3":"145885382"}],"hasMore":true,"limit":25,"offset":0,
-    "count":25,"links":[{"rel":"self","href":"https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/admin/api/sqlreport/a1"},
-    {"rel":"describedby","href":"https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/admin/metadata-catalog/api/sqlreport/item"},
-    {"rel":"first","href":"https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/admin/api/sqlreport/a1"},{"rel":"next",
-    "href":"https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/admin/api/sqlreport/a1?offset=25"}]}% 
-    </copy>
-    ```
+7. What you should see is the successful response from your `/ords101/v1/dept_active/` endpoint. Congratulations, you've just completed the ORDS 101 Workshop!
+port/a1'</copy>
 
 8. In this lab, you secured your custom REST APIs with OAuth2 authentication.
 
@@ -270,4 +162,4 @@ You may now [proceed to the next lab](#next).
 
 ### Last Updated By/Date
 
-- Chris Hoina, September 2023
+- Chris Hoina, September 2025
