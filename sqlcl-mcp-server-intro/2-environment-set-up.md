@@ -43,7 +43,7 @@ This lab assumes you have:
 
 <p></p>
 
-> &#9872; **NOTE:** You must click the <strong>&circlearrowleft; Regenerate</strong> button to create a new password. Please save this password, as it will only be displayed once. 
+> &#9872; **NOTE:** You may click the <strong>&circlearrowleft; Regenerate</strong> button to create a new password. Please save this password, as it will only be displayed once. 
 > 
 > *Your password will **NOT** be saved or displayed across sessions!*
 
@@ -59,8 +59,6 @@ This lab assumes you have:
      ![4-search-for-sql-developer-web-vscode-extension](./images/lab-2/4-search-for-sql-developer-web-vscode-extension.png " ")
 
      ![5-post-installation-sql-developer-web-extension](./images/lab-2/5-post-installation-sql-developer-web-extension.png " ")
-
-<!-- 2. Restart your VS Code session -->
 
 2. Once installed, navigate to SQL Developer Extension for VS Code(located in your Activity Bar)
 
