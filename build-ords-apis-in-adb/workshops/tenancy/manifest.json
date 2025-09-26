@@ -30,7 +30,7 @@
         {
             "title": "Lab 3: Secure REST-enabled endpoints",
             "description": "Modern App Dev with Oracle REST Data Services",
-            "filename": "../../5-secure-endpoints/secure-endpoints.md"
+            "filename": "../../3-secure-endpoints/secure-endpoints.md"
         },
         {
             "title": "Clean up your Always Free Autonomous Database",
