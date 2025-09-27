@@ -2,6 +2,7 @@
 
 ## About this Workshop
 
+
 In this workshop you will learn how to use our Oracle Database MCP Server (SQLcl) with an AI Agent. You'll discover how the MCP Server can safely and securely compliment AI Agents by providing access to work interactively with your Oracle Database.
 
 Estimated Time: 1 hours 10 minutes 
@@ -65,6 +66,7 @@ Here is a sample use case involving the Oracle database, an AI Agent, and the SQ
 #### Protocols
 
 Typically you'll interact with your MCP server through an AI Agent, using natural language queries. You can indicate which "Tools" to use from an MCP Server. Or, your Agent might suggest using them with zero prompting (depending on the Agent, and what "guardrails" you have in place). This communication between you, the AI Agent, and MCP Servers is "the Protocol." 
+
 #### Capabilities
 
 Also known as "Primitives," these are the key capabilities of every MCP Server: 
