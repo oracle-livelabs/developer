@@ -2,32 +2,32 @@
 
 ## About this Workshop
 
-In this workshop you will learn how to use the SQLcl MCP Server with an AI Agents. You'll discover how the SQLcl MCP Server can safely and securely compliment AI Agents to create the next generation of GenAI: Agentic Workflows.
+
+In this workshop you will learn how to use our Oracle Database MCP Server (SQLcl) with an AI Agent. You'll discover how the MCP Server can safely and securely compliment AI Agents by providing access to work interactively with your Oracle Database.
 
 Estimated Time: 1 hours 10 minutes 
 
 ### Objectives
 
 In this workshop, you will:
-* Learn about the Model Context Protocol (MCP) and the SQLcl MCP Server
-* Configure an AI Agent
-* Register a SQLcl MCP Server 
-* Explore SQLcl MCP Server "Tools"
-* Rely on sample prompts to accelerate your understanding of the SQLcp MC Server's capabilities
++ Learn about Model Context Protocol (MCP) and our MCP Server for Oracle Database
++ Register the SQLcl MCP Server with an Agent
++ Explore SQLcl MCP Server "Tools"
++ Use our prompts to perform various Agentic tasks involving your Oracle Database
 
 ### Prerequisites 
 
 This lab assumes you have:
-* An Oracle Cloud, LiveSQL, or FreeSQL account
+* An Oracle Cloud, LiveSQL, or FreeSQL 
 * Access to a currently supported Oracle database (or LiveSQL/FreeSQL account if participating in an instructor-led workshop)
-* Organizational Roles/Privileges to install the following software on your employer-provided work station:
-    * MS Visual Studio Code 
+* VS Code
+* SQL Developer Extension
 
 ### About
 
 #### MCP
 
-The Model Context Protocol (MCP) is a proposed standard for how AI Agents might communicating with you and your information, applications, and data, through an intermediary called an MCP Server.
+The Model Context Protocol (MCP) is a proposed standard for how AI Agents communicate with you and your data, applications, and data, through an intermediary called an MCP Server.
 
 An MCP Server allows you to take your core tech, like SQLcl, and "connect" it to an AI Agent. Once the Agent is "aware" of an MCP Server, it can then use whatever MCP Server "Tools" are available to it to create highly-developed workflows. This workflows would focus on the context you are in, like in this workshop: database object creation, simple web applictions driven by your data, simple monitoring dashboards, and more.
 
@@ -67,13 +67,6 @@ Here is a sample use case involving the Oracle database, an AI Agent, and the SQ
 
 Typically you'll interact with your MCP server through an AI Agent, using natural language queries. You can indicate which "Tools" to use from an MCP Server. Or, your Agent might suggest using them with zero prompting (depending on the Agent, and what "guardrails" you have in place). This communication between you, the AI Agent, and MCP Servers is "the Protocol." 
 
-<!-- A lot happens under the covers for MCP to work, but you should know that MCP can support the following communication mechanisms: 
-
-- Stdio
-- HTTP (in the form of `POST` requests)
-
-The SQLcl MCP server utilizes the fast, no overhead Stdio communcation mechanism. And to you, the end user, *this* is what makes up the **Protocol** in Model Context Protocol (MCP).  -->
-
 #### Capabilities
 
 Also known as "Primitives," these are the key capabilities of every MCP Server: 
@@ -94,8 +87,6 @@ Also known as "Primitives," these are the key capabilities of every MCP Server:
 Since SQLcl is an already existing, and powerful command line tool for the Oracle database, it makes sense to "extend" its capabilitites with an MCP server. 
 
 For many users, and scripting tools, SQLcl is the preferred way to interact with an Oracle database. 
-
-<!-- And since you are already interacting with the command line; it makes sense to implement the Stdio means of communicating with the SQLcl MCP server. This means that responses are fast, as they are printed directly to your client's Stdout. -->
 
 But as an end-user, you probably want to know what you can do with this SQLcl MCP Server. 
 
@@ -352,12 +343,15 @@ Don’t
 
 ## Learn More
 
-*(optional - include links to docs, white papers, blogs, etc)*
-
-* [URL text 1](http://docs.oracle.com)
-* [URL text 2](http://docs.oracle.com)
+* [Introducing the Model Context Protocol](https://www.anthropic.com/news/model-context-protocol)
+* [MCP Server Introduction](https://blogs.oracle.com/database/post/introducing-mcp-server-for-oracle-database) 
+* [Oracle official MCP Server repository](https://github.com/oracle/mcp/tree/main)
+* [SQLcl MCP Server Docs](https://docs.oracle.com/en/database/oracle/sql-developer-command-line/25.2/sqcug/using-oracle-sqlcl-mcp-server.html)
 
 ## Acknowledgements
-* **Author** - <Name, Title, Group>
-* **Contributors** -  <Name, Group> -- optional
-* **Last Updated By/Date** - <Name,  Month Year>
+
+* **Author**<ul><li>Chris Hoina, Senior Product Manager, Database Tools</li></ul>
+* **Contributors**<ul><li>Jeff Smith, Distinguished Product Manager, Database Tools</li></ul>
+* **Last Updated By/Date**<ul><li>Chris Hoina, September 2025</li></ul>
+
+

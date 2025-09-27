@@ -21,6 +21,7 @@ This lab assumes you have:
 * VS Code installed
 * Installed the Cline for VS Code Extension
 * Configured an Oracle Database connection using the Oracle SQL Developer for VS Code extension
+* This lab may require NPM, Node.js, and other web development libraries
 
 <p></p>
 
