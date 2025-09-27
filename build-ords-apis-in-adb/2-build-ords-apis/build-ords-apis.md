@@ -122,17 +122,17 @@ Estimated Lab Time: 25 minutes
     ![resource-modules-dashboard](./images-new/17-resource-modules-dashboard.png " ")
 
 2. Next, enter in values of the Create Module slider. and click the **Create** button. Use the same values provided to make following along easier:
-  - **Module Name:** `records.module`
-  - **Base Path:** `v1`
-  - **Comments:** `An employee records management module consisting of various templates and handlers for performing operations on the following target tables: Department, Project, Employee.`
 
-  ![create-new-resource-module](./images-new/18-create-new-resource-module.png " ")
+    - **Module Name:** `records.module`
+    - **Base Path:** `v1`
+    - **Comments:** `An employee records management module consisting of various templates and handlers for performing operations on the following target tables: Department, Project, Employee.`
 
+   ![create-new-resource-module](./images-new/18-create-new-resource-module.png " ")
 3. Now, click the Template button; this will ultimately be the URI for your ORDS API (where clients issue HTTP requests to). 
 
     ![Click create template](./images-new/19-click-create-template.png " ")
 
-  Enter in the values provided and click **Create**: 
+   Enter in the values provided and click **Create**: 
     - **URI Template:** `dept_active/:dept_id/:is_active`
     - **Comments:** `An example template that will accept the query parameters dept_id and is_active. Relies on ORDS Automatic Binding to take the path parameters and use them in the provided handler code.`
   
@@ -203,13 +203,13 @@ Estimated Lab Time: 25 minutes
 
     ![Resource module breadcrumbs](./images-new/33-breadcrumbs.png " ")
 
-2. Click the Create Template button. Use `emp_recs` as the value for the **URI Template**, and click **Create**.
+2. Click the **+ Create Template** button. Use `emp_recs` as the value for the **URI Template**, and click **Create**.
 
     ![Creating the next template](./images-new/34-create-second-template-button.png " ")
 
     ![New values for the template](./images-new/35-entering-values-for-new-template.png " ")
 
-3. Click the **Create Handler** button, and in the Create Handler slider enter/select POST for the Method and the below source, then click the **Create** button: 
+3. Click the **+ Create Handler** button, and in the Create Handler slider enter/select POST for the Method and the below source, then click the **Create** button: 
 
     ![Values for the post handler](./images-new/36-creating-handler-for-post.png " ")
 
