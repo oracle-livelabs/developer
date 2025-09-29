@@ -2,7 +2,6 @@
 
 ## About this Workshop
 
-
 In this workshop you will learn how to use our Oracle Database MCP Server (SQLcl) with an AI Agent. You'll discover how the MCP Server can safely and securely compliment AI Agents by providing access to work interactively with your Oracle Database.
 
 Estimated Time: 1 hours 10 minutes 
