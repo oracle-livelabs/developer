@@ -44,11 +44,11 @@ Estimated Lab Time: 10 minutes
 
    To better follow along, choose values similar to the examples: 
 
-   **Privilege Definition**
-   - **Label:** `my.test.priv`
-   - **Name:** `my.test.priv`
-   - **Description:** `my.test.priv` (You can alter this as needed)
-   - **Comments:** optional 
+    **Privilege Definition**
+    - **Label:** `my.test.priv`
+    - **Name:** `my.test.priv`
+    - **Description:** `my.test.priv` (You can alter this as needed)
+    - **Comments:** optional 
 
      ![create-priv-priv-definition](./images-new/6-create-priv-priv-definition.png " ")
 
@@ -78,22 +78,22 @@ Estimated Lab Time: 10 minutes
 
 3. In the Create OAuth Client slider, enter in the following values and click the **Create** button when complete:
 
-   **Client Definition**
-   - **Grant type:** `CLIENT_CRED`
-   - **Name:** `my_test_oauth_client`
-   - **Description:** Your choice (mandatory field)
-   - **Support email:** your choice (mandatory field)
-   - **Support URI:** https://www.my-company.com/support (can be fictitious)
+    **Client Definition**
+    - **Grant type:** `CLIENT_CRED`
+    - **Name:** `my_test_oauth_client`
+    - **Description:** Your choice (mandatory field)
+    - **Support email:** your choice (mandatory field)
+    - **Support URI:** https://www.my-company.com/support (can be fictitious)
 
      ![Description Field](./images-new/11-create-oauth-client-definition.png " ")
 
-   **Roles**
-   - **Roles:** `my.test.role` (or your unique role, if it differs)
+    **Roles**
+    - **Roles:** `my.test.role` (or your unique role, if it differs)
 
        ![choose-roles-tB](./images-new/12-create-oauth-client-roles.png " ")
 
-   **Privileges**
-   - **Roles:** `my.test.role` (or your unique role, if it differs)
+    **Privileges**
+    - **Roles:** `my.test.role` (or your unique role, if it differs)
 
        ![choose-ouath-privs](./images-new/13-create-oauth-client-privs.png " ")
 
@@ -147,7 +147,6 @@ Estimated Lab Time: 10 minutes
     ![An authorized get request](./images-new/20-authorized-request.png " ")
 
 7. What you should see is the successful response from your `/ords101/v1/dept_active/` endpoint. Congratulations, you've just completed the ORDS 101 Workshop!
-port/a1'</copy>
 
 8. In this lab, you secured your custom REST APIs with OAuth2 authentication.
 
