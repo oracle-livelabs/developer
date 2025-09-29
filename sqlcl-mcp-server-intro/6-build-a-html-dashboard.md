@@ -84,27 +84,15 @@ This lab assumes you have:
 
 5. Whatever you decide, observe what SQLcl MCP **tools** are used, as well as the SQL or PL/SQL that is executed. In some cases, the Agent may need additonal direction. And the Agent may request switching the mode to **Act**. 
 
-    <!-- ![3-results-of-the-Agent-query-on-hr-schema](./images/lab-6/3-results-of-the-Agent-query-on-hr-schema.png " ") -->
-
     ![4-asking-to-transition-to-act-with-a-reminder](./images/lab-6/4-asking-to-transition-to-act-with-a-reminder.png " ")
 
 6. Your scenario may differ slightly, depending on the LLM used, but you should continue to see the Agent's intent and summary of intended actions.
-
-    <!-- ![5-a-review-of-the-proposed-dashboard](./images/lab-6/5-a-review-of-the-proposed-dashboard.png " ") -->
 
 ## Task 2: Creating the dashboard files
 
 1. Over the course of this scenario, the Agent will create a new project folder, and begin scaffolding `HTML` and `JavaScript` components. Pay close attention, and guide the Agent should it deviate from this plan. 
 
-    <!-- ![6-Agent-creates-a-new-directory](./images/lab-6/6-Agent-creates-a-new-directory.png " ") -->
-
-    <!-- ![7-Agent-creates-a-new-html-file](./images/lab-6/7-Agent-creates-a-new-html-file.png " ") -->
-
-    <!-- ![8-Agent-creates-a-new-js-file](./images/lab-6/8-Agent-creates-a-new-js-file.png " ") -->
-
 2. The Agent may request your approval to use the **connect** and **run-sql** tools of the SQLcl MCP server. You should approve, and watch as the dashboard is populated with real data from your target schema. 
-
-    <!-- ![9-Agent-using-sqlc-mcp-to-fetch-data](./images/lab-6/9-Agent-using-sqlc-mcp-to-fetch-data.png " ") -->
 
 3. Even now, LLMs find merge conflict markers difficult to troubleshoot. So, if manual intervention is required, assist the Agent with removing any of these markers (e.g. `>>>>>>> REPLACE`). 
 
@@ -116,16 +104,11 @@ This lab assumes you have:
 
 1. By now, you probably have something that will resemble the example shown below. Allow the Agent to open the newly created dashboard, and compare your output to the example. 
  
-    <!-- ![10-opening-the-html-file](./images/lab-6/10-opening-the-html-file.png " ") -->
-
 2. You may have chosen different charts or visualizations. You may have chosen a different schema too. But if you've monitored the Agent, and ensured that its using the correct SQLcl MCP server tools, your end result probably looks very close to what you see here: 
-
-   <!-- ![12-hr-dashboard-above-fold](./images/lab-6/12-hr-dashboard-above-fold.png " ") -->
-
-   <!-- ![13-hr-dashboard-below-fold](./images/lab-6/13-hr-dashboard-below-fold.png " ") -->
 
    ![14-hr-dashboard-even-further-below-fold](./images/lab-6/14-hr-dashboard-even-further-below-fold.png " ")
 
+3. Congratulations, you've finished! Feel free to use the provided prompts as reference; you are encouraged to improve and refine them as needed. And if you like, try the labs again with varied prompting. 
 
 ## Learn More
 
