@@ -65,6 +65,7 @@ Here is a sample use case involving the Oracle database, an AI Agent, and the SQ
 #### Protocols
 
 Typically you'll interact with your MCP server through an AI Agent, using natural language queries. You can indicate which "Tools" to use from an MCP Server. Or, your Agent might suggest using them with zero prompting (depending on the Agent, and what "guardrails" you have in place). This communication between you, the AI Agent, and MCP Servers is "the Protocol." 
+
 #### Capabilities
 
 Also known as "Primitives," these are the key capabilities of every MCP Server: 
@@ -341,12 +342,15 @@ Don’t
 
 ## Learn More
 
-*(optional - include links to docs, white papers, blogs, etc)*
-
-* [URL text 1](http://docs.oracle.com)
-* [URL text 2](http://docs.oracle.com)
+* [Introducing the Model Context Protocol](https://www.anthropic.com/news/model-context-protocol)
+* [MCP Server Introduction](https://blogs.oracle.com/database/post/introducing-mcp-server-for-oracle-database) 
+* [Oracle official MCP Server repository](https://github.com/oracle/mcp/tree/main)
+* [SQLcl MCP Server Docs](https://docs.oracle.com/en/database/oracle/sql-developer-command-line/25.2/sqcug/using-oracle-sqlcl-mcp-server.html)
 
 ## Acknowledgements
-* **Author** - <Name, Title, Group>
-* **Contributors** -  <Name, Group> -- optional
-* **Last Updated By/Date** - <Name,  Month Year>
+
+* **Author**<ul><li>Chris Hoina, Senior Product Manager, Database Tools</li></ul>
+* **Contributors**<ul><li>Jeff Smith, Distinguished Product Manager, Database Tools</li></ul>
+* **Last Updated By/Date**<ul><li>Chris Hoina, September 2025</li></ul>
+
+
