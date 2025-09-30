@@ -13,7 +13,7 @@ You’ll see how SeerGroup’s teams can move from manual, fragmented workflows 
 
 ✅ **Start with the demo! (Lab 1)**
 
-Step into SeerGroup’s Public Services division as a Public Works Officer. You’ll use an AI-powered citizen services app built on Oracle Database 23ai to:
+Step into SeerGroup’s State and Local Gov division as a Public Works Officer. You’ll use an AI-powered citizen services app built on Oracle Database 23ai to:
 
 Review service requests—such as permit applications or maintenance reports—using AI Vector Search, Graph analytics, and RAG
 
@@ -24,6 +24,7 @@ Approve, deny, or pend requests with AI-generated risk scores, clear explanation
 Update citizen profiles and service records using JSON Duality Views, keeping data consistent across departments
 
 This story shows how SeerGov uses Oracle Database 23ai and OCI Generative AI to streamline service delivery, improve policy compliance, and cut request backlogs—all without moving data across siloed agency systems.
+
 
 ✅ **What’s next (Labs 2–5)**
 

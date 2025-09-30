@@ -333,11 +333,11 @@ Here’s what we’ll do:
 
 2. Click the "Run" button to execute the code. Note that this will take time to run.
 
-    ![Telecommunication recommendation](./images/generate-recommendations.png " ")
+    ![State and Local recommendation](./images/generate-recommendations.png " ")
 
 3. Review the output. In the demo, this is where you selected the “Navigate to Decisions” button as the Public Works Officer. You just used AI to generate service activation recommendations that would have taken hours to complete manually—congratulations!
 
-    ![healthcare recommendation](./images/ai-recommendation.png " ")
+    ![State and Local recommendation](./images/ai-recommendation.png " ")
 
 >Note: Your result may be different. This is because of generative AI and the model's ability to generate new content based on your input. The output may contain different recommendations or suggestions.
 
