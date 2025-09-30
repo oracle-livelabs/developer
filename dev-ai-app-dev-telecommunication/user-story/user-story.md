@@ -138,7 +138,7 @@ In this example, you will navigate the application to review a customer and requ
 
     ![Henry Davis Decision](./images/henry-davis-decision.png =50%x*)
 
->⁉️ **What are two reasons that the AI requested more information for this request?** ⁉️
+>⁉️ **What are two reasons that the AI requested more information for this request?**
 
 4. Expand **Interactive Graph: Service Requests, Risk & Policy** to view the graph.
 
