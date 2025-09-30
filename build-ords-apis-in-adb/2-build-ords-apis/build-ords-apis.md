@@ -127,7 +127,7 @@ Estimated Lab Time: 25 minutes
     - **Base Path:** `v1`
     - **Comments:** `An employee records management module consisting of various templates and handlers for performing operations on the following target tables: Department, Project, Employee.`
 
-   ![create-new-resource-module](./images-new/18-create-new-resource-module.png " ")
+     ![create-new-resource-module](./images-new/18-create-new-resource-module.png " ")
 
 3. Now, click the Template button; this will ultimately be the URI for your ORDS API (where clients issue HTTP requests to). 
 
