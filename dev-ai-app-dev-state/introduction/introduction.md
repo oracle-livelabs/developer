@@ -13,9 +13,9 @@ You’ll see how SeerGroup’s teams can move from manual, fragmented workflows 
 
 ✅ **Start with the demo! (Lab 1)**
 
-Step into SeerGroup’s Telecommunications division as a Network Operations Engineer. You’ll use an AI-powered service activation app built on Oracle Database 23ai to:
+Step into SeerGov’s State and Local Gov division as a Public Works Officer. You’ll use an AI-powered service request app built on Oracle Database 23ai to:
 
-* Review customer activation requests with AI Vector Search, Graph analytics, and RAG
+* Review customer service requests with AI Vector Search, Graph analytics, and RAG
 
 * See how Generative AI evaluates network topology, bandwidth availability, and policy rules—turning lengthy engineering reviews into instant recommendations
 
@@ -23,7 +23,7 @@ Step into SeerGroup’s Telecommunications division as a Network Operations Engi
 
 * Update customer and service profiles using JSON Duality Views, keeping network and compliance data accurate and synchronized
 
-This story shows how SeerTelco uses Oracle Database 23ai and OCI Generative AI to accelerate service activation, improve policy compliance, and cut provisioning backlogs—all without moving data across siloed systems.
+This story shows how SeerGov uses Oracle Database 23ai and OCI Generative AI to accelerate service activation, improve policy compliance, and cut provisioning backlogs—all without moving data across siloed systems.
 
 ✅ **What’s next (Labs 2–5)**
 
