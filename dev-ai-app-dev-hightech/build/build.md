@@ -575,8 +575,6 @@ Now that the recommendations are vectorized, we can process a user’s question:
         severity  = req.get("severity","")
         rec      = (req.get("recommendations") or [{}])[0]
         ki       = (rec.get("knownIssues") or [{}])[0]
-        #decisions    = rec.get("decisions") or {}
-        #responses  = decisions.get("responses") or {}
         resolution      = ki.get("resolution","")
 
         prompt = f"""<s>[INST] <<SYS>>You are a High Tech Support Engineer specializing in triaging support requests.
