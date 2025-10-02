@@ -60,8 +60,8 @@ Leverage Data Studio Tools to Build a Live Feed Data Pipeline
       </copy>
       ```
 
-  5. Right-click on your browser tab and select **Duplicate** from the context menu to open another tab. <br>
-  * Click **Database Actions** in the top banner **of the new tab**.
+  5. Right-click on your browser tab and select **Duplicate** from the context menu to open another tab.
+    * Click **Database Actions** in the top banner **of the new tab**.
 
       ![Open DB Actions in Duplicate Tab](./images/open-another-browser-tab.png "")
 
@@ -89,7 +89,7 @@ Leverage Data Studio Tools to Build a Live Feed Data Pipeline
 
   11. Return to **SQL | Oracle Database Actions** browser tab.  <br>
 
-  * In the PL/SQL block modify the ***source\_uri*** definition in the **PL/SQL Block in the SQL Worksheet**, as shown below:
+    * In the PL/SQL block modify the ***source\_uri*** definition in the **PL/SQL Block in the SQL Worksheet**, as shown below:
 
       ```text
       source_uri    VARCHAR2(100) := ‘Paste the LOANAPP_FUNDING uri you copied here';
@@ -103,11 +103,11 @@ Leverage Data Studio Tools to Build a Live Feed Data Pipeline
 
       ![Copy MYDEMOBUCKET URI](./images/mydemobucket-uri.png "")
 
-  * Click **Close** to exit.
+    * Click **Close** to exit.
 
   14. Return to **SQL | Oracle Database Actions** browser tab.  <br>
 
-  * In the PL/SQL block modify the ***target\_uri*** definition in the **PL/SQL block we placed in the SQL Worksheet**, as shown below:
+    * In the PL/SQL block modify the ***target\_uri*** definition in the **PL/SQL block we placed in the SQL Worksheet**, as shown below:
 
       ```text
       target_uri    VARCHAR2(100) := ‘Paste the MYDEMOBUCKET uri you copied here';
@@ -121,7 +121,7 @@ Leverage Data Studio Tools to Build a Live Feed Data Pipeline
 
 16.	Return to **Data Load | Oracle Database** tab.
 
-* Click the **Actions** icon in the **MyDemoBucket** panel, then select **Objects** from the context menu.
+    * Click the **Actions** icon in the **MyDemoBucket** panel, then select **Objects** from the context menu.
 
     ![Switch Tab & Select LOANAPP_FUNDING Connection](./images/move-data-file1.png "")
 
@@ -137,12 +137,11 @@ Leverage Data Studio Tools to Build a Live Feed Data Pipeline
 
 1. From the **Data Load | Oracle Database** tab - Navigate to Live Feed.
 
-* On Left rail expand **Data Load**, then click on **Live Feed**.
+    * On Left rail expand **Data Load**, then click on **Live Feed**.
 
     ![Navigate from Data Load Connections to Live Feed](./images/navigate-connections-to-live-feed.png "")
 
       >You should now see the Live Feed Page
-
 
 2.  Click the **Create Live Table Feed** button to enter the Create Live Feed wizard
 
@@ -160,7 +159,6 @@ Leverage Data Studio Tools to Build a Live Feed Data Pipeline
      >Note: that you should now see the funding commitments file matching the object filter and a preview of its content.
 
      * Click the **Next** button to proceed.
-
 
 4. Configure Live Feed Table Settings as follows:
 
@@ -211,7 +209,7 @@ Leverage Data Studio Tools to Build a Live Feed Data Pipeline
 
 1. Return to the **SQL | Oracle Database Actions** tab where your PL/SQL Block exists.
 
-* Load a file into our Live Feed Bucket to trigger the Live Feed process by modifying the **object\_name** definition in the PL/SQL block, as shown below:
+    * Load a file into our Live Feed Bucket to trigger the Live Feed process by modifying the **object\_name** definition in the PL/SQL block, as shown below:
 
       ```text
       object_name     VARCHAR2(200) := 'funding_commitments2.json';
@@ -234,7 +232,7 @@ Leverage Data Studio Tools to Build a Live Feed Data Pipeline
 
     * Clear the SQL Worksheet and Run the following code to populate new loan products.
 
-      ```text
+    ```text
       <copy>
         DECLARE
             New_Funding_Offers  NUMBER;
@@ -262,9 +260,9 @@ Leverage Data Studio Tools to Build a Live Feed Data Pipeline
       </copy>
       ```
 
-        ![Review Convert Funding to Loan Procudure Output](./images/review-funding-to-loan-conversion.png)
+    ![Review Convert Funding to Loan Procudure Output](./images/review-funding-to-loan-conversion.png)
 
-        ***Congratulations!*** On creating a Live Feed that can automatically load data from object storage into your database and be integrated into an automated business process.
+    ***Congratulations!*** On creating a Live Feed that can automatically load data from object storage into your database and be integrated into an automated business process.
 
 ## Conclusion
 In this lab, you built a data pipeline using the Oracle Live Table Feed tool and successfully used the data from the pipeline in a PL/SQL block that was run from Oracle Autonomous Database to automate business processes.
