@@ -58,7 +58,7 @@ In this lab, you will use the Data Studio tools to Consume a Data Share as a Rec
 
       * Select **Create Share Provider** as share source
       * Select **From File** as **Share Provider JSON** 
-        * Select the file you downloaded in the lab  **Create & Share Trusted Data Products**
+        * Select the file named **delta\_share\_profile.json** that you downloaded in lab 3
       * In **Provider Name** text box enter: **Demo-Data-Share**  
       * In **Description** text box enter: **Demo-Data-Share**
 
@@ -112,9 +112,10 @@ In this lab, you will use the Data Studio tools to Consume a Data Share as a Rec
 
       ![Create Data Product Share](./images/select-shared-data-5.png )
 
-7. Once the job is complete, check that you see the link icon next to the data link card to confirm success.
+7. Once the job completes, confirm Data Link success
 
-   >If after a few seconds the status does not update, click the refresh icon on the right.
+   * Set the refresh icon on the right to 60 seconds.
+   * Check that you see the link icon next to the data link card to confirm success
 
       ![Create Data Product Share](./images/select-shared-data-6.png )
 
@@ -142,6 +143,13 @@ In this lab, you will use the Data Studio tools to Consume a Data Share as a Rec
 
    ![Create Data Product Share](./images/select-shared-data-4a.png )
 
+   >**This will cause the SQL Worksheet to appear** and auto run a select all query from our linked table as shown below. <br>
+   >The **query result section** proves that the query was able to access the data in the object storage file and return it the dashboard
+   <br>
+
+
+   ![Query Shared Data Product](./images/query-shared-data-product.png )
+
 ***Congratulations!*** You’ve now subscribed to a shared data product and validated that you can query it directly from Autonomous Database. <br> This ensures the Risk team at SeersEquities can work with live, trusted data—ready for real-time analysis without unnecessary data movement.
 
 ## Conclusion
@@ -157,5 +165,4 @@ This workflow ensures faster risk analysis, smarter decisions, and tighter colla
 
 ## Acknowledgements
 * **Authors** - Eddie Ambler
-* **Last Updated By/Date** - September 2025, Eddie Ambler
-
+* **Last Updated By/Date** - Eddie Ambler - September 2025
