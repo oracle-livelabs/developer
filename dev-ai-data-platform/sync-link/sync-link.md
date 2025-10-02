@@ -27,7 +27,9 @@ By the end of this lab, you will:
 By the end, you’ll have the skills to turn raw, external data into a seamless part of SeersEquities’ analytics workflow—ready to power better loan decisions and smarter risk management.
 
 
-## Task 1: Load Object Storage Data into Autonomous Database using the Catalog Tool. 
+## Task 1: Load Object Storage Data into Autonomous Database using the Catalog Tool.
+
+>***Skip to Step 5,*** **if continuing from Lab 1**
 
 1. If you are not yet logged in to **Database Actions**, click **View Login Info**. Copy your **DB ADMIN Password**, and click the **SQL Worksheet** link.  
 
@@ -41,56 +43,60 @@ By the end, you’ll have the skills to turn raw, external data into a seamless 
 
       ![Select CATALOG from Navigation Menu](./images/task1-scrn-7.png "")  
 
-4.  Click the **Data Objects** tab at the top of the catalog page to view the contents from your object storage buckets.  
+4.  Click the **Data Objects** tab at the top of the catalog page to view the contents from your object storage buckets.
 
-      ![Click Data Objects](./images/task1-scrn-8.png "")  
+      ![Click Data Objects](./images/task1-scrn-8.png "")
 
-5. From the list, select **LoanAppcustomer_extension.csv** to open the **Cloud Object Entity** page.  
+5. From the list of Data Objects, select **LoanAppcustomer_extension.csv** to open the **Cloud Object Entity** page.
 
-      ![Select Customer_Extention.csv file](./images/click-csv.png "")  
+      ![Select Customer_Extention.csv file](./images/click-csv.png "")
 
-6. Click **Load to Table**.  
+6. Click **Load to Table**.
 
-      ![Select Load to Table](./images/task1-scrn-9.png "")  
+      ![Select Load to Table](./images/task1-scrn-9.png "")
 
-7. Select **Create Table** in the table section, then change the table name to something more meanful -- like, **CUSTOMER EXTENSION**.  
+7. Select **Create Table** in the table section, then change the table name to **CUSTOMER\_EXTENSION**.
 
-      ![Select Create Table & provide name](./images/define-load-data-table.png "")  
+      ![Select Create Table & provide name](./images/define-load-data-table.png "")
 
-      Click **Load Data**.  
+      Click **Load Data**.
 
-8. In the popup window, click **Go to Data Load** to continue.  
+8. In the popup window, click **Go to Data Load** to continue.
 
-      ![Click Go To Data Load](./images/go-to-data-load.png "") 
+      ![Click Go To Data Load](./images/go-to-data-load.png "")
 
-9. Once the job completes, the table appears under **Table and View Loads** on the page. Click **Report** to review job details.  
+9. Set Refresh Rate to 60 Seconds and check on table load job completion
 
-      ![Click Report to review load job](./images/task1-scrn-14.png "")  
+      * Click on drop-down for **Refresh** and set frequency to 60 seconds
+      * The table will appear under **Table and View Loads**, once the table load completes the job will move from queued and show number of rows loaded
+      * Click **Report** to review job details.
 
-10. Review the job details.  Click **SQL** to review the code used.  
+      ![Click Report to review load job](./images/task1-scrn-14.png "")
 
-      ![Click SQL to review load code](./images/review-data-load-job.png "")  
+10. Review the job details.  Click **SQL** to review the code used.
 
-13. The SQL code is displayed.  
+      ![Click SQL to review load code](./images/review-data-load-job.png "")
 
-      ![Examine load SQL code](./images/task1-scrn-15.png "")  
+11. The SQL code is displayed.
 
-      Click **Close**.  
+      ![Examine load SQL code](./images/task1-scrn-15.png "")
 
-14. To analyze the data load, click **Query**.  
+      Click **Close**.
 
-      ![Analyze data load](./images/task1-scrn-16.png "")  
+12. To validate the data load, click **Query**.
 
-15. The SQL Worksheet opens with the query pre-loaded, the results displayed, and an analysis of the dataset.  
+      ![Analyze data load](./images/task1-scrn-16.png "")
 
-      ![Load Data set analysis](./images/task1-scrn-17.png "")  
+13. The SQL Worksheet opens with the query pre-loaded, the results displayed, and an analysis of the dataset.
 
-16. Click **Catalog** in the left rail and you’ll see the **CUSTOMER_EXTENSION** table now listed in the catalog.  
+      ![Load Data set analysis](./images/task1-scrn-17.png "")
 
-      ![Review CUSTOMER_EXTENSION table in Catalog](./images/task1-scrn-18.png "")  
+14. Click **Catalog** in the left rail, then select **Tables and Views** Filter  to see that the **CUSTOMER_EXTENSION** table is now listed in the catalog.
+
+      ![Review CUSTOMER_EXTENSION table in Catalog](./images/task1-scrn-18.png "")
 
 
-You’ve just loaded external object storage data directly into your Autonomous Database—turning a static file into a query-ready table. This move helps optimize performance and makes your data ready for analytics, joins, and future products.  
+***Congratulations!*** You’ve just loaded external object storage data directly into your Autonomous Database, turning a static file into a query-ready table. This move helps optimize performance and makes your data ready for analytics, joins, and future products.
 
 ## Task 2: Link Object Storage Data from Data Catalog to ADB.  
 
@@ -102,39 +108,39 @@ You’ve just loaded external object storage data directly into your Autonomous 
 
       ![Select Link to Table](./images/task2-scrn-10a.png "")  
 
-   3. Select **Create External Table** in the table section, then change the table name to something more meaningful --- **CUSTOMER_SEGMENT**.  
+   3. Select **Create External Table** in the table section, then change the table name to **CUSTOMER\_SEGMENT**.  
 
       ![Select Create External Table & provide name](./images/task2-scrn-12.png "")  
 
       Click **Link Data**.  
 
-   7. In the popup, click **Go To Data Link** to continue.  
+   4. In the popup, click **Go To Data Load** to continue.  
 
       ![Click Go To Data Link](./images/go-to-data-load.png "")  
 
-   8. Once the job completes, the external table appears under **Table and View Loads** on the page.  Click **Report** to review job details.  
+   5. Once the job completes, the external table appears under **Table and View Loads** on the page.  Click **Report** to review job details.  
 
-      ![Click Report to review link job](./images/task2-scrn-14.png "")  
+      ![Click Report to review link job](./images/task2-scrn-14.png "")
 
-   9. Review the job details.  Click **SQL** to review the code used.  
+   6. Review the job details.  Click **SQL** to review the code used.  
 
       ![Click SQL to review link code](./images/review-data-link-job.png "")  
 
-   10. The SQL code is displayed.
+   7. The SQL code is displayed.
 
       ![Examine link SQL code](./images/review-data-link-sql.png "")  
 
        Click **Close**.  
 
-   11. To analyze the data link, click Query.  
+   8. To test the data link, click Query.  
 
       ![Analyze data link](./images/analyze-data-link.png "")  
 
-   12. The SQL Worksheet opens with the query pre-loaded, the results displayed, and an analysis of the dataset.  
+   9. The SQL Worksheet opens with the query pre-loaded, the results displayed, and an analysis of the dataset.  
 
-   ![Link Data set analysis](./images/task2-scrn-17.png "")  
+      ![Link Data set analysis](./images/task2-scrn-17.png "")  
 
-You’ve just linked **external object storage data** to your database—**no loading required**. With this external table in place, you can **run queries instantly while avoiding data duplication** and keeping your analytics agile and efficient.  
+***Congratulations!*** You’ve just linked **external object storage data** to your database, **with no data loading required**. With this external table in place, you can **run queries instantly while avoiding data duplication** and keeping your analytics agile and efficient.  
 
 ## Task 3: Query Data in Object Storage and ADB Database.
 
@@ -166,7 +172,7 @@ You’ve just linked **external object storage data** to your database—**no lo
 
       ![Query Data in Object Storage](./images/task3-scrn-3.png "Query Data in Object Storage")  
 
-   4.	Combine data from both tables using a **join**. Paste the query below, then click **Run**:  
+   4.	Combine data in the database and in object storage using a **join**. Paste the query below, then click **Run**:  
 
       ```text
       <copy>
@@ -181,7 +187,7 @@ You’ve just linked **external object storage data** to your database—**no lo
 
   ![Query Data in Object Storage](./images/task3-scrn-4a.png "")  
 
-You’ve now combined external object storage data with internal database data—all from a single query. This unlocks richer analytics, enabling SeersEquities to connect customer attributes with segmentation strategies in real time.  
+***Congratulations!*** You’ve now combined external object storage data with internal database data, all from a single query. This unlocks richer analytics, enabling SeersEquities to connect customer attributes with segmentation strategies in real time.  
 
 ## Conclusion  
 
@@ -193,4 +199,4 @@ For SeersEquities, this means **faster decisions, smarter loan products, and mor
 
 ## Acknowledgements
 * **Authors** - Eddie Ambler, Otis Barr
-* **Last Updated By/Date** - Kamryn Vinson, June 2025
+* **Last Updated By/Date** - Eddie Ambler, September 2025
