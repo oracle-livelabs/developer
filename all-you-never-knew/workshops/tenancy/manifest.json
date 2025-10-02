@@ -18,27 +18,27 @@
             "filename": "../../labs/microservices/microservices.md"
         },
         {
-            "title": "Lab 2: Exploring REST capabilities",
+            "title": "Lab 2: Explore REST capabilities",
             "description": "Explore the Support Ticket service and Spring Boot REST capabilities with Oracle",
             "filename": "../../labs/rest/rest.md"
         },
         {
-            "title": "Lab 3: Event processing with TxEventQ",
+            "title": "Lab 3: Process events with TxEventQ",
             "description": "Learn about event-driven processing with TxEventQ and OKafka",
             "filename": "../../labs/events/events.md"
         },
         {
-            "title": "Lab 4: Exploring AI functionality",
+            "title": "Lab 4: Explore AI functionality",
             "description": "Learn about Oracle Vector Database and OCI GenAI service",
             "filename": "../../labs/ai/ai.md"
         },
         {
-            "title": "Lab 5: Exploring JSON Relational Duality Views",
+            "title": "Lab 5: Explore JSON Relational Duality Views",
             "description": "Learn about xxx",
             "filename": "../../labs/json/json.md"
         },
         {
-            "title": "Lab 6: Exploring Oracle REST Data Services",
+            "title": "Lab 6: Explore Oracle REST Data Services",
             "filename": "../../labs/ords/ords.md"
         },
         {
@@ -49,7 +49,7 @@
         {
             "title": "Need Help?",
             "description": "Solutions to Common Problems and Directions for Receiving Live Help",
-            "filename":"../../help/help.md"
+            "filename":"https://oracle-livelabs.github.io/common/labs/need-help/need-help-livelabs.md"
         }
     ]
 }
