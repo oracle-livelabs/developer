@@ -103,7 +103,7 @@ Leverage Data Studio Tools to Build a Live Feed Data Pipeline
 
       ![Copy MYDEMOBUCKET URI](./images/mydemobucket-uri.png "")
 
-  Click **Close** to exit.
+  * Click **Close** to exit.
 
   14. Return to **SQL | Oracle Database Actions** browser tab.  <br>
 
@@ -125,30 +125,30 @@ Leverage Data Studio Tools to Build a Live Feed Data Pipeline
 
     ![Switch Tab & Select LOANAPP_FUNDING Connection](./images/move-data-file1.png "")
 
-17.	Click the folder icon to confirm that the **funding\_commitments1.json** file in the **LOANAPP\_FUNDING** bucket has been successfully copied here.
+17.	Expand the **FUNDING** folder icon to confirm that the **funding\_commitments1.json** file from the **LOANAPP\_FUNDING** bucket has been successfully copied here.
 
     ![Confirm File 1 Copy](./images/confirm-move-data-file1.png "")
 
-  Click **Close** to exit.
+    * Click **Close** to exit.
 
   ***Congratulations!*** You have now successfuly interacted with data in object storage using PL/SQL from the Data Studio tools and your Autonomous Database.
 
 ## Task 2: Build Initial Live Feed Table
 
-  1. From the **Data Load | Oracle Database** tab - Navigate to Live Feed.
+1. From the **Data Load | Oracle Database** tab - Navigate to Live Feed.
 
-  * On Left rail expand **Data Load**, then click on **Live Feed**.
+* On Left rail expand **Data Load**, then click on **Live Feed**.
 
     ![Navigate from Data Load Connections to Live Feed](./images/navigate-connections-to-live-feed.png "")
 
       >You should now see the Live Feed Page
 
 
-  2.  Click the **Create Live Table Feed** button to enter the Create Live Feed wizard
+2.  Click the **Create Live Table Feed** button to enter the Create Live Feed wizard
 
-      ![Create Live Feed Wizard](./images/live-feed-wizard-step1.png "")
+    ![Create Live Feed Wizard](./images/live-feed-wizard-step1.png "")
 
-  3. Enter details for the Live Table Feed Preview.
+3. Enter details for the Live Table Feed Preview.
 
      * Select Cloud Store Location: **MyDemoBucket**
      * Select Radial Box: **Basic**
@@ -162,27 +162,28 @@ Leverage Data Studio Tools to Build a Live Feed Data Pipeline
      * Click the **Next** button to proceed.
 
 
-  4. Configure Live Feed Table Settings as follows:
+4. Configure Live Feed Table Settings as follows:
 
      * **For Option**: Choose **Merge Into Table** from drop-down list
 
      * **For target Table Name**: Enter the name of the target table of the Live Feed -- **FUNDING\_PROVIDER\_OFFER\_STG**. ***In ALL CAPS*** <br>
 
-     * Then modify **Mapping** details exactly as shown below:
-       >**Modify mapping to update Data Type** to NUMBER for: FUNDING_PROVIDER_ID and FUNDING_OFFER_REFERENCE_ID <br>
-       >**For Merge Key**: Select FUNDING_PROVIDER_ID and FUNDING_OFFER_REFERENCE_ID
+     * <u>Then modify **Mapping** details exactly as shown below:</u>
+        * **Update Data Type** to NUMBER for: FUNDING\_PROVIDER\_ID and FUNDING\_OFFER\_REFERENCE\_ID <br>
+        * **For Merge Key**: Select FUNDING\_PROVIDER\_ID and FUNDING\_OFFER\_REFERENCE\_ID<br>
+        * **Unselect last row:** Inclusion of SYSTIMESTAMP Source
 
       ![Create Live Feed Wizard - step 2](./images/live-feed-wizard-step2-table-settings.png "")
 
      * Click the **Next** button to proceed.
 
-  5. Review the information shown on the Preview page.
+5. Review the information shown on the Preview page.
 
       ![Create Live Feed Wizard - step 3](./images/live-feed-preview.png "")
 
       * Click **Next** to proceed.
 
-   6. Enter remaining details for the **Live Table Feed**
+6. Enter remaining details for the **Live Table Feed**
 
       a. Enter live feed name **LOANAPP\_FUNDING\_FEED** <br>
       b. Check box to **Enable for Scheduling**. <br>
@@ -192,11 +193,11 @@ Leverage Data Studio Tools to Build a Live Feed Data Pipeline
 
       * Click **Create**
 
-   7. When the popup box appears, select **Yes** to run the Live Feed.
+7. When the popup box appears, select **Yes** to run the Live Feed.
 
       ![Run Initial Live Table Feed](./images/do-run-live-feed.png)
 
-   8. Review Live Feed Table and set page Refresh Interval
+8. Review Live Feed Table and set page Refresh Interval
 
       * **You should see 3 rows loaded**
       * **Set page refresh interval to 10 seconds** to see when new data is loaded
@@ -204,6 +205,7 @@ Leverage Data Studio Tools to Build a Live Feed Data Pipeline
       ![Active Live Table Feed](./images/active-live-feed.png)
 
 ***Congratulations!*** You have successfully created your Live Feed table.
+
 
 ## Task 3: Test Live Feed Table Data Population
 
