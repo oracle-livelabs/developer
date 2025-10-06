@@ -255,7 +255,7 @@ Estimated Lab Time: 20 minutes
 
    ![Unedited batchload curl command](./images-new/24-unedited-batchload-curl-command.png " ")
 
-2. Retrieve the sample payload via [this link](https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/developer-library/project_batchload.csv.zip) that you'll use for testing this`BATCH LOAD` endpoint. Unzip the .zip file if this did not occur automatically.
+2. Retrieve the sample payload via [this link](https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/developer-library/batchload_directory.zip) that you'll use for testing this`BATCH LOAD` endpoint. Unzip the .zip file if this did not occur automatically.
 
 3. Once downloaded, copy the filepath details to use in the `--data-binary` option of the cURL command. In this example, the .csv file is located at: `/Users/me/Downloads/project_batchload.csv`.
 
