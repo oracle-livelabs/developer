@@ -118,7 +118,12 @@ By the end, you’ll have the skills to turn raw, external data into a seamless 
 
       ![Click Go To Data Link](./images/go-to-data-load.png "")  
 
-   5. Once the job completes, the external table appears under **Table and View Loads** on the page.  Click **Report** to review job details.  
+   5. Validate Refresh rate is set to 60 seconds and check on create external table job completion
+      * Click on drop-down for **Refresh** and ***set frequency to 60 seconds***
+
+      * Click **Report** to review job details.
+
+      >Note that the create external table job will appear under **Table and View Loads**, once the create external table job completes, the job will move from queued and show the number of rows loaded.  
 
       ![Click Report to review link job](./images/task2-scrn-14.png "")
 
