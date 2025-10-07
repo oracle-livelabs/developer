@@ -28,6 +28,7 @@ In this lab, you will:
 * You are using an Oracle Linux image on your Managed Instance for this workshop.
 * Access to the cloud environment and resources configured in [Lab 5](?lab=track-java-servers).
 * JDK 17 installed on your Managed Instance. You can refer to [Lab 3](?lab=configure-post-install-actions-and-install-java-runtimes) on how to set this up
+* Advanced usage tracking is enabled on the fleet.
 * Familiarity with Building and Running a Java SE Application
 
 ## Task 1: Detect Java libraries in deployed Java Web Application
@@ -36,7 +37,7 @@ In this lab, you will:
 
   * Refer to **Lab 5, Task 2** to restart the WebLogic server with sample application if it has stopped.
 
-2. Open the navigation menu, click **Observability & Management**. Under **Java Management**, select **Fleets**.  
+2. Open the navigation menu, click **Observability & Management**. Under **Java Management**, select **Fleets**.
      ![image of navigation menu](images/console-navigation-jms.png)
        Select the fleet with the advanced feature, **Advanced usage tracking** enabled. Refer to  [Lab 1](?lab=set-up-and-enable-advanced-features-on-java-management-service).
 
@@ -44,6 +45,9 @@ In this lab, you will:
      ![image of Fleet details page](images/scan-java-libraries.png)
     Select **Perform static scan** and **Submit request** , then click on the **Submit** button to send a work request.
      ![image of confirmation page to create java libraries scan request](images/scan-java-libraries-submit.png)
+
+     > **Note:** You can also schedule Scan for Java libraries by selecting **Schedule for later** and setting the schedule preference. Once submitted, you should see a new Scheduled task been created. To view/manage the scheduled task, refer to [Lab 12](?lab=view-and-manage-scheduled-tasks)
+     > ![image of confirmation page to schedule java libraries scan request](images/scan-java-libraries-submit-later.png)
 
 4. Click on the **Work requests** tab. You should see the Scan for Java libraries Work Request you submitted in step 3. Wait for the work request to complete.
      ![image of work request for java libraries accepted](images/work-request-of-libraries-accepted.png)
@@ -308,6 +312,9 @@ To detect Java libraries in standalone application using dynamic scanning,
     For this task, select **Perform dynamic scan** and **Submit request** , then click on the **Submit** button to send a work request.
      ![image of confirmation page to create dynamic java libraries scan request](images/scan-java-libraries-dynamic-submit.png)
 
+     > **Note:** You can also schedule Scan for Java libraries by selecting **Schedule for later** and setting the schedule preference. Once submitted, you should see a new Scheduled task been created. To view/manage the scheduled task, refer to [Lab 12](?lab=view-and-manage-scheduled-tasks)
+     > ![image of confirmation page to schedule java libraries scan request](images/scan-java-libraries-dynamic-submit-later.png)
+
 2. Click on the **Work requests** tab. You should see the Dynamic scan for Java libraries Work Request you submitted in step 1. Wait for the work request to complete.  ![image of work request for dynamic java libraries accepted](images/work-request-of-libraries-dynamic-accepted.png)
 
 4. If your request is successful, you should see that the status of the request is marked as **Completed without errors**. It will take approximately 10 minutes for the request to be completed.
@@ -354,4 +361,4 @@ You may now **proceed to the next lab.**
 ## Acknowledgements
 
 * **Author** - Youcheng Li, Java Management Service
-* **Last Updated By** - Teck Kian Choo, September 2025
+* **Last Updated By** - Satish Sarakanam, October 2025

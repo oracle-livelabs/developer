@@ -19,6 +19,7 @@ In this lab, you will:
 - You have signed up for an account with Oracle Cloud Infrastructure and have received your sign-in credentials.
 - You are using an Oracle Linux image or Windows OS on your Managed Instance for this workshop.
 - Access to the cloud environment and resources configured in [Lab 1](?lab=set-up-and-enable-advanced-features-on-java-management-service).
+- Java migration analysis is enabled on the fleet.
 - Have a Java application compiled and run at least once with JDK 8 on your instance.
 
 ## Task 1: Submit Java Migration Analysis Work Request
@@ -45,8 +46,6 @@ In this lab, you will:
 
    Click on "Start Java migration analysis" option under Actions after selecting the applications to be analysed.
 
-   ![image of java migration analysis run settings](images/managed-instance-applications-run-java-migration-analysis.png)
-
 5. In the **Java migration analysis** panel, the source JDK is auto-populated to JDK 8, which is used for compiling and running this java application.
 
    Under the **Target JDK for migration analysis**, click the dropdown menu and select **JDK 17**.
@@ -62,6 +61,9 @@ In this lab, you will:
    ![image of java migration configs before starting](images/java-migration-analysis-config-start-2.png)
 
    ![image of work request](images/java-migration-analysis-work-request-started-notification.png)
+
+   > **Note:** You can also schedule Java migration analysis by selecting the **Schedule for later** and setting the schedule preference. Once submitted, you should see a new Scheduled task been created. To view/manage the scheduled task, refer to [Lab 12](?lab=view-and-manage-scheduled-tasks)
+   > ![image of Java migration analysis schedule later](images/java-migration-analysis-schedule-later.png)
 
 6. Click on the **Work requests** tab. You should see a list of the Work Requests that are currently in your Fleet.
 
@@ -127,7 +129,7 @@ In this lab, you will:
 
 ## Task 2: (Optional) Download Java Migration Analysis Report
 
-1. To access the consolidated report and the raw results in multiple json files, navigate to the **Fleet** details page and click the **Object storage bucket** name under **Object storage**.
+1. To access the consolidated report and the raw results in multiple json files, navigate to the **Fleet** details page and scroll down till you see **Object storage**. Click the **View bucket details** name under **Object storage**.
 
    ![image of java migration analysis bucket object](images/fleet-bucket-link.png)
 
@@ -160,4 +162,4 @@ You may now **proceed to the next lab.**
 ## Acknowledgements
 
 - **Author** - Sherlin Yeo, Java Management Service
-- **Last Updated By** - Meghna Jayan, September 2025
+- **Last Updated By** - Satish Sarakanam, October 2025

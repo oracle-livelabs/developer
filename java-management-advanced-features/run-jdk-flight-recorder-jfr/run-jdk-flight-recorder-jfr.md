@@ -14,13 +14,12 @@ In this lab, you will:
 * View and monitor the status of Work Requests created using the Java Management Service console interface.
 * Download the generated JFR file for further analysis.
 
-
-
 ### Prerequisites
 
 * You have signed up for an account with Oracle Cloud Infrastructure and have received your sign-in credentials.
 * You are using an Oracle Linux image or Windows OS on your Managed Instance for this workshop.
 * Access to the cloud environment and resources configured in [Lab 1](?lab=set-up-and-enable-advanced-features-on-java-management-service).
+* JDK Flight Recorder (JFR) is enabled on the fleet.
 * Have a Java application capable of running longer than 15 mins in your instance.
 * Have a Managed Instance running a Kubernetes agent with access to the clusters.
 
@@ -32,9 +31,9 @@ In this lab, you will:
 
 2. Under **Managed instances** on the **Fleet** details page.
 
-    You should see a list of Managed instances that are currently in your Fleet. Select the Managed instance you are interested in.
+   You should see a list of Managed instances that are currently in your Fleet. Select the Managed instance you are interested in.
 
-    ![image of fleet details page with jfr button](images/fleet-managed-instances.png)
+   ![image of fleet details page with jfr button](images/fleet-managed-instances.png)
 
 3. Under **Applications**. You should see a list of Java applications running in this managed instance. Select the long running Java application you want to run with JFR.  Click on **Actions** and select **Run JDK Flight Recorder**. JFR will be captured for all the containers running that application, resulting in as many JFR recordings as the number of containers.
 
@@ -48,10 +47,13 @@ In this lab, you will:
 
     > Note: Ensure your application runs longer than the duration specified.
 
-    ![image of jfr configs before starting](images/jfr-config-start.png)
+    ![image of jfr configs](images/jfr-configuration.png)
 
     If your request is submitted successfully, you should receive a notification as seen below:
     ![image of work request](images/jfr-work-request-started-notification.png)
+
+    > **Note:** You can also schedule JDK Flight Recorder (JFR) by selecting the **Schedule for later** and setting the schedule preference. Once submitted, you should see a new Scheduled task been created. To view/manage the scheduled task, refer to [Lab 12](?lab=view-and-manage-scheduled-tasks)
+    > ![image of jfr schedule later](images/jfr-schedule-later.png)
 
 5. Under **Work requests**. You should see a list of the Work Requests related to the selected managed instance. **JDK Flight Recorder** that was started should be at the top of the list.
 
@@ -98,6 +100,9 @@ In this lab, you will:
    If your request is submitted successfully, you should receive a notification as seen below:
    ![image of submitted JFR Recording work request](images/submitted-JFR-recording-work-request.png)
 
+   > **Note:** You can also schedule JDK Flight Recorder (JFR) by selecting the **Schedule for later** and setting the schedule preference. Once submitted, you should see a new Scheduled task been created. To view/manage the scheduled task, refer to [Lab 12](?lab=view-and-manage-scheduled-tasks)
+   > ![image of jfr schedule later](images/jfr-schedule-later.png)
+
 5. Under **Work requests**. You should see the **JFR Recording** work request you submitted. Click on the Work Request to view its details.
 
    ![Select submitted JFR Recording work request](images/select-submitted-JFR-work-request.png)
@@ -113,13 +118,14 @@ In this lab, you will:
 You may now **proceed to the next lab.**
 
 ## Learn More
- * Refer to the [Advanced Features](https://docs.oracle.com/en-us/iaas/jms/doc/advanced-features.html), [Work Requests](https://docs.oracle.com/en-us/iaas/jms/doc/using-java-management-service.html#GUID-77AEEBC0-93A5-4E99-96D6-BEE0FEE4539F) sections of the JMS documentation for more details.
 
- * Use the [Troubleshooting](https://docs.oracle.com/en-us/iaas/jms/doc/troubleshooting.html#GUID-2D613C72-10F3-4905-A306-4F2673FB1CD3) chapter for explanations on how to diagnose and resolve common problems encountered when installing or using Java Management Service.
+* Refer to the [Advanced Features](https://docs.oracle.com/en-us/iaas/jms/doc/advanced-features.html), [Work Requests](https://docs.oracle.com/en-us/iaas/jms/doc/using-java-management-service.html#GUID-77AEEBC0-93A5-4E99-96D6-BEE0FEE4539F) sections of the JMS documentation for more details.
 
- * If the problem still persists or it is not listed, then refer to the [Getting Help and Contacting Support](https://docs.oracle.com/en-us/iaas/Content/GSG/Tasks/contactingsupport.htm) section. You can also open a support service request using the **Help** menu in the OCI console.
+* Use the [Troubleshooting](https://docs.oracle.com/en-us/iaas/jms/doc/troubleshooting.html#GUID-2D613C72-10F3-4905-A306-4F2673FB1CD3) chapter for explanations on how to diagnose and resolve common problems encountered when installing or using Java Management Service.
+
+* If the problem still persists or it is not listed, then refer to the [Getting Help and Contacting Support](https://docs.oracle.com/en-us/iaas/Content/GSG/Tasks/contactingsupport.htm) section. You can also open a support service request using the **Help** menu in the OCI console.
 
 ## Acknowledgements
 
 * **Author** - Somik Khan, November 2022
-* **Last Updated By** - Fatima EL-MANANI, September 2025
+* **Last Updated By** - Satish Sarakanam, October 2025
