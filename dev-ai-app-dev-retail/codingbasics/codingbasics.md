@@ -2,12 +2,22 @@
 
 ## Introduction
 
-In this hands-on lab, you'll use Python to interact with Oracle Database 23ai - connecting with both oracledb and pymongo, creating tables, querying data, and building JSON Duality Views. You'll also explore Oracle’s Mongo API to query and update data using a document-based approach, making it easy to integrate with existing MongoDB-style apps. This lab is ideal for those with basic Python and Oracle knowledge and builds on the setup from Lab 2.
+
+At Seer Holdings, developers are building a next-generation approval system that needs to combine enterprise-grade data governance with modern AI capabilities. But before GenAI or vector search can be applied, one thing must be true:
+
+👉 The data must be in the right shape — accessible, trustworthy, and programmable.
+
+In this lab, you’ll act as a developer on the Seer Holdings data team. Your job is to build the foundational logic that powers the application’s intelligence layer. That means:
+
+- Creating and querying relational tables that represent real customer data using Python
+- Converting that data into **JSON documents** using **JSON Duality Views**
+- Using **MongoDB-style syntax** via Oracle’s Mongo API to interact with the same data — without needing to duplicate or move it
+
+These capabilities make Oracle Database 23ai a **developer-friendly**, **multi-model platform**. You’ll write less glue code, eliminate data movement, and stay focused on the real task: powering intelligent approval workflows.
 
 > 💡 Everything you implement here becomes the data foundation for Retrieval-Augmented Generation (RAG) and AI Vector Search in upcoming labs.
 
 Estimated Time: 30 minutes
-
 
 ### Objectives
 
@@ -31,7 +41,7 @@ All of the coding examples will be executed in a new Jupyter Notebook.
 
 1. In **JupyterLab**, click the blue **+** to open the Launcher  
 
-    ![Open Launcher](./images/open-launcher.png " ")
+    ![Open Launcher](./images/launcher.png " ")
 
 2. Start a new **Python (ipykernel)** notebook
 
@@ -475,13 +485,13 @@ The final step in our basic coding tour with Python and the Oracle Database 23ai
 
 ## Conclusion
 
- We learned how to use Python and Oracle's Python driver `oracledb` to interact with Oracle Database 23ai's new features. You learned how to user the `cursor` object to execute SQL queries. Using the `cursor` object, you created a **JSON Duality View** and you even used some JSON functions to query documents using SQL syntax. Then, you also learned how to connect to the database using `pymongo` and retrieve data from a table in the database using **MongoDB syntax**. You created functions to update the **JSON Duality View** and you learned how these updates are also reflected in the underlying relational database tables.
+As a developer at Seer Holdings, you've just built the foundation for a GenAI-powered corporate approval system. We learned how to use Python and Oracle's Python driver `oracledb` to interact with Oracle Database 23ai's new features. You learned how to user the `cursor` object to execute SQL queries. Using the `cursor` object, you created a **JSON Duality View** and you even used some JSON functions to query documents using SQL syntax. Then, you also learned how to connect to the database using `pymongo` and retrieve data from a table in the database using **MongoDB syntax**. You created functions to update the **JSON Duality View** and you learned how these updates are also reflected in the underlying relational database tables.
 
 This architecture eliminates the need for duplicating data across platforms and simplifies how developers build AI-ready applications. Whether you're calling SQL, working with JSON, or speaking Mongo, you're always working with a single source of truth inside the Oracle Database.
 
-In the next lab, you'll build on this foundation to implement Retrieval-Augmented Generation (RAG), create vector embeddings, and generate personalized return recommendations with Oracle 23ai and OCI Generative AI.
+In the next lab, you'll build on this foundation to implement Retrieval-Augmented Generation (RAG), create vector embeddings, and generate personalized recommendations with Oracle 23ai and OCI Generative AI.
 
 ## Acknowledgements
 * **Authors** - Linda Foinding, Kevin Lazarz
 * **Contributors** - Francis Regalado, Kamryn Vinson
-* **Last Updated By/Date** - Uma Kumar, August 2025
+* **Last Updated By/Date** - Kamryn Vinson, April 2025
