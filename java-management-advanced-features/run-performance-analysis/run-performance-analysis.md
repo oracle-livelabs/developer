@@ -19,6 +19,7 @@ In this lab, you will:
 * You have signed up for an account with Oracle Cloud Infrastructure and have received your sign-in credentials.
 * You are using an Oracle Linux image or Windows OS on your Managed Instance for this workshop.
 * Access to the cloud environment and resources configured in [Lab 1](?lab=set-up-and-enable-advanced-features-on-java-management-service).
+* Performance analysis is enabled on the fleet.
 * Have a Java application that is run with Java command line arguments.
 
 ## Task 1: Submit Performance Analysis Work Request
@@ -27,41 +28,37 @@ In this lab, you will:
 
    ![image of console navigation to java management service](images/console-navigation-jms.png)
 
-2. Scroll down the **Fleet** details page. Under the **Resources** menu, select **Managed instances**.
+2. Under the **Resources** tab, select **Managed instances**.
 
    You should see a list of Managed instances that are currently in your Fleet. Select the Managed instance you are interested in.
 
    ![image of fleet details page with managed instances](images/fleet-managed-instances.png)
 
-3. Scroll down and under **Resources**, select **Applications**. You should see a list of Java applications running in this Managed instance. Select a long running Java application that is run with Java command line arguments. Click the **Actions** drop-down menu and click **Start performance analysis** button.
+3. Under the **Resources** tabs, select **Applications**. You should see a list of Java applications running in this Managed instance. Select a long running Java application that is run with Java command line arguments. Click the **Actions** drop-down menu and click **Start performance analysis** button.
 
    ![image of start performance analysis](images/managed-instance-applications-start-perf-analysis.png)
 
-4. In the Performance analysis panel, lower the **Maximum recording duration** for each detected running application to 2 mins. Click **Start** to submit the work request.
+4. In the Performance analysis panel, lower the **Maximum recording duration** for each detected running application to 2 mins.
 
    > Note: Ensure your application runs longer then the duration specified.
 
-   ![image of performance analysis configs before starting](images/perf-analysis-config-start.png)
+   ![image of performance analysis config](images/perf-analysis-config.png)
 
-   If your request is submitted successfully, you should receive a notification in green as seen below:
+5. Once the changes are done, select **Submit request** and click **Submit**.
+   ![image of performance analysis submit now](images/performance-analysis-submit-now.png)
 
-   ![image of work request notification](images/perf-analysis-work-request-started-notification.png)
+   > **Note:** You can also schedule performance analysis by selecting the **Schedule for later** and setting the schedule preference. Once submitted, you should see a new Scheduled task been created. To view/manage the scheduled task, refer to [Lab 12](?lab=view-and-manage-scheduled-tasks)
+   > ![image of performance analysis schedule later](images/performance-analysis-schedule-later.png)
 
-5. Click on the **fleet** name at the top of the **Managed Instance** page. This should navigate back to the **Fleet** details page.
-
-   ![image of navigation to fleet details](images/managed-instance-to-fleet-navigation.png)
-
-6. Scroll down to the **Resources** menu and select **Work requests**. You should see a list of the Work Requests that are currently in your Fleet. **Performance analysis** that was started should be at the top of the list.
+6. On the managed instance page, select **Work requests**. You should see a list of the Work Requests that are currently in your Fleet. **Performance analysis** that was started should be at the top of the list.
 
    ![image of performance analysis work request](images/perf-analysis-work-request-in-progress.png)
 
 7. Wait for the work request to be processed. If the work request has been completed successfully, the status will change to **Completed without Errors**.
 
-   ![image of work request completed](images/perf-analysis-work-request-completed.png)
-
    >**Note:** It will take approximately 20 minutes for the request to be completed.
 
-8. Once the work request status shows **Completed without Errors**, scroll down to the **Resources** menu and select **Performance analysis reports**.
+8. Once the work request status shows **Completed without Errors**, select **Performance analysis reports** under the **Resources** tab
 
    You should see a list of Performance analysis reports that have been conducted in your Fleet. The latest **Performance analysis** that has been completed should be displayed at the top of the list.
 
@@ -72,10 +69,6 @@ In this lab, you will:
    ![image of performance analysis report details](images/perf-analysis-report-details.png)
 
    The performance analysis result details are shown under **Performance analysis result**.
-
-10. You can hover over the information icon, and click **Learn more** to read more about the recommendation.
-
-    ![image of performance tuning recommendation hint](images/perf-analysis-summary-hint.png)
 
 ## Task 2: (Optional) Download Performance Analysis Report
 
@@ -127,4 +120,4 @@ In this lab, you will:
 ## Acknowledgements
 
 * **Author** - Ivan Eng, Java Management Service
-* **Last Updated By** - Eugene Kazlou, September 2025
+* **Last Updated By** - Satish Sarakanam, October 2025
