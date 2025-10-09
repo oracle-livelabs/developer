@@ -618,6 +618,8 @@ Before answering questions, we need to prepare the data by vectoring the PO reco
 
 3. Review the output.
 
+    >*Note:* Your result may be different due to non-deterministic character of generative AI.
+
     ![chunks](./images/chunks-created.png " ")
 
 ## Task 6: Create Embeddings
@@ -888,7 +890,7 @@ Now that the recommendations are vectorized, we can process a user’s question:
 ## Conclusion
 Congratulations! You implemented a RAG process in Oracle Database 23ai using Python.
 
-to summarize:
+To summarize:
 
 * Connected with oracledb
 * Retrieved a purchase order profile via a JSON duality view
@@ -908,4 +910,4 @@ You may now proceed to the next lab.
 ## Acknowledgements
 * **Authors** - Francis Regalado Database Product Manager
 * **Contributors** - Kevin Lazarz, Hanna Rakhsha, Ley Sylvester
-* **Last Updated By/Date** - Uma Kumar, September 2025
+* **Last Updated By/Date** - Uma Kumar, October 2025

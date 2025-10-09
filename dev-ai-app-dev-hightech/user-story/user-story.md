@@ -26,11 +26,11 @@ This lab assumes you have:
 
     ![Click the Start Demo Link](./images/start-demo.png =50%x*)
 
-2. Select **High Tech** under Industry and **Approval Officer** under Role. Enter in a username and click **Login**.
+2. Select **High Tech** under Industry and **Support Engineer** under Role. Enter in a username and click **Login**.
 
     ![Login](./images/login.png =50%x*)
 
-3. Welcome to the Seer Manufacturing Purchase Order application! Congratulations, you are now connected to the demo environment. You can now execute the different tasks for this Lab.
+3. Welcome to the Seer High Tech Support Ticket application! Congratulations, you are now connected to the demo environment. You can now execute the different tasks for this Lab.
 
     ![Homepage](./images/app-home.png =50%x*)
 
@@ -237,5 +237,5 @@ By combining these advanced tools, the application enables faster, smarter decis
 
 ## Acknowledgements
 * **Authors** - Uma Kumar
-* **Contributors** - Kevin Lazarz, Francis Regalado, Hanna Rakhsha, Ley Sylvester
-* **Last Updated By/Date** - Uma Kumar, September 2025
+* **Contributors** - Kevin Lazarz, Francis Regalado, Hanna Rakhsha, Ley Sylvester, Zileyah Onafowora
+* **Last Updated By/Date** - Uma Kumar, October 2025

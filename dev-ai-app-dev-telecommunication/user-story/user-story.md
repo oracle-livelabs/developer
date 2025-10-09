@@ -26,7 +26,7 @@ This lab assumes you have:
 
     ![Click the Start Demo Link](./images/start-demo.png =50%x*)
 
-2. Select **Telecommunications** under Industry and **Approval Officer** under Role. Enter in a username and click **Login**.
+2. Select **Telecommunications** under Industry and **Network Operations Engineer** under Role. Enter in a username and click **Login**.
 
     ![Login](./images/login.png =50%x*)
 
@@ -42,7 +42,7 @@ In this first example, you will use the application to approve a Bandwidth Upgra
 
     ![Select Bob Smith](./images/BobSmith.png =50%x*)
 
-2. Opening Bob Smith’s profile reveals his service request details—name, email, request ID, service address, requested bandwidth, and current order status. You will also be able to see the AI-powered analysis on the request, including a comprehensive evaluation and the top 3 recommendations with approval probability.
+2. Opening Bob Smith’s profile reveals his service request details—name, email, request type, company, and status. You will also be able to see the AI-powered analysis on the request, including a comprehensive evaluation and the top 3 requests with approval probability.
 
     ![Bob Smith AI generated recommendations](./images/Bob-Smith-AI.png =50%x*)
 
@@ -189,7 +189,7 @@ Lastly, let’s explore how the system uses JSON Duality Views to handle profile
 
     ![Select David](./images/david-white.png =50%x*)
 
-2. We will upload a document to update 's customers's document. On the Customer Details page, click the **Upload Document** button. The PDF file has been loaded. Then click the **Process PDF** button
+2. We will upload a document to update the customers's network configuration. On the Customer Details page, click the **Upload Document** button. The PDF file has been loaded. Then click the **Process PDF** button
 
     ![Upload Document](./images/upload-document.png =50%x*)
 
@@ -203,7 +203,7 @@ Lastly, let’s explore how the system uses JSON Duality Views to handle profile
 
 Once the document is uploaded:
 
-✅ The system automatically detects the new compliance data.
+✅ The system automatically detects the new network data.
 
 ✅ The profile will be updated with service documentation.
 
@@ -231,4 +231,5 @@ By combining these advanced tools, the application enables faster, smarter decis
 
 ## Acknowledgements
 * **Authors** - Ley Sylvester
-* **Contributors** - Kevin Lazarz, Francis Regalado, Hanna Rakhsha, Uma Kumar
+* **Contributors** - Kevin Lazarz, Francis Regalado, Hanna Rakhsha, Uma Kumar, Noah Paul, Patrick Mccormick
+* **Last Updated By/Date** - Uma Kumar, October 2025
