@@ -28,16 +28,16 @@ This lab assumes you have:
 
 >💡**Note**: Review Lab 2: Connect to the Development Environment for instructions on accessing JupyterLab.
 
-1. You should see a terminal pop up once you are logged in. 
+1. You should see a terminal pop up once you are logged in. (You can always create a new one by clicking on the blue + and select terminal)
 
     ![Open Terminal](./images/terminal.png " ")
 
 
-2. Navigate to the `dbinit` directory by running the following command.
+2. Navigate to the `~/dbinit` directory by running the following command.
 
     ```bash
     <copy>
-    cd dbinit
+    cd ~/dbinit
     </copy>
     ```
 

@@ -26,16 +26,16 @@ This lab assumes you have:
 ## Task 1: Build the application in Jupyter Notebook
 >💡**Note**: Review Lab 2: Connect to the Development Environment for instructions on accessing JupyterLab.
 
-1. You should see a terminal pop up once you are logged in. 
+1. You should see a terminal pop up once you are logged in. (You can always create a new one by clicking on the blue + and select terminal)
 
     ![Open Terminal](./images/terminal.png " ")
 
 
-2. Navigate to the `dbinit` directory by running the following command.
+2. Navigate to the `~/dbinit` directory by running the following command.
 
     ```bash
     <copy>
-    cd dbinit
+    cd ~/dbinit
     </copy>
     ```
 
@@ -55,15 +55,15 @@ This lab assumes you have:
 
 ## Task 2: Connect to Database
 
-2. Click the **+** sign on the top left to open the Launcher.
+1. Click the **+** sign on the top left to open the Launcher.
 
     ![Open Launcher](./images/open-launcher.png " ")
 
-3. Open a new notebook.
+2. Open a new notebook.
 
     ![Open Notebook](./images/open-notebook.png " ")
 
-1. Copy the following code block into an empty cell in your notebook. This code block imports the `oracledb` Python driver and other libraries.
+3. Copy the following code block into an empty cell in your notebook. This code block imports the `oracledb` Python driver and other libraries.
 
     ```python
     <copy>
@@ -93,7 +93,7 @@ This lab assumes you have:
     </copy>
     ```
 
-2. Run the code block to connect to the database. 
+4. Run the code block to connect to the database. 
 
     ![Connect to Database](./images/connect-to-db.png " ")
 

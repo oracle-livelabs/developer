@@ -125,9 +125,10 @@ Estimated Lab Time: 25 minutes
 
     - **Module Name:** `records.module`
     - **Base Path:** `v1`
+    - **Protected By Privilege:** `Not Protected` (Select from drop-down)
     - **Comments:** `An employee records management module consisting of various templates and handlers for performing operations on the following target tables: Department, Project, Employee.`
 
-   ![create-new-resource-module](./images-new/18-create-new-resource-module.png " ")
+     ![create-new-resource-module](./images-new/18-create-new-resource-module.png " ")
 
 3. Now, click the Template button; this will ultimately be the URI for your ORDS API (where clients issue HTTP requests to). 
 
@@ -163,27 +164,29 @@ Estimated Lab Time: 25 minutes
     ```
 > **NOTE:** Notice how the the values for the Route Pattern are included in the Handler's source code. 
 
-5. You have just created your first ORDS API, a `GET` handler. Click the Open in new Tab button, you'll be prompted to enter in values for the Route Parameters. ORDS will bind these values of the URI to those in the Handler's SQL source code, satisfying the conditions of the `WHERE` clause. Select a `dept_id` between 1 and 10, and either true/false for the `is_active` parameter. Select **OK**.
+5. You have just created your first ORDS API, a `GET` handler. Click the Open in new Tab button, you'll be prompted to enter in values for the Route Parameters. ORDS will bind these values of the URI to those in the Handler's SQL source code, satisfying the conditions of the `WHERE` clause. 
 
       ![Adding details to the handler code](./images-new/23-finished-handler-code.png " ")
 
+6. Enter a value between `1` and `10` for `dept_id`, and use either `true` or `false` (`BOOLEAN`) for the `is_active` parameter. Then, select **OK**.
+
       ![Pressing OK for a new tab](./images-new/24-enter-substitution-pressing-enter.png " ")
 
-6. A new browser tab will appear, with the results of your `GET` request. You can review the Response in the Object Tree format using your browser's developer/inspect tools. Notice the `links:Array` property; specifically the `self` link. Also, notice the URI includes those parameters you selected in the previous step (the same parameters that ORDS uses in the Handler source code).
+7. A new browser tab will appear, with the results of your `GET` request. You can review the Response in the Object Tree format using your browser's developer/inspect tools. Notice the `links:Array` property; specifically the `self` link. Also, notice the URI includes those parameters you selected in the previous step (the same parameters that ORDS uses in the Handler source code).
 
     ![GET results in the browser](./images-new/25-new-browser-window-sql-get-results.png " ")
 
-7. When you are ready, return the the Handler dashboard. You can test this API in cURL too. Click the kebab menu of your Handler, and select **Get cURL command**.
+8. When you are ready, return the the Handler dashboard. You can test this API in cURL too. Click the kebab menu of your Handler, and select **Get cURL command**.
 
     ![curl-command-test](./images-new/26-curl-command-test.png " ")
 
-8. Press the **+ plus** button, and enter in Substitution values for the cURL command (you can use the same ones as before). Then press **OK**.
+9. Press the **+ plus** button, and enter in Substitution values for the cURL command (you can use the same ones as before). Then press **OK**.
 
     ![Press plus for substitution values](./images-new/27-press-plus-button-get.png " ")
 
     ![Press OK for substitution values](./images-new/28-new-values-before-press-ok.png " ")
 
-9. Copy the cURL command, and paste it into a new Terminal window. You'll notice how your values have been appended to the URI of your ORDS API. Press **Enter** to execute the cURL command.
+10. Copy the cURL command, and paste it into a new Terminal window. You'll notice how your values have been appended to the URI of your ORDS API. Press **Enter** to execute the cURL command.
 
     ![Copying the curl command](./images-new/29-copying-the-curl-command-for-get.png " ")
 
@@ -191,13 +194,13 @@ Estimated Lab Time: 25 minutes
 
 > **NOTE:** You can optionally pipe in the `jq` processer to pretty print your `JSON` response.
 
-10. You should see the response payload in your terminal. Scroll down, and you will see the rest of the payload. Because this is a large results set, you'll see a `next` link in the `links` array (unlike what you observed in the AutoREST lab).
+11. You should see the response payload in your terminal. Scroll down, and you will see the rest of the payload. Because this is a large results set, you'll see a `next` link in the `links` array (unlike what you observed in the AutoREST lab).
 
     ![Get response part one](./images-new/31-get-response-one.png " ")
 
     ![Get response part two](./images-new/32-get-response-two.png " ")
 
-11. In the next task you'll create a slightly more advanced `POST` endpoint.
+12. In the next task you'll create a slightly more advanced `POST` endpoint.
 
 ## Task 4: Building an ORDS POST API
 
@@ -298,4 +301,4 @@ You may now [proceed to the next lab](#next).
 
 ### Last Updated By/Date
 
-- Chris Hoina, September 2025
+- Chris Hoina, October 2025

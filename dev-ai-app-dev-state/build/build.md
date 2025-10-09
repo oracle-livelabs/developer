@@ -26,16 +26,16 @@ This lab assumes you have:
 ## Task 1: Build the application in Jupyter Notebook
 >💡**Note**: Review Lab 2: Connect to the Development Environment for instructions on accessing JupyterLab.
 
-1. You should see a terminal pop up once you are logged in. 
+1. You should see a terminal pop up once you are logged in. (You can always create a new one by clicking on the blue + and select terminal)
 
     ![Open Terminal](./images/terminal.png " ")
 
 
-2. Navigate to the `dbinit` directory by running the following command.
+2. Navigate to the `~/dbinit` directory by running the following command.
 
     ```bash
     <copy>
-    cd dbinit
+    cd ~/dbinit
     </copy>
     ```
 
@@ -144,7 +144,7 @@ You will query customer data from the `slg_request_dv` JSON duality view, which 
         return req0, rec, dec
 
     # --- Let's select a state/local customer ---
-    selected_customer_id = 1003
+    selected_customer_id = 1001
     cust_json = fetch_customer_state(selected_customer_id)
     df_requests = load_requests_state()
 

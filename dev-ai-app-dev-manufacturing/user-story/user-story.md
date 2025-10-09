@@ -27,7 +27,7 @@ This lab assumes you have:
 
     ![Click the Start Demo Link](./images/start-demo.png =50%x*)
 
-2. Select **Manufacturing** under Industry and **Approval Officer** under Role. Enter in a username and click **Login**.
+2. Select **Manufacturing** under Industry and **PO Approval Officer** under Role. Enter in a username and click **Login**.
 
     ![Login](./images/login.png =50%x*)
 
@@ -43,7 +43,7 @@ In this first example, you will use the application to approve a purchase order 
 
     ![Select 501](./images/501.png =50%x*)
 
-2. Opening PO 501 reveals the purchase order request details—request status, supplier, requestor, and risk level. You will also be able to see detailed AI analysis on the request consisting of a comprehensive evaluation, and top 3 PO lines with approval probability. 
+2. Opening PO 501 reveals the purchase order request details—requestor name, supplier, part required, and risk level. You will also be able to see detailed AI analysis on the request consisting of a comprehensive evaluation, and top PO line with approval probability. 
 
     ![501 AI generated recommendations](./images/501-ai.png =50%x*)
 
@@ -86,27 +86,27 @@ In this first example, you will use the application to approve a purchase order 
 
 8.  Click the **Download Decision as PDF** button.
 
-    ![Aisha Download Recommendation](./images/aisha-morgan-download.png =50%x*)
+    ![501 Download Recommendation](./images/501-download.png =50%x*)
 
 9.  Click **Download PDF**
 
-    ![Aisha Morgan Download PDF](./images/aisha-download-pdf.png =50%x*)
+    ![501 Download PDF](./images/501-download-pdf.png =50%x*)
 
 10. Display the message the patient would see by opening the downloaded PDF.
 
-    ![Open Aisha Morgan PDF](./images/open-aisha-pdf.png =50%x*)
+    ![Open 501 PDF](./images/open-501-pdf.png =50%x*)
 
 11. Click the **Return to Dashboard** button to navigate back to the Dashboard.
 
-    ![Return to Dashboard](./images/aisha-return-dashboard.png =50%x*)
+    ![Return to Dashboard](./images/501-return-dashboard.png =50%x*)
 
-12. Expand **View Approved Patients**. We can see that Aisha Morgan has been removed from the Pending Suppliers list and has been added to the Approved Suppliers list.
+12. Expand **View Approved Purchase Orders**. We can see that Alice Kim has been removed from the Pending Purchase Orders list and has been added to the Approved Purchase Orders list.
 
-    ![Aisha Morgan Approved List](./images/aisha-approved-list.png =50%x*)
+    ![501 Approved List](./images/501-approved-list.png =50%x*)
 
 **Task Summary**
 
-Once you select and save one of the 3 desired options recommended by the AI: 
+Once you select and save the desired option recommended by the AI: 
 
 ✅ The purchase order request is updated.
 
@@ -116,83 +116,83 @@ Once you select and save one of the 3 desired options recommended by the AI:
 
 Congratulations, you have just approved your first purchase order! Proceed to the next task.
 
-## Task 3: Demo - Request more info from a purchase order
-In this example, you will navigate the application to review a customer and deny them as part of the exercise. The last PO on your to-do list is Hugo Pratt.
+## Task 3: Demo - Deny a purchase order
+In this example, you will navigate the application to review a customer and deny them as part of the exercise. The last PO on your to-do list is Jake Ross.
 
-1. On the Dashboard page, from the pending review list, select the review button for **508**.
+1. On the Dashboard page, from the pending review list, select the review button for **510**.
 
-    ![Select Hugo Pratt](./images/508.png =50%x*)
+    ![Select 510](./images/510.png =50%x*)
 
-2. Opening 508's profile displays purchase order details. Within a few seconds, the AI automatically generates a suggested action. In this case, the system evaluates the profile and suggests "request info" with explanations outlining key risk factors.
+2. Opening Jake Ross's profile displays purchase order details. Within a few seconds, the AI automatically generates a suggested action. In this case, the system evaluates the profile and suggests "Deny" with explanations outlining key risk factors.
 
     This purchase order has: 
 
     * No **contract price** available
-    * No **historical median delta**
-    * And a risk level of **5(medium)**
+    * A **historical median delta** of +15% (Steel Bolt price slightly above average historical rate)
+    * And a risk level of **6(medium)**
 
-    The AI evaluates the profile and suggests next steps. In this case, it recommends requesting more info and also provides clear explanations on why the recommendation is to request more info
+    The AI evaluates the profile and suggests next steps. In this case, it recommends denying and also provides clear explanations on why the recommendation is to deny
 
-    ![AI generated recommendations](./images/508-ai.png =50%x*)
+    ![AI generated recommendations](./images/510-ai.png =50%x*)
 
 3. Select the **Navigate to Purchase Order Decisions** button.
 
-    ![508 Decision](./images/508-decision.png =50%x*)
+    ![510 Decision](./images/510-decision.png =50%x*)
 
->⁉️ **What are two reasons that the AI requests more info?** ⁉️
+>⁉️ **What are two reasons that the AI denied this purchase order?** ⁉️
 
-4. Expand **View Dot Plot: Retail Return Insights** to view the graph.
+4. Expand **Interactive Graph: Purchase Orders and Approvals** to view the graph.
 
-    ![Nina Wright Graph](./images/expand-graph.png =50%x*)
+    ![510 Graph](./images/expand-graph.png =50%x*)
 
-    On the decision page, the return specialist can use **Interactive Graph: Customer Return & Risk** to explore relationships in return authorization scenarios. Built with **Oracle Graph**, this feature visually maps decisions and highlights important features of the request like the feeder analysis and compliance rules.
+    On the decision page, the return specialist can use **Interactive Graph: Purchase Orders and Approvals** to explore relationships in PO approval scenarios. Built with **Oracle Graph**, this feature visually maps decisions and highlights important features of the request part requested and PO documents.
 
-    ![Nina Wright Graph](./images/nina-wright-graph.png =50%x*)
+    ![510 Open Graph](./images/510-graph.png =50%x*)
 
 >💡 In Oracle Database 23ai, **Property Graph** allows you to treat your data like a network of connected points, where each point (called a node) and each link (called an edge) has its own details or properties. This setup helps you run graph analytics, to find important connections or patterns, directly within the database.
 
 
-5. On the decisions page you can view the AI recommendation for PO 508. It shows the suggested action, comprehensive evaluation, and recommendations explanations. 
+5. On the decisions page you can view the AI recommendation for PO 510. It shows the suggested action, comprehensive evaluation, and recommendations explanations. 
 
-    ![508 recommendations](./images/508-save.png =50%x*)
+    ![510 recommendations](./images/510-save.png =50%x*)
 
-6. Choose an option for mounting bracking under **Select Your Desired Option**. The decision status is set to **Request Info**. Click the **Confirm Decision** button.
+6. The decision status is set to **Denied**. Click the **Confirm Decision** button.
 
     The authorization status has been updated to 'Deny' and saved to the patient profile.
 
-    ![508 Save Status](./images/508-confirm.png =50%x*)
+    ![510 Save Status](./images/510-confirm.png =50%x*)
 
 7. Press the **Download Decision PDF** button to save the AI responses and proceed to the final authorization disposition.
 
-    ![508 PDF](./images/nina-wright-pdf.png =50%x*)
+    ![510 PDF](./images/510-pdf.png =50%x*)
 
 8. Click the **Download PDF** button.
 
-    ![Nina Download Recommendation](./images/nina-download.png =50%x*)
+    ![510 Download Recommendation](./images/510-download.png =50%x*)
 
 9. Display the message the patient would see by opening the downloaded PDF.
 
-    ![Open Nina PDF](./images/open-nina-pdf.png =50%x*)
+    ![Open 510 PDF](./images/open-510-pdf.png =50%x*)
 
 10. Click the **Return to Dashboard** button to navigate back to the Dashboard.
 
-    ![Return to Dashboard](./images/nina-return-dashboard.png =50%x*)
+    ![Return to Dashboard](./images/510-return-dashboard.png =50%x*)
 
-11. Expand **View In Progress Supplier**. You will see that Nina Wright has been moved from the **Pending Suppliers** list to the **Denied Suppliers** list.
+11. Expand **View Denied Purchase Orders**. You will see that Jake Ross has been moved from the **Pending Purchase Orders** list to the **Denied Purchase Orders** list.
 
-    ![Nina Denied List](./images/nina-denied-list.png =50%x*)
+    ![Jake Denied List](./images/jake-denied-list.png =50%x*)
 
 **Task Summary**
 
-Congratulations, you have finished reviewing a supplier that requires study! Proceed to the next task.
+Congratulations, you have finished denying a purchase order! Proceed to the next task.
 
-## Task 4: Demo - Update supplier details
+## Task 4: Demo - Update purchase order details
 
-Lastly, let’s explore how the system uses JSON Duality Views to handle profile updates. In this task, you will edit a purchase order's details. In this example, the approval manager was asked to submit updated lab results.
+Lastly, let’s explore how the system uses JSON Duality Views to handle profile updates. In this task, you will edit a purchase order's details. In this example, the approval manager was asked to submit an updated PO approval.
 
-1. On the Dashboard page, from the **Pending Suppliers** list, select the review button for **Isabelle Carson**.
+1. On the Dashboard page, from the **Pending Purchase Orders** list, select the review button for **Bob Lee**.
 
-    ![Select 503](./images/503.png =50%x*)
+    ![Select 502](./images/502.png =50%x*)
 
 2. We will upload a document to update the PO. On the PO Details page, click the **Upload Document** button. The PDF file has been loaded. Then click the **Process PDF** button
 
@@ -200,9 +200,9 @@ Lastly, let’s explore how the system uses JSON Duality Views to handle profile
 
 >💡 **JSON Duality Views** in 23ai let's you update unstructured data in an easy, high-level format while automatically handling the technical details behind the scenes. This makes it faster and simpler to work with messy data and connect it to structured systems.
 
-4. The patient profile has been updated.
+4. The purchase order has been updated.
 
-    ![Customer Profile Updated](./images/profile-updated.png)
+    ![PO Profile Updated](./images/profile-updated.png)
 
 **Task Summary**
 
@@ -216,7 +216,7 @@ Once the document is uploaded:
 
 ## Conclusion
 
-In conclusion our Grid Interconnection Approval App was able to leverage Oracle database 23ai technologies such as **AI Vector Search, Property Graph and JSON Duality Views** to:
+In conclusion our Purchase Order Approval App was able to leverage Oracle database 23ai technologies such as **AI Vector Search, Property Graph and JSON Duality Views** to:
 
 ✅ Automate profile evaluations
 
@@ -226,7 +226,7 @@ In conclusion our Grid Interconnection Approval App was able to leverage Oracle 
 
 ✅ And empower PO Approval Managers with actionable insights through Operational Property Graphs 
 
-By combining these advanced tools, the application enables faster, smarter decisions and delivers clear guidance on how suppliers can improve their eligibility.
+By combining these advanced tools, the application enables faster, smarter decisions and delivers clear guidance on how requestors can improve their eligibility.
 
 **Next:** How about learning how the application was implemented in Python? Continue with the next labs and start developing!
 
@@ -236,5 +236,5 @@ By combining these advanced tools, the application enables faster, smarter decis
 
 ## Acknowledgements
 * **Authors** - Uma Kumar
-* **Contributors** - Kevin Lazarz, Francis Regalado, Hanna Rakhsha, Ley Sylvester
-* **Last Updated By/Date** - Uma Kumar, September 2025
+* **Contributors** - Kevin Lazarz, Francis Regalado, Hanna Rakhsha, Ley Sylvester, Vahn Kessler
+* **Last Updated By/Date** - Uma Kumar, October 2025
