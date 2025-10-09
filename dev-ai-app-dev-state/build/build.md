@@ -144,7 +144,7 @@ You will query customer data from the `slg_request_dv` JSON duality view, which 
         return req0, rec, dec
 
     # --- Let's select a state/local customer ---
-    selected_customer_id = 1003
+    selected_customer_id = 1001
     cust_json = fetch_customer_state(selected_customer_id)
     df_requests = load_requests_state()
 

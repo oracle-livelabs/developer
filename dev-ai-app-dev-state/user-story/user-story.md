@@ -26,7 +26,7 @@ This lab assumes you have:
 
     ![Click the Start Demo Link](./images/start-demo.png =50%x*)
 
-2. Select **State & Local Gov** under Industry and **Approval Officer** under Role. Enter in a username and click **Login**.
+2. Select **State & Local Gov** under Industry and **Public Works Officer** under Role. Enter in a username and click **Login**.
 
     ![Login](./images/login.png =50%x*)
 
@@ -122,7 +122,7 @@ In this example, you will navigate the application to review a customer and appr
 
     ![Select James Williams](./images/jameswilliams.png =50%x*)
 
-2. Opening James’s profile displays his service request details. Within a few seconds, the AI automatically generates a suggested action. In this case, the system evaluates the request and assigns it a low risk rating, with explanations outlining key factors.
+2. Opening James’s profile displays his service request details. Within a few seconds, the AI automatically generates a suggested action. In this case, the system evaluates the request and assigns it a high risk rating, with explanations outlining key factors.
 
     This customer has:
 
@@ -231,4 +231,5 @@ By combining these advanced tools, the application enables faster, smarter decis
 
 ## Acknowledgements
 * **Authors** - Ley Sylvester
-* **Contributors** - Kevin Lazarz, Francis Regalado, Hanna Rakhsha, Uma Kumar
+* **Contributors** - Kevin Lazarz, Francis Regalado, Hanna Rakhsha, Uma Kumar, Patrick Mccormick, Zileyah Onafowora, Faaris Chaudhry
+* **Last Updated By/Date** - Uma Kumar, October 2025
