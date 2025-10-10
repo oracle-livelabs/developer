@@ -355,7 +355,7 @@ Before answering questions, we need to prepare the data by vectoring the claims 
    - Stores Recommendations: Inserts the full recommendation text (from previous cell) as a single chunk if not already present.
    - We delete prior chunks for this authorization.
    - We use `VECTOR_CHUNKS` to split the recommendation text.
-   - The chunks will be inserted into `GAMING_CHUNK`
+   - The chunks will be inserted into `GAM_CHUNK`
    - We display a data frame summary to show the chunks.
 
 
@@ -371,7 +371,7 @@ Before answering questions, we need to prepare the data by vectoring the claims 
             text_to_chunk = f"SuggestedAction: {table_status}\nRationale: (empty model output)."
 
         # 0) Clear old chunks for this request
-        cursor.execute("DELETE FROM GAMING_CHUNKS WHERE REQUEST_ID = :rid", {'rid': req_id})
+        cursor.execute("DELETE FROM GAM_CHUNKS WHERE REQUEST_ID = :rid", {'rid': req_id})
         connection.commit()
 
         # 1) Chunk via VECTOR_CHUNKS
@@ -379,7 +379,7 @@ Before answering questions, we need to prepare the data by vectoring the claims 
         overlap    = 0
 
         insert_chunks_sql = f"""
-            INSERT INTO GAMING_CHUNKS (CHUNK_ID, REQUEST_ID, CHUNK_TEXT)
+            INSERT INTO GAM_CHUNKS (CHUNK_ID, REQUEST_ID, CHUNK_TEXT)
             SELECT c.chunk_offset, :rid, c.chunk_text
             FROM (SELECT :txt AS c FROM dual) s,
                 VECTOR_CHUNKS(
@@ -407,7 +407,7 @@ Before answering questions, we need to prepare the data by vectoring the claims 
         # 2) Fetch & SHOW the chunks
         cursor.execute("""
             SELECT c.CHUNK_ID, c.CHUNK_TEXT
-            FROM GAMING_CHUNKS c
+            FROM GAM_CHUNKS c
             WHERE c.REQUEST_ID = :rid
         ORDER BY c.CHUNK_ID
         """, {'rid': req_id})
@@ -455,13 +455,13 @@ In this step:
 
    - **Generates Embeddings**: This is a new feature in Oracle Database 23ai that allows you to create embeddings directly within the database, eliminating the need for external tools or APIs. The `dbms_vector_chain.utl_to_embedding` function takes the recommendation text as input and returns an embedding vector.
 
-   - **Stores Embeddings**: We update `GAMING_CHUNK.CHUNK_VECTOR` by embedding each `CHUNK_TEXT` using `dbms_vector_chain.utl_to_embedding` with `DEMO_MODEL`. A short verification output is printed.
+   - **Stores Embeddings**: We update `GAM_CHUNK.CHUNK_VECTOR` by embedding each `CHUNK_TEXT` using `dbms_vector_chain.utl_to_embedding` with `DEMO_MODEL`. A short verification output is printed.
 
 1. Copy the following code into a new cell block:
 
     ```python
         <copy>
-        # 🔹 Task 6: Create embeddings for GAMING_CHUNKS rows
+        # 🔹 Task 6: Create embeddings for GAM_CHUNKS rows
         req_id = request_id  # from Task 4/5
         vp = json.dumps({"provider": "database", "model": "DEMO_MODEL", "dimensions": 384})
 
@@ -469,7 +469,7 @@ In this step:
         try:
             cursor.execute(
                 """
-                UPDATE GAMING_CHUNKS c
+                UPDATE GAM_CHUNKS c
                 SET c.CHUNK_VECTOR = dbms_vector_chain.utl_to_embedding(c.CHUNK_TEXT, JSON(:vp))
                 WHERE c.REQUEST_ID = :rid
                 """,
@@ -486,7 +486,7 @@ In this step:
         # 2) Sanity check: how many rows have vectors now?
         cursor.execute("""
             SELECT COUNT(*) 
-            FROM GAMING_CHUNKS c
+            FROM GAM_CHUNKS c
             WHERE c.REQUEST_ID = :rid
             AND c.CHUNK_VECTOR IS NOT NULL
         """, {"rid": req_id})
@@ -494,7 +494,7 @@ In this step:
 
         cursor.execute("""
             SELECT COUNT(*) 
-            FROM GAMING_CHUNKS c
+            FROM GAM_CHUNKS c
             WHERE c.REQUEST_ID = :rid
         """, {"rid": req_id})
         total_rows = cursor.fetchone()[0]
@@ -547,12 +547,12 @@ Now that the recommendations are vectorized, we can process a user’s question:
             )
             qvec = cursor.fetchone()[0]
 
-            # 2) Retrieve chunks from GAMING_CHUNKS for this request
+            # 2) Retrieve chunks from GAM_CHUNKS for this request
             cursor.execute(f"""
                 SELECT c.CHUNK_ID,
                     c.CHUNK_TEXT,
                     VECTOR_DISTANCE(c.CHUNK_VECTOR, :qv, COSINE) AS dist
-                FROM GAMING_CHUNKS c
+                FROM GAM_CHUNKS c
                 WHERE c.REQUEST_ID = :rid
                 AND c.CHUNK_VECTOR IS NOT NULL
             ORDER BY dist
