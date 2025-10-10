@@ -231,7 +231,7 @@ Here’s what this app wires together:
 Together, these layers turn a standard Flask app into an agentic web interface — one that remembers, reasons, and interacts with Oracle Database 23ai in natural language.
 
 
-## Task 4: Create and Modify Database Objects via MCP
+## Task 5: Create and Modify Database Objects via MCP
 
 1. Click **New Session** and run:
 
@@ -250,7 +250,7 @@ Together, these layers turn a standard Flask app into an agentic web interface �
 The agent translates your request into SQL, executes it through MCP, and confirms creation.
 This shows how developers can delegate common schema tasks to secure, explainable AI assistants without writing SQL manually.
 
-## Task 5: Explore Logging and Security
+## Task 6: Explore Logging and Security
 
 Oracle MCP logs every interaction automatically. You can review the logs directly in the database.
 
