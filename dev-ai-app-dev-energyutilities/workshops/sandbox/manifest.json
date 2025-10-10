@@ -28,9 +28,9 @@
             "filename": "../../build/build.md"
         },
         {
-            "title": "Lab 5: Interact with Oracle Database 23ai through an MCP Server",
+            "title": "Lab 5: Build Agentic AI with Oracle MCP",
             "description": "This is a step-by-step guide showcasing how the demo instance is navigated",
-            "filename": "https://oracle-livelabs.github.io/developer/dev-ai-app-dev-retail/mcp/mcp.md"
+            "filename": "https://oracle-livelabs.github.io/developer/dev-ai-app-dev-retail/oraclemcp/oraclemcp.md"
         },
         {
             "title": "Need Help?",
