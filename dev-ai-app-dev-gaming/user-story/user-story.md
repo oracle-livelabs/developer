@@ -26,7 +26,7 @@ This lab assumes you have:
 
     ![Click the Start Demo Link](./images/start-demo.png =50%x*)
 
-2. Welcome to Seer Holdings! Select **Gaming** as Industry and **Approval Officer** as role. Enter in a username and click **Login**.
+2. Welcome to Seer Holdings! Select **Gaming** as Industry and **Tournament Officer** as role. Enter in a username and click **Login**.
 
     ![Login](./images/login.png =50%x*)
 
@@ -66,7 +66,7 @@ In this first example, you will use the application to authorize a sign-up for a
 
     After navigating to the decisions page, the AI evaluation runs in the background. Using AI Vector Search, it semantically compares the content against thousands of historical tournament records—identifying patterns that suggest either legitimate claims or potential abuse. At the same time, Graph Analytics examines the player’s prior behavior, highlighting unusual tournament frequency or links to high-risk product categories. For each case, the system assigns a risk score ranging from Low to Very High and generates a clear recommendation—such as “Approved – consistent with player profile” or “Request More Info – insufficient documentation.”
 
-5. In the **Select Your Desired Option Option** section, the approval probability and decision are displayed. Once a decision is made, the analyst finalizes the tournament. A professionally formatted PDF letter is automatically generated, summarizing the outcome and rationale. The player receives an email moments later, clearly stating whether their tournament was approved, denied, or needs more information—along with an explanation grounded in policy and precedent.
+5. In the **Select Your Desired Option** section, the approval probability and decision are displayed. Once a decision is made, the analyst finalizes the tournament. A professionally formatted PDF letter is automatically generated, summarizing the outcome and rationale. The player receives an email moments later, clearly stating whether their tournament was approved, denied, or needs more information—along with an explanation grounded in policy and precedent.
 
     ![Cathy Lee Decisions Page](./images/cathy-lee-decisions.png =50%x*)
 
@@ -133,7 +133,7 @@ In this example, you will navigate the application to review a player and deny t
 
     ![Frank Johnson Decision](./images/frank-johnson-decision.png =50%x*)
 
->⁉️ **What are two reasons that the AI decided to pend this request?**
+>⁉️ **What are two reasons that the AI decided to deny this request?**
 
 4. Expand **Interactive Graph: Tournament Requests & Decisions** to view the graph.
 
@@ -226,6 +226,6 @@ By combining these advanced tools, the application enables faster, smarter decis
 * [Oracle Database 23ai Documentation](https://docs.oracle.com/en/database/oracle/oracle-database/23/)
 
 ## Acknowledgements
-* **Authors** - Linda Foinding, Francis Regalado, Ley Sylvester
+* **Authors** - Ley Sylvester
 * **Contributors** - Kevin Lazarz, Hanna Rakhsha, Ley Sylvester, Uma Kumar, Faaris Chaudhry
 * **Last Updated By/Date** - Faaris Chaudhry, September 2025
