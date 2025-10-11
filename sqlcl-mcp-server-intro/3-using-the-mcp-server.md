@@ -1,10 +1,10 @@
-# Title of the Lab
+# Explore SQLcl MCP Server
 
 ## Introduction
 
-In this lab you will become acquainted with Cline, an open-source AI coding Agent, and the SQLcl MCP server. 
+In this lab you will become acquainted with the SQLcl MCP server and Cline, an open-source AI coding agent. 
 
-The scenarios in this LiveLab consider Cline be the interpreter to your plain language requests and prompts. Those requests and any prompts are then "translated" and sent to the SQLcl MCP server. 
+The scenarios in this LiveLab consider Cline be the interpreter to your plain language requests and prompts. Those requests and any prompts, in this case, are then "translated" and sent to the SQLcl MCP server. 
 
 The SQLcl MCP server recieves its directives from the AI Agent, acting upon your requests and intents, communicating with the database on your behalf. This new way of working with your Oracle database allows for a more natural/plain language, conversation-based interaction.
 
@@ -62,7 +62,7 @@ When you are done, you will inspect the MCP logging table in your schema to see 
 
     ```txt
     <copy>
-    connect to my database and run a test query to make sure everything is working as expected
+    connect to my database as the [name of your FreeSQL connection] and run a test query to make sure everything is working as expected
     </copy>
     ```
 
