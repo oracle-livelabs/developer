@@ -112,30 +112,30 @@ You will query customer data from the `hightech_dv` JSON duality view, which com
     ```python
     <copy>
     def fetch_customer_data(customer_id):
-    print(f"Executing query for customer_id: {customer_id}")
-    # Execute query, ensuring customer_id is a string for JSON_VALUE
-    cursor.execute(
-        "SELECT data FROM hightech_dv WHERE JSON_VALUE(data, '$._id') = :customer_id",
-        {'customer_id': str(customer_id)}  # Convert to string
-    )
-    result = cursor.fetchone()
-    if result is None:
-        print(f"No data found for customer ID: {customer_id}")
-        return None
-        
-    # Handle the result
-    if isinstance(result[0], str):
-        print("Result is a string, parsing as JSON")
-        return json.loads(result[0])
-    elif isinstance(result[0], (bytes, bytearray)):
-        print("Result is bytes, decoding and parsing as JSON")
-        return json.loads(result[0].decode('utf-8'))
-    elif isinstance(result[0], dict):
-        print("Result is already a dictionary")
-        return result[0]
-    else:
-        print(f"Unexpected data type for result: {type(result[0])}")
-        return None
+        print(f"Executing query for customer_id: {customer_id}")
+        # Execute query, ensuring customer_id is a string for JSON_VALUE
+        cursor.execute(
+            "SELECT data FROM hightech_dv WHERE JSON_VALUE(data, '$._id') = :customer_id",
+            {'customer_id': str(customer_id)}  # Convert to string
+        )
+        result = cursor.fetchone()
+        if result is None:
+            print(f"No data found for customer ID: {customer_id}")
+            return None
+            
+        # Handle the result
+        if isinstance(result[0], str):
+            print("Result is a string, parsing as JSON")
+            return json.loads(result[0])
+        elif isinstance(result[0], (bytes, bytearray)):
+            print("Result is bytes, decoding and parsing as JSON")
+            return json.loads(result[0].decode('utf-8'))
+        elif isinstance(result[0], dict):
+            print("Result is already a dictionary")
+            return result[0]
+        else:
+            print(f"Unexpected data type for result: {type(result[0])}")
+            return None
 
     # Main execution
     try:
@@ -671,4 +671,4 @@ You may now proceed to the next lab.
 ## Acknowledgements
 * **Authors** - Uma Kumar
 * **Contributors** - Kevin Lazarz, Hanna Rakhsha, Ley Sylvester, Francis Regalado
-* **Last Updated By/Date** - Uma Kumar, September 2025
+* **Last Updated By/Date** - Uma Kumar, October 2025

@@ -55,15 +55,15 @@ This lab assumes you have:
 
 ## Task 2: Connect to Database
 
-2. Click the **+** sign on the top left to open the Launcher.
+1. Click the **+** sign on the top left to open the Launcher.
 
     ![Open Launcher](./images/open-launcher.png " ")
 
-3. Open a new notebook.
+2. Open a new notebook.
 
     ![Open Notebook](./images/open-notebook.png " ")
 
-1. Copy the following code block into an empty cell in your notebook. This code block imports the `oracledb` Python driver and other libraries.
+3. Copy the following code block into an empty cell in your notebook. This code block imports the `oracledb` Python driver and other libraries.
 
     ```python
     <copy>
@@ -93,7 +93,7 @@ This lab assumes you have:
     </copy>
     ```
 
-2. Run the code block to connect to the database. 
+4. Run the code block to connect to the database. 
 
     ![Connect to Database](./images/connect-to-db.png " ")
 
@@ -333,11 +333,11 @@ Here’s what we’ll do:
 
 2. Click the "Run" button to execute the code. Note that this will take time to run.
 
-    ![State and Local recommendation](./images/generate-recommendations.png " ")
+    ![ recommendation](./images/generate-recommendations.png " ")
 
 3. Review the output. In the demo, this is where you selected the “Navigate to Decisions” button as the Clinical Reviewer. You just used AI to generate service activation recommendations that would have taken hours to complete manually—congratulations!
 
-    ![State and Local recommendation](./images/ai-recommendation.png " ")
+    ![ recommendation](./images/ai-recommendation.png " ")
 
 >Note: Your result may be different. This is because of generative AI and the model's ability to generate new content based on your input. The output may contain different recommendations or suggestions.
 

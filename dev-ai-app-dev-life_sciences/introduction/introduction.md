@@ -4,7 +4,7 @@
 
 **Data is more than an asset—it’s the engine behind every smart decision, risk calculation and growth strategy. From real-time decision-making to risk management and innovation, success hinges on how well you harness it.**
 
-SeerGroup is a global conglomerate with multiple divisions. Each division buried in transactions, documents, and customer data. Their challenge is always the same: **decisions take too long** because data is scattered across silos and systems.
+SeerGroup is a global conglomerate with multiple divisions. Each division buried is in transactions, documents, and customer data. Their challenge is always the same: **decisions take too long** because data is scattered across silos and systems.
 
 This workshop shows how SeerGroup tackles that problem with Oracle Database 23ai + OCI Generative AI. By **keeping data in one place**, they cut out fragile integrations and give analysts, engineers, and managers a **single platform** for smarter approvals, faster investigations, and clearer customer answers.
 
@@ -37,7 +37,7 @@ Log in to the JupyterLab IDE where you’ll write Python and run your code.
 Use Python with Oracle Database 23ai to create tables, shape them into JSON Duality Views, and interact with them using both SQL and MongoDB-style syntax—laying the groundwork for AI workflows across SeerGroup.
 
 * **Lab 4 – Implement RAG**
-Construct a working AI application. Pull customer and grid data, generate recommendations with OCI Generative AI, chunk and vectorize the results, and answer follow-up questions using Vector Search + RAG.
+Construct a working AI application. Pull customer and clinical data, generate recommendations with OCI Generative AI, chunk and vectorize the results, and answer follow-up questions using Vector Search + RAG.
 
 * **Lab 5 – Extend with MCP tools**
 Wire Oracle Database 23ai and OCI Generative AI into reusable MCP tools. Call them from notebooks, chain them together into workflows, and even register your own tool for SeerGroup’s finance, retail, healthcare, or energy teams.
@@ -45,8 +45,6 @@ Wire Oracle Database 23ai and OCI Generative AI into reusable MCP tools. Call th
 By the end, you’ll have a complete toolkit—from clean data to live AI apps to composable tools—that shows how SeerGroup industries can turn their data into intelligent applications.
 
 ### Objectives
-
-Objectives
 
 * Build and query data with Python + Oracle Database 23ai
 
@@ -62,7 +60,7 @@ Objectives
 
 This lab assumes you have:
 
-* An Oracle account to submit your a LiveLabs Sandbox reservation.
+* An Oracle account to submit your LiveLabs Sandbox reservation.
 
 * Basic knowledge of Python.
 

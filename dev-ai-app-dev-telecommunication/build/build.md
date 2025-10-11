@@ -55,15 +55,15 @@ This lab assumes you have:
 
 ## Task 2: Connect to Database
 
-2. Click the **+** sign on the top left to open the Launcher.
+1. Click the **+** sign on the top left to open the Launcher.
 
     ![Open Launcher](./images/open-launcher.png " ")
 
-3. Open a new notebook.
+2. Open a new notebook.
 
     ![Open Notebook](./images/open-notebook.png " ")
 
-1. Copy the following code block into an empty cell in your notebook. This code block imports the `oracledb` Python driver and other libraries.
+3. Copy the following code block into an empty cell in your notebook. This code block imports the `oracledb` Python driver and other libraries.
 
     ```python
     <copy>
@@ -93,7 +93,7 @@ This lab assumes you have:
     </copy>
     ```
 
-2. Run the code block to connect to the database. 
+4. Run the code block to connect to the database. 
 
     ![Connect to Database](./images/connect-to-db.png " ")
 
@@ -700,7 +700,7 @@ to summarize:
 
 * Connected with oracledb
 * Retrieved a customer profile via a JSON duality view
-* Generated a grid interconnection recommendation using OCI GenAI
+* Generated a customer service activation recommendation using OCI GenAI
 * Chunked and embedded both recommendations and document text
 * Performed vector search and produced a RAG answer grounded in retrieved chunks (with chunk IDs printed for traceability)
 

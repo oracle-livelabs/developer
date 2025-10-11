@@ -4,7 +4,7 @@
 
 **Data is more than an asset—it’s the engine behind every smart decision, risk calculation and growth strategy. From real-time decision-making to risk management and innovation, success hinges on how well you harness it.**
 
-SeerGroup is a global conglomerate with multiple divisions. Each division buried in transactions, documents, and customer data. Their challenge is always the same: **decisions take too long** because data is scattered across silos and systems.
+SeerGroup is a global conglomerate with multiple divisions. Each division is buried in transactions, documents, and customer data. Their challenge is always the same: **decisions take too long** because data is scattered across silos and systems.
 
 This workshop shows how SeerGroup tackles that problem with Oracle Database 23ai + OCI Generative AI. By **keeping data in one place**, they cut out fragile integrations and give analysts, engineers, and managers a **single platform** for smarter approvals, faster investigations, and clearer customer answers.
 
@@ -45,8 +45,6 @@ By the end, you’ll have a complete toolkit—from clean data to live AI apps t
 
 ### Objectives
 
-Objectives
-
 * Build and query data with Python + Oracle Database 23ai
 
 * Shape relational data into documents using JSON Duality Views
@@ -61,7 +59,7 @@ Objectives
 
 This lab assumes you have:
 
-* An Oracle account to submit your a LiveLabs Sandbox reservation.
+* An Oracle account to submit your LiveLabs Sandbox reservation.
 
 * Basic knowledge of Python.
 

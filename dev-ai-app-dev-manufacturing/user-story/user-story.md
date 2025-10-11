@@ -100,7 +100,7 @@ In this first example, you will use the application to approve a purchase order 
 
     ![Return to Dashboard](./images/501-return-dashboard.png =50%x*)
 
-12. Expand **View Approved Patients**. We can see that Alice Kim has been removed from the Pending Purchase Orders list and has been added to the Approved Purchase Orders list.
+12. Expand **View Approved Purchase Orders**. We can see that Alice Kim has been removed from the Pending Purchase Orders list and has been added to the Approved Purchase Orders list.
 
     ![501 Approved List](./images/501-approved-list.png =50%x*)
 
@@ -236,5 +236,5 @@ By combining these advanced tools, the application enables faster, smarter decis
 
 ## Acknowledgements
 * **Authors** - Uma Kumar
-* **Contributors** - Kevin Lazarz, Francis Regalado, Hanna Rakhsha, Ley Sylvester
+* **Contributors** - Kevin Lazarz, Francis Regalado, Hanna Rakhsha, Ley Sylvester, Vahn Kessler
 * **Last Updated By/Date** - Uma Kumar, October 2025
