@@ -194,7 +194,7 @@ Internally uses helpers like \_clean\_llm_sql, read-only guards, and a row cap f
 
     **What does it do?**
 
-    This snippet calls the MCP tool describe\_table\_impl("AUTHORIZATION_REQ") to fetch the schema details for the AUTHORIZATION_REQ table. It then loops through the column metadata and prints each column’s name alongside its data type. This gives developers a quick, structured overview of the table without needing to open SQL Developer or write a manual query.
+    This snippet calls the MCP tool describe\_table\_impl("AUTHORIZATION\_REQ") to fetch the schema details for the AUTHORIZATION_REQ table. It then loops through the column metadata and prints each column’s name alongside its data type. This gives developers a quick, structured overview of the table without needing to open SQL Developer or write a manual query.
 
     What makes MCP powerful here is that table introspection is exposed as a reusable tool. Any MCP-enabled client can ask the server to describe a table and get back a clean JSON structure, ready for use in code or agents.
 
@@ -349,7 +349,7 @@ You will add a row counter tool to quickly verify table sizes during investigati
 
     **What does it do?**
 
-    This snippet reloads the updated server.py module using importlib.reload so that newly added tools become available without restarting the notebook. It then calls the plain Python implementation row_count_impl("CLIENTS"), which runs a SELECT COUNT(*) query on the CLIENTS table and returns the total number of rows.
+    This snippet reloads the updated server.py module using importlib.reload so that newly added tools become available without restarting the notebook. It then calls the plain Python implementation row\_count_impl("CLIENTS"), which runs a SELECT COUNT(*) query on the CLIENTS table and returns the total number of rows.
 
     What makes MCP powerful here is that we created simple function that returns the number of rows in a given table and exposed it as an MCP tool. That means Seer Holding developers can use functions in MCP workflows including agentic workflows.
 
