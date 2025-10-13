@@ -1,8 +1,8 @@
-# Step by step: Implement RAG with Oracle Database 23ai 
+# Step by step: Implement RAG with Oracle AI Database 
 
 ## Introduction
 
-Here you’ll construct a State & Local Government service request assessment tool powered by Oracle Database 23ai and OCI Generative AI. Connect to citizen requests and city infrastructure data, analyze service priority and policy compliance, and use an LLM to draft resolution recommendations with regulatory references. Leveraging Python from prior labs, you’ll deploy a fully integrated AI app that accelerates public works service decisions.
+Here you’ll construct a State & Local Government service request assessment tool powered by Oracle AI Database and OCI Generative AI. Connect to citizen requests and city infrastructure data, analyze service priority and policy compliance, and use an LLM to draft resolution recommendations with regulatory references. Leveraging Python from prior labs, you’ll deploy a fully integrated AI app that accelerates public works service decisions.
 
 This lab uses some of the basic coding samples you created in lab 3, such as `cursor.execute` and more.
 
@@ -12,7 +12,7 @@ Estimated Time: 30 minutes
 
 * Build the complete service approval application as seen in lab 1
 * Use OCI Generative AI to generate personalized product recommendations
-* Use Python to connect to an Oracle Database 23ai instance and run queries
+* Use Python to connect to an Oracle AI Database instance and run queries
 * Explore supplier data and extract relevant information
 
 ### Prerequisites
@@ -343,7 +343,7 @@ Here’s what we’ll do:
 
 ## Task 5: Chunk & Store Recommendations
 
-To handle follow-up questions, you will enhance the system with an AI Guru powered by Oracle 23ai’s Vector Search and Retrieval-Augmented Generation (RAG). The AI Guru will be able to answer questions about the grid interconnection application and provide recommendations based on the data.
+To handle follow-up questions, you will enhance the system with an AI Guru powered by Oracle’s Vector Search and Retrieval-Augmented Generation (RAG). The AI Guru will be able to answer questions about the grid interconnection application and provide recommendations based on the data.
 
 Before answering questions, we need to prepare the data by vectoring the claims recommendations. This step:
 
@@ -464,7 +464,7 @@ Now we must generate and store vector embeddings. This allows us to use Vector S
 
 In this step:
 
-   - **Generates Embeddings**: This is a new feature in Oracle Database 23ai that allows you to create embeddings directly within the database, eliminating the need for external tools or APIs. The `dbms_vector_chain.utl_to_embedding` function takes the recommendation text as input and returns an embedding vector.
+   - **Generates Embeddings**: This is a new feature in Oracle AI Database that allows you to create embeddings directly within the database, eliminating the need for external tools or APIs. The `dbms_vector_chain.utl_to_embedding` function takes the recommendation text as input and returns an embedding vector.
 
    - **Stores Embeddings**: We update `SLG_CHUNK.CHUNK_VECTOR` by embedding each `CHUNK_TEXT` using `dbms_vector_chain.utl_to_embedding` with `DEMO_MODEL`. A short verification output is printed.
 
@@ -529,7 +529,7 @@ In this step:
 
     ![vector](./images/create-vector.png " ")
 
-## Task 7: Implement RAG with Oracle Database 23ai's Vector Search
+## Task 7: Implement RAG with Oracle AI Database's Vector Search
 
 Now that the recommendations are vectorized, we can process a user’s question:
 
@@ -677,7 +677,7 @@ Now that the recommendations are vectorized, we can process a user’s question:
     ![rag](./images/rag.png " ")
 
 ## Conclusion
-Congratulations! You implemented a RAG process in Oracle Database 23ai using Python.
+Congratulations! You implemented a RAG process in Oracle AI Database using Python.
 
 to summarize:
 
@@ -694,7 +694,7 @@ You may now proceed to the next lab.
 ## Learn More
 
 * [Code with Python](https://www.oracle.com/developer/python-developers/)
-* [Oracle Database 23ai Documentation](https://docs.oracle.com/en/database/oracle/oracle-database/23/)
+* [Oracle AI Database Documentation](https://docs.oracle.com/en/database/oracle/oracle-database/23/)
 
 ## Acknowledgements
 * **Authors** - Ley Sylvester

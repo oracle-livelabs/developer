@@ -199,7 +199,7 @@ Lastly, let’s explore how the system uses JSON Duality Views to handle profile
 
     ![Click Process Selected PDF](./images/upload-anderson.png =50%x*)
 
->💡 **JSON Duality Views** in 23ai let's you update unstructured data in an easy, high-level format while automatically handling the technical details behind the scenes. This makes it faster and simpler to work with messy data and connect it to structured systems.
+>💡 **JSON Duality Views** let's you update unstructured data in an easy, high-level format while automatically handling the technical details behind the scenes. This makes it faster and simpler to work with messy data and connect it to structured systems.
 
 4. The customer profile has been updated.
 
