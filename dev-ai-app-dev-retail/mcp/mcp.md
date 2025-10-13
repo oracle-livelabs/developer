@@ -1,4 +1,4 @@
-# Interact with Oracle Database 23ai through an MCP Server
+# Interact with Oracle AI Database through an MCP Server
 
 ## Introduction
 
@@ -10,7 +10,7 @@ For Seer Holding, this means:
 
 Faster investigations – chain describe ➡️ sample ➡️ generate SQL ➡️ summarize in seconds.
 
-Less glue code – one protocol to connect Oracle Database 23ai, OCI Generative AI, and future systems.
+Less glue code – one protocol to connect Oracle AI Database, OCI Generative AI, and future systems.
 
 Safer-by-default – tools can be read-only, whitelisted, and audited.
 
@@ -18,7 +18,7 @@ Example scenario: An approval officer asks, “Why did we deny Alice’s request
 
 In this lab you will:
 
-- Spin up a custom MCP server (Python, FastMCP) that exposes Oracle 23ai + OCI GenAI tools.
+- Spin up a custom MCP server (Python, FastMCP) that exposes Oracle AI Database + OCI GenAI tools.
 
 - Interact with it from a notebook to run multi-tool workflows.
 
@@ -27,7 +27,7 @@ In this lab you will:
 
 **Why this is powerful**
 
-MCP turns Oracle Database 23ai into a set of discoverable, composable tools that analysts can use with plain language. But its real power emerges when extended to other systems—ERP for purchase orders, HCM for employee data, CRM for customer touchpoints—so workflows can span finance, HR, and customer engagement.
+MCP turns Oracle AI Database into a set of discoverable, composable tools that analysts can use with plain language. But its real power emerges when extended to other systems—ERP for purchase orders, HCM for employee data, CRM for customer touchpoints—so workflows can span finance, HR, and customer engagement.
 
 And it’s not just about AI. MCP can act as a general-purpose API layer: a standardized way for notebooks, dashboards, or integration services to list tables, fetch metadata, or run controlled queries. Even without AI—whether generating compliance reports, syncing systems, or surfacing HR metrics—MCP reduces integration work, simplifies maintenance, and makes enterprise data more reusable across teams.
 
@@ -37,7 +37,7 @@ Estimated Time: 60 minutes
 
 - Understand MCP and how it wires tools into agent workflows
 
-- Run an MCP server that connects to Oracle Database 23ai and OCI Generative AI
+- Run an MCP server that connects to Oracle AI Database and OCI Generative AI
 
 - Call MCP tools from a Jupyter notebook
 
@@ -137,7 +137,7 @@ Internally uses helpers like \_clean\_llm_sql, read-only guards, and a row cap f
 
     **What does it do?**
 
-    This snippet calls the MCP tool embed\_db\_impl to generate a vector embedding for the phrase “Where are you from?” directly inside Oracle Database 23ai. The code then shows the length of the resulting vector and previews the first eight values.
+    This snippet calls the MCP tool embed\_db\_impl to generate a vector embedding for the phrase “Where are you from?” directly inside Oracle AI Database. The code then shows the length of the resulting vector and previews the first eight values.
 
     What makes MCP powerful here is that embedding becomes just another tool in the protocol—no separate service calls or glue code are required. Any agent or workflow at Seer Holding can now request embeddings in the same way it requests a SQL query or a chat response, making it easy to build vector search and RAG pipelines that combine structured and unstructured data consistently.
 
@@ -155,7 +155,7 @@ Internally uses helpers like \_clean\_llm_sql, read-only guards, and a row cap f
 
     This snippet calls the MCP tool healthcheck\_impl(), which returns a simple confirmation that the MCP server is up and responsive. It’s the quickest way to verify that the server is running correctly and ready to accept tool calls.
 
-    What makes MCP powerful here is that health checks are exposed just like any other tool. That means clients—whether a Jupyter notebook, IDE plugin, or agent workflow—can programmatically confirm connectivity and fail fast if something is wrong, instead of silently breaking. For Seer Holding, this ensures reliable pipelines and smooth developer experience when building on top of Oracle Database 23ai and MCP.
+    What makes MCP powerful here is that health checks are exposed just like any other tool. That means clients—whether a Jupyter notebook, IDE plugin, or agent workflow—can programmatically confirm connectivity and fail fast if something is wrong, instead of silently breaking. For Seer Holding, this ensures reliable pipelines and smooth developer experience when building on top of Oracle AI Database and MCP.
 
     For Seer Holding, this is like a pre-flight check before analysts start their workflows: it reassures teams that the systems behind their return authorization, fraud detection, or onboarding processes are healthy, so they can trust the tools they’re about to use.
 
@@ -173,7 +173,7 @@ Internally uses helpers like \_clean\_llm_sql, read-only guards, and a row cap f
 
     What does it do?
 
-    This snippet calls the MCP tool list\_tables\_impl(), which retrieves the list of database tables available through the Oracle Database 23ai connection. The code then prints the first 20 entries. It’s a quick way to explore the schema and discover what data sources are available.
+    This snippet calls the MCP tool list\_tables\_impl(), which retrieves the list of database tables available through the Oracle AI Database connection. The code then prints the first 20 entries. It’s a quick way to explore the schema and discover what data sources are available.
 
     What makes MCP powerful here is that schema discovery becomes a standardized tool. Instead of writing custom SQL or metadata queries in every project, any MCP-enabled client—whether a notebook, IDE, or agent—can ask for the list of tables the same way.
 
@@ -358,11 +358,11 @@ You will add a row counter tool to quickly verify table sizes during investigati
 
 ## Conclusion
 
-With MCP, Seer Holding gains far more than a new way to call the Oracle Database 23ai—it gains a unified language for interacting with all operational systems. Instead of building and maintaining a patchwork of custom APIs, MCP exposes every capability (list tables, run SQL, generate embeddings, count rows, fetch HR metrics, check ERP orders) as discoverable, composable tools.
+With MCP, Seer Holding gains far more than a new way to call the Oracle AI Database—it gains a unified language for interacting with all operational systems. Instead of building and maintaining a patchwork of custom APIs, MCP exposes every capability (list tables, run SQL, generate embeddings, count rows, fetch HR metrics, check ERP orders) as discoverable, composable tools.
 
 **Why is this powerful?**
 
-- One protocol, many systems – Whether it’s financial data in Oracle 23ai, purchase orders in ERP, or employee records in HCM, MCP provides a consistent, governed way to interact.
+- One protocol, many systems – Whether it’s financial data in Oracle AI Database, purchase orders in ERP, or employee records in HCM, MCP provides a consistent, governed way to interact.
 
 - Safe and simple – Tools are whitelisted, read-only by default, and easy to test in notebooks, making development and compliance smoother.
 
@@ -374,7 +374,7 @@ Imagine an onboarding specialist asking:
 
 > “Show me the top five regions where customers with high return risk also have overdue invoices.”
 
-Behind the scenes, MCP could chain tools across CRM (customers), ERP (invoices), and Oracle 23ai (return risk) into a single, safe workflow—without custom glue code.
+Behind the scenes, MCP could chain tools across CRM (customers), ERP (invoices), and Oracle AI Database (return risk) into a single, safe workflow—without custom glue code.
 
 Or consider a compliance officer who needs:
 
