@@ -303,7 +303,7 @@ display(df_chunks)
 
 ## Task 6: Create a function to create embeddings - Use Oracle AI Database to create vector data 
 
-To handle follow-up questions, you will enhance the system with an AI Guru powered by Oracle 23ai’s Vector Search and Retrieval-Augmented Generation (RAG). The AI Guru will be able to answer questions about the loan application and provide recommendations based on the data.
+To handle follow-up questions, you will enhance the system with an AI Guru powered by Oracle AI Database’s Vector Search and Retrieval-Augmented Generation (RAG). The AI Guru will be able to answer questions about the loan application and provide recommendations based on the data.
 
 Before answering questions, we need to prepare the data by vectoring the recommendations. This step:
 

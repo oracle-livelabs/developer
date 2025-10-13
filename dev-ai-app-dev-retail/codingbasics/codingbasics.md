@@ -489,7 +489,7 @@ As a developer at Seer Holdings, you've just built the foundation for a GenAI-po
 
 This architecture eliminates the need for duplicating data across platforms and simplifies how developers build AI-ready applications. Whether you're calling SQL, working with JSON, or speaking Mongo, you're always working with a single source of truth inside the Oracle Database.
 
-In the next lab, you'll build on this foundation to implement Retrieval-Augmented Generation (RAG), create vector embeddings, and generate personalized recommendations with Oracle 23ai and OCI Generative AI.
+In the next lab, you'll build on this foundation to implement Retrieval-Augmented Generation (RAG), create vector embeddings, and generate personalized recommendations with Oracle AI Database and OCI Generative AI.
 
 ## Acknowledgements
 * **Authors** - Linda Foinding, Kevin Lazarz
