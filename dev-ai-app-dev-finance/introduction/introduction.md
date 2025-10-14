@@ -10,8 +10,6 @@ This workshop shows how SeerGroup tackles that problem with Oracle AI Database  
 
 You’ll see how SeerGroup’s teams can move from manual, fragmented workflows to AI-powered applications—and you’ll build the same capabilities yourself in the labs that follow.
 
-[](videohub:1_mg30brw3:medium)
-
 ✅ **Start with the demo! (Lab 1)**
 
 Step into SeerGroup’s Finance division as a Loan Officer. You’ll use an AI-powered loan approval app built on Oracle AI Database  to:
