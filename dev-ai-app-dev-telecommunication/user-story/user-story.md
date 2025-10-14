@@ -46,7 +46,7 @@ In this first example, you will use the application to approve a Bandwidth Upgra
 
     ![Bob Smith AI generated recommendations](./images/Bob-Smith-AI.png =50%x*)
 
-3. At the bottom of Bob Smith’s profile, you will find the **AI Guru**—a chatbot built on Oracle Database 23ai and Vector search. When prompted, the system uses **RAG** to generate a response. It converts the question and energy data into embeddings, performs a similarity search, and then uses the **GenAI service** to turn the enriched context into a clear, natural language answer. If the customer calls with a question, you can quickly enter it into the AI Guru to generate a relevant response. 
+3. At the bottom of Bob Smith’s profile, you will find the **AI Guru**—a chatbot built on Oracle AI Databaseand Vector search. When prompted, the system uses **RAG** to generate a response. It converts the question and energy data into embeddings, performs a similarity search, and then uses the **GenAI service** to turn the enriched context into a clear, natural language answer. If the customer calls with a question, you can quickly enter it into the AI Guru to generate a relevant response. 
  
 
     **Copy** the question below into the AI chatbot and press **Enter**. What does the AI Guru respond?
@@ -65,7 +65,7 @@ In this first example, you will use the application to approve a Bandwidth Upgra
 
     ![Bob Decision](./images/Bob-Smith-Decision.png =50%x*)
 
-    After navigating to the decisions page, the AI evaluation runs in the background. Telecom documents containing network details such as topology, bandwidth capacity, latency, and SLA policies are stored in Oracle Database 23ai and modeled with JSON Duality Views. These documents are vectorized and searched using AI Vector Search to identify semantically relevant prior requests and compliance criteria. The results are passed to OCI Generative AI, which uses retrieval-augmented generation (RAG) to generate a natural-language explanation, formatted for both internal review and external communication.
+    After navigating to the decisions page, the AI evaluation runs in the background. Telecom documents containing network details such as topology, bandwidth capacity, latency, and SLA policies are stored in Oracle AI Databaseand modeled with JSON Duality Views. These documents are vectorized and searched using AI Vector Search to identify semantically relevant prior requests and compliance criteria. The results are passed to OCI Generative AI, which uses retrieval-augmented generation (RAG) to generate a natural-language explanation, formatted for both internal review and external communication.
 
 5. In the **Select Your Desired Option** section, the available options are displayed. If more data is needed, the reviewer can upload documents, add missing information, and trigger a re-evaluation. The system dynamically adjusts the recommendation, and generates a decision letter sent directly to the customer.
 
@@ -193,7 +193,7 @@ Lastly, let’s explore how the system uses JSON Duality Views to handle profile
 
     ![Upload Document](./images/upload-document.png =50%x*)
 
->💡 **JSON Duality Views** in 23ai let's you update unstructured data in an easy, high-level format while automatically handling the technical details behind the scenes. This makes it faster and simpler to work with messy data and connect it to structured systems.
+>💡 **JSON Duality Views** let's you update unstructured data in an easy, high-level format while automatically handling the technical details behind the scenes. This makes it faster and simpler to work with messy data and connect it to structured systems.
 
 4. The customer profile has been updated.
 
@@ -211,7 +211,7 @@ Once the document is uploaded:
 
 ## Conclusion
 
-In conclusion our Request Approval App was able to leverage Oracle database 23ai technologies such as **AI Vector Search, Property Graph and JSON Duality Views** to:
+In conclusion our Request Approval App was able to leverage Oracle AI Databasetechnologies such as **AI Vector Search, Property Graph and JSON Duality Views** to:
 
 ✅ Automate profile evaluations
 
@@ -227,7 +227,7 @@ By combining these advanced tools, the application enables faster, smarter decis
 
 ## Learn More
 
-* [Oracle Database 23ai Documentation](https://docs.oracle.com/en/database/oracle/oracle-database/23/)
+* [Oracle AI DatabaseDocumentation](https://docs.oracle.com/en/database/oracle/oracle-database/23/)
 
 ## Acknowledgements
 * **Authors** - Ley Sylvester
