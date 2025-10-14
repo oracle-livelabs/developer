@@ -2,8 +2,8 @@
 
 ## Connecting and creating database objects
 
-1. Connect as the SQL_FREESQL_01 user 
-2. Create four tables named car, truck, motorcycle, and manufacturer in the SQL_FREESQL_01 schema with the following characteristics (please review the three "NOTE" notes in this section before creating the tables):
+1. Connect as the user. If no user is provided, please prompt me with the available connections, and ask me to choose the one of the connections before proceeding to the next step.
+2. Create four tables named car, truck, motorcycle, and manufacturer in the chosen schema with the following characteristics (please review the three "NOTE" notes in this section before creating the tables):
 
     The car, truck, motorcycle tables should include colums such as: 
       - make
@@ -49,6 +49,8 @@
     > ```
 
     > NOTE: Take care to not create duplicate data in any of the tables.
+    > 
+    > NOTE: Issue the COMMIT; statement after each INSERT operation, to ensure the data has been saved to its target table.
 
 2. Create 25 unique entries of fictitious, but plausible data for the following table (please review the two "NOTE" notes in this section before inserting the table data):
     - manufacturer
@@ -63,6 +65,8 @@
     > ```
 
     > NOTE: Take care to not create duplicate data in this table.
+    >
+    > NOTE: Issue the COMMIT; statement after each INSERT operation, to ensure the data has been saved to its target table.
 
 2. After inserting the data show me the first 5 rows of each table individually. If no data exists, then: 
     - reattempt the inserting of the data in the empty tables, then:
