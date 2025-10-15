@@ -143,6 +143,6 @@ This section dynamically updates customer data in our clients\_dv table by build
 * [Oracle Database 23ai Documentation](https://docs.oracle.com/en/database/oracle/oracle-database/23/)
 
 ## Acknowledgements
-* **Authors** - Linda Foinding, Francis Regalado
+* **Authors** - Francis Regalado, Linda Foinding
 * **Contributors** - Kamryn Vinson, Otis Barr, Eddie Ambler, Kevin Lazarz
 * **Last Updated By/Date** - Linda Foinding, April 2025
