@@ -191,21 +191,21 @@ This lab assumes you have:
 
 3. Click the &#9878; scale icon to select an API provider. 
 
-   >** NOTE:** You will choose **Oracle Code Assist**.
+    >** NOTE:** You will choose **Oracle Code Assist**.
 
-   ![14-clicking-the-api-provider-icon-for-choosing-api-provider](./images/lab-2/14-clicking-the-api-provider-icon-for-choosing-api-provider.png " ")
+    ![14-clicking-the-api-provider-icon-for-choosing-api-provider](./images/lab-2/14-clicking-the-api-provider-icon-for-choosing-api-provider.png " ")
 
-   ![15-available-api-providers-from-the-drop-down-menu](./images/lab-2/15-available-api-providers-from-the-drop-down-menu.png " ")
-
+    ![15-available-api-providers-from-the-drop-down-menu](./images/lab-2/15-available-api-providers-from-the-drop-down-menu.png " ")
 
 4. Navigate to the special Hands-on Lab registration page, to gain temporary access to Oracle Code Assist. 
 
-   > **NOTE:** Choose the session day/time that you are attending.
+> **NOTE:** You will need the session's complete URL, you'll have copied this during today's intro.
 
-   **OCA Registration Links:**
-
-   - [Wednesday October 15, 2-3:30pm PDT](https://gb5be6cd917413b-ocaexternal.adb.us-chicago-1.oraclecloudapps.com/ords/r/aicode/ai-world-labs/db-lab-session-wednesday)
-   - [Thursday October 16, 9-10:30am PDT](https://gb5be6cd917413b-ocaexternal.adb.us-chicago-1.oraclecloudapps.com/ords/r/aicode/ai-world-labs/db-lab-session-thursday)
+  ```sh
+  <copy>
+  https://gb5be6cd917413b-ocaexternal.adb.us-chicago-1.oraclecloudapps.com/ + [Instructor provided complete path]
+  </copy>
+  ```
 
 5. Once you have succesfully registered, return to the Cline extension, and click the **Sign in with Oracle Code Assist** button. Complete your SSO/2FA authorization. 
 
