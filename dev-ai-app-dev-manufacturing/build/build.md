@@ -1,6 +1,6 @@
 ## Introduction
 
-In this lab, you’ll build a purchase order approval engine on Oracle Database 23ai plus OCI Generative AI. You’ll connect to procurement data, investigate supplier and pricing patterns, and employ an LLM to suggest approving, escalating, or requoting. Using Python, you’ll deliver a fully integrated AI solution that streamlines manufacturing purchasing workflows. 
+In this lab, you’ll build a purchase order approval engine on Oracle AI Database plus OCI Generative AI. You’ll connect to procurement data, investigate supplier and pricing patterns, and employ an LLM to suggest approving, escalating, or requoting. Using Python, you’ll deliver a fully integrated AI solution that streamlines manufacturing purchasing workflows. 
 
 This lab uses some of the basic coding samples you created in lab 3, such as `cursor.execute` and more.
 
@@ -10,7 +10,7 @@ Estimated Time: 30 minutes
 
 * Build the complete purchase order approval application as seen in lab 1
 * Use OCI Generative AI to generate personalized product recommendations
-* Use Python to connect to an Oracle Database 23ai instance and run queries
+* Use Python to connect to an Oracle AI Database instance and run queries
 * Explore supplier data and extract relevant information
 
 ### Prerequisites
@@ -479,7 +479,7 @@ Here’s what we’ll do:
 
 ## Task 5: Chunk & Store Recommendations
 
-To handle follow-up questions, you will enhance the system with an AI Guru powered by Oracle 23ai’s Vector Search and Retrieval-Augmented Generation (RAG). The AI Guru will be able to answer questions about the purchase order application and provide recommendations based on the data.
+To handle follow-up questions, you will enhance the system with an AI Guru powered by Oracle’s Vector Search and Retrieval-Augmented Generation (RAG). The AI Guru will be able to answer questions about the purchase order application and provide recommendations based on the data.
 
 Before answering questions, we need to prepare the data by vectoring the PO recommendations. This step:
 
@@ -628,7 +628,7 @@ Now we must generate and store vector embeddings. This allows us to use Vector S
 
 In this step:
 
-   - **Generates Embeddings**: This is a new feature in Oracle Database 23ai that allows you to create embeddings directly within the database, eliminating the need for external tools or APIs. The `dbms_vector_chain.utl_to_embedding` function takes the recommendation text as input and returns an embedding vector.
+   - **Generates Embeddings**: This is a new feature in Oracle AI Database that allows you to create embeddings directly within the database, eliminating the need for external tools or APIs. The `dbms_vector_chain.utl_to_embedding` function takes the recommendation text as input and returns an embedding vector.
 
    - **Stores Embeddings**: We update `MFG_CHUNKS.CHUNK_VECTOR` by embedding each `CHUNK_TEXT` using `dbms_vector_chain.utl_to_embedding` with `DEMO_MODEL`. A short verification output is printed.
 
@@ -686,7 +686,7 @@ In this step:
 
     ![vector](./images/create-vector.png " ")
 
-## Task 7: Implement RAG with Oracle Database 23ai's Vector Search
+## Task 7: Implement RAG with Oracle AI Database's Vector Search
 
 Now that the recommendations are vectorized, we can process a user’s question:
 
@@ -888,7 +888,7 @@ Now that the recommendations are vectorized, we can process a user’s question:
     ![rag](./images/rag.png " ")
 
 ## Conclusion
-Congratulations! You implemented a RAG process in Oracle Database 23ai using Python.
+Congratulations! You implemented a RAG process in Oracle AI Database using Python.
 
 To summarize:
 
@@ -905,7 +905,7 @@ You may now proceed to the next lab.
 ## Learn More
 
 * [Code with Python](https://www.oracle.com/developer/python-developers/)
-* [Oracle Database 23ai Documentation](https://docs.oracle.com/en/database/oracle/oracle-database/23/)
+* [Oracle AI Database Documentation](https://docs.oracle.com/en/database/oracle/oracle-database/23/)
 
 ## Acknowledgements
 * **Authors** - Francis Regalado Database Product Manager

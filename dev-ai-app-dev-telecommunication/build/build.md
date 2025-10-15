@@ -1,8 +1,8 @@
-# Step by step: Implement RAG with Oracle Database 23ai 
+# Step by step: Implement RAG with Oracle AI Database
 
 ## Introduction
 
-Here you’ll construct a Telecommunications service activation assessment tool powered by Oracle Database 23ai and OCI Generative AI. Connect to router specs and network topology, analyze bandwidth capacity and latency, and use an LLM to draft activation recommendations with compliance references. Leveraging Python from prior labs, you’ll deploy a fully integrated AI app that accelerates service activation decisions.
+Here you’ll construct a Telecommunications service activation assessment tool powered by Oracle AI Databaseand OCI Generative AI. Connect to router specs and network topology, analyze bandwidth capacity and latency, and use an LLM to draft activation recommendations with compliance references. Leveraging Python from prior labs, you’ll deploy a fully integrated AI app that accelerates service activation decisions.
 
 This lab uses some of the basic coding samples you created in lab 3, such as `cursor.execute` and more.
 
@@ -12,7 +12,7 @@ Estimated Time: 30 minutes
 
 * Build the complete service approval application as seen in lab 1
 * Use OCI Generative AI to generate personalized product recommendations
-* Use Python to connect to an Oracle Database 23ai instance and run queries
+* Use Python to connect to an Oracle AI Databaseinstance and run queries
 * Explore supplier data and extract relevant information
 
 ### Prerequisites
@@ -475,7 +475,7 @@ Now we must generate and store vector embeddings. This allows us to use Vector S
 
 In this step:
 
-   - **Generates Embeddings**: This is a new feature in Oracle Database 23ai that allows you to create embeddings directly within the database, eliminating the need for external tools or APIs. The `dbms_vector_chain.utl_to_embedding` function takes the recommendation text as input and returns an embedding vector.
+   - **Generates Embeddings**: This is a new feature in Oracle AI Databasethat allows you to create embeddings directly within the database, eliminating the need for external tools or APIs. The `dbms_vector_chain.utl_to_embedding` function takes the recommendation text as input and returns an embedding vector.
 
    - **Stores Embeddings**: We update `COMM_CHUNK.CHUNK_VECTOR` by embedding each `CHUNK_TEXT` using `dbms_vector_chain.utl_to_embedding` with `DEMO_MODEL`. A short verification output is printed.
 
@@ -694,7 +694,7 @@ Now that the recommendations are vectorized, we can process a user’s question:
     ![rag](./images/rag.png " ")
 
 ## Conclusion
-Congratulations! You implemented a RAG process in Oracle Database 23ai using Python.
+Congratulations! You implemented a RAG process in Oracle AI Databaseusing Python.
 
 to summarize:
 
@@ -711,7 +711,7 @@ You may now proceed to the next lab.
 ## Learn More
 
 * [Code with Python](https://www.oracle.com/developer/python-developers/)
-* [Oracle Database 23ai Documentation](https://docs.oracle.com/en/database/oracle/oracle-database/23/)
+* [Oracle AI DatabaseDocumentation](https://docs.oracle.com/en/database/oracle/oracle-database/23/)
 
 ## Acknowledgements
 * **Authors** - Ley Sylvester
