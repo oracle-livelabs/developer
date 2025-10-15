@@ -6,14 +6,14 @@
 
 SeerGroup is a global conglomerate with multiple divisions. Each division buried is in transactions, documents, and customer data. Their challenge is always the same: **decisions take too long** because data is scattered across silos and systems.
 
-This workshop shows how SeerGroup tackles that problem with Oracle Database 23ai + OCI Generative AI. By **keeping data in one place**, they cut out fragile integrations and give analysts, engineers, and managers a **single platform** for smarter approvals, faster investigations, and clearer customer answers.
+This workshop shows how SeerGroup tackles that problem with Oracle AI Database + OCI Generative AI. By **keeping data in one place**, they cut out fragile integrations and give analysts, engineers, and managers a **single platform** for smarter approvals, faster investigations, and clearer customer answers.
 
 You’ll see how SeerGroup’s teams can move from manual, fragmented workflows to AI-powered applications—and you’ll build the same capabilities yourself in the labs that follow.
 
 
 ✅ **Start with the demo! (Lab 1)**
 
-Step into SeerGroup’s Life Sciences division as a Clinical Reviewer. You’ll use an AI-powered trial oversight app built on Oracle Database 23ai to:
+Step into SeerGroup’s Life Sciences division as a Clinical Reviewer. You’ll use an AI-powered trial oversight app built on Oracle AI Database to:
 
 Review clinical trial requests — such as safety reviews, lab results, and physician notes — using AI Vector Search, Graph Analytics, and RAG
 
@@ -23,30 +23,30 @@ Approve, deny, or pend requests with AI-generated risk scores, clear explanation
 
 Update citizen profiles and service records using JSON Duality Views, keeping data consistent across departments
 
-This story shows how Seer Life Sciences uses Oracle Database 23ai and OCI Generative AI to accelerate trial oversight, strengthen patient safety monitoring, and reduce review bottlenecks — all while keeping sensitive data inside a unified, trusted database platform.
+This story shows how Seer Life Sciences uses Oracle AI Database and OCI Generative AI to accelerate trial oversight, strengthen patient safety monitoring, and reduce review bottlenecks — all while keeping sensitive data inside a unified, trusted database platform.
 
 
 ✅ **What’s next (Labs 2–5)**
 
-After the demo, you’ll switch roles to developer. In the next labs you’ll connect to Oracle Database 23ai, shape data into JSON Duality Views, build a retrieval-augmented application, and extend it with reusable MCP tools. By the end, you’ll see how SeerGroup industries can move from siloed processes to intelligent, AI-driven applications—all on one platform.
+After the demo, you’ll switch roles to developer. In the next labs you’ll connect to Oracle AI Database, shape data into JSON Duality Views, build a retrieval-augmented application, and extend it with reusable MCP tools. By the end, you’ll see how SeerGroup industries can move from siloed processes to intelligent, AI-driven applications—all on one platform.
 
 * **Lab 2 – Connect to your environment**
 Log in to the JupyterLab IDE where you’ll write Python and run your code.
 
 * **Lab 3 – Build the data foundation**
-Use Python with Oracle Database 23ai to create tables, shape them into JSON Duality Views, and interact with them using both SQL and MongoDB-style syntax—laying the groundwork for AI workflows across SeerGroup.
+Use Python with Oracle AI Database to create tables, shape them into JSON Duality Views, and interact with them using both SQL and MongoDB-style syntax—laying the groundwork for AI workflows across SeerGroup.
 
 * **Lab 4 – Implement RAG**
 Construct a working AI application. Pull customer and clinical data, generate recommendations with OCI Generative AI, chunk and vectorize the results, and answer follow-up questions using Vector Search + RAG.
 
 * **Lab 5 – Extend with MCP tools**
-Wire Oracle Database 23ai and OCI Generative AI into reusable MCP tools. Call them from notebooks, chain them together into workflows, and even register your own tool for SeerGroup’s finance, retail, healthcare, or energy teams.
+Wire Oracle AI Database and OCI Generative AI into reusable MCP tools. Call them from notebooks, chain them together into workflows, and even register your own tool for SeerGroup’s finance, retail, healthcare, or energy teams.
 
 By the end, you’ll have a complete toolkit—from clean data to live AI apps to composable tools—that shows how SeerGroup industries can turn their data into intelligent applications.
 
 ### Objectives
 
-* Build and query data with Python + Oracle Database 23ai
+* Build and query data with Python + Oracle AI Database
 
 * Shape relational data into documents using JSON Duality Views
 
@@ -68,7 +68,7 @@ This lab assumes you have:
 
 ## Learn More
 
-* [Oracle Database 23ai Documentation](https://docs.oracle.com/en/database/oracle/oracle-database/23/)
+* [Oracle AI Database Documentation](https://docs.oracle.com/en/database/oracle/oracle-database/23/)
 
 ## Acknowledgements
 * **Authors** - Ley Sylvester
