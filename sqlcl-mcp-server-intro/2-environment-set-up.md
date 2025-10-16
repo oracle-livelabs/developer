@@ -203,7 +203,7 @@ This lab assumes you have:
 
   ```sh
   <copy>
-  https://gb5be6cd917413b-ocaexternal.adb.us-chicago-1.oraclecloudapps.com/r/aicode/ai-world-labs/db-lab- + [Instructor provided complete path]
+  https://bit.ly/3JcMw3C
   </copy>
   ```
 
