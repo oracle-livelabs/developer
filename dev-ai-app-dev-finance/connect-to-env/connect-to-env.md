@@ -2,7 +2,7 @@
 
 ## Introduction
 
-In this short lab, you’ll launch the JupyterLab-based development environment used throughout the workshop. JupyterLab runs entirely in your browser and allows you to write and test Python code that interacts directly with Oracle Database 23ai.
+In this short lab, you’ll launch the JupyterLab-based development environment used throughout the workshop. JupyterLab runs entirely in your browser and allows you to write and test Python code that interacts directly with Oracle AI Database.
 
 This is the same environment used by the SeerEquities data team to build the AI loan assistant.
 
@@ -37,7 +37,7 @@ You’re now in the development environment.
 
 ## Task 2: Explore JupyterLab
 
-JupyterLab is where you’ll write, run, and test Python code that connects to Oracle Database 23ai. Here are the key parts:
+JupyterLab is where you’ll write, run, and test Python code that connects to Oracle AI Database. Here are the key parts:
 
 **File browser (1):** Use this panel to open notebooks, scripts, and other files. Right-click for actions like rename or delete.
 
@@ -72,7 +72,7 @@ You’ve now logged into the cloud-based development environment where all codin
 
 ✅ You can access JupyterLab in your browser  
 ✅ You understand how to open and run notebooks  
-✅ You’re ready to start interacting with Oracle Database 23ai  
+✅ You’re ready to start interacting with Oracle AI Database  
 
 ## Acknowledgements
 * **Author** - Kamryn Vinson

@@ -1,8 +1,8 @@
-# Step by step: Implement RAG with Oracle Database 23ai 
+# Step by step: Implement RAG with Oracle AI Database 
 
 ## Introduction
 
-In this lab, you’ll build a support ticket request engine on Oracle Database 23ai plus OCI Generative AI. You’ll connect to ticket data, investigate known issues and resolutions, and employ an LLM to suggest approving, denying, or requesting more info. Using Python, you’ll deliver a fully integrated AI solution that streamlines high tech support ticket workflows. 
+In this lab, you’ll build a support ticket request engine on Oracle AI Database plus OCI Generative AI. You’ll connect to ticket data, investigate known issues and resolutions, and employ an LLM to suggest approving, denying, or requesting more info. Using Python, you’ll deliver a fully integrated AI solution that streamlines high tech support ticket workflows. 
 
 This lab uses some of the basic coding samples you created in lab 3, such as `cursor.execute` and more.
 
@@ -12,7 +12,7 @@ Estimated Time: 30 minutes
 
 * Build the complete purchase order approval application as seen in lab 1
 * Use OCI Generative AI to generate personalized product recommendations
-* Use Python to connect to an Oracle Database 23ai instance and run queries
+* Use Python to connect to an Oracle AI Database instance and run queries
 * Explore supplier data and extract relevant information
 
 ### Prerequisites
@@ -112,30 +112,30 @@ You will query customer data from the `hightech_dv` JSON duality view, which com
     ```python
     <copy>
     def fetch_customer_data(customer_id):
-    print(f"Executing query for customer_id: {customer_id}")
-    # Execute query, ensuring customer_id is a string for JSON_VALUE
-    cursor.execute(
-        "SELECT data FROM hightech_dv WHERE JSON_VALUE(data, '$._id') = :customer_id",
-        {'customer_id': str(customer_id)}  # Convert to string
-    )
-    result = cursor.fetchone()
-    if result is None:
-        print(f"No data found for customer ID: {customer_id}")
-        return None
-        
-    # Handle the result
-    if isinstance(result[0], str):
-        print("Result is a string, parsing as JSON")
-        return json.loads(result[0])
-    elif isinstance(result[0], (bytes, bytearray)):
-        print("Result is bytes, decoding and parsing as JSON")
-        return json.loads(result[0].decode('utf-8'))
-    elif isinstance(result[0], dict):
-        print("Result is already a dictionary")
-        return result[0]
-    else:
-        print(f"Unexpected data type for result: {type(result[0])}")
-        return None
+        print(f"Executing query for customer_id: {customer_id}")
+        # Execute query, ensuring customer_id is a string for JSON_VALUE
+        cursor.execute(
+            "SELECT data FROM hightech_dv WHERE JSON_VALUE(data, '$._id') = :customer_id",
+            {'customer_id': str(customer_id)}  # Convert to string
+        )
+        result = cursor.fetchone()
+        if result is None:
+            print(f"No data found for customer ID: {customer_id}")
+            return None
+            
+        # Handle the result
+        if isinstance(result[0], str):
+            print("Result is a string, parsing as JSON")
+            return json.loads(result[0])
+        elif isinstance(result[0], (bytes, bytearray)):
+            print("Result is bytes, decoding and parsing as JSON")
+            return json.loads(result[0].decode('utf-8'))
+        elif isinstance(result[0], dict):
+            print("Result is already a dictionary")
+            return result[0]
+        else:
+            print(f"Unexpected data type for result: {type(result[0])}")
+            return None
 
     # Main execution
     try:
@@ -289,7 +289,7 @@ Here’s what we’ll do:
 
 ## Task 5: Chunk & Store Recommendations
 
-To handle follow-up questions, you will enhance the system with an AI Guru powered by Oracle 23ai’s Vector Search and Retrieval-Augmented Generation (RAG). The AI Guru will be able to answer questions about the support ticket application and provide recommendations based on the data.
+To handle follow-up questions, you will enhance the system with an AI Guru powered by Oracle’s Vector Search and Retrieval-Augmented Generation (RAG). The AI Guru will be able to answer questions about the support ticket application and provide recommendations based on the data.
 
 Before answering questions, we need to prepare the data by vectoring the support ticket recommendations. This step:
 
@@ -452,7 +452,7 @@ Now we must generate and store vector embeddings. This allows us to use Vector S
 
 In this step:
 
-   - **Generates Embeddings**: This is a new feature in Oracle Database 23ai that allows you to create embeddings directly within the database, eliminating the need for external tools or APIs. The `dbms_vector_chain.utl_to_embedding` function takes the recommendation text as input and returns an embedding vector.
+   - **Generates Embeddings**: This is a new feature in Oracle AI Database that allows you to create embeddings directly within the database, eliminating the need for external tools or APIs. The `dbms_vector_chain.utl_to_embedding` function takes the recommendation text as input and returns an embedding vector.
 
    - **Stores Embeddings**: We update `HTH_CHUNKS.CHUNK_VECTOR` by embedding each `CHUNK_TEXT` using `dbms_vector_chain.utl_to_embedding` with `DEMO_MODEL`. A short verification output is printed.
 
@@ -483,7 +483,7 @@ In this step:
 
     ![vector](./images/create-vector.png " ")
 
-## Task 7: Implement RAG with Oracle Database 23ai's Vector Search
+## Task 7: Implement RAG with Oracle AI Database's Vector Search
 
 Now that the recommendations are vectorized, we can process a user’s question:
 
@@ -649,7 +649,7 @@ Now that the recommendations are vectorized, we can process a user’s question:
     ![rag](./images/rag.png " ")
 
 ## Conclusion
-Congratulations! You implemented a RAG process in Oracle Database 23ai using Python.
+Congratulations! You implemented a RAG process in Oracle AI Database using Python.
 
 to summarize:
 
@@ -666,9 +666,9 @@ You may now proceed to the next lab.
 ## Learn More
 
 * [Code with Python](https://www.oracle.com/developer/python-developers/)
-* [Oracle Database 23ai Documentation](https://docs.oracle.com/en/database/oracle/oracle-database/23/)
+* [Oracle AI Database Documentation](https://docs.oracle.com/en/database/oracle/oracle-database/23/)
 
 ## Acknowledgements
 * **Authors** - Uma Kumar
 * **Contributors** - Kevin Lazarz, Hanna Rakhsha, Ley Sylvester, Francis Regalado
-* **Last Updated By/Date** - Uma Kumar, September 2025
+* **Last Updated By/Date** - Uma Kumar, October 2025

@@ -2,16 +2,37 @@
 
 ## Introduction
 
-You’re a developer at SeerHolding, supporting multiple SeerGroup divisions such SeerEquities, SeerRetail, SeerEnergy, SeerHealth, and many more.
-Each business unit wants smarter, AI-driven apps that interact directly with Oracle Database 23ai.
+You’re a developer at SeerHolding, supporting multiple SeerGroup divisions such as SeerEquities, SeerRetail, SeerEnergy, and SeerHealth. Each business unit wants AI-driven apps that interact directly with Oracle Database 23ai to query data and trigger workflows.
 
-Your job: build a common agentic AI foundation that lets teams query data, trigger workflows, and build their own copilots without rewriting backend logic.
+Your job: Build a common agentic AI foundation so teams can query data, trigger workflows, and build copilots—without changing existing back-end logic.
 
-In this lab, you’ll connect to Oracle MCP, run it through LangChain, and interact with it via a Flask web console.
+This lab connects Oracle MCP to LangChain and exposes it through a Flask web console. It also exposes SQL operations and analytics as AI-discoverable tools—the building blocks for SeerHolding’s enterprise agentic systems. Division-ready examples reference SeerHolding sample schemas so you can run prompts relevant to your domain.
 
-You’ll see how developers can expose SQL operations and analytics as AI-discoverable tools—the building blocks for enterprise agentic systems at SeerHolding.
+### What is Oracle MCP (Model Context Protocol)?
 
-Estimated Time: 60 minutes
+Oracle MCP is a lightweight protocol and tool server that exposes preapproved database operations as **AI-discoverable tools**. In this lab, SQLcl runs with `-mcp` to register those tools so agents (via LangChain and Cohere Command A hosted on OCI GenAI Service) can discover, call, and trace them with guardrails.
+
+
+![mcp](./images/mcp.svg)
+
+**What business challenges it helps address**
+
+- **Slow delivery across divisions**: Publish a shared, vetted tool catalog once; reuse it in SeerEquities, SeerRetail, SeerEnergy, and beyond.
+
+- **Shadow SQL & ticket backlogs**: Shift from ad-hoc queries to self-serve tools that encapsulate approved operations.
+
+- **Compliance and auditability**: Centralized logging and traceability (e.g., tool name, inputs, user, timestamp) support audits and incident reviews.
+
+- **Risk control**: Tools execute with least-privilege access, reducing exposure from free-form SQL against production data.
+
+- **Inconsistent integrations**: A single protocol for tool discovery and invocation cuts custom glue code and drift between teams.
+
+- **Faster prototyping**: Copilots can be assembled quickly by composing existing tools rather than rewriting back-end logic.
+
+>Note: MCP is not a model; it’s the contract between your agents and trusted operations. Models generate intent; MCP tools execute it—safely and consistently.
+
+
+Estimated Time: 45-60 minutes
 
 ### Objectives
 
@@ -23,6 +44,14 @@ Estimated Time: 60 minutes
 
 - Observe secure logging and traceability through MCP.
 
+### Who should use this
+
+- **Data/platform engineers**: publish vetted SQL operations as MCP tools for all divisions.
+
+- **Dev teams**: assemble copilots without touching back-end logic; focus on prompts and UI.
+
+- **Risk/compliance partners**: review MCP logs and tool catalogs for least-privilege and audit readiness.
+
 ### Prerequisites
 
 - Completed Lab 2: Jupyter Environment Setup
@@ -31,7 +60,7 @@ Estimated Time: 60 minutes
 
 ## Task 1: Create a SQLcl connection for MCP
 
-Start by creating a saved connection that Oracle MCP will reuse for all tool calls.
+Create a saved connection that Oracle MCP reuses for all tool calls.
 
 1. Open a new terminal session. Click the **blue +** in the top left corner and select **Terminal**.
 
@@ -59,11 +88,11 @@ Start by creating a saved connection that Oracle MCP will reuse for all tool cal
     conn -save jupmcp -replace -savepwd ${USERNAME}/${DBPASSWORD}@"${DBCONNECTION}"
     ```
 
-This creates a persistent, password-protected connection named jupmcp. Your MCP agent will discover and use it automatically in later steps.
+This creates a persistent, password-protected connection named jupmcp. The MCP agent can discover and use it in later steps if SQLcl runs with -mcp and the saved connection is on the active client path.
 
 ## Task 2: Use LangChain as the Oracle MCP Runner
 
-Next, you’ll launch LangChain as the client that connects to Oracle MCP, discovers tools, and executes your first agentic query.
+Launch LangChain as the client to connect to Oracle MCP, discover tools, and run your first agentic query.
 
 1. Run:
 
@@ -91,10 +120,7 @@ Next, you’ll launch LangChain as the client that connects to Oracle MCP, disco
 
 ## Task 3 (Optional): Use LangChain as the Oracle MCP Runner with a Reasoning Agent
 
-In this optional task, you’ll explore how LangChain can operate with a reasoning agent — a more advanced version of the MCP client that plans, explains, and justifies each step before acting.
-
-The reasoning agent takes longer to run, but it gives you insight into why each tool was chosen and how the decision flow unfolds inside the model.
-This is especially useful for developers who want to debug, audit, or optimize multi-tool workflows in production.
+Run a reasoning agent—a more advanced MCP client that plans, explains, and justifies each step before acting. The reasoning agent typically runs longer and can show why it chose each tool and how the decision flow unfolds, depending on model settings and tracing configuration. This is useful for debugging, auditing, and optimizing multi-tool workflows in production.
 
 Why Does It Matter?
 
@@ -135,7 +161,7 @@ Why Does It Matter?
 
 💡**Developer Insight**
 For SeerHolding’s development teams, reasoning agents add more than verbosity. They provide explainability.
-When you deploy AI copilots for any of SeerHolding's divisions, you can trace each database interaction step by step.
+When you deploy AI copilots with Oracle MCP for any of SeerHolding's divisions, you can trace each database interaction step by step.
 That visibility helps you debug complex chains, document behavior for audits, and build trust in production AI systems.
 
 
@@ -205,7 +231,7 @@ Here’s what this app wires together:
 Together, these layers turn a standard Flask app into an agentic web interface — one that remembers, reasons, and interacts with Oracle Database 23ai in natural language.
 
 
-## Task 4: Create and Modify Database Objects via MCP
+## Task 5: Create and Modify Database Objects via MCP
 
 1. Click **New Session** and run:
 
@@ -224,7 +250,7 @@ Together, these layers turn a standard Flask app into an agentic web interface �
 The agent translates your request into SQL, executes it through MCP, and confirms creation.
 This shows how developers can delegate common schema tasks to secure, explainable AI assistants without writing SQL manually.
 
-## Task 5: Explore Logging and Security
+## Task 6: Explore Logging and Security
 
 Oracle MCP logs every interaction automatically. You can review the logs directly in the database.
 
@@ -268,7 +294,7 @@ Logging isn’t an afterthought; it’s how agentic systems at SeerHolding stay 
 
 ## Conclusion
 
-You’ve built SeerHolding’s first agentic AI development framework.
+You built SeerHolding’s first agentic AI development framework.
 
 You learned how to:
 
@@ -294,6 +320,12 @@ You learned how to:
 * Deliver faster: prototype enterprise-grade AI assistants in hours, not weeks.
 
 You’ve laid the foundation for SeerHolding’s agentic AI platform: turning Oracle Database 23ai into the intelligent core of SeerGroup’s future applications.
+
+## Learn more
+
+- [User's guide SQLcl MCP Server](https://docs.oracle.com/en/database/oracle/sql-developer-command-line/25.2/sqcug/using-oracle-sqlcl-mcp-server.html)
+- [Jeff Smith's Getting Started Guide](https://docs.oracle.com/en/database/oracle/sql-developer-command-line/25.2/sqcug/using-oracle-sqlcl-mcp-server.html)
+- 
 
 ## Acknowledgements
 * **Authors** -  Kevin Lazarz
