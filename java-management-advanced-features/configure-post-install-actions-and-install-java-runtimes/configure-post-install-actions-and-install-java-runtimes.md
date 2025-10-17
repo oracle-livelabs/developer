@@ -125,21 +125,21 @@ In this lab, you will:
 
 6. You can also choose to extract Java to a customized location. Click **Extract Java from compressed archive**.
    
-   Enter a valid and absolute directory path without any environment variables, for example /opt/for-demo. Click **Next**.
+   Enter a valid and absolute directory path without any environment variables, for example /opt/demo. Click **Next**.
 
    ![image of extract java](images/install-java-advanced-with-extract.png)
 
-7. The next page displays the list of post Java installation actions defined previously in [Task 1](#Task1:EnableandSetupPostJavaInstallationActions). Select the post Java installation actions you want to perform. 
+7. The next page displays the list of post Java installation actions defined previously in [Task 1](#Task1:EnableandSetupPostJavaInstallationActions). Select the post Java installation actions you want to perform and click **Next**
 
    ![image of install java runtime select post install action](images/install-java-runtime-select-post-install-action.png)
 
    >**Note:** If you don’t select any post Java installation action, no post-install action will be executed after the Java installation.
 
-8. Click **Install Java runtime** to confirm the installation and submit a request for installation. This request is termed as a **Work Request**.
+8. Select **Submit request** and click **Submit**. This request is termed as a **Work Request**.
+![image of install java runtime submit now](images/install-java-runtime-submit-now.png)
 
-   ![image of install java runtime confirm](images/install-java-runtime-confirm.png)
-
-
+   > **Note:** You can also schedule the installation by selecting **Schedule for later** and setting the schedule preference. Once submitted, you should see a new Scheduled task been created. To view/manage the scheduled task, refer to [Lab 12](?lab=view-and-manage-scheduled-tasks)
+   > ![image of install java runtime schedule later](images/install-java-runtime-schedule-later.png)
 
 ## Task 3: Verify Java Runtime Installation and Post Java Installation Action
 
@@ -215,4 +215,4 @@ In this lab, you will:
 ## Acknowledgements
 
 * **Author** - Yixin Wei, Java Management Service
-* **Last Updated By** - Hannah Wong, May 2025
+* **Last Updated By** - Satish Sarakanam, October 2025

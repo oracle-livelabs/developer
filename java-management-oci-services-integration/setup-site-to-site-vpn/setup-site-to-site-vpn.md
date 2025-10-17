@@ -175,7 +175,7 @@ SGW provides a path for private network traffic between your VCN and supported s
 
 
 
-## Task 5: Set up Route tables and Route rules in your VCN for SGW and DRG 
+## Task 5: Set up Route tables and Route rules in your VCN for SGW and DRG
 
 1. Create a Route Table and Route Rule for SGW
 
@@ -756,4 +756,4 @@ Once you have finishing setting up Site-to-Site VPN, you can install and configu
 ## Acknowledgements
 
 * **Author** - Bhuvesh Kumar, Java Management Service
-* **Last Updated By** - Shuoqi Yang, May 2025
+* **Last Updated By** - Eugene Kazlou, September 2025
