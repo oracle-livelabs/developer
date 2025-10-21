@@ -25,9 +25,9 @@ This lab assumes you have:
 
 Let's check if the DB is correctly connected.
 
-1. Navigate to the *Databases* tab on the left side pane:
+1. Navigate to the *Configuration* tab on the left side pane and then click on the *Databases* tab from the upper menu:
 
-  ![Navigate to the Databases tab](images/database-navigation.jpg)
+  ![Navigate to the Databases tab](images/database-navigation.png)
 
 1. To configure the Oracle Database 23ai Free, you will need to enter the credentials:
 
@@ -48,7 +48,7 @@ Let's check if the DB is correctly connected.
 
 Let's check the models available for use. You'll need to navigate to the *Models* tab:
 
-  ![models menu](images/models.jpg)
+  ![models menu](images/models.png)
 
 * The default LLMs for chat completions are:
 
@@ -68,7 +68,7 @@ Now you are all set for using the *Chat* feature with the LLMs you just configur
 
 The two LLMs availble could be tested right away, in order to understand their behavior with generic questions. First of all, navigate to the chat GUI
 
-![chat](images/chat.jpg)
+![chat](images/chat.png)
 
 scroll down the left-side menu to find the **Toolkit** menu:
 
@@ -102,9 +102,9 @@ Moreover, the LLM tends to answer in a generic way, with no specific mention to 
 
 The Optimizer lets you configure the connection to your OCI tenant for retrieving objects from the *Object Storage* and accessing LLMs from the OCI GenAI service. In the *OCI* configuration tab, you can add your **Oracle Cloud Infrastructure** (OCI) credentials to authenticate to your OCI tenancy. This will enable access to objects and documents stored in your cloud compartments.
 
-1. Navigate to the *OCI* tab on the left-hand pane:
+1. Navigate to the *OCI* tab on the *Configuration* window:
 
-  ![Navigate to the Databases tab](images/oci-navigation.jpg)
+  ![Navigate to the Databases tab](images/oci-navigation.png)
 
 1. Insert your OCI credentials. Detailed information on how to get the required credentials is available in the [Oracle Cloud Infrastructure Documentation](https://docs.oracle.com/en-us/iaas/Content/API/Concepts/apisigningkey.htm#Required_Keys_and_OCIDs).
 

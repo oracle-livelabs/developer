@@ -100,7 +100,7 @@ In this first example, you will use the application to authorize a return for a 
 
 12. Expand **View In Progress Customers**. We can see that David Williams has been removed from the **Pending Customers** list and has been added to the **In Progress Customers**.
 
-    ![David Williams In Progress List](./images/james-smith-approved-list.png =50%x*)
+    ![David Williams In Progress List](./images/david-in-progress.png =50%x*)
 
 **Task Summary**
 
@@ -121,7 +121,7 @@ In this example, you will navigate the application to review a customer and deny
 
     ![Select Alice Smith](./images/alice-smith.png =50%x*)
 
-2. Opening Alice Smith’s profile displays her return package details. Within a few seconds, the AI generates automatically recommendations. In this case, the system evaluates a less favorable profile and identifies key risk factors.
+2. Opening Alice Smith’s profile displays her return package details. Within a few seconds, the AI automatically generates recommendations. In this case, the system evaluates a less favorable profile and identifies key risk factors.
 
     This customer has:
 
@@ -143,11 +143,11 @@ In this example, you will navigate the application to review a customer and deny
 
     ![Alice Smith Graph](./images/expand-graph.png =50%x*)
 
-    On the decision page, the return specialist can use **Operational Property Graph** to explore near-approval return scenarios. Built with **Oracle Graph**, this feature visually maps return amounts and decisions/ recommendations for the customer. It highlights return decisions vs customer risk and can tell us how they can  improve return eligibility by reducing risk.
+    On the decision page, the return specialist can use **Interactive Graph: Customer Return & Risk** to explore relationships in return authorization scenarios. Built with **Oracle Graph**, this feature visually maps decisions and highlights important features of the request like the customer loyalty status and return reason.
 
     ![Alice Smith Graph](./images/alice-smith-graph.png =50%x*)
 
-    ![Alice Smith Dot Plot](./images/alice-smith-dotplot.png =50%x*)
+    This graph shows Alice’s return request linked to a policy rule (in-store within 30 days) and the system’s recommendation. By connecting the customer, request, reason, and policy in one view, the Operational Property Graph makes it clear why a return is approved, denied, or flagged. Analysts can instantly explain the decision to the customer, reducing disputes and building trust.
 
 >💡 In Oracle Database 23ai, **Property Graph** allows you to treat your data like a network of connected points, where each point (called a node) and each link (called an edge) has its own details or properties. This setup helps you run graph analytics, to find important connections or patterns, directly within the database.
 
@@ -189,7 +189,7 @@ Lastly, let’s explore how the system uses JSON Duality Views to handle profile
 
     ![Select Isla Wilson](./images/isla-wilson.png =50%x*)
 
-2. We will upload a document to update the item's condition. Before uploading the document, note that the item's condition is currently listed as "none". On the Customer Details page, click the **Upload Document** button.
+2. We will upload a document to update the item's return condition. On the Customer Details page, click the **Upload Document** button.
 
     ![Upload Document](./images/upload-document.png =50%x*)
 
@@ -203,9 +203,9 @@ Lastly, let’s explore how the system uses JSON Duality Views to handle profile
 
     ![Customer Profile Updated](./images/profile-updated.png)
 
-5. Refresh the page and note that the item condition has been updated to "Damaged". Thanks to JSON Transform and JSON Duality Views, only the relevant field is modified — leaving the rest of the profile UNTOUCHED.
+5. Navigate to the customer decisions page and notice that the information has been updated. Thanks to JSON Transform and JSON Duality Views, only the relevant field is modified — leaving the rest of the profile UNTOUCHED.
 
-    ![Customer Profile Updated](./images/income-updated.png)
+    ![Customer Profile Updated](./images/return-description-updated.png)
 
 **Task Summary**
 
@@ -213,7 +213,7 @@ Once the document is uploaded:
 
 ✅ The system automatically detects the new item condition data.
 
-✅ Then their profile will be updated from "none" to "Damaged".
+✅ Then their profile will be updated for the return description.
 
 ✅ And thanks to JSON Transform and JSON Duality Views, only the relevant field is modified — leaving the rest of the profile UNTOUCHED.
 

@@ -32,7 +32,7 @@ To run the microservice exported you need:
 
   This configuration will use the Ollama LLM server provider for both the embedding model and the chat model.
 
-1. navigate to the *Settings* tab from the left side menu. Here, you should find the *Download SpringAI* button available.
+1. navigate to the *Configuration* tab from the left side menu, then click on the *Settings* tab from the upper menu. Here, you should find the *Download SpringAI* button available.
 
   If you see a message like this:
 

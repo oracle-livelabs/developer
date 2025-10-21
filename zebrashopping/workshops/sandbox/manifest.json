@@ -17,6 +17,10 @@
             "filename": "../../code/code.md"
         },
         {
+            "title": "Lab 3: Implement a Semantic Cache",
+            "filename": "../../cache/cache.md"
+        },
+        {
             "title": "Need Help?",
             "description": "Solutions to Common Problems and Directions for Receiving Live Help",
             "filename": "https://oracle-livelabs.github.io/common/labs/need-help/need-help-livelabs.md"

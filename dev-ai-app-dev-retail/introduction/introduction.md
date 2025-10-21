@@ -2,85 +2,60 @@
 
 ## About this Workshop
 
-**Data is more than an asset—it’s the engine behind every smart decision, risk calculation, and growth strategy. From real-time decision-making to risk management and innovation, success hinges on how well you harness it.**
+**Data is more than an asset—it’s the engine behind every smart decision, risk calculation and growth strategy. From real-time decision-making to risk management and innovation, success hinges on how well you harness it.**
 
-Generative AI and Oracle Database 23ai makes it possible to unlock deeper insights, faster—directly within your database.
+SeerGroup is a global conglomerate with multiple divisions. Each division buried in transactions, documents, and customer data. Their challenge is always the same: **decisions take too long** because data is scattered across silos and systems.
 
-In this hands-on workshop, you’ll build a Retail-focused GenAI solution using Oracle Database 23ai.
+This workshop shows how SeerGroup tackles that problem with Oracle Database 23ai + OCI Generative AI. By **keeping data in one place**, they cut out fragile integrations and give analysts, engineers, and managers a **single platform** for smarter approvals, faster investigations, and clearer customer answers.
 
-To get things started we invite you to watch the introduction video to see the demo in action:
-
-[](videohub:1_uz44mxvt:medium)
-
-You will:
-  *	Use **native Vector Search** to query and analyze structured data, documents, and images—without moving data across platforms.
-
-  *	Combine your **enterprise data with large language models (LLMs)** using Retrieval-Augmented Generation (RAG) to answer natural language questions with context-aware accuracy.
-
-  * Automate real-world retail workflows, like return authorizations, by **embedding and querying unstructured data** in real time.
-
-By the end of this workshop, you’ll understand how Oracle Database 23ai helps financial organizations:
-
-  * ✅ Accelerate time-to-insight with centralized, AI-ready data
-
-  * ✅ Build intelligent apps without specialized AI infrastructure
-
-  * ✅ Drive data-driven decisions with consistent, governed access
+You’ll see how SeerGroup’s teams can move from manual, fragmented workflows to AI-powered applications—and you’ll build the same capabilities yourself in the labs that follow.
 
 
-**Start building where your data already lives—with Oracle Database 23ai.** 
+✅ **Start with the demo! (Lab 1)**
 
-**Your next breakthrough is just a lab away!**
+Step into SeerGroup’s Retail division as a Return Authorization Specialist. You’ll use an AI-powered returns app built on Oracle Database 23ai to:
 
-#### ➡️ **Start with the demo! (Lab 1)**
+* Process return requests with AI Vector Search, Graph analytics, and RAG
 
-Check out the demo to see how Generative AI and Vector Search in the database, can operate against multiple types of data—empowering you to build real applications and make faster, smarter decisions. The best part? **No setup required**—just start with Lab 1 and follow the guide. You can explore guided use cases or experiment on your own using the demo application:
+* See how Generative AI compares claims against past returns, loyalty tiers, and risk scores in seconds
 
-  * ✅ Login as a Return Authorization Specialist
+* Approve, deny, or pend returns with AI-generated explanations and decision letters
 
-  * ✅ Review customers that have been recommended by the system to be approved or denied for a return
+* Update return records using JSON Duality Views, ensuring order and customer data stays consistent
 
-  * ✅ Upload information to a customer's profile
+This story shows how Seer Retail uses Oracle Database 23ai and OCI Generative AI to speed up returns, cut fraud, and deliver consistent customer experiences—all within a single converged database.
 
-#### ➡️ **Start coding! (Labs 2-4)**
+✅ **What’s next (Labs 2–5)**
 
-Lab 2 describes how to get access to our browser-based development environment. Make sure to check it out before continuing to Lab 3 and 4, where you will get hands-on and start interacting with Python with Oracle Database 23ai:
+After the demo, you’ll switch roles to developer. In the next labs you’ll connect to Oracle Database 23ai, shape data into JSON Duality Views, build a retrieval-augmented application, and extend it with reusable MCP tools. By the end, you’ll see how SeerGroup industries can move from siloed processes to intelligent, AI-driven applications—all on one platform.
 
-  * ✅ Connect to the database using Python
+* **Lab 2 – Connect to your environment**
+Log in to the JupyterLab IDE where you’ll write Python and run your code.
 
-  * ✅ Run SQL queries with Python
+* **Lab 3 – Build the data foundation**
+Use Python with Oracle Database 23ai to create tables, shape them into JSON Duality Views, and interact with them using both SQL and MongoDB-style syntax—laying the groundwork for AI workflows across SeerGroup.
 
-  * ✅ Create JSON Duality Views
+* **Lab 4 – Implement RAG**
+Construct a working AI application. Pull customer and grid data, generate recommendations with OCI Generative AI, chunk and vectorize the results, and answer follow-up questions using Vector Search + RAG.
 
-  * ✅ Connect to the database using a Mongo API driver
+* **Lab 5 – Extend with MCP tools**
+Wire Oracle Database 23ai and OCI Generative AI into reusable MCP tools. Call them from notebooks, chain them together into workflows, and even register your own tool for SeerGroup’s finance, retail, healthcare, or energy teams.
 
-  * ✅ Use the Mongo API to query and update data
-
-  * ✅ Implement AI Vector Search
-
-  * ✅ Implement retrieval-augmented generation (RAG) using Oracle Database 23ai
-
-#### ➡️ **Start experimenting! (Lab 5)**
-
-You can also experiment with the code in your own environment. The workshop environment is flexible and allows you try out different things: Start building your own version of the prior authorization application!
-
-  * ✅ Vectorize customer data from one table into another
-
-  * ✅ Verify the data was vectorized
-
-  * ✅ Implement a similarity search
+By the end, you’ll have a complete toolkit—from clean data to live AI apps to composable tools—that shows how SeerGroup industries can turn their data into intelligent applications.
 
 ### Objectives
 
-* Learn how Oracle Database 23ai capabilities can be used to automate and enhance the prior authorization process, justifying medical-necessity decisions
+Objectives
 
-* Start coding with Python and Oracle's Python driver `oracledb`
+* Build and query data with Python + Oracle Database 23ai
 
-* Learn how to implement and interact with Oracle Database 23ai's new features using Python
+* Shape relational data into documents using JSON Duality Views
 
-* Implement a working example of retrieval-augmented generation (RAG) using Oracle Database 23ai
+* Run Vector Search, Graph analytics, and RAG directly in the database
 
-* Try a coding challenge and implement a solution using AI Vector Search
+* Extend apps with OCI Generative AI and MCP tools
+
+* Deliver industry-grade solutions for SeerGroup’s divisions
 
 ### Prerequisites
 
@@ -97,6 +72,6 @@ This lab assumes you have:
 * [Oracle Database 23ai Documentation](https://docs.oracle.com/en/database/oracle/oracle-database/23/)
 
 ## Acknowledgements
-* **Authors** - Linda Foinding, Francis Regalado, Kamryn Vinson
-* **Contributors** - Kevin Lazarz, Hanna Rakhsha, Ley Sylvester, Uma Kumar
-* **Last Updated By/Date** - Uma Kumar, July 2025
+* **Authors** - Uma Kumar
+* **Contributors** - Kevin Lazarz, Linda Foinding
+* **Last Updated By/Date** - Uma Kumar, August 2025
