@@ -87,7 +87,10 @@ mvn spring-boot:run
 ```
 
 You may now proceed to the next lab.
+<<<<<<< HEAD
 >>>>>>> upstream/main
+=======
+>>>>>>> 4d26612985c944e91b6e29d0307a27b4a247623f
 
 ## Acknowledgements
 

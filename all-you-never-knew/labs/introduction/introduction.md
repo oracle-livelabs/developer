@@ -36,9 +36,13 @@ This lab assumes you have:
 * The necessary tools and runtimes to build Spring Boot applications, including Maven and a Java Developer Kit (JDK 21 recommended)
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 You may now proceed to the next lab.
 >>>>>>> upstream/main
+=======
+You may now proceed to the next lab.
+>>>>>>> 4d26612985c944e91b6e29d0307a27b4a247623f
 
 ## Acknowledgements
 

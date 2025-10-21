@@ -125,7 +125,10 @@ select * from related_ticket;
 You should see a relationship between the IDs of both tickets created in Task 2.
 
 You may now proceed to the next lab.
+<<<<<<< HEAD
 >>>>>>> upstream/main
+=======
+>>>>>>> 4d26612985c944e91b6e29d0307a27b4a247623f
 
 ## Acknowledgements
 
