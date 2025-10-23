@@ -4,7 +4,7 @@
 
 This lab will show you how to setup and run the Seer Equities Loan Approval application on OCI. This guide is designed to walk you through the complete setup process, which includes provisioning required services and installing dependencies enabling you to launch and run the application on OCI.
 
-The document is structured to help you meet all prerequisites, configure both the Autonomous Database and the OCI Generative AI Service, and troubleshoot any issues that may arise during setup. Whether you're new to Oracle Cloud Infrastructure or simply deploying for development and testing, this step-by-step guide will ensure a smooth setup experience.
+The document is structured to help you meet all prerequisites, configure both the Autonomous AI Database and the OCI Generative AI Service, and troubleshoot any issues that may arise during setup. Whether you're new to Oracle Cloud Infrastructure or simply deploying for development and testing, this step-by-step guide will ensure a smooth setup experience.
 
 Estimated Time: 60 minutes
 
@@ -12,7 +12,7 @@ Estimated Time: 60 minutes
 
 By the end of this section, you will be able to:
 
-- Provision and connect to an OCI VM and an Oracle Autonomous Database.
+- Provision and connect to an OCI VM and an Oracle Autonomous AI Database.
 
 - Set up a Python-based local development environment.
 
@@ -234,19 +234,19 @@ Your default security list should look like the below screenshot.
 -->
 
 
-## Task 3: Provision an Autonomous Database
+## Task 3: Provision an Autonomous AI Database
 
-The application is built for Autonomous Database. Follow the steps to provision an Oracle Autonomous Transaction Database.
+The application is built for Autonomous AI Database. Follow the steps to provision an Oracle Autonomous Transaction Database.
 
-1. Click the navigation menu in the upper left of the OCI console, choose **Oracle Database** then **Autonomous Database**.
+1. Click the navigation menu in the upper left of the OCI console, choose **Oracle AI Database** then **Autonomous AI Database**.
 
-   ![Choose autonomous database](./images/choose-autonomous.png " ")
+   ![Choose Autonomous AI Database](./images/choose-autonomous.png " ")
 
-2. Verify that the filter option reflects the correct compartment and click the **Create Autonomous Database** button.
+2. Verify that the filter option reflects the correct compartment and click the **Create Autonomous AI Database** button.
 
-   ![Create Autonomous Database](./images/create-adb.png " ")
+   ![Create Autonomous AI Database](./images/create-adb.png " ")
 
-3. Use the information in the table below to fill out the **Create Autonomous Database Serverless** form. Proceed to the next step for instructions on setting up **Network Access**.
+3. Use the information in the table below to fill out the **Create Autonomous AI Database Serverless** form. Proceed to the next step for instructions on setting up **Network Access**.
 
     | Field Name | Input |
     | ------------- | ------------ |
@@ -254,24 +254,24 @@ The application is built for Autonomous Database. Follow the steps to provision 
     | Database Name | SeerATP    |
     | Compartment | Verify correct compartment    |
     | Workload Type | ATP    |
-    | Database Version | 23ai |
+    | Database Version | 26ai |
     | ECPU Count | 2   |
     | Password | Password1234!    |
     {: title="ADB configuration details overview"}
 
-   ![Create Autonomous Database form](./images/create-adb-form.png " ")
+   ![Create Autonomous AI Database form](./images/create-adb-form.png " ")
 
 1. In the **Network access** section, choose **Secure access from allowed IPs and VCNs only**. In the **IP notation type** drop-down, choose **CIDR block**. For values, enter **0.0.0.0/0**. Verify that **Require mutual TLS (mTLS) authentication** is disabled. Click the **Create** button.
 
-   ![Create Autonomous Database form](./images/atp-security-mtls.png " ")
+   ![Create Autonomous AI Database form](./images/atp-security-mtls.png " ")
 
 2. The ATP Database will enter the provisioning state.
 
-    ![Provisioning an Autonomous Database instance](./images/provisioning-atp.png " ")
+    ![Provisioning an Autonomous AI Database instance](./images/provisioning-atp.png " ")
 
 3. Once the state changes to **Available**, the Autonomous Transaction Processing database is ready to use!
 
-    ![Provisioning an Autonomous Database instance](./images/atp-detail-review.png " ")
+    ![Provisioning an Autonomous AI Database instance](./images/atp-detail-review.png " ")
 
 ## Task 5: Setting up the Local Environment
 
@@ -370,7 +370,7 @@ Next you'll create an environment file for the application.
 
 18. The database username should be 'admin'. Use the password that you assigned to the admin user. (Password1234!). Make sure all the information you enter into the file stays between the quotes.
 
-19. Find your database connection string by selecting navigating to **Oracle Database**, choose **Autonomous Database**, then choose the ATP you created earlier in the lab, **SeerATP**. At the top of the screen, click the button labeled **Database Connection**.
+19. Find your database connection string by selecting navigating to **Oracle AI Database**, choose **Autonomous AI Database**, then choose the ATP you created earlier in the lab, **SeerATP**. At the top of the screen, click the button labeled **Database Connection**.
 
     ![Select Database Connection](./images/db-connection.png " ")
 
@@ -378,9 +378,9 @@ Next you'll create an environment file for the application.
 
     ![Copy Connection String](./images/copy-connection-string.png " ")
 
-21. Copy your Autonomous Database Name and OCID and paste them into your .env file.
+21. Copy your Autonomous AI Database Name and OCID and paste them into your .env file.
 
-    ![Copy your Autonomous Database OCID](./images/adb-ocid.png " ")
+    ![Copy your Autonomous AI Database OCID](./images/adb-ocid.png " ")
 
 22. While still in the ATP details screen, click the **Tool Configuration** tab. Copy the Graph Studio Public access URL and paste it into the .env file.
 
@@ -619,7 +619,7 @@ Streamlit is up and running. Press Control + C on your keyboard to escape.
 
     ![Application start screen](./images/application-start-screen.png " ")
 
-Congratulations, you have built and configured the Loan Management application using Oracle Cloud Insfrastructure, Oracle Autonomous Database, and Oracle GenAI!
+Congratulations, you have built and configured the Loan Management application using Oracle Cloud Insfrastructure, Oracle Autonomous AI Database, and Oracle GenAI!
 
 
 ## Troubleshooting
@@ -641,7 +641,7 @@ If you encounter any issues during the setup, here are a few common troubleshoot
 
 * **Dependencies Installation Issues**: Double-check the requirements.txt file to ensure it contains the correct package names. If a specific package fails, you can try installing it manually with pip install <package-name>.
 
-* **Database Connection Errors**: Ensure that the database credentials in the .env file are correct and that you have access to the Autonomous Database. 
+* **Database Connection Errors**: Ensure that the database credentials in the .env file are correct and that you have access to the Autonomous AI Database. 
 
 ## Additional Notes
 

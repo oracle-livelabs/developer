@@ -30,7 +30,7 @@ The SeerEquities loan application runs in an **Oracle Cloud Infrastructure (OCI)
 
 - The Application Subnet connects to the Oracle Services Network via the Service Gateway, enabling access to:
 
-    - Autonomous Database Serverless
+    - Autonomous AI Database Serverless
 
     - OCI Generative AI Services
 

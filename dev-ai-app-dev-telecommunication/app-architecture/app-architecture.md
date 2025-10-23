@@ -30,7 +30,7 @@ The SeerEquities loan application runs in an **Oracle Cloud Infrastructure (OCI)
 
 - The Application Subnet connects to the Oracle Services Network via the Service Gateway, enabling access to:
 
-    - Autonomous Database Serverless
+    - Autonomous AI Database Serverless
 
     - OCI Generative AI Services
 
@@ -53,7 +53,7 @@ A key feature that should be highlighted is the ability to connect the database 
 
 ### **AI Vector Search**
 
-Oracle AI Vector Search, a feature of Oracle Database 23ai, enables fast, efficient searches over AI-generated vectors stored in the database. It supports multiple indexing strategies and scales to large datasets. With it, Large Language Models (LLMs) can query private business data using natural language, returning more accurate, context-aware results. Developers can also add semantic search to new or existing applications with minimal effort. A **unique feature** of Oracle AI Databaseis its capability to host ONNX models and deploy them as a database function. This feature allows you to host ONNX models and deploy them as a database function, enabling seamless integration with Oracle Database 23ai.
+Oracle AI Vector Search, a feature of Oracle AI Database, enables fast, efficient searches over AI-generated vectors stored in the database. It supports multiple indexing strategies and scales to large datasets. With it, Large Language Models (LLMs) can query private business data using natural language, returning more accurate, context-aware results. Developers can also add semantic search to new or existing applications with minimal effort. A **unique feature** of Oracle AI Databaseis its capability to host ONNX models and deploy them as a database function. This feature allows you to host ONNX models and deploy them as a database function, enabling seamless integration with Oracle AI Database.
 
 **Where is it used**: AI Vector Search is a key feature of the demo app and is also a topic in Lab 4 and Lab 5. In Lab 4, you use AI Vector Search to implement a RAG process, while in Lab 5, you specifically implement similarity search.
 
