@@ -323,9 +323,10 @@ You’ve laid the foundation for SeerHolding’s agentic AI platform: turning Or
 
 ## Learn more
 
-- [User's guide SQLcl MCP Server](https://docs.oracle.com/en/database/oracle/sql-developer-command-line/25.2/sqcug/using-oracle-sqlcl-mcp-server.html)
-- [Jeff Smith's Getting Started Guide](https://docs.oracle.com/en/database/oracle/sql-developer-command-line/25.2/sqcug/using-oracle-sqlcl-mcp-server.html)
-- 
+  [User's guide SQLcl MCP Server](https://docs.oracle.com/en/database/oracle/sql-developer-command-line/25.2/sqcug/using-oracle-sqlcl-mcp-server.html)
+
+  [Jeff Smith's Getting Started Guide](https://docs.oracle.com/en/database/oracle/sql-developer-command-line/25.2/sqcug/using-oracle-sqlcl-mcp-server.html)
+
 
 ## Acknowledgements
 * **Authors** -  Kevin Lazarz
