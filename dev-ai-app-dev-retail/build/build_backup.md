@@ -2,7 +2,7 @@
 
 ## Introduction
 
-In this lab, you will learn how to **build a generative AI-powered loan recommendation system using Oracle Database and OCI Generative AI**. This application will act as a flexible template that can be adapted to a wide range of use cases. Oracle Database 23Ai will function as the vector data, where you'll store important context for the model to use when generating responses. This approach allows you to create a robust system that retrieves relevant data and combines it with the power of generative AI to deliver accurate, up-to-date answers based on your specific business needs.
+In this lab, you will learn how to **build a generative AI-powered loan recommendation system using Oracle Database and OCI Generative AI**. This application will act as a flexible template that can be adapted to a wide range of use cases. Oracle AI Database will function as the vector data, where you'll store important context for the model to use when generating responses. This approach allows you to create a robust system that retrieves relevant data and combines it with the power of generative AI to deliver accurate, up-to-date answers based on your specific business needs.
 
 Estimated Time: 20 minutes
 
@@ -73,7 +73,7 @@ This section sets up a secure connection to an Oracle database by importing nece
 
 **About Oracle AI Vector Search**
 
-Oracle AI Vector Search is a feature of Oracle Database 23ai that enables efficient searching of AI-generated vectors stored in the database. It supports fast search using various indexing strategies and can handle massive amounts of vector data. This makes it possible for Large Language Models (LLMs) to query private business data using a natural language interface, helping them provide more accurate and relevant results. Additionally, AI Vector Search allows developers to easily add semantic search capabilities to both new and existing applications.
+Oracle AI Vector Search is a feature of Oracle AI Database that enables efficient searching of AI-generated vectors stored in the database. It supports fast search using various indexing strategies and can handle massive amounts of vector data. This makes it possible for Large Language Models (LLMs) to query private business data using a natural language interface, helping them provide more accurate and relevant results. Additionally, AI Vector Search allows developers to easily add semantic search capabilities to both new and existing applications.
 
 **Code Highlight: Onnx Model**
 
@@ -107,7 +107,7 @@ Generative AI excels at creating text responses based on large language models (
 
 **About Property Graph**
 
-In Oracle Database 23ai we can create property graphs inside the database. These property graphs allow us to map the vertices and edges to new or existing tables, external tables, materialized views or synonyms to these objects inside the database. The property graphs are stored as metadata inside the database meaning they don't store the actual data. Rather, the data is still stored in the underlying objects and we use the SQL/PQG syntax to interact with the property graphs.
+In Oracle AI Database we can create property graphs inside the database. These property graphs allow us to map the vertices and edges to new or existing tables, external tables, materialized views or synonyms to these objects inside the database. The property graphs are stored as metadata inside the database meaning they don't store the actual data. Rather, the data is still stored in the underlying objects and we use the SQL/PQG syntax to interact with the property graphs.
 
 Property graphs make the process of working with interconnected data, like identifying influencers in a social network, predicting trends and customer behavior, discovering relationships based on pattern matching and more by providing a more natural and efficient way to model and query them.
 
@@ -127,7 +127,7 @@ Property graphs make the process of working with interconnected data, like ident
 
 **About JSON Duality View**
 
-JSON Relational Duality is a landmark capability in Oracle Database 23ai, providing game-changing flexibility and simplicity for Oracle Database developers. This feature overcomes the historical challenges developers have faced when building applications using the relational or document models.
+JSON Relational Duality is a landmark capability in Oracle AI Database, providing game-changing flexibility and simplicity for Oracle Database developers. This feature overcomes the historical challenges developers have faced when building applications using the relational or document models.
 
 JSON Relational Duality helps to converge the benefits of both document and relational worlds. Developers now get the flexibility and data access benefits of the JSON document model, plus the storage efficiency and power of the relational model. The new feature enabling this functionality is JSON Relational Duality View
 
@@ -140,7 +140,7 @@ This section dynamically updates customer data in our clients\_dv table by build
 
 ## Learn More
 
-* [Oracle Database 23ai Documentation](https://docs.oracle.com/en/database/oracle/oracle-database/23/)
+* [Oracle AI Database Documentation](https://docs.oracle.com/en/database/oracle/oracle-database/23/)
 
 ## Acknowledgements
 * **Authors** - Francis Regalado, Linda Foinding
