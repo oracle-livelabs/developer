@@ -46,7 +46,6 @@ Estimated Time: 60 minutes
 ### Prerequisites
 
 - Completed Lab 2 (Jupyter environment)
-- Lab 3–4 (DB + RAG foundation)
 
 ## Task 1: Review MCP in a nutshell (and the tools our MCP server exposes)
 
