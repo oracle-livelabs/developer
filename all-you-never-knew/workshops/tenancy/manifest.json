@@ -1,0 +1,55 @@
+{
+    "workshoptitle": "Everything You Never Knew About Oracle",
+    "help": "livelabs-help-devdb_us@oracle.com",
+    "tutorials": [
+        {
+            "title": "Introduction",
+            "description": "Everything You Never Knew About Oracle.",
+            "filename": "../../labs/introduction/introduction.md"
+        },
+        {
+            "title": "Get Started",
+            "description": "This is the prerequisites for customers using Free Trial and Paid tenancies, and Always Free accounts (if applicable). The title of the lab and the Contents Menu title (the title above) match for Prerequisite lab. This lab is always first.",
+            "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/cloud-login.md"
+        },
+        {
+            "title": "Lab 1: Microservices with Oracle",
+            "description": "Get to know the Customer Service microservice, Spring Boot and Oracle",
+            "filename": "../../labs/microservices/microservices.md"
+        },
+        {
+            "title": "Lab 2: Explore REST capabilities",
+            "description": "Explore the Support Ticket service and Spring Boot REST capabilities with Oracle",
+            "filename": "../../labs/rest/rest.md"
+        },
+        {
+            "title": "Lab 3: Process events with TxEventQ",
+            "description": "Learn about event-driven processing with TxEventQ and OKafka",
+            "filename": "../../labs/events/events.md"
+        },
+        {
+            "title": "Lab 4: Explore AI functionality",
+            "description": "Learn about Oracle Vector Database and OCI GenAI service",
+            "filename": "../../labs/ai/ai.md"
+        },
+        {
+            "title": "Lab 5: Explore JSON Relational Duality Views",
+            "description": "Learn about xxx",
+            "filename": "../../labs/json/json.md"
+        },
+        {
+            "title": "Lab 6: Explore Oracle REST Data Services",
+            "filename": "../../labs/ords/ords.md"
+        },
+        {
+            "title": "Cleanup the environment",
+            "description": "Lab where cleanup the deployed environment",
+            "filename": "../../labs/cleanup/cleanup.md"
+        },
+        {
+            "title": "Need Help?",
+            "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+            "filename":"https://oracle-livelabs.github.io/common/labs/need-help/need-help-livelabs.md"
+        }
+    ]
+}

@@ -1,0 +1,53 @@
+{
+    "workshoptitle": "Build a GenAI-Powered Financial Services Loan Approval Application with Oracle Database 23ai",
+    "help": "livelabs-help-database_us@oracle.com",
+    "tutorials": [
+        {
+            "title": "Introduction",
+            "description": "The Introduction is always first. The title and contents menu title match for the Introduction.",
+            "filename": "../../introduction/introduction-event.md"
+        },
+        {
+            "title": "Lab 1: Connect to the Development Environment",
+            "description": "This is a step-by-step guide showcasing how the demo instance is navigated",
+            "filename": "../../connect-to-env/connect-to-env.md"
+        },
+        {
+            "title": "Lab 2: Coding Basics on Oracle Database 23ai",
+            "description": "Some coding examples",
+            "filename": "../../codingbasics/codingbasics.md"
+        },
+        {
+            "title": "Lab 3: Step by Step - Implement RAG with Oracle Database 23ai",
+            "description": "This is a step-by-step guide showcasing how the demo instance is navigated",
+            "filename": "../../build/build.md"
+        },
+        {
+            "title": "Lab 4a: Coding Challenge - AI Vector Search",
+            "description": "This is a step-by-step guide showcasing how the demo instance is navigated",
+            "filename": "../../ai-exercise/ai-vector-search-challenge.md"
+        },
+        {
+            "title": "Lab 4b: Coding Challenge - AI Vector Search - Guided",
+            "description": "This is a step-by-step guide showcasing how the demo instance is navigated",
+            "filename": "../../ai-exercise/ai-vector-search-challenge-answers.md"
+
+        },
+        {
+            "title": "Lab 5: Run the app in your own environment",
+            "description": "This is a step-by-step guide showcasing how the demo instance is navigated",
+            "filename": "../../local-tenancy/local-tenancy.md"
+
+        },
+        {
+            "title": "Demo Storyboard",
+            "description": "Labs that follow the introduction are numbered, starting with Lab 1",
+            "filename": "../../user-story/user-story.md"
+        },
+        {
+            "title": "Need Help?",
+            "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+            "filename": "https://oracle-livelabs.github.io/common/labs/need-help/need-help-freetier.md"
+        }
+    ]
+}

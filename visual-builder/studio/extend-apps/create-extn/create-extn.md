@@ -29,12 +29,12 @@ This lab assumes you have:
 
 ## Task 1: Access VB Studio from Oracle Cloud Applications
 
-Users with [the right roles](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/visual-builder/visualbuilder-administration&id=GUID-3C9A957B-24A5-4CEF-84FF-B7D9D6F1C3CA) can access VB Studio from their Oracle Cloud Applications' TEST instance.
+Users with [the right roles](https://docs.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/visual-builder/visualbuilder-administration&id=GUID-3C9A957B-24A5-4CEF-84FF-B7D9D6F1C3CA) can access VB Studio from their Oracle Cloud Applications' TEST instance.
 
 1. Log in to your Oracle Cloud Applications instance.
   ![The Oracle Cloud Applications sign-in page is shown. The User ID field shows john.dunbar, the Password field is empty.](images/login.png)
 
-2. Click the menu ![Hamburger menu icon](images/icon-menu.png) in the upper left corner, navigate to **Configuration**, then select **Visual Builder** (synonymous with VB Studio).
+2. Click the navigation menu ![Hamburger menu icon](images/icon-menu.png) in the upper left corner, navigate to **Configuration**, then select **Visual Builder** (synonymous with VB Studio).
   ![This image shows the left navigator menu in an Oracle Cloud Applications instance. The Configuration submenu item is expanded and the Visual Builder menu item is highlighted.](images/configuration-vb.png)
 
 3. When VB Studio opens on the Organization page, select the project you want to use to develop extensions for your Oracle Cloud Application. If you don't have a project, create one as described in the next task.
@@ -68,7 +68,9 @@ Create a project to manage the tools and processes you need to develop an extens
 
     ![The Project Home page includes a Workspaces area, Environments area, and a Recent Activities feed. On the left, the Organization, Project Home, Workspaces, Git, Merge Requests, Builds, Environments, and other project components show.](images/project-home.png "Project Home page")
 
-    Because we created a project with no preconfigured settings or content, we need to create what we need, by defining an environment that connects to an Oracle Cloud Applications instance, then creating a workspace with a Git repository.
+      **Tip:** If you want to keep the left navigation menu clutter-free, showing only frequently used items, click ![Edit icon](images/icon-edit.png), select the items you want under User, and click **Save**. This tutorial commonly uses Workspaces, Git, Merge Requests, Builds, and Environments.
+
+    Because we created a project with no preconfigured settings or content, we need to create what we need: an environment that connects to an Oracle Cloud Applications instance and a workspace with a Git repository.
 
 ## Task 3: Define an environment
 
@@ -82,14 +84,13 @@ Define an environment that points to your Oracle Cloud Applications development 
 
 3. On the Environments page, click **+ Add Instance** to add an Oracle Cloud Applications instance to your **DEV** environment.
 
-4. Click **Oracle Cloud Applications** under Instance Type to look up Oracle Cloud App instances in your tenancy. Select the instance you want and click **Add**.
+4. With **Oracle Cloud Applications** selected under Instance Type, select the Oracle Cloud App instance you want in your tenancy, and click **Add**.
 
     ![The Add Service Instance dialog with Instance Type set to Oracle Cloud Applications and Add Instance Using set to Identity Domain. With these options, a Fusion Applications Cloud Service of type Oracle Cloud Application IDCS Resource is shown. This instance is selected. An Add button is also shown.](images/env-add-service-instances.png "Environments page")
 
    Wait for the instance's Status to turn green, from 'Unknown' to 'Available'.
 
 5. Click ![Project Home icon](images/vbs-project-home-icon.png) **Project Home** in the navigation menu to see your DEV environment now defined.
-
 
 ## Task 4: Create a workspace
 
@@ -137,7 +138,7 @@ Now take a look at the header:
 
 * On the left is the name of your current workspace, **DemoEmpSearch**; next to it is the project's Git repository (**DemoEmpSearch.git**) and the branch currently associated with your workspace (**branch1**).
 
-  The **DemoEmpSearch.git** repo stores your extension's files and is known as your project's *remote* repository. It includes the **main** and **branch1** branches, created with initial content for your extension. The **main** branch is the default branch created when a new repo is generated and is the project's source of truth. The **branch1** you see in your workspace is a working copy of your remote **branch1** and serves as your *local* repository. It initially has the same set of source files as the remote branch, but will include the changes you make as you develop the extension.
+  The **DemoEmpSearch.git** repo stores your extension's files and is known as your project's *remote* repository. If you were to look at your Git repo, you'll see it includes the **main** and **branch1** branches, created with initial content for your extension. The **main** branch is the default branch created when a new repo is generated and is the project's source of truth. The **branch1** you see in your workspace is a working copy of your remote **branch1** and serves as your *local* repository. It initially has the same set of source files as the remote branch, but will include the changes you make as you develop the extension.
 
 * Elements on the right let you perform various other actions, such as undo your recent changes or search the Git repository for a file. This workshop primarily demonstrates the options to preview your App UI and publish changes. If you make a mistake during this workshop, click ![Undo icon](images/icon-undo.png) to back out of the last step you did, or the arrow next to it to undo more than one step.
 
@@ -148,4 +149,4 @@ You may now **proceed to the next lab**.
 ## Acknowledgements
 
 * **Author** - Sheryl Manoharan, VB Studio User Assistance, May 2023
-* **Last Updated By/Date** - Sheryl Manoharan, January 2025
+* **Last Updated By/Date** - Sheryl Manoharan, July 2025

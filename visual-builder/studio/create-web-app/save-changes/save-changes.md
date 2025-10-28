@@ -46,7 +46,9 @@ Let's group the changes you've made so far in your local branch for a commit. Id
 
     ![The Commit dialog is shown with an example commit message. The Commit button is selected.](images/commit.png "")
 
-    A **Git commit successful** message appears in the bottom right corner.
+    A **Git commit successful** message, which clears automatically after five seconds appears in the bottom right corner. 
+
+    (If you've missed a notification or want to review one again, click ![Notifications icon](images/icon-notifications.png) Notifications in the header to view all notifications from the last two days.)
 
 ## Task 2: Push changes to a remote branch
 
@@ -88,4 +90,4 @@ Now that your changes have been pushed, let's check them in the remote **hrbranc
 ## Acknowledgements
 
 * **Author** - Sheryl Manoharan, VB Studio User Assistance, November 2021
-* **Last Updated By/Date** - Sheryl Manoharan, January 2025
+* **Last Updated By/Date** - Sheryl Manoharan, July 2025
