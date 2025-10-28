@@ -2,7 +2,7 @@
 
 ## Introduction
 
-In this lab, we will perform a first vector store ingestion to test that it works. We will split & embed one document and store its vector embeddings inside the Oracle 23ai Database set up earlier. We will then be able to inspect the content of the tables that will be created.
+In this lab, we will perform a first vector store ingestion to test that it works. We will split & embed one document and store its vector embeddings inside the Oracle AI Database 26ai set up earlier. We will then be able to inspect the content of the tables that will be created.
 
 Estimated Lab Time: 15 minutes
 
@@ -38,7 +38,7 @@ In the *Split/Embed* tab, the framework allows you to upload various types of do
 
 1. Select your document source
 
-  Once the embedding model has been selected, scroll down to the *Load and Split Documents* section to upload the document you wish to store in your **Oracle Database 23ai**.
+  Once the embedding model has been selected, scroll down to the *Load and Split Documents* section to upload the document you wish to store in your **Oracle AI Database 26ai**.
 
   ![populate-vector-store](images/populate-vector-store.png)
 

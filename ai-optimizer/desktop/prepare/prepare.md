@@ -2,7 +2,7 @@
 
 ## Introduction
 
-In this lab, we will perform a first vector store ingestion to test that it works. We will split&embed one document and store its vector embeddings inside the Oracle 23ai Database set up earlier. We will then be able to inspect the content of the tables that will be created.
+In this lab, we will perform a first vector store ingestion to test that it works. We will split&embed one document and store its vector embeddings inside the Oracle 26ai Database set up earlier. We will then be able to inspect the content of the tables that will be created.
 
 Estimated Lab Time: 15 minutes
 
@@ -38,7 +38,7 @@ In the *Split/Embed* tab, the framework allows you to upload various types of do
 
 3. Select your document source
 
-    Once the embedding model has been selected, scroll down to the *Load and Split Documents* section to upload the document you wish to store in your **Oracle Database 23ai**.
+    Once the embedding model has been selected, scroll down to the *Load and Split Documents* section to upload the document you wish to store in your **Oracle Database 26ai**.
 
     ![populate-vector-store](images/populate-vector-store.png)
 
@@ -62,7 +62,7 @@ In the *Split/Embed* tab, the framework allows you to upload various types of do
 
 ## Task 2: Inspect the Vector DB
 
-Now that you've embedded your document, you can query the content of the Vector Store. In this example we will be using the SQL Developer plugin for VS Code, in order to connect to Oracle Database 23ai.    
+Now that you've embedded your document, you can query the content of the Vector Store. In this example we will be using the SQL Developer plugin for VS Code, in order to connect to Oracle Database 26ai.    
 
 In your VS Code IDE, click on the SQL Developer plugin icon to use it. Then, open a new SQL script and execute this sql command:
 
