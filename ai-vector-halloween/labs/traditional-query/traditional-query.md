@@ -1,5 +1,16 @@
 # Lab 3: Watson Attempts a Traditional Search
 
+## Introduction
+
+This lab walks you through the steps to perform a tradition keyword-based search using SQL in an Oracle Autonomous AI Database. You will learn to query fields for specific terms and interpret the results.
+
+Estimated Time: 10 minutes
+
+### Objectives
+
+In this lab, you will:
+* Perform a traditional keyword search in an Autonomous AI Database
+
 ## Task 1: Watson's Investigation - Traditional Keyword Search
 
 "Watson, why don't you take the first pass? I shall observe your methodology."
@@ -105,3 +116,12 @@ I paused, thinking back through my searches. "The theatrical equipment, yes. But
 "Holmes," I said with resignation, "I fear this case is beyond the reach of conventional methods. I cannot find suspects who aren't explicitly named in the evidence!"
 
 "On the contrary, Watson. You've demonstrated perfectly why modern crimes require modern methods. Your keyword searches found *information*, but they couldn't find *meaning*. You searched for a name and found nothing - but the evidence about the person was there all along, just described differently. Now, let me show you what happens when we search for concepts rather than words..."
+
+## Learn More
+
+* [Oracle Autonomous Database 23ai Documentation](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html)
+* [AI Vector Search in Oracle Database](https://docs.oracle.com/en/database/oracle/oracle-database/23/vecse/)
+
+## Acknowledgements
+* **Author** - Pat Shepherd, Senior Principal Database Product Manager
+* **Last Updated By/Date** - Pat Shepherd, October 2025
