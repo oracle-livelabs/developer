@@ -6,7 +6,7 @@ The **Oracle AI Optimizer and Toolkit** (the **AI Optimizer**) provides a stream
 
 * **GenAI**: Powers the generation of text, images, or other data based on prompts using pre-trained LLMs.
 * **RAG**: Enhances LLMs by retrieving relevant, real-time information allowing models to provide up-to-date and accurate responses.
-* **Vector Database**: A database, including Oracle Database 23ai, that can natively store and manage vector embeddings and handle the unstructured data they describe, such as documents, images, video, or audio.
+* **Vector Database**: A database, including Oracle AI Database 26ai, that can natively store and manage vector embeddings and handle the unstructured data they describe, such as documents, images, video, or audio.
 
 Estimated Time: 120 minutes
 
@@ -15,7 +15,7 @@ Estimated Time: 120 minutes
 In this workshop, you will learn how to:
 
 * Explore the AI Optimizer environment
-* Embed documents in a vector format within **Oracle Database 23ai**
+* Embed documents in a vector format within **Oracle AI Database 26ai**
 * Use Retrieval Augmented Generation (**RAG**) techniques
 * Experiment with different models, parameters and techniques
 * Evaluate model performances with the *Testbed* functionality

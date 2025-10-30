@@ -1,9 +1,17 @@
+<<<<<<< HEAD
+# Experimenting with Models, Parameters and Techniques
+
+## Introduction
+
+In this lab, we will  
+=======
 # JSON Relational Duality Views
 
 ## Introduction
 
 In this lab, we will enable JSON support for the customer service app using [JSON Relational Duality Views](https://docs.oracle.com/en/database/oracle/oracle-database/23/jsnvu/overview-json-relational-duality-views.html).
 
+>>>>>>> upstream/main
 
 Estimated Lab Time: 15 minutes
 
@@ -11,8 +19,13 @@ Estimated Lab Time: 15 minutes
 
 In this lab, you will:
 
+<<<<<<< HEAD
+* x
+* y
+=======
 * Create a JSON Relational Duality View for support tickets
 * Enable the customer service app's `json` profile
+>>>>>>> upstream/main
 
 ### Prerequisites
 
@@ -20,6 +33,17 @@ This lab assumes you have:
 
 * All previous labs successfully completed
 
+<<<<<<< HEAD
+## Task 1: Xyz
+
+Xyz
+
+
+## Learn More
+
+* x
+* y
+=======
 ## Task 1: Create a JSON Relational Duality View
 
 First, we'll create a JSON Relational Duality View for support tickets. Note that the duality view uses data from existing tables: `support_ticket` and `related_ticket`. Read/write access to the included tables is facilitated through the `@insert`, `@update`, and `@delete` annotations. 
@@ -95,6 +119,7 @@ You may now proceed to the next lab.
 ## Learn More
 
 * [JSON Relational Duality Views](https://docs.oracle.com/en/database/oracle/oracle-database/23/jsnvu/overview-json-relational-duality-views.html).
+>>>>>>> upstream/main
 
 ## Acknowledgements
 
