@@ -11,6 +11,8 @@ By the end of this lab, you’ll know how to build, share, and govern data produ
 
 Estimated Time: 30 minutes
 
+[Walkthrough video](videohub:1_46ajqew8:medium)
+
 ### Objectives
 
 In this Lab, you will:
@@ -23,8 +25,7 @@ In this Lab, you will:
 
 * **Create and publish** a data share
 
- 
-### Prerequisites 
+### Prerequisites
 
 * **For Share Providers**
 
@@ -95,7 +96,7 @@ In this Lab, you will:
 
 10. On the **Select Tables** page, choose the table to share with the **Risk Department**:
 
-      *  Select the **Share\_Loan\_Data\_Risk\_VW** table in the **Available Tables** column.
+      *  Select the **Shared\_Loan\_Data\_Risk\_VW** table in the **Available Tables** column.
       *  Click the **move (>)** button to add it to the **Shared Tables** column
 
       ![Define a Data Product Recipient](./images/select-items-for-share.png "Define a Data Product Recipient")
@@ -104,7 +105,7 @@ In this Lab, you will:
 
 11. In the **Recipients** section, lets define who we want to create this data share for by clicking **New Recipients**.
 
-   ![Define a Data Product Recipient](./images/define-data-product-share-recipient-10.png "Define a Data Product Recipient")
+      ![Define a Data Product Recipient](./images/define-data-product-share-recipient-10.png "Define a Data Product Recipient")
 
 12. In the **Create Share Recipient** window, enter the following:
 
@@ -118,7 +119,7 @@ In this Lab, you will:
 
 13. Back on the **Create Share** page, select the newly created recipient from the list of recipients.
 
-   ![Define a Data Product Recipient](./images/selectrecipientdrop.png "Define")
+      ![Define a Data Product Recipient](./images/selectrecipientdrop.png "Define")
 
 14. Click the **Copy** icon to copy the recipient's activation link to your clipboard.
 
@@ -128,11 +129,11 @@ In this Lab, you will:
   
 15. Now, publish your share by clicking the **Publish** button from the actions menu.
 
-   ![publish Data Product ](./images/publishshare.png "")
+      ![publish Data Product ](./images/publishshare.png "")
 
 16. This will turn the Share Icon green with a state of Published Share.  
 
-   ![created Data Product ](./images/sharecreated.png "")
+      ![created Data Product ](./images/sharecreated.png "")
 
    >***Congratulations!!!*** You’ve just **created and published a data product share**. <br> 
    By defining the share, selecting the right data, and authorizing a recipient, you’ve set up a **governed, reusable pipeline for cross-team collaboration**.
@@ -143,11 +144,11 @@ In this Lab, you will:
 1. **Download the Activation Link Profile for the Data Share** that we will use in the upcoming lab <br>
 Paste the activation link you copied earlier into a separate browser tab and click **Get Profile Information** to download the recipient profile file (The default name is `delta_share_profile.json`).
 
->If you experience an error with your activation link don't worry, the steps below will show you how to get a new copy and try again.
+>If you experience an error with your activation link don't worry, you can get a new link in step 3 below and try again.
 
    ![Data Product activation link](./images/Paste-activation-link-in-window.png "")
 
-2. A list of **share recipients** and their **Profile Activation link** can also be retrieved from the **Provide Share** page, by clicking the **Actions** icon next to your data product share. <br> Then selecting **Recipients and Profiles**.
+2. You can get a list of the **share recipients** and their **Profile Activation link** from the **Provide Share** page, by clicking the **Actions** icon next to your data product share. <br> Then selecting **Recipients and Profiles**.
 
    ![created Data Product ](./images/manageshare.png "")
 
@@ -171,6 +172,6 @@ In this lab, you **created and shared a live, query-ready data product**—givin
 At SeersEquities, this means **smoother handoffs, faster risk evaluation, and better cross-team alignment**. For you, it means **mastering a modern data-sharing workflow that’s secure, scalable, and built for collaboration**.
 
 ## Acknowledgements
-* **Authors** - Eddie Ambler
-* **Last Updated By/Date** - September 2025, Eddie Ambler
+* **Authors** - Eddie Ambler, Senior Principal Product Manager, Database Product Management
+* **Last Updated By/Date** - Ramona Magadan, Technical Program Manager, Database Product Management, October 2025
 

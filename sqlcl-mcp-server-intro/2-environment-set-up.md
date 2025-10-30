@@ -23,9 +23,12 @@ This lab assumes you have:
 
 ## Task 1: Create a FreeSQL account
 
-1. From a new browser window/tab, navigate to [freesql.com](https://www.freesql.com).
+1. From a new browser window/tab, navigate to [https://freesql.com/?sqlnet=true](https://freesql.com/?sqlnet=true). 
+
+> **NOTE:** You may need to configure your Windows machine, so the default browser is Chrome (applies to LiveLabs-provided workstations only).
+
 2. Sign in with your existing Oracle account, or create a new account. 
-3. Log in to [freesql.com](https://www.freesql.com) and click the <strong>Connect with [rotating language option]</strong>
+3. After logging in to to [freesql.com](https://www.freesql.com) and click the <strong>Connect with [rotating language option]</strong>
 
    ![1-clicking-connect-with-button.png](./images/lab-2/1-clicking-connect-with-button.png " ")
  
@@ -33,7 +36,7 @@ This lab assumes you have:
 
 <p></p>
 
-4. Take note of your FreeSQL (or LiveSQL) credentials. You will need the following values:
+4. Take note of your FreeSQL credentials. You will need the following values:
 
       - Hostname
       - Port
@@ -43,11 +46,13 @@ This lab assumes you have:
 
 <p></p>
 
-> &#9872; **NOTE:** You must click the <strong>&circlearrowleft; Regenerate</strong> button to create a new password. Please save this password, as it will only be displayed once. 
+> &#9872; **NOTE:** You may click the <strong>&circlearrowleft; Regenerate</strong> button to create a new password. Please save this password, as it will only be displayed once. 
 > 
 > *Your password will **NOT** be saved or displayed across sessions!*
 
 ## Task 2: Install SQL Developer Extension for VS Code
+
+> **NOTE:** For today's session, skip to Step 2 of this task (applies to LiveLabs-provided workstation's only).
 
 1. Install SQL Developer Extension for VS Code; there are two installation options:
 
@@ -59,8 +64,6 @@ This lab assumes you have:
      ![4-search-for-sql-developer-web-vscode-extension](./images/lab-2/4-search-for-sql-developer-web-vscode-extension.png " ")
 
      ![5-post-installation-sql-developer-web-extension](./images/lab-2/5-post-installation-sql-developer-web-extension.png " ")
-
-<!-- 2. Restart your VS Code session -->
 
 2. Once installed, navigate to SQL Developer Extension for VS Code(located in your Activity Bar)
 
@@ -109,6 +112,8 @@ This lab assumes you have:
 <br></br>
 
 ## Task 4: Installing SQLcl
+
+> **NOTE:** For today's session, SQLcl has already been downloaded for you. You can locate the SQLcl product folder on your desktop (applies to LiveLabs-provided workstation's only). 
 
 1. Download and install SQLcl. Download two ways: 
 
@@ -176,6 +181,8 @@ This lab assumes you have:
 
 ## Task 5: Installing the Cline for VS Code Extension
 
+> **NOTE:** You may skip to Step 3 of this task, Cline has been pre-installed for you (applies to LiveLabs-provided workstation's only).
+
 1. Return to the VS Code Extensions tab and search for the Cline extension.
 
    ![13-searching-for-cline-vs-code-extension](./images/lab-2/13-searching-for-cline-vs-code-extension.png " ")
@@ -184,17 +191,33 @@ This lab assumes you have:
 
 3. Click the &#9878; scale icon to select an API provider. 
 
-   ![14-clicking-the-api-provider-icon-for-choosing-api-provider](./images/lab-2/14-clicking-the-api-provider-icon-for-choosing-api-provider.png " ")
+    >** NOTE:** You will choose **Oracle Code Assist**.
 
-   ![15-available-api-providers-from-the-drop-down-menu](./images/lab-2/15-available-api-providers-from-the-drop-down-menu.png " ")
+    ![14-clicking-the-api-provider-icon-for-choosing-api-provider](./images/lab-2/14-clicking-the-api-provider-icon-for-choosing-api-provider.png " ")
 
-4. Follow the prompts to enter in a valid API key. In this example Oracle Code Assist is used. In this example the user authenticates with a valid Oracle SSO instead of an API key. 
+    ![15-available-api-providers-from-the-drop-down-menu](./images/lab-2/15-available-api-providers-from-the-drop-down-menu.png " ")
+
+4. Navigate to the special Hands-on Lab registration page, to gain temporary access to Oracle Code Assist. 
+
+> **NOTE:** You will need the session's complete URL, you'll have copied this during today's intro.
+
+  ```sh
+  <copy>
+  https://bit.ly/3JcMw3C
+  </copy>
+  ```
+
+5. Once you have succesfully registered, return to the Cline extension, and click the **Sign in with Oracle Code Assist** button. Complete your SSO/2FA authorization. 
+
+6. From the available LLM models, select GPT-4.1.
+
+<!-- 4. Follow the prompts to enter in a valid API key. In this example Oracle Code Assist is used. In this example the user authenticates with a valid Oracle SSO instead of an API key. 
 
    ![16-example-showing-logging-in-to-oracle-code-assist-api-provider](./images/lab-2/16-example-showing-logging-in-to-oracle-code-assist-api-provider.png " ")
 
    You can also click the API name at the bottom of the Cline "Tasks" view, to review your API settings.  
    
-   ![17-successful-authentication-detail-of-the-default-model-used](./images/lab-2/17-clicking-on-mcp-servers-two-icon-navigation-options.png " ")
+   ![17-successful-authentication-detail-of-the-default-model-used](./images/lab-2/17-clicking-on-mcp-servers-two-icon-navigation-options.png " ") -->
 
 5. You'll configure the SQLcl MCP Server next.
 

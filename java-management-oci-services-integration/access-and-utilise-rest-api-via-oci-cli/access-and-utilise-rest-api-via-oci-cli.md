@@ -176,7 +176,7 @@ If successful, the following will be returned, with xx as your unique namespace.
 
   * Select the compartment and then the fleet. Refer to Workshop 1 if you have not setup a Fleet yet.
 
-  ![image of fleet page](images/check-fleet-ocid-page.png)
+  ![image of fleet page](images/select-compartment-fleet.png)
 
   * Copy the fleet OCID.
 
@@ -276,4 +276,4 @@ You may now **proceed to the next lab.**
 ## Acknowledgements
 
 * **Author** - Esther Neoh, Java Management Service
-* **Last Updated By** - Shuoqi Yang, May 2025
+* **Last Updated By** - Eugene Kazlou, September 2025

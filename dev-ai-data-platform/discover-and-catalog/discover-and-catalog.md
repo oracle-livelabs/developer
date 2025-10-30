@@ -8,6 +8,8 @@ You’ll use Oracle Autonomous Database's Catalog Tool to **discover, connect to
 
 Estimated Time: 30 minutes
 
+[Walkthrough video](videohub:1_vl8obrud:medium)
+
 ### Objectives
 
 * **Discover and browse data assets** across Autonomous Database and cloud object storage using the Catalog Tool
@@ -123,5 +125,5 @@ With these skills, you can now help the team evaluate new data faster, integrate
 
 ## Acknowledgements
 
-* **Author:** Eddie Ambler, Otis Barr
-* **Last Updated By/Date:** Otis Barr, August 2025
+* **Authors** - Eddie Ambler, Senior Principal Product Manager, Database Product Management
+* **Last Updated By/Date** - Ramona Magadan, Technical Program Manager, Database Product Management, October 2025

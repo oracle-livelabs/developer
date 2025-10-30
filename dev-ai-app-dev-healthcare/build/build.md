@@ -1,8 +1,8 @@
-# Step by step: Implement RAG with Oracle Database 23ai 
+# Step by step: Implement RAG with Oracle AI Database 
 
 ## Introduction
 
-Here you’ll create an end‑to‑end prior‑authorization system using Oracle Database 23ai and OCI Generative AI. After connecting to clinical datasets, you’ll analyze patient records and leverage an LLM to recommend approval, pend, or denial - complete with evidence citations. By applying Python skills from prior labs, you’ll assemble a fully integrated, AI‑driven healthcare review portal.
+Here you’ll create an end‑to‑end prior‑authorization system using Oracle AI Database and OCI Generative AI. After connecting to clinical datasets, you’ll analyze patient records and leverage an LLM to recommend approval, pend, or denial - complete with evidence citations. By applying Python skills from prior labs, you’ll assemble a fully integrated, AI‑driven healthcare review portal.
 
 This lab uses some of the basic coding samples you created in lab 3, such as `cursor.execute` and more.
 
@@ -12,7 +12,7 @@ Estimated Time: 30 minutes
 
 * Build the complete healthcare claim approval application as seen in lab 1
 * Use OCI Generative AI to generate personalized claim recommendations
-* Use Python to connect to an Oracle Database 23ai instance and run queries
+* Use Python to connect to an Oracle AI Database instance and run queries
 * Explore patient data and extract relevant information
 
 ### Prerequisites
@@ -26,16 +26,16 @@ This lab assumes you have:
 ## Task 1: Build the application in Jupyter Notebook
 >💡**Note**: Review Lab 2: Connect to the Development Environment for instructions on accessing JupyterLab.
 
-1. You should see a terminal pop up once you are logged in. 
+1. You should see a terminal pop up once you are logged in. (You can always create a new one by clicking on the blue + and select terminal)
 
     ![Open Terminal](./images/terminal.png " ")
 
 
-2. Navigate to the `dbinit` directory by running the following command.
+2. Navigate to the `~/dbinit` directory by running the following command.
 
     ```bash
     <copy>
-    cd dbinit
+    cd ~/dbinit
     </copy>
     ```
 
@@ -55,15 +55,15 @@ This lab assumes you have:
 
 ## Task 2: Connect to Database
 
-2. Click the **+** sign on the top left to open the Launcher.
+1. Click the **+** sign on the top left to open the Launcher.
 
     ![Open Launcher](./images/open-launcher.png " ")
 
-3. Open a new notebook.
+2. Open a new notebook.
 
     ![Open Notebook](./images/open-notebook.png " ")
 
-1. Copy the following code block into an empty cell in your notebook. This code block imports the `oracledb` Python driver and other libraries.
+3. Copy the following code block into an empty cell in your notebook. This code block imports the `oracledb` Python driver and other libraries.
 
     ```python
     <copy>
@@ -93,7 +93,7 @@ This lab assumes you have:
     </copy>
     ```
 
-2. Run the code block to connect to the database. 
+4. Run the code block to connect to the database. 
 
     ![Connect to Database](./images/connect-to-db.png " ")
 
@@ -343,7 +343,7 @@ Here’s what we’ll do:
 
 ## Task 5: Chunk & Store Recommendations
 
-To handle follow-up questions, you will enhance the system with an AI Guru powered by Oracle 23ai’s Vector Search and Retrieval-Augmented Generation (RAG). The AI Guru will be able to answer questions about the return application and provide recommendations based on the data.
+To handle follow-up questions, you will enhance the system with an AI Guru powered by Oracle's Vector Search and Retrieval-Augmented Generation (RAG). The AI Guru will be able to answer questions about the return application and provide recommendations based on the data.
 
 Before answering questions, we need to prepare the data by vectoring the claims recommendations. This step:
 
@@ -444,7 +444,7 @@ Now we must generate and store vector embeddings. This allows us to use Vector S
 
 In this step:
 
-   - **Generates Embeddings**: This is a new feature in Oracle Database 23ai that allows you to create embeddings directly within the database, eliminating the need for external tools or APIs. The `dbms_vector_chain.utl_to_embedding` function takes the recommendation text as input and returns an embedding vector.
+   - **Generates Embeddings**: This is a new feature in Oracle AI Database that allows you to create embeddings directly within the database, eliminating the need for external tools or APIs. The `dbms_vector_chain.utl_to_embedding` function takes the recommendation text as input and returns an embedding vector.
 
    - **Stores Embeddings**: We update `MEDICAL_CHUNK.CHUNK_VECTOR` by embedding each `CHUNK_TEXT` using `dbms_vector_chain.utl_to_embedding` with `DEMO_MODEL`. A short verification output is printed.
 
@@ -502,7 +502,7 @@ In this step:
 
     ![vector](./images/create-vector.png " ")
 
-## Task 7: Implement RAG with Oracle Database 23ai's Vector Search
+## Task 7: Implement RAG with Oracle AI Database's Vector Search
 
 Now that the recommendations are vectorized, we can process a user’s question:
 
@@ -636,7 +636,7 @@ Now that the recommendations are vectorized, we can process a user’s question:
     ![rag](./images/rag.png " ")
 
 ## Conclusion
-Congratulations! You implemented a RAG process in Oracle Database 23ai using Python.
+Congratulations! You implemented a RAG process in Oracle AI Database using Python.
 
 to summarize:
 
@@ -658,7 +658,7 @@ You may now proceed to the next lab.
 ## Learn More
 
 * [Code with Python](https://www.oracle.com/developer/python-developers/)
-* [Oracle Database 23ai Documentation](https://docs.oracle.com/en/database/oracle/oracle-database/23/)
+* [Oracle AI Database Documentation](https://docs.oracle.com/en/database/oracle/oracle-database/23/)
 
 ## Acknowledgements
 * **Authors** - Francis Regalado Database Product Manager

@@ -7,6 +7,8 @@ When a load job is enabled for live feed, it can be a scheduled job or connected
 
 Estimated Lab Time: 45 minutes
 
+[Walkthrough video](videohub:1_ijcbblxm:medium)
+
 ### Objectives
 
 Leverage Data Studio Tools to Build a Live Feed Data Pipeline
@@ -60,8 +62,8 @@ Leverage Data Studio Tools to Build a Live Feed Data Pipeline
       </copy>
       ```
 
-  5. Right-click on your browser tab and select **Duplicate** from the context menu to open another tab. <br>
-  * Click **Database Actions** in the top banner **of the new tab**.
+  5. Right-click on your browser tab and select **Duplicate** from the context menu to open another tab.
+    * Click **Database Actions** in the top banner **of the new tab**.
 
       ![Open DB Actions in Duplicate Tab](./images/open-another-browser-tab.png "")
 
@@ -89,7 +91,7 @@ Leverage Data Studio Tools to Build a Live Feed Data Pipeline
 
   11. Return to **SQL | Oracle Database Actions** browser tab.  <br>
 
-  * In the PL/SQL block modify the ***source\_uri*** definition in the **PL/SQL Block in the SQL Worksheet**, as shown below:
+    * In the PL/SQL block modify the ***source\_uri*** definition in the **PL/SQL Block in the SQL Worksheet**, as shown below:
 
       ```text
       source_uri    VARCHAR2(100) := ‘Paste the LOANAPP_FUNDING uri you copied here';
@@ -103,11 +105,11 @@ Leverage Data Studio Tools to Build a Live Feed Data Pipeline
 
       ![Copy MYDEMOBUCKET URI](./images/mydemobucket-uri.png "")
 
-  Click **Close** to exit.
+    * Click **Close** to exit.
 
   14. Return to **SQL | Oracle Database Actions** browser tab.  <br>
 
-  * In the PL/SQL block modify the ***target\_uri*** definition in the **PL/SQL block we placed in the SQL Worksheet**, as shown below:
+    * In the PL/SQL block modify the ***target\_uri*** definition in the **PL/SQL block we placed in the SQL Worksheet**, as shown below:
 
       ```text
       target_uri    VARCHAR2(100) := ‘Paste the MYDEMOBUCKET uri you copied here';
@@ -121,34 +123,33 @@ Leverage Data Studio Tools to Build a Live Feed Data Pipeline
 
 16.	Return to **Data Load | Oracle Database** tab.
 
-* Click the **Actions** icon in the **MyDemoBucket** panel, then select **Objects** from the context menu.
+    * Click the **Actions** icon in the **MyDemoBucket** panel, then select **Objects** from the context menu.
 
     ![Switch Tab & Select LOANAPP_FUNDING Connection](./images/move-data-file1.png "")
 
-17.	Click the folder icon to confirm that the **funding\_commitments1.json** file in the **LOANAPP\_FUNDING** bucket has been successfully copied here.
+17.	Expand the **FUNDING** folder icon to confirm that the **funding\_commitments1.json** file from the **LOANAPP\_FUNDING** bucket has been successfully copied here.
 
     ![Confirm File 1 Copy](./images/confirm-move-data-file1.png "")
 
-  Click **Close** to exit.
+    * Click **Close** to exit.
 
   ***Congratulations!*** You have now successfuly interacted with data in object storage using PL/SQL from the Data Studio tools and your Autonomous Database.
 
 ## Task 2: Build Initial Live Feed Table
 
-  1. From the **Data Load | Oracle Database** tab - Navigate to Live Feed.
+1. From the **Data Load | Oracle Database** tab - Navigate to Live Feed.
 
-  * On Left rail expand **Data Load**, then click on **Live Feed**.
+    * On Left rail expand **Data Load**, then click on **Live Feed**.
 
     ![Navigate from Data Load Connections to Live Feed](./images/navigate-connections-to-live-feed.png "")
 
       >You should now see the Live Feed Page
 
+2.  Click the **Create Live Table Feed** button to enter the Create Live Feed wizard
 
-  2.  Click the **Create Live Table Feed** button to enter the Create Live Feed wizard
+    ![Create Live Feed Wizard](./images/live-feed-wizard-step1.png "")
 
-      ![Create Live Feed Wizard](./images/live-feed-wizard-step1.png "")
-
-  3. Enter details for the Live Table Feed Preview.
+3. Enter details for the Live Table Feed Preview.
 
      * Select Cloud Store Location: **MyDemoBucket**
      * Select Radial Box: **Basic**
@@ -161,28 +162,28 @@ Leverage Data Studio Tools to Build a Live Feed Data Pipeline
 
      * Click the **Next** button to proceed.
 
-
-  4. Configure Live Feed Table Settings as follows:
+4. Configure Live Feed Table Settings as follows:
 
      * **For Option**: Choose **Merge Into Table** from drop-down list
 
      * **For target Table Name**: Enter the name of the target table of the Live Feed -- **FUNDING\_PROVIDER\_OFFER\_STG**. ***In ALL CAPS*** <br>
 
-     * Then modify **Mapping** details exactly as shown below:
-       >**Modify mapping to update Data Type** to NUMBER for: FUNDING_PROVIDER_ID and FUNDING_OFFER_REFERENCE_ID <br>
-       >**For Merge Key**: Select FUNDING_PROVIDER_ID and FUNDING_OFFER_REFERENCE_ID
+     * <u>Then modify **Mapping** details exactly as shown below:</u>
+        * **Update Data Type** to NUMBER for: FUNDING\_PROVIDER\_ID and FUNDING\_OFFER\_REFERENCE\_ID <br>
+        * **For Merge Key**: Select FUNDING\_PROVIDER\_ID and FUNDING\_OFFER\_REFERENCE\_ID<br>
+        * **Unselect last row:** Inclusion of SYSTIMESTAMP Source
 
       ![Create Live Feed Wizard - step 2](./images/live-feed-wizard-step2-table-settings.png "")
 
      * Click the **Next** button to proceed.
 
-  5. Review the information shown on the Preview page.
+5. Review the information shown on the Preview page.
 
       ![Create Live Feed Wizard - step 3](./images/live-feed-preview.png "")
 
       * Click **Next** to proceed.
 
-   6. Enter remaining details for the **Live Table Feed**
+6. Enter remaining details for the **Live Table Feed**
 
       a. Enter live feed name **LOANAPP\_FUNDING\_FEED** <br>
       b. Check box to **Enable for Scheduling**. <br>
@@ -192,11 +193,11 @@ Leverage Data Studio Tools to Build a Live Feed Data Pipeline
 
       * Click **Create**
 
-   7. When the popup box appears, select **Yes** to run the Live Feed.
+7. When the popup box appears, select **Yes** to run the Live Feed.
 
       ![Run Initial Live Table Feed](./images/do-run-live-feed.png)
 
-   8. Review Live Feed Table and set page Refresh Interval
+8. Review Live Feed Table and set page Refresh Interval
 
       * **You should see 3 rows loaded**
       * **Set page refresh interval to 10 seconds** to see when new data is loaded
@@ -205,11 +206,12 @@ Leverage Data Studio Tools to Build a Live Feed Data Pipeline
 
 ***Congratulations!*** You have successfully created your Live Feed table.
 
+
 ## Task 3: Test Live Feed Table Data Population
 
 1. Return to the **SQL | Oracle Database Actions** tab where your PL/SQL Block exists.
 
-* Load a file into our Live Feed Bucket to trigger the Live Feed process by modifying the **object\_name** definition in the PL/SQL block, as shown below:
+    * Load a file into our Live Feed Bucket to trigger the Live Feed process by modifying the **object\_name** definition in the PL/SQL block, as shown below:
 
       ```text
       object_name     VARCHAR2(200) := 'funding_commitments2.json';
@@ -232,7 +234,7 @@ Leverage Data Studio Tools to Build a Live Feed Data Pipeline
 
     * Clear the SQL Worksheet and Run the following code to populate new loan products.
 
-      ```text
+    ```text
       <copy>
         DECLARE
             New_Funding_Offers  NUMBER;
@@ -260,9 +262,9 @@ Leverage Data Studio Tools to Build a Live Feed Data Pipeline
       </copy>
       ```
 
-        ![Review Convert Funding to Loan Procudure Output](./images/review-funding-to-loan-conversion.png)
+    ![Review Convert Funding to Loan Procudure Output](./images/review-funding-to-loan-conversion.png)
 
-        ***Congratulations!*** On creating a Live Feed that can automatically load data from object storage into your database and be integrated into an automated business process.
+    ***Congratulations!*** On creating a Live Feed that can automatically load data from object storage into your database and be integrated into an automated business process.
 
 ## Conclusion
 In this lab, you built a data pipeline using the Oracle Live Table Feed tool and successfully used the data from the pipeline in a PL/SQL block that was run from Oracle Autonomous Database to automate business processes.
@@ -281,8 +283,8 @@ Oracle makes it easy to use and share data on it's data platform powered by Orac
 
 ## Acknowledgements
 
-* **Authors** - Eddie Ambler
-* **Contributors** - Mike Matthews
-* **Last Updated By/Date** - September 2025
+* **Authors** - Eddie Ambler, Senior Principal Product Manager, Database Product Management
+* **Contributors** - Mike Matthews, Senior Director, Data Quality Product Management
+* **Last Updated By/Date** - Ramona Magadan, Technical Program Manager, Database Product Management, October 2025
 
 Copyright (C) Oracle Corporation.
