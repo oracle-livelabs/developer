@@ -7,6 +7,8 @@ When a load job is enabled for live feed, it can be a scheduled job or connected
 
 Estimated Lab Time: 45 minutes
 
+[Walkthrough video](videohub:1_ijcbblxm:medium)
+
 ### Objectives
 
 Leverage Data Studio Tools to Build a Live Feed Data Pipeline
@@ -281,8 +283,8 @@ Oracle makes it easy to use and share data on it's data platform powered by Orac
 
 ## Acknowledgements
 
-* **Authors** - Eddie Ambler
-* **Contributors** - Mike Matthews
-* **Last Updated By/Date** - September 2025
+* **Authors** - Eddie Ambler, Senior Principal Product Manager, Database Product Management
+* **Contributors** - Mike Matthews, Senior Director, Data Quality Product Management
+* **Last Updated By/Date** - Ramona Magadan, Technical Program Manager, Database Product Management, October 2025
 
 Copyright (C) Oracle Corporation.
