@@ -10,6 +10,8 @@ By the end of this lab, you’ll understand how subscriptions help the Risk team
 
 Estimated Time: 30 minutes
 
+[Walkthrough video](videohub:1_pzs4r22c:medium)
+
 ### Objectives
 
 In this lab, you will use the Data Studio tools to Consume a Data Share as a Recipient:
@@ -164,5 +166,5 @@ This workflow ensures faster risk analysis, smarter decisions, and tighter colla
 * [Harvesting Object Storage Files as Logical Data Entities](https://docs.oracle.com/en-us/iaas/data-catalog/using/logical-entities.htm)
 
 ## Acknowledgements
-* **Authors** - Eddie Ambler
-* **Last Updated By/Date** - Eddie Ambler - September 2025
+* **Authors** - Eddie Ambler, Senior Principal Product Manager, Database Product Management
+* **Last Updated By/Date** - Ramona Magadan, Technical Program Manager, Database Product Management, October 2025
