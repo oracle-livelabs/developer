@@ -62,7 +62,7 @@ Now that the API Server is running, you can perform API calls against it.
        "messages": [
          {
            "role": "user",
-           "content": "In Oracle Database 23ai, how do I determine the accuracy of my vector indexes?"
+           "content": "In Oracle Database 26ai, how do I determine the accuracy of my vector indexes?"
          }
        ]
      }' | jq .

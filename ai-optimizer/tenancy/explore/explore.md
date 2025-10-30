@@ -10,7 +10,7 @@ Estimated Time: 15 minutes
 
 In this lab, you will:
 
-* Set the connection to your Oracle Database 23ai
+* Set the connection to your Oracle AI Database 26ai
 * Set your Oracle Cloud Infrastructure credentials for OCI connectivity
 * Configure the LLMs and embedding models you will use in the following labs
 * Test the *Chat* feature for the first time
@@ -29,7 +29,7 @@ Let's check if the DB is correctly connected.
 
   ![Navigate to the Databases tab](images/database-navigation.png)
 
-1. To configure the Oracle Database 23ai Free, you will need to enter the credentials:
+1. To configure the Oracle AI Database 26ai Free, you will need to enter the credentials:
 
     * Enter the Database Username
     * Enter the Database Connection String
@@ -40,7 +40,7 @@ Let's check if the DB is correctly connected.
   
   ![Database configuration](images/database-config.png)
 
-1. Since you are using an Autonomous Database, you can activate the SelectAI functionality. You will need to create a [Select AI](https://www.oracle.com/it/autonomous-database/select-ai/) profile and eventually you'll find the list of active profiles within the tenancy:
+1. Since you are using an Autonomous Database, you can activate the SelectAI functionality. You will need to create a [Select AI](https://www.oracle.com/it/autonomous-database/select-ai/) profile and eventually you'll find the list of active profiles within the tenancy. If no Select AI profile has been activated yet, you won't able to use the functionality:
 
   ![Select AI Profiles](images/selectai-profiles.png)
 
@@ -70,11 +70,11 @@ The two LLMs availble could be tested right away, in order to understand their b
 
 ![chat](images/chat.png)
 
-scroll down the left-side menu to find the **Toolkit** menu:
+as no Vector Store has been created yet, you will be able to use the LLM only functionality only, for now:
 
-![toolkit menu](images/toolkit-menu.png)
+![toolkit menu](images/chat-interface.png)
 
-select the **LLM Only** option and then choose the **llama3.1** model:
+scroll down the left-hand side menu and then pick the **llama3.1** model:
 
 ![chat models](images/chatmodel.png)
 

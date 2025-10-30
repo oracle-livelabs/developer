@@ -6,7 +6,7 @@ The **Oracle AI Optimizer and Toolkit** (the **AI Optimizer**) provides a stream
 
 * **GenAI**: Powers the generation of text, images, or other data based on prompts using pre-trained LLMs.
 * **RAG**: Enhances LLMs by retrieving relevant, real-time information allowing models to provide up-to-date and accurate responses.
-* **Vector Database**: A database, including Oracle Database 23ai, that can natively store and manage vector embeddings and handle the unstructured data they describe, such as documents, images, video, or audio.
+* **Vector Database**: A database, including Oracle Database 26ai, that can natively store and manage vector embeddings and handle the unstructured data they describe, such as documents, images, video, or audio.
 
 Estimated Time: 120 minutes
 
@@ -16,7 +16,7 @@ In this workshop, you will learn how to:
 
 * Install the **Oracle AI Optimizer and Toolkit** (the **AI Optimizer**)
 * Explore the AI Optimizer environment
-* Embed documents in a vector format within **Oracle Database 23ai**
+* Embed documents in a vector format within **Oracle Database 26ai**
 * Use Retrieval Augmented Generation (**RAG**) techniques
 * Experiment with different models, parameters and techniques
 * Evaluate model performances with the *Testbed* functionality
@@ -27,7 +27,7 @@ In this workshop, you will learn how to:
 
 This lab assumes you have:
 
-* An **Oracle Database 23ai** up and running (see ["Get Started"](https://markxnelson.github.io/developer/ai-optimizer/workshops/desktop/index.html?lab=get-started) to get one) 
+* An **Oracle Database 26ai** up and running (see ["Get Started"](https://markxnelson.github.io/developer/ai-optimizer/workshops/desktop/index.html?lab=get-started) to get one) 
 * An Integrated Development Editor (like Visual Studio Code)
 * Python 3.11 (for running Bare-Metal)
 * Container Runtime e.g. docker/podman (for running in a Container)

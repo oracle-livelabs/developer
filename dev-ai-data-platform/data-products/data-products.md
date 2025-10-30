@@ -11,6 +11,8 @@ By the end of this lab, you’ll know how to build, share, and govern data produ
 
 Estimated Time: 30 minutes
 
+[Walkthrough video](videohub:1_46ajqew8:medium)
+
 ### Objectives
 
 In this Lab, you will:
@@ -23,8 +25,7 @@ In this Lab, you will:
 
 * **Create and publish** a data share
 
- 
-### Prerequisites 
+### Prerequisites
 
 * **For Share Providers**
 
@@ -171,6 +172,6 @@ In this lab, you **created and shared a live, query-ready data product**—givin
 At SeersEquities, this means **smoother handoffs, faster risk evaluation, and better cross-team alignment**. For you, it means **mastering a modern data-sharing workflow that’s secure, scalable, and built for collaboration**.
 
 ## Acknowledgements
-* **Authors** - Eddie Ambler
-* **Last Updated By/Date** - Eddie Ambler - September 2025
+* **Authors** - Eddie Ambler, Senior Principal Product Manager, Database Product Management
+* **Last Updated By/Date** - Ramona Magadan, Technical Program Manager, Database Product Management, October 2025
 
