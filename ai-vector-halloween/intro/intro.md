@@ -1,9 +1,12 @@
-# The Adventure of the Stolen Pumpkin: A Sherlock Holmes Mystery
+# Introduction
 
-<img src="http://127.0.0.1:5500/images/museum-heist.jpeg" alt="Sherlock Holmes Mystery" width="300" height="200">
+## About this Workshop
 
-## The Opening Scene
+Join Sherlock Holmes and Dr. Watson in this thrilling Halloween mystery! The famous decorative ceramic pumpkin has been stolen from the British Museum, and suspicions point to Dr. Pumpkin, the town's eccentric inventor. Use Oracle Autonomous AI Database's AI Vector Search to help Holmes uncover the truth behind this bizarre theft!
 
+![Sherlock Holmes Mystery](../images/museum-heist.jpeg)
+
+**Storyline:**
 All Hallow's Eve of 1887 served as a cold start to England's Autumn. With no interest in the Halloween festivities, Holmes was catching up on this morning's newspaper and I was enjoying a quiet moment by the fire in our rooms at 221B Baker Street when I heard a commotion in the hallway. Suddenly, the door burst open with Inspector Lestrade exclaiming, "Holmes! The British Museum has been robbed! Professor Cavendish's original hydrogen research - stolen from the most secure vault in England!"
 
 Holmes's eyes gleamed. "The legendary Pumpkin Papers."
@@ -24,17 +27,12 @@ Holmes nodded. "And, Watson, he is none other than Henry Cavendish's great - nep
 
 "Watson, the game is afoot! The gleam in his eyes warning of a hunter in search of his prey."
 
-
-## Solve the Mystery
-
-Join Sherlock Holmes and Dr. Watson in this thrilling Halloween mystery! The famous decorative ceramic pumpkin has been stolen from the British Museum, and suspicions point to Dr. Pumpkin, the town's eccentric inventor. Use Oracle Autonomous AI Database's AI Vector Search to help Holmes uncover the truth behind this bizarre theft!
-
 **What happened:** Top secret hydrogen fuel cell research was stolen from the British Museum vault!
 
 
 **The suspects:** Three possibilities - Professor Moriarty's agents, foreign spies, or Dr. Pumpkin. But who is the real thief?
 
-**The clues:** 
+**The clues:**
 After examining the crime scene at the British Museum, Inspector Lestrade gathered what evidence he could find and returned to 221B Baker Street.
 
 "Holmes, Watson," Lestrade began, pulling out his notebook, "we've collected witness reports and physical evidence from the scene. I need your help making sense of it all."
@@ -54,12 +52,7 @@ After examining the crime scene at the British Museum, Inspector Lestrade gather
 | 9 | Test tubes with glowing residue found near the vault entrance, suggesting chemistry expertise | Physical Evidence |
 | 10 | Footprints in the dust that suddenly vanish at the vault door, suggesting theatrical trickery | Physical Evidence |
 
-
 Estimated Workshop Time: 60 minutes
-
-### About Oracle Autonomous AI Database
-
-Oracle Autonomous AI Database includes powerful AI features like AI Vector Search which can find meaningful connections between pieces of information, even when they use different words.
 
 ### Objectives
 
@@ -78,7 +71,7 @@ This workshop assumes you have:
 
 ## Learn More
 
-* [Oracle Autonomous Database 23ai Documentation](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html)
+* [Oracle Autonomous AI Database Documentation](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html)
 * [AI Vector Search in Oracle Database](https://docs.oracle.com/en/database/oracle/oracle-database/23/vecse/)
 
 ## Acknowledgements

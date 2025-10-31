@@ -1,4 +1,4 @@
-# Lab 1: Setting Up the Database and Clue Table
+# Setting Up the Database and Clue Table
 
 ## Introduction
 
@@ -6,6 +6,16 @@ In this lab, you'll create a simple database and table to store our mystery clue
 
 Estimated Lab Time: 15 minutes
 
+### About Autonomous AI Database
+Oracle Autonomous AI Database which includes powerful AI features like AI Vector Search which can find meaningful connections between pieces of information, even when they use different words.
+
+### Objectives
+
+In this lab, you will:
+* Create an Autonomous AI Database
+* Create a table
+* Insert into the table
+* Query the table
 
 ## Task 1: Create Your Database
 
@@ -26,20 +36,21 @@ Estimated Lab Time: 15 minutes
 For all of the tasks in this lab you will be entering SQL code into SQL Developer Web and running those SQL statement. 
 
 Open the SQL Developer Web tool from your Autonomous AI Database's Database Actions dropdown:
-<img src="http://127.0.0.1:5500/images/access-sql-tool.png" alt="Access SQL Tool">
+
+![Access SQL Tool](../../images/access-sql-tool.png)
 
 You will be copying the supplied code from the lab and pasting it into the SQL worksheet:
-<img src="http://127.0.0.1:5500/images/copy-paste-code.png" alt="RCopy and Paste un SQL Statement">
 
+![Copy adn Paste SQL Statement](../../images/copy-paste-code.png)
 
 To run the SQL, highlight only the pasted code and click the green "Run statement" button:
-<img src="http://127.0.0.1:5500/images/run-sql.png" alt="Run SQL Statement" width="500" height="400">
+![Run SQL Statement](../../images/run-sql.png)
 
 The output will be visible down below:
-<img src="http://127.0.0.1:5500/images/sql-results.png" alt="Results of SQL Statement" width="500" height="400">
+![Run SQL Statement](../../images/sql-results.png)
 
 Pro Tip: you can keep a running list of SQL you have entered. Just remember to highlight the statement you want to run before clicking the green "Run statement" button:
-<img src="http://127.0.0.1:5500/images/running-list-of-sql.png" alt="Runing List of SQL Statement">
+![Running List of SQL Statement](../../images/running-list-of-sql.png)
 
 <span style="color: red;">**Note:** if you ever find yourself wanting to start over, here are commands to run to reset the database back to the instructions before you create your mystery_clues table. Do not run these now, but only when you want to start over:</span>
 
@@ -138,6 +149,6 @@ ORDER BY clue_id;
 
 You should see all 10 clues listed.
 
-## Summary
-
-Great! You've set up your database and added the mystery clues. Now we have evidence to investigate. In the next lab, we'll learn how to use AI to find connections between these clues that regular searches might miss.
+## Acknowledgements
+* **Author** - <Name> Pat Shepherd, Senior Principal Database Product Manager
+* **Last Updated By/Date** - <Name, Month Year> Pat Shepherd, October 2025
