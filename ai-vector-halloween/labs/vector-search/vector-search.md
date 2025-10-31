@@ -1,5 +1,18 @@
 # Lab 4: Holmes Applies AI Vector Search to the Problem
 
+## Introduction
+
+This lab walks you through the steps to move beyond the limitations of keyword-based searches and harness the power of semantic analysis using Oracle's AI Vector Search. You will learn how to retrieve conceptually relevant clues-- even when they don't contain the exact words you searched for-- by leveraging vector embeddings to match on meaning, not just vocabulary.
+
+Estimated Time: 10 minutes
+
+### Objectives
+
+In this lab, you will:
+* Implement Oracle AI Vector Search to enable semantic querying, allowing users to retrieve records that are conceptually similar to the search phrase, even if they do not share the same keywords.
+* Compare and contrast query results between basic keyword-based SQL and AI Vector Search to highlight the advantages of semantic search in extracting meaningful insights from data.
+* Showcase how text data is converted into vector embeddings with Oracle AI Autonomous Database to facilitate concept-based retrieval using advanced AI capabilities.
+
 ## Holmes's Method: The AI Vector Search Investigation
 
 "Now then, Watson," Holmes said, settling into his chair with his pipe, "you've demonstrated the fundamental limitation of keyword search - you found scattered clues that could support multiple theories."
@@ -106,3 +119,13 @@ After Lestrade departed, Holmes knocked out his pipe. "I'll be remembered for te
 **The End**
 
 *As chronicled by John H. Watson, M.D., with technical annotations on Oracle AI Vector Search methodology. "The case may be closed, but the lesson remains: In an age of information, those who can find meaning in chaos will always stay one step ahead of those who can only find words." - Sherlock Holmes, 1887*
+
+## Learn More
+
+* [Oracle Autonomous Database 23ai Documentation](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html)
+* [AI Vector Search in Oracle Database](https://docs.oracle.com/en/database/oracle/oracle-database/23/vecse/)
+
+
+## Acknowledgements
+* **Author** - Pat Shepherd, Senior Principal Database Product Manager
+* **Last Updated By/Date** - Pat Shepherd, October 2025
