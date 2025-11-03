@@ -1,3 +1,10 @@
+<<<<<<< HEAD
+# Experimenting with Models, Parameters and Techniques
+
+## Introduction
+
+In this lab, we will  
+=======
 # AI Capabilities
 
 ## Introduction
@@ -7,6 +14,7 @@ In this lab, we will add AI capabilities to our customer support application.
 When support ticket events are received, the application will use AI Vector Search to find any similar tickets.
 
 If a similar ticket exists, it is automatically linked to the new ticket, using the `related_ticket` join table.
+>>>>>>> upstream/main
 
 Estimated Lab Time: 15 minutes
 
@@ -14,8 +22,13 @@ Estimated Lab Time: 15 minutes
 
 In this lab, you will:
 
+<<<<<<< HEAD
+* x
+* y
+=======
 * Enable the `ai` profile in Spring Boot
 * Explore the enabled AI capabilities
+>>>>>>> upstream/main
 
 ### Prerequisites
 
@@ -23,6 +36,17 @@ This lab assumes you have:
 
 * All previous labs successfully completed
 
+<<<<<<< HEAD
+## Task 1: Xyz
+
+Xyz
+
+
+## Learn More
+
+* x
+* y
+=======
 ## Task 1: Enable the `ai` profile
 
 To enable AI capabilities in the customer support app, add the `ai` profile to the list of active Spring Boot profiles:
@@ -101,6 +125,10 @@ select * from related_ticket;
 You should see a relationship between the IDs of both tickets created in Task 2.
 
 You may now proceed to the next lab.
+<<<<<<< HEAD
+>>>>>>> upstream/main
+=======
+>>>>>>> 4d26612985c944e91b6e29d0307a27b4a247623f
 
 ## Acknowledgements
 
