@@ -14,6 +14,8 @@ In this lab, you’ll take the next step: using Oracle’s tools to **load, link
 
 Estimated Time: 45 minutes
 
+[Walkthrough video](videohub:1_or36n868:medium)
+
 ### Objectives
 
 By the end of this lab, you will:
@@ -203,5 +205,5 @@ By turning static files into live tables or external links, you’ve made **data
 For SeersEquities, this means **faster decisions, smarter loan products, and more agile data workflows**. For you, it means mastering the tools that make all of that possible.
 
 ## Acknowledgements
-* **Authors** - Eddie Ambler, Otis Barr
-* **Last Updated By/Date** - Eddie Ambler, September 2025
+* **Authors** - Eddie Ambler, Senior Principal Product Manager, Database Product Management
+* **Last Updated By/Date** - Ramona Magadan, Technical Program Manager, Database Product Management, October 2025

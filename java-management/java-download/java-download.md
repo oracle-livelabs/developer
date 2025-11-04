@@ -91,9 +91,9 @@ To download Java artifacts using script friendly URL, you must have an active to
 2. Click the dropdown menu button  to view the details of a specific release of the Java artifact
 
   ![image of artifact download reporting page](images/reporting-by-release.png)
-3. Click the **options** button, then click **View Detail**.
+3. Click the **options** button, then click **View Details**.
 
-   ![image of view detail artifact](images/vieu-detail-artifact.png)
+   ![image of view detail artifact](images/view-detail-artifact.png)
 
 4. You can check the **Operating System**, **Architecture**, **Downloads**, and **Package Type** of a specific Java artifact.
 
@@ -117,4 +117,4 @@ You may now **proceed to the next lab**.
 ## Acknowledgements
 
 * **Author** - Yuan Chi Liu, Java Management Service
-* **Last Updated By** - El Maalmi Ayoub , Jul 2025
+* **Last Updated By** - EL-MANANI Fatima, September 2025

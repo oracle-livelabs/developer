@@ -48,7 +48,7 @@ For this guided experiment, perform the following:
 
 ```text
 <copy>
-In Oracle Database 23ai, how do I determine the accuracy of my vector indexes?
+In Oracle Database 26ai, how do I determine the accuracy of my vector indexes?
 </copy>
 ```
 
@@ -56,7 +56,7 @@ In Oracle Database 23ai, how do I determine the accuracy of my vector indexes?
 
 ```text
 <copy>
-In Oracle Database 23ai, how do I convert string text to embeddings using PL/SQL?
+In Oracle Database 26ai, how do I convert string text to embeddings using PL/SQL?
 </copy>
 ```
 

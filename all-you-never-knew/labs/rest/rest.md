@@ -1,9 +1,17 @@
+<<<<<<< HEAD
+# Experimenting with Models, Parameters and Techniques
+
+## Introduction
+
+In this lab, we will  
+=======
 # Spring Boot REST Capabilities
 
 ## Introduction
 
 In this lab, we will explore the Spring Boot customer service application using the basic `rest` profile.
 
+>>>>>>> upstream/main
 
 Estimated Lab Time: 15 minutes
 
@@ -11,9 +19,14 @@ Estimated Lab Time: 15 minutes
 
 In this lab, you will:
 
+<<<<<<< HEAD
+* x
+* y
+=======
 * Explore the Spring Boot customer service application
 * Run the application using the `rest` profile
 * Run sample cURL commands to test the application
+>>>>>>> upstream/main
 
 ### Prerequisites
 
@@ -21,6 +34,11 @@ This lab assumes you have:
 
 * All previous labs successfully completed
 
+<<<<<<< HEAD
+## Task 1: Xyz
+
+Xyz
+=======
 ## Task 1: Understanding the Spring Boot application
 
 The `rest` Spring Boot profile enables a basic RESTController to create and view customer support tickets. This profile includes Oracle Database connectivity, and HTTP endpoints to GET and POST support tickets.
@@ -64,11 +82,17 @@ curl -X GET "http://localhost:8080/tickets/{id}"
  ```bash
 curl -X GET "http://localhost:8080/tickets"
 ```
+>>>>>>> upstream/main
 
 
 ## Learn More
 
+<<<<<<< HEAD
+* x
+* y
+=======
 * [Spring Cloud Oracle](https://github.com/oracle/spring-cloud-oracle)
+>>>>>>> upstream/main
 
 ## Acknowledgements
 

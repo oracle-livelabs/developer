@@ -1,5 +1,5 @@
 {
-    "workshoptitle": "Build a GenAI-Powered Financial Services Loan Approval Application with Oracle Database 23ai",
+    "workshoptitle": "Build a GenAI-Powered Financial Services Loan Approval Application with Oracle AI Database",
     "help": "livelabs-help-database_us@oracle.com",
     "tutorials": [
         {
@@ -23,12 +23,12 @@
             "filename": "../../connect-to-env/connect-to-env.md"
         },
         {
-            "title": "Lab 3: Start coding with Oracle Database 23ai",
+            "title": "Lab 3: Start coding with Oracle AI Database",
             "description": "Some coding examples",
             "filename": "../../codingbasics/codingbasics.md"
         },
         {
-            "title": "Lab 4: Step by Step - Implement RAG with Oracle Database 23ai",
+            "title": "Lab 4: Step by Step - Implement RAG with Oracle AI Database",
             "description": "This is a step-by-step guide showcasing how the demo instance is navigated",
             "filename": "../../build/build.md"
         },
@@ -68,7 +68,7 @@
             "filename": "../../microservice-creport/creditreport-exercise.md.md"
         },
         {
-            "title": "Lab 9 Challenge Yourself: Spatial Development with Oracle Database 23ai",
+            "title": "Lab 9 Challenge Yourself: Spatial Development with Oracle AI Database",
             "description": "This is a step-by-step guide showcasing how the demo instance is navigated",
             "filename": "../../spatial/spatial.md"
         },

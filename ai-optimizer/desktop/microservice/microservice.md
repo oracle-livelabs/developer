@@ -83,7 +83,7 @@ To test it, run a curl command like this in a new terminal:
   -H "Authorization: Bearer your_api_key" \
   -d '{
     "model": "server",
-    "messages": [{"role": "user", "content": "In Oracle Database 23ai, how do I determine the accuracy of my vector indexes?"}],
+    "messages": [{"role": "user", "content": "In Oracle Database 26ai, how do I determine the accuracy of my vector indexes?"}],
     "stream": false
   }'
   </copy>
@@ -105,14 +105,14 @@ You can also send a curl request without leveraging RAG:
 
   ```bash
   <copy>
-  curl --get --data-urlencode 'message=In Oracle Database 23ai, how do I determine the accuracy of my vector indexes?' localhost:9090/v1/service/llm 
+  curl --get --data-urlencode 'message=In Oracle Database 26ai, how do I determine the accuracy of my vector indexes?' localhost:9090/v1/service/llm 
   </copy>
   ```
 
    and it will produce an ungrounded answer like this:
 
   ```json
-  {"completion":"There is no such thing as \"Oracle Database 23ai\". The current version of Oracle Database is Oracle Database 21c and Oracle Database 22c.\n\nHowever, if you're using a recent version of Oracle Database (18c or later), you can use the `DBMS_VECTOR_INDEX_STATS` package to gather statistics about your vector indexes. This package provides functions to retrieve information about the accuracy of the vector index, such as:\n\n* `GET_BUCKETS_ACCURACY`: Returns the number of buckets that have an accuracy greater than or equal to a specified threshold.\n* `GET_INVERTED_LIST_ACCURACY`: Returns the accuracy of the inverted list for each bucket.\n\nTo use these functions, you'll need to create a vector index on your table and gather statistics about it using the following steps:\n\n1. Create a vector index on your table:\n```sql\nCREATE INDEX my_vector_index ON my_table (my_column) VECTORIZED;\n```\n2. Gather statistics about the vector index:\n```sql\nBEGIN\n  DBMS_VECTOR_INDEX_STATS.GATHER_TABLE_STATS('MY_SCHEMA', 'MY_TABLE');\nEND;\n```\n3. Use the `DBMS_VECTOR_INDEX_STATS` package to retrieve information about the accuracy of the vector index:\n```sql\nSELECT GET_BUCKETS_ACCURACY(my_vector_index, 0.5) FROM DUAL; \n-- Returns the number of buckets with an accuracy greater than or equal to 0.5\n```\nPlease note that this is a simplified example and you may need to adjust the syntax depending on your specific use case.\n\nAlso, keep in mind that vector indexes are a feature introduced in Oracle Database 18c, so if you're using an earlier version of Oracle, you won't have access to these features."}
+  {"completion":"There is no such thing as \"Oracle Database 26ai\". The current version of Oracle Database is Oracle Database 21c and Oracle Database 22c.\n\nHowever, if you're using a recent version of Oracle Database (18c or later), you can use the `DBMS_VECTOR_INDEX_STATS` package to gather statistics about your vector indexes. This package provides functions to retrieve information about the accuracy of the vector index, such as:\n\n* `GET_BUCKETS_ACCURACY`: Returns the number of buckets that have an accuracy greater than or equal to a specified threshold.\n* `GET_INVERTED_LIST_ACCURACY`: Returns the accuracy of the inverted list for each bucket.\n\nTo use these functions, you'll need to create a vector index on your table and gather statistics about it using the following steps:\n\n1. Create a vector index on your table:\n```sql\nCREATE INDEX my_vector_index ON my_table (my_column) VECTORIZED;\n```\n2. Gather statistics about the vector index:\n```sql\nBEGIN\n  DBMS_VECTOR_INDEX_STATS.GATHER_TABLE_STATS('MY_SCHEMA', 'MY_TABLE');\nEND;\n```\n3. Use the `DBMS_VECTOR_INDEX_STATS` package to retrieve information about the accuracy of the vector index:\n```sql\nSELECT GET_BUCKETS_ACCURACY(my_vector_index, 0.5) FROM DUAL; \n-- Returns the number of buckets with an accuracy greater than or equal to 0.5\n```\nPlease note that this is a simplified example and you may need to adjust the syntax depending on your specific use case.\n\nAlso, keep in mind that vector indexes are a feature introduced in Oracle Database 18c, so if you're using an earlier version of Oracle, you won't have access to these features."}
   ```
 
 You can see that the answer is very generic compared to the RAG-enhanced one.

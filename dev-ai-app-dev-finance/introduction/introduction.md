@@ -72,5 +72,5 @@ This lab assumes you have:
 
 ## Acknowledgements
 * **Authors** - Uma Kumar
-* **Contributors** - Kevin Lazarz, Linda Foinding
+* **Contributors** - Linda Foinding
 * **Last Updated By/Date** - Uma Kumar, August 2025

@@ -2,7 +2,7 @@
 
 ## Introduction
 
-You’re a developer at SeerHolding, supporting multiple SeerGroup divisions such as SeerEquities, SeerRetail, SeerEnergy, and SeerHealth. Each business unit wants AI-driven apps that interact directly with Oracle Database 23ai to query data and trigger workflows.
+You’re a developer at SeerHolding, supporting multiple SeerGroup divisions such as SeerEquities, SeerRetail, SeerEnergy, and SeerHealth. Each business unit wants AI-driven apps that interact directly with Oracle AI Database to query data and trigger workflows.
 
 Your job: Build a common agentic AI foundation so teams can query data, trigger workflows, and build copilots—without changing existing back-end logic.
 
@@ -228,7 +228,7 @@ Here’s what this app wires together:
 
 * **OCI GenAI**: uses the cohere.command-a-03-2025 model for reasoning and summarization.
 
-Together, these layers turn a standard Flask app into an agentic web interface — one that remembers, reasons, and interacts with Oracle Database 23ai in natural language.
+Together, these layers turn a standard Flask app into an agentic web interface — one that remembers, reasons, and interacts with Oracle AI Database in natural language.
 
 
 ## Task 5: Create and Modify Database Objects via MCP
@@ -319,13 +319,14 @@ You learned how to:
 
 * Deliver faster: prototype enterprise-grade AI assistants in hours, not weeks.
 
-You’ve laid the foundation for SeerHolding’s agentic AI platform: turning Oracle Database 23ai into the intelligent core of SeerGroup’s future applications.
+You’ve laid the foundation for SeerHolding’s agentic AI platform: turning Oracle AI Database into the intelligent core of SeerGroup’s future applications.
 
 ## Learn more
 
-- [User's guide SQLcl MCP Server](https://docs.oracle.com/en/database/oracle/sql-developer-command-line/25.2/sqcug/using-oracle-sqlcl-mcp-server.html)
-- [Jeff Smith's Getting Started Guide](https://docs.oracle.com/en/database/oracle/sql-developer-command-line/25.2/sqcug/using-oracle-sqlcl-mcp-server.html)
-- 
+  [User's guide SQLcl MCP Server](https://docs.oracle.com/en/database/oracle/sql-developer-command-line/25.2/sqcug/using-oracle-sqlcl-mcp-server.html)
+
+  [Jeff Smith's Getting Started Guide](https://docs.oracle.com/en/database/oracle/sql-developer-command-line/25.2/sqcug/using-oracle-sqlcl-mcp-server.html)
+
 
 ## Acknowledgements
 * **Authors** -  Kevin Lazarz

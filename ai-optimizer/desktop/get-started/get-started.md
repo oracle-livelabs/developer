@@ -4,13 +4,13 @@
 
 The **AI Optimizer** is available to install in your own environment, which may be a developer’s desktop, on-premises data center environment, or a cloud provider. It can be run either on bare-metal, within a container, or in a Kubernetes Cluster.
 
-This walkthrough will guide you through a basic installation of the **Oracle AI Optimizer and Toolkit** (the **AI Optimizer**). It will allow you to experiment with GenAI, using Retrieval-Augmented Generation (RAG) with Oracle Database 23ai at the core.
+This walkthrough will guide you through a basic installation of the **Oracle AI Optimizer and Toolkit** (the **AI Optimizer**). It will allow you to experiment with GenAI, using Retrieval-Augmented Generation (RAG) with Oracle Database 26ai at the core.
 
 You will run four container images to establish the “Infrastructure”:
 
 * On-Premises LLM - **llama3.1**
 * On-Premises Embedding Model - **mxbai-embed-large**
-* Vector Storage - **Oracle Database 23ai Free**
+* Vector Storage - **Oracle Database 26ai Free**
 * The AI Optimizer
 
 > **NOTE**: The walkthrough will reference podman commands. If applicable to your environment, podman can be substituted with docker. If you are using docker, make the walkthrough easier by aliasing the podman command:
@@ -159,11 +159,11 @@ The **AI Optimizer** provides an easy to use front-end for experimenting with **
    </copy>
    ```
 
-## Task 4: Vector Storage - Oracle Database 23ai Free
+## Task 4: Vector Storage - Oracle Database 26ai Free
 
-AI Vector Search in Oracle Database 23ai provides the ability to store and query  by similarity text and multimedia data. The AI Optimizer uses these capabilities to provide more accurate and relevant **LLM** responses via Retrieval-Augmented Generation (**RAG**). [Oracle Database 23ai Free](https://www.oracle.com/uk/database/free/get-started/) provides an ideal, no-cost vector store for this workshop.
+AI Vector Search in Oracle Database 26ai provides the ability to store and query  by similarity text and multimedia data. The AI Optimizer uses these capabilities to provide more accurate and relevant **LLM** responses via Retrieval-Augmented Generation (**RAG**). [Oracle Database 26ai Free](https://www.oracle.com/uk/database/free/get-started/) provides an ideal, no-cost vector store for this workshop.
 
-To start Oracle Database 23ai Free:
+To start Oracle Database 26ai Free:
 
 1. Start the container:
 
@@ -211,7 +211,7 @@ In a web browser, navigate to `http://localhost:8501` .
 
 Notice that there are no language models configured to use. We will deal with the configuration in the next Lab.
 
-> **NOTE**: In the next steps of this lab, you will need to check the items inside your database 23ai. This lab uses the VS Code **SQL Developer** plugin, but feel free to use the tool you prefer:
+> **NOTE**: In the next steps of this lab, you will need to check the items inside your database 26ai. This lab uses the VS Code **SQL Developer** plugin, but feel free to use the tool you prefer:
 
 ![sql-developer-plugin](images/sql-developer-plugin.png)
 

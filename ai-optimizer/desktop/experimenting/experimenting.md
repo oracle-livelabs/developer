@@ -35,7 +35,7 @@ Using the **TEST1** vector store, you will experiment with the main parameters c
 * Vector Store: TEST1
 
 ```text
-Q: In Oracle Database 23ai, how do I determine the accuracy of my vector indexes?
+Q: In Oracle Database 26ai, how do I determine the accuracy of my vector indexes?
 
 A: The user wants to determine the accuracy of their vector indexes in Oracle Database 23c. According to the provided documentation, there are several ways to achieve this:
 1. Use the DBMS_VECTOR.INDEX_ACCURACY_QUERY procedure: This procedure provides an accuracy report for a top-K index search for a specific query vector and a specific target accuracy.
@@ -57,7 +57,7 @@ Document references:
 * Vector Store: TEST1
 
 ```text
-Q: In Oracle Database 23ai, how do I determine the accuracy of my vector indexes?
+Q: In Oracle Database 26ai, how do I determine the accuracy of my vector indexes?
 
 A: To determine the accuracy of your vector indexes in Oracle Database 23c AI, you can use the DBMS_VECTOR.INDEX_ACCURACY_QUERY procedure.
 According to the provided documentation, this procedure provides an accuracy report for a top-K index search for a specific query vector and a specific target accuracy
@@ -96,7 +96,7 @@ Let's move onto a different question and see the results:
 * Vector Store: TEST1
 
 ```text
-Q: In Oracle Database 23ai, how do I convert string text to embeddings using PL/SQL?
+Q: In Oracle Database 26ai, how do I convert string text to embeddings using PL/SQL?
 
 A: To generate a vector embedding from an input text string in Oracle Database 23c, you can use the UTL_TO_EMBEDDING PL/SQL function. This function is designed to take a text string as input and return its equivalent vector embedding.
 To convert a text string to an embedding using this function, follow these steps:
@@ -116,9 +116,9 @@ Make sure that your database setup includes the access details required for what
 * Vector Store: TEST1
 
 ```text
-Q: In Oracle Database 23ai, how do I convert string text to embeddings using PL/SQL?
+Q: In Oracle Database 26ai, how do I convert string text to embeddings using PL/SQL?
 
-A: To convert a string text to an embedding using PL/SQL in Oracle Database 23c (not 23ai, as there is no such version), you can use the DBMS_VECTOR package.
+A: To convert a string text to an embedding using PL/SQL in Oracle Database 23c (not 26ai, as there is no such version), you can use the DBMS_VECTOR package.
 Here's a simple example:
 
 DECLARE 
@@ -155,9 +155,9 @@ We will now observe how using a different distance metric can lead to a differen
 * Vector Store: TEST1
 
 ```text
-Q: In Oracle Database 23ai, how do I determine the accuracy of my vector indexes?
+Q: In Oracle Database 26ai, how do I determine the accuracy of my vector indexes?
 
-A: To determine the accuracy of your vector indexes in Oracle Database 23c (not 23ai), you can use the DBMS_VECTOR package.
+A: To determine the accuracy of your vector indexes in Oracle Database 23c (not 26ai), you can use the DBMS_VECTOR package.
 According to the documentation provided, you have two options:
 DBMS_VECTOR.INDEX_ACCURACY_QUERY: This function allows you to verify the accuracy of a vector index for a given query vector, top-K, and target accuracy. You can call this function by passing in the OWNER_NAME, INDEX_NAME, QV (query vector), TOP_K (top K results), and TARGET_ACCURACY as parameters.
 DBMS_VECTOR.INDEX_ACCURACY_REPORT: This function captures the accuracy values achieved by approximate searches using a particular vector index for a certain period of time.
@@ -193,9 +193,9 @@ I hope this helps!
 * Vector Store: TEST1
 
 ```text
-Q: In Oracle Database 23ai, how do I determine the accuracy of my vector indexes?
+Q: In Oracle Database 26ai, how do I determine the accuracy of my vector indexes?
 
-A: To determine the accuracy of your vector indexes in Oracle Database 23c (note: not 23ai), you can use the DBMS_VECTOR.INDEX_ACCURACY_QUERY procedure.
+A: To determine the accuracy of your vector indexes in Oracle Database 23c (note: not 26ai), you can use the DBMS_VECTOR.INDEX_ACCURACY_QUERY procedure.
 According to the provided documentation and example usage, you need to:
 Declare a query vector (q_v) using the TO_VECTOR function.
 Call the INDEX_ACCURACY_QUERY procedure with q_v as a parameter, along with other optional parameters as needed (e.g., target accuracy).
@@ -233,7 +233,7 @@ We can also explore how different combinations of **LLMs** and vector stores can
 * Vector Store: TEST1
 
 ```text
-Q: In Oracle Database 23ai, how do I create a vector column?
+Q: In Oracle Database 26ai, how do I create a vector column?
 
 A: To create a vector column in Oracle Database 23c1, you can use the VECTOR data type. The syntax to declare a vector column is as follows:
 
@@ -260,9 +260,9 @@ You can then insert data into the embedding column using either a string represe
 * Vector Store: TEST2
 
 ```text
-Q: In Oracle Database 23ai, how do I create a vector column?
+Q: In Oracle Database 26ai, how do I create a vector column?
 
-A: To create a vector column in Oracle Database 23ai, you can declare a table with a column of the VECTOR data type. Here is a simple example:
+A: To create a vector column in Oracle Database 26ai, you can declare a table with a column of the VECTOR data type. Here is a simple example:
 
 CREATE TABLE my_vectors (id NUMBER, embedding VECTOR);
 

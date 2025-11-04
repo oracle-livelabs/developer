@@ -33,6 +33,11 @@
             "filename": "../../oraclemcp/oraclemcp.md"
         },
         {
+            "title": "Lab 6: Interact with Oracle AI Database through an MCP Server",
+            "description": "This is a step-by-step guide showcasing how the demo instance is navigated",
+            "filename": "../../mcp/mcp.md"
+        },
+        {
             "title": "Need Help?",
             "description": "Solutions to Common Problems and Directions for Receiving Live Help",
             "filename": "https://oracle-livelabs.github.io/common/labs/need-help/need-help-freetier.md"
