@@ -4,7 +4,7 @@
 
 In this section, you will learn how to run the Seer Equities Loan Approval application locally. This guide is designed to walk you through the complete setup process—from provisioning required services to installing dependencies and launching the application on your local machine.
 
-The document is structured to help you meet all prerequisites, configure both the Autonomous Database and the OCI Generative AI Service, and troubleshoot any issues that may arise during setup. Whether you're new to Oracle Cloud Infrastructure or simply deploying locally for development and testing, this step-by-step guide will ensure a smooth setup experience.
+The document is structured to help you meet all prerequisites, configure both the Autonomous AI Database and the OCI Generative AI Service, and troubleshoot any issues that may arise during setup. Whether you're new to Oracle Cloud Infrastructure or simply deploying locally for development and testing, this step-by-step guide will ensure a smooth setup experience.
 
 Estimated Time: 20 minutes
 
@@ -12,7 +12,7 @@ Estimated Time: 20 minutes
 
 By the end of this section, you will be able to:
 
-- Provision and connect to an Autonomous Database
+- Provision and connect to an Autonomous AI Database
 
 - Set up a Python-based local development environment
 
@@ -27,9 +27,9 @@ By the end of this section, you will be able to:
 Let’s get started!
 
 
-## Task 1: Provision an Autonomous Database
+## Task 1: Provision an Autonomous AI Database
 
-Before you can run the application, you need to provision an **Autonomous Database** and obtain the following connection details: 
+Before you can run the application, you need to provision an **Autonomous AI Database** and obtain the following connection details: 
 
 * **Username** 
 
@@ -41,15 +41,15 @@ Before you can run the application, you need to provision an **Autonomous Data
 
    ![Begin navigation in OCI menu](./images/begin-oci-menu.png" ")
 
-3. Click **Oracle Database** -> **Autonomous Database**.
+3. Click **Oracle Database** -> **Autonomous AI Database**.
 
-   ![Select Autonomous Database from menu](./images/select-atp.png" ")
+   ![Select Autonomous AI Database from menu](./images/select-atp.png" ")
 
-4. Click **Create Autonomous Database** to start the instance creation process.
+4. Click **Create Autonomous AI Database** to start the instance creation process.
 
-   ![Create Autonomous Database](./images/create-adb.png " ")
+   ![Create Autonomous AI Database](./images/create-adb.png " ")
 
-5. This brings up the **Create Autonomous Database** screen where you will specify the configuration of the instance. Provide basic information for the autonomous database:
+5. This brings up the **Create Autonomous AI Database** screen where you will specify the configuration of the instance. Provide basic information for the Autonomous AI Database:
 
    **Display Name** - Enter a memorable name for the database for display purposes. For this lab, we used **SeerEquites**.<br><br>
    **Database Name** - Use letters and numbers only, starting with a letter. Maximum length is 14 characters. (Underscores not initially supported.) For this lab, we used **SeerEquites**.<br><br>
@@ -84,21 +84,21 @@ Before you can run the application, you need to provision an **Autonomous Data
    For this lab, accept the default, **Secure access from everywhere**.<br><br>
    If you want to allow traffic only from the IP addresses and VCNs you specify where access to the database from all public IPs or VCNs is blocked, select **Secure access from allowed IPs and VCNs only**.<br><br>
    If you want to restrict access to a private endpoint within an OCI VCN, select **Private endpoint access only**.<br><br>
-   If the **Require mutual TLS (mTLS) authentication** option is selected, mTLS will be required to authenticate connections to your Autonomous Database. TLS connections allows Oracle Data Provider for .NET to connect to your Autonomous Database without a wallet. See the [documentation for network options](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/support-tls-mtls-authentication.html#GUID-3F3F1FA4-DD7D-4211-A1D3-A74ED35C0AF5) for options to allow TLS, or to require only mutual TLS (mTLS) authentication.
+   If the **Require mutual TLS (mTLS) authentication** option is selected, mTLS will be required to authenticate connections to your Autonomous AI Database. TLS connections allows Oracle Data Provider for .NET to connect to your Autonomous AI Database without a wallet. See the [documentation for network options](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/support-tls-mtls-authentication.html#GUID-3F3F1FA4-DD7D-4211-A1D3-A74ED35C0AF5) for options to allow TLS, or to require only mutual TLS (mTLS) authentication.
 
    ![Choose the network access type](./images/network-access.png " ")
 
 10. Click **Create**.
 
-    ![Click Create Autonomous Database button](./images/create-adb-button.png " ")
+    ![Click Create Autonomous AI Database button](./images/create-adb-button.png " ")
 
 11. Your instance will begin provisioning. In a few minutes the state will turn from Provisioning to Available. At this point, your Autonomous Transaction Processing database is ready to use! Have a look at your instance's details here including its name, database version, CPU count and storage size.
 
-    ![Provisioning an Autonomous Database instance](./images/adb-provisioning.png " ")
-    Provisioning an Autonomous Database instance.
+    ![Provisioning an Autonomous AI Database instance](./images/adb-provisioning.png " ")
+    Provisioning an Autonomous AI Database instance.
 
-    ![Autonomous Database instance successfully provisioned](./images/adb-provisioned.png " ")
-    Autonomous Database instance successfully provisioned.
+    ![Autonomous AI Database instance successfully provisioned](./images/adb-provisioned.png " ")
+    Autonomous AI Database instance successfully provisioned.
 
 ## Task 2: Unzip the Code
 
@@ -213,7 +213,7 @@ To run the application, Python version 3.9 or higher is required. Follow the
         </copy
     ````
 
-6. Insert the variables below into the file. Replace the values with the actual values you obtained during the provisioning of the Autonomous Database. You should have captured your database username and password in task 1 of this lab. 
+6. Insert the variables below into the file. Replace the values with the actual values you obtained during the provisioning of the Autonomous AI Database. You should have captured your database username and password in task 1 of this lab. 
 
     DB\_USERNAME=Your\_DB\_Username 
 
@@ -254,17 +254,17 @@ To run the application, Python version 3.9 or higher is required. Follow the
         https://inference.generativeai.us-chicago-1.oci.oraclecloud.com
         </copy
     ````
-13. Navigate back to your Autonomous Database to copy your ADB OCID. Click **Oracle Database** -> **Autonomous Database**.
+13. Navigate back to your Autonomous AI Database to copy your ADB OCID. Click **Oracle Database** -> **Autonomous AI Database**.
 
-   ![Select Autonomous Database from menu](./images/select-atp.png" ")
+   ![Select Autonomous AI Database from menu](./images/select-atp.png" ")
 
-14. Select your Autonomous Database.
+14. Select your Autonomous AI Database.
 
-    ![Select your Autonomous Database](./images/select-your-adb.png " ")
+    ![Select your Autonomous AI Database](./images/select-your-adb.png " ")
 
-15. Copy your Autonomous Database OCID. Paste it into your .env file.
+15. Copy your Autonomous AI Database OCID. Paste it into your .env file.
 
-    ![Copy your Autonomous Database OCID](./images/adb-ocid.png " ")
+    ![Copy your Autonomous AI Database OCID](./images/adb-ocid.png " ")
 
     You should now have all of the credentials for your .env file filled in.
 
@@ -331,7 +331,7 @@ To run the application, Python version 3.9 or higher is required. Follow the
         </copy
     ````
 
-Create a policy that will allow you to use OCI Generative AI within your previously defined compartment. **Make sure your policy uses the compartment where your Autonomous Database is deployed.** The policy will be necessary for Autonomous Database to interact with OCI Generative AI.
+Create a policy that will allow you to use OCI Generative AI within your previously defined compartment. **Make sure your policy uses the compartment where your Autonomous AI Database is deployed.** The policy will be necessary for Autonomous AI Database to interact with OCI Generative AI.
 
 10. From the Console, open the Navigation menu and click **Identity & Security**. Under Identity, click **Policies**.
 
@@ -366,7 +366,7 @@ Create a policy that will allow you to use OCI Generative AI within your previou
 
     ![Create Policy](./images/create-policy.png " ")
 
-OCI Generative AI is a fully managed service available via API to seamlessly integrate language models into a wide range of use cases, including writing assistance, summarization, analysis, and chat. You can quickly integrate OCI Generative AI with Autonomous Database to apply AI models to your data.
+OCI Generative AI is a fully managed service available via API to seamlessly integrate language models into a wide range of use cases, including writing assistance, summarization, analysis, and chat. You can quickly integrate OCI Generative AI with Autonomous AI Database to apply AI models to your data.
 
 15. Make sure you are in the US Midwest(Chicago) region:
 
@@ -386,7 +386,7 @@ OCI Generative AI is a fully managed service available via API to seamlessly int
         </copy
     ````
 
-    This will start the application locally, using both your Autonomous Database and OCI GenAI services. 
+    This will start the application locally, using both your Autonomous AI Database and OCI GenAI services. 
 
 
 ## Troubleshooting
@@ -408,7 +408,7 @@ If you encounter any issues during the setup, here are a few common troubleshoot
 
 * **Dependencies Installation Issues**: Double-check the requirements.txt file to ensure it contains the correct package names. If a specific package fails, you can try installing it manually with pip install <package-name>. 
 
-* **Database Connection Errors**: Ensure that the database credentials in the .env file are correct and that you have access to the Autonomous Database. 
+* **Database Connection Errors**: Ensure that the database credentials in the .env file are correct and that you have access to the Autonomous AI Database. 
 
 ## Additional Notes
 * Your .oci/config and .environment files contain sensitive credentials. Do not commit them to version control. 

@@ -252,7 +252,7 @@ Management Gateway Plugin set up successfully.
 
     This IP address will be used as value for `ProxyHost` in Management Agent response file in Task 4.
   
-## Task 4: Verify the Management Gateway installation 
+## Task 4: Verify the Management Gateway installation
 
 ### Using OCI Console:
 
@@ -431,4 +431,4 @@ You may now **proceed to the next lab.**
 ## Acknowledgements
 
 * **Author** - Bhuvesh Kumar, Java Management Service
-* **Last Updated By** - El Maalmi Ayoub , Jul 2025
+* **Last Updated By** - Eugene Kazlou, September 2025

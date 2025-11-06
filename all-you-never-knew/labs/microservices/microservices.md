@@ -1,3 +1,19 @@
+<<<<<<< HEAD
+# Experimenting with Models, Parameters and Techniques
+
+## Introduction
+
+In this lab, we will  
+
+Estimated Lab Time: 15 minutes
+
+### Objectives
+
+In this lab, you will:
+
+* x
+* y
+=======
 # Get started - Customer Support Microservice
 
 ## Introduction
@@ -11,6 +27,7 @@ Estimated Time: 15 minutes
 ### Objectives
 
 * Download the lab code and set up the environment
+>>>>>>> upstream/main
 
 ### Prerequisites
 
@@ -18,6 +35,17 @@ This lab assumes you have:
 
 * All previous labs successfully completed
 
+<<<<<<< HEAD
+## Task 1: Xyz
+
+Xyz
+
+
+## Learn More
+
+* x
+* y
+=======
 ## Task 1: Download the lab code
 
 Download the lab code from the [microservices-datadriven](https://github.com/oracle/microservices-datadriven/) repository.
@@ -59,6 +87,10 @@ mvn spring-boot:run
 ```
 
 You may now proceed to the next lab.
+<<<<<<< HEAD
+>>>>>>> upstream/main
+=======
+>>>>>>> 4d26612985c944e91b6e29d0307a27b4a247623f
 
 ## Acknowledgements
 

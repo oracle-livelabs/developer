@@ -18,6 +18,7 @@ In this lab, you will:
 * Verify Java server scanning result.
 
 ### Supported Versions of Java Servers
+
 * WebLogic: 14.1.1.0.0, 12.2.1.4.0 (The latest version is recommended)
 * JBoss: 7.0 to 7.4
 * Tomcat: 8.5 to 10
@@ -27,31 +28,34 @@ In this lab, you will:
 * You have signed up for an account with Oracle Cloud Infrastructure and have received your sign-in credentials.
 * You are using an Oracle Linux image on your Managed Instance for this workshop.
 * Access to the cloud environment and resources configured in [Lab 1](?lab=set-up-and-enable-advanced-features-on-java-management-service).
+* Advanced usage tracking is enabled on the fleet.
 * Familiarity with configuration of WebLogic server.
 
 ## Task 1: Ensure WebLogic Server is installed and configured
 
 1. If you do not have WebLogic server installed and configured in your managed instance, refer to following steps.
-  
+
   Useful Links
+
     * [Download WebLogic Server](https://www.oracle.com/middleware/technologies/weblogic-server-downloads.html)
     * [Install WebLogic Server with Sample Applications](https://docs.oracle.com/en/middleware/standalone/weblogic-server/14.1.1.0/intro/examples.html#GUID-F9F246B1-E186-46C7-846C-DA510295582F)
     * [Install WebLogic Server in Silent Mode (for non-gui instances)](https://docs.oracle.com/en/middleware/fusion-middleware/12.2.1.4/ouirf/using-oracle-universal-installer-silent-mode.html#GUID-5F06D02F-6D71-45B9-BF41-5D5759D31958)
 
   Download and Installation steps
+
     * Download Weblogic generic installer from link above
       ![image of Weblogic Server Installers](images/oracle-wl-installers.png)
     * Accept terms and conditions, select appropriate download version and then proceed to download
       ![image of Weblogic Server installer download page](images/oracle-wl-installer-download.png)
-    * Unzip and launch installer 
-    
+    * Unzip and launch installer
+
 2. Avitek Medical Records (also known as **MedRec**) is a comprehensive educational sample application installed with the WebLogic Server installation (Complete with Examples). Please take note of the **absolute path to the domain directory created for MedRec Application**. This path will be required for the subsequent task.
 
   For example: **/home/opc/Oracle/Middleware/Oracle\_Home/user\_projects/domains/medrec**
 
 ## Task 2: Start WebLogic Server with Sample MedRec Application
 
-1. Connect to your instance with SSH if you are using an OCI Compute Instance.  
+1. Connect to your instance with SSH if you are using an OCI Compute Instance.
     Open a Terminal or Command Prompt window. Change into the directory where you stored the SSH encryption keys you created. To use SSH command, you need to change the read and write permissions to your key with this command.
     ```
       <copy>
@@ -79,18 +83,22 @@ In this lab, you will:
     ![image of navigation menu](images/console-navigation-jms.png)
     Select the fleet with the advanced feature, **Lifecycle management** enabled. Refer to  [Lab 1](?lab=set-up-and-enable-advanced-features-on-java-management-service).
 
-2. On the Fleet details page, click **Scan for Java servers**.
+2. On the Fleet details page, click **Actions** and select **Scan for Java servers**.
     ![image of scan java servers](images/scan-java-servers.png)
-    Select the **Scan** button to send a work request.
-    ![image of confirmation page to create java server scan request](images/scan-java-servers-submit.png)
 
-3. Scroll down the Fleet details page, under **Resources** menu, select **Work Request**. You should see the Scan for Java servers Work Request you submitted in step 1. Wait for the work request to complete.
+    On the Scan for Java servers panel, select **Submit request** and click **Submit**.
+    ![image of scan for java servers submit now](images/scan-for-java-servers-submit-now.png)
+
+    > **Note:** You can also schedule Scan for Java servers by selecting the **Schedule for later** and setting the schedule preference. Once submitted, you should see a new Scheduled task been created. To view/manage the scheduled task, refer to [Lab 12](?lab=view-and-manage-scheduled-tasks)
+    > ![image of scan for java servers schedule later](images/scan-for-java-servers-schedule-later.png)
+
+3. Under the same **Resources** tab, select **Work Requests**. You can see the Scan for Java servers Work Request you submitted in the last step. Wait for the work request to complete.
 
     ![image of work request for java servers scan in progress](images/work-request-of-servers-scan-in-progress.png)
 
-4. If your request is successful, you should see that the Status of the request is marked as **Completed without errors**.  
+4. If your request is successful, you should see that the Status of the request is marked as **Completed without errors**.
 
-   > **Note:** It will take approximately 10 minutes for the request to be completed. 
+   > **Note:** It will take approximately 10 minutes for the request to be completed.
 
    ![image of work request for java servers scan completed](images/work-request-of-servers-scan-completed.png)
 
@@ -101,10 +109,12 @@ In this lab, you will:
     ![image of detail of deployed java web application](images/sample-java-web-application-detected.png)
 
 ## Task 4: (Optional) Tracking other Java Servers with Deployed Applications
+
 * Task 1 to 3 highlights the process of tracking a running Java server with deployed sample application using WebLogic server as an example. The Java server scan is able to detect the latest versions of a variety of Java Servers including:
-    * WebLogic
-    * Tomcat
-    * JBoss (JBoss EAP, JBoss AS/WildFly)
+
+  * WebLogic
+  * Tomcat
+  * JBoss (JBoss EAP, JBoss AS/WildFly)
     ![image of detected java servers](images/java-servers-other.png)
     ![image of detected java web applications](images/java-web-applications-other.png)
 * Additionally, the Java server scan is also able to detect applications that have been deployed in a standalone (non-clustered) or clustered mode.
@@ -112,7 +122,9 @@ In this lab, you will:
 * Setting up of Java application servers including configuring cluster mode is beyond the scope of this workshop. You may wish to deploy the Java Applications using above mentioned Java servers on your own and scan it using our features.
 
 You may now **proceed to the next lab.**
+
 ## Learn More
+
 * Refer to the [Advanced Features](https://docs.oracle.com/en-us/iaas/jms/doc/advanced-features.html), [Work Requests](https://docs.oracle.com/en-us/iaas/jms/doc/using-java-management-service.html#GUID-77AEEBC0-93A5-4E99-96D6-BEE0FEE4539F) sections of the JMS documentation for more details.
 
 * Use the [Troubleshooting](https://docs.oracle.com/en-us/iaas/jms/doc/troubleshooting.html#GUID-2D613C72-10F3-4905-A306-4F2673FB1CD3) chapter for explanations on how to diagnose and resolve common problems encountered when installing or using Java Management Service.
@@ -122,4 +134,4 @@ You may now **proceed to the next lab.**
 ## Acknowledgements
 
 * **Author** - Youcheng Li, Java Management Service
-* **Last Updated By** - Hannah Wong, May 2025
+* **Last Updated By** - Satish Sarakanam, October 2025

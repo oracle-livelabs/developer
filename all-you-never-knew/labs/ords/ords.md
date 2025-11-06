@@ -1,9 +1,17 @@
+<<<<<<< HEAD
+# Experimenting with Models, Parameters and Techniques
+
+## Introduction
+
+In this lab, we will  
+=======
 # Oracle REST Data Services (ORDS)
 
 ## Introduction
 
 In this lab, we will use Oracle Rest Data Services (ORDS) to automatically create HTTP routes for the TICKET_DV JSON Relational Dualtiy View - exposing generated GET, PUT, POST, and DELETE HTTP methods using simple SQL commands.
 
+>>>>>>> upstream/main
 
 Estimated Lab Time: 15 minutes
 
@@ -11,9 +19,14 @@ Estimated Lab Time: 15 minutes
 
 In this lab, you will:
 
+<<<<<<< HEAD
+* x
+* y
+=======
 * Enable the TESTUSER schema for ORDS
 * Enable the TICKET_DV duality view for ORDS
 * Experiment with ORDS REST APIs
+>>>>>>> upstream/main
 
 ### Prerequisites
 
@@ -21,6 +34,17 @@ This lab assumes you have:
 
 * All previous labs successfully completed
 
+<<<<<<< HEAD
+## Task 1: Xyz
+
+Xyz
+
+
+## Learn More
+
+* x
+* y
+=======
 ## Task 1: Enable Schema for ORDS
 
 First, enable the TESTUSER schema with ORDS. `support` is chosen as the base URL mapping pattern for the TESTUSER schema:
@@ -99,6 +123,7 @@ You may now proceed to the next lab.
 ## Learn More
 
 * [Oracle REST Data Services](https://docs.oracle.com/en/database/oracle/oracle-rest-data-services/index.html)
+>>>>>>> upstream/main
 
 ## Acknowledgements
 

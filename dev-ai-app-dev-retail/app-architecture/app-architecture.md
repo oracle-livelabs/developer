@@ -30,7 +30,7 @@ The Seer Retail return authorization application runs in an **Oracle Cloud Infra
 
 - The Application Subnet connects to the Oracle Services Network via the Service Gateway, enabling access to:
 
-    - Autonomous Database Serverless
+    - Autonomous AI Database Serverless
 
     - OCI Generative AI Services
 

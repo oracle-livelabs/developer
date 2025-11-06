@@ -107,7 +107,7 @@ In this lab, you will:
 
 You have two options to obtain a certificate:
 
-#### Option 1: Submit the CSR to a Trusted CA 
+#### Option 1: Submit the CSR to a Trusted CA
 
 1. Submit the CSR (`mycsr.csr`) to a trusted Certificate Authority (e.g., VeriSign, GlobalSign, Let's Encrypt).
 
@@ -115,7 +115,7 @@ You have two options to obtain a certificate:
 
 3. Save the issued certificate to a file (e.g., `mycert.cer`).
 
-#### Option 2: Generate a Self-Signed Certificate 
+#### Option 2: Generate a Self-Signed Certificate
 
 1. Run the following command to generate a self-signed certificate:
 
@@ -353,4 +353,4 @@ The resulting `DeploymentRuleSet.jar` file is now created and signed, ready for 
 ## Acknowledgements
 
 * **Author** - Chan Wei Quan, Java Management Service
-* **Last Updated By** - Hannah Wong, Ayoub El Maalmi  , Jul 2025
+* **Last Updated By** - Eugene Kazlou, September 2025
