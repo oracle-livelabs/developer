@@ -28,7 +28,7 @@ This lab assumes you have:
 
 2. Welcome to Seer Holdings! Select **Finance** as Industry and **Approval Officer** as role. Enter in a username and click **Login**.
 
-    ![Login](./images/finance-login.png =50%x*)
+    ![Login](./images/flogin.png =50%x*)
 
 3. Welcome to the SeerEquities Loan Management application! Congratulations, you are now connected to the demo environment. You can now execute the different tasks for this Lab.
 
