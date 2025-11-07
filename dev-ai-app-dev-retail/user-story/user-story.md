@@ -219,7 +219,11 @@ Once the document is uploaded:
 
 ## Conclusion
 
+<<<<<<< HEAD
+In conclusion our Return Authorization App was able to leverage Oracle AI Database technologies such as **AI Vector Search, Property Graph and JSON Duality Views** to:
+=======
 In conclusion, our Return Authorization App was able to leverage Oracle AI Database technologies such as **AI Vector Search, Property Graph and JSON Duality Views** to:
+>>>>>>> upstream/main
 
 ✅ Automate profile evaluations
 
