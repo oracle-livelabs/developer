@@ -219,11 +219,7 @@ Once the document is uploaded:
 
 ## Conclusion
 
-<<<<<<< HEAD
-In conclusion our Return Authorization App was able to leverage Oracle AI Database technologies such as **AI Vector Search, Property Graph and JSON Duality Views** to:
-=======
 In conclusion, our Return Authorization App was able to leverage Oracle AI Database technologies such as **AI Vector Search, Property Graph and JSON Duality Views** to:
->>>>>>> upstream/main
 
 ✅ Automate profile evaluations
 
@@ -242,6 +238,5 @@ By combining these advanced tools, the application enables faster, smarter decis
 * [Oracle AI Database Documentation](https://docs.oracle.com/en/database/oracle/oracle-database/23/)
 
 ## Acknowledgements
-* **Authors** - Linda Foinding, Francis Regalado, Kamryn Vinson
-* **Contributors** - Kevin Lazarz, Hanna Rakhsha, Ley Sylvester, Uma Kumar
-* **Last Updated By/Date** - Francis Regalado, October 2025
+* **Authors** - Linda Foinding, Francis Regalado
+* **Last Updated By/Date** - Linda Foinding, November 2025

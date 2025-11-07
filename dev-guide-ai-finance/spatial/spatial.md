@@ -266,5 +266,5 @@ Create Rest API isFlooded2080. Determine Tenean Beach flood status in 2080.
 
 ## Acknowledgements
 * **Authors** - Doug Drechsel
-* **Contributors** - Mark Nelson, Kevin Lazarz
+* **Contributors** - Mark Nelson
 * **Last Updated By/Date** - Doug Drechsel, April 2025

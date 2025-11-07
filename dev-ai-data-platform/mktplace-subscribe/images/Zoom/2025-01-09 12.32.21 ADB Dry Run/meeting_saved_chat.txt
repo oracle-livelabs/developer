@@ -1,8 +1,0 @@
-12:32:21 From Otis Barr to Host and panelists:
-	Feature-Oriented Approach ???
-12:32:36 From Otis Barr to Host and panelists:
-	Which Features are most wanted by customers
-12:35:54 From Cary Millsap to Host and panelists:
-	https://oracle-my.sharepoint.com/personal/kay_malcolm_oracle_com/_layouts/15/onedrive.asp[…]0Share%2FDB%20Collective%2FCompleted%20One%20Pagers&ga=1
-12:39:21 From Cary Millsap to Host and panelists:
-	This is the group needing access: dbdev_idea_collateral_writing_grp@oracle.com

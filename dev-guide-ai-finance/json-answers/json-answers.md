@@ -138,9 +138,9 @@ The analytics team can leverage these SQL queries to deliver powerful insights i
 
 ## Learn More
 
-* [Oracle Database 23ai Documentation](https://docs.oracle.com/en/database/oracle/oracle-database/23/)
+* [Oracle AI Database Documentation](https://docs.oracle.com/en/database/oracle/oracle-database/23/)
 
 ## Acknowledgements
 * **Authors** - Linda Foinding, Francis Regalado
-* **Contributors** - Kamryn Vinson, Otis Barr, Ramona Magadan, Eddie Ambler, Kevin Lazarz
+* **Contributors** - Ramona Magadan, Eddie Ambler
 * **Last Updated By/Date** - Linda Foinding, April 2025

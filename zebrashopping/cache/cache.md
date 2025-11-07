@@ -75,7 +75,7 @@ First, let's add a function to our code which will create a cache for our applic
     </copy>
     ```
 
-    You can see that our cache is simply a new database table. The are utilizing Oracle Database 23ai's capability of storing vector data by using the `VECTOR` data type for the column `embedding`. The `CLOB` data type is used for storing text strings.
+    You can see that our cache is simply a new database table. The are utilizing Oracle AI Database's capability of storing vector data by using the `VECTOR` data type for the column `embedding`. The `CLOB` data type is used for storing text strings.
 
 2. We need to make sure that the function is called at some point in our application. We will do this by adding a call to `create_llm_cache_table()`. Copy the following code and past it at the end of **app.py** (right after `print("http://" + os.getenv("PUBLIC_IP") + ":8088")`):
 
@@ -368,4 +368,4 @@ Next: Feel free to continue exploring the code and improving it. 🤘
 
 ## Acknowledgements
 * **Author** - Kevin Lazarz, Senior Manager, Database Product Management
-* **Last Updated By/Date** - Kevin Lazarz, August 2025
+* **Last Updated By/Date** - Kevin Lazarz, November 2025

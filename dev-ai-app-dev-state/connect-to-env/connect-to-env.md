@@ -53,6 +53,6 @@ You will use a Jupyter Notebook in JupyterLab to build and test the loan recomme
 In this lab you logged into the **IDE Development Environment** for Jupyter Labs. You reviewed different elements from the environment like **File Browser** and **Launcher**. Lastly, you were introduced to concepts to allow you to get started running code smoothly like **executing code blocks** and **outputs and warnings**. 
 
 ## Acknowledgements
-* **Author** - Kamryn Vinson
-* **Contributors** -  Linda Foinding, Francis Regalado, Kevin Lazarz
+* **Author** - Linda Foinding
+* **Contributors** -  Linda Foinding, Francis Regalado
 * **Last Updated By/Date** - Uma Kumar, August 2025
