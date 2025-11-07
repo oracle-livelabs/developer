@@ -669,4 +669,4 @@ You may now proceed to the next lab.
 
 ## Acknowledgements
 * **Authors** - Ley Sylvester
-* **Contributors** - Kevin Lazarz, Hanna Rakhsha, Francis Regalado, Uma Kumar
+* **Contributors** - Hanna Rakhsha, Francis Regalado, Uma Kumar

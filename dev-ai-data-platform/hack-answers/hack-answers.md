@@ -160,6 +160,6 @@ In this lab, you will:
 
 
 ## Acknowledgements
-* **Author** - Eddie Ambler, Otis Barr
+* **Author** - Eddie Ambler
 * **Contributors** -  Mike Matthews, Marty Gubar, Francis Regalado, Linda Foinding
 * **Last Updated By/Date** - 05-29-2025

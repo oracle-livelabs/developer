@@ -133,5 +133,4 @@ This lab assumes you have:
 ## Acknowledgements
 
 * **Author** - Madhusudhan Rao, Principal Product Manager, Database 
-* **Contributors** - Kevin Lazarz, Senior Principal Product Manager, Database
 * **Last Updated By/Date** -  Madhusudhan Rao, May 2022

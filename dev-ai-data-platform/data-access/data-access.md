@@ -1,7 +1,7 @@
 # Code RAG using AI Vector Search Hackathon Challenge
 
 ## Introduction
-In this lab, you will complete a series of developer coding challenges using various Oracle Database 23ai features. You will be challenged to enhance the current application features to implement various updates. Are you up for the challenge? 
+In this lab, you will complete a series of developer coding challenges using various Oracle AI Database features. You will be challenged to enhance the current application features to implement various updates. Are you up for the challenge? 
 
 If you are up for the challenge, continue with this lab. If you would like a step-by-step guide on how to complete the challenge, continue to the Code RAG using AI Vector Search lab.
 
