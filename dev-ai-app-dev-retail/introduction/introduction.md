@@ -45,6 +45,11 @@ By the end, you’ll have a complete toolkit—from clean data to live AI apps t
 
 ### Objectives
 
+<<<<<<< HEAD
+Objectives
+
+=======
+>>>>>>> upstream/main
 * Build and query data with Python + Oracle AI Database
 
 * Shape relational data into documents using JSON Duality Views

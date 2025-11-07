@@ -50,7 +50,11 @@ All of the coding examples will be executed in a new Jupyter Notebook.
 
 ## Task 2: Connect to the database using Python
 
+<<<<<<< HEAD
+In this first task, you will connect to an Oracle AI Database instance using Oracle's Python driver, `oracledb`. `oracledb` is available in PyPi (`pip install oracledb`) and supports in its latest version all of the advanced features of the Oracle Database, including JSON and VECTOR.
+=======
 In this first task, you will connect to an Oracle AI Database instance using Oracle's Python driver, `oracledb`. `oracledb` is available in PyPi (`pip install oracledb`) and supports in its latest version all of the advanced features of the Oracle AI Database, including JSON and VECTOR.
+>>>>>>> upstream/main
 
 1. In the newly created Jupyter Notebook, copy and paste the following code block into an empty cell. This code block imports the `oracledb` Python driver and other libraries that help us to securely read credentials from the environment variables.
 
