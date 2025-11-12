@@ -13,7 +13,8 @@
         {
           "title": "Environment set-up",
           "description": "Installing and configuring necessary dependencies and pre-requisites.",
-          "filename":"../../2-environment-set-up.md"
+          "filename":"../../2-environment-set-up.md",
+          "type": "freesql"
         },
          {
             "title": "Explore SQLcl MCP server",
