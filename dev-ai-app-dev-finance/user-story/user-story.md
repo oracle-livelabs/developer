@@ -28,7 +28,7 @@ This lab assumes you have:
 
 2. Welcome to Seer Holdings! Select **Finance** as Industry and **Approval Officer** as role. Enter in a username and click **Login**.
 
-    ![Login](./images/finance-login.png =50%x*)
+    ![Login](./images/flogin.png =50%x*)
 
 3. Welcome to the SeerEquities Loan Management application! Congratulations, you are now connected to the demo environment. You can now execute the different tasks for this Lab.
 
@@ -77,13 +77,13 @@ In this first example, you will use the application to approve a customer with s
 
     ![James Smith Select Loan 3](./images/james-smith-select-loan.png =50%x*)
 
-7. Set the final loan status to **Approved**, then click **Save Final Approval & Loan Status** to complete the process.
+7. Set the final loan status to **Approved**, then click **Confirm Decision** to complete the process.
 
     The loan status has been updated to 'Approved' and saved to the customer profile.
 
     ![James Smith Save Loan Status](./images/james-smith-save.png =50%x*)
 
-8.  Click the **Generate Decision as PDF** button.
+8.  Click the **Download Decision PDF** button.
 
     ![James Smith Download Recommendation](./images/james-smith-download.png =50%x*)
 
@@ -141,7 +141,7 @@ In this example, you will navigate the application to review a customer and deny
 >⁉️ **What is the reason that the AI decided to deny this applicant?** ⁉️
 
 
-4. Expand **View Dot Plot: Client-Loan Relationships** to view the graph.
+4. Expand **Interactive Graph: Client-Loan Relationships** to view the graph.
 
     ![James Woods Graph](./images/james-woods-graph.png =50%x*)
 
@@ -159,23 +159,23 @@ In this example, you will navigate the application to review a customer and deny
 
     ![James Woods Save Loan Status](./images/woods-decision1.png =50%x*)
 
-2. Press the **Generate Decision as PDF** button to save the AI responses and proceed to the final loan disposition.
+6. Press the **Download Decision PDF** button to save the AI responses and proceed to the final loan disposition.
 
     ![James Woods PDF](./images/woods-decision2.png =50%x*)
 
-3. Click the **Download PDF** button.
+7. Click the **Download PDF** button.
 
     ![James Woods Download Recommendation](./images/james-woods-download.png =50%x*)
 
-4. Display the message the customer would see by opening the downloaded PDF.
+8. Display the message the customer would see by opening the downloaded PDF.
 
-    ![Open James Woods PDF](./images/open-james-woods-pdf.png =50%x*)
+    ![Open James Woods PDF](./images/jameswoodsnotice.png =50%x*)
 
-5. Click the **Return to Dashboard** button to navigate back to the Dashboard.
+9. Click the **Return to Dashboard** button to navigate back to the Dashboard.
 
     ![Return to Dashboard](./images/woods-decision2.png =50%x*)
 
-6.  Expand **View Denied Customers**. You will see that James Woods has been moved from the **Pending Review Loan Requests** list to the **Denied Loan Requests** list.
+10.  Expand **View Denied Customers**. You will see that James Woods has been moved from the **Pending Review Loan Requests** list to the **Denied Loan Requests** section.
 
     ![James Woods Denied List](./images/woods-decision3.png =50%x*)
 
@@ -241,5 +241,5 @@ By combining these advanced tools, the application enables faster, smarter decis
 
 ## Acknowledgements
 * **Authors** - Linda Foinding, Francis Regalado
-* **Contributors** - Kevin Lazarz, Eddie Ambler, Ramona Magadan, Mark Nelson, Andy Tael, Anders Swanson, Rahul Tasker
+* **Contributors** - Eddie Ambler, Ramona Magadan, Mark Nelson, Andy Tael, Anders Swanson, Rahul Tasker
 * **Last Updated By/Date** - Linda Foinding, September 2025

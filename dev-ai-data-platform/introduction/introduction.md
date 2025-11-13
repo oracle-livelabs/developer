@@ -102,6 +102,6 @@ With Data Catalog, you can collect, organize, search, access, enrich, and activa
 * [Autonomous Database](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html)
 
 ## Acknowledgements
-* **Authors** - Eddie Ambler, Otis Barr, Matt Kowalik, Ramona Magadan
+* **Authors** - Eddie Ambler, Matt Kowalik, Ramona Magadan
 * **Contributors** - Francis Regalado
 * **Last Updated By/Date** - 04/21/2025

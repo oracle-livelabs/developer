@@ -667,5 +667,5 @@ You may now **proceed to the next lab**.
 
 ## Acknowledgements
 
-- **Created By/Date** - Kamryn Vinson, Linda Foinding, Kevin Lazarz
-- **Last Updated By/Date** - Dan Kingsley, July 2025
+- **Created By/Date** - Linda Foinding
+- **Last Updated By/Date** - Linda Foinding, July 2025

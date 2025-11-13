@@ -232,5 +232,5 @@ By combining these advanced tools, the application enables faster, smarter decis
 
 ## Acknowledgements
 * **Authors** - Uma Kumar
-* **Contributors** - Kevin Lazarz, Francis Regalado, Hanna Rakhsha, Ley Sylvester, Noah Paul
+* **Contributors** - Francis Regalado, Hanna Rakhsha, Ley Sylvester, Noah Paul
 * **Last Updated By/Date** - Uma Kumar, October 2025

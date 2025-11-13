@@ -42,5 +42,5 @@ You may now **proceed to the next lab**.
 
 ## Acknowledgements
 
-- **Created By/Date** - Kamryn Vinson
-- **Last Updated By/Date** - Kamryn Vinson, June 2025
+- **Created By/Date** - Linda Foinding
+- **Last Updated By/Date** -Linda Foinding, June 2025

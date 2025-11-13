@@ -62,7 +62,7 @@ Here, “stdio” means the server communicates over standard input and output s
 
 - GenAI chat — oci\_chat(prompt, …) talks to OCI Generative AI.
 
-- Embeddings in DB — embed\_db(text, model_name) calls Oracle DB 23ai to embed text via ONNX model.
+- Embeddings in DB — embed\_db(text, model_name) calls Oracle AI Database to embed text via ONNX model.
 
 - Database schema discovery — list\_tables(owner), describe\_table(table, owner, sample\_rows).
 

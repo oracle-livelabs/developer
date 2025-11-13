@@ -32,7 +32,6 @@ The objective of this workshop is:
 
 * **Author** - Madhusudhan Rao, Principal Product Manager, Database
 * **Special Thanks to all the contributors**
-    - Kevin Lazarz, Senior Principal Product Manager, Database.
     - Christopher Jones, Senior Principal Product Manager.
     - Kuassi MENSAH, Director of Product Management.  
     - Alex Keh, Senior Principal Product Manager.

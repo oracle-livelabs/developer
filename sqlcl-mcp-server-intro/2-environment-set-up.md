@@ -18,12 +18,11 @@ This lab assumes you have:
 * Access (via an API Key or other means) to an LLM Provider of your choice
 * Oracle Java 17 or 21 (*recommended*) installed
 * A personal computer or access to a workshop-provided workstation
-* Oracle SSO credentials (existing or workshop provided)
+<!-- * Oracle SSO credentials (existing or workshop provided) -->
+
 * Reviewed the prerequisites of the Introduction lab
 
-<if type="freesql">
-
-## Task 1: Create a FreeSQL account
+<!-- Task 1: Create a FreeSQL account
 
 1. From a new browser window/tab, navigate to [https://freesql.com/](https://freesql.com/). 
 
@@ -101,6 +100,43 @@ This lab assumes you have:
 
    ![admin-category-then-db-users](./images/lab-2/admin-category-then-db-users.png " ")
 
+> &#9872; **NOTE:** You may click the <strong>&circlearrowleft; Regenerate</strong> button to create a new password. Please save this password, as it will only be displayed once. 
+> 
+> *Your password will **NOT** be saved or displayed across sessions!* -->
+
+
+## Task 1: Download the Instance Wallet
+
+1. In this Lab you will use a Cloud Wallet to configure your database connection in Oracle SQL Developer for VS Code (to be completed in a later step). Return to your Autonomous AI database dashboard. 
+
+2. Click on Database Connection.
+
+   ![click-on-database-connection](./images/lab-2/click-on-database-connection.png " ")
+
+3. Ensure Instance wallet is selected for the Wallet Type. Click the Download wallet button.
+
+   ![instance-wallet-type-download-wallet](./images/lab-2/instance-wallet-type-download-wallet.png " ")
+
+4. Enter a Wallet password, and reconfirm. Then click the Download button.
+
+    ![enter-wallet-password-download-button](./images/lab-2/enter-wallet-password-download-button.png " ")
+
+5. Take note of the complete path of where the Cloud Wallet was downloaded to.
+
+    ![take-note-of-complete-path-of-wallet](./images/lab-2/take-note-of-complete-path-of-wallet.png " ")
+
+   > &#9872; **NOTE:** You can drag and drop the .zip file into a terminal window to quickly discover the complete path.
+
+## Task 2: Create a new REST-enabled database user
+
+1. From your Autonomous AI database's console, click **Database Actions** then **View all database actions**.
+
+    ![launching-database-actions-from-console](./images/lab-2/launching-database-actions-from-console.png " ")
+
+2. From the Database Actions LaunchPad, navigate to the **Administration** category. Then select **Database Users**.
+
+   ![admin-category-then-db-users](./images/lab-2/admin-category-then-db-users.png " ")
+
 2. From the User Management dashboard, select the **&plus; Create User** button. 
 
    ![select-create-user](./images/lab-2/select-create-user.png " ")
@@ -132,6 +168,23 @@ This lab assumes you have:
 ## Task 3: Install SQL Developer Extension for VS Code 
 
 </if>
+6. You will use this new developer user for the remainder of this Lab. Next you'll install SQL Developer for VS Code.
+
+<!-- </if>
+
+<if type="green-btn">
+
+## Task 1: Create a FreeSQL account
+
+</if>
+
+<if type="tenancy"> -->
+
+<!-- ## Task 1: Create a FreeSQL account
+
+</if> -->
+
+## Task 3: Install SQL Developer Extension for VS Code
 
 <!-- > **NOTE:** For today's session, skip to Step 2 of this task (applies to LiveLabs-provided workstation's only). -->
 
@@ -160,8 +213,15 @@ This lab assumes you have:
    ![complete-connection-details-in-sql-dev-connection-dialog](./images/lab-2/complete-connection-details-in-sql-dev-connection-dialog.png " ")
 
    ![save-password-check](./images/lab-2/save-password-check.png " ")
+2. Once installed, navigate to SQL Developer Extension for VS Code(located in your Activity Bar)
 
-<p></p>
+     ![6-creating-your-first-sql-developer-web-extension-connection](./images/lab-2/6-creating-your-first-sql-developer-web-extension-connection.png " ")
+
+3. Click the <strong>Create Connection</strong> button. Enter your database connection details. Choose **Cloud Wallet** as the Connection Type.
+
+   ![click-create-connection-button](./images/lab-2/click-create-connection-button.png " ")
+
+   ![entering-in-connection-details](./images/lab-2/entering-in-connection-details.png " ")
 
 > &#9888; **Important:** Make sure you click the checkbox (&check; Save Password) to save your password. Your SQLcl MCP Server relies on this securely saved password to establish a database connection.
 
@@ -200,6 +260,28 @@ This lab assumes you have:
 <p></p>
 
 > &#9888; **Important:** Make sure you click the checkbox (&check; Save Password) to save your password. Your SQLcl MCP Server relies on this securely saved password to establish a database connection.
+   ![save-password-pre-select-cloud-wallet-location](./images/lab-2/save-password-pre-select-cloud-wallet-location.png " ")
+
+4.  Select the location of your Wallet `.zip` file. Choose the `_low`
+
+    ![selecting-the-wallet-location](./images/lab-2/selecting-the-wallet-location.png " ")
+
+   ![testing-the-new-connection](./images/lab-2/testing-the-new-connection.png " ")
+
+   ![saving-the-new-connection](./images/lab-2/saving-the-new-connection.png " ")
+    ![choosing-low-service-level](./images/lab-2/choosing-low-service-level.png " ")
+
+<p></p>
+
+> &#9888; **Important:** Make sure you click the checkbox (&check; Save Password) to save your password. Your SQLcl MCP Server relies on this securely saved password to establish a database connection.
+
+   ![new-dev-user-from-connection-explorer](./images/lab-2/new-dev-user-from-connection-explorer.png " ")
+
+   Clicking a connnection name does two things:
+     - Establishes a connection to the target database
+     - Reveals the various database objects, links, directories, and other categories in a schema
+
+</if>
 
 5. Click the **Test** button to test your connection. When the test succeeds, click the **Save** button. This will save your connection, but not connect.
 
@@ -214,9 +296,7 @@ This lab assumes you have:
    Clicking a connnection name does two things:
      - Establishes a connection to the target database
      - Reveals the various database objects, links, directories, and other categories in a schema
-
-</if>
-
+   
    <!-- <sup id="ref-2"><a href="#fn-2">2</a></sup> -->
 
 7. In the next task you'll install SQLcl. 
