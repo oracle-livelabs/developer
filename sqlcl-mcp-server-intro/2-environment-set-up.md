@@ -24,28 +24,81 @@ This lab assumes you have:
 
 <!-- Task 1: Create a FreeSQL account
 
-1. From a new browser window/tab, navigate to [https://freesql.com/?sqlnet=true](https://freesql.com/?sqlnet=true). 
+1. From a new browser window/tab, navigate to [https://freesql.com/](https://freesql.com/). 
 
-> **NOTE:** You may need to configure your Windows machine, so the default browser is Chrome (applies to LiveLabs-provided workstations only).
+   ![navigate-to-freesql-com](./images/lab-2/navigate-to-freesql-com.png " ")
 
-2. Sign in with your existing Oracle account, or create a new account. 
-3. After logging in to to [freesql.com](https://www.freesql.com) and click the <strong>Connect with [rotating language option]</strong>
+2. Sign in with your existing Oracle account, or create a new account.
 
-   ![1-clicking-connect-with-button.png](./images/lab-2/1-clicking-connect-with-button.png " ")
- 
-    ![2-copying-your-free-sql-credentials.png](./images/lab-2/2-copying-your-free-sql-credentials.png " ")
+   ![click-sign-in-for-freesql](./images/lab-2/click-sign-in-for-freesql.png " ")
 
-<p></p>
+   ![click-create-new-account-button](/images/lab-2/click-create-new-account-button.png " ")
+
+   ![creating-an-oracle-account-form](./images/lab-2/creating-an-oracle-account-form.png " ")
+
+   ![sign-in-with-existing-or-new-credentials](./images/lab-2/sign-in-with-existing-or-new-credentials.png " ")
+
+   ![oracle-mfa-authorize-in-second-device](./images/lab-2/oracle-mfa-authorize-in-second-device.png " ")
+
+3. Once logged in, click the <strong>Connect with [rotating language option]</strong> button.
+
+   ![click-connect-with-button](./images/lab-2/click-connect-with-button.png " ")
+
+4. Your new FreeSQL connection details will appear. Copy the SQLcl connect string to your clipboard. If you need a new password, click the <strong>&circlearrowleft; Regenerate</strong> button to create a new password.  
+
+> &#9872; **NOTE:** *Your password will **NOT** be saved or displayed across sessions!*
+
+   ![schema-connection-details-for-freesql](./images/lab-2/schema-connection-details-for-freesql.png " ")
+  
+   ![regenerating-new-password](./images/lab-2/regenerating-new-password.png " ")
 
 4. Take note of your FreeSQL credentials. You will need the following values:
 
+      - Username
+      - Password
       - Hostname
       - Port
       - Service Name
-      - Username
-      - Password
 
-<p></p>
+   ![your-freesql-connection-string-in-clipboard](./images/lab-2/your-freesql-connection-string-in-clipboard.png " ")
+
+5. You will use this new FreeSQL user for the remainder of this Lab. In the next task, you'll create a database connection in SQL Developer Extension for VS Code.
+
+</if>
+
+<if type="freetier">
+
+## Task 1: Download the Instance Wallet
+
+1. In this Lab you will use a Cloud Wallet to configure your database connection in Oracle SQL Developer for VS Code (to be completed in a later step). Return to your Autonomous AI database dashboard. 
+
+2. Click on Database Connection.
+
+   ![click-on-database-connection](./images/lab-2/click-on-database-connection.png " ")
+
+3. Ensure Instance wallet is selected for the Wallet Type. Click the Download wallet button.
+
+   ![instance-wallet-type-download-wallet](./images/lab-2/instance-wallet-type-download-wallet.png " ")
+
+4. Enter a Wallet password, and reconfirm. Then click the Download button.
+
+    ![enter-wallet-password-download-button](./images/lab-2/enter-wallet-password-download-button.png " ")
+
+5. Take note of the complete path of where the Cloud Wallet was downloaded to.
+
+    ![take-note-of-complete-path-of-wallet](./images/lab-2/take-note-of-complete-path-of-wallet.png " ")
+
+   > &#9872; **NOTE:** You can drag and drop the .zip file into a terminal window to quickly discover the complete path.
+
+## Task 2: Create a new REST-enabled database user
+
+1. From your Autonomous AI database's console, click **Database Actions** then **View all database actions**.
+
+    ![launching-database-actions-from-console](./images/lab-2/launching-database-actions-from-console.png " ")
+
+2. From the Database Actions LaunchPad, navigate to the **Administration** category. Then select **Database Users**.
+
+   ![admin-category-then-db-users](./images/lab-2/admin-category-then-db-users.png " ")
 
 > &#9872; **NOTE:** You may click the <strong>&circlearrowleft; Regenerate</strong> button to create a new password. Please save this password, as it will only be displayed once. 
 > 
@@ -100,6 +153,21 @@ This lab assumes you have:
 
    ![dev-user-new-uri-for-db-actions](./images/lab-2/dev-user-new-uri-for-db-actions.png " ")
 
+6. You will use this new developer user for the remainder of this Lab.  Next you'll create a database connection in SQL Developer for VS Code.
+
+</if>
+
+<if type="freesql"> 
+
+## Task 2: Install SQL Developer Extension for VS Code 
+
+</if>
+
+<if type="freetier"> 
+
+## Task 3: Install SQL Developer Extension for VS Code 
+
+</if>
 6. You will use this new developer user for the remainder of this Lab. Next you'll install SQL Developer for VS Code.
 
 <!-- </if>
@@ -132,9 +200,48 @@ This lab assumes you have:
 
      ![4-search-for-sql-developer-web-vscode-extension](./images/lab-2/4-search-for-sql-developer-web-vscode-extension.png " ")
 
+2. Once installed, navigate to SQL Developer Extension for VS Code (located in your Activity Bar)
+
+     ![6-creating-your-first-sql-developer-web-extension-connection](./images/lab-2/6-creating-your-first-sql-developer-web-extension-connection.png " ")
+
+<if type="freesql"> 
+
+3. Click the <strong>Create Connection</strong> button. Enter your FreeSQL database connection details.
+
+   ![click-sql-developer-extension-icon-then-create-connection-icon](./images/lab-2/click-sql-developer-extension-icon-then-create-connection-icon.png " ")
+
+   ![complete-connection-details-in-sql-dev-connection-dialog](./images/lab-2/complete-connection-details-in-sql-dev-connection-dialog.png " ")
+
+   ![save-password-check](./images/lab-2/save-password-check.png " ")
 2. Once installed, navigate to SQL Developer Extension for VS Code(located in your Activity Bar)
 
      ![6-creating-your-first-sql-developer-web-extension-connection](./images/lab-2/6-creating-your-first-sql-developer-web-extension-connection.png " ")
+
+3. Click the <strong>Create Connection</strong> button. Enter your database connection details. Choose **Cloud Wallet** as the Connection Type.
+
+   ![click-create-connection-button](./images/lab-2/click-create-connection-button.png " ")
+
+   ![entering-in-connection-details](./images/lab-2/entering-in-connection-details.png " ")
+
+> &#9888; **Important:** Make sure you click the checkbox (&check; Save Password) to save your password. Your SQLcl MCP Server relies on this securely saved password to establish a database connection.
+
+4. Click the **Test** button to test your connection. When the test succeeds, click the **Save** button. This will save your connection, but not connect.
+
+   ![testing-new-freesql-connection-and-success-message](./images/lab-2/testing-new-freesql-connection-and-success-message.png " ")
+
+   ![saving-new-freesql-db-connection](./images/lab-2/saving-new-freesql-db-connection.png " ")
+
+6. Your new connection will appear in the Primary Side Bar. Click the connection name. 
+
+   ![expanding-newly-created-freesql-connection-in-sql-dev-vscode](./images/lab-2/expanding-newly-created-freesql-connection-in-sql-dev-vscode.png " ")
+
+   Clicking a connnection name does two things:
+     - Establishes a connection to the target database
+     - Reveals the various database objects, links, directories, and other categories in a schema
+   
+</if>
+
+<if type="freetier"> 
 
 3. Click the <strong>Create Connection</strong> button. Enter your database connection details. Choose **Cloud Wallet** as the Connection Type.
 
@@ -153,6 +260,28 @@ This lab assumes you have:
 <p></p>
 
 > &#9888; **Important:** Make sure you click the checkbox (&check; Save Password) to save your password. Your SQLcl MCP Server relies on this securely saved password to establish a database connection.
+   ![save-password-pre-select-cloud-wallet-location](./images/lab-2/save-password-pre-select-cloud-wallet-location.png " ")
+
+4.  Select the location of your Wallet `.zip` file. Choose the `_low`
+
+    ![selecting-the-wallet-location](./images/lab-2/selecting-the-wallet-location.png " ")
+
+   ![testing-the-new-connection](./images/lab-2/testing-the-new-connection.png " ")
+
+   ![saving-the-new-connection](./images/lab-2/saving-the-new-connection.png " ")
+    ![choosing-low-service-level](./images/lab-2/choosing-low-service-level.png " ")
+
+<p></p>
+
+> &#9888; **Important:** Make sure you click the checkbox (&check; Save Password) to save your password. Your SQLcl MCP Server relies on this securely saved password to establish a database connection.
+
+   ![new-dev-user-from-connection-explorer](./images/lab-2/new-dev-user-from-connection-explorer.png " ")
+
+   Clicking a connnection name does two things:
+     - Establishes a connection to the target database
+     - Reveals the various database objects, links, directories, and other categories in a schema
+
+</if>
 
 5. Click the **Test** button to test your connection. When the test succeeds, click the **Save** button. This will save your connection, but not connect.
 
@@ -170,7 +299,7 @@ This lab assumes you have:
    
    <!-- <sup id="ref-2"><a href="#fn-2">2</a></sup> -->
 
-7. Continue to the next task to install SQLcl. 
+7. In the next task you'll install SQLcl. 
 
 <!-- <br></br>
 **Footnotes**
@@ -187,7 +316,19 @@ This lab assumes you have:
 
 <br></br>
 
+</if>
+
+<if type="freesql"> 
+
+## Task 3: Installing SQLcl
+
+</if>
+
+<if type="freetier"> 
+
 ## Task 4: Installing SQLcl
+
+</if>
 
 <!-- > **NOTE:** For today's session, SQLcl has already been downloaded for you. You can locate the SQLcl product folder on your desktop (applies to LiveLabs-provided workstation's only).  -->
 
@@ -223,7 +364,18 @@ This lab assumes you have:
     complete_file_path_to_your_sqlcldirectory/bin
     ```
 
+
+<if type="freesql"> 
+
+## Task 4: Installing the Cline for VS Code Extension
+
+</if>
+
+<if type="freetier"> 
+
 ## Task 5: Installing the Cline for VS Code Extension
+
+</if>
 
 1. Return to the VS Code Extensions tab and search for the Cline extension.
 
