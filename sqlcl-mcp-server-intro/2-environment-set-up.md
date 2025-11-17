@@ -195,6 +195,16 @@ This lab assumes you have:
 
 <if type="freetier"> 
 
+</if>
+
+<if type="freesql"> 
+
+## Task 3: Installing SQLcl
+
+</if>
+
+<if type="freetier"> 
+
 ## Task 4: Installing SQLcl
 
 1. Download and install SQLcl. Download two ways: 
@@ -232,6 +242,8 @@ This lab assumes you have:
 </if>
 
 ## Task <if type="freesql"> 3: </if> <if type="freetier"> 5: </if> Installing the Cline for VS Code Extension
+
+</if>
 
 1. Return to the VS Code Extensions tab and search for the Cline extension.
 
