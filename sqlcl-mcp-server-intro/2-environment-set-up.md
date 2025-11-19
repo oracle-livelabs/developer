@@ -24,9 +24,17 @@ This lab assumes you have:
 
 ## Task 1: Create a FreeSQL account
 
-1. From a new browser window/tab, navigate to [https://freesql.com/](https://freesql.com/). 
+1. Navigate to FreeSQL.com to Sign in with or create a new account: <a href="https://freesql.com" target="_blank"><button class="livesql-button" type="button"><emp>Try it now w/ FreeSQL</emp></button></a>
 
-   ![navigate-to-freesql-com](./images/lab-2/navigate-to-freesql-com.png " ")
+<!-- <form action="https://freesql.com" method="get" target="_blank">
+  <button class="livesql-button" type="submit"><emp>Try it now w/ FreeSQL</emp></button>
+</form>
+ -->
+
+<!-- 1. 
+From a new browser window/tab, navigate to [https://freesql.com/](https://freesql.com/). 
+
+   ![navigate-to-freesql-com](./images/lab-2/navigate-to-freesql-com.png " ") -->
 
 2. Sign in with your existing Oracle account, or create a new account.
 
@@ -46,13 +54,13 @@ This lab assumes you have:
 
 4. Your new FreeSQL connection details will appear. Copy the SQLcl connect string to your clipboard. If you need a new password, click the <strong>&circlearrowleft; Regenerate</strong> button to create a new password.  
 
-> &#9872; **NOTE:** *Your password will **NOT** be saved or displayed across sessions!*
+    > &#9872; **NOTE:** *Your password will **NOT** be saved or displayed across sessions!*
+    > 
+    > ![schema-connection-details-for-freesql](./images/lab-2/schema-connection-details-for-freesql.png " ")
+    > 
+    > ![regenerating-new-password](./images/lab-2/regenerating-new-password.png " ")
 
-   ![schema-connection-details-for-freesql](./images/lab-2/schema-connection-details-for-freesql.png " ")
-  
-   ![regenerating-new-password](./images/lab-2/regenerating-new-password.png " ")
-
-4. Take note of your FreeSQL credentials. You will need the following values:
+4. Take note of your FreeSQL credentials. You will need the following values for the next Task:
 
       - Username
       - Password
@@ -122,7 +130,7 @@ This lab assumes you have:
 
 ## Task <if type="freesql"> 2: </if> <if type="freetier"> 3: </if> Install SQL Developer Extension for VS Code 
 
-1. Install SQL Developer Extension for VS Code; there are two installation options:
+1. Install SQL Developer Extension for VS Code. Here are two installation options:
 
     - VS Code [Marketplace](https://marketplace.visualstudio.com/items?itemName=Oracle.sql-developer)
     
@@ -172,9 +180,9 @@ This lab assumes you have:
 
    ![expanding-newly-created-freesql-connection-in-sql-dev-vscode](./images/lab-2/expanding-newly-created-freesql-connection-in-sql-dev-vscode.png " ")
 
-   Clicking a connnection name does two things:
-     - Establishes a connection to the target database
-     - Reveals the various database objects, links, directories, and other categories in a schema
+> &phone; **Info:** Clicking a connnection name does two things:  
+> - Establishes a connection to the target database
+> - Reveals the various database objects, links, directories, and other categories in a schema
    
 </if>
 
@@ -192,16 +200,6 @@ This lab assumes you have:
     <a href="#ref-2" title="Jump back to the reference">&uarr;</a>
   </li>
 </ol> -->
-
-<if type="freetier"> 
-
-</if>
-
-<if type="freesql"> 
-
-## Task 3: Installing SQLcl
-
-</if>
 
 <if type="freetier"> 
 
@@ -283,21 +281,23 @@ This lab assumes you have:
 
     <p></p>
 
-    |Tool | Parameters | Definition |
-    | --- | ---------- | ---------- | 
-    | `list-connections` | <ul><li>`filter`</li><li>`mcp_client`</li><li>`model`</li></ul> | <ul><li>This is the filter that will be used to refine the list of connections</li><li>Specify the name and version of the MCP client implementation being used (e.g. Copilot, Claude, Cline...)</li><li>The name (and version) of the language model being used by the MCP client to process requests (e.g. gpt-4.1, claude-sonnet-4, llama4...</li></ul>|
-    | `connect` | <ul><li>`connection_name`</li><li>`mcp_client`</li><li>`model`</li></ul> | <ul><li>Specify the name and version of the MCP client implementation being used (e.g. Copilot, Claude, Cline...)</li><li>The name (and version) of the language model being used by the MCP client to process requests (e.g. gpt-4.1, claude-sonnet-4, llama4...</li></ul>|
-    | `disconnect` | <ul><li>`mcp_client`</li><li>`model`</li></ul> | <ul><li>The name of the saved connection you want to connect to</li><li>The name (and version) of the language model being used by the MCP client to process requests (e.g. gpt-4.1, claude-sonnet-4, llama4...</li></ul>|
-    | `run-sqlcl` | <ul><li>`sqlcl`</li><li>`mcp_client`</li><li>`model`</li></ul> | <ul><li>The SQLcl command to execute</li><li>Specify the name and version of the MCP client implementation being used (e.g. Copilot, Claude, Cline...)</li><li>The name (and version) of the language model being used by the MCP client to process requests (e.g. gpt-4.1, claude-sonnet-4, llama4...</li></ul>|
-    | `sql` | <ul><li>`sql`</li><li>`mcp_client`</li><li>`model`</li></ul> | <ul><li>The SQL query to execute</li><li>Specify the name and version of the MCP client implementation being used (e.g. Copilot, Claude, Cline...)</li><li>The name (and version) of the language model being used by the MCP client to process requests (e.g. gpt-4.1, claude-sonnet-4, llama4...</li></ul>|
+    | Tool | Purpose | Parameters | Parameter Definitions |
+    | ---- | ------- | ---------- | ---------- |
+    | `list-connections` | Lists all saved Oracle database connection names in the connection storage. | <ul><li>`filter`</li><li>`mcp_client`</li><li>`model`</li></ul> | <ul><li>This is the filter that will be used to refine the list of connections</li><li>Specify the name and version of the MCP client implementation being used (e.g. Copilot, Claude, Cline...)</li><li>The name (and version) of the language model being used by the MCP client to process requests (e.g. gpt-4.1, claude-sonnet-4, llama4...</li></ul>|
+    | `connect` | Provides an interface for connecting to a specified Oracle database, prompting for confirmation if already connected, listing available schemas if not connected, handling case-sensitive connection names, and instructing on creating named connections if an invalid name is provided. | <ul><li>`connection_name`</li><li>`mcp_client`</li><li>`model`</li></ul> | <ul><li>Specify the name and version of the MCP client implementation being used (e.g. Copilot, Claude, Cline...)</li><li>The name (and version) of the language model being used by the MCP client to process requests (e.g. gpt-4.1, claude-sonnet-4, llama4...</li></ul>|
+    | `disconnect` | Performs a disconnection from the current Oracle database session, logging out and returning to the SQL prompt if connected. | <ul><li>`mcp_client`</li><li>`model`</li></ul> | <ul><li>The name of the saved connection you want to connect to</li><li>The name (and version) of the language model being used by the MCP client to process requests (e.g. gpt-4.1, claude-sonnet-4, llama4...</li></ul>|
+    | `run-sqlcl` | Executes SQLcl commands in the SQLcl CLI, prompting for database connection if needed, and returns the command results. | <ul><li>`sqlcl`</li><li>`mcp_client`</li><li>`model`</li></ul> | <ul><li>The SQLcl command to execute</li><li>Specify the name and version of the MCP client implementation being used (e.g. Copilot, Claude, Cline...)</li><li>The name (and version) of the language model being used by the MCP client to process requests (e.g. gpt-4.1, claude-sonnet-4, llama4...</li></ul>|
+    | `run-sql` | Executes SQL queries in an Oracle database, prompting for connection if none is active, and returns results in CSV format. | <ul><li>`sql`</li><li>`mcp_client`</li><li>`model`</li></ul> | <ul><li>The SQL query to execute</li><li>Specify the name and version of the MCP client implementation being used (e.g. Copilot, Claude, Cline...)</li><li>The name (and version) of the language model being used by the MCP client to process requests (e.g. gpt-4.1, claude-sonnet-4, llama4...</li></ul>|
+    | `schema-information` | Provides detailed insights about the currently connected schema by analyzing and enriching metadata from executed queries. | <ul><li>`model`</li></ul> | <ul><li>The name (and version) of the language model being used by the MCP client to process requests
+
     {: title="SQLcl MCP Server Tools"}
 
-7. With your SQLcl MCP Server configured, you may now proceed to the next lab.
+7. With your SQLcl MCP Server configured, you may now [proceed to the next lab](#next).
 
 ## Troubleshooting 
 
 Some helpful tips if you run into trouble:
-
+ 
 |    |    |
 | -- | -- |
 | ***MCP server not visible*** | Check JSON registration path/quotes; confirm <code>sql --mcp</code> runs locally. |
@@ -317,4 +317,4 @@ Some helpful tips if you run into trouble:
 * **Contributors**<ul><li>Jeff Smith, Distinguished Product Manager, Database Tools</li></ul>
 * **Last Updated By/Date**<ul><li>Chris Hoina, November 2025</li></ul>
 
-
+<!-- WMS ID 11914 -->

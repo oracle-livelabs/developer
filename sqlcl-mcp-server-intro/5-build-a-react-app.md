@@ -2,8 +2,10 @@
 
 ## Introduction
 
-![intro-react-app-one](./images/lab-5/intro-react-app-one.png " ")
-![intro-react_app-two](./images/lab-5/intro-react-app-two.png " ")
+<div style="display:flex; gap:16px;">
+  <img src="../.././images/lab-5/intro-react-app-one.png" style="max-width: 100%; height: auto;" alt="React dashboard screenshot one">
+  <img src="../.././images/lab-5/intro-react-app-two.png" style="max-width: 100%; height: auto;" alt="React dashboard screenshot two">
+</div>
 
 In this Lab you will use Cline and the SQLcl MCP Server to create a responsive and dynamic starter web application. This lab's prompt will generate a React-based application. However, should you decide, you can opt to use the framework/library of your choosing.
 
@@ -36,16 +38,12 @@ This lab assumes you have:
 
 1. A sample prompt has been provided for you. You may review it here, open the `.md` file in a new tab, or download the file locally.
 
-   <details>
-      <summary style="color: #0000FF";><kbd style="font-size: 10px;">(click) </kbd><strong>Sample prompt</strong></summary>
-      <p></p>
       <button>
-      <a href="./files/create_a_react_app_prompt.md" target="_blank">Open in new tab</a>
+      <a href="./files/create_a_react_app_prompt.md" target="_blank">Open prompt in new tab</a>
       </button> 
       <button>
-      <a href="./files/create_a_react_app_prompt.md" target="_self" download="create_a_react_app_prompt.md">Download .md file</a>
+      <a href="./files/create_a_react_app_prompt.md" target="_self" download="create_a_react_app_prompt.md">Download prompt as .md file</a>
       </button>
-   </details>
 
 > &#9872; **NOTE:** This Lab is designed to be open-ended, accordingly, your individual results will vary. Feel free to improvise &#9786; !
 
@@ -113,13 +111,15 @@ This lab assumes you have:
 
    ![14-troubleshooting-application-networking-issues](./images/lab-5/14-troubleshooting-application-networking-issues.png " ")
 
-## Task 5: Wraping up
+## Task 5: Wrap-up
 
 1. By now you should have a starter React web application. 
 
 2. If you attempted to create one on your own, try this Lab again but use the provided prompt verbatim. Compare the results; what worked, what didn't work? 
 
 3. Need more help? Review the **Learn More** section of this Lab for helpful blog posts and tutorials. 
+
+4. You may now [proceed to the next lab](#next).
 
 ## Learn More
 
@@ -132,3 +132,5 @@ This lab assumes you have:
 * **Author**<ul><li>Chris Hoina, Senior Product Manager, Database Tools</li></ul>
 * **Contributors**<ul><li>Jeff Smith, Distinguished Product Manager, Database Tools</li></ul>
 * **Last Updated By/Date**<ul><li>Chris Hoina, September 2025</li></ul>
+
+<!-- WMS ID 11914 -->
