@@ -153,7 +153,9 @@ When you are done, you will inspect the MCP logging table in your schema to see 
 
    ![cline-5](./images/lab-3/cline-5.png " ")
 
-7. That's it! You are now ready to start exploring the power of your AI Agent, it's LLMs, and your Oracle Database via the SQLcl MCP Server!
+7. That's it! You are now ready to start exploring the power of your AI Agent, it's LLMs, and your Oracle Database via the SQLcl MCP Server! 
+
+8. You may now [proceed to the next lab](#next).
 
 ## Learn More
 
@@ -165,5 +167,5 @@ When you are done, you will inspect the MCP logging table in your schema to see 
 
 * **Author**<ul><li>Chris Hoina, Senior Product Manager, Database Tools</li></ul>
 * **Contributors**<ul><li>Jeff Smith, Distinguished Product Manager, Database Tools</li></ul>
-* **Last Updated By/Date**<ul><li>Chris Hoina, September 2025</li></ul>
+* **Last Updated By/Date**<ul><li>Chris Hoina, November 2025</li></ul>
 
