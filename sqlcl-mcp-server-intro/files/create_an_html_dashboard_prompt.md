@@ -10,9 +10,7 @@
 
 1. Provide me a list of available database connections, connect as the chosen connection (user) and describe the HR schema tables and views. If I do not explicitly tell you which connection to use, prompt me with the available connections and have me choose one before proceeding. 
 
-2. You should be able to find HR schema under the schema directory named "Other Users"; if you have trouble you can use the following SQL to familiarize yourself with the HR schema: 
-
-`SELECT table_name FROM all_tables WHERE owner='HR' ORDER BY table_name;`  
+2. You should be able to find HR schema under the schema directory named "Other Users". Do not use the schema-information tool for this task. Rather, you should query ALL_TABLES/DBA_TABLES to verify the existence of the HR tables, views, etc.
 
 3. Familiarize yourself with the HR schema's tables and views and their relationships.
 
