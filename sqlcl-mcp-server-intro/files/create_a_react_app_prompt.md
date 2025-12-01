@@ -2,14 +2,14 @@
 
 ## Overview
 
-1. You will create a sample single page React application using available information in the SQL_FREESQL_01 schema.
-2. You have access to view the table data in the CO schema. The sample application will use data from these CO tables. 
-3. You will make provisions for dynamically fetching data from the database, but the version 1 of this application will use hard-coded values from the CO table data.
-4. You will follow the instructions in the following steps
+1. You will create a sample single page React application using available information in the chosen connection. If I do not explicitly tell you which connection to use, prompt me with the available connections and have me choose one before proceeding.
+2. You have access to view the table data in the CO schema. The sample application will use data from these CO tables. If my target schema does not have access to the CO schema data, then recommend alternatives for me.
+3. You will make provisions for dynamically fetching data from the database, but the initial version of this application will use hard-coded values from the target table data.
+4. You will follow the instructions in the following steps:
 
 ## CO schema exploration
 
-1. Connect as the SQL_FREESQL_01 user and explore the CO tables
+1. Connect as the chosen connection (user) and explore the CO tables
 2. Provide me with a summary of insights on the CO tables
 3. Recommend to me some potential statistics/metrics in this CO schema that would be interesting for the single page web application. 
 4. Allow me to choose one of these statistics/metrics to use for the single page web application.
@@ -18,8 +18,8 @@
 
 1. Create a project directory before scaffolding a project.
 2. Once the directory is created, scaffold the single page React application. 
-3. Using what you learned about the CO schema, and the selection I made in the CO schema exploration section, reconnect as the SQL_FREESQL_01 user and query the values you need to populate the React application.
-4. The React application should include a graph or chart to visualize the data. And there should be a table underneath, or next to the visualization that shows the values. 
+3. Using what you learned about the CO schema, and the selection I made in the CO schema exploration section, reconnect as the chosen connection (user) and query the values you need to populate the React application.
+4. The React application should include 2-3 charts and/or graphs that are dynamic, and provide meaningul, useful, and actionable insights. Everything should fit in a single viewport (nothing "below the fold").
 5. Share with me what you intend to display on the React page before altering the app source files.
 
 ## Provide some helpful inight 

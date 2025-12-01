@@ -2,7 +2,7 @@
 
 ## Introduction
 
-In this lab, you will use JupyterLab as your browser-based IDE to explore and modify the code behind the Zebra Sporting Goods demo. You will review how the app connects to Oracle Database 23ai, fine-tune the similarity search logic, and see how your changes affect the live app experience—all in real time. This hands-on exercise helps you understand the key components driving AI-powered product discovery and some fundamentals when using the Oracle Python driver.
+In this lab, you will use JupyterLab as your browser-based IDE to explore and modify the code behind the Zebra Sporting Goods demo. You will review how the app connects to Oracle AI Database, fine-tune the similarity search logic, and see how your changes affect the live app experience—all in real time. This hands-on exercise helps you understand the key components driving AI-powered product discovery and some fundamentals when using the Oracle Python driver.
 
 Estimated Lab Time: 45 minutes
 
@@ -13,7 +13,7 @@ JupyterLab is a powerful, browser-based development environment that lets you wr
 
 In this lab, you will:
 * Use JupyterLab to explore the source code of the Zebra Sporting Goods demo application.
-* Understand and improve the logic for connecting to Oracle Database 23ai.
+* Understand and improve the logic for connecting to Oracle AI Database.
 * Modify and fine-tune the similarity search implementation, and observe the impact in the live demo.
 
 This lab assumes you have:
@@ -89,7 +89,7 @@ This task helps you to understand how the code behind the demo works.
 
   * **Section 3**: A function for the similarity search functionality. This is the core business logic of our application. It takes in a query and returns a list of products that match the query.
 
-    The `query` variable contains a user input that is converted into an embedding using the `DBMS_VECTOR_CHAIN.UTL_TO_EMBEDDING` function. This function leverages ONNX models in Oracle Database 23ai to generate the embedding. The `vector_distance` function then compares this embedding to each product's stored embedding to calculate similarity.
+    The `query` variable contains a user input that is converted into an embedding using the `DBMS_VECTOR_CHAIN.UTL_TO_EMBEDDING` function. This function leverages ONNX models in Oracle AI Database to generate the embedding. The `vector_distance` function then compares this embedding to each product's stored embedding to calculate similarity.
 
     > **Note**: The ONNX model used in our app is already stored in the database and is referenced using the paramater `"model":"demo_model"`
 
@@ -316,4 +316,4 @@ Next: Feel free to continue exploring the code and improving it. 🤘
 
 ## Acknowledgements
 * **Author** - Kevin Lazarz, Senior Manager, Database Product Management
-* **Last Updated By/Date** - Kevin Lazarz, June 2025
+* **Last Updated By/Date** - Kevin Lazarz, November 2025

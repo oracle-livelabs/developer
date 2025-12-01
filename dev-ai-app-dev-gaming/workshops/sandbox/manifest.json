@@ -1,5 +1,5 @@
 {
-    "workshoptitle": "Build a GenAI App on Oracle Database 23ai – Gaming Edition",
+    "workshoptitle": "Build a GenAI App on Oracle AI Database – Gaming Edition",
     "help": "livelabs-help-database_us@oracle.com",
     "tutorials": [
         {
@@ -15,15 +15,15 @@
         {
             "title": "Lab 2: Connect to the Development Environment",
             "description": "This is a step-by-step guide showcasing how the demo instance is navigated",
-            "filename": "../../connect-to-env/connect-to-env.md"
+            "filename": "https://oracle-livelabs.github.io/developer/dev-ai-app-dev-retail/connect-to-env/connect-to-env.md"
         },
         {
-            "title": "Lab 3: Coding Basics on Oracle Database 23ai",
+            "title": "Lab 3: Coding Basics on Oracle AI Database",
             "description": "Some coding examples",
             "filename": "https://oracle-livelabs.github.io/developer/dev-ai-app-dev-retail/codingbasics/codingbasics.md"
         },
         {
-            "title": "Lab 4: Step by Step - Implement RAG with Oracle Database 23ai",
+            "title": "Lab 4: Step by Step - Implement RAG with Oracle AI Database",
             "description": "This is a step-by-step guide showcasing how the demo instance is navigated",
             "filename": "../../build/build.md"
         },
@@ -31,6 +31,10 @@
             "title": "Lab 5: Build Agentic AI with Oracle MCP",
             "description": "This is a step-by-step guide showcasing how the demo instance is navigated",
             "filename": "https://oracle-livelabs.github.io/developer/dev-ai-app-dev-retail/oraclemcp/oraclemcp.md"
+        },        {
+            "title": "Lab 6: Interact with Oracle AI Database through an MCP Server",
+            "description": "This is a step-by-step guide showcasing how the demo instance is navigated",
+            "filename": "https://oracle-livelabs.github.io/developer/dev-ai-app-dev-retail/mcp/mcp.md"
         },
         {
             "title": "Need Help?",

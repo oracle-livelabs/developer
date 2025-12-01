@@ -1,8 +1,8 @@
-# Step by step: Implement RAG with Oracle Database 23ai 
+# Step by step: Implement RAG with Oracle AI Database 
 
 ## Introduction
 
-In this lab, you build a complete loan approval engine with Oracle Database 23ai and OCI Generative AI. Connect to the database, explore order and image data, and invoke a large language model to generate personalized loan decisions and policy explanations. Building on earlier exercises, you’ll apply Python to deliver a fully integrated, AI-powered finance loan application.
+In this lab, you build a complete loan approval engine with Oracle AI Database and OCI Generative AI. Connect to the database, explore order and image data, and invoke a large language model to generate personalized loan decisions and policy explanations. Building on earlier exercises, you’ll apply Python to deliver a fully integrated, AI-powered finance loan application.
 
 This lab uses some of the basic coding samples you created in lab 3, such as cursor.execute and more.
 
@@ -12,7 +12,7 @@ Estimated Time: 30 minutes
 
 * Build the complete loan approval application as seen in lab 1
 * Use OCI Generative AI to generate contextual loan recommendations
-* Use Python to connect to an Oracle Database 23ai instance and run queries
+* Use Python to connect to an Oracle AI Database instance and run queries
 * Explore customer data and extract relevant information
 
 ### Prerequisites
@@ -301,15 +301,15 @@ display(df_chunks)
 
     ![Run task 5](./images/yask5recs.png " ")
 
-## Task 6: Create a function to create embeddings - Use Oracle Database 23ai to create vector data 
+## Task 6: Create a function to create embeddings - Use Oracle AI Database to create vector data 
 
-To handle follow-up questions, you will enhance the system with an AI Guru powered by Oracle 23ai’s Vector Search and Retrieval-Augmented Generation (RAG). The AI Guru will be able to answer questions about the loan application and provide recommendations based on the data.
+To handle follow-up questions, you will enhance the system with an AI Guru powered by Oracle AI Database’s Vector Search and Retrieval-Augmented Generation (RAG). The AI Guru will be able to answer questions about the loan application and provide recommendations based on the data.
 
 Before answering questions, we need to prepare the data by vectoring the recommendations. This step:
 
    - **Stores Recommendations**: Inserts the full recommendation text (from previous cell) as a single chunk if not already present.
 
-   - **Generates Embeddings**: This is a new feature in Oracle Database 23ai that allows you to create embeddings directly within the database, eliminating the need for external tools or APIs. The `dbms_vector_chain.utl_to_embedding` function takes the recommendation text as input and returns an embedding vector.
+   - **Generates Embeddings**: This is a new feature in Oracle AI Database that allows you to create embeddings directly within the database, eliminating the need for external tools or APIs. The `dbms_vector_chain.utl_to_embedding` function takes the recommendation text as input and returns an embedding vector.
 
    - **Stores Embeddings**: Inserts the generated embedding vector into a table called `LOAN_CHUNKS`.
 
@@ -335,7 +335,7 @@ print("✅ Task 6 complete: embedded vectors for LOAN_CHUNK rows.")
 
     ![vector](./images/task6.png " ")
 
-## Task 7: Implement RAG with Oracle Database 23ai's Vector Search
+## Task 7: Implement RAG with Oracle AI Database's Vector Search
 
 Now that the recommendations are vectorized, we can process a user’s question:
 
@@ -475,15 +475,15 @@ except Exception as e:
 
 ## Summary
 
-Congratulations! You implemented a RAG process in Oracle Database 23ai using Python.
+Congratulations! You implemented a RAG process in Oracle AI Database using Python.
 
 To summarize:
 
-* You created a function to connect to Oracle Database 23ai using the Oracle Python driver `oracledb`.
+* You created a function to connect to Oracle AI Database using the Oracle Python driver `oracledb`.
 * You created a function to retrieve customer data.
 * You created a function to connect to OCI Generative AI and create a first recommendation.
-* You created a function to create embeddings of the customer data using Oracle Database 23ai.
-* And finally, you implemented a RAG process in Oracle Database 23ai using Python.
+* You created a function to create embeddings of the customer data using Oracle AI Database.
+* And finally, you implemented a RAG process in Oracle AI Database using Python.
 
 Congratulations, you completed the lab!
 
@@ -492,9 +492,9 @@ You may now proceed to the next lab.
 ## Learn More
 
 * [Code with Python](https://www.oracle.com/developer/python-developers/)
-* [Oracle Database 23ai Documentation](https://docs.oracle.com/en/database/oracle/oracle-database/23/)
+* [Oracle AI Database Documentation](https://docs.oracle.com/en/database/oracle/oracle-database/23/)
 
 ## Acknowledgements
 * **Authors** - Francis Regalado
-* **Contributors** - Kevin Lazarz, Linda Foinding
+* **Contributors** - Linda Foinding
 * **Last Updated By/Date** - Linda Foinding, September 2025

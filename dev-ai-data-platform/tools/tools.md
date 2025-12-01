@@ -88,6 +88,6 @@ In summary, you have explored the integrated tools within Oracle Autonomous Data
 
 ## Acknowledgements
 
-**Authors** - Eddie Ambler, Otis Barr
+**Authors** - Eddie Ambler
 * **Contributors** - Mike Matthews, Marty Gubar, Kamryn Vinson
-* **Last Updated By/Date** - Kamryn Vinson, June 2025
+* **Last Updated By/Date** -Linda Foinding, June 2025
