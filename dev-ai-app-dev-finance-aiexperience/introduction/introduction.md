@@ -24,27 +24,19 @@ Step into SeerGroup’s Finance division as a Loan Officer. You’ll use an AI-p
 
 This story shows how SeerEquities uses Oracle AI Database  and OCI Generative AI to accelerate loan processing, reduce risk, and improve customer experience—all without moving data across fragile systems.
 
-✅ **What’s next (Labs 2–5)**
+✅ **What’s next (Labs 2–3)**
 
 After the demo, you’ll switch roles to developer. In the next labs you’ll connect to Oracle AI Database , shape data into JSON Duality Views, build a retrieval-augmented application, and extend it with reusable MCP tools. By the end, you’ll see how SeerGroup industries can move from siloed processes to intelligent, AI-driven applications—all on one platform.
 
 * **Lab 2 – Connect to your environment**
-Log in to the JupyterLab IDE where you’ll write Python and run your code.
+Log in to the JupyterLab IDE where you’ll write Python and run your code. **Build the data foundation** Use Python with Oracle AI Database to create tables, shape them into JSON Duality Views, and interact with them using both SQL and MongoDB-style syntax—laying the groundwork for AI workflows across SeerGroup. **Implement RAG** Construct a working AI application. Pull customer and grid data, generate recommendations with OCI Generative AI, chunk and vectorize the results, and answer follow-up questions using Vector Search + RAG.
 
-* **Lab 3 – Build the data foundation**
-Use Python with Oracle AI Database  to create tables, shape them into JSON Duality Views, and interact with them using both SQL and MongoDB-style syntax—laying the groundwork for AI workflows across SeerGroup.
-
-* **Lab 4 – Implement RAG**
-Construct a working AI application. Pull customer and grid data, generate recommendations with OCI Generative AI, chunk and vectorize the results, and answer follow-up questions using Vector Search + RAG.
-
-* **Lab 5 – Extend with MCP tools**
-Wire Oracle AI Database  and OCI Generative AI into reusable MCP tools. Call them from notebooks, chain them together into workflows, and even register your own tool for SeerGroup’s finance, retail, healthcare, or energy teams.
+* **Lab 3 – Extend with MCP tools**
+Wire Oracle AI Database and OCI Generative AI into reusable MCP tools. Call them from notebooks, chain them together into workflows, and even register your own tool for SeerGroup’s finance, retail, healthcare, or energy teams.
 
 By the end, you’ll have a complete toolkit—from clean data to live AI apps to composable tools—that shows how SeerGroup industries can turn their data into intelligent applications.
 
-### Objectives
-
-Objectives
+**Objectives**
 
 * Build and query data with Python + Oracle AI Database 
 
@@ -56,7 +48,7 @@ Objectives
 
 * Deliver industry-grade solutions for SeerGroup’s divisions
 
-### Prerequisites
+**Prerequisites**
 
 This lab assumes you have:
 
@@ -73,4 +65,4 @@ This lab assumes you have:
 ## Acknowledgements
 * **Authors** - Uma Kumar
 * **Contributors** - Linda Foinding
-* **Last Updated By/Date** - Uma Kumar, August 2025
+* **Last Updated By/Date** - Uma Kumar, December 2025
