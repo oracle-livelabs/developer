@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This lab will show you how to use Oracle Database, Vision AI, Gen AI, and Mixed Reality. 
+This lab will show you how to use Oracle AI Database, Vision AI, Gen AI, and Mixed Reality. 
 The use cases involve the names of objects in a person's surroundings being spoken out to them from the spatial location where they are located for individuals that are hearing impaired or have Alzheimer’s as well as summarizations, etc. of text found within the user's view.
 
 Estimated Time:  10 minutes
@@ -13,7 +13,7 @@ Estimated Time:  10 minutes
 
 ### Objectives
 
--   Use Oracle Database, OCI Vision AI, Open AI, and Mixed Reality
+-   Use Oracle AI Database, OCI Vision AI, Open AI, and Mixed Reality
 
 ### Prerequisites
 

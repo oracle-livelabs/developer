@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This lab will show you how to use Oracle Database, OCI Vision AI Text Detection, and Oracle Gen AI services
+This lab will show you how to use Oracle AI Database, OCI Vision AI Text Detection, and Oracle Gen AI services
 The use case involves the interpretation health test results and recommended steps for everyday individuals.
 
 Estimated Time:  3 minutes
@@ -11,7 +11,7 @@ Estimated Time:  3 minutes
 
 ### Objectives
 
--   Use Oracle Database, OCI Vision AI Text Detection, and Oracle Gen AI
+-   Use Oracle AI Database, OCI Vision AI Text Detection, and Oracle Gen AI
 
 ### Prerequisites
 
