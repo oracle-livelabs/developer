@@ -12,27 +12,27 @@
       },      {
             "title": "Get Started",
             "description": "Get Started - Oracle Database@Google - Autonomous Database",
-            "filename": "./../gcp-started/gcp-started.md"
+            "filename": "../../gcp-started/gcp-started.md"
         },
         {
             "title": "Lab 1: Provision Google Cloud resources",
             "description": "Provision Google Cloud resources",
-            "filename": "./../gcp-get-started/gcp-get-started.md"
+            "filename": "../../gcp-get-started/gcp-get-started.md"
         },
         {
             "title": "Lab 2: Provision Autonomous Database",
             "description": "Provision Autonomous Database",
-            "filename": "./../adb-provisioning-databases/adb-provisioning-databases.md"
+            "filename": "../../adb-provisioning-databases/adb-provisioning-databases.md"
         },
         {
             "title": "Lab 3: Build the RAG Application",
             "description": "Build the RAG Application",
-            "filename": "./../adb-ai/adb-ai.md"
+            "filename": "../../adb-ai/adb-ai.md"
         },
         {
             "title": "Lab 4: Run the RAG application using UI",
             "description": "Run the RAG application using UI",
-            "filename": "./../adb-ai-ui/adb-ai-ui.md"
+            "filename": "../../adb-ai-ui/adb-ai-ui.md"
         },
   
       {
