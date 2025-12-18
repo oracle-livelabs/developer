@@ -1,5 +1,5 @@
 {
-  "workshoptitle": "Build Multi-Cloud Agentic AI with Google Vertex AI (Gemini) and Oracle AI Database",
+  "workshoptitle": "Build MultiCloud Agentic AI with Google Vertex AI (Gemini) and Oracle AI Database",
   "help": "livelabs-help-devdb-us@oracle.com",
 	"tutorials": [
       {
@@ -9,25 +9,49 @@
       {
         "title": "Get Started",
         "filename":"https://oracle-livelabs.github.io/common/labs/cloud-login/event-register-free-tier-account.md"
-      },
+      },      {
+            "title": "Get Started",
+            "description": "Get Started - Oracle Database@Google - Autonomous Database",
+            "filename": "./../gcp-started/gcp-started.md"
+        },
+        {
+            "title": "Lab 1: Provision Google Cloud resources",
+            "description": "Provision Google Cloud resources",
+            "filename": "./../gcp-get-started/gcp-get-started.md"
+        },
+        {
+            "title": "Lab 2: Provision Autonomous Database",
+            "description": "Provision Autonomous Database",
+            "filename": "./../adb-provisioning-databases/adb-provisioning-databases.md"
+        },
+        {
+            "title": "Lab 3: Build the RAG Application",
+            "description": "Build the RAG Application",
+            "filename": "./../adb-ai/adb-ai.md"
+        },
+        {
+            "title": "Lab 4: Run the RAG application using UI",
+            "description": "Run the RAG application using UI",
+            "filename": "./../adb-ai-ui/adb-ai-ui.md"
+        },
+      // {
+      //   "title": "Lab 1: Deploy Oracle AI Database and GCP Compute Instance",
+      //   "filename": "../../setup-gcp-database/setup-gcp-database.md"
+      // },
+      // {
+      //   "title": "Lab 2: Implement Vector Search and RAG with Gemini",
+      //   "filename": "../../vector-search-rag/vector-search-rag.md"
+      // },
       {
-        "title": "Lab 1: Deploy Oracle AI Database and GCP Compute Instance",
-        "filename": "../../setup-gcp-database/setup-gcp-database.md"
-      },
-      {
-        "title": "Lab 2: Implement Vector Search and RAG with Gemini",
-        "filename": "../../vector-search-rag/vector-search-rag.md"
-      },
-      {
-        "title": "Lab 3: Explore Vertex AI Models and Agents",
+        "title": "Lab 5: Explore Vertex AI Models and Agents",
         "filename": "../../vertex-ai-agents/vertex-ai-agents.md"
       },
       {
-        "title": "Lab 4: Create Digital Twin Agent with Vertex AI Agent Builder",
+        "title": "Lab 6: Create Digital Twin Agent with Vertex AI Agent Builder",
         "filename": "../../digital-twin-agent/digital-twin-agent.md"
       },
       {
-        "title": "Lab 5: Implement Agentic Memory with Oracle AI Database",
+        "title": "Lab 7: Implement Agentic Memory with Oracle AI Database",
         "filename": "../../agentic-memory/agentic-memory.md"
       },
       {
