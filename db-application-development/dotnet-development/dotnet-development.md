@@ -347,5 +347,5 @@ This Lab task shows how to use Oracle Developer Tools for VS Code, Connect to Au
 ## Acknowledgements
 
 - **Author** - Madhusudhan Rao, Principal Product Manager, Database
-* **Contributors** - Kevin Lazarz, Senior Principal Product Manager, Database. Alex Keh, Senior Principal Product Manager and Christian Shay, Senior Principal Product Manager
+* **Contributors** - Alex Keh, Senior Principal Product Manager and Christian Shay, Senior Principal Product Manager
 * **Last Updated By/Date** -  Madhusudhan Rao, Oct 6th, 2024

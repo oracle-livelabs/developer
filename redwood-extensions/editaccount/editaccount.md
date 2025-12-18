@@ -79,6 +79,8 @@ Now that the template is set, let's add the FA data to the page.
 
 3. Click **Next**
 
+The edit page has two target REST APIs that it will call.  Both of them need the accounts_id mapped to the value passed into objectId set in a previous step.
+
 4. Drag **objectId** from the left onto **accounts\_id** in both the **get\_accounts** and **update\_accounts** objects on the right.
 
 	  ![Edit button](images/mapobjectid.png)
@@ -143,7 +145,7 @@ Now that the save button is configured, you will add an action to navigate back 
 
 ## Task 5: Cleanup
 
-You can now remove the unneeded objects from the page.
+The Redwood Page Templates include a lot of extra features.  You can remove any objects that you don't think you'll need from the page.
 
 1. In the **Structure** tab, right-click on the Dynamic Form and click **Delete**
 
@@ -171,7 +173,7 @@ You can now remove the unneeded objects from the page.
 
 	  ![Edit button](images/testedit.png)
 
-The record should be modified and you will navigate back to the **welcome** page.
+The record should be modified and you will navigate back to the **welcome** page.  (If this is the first time the update functionality has been used, it may take a few seconds before it navigates back to the welcome page.)
 
 4. Click **Preview** in the header to see your completed application live and experiment with its functionality.
 

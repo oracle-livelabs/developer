@@ -1,0 +1,16 @@
+{
+    "workshoptitle": "Virtual Whiteboard Demo",
+    "help": "livelabs-help-db_us@oracle.com",
+    "tutorials": [
+        {
+            "title": "Virtual Whiteboard",
+            "description": "The Introduction is always second for LiveLabs. The title and contents menu title match for the Introduction.",
+            "filename": "../../microlab/microlab.md"
+        },
+        {
+            "title": "Need Help?",
+            "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+            "filename": "https://oracle-livelabs.github.io/common/labs/need-help/need-help-livelabs.md"
+        }
+    ]
+}

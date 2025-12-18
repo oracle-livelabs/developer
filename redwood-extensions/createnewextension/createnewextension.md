@@ -19,7 +19,7 @@ In this lab, you will:
 
 ## Task 1: Access Visual Builder Studio and Create a Project
 
-Users with [the right roles](https://docs.oracle.com/en/cloud/paas/visual-builder/visualbuilder-administration/set-vb-studio-extend-oracle-cloud-applications.html#GUID-DF0D4F76-D26A-46B5-B8E5-68D7FDD1E475) can access VB Studio from their Oracle Fusion Cloud Applications' TEST instance.
+Users with [the right roles](https://docs.oracle.com/en/cloud/paas/visual-builder/visualbuilder-administration/configure-oracle-cloud-applications-custom-roles.html) can access VB Studio from their Oracle Fusion Cloud Applications' TEST instance.
 
 1. Log in to Oracle Fusion Cloud Applications:
 
@@ -99,7 +99,7 @@ From here you can navigate to all your project's components, including environme
 | --- | --- | --- |
 | Extension Name | YourName-Accounts | To keep the names distinct, use your first name plus the first initial of your last name, as in *MaryC-Accounts* |
 | Development Environment |Choose the option available | Mapped to your SaaS instance|
-| Base Oracle Cloud Application | None | Not needed in this scenario |
+| Root Folder | extension1 | Do not change |
 | Sandbox | No sandbox selected | Not needed in this scenario |
 | Use scratch repository | Check | For now, you can just work in a private Git repository |
 {: title="New App Extension Properties"}
