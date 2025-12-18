@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This lab will show you how to use Oracle Database, OCI Vision Service and OCI Speech Service, and OpenAI conversation/chat
+This lab will show you how to use Oracle AI Database, OCI Vision Service and OCI Speech Service, and OpenAI conversation/chat
 The use case involves detect objects in an image and write a sentence using those objects, including sentiment generation and analysis as an educational use case.
 
 Estimated Time:  3 minutes
@@ -11,7 +11,7 @@ Estimated Time:  3 minutes
 
 ### Objectives
 
--   Use Oracle Database, OCI Vision Service and OCI Speech Service, and OpenAI conversation/chat
+-   Use Oracle AI Database, OCI Vision Service and OCI Speech Service, and OpenAI conversation/chat
 
 ### Prerequisites
 
