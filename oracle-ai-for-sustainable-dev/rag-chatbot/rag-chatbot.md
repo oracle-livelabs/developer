@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This lab will show you how to use Oracle Database, OCI Vision AI Text Detection, and Oracle Gen AI services
+This lab will show you how to use Oracle AI Database, OCI Vision AI Text Detection, and Oracle Gen AI services
 The use case involves the interpretation health test results and recommended steps for everyday individuals.
 
 Estimated Time:  3 minutes
@@ -10,7 +10,7 @@ Estimated Time:  3 minutes
 
 ### Objectives
 
--   Use Oracle Database, OCI Vision AI Text Detection, and Oracle Gen AI
+-   Use Oracle AI Database, OCI Vision AI Text Detection, and Oracle Gen AI
 
 ### Prerequisites
 
@@ -38,17 +38,17 @@ Estimated Time:  3 minutes
 
    4. Run `pip install -r requirements.txt`
    
-   5. Check you config_rag.py file and make sure your API endpoint belongs to chicago region and select the database you would like to use, such as Chroma or Oracle Database 23ai
+   5. Check you config_rag.py file and make sure your API endpoint belongs to chicago region and select the database you would like to use, such as Chroma or Oracle AI Database 26ai
 
    6. Set your compartment_id OICD inside the files init_rag_streamlit_exp.py and init_rag.py 
    
    7. Change the database type you need to modify at config file and you see the logic inside create_vector_store
    
-   8. Start a container for the 23ai database by running docker or podman command as documented, such as `podman run -d --name 23ai -p 1521:1521 -e ORACLE_PWD=[YOURPASSWORD] -v oracle-volume:/Users/pparkins/oradata container-registry.oracle.com/database/free:latest`
+   8. Start a container for the 26ai database by running docker or podman command as documented, such as `podman run -d --name 26ai -p 1521:1521 -e ORACLE_PWD=[YOURPASSWORD] -v oracle-volume:/Users/pparkins/oradata container-registry.oracle.com/database/free:latest`
 
    9. Create and configure a `vector` tablespace and user
    
-   10. Add the connection information for this Oracle database to init_rag_streamlit.py and init_rag_streamlit_exp.py
+   10. Add the connection information for this Oracle AI Database to init_rag_streamlit.py and init_rag_streamlit_exp.py
    
    11. Run `./run_oracle_bot_exp.sh`
 
