@@ -84,7 +84,7 @@ This lab assumes you have:
 
 ## Learn More
 
-* [MCP Server Introduction](https://blogs.oracle.com/database/post/introducing-mcp-server-for-oracle-database) 
+* [Build a starter HTML dashboard with SQLcl MCP Server and your AI Agent](https://blogs.oracle.com/database/build-a-starter-html-dashboard-with-sqlcl-mcp-server) 
 * [Oracle official MCP Server repository](https://github.com/oracle/mcp/tree/main)
 * [SQLcl MCP Server Docs](https://docs.oracle.com/en/database/oracle/sql-developer-command-line/25.2/sqcug/using-oracle-sqlcl-mcp-server.html)
 
@@ -92,6 +92,6 @@ This lab assumes you have:
 
 * **Author**<ul><li>Chris Hoina, Senior Product Manager, Database Tools</li></ul>
 * **Contributors**<ul><li>Jeff Smith, Distinguished Product Manager, Database Tools</li></ul>
-* **Last Updated By/Date**<ul><li>Chris Hoina, September 2025</li></ul>
+* **Last Updated By/Date**<ul><li>Chris Hoina, January 2026</li></ul>
 
 <!-- WMS ID 11914 -->

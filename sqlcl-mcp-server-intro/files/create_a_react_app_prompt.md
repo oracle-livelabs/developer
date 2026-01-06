@@ -3,7 +3,7 @@
 ## Overview
 
 1. You will create a sample single page React application using available information in the chosen connection. If I do not explicitly tell you which connection to use, prompt me with the available connections and have me choose one before proceeding.
-2. You have access to view the table data in the CO schema. The sample application will use data from these CO tables. If my target schema does not have access to the CO schema data, then recommend alternatives for me. If you have trouble you can use the following SQL to familarize yourself with the HR schema: 
+2. You have READ access to view the table data in the CO schema. The sample application will use data from these CO tables. If my target schema does not have READ access to the CO schema data, then recommend alternatives for me. You should be able to find the CO schema under the schema directory named "Other Users"; if you have trouble you can use the following SQL to familarize yourself with the CO schema: 
 
   `SELECT table_name FROM all_tables WHERE owner='CO' ORDER BY table_name;`  
 
@@ -175,8 +175,8 @@
 
 ## CO schema exploration
 
-1. Connect as the chosen connection (user) and explore the CO tables
-2. Provide me with a summary of insights on the CO tables
+1. Connect as the chosen connection (user) and explore the CO tables. DO NOT use SQLcl's MCP Sever "schema-information" tool for this exploration.
+2. Provide me with a summary of insights on the CO tables.
 3. Recommend to me some potential statistics/metrics in this CO schema that would be interesting for the single page web application. 
 4. Allow me to choose one of these statistics/metrics to use for the single page web application.
 
