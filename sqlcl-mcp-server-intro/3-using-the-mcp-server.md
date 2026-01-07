@@ -30,7 +30,7 @@ This lab assumes you have:
 
 <p></p>
 
-> &#9872; **NOTE:** If participating in a workshop, you may optionally use your the credentials provided to you.
+> &#9872; **Note:** If participating in a workshop, you may optionally use your the credentials provided to you.
 
 ## Task 1: Testing your configuration
 
@@ -70,7 +70,7 @@ When you are done, you will inspect the MCP logging table in your schema to see 
 
    ![cline-2](./images/lab-3/cline-2.png " ")
 
-> &#9872; **NOTE:** Note the tool name, followed by the arguments. In this case, Cline wants to "see" what database connections are available.
+> &#9872; **Note:** Note the tool name, followed by the arguments. In this case, Cline wants to "see" what database connections are available.
 
 5. Select the **Approve** button to allow the Agent to continue its plan. 
 
@@ -101,7 +101,7 @@ When you are done, you will inspect the MCP logging table in your schema to see 
      Now let me run a test query to verify everything is working properly. I'll start with a simple query to check the current database time:
      ```
 
-> &#9872; **NOTE:** LLM training data can vary widely among versions and vendors. Thus, an LLM may generate one of several different types of queries to satisfy our request to 'test' the connection and system. 
+> &#9872; **Note:** LLM training data can vary widely among versions and vendors. Thus, an LLM may generate one of several different types of queries to satisfy our request to 'test' the connection and system. 
 
 &#9888; **Warning:** It is very important that you review the SQL, or update your prompt to include the exact SQL you want the Agent to use.
 
@@ -128,7 +128,7 @@ When you are done, you will inspect the MCP logging table in your schema to see 
 
       ![cline-4](./images/lab-3/cline-4.png " ")
 
-> &#9872; **NOTE:** "Connected_User" will be the username you provided in the previous lab. 
+> &#9872; **Note:** "Connected_User" will be the username you provided in the previous lab. 
 
 ## Task 2: Closing the connection
 
@@ -136,7 +136,7 @@ When you are done, you will inspect the MCP logging table in your schema to see 
 
 2. The Cline Agent will finish its task and provide you with a summary steps used to achieve your original task or prompts.
 
-> &#9872; **NOTE:** The Agent may wish to continue running more queries, in an attempt to provide you with more information about your database. It is up to **YOU** to decide. *What do you do?*
+> &#9872; **Note:** The Agent may wish to continue running more queries, in an attempt to provide you with more information about your database. It is up to **YOU** to decide. *What do you do?*
 > - allow it to continue
 > - deny any follow-up requests, or 
 > - provide it with a follow-up prompt to cease operations
@@ -167,6 +167,6 @@ When you are done, you will inspect the MCP logging table in your schema to see 
 
 * **Author**<ul><li>Chris Hoina, Senior Product Manager, Database Tools</li></ul>
 * **Contributors**<ul><li>Jeff Smith, Distinguished Product Manager, Database Tools</li></ul>
-* **Last Updated By/Date**<ul><li>Chris Hoina, November 2025</li></ul>
+* **Last Updated By/Date**<ul><li>Chris Hoina, January 2026</li></ul>
 
 <!-- WMS ID 11914 -->
