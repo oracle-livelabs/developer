@@ -43,13 +43,11 @@ This lab assumes you have:
 
 2. Review the provided prompt in your IDE or browser. You will notice a single heading and several sub-headings. Each sub-heading will serve as a phase or step for this scenario: 
 
-    ```md 
-    # Creating mock Schema data, and relevant views
-    ## Connecting and creating database objects
-    ## Inserting data
-    ## Create four unique views
-    ## Disconnect
-    ```
+    - Creating mock Schema data, and relevant views
+    - Connecting and creating database objects
+    - Inserting data
+    - Create four unique views
+    - Disconnect
 
 3. Next, familiarize yourself with the details the sub-tasks in the included prompt. Notice the descriptive and prescriptive tone. If you decide to improvise, ensure you provide sufficient instruction for your AI Agent. Doing so will help you achieve better, more improved, and predictable outcomes.
 
@@ -57,7 +55,11 @@ This lab assumes you have:
 
 5. Make sure you are in **Plan** mode. As a best practice, remaining in **Plan** mode will allow you to "step through" Cline's execution. Should an AI Agent deviate from your agreed upon plan, you can periodically "nudge" it back on course.
 
+   ![plan-mode-example](./images/lab-4/plan-mode-example.png " ")
+
 6. If you decide to use the prepared `.md` file, click the `+` icon (i.e., Add Files & Images icon) and select the file. 
+
+   ![adding-prompt-file-to-cline-task](./images/lab-4/adding-prompt-file-to-cline-task.png " ")
 
 7. Before continuing, consider adding in some prepatory text to help guide the Agent. An example:
 
@@ -66,6 +68,8 @@ This lab assumes you have:
     Review the steps in the included markdown file. Detail the steps you intend to take to achieve the desired outcome. And await for my approval before proceeding.
     </copy>
     ```
+
+   ![including-prepatory-command-context-to-cline-task](./images/lab-4/including-prepatory-command-context-to-cline-task.png " ")
 
 8. Once satisfied, press <kbd>Enter</kbd> or the arrow icon.
 
