@@ -62,14 +62,14 @@ SQLcl is a powerful CLI for the Oracle AI Database. By extending it with an MCP 
 After you've configured your credentials (connection string or Cloud Wallet), you can explore and manage your database with the Agent using natural language and SQL/PLSQL.
 
 **SQLcl MCP Server Tools:**
-| Tool            | Parameters                    | Description                                               |
-|-----------------|:------------------------------:|-----------------------------------------------------------|
-| `list-connections` | `filter`, `mcp_client`, `model`      | Lists available connections                     |
-| `connect`          | `connection_name`, `mcp_client`, `model` | Establishes a DB session using stored credentials    |
-| `disconnect`       | `mcp_client`, `model`               | Ends the session                                       |
-| `run-sqlcl`        | `sqlcl`, `mcp_client`, `model`         | Executes a SQLcl command                                 |
-| `sql`              | `sql`, `mcp_client`, `model`           | Executes an arbitrary SQL |query                          |
-| `schema-information` | `model`                          | Returns detailed info about the connected schema      |
+| Tool                | Purpose                                                        | Parameters                                           | Parameter Definitions                                                                                 |
+|---------------------|----------------------------------------------------------------|------------------------------------------------------|-------------------------------------------------------------------------------------------------------|
+| `list-connections`  | List saved Oracle DB connection names                          | <ul><li>filter</li> <li>mcp_client</li> <li>model</li></ul>| Filter for connection list. Name/version of MCP client. Name/version of language model.               |
+| `connect`           | Interface to connect, confirm, and list schemas if needed      | <ul><li>connection\_name</li><li>mcp\_client</li><li>model</li></ul> | Name/version of MCP client. Name/version of language model.                |
+| `disconnect`        | Disconnect current session and log out                         | <ul><li>mcp_client</li><li>model</li></ul>                | Name/version of MCP client. Name/version of language model.                                            |
+| `run-sqlcl`         | Run SQLcl CLI commands in SQLcl, returns command results       | <ul><li>sqlcl</li><li>mcp_client</li><li>model</li></ul> | The SQLcl command. Name/version of MCP client. Name/version of language model.                        |
+| `run-sql`           | Run SQL queries and return CSV                                 | <ul><li>sql</li> <li>mcp_client</li> <li>model</li></ul>   | The SQL query. Name/version of MCP client. Name/version of language model.                            |
+| `schema-information`| Give insights on the connected schema (metadata analysis)      |<ul><li>model</li></ul>                                   | Name/version of language model.                                                                       |
 
 <br>
 

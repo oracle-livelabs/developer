@@ -130,7 +130,31 @@ When you are done, you will inspect the MCP logging table in your schema to see 
 
 > &#9872; **Note:** "Connected_User" will be the username you provided in the previous lab. 
 
-## Task 2: Closing the connection
+## Task 3: Exploring Tools
+
+1. Throughout this lab AI Agents will call upon various SQLcl MCP Server Tools. You can try out one of the more popular tools now: `schema-information`
+
+2. Use a similar prompt so the AI Agent can use the correct Tool: 
+
+    ```txt
+    connect as the FREESQL_[your unique ID] user and use the sqlcl schema-information tool
+    ```
+
+   ![prep-command-for-schema-information-tool](./images/lab-2/prep-command-for-schema-information-tool.png " ")
+
+3. If in Plan mode, toggle to Act mode so the AI Agent can proceed. 
+
+   ![requests-to-toggle-to-act-mode-for-schema-information-task](./images/lab-2/requests-to-toggle-to-act-mode-for-schema-information-task.png " ")
+
+4. Approve the connection, and await the results. You should observe the SQLcl MCP Server use the `connect`, `list-connections`, and `schema-information` tools. 
+
+   ![list-connections-and-schema-information-tools-in-us](./images/lab-2/list-connections-and-schema-information-tools-in-use.png " ")
+
+5. Once the task completes, a summary of results will be displayed. Congratulations, you've just used three of the SQLcl MCP Server Tools. 
+
+   ![results-of-schema-information-task](./images/lab-2/results-of-schema-information-task.png " ")
+
+## Task 4: Closing the connection
 
 1. As a best practice, you should prompt Cline to close your database connection when you are finished. Cline will prompt you for permission to use the `disconnect` tool. Click **Approve**.
 
