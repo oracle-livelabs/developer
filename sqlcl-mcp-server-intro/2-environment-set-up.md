@@ -237,7 +237,7 @@ This lab assumes you have:
 
 ## Task <if type="freesql">4:</if><if type="freetier">6:</if> SQLcl MCP server
 
-1. In VS Code, open the Command Palette and enter: <kbd>Configure Cline SQLcl MCP</kbd>
+1. In VS Code, open the Command Palette and begin typing or search for: <kbd>Configure Cline SQLcl MCP</kbd>. Once located, press Enter.
 
   ![configure-cline-sqlcl-mcp-server-option](./images/lab-2/configure-cline-sqlcl-mcp-server-option.png " ")
 
@@ -261,12 +261,12 @@ This lab assumes you have:
 
 | Tool                | Purpose                                                        | Parameters                                           | Parameter Definitions                                                                                 |
 |---------------------|----------------------------------------------------------------|------------------------------------------------------|-------------------------------------------------------------------------------------------------------|
-| `list-connections`  | List saved Oracle DB connection names                          | `<li>filter</li> <li>mcp_client</li> <li>model</li>` | Filter for connection list. Name/version of MCP client. Name/version of language model.               |
-| `connect`           | Interface to connect, confirm, and list schemas if needed      | `<li>connection_name</li> <li>mcp_client</li> <li>model</li>` | Name/version of MCP client. Name/version of language model.                |
-| `disconnect`        | Disconnect current session and log out                         | `<li>mcp_client</li> <li>model</li>`                 | Name/version of MCP client. Name/version of language model.                                            |
-| `run-sqlcl`         | Run SQLcl CLI commands in SQLcl, returns command results       | `<li>sqlcl</li> <li>mcp_client</li> <li>model</li>`  | The SQLcl command. Name/version of MCP client. Name/version of language model.                        |
-| `run-sql`           | Run SQL queries and return CSV                                 | `<li>sql</li> <li>mcp_client</li> <li>model</li>`    | The SQL query. Name/version of MCP client. Name/version of language model.                            |
-| `schema-information`| Give insights on the connected schema (metadata analysis)      | `<li>model</li>`                                     | Name/version of language model.                                                                       |
+| `list-connections`  | List saved Oracle DB connection names                          | <ul><li>filter</li> <li>mcp_client</li> <li>model</li></ul>| Filter for connection list. Name/version of MCP client. Name/version of language model.               |
+| `connect`           | Interface to connect, confirm, and list schemas if needed      | <ul><li>connection\_name</li><li>mcp\_client</li><li>model</li></ul> | Name/version of MCP client. Name/version of language model.                |
+| `disconnect`        | Disconnect current session and log out                         | <ul><li>mcp_client</li><li>model</li></ul>                | Name/version of MCP client. Name/version of language model.                                            |
+| `run-sqlcl`         | Run SQLcl CLI commands in SQLcl, returns command results       | <ul><li>sqlcl</li><li>mcp_client</li><li>model</li></ul> | The SQLcl command. Name/version of MCP client. Name/version of language model.                        |
+| `run-sql`           | Run SQL queries and return CSV                                 | <ul><li>sql</li> <li>mcp_client</li> <li>model</li></ul>   | The SQL query. Name/version of MCP client. Name/version of language model.                            |
+| `schema-information`| Give insights on the connected schema (metadata analysis)      |<ul><li>model</li></ul>                                   | Name/version of language model.                                                                       |
 
 7. Your SQLcl MCP Server is configured. You may now [proceed to the next lab](#next).
 

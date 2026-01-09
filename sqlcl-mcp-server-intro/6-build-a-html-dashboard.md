@@ -29,7 +29,7 @@ This lab assumes you have:
 
 <p></p>
 
-> &#9872; **NOTE:** In this lab you must allow your AI Agent to create a new project folder, scaffold an HTML page, and if required, install dependencies (e.g., npm, Node, Express, etc.).
+> &#9872; **Note:** In this lab you must allow your AI Agent to create a new project folder, scaffold an HTML page, and if required, install dependencies (e.g., npm, Node, Express, etc.).
 
 <p></p>
 
@@ -44,21 +44,37 @@ This lab assumes you have:
       <a href="./files/create_an_html_dashboard_prompt.md" target="_self" download="create_an_html_dashboard_prompt.md">Download prompt as .md file</a>
       </button>
 
-> &#9872; **NOTE:** This Lab is designed to be open-ended, accordingly, your individual results will vary. Feel free to "go off-script" &#9786; !
+> &#9872; **Note:** This Lab is designed to be open-ended, accordingly, your individual results will vary. Feel free to "go off-script" &#9786; !
 
-2. Whether you use the prompt as-is or use it as a reference; you decide. Make sure to begin your workflow in **Plan** mode in order to have better control and oversight over the entire process. Let the Agent summarize its intent. 
+2. Whether you use the prompt as-is or use it as a reference; you decide. Make sure to begin your workflow in **Plan** mode in order to have better control and oversight over the entire process. 
+
+   ![plan-mode-example](./images/lab-5/plan-mode-example.png " ")
+
+3. Click the `+` icon to add files and images to the task. Select the file name you chose for the prompt. 
+
+   ![adding-prompt-file-to-cline-task](./images/lab-5/adding-prompt-file-to-cline-task.png " ")
+
+4. If you decide to use the prompt in its entirety, include some prepatory instructions in additon to the prompt file; something like this:
+
+    ```txt
+    <copy>Review the steps in the included markdown file. Detail the steps you intend to take to achieve the desired outcome. And await for my approval before proceeding.</copy>
+    ```
+   
+   ![including-prepatory-command-context-to-cline-task](./images/lab-5/including-prepatory-command-context-to-cline-task.png " ")
+
+3. Let the Agent summarize its intent. 
 
    ![1-entering-a-prompt-in-one-go](./images/lab-6/1-entering-a-prompt-in-one-go.png " ")
 
-3. In other labs, you might approve actions in stages. But if you decide to share with the Agent the *entire* prompt, the Agent will review the tasks all at once and execute its plan with minimal intervention. You can of course add suggestions or changes to the proposed plan. And when you are satisfied, allow the Agent to continue.
+4. In other labs, you might approve actions in stages. But if you decide to share with the Agent the *entire* prompt, the Agent will review the tasks all at once and execute its plan with minimal intervention. You can of course add suggestions or changes to the proposed plan. And when you are satisfied, allow the Agent to continue.
 
-4. There are other schemas that have granted access to `PUBLIC` (i.e., all other users); so, you do not need to be connected as the `HR` user (which is what the provided prompt references). You also have access to other schemas: `CO` and `SH`~. You might improvise and create a dashboard using these schemas instead.
+5. There are other schemas that have granted access to `PUBLIC` (i.e., all other users); so, you do not need to be connected as the `HR` user (which is what the provided prompt references). You also have access to other schemas: `CO` and `SH`~. You might improvise and create a dashboard using these schemas instead.
 
-5. Whatever you decide, observe what SQLcl MCP **tools** are used, as well as the SQL or PL/SQL that is executed. In some cases, the Agent may need additonal direction. And the Agent may request switching the mode to **Act**. 
+6. Whatever you decide, observe what SQLcl MCP **tools** are used, as well as the SQL or PL/SQL that is executed. In some cases, the Agent may need additonal direction. And the Agent may request switching the mode to **Act**. 
 
     ![4-asking-to-transition-to-act-with-a-reminder](./images/lab-6/4-asking-to-transition-to-act-with-a-reminder.png " ")
 
-6. Your scenario may differ slightly, depending on the LLM used, but you should continue to see the Agent's intent and summary of intended actions.
+7. Your scenario may differ slightly, depending on the LLM used, but you should continue to see the Agent's intent and summary of intended actions.
 
 ## Task 2: Creating the dashboard files
 

@@ -67,14 +67,20 @@ This lab assumes you have:
 
 2. When ready, navigate to your Cline extension. Toggle the Agent to **Plan** mode. 
 
+   ![plan-mode-example](./images/lab-5/plan-mode-example.png " ")
+
 3. Click the `+` icon to add files and images to the task. Select the file name you chose for the prompt. 
+
+   ![adding-prompt-file-to-cline-task](./images/lab-5/adding-prompt-file-to-cline-task.png " ")
 
 4. If you decide to use the prompt in its entirety, include some prepatory instructions in additon to the prompt file; something like this:
 
     ```txt
     <copy>Review the steps in the included markdown file. Detail the steps you intend to take to achieve the desired outcome. And await for my approval before proceeding.</copy>
     ```
-
+   
+   ![including-prepatory-command-context-to-cline-task](./images/lab-5/including-prepatory-command-context-to-cline-task.png " ")
+   
 5. Carefully follow along with the Agent's actions, providing feedback and coaching as needed. 
 
     ![1-review-plan-in-overview-section](./images/lab-5/1-review-plan-in-overview-section.png " ")
