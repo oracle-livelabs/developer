@@ -117,6 +117,6 @@ In this task, we will show you how to view the changes you made in the applicati
 * [Oracle Database 23ai Documentation](https://docs.oracle.com/en/database/oracle/oracle-database/23/)
 
 ## Acknowledgements
-* **Author** - Kamryn Vinson
-* **Contributors** -  Linda Foinding, Francis Regalado, Eddie Ambler, Kevin Lazarz
-* **Last Updated By/Date** - Kamryn Vinson, April 2025
+* **Author** - Linda Foinding
+* **Contributors** -  Linda Foinding, Francis Regalado, Eddie Ambler
+* **Last Updated By/Date** - Linda Foinding, April 2025

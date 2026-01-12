@@ -2,7 +2,12 @@
 
 ## Introduction
 
-In this Lab you will use Cline and the SQLcl MCP Server to create a starter web application. This lab's prompt will generate a React-based application. However, should you decide, you can opt to use the framework/library of your choosing.
+<div style="display:flex; gap:16px;">
+  <img src="../.././images/lab-5/intro-react-app-one.png" style="max-width: 100%; height: auto;" alt="React dashboard screenshot one">
+  <img src="../.././images/lab-5/intro-react-app-two.png" style="max-width: 100%; height: auto;" alt="React dashboard screenshot two">
+</div>
+
+In this Lab you will use Cline and the SQLcl MCP Server to create a responsive and dynamic starter web application. This lab's prompt will generate a React-based application. However, should you decide, you can opt to use the framework/library of your choosing.
 
 Estimated Time: 12 minutes
 
@@ -29,68 +34,16 @@ This lab assumes you have:
 
 <p></p>
 
-> &#9872; **NOTE:** If participating in a workshop, you may optionally use your the credentials and workstation provided to you.
-
-<p></p>
-
 ## Task 1: Review the prompt
 
 1. A sample prompt has been provided for you. You may review it here, open the `.md` file in a new tab, or download the file locally.
 
-   <details>
-      <summary style="color: #0000FF";><kbd style="font-size: 10px;">(click) </kbd><strong>Sample prompt</strong></summary>
-      <p></p>
       <button>
-      <a href="./files/create_a_react_app_prompt.md" target="_blank">Open in new tab</a>
+      <a href="./files/create_a_react_app_prompt.md" target="_blank">Open prompt in new tab</a>
       </button> 
       <button>
-      <a href="./files/create_a_react_app_prompt.md" target="_self" download="create_a_react_app_prompt.md">Download .md file</a>
+      <a href="./files/create_a_react_app_prompt.md" target="_self" download="create_a_react_app_prompt.md">Download prompt as .md file</a>
       </button>
-      <p></p>
-       
-      ```txt
-      <copy>
-      Title: Single Web Page Application example
-
-      Task 1: Overview
-
-      1. You will create a sample single page React application using available information in the chosen connection. If I do not explicitly tell you which connection to use, prompt me with the available connections and have me choose one before proceeding.
-      2. You have access to view the table data in the CO schema. The sample application will use data from these CO tables. 
-      3. You will make provisions for dynamically fetching data from the database, but the version 1 of this application will use hard-coded values from the CO table data.
-      4. You will follow the instructions in the following steps
-
-      Task 2: CO schema exploration
-
-      1. Connect as the chosen connection (user) and explore the CO tables.
-      2. Provide me with a summary of insights on the CO tables.
-      3. Recommend to me some potential statistics/metrics in this CO schema that would be interesting for the single page web application. 
-      4. Allow me to choose one of these statistics/metrics to use for the single page web application.
-
-      Task 3: Creating the web application
-
-      1. Create a project directory before scaffolding a project.
-      2. Once the directory is created, scaffold the single page React application. 
-      3. Using what you learned about the CO schema, and the selection I made in the CO schema exploration section, reconnect as the chosen connection (user) and query the values you need to populate the React application.
-      4. The React application should include a graph or chart to visualize the data. And there should be a table underneath, or next to the visualization that shows the values. 
-      5. Share with me what you intend to display on the React page before altering the app source files.
-
-      Task 4: Provide some helpful inight 
-      1. Once complete, provide me with a list of next steps, or recommended actions for making this more dynamic.
-      2. Answer the following questions: 
-      - What options do I have for establishing an Oracle database connection so my app can update in real time? 
-      - What options do I have if a user wants to update one of these underlying tables? 
-      - What other functions do you recommend this app should have? 
-      - What other Oracle database technologies could I use in/with this React application? 
-
-      Task 5: Launch the web application
-
-      1. Launch the web application and review it for accuracy and expected outcome
-      2. If the data and visualization are not visible on screen, please debug as needed. 
-      </copy>
-      ```
-         
-   </details>
-   <p></p>
 
 > &#9872; **NOTE:** This Lab is designed to be open-ended, accordingly, your individual results will vary. Feel free to improvise &#9786; !
 
@@ -114,14 +67,20 @@ This lab assumes you have:
 
 2. When ready, navigate to your Cline extension. Toggle the Agent to **Plan** mode. 
 
+   ![plan-mode-example](./images/lab-5/plan-mode-example.png " ")
+
 3. Click the `+` icon to add files and images to the task. Select the file name you chose for the prompt. 
+
+   ![adding-prompt-file-to-cline-task](./images/lab-5/adding-prompt-file-to-cline-task.png " ")
 
 4. If you decide to use the prompt in its entirety, include some prepatory instructions in additon to the prompt file; something like this:
 
     ```txt
     <copy>Review the steps in the included markdown file. Detail the steps you intend to take to achieve the desired outcome. And await for my approval before proceeding.</copy>
     ```
-
+   
+   ![including-prepatory-command-context-to-cline-task](./images/lab-5/including-prepatory-command-context-to-cline-task.png " ")
+   
 5. Carefully follow along with the Agent's actions, providing feedback and coaching as needed. 
 
     ![1-review-plan-in-overview-section](./images/lab-5/1-review-plan-in-overview-section.png " ")
@@ -158,7 +117,7 @@ This lab assumes you have:
 
    ![14-troubleshooting-application-networking-issues](./images/lab-5/14-troubleshooting-application-networking-issues.png " ")
 
-## Task 5: Wraping up
+## Task 5: Wrap-up
 
 1. By now you should have a starter React web application. 
 
@@ -166,9 +125,11 @@ This lab assumes you have:
 
 3. Need more help? Review the **Learn More** section of this Lab for helpful blog posts and tutorials. 
 
+4. You may now [proceed to the next lab](#next).
+
 ## Learn More
 
-* [MCP Server Introduction](https://blogs.oracle.com/database/post/introducing-mcp-server-for-oracle-database) 
+* [Prompting: using the SQLcl MCP server and AI agents to create a starter React app](https://blogs.oracle.com/database/prompting-using-the-sqlcl-mcp-server-and-ai-agents-to-create-a-starter-react-app) 
 * [Oracle official MCP Server repository](https://github.com/oracle/mcp/tree/main)
 * [SQLcl MCP Server Docs](https://docs.oracle.com/en/database/oracle/sql-developer-command-line/25.2/sqcug/using-oracle-sqlcl-mcp-server.html)
 
@@ -176,4 +137,6 @@ This lab assumes you have:
 
 * **Author**<ul><li>Chris Hoina, Senior Product Manager, Database Tools</li></ul>
 * **Contributors**<ul><li>Jeff Smith, Distinguished Product Manager, Database Tools</li></ul>
-* **Last Updated By/Date**<ul><li>Chris Hoina, September 2025</li></ul>
+* **Last Updated By/Date**<ul><li>Chris Hoina, January 2026</li></ul>
+
+<!-- WMS ID 11914 -->

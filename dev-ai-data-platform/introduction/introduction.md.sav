@@ -4,7 +4,7 @@
 
 In this workshop, you will explore the use of Oracle’s AI Data Platform to enable companies to simplify data access, data management, data sharing, and build AI powered applications that help them to gain competitive market advantage by optimizing time consuming tasks.  
 
-The Oracle 23ai Autonomous Database as a query engine for your data platform, in this workshop. The query engine is central to a data platform’s performance, scalability, and flexibility. It abstracts the complexity of how and where the data is stored, enabling users to focus on what they want to retrieve, not how to get it. 
+The Oracle Autonomous AI Database as a query engine for your data platform, in this workshop. The query engine is central to a data platform’s performance, scalability, and flexibility. It abstracts the complexity of how and where the data is stored, enabling users to focus on what they want to retrieve, not how to get it. 
 
 You will build an end-to-end solution using Oracle Data Platform tools to ingest external data from various sources, transform it, and produce curated data products for internal and external use.   
 
@@ -91,10 +91,10 @@ The workshop includes a set of docker images hosted on an OCI VM for the middle 
 
 ## Learn More
 
-* [Oracle Database 23ai Documentation](https://docs.oracle.com/en/database/oracle/oracle-database/23/)
+* [Oracle AI Database Documentation](https://docs.oracle.com/en/database/oracle/oracle-database/23/)
 * [URL text 2](http://docs.oracle.com)
 
 ## Acknowledgements
 * **Authors** - Linda Foinding, Francis Regalado
-* **Contributors** - Kamryn Vinson, Otis Barr, Eddie Ambler, Ramona Magadan
-* **Last Updated By/Date** - Kamryn Vinson, March 2025
+* **Contributors** - Eddie Ambler, Ramona Magadan
+* **Last Updated By/Date** - Linda Foinding, March 2025

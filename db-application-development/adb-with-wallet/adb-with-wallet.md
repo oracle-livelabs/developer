@@ -252,6 +252,6 @@ You may now **proceed to the next lab**.
 ## Acknowledgements
 
 - **Author** - Madhusudhan Rao, Principal Product Manager, Database
-- **Contributors** - Kevin Lazarz, Senior Principal Product Manager and Christopher Jones, Senior Principal Product Manager
+- **Contributors** - Christopher Jones, Senior Principal Product Manager
 - **Updates** - Database Actions and Oracle Autonomous Database creation screens updated 
 - **Last Updated By/Date** - Madhusudhan Rao, 4th Oct 2024

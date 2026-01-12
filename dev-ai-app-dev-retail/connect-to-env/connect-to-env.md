@@ -54,6 +54,6 @@ In this lab you logged into the **IDE Development Environment** for Jupyter Labs
 
 
 ## Acknowledgements
-* **Author** - Kamryn Vinson
-* **Contributors** -  Linda Foinding, Francis Regalado, Kevin Lazarz
-* **Last Updated By/Date** - Kamryn Vinson, April 2025
+* **Author** - Linda Foinding
+* **Contributors** -  Linda Foinding, Francis Regalado
+* **Last Updated By/Date** - Linda Foinding, April 2025

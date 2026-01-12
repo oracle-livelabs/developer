@@ -1,10 +1,10 @@
-# Provision an Oracle Autonomous Database  
+# Provision an Oracle Autonomous AI Database  
 
 ## Introduction
 
-Oracle Autonomous Database is the world’s first autonomous data management in the cloud to deliver automated patching, upgrades, and tuning—including performing all routine database maintenance tasks while the system is running - without human intervention. This new Autonomous Database cloud is self-managing, self-securing, and self-repairing, which helps to eliminate manual database management and human errors.
+Oracle Autonomous AI Database is the world’s first autonomous data management in the cloud to deliver automated patching, upgrades, and tuning—including performing all routine database maintenance tasks while the system is running - without human intervention. This new Autonomous Database cloud is self-managing, self-securing, and self-repairing, which helps to eliminate manual database management and human errors.
 
-The Oracle Autonomous Database is fully elastic: You simply specify the number of OCPUs and the storage capacity in TBs for the database. At any time, you may scale up or down the OCPUs or the storage capacity.
+The Oracle Autonomous AI Database is fully elastic: You simply specify the number of OCPUs and the storage capacity in TBs for the database. At any time, you may scale up or down the OCPUs or the storage capacity.
 
 Autonomous Database supports four main types of workload:
 
@@ -13,7 +13,7 @@ Autonomous Database supports four main types of workload:
 * Transactions and analytics on JSON data
 * Oracle APEX Application Development
 
-This lab walks you through the steps to get started using the Oracle Autonomous Database on Oracle Cloud. You will download the wallet where Autonomous Database has already been created. You will then set up the Access control list.
+This lab walks you through the steps to get started using the Oracle Autonomous AI Database on Oracle Cloud. You will download the wallet where Autonomous Database has already been created. You will then set up the Access control list.
 
 Estimated Time: 10 minutes
 
@@ -130,11 +130,11 @@ In this lab, you will:
     </copy>
     ```  
 
-## Task 5: [Optional] One-way TLS connection to Oracle Autonomous Database for wallet-less connections  
+## Task 5: [Optional] One-way TLS connection to Oracle Autonomous AI Database for wallet-less connections  
 
 > **Please Note:**  This Task is required if you plan to use a wallet-less connection with Autonomous Database using Python or . NET. Otherwise, you can still connect to Autonomous Database using the wallet downloaded in the previous Task.
 
-1. One-way TLS connection to Oracle Autonomous Database
+1. One-way TLS connection to Oracle Autonomous AI Database
 
     Complete the following steps in an Oracle Cloud console in the Autonomous Database Information section of the ADB instance details:
 
@@ -200,5 +200,5 @@ You may now **proceed to the next lab**.
 ## Acknowledgements
 
 - **Author** - Madhusudhan Rao, Principal Product Manager, Database
-- **Contributors** - Kevin Lazarz, Senior Principal Product Manager and Christopher Jones, Senior Principal Product Manager
+- **Contributors** -  Christopher Jones, Senior Principal Product Manager
 - **Last Updated By/Date** - Madhusudhan Rao, 4th Oct 2024

@@ -227,5 +227,5 @@ By combining these advanced tools, the application enables faster, smarter decis
 
 ## Acknowledgements
 * **Authors** - Ley Sylvester
-* **Contributors** - Kevin Lazarz, Francis Regalado, Hanna Rakhsha, Noah Paul, Zileyah Onafowora
+* **Contributors** - Francis Regalado, Hanna Rakhsha, Noah Paul, Zileyah Onafowora
 * **Last Updated By/Date** - Uma Kumar, October 2025

@@ -149,5 +149,5 @@ Follow the prompts below to update the code based on the new company standard.
 
 ## Acknowledgements
 * **Authors** - Linda Foinding, Francis Regalado
-* **Contributors** - Kamryn Vinson, Eddie Ambler, Kevin Lazarz
-* **Last Updated By/Date** - Kamryn Vinson, April 2025
+* **Contributors** - Eddie Ambler
+* **Last Updated By/Date** - Linda Foinding, April 2025
