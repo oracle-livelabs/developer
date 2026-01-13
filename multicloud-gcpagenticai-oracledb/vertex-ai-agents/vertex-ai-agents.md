@@ -1,601 +1,663 @@
-# Explore Vertex AI Models and Agents
+# Oracle AI Database RAG with Google Vertex AI Agents
 
 ## Introduction
 
-In this lab, you will explore Google Vertex AI's capabilities including various Gemini models, function calling, and the fundamentals of building AI agents. You'll learn how to create agents that can reason, plan, and interact with external tools.
+This lab demonstrates building a production-ready RAG (Retrieval Augmented Generation) system using Oracle Autonomous Database, Google Vertex AI, and multiple agent interfaces. You'll learn how to create a vector search knowledge base, expose it via FastAPI, and integrate it with Google's Conversational Agents and Agent Development Kit (ADK).
 
-Estimated Time: 20 minutes
+Estimated Time: 2-3 hours
 
 ### Objectives
 
-* Explore different Gemini models (Gemini Pro, Gemini Pro Vision, etc.)
-* Implement function calling for tool use
-* Understand agent architecture and reasoning patterns
-* Build a simple agent with memory and tool access
-* Integrate agents with Oracle AI Database
+* Set up Oracle Database vector store with 768-dimensional embeddings
+* Build FastAPI service with OpenAPI specification
+* Create Streamlit UI for document management
+* Integrate with GCP Vertex AI Conversational Agents
+* Implement full ADK agent with multi-step reasoning
+* Deploy and optimize for production
 
 ### Prerequisites
 
-* Completed previous labs
-* Understanding of RAG and vector search
-* Python environment configured
+* Oracle Cloud Account with Autonomous Database (26ai)
+* Google Cloud Project with billing enabled
+* Python 3.12+
+* Basic understanding of REST APIs and vector embeddings
+* Git and GCP SDK installed
 
-## Task 1: Explore Gemini Models
+## Task 1: Environment Setup
 
-1. Create a script to test different Gemini models:
-   ```python
-   cat > ~/explore_gemini.py << 'EOF'
-   from vertexai.generative_models import GenerativeModel, Part
-   import vertexai
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/paulparkinson/interactive-ai-holograms.git
+   cd interactive-ai-holograms/oracle-ai-database-gcp-vertex-ai
+   ```
+
+2. Configure Oracle Database:
    
-   PROJECT_ID = "your-project-id"
-   REGION = "us-central1"
-   vertexai.init(project=PROJECT_ID, location=REGION)
-   
-   def test_gemini_pro():
-       """Test Gemini Pro for text generation."""
-       model = GenerativeModel("gemini-pro")
-       
-       prompt = """Explain what an AI agent is and how it differs from a 
-       traditional chatbot. Include the key capabilities that make agents 
-       more powerful."""
-       
-       response = model.generate_content(prompt)
-       print("Gemini Pro Response:")
-       print(response.text)
-       print("\n" + "="*80 + "\n")
-   
-   def test_gemini_with_context():
-       """Test Gemini with conversation context."""
-       model = GenerativeModel("gemini-pro")
-       chat = model.start_chat()
-       
-       # Multi-turn conversation
-       response1 = chat.send_message(
-           "I'm building an AI system that needs to remember user preferences. What approach should I use?"
-       )
-       print("Turn 1:")
-       print(response1.text)
-       
-       response2 = chat.send_message(
-           "How would I implement this with a database?"
-       )
-       print("\nTurn 2 (with context):")
-       print(response2.text)
-       print("\n" + "="*80 + "\n")
-   
-   def test_gemini_with_parameters():
-       """Test Gemini with different generation parameters."""
-       model = GenerativeModel("gemini-pro")
-       
-       generation_config = {
-           "temperature": 0.9,
-           "top_p": 0.95,
-           "top_k": 40,
-           "max_output_tokens": 1024,
-       }
-       
-       response = model.generate_content(
-           "Generate three creative use cases for AI agents in enterprise environments.",
-           generation_config=generation_config
-       )
-       
-       print("Creative Response (high temperature):")
-       print(response.text)
-   
-   if __name__ == "__main__":
-       print("Testing Gemini Models\n")
-       test_gemini_pro()
-       test_gemini_with_context()
-       test_gemini_with_parameters()
+   Create or connect to an Autonomous Database (26ai):
+   - Database Name: `PAULPARKDB_TP`
+   - Workload Type: Transaction Processing
+   - Storage: 1TB minimum
+
+   Download the wallet and place files in `./Wallet_PAULPARKDB` directory.
+
+3. Create RAG table in the database:
+   ```sql
+   CREATE TABLE rag_tab (
+       id NUMBER GENERATED ALWAYS AS IDENTITY,
+       text VARCHAR2(4000),
+       link VARCHAR2(500),
+       embedding VECTOR(768, FLOAT32)
+   );
+
+   CREATE VECTOR INDEX rag_idx ON rag_tab(embedding)
+   ORGANIZATION INMEMORY NEIGHBOR GRAPH
+   DISTANCE COSINE;
+   ```
+
+4. Configure GCP:
+   ```bash
+   gcloud config set project adb-pm-prod
+   gcloud config set compute/region us-central1
+   gcloud auth login
+   gcloud auth application-default login
+   ```
+
+5. Create environment variables file (`.env`):
+   ```bash
+   cat > .env << 'EOF'
+   # Oracle Database
+   DB_USERNAME=ADMIN
+   DB_PASSWORD=your_password
+   DB_DSN=paulparkdb_tp_high
+   DB_WALLET_PASSWORD=your_wallet_password
+   DB_WALLET_DIR=./Wallet_PAULPARKDB
+
+   # Google Cloud
+   GCP_PROJECT_ID=adb-pm-prod
+   GCP_REGION=us-central1
+
+   # API Configuration
+   ORACLE_RAG_API_URL=http://10.150.0.8:8501
+   API_PORT=8501
+   STREAMLIT_PORT=8502
    EOF
    ```
 
-2. Run the exploration script:
+6. Install dependencies:
    ```bash
-   python explore_gemini.py
+   pip install -r requirements.txt
    ```
 
-   ![Gemini Models](images/gemini-models-output.png " ")
+   Key dependencies include:
+   - `langchain>=1.0.0` - LangChain framework
+   - `langchain-google-vertexai>=3.2.0` - Vertex AI integration
+   - `oracledb` - Oracle database driver
+   - `fastapi` - REST API framework
+   - `streamlit` - UI framework
+   - `vertexai` - Google Vertex AI SDK
 
-## Task 2: Implement Function Calling
+   ![Environment Setup](images/environment-setup.png " ")
 
-1. Create a function calling example with database tools:
+## Task 2: Document Ingestion with Streamlit
+
+1. Understanding the Streamlit UI architecture:
+   
+   File: `rag_app_ui.py`
+   
+   The Streamlit application provides:
+   - PDF upload and parsing (PyPDF2)
+   - Text chunking with CharacterTextSplitter (1000 chars, 200 overlap)
+   - Vertex AI embeddings generation using `text-embedding-004` (768 dimensions)
+   - Oracle Vector Store insertion
+
+2. Start the Streamlit UI:
+   ```bash
+   ./run.sh
+   ```
+
+   Access the UI at `http://your-vm-ip:8502`
+
+   ![Streamlit UI](images/streamlit-ui.png " ")
+
+3. Upload documents:
+   
+   - Click "Upload PDF Document"
+   - Select a PDF file (e.g., Oracle Database documentation)
+   - Monitor the processing pipeline:
+     - Text extraction
+     - Chunking
+     - Embedding generation
+     - Database insertion
+
+4. Verify document storage:
+   ```sql
+   SELECT COUNT(*) FROM rag_tab;
+   -- Should show number of chunks
+   
+   SELECT * FROM rag_tab WHERE ROWNUM <= 5;
+   -- View sample chunks
+   ```
+
+5. Test search functionality:
+   
+   In the Streamlit UI:
+   - Enter query: "What are new spatial features?"
+   - View retrieved chunks and generated answer
+   - Observe timing metrics (vector search vs. LLM response time)
+
+   ![Document Ingestion](images/document-ingestion.png " ")
+
+## Task 3: Build FastAPI Service with OpenAPI
+
+1. Understanding the FastAPI service architecture:
+   
+   File: `oracle_ai_database_rag.py`
+   
+   The service implements:
    ```python
-   cat > ~/function_calling.py << 'EOF'
-   from vertexai.generative_models import (
-       GenerativeModel,
-       FunctionDeclaration,
-       Tool,
-       Content,
-       Part
+   @app.post("/query")
+   async def query_knowledge_base(request: QueryRequest):
+       # 1. Generate query embedding
+       # 2. Vector similarity search (COSINE)
+       # 3. Retrieve top_k chunks
+       # 4. Create context-aware prompt
+       # 5. Call Gemini LLM
+       # 6. Return answer + metadata
+   ```
+
+   OpenAPI Compatibility:
+   - Version: 3.0.3 (required by GCP)
+   - No security schemes (managed externally)
+   - JSON-only content type
+   - Single server URL (internal VPC)
+
+2. Start the FastAPI service:
+   ```bash
+   ./run_api.sh
+   ```
+
+   Available endpoints:
+   - `POST /query` - RAG query with answer generation
+   - `GET /status` - Service health check
+   - `DELETE /clear` - Clear knowledge base
+   - `GET /health` - Simple health ping
+   - `GET /openapi.json` - OpenAPI specification
+
+3. Test the API locally:
+   ```bash
+   curl -X POST "http://localhost:8501/query" \
+     -H "Content-Type: application/json" \
+     -d '{
+       "query": "What are new JSON features in Oracle Database?",
+       "top_k": 5
+     }'
+   ```
+
+   Expected response:
+   ```json
+   {
+     "answer": "Oracle Database 26ai introduces...",
+     "context_chunks": ["chunk1", "chunk2", ...],
+     "vector_search_time": 0.15,
+     "llm_response_time": 2.3,
+     "total_time": 2.45
+   }
+   ```
+
+4. View OpenAPI specification:
+   
+   Access the interactive documentation at `http://localhost:8501/docs`
+   
+   Features:
+   - Interactive API testing
+   - Schema validation
+   - Request/response examples
+   - Model definitions (QueryRequest, QueryResponse)
+
+   ![FastAPI Service](images/fastapi-service.png " ")
+
+## Task 4: Integrate with GCP Conversational Agents
+
+1. Understanding GCP Conversational Agents:
+   
+   Architecture flow:
+   ```
+   User → GCP Agent → OpenAPI Tool → FastAPI → Oracle DB
+   ```
+   
+   Benefits:
+   - Natural language interface
+   - Multi-turn conversation
+   - Built-in authentication
+   - Web UI for testing
+
+2. Create OpenAPI Tool:
+   
+   Navigate to Vertex AI Console:
+   - Go to Conversational Agents → Tools → Create Tool
+   
+   Import OpenAPI specification:
+   ```
+   Method: OpenAPI URL
+   URL: http://10.150.0.8:8501/openapi.json
+   ```
+   
+   **Important**: Use internal VPC IP (10.150.0.8), not external IP
+   
+   Configure authentication:
+   - Type: No auth (API accepts tokens without validation)
+   - Alternative: Service agent token (for production)
+   
+   Verify tool configuration:
+   - Tool name: `Oracle AI Database (Vector RAG)`
+   - Action: `query`
+   - Input: `query` (string), `top_k` (integer)
+   - Output: JSON response
+
+3. Create Conversational Agent:
+   
+   Create new agent:
+   - Name: "Oracle Database Expert"
+   - Model: Gemini 2.0 Flash
+   
+   Add instructions:
+   ```
+   You are an expert assistant for Oracle Database questions.
+
+   Use the "query" tool to search the Oracle Database knowledge base
+   when users ask about:
+   - Database features
+   - SQL syntax
+   - Configuration
+   - Performance optimization
+
+   Provide clear, accurate answers based on the retrieved information.
+   ```
+   
+   Attach tool:
+   - Add previously created OpenAPI tool
+   - Set as required for database questions
+   
+   Configure settings:
+   - Temperature: 0.7
+   - Max tokens: 2048
+   - Top-p: 0.95
+
+4. Test the GCP Agent:
+   
+   Open Agent Playground and test queries:
+   - "What are new spatial features in Oracle Database?"
+   - "Explain JSON Relational Duality"
+   - "How do I optimize vector search performance?"
+   
+   Monitor tool calls:
+   - View tool execution in conversation
+   - Check API logs for incoming requests
+   - Verify response integration
+
+5. Known limitations and solutions:
+   
+   Issues:
+   - Security schemes not supported in OpenAPI
+   - Only JSON content types allowed
+   - External IPs unreachable from GCP
+   - Limited multipart/form-data support
+   
+   Applied solutions:
+   - Removed security definitions from OpenAPI
+   - Filtered content types to `application/json`
+   - Used internal VPC address (10.150.0.8)
+   - Excluded `/upload` endpoint from schema
+
+   ![GCP Agent](images/gcp-agent.png " ")
+
+## Task 5: Implement ADK Full Agent
+
+1. Understanding Google ADK (Agent Development Kit):
+   
+   ADK provides:
+   - Multi-step reasoning: Agent makes multiple tool calls
+   - Conversation context: Maintains history across turns
+   - Function calling: Native Gemini function calling
+   - Extensibility: Easy to add new tools/capabilities
+   
+   Comparison with GCP Conversational Agents:
+   
+   | Feature | GCP Agents | ADK |
+   |---------|-----------|-----|
+   | Deployment | Managed service | Custom code |
+   | UI | Built-in web UI | Build your own |
+   | Reasoning | Single-step | Multi-step |
+   | Customization | Limited | Full control |
+   | Cost | Per-use | Compute + LLM calls |
+
+2. Understanding ADK architecture:
+   
+   File: `oracle_ai_database_adk_fullagent.py`
+   
+   ```python
+   # 1. Initialize Vertex AI and Gemini
+   vertexai.init(project=project_id, location=location)
+
+   # 2. Define function declarations
+   query_function = FunctionDeclaration(
+       name="query_oracle_database",
+       description="Search Oracle knowledge base...",
+       parameters={...}
    )
-   import vertexai
-   import oracledb
-   import json
+
+   # 3. Create tool with functions
+   oracle_tool = Tool(function_declarations=[query_function])
+
+   # 4. Create Gemini model with tools
+   model = GenerativeModel(
+       "gemini-2.0-flash-exp",
+       tools=[oracle_tool],
+       system_instruction=instructions
+   )
+
+   # 5. Query with function calling
+   chat = model.start_chat()
+   response = chat.send_message(user_input)
+
+   # 6. Handle function calls iteratively
+   while response.has_function_call:
+       result = execute_function(...)
+       response = chat.send_message(function_response)
+   ```
+
+3. Key components:
    
-   PROJECT_ID = "your-project-id"
-   REGION = "us-central1"
-   vertexai.init(project=PROJECT_ID, location=REGION)
-   
-   # Define database query function
-   def query_database(sql_query: str) -> dict:
-       """Execute SQL query on Oracle Database."""
-       try:
-           connection = oracledb.connect(
-               user="vecuser",
-               password="ComplexPassword123!",
-               dsn="agenticaidb_high",
-               config_dir="/home/your_username/wallet",
-               wallet_location="/home/your_username/wallet",
-               wallet_password="YourWalletPassword"
-           )
-           
-           cursor = connection.cursor()
-           cursor.execute(sql_query)
-           
-           # Get column names
-           columns = [desc[0] for desc in cursor.description]
-           
-           # Fetch results
-           results = []
-           for row in cursor:
-               results.append(dict(zip(columns, row)))
-           
-           cursor.close()
-           connection.close()
-           
-           return {
-               "success": True,
-               "data": results[:10],  # Limit to 10 rows
-               "row_count": len(results)
-           }
-       except Exception as e:
-           return {
-               "success": False,
-               "error": str(e)
-           }
-   
-   # Define search function
-   def search_documents(query: str, top_k: int = 3) -> dict:
-       """Search documents using vector similarity."""
-       from vertexai.language_models import TextEmbeddingModel
-       
-       model = TextEmbeddingModel.from_pretrained("textembedding-gecko@003")
-       query_embedding = model.get_embeddings([query])[0].values
-       
-       connection = oracledb.connect(
-           user="vecuser",
-           password="ComplexPassword123!",
-           dsn="agenticaidb_high",
-           config_dir="/home/your_username/wallet",
-           wallet_location="/home/your_username/wallet",
-           wallet_password="YourWalletPassword"
-       )
-       
-       cursor = connection.cursor()
-       cursor.execute("""
-           SELECT content, metadata
-           FROM document_embeddings
-           ORDER BY VECTOR_DISTANCE(embedding, :query_vec, COSINE)
-           FETCH FIRST :top_k ROWS ONLY
-       """, {"query_vec": list(query_embedding), "top_k": top_k})
-       
-       results = [{"content": row[0], "metadata": row[1]} for row in cursor]
-       
-       cursor.close()
-       connection.close()
-       
-       return {"success": True, "documents": results}
-   
-   # Declare functions for Gemini
-   query_db_func = FunctionDeclaration(
-       name="query_database",
-       description="Execute SQL queries on the Oracle Database to retrieve structured data",
+   Function declarations:
+   ```python
+   FunctionDeclaration(
+       name="query_oracle_database",
+       description="Search the Oracle Database knowledge base...",
        parameters={
            "type": "object",
            "properties": {
-               "sql_query": {
-                   "type": "string",
-                   "description": "The SQL query to execute"
-               }
-           },
-           "required": ["sql_query"]
-       }
-   )
-   
-   search_docs_func = FunctionDeclaration(
-       name="search_documents",
-       description="Search documents using semantic similarity to find relevant information",
-       parameters={
-           "type": "object",
-           "properties": {
-               "query": {
-                   "type": "string",
-                   "description": "The search query"
-               },
-               "top_k": {
-                   "type": "integer",
-                   "description": "Number of results to return",
-                   "default": 3
-               }
+               "query": {"type": "string", ...},
+               "top_k": {"type": "integer", "default": 5}
            },
            "required": ["query"]
        }
    )
-   
-   # Create tool with functions
-   database_tool = Tool(
-       function_declarations=[query_db_func, search_docs_func]
-   )
-   
-   # Initialize model with tools
-   model = GenerativeModel(
-       "gemini-pro",
-       tools=[database_tool]
-   )
-   
-   def agent_with_tools(user_query):
-       """Agent that can use database tools."""
-       chat = model.start_chat()
-       
-       # Send initial query
-       response = chat.send_message(user_query)
-       
-       # Handle function calls
-       function_calls = response.candidates[0].content.parts
-       
-       for part in function_calls:
-           if fn := part.function_call:
-               print(f"\n🔧 Agent calling function: {fn.name}")
-               print(f"   Parameters: {dict(fn.args)}")
-               
-               # Execute function
-               if fn.name == "query_database":
-                   result = query_database(fn.args["sql_query"])
-               elif fn.name == "search_documents":
-                   result = search_documents(
-                       fn.args["query"],
-                       fn.args.get("top_k", 3)
-                   )
-               
-               # Send function result back to agent
-               function_response = Part.from_function_response(
-                   name=fn.name,
-                   response={"content": result}
-               )
-               
-               response = chat.send_message(function_response)
-       
-       return response.text
-   
-   # Test agent with tools
-   if __name__ == "__main__":
-       queries = [
-           "How many documents are in the database? Query the document_embeddings table.",
-           "Search for information about AI agents and summarize what you find.",
-       ]
-       
-       for query in queries:
-           print(f"\n{'='*80}")
-           print(f"User Query: {query}")
-           print(f"{'='*80}")
-           
-           result = agent_with_tools(query)
-           print(f"\nAgent Response:\n{result}")
-   EOF
    ```
-
-2. Run the function calling example:
-   ```bash
-   python function_calling.py
-   ```
-
-   ![Function Calling](images/function-calling-output.png " ")
-
-## Task 3: Build a Simple Reasoning Agent
-
-1. Create an agent with reasoning capabilities:
+   
+   System instructions:
    ```python
-   cat > ~/reasoning_agent.py << 'EOF'
-   from vertexai.generative_models import GenerativeModel
-   import vertexai
-   
-   PROJECT_ID = "your-project-id"
-   REGION = "us-central1"
-   vertexai.init(project=PROJECT_ID, location=REGION)
-   
-   class ReasoningAgent:
-       """Agent that can break down problems and reason through solutions."""
-       
-       def __init__(self):
-           self.model = GenerativeModel("gemini-pro")
-           self.chat = self.model.start_chat()
-       
-       def think(self, task):
-           """Break down the task into steps."""
-           prompt = f"""You are a reasoning agent. Break down the following task into 
-   clear, logical steps. For each step, explain what needs to be done and why.
-   
-   Task: {task}
-   
-   Provide a structured breakdown with numbered steps."""
-           
-           response = self.chat.send_message(prompt)
-           return response.text
-       
-       def act(self, step):
-           """Execute a specific step."""
-           prompt = f"""Now execute this step: {step}
-   
-   Provide the detailed actions taken and results."""
-           
-           response = self.chat.send_message(prompt)
-           return response.text
-       
-       def reflect(self, outcome):
-           """Reflect on the outcome and suggest improvements."""
-           prompt = f"""Reflect on this outcome: {outcome}
-   
-   What worked well? What could be improved? What should we try next?"""
-           
-           response = self.chat.send_message(prompt)
-           return response.text
-   
-   def solve_problem(self, problem):
-       """Complete problem-solving cycle."""
-       print(f"🎯 Problem: {problem}\n")
-       
-       # Think: Plan the approach
-       print("💭 THINKING (Planning)...")
-       plan = self.think(problem)
-       print(f"{plan}\n")
-       
-       # Act: Execute first step (simulated)
-       print("🎬 ACTING (Executing first step)...")
-       action_result = self.act("Execute the first step from the plan above")
-       print(f"{action_result}\n")
-       
-       # Reflect: Learn from results
-       print("🤔 REFLECTING (Learning)...")
-       reflection = self.reflect(action_result)
-       print(f"{reflection}\n")
-       
-       return {
-           "plan": plan,
-           "action": action_result,
-           "reflection": reflection
-       }
-   
-   if __name__ == "__main__":
-       agent = ReasoningAgent()
-       
-       # Test with complex task
-       problem = """Design a system that can automatically categorize customer 
-   support tickets, find relevant documentation from a knowledge base, 
-   and generate draft responses."""
-       
-       result = agent.solve_problem(problem)
-   EOF
+   instructions = """You are an expert Oracle Database assistant.
+
+   Use query_oracle_database when users ask about:
+   - Specific features or functionality
+   - SQL syntax and best practices
+   - Configuration and administration
+
+   For complex questions:
+   - Break into sub-queries
+   - Make multiple tool calls
+   - Synthesize information
+
+   Maintain conversation context and reference previous answers."""
    ```
-
-2. Run the reasoning agent:
-   ```bash
-   python reasoning_agent.py
-   ```
-
-   ![Reasoning Agent](images/reasoning-agent-output.png " ")
-
-## Task 4: Implement Agent with Memory using Oracle Database
-
-1. Create an agent with persistent memory:
+   
+   Multi-step execution:
    ```python
-   cat > ~/agent_with_memory.py << 'EOF'
-   from vertexai.generative_models import GenerativeModel
-   import vertexai
+   max_iterations = 5
+   while has_function_call and iteration < max_iterations:
+       # Execute function
+       result = execute_function_call(function_name, args)
+       
+       # Send result back to model
+       response = chat.send_message(
+           Part.from_function_response(name=function_name, response=result)
+       )
+   ```
+
+4. Run the ADK agent:
+   ```bash
+   ./run_fullagent.sh
+   ```
+
+   Interactive commands:
+   - Type questions naturally
+   - `history` - View conversation
+   - `clear` - Reset context
+   - `quit` - Exit
+
+5. Test multi-step reasoning:
+   
+   Example 1 - Complex query:
+   ```
+   You: Compare spatial features between Oracle 19c and 26ai
+
+   Agent reasoning:
+     🔧 query_oracle_database(query="Oracle 19c spatial features", top_k=5)
+     🔧 query_oracle_database(query="Oracle 26ai spatial features", top_k=5)
+     
+   Agent: Oracle 26ai introduces several enhancements over 19c:
+   1. Spatial Web Services...
+   2. Enhanced GeoJSON support...
+   [Synthesized from 2 tool calls]
+   ```
+   
+   Example 2 - Follow-up questions:
+   ```
+   You: What are new JSON features?
+   Agent: [Uses context from previous conversation]
+
+   You: How do I use those with spatial data?
+   Agent: [References both previous answers, makes new query]
+   ```
+
+6. View conversation history:
+   ```bash
+   > history
+
+   [1] User: What are new spatial features in the oracle database
+       Agent: Oracle Database 26ai introduces enhanced spatial capabilities...
+
+   [2] User: How do I enable these features?
+       Agent: To enable spatial features, you need to...
+   ```
+
+   ![ADK Agent](images/adk-agent.png " ")
+
+## Task 6: Advanced Topics and Optimization
+
+1. Embedding model details:
+   
+   Model: `text-embedding-004`
+   - Dimensions: 768
+   - Max input: 20,000 tokens
+   - Multilingual support
+   - Cost: $0.00025 per 1K tokens
+   
+   Alternative models:
+   - `text-embedding-005`: 256/768/1024 dimensions (configurable)
+   - `textembedding-gecko@003`: Legacy model
+   - Custom fine-tuned models
+
+2. Vector search optimization:
+   
+   Distance strategies:
+   ```sql
+   -- COSINE (default) - best for normalized embeddings
+   DISTANCE COSINE
+
+   -- EUCLIDEAN - faster but requires normalization
+   DISTANCE EUCLIDEAN
+
+   -- MAX_INNER_PRODUCT - for non-normalized vectors
+   DISTANCE DOT
+   ```
+   
+   Index types:
+   ```sql
+   -- IVF (Inverted File) - fast for large datasets
+   CREATE VECTOR INDEX rag_idx ON rag_tab(embedding)
+   ORGANIZATION INMEMORY NEIGHBOR GRAPH;
+
+   -- HNSW - highest accuracy
+   CREATE VECTOR INDEX rag_idx_hnsw ON rag_tab(embedding)
+   DISTANCE COSINE WITH TARGET ACCURACY 95;
+   ```
+
+3. Prompt engineering:
+   
+   RAG prompt template:
+   ```python
+   template = """Use the following context to answer the question.
+   If you cannot answer based on the context, say so clearly.
+
+   Context:
+   {context}
+
+   Question: {question}
+
+   Answer:"""
+   ```
+   
+   Advanced techniques:
+   - Few-shot examples
+   - Chain-of-thought reasoning
+   - Self-consistency
+   - Retrieval augmentation strategies
+
+4. Performance optimization:
+   
+   Caching:
+   ```python
+   from functools import lru_cache
+
+   @lru_cache(maxsize=1000)
+   def get_embedding(text: str):
+       return embeddings.embed_query(text)
+   ```
+   
+   Connection pooling:
+   ```python
    import oracledb
-   import json
-   from datetime import datetime
-   
-   PROJECT_ID = "your-project-id"
-   REGION = "us-central1"
-   vertexai.init(project=PROJECT_ID, location=REGION)
-   
-   class MemoryAgent:
-       """Agent with persistent memory stored in Oracle Database."""
-       
-       def __init__(self, agent_id):
-           self.agent_id = agent_id
-           self.model = GenerativeModel("gemini-pro")
-           self.connection = self._get_connection()
-           self._ensure_memory_table()
-       
-       def _get_connection(self):
-           return oracledb.connect(
-               user="vecuser",
-               password="ComplexPassword123!",
-               dsn="agenticaidb_high",
-               config_dir="/home/your_username/wallet",
-               wallet_location="/home/your_username/wallet",
-               wallet_password="YourWalletPassword"
-           )
-       
-       def _ensure_memory_table(self):
-           """Create memory table if it doesn't exist."""
-           cursor = self.connection.cursor()
-           try:
-               cursor.execute("""
-                   CREATE TABLE IF NOT EXISTS agent_memory (
-                       id NUMBER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-                       agent_id VARCHAR2(100),
-                       memory_type VARCHAR2(50),
-                       content CLOB,
-                       metadata JSON,
-                       created_at TIMESTAMP DEFAULT SYSTIMESTAMP
-                   )
-               """)
-               self.connection.commit()
-           except:
-               pass  # Table might already exist
-           cursor.close()
-       
-       def store_memory(self, memory_type, content, metadata=None):
-           """Store a memory in the database."""
-           cursor = self.connection.cursor()
-           cursor.execute("""
-               INSERT INTO agent_memory (agent_id, memory_type, content, metadata)
-               VALUES (:agent_id, :memory_type, :content, :metadata)
-           """, {
-               "agent_id": self.agent_id,
-               "memory_type": memory_type,
-               "content": content,
-               "metadata": json.dumps(metadata or {})
-           })
-           self.connection.commit()
-           cursor.close()
-       
-       def retrieve_memories(self, memory_type=None, limit=10):
-           """Retrieve memories from the database."""
-           cursor = self.connection.cursor()
-           
-           if memory_type:
-               cursor.execute("""
-                   SELECT content, metadata, created_at
-                   FROM agent_memory
-                   WHERE agent_id = :agent_id AND memory_type = :memory_type
-                   ORDER BY created_at DESC
-                   FETCH FIRST :limit ROWS ONLY
-               """, {
-                   "agent_id": self.agent_id,
-                   "memory_type": memory_type,
-                   "limit": limit
-               })
-           else:
-               cursor.execute("""
-                   SELECT content, metadata, created_at
-                   FROM agent_memory
-                   WHERE agent_id = :agent_id
-                   ORDER BY created_at DESC
-                   FETCH FIRST :limit ROWS ONLY
-               """, {
-                   "agent_id": self.agent_id,
-                   "limit": limit
-               })
-           
-           memories = []
-           for row in cursor:
-               memories.append({
-                   "content": row[0],
-                   "metadata": json.loads(row[1]) if row[1] else {},
-                   "timestamp": row[2]
-               })
-           
-           cursor.close()
-           return memories
-       
-       def chat(self, message):
-           """Chat with memory context."""
-           # Retrieve recent conversation history
-           memories = self.retrieve_memories(memory_type="conversation", limit=5)
-           
-           # Build context from memories
-           context = "\n".join([
-               f"Previous: {m['content']}"
-               for m in reversed(memories)
-           ])
-           
-           # Generate response with context
-           if context:
-               full_prompt = f"Context from previous conversations:\n{context}\n\nCurrent message: {message}"
-           else:
-               full_prompt = message
-           
-           response = self.model.generate_content(full_prompt)
-           
-           # Store this interaction
-           self.store_memory(
-               "conversation",
-               f"User: {message}\nAgent: {response.text}",
-               {"type": "chat", "timestamp": datetime.now().isoformat()}
-           )
-           
-           return response.text
-       
-       def learn_fact(self, fact, category):
-           """Learn and store a fact."""
-           self.store_memory(
-               "knowledge",
-               fact,
-               {"category": category, "learned_at": datetime.now().isoformat()}
-           )
-           print(f"✅ Learned: {fact}")
-       
-       def recall_knowledge(self, query):
-           """Recall relevant knowledge."""
-           memories = self.retrieve_memories(memory_type="knowledge")
-           
-           prompt = f"""Based on what I've learned:\n\n"""
-           for mem in memories:
-               prompt += f"- {mem['content']}\n"
-           
-           prompt += f"\n\nAnswer this question: {query}"
-           
-           response = self.model.generate_content(prompt)
-           return response.text
-   
-   if __name__ == "__main__":
-       # Create agent with memory
-       agent = MemoryAgent("agent-001")
-       
-       # Teach the agent some facts
-       agent.learn_fact(
-           "Oracle AI Database supports vector search with HNSW indexing",
-           "database"
-       )
-       agent.learn_fact(
-           "Gemini models can process text, code, and images",
-           "ai-models"
-       )
-       
-       # Have a conversation
-       print("\n" + "="*80)
-       print("CONVERSATION WITH MEMORY")
-       print("="*80 + "\n")
-       
-       response1 = agent.chat("What do you know about vector databases?")
-       print(f"Agent: {response1}\n")
-       
-       response2 = agent.chat("Can you elaborate on that?")
-       print(f"Agent: {response2}\n")
-       
-       # Recall knowledge
-       print("\n" + "="*80)
-       print("KNOWLEDGE RECALL")
-       print("="*80 + "\n")
-       
-       knowledge = agent.recall_knowledge("What AI capabilities have you learned about?")
-       print(f"Agent: {knowledge}")
-   EOF
+
+   pool = oracledb.create_pool(
+       user=username,
+       password=password,
+       dsn=dsn,
+       min=2,
+       max=10,
+       increment=1
+   )
    ```
 
-2. Run the memory agent:
+   ![Optimization](images/optimization.png " ")
+
+## Task 7: Deployment and Production
+
+1. Deploy to Cloud Run:
    ```bash
-   python agent_with_memory.py
+   # Build container
+   gcloud builds submit --tag gcr.io/adb-pm-prod/oracle-rag-api
+
+   # Deploy to Cloud Run
+   gcloud run deploy oracle-rag-api \
+     --image gcr.io/adb-pm-prod/oracle-rag-api \
+     --platform managed \
+     --region us-central1 \
+     --allow-unauthenticated \
+     --set-env-vars GCP_PROJECT_ID=adb-pm-prod
    ```
 
-   ![Agent with Memory](images/agent-memory-output.png " ")
+2. Security hardening:
+   
+   Add API key authentication:
+   ```python
+   from fastapi.security import APIKeyHeader
 
-Congratulations! You have successfully explored Vertex AI models, implemented function calling, and built agents with reasoning and memory capabilities.
+   api_key_header = APIKeyHeader(name="X-API-Key")
+
+   @app.post("/query")
+   async def query(request: QueryRequest, api_key: str = Depends(api_key_header)):
+       if api_key != os.getenv("API_KEY"):
+           raise HTTPException(401, "Invalid API key")
+   ```
+   
+   Bearer token validation:
+   ```python
+   from google.auth.transport import requests as google_requests
+   from google.oauth2 import id_token
+
+   def verify_token(token: str):
+       idinfo = id_token.verify_oauth2_token(
+           token, google_requests.Request()
+       )
+       return idinfo
+   ```
+
+3. Monitoring and logging:
+   ```python
+   import logging
+   from google.cloud import logging as cloud_logging
+
+   # Cloud Logging
+   client = cloud_logging.Client()
+   client.setup_logging()
+
+   # Log queries
+   logging.info("Query received", extra={
+       "query": query,
+       "top_k": top_k,
+       "response_time": response_time
+   })
+   ```
+
+   ![Production Deployment](images/production-deployment.png " ")
+
+## Troubleshooting
+
+Common issues and solutions:
+
+1. **Issue**: `langchain.load` module not found
+   ```python
+   # Solution: Use Gemini function calling instead of LangchainAgent
+   # Already implemented in oracle_ai_database_adk_fullagent.py
+   ```
+
+2. **Issue**: GCP Agent returns authentication error
+   ```
+   # Solution: Use internal VPC IP, not external
+   URL: http://10.150.0.8:8501 (not 34.48.146.146)
+   ```
+
+3. **Issue**: Port 8501 already in use
+   ```bash
+   # Solution: Streamlit moved to 8502
+   pkill -f uvicorn  # Stop FastAPI
+   ./run.sh          # Streamlit on 8502
+   ./run_api.sh      # FastAPI on 8501
+   ```
+
+4. **Issue**: Vector search returns no results
+   ```sql
+   -- Check embeddings exist
+   SELECT COUNT(*) FROM rag_tab WHERE embedding IS NOT NULL;
+
+   -- Verify index
+   SELECT * FROM USER_INDEXES WHERE TABLE_NAME = 'RAG_TAB';
+   ```
+
+Congratulations! You have successfully built a production-ready RAG system with Oracle AI Database and Google Vertex AI Agents.
 
 You may now **proceed to the next lab**.
 
 ## Learn More
 
-* [Vertex AI Function Calling](https://cloud.google.com/vertex-ai/docs/generative-ai/multimodal/function-calling)
-* [Building AI Agents with Vertex AI](https://codelabs.developers.google.com/devsite/codelabs/building-ai-agents-vertexai)
-* [Agent Design Patterns](https://developers.google.com/machine-learning/resources/ai-agents)
+* [Oracle AI Vector Search](https://docs.oracle.com/en/database/oracle/oracle-database/23/vecse/)
+* [Vertex AI Gemini API](https://cloud.google.com/vertex-ai/docs/generative-ai/model-reference/gemini)
+* [LangChain Documentation](https://python.langchain.com/)
+* [FastAPI Documentation](https://fastapi.tiangolo.com/)
+* [Code Repository](https://github.com/paulparkinson/interactive-ai-holograms)
 
 ## Acknowledgements
 
 * **Author** - Paul Parkinson, Architect and Developer Advocate
-* **Last Updated By/Date** - Paul Parkinson, December 2025
+* **Last Updated By/Date** - Paul Parkinson, January 2026

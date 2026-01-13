@@ -50,31 +50,31 @@ In this lab you will run the RAG application interactively using a simple user i
 
 5. Click the **Browse files** button and load a PDF document.
 
-    After a few seconds the PDF document will be loaded, transformed to text, chunked, and vectorized into Oracle Database 23ai.
+    After a few seconds the PDF document will be loaded, transformed to text, chunked, and vectorized into Oracle Database 26ai.
 
     A prompt area will now appear for you to ask a question about your PDF. You can type in your own question or use the suggestions listed below.
 
 6. Type a question and hit return.
     
-    In a few seconds the LLM will answer the question and respond with context stored in Oracle Database 23ai.
+    In a few seconds the LLM will answer the question and respond with context stored in Oracle Database 26ai.
 
     ![](./images/final-output.png " ")
 
 Suggestions
 
-For the Oracle Database 23ai documentation:
+For the Oracle Database 26ai documentation:
 
-* What are the new features in Oracle Database 23ai
+* What are the new features in Oracle Database 26ai
 * Tell me more about AI Vector Search
 * Tell me more about new enhancement to SQL
 * Tell me more about JSON Relational Duality
-* List 5 new features of Oracle 23ai database
+* List 5 new features of Oracle 26ai database
 
 ### Conclusion
 
-In this lab you ran a RAG application with a UI using the same steps for RAG leveraging Oracle Database@Google Cloud and Google Vertex AI. The blueprint is the same. Now it's your turn. Experiment with different transformers for different data sources. It could be video, audio, text and more. They're all embedded as vectors in Oracle Database 23ai.
+In this lab you ran a RAG application with a UI using the same steps for RAG leveraging Oracle Database@Google Cloud and Google Vertex AI. The blueprint is the same. Now it's your turn. Experiment with different transformers for different data sources. It could be video, audio, text and more. They're all embedded as vectors in Oracle Database 26ai.
 
-By using AI Vector Search in Oracle Database 23ai, you can build RAG applications with important context without having to retrain the LLM. The context is stored, searched and retrieved from Oracle Database 23ai and passed to Google Vertex AI Gemini Flash Model to generate accurate, up to date, and targeted responses to your prompts.
+By using AI Vector Search in Oracle Database 26ai, you can build RAG applications with important context without having to retrain the LLM. The context is stored, searched and retrieved from Oracle Database 26ai and passed to Google Vertex AI Gemini Flash Model to generate accurate, up to date, and targeted responses to your prompts.
 
 ## Acknowledgements
 

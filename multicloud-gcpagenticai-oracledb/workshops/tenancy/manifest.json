@@ -36,16 +36,12 @@
         },
   
       {
-        "title": "Lab 5: Explore Vertex AI Models and Agents",
+        "title": "Lab 5: Create Vertex AI Agents and Tools with Google ADK and Oracle AI Database",
         "filename": "../../vertex-ai-agents/vertex-ai-agents.md"
       },
       {
-        "title": "Lab 6: Create Digital Twin Agent with Vertex AI Agent Builder",
-        "filename": "../../digital-twin-agent/digital-twin-agent.md"
-      },
-      {
-        "title": "Lab 7: Implement Agentic Memory with Oracle AI Database",
-        "filename": "../../agentic-memory/agentic-memory.md"
+        "title": "Lab 6: Advanced Agentic AI (Memory, Spatial and Digital Twin Agents",
+        "filename": "../../agentic-advanced/agentic-advanced.md"
       },
       {
         "title": "Need Help?",

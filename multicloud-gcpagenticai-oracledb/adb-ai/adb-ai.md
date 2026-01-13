@@ -5,9 +5,9 @@
 
 In this lab we will implement a RAG (Retrieval Augmented Generation) chatbot using vector similarity search and Generative AI / LLMs.
 
-We will guide you through the process of loading and parsing a pdf file, integrating it with an Oracle 23ai database, and employing the Google Cloud Platform to order it and run the Python code and Generative AI services needed for the chatbot.
+We will guide you through the process of loading and parsing a pdf file, integrating it with an Oracle 26ai database, and employing the Google Cloud Platform to order it and run the Python code and Generative AI services needed for the chatbot.
 
-Oracle Database 23ai will be used as the vector store. In this lab, we will use a pdf file as the source data, but you can apply these steps to other data types including audio and video. **Gemini 2.5 Flash (gemini-2.5-flash)**, a multimodal model from Google AI, is leveraged for RAG.
+Oracle Database 26ai will be used as the vector store. In this lab, we will use a pdf file as the source data, but you can apply these steps to other data types including audio and video. **Gemini 2.5 Flash (gemini-2.5-flash)**, a multimodal model from Google AI, is leveraged for RAG.
 
 High-level steps followed in this lab:
 
@@ -17,11 +17,11 @@ High-level steps followed in this lab:
 
 3. Chunk the text document into smaller pieces.
 
-4. Using an embedding model, embed the chunks as vectors into Oracle Database 23ai.
+4. Using an embedding model, embed the chunks as vectors into Oracle Database 26ai.
 
 5. Ask the question for the prompt, the prompt will use the same embedding model to vectorize the question.
 
-6. The question will be passed to Oracle Database 23ai and a similarity search is performed on the question.
+6. The question will be passed to Oracle Database 26ai and a similarity search is performed on the question.
 
 7. The results (context) of the search and the prompt are passed to the LLM to generate the response.
 
@@ -52,9 +52,9 @@ Estimated Time: 10 minutes
 As a database user, DBA or application developer:
 
 1. Implement a RAG chatbot using vector similarity search and Generative AI/LLMs.
-2. Load and parse a FAQ-like text file, integrating it with an Oracle 23ai database.
+2. Load and parse a FAQ-like text file, integrating it with an Oracle 26ai database.
 3. Employ the Google Cloud Platform to order and run the Python code and Generative AI services needed for the chatbot.
-4. Use the Oracle Database 23ai vector database to store and retrieve relevant information.
+4. Use the Oracle Database 26ai vector database to store and retrieve relevant information.
 5. Leverage the Gemini Generative AI service (Vertex AI) to generate high-quality responses to user queries.
 
 ### Required Artifacts
@@ -171,11 +171,11 @@ Please use VSCode's Remote Explorer function to connect to your remote VM. If yo
     </copy>
     ```
 
-6. Download the [Source pdf file](https://objectstorage.us-phoenix-1.oraclecloud.com/p/DiuTfuapQc-nDTpWUbWJuLbn35KsNuhN-HxqvidF-s6IrdCqKRtJvgxkSAqlAz4w/n/axxduehrw7lz/b/gcp-ai-lab/o/oracle-database-23ai-new-features-guide.pdf) and the [Jupyter Notebook](https://objectstorage.us-phoenix-1.oraclecloud.com/p/O8WKC75TW_sZNHIaGKHeBw_KmHNJ89hux_UfjwrH7WUSpUTR3gDXcxp0DvPBYuj6/n/axxduehrw7lz/b/gcp-ai-lab/o/database-rag.ipynb) to the `vectors` directory.
+6. Download the [Source pdf file](https://objectstorage.us-phoenix-1.oraclecloud.com/p/DiuTfuapQc-nDTpWUbWJuLbn35KsNuhN-HxqvidF-s6IrdCqKRtJvgxkSAqlAz4w/n/axxduehrw7lz/b/gcp-ai-lab/o/oracle-database-26ai-new-features-guide.pdf) and the [Jupyter Notebook](https://objectstorage.us-phoenix-1.oraclecloud.com/p/O8WKC75TW_sZNHIaGKHeBw_KmHNJ89hux_UfjwrH7WUSpUTR3gDXcxp0DvPBYuj6/n/axxduehrw7lz/b/gcp-ai-lab/o/database-rag.ipynb) to the `vectors` directory.
 
     ```
     <copy>
-    wget https://objectstorage.us-phoenix-1.oraclecloud.com/p/DiuTfuapQc-nDTpWUbWJuLbn35KsNuhN-HxqvidF-s6IrdCqKRtJvgxkSAqlAz4w/n/axxduehrw7lz/b/gcp-ai-lab/o/oracle-database-23ai-new-features-guide.pdf
+    wget https://objectstorage.us-phoenix-1.oraclecloud.com/p/DiuTfuapQc-nDTpWUbWJuLbn35KsNuhN-HxqvidF-s6IrdCqKRtJvgxkSAqlAz4w/n/axxduehrw7lz/b/gcp-ai-lab/o/oracle-database-26ai-new-features-guide.pdf
     wget https://objectstorage.us-phoenix-1.oraclecloud.com/p/O8WKC75TW_sZNHIaGKHeBw_KmHNJ89hux_UfjwrH7WUSpUTR3gDXcxp0DvPBYuj6/n/axxduehrw7lz/b/gcp-ai-lab/o/database-rag.ipynb
     wget https://objectstorage.us-phoenix-1.oraclecloud.com/p/6ulMJ9B8Dlr1EVVA4WqgDOVfPrWkwKIYRDfV7vgsl90CnqCBDcuqCY0vOspN8ih9/n/axxduehrw7lz/b/gcp-ai-lab/o/rag_app_ui.py
     </copy>
@@ -253,7 +253,7 @@ Please use VSCode's Remote Explorer function to connect to your remote VM. If yo
 
     ```
     <copy>
-    # Function to format and add metadata to Oracle 23ai Vector Store
+    # Function to format and add metadata to Oracle 26ai Vector Store
 
     def chunks_to_docs_wrapper(row: dict) -> Document:
         """
@@ -266,7 +266,7 @@ Please use VSCode's Remote Explorer function to connect to your remote VM. If yo
     </copy>
     ```
 
-6. This code connects to Oracle Database 23ai with the credentials and connection string. Select the code snippet and click Run. Update the code with the Username, Password, Connection String (eg. d5kas9zhfydbe31a_high) and Wallet Password.
+6. This code connects to Oracle Database 26ai with the credentials and connection string. Select the code snippet and click Run. Update the code with the Username, Password, Connection String (eg. d5kas9zhfydbe31a_high) and Wallet Password.
 
     ```
     <copy>
@@ -296,7 +296,7 @@ Please use VSCode's Remote Explorer function to connect to your remote VM. If yo
     # Load the document
 
     # creating a pdf reader object
-    pdf = PdfReader('oracle-database-23ai-new-features-guide.pdf')
+    pdf = PdfReader('oracle-database-26ai-new-features-guide.pdf')
 
     # print number of pages in pdf file 
     print("The number of pages in this document is ",len(pdf.pages)) 
@@ -353,7 +353,7 @@ Please use VSCode's Remote Explorer function to connect to your remote VM. If yo
 
     ```
     <copy>
-    # Using an embedding model, embed the chunks as vectors into Oracle Database 23ai.
+    # Using an embedding model, embed the chunks as vectors into Oracle Database 26ai.
 
     # Initialize embedding model
     model_4db = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
@@ -363,7 +363,7 @@ Please use VSCode's Remote Explorer function to connect to your remote VM. If yo
     knowledge_base = OracleVS.from_documents(docs, model_4db, client=connection, table_name="RAG_TAB", distance_strategy=DistanceStrategy.DOT_PRODUCT, )     
     s2time =  time.time()      
     print( f"Vectorizing and inserting chunks duration: {round(s2time - s1time, 1)} sec.")
-    You have successfully uploaded the document, transformed it to text, split into chunks, and embedded its vectors in Oracle Database 23ai.
+    You have successfully uploaded the document, transformed it to text, split into chunks, and embedded its vectors in Oracle Database 26ai.
     </copy>
     ```
 
@@ -393,7 +393,7 @@ Please use VSCode's Remote Explorer function to connect to your remote VM. If yo
 
     ```
     <copy>
-    user_question = 'List maximum availability features of 23ai'
+    user_question = 'List maximum availability features of 26ai'
     print ("The prompt to the LLM will be:",user_question)
     </copy>
     ```
@@ -497,7 +497,7 @@ Please use VSCode's Remote Explorer function to connect to your remote VM. If yo
     </copy>
     ```
 
-20. The code below builds the prompt template to include both the question and the context, and instantiates the knowledge base class to use the retriever to retrieve context from Oracle Database 23ai. Click Run to execute the code.
+20. The code below builds the prompt template to include both the question and the context, and instantiates the knowledge base class to use the retriever to retrieve context from Oracle Database 26ai. Click Run to execute the code.
 
     ```
     <copy>
@@ -548,7 +548,7 @@ Please use VSCode's Remote Explorer function to connect to your remote VM. If yo
     ```
     <copy>
     print("")
-    print("Congratulations! You've completed your RAG application with AI Vector Search in Oracle Database 23ai running on Oracle Database@Google Cloud using Vertex AI - Gemini")
+    print("Congratulations! You've completed your RAG application with AI Vector Search in Oracle Database 26ai running on Oracle Database@Google Cloud using Vertex AI - Gemini")
     </copy>
     ```
 
