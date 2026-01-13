@@ -2,8 +2,16 @@
 
 ## Connecting and creating database objects
 
-1. Connect as the user. If no user is provided, please prompt me with the available connections, and ask me to choose the one of the connections before proceeding to the next step.
-2. Create four tables named car, truck, motorcycle, and manufacturer in the chosen schema with the following characteristics (please review the three "NOTE" notes in this section before creating the tables):
+1. Connect as the user. If no user is provided, please prompt me with the available connections, and ask me to choose one of the connections before proceeding to the next step.
+2. Create four tables named car, truck, motorcycle, and manufacturer in the chosen schema with the following characteristics. Please review the following notes before creating the tables: 
+
+> NOTE: For all tables, recommend any other additional columns you think may be relevant.
+    
+> NOTE: Ensure that no integrity constraints will be violated. Parent keys, in referred tables, should be verified of their existence before being used in any fictitous data. As an example, make sure the manufacturer_id exists across the various tables.
+
+> NOTE: For simplicity, include Internal Combustion Engine (ICE) vehicles only.
+
+The tables to be created: 
 
     The car, truck, motorcycle tables should include colums such as: 
       - make
@@ -26,12 +34,6 @@
       - references
       - primary and foreign keys  
     
-> NOTE: For all tables, recommend any other additional columns you think may be relevant.
-    
-> NOTE: Ensure that no integrity constraints will be violated. Parent keys, in referred tables, should be verified of their existence before being used in any fictitous data. As an example, make sure the manufacturer_id exists across the various tables.
-
-> NOTE: For simplicity, include Internal Combustion Engine (ICE) vehicles only.
-
 ## Inserting data
 
 1. Create 50 unique entries each (in each table) of fictitious, but plausible data for the following tables(please review the two "NOTE" notes in this section before inserting the table data):

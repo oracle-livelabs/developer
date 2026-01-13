@@ -8,17 +8,17 @@
 
 ## Task 1: Connect, familiarize
 
-1. Provide me a list of available database connections, connect as the chosen connection (user) and describe the HR schema tables and views. If I do not explicitly tell you which connection to use, prompt me with the available connections and have me choose one before proceeding. 
+1. Provide me a list of available database connections, connect as the chosen connection (user) and describe the HR schema tables and views. DO NOT use SQLcl's MCP Server "schema-information" tool for this exploration. If I do not explicitly tell you which connection to use, prompt me with the available connections and have me choose one before proceeding. 
 
-2. You should be able to find HR schema under the schema directory named "Other Users"; if you have trouble you can use the following SQL to familarize yourself with the HR schema: 
+2. You should be able to find the HR schema under the schema directory named "Other Users"; if you have trouble you can use the following SQL to familarize yourself with the HR schema: 
 
 `SELECT table_name FROM all_tables WHERE owner='HR' ORDER BY table_name;`  
 
-3. Familiarize yourself with the HR schema's tables and views and their relationships.
+3. Familiarize yourself with the HR schema's tables and views and their relationships. DO NOT use SQLcl's MCP Sever "schema-information" tool for this exploration.
 
 ## Task 2: Build the dashboard, my requests
 
-> NOTE: The data for all these charts should be varied and not focus on any particlar department, country, or location. 
+> NOTE: The data for all these charts should be varied and not focus on any particular department, country, or location. 
 
 1. I want you to add tool tips to my charts: https://www.chartjs.org/docs/latest/samples/tooltip/content.html
 2. I want you to use table data from the HR schema to create a radar chart https://www.chartjs.org/docs/latest/samples/other-charts/radar.html. I want to be able to select two different employees from two drop down lists, so that I can compare their attributes.
