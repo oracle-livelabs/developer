@@ -2,9 +2,11 @@
 
 ## Introduction
 
-This lab demonstrates building a production-ready RAG (Retrieval Augmented Generation) system using Oracle Autonomous Database, Google Vertex AI, and multiple agent interfaces. You'll learn how to create a vector search knowledge base, expose it via FastAPI, and integrate it with Google's Conversational Agents and Agent Development Kit (ADK).
+This lab demonstrates developing a RAG system using Oracle AI Database, Google Vertex AI, and multiple agent interfaces. You'll learn how to create a vector search knowledge base, expose it via FastAPI, and integrate it with Google's Conversational Agents and Agent Development Kit (ADK).
 
-Estimated Time: 2-3 hours
+Please refer to the `Building AI Agents with Vertex AI Agent Builder` tutorial found here: https://codelabs.developers.google.com/devsite/codelabs/building-ai-agents-vertexai if you are interested in running a no-code version 
+
+Estimated Time: 1 hour
 
 ### Objectives
 
@@ -13,32 +15,32 @@ Estimated Time: 2-3 hours
 * Create Streamlit UI for document management
 * Integrate with GCP Vertex AI Conversational Agents
 * Implement full ADK agent with multi-step reasoning
-* Deploy and optimize for production
 
 ### Prerequisites
 
-* Oracle Cloud Account with Autonomous Database (26ai)
-* Google Cloud Project with billing enabled
-* Python 3.12+
+* Oracle AI Database (and wallet) and GCP compute instance - both configured in previous labs
+* The GCP compute instance is configured for remote VS Code access and that environment has Python 3.12+, Git, etc. pre-installed
 * Basic understanding of REST APIs and vector embeddings
-* Git and GCP SDK installed
 
 ## Task 1: Environment Setup
 
-1. Clone the repository:
+1. In the VS Code/terminal running on your GCP compute instance, clone the repository:
    ```bash
    git clone https://github.com/paulparkinson/interactive-ai-holograms.git
    cd interactive-ai-holograms/oracle-ai-database-gcp-vertex-ai
    ```
 
-2. Configure Oracle Database:
-   
-   Create or connect to an Autonomous Database (26ai):
-   - Database Name: `PAULPARKDB_TP`
-   - Workload Type: Transaction Processing
-   - Storage: 1TB minimum
+2. Run theConfigure Oracle Database:
 
-   Download the wallet and place files in `./Wallet_PAULPARKDB` directory.
+   Run the first 
+   
+   Upload the database wallet and extract files in `./Wallet_PAULPARKDB` directory.
+
+   Copy over the example .env file so you can edit it...
+   ```bash
+   cp .env_example .env
+   ```
+   Provide all config/environment information for database, etc. in .env file...
 
 3. Create RAG table in the database:
    ```sql
@@ -214,104 +216,9 @@ Estimated Time: 2-3 hours
    - Request/response examples
    - Model definitions (QueryRequest, QueryResponse)
 
-   ![FastAPI Service](images/fastapi-service.png " ")
+   ![FastAPI Service](images/openapi-doc.png " ")
 
-## Task 4: Integrate with GCP Conversational Agents
-
-1. Understanding GCP Conversational Agents:
-   
-   Architecture flow:
-   ```
-   User → GCP Agent → OpenAPI Tool → FastAPI → Oracle DB
-   ```
-   
-   Benefits:
-   - Natural language interface
-   - Multi-turn conversation
-   - Built-in authentication
-   - Web UI for testing
-
-2. Create OpenAPI Tool:
-   
-   Navigate to Vertex AI Console:
-   - Go to Conversational Agents → Tools → Create Tool
-   
-   Import OpenAPI specification:
-   ```
-   Method: OpenAPI URL
-   URL: http://10.150.0.8:8501/openapi.json
-   ```
-   
-   **Important**: Use internal VPC IP (10.150.0.8), not external IP
-   
-   Configure authentication:
-   - Type: No auth (API accepts tokens without validation)
-   - Alternative: Service agent token (for production)
-   
-   Verify tool configuration:
-   - Tool name: `Oracle AI Database (Vector RAG)`
-   - Action: `query`
-   - Input: `query` (string), `top_k` (integer)
-   - Output: JSON response
-
-3. Create Conversational Agent:
-   
-   Create new agent:
-   - Name: "Oracle Database Expert"
-   - Model: Gemini 2.0 Flash
-   
-   Add instructions:
-   ```
-   You are an expert assistant for Oracle Database questions.
-
-   Use the "query" tool to search the Oracle Database knowledge base
-   when users ask about:
-   - Database features
-   - SQL syntax
-   - Configuration
-   - Performance optimization
-
-   Provide clear, accurate answers based on the retrieved information.
-   ```
-   
-   Attach tool:
-   - Add previously created OpenAPI tool
-   - Set as required for database questions
-   
-   Configure settings:
-   - Temperature: 0.7
-   - Max tokens: 2048
-   - Top-p: 0.95
-
-4. Test the GCP Agent:
-   
-   Open Agent Playground and test queries:
-   - "What are new spatial features in Oracle Database?"
-   - "Explain JSON Relational Duality"
-   - "How do I optimize vector search performance?"
-   
-   Monitor tool calls:
-   - View tool execution in conversation
-   - Check API logs for incoming requests
-   - Verify response integration
-
-5. Known limitations and solutions:
-   
-   Issues:
-   - Security schemes not supported in OpenAPI
-   - Only JSON content types allowed
-   - External IPs unreachable from GCP
-   - Limited multipart/form-data support
-   
-   Applied solutions:
-   - Removed security definitions from OpenAPI
-   - Filtered content types to `application/json`
-   - Used internal VPC address (10.150.0.8)
-   - Excluded `/upload` endpoint from schema
-
-   ![GCP Agent](images/gcp-agent.png " ")
-
-## Task 5: Implement ADK Full Agent
+## Task 4: Implement ADK Full Agent
 
 1. Understanding Google ADK (Agent Development Kit):
    
@@ -443,27 +350,27 @@ Estimated Time: 2-3 hours
    
    Example 2 - Follow-up questions:
    ```
-   You: What are new JSON features?
+   You: What is the new Oracle AI autonomous database MCP Server?
    Agent: [Uses context from previous conversation]
 
-   You: How do I use those with spatial data?
-   Agent: [References both previous answers, makes new query]
+   You: How do I enable it?
+   Agent: [References previous answers, makes new query]
    ```
 
 6. View conversation history:
    ```bash
    > history
 
-   [1] User: What are new spatial features in the oracle database
+   [1] User: What is the new Oracle AI autonomous database MCP Server?
        Agent: Oracle Database 26ai introduces enhanced spatial capabilities...
 
-   [2] User: How do I enable these features?
-       Agent: To enable spatial features, you need to...
+   [2] User: How do I enable it?
+       Agent: To enable the MCP Server, add a tag to your Autonomous Database with key "ADB$FEATURE" and value {"name":"MCP_SERVER","enable":true}. This creates an MCP endpoint bound to your database OCID at http://dataaccess.adb.<region-id>.oraclecloudapps.com/adb/mcp/v1/databases/{database-ocid}. Authenticated MCP clients can then use this endpoint via secure OAuth protocol to run registered tools.
    ```
 
-   ![ADK Agent](images/adk-agent.png " ")
+   ![ADK Agent](images/adk_ai_agent_rag_success.png " ")
 
-## Task 6: Advanced Topics and Optimization
+## Task 5: Advanced Topics and Optimization
 
 1. Embedding model details:
    
@@ -551,7 +458,7 @@ Estimated Time: 2-3 hours
 
    ![Optimization](images/optimization.png " ")
 
-## Task 7: Deployment and Production
+## Task 6: (Optional) Deployment and Production
 
 1. Deploy to Cloud Run:
    ```bash
@@ -611,6 +518,99 @@ Estimated Time: 2-3 hours
    ```
 
    ![Production Deployment](images/production-deployment.png " ")
+
+## Task 7: (Optional) Integrate with GCP Conversational Agents
+   
+   Architecture flow:
+   ```
+   User → GCP Agent → OpenAPI Tool → FastAPI → Oracle DB
+   ```
+   
+   Benefits:
+   - Natural language interface
+   - Multi-turn conversation
+   - Built-in authentication
+   - Web UI for testing
+
+2. Create OpenAPI Tool:
+   
+   Navigate to Vertex AI Console:
+   - Go to Conversational Agents → Tools → Create Tool
+   
+   Import OpenAPI specification:
+   ```
+   Method: OpenAPI URL
+   URL: http://10.150.0.8:8501/openapi.json
+   ```
+   
+   **Important**: Use internal VPC IP (10.150.0.8), not external IP
+   
+   Configure authentication:
+   - Type: No auth (API accepts tokens without validation)
+   - Alternative: Service agent token (for production)
+   
+   Verify tool configuration:
+   - Tool name: `Oracle AI Database (Vector RAG)`
+   - Action: `query`
+   - Input: `query` (string), `top_k` (integer)
+   - Output: JSON response
+
+3. Create Conversational Agent:
+   
+   Create new agent:
+   - Name: "Oracle Database Expert"
+   - Model: Gemini 2.0 Flash
+   
+   Add instructions:
+   ```
+   You are an expert assistant for Oracle Database questions.
+
+   Use the "query" tool to search the Oracle Database knowledge base
+   when users ask about:
+   - Database features
+   - SQL syntax
+   - Configuration
+   - Performance optimization
+
+   Provide clear, accurate answers based on the retrieved information.
+   ```
+   
+   Attach tool:
+   - Add previously created OpenAPI tool
+   - Set as required for database questions
+   
+   Configure settings:
+   - Temperature: 0.7
+   - Max tokens: 2048
+   - Top-p: 0.95
+
+4. Test the GCP Agent:
+   
+   Open Agent Playground and test queries:
+   - "What are new spatial features in Oracle Database?"
+   - "Explain JSON Relational Duality"
+   - "How do I optimize vector search performance?"
+   
+   Monitor tool calls:
+   - View tool execution in conversation
+   - Check API logs for incoming requests
+   - Verify response integration
+
+5. Known limitations and solutions:
+   
+   Issues:
+   - Security schemes not supported in OpenAPI
+   - Only JSON content types allowed
+   - External IPs unreachable from GCP
+   - Limited multipart/form-data support
+   
+   Applied solutions:
+   - Removed security definitions from OpenAPI
+   - Filtered content types to `application/json`
+   - Used internal VPC address (10.150.0.8)
+   - Excluded `/upload` endpoint from schema
+
+   ![GCP Agent](images/gcp-agent.png " ")
 
 ## Troubleshooting
 
