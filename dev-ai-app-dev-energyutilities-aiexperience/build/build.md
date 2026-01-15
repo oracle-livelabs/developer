@@ -53,7 +53,7 @@ This lab assumes you have:
 
     ![Open Terminal](./images/terminal.png " ")
 
-2. Navigate to `db_setup_ENG_script_2.sql` under the `dbinit` folder. Here is where you can see all the tables that will be created for the healthcare industry. 
+2. Navigate to `db_setup_ENG_script_2.sql` under the `dbinit` folder. Here is where you can see all the tables that will be created for the energy industry.
 
     ![ENG-Table](./images/eng-table.png " ")
 
