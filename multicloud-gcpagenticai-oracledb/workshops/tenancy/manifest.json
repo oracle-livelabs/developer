@@ -36,11 +36,27 @@
         },
   
       {
-        "title": "Lab 5: Create Vertex AI Agents and Tools with Google ADK and Oracle AI Database",
-        "filename": "../../vertex-ai-agents/vertex-ai-agents.md"
+        "title": "Lab 5: Create Vertex AI Agents and Tools with ADK (code) and Agent Builder (no-code) Oracle AI Database",
+        "filename": "../../vertex-ai-agents-adk/vertex-ai-agents-adk.md"
       },
       {
-        "title": "Lab 6: Advanced Agentic AI (Memory, Spatial and Digital Twin Agents",
+        "title": "Lab 5: Create Vertex AI Agents and Tools with ADK (code) and Agent Builder (no-code) Oracle AI Database",
+        "filename": "../../vertex-ai-agents-agent-builder/vertex-ai-agents-agent-builder.md"
+      },
+      {
+        "title": "Lab 6: Add MCP to your Agentic AI application",
+        "filename": "../../agentic-mcp/agentic-mcp.md"
+      },
+      {
+        "title": "Lab 7: Access Oracle AI Database via ORDS/REST from Vertex AI Agents",
+        "filename": "../../agentic-ords/agentic-ords.md"
+      },
+      {
+        "title": "Lab 8: Add Oracle AI Database MCP to your Agentic AI application",
+        "filename": "../../agentic-mcp/agentic-mcp.md"
+      },
+      {
+        "title": "Lab 9: Add memory to your Agentic AI application",
         "filename": "../../agentic-advanced/agentic-advanced.md"
       },
       {
