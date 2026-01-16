@@ -12,7 +12,7 @@ You’ll see how SeerGroup’s teams can move from manual, fragmented workflows 
 
 ✅ **Start with the demo! (Lab 1)**
 
-Step into SeerGroup’s Energy & Utilities division as a Grid Engineer Advisor. You’ll use an AI-powered DER (Distributed Energy Resources) approval app built on Oracle AI Database to:
+Step into SeerGroup’s Energy division as a Grid Engineer Advisor. You’ll use an AI-powered DER (Distributed Energy Resources) approval app built on Oracle AI Database to:
 
 * Review supplier interconnection requests with AI Vector Search, Graph analytics, and RAG
 

@@ -103,7 +103,7 @@ Internally uses helpers like \_clean\_llm_sql, read-only guards, and a row cap f
     </copy>
     ```
 
-    _There is not output expected_
+    _There is no output expected_
 
 
 5. Copy the following code and execute:
@@ -309,12 +309,12 @@ Internally uses helpers like \_clean\_llm_sql, read-only guards, and a row cap f
 
 You will add a row counter tool to quickly verify table sizes during investigations. It reuses the existing DB pool and identifier safety helpers.
 
-1. Open the folder **mcp** and double click **server.py**:
+1. Right-click the **mcp** folder and open **server.py**:
 
     ![Open server.py](./images/serverpy.png " ")
 
 
-2. Copy the following code and paste it append to the bottom of server.py—just above the `ENTRYPOINT` comment. Save the the file by clicking **CTRL+S (PC) / CMD+S (Mac)**.
+2. Copy the following code and paste it at the bottom of server.py—just above the `ENTRYPOINT` comment. Save the file by clicking **CTRL+S (PC) / CMD+S (Mac).**
 
     ```Python
     <copy>
@@ -348,11 +348,13 @@ You will add a row counter tool to quickly verify table sizes during investigati
 
     **What does it do?**
 
-    This snippet reloads the updated server.py module using importlib.reload so that newly added tools become available without restarting the notebook. It then calls the plain Python implementation row\_count_impl("CLIENTS"), which runs a SELECT COUNT(*) query on the CLIENTS table and returns the total number of rows.
+   This snippet reloads the updated server.py module using importlib.reload so that newly added tools become available without restarting the notebook. It then calls the plain Python implementation row_count_impl("CLIENTS"), which runs a SELECT COUNT(*) query on the CLIENTS table and returns the total number of rows.
 
-    What makes MCP powerful here is that we created simple function that returns the number of rows in a given table and exposed it as an MCP tool. That means Seer Holding developers can use functions in MCP workflows including agentic workflows.
+   What makes MCP powerful here is that we created a simple function that returns the number of rows in a given table and exposed it as an MCP tool. That means Seer Holdings developers can use functions in MCP workflows including agentic workflows.
 
-    ![rows](./images/numberrows.png " ")
+   You should see a connection message (such as "INFO:mcp.server:DB connection pool initialized.") followed by the row count (11).
+   
+    ![new tool](./images/numberrows.png " ")
 
 
 ## Conclusion
