@@ -30,34 +30,26 @@
             "filename": "../../adb-ai/adb-ai.md"
         },
         {
-            "title": "Lab 4: Run the RAG application using UI",
-            "description": "Run the RAG application using UI",
+            "title": "Lab 4: Test the Oracle AI Database with Vertex AIRAG Application",
+            "description": "Test the Oracle AI Database with Vertex AIRAG Application",
             "filename": "../../adb-ai-ui/adb-ai-ui.md"
         },
   
       {
-        "title": "Lab 5: Create Vertex AI Agents and Tools with ADK (code) and Agent Builder (no-code) Oracle AI Database",
+        "title": "Lab 5: Create Vertex AI Agents and Tools with ADK (code) andOracle AI Database",
         "filename": "../../vertex-ai-agents-adk/vertex-ai-agents-adk.md"
       },
       {
-        "title": "Lab 5: Create Vertex AI Agents and Tools with ADK (code) and Agent Builder (no-code) Oracle AI Database",
+        "title": "Lab 5: Create Vertex AI Agents and Tools withAgent Builder (no-code) Oracle AI Database",
         "filename": "../../vertex-ai-agents-agent-builder/vertex-ai-agents-agent-builder.md"
       },
       {
-        "title": "Lab 6: Add MCP to your Agentic AI application",
+        "title": "Lab 6: Add Oracle MCP to your Vertex AI application",
         "filename": "../../agentic-mcp/agentic-mcp.md"
       },
       {
-        "title": "Lab 7: Access Oracle AI Database via ORDS/REST from Vertex AI Agents",
-        "filename": "../../agentic-ords/agentic-ords.md"
-      },
-      {
-        "title": "Lab 8: Add Oracle AI Database MCP to your Agentic AI application",
-        "filename": "../../agentic-mcp/agentic-mcp.md"
-      },
-      {
-        "title": "Lab 9: Add memory to your Agentic AI application",
-        "filename": "../../agentic-advanced/agentic-advanced.md"
+        "title": "Lab 7 (Optional): Other topics (Access, via ORDS/Rest, Select AI, Memory, ...",
+        "filename": "../../agentic-advanced-topics/agentic-advanced-topics.md"
       },
       {
         "title": "Need Help?",
