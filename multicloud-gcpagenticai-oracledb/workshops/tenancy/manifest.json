@@ -1,60 +1,60 @@
 {
   "workshoptitle": "Develop Agentic AI with Google Vertex AI (Gemini) and Oracle AI Database",
   "help": "livelabs-help-devdb-us@oracle.com",
-	"tutorials": [
-      {
-        "title": "Introduction",
-        "filename": "../../intro/intro.md"
-      },
-      {
-        "title": "Get Started",
-        "filename":"https://oracle-livelabs.github.io/common/labs/cloud-login/event-register-free-tier-account.md"
-      },      {
-            "title": "Get Started",
-            "description": "Get Started - Oracle Database@Google - Autonomous Database",
-            "filename": "../../gcp-started/gcp-started.md"
-        },
-        {
-            "title": "Lab 1: Provision Google Cloud resources",
-            "description": "Provision Google Cloud resources",
-            "filename": "../../gcp-get-started/gcp-get-started.md"
-        },
-        {
-            "title": "Lab 2: Provision Autonomous Database",
-            "description": "Provision Autonomous Database",
-            "filename": "../../adb-provisioning-databases/adb-provisioning-databases.md"
-        },
-        {
-            "title": "Lab 3: Build the RAG Application",
-            "description": "Build the RAG Application",
-            "filename": "../../adb-ai/adb-ai.md"
-        },
-        {
-            "title": "Lab 4: Test the Oracle AI Database with Vertex AIRAG Application",
-            "description": "Test the Oracle AI Database with Vertex AIRAG Application",
-            "filename": "../../adb-ai-ui/adb-ai-ui.md"
-        },
-  
-      {
-        "title": "Lab 5: Create Vertex AI Agents and Tools with ADK (code) andOracle AI Database",
-        "filename": "../../vertex-ai-agents-adk/vertex-ai-agents-adk.md"
-      },
-      {
-        "title": "Lab 5: Create Vertex AI Agents and Tools withAgent Builder (no-code) Oracle AI Database",
-        "filename": "../../vertex-ai-agents-agent-builder/vertex-ai-agents-agent-builder.md"
-      },
-      {
-        "title": "Lab 6: Add Oracle MCP to your Vertex AI application",
-        "filename": "../../agentic-mcp/agentic-mcp.md"
-      },
-      {
-        "title": "Lab 7 (Optional): Other topics (Access, via ORDS/Rest, Select AI, Memory, ...",
-        "filename": "../../agentic-advanced-topics/agentic-advanced-topics.md"
-      },
-      {
-        "title": "Need Help?",
-        "description": "Solutions to Common Problems and Directions for Receiving Live Help",
-        "filename":"https://oracle-livelabs.github.io/common/labs/need-help/need-help-freetier.md"
-      }
-    ]
+  "tutorials": [
+    {
+      "title": "Introduction",
+      "filename": "../../intro/intro.md"
+    },
+    {
+      "title": "Get Started",
+      "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/event-register-free-tier-account.md"
+    },
+    {
+      "title": "Get Started",
+      "description": "Get Started - Oracle Database@Google - Autonomous Database",
+      "filename": "../../gcp-started/gcp-started.md"
+    },
+    {
+      "title": "Lab 1: Provision Google Cloud resources",
+      "description": "Provision Google Cloud resources",
+      "filename": "../../gcp-get-started/gcp-get-started.md"
+    },
+    {
+      "title": "Lab 2: Provision Oracle AI Database",
+      "description": "Provision Oracle AI Database",
+      "filename": "../../adb-provisioning-databases/adb-provisioning-databases.md"
+    },
+    {
+      "title": "Lab 3: Build Oracle AI Database Vertex AI/Gemine RAG Application",
+      "description": "Build the RAG Application",
+      "filename": "../../adb-ai/adb-ai.md"
+    },
+    {
+      "title": "Lab 4: Test Oracle AI Database with Vertex AI RAG Application",
+      "description": "Test the Oracle AI Database with Vertex AIRAG Application",
+      "filename": "../../adb-ai-ui/adb-ai-ui.md"
+    },
+    {
+      "title": "Lab 5: Develop Vertex AI Agents with ADK (code) and Oracle AI Database",
+      "filename": "../../vertex-ai-agents-adk/vertex-ai-agents-adk.md"
+    },
+    {
+      "title": "Lab 5: Create Vertex AI Agents withAgent Builder (no-code) and Oracle AI Database",
+      "filename": "../../vertex-ai-agents-agent-builder/vertex-ai-agents-agent-builder.md"
+    },
+    {
+      "title": "Lab 6: Add Oracle MCP to Vertex AI application",
+      "filename": "../../agentic-mcp/agentic-mcp.md"
+    },
+    {
+      "title": "Lab 7 (Optional): Other topics (Access via ORDS/Rest, Select AI/NL2SQL, Memory, ...",
+      "filename": "../../agentic-advanced-topics/agentic-advanced-topics.md"
+    },
+    {
+      "title": "Need Help?",
+      "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+      "filename": "https://oracle-livelabs.github.io/common/labs/need-help/need-help-freetier.md"
+    }
+  ]
 }

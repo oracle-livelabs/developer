@@ -212,6 +212,7 @@ These integrations are covered in other labs in this workshop.
 * [Vertex AI Agent Builder Documentation](https://cloud.google.com/vertex-ai/docs/agent-builder)
 * [Dialogflow CX Documentation](https://cloud.google.com/dialogflow/cx/docs)
 * [Grounding with Vertex AI](https://cloud.google.com/vertex-ai/docs/generative-ai/grounding/overview)
+* [Building AI Agents with Vertex AI Agent Builder](https://codelabs.developers.google.com/devsite/codelabs/building-ai-agents-vertexai)
 
 ## Acknowledgements
 
