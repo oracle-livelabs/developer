@@ -26,29 +26,24 @@
       "filename": "../../adb-provisioning-databases/adb-provisioning-databases.md"
     },
     {
-      "title": "Lab 3: Build Oracle AI Database Vertex AI/Gemine RAG Application",
-      "description": "Build the RAG Application",
+      "title": "Lab 3: Build and Run Oracle AI Database Vertex AI/Gemini RAG Application and OpenAPI endpoint",
+      "description": "Build and test the RAG Application",
       "filename": "../../adb-ai/adb-ai.md"
     },
     {
-      "title": "Lab 4: Test Oracle AI Database with Vertex AI RAG Application",
-      "description": "Test the Oracle AI Database with Vertex AIRAG Application",
-      "filename": "../../adb-ai-ui/adb-ai-ui.md"
-    },
-    {
-      "title": "Lab 5: Develop Vertex AI Agents with ADK (code) and Oracle AI Database",
+      "title": "Lab 4: Develop Vertex AI Agents with ADK (code) and Oracle AI Database",
       "filename": "../../vertex-ai-agents-adk/vertex-ai-agents-adk.md"
     },
     {
-      "title": "Lab 5: Create Vertex AI Agents withAgent Builder (no-code) and Oracle AI Database",
+      "title": "Lab 4: Create Vertex AI Agents with Agent Builder (no-code) and Oracle AI Database",
       "filename": "../../vertex-ai-agents-agent-builder/vertex-ai-agents-agent-builder.md"
     },
     {
-      "title": "Lab 6: Add Oracle MCP to Vertex AI application",
+      "title": "Lab 5: Add Oracle AI Database MCP to Vertex AI agentic AI",
       "filename": "../../agentic-mcp/agentic-mcp.md"
     },
     {
-      "title": "Lab 7 (Optional): Other topics (Access via ORDS/Rest, Select AI/NL2SQL, Memory, ...",
+      "title": "Lab 6 (Optional): Other topics (Access via ORDS/Rest, Select AI/NL2SQL, Memory, ...",
       "filename": "../../agentic-advanced-topics/agentic-advanced-topics.md"
     },
     {
