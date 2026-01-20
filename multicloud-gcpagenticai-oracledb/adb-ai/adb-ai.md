@@ -171,23 +171,24 @@ Please use VSCode's Remote Explorer function to connect to your remote VM. If yo
     </copy>
     ```
 
-6. Download the [Source pdf file](https://objectstorage.us-phoenix-1.oraclecloud.com/p/DiuTfuapQc-nDTpWUbWJuLbn35KsNuhN-HxqvidF-s6IrdCqKRtJvgxkSAqlAz4w/n/axxduehrw7lz/b/gcp-ai-lab/o/oracle-database-26ai-new-features-guide.pdf) and the [Jupyter Notebook](https://objectstorage.us-phoenix-1.oraclecloud.com/p/O8WKC75TW_sZNHIaGKHeBw_KmHNJ89hux_UfjwrH7WUSpUTR3gDXcxp0DvPBYuj6/n/axxduehrw7lz/b/gcp-ai-lab/o/database-rag.ipynb) to the `vectors` directory.
+6. The notebook is available at `oracle-ai-database-gcp-vertex-ai/oracle_ai_database_gemini_rag.ipynb`. The notebook will automatically download the Oracle Database 26ai PDF during execution.
+
+    If you need to download the notebook separately:
 
     ```
     <copy>
-    wget https://objectstorage.us-phoenix-1.oraclecloud.com/p/DiuTfuapQc-nDTpWUbWJuLbn35KsNuhN-HxqvidF-s6IrdCqKRtJvgxkSAqlAz4w/n/axxduehrw7lz/b/gcp-ai-lab/o/oracle-database-26ai-new-features-guide.pdf
-    wget https://objectstorage.us-phoenix-1.oraclecloud.com/p/O8WKC75TW_sZNHIaGKHeBw_KmHNJ89hux_UfjwrH7WUSpUTR3gDXcxp0DvPBYuj6/n/axxduehrw7lz/b/gcp-ai-lab/o/database-rag.ipynb
-    wget https://objectstorage.us-phoenix-1.oraclecloud.com/p/6ulMJ9B8Dlr1EVVA4WqgDOVfPrWkwKIYRDfV7vgsl90CnqCBDcuqCY0vOspN8ih9/n/axxduehrw7lz/b/gcp-ai-lab/o/rag_app_ui.py
+    cd oracle-ai-database-gcp-vertex-ai
+    # Notebook downloads PDF automatically - no manual download needed
     </copy>
     ```
 
 ## Task 4: Run the RAG application code snippets in Jupyter notebook
 
-1. Open the `database-rag.ipynb` file in VSCode and continue reading while executing the code cells below. Click **Open** to open the Juniper Notebook.
+1. Open the `oracle_ai_database_gemini_rag.ipynb` file in VSCode and continue reading while executing the code cells below. Click **Open** to open the Jupyter Notebook.
 
     ![](./images/vscode-confirm-ssh.png " ")
     
-2. Select the `database-rag.ipynb` file present under `vectors` directory.
+2. Select the `oracle_ai_database_gemini_rag.ipynb` file present under `oracle-ai-database-gcp-vertex-ai` directory.
 
     ![](./images/vscode-select-file.png " ")
 
@@ -556,28 +557,39 @@ Please use VSCode's Remote Explorer function to connect to your remote VM. If yo
 
 In this task you will run the RAG application interactively using a simple user interface. You can select and load from several PDF documents, and ask your own question in the prompt. This is the same application with the 7 essential RAG steps as the previous tasks but demonstrates use through a user interface.
 
-1. From the VSCode terminal, go to directory `vectors`
+1. From the VSCode terminal, go to directory `oracle-ai-database-gcp-vertex-ai`
 
     ```
     <copy>
-    cd $HOME/vectors
+    cd oracle-ai-database-gcp-vertex-ai
     </copy>
     ```
 
-2. Update the following in application python file - `rag_app_ui.py` :
+2. Configure credentials in `.env` file (if not already done). The application reads from the `.env` file:
 
-    DB Username, 
-    DB Password, 
-    DB Connection String, 
-    DB Wallet Password, 
-    Google Cloud Project ID, 
-    Google Cloud Region
+    ```
+    DB_USERNAME=ADMIN
+    DB_PASSWORD=your_password
+    DB_DSN=your_connection_string
+    DB_WALLET_PASSWORD=your_wallet_password
+    DB_WALLET_DIR=/path/to/wallet
+    GCP_PROJECT_ID=your_project_id
+    GCP_REGION=us-central1
+    ```
 
-3. Run the RAG application from terminal
+3. Run the RAG Streamlit application using the provided script:
 
     ```
     <copy>
-    streamlit run rag_app_ui.py
+    bash run_oracle_ai_database_langchain_streamlit.sh
+    </copy>
+    ```
+    
+    Or run directly:
+    
+    ```
+    <copy>
+    streamlit run oracle_ai_database_langchain_streamlit.py --server.port 8502
     </copy>
     ```
 
