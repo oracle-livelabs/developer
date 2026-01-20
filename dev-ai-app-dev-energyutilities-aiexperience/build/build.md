@@ -115,7 +115,7 @@ You will query customer data from the `energy_dv` JSON duality view, which combi
 
     ```python
     <copy>
-    # Task 3 — User Profile" (Energy & Utilities)
+    # Task 5 — User Profile" (Energy & Utilities)
 
     def fetch_customer_data(customer_id: int):
         """
@@ -202,7 +202,7 @@ Here’s what we’ll do:
 
     ```python
     <copy>
-    # Task 4 — Generate DER Interconnection Recommendations (Energy & Utilities)
+    # Task 6 — Generate DER Interconnection Recommendations (Energy & Utilities)
 
     # -- 1) Pull catalog/context from the DB
 
@@ -430,7 +430,7 @@ Before answering questions, we need to prepare the data by vectoring the claims 
 
     ```python
         <copy>
-        # Task 5 — Chunk & store AI recommendation, then SHOW the chunks (Energy & Utilities)
+        # Task 7 — Chunk & store AI recommendation, then SHOW the chunks (Energy & Utilities)
         # --- Inputs expected from prior tasks ---
         # - `recommendations`: AI text from Task 4
         # - `customer_json`: JSON doc from Task 3
@@ -586,7 +586,7 @@ In this step:
 
     ```python
         <copy>
-        # Task 6 — Create embeddings for ENERGY_CHUNKS rows (Energy & Utilities)
+        # Task 8 — Create embeddings for ENERGY_CHUNKS rows (Energy & Utilities)
 
         # Expecting ai_doc_id from Task 5 (the AI_RECOMMENDATION document you created/ensured)
         doc_id = doc_id # <-- ensure this exists from Task 5
@@ -656,7 +656,7 @@ Now that the recommendations are vectorized, we can process a user’s question:
 
     ```python
         <copy>
-        # Task 7 — RAG for Energy & Utilities: retrieve relevant chunk(s) and answer a question
+        # Task 9 — RAG for Energy & Utilities: retrieve relevant chunk(s) and answer a question
 
         # --- 0) Question (edit as desired) ---
         question = "Why was this project approved?"
