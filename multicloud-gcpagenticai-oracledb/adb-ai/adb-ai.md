@@ -45,7 +45,7 @@ High-level steps followed in this lab:
 
     Retrieval Augmented Generation (RAG) is a technique that enhances LLMs by integrating Similarity Search. This enables use cases such as a corporate chatbot responding with private company knowledge to make sure it’s giving answers that are up-to-date and tailored to your business.
 
-Estimated Time: 10 minutes
+Estimated Time: 50 minutes
 
 ### Objectives
 
@@ -629,9 +629,75 @@ In this task you ran a RAG application with a UI using the same steps for RAG le
 
 By using AI Vector Search in Oracle Database 26ai, you can build RAG applications with important context without having to retrain the LLM. The context is stored, searched and retrieved from Oracle Database 26ai and passed to Google Vertex AI Gemini Flash Model to generate accurate, up to date, and targeted responses to your prompts.
 
+## Task 5: (Optional) Understand HuggingFace vs Vertex AI Embeddings - Comparison
+
+This task explains the two embedding approaches available for Oracle AI Vector Search and helps you choose the right one for your use case.
+
+### Embedding Options
+
+**1. HuggingFace Embeddings** (`all-MiniLM-L6-v2`)
+- ✅ Free, runs locally
+- ✅ No API dependencies (works offline)
+- ✅ 384 dimensions (smaller vectors, less storage)
+- ⚠️ Lower quality compared to enterprise-grade solutions
+- ⚠️ Requires local compute resources
+
+**2. Vertex AI Embeddings** (`text-embedding-004`)
+- ✅ Enterprise-grade quality (95-98% accuracy)
+- ✅ 768 dimensions (richer semantic information)
+- ✅ State-of-the-art Google technology
+- ⚠️ Paid service (~$0.00001 per 1K characters)
+- ⚠️ Requires GCP authentication and internet
+
+### Quick Comparison
+
+| Aspect | HuggingFace | Vertex AI |
+|--------|-------------|-----------|
+| **Cost** | Free | ~$0.50-5/month typical usage |
+| **Dimensions** | 384 | 768 |
+| **Quality** | Good (85-90%) | Excellent (95-98%) |
+| **Execution** | Local | Cloud API |
+| **Setup** | Simple | Requires GCP project |
+| **Best For** | Development, demos, learning | Production, enterprise apps |
+
+### Storage Requirements (for 1000 chunks)
+
+- **HuggingFace**: ~1.5 MB (384 floats × 4 bytes × 1000)
+- **Vertex AI**: ~3 MB (768 floats × 4 bytes × 1000)
+
+### When to Use Each
+
+**Use HuggingFace When:**
+- Learning or development environment
+- Cost is the primary concern
+- No GCP access or offline operation needed
+- Working on local machine or demos
+
+**Use Vertex AI When:**
+- Production deployment
+- Quality and accuracy are critical
+- Already using GCP infrastructure
+- Enterprise or commercial application
+- Budget allows minimal API costs
+
+### Current Implementation
+
+The production application (`oracle_ai_database_langchain_streamlit.py`) uses **Vertex AI text-embedding-004** for:
+- Better semantic understanding
+- Production-quality results
+- Integration with existing GCP services
+- 768-dimensional vectors for richer context
+
+For learning and local development, the HuggingFace version remains valuable for cost-free experimentation and understanding embedding fundamentals.
+
+### Note on Migration
+
+If you need to switch between embedding models, you must re-embed all documents since the vector dimensions differ (384 vs 768). The vectors are not compatible and cannot be mixed in the same table.
+
 You may now **proceed to the next lab**.
 
 ## Acknowledgements
 
-- **Authors/Contributors** - Vivek Verma, Master Principal Cloud Architect, North America Cloud Engineering
-- **Last Updated By/Date** - Vivek Verma, July 2025
+- **Authors/Contributors** - Paul Parkinson, Dev Advocate  
+                           - Vivek Verma, Master Principal Cloud Architect, North America Cloud Engineering
+- **Last Updated By/Date** - Paul Parkinson, January 2026
