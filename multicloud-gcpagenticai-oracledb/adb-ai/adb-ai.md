@@ -25,7 +25,7 @@ High-level steps followed in this lab:
 
 7. The results (context) of the search and the prompt are passed to the LLM to generate the response.
 
-    ![](./images/ragdesign.png " ")
+    ![Ragdesign](./images/ragdesign.png " ")
 
 ### Concepts
 
@@ -69,15 +69,15 @@ In this section, you will be enabling Vertex AI API to be used later in the lab.
 
 1.	From Google Cloud Console go to the main menu and click **Vertex AI** and **Dashboard**.
 
-    ![](./images/gcp-vertexai-menu.png " ")
+    ![Gcp Vertexai Menu](./images/gcp-vertexai-menu.png " ")
 
 2. The will launch the **Vertex AI Dashboard**. On the Dashboard click **Enable all recommended APIs**.
 
-    ![](./images/gcp-get-started-vertexai.png " ")
+    ![Gcp Get Started Vertexai](./images/gcp-get-started-vertexai.png " ")
 
 3. After the API is enabled, confirm the same from the **Dashboard**.
 
-    ![](./images/gcp-enabled-vertexai.png " ")
+    ![Gcp Enabled Vertexai](./images/gcp-enabled-vertexai.png " ")
 
 ## Task 2: Launch VSCode
 
@@ -87,19 +87,19 @@ Please use VSCode's Remote Explorer function to connect to your remote VM. If yo
 
 1. Launch VSCode on your local machine and connect to the remote VM. Click the **Search Bar** and select **Show and Run Commands**.
 
-    ![](./images/vscode-show-run-command.png " ")
+    ![Vscode Show Run Command](./images/vscode-show-run-command.png " ")
 
 2. Type **Remote-SSH** and select **Remote-SSH: Connect to Host...**.
 
-    ![](./images/vscode-remote-ssh.png " ")
+    ![Vscode Remote Ssh](./images/vscode-remote-ssh.png " ")
 
 3. Enter the IP address of the Google Compute VM Instance that we provisioned earlier in this workshop and press **Enter**.
 
-    ![](./images/vscode-select-ssh-host.png " ")
+    ![Vscode Select Ssh Host](./images/vscode-select-ssh-host.png " ")
 
 4. On the next VSCode Window, verify that you have remotely connected to the Compute VM instance. Left bottom corner has a message **SSH: IP Address**.
 
-    ![](./images/vscode-confirm-ssh.png " ")
+    ![Vscode Confirm Ssh](./images/vscode-confirm-ssh.png " ")
 
 ## Task 3:  Setup the Python environment
 
@@ -186,23 +186,23 @@ Please use VSCode's Remote Explorer function to connect to your remote VM. If yo
 
 1. Open the `oracle_ai_database_gemini_rag.ipynb` file in VSCode and continue reading while executing the code cells below. Click **Open** to open the Jupyter Notebook.
 
-    ![](./images/vscode-confirm-ssh.png " ")
+    ![Vscode Confirm Ssh](./images/vscode-confirm-ssh.png " ")
     
 2. Select the `oracle_ai_database_gemini_rag.ipynb` file present under `oracle-ai-database-gcp-vertex-ai` directory.
 
-    ![](./images/vscode-select-file.png " ")
+    ![Vscode Select File](./images/vscode-select-file.png " ")
 
 3. On clicking Run to execute the first code snippet, you will be prompted to install and enable extensions (Python and Jupyter).
 
-    ![](./images/install-enable-extensions.png " ")
+    ![Install Enable Extensions](./images/install-enable-extensions.png " ")
 
     After installing the required extensions you will be prompted to choose the **Kernel Source**. Select **Python Environments**.
 
-    ![](./images/python-envs.png " ")
+    ![Python Envs](./images/python-envs.png " ")
 
     Upon installing required Python Kernel, select the Python Envinronment.
 
-    ![](./images/select-python.png " ")
+    ![Select Python](./images/select-python.png " ")
 
     Running cells with '3.12.9 (Python 3.12.9)' requires the ipykernel package. Click **Install**.
 
@@ -424,21 +424,21 @@ Please use VSCode's Remote Explorer function to connect to your remote VM. If yo
     </copy>
     ```
 
-    ![](./images/enter-Y-to-continue.png " ")
+    ![Enter Y To Continue](./images/enter-Y-to-continue.png " ")
 
 16. Copy the link and paste it in a browser.
 
-    ![](./images/copy-link.png " ")
+    ![Copy Link](./images/copy-link.png " ")
 
     The browser will prompt you to login to your Google Cloud Account. Post login allow the application to use your cloud credentials.
 
-    ![](./images/login-page.png " ")
-    ![](./images/allow-application.png " ")
+    ![Login Page](./images/login-page.png " ")
+    ![Allow Application](./images/allow-application.png " ")
 
 17. Copy the code and paste it back in the terminal window.
 
-    ![](./images/copy-code.png " ")
-    ![](./images/paste-code.png " ")
+    ![Copy Code](./images/copy-code.png " ")
+    ![Paste Code](./images/paste-code.png " ")
 
 18. LLM to generate your response.
 

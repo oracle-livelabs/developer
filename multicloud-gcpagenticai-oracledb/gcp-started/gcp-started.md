@@ -55,31 +55,31 @@ In this section, you will perform the steps for Onboarding with Oracle Database@
 
 2. In the Google Cloud console search field, search for "Marketplace" and navigate to the **Google Cloud Marketplace**.
 
-    ![](./images/market-place.png " ")
+    ![Market Place](./images/market-place.png " ")
 
 3. In Marketplace, click **Your orders** in the left navigation menu to view your Marketplace orders.
 
-    ![](./images/orders.png " ")
+    ![Orders](./images/orders.png " ")
 
 4. Click Oracle Database@Google Cloud in the **Product** column to navigate to the product details page.
 
-    ![](./images/oracle-database-gcp.png " ")
+    ![Oracle Database Gcp](./images/oracle-database-gcp.png " ")
 
 5. On the page, click **Manage on Console**.
 
-    ![](./images/manage-on-console.png " ")
+    ![Manage On Console](./images/manage-on-console.png " ")
 
 6. On the Oracle Database@Google Cloud **Overview** page, click **Create Account**.
 
-    ![](./images/overview-page.png " ")
+    ![Overview Page](./images/overview-page.png " ")
 
 7. Enter the details for creating a new OCI account.
 
-    ![](./images/oci-tenancy.png " ")
+    ![Oci Tenancy](./images/oci-tenancy.png " ")
 
 8. Return to the browser window displaying the Google Cloud console. The console displays a message that says "Please wait for your account linking to become active." The account creation and inking takes a few minutes.
 
-    ![](./images/linking-in-progress.png " ")
+    ![Linking In Progress](./images/linking-in-progress.png " ")
 
 You may now **proceed to the next lab** to provision Google Cloud resources.
 
