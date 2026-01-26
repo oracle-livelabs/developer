@@ -40,7 +40,7 @@ Oracle Autonomous Database includes ORDS pre-configured. You need to enable and 
    https://your-database-id.adb.us-region-1.oraclecloudapps.com/ords/
    ```
 
-   ![ORDS URL](images/ords-url.png " ")
+   
 
 ## Task 2: Create REST Endpoints for Vector Search
 
@@ -171,7 +171,7 @@ Oracle Autonomous Database includes ORDS pre-configured. You need to enable and 
    /
    ```
 
-   ![Create Endpoints](images/create-ords-endpoints.png " ")
+   
 
 ## Task 3: Create Select AI REST Endpoint
 
@@ -264,7 +264,7 @@ Oracle Autonomous Database includes ORDS pre-configured. You need to enable and 
    print(result)
    ```
 
-   ![Test Endpoints](images/test-ords-endpoints.png " ")
+   
 
 ## Task 5: Integrate with Vertex AI Agents
 
@@ -332,7 +332,7 @@ Oracle Autonomous Database includes ORDS pre-configured. You need to enable and 
    print(response)
    ```
 
-   ![Vertex AI ORDS Integration](images/vertex-ords-integration.png " ")
+   
 
 ## Task 6: Implement Authentication
 
@@ -500,7 +500,7 @@ Oracle Autonomous Database includes ORDS pre-configured. You need to enable and 
    print(result)
    ```
 
-   ![Complete Solution](images/ords-complete-solution.png " ")
+   
 
 ## Learn More
 

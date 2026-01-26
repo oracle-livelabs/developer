@@ -50,7 +50,7 @@ Estimated Time: 20 minutes
 
 8. Wait for the database to provision (approximately 2-3 minutes)
 
-   ![Create ADB](images/create-adb.png " ")
+   
 
 ## Task 2: Enable AI Features
 
@@ -79,7 +79,7 @@ Estimated Time: 20 minutes
 
 4. Save this wallet file - you'll need it for connecting from GCP
 
-   ![Download Wallet](images/download-wallet.png " ")
+   
 
 ## Task 4: Create GCP Compute Instance
 
@@ -108,7 +108,7 @@ Estimated Time: 20 minutes
 
 7. Click **Create**
 
-   ![Create GCP Instance](images/create-gcp-instance.png " ")
+   
 
 ## Task 5: Connect to GCP Instance and Setup Environment
 

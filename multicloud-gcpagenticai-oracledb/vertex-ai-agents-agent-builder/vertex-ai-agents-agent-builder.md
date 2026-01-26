@@ -50,7 +50,7 @@ Before building an agent, establish a clear vision by answering key questions:
    - Accuracy of information provided
    - Ability to handle diverse travel-related queries
 
-   ![Agent Design](images/agent-design.png " ")
+   
 
 ## Task 2: Build Agent with Vertex AI Agent Builder
 
@@ -61,25 +61,25 @@ Before building an agent, establish a clear vision by answering key questions:
 
 2. On the welcome page, click **CONTINUE AND ACTIVATE THE API**
 
-   ![Activate API](images/activate-api.png " ")
+   
 
 3. Click **CREATE A NEW APP**
 
-   ![Create App](images/create-app.png " ")
+   
 
 4. Choose **Conversational agent** and click **CREATE**
 
    Note: This will open Dialogflow Conversational Agents in a new tab. If prompted, enable the Dialogflow API.
 
-   ![Conversational Agent](images/conversational-agent.png " ")
+   
 
 5. In Dialogflow, click **Create Agent**
 
-   ![Create Agent](images/create-agent-button.png " ")
+   
 
 6. Choose **Build your own**
 
-   ![Build Your Own](images/build-your-own.png " ")
+   
 
 ## Task 3: Configure Your Agent
 
@@ -89,7 +89,7 @@ Before building an agent, establish a clear vision by answering key questions:
    - Keep other configurations as default
    - Click **CREATE**
 
-   ![Agent Configuration](images/agent-config.png " ")
+   
 
 2. Create a Playbook:
    - **Playbook Name**: Info Agent
@@ -97,7 +97,7 @@ Before building an agent, establish a clear vision by answering key questions:
    - **Instruction**: Greet the users, then ask how you can help them today
    - Click **Save**
 
-   ![Playbook Configuration](images/playbook-config.png " ")
+   
 
 ## Task 4: Test Your Agent
 
@@ -111,7 +111,7 @@ Before building an agent, establish a clear vision by answering key questions:
    - Example: "What are the visa requirements for traveling to Japan?"
    - Observe the agent's response
 
-   ![Test Agent](images/test-agent.png " ")
+   
 
 Congratulations! You've successfully created an AI Agent using Vertex AI Agent Builder.
 
@@ -132,7 +132,7 @@ While the agent can answer general questions, grounding it with specific datasto
      - **Description**: Use this tool if user's request contains a location that doesn't exist
    - Click **Save**
 
-   ![Create Datastore Tool](images/datastore-tool.png " ")
+   
 
 3. Create the actual datastore:
    - Click **add data stores** and **Create a data store**
@@ -141,7 +141,7 @@ While the agent can answer general questions, grounding it with specific datasto
    - Enter the path: `ai-workshops/agents/data/wakanda.txt`
    - Click **CONTINUE**
 
-   ![Create Datastore](images/create-datastore.png " ")
+   
 
    The datastore contains information about places similar to fictional Wakanda, such as:
    - Oribi Gorge in South Africa
@@ -153,7 +153,7 @@ While the agent can answer general questions, grounding it with specific datasto
    - **Name**: Wakanda Alternative
    - Click **CREATE**
 
-   ![Name Datastore](images/name-datastore.png " ")
+   
 
 5. Select and attach the datastore:
    - Wait for the import to complete (check progress in Data stores section)
@@ -163,7 +163,7 @@ While the agent can answer general questions, grounding it with specific datasto
    - Set grounding configuration to **Very Low** to prevent hallucinations
    - Click **confirm** then **save**
 
-   ![Attach Datastore](images/attach-datastore.png " ")
+   
 
 ## Task 6: Configure Agent to Use Datastore
 
@@ -179,7 +179,7 @@ While the agent can answer general questions, grounding it with specific datasto
      ```
    - Click **Save**
 
-   ![Update Instructions](images/update-instructions.png " ")
+   
 
 ## Task 7: Test Grounded Agent
 
@@ -192,7 +192,7 @@ While the agent can answer general questions, grounding it with specific datasto
    - Provides alternative real-world destinations with similar characteristics
    - References information from the datastore
 
-   ![Grounded Response](images/grounded-response.png " ")
+   
 
 Congratulations! Your agent is now grounded with external data and can provide more helpful, context-aware responses.
 

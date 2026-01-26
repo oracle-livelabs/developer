@@ -314,7 +314,7 @@ Estimated Time: 25 minutes
    python triage_agent.py
    ```
 
-   ![Triage Agent](images/triage-agent-output.png " ")
+   
 
 ## Task 4: Build Specialist Agents
 
@@ -477,7 +477,7 @@ Estimated Time: 25 minutes
    python specialist_agents.py
    ```
 
-   ![Specialist Agents](images/specialist-agents-output.png " ")
+   
 
 ## Task 5: Build Coordinator Agent with Multi-Agent Orchestration
 
@@ -646,7 +646,7 @@ Estimated Time: 25 minutes
    python coordinator_agent.py
    ```
 
-   ![Coordinator Agent](images/coordinator-agent-output.png " ")
+   
 
 ## Task 6: Implement Agent Learning and Adaptation
 
@@ -801,7 +801,7 @@ Estimated Time: 25 minutes
    python agent_learning.py
    ```
 
-   ![Learning Agent](images/learning-agent-output.png " ")
+   
 
 Congratulations! You have successfully created a sophisticated digital twin agent system using Vertex AI Agent Builder and Oracle AI Database. The system includes:
 - Triage agent for intelligent routing

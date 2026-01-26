@@ -18,7 +18,7 @@ The workshop showcases the seamless integration between Google's cutting-edge AI
 
 The following diagram illustrates this reference architecture.
 
-  ![Architecture](images/architecture.png " ")
+  
 
 Estimated Workshop Time: 90 minutes
 

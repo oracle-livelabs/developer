@@ -96,7 +96,7 @@ Estimated Time: 20 minutes
    python explore_gemini.py
    ```
 
-   ![Gemini Models](images/gemini-models-output.png " ")
+   
 
 ## Task 2: Implement Function Calling
 
@@ -291,7 +291,7 @@ Estimated Time: 20 minutes
    python function_calling.py
    ```
 
-   ![Function Calling](images/function-calling-output.png " ")
+   
 
 ## Task 3: Build a Simple Reasoning Agent
 
@@ -384,7 +384,7 @@ Estimated Time: 20 minutes
    python reasoning_agent.py
    ```
 
-   ![Reasoning Agent](images/reasoning-agent-output.png " ")
+   
 
 ## Task 4: Implement Agent with Memory using Oracle Database
 
@@ -583,7 +583,7 @@ Estimated Time: 20 minutes
    python agent_with_memory.py
    ```
 
-   ![Agent with Memory](images/agent-memory-output.png " ")
+   
 
 Congratulations! You have successfully explored Vertex AI models, implemented function calling, and built agents with reasoning and memory capabilities.
 

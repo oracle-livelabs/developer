@@ -581,11 +581,11 @@ In this task you will run the RAG application interactively using a simple user 
     </copy>
     ```
 
-    ![](./images/streamlit-run-app.png " ")
+    
 
 4. Click **Open in Browser** to launch the application in a browser. If the prompt doesn't show up, open a browser and launch the application - http://IP-Address-of-Compute-VM:8501.
 
-    ![](./images/browse-file.png " ")
+    
 
     Your application will now be running. Simply follow the UI.
 
@@ -599,7 +599,7 @@ In this task you will run the RAG application interactively using a simple user 
     
     In a few seconds the LLM will answer the question and respond with context stored in Oracle Database 26ai.
 
-    ![](./images/final-output.png " ")
+    
 
 Suggestions
 

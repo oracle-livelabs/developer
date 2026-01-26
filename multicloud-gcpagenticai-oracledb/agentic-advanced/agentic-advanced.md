@@ -354,7 +354,7 @@ Estimated Time: 20 minutes
    python episodic_memory.py
    ```
 
-   ![Episodic Memory](images/episodic-memory-output.png " ")
+   
 
 ## Task 3: Implement Semantic Memory with Vectors
 
@@ -608,7 +608,7 @@ Estimated Time: 20 minutes
    python semantic_memory.py
    ```
 
-   ![Semantic Memory](images/semantic-memory-output.png " ")
+   
 
 ## Task 4: Implement Procedural Memory
 
@@ -803,7 +803,7 @@ Estimated Time: 20 minutes
    python procedural_memory.py
    ```
 
-   ![Procedural Memory](images/procedural-memory-output.png " ")
+   
 
 ## Task 5: Integrate All Memory Types
 
@@ -925,7 +925,7 @@ Estimated Time: 20 minutes
    python unified_memory_manager.py
    ```
 
-   ![Unified Memory](images/unified-memory-output.png " ")
+   
 
 Congratulations! You have successfully implemented a comprehensive agentic memory system using Oracle AI Database. Your agents now have:
 - Episodic memory for specific interactions

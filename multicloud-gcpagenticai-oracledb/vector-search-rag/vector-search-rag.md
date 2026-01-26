@@ -54,7 +54,7 @@ Estimated Time: 25 minutes
    WITH TARGET ACCURACY 95;
    ```
 
-   ![Create Vector Table](images/create-vector-table.png " ")
+   
 
 ## Task 2: Generate Embeddings with Gemini
 
@@ -229,7 +229,7 @@ Estimated Time: 25 minutes
    python semantic_search.py
    ```
 
-   ![Semantic Search Results](images/semantic-search-results.png " ")
+   
 
 ## Task 4: Build RAG Pipeline with Gemini
 
@@ -332,7 +332,7 @@ Estimated Time: 25 minutes
    python rag_pipeline.py
    ```
 
-   ![RAG Pipeline](images/rag-pipeline-output.png " ")
+   
 
 ## Task 5: Use Oracle Select AI for Natural Language Queries
 
@@ -395,7 +395,7 @@ Estimated Time: 25 minutes
    ) FROM DUAL;
    ```
 
-   ![Select AI Query](images/select-ai-query.png " ")
+   
 
 ## Task 6: Advanced Vector Operations
 

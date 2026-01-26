@@ -37,7 +37,7 @@ MCP Architecture:
 AI Agent <--> MCP Client <--> MCP Server <--> Oracle AI Database
 ```
 
-   ![MCP Architecture](images/mcp-architecture.png " ")
+   
 
 ## Task 2: Install MCP Dependencies
 
@@ -172,7 +172,7 @@ AI Agent <--> MCP Client <--> MCP Server <--> Oracle AI Database
    python oracle_mcp_server.py
    ```
 
-   ![MCP Server Running](images/mcp-server-running.png " ")
+   
 
 ## Task 4: Connect Agent to MCP
 
@@ -242,7 +242,7 @@ AI Agent <--> MCP Client <--> MCP Server <--> Oracle AI Database
    python agent_with_mcp.py
    ```
 
-   ![Agent with MCP](images/agent-mcp-running.png " ")
+   
 
 ## Task 5: Integrate with Vertex AI Agents
 
@@ -328,7 +328,7 @@ AI Agent <--> MCP Client <--> MCP Server <--> Oracle AI Database
    python test_mcp_integration.py
    ```
 
-   ![Test Results](images/mcp-test-results.png " ")
+   
 
 ## Task 7: Implement Security Best Practices
 

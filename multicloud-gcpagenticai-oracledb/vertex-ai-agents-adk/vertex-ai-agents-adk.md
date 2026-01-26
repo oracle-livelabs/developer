@@ -98,7 +98,7 @@ Estimated Time: 1 hour
    - `streamlit` - UI framework
    - `vertexai` - Google Vertex AI SDK
 
-   ![Environment Setup](images/environment-setup.png " ")
+   
 
 ## Task 2: Document Ingestion with Streamlit
 
@@ -119,7 +119,7 @@ Estimated Time: 1 hour
 
    Access the UI at `http://your-vm-ip:8502`
 
-   ![Streamlit UI](images/streamlit-ui.png " ")
+   
 
 3. Upload documents:
    
@@ -147,7 +147,7 @@ Estimated Time: 1 hour
    - View retrieved chunks and generated answer
    - Observe timing metrics (vector search vs. LLM response time)
 
-   ![Document Ingestion](images/document-ingestion.png " ")
+   
 
 ## Task 3: Build FastAPI Service with OpenAPI
 
@@ -216,7 +216,7 @@ Estimated Time: 1 hour
    - Request/response examples
    - Model definitions (QueryRequest, QueryResponse)
 
-   ![FastAPI Service](images/openapi-doc.png " ")
+   
 
 ## Task 4: Implement ADK Full Agent
 
@@ -368,7 +368,7 @@ Estimated Time: 1 hour
        Agent: To enable the MCP Server, add a tag to your Autonomous Database with key "ADB$FEATURE" and value {"name":"MCP_SERVER","enable":true}. This creates an MCP endpoint bound to your database OCID at http://dataaccess.adb.<region-id>.oraclecloudapps.com/adb/mcp/v1/databases/{database-ocid}. Authenticated MCP clients can then use this endpoint via secure OAuth protocol to run registered tools.
    ```
 
-   ![ADK Agent](images/adk_ai_agent_rag_success.png " ")
+   
 
 ## Task 5: Advanced Topics and Optimization
 
@@ -456,7 +456,7 @@ Estimated Time: 1 hour
    )
    ```
 
-   ![Optimization](images/optimization.png " ")
+   
 
 ## Task 6: (Optional) Deployment and Production
 
@@ -517,7 +517,7 @@ Estimated Time: 1 hour
    })
    ```
 
-   ![Production Deployment](images/production-deployment.png " ")
+   
 
 ## Task 7: (Optional) Integrate with GCP Conversational Agents
    
@@ -610,7 +610,7 @@ Estimated Time: 1 hour
    - Used internal VPC address (10.150.0.8)
    - Excluded `/upload` endpoint from schema
 
-   ![GCP Agent](images/gcp-agent.png " ")
+   
 
 ## Troubleshooting
 
