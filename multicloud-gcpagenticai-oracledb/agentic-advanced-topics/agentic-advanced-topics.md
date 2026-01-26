@@ -4,7 +4,7 @@
 
 Now that you've established the basics of building Agentic AI with Google Vertex AI (Gemini) and Oracle AI Database, you can further enhance your agentic solutions using advanced concepts and integration patterns. This lab provides an overview of additional topics and technologies that can extend the capabilities of your AI agents.
 
-## Overview of Advanced Topics
+## Task 1: Overview of Advanced Topics
 
 ### Access via ORDS/REST/OpenAPI
 

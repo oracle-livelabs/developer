@@ -25,8 +25,10 @@ Estimated Time: 1 hour
 
 1. In the VS Code/terminal running on your GCP compute instance, clone the repository:
    ```bash
+   <copy>
    git clone https://github.com/paulparkinson/interactive-ai-holograms.git
    cd interactive-ai-holograms/oracle-ai-database-gcp-vertex-ai
+   </copy>
    ```
 
 2. Run theConfigure Oracle Database:
@@ -37,12 +39,15 @@ Estimated Time: 1 hour
 
    Copy over the example .env file so you can edit it...
    ```bash
+   <copy>
    cp .env_example .env
+   </copy>
    ```
    Provide all config/environment information for database, etc. in .env file...
 
 3. Create RAG table in the database:
    ```sql
+   <copy>
    CREATE TABLE rag_tab (
        id NUMBER GENERATED ALWAYS AS IDENTITY,
        text VARCHAR2(4000),
@@ -53,18 +58,22 @@ Estimated Time: 1 hour
    CREATE VECTOR INDEX rag_idx ON rag_tab(embedding)
    ORGANIZATION INMEMORY NEIGHBOR GRAPH
    DISTANCE COSINE;
+   </copy>
    ```
 
 4. Configure GCP:
    ```bash
+   <copy>
    gcloud config set project adb-pm-prod
    gcloud config set compute/region us-central1
    gcloud auth login
    gcloud auth application-default login
+   </copy>
    ```
 
 5. Create environment variables file (`.env`):
    ```bash
+   <copy>
    cat > .env << 'EOF'
    # Oracle Database
    DB_USERNAME=ADMIN
@@ -82,11 +91,14 @@ Estimated Time: 1 hour
    API_PORT=8501
    STREAMLIT_PORT=8502
    EOF
+   </copy>
    ```
 
 6. Install dependencies:
    ```bash
+   <copy>
    pip install -r requirements.txt
+   </copy>
    ```
 
    Key dependencies include:
@@ -113,7 +125,9 @@ Estimated Time: 1 hour
 
 2. Start the Streamlit UI:
    ```bash
+   <copy>
    ./run_oracle_ai_database_langchain_streamlit.sh
+   </copy>
    ```
 
    Access the UI at `http://your-vm-ip:8502`
@@ -132,11 +146,13 @@ Estimated Time: 1 hour
 
 4. Verify document storage:
    ```sql
+   <copy>
    SELECT COUNT(*) FROM rag_tab;
    -- Should show number of chunks
    
    SELECT * FROM rag_tab WHERE ROWNUM <= 5;
    -- View sample chunks
+   </copy>
    ```
 
 5. Test search functionality:
@@ -174,6 +190,7 @@ Estimated Time: 1 hour
    File: `oracle_ai_database_adk_agent.py`
    
    ```python
+   <copy>
    # 1. Initialize Vertex AI and Gemini
    vertexai.init(project=project_id, location=location)
 
@@ -202,12 +219,14 @@ Estimated Time: 1 hour
    while response.has_function_call:
        result = execute_function(...)
        response = chat.send_message(function_response)
+   </copy>
    ```
 
 3. Key components:
    
    Custom BaseTool:
    ```python
+   <copy>
    class OracleRAGTool(BaseTool):
        """Tool for searching Oracle Database knowledge base using vector similarity."""
        
@@ -232,10 +251,12 @@ Estimated Time: 1 hour
                "metadata": [doc.metadata for doc in docs],
                "count": len(docs)
            }
+   </copy>
    ```
    
    System instructions:
    ```python
+   <copy>
    system_instruction = """You are an expert Oracle Database assistant.
 
    When users ask about Oracle Database features, use the OracleRAGTool to search
@@ -247,24 +268,31 @@ Estimated Time: 1 hour
    - Provide clear, accurate answers
 
    Always cite when information comes from the knowledge base."""
+   </copy>
    ```
    
    Agent execution:
    ```python
+   <copy>
    # ADK Runner handles multi-step reasoning automatically
    runner = Runner(agent=agent)
    result = await runner.run(user_input)
    print(result.text)  # Final response after tool calls
+   </copy>
    ```
 
 4. Run the ADK agent:
    ```bash
+   <copy>
    ./run_oracle_ai_database_adk_agent.sh
+   </copy>
    ```
 
    Or test it:
    ```bash
+   <copy>
    ./test_oracle_ai_database_adk_agent.sh
+   </copy>
    ```
 
    Interactive commands:
@@ -275,6 +303,7 @@ Estimated Time: 1 hour
    
    Example 1 - Complex query:
    ```
+   <copy>
    You: Compare spatial features between Oracle 19c and 26ai
 
    Agent reasoning:
@@ -285,19 +314,23 @@ Estimated Time: 1 hour
    1. Spatial Web Services...
    2. Enhanced GeoJSON support...
    [Synthesized from 2 tool calls]
+   </copy>
    ```
    
    Example 2 - Follow-up questions:
    ```
+   <copy>
    You: What is the new Oracle AI autonomous database MCP Server?
    Agent: [Uses context from previous conversation]
 
    You: How do I enable it?
    Agent: [References previous answers, makes new query]
+   </copy>
    ```
 
 6. View conversation history:
    ```bash
+   <copy>
    > history
 
    [1] User: What is the new Oracle AI autonomous database MCP Server?
@@ -305,6 +338,7 @@ Estimated Time: 1 hour
 
    [2] User: How do I enable it?
        Agent: To enable the MCP Server, add a tag to your Autonomous Database with key "ADB$FEATURE" and value {"name":"MCP_SERVER","enable":true}. This creates an MCP endpoint bound to your database OCID at http://dataaccess.adb.<region-id>.oraclecloudapps.com/adb/mcp/v1/databases/{database-ocid}. Authenticated MCP clients can then use this endpoint via secure OAuth protocol to run registered tools.
+   </copy>
    ```
 
    

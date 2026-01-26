@@ -41,6 +41,7 @@ MCP Toolbox for Databases is an open-source implementation of the Model Context 
 ### Architecture
 
 ```
+<copy>
 User Input
     ↓
 ADK Agent (Python)
@@ -52,6 +53,7 @@ MCP Toolbox Server (Node.js or Binary)
 Database Connection Pool
     ↓
 Oracle AI Database (Vector Search + SQL)
+</copy>
 ```
 
 The MCP Toolbox server runs as a separate process that:
@@ -78,22 +80,28 @@ Your ADK agent connects to the server using `ToolboxClient` and loads tools dyna
 
 1. **Binary Download** (Linux AMD64, macOS, Windows):
    ```bash
+   <copy>
    VERSION=0.24.0
    OS="linux/amd64"  # or darwin/arm64, darwin/amd64, windows/amd64
    curl -O https://storage.googleapis.com/genai-toolbox/v$VERSION/$OS/toolbox
    chmod +x toolbox
    ./toolbox --tools-file tools.yaml
+   </copy>
    ```
 
 2. **NPM Package** (recommended, requires Node.js 20+):
    ```bash
+   <copy>
    npx @toolbox-sdk/server --tools-file tools.yaml
+   </copy>
    ```
 
 3. **Docker** (cross-platform, but may have networking complexities):
    ```bash
+   <copy>
    docker run -p 5000:5000 -v $(pwd)/tools.yaml:/app/tools.yaml \
      ghcr.io/googleapis/genai-toolbox --tools-file /app/tools.yaml
+   </copy>
    ```
 
 **Note**: ARM64 Linux systems (e.g., NVIDIA Jetson, AWS Graviton) are not officially supported. For these platforms, consider:
@@ -177,6 +185,7 @@ This lab provides a complete implementation that includes:
 
 **tools.yaml Oracle Source Configuration:**
 ```yaml
+<copy>
 sources:
   oracle-ai-db:
     kind: oracle
@@ -185,10 +194,14 @@ sources:
     user: ${DB_USERNAME}
     password: ${DB_PASSWORD}
     useOCI: true                  # Required for wallet support
+</copy>
 ```
+<copy>
 
 **Python Agent with ToolboxClient:**
+</copy>
 ```python
+<copy>
 from toolbox_core import ToolboxClient
 from google.adk import Agent
 
@@ -205,6 +218,7 @@ agent = Agent(
     instruction="You are an Oracle Database expert...",
     tools=tools
 )
+</copy>
 ```
 
 **Key Advantages Over Oracle SQLcl MCP:**
@@ -221,22 +235,28 @@ agent = Agent(
 
 1. Navigate to the project directory:
    ```bash
+   <copy>
    cd interactive-ai-holograms/oracle-ai-database-gcp-vertex-ai
+   </copy>
    ```
 
 2. Ensure `.env` file has Oracle credentials:
    ```bash
+   <copy>
    DB_USERNAME=ADMIN
    DB_PASSWORD=your_password
    DB_DSN=your_db_high
    DB_WALLET_DIR=/path/to/Wallet_YourDB
    GCP_PROJECT_ID=your-project
    GCP_REGION=us-central1
+   </copy>
    ```
 
 3. Run the agent:
    ```bash
+   <copy>
    ./run_oracle_ai_database_adk_mcp_agent.sh
+   </copy>
    ```
 
 The script will:
@@ -249,11 +269,16 @@ The script will:
 
 Option 1: Use the non-MCP ADK agent (recommended):
 ```bash
+<copy>
 ./run_oracle_ai_database_adk_agent.sh
+</copy>
 ```
+<copy>
 
 Option 2: Deploy MCP Toolbox to Cloud Run (AMD64):
+</copy>
 ```bash
+<copy>
 # Deploy to Cloud Run
 gcloud run deploy mcp-toolbox \
   --source . \
@@ -263,12 +288,16 @@ gcloud run deploy mcp-toolbox \
 
 # Update agent to use Cloud Run URL
 export TOOLBOX_URL="https://mcp-toolbox-xxx.run.app"
+</copy>
 ```
+<copy>
 
 ### Testing the Agent
 
 Once running, you'll see:
+</copy>
 ```
+<copy>
 🤖 Oracle AI Database Agent - MCP Toolbox Edition
 ======================================================================
 
@@ -282,7 +311,9 @@ Type 'quit' or 'exit' to stop.
 
 JSON Relational Duality is a feature in Oracle Database 23ai that provides
 a unified view of data as both relational tables and JSON documents...
+</copy>
 ```
+<copy>
 
 ## Task 4: Tool Configuration Deep Dive
 
@@ -290,7 +321,9 @@ a unified view of data as both relational tables and JSON documents...
 
 The most important tool for RAG applications:
 
+</copy>
 ```yaml
+<copy>
 tools:
   search-rag-documents:
     kind: oracle-sql
@@ -315,7 +348,9 @@ tools:
       WHERE embedding IS NOT NULL
       ORDER BY distance
       FETCH FIRST :top_k ROWS ONLY
+</copy>
 ```
+<copy>
 
 This tool:
 - Uses Oracle's built-in `VECTOR_EMBEDDING()` function
@@ -327,7 +362,9 @@ This tool:
 
 For advanced queries and schema inspection:
 
+</copy>
 ```yaml
+<copy>
 tools:
   execute-sql:
     kind: oracle-execute-sql
@@ -337,7 +374,9 @@ tools:
       - name: sql_query
         type: string
         description: The SQL query to execute.
+</copy>
 ```
+<copy>
 
 **Security Note**: Use with caution in production. Consider:
 - Limiting to read-only operations
@@ -442,7 +481,9 @@ The repository includes three different agent implementations for comparison:
 ### Local Development
 
 For local testing and development:
+</copy>
 ```bash
+<copy>
 # MCP Toolbox (AMD64/macOS)
 ./run_oracle_ai_database_adk_mcp_agent.sh
 
@@ -451,12 +492,16 @@ For local testing and development:
 
 # Streamlit UI
 ./run_oracle_ai_database_langchain_streamlit.sh
+</copy>
 ```
+<copy>
 
 ### Cloud Run Deployment (MCP Toolbox)
 
 Create a Dockerfile:
+</copy>
 ```dockerfile
+<copy>
 FROM node:20-slim
 
 WORKDIR /app
@@ -472,10 +517,14 @@ EXPOSE 5000
 
 # Run Toolbox
 CMD ["npx", "@toolbox-sdk/server", "--tools-file", "tools.yaml"]
+</copy>
 ```
+<copy>
 
 Deploy to Cloud Run:
+</copy>
 ```bash
+<copy>
 gcloud run deploy mcp-toolbox \
   --source . \
   --platform managed \
@@ -484,7 +533,9 @@ gcloud run deploy mcp-toolbox \
   --set-env-vars DB_PASSWORD=${DB_PASSWORD} \
   --set-env-vars DB_DSN=${DB_DSN} \
   --allow-unauthenticated
+</copy>
 ```
+<copy>
 
 ### Security Best Practices
 
@@ -510,14 +561,18 @@ gcloud run deploy mcp-toolbox \
 
 MCP Toolbox provides built-in observability:
 
+</copy>
 ```yaml
+<copy>
 # Add to tools.yaml for OpenTelemetry
 observability:
   enabled: true
   exporters:
     - type: otlp
       endpoint: "https://your-otel-collector:4317"
+</copy>
 ```
+<copy>
 
 Metrics available:
 - Tool invocation counts
@@ -531,24 +586,34 @@ Metrics available:
 ### Common Issues
 
 **Issue**: "cannot execute binary file: Exec format error"
+</copy>
 ```
+<copy>
 Cause: Wrong architecture binary downloaded
 Solution: Check architecture with `uname -m`
 - aarch64/arm64: Use custom tool implementation
 - x86_64/amd64: MCP Toolbox binary works
+</copy>
 ```
+<copy>
 
 **Issue**: "Unsupported platform: linux-arm64"
+</copy>
 ```
+<copy>
 Cause: NPM package doesn't support ARM64
 Solution: Use alternative:
 1. ./run_oracle_ai_database_adk_agent.sh (custom tool)
 2. Deploy MCP Toolbox to Cloud Run (AMD64)
 3. Run Toolbox on separate AMD64 machine
+</copy>
 ```
+<copy>
 
 **Issue**: Toolbox server won't start
+</copy>
 ```
+<copy>
 Check logs: tail -f toolbox.log
 
 Common causes:
@@ -556,37 +621,50 @@ Common causes:
 - Wallet directory not found
 - Port 5000 already in use
 - Missing Oracle Instant Client (useOCI: true)
+</copy>
 ```
+<copy>
 
 **Issue**: Connection pool exhausted
+</copy>
 ```
+<copy>
 Solution: Adjust tools.yaml connection settings:
 sources:
   oracle-ai-db:
     kind: oracle
     maxConnections: 20  # Increase pool size
     connectionTimeout: 30000  # 30 seconds
+</copy>
 ```
+<copy>
 
 **Issue**: Vector search returns no results
+</copy>
 ```
+<copy>
 Verify embeddings exist:
 SELECT COUNT(*) FROM rag_tab WHERE embedding IS NOT NULL;
 
 Verify index:
 SELECT * FROM USER_INDEXES WHERE TABLE_NAME = 'RAG_TAB';
+</copy>
 ```
+<copy>
 
 ### Debug Mode
 
 Enable verbose logging:
+</copy>
 ```bash
+<copy>
 # Toolbox server
 ./toolbox --tools-file tools.yaml --log-level debug
 
 # Python agent
 export PYTHONVERBOSE=1
 python oracle_ai_database_adk_mcp_agent.py
+</copy>
 ```
 
 ## Summary
