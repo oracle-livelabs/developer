@@ -24,7 +24,8 @@ Estimated Time: 1 hour
 ## Task 1: Environment Setup
 
 1. In the VS Code/terminal running on your GCP compute instance, clone the repository:
-   ```bash
+   ```
+   bash
    <copy>
    git clone https://github.com/paulparkinson/interactive-ai-holograms.git
    cd interactive-ai-holograms/oracle-ai-database-gcp-vertex-ai
@@ -38,7 +39,8 @@ Estimated Time: 1 hour
    Upload the database wallet and extract files in `./Wallet_PAULPARKDB` directory.
 
    Copy over the example .env file so you can edit it...
-   ```bash
+   ```
+   bash
    <copy>
    cp .env_example .env
    </copy>
@@ -46,7 +48,8 @@ Estimated Time: 1 hour
    Provide all config/environment information for database, etc. in .env file...
 
 3. Create RAG table in the database:
-   ```sql
+   ```
+   sql
    <copy>
    CREATE TABLE rag_tab (
        id NUMBER GENERATED ALWAYS AS IDENTITY,
@@ -62,7 +65,8 @@ Estimated Time: 1 hour
    ```
 
 4. Configure GCP:
-   ```bash
+   ```
+   bash
    <copy>
    gcloud config set project adb-pm-prod
    gcloud config set compute/region us-central1
@@ -72,7 +76,8 @@ Estimated Time: 1 hour
    ```
 
 5. Create environment variables file (`.env`):
-   ```bash
+   ```
+   bash
    <copy>
    cat > .env << 'EOF'
    # Oracle Database
@@ -95,7 +100,8 @@ Estimated Time: 1 hour
    ```
 
 6. Install dependencies:
-   ```bash
+   ```
+   bash
    <copy>
    pip install -r requirements.txt
    </copy>
@@ -124,7 +130,8 @@ Estimated Time: 1 hour
    - Oracle Vector Store insertion
 
 2. Start the Streamlit UI:
-   ```bash
+   ```
+   bash
    <copy>
    ./run_oracle_ai_database_langchain_streamlit.sh
    </copy>
@@ -145,7 +152,8 @@ Estimated Time: 1 hour
      - Database insertion
 
 4. Verify document storage:
-   ```sql
+   ```
+   sql
    <copy>
    SELECT COUNT(*) FROM rag_tab;
    -- Should show number of chunks
@@ -189,7 +197,8 @@ Estimated Time: 1 hour
    
    File: `oracle_ai_database_adk_agent.py`
    
-   ```python
+   ```
+   python
    <copy>
    # 1. Initialize Vertex AI and Gemini
    vertexai.init(project=project_id, location=location)
@@ -225,7 +234,8 @@ Estimated Time: 1 hour
 3. Key components:
    
    Custom BaseTool:
-   ```python
+   ```
+   python
    <copy>
    class OracleRAGTool(BaseTool):
        """Tool for searching Oracle Database knowledge base using vector similarity."""
@@ -255,7 +265,8 @@ Estimated Time: 1 hour
    ```
    
    System instructions:
-   ```python
+   ```
+   python
    <copy>
    system_instruction = """You are an expert Oracle Database assistant.
 
@@ -272,7 +283,8 @@ Estimated Time: 1 hour
    ```
    
    Agent execution:
-   ```python
+   ```
+   python
    <copy>
    # ADK Runner handles multi-step reasoning automatically
    runner = Runner(agent=agent)
@@ -282,14 +294,16 @@ Estimated Time: 1 hour
    ```
 
 4. Run the ADK agent:
-   ```bash
+   ```
+   bash
    <copy>
    ./run_oracle_ai_database_adk_agent.sh
    </copy>
    ```
 
    Or test it:
-   ```bash
+   ```
+   bash
    <copy>
    ./test_oracle_ai_database_adk_agent.sh
    </copy>
@@ -329,7 +343,8 @@ Estimated Time: 1 hour
    ```
 
 6. View conversation history:
-   ```bash
+   ```
+   bash
    <copy>
    > history
 
@@ -361,7 +376,8 @@ Estimated Time: 1 hour
 2. Vector search optimization:
    
    Distance strategies:
-   ```sql
+   ```
+   sql
    -- COSINE (default) - best for normalized embeddings
    DISTANCE COSINE
 
@@ -373,7 +389,8 @@ Estimated Time: 1 hour
    ```
    
    Index types:
-   ```sql
+   ```
+   sql
    -- IVF (Inverted File) - fast for large datasets
    CREATE VECTOR INDEX rag_idx ON rag_tab(embedding)
    ORGANIZATION INMEMORY NEIGHBOR GRAPH;
@@ -386,7 +403,8 @@ Estimated Time: 1 hour
 3. Prompt engineering:
    
    RAG prompt template:
-   ```python
+   ```
+   python
    template = """Use the following context to answer the question.
    If you cannot answer based on the context, say so clearly.
 
@@ -407,7 +425,8 @@ Estimated Time: 1 hour
 4. Performance optimization:
    
    Caching:
-   ```python
+   ```
+   python
    from functools import lru_cache
 
    @lru_cache(maxsize=1000)
@@ -416,7 +435,8 @@ Estimated Time: 1 hour
    ```
    
    Connection pooling:
-   ```python
+   ```
+   python
    import oracledb
 
    pool = oracledb.create_pool(
@@ -434,7 +454,8 @@ Estimated Time: 1 hour
 ## Task 6: (Optional) Deployment and Production
 
 1. Deploy to Cloud Run:
-   ```bash
+   ```
+   bash
    # Build container
    gcloud builds submit --tag gcr.io/adb-pm-prod/oracle-rag-api
 
@@ -450,7 +471,8 @@ Estimated Time: 1 hour
 2. Security hardening:
    
    Add API key authentication:
-   ```python
+   ```
+   python
    from fastapi.security import APIKeyHeader
 
    api_key_header = APIKeyHeader(name="X-API-Key")
@@ -462,7 +484,8 @@ Estimated Time: 1 hour
    ```
    
    Bearer token validation:
-   ```python
+   ```
+   python
    from google.auth.transport import requests as google_requests
    from google.oauth2 import id_token
 
@@ -474,7 +497,8 @@ Estimated Time: 1 hour
    ```
 
 3. Monitoring and logging:
-   ```python
+   ```
+   python
    import logging
    from google.cloud import logging as cloud_logging
 
@@ -497,26 +521,30 @@ Estimated Time: 1 hour
 Common issues and solutions:
 
 1. **Issue**: `langchain.load` module not found
-   ```python
+   ```
+   python
    # Solution: Use ADK BaseTool instead of LangChain agents
    # Already implemented in oracle_ai_database_adk_agent.py
    ```
 
 2. **Issue**: Agent quota errors with gemini-2.0-flash-exp
-   ```python
+   ```
+   python
    # Solution: Use stable model gemini-2.0-flash-001
    agent = LlmAgent(model="gemini-2.0-flash-001", ...)
    ```
 
 3. **Issue**: Port 8502 already in use
-   ```bash
+   ```
+   bash
    # Solution: Kill existing Streamlit process
    pkill -f streamlit
    ./run_oracle_ai_database_langchain_streamlit.sh
    ```
 
 4. **Issue**: Vector search returns no results
-   ```sql
+   ```
+   sql
    -- Check embeddings exist
    SELECT COUNT(*) FROM rag_tab WHERE embedding IS NOT NULL;
 

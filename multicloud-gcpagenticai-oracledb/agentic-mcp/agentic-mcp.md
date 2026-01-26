@@ -79,7 +79,8 @@ Your ADK agent connects to the server using `ToolboxClient` and loads tools dyna
 **Installation Methods:**
 
 1. **Binary Download** (Linux AMD64, macOS, Windows):
-   ```bash
+   ```
+   bash
    <copy>
    VERSION=0.24.0
    OS="linux/amd64"  # or darwin/arm64, darwin/amd64, windows/amd64
@@ -90,14 +91,16 @@ Your ADK agent connects to the server using `ToolboxClient` and loads tools dyna
    ```
 
 2. **NPM Package** (recommended, requires Node.js 20+):
-   ```bash
+   ```
+   bash
    <copy>
    npx @toolbox-sdk/server --tools-file tools.yaml
    </copy>
    ```
 
 3. **Docker** (cross-platform, but may have networking complexities):
-   ```bash
+   ```
+   bash
    <copy>
    docker run -p 5000:5000 -v $(pwd)/tools.yaml:/app/tools.yaml \
      ghcr.io/googleapis/genai-toolbox --tools-file /app/tools.yaml
@@ -184,7 +187,8 @@ This lab provides a complete implementation that includes:
 ### Implementation Highlights
 
 **tools.yaml Oracle Source Configuration:**
-```yaml
+```
+yaml
 <copy>
 sources:
   oracle-ai-db:
@@ -200,7 +204,8 @@ sources:
 
 **Python Agent with ToolboxClient:**
 </copy>
-```python
+```
+python
 <copy>
 from toolbox_core import ToolboxClient
 from google.adk import Agent
@@ -234,14 +239,16 @@ agent = Agent(
 ### For AMD64 Linux or macOS
 
 1. Navigate to the project directory:
-   ```bash
+   ```
+   bash
    <copy>
    cd interactive-ai-holograms/oracle-ai-database-gcp-vertex-ai
    </copy>
    ```
 
 2. Ensure `.env` file has Oracle credentials:
-   ```bash
+   ```
+   bash
    <copy>
    DB_USERNAME=ADMIN
    DB_PASSWORD=your_password
@@ -253,7 +260,8 @@ agent = Agent(
    ```
 
 3. Run the agent:
-   ```bash
+   ```
+   bash
    <copy>
    ./run_oracle_ai_database_adk_mcp_agent.sh
    </copy>
@@ -268,7 +276,8 @@ The script will:
 ### For ARM64 Linux or Unsupported Platforms
 
 Option 1: Use the non-MCP ADK agent (recommended):
-```bash
+```
+bash
 <copy>
 ./run_oracle_ai_database_adk_agent.sh
 </copy>
@@ -277,7 +286,8 @@ Option 1: Use the non-MCP ADK agent (recommended):
 
 Option 2: Deploy MCP Toolbox to Cloud Run (AMD64):
 </copy>
-```bash
+```
+bash
 <copy>
 # Deploy to Cloud Run
 gcloud run deploy mcp-toolbox \
@@ -322,7 +332,8 @@ a unified view of data as both relational tables and JSON documents...
 The most important tool for RAG applications:
 
 </copy>
-```yaml
+```
+yaml
 <copy>
 tools:
   search-rag-documents:
@@ -363,7 +374,8 @@ This tool:
 For advanced queries and schema inspection:
 
 </copy>
-```yaml
+```
+yaml
 <copy>
 tools:
   execute-sql:
@@ -482,7 +494,8 @@ The repository includes three different agent implementations for comparison:
 
 For local testing and development:
 </copy>
-```bash
+```
+bash
 <copy>
 # MCP Toolbox (AMD64/macOS)
 ./run_oracle_ai_database_adk_mcp_agent.sh
@@ -500,7 +513,8 @@ For local testing and development:
 
 Create a Dockerfile:
 </copy>
-```dockerfile
+```
+dockerfile
 <copy>
 FROM node:20-slim
 
@@ -523,7 +537,8 @@ CMD ["npx", "@toolbox-sdk/server", "--tools-file", "tools.yaml"]
 
 Deploy to Cloud Run:
 </copy>
-```bash
+```
+bash
 <copy>
 gcloud run deploy mcp-toolbox \
   --source . \
@@ -562,7 +577,8 @@ gcloud run deploy mcp-toolbox \
 MCP Toolbox provides built-in observability:
 
 </copy>
-```yaml
+```
+yaml
 <copy>
 # Add to tools.yaml for OpenTelemetry
 observability:
@@ -656,7 +672,8 @@ SELECT * FROM USER_INDEXES WHERE TABLE_NAME = 'RAG_TAB';
 
 Enable verbose logging:
 </copy>
-```bash
+```
+bash
 <copy>
 # Toolbox server
 ./toolbox --tools-file tools.yaml --log-level debug
