@@ -45,7 +45,7 @@ High-level steps followed in this lab:
 
     Retrieval Augmented Generation (RAG) is a technique that enhances LLMs by integrating Similarity Search. This enables use cases such as a corporate chatbot responding with private company knowledge to make sure it’s giving answers that are up-to-date and tailored to your business.
 
-Estimated Time: 10 minutes
+Estimated Time: 50 minutes
 
 ### Objectives
 
@@ -171,23 +171,24 @@ Please use VSCode's Remote Explorer function to connect to your remote VM. If yo
     </copy>
     ```
 
-6. Download the [Source pdf file](https://objectstorage.us-phoenix-1.oraclecloud.com/p/DiuTfuapQc-nDTpWUbWJuLbn35KsNuhN-HxqvidF-s6IrdCqKRtJvgxkSAqlAz4w/n/axxduehrw7lz/b/gcp-ai-lab/o/oracle-database-26ai-new-features-guide.pdf) and the [Jupyter Notebook](https://objectstorage.us-phoenix-1.oraclecloud.com/p/O8WKC75TW_sZNHIaGKHeBw_KmHNJ89hux_UfjwrH7WUSpUTR3gDXcxp0DvPBYuj6/n/axxduehrw7lz/b/gcp-ai-lab/o/database-rag.ipynb) to the `vectors` directory.
+6. The notebook is available at `oracle-ai-database-gcp-vertex-ai/oracle_ai_database_gemini_rag.ipynb`. The notebook will automatically download the Oracle Database 26ai PDF during execution.
+
+    If you need to download the notebook separately:
 
     ```
     <copy>
-    wget https://objectstorage.us-phoenix-1.oraclecloud.com/p/DiuTfuapQc-nDTpWUbWJuLbn35KsNuhN-HxqvidF-s6IrdCqKRtJvgxkSAqlAz4w/n/axxduehrw7lz/b/gcp-ai-lab/o/oracle-database-26ai-new-features-guide.pdf
-    wget https://objectstorage.us-phoenix-1.oraclecloud.com/p/O8WKC75TW_sZNHIaGKHeBw_KmHNJ89hux_UfjwrH7WUSpUTR3gDXcxp0DvPBYuj6/n/axxduehrw7lz/b/gcp-ai-lab/o/database-rag.ipynb
-    wget https://objectstorage.us-phoenix-1.oraclecloud.com/p/6ulMJ9B8Dlr1EVVA4WqgDOVfPrWkwKIYRDfV7vgsl90CnqCBDcuqCY0vOspN8ih9/n/axxduehrw7lz/b/gcp-ai-lab/o/rag_app_ui.py
+    cd oracle-ai-database-gcp-vertex-ai
+    # Notebook downloads PDF automatically - no manual download needed
     </copy>
     ```
 
 ## Task 4: Run the RAG application code snippets in Jupyter notebook
 
-1. Open the `database-rag.ipynb` file in VSCode and continue reading while executing the code cells below. Click **Open** to open the Juniper Notebook.
+1. Open the `oracle_ai_database_gemini_rag.ipynb` file in VSCode and continue reading while executing the code cells below. Click **Open** to open the Jupyter Notebook.
 
     ![](./images/vscode-confirm-ssh.png " ")
     
-2. Select the `database-rag.ipynb` file present under `vectors` directory.
+2. Select the `oracle_ai_database_gemini_rag.ipynb` file present under `oracle-ai-database-gcp-vertex-ai` directory.
 
     ![](./images/vscode-select-file.png " ")
 
@@ -556,28 +557,39 @@ Please use VSCode's Remote Explorer function to connect to your remote VM. If yo
 
 In this task you will run the RAG application interactively using a simple user interface. You can select and load from several PDF documents, and ask your own question in the prompt. This is the same application with the 7 essential RAG steps as the previous tasks but demonstrates use through a user interface.
 
-1. From the VSCode terminal, go to directory `vectors`
+1. From the VSCode terminal, go to directory `oracle-ai-database-gcp-vertex-ai`
 
     ```
     <copy>
-    cd $HOME/vectors
+    cd oracle-ai-database-gcp-vertex-ai
     </copy>
     ```
 
-2. Update the following in application python file - `rag_app_ui.py` :
+2. Configure credentials in `.env` file (if not already done). The application reads from the `.env` file:
 
-    DB Username, 
-    DB Password, 
-    DB Connection String, 
-    DB Wallet Password, 
-    Google Cloud Project ID, 
-    Google Cloud Region
+    ```
+    DB_USERNAME=ADMIN
+    DB_PASSWORD=your_password
+    DB_DSN=your_connection_string
+    DB_WALLET_PASSWORD=your_wallet_password
+    DB_WALLET_DIR=/path/to/wallet
+    GCP_PROJECT_ID=your_project_id
+    GCP_REGION=us-central1
+    ```
 
-3. Run the RAG application from terminal
+3. Run the RAG Streamlit application using the provided script:
 
     ```
     <copy>
-    streamlit run rag_app_ui.py
+    bash run_oracle_ai_database_langchain_streamlit.sh
+    </copy>
+    ```
+    
+    Or run directly:
+    
+    ```
+    <copy>
+    streamlit run oracle_ai_database_langchain_streamlit.py --server.port 8502
     </copy>
     ```
 
@@ -617,9 +629,75 @@ In this task you ran a RAG application with a UI using the same steps for RAG le
 
 By using AI Vector Search in Oracle Database 26ai, you can build RAG applications with important context without having to retrain the LLM. The context is stored, searched and retrieved from Oracle Database 26ai and passed to Google Vertex AI Gemini Flash Model to generate accurate, up to date, and targeted responses to your prompts.
 
+## Task 5: (Optional) Understand HuggingFace vs Vertex AI Embeddings - Comparison
+
+This task explains the two embedding approaches available for Oracle AI Vector Search and helps you choose the right one for your use case.
+
+### Embedding Options
+
+**1. HuggingFace Embeddings** (`all-MiniLM-L6-v2`)
+- ✅ Free, runs locally
+- ✅ No API dependencies (works offline)
+- ✅ 384 dimensions (smaller vectors, less storage)
+- ⚠️ Lower quality compared to enterprise-grade solutions
+- ⚠️ Requires local compute resources
+
+**2. Vertex AI Embeddings** (`text-embedding-004`)
+- ✅ Enterprise-grade quality (95-98% accuracy)
+- ✅ 768 dimensions (richer semantic information)
+- ✅ State-of-the-art Google technology
+- ⚠️ Paid service (~$0.00001 per 1K characters)
+- ⚠️ Requires GCP authentication and internet
+
+### Quick Comparison
+
+| Aspect | HuggingFace | Vertex AI |
+|--------|-------------|-----------|
+| **Cost** | Free | ~$0.50-5/month typical usage |
+| **Dimensions** | 384 | 768 |
+| **Quality** | Good (85-90%) | Excellent (95-98%) |
+| **Execution** | Local | Cloud API |
+| **Setup** | Simple | Requires GCP project |
+| **Best For** | Development, demos, learning | Production, enterprise apps |
+
+### Storage Requirements (for 1000 chunks)
+
+- **HuggingFace**: ~1.5 MB (384 floats × 4 bytes × 1000)
+- **Vertex AI**: ~3 MB (768 floats × 4 bytes × 1000)
+
+### When to Use Each
+
+**Use HuggingFace When:**
+- Learning or development environment
+- Cost is the primary concern
+- No GCP access or offline operation needed
+- Working on local machine or demos
+
+**Use Vertex AI When:**
+- Production deployment
+- Quality and accuracy are critical
+- Already using GCP infrastructure
+- Enterprise or commercial application
+- Budget allows minimal API costs
+
+### Current Implementation
+
+The production application (`oracle_ai_database_langchain_streamlit.py`) uses **Vertex AI text-embedding-004** for:
+- Better semantic understanding
+- Production-quality results
+- Integration with existing GCP services
+- 768-dimensional vectors for richer context
+
+For learning and local development, the HuggingFace version remains valuable for cost-free experimentation and understanding embedding fundamentals.
+
+### Note on Migration
+
+If you need to switch between embedding models, you must re-embed all documents since the vector dimensions differ (384 vs 768). The vectors are not compatible and cannot be mixed in the same table.
+
 You may now **proceed to the next lab**.
 
 ## Acknowledgements
 
-- **Authors/Contributors** - Vivek Verma, Master Principal Cloud Architect, North America Cloud Engineering
-- **Last Updated By/Date** - Vivek Verma, July 2025
+- **Authors/Contributors** - Paul Parkinson, Dev Advocate  
+                           - Vivek Verma, Master Principal Cloud Architect, North America Cloud Engineering
+- **Last Updated By/Date** - Paul Parkinson, January 2026

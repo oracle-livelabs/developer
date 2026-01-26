@@ -2,19 +2,18 @@
 
 ## Introduction
 
-This lab demonstrates developing a RAG system using Oracle AI Database, Google Vertex AI, and multiple agent interfaces. You'll learn how to create a vector search knowledge base, expose it via FastAPI, and integrate it with Google's Conversational Agents and Agent Development Kit (ADK).
+This lab demonstrates building an AI agent using Google's Agent Development Kit (ADK) with Oracle AI Database vector search. You'll learn how to implement a production-ready ADK agent that combines multi-step reasoning with vector-based retrieval augmented generation (RAG).
 
-Please refer to the `Building AI Agents with Vertex AI Agent Builder` tutorial found here: https://codelabs.developers.google.com/devsite/codelabs/building-ai-agents-vertexai if you are interested in running a no-code version 
+The ADK provides a code-first approach to building agents with full control over behavior, tools, and workflows. This contrasts with Agent Builder's no-code interface (covered in a separate lab).
 
 Estimated Time: 1 hour
 
 ### Objectives
 
 * Set up Oracle Database vector store with 768-dimensional embeddings
-* Build FastAPI service with OpenAPI specification
 * Create Streamlit UI for document management
-* Integrate with GCP Vertex AI Conversational Agents
-* Implement full ADK agent with multi-step reasoning
+* Implement ADK agent with custom Oracle RAG tool
+* Test multi-step reasoning and conversation context
 
 ### Prerequisites
 
@@ -98,13 +97,13 @@ Estimated Time: 1 hour
    - `streamlit` - UI framework
    - `vertexai` - Google Vertex AI SDK
 
-   
+   ![Environment Setup](images/environment-setup.png " ")
 
 ## Task 2: Document Ingestion with Streamlit
 
 1. Understanding the Streamlit UI architecture:
    
-   File: `rag_app_ui.py`
+   File: `oracle_ai_database_langchain_streamlit.py`
    
    The Streamlit application provides:
    - PDF upload and parsing (PyPDF2)
@@ -114,12 +113,12 @@ Estimated Time: 1 hour
 
 2. Start the Streamlit UI:
    ```bash
-   ./run.sh
+   ./run_oracle_ai_database_langchain_streamlit.sh
    ```
 
    Access the UI at `http://your-vm-ip:8502`
 
-   
+   ![Streamlit UI](images/streamlit-ui.png " ")
 
 3. Upload documents:
    
@@ -147,100 +146,32 @@ Estimated Time: 1 hour
    - View retrieved chunks and generated answer
    - Observe timing metrics (vector search vs. LLM response time)
 
-   
+   ![Document Ingestion](images/document-ingestion.png " ")
 
-## Task 3: Build FastAPI Service with OpenAPI
-
-1. Understanding the FastAPI service architecture:
-   
-   File: `oracle_ai_database_rag.py`
-   
-   The service implements:
-   ```python
-   @app.post("/query")
-   async def query_knowledge_base(request: QueryRequest):
-       # 1. Generate query embedding
-       # 2. Vector similarity search (COSINE)
-       # 3. Retrieve top_k chunks
-       # 4. Create context-aware prompt
-       # 5. Call Gemini LLM
-       # 6. Return answer + metadata
-   ```
-
-   OpenAPI Compatibility:
-   - Version: 3.0.3 (required by GCP)
-   - No security schemes (managed externally)
-   - JSON-only content type
-   - Single server URL (internal VPC)
-
-2. Start the FastAPI service:
-   ```bash
-   ./run_api.sh
-   ```
-
-   Available endpoints:
-   - `POST /query` - RAG query with answer generation
-   - `GET /status` - Service health check
-   - `DELETE /clear` - Clear knowledge base
-   - `GET /health` - Simple health ping
-   - `GET /openapi.json` - OpenAPI specification
-
-3. Test the API locally:
-   ```bash
-   curl -X POST "http://localhost:8501/query" \
-     -H "Content-Type: application/json" \
-     -d '{
-       "query": "What are new JSON features in Oracle Database?",
-       "top_k": 5
-     }'
-   ```
-
-   Expected response:
-   ```json
-   {
-     "answer": "Oracle Database 26ai introduces...",
-     "context_chunks": ["chunk1", "chunk2", ...],
-     "vector_search_time": 0.15,
-     "llm_response_time": 2.3,
-     "total_time": 2.45
-   }
-   ```
-
-4. View OpenAPI specification:
-   
-   Access the interactive documentation at `http://localhost:8501/docs`
-   
-   Features:
-   - Interactive API testing
-   - Schema validation
-   - Request/response examples
-   - Model definitions (QueryRequest, QueryResponse)
-
-   
-
-## Task 4: Implement ADK Full Agent
+## Task 3: Implement ADK Agent
 
 1. Understanding Google ADK (Agent Development Kit):
    
    ADK provides:
    - Multi-step reasoning: Agent makes multiple tool calls
    - Conversation context: Maintains history across turns
-   - Function calling: Native Gemini function calling
+   - Custom tools: Create BaseTool subclasses for any capability
    - Extensibility: Easy to add new tools/capabilities
+   - Full control: Complete control over agent behavior and workflows
    
-   Comparison with GCP Conversational Agents:
+   Comparison with Agent Builder (no-code):
    
-   | Feature | GCP Agents | ADK |
-   |---------|-----------|-----|
+   | Feature | Agent Builder | ADK |
+   |---------|---------------|-----|
    | Deployment | Managed service | Custom code |
    | UI | Built-in web UI | Build your own |
-   | Reasoning | Single-step | Multi-step |
+   | Reasoning | Dialogflow-based | Multi-step LlmAgent |
    | Customization | Limited | Full control |
-   | Cost | Per-use | Compute + LLM calls |
+   | Learning Curve | Low | Medium |
 
 2. Understanding ADK architecture:
    
-   File: `oracle_ai_database_adk_fullagent.py`
+   File: `oracle_ai_database_adk_agent.py`
    
    ```python
    # 1. Initialize Vertex AI and Gemini
@@ -275,61 +206,69 @@ Estimated Time: 1 hour
 
 3. Key components:
    
-   Function declarations:
+   Custom BaseTool:
    ```python
-   FunctionDeclaration(
-       name="query_oracle_database",
-       description="Search the Oracle Database knowledge base...",
-       parameters={
-           "type": "object",
-           "properties": {
-               "query": {"type": "string", ...},
-               "top_k": {"type": "integer", "default": 5}
-           },
-           "required": ["query"]
-       }
-   )
+   class OracleRAGTool(BaseTool):
+       """Tool for searching Oracle Database knowledge base using vector similarity."""
+       
+       def __init__(self, vector_store: OracleVS, top_k: int = 5):
+           self.vector_store = vector_store
+           self.top_k = top_k
+
+       def __call__(self, query: str, top_k: int = None) -> dict:
+           """Search for relevant documents.
+           
+           Args:
+               query: Natural language search query
+               top_k: Number of results to return (default: 5)
+           
+           Returns:
+               dict with 'documents' list and 'count'
+           """
+           k = top_k or self.top_k
+           docs = self.vector_store.similarity_search(query, k=k)
+           return {
+               "documents": [doc.page_content for doc in docs],
+               "metadata": [doc.metadata for doc in docs],
+               "count": len(docs)
+           }
    ```
    
    System instructions:
    ```python
-   instructions = """You are an expert Oracle Database assistant.
+   system_instruction = """You are an expert Oracle Database assistant.
 
-   Use query_oracle_database when users ask about:
-   - Specific features or functionality
-   - SQL syntax and best practices
-   - Configuration and administration
+   When users ask about Oracle Database features, use the OracleRAGTool to search
+   the knowledge base. Provide accurate answers based on the retrieved context.
 
    For complex questions:
-   - Break into sub-queries
-   - Make multiple tool calls
-   - Synthesize information
+   - Search for relevant information
+   - Synthesize information from multiple sources
+   - Provide clear, accurate answers
 
-   Maintain conversation context and reference previous answers."""
+   Always cite when information comes from the knowledge base."""
    ```
    
-   Multi-step execution:
+   Agent execution:
    ```python
-   max_iterations = 5
-   while has_function_call and iteration < max_iterations:
-       # Execute function
-       result = execute_function_call(function_name, args)
-       
-       # Send result back to model
-       response = chat.send_message(
-           Part.from_function_response(name=function_name, response=result)
-       )
+   # ADK Runner handles multi-step reasoning automatically
+   runner = Runner(agent=agent)
+   result = await runner.run(user_input)
+   print(result.text)  # Final response after tool calls
    ```
 
 4. Run the ADK agent:
    ```bash
-   ./run_fullagent.sh
+   ./run_oracle_ai_database_adk_agent.sh
+   ```
+
+   Or test it:
+   ```bash
+   ./test_oracle_ai_database_adk_agent.sh
    ```
 
    Interactive commands:
    - Type questions naturally
-   - `history` - View conversation
-   - `clear` - Reset context
    - `quit` - Exit
 
 5. Test multi-step reasoning:
@@ -368,7 +307,7 @@ Estimated Time: 1 hour
        Agent: To enable the MCP Server, add a tag to your Autonomous Database with key "ADB$FEATURE" and value {"name":"MCP_SERVER","enable":true}. This creates an MCP endpoint bound to your database OCID at http://dataaccess.adb.<region-id>.oraclecloudapps.com/adb/mcp/v1/databases/{database-ocid}. Authenticated MCP clients can then use this endpoint via secure OAuth protocol to run registered tools.
    ```
 
-   
+   ![ADK Agent](images/adk_ai_agent_rag_success.png " ")
 
 ## Task 5: Advanced Topics and Optimization
 
@@ -456,7 +395,7 @@ Estimated Time: 1 hour
    )
    ```
 
-   
+   ![Optimization](images/optimization.png " ")
 
 ## Task 6: (Optional) Deployment and Production
 
@@ -517,100 +456,7 @@ Estimated Time: 1 hour
    })
    ```
 
-   
-
-## Task 7: (Optional) Integrate with GCP Conversational Agents
-   
-   Architecture flow:
-   ```
-   User → GCP Agent → OpenAPI Tool → FastAPI → Oracle DB
-   ```
-   
-   Benefits:
-   - Natural language interface
-   - Multi-turn conversation
-   - Built-in authentication
-   - Web UI for testing
-
-2. Create OpenAPI Tool:
-   
-   Navigate to Vertex AI Console:
-   - Go to Conversational Agents → Tools → Create Tool
-   
-   Import OpenAPI specification:
-   ```
-   Method: OpenAPI URL
-   URL: http://10.150.0.8:8501/openapi.json
-   ```
-   
-   **Important**: Use internal VPC IP (10.150.0.8), not external IP
-   
-   Configure authentication:
-   - Type: No auth (API accepts tokens without validation)
-   - Alternative: Service agent token (for production)
-   
-   Verify tool configuration:
-   - Tool name: `Oracle AI Database (Vector RAG)`
-   - Action: `query`
-   - Input: `query` (string), `top_k` (integer)
-   - Output: JSON response
-
-3. Create Conversational Agent:
-   
-   Create new agent:
-   - Name: "Oracle Database Expert"
-   - Model: Gemini 2.0 Flash
-   
-   Add instructions:
-   ```
-   You are an expert assistant for Oracle Database questions.
-
-   Use the "query" tool to search the Oracle Database knowledge base
-   when users ask about:
-   - Database features
-   - SQL syntax
-   - Configuration
-   - Performance optimization
-
-   Provide clear, accurate answers based on the retrieved information.
-   ```
-   
-   Attach tool:
-   - Add previously created OpenAPI tool
-   - Set as required for database questions
-   
-   Configure settings:
-   - Temperature: 0.7
-   - Max tokens: 2048
-   - Top-p: 0.95
-
-4. Test the GCP Agent:
-   
-   Open Agent Playground and test queries:
-   - "What are new spatial features in Oracle Database?"
-   - "Explain JSON Relational Duality"
-   - "How do I optimize vector search performance?"
-   
-   Monitor tool calls:
-   - View tool execution in conversation
-   - Check API logs for incoming requests
-   - Verify response integration
-
-5. Known limitations and solutions:
-   
-   Issues:
-   - Security schemes not supported in OpenAPI
-   - Only JSON content types allowed
-   - External IPs unreachable from GCP
-   - Limited multipart/form-data support
-   
-   Applied solutions:
-   - Removed security definitions from OpenAPI
-   - Filtered content types to `application/json`
-   - Used internal VPC address (10.150.0.8)
-   - Excluded `/upload` endpoint from schema
-
-   
+   ![Production Deployment](images/production-deployment.png " ")
 
 ## Troubleshooting
 
@@ -618,22 +464,21 @@ Common issues and solutions:
 
 1. **Issue**: `langchain.load` module not found
    ```python
-   # Solution: Use Gemini function calling instead of LangchainAgent
-   # Already implemented in oracle_ai_database_adk_fullagent.py
+   # Solution: Use ADK BaseTool instead of LangChain agents
+   # Already implemented in oracle_ai_database_adk_agent.py
    ```
 
-2. **Issue**: GCP Agent returns authentication error
-   ```
-   # Solution: Use internal VPC IP, not external
-   URL: http://10.150.0.8:8501 (not 34.48.146.146)
+2. **Issue**: Agent quota errors with gemini-2.0-flash-exp
+   ```python
+   # Solution: Use stable model gemini-2.0-flash-001
+   agent = LlmAgent(model="gemini-2.0-flash-001", ...)
    ```
 
-3. **Issue**: Port 8501 already in use
+3. **Issue**: Port 8502 already in use
    ```bash
-   # Solution: Streamlit moved to 8502
-   pkill -f uvicorn  # Stop FastAPI
-   ./run.sh          # Streamlit on 8502
-   ./run_api.sh      # FastAPI on 8501
+   # Solution: Kill existing Streamlit process
+   pkill -f streamlit
+   ./run_oracle_ai_database_langchain_streamlit.sh
    ```
 
 4. **Issue**: Vector search returns no results
