@@ -25,7 +25,7 @@ High-level steps followed in this lab:
 
 7. The results (context) of the search and the prompt are passed to the LLM to generate the response.
 
-    ![Ragdesign](./images/ragdesign.png " ")
+    ![Ragdesign](./images/ragdesign.png "Ragdesign")
 
 ### Concepts
 
@@ -69,15 +69,15 @@ In this section, you will be enabling Vertex AI API to be used later in the lab.
 
 1.	From Google Cloud Console go to the main menu and click **Vertex AI** and **Dashboard**.
 
-    ![Gcp Vertexai Menu](./images/gcp-vertexai-menu.png " ")
+    ![Gcp Vertexai Menu](./images/gcp-vertexai-menu.png "Gcp Vertexai Menu")
 
 2. The will launch the **Vertex AI Dashboard**. On the Dashboard click **Enable all recommended APIs**.
 
-    ![Gcp Get Started Vertexai](./images/gcp-get-started-vertexai.png " ")
+    ![Gcp Get Started Vertexai](./images/gcp-get-started-vertexai.png "Gcp Get Started Vertexai")
 
 3. After the API is enabled, confirm the same from the **Dashboard**.
 
-    ![Gcp Enabled Vertexai](./images/gcp-enabled-vertexai.png " ")
+    ![Gcp Enabled Vertexai](./images/gcp-enabled-vertexai.png "Gcp Enabled Vertexai")
 
 ## Task 2: Launch VSCode
 
@@ -87,19 +87,19 @@ Please use VSCode's Remote Explorer function to connect to your remote VM. If yo
 
 1. Launch VSCode on your local machine and connect to the remote VM. Click the **Search Bar** and select **Show and Run Commands**.
 
-    ![Vscode Show Run Command](./images/vscode-show-run-command.png " ")
+    ![Vscode Show Run Command](./images/vscode-show-run-command.png "Vscode Show Run Command")
 
 2. Type **Remote-SSH** and select **Remote-SSH: Connect to Host...**.
 
-    ![Vscode Remote Ssh](./images/vscode-remote-ssh.png " ")
+    ![Vscode Remote Ssh](./images/vscode-remote-ssh.png "Vscode Remote Ssh")
 
 3. Enter the IP address of the Google Compute VM Instance that we provisioned earlier in this workshop and press **Enter**.
 
-    ![Vscode Select Ssh Host](./images/vscode-select-ssh-host.png " ")
+    ![Vscode Select Ssh Host](./images/vscode-select-ssh-host.png "Vscode Select Ssh Host")
 
 4. On the next VSCode Window, verify that you have remotely connected to the Compute VM instance. Left bottom corner has a message **SSH: IP Address**.
 
-    ![Vscode Confirm Ssh](./images/vscode-confirm-ssh.png " ")
+    ![Vscode Confirm Ssh](./images/vscode-confirm-ssh.png "Vscode Confirm Ssh")
 
 ## Task 3:  Setup the Python environment
 
@@ -186,23 +186,23 @@ Please use VSCode's Remote Explorer function to connect to your remote VM. If yo
 
 1. Open the `oracle_ai_database_gemini_rag.ipynb` file in VSCode and continue reading while executing the code cells below. Click **Open** to open the Jupyter Notebook.
 
-    ![Vscode Confirm Ssh](./images/vscode-confirm-ssh.png " ")
+    ![Vscode Confirm Ssh](./images/vscode-confirm-ssh.png "Vscode Confirm Ssh")
     
 2. Select the `oracle_ai_database_gemini_rag.ipynb` file present under `oracle-ai-database-gcp-vertex-ai` directory.
 
-    ![Vscode Select File](./images/vscode-select-file.png " ")
+    ![Vscode Select File](./images/vscode-select-file.png "Vscode Select File")
 
 3. On clicking Run to execute the first code snippet, you will be prompted to install and enable extensions (Python and Jupyter).
 
-    ![Install Enable Extensions](./images/install-enable-extensions.png " ")
+    ![Install Enable Extensions](./images/install-enable-extensions.png "Install Enable Extensions")
 
     After installing the required extensions you will be prompted to choose the **Kernel Source**. Select **Python Environments**.
 
-    ![Python Envs](./images/python-envs.png " ")
+    ![Python Envs](./images/python-envs.png "Python Envs")
 
     Upon installing required Python Kernel, select the Python Envinronment.
 
-    ![Select Python](./images/select-python.png " ")
+    ![Select Python](./images/select-python.png "Select Python")
 
     Running cells with '3.12.9 (Python 3.12.9)' requires the ipykernel package. Click **Install**.
 
@@ -424,21 +424,21 @@ Please use VSCode's Remote Explorer function to connect to your remote VM. If yo
     </copy>
     ```
 
-    ![Enter Y To Continue](./images/enter-Y-to-continue.png " ")
+    ![Enter Y To Continue](./images/enter-Y-to-continue.png "Enter Y To Continue")
 
 16. Copy the link and paste it in a browser.
 
-    ![Copy Link](./images/copy-link.png " ")
+    ![Copy Link](./images/copy-link.png "Copy Link")
 
     The browser will prompt you to login to your Google Cloud Account. Post login allow the application to use your cloud credentials.
 
-    ![Login Page](./images/login-page.png " ")
-    ![Allow Application](./images/allow-application.png " ")
+    ![Login Page](./images/login-page.png "Login Page")
+    ![Allow Application](./images/allow-application.png "Allow Application")
 
 17. Copy the code and paste it back in the terminal window.
 
-    ![Copy Code](./images/copy-code.png " ")
-    ![Paste Code](./images/paste-code.png " ")
+    ![Copy Code](./images/copy-code.png "Copy Code")
+    ![Paste Code](./images/paste-code.png "Paste Code")
 
 18. LLM to generate your response.
 
@@ -553,7 +553,7 @@ Please use VSCode's Remote Explorer function to connect to your remote VM. If yo
     </copy>
     ```
 
-## Task 4: Run the RAG Application with Interactive UI
+## Task 5: Run the RAG Application with Interactive UI
 
 In this task you will run the RAG application interactively using a simple user interface. You can select and load from several PDF documents, and ask your own question in the prompt. This is the same application with the 7 essential RAG steps as the previous tasks but demonstrates use through a user interface.
 
@@ -629,7 +629,7 @@ In this task you ran a RAG application with a UI using the same steps for RAG le
 
 By using AI Vector Search in Oracle Database 26ai, you can build RAG applications with important context without having to retrain the LLM. The context is stored, searched and retrieved from Oracle Database 26ai and passed to Google Vertex AI Gemini Flash Model to generate accurate, up to date, and targeted responses to your prompts.
 
-## Task 5: (Optional) Understand HuggingFace vs Vertex AI Embeddings - Comparison
+## Task 6: (Optional) Understand HuggingFace vs Vertex AI Embeddings - Comparison
 
 This task explains the two embedding approaches available for Oracle AI Vector Search and helps you choose the right one for your use case.
 

@@ -24,15 +24,15 @@ In this section, you will create an ODBG Network. **ODBG networks** provide secu
 
 1.	Login to Google Cloud Console (console.cloud.google.com) and search for **Oracle Database** in the **Search Bar** on the top of the page. Click on **Oracle Database@Google Cloud**.
 
-    ![Search Bar](./images/adb-search.png " ")
+    ![Search Bar](./images/adb-search.png "Search Bar")
 
 - Click **ODBG network** from the left menu.
 
-    ![ODBG Network](./images/odbg-network-pane.png " ")
+    ![ODBG Network](./images/odbg-network-pane.png "ODBG Network")
 
 - Click **Create** on the ODBG network page.
 
-    ![ODBG Network](./images/odbg-network-create.png " ")
+    ![ODBG Network](./images/odbg-network-create.png "ODBG Network")
 
 -  This will bring up the **Create ODBG network** screen where you specify the configuration of the ODBG network.
 
@@ -44,15 +44,15 @@ In this section, you will create an ODBG Network. **ODBG networks** provide secu
 
     Click **Create**.
 
-    ![ODBG Network](./images/create-odbg-network.png " ")
+    ![ODBG Network](./images/create-odbg-network.png "ODBG Network")
 
 - On the **ODBG network** page click on the ODBG network that we just created **odbg-network**.
 
-    ![ODBG Network](./images/odbg-network-main.png " ")
+    ![ODBG Network](./images/odbg-network-main.png "ODBG Network")
 
 - On the **ODBG network details** page click **Create** to create a Subnet.
 
-    ![ODBG Network](./images/odbg-network-subnet-create.png " ")
+    ![ODBG Network](./images/odbg-network-subnet-create.png "ODBG Network")
 
 - Enter the following for **ODBG subnet**:
 
@@ -62,11 +62,11 @@ In this section, you will create an ODBG Network. **ODBG networks** provide secu
 
     Click **Create**.
 
-    ![ODBG Network](./images/create-odbg-subnet.png " ")
+    ![ODBG Network](./images/create-odbg-subnet.png "ODBG Network")
 
 - On the **ODBG network details** page, verify the details of the ODBG Network and confirm the **Status** of subnet **db-subnet** is set to **Available**.
 
-    ![ODBG Network](./images/odbg-network-details.png " ")
+    ![ODBG Network](./images/odbg-network-details.png "ODBG Network")
 
 ## Task 2: Create Autonomous Database
 
@@ -74,15 +74,15 @@ In this section, you will be provisioning an Autonomous Database using the Googl
 
 1.	Login to Google Cloud Console (console.cloud.google.com) and search for **Oracle Database** in the **Search Bar** on the top of the page. Click on **Oracle Database@Google Cloud**.
 
-    ![Search Bar](./images/adb-search.png " ")
+    ![Search Bar](./images/adb-search.png "Search Bar")
 
 -  Click **Autonomous Database** from the left menu.
 
-    ![ADB Menu](./images/adb-menu.png " ")
+    ![ADB Menu](./images/adb-menu.png "ADB Menu")
 
 - Click **Create** on the Autonomous Database details page.
 
-    ![Create ADB](./images/adb-create.png " ")
+    ![Create ADB](./images/adb-create.png "Create ADB")
 
 -  This will bring up the **Create an Autonomous Database** screen where you specify the configuration of the database.
 
@@ -93,19 +93,19 @@ In this section, you will be provisioning an Autonomous Database using the Googl
     * **Database display name** - Autonomous-Database-GCP
     * **Region** - us-east4
 
-    ![ADB Instance Details](./images/adb-instance-details.png " ")
+    ![ADB Instance Details](./images/adb-instance-details.png "ADB Instance Details")
 
 - Select **Transaction Processing** for **Workload configuration**
 
-    ![ADB Instance Details](./images/adb-workload.png " ")
+    ![ADB Instance Details](./images/adb-workload.png "ADB Instance Details")
 
 - Leave all defaults for **Database configuration**
 
-    ![ADB Instance Details](./images/adb-database-config.png " ")
+    ![ADB Instance Details](./images/adb-database-config.png "ADB Instance Details")
 
 - Enter the password for admin user under **Administrator credentials**
 
-    ![ADB Instance Details](./images/adb-credentials.png " ")
+    ![ADB Instance Details](./images/adb-credentials.png "ADB Instance Details")
 
 - Under the **Networking** section, select **Private endpoint access only** for **Access type**.
 
@@ -115,15 +115,15 @@ In this section, you will be provisioning an Autonomous Database using the Googl
     * **ODBG Network** - odbg-network
     * **Client subnet** - db-subnet (10.2.0.0/24)
 
-    ![ADB Instance Details](./images/adb-network.png " ")
+    ![ADB Instance Details](./images/adb-network.png "ADB Instance Details")
 
 - Leave the rest as defaults and click **CREATE** to create the Autonomous Database.
 
-    ![ADB Instance Details](./images/adb-default-create.png " ")
+    ![ADB Instance Details](./images/adb-default-create.png "ADB Instance Details")
 
 - Post creation the Autonomous Database will appear on the **Autonomous Database** page.
 
-    ![Autonomous Database](./images/adb-post-create.png " ")
+    ![Autonomous Database](./images/adb-post-create.png "Autonomous Database")
 
 ## Task 3: Download the Autonomous Database wallet file
 
@@ -131,19 +131,19 @@ In this section, you will be provisioning an Autonomous Database using the Googl
 
 - On the **Autonomous Database** page click the Autonomous Database that was provisioned.
 
-    ![Download zip](./images/vm-adb-details.png " ")
+    ![Download zip](./images/vm-adb-details.png "Download zip")
 
 - Go to the **CONNECTIONS** tab.
 
-    ![Download zip](./images/adb-details-connection.png " ")
+    ![Download zip](./images/adb-details-connection.png "Download zip")
 
 - Click **DOWNLOAD WALLET** on the **Connections** page.
 
-    ![Download zip](./images/adb-download.png " ")
+    ![Download zip](./images/adb-download.png "Download zip")
 
 - Set a password for the wallet on the **Download your wallet** page and click **DOWNLOAD**
 
-    ![Download zip](./images/adb-download-wallet.png " ")
+    ![Download zip](./images/adb-download-wallet.png "Download zip")
     
 - Create a folder named **wallet** on the Compute VM instance and scp or Copy over the Wallet zip file to wallet folder on the VM instance. If you are using a Linux Terminal, run the following command to copy over the wallet to the VM instance -
 
