@@ -68,7 +68,7 @@ Before running the Jupyter notebook, set up Application Default Credentials (ADC
 
     ```
     <copy>
-    gcloud auth application-default login
+    gcloud auth application-default login --no-launch-browser
     </copy>
     ```
 
@@ -126,45 +126,33 @@ Please use VSCode's Remote Explorer function to connect to your remote VM. If yo
     </copy>
     ```
 
-2. Install `pyenv` on the Compute VM. This is our way to quickly and neatly manage multiple Python versions on the same machine. For this lab, we will use Python 3.12. Run the following commands (for the latest version of this procedure, see [the official pyenv page here](https://github.com/pyenv/pyenv-installer)):
-
-    ```
-    <copy>    
-    sudo apt install -y make build-essential libssl-dev zlib1g-dev libbz2-dev \
-    libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev \
-    xz-utils tk-dev libffi-dev liblzma-dev python3-openssl git
-
-    curl https://pyenv.run | bash
-
-    echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.profile
-    echo 'command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.profile
-    echo 'eval "$(pyenv init -)"' >> ~/.profile
-
-    echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.bashrc
-    echo 'command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.bashrc
-    echo 'eval "$(pyenv init -)"' >> ~/.bashrc
-
-    exec "$SHELL"
-    </copy>
-    ```
-
-3. Install Python 3.12 on the VM:
+2. Install Python 3 and pip (if not already installed):
 
     ```
     <copy>
-    pyenv install 3.12
+    sudo apt install -y python3 python3-pip python3-venv
     </copy>
     ```
 
-4. Clone the repository and navigate to the project directory:
+3. Clone the repository and navigate to the project directory:
 
     ```
     <copy>
     git clone https://github.com/paulparkinson/oracle-ai-for-sustainable-dev.git
     cd oracle-ai-for-sustainable-dev/oracle-ai-database-gcp-vertex-ai
-    pyenv local 3.12
     </copy>
     ```
+
+4. Create and activate a Python virtual environment:
+
+    ```
+    <copy>
+    python3 -m venv venv
+    source venv/bin/activate
+    </copy>
+    ```
+
+    **Note:** This venv will be used for both the Jupyter notebook and the Python applications (run via `./run.sh`). Always activate it with `source venv/bin/activate` before working on this project.
 
 5. Configure the `.env` file with your credentials. Copy the example file and edit it:
 
@@ -187,36 +175,18 @@ Please use VSCode's Remote Explorer function to connect to your remote VM. If yo
     GCP_REGION=us-central1
     ```
 
-6. Install all Python dependencies from the requirements file:
+6. Install all Python dependencies (with venv activated):
 
     ```
     <copy>
     pip install --upgrade pip
-    pip install oracledb
-    pip install dotenv
-    pip install sentence-transformers
-    pip install PyPDF2
-    pip install langchain
-    pip install langchain_community
-    pip install streamlit
-    pip install oci
-    pip install langchain_huggingface
-    pip install -U langchain-google-vertexai
-    pip install -U langchain-community
-    pip install --upgrade google-cloud-aiplatform
+    pip install -r python/requirements.txt
     </copy>
     ```
 
-6. The notebook is available at `oracle-ai-database-gcp-vertex-ai/oracle_ai_database_gemini_rag.ipynb`. The notebook will automatically download the Oracle Database 26ai PDF during execution.
+    **Note:** This installs all required packages including oracledb, langchain, streamlit, and Vertex AI libraries. The same venv is used for both the Jupyter notebook and the Python applications.
 
-    If you need to download the notebook separately:
-
-    ```
-    <copy>
-    cd oracle-ai-database-gcp-vertex-ai
-    # Notebook downloads PDF automatically - no manual download needed
-    </copy>
-    ```
+7. The notebook is available at `oracle-ai-database-gcp-vertex-ai/notebooks/oracle_ai_database_gemini_rag.ipynb`. 
 
 ## Task 4: Run the RAG application code snippets in Jupyter notebook
 
@@ -236,11 +206,13 @@ Please use VSCode's Remote Explorer function to connect to your remote VM. If yo
 
     ![Python Envs](./images/python-envs.png "Python Envs")
 
-    Upon installing required Python Kernel, select the Python Envinronment.
+    Upon installing required Python Kernel, select the Python Environment (the venv you created).
 
     ![Select Python](./images/select-python.png "Select Python")
 
-    Running cells with '3.12.9 (Python 3.12.9)' requires the ipykernel package. Click **Install**.
+    Running cells with Python requires the ipykernel package. Click **Install** if prompted.
+
+    **Important:** When selecting the kernel, choose the Python interpreter from your venv: `oracle-ai-database-gcp-vertex-ai/venv/bin/python`
 
 4. Run the RAG application code snippets in Jupyter notebook.
 
@@ -579,11 +551,12 @@ Please use VSCode's Remote Explorer function to connect to your remote VM. If yo
 
 In this task you will run the RAG application interactively using a simple user interface. You can select and load from several PDF documents, and ask your own question in the prompt. This is the same application with the 7 essential RAG steps as the previous tasks but demonstrates use through a user interface.
 
-1. From the VSCode terminal, ensure you're in the `oracle-ai-database-gcp-vertex-ai` directory:
+1. From the VSCode terminal, ensure you're in the `oracle-ai-database-gcp-vertex-ai` directory with the venv activated:
 
     ```
     <copy>
     cd oracle-ai-database-gcp-vertex-ai
+    source venv/bin/activate
     </copy>
     ```
 
