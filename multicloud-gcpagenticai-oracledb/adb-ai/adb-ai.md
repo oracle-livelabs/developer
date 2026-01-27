@@ -165,7 +165,7 @@ Please use VSCode's Remote Explorer function to connect to your remote VM. If yo
 
     Your `.env` file should contain:
 
-    ```
+    ````
     DB_USERNAME=ADMIN
     DB_PASSWORD=your_password
     DB_DSN=your_connection_string_high
@@ -173,7 +173,7 @@ Please use VSCode's Remote Explorer function to connect to your remote VM. If yo
     DB_WALLET_DIR=/path/to/wallet
     GCP_PROJECT_ID=your_project_id
     GCP_REGION=us-central1
-    ```
+    ````
 
 6. Install all Python dependencies (with venv activated):
 
@@ -279,7 +279,7 @@ Please use VSCode's Remote Explorer function to connect to your remote VM. If yo
 
     **Note:** The notebook loads credentials from the `.env` file you configured earlier. The code in the notebook looks like this:
 
-    ```python
+    ````python
     import oracledb
     from dotenv import load_dotenv
 
@@ -302,7 +302,7 @@ Please use VSCode's Remote Explorer function to connect to your remote VM. If yo
         wallet_location=wallet_path,
         wallet_password=wpwd
     )
-    ```
+    ````
 
     Simply run the cell - no need to manually edit credentials in the notebook.
 

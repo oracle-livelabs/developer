@@ -58,7 +58,7 @@ This option implements a custom ADK agent that directly connects to Oracle Datab
 
 ### Architecture
 
-```
+````
 User Query → ADK Agent (Gemini 2.5 Flash)
               ↓
          Custom BaseTool
@@ -66,7 +66,7 @@ User Query → ADK Agent (Gemini 2.5 Flash)
     OracleVS Vector Store
               ↓
     Oracle Database 26ai
-```
+````
 
 ### Key Features
 
@@ -80,7 +80,7 @@ User Query → ADK Agent (Gemini 2.5 Flash)
 File: `oracle_ai_database_adk_agent.py`
 
 1. **Custom OracleRAGTool**:
-   ```python
+   ````python
    class OracleRAGTool(BaseTool):
        """Tool for searching Oracle Database knowledge base."""
        
@@ -91,7 +91,7 @@ File: `oracle_ai_database_adk_agent.py`
                "metadata": [doc.metadata for doc in docs],
                "count": len(docs)
            }
-   ```
+   ````
 
 2. **ADK Agent Configuration**:
    - Model: `gemini-2.5-flash`
@@ -103,13 +103,13 @@ File: `oracle_ai_database_adk_agent.py`
 1. From the menu, select **Option 2**
 
 2. Test with these queries:
-   ```
+   ````
    What are the new vector search features in Oracle 26ai?
    
    Tell me about JSON Relational Duality
    
    How do I enable the MCP Server in Autonomous Database?
-   ```
+   ````
 
 3. Observe the agent workflow:
    - User query → Agent reasoning → Tool call → Database search → Response generation
@@ -122,7 +122,7 @@ This option uses Google's MCP (Model Context Protocol) Toolbox to provide standa
 
 ### Architecture
 
-```
+````
 User Query → ADK Agent (Gemini 2.5 Flash)
               ↓
       Google MCP Toolbox
@@ -130,7 +130,7 @@ User Query → ADK Agent (Gemini 2.5 Flash)
     MCP Protocol Layer
               ↓
     Oracle Database 26ai
-```
+````
 
 ### Key Features
 
@@ -157,9 +157,9 @@ uname -m
 1. From the menu, select **Option 3**
 
 2. If on unsupported platform, you'll see:
-   ```
+   ````
    Note: Requires AMD64 platform or Docker
-   ```
+   ````
 
 3. The script `run_oracle_ai_database_adk_mcp_agent.sh` handles:
    - Platform detection
@@ -167,13 +167,13 @@ uname -m
    - Agent startup with MCP tools
 
 4. Test database operations:
-   ```
+   ````
    Search for information about AI Vector Search
    
    Query the database for SELECT AI features
    
    Find documentation about spatial enhancements
-   ```
+   ````
 
 ### MCP Toolbox vs Custom Tools
 
@@ -191,7 +191,7 @@ This option connects Google's Vertex AI directly to Oracle's native MCP Server r
 
 ### Architecture
 
-```
+````
 User Query → Vertex AI GenerativeModel
               ↓
       Function Calling
@@ -199,7 +199,7 @@ User Query → Vertex AI GenerativeModel
     Oracle SQLcl MCP Server
               ↓
     Oracle Database 26ai
-```
+````
 
 ### Key Features
 
@@ -231,10 +231,10 @@ User Query → Vertex AI GenerativeModel
 1. From the menu, select **Option 4**
 
 2. You'll see:
-   ```
+   ````
    Starting GenerativeModel + Oracle SQLcl MCP...
    Note: Requires SQLcl with MCP support AND Java
-   ```
+   ````
 
 3. The script starts:
    - SQLcl MCP Server connection
@@ -242,13 +242,13 @@ User Query → Vertex AI GenerativeModel
    - OAuth token refresh
 
 4. Test SQL operations:
-   ```
+   ````
    Show me the schema of the RAG_TAB table
    
    Run a query to count the number of vector embeddings
    
    Execute: SELECT * FROM rag_tab WHERE ROWNUM <= 5
-   ```
+   ````
 
 ### MCP Server Advantages
 
@@ -262,14 +262,14 @@ User Query → Vertex AI GenerativeModel
 File: `oracle_ai_database_genai_mcp.py`
 
 Key settings:
-```python
+````python
 MCP_ENDPOINT = "https://dataaccess.adb.us-ashburn-1.oraclecloudapps.com/adb/mcp/v1/databases/{database-ocid}"
 
 model = GenerativeModel(
     "gemini-2.5-flash",
     tools=[Tool.from_google_search_retrieval(), oracle_mcp_tools]
 )
-```
+````
 
 ## Task 5: Compare Agent Architectures
 
@@ -292,23 +292,23 @@ Now that you've tested all three agent options, let's compare them:
 Each agent can be customized with different personas:
 
 **Technical Expert**:
-```python
+````python
 system_instruction = """You are a database architect specializing in 
 Oracle Database 26ai. Provide technical, detailed answers with SQL 
 examples when relevant."""
-```
+````
 
 **Business Analyst**:
-```python
+````python
 system_instruction = """You are a business analyst explaining Oracle 
 features in simple terms. Focus on business value and use cases."""
-```
+````
 
 ### Multi-Tool Agents
 
 Combine multiple tools in a single agent:
 
-```python
+````python
 tools = [
     oracle_rag_tool,        # Vector search
     sql_execution_tool,      # Direct SQL
@@ -320,13 +320,13 @@ agent = LlmAgent(
     tools=tools,
     system_instruction=instructions
 )
-```
+````
 
 ### Conversation Memory
 
 Implement conversation history:
 
-```python
+````python
 chat_history = []
 
 def add_to_history(role, message):
@@ -337,7 +337,7 @@ runner = Runner(
     agent=agent,
     history=chat_history
 )
-```
+````
 
 ## Troubleshooting
 
@@ -345,8 +345,10 @@ runner = Runner(
 
 1. **"ModuleNotFoundError: No module named 'google.adk'"**
    ```bash
+   <copy>
    pip install google-adk>=1.4.2
    source ../venv/bin/activate
+   </copy>
    ```
 
 2. **"Platform not supported" (Option 3)**
@@ -355,10 +357,12 @@ runner = Runner(
 
 3. **"SQLcl not found" (Option 4)**
    ```bash
+   <copy>
    # Download and install SQLcl
    wget https://download.oracle.com/otn_software/java/sqldeveloper/sqlcl-latest.zip
    unzip sqlcl-latest.zip
    export PATH=$PATH:$(pwd)/sqlcl/bin
+   </copy>
    ```
 
 4. **Connection errors**
