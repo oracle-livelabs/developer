@@ -47,6 +47,7 @@ The `run.sh` script in the `python/` directory provides access to different agen
    ```
 
    You'll see these options:
+   ![Agentic AI menu](images/python-menu.png "Agentic AI menu")
    - **Option 1**: Streamlit Gemini RAG UI (covered in previous lab)
    - **Option 2**: ADK Agent with direct OracleVS integration
    - **Option 3**: ADK Agent with Google MCP Toolbox
@@ -210,21 +211,10 @@ User Query → Vertex AI GenerativeModel
 
 ### Prerequisites
 
-1. **Java JDK** (for SQLcl):
-   ```bash
-   <copy>
-   java -version
-   # Should show Java 11 or higher
-   </copy>
-   ```
-
-2. **Oracle SQLcl with MCP support**:
+1. **Oracle SQLcl with MCP support**:
    - SQLcl 24.4 or later
    - Download from: [Oracle SQLcl Downloads](https://www.oracle.com/database/sqldeveloper/technologies/sqlcl/)
 
-3. **MCP Server enabled in Autonomous Database**:
-   - Add database tag: `ADB$FEATURE` = `{"name":"MCP_SERVER","enable":true}`
-   - MCP endpoint automatically created
 
 ### Running the Agent
 
@@ -250,6 +240,8 @@ User Query → Vertex AI GenerativeModel
    Execute: SELECT * FROM rag_tab WHERE ROWNUM <= 5
    ````
 
+   ![Option 4 SQLcl MCP Agent](images/option4-sqlclmcp.png "Option 4 SQLcl MCP Agent in action")
+
 ### MCP Server Advantages
 
 - **Full SQL access**: Execute any SQL/PL/SQL
@@ -263,11 +255,17 @@ File: `oracle_ai_database_genai_mcp.py`
 
 Key settings:
 ````python
-MCP_ENDPOINT = "https://dataaccess.adb.us-ashburn-1.oraclecloudapps.com/adb/mcp/v1/databases/{database-ocid}"
+# SQLcl path - runs locally as subprocess with -mcp flag
+SQLCL_PATH = "/opt/sqlcl/bin/sql"
 
+# Initialize MCP client with SQLcl
+mcp_client = MCPClient(sqlcl_path, wallet_path)
+await mcp_client.start()  # Starts SQLcl in MCP mode
+
+# Create GenerativeModel with MCP tools
 model = GenerativeModel(
     "gemini-2.5-flash",
-    tools=[Tool.from_google_search_retrieval(), oracle_mcp_tools]
+    tools=[oracle_mcp_tools]
 )
 ````
 
