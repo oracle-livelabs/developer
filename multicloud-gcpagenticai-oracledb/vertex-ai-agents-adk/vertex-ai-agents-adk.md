@@ -47,6 +47,7 @@ The `run.sh` script in the `python/` directory provides access to different agen
    ```
 
    You'll see these options:
+   ![Agentic AI menu](images/python-menu.png "Agentic AI menu")
    - **Option 1**: Streamlit Gemini RAG UI (covered in previous lab)
    - **Option 2**: ADK Agent with direct OracleVS integration
    - **Option 3**: ADK Agent with Google MCP Toolbox
@@ -210,21 +211,10 @@ User Query → Vertex AI GenerativeModel
 
 ### Prerequisites
 
-1. **Java JDK** (for SQLcl):
-   ```bash
-   <copy>
-   java -version
-   # Should show Java 11 or higher
-   </copy>
-   ```
-
-2. **Oracle SQLcl with MCP support**:
+1. **Oracle SQLcl with MCP support**:
    - SQLcl 24.4 or later
    - Download from: [Oracle SQLcl Downloads](https://www.oracle.com/database/sqldeveloper/technologies/sqlcl/)
 
-3. **MCP Server enabled in Autonomous Database**:
-   - Add database tag: `ADB$FEATURE` = `{"name":"MCP_SERVER","enable":true}`
-   - MCP endpoint automatically created
 
 ### Running the Agent
 
