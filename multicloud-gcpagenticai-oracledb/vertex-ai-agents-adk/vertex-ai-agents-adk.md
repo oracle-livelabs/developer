@@ -253,11 +253,17 @@ File: `oracle_ai_database_genai_mcp.py`
 
 Key settings:
 ````python
-MCP_ENDPOINT = "https://dataaccess.adb.us-ashburn-1.oraclecloudapps.com/adb/mcp/v1/databases/{database-ocid}"
+# SQLcl path - runs locally as subprocess with -mcp flag
+SQLCL_PATH = "/opt/sqlcl/bin/sql"
 
+# Initialize MCP client with SQLcl
+mcp_client = MCPClient(sqlcl_path, wallet_path)
+await mcp_client.start()  # Starts SQLcl in MCP mode
+
+# Create GenerativeModel with MCP tools
 model = GenerativeModel(
     "gemini-2.5-flash",
-    tools=[Tool.from_google_search_retrieval(), oracle_mcp_tools]
+    tools=[oracle_mcp_tools]
 )
 ````
 
