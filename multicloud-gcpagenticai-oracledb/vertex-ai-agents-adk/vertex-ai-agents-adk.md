@@ -240,6 +240,8 @@ User Query → Vertex AI GenerativeModel
    Execute: SELECT * FROM rag_tab WHERE ROWNUM <= 5
    ````
 
+   ![Option 4 SQLcl MCP Agent](images/option4-sqlclmcp.png "Option 4 SQLcl MCP Agent in action")
+
 ### MCP Server Advantages
 
 - **Full SQL access**: Execute any SQL/PL/SQL
