@@ -1,0 +1,58 @@
+{
+  "workshoptitle": "Integrate Oracle Analytics Cloud with Java Management Service",
+  "include": {},
+  "variables": [],
+  "help": "autonomous_java-dev_us_grp@oracle.com",
+  "tutorials": [
+    {
+      "title": "Introduction",
+      "description": "Overview, objectives, and prerequisites for the workshop.",
+      "filename": "../../introduction/introduction.md"
+    },
+    {
+        "title": "Get Started",
+        "description": "This is the prerequisites for customers using Free Trial and Paid tenancies, and Always Free accounts (if applicable). The title of the lab and the Contents Menu title (the title above) match for Prerequisite lab. This lab is always first.",
+        "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/cloud-login.md"
+    },
+    {
+      "title": "Lab 1: Export JMS Fleet Data to Object Storage",
+      "description": "Create or use an Object Storage bucket and configure JMS Fleet to export Java data for analysis.",
+      "filename": "../../jms-fleet-data-to-object-storage/jms-fleet-data-to-object-storage.md"
+    },
+    {
+      "title": "Lab 2: Export JMS Data to Autonomous AI Database",
+      "description": "Configure JMS to export inventory and usage data to an Autonomous AI Database for analytics.",
+      "filename": "../../jms-data-export-to-autonomous-ai-database/jms-data-export-to-autonomous-ai-database.md"
+    },
+    {
+      "title": "Lab 3: Oracle Analytics Cloud Instance Setup",
+      "description": "Provision and configure Oracle Analytics Cloud (OAC) and connect it with the database containing exported JMS data.",
+      "filename": "../../oac-instance-setup/oac-instance-setup.md"
+    },
+    {
+      "title": "Lab 4: Import JMS OAC Template",
+      "description": "Access the OAC environment and import a pre-built template for Java Management Service analytics.",
+      "filename": "../../import-jms-oac-template/import-jms-oac-template.md"
+    },
+    {
+      "title": "Lab 5: Connect OAC to Autonomous AI Database",
+      "description": "Configure and validate a secure connection from Oracle Analytics Cloud to the Autonomous AI Database.",
+      "filename": "../../connect-oac-to-atp/connect-oac-to-atp.md"
+    },
+    {
+      "title": "Lab 6: Build a Custom Inventory Dashboard",
+      "description": "View and customize dashboards and visualizations in OAC using imported Java inventory data.",
+      "filename": "../../build-custom-inventory-dashboard/build-custom-inventory-dashboard.md"
+    },
+    {
+      "title": "Lab 7: Schedule JMS Data Refresh",
+      "description": "Set up and validate an automated, scheduled export of JMS data from OCI for ongoing analytics.",
+      "filename": "../../schedule-jms-export/schedule-jms-export.md"
+    },
+    {
+      "title": "Need Help?",
+      "description": "Solutions to common problems and directions for receiving Live Help.",
+      "filename": "https://oracle-livelabs.github.io/common/labs/need-help/need-help-freetier.md"
+    }
+  ]
+}
