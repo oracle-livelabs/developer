@@ -496,5 +496,5 @@ You may now proceed to the next lab.
 
 ## Acknowledgements
 * **Authors** - Francis Regalado
-* **Contributors** - Kevin Lazarz, Linda Foinding
+* **Contributors** - Linda Foinding
 * **Last Updated By/Date** - Linda Foinding, September 2025

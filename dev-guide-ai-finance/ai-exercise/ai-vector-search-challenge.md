@@ -360,5 +360,5 @@ Fixing the code allowed SeerEquites to recommend loans based on meaning, not key
 ## Acknowledgements
 
 - **Authors** - Francis Regalado, Database Product Manager
-- **Contributors** - Linda Foinding, Kamryn Vinson, Kevin Lazarz
+- **Contributors** - Linda Foinding,
 - **Last Updated By/Date** - Francis Regalado, April 2025

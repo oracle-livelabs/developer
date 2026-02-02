@@ -662,5 +662,5 @@ You may now proceed to the next lab.
 
 ## Acknowledgements
 * **Authors** - Francis Regalado Database Product Manager
-* **Contributors** - Kevin Lazarz, Linda Foinding, Kamryn Vinson
+* **Contributors** - Linda Foinding
 * **Last Updated By/Date** - Uma Kumar, August 2025

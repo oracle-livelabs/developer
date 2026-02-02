@@ -345,7 +345,7 @@ By completing this challenge, you’ve seen how Oracle 23ai AI Vector Search tra
 
 ## Acknowledgements
 * **Authors** - Francis Regalado, Database Product Manager
-* **Contributors** - Kamryn Vinson, Linda Foinding, Kevin Lazarz
+* **Contributors** - Linda Foinding
 * **Last Updated By/Date** - Francis Regalado, April 2025
 
 

@@ -2,6 +2,11 @@
 
 ## Introduction
 
+<div style="display: flex; gap: 16px;">
+  <img src="../.././images/lab-6/intro-html-finished-product-one.png" style="max-width: 100%; height: auto;" alt="HTML dashboard screenshot one">
+  <img src="../.././images/lab-6/intro-html-finished-product-two.png" style="max-width: 100%; height: auto;" alt="HTML dashboard screenshot two">
+</div>
+
 In this lab, you'll discover how easy it is to instruct an LLM to create a basic HTML dashboard with the help of the SQLcl MCP server.
 
 Estimated Time: 10 minutes
@@ -24,7 +29,7 @@ This lab assumes you have:
 
 <p></p>
 
-> &#9872; **NOTE:** In this lab you must allow your AI Agent to create a new project folder, scaffold an HTML page, and if required, install dependencies (e.g., npm, Node, Express, etc.).
+> &#9872; **Note:** In this lab you must allow your AI Agent to create a new project folder, scaffold an HTML page, and if required, install dependencies (e.g., npm, Node, Express, etc.).
 
 <p></p>
 
@@ -32,66 +37,44 @@ This lab assumes you have:
 
 1. A sample prompt has been provided for you. It can be used as-is in **Plan** mode with your Agent. Or, can use the prompt as a reference while you create your own dashboard. 
 
-   <details>
-      <summary style="color: #0000FF";><kbd style="font-size: 10px;">(click) </kbd><strong>Sample prompt</strong></summary>
-      <p></p>
       <button>
-      <a href="./files/create_an_html_dashboard_prompt.md" target="_blank">Open in new tab</a>
+      <a href="./files/create_an_html_dashboard_prompt.md" target="_blank">Open prompt in new tab</a>
       </button> 
       <button>
-      <a href="./files/create_an_html_dashboard_prompt.md" target="_self" download="create_an_html_dashboard_prompt.md">Download .md file</a>
+      <a href="./files/create_an_html_dashboard_prompt.md" target="_self" download="create_an_html_dashboard_prompt.md">Download prompt as .md file</a>
       </button>
-      <p></p>
-       
-      ```txt
-      <copy>
-      Title: Build a dashboard
 
-      Overview
+> &#9872; **Note:** This Lab is designed to be open-ended, accordingly, your individual results will vary. Feel free to "go off-script" &#9786; !
 
-      1. You will be creating a dynamic and visually stunning html-based dashboard for me. I want to be able to view this dashboard quickly and close it when I'm finished. It doesn't need to "run" all the time.
+2. Whether you use the prompt as-is or use it as a reference; you decide. Make sure to begin your workflow in **Plan** mode in order to have better control and oversight over the entire process. 
 
-      2. This dashboard should not be amended to or included in an existing projects or project folders. Endeavor to rely on as few web frameworks as possible. HTML and standard JavaScript is preferred. 
+   ![plan-mode-example](./images/lab-5/plan-mode-example.png " ")
 
-      Task 1: Connect, familiarize
+3. Click the `+` icon to add files and images to the task. Select the file name you chose for the prompt. 
 
-      1. Provide me a list of available database connections, connect as the chosen connection (user) and describe the HR schema tables and views. If I do not explicitly tell you which connection to use, prompt me with the available connections and have me choose one before proceeding.
+   ![adding-prompt-file-to-cline-task](./images/lab-5/adding-prompt-file-to-cline-task.png " ")
 
-      2. Familiarize yourself with the HR schema's tables and views and their relationships.
+4. If you decide to use the prompt in its entirety, include some prepatory instructions in additon to the prompt file; something like this:
 
-      Task 2: Build the dashboard, my requests
+    ```txt
+    <copy>Review the steps in the included markdown file. Detail the steps you intend to take to achieve the desired outcome. And await for my approval before proceeding.</copy>
+    ```
+   
+   ![including-prepatory-command-context-to-cline-task](./images/lab-5/including-prepatory-command-context-to-cline-task.png " ")
 
-      NOTE: The data for all these charts should be varied and not focus on any particlar department, country, or location. 
-
-      1. I want you to add tool tips to my charts: https://www.chartjs.org/docs/latest/samples/tooltip/content.html
-
-      2. I want you to use table data from the HR schema to create a radar chart https://www.chartjs.org/docs/latest/samples/other-charts/radar.html. I want to be able to select two different employees from two drop down lists, so that I can compare their attributes.
-
-      3. I want a bubble chart to display the count of countries employees reside in. The bubble size should be relative to the number of employees in that country. I want you to create something like in this example: https://www.chartjs.org/docs/latest/samples/other-charts/bubble.html
-
-      4. I want you to show me a breakdown of the employees by their Job ID, on a doughnut chart like this: https://www.chartjs.org/docs/latest/samples/other-charts/doughnut.html
-
-      </copy>
-      ```
-       
-    </details>
-    <p></p>
-
-> &#9872; **NOTE:** This Lab is designed to be open-ended, accordingly, your individual results will vary. Feel free to "go off-script" &#9786; !
-
-2. Whether you use the prompt as-is or use it as a reference; you decide. Make sure to begin your workflow in **Plan** mode in order to have better control and oversight over the entire process. Let the Agent summarize its intent. 
+3. Let the Agent summarize its intent. 
 
    ![1-entering-a-prompt-in-one-go](./images/lab-6/1-entering-a-prompt-in-one-go.png " ")
 
-3. In other labs, you might approve actions in stages. But if you decide to share with the Agent the *entire* prompt, the Agent will review the tasks all at once and execute its plan with minimal intervention. You can of course add suggestions or changes to the proposed plan. And when you are satisfied, allow the Agent to continue.
+4. In other labs, you might approve actions in stages. But if you decide to share with the Agent the *entire* prompt, the Agent will review the tasks all at once and execute its plan with minimal intervention. You can of course add suggestions or changes to the proposed plan. And when you are satisfied, allow the Agent to continue.
 
-4. There are other schemas that have granted access to `PUBLIC` (i.e., all other users); so, you do not need to be connected as the `HR` user (which is what the provided prompt references). You also have access to other schemas: `CO` and `SH`~. You might improvise and create a dashboard using these schemas instead.
+5. There are other schemas that have granted access to `PUBLIC` (i.e., all other users); so, you do not need to be connected as the `HR` user (which is what the provided prompt references). You also have access to other schemas: `CO` and `SH`~. You might improvise and create a dashboard using these schemas instead.
 
-5. Whatever you decide, observe what SQLcl MCP **tools** are used, as well as the SQL or PL/SQL that is executed. In some cases, the Agent may need additonal direction. And the Agent may request switching the mode to **Act**. 
+6. Whatever you decide, observe what SQLcl MCP **tools** are used, as well as the SQL or PL/SQL that is executed. In some cases, the Agent may need additonal direction. And the Agent may request switching the mode to **Act**. 
 
     ![4-asking-to-transition-to-act-with-a-reminder](./images/lab-6/4-asking-to-transition-to-act-with-a-reminder.png " ")
 
-6. Your scenario may differ slightly, depending on the LLM used, but you should continue to see the Agent's intent and summary of intended actions.
+7. Your scenario may differ slightly, depending on the LLM used, but you should continue to see the Agent's intent and summary of intended actions.
 
 ## Task 2: Creating the dashboard files
 
@@ -117,7 +100,7 @@ This lab assumes you have:
 
 ## Learn More
 
-* [MCP Server Introduction](https://blogs.oracle.com/database/post/introducing-mcp-server-for-oracle-database) 
+* [Build a starter HTML dashboard with SQLcl MCP Server and your AI Agent](https://blogs.oracle.com/database/build-a-starter-html-dashboard-with-sqlcl-mcp-server) 
 * [Oracle official MCP Server repository](https://github.com/oracle/mcp/tree/main)
 * [SQLcl MCP Server Docs](https://docs.oracle.com/en/database/oracle/sql-developer-command-line/25.2/sqcug/using-oracle-sqlcl-mcp-server.html)
 
@@ -125,4 +108,6 @@ This lab assumes you have:
 
 * **Author**<ul><li>Chris Hoina, Senior Product Manager, Database Tools</li></ul>
 * **Contributors**<ul><li>Jeff Smith, Distinguished Product Manager, Database Tools</li></ul>
-* **Last Updated By/Date**<ul><li>Chris Hoina, September 2025</li></ul>
+* **Last Updated By/Date**<ul><li>Chris Hoina, January 2026</li></ul>
+
+<!-- WMS ID 11914 -->

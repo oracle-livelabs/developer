@@ -6,11 +6,11 @@ You’re a developer at SeerHolding, supporting multiple SeerGroup divisions suc
 
 Your job: Build a common agentic AI foundation so teams can query data, trigger workflows, and build copilots—without changing existing back-end logic.
 
-This lab connects Oracle MCP to LangChain and exposes it through a Flask web console. It also exposes SQL operations and analytics as AI-discoverable tools—the building blocks for SeerHolding’s enterprise agentic systems. Division-ready examples reference SeerHolding sample schemas so you can run prompts relevant to your domain.
+This lab connects Oracle MCP to LangChain and exposes it through a Flask web console. It also exposes SQL operations and analytics as AI-discoverable tools (the building blocks for SeerHolding’s enterprise agentic systems). Division-ready examples reference SeerHolding sample schemas so you can run prompts relevant to your domain.
 
 ### What is Oracle MCP (Model Context Protocol)?
 
-Oracle MCP is a lightweight protocol and tool server that exposes preapproved database operations as **AI-discoverable tools**. In this lab, SQLcl runs with `-mcp` to register those tools so agents (via LangChain and Cohere Command A hosted on OCI GenAI Service) can discover, call, and trace them with guardrails.
+Oracle MCP is a lightweight protocol and tool server that exposes pre-approved database operations as **AI-discoverable tools**. In this lab, SQLcl runs with `-mcp` to register those tools so agents (via LangChain and Cohere Command A hosted on OCI GenAI Service) can discover, call, and trace them with guardrails.
 
 
 ![mcp](./images/mcp.svg)
@@ -218,7 +218,7 @@ Now you’ll use a simple web console built in Flask to interact with the Oracle
 
 💡 **Developer Insight**
 When you click New Session, you reset the conversation context and prevent older responses from influencing new prompts.
-Meanwhile, the app automatically stores your latest answer in Oracle — allowing future queries to include prior context without extra code.
+Meanwhile, the app automatically stores your latest answer in Oracle allowing future queries to include prior context without extra code.
 
 Here’s what this app wires together:
 
@@ -288,7 +288,7 @@ For developers, this means:
 
 * Security stays enforceable. Each call links to the authenticated user, timestamp, and endpoint.
 
-* Compliance is built-in. You can prove what data was accessed, when, and by which agent — a must for regulated industries.
+* Compliance is built-in. You can prove what data was accessed, when, and by which agent. This is a must for regulated industries.
 
 Logging isn’t an afterthought; it’s how agentic systems at SeerHolding stay explainable, auditable, and production-ready.
 

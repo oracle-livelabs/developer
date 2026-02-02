@@ -75,6 +75,6 @@ You’ve now logged into the cloud-based development environment where all codin
 ✅ You’re ready to start interacting with Oracle Database 23ai  
 
 ## Acknowledgements
-* **Author** - Kamryn Vinson
-* **Contributors** -  Linda Foinding, Francis Regalado, Kevin Lazarz
-* **Last Updated By/Date** - Kamryn Vinson, April 2025
+* **Author** - Linda Foinding
+* **Contributors** -  Linda Foinding, Francis Regalado
+* **Last Updated By/Date** - Linda Foinding, April 2025

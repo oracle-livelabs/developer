@@ -241,5 +241,5 @@ By combining these advanced tools, the application enables faster, smarter decis
 
 ## Acknowledgements
 * **Authors** - Linda Foinding, Francis Regalado
-* **Contributors** - Kevin Lazarz, Eddie Ambler, Ramona Magadan, Mark Nelson, Andy Tael, Anders Swanson, Rahul Tasker
+* **Contributors** - Eddie Ambler, Ramona Magadan, Mark Nelson, Andy Tael, Anders Swanson, Rahul Tasker
 * **Last Updated By/Date** - Linda Foinding, September 2025

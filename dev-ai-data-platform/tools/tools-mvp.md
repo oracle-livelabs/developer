@@ -106,7 +106,7 @@ In summary, you have explored the **integrated tools** within **Oracle Autonomou
 
 ## Acknowledgements
 
-**Authors** - Eddie Ambler, Otis Barr
+**Authors** - Eddie Ambler
 * **Contributors** - Mike Matthews, Marty Gubar
 * **Last Updated By/Date** - 04/21/2025
 

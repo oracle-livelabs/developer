@@ -909,5 +909,5 @@ You may now proceed to the next lab.
 
 ## Acknowledgements
 * **Authors** - Francis Regalado Database Product Manager
-* **Contributors** - Kevin Lazarz, Hanna Rakhsha, Ley Sylvester
+* **Contributors** - Hanna Rakhsha, Ley Sylvester
 * **Last Updated By/Date** - Uma Kumar, October 2025

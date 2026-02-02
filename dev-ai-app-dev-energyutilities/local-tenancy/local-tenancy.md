@@ -428,6 +428,6 @@ You may now **proceed to the next lab**.
 
 ## Acknowledgements
 
-- **Created By/Date** - Linda Foinding, Kevin Lazarz
+- **Created By/Date** - Linda Foinding
 - **Contributor** - Kamryn Vinson
-- **Last Updated By/Date** - Kamryn Vinson, May 2025
+- **Last Updated By/Date** - Linda Foinding, May 2025

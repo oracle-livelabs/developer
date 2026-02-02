@@ -238,6 +238,6 @@ By combining these advanced tools, the application enables faster, smarter decis
 * [Oracle Database 23ai Documentation](https://docs.oracle.com/en/database/oracle/oracle-database/23/)
 
 ## Acknowledgements
-* **Authors** - Kamryn Vinson, Linda Foinding, Francis Regalado
-* **Contributors** - Kevin Lazarz, Eddie Ambler, Ramona Magadan, Mark Nelson, Andy Tael, Anders Swanson, Rahul Tasker
+* **Authors** - Linda Foinding, Francis Regalado
+* **Contributors** - Eddie Ambler, Ramona Magadan, Mark Nelson, Andy Tael, Anders Swanson, Rahul Tasker
 * **Last Updated By/Date** - Linda Foinding, June 2025

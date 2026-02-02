@@ -107,5 +107,5 @@ In this task, we will show you how to view the changes you made in the applicati
 
 ## Acknowledgements
 * **Authors** - Linda Foinding, Francis Regalado
-* **Contributors** - Kamryn Vinson, Eddie Ambler, Kevin Lazarz
-* **Last Updated By/Date** - Kamryn Vinson, April 2025
+* **Contributors** - Eddie Ambler
+* **Last Updated By/Date** - Linda Foinding, April 2025

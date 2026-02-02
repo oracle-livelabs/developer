@@ -25,10 +25,10 @@ In this lab, you will:
 * Create a new compartment
 * Setup policies for Compartment management
 * Setup policies for OCI AI Services
-* Create the Oracle Database
+* Create the Oracle AI Database
 * Create database user, tables, and functions/stored procedures and expose as ORDS Rest endpoints
 * Configure access to Oracle Cloud services including keys and config file
-* Populate the env.properties file with values gathered during setup to provide the application with the information needed to access the Oracle Database and Oracle AI Services.
+* Populate the env.properties file with values gathered during setup to provide the application with the information needed to access the Oracle AI Database and Oracle AI Services.
 
 
 ### Prerequisites
@@ -291,7 +291,7 @@ This lab assumes:
 
 If you have a database instance already, you may skip this task.
 
-   1. From the OCI console select `Oracle Database` and then `Autonmous Transaction Processing`.
+   1. From the OCI console select `Oracle AI Database` and then `Autonmous Transaction Processing`.
       ![select database](./images/databasesetup1.png " ")
    2. Click the `Create Autonomous Database` button.
       ![select create button](./images/databasesetup2.png " ")
@@ -356,7 +356,7 @@ This concludes this lab. You can **proceed now to the next lab**.
  
 ## Acknowledgements
 
-* **Author** - Madhusudhan Rao B M, Principal Product Manager, Oracle Database
-* **Author** - Paul Parkinson, Architect and Developer Advocate, Oracle Database
+* **Author** - Madhusudhan Rao B M, Principal Product Manager, Oracle AI Database
+* **Author** - Paul Parkinson, Architect and Developer Advocate, Oracle AI Database
 
 * **Last Updated By/Date** - 2023.

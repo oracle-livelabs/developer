@@ -355,7 +355,7 @@ Here’s what we’ll do:
 
 ## Task 5: Chunk & Store Recommendations
 
-To handle follow-up questions, you will enhance the system with an AI Guru powered by Oracle 23ai’s Vector Search and Retrieval-Augmented Generation (RAG). The AI Guru will be able to answer questions about the grid interconnection application and provide recommendations based on the data.
+To handle follow-up questions, you will enhance the system with an AI Guru powered by Oracle AI Database’s Vector Search and Retrieval-Augmented Generation (RAG). The AI Guru will be able to answer questions about the grid interconnection application and provide recommendations based on the data.
 
 Before answering questions, we need to prepare the data by vectoring the claims recommendations. This step:
 
@@ -715,4 +715,4 @@ You may now proceed to the next lab.
 
 ## Acknowledgements
 * **Authors** - Ley Sylvester
-* **Contributors** - Kevin Lazarz, Hanna Rakhsha, Francis Regalado, Uma Kumar
+* **Contributors** - Hanna Rakhsha, Francis Regalado, Uma Kumar

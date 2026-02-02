@@ -65,7 +65,7 @@ The **loan application** is built and deployed in a **public subnet** within a *
 
 ## Acknowledgements
 
-- **Authors** - Matt Kowalik, Otis Barr
+- **Authors** - Matt Kowalik
 - **Contributors** - Eddie Ambler, Ramona Magadan
 - **Last Updated By/Date** - TBC
 

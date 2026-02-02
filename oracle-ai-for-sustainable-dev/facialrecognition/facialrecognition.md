@@ -2,14 +2,14 @@
 
 ## Introduction
 
-This lab will show you how to use Oracle Database and OCI Vision AI Face Recognition
+This lab will show you how to use Oracle AI Database and OCI Vision AI Face Recognition
 The use case involves detecting both gaze and head pose estimation for various analysis use case such as rescue, medical, education, etc.
 
 Estimated Time:  3 minutes
 
 ### Objectives
 
--   Use Oracle Database and OCI Vision AI
+-   Use Oracle AI Database and OCI Vision AI
 
 ### Prerequisites
 

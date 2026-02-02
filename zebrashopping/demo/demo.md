@@ -12,7 +12,7 @@ Estimated Time: 15 minutes
 In this lab, you will:
 * Interact with the Zebra Sporting Goods demo to understand how similarity search improves product discovery.
 * Experience the difference between traditional keyword search and AI-powered similarity search from a user’s perspective.
-* Observe how vector-based search results are generated in real time using Oracle Database 23ai.
+* Observe how vector-based search results are generated in real time using Oracle AI Database.
 
 This lab assumes you have:
 * An Oracle Cloud account.
@@ -73,4 +73,4 @@ Are you curious how it is done? Check out the hands-on lab which allows you to a
 
 ## Acknowledgements
 * **Author** - Kevin Lazarz, Senior Manager, Database Product Management
-* **Last Updated By/Date** - Kevin Lazarz, June 2025
+* **Last Updated By/Date** - Kevin Lazarz, November 2025

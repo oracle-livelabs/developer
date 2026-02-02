@@ -30,7 +30,7 @@ This lab assumes you have:
 
 <p></p>
 
-> &#9872; **NOTE:** If participating in a workshop, you may optionally use your the credentials provided to you.
+> &#9872; **Note:** If participating in a workshop, you may optionally use your the credentials provided to you.
 
 ## Task 1: Testing your configuration
 
@@ -70,7 +70,7 @@ When you are done, you will inspect the MCP logging table in your schema to see 
 
    ![cline-2](./images/lab-3/cline-2.png " ")
 
-> &#9872; **NOTE:** Note the tool name, followed by the arguments. In this case, Cline wants to "see" what database connections are available.
+> &#9872; **Note:** Note the tool name, followed by the arguments. In this case, Cline wants to "see" what database connections are available.
 
 5. Select the **Approve** button to allow the Agent to continue its plan. 
 
@@ -101,7 +101,7 @@ When you are done, you will inspect the MCP logging table in your schema to see 
      Now let me run a test query to verify everything is working properly. I'll start with a simple query to check the current database time:
      ```
 
-> &#9872; **NOTE:** LLM training data can vary widely among versions and vendors. Thus, an LLM may generate one of several different types of queries to satisfy our request to 'test' the connection and system. 
+> &#9872; **Note:** LLM training data can vary widely among versions and vendors. Thus, an LLM may generate one of several different types of queries to satisfy our request to 'test' the connection and system. 
 
 &#9888; **Warning:** It is very important that you review the SQL, or update your prompt to include the exact SQL you want the Agent to use.
 
@@ -128,15 +128,39 @@ When you are done, you will inspect the MCP logging table in your schema to see 
 
       ![cline-4](./images/lab-3/cline-4.png " ")
 
-> &#9872; **NOTE:** "Connected_User" will be the username you provided in the previous lab. 
+> &#9872; **Note:** "Connected_User" will be the username you provided in the previous lab. 
 
-## Task 2: Closing the connection
+## Task 3: Exploring Tools
+
+1. Throughout this lab AI Agents will call upon various SQLcl MCP Server Tools. You can try out one of the more popular tools now: `schema-information`
+
+2. Use a similar prompt so the AI Agent can use the correct Tool: 
+
+    ```txt
+    connect as the FREESQL_[your unique ID] user and use the sqlcl schema-information tool
+    ```
+
+   ![prep-command-for-schema-information-tool](./images/lab-2/prep-command-for-schema-information-tool.png " ")
+
+3. If in Plan mode, toggle to Act mode so the AI Agent can proceed. 
+
+   ![requests-to-toggle-to-act-mode-for-schema-information-task](./images/lab-2/requests-to-toggle-to-act-mode-for-schema-information-task.png " ")
+
+4. Approve the connection, and await the results. You should observe the SQLcl MCP Server use the `connect`, `list-connections`, and `schema-information` tools. 
+
+   ![list-connections-and-schema-information-tools-in-us](./images/lab-2/list-connections-and-schema-information-tools-in-use.png " ")
+
+5. Once the task completes, a summary of results will be displayed. Congratulations, you've just used three of the SQLcl MCP Server Tools. 
+
+   ![results-of-schema-information-task](./images/lab-2/results-of-schema-information-task.png " ")
+
+## Task 4: Closing the connection
 
 1. As a best practice, you should prompt Cline to close your database connection when you are finished. Cline will prompt you for permission to use the `disconnect` tool. Click **Approve**.
 
 2. The Cline Agent will finish its task and provide you with a summary steps used to achieve your original task or prompts.
 
-> &#9872; **NOTE:** The Agent may wish to continue running more queries, in an attempt to provide you with more information about your database. It is up to **YOU** to decide. *What do you do?*
+> &#9872; **Note:** The Agent may wish to continue running more queries, in an attempt to provide you with more information about your database. It is up to **YOU** to decide. *What do you do?*
 > - allow it to continue
 > - deny any follow-up requests, or 
 > - provide it with a follow-up prompt to cease operations
@@ -153,7 +177,9 @@ When you are done, you will inspect the MCP logging table in your schema to see 
 
    ![cline-5](./images/lab-3/cline-5.png " ")
 
-7. That's it! You are now ready to start exploring the power of your AI Agent, it's LLMs, and your Oracle Database via the SQLcl MCP Server!
+7. That's it! You are now ready to start exploring the power of your AI Agent, it's LLMs, and your Oracle Database via the SQLcl MCP Server! 
+
+8. You may now [proceed to the next lab](#next).
 
 ## Learn More
 
@@ -165,5 +191,6 @@ When you are done, you will inspect the MCP logging table in your schema to see 
 
 * **Author**<ul><li>Chris Hoina, Senior Product Manager, Database Tools</li></ul>
 * **Contributors**<ul><li>Jeff Smith, Distinguished Product Manager, Database Tools</li></ul>
-* **Last Updated By/Date**<ul><li>Chris Hoina, September 2025</li></ul>
+* **Last Updated By/Date**<ul><li>Chris Hoina, January 2026</li></ul>
 
+<!-- WMS ID 11914 -->

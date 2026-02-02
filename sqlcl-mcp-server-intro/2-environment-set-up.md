@@ -2,214 +2,208 @@
 
 ## Introduction
 
-In this Lab, you will install SQL Developer Extension for VS Code and SQLcl. You will also install Cline for VS Code. 
+In this Lab, you will install SQL Developer for VS Code Extension and SQLcl. You will also (optionally) install Cline for VS Code.
 
 ### Objectives
 
-In this lab, you will:
-* Install SQL Developer Extension for VS Code 
-* Install SQlcl
+* Install SQL Developer for VS Code Extension
+* Install SQLcl
 * Install the Cline for VS Code extension
 * Configure the SQLcl MCP server
 
-### Prerequisites 
+### Prerequisites
 
 This lab assumes you have:
-* Access (via an API Key or other means) to an LLM Provider of your choice
-* Oracle Java 17 or 21 (*recommended*) installed
+* Access to an LLM Provider (via an API Key or similar) 
+* Oracle Java 17 or 21 (recommended) installed
 * A personal computer or access to a workshop-provided workstation
-<!-- * Oracle SSO credentials (existing or workshop provided) -->
-
 * Reviewed the prerequisites of the Introduction lab
 
-<!-- Task 1: Create a FreeSQL account
+<if type="freesql">
 
-1. From a new browser window/tab, navigate to [https://freesql.com/?sqlnet=true](https://freesql.com/?sqlnet=true). 
+## Task 1: Create a FreeSQL account
 
-> **NOTE:** You may need to configure your Windows machine, so the default browser is Chrome (applies to LiveLabs-provided workstations only).
+1. Navigate to FreeSQL.com and sign in or create a new account: <a href="https://freesql.com" target="_blank"><button class="livesql-button" type="button"><emp>Try it now w/ FreeSQL</emp></button></a>
 
-2. Sign in with your existing Oracle account, or create a new account. 
-3. After logging in to to [freesql.com](https://www.freesql.com) and click the <strong>Connect with [rotating language option]</strong>
+   ![click-sign-in-for-freesql](./images/lab-2/click-sign-in-for-freesql.png " ")  
 
-   ![1-clicking-connect-with-button.png](./images/lab-2/1-clicking-connect-with-button.png " ")
- 
-    ![2-copying-your-free-sql-credentials.png](./images/lab-2/2-copying-your-free-sql-credentials.png " ")
+     ![click-create-new-account-button](./images/lab-2/click-create-new-account-button.png " ")  
 
-<p></p>
+     ![creating-an-oracle-account-form](./images/lab-2/creating-an-oracle-account-form.png " ")
 
-4. Take note of your FreeSQL credentials. You will need the following values:
+     ![sign-in-with-existing-or-new-credentials](./images/lab-2/sign-in-with-existing-or-new-credentials.png " ")  
 
-      - Hostname
-      - Port
-      - Service Name
-      - Username
-      - Password
+     ![oracle-mfa-authorize-in-second-device](./images/lab-2/oracle-mfa-authorize-in-second-device.png " ")
 
-<p></p>
+2. Once logged in, click the <strong>Connect with [rotating language option]</strong> button.
 
-> &#9872; **NOTE:** You may click the <strong>&circlearrowleft; Regenerate</strong> button to create a new password. Please save this password, as it will only be displayed once. 
-> 
-> *Your password will **NOT** be saved or displayed across sessions!* -->
+   ![click-connect-with-button](./images/lab-2/click-connect-with-button.png " ")
 
+3. Your new FreeSQL connection details will appear. Your password will appear only once. Copy the SQLcl connect string for future use. If you need a new password, click <strong>&circlearrowleft; Regenerate</strong>.
+
+   ![schema-connection-details-for-freesql](./images/lab-2/schema-connection-details-for-freesql.png " ")  
+  
+    ![regenerating-new-password](./images/lab-2/regenerating-new-password.png " ")
+
+4. If you have the SQL Developer for VS Code Extension installed, take note of your password, click the <strong><span style="display:inline-block; transform: rotate(90deg);">&#8689;</span> Create a SQL Developer for VSCode connection</strong> button, and continue to the next task.
+
+  ![create-a-sql-connection-in-vs-code-button](./images/lab-2/create-a-sql-connection-in-vs-code-button.png " ")  
+
+5. If you do not yet have the SQL Developer for VS Code Extension installed, note your FreeSQL credentials for use in the next steps:
+    - Username
+    - Password
+    - Hostname
+    - Port
+    - Service Name
+
+   ![sqlcl-connection-details-for-later-use](./images/lab-2/sqlcl-connection-details-for-later-use.png " ")
+
+6. You will use this FreeSQL user for the rest of this Lab. Next, you'll create a database connection in SQL Developer for VS Code Extension. 
+
+</if>
+
+<if type="freetier">
 
 ## Task 1: Download the Instance Wallet
 
-1. In this Lab you will use a Cloud Wallet to configure your database connection in Oracle SQL Developer for VS Code (to be completed in a later step). Return to your Autonomous AI database dashboard. 
-
+1. In this Lab, you will use a Cloud Wallet to configure your connection in SQL Developer for VS Code. Return to your Autonomous AI database dashboard.
 2. Click on Database Connection.
 
    ![click-on-database-connection](./images/lab-2/click-on-database-connection.png " ")
 
-3. Ensure Instance wallet is selected for the Wallet Type. Click the Download wallet button.
+3. Ensure Instance wallet is selected, then click Download wallet.
 
    ![instance-wallet-type-download-wallet](./images/lab-2/instance-wallet-type-download-wallet.png " ")
 
-4. Enter a Wallet password, and reconfirm. Then click the Download button.
+4. Enter and reconfirm a wallet password, then click Download.
 
     ![enter-wallet-password-download-button](./images/lab-2/enter-wallet-password-download-button.png " ")
 
-5. Take note of the complete path of where the Cloud Wallet was downloaded to.
+5. Note the complete path of your Cloud Wallet.
 
     ![take-note-of-complete-path-of-wallet](./images/lab-2/take-note-of-complete-path-of-wallet.png " ")
 
-   > &#9872; **NOTE:** You can drag and drop the .zip file into a terminal window to quickly discover the complete path.
+> &#9872; **NOTE:** You can drag and drop the .zip file into a terminal to quickly discover the complete path.
 
 ## Task 2: Create a new REST-enabled database user
 
-1. From your Autonomous AI database's console, click **Database Actions** then **View all database actions**.
+1. In your Autonomous AI database console, click **Database Actions** then **View all database actions**.
 
     ![launching-database-actions-from-console](./images/lab-2/launching-database-actions-from-console.png " ")
 
-2. From the Database Actions LaunchPad, navigate to the **Administration** category. Then select **Database Users**.
+2. From the LaunchPad, go to **Administration** > **Database Users**.
 
    ![admin-category-then-db-users](./images/lab-2/admin-category-then-db-users.png " ")
 
-2. From the User Management dashboard, select the **&plus; Create User** button. 
+3. From the User Management dashboard, select <strong>+ Create User</strong>.
 
    ![select-create-user](./images/lab-2/select-create-user.png " ")
 
-3. A *Create User* dialog will appear. Choose a username and password (that conforms to Oracle database password requirements). Use the Radio button to enable **REST, GraphQL, MongoDB API, and Web access**. The REST Alias should remain unchanged. 
+4. In the create dialog, choose a username and password, enable **REST, GraphQL, MongoDB API, and Web access**.
 
    ![create-user-main-settings](./images/lab-2/create-user-main-settings.png " ")
 
-4. The new user will automatically be granted the `CONNECT` and `RESOURCE` roles. However, you can manually enable the new 26ai `DB_DEVELOPER_ROLE`, as this is an easy way to ensure a Developer user has many of the required roles aimed at the Oracle database developer user. Once complete, click the **Create User** button.
+5. You can enable the `DB_DEVELOPER_ROLE` role to grant developer permissions. Click **Create User** to finish.
 
    ![choose-db-developer-role](./images/lab-2/choose-db-developer-role.png " ")
 
-5. You may retain your user's unique URL for logging into SQL Developer Web (Database Actions). 
+6. Optionally, retain your user's unique SQL Developer Web login URL.
 
    ![dev-user-new-uri-for-db-actions](./images/lab-2/dev-user-new-uri-for-db-actions.png " ")
 
-6. You will use this new developer user for the remainder of this Lab. Next you'll install SQL Developer for VS Code.
-
-<!-- </if>
-
-<if type="green-btn">
-
-## Task 1: Create a FreeSQL account
+7. You will use this DB user for the rest of this Lab.
 
 </if>
 
-<if type="tenancy"> -->
+<if type="freesql">
 
-<!-- ## Task 1: Create a FreeSQL account
+## Task 2: Install SQL Developer for VS Code Extension 
 
-</if> -->
+</if>
 
-## Task 3: Install SQL Developer Extension for VS Code
+> &#8505; **Note:** If you have pre-installed SQL Developer for VS Code or have been redirected from FreeSQL.com you may proceed to Step 3.
 
-<!-- > **NOTE:** For today's session, skip to Step 2 of this task (applies to LiveLabs-provided workstation's only). -->
-
-1. Install SQL Developer Extension for VS Code; there are two installation options:
-
-    - VS Code [Marketplace](https://marketplace.visualstudio.com/items?itemName=Oracle.sql-developer)
-    
-    <!-- <sup id="ref-1"><a href="#fn-1">1</a></sup> -->
-
-    - From within VS Code, navigate to **Extensions**, search for "Oracle," **Oracle SQL Developer Extension for VSCode** will be near the top of the results. Coose <strong>Install</strong>
+1. Install SQL Developer for VS Code Extension:
+     - [VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=Oracle.sql-developer)
+     - Or in VS Code: go to Extensions, search "Oracle", install **Oracle SQL Developer for VS Code Extension**
 
      ![3-vs-code-extensions-first-visit](./images/lab-2/3-vs-code-extensions-first-visit.png " ")
-
      ![4-search-for-sql-developer-web-vscode-extension](./images/lab-2/4-search-for-sql-developer-web-vscode-extension.png " ")
 
-2. Once installed, navigate to SQL Developer Extension for VS Code(located in your Activity Bar)
+2. Once installed, open SQL Developer Extension in your Activity Bar.
 
      ![6-creating-your-first-sql-developer-web-extension-connection](./images/lab-2/6-creating-your-first-sql-developer-web-extension-connection.png " ")
 
-3. Click the <strong>Create Connection</strong> button. Enter your database connection details. Choose **Cloud Wallet** as the Connection Type.
+<if type="freesql">
+
+3. Click <strong>Create Connection</strong> and enter your FreeSQL connection details. 
+
+   ![click-sql-developer-extension-icon-then-create-connection-icon](./images/lab-2/click-sql-developer-extension-icon-then-create-connection-icon.png " ")
+   ![complete-connection-details-in-sql-dev-connection-dialog](./images/lab-2/complete-connection-details-in-sql-dev-connection-dialog.png " ")
+   ![save-password-check](./images/lab-2/save-password-check.png " ")
+   
+> &#9888; **Important:** Check <strong>Save Password</strong>. The SQLcl MCP Server needs this to connect.
+ 
+ <details>
+  <summary><i><b>Redirected from FreeSQL.com?</b></i></summary>
+  
+  1. You may be prompted to allow the application to proceed.
+   
+   ![freesql-connection-details-pre-populated](./images/lab-2/from-freesql-allow-vs-code-to-open.png " ")
+
+  2. Once VS Code has opened, you may need to grant additional permissions to the application. 
+  
+     ![freesql-connection-details-pre-populated](./images/lab-2/allow-vs-code-to-redirect-to-sql-dev-download-link.png " ")
+     ![freesql-connection-details-pre-populated](./images/lab-2/allowing-vs-code-extension-to-install.png " ")
+
+  4. Your FreeSQL credentails are pre-populated for you. Enter in your password, and save your password before saving the connection. 
+  
+      ![freesql-connection-details-pre-populated](./images/lab-2/freesql-connection-details-pre-populated.png " ")
+
+      > &#9888; **Important:** Check <strong>Save Password</strong>. The SQLcl MCP Server needs this to connect.
+
+</details>
+
+</if>
+
+<if type="freetier">
+
+3. Click <strong>Create Connection</strong>, enter your DB details, and select **Cloud Wallet** as Connection Type.
 
    ![click-create-connection-button](./images/lab-2/click-create-connection-button.png " ")
-
    ![entering-in-connection-details](./images/lab-2/entering-in-connection-details.png " ")
 
-   ![save-password-pre-select-cloud-wallet-location](./images/lab-2/save-password-pre-select-cloud-wallet-location.png " ")
+</if>
 
-4.  Select the location of your Wallet `.zip` file. Choose the `_low`
+4. Click **Test** to check the connection. When successful, click **Save**.
 
-    ![selecting-the-wallet-location](./images/lab-2/selecting-the-wallet-location.png " ")
+   ![testing-new-freesql-connection-and-success-message](./images/lab-2/testing-new-freesql-connection-and-success-message.png " ")
+   ![saving-new-freesql-db-connection](./images/lab-2/saving-new-freesql-db-connection.png " ")
 
-    ![choosing-low-service-level](./images/lab-2/choosing-low-service-level.png " ")
+6. Your new connection will appear in the sidebar. Click the connection name.
 
-<p></p>
+   ![expanding-newly-created-freesql-connection-in-sql-dev-vscode](./images/lab-2/expanding-newly-created-freesql-connection-in-sql-dev-vscode.png " ")
 
-> &#9888; **Important:** Make sure you click the checkbox (&check; Save Password) to save your password. Your SQLcl MCP Server relies on this securely saved password to establish a database connection.
+> &phone; **Info:** Clicking a connection establishes a connection and reveals schema objects, links, directories, and other categories.
 
-5. Click the **Test** button to test your connection. When the test succeeds, click the **Save** button. This will save your connection, but not connect.
+7. Next, you'll <if type="freesql">install the Cline for VS Code Extension.</if><if type="freetier">install SQLcl.</if>
 
-   ![testing-the-new-connection](./images/lab-2/testing-the-new-connection.png " ")
-
-   ![saving-the-new-connection](./images/lab-2/saving-the-new-connection.png " ")
-
-6. Your new connection will appear in the Primary Side Bar. Click the connection name. 
-
-   ![new-dev-user-from-connection-explorer](./images/lab-2/new-dev-user-from-connection-explorer.png " ")
-
-   Clicking a connnection name does two things:
-     - Establishes a connection to the target database
-     - Reveals the various database objects, links, directories, and other categories in a schema
-   
-   <!-- <sup id="ref-2"><a href="#fn-2">2</a></sup> -->
-
-7. Continue to the next task to install SQLcl. 
-
-<!-- <br></br>
-**Footnotes**
-<ol>
-  <li id="fn-1">
-    Visit the <a href="https://code.visualstudio.com/docs/setup/setup-overview">Setting up Visual Studio Code</a> reference page for available configuration options and features of VS Code. 
-    <a href="#ref-1" title="Jump back to the reference">&uarr;</a>
-  </li>
-   <li id="fn-2">
-   You can also right-click on a connection name to reveal the context menu. You can connect, disconnect, and edit connections as well as perform other common actions.
-    <a href="#ref-2" title="Jump back to the reference">&uarr;</a>
-  </li>
-</ol> -->
-
-<br></br>
+<if type="freetier">
 
 ## Task 4: Installing SQLcl
 
-<!-- > **NOTE:** For today's session, SQLcl has already been downloaded for you. You can locate the SQLcl product folder on your desktop (applies to LiveLabs-provided workstation's only).  -->
+1. Download and install SQLcl:
+   - With Homebrew (Mac):
+     ```shell
+     brew install --cask sqlcl
+     ```
+   - Or [download directly](https://www.oracle.com/database/sqldeveloper/technologies/sqlcl/download/)
 
-1. Download and install SQLcl. Download two ways: 
+> &#9872; **NOTE:** Use SQLcl version 25.2 or later to use the MCP Server.
 
-    - With a package manager such as Homebrew (Mac):
+2. Note the path to the SQLcl /bin directory. Examples:
 
-         **Homebrew command:** 
-
-         ```shell
-         <copy>
-         brew install --cask sqlcl
-         </copy>
-         ```
-
-    - *or*, directly from the [SQLcl download page](https://www.oracle.com/database/sqldeveloper/technologies/sqlcl/download/)
-
-> &#9872; **NOTE:** You must install SQLcl version 25.2 *or later* in order to use the SQLcl MCP Server.
-
-2. Whether downloading from a package manager, or via a manual download, you will need to locate and note the complete path to the SQLcl /bin directory. Some possible locations: 
-
-  **macOS**
+   **macOS (Homebrew):**
 
     - *Homebrew installation*
   
@@ -223,130 +217,77 @@ This lab assumes you have:
     complete_file_path_to_your_sqlcldirectory/bin
     ```
 
-## Task 5: Installing the Cline for VS Code Extension
 
-1. Return to the VS Code Extensions tab and search for the Cline extension.
+</if>
 
-   ![13-searching-for-cline-vs-code-extension](./images/lab-2/13-searching-for-cline-vs-code-extension.png " ")
+## Task <if type="freesql">3:</if><if type="freetier">5:</if> Installing the Cline for VS Code Extension
 
-2.  Install the extension and navigate to the Cline extension (found in the Activity bar)
+1. In the VS Code Extensions tab, search for the Cline extension.
 
-3. Click the Select Model/API Provider text. Chose your API Provider, enter you API Key, and choose your LLM Model.
+![13-searching-for-cline-vs-code-extension](./images/lab-2/13-searching-for-cline-vs-code-extension.png " ")
 
-    ![clicking-api-provider-text-on-first-accessing-cline](./images/lab-2/clicking-api-provider-text-on-first-accessing-cline.png " ")
+2. Install and open the extension from the Activity bar.
 
-    ![api-provider-selection-api-key-and-llm-model-selection](./images/lab-2/api-provider-selection-api-key-and-llm-model-selection.png " ")
+3. Click the Select Model/API Provider text. Choose the provider, enter your API Key, and pick your LLM model.
 
-<!-- 4. Follow the prompts to enter in a valid API key. In this example Oracle Code Assist is used. In this example the user authenticates with a valid Oracle SSO instead of an API key. 
+ ![clicking-api-provider-text-on-first-accessing-cline](./images/lab-2/clicking-api-provider-text-on-first-accessing-cline.png " ")
+ ![api-provider-selection-api-key-and-llm-model-selection](./images/lab-2/api-provider-selection-api-key-and-llm-model-selection.png " ")
 
-   ![16-example-showing-logging-in-to-oracle-code-assist-api-provider](./images/lab-2/16-example-showing-logging-in-to-oracle-code-assist-api-provider.png " ")
+4. With your provider settings complete, you’re ready to configure the SQLcl MCP Server.
 
-   You can also click the API name at the bottom of the Cline "Tasks" view, to review your API settings.  
-   
-   ![17-successful-authentication-detail-of-the-default-model-used](./images/lab-2/17-clicking-on-mcp-servers-two-icon-navigation-options.png " ") -->
+## Task <if type="freesql">4:</if><if type="freetier">6:</if> SQLcl MCP server
 
-5. With your API Provider details confirmed, you'll now configure the SQLcl MCP Server.
+1. In VS Code, open the Command Palette and begin typing or search for: <kbd>Configure Cline SQLcl MCP</kbd>. Once located, press Enter.
 
-## Task 6: SQLcl MCP server
+  ![configure-cline-sqlcl-mcp-server-option](./images/lab-2/configure-cline-sqlcl-mcp-server-option.png " ")
 
-1. Click the &equiv; MCP Servers icon, then on the "Configure" tab.
-  
-    ![manage-mcp-servers-two-options](./images/lab-2/manage-mcp-servers-two-options.png " ")
+2. Preview the `cline_mcp_settings.json` configuration file. No updates are needed.
 
-   > &#9872; **NOTE:** If selecting the bottom &equiv; icon, click the gear icon in the window that appears, then continue.
-   > 
-   > ![manage-mcp-servers-if-choosing-bottom-icon-select-gear](./images/lab-2/manage-mcp-servers-if-choosing-bottom-icon-select-gear.png " ")
+  ![preview-cline-mcp-settings-json-file](./images/lab-2/preview-cline-mcp-settings-json-file.png " ")
 
-2. Click the <strong>Configure MCP Servers</strong> botton. An empty `cline_mcp_settings.json` MCP Server configuration file will appear.
+3. Save and close the file. You might see an "Updating MCP Servers..." notification followed by "MCP Servers updated..." notification. This is expected.
 
-   ![20-empty-cline-mcp-servers-json-file](./images/lab-2/20-empty-cline-mcp-servers-json-file.png " ")
+  ![21-updating-the-installed-cline-mcp-servers](./images/lab-2/21-updating-the-installed-cline-mcp-servers.png " ")
 
-3. You will replace the empty JSON object with that of your SQLcl `/bin/sql` directory
+4. You should now see `SQLcl - SQL Developer` (the default name) under the Installed MCP Servers tab of the MCP Servers view.
 
-   In this example, we have chosen to install SQLcl via Homebrew. Thus our SQLcl's `/bin` directory is located at (yours may differ, only use this as a reference):  
-  
-      ```sh
-      <copy>
-      opt/homebrew/Caskroom/sqlcl/25.2.2.199.0918/sqlcl/bin/sql
-      </copy>
-      ```
+  ![sqlcl-now-in-installed-servers-tab](./images/lab-2/sqlcl-now-in-installed-servers-tab.png " ")
 
-4. Update your `cline_mcp_settings.json` so it points to the correct location. Use the following `JSON` as template (include all values, modify only your unique path to the `sqlcl/bin/sql` location): 
+4. Click the SQLcl MCP server frame to expand. You’ll see a list of SQLcl MCP Server tools, parameters, and definitions.
 
-    ```JSON
-    <copy>
-    {
-      "mcpServers": {
-        "sqlcl": {
-          "timeout": 60,
-          "type": "stdio",
-          "disabled": false,
-          "command": "[path to your SQLcl installation]/bin/sql",
-          "args": ["-mcp"],
-        }
-      }
-    }
-    </copy>
-    ```
+  ![23-expanding-the-installed-mcp-server-to-reveal-tools](./images/lab-2/23-expanding-the-installed-mcp-server-to-reveal-tools.png " ")
 
-    ![complete-correct-path-to-sqlcl-bin-sql-executable](./images/lab-2/complete-correct-path-to-sqlcl-bin-sql-executable.png " ")
+<p></p>
 
-5. Save your configuration settings. You may notice an "Updating MCP Servers..." message followed by a "MCP Servers updated..." message. This is expected. 
+| Tool                | Purpose                                                        | Parameters                                           | Parameter Definitions                                                                                 |
+|---------------------|----------------------------------------------------------------|------------------------------------------------------|-------------------------------------------------------------------------------------------------------|
+| `list-connections`  | List saved Oracle DB connection names                          | <ul><li>filter</li> <li>mcp_client</li> <li>model</li></ul>| Filter for connection list. Name/version of MCP client. Name/version of language model.               |
+| `connect`           | Interface to connect, confirm, and list schemas if needed      | <ul><li>connection\_name</li><li>mcp\_client</li><li>model</li></ul> | Name/version of MCP client. Name/version of language model.                |
+| `disconnect`        | Disconnect current session and log out                         | <ul><li>mcp_client</li><li>model</li></ul>                | Name/version of MCP client. Name/version of language model.                                            |
+| `run-sqlcl`         | Run SQLcl CLI commands in SQLcl, returns command results       | <ul><li>sqlcl</li><li>mcp_client</li><li>model</li></ul> | The SQLcl command. Name/version of MCP client. Name/version of language model.                        |
+| `run-sql`           | Run SQL queries and return CSV                                 | <ul><li>sql</li> <li>mcp_client</li> <li>model</li></ul>   | The SQL query. Name/version of MCP client. Name/version of language model.                            |
+| `schema-information`| Give insights on the connected schema (metadata analysis)      |<ul><li>model</li></ul>                                   | Name/version of language model.                                                                       |
 
-   ![21-updating-the-installed-cline-mcp-servers](./images/lab-2/21-updating-the-installed-cline-mcp-servers.png " ")
-      
-   You should now see `sqlcl` listed under the Installed MCP Servers tab.
+7. Your SQLcl MCP Server is configured. You may now [proceed to the next lab](#next).
 
-      ![22-focus-on-sqlcl-tools-radio-button](./images/lab-2/22-focus-on-sqlcl-tools-radio-button.png " ")
-
-6. Click anywhere in the SQLcl bar to expand it. You'll see a list of SQLcl MCP Sever "Tools", their parameters, and definitions. The contents of this LiveLab will focus primarily on the available SQLcl MCP Server Tools.
-
-   ![23-expanding-the-installed-mcp-server-to-reveal-tools](./images/lab-2/23-expanding-the-installed-mcp-server-to-reveal-tools.png " ")
-
-    <p></p>
-
-    |Tool | Parameters | Definition |
-    | --- | ---------- | ---------- | 
-    | `list-connections` | <ul><li>`filter`</li><li>`mcp_client`</li><li>`model`</li></ul> | <ul><li>This is the filter that will be used to refine the list of connections</li><li>Specify the name and version of the MCP client implementation being used (e.g. Copilot, Claude, Cline...)</li><li>The name (and version) of the language model being used by the MCP client to process requests (e.g. gpt-4.1, claude-sonnet-4, llama4...</li></ul>|
-    | `connect` | <ul><li>`connection_name`</li><li>`mcp_client`</li><li>`model`</li></ul> | <ul><li>Specify the name and version of the MCP client implementation being used (e.g. Copilot, Claude, Cline...)</li><li>The name (and version) of the language model being used by the MCP client to process requests (e.g. gpt-4.1, claude-sonnet-4, llama4...</li></ul>|
-    | `disconnect` | <ul><li>`mcp_client`</li><li>`model`</li></ul> | <ul><li>The name of the saved connection you want to connect to</li><li>The name (and version) of the language model being used by the MCP client to process requests (e.g. gpt-4.1, claude-sonnet-4, llama4...</li></ul>|
-    | `run-sqlcl` | <ul><li>`sqlcl`</li><li>`mcp_client`</li><li>`model`</li></ul> | <ul><li>The SQLcl command to execute</li><li>Specify the name and version of the MCP client implementation being used (e.g. Copilot, Claude, Cline...)</li><li>The name (and version) of the language model being used by the MCP client to process requests (e.g. gpt-4.1, claude-sonnet-4, llama4...</li></ul>|
-    | `sql` | <ul><li>`sql`</li><li>`mcp_client`</li><li>`model`</li></ul> | <ul><li>The SQL query to execute</li><li>Specify the name and version of the MCP client implementation being used (e.g. Copilot, Claude, Cline...)</li><li>The name (and version) of the language model being used by the MCP client to process requests (e.g. gpt-4.1, claude-sonnet-4, llama4...</li></ul>|
-    {: title="SQLcl MCP Server Tools"}
-
-7. With your SQLcl MCP Server configured, you may now proceed to the next lab.
-
-<!-- <br></br>
-
-**Footnotes**
-<ol>
-  <li id="fn-3">
-    We recommend naming your SQLcl MCP server with characters of the <a href="https://en.wikipedia.org/wiki/Latin-script_alphabet">Latin-script alphabet</a>, in lower case. Some AI Agents may have trouble with mixed-cases.
-    <a href="#ref-3" title="Jump back to the reference">&uarr;</a>
-  </li>
-</ol> -->
-
-## Troubleshooting 
-
-Some helpful tips if you run into trouble:
+## Troubleshooting
 
 |    |    |
-| -- | -- |
-| ***MCP server not visible*** | Check JSON registration path/quotes; confirm <code>sql --mcp</code> runs locally. |
-| ***No connections found*** | Define named connections in VS Code/SQLcl; verify wallet path/tnsnames. |
-{: title="Troubleshooting tips"}
+|----|----|
+| ***MCP server not visible*** | Check JSON path/quotes; confirm <code>sql --mcp</code> runs locally. |
+| ***No connections found*** | Define named connections in VS Code/SQLcl; check wallet path/tnsnames. |
 
 ## Learn More
 
-* [Introducing the Model Context Protocol](https://www.anthropic.com/news/model-context-protocol)
-* [MCP Server Introduction](https://blogs.oracle.com/database/post/introducing-mcp-server-for-oracle-database) 
+* [Model Context Protocol Overview](https://www.anthropic.com/news/model-context-protocol)
+* [Oracle MCP Server Blog](https://blogs.oracle.com/database/post/introducing-mcp-server-for-oracle-database)
 * [Oracle official MCP Server repository](https://github.com/oracle/mcp/tree/main)
 * [SQLcl MCP Server Docs](https://docs.oracle.com/en/database/oracle/sql-developer-command-line/25.2/sqcug/using-oracle-sqlcl-mcp-server.html)
 
 ## Acknowledgements
 
-* **Author**<ul><li>Chris Hoina, Senior Product Manager, Database Tools</li></ul>
-* **Contributors**<ul><li>Jeff Smith, Distinguished Product Manager, Database Tools</li></ul>
-* **Last Updated By/Date**<ul><li>Chris Hoina, September 2025</li></ul>
+* **Author:** Chris Hoina, Senior Product Manager, Database Tools
+* **Contributors:** Jeff Smith, Distinguished Product Manager, Database Tools
+* **Last Updated:** Chris Hoina, January 2026
 
-
+<!-- WMS ID 11914 -->

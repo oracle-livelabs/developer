@@ -97,5 +97,5 @@ A lakehouse combines the flexibility of a data lake with the reliability and spe
 * [Autonomous Database](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html)
 
 ## Acknowledgements
-* **Authors** - Eddie Ambler, Otis Barr
-* **Last Updated By/Date** - Otis Barr, August 2025
+* **Authors** - Eddie Ambler
+* **Last Updated By/Date** - Eddie Ambler, August 2025

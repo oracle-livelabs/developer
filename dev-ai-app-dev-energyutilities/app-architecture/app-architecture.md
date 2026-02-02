@@ -67,6 +67,6 @@ Property graphs simplify working with connected data, such as identifying influe
 
 
 ## Acknowledgements
-* **Authors** - Kamryn Vinson, Linda Foinding, Francis Regalado
-* **Contributors** - Eddie Ambler, Kevin Lazarz
-* **Last Updated By/Date** - Kamryn Vinson, April 2025
+* **Authors** - Linda Foinding, Francis Regalado
+* **Contributors** - Eddie Ambler
+* **Last Updated By/Date** - Linda Foinding, November 2025

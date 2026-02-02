@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This lab will show you how to use Oracle Database Text Search and DBMS_SEARCH to find records from the AI results obtained in the other labs in this workshop.
+This lab will show you how to use Oracle AI Database Text Search and DBMS_SEARCH to find records from the AI results obtained in the other labs in this workshop.
 This allows for the optimal searching of AI text results and processing.
 
 Estimated Time:  3 minutes
@@ -10,7 +10,7 @@ Estimated Time:  3 minutes
 
 ### Objectives
 
--   Use Oracle Database Text Search and DBMS_SEARCH
+-   Use Oracle AI Database Text Search and DBMS_SEARCH
 
 ### Prerequisites
 
@@ -24,7 +24,7 @@ Estimated Time:  3 minutes
    ![enter query](images/search2.png " ")
    3. Notice the results of the query of the AI results obtained in the other labs in this workshop.
    ![view results](images/search3.png " ")
-   4. This should help you understand some syntax and power of Text Searches in the Oracle Database. Examine in the `sql/aiuser-tables-indexes-functions.sql` file how easy it was to create the index to enable this.
+   4. This should help you understand some syntax and power of Text Searches in the Oracle AI Database. Examine in the `sql/aiuser-tables-indexes-functions.sql` file how easy it was to create the index to enable this.
       
       ```text
       <copy>
@@ -42,7 +42,7 @@ Estimated Time:  3 minutes
       </copy>
       ```
 
-   DBMS\_SEARCH is new functionality in 23ai.  It is suggested that you try the [Easy Text Search over Multiple Tables and Views with DBMS_SEARCH in 23ai workshop](https://livelabs.oracle.com/pls/apex/r/dbpm/livelabs/view-workshop?wid=3721) to learn more.
+   DBMS\_SEARCH is new functionality in 26ai.  It is suggested that you try the [Easy Text Search over Multiple Tables and Views with DBMS_SEARCH in 26ai workshop](https://livelabs.oracle.com/pls/apex/r/dbpm/livelabs/view-workshop?wid=3721) to learn more.
 
 You may now **proceed to the next lab.**..
 

@@ -675,5 +675,4 @@ You may now proceed to the next lab.
 
 ## Acknowledgements
 * **Authors** - Francis Regalado, Uma Kumar
-* **Contributors** - Kevin Lazarz
 * **Last Updated By/Date** - Francis Regalado, October 2025
