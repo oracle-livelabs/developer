@@ -353,7 +353,7 @@ This step:
 
     ```python
     <copy>
-question = "What 4th loan would James qualify for?"
+question = "Can we recommend any other loans to James?"
 
 def vectorize_question(q):
         cursor.execute("""
