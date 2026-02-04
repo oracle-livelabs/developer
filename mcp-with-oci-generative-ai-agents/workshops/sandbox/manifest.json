@@ -1,8 +1,6 @@
 {
-    "workshoptitle": "The Title of the Workshop is defined in the manifest",
+    "workshoptitle": "Integrating MCP servers with Oracle Generative AI Agents",
     "help": "livelabs-help-**enterarea**_us@oracle.com",
-    "variables": ["../../variables/variables.json",
-        "../../variables/variables-in-another-file.json"],
     "tutorials": [
         {
             "title": "Get Started",
@@ -15,29 +13,13 @@
             "filename": "../../introduction/introduction.md"
         },
         {
-            "title": "Lab 1: Provision an Instance",
+            "title": "Lab 1: Provision and Configure OCI Generative AI Agent",
             "description": "Labs that follow the introduction are numbered, starting with Lab 1",
             "filename": "../../provision/provision.md"
         },
         {
-            "title": "Lab 2: Setup the Environment",
-            "filename": "../../setup/setup.md"
-        },
-        {
-            "title": "Lab 3: Load Data into an Instance",
-            "filename": "../../data-load/data-load.md"
-        },
-        {
-            "title": "Lab 4: Query Data",
-            "filename": "../../query/query.md"
-        },
-        {
-            "title": "Lab 6: Variables in LiveLabs",
-            "filename": "../../variables/variables.md"
-        },
-        {
-            "title": "Lab 5: Tables in LiveLabs",
-            "filename": "../../tables/tables.md"
+            "title": "Lab 2: Integrate MCP tools with OCI Generative AI Agent",
+            "filename": "../../mcp-with-oci-generative-ai-agents/mcp-with-oci-generative-ai-agents.md"
         },
         {
             "title": "Need Help?",
