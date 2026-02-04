@@ -160,8 +160,8 @@ Copy these files for Lab 2 to a local folder:
 
 ## Learn More
 
-* FastMCP: Running an HTTP/Streamable server and default `/mcp` endpoint
-* OCI Generative AI Agents ADK Quickstart
+* ![FASTMCP](https://gofastmcp.com/deployment/running-server)
+* ![OCI Generative AI Agents ADK Quickstart](https://docs.oracle.com/en-us/iaas/Content/generative-ai-agents/adk/api-reference/quickstart.htm)
 
 ---
 

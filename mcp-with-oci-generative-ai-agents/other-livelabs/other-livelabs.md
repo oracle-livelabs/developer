@@ -1,8 +1,8 @@
 # Other LiveLabs you might like
 
 
-- [Autonomous Database Dedicated](https://livelabs.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=677)
+- [Build Agentic AI Solution with Multi-Tool Capabilities powered by OCI AI Agent Framework](https://livelabs.oracle.com/ords/r/dbpm/livelabs/view-workshop?wid=4186)
 
-- [Manage and Monitor Autonomous Database](https://livelabs.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=553)
+- [Use Meta Llama with OCI Generative AI Agent](https://livelabs.oracle.com/ords/r/dbpm/livelabs/view-workshop?wid=4198)
 
-- [Scaling and Performance in the Autonomous Database](https://livelabs.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=608)
+- [End to End walk through of OCI Generative AI Agent](https://livelabs.oracle.com/ords/r/dbpm/livelabs/view-workshop?wid=4239)
