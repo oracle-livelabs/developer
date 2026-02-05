@@ -341,7 +341,7 @@ print("✅ Task 8 complete: embedded vectors for LOAN_CHUNK rows.")
 
 Now that the recommendations are vectorized, we can process a user’s question:
 
-``` What 4th loan would James qualify for?```
+```Can we recommend any other loans to James?```
 
 This step:
 
