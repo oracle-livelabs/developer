@@ -294,5 +294,5 @@ v22.2.0
 ## Acknowledgements
 
 * **Author** - Madhusudhan Rao, Principal Product Manager, Database 
-* **Contributors** - Kevin Lazarz, Senior Principal Product Manager, Database and Christopher Jones, Senior Principal Product Manager
+* **Contributors** - Database and Christopher Jones, Senior Principal Product Manager
 * **Last Updated By/Date** -  Madhusudhan Rao, 4th Oct 2024.

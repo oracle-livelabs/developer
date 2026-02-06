@@ -50,7 +50,7 @@ In this first example, we'll navigate through this application to show you the f
 
     ![James Smith Decision](./images/james-smith-decision.png " ")
 
-7. In the **Select Final Approved Loan Option** section, the graph options using Oracle 23ai Property Graph are displayed. This is where the loan officer could choose to request additional information in order to provide a slightly better loan. For this scenario, we will continue with selecting one of the suggested loans.
+7. In the **Select Final Approved Loan Option** section, the graph options using Oracle AI Database's Property Graph are displayed. This is where the loan officer could choose to request additional information in order to provide a slightly better loan. For this scenario, we will continue with selecting one of the suggested loans.
 
     ![James Smith Select Final Approved Loan](./images/james-smith-select-final-loan.png " ")
 
@@ -151,7 +151,7 @@ In this first example, we'll navigate through this application to show you the f
 
     ![Evan Burton Decision](./images/evan-burton-decision.png " ")
 
-6. In the **Select Final Approved Loan Option** section, the graph options using Oracle 23ai Property Graph are displayed. This is where the loan officer could choose to request additional information in order to provide a slightly better loan. For this scenario, we will continue with selecting one of the suggested loans.
+6. In the **Select Final Approved Loan Option** section, the graph options using Oracle AI Database's Property Graph are displayed. This is where the loan officer could choose to request additional information in order to provide a slightly better loan. For this scenario, we will continue with selecting one of the suggested loans.
 
     ![Evan Burton Select Final Approved Loan](./images/evan-burton-select-final-loan.png " ")
 
@@ -225,7 +225,7 @@ In this first example, we'll navigate through this application to show you the f
 
     ![Michael Ramos Decision](./images/michael-ramos-decision.png " ")
 
-6. In the **Select Final Approved Loan Option** section, the graph options using Oracle 23ai Property Graph are displayed. This is where the loan officer could choose to request additional information in order to provide a slightly better loan. For this scenario, we will continue with selecting one of the suggested loans.
+6. In the **Select Final Approved Loan Option** section, the graph options using Oracle AI Database's Property Graph are displayed. This is where the loan officer could choose to request additional information in order to provide a slightly better loan. For this scenario, we will continue with selecting one of the suggested loans.
 
     ![Michael Ramon Select Final Approved Loan](./images/michael-ramos-select-final-loan.png " ")
 
@@ -300,5 +300,5 @@ For this task, we will edit a customers details.
 
 ## Acknowledgements
 * **Authors** - Francis Regalado, Eddie Ambler
-* **Contributors** -  Kamryn Vinson, Linda Foinding, Otis Barr
-* **Last Updated By/Date** - Kamryn Vinson, March 2025
+* **Contributors** -  Linda Foinding
+* **Last Updated By/Date** -Linda Foinding, March 2025

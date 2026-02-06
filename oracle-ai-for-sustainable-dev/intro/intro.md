@@ -2,7 +2,7 @@
 
 ## About this Workshop
 
-This workshop will help you understand the technical capabilities and use cases of Oracle Database and All Oracle AI Services
+This workshop will help you understand the technical capabilities and use cases of Oracle AI Database and All Oracle AI Services
  including Vision AI, Speech AI, Language AI, Gen AI, and Oracle Machine Learning
 
 The use cases for demonstrating this functionality are designed around 
@@ -19,7 +19,7 @@ In this workshop, you will learn how to:
 * Provision an Oracle Autonomous Database
 * Create a database user with appropriate privileges, tables, PL/SQL functions (optionally using JavaScript or Java) that use the DMBS_CLOUD package to access various OCI AI services
 * Setup OCI configuration for optional access to OCI AI services from outside the database
-* Use Oracle OCI AI services including Vision AI, Speech AI, Language AI, and Gen AI in a number of different ways including the Oracle Database to achieve an optimal architectural solution
+* Use Oracle OCI AI services including Vision AI, Speech AI, Language AI, and Gen AI in a number of different ways including the Oracle AI Database to achieve an optimal architectural solution
 * Use Oracle advanced text search features to query AI results
 * Exercise the functionality in previous labs from an XR (Augmented/Mixed Reality) headset thus encompassing further use cases
 * Deploy Your Own Chat GPT Model On OCI

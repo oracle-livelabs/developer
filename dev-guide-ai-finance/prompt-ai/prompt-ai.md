@@ -111,5 +111,5 @@ The company has requested an enhancement to the current loan recommendation syst
 
 ## Acknowledgements
 * **Authors** - Linda Foinding, Francis Regalado
-* **Contributors** - Kamryn Vinson, Eddie Ambler, Kevin Lazarz
-* **Last Updated By/Date** - Kamryn Vinson, April 2025
+* **Contributors** - Eddie Ambler
+* **Last Updated By/Date** - Linda Foinding, April 2025

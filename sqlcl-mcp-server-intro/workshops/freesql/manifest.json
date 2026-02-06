@@ -1,0 +1,46 @@
+{
+    "workshoptitle": "Explore the SQLcl MCP Server",
+    "include": {"starter-file.sql":"../../files/starter-file.sql",
+                "sample.json":"../../files/sample.json",
+                "injected-step.md":"../../files/injected-step.md"},
+      "help": "livelabs-help-db_us@oracle.com",
+      "tutorials": [
+        {
+            "title": "Introduction",
+            "description": "SQLcl MCP Server introduction.",
+            "filename": "../../1-introduction.md"
+        },
+        {
+          "title": "Environment set-up",
+          "description": "Installing and configuring necessary dependencies and pre-requisites.",
+          "filename":"../../2-environment-set-up.md",
+          "type": "freesql"
+        },
+         {
+            "title": "Explore SQLcl MCP server",
+            "description": "Setting up a database connection, getting to know Cline and the SQLcl MCP Server.",
+            "filename": "../../3-using-the-mcp-server.md"
+        },
+        {
+          "title": "Build database objects",
+          "description": "Using Agents and the SQLcl MCP Server to create new database objects.",
+          "filename":"../../4-build-database-objects.md"
+        },
+        {
+          "title": "Build a React app",
+          "description": "Building a starter React-based application.",
+          "filename":"../../5-build-a-react-app.md"
+        },
+         {
+            "title": "Build an HTML dashboard",
+            "description": "Building a starter HTML-dashboard.",
+            "filename": "../../6-build-a-html-dashboard.md"
+        },
+        {
+          "title": "Need Help?",
+          "description": "Template to link to Need Help lab at the end of workshop. Change 'CHANGE-ME' in link below to need-help-livelabs.md or need-help-freetier.md",
+          "filename":"https://oracle-livelabs.github.io/common/labs/need-help/need-help-freetier.md"
+        }
+    ]
+}
+

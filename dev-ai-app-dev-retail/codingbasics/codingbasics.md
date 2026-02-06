@@ -492,6 +492,6 @@ This architecture eliminates the need for duplicating data across platforms and 
 In the next lab, you'll build on this foundation to implement Retrieval-Augmented Generation (RAG), create vector embeddings, and generate personalized recommendations with Oracle AI Database and OCI Generative AI.
 
 ## Acknowledgements
-* **Authors** - Linda Foinding, Kevin Lazarz
-* **Contributors** - Francis Regalado, Kamryn Vinson
-* **Last Updated By/Date** - Kamryn Vinson, April 2025
+* **Authors** - Linda Foinding
+* **Contributors** - Francis Regalado
+* **Last Updated By/Date** - Linda Foinding, April 2025

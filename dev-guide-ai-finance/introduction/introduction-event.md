@@ -73,6 +73,6 @@ This lab assumes you have:
 * [Oracle Database 23ai Documentation](https://docs.oracle.com/en/database/oracle/oracle-database/23/)
 
 ## Acknowledgements
-* **Authors** - Linda Foinding, Francis Regalado, Kamryn Vinson
-* **Contributors** - Kevin Lazarz, Eddie Ambler, Ramona Magadan, Rahul Tasker
+* **Authors** - Linda Foinding, Francis Regalado
+* **Contributors** - Eddie Ambler, Ramona Magadan, Rahul Tasker
 * **Last Updated By/Date** - Linda Foinding, July 2025

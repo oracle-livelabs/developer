@@ -4,11 +4,11 @@
 
 In this lab you will use the SQLcl MCP server to create new database tables and objects. You will then populate these tables with sample data, and then ask your AI Agent to call upon the SQLcl MCP Server to create several views of these tables (perhaps to use for future projects). 
 
-<p></p>
+<br>
 
 > &#9872; **NOTE:** A sample prompt has been provided for you. This Lab, screenshots, and expected output are based on the instructions provided in the sample prompt. 
 
-<p></p>
+<br>
 
 Estimated Time: 10 minutes
 
@@ -32,132 +32,22 @@ This lab assumes you have:
 
 1. A sample prompt has been provided for you (see below). This prompt can be used as-is with your Agent while in "Plan" mode. Alternatively you may use it as a reference, while creating your own scenario. 
 
-   <details>
-      <summary style="color: #0000FF";><kbd style="font-size: 10px;">(click) </kbd><strong>Sample prompt</strong></summary>
-      <p></p>
-      <button>
-      <a href="./files/create_data_and_views_prompt.md" target="_blank">Open in new tab</a>
+<button>
+      <a href="./files/create_data_and_views_prompt.md" target="_blank">Open prompt in new tab</a>
       </button> 
       <button>
-      <a href="./files/create_data_and_views_prompt.md" target="_self" download="create_data_and_views_prompt.md">Download .md file</a>
+      <a href="./files/create_data_and_views_prompt.md" target="_self" download="create_data_and_views_prompt.md">Download prompt as .md file</a>
       </button>
-      <p></p>
-    
-      ```txt
-      <copy>
-      Title: Creating mock Schema data, and relevant views
-
-      Task 1: Connecting and creating database objects
-
-         1. Connect as the user. If no user is provided, please prompt me with the available connections, and ask me to choose the one of the connections before proceeding to the next step.
-         2. Create four tables named car, truck, motorcycle, and manufacturer in the chosen schema with the following characteristics (please review the three "NOTE" notes in this section before creating the tables):
-
-         The car, truck, motorcycle tables should include colums such as: 
-            - make
-            - model
-            - year of manufacture
-            - engine displacement
-            - wheelbase
-
-         The manufacturer table should include details such as: 
-            - Doing business as (dba) name
-            - Headquarters location city
-            - Headquarters location country 
-            - Year manufacturer was established/incorporated
-            - Privately held or publiclly held company 
-
-         Create, where applicable for the tables:
-            - indexes
-            - comments
-            - tags
-            - references
-            - primary and foreign keys  
-         
-         NOTE: For all tables, recommend any other additional columns you think may be relevant.
-         
-         NOTE: Ensure that no integrity constraints will be violated. Parent keys, in referred tables, should be verified of their existence before being used in any fictitous data. As an example, make sure the manufacturer_id exists across the various tables.
-
-         NOTE: For simplicity, include Internal Combustion Engine (ICE) vehicles only.
-
-      Task 2: Inserting data
-
-         1. Create 50 unique entries each (in each table) of fictitious, but plausible data for the following tables(please review the two "NOTE" notes in this section before inserting the table data):
-            - car
-            - truck
-            - motorcycle
-
-            NOTE: When performing the inserts, bulk insert the data with syntax such as this:
-            
-               INSERT INTO t(col1, col2, col3) VALUES
-               ('val1_1', 'val1_2', 'val1_3'),
-               ('val2_1', 'val2_2', 'val2_3'),
-               ('val3_1', 'val3_2', 'val3_3');
-            
-
-            NOTE: Take care to not create duplicate data in this table.
-         
-            NOTE: Issue the COMMIT; statement after each INSERT operation, to ensure the data has been saved to its target table.
-
-         2. Create 25 unique entries of fictitious, but plausible data for the following table (please review the two "NOTE" notes in this section before inserting the table data):
-            - manufacturer
-
-            NOTE: When performing the inserts, bulk insert the data with syntax such as this:
-         
-               INSERT INTO t(col1, col2, col3) VALUES
-               ('val1_1', 'val1_2', 'val1_3'),
-               ('val2_1', 'val2_2', 'val2_3'),
-               ('val3_1', 'val3_2', 'val3_3');
-
-            NOTE: Take care to not create duplicate data in this table.
-         
-            NOTE: Issue the COMMIT; statement after each INSERT operation, to ensure the data has been saved to its target table.
-
-         3. After inserting the data show me the first 5 rows of each table individually. If no data exists, then: 
-            - reattempt the inserting of the data in the empty tables, then:
-               - show the first 5 rows of the table, and:
-                  - continue this until we are certain that table data exists in all the tables
-
-      Task 3: Create four unique views
-
-         1. Create the following views for me, according to these specifications: 
-
-            Vehicle Count by Manufacturer: The view shows the count of vehicles (cars, trucks, motorcycles) for each manufacturer. For example, Toyota, Ford, Honda, and Rivian have entries in all three vehicle categories, while Yamaha, Ram, Kawasaki, Harley-Davidson, GMC, and Ducati have entries in one or two categories.
-         
-            Average Engine Displacement by Vehicle Type: The average engine displacement for cars is approximately 1.87 liters, for trucks it's about 4.07 liters, and for motorcycles, it's significantly higher at 43.74 liters.
-
-            Vehicles by Year of Manufacture: The view shows the count of vehicles manufactured each year. The years 2020, 2021, and 2022 have 7, 9, and 10 vehicles respectively.
-
-            Manufacturer Details with Vehicle Counts: This view provides detailed information about each manufacturer along with the count of vehicles they manufacture. For instance, Toyota, Ford, Honda, and Rivian are listed with their respective vehicle counts.
-
-         2. Recommend to me, two additional unique views. These views should:
-               - provide me with unique and/or intersting insights
-               - be useful enough to include in a dashboard, should I want to do this in the future
-               - Feature in-line commenting, so future users can understand what the view is doing
-         3. After reviewing the views you propose I will either approve or ask you to reiterate. 
-         4. Once I am satisfied, I will approve, and you will create these views.
-
-      Task 4: Disconnect
-
-         1. Once we are complete, you will disconnect from the Oracle database.
-      </copy>
-      ```
-
-   </details>
-
-     <p></p>
 
 > &#9872; **NOTE:** This Lab is designed to be open-ended, accordingly, your individual results will vary. Feel free to "go off-script" &#9786;!
 
+2. Review the provided prompt in your IDE or browser. You will notice a single heading and several sub-headings. Each sub-heading will serve as a phase or step for this scenario: 
 
-2. Review the provided prompt in your IDE, browser, or above. You will notice a single heading and several sub-headings. Each sub-heading will serve as a phase or step for this scenario: 
-
-    ```md 
-    # Creating mock Schema data, and relevant views
-    ## Connecting and creating database objects
-    ## Inserting data
-    ## Create four unique views
-    ## Disconnect
-    ```
+    - Creating mock Schema data, and relevant views
+    - Connecting and creating database objects
+    - Inserting data
+    - Create four unique views
+    - Disconnect
 
 3. Next, familiarize yourself with the details the sub-tasks in the included prompt. Notice the descriptive and prescriptive tone. If you decide to improvise, ensure you provide sufficient instruction for your AI Agent. Doing so will help you achieve better, more improved, and predictable outcomes.
 
@@ -165,7 +55,11 @@ This lab assumes you have:
 
 5. Make sure you are in **Plan** mode. As a best practice, remaining in **Plan** mode will allow you to "step through" Cline's execution. Should an AI Agent deviate from your agreed upon plan, you can periodically "nudge" it back on course.
 
+   ![plan-mode-example](./images/lab-4/plan-mode-example.png " ")
+
 6. If you decide to use the prepared `.md` file, click the `+` icon (i.e., Add Files & Images icon) and select the file. 
+
+   ![adding-prompt-file-to-cline-task](./images/lab-4/adding-prompt-file-to-cline-task.png " ")
 
 7. Before continuing, consider adding in some prepatory text to help guide the Agent. An example:
 
@@ -174,6 +68,8 @@ This lab assumes you have:
     Review the steps in the included markdown file. Detail the steps you intend to take to achieve the desired outcome. And await for my approval before proceeding.
     </copy>
     ```
+
+   ![including-prepatory-command-context-to-cline-task](./images/lab-4/including-prepatory-command-context-to-cline-task.png " ")
 
 8. Once satisfied, press <kbd>Enter</kbd> or the arrow icon.
 
@@ -199,7 +95,7 @@ This lab assumes you have:
 
    ![8-approving-the-insert-of-multiple-values](./images/lab-4/8-approving-the-insert-of-multiple-values.png " ")
 
-<p></p>
+<br>
 
 > &#9872; **NOTE:** The LLM model used, network latency, the workstation processor, other ongoing processes might impact your Agent's behavior. You will need to review the request and proceed cautiously. In this example, the request is relatively simple:
 
@@ -230,8 +126,6 @@ This lab assumes you have:
     |Vehicles by Year of Manufacture| The view shows the count of vehicles manufactured each year. The years 2020, 2021, and 2022 have 7, 9, and 10 vehicles respectively.|
     |Manufacturer Details with Vehicle Counts| This view provides detailed information about each manufacturer along with the count of vehicles they manufacture. For instance, Toyota, Ford, Honda, and Rivian are listed with their respective vehicle counts |
     {: title="Views from provided prompt"}
-<!-- 
-   ![17-vehicles-by-year-view.png](./images/lab-4/17-vehicles-by-year-view.png " ") -->
 
 3. If you agree with the proposed views, use them. Otherwise, you can suggest edits to the views and then approve.
 
@@ -264,11 +158,11 @@ This lab assumes you have:
     - SQLcl's MCP Tools are explicitly mentioned
     - There is a clear delineation between your schema and that belonging to another user
 
-3. Once you are satisfied with this Lab, continue to the next one.
+3. Once you are satisfied with this Lab [proceed to the next lab](#next).
 
 ## Learn More
 
-* [MCP Server Introduction](https://blogs.oracle.com/database/post/introducing-mcp-server-for-oracle-database) 
+* [Prompt Engineering: Using the SQLcl MCP Server and your AI agent to build schema objects from scratch](https://blogs.oracle.com/database/prompt-engineering-using-the-sqlcl-mcp-server-and-your-ai-agent-to-build-schema-objects-from-scratch) 
 * [Oracle official MCP Server repository](https://github.com/oracle/mcp/tree/main)
 * [SQLcl MCP Server Docs](https://docs.oracle.com/en/database/oracle/sql-developer-command-line/25.2/sqcug/using-oracle-sqlcl-mcp-server.html)
 
@@ -276,5 +170,6 @@ This lab assumes you have:
 
 * **Author**<ul><li>Chris Hoina, Senior Product Manager, Database Tools</li></ul>
 * **Contributors**<ul><li>Jeff Smith, Distinguished Product Manager, Database Tools</li></ul>
-* **Last Updated By/Date**<ul><li>Chris Hoina, September 2025</li></ul>
+* **Last Updated By/Date**<ul><li>Chris Hoina, January 2026</li></ul>
 
+<!-- WMS ID 11914 -->

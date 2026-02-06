@@ -126,8 +126,8 @@ This lab demonstrated how **Oracle’s Data Platform** empowers both Loan Office
 
 ## Acknowledgements
 
-* **Authors** - Eddie Ambler, Otis Barr, Matt Kowalik
+* **Authors** - Eddie Ambler, Matt Kowalik
 * **Contributors** - Mike Matthews, Marty Gubar, Francis Regalado, Linda Foinding, Kamryn Vinson
-* **Last Updated By/Date** - Kamryn Vinson, June 2025
+* **Last Updated By/Date** -Linda Foinding, June 2025
 
 Copyright (C) Oracle Corporation.

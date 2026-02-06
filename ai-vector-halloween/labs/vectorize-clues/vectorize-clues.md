@@ -1,6 +1,5 @@
 # Lab 2: Vectorizing the Evidence - Transforming Clues into Embeddings
 
-
 ## Introduction
 
 "Data! Data! Data!" Holmes would exclaim. "I cannot make bricks without clay." But what if our clay could be transformed into something more powerful - something that captures not just the words, but the very essence and relationships between our clues?
@@ -206,3 +205,11 @@ Brilliant work, detective! You've successfully vectorized your clues, transformi
 
 In the next lab, we'll see how traditional SQL queries might miss important connections that AI Vector Search can reveal. The mystery deepens, but so do our investigative capabilities!
 
+## Learn More
+
+* [Oracle Autonomous Database 23ai Documentation](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html)
+* [AI Vector Search in Oracle Database](https://docs.oracle.com/en/database/oracle/oracle-database/23/vecse/)
+
+## Acknowledgements
+* **Author** - Pat Shepherd, Senior Principal Database Product Manager
+* **Last Updated By/Date** - Pat Shepherd, October 2025
