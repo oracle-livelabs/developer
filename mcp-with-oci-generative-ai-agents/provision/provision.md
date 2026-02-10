@@ -4,7 +4,7 @@
 
 This lab will walk through the steps of writing access policies to the agent service, deploying and configuring a Generative AI Agent, and deploying a function application. 
 
-Estimated Time: 120 minutes
+Estimated Time: 15 minutes
 
 ### Objectives
 
@@ -58,7 +58,7 @@ In this task, we are going to create a Generative AI agent.
 
     ![create_agent](images/create_agent_button.png)
 
-3. Fill in the Name and select a compartment. CLick next
+3. Fill in the Name and select a compartment. Click next
 
     ![basic_info](images/agent_basic_info.png)
 
@@ -72,7 +72,7 @@ In this task, we are going to create a Generative AI agent.
 
     ![review_create](images/agent_review_create.png)
 
-7. Wait for the agent to be Active. Once Active, open the agent and copy the agent endpoint ocid. The ocid will be used in the next Lab.
+7. Wait for the agent to be Active. This typically takes around 5 minutes (may vary by tenancy and region). Once Active, open the agent and copy the agent endpoint ocid. The ocid will be used in the next Lab.
     ![agent_endpoint](images/agent_endpoint.png)
     ![endpoint_ocid](images/endpoint_ocid.png)
 
