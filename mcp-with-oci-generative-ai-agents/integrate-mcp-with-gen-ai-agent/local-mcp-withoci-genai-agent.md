@@ -20,8 +20,8 @@ In this lab, you will:
 This lab assumes you have:
 * Completed **Lab 1** and copied your **Agent Endpoint OCID**.
 * Python 3.10+ installed locally.
-   - Check installation: `python --version` (macOS/Linux) or `py --version` (Windows).
-   - Install from https://www.python.org/downloads/ or use a package manager (macOS example: `brew install python@3.11`).
+    - Check installation: `python --version` (macOS/Linux) or `py --version` (Windows).
+    - Install from https://www.python.org/downloads/ or use a package manager (macOS example: `brew install python@3.11`).
 * An OCI config profile (commonly `DEFAULT`) with an API key set up at `~/.oci/config`.
 * Network access to the OCI Generative AI Agents endpoint in **us-chicago-1**.
 
@@ -31,13 +31,14 @@ This lab assumes you have:
 
 Copy these files for Lab 2 to a local folder:
 
+* [requirements.txt](./src/requirements.txt) — Python dependencies (oci, mcp, rich, docstring_parser).
 * [weather_server.py](./src/weather_server.py) — an MCP server that exposes two tools:
-   - `get_current_weather(location: str)`
-   - `get_forecast(location: str)`
+    - `get_current_weather(location: str)`
+    - `get_forecast(location: str)`
 * [run_agent.py](./src/run_agent.py) — an ADK client that:
-   - connects to the local MCP server via Streamable HTTP
-   - registers MCP tools with your OCI agent endpoint
-   - runs a sample prompt: "Get forecast for nyc"
+    - connects to the local MCP server via Streamable HTTP
+    - registers MCP tools with your OCI agent endpoint
+    - runs a sample prompt: "Get forecast for nyc"
 
 > **Tip:** The MCP client in `run_agent.py` expects the MCP endpoint to be available at `http://127.0.0.1:8000/mcp`.
 
@@ -160,8 +161,8 @@ Copy these files for Lab 2 to a local folder:
 
 ## Learn More
 
-* ![FASTMCP](https://gofastmcp.com/deployment/running-server)
-* ![OCI Generative AI Agents ADK Quickstart](https://docs.oracle.com/en-us/iaas/Content/generative-ai-agents/adk/api-reference/quickstart.htm)
+* [FASTMCP](https://gofastmcp.com/deployment/running-server)
+* [OCI Generative AI Agents ADK Quickstart](https://docs.oracle.com/en-us/iaas/Content/generative-ai-agents/adk/api-reference/quickstart.htm)
 
 ---
 
