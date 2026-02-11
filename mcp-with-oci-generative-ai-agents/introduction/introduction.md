@@ -11,6 +11,7 @@ Estimated Workshop Time: 2 hours
 ### Objectives
 
 In this workshop, you will learn how to:
+
 * Set up a Python environment and deploy a local MCP server with custom tools
 * Create and configure an OCI Generative AI agent
 * Integrate the MCP server as a toolkit for the OCI GenAI agent

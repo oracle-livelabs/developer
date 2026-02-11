@@ -1,6 +1,6 @@
 {
-    "workshoptitle": "Integrating MCP servers with Oracle Generative AI Agents",
-    "help": "livelabs-help-**enterarea**_us@oracle.com",
+    "workshoptitle": "Integrate MCP servers with Oracle Generative AI Agents",
+    "help": "livelabs-help-aiservices_us@oracle.com",
     "tutorials": [
         {
             "title": "Get Started",
@@ -18,8 +18,8 @@
             "filename": "../../provision/provision.md"
         },
         {
-            "title": "Lab 2: Integrate MCP tools with OCI Generative AI Agent",
-            "filename": "../../integrate-mcp-with-gen-ai-agent/local-mcp-withoci-genai-agent.md"
+            "title": "Lab 2: Integrate a Local MCP Server with OCI Generative AI Agents",
+            "filename": "../../local-mcp-with-oci-genai-agent/local-mcp-with-oci-genai-agent.md"
         },
         {
             "title": "Need Help?",

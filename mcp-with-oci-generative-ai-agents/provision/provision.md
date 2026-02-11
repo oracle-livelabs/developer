@@ -1,7 +1,5 @@
 # Lab 1: Provision and Configure GenAI Agent
 
-## Introduction
-
 This lab will walk through the steps of writing access policies to the agent service, deploying and configuring a Generative AI Agent, and deploying a function application. 
 
 Estimated Time: 15 minutes
@@ -9,6 +7,7 @@ Estimated Time: 15 minutes
 ### Objectives
 
 In this lab, you will:
+
 * Make sure that our tenancy is subscribed to the Chicago region.
 * Create the required permissions for us to be able to use the service in our tenancy.
 * Provision GenAI Agent
@@ -48,33 +47,36 @@ If your tenancy is already subscribed to the Chicago region, please skip to the 
 The operation might take a few minutes to complete. When complete, the new region will appear on the **US Midwest (Chicago)** will appear in the **Regions** drop down menu on the main screen.
 
 ## Task 2: Create Generative AI Agent
+
 In this task, we are going to create a Generative AI agent.
 
 1. Open the Generative AI Agent page by from the left menu.
 
-    ![menu](images/menu_gen_ai_agent.png)
+    ![OCI console left menu highlighting Generative AI Agents option](images/menu_gen_ai_agent.png)
 
 2. Then click on “Create agent” button
 
-    ![create_agent](images/create_agent_button.png)
+    ![Create Agent button on the Generative AI Agents page](images/create_agent_button.png)
 
 3. Fill in the Name and select a compartment. Click next
 
-    ![basic_info](images/agent_basic_info.png)
+    ![Agent basic information form with Name and Compartment fields](images/agent_basic_info.png)
 
 4. Click next on the Add Tool page. We will not be adding any tool from here.
 
 5. On the "Setup agent endpoints" keep the defaults.
 
-    ![setup_endpoint](images/setup_agent_endpoint.png)
+    ![Agent endpoint setup configuration page with default settings](images/setup_agent_endpoint.png)
 
 6. Review and click "Create Agent" . Read and Accept the "Llama 3 License Agreement and Acceptable Use Policy". 
 
-    ![review_create](images/agent_review_create.png)
+    ![Agent creation review page with license agreement acceptance](images/agent_review_create.png)
 
 7. Wait for the agent to be Active. This typically takes around 5 minutes (may vary by tenancy and region). Once Active, open the agent and copy the agent endpoint ocid. The ocid will be used in the next Lab.
-    ![agent_endpoint](images/agent_endpoint.png)
-    ![endpoint_ocid](images/endpoint_ocid.png)
+    ![Active Generative AI Agent with status display](images/agent_endpoint.png)
+    ![Agent endpoint OCID value to be copied for next lab](images/endpoint_ocid.png)
+
+8. You may now **proceed to the next lab**
 
 
 ## Learn More

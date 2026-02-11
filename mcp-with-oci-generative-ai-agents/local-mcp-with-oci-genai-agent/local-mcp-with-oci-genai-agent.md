@@ -1,4 +1,4 @@
-# Lab 2: Run a Local MCP Server and Expose It to an OCI GenAI Agent
+# Lab 2: Integrate a Local MCP Server with OCI Generative AI Agents
 
 ## Introduction
 
@@ -49,22 +49,28 @@ Copy these files for Lab 2 to a local folder:
 1. Create and activate a virtual environment:
 
    ```bash
+   <copy>
    python3 -m venv .venv
    source .venv/bin/activate
+   </copy>
    ```
 
    On Windows (PowerShell):
 
    ```powershell
+   <copy>
    py -m venv .venv
    .\.venv\Scripts\Activate.ps1
+   </copy>
    ```
 
 2. Install dependencies:
 
    ```bash
+   <copy>
    pip install --upgrade pip
    pip install -r src/requirements.txt
+   </copy>
    ```
 
 > If your environment uses a different package name/version for the OCI ADK, install the ADK package your instructor provided for Lab 1/2. 
@@ -76,7 +82,9 @@ Copy these files for Lab 2 to a local folder:
 1. From the folder containing `weather_server.py`, start the server:
 
    ```bash
+   <copy>
    python weather_server.py
+   </copy>
    ```
 
 2. Confirm the server is listening.
@@ -93,7 +101,9 @@ Copy these files for Lab 2 to a local folder:
    * Or run:
 
    ```bash
+   <copy>
    curl -i http://127.0.0.1:8000/mcp
+   </copy>
    ```
 
 > **Note:** If port **8000** is in use, stop the conflicting process or modify the server to run on another port and update `run_agent.py` accordingly.
@@ -105,7 +115,9 @@ Copy these files for Lab 2 to a local folder:
 1. Open `run_agent.py` and locate:
 
    ```python
+   <copy>
    agent_endpoint_id="ocid1.genaiagentendpoint...."
+   </copy>
    ```
 
 2. Replace the value with the **Agent Endpoint OCID** you copied at the end of Lab 1.
@@ -113,8 +125,10 @@ Copy these files for Lab 2 to a local folder:
 3. Confirm region and profile match your OCI configuration:
 
    ```python
+   <copy>
    profile="DEFAULT"
    region="us-chicago-1"
+   </copy>
    ```
 
 ---
@@ -124,13 +138,17 @@ Copy these files for Lab 2 to a local folder:
 1. In a **new terminal** (leave the MCP server running), activate your venv again if needed:
 
    ```bash
+   <copy>
    source .venv/bin/activate
+   </copy>
    ```
 
 2. Run the agent client:
 
    ```bash
+   <copy>
    python run_agent.py
+   </copy>
    ```
 
 3. Expected result:
