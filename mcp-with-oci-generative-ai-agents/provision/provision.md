@@ -32,17 +32,17 @@ If your tenancy is already subscribed to the Chicago region, please skip to the 
 
 1. Review the list of regions your tenancy is subscribed in. If you find the **US Midwest (Chicago)** region in the list, please skip to the next task.
 
-1. Click the Manage Regions link at the bottom of the list.
+2. Click the Manage Regions link at the bottom of the list.
 
-1. In the **Infrastructure Regions** list, locate the **US Midwest (Chicago)** region and click the subscribe button to it's right.
+3. In the **Infrastructure Regions** list, locate the **US Midwest (Chicago)** region.
 
   > **Note:** When you subscribe to a region, you cannot unsubscribe from it.
 
   ![Screenshot showing the region subscription page](./images/infrastructure-regions.png)
 
-1. Click the **Subscribe** button at the bottom of the **Subscribe to New Region** dialog.
+4. Select the **Actions** menu (three dots) and then select **Subscribe**.
+  > **Note:** It could take several minutes to activate your tenancy in the new region.
 
-  ![Screenshot showing the new region subscription approval dialog](./images/subscribe-new-region-dialog.png)
 
 The operation might take a few minutes to complete. When complete, the new region will appear on the **US Midwest (Chicago)** will appear in the **Regions** drop down menu on the main screen.
 
