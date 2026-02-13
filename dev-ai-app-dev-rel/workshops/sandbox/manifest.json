@@ -8,34 +8,29 @@
             "filename": "../../introduction/introduction.md"
         },
         {
-            "title": "Lab 1: Run the Demo",
-            "description": "Labs that follow the introduction are numbered, starting with Lab 1",
-            "filename": "../../user-story/user-story.md"
-        },
-        {
-            "title": "Lab 2: Connect to the Development Environment",
+            "title": "Lab 1: Connect to the Development Environment",
             "description": "This is a step-by-step guide showcasing how the demo instance is navigated",
-            "filename": "https://oracle-livelabs.github.io/developer/dev-ai-app-dev-retail/connect-to-env/connect-to-env.md"
+            "filename": "../../connect-to-env/connect-to-env.md"
         },
         {
-            "title": "Lab 3: Coding Basics on Oracle AI Database",
+            "title": "Lab 2: Coding Basics on Oracle AI Database",
             "description": "Some coding examples",
             "filename": "../../codingbasics/codingbasics.md"
         },
         {
-            "title": "Lab 4: Step by Step - Implement RAG with Oracle AI Database",
+            "title": "Lab 3: Step by Step - Implement RAG with Oracle AI Database",
             "description": "This is a step-by-step guide showcasing how the demo instance is navigated",
             "filename": "../../build/build.md"
         },
         {
-            "title": "Lab 5: Build Agentic AI with Oracle MCP",
-            "description": "This is a step-by-step guide showcasing how the demo instance is navigated",
+            "title": "Lab 4: Build Agentic AI",
+            "description": "This is a step-by-step guide showcasing how the demo instance is created",
             "filename": "../../oraclemcp/oraclemcp.md"
         },
         {
-            "title": "Lab 6: Interact with Oracle AI Database through an MCP Server",
-            "description": "This is a step-by-step guide showcasing how the demo instance is navigated",
-            "filename": "../../mcp/mcp.md"
+            "title": "Quiz",
+            "description": "Test your knowledge of RAG and agentic applications",
+            "filename": "../../quiz/quiz.md"
         },
         {
             "title": "Need Help?",

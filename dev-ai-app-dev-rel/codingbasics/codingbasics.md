@@ -1,7 +1,6 @@
-# Coding Basics on Oracle AI Database
+# Coding basics for this lab
 
 ## Introduction
-
 
 At Seer Holdings, developers are building a next-generation approval system that needs to combine enterprise-grade data governance with modern AI capabilities. But before GenAI or vector search can be applied, one thing must be true:
 
@@ -10,12 +9,12 @@ At Seer Holdings, developers are building a next-generation approval system that
 In this lab, you’ll act as a developer on the Seer Holdings data team. Your job is to build the foundational logic that powers the application’s intelligence layer. That means:
 
 - Creating and querying relational tables that represent real customer data using Python
-- Converting that data into **JSON documents** using **JSON Duality Views**
-- Using **MongoDB-style syntax** via Oracle’s Mongo API to interact with the same data — without needing to duplicate or move it
+- Project that data into **JSON documents** using **JSON Duality Views**
+- Using **MongoDB-style syntax** via Oracle’s Mongo API to interact with the same data — without needing to duplicate or move it to another system
 
-These capabilities make Oracle AI Database a **developer-friendly**, **multi-model platform**. You’ll write less glue code, eliminate data movement, and stay focused on the real task: powering intelligent approval workflows.
+These capabilities help you write less glue code, eliminate data movement/sync, and stay focused on the real task: powering intelligent workflows and providing value.
 
-> 💡 Everything you implement here becomes the data foundation for Retrieval-Augmented Generation (RAG) and AI Vector Search in upcoming labs.
+> 💡 Everything you implement here becomes the data foundation for Retrieval-Augmented Generation (RAG), AI Vector Search, and AI agents in upcoming labs.
 
 Estimated Time: 30 minutes
 
@@ -49,7 +48,7 @@ All of the coding examples will be executed in a new Jupyter Notebook.
 
 ## Task 2: Connect to the database using Python
 
-In this first task, you will connect to an Oracle AI Database instance using Oracle's Python driver, `oracledb`. `oracledb` is available in PyPi (`pip install oracledb`) and supports in its latest version all of the advanced features of the Oracle Database, including JSON and VECTOR.
+In this first task, you will connect to an Oracle AI Database instance using Oracle's Python driver, `oracledb`. `oracledb` is available in PyPi (`pip install oracledb`) and in its latest version, supports all of the advanced features of the Oracle Database, including JSON, VECTOR, and more.
 
 1. In the newly created Jupyter Notebook, copy and paste the following code block into an empty cell. This code block imports the `oracledb` Python driver and other libraries that help us to securely read credentials from the environment variables.
 
@@ -176,7 +175,7 @@ Now, that we have established a connection, we can start creating our tables and
     </copy>
     ```
 
-5. As before, we want to create a function that allows us to query our new table. We will use a function called `query_customer`. Copy & paste the following code into a **new cell** and execute it.
+5. As before, we want to create a function that allows us to query our new table. We will use a function called `query_customer`. Copy & paste the following code into a **new cell** and execute it. Remember to use SHIFT + ENTER keys.
 
     ```python
     <copy>
@@ -194,13 +193,13 @@ Now, that we have established a connection, we can start creating our tables and
 
 ### **Task Summary**
 
-Congratulations! You successfully created two new tables with sample data using Python and Oracle Database.  
+Nice job. You successfully created two new tables with sample data using Python and Oracle Database.  
 
-You also created a function that allows you to query your new table which we will use in some of the following tasks
+You also created a function that allows you to query your new table which we'll use in some of the following tasks
 
 ## Task 4: Create a JSON Duality View 
 
-Next, we want to explore how we can use a **JSON Duality View** to query our new table. A JSON Duality View allows us to interact with data as JSON objects, i.e., data is stored as documents. Unlike a regular view, we can also update data in a JSON Duality View. Any updates will be reflected in our original relational tables. We will create a JSON Duality View using our newly created tables `customers_demo` and `orders_demo`.
+Next, let's explore how we can use a **JSON Duality View** to query our new table. A JSON Duality View allows us to interact with data as JSON objects, i.e., data is stored as documents. Unlike a regular view, we can also update data in a JSON Duality View. Any updates will be reflected in our original relational tables. We will create a JSON Duality View using our newly created tables `customers_demo` and `orders_demo`. We are joining these two tables as we need the customer orders with the customer data. If this was two collections in a document database, this would be two seperate queries to the database and word in your app, or it'd mean duplicate data, depending on how you modeled your data in that database.
 
 1. Before we create the **JSON Duality View**, we need to add some **constraints** to our new tables. Copy & paste the following code into a **new cell** and run it.
 
@@ -294,17 +293,17 @@ Next, we want to explore how we can use a **JSON Duality View** to query our new
 
     ![dv](./images/task4-1.png " ")
 
-    You notice that our code has some significant changes. We are now passing a parameter into our query, and we are also formatting the output of our query. Let's have a closer look:
+    You notice that our code has some significant changes. We are now passing a parameter into our query, and we are formatting the output of our query. Let's have a closer look:
 
     🔴 **`import json`** - This is a Python module that allows us to work with JSON. Remember: JSON Duality Views present data in document format, i.e., JSON.
 
     🔴 **`query_dv(first_name)`** - This is a function that takes in a parameter and returns the result of our query. We are passing in `first_name` as a parameter, which we can use to filter our results.
 
-    🔴 **`...WHERE JSON_EXISTS...`** - This is an Oracle AI Database function called `JSON_EXISTS`, which allows us to check if a specific key exists in a JSON object. In this case, we are checking if the `first_name` key exists in our JSON document. Essentially, `JSON_EXISTS` function allows use to use SQL syntax to check if a key exists in a JSON object.
+    🔴 **`...WHERE JSON_EXISTS...`** - This is an Oracle AI Database function called `JSON_EXISTS`, which allows us to check if a specific key exists in a JSON object. In this case, we are checking if the `first_name` key exists in our JSON document. Essentially, `JSON_EXISTS` function enables us to use SQL syntax to check if a key exists in a JSON object. Remember, unlike rows in a relational table, JSON documents in the same collection don't all have to have the same shape.
 
     🔴 **`json.dumps(raw_json, default=str, indent=4)`** - This is a Python function that formats our output. We are passing in the `raw_json` variable as an argument and formatting it with the `default=str` parameter.
 
-    🔴 **`query_dv("Dan")`** - Here we are calling our query function again, but this time passing in the string `"Dan"` as a parameter. This will return all rows where `first_name` is equal to `"Dan"`. The result is displayed in JSON format. 
+    🔴 **`query_dv("Dan")`** - Here we are calling our query function again, but this time passing in the string `"Dan"` as a parameter. This will return all rows where `first_name` is equal to `"Dan"`. The result is displayed in JSON format, since it's coming from a JSON Duality View.
 
 >**Note:** Notice that our output is a nicely formatted document that now not only includes our customer data but also all orders for that customer.
 
@@ -493,5 +492,5 @@ In the next lab, you'll build on this foundation to implement Retrieval-Augmente
 
 ## Acknowledgements
 * **Authors** - Linda Foinding
-* **Contributors** - Francis Regalado
-* **Last Updated By/Date** - Linda Foinding, April 2025
+* **Contributors** - Francis Regalado, Kirk Kirkconnell
+* **Last Updated By/Date** - Kirk Kirkconnell, February 2026

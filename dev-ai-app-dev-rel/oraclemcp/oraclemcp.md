@@ -1,4 +1,4 @@
-# Build Agentic AI with Oracle MCP
+# Build Agentic AI apps using LangChain and Oracle MCP
 
 ## Introduction
 
@@ -10,12 +10,12 @@ This lab connects Oracle MCP to LangChain and exposes it through a Flask web con
 
 ### What is Oracle MCP (Model Context Protocol)?
 
-Oracle MCP is a lightweight protocol and tool server that exposes pre-approved database operations as **AI-discoverable tools**. In this lab, SQLcl runs with `-mcp` to register those tools so agents (via LangChain and Cohere Command A hosted on OCI GenAI Service) can discover, call, and trace them with guardrails.
+Oracle MCP is a lightweight protocol and tool server that exposes pre-approved database operations as **AI-discoverable tools**. In this lab, SQLcl runs with `-mcp` to register those tools so agents (via LangChain and Cohere Command A hosted on OCI GenAI Service) can discover, call, and trace them **with guardrails**.
 
 
 ![mcp](./images/mcp.svg)
 
-**What business challenges it helps address**
+**What business challenges it helps address:**
 
 - **Slow delivery across divisions**: Publish a shared, vetted tool catalog once; reuse it in SeerEquities, SeerRetail, SeerEnergy, and beyond.
 
@@ -159,7 +159,7 @@ Why Does It Matter?
 
     ![response2](./images/agentresponse2.png =50%x*)
 
-💡**Developer Insight**
+💡**Developer insight**
 For SeerHolding’s development teams, reasoning agents add more than verbosity. They provide explainability.
 When you deploy AI copilots with Oracle MCP for any of SeerHolding's divisions, you can trace each database interaction step by step.
 That visibility helps you debug complex chains, document behavior for audits, and build trust in production AI systems.
@@ -169,7 +169,7 @@ That visibility helps you debug complex chains, document behavior for audits, an
 You’ve successfully run a reasoning-enabled MCP agent.
 Compare its detailed reasoning flow with the faster agent from Task 2 to see how planning affects performance and interpretability.
 
-## Task 4: Interact Through a Web Console
+## Task 4: Interact through a web console
 
 Now you’ll use a simple web console built in Flask to interact with the Oracle MCP agent through your browser.
 
@@ -216,7 +216,7 @@ Now you’ll use a simple web console built in Flask to interact with the Oracle
     ![result1](./images/result1.png)
 
 
-💡 **Developer Insight**
+💡 **Developer insight**
 When you click New Session, you reset the conversation context and prevent older responses from influencing new prompts.
 Meanwhile, the app automatically stores your latest answer in Oracle allowing future queries to include prior context without extra code.
 
@@ -231,7 +231,7 @@ Here’s what this app wires together:
 Together, these layers turn a standard Flask app into an agentic web interface — one that remembers, reasons, and interacts with Oracle AI Database in natural language.
 
 
-## Task 5: Create and Modify Database Objects via MCP
+## Task 5: Create and modify database objects via MCP
 
 1. Click **New Session** and run:
 
@@ -248,9 +248,10 @@ Together, these layers turn a standard Flask app into an agentic web interface �
 
 
 The agent translates your request into SQL, executes it through MCP, and confirms creation.
+
 This shows how developers can delegate common schema tasks to secure, explainable AI assistants without writing SQL manually.
 
-## Task 6: Explore Logging and Security
+## Task 6: Explore logging and security
 
 Oracle MCP logs every interaction automatically. You can review the logs directly in the database.
 
@@ -276,8 +277,7 @@ Oracle MCP logs every interaction automatically. You can review the logs directl
 
 You’ll see a record of each MCP action with timestamps and user IDs — ideal for auditing and traceability.
 
-
-💡 **Developer Insight**
+💡 **Developer insight**
 
 Every MCP call leaves a trace.
 Oracle MCP automatically logs the tools used, parameters passed, and responses generated, creating a transparent audit trail for every AI-driven database action.
@@ -309,7 +309,7 @@ You learned how to:
 * Leverage OCI GenAI for reasoning and summarization
 
 
-**What This Means for SeerHolding Developers**
+**What this means for SeerHolding developers**
 
 * Build once, reuse everywhere: expose SQL scripts or APIs as shared MCP tools for all SeerGroup divisions.
 
@@ -330,4 +330,4 @@ You’ve laid the foundation for SeerHolding’s agentic AI platform: turning Or
 
 ## Acknowledgements
 * **Authors** -  Kevin Lazarz
-* **Last Updated By/Date** - Kevin Lazarz, October 2025
+* **Last Updated By/Date** - Kirk Kirkconnell, February 2026

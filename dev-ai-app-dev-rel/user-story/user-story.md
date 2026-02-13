@@ -12,13 +12,15 @@ Estimated Lab Time: 30 minutes
 
 In this lab, you will:
 
-* Review how the Seer Retail return authorization app incorporates the use of AI Vector Search, Graph analytics, and other converged database features, all without requiring complex data movement or separate systems.
+* Review how the Seer Retail return authorization app incorporates the use of AI Vector Search, Graph analytics, and other converged database features, all without requiring complex data movement or separate systems. Once you see how this app functions, in subsequent labs, you'll be hands-on to develop this same type of functionality.
 
 ### Prerequisites
 
 This lab assumes you have:
 
 * An Oracle account to submit your LiveLabs Sandbox reservation.
+
+**Note:** this is not an OCI account, but one from https://signon.oracle.com/.
 
 ## Task 1: Launch the application
 
@@ -46,7 +48,7 @@ In this first example, you will use the application to authorize a return for a 
 
     ![David Williams Details Page](./images/david-williams-details.png =50%x*)
 
-3. At the bottom of David William’s profile, you will find **AI Guru**—a virtual Return‑Authorization Specialist who guides attendees through every step of the AI‑driven returns portal. AI Guru highlights how AI Vector Search compares each request to millions of past returns, and translates risk scores into plain language. It's friendly tips humanize concepts like graph‑based customer‑lifetime‑value analysis and RAG‑generated policy explanations, so users of any technical level can confidently approve, pend, or deny a return.
+3. At the bottom of David William’s profile, you will find **AI Guru**—a virtual Return‑Authorization Specialist who guides attendees through every step of the AI‑driven returns portal. AI Guru highlights how AI Vector Search compares each request to millions of past returns, and translates risk scores into plain language. It's friendly tips humanize concepts like graph‑based customer‑lifetime‑value analysis and RAG‑generated policy explanations, so users of any technical level can confidently set the requested return to either approve, pending , or deny.
 
     **Copy** the question below into the AI chatbot and press **Enter**. What does AI Guru say?
 
@@ -58,13 +60,13 @@ In this first example, you will use the application to authorize a return for a 
 
     ![David Williams chatbot](./images/david-williams-chatbot.png =50%x*)
 
->💡 In Oracle AI Database, **AI Vector Search** allows you to combine your business data with a Large Language Model (LLM) to reduce hallucinations and get accurate answers from your data.
+>💡 In Oracle AI Database, **AI Vector Search** allows you to combine your business data with a Large Language Model (LLM) to reduce hallucinations and get accurate answers based on your data. When you hear the term Retrieval-Augmented Generation (RAG), this is what that refers to; Providing information to the LLM it would not otherwise have to add more context to the output.
 
 4. Select the **Navigate To Decisions** button.
 
     ![David Williams Decision](./images/david-williams-decision.png =50%x*)
 
-    After navigating to the decisions page, the AI evaluation runs in the background. Using AI Vector Search, it semantically compares the content against thousands of historical return records—identifying patterns that suggest either legitimate claims or potential abuse. At the same time, Graph Analytics examines the customer’s prior behavior, highlighting unusual return frequency or links to high-risk product categories. For each case, the system assigns a risk score ranging from Low to Very High and generates a clear recommendation—such as “Approved – consistent with customer profile” or “Request More Info – insufficient documentation.”
+    After navigating to the decisions page, the AI evaluation runs in the background. Using AI Vector Search, it semantically compares the content against thousands of historical return records—identifying patterns that suggest either legitimate claims or potential abuse. At the same time, Graph Analytics examines this customer’s prior behavior, highlighting unusual return frequency or links to high-risk product categories. For each case, the system assigns a risk score ranging from Low to Very High and generates a clear recommendation—such as “Approved – consistent with customer profile” or “Request More Info – insufficient documentation.”
 
 5. In the **Select Your Desired Option** section, the approval probability and decision are displayed. Once a decision is made, the analyst finalizes the return. A professionally formatted PDF letter is automatically generated, summarizing the outcome and rationale. The customer receives an email moments later, clearly stating whether their return was approved, denied, or needs more information—along with an explanation grounded in policy and precedent.
 
@@ -104,7 +106,7 @@ In this first example, you will use the application to authorize a return for a 
 
 **Task Summary**
 
-Once you select and save one of the 3 return options recommended by the AI: 
+Once you select and save one of the three return options recommended by the AI: 
 
 ✅ The customer's return status is updated.
 
@@ -229,14 +231,14 @@ In conclusion, our Return Authorization App was able to leverage Oracle AI Datab
 
 ✅ And empower return analysts with actionable insights through Operational Property Graphs 
 
-By combining these advanced tools, the application enables faster, smarter decisions and delivers clear guidance on how customers can improve their eligibility.
+By combining these advanced tools, the application enables faster, smarter decisions and delivers clear guidance to customers on how they can improve their return submissions.
  
-**Next:** How about learning how the application was implemented in Python? Continue with the next labs and start developing!
+**Next:** Ready to learn how the application was implemented? Continue with the next labs and let's dig into the code!
 
 ## Learn More
 
-* [Oracle AI Database Documentation](https://docs.oracle.com/en/database/oracle/oracle-database/23/)
+* [Oracle AI Database Documentation]()https://docs.oracle.com/en/database/oracle/oracle-database/26/
 
 ## Acknowledgements
-* **Authors** - Linda Foinding, Francis Regalado
-* **Last Updated By/Date** - Linda Foinding, November 2025
+* **Authors** - Linda Foinding, Francis Regalado, Kirk Kirkconnell
+* **Last Updated By/Date** - Kirk Kirkconnell, February 2026

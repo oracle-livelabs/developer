@@ -1,10 +1,10 @@
-# Step by step: Implement RAG with Oracle AI Database 
+# Step by step: Implement a RAG application 
 
 ## Introduction
 
-In this lab, you build a complete return recommendation engine with Oracle AI Database and OCI Generative AI. Connect to the database, explore order and image data, and invoke a large language model to generate personalized return decisions and policy explanations. Building on earlier exercises, you’ll apply Python to deliver a fully integrated, AI-powered retail returns application.
+In this lab, you build a complete return recommendation engine with Oracle AI Database and OCI Generative AI. Connect to the database, explore order and image data, and invoke an LLM (Large Language Model) to generate personalized return decisions and policy explanations. Building on earlier exercises, you’ll apply Python to deliver a fully integrated, AI-powered retail returns application.
 
-This lab uses some of the basic coding samples you created in lab 3, such as cursor.execute and more.
+This lab uses some of the basic coding samples you created in lab 2, such as `cursor.execute` and more.
 
 Estimated Time: 30 minutes
 
@@ -20,13 +20,12 @@ Estimated Time: 30 minutes
 This lab assumes you have:
 
 * An Oracle Cloud account
-* Completed lab 1: Run the demo
-* Completed lab 2: Connect to the Development Environment
+* Completed lab 1: Connect to the Development Environment
 
 ## Task 1: Build the application in Jupyter Notebook
->💡**Note**: Review Lab 2: Connect to the Development Environment for instructions on accessing JupyterLab.
+>💡**Note**: Review Lab 1: Connect to the Development Environment for instructions on accessing JupyterLab.
 
-1. You should see a terminal pop up once you are logged in. (You can always create a new one by clicking on the blue + and select terminal)
+1. You should see a terminal pop up once you are logged into LiveLabs. (You can always create a new one by clicking on the blue + and select terminal)
 
     ![Open Terminal](./images/terminal.png " ")
 
@@ -41,7 +40,7 @@ This lab assumes you have:
 
     ![Navigate to Directory](./images/dbinit.png " ")
 
-3. Copy and run the following command to create tables in the database. There will be a lot of output. You should see the following output once complete.
+3. Copy and run the following command to create tables in the database. There will be a lot of output. 
 
     ```bash
     <copy>
@@ -49,13 +48,15 @@ This lab assumes you have:
     </copy>
     ```
 
+    You should see the following output once complete.
+
     ![Run Shell Script](./images/run-script.png " ")
 
     ![Output Shell Script](./images/shell-script.png " ")
 
 ## Task 2: Connect to Database
 
-2. Click the **+** sign on the top left to open the Launcher.
+2. Click the blue **+** sign on the top left to open the Launcher.
 
     ![Open Launcher](./images/open-launcher.png " ")
 
@@ -97,15 +98,15 @@ This lab assumes you have:
 
     ![Connect to Database](./images/connect-to-db.png " ")
 
-## Task 3: Create a Function to retrieve data from the database.
+## Task 3: Create a function to retrieve data from the database.
 
-You will query customer data from the `customer_returns_dv` JSON duality view, which combines data from CUSTOMERS, RETURN_REQUESTS, and related tables. This task will:
+You will query customer data from the `customer_returns_dv` JSON duality view, which combines data from `CUSTOMERS`, `RETURN_REQUESTS`, and related tables. This task will:
 
-- **Define a Function**: Create a reusable function `fetch_customer_data` to query the database by customer ID, extracting the JSON data for a specific customer.
+- **Define a function**: Create a reusable function `fetch_customer_data` to query the database by customer ID, extracting the JSON data for a specific customer.
 
-- **Use an Example**: Fetch data for customer `1000` (Alice Smith) to demonstrate the process.
+- **Use an example**: Fetch data for customer `1000` (Alice Smith) to demonstrate the process.
 
-- **Display the Results**: Format the retrieved data into a pandas DataFrame for a clear, tabular presentation, showing key details like name, LifeTime Spend, Return Amount , and Loyalty Tier.
+- **Display the results**: Format the retrieved data into a pandas DataFrame for a clear, tabular presentation, showing key details like name, LifeTime Spend, Return Amount , and Loyalty Tier.
 
 1. Copy and paste the code below into the new notebook.
 
@@ -337,19 +338,19 @@ Here’s what we’ll do:
 
     ![Run Task 5](./images/run-task5.png " ")
 
-3. Review the output. In the demo, this is where you selected the "Navigate to Decisions" button as the Approval Specialist. You just used AI to get recommendations for the approval officer which would have taken them hours to do, congratulations!
+3. Review the output. In the demo you may have seen earlier, this is where you selected the "Navigate to Decisions" button as the Approval Specialist. You just used AI to get recommendations for the approval officer which would have taken them hours to do, congratulations!
 
-    >*Note:* Your result may be different due to non-deterministic character of generative AI.
+    >*Note:* Your result may be different due to non-deterministic nature of generative AI.
 
     ![ai recommendation](./images/return-recommendation.png " ")
     
-## Task 5: Chunk & Store the Recommendations
+## Task 5: Chunk & store the recommendations for repeated use
 
-To handle follow-up questions, you will enhance the system with an AI Guru powered by Oracle AI Database Vector Search and Retrieval-Augmented Generation (RAG). The AI Guru will be able to answer questions about the return application and provide recommendations based on the data.
+To handle follow-up questions, you will enhance the system with an "AI Guru" powered by Oracle AI Database Vector Search and Retrieval-Augmented Generation (RAG). The AI Guru will be able to answer questions about the return application and provide recommendations based on the data.
 
-Before answering questions, we need to prepare the data by vectoring the claims recommendations. This step:
+Before answering questions, we need to prepare the data by creating vectors from the claims recommendations using Oracle's built in embedding model. This step:
 
-   - Stores Recommendations: Inserts the full recommendation text (from previous cell) as a single chunk if not already present.
+   - Stores recommendations: Inserts the full recommendation text (from previous cell) as a single chunk if not already present.
    - We delete prior chunks for this authorization.
    - We use `VECTOR_CHUNKS` to split the recommendation text.
    - The chunks will be inserted into `RETURN_CHUNK` with `CHUNK_ID= chunk_offset`.
@@ -444,9 +445,9 @@ Before answering questions, we need to prepare the data by vectoring the claims 
     ![chunks](./images/chunks-created.png " ")
 
 
-## Task 6: Create a function to create embeddings - Use Oracle AI Database to create vector data 
+## Task 6: Create a function to create vector embeddings - Use Oracle AI Database to create vector data 
 
-To handle follow-up questions, you will enhance the system with an AI Guru powered by Oracle AI Database Vector Search and Retrieval-Augmented Generation (RAG). The AI Guru will be able to answer questions about the return application and provide recommendations based on the data.
+To handle follow-up questions, you will enhance the system with an "AI Guru" powered by Oracle AI Database Vector Search and Retrieval-Augmented Generation (RAG). The AI Guru will be able to answer questions about the return application and provide recommendations based on the data.
 
 Before answering questions, we need to prepare the data by vectoring the recommendations chunks. This step:
 
@@ -675,4 +676,4 @@ You may now proceed to the next lab.
 
 ## Acknowledgements
 * **Authors** - Francis Regalado, Uma Kumar
-* **Last Updated By/Date** - Francis Regalado, October 2025
+* **Last Updated By/Date** - Kirk Kirkconnell, February 2026
