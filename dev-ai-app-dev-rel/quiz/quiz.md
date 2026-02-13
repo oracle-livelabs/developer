@@ -39,7 +39,7 @@ Q: What is the default category of vector indexes in Oracle AI Database?
 
 Q: What's likely the best data type to store embeddings in Oracle AI Database?
 - LOB
-- BLOBOFMYSTERY32
+- BLOBOFREGRET
 * VECTOR
 - VARCHAR2
 
