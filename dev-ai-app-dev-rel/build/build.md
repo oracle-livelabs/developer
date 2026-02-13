@@ -2,7 +2,7 @@
 
 ## Introduction
 
-In this lab, you build a complete return recommendation engine with Oracle AI Database and OCI Generative AI. Connect to the database, explore order and image data, and invoke an LLM (Large Language Model) to generate personalized return decisions and policy explanations. Building on earlier exercises, you’ll apply Python to deliver a fully integrated, AI-powered retail returns application.
+In this lab, you build a complete retail return recommendation engine. You'll connect to the database, explore order and image data, and invoke an LLM (Large Language Model) to generate personalized return allowance decisions and policy explanations. Building on earlier exercises, you’ll use Python to deliver a fully integrated, AI-powered retail returns application.
 
 This lab uses some of the basic coding samples you created in lab 2, such as `cursor.execute` and more.
 
@@ -23,7 +23,7 @@ This lab assumes you have:
 * Completed lab 1: Connect to the Development Environment
 
 ## Task 1: Build the application in Jupyter Notebook
->💡**Note**: Review Lab 1: Connect to the Development Environment for instructions on accessing JupyterLab.
+>💡**Note**: Review Lab 1: Connect to the development environment for instructions on accessing JupyterLab.
 
 1. You should see a terminal pop up once you are logged into LiveLabs. (You can always create a new one by clicking on the blue + and select terminal)
 
@@ -106,7 +106,7 @@ You will query customer data from the `customer_returns_dv` JSON duality view, w
 
 - **Use an example**: Fetch data for customer `1000` (Alice Smith) to demonstrate the process.
 
-- **Display the results**: Format the retrieved data into a pandas DataFrame for a clear, tabular presentation, showing key details like name, LifeTime Spend, Return Amount , and Loyalty Tier.
+- **Display the results**: Format the retrieved data into a pandas DataFrame for a clear, tabular presentation, showing key details like name, LifeTime Spend, Return Amount, and Loyalty Tier.
 
 1. Copy and paste the code below into the new notebook.
 
@@ -174,7 +174,7 @@ You will query customer data from the `customer_returns_dv` JSON duality view, w
     </copy>
     ```
 
-2. Click the "Run" button to see Alice Smith’s profile. The output will include a brief summary (name and return status) followed by a detailed table. If no data is found for the specified ID, a message will indicate this, helping you debug potential issues like an incorrect ID or empty database. 
+2. Click the "Run" button to see Alice Smith’s profile. The output will include a brief summary of the return, (name and return status) followed by a detailed table. If no data is found for the specified ID, a message will indicate this, helping you debug potential issues like an incorrect ID or empty database. 
 
     ![Copy and Paste Code Block](./images/run-function.png " ")
 
@@ -182,11 +182,11 @@ You will query customer data from the `customer_returns_dv` JSON duality view, w
 
     ![Fetch customer](./images/fetch-customer.png " ")
 
-If you completed Lab 1: Run the Demo earlier, this is what gets printed out when the Return officer clicks on the customer 1000. You just built it, well done!
+If you saw or ran the demo lab "Run the Demo" earlier, this is what gets printed out when the Return officer clicks on the customer 1000. You just built it.
 
 ## Task 4: Create a function to generate recommendations for the customer
 
-In a new cell, define a function `generate_recommendations` to fetch policy rules from `RETURN_POLICY_RULES` and combine them with customer data. Construct a prompt the OCI Generative AI model(meta.llama-3.2-90b-vision-instruct) to recommend a return decision(APPROVE, REQUEST INFO, DENY) based on customer profile, return requests, and policy rules.
+In a new cell, define a function `generate_recommendations` to fetch policy rules from `RETURN_POLICY_RULES` and combine them with customer data. Construct a prompt the OCI Generative AI model(meta.llama-3.2-90b-vision-instruct) to recommend a return decision(APPROVE, REQUEST INFO, DENY) based on customer profile, return requests, and policy rules. **Note**: The model we are using is an older one, but it still checks out.
 
 With customer profiles in place, you will use OCI Generative AI to generate personalized return decision recommendations. 
 
