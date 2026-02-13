@@ -18,7 +18,11 @@ Q: What is the primary purpose of RAG (Retrieval-Augmented Generation)?
 - To replace the need for a database entirely
 - To be the shiny new box that every developer wants to play with
 - To store customer passwords securely
-* To search for and provide data to an LLM that it would otherwise would not have
+* To search for and provide data to an LLM that it would otherwise not have to generate responses with
+
+Q: True or False: Oracle AI Database enables you to create embeddings directly within the database
+* True
+- False
 
 Q: Which Python library is used to connect to Oracle AI Database in this lab?
 - psycopg2
@@ -35,7 +39,7 @@ Q: What is the default category of vector indexes in Oracle AI Database?
 
 Q: What's likely the best data type to store embeddings in Oracle AI Database?
 - LOB
-- NUMBER
+- BLOBOFMYSTERY32
 * VECTOR
 - VARCHAR2
 
@@ -62,10 +66,6 @@ Q: What's the likely data type you should store a JSON document in Oracle?
 - VARCHAR2
 * JSON
 > Your default for storing JSON should likely be a JSON data type, but it really depends on how large of a document you're storing and your use case.
-
-Q: True or False: Oracle AI Database enables you to create embeddings directly within the database
-* True
-- False
 
 Q: How does Cosine similarity measure distance?
 - It measures concise distance between vectors
