@@ -74,11 +74,23 @@ Internally uses helpers like \_clean\_llm_sql, read-only guards, and a row cap f
 
 ## Task 2: Run the MCP server and call tools from a notebook
 
-1. Open a new terminal session in JupyterLab using the Launcher
+1. To navigate to the development environment, click **View Login Info**. Copy the Development IDE Login Password. Click the Start Development IDE link.
+
+    ![Open Development Environment](./images/dev-env.png =50%x*)
+
+2. Paste in the Development IDE Login Password that you copied in the previous step. Click **Login**.
+
+    ![Login](./images/jupyter-login.png " ")
+
+3. Click the blue "+". This will open the Launcher. 
+
+    ![Open Launcher](./images/launcher.png " ")
+
+4. Open a new terminal session in JupyterLab using the Launcher
 
     ![Open Launcher](./images/terminal.png " ")
 
-2. Start the MCP server:
+5. Start the MCP server:
 
     ```bash
     $ <copy>python /home/mcp/server.py
@@ -87,13 +99,13 @@ Internally uses helpers like \_clean\_llm_sql, read-only guards, and a row cap f
 
     ![Start MCP](./images/mcpserver.png " ")
 
-3. Right-click on the folder `mcp` and select **New Notebook** to create a new JupyterNotebook
+6. Right-click on the folder `mcp` and select **New Notebook** to create a new JupyterNotebook
 
      _Select Python 3 (ipykernel) if asked to select a kernel_
 
     ![New notebook](./images/newnotebook.png " ")
 
-4. Copy the following helper class into a cell and execute the code:
+7. Copy the following helper class into a cell and execute the code:
 
     ```Python
     <copy>
@@ -106,7 +118,7 @@ Internally uses helpers like \_clean\_llm_sql, read-only guards, and a row cap f
     _There is no output expected_
 
 
-5. Copy the following code and execute:
+8. Copy the following code and execute:
 
     ```Python
     <copy>
@@ -125,7 +137,7 @@ Internally uses helpers like \_clean\_llm_sql, read-only guards, and a row cap f
 
     ![AI Seer](./images/aiseer.png " ")
 
-6. Execute the following code:
+9. Execute the following code:
 
     ```Python
     <copy>
@@ -142,7 +154,7 @@ Internally uses helpers like \_clean\_llm_sql, read-only guards, and a row cap f
 
     ![Embedding](./images/embedding.png " ")
 
-7. Execute the following code:
+10. Execute the following code:
 
     ```Python
     <copy>
@@ -160,7 +172,7 @@ Internally uses helpers like \_clean\_llm_sql, read-only guards, and a row cap f
 
     ![Health](./images/health.png " ")
 
-8. Next, execute this code in a cell:
+11. Next, execute this code in a cell:
 
     ```Python
     <copy>
@@ -181,7 +193,7 @@ Internally uses helpers like \_clean\_llm_sql, read-only guards, and a row cap f
     ![Show tables](./images/showtables.png " ")
 
 
-9. Now execute this code:
+12. Now execute this code:
 
     ```Python
     <copy>
@@ -201,7 +213,7 @@ Internally uses helpers like \_clean\_llm_sql, read-only guards, and a row cap f
 
     ![desc tables](./images/desctable.png " ")
 
-10. And now we want to execute this snippet:
+13. And now we want to execute this snippet:
 
     ```Python
     <copy>
@@ -223,7 +235,7 @@ Internally uses helpers like \_clean\_llm_sql, read-only guards, and a row cap f
     ![desc tables](./images/sampledata.png " ")
 
 
-11. Copy and paste the following code and execute it:
+14. Copy and paste the following code and execute it:
 
     ```Python
     <copy>
@@ -252,7 +264,7 @@ Internally uses helpers like \_clean\_llm_sql, read-only guards, and a row cap f
 
     ![NL SQL](./images/nlsql1.png " ")
 
-12. The next code is even better. Copy it and execute the cell:
+15. The next code is even better. Copy it and execute the cell:
 
     ```Python
     <copy>
@@ -282,7 +294,7 @@ Internally uses helpers like \_clean\_llm_sql, read-only guards, and a row cap f
 
     ![NL SQL](./images/nlsql2.png " ")
 
-13. Let's do this one more time using a different query:
+16. Let's do this one more time using a different query:
 
     ```Python
     <copy>
