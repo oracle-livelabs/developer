@@ -2,8 +2,7 @@
     "workshoptitle": "Explore the SQLcl MCP Server",
     "include": {"starter-file.sql":"../../files/starter-file.sql",
                 "sample.json":"../../files/sample.json",
-                "injected-step.md":"../../files/injected-step.md",
-              "test":"./files/test.md"},
+                "injected-step.md":"../../files/injected-step.md"},
       "help": "livelabs-help-db_us@oracle.com",
       "tutorials": [
         {

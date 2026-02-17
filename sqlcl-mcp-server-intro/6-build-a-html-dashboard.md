@@ -23,9 +23,12 @@ In this lab, you will:
 
 This lab assumes you have:
 * All previous labs successfully completed
+* An Oracle Cloud or FreeSQL account
 * VS Code installed
-* Installed the Cline for VS Code Extension
-* Configured an Oracle Database connection using the Oracle SQL Developer for VS Code extension
+* Installed the Cline for VS Code Extension (to include access to a supported LLM Provider)
+* Configured an Oracle Database connection using the SQL Developer Extension for VS Code
+* Configured the SQLcl MCP Server for use with Cline for VS Code
+* This lab may require NPM, Node.js, and other web development libraries
 
 <p></p>
 

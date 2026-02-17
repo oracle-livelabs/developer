@@ -34,7 +34,7 @@ Users can request and perform database tasks from the Agent interface in plain l
 - **Single-Shot:** A user prompts &#8594; LLM responds &#8594; Done. *Step-by-step manual interaction.*
 - **Agentic Workflow:** A user prompts &#8594; the Agent creates a plan &#8594; the user approves/edits &#8594; the Agent uses tools to execute &#8594; Results are presented for approval/consumption/iteration to the user. *Transparent, iterative, and controlled.*
 
-#### An Example
+#### A Practical Example
 
 1. User asks, "Find the top 10 most expensive queries from last week and recommend an index.”
 2. Agent creates a plan and chooses MCP Server Tools.
@@ -126,6 +126,6 @@ You may now [proceed to the next lab](#next).
 **Acknowledgements:**
 - Author: Chris Hoina, Senior Product Manager, Database Tools
 - Contributors: Jeff Smith, Linda Foindling
-- Last updated: Chris Hoina, January 2026
+- Last updated: Chris Hoina, February 2026
 
 <!-- WMS ID 11914 -->

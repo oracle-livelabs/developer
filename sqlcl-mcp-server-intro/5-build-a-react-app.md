@@ -23,14 +23,16 @@ In this lab, you will:
 
 This lab assumes you have:
 * All previous labs successfully completed
+* An Oracle Cloud or FreeSQL account
 * VS Code installed
-* Installed the Cline for VS Code Extension
-* Configured an Oracle Database connection using the Oracle SQL Developer for VS Code extension
+* Installed the Cline for VS Code Extension (to include access to a supported LLM Provider)
+* Configured an Oracle Database connection using the SQL Developer Extension for VS Code
+* Configured the SQLcl MCP Server for use with Cline for VS Code
 * This lab may require NPM, Node.js, and other web development libraries
 
 <p></p>
 
-> &#9872; **NOTE:** In this lab you must allow your AI Agent to create a new project folder, scaffold a sample React application, and if required, install project dependencies (e.g., npm, Node, Express, React, etc. ).
+> &#9872; **Note:** In this lab you must allow your AI Agent to create a new project folder, scaffold a sample React application, and if required, install project dependencies (e.g., npm, Node, Express, React, etc. ).
 
 <p></p>
 
@@ -45,8 +47,7 @@ This lab assumes you have:
       <a href="./files/create_a_react_app_prompt.md" target="_self" download="create_a_react_app_prompt.md">Download prompt as .md file</a>
       </button>
 
-> &#9872; **NOTE:** This Lab is designed to be open-ended, accordingly, your individual results will vary. Feel free to improvise &#9786; !
-
+> &#9872; **Note:** This Lab is designed to be open-ended, accordingly, your individual results will vary. Feel free to improvise &#9786; !
 
 2. After reviewing the prompt, you may wish to save it locally. But, before you begin, review the various sections of the prompt: 
 
@@ -63,7 +64,7 @@ This lab assumes you have:
 
 1. The prompt that you have been provided is the result of iterative testing. The prompt is provided to teach you how to guide your LLM to best utilize the SQLcl MCP Server. Following along with the prompt should result in a repeatable and predictable outcome. 
 
-> &#9872; **NOTE:** You should expect to complete this lab with a version of the application that is unique to you; but that still closesly resembles any examples and images in this Lab.
+> &#9872; **Note:** You should expect to complete this lab with a version of the application that is unique to you; but that still closesly resembles any examples and images in this Lab.
 
 2. When ready, navigate to your Cline extension. Toggle the Agent to **Plan** mode. 
 
