@@ -1,0 +1,26 @@
+{
+  "workshoptitle": "Building with Vector Search and Embeddings",
+  "help": "livelabs-help-db_us@oracle.com",
+  "tutorials": [
+    {
+      "title": "Introduction",
+      "description": "Overview of RAG and Oracle AI Vector Search",
+      "filename": "../../introduction/introduction.md"
+    },
+    {
+      "title": "Lab 1: Vector embeddings",
+      "description": "Overview of RAG and Oracle AI Vector Search",
+      "filename": "../../introduction/introduction.md"
+    },
+    {
+      "title": "Lab 1: Vector Search fundamentals",
+      "description": "Set up embeddings and perform keyword, vector, and hybrid search",
+      "filename": "../../lab1-vector-search/vector-search.md"
+    },
+    {
+      "title": "Need Help?",
+      "description": "Solutions to common problems and support contacts",
+      "filename": "https://oracle-livelabs.github.io/common/labs/need-help/need-help-livelabs.md"
+    }
+  ]
+}
