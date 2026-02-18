@@ -25,7 +25,7 @@ In the *Split/Embed* tab, the framework allows you to upload various types of do
 
 1. Navigate to the *Tools* tab and then click on the *Split/Embed* tab
 
-  ![split-embed-interface](./images/split-embed.png)
+  ![split-embed-interface](images/split-embed.png)
 
 1. Choose the embedding model and its parameters
 
@@ -42,13 +42,14 @@ In the *Split/Embed* tab, the framework allows you to upload various types of do
 
   ![populate-vector-store](images/populate-vector-store.png)
 
-  You can choose from three different file sources:
+  You can choose from four different file sources:
 
     * **OCI**: Navigate through your tenancy to select documents from the Object Storage. Ensure that your OCI credentials are properly configured in advance.
     * **Local**: Upload a document directly from your local environment.
     * **Web**: Import a document from a publicly accessible web URL.
+    * **SQL**: define a query against an Oracle Database to extract text from a VARCHAR2 column and embed it row by row.
 
-  In this example, we will embed a document from the web, available at [this link](https://docs.oracle.com/en/database/oracle/oracle-database/23/vecse/ai-vector-search-users-guide.pdf). We will give the alias ***TEST1*** to this vector store.
+  In this example, we will embed a document from the web, available at [this link](https://docs.oracle.com/en/database/oracle/oracle-database/26/vecse/ai-vector-search-users-guide.pdf). We will give the alias ***TEST1*** to this vector store.
 
 1. Populate the Vector Store.
 
@@ -58,7 +59,7 @@ In the *Split/Embed* tab, the framework allows you to upload various types of do
 
   ![vector-store-populated](images/vector-store-populated.png)
 
-  This means that 3016 vectors representations of the information from the input document have been created and stored.
+  This means that 3504 vectors representations of the information from the input document have been created and stored.
 
 ## Task 2: Inspect the Vector DB
 
@@ -73,7 +74,7 @@ Now that you've embedded your document, you can query the content of the Vector 
 1. Click on the *Database Action* dropdown menu and press the *SQL* button. A new window will be opened and you be redirected to the SQL playground. Run this query:
 
     ```sql
-    select * from ADMIN.TEST1_MXBAI_EMBED_LARGE_512_103_COSINE_HNSW;
+    select * from ADMIN.TEST1_OLLAMA_MXBAI_EMBED_LARGE_512_103_COSINE_HNSW;
     ```
 
   And you will then retrieve the rows from the newly created table.
@@ -106,4 +107,4 @@ You may now **proceed to the next lab**.
 
 * **Author** - Lorenzo De Marchis, Developer Evangelist, May 2025
 * **Contributors** - Mark Nelson, John Lathouwers, Corrado De Bari, Jorge Ortiz Fuentes, Andy Tael
-* **Last Updated By** - Andy Tael, July 2025
+* **Last Updated By** - Lorenzo De Marchis, February 2026

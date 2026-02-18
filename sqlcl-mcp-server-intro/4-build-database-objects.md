@@ -6,7 +6,7 @@ In this lab you will use the SQLcl MCP server to create new database tables and 
 
 <br>
 
-> &#9872; **NOTE:** A sample prompt has been provided for you. This Lab, screenshots, and expected output are based on the instructions provided in the sample prompt. 
+> &#9872; **Note:** A sample prompt has been provided for you. This Lab, screenshots, and expected output are based on the instructions provided in the sample prompt. 
 
 <br>
 
@@ -23,10 +23,11 @@ In this lab, you will:
 ### Prerequisites 
 
 This lab assumes you have:
-* An Oracle Cloud, LiveSQL, or FreeSQL account
-* Access to a currently supported Oracle database (or LiveSQL/FreeSQL account if participating in an instructor-led workshop)
-* Organizational Roles/Privileges to install the following software on your employer-provided work station:
-    * MS Visual Studio Code 
+* An Oracle Cloud or FreeSQL account
+* VS Code installed
+* Installed the Cline for VS Code Extension (to include access to a supported LLM Provider)
+* Configured an Oracle Database connection using the SQL Developer Extension for VS Code
+* Configured the SQLcl MCP Server for use with Cline for VS Code
 
 ## Task 1: Locate the create data and views prompt
 
@@ -39,7 +40,7 @@ This lab assumes you have:
       <a href="./files/create_data_and_views_prompt.md" target="_self" download="create_data_and_views_prompt.md">Download prompt as .md file</a>
       </button>
 
-> &#9872; **NOTE:** This Lab is designed to be open-ended, accordingly, your individual results will vary. Feel free to "go off-script" &#9786;!
+> &#9872; **Note:** This Lab is designed to be open-ended, accordingly, your individual results will vary. Feel free to "go off-script" &#9786;!
 
 2. Review the provided prompt in your IDE or browser. You will notice a single heading and several sub-headings. Each sub-heading will serve as a phase or step for this scenario: 
 
@@ -97,7 +98,7 @@ This lab assumes you have:
 
 <br>
 
-> &#9872; **NOTE:** The LLM model used, network latency, the workstation processor, other ongoing processes might impact your Agent's behavior. You will need to review the request and proceed cautiously. In this example, the request is relatively simple:
+> &#9872; **Note:** The LLM model used, network latency, the workstation processor, other ongoing processes might impact your Agent's behavior. You will need to review the request and proceed cautiously. In this example, the request is relatively simple:
 
 6. You may even notice odd behavior such as is illustrated when executing these `INSERT` statements (e.g., only a few rows inserted at a time). Review the Agent's summaries and requests, and if you agree, proceed with any proposed actions/plans.
 
@@ -111,7 +112,7 @@ This lab assumes you have:
 
 2. If your objects are created and populated as expected (everything checks the "reasonableness test"), allow the Agent to continue. 
 
-> &#9872; **NOTE:** You might also choose to review the tables from the SQL Developer Extension for VS Code.
+> &#9872; **Note:** You might also choose to review the tables from the SQL Developer Extension for VS Code.
 
 ## Task 4: Creating new views
 

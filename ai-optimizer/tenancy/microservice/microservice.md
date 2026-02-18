@@ -2,9 +2,11 @@
 
 ## Introduction
 
-The AI Optimizer allows you to export the configured chatbot as a ready-to-run microservice built using Java, Spring Boot and the Spring AI framework. This microservice runs independently from the AI Optimizer, relying solely on the created vector store table and the selected LLM servers.
+The AI Optimizer allows you to export the configured chatbot both as a ready-to-run microservice built using Java, Spring Boot and the Spring AI framework and as a LangchainMCP executable. These microservices run independently from the AI Optimizer, relying solely on the created vector store table and the selected LLM servers.
 
 In the current release, only fully self-contained Ollama configurations (embedding + chat model) or OpenAI-based configurations are supported.
+
+In this lab we will export the SpringAI microservice and run it.
 
 Estimated Time: 10 minutes
 
@@ -129,4 +131,4 @@ You may now **proceed to the next lab**.
 
 * **Author** - Lorenzo De Marchis, Developer Evangelist, May 2025
 * **Contributors** - Mark Nelson, John Lathouwers, Corrado De Bari, Jorge Ortiz Fuentes, Andy Tael
-* **Last Updated By** - Andy Tael, July 2025
+* **Last Updated By** - Lorenzo De Marchis, February 2026
