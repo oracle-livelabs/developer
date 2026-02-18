@@ -58,33 +58,15 @@ You interact with MCP Servers through AI Agents; using natural language to invok
 | **Prompts**    | Reusable templates for structured LLM/agent interactions                          |
 {: title="MCP Server Primitives"}
 
-<br>
-
 ### The SQLcl MCP Server
 
-SQLcl is a powerful CLI for the Oracle AI Database. By extending it with an MCP Server, we can enable secure, natural-language database interaction through an AI Agent.
+SQLcl is a powerful CLI for the Oracle AI Database. By extending it with an MCP Server, we can enable secure, natural-language database interaction through an AI Agent. In the next few labs you'll explore your database using an AI Agent along with the SQLcl MCP Server. 
+</br>
 
-#### Getting Started
+#### Security Considerations when using the SQLcl MCP Server
 
-After you've configured your credentials (connection string or Cloud Wallet), you can explore and manage your database with the Agent using natural language and SQL/PLSQL.
+Some key principles to consider: 
 
-**SQLcl MCP Server Tools:**
-| Tool                | Purpose                                                        | Parameters                                           | Parameter Definitions                                                                                 |
-|---------------------|----------------------------------------------------------------|------------------------------------------------------|-------------------------------------------------------------------------------------------------------|
-| `list-connections`  | List saved Oracle DB connection names                          | <ul><li>filter</li> <li>mcp_client</li> <li>model</li></ul>| Filter for connection list. Name/version of MCP client. Name/version of language model.               |
-| `connect`           | Interface to connect, confirm, and list schemas if needed      | <ul><li>connection\_name</li><li>mcp\_client</li><li>model</li></ul> | Name/version of MCP client. Name/version of language model.                |
-| `disconnect`        | Disconnect current session and log out                         | <ul><li>mcp_client</li><li>model</li></ul>                | Name/version of MCP client. Name/version of language model.                                            |
-| `run-sqlcl`         | Run SQLcl CLI commands in SQLcl, returns command results       | <ul><li>sqlcl</li><li>mcp_client</li><li>model</li></ul> | The SQLcl command. Name/version of MCP client. Name/version of language model.                        |
-| `run-sql`           | Run SQL queries and return CSV                                 | <ul><li>sql</li> <li>mcp_client</li> <li>model</li></ul>   | The SQL query. Name/version of MCP client. Name/version of language model.                            |
-| `schema-information`| Provides insights on the connected schema (metadata analysis)      |<ul><li>model</li></ul>                                   | Name/version of language model.                                                                       |
-| `run-sql-async`| Executes SQL queries as background asynchronous tasks; allows you to manage tasks by checking statuses, canceling, and retrieving results (requires a database connection).     |<ul><li>task</li><li>command</li><li>model</li></ul>                                   | Name/version of language model.                                                                       |
-{: title="SQLcl MCP Server Tools"}
-
-<br>
-
-### Security Considerations when using the SQLcl MCP Server
-
-**Key Principles:**
 - **Least Privilege:** Use read-only accounts where possible.
 - **Segregation of Duties:** Separate querying from admin tasks.
 - **Policies:** Apply corporate/agent-specific data policies.
@@ -97,7 +79,7 @@ After you've configured your credentials (connection string or Cloud Wallet), yo
 
 > &#8505; **Note:** SQLcl MCP Server stores credentials securely in an Oracle Wallet—never exposed to the LLM/Agent. All database roles, privileges, and safeguards apply.
 
-#### MCP Best Practices
+### General MCP Best Practices
 
 | **Do**                                                      | **Do Not**                                      |
 |:------------------------------------------------------------|:-------------------------------------------------|
@@ -105,16 +87,13 @@ After you've configured your credentials (connection string or Cloud Wallet), yo
 | Keep MCP servers focused (no overlapping functionality)     | Expose credentials to the LLM                    |
 | Ensure all tools and actions are logged/documented          | Deploy agents in production without strict controls |
 | Provide clear, descriptive tool documentation               | Assume LLMs are always correct without review    |
-
-<br>
+{: title="MCP Server Best Practices"}
 
 ### Summary
 
-|      |     |
-| ---  | --- | 
-| <i><b>What</b></i> | MCP Servers allow AI Agents to safely execute plans/workflows on Oracle Databases. |
-| <i><b>How</b></i>  | SQLcl MCP Server provides tools to AI Agents using database authentication and Oracle security features. |
-| <i><b>Why</b></i>  | Boost productivity for database exploration, reporting, and diagnostics — secure, controlled, and efficient. |
+- *What?* MCP Servers allow AI Agents to safely execute plans/workflows on Oracle Databases.  
+- *How?* The SQLcl MCP Server provides tools to AI Agents using database authentication and Oracle security features.  
+- *Why?* Boost productivity for database exploration, reporting, and diagnostics — secure, controlled, and efficient. 
 
 You may now [proceed to the next lab](#next).
 

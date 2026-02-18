@@ -59,7 +59,7 @@ This lab assumes you have:
 
    ![sqlcl-connection-details-for-later-use](./images/lab-2/sqlcl-connection-details-for-later-use.png " ")
 
-6. You will use this FreeSQL user for the remainder of LiveLab. Next, you'll create a database connection in SQL Developer for VS Code Extension. 
+6. You will use this FreeSQL user for the remainder of this LiveLab. Next, you'll create a database connection in SQL Developer for VS Code Extension. 
 
 </if>
 
@@ -126,7 +126,7 @@ This lab assumes you have:
 
 1. Install SQL Developer for VS Code Extension:
      - [VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=Oracle.sql-developer), or
-     - From VS Code, navigate to Extensions, search with keyword "Oracle", and install **Oracle SQL Developer for VS Code Extension**
+     - From VS Code, navigate to Extensions, search with keyword "Oracle", and install the **Oracle SQL Developer for VS Code Extension**
 
      ![3-vs-code-extensions-first-visit](./images/lab-2/3-vs-code-extensions-first-visit.png " ")
      ![4-search-for-sql-developer-web-vscode-extension](./images/lab-2/4-search-for-sql-developer-web-vscode-extension.png " ")
@@ -225,11 +225,11 @@ This lab assumes you have:
 
 1. In the VS Code Extensions tab, search for the Cline extension.
 
-![13-searching-for-cline-vs-code-extension](./images/lab-2/13-searching-for-cline-vs-code-extension.png " ")
+  ![13-searching-for-cline-vs-code-extension](./images/lab-2/13-searching-for-cline-vs-code-extension.png " ")
 
 2. Install and open the extension from the Activity bar.
 
-3. Choose how you will use Cline (this LiveLab assumes you provide you are providing your own API key).
+3. Choose how you will use Cline (this LiveLab assumes you are providing your own LLM Provider API key).
 
  ![bring-my-own-api-key-cline](./images/lab-2/bring-my-own-api-key-cline-on-pc.jpg " ")
 
@@ -246,7 +246,7 @@ This lab assumes you have:
 
 6. With your provider settings complete, you’re ready to configure the SQLcl MCP Server.
 
-## Task <if type="freesql">4:</if><if type="freetier">6:</if> SQLcl MCP server
+## Task <if type="freesql">4:</if><if type="freetier">6:</if> Configuring the SQLcl MCP server
 
 1. In VS Code, open the Command Palette and search for: <kbd>Configure Cline SQLcl MCP</kbd>. 
 
@@ -258,11 +258,11 @@ This lab assumes you have:
 
   ![view-command-palette-on-windows](./images/lab-2/view-command-palette-on-windows.jpg "Command Pallette on PC")
 
-2. Once located, select the option. A preconfigured Cline configuration settings JSON file will appear. The details of your SQLcl installation will be preopulated; to include all required MCP Server settings and parameters
+2. Once located, select the **Configure Cline SQLcl MCP** option. A preconfigured Cline configuration settings JSON file will appear. The details of your SQLcl installation will be preopulated; to include all required MCP Server settings and parameters
 
   ![configure-cline-sqlcl-mcp-server-option](./images/lab-2/search-for-sqlcl-mcp-by-keyword-on-pc.jpg " ")
 
-> &#9872; **Note:** Update to the latest version of SQL Developer for VS Code to use the embedded SQLcl that ships with this extension.
+> &#9872; **Note:** Update to the latest version of SQL Developer for VS Code to use the embedded SQLcl that ships with Oracle SQL Developer for VS Code.
 
 3. Preview the `cline_mcp_settings.json` configuration file. No updates are needed.
 
@@ -282,20 +282,16 @@ This lab assumes you have:
 
 <p></p>
 
-| Tool                | Purpose                                                        | Parameters                                           | Parameter Definitions                                                                                 |
-|---------------------|----------------------------------------------------------------|------------------------------------------------------|-------------------------------------------------------------------------------------------------------|
-| `list-connections`  | List saved Oracle DB connection names                          | <ul><li>filter</li> <li>mcp_client</li> <li>model</li></ul>| Filter for connection list. Name/version of MCP client. Name/version of language model.               |
-| `connect`           | Interface to connect, confirm, and list schemas if needed      | <ul><li>connection\_name</li><li>mcp\_client</li><li>model</li></ul> | Name/version of MCP client. Name/version of language model.                |
-| `disconnect`        | Disconnect current session and log out                         | <ul><li>mcp_client</li><li>model</li></ul>                | Name/version of MCP client. Name/version of language model.                                            |
-| `run-sqlcl`         | Run SQLcl CLI commands in SQLcl, returns command results       | <ul><li>sqlcl</li><li>mcp_client</li><li>model</li></ul> | The SQLcl command. Name/version of MCP client. Name/version of language model.                        |
-| `run-sql`           | Run SQL queries and return CSV                                 | <ul><li>sql</li> <li>mcp_client</li> <li>model</li></ul>   | The SQL query. Name/version of MCP client. Name/version of language model.                            |
-| `schema-information`| Give insights on the connected schema (metadata analysis)      |<ul><li>model</li></ul>                                   | Name/version of language model.                                                                       |
-| `list-connections`  | List saved Oracle DB connection names                          | <ul><li>filter</li> <li>mcp_client</li> <li>model</li></ul>| Filter for connection list. Name/version of MCP client. Name/version of language model.               |
-| `connect`           | Interface to connect, confirm, and list schemas if needed      | <ul><li>connection\_name</li><li>mcp\_client</li><li>model</li></ul> | Name/version of MCP client. Name/version of language model.                |
-| `disconnect`        | Disconnect current session and log out                         | <ul><li>mcp_client</li><li>model</li></ul>                | Name/version of MCP client. Name/version of language model.                                            |
-| `run-sqlcl`         | Run SQLcl CLI commands in SQLcl, returns command results       | <ul><li>sqlcl</li><li>mcp_client</li><li>model</li></ul> | The SQLcl command. Name/version of MCP client. Name/version of language model.                        |
-| `run-sql`           | Run SQL queries and return CSV                                 | <ul><li>sql</li> <li>mcp_client</li> <li>model</li></ul>   | The SQL query. Name/version of MCP client. Name/version of language model.                            |
-| `schema-information`| Give insights on the connected schema (metadata analysis)      |<ul><li>model</li></ul>                                   | Name/version of language model.                                                                       |
+| Tool | Purpose | Parameters | Parameter Definitions |
+|---|---|---|---|
+| `list-connections` | Lists saved Oracle DB connection names. | <ul><li>name</li><li>username</li><li>model</li><li>definition\_type</li><li>show\_details</li></ul>| <ul><li>Filter by connection name</li><li>Filter by username</li><li>LLM model used</li><li>Filter by connection types</li><li>Returns connection details in result</li></ul> |
+| `connect` | Interface to connect to, confirm, and list schemas. | <ul><li>connection\_name</li><li>model</li></ul> | <ul><li>The saved connection name</li><li>LLM model used</li></ul> |
+| `disconnect` | Disconnects current session and logs out. | <ul><li>model</li></ul> | <ul><li>LLM model used</li></ul>  |
+| `run-sqlcl` | Run SQLcl CLI commands in SQLcl, returns command results. | <ul><li>sqlcl</li><li>model</li></ul> | <ul><li>SQLcl command used</li><li>LLM model used</li></ul>  |
+| `run-sql` | Run SQL queries and return CSV-formatted results. | <ul><li>sql</li><li>model</li></ul>   | <ul><li>SQL query used</li><li>LLM model used</li></ul> |
+| `schema-information`| Provides insights on the connected schema (metadata analysis). |<ul><li>model</li></ul> | <ul><li>LLM model used</li></ul> |
+| `run-sql-async`| Executes SQL queries as background asynchronous tasks. |<ul><li>task</li><li>command</li><li>model</li></ul> | <ul><li>The Job Id returned</li><li>The command to execute</li><li>LLM model used</li></ul> |
+{: title="SQLcl MCP Server Tools"}
 
 7. Your SQLcl MCP Server is configured. You may now [proceed to the next lab](#next).
 
