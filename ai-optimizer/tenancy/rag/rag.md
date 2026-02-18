@@ -102,4 +102,4 @@ You may now **proceed to the next lab**.
 
 * **Author** - Lorenzo De Marchis, Developer Evangelist, May 2025
 * **Contributors** - Mark Nelson, John Lathouwers, Corrado De Bari, Jorge Ortiz Fuentes, Andy Tael
-* **Last Updated By** - Andy Tael, July 2025
+* **Last Updated By** - Lorenzo De Marchis, February 2026
