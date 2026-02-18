@@ -13,10 +13,8 @@ Estimated Time: 10 minutes
 ### Objectives
 
 In this lab, you will:
-* Learn how to:
-  - request MCP Server "Tools"
-  - review and approve Tool requests
-* Observe how the your responses inform an AI Agent's behavior
+
+* Learn how to use and approve the use of SQLcl's MCP Server "Tools"
 * Discover how an LLM generates SQL and presents it to the SQLcl MCP Server for execution
 * Review the the LLM's results and summaries of findings 
 * Review the SQLcl MCP Server's task log in your schema 
@@ -24,9 +22,11 @@ In this lab, you will:
 ### Prerequisites 
 
 This lab assumes you have:
+* An Oracle Cloud or FreeSQL account
 * VS Code installed
-* Installed the Cline for VS Code Extension
-* Configured an Oracle Database connection using the SQL Developer Extension for VS Code 
+* Installed the Cline for VS Code Extension (to include access to a supported LLM Provider)
+* Configured an Oracle Database connection using the SQL Developer Extension for VS Code
+* Configured the SQLcl MCP Server for use with Cline for VS Code
 
 <p></p>
 
@@ -160,22 +160,17 @@ When you are done, you will inspect the MCP logging table in your schema to see 
 
 2. The Cline Agent will finish its task and provide you with a summary steps used to achieve your original task or prompts.
 
-> &#9872; **Note:** The Agent may wish to continue running more queries, in an attempt to provide you with more information about your database. It is up to **YOU** to decide. *What do you do?*
-> - allow it to continue
-> - deny any follow-up requests, or 
-> - provide it with a follow-up prompt to cease operations
+## Task 5: Reviewing the SQLcl MCP Server log table
 
-<p></p>
+1. You can review a log of the queries performed by the SQLcl MCP Server on behalf of the AI Agent. Locate SQL Developer Extension for VS Code in the Activity Panel.
 
-3. Before you finish this lab, you can review a log of the queries performed by the SQLcl MCP Server on behalf of the AI Agent. Locate SQL Developer Extension for VS Code in the Activity Panel.
+2. Click the connection that the SQLcl MCP Server used to connect to your database.
 
-4. Click the connection that the SQLcl MCP Server used to connect to your database.
+3. Click the `Tables` object to expand it. Locate the `DBTOOLS$MCP_LOG` table, and click it to open up a new panel. 
 
-5. Click the `Tables` object to expand it. Locate the `DBTOOLS$MCP_LOG` table, and click it to open up a new panel. 
+4. Click the Data tab to review the interactions from your previous Cline tasks. These logs will capture the SQL, PLSQL, and SQL scripts that were executed on your behalf (via Cline), by the SQLcl MCP Server.
 
-6. Click the Data tab to review the interactions from your previous Cline tasks. These logs will capture the SQL, PLSQL, and SQL scripts that were executed on your behalf (via Cline), by the SQLcl MCP Server.
-
-   ![cline-5](./images/lab-3/cline-5.png " ")
+   ![cline-log-table-data-tab](./images/lab-3/cline-log-table-data-tab.png " ")
 
 7. That's it! You are now ready to start exploring the power of your AI Agent, it's LLMs, and your Oracle Database via the SQLcl MCP Server! 
 
@@ -191,6 +186,6 @@ When you are done, you will inspect the MCP logging table in your schema to see 
 
 * **Author**<ul><li>Chris Hoina, Senior Product Manager, Database Tools</li></ul>
 * **Contributors**<ul><li>Jeff Smith, Distinguished Product Manager, Database Tools</li></ul>
-* **Last Updated By/Date**<ul><li>Chris Hoina, January 2026</li></ul>
+* **Last Updated By/Date**<ul><li>Chris Hoina, February 2026</li></ul>
 
 <!-- WMS ID 11914 -->
