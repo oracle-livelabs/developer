@@ -32,7 +32,17 @@ To enable the *RAG* functionality, follow these steps:
 
   ![enable-vector-search](./images/enable-vector-search.png)
 
-1. In the **Select Alias** dropdown, choose the `TEST1` vector store table. The remaining fields in the **Vector Store** will be automatically populated, as each one represents a search parameter used to configure the selected vector store.
+  After selecting Vector Search, three additional options will pop up:
+
+* Store Discovery: Dynamically discover Vector Stores for use in Retrieval Augmented Generation.
+* Prompt Rephrase: Rephrase the user prompt, based on context and history, for a more meaningful Vector Search.
+* Document Grading: Grade the results from a Vector Search to determine their relevancy.
+
+  ![vector-search-options](./images/vector-search-options.png)
+
+  If you have more than one Vector Store you can either use the Store Discovery option or disable it. Disable it for now and perform the search on a specific Vector Store.
+
+1. In the **Select Alias** dropdown, choose the `TEST1` vector store table. The remaining fields in the **Vector Store** will be automatically populated, as each one represents a search parameter used to configure the selected vector store. 
 
   ![select-vector-store](./images/select-vector-store.png)
 
