@@ -672,7 +672,7 @@ You may now proceed to the next lab.
 ## Learn More
 
 * [Code with Python](https://www.oracle.com/developer/python-developers/)
-* [Oracle AI Database Documentation](https://docs.oracle.com/en/database/oracle/oracle-database/23/)
+* [Oracle AI Database Documentation](https://docs.oracle.com/en/database/oracle/oracle-database/26/)
 
 ## Acknowledgements
 * **Authors** - Francis Regalado, Uma Kumar

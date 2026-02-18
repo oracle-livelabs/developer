@@ -54,7 +54,7 @@ This lab assumes you have:
 
 ## Learn More
 
-* [Oracle AI Database Documentation](https://docs.oracle.com/en/database/oracle/oracle-database/23/)
+* [Oracle AI Database Documentation](https://docs.oracle.com/en/database/oracle/oracle-database/26/)
 
 ## Acknowledgements
 * **Authors** - Uma Kumar
