@@ -1,0 +1,41 @@
+{
+    "workshoptitle": "Build a GenAI App on Oracle AI Database – Retail Edition",
+    "help": "livelabs-help-database_us@oracle.com",
+    "tutorials": [
+        {
+            "title": "Introduction",
+            "description": "The Introduction is always first. The title and contents menu title match for the Introduction.",
+            "filename": "../../introduction/introduction.md"
+        },
+        {
+            "title": "Lab 1: Connect to the Development Environment",
+            "description": "This is a step-by-step guide showcasing how the demo instance is navigated",
+            "filename": "../../connect-to-env/connect-to-env.md"
+        },
+        {
+            "title": "Lab 2: Coding Basics on Oracle AI Database",
+            "description": "Some coding examples",
+            "filename": "../../codingbasics/codingbasics.md"
+        },
+        {
+            "title": "Lab 3: Step by Step - Implement RAG with Oracle AI Database",
+            "description": "This is a step-by-step guide showcasing how the demo instance is navigated",
+            "filename": "../../build/build.md"
+        },
+        {
+            "title": "Lab 4: Build Agentic AI",
+            "description": "This is a step-by-step guide showcasing how the demo instance is created",
+            "filename": "../../oraclemcp/oraclemcp.md"
+        },
+        {
+            "title": "Quiz",
+            "description": "Test your knowledge of RAG and agentic applications",
+            "filename": "../../quiz/quiz.md"
+        },
+        {
+            "title": "Need Help?",
+            "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+            "filename": "https://oracle-livelabs.github.io/common/labs/need-help/need-help-freetier.md"
+        }
+    ]
+}

@@ -73,4 +73,4 @@ You may now **proceed to the next lab**.
 ## Acknowledgements
 
 * **Author** - Andy Tael, July 2025
-* **Last Updated By** - Andy Tael, July 2025
+* **Last Updated By** - Lorenzo De Marchis, February 2026
