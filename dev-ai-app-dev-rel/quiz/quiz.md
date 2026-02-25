@@ -11,6 +11,10 @@ Estimated Time: 5 minutes
     badge: images/badge.png
 ```
 
+### Objectives
+
+* Pass the quiz and get your skills badge!
+
 ### Quiz Questions
 
 ```quiz score

@@ -88,7 +88,7 @@ Create a saved connection that Oracle MCP reuses for all tool calls.
     conn -save jupmcp -replace -savepwd ${USERNAME}/${DBPASSWORD}@"${DBCONNECTION}"
     ```
 
-This creates a persistent, password-protected connection named jupmcp. The MCP agent can discover and use it in later steps if SQLcl runs with -mcp and the saved connection is on the active client path.
+    This creates a persistent, password-protected connection named jupmcp. The MCP agent can discover and use it in later steps if SQLcl runs with -mcp and the saved connection is on the active client path.
 
 ## Task 2: Use LangChain as the Oracle MCP Runner
 
@@ -116,9 +116,9 @@ Launch LangChain as the client to connect to Oracle MCP, discover tools, and run
 
     ![response1](./images/agentresponse1.png =50%x*)
 
-✅ **Checkpoint** You successfully invoked MCP tools from LangChain and received a model-generated answer.
+    ✅ **Checkpoint** You successfully invoked MCP tools from LangChain and received a model-generated answer.
 
-## Task 3 (Optional): Use LangChain as the Oracle MCP Runner with a Reasoning Agent
+## Task 3: (Optional) Use LangChain as the Oracle MCP Runner with a Reasoning Agent
 
 Run a reasoning agent—a more advanced MCP client that plans, explains, and justifies each step before acting. The reasoning agent typically runs longer and can show why it chose each tool and how the decision flow unfolds, depending on model settings and tracing configuration. This is useful for debugging, auditing, and optimizing multi-tool workflows in production.
 
@@ -159,15 +159,15 @@ Why Does It Matter?
 
     ![response2](./images/agentresponse2.png =50%x*)
 
-💡**Developer insight**
-For SeerHolding’s development teams, reasoning agents add more than verbosity. They provide explainability.
-When you deploy AI copilots with Oracle MCP for any of SeerHolding's divisions, you can trace each database interaction step by step.
-That visibility helps you debug complex chains, document behavior for audits, and build trust in production AI systems.
+    💡**Developer insight**
+    For SeerHolding’s development teams, reasoning agents add more than verbosity. They provide explainability.
+    When you deploy AI copilots with Oracle MCP for any of SeerHolding's divisions, you can trace each database interaction step by step.
+    That visibility helps you debug complex chains, document behavior for audits, and build trust in production AI systems.
 
 
-✅ **Checkpoint**
-You’ve successfully run a reasoning-enabled MCP agent.
-Compare its detailed reasoning flow with the faster agent from Task 2 to see how planning affects performance and interpretability.
+    ✅ **Checkpoint**
+    You’ve successfully run a reasoning-enabled MCP agent.
+    Compare its detailed reasoning flow with the faster agent from Task 2 to see how planning affects performance and interpretability.
 
 ## Task 4: Interact through a web console
 
@@ -216,20 +216,19 @@ Now you’ll use a simple web console built in Flask to interact with the Oracle
     ![result1](./images/result1.png)
 
 
-💡 **Developer insight**
-When you click New Session, you reset the conversation context and prevent older responses from influencing new prompts.
-Meanwhile, the app automatically stores your latest answer in Oracle allowing future queries to include prior context without extra code.
+    💡 **Developer insight**
+    When you click New Session, you reset the conversation context and prevent older responses from influencing new prompts.
+    Meanwhile, the app automatically stores your latest answer in Oracle allowing future queries to include prior context without extra code.
 
-Here’s what this app wires together:
+    Here’s what this app wires together:
 
-* **Oracle MCP**: runs as the tool server through sql -mcp, exposing database operations as callable tools.
+    * **Oracle MCP**: runs as the tool server through sql -mcp, exposing database operations as callable tools.
 
-* **LangChain Agent**: dynamically discovers those tools and orchestrates them at runtime.
+    * **LangChain Agent**: dynamically discovers those tools and orchestrates them at runtime.
 
-* **OCI GenAI**: uses the cohere.command-a-03-2025 model for reasoning and summarization.
+    * **OCI GenAI**: uses the cohere.command-a-03-2025 model for reasoning and summarization.
 
-Together, these layers turn a standard Flask app into an agentic web interface — one that remembers, reasons, and interacts with Oracle AI Database in natural language.
-
+    Together, these layers turn a standard Flask app into an agentic web interface — one that remembers, reasons, and interacts with Oracle AI Database in natural language.
 
 ## Task 5: Create and modify database objects via MCP
 
@@ -247,9 +246,9 @@ Together, these layers turn a standard Flask app into an agentic web interface �
     ![new table](./images/newtable.png)
 
 
-The agent translates your request into SQL, executes it through MCP, and confirms creation.
+    The agent translates your request into SQL, executes it through MCP, and confirms creation.
 
-This shows how developers can delegate common schema tasks to secure, explainable AI assistants without writing SQL manually.
+    This shows how developers can delegate common schema tasks to secure, explainable AI assistants without writing SQL manually.
 
 ## Task 6: Explore logging and security
 
@@ -275,22 +274,22 @@ Oracle MCP logs every interaction automatically. You can review the logs directl
 
     ![mcp log](./images/log.png)
 
-You’ll see a record of each MCP action with timestamps and user IDs — ideal for auditing and traceability.
+    You’ll see a record of each MCP action with timestamps and user IDs — ideal for auditing and traceability.
 
-💡 **Developer insight**
+    💡 **Developer insight**
 
-Every MCP call leaves a trace.
-Oracle MCP automatically logs the tools used, parameters passed, and responses generated, creating a transparent audit trail for every AI-driven database action.
+    Every MCP call leaves a trace.
+    Oracle MCP automatically logs the tools used, parameters passed, and responses generated, creating a transparent audit trail for every AI-driven database action.
 
-For developers, this means:
+    For developers, this means:
 
-* Debugging becomes data-driven. You can inspect exact tool sequences when troubleshooting complex agent runs.
+    * Debugging becomes data-driven. You can inspect exact tool sequences when troubleshooting complex agent runs.
 
-* Security stays enforceable. Each call links to the authenticated user, timestamp, and endpoint.
+    * Security stays enforceable. Each call links to the authenticated user, timestamp, and endpoint.
 
-* Compliance is built-in. You can prove what data was accessed, when, and by which agent. This is a must for regulated industries.
+    * Compliance is built-in. You can prove what data was accessed, when, and by which agent. This is a must for regulated industries.
 
-Logging isn’t an afterthought; it’s how agentic systems at SeerHolding stay explainable, auditable, and production-ready.
+    Logging isn’t an afterthought; it’s how agentic systems at SeerHolding stay explainable, auditable, and production-ready.
 
 ## Conclusion
 
