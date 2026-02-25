@@ -182,7 +182,7 @@ You will query customer data from the `customer_returns_dv` JSON duality view, w
 
     ![Fetch customer](./images/fetch-customer.png " ")
 
-If you saw or ran the demo lab #1 "Run the Demo" earlier, this is what gets printed out when the Return officer clicks on the customer 1000. You just built it.
+    If you saw or ran the demo lab #1 "Run the Demo" earlier, this is what gets printed out when the Return officer clicks on the customer 1000. You just built it.
 
 ## Task 4: Create a function to generate recommendations for the customer
 

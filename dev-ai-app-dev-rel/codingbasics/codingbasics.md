@@ -80,7 +80,7 @@ In this first task, you will connect to an Oracle AI Database instance using Ora
 
     ![connect](./images/connect.png " ")
 
->**Note:** The last line, `cursor = connection.cursor()`, creates a cursor object from the established Oracle database connection. A cursor acts as a control structure that enables the execution of SQL queries and retrieval of results from the database. It is essential for sending SQL commands, fetching data, and iterating through query results. We will be using the cursor object in later steps of this lab. The object persists in the notebook session, so you can use it in subsequent cells without re-establishing the connection.
+    >**Note:** The last line, `cursor = connection.cursor()`, creates a cursor object from the established Oracle database connection. A cursor acts as a control structure that enables the execution of SQL queries and retrieval of results from the database. It is essential for sending SQL commands, fetching data, and iterating through query results. We will be using the cursor object in later steps of this lab. The object persists in the notebook session, so you can use it in subsequent cells without re-establishing the connection.
 
 ## Task 3: Create tables and insert data
 
@@ -135,7 +135,7 @@ Now, that we have established a connection, we can start creating our tables and
     </copy>
    ```
 
->**Note:** We are creating a function called `query_orders()` that will allow us to query our table. We can use the same function in one of the following tasks
+    >**Note:** We are creating a function called `query_orders()` that will allow us to query our table. We can use the same function in one of the following tasks
 
 3. Run your code (**shift+enter**) and see what happens. You should get a list of all the orders in our table.
 
@@ -191,11 +191,11 @@ Now, that we have established a connection, we can start creating our tables and
 
     ![query customers](./images/task3.png " ")
 
-### **Task Summary**
+    ### **Task Summary**
 
-Nice job. You successfully created two new tables with sample data using Python and Oracle Database.  
+    Nice job. You successfully created two new tables with sample data using Python and Oracle Database.  
 
-You also created a function that allows you to query your new table which we'll use in some of the following tasks
+    You also created a function that allows you to query your new table which we'll use in some of the following tasks
 
 ## Task 4: Create a JSON Duality View 
 
@@ -263,7 +263,7 @@ Next, let's explore how we can use a **JSON Duality View** to query our new tabl
 
     ![dv](./images/dv.png " ")
 
->💡 **JSON Duality Views** automatically maps relational columns to JSON documents (and vice versa) in the same table, letting you store data in a traditional schema but also access it as if it were a JSON object. So even though you’ve coded a JSON view in Python, you can switch over to standard SQL queries without duplicating data or maintaining extra structures. Super cool! 
+    >💡 **JSON Duality Views** automatically maps relational columns to JSON documents (and vice versa) in the same table, letting you store data in a traditional schema but also access it as if it were a JSON object. So even though you’ve coded a JSON view in Python, you can switch over to standard SQL queries without duplicating data or maintaining extra structures. Super cool! 
 
 3. Let's create a new function that allows us to query our new JSON Duality View. This time however, we will enhance our function to allow using input parameters. Instead of retrieving all rows, we want to write a function that returns only a specific row based on the first name of a customer. Copy the following code into a new cell and run it.
 
@@ -305,7 +305,7 @@ Next, let's explore how we can use a **JSON Duality View** to query our new tabl
 
     🔴 **`query_dv("Dan")`** - Here we are calling our query function again, but this time passing in the string `"Dan"` as a parameter. This will return all rows where `first_name` is equal to `"Dan"`. The result is displayed in JSON format, since it's coming from a JSON Duality View.
 
->**Note:** Notice that our output is a nicely formatted document that now not only includes our customer data but also all orders for that customer.
+    >**Note:** Notice that our output is a nicely formatted document that now not only includes our customer data but also all orders for that customer.
 
 ## Task 5: Connect to the database using pymongo
 

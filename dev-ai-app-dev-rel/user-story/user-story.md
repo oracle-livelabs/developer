@@ -58,7 +58,7 @@ In this first example, you will use the application to authorize a return for a 
 
     ![David Williams chatbot](./images/david-williams-chatbot.png =50%x*)
 
->💡 In Oracle AI Database, **AI Vector Search** allows you to combine your business data with a Large Language Model (LLM) to reduce hallucinations and get accurate answers from your data.
+    >💡 In Oracle AI Database, **AI Vector Search** allows you to combine your business data with a Large Language Model (LLM) to reduce hallucinations and get accurate answers from your data.
 
 4. Select the **Navigate To Decisions** button.
 
@@ -102,17 +102,17 @@ In this first example, you will use the application to authorize a return for a 
 
     ![David Williams In Progress List](./images/david-in-progress.png =50%x*)
 
-**Task Summary**
+    **Task Summary**
 
-Once you select and save one of the 3 return options recommended by the AI: 
+    Once you select and save one of the 3 return options recommended by the AI: 
 
-✅ The customer's return status is updated.
+    ✅ The customer's return status is updated.
 
-✅ A finalized PDF decision document is generated.  
+    ✅ A finalized PDF decision document is generated.  
 
-✅ The dashboard reflects the change in real-time — marking David as In Progress.
+    ✅ The dashboard reflects the change in real-time — marking David as In Progress.
 
-Congratulations, you have just approved your first customer return! Proceed to the next task.
+    Congratulations, you have just approved your first customer return! Proceed to the next task.
 
 ## Task 3: Demo - Denying a Customer with high risk
 In this example, you will navigate the application to review a customer and deny them as part of the exercise. The first user on your to-do list is Alice Smith.
@@ -137,7 +137,7 @@ In this example, you will navigate the application to review a customer and deny
 
     ![Alice Smith Decision](./images/alice-smith-decision.png =50%x*)
 
->⁉️ **What are two reasons that the AI decided to deny this return?** ⁉️
+    >⁉️ **What are two reasons that the AI decided to deny this return?** ⁉️
 
 4. Expand **Interactive Graph: Customer Return & Risk** to view the graph.
 
@@ -149,7 +149,7 @@ In this example, you will navigate the application to review a customer and deny
 
     This graph shows Alice’s return request linked to a policy rule (in-store within 30 days) and the system’s recommendation. By connecting the customer, request, reason, and policy in one view, the Operational Property Graph makes it clear why a return is approved, denied, or flagged. Analysts can instantly explain the decision to the customer, reducing disputes and building trust.
 
->💡 In Oracle AI Database, **Property Graph** allows you to treat your data like a network of connected points, where each point (called a node) and each link (called an edge) has its own details or properties. This setup helps you run graph analytics, to find important connections or patterns, directly within the database.
+    >💡 In Oracle AI Database, **Property Graph** allows you to treat your data like a network of connected points, where each point (called a node) and each link (called an edge) has its own details or properties. This setup helps you run graph analytics, to find important connections or patterns, directly within the database.
 
 5. The return status is set to **Denied**. Click the **Confirm Decision** button.
 
@@ -177,9 +177,9 @@ In this example, you will navigate the application to review a customer and deny
 
     ![Alice Smith Denied List](./images/smith-denied-list.png =50%x*)
 
-**Conclusion**
+    **Conclusion**
 
-Congratulations, you have finished reviewing a customer with high fraud risk! Proceed to the next task.
+    Congratulations, you have finished reviewing a customer with high fraud risk! Proceed to the next task.
 
 ## Task 4: Demo - Update customer details
 
@@ -197,7 +197,7 @@ Lastly, lets explore how the system uses JSON Duality Views to handle profile up
 
     ![Click Process Selected PDF](./images/process-selected-pdf.png =50%x*)
 
->💡 **JSON Duality Views** in Oracle AI Database let's you update unstructured data in an easy, high-level format while automatically handling the technical details behind the scenes. This makes it faster and simpler to work with messy data and connect it to structured systems.
+    >💡 **JSON Duality Views** in Oracle AI Database let's you update unstructured data in an easy, high-level format while automatically handling the technical details behind the scenes. This makes it faster and simpler to work with messy data and connect it to structured systems.
 
 4. The customer profile has been updated.
 
@@ -207,15 +207,15 @@ Lastly, lets explore how the system uses JSON Duality Views to handle profile up
 
     ![Customer Profile Updated](./images/return-description-updated.png)
 
-**Task Summary**
+    **Task Summary**
 
-Once the document is uploaded:
+    Once the document is uploaded:
 
-✅ The system automatically detects the new item condition data.
+    ✅ The system automatically detects the new item condition data.
 
-✅ Then their profile will be updated for the return description.
+    ✅ Then their profile will be updated for the return description.
 
-✅ And thanks to JSON Transform and JSON Duality Views, only the relevant field is modified — leaving the rest of the profile UNTOUCHED.
+    ✅ And thanks to JSON Transform and JSON Duality Views, only the relevant field is modified — leaving the rest of the profile UNTOUCHED.
 
 ## Conclusion
 
