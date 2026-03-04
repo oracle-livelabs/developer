@@ -199,7 +199,7 @@ Now, that we have established a connection, we can start creating our tables and
 
 ## Task 4: Create a JSON Duality View 
 
-Next, let's explore how we can use a **JSON Duality View** to query our new table. A JSON Duality View allows us to interact with data as JSON objects, i.e., data is stored as documents. Unlike a regular view, we can also update data in a JSON Duality View. Any updates will be reflected in our original relational tables. We will create a JSON Duality View using our newly created tables `customers_demo` and `orders_demo`. We are joining these two tables as we need the customer orders with the customer data. If this was two collections in a document database, this would be two seperate queries to the database and word in your app, or it'd mean duplicate data, depending on how you modeled your data in that database.
+Next, let's explore how we can use a **JSON Duality View** to query our new table. A JSON Duality View allows us to interact with data as JSON objects, i.e., data is stored as documents. Unlike a regular view, we can also update data in a JSON Duality View. Any updates will be reflected in our original relational tables. We will create a JSON Duality View using our newly created tables `customers_demo` and `orders_demo`. We are joining these two tables as we need the customer orders with the customer data. If this was two collections in a document database, this would be two separate queries to the database and word in your app, or it'd mean duplicate data, depending on how you modeled your data in that database.
 
 1. Before we create the **JSON Duality View**, we need to add some **constraints** to our new tables. Copy & paste the following code into a **new cell** and run it.
 
@@ -295,15 +295,15 @@ Next, let's explore how we can use a **JSON Duality View** to query our new tabl
 
     You notice that our code has some significant changes. We are now passing a parameter into our query, and we are formatting the output of our query. Let's have a closer look:
 
-    🔴 **`import json`** - This is a Python module that allows us to work with JSON. Remember: JSON Duality Views present data in document format, i.e., JSON.
+    * **`import json`** - This is a Python module that allows us to work with JSON. Remember: JSON Duality Views present data in document format, i.e., JSON.
 
-    🔴 **`query_dv(first_name)`** - This is a function that takes in a parameter and returns the result of our query. We are passing in `first_name` as a parameter, which we can use to filter our results.
+    * **`query_dv(first_name)`** - This is a function that takes in a parameter and returns the result of our query. We are passing in `first_name` as a parameter, which we can use to filter our results.
 
-    🔴 **`...WHERE JSON_EXISTS...`** - This is an Oracle AI Database function called `JSON_EXISTS`, which allows us to check if a specific key exists in a JSON object. In this case, we are checking if the `first_name` key exists in our JSON document. Essentially, `JSON_EXISTS` function enables us to use SQL syntax to check if a key exists in a JSON object. Remember, unlike rows in a relational table, JSON documents in the same collection don't all have to have the same shape.
+    * **`...WHERE JSON_EXISTS...`** - This is an Oracle AI Database function called `JSON_EXISTS`, which allows us to check if a specific key exists in a JSON object. In this case, we are checking if the `first_name` key exists in our JSON document. Essentially, `JSON_EXISTS` function enables us to use SQL syntax to check if a key exists in a JSON object. Remember, unlike rows in a relational table, JSON documents in the same collection don't all have to have the same shape.
 
-    🔴 **`json.dumps(raw_json, default=str, indent=4)`** - This is a Python function that formats our output. We are passing in the `raw_json` variable as an argument and formatting it with the `default=str` parameter.
+    * **`json.dumps(raw_json, default=str, indent=4)`** - This is a Python function that formats our output. We are passing in the `raw_json` variable as an argument and formatting it with the `default=str` parameter.
 
-    🔴 **`query_dv("Dan")`** - Here we are calling our query function again, but this time passing in the string `"Dan"` as a parameter. This will return all rows where `first_name` is equal to `"Dan"`. The result is displayed in JSON format, since it's coming from a JSON Duality View.
+    * **`query_dv("Dan")`** - Here we are calling our query function again, but this time passing in the string `"Dan"` as a parameter. This will return all rows where `first_name` is equal to `"Dan"`. The result is displayed in JSON format, since it's coming from a JSON Duality View.
 
     >**Note:** Notice that our output is a nicely formatted document that now not only includes our customer data but also all orders for that customer.
 
@@ -421,7 +421,7 @@ Next, let's update some data in our database using MongoDB syntax. Let's write a
     
 ## Task 8: Query relational tables to verify updates made through JSON Duality View
 
-The final step in our basic coding tour with Python and the Oracle AI Database is to query the two relational tables we created earlier. We just updated the JSON Duality view, so let's run a query on it to see if the changes were reflected. Remember that we created two functions in the beginning of this lab: `query_customers()` and `query_orders()`. Let's use these functions to get our data from MongoDB and update it with the new email address.
+The final step in our basic coding tour with Python and the Oracle AI Database is to query the two relational tables we created earlier. We just updated the JSON Duality view, so let's run a query on it to see if the changes were reflected. Remember that we created two functions in the beginning of this lab: `query_customers()` and `query_orders()`. Let's use these functions to get our data from MongoDB and verify the email address was updated.
 
 1. First, run the ``query_customers()` function in a new cell
 
@@ -476,15 +476,15 @@ The final step in our basic coding tour with Python and the Oracle AI Database i
 
     As you can see we included some new features in our function. Let's have a closer look:
 
-    🔴 **`import pandas as pd`** - This is a Python module that allows us to work with Pandas DataFrames. We will be using this module to format our output.
+    - **`import pandas as pd`** - This is a Python module that allows us to work with Pandas DataFrames. We will be using this module to format our output.
 
-    🔴 **` column_names`** - This is a list of column names returned by our query which is a list of strings included in the cursor object returned by our query. 
+    - **` column_names`** - This is a list of column names returned by our query which is a list of strings included in the cursor object returned by our query. 
 
-    🔴 **`df.head()`** - This is a method that returns that returns the result of the query including the column names. 
+    - **`df.head()`** - This is a method that returns that returns the result of the query including the column names. 
 
 ## Conclusion
 
-As a developer at Seer Holdings, you've just built the foundation for a GenAI-powered corporate approval system. We learned how to use Python and Oracle's Python driver `oracledb` to interact with Oracle AI Database's new features. You learned how to user the `cursor` object to execute SQL queries. Using the `cursor` object, you created a **JSON Duality View** and you even used some JSON functions to query documents using SQL syntax. Then, you also learned how to connect to the database using `pymongo` and retrieve data from a table in the database using **MongoDB syntax**. You created functions to update the **JSON Duality View** and you learned how these updates are also reflected in the underlying relational database tables.
+As a developer at Seer Holdings, you've just built the foundation for a GenAI-powered corporate approval system. We learned how to use Python and Oracle's Python driver `oracledb` to interact with Oracle AI Database's new features. You learned how to use the `cursor` object to execute SQL queries. Using the `cursor` object, you created a **JSON Duality View** and you even used some JSON functions to query documents using SQL syntax. Then, you also learned how to connect to the database using `pymongo` and retrieve data from a table in the database using **MongoDB syntax**. You created functions to update the **JSON Duality View** and you learned how these updates are also reflected in the underlying relational database tables.
 
 This architecture eliminates the need for duplicating data across platforms and simplifies how developers build AI-ready applications. Whether you're calling SQL, working with JSON, or speaking Mongo, you're always working with a single source of truth inside the Oracle Database.
 

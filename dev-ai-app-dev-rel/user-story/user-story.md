@@ -197,7 +197,7 @@ Lastly, lets explore how the system uses JSON Duality Views to handle profile up
 
     ![Click Process Selected PDF](./images/process-selected-pdf.png =50%x*)
 
-    >💡 **JSON Duality Views** in Oracle AI Database let's you update unstructured data in an easy, high-level format while automatically handling the technical details behind the scenes. This makes it faster and simpler to work with messy data and connect it to structured systems.
+    >💡 **JSON Duality Views** in Oracle AI Database lets you update unstructured data in an easy, high-level format while automatically handling the technical details behind the scenes. This makes it faster and simpler to work with messy data and connect it to structured systems.
 
 4. The customer profile has been updated.
 

@@ -4,7 +4,7 @@
 
 In this set of labs, we'll look at SeerGroup, a global conglomerate with multiple divisions. Each division has various transactions, documents, and customer data. Their challenges are like many other businesses: decisions take too long, outcomes are not always accurate enough, or things get confusing because data is scattered across silos and systems, and "we've always done it that way" attitude has crept in. Also like many, they want to see what, if any, help AI-driven apps can be to their internal and external processes.
 
-This workshop shows how SeerGroup tackles this. By keeping data in one place and using more modern tools and framworks, such as LangChain, they are working to cut out multiple integrations to give analysts, engineers, and managers a **single platform** for smarter and more informed approvals, efficient and more accurate investigations, and clearer customer answers and outcomes.
+This workshop shows how SeerGroup tackles this. By keeping data in one place and using more modern tools and frameworks, such as LangChain, they are working to cut out multiple integrations to give analysts, engineers, and managers a **single platform** for smarter and more informed approvals, efficient and more accurate investigations, and clearer customer answers and outcomes.
 
 Estimated Workshop Time: 140 minutes
 
@@ -30,8 +30,8 @@ Use Python with Oracle AI Database to create tables, shape them into JSON Dualit
 * **Lab 4 – Implement RAG**
 Construct a working AI application. Pull customer and grid data, generate recommendations with OCI Generative AI, chunk and vectorize the results, and answer follow-up questions using Vector Search + RAG.
 
-* **Lab 5 – Explorer agentic apps with Oracle MCP**
-This lab links Oracle MCP to LangChain (an AI agent framework ) through a Flask web console and exposes SQL operations as AI-discoverable tools. It includes SeerHolding sample schemas for domain-specific prompt testing.
+* **Lab 5 – Explore agentic apps with Oracle MCP**
+This lab links Oracle MCP to LangChain (an AI agent framework ) through a Flask web console and exposes SQL operations as AI-discoverable tools. It includes SeerGroup sample schemas for domain-specific prompt testing.
 
 By the end, you’ll have a complete toolkit—from clean data to live AI apps to composable tools—that shows how SeerGroup industries can turn their data into intelligent applications.
 
