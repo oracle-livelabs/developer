@@ -104,7 +104,7 @@ You will query customer data from the `customer_returns_dv` JSON duality view, w
 
 - **Define a function**: Create a reusable function `fetch_customer_data` to query the database by customer ID, extracting the JSON data for a specific customer.
 
-- **Use an example**: Fetch data for customer `1000` (Alice Smith) to demonstrate the process.
+- **Use an example**: Fetch data for customer `1001` (Alice Smith) to demonstrate the process.
 
 - **Display the results**: Format the retrieved data into a pandas DataFrame for a clear, tabular presentation, showing key details like name, LifeTime Spend, Return Amount, and Loyalty Tier.
 

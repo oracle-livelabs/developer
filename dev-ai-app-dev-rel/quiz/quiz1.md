@@ -1,14 +1,14 @@
-# Quiz
+# Quiz on the Fundamentals of Data for AI
 
 ## Introduction
 
-Test your knowledge of building a RAG and agentic! This quiz covers key concepts from the lab including Vector Search, embeddings, Python integration, and AI-powered recommendation systems.
+Test your knowledge of the Fundamentals of Data for AI!
 
-Estimated Time: 5 minutes
+Estimated Time: ~5 minutes
 
 ```quiz-config
     passing: 80
-    badge: images/badge.png
+    badge: images/badge1.png
 ```
 
 ### Objectives
@@ -18,23 +18,12 @@ Estimated Time: 5 minutes
 ### Quiz Questions
 
 ```quiz score
-Q: What is the primary purpose of RAG (Retrieval-Augmented Generation)?
-- To replace the need for a database entirely
-- To build a better augmented
-* To retrieve and attach physical hardware components to an LLM, thus making your own ghost in the shell. Major Kusanagi would be so proud
-* To augment an LLM's responses by retrieving and providing relevant data that exists outside its training knowledge
 
-Q: True or False: Oracle AI Database enables you to create embeddings directly within the database
-* True
-- False
-- Shmaybe
-
-Q: Which Python library is used to connect to Oracle AI Database in this lab?
-- psycopg2
-* oracledb
-- pymongo
-- sqlalchemy
-> The oracledb library can be easily grabbed using `pip install oracledb`
+Q: What is the core tenant of the Unified Model Theory(UMT)?
+* Model your canonical schema for data integrity, security, etc., but design data projections for application access patterns.
+- All data, when viewed through the correct access surface at 9am, transforms into coffee.
+- Eliminating polyglot persistence requires passing through five stages of database grief.
+> The goal of UMT is to enable you to model a canonical schema, but project that data in whichever shapes needed by consumers.
 
 Q: What is the default category of vector indexes in Oracle AI Database?
 - IVF (Inverted File)
@@ -47,12 +36,14 @@ Q: What's likely the best data type to store embeddings in Oracle AI Database?
 - BLOBOFREGRET
 * VECTOR
 - VARCHAR2
+> Unless you have a solid reason not to, you should be using VECTOR data type to store vector embeddings.
 
-Q: What does the VECTOR_CHUNKS function do?
+Q: What does the VECTOR_CHUNKS function in Oracle AI Database do?
 - It's a hidden function that creates fresh, chunky dog food ondemand
 - Encrypts sensitive customer data
-* Splits text into smaller chunks to generate vector embeddings that can be used with vector indexes or hybrid vector indexes.
+* Splits text into smaller chunks to generate vector embeddings used with vector indexes or hybrid vector indexes.
 - Creates backup copies of database tables in bite-sized chunks
+> Chunking is a critical mechanism as embedding models have fixed token limits and, more importantly, smaller, semantically focused chunks produce more precise embeddings that match what a user is searching for rather than burying the relevant signal in a sea of unrelated context.
 
 Q: Which database feature combines data from one or more tables (e.g. CUSTOMERS, RETURN_REQUESTS) and projects a JSON document?
 * JSON Relational Duality View
@@ -81,4 +72,4 @@ Q: How does Cosine similarity measure distance?
 
 ## Acknowledgements
 * **Authors** - Kirk Kirkconnell
-* **Last Updated By/Date** - Kirk Kirkconnell, February 2026
+* **Last Updated By/Date** - Kirk Kirkconnell, March 2026
