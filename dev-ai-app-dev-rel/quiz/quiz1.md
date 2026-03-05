@@ -13,7 +13,7 @@ Estimated Time: ~5 minutes
 
 ### Objectives
 
-* Pass the quiz and get your skills badge!
+* Pass the quiz and get your "Fundamentals of Data for AI" skills badge!
 
 ### Quiz Questions
 
@@ -30,6 +30,7 @@ Q: What is the default category of vector indexes in Oracle AI Database?
 * HNSW (Hierarchical Navigable Small Worlds )
 - Token Ring
 - OSON
+> HNSW is the default as it's the best general-purpose approximate nearest neighbor (ANN) algorithm available today. It has a good recall accuracy to speed ratio for most use cases.
 
 Q: What's likely the best data type to store embeddings in Oracle AI Database?
 - NUMBER
@@ -38,21 +39,7 @@ Q: What's likely the best data type to store embeddings in Oracle AI Database?
 - VARCHAR2
 > Unless you have a solid reason not to, you should be using VECTOR data type to store vector embeddings.
 
-Q: What does the VECTOR_CHUNKS function in Oracle AI Database do?
-- It's a hidden function that creates fresh, chunky dog food ondemand
-- Encrypts sensitive customer data
-* Splits text into smaller chunks to generate vector embeddings used with vector indexes or hybrid vector indexes.
-- Creates backup copies of database tables in bite-sized chunks
-> Chunking is a critical mechanism as embedding models have fixed token limits and, more importantly, smaller, semantically focused chunks produce more precise embeddings that match what a user is searching for rather than burying the relevant signal in a sea of unrelated context.
-
-Q: Which database feature combines data from one or more tables (e.g. CUSTOMERS, RETURN_REQUESTS) and projects a JSON document?
-* JSON Relational Duality View
-- Materialized View
-- Temporary Table
-- Stored Procedure
-> JSON Relational Duality Views enable you to interact with data in one or more relational tables, but read and write as native JSON.
-
-Q: True or False: You can query JSON, relational tables, and graph traversals all in one SQL statement?
+Q: True or False: In Oracle, you can query JSON collections, relational tables, and graph traversals all in one SQL statement?
 * True
 - False
 > It's true. You can even add a WHERE clause that performs a vector search to that same SQL statement.

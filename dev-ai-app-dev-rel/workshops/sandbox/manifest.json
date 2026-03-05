@@ -18,24 +18,34 @@
             "filename": "../../connect-to-env/connect-to-env.md"
         },
         {
+            "title": "Skills Badge Quiz #1",
+            "description": "Test your knowledge of the Fundamentals of Data for AI",
+            "filename": "../../quiz/quiz1.md"
+        },
+        {
             "title": "Lab 3: Coding Basics on Oracle AI Database",
             "description": "Some coding examples",
             "filename": "../../codingbasics/codingbasics.md"
         },
         {
             "title": "Lab 4: Step by Step - Implement RAG with Oracle AI Database",
-            "description": "This is a step-by-step guide showcasing how the demo instance is navigated",
+            "description": "This is a step-by-step guide showcasing how the demo application is created",
             "filename": "../../build/build.md"
         },
         {
+            "title": "Skills Badge Quiz #2",
+            "description": "Test your knowledge of coding basics and RAG",
+            "filename": "../../quiz/quiz2.md"
+        },
+        {
             "title": "Lab 5: Build Agentic AI",
-            "description": "This is a step-by-step guide showcasing how the demo instance is created",
+            "description": "This is a step-by-step guide showcasing how the demo application is created",
             "filename": "../../oraclemcp/oraclemcp.md"
         },
         {
-            "title": "Skills Badge Quiz",
+            "title": "Skills Badge Quiz #3",
             "description": "Test your knowledge of RAG and agentic applications",
-            "filename": "../../quiz/quiz.md"
+            "filename": "../../quiz/quiz3.md"
         },
         {
             "title": "Need Help?",
