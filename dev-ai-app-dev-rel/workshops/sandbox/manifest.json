@@ -1,5 +1,5 @@
 {
-    "workshoptitle": "Build a GenAI App on Oracle AI Database – Retail Edition",
+    "workshoptitle": "Build a GenAI App on Oracle AI Database",
     "help": "livelabs-help-database_us@oracle.com",
     "tutorials": [
         {
@@ -49,7 +49,7 @@
         },
         {
             "title": "Need Help?",
-            "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+            "description": "Solutions to common problems with LiveLabs and directions for receiving live help",
             "filename": "https://oracle-livelabs.github.io/common/labs/need-help/need-help-freetier.md"
         }
     ]

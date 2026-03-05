@@ -156,6 +156,8 @@ Why Does It Matter?
     * Execute the query: *Show all LOAN_APPLICATIONS*.
 
 4. Expected outcome:
+    
+    **Note:** The content generated when you run this may differ from the screenshots in this section.
 
     ![response2](./images/agentresponse2.png =50%x*)
 
