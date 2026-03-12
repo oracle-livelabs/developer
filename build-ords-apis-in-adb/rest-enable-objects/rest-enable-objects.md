@@ -2,7 +2,7 @@
 
 ## Introduction
 
-In this lab, you will use Database Actions and the REST Workshop to turn a PL/SQL procedure and a SQL statement into REST APIs.
+In this lab, you will use Database Actions and the REST Workshop to turn a PL/SQL procedure and an SQL statement into REST APIs.
 
 Estimated Lab Time: 20 minutes
 
@@ -17,7 +17,7 @@ Watch the video below for a quick walk-through of the lab.
 
 ### Prerequisites
 
-- The following lab requires an [Oracle Cloud account](https://www.oracle.com/cloud/free/). You may use your own cloud account, a cloud account that you obtained through a trial, or a training account whose details were given to you by an Oracle instructor.
+- The following lab requires an [Oracle Cloud account](https://www.oracle.com/cloud/free/). You may use your own cloud account, a cloud account obtained through a trial, or a training account whose details were given to you by an Oracle instructor.
 
 - This lab assumes you have completed all previous Labs.
 
@@ -31,7 +31,7 @@ Watch the video below for a quick walk-through of the lab.
 
     ![REST Tab Menu, choose Modules](./images/choose-modules-actions-menu.png " ")
 
-3. On the Modules page, left click the **+Create Module** button in the upper right.
+3. On the Modules page, left-click the **+Create Module** button in the upper right.
 
     ![Left click the + Create Modules button](./images/create-module-action.png " ")
 
@@ -48,7 +48,7 @@ Watch the video below for a quick walk-through of the lab.
     <details>
     <summary>*About Resource Modules*</summary>
 
-    💡 A module is an organizational unit used to group related resource templates. Templates will have handlers, which are responsible for providing the logic required to service a specific HTTP method (e.g., GET, POST, PUT, DELETE, UPDATE, etc.).
+    A module is an organizational unit used to group related resource templates. Templates will have handlers, which are responsible for providing the logic required to service a specific HTTP method (e.g., GET, POST, PUT, DELETE, UPDATE, etc.).
 
     </details>
 
@@ -70,21 +70,30 @@ Watch the video below for a quick walk-through of the lab.
 
     ![Create Modules slider](./images/create-module-submit.png " ")
 
-    > 💡 **INFO:** Here you can toggle "Show Code" to review what module creation might look like if it were performed manually.
+    > **INFO:** Here you can toggle "Show Code" to review what module creation might look like if it were performed manually.
+    >
     > ![Toggle Show Code to review what is happening under the covers](./images/toggle-show-code-option.png " ")
 
-9. Next we'll create a **Template** for our newly created module. Begin by clicking the **+ Create Template** button on the right side of the page.
+9. Next, we'll create a **Template** for our newly created module. To do so, click the **+ Create Template** button on the right side of the page.
 
     ![Left click the + Create Template button](./images/create-template-action.png " ")
 
-10. The **Create Template** slider will appear. Here we will create the endpoint, or URL location, for our REST enabled SQL statement. This statement will expect a value. In the **URI Template** template field, enter:
+10. The **Create Template** slider will appear. Here, we will create the endpoint, or URL location, for our REST-enabled SQL statement. This statement will expect a value. In the **URI Template** template field, enter:
 
     ```sh
     <copy>sqlreport/:id
     </copy>
-    ```
+    ```  
 
-    ![URI Template field](./images/enter-uri-template-field.png " ")
+    <details>
+    <summary>*What does the **`/:id`** in **`sqlreport/:id`** mean?*</summary>
+
+    This is called a "Route Pattern." You can use route patterns for required parameters in the URI to specify parameters for REST requests such as the GET method (which does not have a body) and in other special cases.
+
+    **Want to learn more?** Read the full specification for ORDS Route Pattern syntax [here](https://docs.oracle.com/en/database/oracle/oracle-rest-data-services/24.2/ordjv/doc-files/route-patterns.html).
+    </details>
+
+    ![URI Template field](./images/enter-uri-template-field.png " ")  
 
 11. When complete (**your URL hostname will be different than the below image**), click the **Create** button.
 
@@ -98,7 +107,7 @@ Watch the video below for a quick walk-through of the lab.
 
     ![Create Handler slider](./images/create-handler-slider.png " ")
 
-14. Enter **select * from csv_data where col2 = :id** in the **Source** section of the **Create Handler** slider:
+14. Enter `Select * from csv_data where col2 = :id` in the **Source** section of the **Create Handler** slider:
 
     ```sh
     <copy>select * from csv_data where col2 = :id</copy>
@@ -114,7 +123,7 @@ Watch the video below for a quick walk-through of the lab.
 
     ![Execute button in source section of the page](./images/execute-button-in-source.png " ")
 
-17. After clicking the **execute** button a **Bind Variables** modal will appear. Enter **a1** for the value in **id field** and then click **OK**.
+17. After clicking the **execute** button a **Bind Variables** modal will appear. Enter **a1** for the value in the **id** field and then click **OK**.
 
     ![Bind Variables modal](./images/bind-variable-modal.png " ")
 
@@ -122,11 +131,11 @@ Watch the video below for a quick walk-through of the lab.
 
     ![Source query results](./images/source-query-results.png " ")
 
-19. We can also test this endpoint in a browser. Click the pop out button.
+19. We can also test this endpoint in a browser. Click the **Open in New Browser Tab** button.
 
     ![pop out icon in the Template region on the top of the page](./images/pop-out-icon-template-region.png " ")
 
-20. In the new browser tab/window with the REST endpoint URL replace the :id with a1 and submit the URL..
+20. In the new browser tab/window with the REST endpoint URL, replace the `:id` with a1 and submit the URL.
 
     ![URL with bind variable](./images/url-with-bind-variable.png " ")
 
@@ -134,7 +143,7 @@ Watch the video below for a quick walk-through of the lab.
 
 ## Task 2: REST Enable Business Logic (PL/SQL procedure)
 
-1. Next, we'll REST enable our business logic, or PL/SQL procedure. Click `com.oracle.livelab.api` found in the Database Actions breadcrumbs.
+1. Next, we'll REST enable our business logic or PL/SQL procedure. To do so, click `com.oracle.livelab.api` in the Database Actions breadcrumbs.
 
     ![Database Actions breadcrumbs](./images/db-actions-breadcrumbs.png " ")
 
@@ -186,7 +195,7 @@ Watch the video below for a quick walk-through of the lab.
 
 10. Next we'll create an output parameter so we can return a result.
 
-    > 💡 **NOTE:** We should expect the count or rows where the passed in value is equal to the values in col2 in our table.*
+    > **NOTE:** We should expect the count or rows where the passed-in value is equal to the values in col2 in our table.
 
 11. Under the **Source** area, locate the **+ Create Parameter** button. Click the **+ Create Parameter** button.
 
@@ -208,7 +217,7 @@ Watch the video below for a quick walk-through of the lab.
 
     ![Source Type field](./images/parameter-source-type.png)
 
-15. Select `INT` for the **Parameter Type** field (recall, we are returning a number, or integer).
+15. Select `INT` for the **Parameter Type** field (recall, we are returning a number or integer).
 
     ![Parameter Type field](./images/parameter-parameter-type-field.png " ")
 
@@ -220,7 +229,7 @@ Watch the video below for a quick walk-through of the lab.
 
     ![Create Parameter slider with all info, left click create](./images/final-create-parameter-action.png " ")
 
-18. You will see the newly created parameter in the parameters table on the bottom of the page.
+18. You will see the newly created parameter in the parameters table at the bottom of the page.
 
     ![Parameter created in report](./images/parameter-in-report-table.png " ")
 
@@ -241,7 +250,7 @@ Watch the video below for a quick walk-through of the lab.
     > 💡 Choose the appropriate cURL command for your environment!
     > ![cURL Command reminder](./images/curl-command-reminder.png " ")
 
-4. Click the `Substitutions` icon, a modal will appear.
+4. Click the `Substitutions` icon, and a modal will appear.
 
     ![Substitutions icon](images/substitutions-icon-for-bizlogic.png " ")
 
@@ -253,11 +262,11 @@ Watch the video below for a quick walk-through of the lab.
 
     ![Copied cURL command](./images/copied-curl-command-bizlogic.png " ")
 
-7. Then, using the Oracle Cloud Infrastructure Cloud Shell, paste and run the cURL command to confirm that the count is returned as the output variable.
+7. Then, using the Oracle Cloud Infrastructure Cloud Shell, paste the cURL command and run it. The shell will display the output variable response.
 
     ```sh
     <copy>curl -X POST \
-    'https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/admin/api/bizlogic' \
+    'https://livelab.adb.eu-frankfurt-1.oraclecloudapps.com/ords/admin/api/bizlogic' \
     --header 'Content-Type: application/json' \
     --data-binary '{
     "id": "a1",
@@ -278,7 +287,7 @@ Watch the video below for a quick walk-through of the lab.
 
 ## Task 4: Explore the OpenAPI View created by ORDS
 
-1. Return to the Module's main page. This can be done by clicking the module's name in the breadcrumbs in the upper left of the page.
+1. Return to the Module's main page by clicking its name in the breadcrumbs at the top left of the page.
 
     ![breadcrumbs in the upper left of the page](./images/return-to-main-with-breadcrumb.png " ")
 
@@ -290,11 +299,11 @@ Watch the video below for a quick walk-through of the lab.
 
     ![OpenAPI View](./images/open-api-as-swagger-view.png " ")
 
-    You can explore the APIs you created and try them out *directly* in the browser window.
+    You can explore your created APIs and try them out *directly* in the browser window.
 
     ![OpenAPI explore](./images/explore-apis-in-open-api-view.png " ")
 
-    You can also export this page as an OpenAPI doc for use in other tools and services using the pop out icon. ![pop out icon](./images/pop-menu.png) Select **Export Module** then **OpenAPI**.
+    Using the pop-out icon, you can also export this page as an OpenAPI doc for use in other tools and services. ![pop out icon](./images/pop-menu.png) Select **Export Module** then **OpenAPI**.
 
     ![OpenAPI doc export](./images/export-open-apis-action.png " ")
 
@@ -302,7 +311,7 @@ Watch the video below for a quick walk-through of the lab.
 
     ![OpenAPI example export](./images/open-api-example-export.png " ")
 
-4. In this lab, you published a REST API using custom SQL to accept an input as well as published a REST API using a stored PL/SQL procedure.
+4. In this lab, you published a REST API that accepts input using custom SQL and a REST API that uses a stored PL/SQL procedure.
 
 You may now [proceed to the next lab](#next).
 
@@ -315,4 +324,4 @@ You may now [proceed to the next lab](#next).
 
 ### Last Updated By/Date
 
-- Chris Hoina, May 2024
+- Chris Hoina, August 2024

@@ -17,7 +17,7 @@ As the stewards of Java, Oracle uniquely leverages its expertise to help enterpr
 
 ## About this Workshop
 
-This workshop is designed to guide you through the setup and utilization of Java Management Service (JMS) on Oracle Cloud Infrastructure (OCI). Initially, it covers the setup process, including creating essential OCI resources like Tagging, User Groups, Dynamic Groups, and Policies needed to initiate JMS functionality. Subsequently, it provides a step-by-step guide on creating a fleet, which serves as the primary collection for JMS operations and encompasses Managed Instances with a unified management approach. Following this, it walks you through creating a simple Java Application on an OCI compute instance or Windows OS. You'll then learn how to configure the Management Agent on your local machine (referred to as a Managed Instance in JMS) to monitor your Java application and view it within a fleet in JMS. Later, the workshop will cover the installation and configuration of the Management Gateway on an on-premises host, enabling another on-premises host to proxy through it for communication with the OCI network and JMS. Furthermore, it introduces the setup of a Java Application in a Docker container for monitoring using JMS. Finally, it will offer guidance on downloading Java artifacts via JMS and utilizing script-friendly URLs for monitoring Java downloads.
+This workshop is designed to guide you through the setup and utilization of Java Management Service (JMS) on Oracle Cloud Infrastructure (OCI). Initially, it covers the setup process, including creating essential OCI resources like User Groups, Dynamic Groups, and Policies needed to initiate JMS functionality. Subsequently, it provides a step-by-step guide on creating a fleet, which serves as the primary collection for JMS operations and encompasses Managed Instances with a unified management approach. Following this, it walks you through creating a simple Java Application on an OCI compute instance or Windows OS. You'll then learn how to configure the Management Agent on your local machine (referred to as a Managed Instance in JMS) to monitor your Java application and view it within a fleet in JMS. Later, the workshop will cover the installation and configuration of the Management Gateway on an on-premises host, enabling another on-premises host to proxy through it for communication with the OCI network and JMS. Furthermore, it introduces the setup of a Java Application in a Docker container for monitoring using JMS. Finally, it will offer guidance on downloading Java artifacts via JMS and utilizing script-friendly URLs for monitoring Java downloads.
 
 *Estimated Time:* 180 minutes
 
@@ -42,9 +42,9 @@ This workshop is designed to guide you through the setup and utilization of Java
 
 ## Extension Workshops
 
-After the completion of this workshop, you may proceed to explore further workshops that demonstrate the advanced features that JMS has to offer with [Use Java Management Service Advanced Features](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=3202).
+After the completion of this workshop, you may proceed to explore further workshops that demonstrate the advanced features that JMS has to offer with [Use Java Management Service Advanced Features](https://livelabs.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=3202).
 
-If you would like to learn more about using JMS together with other OCI services, you may explore [Integrate OCI Services with Java Management Service](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=3203).
+If you would like to learn more about using JMS together with other OCI services, you may explore [Integrate OCI Services with Java Management Service](https://livelabs.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=3203).
 
 
 ## Learn More

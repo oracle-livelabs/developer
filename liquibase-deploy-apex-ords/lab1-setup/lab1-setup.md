@@ -248,7 +248,7 @@ In this lab, you will:
 
 ## Learn more
 
-* [SQLcl Liquibase 101 LiveLabs Workshop](https://apexapps.oracle.com/pls/apex/f?p=133:180:1722441206322::::wid:3692)
+* [SQLcl Liquibase 101 LiveLabs Workshop](https://livelabs.oracle.com/pls/apex/f?p=133:180:1722441206322::::wid:3692)
 * [Download (SQLcl)](https://www.oracle.com/database/sqldeveloper/technologies/sqlcl/download/)
 * [Product Page (SQLcl)](https://www.oracle.com/database/sqldeveloper/technologies/sqlcl/)
 * [Documentation (SQLcl & SQLcl Liquibase)](https://docs.oracle.com/en/database/oracle/sql-developer-command-line/)

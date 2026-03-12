@@ -49,11 +49,11 @@ By automating your Oracle Database deployments with SQLcl Liquibase, you are unl
 
 Building off of the database object automation technology of open-source Liquibase, SQLcl Liquibase injects significant enhancements into this tool such as being able to capture and deploy: individual database objects, applications built using Oracle APEX, and Oracle REST APIs.
 
-While the [Take Control of Your Database With Automated Schema Changes](https://apexapps.oracle.com/pls/apex/f?p=133:180:13297437230967::::wid:3692) workshop focuses on giving you a 101 bootcamp of the core SQLcl Liquibase concepts, **Deploy APEX Apps In The Time It Takes To Make Your Morning Coffee** focuses on giving you a bird's eye view of how your different deployment options can come together to create a powerful full stack development project utilizing database objects, data, and REST APIs to power your core application.
+While the [Take Control of Your Database With Automated Schema Changes](https://livelabs.oracle.com/pls/apex/f?p=133:180:13297437230967::::wid:3692) workshop focuses on giving you a 101 bootcamp of the core SQLcl Liquibase concepts, **Deploy APEX Apps In The Time It Takes To Make Your Morning Coffee** focuses on giving you a bird's eye view of how your different deployment options can come together to create a powerful full stack development project utilizing database objects, data, and REST APIs to power your core application.
 
 ![Bird Flying](./images/bird-flying.jpg)
 
-Complete [Take Control of Your Database With Automated Schema Changes](https://apexapps.oracle.com/pls/apex/f?p=133:180:13297437230967::::wid:3692) and **Deploy APEX Apps In The Time It Takes To Make Your Morning Coffee** in any order you please. Both were designed to stand on their own and introduce you to the necessary concepts for full workshop understanding as you progress through the labs; no matter your experience level with Liquibase.
+Complete [Take Control of Your Database With Automated Schema Changes](https://livelabs.oracle.com/pls/apex/f?p=133:180:13297437230967::::wid:3692) and **Deploy APEX Apps In The Time It Takes To Make Your Morning Coffee** in any order you please. Both were designed to stand on their own and introduce you to the necessary concepts for full workshop understanding as you progress through the labs; no matter your experience level with Liquibase.
 
 ## SQLcl
 
@@ -140,7 +140,7 @@ The CD in CI/CD along with referring to Continuous Delivery, can additionally (a
 
 
 ## Learn More
-* [SQLcl Liquibase 101 LiveLabs Workshop](https://apexapps.oracle.com/pls/apex/f?p=133:180:1722441206322::::wid:3692)
+* [SQLcl Liquibase 101 LiveLabs Workshop](https://livelabs.oracle.com/pls/apex/f?p=133:180:1722441206322::::wid:3692)
 * [Download (SQLcl)](https://www.oracle.com/database/sqldeveloper/technologies/sqlcl/download/)
 * [Product Page (SQLcl)](https://www.oracle.com/database/sqldeveloper/technologies/sqlcl/)
 * [Documentation (SQLcl & SQLcl Liquibase)](https://docs.oracle.com/en/database/oracle/sql-developer-command-line/)

@@ -1,0 +1,53 @@
+{
+    "workshoptitle": "Event Streaming With Kafka Java Client for Oracle Database Transactional Event Queues (TxEventQ)",
+    "help": "livelabs-help-devdb_us@oracle.com",
+    "variables": ["../../microservice/variables.json",
+        "../../microservice/variables-in-another-file.json"],
+    "tutorials": [
+        {
+            "title": "Introduction",
+            "description": "The Introduction is always first. The title and contents menu title match for the Introduction.",
+            "filename": "../../introduction/introduction.md"
+        },
+        {
+            "title": "Get started",
+            "description": "Login to the Oracle Cloud",
+            "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/cloud-login-livelabs2.md"
+        },
+        {
+            "title": "Lab 1: Connect to Oracle Autonomous AI Database",
+            "description": "Lab where you will connect to Oracle Autonomous AI Database",
+            "filename": "../../adb/adb.md"
+        },
+        {
+            "title": "Lab 2: Create OKafka Topics in Oracle AI Database",
+            "description": "Learn how to create OKafka topics in Oracle AI Database using the kafka-clients Admin API.",
+            "filename": "../../create-topics/create-topics.md"
+        },
+        {
+            "title": "Lab 3: Produce and Consume Messages With OKafka",
+            "description": "Use kafka-clients Producer and Consumer APIs to publish and receive messages with Oracle AI Database.",
+            "filename": "../../producer-consumer/producer-consumer.md"
+        },
+        {
+            "title": "Lab 4: Use Transactional Messaging to Combine Messaging and Database Operations",
+            "description": "Produce and consume messages from Oracle AI Database in the same atomic transaction as SQL inserts, updates, and deletes.",
+            "filename": "../../transactional-messaging/transactional-messaging.md"
+        },
+        {
+            "title": "Lab 5 (Optional): Understand OKafka Authentication to Oracle AI Database",
+            "description": "Learn the required grants and authentication mechanisms for Java clients to authenticate to Oracle AI Database using OKafka.",
+            "filename": "../../okafka-authentication/okafka-authentication.md"
+        },
+        {
+            "title": "Need Help?",
+            "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+            "filename":"../../help/help.md"
+        },
+        {
+            "title": "Other LiveLabs you might like",
+            "description": "Other LiveLabs you might like",
+            "filename": "../../other-livelabs/other-livelabs.md"
+        }
+    ]
+}

@@ -76,14 +76,14 @@ In this lab, you will:
     | Set Socks Proxy                        | Host, Port (default is 80)|
     {: title="Available Network Configurations"}
 
-9.  Click on the combo box under **Logging configuration**
+9.  Click on the combo box under **Logging configuration** and select **Add FileHandler to Log Handler classes**.
 
       ![image of lcm logging configuration](images/lcm-logging-config.png)
 
-10. Add the following actions:
+      Add the following actions:
 
-      * **Add FileHandler to Log Handler classes**.
       * **Change global logging level**, select **ALL** option.
+      ![image of lcm logging actions](images/lcm-logging-actions.png)
 
       There are a total of 2 different logging configurations to choose from.
       | Actions                                | Options   |
@@ -96,7 +96,7 @@ In this lab, you will:
 
       ![image of LCM post install action save](images/lcm-post-install-action-save.png)
 
-12. The post Java installation actions can be configured differently based on different requirements. Return to the fleet details page, click **Lifecycle management settings**. The post Java installation actions that had been defined earlier will be shown.
+12. The post Java installation actions can be configured differently based on different requirements. Return to the fleet details page, click **Fleet Properties** tab. The post Java installation actions that had been defined earlier will be shown.
 
       ![image of fleet page post install action view](images/fleet-page-post-install-action-view.png)
 
@@ -117,42 +117,33 @@ In this lab, you will:
 4. The next page should display the advanced options for installing Java. There are two options for installing Java.
 
       * To install using the Java installer to standard locations, follow **Step 5**.
-      * If you prefer to extract Java to a customized location, skip to **Step 7**.
+      * If you prefer to extract Java to a customized location, skip to **Step 6**.
 
-5. Click **Install Java using Installer**, which will install Java to standard locations using executable installers.
+5. Click **Install Java using Installer**, which will install Java to standard locations using executable installers. Click **Next**.
 
    ![image of install java advanced options](images/install-java-advanced-options.png)
 
-6. You can choose the type of Java installation by selecting the drop down list. Select **Headful**. Click **Next**.
-
-   ![image of select headful java](images/install-java-advanced-select-headful.png)
-
-7. You can also choose to extract Java to a customized location. Click **Extract Java from compressed archive**.
+6. You can also choose to extract Java to a customized location. Click **Extract Java from compressed archive**.
+   
+   Enter a valid and absolute directory path without any environment variables, for example /opt/demo. Click **Next**.
 
    ![image of extract java](images/install-java-advanced-with-extract.png)
 
-   Enter a valid and absolute directory path without any environment variables, for example /opt/for-demo. Click **Next**.
-
-   ![image of extract java with customized path](images/install-java-advanced-customized-path.png)
-
-8. The next page displays the list of post Java installation actions defined previously in [Task 1](#Task1:EnableandSetupPostJavaInstallationActions). Select the post Java installation you want to perform. 
+7. The next page displays the list of post Java installation actions defined previously in [Task 1](#Task1:EnableandSetupPostJavaInstallationActions). Select the post Java installation actions you want to perform and click **Next**
 
    ![image of install java runtime select post install action](images/install-java-runtime-select-post-install-action.png)
 
    >**Note:** If you don’t select any post Java installation action, no post-install action will be executed after the Java installation.
 
-9. Click **Install Java runtime** to confirm the installation and submit a request for installation. This request is termed as a **Work Request**.
+8. Select **Submit request** and click **Submit**. This request is termed as a **Work Request**.
+![image of install java runtime submit now](images/install-java-runtime-submit-now.png)
 
-   ![image of install java runtime confirm](images/install-java-runtime-confirm.png)
-
-   If your request is submitted successfully, you should receive a notification in green as seen below:
-   
-   ![image of submitted install java runtime work request](images/install-java-runtime-work-request-submitted.png)
-
+   > **Note:** You can also schedule the installation by selecting **Schedule for later** and setting the schedule preference. Once submitted, you should see a new Scheduled task been created. To view/manage the scheduled task, refer to [Lab 12](?lab=view-and-manage-scheduled-tasks)
+   > ![image of install java runtime schedule later](images/install-java-runtime-schedule-later.png)
 
 ## Task 3: Verify Java Runtime Installation and Post Java Installation Action
 
-1. Return to the fleet details page. Scroll down to the **Resources** menu and select **Work Requests**. You should see the Install Java Runtime Work Request you submitted in Task 2. Click on the Work Request to view its details.
+1. Return to the fleet details page. Select **Work Requests** tab. You should see the Install Java Runtime Work Request you submitted in Task 2. Click on the Work Request to view its details.
 
    ![image of work request summary page](images/work-request-summary-page.png)
 
@@ -167,7 +158,7 @@ In this lab, you will:
    
    ![image of install completed without errors](images/install-complete-without-errors.png)
 
-4. Click the **Log Message** under the **Resources** section. A series of logs will be displayed. Check that the Java runtime has been installed.
+4. Click the **Log Message** tab. A series of logs will be displayed. Check that the Java runtime has been installed.
 
    ![image of install complete logs](images/install-complete-logs.png)
 
@@ -175,7 +166,7 @@ In this lab, you will:
 
    ![image of install complete logs post install action](images/install-complete-logs-post-install-action.png)
 
-5. Return to the fleet details page. Under the **Resources** menu, select **Java Runtimes**. This should display all the Java runtimes found in the fleet. The installed Java runtime should be indicated after next scanning. You can also check the installation manually on your Managed Instance.
+5. Return to the fleet details page. Select **Java Runtimes** tab. This should display all the Java runtimes found in the fleet. The installed Java runtime should be indicated after next scanning. You can also check the installation manually on your Managed Instance.
    
    ![image of verify java runtime installation](images/verify-java-runtime-installation.png)
 
@@ -201,8 +192,6 @@ In this lab, you will:
 
 4. To modify an existing action, click the combo box of the action and select a new action. A list of available actions should appear
 
-   ![image of LCM modify existing action](images/lcm-modify-existing-action.png)
-
    ![image of LCM modify existing action list](images/lcm-modify-existing-action-list.png)
 
 5. To remove an existing action, click the **X** beside the action to remove it.
@@ -226,4 +215,4 @@ In this lab, you will:
 ## Acknowledgements
 
 * **Author** - Yixin Wei, Java Management Service
-* **Last Updated By** - Siqi Liu, November 2023
+* **Last Updated By** - Satish Sarakanam, October 2025

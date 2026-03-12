@@ -12,9 +12,6 @@ You may review [Overview of Networking](https://docs.cloud.oracle.com/iaas/Conte
 
 Estimated lab time: 5 minutes
 
-Watch the video below for a quick walk-through of the lab.
-[Create a Virtual Cloud Network](videohub:1_n6nklo0z)
-
 ### Objectives
 In this lab, you will:
 - Create a virtual cloud network
@@ -25,28 +22,34 @@ In this lab, you will:
 
 ## Task 1: Create Your VCN
 
-If you are running this workshop in a LiveLabs environment, understand that it uses a pre-configured Virtual Cloud Network (VCN). As such, you will not create a VCN in this workshop. However, you can observe how a VCN is created in Oracle Cloud Infrastructure by watching this short video:
+If you are running this workshop in a LiveLabs environment, understand that it uses a pre-configured Virtual Cloud Network (VCN). As such, you will not create a VCN in that environment.
 
- [](youtube:lxQYHuvipx8)
+If running this workshop from other environments, create a VCN on Oracle Cloud Infrastructure by following the steps below:
 
-If running this workshop from other environments, create a VCN on Oracle Cloud Infrastructure:
+1. Click the navigation menu in the upper left to show top level navigation choices. Click **Networking** --> **Virtual cloud networks**.
 
-1. On the Oracle Cloud Infrastructure Console home page, under the **Get started** tab, scroll down to the **Launch Resources** header, click **Set up a network with a wizard**.
+    ![Navigate to the OCI VCN page](./images/setup-vcn.png " ")
 
-    ![Setup a network with the wizard](./images/setup-vcn.png " ")
+2. Select the **Actions** drop down menu. Click on **Start VCN Wizard**.
 
-2. Select **Create VCN with Internet Connectivity**, and then click **Start VCN Wizard**.
+    ![Navigate to the OCI VCN page](./images/start-wizard-part-1.png " ")
 
-    ![Start VCN wizard](./images/start-wizard.png " ")
+3. Select **Create VCN with Internet Connectivity**, and then click **Start VCN Wizard**.
 
-3. Complete the following fields. Modify the default settings if they don't match the below values.
+    ![Start VCN wizard](./images/start-wizard-part-2.png " ")
+
+4. The wizard page appears and checks resource availability. 
+
+   ![The VCN wizard begins](./images/vcn-wizard-begins.png " ")
+ 
+5. Scroll down. Complete the following fields. Modify the default settings if they don't match the below values.
 
     |                  **Field**              |    **Value**  |
     |----------------------------------------|:------------:|
     |VCN name |OCI\_HOL\_VCN|
-    |Compartment |  Choose the same compartment as the Oracle Autonomous Database (i.e. MyCompartment)
+    |Compartment |  Choose the same compartment as the Oracle Autonomous Database (i.e., MyCompartment)
     |VCN IPv4 CIDR Block|10.0.0.0/16|
-    |Use DNS hostnames In This VCN| Checked|
+    |Use DNS hostnames In This VCN| Enabled|
     |Public subnet IPv4 CIDR block|10.0.2.0/24|
     |Private subnet IPv4 CIDR block|10.0.1.0/24|
 
@@ -57,14 +60,18 @@ If running this workshop from other environments, create a VCN on Oracle Cloud I
 
      Click the **Next** button at the bottom of the screen.
 
-4. Review your settings to be sure they are correct. Click the **Create** button to create the VCN. 
+6. Review your settings to ensure they are correct. Click the **Create** button to create the VCN. 
     ![Review VCN configuration](./images/review-vcn.png " ")
 
-5. It will take a moment to create the VCN and a progress screen will keep you apprised of the workflow.
+7. It will take a moment to create the VCN and a progress screen will keep you apprised of the workflow.
+
+   Once the resource creations and updates are complete, click the **View VCN** button.
 
     ![VCN workflow progress](./images/workflow.png " ")
 
-6. Once you see that the creation is complete (see previous screenshot), click the **View VCN** button.
+7. Your completed VCN will look similar to the following:
+
+    ![Completed VCN](./images/completed-vcn.png " ")
 
 
 ### Summary
@@ -76,4 +83,4 @@ You may now **proceed to the next lab.**
 ## Acknowledgements
 
 - **Author** - Rajeshwari Rai, Prasenjit Sarkar, Alex Keh 
-- **Last Updated By/Date** - Alex Keh, June 2023
+- **Last Updated By/Date** - Alex Keh, September 2025

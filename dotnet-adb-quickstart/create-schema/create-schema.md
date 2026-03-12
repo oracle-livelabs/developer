@@ -6,9 +6,6 @@ In this lab, you will connect to the database using SQL Worksheet, a browser-bas
 
 Estimated lab time: 10 minutes
 
-Watch the video below for a quick walk-through of the lab.
-[Create user and setup schema](videohub:1_btcu4q9g)
-
 ### Objectives
 -   Connect to your new autonomous database using SQL Worksheet
 -   As administrator, create a database user (schema)
@@ -18,11 +15,11 @@ Watch the video below for a quick walk-through of the lab.
 
 ### Prerequisites
 
--   This lab requires an Oracle Autonomous Database be provisioned.
+-   This lab requires a provisioned Oracle Autonomous Database.
 
 ## Task 1: Connect with SQL Worksheet
 
-Although you can connect to your autonomous database from local desktop tools, such as Oracle SQL Developer, you can conveniently access the browser-based SQL Worksheet directly from your Autonomous Database console.
+Although you can connect to your autonomous database from local desktop tools, such as Visual Studio, you can conveniently access the browser-based SQL Worksheet directly from your Autonomous Database console.
 
 1. In your database's details page, click the **Database Actions** button. Then choose the **SQL** option.
 
@@ -34,7 +31,7 @@ If a sign-in page opens for Database Actions, simply use your database instance'
 
     ![SQL Worksheet screen](./images/sql-worksheet.png " ")
 
-   Please **proceed to the next task.**
+   You can close the **Run Statement** popup by clicking the **X** in the upper right hand corner. Please **proceed to the next task.**
 
 ## Task 2: Create a User
 Database administrators perform many tasks. One of their more common tasks is creating database users and assigning them unique usernames. After users log in to the database with their username and password, they can issue database SQL statements to create objects, query objects, and manage the database.
@@ -157,4 +154,4 @@ Click [here](https://docs.oracle.com/en/database/oracle/oracle-database/23/cncpt
 ## Acknowledgements
 
 - **Author** - Rick Green, Alex Keh
-- **Last Updated By/Date** - Alex Keh, May 2024
+- **Last Updated By/Date** - Alex Keh, September 2025

@@ -6,7 +6,7 @@ Oracle Database 23ai JSON Relational Duality converges the benefits of the Relat
 
 In this workshop, we will be using a set of tables used to store data on F1 racing teams, drivers, and race results. We will then create JSON Duality Views on top of these tables to reference them as JSON documents. Then we will use AutoREST to enable our duality views to be used with REST calls. 
 
-Estimated Time: 15 minutes
+Estimated Time: 10 minutes
 
 
 ### Objectives
@@ -24,7 +24,7 @@ This lab assumes you have:
 - Oracle Autonomous Database 23ai Free Tier instance
 
 
-## Task 1: Preparing your database user
+## Task 1: Accessing your database
 
 1. Your browser should be open at the Oracle LiveLabs My Reservations page. When your LiveLabs environment is ready, click **Launch Workshop**.
 
@@ -32,74 +32,25 @@ This lab assumes you have:
 
     ![Image alt text](images/login-info.png " ")
 
-3. Click **Copy Password** and then **Launch OCI**.
+3. Scroll down to the **Terraform Values** section and copy value for username **hol23ai**. Now click the **SQL Web Developer URL** to open the SQL Developer page.
 
-    ![Image alt text](images/reservation-info.png " ")
+    ![Copy password](images/terraform_values.png " ")
 
-4. Use **Oracle Cloud Infrastructure Direct Sign-in** to paste the password you copied. When you log-in for the first time, it will ask you to update the password. Write down in your notes the new password. Also make a note of the compartment name.
+4. Click **Advanced** and enter **HOL23AI**. Sign in with new user **hol23ai** and paste the password copied earlier.
+    
+    ![Login with user](images/user_signin.png " ")
 
-    ![Image alt text](images/oci-sing-in.png " ")
+5. Click **SQL** worksheet button under Development.
 
-5. Use the main menu **≡** to navigate to Oracle Database > **Autonomous Database**.
+    ![Click SQL](images/click_sql.png " ")
 
-    ![Image alt text](images/main-menu.png " ")
+6. As you go through this workshop, use the **Run Script** button that runs many SQL statements and spools their output. Also use the delete option to clear the previous commands before running a new command.
 
-6. Select your reservation **Compartment** on the left side drop-down, and click on your Autonomous Database instance name. Your compartment name is the same which was noted from the reservation information screen.
-
-    ![Image alt text](images/adb-instance.png " ")
-
-7. Familiarize yourself with the OCI console for Autonomous Database.
-
-    ![Image alt text](images/adb-console.png " ")
-
-8. Use Database Actions menu to open **Database Users** console.
-
-    ![Image alt text](images/database-actions.png " ")
-
-9. Click **Create User**.
-
-    ![Image alt text](images/database-users.png " ")
-
-10. Create a new user called **hol23ai** (case insensitive). You may use the same password from admin user you received on Reservation Information dialog at step #3. Enable **Web Access** and set **UNLIMITED** quota on tablespace DATA.
-
-    ![Image alt text](images/create-user.png " ")
-
-11. Click **Granted Roles**. Add ```ORDS_ADMINISTRATOR_ROLE```, ```ORDS_RUNTIME_ROLE``` as Granted and Default.
-
-    ![Image alt text](images/granted-roles.png " ")
-
-12. Add DWROLE as Granted and Default. Click **Create User**.
-
-    ![Image alt text](images/dwrole.png " ")
-
-13. The new hol23ai user card will appear in the list. You can copy the SQL Developer URL in your notes.
-
-    ![Image alt text](images/hol23ai-user.png " ")
-
-14. Click the ADMIN user menu, and **Sign Out**.
-
-    ![Image alt text](images/sign-out.png " ")
-
-15. Sing-in with the new user **hol23ai**.
-
-    ![Image alt text](images/hol23ai-sign-in.png " ")
-
-16. Click **SQL** worksheet button under Development and Click **Open*.
-
-    ![Image alt text](images/development-sql.png " ")
-
-17. As you go through this workshop, we will specify click the Run button or Run Script button. The Run button runs just one SQL Statement and formats the output into a data grid. The Run Script button runs many SQL statements and spools their output. We will highlight which to use.
-
-    **NOTE**: If you are using mac, then select the code and use 'cmd+enter' to run the command individually.
-
-    ![Image alt text](images/run-sql-script.png " ")
- 
+    ![Run SQL Script](images/run-sql-script.png " ")
 
 ## Task 2: Create database tables and JSON Duality Views
 
 1. Now that you have logged into the database, we can create the tables that will be the underlying data structures for our JSON Duality Vies. Before doing this, drop the views tables in case they already exist, so you can start from scratch.
-
-    **NOTE:** Make sure to press 'enter' after copy and pasting these commands so that the last command executes. 
 
     ```sql
     SQL> <copy>drop view if exists team_dv;</copy>
@@ -115,7 +66,7 @@ This lab assumes you have:
 
 2. Now create the tables. 
 
-    **NOTE:** Make sure to press 'enter' after each copy and paste so that each table is created individually. 
+    **NOTE:** Make sure to run each copy and paste so that each table is created individually. 
 
     ```sql
     SQL> <copy>CREATE TABLE IF NOT EXISTS team
@@ -156,8 +107,6 @@ This lab assumes you have:
     ![Create Tables](./images/create_tables.png)
 
 3. Create a trigger to update the points for the teams and drivers. 
-
-    **NOTE:** Make sure to press 'enter' after copy and pasting the code block so that trigger is created.
 
     ```sql
     SQL> <copy>CREATE OR REPLACE TRIGGER driver_race_map_trigger
@@ -208,9 +157,7 @@ This lab assumes you have:
 
 5. Create a duality view for the race table. Notice that we are using 3 different tables to create one view. We are also using the `UNNEST` command to unnest the information from the driver table into the sub-object `result` instead of it being another sub-object within that same field. 
 
-    **NOTE:** Make sure to press 'enter' after copy and pasting the code block so that view is created.
-
-    **NOTE**: Worksheet might show errors in the code, but they can be ignored.
+    **NOTE**: Worksheet might show errors in the code, but they can be ignored. Use Run Script button to run the whole code block.
 
     ```sql
     SQL> <copy>CREATE OR REPLACE JSON RELATIONAL DUALITY VIEW race_dv AS
@@ -235,8 +182,6 @@ This lab assumes you have:
     ![Create Race Duality View](./images/create_raceDV.png)
 
 6. Create a duality view for the driver table. Notice in this duality view, we are specifying that no data alterations are allowed on the team information. That means when preforming PUT, POST, or DELETE actions on this view, we will not be able to alter the `teamId` or `team` fields. 
-
-    **NOTE:** Make sure to press 'enter' after copy and pasting the code block so that view is created.
 
     ```sql
     SQL> <copy>CREATE OR REPLACE JSON RELATIONAL DUALITY VIEW driver_dv AS
@@ -265,8 +210,6 @@ This lab assumes you have:
 
 7. Create a duality view for the team table. 
 
-    **NOTE:** Make sure to press 'enter' after copy and pasting the code block so that view is created.
-
     ```sql
     SQL> <copy>CREATE OR REPLACE JSON RELATIONAL DUALITY VIEW team_dv AS
     SELECT JSON {'_id'   IS t.team_id,
@@ -287,8 +230,6 @@ This lab assumes you have:
 ## Task 3: Enable the Duality Views for REST APIs
 
 1. Enable each of the duality views for REST APIs. 
-
-    **NOTE:** Make sure to press 'enter' after copy and pasting the code block so that the code runs. 
 
     ```sql
     SQL> <copy>
@@ -326,34 +267,88 @@ This lab assumes you have:
 
     ![Enable AutoREST on the Duality Views](./images/enable_autorest.png)
 
-2. Use the SQL Developer Web URL to obtain your ADB instance base URL:
+2. To run the curl commands we will be using OCI cloud shell for the remainder of the lab. Click **View Login Info** on your livelab's home page.
+
+    ![Image alt text](images/login-info.png " ")
+
+3. Click **Copy Password** and then **Launch OCI**.
+
+    ![Image alt text](images/reservation-info.png " ")
+
+4. Use **Oracle Cloud Infrastructure Direct Sign-in** to paste the password you copied. When you log-in for the first time, it will ask you to update the password. Write down in your notes the new password. Also make a note of the compartment name.
+
+    ![Image alt text](images/oci-sing-in.png " ")
+
+5. Use the main menu **≡** to navigate to Oracle Database > **Autonomous Database**.
+
+    ![Image alt text](images/main-menu.png " ")
+
+6. Select your reservation **Compartment** on the left side drop-down, and click on your Autonomous Database instance name. Your compartment name is the same which was noted from the reservation information screen.
+
+    ![Image alt text](images/adb-instance.png " ")
+
+7. Click on shell **Developer Tools** icon on the screen and select **Cloud Shell**. 
+
+    ![Query for data](./images/oci-cloud-shell.png)
+
+8. Use the SQL Developer Web URL to obtain your ADB instance base URL:
 
     ```
-    <ADB_BASE_URL> = https://ajs6esm7pafcr84-atp90713.adb.us-ashburn-1.oraclecloudapps.com
+    <ADB_BASE_URL> = https://xxxxxxxxxx.adb.<region>.oraclecloudapps.com
     ```
 
     ![ADB base URL](./images/adb-base-url.png)
 
-3. As you go through this workshop, we will specify URLs for different REST services. Use your ADB instance base URL to build all URLs you will use with REST Data Service (ORDS) and AutoREST.
-
-4. Make a GET request to the REST API of the driver duality view from your laptop terminal command line.
+9. As you go through this workshop, we will specify URLs for different REST services. Use your ADB instance base URL to build all URLs you will use with REST Data Service (ORDS) and AutoREST. Export the base url in your terminal or OCI Cloud Shell so that it can be reused.
 
     ```
-    $ <copy>curl -X GET <ADB_BASE_URL>/ords/hol23ai/driver_dv/</copy>
+    <copy>
+    export ADB_BASE_URL=<YOUR_UNIQUE_ADB_URL>
+    </copy>
     ```
-    ![Query for data](./images/test_ords.png)
+    Check the value of variable ```ADB_BASE_URL```. It shouldn't have `/` in the end.
+    ```
+    <copy>
+    echo $ADB_BASE_URL
+    </copy>
+    ```
 
-5. Or you can use OCI Cloud Shell to run cURL commands.
+    ![ADB base URL](./images/export-adb.png)
 
-    ![Query for data](./images/oci-cloud-shell.png)
+    **NOTE:** This base url will be unique for each user, verify that you are using the correct URL.
 
+10. Make a GET request to the REST API of the driver duality view from your laptop terminal command line.
+
+    ```
+    $ <copy>curl -X GET $ADB_BASE_URL/ords/HOL23AI/driver_dv/</copy>
+    ```
     ![Query for data](./images/oci-test_ords.png)
 
-6. You can use cURL in your laptop Terminal, or your web browser to open the URL when testing GET requests.
+    There is no data in the underlying tables, which is why the "items" array is empty. SODA paginates the results by default, so "offset" and "limit" fields refer to the offset of the results and the maximum number of resutls returned at a time. Also included in the reponse are links to common read and write operations that can be performed on the duality view collection. The contents of "links" is not show above for brevity. 
 
-    ![Query for data](./images/test_ords_get.png)
+    **Note:** You can use also cURL in your laptop Terminal, or your web browser to open the URL when testing GET requests but this lab only uses OCI Cloud Shell.
 
-    There is no data in the underlying tables, which is why the "items" array is empty. SODA paginates the results by default, so "offset" and "limit" fields refer to the offset of the results and the maximum number of resutls returned at a time. Also included in the reponse are links to common read and write operations that can be preformed on the duality view collection. The contents of "links" is not show above for brevity. 
+## Task 4: Use getcURL option to generate curl commands in IDE
+
+1. Go back to **SQL Developer** page and look for the hamburger icon on top-left corner of the screen. Click on **Rest** and then **AutoREST**.
+
+    ![Click on REST](./images/click_rest.png)
+
+    ![Click on AutoREST](./images/click_autorest.png)
+
+2.  Now on any one of the views, you can click the three dots on the right and click **Get cURL**. Do this now for the `DRIVER_DV` view. 
+
+    ![Click on get Curl](./images/get_curl.png)
+
+3. This window contains different curl commands which can be using for the rest of the lab. Copy the **GET ALL** curl command.
+
+    ![Copy get all](./images/copy_get_all.png)
+
+4. Make a GET request to the REST API of the driver duality view from OCI Cloud Shell.
+
+    ![Run getCurl on Cloudshell](./images/run_getcurl_cloud.png)
+
+    You may continue using this tool for the rest of the workshop, but please be aware that the instructions will continue to use the cloudshell and cURL commands.    
 
 You may **proceed to the next lab.**
 
@@ -368,5 +363,5 @@ You may **proceed to the next lab.**
 ## Acknowledgements
 
 * **Author** - Valentin Tabacaru, William Masdon, Kaylien Phan, Jeff Smith
-* **Contributors** -  David Start, Ranjan Priyadarshi
-* **Last Updated By/Date** - Valentin Tabacaru, Database Product Management, July 2024
+* **Contributors** -  David Start, Ranjan Priyadarshi, Animesh Sahay
+* **Last Updated By/Date** - Animesh Sahay, Cloud Engineering, August 2024

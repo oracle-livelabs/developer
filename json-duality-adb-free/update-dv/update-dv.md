@@ -30,45 +30,43 @@ This lab assumes you have:
 1. First you must determine the ID and eTag of the document to replace. Open this URL to query on the Bahrain Grand Prix as we did in the last lab.  
 
     ```
-    $ <copy>curl -v --location -g "<ADB_BASE_URL>/ords/hol23ai/race_dv/?q=%7B%22name%22%3A%7B%22%24eq%22%3A%22Bahrain%20Grand%20Prix%22%7D%7D" | json_pp</copy>
+    $ <copy>curl -v --location -g "$ADB_BASE_URL/ords/HOL23AI/race_dv/?q=%7B%22name%22%3A%7B%22%24eq%22%3A%22Bahrain%20Grand%20Prix%22%7D%7D" | jq .</copy>
     ```
 
     ![Find the ID and eTag of the Bahrain race](./images/get_race201.png)
 
     Take note of the ID (which is 201) and the eTag (which will be different for everyone). 
 
-2. Open Code Editor on your OCI cloud console (or use vim in command line to edit the files).
+2. Open Code Editor on your OCI cloud console.
 
     ![OCI Code Editor](./images/code-editor.png)
 
-2. Place Cloud Shell and Code Editor side by side.
+3. Place Cloud Shell and Code Editor side by side.
 
     ![OCI Code Editor](./images/side-by-side.png)
 
-2. You need to modify the `updateRace.json` file to include the right eTag. Open the file and insert the current eTag value. Make sure to save before closing. 
-
-    ```
-    $ <copy>gedit updateRace.json</copy>
-    ```
+4. You need to modify the `updateRace.json` file to include the right eTag. Open the file and insert the current eTag value. Make sure to save before closing. 
+    
+    ![Update the json payload with the eTag](./images/open_update_race.png)
 
     ![Update the json payload with the eTag](./images/update_racejson.png)
 
-4. Now that the eTag is accurate, replace the target document with the contents in the file `updateRace.json`. 
+5. Now that the eTag is accurate, replace the target document with the contents in the file `updateRace.json`. 
 
     ```
-    $ <copy>curl -i -X PUT --data-binary @updateRace.json -H "Content-Type: application/json" <ADB_BASE_URL>/ords/hol23ai/race_dv/201</copy>
+    $ <copy>curl -i -X PUT --data-binary @updateRace.json -H "Content-Type: application/json" $ADB_BASE_URL/ords/HOL23AI/race_dv/201</copy>
     ```
 
     ![Update the race view with the eTag](./images/update_race.png)
 
-5. The command returns HTTP error code 200, indicating a successful replace. 
+6. The command returns HTTP error code 200, indicating a successful replace. 
 
     The update eTag appears in the response header as well. Note that the “etag” value supplied in the content is used for “out of the box” optimistic locking, to prevent the well-known “lost update” problem that can occur with concurrent operations. During the replace by ID operation, the database checks that the eTag provided in the replacement document matches the latest eTag of the target duality view document. If the eTags do not match, which can occur if another concurrent operation updated the same document, an error is thrown. In case of such an error, you can reread the updated value (including the updated eTag), and retry the replace operation again, adjusting it (if desired) based on the updated value.
 
-6. To verify that a replace using an eTag that is not the most recent fails, run the same command again. 
+7. To verify that a replace using an eTag that is not the most recent fails, run the same command again. 
 
     ```
-    $ <copy>curl -i -X PUT --data-binary @updateRace.json -H "Content-Type: application/json" <ADB_BASE_URL>/ords/hol23ai/race_dv/201</copy>
+    $ <copy>curl -i -X PUT --data-binary @updateRace.json -H "Content-Type: application/json" $ADB_BASE_URL/ords/HOL23AI/race_dv/201</copy>
     ```
 
     Because updateRace.json content has an "etag" field value that has been obsoleted by the preceding successful replace, the command now outputs 400 (bad request). 
@@ -89,7 +87,7 @@ In this task, you will switch Charles Leclerc's and George Russell's teams by up
 2. Query the team_dv to find the documents' IDs. Then copy them down for each document.
 
     ```
-    $ <copy>curl -v --location -g "<ADB_BASE_URL>/ords/hol23ai/team_dv/?q=%7B%22name%22%3A%7B%22%24in%22%3A%5B%22Mercedes%22%2C%22Ferrari%22%5D%7D%7D" | json_pp
+    $ <copy>curl -v --location -g "$ADB_BASE_URL/ords/HOL23AI/team_dv/?q=%7B%22name%22%3A%7B%22%24in%22%3A%5B%22Mercedes%22%2C%22Ferrari%22%5D%7D%7D" | jq .
     </copy>
     ```
 
@@ -99,27 +97,35 @@ In this task, you will switch Charles Leclerc's and George Russell's teams by up
 
 3. `updateMercedes.json` contains the replacement document for the Mercedes team.
 
+    ``` 
+    $ <copy> cat updateMercedes.json </copy> 
+    ```
+
     ```
     {
-        "teamId": 2,
+        "_id": 2,
         "name": "Mercedes",
-        "points": 0,
+        "points": 40,
         "driver": [
-        {
-            "driverId": 105,
-            "name": "George Russell",
-            "points": 0
-        },
         {
             "driverId": 106,
             "name": "Lewis Hamilton",
-            "points": 0
+            "points": 15
+        },
+        {
+            "driverId": 103,
+            "name": "Charles Leclerc",
+            "points": 25
         }
         ]
     }
     ```
 
 4. `updateFerrari.json` contains the replacement document for the Ferrari team.
+
+    ``` 
+    $ <copy> cat updateFerrari.json </copy> 
+    ```
 
     ```
     {
@@ -146,7 +152,7 @@ In this task, you will switch Charles Leclerc's and George Russell's teams by up
 6. Run this command to update the Mercedes team, using the corresponding ID: 
 
     ```
-    $ <copy>curl -i -X PUT --data-binary @updateMercedes.json -H "Content-Type: application/json" <ADB_BASE_URL>/ords/hol23ai/team_dv/2</copy>
+    $ <copy>curl -i -X PUT --data-binary @updateMercedes.json -H "Content-Type: application/json" $ADB_BASE_URL/ords/HOL23AI/team_dv/2</copy>
     ```
 
     ![Update Mercedes team](./images/update_mercedes.png)
@@ -154,7 +160,7 @@ In this task, you will switch Charles Leclerc's and George Russell's teams by up
 7. Now do the same for the Ferrari team: 
 
     ```
-    $ <copy>curl -i -X PUT --data-binary @updateFerrari.json -H "Content-Type: application/json" <ADB_BASE_URL>/ords/hol23ai/team_dv/302</copy>
+    $ <copy>curl -i -X PUT --data-binary @updateFerrari.json -H "Content-Type: application/json" $ADB_BASE_URL/ords/HOL23AI/team_dv/302</copy>
     ```
 
     ![Update Ferrari team](./images/update_ferrari.png)
@@ -162,7 +168,7 @@ In this task, you will switch Charles Leclerc's and George Russell's teams by up
 8. To show the changes to Ferrari and Mercedes teams, query the team_dv duality view. 
 
     ```
-    $ <copy>curl -v --location -g "<ADB_BASE_URL>/ords/hol23ai/team_dv/?q=%7B%22name%22%3A%7B%22%24in%22%3A%5B%22Mercedes%22%2C%22Ferrari%22%5D%7D%7D" | json_pp
+    $ <copy>curl -v --location -g "$ADB_BASE_URL/ords/HOL23AI/team_dv/?q=%7B%22name%22%3A%7B%22%24in%22%3A%5B%22Mercedes%22%2C%22Ferrari%22%5D%7D%7D" | jq .
     </copy>
     ```
 
@@ -177,7 +183,7 @@ In this task, you will switch Charles Leclerc's and George Russell's teams by up
     To see the changes, run: 
 
     ```
-    $ <copy>curl -v --location -g  "<ADB_BASE_URL>/ords/hol23ai/driver_dv/?q=%7B%22%24or%22:%5B%7B%22name%22:%7B%22%24like%22:%22George%25%22%7D%7D%2C%7B%22name%22:%7B%22%24like%22:%22Charles%25%22%7D%7D%5D%7D" | json_pp</copy>
+    $ <copy>curl -v --location -g  "$ADB_BASE_URL/ords/HOL23AI/driver_dv/?q=%7B%22%24or%22:%5B%7B%22name%22:%7B%22%24like%22:%22George%25%22%7D%7D%2C%7B%22name%22:%7B%22%24like%22:%22Charles%25%22%7D%7D%5D%7D" | jq .</copy>
     ```
 
     ![View changes to driver view](./images/driver_afterswap.png)
@@ -190,7 +196,7 @@ From the previous command, ID of the Charles Leclerc document in the driver dual
 1. Using `updateLeclerc.json`, you will attempt to set the team of Leclerc back to Ferrari. 
 
     ```
-    $ <copy>curl -i -X PUT --data-binary @updateLeclerc.json -H "Content-Type: application/json" <ADB_BASE_URL>/ords/hol23ai/driver_dv/103</copy>
+    $ <copy>curl -i -X PUT --data-binary @updateLeclerc.json -H "Content-Type: application/json" $ADB_BASE_URL/ords/HOL23AI/driver_dv/103</copy>
     ```
 
     Because the team is not updatable through the driver_dv view, the command outputs a failure with HTTP 400. 
@@ -207,7 +213,7 @@ You can delete a document with a given ID. Earlier, you replace "Bahrain Grand P
 1. Now use the ID to delete the document. 
 
     ```
-    $ <copy>curl --request DELETE --url <ADB_BASE_URL>/ords/hol23ai/race_dv/201</copy>
+    $ <copy>curl --request DELETE --url $ADB_BASE_URL/ords/HOL23AI/race_dv/201</copy>
     ```
 
     ![Delete one document](./images/delete_201.png)
@@ -221,11 +227,10 @@ You can delete a document with a given ID. Earlier, you replace "Bahrain Grand P
 3. To delete the document(s) matching this query, run this command. 
 
     ```
-    $ <copy>curl -v --location -g -X DELETE "<ADB_BASE_URL>/ords/hol23ai/race_dv/?q=%7B%22_id%22%3A%7B%22%24eq%22%3A202%7D%7D" </copy>
+    $ <copy>curl -v --location -g -X DELETE "$ADB_BASE_URL/ords/HOL23AI/race_dv/?q=%7B%22_id%22%3A%7B%22%24eq%22%3A202%7D%7D" </copy>
     ```
 
     ![Delete with a query filter](./images/delete_query1.png)
-    ![Delete with a query filter](./images/delete_query2.png)
 
 Congratulations! You have finished this workshop. 
 
@@ -239,5 +244,5 @@ Congratulations! You have finished this workshop.
 ## Acknowledgements
 
 * **Author** - Valentin Tabacaru, William Masdon, Kaylien Phan, Jeff Smith
-* **Contributors** -  David Start, Ranjan Priyadarshi
-* **Last Updated By/Date** - Valentin Tabacaru, Database Product Management, July 2024
+* **Contributors** -  David Start, Ranjan Priyadarshi, Animesh Sahay
+* **Last Updated By/Date** - Animesh Sahay, Cloud Engineering, August 2024

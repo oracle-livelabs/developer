@@ -1,0 +1,99 @@
+{
+    "workshoptitle": "Everything You Never Knew About Oracle",
+    "help": "livelabs-help-devdb_us@oracle.com",
+    "tutorials": [
+        {
+            "title": "Introduction",
+            "description": "Everything You Never Knew About Oracle.",
+            "filename": "../../labs/introduction/introduction.md"
+        },
+        {
+            "title": "Get Started",
+            "description": "This is the prerequisites for customers using Free Trial and Paid tenancies, and Always Free accounts (if applicable). The title of the lab and the Contents Menu title (the title above) match for Prerequisite lab. This lab is always first.",
+            "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/cloud-login.md"
+        },
+        {
+            "title": "Lab 1: Microservices with Oracle",
+            "description": "Get to know the Customer Service microservice, Spring Boot and Oracle",
+            "filename": "../../labs/microservices/microservices.md"
+        },
+        {
+<<<<<<< HEAD
+<<<<<<< HEAD
+            "title": "Lab 2: Exploring REST capabilities",
+=======
+            "title": "Lab 2: Explore REST capabilities",
+>>>>>>> upstream/main
+=======
+            "title": "Lab 2: Explore REST capabilities",
+>>>>>>> 4d26612985c944e91b6e29d0307a27b4a247623f
+            "description": "Explore the Support Ticket service and Spring Boot REST capabilities with Oracle",
+            "filename": "../../labs/rest/rest.md"
+        },
+        {
+<<<<<<< HEAD
+<<<<<<< HEAD
+            "title": "Lab 3: Event processing with TxEventQ",
+=======
+            "title": "Lab 3: Process events with TxEventQ",
+>>>>>>> upstream/main
+=======
+            "title": "Lab 3: Process events with TxEventQ",
+>>>>>>> 4d26612985c944e91b6e29d0307a27b4a247623f
+            "description": "Learn about event-driven processing with TxEventQ and OKafka",
+            "filename": "../../labs/events/events.md"
+        },
+        {
+<<<<<<< HEAD
+<<<<<<< HEAD
+            "title": "Lab 4: Exploring AI functionality",
+=======
+            "title": "Lab 4: Explore AI functionality",
+>>>>>>> upstream/main
+=======
+            "title": "Lab 4: Explore AI functionality",
+>>>>>>> 4d26612985c944e91b6e29d0307a27b4a247623f
+            "description": "Learn about Oracle Vector Database and OCI GenAI service",
+            "filename": "../../labs/ai/ai.md"
+        },
+        {
+<<<<<<< HEAD
+<<<<<<< HEAD
+            "title": "Lab 5: Exploring JSON Relational Duality Views",
+=======
+            "title": "Lab 5: Explore JSON Relational Duality Views",
+>>>>>>> upstream/main
+=======
+            "title": "Lab 5: Explore JSON Relational Duality Views",
+>>>>>>> 4d26612985c944e91b6e29d0307a27b4a247623f
+            "description": "Learn about xxx",
+            "filename": "../../labs/json/json.md"
+        },
+        {
+<<<<<<< HEAD
+<<<<<<< HEAD
+            "title": "Lab 6: Exploring Oracle REST Data Services",
+=======
+            "title": "Lab 6: Explore Oracle REST Data Services",
+>>>>>>> upstream/main
+=======
+            "title": "Lab 6: Explore Oracle REST Data Services",
+>>>>>>> 4d26612985c944e91b6e29d0307a27b4a247623f
+            "filename": "../../labs/ords/ords.md"
+        },
+        {
+            "title": "Cleanup the environment",
+            "description": "Lab where cleanup the deployed environment",
+            "filename": "../../labs/cleanup/cleanup.md"
+        },
+        {
+            "title": "Need Help?",
+            "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+<<<<<<< HEAD
+            "filename":"../../help/help.md"
+=======
+            "filename":"https://oracle-livelabs.github.io/common/labs/need-help/need-help-livelabs.md"
+>>>>>>> upstream/main
+        }
+    ]
+}

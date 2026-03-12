@@ -1,10 +1,10 @@
-# Provision an Oracle Autonomous Database  
+# Provision an Oracle Autonomous AI Database  
 
 ## Introduction
 
-Oracle Autonomous Database is the world’s first autonomous data management in the cloud to deliver automated patching, upgrades, and tuning—including performing all routine database maintenance tasks while the system is running - without human intervention. This new Autonomous Database cloud is self-managing, self-securing, and self-repairing, which helps to eliminate manual database management and human errors.
+Oracle Autonomous AI Database is the world’s first autonomous data management in the cloud to deliver automated patching, upgrades, and tuning—including performing all routine database maintenance tasks while the system is running - without human intervention. This new Autonomous Database cloud is self-managing, self-securing, and self-repairing, which helps to eliminate manual database management and human errors.
 
-The Oracle Autonomous Database is fully elastic: You simply specify the number of OCPUs and the storage capacity in TBs for the database. At any time, you may scale up or down the OCPUs or the storage capacity.
+The Oracle Autonomous AI Database is fully elastic: You simply specify the number of OCPUs and the storage capacity in TBs for the database. At any time, you may scale up or down the OCPUs or the storage capacity.
 
 Autonomous Database supports four main types of workload:
 
@@ -13,7 +13,7 @@ Autonomous Database supports four main types of workload:
 * Transactions and analytics on JSON data
 * Oracle APEX Application Development
 
-This lab walks you through the steps to get started using the Oracle Autonomous Database on Oracle Cloud. You will download the wallet where Autonomous Database has already been created. You will then set up the Access control list.
+This lab walks you through the steps to get started using the Oracle Autonomous AI Database on Oracle Cloud. You will download the wallet where Autonomous Database has already been created. You will then set up the Access control list.
 
 Estimated Time: 10 minutes
 
@@ -31,19 +31,21 @@ In this lab, you will:
 ## Task 1: Choose Autonomous Database from the services menu
 
 1. Log in to the Oracle Cloud.
-2. Once you log in, the cloud services dashboard shows all the services available to you. Click the **navigation menu** in the upper left to show top-level navigation choices.
+2. Once you log in, the cloud services dashboard shows all the services available to you. Click the **navigation menu** in the upper left to show top-level navigation choices. From the top left navigation select Oracle Database and Oracle Autonomous Data Warehouse.
 
-3. Select the allocated compartment and the region. The compartment name and the region will be available under LiveLabs My Reservations.
+    ![Open Navigation](images/open-adb-nav.png "Open Navigation")
 
-    ![select compartment](images/select-ll-compartment.png " ")
+3. Select the allocated compartment and the region. The compartment name and the region will be available under LiveLabs **My Reservations** and **View Login info**.
 
+    ![Change compartment](images/compartment-change.png " ")
+  
     You will then be able to view the pre-provisioned Autonomous Database instance.
-
-    ![selected compartment](images/selected-compartment-2.png " ")
-
-
+ 
 4. Make sure your Workload Type is __Data Warehouse__ or __All__ to see your Autonomous Data Warehouse instances. Use the __List Scope__ drop-down menu to select a compartment. 
 5. Click on Display Name Polyglot_Dev to view detailed information about the Autonomous Database provisioned.
+6. Make note of Database version (Oracle Database 23ai), Database Name, Region
+
+    ![database actions](images/tenancy-details.png  "database actions")
  
 ## Task 2: Create a database user and tables
 
@@ -84,9 +86,11 @@ In this lab, you will:
     </copy>
     ```
 
-    Substitute <db\_user\> and <password\> with the username and password of your choice. Press the green button to run the script.
+    Substitute <db\_user\> and <password\> with the username and password of your choice. Press the second green button to run the script.
 
-    ![sql worksheet](images/app-user.png =50%x*  "sql worksheet")
+    ![sql worksheet](images/create-appuser.png)
+
+    The above example creates database user **appuser** with password **Welcome1234#**, you can use different username and password. 
 
 ## Task 3: Download the wallet for this database
 
@@ -106,11 +110,31 @@ In this lab, you will:
 
     Extract the wallet zip file to the folder of your choice. We will be using this **wallet folder** in future labs of this workshop.
 
-## Task 4: One-way TLS connection to Oracle Autonomous Database for wallet-less connections  
+## Task 4: Make note of TNS Name or DNS Name
 
-> **Note:**  This Task is required if you plan to use a wallet-less connection with Autonomous Database using Python or . NET. Otherwise, you can still connect to Autonomous Database using the wallet downloaded in the previous Task.
+1. Click on **Database Connection** tab, make note of TNS Names (at some places referred as DNS Name), for example DNS Name here **adbdw110890\_high** or adbdw110890\_low or adbdw110890\_medium
 
-1. One-way TLS connection to Oracle Autonomous Database
+    ![Wallet files](images/dns-name.png)
+
+    ![Wallet files](images/wallet-files.png)
+
+2. Alternatively you can download the ADB wallet and after extracting the zip file, you can check the tnsnames.ora file
+
+    ![TNS Names](images/tns-names.png)
+
+3. The connection string while using connections with Database wallet would look like this example shown below
+
+    ```
+    <copy>
+        adbdw1212121_high = (description= (retry_count=20)(retry_delay=3)(address=(protocol=tcps)(port=1522)(host=adb.ap-sydney-1.oraclecloud.com))(connect_data=(service_name=gc454cxxxx31_adbdw1212121_high.adb.oraclecloud.com))(security=(ssl_server_dn_match=yes)))
+    </copy>
+    ```  
+
+## Task 5: [Optional] One-way TLS connection to Oracle Autonomous AI Database for wallet-less connections  
+
+> **Please Note:**  This Task is required if you plan to use a wallet-less connection with Autonomous Database using Python or . NET. Otherwise, you can still connect to Autonomous Database using the wallet downloaded in the previous Task.
+
+1. One-way TLS connection to Oracle Autonomous AI Database
 
     Complete the following steps in an Oracle Cloud console in the Autonomous Database Information section of the ADB instance details:
 
@@ -153,11 +177,7 @@ In this lab, you will:
 
     ```
     <copy>
-        (description= (retry_count=20)(retry_delay=3)(address=(protocol=tcps)(port=1521)
-        (host=adb.<region_identifier>.oraclecloud.com))
-        (connect_data=(service_name=<service_prefix>.adb.oraclecloud.com))
-        (security=(ssl_server_dn_match=yes)
-        (ssl_server_cert_dn="CN=<cn name>, OU=Oracle BMCS US, O=Oracle Corporation, L=Redwood City, ST=California, C=US")))
+        adbdw110890_high = (description= (retry_count=20)(retry_delay=3)(address=(protocol=tcps)(port=1522)(host=adb.ap-sydney-1.oraclecloud.com))(connect_data=(service_name=gc454cxxxx31_adbdw110890_high.adb.oraclecloud.com))(security=(ssl_server_dn_match=yes)))
     </copy>
     ```  
 
@@ -180,5 +200,5 @@ You may now **proceed to the next lab**.
 ## Acknowledgements
 
 - **Author** - Madhusudhan Rao, Principal Product Manager, Database
-- **Contributors** - Kevin Lazarz, Senior Principal Product Manager and Christopher Jones, Senior Principal Product Manager
-- **Last Updated By/Date** - Madhusudhan Rao, Aug 2022
+- **Contributors** -  Christopher Jones, Senior Principal Product Manager
+- **Last Updated By/Date** - Madhusudhan Rao, 4th Oct 2024

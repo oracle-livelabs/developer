@@ -8,7 +8,7 @@ Estimated Time:  15 minutes
 
 ### About this lab
 
-Now that you've created the Location, Department, and Employee business objects, we'll see how you can create web pages to display data from these business objects. You'll create one page to display departments and another to display employees. You'll also add pages that let your users create a new department or a new employee (in other words, create a new instance of the business object in the database). We'll do all this using Quick Starts, a handy set of wizards that work behind the scenes and make it easy for you to create pages and interact with your data.
+Now that you've created the Location, Department, and Employee business objects, we'll see how you can create web pages to display the data from these business objects. You'll create one page to display departments and another to display employees. You'll also add pages that let your users create a new department or a new employee (in other words, create a new instance of the business object in the database). We'll do all this using Quick Starts, a handy set of wizards that work behind the scenes and make it easy for you to create pages and interact with your data.
 
 ### Objectives
 
@@ -28,7 +28,7 @@ This lab assumes you have:
 
 Create a table to display your departments on the main-start page. The Table component is useful when you want to show lots of data in columns.
 
-1. Click the **Web Applications** ![Web Applications icon](images/web-applications-icon.png) tab in the Navigator.
+1. Click **Web Applications** ![Web Applications icon](images/web-applications-icon.png) in the Navigator.
 2. Click **main-start** under **hrwebapp** and **main** to open the page that was automatically created as the default home page for your web application. (You can also open the page by clicking the **main-start** tab just below the header.)
 
     You might want to click the **Web Applications** tab to close the Navigator pane and expand your work area. You can also widen your browser window.
@@ -56,11 +56,11 @@ Create a table to display your departments on the main-start page. The Table com
 
     ![This image shows part of the Locate Data page of the Add Data quick start. The Department business object is selected.](images/department-add-data.png "")
 
-8. On the Bind Data step, under **item\[i\]**, select the **id** and **department** check boxes (in that order). These two fields will show as Columns for your Departments table.
+8. On the Bind Data step, under **item\[i\]**, select **id** and **department** (in that order). These two fields will show as Columns for your Departments table.
 
     ![This image shows the Bind Data page of the Add Data quick start. The id and department check boxes are selected.](images/department-add-data-selectfields.png "")
 
-9. Expand the **locationObject** and **items** nodes (**item\[i\]** is expanded automatically) and select **location**. Because we created a reference from the Department business object to the Location business object, the location field is now available to us through the locationObject accessor, which lets us traverse relationships between the two objects. Click **Next**.
+9. Expand **locationObject** and **items** (**item\[i\]** is expanded automatically) and select **location**. Because we created a reference from the Department business object to the Location business object, the location field is now available to us through the locationObject accessor, which lets us traverse relationships between the two objects. Click **Next**.
 
     ![This image shows part of the Bind Data page of the Add Data quick start after the location node has been expanded. The location check box is selected. In the Columns list, location appears at the bottom of the list.](images/department-add-data-selectitemfields.png "")
 
@@ -78,23 +78,23 @@ Now that we have a way to show departments, we'll add a Create page that lets us
 
     When the Add Create Page wizard opens, you'll see that the quick start automatically selects the correct endpoint to use from your data source; you'll only need to select the fields that you want the user to provide values for.
 
-2. On the Page Detail step, select the **location** check box under Endpoint Structure (**department** is already selected because it's a required field). Department and Location are the only fields the user needs to specify to create a department.
+2. On the Page Detail step, select **location** under Endpoint Structure (**department** is already selected because it's a required field). Department and Location are the only fields the user needs to specify to create a department.
 
     ![This image shows the Page Detail page of the Add Create Page quick start. Under the request check box, the location and department check boxes are selected. The Button label field is set to Create Department. The Page title is Create Department, and the Page name is main-create-department.](images/department_add_create.png "")
 
 3. Leave the other values set to their defaults. Click **Finish**.
 
-    A **Create Department** button appears in a Toolbar component above the table on the main-start page. (You might need to click next to the button to see the Toolbar component.) Click the **Web Applications** tab to see the main-create-department page created in the pages list under **main**.
+    A **Create Department** button appears in a Toolbar component above the table on the main-start page. (You might need to click next to the button to see the Toolbar component.) Click **Web Applications** to see the main-create-department page created in the pages list.
 
     ![This image shows the result of the Add Create Page quick start. The main-start page has a button with the label Create in a Toolbar component below the heading and above the table. In the Navigator, the main-create-department page has been added to the pages list under the main flow.](images/department-add-create-result.png "")
 
-4. Let's now quickly test whether we can create departments. Click the **main-create-department** page to open it in the Page Designer.
+4. Let's now quickly test whether we can create departments. Select **main-create-department**  under **main** to open the page in the Page Designer.
 
     The page has a form for you to enter the fields you specified. It also has two buttons: Cancel and Save.
 
 5. In the Page Designer toolbar, click **Live** to make the form active. (Click **Properties** if you need to make room for the form.)
 
-    To indicate that you are in Live view, the **Live** button now has a green background, and a green line appears around the page.
+    To indicate that you are in Live view, the **Live** button now has a blue background, and a blue border appears around the page.
 
 6. Enter `IT` in the **Department** field, and select **Floor 4** from the **Location** drop-down list.
 
@@ -118,13 +118,13 @@ We'll now create a page to display employees, similar to the one you created to 
 
     ![This image shows the web application with the main node expanded. The + sign next to main is selected to show the Create Page and Create Flow options.](images/create-page.png "")
 
-2. In the Create Page dialog box, add `employees` in the **Page ID** field after `main-` and click **Create**.
+2. In the Create Page dialog box, add `employees` in the **Page ID** after `main-` and click **Create**.
 
     ![This image shows the Create Page dialog box, with main-employees entered in the Page ID field, and the Create button selected.](images/employees-create-page.png "")
 
     The main-employees page opens in the Page Designer.
 
-3. Click **main employees** on the page to select the page-header fragment, then in the **Properties** pane (click **Properties** if you need to), change `main employees` to `Employees` in the **title** field.
+3. Click **main employees** on the page to select the page-header fragment, then in the **Properties** pane (click **Properties** if you need to), change the **title** from `main employees` to `Employees`.
 
 4. Because we want to show a table as well as a chart, it might help to split the page into two distinct areas, which we'll do using panels. A panel encapsulates content with a border and padding. To add a panel to the page, enter `panel` in the Components Filter field, then drag and drop the **Panel** component onto the page.
 
@@ -144,11 +144,11 @@ We'll now create a page to display employees, similar to the one you created to 
 
 8. Select **Table** (not Table Dynamic) in the pop-up menu to open the Add Data quick start. This quick start is similar to the one you used before to create the departments table, except that you don't need to associate a data source.
 
-9. On the Bind Data step of the Add Data Quick Start, select the **picture** and **name** check boxes under **item\[i\]**.
+9. On the Bind Data step of the Add Data Quick Start, select **picture** and **name** under **item\[i\]**.
 
     ![This image shows part of the Bind Data page of the Add Data quick start. The name and picture check boxes are selected.](images/employees-add-data-1.png "")
 
-10. Expand the **departmentObject** and **items** nodes (**item\[i\]** is expanded automatically) and select **department**.
+10. Expand **departmentObject** and **items** (**item\[i\]** is expanded automatically) and select **department**.
 
     ![This image shows part of the Bind Data page of the Add Data quick start after the departmentObject node has been expanded. The department check box is selected. In the Columns list, department appears at the bottom.](images/employees-add-data-2.png "")
 
@@ -200,9 +200,9 @@ Now that you've displayed some employee data in a table, let's add a chart to vi
 
 Add a Create page that lets your users create new employees.
 
-1. Select the table component within the panel on the main-employees page, click the **Quick Start** tab in the Properties pane, and click **Add Create Page**.
+1. Select the table component within the panel on the main-employees page, click **Quick Start** in the Properties pane, and select **Add Create Page**.
 
-2. On the Page Detail page of the Add Create Page wizard, select the **picture**, **hireDate**, **email**, **department**, **salary**, and **country** check boxes in that order (**name** is already selected, because it's a required field). Because our employee images are stored in a database elsewhere and we only reference their paths, change the **picture** field's type to **URL** for validation. Change the **email** field's control type from **Input Text** to **Email**.
+2. On the Page Detail page of the Add Create Page wizard, select **picture**, **hireDate**, **email**, **department**, **salary**, and **country** in that order (**name** is already selected, because it's a required field). Because our employee images are stored in a database elsewhere and we only reference their paths, change the **picture** field's type to **URL** for validation. Change the **email** field's control type from **Input Text** to **Email**.
 
     ![This image shows the Select Endpoint page of the Add Create Page quick start. Under request, the country, department, email, hireDate, name, picture, and salary check boxes are selected, and those fields are shown under Fields. The Button label field is set to Create Employee. The Page title is Create Employee, and the Page name is main-create-employee.](images/employees-add-create.png "")
 
@@ -255,7 +255,7 @@ It makes sense at this point to change the name of the main-start page to main-d
 
     ![This image shows the hrwebapp and main nodes expanded in the Navigator. The right-click menu for the main-start page is open, and the Rename menu item is selected.](images/main-start-rename.png "")
 
-2. In the Rename dialog box, replace `start` with `departments` in the **ID** field and click **Rename**.
+2. In the Rename dialog box, change the **ID** from `main-start` to `main-departments` and click **Rename**.
 
 3. Click the **main** node. The page flow Diagram shows the now renamed page. Note how the main-departments page is still badged ![Default and Flow Entry badge](images/default-badge.png), indicating it as the page where your application starts when you run it.
 
@@ -272,4 +272,4 @@ It makes sense at this point to change the name of the main-start page to main-d
 ## Acknowledgements
 
 * **Author** - Sheryl Manoharan, Visual Builder User Assistance, August 2021
-* **Last Updated By** - February 2024
+* **Last Updated By** - August 2024

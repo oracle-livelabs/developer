@@ -137,8 +137,8 @@ You may now proceed to the next lab.
 
 
 ## Acknowledgements
-* **Author** - Ravi Lingam, Sri Vishnu Gullapalli, Data Integration Team, Oracle, August 2020
-* **Contributors** - Meghana Banka, Rene Fontcha, Narayanan Ramakrishnan
-* **Last Updated By/Date** - Sri Vishnu Gullapalli, Senior solution engineer, NA Technology, March 2023
+* **Author** - Ravi Lingam, Data Integration Team, Oracle, September 2025
+* **Contributors** - Rene Fontcha, Sri Vishnu Gullapalli
+* **Last Updated By/Date** - Sri Vishnu Gullapalli, Principal Cloud Architect, NA Technology, September 2025
 
 

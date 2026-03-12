@@ -2,15 +2,16 @@
 
 ## Introduction
 
-This lab will show you how to use Oracle Database, OCI Vision AI Text Detection, and Oracle Gen AI services
+This lab will show you how to use Oracle AI Database, OCI Vision AI Text Detection, and Oracle Gen AI services
 The use case involves the interpretation health test results and recommended steps for everyday individuals.
 
 Estimated Time:  3 minutes
 
+[Lab 3](videohub:1_l60ku02z)
 
 ### Objectives
 
--   Use Oracle Database, OCI Vision AI Text Detection, and Oracle Gen AI
+-   Use Oracle AI Database, OCI Vision AI Text Detection, and Oracle Gen AI
 
 ### Prerequisites
 
@@ -29,7 +30,8 @@ Estimated Time:  3 minutes
    ![view results](images/textdetection_genai5.png " ")
    5. Notice the PL/SQL function code in the `sql/aiuser-tables-indexes-functions.sql` file that is called by this application and how it calls DBMS_CLOUD, parses the JSON, and stores the results, and also REST/ORDS enable the function.
         
-        ``` <copy>
+      ```text
+        <copy>
         CREATE OR REPLACE FUNCTION VISIONAI_TEXTDETECTION (
             p_endpoint VARCHAR2,
             p_compartment_ocid VARCHAR2,
@@ -90,8 +92,9 @@ Estimated Time:  3 minutes
             );
             COMMIT;
         END;
-        /
-        ```
+        / 
+        </copy>
+      ```
 
 
 You may now **proceed to the next lab.**..
@@ -99,4 +102,4 @@ You may now **proceed to the next lab.**..
 ## Acknowledgements
 
 * **Author** - Paul Parkinson, Architect and Developer Advocate
-* **Last Updated By/Date** - Paul Parkinson, 2023
+* **Last Updated By/Date** - Paul Parkinson, 2024

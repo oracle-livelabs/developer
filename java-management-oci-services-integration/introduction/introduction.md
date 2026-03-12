@@ -27,7 +27,7 @@ As the stewards of Java, Oracle can provide answers to these questions. Oracle u
 
 ## About this Workshop
 
-This workshop is a follow up workshop to the [Manage Java Runtimes, Applications and Managed Instances Inventory with Java Management Service](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=912) workshop, which we recommend to be completed before beginning this workshop about Integrating OCI Services with Java Management Service.
+This workshop is a follow up workshop to the [Manage Java Runtimes, Applications and Managed Instances Inventory with Java Management Service](https://livelabs.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=912) workshop, which we recommend to be completed before beginning this workshop about Integrating OCI Services with Java Management Service.
 
 This workshop will walk you through the process of setting up and using various Oracle Cloud Infrastructure (OCI) services for use with Java Management Service (JMS) on OCI. It will first walk you through the set up and use of the OCI Command Line Interface (CLI) to access JMS APIs. It will then walk you through the set up and use of JMS Software Development Kits (SDKs) and Postman to use the JMS APIs.
 
@@ -44,7 +44,7 @@ _Estimated Time:_ 45 minutes
 
 * This workshop requires an Oracle Cloud account. You may use your **own cloud account** or you can get a **Free Trial** account as described in *Get Started*.
 * A host(desktop/laptop/server/virtual machine) with Linux/Windows Operating System
-* Completion of the [Manage Java Runtimes, Applications and Managed Instances Inventory with Java Management Service](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=912) workshop
+* Completion of the [Manage Java Runtimes, Applications and Managed Instances Inventory with Java Management Service](https://livelabs.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=912) workshop
 
 ## Learn More
 

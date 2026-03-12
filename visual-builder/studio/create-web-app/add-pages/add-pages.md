@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This lab shows you how to create web pages to display the business objects you created in the previous lab.
+This lab shows you how to create web pages to display data from the business objects you created in the previous lab.
 
 Estimated Time: 15 minutes
 
@@ -60,11 +60,11 @@ Let's create a table to display your departments on the main-start page. The Tab
 
 8. On the Bind Data step, under item\[i\], select **id** and **department** (in that order). The two fields are added as Columns for your Departments table.
 
-   ![The Bind Data page of the Add Data quick start. The id and department check boxes are selected. In the Columns list, the columns are id and department.](images/department-add-data-selectfields.png "name")
+   ![The Bind Data page of the Add Data quick start. The id and department checkboxes are selected. In the Columns list, the columns are id and department.](images/department-add-data-selectfields.png "name")
 
 9. Expand the **locationObject** and **items** nodes (expand **item\[i\]** if it isn't already expanded) and select **location**. Because we created a reference-type field from the Department business object to the Location business object, the Location field is now available to us through the locationObject accessor (which lets us traverse relationships between the two objects). Click **Next**.
 
-    ![This image shows part of the Bind Data page of the Add Data quick start after the locationObject node has been expanded. The location check box is selected. In the Columns list, location appears at the bottom of the list.](images/department-add-data-selectitemfields.png "name")
+    ![This image shows part of the Bind Data page of the Add Data quick start after the locationObject node has been expanded. The location checkbox is selected. In the Columns list, location appears at the bottom of the list.](images/department-add-data-selectitemfields.png "name")
 
 10. On the Define Query step, click **Finish**.
 
@@ -82,7 +82,7 @@ Now that we have a way to show departments, we'll use the Add Create Page Quick 
 
 2. On the Page Detail step, select **location** (**department** is already selected because it's a required field). Department and Location are the only fields the user needs to specify to create a department.
 
-   ![The Page Detail page of the Add Create Page quick start. Under the request check box, the location and department check boxes are selected. The Button label field is set to Create Department. The Page title is Create Department, and the Page name is main-create-department.](images/department-add-create.png "")
+   ![The Page Detail page of the Add Create Page quick start. Under the request checkbox, the location and department checkboxes are selected. The Button label field is set to Create Department. The Page title is Create Department, and the Page name is main-create-department.](images/department-add-create.png "")
 
 3. Leave other values set to their defaults. Click **Finish**.
 
@@ -96,7 +96,7 @@ Now that we have a way to show departments, we'll use the Add Create Page Quick 
 
 5. In the Page Designer toolbar, click **Live** to make the form active. (Click **Properties** if you need to make room for the form.)
 
-    To indicate that you are in Live mode, the **Live** option now has a green background, and a green line appears around the page.
+    To indicate you are in Live view, the **Live** option now has a blue background, and a blue line appears around the page. Live view is used to quickly check how a page behaves as you're making changes to it.
 
 6. Enter `IT` in the **Department** field, and select **Floor 4** from the **Location** list.
 
@@ -148,11 +148,11 @@ We'll now create a page to display employees, similar to the one you created to 
 
 9. On the Bind Data step of the Add Data wizard, select **picture** and **name** under item\[i\].
 
-    ![Part of the Bind Data page of the Add Data quick start is shown. The name and picture check boxes are selected. In the Columns list, the name and picture columns appear in the order in which the check boxes were selected.](images/employees-add-data-1.png "")
+    ![Part of the Bind Data page of the Add Data quick start is shown. The name and picture checkboxes are selected. In the Columns list, the name and picture columns appear in the order in which the checkboxes were selected.](images/employees-add-data-1.png "")
 
 10. Expand the **departmentObject** and **items** nodes (expand **item\[i\]** if it isn't already expanded) and select **department**.
 
-    ![Part of the Bind Data page of the Add Data quick start after the departmentObject node has been expanded is shown. The items and item\[i\] nodes are expanded, and the department check box is selected. In the Columns list, department appears at the bottom. ](images/employees-add-data-2.png "")
+    ![Part of the Bind Data page of the Add Data quick start after the departmentObject node has been expanded is shown. The items and item\[i\] nodes are expanded, and the department checkbox is selected. In the Columns list, department appears at the bottom. ](images/employees-add-data-2.png "")
 
     The columns appear in the order selected; if you want to change the order, drag a **Handle** icon ![Handle icon](images/handle-icon.png) to reorder the columns as desired.
 
@@ -168,7 +168,7 @@ We'll now create a page to display employees, similar to the one you created to 
 
 ## Task 4: Add a chart to display employees
 
-Now that you've displayed some employee data in a table, let's add a chart to visually display employee salary. The table and chart both use the Employee business object as their data source, they only display the data differently.
+Now that you've displayed employee data in a table, let's add a chart to visually represent employee salaries. The table and chart both use the Employee business object as their data source, they only display the data differently.
 
 1. Click **Components**, then drag another Panel component onto the page, next to the existing table.
 
@@ -184,19 +184,23 @@ Now that you've displayed some employee data in a table, let's add a chart to vi
 
 5. On the Locate Data step of the Quick Start, select **Employee** under Business Objects and click **Next**.
 
-6. On the Map Fields step, select **salary** to add it to the **Values (Y Axis)** field, then **name** to add it to the **Categories (X Axis)** field. Leave the **Colors (Series)** field blank, and click **Next**.
+6. On the Map Fields step, select **salary** to add it to the **Values (Y Axis)** field, then **name** to add it to the **Categories (X Axis)** field.
 
-    ![The Map Fields page of the Add Data quick start is shown with the name and salary check boxes selected.](images/panel-on-page-chart-adddata-fields.png " ")
+    ![The Map Fields page of the Add Data quick start is shown with the name and salary checkboxes selected.](images/panel-on-page-chart-adddata-fields.png " ")
 
-7. On the Define Query step, click **Finish**.
+7. Expand the **departmentObject** and **items** nodes (expand **item[i]** if it isn't already expanded) and select **department** to add it to the **Colors (Series)** field, and click **Next**.
 
-    The chart displays the salary for each employee.
+8. On the Define Query step, click **Finish**.
+
+    The chart shows each employee's salary, using colors to represent the different departments (as identified in the legend).
 
     ![The Bar Chart is populated with employee data, with name as the X Axis and salary as the Y Axis.](images/panel-on-page-chart-data.png "")
 
-8. Click the chart's **General** tab in the Properties pane. In the **X Axis, Title** field, change **name** to **Employee Name**. In the **Y Axis, Title** field, change **salary** to **Salary**. Change the Orientation from **Vertical** to **Horizontal**.
+9. Click the chart's **General** tab in the Properties pane. In the **X Axis, Title** field, change **name** to **Employee Name**. In the **Y Axis, Title** field, change **salary** to **Salary**. Change the Orientation from **Vertical** to **Horizontal**.
 
     ![The Bar Chart's properties is shown. X Axis Title is set to Employee Name, Y Axis Title is set to Salary, Orientation is set to Horizontal.](images/panel-on-page-chart-properties.png "")
+
+10. Click ![Legend icon](images/icon-legend.png) next to Legend, then change the **Legend, Title** to `Department` (with a capital D). Click ![Back icon](images/back-icon.png) **Bar Chart** to return to the main General tab.
 
 ## Task 5: Add a page to create employees
 
@@ -205,7 +209,7 @@ Add a Create page that lets your users create new employees.
 1. Select the table component within the panel on the main-employees page, click the **Quick Start** tab in the Properties pane, then click **Add Create Page**.
 2. On the Page Detail step of the Add Create Page wizard, select **picture**, **hireDate**, **email**, **department**, **salary**, and **country** in that order (**name** is already selected, because it's a required field). Because our employee images are stored in a database elsewhere and we only reference their paths, change the **picture** field's type to **URL** for validation.  Change the **email** field's control type from **Input Text** to **Email**.
 
-    ![The Select Endpoint page of the Add Create Page quick start is shown. Under request, the country, department, email, hireDate, name, picture, and salary check boxes are selected, and those fields are shown under Fields. The Button label field is set to Create Employee. The Page title is Create Employee, and the Page name is main-create-employee.](images/employees-add-create.png "")
+    ![The Select Endpoint page of the Add Create Page quick start is shown. Under request, the country, department, email, hireDate, name, picture, and salary checkboxes are selected, and those fields are shown under Fields. The Button label field is set to Create Employee. The Page title is Create Employee, and the Page name is main-create-employee.](images/employees-add-create.png "")
 
 3. Leave the **Button label** field and other fields to their default values. Click **Finish**.
 
@@ -233,7 +237,7 @@ Add a Create page that lets your users create new employees.
 
     ![The page flow for the application's main flow is shown. The main-employees page points to the main-create-employee page, and  the main-start page points to the main-create-department page.](images/employees-add-create-mainflow.png "")
 
-7. Return to the main-employees page. (You can double-click the page tile, in addition to using other navigation mechanisms.) If necessary, click **Reload Design Preview** ![Reload Design Preview icon](images/reload-icon.png) to display the new employee, both in the table and the bar chart.
+7. Return to the main-employees page. (You can double-click the page tile, in addition to using other navigation mechanisms.) Click **Reload Design Preview** ![Reload Design Preview icon](images/reload-icon.png) to display the new employee, both in the table and the bar chart.
 8. Now click **Code** (next to **Design** in the Page Designer toolbar) to view the HTML code for the main-employees page. You can see the code for the title, the table, and the chart within `div` elements.  The components and classes all begin with `oj-`, indicating that they are Oracle JavaScript Extension Toolkit (JET) components.
 
     ![The HTML code for the main-employees page is shown.](images/employees-add-create-code.png "")
@@ -244,7 +248,7 @@ Add a Create page that lets your users create new employees.
 
      Now click **Design** to see your changes reflected in the page's visual editor. Whichever mode you choose to work in (visual or source code), your changes are synced to keep both views consistent.
 
-     Look also at the **Structure** view to see the hierarchy of components on the main-employees page. Components that aren't currently visible on the page fade into the background to allow you to focus on parts of a page, a section at a time.
+     Look also at the **Structure** view to see the hierarchy of components on the main-employees page. Any components that are not currently visible on the page fade into the background to allow you to focus on parts of a page, a section at a time.
 
 ## Task 6: Change the name of the **main-start** page
 
@@ -270,4 +274,4 @@ It makes sense at this point to change the name of the main-start page to main-d
 ## Acknowledgements
 
 * **Author** - Sheryl Manoharan, VB Studio User Assistance, November 2021
-* **Last Updated By/Date** - Sheryl Manoharan, April 2024
+* **Last Updated By/Date** - Sheryl Manoharan, July 2025

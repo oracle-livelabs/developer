@@ -8,9 +8,13 @@ In this lab, we will set up the required policies to run through the workshop as
 
 If you're just trying out Oracle Cloud Infrastructure or doing a proof-of-concept project with infrastructure resources, you may not need more than a few administrators with full access to everything. In that case, you can simply create any new users you need and add them to the Administrators group. The users will be able to do anything with any kind of resource. And you can create all your resources directly in the tenancy (the root compartment). You don't need to create any compartments yet, or any other policies beyond the Tenant Admin Policy, which automatically comes with your tenancy and can't be changed.
 
+> **Note:**  If you are using OCI Generative AI service (used in two of the workshops labs), you will need to set `region = us-chicago-1` in your ~/.oci/config file.
+
 Please read more about [OCI Policies](https://docs.oracle.com/en-us/iaas/Content/Identity/Concepts/policygetstarted.htm) before creating or changing any OCI policies.
 
 Estimated time: 5 to 40 minutes depending on requirements
+
+[Caption](videohub:1_2ciumah8)
 
 ### Objectives
 
@@ -21,10 +25,10 @@ In this lab, you will:
 * Create a new compartment
 * Setup policies for Compartment management
 * Setup policies for OCI AI Services
-* Create the Oracle Database
+* Create the Oracle AI Database
 * Create database user, tables, and functions/stored procedures and expose as ORDS Rest endpoints
 * Configure access to Oracle Cloud services including keys and config file
-* Populate the env.properties file with values gathered during setup to provide the application with the information needed to access the Oracle Database and Oracle AI Services.
+* Populate the env.properties file with values gathered during setup to provide the application with the information needed to access the Oracle AI Database and Oracle AI Services.
 
 
 ### Prerequisites
@@ -34,6 +38,8 @@ This lab assumes:
 * You have an Oracle Cloud account with OCI and Tenancy administration privileges to create policies and compartments. 
 
     > **Note:**  Policies are only required if you cannot create or use a OCI resources. If you are a tenancy administrator, you will have access to all the resources, and you can **optionally skip policy creations in this lab**.
+
+    > **Note:**  If you are using OCI Generative AI service (used in two of the workshops labs), you will need to set `region = us-chicago-1` in your ~/.oci/config file.
   
 ## Task 1: Clone workshop source code
 
@@ -42,10 +48,10 @@ This lab assumes:
       The majority of labs in the workshop are executed using a Java Spring Boot web app and so the endpoint (port 8080) must be accessible.
       
       Therefore, by default it is easiest to simply download the src to a location on your computer using the follow git clone command:
-   
-        ```text
-        <copy>git clone https://github.com/oracle-devrel/oracle-ai-for-sustainable-dev.git</copy>
-        ```
+         
+       ```text
+       <copy>git clone https://github.com/oracle-devrel/oracle-ai-for-sustainable-dev.git</copy>
+       ```
    
       or download and extract the zip code from https://github.com/oracle-devrel/oracle-ai-for-sustainable-dev/zipball/master
 
@@ -182,9 +188,9 @@ This lab assumes:
     
        Your policy should look like this:
    
-        ```text
+       ```text
         <copy>Allow group < group name > to manage all-resources in compartment < compartment name > </copy>
-        ```
+       ```
       
        for example, 
    
@@ -285,7 +291,7 @@ This lab assumes:
 
 If you have a database instance already, you may skip this task.
 
-   1. From the OCI console select `Oracle Database` and then `Autonmous Transaction Processing`.
+   1. From the OCI console select `Oracle AI Database` and then `Autonmous Transaction Processing`.
       ![select database](./images/databasesetup1.png " ")
    2. Click the `Create Autonomous Database` button.
       ![select create button](./images/databasesetup2.png " ")
@@ -350,7 +356,7 @@ This concludes this lab. You can **proceed now to the next lab**.
  
 ## Acknowledgements
 
-* **Author** - Madhusudhan Rao B M, Principal Product Manager, Oracle Database
-* **Author** - Paul Parkinson, Architect and Developer Advocate, Oracle Database
+* **Author** - Madhusudhan Rao B M, Principal Product Manager, Oracle AI Database
+* **Author** - Paul Parkinson, Architect and Developer Advocate, Oracle AI Database
 
 * **Last Updated By/Date** - 2023.

@@ -42,12 +42,20 @@
             "filename": "../../multiple-managed-instances/multiple-managed-instances.md"
         },
         {
-            "title": "Lab 8: Track Java Usage in a Container",
+            "title": "Lab 8: Monitoring Java applications in your Kubernetes cluster",
+            "filename": "../../monitoring-java-applications-in-kubernetes-cluster/monitoring-java-applications-in-kubernetes-cluster.md"
+        },
+        {
+            "title": "Lab 9: Track Java Usage in a Container",
             "filename": "../../track-java-usage-in-a-container/track-java-usage-in-a-container.md"
         },
         {
-            "title": "Lab 9: Use Java Download",
+            "title": "Lab 10: Use Java Download",
             "filename": "../../java-download/java-download.md"
+        },
+        {
+            "title": "Appendix: Use JMS Resource Health",
+            "filename": "../../use-jms-resource-health/use-jms-resource-health.md"
         },
         {
             "title": "Need Help?",

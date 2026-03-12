@@ -2,15 +2,16 @@
 
 ## Introduction
 
-This lab will show you how to use Oracle Database, OCI Speech AI, and Gen AI
+This lab will show you how to use Oracle AI Database, OCI Speech AI, and Gen AI
 The use case involves the creation webpages and storyboards using only voice commands for individuals with impaired motor control.
 
 Estimated Time:  3 minutes
 
+[Lab 4](videohub:1_0yfzkzy3)
 
 ### Objectives
 
--   Use Oracle Database, OCI Speech AI, and Gen AI
+-   Use Oracle AI Database, OCI Speech AI, and Gen AI
 
 ### Prerequisites
 
@@ -32,4 +33,4 @@ You may now **proceed to the next lab.**..
 ## Acknowledgements
 
 * **Author** - Paul Parkinson, Architect and Developer Advocate
-* **Last Updated By/Date** - Paul Parkinson, 2023
+* **Last Updated By/Date** - Paul Parkinson, 2024

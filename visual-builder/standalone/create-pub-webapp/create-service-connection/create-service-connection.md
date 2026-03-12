@@ -41,17 +41,12 @@ In this step, we'll connect the HR application to an external REST endpoint that
 
     ![This image shows the Select Source screen of the Create Service Connection. Three options are visible: Select from Catalog, Define by Specification, and Define by Endpoint.](images/service-connection-wizard.png "")
 
-    This wizard presents various options to connect to REST endpoints:
-    * When you have access to an Oracle Cloud Applications or Oracle Integration instance, you use the **Select from Catalog** option to access endpoints exposed by these Oracle services.
-    * When you have access to a Swagger or Oracle ADF file that describes a service, you use the **Define by Specification** option.
-    * When you know the URL of an external REST endpoint, you use the **Define by Endpoint** option—which is what we'll do here.
-
-    Click **Define by Endpoint**.
+    Because we know the URL of the REST endpoint we want to connect to, click **Define by Endpoint**.
 
 3. With the **Method** field set to **GET**, enter `https://restcountries.com/v2/alpha/{code}` in the **URL** field and select **Get One** in the **Action Hint** list.
    ![This image shows the Define by Endpoint page. The Method field is set to GET, the URL is set to the base URI of a service, and Get One is selected in the Action Hint drop-down list.](images/service-connection-wizard-url.png "")
 
-    Because all service connections require a backend to simplify the task of managing server attributes, you'll need to create a backend. Click **Create Backend**.
+    All service connections require a backend to simplify the task of managing server attributes, so you'll need to create a backend. Click **Create Backend**.
 
 4. On the Backend Specification step, enter `Countries` in the **Backend Name** field. Leave all other fields to their defaults and click **Next**.
 
@@ -77,11 +72,11 @@ In this step, we'll connect the HR application to an external REST endpoint that
 
 Now that we have our service connection, let's change the Edit Employee page to show information about an employee's country. This time, instead of using Quick Starts, we'll manually add fields to the page.
 
-1. Click the **Web Applications** ![Web Applications icon](images/webapp-icon.png) tab, then select the **main-edit-employee** page.
+1. Click **Web Applications** ![Web Applications icon](images/webapp-icon.png), then select the **main-edit-employee** page.
 
-2. In the Components palette, locate the **Heading** component and drag and drop it onto the canvas, at the very end of the page after the Form Layout's components.
+2. Switch to the Components palette, then locate the **Heading** component and drag and drop it onto the canvas, at the very end of the page after the Form Layout's components.
 
-3. In the Heading's properties, change the **Text** field's value to `Country Info` and move the **Level** slider to H6.
+3. In the Heading's properties, change the **Text** to `Country Info` and move the **Level** slider to H6.
 
 4. In the Components palette, locate the **Form Layout** component under **Layout** and drag and drop it onto the page under Heading.
 
@@ -152,7 +147,7 @@ In this step, we'll use the Country field as the data source for our variables a
 
     Click **Save**.
 
-8. Drag and drop an **Assign Variable** action on the canvas to follow the Call REST action. In the Assign Variable action's Properties pane, select **countryTypeVar** under **Page** in the **Variable** list. Hover over the **Value** property, open the Variable picker, expand **callRestCountriesGetAlphaCodeResult** under Local, and select **body**.
+8. Drag and drop an **Assign Variable** action on the canvas to follow the Call REST action. In the Assign Variable action's Properties pane, select **countryTypeVar** under **Page** in the **Variable** list. Hover over the **Value** property, open the Variable picker, expand **response** under **Local**, and select **body**.
 
     ![This Assign Variable action's properties show the Variable property set to countryTypeVar. The Value property shows the variable picker, with body under Action Chain and callRestCountriesGetAlphaCodeResult highlighted.](images/assignvariable-bodytocountrytypevar.png "")
 
@@ -177,4 +172,4 @@ In this step, we'll use the Country field as the data source for our variables a
 ## Acknowledgements
 
 * **Author** - Sheryl Manoharan, Visual Builder User Assistance, August 2021
-* **Last Updated By** - February 2024
+* **Last Updated By** - August 2024

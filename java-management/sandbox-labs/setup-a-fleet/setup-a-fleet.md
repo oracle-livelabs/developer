@@ -63,7 +63,7 @@ In this lab, you will:
     - Java migration analysis - Evaluate the effort and feasibility of migrating Java applications to newer JDK versions.
 
 
-   To learn more about the advanced features available, see [Use Java Management Service Advanced Features](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=3202).
+   To learn more about the advanced features available, see [Use Java Management Service Advanced Features](https://livelabs.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=3202).
 
 6. Click **Next**.
     ![image of create fleet next](images/create-fleet-next.png)

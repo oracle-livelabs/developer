@@ -39,31 +39,10 @@ This lab assumes:
 
    1. Clone workshop code
 
-      The majority of labs in the workshop are executed using a Java Spring Boot web app and so the endpoint (port 8080) must be accessible.
-      
-      Therefore, by default it is easiest to simply download the src to a location on your computer using the follow git clone command:
-   
-      ```text
-      <copy>git clone https://github.com/oracle-devrel/oracle-health-ai-open-source.git</copy>
+      Verify you have cloned/downloaded the src as instructed in the [Clone and Build lab](../clone-and-build/clone-and-build.md). 
+      And verify you are working in the `health` directory of the source you cloned/downloaded.
+
       ```
-   
-      or download and extract the zip code from https://github.com/oracle-devrel/oracle-health-ai-open-source/zipball/master
-
-   2. Open the env.properties file in the root directory in a text editor. You will populate the values in this file as part of this lab. It will look something like this:
-   
-      ```text
-         OCICONFIG_FILE=~/.oci/config
-         OCICONFIG_PROFILE=DEFAULT
-         COMPARTMENT_ID=ocid1.compartment.oc1..mycompartmentvalue
-         OBJECTSTORAGE_NAMESPACE=myobjectstorenamespacename
-         OBJECTSTORAGE_BUCKETNAME=myobjectstorebucketname
-         ORDS_ENDPOINT_URL=https://myordsendpointurl
-         ORDS_ENDPOINT_URL=https://rddainsuh6u1okc-aidatabaseworkshop.adb.us-ashburn-1.oraclecloudapps.com/ords/aiuser/_sdw/
-         OCI_VISION_SERVICE_ENDPOINT=https://vision.aiservice.myregion.oci.oraclecloud.com
-         OCI_SPEECH_SERVICE_ENDPOINT=https://speech.aiservice.myregion.oci.oraclecloud.com
-         OCI_GENAI_SERVICE_ENDPOINT=https://genai.aiservice.us-chicago-1.oci.oraclecloud.com
-         ```
-
 ## Task 2: Log into OCI 
 
    1. Login into OCI

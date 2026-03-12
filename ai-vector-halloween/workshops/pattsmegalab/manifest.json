@@ -1,0 +1,39 @@
+{
+  "workshoptitle": "The Adventure of the Stolen Pumpkin: A Sherlock Holmes Mystery",
+    "tutorials": [
+        {
+            "title": "Getting Started",
+            "description": "Prerequisites for LiveLabs (Oracle-owned tenancies). The title of the lab and the Contents Menu title (the title above) match for Prerequisite lab. This lab is always first.",
+            "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/cloud-login-livelabs2.md"
+        },
+        {
+            "title": "Introduction",
+            "filename": "../../intro/intro.md"
+        },
+        {
+            "title": "Lab 1: Setting Up the Database and Clue Table",
+            "description": "Create a simple database and table to store mystery clues about the stolen pumpkin.",
+            "filename": "../../labs/setup-adb/setup-adb.md"
+        },
+        {
+            "title": "Lab 2: Vectorizing the Evidence - Transforming Clues into Embeddings",
+            "description": "Learn how to import and use the all-MiniLM-L12-v2 model to vectorize textual clues for AI-powered search.",
+            "filename": "../../labs/vectorize-clues/vectorize-clues.md"
+        },
+        {
+            "title": "Lab 3: Watson Tries His Hand at Deduction - The Keyword Search Investigation",
+            "description": "See how traditional keyword searches miss hidden connections between clues.",
+            "filename": "../../labs/traditional-query/traditional-query.md"
+        },
+        {
+            "title": "Lab 4: Holmes Applies AI Vector Search to the Problem",
+            "description": "Use AI vector search to discover connections that solve the pumpkin theft mystery.",
+            "filename": "../../labs/vector-search/vector-search.md"
+        },
+        {
+            "title": "Need Help?",
+            "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+            "filename":"https://oracle-livelabs.github.io/common/labs/need-help/need-help-livelabs.md"
+        }
+    ]
+}

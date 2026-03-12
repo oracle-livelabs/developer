@@ -31,7 +31,7 @@ However, best practices for applications such as our example Flask application w
 
      > 🧠 You can modify API requests slightly so they complement the sample Flask application by ensuring services are performed *securely*.
 
-3. You may visit the Modern Application Development with Oracle REST Data Services Workshop [here](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=815). Or, in the **Other LiveLabs you might like** section of this Workshop. There you will complete objectives such as:
+3. You may visit the Modern Application Development with Oracle REST Data Services Workshop [here](https://livelabs.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=815). Or, in the **Other LiveLabs you might like** section of this Workshop. There you will complete objectives such as:
     * Create an Autonomous Database
     * Connect to your Autonomous Database using Database Actions/SQL Developer Web
     * Create and Auto-REST enable a table
