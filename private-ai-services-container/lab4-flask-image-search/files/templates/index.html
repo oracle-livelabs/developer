@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Private AI CLIP Image Search</title>
+  <style>
+    :root {
+      --bg: #f3f5f7;
+      --panel: #ffffff;
+      --ink: #111827;
+      --muted: #4b5563;
+      --accent: #c74634;
+      --line: #e5e7eb;
+      --ok: #0f766e;
+      --err: #b91c1c;
+    }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", "Noto Sans", sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+    }
+    .wrap {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 24px;
+    }
+    .hero {
+      background: linear-gradient(120deg, #fff 0%, #f9e9e7 100%);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 20px;
+      margin-bottom: 16px;
+    }
+    .hero h1 { margin: 0 0 8px 0; }
+    .hero p { margin: 4px 0; color: var(--muted); }
+    .row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+    .panel {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 16px;
+    }
+    label {
+      display: block;
+      font-size: 12px;
+      color: var(--muted);
+      margin-bottom: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+    }
+    input[type="text"] {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 10px 12px;
+      border: 1px solid #cbd5e1;
+      border-radius: 8px;
+      margin-bottom: 10px;
+    }
+    .btn {
+      border: 0;
+      border-radius: 8px;
+      padding: 10px 14px;
+      cursor: pointer;
+      background: var(--accent);
+      color: #fff;
+      font-weight: 600;
+    }
+    .btn.secondary {
+      background: #111827;
+    }
+    .flash {
+      border-radius: 8px;
+      padding: 10px 12px;
+      margin-bottom: 10px;
+      font-size: 14px;
+    }
+    .flash.success { background: #ecfeff; color: var(--ok); border: 1px solid #99f6e4; }
+    .flash.error { background: #fff1f2; color: var(--err); border: 1px solid #fecdd3; }
+    .meta {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 12px;
+      margin-top: 14px;
+    }
+    .card {
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      overflow: hidden;
+      background: #fff;
+    }
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      display: block;
+      background: #f8fafc;
+    }
+    .card .body {
+      padding: 10px;
+      font-size: 13px;
+    }
+    .small { color: var(--muted); font-size: 12px; }
+    @media (max-width: 900px) {
+      .row { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="hero">
+      <h1>Private AI CLIP Image Search</h1>
+      <p>Image embeddings model: <b>{{ image_model_id }}</b></p>
+      <p>Text embeddings model: <b>{{ text_model_id }}</b></p>
+      <div class="meta">
+        <div>Total indexed images: <b>{{ total_images }}</b></div>
+        <div>Top-K results: <b>10</b></div>
+      </div>
+    </div>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        {% for category, msg in messages %}
+          <div class="flash {{ category }}">{{ msg }}</div>
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
+
+    <div class="row">
+      <div class="panel">
+        <h3>1) Load Image Library into Database</h3>
+        <form method="post">
+          <input type="hidden" name="action" value="load" />
+          <label>Image Root Directory</label>
+          <input type="text" name="image_root" value="{{ default_image_root }}" />
+          <button class="btn" type="submit">Load + Embed Images</button>
+        </form>
+      </div>
+
+      <div class="panel">
+        <h3>2) Search by Text</h3>
+        <form method="post">
+          <input type="hidden" name="action" value="search" />
+          <label>Query</label>
+          <input type="text" name="query" value="{{ query }}" placeholder="e.g. old ship in ocean storm" />
+          <button class="btn secondary" type="submit">Search Top 10</button>
+        </form>
+      </div>
+    </div>
+
+    {% if results %}
+      <div class="panel">
+        <h3>Search Results</h3>
+        <p class="small">Query: <b>{{ query }}</b></p>
+        <div class="grid">
+          {% for r in results %}
+            <div class="card">
+              <img src="{{ r.data_uri }}" alt="{{ r.filename }}" />
+              <div class="body">
+                <div><b>{{ r.filename }}</b></div>
+                <div class="small">Category: {{ r.category }}</div>
+                <div class="small">Similarity: {{ r.similarity }}</div>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    {% endif %}
+  </div>
+</body>
+</html>

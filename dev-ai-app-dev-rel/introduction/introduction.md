@@ -30,8 +30,8 @@ Use Python with Oracle AI Database to create tables, shape them into JSON Dualit
 * **Lab 4 – Implement RAG**
 Construct a working AI application. Pull customer and grid data, generate recommendations with OCI Generative AI, chunk and vectorize the results, and answer follow-up questions using Vector Search + RAG.
 
-* **Lab 5 – Explore agentic apps with Oracle MCP**
-This lab links Oracle MCP to LangChain (an AI agent framework ) through a Flask web console and exposes SQL operations as AI-discoverable tools. It includes SeerGroup sample schemas for domain-specific prompt testing.
+* **Lab 5 – Explorer agentic apps with Oracle MCP**
+This lab links Oracle MCP to LangChain (an AI agent framework ) through a Flask web console and exposes SQL operations as AI-discoverable tools. It includes SeerHolding sample schemas for domain-specific prompt testing.
 
 By the end, you’ll have a complete toolkit—from clean data to live AI apps to composable tools—that shows how SeerGroup industries can turn their data into intelligent applications.
 
