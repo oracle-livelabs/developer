@@ -6,7 +6,7 @@ In this set of labs, we'll look at SeerGroup, a global conglomerate with multipl
 
 This workshop shows how SeerGroup tackles this. By keeping data in one place and using more modern tools and frameworks, such as LangChain, they are working to cut out multiple integrations to give analysts, engineers, and managers a **single platform** for smarter and more informed approvals, efficient and more accurate investigations, and clearer customer answers and outcomes.
 
-Estimated Workshop Time: 140 minutes
+Estimated Workshop Time: 180 minutes
 
 ✅ **Start with the demo! (Lab 1)**
 
