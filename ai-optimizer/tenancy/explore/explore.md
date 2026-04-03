@@ -40,9 +40,6 @@ Let's check if the DB is correctly connected.
   
   ![Database configuration](images/database-config.png)
 
-1. Since you are using an Autonomous Database, you can activate the SelectAI functionality. You will need to create a [Select AI](https://www.oracle.com/it/autonomous-database/select-ai/) profile and eventually you'll find the list of active profiles within the tenancy. If no Select AI profile has been activated yet, you won't able to use the functionality:
-
-  ![Select AI Profiles](images/selectai-profiles.png)
 
 ## Task 2: Configure LLMs
 
@@ -126,4 +123,4 @@ You may now **proceed to the next lab**.
 
 * **Author** - Lorenzo De Marchis, Developer Evangelist, May 2025
 * **Contributors** - Mark Nelson, John Lathouwers, Corrado De Bari, Jorge Ortiz Fuentes, Andy Tael
-* **Last Updated By** - Andy Tael, July 2025
+* **Last Updated By** - Lorenzo De Marchis, February 2026

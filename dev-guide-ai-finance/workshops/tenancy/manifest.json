@@ -20,7 +20,7 @@
         {
             "title": "Lab 2: Connect to Development Environment",
             "description": "This is a step-by-step guide showcasing how the demo instance is navigated",
-            "filename": "https://oracle-livelabs.github.io/developer/dev-ai-app-dev-retail/connect-to-env/connect-to-env.md"
+            "filename": "https://livelabs.oracle.com/cdn/developer/dev-ai-app-dev-retail/connect-to-env/connect-to-env.md"
         },
         {
             "title": "Lab 3: Start coding with Oracle Database 23ai",
@@ -90,7 +90,7 @@
         {
             "title": "Need Help?",
             "description": "Solutions to Common Problems and Directions for Receiving Live Help",
-            "filename": "https://oracle-livelabs.github.io/common/labs/need-help/need-help-freetier.md"
+            "filename": "https://livelabs.oracle.com/cdn/common/labs/need-help/need-help-freetier.md"
         }
     ]
 }

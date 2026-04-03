@@ -12,7 +12,7 @@ Estimated Lab Time: 30 minutes
 
 In this lab, you will:
 
-* Review how the Seer Retail return authorization app incorporates the use of AI Vector Search, Graph analytics, and other converged database features, all without requiring complex data movement or separate systems.
+* Review how the Seer Retail **Return Authorization app** incorporates the use of AI Vector Search, Graph analytics, and other converged database features, all without requiring complex data movement or separate systems.
 
 ### Prerequisites
 
@@ -22,7 +22,7 @@ This lab assumes you have:
 
 ## Task 1: Launch the application
 
-1. To access the demo environment, click **View Login Info** in the top left corner of the page. Click the **Start the Demo** link.
+1. To access the demo environment, click **View Login Info** in the top left corner of the page. Click **Open Link** next to **Start the Demo**.
 
     ![Click the Start Demo Link](./images/start-demo.png =50%x*)
 
@@ -60,7 +60,7 @@ In this first example, you will use the application to authorize a return for a 
 
 >💡 In Oracle AI Database, **AI Vector Search** allows you to combine your business data with a Large Language Model (LLM) to reduce hallucinations and get accurate answers from your data.
 
-4. Select the **Navigate To Decisions** button.
+4. Select the **Navigate To Customer Decisions** button.
 
     ![David Williams Decision](./images/david-williams-decision.png =50%x*)
 
