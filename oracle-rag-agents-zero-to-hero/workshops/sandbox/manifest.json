@@ -1,0 +1,47 @@
+{
+    "workshoptitle": "Oracle RAG Agents: Zero to Hero",
+    "help": "livelabs-help-db_us@oracle.com",
+    "tutorials": [
+        {
+            "title": "Introduction",
+            "description": "",
+            "type": "livelabs",
+            "filename": "../../introduction/introduction.md"
+        },
+        {
+            "title": "Lab 1: Access the Notebook Environment",
+            "description": "",
+            "type": "livelabs",
+            "filename": "../../access-notebook-environment/access-notebook-environment.md"
+        },
+        {
+            "title": "Lab 2: Install and Connect Oracle AI Database",
+            "description": "",
+            "type": "livelabs",
+            "filename": "../../install-and-connect-oracle-ai-database/install-and-connect-oracle-ai-database.md"
+        },
+        {
+            "title": "Lab 3: Load and Index the Research Dataset",
+            "description": "",
+            "type": "livelabs",
+            "filename": "../../load-and-index-research-data/load-and-index-research-data.md"
+        },
+        {
+            "title": "Lab 4: Build Retrieval and RAG",
+            "description": "",
+            "type": "livelabs",
+            "filename": "../../build-retrieval-and-rag/build-retrieval-and-rag.md"
+        },
+        {
+            "title": "Lab 5: Build Agents and Memory",
+            "description": "",
+            "type": "livelabs",
+            "filename": "../../build-agents-and-memory/build-agents-and-memory.md"
+        },
+        {
+            "title": "Need Help?",
+            "description": "Template to link to Need Help lab at the end of workshop.",
+            "filename": "https://raw.githubusercontent.com/oracle-livelabs/common/main/labs/need-help/need-help-freetier.md"
+        }
+    ]
+}
