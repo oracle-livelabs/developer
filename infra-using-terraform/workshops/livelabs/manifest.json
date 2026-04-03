@@ -5,7 +5,7 @@
 	"tutorials": [
         {
             "title": "Getting Started",
-            "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/cloud-login-livelabs2.md"
+            "filename": "https://livelabs.oracle.com/cdn/common/labs/cloud-login/cloud-login-livelabs2.md"
         },
         {
             "title": "Introduction",
@@ -13,7 +13,7 @@
         },
         {
             "title": "Lab 1: Generate SSH Key - Cloud Shell",
-            "filename": "https://oracle-livelabs.github.io/common/labs/generate-ssh-key-cloud-shell/generate-ssh-keys-cloud-shell.md"
+            "filename": "https://livelabs.oracle.com/cdn/common/labs/generate-ssh-key-cloud-shell/generate-ssh-keys-cloud-shell.md"
         },
         {
             "title": "Lab 2: Deploying Infrastructure using Terraform",
@@ -22,7 +22,7 @@
         {
             "title": "Need Help?",
             "description": "Solutions to Common Problems and Directions for Receiving Live Help",
-            "filename": "https://oracle-livelabs.github.io/common/labs/need-help/need-help-livelabs.md"
+            "filename": "https://livelabs.oracle.com/cdn/common/labs/need-help/need-help-livelabs.md"
         }
     ]
 }

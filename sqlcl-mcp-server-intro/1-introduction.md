@@ -2,36 +2,40 @@
 
 ## About this Workshop
 
-In this workshop, you’ll learn how to connect an AI Agent (Cline) to the SQLcl MCP Server, enabling secure, workflow-driven interaction with your Oracle AI Database.
+In this workshop, you’ll learn how to connect an AI Agent (Cline) to the SQLcl MCP Server.
 
 **Estimated Time:** 1 hour 10 minutes
 
 ### Objectives
 
-- Learn about the Model Context Protocol (MCP) and the SQLcl MCP Server
+- Explore the Model Context Protocol (MCP)
+- Review capabilities and tools of the SQLcl MCP Server
 - Register the SQLcl MCP Server with an AI Agent
-- Explore the SQLcl MCP Server "Tools"
 - Perform agent-driven Oracle AI Database tasks using sample prompts
+
+[](include:test)
 
 <br>
 
 ### What is MCP?
 
-The Model Context Protocol (MCP) is a standard that lets AI Agents interact securely with your data and applications via an intermediary called the MCP Server.
+The Model Context Protocol (MCP) is a proposed standard that lets AI Agents interact securely with your data and applications via an intermediary called an MCP Server.
 
 An MCP Server integrates your technology (like SQLcl) with AI Agents. Agents registered with an MCP server can access "Tools" to build complex, context-aware workflows (e.g., database object creation, web apps, dashboards).
 
-**Benefits:**  
+#### Benefits:
+
 Users can request and perform database tasks from the Agent interface in plain language, shifting from basic prompts ("single-shot") to continuous, guided collaboration ("Agentic Workflow").
 
-#### Single-shot AI vs. Agentic Workflows
+### Single-shot AI vs. Agentic Workflows
+
+![Workflow comparison](./images/lab-1/3-single-shot-vs-agentic-ai.jpeg " ")
 
 - **Single-Shot:** A user prompts &#8594; LLM responds &#8594; Done. *Step-by-step manual interaction.*
 - **Agentic Workflow:** A user prompts &#8594; the Agent creates a plan &#8594; the user approves/edits &#8594; the Agent uses tools to execute &#8594; Results are presented for approval/consumption/iteration to the user. *Transparent, iterative, and controlled.*
 
-  ![Workflow comparison](./images/lab-1/3-single-shot-vs-agentic-ai.jpeg " ")
+#### A Practical Example
 
-**An Example:**
 1. User asks, "Find the top 10 most expensive queries from last week and recommend an index.”
 2. Agent creates a plan and chooses MCP Server Tools.
 3. LLM generates SQL or invokes a prebuilt tool (e.g., SQLcl).
@@ -45,37 +49,24 @@ Users can request and perform database tasks from the Agent interface in plain l
 
 You interact with MCP Servers through AI Agents; using natural language to invoke tools. The Agent might also use tools autonomously within "protocol" guidelines.
 
-**Key MCP Server "Primitives":**
+#### Key MCP Server "Primitives"
+
 | Primitive  | Description                                                                           |
 |------------|---------------------------------------------------------------------------------------|
 | **Tools**      | Executable functions (e.g., file ops, API calls, SQL)                              |
 | **Resources**  | Data sources (e.g., file contents, DB records)                                    |
 | **Prompts**    | Reusable templates for structured LLM/agent interactions                          |
-
-<br>
+{: title="MCP Server Primitives"}
 
 ### The SQLcl MCP Server
 
-SQLcl is a powerful CLI for the Oracle AI Database. By extending it with an MCP Server, we can enable secure, natural-language database interaction through an AI Agent.
+SQLcl is a powerful CLI for the Oracle AI Database. By extending it with an MCP Server, we can enable secure, natural-language database interaction through an AI Agent. In the next few labs you'll explore your database using an AI Agent along with the SQLcl MCP Server. 
+</br>
 
-**Getting Started:**  
-After you've configured your credentials (connection string or Cloud Wallet), you can explore and manage your database with the Agent using natural language and SQL/PLSQL.
+#### Security Considerations when using the SQLcl MCP Server
 
-**SQLcl MCP Server Tools:**
-| Tool                | Purpose                                                        | Parameters                                           | Parameter Definitions                                                                                 |
-|---------------------|----------------------------------------------------------------|------------------------------------------------------|-------------------------------------------------------------------------------------------------------|
-| `list-connections`  | List saved Oracle DB connection names                          | <ul><li>filter</li> <li>mcp_client</li> <li>model</li></ul>| Filter for connection list. Name/version of MCP client. Name/version of language model.               |
-| `connect`           | Interface to connect, confirm, and list schemas if needed      | <ul><li>connection\_name</li><li>mcp\_client</li><li>model</li></ul> | Name/version of MCP client. Name/version of language model.                |
-| `disconnect`        | Disconnect current session and log out                         | <ul><li>mcp_client</li><li>model</li></ul>                | Name/version of MCP client. Name/version of language model.                                            |
-| `run-sqlcl`         | Run SQLcl CLI commands in SQLcl, returns command results       | <ul><li>sqlcl</li><li>mcp_client</li><li>model</li></ul> | The SQLcl command. Name/version of MCP client. Name/version of language model.                        |
-| `run-sql`           | Run SQL queries and return CSV                                 | <ul><li>sql</li> <li>mcp_client</li> <li>model</li></ul>   | The SQL query. Name/version of MCP client. Name/version of language model.                            |
-| `schema-information`| Give insights on the connected schema (metadata analysis)      |<ul><li>model</li></ul>                                   | Name/version of language model.                                                                       |
+Some key principles to consider: 
 
-<br>
-
-### Security Considerations when using the SQLcl MCP Server
-
-**Key Principles:**
 - **Least Privilege:** Use read-only accounts where possible.
 - **Segregation of Duties:** Separate querying from admin tasks.
 - **Policies:** Apply corporate/agent-specific data policies.
@@ -88,7 +79,7 @@ After you've configured your credentials (connection string or Cloud Wallet), yo
 
 > &#8505; **Note:** SQLcl MCP Server stores credentials securely in an Oracle Wallet—never exposed to the LLM/Agent. All database roles, privileges, and safeguards apply.
 
-#### MCP Best Practices
+### General MCP Best Practices
 
 | **Do**                                                      | **Do Not**                                      |
 |:------------------------------------------------------------|:-------------------------------------------------|
@@ -96,16 +87,13 @@ After you've configured your credentials (connection string or Cloud Wallet), yo
 | Keep MCP servers focused (no overlapping functionality)     | Expose credentials to the LLM                    |
 | Ensure all tools and actions are logged/documented          | Deploy agents in production without strict controls |
 | Provide clear, descriptive tool documentation               | Assume LLMs are always correct without review    |
-
-<br>
+{: title="MCP Server Best Practices"}
 
 ### Summary
 
-|      |     |
-| ---  | --- | 
-| <i><b>What</b></i> | MCP Servers allow AI Agents to safely execute plans/workflows on Oracle Databases. |
-| <i><b>How</b></i>  | SQLcl MCP Server provides tools to AI Agents using database authentication and Oracle security features. |
-| <i><b>Why</b></i>  | Boost productivity for database exploration, reporting, and diagnostics — secure, controlled, and efficient. |
+- *What?* MCP Servers allow AI Agents to safely execute plans/workflows on Oracle Databases.  
+- *How?* The SQLcl MCP Server provides tools to AI Agents using database authentication and Oracle security features.  
+- *Why?* Boost productivity for database exploration, reporting, and diagnostics — secure, controlled, and efficient. 
 
 You may now [proceed to the next lab](#next).
 
@@ -117,6 +105,6 @@ You may now [proceed to the next lab](#next).
 **Acknowledgements:**
 - Author: Chris Hoina, Senior Product Manager, Database Tools
 - Contributors: Jeff Smith, Linda Foindling
-- Last updated: Chris Hoina, January 2026
+- Last updated: Chris Hoina, February 2026
 
 <!-- WMS ID 11914 -->
