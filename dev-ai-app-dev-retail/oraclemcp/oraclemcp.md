@@ -118,7 +118,7 @@ Launch LangChain as the client to connect to Oracle MCP, discover tools, and run
 
 ✅ **Checkpoint** You successfully invoked MCP tools from LangChain and received a model-generated answer.
 
-## Task 3 (Optional): Use LangChain as the Oracle MCP Runner with a Reasoning Agent
+## Task 3: Use LangChain as the Oracle MCP Runner with a Reasoning Agent (Optional)
 
 Run a reasoning agent—a more advanced MCP client that plans, explains, and justifies each step before acting. The reasoning agent typically runs longer and can show why it chose each tool and how the decision flow unfolds, depending on model settings and tracing configuration. This is useful for debugging, auditing, and optimizing multi-tool workflows in production.
 

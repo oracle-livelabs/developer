@@ -6,7 +6,7 @@ In this lab, you'll learn how to access the web-based Jupyter Lab development en
 
 Estimated Time: 5 minutes
 
-### Objective
+### Objectives
 
 * Login to JupyterLab
 

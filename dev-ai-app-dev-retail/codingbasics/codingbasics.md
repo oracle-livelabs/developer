@@ -134,7 +134,7 @@ Now, that we have established a connection, we can start creating our tables and
 
     query_orders()
     </copy>
-   ```
+    ```
 
 >**Note:** We are creating a function called `query_orders()` that will allow us to query our table. We can use the same function in one of the following tasks
 

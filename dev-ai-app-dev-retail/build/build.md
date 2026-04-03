@@ -511,7 +511,7 @@ Before answering questions, we need to prepare the data by vectoring the recomme
 
 Now that the recommendations are vectorized, we can process a user’s question:
 
-``` What’s the best action for a high-risk return request?```
+`What’s the best action for a high-risk return request?`
 
 This step:
 

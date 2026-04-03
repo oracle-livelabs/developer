@@ -4,7 +4,7 @@
 
 In this lab, you will explore the architecture behind the workshop that supports the tasks you will perform. We also have a closer look at all the features of the Oracle AI Database that were used to build the workshop and the demo application.
 
-Estimated Lab Time: 15 minutes
+Estimated Time: 15 minutes
 
 ## Physical Architecture
 

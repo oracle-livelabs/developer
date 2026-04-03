@@ -10,6 +10,8 @@ This workshop shows how SeerGroup tackles that problem with Oracle AI Database +
 
 You’ll see how SeerGroup’s teams can move from manual, fragmented workflows to AI-powered applications—and you’ll build the same capabilities yourself in the labs that follow.
 
+Estimated Workshop Time: 1 hour 30 minutes
+
 
 ✅ **Start with the demo! (Lab 1)**
 
@@ -48,11 +50,6 @@ By the end, you’ll have a complete toolkit—from clean data to live AI apps t
 
 ### Objectives
 
-<<<<<<< HEAD
-Objectives
-
-=======
->>>>>>> upstream/main
 * Build and query data with Python + Oracle AI Database
 
 * Shape relational data into documents using JSON Duality Views

@@ -49,28 +49,31 @@ Estimated Time: 60 minutes
 
 ## Task 1: Review MCP in a nutshell (and the tools our MCP server exposes)
 
-**What is MCP?**
-MCP is an open protocol that lets an LLM (or a client app) call tools running in a sidecar process over stdio/HTTP. You can think of it as allowing to implement “function calling,” but language- and framework-agnostic. Your MCP server can declare tools; your client (IDE, notebook, agent runtime, application) calls them.
+1. Review the MCP basics.
 
-**MCP Server layout:**
-You’ll use the Python module 'fastmcp' to register tool functions with the @mcp.tool decorator and run them as an MCP server (stdio).
-Here, “stdio” means the server communicates over standard input and output streams rather than opening a network port—making it simple, secure, and easy to embed in tools like Jupyter or IDE plugins.
+    **What is MCP?**
+    MCP is an open protocol that lets an LLM, or a client app, call tools running in a sidecar process over stdio or HTTP. You can think of it as a language- and framework-agnostic way to implement function calling. Your MCP server declares tools, and your client, such as an IDE, notebook, agent runtime, or application, calls them.
 
-> Note: We will not discuss in detail the actual implementation of the MCP server but rather focus on the tools exposed through the MCP server.
+2. Review the MCP server layout used in this lab.
 
-**Tools in server.py (selected highlights):**
+    **MCP Server layout:**
+    You’ll use the Python module `fastmcp` to register tool functions with the `@mcp.tool` decorator and run them as an MCP server over stdio.
+    Here, `stdio` means the server communicates over standard input and output streams rather than opening a network port, making it simple, secure, and easy to embed in tools like Jupyter or IDE plugins.
 
-- GenAI chat — oci\_chat(prompt, …) talks to OCI Generative AI.
+    > Note: This lab does not go deep into the MCP server implementation. The focus is on the tools the MCP server exposes.
 
-- Embeddings in DB — embed\_db(text, model_name) calls Oracle AI Database to embed text via ONNX model.
+3. Review the main tools exposed in `server.py`.
 
-- Database schema discovery — list\_tables(owner), describe\_table(table, owner, sample\_rows).
+    **Tools in `server.py` (selected highlights):**
 
-- Natural Language to SQL (read-only) assistant — sql\_assistant(question, table\_whitelist):
+    - GenAI chat, `oci_chat(prompt, ...)`, talks to OCI Generative AI.
+    - Embeddings in DB, `embed_db(text, model_name)`, calls Oracle AI Database to embed text via an ONNX model.
+    - Database schema discovery, `list_tables(owner)` and `describe_table(table, owner, sample_rows)`.
+    - Natural Language to SQL, `sql_assistant(question, table_whitelist)`, is a read-only assistant.
 
-Generates a read-only SQL (SELECT/WITH), enforces single-statement + whitelist, runs it, and returns both rows and an NL summary produced by OCI GenAI.
+    The SQL assistant generates a read-only SQL statement using `SELECT` or `WITH`, enforces a single statement plus a whitelist, runs it, and returns both rows and a natural language summary produced by OCI GenAI.
 
-Internally uses helpers like \_clean\_llm_sql, read-only guards, and a row cap for safety.
+    Internally, it uses helpers like `_clean_llm_sql`, read-only guards, and a row cap for safety.
 
 ## Task 2: Run the MCP server and call tools from a notebook
 

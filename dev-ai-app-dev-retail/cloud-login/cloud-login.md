@@ -13,13 +13,15 @@ Estimated Time: 5 minutes
 
 ## Task 1: View Login Information
 
-Right above the workshop instructions you can find two information:
+1. Right above the workshop instructions, locate **View Login Info**.
 
-a. **View Login Info:** You can find credentials and other information to access the LiveLabs Sandbox
+    Use it to find the credentials and other information needed to access the LiveLabs Sandbox.
 
-b. **Time Remaining:** This shows you the remaining time before your access to the LiveLabs Sandbox expires. Please note: You may be able to extend the reservation time.
+2. Locate **Time Remaining**.
 
-![View Login Info](./images/view-login-info.png " ")
+    This shows the remaining time before your LiveLabs Sandbox access expires. You may be able to extend the reservation time.
+
+    ![View Login Info](./images/view-login-info.png " ")
 
 ## Task 2: Login to the Demo
 
@@ -38,9 +40,15 @@ b. **Time Remaining:** This shows you the remaining time before your access to t
 
 ## Task 3: Find your LiveLabs Sandbox reservations
 
-If you close your browser, and you want to launch your workshop again, open [livelabs.oracle.com](https://livelabs.oracle.com), login using your Oracle account, and click on **My Reservations**. You can find here a complete history of all LiveLabs workshops you signed up for. Click on **Launch Workshop** to start a workshop with an existing LiveLabs Sandbox environment.
+1. If you close your browser and want to launch your workshop again, open [livelabs.oracle.com](https://livelabs.oracle.com) and log in using your Oracle account.
 
-![View My Reservations](./images/ll-reservations.png " ")
+2. Click **My Reservations**.
+
+    You will see the history of the LiveLabs workshops you signed up for.
+
+3. Click **Launch Workshop** to start a workshop with an existing LiveLabs Sandbox environment.
+
+    ![View My Reservations](./images/ll-reservations.png " ")
 
 You may now **proceed to the next lab**.
 
