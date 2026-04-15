@@ -2,6 +2,7 @@ import base64
 import json
 import mimetypes
 import os
+import subprocess
 from pathlib import Path
 
 import oracledb
@@ -27,11 +28,11 @@ DB_DSN = "aidbfree:1521/FREEPDB1"
 
 
 def _load_env():
-    db_password = (os.getenv("DBPASSWORD") or "").strip()
+    db_password = (os.getenv("ORACLE_PWD") or "").strip()
     if not db_password:
-        raise RuntimeError("Database password not found in env variable DBPASSWORD.")
+        raise RuntimeError("Database password not found in env variable ORACLE_PWD.")
 
-    return DB_USER, DB_DSN, db_password, "DBPASSWORD env"
+    return DB_USER, DB_DSN, db_password, "ORACLE_PWD env"
 
 
 def _get_connection():
@@ -208,6 +209,21 @@ def _table_count():
             return int(cur.fetchone()[0])
 
 
+def _detect_public_ip():
+    try:
+        result = subprocess.run(
+            ["curl", "-s", "ifconfig.me"],
+            capture_output=True,
+            text=True,
+            timeout=10,
+            check=True,
+        )
+        public_ip = result.stdout.strip()
+        return public_ip or None
+    except Exception:
+        return None
+
+
 @APP.route("/", methods=["GET", "POST"])
 def index():
     _ensure_table()
@@ -264,5 +280,9 @@ if __name__ == "__main__":
     )
     _ensure_table()
     print("Starting Flask image search app on port 5500")
-    print("Open in browser: http://<server-ip>:5500/")
+    public_ip = _detect_public_ip()
+    if public_ip:
+        print(f"Open in browser: http://{public_ip}:5500/")
+    else:
+        print("Open in browser: http://<server-ip>:5500/")
     APP.run(host="0.0.0.0", port=5500, debug=True)

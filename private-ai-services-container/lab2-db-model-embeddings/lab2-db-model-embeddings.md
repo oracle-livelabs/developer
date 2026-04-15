@@ -5,7 +5,7 @@
 In this lab you run vector search using an embedding model that is already stored in Oracle AI Database (for example `ALL_MINILM_L12_V2`).
 
 
-Estimated Time: 20 minutes
+Estimated Time: 15 minutes
 
 ### Objectives
 
@@ -35,6 +35,8 @@ This lab assumes:
 ## Task 2: Open the Notebook
 
 1. From the sidebar, double-click on the folder notebooks and then open the notebook (in case you do not see the folder click on refresh):
+
+    ![refresh](./images/refresh.png)
     
     ```
     database-model-embeddings.ipynb
@@ -46,6 +48,8 @@ This lab assumes:
 
 Run this cell:
 
+This cell imports the Python modules used throughout the notebook. You need these libraries to read environment settings, connect to Oracle Database, format JSON parameters, and safely validate model names before using them in SQL.
+
 ```python
 <copy>import os
 import json
@@ -54,16 +58,18 @@ import oracledb
 from dotenv import dotenv_values</copy>
 ```
 
-## Task 3: Load Database Configuration
+## Task 4: Load Database Configuration
 
 Run this cell:
+
+This cell loads your database connection settings and preferred model name from environment variables.
 
 ```python
 <copy>ENV_PATH = os.getenv('LAB_ENV_FILE', '/home/.env')
 env = dotenv_values(ENV_PATH) if os.path.exists(ENV_PATH) else {}
 
 DB_USER = os.getenv('DB_USER') or env.get('USERNAME') or 'ADMIN'
-DB_PASSWORD = os.getenv('DB_PASSWORD') or env.get('DBPASSWORD')
+DB_PASSWORD = os.getenv('ORACLE_PWD')
 DB_HOST = os.getenv('DB_HOST', 'aidbfree')
 DB_PORT = os.getenv('DB_PORT', '1521')
 DB_SERVICE = os.getenv('DB_SERVICE', 'FREEPDB1')
@@ -76,12 +82,14 @@ print('DB dsn :', DB_DSN)
 print('Preferred DB model:', PREFERRED_DB_MODEL)
 
 if not DB_PASSWORD:
-    raise ValueError('DB password not found. Set DB_PASSWORD or DBPASSWORD in /home/.env')</copy>
+    raise ValueError('DB password not found. Set ORACLE_PWD')</copy>
 ```
 
-## Task 4: Connect and Discover Stored Models
+## Task 5: Connect and Discover Stored Models
 
 Run this cell:
+
+This cell connects to Oracle AI Database, lists available embedding models from `USER_MINING_MODELS`, and picks the model to use for the rest of the lab. All later embedding and vector-search steps depend on selecting a valid deployed model first.
 
 ```python
 <copy>conn = oracledb.connect(user=DB_USER, password=DB_PASSWORD, dsn=DB_DSN)
@@ -108,9 +116,11 @@ if not re.match(r'^[A-Z][A-Z0-9_$#]*$', MODEL_NAME):
     raise ValueError(f'Unsafe model identifier: {MODEL_NAME}')</copy>
 ```
 
-## Task 5: Determine Embedding Dimension
+## Task 6: Determine Embedding Dimension
 
 Run this cell:
+
+This cell performs a small probe embedding and asks the database for the vector dimension returned by the selected model. This can be relevant because the in table schema a user can specify same dimension in its `VECTOR(...)` column.
 
 ```python
 <copy>db_params = json.dumps({
@@ -129,9 +139,11 @@ EMBEDDING_DIM = int(cur.fetchone()[0])
 print('Embedding dimension:', EMBEDDING_DIM)</copy>
 ```
 
-## Task 6: Create Table and Store Embeddings
+## Task 7: Create Table and Store Embeddings
 
 Run this cell:
+
+This cell creates a demo table, embeds sample text rows, and stores both text and vectors in Oracle AI Database. Here we build the vector dataset that you will query in the similarity search step.
 
 ```python
 <copy>TABLE_NAME = 'PRIVATEAI_DOCS_DBMODEL'
@@ -173,9 +185,11 @@ conn.commit()
 print('Inserted rows:', inserted)</copy>
 ```
 
-## Task 7: Run Similarity Search
+## Task 8: Run Similarity Search
 
 Run this cell:
+
+This cell embeds the user query and compares it to stored vectors using cosine distance, then returns the top matching rows. This demonstrates the full semantic-search flow in SQL, not just exact keyword matching.
 
 ```python
 <copy>query_text = 'Which approach keeps embedding generation inside Oracle Database?'
@@ -207,9 +221,11 @@ for idx, (title, score, preview) in enumerate(rows, 1):
     print(f'   {preview}')</copy>
 ```
 
-## Task 8: Optional Cleanup
+## Task 9: Optional Cleanup
 
 Run optional cleanup:
+
+This optional cell drops the demo table so you can reset the lab and rerun from a clean state.
 
 ```python
 <copy># cur.execute(f'DROP TABLE {TABLE_NAME} PURGE')
@@ -217,6 +233,8 @@ Run optional cleanup:
 ```
 
 Close the connection:
+
+This final cell closes database resources. Closing cursors and connections is good practice and prevents resource leaks in longer notebook sessions.
 
 ```python
 <copy>cur.close()
@@ -230,4 +248,4 @@ print('Connection closed.')</copy>
 
 ## Acknowledgements
 - **Author** - Oracle LiveLabs Team
-- **Last Updated By/Date** - Oracle LiveLabs Team, March 2026
+- **Last Updated By/Date** - Oracle LiveLabs Team, April 2026

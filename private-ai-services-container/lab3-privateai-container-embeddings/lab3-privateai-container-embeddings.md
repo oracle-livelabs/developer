@@ -7,10 +7,10 @@ In this lab you run vector search using Oracle Private AI Services Container (`p
 This lab mirrors the notebook:
 
 ```text
-lab3-privateai-container-embeddings/files/privateai-container-embeddings.ipynb
+privateai-container-embeddings.ipynb
 ```
 
-Estimated Time: 25 minutes
+Estimated Time: 15 minutes
 
 ### Objectives
 
@@ -55,6 +55,9 @@ This lab assumes:
 
 Run this cell:
 
+This cell imports the Python modules used throughout the notebook. You need these libraries to read environment settings, connect to Oracle Database, format JSON parameters, and safely validate model names before using them in SQL.
+
+
 ```python
 <copy>import os
 import json
@@ -63,16 +66,18 @@ import oracledb
 from dotenv import dotenv_values</copy>
 ```
 
-## Task 3: Load Configuration
+## Task 4: Load Configuration
 
 Run this cell:
+
+This step reads database and Private AI settings from environment variables and prints the active values. It gives you a quick sanity check that the notebook is pointing to the correct services before any API or SQL calls run.
 
 ```python
 <copy>ENV_PATH = os.getenv('LAB_ENV_FILE', '/home/.env')
 env = dotenv_values(ENV_PATH) if os.path.exists(ENV_PATH) else {}
 
 DB_USER = os.getenv('DB_USER') or env.get('USERNAME') or 'ADMIN'
-DB_PASSWORD = os.getenv('DB_PASSWORD') or env.get('DBPASSWORD')
+DB_PASSWORD = os.getenv('ORACLE_PWD') 
 DB_HOST = os.getenv('DB_HOST', 'aidbfree')
 DB_PORT = os.getenv('DB_PORT', '1521')
 DB_SERVICE = os.getenv('DB_SERVICE', 'FREEPDB1')
@@ -88,12 +93,14 @@ print('Private AI URL:', PRIVATEAI_BASE_URL)
 print('Preferred model:', PREFERRED_MODEL)
 
 if not DB_PASSWORD:
-    raise ValueError('DB password not found. Set DB_PASSWORD or DBPASSWORD in /home/.env')</copy>
+    raise ValueError('DB password not found. Set ORACLE_PWD)</copy>
 ```
 
-## Task 4: Validate Private AI and Choose Model
+## Task 5: Validate Private AI and Choose Model
 
 Run this cell:
+
+This block checks that the Private AI service is healthy, fetches the deployed model list, filters to text-embedding-capable models, and selects one model ID. You do this now so the rest of the lab uses a model that is actually available in your environment.
 
 ```python
 <copy>health = requests.get(f'{PRIVATEAI_BASE_URL}/health', timeout=20)
@@ -129,9 +136,11 @@ print()
 print('Selected model:', MODEL_ID)</copy>
 ```
 
-## Task 5: Call `/v1/embeddings` Directly
+## Task 6: Send embedding request to REST API
 
 Run this cell:
+
+Here you send a direct embeddings request to the Private AI endpoint with sample text. The response confirms end-to-end API behavior and reveals the embedding dimension needed for the database `VECTOR` column.
 
 ```python
 <copy>payload = {
@@ -156,21 +165,25 @@ print('Returned vectors:', len(embed_json.get('data', [])))
 print('Embedding dimension:', EMBEDDING_DIM)</copy>
 ```
 
-## Task 6: Connect to Oracle Database
+## Task 7: Connect to Oracle Database
 
 Run this cell:
+
+This step opens a database session and verifies the connected user. It establishes the SQL connection required to create tables, insert vectors, and run similarity search queries.
 
 ```python
 <copy>conn = oracledb.connect(user=DB_USER, password=DB_PASSWORD, dsn=DB_DSN)
 cur = conn.cursor()
 
-cur.execute('select user from dual')
+cur.execute('select user')
 print('Connected as:', cur.fetchone()[0])</copy>
 ```
 
-## Task 7: Create Table and Store Private AI Embeddings
+## Task 8: Create Table and Store Private AI Embeddings
 
 Run this cell:
+
+This cell creates a demo table, defines Private AI embedding parameters, and inserts sample rows with vectors generated through Private AI Services Container. The result is a searchable vector dataset stored in Oracle AI Database.
 
 ```python
 <copy>TABLE_NAME = 'PRIVATEAI_DOCS_CONTAINER'
@@ -219,9 +232,11 @@ conn.commit()
 print('Inserted rows:', inserted)</copy>
 ```
 
-## Task 8: Run Similarity Search
+## Task 9: Run Similarity Search
 
 Run this cell:
+
+This query converts the user question into an embedding and ranks stored rows by cosine similarity. It demonstrates semantic retrieval, where meaning-based matches can be returned even when keywords differ.
 
 ```python
 <copy>query_text = 'How can I run embeddings locally and use them for semantic search?'
@@ -253,9 +268,11 @@ for idx, (title, score, preview) in enumerate(rows, 1):
     print(f'   {preview}')</copy>
 ```
 
-## Task 9: Optional Cleanup
+## Task 10: Optional Cleanup
 
 Run optional cleanup:
+
+Use this optional command to drop the demo table when you want to reset and rerun the lab from a clean state.
 
 ```python
 <copy># cur.execute(f'DROP TABLE {TABLE_NAME} PURGE')
@@ -263,6 +280,8 @@ Run optional cleanup:
 ```
 
 Close the connection:
+
+This final cell closes the cursor and connection so the session ends cleanly and no resources remain open in the notebook kernel.
 
 ```python
 <copy>cur.close()
@@ -279,4 +298,4 @@ print('Connection closed.')</copy>
 
 ## Acknowledgements
 - **Author** - Oracle LiveLabs Team
-- **Last Updated By/Date** - Oracle LiveLabs Team, March 2026
+- **Last Updated By/Date** - Oracle LiveLabs Team, April 2026

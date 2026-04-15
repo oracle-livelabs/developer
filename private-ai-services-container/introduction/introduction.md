@@ -28,7 +28,7 @@ In the following labs you will work not only with in-database embedding but **sp
 - run cosine similarity search
 - build a simple image search app that used multimodal embedding models
 
-Estimated Workshop Time: 90 minutes
+Estimated Workshop Time: 60 minutes
 
 ### Architecture at a Glance
 
@@ -56,4 +56,4 @@ In this workshop, you will:
 
 ## Acknowledgements
 - **Author** - Oracle LiveLabs Team
-- **Last Updated By/Date** - Oracle LiveLabs Team, March 2026
+- **Last Updated By/Date** - Oracle LiveLabs Team, April 2026

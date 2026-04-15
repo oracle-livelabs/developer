@@ -2,7 +2,15 @@
 
 ## Introduction
 
-In this lab you build a small Flask application that performs semantic image search.
+In this lab, you build a small Flask application that performs semantic image search.
+
+This pattern is useful when users need to find visual content by meaning, not just by file name or manual tags. By combining CLIP embeddings with Oracle AI Vector Search, you can support natural-language queries over image libraries while keeping model inference inside your private environment.
+
+The same approach can solve real problems across industries, for example:
+- Retail and e-commerce: find visually similar products for recommendations and catalog operations.
+- Manufacturing and field service: retrieve matching equipment photos for troubleshooting and parts identification.
+- Healthcare and life sciences: organize and search large medical or lab image collections with controlled infrastructure.
+- Media, publishing, and marketing: speed up creative asset discovery across large internal media libraries.
 
 The workflow is:
 - Download and unzip an image archive with `wget`
@@ -46,6 +54,11 @@ This lab assumes:
     <copy>find ~/image-search-lab/data/pdimagearchive -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" \) | head -n 5</copy>
     ```
 
+    This command shows the first five images from the archive.
+
+    ![Archive](./images/archive.png)
+
+
 ## Task 2: Create Flask App Files
 
 1. Create project folders:
@@ -56,12 +69,21 @@ This lab assumes:
 
     Create `~/image-search-lab/app.py` with the following code:
 
+    `app.py` is the full lab application. It provides the Flask web UI, loads image files, generates embeddings, stores vectors and image bytes in Oracle AI Database, and runs top-K similarity search when a user submits a query.
+
+    Private AI Services Container integration points in this file:
+    - `PRIVATEAI_BASE_URL` and `PRIVATEAI_EMBED_URL` define the Private AI endpoint (`http://privateai:8080/v1/embeddings`).
+    - `_embed_with_privateai(...)` calls the Private AI `/v1/embeddings` API with `requests.post(...)`.
+    - In `_load_images_into_db(...)`, each image is base64-encoded and sent with `IMAGE_MODEL_ID` (`clip-vit-base-patch32-img`) to create image embeddings.
+    - In `_search_images(...)`, the query text is sent with `TEXT_MODEL_ID` (`clip-vit-base-patch32-txt`) so text and image vectors can be compared in the same vector space.
+
     ```python
     <copy>
     import base64
     import json
     import mimetypes
     import os
+    import subprocess
     from pathlib import Path
 
     import oracledb
@@ -87,11 +109,11 @@ This lab assumes:
 
 
     def _load_env():
-        db_password = (os.getenv("DBPASSWORD") or "").strip()
+        db_password = (os.getenv("ORACLE_PWD") or "").strip()
         if not db_password:
-            raise RuntimeError("Database password not found in env variable DBPASSWORD.")
+            raise RuntimeError("Database password not found in env variable ORACLE_PWD.")
 
-        return DB_USER, DB_DSN, db_password, "DBPASSWORD env"
+        return DB_USER, DB_DSN, db_password, "ORACLE_PWD env"
 
 
     def _get_connection():
@@ -268,6 +290,21 @@ This lab assumes:
                 return int(cur.fetchone()[0])
 
 
+    def _detect_public_ip():
+        try:
+            result = subprocess.run(
+                ["curl", "-s", "ifconfig.me"],
+                capture_output=True,
+                text=True,
+                timeout=10,
+                check=True,
+            )
+            public_ip = result.stdout.strip()
+            return public_ip or None
+        except Exception:
+            return None
+
+
     @APP.route("/", methods=["GET", "POST"])
     def index():
         _ensure_table()
@@ -324,12 +361,18 @@ This lab assumes:
         )
         _ensure_table()
         print("Starting Flask image search app on port 5500")
-        print("Open in browser: http://<server-ip>:5500/")
+        public_ip = _detect_public_ip()
+        if public_ip:
+            print(f"Open in browser: http://{public_ip}:5500/")
+        else:
+            print("Open in browser: http://<server-ip>:5500/")
         APP.run(host="0.0.0.0", port=5500, debug=True)
     </copy>
     ```
 
-2. Open a terminal and run the following command to copy the `index.html` to the templates folder:
+2. Open a terminal and run the following command to copy the `index.html` into the templates folder:
+
+    In Flask, a template file defines the HTML page rendered by `render_template(...)`. This `index.html` template controls the app UI, including the load/search forms and the results grid.
 
     ```bash
     <copy>
@@ -346,28 +389,22 @@ This lab assumes:
     python app.py</copy>
     ```
 
-2. Expected output includes:
-
-    ```text
-    Starting Flask image search app on port 5500
-    Open in browser: http://<server-ip>:5500/
-    ```
-
 ## Task 4: Open the Web UI
 
 1. Open the Flask app directly:
 
     ```text
-    http://<server-ip>:5500/
+    💥💥 CLICK HERE 💥💥 Open in browser: http://[public IP]:5500/ 💥💥 CLICK HERE 💥💥
     ```
+
+    ![Start](./images/startapp.png)
 
 ## Task 5: Load Images and Build Embeddings
 
 1. In the app:
-2. 
-   1. Keep the default image root (`~/image-search-lab/data/pdimagearchive`) or adjust if needed.
-   2. Click **Load + Embed Images**.
-   3. Wait for completion message with inserted/skipped counts.
+    1. Keep the default image root (`~/image-search-lab/data/pdimagearchive`) or adjust if needed.
+    2. Click **Load + Embed Images**.
+    3. Wait for completion message with inserted/skipped counts.
 
 This step generates image embeddings with:
 - `clip-vit-base-patch32-img`
@@ -381,10 +418,17 @@ This step generates image embeddings with:
 
 2. Click **Search Top 10**.
 
-The app embeds the query using:
-- `clip-vit-base-patch32-txt`
+    The app embeds the query using:
+    - `clip-vit-base-patch32-txt`
 
-Then it returns and displays the 10 most similar images using cosine similarity.
+    Then it returns and displays the 10 most similar images using cosine similarity.
+
+    How to interpret the score shown in the app:
+    - **Higher score means more similar**.
+    - The SQL sorts by cosine distance (`VECTOR_DISTANCE(..., COSINE)`), where lower is better.
+    - The displayed `similarity` value is already calculated as `1 - VECTOR_DISTANCE(...)`.
+
+    ![Final app](./images/app.png)
 
 ## Task 7: Clean Up Database Objects
 
@@ -462,4 +506,4 @@ Then it returns and displays the 10 most similar images using cosine similarity.
 
 ## Acknowledgements
 - **Author** - Oracle LiveLabs Team
-- **Last Updated By/Date** - Oracle LiveLabs Team, March 2026
+- **Last Updated By/Date** - Oracle LiveLabs Team, April 2026
