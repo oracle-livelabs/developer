@@ -14,7 +14,7 @@
         {
           "title": "Need Help?",
           "description": "Template to link to Need Help lab at the end of workshop. Change 'CHANGE-ME' in link below to need-help-livelabs.md or need-help-freetier.md",
-          "filename":"https://oracle-livelabs.github.io/common/labs/need-help/need-help-freetier.md"
+          "filename":"https://livelabs.oracle.com/cdn/common/labs/need-help/need-help-freetier.md"
         }
     ]
 }
