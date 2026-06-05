@@ -59,7 +59,7 @@ In this first example, you will use the application to approve a customer with s
 
     ![James Smith chatbot](./images/lab105.png =50%x*)
 
->💡 In Oracle AI Database, **AI Vector Search** allows you to combine your business data with the Large Language Model (LLM) to reduce hallucinations and get accurate answers from your data.
+    >💡 In Oracle AI Database, **AI Vector Search** allows you to combine your business data with the Large Language Model (LLM) to reduce hallucinations and get accurate answers from your data.
 
 4. Select the **Navigate To Customer Decisions** button.
 
@@ -83,11 +83,11 @@ In this first example, you will use the application to approve a customer with s
 
     ![James Smith Save Loan Status](./images/james-smith-save.png =50%x*)
 
-8.  Click the **Download Decision PDF** button.
+8. Click the **Download Decision PDF** button.
 
     ![James Smith Download Recommendation](./images/james-smith-download.png =50%x*)
 
-9.  Click **Download PDF**
+9. Click **Download PDF**
 
     ![James Smith Download PDF](./images/james-smith-download-pdf.png =50%x*)
 
@@ -138,7 +138,7 @@ In this example, you will navigate the application to review a customer and deny
 
     ![James Woods Decision](./images/lab133.png =50%x*)
 
->⁉️ **What is the reason that the AI decided to deny this applicant?** ⁉️
+    >⁉️ **What is the reason that the AI decided to deny this applicant?** ⁉️
 
 
 4. Expand **Interactive Graph: Client-Loan Relationships** to view the graph.
@@ -151,7 +151,7 @@ In this example, you will navigate the application to review a customer and deny
 
     This graph reveals that while James Woods was denied for his requested loan, he is close to qualifying for a different product. Instead of a hard stop (“Denied – end of story”), the graph highlights a path forward
 
->💡 In Oracle AI Database, **Property Graph** allows you to treat your data like a network of connected points, where each point (called a node) and each link (called an edge) has its own details or properties. This setup helps you run graph analytics, like finding important connections or patterns, directly within the database.
+    >💡 In Oracle AI Database, **Property Graph** allows you to treat your data like a network of connected points, where each point (called a node) and each link (called an edge) has its own details or properties. This setup helps you run graph analytics, like finding important connections or patterns, directly within the database.
 
 5. The loan status is set to **Denied**. Click the **Confirm decision** button.
 
@@ -175,7 +175,7 @@ In this example, you will navigate the application to review a customer and deny
 
     ![Return to Dashboard](./images/woods-decision2.png =50%x*)
 
-10.  Expand **View Denied Customers**. You will see that James Woods has been moved from the **Pending Review Loan Requests** list to the **Denied Loan Requests** section.
+10. Expand **View Denied Customers**. You will see that James Woods has been moved from the **Pending Review Loan Requests** list to the **Denied Loan Requests** section.
 
     ![James Woods Denied List](./images/woods-decision3.png =50%x*)
 
@@ -199,7 +199,7 @@ Lastly, let’s explore how the system uses JSON Duality Views to handle profile
 
     ![Click Process Selected PDF](./images/upload-anderson.png =50%x*)
 
->💡 **JSON Duality Views** let's you update unstructured data in an easy, high-level format while automatically handling the technical details behind the scenes. This makes it faster and simpler to work with messy data and connect it to structured systems.
+    >💡 **JSON Duality Views** let's you update unstructured data in an easy, high-level format while automatically handling the technical details behind the scenes. This makes it faster and simpler to work with messy data and connect it to structured systems.
 
 4. The customer profile has been updated.
 
