@@ -26,7 +26,7 @@ This lab assumes you have:
 
     ![Click the Start Demo Link](./images/start-demo.png =50%x*)
 
-2. Welcome to Seer Holdings! Select **Financial Services** as Industry and **Approval Officer** as role. Enter in a username and click **Login.**
+2. Welcome to Seer Equities! Select **Financial Services** as Industry and **Approval Officer** as role. Enter in a username and click **Login.**
 
     ![Login](./images/flogin.png =50%x*)
 
