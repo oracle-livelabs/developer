@@ -1,0 +1,21 @@
+{
+    "workshoptitle": "From Zero to Hero: Data Fundamentals of AI Application Development",
+    "help": "livelabs-help-database_us@oracle.com",
+    "tutorials": [
+        {
+            "title": "Introduction",
+            "description": "The Introduction is always first. The title and contents menu title match for the Introduction.",
+            "filename": "../../introduction/introduction.md"
+        },
+        {
+            "title": "Connect to the Development Environment",
+            "description": "This is a step-by-step guide showcasing how the hands-on lab instance is navigated",
+            "filename": "../../connect-to-env/connect-to-env.md"
+        },
+        {
+            "title": "Take the quiz!",
+            "description": "This is a step-by-step guide showcasing how the hands-on lab instance is navigated",
+            "filename": "../../quiz/quiz.md"
+        }
+    ]
+}
