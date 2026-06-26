@@ -6,9 +6,10 @@ In this lab, you'll learn how to access the web-based JupyterLab development env
 
 Estimated Time: 5 minutes
 
-### Objective
+### Objectives
 
-* Login to JupyterLab
+* Login to JupyterLab server
+* Run Jupyter Notebook
 
 ## Task 1: Login to JupyterLab Server
 
@@ -24,9 +25,9 @@ Estimated Time: 5 minutes
 
     ![Open Launcher](./images/launcher.png " ")
 
-## Task 2: Learn to wield Universal Model Theory (UMT)
+## Task 2: Learn to use the components of Unified Model Theory (UMT)
 
-You will use a Jupyter Notebook in JupyterLab to build and test the return authorization system. If you are new to notebooks, the following tips will help you get started and work smoothly.
+You will use a Jupyter Notebook in a JupyterLab server to build and test database queries. If you are new to notebooks, the following tips will help you get started and work smoothly.
 
 1. **Executing Code Blocks**: You can run code in two simple ways: press **Shift+Enter** to execute and move to the next cell, or click the **Play/Execute** button in the menu bar at the top of this tab. Both methods work interchangeably.
 
@@ -34,7 +35,7 @@ You will use a Jupyter Notebook in JupyterLab to build and test the return autho
 
 3. **Running Indicators**: When you run a code block, its label changes from `[ ]` (empty) or `[1]` (a number) to `[*]`. The asterisk (`*`) means it’s processing. Wait until it switches back to a number (e.g., `[2]`) before moving on, ensuring the operation is complete.
 
-4. **Output & Warnings**: Below each code cell, output appears after execution. This can include results, visualizations, or messages. Warnings may show up—these are usually informational, such as notices about deprecated features. Unless an error halts execution, users can continue without making changes. If you see a error, review the code for any issues and make changes accordingly and try executing the cell again. 
+4. **Output & Warnings**: Below each code cell, output appears during and after execution. This can include results, visualizations, or messages. Warnings may show up—these are usually informational, such as notices about deprecated features. Unless an error halts execution, users can continue without making changes. If you see a error, review the code for any issues and make changes accordingly and try executing the cell again. 
 
     **NOTE:** Look for **<span style="color: green;">green text</span>** as in the image below where it says "<span style="color: green;">Connected successfully!</span>". Many cells will have different message, but the final successful one should always be green. When you see the green text, the cell completed. For some longer running cells, this is important to watch for.
 
@@ -48,7 +49,7 @@ In this task, you can weight each search type differently depending on the appli
 
 ## Conclusion
 
-In this lab you logged into the **IDE Development Environment** for Jupyter Labs. You launched the **`data_fundamentals_lab.ipynb`** notebook. Lastly, you were introduced to concepts to allow you to get started running code smoothly like **executing code blocks** and **outputs and warnings**.
+In this lab you logged into the **IDE Development Environment** for Jupyter Labs. You launched the **`data_fundamentals_lab.ipynb`** notebook and worked through the notebook to learn about the fundamental data building blocks for AI application development.
 
 Make sure you take the quiz by clicking on **Take the quiz!** link on the left nav bar.
 

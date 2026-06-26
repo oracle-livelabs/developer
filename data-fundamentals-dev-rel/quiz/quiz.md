@@ -20,12 +20,12 @@ Q: What is the primary purpose of RAG (Retrieval-Augmented Generation)?
 * To retrieve and attach physical hardware components to an LLM, thus making your own ghost in the shell. Major Kusanagi would be so proud
 * To augment an LLM's responses by retrieving and providing relevant data that exists outside its training knowledge
 
-Q: True or False: Oracle AI Database enables you to create embeddings directly within the database
+Q: True or False: Oracle AI Database enables you to create vector embeddings directly within the database.
 * True
 - False
 - Shmaybe
 
-Q: Which Python library is used to connect to Oracle AI Database in this lab?
+Q: Which Python library is used to connect to Oracle AI Database in the hands-on lab?
 - psycopg2
 * oracledb
 - pymongo
@@ -50,17 +50,17 @@ Q: What does the VECTOR_CHUNKS function do?
 * Splits text into smaller chunks to generate vector embeddings that can be used with vector indexes or hybrid vector indexes.
 - Creates backup copies of database tables in bite-sized chunks
 
-Q: Which database feature combines data from one or more tables (e.g. CUSTOMERS, RETURN_REQUESTS) and projects a JSON document?
+Q: Which database feature combines data from one or more relational tables, but projects the data as a JSON document?
 * JSON Relational Duality View
 - Materialized View
 - Temporary Table
 - Stored Procedure
-> JSON Relational Duality Views enable you to interact with data in one or more relational tables, but read and write as native JSON.
+> JSON Relational Duality Views enable you to interact with data in one or more relational tables, but read and write as native JSON document.
 
-Q: True or False: You can query JSON, relational tables, and graph traversals all in one SQL statement?
+Q: True or False: You can query JSON, relational tables, traverse graphs, and search vector data all in one SQL statement?
 * True
 - False
-> It's true. You can even add a WHERE clause that performs a vector search to that same SQL statement.
+> It's true! In Oracle AI database, you can combine multiple data modalities as you need to.
 
 Q: What's the likely data type you should store a JSON document in Oracle?
 - CLOB
@@ -77,4 +77,4 @@ Q: How does Cosine similarity measure distance?
 
 ## Acknowledgements
 * **Authors** - Kirk Kirkconnell
-* **Last Updated By/Date** - Kirk Kirkconnell, February 2026
+* **Last Updated By/Date** - Kirk Kirkconnell, January 2026
