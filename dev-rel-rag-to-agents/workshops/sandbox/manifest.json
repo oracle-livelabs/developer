@@ -4,7 +4,7 @@
     "tutorials": [
         {
             "title": "Introduction",
-            "description": "The Introduction is always first. The title and contents menu title match for the Introduction.",
+            "description": "The Introduction is always first. The title and contents menu title match for the introduction.",
             "filename": "../../introduction/introduction.md"
         },
         {
@@ -14,7 +14,7 @@
         },
         {
             "title": "Take the quiz!",
-            "description": "This is a step-by-step guide showcasing how the hands-on lab instance is navigated",
+            "description": "A quiz cover this lab you take to get your Skills Badge.",
             "filename": "../../quiz/quiz.md"
         },
         {
