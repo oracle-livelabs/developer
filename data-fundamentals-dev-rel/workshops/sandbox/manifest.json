@@ -16,6 +16,11 @@
             "title": "Take the quiz!",
             "description": "This is a step-by-step guide showcasing how the hands-on lab instance is navigated",
             "filename": "../../quiz/quiz.md"
+        },
+        {
+            "title": "Need Help?",
+            "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+            "filename": "https://livelabs.oracle.com/cdn/common/labs/need-help/need-help-freetier.md"
         }
     ]
 }
