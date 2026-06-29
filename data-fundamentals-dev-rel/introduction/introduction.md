@@ -50,5 +50,4 @@ This lab assumes you have:
 
 ## Acknowledgements
 * **Authors** - Kirk Kirkconnell
-* **Contributors** - Anant Srivastava
 * **Last Updated By/Date** - Kirk Kirkconnell, June 2026
