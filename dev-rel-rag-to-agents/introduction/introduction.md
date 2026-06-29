@@ -6,6 +6,8 @@ In this lab, we'll interact with a data set from an application named Prism City
 
 You'll utilize a Jupyter Notebook with real Python code, completing real activities, and building on what you already know about databases and AI Vector Search. You'll create a RAG pipeline using data in the database and work your way up to implementing a full on AI agent, with tools and a little memory, utilizing LangChain as the agent framework.
 
+Estimated Workshop Time: 50 - 60 minutes
+
 ✅ **Overview of Labs**
 
 In the next labs, you'll connect to your JupyterLab environment and work through the RAG to Agent notebook built around the Prism CityOps dataset. You'll use the same operational data you did with the Data Fundamentals lab, but this time you'll build real workflows with the data.
