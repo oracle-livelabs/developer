@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This lab will show you how to setup and run the Seer Equities Loan Approval application on OCI. This guide is designed to walk you through the complete setup process, which includes provisioning required services and installing dependencies enabling you to launch and run the application on OCI.
+This lab will show you how to set up and run the SeerStructures construction project review application on OCI. This guide walks you through the complete setup process, including provisioning the required services and installing the dependencies needed to launch and run the application on OCI.
 
 The document is structured to help you meet all prerequisites, configure both the Autonomous AI Database and the OCI Generative AI Service, and troubleshoot any issues that may arise during setup. Whether you're new to Oracle Cloud Infrastructure or simply deploying for development and testing, this step-by-step guide will ensure a smooth setup experience.
 
@@ -420,11 +420,11 @@ Next you'll create an environment file for the application.
 
     ````
         <copy>
-        python3.11 -m venv loan_env
+        python3.11 -m venv construction_env
         </copy>
     ````
 
-    This will create a directory called loan_env that will contain your virtual environment.
+    This will create a directory called `construction_env` that will contain your virtual environment.
 
 2. Enable the firewall for the application port. Run the following commands:
 
@@ -462,13 +462,13 @@ Next you'll create an environment file for the application.
     ````
         <copy>
         [Unit]
-        Description=Streamlit Loan Approval App
+        Description=Streamlit Construction Review App
         After=network.target
 
         [Service]
         User=opc
         WorkingDirectory=/home/opc
-        ExecStart=/bin/bash -c 'source /home/opc/loan_env/bin/activate && streamlit run 1-Introduction.py --server.port 8501 --server.address 0.0.0.0'
+        ExecStart=/bin/bash -c 'source /home/opc/construction_env/bin/activate && streamlit run 1-Introduction.py --server.port 8501 --server.address 0.0.0.0'
         Restart=always
 
         [Install]
@@ -484,13 +484,13 @@ Next you'll create an environment file for the application.
     ````
         <copy>
         [Unit]
-        Description=Streamlit Loan Approval App
+        Description=Streamlit Construction Review App
         After=network.target
 
         [Service]
         User=opc
-        WorkingDirectory=/home/opc/loan/streamlit/
-        ExecStart=/bin/bash -c 'source /home/opc/loan/streamlit/pages/loan_env/bin/activate && streamlit run 1-Introduction.py --server.port 8501 --server.address 0.0.0.0'
+        WorkingDirectory=/home/opc/construction-review/streamlit/
+        ExecStart=/bin/bash -c 'source /home/opc/construction-review/streamlit/pages/construction_env/bin/activate && streamlit run 1-Introduction.py --server.port 8501 --server.address 0.0.0.0'
         Restart=always
 
         [Install]
@@ -506,7 +506,7 @@ Next you'll create an environment file for the application.
 
     ````
         <copy>
-        source loan_env/bin/activate
+        source construction_env/bin/activate
         </copy>
     ````
 
@@ -619,7 +619,7 @@ Streamlit is up and running. Press Control + C on your keyboard to escape.
 
     ![Application start screen](./images/application-start-screen.png " ")
 
-Congratulations, you have built and configured the Loan Management application using Oracle Cloud Insfrastructure, Oracle Autonomous AI Database, and Oracle GenAI!
+Congratulations, you have built and configured the construction project review application using Oracle Cloud Infrastructure, Oracle Autonomous AI Database, and Oracle GenAI.
 
 
 ## Troubleshooting

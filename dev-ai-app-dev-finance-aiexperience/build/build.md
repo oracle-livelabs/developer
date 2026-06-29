@@ -2,7 +2,7 @@
 
 ## Introduction
 
-In this lab, you build a complete loan approval engine with Oracle AI Database and OCI Generative AI. Connect to the database, explore order and image data, and invoke a large language model to generate personalized loan decisions and policy explanations. Building on earlier exercises, you’ll apply Python to deliver a fully integrated, AI-powered finance loan application.
+In this lab, you build a construction project review engine with Oracle AI Database and OCI Generative AI. Connect to the database, explore the sample project-intake data, and invoke a large language model to generate project guidance and risk explanations. Building on earlier exercises, you’ll apply Python to deliver a fully integrated, AI-powered construction engineering review application.
 
 This lab uses some of the basic coding samples you created in lab 3, such as cursor.execute and more.
 
@@ -10,10 +10,10 @@ Estimated Time: 30 minutes
 
 ### Objectives
 
-* Build the complete loan approval application as seen in lab 1
-* Use OCI Generative AI to generate contextual loan recommendations
+* Build the complete construction project review application as seen in lab 1
+* Use OCI Generative AI to generate contextual project recommendations
 * Use Python to connect to an Oracle AI Database instance and run queries
-* Explore customer data and extract relevant information
+* Explore project intake data and extract relevant information
 
 ### Prerequisites
 
@@ -52,7 +52,7 @@ This lab assumes you have:
 
     ![Open Terminal](./images/terminal.png " ")
 
-2. Navigate to `db_setup_script_2.sql` under the `dbinit` folder. Here is where you can see all the tables that will be created for the finance industry. 
+2. Navigate to `db_setup_script_2.sql` under the `dbinit` folder. Here is where you can see all the tables that support this construction engineering scenario.
 
     ![Tables](./images/tables.png " ")
 
@@ -101,97 +101,100 @@ This lab assumes you have:
     ![Connect to Database](./images/lab4task1.png " ")
 
 
-## Task 5: Create a Function to retrieve data from the database.
+## Task 5: Create a function to retrieve project data from the database
 
-You will query customer data from the `clients_dv` JSON duality view, which combines data from CUSTOMERS, LOAN_APPLICATIONS, and related tables. This task will:
+You will query the sample project intake record from the `project_profiles_dv` JSON duality view, which combines `PROJECT_SPONSORS`, `CONSTRUCTION_PROJECT_REQUESTS`, and related tables. This task will:
 
-- **Define a Function**: Create a reusable function `fetch_customer_data` to query the database by customer ID, extracting the JSON data for a specific customer.
+- **Define a Function**: Create a reusable function `fetch_project_data` to query the database by project record ID, extracting the JSON data for a specific project submission.
 
-- **Use an Example**: Fetch data for customer `1000` (James Smith) to demonstrate the process.
+- **Use an Example**: Fetch the sample project record `PROJ_1000` for James Smith, who is acting as the project sponsor in this scenario.
 
-- **Display the Results**: Format the retrieved data into a pandas DataFrame for a clear, tabular presentation, showing key details like name, income, credit score, and total debt.
+- **Display the Results**: Format the retrieved data into a pandas DataFrame for a clear, tabular presentation, showing key details like sponsor name, location, annual revenue, site risk score, requested budget, and current committed spend.
 
 1. Copy and paste the code below into the new notebook.
 
     ```python
     <copy>
-def fetch_customer_data(customer_id):
+def fetch_project_data(project_id):
         cursor.execute(
-            "SELECT data FROM clients_dv WHERE JSON_VALUE(data, '$._id') = :customer_id",
-            {'customer_id': customer_id}
+            "SELECT data FROM project_profiles_dv WHERE JSON_VALUE(data, '$._id') = :project_id",
+            {'project_id': project_id}
         )
         result = cursor.fetchone()
         return json.loads(result[0]) if result and isinstance(result[0], str) else result[0] if result else None
 
-selected_customer_id = "CUST_1000"
-customer_json = fetch_customer_data(selected_customer_id)
+selected_project_id = "PROJ_1000"
+project_json = fetch_project_data(selected_project_id)
 
-if customer_json:
-        loan_app = customer_json.get("loanApplications", [{}])[0]
-        print(f"Customer: {customer_json['firstName']} {customer_json['lastName']}")
-        print(f"Loan Status: {loan_app['loanStatus']}")
+if project_json:
+        project_request = project_json.get("projectRequests", [{}])[0]
+        print(f"Project Sponsor: {project_json['sponsorFirstName']} {project_json['sponsorLastName']}")
+        print(f"Project Review Status: {project_request['projectStatus']}")
 
         desired_fields = [
-            ("Customer ID", selected_customer_id),
-            ("Application ID", loan_app.get("applicationId", "")),
-            ("First Name", customer_json.get("firstName", "")),
-            ("Last Name", customer_json.get("lastName", "")),
-            ("City", customer_json.get("city", "")),
-            ("State", customer_json.get("state", "")),
-            ("Zip code", customer_json.get("zipCode", "")),
-            ("Age", customer_json.get("age", 0)),
-            ("Income", customer_json.get("income", 0)),
-            ("Credit score", loan_app.get("creditScore", 600)),
-            ("Requested loan amount", loan_app.get("requestedLoanAmount", 0)),
-            ("Total Debt", loan_app.get("totalDebt", 0)),
-            ("Loan status", loan_app.get("loanStatus", "Pending Review"))
+            ("Project Record ID", selected_project_id),
+            ("Project Request ID", project_request.get("requestId", "")),
+            ("Sponsor First Name", project_json.get("sponsorFirstName", "")),
+            ("Sponsor Last Name", project_json.get("sponsorLastName", "")),
+            ("City", project_json.get("city", "")),
+            ("State", project_json.get("state", "")),
+            ("Zip Code", project_json.get("zipCode", "")),
+            ("Annual Revenue", project_json.get("annualRevenue", 0)),
+            ("Project Name", project_request.get("projectName", "")),
+            ("Project Type", project_request.get("projectType", "")),
+            ("Site Risk Score", project_request.get("siteRiskScore", 600)),
+            ("Requested Project Budget", project_request.get("requestedProjectBudget", 0)),
+            ("Current Committed Spend", project_request.get("currentCommittedSpend", 0)),
+            ("Estimated Duration Days", project_request.get("estimatedDurationDays", 0)),
+            ("Permit Complexity", project_request.get("permitComplexity", "")),
+            ("Project Review Status", project_request.get("projectStatus", "Pending Review"))
         ]
 
-        df_customer_details = pd.DataFrame(
+        df_project_details = pd.DataFrame(
             {field_name: [field_value] for field_name, field_value in desired_fields}
         )
-        display(df_customer_details)
+        display(df_project_details)
 
 else:
-        print("No data found for customer ID:", selected_customer_id)
+        print("No data found for project record ID:", selected_project_id)
     </copy>
     ``` 
 
-2. Click the "Run" button to see James Smith’s profile. The output will include a brief summary (name and loan status) followed by a detailed table. If no data is found for the specified ID, a message will indicate this, helping you debug potential issues like an incorrect ID or empty database. The output will display a DataFrame containing the customer details for the selected customer ID.  
+2. Click the "Run" button to see James Smith’s project intake profile. The output will include a brief summary of the project sponsor and current review status followed by a detailed table. If no data is found for the specified ID, a message will indicate this, helping you debug potential issues like an incorrect ID or empty database. The output will display a DataFrame containing the project intake details for the selected project record.
 
     ![Open Terminal](./images/lab4task3.png " ")
 
 
-If you completed Lab 1: Run the Demo earlier, this is what gets printed out when the loan officer clicks on the customer 1000. You just built it, well done!
+If you completed Lab 1: Run the Demo earlier, this is what gets printed out when the project reviewer opens the sample project record for `PROJ_1000`. You just rebuilt that project summary view.
 
-## Task 6: Create a function to generate recommendations for the customer
+## Task 6: Create a function to generate recommendations for the project
 
-In a new cell, define a function `generate_recommendations` to generate loan recommendations. 
+In a new cell, define a function `generate_project_recommendations` to generate project recommendations.
 
-With customer profiles in place, you will use OCI Generative AI to generate personalized loan recommendations. 
+With the project profile in place, you will use OCI Generative AI to generate personalized construction project recommendations.
 
 Here’s what we’ll do:
-- **Fetch Mock Loan Data**: Retrieve all mock loan data and combine them with customer data.
-- **Build a Prompt**: Construct a structured prompt that combines the customer’s profile with loan requests instructing the LLM to evaluate and recommend a loan (APPROVE, REQUEST INFO, DENY) based solely on this data.
+- **Fetch Project Option Data**: Retrieve the available project-option records and combine them with the selected project data from `PROJECT_OPTION_CATALOG`.
+- **Build a Prompt**: Construct a structured prompt that combines the sponsor profile with the project request and instructs the LLM to evaluate the proposed construction work and recommend next steps (`APPROVE`, `REQUEST INFO`, or `DENY`) based solely on this data.
 - **Use OCI Generative AI**: Send the prompt to the <mark>**meta.llama-3.2-90b-vision-instruct**</mark> model via OCI’s inference client, which will process the input and generate a response.
-- **Format the Output**: Display the recommendations with styled headers and lists, covering evaluation, top picks, and explanations—making it easy to read and understand.
+- **Format the Output**: Display the recommendations with structured sections covering the project evaluation, top options, and explanations.
 
 1. Copy and paste the code in a new cell:
 
     ```python
     <copy>
-    # Fetch Mock Loan Data
-cursor.execute("SELECT loan_id, loan_provider_name, loan_type, interest_rate, origination_fee, time_to_close, credit_score, debt_to_income_ratio, income, down_payment_percent, is_first_time_home_buyer FROM MOCK_LOAN_DATA")
-df_mock_loans = pd.DataFrame(cursor.fetchall(), columns=["LOAN_ID", "LOAN_PROVIDER_NAME", "LOAN_TYPE", "INTEREST_RATE", "ORIGINATION_FEE", "TIME_TO_CLOSE", "CREDIT_SCORE", "DEBT_TO_INCOME_RATIO", "INCOME", "DOWN_PAYMENT_PERCENT", "IS_FIRST_TIME_HOME_BUYER"])
+    # Fetch project option data
+cursor.execute("SELECT option_id, provider_name, project_package, financing_rate, mobilization_fee, time_to_start, min_site_risk_score, max_budget_to_revenue_ratio, min_annual_revenue, required_site_prep_percent, requires_government_coordination FROM project_option_catalog")
+df_project_options = pd.DataFrame(cursor.fetchall(), columns=["OPTION_ID", "PROVIDER_NAME", "PROJECT_PACKAGE", "FINANCING_RATE", "MOBILIZATION_FEE", "TIME_TO_START", "MIN_SITE_RISK_SCORE", "MAX_BUDGET_TO_REVENUE_RATIO", "MIN_ANNUAL_REVENUE", "REQUIRED_SITE_PREP_PERCENT", "REQUIRES_GOVERNMENT_COORDINATION"])
 
 # Generate Recommendations
-def generate_recommendations(customer_id, customer_json, df_mock_loans):
-        loan_app = customer_json.get("loanApplications", [{}])[0]
-        available_loans_text = "\n".join([f"{loan['LOAN_ID']}: {loan['LOAN_TYPE']} | {loan['INTEREST_RATE']}% interest | Credit Score: {loan['CREDIT_SCORE']} | DTI: {loan['DEBT_TO_INCOME_RATIO']}" for loan in df_mock_loans.to_dict(orient='records')])
-        customer_profile_text = "\n".join([f"- {key.replace('_', ' ').title()}: {value}" for key, value in {**customer_json, **loan_app}.items() if key not in ["embedding_vector", "ai_response_vector", "chunk_vector"]])
+def generate_project_recommendations(project_id, project_json, df_project_options):
+        project_request = project_json.get("projectRequests", [{}])[0]
+        available_options_text = "\n".join([f"{option['OPTION_ID']}: {option['PROJECT_PACKAGE']} | {option['FINANCING_RATE']}% financing rate | Minimum Site Risk Score: {option['MIN_SITE_RISK_SCORE']} | Max Budget-to-Revenue Ratio: {option['MAX_BUDGET_TO_REVENUE_RATIO']}" for option in df_project_options.to_dict(orient='records')])
+        project_profile_text = "\n".join([f"- {key.replace('_', ' ').title()}: {value}" for key, value in {**project_json, **project_request}.items() if key not in ["embedding_vector", "ai_response_vector", "chunk_vector"]])
 
-        prompt = f"""<s>[INST] <<SYS>>You are a Loan Approver AI. Use only the provided context to evaluate the applicant’s profile and recommend loans. Format results as plain text with numbered sections (1. Comprehensive Evaluation, 2. Top 3 Loan Recommendations, 3. Recommendations Explanations, 4. Final Suggestion). Use newlines between sections.</SYS>> [/INST]
-        [INST]Available Loan Options:\n{available_loans_text}\nApplicant's Full Profile:\n{customer_profile_text}\nTasks:\n1. Comprehensive Evaluation\n2. Top 3 Loan Recommendations\n3. Recommendations Explanations\n4. Final Suggestion</INST>"""
+        prompt = f"""<s>[INST] <<SYS>>You are a Construction Project Review AI. Use only the provided context to evaluate the proposed project and recommend the best next steps. Choose only from APPROVE, REQUEST INFO, or DENY. Format results as plain text with numbered sections (1. Comprehensive Project Evaluation, 2. Top 3 Recommended Options, 3. Recommendation Explanations, 4. Final Suggestion). Use newlines between sections.</SYS>> [/INST]
+        [INST]Available Project Options:\n{available_options_text}\nProject Submission Profile:\n{project_profile_text}\nTasks:\n1. Comprehensive Project Evaluation\n2. Top 3 Recommended Options\n3. Recommendation Explanations\n4. Final Suggestion</INST>"""
 
         print("Generating AI response...")
         print(" ")
@@ -208,16 +211,16 @@ def generate_recommendations(customer_id, customer_json, df_mock_loans):
 
         return recommendations
 
-    recommendations = generate_recommendations(selected_customer_id, customer_json, df_mock_loans)
+    recommendations = generate_project_recommendations(selected_project_id, project_json, df_project_options)
     print(recommendations)
     </copy>
     ```
 
-2. Click the "Run" button to execute the code. Note that this will take time to run. Be patient, you will get the recommendations from the LLM shortly.
+2. Click the "Run" button to execute the code. Note that this will take time to run. Be patient while the LLM evaluates the construction request and returns its recommendations.
 
     ![Run task 4](./images/lab4task4.png " ")
 
-3. Review the output. In the demo, this is where you selected the "Navigate to Decisions" button as the Approval Officer. You just used AI to get recommendations for the approval officer which would have taken them hours to do, congratulations!
+3. Review the output. In the demo, this is where you selected the **Navigate to Decisions** button as the project reviewer. You just used AI to generate project guidance that would otherwise have required a lengthy manual review.
 
     >*Note:* Your result may be different due to non-deterministic character of generative AI.
 
@@ -227,17 +230,17 @@ def generate_recommendations(customer_id, customer_json, df_mock_loans):
 
 In this section we will be chunking and storing the recommendations.
 
-- We delete prior chunks for this customer.
+- We delete prior chunks for this project record.
 - We use `VECTOR_CHUNKS` to insert the chunks.
-- The chunks will be inserted into `LOAN_CHUNK` with unique `CHUNK_ID` = (`size + chunk_offset`).
+- The chunks will be inserted into `PROJECT_RECOMMENDATION_CHUNK` with unique `CHUNK_ID` = (`size + chunk_offset`).
 - We display a data frame summary to show the chunks.
 
 1. Copy the following code and run it in a new cell:
 
     ```python
     <copy>
-    # Clean any prior chunks for this customer
-cursor.execute("DELETE FROM LOAN_CHUNK WHERE CUSTOMER_ID = :cust_id", {'cust_id': selected_customer_id})
+    # Clean any prior chunks for this project record
+cursor.execute("DELETE FROM PROJECT_RECOMMENDATION_CHUNK WHERE PROJECT_ID = :project_id", {'project_id': selected_project_id})
 connection.commit()
 
 # Choose your chunk sizes (add more like 200, 500 if you want)
@@ -246,8 +249,8 @@ chunk_sizes = [50]  # e.g., [50, 200, 500]
 # Insert chunks using VECTOR_CHUNKS. Make CHUNK_ID unique by (size  + chunk_offset).
 for size in chunk_sizes:
         insert_sql = f"""
-            INSERT INTO LOAN_CHUNK (CUSTOMER_ID, CHUNK_ID, CHUNK_TEXT)
-            SELECT :cust_id,
+            INSERT INTO PROJECT_RECOMMENDATION_CHUNK (PROJECT_ID, CHUNK_ID, CHUNK_TEXT)
+            SELECT :project_id,
                 :chunk_size + vc.chunk_offset,
                 vc.chunk_text
             FROM (SELECT :rec_text AS txt FROM dual) s,
@@ -263,16 +266,16 @@ for size in chunk_sizes:
         """
         cursor.execute(
             insert_sql,
-            {'cust_id': selected_customer_id, 'chunk_size': size, 'rec_text': recommendations}
+            {'project_id': selected_project_id, 'chunk_size': size, 'rec_text': recommendations}
         )
 
 # Fetch chunks for preview
 cursor.execute("""
     SELECT CHUNK_ID, CHUNK_TEXT
-      FROM LOAN_CHUNK
-     WHERE CUSTOMER_ID = :cust_id
+      FROM PROJECT_RECOMMENDATION_CHUNK
+     WHERE PROJECT_ID = :project_id
   ORDER BY CHUNK_ID
-""", {'cust_id': selected_customer_id})
+""", {'project_id': selected_project_id})
 rows = cursor.fetchall()
 
 # Build a compact dataframe
@@ -290,7 +293,7 @@ for cid, ctext in rows:
 
     df_chunks = pd.DataFrame(items).sort_values("CHUNK_ID")
     connection.commit()
-print(f"✅ Task 7 complete: recommendation chunked for customer {selected_customer_id} (sizes: {chunk_sizes}).")
+print(f"✅ Task 7 complete: recommendation chunked for project record {selected_project_id} (sizes: {chunk_sizes}).")
 display(df_chunks)
     </copy>
     ```
@@ -299,37 +302,37 @@ display(df_chunks)
 
     ![Run task 7](./images/task5.png " ")
 
-3. Review the output to see the top recommendations.
+3. Review the output to see the chunked project recommendations.
 
     ![Run task 7](./images/task7recs.png " ")
 
 ## Task 8: Create a function to create embeddings - Use Oracle AI Database to create vector data 
 
-To handle follow-up questions, you will enhance the system with an AI Guru powered by Oracle AI Database’s Vector Search and Retrieval-Augmented Generation (RAG). The AI Guru will be able to answer questions about the loan application and provide recommendations based on the data.
+To handle follow-up questions, you will enhance the system with an AI Guru powered by Oracle AI Database’s Vector Search and Retrieval-Augmented Generation (RAG). The AI Guru will be able to answer questions about the construction project request and provide recommendations based on the data.
 
-Before answering questions, we need to prepare the data by vectoring the recommendations. This step:
+Before answering questions, we need to prepare the data by vectorizing the recommendations. This step:
 
    - **Stores Recommendations**: Inserts the full recommendation text (from previous cell) as a single chunk if not already present.
 
    - **Generates Embeddings**: This is a new feature in Oracle AI Database that allows you to create embeddings directly within the database, eliminating the need for external tools or APIs. The `dbms_vector_chain.utl_to_embedding` function takes the recommendation text as input and returns an embedding vector.
 
-   - **Stores Embeddings**: Inserts the generated embedding vector into a table called `LOAN_CHUNKS`.
+   - **Stores Embeddings**: Inserts the generated embedding vector into the `PROJECT_RECOMMENDATION_CHUNK` table.
 
 1. Run and review the code in a new cell:
 
     ```python
     <copy>
-    # Create Embeddings for Loan Chunks ----
+    # Create embeddings for the project recommendation chunks
 cursor.execute("""
-    UPDATE LOAN_CHUNK
+    UPDATE PROJECT_RECOMMENDATION_CHUNK
        SET CHUNK_VECTOR = dbms_vector_chain.utl_to_embedding(
            CHUNK_TEXT,
            JSON('{"provider":"database","model":"DEMO_MODEL","dimensions":384}')
        )
-     WHERE CUSTOMER_ID = :cust_id
-""", {'cust_id': selected_customer_id})
+     WHERE PROJECT_ID = :project_id
+""", {'project_id': selected_project_id})
 connection.commit()
-print("✅ Task 8 complete: embedded vectors for LOAN_CHUNK rows.")
+print("✅ Task 8 complete: embedded vectors for PROJECT_RECOMMENDATION_CHUNK rows.")
     </copy>
     ```
 
@@ -339,21 +342,21 @@ print("✅ Task 8 complete: embedded vectors for LOAN_CHUNK rows.")
 
 ## Task 9: Implement RAG with Oracle AI Database's Vector Search
 
-Now that the recommendations are vectorized, we can process a user’s question:
+Now that the recommendations are vectorized, we can process a reviewer’s question:
 
-```Can we recommend any other loans to James?```
+```Can we recommend any other options for James's construction project?```
 
 This step:
 
    - **Vectorizes the question**: Embeds the question using `DEMO_MODEL` via `dbms_vector_chain.utl_to_embedding`.
-   - **Performs AI Vector Search**: Retrieve the relevant recommendation text from `LOAN_CHUNKS` table. Then find the most relevant recommendations using similarity search.
-   - **Use RAG**: Combines the customer profile, policy rules using the retrieved recommendation context.
+   - **Performs AI Vector Search**: Retrieve the relevant recommendation text from the `PROJECT_RECOMMENDATION_CHUNK` table and find the most relevant project guidance using similarity search.
+   - **Use RAG**: Combine the project profile, review rules, and retrieved recommendation context.
 
 1. Copy the code block below to implement RAG:
 
     ```python
     <copy>
-question = "Can we recommend any other loans to James?"
+question = "Can we recommend any other options for James's construction project?"
 
 def vectorize_question(q):
         cursor.execute("""
@@ -369,15 +372,15 @@ print("Processing your question using AI Vector Search across chunked recommenda
 try:
         q_vec = vectorize_question(question)
 
-        # Retrieve top recommendation chunks (across all sizes) for this customer
+        # Retrieve top recommendation chunks (across all sizes) for this project record
         cursor.execute("""
             SELECT CHUNK_ID, CHUNK_TEXT
-            FROM LOAN_CHUNK
-            WHERE CUSTOMER_ID = :cust_id
+            FROM PROJECT_RECOMMENDATION_CHUNK
+            WHERE PROJECT_ID = :project_id
             AND CHUNK_VECTOR IS NOT NULL
             ORDER BY VECTOR_DISTANCE(CHUNK_VECTOR, :qv, COSINE)
             FETCH FIRST 4 ROWS ONLY
-        """, {'cust_id': selected_customer_id, 'qv': q_vec})
+        """, {'project_id': selected_project_id, 'qv': q_vec})
         retrieved = [
             (r[0], r[1].read() if isinstance(r[1], oracledb.LOB) else r[1])
             for r in cursor.fetchall()
@@ -391,23 +394,23 @@ try:
         cleaned = [re.sub(r'[^\w\s\d.,\-\'"]', ' ', t).strip() for _, t in retrieved]
         docs_as_one_string = "\n=========\n".join(cleaned) + "\n=========\n"
 
-        # Rebuild available loans + customer profile
-        available_loans_text = "\n".join(
-            [f"{loan['LOAN_ID']}: {loan['LOAN_TYPE']} | {loan['INTEREST_RATE']}% interest | "
-            f"Credit Score: {loan['CREDIT_SCORE']} | DTI: {loan['DEBT_TO_INCOME_RATIO']} | "
-            f"Origination Fee: ${loan['ORIGINATION_FEE']} | Time to Close: {loan['TIME_TO_CLOSE']} days"
-            for loan in df_mock_loans.to_dict(orient='records')]
+        # Rebuild available project options + project profile
+        available_options_text = "\n".join(
+            [f"{option['OPTION_ID']}: {option['PROJECT_PACKAGE']} | {option['FINANCING_RATE']}% financing rate | "
+            f"Minimum Site Risk Score: {option['MIN_SITE_RISK_SCORE']} | Max Budget-to-Revenue Ratio: {option['MAX_BUDGET_TO_REVENUE_RATIO']} | "
+            f"Mobilization Fee: ${option['MOBILIZATION_FEE']} | Time to Start: {option['TIME_TO_START']} days"
+            for option in df_project_options.to_dict(orient='records')]
         )
-        loan_app = customer_json.get("loanApplications", [{}])[0]
-        customer_profile_text = "\n".join(
+        project_request = project_json.get("projectRequests", [{}])[0]
+        project_profile_text = "\n".join(
             [f"- {k.replace('_',' ').title()}: {v}"
-            for k, v in {**customer_json, **loan_app}.items()
+            for k, v in {**project_json, **project_request}.items()
             if k not in ["embedding_vector","ai_response_vector","chunk_vector"]]
         )
 
         rag_prompt = f"""\
 <s>[INST] <<SYS>>
-You are AI Loan Guru. Use only the provided context to answer. Do not mention sources outside of the provided context. 
+You are AI Construction Project Guru. Use only the provided context to answer. Do not mention sources outside of the provided context.
 Do NOT provide warnings, disclaimers, or exceed the specified response length.
 Keep under 300 words. Be specific and actionable. Have the ability to respond in Spanish, French, Italian, German, and Portuguese if asked.
 <</SYS>> [/INST]
@@ -417,15 +420,15 @@ Question: "{question}"
 # Context (top chunks from prior AI recommendations):
 {docs_as_one_string}
 
-# Available Loan Options:
-{available_loans_text}
+# Available Project Options:
+{available_options_text}
 
-# Applicant Profile:
-{customer_profile_text}
+# Project Submission Profile:
+{project_profile_text}
 
 Tasks:
 1) Provide a direct answer to the question.
-2) Briefly justify based on profile + loan options.
+2) Briefly justify based on the project profile and available options.
 [/INST]"""
 
         print("Generating AI response...")
@@ -451,7 +454,7 @@ Tasks:
         ai_response = chat_response.data.chat_response.choices[0].message.content[0].text
         ai_response = re.sub(r'[^\w\s\d.,\-\'"]', ' ', ai_response)
 
-        print("\n🤖 AI Loan Guru Response:")
+        print("\n🤖 AI Construction Project Guru Response:")
         print(ai_response)
 
         # Print which chunks were retrieved (for transparency/debug)
@@ -482,9 +485,9 @@ Congratulations! You implemented a RAG process in Oracle AI Database using Pytho
 To summarize:
 
 * You created a function to connect to Oracle AI Database using the Oracle Python driver `oracledb`.
-* You created a function to retrieve customer data.
-* You created a function to connect to OCI Generative AI and create a first recommendation.
-* You created a function to create embeddings of the customer data using Oracle AI Database.
+* You created a function to retrieve project intake data.
+* You created a function to connect to OCI Generative AI and create an initial project recommendation.
+* You created a function to create embeddings of the project recommendation data using Oracle AI Database.
 * And finally, you implemented a RAG process in Oracle AI Database using Python.
 
 Congratulations, you completed the lab!
