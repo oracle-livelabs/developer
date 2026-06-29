@@ -19,7 +19,7 @@ Estimated Time: 5 minutes
 
 2. Paste in the Development IDE Login Password that you copied in the previous step. Click **Login**.
 
-    ![Login](./images/jupyter-login.png " ")
+    ![JupyterLab server login](./images/jupyter-login.png " ")
 
 1. Select **`notebooks/data_fundamentals`** directory to open it.  Double click on file **`data_fundamentals_lab.ipynb`** and it will open in the the panel on the right.
 
@@ -39,7 +39,7 @@ You will use a Jupyter Notebook in a JupyterLab server to build and test databas
 
     **NOTE:** Look for **<span style="color: green;">green text</span>** as in the image below where it says "<span style="color: green;">Connected successfully!</span>". Many cells will have different message, but the final successful one should always be green. When you see the green text, the cell completed. For some longer running cells, this is important to watch for.
 
-    ![JupyterLab blocks](./images/block.png " ")
+    ![JupyterLab cell example](./images/block.png " ")
 
 ## Task 3: Hybrid Vector Search lab section. **(Optional)** 
 
@@ -55,5 +55,4 @@ Make sure you take the quiz by clicking on **Take the quiz!** link on the left n
 
 ## Acknowledgements
 * **Authors** - Kirk Kirkconnell
-* **Contributors** - Anant Srivastava
 * **Last Updated By/Date** - Kirk Kirkconnell, June 2026

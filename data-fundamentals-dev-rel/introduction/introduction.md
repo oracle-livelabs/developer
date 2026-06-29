@@ -6,6 +6,8 @@ In this lab, we'll interact with a data set from an application named Prism City
 
 You'll utilize a Jupyter Notebook with real Python code, completing real activities, and using aspects of Unified Model Theory (UMT) to present data in various forms, from JSON documents, to graph traversals with visual of those relationships, and perform AI search via vector data, all within Oracle AI Database.
 
+Estimated Workshop Time: 50 - 60 minutes
+
 ✅ **Overview of Labs**
 
 In the next labs, you'll connect to your JupyterLab environment and work through a data fundamentals notebook built around the Prism CityOps dataset. You'll inspect the same operational data through relational tables, JSON, graph, and vector representations, then use Oracle AI Database to generate embeddings, run Vector Search, and compare search patterns. Labs 1 and 2 will be in the morning session, and Labs 3 and 4 will be completed in the afternoon sessions.
@@ -48,5 +50,4 @@ This lab assumes you have:
 
 ## Acknowledgements
 * **Authors** - Kirk Kirkconnell
-* **Contributors** - Anant Srivastava
 * **Last Updated By/Date** - Kirk Kirkconnell, June 2026
