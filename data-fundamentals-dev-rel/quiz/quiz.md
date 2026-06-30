@@ -11,6 +11,10 @@ Estimated Time: 5 minutes
     badge: images/badge.png
 ```
 
+### Objectives
+
+* Pass the quiz and get your "Data fundamentals for AI application developement" skills badge!
+
 ### Quiz Questions
 
 ```quiz score
