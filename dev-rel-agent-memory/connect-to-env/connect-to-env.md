@@ -21,7 +21,7 @@ Estimated Time: 5 minutes
 
     ![JupyterLab server login](./images/jupyter-login.png " ")
 
-1. Select **`notebooks/data_fundamentals`** directory to open it.  Double click on file **`data_fundamentals_lab.ipynb`** and it will open in the the panel on the right.
+1. Select **`notebooks/agent_memory`** directory to open it. Double click on one of two files **`notebook_student_oci.ipynb`**, and **`notebook_student_ollama.ipynb`** depending on what the instructor tells you, and that file will open in the the panel on the right.
 
     ![Open Launcher](./images/launcher.png " ")
 
