@@ -13,6 +13,8 @@ Estimated Time: 5 minutes
 
 ## Task 1: Login to JupyterLab Server and open the correct notebook
 
+Estimated Time: 2 minutes
+
 1. To navigate to the development environment, click **View Login Info**. Copy the Development IDE Login Password. Click the Start Development IDE link.
 
     ![Open Development Environment](./images/dev-env.png =50%x*)
@@ -28,6 +30,8 @@ Estimated Time: 5 minutes
 ## Task 2: Learn to utilize Agent Memory in your AI apps
 
 You will use a Jupyter Notebook in a JupyterLab server to build and test database queries. If you are new to notebooks, the following tips will help you get started and work smoothly.
+
+Estimated Time: 35-45 minutes
 
 1. **Executing Code Blocks**: You can run code in two simple ways: press **Shift+Enter** to execute and move to the next cell, or click the **Play/Execute** button in the menu bar at the top of this tab. Both methods work interchangeably.
 
