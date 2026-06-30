@@ -11,7 +11,7 @@ Estimated Time: 5 minutes
 * Login to JupyterLab server
 * Run Jupyter Notebook
 
-## Task 1: Login to JupyterLab Server
+## Task 1: Login to JupyterLab Server and open the correct notebook
 
 1. To navigate to the development environment, click **View Login Info**. Copy the Development IDE Login Password. Click the Start Development IDE link.
 
@@ -25,7 +25,7 @@ Estimated Time: 5 minutes
 
     ![Open Launcher](./images/launcher.png " ")
 
-## Task 2: Learn to use the components of Unified Model Theory (UMT)
+## Task 2: Learn to utilize Agent Memory in your AI apps
 
 You will use a Jupyter Notebook in a JupyterLab server to build and test database queries. If you are new to notebooks, the following tips will help you get started and work smoothly.
 
@@ -41,15 +41,9 @@ You will use a Jupyter Notebook in a JupyterLab server to build and test databas
 
     ![JupyterLab cell example](./images/block.png " ")
 
-## Task 3: Hybrid Vector Search lab section. **(Optional)** 
-
-In the lab, there is a section that is hidden by default. If there is extra time, you are welcome to unhide it and complete this section about Hybrid AI search (vector search) where you see how Oracle's Hybrid Vector Search combines traditional lexical search with vector search.
-
-In this task, you can weight each search type differently depending on the application needs and see the output depending on the settings.
-
 ## Conclusion
 
-In this lab you logged into the **IDE Development Environment** for Jupyter Labs. You launched the **`data_fundamentals_lab.ipynb`** notebook and worked through the notebook to learn about the fundamental data building blocks for AI application development.
+In this lab you logged into the **IDE Development Environment** for Jupyter Labs. You launched the **`notebook_student_*.ipynb`** notebook and worked through the notebook to learn about using Agent Memory with your AI application development.
 
 Make sure you take the quiz by clicking on **Take the quiz!** link on the left nav bar.
 
