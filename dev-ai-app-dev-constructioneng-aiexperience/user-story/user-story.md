@@ -12,7 +12,7 @@ Estimated Time: 30 minutes
 
 In this lab, you will:
 
-* Review how the Seer Construction **Construction Procurement app** incorporates the use of JSON Duality Views, Graph analytics, and other converged database features, all without requiring complex data movement or separate systems.
+* Review how the Seer Construction **Construction Procurement app** incorporates the use of  JSON Duality Views, Graph analytics, and other converged database features, all without requiring complex data movement or separate systems.
 
 ### Prerequisites
 
@@ -42,11 +42,12 @@ In this first example, you will use the application to approve a project with lo
 
     ![Select Project 1001](./images/review-p1001.png =50%x*)
 
-2. Opening Downtown Mixed-Use Tower reveals the procurement details - the project ID, project name, location, project phase, required trade, procurement urgency, budget rage, and risk level.
+2. Opening Downtown Mixed-Use Tower reveals the procurement details - the project ID, project name, location, project phase, required trade, procurement urgency, budget rage, and risk level. 
 
     ![P1001 AI generated recommendations](./images/p1001-ai.png =50%x*)
 
-3. At the bottom of Downtown Mixed-Use Tower’s evaluation, you will find the **AI Procurement Guru**—a chatbot built on Oracle AI Database and Vector search. When prompted, the system uses **RAG** to generate a response. It converts the question and procurement data into embeddings, performs a similarity search, and then uses the **GenAI service** to turn the enriched context into a clear, natural language answer. If the customer calls with a question, you can quickly enter it into the AI Procurement Guru to generate a relevant response.
+3. At the bottom of Downtown Mixed-Use Tower’s evaluation, you will find the **AI Procurement Guru**—a chatbot built on Oracle AI Database and Vector search. When prompted, the system uses **RAG** to generate a response. It converts the question and procurement data into embeddings, performs a similarity search, and then uses the **GenAI service** to turn the enriched context into a clear, natural language answer. If the customer calls with a question, you can quickly enter it into the AI Procurement Guru to generate a relevant response. 
+ 
 
     **Copy** the question below into the AI chatbot and press **Enter**. What does the AI Procurement Guru recommend?
 
@@ -64,9 +65,11 @@ In this first example, you will use the application to approve a project with lo
 
     ![P1001 Decision](./images/p1001-to-projectdecision.png =50%x*)
 
-    After navigating to the decisions page, the AI evaluation runs in the background. It analyzes Downtown Mixed-Use Tower’s evaluation and matches it against top supplier options in the database. A custom AI prompt ensures the system uses only internal data—never the internet. In this case, the AI returns three supplier evaluations, each with a clear explanation. All options are displayed alongside the AI’s final recommendation: approval.
+    After navigating to the decisions page, the AI evaluation runs in the background. It analyzes Downtown Mixed-Use Tower’s evaluation and matches it against top supplier  options in the database. A custom AI prompt ensures the system uses only internal data—never the internet. In this case, the AI returns three supplier evaluations, each with a clear explanation. All options are displayed alongside the AI’s final recommendation: approval.
 
 5. 1) In the **Select Supplier Option** section, the available supplier options are displayed. The construction procurement manager can choose to request more information to refine the offer, but for this scenario, we will proceed by selecting one of the suggested suppliers.
+
+   
 
     2) Select the AI-recommended supplier option 7001: Atlas Structural Fabrication due to strong mid-rise steel frame project experience, current AISC and AWS documentation, high on-time delivery rate, and confirmed capacity for the six-week delivery window.
 
@@ -88,6 +91,7 @@ In this first example, you will use the application to approve a project with lo
 
     ![P1001 PDF](./images/p1001-openpdf.png =50%x*)
 
+
 10. Display the message the supplier would see by opening the downloaded PDF.
 
     ![P1001 PDF](./images/p1001-openedpdf.png =50%x*)
@@ -102,18 +106,17 @@ In this first example, you will use the application to approve a project with lo
 
     **Conclusion**
 
-    Once you select and save one of the 3 supplier recommended by the AI:
+Once you select and save one of the 3 supplier recommended by the AI: 
 
-    ✅ The project's risk level status is updated.
+✅ The project's risk level status is updated.
 
     ✅ A finalized PDF decision document is generated.
 
-    ✅ The dashboard reflects the change in real-time — marking P1001 as Approved.
+✅ The dashboard reflects the change in real-time — marking P1001 as Approved.
 
-    Congratulations, you have just approved your first project! Proceed to the next task.
+Congratulations, you have just approved your first project! Proceed to the next task.
 
 ## Task 3: Demo - Project with High risk level
-
 In this example, you will navigate the projects to review a project and deny them as part of the exercise. The second project on your list is P1003 Harbor Seismic Retrofit.
 
 1. On the Dashboard page, from the pending review list, select the Project ID **1003**.
@@ -136,9 +139,11 @@ In this example, you will navigate the projects to review a project and deny the
 
 4. Expand **Interactive Graph: Project, Supplier Recommendation & Risk** to view the graph.
 
+4. Expand **Interactive Graph: Project, Supplier Recommendation & Risk** to view the graph.
+
     ![P1003 Open Graph](./images/p1003-opengraph.png =50%x*)
 
-    On the decision page, the construction procurement manager can use **Operational Property Graph** to explore near-approval projects and suppliers.
+    On the decision page, the construction procurement manager can use **Operational Property Graph** to explore near-approval projects and suppliers. 
 
     ![P1003 Graph](./images/p1003-graph.png =50%x*)
 
@@ -192,25 +197,22 @@ Lastly, let’s explore how the system uses JSON Duality Views to handle profile
 
     ![Click Process Selected PDF](./images/p1004-processdoc.png =50%x*)
 
-    > 💡 **JSON Duality Views** lets you update unstructured data in an
-    > easy, high-level format while automatically handling the
-    > technical details behind the scenes. This makes it faster and
-    > simpler to work with messy data and connect it to structured
-    > systems.
+    >💡 **JSON Duality Views** let's you update unstructured data in an easy, high-level format while automatically handling the technical details behind the scenes. This makes it faster and simpler to work with messy data and connect it to structured systems.
 
 4. The project profile has been updated. Refresh the page and note that the budget has been updated to $3.0-3.5M. Thanks to JSON Transform and JSON Duality Views, only the relevant field is modified — leaving the rest of the profile UNTOUCHED.
 
     ![Project Profile Updated](./images/p1004-uploadedpdf2.png)
 
-    **Conclusion**
 
     Once the document is uploaded:
 
     ✅ The system automatically detects the new budget data.
 
-    ✅ Then their project will be updated from $1.1-1.6M to $3.0-3.5M.
+✅ The system automatically detects the new budget data.
 
-    ✅ And thanks to JSON Transform and JSON Duality Views, only the relevant field is modified — leaving the rest of the profile UNTOUCHED.
+✅ Then their project will be updated from $1.1-1.6M to $3.0-3.5M.
+
+✅ And thanks to JSON Transform and JSON Duality Views, only the relevant field is modified — leaving the rest of the profile UNTOUCHED.
 
 ## Summary
 
@@ -222,7 +224,7 @@ In conclusion our Construction Procurement App was able to leverage Oracle AI Da
 
 ✅ Enable seamless profile updates with JSON Duality Views
 
-✅ Empower construction procurement officers with actionable insights through Operational Property Graphs
+✅ Empower construction procurement officers with actionable insights through Operational Property Graphs 
 
 By combining these advanced tools, the application enables faster, smarter decisions and delivers clear guidance on how customers can improve their eligibility.
 
