@@ -3,17 +3,17 @@
 ## Introduction
 
 
-At Seer Holdings, developers are building a next-generation construction procurement system that needs to combine enterprise-grade data governance with modern AI capabilities. But before GenAI or vector search can be applied, one thing must be true:
+At Seer Holdings, developers are building a next-generation loan approval system that needs to combine enterprise-grade data governance with modern AI capabilities. But before GenAI or vector search can be applied, one thing must be true:
 
 👉 The data must be in the right shape — accessible, trustworthy, and programmable.
 
 In this lab, you’ll act as a developer on the Seer Holdings data team. Your job is to build the foundational logic that powers the application’s intelligence layer. That means:
 
-- Creating and querying relational tables that represent real procurement and supplier data using Python
+- Creating and querying relational tables that represent real loan and customer data using Python
 - Converting that data into **JSON documents** using **JSON Duality Views**
 - Using **MongoDB-style syntax** via Oracle’s Mongo API to interact with the same data — without needing to duplicate or move it
 
-These capabilities make Oracle AI Database a **developer-friendly**, **multi-model platform**. You’ll write less glue code, eliminate data movement, and stay focused on the real task: powering intelligent construction procurement workflows.
+These capabilities make Oracle AI Database a **developer-friendly**, **multi-model platform**. You’ll write less glue code, eliminate data movement, and stay focused on the real task: powering intelligent loan workflows.
 
 > 💡 Everything you implement here becomes the data foundation for Retrieval-Augmented Generation (RAG) and AI Vector Search in upcoming labs.
 
@@ -50,7 +50,11 @@ All of the coding examples will be executed in a new Jupyter Notebook.
 
 ## Task 2: Connect to the database using Python
 
+<<<<<<< HEAD
+In this first task, you will connect to an Oracle AI Database instance using Oracle's Python driver, `oracledb`. `oracledb` is available in PyPi (`pip install oracledb`) and supports in its latest version all of the advanced features of the Oracle Database, including JSON and VECTOR.
+=======
 In this first task, you will connect to an Oracle AI Database instance using Oracle's Python driver, `oracledb`. `oracledb` is available in PyPi (`pip install oracledb`) and supports in its latest version all of the advanced features of the Oracle AI Database, including JSON and VECTOR.
+>>>>>>> upstream/main
 
 1. In the newly created Jupyter Notebook, copy and paste the following code block into an empty cell. This code block imports the `oracledb` Python driver and other libraries that help us to securely read credentials from the environment variables.
 
@@ -82,7 +86,15 @@ In this first task, you will connect to an Oracle AI Database instance using Ora
 
     ![connect](./images/connect.png " ")
 
->**Note:** The last line, `cursor = connection.cursor()`, creates a cursor object from the established Oracle AI Database connection. A cursor acts as a control structure that enables the execution of SQL queries and retrieval of results from the database. It is essential for sending SQL commands, fetching data, and iterating through query results. We will be using the cursor object in later steps of this lab. The object persists in the notebook session, so you can use it in subsequent cells without re-establishing the connection.
+    > **Note:** The last line, `cursor = connection.cursor()`, creates
+    > a cursor object from the established Oracle AI Database
+    > connection. A cursor acts as a control structure that enables the
+    > execution of SQL queries and retrieval of results from the
+    > database. It is essential for sending SQL commands, fetching
+    > data, and iterating through query results. We will be using the
+    > cursor object in later steps of this lab. The object persists in
+    > the notebook session, so you can use it in subsequent cells
+    > without re-establishing the connection.
 
 ## Task 3: Create tables and insert data
 
@@ -137,7 +149,9 @@ Now, that we have established a connection, we can start creating our tables and
     </copy>
    ```
 
->**Note:** We are creating a function called `query_orders()` that will allow us to query our table. We can use the same function in one of the following tasks
+    > **Note:** We are creating a function called `query_orders()`
+    > that will allow us to query our table. We can use the same
+    > function in one of the following tasks.
 
 3. Run your code (**shift+enter**) and see what happens. You should get a list of all the orders in our table.
 
@@ -193,11 +207,13 @@ Now, that we have established a connection, we can start creating our tables and
 
     ![query customers](./images/task3.png " ")
 
-### **Task Summary**
+    ### **Task Summary**
 
-Congratulations! You successfully created two new tables with sample data using Python and Oracle AI Database.  
+    Congratulations! You successfully created two new tables with
+    sample data using Python and Oracle AI Database.
 
-You also created a function that allows you to query your new table which we will use in some of the following tasks
+    You also created a function that allows you to query your new table
+    which we will use in some of the following tasks.
 
 ## Task 4: Create a JSON Duality View 
 
@@ -265,7 +281,12 @@ Next, we want to explore how we can use a **JSON Duality View** to query our new
 
     ![dv](./images/dv.png " ")
 
->💡 **JSON Duality Views** automatically maps relational columns to JSON documents (and vice versa) in the same table, letting you store data in a traditional schema but also access it as if it were a JSON object. So even though you’ve coded a JSON view in Python, you can switch over to standard SQL queries without duplicating data or maintaining extra structures. Super cool! 
+    > 💡 **JSON Duality Views** automatically maps relational columns
+    > to JSON documents (and vice versa) in the same table, letting you
+    > store data in a traditional schema but also access it as if it
+    > were a JSON object. So even though you have coded a JSON view in
+    > Python, you can switch over to standard SQL queries without
+    > duplicating data or maintaining extra structures.
 
 3. Let's create a new function that allows us to query our new JSON Duality View. This time however, we will enhance our function to allow using input parameters. Instead of retrieving all rows, we want to write a function that returns only a specific row based on the first name of a customer. Copy the following code into a new cell and run it.
 
@@ -307,7 +328,9 @@ Next, we want to explore how we can use a **JSON Duality View** to query our new
 
     🔴 **`query_dv("Dan")`** - Here we are calling our query function again, but this time passing in the string `"Dan"` as a parameter. This will return all rows where `first_name` is equal to `"Dan"`. The result is displayed in JSON format. 
 
->**Note:** Notice that our output is a nicely formatted document that now not only includes our customer data but also all orders for that customer.
+    > **Note:** Notice that our output is a nicely formatted document
+    > that now not only includes our customer data but also all orders
+    > for that customer.
 
 ## Task 5: Connect to the database using pymongo
 
@@ -486,11 +509,11 @@ The final step in our basic coding tour with Python and the Oracle AI Database i
 
 ## Conclusion
 
-As a developer at Seer Holdings, you've just built the foundation for a GenAI-powered construction procurement system. We learned how to use Python and Oracle's Python driver `oracledb` to interact with Oracle AI Database's new features. You learned how to use the `cursor` object to execute SQL queries. Using the `cursor` object, you created a **JSON Duality View** and used JSON functions to query documents with SQL syntax. Then, you also learned how to connect to the database using `pymongo` and retrieve data from a table in the database using **MongoDB syntax**. You created functions to update the **JSON Duality View** and learned how those updates are also reflected in the underlying relational database tables.
+As a developer at Seer Holdings, you've just built the foundation for a GenAI-powered loan approval system. We learned how to use Python and Oracle's Python driver `oracledb` to interact with Oracle AI Database's new features. You learned how to user the `cursor` object to execute SQL queries. Using the `cursor` object, you created a **JSON Duality View** and you even used some JSON functions to query documents using SQL syntax. Then, you also learned how to connect to the database using `pymongo` and retrieve data from a table in the database using **MongoDB syntax**. You created functions to update the **JSON Duality View** and you learned how these updates are also reflected in the underlying relational database tables.
 
 This architecture eliminates the need for duplicating data across platforms and simplifies how developers build AI-ready applications. Whether you're calling SQL, working with JSON, or speaking Mongo, you're always working with a single source of truth inside the Oracle AI Database.
 
-In the next lab, you'll build on this foundation to implement Retrieval-Augmented Generation (RAG), create vector embeddings, and generate personalized procurement recommendations with Oracle AI Database and OCI Generative AI.
+In the next lab, you'll build on this foundation to implement Retrieval-Augmented Generation (RAG), create vector embeddings, and generate personalized loan recommendations with Oracle AI Database and OCI Generative AI.
 
 ## Acknowledgements
 * **Authors** - Linda Foinding

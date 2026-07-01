@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This lab will show you how to setup and run the Seer Equities Loan Approval application on OCI. This guide is designed to walk you through the complete setup process, which includes provisioning required services and installing dependencies enabling you to launch and run the application on OCI.
+This lab will show you how to set up and run the Seer Construction procurement application on OCI. This guide walks you through the complete setup process, including provisioning the required services and installing the dependencies needed to launch and run the application on OCI.
 
 The document is structured to help you meet all prerequisites, configure both the Autonomous AI Database and the OCI Generative AI Service, and troubleshoot any issues that may arise during setup. Whether you're new to Oracle Cloud Infrastructure or simply deploying for development and testing, this step-by-step guide will ensure a smooth setup experience.
 
@@ -22,7 +22,9 @@ By the end of this section, you will be able to:
 
 - Launch and interact with the application using Streamlit.
 
->   💡Note: This guide is intended for development and testing purposes. For production deployment, additional configuration and security hardening will be required.
+> 💡Note: This guide is intended for development and testing purposes.
+> For production deployment, additional configuration and security
+> hardening will be required.
 
 Let’s get started!
 
@@ -72,47 +74,51 @@ Let’s get started!
 
     ![Review the basic VM information](./images/review-basic-information.png " ")
     
-12. The instance will begin provisioning and in a few moments the state will change to **Succeeded** and then to **Running**.
+12. The instance will begin provisioning and in a few moments the state
+    will change to **Succeeded** and then to **Running**.
 
-   ![Compute Instance success](./images/create-instance-succeeded.png " ")
+    ![Compute Instance success](./images/create-instance-succeeded.png " ")
 
-In the next step, you'll add 5 ingress rules to allow traffic on specific ports within your VCN.
+    In the next step, you'll add 5 ingress rules to allow traffic on
+    specific ports within your VCN.
 
 13. Click on the **Navigation Menu** and select **Networking** then **Virtual Cloud Networks**.
 
-![Select VCN](./images/select-vcn.png " ")
+    ![Select VCN](./images/select-vcn.png " ")
 
 14. Click the VCN link that was created along with your compute instance.
 
 15. Click the **Security** tab, then click on the **Default Security List for vcn-xxxxx**.
 
-![Select VCN](./images/click-default-security-list.png " ")
+    ![Select VCN](./images/click-default-security-list.png " ")
 
 16. Click the **Security Rules** tab, then click the **Add Ingress Rules** under the Ingress Rules section. Note that port 22 is already enabled for SSH communication.
 
     ![Click Add Ingress Rules](./images/click-add-ingress-rules.png " ")
 
-17. For each rule, add 0.0.0.0/0 as the **Source CIDR** and add the specific port below to the **Destination Port Range** field. Click **+ Another Ingress Rule** after each entry.
+17. For each rule, add `0.0.0.0/0` as the **Source CIDR** and add the
+    specific port below to the **Destination Port Range** field. Click
+    **+ Another Ingress Rule** after each entry.
 
-Add 5 rules using the below information. 
+    Add 5 rules using the following information.
 
-| Ingress Rule #  | Source CIDR | Port # |
-| ------------- | ------------- | ------------ |
-| 1  | 0.0.0.0/0  | 80    |
-| 2  | 0.0.0.0/0  | 1521    |
-| 3  | 0.0.0.0/0  | 1522    |
-| 4  | 0.0.0.0/0  | 8501    |
-| 5  | 0.0.0.0/0  | 8502    |
+    | Ingress Rule # | Source CIDR | Port # |
+    | --- | --- | --- |
+    | 1 | 0.0.0.0/0 | 80 |
+    | 2 | 0.0.0.0/0 | 1521 |
+    | 3 | 0.0.0.0/0 | 1522 |
+    | 4 | 0.0.0.0/0 | 8501 |
+    | 5 | 0.0.0.0/0 | 8502 |
     {: title="Ingress rules"}
 
+    When you've added all 5 ingress rules, click the **Add Ingress
+    Rules** button at the bottom right of the page.
 
-When you've added all 5 ingress rules, click the **Add Ingress Rules** button at the bottom right of the page.
+    ![Add Ingress Rules](./images/add-ingress-rules-all.png " ")
 
- ![Add Ingress Rules](./images/add-ingress-rules-all.png " ")
+    Your default security list should look like the screenshot below.
 
-Your default security list should look like the below screenshot.
-
- ![Complete default security list](./images/default-security-list-final.png " ")
+    ![Complete default security list](./images/default-security-list-final.png " ")
 
 ## Task 2: Access and update the VM
 
@@ -126,7 +132,11 @@ Your default security list should look like the below screenshot.
 
     ![Copy Public IP](./images/copy-ip.png " ")
 
-4. Type or copy/paste the following command into your terminal. Replace ssh\_key\_name with the name of your private key. Replace public\_ip with the public IP you just copied from your VM. The '-i' switch allows you to specify the location where your SSH keys are stored.
+4. Type or copy/paste the following command into your terminal. Replace
+    `ssh_key_name` with the name of your private key. Replace
+    `public_ip` with the public IP you just copied from your VM. The
+    `-i` switch allows you to specify the location where your SSH keys
+    are stored.
 
     ````
         <copy>
@@ -137,7 +147,7 @@ Your default security list should look like the below screenshot.
     ![Open Terminal](./images/open-terminal.png " ")
 
 
-6. Run the command below to update the VM. It will take a few minutes.
+5. Run the command below to update the VM. It will take a few minutes.
 
     ````
         <copy>
@@ -147,7 +157,8 @@ Your default security list should look like the below screenshot.
 
     ![Open Terminal](./images/login-with-ssh-key.png " ")
 
-7. Once the VM has been updated install python3.11, pip, and the oci cli application. Run the commands below:
+6. Once the VM has been updated, install Python 3.11, pip, and the OCI
+    CLI application. Run the commands below:
 
     ````
         <copy>
@@ -173,66 +184,11 @@ Your default security list should look like the below screenshot.
         </copy>
     ````
 
-    ```
+    ````
         <copy>
         sudo dnf install python39-oci-cli -y
         </copy>
-
-<!-- Commenting out as these aren't needed.They're duplicates of what's being installed in the virtual environment later
-
-5. Install Streamlit with the command below:
-
     ````
-        <copy>
-        pip install streamlit
-        </copy>
-    ````
-
-6. Run the install commands below:
-
-    ````
-        <copy>
-        pip install oracledb
-        </copy>
-    ````
-
-    ````
-        <copy>
-        pip install oci
-        </copy>
-    ````
-
-    ````
-        <copy>
-        pip install python-dotenv
-        </copy>
-    ````
-
-    ````
-        <copy>
-        pip install PyPDF2
-        </copy>
-    ````
-
-    ````
-        <copy>
-        pip install pandas network matplotlib
-        </copy>
-    ````
-
-    ````
-        <copy>
-        pip install scipy fpdf
-        </copy>
-    ````
-
-    ````
-        <copy>
-        sudo dnf install java-17-openjdk-devel -y
-        </copy>
-    ````
--->
-
 
 ## Task 3: Provision an Autonomous AI Database
 
@@ -240,11 +196,11 @@ The application is built for Autonomous AI Database. Follow the steps to provisi
 
 1. Click the navigation menu in the upper left of the OCI console, choose **Oracle AI Database** then **Autonomous AI Database**.
 
-   ![Choose Autonomous AI Database](./images/choose-autonomous.png " ")
+    ![Choose Autonomous AI Database](./images/choose-autonomous.png " ")
 
 2. Verify that the filter option reflects the correct compartment and click the **Create Autonomous AI Database** button.
 
-   ![Create Autonomous AI Database](./images/create-adb.png " ")
+    ![Create Autonomous AI Database](./images/create-adb.png " ")
 
 3. Use the information in the table below to fill out the **Create Autonomous AI Database Serverless** form. Proceed to the next step for instructions on setting up **Network Access**.
 
@@ -259,17 +215,22 @@ The application is built for Autonomous AI Database. Follow the steps to provisi
     | Password | Password1234!    |
     {: title="ADB configuration details overview"}
 
-   ![Create Autonomous AI Database form](./images/create-adb-form.png " ")
+    ![Create Autonomous AI Database form](./images/create-adb-form.png " ")
 
-1. In the **Network access** section, choose **Secure access from allowed IPs and VCNs only**. In the **IP notation type** drop-down, choose **CIDR block**. For values, enter **0.0.0.0/0**. Verify that **Require mutual TLS (mTLS) authentication** is disabled. Click the **Create** button.
+4. In the **Network access** section, choose **Secure access from
+    allowed IPs and VCNs only**. In the **IP notation type**
+    drop-down, choose **CIDR block**. For values, enter
+    **0.0.0.0/0**. Verify that **Require mutual TLS (mTLS)**
+    authentication is disabled. Click the **Create** button.
 
-   ![Create Autonomous AI Database form](./images/atp-security-mtls.png " ")
+    ![Create Autonomous AI Database form](./images/atp-security-mtls.png " ")
 
-2. The ATP Database will enter the provisioning state.
+5. The ATP Database will enter the provisioning state.
 
     ![Provisioning an Autonomous AI Database instance](./images/provisioning-atp.png " ")
 
-3. Once the state changes to **Available**, the Autonomous Transaction Processing database is ready to use!
+6. Once the state changes to **Available**, the Autonomous Transaction
+    Processing database is ready to use.
 
     ![Provisioning an Autonomous AI Database instance](./images/atp-detail-review.png " ")
 
@@ -277,23 +238,28 @@ The application is built for Autonomous AI Database. Follow the steps to provisi
 
 The application environment has been created and zipped up for you in a downloadable package.
 
-1. Return to the terminal connected to the VM. From the /home/opc directory, enter the following command in your terminal to download the application package to your virtual machine.
+1. Return to the terminal connected to the VM. From the `/home/opc`
+    directory, enter the following command to download the application
+    package to your virtual machine.
 
-```
+    ````
     <copy>
     wget https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/database/ai-app-build-local.zip
     </copy>
-```
+    ````
 
 2. Unzip the file.
 
-```
+    ````
     <copy>
     unzip ai-app-build-local.zip
     </copy>
-```
+    ````
 
-Next we're going to generate an oci configuration file that will contain user credentials and other settings needed for interacting with Oracle Cloud. In order to prepare for this step you'll need to gather the user OCID, the tenancy OCID, and the tenancy region and store these in a text file.
+    Next, generate an OCI configuration file that will contain user
+    credentials and other settings needed for interacting with Oracle
+    Cloud. To prepare for this step, gather the user OCID, tenancy
+    OCID, and tenancy region, then store them in a text file.
 
 3. Find the user OCID:  Click the profile icon in the upper right corner of the OCI console and choose **User settings**.
 
@@ -303,25 +269,28 @@ Next we're going to generate an oci configuration file that will contain user cr
 
     ![User OCID](./images/user-ocid.png " ")
  
-5. Tenancy OCID: Click the profile icon in the upper right corner of the OCI console and choose **Tenancy:*your tenancy name***
+5. To find the tenancy OCID, click the profile icon in the upper right
+    corner of the OCI console and choose **Tenancy: _your tenancy
+    name_**.
 
-   ![User OCID](./images/your-tenancy-name.png " ")
+    ![User OCID](./images/your-tenancy-name.png " ")
 
 6. Locate the tenancy OCID and click the **Copy** button to copy the OCID. Paste it into your text file.
 
-   ![User OCID](./images/your-tenancy-name-2.png " ")
+    ![User OCID](./images/your-tenancy-name-2.png " ")
 
 7. Identify the home region of your tenancy located on the top bar of the console toward the right. Note that information in your text file.
 
-   ![User OCID](./images/region.png " ")
+    ![User OCID](./images/region.png " ")
 
 8. With the above information handy, run the following command in the terminal.
 
-```
+    ````
     <copy>
     oci setup config
     </copy>
-```
+    ````
+
 9. Hit return to accept the default config file location of /home/opc/.oci/config
 
 10. Enter your user OCID, tenancy OCID, and select your region from the list by using the corresponding number.
@@ -332,17 +301,18 @@ Next we're going to generate an oci configuration file that will contain user cr
 
 13. Press **Enter** to accept the default name of *oci_api_key*.
 
-14. Enter *N/A* twice to eliminate the need for a passphrase. (Your output won't show up in the terminal screen.)
+14. Enter *N/A* twice to eliminate the need for a passphrase. (Your
+    output won't show up in the terminal screen.)
 
-Next you'll create an environment file for the application.
+    Next, you'll create an environment file for the application.
 
 15. Create the .env file that will hold connection information for your application.
 
-````
+    ````
     <copy>
     touch .env
     </copy>
-````
+    ````
 
 16. Use your favorite editor to open and edit the file.
 
@@ -354,7 +324,7 @@ Next you'll create an environment file for the application.
 
 17. The following information needs to be collected and inserted into the .env file. Copy the 9 lines below and paste them in the .env file. Follow the steps below to gather the required information and place it in the file.
 
-    ```
+    ````
     <copy>
     USERNAME=""
     DBPASSWORD=""
@@ -366,7 +336,7 @@ Next you'll create an environment file for the application.
     TENANCY_OCID=""
     ENDPOINT=https://inference.generativeai.us-chicago-1.oci.oraclecloud.com
     </copy>
-    ```
+    ````
 
 18. The database username should be 'admin'. Use the password that you assigned to the admin user. (Password1234!). Make sure all the information you enter into the file stays between the quotes.
 
@@ -420,11 +390,11 @@ Next you'll create an environment file for the application.
 
     ````
         <copy>
-        python3.11 -m venv loan_env
+        python3.11 -m venv construction_env
         </copy>
     ````
 
-    This will create a directory called loan_env that will contain your virtual environment.
+    This will create a directory called `construction_env` that will contain your virtual environment.
 
 2. Enable the firewall for the application port. Run the following commands:
 
@@ -462,13 +432,13 @@ Next you'll create an environment file for the application.
     ````
         <copy>
         [Unit]
-        Description=Streamlit Loan Approval App
+        Description=Streamlit Construction Procurement App
         After=network.target
 
         [Service]
         User=opc
         WorkingDirectory=/home/opc
-        ExecStart=/bin/bash -c 'source /home/opc/loan_env/bin/activate && streamlit run 1-Introduction.py --server.port 8501 --server.address 0.0.0.0'
+        ExecStart=/bin/bash -c 'source /home/opc/construction_env/bin/activate && streamlit run 1-Introduction.py --server.port 8501 --server.address 0.0.0.0'
         Restart=always
 
         [Install]
@@ -476,37 +446,12 @@ Next you'll create an environment file for the application.
         </copy>
     ````
 
-
-<!--  Commenting out for directory location changes that I'm not sure will work.
-
-8. Paste the following information into the file. Verify the user is 'opc', the working directory is where you installed streamlit and the port is set to 8501.
-
-    ````
-        <copy>
-        [Unit]
-        Description=Streamlit Loan Approval App
-        After=network.target
-
-        [Service]
-        User=opc
-        WorkingDirectory=/home/opc/loan/streamlit/
-        ExecStart=/bin/bash -c 'source /home/opc/loan/streamlit/pages/loan_env/bin/activate && streamlit run 1-Introduction.py --server.port 8501 --server.address 0.0.0.0'
-        Restart=always
-
-        [Install]
-        WantedBy=multi-user.target
-        </copy>
-    ````
-
-    ![Create the streamlit.service file](./images/streamlit-service-file.png " ")
-
-    -->
 
 5. Activate the virtual environment. Enter the following command.
 
     ````
         <copy>
-        source loan_env/bin/activate
+        source construction_env/bin/activate
         </copy>
     ````
 
@@ -517,21 +462,6 @@ Next you'll create an environment file for the application.
         pip install --upgrade pip
         </copy>
     ````
-
-<!-- Need to add the correct applications to requirements.txt
-
-streamlit
-oracledb
-oci
-python-dotenv
-PyPDF2
-pandas
-network
-matplotlib
-scipy
-fpdf
-
--->
 
 7. Install the required applications from the supplied requirements.txt file.
 
@@ -549,14 +479,14 @@ fpdf
         </copy>
     ````
 
-9. Install sqlcl
+9. Install sqlcl.
 
     ````
         <copy>
         sudo yum install sqlcl -y
         </copy>
     ````
-10. Reload the daemons and enable streamlit
+10. Reload the daemons and enable Streamlit.
 
     ````
         <copy>
@@ -582,7 +512,8 @@ fpdf
         </copy>
     ````
 
-Streamlit is up and running. Press Control + C on your keyboard to escape.
+    Streamlit is up and running. Press **Control+C** on your keyboard
+    to exit the status view.
 
 
 ## Task 5: Launch the Application
@@ -613,13 +544,17 @@ Streamlit is up and running. Press Control + C on your keyboard to escape.
 
 4. Open a web browser.
 
-5. Type in the IP address of the VM followed by :8501 into the incognito window.. You can obtain it from the OCI Console - VM details screen.
+5. Type the IP address of the VM followed by `:8501` into the
+    incognito window. You can obtain it from the OCI Console VM details
+    screen.
 
 6. Success! You should see the application start screen.
 
     ![Application start screen](./images/application-start-screen.png " ")
 
-Congratulations, you have built and configured the Loan Management application using Oracle Cloud Insfrastructure, Oracle Autonomous AI Database, and Oracle GenAI!
+    Congratulations, you have built and configured the construction
+    procurement application using Oracle Cloud Infrastructure, Oracle
+    Autonomous AI Database, and Oracle GenAI.
 
 
 ## Troubleshooting
@@ -632,14 +567,17 @@ If you encounter any issues during the setup, here are a few common troubleshoot
     ````
         <copy>
         pip install oci
-        </copy
+        </copy>
     ````
 
 * **GenAI Access Issues**: Verify your user/group has the correct IAM policy applied.
 
 * **Virtual Environment Not Activating**: Ensure that you're using the correct command for your operating system. If the issue persists, try recreating the virtual environment.
 
-* **Dependencies Installation Issues**: Double-check the requirements.txt file to ensure it contains the correct package names. If a specific package fails, you can try installing it manually with pip install <package-name>.
+* **Dependencies Installation Issues**: Double-check the
+  `requirements.txt` file to ensure it contains the correct package
+  names. If a specific package fails, you can try installing it
+  manually with `pip install your-package-name`.
 
 * **Database Connection Errors**: Ensure that the database credentials in the .env file are correct and that you have access to the Autonomous AI Database. 
 

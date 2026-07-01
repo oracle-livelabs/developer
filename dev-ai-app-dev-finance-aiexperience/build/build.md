@@ -1,19 +1,19 @@
-# Step by step: Implement RAG with Oracle AI Database
+# Step by step: Implement RAG with Oracle AI Database 
 
 ## Introduction
 
-In this lab, you build a construction procurement engine with Oracle AI Database and OCI Generative AI. Connect to the database, explore the sample procurement data, and invoke a large language model to generate supplier recommendations and risk explanations. Building on earlier exercises, you’ll apply Python to deliver a fully integrated, AI-powered construction procurement application.
+In this lab, you build a complete loan approval engine with Oracle AI Database and OCI Generative AI. Connect to the database, explore order and image data, and invoke a large language model to generate personalized loan decisions and policy explanations. Building on earlier exercises, you’ll apply Python to deliver a fully integrated, AI-powered finance loan application.
 
-This lab uses some of the basic coding samples you created in lab 3, such as `cursor.execute` and more.
+This lab uses some of the basic coding samples you created in lab 3, such as cursor.execute and more.
 
 Estimated Time: 30 minutes
 
 ### Objectives
 
-* Build the complete construction procurement application as seen in lab 1
-* Use OCI Generative AI to generate contextual procurement recommendations
+* Build the complete loan approval application as seen in lab 1
+* Use OCI Generative AI to generate contextual loan recommendations
 * Use Python to connect to an Oracle AI Database instance and run queries
-* Explore procurement data and extract relevant information
+* Explore customer data and extract relevant information
 
 ### Prerequisites
 
@@ -32,7 +32,7 @@ This lab assumes you have:
 
     ![Login](./images/jupyter-login.png " ")
 
-3. Click the blue `+`. This will open the Launcher.
+1. Click the blue "+". This will open the Launcher. 
 
     ![Open Launcher](./images/launcher.png " ")
 
@@ -40,9 +40,9 @@ This lab assumes you have:
 
 1. Review the different elements in JupyterLab:
 
-    **File browser (1):** The file browser organizes and manages files within the JupyterLab workspace. It supports drag-and-drop file uploads, file creation, renaming, and deletion. Users can open notebooks, terminals, and text editors directly from the browser.
+    **File browser (1):** The file browser organizes and manages files within the JupyterLab workspace. It supports drag-and-drop file uploads, file creation, renaming, and deletion. Users can open notebooks, terminals, and text editors directly from the browser. Navigation is fast and intuitive, with breadcrumbs and context menus that surface relevant actions. Users can right-click files to access options like duplicate, shutdown kernel, or open with a specific editor.
 
-    **Launcher (2 and 3):** The launcher offers a streamlined entry point for starting new activities. Users can create Jupyter Notebooks for interactive coding with live code execution, visualizations, and rich markdown. The terminal provides direct shell access for command-line work in the same environment.
+    **Launcher (2 and 3):** The launcher offers a streamlined entry point for starting new activities. Users can create Jupyter Notebooks for interactive coding with live code execution, visualizations, and rich markdown. The terminal provides direct shell access, enabling command-line operations within the JupyterLab environment. These two tools form the core of most workflows, supporting both interactive analysis and system-level tasks from a single interface.
 
     ![JupyterLab Launcher](./images/jupyter.png " ")
 
@@ -52,7 +52,7 @@ This lab assumes you have:
 
     ![Open Terminal](./images/terminal.png " ")
 
-2. Navigate to `db_setup_script_2.sql` under the `dbinit` folder. Here is where you can see all the tables that support this construction procurement scenario.
+2. Navigate to `db_setup_script_2.sql` under the `dbinit` folder. Here is where you can see all the tables that will be created for the finance industry. 
 
     ![Tables](./images/tables.png " ")
 
@@ -96,168 +96,160 @@ This lab assumes you have:
     </copy>
     ```
 
-4. Run the code block to connect to the database.
+4. Run the code block to connect to the database. 
 
     ![Connect to Database](./images/lab4task1.png " ")
 
-## Task 5: Create a function to retrieve procurement data from the database
 
-You will query project procurement data from the `procurement_profiles_dv` JSON duality view, which combines `CONSTRUCTION_PROCUREMENTS` and related procurement fields into one JSON document. This task will:
+## Task 5: Create a Function to retrieve data from the database.
 
-- **Define a Function**: Create a reusable function `fetch_procurement_data` to query the database by project ID, extracting the JSON data for a specific procurement.
-- **Use an Example**: Fetch data for project `1001` (`P1001 Downtown Mixed-Use Tower`) to demonstrate the process.
-- **Display the Results**: Format the retrieved data into a pandas DataFrame for a clear, tabular presentation, showing key details like project name, location, project phase, required trade, procurement urgency, budget range, and risk level.
+You will query customer data from the `clients_dv` JSON duality view, which combines data from CUSTOMERS, LOAN_APPLICATIONS, and related tables. This task will:
+
+- **Define a Function**: Create a reusable function `fetch_customer_data` to query the database by customer ID, extracting the JSON data for a specific customer.
+
+- **Use an Example**: Fetch data for customer `1000` (James Smith) to demonstrate the process.
+
+- **Display the Results**: Format the retrieved data into a pandas DataFrame for a clear, tabular presentation, showing key details like name, income, credit score, and total debt.
 
 1. Copy and paste the code below into the new notebook.
 
     ```python
     <copy>
-def fetch_procurement_data(project_id):
+def fetch_customer_data(customer_id):
         cursor.execute(
-            "SELECT data FROM procurement_profiles_dv WHERE JSON_VALUE(data, '$._id') = :project_id",
-            {'project_id': project_id}
+            "SELECT data FROM clients_dv WHERE JSON_VALUE(data, '$._id') = :customer_id",
+            {'customer_id': customer_id}
         )
         result = cursor.fetchone()
         return json.loads(result[0]) if result and isinstance(result[0], str) else result[0] if result else None
 
-selected_project_id = "1001"
-procurement_json = fetch_procurement_data(selected_project_id)
+selected_customer_id = "CUST_1000"
+customer_json = fetch_customer_data(selected_customer_id)
 
-if procurement_json:
-        print(f"Project: {procurement_json['projectName']}")
-        print(f"Status: {procurement_json['projectStatus']}")
+if customer_json:
+        loan_app = customer_json.get("loanApplications", [{}])[0]
+        print(f"Customer: {customer_json['firstName']} {customer_json['lastName']}")
+        print(f"Loan Status: {loan_app['loanStatus']}")
 
         desired_fields = [
-            ("Project ID", selected_project_id),
-            ("Project Code", procurement_json.get("projectCode", "")),
-            ("Project Name", procurement_json.get("projectName", "")),
-            ("Location", procurement_json.get("location", "")),
-            ("Project Phase", procurement_json.get("projectPhase", "")),
-            ("Required Trade", procurement_json.get("requiredTrade", "")),
-            ("Procurement Urgency", procurement_json.get("procurementUrgency", "")),
-            ("Budget Range", procurement_json.get("budgetRange", "")),
-            ("Risk Level", procurement_json.get("riskLevel", "")),
-            ("Project Status", procurement_json.get("projectStatus", "Pending Review"))
+            ("Customer ID", selected_customer_id),
+            ("Application ID", loan_app.get("applicationId", "")),
+            ("First Name", customer_json.get("firstName", "")),
+            ("Last Name", customer_json.get("lastName", "")),
+            ("City", customer_json.get("city", "")),
+            ("State", customer_json.get("state", "")),
+            ("Zip code", customer_json.get("zipCode", "")),
+            ("Age", customer_json.get("age", 0)),
+            ("Income", customer_json.get("income", 0)),
+            ("Credit score", loan_app.get("creditScore", 600)),
+            ("Requested loan amount", loan_app.get("requestedLoanAmount", 0)),
+            ("Total Debt", loan_app.get("totalDebt", 0)),
+            ("Loan status", loan_app.get("loanStatus", "Pending Review"))
         ]
 
-        df_procurement_details = pd.DataFrame(
+        df_customer_details = pd.DataFrame(
             {field_name: [field_value] for field_name, field_value in desired_fields}
         )
-        display(df_procurement_details)
+        display(df_customer_details)
 
 else:
-        print("No data found for project ID:", selected_project_id)
+        print("No data found for customer ID:", selected_customer_id)
     </copy>
-    ```
+    ``` 
 
-2. Click the **Run** button to see `P1001 Downtown Mixed-Use Tower`. The output will include a brief summary followed by a detailed table. If no data is found for the specified ID, a message will indicate this, helping you debug potential issues like an incorrect ID or empty database.
+2. Click the "Run" button to see James Smith’s profile. The output will include a brief summary (name and loan status) followed by a detailed table. If no data is found for the specified ID, a message will indicate this, helping you debug potential issues like an incorrect ID or empty database. The output will display a DataFrame containing the customer details for the selected customer ID.  
 
     ![Open Terminal](./images/lab4task3.png " ")
 
-If you completed Lab 1: Run the Demo earlier, this is what gets printed out when the construction procurement officer opens project `1001`.
 
-## Task 6: Create a function to generate procurement recommendations
+    If you completed Lab 1: Run the Demo earlier, this is what gets
+    printed out when the loan officer clicks on customer `1000`. You
+    just built it, well done!
 
-In a new cell, define a function `generate_procurement_recommendations` to generate supplier recommendations.
+## Task 6: Create a function to generate recommendations for the customer
 
-With procurement profiles in place, you will use OCI Generative AI to generate personalized procurement recommendations.
+In a new cell, define a function `generate_recommendations` to generate loan recommendations. 
+
+With customer profiles in place, you will use OCI Generative AI to generate personalized loan recommendations. 
 
 Here’s what we’ll do:
-
-- **Fetch Supplier Data**: Retrieve the available supplier options and combine them with the selected procurement data.
-- **Build a Prompt**: Construct a structured prompt that combines the project’s procurement profile with supplier options, instructing the LLM to evaluate and recommend suppliers (`APPROVE`, `REQUEST INFO`, `DENY`) based solely on this data.
-- **Use OCI Generative AI**: Send the prompt to the `meta.llama-3.2-90b-vision-instruct` model via OCI’s inference client.
-- **Format the Output**: Display the recommendations with structured sections covering evaluation, top supplier options, and explanations.
+- **Fetch Mock Loan Data**: Retrieve all mock loan data and combine them with customer data.
+- **Build a Prompt**: Construct a structured prompt that combines the customer’s profile with loan requests instructing the LLM to evaluate and recommend a loan (APPROVE, REQUEST INFO, DENY) based solely on this data.
+- **Use OCI Generative AI**: Send the prompt to the <mark>**meta.llama-3.2-90b-vision-instruct**</mark> model via OCI’s inference client, which will process the input and generate a response.
+- **Format the Output**: Display the recommendations with styled headers and lists, covering evaluation, top picks, and explanations—making it easy to read and understand.
 
 1. Copy and paste the code in a new cell:
 
     ```python
     <copy>
-    # Fetch supplier options
-cursor.execute("SELECT supplier_option_id, supplier_name, trade_specialty, experience_summary, compliance_status, on_time_delivery_rate, delivery_window_weeks, capacity_status, project_fit, recommendation_status FROM supplier_option_catalog")
-df_supplier_options = pd.DataFrame(cursor.fetchall(), columns=["SUPPLIER_OPTION_ID", "SUPPLIER_NAME", "TRADE_SPECIALTY", "EXPERIENCE_SUMMARY", "COMPLIANCE_STATUS", "ON_TIME_DELIVERY_RATE", "DELIVERY_WINDOW_WEEKS", "CAPACITY_STATUS", "PROJECT_FIT", "RECOMMENDATION_STATUS"])
+    # Fetch Mock Loan Data
+cursor.execute("SELECT loan_id, loan_provider_name, loan_type, interest_rate, origination_fee, time_to_close, credit_score, debt_to_income_ratio, income, down_payment_percent, is_first_time_home_buyer FROM MOCK_LOAN_DATA")
+df_mock_loans = pd.DataFrame(cursor.fetchall(), columns=["LOAN_ID", "LOAN_PROVIDER_NAME", "LOAN_TYPE", "INTEREST_RATE", "ORIGINATION_FEE", "TIME_TO_CLOSE", "CREDIT_SCORE", "DEBT_TO_INCOME_RATIO", "INCOME", "DOWN_PAYMENT_PERCENT", "IS_FIRST_TIME_HOME_BUYER"])
 
 # Generate Recommendations
-def generate_procurement_recommendations(project_id, procurement_json, df_supplier_options):
-        available_suppliers_text = "\n".join([
-            f"{supplier['SUPPLIER_OPTION_ID']}: {supplier['SUPPLIER_NAME']} | {supplier['TRADE_SPECIALTY']} | "
-            f"Compliance: {supplier['COMPLIANCE_STATUS']} | On-Time Delivery: {supplier['ON_TIME_DELIVERY_RATE']} | "
-            f"Delivery Window: {supplier['DELIVERY_WINDOW_WEEKS']} weeks | Capacity: {supplier['CAPACITY_STATUS']}"
-            for supplier in df_supplier_options.to_dict(orient='records')
-        ])
-        procurement_profile_text = "\n".join([
-            f"- {key.replace('_', ' ').title()}: {value}"
-            for key, value in procurement_json.items()
-            if key not in ["embedding_vector", "ai_response_vector", "chunk_vector", "supplierRecommendations"]
-        ])
+def generate_recommendations(customer_id, customer_json, df_mock_loans):
+        loan_app = customer_json.get("loanApplications", [{}])[0]
+        available_loans_text = "\n".join([f"{loan['LOAN_ID']}: {loan['LOAN_TYPE']} | {loan['INTEREST_RATE']}% interest | Credit Score: {loan['CREDIT_SCORE']} | DTI: {loan['DEBT_TO_INCOME_RATIO']}" for loan in df_mock_loans.to_dict(orient='records')])
+        customer_profile_text = "\n".join([f"- {key.replace('_', ' ').title()}: {value}" for key, value in {**customer_json, **loan_app}.items() if key not in ["embedding_vector", "ai_response_vector", "chunk_vector"]])
 
-        prompt = f"""<s>[INST] <<SYS>>You are a Construction Procurement AI. Use only the provided context to evaluate the procurement and recommend the best supplier next steps. Choose only from APPROVE, REQUEST INFO, or DENY. Format results as plain text with numbered sections (1. Comprehensive Procurement Evaluation, 2. Top 3 Supplier Recommendations, 3. Recommendation Explanations, 4. Final Suggestion). Use newlines between sections.</SYS>> [/INST]
-        [INST]Available Supplier Options:\n{available_suppliers_text}\nProcurement Profile:\n{procurement_profile_text}\nTasks:\n1. Comprehensive Procurement Evaluation\n2. Top 3 Supplier Recommendations\n3. Recommendation Explanations\n4. Final Suggestion</INST>"""
+        prompt = f"""<s>[INST] <<SYS>>You are a Loan Approver AI. Use only the provided context to evaluate the applicant’s profile and recommend loans. Format results as plain text with numbered sections (1. Comprehensive Evaluation, 2. Top 3 Loan Recommendations, 3. Recommendations Explanations, 4. Final Suggestion). Use newlines between sections.</SYS>> [/INST]
+        [INST]Available Loan Options:\n{available_loans_text}\nApplicant's Full Profile:\n{customer_profile_text}\nTasks:\n1. Comprehensive Evaluation\n2. Top 3 Loan Recommendations\n3. Recommendations Explanations\n4. Final Suggestion</INST>"""
 
         print("Generating AI response...")
         print(" ")
-
-        genai_client = oci.generative_ai_inference.GenerativeAiInferenceClient(
-            config=oci.config.from_file(os.getenv("OCI_CONFIG_PATH", "~/.oci/config")),
-            service_endpoint=os.getenv("ENDPOINT")
-        )
+        
+        genai_client = oci.generative_ai_inference.GenerativeAiInferenceClient(config=oci.config.from_file(os.getenv("OCI_CONFIG_PATH", "~/.oci/config")), service_endpoint=os.getenv("ENDPOINT"))
 
         chat_detail = oci.generative_ai_inference.models.ChatDetails(
             compartment_id=os.getenv("COMPARTMENT_OCID"),
-            chat_request=oci.generative_ai_inference.models.GenericChatRequest(
-                messages=[oci.generative_ai_inference.models.UserMessage(
-                    content=[oci.generative_ai_inference.models.TextContent(text=prompt)]
-                )],
-                temperature=0.0,
-                top_p=1.00
-            ),
-            serving_mode=oci.generative_ai_inference.models.OnDemandServingMode(
-                model_id="meta.llama-3.2-90b-vision-instruct"
-            )
+            chat_request=oci.generative_ai_inference.models.GenericChatRequest(messages=[oci.generative_ai_inference.models.UserMessage(content=[oci.generative_ai_inference.models.TextContent(text=prompt)])], temperature=0.0, top_p=1.00),
+            serving_mode=oci.generative_ai_inference.models.OnDemandServingMode(model_id="meta.llama-3.2-90b-vision-instruct") #here is where we are calling our llm
         )
         chat_response = genai_client.chat(chat_detail)
         recommendations = chat_response.data.chat_response.choices[0].message.content[0].text
 
         return recommendations
 
-recommendations = generate_procurement_recommendations(selected_project_id, procurement_json, df_supplier_options)
-print(recommendations)
+    recommendations = generate_recommendations(selected_customer_id, customer_json, df_mock_loans)
+    print(recommendations)
     </copy>
     ```
 
-2. Click the **Run** button to execute the code. Note that this will take time to run. Be patient while the LLM evaluates the procurement and returns its recommendations.
+2. Click the "Run" button to execute the code. Note that this will take time to run. Be patient, you will get the recommendations from the LLM shortly.
 
     ![Run task 4](./images/lab4task4.png " ")
 
-3. Review the output. In the demo, this is where you selected the **Navigate To Project Decisions** button as the construction procurement officer.
+3. Review the output. In the demo, this is where you selected the "Navigate to Decisions" button as the Approval Officer. You just used AI to get recommendations for the approval officer which would have taken them hours to do, congratulations!
 
-    >*Note:* Your result may be different due to the non-deterministic nature of generative AI.
+    >*Note:* Your result may be different due to non-deterministic character of generative AI.
 
     ![ai recommendation](./images/task4recommendations.png " ")
 
-## Task 7: Chunk & Store the Recommendations
+## Task 7: Chunk & Store the Recommendations 
 
-In this section we will chunk and store the recommendations.
+In this section we will be chunking and storing the recommendations.
 
-- We delete prior chunks for this project.
+- We delete prior chunks for this customer.
 - We use `VECTOR_CHUNKS` to insert the chunks.
-- The chunks are inserted into `PROCUREMENT_RECOMMENDATION_CHUNK` with unique `CHUNK_ID` = (`size + chunk_offset`).
+- The chunks will be inserted into `LOAN_CHUNK` with unique `CHUNK_ID` = (`size + chunk_offset`).
 - We display a data frame summary to show the chunks.
 
 1. Copy the following code and run it in a new cell:
 
     ```python
     <copy>
-    # Clean any prior chunks for this project
-cursor.execute("DELETE FROM PROCUREMENT_RECOMMENDATION_CHUNK WHERE PROJECT_ID = :project_id", {'project_id': selected_project_id})
+    # Clean any prior chunks for this customer
+cursor.execute("DELETE FROM LOAN_CHUNK WHERE CUSTOMER_ID = :cust_id", {'cust_id': selected_customer_id})
 connection.commit()
 
-chunk_sizes = [50]
+# Choose your chunk sizes (add more like 200, 500 if you want)
+chunk_sizes = [50]  # e.g., [50, 200, 500]
 
+# Insert chunks using VECTOR_CHUNKS. Make CHUNK_ID unique by (size  + chunk_offset).
 for size in chunk_sizes:
         insert_sql = f"""
-            INSERT INTO PROCUREMENT_RECOMMENDATION_CHUNK (PROJECT_ID, CHUNK_ID, CHUNK_TEXT)
-            SELECT :project_id,
+            INSERT INTO LOAN_CHUNK (CUSTOMER_ID, CHUNK_ID, CHUNK_TEXT)
+            SELECT :cust_id,
                 :chunk_size + vc.chunk_offset,
                 vc.chunk_text
             FROM (SELECT :rec_text AS txt FROM dual) s,
@@ -273,17 +265,19 @@ for size in chunk_sizes:
         """
         cursor.execute(
             insert_sql,
-            {'project_id': selected_project_id, 'chunk_size': size, 'rec_text': recommendations}
+            {'cust_id': selected_customer_id, 'chunk_size': size, 'rec_text': recommendations}
         )
 
+# Fetch chunks for preview
 cursor.execute("""
     SELECT CHUNK_ID, CHUNK_TEXT
-      FROM PROCUREMENT_RECOMMENDATION_CHUNK
-     WHERE PROJECT_ID = :project_id
+      FROM LOAN_CHUNK
+     WHERE CUSTOMER_ID = :cust_id
   ORDER BY CHUNK_ID
-""", {'project_id': selected_project_id})
+""", {'cust_id': selected_customer_id})
 rows = cursor.fetchall()
 
+# Build a compact dataframe
 def _lob_to_str(v): return v.read() if isinstance(v, oracledb.LOB) else v
 
 items = []
@@ -296,9 +290,9 @@ for cid, ctext in rows:
             "Preview": (txt[:160] + "…") if len(txt) > 160 else txt
         })
 
-df_chunks = pd.DataFrame(items).sort_values("CHUNK_ID")
-connection.commit()
-print(f"✅ Task 7 complete: recommendation chunked for project {selected_project_id} (sizes: {chunk_sizes}).")
+    df_chunks = pd.DataFrame(items).sort_values("CHUNK_ID")
+    connection.commit()
+print(f"✅ Task 7 complete: recommendation chunked for customer {selected_customer_id} (sizes: {chunk_sizes}).")
 display(df_chunks)
     </copy>
     ```
@@ -307,39 +301,41 @@ display(df_chunks)
 
     ![Run task 7](./images/task5.png " ")
 
-3. Review the output to see the chunked procurement recommendations.
+3. Review the output to see the top recommendations.
 
     ![Run task 7](./images/task7recs.png " ")
 
-## Task 8: Create embeddings - Use Oracle AI Database to create vector data
+## Task 8: Create a function to create embeddings - Use Oracle AI Database to create vector data 
 
-To handle follow-up questions, you will enhance the system with an AI Guru powered by Oracle AI Database’s Vector Search and Retrieval-Augmented Generation (RAG). The AI Guru will be able to answer questions about the procurement and provide recommendations based on the data.
+To handle follow-up questions, you will enhance the system with an AI Guru powered by Oracle AI Database’s Vector Search and Retrieval-Augmented Generation (RAG). The AI Guru will be able to answer questions about the loan application and provide recommendations based on the data.
 
-Before answering questions, we need to prepare the data by vectorizing the recommendations. This step:
+Before answering questions, we need to prepare the data by vectoring the recommendations. This step:
 
-- **Stores Recommendations**: Uses the recommendation text from the previous cell.
-- **Generates Embeddings**: Uses `dbms_vector_chain.utl_to_embedding` to create vectors directly in the database.
-- **Stores Embeddings**: Inserts the generated embedding vector into `PROCUREMENT_RECOMMENDATION_CHUNK`.
+   - **Stores Recommendations**: Inserts the full recommendation text (from previous cell) as a single chunk if not already present.
+
+   - **Generates Embeddings**: This is a new feature in Oracle AI Database that allows you to create embeddings directly within the database, eliminating the need for external tools or APIs. The `dbms_vector_chain.utl_to_embedding` function takes the recommendation text as input and returns an embedding vector.
+
+   - **Stores Embeddings**: Inserts the generated embedding vector into a table called `LOAN_CHUNKS`.
 
 1. Run and review the code in a new cell:
 
     ```python
     <copy>
-    # Create embeddings for procurement recommendation chunks
+    # Create Embeddings for Loan Chunks ----
 cursor.execute("""
-    UPDATE PROCUREMENT_RECOMMENDATION_CHUNK
+    UPDATE LOAN_CHUNK
        SET CHUNK_VECTOR = dbms_vector_chain.utl_to_embedding(
            CHUNK_TEXT,
            JSON('{"provider":"database","model":"DEMO_MODEL","dimensions":384}')
        )
-     WHERE PROJECT_ID = :project_id
-""", {'project_id': selected_project_id})
+     WHERE CUSTOMER_ID = :cust_id
+""", {'cust_id': selected_customer_id})
 connection.commit()
-print("✅ Task 8 complete: embedded vectors for PROCUREMENT_RECOMMENDATION_CHUNK rows.")
+print("✅ Task 8 complete: embedded vectors for LOAN_CHUNK rows.")
     </copy>
     ```
 
-2. Click the **Run** button to execute the code and review the output.
+2. Click the "Run" button to execute the code and review the output.
 
     ![vector](./images/task8.png " ")
 
@@ -347,19 +343,19 @@ print("✅ Task 8 complete: embedded vectors for PROCUREMENT_RECOMMENDATION_CHUN
 
 Now that the recommendations are vectorized, we can process a user’s question:
 
-```Which supplier option best fits the Downtown Mixed-Use Tower procurement if we prioritize strong compliance and delivery reliability?```
+```Can we recommend any other loans to James?```
 
 This step:
 
-- **Vectorizes the question**: Embeds the question using `DEMO_MODEL` via `dbms_vector_chain.utl_to_embedding`.
-- **Performs AI Vector Search**: Retrieves the most relevant recommendation text from `PROCUREMENT_RECOMMENDATION_CHUNK`.
-- **Uses RAG**: Combines the procurement profile, supplier options, and retrieved recommendation context.
+   - **Vectorizes the question**: Embeds the question using `DEMO_MODEL` via `dbms_vector_chain.utl_to_embedding`.
+   - **Performs AI Vector Search**: Retrieve the relevant recommendation text from `LOAN_CHUNKS` table. Then find the most relevant recommendations using similarity search.
+   - **Use RAG**: Combines the customer profile, policy rules using the retrieved recommendation context.
 
 1. Copy the code block below to implement RAG:
 
     ```python
     <copy>
-question = "Which supplier option best fits the Downtown Mixed-Use Tower procurement if we prioritize strong compliance and delivery reliability?"
+question = "Can we recommend any other loans to James?"
 
 def vectorize_question(q):
         cursor.execute("""
@@ -375,42 +371,47 @@ print("Processing your question using AI Vector Search across chunked recommenda
 try:
         q_vec = vectorize_question(question)
 
+        # Retrieve top recommendation chunks (across all sizes) for this customer
         cursor.execute("""
             SELECT CHUNK_ID, CHUNK_TEXT
-            FROM PROCUREMENT_RECOMMENDATION_CHUNK
-            WHERE PROJECT_ID = :project_id
+            FROM LOAN_CHUNK
+            WHERE CUSTOMER_ID = :cust_id
             AND CHUNK_VECTOR IS NOT NULL
             ORDER BY VECTOR_DISTANCE(CHUNK_VECTOR, :qv, COSINE)
             FETCH FIRST 4 ROWS ONLY
-        """, {'project_id': selected_project_id, 'qv': q_vec})
+        """, {'cust_id': selected_customer_id, 'qv': q_vec})
         retrieved = [
             (r[0], r[1].read() if isinstance(r[1], oracledb.LOB) else r[1])
             for r in cursor.fetchall()
         ]
 
         if not retrieved:
+            # Fallback to full text as one chunk
             retrieved = [(0, recommendations)]
 
-        cleaned = [re.sub(r"[^\\w\\s\\d.,\\-'\"]", " ", t).strip() for _, t in retrieved]
+        # Prepare clean context for the LLM
+        cleaned = [re.sub(r'[^\w\s\d.,\-\'"]', ' ', t).strip() for _, t in retrieved]
         docs_as_one_string = "\n=========\n".join(cleaned) + "\n=========\n"
 
-        available_suppliers_text = "\n".join([
-            f"{supplier['SUPPLIER_OPTION_ID']}: {supplier['SUPPLIER_NAME']} | {supplier['TRADE_SPECIALTY']} | "
-            f"Compliance: {supplier['COMPLIANCE_STATUS']} | On-Time Delivery: {supplier['ON_TIME_DELIVERY_RATE']} | "
-            f"Delivery Window: {supplier['DELIVERY_WINDOW_WEEKS']} weeks | Capacity: {supplier['CAPACITY_STATUS']}"
-            for supplier in df_supplier_options.to_dict(orient='records')
-        ])
-        procurement_profile_text = "\n".join([
-            f"- {k.replace('_',' ').title()}: {v}"
-            for k, v in procurement_json.items()
-            if k not in ["embedding_vector","ai_response_vector","chunk_vector","supplierRecommendations"]
-        ])
+        # Rebuild available loans + customer profile
+        available_loans_text = "\n".join(
+            [f"{loan['LOAN_ID']}: {loan['LOAN_TYPE']} | {loan['INTEREST_RATE']}% interest | "
+            f"Credit Score: {loan['CREDIT_SCORE']} | DTI: {loan['DEBT_TO_INCOME_RATIO']} | "
+            f"Origination Fee: ${loan['ORIGINATION_FEE']} | Time to Close: {loan['TIME_TO_CLOSE']} days"
+            for loan in df_mock_loans.to_dict(orient='records')]
+        )
+        loan_app = customer_json.get("loanApplications", [{}])[0]
+        customer_profile_text = "\n".join(
+            [f"- {k.replace('_',' ').title()}: {v}"
+            for k, v in {**customer_json, **loan_app}.items()
+            if k not in ["embedding_vector","ai_response_vector","chunk_vector"]]
+        )
 
         rag_prompt = f"""\
 <s>[INST] <<SYS>>
-You are AI Procurement Guru. Use only the provided context to answer. Do not mention sources outside of the provided context.
+You are AI Loan Guru. Use only the provided context to answer. Do not mention sources outside of the provided context. 
 Do NOT provide warnings, disclaimers, or exceed the specified response length.
-Keep under 300 words. Be specific and actionable.
+Keep under 300 words. Be specific and actionable. Have the ability to respond in Spanish, French, Italian, German, and Portuguese if asked.
 <</SYS>> [/INST]
 [INST]
 Question: "{question}"
@@ -418,15 +419,15 @@ Question: "{question}"
 # Context (top chunks from prior AI recommendations):
 {docs_as_one_string}
 
-# Available Supplier Options:
-{available_suppliers_text}
+# Available Loan Options:
+{available_loans_text}
 
-# Procurement Profile:
-{procurement_profile_text}
+# Applicant Profile:
+{customer_profile_text}
 
 Tasks:
 1) Provide a direct answer to the question.
-2) Briefly justify based on the procurement profile and available supplier options.
+2) Briefly justify based on profile + loan options.
 [/INST]"""
 
         print("Generating AI response...")
@@ -450,11 +451,12 @@ Tasks:
         )
         chat_response = genai_client.chat(chat_detail)
         ai_response = chat_response.data.chat_response.choices[0].message.content[0].text
-        ai_response = re.sub(r"[^\\w\\s\\d.,\\-'\"]", " ", ai_response)
+        ai_response = re.sub(r'[^\w\s\d.,\-\'"]', ' ', ai_response)
 
-        print("\n🤖 AI Procurement Guru Response:")
+        print("\n🤖 AI Loan Guru Response:")
         print(ai_response)
 
+        # Print which chunks were retrieved (for transparency/debug)
         print("\n📑 Retrieved Chunks Used in Response:")
         for cid, text in retrieved:
             preview = text[:140].replace("\n", " ") + ("..." if len(text) > 140 else "")
@@ -465,13 +467,13 @@ except Exception as e:
     </copy>
     ```
 
-2. Click the **Run** button to execute the code.
+2. Click the "Run" button to execute the code.
 
     ![ask question](./images/task7.png " ")
 
 3. Review the result.
 
-    >*Note:* Your result may be different due to the non-deterministic nature of generative AI.
+    >*Note:* Your result may be different due to non-deterministic character of generative AI.
 
     ![rag](./images/task7results.png " ")
 
@@ -482,12 +484,12 @@ Congratulations! You implemented a RAG process in Oracle AI Database using Pytho
 To summarize:
 
 * You created a function to connect to Oracle AI Database using the Oracle Python driver `oracledb`.
-* You created a function to retrieve procurement data.
-* You created a function to connect to OCI Generative AI and create procurement recommendations.
-* You created embeddings of procurement recommendation data using Oracle AI Database.
+* You created a function to retrieve customer data.
+* You created a function to connect to OCI Generative AI and create a first recommendation.
+* You created a function to create embeddings of the customer data using Oracle AI Database.
 * And finally, you implemented a RAG process in Oracle AI Database using Python.
 
-Congratulations, you completed the lab.
+Congratulations, you completed the lab!
 
 You may now proceed to the next lab.
 
@@ -498,4 +500,4 @@ You may now proceed to the next lab.
 
 ## Acknowledgements
 * **Authors** - Francis Regalado
-* **Last Updated By/Date** - Taylor Zheng, Uma Kumar, Deion Locklear, Daniet Hart, July 2026
+* **Last Updated By/Date** - Uma Kumar, December 2025
