@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This lab will show you how to set up and run the SeerStructures construction project review application on OCI. This guide walks you through the complete setup process, including provisioning the required services and installing the dependencies needed to launch and run the application on OCI.
+This lab will show you how to set up and run the Seer Construction procurement application on OCI. This guide walks you through the complete setup process, including provisioning the required services and installing the dependencies needed to launch and run the application on OCI.
 
 The document is structured to help you meet all prerequisites, configure both the Autonomous AI Database and the OCI Generative AI Service, and troubleshoot any issues that may arise during setup. Whether you're new to Oracle Cloud Infrastructure or simply deploying for development and testing, this step-by-step guide will ensure a smooth setup experience.
 
@@ -462,7 +462,7 @@ Next you'll create an environment file for the application.
     ````
         <copy>
         [Unit]
-        Description=Streamlit Construction Review App
+        Description=Streamlit Construction Procurement App
         After=network.target
 
         [Service]
@@ -484,7 +484,7 @@ Next you'll create an environment file for the application.
     ````
         <copy>
         [Unit]
-        Description=Streamlit Construction Review App
+        Description=Streamlit Construction Procurement App
         After=network.target
 
         [Service]
@@ -619,7 +619,7 @@ Streamlit is up and running. Press Control + C on your keyboard to escape.
 
     ![Application start screen](./images/application-start-screen.png " ")
 
-Congratulations, you have built and configured the construction project review application using Oracle Cloud Infrastructure, Oracle Autonomous AI Database, and Oracle GenAI.
+Congratulations, you have built and configured the construction procurement application using Oracle Cloud Infrastructure, Oracle Autonomous AI Database, and Oracle GenAI.
 
 
 ## Troubleshooting

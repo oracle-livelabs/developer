@@ -1,95 +1,66 @@
-/* Construction engineering starter schema for the AI Experience workshop */
-/* NOTE: Keep statements in this file contiguous when running them in SQL tools. */
+/* Construction procurement starter schema for the AI Experience workshop */
 
-drop view if exists project_profiles_dv;
-drop table if exists project_recommendation_chunk;
-drop table if exists project_option_catalog;
-drop table if exists construction_project_requests;
-drop table if exists project_sponsors;
+drop view if exists procurement_profiles_dv;
+drop table if exists procurement_recommendation_chunk;
+drop table if exists supplier_option_catalog;
+drop table if exists construction_procurements;
 
-create table if not exists project_sponsors (
-    project_id           varchar2(30) primary key,
-    sponsor_first_name   varchar2(100),
-    sponsor_last_name    varchar2(100),
-    city                 varchar2(100),
-    state                varchar2(100),
-    zip_code             varchar2(20),
-    annual_revenue       number(12,2)
+create table if not exists construction_procurements (
+    project_id               varchar2(30) primary key,
+    project_code             varchar2(30),
+    project_name             varchar2(200),
+    location                 varchar2(200),
+    project_phase            varchar2(100),
+    required_trade           varchar2(100),
+    procurement_urgency      varchar2(50),
+    budget_range             varchar2(50),
+    risk_level               varchar2(50),
+    project_status           varchar2(40)
 );
 
-create table if not exists construction_project_requests (
-    request_id                 varchar2(30) primary key,
-    project_id                 varchar2(30) not null references project_sponsors(project_id),
-    project_name               varchar2(200),
-    project_type               varchar2(100),
-    site_risk_score            number(5,2),
-    requested_project_budget   number(12,2),
-    current_committed_spend    number(12,2),
-    estimated_duration_days    number,
-    project_status             varchar2(40),
-    permit_complexity          varchar2(40)
+create table if not exists supplier_option_catalog (
+    supplier_option_id       number primary key,
+    supplier_name            varchar2(200),
+    trade_specialty          varchar2(120),
+    experience_summary       varchar2(400),
+    compliance_status        varchar2(120),
+    on_time_delivery_rate    varchar2(50),
+    delivery_window_weeks    number,
+    capacity_status          varchar2(100),
+    project_fit              varchar2(200),
+    recommendation_status    varchar2(40)
 );
 
-create table if not exists project_option_catalog (
-    option_id                            number primary key,
-    provider_name                        varchar2(200),
-    project_package                      varchar2(120),
-    financing_rate                       number(5,2),
-    mobilization_fee                     number(12,2),
-    time_to_start                        number,
-    min_site_risk_score                  number(5,2),
-    max_budget_to_revenue_ratio          number(6,2),
-    min_annual_revenue                   number(12,2),
-    required_site_prep_percent           number(5,2),
-    requires_government_coordination     varchar2(5)
-);
-
-create table if not exists project_recommendation_chunk (
+create table if not exists procurement_recommendation_chunk (
     project_id      varchar2(30) not null,
     chunk_id        number not null,
     chunk_text      clob,
     chunk_vector    vector(384, float32),
-    constraint project_recommendation_chunk_pk primary key (project_id, chunk_id)
+    constraint procurement_recommendation_chunk_pk primary key (project_id, chunk_id)
 );
 
-insert into project_sponsors (project_id, sponsor_first_name, sponsor_last_name, city, state, zip_code, annual_revenue) values
-('PROJ_1000', 'James', 'Smith', 'Dallas', 'Texas', '75001', 2500000),
-('PROJ_1001', 'James', 'Woods', 'Houston', 'Texas', '77001', 350000),
-('PROJ_1002', 'Alex', 'Anderson', 'Austin', 'Texas', '73301', 1200000);
+insert into construction_procurements (project_id, project_code, project_name, location, project_phase, required_trade, procurement_urgency, budget_range, risk_level, project_status) values
+('1001', 'P1001', 'Downtown Mixed-Use Tower', 'Chicago, IL', 'Structural Frame', 'Structural Steel', 'High', '$4.0-5.5M', 'Low Risk', 'Pending Review'),
+('1003', 'P1003', 'Harbor Seismic Retrofit', 'Long Beach, CA', 'Retrofit', 'Seismic Steel Retrofit', 'Critical', '$6.5-8.0M', 'High Risk', 'Pending Review'),
+('1004', 'P1004', 'North Campus Lab Expansion', 'Austin, TX', 'Procurement Planning', 'Mechanical + Lab Fit-Out', 'Medium', '$1.1-1.6M', 'Medium Risk', 'Pending Review');
 
-insert into construction_project_requests (request_id, project_id, project_name, project_type, site_risk_score, requested_project_budget, current_committed_spend, estimated_duration_days, project_status, permit_complexity) values
-('REQ_1000', 'PROJ_1000', 'North Yard Utility Expansion', 'Utility Upgrade', 780, 650000, 120000, 180, 'Pending Review', 'Medium'),
-('REQ_1001', 'PROJ_1001', 'Warehouse Retrofit Phase 2', 'Retrofit', 560, 950000, 310000, 240, 'Pending Review', 'High'),
-('REQ_1002', 'PROJ_1002', 'Municipal Streetscape Refresh', 'Civil Works', 690, 420000, 90000, 150, 'Pending Review', 'Medium');
+insert into supplier_option_catalog (supplier_option_id, supplier_name, trade_specialty, experience_summary, compliance_status, on_time_delivery_rate, delivery_window_weeks, capacity_status, project_fit, recommendation_status) values
+(7001, 'Atlas Structural Fabrication', 'Structural Steel', 'Strong mid-rise steel frame project experience', 'Current AISC and AWS documentation', '96%', 6, 'Confirmed', 'High fit for six-week downtown tower delivery', 'Recommended'),
+(7002, 'Metro Build Systems', 'Structural Steel', 'Broad tower podium and transfer deck experience', 'AISC current, AWS renewal pending', '92%', 8, 'Limited', 'Good fit but tighter capacity window', 'Review'),
+(7003, 'Coastal Retrofit Metals', 'Seismic Retrofit Steel', 'Extensive retrofit portfolio in coastal zones', 'Compliance gaps under review', '88%', 10, 'Conditional', 'Technically aligned but elevated risk profile', 'Denied'),
+(7004, 'Northline MEP Supply', 'Mechanical + Lab Fit-Out', 'University and life-science lab package experience', 'Current QA and safety files', '94%', 7, 'Confirmed', 'Good fit for updated lab expansion budget', 'Recommended');
 
-insert into project_option_catalog (option_id, provider_name, project_package, financing_rate, mobilization_fee, time_to_start, min_site_risk_score, max_budget_to_revenue_ratio, min_annual_revenue, required_site_prep_percent, requires_government_coordination) values
-(11, 'Atlas Build Partners', 'Fast-Track Site Package', 4.20, 12000, 14, 700, 0.35, 1000000, 15, 'NO'),
-(19, 'Cornerstone Civil', 'Permit-Ready Infrastructure Package', 4.90, 18000, 21, 640, 0.40, 850000, 20, 'YES'),
-(26, 'Summit Structural Group', 'Veteran Contractor Renewal Package', 4.10, 9000, 10, 760, 0.30, 1500000, 10, 'NO'),
-(31, 'Urban Grid Works', 'Deferred Site Prep Package', 5.40, 7500, 28, 580, 0.45, 300000, 5, 'YES');
-
-create or replace json relational duality view project_profiles_dv as
-    project_sponsors @insert @update @delete
+create or replace json relational duality view procurement_profiles_dv as
+    construction_procurements @insert @update @delete
     {
         _id : project_id,
-        sponsorFirstName : sponsor_first_name,
-        sponsorLastName : sponsor_last_name,
-        city,
-        state,
-        zipCode : zip_code,
-        annualRevenue : annual_revenue,
-        projectRequests : construction_project_requests @insert @update @delete
-        [
-            {
-                requestId : request_id,
-                projectName : project_name,
-                projectType : project_type,
-                siteRiskScore : site_risk_score,
-                requestedProjectBudget : requested_project_budget,
-                currentCommittedSpend : current_committed_spend,
-                estimatedDurationDays : estimated_duration_days,
-                projectStatus : project_status,
-                permitComplexity : permit_complexity
-            }
-        ]
+        projectCode : project_code,
+        projectName : project_name,
+        location,
+        projectPhase : project_phase,
+        requiredTrade : required_trade,
+        procurementUrgency : procurement_urgency,
+        budgetRange : budget_range,
+        riskLevel : risk_level,
+        projectStatus : project_status
     };

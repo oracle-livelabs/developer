@@ -2,36 +2,36 @@
 
 ## About this Workshop
 
-**Data is the control center for modern construction engineering. Schedules, budgets, site documents, permits, and field observations all shape whether a project moves quickly or stalls under risk and rework.**
+Construction procurement runs on connected decisions. Project requirements, supplier qualifications, compliance documents, schedules, budgets, and risk signals all need to come together quickly if teams want to avoid delays and make confident award decisions.
 
-SeerGroup is a global conglomerate with multiple divisions. Across those divisions, teams face the same challenge: **critical project decisions take too long** because data is scattered across spreadsheets, forms, documents, and disconnected systems.
+SeerGroup is a global conglomerate with multiple divisions. Across those divisions, the challenge is the same: **critical decisions take too long** because data is scattered across spreadsheets, documents, forms, and disconnected systems.
 
-This workshop shows how SeerGroup addresses that problem with Oracle AI Database + OCI Generative AI. By **keeping project data in one place**, the team reduces brittle integrations and gives planners, engineers, and project managers a **single platform** for faster reviews, clearer recommendations, and better project outcomes.
+This workshop shows how Seer Construction addresses that problem with Oracle AI Database + OCI Generative AI. By keeping procurement data in one place, the team reduces brittle integrations and gives procurement officers, engineers, and managers a single platform for faster reviews, clearer supplier recommendations, and better project outcomes.
 
-You’ll see how SeerGroup’s teams can move from manual, fragmented workflows to AI-powered construction engineering applications, and you’ll build the same capabilities yourself in the labs that follow.
+You’ll see how Seer Construction moves from manual, fragmented procurement workflows to AI-powered applications, and you’ll build the same capabilities yourself in the labs that follow.
 
 ✅ **Start with the demo! (Lab 1)**
 
-Step into SeerGroup’s Construction Engineering division as a project reviewer. You’ll use an AI-powered construction project review application built on Oracle AI Database to:
+Step into Seer Construction’s Construction Engineering division as a construction procurement officer. You’ll use an AI-powered construction procurement app built on Oracle AI Database to:
 
-* Review project requests with AI Vector Search, Graph analytics, and RAG
-* See how Generative AI evaluates sponsor information, project scope, and delivery constraints against available project options
+* Review project procurements with AI Vector Search, Graph analytics, and RAG
+* See how Generative AI evaluates project requirements, risk, and supplier readiness against available supplier options
 * Approve, deny, or request more information with AI-generated guidance, risk factors, and decision summaries
-* Update project profiles using JSON Duality Views, ensuring sponsor and project details remain consistent
+* Update procurement profiles using JSON Duality Views so project data stays consistent
 
-This story shows how SeerStructures uses Oracle AI Database and OCI Generative AI to accelerate project reviews, reduce delivery risk, and improve stakeholder communication without moving data across fragile systems.
+This story shows how Seer Construction uses Oracle AI Database and OCI Generative AI to accelerate procurement review, reduce supplier risk, and improve decision quality without moving data across fragile systems.
 
 ✅ **What’s next (Labs 2–3)**
 
-After the demo, you’ll switch roles to developer. In the next labs you’ll connect to Oracle AI Database, shape data into JSON Duality Views, build a retrieval-augmented application, and extend it with reusable MCP tools. By the end, you’ll see how SeerGroup industries can move from siloed processes to intelligent, AI-driven applications on one platform.
+After the demo, you’ll switch roles to developer. In the next labs you’ll connect to Oracle AI Database, shape data into JSON Duality Views, build a retrieval-augmented application, and extend it with reusable MCP tools. By the end, you’ll see how SeerGroup teams can move from siloed procurement processes to intelligent, AI-driven applications on one platform.
 
 * **Lab 2 – Connect to your environment**
-Log in to the JupyterLab IDE where you’ll write Python and run your code. **Build the data foundation** by using Python with Oracle AI Database to create tables, shape them into JSON Duality Views, and interact with them using both SQL and MongoDB-style syntax. **Implement RAG** by constructing a working AI application that pulls project and site data, generates recommendations with OCI Generative AI, chunks and vectorizes the results, and answers follow-up questions with Vector Search + RAG.
+Log in to the JupyterLab IDE where you’ll write Python and run your code. Build the data foundation by using Python with Oracle AI Database to create tables, shape them into JSON Duality Views, and interact with them using both SQL and MongoDB-style syntax. Implement RAG by constructing a working AI application that pulls procurement and supplier data, generates recommendations with OCI Generative AI, chunks and vectorizes the results, and answers follow-up questions with Vector Search + RAG.
 
 * **Lab 3 – Extend with MCP tools**
-Wire Oracle AI Database and OCI Generative AI into reusable MCP tools. Call them from notebooks, chain them together into workflows, and even register your own tool for SeerGroup’s construction, retail, healthcare, or energy teams.
+Wire Oracle AI Database and OCI Generative AI into reusable MCP tools. Call them from notebooks, chain them together into workflows, and register tools that support SeerGroup’s construction, retail, healthcare, or energy teams.
 
-By the end, you’ll have a complete toolkit, from clean project data to live AI apps to composable tools, that shows how SeerGroup industries can turn operational data into intelligent applications.
+By the end, you’ll have a complete toolkit, from clean procurement data to live AI apps to composable tools, that shows how SeerGroup divisions can turn operational data into intelligent applications.
 
 **Objectives**
 
@@ -56,4 +56,4 @@ This lab assumes you have:
 ## Acknowledgements
 * **Authors** - Uma Kumar
 * **Contributors** - Linda Foinding
-* **Last Updated By/Date** - Uma Kumar, December 2025
+* **Last Updated By/Date** - Taylor Zheng, Uma Kumar, Deion Locklear, Daniet Hart, July 2026

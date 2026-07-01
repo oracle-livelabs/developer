@@ -3,17 +3,17 @@
 ## Introduction
 
 
-At Seer Holdings, developers are building a next-generation construction project review system that needs to combine enterprise-grade data governance with modern AI capabilities. But before GenAI or vector search can be applied, one thing must be true:
+At Seer Holdings, developers are building a next-generation construction procurement system that needs to combine enterprise-grade data governance with modern AI capabilities. But before GenAI or vector search can be applied, one thing must be true:
 
 👉 The data must be in the right shape — accessible, trustworthy, and programmable.
 
 In this lab, you’ll act as a developer on the Seer Holdings data team. Your job is to build the foundational logic that powers the application’s intelligence layer. That means:
 
-- Creating and querying relational tables that represent real project and site data using Python
+- Creating and querying relational tables that represent real procurement and supplier data using Python
 - Converting that data into **JSON documents** using **JSON Duality Views**
 - Using **MongoDB-style syntax** via Oracle’s Mongo API to interact with the same data — without needing to duplicate or move it
 
-These capabilities make Oracle AI Database a **developer-friendly**, **multi-model platform**. You’ll write less glue code, eliminate data movement, and stay focused on the real task: powering intelligent construction engineering workflows.
+These capabilities make Oracle AI Database a **developer-friendly**, **multi-model platform**. You’ll write less glue code, eliminate data movement, and stay focused on the real task: powering intelligent construction procurement workflows.
 
 > 💡 Everything you implement here becomes the data foundation for Retrieval-Augmented Generation (RAG) and AI Vector Search in upcoming labs.
 
@@ -486,11 +486,11 @@ The final step in our basic coding tour with Python and the Oracle AI Database i
 
 ## Conclusion
 
-As a developer at Seer Holdings, you've just built the foundation for a GenAI-powered construction project review system. We learned how to use Python and Oracle's Python driver `oracledb` to interact with Oracle AI Database's new features. You learned how to use the `cursor` object to execute SQL queries. Using the `cursor` object, you created a **JSON Duality View** and used JSON functions to query documents with SQL syntax. Then, you also learned how to connect to the database using `pymongo` and retrieve data from a table in the database using **MongoDB syntax**. You created functions to update the **JSON Duality View** and learned how those updates are also reflected in the underlying relational database tables.
+As a developer at Seer Holdings, you've just built the foundation for a GenAI-powered construction procurement system. We learned how to use Python and Oracle's Python driver `oracledb` to interact with Oracle AI Database's new features. You learned how to use the `cursor` object to execute SQL queries. Using the `cursor` object, you created a **JSON Duality View** and used JSON functions to query documents with SQL syntax. Then, you also learned how to connect to the database using `pymongo` and retrieve data from a table in the database using **MongoDB syntax**. You created functions to update the **JSON Duality View** and learned how those updates are also reflected in the underlying relational database tables.
 
 This architecture eliminates the need for duplicating data across platforms and simplifies how developers build AI-ready applications. Whether you're calling SQL, working with JSON, or speaking Mongo, you're always working with a single source of truth inside the Oracle AI Database.
 
-In the next lab, you'll build on this foundation to implement Retrieval-Augmented Generation (RAG), create vector embeddings, and generate personalized project recommendations with Oracle AI Database and OCI Generative AI.
+In the next lab, you'll build on this foundation to implement Retrieval-Augmented Generation (RAG), create vector embeddings, and generate personalized procurement recommendations with Oracle AI Database and OCI Generative AI.
 
 ## Acknowledgements
 * **Authors** - Linda Foinding
