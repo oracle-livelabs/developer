@@ -104,13 +104,13 @@ In this first example, you will use the application to approve a project with lo
 
     ![Approved List](./images/p1001-final-approved.png =50%x*)
 
-**Conclusion**
+    **Conclusion**
 
 Once you select and save one of the 3 supplier recommended by the AI: 
 
 ✅ The project's risk level status is updated.
 
-✅ A finalized PDF decision document is generated.  
+    ✅ A finalized PDF decision document is generated.
 
 ✅ The dashboard reflects the change in real-time — marking P1001 as Approved.
 
@@ -137,6 +137,7 @@ In this example, you will navigate the projects to review a project and deny the
 
     >⁉️ **What is the reason that the AI decided to deny this applicant?** ⁉️
 
+4. Expand **Interactive Graph: Project, Supplier Recommendation & Risk** to view the graph.
 
 4. Expand **Interactive Graph: Project, Supplier Recommendation & Risk** to view the graph.
 
@@ -176,9 +177,9 @@ In this example, you will navigate the projects to review a project and deny the
 
     ![Denied List](./images/p1003-denied.png =50%x*)
 
-**Conclusion**
+    **Conclusion**
 
-Congratulations, you have finished reviewing a customer with high financial risk! Proceed to the next task.
+    Congratulations, you have finished reviewing a customer with high financial risk! Proceed to the next task.
 
 ## Task 4: Demo - Update Customer Details
 
@@ -203,9 +204,9 @@ Lastly, let’s explore how the system uses JSON Duality Views to handle profile
     ![Project Profile Updated](./images/p1004-uploadedpdf2.png)
 
 
-**Conclusion**
+    Once the document is uploaded:
 
-Once the document is uploaded:
+    ✅ The system automatically detects the new budget data.
 
 ✅ The system automatically detects the new budget data.
 
@@ -226,7 +227,7 @@ In conclusion our Construction Procurement App was able to leverage Oracle AI Da
 ✅ Empower construction procurement officers with actionable insights through Operational Property Graphs 
 
 By combining these advanced tools, the application enables faster, smarter decisions and delivers clear guidance on how customers can improve their eligibility.
- 
+
 **Next:** How about learning how the application was implemented in Python? Continue with the next labs and start developing!
 
 ## Learn More
