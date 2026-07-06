@@ -85,7 +85,7 @@ In this first example, you will use the application to approve a project with lo
 
 8. Click the **Download Decision PDF** button.
 
-    ![P1001 Download Recommendation](./images/p1001-pdfv2.png =50%x*)
+    ![P1001 Download Recommendation](./images/p1001-pdf.png =50%x*)
 
 9. Click **Download PDF**
 
@@ -94,7 +94,7 @@ In this first example, you will use the application to approve a project with lo
 
 10. Display the message the supplier would see by opening the downloaded PDF.
 
-    ![P1001 PDF](./images/p1001-openedpdf.png =50%x*)
+    ![P1001 PDF](./images/p1001-pdfv2.png =50%x*)
 
 11. Click the **Return to Dashboard** button to navigate back to the Dashboard.
 
@@ -110,7 +110,7 @@ Once you select and save one of the 3 supplier recommended by the AI:
 
 ✅ The project's risk level status is updated.
 
-    ✅ A finalized PDF decision document is generated.
+✅ A finalized PDF decision document is generated.
 
 ✅ The dashboard reflects the change in real-time — marking P1001 as Approved.
 
@@ -136,8 +136,6 @@ In this example, you will navigate the projects to review a project and deny the
     ![P1003 Decision](./images/p1003-projectdecisions.png =50%x*)
 
     >⁉️ **What is the reason that the AI decided to deny this applicant?** ⁉️
-
-4. Expand **Interactive Graph: Project, Supplier Recommendation & Risk** to view the graph.
 
 4. Expand **Interactive Graph: Project, Supplier Recommendation & Risk** to view the graph.
 
@@ -206,25 +204,25 @@ Lastly, let’s explore how the system uses JSON Duality Views to handle profile
 
     Once the document is uploaded:
 
-    ✅ The system automatically detects the new budget data.
+      ✅ The system automatically detects the new budget data.
 
-✅ The system automatically detects the new budget data.
+      ✅ The system automatically detects the new budget data.
 
-✅ Then their project will be updated from $1.1-1.6M to $3.0-3.5M.
+      ✅ Then their project will be updated from $1.1-1.6M to $3.0-3.5M.
 
-✅ And thanks to JSON Transform and JSON Duality Views, only the relevant field is modified — leaving the rest of the profile UNTOUCHED.
+      ✅ And thanks to JSON Transform and JSON Duality Views, only the relevant field is modified — leaving the rest of the profile UNTOUCHED.
 
 ## Summary
 
 In conclusion our Construction Procurement App was able to leverage Oracle AI Database technologies such as **AI Vector Search, Property Graph, and JSON Duality Views** to:
 
-✅ Automate profile evaluations
+  ✅ Automate profile evaluations
 
-✅ Provide AI-driven procurement recommendations by using an RAG model powered by a Oracle AI Database's AI Vector Search and OCI Generative AI service
+  ✅ Provide AI-driven procurement recommendations by using an RAG model powered by a Oracle AI Database's AI Vector Search and OCI Generative AI service
 
-✅ Enable seamless profile updates with JSON Duality Views
+  ✅ Enable seamless profile updates with JSON Duality Views
 
-✅ Empower construction procurement officers with actionable insights through Operational Property Graphs 
+  ✅ Empower construction procurement officers with actionable insights through Operational Property Graphs 
 
 By combining these advanced tools, the application enables faster, smarter decisions and delivers clear guidance on how customers can improve their eligibility.
 
