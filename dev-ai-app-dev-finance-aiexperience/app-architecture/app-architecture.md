@@ -6,6 +6,16 @@ In this lab, you will explore the architecture behind the workshop that supports
 
 Estimated Lab Time: 15 minutes
 
+### Objectives
+
+In this lab, you will:
+
+* Review the OCI architecture that supports the SeerEquities loan
+  application
+* Understand how JSON Duality Views, AI Vector Search, and Property
+  Graph support the loan approval workflow
+* Connect the workshop labs to the application design used in the demo
+
 ## Physical Architecture
 
 The SeerEquities loan application runs in an **Oracle Cloud Infrastructure (OCI)** Region, with its application layer in a public subnet inside a **Virtual Cloud Network (VCN)**.

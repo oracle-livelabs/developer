@@ -10,6 +10,8 @@ This workshop shows how SeerGroup tackles that problem with Oracle AI Database  
 
 You’ll see how SeerGroup’s teams can move from manual, fragmented workflows to AI-powered applications—and you’ll build the same capabilities yourself in the labs that follow.
 
+Estimated Workshop Time: 90 minutes
+
 ✅ **Start with the demo! (Lab 1)**
 
 Step into SeerGroup’s Finance division as a Loan Officer. You’ll use an AI-powered loan approval app built on Oracle AI Database  to:
@@ -36,7 +38,7 @@ Wire Oracle AI Database and OCI Generative AI into reusable MCP tools. Call them
 
 By the end, you’ll have a complete toolkit—from clean data to live AI apps to composable tools—that shows how SeerGroup industries can turn their data into intelligent applications.
 
-**Objectives**
+### Objectives
 
 * Build and query data with Python + Oracle AI Database 
 
@@ -48,7 +50,7 @@ By the end, you’ll have a complete toolkit—from clean data to live AI apps t
 
 * Deliver industry-grade solutions for SeerGroup’s divisions
 
-**Prerequisites**
+### Prerequisites
 
 This lab assumes you have:
 
