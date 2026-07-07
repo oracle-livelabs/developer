@@ -701,7 +701,7 @@ Tasks:
 1. Answer the question directly.
 2. Justify the answer using fit, risk, delivery, and documentation signals.
 3. If there is a reasonable backup supplier, name it briefly.
-[/INST]"""
+        [/INST]"""
 
         print("Generating AI response...")
 
