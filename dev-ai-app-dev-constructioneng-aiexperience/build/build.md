@@ -52,7 +52,10 @@ This lab assumes you have:
 
     ![Open Terminal](./images/terminal.png " ")
 
-2. Navigate to `db_setup_script_2.sql` under the `dbinit` folder. Here is where you can see all the tables that support this construction procurement scenario.
+2. Navigate to `db_setup_CONSTENG_script_2.sql` under the
+    `dbinit` folder. This script provisions the construction
+    engineering tables, the `construction_projects_dv` JSON duality
+    view, and the `CE_PROJECT_CHUNKS` table used later in the RAG flow.
 
     ![Tables](./images/tables.png " ")
 
@@ -100,57 +103,100 @@ This lab assumes you have:
 
     ![Connect to Database](./images/lab4task1.png " ")
 
-## Task 5: Create a function to retrieve procurement data from the database
+## Task 5: Create a function to retrieve project data from the database
 
-You will query project procurement data from the `procurement_profiles_dv` JSON duality view, which combines `CONSTRUCTION_PROCUREMENTS` and related procurement fields into one JSON document. This task will:
+You will query project data from the `construction_projects_dv` JSON
+duality view, which combines `CE_PROJECTS`,
+`CE_PROJECT_REQUIREMENTS`, `CE_SUPPLIER_EVALUATION`, and
+`CE_SUPPLIER_RECOMMENDATION` into one JSON document. This task will:
 
-- **Define a Function**: Create a reusable function `fetch_procurement_data` to query the database by project ID, extracting the JSON data for a specific procurement.
-- **Use an Example**: Fetch data for project `1001` (`P1001 Downtown Mixed-Use Tower`) to demonstrate the process.
-- **Display the Results**: Format the retrieved data into a pandas DataFrame for a clear, tabular presentation, showing key details like project name, location, project phase, required trade, procurement urgency, budget range, and risk level.
+- **Define a Function**: Create a reusable function
+  `fetch_project_data` to query the database by project ID and
+  extract the JSON data for one construction project.
+- **Use an Example**: Fetch data for project `1001`
+  (`Downtown Mixed-Use Tower`) to demonstrate the process.
+- **Display the Results**: Format the retrieved data into a pandas
+  DataFrame for a clear, tabular presentation, showing the project
+  phase, required trade, procurement urgency, budget range, risk
+  level, and current supplier evaluation.
 
 1. Copy and paste the code below into the new notebook.
 
     ```python
     <copy>
-def fetch_procurement_data(project_id):
+    def fetch_project_data(project_id):
         cursor.execute(
-            "SELECT data FROM procurement_profiles_dv WHERE JSON_VALUE(data, '$._id') = :project_id",
-            {'project_id': project_id}
+            """
+            SELECT data
+            FROM construction_projects_dv
+            WHERE JSON_VALUE(data, '$._id') = :project_id
+            """,
+            {"project_id": project_id}
         )
-        result = cursor.fetchone()
-        return json.loads(result[0]) if result and isinstance(result[0], str) else result[0] if result else None
+        row = cursor.fetchone()
+        if not row:
+            return None
+        return json.loads(row[0]) if isinstance(row[0], str) else row[0]
 
-selected_project_id = "1001"
-procurement_json = fetch_procurement_data(selected_project_id)
 
-if procurement_json:
-        print(f"Project: {procurement_json['projectName']}")
-        print(f"Status: {procurement_json['projectStatus']}")
+    selected_project_id = 1001
+    project_json = fetch_project_data(selected_project_id)
+
+    if project_json:
+        requirement = (project_json.get("requirements") or [{}])[0]
+        evaluation = (project_json.get("supplierEvaluations") or [{}])[0]
+        recommendation = evaluation.get("recommendation") or {}
+        supplier = recommendation.get("supplier") or {}
+
+        print(f"Project: {project_json.get('projectName', '')}")
+        print(
+            "Status:",
+            evaluation.get(
+                "evaluationStatus",
+                project_json.get("evaluationStatus", "Pending Review")
+            )
+        )
 
         desired_fields = [
             ("Project ID", selected_project_id),
-            ("Project Code", procurement_json.get("projectCode", "")),
-            ("Project Name", procurement_json.get("projectName", "")),
-            ("Location", procurement_json.get("location", "")),
-            ("Project Phase", procurement_json.get("projectPhase", "")),
-            ("Required Trade", procurement_json.get("requiredTrade", "")),
-            ("Procurement Urgency", procurement_json.get("procurementUrgency", "")),
-            ("Budget Range", procurement_json.get("budgetRange", "")),
-            ("Risk Level", procurement_json.get("riskLevel", "")),
-            ("Project Status", procurement_json.get("projectStatus", "Pending Review"))
+            ("Project Name", project_json.get("projectName", "")),
+            ("Location", project_json.get("location", "")),
+            ("Project Type", project_json.get("projectType", "")),
+            ("Project Phase", project_json.get("projectPhase", "")),
+            ("Required Trade", requirement.get("tradeCategory", "")),
+            ("Material Need", requirement.get("materialNeed", "")),
+            (
+                "Procurement Urgency",
+                requirement.get("procurementUrgency", "")
+            ),
+            ("Budget Range", requirement.get("budgetRange", "")),
+            ("Risk Level", requirement.get("riskLevel", "")),
+            ("Evaluation ID", evaluation.get("evaluationId", "")),
+            ("Recommended Supplier", supplier.get("supplierName", "")),
+            ("Supplier Fit Score", recommendation.get("fitScore", "")),
+            (
+                "Evaluation Status",
+                evaluation.get(
+                    "evaluationStatus",
+                    project_json.get("evaluationStatus", "Pending Review")
+                )
+            )
         ]
 
-        df_procurement_details = pd.DataFrame(
+        df_project_details = pd.DataFrame(
             {field_name: [field_value] for field_name, field_value in desired_fields}
         )
-        display(df_procurement_details)
-
-else:
+        display(df_project_details)
+    else:
         print("No data found for project ID:", selected_project_id)
     </copy>
     ```
 
-2. Click the **Run** button to see `P1001 Downtown Mixed-Use Tower`. The output will include a brief summary followed by a detailed table. If no data is found for the specified ID, a message will indicate this, helping you debug potential issues like an incorrect ID or empty database.
+2. Click the **Run** button to see `Downtown Mixed-Use Tower`.
+    The output will include a brief summary followed by a detailed
+    table. If no data is found for the specified ID, a message will
+    indicate this and help you debug an incorrect project ID or an
+    incomplete setup script.
 
     ![Open Terminal](./images/lab4task3.png " ")
 
@@ -158,43 +204,159 @@ else:
     printed out when the construction procurement officer opens project
     `1001`.
 
-## Task 6: Create a function to generate procurement recommendations
+## Task 6: Create a function to generate supplier recommendations
 
-In a new cell, define a function `generate_procurement_recommendations` to generate supplier recommendations.
+In a new cell, define a function `generate_supplier_recommendations`
+to generate supplier recommendations.
 
-With procurement profiles in place, you will use OCI Generative AI to generate personalized procurement recommendations.
+With the project profile in place, you will use OCI Generative AI to
+generate a construction-specific supplier evaluation.
 
 Here’s what we’ll do:
 
-- **Fetch Supplier Data**: Retrieve the available supplier options and combine them with the selected procurement data.
-- **Build a Prompt**: Construct a structured prompt that combines the project’s procurement profile with supplier options, instructing the LLM to evaluate and recommend suppliers (`APPROVE`, `REQUEST INFO`, `DENY`) based solely on this data.
-- **Use OCI Generative AI**: Send the prompt to the `meta.llama-3.2-90b-vision-instruct` model via OCI’s inference client.
-- **Format the Output**: Display the recommendations with structured sections covering evaluation, top supplier options, and explanations.
+- **Fetch Supplier Recommendation Records**: Retrieve the supplier
+  recommendation rows already staged in `CE_SUPPLIER_RECOMMENDATION`
+  and combine them with the selected project data.
+- **Build a Prompt**: Construct a structured prompt that combines
+  the project profile, sourcing requirements, and supplier records.
+  The LLM must choose only from `APPROVE`, `REQUEST INFO`, or `DENY`.
+- **Use OCI Generative AI**: Send the prompt to the
+  `meta.llama-3.2-90b-vision-instruct` model via OCI’s inference
+  client.
+- **Format the Output**: Display the recommendation using the same
+  supplier-evaluation sections used in the Seer Construction app.
 
 1. Copy and paste the code in a new cell:
 
     ```python
     <copy>
-    # Fetch supplier options
-cursor.execute("SELECT supplier_option_id, supplier_name, trade_specialty, experience_summary, compliance_status, on_time_delivery_rate, delivery_window_weeks, capacity_status, project_fit, recommendation_status FROM supplier_option_catalog")
-df_supplier_options = pd.DataFrame(cursor.fetchall(), columns=["SUPPLIER_OPTION_ID", "SUPPLIER_NAME", "TRADE_SPECIALTY", "EXPERIENCE_SUMMARY", "COMPLIANCE_STATUS", "ON_TIME_DELIVERY_RATE", "DELIVERY_WINDOW_WEEKS", "CAPACITY_STATUS", "PROJECT_FIT", "RECOMMENDATION_STATUS"])
+    cursor.execute(
+        """
+        SELECT
+            eval.EVALUATION_ID,
+            rec.RECOMMEND_ID,
+            rec.RECOMMENDATION,
+            rec.FIT_SCORE,
+            rec.RISK_LEVEL,
+            rec.EXPLANATION,
+            rec.STRENGTHS,
+            rec.MISSING_INFORMATION,
+            supplier.SUPPLIER_ID,
+            supplier.SUPPLIER_NAME,
+            supplier.CATEGORY,
+            supplier.REGION,
+            supplier.CAPACITY_STATUS,
+            supplier.CAPABILITY_SUMMARY
+        FROM CE_SUPPLIER_EVALUATION eval
+        JOIN CE_SUPPLIER_RECOMMENDATION rec
+            ON rec.RECOMMEND_ID = eval.RECOMMEND_ID
+        JOIN CE_SUPPLIERS supplier
+            ON supplier.SUPPLIER_ID = rec.SUPPLIER_ID
+        WHERE eval.PROJECT_ID = :project_id
+        ORDER BY rec.FIT_SCORE DESC, eval.EVALUATION_ID
+        """,
+        {"project_id": selected_project_id}
+    )
+    df_supplier_recommendations = pd.DataFrame(
+        cursor.fetchall(),
+        columns=[
+            "EVALUATION_ID",
+            "RECOMMEND_ID",
+            "RECOMMENDATION",
+            "FIT_SCORE",
+            "RISK_LEVEL",
+            "EXPLANATION",
+            "STRENGTHS",
+            "MISSING_INFORMATION",
+            "SUPPLIER_ID",
+            "SUPPLIER_NAME",
+            "CATEGORY",
+            "REGION",
+            "CAPACITY_STATUS",
+            "CAPABILITY_SUMMARY"
+        ]
+    )
 
-# Generate Recommendations
-def generate_procurement_recommendations(project_id, procurement_json, df_supplier_options):
-        available_suppliers_text = "\n".join([
-            f"{supplier['SUPPLIER_OPTION_ID']}: {supplier['SUPPLIER_NAME']} | {supplier['TRADE_SPECIALTY']} | "
-            f"Compliance: {supplier['COMPLIANCE_STATUS']} | On-Time Delivery: {supplier['ON_TIME_DELIVERY_RATE']} | "
-            f"Delivery Window: {supplier['DELIVERY_WINDOW_WEEKS']} weeks | Capacity: {supplier['CAPACITY_STATUS']}"
-            for supplier in df_supplier_options.to_dict(orient='records')
-        ])
-        procurement_profile_text = "\n".join([
-            f"- {key.replace('_', ' ').title()}: {value}"
-            for key, value in procurement_json.items()
-            if key not in ["embedding_vector", "ai_response_vector", "chunk_vector", "supplierRecommendations"]
+
+    def generate_supplier_recommendations(project_id, project_json, df_supplier_recommendations):
+        requirement = (project_json.get("requirements") or [{}])[0]
+        evaluation = (project_json.get("supplierEvaluations") or [{}])[0]
+        recommendation = evaluation.get("recommendation") or {}
+
+        available_data_text = "\n".join([
+            (
+                f"Supplier Evaluation {row['EVALUATION_ID']}: "
+                f"{row['SUPPLIER_NAME']} | Decision: {row['RECOMMENDATION']} | "
+                f"Fit Score: {row['FIT_SCORE']} | Risk: {row['RISK_LEVEL']} | "
+                f"Capacity: {row['CAPACITY_STATUS']} | "
+                f"Explanation: {row['EXPLANATION']} | "
+                f"Missing Information: {row['MISSING_INFORMATION']}"
+            )
+            for row in df_supplier_recommendations.to_dict(orient="records")
         ])
 
-        prompt = f"""<s>[INST] <<SYS>>You are a Construction Procurement AI. Use only the provided context to evaluate the procurement and recommend the best supplier next steps. Choose only from APPROVE, REQUEST INFO, or DENY. Format results as plain text with numbered sections (1. Comprehensive Procurement Evaluation, 2. Top 3 Supplier Recommendations, 3. Recommendation Explanations, 4. Final Suggestion). Use newlines between sections.</SYS>> [/INST]
-        [INST]Available Supplier Options:\n{available_suppliers_text}\nProcurement Profile:\n{procurement_profile_text}\nTasks:\n1. Comprehensive Procurement Evaluation\n2. Top 3 Supplier Recommendations\n3. Recommendation Explanations\n4. Final Suggestion</INST>"""
+        project_profile_text = "\n".join([
+            f"- Project Name: {project_json.get('projectName', '')}",
+            f"- Location: {project_json.get('location', '')}",
+            f"- Project Type: {project_json.get('projectType', '')}",
+            f"- Project Phase: {project_json.get('projectPhase', '')}",
+            f"- Project Summary: {project_json.get('projectSummary', '')}",
+            f"- Required Trade: {requirement.get('tradeCategory', '')}",
+            f"- Material Need: {requirement.get('materialNeed', '')}",
+            f"- Required Certification: {requirement.get('requiredCertification', '')}",
+            f"- Delivery Window: {requirement.get('deliveryWindow', '')}",
+            f"- Procurement Urgency: {requirement.get('procurementUrgency', '')}",
+            f"- Budget Range: {requirement.get('budgetRange', '')}",
+            f"- Risk Level: {requirement.get('riskLevel', '')}",
+            f"- Current Evaluation Status: {evaluation.get('evaluationStatus', '')}",
+            f"- Current Recommended Supplier: {recommendation.get('supplier', {}).get('supplierName', '')}"
+        ])
+
+        question = "Generate a supplier evaluation for this project."
+        prompt = f"""
+You are an AI supplier evaluation assistant for construction engineering procurement.
+
+Analyze the selected project and supplier data below. Do not ask for more
+project details unless the supplied data is actually missing. Produce the
+analysis now.
+
+Industry:
+Construction Engineering
+
+User request:
+{question}
+
+Selected project profile:
+{project_profile_text}
+
+Project and supplier JSON:
+{json.dumps(project_json, default=str)}
+
+Available supplier recommendation records:
+{available_data_text}
+
+Decision rules:
+- Use APPROVE when the supplier is a strong fit and material risks are controlled.
+- Use REQUEST INFO when inspection logs, capacity confirmation, certificates,
+  submittals, RFIs, safety records, or schedule evidence are missing.
+- Use DENY when the supplier cannot satisfy core technical, compliance,
+  delivery, or safety requirements.
+- For evidence that says documentation is complete and risk is Low,
+  recommend APPROVE.
+- For Harbor Seismic Retrofit, deny the current suppliers and recommend
+  submitting a new RFP because the supplier pool does not meet DBE, AISC,
+  NCR, and logistics requirements.
+- For North Campus Lab Expansion, treat an uploaded technical addendum PDF
+  as new evidence and explicitly reflect it in the re-analysis.
+
+Return a concise, decision-ready supplier evaluation with these exact sections:
+
+Project Summary
+Key Sourcing Requirements
+Top 3 Supplier Recommendations
+Risks and Missing Information
+Actionable Steps
+"""
 
         print("Generating AI response...")
         print(" ")
@@ -218,20 +380,27 @@ def generate_procurement_recommendations(project_id, procurement_json, df_suppli
             )
         )
         chat_response = genai_client.chat(chat_detail)
-        recommendations = chat_response.data.chat_response.choices[0].message.content[0].text
+        return chat_response.data.chat_response.choices[0].message.content[0].text
 
-        return recommendations
 
-recommendations = generate_procurement_recommendations(selected_project_id, procurement_json, df_supplier_options)
-print(recommendations)
+    recommendations = generate_supplier_recommendations(
+        selected_project_id,
+        project_json,
+        df_supplier_recommendations
+    )
+    print(recommendations)
     </copy>
     ```
 
-2. Click the **Run** button to execute the code. Note that this will take time to run. Be patient while the LLM evaluates the procurement and returns its recommendations.
+2. Click the **Run** button to execute the code. Note that this will
+    take time to run. Be patient while the LLM evaluates the project
+    and returns its supplier recommendations.
 
     ![Run task 4](./images/lab4task4.png " ")
 
-3. Review the output. In the demo, this is where you selected the **Navigate To Project Decisions** button as the construction procurement officer.
+3. Review the output. In the demo, this is where you selected the
+    **Navigate To Project Decisions** button as the construction
+    procurement manager.
 
     >*Note:* Your result may be different due to the non-deterministic nature of generative AI.
 
@@ -241,67 +410,109 @@ print(recommendations)
 
 In this section we will chunk and store the recommendations.
 
-- We delete prior chunks for this project.
-- We use `VECTOR_CHUNKS` to insert the chunks.
-- The chunks are inserted into `PROCUREMENT_RECOMMENDATION_CHUNK` with unique `CHUNK_ID` = (`size + chunk_offset`).
-- We display a data frame summary to show the chunks.
+- We delete only the prior `AI Recommendation` chunks for this
+  project and keep the seeded construction context rows.
+- We use `VECTOR_CHUNKS` to split the generated recommendation text.
+- The chunks are inserted into `CE_PROJECT_CHUNKS` with a
+  collision-safe `CHUNK_ID` based on the current maximum chunk ID.
+- We display a data frame summary so you can confirm the chunks that
+  will be used by RAG.
 
 1. Copy the following code and run it in a new cell:
 
     ```python
     <copy>
-    # Clean any prior chunks for this project
-cursor.execute("DELETE FROM PROCUREMENT_RECOMMENDATION_CHUNK WHERE PROJECT_ID = :project_id", {'project_id': selected_project_id})
-connection.commit()
+    if not recommendations:
+        raise ValueError(
+            "No recommendations text available to chunk. Run Task 6 first."
+        )
 
-chunk_sizes = [50]
+    cursor.execute(
+        """
+        DELETE FROM CE_PROJECT_CHUNKS
+        WHERE PROJECT_ID = :project_id
+          AND SOURCE_TYPE = 'AI Recommendation'
+        """,
+        {"project_id": selected_project_id}
+    )
+    connection.commit()
 
-for size in chunk_sizes:
+    cursor.execute("SELECT NVL(MAX(CHUNK_ID), 0) FROM CE_PROJECT_CHUNKS")
+    base_chunk_id = (cursor.fetchone()[0] or 0) + 1
+
+    chunk_sizes = [50]
+
+    for size in chunk_sizes:
         insert_sql = f"""
-            INSERT INTO PROCUREMENT_RECOMMENDATION_CHUNK (PROJECT_ID, CHUNK_ID, CHUNK_TEXT)
-            SELECT :project_id,
-                :chunk_size + vc.chunk_offset,
+            INSERT INTO CE_PROJECT_CHUNKS (
+                CHUNK_ID,
+                PROJECT_ID,
+                SUPPLIER_ID,
+                SOURCE_TYPE,
+                CHUNK_TEXT
+            )
+            SELECT
+                :base_chunk_id + vc.chunk_offset,
+                :project_id,
+                NULL,
+                'AI Recommendation',
                 vc.chunk_text
             FROM (SELECT :rec_text AS txt FROM dual) s,
                 VECTOR_CHUNKS(
-                dbms_vector_chain.utl_to_text(s.txt)
-                BY words
-                MAX {size}
-                OVERLAP 0
-                SPLIT BY sentence
-                LANGUAGE american
-                NORMALIZE all
+                    dbms_vector_chain.utl_to_text(s.txt)
+                    BY words
+                    MAX {size}
+                    OVERLAP 0
+                    SPLIT BY sentence
+                    LANGUAGE american
+                    NORMALIZE all
                 ) vc
         """
         cursor.execute(
             insert_sql,
-            {'project_id': selected_project_id, 'chunk_size': size, 'rec_text': recommendations}
+            {
+                "base_chunk_id": base_chunk_id,
+                "project_id": selected_project_id,
+                "rec_text": recommendations
+            }
         )
 
-cursor.execute("""
-    SELECT CHUNK_ID, CHUNK_TEXT
-      FROM PROCUREMENT_RECOMMENDATION_CHUNK
-     WHERE PROJECT_ID = :project_id
-  ORDER BY CHUNK_ID
-""", {'project_id': selected_project_id})
-rows = cursor.fetchall()
+    cursor.execute(
+        """
+        SELECT CHUNK_ID, CHUNK_TEXT
+        FROM CE_PROJECT_CHUNKS
+        WHERE PROJECT_ID = :project_id
+          AND SOURCE_TYPE = 'AI Recommendation'
+        ORDER BY CHUNK_ID
+        """,
+        {"project_id": selected_project_id}
+    )
+    rows = cursor.fetchall()
 
-def _lob_to_str(v): return v.read() if isinstance(v, oracledb.LOB) else v
 
-items = []
-for cid, ctext in rows:
+    def _lob_to_str(v):
+        return v.read() if isinstance(v, oracledb.LOB) else v
+
+
+    items = []
+    for cid, ctext in rows:
         txt = _lob_to_str(ctext) or ""
-        items.append({
-            "CHUNK_ID": cid,
-            "Chars": len(txt),
-            "Words": len(txt.split()),
-            "Preview": (txt[:160] + "…") if len(txt) > 160 else txt
-        })
+        items.append(
+            {
+                "CHUNK_ID": cid,
+                "Chars": len(txt),
+                "Words": len(txt.split()),
+                "Preview": (txt[:160] + "…") if len(txt) > 160 else txt
+            }
+        )
 
-df_chunks = pd.DataFrame(items).sort_values("CHUNK_ID")
-connection.commit()
-print(f"✅ Task 7 complete: recommendation chunked for project {selected_project_id} (sizes: {chunk_sizes}).")
-display(df_chunks)
+    df_chunks = pd.DataFrame(items).sort_values("CHUNK_ID")
+    connection.commit()
+    print(
+        "✅ Task 7 complete: recommendation chunked for project "
+        f"{selected_project_id} (sizes: {chunk_sizes})."
+    )
+    display(df_chunks)
     </copy>
     ```
 
@@ -309,35 +520,58 @@ display(df_chunks)
 
     ![Run task 7](./images/task5.png " ")
 
-3. Review the output to see the chunked procurement recommendations.
+3. Review the output to see the chunked supplier recommendation text.
 
     ![Run task 7](./images/task7recs.png " ")
 
 ## Task 8: Create embeddings - Use Oracle AI Database to create vector data
 
-To handle follow-up questions, you will enhance the system with an AI Guru powered by Oracle AI Database’s Vector Search and Retrieval-Augmented Generation (RAG). The AI Guru will be able to answer questions about the procurement and provide recommendations based on the data.
+To handle follow-up questions, you will enhance the system with an
+AI Guru powered by Oracle AI Database’s Vector Search and
+Retrieval-Augmented Generation (RAG). The AI Guru will answer
+questions about the project and supplier recommendation.
 
-Before answering questions, we need to prepare the data by vectorizing the recommendations. This step:
+Before answering questions, we need to prepare the data by
+vectorizing the recommendation chunks. This step:
 
-- **Stores Recommendations**: Uses the recommendation text from the previous cell.
-- **Generates Embeddings**: Uses `dbms_vector_chain.utl_to_embedding` to create vectors directly in the database.
-- **Stores Embeddings**: Inserts the generated embedding vector into `PROCUREMENT_RECOMMENDATION_CHUNK`.
+- **Uses the Recommendation Chunks**: Works with the `AI Recommendation`
+  rows you inserted into `CE_PROJECT_CHUNKS` in Task 7.
+- **Generates Embeddings**: Uses
+  `dbms_vector_chain.utl_to_embedding` to create vectors directly
+  in the database.
+- **Stores Embeddings**: Updates the `CHUNK_VECTOR` column in
+  `CE_PROJECT_CHUNKS`.
 
 1. Run and review the code in a new cell:
 
     ```python
     <copy>
-    # Create embeddings for procurement recommendation chunks
-cursor.execute("""
-    UPDATE PROCUREMENT_RECOMMENDATION_CHUNK
-       SET CHUNK_VECTOR = dbms_vector_chain.utl_to_embedding(
-           CHUNK_TEXT,
-           JSON('{"provider":"database","model":"DEMO_MODEL","dimensions":384}')
-       )
-     WHERE PROJECT_ID = :project_id
-""", {'project_id': selected_project_id})
-connection.commit()
-print("✅ Task 8 complete: embedded vectors for PROCUREMENT_RECOMMENDATION_CHUNK rows.")
+    vp = json.dumps(
+        {
+            "provider": "database",
+            "model": "DEMO_MODEL",
+            "dimensions": 384
+        }
+    )
+
+    cursor.execute(
+        """
+        UPDATE CE_PROJECT_CHUNKS
+        SET CHUNK_VECTOR = dbms_vector_chain.utl_to_embedding(
+            CHUNK_TEXT,
+            JSON(:vp)
+        )
+        WHERE PROJECT_ID = :project_id
+          AND SOURCE_TYPE = 'AI Recommendation'
+        """,
+        {"vp": vp, "project_id": selected_project_id}
+    )
+    updated = cursor.rowcount or 0
+    connection.commit()
+    print(
+        "✅ Task 8 complete: embedded vectors for "
+        f"{updated} CE_PROJECT_CHUNKS row(s)."
+    )
     </copy>
     ```
 
@@ -347,94 +581,132 @@ print("✅ Task 8 complete: embedded vectors for PROCUREMENT_RECOMMENDATION_CHUN
 
 ## Task 9: Implement RAG with Oracle AI Database's Vector Search
 
-Now that the recommendations are vectorized, we can process a user’s question:
+Now that the recommendations are vectorized, we can process a user’s
+question:
 
-```Which supplier option best fits the Downtown Mixed-Use Tower procurement if we prioritize strong compliance and delivery reliability?```
+```text
+Which supplier is the best fit for Downtown Mixed-Use Tower if we
+prioritize complete documentation and delivery reliability?
+```
 
 This step:
 
-- **Vectorizes the question**: Embeds the question using `DEMO_MODEL` via `dbms_vector_chain.utl_to_embedding`.
-- **Performs AI Vector Search**: Retrieves the most relevant recommendation text from `PROCUREMENT_RECOMMENDATION_CHUNK`.
-- **Uses RAG**: Combines the procurement profile, supplier options, and retrieved recommendation context.
+- **Vectorizes the question**: Embeds the question using
+  `DEMO_MODEL` via `dbms_vector_chain.utl_to_embedding`.
+- **Performs AI Vector Search**: Retrieves the most relevant
+  recommendation text from `CE_PROJECT_CHUNKS`.
+- **Uses RAG**: Combines the project profile, supplier
+  recommendation records, and retrieved chunk context.
+- **Prevents Hallucinations**: Constrains the answer to supplier
+  names that appear verbatim in the retrieved records and project
+  context.
 
 1. Copy the code block below to implement RAG:
 
     ```python
     <copy>
-question = "Which supplier option best fits the Downtown Mixed-Use Tower procurement if we prioritize strong compliance and delivery reliability?"
+    question = (
+        "Which supplier is the best fit for Downtown Mixed-Use Tower "
+        "if we prioritize complete documentation and delivery reliability?"
+    )
 
-def vectorize_question(q):
-        cursor.execute("""
+
+    def vectorize_question(q):
+        cursor.execute(
+            """
             SELECT dbms_vector_chain.utl_to_embedding(
                 :q,
                 JSON('{"provider":"database","model":"DEMO_MODEL","dimensions":384}')
-            ) FROM DUAL
-        """, {'q': q})
+            )
+            FROM DUAL
+            """,
+            {"q": q}
+        )
         return cursor.fetchone()[0]
 
-print("Processing your question using AI Vector Search across chunked recommendations...")
 
-try:
+    print("Processing your question using AI Vector Search...")
+
+    try:
         q_vec = vectorize_question(question)
 
-        cursor.execute("""
+        cursor.execute(
+            """
             SELECT CHUNK_ID, CHUNK_TEXT
-            FROM PROCUREMENT_RECOMMENDATION_CHUNK
+            FROM CE_PROJECT_CHUNKS
             WHERE PROJECT_ID = :project_id
-            AND CHUNK_VECTOR IS NOT NULL
+              AND CHUNK_VECTOR IS NOT NULL
             ORDER BY VECTOR_DISTANCE(CHUNK_VECTOR, :qv, COSINE)
             FETCH FIRST 4 ROWS ONLY
-        """, {'project_id': selected_project_id, 'qv': q_vec})
+            """,
+            {"project_id": selected_project_id, "qv": q_vec}
+        )
         retrieved = [
-            (r[0], r[1].read() if isinstance(r[1], oracledb.LOB) else r[1])
-            for r in cursor.fetchall()
+            (
+                row[0],
+                row[1].read() if isinstance(row[1], oracledb.LOB) else row[1]
+            )
+            for row in cursor.fetchall()
         ]
 
         if not retrieved:
             retrieved = [(0, recommendations)]
 
-        cleaned = [re.sub(r"[^\\w\\s\\d.,\\-'\"]", " ", t).strip() for _, t in retrieved]
-        docs_as_one_string = "\n=========\n".join(cleaned) + "\n=========\n"
-
-        available_suppliers_text = "\n".join([
-            f"{supplier['SUPPLIER_OPTION_ID']}: {supplier['SUPPLIER_NAME']} | {supplier['TRADE_SPECIALTY']} | "
-            f"Compliance: {supplier['COMPLIANCE_STATUS']} | On-Time Delivery: {supplier['ON_TIME_DELIVERY_RATE']} | "
-            f"Delivery Window: {supplier['DELIVERY_WINDOW_WEEKS']} weeks | Capacity: {supplier['CAPACITY_STATUS']}"
-            for supplier in df_supplier_options.to_dict(orient='records')
+        requirement = (project_json.get("requirements") or [{}])[0]
+        available_data_text = "\n".join([
+            (
+                f"Supplier Evaluation {row['EVALUATION_ID']}: "
+                f"{row['SUPPLIER_NAME']} | Decision: {row['RECOMMENDATION']} | "
+                f"Fit Score: {row['FIT_SCORE']} | Risk: {row['RISK_LEVEL']} | "
+                f"Capacity: {row['CAPACITY_STATUS']} | "
+                f"Explanation: {row['EXPLANATION']} | "
+                f"Missing Information: {row['MISSING_INFORMATION']}"
+            )
+            for row in df_supplier_recommendations.to_dict(orient="records")
         ])
-        procurement_profile_text = "\n".join([
-            f"- {k.replace('_',' ').title()}: {v}"
-            for k, v in procurement_json.items()
-            if k not in ["embedding_vector","ai_response_vector","chunk_vector","supplierRecommendations"]
+        project_profile_text = "\n".join([
+            f"- Project Name: {project_json.get('projectName', '')}",
+            f"- Location: {project_json.get('location', '')}",
+            f"- Project Phase: {project_json.get('projectPhase', '')}",
+            f"- Required Trade: {requirement.get('tradeCategory', '')}",
+            f"- Delivery Window: {requirement.get('deliveryWindow', '')}",
+            f"- Budget Range: {requirement.get('budgetRange', '')}",
+            f"- Risk Level: {requirement.get('riskLevel', '')}"
         ])
+        context_text = "\n========\n".join(text for _, text in retrieved)
 
-        rag_prompt = f"""\
-<s>[INST] <<SYS>>
-You are AI Procurement Guru. Use only the provided context to answer. Do not mention sources outside of the provided context.
-Do NOT provide warnings, disclaimers, or exceed the specified response length.
-Keep under 300 words. Be specific and actionable.
+        rag_prompt = f"""<s>[INST] <<SYS>>
+You are the AI Procurement Guru for construction engineering.
+Use only the supplied project profile, supplier recommendation
+records, and retrieved context.
+Do not invent supplier names.
+Only use supplier names that appear verbatim in the supplier
+recommendation records or retrieved context.
+If the evidence is insufficient, say so plainly.
+Keep the answer under 220 words and make it decision-ready.
 <</SYS>> [/INST]
 [INST]
 Question: "{question}"
 
-# Context (top chunks from prior AI recommendations):
-{docs_as_one_string}
+Selected Project Profile:
+{project_profile_text}
 
-# Available Supplier Options:
-{available_suppliers_text}
+Available Supplier Recommendation Records:
+{available_data_text}
 
-# Procurement Profile:
-{procurement_profile_text}
+Retrieved Context:
+{context_text}
 
 Tasks:
-1) Provide a direct answer to the question.
-2) Briefly justify based on the procurement profile and available supplier options.
+1. Answer the question directly.
+2. Justify the answer using fit, risk, delivery, and documentation signals.
+3. If there is a reasonable backup supplier, name it briefly.
 [/INST]"""
 
         print("Generating AI response...")
 
         genai_client = oci.generative_ai_inference.GenerativeAiInferenceClient(
-            config=oci.config.from_file(os.getenv("OCI_CONFIG_PATH","~/.oci/config")),
+            config=oci.config.from_file(os.getenv("OCI_CONFIG_PATH", "~/.oci/config")),
             service_endpoint=os.getenv("ENDPOINT")
         )
         chat_detail = oci.generative_ai_inference.models.ChatDetails(
@@ -451,18 +723,22 @@ Tasks:
             )
         )
         chat_response = genai_client.chat(chat_detail)
-        ai_response = chat_response.data.chat_response.choices[0].message.content[0].text
-        ai_response = re.sub(r"[^\\w\\s\\d.,\\-'\"]", " ", ai_response)
+        ai_response = (
+            chat_response.data.chat_response.choices[0]
+            .message.content[0].text
+        )
 
-        print("\n🤖 AI Procurement Guru Response:")
+        print("\\n🤖 AI Procurement Guru Response:")
         print(ai_response)
 
-        print("\n📑 Retrieved Chunks Used in Response:")
+        print("\\n📑 Retrieved Chunks Used in Response:")
         for cid, text in retrieved:
-            preview = text[:140].replace("\n", " ") + ("..." if len(text) > 140 else "")
+            preview = text[:140].replace("\\n", " ")
+            if len(text) > 140:
+                preview += "..."
             print(f"[Chunk {cid}] : {preview}")
 
-except Exception as e:
+    except Exception as e:
         print(f"RAG flow error: {e}")
     </copy>
     ```
@@ -484,9 +760,11 @@ Congratulations! You implemented a RAG process in Oracle AI Database using Pytho
 To summarize:
 
 * You created a function to connect to Oracle AI Database using the Oracle Python driver `oracledb`.
-* You created a function to retrieve procurement data.
-* You created a function to connect to OCI Generative AI and create procurement recommendations.
-* You created embeddings of procurement recommendation data using Oracle AI Database.
+* You created a function to retrieve construction project data.
+* You created a function to connect to OCI Generative AI and create
+  supplier recommendations.
+* You created embeddings of supplier recommendation chunks using
+  Oracle AI Database.
 * And finally, you implemented a RAG process in Oracle AI Database using Python.
 
 Congratulations, you completed the lab.
