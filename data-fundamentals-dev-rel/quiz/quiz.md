@@ -18,12 +18,6 @@ Estimated Time: 5 minutes
 ### Quiz Questions
 
 ```quiz score
-Q: What is the primary purpose of RAG (Retrieval-Augmented Generation)?
-- To replace the need for a database entirely
-- To build a better augmented
-* To retrieve and attach physical hardware components to an LLM, thus making your own ghost in the shell. Major Kusanagi would be so proud
-* To augment an LLM's responses by retrieving and providing relevant data that exists outside its training knowledge
-
 Q: True or False: Oracle AI Database enables you to create vector embeddings directly within the database.
 * True
 - False
@@ -51,7 +45,7 @@ Q: What's likely the best data type to store embeddings in Oracle AI Database?
 Q: What does the VECTOR_CHUNKS function do?
 - It's a hidden function that creates fresh, chunky dog food ondemand
 - Encrypts sensitive customer data
-* Splits text into smaller chunks to generate vector embeddings that can be used with vector indexes or hybrid vector indexes.
+* Splits data into smaller chunks to generate vector embeddings that can be used with vector indexes or hybrid vector indexes
 - Creates backup copies of database tables in bite-sized chunks
 
 Q: Which database feature combines data from one or more relational tables, but projects the data as a JSON document?
@@ -81,4 +75,4 @@ Q: How does Cosine similarity measure distance?
 
 ## Acknowledgements
 * **Authors** - Kirk Kirkconnell
-* **Last Updated By/Date** - Kirk Kirkconnell, January 2026
+* **Last Updated By/Date** - Kirk Kirkconnell, June 2026
