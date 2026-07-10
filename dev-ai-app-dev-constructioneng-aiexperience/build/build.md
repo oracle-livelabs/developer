@@ -52,10 +52,14 @@ This lab assumes you have:
 
     ![Open Terminal](./images/terminal.png " ")
 
-2. Navigate to `db_setup_CONSTENG_script_2.sql` under the
-    `dbinit` folder. This script provisions the construction
-    engineering tables, the `construction_projects_dv` JSON duality
-    view, and the `CE_PROJECT_CHUNKS` table used later in the RAG flow.
+2. In the JupyterLab file browser, open the `dbinit` folder and
+    select `db_setup_CONSTENG_script_2.sql`. This is the setup script
+    that created the sample Construction Engineering schema for the
+    lab. As you review it, notice that it creates the project and
+    supplier tables, the `construction_projects_dv` JSON relational
+    duality view used to read project data as JSON, and the
+    `CE_PROJECT_CHUNKS` table, which later stores text chunks and
+    vector embeddings for the RAG flow.
 
     ![Tables](./images/tables.png " ")
 
@@ -69,7 +73,11 @@ This lab assumes you have:
 
     ![Open Notebook](./images/open-notebook.png " ")
 
-3. Copy the following code block into an empty cell in your notebook. This code block imports the `oracledb` Python driver and other libraries.
+3. Copy the following code block into an empty cell in your notebook.
+    This code imports the required Python libraries, loads the
+    database connection details from the environment, connects to
+    Oracle AI Database, and creates a cursor that will be used to run
+    SQL queries in later steps.
 
     ```python
     <copy>
@@ -99,26 +107,38 @@ This lab assumes you have:
     </copy>
     ```
 
-4. Run the code block to connect to the database.
+4. Run the code cell to connect to Oracle AI Database. When the
+    connection is successful, you should see `Connection successful!`
+    in the notebook output. This confirms that your notebook can
+    query the database in the next steps.
 
     ![Connect to Database](./images/lab4task1.png " ")
 
 ## Task 5: Create a function to retrieve project data from the database
 
 You will query project data from the `construction_projects_dv` JSON
-duality view, which combines `CE_PROJECTS`,
-`CE_PROJECT_REQUIREMENTS`, `CE_SUPPLIER_EVALUATION`, and
-`CE_SUPPLIER_RECOMMENDATION` into one JSON document. This task will:
+relational duality view. This view combines related relational tables,
+including `CE_PROJECTS`, `CE_PROJECT_REQUIREMENTS`,
+`CE_SUPPLIER_EVALUATION`, `CE_SUPPLIER_RECOMMENDATION`, and
+`CE_SUPPLIERS`, into one JSON document per project. This is useful
+because the application can retrieve a complete project profile with a
+single query, while the data still remains organized in relational
+tables. That project profile is then easier to review, display, and
+pass into the GenAI workflow.
 
-- **Define a Function**: Create a reusable function
-  `fetch_project_data` to query the database by project ID and
-  extract the JSON data for one construction project.
-- **Use an Example**: Fetch data for project `1001`
-  (`Downtown Mixed-Use Tower`) to demonstrate the process.
-- **Display the Results**: Format the retrieved data into a pandas
-  DataFrame for a clear, tabular presentation, showing the project
-  phase, required trade, procurement urgency, budget range, risk
-  level, and current supplier evaluation.
+In this task, you will:
+
+* **Define a Function**: Create a reusable `fetch_project_data`
+  function that queries `construction_projects_dv` by project ID. The
+  query uses the project `_id` field inside the JSON document to
+  return the matching project.
+* **Use an Example**: Fetch data for project `1001`,
+  `Downtown Mixed-Use Tower`, to demonstrate how the function
+  retrieves one project profile from the database.
+* **Display the Results**: Extract selected fields from the JSON
+  document and display them in a pandas DataFrame. The table shows
+  project details, sourcing requirements, risk level, recommended
+  supplier, supplier fit score, and evaluation status.
 
 1. Copy and paste the code below into the new notebook.
 
@@ -192,39 +212,55 @@ duality view, which combines `CE_PROJECTS`,
     </copy>
     ```
 
-2. Click the **Run** button to see `Downtown Mixed-Use Tower`.
-    The output will include a brief summary followed by a detailed
-    table. If no data is found for the specified ID, a message will
-    indicate this and help you debug an incorrect project ID or an
-    incomplete setup script.
+2. Click the **Run** button to execute the cell. The notebook
+    retrieves project `1001`, `Downtown Mixed-Use Tower`, from the
+    `construction_projects_dv` view and displays selected project
+    details. When the query succeeds, you should see a brief project
+    summary followed by a table with fields such as project ID,
+    project name, location, project phase, required trade, urgency,
+    budget range, and risk level. If no data is found, confirm that
+    the project ID is correct and that the database setup completed
+    successfully.
 
     ![Open Terminal](./images/lab4task3.png " ")
 
-    If you completed Lab 1: Run the Demo earlier, this is what gets
-    printed out when the construction procurement officer opens project
-    `1001`.
+    If you completed Lab 1: Run the Demo, this output should look
+    familiar. It shows the same project information that the
+    construction procurement officer sees when opening project `1001`
+    in the demo application.
 
 ## Task 6: Create a function to generate supplier recommendations
 
-In a new cell, define a function `generate_supplier_recommendations`
-to generate supplier recommendations.
+In a new cell, you will create and run a
+`generate_supplier_recommendations` function. This function uses the
+project profile from Task 5 and the staged supplier recommendation
+records in the database to generate a construction-specific supplier
+evaluation with OCI Generative AI.
 
-With the project profile in place, you will use OCI Generative AI to
-generate a construction-specific supplier evaluation.
+Here’s what the code does:
 
-Here’s what we’ll do:
+* **Fetch Supplier Recommendation Records**: Query the supplier
+  recommendation data for the selected project. The query joins
+  `CE_SUPPLIER_EVALUATION`, `CE_SUPPLIER_RECOMMENDATION`, and
+  `CE_SUPPLIERS` so the prompt includes each supplier’s
+  recommendation, fit score, risk level, capacity status,
+  explanation, strengths, and missing information.
+* **Build a Prompt**: Combine the selected project profile, sourcing
+  requirements, full project JSON, and supplier recommendation records
+  into a structured prompt. The prompt gives the LLM decision rules
+  for when to use `APPROVE`, `REQUEST INFO`, or `DENY`.
+* **Use OCI Generative AI**: Send the prompt to the
+  `meta.llama-3.2-90b-vision-instruct` model through OCI’s
+  Generative AI inference client.
+* **Display the Output**: Print the generated supplier evaluation
+  using the same sections used in the Seer Construction app:
+  `Project Summary`, `Key Sourcing Requirements`,
+  `Top 3 Supplier Recommendations`, `Risks and Missing Information`,
+  and `Actionable Steps`.
 
-- **Fetch Supplier Recommendation Records**: Retrieve the supplier
-  recommendation rows already staged in `CE_SUPPLIER_RECOMMENDATION`
-  and combine them with the selected project data.
-- **Build a Prompt**: Construct a structured prompt that combines
-  the project profile, sourcing requirements, and supplier records.
-  The LLM must choose only from `APPROVE`, `REQUEST INFO`, or `DENY`.
-- **Use OCI Generative AI**: Send the prompt to the
-  `meta.llama-3.2-90b-vision-instruct` model via OCI’s inference
-  client.
-- **Format the Output**: Display the recommendation using the same
-  supplier-evaluation sections used in the Seer Construction app.
+At this point, the recommendation is generated as notebook output
+only. In the next task, you will chunk and store this generated text
+so it can be used in the RAG flow.
 
 1. Copy and paste the code in a new cell:
 
@@ -392,31 +428,61 @@ Actionable Steps
     </copy>
     ```
 
-2. Click the **Run** button to execute the code. Note that this will
-    take time to run. Be patient while the LLM evaluates the project
-    and returns its supplier recommendations.
+2. Click the **Run** button to execute the cell. This step sends the
+    project profile and supplier recommendation records to OCI
+    Generative AI, so it may take a little time to complete.
+    While the model is processing, you should see
+    `Generating AI response...`. Wait for the cell to finish. When it
+    completes, the notebook will print a supplier evaluation with
+    recommendations, risks, missing information, and actionable next
+    steps.
 
     ![Run task 4](./images/lab4task4.png " ")
 
-3. Review the output. In the demo, this is where you selected the
-    **Navigate To Project Decisions** button as the construction
-    procurement manager.
+3. Review the generated supplier evaluation. The output should
+    include sections such as `Project Summary`,
+    `Key Sourcing Requirements`, `Top 3 Supplier Recommendations`,
+    `Risks and Missing Information`, and `Actionable Steps`.
+    In Lab 1: Run the Demo, this corresponds to the point where the
+    construction procurement manager selected
+    **Navigate To Project Decisions** after reviewing the
+    AI-generated recommendation.
 
-    >*Note:* Your result may be different due to the non-deterministic nature of generative AI.
+    >*Note:* Your exact wording may be different because generative
+    >AI responses can vary, even when the same project data is used.
 
     ![ai recommendation](./images/task4recommendations.png " ")
 
 ## Task 7: Chunk & Store the Recommendations
 
-In this section we will chunk and store the recommendations.
+In this task, you will prepare the AI-generated supplier
+recommendation for RAG by splitting it into smaller text chunks and
+storing those chunks in the `CE_PROJECT_CHUNKS` database table.
 
-- We delete only the prior `AI Recommendation` chunks for this
-  project and keep the seeded construction context rows.
-- We use `VECTOR_CHUNKS` to split the generated recommendation text.
-- The chunks are inserted into `CE_PROJECT_CHUNKS` with a
-  collision-safe `CHUNK_ID` based on the current maximum chunk ID.
-- We display a data frame summary so you can confirm the chunks that
-  will be used by RAG.
+RAG works best when the system can retrieve focused pieces of relevant
+text instead of searching one long response. To support that, this
+code uses Oracle AI Database’s `VECTOR_CHUNKS` function to split the
+generated recommendation into smaller sentence-based chunks.
+
+Here’s what the code does:
+
+* **Check for Generated Recommendations**: Confirm that the
+  recommendations text from Task 6 exists before trying to chunk it.
+* **Remove Prior AI Recommendation Chunks**: Delete only the previous
+  `AI Recommendation` chunks for this project from the
+  `CE_PROJECT_CHUNKS` table. Seeded project and supplier context rows
+  remain in the table.
+* **Create New Text Chunks**: Use `VECTOR_CHUNKS` to split the
+  generated recommendation text into smaller sentence-based chunks.
+* **Store the Chunks**: Insert the new chunks into the
+  `CE_PROJECT_CHUNKS` table with new `CHUNK_ID` values to avoid
+  duplicate IDs.
+* **Review the Results**: Display a DataFrame showing each
+  `CHUNK_ID`, character count, word count, and preview text so you
+  can confirm what will be used in the RAG flow.
+
+In the next task, you will create vector embeddings for these stored
+chunks.
 
 1. Copy the following code and run it in a new cell:
 
@@ -516,31 +582,54 @@ In this section we will chunk and store the recommendations.
     </copy>
     ```
 
-2. Execute the code in a new cell.
+2. Run the cell to split the generated supplier recommendation into
+    text chunks and store them in the `CE_PROJECT_CHUNKS` table. This
+    step may take a few moments. When the cell finishes, review the
+    output to confirm the recommendation was chunked successfully.
 
     ![Run task 7](./images/task5.png " ")
 
-3. Review the output to see the chunked supplier recommendation text.
+3. Review the output to confirm that the AI-generated supplier
+    recommendation was split into multiple chunks. The table shows
+    each `CHUNK_ID`, the number of words in the chunk, and a preview
+    of the chunk text. These stored chunks will be used later as
+    retrievable context in the RAG flow.
 
     ![Run task 7](./images/task7recs.png " ")
 
 ## Task 8: Create embeddings - Use Oracle AI Database to create vector data
 
-To handle follow-up questions, you will enhance the system with an
-AI Guru powered by Oracle AI Database’s Vector Search and
-Retrieval-Augmented Generation (RAG). The AI Guru will answer
-questions about the project and supplier recommendation.
+In Task 7, you stored the AI-generated supplier recommendation as
+smaller text chunks in the `CE_PROJECT_CHUNKS` database table. In
+this task, you will convert those text chunks into vector embeddings
+so Oracle AI Database can search them by meaning, not just by exact
+keyword matches.
 
-Before answering questions, we need to prepare the data by
-vectorizing the recommendation chunks. This step:
+A vector embedding is a numerical representation of text. When a user
+asks a follow-up question, the system can create an embedding for the
+question and compare it to the stored chunk embeddings. This allows
+Oracle AI Database to retrieve the recommendation chunks that are most
+relevant to the question and use them as context in the RAG response.
 
-- **Uses the Recommendation Chunks**: Works with the `AI Recommendation`
-  rows you inserted into `CE_PROJECT_CHUNKS` in Task 7.
-- **Generates Embeddings**: Uses
-  `dbms_vector_chain.utl_to_embedding` to create vectors directly
-  in the database.
-- **Stores Embeddings**: Updates the `CHUNK_VECTOR` column in
-  `CE_PROJECT_CHUNKS`.
+This code uses `dbms_vector_chain.utl_to_embedding` to generate the
+embeddings directly inside Oracle AI Database. The code passes
+`DEMO_MODEL` as the embedding model identifier. In this lab
+environment, `DEMO_MODEL` is already configured, so you do not need
+to choose or deploy an embedding model during the workshop. The
+`dimensions: 384` value matches the vector size stored in the
+`CHUNK_VECTOR` column of the `CE_PROJECT_CHUNKS` table.
+
+This step:
+
+* **Uses the Recommendation Chunks**: Works with the
+  `AI Recommendation` rows that were inserted into the
+  `CE_PROJECT_CHUNKS` table in Task 7.
+* **Generates Embeddings in the Database**: Uses
+  `dbms_vector_chain.utl_to_embedding` with the lab’s configured
+  `DEMO_MODEL` to convert each chunk’s text into a vector embedding.
+* **Stores the Embeddings**: Updates the `CHUNK_VECTOR` column in the
+  `CE_PROJECT_CHUNKS` table so the chunks can be searched by semantic
+  similarity in the next task.
 
 1. Run and review the code in a new cell:
 
@@ -575,30 +664,47 @@ vectorizing the recommendation chunks. This step:
     </copy>
     ```
 
-2. Click the **Run** button to execute the code and review the output.
+2. Click the **Run** button to execute the cell. The code creates
+    vector embeddings for the `AI Recommendation` chunks and stores
+    them in the `CHUNK_VECTOR` column of the `CE_PROJECT_CHUNKS`
+    table.
+    When the cell finishes, review the output message to confirm how
+    many recommendation rows were embedded. This confirms the chunks
+    are ready for vector search in the next task.
 
     ![vector](./images/task8.png " ")
 
 ## Task 9: Implement RAG with Oracle AI Database's Vector Search
 
-Now that the recommendations are vectorized, we can process a user’s
-question:
+Now that the recommendation chunks have vector embeddings, you can use
+them to answer a natural-language follow-up question:
 
 ```text
 Which supplier is the best fit for Downtown Mixed-Use Tower if we
 prioritize complete documentation and delivery reliability?
 ```
 
+This step shows the full RAG flow. The user’s question is converted
+into a vector, Oracle AI Database searches for the most relevant
+recommendation chunks, and OCI Generative AI uses those retrieved
+chunks as context to generate a grounded answer.
+
 This step:
 
-- **Vectorizes the question**: Embeds the question using
-  `DEMO_MODEL` via `dbms_vector_chain.utl_to_embedding`.
-- **Performs AI Vector Search**: Retrieves the most relevant
-  recommendation text from `CE_PROJECT_CHUNKS`.
-- **Uses RAG**: Combines the project profile, supplier
-  recommendation records, and retrieved chunk context.
-- **Prevents Hallucinations**: Constrains the answer to supplier
-  names that appear verbatim in the retrieved records and project
+* **Vectorizes the Question**: Uses
+  `dbms_vector_chain.utl_to_embedding` with the lab’s configured
+  `DEMO_MODEL` to convert the user’s question into a vector
+  embedding.
+* **Performs AI Vector Search**: Compares the question vector to the
+  stored chunk vectors in the `CE_PROJECT_CHUNKS` table and retrieves
+  the most relevant chunks using cosine distance.
+* **Uses RAG**: Combines the selected project profile, supplier
+  recommendation records, and retrieved chunk context into a prompt
+  for OCI Generative AI.
+* **Helps Reduce Hallucinations**: Instructs the model to use only
+  the supplied project data, supplier records, and retrieved context.
+  The prompt also tells the model not to invent supplier names and to
+  use only supplier names that appear in the provided records or
   context.
 
 1. Copy the code block below to implement RAG:
@@ -743,29 +849,47 @@ Tasks:
     </copy>
     ```
 
-2. Click the **Run** button to execute the code.
+2. Click the **Run** button to execute the cell. The notebook will
+    process the question using AI Vector Search, retrieve the most
+    relevant chunks from the `CE_PROJECT_CHUNKS` table, and send the
+    retrieved context to OCI Generative AI.
 
     ![ask question](./images/task7.png " ")
 
-3. Review the result.
+3. Review the AI Procurement Guru Response. The answer should
+    identify the best-fit supplier and explain the reasoning using
+    retrieved evidence, such as fit score, documentation, delivery
+    reliability, risk level, and missing information.
+    Also review the `Retrieved Chunks Used in Response` section.
+    These are the specific text chunks retrieved by vector search and
+    used as grounding context for the AI response.
 
-    >*Note:* Your result may be different due to the non-deterministic nature of generative AI.
+    >*Note:* Your exact wording may be different because generative
+    >AI responses can vary, even when the same project data and
+    >retrieved context are used.
 
     ![rag](./images/task7results.png " ")
 
 ## Summary
 
-Congratulations! You implemented a RAG process in Oracle AI Database using Python.
+Congratulations! You implemented a RAG process in Oracle AI Database
+using Python.
 
-To summarize:
+To summarize, you:
 
-* You created a function to connect to Oracle AI Database using the Oracle Python driver `oracledb`.
-* You created a function to retrieve construction project data.
-* You created a function to connect to OCI Generative AI and create
-  supplier recommendations.
-* You created embeddings of supplier recommendation chunks using
+* Connected from a Jupyter notebook to Oracle AI Database using the
+  Oracle Python driver, `oracledb`.
+* Retrieved construction project data from the
+  `construction_projects_dv` JSON relational duality view.
+* Used OCI Generative AI to generate a construction-specific
+  supplier evaluation.
+* Split the generated recommendation into smaller text chunks and
+  stored them in the `CE_PROJECT_CHUNKS` database table.
+* Created vector embeddings for the recommendation chunks directly in
   Oracle AI Database.
-* And finally, you implemented a RAG process in Oracle AI Database using Python.
+* Used Oracle AI Database Vector Search and RAG to answer a
+  natural-language follow-up question with retrieved project and
+  supplier context.
 
 Congratulations, you completed the lab.
 
