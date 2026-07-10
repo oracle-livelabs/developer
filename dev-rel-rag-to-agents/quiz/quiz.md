@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Test your knowledge of building a RAG and agentic! This quiz covers key concepts from the lab including Vector Search, embeddings, Python integration, and AI-powered recommendation systems.
+Test your knowledge of building a RAG app and agents! This quiz covers key concepts from the lab including Vector Search, embeddings, Python integration, and AI-powered recommendation systems.
 
 Estimated Time: 5 minutes
 
