@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Test your knowledge of building a RAG and agentic! This quiz covers key concepts from the lab including Vector Search, embeddings, Python integration, and AI-powered recommendation systems.
+Test your knowledge of building a RAG app and agents! This quiz covers key concepts from the lab including Vector Search, embeddings, Python integration, and AI-powered recommendation systems.
 
 Estimated Time: 5 minutes
 
@@ -42,7 +42,7 @@ Q: What is the key tradeoff of a LLM-driven workflow?
 Q: Why do tool signatures and docstrings matter?
 - They change the physical database schema used by the tool
 * They define the model-facing interface that helps the LLM decide when and how to call a tool
-- They automatically validate every SQL result returned by Oracle
+- They automatically validate every SQL result returned by the database
 - They prevent the framework from executing tool calls
 > The LLM sees the tool name, inputs, and description, so clear interfaces improve tool selection and usage.
 
@@ -50,11 +50,11 @@ Q: What makes the unified query important?
 - It moves data into a separate vector database for faster retrieval
 - It asks the LLM to generate SQL without constraints
 - It replaces the need for asset metadata
-* It combines relational, JSON, graph, and vector evidence in one Oracle-backed SQL call
+* It combines relational, JSON, graph, and vector evidence in one SQL call
 > The unified query shows how Oracle AI Database can provide rich incident context without, CDC, synchronization, ETL, or separate data stores.
 
 Q: What role does LangGraph play in the lab?
-- It creates the original PRISM seed data
+- It makes the code look like an Instagram influencer
 - It replaces Ollama as the LLM runtime
 * It implements the agent reasoning loop where the model can answer or request allowed tool calls
 - It converts markdown quiz blocks into notebook cells
@@ -62,13 +62,13 @@ Q: What role does LangGraph play in the lab?
 
 Q: Why does the notebook use both short-term and long-term memory for the agent?
 * Short-term memory preserves the current thread, while long-term memory stores durable recallable knowledge across runs
-- Short-term memory stores SQL tables, while long-term memory stores only Python variables
+- Short-term memory stores full SQL tables, while long-term memory stores only Python variables
 - Short-term memory replaces retrieval, while long-term memory disables tool calls
-- Both memories are temporary and disappear when the notebook kernel stops
+- Both memories are temporary and disappear when you close the Jupyter notebook
 > The notebook separates conversation state from persistent semantic memory so the agent can continue a thread and recall prior incident decisions.
 
 ```
 
 ## Acknowledgements
 * **Authors** - Kirk Kirkconnell
-* **Last Updated By/Date** - Kirk Kirkconnell, January 2026
+* **Last Updated By/Date** - Kirk Kirkconnell, July 2026
