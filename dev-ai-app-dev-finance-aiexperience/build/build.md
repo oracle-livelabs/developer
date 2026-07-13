@@ -162,7 +162,9 @@ else:
     ![Open Terminal](./images/lab4task3.png " ")
 
 
-If you completed Lab 1: Run the Demo earlier, this is what gets printed out when the loan officer clicks on the customer 1000. You just built it, well done!
+    If you completed Lab 1: Run the Demo earlier, this is what gets
+    printed out when the loan officer clicks on customer `1000`. You
+    just built it, well done!
 
 ## Task 6: Create a function to generate recommendations for the customer
 

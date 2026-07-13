@@ -103,17 +103,19 @@ In this first example, you will use the application to approve a customer with s
 
     ![James Smith Approved List](./images/james-smith-final.png =50%x*)
 
-**Conclusion**
+    **Conclusion**
 
-Once you select and save one of the 3 loans recommended by the AI: 
+    Once you select and save one of the 3 loans recommended by the AI:
 
-✅ The customer's loan status is updated.
+    ✅ The customer's loan status is updated.
 
-✅ A finalized PDF decision document is generated.  
+    ✅ A finalized PDF decision document is generated.
 
-✅ The dashboard reflects the change in real-time — marking James as Approved.
+    ✅ The dashboard reflects the change in real-time — marking James
+    as Approved.
 
-Congratulations, you have just approved your first customer loan! Proceed to the next task.
+    Congratulations, you have just approved your first customer loan!
+    Proceed to the next task.
 
 ## Task 3: Demo - Denying a customer with high risk
 In this example, you will navigate the application to review a customer and deny them as part of the exercise. The second user on your to-do list is James Woods.
@@ -179,9 +181,10 @@ In this example, you will navigate the application to review a customer and deny
 
     ![James Woods Denied List](./images/woods-decision3.png =50%x*)
 
-**Conclusion**
+    **Conclusion**
 
-Congratulations, you have finished reviewing a customer with high financial risk! Proceed to the next task.
+    Congratulations, you have finished reviewing a customer with high
+    financial risk! Proceed to the next task.
 
 ## Task 4: Demo - Update customer details
 
@@ -209,15 +212,17 @@ Lastly, let’s explore how the system uses JSON Duality Views to handle profile
 
     ![Customer Profile Updated](./images/anderson-65k.png)
 
-**Conclusion**
+    **Conclusion**
 
-Once the document is uploaded:
+    Once the document is uploaded:
 
-✅ The system automatically detects the new income data.
+    ✅ The system automatically detects the new income data.
 
-✅ Then their profile will be updated from $25,000 to $65,000.
+    ✅ Then their profile will be updated from $25,000 to $65,000.
 
-✅ And thanks to JSON Transform and JSON Duality Views, only the relevant field is modified — leaving the rest of the profile UNTOUCHED.
+    ✅ And thanks to JSON Transform and JSON Duality Views, only the
+    relevant field is modified — leaving the rest of the profile
+    UNTOUCHED.
 
 ## Summary
 
