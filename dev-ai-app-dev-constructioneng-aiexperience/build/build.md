@@ -4,8 +4,6 @@
 
 In this lab, you build a construction procurement engine with Oracle AI Database and OCI Generative AI. Connect to the database, explore the sample procurement data, and invoke a large language model to generate supplier recommendations and risk explanations. Building on earlier exercises, you’ll apply Python to deliver a fully integrated, AI-powered construction procurement application.
 
-This lab uses some of the basic coding samples you created in lab 3, such as `cursor.execute` and more.
-
 Estimated Time: 30 minutes
 
 ### Objectives
@@ -892,8 +890,6 @@ To summarize, you:
   supplier context.
 
 Congratulations, you completed the lab.
-
-You may now proceed to the next lab.
 
 ## Learn More
 
