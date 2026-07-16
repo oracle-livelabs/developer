@@ -898,4 +898,4 @@ Congratulations, you completed the lab.
 
 ## Acknowledgements
 * **Authors** - Francis Regalado
-* **Last Updated By/Date** - Taylor Zheng, Uma Kumar, Deion Locklear, Daniet Hart, July 2026
+* **Last Updated By/Date** - Taylor Zheng, Uma Kumar, Deion Locklear, Daniel Hart, July 2026
