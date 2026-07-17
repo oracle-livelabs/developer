@@ -46,7 +46,9 @@ This lab assumes you have:
 
 ## Task 3: View created tables in Jupyter Lab
 
-1. Navigate back to your terminal window.
+1. Stay in JupyterLab. The file browser remains available while the
+    Launcher is open, so you do not need to return to the Terminal or
+    close the Launcher tab.
 
     ![Open Terminal](./images/terminal.png " ")
 
@@ -61,9 +63,14 @@ This lab assumes you have:
 
     ![Tables](./images/tables.png " ")
 
+3. After reviewing the setup script, close the
+    `db_setup_CONSTENG_script_2.sql` tab. You will continue the rest of
+    the lab from the Launcher and your notebook, so the script tab is
+    no longer needed.
+
 ## Task 4: Connect to Database
 
-1. Click the **+** sign on the top left to open the Launcher.
+1. Return to the existing Launcher tab.
 
     ![Open Launcher](./images/open-launcher.png " ")
 
@@ -138,7 +145,7 @@ In this task, you will:
   project details, sourcing requirements, risk level, recommended
   supplier, supplier fit score, and evaluation status.
 
-1. Copy and paste the code below into the new notebook.
+1. Copy and paste the code below into a new cell in your notebook.
 
     ```python
     <copy>
@@ -629,7 +636,7 @@ This step:
   `CE_PROJECT_CHUNKS` table so the chunks can be searched by semantic
   similarity in the next task.
 
-1. Run and review the code in a new cell:
+1. Copy the following code into a new cell.
 
     ```python
     <copy>
@@ -705,7 +712,9 @@ This step:
   use only supplier names that appear in the provided records or
   context.
 
-1. Copy the code block below to implement RAG:
+1. The following code block will perform
+    Retrieval-Augmented Generation (RAG). Copy this code block into a
+    new cell.
 
     ```python
     <copy>
@@ -850,7 +859,10 @@ Tasks:
 2. Click the **Run** button to execute the cell. The notebook will
     process the question using AI Vector Search, retrieve the most
     relevant chunks from the `CE_PROJECT_CHUNKS` table, and send the
-    retrieved context to OCI Generative AI.
+    retrieved context to OCI Generative AI. OCI Generative AI then
+    uses the retrieved project and supplier evidence to generate a
+    grounded response that summarizes the best-fit supplier and the
+    reasoning behind that recommendation.
 
     ![ask question](./images/task7.png " ")
 
