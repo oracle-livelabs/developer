@@ -19,7 +19,7 @@ Estimated Time: 5 minutes
 
 ```quiz score
 Q: What is the main purpose of the RAG retriever in Section 1?
-* To retrieve semantically relevant Prism chunks using in-database vector embeddings and vector distance
+* To retrieve semantically relevant Prism data chunks using in-database vector embeddings and vector distance
 - To let the LLM choose arbitrary database tables to query
 - To store long-term memories for later conversations
 - To format the final incident report as markdown
@@ -30,7 +30,7 @@ Q: What does the raw RAG implementation demonstrate before the LangChain version
 - RAG automatically performs multi-step planning
 - RAG removes the need to inspect retrieved context
 * RAG is mainly retrieval, prompt assembly, and an LLM call
-> The raw version makes the moving parts visible, which helps learners understand what a framework simplifies later.
+> The raw version makes the moving parts visible, which helps you to understand what a framework simplifies later.
 
 Q: What is the key tradeoff of a LLM-driven workflow?
 * It is predictable and auditable, but less adaptive than an agent
@@ -40,10 +40,10 @@ Q: What is the key tradeoff of a LLM-driven workflow?
 > The workflow follows a fixed path with bounded LLM calls, which improves control but limits flexibility when the problem changes.
 
 Q: Why do tool signatures and docstrings matter?
-- They change the physical database schema used by the tool
+- They change the physical database schema
 * They define the model-facing interface that helps the LLM decide when and how to call a tool
 - They automatically validate every SQL result returned by the database
-- They prevent the framework from executing tool calls
+- They ensure tools nicely hang on the wall so you're not digging through a cabinet in the garage
 > The LLM sees the tool name, inputs, and description, so clear interfaces improve tool selection and usage.
 
 Q: What makes the unified query important?

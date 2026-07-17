@@ -2,7 +2,7 @@
 
 ## About this Workshop
 
-In this lab, we'll interact with a data set from an application named Prism CityOps. It's an application used by the city of Kirkland to monitor and manage city infrastrucuter such as ongoing maintenance, active monitoring via IoT devices, crew dispatch, record keeping, and more.
+In this lab, we'll interact with a data set from an application named Prism CityOps. It's an application used by the city of Kirkland to monitor and manage city infrastructure such as ongoing maintenance, active monitoring via IoT devices, crew dispatch, record keeping, and more.
 
 You'll utilize a Jupyter Notebook with real Python code, completing real activities, and building on what you already know about databases and AI Vector Search. You'll create a RAG pipeline using data in the database and work your way up to implementing a full on AI agent, with tools and a little memory, utilizing LangChain as the agent framework.
 
@@ -55,4 +55,4 @@ This lab assumes you have:
 
 ## Acknowledgements
 * **Authors** - Kirk Kirkconnell
-* **Last Updated By/Date** - Kirk Kirkconnell, June 2026
+* **Last Updated By/Date** - Kirk Kirkconnell, July 2026
