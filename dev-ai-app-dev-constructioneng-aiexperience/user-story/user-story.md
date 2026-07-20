@@ -46,6 +46,8 @@ In this first example, you will review and approve a low-risk project. The first
 2. The **Downtown Mixed-Use Tower** project page opens with a project snapshot showing key procurement details, including project ID, project name, location, project phase, required trade, procurement urgency, budget range, and risk level.
     Below the snapshot, review the **Project Analysis Powered by AI** section. For this project, the overall risk score is low, and the analysis summarizes the project requirements, sourcing needs, and documentation signals used to support an approval recommendation.
 
+     >💡 **Note**: AI analysis may take a few seconds to complete. Please wait for the output to appear.
+
     ![P1001 AI generated recommendations](./images/p1001-ai.png =50%x*)
 
 3. At the bottom of the **Downtown Mixed-Use Tower** evaluation, you will find the **AI Procurement Guru**, a chatbot powered by **Oracle AI Database AI Vector Search and OCI Generative AI**.
@@ -94,15 +96,19 @@ In this first example, you will review and approve a low-risk project. The first
 
     ![P1001 PDF](./images/p1001-openpdf.png =50%x*)
 
-10. Open the downloaded PDF to review the **Final Decision Notice**. This document summarizes the approved decision for **Downtown Mixed-Use Tower**, including the selected supplier, risk score, approval rationale, and next steps.
+10. You may get a notification that the file being downloaded is insecure. Click **Keep** to download the file.
+
+     ![Keep PDF](./images/keeppdf.png =50%x*)
+
+11. Open the downloaded PDF to review the **Final Decision Notice**. This document summarizes the approved decision for **Downtown Mixed-Use Tower**, including the selected supplier, risk score, approval rationale, and next steps.
 
     ![P1001 PDF](./images/p1001-pdfv2.png =50%x*)
 
-11. Click **Return to Dashboard** to go back to the **Supplier Evaluation Dashboard**.
+12. Click **Return to Dashboard** to go back to the **Supplier Evaluation Dashboard**.
 
     ![Return to Dashboard](./images/p1001-dashboard.png =50%x*)
 
-12. Expand **View Approved Projects**. Confirm that project `1001`, **Downtown Mixed-Use Tower**, no longer appears in the **Pending Projects** list and now appears in the **Approved Projects** list with the status **Approved**.
+13. Expand **View Approved Projects**. Confirm that project `1001`, **Downtown Mixed-Use Tower**, no longer appears in the **Pending Projects** list and now appears in the **Approved Projects** list with the status **Approved**.
 
     ![Approved List](./images/p1001-final-approved.png =50%x*)
 
@@ -119,7 +125,7 @@ Once you select and save one of the AI-recommended supplier options:
 
 Congratulations, you have just approved your first project. Proceed to the next task.
 
-## Task 3: Demo - Project with High risk level
+## Task 3: Demo - Project with High Risk Level
 In this example, you will review a high-risk project and deny it as part of the exercise. The second project on your list is project `1003`, **Harbor Seismic Retrofit**.
 
 1. On the **Supplier Evaluation Dashboard**, go to the **Pending Projects** list. In the row for project `1003`, **Harbor Seismic Retrofit**, click **Review** to open the project details.
@@ -128,6 +134,8 @@ In this example, you will review a high-risk project and deny it as part of the 
 
 2. The **Harbor Seismic Retrofit** project profile opens with a project snapshot showing key procurement details, including project ID, location, project phase, required trade, procurement urgency, budget range, risk level, and evaluation status.
     Below the snapshot, review the **Project Analysis Powered by AI** section. For this scenario, the project has an overall risk score of **9/10**, marked as **High Risk**. The AI analysis evaluates the project requirements and supplier evidence, then recommends a denial or new RFP if core requirements are not met. It also provides guidance on the risk factors that would need to be addressed before the project could move forward.
+
+     >💡 **Note**: AI analysis may take a few seconds to complete. Please wait for the output to appear.
 
     ![Harbor Seismic Retrofit AI generated recommendations](./images/p1003-profile.png =50%x*)
 
@@ -163,15 +171,19 @@ In this example, you will review a high-risk project and deny it as part of the 
 
     ![P1003 Download Recommendation](./images/p1003-download2.png =50%x*)
 
-8. Open the downloaded PDF and review the **Final Decision Notice** for **Harbor Seismic Retrofit**. The document summarizes the denied decision and provides next steps, such as submitting a new RFP for qualified seismic steel suppliers that meet the project’s compliance requirements.
+8. You may get a notification that the file being downloaded is insecure. Click **Keep** to download the file.
+
+     ![Keep PDF](./images/keeppdf2.png =50%x*)
+
+9. Open the downloaded PDF and review the **Final Decision Notice** for **Harbor Seismic Retrofit**. The document summarizes the denied decision and provides next steps, such as submitting a new RFP for qualified seismic steel suppliers that meet the project’s compliance requirements.
 
     ![Open P1003 PDF](./images/p1003-pdf.png =50%x*)
 
-9. Click **Return to Dashboard** to go back to the **Supplier Evaluation Dashboard**.
+10. Click **Return to Dashboard** to go back to the **Supplier Evaluation Dashboard**.
 
     ![Return to Dashboard](./images/p1003-dashboard.png =50%x*)
 
-10. Expand **View Denied Projects**. Confirm that project `1003`, **Harbor Seismic Retrofit**, no longer appears in the **Pending Projects** list and now appears in the **Denied Projects** section with the status **Denied**.
+11. Expand **View Denied Projects**. Confirm that project `1003`, **Harbor Seismic Retrofit**, no longer appears in the **Pending Projects** list and now appears in the **Denied Projects** section with the status **Denied**.
 
     ![Denied List](./images/p1003-denied.png =50%x*)
 
@@ -212,6 +224,9 @@ This demonstrates how the app can apply updates to the project profile while kee
 
     ![Project Profile Updated](./images/p1004-uploadedpdf2.png)
 
+5. Click **Return to Dashboard** to return to the home page of the application.
+
+    ![return to dashboard](./images/homepage.png =50%x*)
 
 **Conclusion**:
 
@@ -254,4 +269,4 @@ By combining these Oracle AI Database capabilities, the application helps stream
 ## Acknowledgements
 * **Authors** - Linda Foinding, Francis Regalado
 * **Contributors** - Eddie Ambler, Ramona Magadan, Mark Nelson, Andy Tael, Anders Swanson, Rahul Tasker
-* **Last Updated By/Date** - Taylor Zheng, Uma Kumar, Deion Locklear, Daniet Hart, July 2026
+* **Last Updated By/Date** - Taylor Zheng, Uma Kumar, Deion Locklear, Daniel Hart, July 2026
