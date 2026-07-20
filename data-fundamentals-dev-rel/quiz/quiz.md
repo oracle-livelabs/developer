@@ -70,7 +70,7 @@ Q: What do each dimension of a vector embedding represent?
 - A specific dictionary word, making the embedding basically an inefficient thesaurus.
 * A value created by an embedding model representing some aspect of semantic meaning or context about the data.
 - A technical persons emotional stage while explaining vector indexing to management.
-> Each dimension is a value the embedding model learned during training, not something with a fixed human meaning.
+> Each dimension is a feature learned during training, not something with a fixed human meaning.
 
 Q: How does Cosine similarity measure distance?
 - It gets out a tape measure and...
