@@ -55,10 +55,23 @@ This workshop assumes you have:
 * Basic knowledge of Python. 
 * Basic knowledge of Oracle Database, including how to run queries.
 
+### Architecture
+
+Below is a visual representation of the lab workflow. As a **Construction Procurement Officer**, you will review supplier submissions for construction engineering projects. **Oracle AI Database** converts your question or the project details you are reviewing into a **vector embedding**, then uses **semantic search** to find relevant information based on meaning rather than exact keyword matches. The most relevant document excerpts are provided to the AI along with your question. Using this evidence, the AI delivers a **grounded recommendation** to approve, deny, or request more information, with a clear rationale.
+
+![Diagram](./images/architecture.png =50%x*)
+
+The application utilizes key features of Oracle AI Database:
+
+* **Converged Database:** keeps transactional, analytical, AI, and operational data together.
+* **AI Vector Search:** enables semantic “meaning-based” search across documents and project data.
+* **JSON Duality Views / JSON Transform:** makes document-style JSON data easier to use alongside relational tables.
+* **Property Graph:** models relationships—for example, which supplier supports which project, requirement, risk, or evaluation.
+
 ## Learn More
 
 * [Oracle AI Database Documentation](https://docs.oracle.com/en/database/oracle/oracle-database/23/)
 
 ## Acknowledgements
 * **Authors** - Uma Kumar
-* **Last Updated By/Date** - Taylor Zheng, Uma Kumar, Deion Locklear, Daniet Hart, July 2026
+* **Last Updated By/Date** - Taylor Zheng, Uma Kumar, Deion Locklear, Daniel Hart, July 2026
