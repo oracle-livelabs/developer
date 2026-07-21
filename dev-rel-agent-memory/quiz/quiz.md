@@ -79,4 +79,4 @@ Q: In the cross-inspector handoff scenario, how does Vance benefit from Mercerâ€
 
 ## Acknowledgements
 * **Authors** - Kirk Kirkconnell
-* **Last Updated By/Date** - Kirk Kirkconnell, January 2026
+* **Last Updated By/Date** - Kirk Kirkconnell, July 2026
