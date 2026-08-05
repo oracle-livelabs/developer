@@ -66,13 +66,27 @@ Q: What's the likely data type you should store a JSON document in Oracle?
 * JSON
 > Your default for storing JSON should likely be a JSON data type, but it really depends on how large of a document you're storing and your use case.
 
+Q: What do each dimension of a vector embedding represent?
+- A specific dictionary word, making the embedding basically an inefficient thesaurus.
+* A value created by an embedding model representing some aspect of semantic meaning or context about the data.
+- A technical persons emotional stage while explaining vector indexing to management.
+> Each dimension is a feature learned during training, not something with a fixed human meaning.
+
 Q: How does Cosine similarity measure distance?
 - It gets out a tape measure and...
 - It measures concise distance between vectors
 * It measures the angle between vectors
+> Cosine similarity measures the arc between the axis of a point in vector space. The tradeoff is Cosine misses the magnitude of how many times that point exists in vector space.
+
+Q: You perform a query on a vector index, but it returns utterly unrelated results or zero results. What could the problem be?
+- Your embeddings caught a sickness from an unsanitized CSV import.
+- The index needs to be rebuilt because SQL query plans expire after 24 hours.
+* The query embedding and stored embeddings came from different models, so they're not comparable.
+- The similarity function used at query time doesn't match the one the index was built with. 
+> Vector similarity only makes sense when query and stored vectors come from the same embedding model, since different models place semantically identical content in completely different vector spaces. Mixing them (or using a mismatched distance metric) gives you numbers that look like results but mean nothing.
 
 ```
 
 ## Acknowledgements
 * **Authors** - Kirk Kirkconnell
-* **Last Updated By/Date** - Kirk Kirkconnell, June 2026
+* **Last Updated By/Date** - Kirk Kirkconnell, July 2026

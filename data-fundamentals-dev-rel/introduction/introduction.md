@@ -2,7 +2,7 @@
 
 ## About this Workshop
 
-In this lab, we'll interact with a data set from an application named Prism CityOps. It's an application used by the city of Kirkland to monitor and manage city infrastrucuter such as ongoing maintenance, active monitoring via IoT devices, crew dispatch, record keeping, and more.
+In this lab, we'll interact with a data set from an application named Prism CityOps. It's an application used by the city of Kirkland to monitor and manage city infrastructure such as ongoing maintenance, active monitoring via IoT devices, crew dispatch, record keeping, and more.
 
 You'll utilize a Jupyter Notebook with real Python code, completing real activities, and using aspects of Unified Model Theory (UMT) to present data in various forms, from JSON documents, to graph traversals with visual of those relationships, and perform AI search via vector data, all within Oracle AI Database.
 

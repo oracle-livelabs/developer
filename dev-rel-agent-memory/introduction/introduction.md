@@ -2,7 +2,7 @@
 
 ## About this Workshop
 
-In this lab, we'll interact with a data set from an application named Prism CityOps, but we will add new database objects combined with the oracleagentmemory Python driver to enable our AI agent to have a memory lifecycle. Prism CityOps is an application used by the city of Kirkland to monitor and manage city infrastrucuter such as ongoing maintenance, active monitoring via IoT devices, crew dispatch, record keeping, and more. This new capability you'll build will help with more in-depth reporting, more informed alerting, and much more.
+In this lab, we'll interact with a data set from an application named Prism CityOps, but we will add new database objects combined with the oracleagentmemory Python driver to enable our AI agent to have a memory lifecycle. Prism CityOps is an application used by the city of Kirkland to monitor and manage city infrastructure such as ongoing maintenance, active monitoring via IoT devices, crew dispatch, record keeping, and more. This new capability you'll build will help with more in-depth reporting, more informed alerting, and much more.
 
 You'll utilize a Jupyter Notebook with real Python code, completing real activities, to build this agent with fully fleshed out agents.
 
@@ -70,4 +70,4 @@ This lab assumes you have:
 
 ## Acknowledgements
 * **Authors** - Kirk Kirkconnell
-* **Last Updated By/Date** - Kirk Kirkconnell, June 2026
+* **Last Updated By/Date** - Kirk Kirkconnell, July 2026
