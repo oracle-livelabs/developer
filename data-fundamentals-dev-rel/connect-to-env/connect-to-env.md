@@ -21,9 +21,25 @@ Estimated Time: 5 minutes
 
     ![JupyterLab server login](./images/jupyter-login.png " ")
 
-1. Select **`notebooks/data_fundamentals`** directory to open it.  Double click on file **`data_fundamentals_lab.ipynb`** and it will open in the the panel on the right.
+3. Select **`notebooks/data_fundamentals`** directory to open it.  Double click on file **`data_fundamentals_lab.ipynb`** and it will open in the the panel on the right.
 
     ![Open Launcher](./images/launcher.png " ")
+
+4. If the notebooks folder remains empty, open up a new **Terminal** from Launcher and run this code block:
+
+    ```
+    <copy>
+    mkdir -p notebooks && curl -L "https://objectstorage.us-ashburn-1.oraclecloud.com/p/Pg8kffjHaKzjj8pCnMbUaNmik_JBnNO-MXsaIva4iUQBFZK52oLykmY3mIhai9MS/n/axywji1aljc2/b/kirkstorage/o/dev-rel-notebooks.zip" -o /tmp/dev-rel-notebooks.zip && unzip /tmp/dev-rel-notebooks.zip -d notebooks
+    </copy>
+    ```
+    
+    If curl is not available, use this command:
+
+    ```
+    <copy>
+    mkdir -p notebooks && wget -O /tmp/dev-rel-notebooks.zip "https://objectstorage.us-ashburn-1.oraclecloud.com/p/Pg8kffjHaKzjj8pCnMbUaNmik_JBnNO-MXsaIva4iUQBFZK52oLykmY3mIhai9MS/n/axywji1aljc2/b/kirkstorage/o/dev-rel-notebooks.zip" && unzip /tmp/dev-rel-notebooks.zip -d notebooks
+    </copy>
+    ````
 
 ## Task 2: Learn to use the components of Unified Model Theory (UMT)
 
