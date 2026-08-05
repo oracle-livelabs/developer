@@ -32,14 +32,6 @@ Estimated Time: 5 minutes
     mkdir -p notebooks && curl -L "https://objectstorage.us-ashburn-1.oraclecloud.com/p/Pg8kffjHaKzjj8pCnMbUaNmik_JBnNO-MXsaIva4iUQBFZK52oLykmY3mIhai9MS/n/axywji1aljc2/b/kirkstorage/o/dev-rel-notebooks.zip" -o /tmp/dev-rel-notebooks.zip && unzip /tmp/dev-rel-notebooks.zip -d notebooks
     </copy>
     ```
-    
-    If curl is not available, use this command:
-
-    ```
-    <copy>
-    mkdir -p notebooks && wget -O /tmp/dev-rel-notebooks.zip "https://objectstorage.us-ashburn-1.oraclecloud.com/p/Pg8kffjHaKzjj8pCnMbUaNmik_JBnNO-MXsaIva4iUQBFZK52oLykmY3mIhai9MS/n/axywji1aljc2/b/kirkstorage/o/dev-rel-notebooks.zip" && unzip /tmp/dev-rel-notebooks.zip -d notebooks
-    </copy>
-    ````
 
 ## Task 2: Learn to use the components of Unified Model Theory (UMT)
 
