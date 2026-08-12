@@ -57,7 +57,7 @@ In this first example, you will review and approve a low-risk project. The first
 
     ```text
     <copy>
-    Which project packages are the best fit when the sponsor wants to minimize site-prep work?
+    Which suppliers are the best fit when the sponsor wants to minimize site-prep work?
     </copy>
     ```
 
@@ -200,7 +200,7 @@ Once you review and save the high-risk project decision:
 
 Congratulations, you have finished reviewing and denying the high-risk project. Proceed to the next task.
 
-## Task 4: Demo - Update Customer Details
+## Task 4: Demo - Update Project Details
 
 In this task, you will see how the application uses **JSON Duality Views** to update project information. You will open the **North Campus Lab Expansion** project, upload an updated Construction Supplier Evaluation document, and review how the project details are updated in the application.
 

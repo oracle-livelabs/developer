@@ -82,7 +82,7 @@ This lab assumes you have:
     This code imports the required Python libraries, loads the
     database connection details from the environment, connects to
     Oracle AI Database, and creates a cursor that will be used to run
-    SQL queries in later steps.
+    SQL queries in later steps. 💡**`connection = oracledb.connectuser=username, password=password, dsn=dsn`** 
 
     ```python
     <copy>
@@ -136,14 +136,14 @@ In this task, you will:
 * **Define a Function**: Create a reusable `fetch_project_data`
   function that queries `construction_projects_dv` by project ID. The
   query uses the project `_id` field inside the JSON document to
-  return the matching project.
+  return the matching project. 💡 **`def fetch_project_data(project_id)`**
 * **Use an Example**: Fetch data for project `1001`,
   `Downtown Mixed-Use Tower`, to demonstrate how the function
-  retrieves one project profile from the database.
+  retrieves one project profile from the database. 💡 **`project_json = fetch_project_data(selected_project_id)`** 
 * **Display the Results**: Extract selected fields from the JSON
   document and display them in a pandas DataFrame. The table shows
   project details, sourcing requirements, risk level, recommended
-  supplier, supplier fit score, and evaluation status.
+  supplier, supplier fit score, and evaluation status. 💡 **`display(df_project_details)`**
 
 1. Copy and paste the code below into a new cell in your notebook.
 
@@ -249,19 +249,19 @@ Here’s what the code does:
   `CE_SUPPLIER_EVALUATION`, `CE_SUPPLIER_RECOMMENDATION`, and
   `CE_SUPPLIERS` so the prompt includes each supplier’s
   recommendation, fit score, risk level, capacity status,
-  explanation, strengths, and missing information.
+  explanation, strengths, and missing information. 💡 **`WHERE eval.PROJECT_ID = :project_id`**
 * **Build a Prompt**: Combine the selected project profile, sourcing
   requirements, full project JSON, and supplier recommendation records
   into a structured prompt. The prompt gives the LLM decision rules
-  for when to use `APPROVE`, `REQUEST INFO`, or `DENY`.
+  for when to use `APPROVE`, `REQUEST INFO`, or `DENY`. 💡 **`prompt = f"""`**
 * **Use OCI Generative AI**: Send the prompt to the
   `meta.llama-3.2-90b-vision-instruct` model through OCI’s
-  Generative AI inference client.
+  Generative AI inference client. 💡 **`chat_response = genai_client.chat(chat_detail)`**
 * **Display the Output**: Print the generated supplier evaluation
   using the same sections used in the Seer Construction app:
   `Project Summary`, `Key Sourcing Requirements`,
   `Top 3 Supplier Recommendations`, `Risks and Missing Information`,
-  and `Actionable Steps`.
+  and `Actionable Steps`. 💡 **`print(recommendations)`**
 
 At this point, the recommendation is generated as notebook output
 only. In the next task, you will chunk and store this generated text
@@ -472,19 +472,19 @@ generated recommendation into smaller sentence-based chunks.
 Here’s what the code does:
 
 * **Check for Generated Recommendations**: Confirm that the
-  recommendations text from Task 6 exists before trying to chunk it.
+  recommendations text from Task 6 exists before trying to chunk it. 💡 **`if not recommendations:`**
 * **Remove Prior AI Recommendation Chunks**: Delete only the previous
   `AI Recommendation` chunks for this project from the
   `CE_PROJECT_CHUNKS` table. Seeded project and supplier context rows
-  remain in the table.
+  remain in the table. 💡 **`DELETE FROM CE_PROJECT_CHUNKS`**
 * **Create New Text Chunks**: Use `VECTOR_CHUNKS` to split the
-  generated recommendation text into smaller sentence-based chunks.
+  generated recommendation text into smaller sentence-based chunks. 💡 **`VECTOR_CHUNKS`**
 * **Store the Chunks**: Insert the new chunks into the
   `CE_PROJECT_CHUNKS` table with new `CHUNK_ID` values to avoid
-  duplicate IDs.
+  duplicate IDs. 💡 **`INSERT INTO CE_PROJECT_CHUNKS`**
 * **Review the Results**: Display a DataFrame showing each
   `CHUNK_ID`, character count, word count, and preview text so you
-  can confirm what will be used in the RAG flow.
+  can confirm what will be used in the RAG flow. 💡 **`display(df_chunks)`**
 
 In the next task, you will create vector embeddings for these stored
 chunks.
@@ -628,13 +628,13 @@ This step:
 
 * **Uses the Recommendation Chunks**: Works with the
   `AI Recommendation` rows that were inserted into the
-  `CE_PROJECT_CHUNKS` table in Task 7.
+  `CE_PROJECT_CHUNKS` table in Task 7. 💡 **`AND SOURCE_TYPE = 'AI Recommendation'`**
 * **Generates Embeddings in the Database**: Uses
   `dbms_vector_chain.utl_to_embedding` with the lab’s configured
-  `DEMO_MODEL` to convert each chunk’s text into a vector embedding.
+  `DEMO_MODEL` to convert each chunk’s text into a vector embedding. 💡 **`SET CHUNK_VECTOR = dbms_vector_chain.utl_to_embedding`**
 * **Stores the Embeddings**: Updates the `CHUNK_VECTOR` column in the
   `CE_PROJECT_CHUNKS` table so the chunks can be searched by semantic
-  similarity in the next task.
+  similarity in the next task. 💡 **`UPDATE CE_PROJECT_CHUNKS`**
 
 1. Copy the following code into a new cell.
 
@@ -699,18 +699,18 @@ This step:
 * **Vectorizes the Question**: Uses
   `dbms_vector_chain.utl_to_embedding` with the lab’s configured
   `DEMO_MODEL` to convert the user’s question into a vector
-  embedding.
+  embedding. 💡 **`q_vec = vectorize_question(question)`**
 * **Performs AI Vector Search**: Compares the question vector to the
   stored chunk vectors in the `CE_PROJECT_CHUNKS` table and retrieves
-  the most relevant chunks using cosine distance.
+  the most relevant chunks using cosine distance. 💡 **`ORDER BY VECTOR_DISTANCE(CHUNK_VECTOR, :qv, COSINE)`**
 * **Uses RAG**: Combines the selected project profile, supplier
   recommendation records, and retrieved chunk context into a prompt
-  for OCI Generative AI.
+  for OCI Generative AI. 💡 **`rag_prompt = f"""`**
 * **Helps Reduce Hallucinations**: Instructs the model to use only
   the supplied project data, supplier records, and retrieved context.
   The prompt also tells the model not to invent supplier names and to
   use only supplier names that appear in the provided records or
-  context.
+  context. 💡 **`Use only the supplied project profile, supplier recommendation`**
 
 1. The following code block will perform
     Retrieval-Augmented Generation (RAG). Copy this code block into a
