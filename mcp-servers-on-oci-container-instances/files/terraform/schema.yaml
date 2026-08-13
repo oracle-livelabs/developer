@@ -1,0 +1,132 @@
+schemaVersion: 1.1.0
+version: "20260813"
+locale: en
+title: "MCP Servers on OCI Container Instances"
+description: "Deploy Terraform, GitHub, and Playwright MCP servers in one OCI Container Instance for a hands-on AI agents lab."
+
+variableGroups:
+  - title: "Required deployment inputs"
+    variables:
+      - ${compartment_ocid}
+      - ${availability_domain}
+      - ${container_shape}
+      - ${container_ocpus}
+      - ${container_memory_in_gbs}
+
+  - title: "Hidden Resource Manager context"
+    visible: false
+    variables:
+      - ${tenancy_ocid}
+      - ${current_user_ocid}
+      - ${region}
+
+  - title: "Hidden container defaults"
+    visible: false
+    variables:
+      - ${terraform_mcp_image}
+      - ${github_mcp_image}
+      - ${playwright_mcp_image}
+      - ${terraform_mcp_port}
+      - ${github_mcp_port}
+      - ${playwright_mcp_port}
+
+variables:
+  tenancy_ocid:
+    type: string
+    visible: false
+    required: false
+
+  current_user_ocid:
+    type: string
+    visible: false
+    required: false
+
+  region:
+    type: oci:identity:region:name
+    visible: false
+    required: true
+
+  compartment_ocid:
+    title: "Target compartment"
+    description: "Compartment where Resource Manager creates the lab network and Container Instance."
+    type: oci:identity:compartment:id
+    required: true
+
+  availability_domain:
+    title: "Availability domain"
+    description: "Availability domain for the Container Instance. Terraform validates the selected shape against this location."
+    type: oci:identity:availabilitydomain:name
+    required: true
+    dependsOn:
+      compartmentId: ${compartment_ocid}
+
+  container_shape:
+    title: "Container Instance shape"
+    description: "Shape for the Container Instance. Terraform validates live availability for the selected compartment and availability domain."
+    type: enum
+    enum:
+      - CI.Standard.E4.Flex
+      - CI.Standard.E5.Flex
+      - CI.Standard.A1.Flex
+    default: CI.Standard.E4.Flex
+    required: true
+
+  container_ocpus:
+    title: "Container Instance OCPUs"
+    description: "Default is sized for the three demo MCP servers. Increase if browser automation needs more CPU. Terraform validates the selected value against the shape-specific OCI limits."
+    type: number
+    minimum: 1
+    maximum: 94
+    default: 2
+    required: true
+
+  container_memory_in_gbs:
+    title: "Container Instance memory in GB"
+    description: "Default is sized for the three demo MCP servers. Increase if browser automation needs more memory. Terraform validates the selected value against the shape-specific OCI limits."
+    type: number
+    minimum: 1
+    maximum: 1504
+    default: 8
+    required: true
+
+  terraform_mcp_image:
+    type: string
+    visible: false
+    default: "docker.io/hashicorp/terraform-mcp-server:1.2.0"
+    required: true
+
+  github_mcp_image:
+    type: string
+    visible: false
+    default: "ghcr.io/github/github-mcp-server:v1.9.0"
+    required: true
+
+  playwright_mcp_image:
+    type: string
+    visible: false
+    default: "mcr.microsoft.com/playwright/mcp:v0.0.79"
+    required: true
+
+  terraform_mcp_port:
+    type: number
+    visible: false
+    minimum: 1
+    maximum: 65535
+    default: 8080
+    required: true
+
+  github_mcp_port:
+    type: number
+    visible: false
+    minimum: 1
+    maximum: 65535
+    default: 8082
+    required: true
+
+  playwright_mcp_port:
+    type: number
+    visible: false
+    minimum: 1
+    maximum: 65535
+    default: 8931
+    required: true
