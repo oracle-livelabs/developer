@@ -73,50 +73,20 @@ Use Terraform version `1.5.x`. During development validation, use branch `dev`.
 For a published workshop release, use the reviewed release branch after the lab
 has passed Resource Manager apply/destroy and remote MCP smoke validation.
 
-## Click-to-Deploy Status
+## Deploy to OCI
 
-OCI Resource Manager supports a **Deploy to Oracle Cloud** button for Terraform
-configuration zip packages. This project can support that flow, but an active
-button is intentionally not enabled yet because the Terraform-only package has
-not been published at a stable unauthenticated URL.
+[![Deploy to Oracle Cloud](https://oci-resourcemanager-plugin.plugins.oci.oraclecloud.com/latest/deploy-to-oracle-cloud.svg)](https://cloud.oracle.com/resourcemanager/stacks/create?zipUrl=https://github.com/Phirlly/developer/raw/dev/mcp-servers-on-oci-container-instances/files/resource-manager/mcp-servers-on-oci-container-instances-rm.zip)
 
-Do not use the full `developer` branch zip as the button target. This lab's
-Terraform root is nested under
-`mcp-servers-on-oci-container-instances/files/terraform`, while the
-click-to-deploy URL accepts a `zipUrl` package. Use the source-control path
-above until a release package exists.
+The button uses the tracked Resource Manager package at
+[files/resource-manager/mcp-servers-on-oci-container-instances-rm.zip](files/resource-manager/mcp-servers-on-oci-container-instances-rm.zip).
+If Terraform files change, regenerate the package before using the button:
 
-For the release path, publish the generated Resource Manager package as:
-
-```text
-mcp-servers-on-oci-container-instances-rm.zip
+```bash
+python3 validation/resource_manager_package.py --create --package files/resource-manager/mcp-servers-on-oci-container-instances-rm.zip
 ```
 
-The zip must contain these files at the archive root:
-
-```text
-versions.tf
-providers.tf
-variables.tf
-locals.tf
-network.tf
-container-instance.tf
-outputs.tf
-schema.yaml
-```
-
-After that zip is published and validated as a GitHub release asset or OCI
-Object Storage pre-authenticated request URL, enable the button with:
-
-```markdown
-[![Deploy to Oracle Cloud](https://oci-resourcemanager-plugin.plugins.oci.oraclecloud.com/latest/deploy-to-oracle-cloud.svg)](https://cloud.oracle.com/resourcemanager/stacks/create?zipUrl=<public-terraform-zip-url>)
-```
-
-Lab participants should not need to build or upload this zip manually. The
-package should be generated and published by the release process, then users
-can launch the Resource Manager Create Stack flow from the button. Review the
-stack variables before creating the stack because Resource Manager may run
-apply from the Create Stack flow.
+Review stack variables before creating the stack because Resource Manager may
+run apply from the Create Stack flow.
 
 ## GitHub Authentication
 
