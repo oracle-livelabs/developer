@@ -75,18 +75,11 @@ has passed Resource Manager apply/destroy and remote MCP smoke validation.
 
 ## Deploy to OCI
 
-[![Deploy to Oracle Cloud](https://oci-resourcemanager-plugin.plugins.oci.oraclecloud.com/latest/deploy-to-oracle-cloud.svg)](https://cloud.oracle.com/resourcemanager/stacks/create?zipUrl=https://github.com/Phirlly/developer/raw/dev/mcp-servers-on-oci-container-instances/files/resource-manager/mcp-servers-on-oci-container-instances-rm.zip)
-
-The button uses the tracked Resource Manager package at
-[files/resource-manager/mcp-servers-on-oci-container-instances-rm.zip](files/resource-manager/mcp-servers-on-oci-container-instances-rm.zip).
-If Terraform files change, regenerate the package before using the button:
-
-```bash
-python3 validation/resource_manager_package.py --create --package files/resource-manager/mcp-servers-on-oci-container-instances-rm.zip
-```
-
-Review stack variables before creating the stack because Resource Manager may
-run apply from the Create Stack flow.
+<p align="center">
+  <a href="https://cloud.oracle.com/resourcemanager/stacks/create?zipUrl=https://github.com/Phirlly/developer/raw/dev/mcp-servers-on-oci-container-instances/files/resource-manager/mcp-servers-on-oci-container-instances-rm.zip">
+    <img src="https://oci-resourcemanager-plugin.plugins.oci.oraclecloud.com/latest/deploy-to-oracle-cloud.svg" alt="Deploy to Oracle Cloud">
+  </a>
+</p>
 
 ## GitHub Authentication
 
