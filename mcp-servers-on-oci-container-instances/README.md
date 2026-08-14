@@ -36,13 +36,17 @@ used only for local repository validation.
 The first Terraform / OCI Resource Manager stack is under
 [files/terraform/](files/terraform/). It creates:
 
-- one public VCN/subnet path for a lab deployment;
+- one lab VCN with separate API Gateway and Container Instance subnets;
+- one public OCI API Gateway HTTPS endpoint;
 - one OCI Container Instance;
 - three containers in that Container Instance:
   - Terraform MCP on port `8080`;
   - GitHub MCP on port `8082`;
   - Playwright MCP on port `8931`;
-- Terraform outputs for the public MCP URLs.
+- Terraform outputs for the API Gateway MCP URLs:
+  - `/terraform/mcp`;
+  - `/github/mcp`;
+  - `/playwright/mcp`.
 
 The stack does not deploy an LLM. The LLM or agent runs in the user's chosen
 MCP-capable client and calls the hosted MCP server endpoints.
@@ -57,8 +61,10 @@ The Resource Manager schema keeps the required user inputs minimal:
 - OCPU count;
 - memory in GB.
 
-The stack does not ask users for an SSH key, OCI API private key, GitHub token,
-Terraform Cloud token, HCP token, or `.env` file.
+API Gateway, networking, security rules, and container image settings are
+created from safe defaults. The stack does not ask users for an SSH key, OCI
+API private key, GitHub token, Terraform Cloud token, HCP token, or `.env`
+file.
 
 ## Deploying From Source Control
 
@@ -81,38 +87,38 @@ has passed Resource Manager apply/destroy and remote MCP smoke validation.
   </a>
 </p>
 
+Review the Resource Manager variables before creating the stack. The OCI
+Resource Manager flow can run apply by default, which creates lab resources.
+
 ## GitHub Authentication
 
 The Terraform stack does not store a GitHub token.
 
-Do not send a real GitHub bearer token to the public HTTP endpoint created by
-this first demo stack. For the public HTTP validation path, verify that the
-GitHub MCP endpoint is reachable and returns the expected unauthenticated
-authorization challenge.
+After the Gateway path is live-validated, authenticated GitHub MCP tool calls
+use a client-supplied GitHub bearer token sent to the GitHub MCP URL returned by
+Resource Manager. Use only a disposable or least-privilege token for the lab and
+revoke it when finished.
 
-Authenticated GitHub MCP tool calls require one of the following safer paths:
-
-- a TLS-protected and authenticated front door;
-- a private endpoint or trusted client path;
-- an explicitly approved disposable least-privilege lab token that is revoked
-  immediately after the smoke test.
-
-Do not use a production or broad-scope token for a public demo endpoint.
+Do not put a production GitHub token in Terraform variables, Resource Manager
+variables, container environment variables, tracked files, or screenshots.
 
 ## Demo Security Posture
 
-This first stack is intentionally optimized for a frictionless lab demo. The MCP
-ports are public HTTP endpoints. That is useful for showing how AI agents can
-connect to MCP servers running on OCI Container Instances, but it is not a
-production security posture.
+This stack is intentionally optimized for a frictionless lab demo. The MCP
+servers are reached through OCI API Gateway HTTPS URLs. The Container Instance
+keeps a public IP for simple image pulls, but the MCP backend ports are intended
+to accept ingress only from the API Gateway subnet through the stack security
+rules.
 
-Before production use, add an authenticated and TLS-protected front door such as
-an API gateway, load balancer, WAF, private endpoint pattern, or another
-approved access-control layer.
+Before production use, add an approved authentication and access-control layer,
+such as API Gateway authorizers, usage plans, WAF, private endpoints, or another
+organization-approved pattern.
+
+Use Playwright MCP only with safe public demo pages in this lab. Do not use it
+with real credentials, private applications, or persistent browser profiles.
 
 ## Status
 
-The first Terraform / Resource Manager implementation slice is in place. Live
-OCI deployment, Resource Manager apply/destroy validation, and remote MCP
-tool-call smoke testing are still required before this is treated as a complete
-LiveLab.
+The Terraform / Resource Manager deployment slice is in place. Live OCI
+deployment, Resource Manager apply/destroy validation, and remote MCP tool-call
+smoke testing are required before this is treated as a complete LiveLab.

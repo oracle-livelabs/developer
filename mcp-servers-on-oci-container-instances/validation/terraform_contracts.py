@@ -23,6 +23,7 @@ REQUIRED_FILES = [
     "variables.tf",
     "locals.tf",
     "network.tf",
+    "api-gateway.tf",
     "container-instance.tf",
     "outputs.tf",
     "schema.yaml",
@@ -108,6 +109,35 @@ def require_regex(
         failures.append(message or f"{filename} must match /{pattern}/")
 
 
+def extract_named_blocks(text: str, block_name: str) -> list[str]:
+    blocks: list[str] = []
+    search_from = 0
+    header = f"{block_name} {{"
+
+    while True:
+        header_index = text.find(header, search_from)
+        if header_index == -1:
+            break
+
+        open_index = text.find("{", header_index)
+        depth = 0
+        for index in range(open_index, len(text)):
+            if text[index] == "{":
+                depth += 1
+            elif text[index] == "}":
+                depth -= 1
+                if depth == 0:
+                    blocks.append(text[header_index : index + 1])
+                    search_from = index + 1
+                    break
+        else:
+            failures_context = text[header_index : header_index + 80]
+            blocks.append(failures_context)
+            break
+
+    return blocks
+
+
 def validate_versions(texts: dict[str, str], failures: list[str]) -> None:
     text = texts.get("versions.tf", "")
     require_contains(failures, "versions.tf", text, 'source  = "oracle/oci"')
@@ -178,7 +208,12 @@ def validate_variables(texts: dict[str, str], failures: list[str]) -> None:
 
 def validate_locals(texts: dict[str, str], failures: list[str]) -> None:
     text = texts.get("locals.tf", "")
-    require_contains(failures, "locals.tf", text, 'mcp_endpoint_path = "/mcp"')
+    require_regex(failures, "locals.tf", text, r'mcp_endpoint_path\s*=\s*"/mcp"')
+    require_regex(failures, "locals.tf", text, r'terraform_mcp_route_path\s*=\s*"/terraform/mcp"')
+    require_regex(failures, "locals.tf", text, r'github_mcp_route_path\s*=\s*"/github/mcp"')
+    require_regex(failures, "locals.tf", text, r'playwright_mcp_route_path\s*=\s*"/playwright/mcp"')
+    require_contains(failures, "locals.tf", text, 'api_gateway_subnet_cidr_block')
+    require_contains(failures, "locals.tf", text, 'container_instance_subnet_cidr_block')
     require_contains(failures, "locals.tf", text, "available_container_shape_names")
     require_contains(
         failures,
@@ -241,11 +276,45 @@ def validate_network(texts: dict[str, str], failures: list[str]) -> None:
     ]:
         require_contains(failures, "network.tf", text, f'resource "{resource_type}"')
 
-    require_contains(failures, "network.tf", text, "0.0.0.0/0")
+    for resource in [
+        'resource "oci_core_security_list" "api_gateway"',
+        'resource "oci_core_security_list" "container_instance"',
+        'resource "oci_core_subnet" "api_gateway"',
+        'resource "oci_core_subnet" "container_instance"',
+    ]:
+        require_contains(failures, "network.tf", text, resource)
+
+    require_contains(failures, "network.tf", text, "source      = \"0.0.0.0/0\"")
+    require_contains(failures, "network.tf", text, "min = 443")
+    require_contains(failures, "network.tf", text, "max = 443")
+    require_contains(failures, "network.tf", text, "source      = local.api_gateway_subnet_cidr_block")
+    require_contains(failures, "network.tf", text, "cidr_block                 = local.api_gateway_subnet_cidr_block")
+    require_contains(failures, "network.tf", text, "cidr_block                 = local.container_instance_subnet_cidr_block")
+    require_contains(failures, "network.tf", text, 'dns_label                  = "mcpapigw"')
+    require_contains(failures, "network.tf", text, 'dns_label                  = "mcpservers"')
     require_contains(failures, "network.tf", text, "var.terraform_mcp_port")
     require_contains(failures, "network.tf", text, "var.github_mcp_port")
     require_contains(failures, "network.tf", text, "var.playwright_mcp_port")
     require_contains(failures, "network.tf", text, "prohibit_public_ip_on_vnic = false")
+
+    ingress_blocks = extract_named_blocks(text, "ingress_security_rules")
+    for port_variable in [
+        "var.terraform_mcp_port",
+        "var.github_mcp_port",
+        "var.playwright_mcp_port",
+    ]:
+        matching_blocks = [block for block in ingress_blocks if port_variable in block]
+        if not matching_blocks:
+            failures.append(f"network.tf must define an ingress rule for {port_variable}")
+            continue
+
+        if not any("source      = local.api_gateway_subnet_cidr_block" in block for block in matching_blocks):
+            failures.append(
+                f"network.tf must restrict {port_variable} ingress to the API Gateway subnet CIDR"
+            )
+
+        if any('source      = "0.0.0.0/0"' in block for block in matching_blocks):
+            failures.append(f"network.tf must not expose {port_variable} ingress to 0.0.0.0/0")
 
 
 def validate_container_instance(texts: dict[str, str], failures: list[str]) -> None:
@@ -267,6 +336,7 @@ def validate_container_instance(texts: dict[str, str], failures: list[str]) -> N
     require_contains(failures, "container-instance.tf", text, "available_container_shape_names")
     require_contains(failures, "container-instance.tf", text, "precondition")
     require_contains(failures, "container-instance.tf", text, "is_public_ip_assigned = true")
+    require_contains(failures, "container-instance.tf", text, "subnet_id             = oci_core_subnet.container_instance.id")
     require_contains(failures, "container-instance.tf", text, "var.container_ocpus <= 64")
     require_contains(failures, "container-instance.tf", text, "var.container_ocpus <= 94")
     require_contains(failures, "container-instance.tf", text, "var.container_ocpus <= 76")
@@ -314,19 +384,66 @@ def validate_container_instance(texts: dict[str, str], failures: list[str]) -> N
             )
 
 
+def validate_api_gateway(texts: dict[str, str], failures: list[str]) -> None:
+    text = texts.get("api-gateway.tf", "")
+
+    for expected in [
+        'resource "oci_apigateway_gateway" "mcp_lab"',
+        'resource "oci_apigateway_deployment" "mcp_servers"',
+        "endpoint_type",
+        '"PUBLIC"',
+        "subnet_id",
+        "oci_core_subnet.api_gateway.id",
+        "path_prefix",
+        '"/"',
+        "path    = local.terraform_mcp_route_path",
+        "path    = local.github_mcp_route_path",
+        "path    = local.playwright_mcp_route_path",
+        'methods = ["POST", "GET", "DELETE"]',
+        "data.oci_core_vnic.mcp_servers.private_ip_address",
+        "var.terraform_mcp_port",
+        "var.github_mcp_port",
+        "var.playwright_mcp_port",
+        "local.mcp_endpoint_path",
+        'type',
+        '"HTTP_BACKEND"',
+        "connect_timeout_in_seconds = 60",
+        "read_timeout_in_seconds    = 300",
+        "send_timeout_in_seconds    = 300",
+    ]:
+        require_contains(failures, "api-gateway.tf", text, expected)
+
+    if "public_ip_address" in text:
+        failures.append("api-gateway.tf backends must use the Container Instance private IP")
+
+
 def validate_outputs(texts: dict[str, str], failures: list[str]) -> None:
     text = texts.get("outputs.tf", "")
     for output in [
-        "container_instance_public_ip",
+        "api_gateway_hostname",
+        "api_gateway_endpoint",
         "terraform_mcp_url",
         "github_mcp_url",
         "playwright_mcp_url",
         "available_container_instance_shapes",
-        "github_mcp_client_header_note",
     ]:
         require_contains(failures, "outputs.tf", text, f'output "{output}"')
 
-    require_contains(failures, "outputs.tf", text, "local.mcp_endpoint_path")
+    require_contains(failures, "outputs.tf", text, "oci_apigateway_gateway.mcp_lab.hostname")
+    require_contains(failures, "outputs.tf", text, "trimsuffix(oci_apigateway_deployment.mcp_servers.endpoint, \"/\")")
+    require_contains(failures, "outputs.tf", text, "local.terraform_mcp_route_path")
+    require_contains(failures, "outputs.tf", text, "local.github_mcp_route_path")
+    require_contains(failures, "outputs.tf", text, "local.playwright_mcp_route_path")
+
+    for stale in [
+        'output "container_instance_public_ip"',
+        "data.oci_core_vnic.mcp_servers.public_ip_address",
+        "github_mcp_client_header_note",
+        "Do not send real GitHub bearer tokens to the public HTTP",
+        "http://${data.oci_core_vnic.mcp_servers.public_ip_address}",
+    ]:
+        if stale in text:
+            failures.append(f"outputs.tf must not contain stale direct-public output text: {stale!r}")
 
 
 def validate_no_secret_samples(texts: dict[str, str], failures: list[str]) -> None:
@@ -346,6 +463,7 @@ def main() -> int:
         validate_schema(texts, failures)
         validate_network(texts, failures)
         validate_container_instance(texts, failures)
+        validate_api_gateway(texts, failures)
         validate_outputs(texts, failures)
         validate_no_secret_samples(texts, failures)
 

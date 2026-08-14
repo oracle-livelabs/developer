@@ -1,8 +1,8 @@
 schemaVersion: 1.1.0
-version: "20260813"
+version: "20260814"
 locale: en
 title: "MCP Servers on OCI Container Instances"
-description: "Deploy Terraform, GitHub, and Playwright MCP servers in one OCI Container Instance for a hands-on AI agents lab."
+description: "Deploy Terraform, GitHub, and Playwright MCP servers in one OCI Container Instance with an OCI API Gateway HTTPS front door for a hands-on AI agents lab."
 
 variableGroups:
   - title: "Required deployment inputs"
@@ -48,7 +48,7 @@ variables:
 
   compartment_ocid:
     title: "Target compartment"
-    description: "Compartment where Resource Manager creates the lab network and Container Instance."
+    description: "Compartment where Resource Manager creates the lab network, API Gateway, and Container Instance."
     type: oci:identity:compartment:id
     required: true
 

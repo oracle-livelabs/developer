@@ -1,9 +1,14 @@
 locals {
-  name_prefix       = "mcp-servers-lab"
-  mcp_endpoint_path = "/mcp"
+  name_prefix = "mcp-servers-lab"
 
-  vcn_cidr_block    = "10.0.0.0/16"
-  subnet_cidr_block = "10.0.1.0/24"
+  mcp_endpoint_path         = "/mcp"
+  terraform_mcp_route_path  = "/terraform/mcp"
+  github_mcp_route_path     = "/github/mcp"
+  playwright_mcp_route_path = "/playwright/mcp"
+
+  vcn_cidr_block                       = "10.0.0.0/16"
+  api_gateway_subnet_cidr_block        = "10.0.1.0/24"
+  container_instance_subnet_cidr_block = "10.0.2.0/24"
 
   available_container_shape_names = [
     for shape in data.oci_container_instances_container_instance_shapes.available.container_instance_shape_collection[0].items : shape.name

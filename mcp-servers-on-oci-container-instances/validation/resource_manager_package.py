@@ -25,6 +25,7 @@ APPROVED_ROOT_FILES = [
     "variables.tf",
     "locals.tf",
     "network.tf",
+    "api-gateway.tf",
     "container-instance.tf",
     "outputs.tf",
     "schema.yaml",

@@ -27,9 +27,9 @@ resource "oci_core_route_table" "mcp_lab" {
   }
 }
 
-resource "oci_core_security_list" "mcp_lab" {
+resource "oci_core_security_list" "api_gateway" {
   compartment_id = var.compartment_ocid
-  display_name   = "${local.name_prefix}-sl"
+  display_name   = "${local.name_prefix}-api-gateway-sl"
   freeform_tags  = local.common_freeform_tags
   vcn_id         = oci_core_vcn.mcp_lab.id
 
@@ -39,9 +39,32 @@ resource "oci_core_security_list" "mcp_lab" {
   }
 
   ingress_security_rules {
-    description = "Terraform MCP Streamable HTTP"
+    description = "Public HTTPS API Gateway endpoint"
     protocol    = "6"
     source      = "0.0.0.0/0"
+
+    tcp_options {
+      min = 443
+      max = 443
+    }
+  }
+}
+
+resource "oci_core_security_list" "container_instance" {
+  compartment_id = var.compartment_ocid
+  display_name   = "${local.name_prefix}-container-instance-sl"
+  freeform_tags  = local.common_freeform_tags
+  vcn_id         = oci_core_vcn.mcp_lab.id
+
+  egress_security_rules {
+    destination = "0.0.0.0/0"
+    protocol    = "all"
+  }
+
+  ingress_security_rules {
+    description = "Terraform MCP backend from API Gateway subnet"
+    protocol    = "6"
+    source      = local.api_gateway_subnet_cidr_block
 
     tcp_options {
       min = var.terraform_mcp_port
@@ -50,9 +73,9 @@ resource "oci_core_security_list" "mcp_lab" {
   }
 
   ingress_security_rules {
-    description = "GitHub MCP Streamable HTTP"
+    description = "GitHub MCP backend from API Gateway subnet"
     protocol    = "6"
-    source      = "0.0.0.0/0"
+    source      = local.api_gateway_subnet_cidr_block
 
     tcp_options {
       min = var.github_mcp_port
@@ -61,9 +84,9 @@ resource "oci_core_security_list" "mcp_lab" {
   }
 
   ingress_security_rules {
-    description = "Playwright MCP Streamable HTTP"
+    description = "Playwright MCP backend from API Gateway subnet"
     protocol    = "6"
-    source      = "0.0.0.0/0"
+    source      = local.api_gateway_subnet_cidr_block
 
     tcp_options {
       min = var.playwright_mcp_port
@@ -72,14 +95,26 @@ resource "oci_core_security_list" "mcp_lab" {
   }
 }
 
-resource "oci_core_subnet" "mcp_lab" {
-  cidr_block                 = local.subnet_cidr_block
+resource "oci_core_subnet" "api_gateway" {
+  cidr_block                 = local.api_gateway_subnet_cidr_block
   compartment_id             = var.compartment_ocid
-  display_name               = "${local.name_prefix}-public-subnet"
-  dns_label                  = "mcp"
+  display_name               = "${local.name_prefix}-api-gateway-subnet"
+  dns_label                  = "mcpapigw"
   freeform_tags              = local.common_freeform_tags
   prohibit_public_ip_on_vnic = false
   route_table_id             = oci_core_route_table.mcp_lab.id
-  security_list_ids          = [oci_core_security_list.mcp_lab.id]
+  security_list_ids          = [oci_core_security_list.api_gateway.id]
+  vcn_id                     = oci_core_vcn.mcp_lab.id
+}
+
+resource "oci_core_subnet" "container_instance" {
+  cidr_block                 = local.container_instance_subnet_cidr_block
+  compartment_id             = var.compartment_ocid
+  display_name               = "${local.name_prefix}-container-instance-subnet"
+  dns_label                  = "mcpservers"
+  freeform_tags              = local.common_freeform_tags
+  prohibit_public_ip_on_vnic = false
+  route_table_id             = oci_core_route_table.mcp_lab.id
+  security_list_ids          = [oci_core_security_list.container_instance.id]
   vcn_id                     = oci_core_vcn.mcp_lab.id
 }
