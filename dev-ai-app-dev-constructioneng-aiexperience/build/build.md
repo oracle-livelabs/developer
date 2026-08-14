@@ -255,7 +255,7 @@ Here’s what the code does:
   into a structured prompt. The prompt gives the LLM decision rules
   for when to use `APPROVE`, `REQUEST INFO`, or `DENY`. 💡 **`prompt = f"""`**
 * **Use OCI Generative AI**: Send the prompt to the
-  `meta.llama-3.2-90b-vision-instruct` model through OCI’s
+  `meta.llama-3.3-70b-instruct` model through OCI’s
   Generative AI inference client. 💡 **`chat_response = genai_client.chat(chat_detail)`**
 * **Display the Output**: Print the generated supplier evaluation
   using the same sections used in the Seer Construction app:
@@ -271,156 +271,152 @@ so it can be used in the RAG flow.
 
     ```python
     <copy>
-    cursor.execute(
-        """
-        SELECT
-            eval.EVALUATION_ID,
-            rec.RECOMMEND_ID,
-            rec.RECOMMENDATION,
-            rec.FIT_SCORE,
-            rec.RISK_LEVEL,
-            rec.EXPLANATION,
-            rec.STRENGTHS,
-            rec.MISSING_INFORMATION,
-            supplier.SUPPLIER_ID,
-            supplier.SUPPLIER_NAME,
-            supplier.CATEGORY,
-            supplier.REGION,
-            supplier.CAPACITY_STATUS,
-            supplier.CAPABILITY_SUMMARY
-        FROM CE_SUPPLIER_EVALUATION eval
-        JOIN CE_SUPPLIER_RECOMMENDATION rec
-            ON rec.RECOMMEND_ID = eval.RECOMMEND_ID
-        JOIN CE_SUPPLIERS supplier
-            ON supplier.SUPPLIER_ID = rec.SUPPLIER_ID
-        WHERE eval.PROJECT_ID = :project_id
-        ORDER BY rec.FIT_SCORE DESC, eval.EVALUATION_ID
-        """,
-        {"project_id": selected_project_id}
-    )
-    df_supplier_recommendations = pd.DataFrame(
-        cursor.fetchall(),
-        columns=[
-            "EVALUATION_ID",
-            "RECOMMEND_ID",
-            "RECOMMENDATION",
-            "FIT_SCORE",
-            "RISK_LEVEL",
-            "EXPLANATION",
-            "STRENGTHS",
-            "MISSING_INFORMATION",
-            "SUPPLIER_ID",
-            "SUPPLIER_NAME",
-            "CATEGORY",
-            "REGION",
-            "CAPACITY_STATUS",
-            "CAPABILITY_SUMMARY"
-        ]
-    )
-
-
-    def generate_supplier_recommendations(project_id, project_json, df_supplier_recommendations):
+    def generate_supplier_recommendations(
+        project_id,
+        project_json,
+        df_supplier_recommendations
+    ):
         requirement = (project_json.get("requirements") or [{}])[0]
         evaluation = (project_json.get("supplierEvaluations") or [{}])[0]
         recommendation = evaluation.get("recommendation") or {}
 
-        available_data_text = "\n".join([
-            (
-                f"Supplier Evaluation {row['EVALUATION_ID']}: "
-                f"{row['SUPPLIER_NAME']} | Decision: {row['RECOMMENDATION']} | "
-                f"Fit Score: {row['FIT_SCORE']} | Risk: {row['RISK_LEVEL']} | "
-                f"Capacity: {row['CAPACITY_STATUS']} | "
-                f"Explanation: {row['EXPLANATION']} | "
-                f"Missing Information: {row['MISSING_INFORMATION']}"
-            )
-            for row in df_supplier_recommendations.to_dict(orient="records")
-        ])
+        available_data_text = "\n".join(
+            [
+                (
+                    f"Supplier Evaluation {row['EVALUATION_ID']}: "
+                    f"{row['SUPPLIER_NAME']} | Decision: {row['RECOMMENDATION']} | "
+                    f"Fit Score: {row['FIT_SCORE']} | Risk: {row['RISK_LEVEL']} | "
+                    f"Capacity: {row['CAPACITY_STATUS']} | "
+                    f"Explanation: {row['EXPLANATION']} | "
+                    f"Missing Information: {row['MISSING_INFORMATION']}"
+                )
+                for row in df_supplier_recommendations.to_dict(orient="records")
+            ]
+        )
 
-        project_profile_text = "\n".join([
-            f"- Project Name: {project_json.get('projectName', '')}",
-            f"- Location: {project_json.get('location', '')}",
-            f"- Project Type: {project_json.get('projectType', '')}",
-            f"- Project Phase: {project_json.get('projectPhase', '')}",
-            f"- Project Summary: {project_json.get('projectSummary', '')}",
-            f"- Required Trade: {requirement.get('tradeCategory', '')}",
-            f"- Material Need: {requirement.get('materialNeed', '')}",
-            f"- Required Certification: {requirement.get('requiredCertification', '')}",
-            f"- Delivery Window: {requirement.get('deliveryWindow', '')}",
-            f"- Procurement Urgency: {requirement.get('procurementUrgency', '')}",
-            f"- Budget Range: {requirement.get('budgetRange', '')}",
-            f"- Risk Level: {requirement.get('riskLevel', '')}",
-            f"- Current Evaluation Status: {evaluation.get('evaluationStatus', '')}",
-            f"- Current Recommended Supplier: {recommendation.get('supplier', {}).get('supplierName', '')}"
-        ])
+        project_profile_text = "\n".join(
+            [
+                f"- Project Name: {project_json.get('projectName', '')}",
+                f"- Location: {project_json.get('location', '')}",
+                f"- Project Type: {project_json.get('projectType', '')}",
+                f"- Project Phase: {project_json.get('projectPhase', '')}",
+                f"- Project Summary: {project_json.get('projectSummary', '')}",
+                f"- Required Trade: {requirement.get('tradeCategory', '')}",
+                f"- Material Need: {requirement.get('materialNeed', '')}",
+                f"- Required Certification: {requirement.get('requiredCertification', '')}",
+                f"- Delivery Window: {requirement.get('deliveryWindow', '')}",
+                f"- Procurement Urgency: {requirement.get('procurementUrgency', '')}",
+                f"- Budget Range: {requirement.get('budgetRange', '')}",
+                f"- Risk Level: {requirement.get('riskLevel', '')}",
+                f"- Current Evaluation Status: {evaluation.get('evaluationStatus', '')}",
+                "- Current Recommended Supplier: "
+                f"{recommendation.get('supplier', {}).get('supplierName', '')}",
+            ]
+        )
 
-        question = "Generate a supplier evaluation for this project."
         prompt = f"""
-You are an AI supplier evaluation assistant for construction engineering procurement.
+    You are an AI supplier evaluation assistant for construction engineering procurement.
 
-Analyze the selected project and supplier data below. Do not ask for more
-project details unless the supplied data is actually missing. Produce the
-analysis now.
+    Analyze the selected project and supplier data below. Do not ask for more
+    project details unless the supplied data is actually missing. Produce the
+    analysis now.
 
-Industry:
-Construction Engineering
+    Industry:
+    Construction Engineering
 
-User request:
-{question}
+    User request:
+    Generate a supplier evaluation for this project.
 
-Selected project profile:
-{project_profile_text}
+    Selected project profile:
+    {project_profile_text}
 
-Project and supplier JSON:
-{json.dumps(project_json, default=str)}
+    Project and supplier JSON:
+    {json.dumps(project_json, default=str)}
 
-Available supplier recommendation records:
-{available_data_text}
+    Available supplier recommendation records:
+    {available_data_text}
 
-Decision rules:
-- Use APPROVE when the supplier is a strong fit and material risks are controlled.
-- Use REQUEST INFO when inspection logs, capacity confirmation, certificates,
-  submittals, RFIs, safety records, or schedule evidence are missing.
-- Use DENY when the supplier cannot satisfy core technical, compliance,
-  delivery, or safety requirements.
-- For evidence that says documentation is complete and risk is Low,
-  recommend APPROVE.
-- For Harbor Seismic Retrofit, deny the current suppliers and recommend
-  submitting a new RFP because the supplier pool does not meet DBE, AISC,
-  NCR, and logistics requirements.
-- For North Campus Lab Expansion, treat an uploaded technical addendum PDF
-  as new evidence and explicitly reflect it in the re-analysis.
+    Decision rules:
+    - Use APPROVE when the supplier is a strong fit and material risks are controlled.
+    - Use REQUEST INFO when inspection logs, capacity confirmation, certificates,
+    submittals, RFIs, safety records, or schedule evidence are missing.
+    - Use DENY when the supplier cannot satisfy core technical, compliance,
+    delivery, or safety requirements.
+    - For evidence that says documentation is complete and risk is Low,
+    recommend APPROVE.
+    - For Harbor Seismic Retrofit, deny the current suppliers and recommend
+    submitting a new RFP because the supplier pool does not meet DBE, AISC,
+    NCR, and logistics requirements.
+    - For North Campus Lab Expansion, treat an uploaded technical addendum PDF
+    as new evidence and explicitly reflect it in the re-analysis.
 
-Return a concise, decision-ready supplier evaluation with these exact sections:
+    Return a concise, decision-ready supplier evaluation with these exact sections:
 
-Project Summary
-Key Sourcing Requirements
-Top 3 Supplier Recommendations
-Risks and Missing Information
-Actionable Steps
-"""
+    Project Summary
+    Key Sourcing Requirements
+    Top 3 Supplier Recommendations
+    Risks and Missing Information
+    Actionable Steps
+    """
 
-        print("Generating AI response...")
-        print(" ")
+        # Uses the supported text model by default.
+        # Set OCI_MODEL_ID in Jupyter if your OCI console specifies another model.
+        model_id = os.getenv(
+            "OCI_MODEL_ID",
+            "meta.llama-3.3-70b-instruct"
+        )
+
+        config_path = os.path.expanduser(
+            os.getenv("OCI_CONFIG_PATH", "~/.oci/config")
+        )
+        endpoint = os.getenv("ENDPOINT")
+        compartment_id = os.getenv("COMPARTMENT_OCID")
+
+        if not endpoint or not compartment_id:
+            raise ValueError(
+                "Missing ENDPOINT or COMPARTMENT_OCID environment variable."
+            )
+
+        print(f"Generating AI response with model: {model_id}")
 
         genai_client = oci.generative_ai_inference.GenerativeAiInferenceClient(
-            config=oci.config.from_file(os.getenv("OCI_CONFIG_PATH", "~/.oci/config")),
-            service_endpoint=os.getenv("ENDPOINT")
+            config=oci.config.from_file(config_path),
+            service_endpoint=endpoint
         )
 
         chat_detail = oci.generative_ai_inference.models.ChatDetails(
-            compartment_id=os.getenv("COMPARTMENT_OCID"),
+            compartment_id=compartment_id,
             chat_request=oci.generative_ai_inference.models.GenericChatRequest(
-                messages=[oci.generative_ai_inference.models.UserMessage(
-                    content=[oci.generative_ai_inference.models.TextContent(text=prompt)]
-                )],
+                messages=[
+                    oci.generative_ai_inference.models.UserMessage(
+                        content=[
+                            oci.generative_ai_inference.models.TextContent(
+                                text=prompt
+                            )
+                        ]
+                    )
+                ],
                 temperature=0.0,
-                top_p=1.00
+                top_p=1.0,
+                max_tokens=1500
             ),
             serving_mode=oci.generative_ai_inference.models.OnDemandServingMode(
-                model_id="meta.llama-3.2-90b-vision-instruct"
+                model_id=model_id
             )
         )
-        chat_response = genai_client.chat(chat_detail)
+
+        try:
+            chat_response = genai_client.chat(chat_detail)
+        except ServiceError as error:
+            if error.status == 404:
+                raise RuntimeError(
+                    f"OCI cannot find or access model '{model_id}' at {endpoint}. "
+                    "Open OCI Generative AI Chat Playground in the same region, "
+                    "copy an available model ID, then set it with:\n"
+                    "os.environ['OCI_MODEL_ID'] = 'your-model-id'"
+                ) from error
+            raise
+
         return chat_response.data.chat_response.choices[0].message.content[0].text
 
 
@@ -429,6 +425,7 @@ Actionable Steps
         project_json,
         df_supplier_recommendations
     )
+    
     print(recommendations)
     </copy>
     ```
@@ -716,14 +713,13 @@ This step:
     Retrieval-Augmented Generation (RAG). Copy this code block into a
     new cell.
 
+    question = (
+    "Which supplier is the best fit for Downtown Mixed-Use Tower "
+    "if we prioritize complete documentation and delivery reliability?"
+)
+
     ```python
     <copy>
-    question = (
-        "Which supplier is the best fit for Downtown Mixed-Use Tower "
-        "if we prioritize complete documentation and delivery reliability?"
-    )
-
-
     def vectorize_question(q):
         cursor.execute(
             """
@@ -738,6 +734,11 @@ This step:
         return cursor.fetchone()[0]
 
 
+    def read_lob(value):
+        """Convert an Oracle LOB to text; return ordinary values unchanged."""
+        return value.read() if isinstance(value, oracledb.LOB) else value
+
+
     print("Processing your question using AI Vector Search...")
 
     try:
@@ -748,17 +749,18 @@ This step:
             SELECT CHUNK_ID, CHUNK_TEXT
             FROM CE_PROJECT_CHUNKS
             WHERE PROJECT_ID = :project_id
-              AND CHUNK_VECTOR IS NOT NULL
+            AND CHUNK_VECTOR IS NOT NULL
             ORDER BY VECTOR_DISTANCE(CHUNK_VECTOR, :qv, COSINE)
             FETCH FIRST 4 ROWS ONLY
             """,
-            {"project_id": selected_project_id, "qv": q_vec}
+            {
+                "project_id": selected_project_id,
+                "qv": q_vec
+            }
         )
+
         retrieved = [
-            (
-                row[0],
-                row[1].read() if isinstance(row[1], oracledb.LOB) else row[1]
-            )
+            (row[0], read_lob(row[1]))
             for row in cursor.fetchall()
         ]
 
@@ -766,93 +768,144 @@ This step:
             retrieved = [(0, recommendations)]
 
         requirement = (project_json.get("requirements") or [{}])[0]
-        available_data_text = "\n".join([
-            (
-                f"Supplier Evaluation {row['EVALUATION_ID']}: "
-                f"{row['SUPPLIER_NAME']} | Decision: {row['RECOMMENDATION']} | "
-                f"Fit Score: {row['FIT_SCORE']} | Risk: {row['RISK_LEVEL']} | "
-                f"Capacity: {row['CAPACITY_STATUS']} | "
-                f"Explanation: {row['EXPLANATION']} | "
-                f"Missing Information: {row['MISSING_INFORMATION']}"
+
+        available_data_text = "\n".join(
+            [
+                (
+                    f"Supplier Evaluation {row['EVALUATION_ID']}: "
+                    f"{row['SUPPLIER_NAME']} | "
+                    f"Decision: {row['RECOMMENDATION']} | "
+                    f"Fit Score: {row['FIT_SCORE']} | "
+                    f"Risk: {row['RISK_LEVEL']} | "
+                    f"Capacity: {row['CAPACITY_STATUS']} | "
+                    f"Explanation: {row['EXPLANATION']} | "
+                    f"Missing Information: {row['MISSING_INFORMATION']}"
+                )
+                for row in df_supplier_recommendations.to_dict(orient="records")
+            ]
+        )
+
+        project_profile_text = "\n".join(
+            [
+                f"- Project Name: {project_json.get('projectName', '')}",
+                f"- Location: {project_json.get('location', '')}",
+                f"- Project Phase: {project_json.get('projectPhase', '')}",
+                f"- Required Trade: {requirement.get('tradeCategory', '')}",
+                f"- Delivery Window: {requirement.get('deliveryWindow', '')}",
+                f"- Budget Range: {requirement.get('budgetRange', '')}",
+                f"- Risk Level: {requirement.get('riskLevel', '')}",
+            ]
+        )
+
+        context_text = "\n========\n".join(
+            str(chunk_text) for _, chunk_text in retrieved
+        )
+
+        rag_prompt = f"""
+    You are the AI Procurement Guru for construction engineering.
+
+    Use only the supplied project profile, supplier recommendation records,
+    and retrieved context. Do not invent supplier names. Only use supplier names
+    that appear verbatim in the supplier recommendation records or retrieved
+    context. If the evidence is insufficient, say so plainly.
+
+    Keep the answer under 220 words and make it decision-ready.
+
+    Question:
+    {question}
+
+    Selected Project Profile:
+    {project_profile_text}
+
+    Available Supplier Recommendation Records:
+    {available_data_text}
+
+    Retrieved Context:
+    {context_text}
+
+    Tasks:
+    1. Answer the question directly.
+    2. Justify the answer using fit, risk, delivery, and documentation signals.
+    3. If there is a reasonable backup supplier, name it briefly.
+    """
+
+        model_id = os.getenv(
+            "OCI_MODEL_ID",
+            "meta.llama-3.3-70b-instruct"
+        )
+
+        config_path = os.path.expanduser(
+            os.getenv("OCI_CONFIG_PATH", "~/.oci/config")
+        )
+        endpoint = os.getenv("ENDPOINT")
+        compartment_id = os.getenv("COMPARTMENT_OCID")
+
+        if not endpoint or not compartment_id:
+            raise ValueError(
+                "Missing ENDPOINT or COMPARTMENT_OCID environment variable."
             )
-            for row in df_supplier_recommendations.to_dict(orient="records")
-        ])
-        project_profile_text = "\n".join([
-            f"- Project Name: {project_json.get('projectName', '')}",
-            f"- Location: {project_json.get('location', '')}",
-            f"- Project Phase: {project_json.get('projectPhase', '')}",
-            f"- Required Trade: {requirement.get('tradeCategory', '')}",
-            f"- Delivery Window: {requirement.get('deliveryWindow', '')}",
-            f"- Budget Range: {requirement.get('budgetRange', '')}",
-            f"- Risk Level: {requirement.get('riskLevel', '')}"
-        ])
-        context_text = "\n========\n".join(text for _, text in retrieved)
 
-        rag_prompt = f"""<s>[INST] <<SYS>>
-You are the AI Procurement Guru for construction engineering.
-Use only the supplied project profile, supplier recommendation
-records, and retrieved context.
-Do not invent supplier names.
-Only use supplier names that appear verbatim in the supplier
-recommendation records or retrieved context.
-If the evidence is insufficient, say so plainly.
-Keep the answer under 220 words and make it decision-ready.
-<</SYS>> [/INST]
-[INST]
-Question: "{question}"
-
-Selected Project Profile:
-{project_profile_text}
-
-Available Supplier Recommendation Records:
-{available_data_text}
-
-Retrieved Context:
-{context_text}
-
-Tasks:
-1. Answer the question directly.
-2. Justify the answer using fit, risk, delivery, and documentation signals.
-3. If there is a reasonable backup supplier, name it briefly.
-        [/INST]"""
-
-        print("Generating AI response...")
+        print(f"Generating AI response with model: {model_id}")
 
         genai_client = oci.generative_ai_inference.GenerativeAiInferenceClient(
-            config=oci.config.from_file(os.getenv("OCI_CONFIG_PATH", "~/.oci/config")),
-            service_endpoint=os.getenv("ENDPOINT")
+            config=oci.config.from_file(config_path),
+            service_endpoint=endpoint
         )
+
         chat_detail = oci.generative_ai_inference.models.ChatDetails(
-            compartment_id=os.getenv("COMPARTMENT_OCID"),
+            compartment_id=compartment_id,
             chat_request=oci.generative_ai_inference.models.GenericChatRequest(
-                messages=[oci.generative_ai_inference.models.UserMessage(
-                    content=[oci.generative_ai_inference.models.TextContent(text=rag_prompt)]
-                )],
+                messages=[
+                    oci.generative_ai_inference.models.UserMessage(
+                        content=[
+                            oci.generative_ai_inference.models.TextContent(
+                                text=rag_prompt
+                            )
+                        ]
+                    )
+                ],
                 temperature=0.0,
-                top_p=0.90
+                top_p=0.90,
+                max_tokens=800
             ),
             serving_mode=oci.generative_ai_inference.models.OnDemandServingMode(
-                model_id="meta.llama-3.2-90b-vision-instruct"
+                model_id=model_id
             )
         )
-        chat_response = genai_client.chat(chat_detail)
+
+        try:
+            chat_response = genai_client.chat(chat_detail)
+        except ServiceError as error:
+            if error.status == 404:
+                raise RuntimeError(
+                    f"Model '{model_id}' is unavailable at this endpoint: {endpoint}\n"
+                    "Select an available model in OCI Generative AI Chat Playground "
+                    "for the same region, then run:\n"
+                    "os.environ['OCI_MODEL_ID'] = 'your-model-id'"
+                ) from error
+            raise
+
         ai_response = (
             chat_response.data.chat_response.choices[0]
-            .message.content[0].text
+            .message.content[0]
+            .text
         )
 
-        print("\\n🤖 AI Procurement Guru Response:")
+        print("\n🤖 AI Procurement Guru Response:")
         print(ai_response)
 
-        print("\\n📑 Retrieved Chunks Used in Response:")
-        for cid, text in retrieved:
-            preview = text[:140].replace("\\n", " ")
-            if len(text) > 140:
-                preview += "..."
-            print(f"[Chunk {cid}] : {preview}")
+        print("\n📑 Retrieved Chunks Used in Response:")
+        for chunk_id, chunk_text in retrieved:
+            chunk_text = str(chunk_text)
+            preview = chunk_text[:140].replace("\n", " ")
 
-    except Exception as e:
-        print(f"RAG flow error: {e}")
+            if len(chunk_text) > 140:
+                preview += "..."
+
+            print(f"[Chunk {chunk_id}]: {preview}")
+
+    except Exception as error:
+        print(f"RAG flow error: {error}")
     </copy>
     ```
 
