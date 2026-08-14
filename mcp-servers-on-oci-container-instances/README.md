@@ -1,22 +1,14 @@
 # Put AI Agents to Work: MCP Servers on OCI Container Instances
 
-This project is a hands-on LiveLab for deploying remote Model Context Protocol
-(MCP) servers on OCI Container Instances and connecting AI agents to those
-servers.
-
-## Who This Is For
-
-This workshop is intended for developers, cloud architects, sales engineers,
-customers, and internal teams who want to understand how AI agents can use MCP
-tools hosted on OCI.
+Deploy remote Model Context Protocol (MCP) servers on OCI Container Instances,
+then connect an MCP-capable AI client to call those tools over HTTPS.
 
 ## What It Demonstrates
 
-- Deploying ready-made MCP servers on OCI Container Instances.
-- Exposing MCP servers over remote Streamable HTTP.
-- Connecting an AI agent or MCP-capable client to a hosted MCP endpoint.
-- Validating that the agent can discover tools and call those tools.
-- Comparing more than one practical MCP server pattern.
+- Deploy three ready-made MCP servers on OCI Container Instances.
+- Expose the servers through OCI API Gateway HTTPS URLs.
+- Connect an MCP-capable AI client over Streamable HTTP.
+- Verify that the client can discover tools and call tools from each server.
 
 ## MCP Servers Included
 
@@ -24,16 +16,10 @@ tools hosted on OCI.
   assistance.
 - GitHub MCP Server for repository, issue, pull request, and workflow context.
 - Playwright MCP Server for browser automation with AI agents.
-- Optional future OpenAPI MCP Server to show how REST APIs can become MCP
-  tools.
 
-## Current Stack
+## What Gets Deployed
 
-This is not a Python application project. The deployable lab stack is
-Terraform HCL plus an OCI Resource Manager schema. Python, when present, is
-used only for local repository validation.
-
-The first Terraform / OCI Resource Manager stack is under
+The Terraform / OCI Resource Manager stack is under
 [files/terraform/](files/terraform/). It creates:
 
 - one lab VCN with separate API Gateway and Container Instance subnets;
@@ -44,40 +30,28 @@ The first Terraform / OCI Resource Manager stack is under
   - GitHub MCP on port `8082`;
   - Playwright MCP on port `8931`;
 - Terraform outputs for the API Gateway MCP URLs:
-  - `/terraform/mcp`;
-  - `/github/mcp`;
-  - `/playwright/mcp`.
+  - `terraform_mcp_url` at `/terraform/mcp`;
+  - `github_mcp_url` at `/github/mcp`;
+  - `playwright_mcp_url` at `/playwright/mcp`.
 
 The stack does not deploy an LLM. The LLM or agent runs in the user's chosen
 MCP-capable client and calls the hosted MCP server endpoints.
 
 ## Resource Manager Inputs
 
-The Resource Manager schema keeps the required user inputs minimal:
+The Resource Manager form asks for:
 
 - target compartment;
 - availability domain;
-- Container Instance shape;
-- OCPU count;
-- memory in GB.
+- Container Instance shape: `CI.Standard.E4.Flex`, `CI.Standard.E5.Flex`, or
+  `CI.Standard.A1.Flex`;
+- OCPU count, prefilled and editable;
+- memory in GB, prefilled and editable.
 
 API Gateway, networking, security rules, and container image settings are
 created from safe defaults. The stack does not ask users for an SSH key, OCI
 API private key, GitHub token, Terraform Cloud token, HCP token, or `.env`
 file.
-
-## Deploying From Source Control
-
-For OCI Resource Manager validation from GitHub, create the stack from this
-repository and point Resource Manager at:
-
-```text
-mcp-servers-on-oci-container-instances/files/terraform
-```
-
-Use Terraform version `1.5.x`. During development validation, use branch `dev`.
-For a published workshop release, use the reviewed release branch after the lab
-has passed Resource Manager apply/destroy and remote MCP smoke validation.
 
 ## Deploy to OCI
 
@@ -87,38 +61,36 @@ has passed Resource Manager apply/destroy and remote MCP smoke validation.
   </a>
 </p>
 
-Review the Resource Manager variables before creating the stack. The OCI
-Resource Manager flow can run apply by default, which creates lab resources.
+Select the target compartment, availability domain, shape, OCPU count, and
+memory before applying the stack. Applying the stack creates OCI lab resources.
+
+## After Deployment
+
+Resource Manager returns the remote MCP URLs after the stack is created:
+
+- `terraform_mcp_url`
+- `github_mcp_url`
+- `playwright_mcp_url`
+
+Use those URLs in an MCP-capable client to confirm the agent can list tools and
+call at least one safe tool from each server.
 
 ## GitHub Authentication
 
-The Terraform stack does not store a GitHub token.
-
-After the Gateway path is live-validated, authenticated GitHub MCP tool calls
-use a client-supplied GitHub bearer token sent to the GitHub MCP URL returned by
-Resource Manager. Use only a disposable or least-privilege token for the lab and
-revoke it when finished.
+The stack does not store a GitHub token. For authenticated GitHub MCP tool
+calls, configure the token in your MCP client and use the `github_mcp_url`
+returned by Resource Manager. Use only a disposable or least-privilege token for
+the lab and revoke it when finished.
 
 Do not put a production GitHub token in Terraform variables, Resource Manager
 variables, container environment variables, tracked files, or screenshots.
 
-## Demo Security Posture
+## Security Notes
 
-This stack is intentionally optimized for a frictionless lab demo. The MCP
-servers are reached through OCI API Gateway HTTPS URLs. The Container Instance
-keeps a public IP for simple image pulls, but the MCP backend ports are intended
-to accept ingress only from the API Gateway subnet through the stack security
-rules.
+This lab creates public HTTPS MCP URLs through OCI API Gateway. The Gateway
+forwards requests to the Container Instance over the VCN, and the backend MCP
+ports are limited to the API Gateway subnet by security rules.
 
-Before production use, add an approved authentication and access-control layer,
-such as API Gateway authorizers, usage plans, WAF, private endpoints, or another
-organization-approved pattern.
-
-Use Playwright MCP only with safe public demo pages in this lab. Do not use it
-with real credentials, private applications, or persistent browser profiles.
-
-## Status
-
-The Terraform / Resource Manager deployment slice is in place. Live OCI
-deployment, Resource Manager apply/destroy validation, and remote MCP tool-call
-smoke testing are required before this is treated as a complete LiveLab.
+Use this as a temporary lab environment. Do not use production GitHub tokens,
+real credentials, private applications, or sensitive browser sessions with this
+demo.

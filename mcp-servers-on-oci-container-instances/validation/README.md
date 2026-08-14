@@ -1,11 +1,7 @@
 # Validation
 
-This directory contains local validation gates for the LiveLab repository.
-
-It does not define the runtime implementation language for the solution. The
-deployable lab stack is Terraform HCL and OCI Resource Manager YAML. Python is
-used here only where a small dependency-free checker is useful before live OCI
-Resource Manager execution is available.
+This directory contains repository validation helpers for the LiveLab Terraform
+and OCI Resource Manager assets.
 
 Current checks:
 
