@@ -713,13 +713,14 @@ This step:
     Retrieval-Augmented Generation (RAG). Copy this code block into a
     new cell.
 
-    question = (
-    "Which supplier is the best fit for Downtown Mixed-Use Tower "
-    "if we prioritize complete documentation and delivery reliability?"
-)
-
     ```python
     <copy>
+    question = (
+        "Which supplier is the best fit for Downtown Mixed-Use Tower "
+        "if we prioritize complete documentation and delivery reliability?"
+    )
+
+
     def vectorize_question(q):
         cursor.execute(
             """
