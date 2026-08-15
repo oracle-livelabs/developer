@@ -271,11 +271,64 @@ so it can be used in the RAG flow.
 
     ```python
     <copy>
-    def generate_supplier_recommendations(
-        project_id,
-        project_json,
-        df_supplier_recommendations
-    ):
+    def read_lob(value):
+        return value.read() if isinstance(value, oracledb.LOB) else value
+
+
+    cursor.execute(
+        """
+        SELECT
+            eval.EVALUATION_ID,
+            rec.RECOMMEND_ID,
+            rec.RECOMMENDATION,
+            rec.FIT_SCORE,
+            rec.RISK_LEVEL,
+            rec.EXPLANATION,
+            rec.STRENGTHS,
+            rec.MISSING_INFORMATION,
+            supplier.SUPPLIER_ID,
+            supplier.SUPPLIER_NAME,
+            supplier.CATEGORY,
+            supplier.REGION,
+            supplier.CAPACITY_STATUS,
+            supplier.CAPABILITY_SUMMARY
+        FROM CE_SUPPLIER_EVALUATION eval
+        JOIN CE_SUPPLIER_RECOMMENDATION rec
+            ON rec.RECOMMEND_ID = eval.RECOMMEND_ID
+        JOIN CE_SUPPLIERS supplier
+            ON supplier.SUPPLIER_ID = rec.SUPPLIER_ID
+        WHERE eval.PROJECT_ID = :project_id
+        ORDER BY rec.FIT_SCORE DESC, eval.EVALUATION_ID
+        """,
+        {"project_id": selected_project_id}
+    )
+
+    columns = [
+        "EVALUATION_ID",
+        "RECOMMEND_ID",
+        "RECOMMENDATION",
+        "FIT_SCORE",
+        "RISK_LEVEL",
+        "EXPLANATION",
+        "STRENGTHS",
+        "MISSING_INFORMATION",
+        "SUPPLIER_ID",
+        "SUPPLIER_NAME",
+        "CATEGORY",
+        "REGION",
+        "CAPACITY_STATUS",
+        "CAPABILITY_SUMMARY"
+    ]
+
+    df_supplier_recommendations = pd.DataFrame(
+        [[read_lob(value) for value in row] for row in cursor.fetchall()],
+        columns=columns
+    )
+
+    print(f"Loaded {len(df_supplier_recommendations)} supplier recommendation records.")
+
+
+    def generate_supplier_recommendations(project_id, project_json, df_supplier_recommendations):
         requirement = (project_json.get("requirements") or [{}])[0]
         evaluation = (project_json.get("supplierEvaluations") or [{}])[0]
         recommendation = evaluation.get("recommendation") or {}
@@ -284,8 +337,10 @@ so it can be used in the RAG flow.
             [
                 (
                     f"Supplier Evaluation {row['EVALUATION_ID']}: "
-                    f"{row['SUPPLIER_NAME']} | Decision: {row['RECOMMENDATION']} | "
-                    f"Fit Score: {row['FIT_SCORE']} | Risk: {row['RISK_LEVEL']} | "
+                    f"{row['SUPPLIER_NAME']} | "
+                    f"Decision: {row['RECOMMENDATION']} | "
+                    f"Fit Score: {row['FIT_SCORE']} | "
+                    f"Risk: {row['RISK_LEVEL']} | "
                     f"Capacity: {row['CAPACITY_STATUS']} | "
                     f"Explanation: {row['EXPLANATION']} | "
                     f"Missing Information: {row['MISSING_INFORMATION']}"
@@ -309,10 +364,11 @@ so it can be used in the RAG flow.
                 f"- Budget Range: {requirement.get('budgetRange', '')}",
                 f"- Risk Level: {requirement.get('riskLevel', '')}",
                 f"- Current Evaluation Status: {evaluation.get('evaluationStatus', '')}",
-                "- Current Recommended Supplier: "
-                f"{recommendation.get('supplier', {}).get('supplierName', '')}",
+                f"- Current Recommended Supplier: {recommendation.get('supplier', {}).get('supplierName', '')}",
             ]
         )
+
+        question = "Generate a supplier evaluation for this project."
 
         prompt = f"""
     You are an AI supplier evaluation assistant for construction engineering procurement.
@@ -325,7 +381,7 @@ so it can be used in the RAG flow.
     Construction Engineering
 
     User request:
-    Generate a supplier evaluation for this project.
+    {question}
 
     Selected project profile:
     {project_profile_text}
@@ -359,23 +415,13 @@ so it can be used in the RAG flow.
     Actionable Steps
     """
 
-        # Uses the supported text model by default.
-        # Set OCI_MODEL_ID in Jupyter if your OCI console specifies another model.
-        model_id = os.getenv(
-            "OCI_MODEL_ID",
-            "meta.llama-3.3-70b-instruct"
-        )
-
-        config_path = os.path.expanduser(
-            os.getenv("OCI_CONFIG_PATH", "~/.oci/config")
-        )
+        model_id = os.getenv("OCI_MODEL_ID", "meta.llama-3.3-70b-instruct")
+        config_path = os.path.expanduser(os.getenv("OCI_CONFIG_PATH", "~/.oci/config"))
         endpoint = os.getenv("ENDPOINT")
         compartment_id = os.getenv("COMPARTMENT_OCID")
 
         if not endpoint or not compartment_id:
-            raise ValueError(
-                "Missing ENDPOINT or COMPARTMENT_OCID environment variable."
-            )
+            raise ValueError("Missing ENDPOINT or COMPARTMENT_OCID environment variable.")
 
         print(f"Generating AI response with model: {model_id}")
 
@@ -390,14 +436,12 @@ so it can be used in the RAG flow.
                 messages=[
                     oci.generative_ai_inference.models.UserMessage(
                         content=[
-                            oci.generative_ai_inference.models.TextContent(
-                                text=prompt
-                            )
+                            oci.generative_ai_inference.models.TextContent(text=prompt)
                         ]
                     )
                 ],
                 temperature=0.0,
-                top_p=1.0,
+                top_p=1.00,
                 max_tokens=1500
             ),
             serving_mode=oci.generative_ai_inference.models.OnDemandServingMode(
@@ -410,10 +454,7 @@ so it can be used in the RAG flow.
         except ServiceError as error:
             if error.status == 404:
                 raise RuntimeError(
-                    f"OCI cannot find or access model '{model_id}' at {endpoint}. "
-                    "Open OCI Generative AI Chat Playground in the same region, "
-                    "copy an available model ID, then set it with:\n"
-                    "os.environ['OCI_MODEL_ID'] = 'your-model-id'"
+                    f"Model '{model_id}' is unavailable at this endpoint: {endpoint}"
                 ) from error
             raise
 
@@ -425,7 +466,7 @@ so it can be used in the RAG flow.
         project_json,
         df_supplier_recommendations
     )
-    
+
     print(recommendations)
     </copy>
     ```
