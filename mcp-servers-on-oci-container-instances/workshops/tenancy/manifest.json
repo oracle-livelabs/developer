@@ -1,0 +1,56 @@
+{
+  "help": "livelabs-help-aiservices_us@oracle.com",
+  "tutorials": [
+    {
+      "description": "Workshop overview and objectives.",
+      "filename": "../../introduction/introduction.md",
+      "title": "Introduction"
+    },
+    {
+      "description": "Get started in your Free Trial, paid tenancy, or Always Free account.",
+      "filename": "https://livelabs.oracle.com/cdn/common/labs/cloud-login/cloud-login.md",
+      "title": "Get Started"
+    },
+    {
+      "description": "Deploy the MCP servers on OCI Container Instances with Resource Manager.",
+      "filename": "../../deploy/deploy.md",
+      "title": "Lab 1: Deploy the MCP Servers"
+    },
+    {
+      "description": "Validate the Resource Manager job, outputs, and Container Instance resources.",
+      "filename": "../../validate/validate-deployment.md",
+      "title": "Lab 2: Validate the OCI Deployment"
+    },
+    {
+      "description": "Connect an MCP-capable AI client to the remote OCI-hosted MCP servers.",
+      "filename": "../../connect/connect-ai-client.md",
+      "title": "Lab 3: Connect an AI Client"
+    },
+    {
+      "description": "Use Terraform MCP through the AI client.",
+      "filename": "../../terraform-mcp/terraform-mcp.md",
+      "title": "Lab 4: Use Terraform MCP"
+    },
+    {
+      "description": "Use GitHub MCP through the AI client.",
+      "filename": "../../github-mcp/github-mcp.md",
+      "title": "Lab 5: Use GitHub MCP"
+    },
+    {
+      "description": "Use Playwright MCP through the AI client.",
+      "filename": "../../playwright-mcp/playwright-mcp.md",
+      "title": "Lab 6: Use Playwright MCP"
+    },
+    {
+      "description": "Destroy the lab resources and revoke the lab GitHub token.",
+      "filename": "../../cleanup/cleanup.md",
+      "title": "Lab 7: Clean Up"
+    },
+    {
+      "description": "Solutions to common problems and directions for receiving LiveLabs help.",
+      "filename": "https://livelabs.oracle.com/cdn/common/labs/need-help/need-help-freetier.md",
+      "title": "Need Help?"
+    }
+  ],
+  "workshoptitle": "Put AI Agents to Work with MCP and OCI Container Instances"
+}

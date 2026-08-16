@@ -18,7 +18,7 @@ from pathlib import Path
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 README_BASENAMES = {"readme.md", "skill.md"}
 
-IMAGE_REFERENCE = re.compile(r"!\[[^\]]*\]\((images/[^\"\s\)]+)")
+IMAGE_REFERENCE = re.compile(r"!\[[^\]]*\]\(((?:(?:\.\.?)/)*images/[^\"\s\)]+)")
 
 MARKDOWN_HYGIENE_PATTERNS = [
     (re.compile(r"-----BEGIN [A-Z ]*PRIVATE KEY-----"), "private key material"),
@@ -129,6 +129,21 @@ def changed_markdown_files(
         if not path_text.startswith(project_prefix):
             continue
 
+        absolute = repo_root / path_text
+        if path_exists_with_exact_case(absolute):
+            files.add(absolute)
+
+    untracked_result = run_git(
+        repo_root,
+        ["ls-files", "--others", "--exclude-standard", "--", project_relpath(repo_root)],
+    )
+    if untracked_result.returncode != 0:
+        return [], [f"Unable to determine untracked project files: {untracked_result.stderr.strip()}"]
+
+    for raw_line in untracked_result.stdout.splitlines():
+        path_text = raw_line.strip()
+        if not path_text or not path_text.endswith(".md"):
+            continue
         absolute = repo_root / path_text
         if path_exists_with_exact_case(absolute):
             files.add(absolute)

@@ -1,0 +1,21 @@
+[mcp_servers.oci_terraform]
+type = "streamable_http"
+url = "<api_gateway_endpoint>/terraform/mcp"
+startup_timeout_sec = 20
+tool_timeout_sec = 120
+enabled = true
+
+[mcp_servers.oci_github]
+type = "streamable_http"
+url = "<api_gateway_endpoint>/github/mcp"
+startup_timeout_sec = 20
+tool_timeout_sec = 120
+bearer_token_env_var = "GITHUB_PAT_TOKEN"
+enabled = true
+
+[mcp_servers.oci_playwright]
+type = "streamable_http"
+url = "<api_gateway_endpoint>/playwright/mcp"
+startup_timeout_sec = 20
+tool_timeout_sec = 120
+enabled = true
