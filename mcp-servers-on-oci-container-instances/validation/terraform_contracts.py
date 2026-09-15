@@ -138,6 +138,27 @@ def extract_named_blocks(text: str, block_name: str) -> list[str]:
     return blocks
 
 
+def extract_labeled_block(text: str, header: str) -> str | None:
+    header_index = text.find(header)
+    if header_index == -1:
+        return None
+
+    open_index = text.find("{", header_index)
+    if open_index == -1:
+        return None
+
+    depth = 0
+    for index in range(open_index, len(text)):
+        if text[index] == "{":
+            depth += 1
+        elif text[index] == "}":
+            depth -= 1
+            if depth == 0:
+                return text[header_index : index + 1]
+
+    return None
+
+
 def validate_versions(texts: dict[str, str], failures: list[str]) -> None:
     text = texts.get("versions.tf", "")
     require_contains(failures, "versions.tf", text, 'source  = "oracle/oci"')
@@ -271,12 +292,16 @@ def validate_network(texts: dict[str, str], failures: list[str]) -> None:
         "oci_core_vcn",
         "oci_core_subnet",
         "oci_core_internet_gateway",
+        "oci_core_nat_gateway",
         "oci_core_route_table",
         "oci_core_security_list",
     ]:
         require_contains(failures, "network.tf", text, f'resource "{resource_type}"')
 
     for resource in [
+        'resource "oci_core_nat_gateway" "mcp_lab"',
+        'resource "oci_core_route_table" "mcp_lab"',
+        'resource "oci_core_route_table" "container_instance"',
         'resource "oci_core_security_list" "api_gateway"',
         'resource "oci_core_security_list" "container_instance"',
         'resource "oci_core_subnet" "api_gateway"',
@@ -295,7 +320,56 @@ def validate_network(texts: dict[str, str], failures: list[str]) -> None:
     require_contains(failures, "network.tf", text, "var.terraform_mcp_port")
     require_contains(failures, "network.tf", text, "var.github_mcp_port")
     require_contains(failures, "network.tf", text, "var.playwright_mcp_port")
-    require_contains(failures, "network.tf", text, "prohibit_public_ip_on_vnic = false")
+    require_contains(failures, "network.tf", text, "network_entity_id = oci_core_internet_gateway.mcp_lab.id")
+    require_contains(failures, "network.tf", text, "network_entity_id = oci_core_nat_gateway.mcp_lab.id")
+    require_contains(failures, "network.tf", text, "route_table_id             = oci_core_route_table.mcp_lab.id")
+    require_contains(
+        failures,
+        "network.tf",
+        text,
+        "route_table_id             = oci_core_route_table.container_instance.id",
+    )
+    api_gateway_subnet = extract_labeled_block(
+        text, 'resource "oci_core_subnet" "api_gateway"'
+    )
+    if api_gateway_subnet is None:
+        failures.append("network.tf must define the API Gateway subnet resource")
+    else:
+        if "prohibit_public_ip_on_vnic = false" not in api_gateway_subnet:
+            failures.append("network.tf must keep the API Gateway subnet public")
+        if "route_table_id             = oci_core_route_table.mcp_lab.id" not in api_gateway_subnet:
+            failures.append(
+                "network.tf must route the API Gateway subnet through the internet gateway route table"
+            )
+
+    container_instance_subnet = extract_labeled_block(
+        text, 'resource "oci_core_subnet" "container_instance"'
+    )
+    if container_instance_subnet is None:
+        failures.append("network.tf must define the Container Instance subnet resource")
+    else:
+        if "prohibit_public_ip_on_vnic = true" not in container_instance_subnet:
+            failures.append("network.tf must make the Container Instance subnet private")
+        if (
+            "route_table_id             = oci_core_route_table.container_instance.id"
+            not in container_instance_subnet
+        ):
+            failures.append(
+                "network.tf must route the Container Instance subnet through the NAT route table"
+            )
+
+    container_instance_route_table = extract_labeled_block(
+        text, 'resource "oci_core_route_table" "container_instance"'
+    )
+    if container_instance_route_table is None:
+        failures.append("network.tf must define the Container Instance route table")
+    elif (
+        "network_entity_id = oci_core_nat_gateway.mcp_lab.id"
+        not in container_instance_route_table
+    ):
+        failures.append(
+            "network.tf must route private Container Instance subnet egress through NAT Gateway"
+        )
 
     ingress_blocks = extract_named_blocks(text, "ingress_security_rules")
     for port_variable in [
@@ -335,7 +409,7 @@ def validate_container_instance(texts: dict[str, str], failures: list[str]) -> N
     require_contains(failures, "container-instance.tf", text, 'data "oci_core_vnic"')
     require_contains(failures, "container-instance.tf", text, "available_container_shape_names")
     require_contains(failures, "container-instance.tf", text, "precondition")
-    require_contains(failures, "container-instance.tf", text, "is_public_ip_assigned = true")
+    require_contains(failures, "container-instance.tf", text, "is_public_ip_assigned = false")
     require_contains(failures, "container-instance.tf", text, "subnet_id             = oci_core_subnet.container_instance.id")
     require_contains(failures, "container-instance.tf", text, "var.container_ocpus <= 64")
     require_contains(failures, "container-instance.tf", text, "var.container_ocpus <= 94")
@@ -382,6 +456,9 @@ def validate_container_instance(texts: dict[str, str], failures: list[str]) -> N
             failures.append(
                 f"container-instance.tf must not configure secret environment name {unsafe_name}"
             )
+
+    if "is_public_ip_assigned = true" in text:
+        failures.append("container-instance.tf must not assign a public IP to the Container Instance")
 
 
 def validate_api_gateway(texts: dict[str, str], failures: list[str]) -> None:

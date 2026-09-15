@@ -31,7 +31,10 @@ In this workshop, you will:
 
 The Resource Manager stack creates:
 
-* one VCN for the lab;
+* one VCN for the lab, with a public API Gateway subnet and a private Container
+  Instance subnet;
+* one NAT Gateway for outbound access from the private Container Instance
+  subnet;
 * one OCI API Gateway HTTPS endpoint;
 * one OCI Container Instance;
 * three containers in that Container Instance:
@@ -50,7 +53,8 @@ After deployment, Resource Manager returns three MCP URLs:
 You need:
 
 * access to an OCI tenancy and a compartment where you can create Resource
-  Manager stacks, networking, API Gateway, and Container Instance resources;
+  Manager stacks, networking, NAT Gateway, API Gateway, and Container Instance
+  resources;
 * an MCP-capable AI client for the client-connection labs;
 * a least-privilege GitHub token available for the GitHub MCP lab.
 

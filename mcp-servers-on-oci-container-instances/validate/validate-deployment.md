@@ -46,8 +46,8 @@ Complete Lab 1 and start the Resource Manager apply job for this workshop.
 
 ## Task 3: Review the created resources
 
-1. Open the job resources and confirm Resource Manager created the expected API
-    Gateway, networking, and Container Instance resources.
+1. Open the job resources and confirm Resource Manager created the expected
+    networking, NAT Gateway, API Gateway, and Container Instance resources.
 
     ![Resource Manager job resources](../images/10-job-resources.png)
 

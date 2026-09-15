@@ -4,7 +4,8 @@
 
 In this lab, you create an OCI Resource Manager stack from the workshop package
 and run the apply job. Resource Manager creates the OCI networking, API Gateway,
-Container Instance, and three MCP server containers.
+Container Instance, and three MCP server containers. The Container Instance runs
+in a private subnet and uses a NAT Gateway for outbound public image pulls.
 
 Estimated Time: 15 minutes
 
@@ -22,13 +23,13 @@ In this lab, you will:
 
 Complete the workshop introduction and the Get Started lab. Make sure you can
 access an OCI tenancy and a compartment where you can create Resource Manager,
-networking, API Gateway, and Container Instance resources.
+networking, NAT Gateway, API Gateway, and Container Instance resources.
 
 ## Task 1: Launch the Resource Manager stack
 
 1. Select **Deploy to Oracle Cloud**.
 
-    [![Deploy to Oracle Cloud](../images/deploy-to-oracle-cloud-centered.svg)](https://cloud.oracle.com/resourcemanager/stacks/create?zipUrl=https://github.com/Phirlly/developer/raw/main/mcp-servers-on-oci-container-instances/files/resource-manager/mcp-servers-on-oci-container-instances-rm.zip)
+    [![Deploy to Oracle Cloud](../images/deploy-to-oracle-cloud-centered.svg)](https://cloud.oracle.com/resourcemanager/stacks/create?zipUrl=https://github.com/oracle-livelabs/developer/raw/main/mcp-servers-on-oci-container-instances/files/resource-manager/mcp-servers-on-oci-container-instances-rm.zip)
 
     ![Deploy to Oracle Cloud button](../images/01-create-stack-package.png)
 

@@ -14,6 +14,13 @@ resource "oci_core_internet_gateway" "mcp_lab" {
   vcn_id         = oci_core_vcn.mcp_lab.id
 }
 
+resource "oci_core_nat_gateway" "mcp_lab" {
+  compartment_id = var.compartment_ocid
+  display_name   = "${local.name_prefix}-nat"
+  freeform_tags  = local.common_freeform_tags
+  vcn_id         = oci_core_vcn.mcp_lab.id
+}
+
 resource "oci_core_route_table" "mcp_lab" {
   compartment_id = var.compartment_ocid
   display_name   = "${local.name_prefix}-rt"
@@ -24,6 +31,19 @@ resource "oci_core_route_table" "mcp_lab" {
     destination       = "0.0.0.0/0"
     destination_type  = "CIDR_BLOCK"
     network_entity_id = oci_core_internet_gateway.mcp_lab.id
+  }
+}
+
+resource "oci_core_route_table" "container_instance" {
+  compartment_id = var.compartment_ocid
+  display_name   = "${local.name_prefix}-container-instance-rt"
+  freeform_tags  = local.common_freeform_tags
+  vcn_id         = oci_core_vcn.mcp_lab.id
+
+  route_rules {
+    destination       = "0.0.0.0/0"
+    destination_type  = "CIDR_BLOCK"
+    network_entity_id = oci_core_nat_gateway.mcp_lab.id
   }
 }
 
@@ -113,8 +133,8 @@ resource "oci_core_subnet" "container_instance" {
   display_name               = "${local.name_prefix}-container-instance-subnet"
   dns_label                  = "mcpservers"
   freeform_tags              = local.common_freeform_tags
-  prohibit_public_ip_on_vnic = false
-  route_table_id             = oci_core_route_table.mcp_lab.id
+  prohibit_public_ip_on_vnic = true
+  route_table_id             = oci_core_route_table.container_instance.id
   security_list_ids          = [oci_core_security_list.container_instance.id]
   vcn_id                     = oci_core_vcn.mcp_lab.id
 }
