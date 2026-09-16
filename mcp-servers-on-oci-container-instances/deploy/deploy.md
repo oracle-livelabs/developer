@@ -28,7 +28,7 @@ networking, API Gateway, and Container Instance resources.
 
 1. Select **Deploy to Oracle Cloud**.
 
-    [![Deploy to Oracle Cloud](../images/deploy-to-oracle-cloud-centered.svg)](https://cloud.oracle.com/resourcemanager/stacks/create?zipUrl=https://github.com/Phirlly/developer/raw/main/mcp-servers-on-oci-container-instances/files/resource-manager/mcp-servers-on-oci-container-instances-rm.zip)
+    [![Deploy to Oracle Cloud](../images/deploy-to-oracle-cloud-centered.svg)](https://cloud.oracle.com/resourcemanager/stacks/create?zipUrl=https://github.com/oracle-livelabs/developer/raw/main/mcp-servers-on-oci-container-instances/files/resource-manager/mcp-servers-on-oci-container-instances-rm.zip)
 
     ![Deploy to Oracle Cloud button](../images/01-create-stack-package.png)
 
