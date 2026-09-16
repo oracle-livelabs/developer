@@ -3,8 +3,9 @@
 ## Introduction
 
 In this lab, you configure an MCP-capable AI client to use the remote MCP
-servers that are running on OCI. The examples use Codex and Cline because both
-were validated with the OCI-hosted endpoints.
+servers that are running on OCI. The examples were validated with the
+OCI-hosted endpoints and are provided so you can choose the client harness that
+matches your workflow.
 
 Estimated Time: 10 minutes
 
@@ -12,11 +13,12 @@ Estimated Time: 10 minutes
 
 In this lab, you will:
 
-* configure Streamable HTTP MCP server entries for one validated AI client;
+* configure Streamable HTTP MCP server entries for one MCP-capable AI client;
 * confirm the client can see the OCI-hosted MCP servers.
 
-Use either the Codex path or the Cline path for the timed lab. The other client
-configuration is included as a reference if you want to try a second client.
+Use one client path for the timed lab. You can use a different option if your
+preferred client harness is Codex, Cline, VS Code GitHub Copilot Chat, or Google
+Antigravity.
 
 ### Prerequisites
 
@@ -41,7 +43,7 @@ MCP-capable AI client configuration.
     <api_gateway_endpoint>/playwright/mcp
     ```
 
-3. Complete either Task 2 or Task 3 for your chosen client.
+3. Complete Task 2, Task 3, Task 4, or Task 5 for your chosen client.
 
 ## Task 2: Option A - Configure Codex
 
@@ -140,7 +142,97 @@ MCP-capable AI client configuration.
     * `oci_github`
     * `oci_playwright`
 
-## Task 4: Confirm your client is using the OCI-hosted servers
+## Task 4: Option C - Configure VS Code GitHub Copilot Chat
+
+1. In VS Code, open the Command Palette:
+
+    * macOS: **Command+Shift+P**
+    * Windows or Linux: **Ctrl+Shift+P**
+
+2. Open one MCP configuration file:
+
+    * For your VS Code user profile, run **MCP: Open User Configuration**.
+    * For the current workspace, run
+      **MCP: Open Workspace Folder MCP Configuration**.
+
+    Use one location for these `oci_*` server entries.
+
+3. Add the remote MCP servers to the `mcp.json` file that VS Code opens.
+
+    ```json
+    {
+      "servers": {
+        "oci_terraform": {
+          "type": "http",
+          "url": "<api_gateway_endpoint>/terraform/mcp"
+        },
+        "oci_github": {
+          "type": "http",
+          "url": "<api_gateway_endpoint>/github/mcp",
+          "headers": {
+            "Authorization": "Bearer ${env:GITHUB_PAT_TOKEN}"
+          }
+        },
+        "oci_playwright": {
+          "type": "http",
+          "url": "<api_gateway_endpoint>/playwright/mcp"
+        }
+      }
+    }
+    ```
+
+4. For GitHub MCP, set `GITHUB_PAT_TOKEN` in the environment used by VS Code.
+    Do not store a real token in `mcp.json`.
+
+5. Save `mcp.json`, then start the MCP servers from the configuration file
+    controls in VS Code.
+
+6. Open GitHub Copilot Chat, select **Agent** mode, and use the tools picker to
+    confirm the `oci_*` MCP servers and tools are available.
+
+## Task 5: Option D - Configure Google Antigravity
+
+1. Add the remote MCP servers to one Antigravity MCP configuration file:
+
+    * global configuration: `~/.gemini/config/mcp_config.json`
+    * workspace configuration: `.agents/mcp_config.json`
+
+2. Add the remote MCP servers.
+
+    ```json
+    {
+      "mcpServers": {
+        "oci_terraform": {
+          "disabled": false,
+          "serverUrl": "<api_gateway_endpoint>/terraform/mcp"
+        },
+        "oci_github": {
+          "serverUrl": "<api_gateway_endpoint>/github/mcp",
+          "headers": {
+            "Authorization": "Bearer <github-token-value>"
+          }
+        },
+        "oci_playwright": {
+          "disabled": false,
+          "serverUrl": "<api_gateway_endpoint>/playwright/mcp"
+        }
+      }
+    }
+    ```
+
+3. For GitHub MCP, replace `<github-token-value>` only in your local
+    Antigravity configuration. Do not store a real token in a tracked workspace
+    file.
+
+4. Open Antigravity and use `/mcp` to view the MCP server manager.
+
+5. Confirm the expected server names are present:
+
+    * `oci_terraform`
+    * `oci_github`
+    * `oci_playwright`
+
+## Task 6: Confirm your client is using the OCI-hosted servers
 
 1. Ask your AI client to list the available MCP tools. The remote OCI-hosted
     servers should appear with names or namespaces that include:

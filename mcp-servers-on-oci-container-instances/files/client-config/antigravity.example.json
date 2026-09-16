@@ -1,0 +1,18 @@
+{
+  "mcpServers": {
+    "oci_terraform": {
+      "disabled": false,
+      "serverUrl": "<api_gateway_endpoint>/terraform/mcp"
+    },
+    "oci_github": {
+      "serverUrl": "<api_gateway_endpoint>/github/mcp",
+      "headers": {
+        "Authorization": "Bearer <github-token-value>"
+      }
+    },
+    "oci_playwright": {
+      "disabled": false,
+      "serverUrl": "<api_gateway_endpoint>/playwright/mcp"
+    }
+  }
+}
