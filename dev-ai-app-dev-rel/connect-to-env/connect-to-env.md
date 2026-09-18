@@ -6,7 +6,7 @@ In this lab, you'll learn how to access the web-based Jupyter Lab development en
 
 Estimated Time: 5 minutes
 
-### Objective
+### Objectives
 
 * Login to JupyterLab
 
@@ -50,7 +50,7 @@ You will use a Jupyter Notebook in JupyterLab to build and test the return autho
 
 ## Conclusion
 
-In this lab you logged into the **IDE Development Environment** for Jupyter Labs. You reviewed different elements from the environment like **File Browser** and **Launcher**. Lastly, you were introduced to concepts to allow you to get started running code smoothly like **executing code blocks** and **outputs and warnings**. 
+In this lab you logged into the JupyterLab **IDE**. You reviewed different elements from the environment like **File Browser** and **Launcher**. Lastly, you were introduced to concepts to allow you to get started running code smoothly like **executing code blocks** and **outputs and warnings**. 
 
 
 ## Acknowledgements

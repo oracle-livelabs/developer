@@ -172,41 +172,143 @@ With customer profiles in place, you will use OCI Generative AI to generate pers
 Here’s what we’ll do:
 - **Fetch Mock Loan Data**: Retrieve all mock loan data and combine them with customer data.
 - **Build a Prompt**: Construct a structured prompt that combines the customer’s profile with loan requests instructing the LLM to evaluate and recommend a loan (APPROVE, REQUEST INFO, DENY) based solely on this data.
-- **Use OCI Generative AI**: Send the prompt to the `meta.llama-3.2-90b-vision-instruct` model via OCI’s inference client, which will process the input and generate a response.
+- **Use OCI Generative AI**: Send the prompt to the `cohere.command-r-plus-08-2024` model via OCI’s inference client, which will process the input and generate a response.
 - **Format the Output**: Display the recommendations with styled headers and lists, covering evaluation, top picks, and explanations—making it easy to read and understand.
 
 1. Copy and paste the code in a new cell:
 
     ```python
     <copy>
-    # Fetch Mock Loan Data
-cursor.execute("SELECT loan_id, loan_provider_name, loan_type, interest_rate, origination_fee, time_to_close, credit_score, debt_to_income_ratio, income, down_payment_percent, is_first_time_home_buyer FROM MOCK_LOAN_DATA")
-df_mock_loans = pd.DataFrame(cursor.fetchall(), columns=["LOAN_ID", "LOAN_PROVIDER_NAME", "LOAN_TYPE", "INTEREST_RATE", "ORIGINATION_FEE", "TIME_TO_CLOSE", "CREDIT_SCORE", "DEBT_TO_INCOME_RATIO", "INCOME", "DOWN_PAYMENT_PERCENT", "IS_FIRST_TIME_HOME_BUYER"])
+    def generate_recommendations(customer_id, customer_json, df_policy_rules):
+        try:
+            return_request = customer_json.get("returnRequests", [{}])[0]
+            recommendation = return_request.get("recommendation", {})
+            reason = recommendation.get("reason", {})
 
-# Generate Recommendations
-def generate_recommendations(customer_id, customer_json, df_mock_loans):
-        loan_app = customer_json.get("loanApplications", [{}])[0]
-        available_loans_text = "\n".join([f"{loan['LOAN_ID']}: {loan['LOAN_TYPE']} | {loan['INTEREST_RATE']}% interest | Credit Score: {loan['CREDIT_SCORE']} | DTI: {loan['DEBT_TO_INCOME_RATIO']}" for loan in df_mock_loans.to_dict(orient='records')])
-        customer_profile_text = "\n".join([f"- {key.replace('_', ' ').title()}: {value}" for key, value in {**customer_json, **loan_app}.items() if key not in ["embedding_vector", "ai_response_vector", "chunk_vector"]])
+            cursor.execute("""
+                SELECT p.PRODUCT_NAME
+                FROM PRODUCTS p
+                JOIN ORDERITEMS oi ON p.PRODUCT_ID = oi.PRODUCT_ID
+                JOIN RETURN_REASONS rr ON oi.ORDERITEMS_ID = rr.ORDERITEMS_ID
+                WHERE rr.REASON_ID = :reason_id
+            """, {"reason_id": int(reason.get("reasonId", 0))})
+            product_result = cursor.fetchone()
+            product_name = product_result[0] if product_result else "Unknown Product"
 
-        prompt = f"""<s>[INST] <<SYS>>You are a Loan Approver AI. Use only the provided context to evaluate the applicant’s profile and recommend loans. Format results as plain text with numbered sections (1. Comprehensive Evaluation, 2. Top 3 Loan Recommendations, 3. Recommendations Explanations, 4. Final Suggestion). Use newlines between sections.</SYS>> [/INST]
-        [INST]Available Loan Options:\n{available_loans_text}\nApplicant's Full Profile:\n{customer_profile_text}\nTasks:\n1. Comprehensive Evaluation\n2. Top 3 Loan Recommendations\n3. Recommendations Explanations\n4. Final Suggestion</INST>"""
+            available_rules_text = "\n".join(
+                f"{rule['RULE_ID']}: {rule['RULE_CODE']} | "
+                f"{rule['RULE_DESCRIPTION']} | Applies To: {rule['APPLIES_TO']}"
+                for rule in df_policy_rules.to_dict(orient="records")
+            )
+            customer_profile_text = "\n".join(
+                f"- {key.replace('_', ' ').title()}: {value}"
+                for key, value in customer_json.items()
+                if key not in ["returnRequests", "_metadata"]
+            )
+            return_request_text = "\n".join(
+                f"- {key.replace('_', ' ').title()}: {value}"
+                for key, value in return_request.items()
+                if key != "recommendation"
+            )
+            reason_text = f"- Return Reason: {reason.get('description', 'N/A')}"
 
-        print("Generating AI response...")
-        print(" ")
-        
-        genai_client = oci.generative_ai_inference.GenerativeAiInferenceClient(config=oci.config.from_file(os.getenv("OCI_CONFIG_PATH", "~/.oci/config")), service_endpoint=os.getenv("ENDPOINT"))
-        chat_detail = oci.generative_ai_inference.models.ChatDetails(
-            compartment_id=os.getenv("COMPARTMENT_OCID"),
-            chat_request=oci.generative_ai_inference.models.GenericChatRequest(messages=[oci.generative_ai_inference.models.UserMessage(content=[oci.generative_ai_inference.models.TextContent(text=prompt)])], temperature=0.0, top_p=1.00),
-            serving_mode=oci.generative_ai_inference.models.OnDemandServingMode(model_id="meta.llama-3.2-90b-vision-instruct")
-        )
-        chat_response = genai_client.chat(chat_detail)
-        recommendations = chat_response.data.chat_response.choices[0].message.content[0].text
+            prompt = f"""You are a Retail Decision AI. Use only the supplied context.
+    Evaluate the return request and recommend APPROVE, REQUEST INFO, or DENY.
 
-        return recommendations
+    Available Policy Rules:
+    {available_rules_text}
 
-    recommendations = generate_recommendations(selected_customer_id, customer_json, df_mock_loans)
+    Customer Profile:
+    {customer_profile_text}
+
+    Return Request:
+    {return_request_text}
+    {reason_text}
+
+    Respond with these sections:
+
+    Suggested Action
+    - State APPROVE, REQUEST INFO, or DENY.
+
+    Comprehensive Evaluation
+    - Explain customer history, loyalty, return frequency, receipt, product condition,
+    return amount, and risk level.
+
+    Top 3 Recommendations
+    - Provide up to three specific recommendations with supporting policy rules.
+
+    Recommendations Explanation
+    - Explain how available evidence supports the recommendation.
+
+    Risk Management
+    - Identify safeguards such as additional evidence, partial refund, or store credit.
+
+    Actionable Steps
+    - List the next actions the customer or reviewer should take.
+
+    Keep the response under 500 words and use plain text."""
+
+            print("Generating AI response...")
+
+            genai_client = oci.generative_ai_inference.GenerativeAiInferenceClient(
+                config=oci.config.from_file(
+                    os.getenv("OCI_CONFIG_PATH", "~/.oci/config")
+                ),
+                service_endpoint=os.getenv("ENDPOINT"),
+            )
+
+            # Compatible with the OCI SDK currently installed in this notebook.
+            models = oci.generative_ai_inference.models
+            chat_request = models.CohereChatRequest(
+                api_format="COHERE",
+                message=prompt,
+                max_tokens=800,
+                temperature=0.0,
+                top_p=1.0,
+            )
+            chat_detail = models.ChatDetails(
+                compartment_id=os.getenv("COMPARTMENT_OCID"),
+                chat_request=chat_request,
+                serving_mode=models.OnDemandServingMode(
+                    model_id="cohere.command-r-plus-08-2024"
+                ),
+            )
+
+            chat_response = genai_client.chat(chat_detail)
+            chat_result = chat_response.data.chat_response
+            return (
+                getattr(chat_result, "text", None)
+                or chat_result.choices[0].message.content[0].text
+            )
+
+        except oracledb.DatabaseError as e:
+            print(f"Database error: {e}")
+            return None
+        except Exception as e:
+            print(f"Unexpected error in generate_recommendations: {e}")
+            return None
+
+
+    print("Fetching policy rules...")
+    cursor.execute("""
+        SELECT rule_id, rule_code, rule_description, applies_to, is_active
+        FROM RETURN_POLICY_RULES
+    """)
+    df_policy_rules = pd.DataFrame(
+        cursor.fetchall(),
+        columns=[
+            "RULE_ID", "RULE_CODE", "RULE_DESCRIPTION",
+            "APPLIES_TO", "IS_ACTIVE",
+        ],
+    )
+
+    recommendations = generate_recommendations(
+        selected_customer_id,
+        customer_json,
+        df_policy_rules,
+    )
+
+    print("\nAI Recommendation:\n")
     print(recommendations)
     </copy>
     ```
@@ -351,23 +453,59 @@ This step:
 
     ```python
     <copy>
-question = "What 4th loan would James qualify for?"
+    # Fetch loan data needed by the RAG prompt.
+    cursor.execute("""
+        SELECT
+            loan_id,
+            loan_provider_name,
+            loan_type,
+            interest_rate,
+            origination_fee,
+            time_to_close,
+            credit_score,
+            debt_to_income_ratio,
+            income,
+            down_payment_percent,
+            is_first_time_home_buyer
+        FROM MOCK_LOAN_DATA
+    """)
 
-def vectorize_question(q):
+    df_mock_loans = pd.DataFrame(
+        cursor.fetchall(),
+        columns=[
+            "LOAN_ID",
+            "LOAN_PROVIDER_NAME",
+            "LOAN_TYPE",
+            "INTEREST_RATE",
+            "ORIGINATION_FEE",
+            "TIME_TO_CLOSE",
+            "CREDIT_SCORE",
+            "DEBT_TO_INCOME_RATIO",
+            "INCOME",
+            "DOWN_PAYMENT_PERCENT",
+            "IS_FIRST_TIME_HOME_BUYER",
+        ],
+    )
+
+    question = "What 4th loan would James qualify for?"
+
+
+    def vectorize_question(q):
         cursor.execute("""
             SELECT dbms_vector_chain.utl_to_embedding(
                 :q,
                 JSON('{"provider":"database","model":"DEMO_MODEL","dimensions":384}')
-            ) FROM DUAL
-        """, {'q': q})
+            )
+            FROM DUAL
+        """, {"q": q})
         return cursor.fetchone()[0]
 
-print("Processing your question using AI Vector Search across chunked recommendations...")
 
-try:
+    print("Processing your question using AI Vector Search across chunked recommendations...")
+
+    try:
         q_vec = vectorize_question(question)
 
-        # Retrieve top recommendation chunks (across all sizes) for this customer
         cursor.execute("""
             SELECT CHUNK_ID, CHUNK_TEXT
             FROM LOAN_CHUNK
@@ -375,90 +513,114 @@ try:
             AND CHUNK_VECTOR IS NOT NULL
             ORDER BY VECTOR_DISTANCE(CHUNK_VECTOR, :qv, COSINE)
             FETCH FIRST 4 ROWS ONLY
-        """, {'cust_id': selected_customer_id, 'qv': q_vec})
+        """, {"cust_id": selected_customer_id, "qv": q_vec})
+
         retrieved = [
-            (r[0], r[1].read() if isinstance(r[1], oracledb.LOB) else r[1])
-            for r in cursor.fetchall()
+            (
+                row[0],
+                row[1].read() if isinstance(row[1], oracledb.LOB) else row[1],
+            )
+            for row in cursor.fetchall()
         ]
 
         if not retrieved:
-            # Fallback to full text as one chunk
             retrieved = [(0, recommendations)]
 
-        # Prepare clean context for the LLM
-        cleaned = [re.sub(r'[^\w\s\d.,\-\'"]', ' ', t).strip() for _, t in retrieved]
+        cleaned = [
+            re.sub(r"""[^\w\s\d.,\-\'"]""", " ", text).strip()
+            for _, text in retrieved
+        ]
         docs_as_one_string = "\n=========\n".join(cleaned) + "\n=========\n"
 
-        # Rebuild available loans + customer profile
         available_loans_text = "\n".join(
-            [f"{loan['LOAN_ID']}: {loan['LOAN_TYPE']} | {loan['INTEREST_RATE']}% interest | "
-            f"Credit Score: {loan['CREDIT_SCORE']} | DTI: {loan['DEBT_TO_INCOME_RATIO']} | "
-            f"Origination Fee: ${loan['ORIGINATION_FEE']} | Time to Close: {loan['TIME_TO_CLOSE']} days"
-            for loan in df_mock_loans.to_dict(orient='records')]
+            f"{loan['LOAN_ID']}: {loan['LOAN_TYPE']} | "
+            f"{loan['INTEREST_RATE']}% interest | "
+            f"Credit Score: {loan['CREDIT_SCORE']} | "
+            f"DTI: {loan['DEBT_TO_INCOME_RATIO']} | "
+            f"Income Required: ${loan['INCOME']} | "
+            f"Origination Fee: ${loan['ORIGINATION_FEE']} | "
+            f"Time to Close: {loan['TIME_TO_CLOSE']} days"
+            for loan in df_mock_loans.to_dict(orient="records")
         )
+
         loan_app = customer_json.get("loanApplications", [{}])[0]
         customer_profile_text = "\n".join(
-            [f"- {k.replace('_',' ').title()}: {v}"
-            for k, v in {**customer_json, **loan_app}.items()
-            if k not in ["embedding_vector","ai_response_vector","chunk_vector"]]
+            f"- {key.replace('_', ' ').title()}: {value}"
+            for key, value in {**customer_json, **loan_app}.items()
+            if key not in [
+                "embedding_vector",
+                "ai_response_vector",
+                "chunk_vector",
+            ]
         )
 
-        rag_prompt = f"""\
-<s>[INST] <<SYS>>
-You are AI Loan Guru. Use only the provided context to answer. Do not mention sources outside of the provided context. 
-Do NOT provide warnings, disclaimers, or exceed the specified response length.
-Keep under 300 words. Be specific and actionable. Have the ability to respond in Spanish, French, Italian, German, and Portuguese if asked.
-<</SYS>> [/INST]
-[INST]
-Question: "{question}"
+        rag_prompt = f"""You are AI Loan Guru.
+    Use only the provided context.
 
-# Context (top chunks from prior AI recommendations):
-{docs_as_one_string}
+    Question:
+    {question}
 
-# Available Loan Options:
-{available_loans_text}
+    Retrieved Recommendation Context:
+    {docs_as_one_string}
 
-# Applicant Profile:
-{customer_profile_text}
+    Available Loan Options:
+    {available_loans_text}
 
-Tasks:
-1) Provide a direct answer to the question.
-2) Briefly justify based on profile + loan options.
-[/INST]"""
+    Applicant Profile:
+    {customer_profile_text}
+
+    Tasks:
+    1. Answer the question directly.
+    2. Identify the fourth qualifying loan, if one exists.
+    3. Justify it using credit score, DTI, income, and eligibility requirements.
+    4. If no fourth loan qualifies, explain why.
+
+    Keep the answer under 300 words."""
 
         print("Generating AI response...")
 
         genai_client = oci.generative_ai_inference.GenerativeAiInferenceClient(
-            config=oci.config.from_file(os.getenv("OCI_CONFIG_PATH","~/.oci/config")),
-            service_endpoint=os.getenv("ENDPOINT")
+            config=oci.config.from_file(
+                os.getenv("OCI_CONFIG_PATH", "~/.oci/config")
+            ),
+            service_endpoint=os.getenv("ENDPOINT"),
         )
+
         chat_detail = oci.generative_ai_inference.models.ChatDetails(
             compartment_id=os.getenv("COMPARTMENT_OCID"),
             chat_request=oci.generative_ai_inference.models.GenericChatRequest(
-                messages=[oci.generative_ai_inference.models.UserMessage(
-                    content=[oci.generative_ai_inference.models.TextContent(text=rag_prompt)]
-                )],
+                messages=[
+                    oci.generative_ai_inference.models.UserMessage(
+                        content=[
+                            oci.generative_ai_inference.models.TextContent(
+                                text=rag_prompt
+                            )
+                        ]
+                    )
+                ],
+                max_tokens=800,
                 temperature=0.0,
-                top_p=0.90
+                top_p=0.9,
             ),
             serving_mode=oci.generative_ai_inference.models.OnDemandServingMode(
-                model_id="meta.llama-3.2-90b-vision-instruct"
-            )
+                model_id="meta.llama-3.3-70b-instruct"
+            ),
         )
+
         chat_response = genai_client.chat(chat_detail)
         ai_response = chat_response.data.chat_response.choices[0].message.content[0].text
-        ai_response = re.sub(r'[^\w\s\d.,\-\'"]', ' ', ai_response)
 
-        print("\n🤖 AI Loan Guru Response:")
+        print("\n🤖 AI Loan Guru Response:\n")
         print(ai_response)
 
-        # Print which chunks were retrieved (for transparency/debug)
         print("\n📑 Retrieved Chunks Used in Response:")
-        for cid, text in retrieved:
-            preview = text[:140].replace("\n", " ") + ("..." if len(text) > 140 else "")
-            print(f"[Chunk {cid}] : {preview}")
+        for chunk_id, text in retrieved:
+            preview = text[:140].replace("\n", " ")
+            if len(text) > 140:
+                preview += "..."
+            print(f"[Chunk {chunk_id}] {preview}")
 
-except Exception as e:
+    except Exception as e:
         print(f"RAG flow error: {e}")
     </copy>
     ```

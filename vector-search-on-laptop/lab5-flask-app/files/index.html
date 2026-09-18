@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oracle AI Vector Search</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 960px; margin: 40px auto; padding: 0 20px; background: #f5f5f5; }
+        h1 { color: #c74634; }
+        h2 { color: #312d2a; border-bottom: 2px solid #c74634; padding-bottom: 6px; }
+        .card { background: white; border-radius: 8px; padding: 24px; margin: 20px 0; box-shadow: 0 2px 6px rgba(0,0,0,0.1); }
+        .upload-form input[type=file] { margin: 10px 0; display: block; }
+        .btn { background: #c74634; color: white; padding: 10px 24px; border: none; border-radius: 4px; cursor: pointer; font-size: 14px; }
+        .btn:hover { background: #a33024; }
+        .btn-secondary { background: #312d2a; }
+        .alert { padding: 12px 16px; border-radius: 4px; margin: 12px 0; }
+        .alert-success { background: #d4edda; color: #155724; border: 1px solid #c3e6cb; }
+        .alert-error { background: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }
+        table { width: 100%; border-collapse: collapse; margin-top: 12px; }
+        th { background: #312d2a; color: white; padding: 10px; text-align: left; }
+        td { padding: 10px; border-bottom: 1px solid #ddd; }
+        tr:hover td { background: #f9f9f9; }
+        .search-link { display: inline-block; margin-top: 16px; }
+        .nav { display: flex; gap: 16px; margin-bottom: 20px; }
+        .nav a { color: #c74634; text-decoration: none; font-weight: bold; }
+        .nav a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <h1>Oracle AI Vector Search</h1>
+    <div class="nav">
+        <a href="/">Home</a>
+        <a href="/search">Search</a>
+    </div>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+                <div class="alert alert-{{ category }}">{{ message }}</div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+
+    <div class="card">
+        <h2>Upload PDF Document</h2>
+        <p>Upload a PDF to extract text, chunk it with Oracle VECTOR_CHUNKS, and generate embeddings using the in-database ONNX model.</p>
+        <form class="upload-form" action="/upload" method="post" enctype="multipart/form-data">
+            <input type="file" name="pdf_file" accept=".pdf" required>
+            <button type="submit" class="btn">Upload and Process PDF</button>
+        </form>
+    </div>
+
+    <div class="card">
+        <h2>Loaded Documents ({{ documents|length }})</h2>
+        {% if documents %}
+            <table>
+                <tr><th>Filename</th><th>Pages</th><th>Chunks</th><th>Loaded At</th></tr>
+                {% for doc in documents %}
+                <tr>
+                    <td>{{ doc.filename }}</td>
+                    <td>{{ doc.page_count }}</td>
+                    <td>{{ doc.chunk_count }}</td>
+                    <td>{{ doc.loaded_at }}</td>
+                </tr>
+                {% endfor %}
+            </table>
+        {% else %}
+            <p>No documents loaded yet. Upload a PDF above to get started.</p>
+        {% endif %}
+        <a href="/search" class="search-link"><button class="btn btn-secondary">Go to Search</button></a>
+    </div>
+</body>
+</html>

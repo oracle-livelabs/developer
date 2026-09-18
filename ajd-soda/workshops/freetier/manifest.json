@@ -4,11 +4,11 @@
         {
             "title": "Oracle Cloud Free Tier",
             "description": "Use your Always Free resources as long as you want with no time constraints—subject only to the capacity limits noted. When your 30-day trial period for the expanded set of services ends, you can continue using Always Free services with no interruption.",
-            "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/pre-register-free-tier-account.md"
+            "filename": "https://livelabs.oracle.com/cdn/common/labs/cloud-login/pre-register-free-tier-account.md"
         },
         {
             "title": "Lab 1: Create SSH Keys",
-            "filename": "https://oracle-livelabs.github.io/common/labs/generate-ssh-key/generate-ssh-keys.md"
+            "filename": "https://livelabs.oracle.com/cdn/common/labs/generate-ssh-key/generate-ssh-keys.md"
         },
         {
             "title": "Lab 2: Development environment preparation",
@@ -23,7 +23,7 @@
         {
             "title": "Need Help?",
             "description": "Solutions to Common Problems and Directions for Receiving Live Help",
-            "filename":"https://oracle-livelabs.github.io/common/labs/need-help/need-help-freetier.md"
+            "filename":"https://livelabs.oracle.com/cdn/common/labs/need-help/need-help-freetier.md"
         }
     ]
 }

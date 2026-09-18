@@ -1,0 +1,41 @@
+{
+    "workshoptitle": "AI Vector Search on Your Laptop with Oracle AI Database Free",
+    "help": "livelabs-help-db_us@oracle.com",
+    "tutorials": [
+        {
+            "title": "Introduction",
+            "description": "Overview of the workshop and what you will build.",
+            "filename": "../../introduction/introduction.md"
+        },
+        {
+            "title": "Lab 1: Install Oracle AI Database AI with Podman",
+            "description": "Install Oracle AI Database  on your laptop using Podman containers.",
+            "filename": "../../lab1-install-database/lab1-install-database.md"
+        },
+        {
+            "title": "Lab 2: Connect to Oracle Database from Python",
+            "description": "Set up a Python environment and verify the database connection.",
+            "filename": "../../lab2-connect-python/lab2-connect-python.md"
+        },
+        {
+            "title": "Lab 3: Load an ONNX Embedding Model into Oracle Database",
+            "description": "Download and load a pre-built ONNX embedding model into Oracle AI Database 26ai.",
+            "filename": "../../lab3-load-onnx/lab3-load-onnx.md"
+        },
+        {
+            "title": "Lab 4: Load PDFs, Create Embeddings, and Search",
+            "description": "Load PDF documents, chunk text with VECTOR_CHUNKS, generate embeddings, and perform cosine similarity search.",
+            "filename": "../../lab4-pdf-embeddings/lab4-pdf-embeddings-dbms-vector-chain.md"
+        },
+        {
+            "title": "Lab 5: Build a Flask Web Application for PDF Search",
+            "description": "Build a complete Flask application for PDF upload and semantic similarity search.",
+            "filename": "../../lab5-flask-app/lab5-flask-app.md"
+        },
+        {
+            "title": "Need Help?",
+            "description": "Solutions to common problems and directions for receiving live help.",
+            "filename": "https://livelabs.oracle.com/cdn/common/labs/need-help/need-help-livelabs.md"
+        }
+    ]
+}

@@ -7,7 +7,7 @@
             "description": "Login to Oracle Cloud",
             "publisheddate": "03/10/2020",
             "contentid": "12nnnn",
-            "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/pre-register-free-tier-account.md"
+            "filename": "https://livelabs.oracle.com/cdn/common/labs/cloud-login/pre-register-free-tier-account.md"
         },
         {
             "title": "Introduction",
@@ -47,7 +47,7 @@
         {
             "title": "Need Help?",
             "description": "Solutions to Common Problems and Directions for Receiving Live Help",
-            "filename": "https://oracle-livelabs.github.io/common/labs/need-help/need-help-freetier.md"
+            "filename": "https://livelabs.oracle.com/cdn/common/labs/need-help/need-help-freetier.md"
         }
     ]
 }

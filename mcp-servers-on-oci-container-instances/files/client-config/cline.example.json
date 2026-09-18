@@ -1,0 +1,34 @@
+{
+  "mcpServers": {
+    "oci_terraform": {
+      "transport": {
+        "type": "streamableHttp",
+        "url": "<api_gateway_endpoint>/terraform/mcp"
+      },
+      "disabled": false,
+      "timeout": 120,
+      "autoApprove": []
+    },
+    "oci_github": {
+      "transport": {
+        "type": "streamableHttp",
+        "url": "<api_gateway_endpoint>/github/mcp",
+        "headers": {
+          "Authorization": "Bearer ${env:GITHUB_PAT_TOKEN}"
+        }
+      },
+      "disabled": false,
+      "timeout": 120,
+      "autoApprove": []
+    },
+    "oci_playwright": {
+      "transport": {
+        "type": "streamableHttp",
+        "url": "<api_gateway_endpoint>/playwright/mcp"
+      },
+      "disabled": false,
+      "timeout": 120,
+      "autoApprove": []
+    }
+  }
+}

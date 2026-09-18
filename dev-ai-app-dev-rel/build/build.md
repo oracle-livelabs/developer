@@ -4,7 +4,7 @@
 
 In this lab, you build a complete retail return recommendation engine. You'll connect to the database, explore order and image data, and invoke an LLM (Large Language Model) to generate personalized return allowance decisions and policy explanations. Building on earlier exercises, you’ll use Python to deliver a fully integrated, AI-powered retail returns application.
 
-This lab uses some of the basic coding samples you created in lab 2, such as `cursor.execute` and more.
+This lab uses some of the basic coding samples you created in lab 3, such as `cursor.execute` and more.
 
 Estimated Time: 30 minutes
 
@@ -20,10 +20,10 @@ Estimated Time: 30 minutes
 This lab assumes you have:
 
 * An Oracle Cloud account
-* Completed lab 1: Connect to the Development Environment
+* Completed lab 2: Connect to the Development Environment
 
 ## Task 1: Build the application in Jupyter Notebook
->💡**Note**: Review Lab 1: Connect to the development environment for instructions on accessing JupyterLab.
+>💡**Note**: Review Lab 2: Connect to the development environment for instructions on accessing JupyterLab.
 
 1. You should see a terminal pop up once you are logged into LiveLabs. (You can always create a new one by clicking on the blue + and select terminal)
 
@@ -104,7 +104,7 @@ You will query customer data from the `customer_returns_dv` JSON duality view, w
 
 - **Define a function**: Create a reusable function `fetch_customer_data` to query the database by customer ID, extracting the JSON data for a specific customer.
 
-- **Use an example**: Fetch data for customer `1000` (Alice Smith) to demonstrate the process.
+- **Use an example**: Fetch data for customer `1001` (Alice Smith) to demonstrate the process.
 
 - **Display the results**: Format the retrieved data into a pandas DataFrame for a clear, tabular presentation, showing key details like name, LifeTime Spend, Return Amount, and Loyalty Tier.
 
@@ -182,7 +182,7 @@ You will query customer data from the `customer_returns_dv` JSON duality view, w
 
     ![Fetch customer](./images/fetch-customer.png " ")
 
-If you saw or ran the demo lab "Run the Demo" earlier, this is what gets printed out when the Return officer clicks on the customer 1000. You just built it.
+    If you saw or ran the demo lab #1 "Run the Demo" earlier, this is what gets printed out when the Return officer clicks on the customer 1000. You just built it.
 
 ## Task 4: Create a function to generate recommendations for the customer
 
