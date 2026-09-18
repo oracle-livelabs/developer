@@ -20,9 +20,9 @@ This lab assumes you have:
 * A personal computer or access to a workshop-provided workstation
 * Reviewed the prerequisites of the Introduction lab
 
-<if type="freesql">
-
 ## Task 1: Create a FreeSQL account
+
+[](include:freesql-create-freesql-account-with-vscode.md)
 
 1. Navigate to FreeSQL.com and sign in or create a new account <freesql-button>
 
@@ -60,10 +60,6 @@ This lab assumes you have:
    ![sqlcl-connection-details-for-later-use](./images/lab-2/sqlcl-connection-details-for-later-use.png " ")
 
 6. You will use this FreeSQL user for the remainder of this LiveLab. Next, you'll create a database connection in SQL Developer for VS Code Extension. 
-
-</if>
-
-<if type="freetier">
 
 ## Task 1: Download the Instance Wallet
 
