@@ -25,17 +25,17 @@ Estimated Lab Time: 20 minutes
 
 1. You should still be logged in as the ADMIN user, if not, sign back in as the ADMIN and select the Administration tab from the LaunchPad. Then select the Database Users menu option. 
 
-  ![Logged in as the Admin user](./images/1-launchpad-as-admin.png " ")
+    ![Logged in as the Admin user](./images/1-launchpad-as-admin.png " ")
 
-  ![Navigate to Database Users](./images/2-navigate-to-administration-db-users.png " ")
+    ![Navigate to Database Users](./images/2-navigate-to-administration-db-users.png " ")
 
 2. From the User Management dashboard, select the **Create User** button. 
 
-  ![Create new user button](./images/3-create-new-user.png " ")
+    ![Create new user button](./images/3-create-new-user.png " ")
 
 3. A Create User dialogue will appear. Choose a username and password that conforms to Oracle Autonomous AI database [password requirements](https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/manage-users-create.html#GUID-72DFAF2A-C4C3-4FAC-A75B-846CC6EDBA3F).
 
-  ![Above the fold, create user info](./images/4-create-new-user-dialogue.png " ")
+    ![Above the fold, create user info](./images/4-create-new-user-dialogue.png " ")
 
 4. Use the Radio button to enable **REST, GraphQL, MongoDB API, and Web access**. Leave **REST Alias** unchanged. 
 
@@ -51,15 +51,15 @@ Once complete, click the **Create User** button.
 
 1. From the User Management dashboard, you'll see a new card that includes the unique URL for the user. Click the Open in New Tab icon to open the URL in a new tab. 
 
-  ![Linking out to ords101 users launchpad](./images/7-link-for-new-db-user.png " ")
+    ![Linking out to ords101 users launchpad](./images/7-link-for-new-db-user.png " ")
 
 2. Sign-in with the user's credentials. 
 
-  ![Linking out to ords101 users launchpad](./images/8-login-as-new-dev-user.png " ")
+    ![Linking out to ords101 users launchpad](./images/8-login-as-new-dev-user.png " ")
 
 3. From the Database Actions LaunchPad, click the Development tab, followed by the SQL menu option. 
 
-  ![Selecting sql from the launchpad](./images/9-launchpad-for-new-ords-user.png " ")
+    ![Selecting sql from the launchpad](./images/9-launchpad-for-new-ords-user.png " ")
 
     > **NOTE:** You will use this developer user for the remainder of the labs in this workshop.
 
@@ -254,29 +254,29 @@ Once complete, click the **Create User** button.
 
     ![Clicking execute script button](./images/11-build-out-schema.png " ")
 
-  2. Click the Refresh button in the Navigator tab to refresh the Table objects. You'll see three new tables:  
+    2. Click the Refresh button in the Navigator tab to refresh the Table objects. You'll see three new tables:  
 
       - `DEPARTMENT`
       - `EMPLOYEE`
       - `PROJECT`
     
-  3. Right-click on the `PROJECT` table. Select the **Open** option. A details slider will appear. 
+    3. Right-click on the `PROJECT` table. Select the **Open** option. A details slider will appear. 
 
       ![Right click on open option in the context menu](./images/13-right-click-project-object-open.png " ")
 
-  4. Click the **Data** tab to review the `PROJECT` table data. Later on, you'll insert additional data using the ORDS `BATCHLOAD` REST API.
+    4. Click the **Data** tab to review the `PROJECT` table data. Later on, you'll insert additional data using the ORDS `BATCHLOAD` REST API.
 
     ![Click data tab to review table data](./images/14-data-menu-review-rows.png " ")
 
-  5. Click the **Close** button, right-click on the `PROJECT` table and select **Edit**.
+    5. Click the **Close** button, right-click on the `PROJECT` table and select **Edit**.
 
     ![Click the edit option on the table context menu](./images/15-edit-option-review-object-characteristics.png " ")
 
-  6. Click the `DDL` tab, to review the fully formatted, and syntactically correct DDL for this table. When finished, click the **Close** button.
+    6. Click the `DDL` tab, to review the fully formatted, and syntactically correct DDL for this table. When finished, click the **Close** button.
 
     ![Click the edit option on the table context menu](./images/16-reviewing-object-ddl.png " ")
 
-  7. Next you'll use ORDS to AutoREST-enable the `PROJECT` table. 
+    7. Next you'll use ORDS to AutoREST-enable the `PROJECT` table. 
 
   ## Task 4: AutoREST-enable a table
 
@@ -377,13 +377,13 @@ Once complete, click the **Create User** button.
 
 4. In your text editor replace `<CONTENT_TYPE>` with `text/csv` and `--data-binary @<FILE_NAME>` with your own file path. Optionally you may include other cURL options like those in the example. 
 
-   ![Edited batchload curl command](./images/25-batchload-curl-command-with-edits.png " ")
+    ![Edited batchload curl command](./images/25-batchload-curl-command-with-edits.png " ")
 
-   > **NOTE:** Your `BATCHLOAD` URI will differ as well. File paths for macOS/Linux and Windows differ; double check your complete cURL command.
+    > **NOTE:** Your `BATCHLOAD` URI will differ as well. File paths for macOS/Linux and Windows differ; double check your complete cURL command.
 
 5. Execute the `BATCH LOAD` request. After a few moments the results of the operation will appear in your terminal.
 
-   ![Unedited batchload curl command](./images/26-completed-batchload-command.png " ")
+    ![Unedited batchload curl command](./images/26-completed-batchload-command.png " ")
 
 6. You've just inserted an additional 5,000,000 records into the Project table using this ORDS `BATCH LOAD` API. Execute a `Select count(*) from PROJECT;` query to review the new total entries in the `PROJECT` table. 
 
@@ -393,7 +393,7 @@ Once complete, click the **Create User** button.
     </copy>
     ```
 
-   ![Select count from PROJECT table](./images//27-count-from-project-table.png " ")
+    ![Select count from PROJECT table](./images//27-count-from-project-table.png " ")
 
 7. In the next lab you'll see how easy it is to take your existing PL/SQL and create your own custom ORDS APIs.
 

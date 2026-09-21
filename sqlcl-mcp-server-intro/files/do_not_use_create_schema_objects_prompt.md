@@ -1,5 +1,14 @@
 # Creating schemas and granting privileges to the SQL_FREESQL_01 user
 
+### Objectives
+
+In this lab, you will:
+* TODO: Add objectives
+
+
+Estimated Time: TODO - x minutes
+
+
 ## Download and extract files
 1. The latest version of the Oracle database 23ai sample schemas and installation scripts are located here: https://github.com/oracle-samples/db-sample-schemas/archive/refs/tags/v23.3.zip
 
@@ -122,3 +131,8 @@ USERNAME =
 
 
 
+
+## Acknowledgements
+
+* **Author** - TODO: Your Name, Your Title, Your Organization
+* **Last Updated By/Date** - TODO: Your Name, Month Year

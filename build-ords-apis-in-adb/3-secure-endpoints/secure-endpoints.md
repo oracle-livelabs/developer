@@ -42,9 +42,9 @@ Estimated Lab Time: 10 minutes
 
 2. Click the **+ Create Privilege** button, and enter in values for this privilege. 
 
-   ![Create privilege button](./images/5-create-privilege-button.png " ")
+    ![Create privilege button](./images/5-create-privilege-button.png " ")
 
-   To better follow along, choose values similar to the examples: 
+    To better follow along, choose values similar to the examples: 
 
     **Privilege Definition**
     - **Label:** `my.test.priv`

@@ -120,14 +120,14 @@ Estimated Lab Time: 25 minutes
 
     ![Click create template](./images/19-click-create-template.png " ")
 
-   Enter in the values provided and click **Create**: 
+    Enter in the values provided and click **Create**: 
 
     - **URI Template:** `:dept_id/:is_active?`
     - **Comments:** `An example template that will accept the query parameters dept_id and is_active. Relies on ORDS Automatic Binding to take the path parameters and use them in the provided handler code. The is_active bind paramater is an optional query parameter.`
   
       ![Enter-template-details](./images/20-enter-template-details.png " ")
 
-> **NOTE:** This Template illustrates two important ORDS features: Route Patterns (i.e., `/:dept_id/:is_active?`) and optional bind parameters (e.g. `:is_active?`). This pattern allows developers to pass parameters directly in the URI. Additionally, because an optional modifier (`?`) is used, this endpoint can either return all results matching a particular :dept_id, and/or those matching `true` or `false` for the `:is_active` parameter. [Learn More](https://docs.oracle.com/en/database/oracle/oracle-rest-data-services/26.2/orddg/extending-ords-functionality-plugins.html#GUID-2F072246-B593-48A0-B47E-8605F7A1F725)
+    > **NOTE:** This Template illustrates two important ORDS features: Route Patterns (i.e., `/:dept_id/:is_active?`) and optional bind parameters (e.g. `:is_active?`). This pattern allows developers to pass parameters directly in the URI. Additionally, because an optional modifier (`?`) is used, this endpoint can either return all results matching a particular :dept_id, and/or those matching `true` or `false` for the `:is_active` parameter. [Learn More](https://docs.oracle.com/en/database/oracle/oracle-rest-data-services/26.2/orddg/extending-ords-functionality-plugins.html#GUID-2F072246-B593-48A0-B47E-8605F7A1F725)
 
 4. Next, click the **Create Handler** button. When the Slider appears, select `GET`, `Collection Query`. 
 
@@ -143,7 +143,7 @@ Estimated Lab Time: 25 minutes
     </copy>
     ```
 
-> **NOTE:** Notice how the the values for the Route Pattern are included in the Handler's source code. ORDS will automatically *bind* these to the parameters in the Handler code.
+    > **NOTE:** Notice how the the values for the Route Pattern are included in the Handler's source code. ORDS will automatically *bind* these to the parameters in the Handler code.
 
 6. You have just created your first ORDS API, a `GET` handler. Click the Open in new Tab button, you'll be prompted to enter in values for the Route Parameters. ORDS will bind these values of the URI to those in the Handler's SQL source code, satisfying the conditions of the `WHERE` clause. 
 
@@ -175,7 +175,7 @@ Estimated Lab Time: 25 minutes
 
     ![curl command in terminal](./images/30-curl-command-in-terminal.png " ")
 
-> **NOTE:** You can optionally pipe in the `jq` processer to pretty print your `JSON` response.
+    > **NOTE:** You can optionally pipe in the `jq` processer to pretty print your `JSON` response.
 
 12. You should see the response payload in your terminal. Because the optional `:is_active` parameter was removed, all relevant projects are returned. 
 
@@ -238,7 +238,7 @@ Estimated Lab Time: 25 minutes
     END;
     </copy>
     ```
-![Values for the post handler](./images/36-creating-handler-for-post.png " ")
+    ![Values for the post handler](./images/36-creating-handler-for-post.png " ")
 
 4. For this example, you'll create an output Bind Parameter. Press the Parameters tab, then the **+ Create Parameter** button.
 
@@ -270,7 +270,7 @@ Estimated Lab Time: 25 minutes
 
     ![Locating the new parameters](./images/41-locating-the-parameters.png " ")
 
-> **NOTE:** The values have already been included in the sample Anonymous Block snippet, but simply clicking the Handler Parameter name will place the parameter value at the current location of your cursor.
+    > **NOTE:** The values have already been included in the sample Anonymous Block snippet, but simply clicking the Handler Parameter name will place the parameter value at the current location of your cursor.
 
 8. Now, you can test this new POST API. From the Handler's kebab menu, select **Get cURL command**, then the **+ plus** button of the curl Command modal. A Substitutions modal will appear. Enter in values for `EMP_NAME`, `DEPT_CODE`, `COMMENTS`, and check Null for the `response_status` and `response_message`. Be sure to review and select valid values for the `DEPT_CODE`. Once finished, click **OK**.
 
