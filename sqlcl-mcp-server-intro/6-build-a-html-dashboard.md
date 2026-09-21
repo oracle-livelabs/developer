@@ -40,14 +40,9 @@ This lab assumes you have:
 
 1. A sample prompt has been provided for you. It can be used as-is in **Plan** mode with your Agent. Or, can use the prompt as a reference while you create your own dashboard. 
 
-      <button>
-      <a href="./files/create_an_html_dashboard_prompt.md" target="_blank">Open prompt in new tab</a>
-      </button> 
-      <button>
-      <a href="./files/create_an_html_dashboard_prompt.md" target="_self" download="create_an_html_dashboard_prompt.md">Download prompt as .md file</a>
-      </button>
+[Download prompt](./files/create_a_react_app_prompt.md?download=1)
 
-    > &#9872; **Note:** This Lab is designed to be open-ended, accordingly, your individual results will vary. Feel free to "go off-script" &#9786; !
+> **Note:** This Lab is designed to be open-ended, accordingly, your individual results will vary. Feel free to "go off-script"!
 
 2. Whether you use the prompt as-is or use it as a reference; you decide. Make sure to begin your workflow in **Plan** mode in order to have better control and oversight over the entire process. 
 

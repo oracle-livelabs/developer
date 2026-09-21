@@ -33,14 +33,9 @@ This lab assumes you have:
 
 1. A sample prompt has been provided for you (see below). This prompt can be used as-is with your Agent while in "Plan" mode. Alternatively you may use it as a reference, while creating your own scenario. 
 
-<button>
-      <a href="./files/create_data_and_views_prompt.md" target="_blank">Open prompt in new tab</a>
-      </button> 
-      <button>
-      <a href="./files/create_data_and_views_prompt.md" target="_self" download="create_data_and_views_prompt.md">Download prompt as .md file</a>
-      </button>
+[Download prompt](./files/create_data_and_views_prompt.md?download=1)
 
-    > &#9872; **Note:** This Lab is designed to be open-ended, accordingly, your individual results will vary. Feel free to "go off-script" &#9786;!
+ > **Note:** This Lab is designed to be open-ended, accordingly, your individual results will vary. Feel free to "go off-script"!
 
 2. Review the provided prompt in your IDE or browser. You will notice a single heading and several sub-headings. Each sub-heading will serve as a phase or step for this scenario: 
 

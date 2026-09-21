@@ -40,14 +40,9 @@ This lab assumes you have:
 
 1. A sample prompt has been provided for you. You may review it here, open the `.md` file in a new tab, or download the file locally.
 
-      <button>
-      <a href="./files/create_a_react_app_prompt.md" target="_blank">Open prompt in new tab</a>
-      </button> 
-      <button>
-      <a href="./files/create_a_react_app_prompt.md" target="_self" download="create_a_react_app_prompt.md">Download prompt as .md file</a>
-      </button>
+[Download prompt](./files/create_a_react_app_prompt.md?download=1)
 
-    > &#9872; **Note:** This Lab is designed to be open-ended, accordingly, your individual results will vary. Feel free to improvise &#9786; !
+> **Note:** This Lab is designed to be open-ended, accordingly, your individual results will vary. Feel free to improvise!
 
 2. After reviewing the prompt, you may wish to save it locally. But, before you begin, review the various sections of the prompt: 
 
