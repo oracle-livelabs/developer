@@ -1,5 +1,14 @@
 # Single Web Page Application example
 
+### Objectives
+
+In this lab, you will:
+* TODO: Add objectives
+
+
+Estimated Time: TODO - x minutes
+
+
 ## Overview
 
 1. You will create a sample single page React application using available information in the chosen connection. If I do not explicitly tell you which connection to use, prompt me with the available connections and have me choose one before proceeding.
@@ -200,3 +209,8 @@
 
 1. Launch the web application and review it for accuracy and expected outcome
 2. If the data and visualization are not visible on screen, please debug as needed. 
+
+## Acknowledgements
+
+* **Author** - TODO: Your Name, Your Title, Your Organization
+* **Last Updated By/Date** - TODO: Your Name, Month Year

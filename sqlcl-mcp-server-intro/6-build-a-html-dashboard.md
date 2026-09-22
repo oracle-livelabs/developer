@@ -40,22 +40,17 @@ This lab assumes you have:
 
 1. A sample prompt has been provided for you. It can be used as-is in **Plan** mode with your Agent. Or, can use the prompt as a reference while you create your own dashboard. 
 
-      <button>
-      <a href="./files/create_an_html_dashboard_prompt.md" target="_blank">Open prompt in new tab</a>
-      </button> 
-      <button>
-      <a href="./files/create_an_html_dashboard_prompt.md" target="_self" download="create_an_html_dashboard_prompt.md">Download prompt as .md file</a>
-      </button>
+[Download prompt](./files/create_a_react_app_prompt.md?download=1)
 
-> &#9872; **Note:** This Lab is designed to be open-ended, accordingly, your individual results will vary. Feel free to "go off-script" &#9786; !
+> **Note:** This Lab is designed to be open-ended, accordingly, your individual results will vary. Feel free to "go off-script"!
 
 2. Whether you use the prompt as-is or use it as a reference; you decide. Make sure to begin your workflow in **Plan** mode in order to have better control and oversight over the entire process. 
 
-   ![plan-mode-example](./images/lab-5/plan-mode-example.png " ")
+    ![plan-mode-example](./images/lab-5/plan-mode-example.png " ")
 
 3. Click the `+` icon to add files and images to the task. Select the file name you chose for the prompt. 
 
-   ![adding-prompt-file-to-cline-task](./images/lab-5/adding-prompt-file-to-cline-task.png " ")
+    ![adding-prompt-file-to-cline-task](./images/lab-5/adding-prompt-file-to-cline-task.png " ")
 
 4. If you decide to use the prompt in its entirety, include some prepatory instructions in additon to the prompt file; something like this:
 
@@ -63,11 +58,11 @@ This lab assumes you have:
     <copy>Review the steps in the included markdown file. Detail the steps you intend to take to achieve the desired outcome. And await for my approval before proceeding.</copy>
     ```
    
-   ![including-prepatory-command-context-to-cline-task](./images/lab-5/including-prepatory-command-context-to-cline-task.png " ")
+    ![including-prepatory-command-context-to-cline-task](./images/lab-5/including-prepatory-command-context-to-cline-task.png " ")
 
 3. Let the Agent summarize its intent. 
 
-   ![1-entering-a-prompt-in-one-go](./images/lab-6/1-entering-a-prompt-in-one-go.png " ")
+    ![1-entering-a-prompt-in-one-go](./images/lab-6/1-entering-a-prompt-in-one-go.png " ")
 
 4. In other labs, you might approve actions in stages. But if you decide to share with the Agent the *entire* prompt, the Agent will review the tasks all at once and execute its plan with minimal intervention. You can of course add suggestions or changes to the proposed plan. And when you are satisfied, allow the Agent to continue.
 
@@ -87,7 +82,7 @@ This lab assumes you have:
 
 3. Even now, LLMs find merge conflict markers difficult to troubleshoot. So, if manual intervention is required, assist the Agent with removing any of these markers (e.g. `>>>>>>> REPLACE`). 
 
-   ![11-troubleshooting-replace-markers](./images/lab-6/11-troubleshooting-replace-markers.png " ")
+    ![11-troubleshooting-replace-markers](./images/lab-6/11-troubleshooting-replace-markers.png " ")
 
 4. If you are able, review your project files before proceeding. Does everything look correct? 
 
@@ -97,7 +92,7 @@ This lab assumes you have:
  
 2. You may have chosen different charts or visualizations. You may have chosen a different schema too. But if you've monitored the Agent, and ensured that its using the correct SQLcl MCP server tools, your end result probably looks very close to what you see here: 
 
-   ![14-hr-dashboard-even-further-below-fold](./images/lab-6/14-hr-dashboard-even-further-below-fold.png " ")
+    ![14-hr-dashboard-even-further-below-fold](./images/lab-6/14-hr-dashboard-even-further-below-fold.png " ")
 
 3. Congratulations, you've finished! Feel free to use the provided prompts as reference; you are encouraged to improve and refine them as needed. And if you like, try the labs again with varied prompting. 
 

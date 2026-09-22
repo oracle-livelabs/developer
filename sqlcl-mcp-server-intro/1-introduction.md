@@ -108,3 +108,8 @@ You may now [proceed to the next lab](#next).
 - Last updated: Chris Hoina, February 2026
 
 <!-- WMS ID 11914 -->
+
+## Acknowledgements
+
+* **Author** - TODO: Your Name, Your Title, Your Organization
+* **Last Updated By/Date** - TODO: Your Name, Month Year
