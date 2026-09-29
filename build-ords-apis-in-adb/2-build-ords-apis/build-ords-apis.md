@@ -282,7 +282,7 @@ Estimated Lab Time: 25 minutes
 
     ![Adding substitution details](./images/43-entering-substitution-details.png " ")
 
-9. Copy the curl command into a clipboard, and remove the `response_status` and `response_message` key:value pairs, and the no-longer-required comma. Then, paste the updated command in a Terminal window and execute the curl command.
+10. Copy the curl command into a clipboard, and remove the `response_status` and `response_message` key:value pairs, and the no-longer-required comma. Then, paste the updated command in a Terminal window and execute the curl command.
    
     ![Copying the post request](./images/44-clicking-copy-for-post.png " ")
 
@@ -290,11 +290,11 @@ Estimated Lab Time: 25 minutes
 
     ![Empty key value pairs removed](./images/44-2-key-value-pairs-removed.png " ")
 
-10. You should see the success response message in your terminal. 
+11. You should see the success response message in your terminal. 
 
     ![Reviewing the response in terminal](./images/45-response-in-terminal.png " ")
 
-11. You can also perform a simple query to review that latest INSERT using the following code snippet: 
+12. You can also perform a simple query to review that latest INSERT using the following code snippet: 
 
     ```sql
     <copy>Select * from Employee where emp_name='The name you used in the POST request';</copy>
@@ -302,7 +302,7 @@ Estimated Lab Time: 25 minutes
 
     ![Querying the latest insert in sql worksheet](./images/46-querying-latest-post-in-sql-worksheet.png " ")
 
-12. And that's it, you've just successfully created your first two custom ORDS APIs. But you've probably noticed, no security? Continue to the next lab to learn more about securing your ORDS APIs.
+13. And that's it, you've just successfully created your first two custom ORDS APIs. But you've probably noticed, no security? Continue to the next lab to learn more about securing your ORDS APIs.
 
 You may now [proceed to the next lab](#next).
 
