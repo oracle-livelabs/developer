@@ -292,11 +292,11 @@ Once complete, click the **Create User** button.
 
     ![Click the edit option on the table context menu](./images/16-reviewing-object-ddl.png " ")
 
-7. Next you'll use ORDS to AutoREST-enable the `PROJECT` table. 
+    ![Click the edit option on the table context menu](./images/16-reviewing-object-ddl.png " ")
 
-## Task 4: AutoREST-enable a table
+    7. Next you'll use ORDS to AutoREST-enable the `PROJECT` table. 
 
-1. Right-click on the `PROJECT` table, select **REST**, then **Enable**.
+  ## Task 4: AutoREST-enable a table
 
     ![Click the REST > Enable option](./images/17-rest-enabling-project-table.png " ")
 

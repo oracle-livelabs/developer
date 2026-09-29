@@ -21,7 +21,8 @@
             "title": "Lab 1: Create a user, AutoREST-enable a table, test with cURL",
             "type": "tenancy",
             "description": "Modern App Dev with Oracle REST Data Services",
-            "filename": "../../1-create-user-and-database-objects/create-user-and-database-objects.md"
+            "filename": "../../1-create-user-and-database-objects/create-user-and-database-objects.md",
+            "include": {"shortname": "../../4-workshop-scripts/combined_setup.md"}
         },
         {
             "title": "Lab 2: Build ORDS APIs",

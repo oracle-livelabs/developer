@@ -101,7 +101,10 @@ Estimated Lab Time: 10 minutes
 
 5. Click the **Create** button when complete. 
 
-## Task 4: Testing the OAuth2.0 client
+    Alternatively, you can simply assign the Privilege directly. And since that Privilege enumerates the Role, this is valid as well. 
+    
+      **Privileges**
+      - **Roles:** `my.test.role` (or your unique role, if it differs)
 
 1. After clicking **Create**, a Client Secret modal will appear. Copy the Secret Client value to your clipboard or a text editor. 
 
