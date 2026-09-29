@@ -45,7 +45,7 @@ Estimated Lab Time: 25 minutes
 
 6. The definiton for the PL/SQL procedure will be visible in the SQL Worksheet. This produre expects the following parameters: `p_emp_name`, `p_dept_code` (associated with a `dept_id`), and `comments`. It then inserts these values into the `Employee` table.
 
-    ![Reviewing the PLSQL Procedure in the worksheet](./images/5-plsql-definition-in-sql-worksheet.png " ")
+    ![Reviewing the PLSQL Procedure in the worksheet](./images/5-plsql-procedure-definition-in-sql-worksheet.png " ")
 
 7. Next, you'll insert a new row into the `Employee` table, using this procedure. Take note of one of the available, valid Department Codes: `EN003, FN002, HR001, IT007, LG006, LG009, MK005, OP010, SA004, SP008`.
 
@@ -81,7 +81,7 @@ Estimated Lab Time: 25 minutes
 
     ![Click hamburger then rest](./images/11-click-hamburger-then-rest.png " ")
 
-2. You are now in the **REST** Workshop. Here is where you build and test your ORDS APIs. Click the **AUTOREST** card.
+2. Welcome to the **REST** Workshop. Click the **AUTOREST** card.
 
     ![Click the autorest card](./images/12-click-the-autorest-card.png " ")
 
@@ -89,7 +89,7 @@ Estimated Lab Time: 25 minutes
 
     ![Export OpenAPI on the project table](./images/13-autorest-table-project-export-open-api.png " ")
 
-4. You'll see a downloadable version of your API in the OpenAPI specification. This makes it easy for you to review, and share definitions. 
+4. You'll see a downloadable version of your API in the OpenAPI specification. This makes it easy for you to review, and share your API definitions. 
 
     ![The downloadable OpenAPI Export](./images/14-open-api-export-download.png " ")
 
@@ -97,7 +97,7 @@ Estimated Lab Time: 25 minutes
 
     ![The OpenAPI view on Project table](./images/15-openapi-view-on-project.png " ")
 
-6. You will see an in-browser testing dashboard based on the OpenAPI specification. Here you can test your APIs without having to log into, or open a separate application. When satisfied, click the **Modules** tab at the top of the REST Workshop page. 
+6. You'll see an in-browser testing dashboard based on the OpenAPI specification. Here you can test your APIs without having to log into, or open a separate application. When satisfied, click the **Modules** tab at the top of the REST Workshop page. 
 
     ![OpenAPI view dashboard](./images/16-open-api-view-dashboard.png " ")
 
@@ -205,8 +205,8 @@ Estimated Lab Time: 25 minutes
     <copy>
         DECLARE
         L_SQLCODE PLS_INTEGER;
-    BEGIN
-        DEMO_USER.PR_ADD_AND_ASSIGN_EMPLOYEE(
+    BEGIN -- Optionally use a fully-qualified name like [SCHEMA].PR_ADD_AND_ASSIGN_EMPLOYEE();
+        PR_ADD_AND_ASSIGN_EMPLOYEE(
             P_EMP_NAME  => :EMP_NAME,
             P_DEPT_CODE => :DEPT_CODE,
             P_COMMENTS  => :COMMENTS
@@ -272,11 +272,13 @@ Estimated Lab Time: 25 minutes
 
     > **NOTE:** The values have already been included in the sample Anonymous Block snippet, but simply clicking the Handler Parameter name will place the parameter value at the current location of your cursor.
 
-8. Now, you can test this new POST API. From the Handler's kebab menu, select **Get cURL command**, then the **+ plus** button of the curl Command modal. A Substitutions modal will appear. Enter in values for `EMP_NAME`, `DEPT_CODE`, `COMMENTS`, and check Null for the `response_status` and `response_message`. Be sure to review and select valid values for the `DEPT_CODE`. Once finished, click **OK**.
+8. Now, you can test this new POST API. From the Handler's kebab menu, select **Get cURL command**, then the **+ plus** button of the curl Command modal. 
 
     ![Retrieving the curl command](./images/42-getting-the-post-curl.png " ")
 
     ![clicking the plus button](./images/27-press-plus-button-get.png " ")
+
+9. A Substitutions modal will appear. Enter in values for `EMP_NAME`, `DEPT_CODE`, `COMMENTS`, and check Null for the `response_status` and `response_message`. Be sure to review and select valid values for the `DEPT_CODE` (Valid values: `EN003`, `FN002`, `HR001`, `IT007`, `LG006`, `LG009`, `MK005`, `OP010`, `SA004`, `SP008`). Once finished, click **OK**.
 
     ![Adding substitution details](./images/43-entering-substitution-details.png " ")
 
@@ -309,7 +311,7 @@ You may now [proceed to the next lab](#next).
 ### Author
 
 - Jeff "el jefe" Smith, Distinguished Product Manager
-- Chris Hoina, Senior Product Manager
+- Chris Hoina, Lead Principal Product Manager
 
 ### Last Updated By/Date
 

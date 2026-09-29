@@ -4,14 +4,14 @@
 
 In this lab you will create a new database developer user to use for the remainder of this workshop. You'll used this REST-enabled user to log into Database Actions as well as have the ability to REST-enable their own database objects. 
 
-You'll build out your schema with database objects, and AutoREST-enable a table in your Autonomous Database. Finally, you'll test the endpoint using the cURL command line tool 
+You'll build out your schema with database objects, and AutoREST-enable a table in your Autonomous AI Database. Finally, you'll test the endpoint using the cURL command line tool 
 
 Estimated Lab Time: 20 minutes
 
 ### Objectives
 
-- Create a new REST-enabled DB Developer user
-- Create for the new user tables and various database objects 
+- Create a new REST-enabled Developer user
+- Create tables and other database objects for this REST user
 - REST-enable a table for this new user
 
 ### Prerequisites
@@ -23,7 +23,23 @@ Estimated Lab Time: 20 minutes
 
 ## Task 1: Create a new REST-enabled database user
 
-1. You should still be logged in as the ADMIN user, if not, sign back in as the ADMIN and select the Administration tab from the LaunchPad. Then select the Database Users menu option. 
+<if type="desktop">
+
+1. Click **View Login Info**.
+
+    ![Clicking the View Login Info link](./images/click-view-login-info.png " ")
+
+2. The Reservation Information slider will appear. Locate the DB ADMIN Password; copy it. 
+
+    ![Locating the Reservation Information Tab](./images/reservation-information-tab.png " " )
+
+3. Open the SQL Worksheet link in a new tab. Login to Database Actions as the ADMIN user.
+
+    ![entering-in-admin-info-in-landing-page](./images/entering-in-admin-info-in-landing-page.png " ")
+
+</if>
+
+1. Complete or cancel the UI Tour. Select the Administration tab from the LaunchPad. Then select the Database Users menu option. 
 
     ![Logged in as the Admin user](./images/1-launchpad-as-admin.png " ")
 
@@ -254,138 +270,176 @@ Once complete, click the **Create User** button.
 
     ![Clicking execute script button](./images/11-build-out-schema.png " ")
 
-    2. Click the Refresh button in the Navigator tab to refresh the Table objects. You'll see three new tables:  
+2. Click the Refresh button in the Navigator tab to refresh the Table objects. You'll see three new tables:  
 
-      - `DEPARTMENT`
-      - `EMPLOYEE`
-      - `PROJECT`
-    
-    3. Right-click on the `PROJECT` table. Select the **Open** option. A details slider will appear. 
+    - `DEPARTMENT`
+    - `EMPLOYEE`
+    - `PROJECT`
 
-      ![Right click on open option in the context menu](./images/13-right-click-project-object-open.png " ")
+3. Right-click on the `PROJECT` table. Select the **Open** option. A details slider will appear. 
 
-    4. Click the **Data** tab to review the `PROJECT` table data. Later on, you'll insert additional data using the ORDS `BATCHLOAD` REST API.
+    ![Right click on open option in the context menu](./images/13-right-click-project-object-open.png " ")
+
+4. Click the **Data** tab to review the `PROJECT` table data. Later on, you'll insert additional data using the ORDS `BATCHLOAD` REST API.
 
     ![Click data tab to review table data](./images/14-data-menu-review-rows.png " ")
 
-    5. Click the **Close** button, right-click on the `PROJECT` table and select **Edit**.
+5. Click the **Close** button, right-click on the `PROJECT` table and select **Edit**.
 
     ![Click the edit option on the table context menu](./images/15-edit-option-review-object-characteristics.png " ")
 
-    6. Click the `DDL` tab, to review the fully formatted, and syntactically correct DDL for this table. When finished, click the **Close** button.
+6. Click the `DDL` tab, to review the fully formatted, and syntactically correct DDL for this table. When finished, click the **Close** button.
 
     ![Click the edit option on the table context menu](./images/16-reviewing-object-ddl.png " ")
 
-    7. Next you'll use ORDS to AutoREST-enable the `PROJECT` table. 
+7. Next you'll use ORDS to AutoREST-enable the `PROJECT` table. 
 
-  ## Task 4: AutoREST-enable a table
+## Task 4: AutoREST-enable a table
 
-  1. Right-click on the `PROJECT` table, select **REST**, then **Enable**.
+1. Right-click on the `PROJECT` table, select **REST**, then **Enable**.
 
     ![Click the REST > Enable option](./images/17-rest-enabling-project-table.png " ")
 
-  2. A new REST Enable Object slider will appear. ORDS automatically generates an API endpoint for you, along with the Roles and Privileges associated with this new resource. You can select a new **Object Alias**; but for this lab keep the default Alias. You can also toggle the **Show Code** radio button to reveal the PL/SQL procedure that ORDS will execute to REST-enable this table. Once satisfied, click **Enable**. 
+2. A new REST Enable Object slider will appear. ORDS automatically generates an API endpoint for you, along with the Roles and Privileges associated with this new resource. You can select a new **Object Alias**; but for this lab keep the default Alias. You can also toggle the **Show Code** radio button to reveal the PL/SQL procedure that ORDS will execute to REST-enable this table. Once satisfied, click **Enable**. 
 
     ![The REST Enable Object slider](./images/18-rest-enable-table-dialogue.png " ")
 
-  3. You'll notice a new plug icon on the table, this indicates that the database object is now REST-enabled (i.e., it is associated with an URI for HTTP/S requests). Right-click on the `PROJECT` table, scroll to **REST**, and select the new **cURL command** menu item.
+3. You'll notice a new plug icon on the table, this indicates that the database object is now REST-enabled (i.e., it is associated with an URI for HTTP/S requests). Right-click on the `PROJECT` table, scroll to **REST**, and select the new **cURL command** menu item.
 
     ![Selecting cURL command on the context menu](./images/19-curl-command-option.png " ")
 
-  4. ORDS API endpoints are automatically created for you: `GET ALL`, `GET Single`, `POST`, `BATCH LOAD`, `PUT`, and `DELETE`. The definitions, and procedures for these methods/operations are all securely stored and executed on the Oracle database; nothing is saved in your application layer. Highlight or copy the URI for the `GET ALL` endpoint and open it in a new browser tab or window.
+4. ORDS API endpoints are automatically created for you: 
+    - `GET ALL`
+    - `GET Single`
+    - `POST`
+    - `BATCH LOAD`
+    - `PUT`
+    - `DELETE`
+
+    The definitions, and procedures for these methods/operations are all securely stored and executed on the Oracle database; nothing is saved in your application layer. 
+  
+5. Highlight or copy the URI for the `GET ALL` endpoint and open it in a new browser tab or window.
 
     ![Opening GET ALL in a new browser tab](./images/20-go-to-address-in-new-tab.png " ")
 
-  5. Notice the JSON payload of the `GET ALL` endpoint. The results on screen are analagous to executing something like this:
+6. Notice the JSON payload of the `GET ALL` endpoint. The results on screen are analagous to executing something like this:
 
-      ```sql 
-      SELECT * FROM PROJECT ORDER BY PROJ_ID OFFSET 0 ROWS FETCH NEXT 25 ROWS ONLY;
-      ```
+    ```sql 
+    SELECT * FROM PROJECT ORDER BY PROJ_ID OFFSET 0 ROWS FETCH NEXT 25 ROWS ONLY;
+    ```
 
     ![Using inspect in the browser's developer tools](./images/21-inspect-browser-network-tab.png " ")
 
-  6. Open your brower's Developer/Inspect tools, navigate to the Network tab, and adjust the page's response to view the Object Tree. In addition to `FETCHING` the first 25 rows, an ORDS AutoREST-enabled endpoint also includes links for each of the results (for an indiviual row), the total `count` (`10`) of the results of the payload (`items:Array`), the `limit` used (`25` is the ORDS default), the `offset` (`0`), and two more special properties: `hasMore` and `links:Array`. 
+7. Open your brower's Developer/Inspect tools, navigate to the Network tab, and adjust the page's response to view the Object Tree. In addition to `FETCHING` the first 25 rows, an ORDS AutoREST-enabled endpoint also includes links for each of the results (for an indiviual row), the total `count` (`10`) of the results of the payload (`items:Array`), the `limit` used (`25` is the ORDS default), the `offset` (`0`), and two more special properties: `hasMore` and `links:Array`. 
 
-      - `hasMore: Boolean` - informs a client if more results exist past the initial 25; allowing you to programmatically scale the results using this condition plus `limit` and `offset` for finer grain control and easier pagination.
-      - `links:Array` - provides self-describing and self-referring links
-          - `first` points to the first set of results (1-25)
-          - larger results sets would include `next` and `previous` links too
+    - `hasMore: Boolean` - informs a client if more results exist past the initial 25; allowing you to programmatically scale the results using this condition plus `limit` and `offset` for finer grain control and easier pagination.
+    - `links:Array` - provides self-describing and self-referring links
+        - `first` points to the first set of results (1-25)
+        - larger results sets would include `next` and `previous` links too
 
     ![Reviewing the Response Object Tree](./images/22-object-tree-view.png " ")
 
-  7. Return to the SQL Worksheet. The **cURL for the table PROJECT** slider should still be visible, if not review the instructions in Step 3 above. Click the `BATCH LOAD` tab, choose the appropriate shell environment, and copy the `BATCH LOAD` cURL command to your clipboard. 
+8. Return to the SQL Worksheet. The **cURL for the table PROJECT** slider should still be visible, if not review the instructions in Step 3 above. Click the `BATCH LOAD` tab, choose the appropriate shell environment, and copy the `BATCH LOAD` cURL command to your clipboard. 
 
     ![Copying the BATCHLOAD URI](./images/23-prepare-for-batchload.png " ")
 
-  8. You'll use this `BATCH LOAD` endpoint to perform a bulk insert on the `PROJECT` table via an HTTP request. 
+9. You'll use this `BATCHLOAD` endpoint to perform a bulk insert on the `PROJECT` table via an HTTP request. 
 
-  ## Task 5: Using the ORDS BATCH LOAD endpoint
+## Task 5: Using the ORDS BATCHLOAD endpoint
 
-  1. This `BATCH LOAD` example uses cURL to simulate a client application executing/recieving HTTP requests/responses. In a text editor, paste the example `BATCHLOAD` cURL command you copied from the previous lab. 
+1. This `BATCHLOAD` example uses cURL to simulate a client application executing/recieving HTTP requests/responses. In a text editor, paste the example `BATCHLOAD` cURL command you copied from the previous lab. 
 
     ![Copying the BATCHLOAD URI](./images/23-prepare-for-batchload.png " ")
 
     ![Unedited batchload curl command](./images/24-unedited-batchload-curl-command.png " ")
 
-  2. Retrieve the sample payload via [this link](https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/developer-library/batchload_directory.zip) that you'll use for testing this `BATCH LOAD` endpoint. Unzip the .zip file if this did not occur automatically.
+2. Retrieve the sample payload via [this link](https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/developer-library/batchload_directory.zip) that you'll use for testing this `BATCHLOAD` endpoint. Unzip the .zip file if this did not occur automatically.
 
-  3. Once downloaded, copy the filepath details to use in the `--data-binary` option of the cURL command. In this example, the .csv file is located at: `/Users/me/Downloads/project_batchload.csv`.
+3. Once downloaded, copy the filepath details to use in the `--data-binary` option of the cURL command. In this example, the .csv file is located at: `/Users/me/Downloads/project_batchload.csv`.
 
-      ```shell
-      <copy>
-      curl -v -i -X POST 
-      -H "Content-Type: text/csv"
-      "https://my-ocid-db-name.adb.my-region-1.oraclecloudapps.com/ords/ords101/project/batchload"
-      --data-binary "@\Users\me\Downloads\project_batchload.csv"
-      </copy>
-      ```
+    ```shell
+    <copy>
+    curl -v -i -X POST 
+    -H "Content-Type: text/csv"
+    "https://my-ocid-db-name.adb.my-region-1.oraclecloudapps.com/ords/[your schema]/project/batchload"
+    --data-binary "@\Users\me\Downloads\project_batchload.csv"
+    </copy>
+    ```
 
   <details>
   <summary><strong>Learn about the available <code>BATCHLOAD</code> parameters</strong></summary>
     <p></p>
 
-  You may optionally pass reserved `BATCHLOAD` URL query parameters. in your `POST` request. Available parameters include: 
+    You may optionally pass reserved `BATCHLOAD` URL query parameters. in your `POST` request. Available parameters include: 
 
-  | Parameter | Description | URL example | Details / unencoded value |
-  |---|---|---|---|
-  | `batchesPerCommit` | Commit frequency after batches are sent to the database. Default: every 10 batches. `0` defers commit until the end of the load. Integer. | `?batchesPerCommit=10` | `10` is the literal integer value. |
-  | `batchRows` | Number of rows in each batch sent to the database. Default: 50. Integer. | `?batchRows=1000` | `1000` is the literal integer value. |
-  | `dateFormat` | Format mask used to convert input values for `DATE` columns. | `?dateFormat=YYYY-MM-DD` | Unencoded value: `YYYY-MM-DD`. |
-  | `delimiter` | Field delimiter for the input file. Default: comma (`,`). | `?delimiter=%2C`<br>`?delimiter=%7C` | `%2C` = `,` (comma); `%7C` = `|` (pipe). |
-  | `enclosures` | Character(s) enclosing each field. Default: double quote (`"`). One character is used for both sides; two characters specify left then right enclosures. | `?enclosures=%22`<br>`?enclosures=%27%22` | `%22` = `"`; both left and right enclosures are double quotes.<br>`%27%22` = `'"`; left is `'`, right is `"`. |
-  | `embeddedRightDouble` | Controls handling of two consecutive right-enclosure characters inside an enclosed field. `true` treats them as one literal enclosure; `false` treats them as an error. | `?embeddedRightDouble=true` | `true` is the literal Boolean value. |
-  | `encoding` | Character encoding of the input file. Default: `UTF8`. | `?encoding=UTF-8` | Unencoded value: `UTF-8`. |
-  | `errors` | Maximum row errors allowed before terminating the load, subject to the service-level `db.batchload.errorsMax` limit. `0` allows no errors; `UNLIMITED` / `-1` allows errors up to the service limit. | `?errors=0`<br>`?errors=UNLIMITED` | `0` is the literal integer value; `UNLIMITED` is the literal keyword. |
-  | `lineEnd` | Input record terminator. Omit it when the file uses standard `\\r`, `\\r\\n`, or `\\n` endings. | `?lineEnd=%0A`<br>`?lineEnd=%0D%0A` | `%0A` = line feed (`LF`, `\\n`).<br>`%0D%0A` = carriage return + line feed (`CRLF`, `\\r\\n`). |
-  | `lineMax` | Maximum line length used to recognize rows in the stream. Default: unlimited. | `?lineMax=4096`<br>`?lineMax=UNLIMITED` | `4096` is a literal integer; `UNLIMITED` is the literal keyword. |
-  | `locale` | Locale used for locale-sensitive loader parsing and formatting. | `?locale=en-US` | Unencoded value: `en-US`. |
-  | `responseEncoding` | Encoding of the loader response stream. | `?responseEncoding=UTF-8` | Unencoded value: `UTF-8`. |
-  | `responseFormat` | Format of loader messages and bad-data output. Valid values: `RAW`, `SQL`. Default: `RAW`. | `?responseFormat=RAW` | `RAW` is the literal keyword. |
-  | `timestampFormat` | Format mask used to convert input values for `TIMESTAMP` columns. | `?timestampFormat=YYYY-MM-DD%22T%22HH24%3AMI%3ASS` | Unencoded value: `YYYY-MM-DD"T"HH24:MI:SS`. `%22` = `"`, `%3A` = `:`. |
-  | `timestampTZFormat` | Format mask used to convert input values for `TIMESTAMP WITH TIME ZONE` columns. | `?timestampTZFormat=YYYY-MM-DD%22T%22HH24%3AMI%3ASSTZH%3ATZM` | Unencoded value: `YYYY-MM-DD"T"HH24:MI:SSTZH:TZM`. `%22` = `"`, `%3A` = `:`. |
-  | `truncate` | Whether to delete existing table rows before loading. `false` (default) retains them; `true` uses `DELETE`; `truncate` uses `TRUNCATE TABLE`. | `?truncate=true`<br>`?truncate=truncate` | `true` is the literal Boolean value; `truncate` is the literal keyword. |eibccddubtfcttnlbdvefekfejdcnkhdniktnddfgilr
+    | Parameter | Description | URL example | Details / unencoded value |
+    |---|---|---|---|
+    | `batchesPerCommit` | Commit frequency after batches are sent to the database. Default: every 10 batches. `0` defers commit until the end of the load. Integer. | `?batchesPerCommit=10` | `10` is the literal integer value. |
+    | `batchRows` | Number of rows in each batch sent to the database. Default: 50. Integer. | `?batchRows=1000` | `1000` is the literal integer value. |
+    | `dateFormat` | Format mask used to convert input values for `DATE` columns. | `?dateFormat=YYYY-MM-DD` | Unencoded value: `YYYY-MM-DD`. |
+    | `delimiter` | Field delimiter for the input file. Default: comma (`,`). | `?delimiter=%2C`<br>`?delimiter=%7C` | `%2C` = `,` (comma); `%7C` = `|` (pipe). |
+    | `enclosures` | Character(s) enclosing each field. Default: double quote (`"`). One character is used for both sides; two characters specify left then right enclosures. | `?enclosures=%22`<br>`?enclosures=%27%22` | `%22` = `"`; both left and right enclosures are double quotes.<br>`%27%22` = `'"`; left is `'`, right is `"`. |
+    | `embeddedRightDouble` | Controls handling of two consecutive right-enclosure characters inside an enclosed field. `true` treats them as one literal enclosure; `false` treats them as an error. | `?embeddedRightDouble=true` | `true` is the literal Boolean value. |
+    | `encoding` | Character encoding of the input file. Default: `UTF8`. | `?encoding=UTF-8` | Unencoded value: `UTF-8`. |
+    | `errors` | Maximum row errors allowed before terminating the load, subject to the service-level `db.batchload.errorsMax` limit. `0` allows no errors; `UNLIMITED` / `-1` allows errors up to the service limit. | `?errors=0`<br>`?errors=UNLIMITED` | `0` is the literal integer value; `UNLIMITED` is the literal keyword. |
+    | `lineEnd` | Input record terminator. Omit it when the file uses standard `\\r`, `\\r\\n`, or `\\n` endings. | `?lineEnd=%0A`<br>`?lineEnd=%0D%0A` | `%0A` = line feed (`LF`, `\\n`).<br>`%0D%0A` = carriage return + line feed (`CRLF`, `\\r\\n`). |
+    | `lineMax` | Maximum line length used to recognize rows in the stream. Default: unlimited. | `?lineMax=4096`<br>`?lineMax=UNLIMITED` | `4096` is a literal integer; `UNLIMITED` is the literal keyword. |
+    | `locale` | Locale used for locale-sensitive loader parsing and formatting. | `?locale=en-US` | Unencoded value: `en-US`. |
+    | `responseEncoding` | Encoding of the loader response stream. | `?responseEncoding=UTF-8` | Unencoded value: `UTF-8`. |
+    | `responseFormat` | Format of loader messages and bad-data output. Valid values: `RAW`, `SQL`. Default: `RAW`. | `?responseFormat=RAW` | `RAW` is the literal keyword. |
+    | `timestampFormat` | Format mask used to convert input values for `TIMESTAMP` columns. | `?timestampFormat=YYYY-MM-DD%22T%22HH24%3AMI%3ASS` | Unencoded value: `YYYY-MM-DD"T"HH24:MI:SS`. `%22` = `"`, `%3A` = `:`. |
+    | `timestampTZFormat` | Format mask used to convert input values for `TIMESTAMP WITH TIME ZONE` columns. | `?timestampTZFormat=YYYY-MM-DD%22T%22HH24%3AMI%3ASSTZH%3ATZM` | Unencoded value: `YYYY-MM-DD"T"HH24:MI:SSTZH:TZM`. `%22` = `"`, `%3A` = `:`. |
+    | `truncate` | Whether to delete existing table rows before loading. `false` (default) retains them; `true` uses `DELETE`; `truncate` uses `TRUNCATE TABLE`. | `?truncate=true`<br>`?truncate=truncate` | `true` is the literal Boolean value; `truncate` is the literal keyword. |eibccddubtfcttnlbdvefekfejdcnkhdniktnddfgilr
 
-  **A combined example**
+    **A combined example**
 
-  ```text
-  /ords/hr/employees/batchload?truncate=true&batchRows=1000&batchesPerCommit=10&errors=0&dateFormat=YYYY-MM-DD&encoding=UTF-8&delimiter=%2C&lineEnd=%0A&enclosures=%22&embeddedRightDouble=true
-  ```
+    ```sh
+    /ords/[schema]/employees/batchload?truncate=true&batchRows=1000&batchesPerCommit=10&errors=0&dateFormat=YYYY-MM-DD&encoding=UTF-8&delimiter=%2C&lineEnd=%0A&enclosures=%22&embeddedRightDouble=true
+    ```
 
-> **Reminder:** Percent-encode URL-reserved characters; double quote &rarr; `%22`, comma &rarr; `%2C`, pipe &rarr; `%7C`, line feed &rarr; `%0A`, carriage return/line feed (CRLF) &rarr; `%0D%0A`, etc. 
-  </details>
-  <p></p>
+    > **Reminder:** Percent-encode URL-reserved characters; double quote &rarr; `%22`, comma &rarr; `%2C`, pipe &rarr; `%7C`, line feed &rarr; `%0A`, carriage return/line feed (CRLF) &rarr; `%0D%0A`, etc. 
+      </details>
+      <p></p>
 
-4. In your text editor replace `<CONTENT_TYPE>` with `text/csv` and `--data-binary @<FILE_NAME>` with your own file path. Optionally you may include other cURL options like those in the example. 
+4. In your text editor replace `<CONTENT_TYPE>` with `text/csv` and `--data-binary @<FILE_NAME>` with your own file path. Optionally you may include other cURL options like those in the examples above. 
 
     ![Edited batchload curl command](./images/25-batchload-curl-command-with-edits.png " ")
 
     > **NOTE:** Your `BATCHLOAD` URI will differ as well. File paths for macOS/Linux and Windows differ; double check your complete cURL command.
 
-5. Execute the `BATCH LOAD` request. After a few moments the results of the operation will appear in your terminal.
+  <details>
+  <summary><strong>Optional Progress Meter with cURL</strong></summary>
+
+    Optionally, you can output a progress meter for the `BATCHLOAD` operation. Assuming you have created a `/tmp` directory using a cURL command like this: 
+
+      ```sh
+      <copy>
+      mkdir tmp && cd tmp
+      </copy>
+      ```
+
+      ```sh
+      <copy>
+      curl --location -o ./output.txt -# --request POST \
+      --header "Content-Type: text/csv" \
+      --data-binary @[your filepath to]/project_batchload.csv \
+      'https://[your ADB-S].oraclecloudapps.com/ords/[your schema]/project/batchload' \
+      && cat ./output.txt && rm ./output.txt
+      </copy> 
+      ```
+
+    ![Optional progress bar, mid loading.](./images/optional-progress-bar-mid-load.png " ")
+
+    ![Optional progress bar, completed.](./images/optional-progress-bar-complete.png " ")
+
+  </details>
+      <p></p>
+
+5. Execute the `BATCHLOAD` request. After a few moments the results of the operation will appear in your terminal.
 
     ![Unedited batchload curl command](./images/26-completed-batchload-command.png " ")
 
-6. You've just inserted an additional 5,000,000 records into the Project table using this ORDS `BATCH LOAD` API. Execute a `Select count(*) from PROJECT;` query to review the new total entries in the `PROJECT` table. 
+6. You've just inserted an additional 5,000,000 records into the Project table using this ORDS `BATCHLOAD` API. Execute a `Select count(*) from PROJECT;` query to review the new total entries in the `PROJECT` table. 
 
     ```sql
     <copy>
@@ -404,7 +458,7 @@ You may now [proceed to the next lab](#next).
 ### Author
 
 - Jeff "el jefe" Smith, Distinguished Product Manager
-- Chris Hoina, Senior Product Manager
+- Chris Hoina, Lead Principal Product Manager
 
 ### Last Updated By/Date
 
