@@ -91,25 +91,20 @@ Estimated Lab Time: 10 minutes
 
      ![Description Field](./images/11-create-oauth-client-definition.png " ")
 
-4. Previously you created a Privilege, which includes (enumerates) a Role. Here, you can optionally assign the OAuth Client either the `my.test.role` role, the `my.test.priv` privilege, or both (although in this case, a bit redundant).
+4. **Roles** Select the previously created role: `my.test.role` (or your unique role, if it differs).
 
-      Selecting *only* the Role is acceptable, since the Privilege you created includes this Role. Since your `records.module` is protected by the same Privilege, this is a valid approach. 
+    ![choose-roles-tB](./images/12-create-oauth-client-roles.png " ")
 
-      **Roles**
-      - **Roles:** `my.test.role` (or your unique role, if it differs)
+5. **Privileges** Next, choose the privilege: `my.test.priv` (or your unique privilege, if it differs).
 
-         ![choose-roles-tB](./images/12-create-oauth-client-roles.png " ")
+    ![choose-ouath-privs](./images/13-create-oauth-client-privs.png " ")
+
+5. Click the **Create** button when complete. 
 
     Alternatively, you can simply assign the Privilege directly. And since that Privilege enumerates the Role, this is valid as well. 
     
       **Privileges**
       - **Roles:** `my.test.role` (or your unique role, if it differs)
-
-         ![choose-ouath-privs](./images/13-create-oauth-client-privs.png " ")
-
-5. Choose an approach, and click the **Create** button when complete. 
-
-## Task 4: Testing the OAuth2.0 client
 
 1. After clicking **Create**, a Client Secret modal will appear. Copy the Secret Client value to your clipboard or a text editor. 
 
@@ -142,7 +137,7 @@ Estimated Lab Time: 10 minutes
 
     > ![Obtaining-the-bearer-token-part-one](./images/17-obtaining-the-bearer-token-part-one.png " ")
 
-4. Execute your cURL command; you will recieve a valid Access Token. In this example, you can use the `GET` endpoint that you created in **Lab 2, Task 3: Building an ORDS GET API** as your target endpoint.
+4. Execute your cURL command; you will receive a valid Access Token. In this example, you can use the `GET` endpoint that you created in **Lab 2, Task 3: Building an ORDS GET API** as your target endpoint.
 
     ![Obtaining-the-bearer-token-part-two](./images/18-obtaining-the-bearer-token-part-two.png " ")
 
@@ -171,7 +166,7 @@ You may now [proceed to the next lab](#next).
 ### Author
 
 - Jeff Smith, Distinguished Product Manager
-- Chris Hoina, Senior Product Manager
+- Chris Hoina, Lead Principal Product Manager
 
 ### Last Updated By/Date
 
