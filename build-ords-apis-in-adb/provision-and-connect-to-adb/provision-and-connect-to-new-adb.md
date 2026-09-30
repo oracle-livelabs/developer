@@ -75,8 +75,8 @@ You may now [proceed to the next lab](#next).
 ### Authors
 
 - Jeff Smith, Distinguished Product Manager
-- Chris Hoina, Senior Product Manager
+- Chris Hoina, Lead Principal Product Manager
 
 ## Last Updated By/Date
 
-- Chris Hoina, September 2025
+- Chris Hoina, September 2026
