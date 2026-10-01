@@ -23,7 +23,7 @@ Estimated Lab Time: 20 minutes
 
 ## Task 1: Create a new REST-enabled database user
 
-<if type="desktop">
+<if type="sandbox">
 
 1. Click **View Login Info**.
 

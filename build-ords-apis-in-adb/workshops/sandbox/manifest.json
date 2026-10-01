@@ -1,0 +1,32 @@
+{
+  "workshoptitle": "ORDS: Build Powerful, Secure RESTful ORDS APIs for your Oracle Autonomous Database",
+    "help": "livelabs-help-db_us@oracle.com",
+	"tutorials": [
+        {
+            "title": "Introduction",
+            "description": "ORDS: Build Powerful, Secure RESTful ORDS APIs for your Oracle Autonomous Database Introduction",
+            "filename": "../../intro/intro.md"
+        },
+        {
+            "title": "Lab 1: Create a user, AutoREST-enable a table, test with cURL",
+            "type": "sandbox",
+            "description": "Modern App Dev with Oracle REST Data Services",
+            "filename": "../../1-create-user-and-database-objects/create-user-and-database-objects.md"
+        },
+        {
+            "title": "Lab 2: Build ORDS APIs",
+            "description": "Modern App Dev with Oracle REST Data Services",
+            "filename": "../../2-build-ords-apis/build-ords-apis.md"
+        },
+        {
+            "title": "Lab 3: Secure REST-enabled endpoints",
+            "description": "Modern App Dev with Oracle REST Data Services",
+            "filename": "../../3-secure-endpoints/secure-endpoints.md"
+        },
+        {
+            "title": "Need Help?",
+            "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+            "filename":"https://livelabs.oracle.com/cdn/common/labs/need-help/need-help-livelabs.md"
+        }
+    ]
+}
