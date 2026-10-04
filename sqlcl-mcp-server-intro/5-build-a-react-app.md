@@ -40,14 +40,9 @@ This lab assumes you have:
 
 1. A sample prompt has been provided for you. You may review it here, open the `.md` file in a new tab, or download the file locally.
 
-      <button>
-      <a href="./files/create_a_react_app_prompt.md" target="_blank">Open prompt in new tab</a>
-      </button> 
-      <button>
-      <a href="./files/create_a_react_app_prompt.md" target="_self" download="create_a_react_app_prompt.md">Download prompt as .md file</a>
-      </button>
+[Download prompt](./files/create_a_react_app_prompt.md?download=1)
 
-> &#9872; **Note:** This Lab is designed to be open-ended, accordingly, your individual results will vary. Feel free to improvise &#9786; !
+> **Note:** This Lab is designed to be open-ended, accordingly, your individual results will vary. Feel free to improvise!
 
 2. After reviewing the prompt, you may wish to save it locally. But, before you begin, review the various sections of the prompt: 
 
@@ -64,15 +59,15 @@ This lab assumes you have:
 
 1. The prompt that you have been provided is the result of iterative testing. The prompt is provided to teach you how to guide your LLM to best utilize the SQLcl MCP Server. Following along with the prompt should result in a repeatable and predictable outcome. 
 
-> &#9872; **Note:** You should expect to complete this lab with a version of the application that is unique to you; but that still closesly resembles any examples and images in this Lab.
+    > &#9872; **Note:** You should expect to complete this lab with a version of the application that is unique to you; but that still closesly resembles any examples and images in this Lab.
 
 2. When ready, navigate to your Cline extension. Toggle the Agent to **Plan** mode. 
 
-   ![plan-mode-example](./images/lab-5/plan-mode-example.png " ")
+    ![plan-mode-example](./images/lab-5/plan-mode-example.png " ")
 
 3. Click the `+` icon to add files and images to the task. Select the file name you chose for the prompt. 
 
-   ![adding-prompt-file-to-cline-task](./images/lab-5/adding-prompt-file-to-cline-task.png " ")
+    ![adding-prompt-file-to-cline-task](./images/lab-5/adding-prompt-file-to-cline-task.png " ")
 
 4. If you decide to use the prompt in its entirety, include some prepatory instructions in additon to the prompt file; something like this:
 
@@ -80,7 +75,7 @@ This lab assumes you have:
     <copy>Review the steps in the included markdown file. Detail the steps you intend to take to achieve the desired outcome. And await for my approval before proceeding.</copy>
     ```
    
-   ![including-prepatory-command-context-to-cline-task](./images/lab-5/including-prepatory-command-context-to-cline-task.png " ")
+    ![including-prepatory-command-context-to-cline-task](./images/lab-5/including-prepatory-command-context-to-cline-task.png " ")
    
 5. Carefully follow along with the Agent's actions, providing feedback and coaching as needed. 
 
@@ -96,9 +91,9 @@ This lab assumes you have:
 
 1. Compare the sample application to your own:
 
-   ![8-reviewing-the-sample-ui-with-hard-coded-values-above-fold](./images/lab-5/8-reviewing-the-sample-ui-with-hard-coded-values-above-fold.png " ")
+    ![8-reviewing-the-sample-ui-with-hard-coded-values-above-fold](./images/lab-5/8-reviewing-the-sample-ui-with-hard-coded-values-above-fold.png " ")
 
-   ![9-reviewing-the-sample-ui-with-hard-coded-values-below-fold](./images/lab-5/9-reviewing-the-sample-ui-with-hard-coded-values-below-fold.png " ")
+    ![9-reviewing-the-sample-ui-with-hard-coded-values-below-fold](./images/lab-5/9-reviewing-the-sample-ui-with-hard-coded-values-below-fold.png " ")
 
 2. By now you should have a sample React application. While your values are hard-coded, you might ask the Agent to build the app out further.
 
@@ -108,11 +103,11 @@ This lab assumes you have:
 
 2. Merge conflict markers (e.g. `>>>>>>> REPLACE`)? LLMs can sometimes have issues with advanced file creation, preparation, and updating. One common issue is their inability to remove merge conflict markers, you may need to manually remove and save a file every now and again. 
 
-   ![12-troubleshooting-merge-conflict-marker-errors](./images/lab-5/12-troubleshooting-merge-conflict-marker-errors.png " ")
+    ![12-troubleshooting-merge-conflict-marker-errors](./images/lab-5/12-troubleshooting-merge-conflict-marker-errors.png " ")
 
 3. The Agent may forget, or narrow its focus too much. The Agent may require periodic prompting. For instance, in this example, we reiterated the request to connect as a specific user: 
 
-   ![13-possible-intervention-of-prompting-to-connect-as-user.](./images/lab-5/13-possible-intervention-of-prompting-to-connect-as-user.png " ")
+    ![13-possible-intervention-of-prompting-to-connect-as-user.](./images/lab-5/13-possible-intervention-of-prompting-to-connect-as-user.png " ")
 
 4. An Agent might *convincingly* tell you a task has been accomlished, when in fact it has not. In cases such as these, you may need to provide the Agent with quality feedback markers, or actual errors from your application's console log. 
 

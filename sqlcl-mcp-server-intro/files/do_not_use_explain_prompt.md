@@ -1,5 +1,14 @@
 # Optimize my PL/SQL
 
+### Objectives
+
+In this lab, you will:
+* TODO: Add objectives
+
+
+Estimated Time: TODO - x minutes
+
+
 1. Connect as the SQL_FREESQL_01 user
 2. Create three tables for me; please recommend the names, attributes, constraints, and indexes to me.
 3. Once I approve, populate these tables with 100 rows each of sample data
@@ -30,3 +39,8 @@
 1. Use the pre-optimzation and post-optimization results of the PLSQL procedure to create an html-based visualization of the performance difference among the two
 2. The html visualization should have a detailed list of the changes that were made to improve the performance
 
+
+## Acknowledgements
+
+* **Author** - TODO: Your Name, Your Title, Your Organization
+* **Last Updated By/Date** - TODO: Your Name, Month Year

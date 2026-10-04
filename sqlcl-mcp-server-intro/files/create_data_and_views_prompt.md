@@ -1,5 +1,14 @@
 # Creating mock Schema data, and relevant views
 
+### Objectives
+
+In this lab, you will:
+* TODO: Add objectives
+
+
+Estimated Time: TODO - x minutes
+
+
 ## Connecting and creating database objects
 
 1. Connect as the user. If no user is provided, please prompt me with the available connections, and ask me to choose one of the connections before proceeding to the next step.
@@ -96,3 +105,8 @@ The tables to be created:
 ## Disconnect
 
 1. Once we are complete, you will disconnect from the Oracle database.
+
+## Acknowledgements
+
+* **Author** - TODO: Your Name, Your Title, Your Organization
+* **Last Updated By/Date** - TODO: Your Name, Month Year

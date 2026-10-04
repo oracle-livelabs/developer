@@ -14,7 +14,10 @@
           "title": "Lab 1: Environment set-up",
           "description": "Installing and configuring necessary dependencies and pre-requisites.",
           "filename":"../../2-environment-set-up.md",
-          "type": "freesql"
+          "type": "freesql",
+          "include": {
+              "freesql-create-freesql-account-with-vscode.md":"/common/building-blocks/tasks/freesql/create-freesql-account-continue-to-vscode.md"
+          }
         },
          {
             "title": "Lab 2: Explore SQLcl MCP server",
