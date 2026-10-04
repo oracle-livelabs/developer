@@ -29,7 +29,7 @@ This lab assumes you have:
 
 1. You again have been provided with a sample prompt. In other scenarios the prompts were relatively straightforward. And depending on the LLM used, the results in the other Lab scenarios probably matched the expected output. 
 
-   Your results are largely due to the fact that your LLMs have quite a bit of training on the various topics we've covered. However, there may not be a lot of publically-accessible training data related to new or novel technologies and features: in this case asking our Agent to use the SQLcl MCP server to help design a SQL Notebook file (`.sqlnb`)!
+    Your results are largely due to the fact that your LLMs have quite a bit of training on the various topics we've covered. However, there may not be a lot of publically-accessible training data related to new or novel technologies and features: in this case asking our Agent to use the SQLcl MCP server to help design a SQL Notebook file (`.sqlnb`)!
 
 2. Let's begin by reviewing prompt.
 
@@ -245,11 +245,11 @@ This lab assumes you have:
 
 1. If you've made it this far, then head back to over to your SQL Developer for VS Code connections, and click on your connection to restablish a database connection.
 
-   ![7-navigate-to-sql-connections](./images/lab-7/7-navigate-to-sql-connections.png " ")
+    ![7-navigate-to-sql-connections](./images/lab-7/7-navigate-to-sql-connections.png " ")
 
 2. Locate your saved SQL Notebook, click it. SQL Developer will recognize it, and open the notebook.
 
-   ![8-click-on-new-sql-notebook-file](./images/lab-7/8-click-on-new-sql-notebook-file.png " ")
+    ![8-click-on-new-sql-notebook-file](./images/lab-7/8-click-on-new-sql-notebook-file.png " ")
 
 3. Congrats, you've just discovered a new use case: Using an AI agent to create a SQL notebook using the available **Tools** in the SQLcl MCP Server.
 

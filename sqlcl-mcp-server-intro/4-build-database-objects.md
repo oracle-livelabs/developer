@@ -33,14 +33,9 @@ This lab assumes you have:
 
 1. A sample prompt has been provided for you (see below). This prompt can be used as-is with your Agent while in "Plan" mode. Alternatively you may use it as a reference, while creating your own scenario. 
 
-<button>
-      <a href="./files/create_data_and_views_prompt.md" target="_blank">Open prompt in new tab</a>
-      </button> 
-      <button>
-      <a href="./files/create_data_and_views_prompt.md" target="_self" download="create_data_and_views_prompt.md">Download prompt as .md file</a>
-      </button>
+[Download prompt](./files/create_data_and_views_prompt.md?download=1)
 
-> &#9872; **Note:** This Lab is designed to be open-ended, accordingly, your individual results will vary. Feel free to "go off-script" &#9786;!
+ > **Note:** This Lab is designed to be open-ended, accordingly, your individual results will vary. Feel free to "go off-script"!
 
 2. Review the provided prompt in your IDE or browser. You will notice a single heading and several sub-headings. Each sub-heading will serve as a phase or step for this scenario: 
 
@@ -56,11 +51,11 @@ This lab assumes you have:
 
 5. Make sure you are in **Plan** mode. As a best practice, remaining in **Plan** mode will allow you to "step through" Cline's execution. Should an AI Agent deviate from your agreed upon plan, you can periodically "nudge" it back on course.
 
-   ![plan-mode-example](./images/lab-4/plan-mode-example.png " ")
+    ![plan-mode-example](./images/lab-4/plan-mode-example.png " ")
 
 6. If you decide to use the prepared `.md` file, click the `+` icon (i.e., Add Files & Images icon) and select the file. 
 
-   ![adding-prompt-file-to-cline-task](./images/lab-4/adding-prompt-file-to-cline-task.png " ")
+    ![adding-prompt-file-to-cline-task](./images/lab-4/adding-prompt-file-to-cline-task.png " ")
 
 7. Before continuing, consider adding in some prepatory text to help guide the Agent. An example:
 
@@ -70,7 +65,7 @@ This lab assumes you have:
     </copy>
     ```
 
-   ![including-prepatory-command-context-to-cline-task](./images/lab-4/including-prepatory-command-context-to-cline-task.png " ")
+    ![including-prepatory-command-context-to-cline-task](./images/lab-4/including-prepatory-command-context-to-cline-task.png " ")
 
 8. Once satisfied, press <kbd>Enter</kbd> or the arrow icon.
 
@@ -86,7 +81,7 @@ This lab assumes you have:
 
 2. You will then probably notice Agent using the `run-sql` tool to create four new tables in your schema: 
 
-   ![4-creating-new-schemas](./images/lab-4/4-creating-new-schemas.png " ")
+    ![4-creating-new-schemas](./images/lab-4/4-creating-new-schemas.png " ")
 
 3. If prompted, select `Approve` to allow the creation of these objects.
 
@@ -94,11 +89,11 @@ This lab assumes you have:
 
 5. At times, your Agent may exhibit unexpected behavior. Take this example, where a user is asked to enable **Act** mode to complete a task. Review requests carefully and respond appropriately.
 
-   ![8-approving-the-insert-of-multiple-values](./images/lab-4/8-approving-the-insert-of-multiple-values.png " ")
+    ![8-approving-the-insert-of-multiple-values](./images/lab-4/8-approving-the-insert-of-multiple-values.png " ")
 
 <br>
 
-> &#9872; **Note:** The LLM model used, network latency, the workstation processor, other ongoing processes might impact your Agent's behavior. You will need to review the request and proceed cautiously. In this example, the request is relatively simple:
+    > &#9872; **Note:** The LLM model used, network latency, the workstation processor, other ongoing processes might impact your Agent's behavior. You will need to review the request and proceed cautiously. In this example, the request is relatively simple:
 
 6. You may even notice odd behavior such as is illustrated when executing these `INSERT` statements (e.g., only a few rows inserted at a time). Review the Agent's summaries and requests, and if you agree, proceed with any proposed actions/plans.
 
@@ -108,7 +103,7 @@ This lab assumes you have:
 
 1. When your new objects have been created and populated, refer again to the included prompt. You'll find there is a task to fetch the first five rows of each of your tables. Your tables might return information similar to those in the images below. 
 
-   ![13-fetch-first-five-moto](./images/lab-4/13-fetch-first-five-moto.png " ")
+    ![13-fetch-first-five-moto](./images/lab-4/13-fetch-first-five-moto.png " ")
 
 2. If your objects are created and populated as expected (everything checks the "reasonableness test"), allow the Agent to continue. 
 
@@ -132,7 +127,7 @@ This lab assumes you have:
 
 4. Your prompt includes a request to propose two additional, unique views. Yours may be the same, they may even differ. A possible example: 
 
-   ![20-vehicle-dist-by-country-view](./images/lab-4/20-vehicle-dist-by-country-view.png " ")
+    ![20-vehicle-dist-by-country-view](./images/lab-4/20-vehicle-dist-by-country-view.png " ")
 
 5. Compare your results. What did you come up with? 
 
@@ -142,7 +137,7 @@ This lab assumes you have:
 
 2. You might see a summary of the actions performed once you disconnect. Compare your results. What did you end up with?
 
-   ![22-summary-of-actions-performed](./images/lab-4/22-summary-of-actions-performed.png " ")
+    ![22-summary-of-actions-performed](./images/lab-4/22-summary-of-actions-performed.png " ")
 
 3. And that's it, you're done!
 

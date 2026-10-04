@@ -4,21 +4,22 @@ In this lab, you will learn about Oracle REST Data Services (ORDS). ORDS makes i
 
 You'll discover how easy ORDS makes it to turn your business logic and Create, Read, Update, and Delete (CRUD) operations into APIs. ORDS stores all definitions and metadata in the Oracle database; so operations are highly secure and responsive. ORDS even has its own OAuth2.0 capabilities as well; you'll learn about ORDS Roles, Privileges, and the supported OAuth2.0 Grant Types. 
 
-In this lab, you'll perform much of your work in the browser-based UI SQL Developer Web. This lab assumes you have access to an Oracle Autonomous Database 23ai, but ORDS ships automatically in OCI, and is avilable for download for your on-prem, hybrid, and containerized deployments too.
+In this lab, you'll perform much of your work in the browser-based UI SQL Developer Web. This lab assumes you have access to an Oracle Autonomous AI Database *Serverless*; where ORDS ships automatically. ORDS is available for download for your on-prem, hybrid, and containerized deployments too.
 
 ## About this Workshop
 
 In this lab, you will:
 
-- Explore ORDS' SQL Developer Web and the REST Workshop
-- Connect to your Autonomous Database 23ai and create new database objects
+- Explore SQL Developer Web and the REST Workshop
+- Connect to your Autonomous AI Database and create new database objects
 - Explore automatic and customizable ORDS REST APIs
 
 Estimated Workshop Time: 90 minutes
 
 ## Objectives
-
+<if type="tenancy">
 - Create an Autonomous Database and Connect to your Autonomous Database 23ai
+</if>
 - Create and Auto-REST enable tables
 - Insert data into the database
 - Publish ORDS APIs for `GET` and `POST` operations
@@ -28,7 +29,7 @@ Estimated Workshop Time: 90 minutes
 
 ### About ORDS
 
-Oracle REST Data Services (ORDS) brings the power of REST to your Oracle Database. ORDS, which is included automatically in the Autonomous Database, is highlighted by the following interfaces and capabilities: 
+Oracle REST Data Services (ORDS) brings the power of REST to your Oracle Database. ORDS, which is included automatically in the Autonomous AI Database, is highlighted by the following interfaces and capabilities: 
 
 - SQL Developer Web - a browser-based UI for the Oracle database
 - PL/SQL Gateway - for directe execution of PL/SQL Stored Procedures
@@ -42,7 +43,7 @@ Oracle REST Data Services (ORDS) brings the power of REST to your Oracle Databas
 
 #### Flexiblity
 
-ORDS ships automatically with the Autonomous Database, but is free to download and deploy. ORDS, a Java EE application, can be deployed to connect to any of your Oracle databases. With a self-managed ORDS deployment you can take advantage of a command-line-based configuration, enhanced security, file caching, JDBC and pool configuration, and enhanced customization for your ORDS RESTful APIs. 
+ORDS ships automatically with the Autonomous AI Database, but is free to download and deploy. ORDS, a Java EE application, can be deployed to connect to any of your Oracle databases. With a self-managed ORDS deployment you can take advantage of a command-line-based configuration, enhanced security, file caching, JDBC and pool configuration, and enhanced customization for your ORDS RESTful APIs. 
 
 Oracle REST Data Services can be deployed in a number of ways: 
 - Oracle WebLogic Server
@@ -67,8 +68,8 @@ You may now [proceed to the next lab](#next).
 ### Authors
 
 - Jeff Smith, Distinguished Product Manager
-- Chris Hoina, Senior Product Manager
+- Chris Hoina, Lead Principal Product Manager
 
 ## Last Updated By/Date
 
-- Chris Hoina, September 2025
+- Chris Hoina, September 2026
