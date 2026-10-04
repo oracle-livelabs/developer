@@ -3,8 +3,8 @@
 ## Introduction
 
 In this lab, you use the GitHub MCP Server through your AI client. GitHub MCP
-requires a GitHub token for authenticated tool calls. Keep that token in your
-client environment.
+requires a GitHub token for authenticated tool calls. Configure that token
+locally using the authentication method for your chosen client in Lab 3.
 
 Estimated Time: 5 minutes
 
@@ -21,19 +21,25 @@ In this lab, you will:
 
 ### Prerequisites
 
-Complete Lab 3. Make sure a least-privilege GitHub token is available in the
-environment used by your AI client.
+Complete Lab 3. Make sure a least-privilege GitHub token is available to your
+AI client.
 
 ## Task 1: Prepare GitHub authentication
 
-1. Use a least-privilege GitHub token for the lab and expose it to your AI
-    client as:
+1. For the Codex, Cline, and VS Code examples, export your least-privilege
+    GitHub token in the shell you will use to launch the client:
 
     ```bash
-    GITHUB_PAT_TOKEN=<your-token>
+    export GITHUB_PAT_TOKEN='<your-token>'
     ```
 
-2. Do not store the token in Terraform, Resource Manager variables,
+    Replace the placeholder locally. Fully quit an already running client,
+    then launch it from this shell so it inherits the variable. Setting the
+    variable in a separate terminal does not update a running client.
+
+2. For Antigravity, use the local Authorization header setup in Lab 3 instead.
+
+3. Do not store the token in Terraform, Resource Manager variables,
     screenshots, or tracked files.
 
 ## Task 2: List GitHub MCP tools
@@ -60,8 +66,9 @@ environment used by your AI client.
     Use oci_github to identify the authenticated GitHub user with get_me.
     ```
 
-2. If you do not want to expose user identity in a shared setting, use a
-    disposable token created only for the workshop.
+2. The result identifies the account that owns the token, including when you
+    use a token created only for this workshop. Keep the output out of shared
+    screenshots or demonstrations if you want that identity to remain private.
 
 3. You may now **proceed to the next lab**
 

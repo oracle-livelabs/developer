@@ -43,7 +43,12 @@ MCP-capable AI client configuration.
     <api_gateway_endpoint>/playwright/mcp
     ```
 
-3. Complete Task 2, Task 3, Task 4, or Task 5 for your chosen client.
+3. For Codex, Cline, or VS Code, follow the
+    [GitHub authentication steps](../github-mcp/github-mcp.md#task-1-prepare-github-authentication)
+    before launching the client. The token must be exported in the environment
+    that starts the client. Antigravity uses the local header setup in Task 5.
+
+4. Complete Task 2, Task 3, Task 4, or Task 5 for your chosen client.
 
 ## Task 2: Option A - Configure Codex
 
@@ -76,7 +81,11 @@ MCP-capable AI client configuration.
 2. For GitHub MCP, set `GITHUB_PAT_TOKEN` in the environment used by your
     client. Do not paste the token value into the config file.
 
-3. Confirm the servers are configured:
+3. Save `config.toml`. Restart Codex so the active session loads the new
+    server entries and URLs. If you relaunch the client, use the shell where
+    you exported `GITHUB_PAT_TOKEN`.
+
+4. Confirm the saved server configuration:
 
     ```bash
     codex mcp list
@@ -84,6 +93,11 @@ MCP-capable AI client configuration.
     codex mcp get oci_github
     codex mcp get oci_playwright
     ```
+
+5. In the restarted Codex session, use `/mcp` to check the active MCP servers.
+    Confirm `oci_terraform`, `oci_github`, and `oci_playwright` are connected
+    before continuing. The CLI `list` and `get` commands above inspect saved
+    configuration; the tool calls in the following labs verify live access.
 
 ## Task 3: Option B - Configure Cline
 

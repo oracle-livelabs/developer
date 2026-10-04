@@ -10,10 +10,12 @@ from __future__ import annotations
 
 import argparse
 import hashlib
+import html
 import re
 import sys
 import zipfile
 from pathlib import Path
+from urllib.parse import parse_qs, urlsplit
 
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
@@ -183,6 +185,40 @@ def validate_package(package_path: Path) -> list[str]:
     return failures
 
 
+def validate_deploy_links(
+    package_path: Path, documents: dict[str, str] | None = None
+) -> list[str]:
+    """Bind both public buttons to the exact reviewed ZIP, including its hash."""
+    filenames = ("readme.md", "deploy/deploy.md")
+    if documents is None:
+        documents = {
+            filename: (PROJECT_ROOT / filename).read_text(encoding="utf-8")
+            for filename in filenames
+        }
+    expected_url = (
+        "https://objectstorage.ca-toronto-1.oraclecloud.com/n/yzrh1ull1ess/"
+        "b/livelabs-mcp-container-instances/o/releases/"
+        + sha256_file(package_path)
+        + "/mcp-servers-on-oci-container-instances-rm.zip"
+    )
+    failures: list[str] = []
+    for filename in filenames:
+        links = re.findall(
+            r'https://cloud\.oracle\.com/resourcemanager/stacks/create\?[^\s"<>)]*',
+            documents.get(filename, ""),
+        )
+        if len(links) != 1:
+            failures.append(f"{filename} must contain exactly one Deploy to Oracle Cloud link")
+            continue
+        url = urlsplit(html.unescape(links[0]))
+        query = parse_qs(url.query, keep_blank_values=True)
+        if url.fragment or query != {"zipUrl": [expected_url]}:
+            failures.append(
+                f"{filename}: zipUrl must target the public OCI object for the current ZIP SHA-256"
+            )
+    return failures
+
+
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
         description="Create and validate the OCI Resource Manager Terraform zip package."
@@ -192,6 +228,11 @@ def parse_args() -> argparse.Namespace:
         required=True,
         type=Path,
         help="Path to the Resource Manager zip package to create or validate.",
+    )
+    parser.add_argument(
+        "--check-deploy-links",
+        action="store_true",
+        help="Require both deploy buttons to reference this package's SHA-256 object URL.",
     )
     parser.add_argument(
         "--create",
@@ -216,6 +257,8 @@ def main() -> int:
             return 1
 
     failures = validate_package(package_path)
+    if not failures and args.check_deploy_links:
+        failures.extend(validate_deploy_links(package_path))
     if failures:
         print("Resource Manager package validation failed:")
         for failure in failures:

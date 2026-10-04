@@ -13,6 +13,12 @@ import re
 import sys
 from pathlib import Path
 
+from oci_hosting_contracts import (
+    validate_hosting_network,
+    validate_image_defaults,
+    validate_publisher_separation,
+)
+
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 TERRAFORM_ROOT = PROJECT_ROOT / "files" / "terraform"
@@ -166,6 +172,7 @@ def validate_provider(texts: dict[str, str], failures: list[str]) -> None:
 
 
 def validate_variables(texts: dict[str, str], failures: list[str]) -> None:
+    validate_image_defaults(texts, failures, "variables.tf")
     text = texts.get("variables.tf", "")
     declared = set(re.findall(r'variable\s+"([^"]+)"', text))
 
@@ -225,6 +232,7 @@ def validate_locals(texts: dict[str, str], failures: list[str]) -> None:
 
 
 def validate_schema(texts: dict[str, str], failures: list[str]) -> None:
+    validate_image_defaults(texts, failures, "schema.yaml")
     text = texts.get("schema.yaml", "")
     require_contains(failures, "schema.yaml", text, "schemaVersion: 1.1.0")
 
@@ -266,6 +274,7 @@ def validate_schema(texts: dict[str, str], failures: list[str]) -> None:
 
 
 def validate_network(texts: dict[str, str], failures: list[str]) -> None:
+    validate_hosting_network(texts, failures)
     text = texts.get("network.tf", "")
     for resource_type in [
         "oci_core_vcn",
@@ -335,7 +344,7 @@ def validate_container_instance(texts: dict[str, str], failures: list[str]) -> N
     require_contains(failures, "container-instance.tf", text, 'data "oci_core_vnic"')
     require_contains(failures, "container-instance.tf", text, "available_container_shape_names")
     require_contains(failures, "container-instance.tf", text, "precondition")
-    require_contains(failures, "container-instance.tf", text, "is_public_ip_assigned = true")
+    require_contains(failures, "container-instance.tf", text, "is_public_ip_assigned = false")
     require_contains(failures, "container-instance.tf", text, "subnet_id             = oci_core_subnet.container_instance.id")
     require_contains(failures, "container-instance.tf", text, "var.container_ocpus <= 64")
     require_contains(failures, "container-instance.tf", text, "var.container_ocpus <= 94")
@@ -347,6 +356,13 @@ def validate_container_instance(texts: dict[str, str], failures: list[str]) -> N
     container_blocks = len(re.findall(r"(?m)^\s+containers\s+{", text))
     if container_blocks < 3:
         failures.append("container-instance.tf must define at least three containers blocks")
+
+    for block in extract_named_blocks(text, "containers"):
+        require_regex(
+            failures, "container-instance.tf", block,
+            r"is_resource_principal_disabled\s*=\s*true\b",
+            "Every container must set is_resource_principal_disabled = true",
+        )
 
     for expected in [
         "terraform-mcp-server",
@@ -447,6 +463,7 @@ def validate_outputs(texts: dict[str, str], failures: list[str]) -> None:
 
 
 def validate_no_secret_samples(texts: dict[str, str], failures: list[str]) -> None:
+    validate_publisher_separation(texts, failures)
     for filename, text in texts.items():
         for pattern in SECRET_PATTERNS:
             if pattern.search(text):

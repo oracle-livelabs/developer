@@ -49,24 +49,34 @@ Complete Lab 1 and start the Resource Manager apply job for this workshop.
 1. Open the job resources and confirm Resource Manager created the expected API
     Gateway, networking, and Container Instance resources.
 
-    ![Resource Manager job resources](../images/10-job-resources.png)
+    The network includes one VCN, two subnets, two route tables, two security
+    lists, and Internet, NAT, and Service Gateways. API Gateway provides the
+    HTTPS entry point. Container outbound traffic uses Service Gateway for
+    regional Oracle services and NAT Gateway for other destinations.
 
 ## Task 4: Inspect the Container Instance
 
-1. Open the Container Instance resource and confirm it is active.
+1. Open the Container Instance resource and confirm it is **Active**. Its VNIC
+    should have a private IP address and no public IP address. The AI client
+    connects through the API Gateway URLs copied in Task 2.
 
-    ![Container Instance details](../images/11-container-instance-details.png)
-
-2. Open the containers list and confirm the three MCP server containers are
-    present:
+2. Open the containers list and confirm all three MCP server containers are
+    **Active**:
 
     * Terraform MCP Server;
     * GitHub MCP Server;
     * Playwright MCP Server.
 
-    ![Container Instance containers](../images/12-container-instance-containers.png)
+3. Inspect each container's image URL. Each must start with
+    `ocir.ca-toronto-1.oci.oraclecloud.com/yzrh1ull1ess/mcp-servers-on-oci-container-instances/`
+    and identify the corresponding server with a `@sha256:` digest. Registry
+    login credentials are not required for these public images.
 
-3. You may now **proceed to the next lab**
+4. If a container cannot pull its image, inspect the Container Instance work
+    request errors and the stack's network resources before continuing. A
+    successful package download alone does not prove the containers started.
+
+5. You may now **proceed to the next lab**
 
 ## Acknowledgements
 

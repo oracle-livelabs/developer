@@ -44,7 +44,7 @@ server.
 1. Ask your AI client:
 
     ```text
-    Use oci_terraform to get the latest version of the hashicorp/oci provider.
+    Use oci_terraform to get the latest version of the oracle/oci provider.
     ```
 
 2. Review the response. The exact version can change over time. A successful
