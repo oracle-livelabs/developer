@@ -17,7 +17,7 @@ resource "oci_container_instances_container_instance" "mcp_servers" {
 
   vnics {
     display_name          = "${local.name_prefix}-vnic"
-    is_public_ip_assigned = true
+    is_public_ip_assigned = false
     subnet_id             = oci_core_subnet.container_instance.id
   }
 
