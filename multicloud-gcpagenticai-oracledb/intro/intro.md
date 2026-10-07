@@ -2,40 +2,38 @@
 
 ## About this Workshop
 
-This workshop will help you build and understand a comprehensive, multi-cloud agentic AI solution using Google Vertex AI (Gemini) and Oracle AI Database.
+Build and test an inventory workflow in Gemini Enterprise using Oracle AI
+Database on Google Cloud. Provision the database and private connectivity,
+configure the managed Oracle AI Database Agent, and deploy the application
+services in GCP. An optional lab also introduces SQLcl MCP through Gemini CLI.
 
-You will develop intelligent AI agents that leverage the power of Google's Gemini models combined with Oracle's AI-powered database capabilities including vector search, RAG (Retrieval-Augmented Generation), Select AI, and agentic memory. This integration demonstrates how to create sophisticated multi-agent systems that can reason, learn, and interact with enterprise data.
+The application has two distinct paths:
 
-In this hands-on workshop, you'll deploy Oracle AI Database on Google Cloud Platform (GCP) and build AI agents using Vertex AI Agent Builder and the Agent Development Kit (ADK). You'll explore how to implement vector embeddings for semantic search, create RAG pipelines for grounded AI responses, and build digital twin agents that can simulate and interact with real-world scenarios.
+- **Read and explore:** an MCP server calls the managed Oracle agent through
+  a server-side Java gateway and A2A relay. Plain questions return tables;
+  explicit graph and map requests open Cytoscape.js and MapLibre MCP Apps.
+- **Review and act:** a separate A2A service returns native A2UI transfer-review
+  controls. A database write requires explicit approval through the governed
+  Oracle Database MCP Java Toolkit operation.
 
-The workshop showcases the seamless integration between Google's cutting-edge AI models (Gemini) and Oracle's AI Database features, enabling you to:
-- Store and query vector embeddings at scale
-- Implement intelligent semantic search using Oracle AI Vector Search
-- Build RAG applications that ground AI responses in your enterprise data
-- Use Select AI to query databases using natural language
-- Implement agentic memory for stateful, context-aware AI interactions
-- Create multi-agent systems using Vertex AI Agent Builder
+The examples query seeded Oracle demo data at request time. Database
+authorization and transaction controls remain outside the model.
 
-The following diagram illustrates this reference architecture.
-
-  
-
-Estimated Workshop Time: 90 minutes
+Estimated Workshop Time: 3-4 hours
 
 ### Objectives
 
 * Deploy Oracle AI Database and compute resources on Google Cloud Platform
-* Configure Gemini models for embeddings and vector search
-* Implement RAG (Retrieval-Augmented Generation) with Oracle AI Database
-* Explore Vertex AI models and agent capabilities
-* Build multi-agent systems using Vertex AI Agent Builder
-* Create a digital twin agent using the Agent Development Kit (ADK)
-* Leverage Oracle AI Database features: Vector Search, Select AI, and Agentic Memory
- 
+* Access Oracle AI Database from Gemini CLI using SQLcl MCP
+* Register and test Oracle AI Database agents in Gemini Enterprise
+* Deploy private A2A connectivity, the Java gateway and read-only MCP server
+* Test graph and spatial MCP Apps and separate A2UI form actions
+* Verify Oracle-side evidence and preserve explicit approval boundaries
+
 ### Prerequisites
 
 - This workshop requires an Oracle Cloud account as well as a Google Cloud Platform account with access to Vertex AI
-- Basic understanding of Python programming
+- Basic familiarity with command-line tools, SQL and application deployment
 - Familiarity with AI/ML concepts is helpful but not required
 
 ### Let's Get Started
@@ -45,11 +43,11 @@ You may now **proceed to the next lab.**
 ## Want to Learn More?
 
 * [Oracle AI Vector Search Documentation](https://docs.oracle.com/en/database/oracle/oracle-database/23/vecse/)
-* [Google Vertex AI Agent Builder](https://cloud.google.com/vertex-ai/docs/agent-builder)
-* [Oracle Select AI](https://docs.oracle.com/en/database/oracle/oracle-database/23/arpls/dbms_cloud_ai.html)
+* [Google Vertex AI Agent Builder](https://docs.cloud.google.com/agent-builder)
+* [Oracle Select AI](https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/dbms-cloud-ai-package.html)
 * [Building AI Agents with Vertex AI](https://codelabs.developers.google.com/devsite/codelabs/building-ai-agents-vertexai)
 
 ## Acknowledgements
 
 * **Author** - Paul Parkinson, Architect and Developer Advocate
-* **Last Updated By/Date** - Paul Parkinson, December 2025
+* **Last Updated By/Date** - Paul Parkinson, October 2026

@@ -1,5 +1,5 @@
 {
-  "workshoptitle": "Develop Agentic AI with Google Vertex AI (Gemini) and Oracle AI Database",
+  "workshoptitle": "Develop Agentic AI with Google (Gemini) and Oracle AI Database",
   "help": "livelabs-help-devdb-us@oracle.com",
   "tutorials": [
     {
@@ -7,37 +7,48 @@
       "filename": "../../intro/intro.md"
     },
     {
-      "title": "Get Started",
+      "title": "Run the complete workshop",
+      "description": "End-to-end prerequisites, lab order, commands, verification, screenshots, and cleanup",
+      "filename": "../../workshop-runbook/workshop-runbook.md"
+    },
+    {
+      "title": "Get Started: Oracle Cloud account",
       "filename": "https://livelabs.oracle.com/cdn/common/labs/cloud-login/event-register-free-tier-account.md"
     },
     {
-      "title": "Get Started",
+      "title": "Get Started: Oracle Database@Google Cloud",
       "description": "Get Started - Oracle Database@Google - Autonomous Database",
       "filename": "../../gcp-started/gcp-started.md"
     },
     {
-      "title": "Lab 1: Provision Google Cloud resources",
-      "description": "Provision Google Cloud resources",
-      "filename": "../../gcp-get-started/gcp-get-started.md"
-    },
-    {
-      "title": "Lab 2: Provision Oracle AI Database",
-      "description": "Provision Oracle AI Database",
+      "title": "Lab 1: Provisioning Autonomous Database",
+      "description": "Create the Autonomous Database used by the workshop",
       "filename": "../../adb-provisioning-databases/adb-provisioning-databases.md"
     },
     {
-      "title": "Lab 3: Develop Oracle AI Database Vertex AI/Gemini RAG Notebook and UI",
-      "description": "Build and test the RAG Application",
-      "filename": "../../adb-ai/adb-ai.md"
+      "title": "Lab 2: GCP networking and VM setup and populate database tables",
+      "description": "Set up private database access and populate the sample tables",
+      "filename": "../../gcp-get-started/gcp-get-started.md"
     },
     {
-      "title": "Lab 4: Develop Vertex AI Agents with ADK and Oracle AI Database Vector RAG and MCP",
-      "filename": "../../vertex-ai-agents-adk/vertex-ai-agents-adk.md"
+      "title": "Lab 3 (Optional): Access Oracle AI Database from Gemini CLI",
+      "description": "Connect Gemini CLI to Oracle AI Database through SQLcl MCP",
+      "filename": "../../gemini-cli/gemini-cli.md"
     },
-
     {
-      "title": "Lab 5 (Optional): Other topics (Access via ORDS/Rest, Select AI/NL2SQL and ADB MCP, Multi-Agent Systems, Memory, ...",
-      "filename": "../../agentic-advanced-topics/agentic-advanced-topics.md"
+      "title": "Lab 4: Setup and Use Oracle AI Database Agent for Gemini Enterprise Apps",
+      "description": "Follow the Oracle Developers guide to set up the database agent in Gemini Enterprise",
+      "filename": "../../gemini-enterprise-agent/gemini-enterprise-agent.md"
+    },
+    {
+      "title": "Lab 5: Develop and deploy A2A, A2UI, MCP Server, and MCPApps (graph, spatial, form actions, ...)",
+      "description": "Prepare the private A2A relay, managed-agent gateway, MCP server and separate A2UI review service in GCP",
+      "filename": "../../a2a-agents/a2a-agents.md"
+    },
+    {
+      "title": "Lab 6: Test A2A, A2UI, MCP Server, and MCPApps (graph, spatial, form actions, ...)",
+      "description": "Test plain risk reads, interactive graph and spatial apps, provenance and explicit transfer review in Gemini Enterprise",
+      "filename": "../../a2ui-mcpapps/a2ui-mcpapps.md"
     },
     {
       "title": "Need Help?",

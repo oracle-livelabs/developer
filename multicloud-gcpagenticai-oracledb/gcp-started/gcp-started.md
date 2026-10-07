@@ -1,4 +1,3 @@
-
 # Get started - Oracle Database@Google Cloud - Autonomous Database
 
 ## Introduction
@@ -51,7 +50,7 @@ As a database user, DBA, or application developer:
 
 In this section, you will perform the steps for Onboarding with Oracle Database@Google Cloud.
 
-1.  Sign in to the Google Cloud console at https://console.cloud.google.com.
+1. Sign in to the Google Cloud console at https://console.cloud.google.com.
 
 2. In the Google Cloud console search field, search for "Marketplace" and navigate to the **Google Cloud Marketplace**.
 
@@ -77,12 +76,13 @@ In this section, you will perform the steps for Onboarding with Oracle Database@
 
     ![Oci Tenancy](./images/oci-tenancy.png "Oci Tenancy")
 
-8. Return to the browser window displaying the Google Cloud console. The console displays a message that says "Please wait for your account linking to become active." The account creation and inking takes a few minutes.
+8. Return to the browser window displaying the Google Cloud console. The console displays a message that says "Please wait for your account linking to become active." Account creation and linking take a few minutes.
 
     ![Linking In Progress](./images/linking-in-progress.png "Linking In Progress")
 
-You may now **proceed to the next lab** to provision Google Cloud resources.
+9. If your Google Cloud project already has a VPC network for Oracle Database@Google Cloud, proceed to Lab 1 to provision Autonomous Database. If you still need a VPC, complete [Lab 2, Task 1](?lab=gcp-get-started#task1createavirtualprivatecloudvpc) first, then return to Lab 1. Finish the rest of Lab 2 after provisioning the database.
 
 ## Acknowledgements
+
 - **Authors/Contributors** - Vivek Verma, Master Principal Cloud Architect, North America Cloud Engineering
 - **Last Updated By/Date** - Vivek Verma, July 2025
