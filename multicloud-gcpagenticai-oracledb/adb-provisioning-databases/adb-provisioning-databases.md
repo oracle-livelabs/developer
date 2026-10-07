@@ -1,9 +1,8 @@
-
 # Provisioning Autonomous Database
 
 ## Introduction
 
-This lab walks you through the steps to provision Autonomous Database. 
+This lab provisions Oracle Database@Google Cloud Autonomous Database. The sample tables are populated in Lab 2 after the private-network VM is available.
 
 Estimated Time: 10 minutes
 
@@ -11,32 +10,32 @@ Estimated Time: 10 minutes
 
 As a database user, DBA or application developer:
 
-1. Create an ODBG network
-2. Rapidly deploy an Autonomous Transaction Processing databases.
+1. Create an ODBG network.
+2. Provision an Autonomous Transaction Processing database.
 
 ### Required Artifacts
 
-- A Google Cloud account with a pre-configured Virtual Private Cloud (VPC) Network.
+- A Google Cloud account and an existing VPC network to associate with Oracle Database@Google Cloud. If you still need to create the VPC, complete [Lab 2, Task 1](?lab=gcp-get-started#task1createavirtualprivatecloudvpc) first, then return here. The remaining Lab 2 tasks require the provisioned database.
 
 ## Task 1: Create an ODBG Network
 
 In this section, you will create an ODBG Network. **ODBG networks** provide secure and private connectivity to your Oracle Database resources, giving you control over how they connect and communicate.
 
-1.	Login to Google Cloud Console (console.cloud.google.com) and search for **Oracle Database** in the **Search Bar** on the top of the page. Click on **Oracle Database@Google Cloud**.
+1. Login to Google Cloud Console (console.cloud.google.com) and search for **Oracle Database** in the **Search Bar** on the top of the page. Click on **Oracle Database@Google Cloud**.
 
     ![Search Bar](./images/adb-search.png "Search Bar")
 
-- Click **ODBG network** from the left menu.
+2. Click **ODBG network** from the left menu.
 
     ![ODBG Network](./images/odbg-network-pane.png "ODBG Network")
 
-- Click **Create** on the ODBG network page.
+3. Click **Create** on the ODBG network page.
 
     ![ODBG Network](./images/odbg-network-create.png "ODBG Network")
 
--  This will bring up the **Create ODBG network** screen where you specify the configuration of the ODBG network.
+4. This will bring up the **Create ODBG network** screen where you specify the configuration of the ODBG network.
 
-- Enter the following for **ODBG network**:
+5. Enter the following for **ODBG network**:
 
     * **Associated network** - app-network
     * **Region** - us-east4
@@ -46,15 +45,15 @@ In this section, you will create an ODBG Network. **ODBG networks** provide secu
 
     ![ODBG Network](./images/create-odbg-network.png "ODBG Network")
 
-- On the **ODBG network** page click on the ODBG network that we just created **odbg-network**.
+6. On the **ODBG network** page click on the ODBG network that we just created **odbg-network**.
 
     ![ODBG Network](./images/odbg-network-main.png "ODBG Network")
 
-- On the **ODBG network details** page click **Create** to create a Subnet.
+7. On the **ODBG network details** page click **Create** to create a Subnet.
 
     ![ODBG Network](./images/odbg-network-subnet-create.png "ODBG Network")
 
-- Enter the following for **ODBG subnet**:
+8. Enter the following for **ODBG subnet**:
 
     * **Subnet name** - db-subnet
     * **Subnet range** - 10.2.0.0/24
@@ -64,7 +63,7 @@ In this section, you will create an ODBG Network. **ODBG networks** provide secu
 
     ![ODBG Network](./images/create-odbg-subnet.png "ODBG Network")
 
-- On the **ODBG network details** page, verify the details of the ODBG Network and confirm the **Status** of subnet **db-subnet** is set to **Available**.
+9. On the **ODBG network details** page, verify the details of the ODBG Network and confirm the **Status** of subnet **db-subnet** is set to **Available**.
 
     ![ODBG Network](./images/odbg-network-details.png "ODBG Network")
 
@@ -72,21 +71,21 @@ In this section, you will create an ODBG Network. **ODBG networks** provide secu
 
 In this section, you will be provisioning an Autonomous Database using the Google Cloud Console.
 
-1.	Login to Google Cloud Console (console.cloud.google.com) and search for **Oracle Database** in the **Search Bar** on the top of the page. Click on **Oracle Database@Google Cloud**.
+1. Login to Google Cloud Console (console.cloud.google.com) and search for **Oracle Database** in the **Search Bar** on the top of the page. Click on **Oracle Database@Google Cloud**.
 
     ![Search Bar](./images/adb-search.png "Search Bar")
 
--  Click **Autonomous Database** from the left menu.
+2. Click **Autonomous Database** from the left menu.
 
     ![ADB Menu](./images/adb-menu.png "ADB Menu")
 
-- Click **Create** on the Autonomous Database details page.
+3. Click **Create** on the Autonomous Database details page.
 
     ![Create ADB](./images/adb-create.png "Create ADB")
 
--  This will bring up the **Create an Autonomous Database** screen where you specify the configuration of the database.
+4. This will bring up the **Create an Autonomous Database** screen where you specify the configuration of the database.
 
-- Enter the following for **Instance details**:
+5. Enter the following for **Instance details**:
 
     * **Instance ID** - adb-gcp
     * **Database name** - adbgcp
@@ -95,21 +94,21 @@ In this section, you will be provisioning an Autonomous Database using the Googl
 
     ![ADB Instance Details](./images/adb-instance-details.png "ADB Instance Details")
 
-- Select **Transaction Processing** for **Workload configuration**
+6. Select **Transaction Processing** for **Workload configuration**
 
     ![ADB Instance Details](./images/adb-workload.png "ADB Instance Details")
 
-- Leave all defaults for **Database configuration**
+7. Leave all defaults for **Database configuration**
 
     ![ADB Instance Details](./images/adb-database-config.png "ADB Instance Details")
 
-- Enter the password for admin user under **Administrator credentials**
+8. Enter the password for admin user under **Administrator credentials**
 
     ![ADB Instance Details](./images/adb-credentials.png "ADB Instance Details")
 
-- Under the **Networking** section, select **Private endpoint access only** for **Access type**.
+9. Under the **Networking** section, select **Private endpoint access only** for **Access type**.
 
-- For **Private endpoint**, enter the following:
+10. For **Private endpoint**, enter the following:
 
     * **Network project** - Select the default project name for the VPC network
     * **ODBG Network** - odbg-network
@@ -117,11 +116,11 @@ In this section, you will be provisioning an Autonomous Database using the Googl
 
     ![ADB Instance Details](./images/adb-network.png "ADB Instance Details")
 
-- Leave the rest as defaults and click **CREATE** to create the Autonomous Database.
+11. Leave the rest as defaults and click **CREATE** to create the Autonomous Database.
 
     ![ADB Instance Details](./images/adb-default-create.png "ADB Instance Details")
 
-- Post creation the Autonomous Database will appear on the **Autonomous Database** page.
+12. Post creation the Autonomous Database will appear on the **Autonomous Database** page.
 
     ![Autonomous Database](./images/adb-post-create.png "Autonomous Database")
 
@@ -129,45 +128,27 @@ In this section, you will be provisioning an Autonomous Database using the Googl
 
 **Oracle Autonomous Database** only accepts secure connections to the database. This requires a **'wallet'** file that contains the SQL\*NET configuration files and the secure connection information. Wallets are used by client utilities such as SQL Developer, SQL\*Plus etc.
 
-- On the **Autonomous Database** page click the Autonomous Database that was provisioned.
+1. On the **Autonomous Database** page click the Autonomous Database that was provisioned.
 
     ![Download zip](./images/vm-adb-details.png "Download zip")
 
-- Go to the **CONNECTIONS** tab.
+2. Go to the **CONNECTIONS** tab.
 
     ![Download zip](./images/adb-details-connection.png "Download zip")
 
-- Click **DOWNLOAD WALLET** on the **Connections** page.
+3. Click **DOWNLOAD WALLET** on the **Connections** page.
 
     ![Download zip](./images/adb-download.png "Download zip")
 
-- Set a password for the wallet on the **Download your wallet** page and click **DOWNLOAD**
+4. Set a password for the wallet on the **Download your wallet** page and click **DOWNLOAD**
 
     ![Download zip](./images/adb-download-wallet.png "Download zip")
-    
-- Create a folder named **wallet** on the Compute VM instance and scp or Copy over the Wallet zip file to wallet folder on the VM instance. If you are using a Linux Terminal, run the following command to copy over the wallet to the VM instance -
 
-    ```
-    <copy>
-    scp -i <private_key_file> Wallet_db_name.zip <Compute_VM_IP>:/home_directory/wallet/.
-    </copy>
-    ```
-
-- Login to the Compute VM and unzip the database wallet that was uploaded in the previous step.
-
-    ```
-    <copy>
-    cd wallet
-    sudo apt install unzip
-    unzip Wallet_db_name.zip
-    </copy>
-    ```
-
-You may now **proceed to the next lab**.
+5. Keep the downloaded wallet private. After creating the VM in [Lab 2, Task 2](?lab=gcp-get-started#task2provisiongooglecloudcomputevminstance), follow the runbook's [wallet transfer instructions](?lab=workshop-runbook#3provisionnetworkdatabaseandwallet) to copy and extract it on that VM before connecting with SQLcl.
 
 ## Acknowledgements
 
-*All Done! You have successfully deployed your Autonomous Database instance and is available for use now.*
+*All Done! You may proceed to the next lab.*
 
-- **Authors/Contributors** - Vivek Verma, Master Principal Cloud Architect, North America Cloud Engineering
-- **Last Updated By/Date** - Vivek Verma, July 2025
+- **Authors/Contributors** - Paul Parkinson, Architect and Dev Advocate, Oracle AI Database
+- **Last Updated By/Date** - Paul Parkinson, October 2026
