@@ -9,6 +9,11 @@ external tools. In this workshop, you deploy three ready-made MCP servers on
 Oracle Cloud Infrastructure (OCI) Container Instances and expose them through
 OCI API Gateway HTTPS endpoints.
 
+The Terraform and Playwright endpoints are publicly accessible without caller
+authentication. Use them as temporary lab endpoints, keep sensitive data out
+of the exercises, and destroy the stack when you finish. GitHub tool calls
+require your GitHub token.
+
 The Container Instance hosts the MCP servers. The large language model does not
 run in the Container Instance. Your MCP-capable AI client, such as Codex or
 Cline, supplies the model and calls the hosted MCP tools over Streamable HTTP.
@@ -32,6 +37,7 @@ In this workshop, you will:
 The Resource Manager stack creates:
 
 * one VCN for the lab;
+* networking with Internet, NAT, and Service Gateways;
 * one OCI API Gateway HTTPS endpoint;
 * one OCI Container Instance;
 * three containers in that Container Instance:
@@ -56,6 +62,16 @@ You need:
 
 You do not need OCI CLI, Terraform CLI, an SSH key, a Terraform Cloud token, or
 an HCP token to deploy the Resource Manager stack.
+
+The deployment ZIP is hosted in OCI Object Storage, and the three container
+images are hosted in public OCI Container Registry repositories in Toronto.
+You do not need a registry login or access to the publisher's tenancy to
+download them. Select your deployment region in the OCI Console; image hosting
+remains in Toronto.
+
+The exercises make runtime requests to Terraform Registry, GitHub, and a public
+demo webpage. Those requests need outbound access even though the deployment
+ZIP and container images are downloaded from OCI.
 
 The estimate assumes your OCI access, AI client, and GitHub token are ready
 before you start. Creating or approving a new GitHub token during the workshop

@@ -24,6 +24,11 @@ Complete the workshop introduction and the Get Started lab. Make sure you can
 access an OCI tenancy and a compartment where you can create Resource Manager,
 networking, API Gateway, and Container Instance resources.
 
+Your permissions and service limits must also allow the stack's Internet, NAT,
+and Service Gateways. Use a new stack for this package. If you have a stack from
+an earlier workshop version, clean it up using that stack before starting again;
+the updated network and Container Instance settings can require replacement.
+
 ## Task 1: Launch the Resource Manager stack
 
 1. Select **Deploy to Oracle Cloud**.
@@ -43,14 +48,19 @@ networking, API Gateway, and Container Instance resources.
 
     <div class="oci-deploy-button" markdown="1">
 
-    [![Deploy to Oracle Cloud](../images/deploy-to-oracle-cloud.svg)](https://cloud.oracle.com/resourcemanager/stacks/create?zipUrl=https://github.com/oracle-livelabs/developer/raw/main/mcp-servers-on-oci-container-instances/files/resource-manager/mcp-servers-on-oci-container-instances-rm.zip "Deploy to Oracle Cloud")
+    [![Deploy to Oracle Cloud](../images/deploy-to-oracle-cloud.svg)](https://cloud.oracle.com/resourcemanager/stacks/create?zipUrl=https%3A%2F%2Fobjectstorage.ca-toronto-1.oraclecloud.com%2Fn%2Fyzrh1ull1ess%2Fb%2Flivelabs-mcp-container-instances%2Fo%2Freleases%2F1c17ce85f0d36a1a816e7db1426e0c5b2b7412811146c2db5ae5905989f0512c%2Fmcp-servers-on-oci-container-instances-rm.zip "Deploy to Oracle Cloud")
 
     </div>
 
-    ![Deploy to Oracle Cloud button](../images/01-create-stack-package.png)
-
 2. Confirm Resource Manager opens the **Create stack** page with the workshop
-    package loaded.
+    package loaded from `objectstorage.ca-toronto-1.oraclecloud.com`.
+
+    The ZIP is publicly readable. You do not need a bucket login, and bucket
+    listing is disabled.
+
+3. Check the OCI Console region selector before creating the stack. This is
+    the region where your lab resources will run. The ZIP and images stay
+    hosted in Toronto when you select another deployment region.
 
 ## Task 2: Complete stack information
 
@@ -82,13 +92,15 @@ networking, API Gateway, and Container Instance resources.
     * **Container Instance OCPUs**: prefilled, but editable.
     * **Container Instance memory in GB**: prefilled, but editable.
 
-3. Compare your values with the validated workshop run:
+3. The following screenshot illustrates one shape and size selection:
 
     * shape: `CI.Standard.E5.Flex`
     * OCPUs: `4`
     * memory: `16` GB
 
-    You may use a different available shape or size if your tenancy requires it.
+    The form defaults to `CI.Standard.E4.Flex`, 2 OCPUs, and 8 GB. Choose a
+    shape available in your selected availability domain and sufficient capacity
+    for your tenancy. Terraform checks the selected shape and sizing limits.
 
     ![Completed Resource Manager variables](../images/04-configure-variables-complete.png)
 

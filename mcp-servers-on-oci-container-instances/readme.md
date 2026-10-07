@@ -19,7 +19,7 @@ Use the step-by-step guide:
 ## Deploy to OCI
 
 <p align="center">
-  <a href="https://cloud.oracle.com/resourcemanager/stacks/create?zipUrl=https://github.com/oracle-livelabs/developer/raw/main/mcp-servers-on-oci-container-instances/files/resource-manager/mcp-servers-on-oci-container-instances-rm.zip">
+  <a href="https://cloud.oracle.com/resourcemanager/stacks/create?zipUrl=https%3A%2F%2Fobjectstorage.ca-toronto-1.oraclecloud.com%2Fn%2Fyzrh1ull1ess%2Fb%2Flivelabs-mcp-container-instances%2Fo%2Freleases%2F1c17ce85f0d36a1a816e7db1426e0c5b2b7412811146c2db5ae5905989f0512c%2Fmcp-servers-on-oci-container-instances-rm.zip">
     <img src="https://oci-resourcemanager-plugin.plugins.oci.oraclecloud.com/latest/deploy-to-oracle-cloud.svg" alt="Deploy to Oracle Cloud">
   </a>
 </p>

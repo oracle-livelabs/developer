@@ -1,3 +1,18 @@
+data "oci_core_services" "all_services" {
+  filter {
+    name   = "name"
+    values = ["^All .* Services In Oracle Services Network$"]
+    regex  = true
+  }
+
+  lifecycle {
+    postcondition {
+      condition     = length(self.services) == 1
+      error_message = "Expected exactly one regional All Services in Oracle Services Network entry. Check service availability in the selected deployment region."
+    }
+  }
+}
+
 resource "oci_core_vcn" "mcp_lab" {
   compartment_id = var.compartment_ocid
   cidr_blocks    = [local.vcn_cidr_block]
@@ -24,6 +39,45 @@ resource "oci_core_route_table" "mcp_lab" {
     destination       = "0.0.0.0/0"
     destination_type  = "CIDR_BLOCK"
     network_entity_id = oci_core_internet_gateway.mcp_lab.id
+  }
+}
+
+resource "oci_core_nat_gateway" "mcp_lab" {
+  compartment_id = var.compartment_ocid
+  display_name   = "${local.name_prefix}-nat"
+  block_traffic  = false
+  freeform_tags  = local.common_freeform_tags
+  vcn_id         = oci_core_vcn.mcp_lab.id
+}
+
+resource "oci_core_service_gateway" "mcp_lab" {
+  compartment_id = var.compartment_ocid
+  display_name   = "${local.name_prefix}-sgw"
+  freeform_tags  = local.common_freeform_tags
+  vcn_id         = oci_core_vcn.mcp_lab.id
+
+  services {
+    service_id = one(data.oci_core_services.all_services.services).id
+  }
+}
+
+resource "oci_core_route_table" "container_instance" {
+  compartment_id = var.compartment_ocid
+  display_name   = "${local.name_prefix}-container-instance-rt"
+  freeform_tags  = local.common_freeform_tags
+  vcn_id         = oci_core_vcn.mcp_lab.id
+
+  # Regional Oracle services use SGW; other destinations use outbound NAT.
+  route_rules {
+    destination       = one(data.oci_core_services.all_services.services).cidr_block
+    destination_type  = "SERVICE_CIDR_BLOCK"
+    network_entity_id = oci_core_service_gateway.mcp_lab.id
+  }
+
+  route_rules {
+    destination       = "0.0.0.0/0"
+    destination_type  = "CIDR_BLOCK"
+    network_entity_id = oci_core_nat_gateway.mcp_lab.id
   }
 }
 
@@ -113,8 +167,8 @@ resource "oci_core_subnet" "container_instance" {
   display_name               = "${local.name_prefix}-container-instance-subnet"
   dns_label                  = "mcpservers"
   freeform_tags              = local.common_freeform_tags
-  prohibit_public_ip_on_vnic = false
-  route_table_id             = oci_core_route_table.mcp_lab.id
+  prohibit_public_ip_on_vnic = true
+  route_table_id             = oci_core_route_table.container_instance.id
   security_list_ids          = [oci_core_security_list.container_instance.id]
   vcn_id                     = oci_core_vcn.mcp_lab.id
 }

@@ -65,19 +65,19 @@ variable "container_memory_in_gbs" {
 variable "terraform_mcp_image" {
   description = "Container image for HashiCorp Terraform MCP Server."
   type        = string
-  default     = "docker.io/hashicorp/terraform-mcp-server:1.2.0"
+  default     = "ocir.ca-toronto-1.oci.oraclecloud.com/yzrh1ull1ess/mcp-servers-on-oci-container-instances/terraform-mcp-server@sha256:bd095e2b442a2cb61255fe4db52f9e824f35d307a2044784c95d37a93f18d324"
 }
 
 variable "github_mcp_image" {
   description = "Container image for GitHub MCP Server."
   type        = string
-  default     = "ghcr.io/github/github-mcp-server:v1.9.0"
+  default     = "ocir.ca-toronto-1.oci.oraclecloud.com/yzrh1ull1ess/mcp-servers-on-oci-container-instances/github-mcp-server@sha256:a4cbe1568e70a50e44c088c479b0620cfa994d30aaa8ebded048933ea1d9d97b"
 }
 
 variable "playwright_mcp_image" {
   description = "Container image for Microsoft Playwright MCP Server."
   type        = string
-  default     = "mcr.microsoft.com/playwright/mcp:v0.0.79"
+  default     = "ocir.ca-toronto-1.oci.oraclecloud.com/yzrh1ull1ess/mcp-servers-on-oci-container-instances/playwright-mcp-server@sha256:9befda258ad1b0c940b8f8152383f238057be76e07620d1b04d3b67b53b66822"
 }
 
 variable "terraform_mcp_port" {

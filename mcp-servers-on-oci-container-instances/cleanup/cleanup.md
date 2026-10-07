@@ -45,6 +45,14 @@ name and compartment available so you can find the stack to destroy.
 2. Confirm the API Gateway endpoints and Container Instance created by this
     workshop are no longer available.
 
+3. Confirm the stack's VCN and associated gateways, subnets, route tables, and
+    security lists were removed. If destroy fails, inspect the job errors and
+    resolve the remaining dependencies before considering cleanup complete.
+
+    The shared ZIP bucket and public image repositories belong to the workshop
+    publisher. They are outside your stack and remain available for other
+    participants.
+
 ## Task 4: Revoke the GitHub token
 
 1. If you created a GitHub token for the lab, revoke or delete it after the
