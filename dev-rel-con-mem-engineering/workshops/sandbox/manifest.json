@@ -1,0 +1,26 @@
+{
+  "workshoptitle": "Agent Memory: Introduction to context and memory engineering",
+  "help": "livelabs-help-database_us@oracle.com",
+  "tutorials": [
+    {
+      "title": "Introduction",
+      "description": "The inventory problem and the context-and-memory learning journey.",
+      "filename": "../../introduction/introduction.md"
+    },
+    {
+      "title": "Connect to the Development Environment",
+      "description": "Open the hosted notebooks and work through the guided TODOs.",
+      "filename": "../../connect-to-env/connect-to-env.md"
+    },
+    {
+      "title": "Take the quiz!",
+      "description": "Check your understanding of agent loops, context and durable memory.",
+      "filename": "../../quiz/quiz.md"
+    },
+    {
+      "title": "Need Help?",
+      "description": "Oracle LiveLabs support resources.",
+      "filename": "https://livelabs.oracle.com/cdn/common/labs/need-help/need-help-freetier.md"
+    }
+  ]
+}
