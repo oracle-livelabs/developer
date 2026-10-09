@@ -29,7 +29,7 @@ Estimated Time: 5 minutes to connect; 150–180 minutes for the notebook activit
 
     ![Illustrative file-browser guide showing agent_memory_zero_to_hero, the student and complete Ollama notebooks, the data file and images folder.](images/launcher.png)
 
-    This workshop uses the Ollama edition. Open **`notebook_complete_ollama.ipynb`** alongside it whenever you want to see the worked solution or a recorded output.
+    This workshop uses the Ollama edition with **`llama3.2`**. Open **`notebook_complete_ollama.ipynb`** alongside it whenever you want to see the worked solution or a recorded output. Confirm the printed model name: a supplied environment setting can override the notebook default.
 
 4. If the workshop folder is missing, ask the instructor to confirm the lab image. The provided JupyterLab runtime must contain both notebooks, their data and diagrams, and the configured database and model services.
 
@@ -86,6 +86,8 @@ Estimated Time: 5 minutes to connect; 150–180 minutes for the notebook activit
 | Human review and cleanup | Inspect the blocked unapproved write and scoped row counts | Action authority and record lifecycle remain application responsibilities |
 
 The complete notebook preserves actual model outputs, including mistakes. Wording and automatic extraction can vary; use the evidence and the section's learning objective to assess the result.
+
+In the recorded Llama 3.2 run, all 80 code cells completed and the memory aware agent recalled the correct 120-unit approval under PO-1048, with no supplier order submitted. However, the no-memory agent invented details, an attempted tool call used invalid arguments, extraction omitted some facts, and the final handover altered an evidence ID. Inspect tool-error observations, compare source facts with extracted records, and verify citations against the supplied evidence. Completing every cell is not a guarantee of equivalent model quality or a reason to approve a draft automatically.
 
 ## Conclusion
 

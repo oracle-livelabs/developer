@@ -127,7 +127,7 @@ Working memory is the information in the current context window. Durable records
 
 ### Reference architecture
 
-The reference architecture in the notebook combines Python and LangChain for the agent loop, Ollama for model inference, and Oracle Agent Memory for durable recall. Oracle AI Database stores the records and runs embeddings and vector retrieval. Selected evidence enters the model's working context; a separate human-review step controls the optional handover write.
+The reference architecture in the notebook combines Python and LangChain for the agent loop, Ollama serving `llama3.2` for model inference, and Oracle Agent Memory for durable recall. Oracle AI Database stores the records and runs embeddings and vector retrieval. Selected evidence enters the model's working context; a separate human-review step controls the optional handover write.
 
 | Capability | Visible outcome |
 |---|---|
