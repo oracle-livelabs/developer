@@ -33,7 +33,7 @@ Estimated Lab Time: 25 minutes
     ```
     ![Pasting the sql in the worksheet](./images/1-testing-sql-in-sql-worksheet.png " ")
 
-4. Execute this sample SQL using either the Run Statement or Run Script button. The query results will appear in either the **Query Result** or **Script Output** tabs (depending no how the SQL was executed). These results contain the same data that will be returned for an API response; from an ORDS API that you'll create shortly. Results returned are: `PROJ_ID`, `PROJ_NAME`, `DEPT_ID`, and `IS_ACTIVE` for the given `DEPT_ID` and `BOOLEAN`. 
+4. Execute this sample SQL using either the Run Statement or Run Script button. The query results will appear in either the **Query Result** or **Script Output** tabs (depending on how the SQL was executed). These results contain the same data that will be returned for an API response; from an ORDS API that you'll create shortly. Results returned are: `PROJ_ID`, `PROJ_NAME`, `DEPT_ID`, and `IS_ACTIVE` for the given `DEPT_ID` and `BOOLEAN`. 
 
     ![SQL execution results](./images/2-sql-execution-results.png " ")
 
@@ -175,9 +175,9 @@ Estimated Lab Time: 25 minutes
 
     ![curl command in terminal](./images/30-curl-command-in-terminal.png " ")
 
-    > **NOTE:** You can optionally pipe in the `jq` processer to pretty print your `JSON` response.
+    > **NOTE:** You can optionally pipe in the `jq` processer to pretty print your `JSON` response. Omit this if `jq` is not installed on your OS, or if unsure. It is not required.
 
-12. You should see the response payload in your terminal. Because the optional `:is_active` parameter was removed, all relevant projects are returned. 
+12. You should see the response payload in your terminal (if omitting `jq`, your response will be a solid block of text; unstructured). Because the optional `:is_active` parameter was removed, all relevant projects are returned. 
 
     ![Get response part one](./images/31-get-response-one.png " ")
 
@@ -262,27 +262,27 @@ Estimated Lab Time: 25 minutes
     - **Parameter Type:** `STRING`
     - **Access Method:** `Output`
 
-6. Once created, the new parameters will be visible in the Parameter tab.
+7. Once created, the new parameters will be visible in the Parameter tab.
 
     ![A new parameter row](./images/40-new-parameter-rows.png " ")
 
-7. You'll use these Bind Parameters (aka Handler Parameter) to send the responses/results of your ORDS API to your client application. 
+8. You'll use these Bind Parameters (aka Handler Parameter) to send the responses/results of your ORDS API to your client application. 
 
     ![Locating the new parameters](./images/41-locating-the-parameters.png " ")
 
     > **NOTE:** The values have already been included in the sample Anonymous Block snippet, but simply clicking the Handler Parameter name will place the parameter value at the current location of your cursor.
 
-8. Now, you can test this new POST API. From the Handler's kebab menu, select **Get cURL command**, then the **+ plus** button of the curl Command modal. 
+9. Now, you can test this new POST API. From the Handler's kebab menu, select **Get cURL command** (*choose the correct Terminal type for your OS; Command Prompt, PowerShell, or Bash*). Then the **+ plus** button of the curl Command modal. 
 
     ![Retrieving the curl command](./images/42-getting-the-post-curl.png " ")
 
     ![clicking the plus button](./images/27-press-plus-button-get.png " ")
 
-9. A Substitutions modal will appear. Enter in values for `EMP_NAME`, `DEPT_CODE`, `COMMENTS`, and check Null for the `response_status` and `response_message`. Be sure to review and select valid values for the `DEPT_CODE` (Valid values: `EN003`, `FN002`, `HR001`, `IT007`, `LG006`, `LG009`, `MK005`, `OP010`, `SA004`, `SP008`). Once finished, click **OK**.
+10. A Substitutions modal will appear. Enter in values for `EMP_NAME`, `DEPT_CODE`, `COMMENTS`, and check Null for the `response_status` and `response_message`. Be sure to review and select valid values for the `DEPT_CODE` (Valid values: `EN003`, `FN002`, `HR001`, `IT007`, `LG006`, `LG009`, `MK005`, `OP010`, `SA004`, `SP008`). Once finished, click **OK**.
 
     ![Adding substitution details](./images/43-entering-substitution-details.png " ")
 
-10. Copy the curl command into a clipboard, and remove the `response_status` and `response_message` key:value pairs, and the no-longer-required comma. Then, paste the updated command in a Terminal window and execute the curl command.
+11. Copy the curl command into a clipboard, and remove the `response_status` and `response_message` key:value pairs, and the no-longer-required comma. Then, paste the updated command in a Terminal window and execute the curl command.
    
     ![Copying the post request](./images/44-clicking-copy-for-post.png " ")
 
@@ -290,11 +290,11 @@ Estimated Lab Time: 25 minutes
 
     ![Empty key value pairs removed](./images/44-2-key-value-pairs-removed.png " ")
 
-11. You should see the success response message in your terminal. 
+12. You should see the success response message in your terminal. 
 
     ![Reviewing the response in terminal](./images/45-response-in-terminal.png " ")
 
-12. You can also perform a simple query to review that latest INSERT using the following code snippet: 
+13. You can also perform a simple query to review that latest INSERT using the following code snippet: 
 
     ```sql
     <copy>Select * from Employee where emp_name='The name you used in the POST request';</copy>
@@ -302,7 +302,7 @@ Estimated Lab Time: 25 minutes
 
     ![Querying the latest insert in sql worksheet](./images/46-querying-latest-post-in-sql-worksheet.png " ")
 
-13. And that's it, you've just successfully created your first two custom ORDS APIs. But you've probably noticed, no security? Continue to the next lab to learn more about securing your ORDS APIs.
+14. And that's it, you've just successfully created your first two custom ORDS APIs. But you've probably noticed, no security? Continue to the next lab to learn more about securing your ORDS APIs.
 
 You may now [proceed to the next lab](#next).
 
