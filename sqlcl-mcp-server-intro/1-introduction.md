@@ -103,13 +103,8 @@ You may now [proceed to the next lab](#next).
 - [SQLcl MCP Server Docs](https://docs.oracle.com/en/database/oracle/sql-developer-command-line/25.2/sqcug/using-oracle-sqlcl-mcp-server.html)
 
 **Acknowledgements:**
-- Author: Chris Hoina, Senior Product Manager, Database Tools
+- Author: Chris Hoina, Lead Principal Product Manager, Database Tools
 - Contributors: Jeff Smith, Linda Foindling
-- Last updated: Chris Hoina, February 2026
+- Last updated: October 2026
 
 <!-- WMS ID 11914 -->
-
-## Acknowledgements
-
-* **Author** - TODO: Your Name, Your Title, Your Organization
-* **Last Updated By/Date** - TODO: Your Name, Month Year
