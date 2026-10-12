@@ -296,22 +296,22 @@ wget -P ~/Desktop/prompts \
     ![sqlcl-now-in-installed-servers-tab](./images/lab-2/sqlcl-now-in-installed-servers-tab.png " ")
 
 6. Click the SQLcl MCP server frame to expand. You’ll see a list of SQLcl MCP Server tools, parameters, and definitions.
+    
+    | Tool | Purpose | Parameters | Parameter Definitions |
+    |---|---|---|---|
+    | `connections_list` | Lists saved Oracle database connections. | <ul><li>name</li><li>username</li><li>model</li><li>definition\_type</li><li>show\_details</li></ul> | <ul><li>Optional, case-insensitive filter for connection names</li><li>Optional username filter</li><li>LLM name and version</li><li>Optional filter: all, OCI, or non-OCI connections</li><li>Whether to include connect string and username details</li></ul> |
+    | `connect` | Connects to a saved Oracle database connection. | <ul><li>connection_name\*</li><li>model</li></ul> | <ul><li>Case-sensitive saved connection name</li><li>LLM name and version</li></ul> |
+    | `disconnect` | Closes the current database connection. | <ul><li>model</li></ul> | <ul><li>LLM name and version</li></ul> |
+    | `sqlcl_run` | Executes SQLcl-specific commands. | <ul><li>sqlcl\*</li><li>model</li><li>execution_type</li></ul> | <ul><li>SQLcl command to execute</li><li>LLM name and version</li><li>Execution mode; asynchronous calls return a request ID to poll with `request_status`</li></ul> |
+    | `sql_run` | Executes SQL, DML, DDL, or PL/SQL and returns CSV-formatted results. | <ul><li>sql\*</li><li>model</li><li>execution_type</li></ul> | <ul><li>SQL statement or PL/SQL block</li><li>LLM name and version</li><li>Execution mode; use asynchronous execution for longer queries and poll the request ID with `request_status`</li></ul> |
+    | `schema_information` | Describes objects in the connected schema. | <ul><li>schema</li><li>level</li><li>objects\_list</li><li>filter</li><li>model</li><li>execution\_type</li></ul> | <ul><li>Schema to describe; defaults to the connected schema</li><li>Detail level: BRIEF (default), DETAILED, OVERVIEW, or TABLE_DETAILS</li><li>Comma-separated objects to include; defaults to all objects</li><li>SQL LIKE pattern for object names; defaults to `%`</li><li>LLM name and version</li><li>SYNCHRONOUS (default) or ASYNCHRONOUS execution</li></ul> |
+    | `skills_sync` | Installs or refreshes Oracle-maintained skills in detected AI assistant skill directories. | <ul><li>skill_names</li><li>version</li><li>force</li><li>model</li></ul> | <ul><li>Optional Oracle skill root directory names; empty installs all available skills</li><li>Blessed skills version; defaults to latest</li><li>Whether to overwrite selected existing skill directories</li><li>LLM name and version</li></ul> |
+    | `annotation_generate` | Previews or persists DESCRIPTION annotations for schema tables and columns. | <ul><li>annotations\*</li><li>execution\_mode</li><li>model</li><li>execution\_type</li></ul> | <ul><li>Annotation objects, each with type, name, and generated DESCRIPTION; may include current annotations and confidence</li><li>PREVIEW or PERSIST</li><li>LLM name and version</li><li>Execution mode for the tool request</li></ul> |
+    | `context_retrieve` | Retrieves relevant context from vector tables in the active database. | <ul><li>model</li><li>concise\_user\_prompt\*</li></ul> | <ul><li>LLM name and version</li><li>Concise, keyword-focused semantic query with key entities, topic, and requested attributes</li></ul> |
+    | `request_status` | Retrieves the status and available result of an asynchronous tool request. | <ul><li>tool\_request\_id\* </li><li>model</li></ul> | <ul><li>Request ID returned by an asynchronous tool</li><li>LLM name and version</li></ul> |
+    {: title="SQLcl MCP Server Tools"}
 
-   | Tool | Purpose | Parameters | Parameter Definitions |
-   |---|---|---|---|
-   | `connections_list` | Lists saved Oracle database connections. | <ul><li>name</li><li>username</li><li>model</li><li>definition\_type</li><li>show\_details</li></ul> | <ul><li>Optional, case-insensitive filter for connection names</li><li>Optional username filter</li><li>LLM name and version</li><li>Optional filter: all, OCI, or non-OCI connections</li><li>Whether to include connect string and username details</li></ul> |
-   | `connect` | Connects to a saved Oracle database connection. | <ul><li>connection_name\*</li><li>model</li></ul> | <ul><li>Case-sensitive saved connection name</li><li>LLM name and version</li></ul> |
-   | `disconnect` | Closes the current database connection. | <ul><li>model</li></ul> | <ul><li>LLM name and version</li></ul> |
-   | `sqlcl_run` | Executes SQLcl-specific commands. | <ul><li>sqlcl\*</li><li>model</li><li>execution_type</li></ul> | <ul><li>SQLcl command to execute</li><li>LLM name and version</li><li>Execution mode; asynchronous calls return a request ID to poll with `request_status`</li></ul> |
-   | `sql_run` | Executes SQL, DML, DDL, or PL/SQL and returns CSV-formatted results. | <ul><li>sql\*</li><li>model</li><li>execution_type</li></ul> | <ul><li>SQL statement or PL/SQL block</li><li>LLM name and version</li><li>Execution mode; use asynchronous execution for longer queries and poll the request ID with `request_status`</li></ul> |
-   | `schema_information` | Describes objects in the connected schema. | <ul><li>schema</li><li>level</li><li>objects\_list</li><li>filter</li><li>model</li><li>execution\_type</li></ul> | <ul><li>Schema to describe; defaults to the connected schema</li><li>Detail level: BRIEF (default), DETAILED, OVERVIEW, or TABLE_DETAILS</li><li>Comma-separated objects to include; defaults to all objects</li><li>SQL LIKE pattern for object names; defaults to `%`</li><li>LLM name and version</li><li>SYNCHRONOUS (default) or ASYNCHRONOUS execution</li></ul> |
-   | `skills_sync` | Installs or refreshes Oracle-maintained skills in detected AI assistant skill directories. | <ul><li>skill_names</li><li>version</li><li>force</li><li>model</li></ul> | <ul><li>Optional Oracle skill root directory names; empty installs all available skills</li><li>Blessed skills version; defaults to latest</li><li>Whether to overwrite selected existing skill directories</li><li>LLM name and version</li></ul> |
-   | `annotation_generate` | Previews or persists DESCRIPTION annotations for schema tables and columns. | <ul><li>annotations\*</li><li>execution\_mode</li><li>model</li><li>execution\_type</li></ul> | <ul><li>Annotation objects, each with type, name, and generated DESCRIPTION; may include current annotations and confidence</li><li>PREVIEW or PERSIST</li><li>LLM name and version</li><li>Execution mode for the tool request</li></ul> |
-   | `context_retrieve` | Retrieves relevant context from vector tables in the active database. | <ul><li>model</li><li>concise\_user\_prompt\*</li></ul> | <ul><li>LLM name and version</li><li>Concise, keyword-focused semantic query with key entities, topic, and requested attributes</li></ul> |
-   | `request_status` | Retrieves the status and available result of an asynchronous tool request. | <ul><li>tool\_request\_id\* </li><li>model</li></ul> | <ul><li>Request ID returned by an asynchronous tool</li><li>LLM name and version</li></ul> |
-   {: title="SQLcl MCP Server Tools"}
-
-    Note: Parameters marked with an asterisk (`*`) are required.
+    > Note: Parameters marked with an asterisk (`*`) are required.
 
 7. Your SQLcl MCP Server is configured. You may now [proceed to the next lab](#next).
 

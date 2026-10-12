@@ -95,7 +95,8 @@ You may now [proceed to the next lab](#next).
 - [Oracle official MCP Server repository](https://github.com/oracle/mcp/tree/main)
 - [SQLcl MCP Server Docs](https://docs.oracle.com/en/database/oracle/sql-developer-command-line/25.2/sqcug/using-oracle-sqlcl-mcp-server.html)
 
-**Acknowledgements:**
+## Acknowledgements
+
 - Author: Chris Hoina, Lead Principal Product Manager, Database Tools
 - Contributors: Jeff Smith, Linda Foindling
 - Last updated: October 2026

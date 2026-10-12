@@ -44,7 +44,7 @@ This lab assumes you have:
 
     [Download prompt](./files/create_a_react_app_prompt.md?download=1)
 
-> **Note:** This Lab is designed to be open-ended, accordingly, your individual results will vary. Feel free to improvise!
+    > **Note:** This Lab is designed to be open-ended, accordingly, your individual results will vary. Feel free to improvise!
 
 2. After reviewing the prompt, you may wish to save it locally. But, before you begin, review the various sections of the prompt: 
 
@@ -133,8 +133,8 @@ This lab assumes you have:
 
 ## Acknowledgements
 
-* **Author**<ul><li>Chris Hoina, Senior Product Manager, Database Tools</li></ul>
-* **Contributors**<ul><li>Jeff Smith, Distinguished Product Manager, Database Tools</li></ul>
-* **Last Updated By/Date**<ul><li>Chris Hoina, January 2026</li></ul>
+* **Author:** Chris Hoina, Lead Principal Product Manager, Database Tools
+* **Contributors:** Jeff Smith, Distinguished Product Manager, Database Tools
+* **Last Updated:** Chris Hoina, October 2026
 
 <!-- WMS ID 11914 -->
