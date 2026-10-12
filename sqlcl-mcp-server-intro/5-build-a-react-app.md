@@ -30,19 +30,21 @@ This lab assumes you have:
 * Configured the SQLcl MCP Server for use with Cline for VS Code
 * This lab may require NPM, Node.js, and other web development libraries
 
-<p></p>
-
-> &#9872; **Note:** In this lab you must allow your AI Agent to create a new project folder, scaffold a sample React application, and if required, install project dependencies (e.g., npm, Node, Express, React, etc. ).
-
-<p></p>
+> **Note:** In this lab you must allow your AI Agent to create a new project folder, scaffold a sample React application, and if required, install project dependencies (e.g., npm, Node, Express, React, etc. ).
 
 ## Task 1: Review the prompt
 
+<if type="sandbox">
+
+1. This environment has strict networking in place. In order to provide an AI agent with sufficient resources for this scenario, download the following [resources](https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/developer-library/react-style-dashboard.zip). When prompting your agent, include these files, in addition to the provided prompt (below). 
+
+</if>
+
 1. A sample prompt has been provided for you. You may review it here, open the `.md` file in a new tab, or download the file locally.
 
-[Download prompt](./files/create_a_react_app_prompt.md?download=1)
+    [Download prompt](./files/create_a_react_app_prompt.md?download=1)
 
-> **Note:** This Lab is designed to be open-ended, accordingly, your individual results will vary. Feel free to improvise!
+    > **Note:** This Lab is designed to be open-ended, accordingly, your individual results will vary. Feel free to improvise!
 
 2. After reviewing the prompt, you may wish to save it locally. But, before you begin, review the various sections of the prompt: 
 
@@ -131,8 +133,8 @@ This lab assumes you have:
 
 ## Acknowledgements
 
-* **Author**<ul><li>Chris Hoina, Senior Product Manager, Database Tools</li></ul>
-* **Contributors**<ul><li>Jeff Smith, Distinguished Product Manager, Database Tools</li></ul>
-* **Last Updated By/Date**<ul><li>Chris Hoina, January 2026</li></ul>
+* **Author:** Chris Hoina, Lead Principal Product Manager, Database Tools
+* **Contributors:** Jeff Smith, Distinguished Product Manager, Database Tools
+* **Last Updated:** Chris Hoina, October 2026
 
 <!-- WMS ID 11914 -->
