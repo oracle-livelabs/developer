@@ -6,7 +6,7 @@ In this lab you will use the SQLcl MCP server to create new database tables and 
 
 <br>
 
-> &#9872; **Note:** A sample prompt has been provided for you. This Lab, screenshots, and expected output are based on the instructions provided in the sample prompt. 
+> **Note:** A sample prompt has been provided for you. This Lab, screenshots, and expected output are based on the instructions provided in the sample prompt. 
 
 <br>
 

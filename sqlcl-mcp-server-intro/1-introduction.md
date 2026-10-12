@@ -13,10 +13,6 @@ In this workshop, you’ll learn how to connect an AI Agent (Cline) to the SQLcl
 - Register the SQLcl MCP Server with an AI Agent
 - Perform agent-driven Oracle AI Database tasks using sample prompts
 
-[](include:test)
-
-<br>
-
 ### What is MCP?
 
 The Model Context Protocol (MCP) is a proposed standard that lets AI Agents interact securely with your data and applications via an intermediary called an MCP Server.
@@ -43,8 +39,6 @@ Users can request and perform database tasks from the Agent interface in plain l
 5. Standard database security applies.
 6. Results provided by the AI Agent; user can review/approve next steps.
 
-<br>
-
 ### Protocols & Capabilities
 
 You interact with MCP Servers through AI Agents; using natural language to invoke tools. The Agent might also use tools autonomously within "protocol" guidelines.
@@ -61,7 +55,6 @@ You interact with MCP Servers through AI Agents; using natural language to invok
 ### The SQLcl MCP Server
 
 SQLcl is a powerful CLI for the Oracle AI Database. By extending it with an MCP Server, we can enable secure, natural-language database interaction through an AI Agent. In the next few labs you'll explore your database using an AI Agent along with the SQLcl MCP Server. 
-</br>
 
 #### Security Considerations when using the SQLcl MCP Server
 
@@ -77,7 +70,7 @@ Some key principles to consider:
     - Audit actions in a database table
     - Use <emp>defense-in-depth</emp>: SQL Firewall, Data Vault, Resource Manager, Row Level Security
 
-> &#8505; **Note:** SQLcl MCP Server stores credentials securely in an Oracle Wallet—never exposed to the LLM/Agent. All database roles, privileges, and safeguards apply.
+> **Note:** SQLcl MCP Server stores credentials securely in an Oracle Wallet—never exposed to the LLM/Agent. All database roles, privileges, and safeguards apply.
 
 ### General MCP Best Practices
 

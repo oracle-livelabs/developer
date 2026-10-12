@@ -2,27 +2,44 @@
 
 ## Introduction
 
-Estimated Time: TODO - x minutes
-
+Estimated Time: 10 mins
 
 In this Lab, you will setup your working environment to use the SQLcl MCP Server along with the Cline for VS code extension.
 
 ### Objectives
-
+<if type="tenancy">
 - Install:
     - SQL Developer for VS Code Extension
     - Cline for VS Code extension  
+</if>
+
 - Configure the SQLcl MCP server
 
 ### Prerequisites
 
 This lab assumes you have:
-
+<if type="tenancy">
 * Access to an LLM Provider (via an API Key or similar authentication method) 
 * Oracle Java 17 or 21 (recommended) installed
 * A personal computer or access to a workshop-provided workstation
+</if>
 * Reviewed the prerequisites of the Introduction lab
 
+<if type=sandbox>
+**Break Glass in case of emergency** 
+
+Copy and run this in your VM's VS Code terminal:
+
+```sh
+<copy>
+wget -P ~/Desktop/prompts \
+  'https://raw.githubusercontent.com/oracle-livelabs/developer/refs/heads/main/sqlcl-mcp-server-intro/files/create_a_react_app_prompt.md' \
+  'https://raw.githubusercontent.com/oracle-livelabs/developer/refs/heads/main/sqlcl-mcp-server-intro/files/create_data_and_views_prompt.md' \
+  'https://raw.githubusercontent.com/oracle-livelabs/developer/refs/heads/main/sqlcl-mcp-server-intro/files/create_an_html_dashboard_prompt.md' 
+ </copy>
+```
+
+<if type="freesql">
 ## Task 1: Create a FreeSQL account
 
 [](include:freesql-create-freesql-account-with-vscode.md)
@@ -64,6 +81,7 @@ This lab assumes you have:
 
 6. You will use this FreeSQL user for the remainder of this LiveLab. Next, you'll create a database connection in SQL Developer for VS Code Extension. 
 
+<if type="tenancy">
 ## Task 1: Download the Instance Wallet
 
 1. In this Lab, you will use a Cloud Wallet to configure your connection in SQL Developer for VS Code. Return to your Autonomous AI database dashboard.
@@ -84,7 +102,7 @@ This lab assumes you have:
     ![take-note-of-complete-path-of-wallet](./images/lab-2/take-note-of-complete-path-of-wallet.png " ")
 
 > &#9872; **Note:** You can drag and drop the .zip file into a terminal to quickly discover the complete path.
-
+</if>
 ## Task 2: Create a new REST-enabled database user
 
 1. In your Autonomous AI database console, click **Database Actions** then **View all database actions**.
@@ -220,7 +238,7 @@ This lab assumes you have:
 
 </if>
 
-## Task <if type="freesql">3:</if><if type="freetier">5:</if> Installing the Cline for VS Code Extension
+## Task 5: Installing the Cline for VS Code Extension
 
 1. In the VS Code Extensions tab, search for the Cline extension.
 
@@ -245,7 +263,9 @@ This lab assumes you have:
 
 6. With your provider settings complete, you’re ready to configure the SQLcl MCP Server.
 
-## Task <if type="freesql">4:</if><if type="freetier">6:</if> Configuring the SQLcl MCP server
+</if>
+
+## Task 6: Configuring the SQLcl MCP server
 
 1. In VS Code, open the Command Palette and search for: <kbd>Configure Cline SQLcl MCP</kbd>. 
 
@@ -277,20 +297,21 @@ This lab assumes you have:
 
 6. Click the SQLcl MCP server frame to expand. You’ll see a list of SQLcl MCP Server tools, parameters, and definitions.
 
-    ![23-expanding-the-installed-mcp-server-to-reveal-tools](./images/lab-2/23-expanding-the-installed-mcp-server-to-reveal-tools.png " ")
+   | Tool | Purpose | Parameters | Parameter Definitions |
+   |---|---|---|---|
+   | `connections_list` | Lists saved Oracle database connections. | <ul><li>name</li><li>username</li><li>model</li><li>definition\_type</li><li>show\_details</li></ul> | <ul><li>Optional, case-insensitive filter for connection names</li><li>Optional username filter</li><li>LLM name and version</li><li>Optional filter: all, OCI, or non-OCI connections</li><li>Whether to include connect string and username details</li></ul> |
+   | `connect` | Connects to a saved Oracle database connection. | <ul><li>connection_name\*</li><li>model</li></ul> | <ul><li>Case-sensitive saved connection name</li><li>LLM name and version</li></ul> |
+   | `disconnect` | Closes the current database connection. | <ul><li>model</li></ul> | <ul><li>LLM name and version</li></ul> |
+   | `sqlcl_run` | Executes SQLcl-specific commands. | <ul><li>sqlcl\*</li><li>model</li><li>execution_type</li></ul> | <ul><li>SQLcl command to execute</li><li>LLM name and version</li><li>Execution mode; asynchronous calls return a request ID to poll with `request_status`</li></ul> |
+   | `sql_run` | Executes SQL, DML, DDL, or PL/SQL and returns CSV-formatted results. | <ul><li>sql\*</li><li>model</li><li>execution_type</li></ul> | <ul><li>SQL statement or PL/SQL block</li><li>LLM name and version</li><li>Execution mode; use asynchronous execution for longer queries and poll the request ID with `request_status`</li></ul> |
+   | `schema_information` | Describes objects in the connected schema. | <ul><li>schema</li><li>level</li><li>objects\_list</li><li>filter</li><li>model</li><li>execution\_type</li></ul> | <ul><li>Schema to describe; defaults to the connected schema</li><li>Detail level: BRIEF (default), DETAILED, OVERVIEW, or TABLE_DETAILS</li><li>Comma-separated objects to include; defaults to all objects</li><li>SQL LIKE pattern for object names; defaults to `%`</li><li>LLM name and version</li><li>SYNCHRONOUS (default) or ASYNCHRONOUS execution</li></ul> |
+   | `skills_sync` | Installs or refreshes Oracle-maintained skills in detected AI assistant skill directories. | <ul><li>skill_names</li><li>version</li><li>force</li><li>model</li></ul> | <ul><li>Optional Oracle skill root directory names; empty installs all available skills</li><li>Blessed skills version; defaults to latest</li><li>Whether to overwrite selected existing skill directories</li><li>LLM name and version</li></ul> |
+   | `annotation_generate` | Previews or persists DESCRIPTION annotations for schema tables and columns. | <ul><li>annotations\*</li><li>execution\_mode</li><li>model</li><li>execution\_type</li></ul> | <ul><li>Annotation objects, each with type, name, and generated DESCRIPTION; may include current annotations and confidence</li><li>PREVIEW or PERSIST</li><li>LLM name and version</li><li>Execution mode for the tool request</li></ul> |
+   | `context_retrieve` | Retrieves relevant context from vector tables in the active database. | <ul><li>model</li><li>concise\_user\_prompt\*</li></ul> | <ul><li>LLM name and version</li><li>Concise, keyword-focused semantic query with key entities, topic, and requested attributes</li></ul> |
+   | `request_status` | Retrieves the status and available result of an asynchronous tool request. | <ul><li>tool\_request\_id\* </li><li>model</li></ul> | <ul><li>Request ID returned by an asynchronous tool</li><li>LLM name and version</li></ul> |
+   {: title="SQLcl MCP Server Tools"}
 
-<p></p>
-
-    | Tool | Purpose | Parameters | Parameter Definitions |
-    |---|---|---|---|
-    | `list-connections` | Lists saved Oracle DB connection names. | <ul><li>name</li><li>username</li><li>model</li><li>definition\_type</li><li>show\_details</li></ul>| <ul><li>Filter by connection name</li><li>Filter by username</li><li>LLM model used</li><li>Filter by connection types</li><li>Returns connection details in result</li></ul> |
-    | `connect` | Interface to connect to, confirm, and list schemas. | <ul><li>connection\_name</li><li>model</li></ul> | <ul><li>The saved connection name</li><li>LLM model used</li></ul> |
-    | `disconnect` | Disconnects current session and logs out. | <ul><li>model</li></ul> | <ul><li>LLM model used</li></ul>  |
-    | `run-sqlcl` | Run SQLcl CLI commands in SQLcl, returns command results. | <ul><li>sqlcl</li><li>model</li></ul> | <ul><li>SQLcl command used</li><li>LLM model used</li></ul>  |
-    | `run-sql` | Run SQL queries and return CSV-formatted results. | <ul><li>sql</li><li>model</li></ul>   | <ul><li>SQL query used</li><li>LLM model used</li></ul> |
-    | `schema-information`| Provides insights on the connected schema (metadata analysis). |<ul><li>model</li></ul> | <ul><li>LLM model used</li></ul> |
-    | `run-sql-async`| Executes SQL queries as background asynchronous tasks. |<ul><li>task</li><li>command</li><li>model</li></ul> | <ul><li>The Job Id returned</li><li>The command to execute</li><li>LLM model used</li></ul> |
-    {: title="SQLcl MCP Server Tools"}
+    Note: Parameters marked with an asterisk (`*`) are required.
 
 7. Your SQLcl MCP Server is configured. You may now [proceed to the next lab](#next).
 
@@ -321,8 +342,8 @@ Click the Configure tab to review your currently configured MCP Servers and to e
 
 ## Acknowledgements
 
-* **Author:** Chris Hoina, Senior Product Manager, Database Tools
+* **Author:** Chris Hoina, Lead Principal Product Manager, Database Tools
 * **Contributors:** Jeff Smith, Distinguished Product Manager, Database Tools
-* **Last Updated:** Chris Hoina, February 2026
+* **Last Updated:** Chris Hoina, October 2026
 
 <!-- WMS ID 11914 -->

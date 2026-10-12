@@ -12,6 +12,7 @@
         },
         {
           "title": "Environment set-up",
+          "type": "sandbox",
           "description": "Installing and configuring necessary dependencies and pre-requisites.",
           "filename":"../../2-environment-set-up.md"
         },
@@ -27,11 +28,13 @@
         },
         {
           "title": "Build a React app",
+          "type": "sandbox",
           "description": "Building a starter React-based application.",
           "filename":"../../5-build-a-react-app.md"
         },
          {
             "title": "Build an HTML dashbaord",
+            "type": "sandbox",
             "description": "Building a starter HTML-dashboard.",
             "filename": "../../6-build-a-html-dashboard.md"
         },

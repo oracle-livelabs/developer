@@ -37,10 +37,12 @@ This lab assumes you have:
 <p></p>
 
 ## Task 1: Review the sample prompt
-
+<if="type">
+1. This environment has strict networking in place. In order to provide an AI agent with sufficient resources for this scenario, download the following [resources](https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/developer-library/html-style-dashboard.zip). When prompting your agent, include these files, in addition to the provided prompt (below).
+</if>
 1. A sample prompt has been provided for you. It can be used as-is in **Plan** mode with your Agent. Or, can use the prompt as a reference while you create your own dashboard. 
 
-[Download prompt](./files/create_a_react_app_prompt.md?download=1)
+   [Download prompt](./files/create_a_react_app_prompt.md?download=1)
 
 > **Note:** This Lab is designed to be open-ended, accordingly, your individual results will vary. Feel free to "go off-script"!
 
