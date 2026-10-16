@@ -42,7 +42,7 @@ wget -P ~/Desktop/prompts \
 <if type="freesql">
 ## Task 1: Create a FreeSQL account
 
-[](include:freesql-create-freesql-account-with-vscode.md)
+[freesql-create-freesql-account-with-vscode](include:freesql-create-freesql-account-with-vscode.md)
 
 1. Navigate to FreeSQL.com and sign in or create a new account <freesql-button>
 
@@ -81,6 +81,8 @@ wget -P ~/Desktop/prompts \
 
 6. You will use this FreeSQL user for the remainder of this LiveLab. Next, you'll create a database connection in SQL Developer for VS Code Extension. 
 
+</if>
+
 <if type="tenancy">
 ## Task 1: Download the Instance Wallet
 
@@ -103,6 +105,9 @@ wget -P ~/Desktop/prompts \
 
 > &#9872; **Note:** You can drag and drop the .zip file into a terminal to quickly discover the complete path.
 </if>
+
+<if type="tenancy>
+
 ## Task 2: Create a new REST-enabled database user
 
 1. In your Autonomous AI database console, click **Database Actions** then **View all database actions**.
@@ -235,8 +240,9 @@ wget -P ~/Desktop/prompts \
     complete_file_path_to_your_sqlcldirectory/bin
     ```
 
-
 </if>
+
+<if type=freetier>
 
 ## Task 5: Installing the Cline for VS Code Extension
 
