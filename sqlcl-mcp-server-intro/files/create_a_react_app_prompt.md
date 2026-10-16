@@ -1,24 +1,23 @@
 # Single Web Page Application example
 
-### Objectives
-
-In this lab, you will:
-* TODO: Add objectives
-
-
-Estimated Time: TODO - x minutes
-
+> Note: Do not modify this prompt.
 
 ## Overview
 
-1. You will create a sample single page React application using available information in the chosen connection. If I do not explicitly tell you which connection to use, prompt me with the available connections and have me choose one before proceeding.
-2. You have READ access to view the table data in the CO schema. The sample application will use data from these CO tables. If my target schema does not have READ access to the CO schema data, then recommend alternatives for me. You should be able to find the CO schema under the schema directory named "Other Users"; if you have trouble you can use the following SQL to familarize yourself with the CO schema: 
+1. You will create a sample single page React application using available information in the chosen connection. If I do not explicitly tell you which connection to use, prompt me with the available connections (using SQLcl's connections_list tool) and have me choose one before proceeding.
 
-  `SELECT table_name FROM all_tables WHERE owner='CO' ORDER BY table_name;`  
+2. You have READ access to view the table, view, objects, etc. in the SH and SSB schemas. The sample application will use data from one of these schemas; you decide which. If my target schema does not have READ access to the SH or SSB schema data, then recommend alternatives for me. You should be able to find the SH or SSB schemas under the schema directory view, of the SQL Developer for VS Code extension, named "Other Users"; if you have trouble you can use the skills found in the .dbtools skills library along with the following SQL to familarize yourself with the SH or SSB schemas: 
 
-3. You will make provisions for dynamically fetching data from the database using the node-oracledb add-on for Node.js applications. The initial version of this application will use hard-coded values from the target table data.
+  `SELECT table_name FROM all_tables WHERE owner='SH' ORDER BY table_name;` 
+  `SELECT table_name FROM all_tables WHERE owner='SSB' ORDER BY table_name;`  
 
-4. Here is a example for setting up node-oracledb: 
+3. You will make provisions for dynamically fetching data from the database using the node-oracledb add-on for Node.js applications. The initial version of this application will use hard-coded values from the target table data. 
+
+> NOTE: If this lab is being completed in an Oracle Livelabs sandbox environment (a noVNC instance), then you may not have access to npm or CDNs. You will have access to the python http server. And you will have access to sample reference applications found at the .zip file here(you may attempt a url or wget request to download and unzip these resources): https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/developer-library/react-style-dashboard.zip. 
+
+> Note: Some of the .js modules, CSS, and other resources may be of use. 
+
+4. If not in an Oracle provided sandbox, inbound traffic may be less restrictive. Here is a example for setting up node-oracledb: 
 
     ```js
     /* Copyright (c) 2018, 2024, Oracle and/or its affiliates. */
@@ -182,10 +181,10 @@ Estimated Time: TODO - x minutes
 
 4. You will follow the instructions in the following steps:
 
-## CO schema exploration
+## SH or SSB schema exploration
 
-1. Connect as the chosen connection (user) and explore the CO tables. DO NOT use SQLcl's MCP Sever "schema-information" tool for this exploration.
-2. Provide me with a summary of insights on the CO tables.
+1. Connect as the chosen connection (user) and explore either the SH or SSB tables, views, etc. DO NOT use SQLcl's MCP Server "schema-information" tool for this exploration.
+2. Provide me with a summary of insights on the tables.
 3. Recommend to me some potential statistics/metrics in this CO schema that would be interesting for the single page web application. 
 4. Allow me to choose one of these statistics/metrics to use for the single page web application.
 
@@ -193,7 +192,7 @@ Estimated Time: TODO - x minutes
 
 1. Create a project directory before scaffolding a project.
 2. Once the directory is created, scaffold the single page React application. 
-3. Using what you learned about the CO schema, and the selection I made in the CO schema exploration section, reconnect as the chosen connection (user) and query the values you need to populate the React application.
+3. Using what you learned about the SH or SSB schema, and the selection I made in the SH or SSB schema exploration schema exploration section, reconnect as the chosen connection (user) and query the values you need to populate the React application.
 4. The React application should include 2-3 charts and/or graphs that are dynamic, and provide meaningul, useful, and actionable insights. Everything should fit in a single viewport (nothing "below the fold").
 5. Share with me what you intend to display on the React page before altering the app source files.
 
@@ -209,8 +208,3 @@ Estimated Time: TODO - x minutes
 
 1. Launch the web application and review it for accuracy and expected outcome
 2. If the data and visualization are not visible on screen, please debug as needed. 
-
-## Acknowledgements
-
-* **Author** - TODO: Your Name, Your Title, Your Organization
-* **Last Updated By/Date** - TODO: Your Name, Month Year

@@ -1,20 +1,11 @@
 # Creating mock Schema data, and relevant views
 
-### Objectives
-
-In this lab, you will:
-* TODO: Add objectives
-
-
-Estimated Time: TODO - x minutes
-
-
 ## Connecting and creating database objects
 
 1. Connect as the user. If no user is provided, please prompt me with the available connections, and ask me to choose one of the connections before proceeding to the next step.
 2. Create four tables named car, truck, motorcycle, and manufacturer in the chosen schema with the following characteristics. Please review the following notes before creating the tables: 
 
-> NOTE: For all tables, recommend any other additional columns you think may be relevant.
+> NOTE: For all tables, recommend any other additional columns you think may be relevant. You may use the Skill DB located in the ~/.dbtools/skills/oracle-skills directories.
     
 > NOTE: Ensure that no integrity constraints will be violated. Parent keys, in referred tables, should be verified of their existence before being used in any fictitous data. As an example, make sure the manufacturer_id exists across the various tables.
 
@@ -53,7 +44,7 @@ The tables to be created:
     > NOTE: When performing the inserts, bulk insert the data with syntax such as this:
     > 
     > ```sql
-    > INSERT INTO t(col1, col2, col3) VALUES
+    > INSERT INTO table (col1, col2, col3) VALUES
     > ('val1_1', 'val1_2', 'val1_3'),
     > ('val2_1', 'val2_2', 'val2_3'),
     > ('val3_1', 'val3_2', 'val3_3');
@@ -69,7 +60,7 @@ The tables to be created:
     > NOTE: When performing the inserts, bulk insert the data with syntax such as this:
     > 
     > ```sql
-    > INSERT INTO t(col1, col2, col3) VALUES
+    > INSERT INTO table (col1, col2, col3) VALUES
     > ('val1_1', 'val1_2', 'val1_3'),
     > ('val2_1', 'val2_2', 'val2_3'),
     > ('val3_1', 'val3_2', 'val3_3');
@@ -105,8 +96,3 @@ The tables to be created:
 ## Disconnect
 
 1. Once we are complete, you will disconnect from the Oracle database.
-
-## Acknowledgements
-
-* **Author** - TODO: Your Name, Your Title, Your Organization
-* **Last Updated By/Date** - TODO: Your Name, Month Year
