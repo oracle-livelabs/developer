@@ -23,6 +23,44 @@ As a database user, DBA, or application developer:
 - The `FINANCIAL` schema and sample tables from the previous lab.
 - An API key for either OpenAI or Google AI Studio. Keep API keys, wallets, and passwords outside Git.
 
+## Task 0: Install the inventory-risk demo objects
+
+The profile's object list names existing database objects; it does not create
+them. Before applying the Gemini 3.7 profile or running the verification query,
+connect as `FINANCIAL` and run the schema and seed scripts from the
+`oracle-ai-database-gcp-gemini` repository root, in this order:
+
+```sql
+@sql/setup_supply_chain_graph_schema.sql
+@sql/seed_supply_chain_graph_data.sql
+@sql/setup_inventory_risk_demo_schema.sql
+@sql/seed_inventory_risk_demo_data.sql
+```
+
+The base schema and seed create `SC_PRODUCTS` and `SC_WAREHOUSES`, which the
+inventory-risk tables reference. The inventory schema creates
+`SC_INVENTORY_RISK_SUMMARY`; its seed inserts the demo quarter rows. These
+scripts are rerunnable. Review any reported errors before proceeding.
+
+Confirm the required table and data are visible to `FINANCIAL`:
+
+```sql
+select table_name
+from user_tables
+where table_name in ('SC_PRODUCTS', 'SC_WAREHOUSES',
+                     'SC_INVENTORY_RISK_SUMMARY')
+order by table_name;
+
+select distinct quarter_label
+from financial.sc_inventory_risk_summary
+order by quarter_label;
+```
+
+The first query should list all three tables, and the second should return at
+least one quarter. If the table exists under another owner, do not continue
+with a `FINANCIAL` profile unchanged: use the intended schema consistently in
+the profile object list, script checks, and verification query.
+
 ## Task 1: Configure one Select AI provider
 
 Choose one provider. Do not configure both unless both profiles are intentionally required.
@@ -54,6 +92,28 @@ Connect as `FINANCIAL` and run the following scripts. The credential script prom
 ```
 
 This creates `GOOGLE_AI_CRED` and `PAULPARK_SUPPLY_CHAIN_DEMO`.
+
+The profile uses `gemini-3.7-flash`, an 8,192-token output ceiling, and domain
+guidance for the inventory schema and calendar quarters. Its initial check
+generates SQL for “List SKUs with risk of stock outages, highest risk first.”
+Review the generated SELECT and run it to inspect the returned rows.
+
+If the profile already exists and you are applying the Gemini 3.7 update, run
+the workshop's update script after Task 0, then use the repository's
+preflighted verification script as `FINANCIAL`:
+
+```sql
+@sql/verify_gemini37.sql
+```
+
+It checks that the risk table and expected profile/model exist before querying
+the available quarters, so a missing setup step is reported with a repair
+instruction instead of a later `ORA-00942`.
+
+Without a requested quarter, the default is the latest stored quarter, included
+in the result. “Next quarter” means the next calendar quarter relative to the
+database date. No matching estimates means no data for that period, not zero
+risk. These queries retrieve seeded estimates; they do not calculate a new forecast.
 
 ## Task 2: Install and verify the managed Oracle AI Database Agent
 
