@@ -38,7 +38,7 @@ This Lab assumes you have:
 
 ## Task 1: Obtain code for this workshop
 
-1. [Download the ZIP](https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/labfiles/flask-ords-lab-main.zip) file that contains our the Flask application and associated `HTML` files
+1. [Download the ZIP](https://objectstorage.us-ashburn-1.oraclecloud.com/p/4Au3jJ-t8Wtw3LWyYsDMqQk2FdlXDvXCb1MYRS0J6P4QS-GCrv2YNOolWdtFMLZq/n/c4u04/b/livelabsfiles/o/labfiles/flask-ords-lab-main.zip) file that contains our the Flask application and associated `HTML` files
 
 2. Once downloaded, un-compress the ZIP file and open it (examples in this Workshop will use Visual Studio Code). The contents in your directory should be configured like the image below:
 

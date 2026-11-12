@@ -13,7 +13,7 @@
 
 3. You will make provisions for dynamically fetching data from the database using the node-oracledb add-on for Node.js applications. The initial version of this application will use hard-coded values from the target table data. 
 
-> NOTE: If this lab is being completed in an Oracle Livelabs sandbox environment (a noVNC instance), then you may not have access to npm or CDNs. You will have access to the python http server. And you will have access to sample reference applications found at the .zip file here(you may attempt a url or wget request to download and unzip these resources): https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/developer-library/react-style-dashboard.zip. 
+> NOTE: If this lab is being completed in an Oracle Livelabs sandbox environment (a noVNC instance), then you may not have access to npm or CDNs. You will have access to the python http server. And you will have access to sample reference applications found at the .zip file here(you may attempt a url or wget request to download and unzip these resources): https://objectstorage.us-ashburn-1.oraclecloud.com/p/4Au3jJ-t8Wtw3LWyYsDMqQk2FdlXDvXCb1MYRS0J6P4QS-GCrv2YNOolWdtFMLZq/n/c4u04/b/livelabsfiles/o/developer-library/react-style-dashboard.zip. 
 
 > Note: Some of the .js modules, CSS, and other resources may be of use. 
 

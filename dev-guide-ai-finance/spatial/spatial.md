@@ -49,7 +49,7 @@ In this task, load the floodzones data into a new floodzones table.
 The data is located in an OCI Bucket.  Download the file from
 ```
 <copy>
-https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/labfiles%2Ffloodzonecdd_converted_geojson.json
+https://objectstorage.us-ashburn-1.oraclecloud.com/p/4Au3jJ-t8Wtw3LWyYsDMqQk2FdlXDvXCb1MYRS0J6P4QS-GCrv2YNOolWdtFMLZq/n/c4u04/b/livelabsfiles/o/labfiles%2Ffloodzonecdd_converted_geojson.json
 </copy>
 ```
 and save it as floodzones.json.

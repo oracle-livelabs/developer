@@ -105,7 +105,7 @@ Before you can run the application, you need to provision an **Autonomous AI D
 1. Unzip the application code to a directory of your choice on your local machine: 
 
     
-    [**Application Code**] (https://objectstorage.us-ashburn-1.oraclecloud.com/p/fiiLFGXKlmgrZKSwKQkD2Wc7mf5b8OsPUmIsw4rNUPcbBO31Za8T1NNoGAf0l4_S/n/c4u04/b/livelabsfiles/o/developer-library/pages.zip)   
+    [**Application Code**] (https://objectstorage.us-ashburn-1.oraclecloud.com/p/4Au3jJ-t8Wtw3LWyYsDMqQk2FdlXDvXCb1MYRS0J6P4QS-GCrv2YNOolWdtFMLZq/n/c4u04/b/livelabsfiles/o/developer-library/pages.zip)   
 
 
 2. Navigate to the folder where the code is located. 

@@ -367,7 +367,7 @@ Estimated Lab Time: 20 minutes
 
 3. This `BATCHLOAD` example uses the cURL to simulate a client application executing/recieving HTTP requests/responses. In a text editor, paste the example `BATCHLOAD` cURL command you copied from the previous lab. 
 
-5. Retrieve the sample payload via [this link](https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/developer-library/batchload_directory.zip). Unzip the `.zip` file, if this did not occur automatically.
+5. Retrieve the sample payload via [this link](https://objectstorage.us-ashburn-1.oraclecloud.com/p/4Au3jJ-t8Wtw3LWyYsDMqQk2FdlXDvXCb1MYRS0J6P4QS-GCrv2YNOolWdtFMLZq/n/c4u04/b/livelabsfiles/o/developer-library/batchload_directory.zip). Unzip the `.zip` file, if this did not occur automatically.
 
 6. Once downloaded, copy the filepath details to use in the `--data-binary` option of the cURL command. In this example, the .csv file is located at: `/Users/me/Downloads/project_batchload.csv`. From your text editor *replace the URL seen below with the one copied from your own `BATCHLOAD` cURL command.* *Also, make sure you have the correct file path to the `project_batchload.csv` file.*
 
