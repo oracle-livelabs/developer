@@ -129,7 +129,7 @@ Let's create your first business object and add data to it by importing a CSV fi
 
 7. For the newly created **location** field, select the check box in the **Required** column.
 
-8. Click [this link](https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/oci-library/location.csv) to download the `location.csv` file. This file contains four locations and  provides the data for the Location business object.
+8. Click [this link](https://objectstorage.us-ashburn-1.oraclecloud.com/p/4Au3jJ-t8Wtw3LWyYsDMqQk2FdlXDvXCb1MYRS0J6P4QS-GCrv2YNOolWdtFMLZq/n/c4u04/b/livelabsfiles/o/oci-library/location.csv) to download the `location.csv` file. This file contains four locations and  provides the data for the Location business object.
 
 9. Now click **Data**, then **Import from File** ![Import from File icon](images/import_icon.png).
 
@@ -147,7 +147,7 @@ Let's create your first business object and add data to it by importing a CSV fi
 
 Let's now create the Department and Employee business objects. But instead of creating the business objects and fields one by one and importing data for them, you'll import a ZIP file that defines the two business objects with their fields and data all at once.
 
-1. Click [this link](https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/oci-library/department-employee-bo.zip) and download the `department-employee-bo.zip` file. This ZIP file contains CSV files for the Department and Employee business objects. Feel free to review the contents.
+1. Click [this link](https://objectstorage.us-ashburn-1.oraclecloud.com/p/4Au3jJ-t8Wtw3LWyYsDMqQk2FdlXDvXCb1MYRS0J6P4QS-GCrv2YNOolWdtFMLZq/n/c4u04/b/livelabsfiles/o/oci-library/department-employee-bo.zip) and download the `department-employee-bo.zip` file. This ZIP file contains CSV files for the Department and Employee business objects. Feel free to review the contents.
 
 2. In the Navigator's Business Object pane, click **Menu** ![Menu icon](images/menu-icon.png) and select **Data Manager**. The Data Manager is what you use to import data from a variety of sources.
 
@@ -155,11 +155,11 @@ Let's now create the Department and Employee business objects. But instead of cr
 
 3. On the Manage Application Data page, select **Import Business Objects**.
 
-   ![This image shows the Manage Application Data page, also known as the Data Manager. Import Business Objects is selected.](images/import-bos.png "")
+    ![This image shows the Manage Application Data page, also known as the Data Manager. Import Business Objects is selected.](images/import-bos.png "")
 
 4. On the Upload File step of the Import New Business Objects wizard, click the drag and drop box, select the **department-employee-bo.zip** file, and click **Upload**.
 
-   When the file is uploaded, you'll see a message that the import contains records for the Department and Employee business objects. Click **Next**.
+    When the file is uploaded, you'll see a message that the import contains records for the Department and Employee business objects. Click **Next**.
 
     ![This image shows the Import New Business Objects wizard on the Upload File screen. A zip file has been uploaded and the results show at the bottom.](images/import-bos-upload-result.png "")
 

@@ -63,7 +63,7 @@ In this lab, you will:
 
     ![Click Create Autonomous Database.](./images/createadb.png " ")
 
-2.  This brings up the __Create Autonomous Database__ screen where you will specify the configuration of the instance.
+2. This brings up the __Create Autonomous Database__ screen where you will specify the configuration of the instance.
 
 
 3. Specify basic information for the Autonomous Database:
@@ -139,7 +139,7 @@ In this lab, you will:
 
     ![Click Create Autonomous Database.](./images/createbutton.png " ")
 
-12.  Your instance will begin provisioning. In a few minutes, the state will turn from Provisioning to Available. At this point, your Autonomous Data Warehouse database is ready to use! Have a look at your instance's details here including its name, database version, CPU count, and storage size.
+12. Your instance will begin provisioning. In a few minutes, the state will turn from Provisioning to Available. At this point, your Autonomous Data Warehouse database is ready to use! Have a look at your instance's details here including its name, database version, CPU count, and storage size.
 
     ![Database instance homepage.](./images/instancehomepage.png " ")
 
@@ -289,7 +289,7 @@ Just as you can create and have different tables in your database (`employees`, 
  5. Before you connect to your database, let's upload some files you'll need for the workshop. Select the settings gear in the top right of the Cloud Shell interface then click “Upload”.
     ![Select Upload Cloud Shell](./images/10selectuploadcloudshell.png)
 
- 6. Download [setup_changelogs.zip](https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/developer-library/setup_changelogs.zip) by clicking the link.
+ 6. Download [setup_changelogs.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/4Au3jJ-t8Wtw3LWyYsDMqQk2FdlXDvXCb1MYRS0J6P4QS-GCrv2YNOolWdtFMLZq/n/c4u04/b/livelabsfiles/o/developer-library/setup_changelogs.zip) by clicking the link.
     * The files in this zip folder will be used to automatically create the database objects you will use in the workshop
 
  7. Once that zip file has downloaded to your computer, select it in the "File Upload to your Home Directory" menu and click Upload.

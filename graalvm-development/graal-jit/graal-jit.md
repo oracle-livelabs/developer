@@ -1,6 +1,6 @@
 # 高性能JITコンパイラ
 
-## 概要
+## Introduction (概要)
 
 この演習では、Javaベンチマーク用アプリケーションをGraalVMのJITコンパイラと従来のC2コンパイラでそれぞれ実行し、両者のパフォーマンスを比較します。  
 従来のJavaアプリケーションの実行方法は、java中間コード(javaクラス)をJVMにロードし、インタープリタ、C1コンパイラ、C2コンパイラを経てマシンコードに変換して実行されます。GraalVMの中で、C2コンパイラに代わってGraalコンパイラが新規に開発されました。コンパイルアルゴリズムが最適化され、従来よりも優れたパフォーマンスを達成する実行コードを生成することができます。代表的な最適化手法は以下となります。 
@@ -10,9 +10,9 @@
 
 この演習の中で、JavaサンプルアプリケーションをGraalとC2の２つのコンパイラモードで実行し、両者のパフォーマンスを比較します。
 
-*所要時間: 10分*
+*Estimated Time (所要時間): 10分*
 
-### ■目標
+### Objectives (■目標)
 * GraalVMの高性能JITコンパイラでJavaアプリケーションを実行
 * Javaベンチマークを実行し、GraalVMのJITコンパイラと従来のJITコンパイラのパフォーマンスを比較
 
@@ -107,7 +107,7 @@
     ```
     ```
     <copy>
-    wget https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/developer-library/m2.tar.gz
+    wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/4Au3jJ-t8Wtw3LWyYsDMqQk2FdlXDvXCb1MYRS0J6P4QS-GCrv2YNOolWdtFMLZq/n/c4u04/b/livelabsfiles/o/developer-library/m2.tar.gz
     </copy>
     ```
     ```
@@ -145,7 +145,7 @@
 	```
   <copy>java -XX:-UseJVMCICompiler -jar target/benchmarks.jar</copy>
   ```
-  Graalコンパイラと従来のC2コンパイラの実行結果Score（＝平均実行時間)を比較してみてください。
+    Graalコンパイラと従来のC2コンパイラの実行結果Score（＝平均実行時間)を比較してみてください。
 
 5. Graal JIT Compiler
 

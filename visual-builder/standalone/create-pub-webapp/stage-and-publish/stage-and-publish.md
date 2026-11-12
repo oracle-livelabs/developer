@@ -82,7 +82,7 @@ Let's now stage the application, so other users can test its behavior.
 
 To add more records to your data in the staging database, let's import data for the Department and Employee business objects from a zip file.
 
-1. Click [this link](https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/oci-library/hr_application_stage.zip) and save the `hr_application_stage.zip` file. The ZIP file contains CSV files of the Department and Employee business objects of the HR Application schema with a few more records.
+1. Click [this link](https://objectstorage.us-ashburn-1.oraclecloud.com/p/4Au3jJ-t8Wtw3LWyYsDMqQk2FdlXDvXCb1MYRS0J6P4QS-GCrv2YNOolWdtFMLZq/n/c4u04/b/livelabsfiles/o/oci-library/hr_application_stage.zip) and save the `hr_application_stage.zip` file. The ZIP file contains CSV files of the Department and Employee business objects of the HR Application schema with a few more records.
 
 2. Click **Business Objects** ![Business Objects icon](images/bo-icon.png) in the Navigator, then click **Menu** ![Menu icon](images/menu-icon.png) and select **Data Manager**.
 
@@ -122,7 +122,7 @@ After you have successfully tested the staged application, you can publish it an
 
 3. Click **ORACLE Visual Builder** in the header to go to the Visual Applications page.
 
-   ![This image shows the ORACLE Visual Builder option in the header that takes you to the Visual Applications home page.](images/go-to-home-page.png " ")
+    ![This image shows the ORACLE Visual Builder option in the header that takes you to the Visual Applications home page.](images/go-to-home-page.png " ")
 
 4. Locate the HR Application, click **Live** in the Status column, then select **hrwebapp** to open the app.
 

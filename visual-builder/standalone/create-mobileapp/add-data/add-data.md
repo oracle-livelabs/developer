@@ -19,7 +19,7 @@ This lab assumes you have:
 
 ## Task 1: Import data for the Department business object
 
-1. Right-click [this file](https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/developer-library/Department.csv) and download it to your file system. The `Department.csv` file contains six departments for the application.
+1. Right-click [this file](https://objectstorage.us-ashburn-1.oraclecloud.com/p/4Au3jJ-t8Wtw3LWyYsDMqQk2FdlXDvXCb1MYRS0J6P4QS-GCrv2YNOolWdtFMLZq/n/c4u04/b/livelabsfiles/o/developer-library/Department.csv) and download it to your file system. The `Department.csv` file contains six departments for the application.
 
 2. In the Navigator, click **Business Objects** ![Business Objects icon](./images/bo_icon.png).
 
