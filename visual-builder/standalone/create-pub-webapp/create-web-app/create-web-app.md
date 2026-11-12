@@ -155,11 +155,11 @@ Let's now create the Department and Employee business objects. But instead of cr
 
 3. On the Manage Application Data page, select **Import Business Objects**.
 
-   ![This image shows the Manage Application Data page, also known as the Data Manager. Import Business Objects is selected.](images/import-bos.png "")
+    ![This image shows the Manage Application Data page, also known as the Data Manager. Import Business Objects is selected.](images/import-bos.png "")
 
 4. On the Upload File step of the Import New Business Objects wizard, click the drag and drop box, select the **department-employee-bo.zip** file, and click **Upload**.
 
-   When the file is uploaded, you'll see a message that the import contains records for the Department and Employee business objects. Click **Next**.
+    When the file is uploaded, you'll see a message that the import contains records for the Department and Employee business objects. Click **Next**.
 
     ![This image shows the Import New Business Objects wizard on the Upload File screen. A zip file has been uploaded and the results show at the bottom.](images/import-bos-upload-result.png "")
 

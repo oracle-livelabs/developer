@@ -433,9 +433,9 @@ curl -o func2.zip https://objectstorage.us-ashburn-1.oraclecloud.com/p/4Au3jJ-t8
 
     ![JSON in the Database Actions Menu](./images/JSON-in-the-Database-Actions-Menu.png " ")
 
-   or select the JSON tile on the **Database Actions** homepage.
+    or select the JSON tile on the **Database Actions** homepage.
 
-   ![JSON in the Database Actions launchpad](./images/JSON-in-the-Database-Actions-launchpad.png " ")
+    ![JSON in the Database Actions launchpad](./images/JSON-in-the-Database-Actions-launchpad.png " ")
 
 7. Click on our collection **loggingcollection** on the left side of the page in the **Collections Navigator**
 

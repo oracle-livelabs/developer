@@ -74,19 +74,19 @@ Let’s get started!
     
 12. The instance will begin provisioning and in a few moments the state will change to **Succeeded** and then to **Running**.
 
-   ![Compute Instance success](./images/create-instance-succeeded.png " ")
+    ![Compute Instance success](./images/create-instance-succeeded.png " ")
 
-In the next step, you'll add 5 ingress rules to allow traffic on specific ports within your VCN.
+    In the next step, you'll add 5 ingress rules to allow traffic on specific ports within your VCN.
 
 13. Click on the **Navigation Menu** and select **Networking** then **Virtual Cloud Networks**.
 
-![Select VCN](./images/select-vcn.png " ")
+    ![Select VCN](./images/select-vcn.png " ")
 
 14. Click the VCN link that was created along with your compute instance.
 
 15. Click the **Security** tab, then click on the **Default Security List for vcn-xxxxx**.
 
-![Select VCN](./images/click-default-security-list.png " ")
+    ![Select VCN](./images/click-default-security-list.png " ")
 
 16. Click the **Security Rules** tab, then click the **Add Ingress Rules** under the Ingress Rules section. Note that port 22 is already enabled for SSH communication.
 
@@ -372,11 +372,11 @@ Next you'll create an environment file for the application.
     <copy>
     touch .env
     </copy>
-````
-
-22. Use your favorite editor to open and edit the file.
-
     ````
+    
+    22. Use your favorite editor to open and edit the file.
+    
+        ````
         <copy>
         nano .env
         </copy>
@@ -636,7 +636,7 @@ If you encounter any issues during the setup, here are a few common troubleshoot
     ````
         <copy>
         pip install oci
-        </copy
+        </copy>
     ````
 
 * **GenAI Access Issues**: Verify your user/group has the correct IAM policy applied.

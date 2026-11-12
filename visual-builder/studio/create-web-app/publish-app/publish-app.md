@@ -47,7 +47,7 @@ After your web app has been thoroughly tested, you are ready to publish it to yo
     ![The results when you click the Publish Changes button are shown, with the message '1 Merge hrbranch to master merge request has been created' at the end. The Close button is selected.](images/create-mr-result.png "")
 
     What you're seeing are the Git steps taken to push your changes from the local hrbranch to the remote hrbranch, then to merge them to the project's main branch. Click **Close**.
-<!--5. If you're prompted to authorize your environment, click **OK** in the Authorization Required dialog, then click **Authorize** in the Authorize Jobs page. If additionally prompted to set up OAuth, click **Authorize**. You may need to enable popups in your browser.
+    <!--5. If you're prompted to authorize your environment, click **OK** in the Authorization Required dialog, then click **Authorize** in the Authorize Jobs page. If additionally prompted to set up OAuth, click **Authorize**. You may need to enable popups in your browser.
 
     Once you've provided authorization, click **Publish** again in your workspace to restart the publishing process. Make sure the dialog still has all the details you added in the previous step.
 

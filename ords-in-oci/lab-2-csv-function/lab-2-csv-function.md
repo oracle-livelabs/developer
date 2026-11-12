@@ -61,9 +61,9 @@ If you have the OCI Cloud Shell open, you can now drag and drop files to your ho
 
     > **NOTE**: If your browser has a pop-up blocker enabled, you will need to "allow" the Database Actions window to open.
 
-   **Continue to Step 6 if the new browser window automatically logs in and redirects you to the Database Actions Launch Pad page.**
+    **Continue to Step 6 if the new browser window automatically logs in and redirects you to the Database Actions Launch Pad page.**
 
-   **If you are not logged in automatically, follow Steps 4 and 5.**
+    **If you are not logged in automatically, follow Steps 4 and 5.**
 
 4. On the Database Actions page that was opened in a new browser tab/window, enter **admin** as the username. Then left click the **Next** button.
 
@@ -77,7 +77,7 @@ If you have the OCI Cloud Shell open, you can now drag and drop files to your ho
 
     ![Database Actions Home Page, Click SQL tile](./images/Database-Actions-Home-Page-Click-SQL-tile.png " ")
 
-   > **If this is your first time accessing the SQL Worksheet, you will be presented with a guided tour. Complete the tour or click the X in any tour popup window to quit the tour.**
+    > **If this is your first time accessing the SQL Worksheet, you will be presented with a guided tour. Complete the tour or click the X in any tour popup window to quit the tour.**
 
 7. We are now ready to load data into the database. For this task, we will use the Data Loading tab in the SQL Worksheet.
 

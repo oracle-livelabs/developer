@@ -207,4 +207,14 @@
 ## Launch the web application
 
 1. Launch the web application and review it for accuracy and expected outcome
-2. If the data and visualization are not visible on screen, please debug as needed. 
+2. If the data and visualization are not visible on screen, please debug as needed.
+
+### Objectives
+
+Reference prompt for the [React application lab](../5-build-a-react-app.md).
+
+Estimated Time: Reference material; use within the linked lab.
+
+## Acknowledgements
+
+See the [parent lab acknowledgements](../5-build-a-react-app.md#acknowledgements).

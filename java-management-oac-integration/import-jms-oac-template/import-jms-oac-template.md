@@ -19,11 +19,11 @@ In this lab, you will connect to your Oracle Analytics Cloud (OAC) environment a
 ## Task 1: Access Your OAC Instance
 
 1. In the Oracle Cloud Console, open the navigation menu, click **Analytics & AI**, then under **AI Data Platform** select **Analytics Cloud**.
-   ![OAC Console Navigation](../common/images/configure-analytics-cloud.png)
+    ![OAC Console Navigation](../common/images/configure-analytics-cloud.png)
 2. On the Analytics Cloud page, select your OAC instance.
-   ![OAC Instance List](../common/images/analytics-instances-list.png)
+    ![OAC Instance List](../common/images/analytics-instances-list.png)
 3. Under **Access Information**, click the OAC instance URL to launch OAC in your browser.
-   ![OAC URL Access](../common/images/analytics-instance-details.png)
+    ![OAC URL Access](../common/images/analytics-instance-details.png)
 4. Sign in with the user created and assigned the appropriate role in [Lab 3: Oracle Analytics Cloud Instance Setup](?lab=oac-instance-setup).
    ![User Account Access](../common/images/user-access.png)
 
@@ -39,11 +39,11 @@ The JMS Data Viewer (.dva) file provides pre-built dashboards for visualizing Ja
 
 1. On the OAC home page, locate and click the **Page Menu** (three dots or lines, usually upper-right).
 2. Select **Import Workbook/Flow**.
-   ![OAC Import Menu](./images/analytics-cloud-import-workbook.png)
+    ![OAC Import Menu](./images/analytics-cloud-import-workbook.png)
 3. Click **Select File**, then locate and select the provided JMS OAC template file (`.DVA` or `.zip`).
-   ![OAC Import Menu](./images/analytics-cloud-import-workbook-select.png)
+    ![OAC Import Menu](./images/analytics-cloud-import-workbook-select.png)
 4. Click **Import**.
-   ![Select Template File](./images/analytics-cloud-import-workbook-details.png)
+    ![Select Template File](./images/analytics-cloud-import-workbook-details.png)
 5. When the "Import successful" message appears, click **OK**.
    ![Select Template File](./images/analytics-cloud-import-workbook-details-ok.png)
 

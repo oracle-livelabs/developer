@@ -36,3 +36,13 @@
 4. I want you to show me a breakdown of the employees by their Job ID, on a doughnut chart like this: https://www.chartjs.org/docs/latest/samples/other-charts/doughnut.html
 
 5. Everything should fit in a single viewport (nothing "below the fold").
+
+### Objectives
+
+Reference prompt for the [HTML dashboard lab](../6-build-a-html-dashboard.md).
+
+Estimated Time: Reference material; use within the linked lab.
+
+## Acknowledgements
+
+See the [parent lab acknowledgements](../6-build-a-html-dashboard.md#acknowledgements).

@@ -54,9 +54,9 @@ While the main focus of this Workshop is not to introduce you to Flask, we will 
 
 1. Open your terminal.
 
-   ![Open New Terminal in VS Code](images/open-terminal-in-vs-code.png " ")
+    ![Open New Terminal in VS Code](images/open-terminal-in-vs-code.png " ")
 
-   Commands are different for macOS/Linux and Windows. Alternatively, if using VS Code, we recommend you follow [these instructions](https://code.visualstudio.com/docs/python/tutorial-flask) on how to install Python virtual environments in VS Code (once complete, come back to this Lab).
+    Commands are different for macOS/Linux and Windows. Alternatively, if using VS Code, we recommend you follow [these instructions](https://code.visualstudio.com/docs/python/tutorial-flask) on how to install Python virtual environments in VS Code (once complete, come back to this Lab).
 
     > 🆘 If  your Virtual Environment fails to start in VS Code, check your Python Interpreter!
 
@@ -96,9 +96,9 @@ While the main focus of this Workshop is not to introduce you to Flask, we will 
 
 1. You can now install the Flask application in your virtual environment. Use the following command:
 
-   ```bash
-    <copy>pip install Flask</copy>
-    ```
+    ```bash
+     <copy>pip install Flask</copy>
+     ```
 
 2. Next, we'll start the Flask Application with Debug mode enabled. Debug mode allows you to view your changes in the browser, without having to restart your development server. Enter the following command:
 
@@ -116,7 +116,7 @@ While the main focus of this Workshop is not to introduce you to Flask, we will 
 
     ![The index page in portrait view](images/initial-page-load.png " ")
 
-   🏗 But first, let's personalize this Welcome page.
+    🏗 But first, let's personalize this Welcome page.
 
 2. Notice the filler text at the top of the **`index.html`** page. Let's customize that to make this application unique *to you*.
 
@@ -150,7 +150,7 @@ While the main focus of this Workshop is not to introduce you to Flask, we will 
 
 3. But we'll first explore the *Folium* map at the bottom of this **`index`** page.
 
-   > 🧠 *Folium "makes it easy to visualize data manipulated in Python on an interactive Leaflet.js map. Manipulate your data in Python, then visualize it on a Leaflet map via Folium...It enables both the binding of data to a map for choropleth visualizations and passing rich vector/raster/HTML visualizations as markers on the map. To expand your knowledge of Folium and Leaflet.js, see the "Learn More" section for more details.*
+    > 🧠 *Folium "makes it easy to visualize data manipulated in Python on an interactive Leaflet.js map. Manipulate your data in Python, then visualize it on a Leaflet map via Folium...It enables both the binding of data to a map for choropleth visualizations and passing rich vector/raster/HTML visualizations as markers on the map. To expand your knowledge of Folium and Leaflet.js, see the "Learn More" section for more details.*
 
 4. When in Folium map, you can interact with location markers - these represent various attractions in the downtown Las Vegas area.  
 
@@ -160,39 +160,39 @@ While the main focus of this Workshop is not to introduce you to Flask, we will 
 
     - When clicked, these markers reveal an attraction's name.
 
-   > 😀 *Here is where we first encounter Oracle REST APIs. You'll see the code in a later Lab, but for now, we'll show you, in the browser, the API responsible for providing us with this map's information.*
+    > 😀 *Here is where we first encounter Oracle REST APIs. You'll see the code in a later Lab, but for now, we'll show you, in the browser, the API responsible for providing us with this map's information.*
 
 5. Next you'll review this Oracle endpoint.
 
-   Copy the following URI.
+    Copy the following URI.
 
     ```html
     <copy>https://yfuxkbz2ls7taze-ordshandsonlabs.adb.us-phoenix-1.oraclecloudapps.com/ords/python/flask/museums/</copy>
     ```
 
-   Now place it into your browser's address bar and press Enter. You should see the **`items`** from the **`GET`** request:
+    Now place it into your browser's address bar and press Enter. You should see the **`items`** from the **`GET`** request:
 
-   ![ORDS API results in browser](images/ords-results-in-browser.png " ")
+    ![ORDS API results in browser](images/ords-results-in-browser.png " ")
 
-   > 😀 *This* **`GET`** request is where the Folium map *`GET`s* its input.
+    > 😀 *This* **`GET`** request is where the Folium map *`GET`s* its input.
 
 6. Manipulating the **`GET`** request with query parameters.
 
-   Take that same URI, add these query parameters to the end (as can be seen in the image below).
+    Take that same URI, add these query parameters to the end (as can be seen in the image below).
 
      ```html
      <copy>?q={"$orderby":{"museum_lat":"ASC"}}</copy>
      ```
 
-   Enter it into your browser's address bar, and press Enter.
+    Enter it into your browser's address bar, and press Enter.
 
-   ![Updated address](images/ords-endpoint-with-ascending-query-parameter.png " ")
+    ![Updated address](images/ords-endpoint-with-ascending-query-parameter.png " ")
 
-   Once the page reloads, you'll the results.
+    Once the page reloads, you'll the results.
 
-   ![ORDS API results in ascending order by latitude](images/ords-api-results-ascending-latitude.png " ")
+    ![ORDS API results in ascending order by latitude](images/ords-api-results-ascending-latitude.png " ")
 
-   > ❓ **What do you notice?** If you caught that the venues are all ordered in ascending order, according to their latitudes, you'd be correct!
+    > ❓ **What do you notice?** If you caught that the venues are all ordered in ascending order, according to their latitudes, you'd be correct!
 
 7. Try another. Take that original URI, and add these parameters to the end:
 
@@ -210,7 +210,7 @@ While the main focus of this Workshop is not to introduce you to Flask, we will 
 
 8. Add a location using the **`POST`** request.
 
-   We've created a Resource Handler for this table that can be used for the **`POST`** operation/method. Let's add another location to a table.
+    We've created a Resource Handler for this table that can be used for the **`POST`** operation/method. Let's add another location to a table.
 
     1. We'll do this next step in a terminal. First, begin by copying the appropriate cURL command for your environment.
 
@@ -299,19 +299,19 @@ While the main focus of this Workshop is not to introduce you to Flask, we will 
 
      > 😀 Yet again, we have information provided to us by ORDS.
   
-   The *Choose an option* dropdown has already been populated with product choices; this was done upon page load. The information comes from an autonomous database, handled exclusively Oracle REST APIs.
+    The *Choose an option* dropdown has already been populated with product choices; this was done upon page load. The information comes from an autonomous database, handled exclusively Oracle REST APIs.
   
      ![Choosing a purchase option in the order form](images/choose-an-option-focus.png " ")
 
 3. The *Description* and *Price per* fields change to reflect your product selection. Here is another example of Oracle REST APIs providing the requested product descriptions *and* pricing information.
 
-   ![Description has been updated in order form](images/single-access-pass-option-description-updated.png " ")
+    ![Description has been updated in order form](images/single-access-pass-option-description-updated.png " ")
 
-   > 💡 *A more performant alternative* to this approach might be to request all data from a single API. However, this example merely highlights how *multiple* Oracle REST APIs can be used on a single page.
+    > 💡 *A more performant alternative* to this approach might be to request all data from a single API. However, this example merely highlights how *multiple* Oracle REST APIs can be used on a single page.
 
 4. Next, update the *Passes needed* field. Notice how the *Total Price* field update as well. When you're satisfied with your selections, click the "Complete my purchase" button:
 
-   ![Total price updates on order form](images/total-price-updates-with-quantity.png " ")
+    ![Total price updates on order form](images/total-price-updates-with-quantity.png " ")
 
 5. The **`orderhistory.html`** page will load.
 

@@ -1,15 +1,15 @@
 # GraalVMとDockerコンテナ
 
-## 概要
+## Introduction (概要)
 
 この演習では、演習4で作成したSpring BootのRESTFulサービスをDockerコンテナとして作成、起動します。jar形式とnaitve image形式でそれぞれコンテナを作成し、両者の起動スピードおよびコンテナイメージのサイズを比較します。以下３種類のDockerイメージを作成します。
 * Oracle JDKベースのfat jar用のDockerイメージ
 * Oracle Linux7ベースのnative image用のDockerイメージ
 * Distrolessベースのほぼ静的なnative image用のDockerイメージ
 
-*所要時間: 15分*
+*Estimated Time (所要時間): 15分*
 
-### ■目標
+### Objectives (■目標)
 * 3種類のベース・イメージを使用して、より軽量で高速起動するコンテナイメージを作成
 
 ### ■前提条件
@@ -189,7 +189,7 @@
     ```
     ![docker in spring3](images/edit-pom01.png)
 
-    ```<buildArgs>```タグの中に```StaticExecutableWithDynamicLibC```というパラメータを指定します。このパラメータによりnative imageビルド時標準Cライブラリ```libC```以外の依存ライブラリを全て事前に静的にリンクします。
+    `<buildArgs>`タグの中に`StaticExecutableWithDynamicLibC`というパラメータを指定します。このパラメータによりnative imageビルド時標準Cライブラリ`libC`以外の依存ライブラリを全て事前に静的にリンクします。
 
     <!--
     nanoエディタの編集でソースの整形がうまくいかない場合、pom.xmlを一旦バックアップし、新規pom.xmlを作成して、下記pom.xmlの内容をそのままコピーし、保存してください。

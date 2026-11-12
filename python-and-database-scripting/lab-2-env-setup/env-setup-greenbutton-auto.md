@@ -44,18 +44,18 @@ This lab assumes you have completed the following steps:
 
 ## Task 1: Download Oracle Autonomous Database Wallet
 
-1.  Login to Oracle Cloud Account (Launch OCI in the Reservation Information Page)
-2.  Click the **Navigation** Menu in the upper left, navigate to **Oracle Database** and select **Autonomous Database**
+1. Login to Oracle Cloud Account (Launch OCI in the Reservation Information Page)
+2. Click the **Navigation** Menu in the upper left, navigate to **Oracle Database** and select **Autonomous Database**
 
     NOTE: Make sure that on the left hand pane, you select the compartment corresponding to your reservation allocation (i.e.: LL47448-COMPARTMENT)
 
     ![Compartment](./images/compartment_selection.png " ")
 
-3.  Select the Autonomous Database listed
-4.  In the Autonomous Database Summary screen, select **Database Connection** tab and in the popup **Database Connection** window, in the **Download Client Credentials (Wallet)** section,
+3. Select the Autonomous Database listed
+4. In the Autonomous Database Summary screen, select **Database Connection** tab and in the popup **Database Connection** window, in the **Download Client Credentials (Wallet)** section,
     -  select Wallet Type: Instance Wallet
     - hit **Download Wallet** button
-![Wallet](./images/wallet.png " ")
+    ![Wallet](./images/wallet.png " ")
 
 5. Specify password for the Wallet (please use the password provided by your Tutor)
 
@@ -73,13 +73,13 @@ In the Oracle Autonomous Database Summary screen, we're going to launch Cloud Sh
 
 1. To launch the Cloud Shell, sign in to the Sandbox Oracle Cloud Infrastructure tenancy and click the command prompt icon in Console header, then select Cloud Shell from the drop down:
 
- ![Cloud Shell](./images/cloud_shell.png " ")
+    ![Cloud Shell](./images/cloud_shell.png " ")
 2. When prompted to run tutorial, type N and enter.
 
- ![Cloud Shell](./images/run_tutorial.png " ")
+    ![Cloud Shell](./images/run_tutorial.png " ")
 
 3. When connected, the following should display:
- ![Cloud Shell terminal](./images/cloud_shell_term.png " ")
+    ![Cloud Shell terminal](./images/cloud_shell_term.png " ")
 
 4. Drag and drop the Wallet archive from the location where it was saved, to the Console Shell
  ![Cloud shell wallet](./images/cloud_shell_wallet.png " ")
@@ -146,7 +146,7 @@ The Python packages can be obtained from the software repository of your Linux d
 
 ### Install python-oracledb driver
 
-1.  Check if the Python driver is already installed. If you get a warning that the module is not found, then proceed to install the `python-oracledb` module using python3 and pip.
+1. Check if the Python driver is already installed. If you get a warning that the module is not found, then proceed to install the `python-oracledb` module using python3 and pip.
 
     On Oracle Linux 8, run the following in the Cloud Shell:
 
@@ -161,7 +161,7 @@ The Python packages can be obtained from the software repository of your Linux d
 
     *Note* At runtime, the module name of the python-oracledb package is **oracledb**
 
-2.  Test your install by launching the python console and list the available modules.
+2. Test your install by launching the python console and list the available modules.
 
     ````
     <copy>
@@ -289,7 +289,7 @@ Connect to the Oracle Database and print the version of the database via Python.
 
     ![Connect](./images/connect.png " ")
 
-3.  Executing a query.
+3. Executing a query.
 
     Open **query.py** in Code Editor. It looks like:
 
@@ -331,7 +331,7 @@ Connect to the Oracle Database and print the version of the database via Python.
 
     Fetching Data is described in a later section
 
-4.  Closing connections
+4. Closing connections
 
     Connections and other resources used by python-oracledb will automatically be closed at the end of scope. This is a common programming style that takes care of the correct order of resource closure.
 
@@ -374,7 +374,7 @@ Connect to the Oracle Database and print the version of the database via Python.
 
     If you swap the order of the two close() calls you will see an error.
 
-5.  Checking versions
+5. Checking versions
 
     Review the code contained in *versions.py*:
 

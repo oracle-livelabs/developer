@@ -122,7 +122,7 @@ After you have successfully tested the staged application, you can publish it an
 
 3. Click **ORACLE Visual Builder** in the header to go to the Visual Applications page.
 
-   ![This image shows the ORACLE Visual Builder option in the header that takes you to the Visual Applications home page.](images/go-to-home-page.png " ")
+    ![This image shows the ORACLE Visual Builder option in the header that takes you to the Visual Applications home page.](images/go-to-home-page.png " ")
 
 4. Locate the HR Application, click **Live** in the Status column, then select **hrwebapp** to open the app.
 

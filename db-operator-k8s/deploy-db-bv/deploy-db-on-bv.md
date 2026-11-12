@@ -10,7 +10,7 @@ We'll also specify the  `Reclaim Policy` of the dynamically provisioned volumes 
 
 Estimated Time: 20 minutes
 
-### Objective
+### Objectives
 
 * Create a database running on Kubernetes, using a block volume as persistency store
 
@@ -180,7 +180,7 @@ In this section we'll explain a number of commands that allow you to track what 
 
     ![describe pods](images/desc-pod-1.png)
 
-​    You can execute this command a few times to see the evolution.
+    ​    You can execute this command a few times to see the evolution.
 
 6. While the pod is starting up, you can check the creation of the block volume and a load balancer that were specified in the config file:
 
@@ -243,7 +243,7 @@ OK, it looks like our database is indeed up and running !  Let's try to connect 
     You will now get a warning because we did not configure certificates.  In Chrome you can get around this message quite simply:
 
 2. Type the following text in your browser when visualizing the above screen :
-	  **thisisunsafe**
+    	  **thisisunsafe**
 
     After entering this string of characters, the connection is accepted and you end up on the login screen :
 

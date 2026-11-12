@@ -63,7 +63,7 @@ In this lab, you will:
 
     ![Click Create Autonomous Database.](./images/createadb.png " ")
 
-2.  This brings up the __Create Autonomous Database__ screen where you will specify the configuration of the instance.
+2. This brings up the __Create Autonomous Database__ screen where you will specify the configuration of the instance.
 
 
 3. Specify basic information for the Autonomous Database:
@@ -139,7 +139,7 @@ In this lab, you will:
 
     ![Click Create Autonomous Database.](./images/createbutton.png " ")
 
-12.  Your instance will begin provisioning. In a few minutes, the state will turn from Provisioning to Available. At this point, your Autonomous Data Warehouse database is ready to use! Have a look at your instance's details here including its name, database version, CPU count, and storage size.
+12. Your instance will begin provisioning. In a few minutes, the state will turn from Provisioning to Available. At this point, your Autonomous Data Warehouse database is ready to use! Have a look at your instance's details here including its name, database version, CPU count, and storage size.
 
     ![Database instance homepage.](./images/instancehomepage.png " ")
 

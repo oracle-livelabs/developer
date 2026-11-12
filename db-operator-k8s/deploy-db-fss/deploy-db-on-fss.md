@@ -14,7 +14,7 @@ Therefore we'll be using an NFS volume, which can be mounted on all 3 nodes at o
 
 Estimated Time: 20 minutes
 
-### Objective
+### Objectives
 
 * Create a database running on Kubernetes, using an NFS volume as persistency store
 
