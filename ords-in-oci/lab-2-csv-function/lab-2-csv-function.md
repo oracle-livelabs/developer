@@ -23,14 +23,14 @@ This lab assumes you have:
 
 Download the lab files with the following link. 
 
-[Lab Files](https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/developer-library/func.zip)
+[Lab Files](https://objectstorage.us-ashburn-1.oraclecloud.com/p/4Au3jJ-t8Wtw3LWyYsDMqQk2FdlXDvXCb1MYRS0J6P4QS-GCrv2YNOolWdtFMLZq/n/c4u04/b/livelabsfiles/o/developer-library/func.zip)
 
 We will be using the `file1.csv` file in the next section via a browser so unzip the func.zip file in your local environment/desktop.
 
 To download them in the OCI Cloud Console, use the following command:
 
 ```curl
-curl -o func.zip https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/developer-library/func.zip
+curl -o func.zip https://objectstorage.us-ashburn-1.oraclecloud.com/p/4Au3jJ-t8Wtw3LWyYsDMqQk2FdlXDvXCb1MYRS0J6P4QS-GCrv2YNOolWdtFMLZq/n/c4u04/b/livelabsfiles/o/developer-library/func.zip
 ```
 
 If you have the OCI Cloud Shell open, you can now drag and drop files to your home directory.
@@ -61,9 +61,9 @@ If you have the OCI Cloud Shell open, you can now drag and drop files to your ho
 
     > **NOTE**: If your browser has a pop-up blocker enabled, you will need to "allow" the Database Actions window to open.
 
-   **Continue to Step 6 if the new browser window automatically logs in and redirects you to the Database Actions Launch Pad page.**
+    **Continue to Step 6 if the new browser window automatically logs in and redirects you to the Database Actions Launch Pad page.**
 
-   **If you are not logged in automatically, follow Steps 4 and 5.**
+    **If you are not logged in automatically, follow Steps 4 and 5.**
 
 4. On the Database Actions page that was opened in a new browser tab/window, enter **admin** as the username. Then left click the **Next** button.
 
@@ -77,7 +77,7 @@ If you have the OCI Cloud Shell open, you can now drag and drop files to your ho
 
     ![Database Actions Home Page, Click SQL tile](./images/Database-Actions-Home-Page-Click-SQL-tile.png " ")
 
-   > **If this is your first time accessing the SQL Worksheet, you will be presented with a guided tour. Complete the tour or click the X in any tour popup window to quit the tour.**
+    > **If this is your first time accessing the SQL Worksheet, you will be presented with a guided tour. Complete the tour or click the X in any tour popup window to quit the tour.**
 
 7. We are now ready to load data into the database. For this task, we will use the Data Loading tab in the SQL Worksheet.
 
@@ -365,7 +365,7 @@ In Oracle Functions, an application is:
 18. Download the function code in your OCI Cloud Shell with the following command if you have not done so already:
 
     ```curl
-    curl -o func.zip https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/developer-library/func.zip
+    curl -o func.zip https://objectstorage.us-ashburn-1.oraclecloud.com/p/4Au3jJ-t8Wtw3LWyYsDMqQk2FdlXDvXCb1MYRS0J6P4QS-GCrv2YNOolWdtFMLZq/n/c4u04/b/livelabsfiles/o/developer-library/func.zip
     ```
 
     Once downloaded, unzip it

@@ -40,7 +40,7 @@ This lab assumes:
 
     ```bash
     <copy>
-    /bin/bash -c 'set -euo pipefail; mkdir -p "$HOME/notebooks"; curl -fsSL -o /tmp/private-ai-notebooks.zip "https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/ai-ml-library/private-ai-notebooks.zip"; unzip -o /tmp/private-ai-notebooks.zip -d "$HOME/notebooks"; rm -f /tmp/private-ai-notebooks.zip'
+    /bin/bash -c 'set -euo pipefail; mkdir -p "$HOME/notebooks"; curl -fsSL -o /tmp/private-ai-notebooks.zip "https://objectstorage.us-ashburn-1.oraclecloud.com/p/4Au3jJ-t8Wtw3LWyYsDMqQk2FdlXDvXCb1MYRS0J6P4QS-GCrv2YNOolWdtFMLZq/n/c4u04/b/livelabsfiles/o/ai-ml-library/private-ai-notebooks.zip"; unzip -o /tmp/private-ai-notebooks.zip -d "$HOME/notebooks"; rm -f /tmp/private-ai-notebooks.zip'
     </copy>
     ```
 

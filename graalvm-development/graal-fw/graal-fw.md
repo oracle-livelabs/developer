@@ -1,13 +1,13 @@
 # GraalVMとJavaフレームワーク
 
-## 概要
+## Introduction (概要)
 
 この演習では、代表的なマイクロサービスフレームワークMicrounautとSpring Bootを使用してRESTfulサービスを作成します。  
 native imageの高速起動と小さいフットプリントはJavaベースのマイクロサービス構築には有効であるため、Spring Bootを始め現在主要なマイクロサービスフレームワークがnative image機能に対応しています。本演習で使用するMicronautとSpring Bootはそれぞれnaitve imageをビルドするためのプラグインを提供し、MavenやGradleなどのビルドツールで簡単にネイティブビルドを実現できます。
 
-*所要時間: 15分*
+*Estimated Time (所要時間): 15分*
 
-### ■目標
+### Objectives (■目標)
 * Micronautのサンプルアプリケーションを使用して、従来のFat jar形式とnative imageのパフォーマンスを比較します。
 * Spring Bootのサンプルアプリケーションを使用して、従来のFat jar形式とnative imageのパフォーマンスを比較します。
 
@@ -26,8 +26,8 @@ native imageの高速起動と小さいフットプリントはJavaベースの�
     <copy>ssh -i <your-private-key-file> opc@<x.x.x.x></copy>
         
     ```
-   SSH接続が成立した後、以下のコマンドを発行し、Micronautプロジェクトのテンプレートをダウンロードします。
--->
+    SSH接続が成立した後、以下のコマンドを発行し、Micronautプロジェクトのテンプレートをダウンロードします。
+    -->
 
 1. Micronautアプリケーションのテンプレートをダウンロードします。 ホームディレクトリー配下に移動します。
     ```
@@ -44,7 +44,7 @@ native imageの高速起動と小さいフットプリントはJavaベースの�
     -->
 
     ```
-    <copy>wget https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/developer-library/mndemo.zip</copy>
+    <copy>wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/4Au3jJ-t8Wtw3LWyYsDMqQk2FdlXDvXCb1MYRS0J6P4QS-GCrv2YNOolWdtFMLZq/n/c4u04/b/livelabsfiles/o/developer-library/mndemo.zip</copy>
     ```
 
     ```
@@ -82,12 +82,12 @@ native imageの高速起動と小さいフットプリントはJavaベースの�
     </copy>
     ```
     Ctrl＋Xを押し、内容保存の確認メッセージに対し、"Y"を入力し、Enterを押下してソースファイルを保存します。
-  | ソース箇所 | 実行内容                                                                                                                                                                       |
-  | ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-  | ①          | @Controller アノテーションがコントローラーを定義し、/helloというリクエスト・パスに対応します。                                                                                 |
-  | ②          | @Get アノテーションは下記index メソッドをすべてのHTTP Getリクエストに対応するようにマッピングします。                                                                          |
-  | ③          | デフォルトではMicronautアプリのレスポンスのContentTypeはapplicaiton/jasonです。ここではJSONオブジェクトの代わりにStringをリターンしますので、text/plain を明示的に指定します。 |
-  | ④          | "Hello World"　をリターンします。                                                                                                                                              |
+    | ソース箇所 | 実行内容                                                                                                                                                                       |
+    | ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+    | ①          | @Controller アノテーションがコントローラーを定義し、/helloというリクエスト・パスに対応します。                                                                                 |
+    | ②          | @Get アノテーションは下記index メソッドをすべてのHTTP Getリクエストに対応するようにマッピングします。                                                                          |
+    | ③          | デフォルトではMicronautアプリのレスポンスのContentTypeはapplicaiton/jasonです。ここではJSONオブジェクトの代わりにStringをリターンしますので、text/plain を明示的に指定します。 |
+    | ④          | "Hello World"　をリターンします。                                                                                                                                              |
 
 3. ソースファイルをビルドします。mndemo配下で以下のコマンドを実行します。
 
@@ -103,7 +103,7 @@ native imageの高速起動と小さいフットプリントはJavaベースの�
 
 5. RESTfulサービスの起動時間を確認します。この例では821msです。
 
-	![start micronaut](images/micronaut-start.png)
+    	![start micronaut](images/micronaut-start.png)
 
     
     もう１つ別のターミナルを開き、SSHキーが保存されているディレクトリーからSSH接続でOCIインスタンスにアクセスします。x.x.x.xはOCIインスタンスのパブリックIPです。
@@ -122,7 +122,7 @@ native imageの高速起動と小さいフットプリントはJavaベースの�
     ```
     ![start micronaut3](images/micronaut-start3.png)
 
-   *※重要！※*　RESTfulサービスが起動しているターミナル画面にて、Ctrl+CでMicrounautアプリケーションを停止してください。
+    *※重要！※*　RESTfulサービスが起動しているターミナル画面にて、Ctrl+CでMicrounautアプリケーションを停止してください。
 
     ![stop micronaut](images/micronaut-stop01.png)
 
@@ -176,7 +176,7 @@ native imageの高速起動と小さいフットプリントはJavaベースの�
     -->
 
     ```
-    <copy>wget https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/developer-library/spdemo.zip</copy>
+    <copy>wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/4Au3jJ-t8Wtw3LWyYsDMqQk2FdlXDvXCb1MYRS0J6P4QS-GCrv2YNOolWdtFMLZq/n/c4u04/b/livelabsfiles/o/developer-library/spdemo.zip</copy>
     ```
 
     ```
@@ -290,9 +290,9 @@ native imageの高速起動と小さいフットプリントはJavaベースの�
     </copy>
     ```
     
-   (1)Springアプリケーションをnative imageとして実行するため、Spring Frameworkより提供のSpring Native依存ライブラリ```spring-native```が指定されているのを確認します。
+    (1)Springアプリケーションをnative imageとして実行するため、Spring Frameworkより提供のSpring Native依存ライブラリ```spring-native```が指定されているのを確認します。
    
-   ![spring pom.xml](images/spring-pom01.png)
+    ![spring pom.xml](images/spring-pom01.png)
 
     <!--
     ```
@@ -325,9 +325,9 @@ native imageの高速起動と小さいフットプリントはJavaベースの�
     ```
     -->
       
-   (2) SpringアプリケーションをAOTコンパイラでビルドするため、Spring Frameworkより提供の```spring-aot-maven-plugin```が```build```タグの中の```plugin```として追加されているのを確認します。
+    (2) SpringアプリケーションをAOTコンパイラでビルドするため、Spring Frameworkより提供の```spring-aot-maven-plugin```が```build```タグの中の```plugin```として追加されているのを確認します。
 
-   ![spring pom.xml](images/spring-pom02.png)
+    ![spring pom.xml](images/spring-pom02.png)
 
     <!--
     ```      

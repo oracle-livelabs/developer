@@ -10,7 +10,7 @@ We'll also specify the  `Reclaim Policy` of the dynamically provisioned volumes 
 
 Estimated Time: 20 minutes
 
-### Objective
+### Objectives
 
 * Create a database running on Kubernetes, using a block volume as persistency store
 
@@ -52,7 +52,7 @@ In kubernetes we store these passwords in secrets.
 
 ## Task 2: Create the DB Config file for the Operator
 
-To initiate the creation of the database by the Operator we'll have to create a config file describing the desired database setup.  For this lab we'll use the file [singleinstancedatabase-create.yaml](https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/developer-library/singleinstancedatabase-create.yaml) which contains a configuration ready to use for this part of the lab.
+To initiate the creation of the database by the Operator we'll have to create a config file describing the desired database setup.  For this lab we'll use the file [singleinstancedatabase-create.yaml](https://objectstorage.us-ashburn-1.oraclecloud.com/p/4Au3jJ-t8Wtw3LWyYsDMqQk2FdlXDvXCb1MYRS0J6P4QS-GCrv2YNOolWdtFMLZq/n/c4u04/b/livelabsfiles/o/developer-library/singleinstancedatabase-create.yaml) which contains a configuration ready to use for this part of the lab.
 
 We'll be highlighting some of the sections of this file below, no need to do any edits in this Task :
 
@@ -107,7 +107,7 @@ In this section we'll explain a number of commands that allow you to track what 
 1. Apply the config file to initiate the DB creation :
 
     ```
-    <copy>kubectl apply -f https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/developer-library/singleinstancedatabase-create.yaml</copy>
+    <copy>kubectl apply -f https://objectstorage.us-ashburn-1.oraclecloud.com/p/4Au3jJ-t8Wtw3LWyYsDMqQk2FdlXDvXCb1MYRS0J6P4QS-GCrv2YNOolWdtFMLZq/n/c4u04/b/livelabsfiles/o/developer-library/singleinstancedatabase-create.yaml</copy>
     ```
 
 2. Validate the instance definition was submitted to the operator:
@@ -180,7 +180,7 @@ In this section we'll explain a number of commands that allow you to track what 
 
     ![describe pods](images/desc-pod-1.png)
 
-​    You can execute this command a few times to see the evolution.
+    ​    You can execute this command a few times to see the evolution.
 
 6. While the pod is starting up, you can check the creation of the block volume and a load balancer that were specified in the config file:
 
@@ -243,7 +243,7 @@ OK, it looks like our database is indeed up and running !  Let's try to connect 
     You will now get a warning because we did not configure certificates.  In Chrome you can get around this message quite simply:
 
 2. Type the following text in your browser when visualizing the above screen :
-	  **thisisunsafe**
+    	  **thisisunsafe**
 
     After entering this string of characters, the connection is accepted and you end up on the login screen :
 

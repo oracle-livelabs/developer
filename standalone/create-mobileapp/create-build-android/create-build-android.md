@@ -10,6 +10,10 @@ This lab shows you how to define a build configuration to install a mobile appli
 
 Before you can stage or publish a mobile application, you'll need to create a build configuration that defines deployment information for the Android platform. In this lab, you'll define an Android build configuration, whose settings you'll use to build the mobile application for installation on Android devices in a later lab.
 
+### Objectives
+
+* Create a keystore and define a build configuration for an Android application.
+
 ## Task 1: Create a Keystore for Signing the App
 
 Before your mobile application can be deployed to an Android device, it must be signed. Android does not require a certificate authority; an application can instead be self-signed.
@@ -20,7 +24,7 @@ The following example shows how to create a keystore with a single key that is v
 
 `keytool -genkeypair -v -keystore c:\mykeystore\releasesigning.keystore -alias releaseKeyAlias -keyalg RSA -keysize 2048 -validity 10000`
 
-If you do not want to create a key, right-click [this sample keystore file](https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/developer-library/vbcsdoc.keystore) and download it to your file system to use in this lab. Here are the credentials for the keystore file:
+If you do not want to create a key, right-click [this sample keystore file](https://objectstorage.us-ashburn-1.oraclecloud.com/p/4Au3jJ-t8Wtw3LWyYsDMqQk2FdlXDvXCb1MYRS0J6P4QS-GCrv2YNOolWdtFMLZq/n/c4u04/b/livelabsfiles/o/developer-library/vbcsdoc.keystore) and download it to your file system to use in this lab. Here are the credentials for the keystore file:
 
   -   **Keystore Password**: `vbcsdoc_ks_pass`
   -   **Key alias**: `vbcsdoc_ksalias`
@@ -32,13 +36,13 @@ A build configuration includes deployment configuration and specifies if the bui
 
 These steps assume that you are already logged in to Oracle Visual Builder and are viewing the HR Application you created.
 
-1. If required, click the **Mobile Applications ![](images/vbcsia_mob_mob_icon.png)** tab in the Navigator. Click the **hrmobileapp** node, then the **Settings** tab.
+1. If required, click the **Mobile Applications ![Settings](images/vbcsia_mob_mob_icon.png)** tab in the Navigator. Click the **hrmobileapp** node, then the **Settings** tab.
 
-2.  Click the **Build Configurations** tab and select **Android** in the + Configuration drop-down list.
+2. Click the **Build Configurations** tab and select **Android** in the + Configuration drop-down list.
 
-    ![](images/vbcsia_mob_bp_s1.png)
+    ![Click the Build Configurations tab and select Android in the + Configuration drop-down list.](images/vbcsia_mob_bp_s1.png)
 
-3.  In the Android Build Configuration dialog box, enter:
+3. In the Android Build Configuration dialog box, enter:
 
     -   **Configuration Name:** Enter the configuration name, for example, `MyAndroidBuildConfiguration`.  
 
@@ -54,11 +58,11 @@ These steps assume that you are already logged in to Oracle Visual Builder and a
     -   **Key Alias:** Enter an alias for the key. This is the value set for the keytool's _-alias_ argument. Only the first eight characters of the alias are used. If using the sample keystore file, enter `vbcsdoc_ksalias`.
     -   **Key Password:** Enter the password for the key. This password allows access to the key (identified by the alias) within the keystore. If using the sample keystore file, enter `vbcsdoc_ks_pass`.
 
-    ![](images/vbcsia_mob_bp_s2.png)
+    ![-   Key Password: Enter the password for the key. This password allows access to the key (identified by the alias) within the keystore. If u](images/vbcsia_mob_bp_s2.png)
 
-4.  Click **Save Configuration**. The new build configuration is displayed on the Build Configurations page.
+4. Click **Save Configuration**. The new build configuration is displayed on the Build Configurations page.
 
-    ![](images/vbcsia_mob_bp_result.png)
+    ![Click Save Configuration. The new build configuration is displayed on the Build Configurations page.](images/vbcsia_mob_bp_result.png)
 
 ## Acknowledgements
 * **Author** - Sheryl Manoharan, Visual Builder User Assistance

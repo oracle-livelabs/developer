@@ -47,7 +47,7 @@ After your web app has been thoroughly tested, you are ready to publish it to yo
     ![The results when you click the Publish Changes button are shown, with the message '1 Merge hrbranch to master merge request has been created' at the end. The Close button is selected.](images/create-mr-result.png "")
 
     What you're seeing are the Git steps taken to push your changes from the local hrbranch to the remote hrbranch, then to merge them to the project's main branch. Click **Close**.
-<!--5. If you're prompted to authorize your environment, click **OK** in the Authorization Required dialog, then click **Authorize** in the Authorize Jobs page. If additionally prompted to set up OAuth, click **Authorize**. You may need to enable popups in your browser.
+    <!--5. If you're prompted to authorize your environment, click **OK** in the Authorization Required dialog, then click **Authorize** in the Authorize Jobs page. If additionally prompted to set up OAuth, click **Authorize**. You may need to enable popups in your browser.
 
     Once you've provided authorization, click **Publish** again in your workspace to restart the publishing process. Make sure the dialog still has all the details you added in the previous step.
 
@@ -98,7 +98,7 @@ A deployed application does not automatically include its business object data, 
 
 **Note:** These steps apply only when your environment's Visual Builder instance is in the same identity domain as your VB Studio instance. When it is in a different domain, you won't see deployment actions such as export, import, or undeploy (as shown here). Instead, you must add an **Import Data** step to a build job (either as part of your current deployment job or as a brand new import job) to do this action for you. See [Configure a Build Job to Manage Deployed Visual Apps](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/visual-builder&id=VBBVA-GUID-B466AE27-9924-4A44-954F-5178213ECF65). Optionally, skip this step and complete the workshop  without importing data to the application.
 
-1. Click [this link](https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/developer-library/hr-application.zip) and download the `hr-application.zip` file. The zip file contains CSV files of the Location, Department, and Employee business objects with more records and data.
+1. Click [this link](https://objectstorage.us-ashburn-1.oraclecloud.com/p/4Au3jJ-t8Wtw3LWyYsDMqQk2FdlXDvXCb1MYRS0J6P4QS-GCrv2YNOolWdtFMLZq/n/c4u04/b/livelabsfiles/o/developer-library/hr-application.zip) and download the `hr-application.zip` file. The zip file contains CSV files of the Location, Department, and Employee business objects with more records and data.
 2. In the Deployments tab, click **Actions** ![Actions icon](images/vbs-actions-icon.png) for the deployed tutorial-hr-project and select **Import Data**.
 
     ![The Import Data option from the Actions menu of a deployed application is shown.](images/deployed-application-import-data.png "")
