@@ -2,7 +2,7 @@
 
 ## Introduction
 
-In this lab, you build a complete loan approval engine with Oracle AI Database and OCI Generative AI. Connect to the database, explore order and image data, and invoke a large language model to generate personalized loan decisions and policy explanations. Building on earlier exercises, you’ll apply Python to deliver a fully integrated, AI-powered finance loan application.
+In this lab, you build a complete loan approval engine with Oracle AI Database and OCI Generative AI. Connect to the database, explore customer profiles and loan products, and invoke a large language model to generate personalized loan decisions and policy explanations. Building on earlier exercises, you’ll apply Python to deliver a fully integrated, AI-powered finance loan application.
 
 This lab uses some of the basic coding samples you created in lab 3, such as cursor.execute and more.
 
@@ -65,7 +65,7 @@ This lab assumes you have:
 
     ![Open Notebook](./images/open-notebook.png " ")
 
-3. Copy the following code block into an empty cell in your notebook. This code block imports the `oracledb` Python driver and other libraries.
+3. Copy the following code block into an empty cell. Check **Generative AI Endpoint Region** in **View Login Info**. This workshop uses **US Midwest (Chicago)** (`us-chicago-1`); update `GENAI_REGION` if your reservation specifies another supported region. The explicit inference endpoint takes precedence over the compute region in the OCI credentials file. Run this setup in each new notebook kernel.
 
     ```python
     <copy>
@@ -80,6 +80,15 @@ This lab assumes you have:
     from PyPDF2 import PdfReader
 
     load_dotenv()
+
+    # Select the Generative AI region shown in View Login Info.
+    # Should be like "us-chicago-1"
+    GENAI_REGION = "SPECIFY_GENAI_REGION_HERE"
+    os.environ["ENDPOINT"] = f"https://inference.generativeai.{GENAI_REGION}.oci.oraclecloud.com"
+    os.environ["OCI_GENAI_ENDPOINT"] = os.environ["ENDPOINT"]
+    os.environ["GENAI_RECOMMENDATION_MODEL"] = "cohere.command-a-03-2025"
+    os.environ["GENAI_CHAT_MODEL"] = "meta.llama-3.3-70b-instruct"
+    print("Generative AI endpoint:", os.environ["ENDPOINT"])
 
     username = os.getenv("USERNAME")
     password = os.getenv("DBPASSWORD")
@@ -102,11 +111,11 @@ This lab assumes you have:
 
 ## Task 3: Create a Function to retrieve data from the database.
 
-You will query customer data from the `clients_dv` JSON duality view, which combines data from CUSTOMERS, LOAN_APPLICATIONS, and related tables. This task will:
+You will query customer data from the `clients_dv` JSON duality view, which combines data from CLIENTS, LOAN_APPLICATIONS, and related tables. This task will:
 
 - **Define a Function**: Create a reusable function `fetch_customer_data` to query the database by customer ID, extracting the JSON data for a specific customer.
 
-- **Use an Example**: Fetch data for customer `1000` (James Smith) to demonstrate the process.
+- **Use an Example**: Fetch data for customer `CUST_1000` (James Smith) to demonstrate the process.
 
 - **Display the Results**: Format the retrieved data into a pandas DataFrame for a clear, tabular presentation, showing key details like name, income, credit score, and total debt.
 
@@ -114,7 +123,7 @@ You will query customer data from the `clients_dv` JSON duality view, which comb
 
     ```python
     <copy>
-def fetch_customer_data(customer_id):
+    def fetch_customer_data(customer_id):
         cursor.execute(
             "SELECT data FROM clients_dv WHERE JSON_VALUE(data, '$._id') = :customer_id",
             {'customer_id': customer_id}
@@ -122,10 +131,10 @@ def fetch_customer_data(customer_id):
         result = cursor.fetchone()
         return json.loads(result[0]) if result and isinstance(result[0], str) else result[0] if result else None
 
-selected_customer_id = "CUST_1000"
-customer_json = fetch_customer_data(selected_customer_id)
+    selected_customer_id = "CUST_1000"
+    customer_json = fetch_customer_data(selected_customer_id)
 
-if customer_json:
+    if customer_json:
         loan_app = customer_json.get("loanApplications", [{}])[0]
         print(f"Customer: {customer_json['firstName']} {customer_json['lastName']}")
         print(f"Loan Status: {loan_app['loanStatus']}")
@@ -151,7 +160,7 @@ if customer_json:
         )
         display(df_customer_details)
 
-else:
+    else:
         print("No data found for customer ID:", selected_customer_id)
     </copy>
     ``` 
@@ -172,142 +181,88 @@ With customer profiles in place, you will use OCI Generative AI to generate pers
 Here’s what we’ll do:
 - **Fetch Mock Loan Data**: Retrieve all mock loan data and combine them with customer data.
 - **Build a Prompt**: Construct a structured prompt that combines the customer’s profile with loan requests instructing the LLM to evaluate and recommend a loan (APPROVE, REQUEST INFO, DENY) based solely on this data.
-- **Use OCI Generative AI**: Send the prompt to the `cohere.command-r-plus-08-2024` model via OCI’s inference client, which will process the input and generate a response.
+- **Use OCI Generative AI**: Send the prompt to the `cohere.command-a-03-2025` model via OCI’s inference client, which will process the input and generate a response.
 - **Format the Output**: Display the recommendations with styled headers and lists, covering evaluation, top picks, and explanations—making it easy to read and understand.
 
 1. Copy and paste the code in a new cell:
 
     ```python
     <copy>
-    def generate_recommendations(customer_id, customer_json, df_policy_rules):
-        try:
-            return_request = customer_json.get("returnRequests", [{}])[0]
-            recommendation = return_request.get("recommendation", {})
-            reason = recommendation.get("reason", {})
+    cursor.execute("""
+        SELECT loan_id, loan_provider_name, loan_type, interest_rate,
+               origination_fee, time_to_close, credit_score, debt_to_income_ratio,
+               income, down_payment_percent, is_first_time_home_buyer
+        FROM MOCK_LOAN_DATA
+    """)
+    df_mock_loans = pd.DataFrame(
+        cursor.fetchall(),
+        columns=["LOAN_ID", "LOAN_PROVIDER_NAME", "LOAN_TYPE", "INTEREST_RATE",
+                 "ORIGINATION_FEE", "TIME_TO_CLOSE", "CREDIT_SCORE",
+                 "DEBT_TO_INCOME_RATIO", "INCOME", "DOWN_PAYMENT_PERCENT",
+                 "IS_FIRST_TIME_HOME_BUYER"],
+    )
 
-            cursor.execute("""
-                SELECT p.PRODUCT_NAME
-                FROM PRODUCTS p
-                JOIN ORDERITEMS oi ON p.PRODUCT_ID = oi.PRODUCT_ID
-                JOIN RETURN_REASONS rr ON oi.ORDERITEMS_ID = rr.ORDERITEMS_ID
-                WHERE rr.REASON_ID = :reason_id
-            """, {"reason_id": int(reason.get("reasonId", 0))})
-            product_result = cursor.fetchone()
-            product_name = product_result[0] if product_result else "Unknown Product"
+    def generate_recommendations(customer_id, customer_json, df_mock_loans):
+        loan_app = customer_json.get("loanApplications", [{}])[0]
+        profile = {
+            key: value for key, value in customer_json.items()
+            if key not in ["_metadata", "loanApplications"]
+            and "vector" not in key.lower()
+        }
+        profile["customer_id"] = customer_id
+        profile["loan_application"] = loan_app
+        prompt = f"""You are a loan-review assistant for this Finance workshop.
+    Use only the supplied applicant profile and loan products.
 
-            available_rules_text = "\n".join(
-                f"{rule['RULE_ID']}: {rule['RULE_CODE']} | "
-                f"{rule['RULE_DESCRIPTION']} | Applies To: {rule['APPLIES_TO']}"
-                for rule in df_policy_rules.to_dict(orient="records")
-            )
-            customer_profile_text = "\n".join(
-                f"- {key.replace('_', ' ').title()}: {value}"
-                for key, value in customer_json.items()
-                if key not in ["returnRequests", "_metadata"]
-            )
-            return_request_text = "\n".join(
-                f"- {key.replace('_', ' ').title()}: {value}"
-                for key, value in return_request.items()
-                if key != "recommendation"
-            )
-            reason_text = f"- Return Reason: {reason.get('description', 'N/A')}"
+    Applicant profile:
+    {json.dumps(profile, default=str)}
 
-            prompt = f"""You are a Retail Decision AI. Use only the supplied context.
-    Evaluate the return request and recommend APPROVE, REQUEST INFO, or DENY.
-
-    Available Policy Rules:
-    {available_rules_text}
-
-    Customer Profile:
-    {customer_profile_text}
-
-    Return Request:
-    {return_request_text}
-    {reason_text}
+    Available loan products:
+    {df_mock_loans.to_json(orient="records", default_handler=str)}
 
     Respond with these sections:
+    Suggested Action: APPROVE, REQUEST INFO, or DENY.
+    Comprehensive Evaluation: compare credit score, income, requested amount,
+    total debt, and any supplied eligibility requirements. Show your calculations
+    and their units. Do not invent missing information or mix monthly and annual
+    amounts. If the data does not establish eligibility, request more information.
+    Top 3 Loan Recommendations: list up to three qualifying loan IDs with product
+    names, interest rates, origination fees, and time to close. Treat the supplied
+    income and credit-score thresholds as requirements; never waive a failed
+    requirement because another metric is strong. If no loan qualifies, say so.
+    Recommendations Explanation: explain each recommendation using the data.
+    Risk Management: identify missing documentation and verification steps.
+    Actionable Steps: describe what the reviewer should do next.
 
-    Suggested Action
-    - State APPROVE, REQUEST INFO, or DENY.
-
-    Comprehensive Evaluation
-    - Explain customer history, loyalty, return frequency, receipt, product condition,
-    return amount, and risk level.
-
-    Top 3 Recommendations
-    - Provide up to three specific recommendations with supporting policy rules.
-
-    Recommendations Explanation
-    - Explain how available evidence supports the recommendation.
-
-    Risk Management
-    - Identify safeguards such as additional evidence, partial refund, or store credit.
-
-    Actionable Steps
-    - List the next actions the customer or reviewer should take.
-
-    Keep the response under 500 words and use plain text."""
-
-            print("Generating AI response...")
-
-            genai_client = oci.generative_ai_inference.GenerativeAiInferenceClient(
-                config=oci.config.from_file(
-                    os.getenv("OCI_CONFIG_PATH", "~/.oci/config")
-                ),
-                service_endpoint=os.getenv("ENDPOINT"),
-            )
-
-            # Compatible with the OCI SDK currently installed in this notebook.
-            models = oci.generative_ai_inference.models
-            chat_request = models.CohereChatRequest(
-                api_format="COHERE",
-                message=prompt,
-                max_tokens=800,
-                temperature=0.0,
-                top_p=1.0,
-            )
-            chat_detail = models.ChatDetails(
-                compartment_id=os.getenv("COMPARTMENT_OCID"),
-                chat_request=chat_request,
-                serving_mode=models.OnDemandServingMode(
-                    model_id="cohere.command-r-plus-08-2024"
-                ),
-            )
-
-            chat_response = genai_client.chat(chat_detail)
-            chat_result = chat_response.data.chat_response
-            return (
-                getattr(chat_result, "text", None)
-                or chat_result.choices[0].message.content[0].text
-            )
-
-        except oracledb.DatabaseError as e:
-            print(f"Database error: {e}")
-            return None
-        except Exception as e:
-            print(f"Unexpected error in generate_recommendations: {e}")
-            return None
-
-
-    print("Fetching policy rules...")
-    cursor.execute("""
-        SELECT rule_id, rule_code, rule_description, applies_to, is_active
-        FROM RETURN_POLICY_RULES
-    """)
-    df_policy_rules = pd.DataFrame(
-        cursor.fetchall(),
-        columns=[
-            "RULE_ID", "RULE_CODE", "RULE_DESCRIPTION",
-            "APPLIES_TO", "IS_ACTIVE",
-        ],
-    )
+    Keep the response under 500 words. This is a workshop demonstration, and the
+    reviewer must verify all calculations and eligibility conclusions."""
+        print("Generating loan recommendations...")
+        client = oci.generative_ai_inference.GenerativeAiInferenceClient(
+            config=oci.config.from_file(
+                os.path.expanduser(os.getenv("OCI_CONFIG_FILE", "~/.oci/config")),
+                os.getenv("OCI_PROFILE", "DEFAULT"),
+            ),
+            service_endpoint=os.environ["ENDPOINT"],
+        )
+        models = oci.generative_ai_inference.models
+        response = client.chat(models.ChatDetails(
+            compartment_id=os.environ["COMPARTMENT_OCID"],
+            chat_request=models.CohereChatRequest(
+                api_format="COHERE", message=prompt, max_tokens=1200,
+                temperature=0.0, top_p=1.0,
+            ),
+            serving_mode=models.OnDemandServingMode(
+                model_id=os.environ["GENAI_RECOMMENDATION_MODEL"],
+            ),
+        ))
+        result = response.data.chat_response.text
+        if not result or not result.strip():
+            raise RuntimeError("No recommendation returned. Resolve the AI call before Task 5.")
+        return result
 
     recommendations = generate_recommendations(
-        selected_customer_id,
-        customer_json,
-        df_policy_rules,
+        selected_customer_id, customer_json, df_mock_loans,
     )
-
     print("\nAI Recommendation:\n")
     print(recommendations)
     </copy>
@@ -332,19 +287,22 @@ In this section we will be chunking and storing the recommendations.
 - The chunks will be inserted into `LOAN_CHUNK` with unique `CHUNK_ID` = (`size + chunk_offset`).
 - We display a data frame summary to show the chunks.
 
-1. Copy the following code and run it in a new cell:
+1. Confirm Task 4 returned a Finance recommendation. If it raised an error, correct the endpoint or model and rerun it before proceeding. Copy the following code into a new cell:
 
     ```python
     <copy>
+    if not recommendations or not recommendations.strip():
+        raise RuntimeError("Run Task 4 successfully before creating chunks.")
+
     # Clean any prior chunks for this customer
-cursor.execute("DELETE FROM LOAN_CHUNK WHERE CUSTOMER_ID = :cust_id", {'cust_id': selected_customer_id})
-connection.commit()
+    cursor.execute("DELETE FROM LOAN_CHUNK WHERE CUSTOMER_ID = :cust_id", {'cust_id': selected_customer_id})
+    connection.commit()
 
-# Choose your chunk sizes (add more like 200, 500 if you want)
-chunk_sizes = [50]  # e.g., [50, 200, 500]
+    # Choose your chunk sizes (add more like 200, 500 if you want)
+    chunk_sizes = [50]  # e.g., [50, 200, 500]
 
-# Insert chunks using VECTOR_CHUNKS. Make CHUNK_ID unique by (size  + chunk_offset).
-for size in chunk_sizes:
+    # Insert chunks using VECTOR_CHUNKS. Make CHUNK_ID unique by (size  + chunk_offset).
+    for size in chunk_sizes:
         insert_sql = f"""
             INSERT INTO LOAN_CHUNK (CUSTOMER_ID, CHUNK_ID, CHUNK_TEXT)
             SELECT :cust_id,
@@ -366,20 +324,20 @@ for size in chunk_sizes:
             {'cust_id': selected_customer_id, 'chunk_size': size, 'rec_text': recommendations}
         )
 
-# Fetch chunks for preview
-cursor.execute("""
+    # Fetch chunks for preview
+    cursor.execute("""
     SELECT CHUNK_ID, CHUNK_TEXT
       FROM LOAN_CHUNK
      WHERE CUSTOMER_ID = :cust_id
-  ORDER BY CHUNK_ID
-""", {'cust_id': selected_customer_id})
-rows = cursor.fetchall()
+      ORDER BY CHUNK_ID
+    """, {'cust_id': selected_customer_id})
+    rows = cursor.fetchall()
 
-# Build a compact dataframe
-def _lob_to_str(v): return v.read() if isinstance(v, oracledb.LOB) else v
+    # Build a compact dataframe
+    def _lob_to_str(v): return v.read() if isinstance(v, oracledb.LOB) else v
 
-items = []
-for cid, ctext in rows:
+    items = []
+    for cid, ctext in rows:
         txt = _lob_to_str(ctext) or ""
         items.append({
             "CHUNK_ID": cid,
@@ -390,8 +348,8 @@ for cid, ctext in rows:
 
     df_chunks = pd.DataFrame(items).sort_values("CHUNK_ID")
     connection.commit()
-print(f"✅ Task 5 complete: recommendation chunked for customer {selected_customer_id} (sizes: {chunk_sizes}).")
-display(df_chunks)
+    print(f"✅ Task 5 complete: recommendation chunked for customer {selected_customer_id} (sizes: {chunk_sizes}).")
+    display(df_chunks)
     </copy>
     ```
 
@@ -409,27 +367,27 @@ To handle follow-up questions, you will enhance the system with an AI Guru power
 
 Before answering questions, we need to prepare the data by vectoring the recommendations. This step:
 
-   - **Stores Recommendations**: Inserts the full recommendation text (from previous cell) as a single chunk if not already present.
+   - **Uses Stored Chunks**: Uses the recommendation chunks inserted into `LOAN_CHUNK` in Task 5.
 
    - **Generates Embeddings**: This is a new feature in Oracle AI Database that allows you to create embeddings directly within the database, eliminating the need for external tools or APIs. The `dbms_vector_chain.utl_to_embedding` function takes the recommendation text as input and returns an embedding vector.
 
-   - **Stores Embeddings**: Inserts the generated embedding vector into a table called `LOAN_CHUNKS`.
+   - **Stores Embeddings**: Updates `LOAN_CHUNK.CHUNK_VECTOR` for this customer.
 
 1. Run and review the code in a new cell:
 
     ```python
     <copy>
     # Create Embeddings for Loan Chunks ----
-cursor.execute("""
-    UPDATE LOAN_CHUNK
-       SET CHUNK_VECTOR = dbms_vector_chain.utl_to_embedding(
-           CHUNK_TEXT,
-           JSON('{"provider":"database","model":"DEMO_MODEL","dimensions":384}')
-       )
-     WHERE CUSTOMER_ID = :cust_id
-""", {'cust_id': selected_customer_id})
-connection.commit()
-print("✅ Task 6 complete: embedded vectors for LOAN_CHUNK rows.")
+    cursor.execute("""
+        UPDATE LOAN_CHUNK
+           SET CHUNK_VECTOR = dbms_vector_chain.utl_to_embedding(
+               CHUNK_TEXT,
+               JSON('{"provider":"database","model":"DEMO_MODEL","dimensions":384}')
+           )
+         WHERE CUSTOMER_ID = :cust_id
+    """, {'cust_id': selected_customer_id})
+    connection.commit()
+    print("✅ Task 6 complete: embedded vectors for LOAN_CHUNK rows.")
     </copy>
     ```
 
@@ -446,7 +404,7 @@ Now that the recommendations are vectorized, we can process a user’s question:
 This step:
 
    - **Vectorizes the question**: Embeds the question using `DEMO_MODEL` via `dbms_vector_chain.utl_to_embedding`.
-   - **Performs AI Vector Search**: Retrieve the relevant recommendation text from `LOAN_CHUNKS` table. Then find the most relevant recommendations using similarity search.
+   - **Performs AI Vector Search**: Retrieve the relevant recommendation text from `LOAN_CHUNK` table. Then find the most relevant recommendations using similarity search.
    - **Use RAG**: Combines the customer profile, policy rules using the retrieved recommendation context.
 
 1. Copy the code block below to implement RAG:
@@ -574,6 +532,8 @@ This step:
     2. Identify the fourth qualifying loan, if one exists.
     3. Justify it using credit score, DTI, income, and eligibility requirements.
     4. If no fourth loan qualifies, explain why.
+    5. Never waive an income, credit-score, or other stated eligibility requirement.
+    6. Identify missing data and ask for clarification instead of assuming eligibility.
 
     Keep the answer under 300 words."""
 
@@ -581,9 +541,10 @@ This step:
 
         genai_client = oci.generative_ai_inference.GenerativeAiInferenceClient(
             config=oci.config.from_file(
-                os.getenv("OCI_CONFIG_PATH", "~/.oci/config")
+                os.path.expanduser(os.getenv("OCI_CONFIG_FILE", "~/.oci/config")),
+                    os.getenv("OCI_PROFILE", "DEFAULT"),
             ),
-            service_endpoint=os.getenv("ENDPOINT"),
+            service_endpoint=os.environ["ENDPOINT"],
         )
 
         chat_detail = oci.generative_ai_inference.models.ChatDetails(
@@ -603,7 +564,7 @@ This step:
                 top_p=0.9,
             ),
             serving_mode=oci.generative_ai_inference.models.OnDemandServingMode(
-                model_id="meta.llama-3.3-70b-instruct"
+                model_id=os.environ["GENAI_CHAT_MODEL"]
             ),
         )
 
@@ -631,7 +592,7 @@ This step:
 
 3. Review the result.
 
-    >*Note:* Your result may be different due to non-deterministic character of generative AI.
+    > **Note:** Results vary. Check the generated calculations and loan eligibility against the source data before accepting the answer.
 
     ![rag](./images/task7results.png " ")
 
@@ -659,4 +620,4 @@ You may now proceed to the next lab.
 ## Acknowledgements
 * **Authors** - Francis Regalado
 * **Contributors** - Linda Foinding
-* **Last Updated By/Date** - Linda Foinding, September 2025
+* **Last Updated By/Date** - William Masdon, November 2026

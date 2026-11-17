@@ -30,7 +30,7 @@
         {
             "title": "Lab 5: Interact with Oracle AI Database through an MCP Server",
             "description": "This is a step-by-step guide showcasing how the demo instance is navigated",
-            "filename": "https://livelabs.oracle.com/cdn/developer/dev-ai-app-dev-retail/mcp/mcp.md"
+            "filename": "../../mcp/mcp.md"
         },
         {
             "title": "Need Help?",
