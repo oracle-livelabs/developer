@@ -365,9 +365,6 @@ Next you'll create an environment file for the application.
     COMPARTMENT_OCID=""
     TENANCY_OCID=""
     ENDPOINT=https://inference.generativeai.us-chicago-1.oci.oraclecloud.com
-    OCI_GENAI_ENDPOINT=https://inference.generativeai.us-chicago-1.oci.oraclecloud.com
-    GENAI_RECOMMENDATION_MODEL=cohere.command-a-03-2025
-    GENAI_CHAT_MODEL=meta.llama-3.3-70b-instruct
     </copy>
     ```
 
