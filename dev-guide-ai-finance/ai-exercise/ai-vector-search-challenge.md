@@ -41,7 +41,7 @@ This lab assumes you have:
 - Completed Lab 3: Coding Basics on Oracle Database 23ai.
 - Completed Lab 4: Step by step: Implement RAG with Oracle Database 23ai.
 
->💡 **Note:** You can download the code and run this lab on your own time here: [AI Vector Search Code](https://objectstorage.us-ashburn-1.oraclecloud.com/p/yiZgIeQQptaFaDMHUQ_623UuChmv1jf_9dCj10wwgjmsQitUMb5QP7mPv1Z1med8/n/c4u04/b/gen-ai/o/ai_vector_search_code)
+>💡 **Note:** You can download the code and run this lab on your own time here: [AI Vector Search Code](https://objectstorage.us-ashburn-1.oraclecloud.com/p/4Au3jJ-t8Wtw3LWyYsDMqQk2FdlXDvXCb1MYRS0J6P4QS-GCrv2YNOolWdtFMLZq/n/c4u04/b/livelabsfiles/o/gen-ai/ai_vector_search_code)
 
 ## Task 1: Challenge requirements
 
