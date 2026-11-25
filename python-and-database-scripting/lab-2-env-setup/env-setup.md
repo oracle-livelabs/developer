@@ -42,7 +42,7 @@ This lab assumes you have completed the following labs:
 Python comes preinstalled on most Linux distributions, and for this LiveLab, the Cloud Shell already has Python 3.8.14 preinstalled, so you don't have to run this step. In case you wanted to install Python in your own environment, outside of Cloud Shell, the steps for installing it are provided below.
 The Python packages can be obtained from the software repository of your Linux distribution using the package manager.
 
-1.  Open up the Oracle Cloud Shell and check if python3 has been installed, by running the command:
+1. Open up the Oracle Cloud Shell and check if python3 has been installed, by running the command:
 
     ````
     <copy>
@@ -53,7 +53,7 @@ The Python packages can be obtained from the software repository of your Linux d
     For this tutorial, Python version 3.6 (or later) is preferred. python-oracledb version 1.0 (or later) is needed.
     You must have an Oracle Autonomous Database already created, in order to connect to it using the python-oracledb driver.
 
-2.  Upgrade Python if you do not have Python 3 installed. There is no harm in running this command multiple times, the system will either install packages or let you know they are already installed.
+2. Upgrade Python if you do not have Python 3 installed. There is no harm in running this command multiple times, the system will either install packages or let you know they are already installed.
 
     ````
     <copy>
@@ -65,7 +65,7 @@ The Python packages can be obtained from the software repository of your Linux d
 
 ## Task 2: Install python-oracledb driver
 
-1.  Check if the Python driver is already installed. If you get a warning that the module is not found, then proceed to install the `python-oracledb` module using python3 and pip.
+1. Check if the Python driver is already installed. If you get a warning that the module is not found, then proceed to install the `python-oracledb` module using python3 and pip.
 
     On Oracle Linux 8, run the following in the Cloud Shell:
 
@@ -80,7 +80,7 @@ The Python packages can be obtained from the software repository of your Linux d
 
     *Note* At runtime, the module name of the python-oracledb package is **oracledb**
 
-2.  Test your install by launching the python console and list the available modules.
+2. Test your install by launching the python console and list the available modules.
 
     ````
     <copy>
@@ -97,13 +97,13 @@ The Python packages can be obtained from the software repository of your Linux d
 
 ## Task 3: Download the sample files on Cloud Shell
 
-1. Get the sample Python scripts from [here](https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/developer-library/python_samples.zip):
+1. Get the sample Python scripts from [here](https://objectstorage.us-ashburn-1.oraclecloud.com/p/4Au3jJ-t8Wtw3LWyYsDMqQk2FdlXDvXCb1MYRS0J6P4QS-GCrv2YNOolWdtFMLZq/n/c4u04/b/livelabsfiles/o/developer-library/python_samples.zip):
 
     In the Cloud Shell, run the following:
 
     ````
     <copy>
-    wget https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/developer-library/python_samples.zip
+    wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/4Au3jJ-t8Wtw3LWyYsDMqQk2FdlXDvXCb1MYRS0J6P4QS-GCrv2YNOolWdtFMLZq/n/c4u04/b/livelabsfiles/o/developer-library/python_samples.zip
     </copy>
     ````
 2. In the Cloud Shell, navigate to your home directory and unzip the sample.zip file, then remove the .zip file:
@@ -236,7 +236,7 @@ Oracle Cloud Infrastructure (OCI) Code Editor provides a rich, in-console editin
     ````
 
 5. In Code Editor, review *db\_config.py* (thin mode), and *db\_config.sql* files in the samples/tutorial and samples/tutorial/sql directories respectively.
-These files are included in other Python and SQL files for setting up the database connection.
+    These files are included in other Python and SQL files for setting up the database connection.
 
     Review *db\_config.py* in Code Editor:
 
@@ -278,7 +278,7 @@ These files are included in other Python and SQL files for setting up the databa
     ````
 
 6. In Code Editor, navigate to home/localuser/Wallets directory and edit the *sqlnet.ora* file to add the wallet
-location directory and save
+    location directory and save
 
     *Note*: Replace **localuser** in the path with the value of the actual localuser on your OCI environment
 
@@ -294,7 +294,7 @@ location directory and save
 
 ## Task 5: Add a New Schema in your Oracle Autonomous Database
 1. In this tutorial you will create a new schema in Oracle Autonomous Database Serverless.
-Review the grants created in *samples/tutorial/sql/create\_user.sql* by opening it in Code Editor. Then open a terminal window and run create\_user.py to execute the create\_user.sql script and create the new schema. This tutorial uses the name **pythondemo** for the new schema.
+    Review the grants created in *samples/tutorial/sql/create\_user.sql* by opening it in Code Editor. Then open a terminal window and run create\_user.py to execute the create\_user.sql script and create the new schema. This tutorial uses the name **pythondemo** for the new schema.
 
     *Note: The password you enter for the schema must contain at least an Upper letter, should be 12 characters or more, one digit required.*
 
@@ -378,7 +378,7 @@ Connect to the Oracle Database and print the version of the database via Python.
 
     Adjust the username, password, or connection string parameters to invalid values to see the exception.
 
-3.  Executing a query.
+3. Executing a query.
 
     Open **query.py** in Code Editor. It looks like:
 
@@ -420,7 +420,7 @@ Connect to the Oracle Database and print the version of the database via Python.
 
     Fetching Data is described in a later section
 
-4.  Closing connections
+4. Closing connections
 
     Connections and other resources used by python-oracledb will automatically be closed at the end of scope. This is a common programming style that takes care of the correct order of resource closure.
         
@@ -462,7 +462,7 @@ Connect to the Oracle Database and print the version of the database via Python.
         
     If you swap the order of the two close() calls you will see an error.
 
-5.  Checking versions
+5. Checking versions
 
     Review the code contained in *versions.py*:
 
