@@ -2,7 +2,7 @@
 
 ## Introduction
 
-In this lab, you build a construction procurement engine with Oracle AI Database and OCI Generative AI. Connect to the database, explore the sample procurement data, and invoke a large language model to generate supplier recommendations and risk explanations. Building on earlier exercises, you’ll apply Python to deliver a fully integrated, AI-powered construction procurement application.
+In this lab, you build a construction procurement engine with Oracle AI Database and OCI Generative AI. Connect to the database, explore the sample procurement data, and invoke a large language model to generate supplier recommendations and risk explanations. Building on earlier exercises, you’ll apply Python to deliver a fully integrated, AI-powered construction procurement application. In an optional task, you'll also explore Oracle AI Database Select AI to query project and supplier data using natural language.
 
 Estimated Time: 30 minutes
 
@@ -12,6 +12,7 @@ Estimated Time: 30 minutes
 * Use OCI Generative AI to generate contextual procurement recommendations
 * Use Python to connect to an Oracle AI Database instance and run queries
 * Explore procurement data and extract relevant information
+* Configure and use Select AI to query structured data using natural language.
 
 ### Prerequisites
 
@@ -975,10 +976,306 @@ This step:
 
     ![rag](./images/task7results.png " ")
 
-## Summary
+## Task 10 (Optional): Query the Data Using Natural Language with Select AI
 
-Congratulations! You implemented a RAG process in Oracle AI Database
-using Python.
+In Lab 1, you used the Construction Data Explorer to ask questions about projects and suppliers. In this task, you will configure and use the Select AI capability behind that experience.
+
+In Task 9, you implemented RAG using AI Vector Search to retrieve relevant information and generate context-aware responses. Select AI takes a different approach by translating natural-language questions into SQL to query structured data.
+
+You will reuse your existing database connection, configure Select AI, examine generated SQL, and retrieve information using natural-language questions.
+
+1. **Review the Existing AI Configuration**
+
+    The LiveLabs environment is already configured to connect to OCI Generative AI. In this step, you will examine the existing configuration that Select AI uses to communicate with the AI service.
+
+    The following code retrieves the configuration details for your lab session, including the AI provider, region, and model. These settings are automatically supplied by the environment, so you do not need to configure them manually.
+
+    Copy and run the following code in a new notebook cell.
+
+    ```python
+    <copy>
+    application_profile = "CONSTRUCTION_APP_AI"
+    learning_profile = "CONSTRUCTION_SELECT_AI"
+
+    cursor.execute(
+        """
+        SELECT ATTRIBUTE_NAME, ATTRIBUTE_VALUE
+        FROM USER_CLOUD_AI_PROFILE_ATTRIBUTES
+        WHERE PROFILE_NAME = :profile_name
+        AND LOWER(ATTRIBUTE_NAME) IN (
+            'provider',
+            'credential_name',
+            'region',
+            'oci_compartment_id',
+            'model'
+        )
+        """,
+        {"profile_name": application_profile}
+    )
+
+    session_ai_config = {}
+
+    for name, value in cursor.fetchall():
+        value = value.read() if hasattr(value, "read") else value
+
+        # Handle attributes represented as either text or JSON strings.
+        if isinstance(value, str):
+            try:
+                value = json.loads(value)
+            except json.JSONDecodeError:
+                pass
+
+        session_ai_config[name.lower()] = value
+
+    required_attributes = [
+        "provider",
+        "credential_name",
+        "region",
+        "oci_compartment_id",
+        "model"
+    ]
+
+    missing = [
+        name for name in required_attributes
+        if not session_ai_config.get(name)
+    ]
+
+    if missing:
+        raise RuntimeError(
+            "The application AI configuration is incomplete. "
+            "Missing attributes: " + ", ".join(missing)
+        )
+
+    print("Provider:", session_ai_config["provider"])
+    print("Region:", session_ai_config["region"])
+    print("Model:", session_ai_config["model"])
+    </copy>
+    ```
+
+    After running the code, your notebook should display the configured AI provider, region, and model, similar to the example below. These values are retrieved from your LiveLabs environment and may differ depending on your lab session.
+
+    ![AI Configuration](./images/task10step1.png " ")
+
+2. **Create Your Select AI Profile**
+
+    An AI profile defines how Select AI connects to the AI service and which database tables it can use to generate SQL.
+
+    In this step, you will create your own profile using the existing configuration and the construction project and supplier tables. Your profile will be separate from the one used by the application, allowing you to experiment without affecting the demo.
+
+    Copy and run the following code in a new cell:
+
+    ```python
+    <copy>
+    learning_attributes = {
+    **session_ai_config,
+    "comments": True,
+    "constraints": True,
+    "object_list": [
+        {"owner": "ADMIN", "name": "CE_PROJECTS"},
+        {"owner": "ADMIN", "name": "CE_PROJECT_REQUIREMENTS"},
+        {"owner": "ADMIN", "name": "CE_SUPPLIERS"},
+        {"owner": "ADMIN", "name": "CE_SUPPLIER_RECOMMENDATION"},
+        {"owner": "ADMIN", "name": "CE_SUPPLIER_EVALUATION"}
+    ]
+    }
+
+    cursor.execute(
+        """
+        SELECT COUNT(*)
+        FROM USER_CLOUD_AI_PROFILES
+        WHERE PROFILE_NAME = :profile_name
+        """,
+        {"profile_name": learning_profile}
+    )
+
+    if cursor.fetchone()[0] == 0:
+        cursor.execute(
+            """
+            BEGIN
+                DBMS_CLOUD_AI.CREATE_PROFILE(
+                    profile_name => :profile_name,
+                    attributes   => :attributes
+                );
+            END;
+            """,
+            {
+                "profile_name": learning_profile,
+                "attributes": json.dumps(learning_attributes)
+            }
+        )
+        print("Created profile:", learning_profile)
+    else:
+        print("Profile already exists; its configuration was retained.")
+
+    cursor.execute(
+        """
+        SELECT PROFILE_NAME, STATUS
+        FROM USER_CLOUD_AI_PROFILES
+        WHERE PROFILE_NAME = :profile_name
+        """,
+        {"profile_name": learning_profile}
+    )
+
+    display(
+        pd.DataFrame(
+            cursor.fetchall(),
+            columns=["PROFILE_NAME", "STATUS"]
+        )
+    )
+    </copy>
+    ```
+
+    After running the code, your notebook should display the newly created Select AI profile with a status of `ENABLED`, as shown below.
+
+    ![AI Configuration](./images/task10step2.png " ")
+
+    If you rerun the cell, the existing learning profile will be retained rather than recreated.
+
+3. **Generate SQL from a Natural-Language Question**
+
+    Now that your Select AI profile is configured, you can ask questions about projects and suppliers without writing SQL.
+
+    In this step, you will use Select AI to translate a natural-language question into SQL. The generated SQL will be displayed for you to review before executing it.
+
+    Copy and run this code in a new cell:
+
+    ```python
+    <copy>
+    question = "Which projects have critical procurement urgency?"
+
+    cursor.execute(
+        """
+        SELECT DBMS_CLOUD_AI.GENERATE(
+            prompt       => :question,
+            profile_name => :profile_name,
+            action       => 'showsql'
+        )
+        FROM dual
+        """,
+        {
+            "question": question,
+            "profile_name": learning_profile
+        }
+    )
+
+    value = cursor.fetchone()[0]
+    generated_sql = value.read() if hasattr(value, "read") else value
+
+    print("Question:", question)
+    print("\nGenerated SQL:\n")
+    print(generated_sql)
+    </copy>
+    ```
+
+    After running the cell, review the SQL generated by Select AI, similar to the example below. The showsql action generates SQL without executing it.
+
+    ![Review SQL](./images/task10step3.png " ")
+
+    Review the SQL before continuing:
+    * Does it reference the construction tables?
+    * Does it join projects to their requirements using PROJECT_ID?
+    * Does it filter procurement urgency for Critical?
+
+    The SQL’s formatting and aliases may differ between runs.
+
+4. **Execute the natural-language query and display results**
+
+    In the previous step, you used Select AI to generate SQL from a natural-language question. Now you will use the runsql action to generate and execute a query against the construction database.
+
+    Copy and run the following code in a new notebook cell.
+
+    ```python
+    <copy>
+    cursor.execute(
+        """
+        SELECT DBMS_CLOUD_AI.GENERATE(
+            prompt       => :question,
+            profile_name => :profile_name,
+            action       => 'runsql'
+        )
+        FROM dual
+        """,
+        {
+            "question": question,
+            "profile_name": learning_profile
+        }
+    )
+
+    result = cursor.fetchone()[0]
+    answer = result.read() if hasattr(result, "read") else result
+
+    try:
+        data = json.loads(answer)
+        display(pd.DataFrame(data if isinstance(data, list) else [data]))
+    except (json.JSONDecodeError, TypeError):
+        display(answer)
+    </copy>
+    ```
+
+    After running the code, your notebook should display the matching construction records in a table, similar to the example below. The results depend on your question and the available data.
+
+    ![Display Results](./images/task10step4.png " ")
+
+5. **Explore with Your Own Questions**
+
+    Now it's your turn to explore what Select AI can do.
+
+    Imagine you're a procurement manager responsible for evaluating projects, comparing suppliers, and identifying potential risks. What information would help you make better decisions? With Select AI, you can ask questions in natural language and retrieve answers directly from Oracle AI Database without writing SQL.
+
+    Copy and run the following code in a new notebook cell.
+
+    ```python
+    <copy>
+    question = input("What would you like to know? ")
+
+    cursor.execute(
+        """
+        SELECT DBMS_CLOUD_AI.GENERATE(
+            prompt       => :question,
+            profile_name => :profile_name,
+            action       => 'runsql'
+        )
+        FROM dual
+        """,
+        {
+            "question": question,
+            "profile_name": learning_profile
+        }
+    )
+
+    result = cursor.fetchone()[0]
+    answer = result.read() if hasattr(result, "read") else result
+
+    try:
+        data = json.loads(answer)
+        display(pd.DataFrame(data if isinstance(data, list) else [data]))
+    except (json.JSONDecodeError, TypeError):
+        display(answer)
+    </copy>
+    ```
+
+    After running the cell, a question prompt appears below the code, as shown below. This is where you can enter your own question.
+
+    ![Ask the question](./images/task10step5question.png " ")
+
+    **Explore these business questions**
+
+    Start with one of the following questions:
+    * Which suppliers have fit scores of 80 or higher?
+    * Can you identify which projects may need attention first?
+    * Show supplier names, project names, and fit scores, sort them from highest to lowest.
+
+    Enter one of the suggested questions and press **Enter**. Select AI processes your question and retrieves the matching information from the database. The example below shows the results for **“Can you identify which projects may need attention first?”**
+
+    ![Display Results](./images/task10step5response.png " ")
+
+    Run the cell again with a different question and observe how the results change.
+
+    You can continue refining your questions to explore different aspects of your projects and suppliers.
+
+You have successfully configured Select AI to query project and supplier data using natural language, gaining insights without writing SQL.
+
+## Summary
 
 To summarize, you:
 
@@ -995,14 +1292,17 @@ To summarize, you:
 * Used Oracle AI Database Vector Search and RAG to answer a
   natural-language follow-up question with retrieved project and
   supplier context.
+* Explored Oracle AI Database Select AI to generate SQL and query structured data using natural language.
 
 Congratulations, you completed the lab.
 
 ## Learn More
 
 * [Code with Python](https://www.oracle.com/developer/python-developers/)
-* [Oracle AI Database Documentation](https://docs.oracle.com/en/database/oracle/oracle-database/23/)
+* [Oracle AI Database Documentation](https://docs.oracle.com/en/database/oracle/oracle-database/26/)
 
 ## Acknowledgements
-* **Authors** - Francis Regalado
-* **Last Updated By/Date** - Taylor Zheng, Uma Kumar, Deion Locklear, Daniel Hart, July 2026
+
+* **Authors** - Francis Regalado, Ley Sylvester
+* **Contributors** - Taylor Zheng, Uma Kumar, Deion Locklear, Daniel Hart
+* **Last Updated By/Date** - Ley Sylvester (November 2026)

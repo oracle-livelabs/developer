@@ -8,7 +8,7 @@ SeerGroup is a global conglomerate with multiple divisions. Across those divisio
 
 This workshop shows how Seer Construction addresses that problem with Oracle AI Database and OCI Generative AI. By keeping procurement data in one place, the application helps procurement officers, engineers, and managers review projects faster, generate clearer supplier recommendations, and make better-informed decisions.
 
-First, you will experience the application from the procurement user’s point of view, exploring Oracle AI Database capabilities including **AI Vector Search**, **Property Graph**, and **JSON Relational Duality Views**. Then, you will go behind the scenes and build the core AI workflow step by step using **Oracle AI Database**, **OCI Generative AI** for AI-generated responses, Python for application logic, and **Retrieval-Augmented Generation (RAG)** to ground answers in retrieved business context.
+First, you will experience the application from the procurement user’s point of view, exploring Oracle AI Database capabilities including **AI Vector Search**, **Property Graph**, **JSON Relational Duality Views**, and **Select AI**. Then, you will go behind the scenes and build the core AI workflow step by step using **Oracle AI Database**, **OCI Generative AI** for AI-generated responses, Python for application logic, and **Retrieval-Augmented Generation (RAG)** to ground answers in retrieved business context.
 
 Estimated Workshop Time: 60 minutes
 
@@ -22,6 +22,7 @@ You will see how the application can:
 * Support approval, denial, or request-for-information decisions with supplier evidence, risk factors, and decision summaries. 
 * Show relationships between projects, suppliers, requirements, and evaluations, including associated risk information, using Property Graph.
 * Update project profile information using data extracted from an uploaded PDF.
+* Use Select AI to query project and supplier information using natural language without writing SQL.
 
 This demo shows how Oracle AI Database and OCI Generative AI can help streamline procurement review, identify supplier risks, and support better-informed decisions by bringing project and supplier information together in a single application.
 
@@ -29,7 +30,7 @@ This demo shows how Oracle AI Database and OCI Generative AI can help streamline
 
 After using the demo application in Lab 1, you will switch from procurement user to developer. In Lab 2, you will work in a **JupyterLab development environment** to build the core AI workflow behind the application step by step.
 
-You will connect to Oracle AI Database from Python, retrieve project data from a JSON relational duality view, use OCI Generative AI to generate supplier recommendations, chunk and store the recommendation text, create vector embeddings, and use AI Vector Search with RAG to answer follow-up questions.
+You will connect to Oracle AI Database from Python, retrieve project data from a JSON relational duality view, use OCI Generative AI to generate supplier recommendations, chunk and store the recommendation text, create vector embeddings, and use AI Vector Search with RAG to answer follow-up questions. In an optional task, you will also configure a Select AI profile, generate and review SQL, and retrieve information by asking natural-language questions.
 
 By the end of the workshop, you will have experienced the application as an end user and built the core AI workflow behind it as a developer.
 
@@ -43,6 +44,7 @@ In this workshop, you will:
 * Generate supplier recommendations with OCI Generative AI.
 * Use AI Vector Search and RAG to answer follow-up questions with retrieved business context.
 * Explore connected project and supplier relationships with Property Graph.
+* Configure and use Select AI to query data using natural language.
 * Build the core AI workflow using Python.
 
 ### Prerequisites
@@ -55,7 +57,7 @@ This workshop assumes you have:
 
 ### Architecture
 
-Below is a visual representation of the lab workflow. As a **Construction Procurement Officer**, you will review supplier submissions for construction engineering projects. When you ask a question, an embedding model converts it into a **vector embedding**, and **AI Vector Search** in Oracle AI Database retrieves relevant project and supplier information based on meaning rather than exact keyword matches. Using **Retrieval-Augmented Generation (RAG)**, the retrieved information is provided to **OCI Generative AI** along with your question to generate a grounded answer.
+Below is a visual representation of the lab workflow. As a **Construction Procurement Officer**, you will review supplier submissions for construction engineering projects. When you ask a question through the AI Procurement Guru, an embedding model converts it into a **vector embedding**, and **AI Vector Search** in Oracle AI Database retrieves relevant project and supplier information based on meaning rather than exact keyword matches. Using **Retrieval-Augmented Generation (RAG)**, the retrieved information is provided to **OCI Generative AI** along with your question to generate a grounded answer. Through the Construction Data Explorer, you can also use **Select AI** to translate natural-language questions into SQL and retrieve information directly from Oracle AI Database.
 
 ![Diagram](./images/architecture.png =50%x*)
 
@@ -65,11 +67,14 @@ The application utilizes key features of Oracle AI Database:
 * **AI Vector Search:** enables semantic search to retrieve relevant information based on meaning rather than exact keyword matches.
 * **JSON Relational Duality Views:** provide JSON document-oriented access to relational data, supporting updates to the underlying relational tables when configured.
 * **Property Graph:** enables modeling, querying, and analyzing relationships between connected data using vertices, edges, and properties.
+* **Select AI**: translates natural-language questions into SQL, enabling users to retrieve information from the database without manually writing SQL.
 
 ## Learn More
 
 * [Oracle AI Database Documentation](https://docs.oracle.com/en/database/oracle/oracle-database/26/)
 
 ## Acknowledgements
+
 * **Authors** - Uma Kumar
-* **Last Updated By/Date** - Taylor Zheng, Uma Kumar, Deion Locklear, Daniel Hart (July 2026), Ley Sylvester (October 2026)
+* **Contributors** - Taylor Zheng, Deion Locklear, Daniel Hart, Ley Sylvester
+* **Last Updated By/Date** - Ley Sylvester (November 2026)
